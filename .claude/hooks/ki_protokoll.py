@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Hook für den KI-Nachweis: schreibt jeden Prompt an Claude Code und jede Delegation
-an einen Unteragenten als eine JSON-Zeile in ki-nachweis/rohprotokoll.jsonl."""
+an Unteragenten (Agent-Tool oder Workflow) als eine JSON-Zeile in ki-nachweis/rohprotokoll.jsonl."""
 import json
 import os
 import sys
@@ -18,6 +18,16 @@ eintrag = {"zeit": jetzt.isoformat(timespec="seconds"), "sitzung": daten.get("se
 
 if ereignis == "UserPromptSubmit":
     eintrag.update(art="prompt", prompt=daten.get("prompt", ""))
+elif ereignis == "PreToolUse" and daten.get("tool_name") == "Workflow":
+    # Ein Workflow startet mehrere Unteragenten; ihre Aufträge stehen wörtlich im Skript.
+    eingabe = daten.get("tool_input") or {}
+    eintrag.update(
+        art="workflow",
+        skript=eingabe.get("script") or "",
+        skript_datei=eingabe.get("scriptPath") or "",
+        name=eingabe.get("name") or "",
+        argumente=eingabe.get("args"),
+    )
 elif ereignis == "PreToolUse":
     eingabe = daten.get("tool_input") or {}
     eintrag.update(

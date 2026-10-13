@@ -26,6 +26,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 04 | 13.10.2026 | Yannick | Rückfrage erneut stellen; Antworten zu Marke und Arbeitsweise | – | Arbeitsweise festgelegt, Arbeitsplan angepasst |
 | 05 | 13.10.2026 | Yannick | Freigabe: Folie 2 entwerfen | – | Folienentwurf Folie 2 + Grafik |
 | 06 | 13.10.2026 | Yannick | Noch keine Rollen; PDF mit Aufgaben und Aufteilung für die Gruppe | – | PDF (5 Seiten), Bündel statt Namen |
+| 07 | 13.10.2026 | Yannick | Folienlayout: modern, animiert, interaktiv (+ Antworten auf Rückfrage) | D01 (Workflow) | Web-Präsentation – *in Arbeit* |
+| 08 | 13.10.2026 | System | Leerer Eintrag durch Neustart der Sitzung | – | – |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -119,6 +121,34 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen – Aufwandsschätzungen und Bündelzuschnitt im Kickoff prüfen
 
+### 07 – 13.10.2026 – Yannick
+
+> Woran du schon mal arbeiten kannst ist am Layout der Folien ich möchte sie modern Designt haben mit Animation und die
+> Präsentation soll einen Interaktiven Touch haben
+
+- **Vorgehen Claude:** Rückfrage mit drei Auswahlfragen gestellt. Yannicks Antworten:
+
+  | Frage | Antwort |
+  |-------|---------|
+  | Mit welchem Programm präsentiert ihr am 26.10.? | Web-Präsentation (Browser) |
+  | Was soll der „interaktive Touch“ sein? | Live-Umfrage per QR-Code, Klickbare Navigation, Einstieg mit Publikum |
+  | Welche Farbwelt soll das Design haben? | Jetzt neutral, später Marke |
+
+  Danach Werkzeuge vorbereitet (Playwright für Tests und Screenshots, freie Schriften, QR-Code-Bibliothek – alles lokal,
+  damit die Präsentation offline läuft), die automatische Protokollierung um Workflows erweitert und den Bau der
+  Präsentation als Workflow mit mehreren Unteragenten gestartet (siehe D01).
+- **Ergebnis:** *in Arbeit* – Ordner `fallstudie-1-brand-persona/praesentation/`; angepasst: `.claude/settings.json`,
+  `.claude/hooks/ki_protokoll.py` (Workflows werden mitprotokolliert), diese Datei; neu: `ki-nachweis/workflows/`
+- **Unteragenten:** D01
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 08 – 13.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(leerer Eintrag im Rohprotokoll, 17:35 Uhr)*
+
+- **Herkunft:** Die Sitzung wurde technisch neu gestartet; dabei hat die Protokollierung einen leeren Prompt erfasst.
+  Kein Inhalt, keine Aktion.
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -128,7 +158,7 @@ steht hier mit dem wörtlichen Auftrag.
 
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
-| – | – | – | – | *bisher keine Delegation* | – | – |
+| D01 | 13.10.2026 | 07 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -138,6 +168,32 @@ steht hier mit dem wörtlichen Auftrag.
 - **Ergebnis:** …
 - **Wie Claude das Ergebnis geprüft hat:** …
 -->
+
+### D01 – 13.10.2026 – ausgelöst durch Prompt 07
+
+- **Art:** Workflow „praesentation-layout“ – ein Skript, das Unteragenten nacheinander und parallel startet. Jeder
+  Unteragent bekommt einen festen Auftrag; die Ergebnisse fließen in die nächste Stufe.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-13_praesentation-layout.js`](workflows/2026-10-13_praesentation-layout.js)
+  (alle Agenten-Aufträge stehen dort als Text) und automatisch im Rohprotokoll (Eintrag `"art": "workflow"`, 17:48 Uhr).
+- **Geplante Stufen:**
+
+  | Stufe | Unteragenten | Auftrag (kurz) |
+  |-------|--------------|----------------|
+  | Gestaltung | 3 | je eine Gestaltungsrichtung als Muster: „Editorial“ (hell), „Keynote dunkel“, „Bento hell“ |
+  | Bewertung | 2 | Jury: Hörsaal-Praxis (Lesbarkeit, Kontrast, Farbtausch) sowie Wirkung & Bewertungskriterien |
+  | Fundament | 1 | Engine: Navigation, Animationen, Übergänge, Referentenansicht, Übersicht, Druck/PDF, Steuerrad-Navigation, QR-Umfrage, Wortwolke, Themen, Prüfwerkzeug |
+  | Folien | 7 | je eine Foliengruppe bauen (Einstieg & Vorgehen · Markenkompetenz, Persona, Limbic Map · Repertory Grid & Laddering · Analogien & Umfrage · Kommunikationsanalyse · Synthese, Fazit, Fragen · Backup) |
+  | Prüfung | 7 | je Foliengruppe strenge Prüfung (Gestaltung, Lesbarkeit, Inhalt, Technik, Animation) |
+  | Überarbeitung | 7 | je Foliengruppe Befunde umsetzen |
+  | Integration | 1 | zusammenführen, vereinheitlichen, PDF und Bilder exportieren, Anleitung schreiben |
+  | Abschlussprüfung | 2 | Anforderungen vollständig? Gesamteindruck als Art Director |
+  | Feinschliff | 1 | Abschlussbefunde umsetzen |
+
+- **Vorgaben an alle Unteragenten:** keine erfundenen Fakten über reale Marken (Platzhalter, Beispieldaten sichtbar
+  gekennzeichnet), alles offline lauffähig, fremde Schriften/Bibliotheken mit Lizenz melden, Unsicherheiten bei
+  Modellinhalten kennzeichnen, KI-Nachweis und Git nicht selbst anfassen.
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
 
 ---
 
@@ -159,7 +215,8 @@ verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
 
 | Baustein | Was | Wie |
 |----------|-----|-----|
-| `rohprotokoll.jsonl` | jeder Prompt an Claude Code und jede Delegation an einen Unteragenten, wörtlich mit Zeitstempel | automatisch über Claude-Code-Hooks (`.claude/settings.json`, Skript `.claude/hooks/ki_protokoll.py`) |
+| `rohprotokoll.jsonl` | jeder Prompt an Claude Code und jede Delegation an Unteragenten (einzeln oder als Workflow-Skript), wörtlich mit Zeitstempel | automatisch über Claude-Code-Hooks (`.claude/settings.json`, Skript `.claude/hooks/ki_protokoll.py`) |
+| `workflows/` | Skripte der Workflows mit allen Agenten-Aufträgen im Wortlaut | legt Claude bei jedem Workflow ab |
 | Abschnitt 1 und 2 | lesbare Fassung mit Vorgehen, Ergebnis und Prüfstatus | pflegt Claude nach jedem Prompt (Anweisung in `CLAUDE.md`) |
 | Abschnitt 3 | KI-Nutzung in anderen Tools | trägt jede Person selbst ein |
 | Git-Verlauf | wann welche Datei entstanden ist | jeder Arbeitsschritt wird committet |
