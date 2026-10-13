@@ -1,18 +1,18 @@
 # Folienentwürfe – Fallstudie 1
 
 Pro Folie: Titel als Kernaussage · Text auf der Folie · Visualisierung · Sprechtext · mögliche Rückfragen.
-Die Gruppe überträgt die Entwürfe in den Folienmaster von Lukas. `[MARKE]` wird ersetzt, sobald die Marke feststeht.
+Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). `[MARKE]` wird ersetzt, sobald die Marke feststeht.
 
-| Folie | Thema | Spricht | Status |
+| Folie | Thema | Bündel | Status |
 |-------|-------|---------|--------|
-| 2 | Ausgangslage & Vorgehen | Yannick | Entwurf ✔ – wartet auf Marke |
+| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ – wartet auf Marke |
 | 3–11 | | | offen |
 
 ---
 
 ## Folie 2 – Ausgangslage & Vorgehen
 
-**Spricht:** Yannick · **Zeit:** 1:00 · **Backup-Bezug:** B1 Methodik & Begründung, B2 Prompt-Log
+**Bündel:** A · **Zeit:** 1:00 · **Backup-Bezug:** B1 Methodik & Begründung, B2 Prompt-Log
 
 ### Titel (Kernaussage)
 
@@ -83,6 +83,6 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
 
 - [ ] `[MARKE]` einsetzen, sobald die Liste von Prof. Stenger da ist
 - [ ] Anordnung der Felder mit der Grafik aus der Vorlesung abgleichen (die Grafik folgt der Standardliteratur)
-- [ ] Farben und Schrift an den Folienmaster von Lukas anpassen
+- [ ] Farben und Schrift an den Folienmaster anpassen
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00
 - [ ] Rückfrage 3 erst final formulieren, wenn klar ist, wie viele echte Interviews es wurden

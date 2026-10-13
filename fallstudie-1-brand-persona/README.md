@@ -53,19 +53,19 @@ das *Fremdbild* der Zielgruppe. Diesen Unterschied kurz benennen und beide Sicht
 
 ## Folienplan (15 Minuten)
 
-| # | Folie | Kerninhalt | Zeit | Spricht |
+| # | Folie | Kerninhalt | Zeit | Bündel |
 |---|-------|------------|------|---------|
-| 1 | Titel | Marke, Gruppe, Datum | 0:15 | Yannick |
-| 2 | Ausgangslage & Vorgehen | Fragestellung; Übersichtsgrafik: Methoden → Felder des Markensteuerrads | 1:00 | Yannick |
-| 3 | Markenkompetenz | Wer ist die Marke? Herkunft, Meilensteine (Timeline), Marktrolle | 1:00 | Yannick |
-| 4 | Brand Persona | Steckbrief mit Bild: Geografie, Soziodemografie, Kaufverhalten, Mediennutzung, Psychografie | 1:45 | Yannick |
-| 5 | Limbic Map | Persona und Marke auf der Map, Limbic Type, Folgen für die Kommunikation | 1:00 | Yannick |
-| 6 | Repertory Grid | Vorgehen in einem Satz, Polaritätenprofil (Marke vs. Wettbewerb vs. Ideal) → Markenattribute | 2:00 | Elias |
-| 7 | Laddering | Hierarchical Value Map → Markennutzen (funktional / psychosozial) | 1:45 | Elias |
-| 8 | Analogien | Marke als Mensch und Tier → Persönlichkeit, Emotionen → Markentonalität | 1:15 | Elias |
-| 9 | Kommunikationsanalyse | Kanäle im Überblick, Corporate Design, Schlüsselbilder, Bildwelt; Fit zur Tonalität | 2:15 | Lukas |
-| 10 | Markensteuerrad | Synthese, je Stichwort Herkunft aus der Analyse kennzeichnen | 1:30 | Lukas |
-| 11 | Fazit & Empfehlungen | 3 Kernerkenntnisse, 2–3 konkrete Handlungsempfehlungen | 1:15 | Lukas |
+| 1 | Titel | Marke, Gruppe, Datum | 0:15 | A |
+| 2 | Ausgangslage & Vorgehen | Fragestellung; Übersichtsgrafik: Methoden → Felder des Markensteuerrads | 1:00 | A |
+| 3 | Markenkompetenz | Wer ist die Marke? Herkunft, Meilensteine (Timeline), Marktrolle | 1:00 | A |
+| 4 | Brand Persona | Steckbrief mit Bild: Geografie, Soziodemografie, Kaufverhalten, Mediennutzung, Psychografie | 1:45 | A |
+| 5 | Limbic Map | Persona und Marke auf der Map, Limbic Type, Folgen für die Kommunikation | 1:00 | A |
+| 6 | Repertory Grid | Vorgehen in einem Satz, Polaritätenprofil (Marke vs. Wettbewerb vs. Ideal) → Markenattribute | 2:00 | B |
+| 7 | Laddering | Hierarchical Value Map → Markennutzen (funktional / psychosozial) | 1:45 | B |
+| 8 | Analogien | Marke als Mensch und Tier → Persönlichkeit, Emotionen → Markentonalität | 1:15 | B |
+| 9 | Kommunikationsanalyse | Kanäle im Überblick, Corporate Design, Schlüsselbilder, Bildwelt; Fit zur Tonalität | 2:15 | C |
+| 10 | Markensteuerrad | Synthese, je Stichwort Herkunft aus der Analyse kennzeichnen | 1:30 | C |
+| 11 | Fazit & Empfehlungen | 3 Kernerkenntnisse, 2–3 konkrete Handlungsempfehlungen | 1:15 | C |
 | | | | **15:00** | je ca. 5:00 |
 
 Falls Rückfragen in die 15 Minuten fallen: Folien 3 und 8 kürzen.
@@ -77,7 +77,8 @@ B4 Repertory-Grid-Rohdaten · B5 Laddering-Leitern & Implikationsmatrix · B6 Ra
 
 ## Arbeitsplan
 
-Rollen, Übergabetermine und Tagesplan für Yannick, Elias und Lukas: [`arbeitsplan.md`](arbeitsplan.md)
+Bündel zum Aussuchen, Übergabetermine und Tagesplan: [`arbeitsplan.md`](arbeitsplan.md) · als PDF für die Gruppe:
+[`Fallstudie-1_Aufgaben-und-Aufteilung.pdf`](Fallstudie-1_Aufgaben-und-Aufteilung.pdf)
 
 Alle KI-Prompts (an Claude Code, an Unteragenten und in anderen Tools) werden im
 [KI-Nachweis](../ki-nachweis/ki-nachweis.md) dokumentiert.

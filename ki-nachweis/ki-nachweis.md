@@ -25,6 +25,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 03 | 13.10.2026 | Yannick | Gruppe, Arbeitsplan, KI-Nachweis | – | Arbeitsplan, diese Datei, automatische Protokollierung |
 | 04 | 13.10.2026 | Yannick | Rückfrage erneut stellen; Antworten zu Marke und Arbeitsweise | – | Arbeitsweise festgelegt, Arbeitsplan angepasst |
 | 05 | 13.10.2026 | Yannick | Freigabe: Folie 2 entwerfen | – | Folienentwurf Folie 2 + Grafik |
+| 06 | 13.10.2026 | Yannick | Noch keine Rollen; PDF mit Aufgaben und Aufteilung für die Gruppe | – | PDF (5 Seiten), Bündel statt Namen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -100,6 +101,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   (+ `.png`, `.py`); angepasst: `fallstudie-1-brand-persona/README.md`, `CLAUDE.md`, diese Datei
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen – Anordnung des Steuerrads mit der Vorlesung abgleichen, Sprechtext stoppen
+
+### 06 – 13.10.2026 – Yannick
+
+> Teile mal noch keine Rollen ein, erstelle eine PDF Datei mit was abgearbeitet werden muss und wie man die Arbeit
+> aufteilen muss, dieses Dokument schicke ich dann in die Gruppe rein damit jeder sich seine Aufgaben raussuchen kann
+
+- **Vorgehen Claude:** Aufgabenübersicht als HTML geschrieben und mit Chromium als A4-PDF erzeugt (5 Seiten):
+  Überblick und Aufgabe, zehn Arbeitspakete mit Aufwandsschätzung und Abhängigkeiten, drei Bündel zum Aussuchen
+  (mit Namensfeld), Termine und Übergaben, Spielregeln und Bewertungskriterien. Seiten als Bilder gerendert und
+  Layout visuell geprüft. Die Stundenangaben sind Schätzungen von Claude. Beim Abgleich mit Folie 58 fiel auf, dass
+  die Präsentationskriterien zusammen 15 % statt der angegebenen 30 % ergeben – als offene Frage aufgenommen.
+  Namenszuordnungen in Arbeitsplan, Folienplan und Folienentwurf durch Bündel A/B/C ersetzt.
+- **Ergebnis:** `fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-und-Aufteilung.pdf`,
+  `fallstudie-1-brand-persona/aufgabenuebersicht.html`; angepasst: `arbeitsplan.md`, `README.md` (beide),
+  `folienentwuerfe.md`, `CLAUDE.md`, diese Datei
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – Aufwandsschätzungen und Bündelzuschnitt im Kickoff prüfen
 
 ---
 

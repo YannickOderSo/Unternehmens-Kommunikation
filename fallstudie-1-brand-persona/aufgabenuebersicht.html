@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fallstudie 1 – Aufgaben und Aufteilung</title>
+<style>
+  :root {
+    --rot: #B3161D;
+    --rot-hell: #F6DCD9;
+    --schiefer: #2F4553;
+    --schiefer-hell: #DDE5EC;
+    --text: #1F2A30;
+    --grau: #5E6A72;
+    --linie: #D3DAE0;
+    --flaeche: #F3F5F7;
+  }
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-left { content: "Fallstudie 1 · Aufgaben und Aufteilung · Stand 13.10.2026"; font: 8pt Inter, sans-serif; color: #5E6A72; }
+    @bottom-right { content: "Seite " counter(page) " von " counter(pages); font: 8pt Inter, sans-serif; color: #5E6A72; }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 9.6pt; line-height: 1.45; color: var(--text); margin: 0; }
+  h1 { font-size: 21pt; line-height: 1.15; margin: 2mm 0 1mm; letter-spacing: -0.01em; }
+  h2 { font-size: 13.5pt; margin: 0 0 3mm; color: var(--schiefer); }
+  h2 .nr { color: var(--rot); margin-right: 1.5mm; }
+  h3 { font-size: 10.5pt; margin: 0 0 1.5mm; }
+  p { margin: 0 0 2.5mm; }
+  ul { margin: 0 0 2.5mm; padding-left: 4.5mm; }
+  li { margin-bottom: 0.8mm; }
+  .seite { break-before: page; }
+  .kicker { font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--rot); font-weight: 600; }
+  .untertitel { font-size: 12pt; color: var(--grau); margin-bottom: 2mm; }
+  .meta { font-size: 8.8pt; color: var(--grau); border-bottom: 2px solid var(--rot); padding-bottom: 3mm; margin-bottom: 4mm; }
+  .kacheln { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-bottom: 4mm; }
+  .kachel { background: var(--flaeche); border-radius: 2.5mm; padding: 3mm 3.5mm; }
+  .kachel .label { font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grau); }
+  .kachel .wert { font-size: 12.5pt; font-weight: 700; margin: 0.5mm 0; }
+  .kachel .zusatz { font-size: 8.3pt; color: var(--grau); line-height: 1.3; }
+  .kachel.akzent { background: var(--rot); color: #fff; }
+  .kachel.akzent .label, .kachel.akzent .zusatz { color: #fbe9e8; }
+  .schritte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-bottom: 4mm; font-size: 9pt; }
+  .schritt { border: 1px solid var(--linie); border-radius: 2.5mm; padding: 3mm 3.5mm; }
+  .schritt .ziffer { display: inline-block; width: 6mm; height: 6mm; border-radius: 50%; background: var(--schiefer); color: #fff;
+    font-weight: 700; font-size: 9pt; text-align: center; line-height: 6mm; margin-bottom: 1.5mm; }
+  .zitat { border-left: 3px solid var(--rot); padding: 1mm 0 1mm 4mm; color: #3A464D; margin: 0 0 4mm; font-size: 9.3pt; }
+  .grafik { width: 92%; display: block; margin: 0 auto 1mm; }
+  .bildunterschrift { font-size: 8.3pt; color: var(--grau); }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 4mm; }
+  th { text-align: left; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.04em; color: var(--grau); font-weight: 600;
+    border-bottom: 1.5px solid var(--schiefer); padding: 1.5mm 2mm; }
+  td { border-bottom: 1px solid var(--linie); padding: 2mm 2mm; vertical-align: top; }
+  tr { break-inside: avoid; }
+  table.pakete td { font-size: 8.8pt; padding: 1.5mm 1.8mm; line-height: 1.38; }
+  table.termine td:first-child { white-space: nowrap; }
+  table.termine td:last-child { white-space: nowrap; }
+  td.ap { font-weight: 700; color: var(--rot); white-space: nowrap; }
+  td.paket strong { display: block; }
+  td.paket .folie { font-size: 8.2pt; color: var(--grau); }
+  td.std { white-space: nowrap; text-align: right; }
+  .klein { font-size: 8.5pt; color: var(--grau); }
+  .tag { display: inline-block; font-size: 7.6pt; font-weight: 700; padding: 0.3mm 1.6mm; border-radius: 1mm; margin-right: 1mm; }
+  .tag.a { background: var(--schiefer-hell); color: var(--schiefer); }
+  .tag.b { background: #E4E0F0; color: #4B3F7A; }
+  .tag.c { background: var(--rot-hell); color: #8E1B1B; }
+  .tag.alle { background: var(--flaeche); color: var(--grau); border: 1px solid var(--linie); }
+  .box { background: var(--flaeche); border-radius: 2.5mm; padding: 3.5mm 4mm; margin-bottom: 4mm; break-inside: avoid; }
+  .buendel { border: 1.5px solid var(--linie); border-radius: 3mm; padding: 4mm 4.5mm 3.5mm; margin-bottom: 4mm; break-inside: avoid; }
+  .buendel.a { border-left: 6px solid var(--schiefer); }
+  .buendel.b { border-left: 6px solid #4B3F7A; }
+  .buendel.c { border-left: 6px solid var(--rot); }
+  .buendel-kopf { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2mm; }
+  .buendel-kopf h3 { font-size: 12pt; margin: 0; }
+  .buendel-kopf .aufwand { font-size: 9pt; color: var(--grau); }
+  .buendel-raster { display: grid; grid-template-columns: 1.25fr 1fr; gap: 4mm; }
+  .namensfeld { margin-top: 2.5mm; font-size: 9pt; color: var(--grau); }
+  .namensfeld span { display: inline-block; width: 70mm; border-bottom: 1px solid #9AA5AD; margin-left: 2mm; }
+  .zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .checkliste { list-style: none; padding-left: 0; }
+  .checkliste li::before { content: "☐"; color: var(--rot); margin-right: 2mm; }
+  .hinweis { border: 1px dashed #B9C3CA; border-radius: 2.5mm; padding: 3mm 4mm; margin-bottom: 4mm; break-inside: avoid; }
+  .abschnitt { margin-bottom: 5mm; }
+</style>
+</head>
+<body>
+
+<!-- Seite 1 -->
+<div class="kicker">Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern</div>
+<h1>Fallstudie 1: Brand Persona &amp; Markenidentität</h1>
+<div class="untertitel">Was zu tun ist – und wie wir die Arbeit aufteilen</div>
+<div class="meta">Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker &nbsp;|&nbsp; Stand: 13.10.2026</div>
+
+<div class="kacheln">
+  <div class="kachel akzent">
+    <div class="label">Präsentation</div>
+    <div class="wert">Mo, 26.10.</div>
+    <div class="zusatz">15 Minuten + Backup</div>
+  </div>
+  <div class="kachel">
+    <div class="label">Marke</div>
+    <div class="wert">steht aus</div>
+    <div class="zusatz">kommt aus der Liste von Prof. Stenger</div>
+  </div>
+  <div class="kachel">
+    <div class="label">Aufwand</div>
+    <div class="wert">ca. 20 Std.</div>
+    <div class="zusatz">pro Person, grob geschätzt, inkl. Termine</div>
+  </div>
+  <div class="kachel">
+    <div class="label">Bündel wählen bis</div>
+    <div class="wert">Mi, 14.10.</div>
+    <div class="zusatz">im Gruppenchat</div>
+  </div>
+</div>
+
+<div class="schritte">
+  <div class="schritt">
+    <div class="ziffer">1</div>
+    <h3>Pakete ansehen</h3>
+    Auf Seite 2 stehen alle zehn Arbeitspakete: was zu tun ist, was am Ende rauskommt und wie lange es ungefähr dauert.
+  </div>
+  <div class="schritt">
+    <div class="ziffer">2</div>
+    <h3>Bündel aussuchen</h3>
+    Seite 3 fasst die Pakete zu drei etwa gleich großen Bündeln zusammen. Jede Person nimmt eins. Einzelne Pakete tauschen ist möglich.
+  </div>
+  <div class="schritt">
+    <div class="ziffer">3</div>
+    <h3>Im Chat melden</h3>
+    Bis Mi, 14.10. schreibt jede Person in die Gruppe, welches Bündel sie übernimmt. Danach gelten die Übergabetermine auf Seite 4.
+  </div>
+</div>
+
+<h2>Die Aufgabe</h2>
+<div class="zitat">
+  „Erarbeiten Sie eine <strong>Brand Persona</strong> und <strong>Markenidentität</strong> für Ihre Unternehmensmarke anhand des
+  <strong>Markensteuerrads nach Esch</strong>. Nutzen Sie hierfür insbesondere Desk Research und KI-Tools als Methoden.
+  Dokumentieren Sie Ihre Prompts und begründen Sie Ihr Vorgehen (Backup).“ <span class="klein">– Aufgabenfolie 60</span>
+</div>
+
+<h2>Die Logik dahinter</h2>
+<img class="grafik" src="grafiken/folie-02-vorgehen.svg" alt="Methoden und die Felder des Markensteuerrads">
+<div class="bildunterschrift">Jede Methode füllt ein Feld des Markensteuerrads. Die Brand Persona ist der Rahmen für alle Felder.
+Die Grafik ist gleichzeitig Folie 2 unserer Präsentation.</div>
+
+<!-- Seite 2 -->
+<div class="seite"></div>
+<h2><span class="nr">1</span>Die Arbeitspakete</h2>
+<p>„Braucht“ zeigt, worauf ein Paket wartet. Die Stundenzahlen sind grobe Schätzungen ohne eigene Folien und gemeinsame Termine.</p>
+
+<table class="pakete">
+  <colgroup><col style="width:8%"><col style="width:17%"><col style="width:42%"><col style="width:20%"><col style="width:5%"><col style="width:8%"></colgroup>
+  <thead>
+    <tr><th>Nr.</th><th>Paket</th><th>Was ist zu tun?</th><th>Ergebnis</th><th>Std.</th><th>Braucht</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ap">AP 1</td>
+      <td class="paket"><strong>Markenkompetenz &amp; Wettbewerber</strong><span class="folie">Folie 3</span></td>
+      <td>Desk Research zu Herkunft, Historie, Eigentümer, Kennzahlen, Marktrolle und Selbstverständnis der Marke. 5–6 Wettbewerber festlegen.</td>
+      <td>Faktentabelle mit Quellen, Timeline, Wettbewerbsset</td>
+      <td class="std">3–4</td>
+      <td>Marke</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 2</td>
+      <td class="paket"><strong>Brand Persona</strong><span class="folie">Folie 4</span></td>
+      <td>Daten zur Zielgruppe sammeln (z. B. Statista, VuMA, b4p, ARD/ZDF-Medienstudie). Steckbrief mit Geografie, Soziodemografie, Kaufverhalten, Mediennutzung und Psychografie. Bild per KI.</td>
+      <td>Persona-Steckbrief, Daten und Annahmen getrennt</td>
+      <td class="std">5–6</td>
+      <td>AP 1</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 3</td>
+      <td class="paket"><strong>Limbic Map</strong><span class="folie">Folie 5</span></td>
+      <td>Persona und Marke auf der Limbic Map verorten (Balance, Dominanz, Stimulanz), Limbic Type bestimmen, Folgen für die Kommunikation ableiten.</td>
+      <td>Limbic-Map-Grafik + 3 Konsequenzen</td>
+      <td class="std">2</td>
+      <td>AP 2</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 4</td>
+      <td class="paket"><strong>Repertory Grid</strong><span class="folie">Folie 6</span></td>
+      <td>Marke, 5 Wettbewerber und eine Idealmarke in Dreiergruppen vergleichen lassen: mit KI-simulierten Befragten und 3–5 echten Kurzinterviews. Auswertung in Excel.</td>
+      <td>Polaritätenprofil, 3–5 Markenattribute</td>
+      <td class="std">6–7</td>
+      <td>AP 1, AP 2</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 5</td>
+      <td class="paket"><strong>Laddering</strong><span class="folie">Folie 7</span></td>
+      <td>Ausgehend von den Attributen immer wieder fragen: „Warum ist dir das wichtig?“ – bis zu den Werten. Implikationsmatrix und Hierarchical Value Map.</td>
+      <td>HVM-Grafik, funktionaler und psychosozialer Markennutzen</td>
+      <td class="std">4</td>
+      <td>AP 4</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 6</td>
+      <td class="paket"><strong>Analogien</strong><span class="folie">Folie 8</span></td>
+      <td>„Wenn die Marke ein Mensch / ein Tier wäre …“ – für die Marke und 2 Wettbewerber. Persönlichkeit, Beziehung und Emotionen ableiten.</td>
+      <td>Markentonalität</td>
+      <td class="std">2–3</td>
+      <td>AP 2</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 7</td>
+      <td class="paket"><strong>Kommunikations&shy;analyse</strong><span class="folie">Folie 9</span></td>
+      <td>Instagram, Facebook, YouTube: je 15–20 Posts erfassen und codieren, Engagement-Rate rechnen. Corporate Design, Logo, Slogan, Schlüsselbilder, Bildwelt. Passt der Auftritt zur Tonalität?</td>
+      <td>Markenbild + Lücken zwischen Identität und Auftritt</td>
+      <td class="std">6–7</td>
+      <td>Marke, AP 6</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 8</td>
+      <td class="paket"><strong>Markensteuerrad &amp; Empfehlungen</strong><span class="folie">Folien 10–11</span></td>
+      <td>Gemeinsame Synthese vorbereiten und leiten: Steuerrad füllen, Markenkern in einem Satz, 2–3 konkrete Empfehlungen ableiten.</td>
+      <td>Fertiges Steuerrad, Fazit-Folie</td>
+      <td class="std">3</td>
+      <td>alle Analysen</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 9</td>
+      <td class="paket"><strong>Folienmaster &amp; Gesamtdeck</strong><span class="folie">alle Folien</span></td>
+      <td>Folienmaster mit Farben und Schriften bauen, am Ende alle Folien zusammenführen und auf einheitliches Design prüfen.</td>
+      <td>Master bis Mo, 19.10.; fertiges Deck</td>
+      <td class="std">3</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td class="ap">AP 10</td>
+      <td class="paket"><strong>Backup &amp; KI-Nachweis</strong><span class="folie">Backup-Folien</span></td>
+      <td>Prompts aller einsammeln, Vorgehen begründen (Textbaustein vorhanden), Quellenverzeichnis und Rohdaten fürs Backup zusammenstellen.</td>
+      <td>Backup B1–B7, vollständiger KI-Nachweis</td>
+      <td class="std">3</td>
+      <td>Beiträge aller</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<!-- Seite 3 -->
+<div class="seite"></div>
+<h2><span class="nr">2</span>Vorschlag: drei Bündel zum Aussuchen</h2>
+<p>Die Pakete sind so gebündelt, dass zusammengehörige Arbeit in einer Hand bleibt und jedes Bündel ungefähr gleich viel
+Aufwand macht. Wer ein Bündel übernimmt, präsentiert auch dessen Folien – so kann jede Person Rückfragen zu ihrem Teil
+selbst beantworten.</p>
+
+<div class="buendel a">
+  <div class="buendel-kopf">
+    <h3><span class="tag a">A</span> Daten &amp; Dokumentation</h3>
+    <div class="aufwand">AP 1, 2, 3, 10 · ca. 13–15 Std.</div>
+  </div>
+  <div class="buendel-raster">
+    <div>
+      <ul>
+        <li>Markenkompetenz und Wettbewerber recherchieren</li>
+        <li>Brand Persona und Limbic Map erarbeiten</li>
+        <li>Backup und KI-Nachweis zusammenführen</li>
+        <li>Präsentiert Folien 1–5 (ca. 5 Min.), Folie 2 ist schon entworfen</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Passt, wenn du</strong> gern recherchierst, Quellen prüfst und Dinge sauber dokumentierst.</p>
+      <p class="klein"><strong>Achtung:</strong> Dieses Bündel liefert als Erstes – die Persona wird schon am Fr, 16.10. gebraucht.</p>
+    </div>
+  </div>
+  <div class="namensfeld">Übernimmt: <span>&nbsp;</span></div>
+</div>
+
+<div class="buendel b">
+  <div class="buendel-kopf">
+    <h3><span class="tag b">B</span> Befragung &amp; Auswertung</h3>
+    <div class="aufwand">AP 4, 5, 6 · ca. 12–14 Std.</div>
+  </div>
+  <div class="buendel-raster">
+    <div>
+      <ul>
+        <li>Repertory Grid mit KI-Befragten und 3–5 echten Kurzinterviews</li>
+        <li>Laddering und Hierarchical Value Map</li>
+        <li>Analogien (Marke als Mensch und als Tier)</li>
+        <li>Präsentiert Folien 6–8 (ca. 5 Min.)</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Passt, wenn du</strong> gern mit Leuten sprichst und keine Angst vor Excel hast.</p>
+      <p class="klein"><strong>Warum zusammen:</strong> Alle drei Methoden arbeiten mit denselben Befragten, und die Attribute aus dem
+      Repertory Grid sind die Startpunkte fürs Laddering.</p>
+    </div>
+  </div>
+  <div class="namensfeld">Übernimmt: <span>&nbsp;</span></div>
+</div>
+
+<div class="buendel c">
+  <div class="buendel-kopf">
+    <h3><span class="tag c">C</span> Auftritt, Design &amp; Synthese</h3>
+    <div class="aufwand">AP 7, 8, 9 · ca. 12–13 Std.</div>
+  </div>
+  <div class="buendel-raster">
+    <div>
+      <ul>
+        <li>Kommunikationsanalyse auf Instagram, Facebook und YouTube</li>
+        <li>Folienmaster bauen und am Ende das Gesamtdeck zusammenführen</li>
+        <li>Synthese im Markensteuerrad leiten, Empfehlungen ableiten</li>
+        <li>Präsentiert Folien 9–11 (ca. 5 Min.)</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Passt, wenn du</strong> ein Auge für Gestaltung und Social Media hast.</p>
+      <p class="klein"><strong>Warum zusammen:</strong> Die Kommunikationsanalyse zeigt die Lücken, aus denen die Empfehlungen entstehen.</p>
+    </div>
+  </div>
+  <div class="namensfeld">Übernimmt: <span>&nbsp;</span></div>
+</div>
+
+<div class="hinweis">
+  <h3>Tauschen ist erlaubt</h3>
+  Einzelne Pakete können wandern, wenn die Übergabetermine gehalten werden. Naheliegende Tausche:
+  <strong>AP 6 Analogien</strong> zu Bündel C (die Tonalität ist der Maßstab für die Kommunikationsanalyse) oder
+  <strong>AP 10 Backup</strong> zu Bündel C (wer das Deck zusammenführt, hat die Folien ohnehin vor sich).
+</div>
+
+<!-- Seite 4 -->
+<div class="seite"></div>
+<h2><span class="nr">3</span>Termine &amp; Übergaben</h2>
+<p>Wer zu spät liefert, blockiert die anderen. Diese Termine sind deshalb fix; wie man die Tage dazwischen einteilt, ist
+jeder Person selbst überlassen.</p>
+
+<table class="termine">
+  <thead>
+    <tr><th>Wann</th><th>Was</th><th>Wer</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Mi, 14.10.</strong></td><td>Bündel im Gruppenchat gewählt · <strong>Kickoff (30 Min.):</strong> Marke aus der Liste wählen, Wettbewerber festlegen, offene Fragen klären</td><td><span class="tag alle">alle</span></td></tr>
+    <tr><td><strong>Fr, 16.10.</strong></td><td>Persona-Kurzfassung an Bündel B (Grundlage für die simulierten Befragten)</td><td><span class="tag a">A</span>→<span class="tag b">B</span></td></tr>
+    <tr><td><strong>Sa, 17.10.</strong></td><td>Ergebnis der Limbic Map (Persona und Marke) an Bündel C</td><td><span class="tag a">A</span>→<span class="tag c">C</span></td></tr>
+    <tr><td><strong>Mo, 19.10.</strong></td><td>Folienmaster an alle · 3–5 Markenattribute aus dem Repertory Grid an alle</td><td><span class="tag c">C</span> <span class="tag b">B</span></td></tr>
+    <tr><td><strong>Di, 20.10.</strong></td><td><strong>Zwischenstand (45 Min.):</strong> Persona, Attribute, erste Befunde zum Markenbild</td><td><span class="tag alle">alle</span></td></tr>
+    <tr><td><strong>Mi, 21.10.</strong></td><td>Markentonalität aus den Analogien an Bündel C</td><td><span class="tag b">B</span>→<span class="tag c">C</span></td></tr>
+    <tr><td><strong>Do, 22.10.</strong></td><td><strong>Synthese (2 Std.):</strong> Markensteuerrad füllen, Markenkern, Empfehlungen – jede Person bringt ihre Ergebnisse als Stichworte mit Quelle mit</td><td><span class="tag alle">alle</span>, Leitung <span class="tag c">C</span></td></tr>
+    <tr><td><strong>Fr, 23.10.</strong></td><td>Eigene Folien fertig im Master</td><td><span class="tag alle">alle</span></td></tr>
+    <tr><td><strong>Sa, 24.10.</strong></td><td>Alle KI-Prompts eingetragen · Gesamtdeck zusammengeführt</td><td><span class="tag alle">alle</span>→<span class="tag a">A</span> <span class="tag c">C</span></td></tr>
+    <tr><td><strong>So, 25.10.</strong></td><td><strong>Generalprobe (1 Std.):</strong> zweimal mit Stoppuhr durchgehen, Rückfragen üben</td><td><span class="tag alle">alle</span></td></tr>
+    <tr><td><strong>Mo, 26.10.</strong></td><td><strong>Präsentation</strong></td><td><span class="tag alle">alle</span></td></tr>
+  </tbody>
+</table>
+
+<div class="hinweis">
+  <h3>Falls die Unternehmensliste nach Mi, 14.10. kommt</h3>
+  Alles, was die Marke braucht, verschiebt sich entsprechend. Ohne Marke geht schon:
+  <span class="tag b">B</span> Interviewleitfaden für Repertory Grid und Laddering ·
+  <span class="tag c">C</span> Folienmaster ·
+  <span class="tag a">A</span> Gliederung des Backups und Datenquellen für die Persona vorab sammeln.
+</div>
+
+<div class="box">
+  <h3>Für alle, egal welches Bündel</h3>
+  <ul>
+    <li>Die eigenen Folien im Master bauen und den Sprechtext schreiben (ca. 2 Std.)</li>
+    <li>An den vier gemeinsamen Terminen teilnehmen (zusammen ca. 4 Std., siehe oben)</li>
+    <li>Jede KI-Nutzung sofort für den KI-Nachweis notieren (siehe Seite 5)</li>
+    <li>Die Einzelreflexion schreibt jede Person selbst (15 % der Note)</li>
+  </ul>
+</div>
+
+<div class="hinweis">
+  <h3>Schon vorbereitet</h3>
+  Anleitungen und Ausfüllvorlagen für jede Methode, 14 Prompt-Vorlagen, der Entwurf für Folie 2 mit Grafik und
+  Sprechtext sowie der KI-Nachweis liegen im GitHub-Repository
+  <strong>github.com/YannickOderSo/Unternehmens-Kommunikation</strong> (Zugang über Yannick).
+</div>
+
+
+
+<!-- Seite 5 -->
+<div class="seite"></div>
+<h2><span class="nr">4</span>Spielregeln</h2>
+
+<div class="zwei-spalten abschnitt">
+  <div>
+    <h3>KI-Nachweis (Pflicht laut Aufgabe)</h3>
+    <ul>
+      <li>Jede KI-Nutzung – ChatGPT, Perplexity, Claude, Bildgeneratoren – direkt notieren: Datum, Tool, Prompt, Ergebnis
+        und was ihr geprüft oder geändert habt.</li>
+      <li>Chatverläufe als Link oder PDF sichern.</li>
+      <li>Bündel A sammelt alles im KI-Nachweis. Yannicks Prompts an Claude Code werden automatisch protokolliert.</li>
+    </ul>
+    <h3>Qualität</h3>
+    <ul>
+      <li>Keine Zahl aus der KI ohne geöffnete Quelle.</li>
+      <li>Rechnen (Mittelwerte, Engagement-Raten) in Excel, nicht per KI.</li>
+      <li>Daten und Annahmen immer getrennt kennzeichnen.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Ein Paket ist fertig, wenn …</h3>
+    <ul class="checkliste">
+      <li>die Vorlage aus der Methodenanleitung ausgefüllt ist,</li>
+      <li>jede Zahl eine Quelle hat,</li>
+      <li>alle Prompts im KI-Nachweis stehen,</li>
+      <li>das Ergebnis auf 1–2 Folien im Master ist – Kernaussage als Folientitel,</li>
+      <li>zwei mögliche Rückfragen samt Antwort notiert sind.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Worauf bewertet wird</h2>
+<table>
+  <thead><tr><th>Kriterium</th><th>Gewicht</th><th>Was das für uns heißt</th></tr></thead>
+  <tbody>
+    <tr><td>Problemverständnis &amp; Fokussierung</td><td>15 %</td><td>Leitfrage klar, nur zeigen, was ins Steuerrad einfließt</td></tr>
+    <tr><td>Anwendung von Konzepten &amp; Modellen</td><td>20 %</td><td>Modelle fachlich korrekt, Methode → Feld sichtbar</td></tr>
+    <tr><td>Analyse &amp; Argumentation</td><td>20 %</td><td>Jede Aussage im Steuerrad auf eine Analyse zurückführbar</td></tr>
+    <tr><td>Qualität der Lösung / Empfehlung</td><td>15 %</td><td>2–3 konkrete, begründete Empfehlungen</td></tr>
+    <tr><td>Vermittlung &amp; Präsentationsstil</td><td>7,5 %</td><td>frei sprechen, Rückfragen souverän beantworten</td></tr>
+    <tr><td>Visualisierung &amp; Foliengestaltung</td><td>7,5 %</td><td>wenig Text, Grafiken statt Tabellen, einheitlicher Master</td></tr>
+    <tr><td>Individuelle Reflexion (je Person)</td><td>15 %</td><td>Tiefe, kritische Selbstbewertung, Lerntransfer</td></tr>
+  </tbody>
+</table>
+<p class="klein">Laut Folie 58 hat der Bereich „Präsentation“ 30 %, die beiden Kriterien darunter ergeben aber nur 15 % – das klären wir beim Prof.</p>
+
+<h2 style="margin-top:5mm">Noch offen</h2>
+<ul class="checkliste">
+  <li>Unternehmensliste von Prof. Stenger abwarten, dann Marke wählen</li>
+  <li>Gruppe in die Google-Tabelle eintragen (Link auf Folie 57)</li>
+  <li>Beim Prof klären: Abgabetermin und Form der Einzelreflexion, Gewichtung der Präsentation, zählen Rückfragen zu den 15 Minuten?</li>
+  <li>Jede Person: Bündel bis Mi, 14.10. im Gruppenchat wählen</li>
+</ul>
+
+
+
+</body>
+</html>

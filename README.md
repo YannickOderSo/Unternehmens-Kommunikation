@@ -37,4 +37,6 @@ Skala je Kriterium: Sehr gut 9–10 · Angemessen 6–8 · Nicht ausreichend 0�
 | | Kritische Selbstbewertung | 5 % |
 | | Lerntransfer & Entwicklungsbedarf | 5 % |
 
+Hinweis: Auf Folie 58 hat „Präsentation“ 30 %, die beiden Kriterien darunter ergeben aber 15 % – beim Prof klären.
+
 Vorlage für die Einzelreflexion: [`reflexion-vorlage.md`](reflexion-vorlage.md)

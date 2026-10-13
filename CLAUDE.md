@@ -10,10 +10,12 @@ Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deu
   bzw. das nächste Paket warten.
 - **Ergebnisform:** Ausarbeitung (ausgefüllte Vorlagen aus `methoden.md`, als Dateien im Repo) **plus Folienentwürfe**:
   pro Folie Titel als Kernaussage, 3–5 Stichpunkte, Visualisierungsidee, Quellen. Die Gruppe überträgt sie in den
-  Folienmaster von Lukas. Ablage: `fallstudie-1-brand-persona/folienentwuerfe.md`, Grafiken als SVG + PNG in
+  Folienmaster (Bündel C). Ablage: `fallstudie-1-brand-persona/folienentwuerfe.md`, Grafiken als SVG + PNG in
   `fallstudie-1-brand-persona/grafiken/`.
 - **Kein Vorlesungsmaterial vorhanden:** Modellbegriffe nach Standardliteratur verwenden und darauf hinweisen, dass die
   Gruppe sie mit den Vorlesungsfolien abgleichen soll.
+- **Rollen noch nicht vergeben:** Arbeit ist in Bündel A/B/C aufgeteilt, die Gruppe wählt selbst (siehe
+  `fallstudie-1-brand-persona/arbeitsplan.md`). Keine Namen zuordnen, bis Yannick die Verteilung mitteilt.
 - **Marke:** kommt aus einer Unternehmensliste von Prof. Stenger, die noch aussteht. Erst danach markenbezogen arbeiten.
 
 ## Pflicht: KI-Nachweis führen
