@@ -30,6 +30,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 08 | 13.10.2026 | System | Leerer Eintrag durch Neustart der Sitzung | – | – |
 | 09 | 13.10.2026 | Yannick | PDF des Profs: Unternehmensliste und Reflexionsvorlage | D02 (Workflow) | Reflexionsvorlage angepasst; Vergleich abgebrochen (siehe 10) |
 | 10 | 13.10.2026 | Yannick | Recherche aller Unternehmen stoppen; HOLY vorgeschlagen | D02 gestoppt | Marke HOLY vermerkt |
+| 11 | 13.10.2026 | System | Nutzungslimit erreicht, Workflow D01 unterbrochen; Sitzung dreimal neu gestartet | – | – |
+| 12 | 13.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D01 fortgesetzt | Präsentation *in Arbeit* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -178,6 +180,29 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** D02 gestoppt
 - **Prüfung durch die Gruppe:** ☐ offen – Marke HOLY in der Gruppe bestätigen
 
+### 11 – 13.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow D01 „failed: Fundament nicht fertig geworden“ – drei Unteragenten (Jury: Hörsaal-Praxis,
+> Jury: Wirkung & Bewertung, Engine & Designsystem) mit „You've hit your session limit“ abgebrochen.
+> Danach dreimal (19:05, 20:05, 21:01 Uhr): „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung, nicht von der Gruppe geschrieben. Das Rohprotokoll hat die
+  Neustart-Meldungen als „prompt“ erfasst.
+- **Stand von D01 zu diesem Zeitpunkt:** die drei Gestaltungsrichtungen waren fertig (Ordner
+  `fallstudie-1-brand-persona/praesentation/_entwuerfe/`), Jury und Fundament abgebrochen.
+
+### 12 – 13.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache
+> dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Stand von D01 geprüft (drei fertige Gestaltungsrichtungen als Kontaktbogen angesehen),
+  Workflow D01 unverändert fortgesetzt: Die drei fertigen Richtungen kommen aus dem Zwischenspeicher, ab der Jury läuft
+  er neu (gleiches Skript, keine neuen Aufträge).
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -187,7 +212,7 @@ steht hier mit dem wörtlichen Auftrag.
 
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
-| D01 | 13.10.2026 | 07 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | *läuft* | – |
+| D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | unterbrochen (Nutzungslimit), fortgesetzt 21:02 Uhr – *läuft* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 
 <!-- Vorlage für den Detaileintrag:
