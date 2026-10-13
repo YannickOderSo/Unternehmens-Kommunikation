@@ -70,6 +70,8 @@ das *Fremdbild* der Zielgruppe. Diesen Unterschied kurz benennen und beide Sicht
 
 Falls Rückfragen in die 15 Minuten fallen: Folien 3 und 8 kürzen.
 
+Ausformulierte Entwürfe je Folie (Titel, Text, Grafik, Sprechtext, Rückfragen): [`folienentwuerfe.md`](folienentwuerfe.md)
+
 **Backup** (nach der Abschlussfolie): B1 Methodik & Begründung · B2 Prompt-Log · B3 Datenquellen Persona ·
 B4 Repertory-Grid-Rohdaten · B5 Laddering-Leitern & Implikationsmatrix · B6 Raster Kommunikationsanalyse · B7 Quellenverzeichnis
 

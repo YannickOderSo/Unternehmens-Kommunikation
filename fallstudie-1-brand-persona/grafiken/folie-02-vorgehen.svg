@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+<rect width="1400" height="800" fill="#FFFFFF"/>
+<path d="M700,370 L450,370 A250,250 0 0 1 700,120 Z" fill="#DDE5EC" stroke="#FFFFFF" stroke-width="8"/>
+<path d="M700,370 L700,120 A250,250 0 0 1 950,370 Z" fill="#F6DCD9" stroke="#FFFFFF" stroke-width="8"/>
+<path d="M700,370 L950,370 A250,250 0 0 1 700,620 Z" fill="#F6DCD9" stroke="#FFFFFF" stroke-width="8"/>
+<path d="M700,370 L700,620 A250,250 0 0 1 450,370 Z" fill="#DDE5EC" stroke="#FFFFFF" stroke-width="8"/>
+<text x="588" y="236" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle">Markennutzen</text>
+<text x="588" y="260" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Was biete ich an?</text>
+<text x="812" y="236" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#8E1B1B" text-anchor="middle">Markentonalität</text>
+<text x="812" y="260" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#9A3B36" text-anchor="middle">Wie bin ich?</text>
+<text x="812" y="488" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#8E1B1B" text-anchor="middle">Markenbild</text>
+<text x="812" y="514" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#9A3B36" text-anchor="middle">Wie trete ich auf?</text>
+<text x="590" y="488" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle">Markenattribute</text>
+<text x="590" y="514" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Über welche</text>
+<text x="590" y="534" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Eigenschaften</text>
+<text x="590" y="554" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">verfüge ich?</text>
+<circle cx="700" cy="370" r="92" fill="#B3161D" stroke="#FFFFFF" stroke-width="8"/>
+<text x="700" y="362" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Marken-</text>
+<text x="700" y="385" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">kompetenz</text>
+<text x="700" y="410" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Wer bin ich?</text>
+<text x="505" y="612" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#5B7080" text-anchor="middle">HARD FACTS · rational</text>
+<text x="895" y="612" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#B3161D" text-anchor="middle">SOFT FACTS · emotional</text>
+<rect x="560" y="18" width="280" height="74" rx="10" fill="#FFFFFF" stroke="#B3161D" stroke-width="2"/>
+<text x="700" y="48" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">Desk Research</text>
+<text x="700" y="74" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#4A555C" text-anchor="middle">Herkunft, Historie, Marktrolle · Folie 3</text>
+<line x1="700" y1="92" x2="700.0" y2="263.0" stroke="#44525C" stroke-width="2.5"/>
+<polygon points="700,274 694.5,263.0 705.5,263.0" fill="#44525C"/>
+<rect x="40" y="180" width="300" height="96" rx="10" fill="#FFFFFF" stroke="#5B7080" stroke-width="2"/>
+<text x="190" y="214" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">Laddering</text>
+<text x="190" y="238" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#4A555C" text-anchor="middle">Means-End-Kette bis zu den Werten</text>
+<text x="190" y="261" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#5B7080" text-anchor="middle">→ Folie 7</text>
+<rect x="40" y="464" width="300" height="96" rx="10" fill="#FFFFFF" stroke="#5B7080" stroke-width="2"/>
+<text x="190" y="498" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">Repertory Grid</text>
+<text x="190" y="522" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#4A555C" text-anchor="middle">Triadenvergleich mit Wettbewerbern</text>
+<text x="190" y="545" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#5B7080" text-anchor="middle">→ Folie 6</text>
+<rect x="1060" y="180" width="300" height="96" rx="10" fill="#FFFFFF" stroke="#B3161D" stroke-width="2"/>
+<text x="1210" y="214" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">Analogiemethoden</text>
+<text x="1210" y="238" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#4A555C" text-anchor="middle">Marke als Mensch und als Tier</text>
+<text x="1210" y="261" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#B3161D" text-anchor="middle">→ Folie 8</text>
+<rect x="1060" y="464" width="300" height="96" rx="10" fill="#FFFFFF" stroke="#B3161D" stroke-width="2"/>
+<text x="1210" y="498" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">Kommunikationsanalyse</text>
+<text x="1210" y="522" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#4A555C" text-anchor="middle">Instagram · Facebook · YouTube</text>
+<text x="1210" y="545" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#B3161D" text-anchor="middle">→ Folie 9</text>
+<line x1="340" y1="228" x2="477.0" y2="228.0" stroke="#44525C" stroke-width="2.5"/>
+<polygon points="488,228 477.0,233.5 477.0,222.5" fill="#44525C"/>
+<line x1="340" y1="512" x2="477.0" y2="512.0" stroke="#44525C" stroke-width="2.5"/>
+<polygon points="488,512 477.0,517.5 477.0,506.5" fill="#44525C"/>
+<line x1="1060" y1="228" x2="923.0" y2="228.0" stroke="#44525C" stroke-width="2.5"/>
+<polygon points="912,228 923.0,222.5 923.0,233.5" fill="#44525C"/>
+<line x1="1060" y1="512" x2="923.0" y2="512.0" stroke="#44525C" stroke-width="2.5"/>
+<polygon points="912,512 923.0,506.5 923.0,517.5" fill="#44525C"/>
+<line x1="190" y1="464" x2="190.0" y2="289.0" stroke="#6B7780" stroke-width="2"/>
+<polygon points="190,278 195.5,289.0 184.5,289.0" fill="#6B7780"/>
+<text x="205" y="364" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="start">Attribute sind die</text>
+<text x="205" y="383" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="start">Startpunkte</text>
+<line x1="1210" y1="276" x2="1210.0" y2="451.0" stroke="#6B7780" stroke-width="2"/>
+<polygon points="1210,462 1204.5,451.0 1215.5,451.0" fill="#6B7780"/>
+<text x="1195" y="364" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="end">Tonalität ist der</text>
+<text x="1195" y="383" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="end">Prüfmaßstab</text>
+<line x1="700" y1="660" x2="700.0" y2="637.0" stroke="#44525C" stroke-width="2.5"/>
+<polygon points="700,626 705.5,637.0 694.5,637.0" fill="#44525C"/>
+<rect x="40" y="660" width="1320" height="64" rx="10" fill="#EEF1F3" stroke="#C5CDD3" stroke-width="1.5"/>
+<text x="700" y="699" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="18" fill="#1F2A30" text-anchor="middle"><tspan font-weight="bold">Brand Persona + Limbic Map:</tspan> die Zielgruppe ist der Bezugsrahmen für alle Felder · Folien 4–5</text>
+<text x="40" y="772" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#6B7780" text-anchor="start">Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map), erstellt mit KI-Unterstützung</text>
+<text x="1360" y="772" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#6B7780" text-anchor="end">Methoden: Desk Research + KI-Tools · Prompts im Backup</text>
+</svg>

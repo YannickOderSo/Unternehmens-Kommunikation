@@ -24,6 +24,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 02 | 13.10.2026 | System | Automatischer Hinweis: Dateien nicht committet | – | Commit + Push |
 | 03 | 13.10.2026 | Yannick | Gruppe, Arbeitsplan, KI-Nachweis | – | Arbeitsplan, diese Datei, automatische Protokollierung |
 | 04 | 13.10.2026 | Yannick | Rückfrage erneut stellen; Antworten zu Marke und Arbeitsweise | – | Arbeitsweise festgelegt, Arbeitsplan angepasst |
+| 05 | 13.10.2026 | Yannick | Freigabe: Folie 2 entwerfen | – | Folienentwurf Folie 2 + Grafik |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -85,6 +86,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   `fallstudie-1-brand-persona/arbeitsplan.md`, diese Datei
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 05 – 13.10.2026 – Yannick
+
+> Ja
+
+- **Kontext:** Antwort auf Claudes Frage „Bis dahin kann ich als ersten Schritt Folie 2 „Ausgangslage & Vorgehen“
+  entwerfen, die funktioniert für jede Marke. Soll ich damit anfangen?“
+- **Vorgehen Claude:** Folienentwurf für Folie 2 erstellt (Titel als Kernaussage, Leitfrage, Sprechtext, drei mögliche
+  Rückfragen). Die Grafik (Methoden → Felder des Markensteuerrads) hat Claude per Python-Skript als SVG erzeugt, als PNG
+  gerendert und visuell geprüft. Inhalte aus dem Modellwissen von Claude, ohne Websuche.
+- **Ergebnis:** `fallstudie-1-brand-persona/folienentwuerfe.md`, `fallstudie-1-brand-persona/grafiken/folie-02-vorgehen.svg`
+  (+ `.png`, `.py`); angepasst: `fallstudie-1-brand-persona/README.md`, `CLAUDE.md`, diese Datei
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – Anordnung des Steuerrads mit der Vorlesung abgleichen, Sprechtext stoppen
 
 ---
 
