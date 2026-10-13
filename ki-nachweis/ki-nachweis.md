@@ -28,7 +28,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 06 | 13.10.2026 | Yannick | Noch keine Rollen; PDF mit Aufgaben und Aufteilung für die Gruppe | – | PDF (5 Seiten), Bündel statt Namen |
 | 07 | 13.10.2026 | Yannick | Folienlayout: modern, animiert, interaktiv (+ Antworten auf Rückfrage) | D01 (Workflow) | Web-Präsentation – *in Arbeit* |
 | 08 | 13.10.2026 | System | Leerer Eintrag durch Neustart der Sitzung | – | – |
-| 09 | 13.10.2026 | Yannick | PDF des Profs: Unternehmensliste und Reflexionsvorlage | D02 (Workflow) | Reflexionsvorlage angepasst; Unternehmensvergleich *in Arbeit* |
+| 09 | 13.10.2026 | Yannick | PDF des Profs: Unternehmensliste und Reflexionsvorlage | D02 (Workflow) | Reflexionsvorlage angepasst; Vergleich abgebrochen (siehe 10) |
+| 10 | 13.10.2026 | Yannick | Recherche aller Unternehmen stoppen; HOLY vorgeschlagen | D02 gestoppt | Marke HOLY vermerkt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -162,9 +163,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Bewertungskriterien (Folie 59) zugeordnet; Unternehmensliste in die README übernommen. Websuche getestet und einen
   zweiten Workflow gestartet, der die zehn Marken mit Quellen recherchiert, die Fakten unabhängig gegenprüft und für
   alle drei Fallstudien bewertet (siehe D02).
-- **Ergebnis:** `reflexion-vorlage.md`, `README.md`, `CLAUDE.md`, `unterlagen/…UnternehmenReflektion.pdf`; Vergleich *in Arbeit*
+- **Ergebnis:** `reflexion-vorlage.md`, `README.md`, `CLAUDE.md`, `unterlagen/…UnternehmenReflektion.pdf`; Vergleich abgebrochen (siehe 10)
 - **Unteragenten:** D02
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 10 – 13.10.2026 – Yannick
+
+> Verschwende dein Kontigent nicht für die Recherche von allen Unternehmen. Ich habe meinem Team vorgeschlagen das wir
+> Holy nehmen
+
+- **Vorgehen Claude:** Workflow D02 sofort gestoppt (zu diesem Zeitpunkt liefen erst die Recherchen zu HOLY und air up,
+  keine war fertig; es gibt keine verwertbaren Ergebnisse). Marke HOLY als Vorschlag in README und CLAUDE.md vermerkt.
+- **Ergebnis:** `README.md`, `CLAUDE.md`, diese Datei
+- **Unteragenten:** D02 gestoppt
+- **Prüfung durch die Gruppe:** ☐ offen – Marke HOLY in der Gruppe bestätigen
 
 ---
 
@@ -176,7 +188,7 @@ steht hier mit dem wörtlichen Auftrag.
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 13.10.2026 | 07 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | *läuft* | – |
-| D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | *läuft* | – |
+| D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -221,8 +233,9 @@ steht hier mit dem wörtlichen Auftrag.
 - **Stufen:** Recherche (10 Agenten, je Marke, mit Websuche und Quellenpflicht) → Faktencheck (10 Agenten, je Marke
   unabhängige Gegenprüfung der entscheidungsrelevanten Aussagen und Suche nach übersehenen Risiken) → Vergleich
   (2 Jury-Agenten: Fallstudien-Eignung über alle drei Fallstudien sowie Gruppenpraxis).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+- **Ergebnis:** auf Yannicks Wunsch abgebrochen (Prompt 10). Gestartet waren nur 2 Recherche-Agenten (HOLY, air up), keiner
+  war fertig; es wurden keine Ergebnisse verwendet.
+- **Wie Claude das Ergebnis geprüft hat:** entfällt
 
 ---
 
