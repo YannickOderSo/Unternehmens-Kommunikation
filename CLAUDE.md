@@ -4,6 +4,17 @@ Studentische Gruppenarbeit im Modul Unternehmenskommunikation (Prof. Dr. Daniel 
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deutsch.
 Überblick, Termine und Bewertungskriterien: `README.md`.
 
+## Arbeitsweise (von Yannick festgelegt am 13.10.2026)
+
+- **Schritt für Schritt:** immer nur ein Arbeitspaket bearbeiten, danach Ergebnis zeigen und auf Yannicks Freigabe
+  bzw. das nächste Paket warten.
+- **Ergebnisform:** Ausarbeitung (ausgefüllte Vorlagen aus `methoden.md`, als Dateien im Repo) **plus Folienentwürfe**:
+  pro Folie Titel als Kernaussage, 3–5 Stichpunkte, Visualisierungsidee, Quellen. Die Gruppe überträgt sie in den
+  Folienmaster von Lukas.
+- **Kein Vorlesungsmaterial vorhanden:** Modellbegriffe nach Standardliteratur verwenden und darauf hinweisen, dass die
+  Gruppe sie mit den Vorlesungsfolien abgleichen soll.
+- **Marke:** kommt aus einer Unternehmensliste von Prof. Stenger, die noch aussteht. Erst danach markenbezogen arbeiten.
+
 ## Pflicht: KI-Nachweis führen
 
 Die Gruppe muss jede KI-Nutzung belegen. Bei **jedem** Prompt in diesem Repository:

@@ -23,6 +23,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 01 | 13.10.2026 | Yannick | Vorlesungsfolien 57–60 ohne Text | – | Arbeitsgrundlage Fallstudie 1 |
 | 02 | 13.10.2026 | System | Automatischer Hinweis: Dateien nicht committet | – | Commit + Push |
 | 03 | 13.10.2026 | Yannick | Gruppe, Arbeitsplan, KI-Nachweis | – | Arbeitsplan, diese Datei, automatische Protokollierung |
+| 04 | 13.10.2026 | Yannick | Rückfrage erneut stellen; Antworten zu Marke und Arbeitsweise | – | Arbeitsweise festgelegt, Arbeitsplan angepasst |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -31,7 +32,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 > Bewertungskriterien für die Reflektion · Fallstudie 1: Brand Persona & Markenidentität)
 
 - **Vorgehen Claude:** Rückfrage nach Unternehmen, gewünschtem Ergebnis und Vorarbeit gestellt; Yannick hat sie
-  abgelehnt. Daraufhin eine unternehmensneutrale Arbeitsgrundlage aus den Folien erstellt. Die Fachinhalte (Esch,
+  abgelehnt (versehentlich, siehe 04). Daraufhin eine unternehmensneutrale Arbeitsgrundlage aus den Folien erstellt. Die Fachinhalte (Esch,
   Häusel, Kelly, Gutman / Reynolds & Gutman, Aaker, Kroeber-Riel) stammen aus dem Modellwissen von Claude, **ohne
   Websuche**.
 - **Ergebnis:** `README.md`, `fallstudie-1-brand-persona/README.md`, `methoden.md`, `prompts.md`, `reflexion-vorlage.md`
@@ -64,6 +65,26 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   `fallstudie-1-brand-persona/README.md`, `fallstudie-1-brand-persona/prompts.md`
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen – Rollenverteilung und Termine im Kickoff bestätigen
+
+### 04 – 13.10.2026 – Yannick
+
+> Kannst du die Anfrage erneut schicken? Ich habe sie nur abgelehnt weil ich den Prompt schicken wollte
+
+- **Vorgehen Claude:** Rückfrage mit vier Auswahlfragen erneut gestellt. Yannicks Antworten:
+
+  | Frage | Antwort |
+  |-------|---------|
+  | Für welches Unternehmen bearbeitet ihr die Fallstudie 1? | „Der Prof gibt uns noch eine Liste mit Unternehmen“ |
+  | Bei welchen Arbeitspaketen soll ich mitarbeiten? | Schritt für Schritt |
+  | In welcher Form sollen die Ergebnisse kommen? | Ausarbeitung + Folienentwürfe |
+  | Gibt es Material, das ich berücksichtigen soll? | Nein, von Null |
+
+  Daraufhin Arbeitsweise in `CLAUDE.md` festgehalten und Arbeitsplan an die ausstehende Unternehmensliste angepasst.
+  Erster Eintrag, den der Hook automatisch ins Rohprotokoll geschrieben hat.
+- **Ergebnis:** angepasst: `CLAUDE.md`, `README.md`, `fallstudie-1-brand-persona/README.md`,
+  `fallstudie-1-brand-persona/arbeitsplan.md`, diese Datei
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 

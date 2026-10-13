@@ -2,7 +2,7 @@
 
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Präsentation:** Mo, 26.10.2026 · 15 Minuten + Backup
-**Marke:** _[im Kickoff am Mi 14.10. festlegen]_
+**Marke:** _[aus der Unternehmensliste von Prof. Stenger – Liste steht noch aus]_
 
 ## Rollen
 
@@ -26,7 +26,7 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 
 | Was | Von → an | Bis |
 |-----|----------|-----|
-| Marke + Wettbewerbsset W1–W5 | alle | **Mi 14.10.** (Kickoff) |
+| Marke (aus der Liste des Profs) + Wettbewerbsset W1–W5 | alle | **Mi 14.10.** (Kickoff) bzw. sobald die Liste da ist |
 | Persona-Kurzfassung (Grundlage der simulierten Befragten) | Yannick → Elias | **Fr 16.10.** |
 | Limbic-Map-Ergebnis Persona und Marke | Yannick → Lukas | **Sa 17.10.** |
 | Folienmaster | Lukas → alle | **Mo 19.10.** |
@@ -40,8 +40,8 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 
 | Tag | Yannick | Elias | Lukas | Gemeinsam |
 |-----|---------|-------|-------|-----------|
-| **Di 13.10.** | Arbeitsplan lesen, 2–3 Markenvorschläge | Arbeitsplan lesen, 2–3 Markenvorschläge | Arbeitsplan lesen, 2–3 Markenvorschläge | Gruppe in die Google-Tabelle eintragen (Link Folie 57) |
-| **Mi 14.10.** | Desk Research Markenkompetenz (P1) | Repertory-Grid-Design: Elemente, Triaden; Interviewpartner anfragen | Kanäle sichten, 15–20 Screenshots je Kanal, Kennzahlen notieren | **Kickoff, 30 Min.:** Marke, Wettbewerbsset, Rollen bestätigen |
+| **Di 13.10.** | Arbeitsplan lesen | Arbeitsplan lesen | Arbeitsplan lesen | Gruppe in die Google-Tabelle eintragen (Link Folie 57) |
+| **Mi 14.10.** | Desk Research Markenkompetenz (P1) | Repertory-Grid-Design: Elemente, Triaden; Interviewpartner anfragen | Kanäle sichten, 15–20 Screenshots je Kanal, Kennzahlen notieren | **Kickoff, 30 Min.:** Marke aus der Liste wählen, Wettbewerbsset, Rollen bestätigen |
 | **Do 15.10.** | Daten für die Persona sammeln (P3) | Interviewleitfaden Repertory Grid + Laddering (ca. 10 Min.) | Corporate Design erfassen: Logo, Farben, Typo, Claim | |
 | **Fr 16.10.** | Persona-Steckbrief (P4) → **an Elias** | Simulierte Befragte vorbereiten | Posts codieren (P12) | |
 | **Sa 17.10.** | Limbic Map Persona + Marke (P5) → **an Lukas**; Persona-Bild (P6) | Repertory Grid mit KI (P7, P8) | Engagement-Raten in Sheets, Meta-Werbebibliothek | |
@@ -56,6 +56,10 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | **Mo 26.10.** | | | | **Präsentation** |
 
 Am Wochenende ist die Tageseinteilung flexibel – entscheidend sind die Übergabetermine oben.
+
+**Falls die Unternehmensliste nach Mi 14.10. kommt,** verschiebt sich alles, was die Marke braucht. Ohne Marke
+geht schon: Interviewleitfaden für Repertory Grid und Laddering (Elias), Folienmaster (Lukas),
+Backup-Struktur und Folie 2 „Vorgehen“ (Yannick).
 Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen auf [`methoden.md`](methoden.md).
 
 ## Wann ist ein Arbeitspaket fertig?
@@ -75,7 +79,7 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 
 ## Offene Punkte
 
-- [ ] Marke festlegen (Kickoff Mi 14.10.)
+- [ ] Unternehmensliste von Prof. Stenger abwarten, dann Marke wählen (Claude vergleicht die Kandidaten auf Wunsch)
 - [ ] Gruppe in die Google-Tabelle eintragen
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
 - [ ] Klären: Zählen Rückfragen zu den 15 Minuten?
