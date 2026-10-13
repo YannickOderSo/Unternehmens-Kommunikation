@@ -3,7 +3,7 @@
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
-**Unternehmen:** HOLY (von Yannick vorgeschlagen, Bestätigung durch die Gruppe offen)
+**Unternehmen:** **HOLY** (https://de.holy.com) – von der Gruppe ausgewählt am 13.10.2026
 
 **KI-Nachweis** (alle Prompts und Delegationen an Unteragenten): [`ki-nachweis/ki-nachweis.md`](ki-nachweis/ki-nachweis.md)
 

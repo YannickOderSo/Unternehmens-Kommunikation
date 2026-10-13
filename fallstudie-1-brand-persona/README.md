@@ -2,7 +2,7 @@
 
 **Präsentation:** Mo, 26.10.2026 · 15 Minuten + Backup
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
-**Marke:** _[aus der Unternehmensliste von Prof. Stenger – Liste steht noch aus]_
+**Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026
 
 > Erarbeiten Sie eine **Brand Persona** und **Markenidentität** für Ihre Unternehmensmarke anhand des
 > **Markensteuerrads nach Esch**. Nutzen Sie hierfür insbesondere Desk Research und KI-Tools als Methoden.

@@ -17,8 +17,8 @@ Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deu
 - **Rollen noch nicht vergeben:** Arbeit ist in Bündel A/B/C aufgeteilt, die Gruppe wählt selbst (siehe
   `fallstudie-1-brand-persona/arbeitsplan.md`). Keine Namen zuordnen, bis Yannick die Verteilung mitteilt.
 - **Marke:** wird aus der Liste von Prof. Stenger gewählt (10 Marken, siehe `README.md`); die Wahl gilt für alle drei
-  Fallstudien. Stand 13.10.2026: Yannick hat der Gruppe **HOLY** vorgeschlagen, Bestätigung offen.
-  Keine Vergleichsrecherche aller Marken (Yannick: Kontingent sparen).
+  Fallstudien. **Gewählt: HOLY** (13.10.2026). Recherche-Dossier: `fallstudie-1-brand-persona/recherche/`.
+  Fakten über HOLY nur mit Quelle und Faktenstatus aus dem Dossier verwenden.
 
 ## Pflicht: KI-Nachweis führen
 

@@ -32,6 +32,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 10 | 13.10.2026 | Yannick | Recherche aller Unternehmen stoppen; HOLY vorgeschlagen | D02 gestoppt | Marke HOLY vermerkt |
 | 11 | 13.10.2026 | System | Nutzungslimit erreicht, Workflow D01 unterbrochen; Sitzung dreimal neu gestartet | – | – |
 | 12 | 13.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D01 fortgesetzt | Präsentation *in Arbeit* |
+| 13 | 13.10.2026 | Yannick | HOLY gewählt; gegengeprüfte Recherche für das Team-Meeting | D03 (Workflow) | Dossier *in Arbeit* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -203,6 +204,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 13 – 13.10.2026 – Yannick
+
+> Holy wurde ausgewählt  als bereite für ein morgiges Team Meeting eine Recherche vor die von mehreren Agenten gegen
+> geprüft ist mit Daten der firma angepasst an unsere Aufgabe
+
+- **Vorgehen Claude:** HOLY als gewählte Marke in README, Arbeitsplan und CLAUDE.md eingetragen. Workflow D03 gestartet:
+  sechs Recherche-Bereiche, zugeschnitten auf die Fallstudien (Unternehmen & Markenkompetenz · Produkte, Preise,
+  Inhaltsstoffe & Markenattribute · Zielgruppe & Persona-Datenbasis · Wettbewerb & Marktumfeld · Kommunikation &
+  Markenbild · Customer Journey, Touchpoints & Risiken), jeder Bereich von zwei unabhängigen Prüf-Agenten gegengeprüft
+  (Primärquellen; Gegenrecherche & Aktualität), danach Dossier mit Faktenstatus (✔ gesichert, ✎ korrigiert, ~ unsicher,
+  ✗ verworfen), Schlussprüfung und Korrektur. Daten der Firma bevorzugt (Website, Impressum, Register, Pressemitteilungen,
+  Gründerinterviews, Social-Media-Profile).
+- **Ergebnis:** *in Arbeit* – Ordner `fallstudie-1-brand-persona/recherche/`; angepasst: `README.md` (beide),
+  `arbeitsplan.md`, `CLAUDE.md`, diese Datei
+- **Unteragenten:** D03
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -214,6 +232,7 @@ steht hier mit dem wörtlichen Auftrag.
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | unterbrochen (Nutzungslimit), fortgesetzt 21:02 Uhr – *läuft* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
+| D03 | 13.10.2026 | 13 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -261,6 +280,18 @@ steht hier mit dem wörtlichen Auftrag.
 - **Ergebnis:** auf Yannicks Wunsch abgebrochen (Prompt 10). Gestartet waren nur 2 Recherche-Agenten (HOLY, air up), keiner
   war fertig; es wurden keine Ergebnisse verwendet.
 - **Wie Claude das Ergebnis geprüft hat:** entfällt
+
+### D03 – 13.10.2026 – ausgelöst durch Prompt 13
+
+- **Art:** Workflow „holy-recherche“.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-13_holy-recherche.js`](workflows/2026-10-13_holy-recherche.js)
+  und automatisch im Rohprotokoll (Eintrag `"art": "workflow"`).
+- **Stufen:** Recherche (6 Agenten, je Bereich, mit Websuche, Quellenpflicht, Daten der Firma bevorzugt) →
+  Gegenprüfung (12 Agenten: je Bereich eine Primärquellen-Prüfung und eine Gegenrecherche zu Aktualität und Widersprüchen)
+  → Dossier (1 Agent: Markdown, HTML, PDF mit Faktenstatus) → Schlussprüfung (1 Agent, inkl. eigener Stichprobe der
+  wichtigsten Zahlen) → Korrektur (1 Agent).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
 
 ---
 

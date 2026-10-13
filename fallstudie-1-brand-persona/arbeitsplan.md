@@ -2,7 +2,7 @@
 
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Präsentation:** Mo, 26.10.2026 · 15 Minuten + Backup
-**Marke:** _[aus der Unternehmensliste von Prof. Stenger – Liste steht noch aus]_
+**Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026
 
 **Für die Gruppe als PDF:** [`Fallstudie-1_Aufgaben-und-Aufteilung.pdf`](Fallstudie-1_Aufgaben-und-Aufteilung.pdf)
 (erzeugt aus [`aufgabenuebersicht.html`](aufgabenuebersicht.html))
@@ -87,7 +87,7 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 
 ## Offene Punkte
 
-- [ ] Unternehmensliste von Prof. Stenger abwarten, dann Marke wählen (Claude vergleicht die Kandidaten auf Wunsch)
+- [x] Marke gewählt: HOLY (13.10.2026) – Recherche-Dossier für das Kickoff in [`recherche/`](recherche/)
 - [ ] Gruppe in die Google-Tabelle eintragen
 - [ ] Jede Person: Bündel bis Mi 14.10. im Gruppenchat wählen
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
