@@ -3,7 +3,7 @@
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
-**Unternehmen:** _[aus der Unternehmensliste von Prof. Stenger – Liste steht noch aus]_
+**Unternehmen:** _[noch nicht gewählt – Auswahl siehe unten]_
 
 **KI-Nachweis** (alle Prompts und Delegationen an Unteragenten): [`ki-nachweis/ki-nachweis.md`](ki-nachweis/ki-nachweis.md)
 
@@ -17,6 +17,24 @@ Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiser
 
 - Gruppen zu 3 oder 4 Personen
 - Pro Fallstudie eine **15-minütige Präsentation** zum Thema, angewendet auf das eigene Unternehmen
+
+## Unternehmen zur Auswahl
+
+Liste von Prof. Stenger (13.10.2026, [`unterlagen/`](unterlagen/Vorlesung_Unternehmenskommunikation_2026_UnternehmenReflektion.pdf)).
+Die gewählte Marke gilt für alle drei Fallstudien.
+
+| Marke | Produktbereich | Website |
+|-------|----------------|---------|
+| HOLY | Energy- und Hydration-Drinks | https://de.holy.com |
+| air up | Trinkflaschen mit Duft-Pods | https://shop.air-up.com/de/de |
+| waterdrop | Microdrinks und Trinkflaschen | https://www.waterdrop.de |
+| nucao | Schokolade und Schokosnacks | https://www.the-nu-company.com |
+| SNOCKS | Socken und Unterwäsche | https://snocks.com |
+| GOT BAG | Rucksäcke und Taschen | https://got-bag.com |
+| Oatsome | Smoothie Bowls und Frühstücksprodukte | https://www.oatsome.de |
+| 3Bears | Porridge und Overnight Oats | https://3bears.de |
+| everdrop | Wasch- und Reinigungsprodukte | https://www.everdrop.de |
+| koawach | Koffein-Kakao | https://www.koawach.de |
 
 ## Bewertung
 
@@ -39,4 +57,4 @@ Skala je Kriterium: Sehr gut 9–10 · Angemessen 6–8 · Nicht ausreichend 0�
 
 Hinweis: Auf Folie 58 hat „Präsentation“ 30 %, die beiden Kriterien darunter ergeben aber 15 % – beim Prof klären.
 
-Vorlage für die Einzelreflexion: [`reflexion-vorlage.md`](reflexion-vorlage.md)
+Vorlage für die Einzelreflexion (offizielle Fragen, max. 500 Wörter pro Fallstudie): [`reflexion-vorlage.md`](reflexion-vorlage.md)

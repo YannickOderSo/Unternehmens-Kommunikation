@@ -16,7 +16,8 @@ Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deu
   Gruppe sie mit den Vorlesungsfolien abgleichen soll.
 - **Rollen noch nicht vergeben:** Arbeit ist in Bündel A/B/C aufgeteilt, die Gruppe wählt selbst (siehe
   `fallstudie-1-brand-persona/arbeitsplan.md`). Keine Namen zuordnen, bis Yannick die Verteilung mitteilt.
-- **Marke:** kommt aus einer Unternehmensliste von Prof. Stenger, die noch aussteht. Erst danach markenbezogen arbeiten.
+- **Marke:** wird aus der Liste von Prof. Stenger gewählt (10 Marken, siehe `README.md`); die Wahl gilt für alle drei
+  Fallstudien. Bis Yannick die Wahl mitteilt, nicht markenbezogen arbeiten.
 
 ## Pflicht: KI-Nachweis führen
 

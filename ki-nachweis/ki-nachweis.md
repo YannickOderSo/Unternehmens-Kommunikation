@@ -28,6 +28,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 06 | 13.10.2026 | Yannick | Noch keine Rollen; PDF mit Aufgaben und Aufteilung für die Gruppe | – | PDF (5 Seiten), Bündel statt Namen |
 | 07 | 13.10.2026 | Yannick | Folienlayout: modern, animiert, interaktiv (+ Antworten auf Rückfrage) | D01 (Workflow) | Web-Präsentation – *in Arbeit* |
 | 08 | 13.10.2026 | System | Leerer Eintrag durch Neustart der Sitzung | – | – |
+| 09 | 13.10.2026 | Yannick | PDF des Profs: Unternehmensliste und Reflexionsvorlage | D02 (Workflow) | Reflexionsvorlage angepasst; Unternehmensvergleich *in Arbeit* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -149,6 +150,22 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Herkunft:** Die Sitzung wurde technisch neu gestartet; dabei hat die Protokollierung einen leeren Prompt erfasst.
   Kein Inhalt, keine Aktion.
 
+### 09 – 13.10.2026 – Yannick
+
+> @"/root/.claude/uploads/…/60f809f5-Vorlesung_Unternehmenskommunikation_2026_UnternehmenReflektion.pdf" Er hat die
+> Selbstreflexionsliste und die auswahlmöglichkeit an Unternehmen geliefert
+
+- **Anhang:** PDF von Prof. Stenger (2 Seiten): Seite 1 „Unternehmen zur Auswahl für Fallstudien“ (10 Marken: HOLY,
+  air up, waterdrop, nucao, SNOCKS, GOT BAG, Oatsome, 3Bears, everdrop, koawach), Seite 2 „Selbstreflektion – Vorlage zur
+  Einreichung“ (6 Fragen, max. 500 Wörter pro Fallstudie). Abgelegt unter `unterlagen/`.
+- **Vorgehen Claude:** PDF ausgelesen; Reflexionsvorlage auf die offiziellen Fragen umgestellt und den
+  Bewertungskriterien (Folie 59) zugeordnet; Unternehmensliste in die README übernommen. Websuche getestet und einen
+  zweiten Workflow gestartet, der die zehn Marken mit Quellen recherchiert, die Fakten unabhängig gegenprüft und für
+  alle drei Fallstudien bewertet (siehe D02).
+- **Ergebnis:** `reflexion-vorlage.md`, `README.md`, `CLAUDE.md`, `unterlagen/…UnternehmenReflektion.pdf`; Vergleich *in Arbeit*
+- **Unteragenten:** D02
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -159,6 +176,7 @@ steht hier mit dem wörtlichen Auftrag.
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 13.10.2026 | 07 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | *läuft* | – |
+| D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -192,6 +210,17 @@ steht hier mit dem wörtlichen Auftrag.
 - **Vorgaben an alle Unteragenten:** keine erfundenen Fakten über reale Marken (Platzhalter, Beispieldaten sichtbar
   gekennzeichnet), alles offline lauffähig, fremde Schriften/Bibliotheken mit Lizenz melden, Unsicherheiten bei
   Modellinhalten kennzeichnen, KI-Nachweis und Git nicht selbst anfassen.
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+
+### D02 – 13.10.2026 – ausgelöst durch Prompt 09
+
+- **Art:** Workflow „unternehmensvergleich“.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-13_unternehmensvergleich.js`](workflows/2026-10-13_unternehmensvergleich.js)
+  und automatisch im Rohprotokoll (Eintrag `"art": "workflow"`).
+- **Stufen:** Recherche (10 Agenten, je Marke, mit Websuche und Quellenpflicht) → Faktencheck (10 Agenten, je Marke
+  unabhängige Gegenprüfung der entscheidungsrelevanten Aussagen und Suche nach übersehenen Risiken) → Vergleich
+  (2 Jury-Agenten: Fallstudien-Eignung über alle drei Fallstudien sowie Gruppenpraxis).
 - **Ergebnis:** *läuft*
 - **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
 
