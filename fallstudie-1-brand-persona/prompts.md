@@ -1,7 +1,7 @@
 # Prompt-Bibliothek & Prompt-Log – Fallstudie 1
 
 Die Aufgabe verlangt ausdrücklich: **Prompts dokumentieren und Vorgehen begründen (Backup).**
-Diese Datei hat drei Teile: (A) Prompt-Bibliothek zum Kopieren · (B) Prompt-Log zum Ausfüllen · (C) Textbaustein für die Begründung.
+Diese Datei hat drei Teile: (A) Prompt-Bibliothek zum Kopieren · (B) Verweis auf den KI-Nachweis · (C) Textbaustein für die Begründung.
 
 Platzhalter: `[MARKE]`, `[URL]`, `[BRANCHE]`, `[KATEGORIE]`, `[W1]`–`[W5]` (Wettbewerber), `[PERSONA]` (Kurzfassung der Persona).
 
@@ -242,18 +242,12 @@ Nenne die 5 größten Schwächen mit konkreter Verbesserung und 5 Rückfragen, d
 
 ---
 
-## B. Prompt-Log (für das Backup)
+## B. Prompt-Log → KI-Nachweis
 
-Jeder Prompt, dessen Ergebnis in die Präsentation einfließt, bekommt eine Zeile. Den vollständigen Chatverlauf
-als Link oder PDF ablegen und in der Spalte „Prompt“ verweisen.
-
-| ID | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Folie |
-|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|-------|
-| 01 | | | | | | | | |
-| 02 | | | | | | | | |
-
-**Spalte „Prüfung / Anpassung“** ist die wichtigste: Was habt ihr kontrolliert (Quelle geöffnet, mit echtem Interview
-verglichen, nachgerechnet), was habt ihr verworfen oder geändert und warum?
+Das Prompt-Log der Gruppe steht zentral in [`ki-nachweis/ki-nachweis.md`](../ki-nachweis/ki-nachweis.md):
+Abschnitt 1 enthält die Prompts an Claude Code, Abschnitt 2 die Delegationen an Unteragenten, Abschnitt 3 die Prompts
+aus anderen Tools (ChatGPT, Perplexity, Bildgeneratoren …). Wer einen Prompt aus dieser Bibliothek nutzt, trägt ihn
+dort mit P-Nummer ein.
 
 ---
 

@@ -1,6 +1,7 @@
 # Fallstudie 1: Brand Persona & Markenidentität
 
 **Präsentation:** Mo, 26.10.2026 · 15 Minuten + Backup
+**Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Marke:** _[noch festlegen]_
 
 > Erarbeiten Sie eine **Brand Persona** und **Markenidentität** für Ihre Unternehmensmarke anhand des
@@ -52,50 +53,32 @@ das *Fremdbild* der Zielgruppe. Diesen Unterschied kurz benennen und beide Sicht
 
 ## Folienplan (15 Minuten)
 
-| # | Folie | Kerninhalt | Zeit |
-|---|-------|------------|------|
-| 1 | Titel | Marke, Gruppe, Datum | 0:15 |
-| 2 | Ausgangslage & Vorgehen | Fragestellung; Übersichtsgrafik: Methoden → Felder des Markensteuerrads | 1:00 |
-| 3 | Markenkompetenz | Wer ist die Marke? Herkunft, Meilensteine (Timeline), Marktrolle | 1:15 |
-| 4 | Brand Persona | Steckbrief mit Bild: Geografie, Soziodemografie, Kaufverhalten, Mediennutzung, Psychografie | 2:00 |
-| 5 | Limbic Map | Persona und Marke auf der Map, Limbic Type, Folgen für die Kommunikation | 1:15 |
-| 6 | Repertory Grid | Vorgehen in einem Satz, Polaritätenprofil (Marke vs. Wettbewerb vs. Ideal) → Markenattribute | 2:00 |
-| 7 | Laddering | Hierarchical Value Map → Markennutzen (funktional / psychosozial) | 1:45 |
-| 8 | Analogien | Marke als Mensch und Tier → Persönlichkeit, Emotionen → Markentonalität | 1:30 |
-| 9 | Kommunikationsanalyse | Kanäle im Überblick, Corporate Design, Schlüsselbilder, Bildwelt; Fit zur Tonalität | 2:00 |
-| 10 | Markensteuerrad | Synthese, je Stichwort Herkunft aus der Analyse kennzeichnen | 1:15 |
-| 11 | Fazit & Empfehlungen | 3 Kernerkenntnisse, 2–3 konkrete Handlungsempfehlungen | 0:45 |
-| | | | **15:00** |
+| # | Folie | Kerninhalt | Zeit | Spricht |
+|---|-------|------------|------|---------|
+| 1 | Titel | Marke, Gruppe, Datum | 0:15 | Yannick |
+| 2 | Ausgangslage & Vorgehen | Fragestellung; Übersichtsgrafik: Methoden → Felder des Markensteuerrads | 1:00 | Yannick |
+| 3 | Markenkompetenz | Wer ist die Marke? Herkunft, Meilensteine (Timeline), Marktrolle | 1:00 | Yannick |
+| 4 | Brand Persona | Steckbrief mit Bild: Geografie, Soziodemografie, Kaufverhalten, Mediennutzung, Psychografie | 1:45 | Yannick |
+| 5 | Limbic Map | Persona und Marke auf der Map, Limbic Type, Folgen für die Kommunikation | 1:00 | Yannick |
+| 6 | Repertory Grid | Vorgehen in einem Satz, Polaritätenprofil (Marke vs. Wettbewerb vs. Ideal) → Markenattribute | 2:00 | Elias |
+| 7 | Laddering | Hierarchical Value Map → Markennutzen (funktional / psychosozial) | 1:45 | Elias |
+| 8 | Analogien | Marke als Mensch und Tier → Persönlichkeit, Emotionen → Markentonalität | 1:15 | Elias |
+| 9 | Kommunikationsanalyse | Kanäle im Überblick, Corporate Design, Schlüsselbilder, Bildwelt; Fit zur Tonalität | 2:15 | Lukas |
+| 10 | Markensteuerrad | Synthese, je Stichwort Herkunft aus der Analyse kennzeichnen | 1:30 | Lukas |
+| 11 | Fazit & Empfehlungen | 3 Kernerkenntnisse, 2–3 konkrete Handlungsempfehlungen | 1:15 | Lukas |
+| | | | **15:00** | je ca. 5:00 |
 
 Falls Rückfragen in die 15 Minuten fallen: Folien 3 und 8 kürzen.
 
 **Backup** (nach der Abschlussfolie): B1 Methodik & Begründung · B2 Prompt-Log · B3 Datenquellen Persona ·
 B4 Repertory-Grid-Rohdaten · B5 Laddering-Leitern & Implikationsmatrix · B6 Raster Kommunikationsanalyse · B7 Quellenverzeichnis
 
-## Zeitplan bis zur Präsentation
+## Arbeitsplan
 
-| Zeitraum | Schritt |
-|----------|---------|
-| Di 13.10. – Mi 14.10. | Marke festlegen, Wettbewerbsset (5–6 Marken) bestimmen, Desk Research Markenkompetenz, Prompt-Log anlegen |
-| Do 15.10. – Sa 17.10. | Brand Persona + Limbic Map; parallel Screenshots und Kennzahlen für die Kommunikationsanalyse sammeln |
-| So 18.10. – Di 20.10. | Repertory Grid (KI-Simulation + 3–5 echte Kurzinterviews), danach Laddering |
-| Mi 21.10. | Analogien, Kommunikationsanalyse auswerten |
-| Do 22.10. | Markensteuerrad gemeinsam synthetisieren, Empfehlungen ableiten |
-| Fr 23.10. – Sa 24.10. | Folien bauen, Backup zusammenstellen |
-| So 25.10. | Probedurchlauf mit Stoppuhr, Rückfragen üben |
-| **Mo 26.10.** | **Präsentation** |
+Rollen, Übergabetermine und Tagesplan für Yannick, Elias und Lukas: [`arbeitsplan.md`](arbeitsplan.md)
 
-## Aufgabenverteilung (Vorschlag)
-
-| Person | Pakete |
-|--------|--------|
-| A | Markenkompetenz, Brand Persona, Limbic Map |
-| B | Repertory Grid + Laddering (eng verzahnt, daher eine Person) |
-| C | Analogien, Kommunikationsanalyse |
-| D | Markensteuerrad-Synthese, Folienmaster und Design, Backup, Pflege des Prompt-Logs |
-
-Bei 3 Personen übernehmen A–C je einen Teil von D; die Synthese macht ihr ohnehin gemeinsam.
-Alle tragen ihre Prompts **sofort** ins Prompt-Log ein – nachträglich rekonstruieren klappt nie.
+Alle KI-Prompts (an Claude Code, an Unteragenten und in anderen Tools) werden im
+[KI-Nachweis](../ki-nachweis/ki-nachweis.md) dokumentiert.
 
 ## Check vor der Präsentation (entlang der Bewertungskriterien)
 
