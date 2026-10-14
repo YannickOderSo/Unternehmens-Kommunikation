@@ -50,6 +50,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 28 | 14.10.2026 | System | Benachrichtigung: Workflow D05 fertig | – | 15 Punkte umgesetzt (siehe 25, D05) |
 | 29 | 14.10.2026 | Yannick | Einteilung der Bündel für Fallstudie 1 | – | Namen in 6 Dateien eingetragen, PDFs neu erzeugt |
 | 30 | 14.10.2026 | Yannick | Frage: Was soll ich als erstes machen? | – | Antwort im Chat (keine Dateien geändert) |
+| 31 | 14.10.2026 | Yannick | Rückmeldung: Organisatorisches geklärt; Lukas plant echte Interviews | – | Interviews in der Aufgabenbeschreibung als geplant eingetragen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -465,6 +466,26 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Fr 16.10. braucht; danach Limbic Map (A3, Sa 17.10.), Markenkompetenz (A1, Di 20.10.), A4, C2 (Do 22.10.), A5
   (Sa 24.10.). Persona-Entwurf aus dem Dossier angeboten, noch nicht erstellt.
 - **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 31 – 14.10.2026 – Yannick
+
+> 1. Ist geklärt
+> 2. Lukas Plant echte interviews
+
+- **Vorgehen Claude:** Antwort auf die Schritte aus 30. Die Entscheidung zu den Interviews (offen seit 22) in
+  `aufgaben-im-detail.html` und dem PDF eingetragen: Die echten Kurzinterviews sind nicht mehr „optional“, sondern
+  von Lukas geplant.
+  - Termine aus dem Arbeitsplan: Leitfaden Do 15.10., Interviews bis So 18.10.
+  - Empfehlung von Claude: dieselben Triaden und Laddering-Fragen wie bei P7/P9, Ergebnisse getrennt nach „echt“ und
+    „KI-simuliert“ zählen.
+  - Datenschutzhinweis nach KI-Richtlinie der HSKL, Nr. 6.
+
+  PDF neu erzeugt (8 Seiten, Seitenfolge geprüft). Wettbewerbsset und Persona-Richtung wurden nicht ausdrücklich
+  bestätigt; Claude fragt nach.
+- **Ergebnis:** [`fallstudie-1-brand-persona/aufgaben-im-detail.html`](../fallstudie-1-brand-persona/aufgaben-im-detail.html),
+  [`Fallstudie-1_Aufgaben-im-Detail.pdf`](../fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-im-Detail.pdf)
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
