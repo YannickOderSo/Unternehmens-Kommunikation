@@ -39,7 +39,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 17 | 14.10.2026 | System | Nutzungslimit erneut erreicht: D03 unterbrochen; Sitzung neu gestartet | – | – |
 | 18 | 14.10.2026 | Yannick | „Weiter“ | D03 fortgesetzt | Dossier *in Arbeit* |
 | 19 | 14.10.2026 | System | Nutzungslimit erneut erreicht: nur „Dossier schreiben“ in D03 abgebrochen | – | – |
-| 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier *in Arbeit* |
+| 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier fertig (34 Seiten PDF) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -292,8 +292,10 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 > Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache
 > dort weiter, wo du aufgehört hast.
 
-- **Vorgehen Claude:** D03 unverändert fortgesetzt (12:52 UTC); es fehlen Dossier, Schlussprüfung und Korrektur.
-- **Ergebnis:** *in Arbeit*
+- **Vorgehen Claude:** D03 unverändert fortgesetzt (12:52 UTC); Dossier, Schlussprüfung und Korrektur liefen durch.
+  Danach hat Claude das Ergebnis selbst geprüft (siehe D03).
+- **Ergebnis:** `fallstudie-1-brand-persona/recherche/HOLY_Recherche-Dossier_Teamkickoff.pdf` (34 Seiten),
+  `holy-recherche.md` (Arbeitsfassung), `holy-dossier.html` (Druckvorlage)
 - **Unteragenten:** D03 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -309,7 +311,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); fertig: 3 Gestaltungsrichtungen, Jury; Rest an Account 2 übergeben (Ü01) | – |
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
-| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | dreimal unterbrochen (Nutzungslimit), fortgesetzt 14.10. 00:02, 07:57 und 12:52 UTC – *läuft* | – |
+| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -377,8 +379,18 @@ steht hier mit dem wörtlichen Auftrag.
   Gegenprüfung (12 Agenten: je Bereich eine Primärquellen-Prüfung und eine Gegenrecherche zu Aktualität und Widersprüchen)
   → Dossier (1 Agent: Markdown, HTML, PDF mit Faktenstatus) → Schlussprüfung (1 Agent, inkl. eigener Stichprobe der
   wichtigsten Zahlen) → Korrektur (1 Agent).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+- **Verlauf:** dreimal durch das Nutzungslimit unterbrochen und jeweils fortgesetzt (Einträge 14–20); fertige Agenten
+  wurden aus dem Zwischenspeicher übernommen. Insgesamt 21 Unteragenten.
+- **Ergebnis:** Dossier mit 155 Befunden zu sechs Bereichen, davon 98 ✔ gesichert, 42 ✎ korrigiert, 4 ~ unsicher,
+  11 Hypothesen; 32 Einzelaussagen verworfen; 160 Quellen. Die Schlussprüfung fand 23 Punkte (1 hoch: Bündelzuordnung
+  wich vom Arbeitsplan ab; 8 mittel; 14 niedrig), die Korrektur setzte 24 Änderungen um. Nicht umgesetzt (mit Grund im
+  Dossier vermerkt): Daten, die nur mit Login oder Hochschulzugang erreichbar sind (Instagram-Postliste, Facebook-Inhalte,
+  Meta-Werbebibliothek, VuMA/AWA über Statista) – Erhebungsaufträge für die Gruppe.
+- **Wie Claude das Ergebnis geprüft hat:** Zusammenfassungen aller Prüf-Agenten gelesen; PDF komplett als Seitenübersicht
+  gerendert und angesehen (Layout ohne Überlauf, keine leeren Seiten); „Auf einen Blick“ gelesen; zwei Kernaussagen
+  selbst an der Primärquelle nachgeprüft (14.10.2026): Impressum de.holy.com/pages/impressum (HOLY Softdrinks GmbH,
+  AG Charlottenburg HRB 222782 B, Geschäftsführer Naß, Horsch, Jost) und AGB de.holy.com/pages/agb § 4 (Energy-Produkte
+  mit Koffein nur ab 18) – beide bestätigt.
 
 ---
 
