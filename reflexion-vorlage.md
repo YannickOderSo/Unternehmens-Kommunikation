@@ -40,5 +40,7 @@ Bewertung (Folie 59): **15 %**, je 5 % für *Tiefe der Reflexion*, *Kritische Se
 Satz ein, wo ihr das Gelernte in einer Praxissituation (Praktikum, Job, eigenes Projekt) oder in der nächsten Fallstudie
 einsetzen wollt.
 
-**KI-Nutzung:** Wenn ihr KI beim Schreiben der Reflexion nutzt, gehört das in den KI-Nachweis – und die Reflexion muss
-trotzdem eure eigenen Erfahrungen wiedergeben.
+**KI-Nutzung:** Wenn ihr KI beim Schreiben der Reflexion nutzt, gehört das als Nachtrag in eure persönliche KI-Liste
+([`ki-nachweis/vorlage-ki-nutzung.md`](ki-nachweis/vorlage-ki-nutzung.md)) und zusätzlich in einem Satz unter die
+Reflexion (Tool, wofür), weil sie einzeln abgegeben wird. Die Reflexion muss trotzdem eure eigenen Erfahrungen
+wiedergeben.

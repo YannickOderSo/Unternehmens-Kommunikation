@@ -1,14 +1,15 @@
 # KI-Nutzung – persönliche Liste · Fallstudie 1
 
-**Name:** _…_
-**Fallstudie:** 1 Brand Persona & Markenidentität (Präsentation Mo, 26.10.2026). Für Fallstudie 2 und 3 gibt es je eine
-neue Liste.
+- **Name:** _…_
+- **Fallstudie:** 1 Brand Persona & Markenidentität (Präsentation Mo, 26.10.2026). Für Fallstudie 2 und 3 gibt es je
+  eine neue Liste; die Nummern laufen dort einfach weiter.
 
 | Wann | Was |
 |------|-----|
 | Di, 20.10. | Zwischenstand zum Gruppentreffen mitbringen |
 | **Fr, 23.10. abends** | Liste an Yannick schicken |
 | bis So, 25.10. | Nachträge schicken (z. B. kritische Prüfung am 24.10., Generalprobe), mit den nächsten Nummern |
+| mit der Einzelreflexion | Nachtrag zur KI-Nutzung bei der Reflexion (Abgabetermin folgt) |
 
 **Bitte nicht selbst in `ki-nachweis.md` eintragen.** Yannick überträgt alle Listen in die gemeinsame KI-Liste
 (`ki-nachweis/ki-nachweis.md`, Abschnitt 3).
@@ -46,16 +47,19 @@ HSKL (16.09.2024).
 ## Vor jedem Upload: Datenschutz und Urheberrecht
 
 Unser GitHub-Repository ist **öffentlich**. Und laut KI-Richtlinie der HSKL (Nr. 6) dürfen personenbezogene Daten
-nur mit ausdrücklicher Genehmigung der Betroffenen in KI-Tools außerhalb der Hochschule.
+nur mit ausdrücklicher Genehmigung der Betroffenen in KI-Tools außerhalb der Hochschule bzw. der
+Rechenzentrumsallianz Rheinland-Pfalz. Nach Nr. 4 sollen Studierende vorrangig die KI-Systeme nutzen, die HSKL und
+VCRP zentral bereitstellen; welche das für uns sind, klären wir noch.
 
-- **Keine personenbezogenen Daten** in ChatGPT & Co.: keine Namen, Kontaktdaten, Fotos, Sprachaufnahmen oder
-  namentlichen Zitate von Interviewpartner:innen oder Kommentierenden. Notizen vorher anonymisieren
-  (z. B. „Befragte 1, 22 J., Studentin“).
+- **Keine personenbezogenen Daten** in ChatGPT & Co. ohne ausdrückliche Einwilligung der Betroffenen: keine Namen,
+  Kontaktdaten, Fotos, Sprachaufnahmen oder namentlichen Zitate von Interviewpartner:innen oder Kommentierenden.
+  Notizen vorher anonymisieren (z. B. „Befragte 1, 22 J., Studentin“).
 - **Screenshots von Posts:** Nutzernamen, Profilbilder und Kommentare privater Personen vor dem Hochladen
   abschneiden oder schwärzen.
 - **Interviews** nur mit ausdrücklicher Einwilligung der Befragten per KI transkribieren.
-- **Geschützte Texte** (Richtlinie Nr. 7): keine kompletten Statista- oder VuMA-Berichte, Buchkapitel oder
-  Vorlesungsfolien in externe KI-Tools laden. Eigene Notizen und Zusammenfassungen sind in Ordnung.
+- **Geschützte Texte:** Die KI-Richtlinie (Nr. 7) verlangt, bei der Eingabe geschützter Texte das Urheberrecht zu
+  beachten. Unsere Regel deshalb: keine kompletten Statista- oder VuMA-Berichte, Buchkapitel oder Vorlesungsfolien in
+  externe KI-Tools laden. Eigene Notizen und Zusammenfassungen sind in Ordnung.
 - **KI-Bilder:** nur fiktive Personen (z. B. Persona-Porträt), keine realen Personen, keine nachgebauten
   HOLY-Produkte oder -Logos.
 - Wo es geht, in den Einstellungen des Tools die Nutzung deiner Chats für das Training ausschalten.
@@ -109,7 +113,7 @@ Prompt hier einfügen – genau so, wie er abgeschickt wurde. Weitere Prompts da
 ```
 
 - **Folgeprompts / neu generiert:** _nein / ja: …_
-- **Anhänge:** _keine / Beschreibung_ · **personenbezogene Daten entfernt:** _ja / keine enthalten_
+- **Anhänge:** _keine / Beschreibung_ · **personenbezogene Daten entfernt:** _ja / keine enthalten / Einwilligung liegt vor_
 - **Woher stammt der Inhalt?** _Websuche (Quellen: …) / Modellwissen / nur mein eingefügtes Material / weiß nicht_
 - **Ergebnis:** _was herauskam, 1–3 Sätze_
 - **Prüfung / Anpassung:** _was kontrolliert, übernommen, verworfen oder geändert – und warum_
@@ -144,8 +148,8 @@ Ich lade 15 Screenshots aktueller Beiträge der Marke HOLY auf Instagram hoch. A
 - **Ergebnis:** Tabelle mit Format, Motiv, Farbwelt, Ansprache und Call to Action je Post.
 - **Prüfung / Anpassung:** 5 der 15 Posts selbst codiert und verglichen; bei 2 Posts lag die KI beim Motiv falsch,
   beide korrigiert. Likes und Kommentare selbst abgelesen, nicht von der KI übernommen.
-- **Verwendet in:** Folie 09 (Motiv-Verteilung), Backup B6 · **auf der Folie gekennzeichnet:** ja („KI-gestützte
-  Codierung, von Hand geprüft“)
+- **Verwendet in:** Folie 09 (Motiv-Verteilung), Backup B6 · **auf der Folie gekennzeichnet:** ja („KI-gestützt
+  (ChatGPT), von Hand geprüft“)
 - **Chatverlauf:** `2026-10-17_XX_00_ChatGPT.pdf`
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -161,6 +165,6 @@ Ich lade 15 Screenshots aktueller Beiträge der Marke HOLY auf Instagram hoch. A
 - [ ] Das Beispiel oben ist gelöscht.
 
 **Erklärung:** Ich habe alle KI-Nutzungen für Fallstudie 1 vollständig und wahrheitsgemäß eingetragen, auch
-verworfene Ergebnisse.
+solche, deren Ergebnis ich verworfen habe. Für Nachträge gilt dasselbe.
 
-_Name, Datum_
+_Name, Stand (Datum)_

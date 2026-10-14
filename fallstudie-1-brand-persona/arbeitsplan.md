@@ -42,7 +42,7 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | Markentonalität aus den Analogien | B → C | **Mi 21.10.** |
 | Ergebnisse je Feld des Markensteuerrads (Stichworte + Herkunft) | alle → C | **Do 22.10.** vor dem Termin |
 | Eigene Folien fertig im Master | alle → C | **Fr 23.10.** |
-| Persönliche KI-Liste ([Vorlage](../ki-nachweis/vorlage-ki-nutzung.md)) | alle → Yannick, Übertrag in den KI-Nachweis | **Fr 23.10.** (Nachträge bis So 25.10.) |
+| Persönliche KI-Liste ([Vorlage](../ki-nachweis/vorlage-ki-nutzung.md)) | alle → Yannick, Übertrag in den KI-Nachweis | Zwischenstand **Di 20.10.**, Abgabe **Fr 23.10.** (Nachträge bis So 25.10.) |
 
 ## Tagesplan
 
@@ -59,7 +59,7 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | **Mi 21.10.** | Folien 2–5 im Master | Analogien (P11) → **Tonalität an C** | Fit-Bewertung Markenbild ↔ Tonalität / Persona | |
 | **Do 22.10.** | | | Entwurf Markensteuerrad (P13) vorbereiten | **Synthese, 2 Std.:** Markensteuerrad, Markenkern, Empfehlungen |
 | **Fr 23.10.** | Folien 1–5 final | Folien 6–8 final | Folien 9–11 final | |
-| **Sa 24.10.** | Backup + KI-Nachweis final | Rohdaten ins Backup | Gesamtdeck zusammenführen, kritische Prüfung (P14) | |
+| **Sa 24.10.** | Backup + KI-Listen in den KI-Nachweis übertragen (Nachträge bis So 25.10.) | Rohdaten ins Backup | Gesamtdeck zusammenführen, kritische Prüfung (P14) | |
 | **So 25.10.** | | | | **Generalprobe, 1 Std.:** zweimal mit Stoppuhr, Rückfragen üben |
 | **Mo 26.10.** | | | | **Präsentation** |
 
@@ -74,7 +74,7 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 
 - [ ] Vorlage in `methoden.md` ausgefüllt
 - [ ] Jede Zahl mit Quelle, Daten und Annahmen getrennt gekennzeichnet
-- [ ] Alle verwendeten Prompts im [KI-Nachweis](../ki-nachweis/ki-nachweis.md)
+- [ ] Alle verwendeten Prompts in der persönlichen KI-Liste ([Vorlage](../ki-nachweis/vorlage-ki-nutzung.md)); Claude-Code-Prompts stehen automatisch im [KI-Nachweis](../ki-nachweis/ki-nachweis.md)
 - [ ] Ergebnis auf 1–2 Folien im Master, Kernaussage als Folientitel
 - [ ] Zwei mögliche Rückfragen samt Antwort notiert
 
@@ -84,8 +84,8 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - Wer andere Tools nutzt (ChatGPT, Perplexity, Bildgeneratoren …), trägt den Prompt **sofort** in die persönliche
   Liste nach [`vorlage-ki-nutzung.md`](../ki-nachweis/vorlage-ki-nutzung.md) ein und legt den Chatverlauf als PDF im
   Gruppenordner „KI-Chats“ ab (nicht im Repository, es ist öffentlich). Yannick überträgt alles in Abschnitt 3.
-- Keine personenbezogenen Daten (Interviewpartner:innen, Kommentierende) in externe KI-Tools: KI-Richtlinie der HSKL,
-  Nr. 6 (Hochschulanzeiger Nr. 4/2025).
+- Personenbezogene Daten (Interviewpartner:innen, Kommentierende) nur mit ausdrücklicher Einwilligung der Betroffenen
+  in externe KI-Tools, sonst vorher anonymisieren: KI-Richtlinie der HSKL, Nr. 6 (Hochschulanzeiger Nr. 4/2025).
 - Keine KI-Zahl ohne geöffnete Quelle. Berechnungen (Mittelwerte, Engagement-Raten) in Excel/Sheets, nicht per KI.
 
 ## Offene Punkte
@@ -97,4 +97,7 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - [ ] Klären: Folie 58 nennt für „Präsentation“ 30 %, die beiden Kriterien ergeben aber nur 15 %
 - [ ] Klären: Zählen Rückfragen zu den 15 Minuten?
 - [ ] Bei Prof. Stenger klären: Gelten besondere KI-Vorgaben (erlaubte Tools, Form der Dokumentation,
-  Eigenständigkeitserklärung)? Laut KI-Richtlinie der HSKL (Nr. 8) teilen Prüfende das vor Beginn mit.
+  Eigenständigkeitserklärung)? Laut KI-Richtlinie der HSKL (Nr. 8) sollen Prüfende die Vorgaben der Handreichung
+  „Eigenständigkeitserklärung für Prüfungen“ vor Beginn der Studienarbeit mitteilen. Außerdem: Welche zentral
+  bereitgestellten KI-Systeme (HSKL/VCRP) können wir nutzen (Richtlinie Nr. 4: vorrangig nutzen)? Ggf. bei
+  hochschuldidaktik@hs-kl.de nachfragen.

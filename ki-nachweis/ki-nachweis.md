@@ -44,7 +44,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 22 | 14.10.2026 | Yannick | Frage: Brauchen wir Interviews? | – | Antwort im Chat (keine Dateien geändert) |
 | 23 | 14.10.2026 | Yannick | Klarstellung: drei getrennte Präsentationen; Aufteilung für Präsentation 1 | – | Antwort im Chat (keine Dateien geändert) |
 | 24 | 14.10.2026 | Yannick | Aufgaben der Bündel A/B/C genauer erklären | – | Aufgaben im Detail (HTML + PDF, 8 Seiten) |
-| 25 | 14.10.2026 | Yannick | KI-Nachweis-Datei für die anderen, um ihre KI-Nutzung zu sammeln | D04 (Workflow) | Vorlage `vorlage-ki-nutzung.md` – *Prüfung läuft* |
+| 25 | 14.10.2026 | Yannick | KI-Nachweis-Datei für die anderen, um ihre KI-Nutzung zu sammeln | D04, D05 (Workflows) | Vorlage `vorlage-ki-nutzung.md`, zweifach geprüft; Ablauf in 7 Dateien angeglichen |
 | 26 | 14.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Zwischenstand committet + gepusht |
 
 ### 01 – 13.10.2026 – Yannick
@@ -389,8 +389,16 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Modellwissen, Prüfung und Chatverlauf. Die IDs folgen dem Schema `E-Initialen-Nr`. Ein erstes Beispiel (Analogien
   mit Tiernamen) hat Claude selbst verworfen, weil es die Antworten der Gruppe vorprägen würde (Dossier 6.7), und
   durch ein neutrales Beispiel zur Kommunikationsanalyse ersetzt. Danach drei unabhängige Prüfer per Workflow (D04).
-- **Ergebnis:** [`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md) – *Prüfung läuft*
-- **Unteragenten:** D04
+- **Ergebnis:** [`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md) nach zwei Prüfrunden (D04, D05). Neu darin:
+  - Datenschutz- und Urheberrechtshinweise nach der KI-Richtlinie der HSKL.
+  - Angaben nach der HSKL-Handreichung: Tool, Version, Anbieter, URL, Begründung.
+  - alle Prompts wörtlich, Verlauf als PDF im Gruppenordner (nicht im öffentlichen Repository).
+  - Termine: Zwischenstand Di 20.10., Abgabe Fr 23.10., Nachträge bis So 25.10.
+
+  Derselbe Ablauf steht jetzt auch in `ki-nachweis.md` (Abschnitte 3 und 4, mit 3.1 und Spalte FS), `arbeitsplan.md`,
+  `aufgaben-im-detail.html` und im PDF, `aufgabenuebersicht.html` und im PDF (Aufgaben und Aufteilung), `prompts.md`
+  (Teil B), `reflexion-vorlage.md` sowie im Recherche-Dossier, Kap. 10.2 und 10.3 (md, html, PDF).
+- **Unteragenten:** D04, D05
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 26 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -416,8 +424,8 @@ steht hier mit dem wörtlichen Auftrag.
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
-| D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (5 hoch, 15 mittel, 10 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
-| D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | *läuft* | – |
+| D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
+| D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | 15 offene Punkte (8 mittel/niedrig neue Widersprüche in weiteren Dateien, 1 falsche Zählung in D04); alle umgesetzt | Claude: Zählung nachgerechnet, PDFs neu erzeugt und verglichen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -509,7 +517,7 @@ steht hier mit dem wörtlichen Auftrag.
   - Prüfungsanforderungen, Redlichkeit, Datenschutz: mit Websuche nach KI-Vorgaben der Hochschule Kaiserslautern.
 - **Vorgaben:** jeder Befund mit Quelle (Datei und Abschnitt oder URL mit Abrufdatum) oder als Modellwissen
   gekennzeichnet; nichts erfinden; keine Dateien ändern.
-- **Ergebnis:** 30 Befunde mit Quellen (Zusammenführbarkeit 9, Nutzbarkeit 9, Anforderungen 12; 5 davon „hoch“).
+- **Ergebnis:** 30 Befunde mit Quellen (Zusammenführbarkeit 9, Nutzbarkeit 10, Anforderungen 11; 4 davon „hoch“).
   Die wichtigsten:
   - Abschnitt 3 hatte keinen Platz für wörtliche Prompts.
   - Die 9-spaltige Tabelle war für Nicht-GitHub-Nutzer unpraktisch.
@@ -542,26 +550,40 @@ steht hier mit dem wörtlichen Auftrag.
   und automatisch im Rohprotokoll.
 - **Kurz:** jeden Befund aus D04 prüfen (umgesetzt, falsch umgesetzt, nicht umgesetzt), neue Widersprüche zwischen den
   vier geänderten Dateien suchen, Angaben zu den HSKL-Dokumenten gegen den Originaltext prüfen; jeder Punkt mit Quelle.
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** D04 „weitgehend und sauber umgesetzt“, Markdown-Struktur korrekt, HSKL-Angaben im Kern richtig. 15
+  offene Punkte:
+  - Drei weitere Dokumente nannten noch den alten Ablauf: das Aufgaben-PDF vom 13.10., `prompts.md` Teil B und die
+    Kickoff-Checkliste im Dossier.
+  - Drei HSKL-Stellen waren leicht überzeichnet: Nr. 6 als absolutes Verbot, Nr. 7 als wörtliches Upload-Verbot,
+    Nr. 8 im Indikativ. Nr. 4 („vorrangig zentrale KI-Systeme“) fehlte.
+  - Termine waren uneinheitlich: „vollständig“ am Sa gegenüber Nachträgen bis So; die Frist für den Nachtrag zur
+    Reflexion fehlte.
+  - ID-Schema für Fallstudie 2 und 3 offen; Rest „die Übersicht“ in Abschnitt 3.
+  - Die Befundzählung in D04 war falsch: Claude hatte 5/15/10 statt 4/14/12 angegeben.
+  - Kleinigkeiten in der Vorlage: Zeilenumbruch im Kopf; das Beispiel kennzeichnete ohne Tool.
+- **Wie Claude das Ergebnis geprüft hat:** Zählung aus D04 mit Python nachgerechnet; der Prüfer hatte recht, korrigiert.
+  Alle 15 Punkte umgesetzt. Dossier-PDF neu erzeugt und per Textvergleich mit dem alten geprüft: nur die zwei
+  beabsichtigten Stellen geändert, weiter 34 Seiten. Aufgaben-PDFs neu erzeugt (8 bzw. 5 Seiten; die alte Übersicht
+  nach einem Überlauf auf 6 Seiten gekürzt). Vorlage erneut mit pandoc gerendert: zwei Codeblöcke, Struktur intakt.
 
 ---
 
 ## 3. KI-Nutzung außerhalb von Claude Code
 
 Jede Person führt ihre KI-Nutzung in anderen Tools **sofort** in einer persönlichen Liste nach der Vorlage
-[`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md) und schickt sie an Yannick: Zwischenstand Di 20.10., Abgabe Fr 23.10.,
-Nachträge bis So 25.10. (Fallstudie 1). Yannick überträgt die Einträge hierher: die Übersicht in die Tabelle, die
-Detailblöcke unverändert nach 3.1. Chatverläufe liegen als PDF im Gruppenordner „KI-Chats“, **nicht** im
+[`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md): Zwischenstand zum Treffen am Di 20.10. mitbringen, Abgabe an Yannick
+Fr 23.10., Nachträge bis So 25.10., Nachtrag zur Einzelreflexion mit deren Abgabe (Fallstudie 1). Yannick legt aus
+jedem Detailblock eine Tabellenzeile an und übernimmt die Blöcke unverändert nach 3.1, Überschrift als
+`#### E-EK-01 – TT.MM.JJJJ – Vorname`. Chatverläufe liegen als PDF im Gruppenordner „KI-Chats“, **nicht** im
 Repository, weil es öffentlich ist. Prompt-Vorlagen: [`prompts.md`](../fallstudie-1-brand-persona/prompts.md)
 
 **ID-Schema:** `E-Initialen-Nr` (z. B. `E-EK-01`, `E-LW-01`, `E-YH-01`); die Nummern laufen je Person fortlaufend über
-alle Fallstudien. Grundlage für die Angaben: KI-Richtlinie der HSKL (Präsidium 24.07.2025, Hochschulanzeiger
+alle Fallstudien, die neue Liste für Fallstudie 2 und 3 zählt einfach weiter. Spalte „FS“ = Fallstudie. Grundlage für die Angaben: KI-Richtlinie der HSKL (Präsidium 24.07.2025, Hochschulanzeiger
 Nr. 4/2025) und Handreichung „Eigenständigkeitserklärung für Prüfungen“ der HSKL (16.09.2024).
 
-| ID | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Verwendet in |
-|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|--------------|
-| E-__-01 | | | | | | | | |
+| ID | FS | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Verwendet in |
+|----|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|--------------|
+| E-__-01 | 1 | | | | | | | | |
 
 **Spalte „Prüfung / Anpassung“** ist die wichtigste: Was wurde kontrolliert (Quelle geöffnet, mit echtem Interview
 verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
@@ -569,6 +591,8 @@ verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
 ### 3.1 Einträge im Detail
 
 Detailblöcke aus den persönlichen Listen, unverändert übernommen (Überschrift ergänzt um ID und Person).
+
+**Fallstudie 1**
 
 _noch keine Einträge_
 

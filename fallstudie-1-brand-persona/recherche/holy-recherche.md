@@ -978,8 +978,8 @@ Vorlesungsfolien abzugleichen. Die Prüfungen liefen laut Systemdatum am 14.10.2
   fragt wen bis wann.
 - [ ] **Termine** bestätigt: Persona A → B (Fr 16.10.), Limbic Map A → C (Sa 17.10.), Folienmaster C → alle
   und Attribute B → alle (Mo 19.10.), Zwischenstand (Di 20.10.), Markentonalität aus den Analogien B → C
-  (Mi 21.10.), Synthese (Do 22.10.), eigene Folien fertig im Master alle → C (Fr 23.10.), KI-Nutzung
-  vollständig im KI-Nachweis alle → A (Sa 24.10.), Generalprobe (So 25.10.).
+  (Mi 21.10.), Synthese (Do 22.10.), eigene Folien fertig im Master alle → C (Fr 23.10.), persönliche
+  KI-Liste alle → Yannick (Fr 23.10., Nachträge bis So 25.10.), Generalprobe (So 25.10.).
 - [ ] **Umgang mit dem Koffein- und Jugendthema** in der Präsentation: offen als Spannungsfeld ansprechen (Kap. 8)?
 - [ ] **Nachfrage bei HOLY?** Pressekontakt laut Impressum pr@holy.com, z. B. zu Verkaufsstellen und Zielgruppe
   [2].
@@ -992,8 +992,8 @@ Vorlesungsfolien abzugleichen. Die Prüfungen liefen laut Systemdatum am 14.10.2
 | **B** – Befragung & Auswertung | Repertory-Grid-Design mit beschlossenem Set; Triaden und Interviewleitfaden (Konstrukte aus 3.6 nur als Rückfallebene); Laddering-Startpunkte aus 3.7 vorbereiten; Analogie-Leitfaden (Marke als Mensch/Tier, 6.7) vorbereiten, Tonalität bis Mi 21.10. an C; Interviewpartner anfragen | Regalpreise HOLY, Red Bull, Monster und Rossmann-Listung (Foto mit Datum im Laden) |
 | **C** – Auftritt, Design & Synthese | je Pflichtkanal 15–20 Posts erfassen (Instagram zuerst, Facebook-Inhalte sind bisher unbelegt); Corporate-Design-Tabelle (6.3) mit Screenshots belegen; Meta-Werbebibliothek; Folienmaster beginnen (Mo 19.10.) | Meta-Anzeigen, Creator-Zahlen, TV-Spot 2025, Schriften; Stand Zuckersteuer und Altersgrenze kurz vor dem 26.10. |
 
-Alle: KI-Nutzung außerhalb dieser Sitzung sofort im KI-Nachweis eintragen (`ki-nachweis/ki-nachweis.md`,
-Abschnitt 3).
+Alle: KI-Nutzung außerhalb dieser Sitzung sofort in die persönliche KI-Liste eintragen
+(`ki-nachweis/vorlage-ki-nutzung.md`); Yannick überträgt sie in `ki-nachweis/ki-nachweis.md`, Abschnitt 3.
 
 # Anhang A – Faktencheck-Übersicht
 
