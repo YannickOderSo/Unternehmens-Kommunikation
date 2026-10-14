@@ -36,6 +36,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 14 | 13./14.10.2026 | System | Nutzungslimit erneut erreicht: D01 und D03 unterbrochen; Sitzung neu gestartet | – | – |
 | 15 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier *in Arbeit* |
 | 16 | 14.10.2026 | Yannick | Übergabe-Prompt für einen zweiten Account | Ü01 (Übergabe) | Prompt, JURY.md, Entwürfe auf GitHub |
+| 17 | 14.10.2026 | System | Nutzungslimit erneut erreicht: D03 unterbrochen; Sitzung neu gestartet | – | – |
+| 18 | 14.10.2026 | Yannick | „Weiter“ | D03 fortgesetzt | Dossier *in Arbeit* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -259,6 +261,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine (Übergabe an zweiten Account: Ü01)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 17 – 14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: D03 „failed: Dossier nicht fertig geworden“ – acht Unteragenten (sieben Gegenprüfungen und
+> „Dossier schreiben“) mit „You've hit your session limit · resets 5am (UTC)“; danach zweimal „This session's worker
+> process was restarted. …“
+
+- **Stand von D03:** 11 von 19 Agenten fertig (alle sechs Recherchen, fünf Gegenprüfungen).
+
+### 18 – 14.10.2026 – Yannick
+
+> Weiter
+
+- **Vorgehen Claude:** D03 unverändert fortgesetzt (07:57 UTC); fertige Agenten kommen aus dem Zwischenspeicher.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** D03 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -271,7 +290,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); fertig: 3 Gestaltungsrichtungen, Jury; Rest an Account 2 übergeben (Ü01) | – |
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
-| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | unterbrochen (Nutzungslimit), fortgesetzt 14.10. 00:02 UTC – *läuft* | – |
+| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | zweimal unterbrochen (Nutzungslimit), fortgesetzt 14.10. 00:02 und 07:57 UTC – *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
