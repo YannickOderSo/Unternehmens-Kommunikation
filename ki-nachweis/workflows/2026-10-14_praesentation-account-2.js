@@ -10,7 +10,7 @@
 //  - Jury-Hinweise werden ungekürzt übergeben (kurz-Grenze 12000 statt 4000/3000 Zeichen), damit keine Übernahme fehlt.
 //  - Fundament-Rückgabe kann als args.engine übergeben werden (Fundament lief vor dem Workflow-Start einzeln, siehe unten).
 //  - Nach dem Abbruch des ersten Laufs (Nutzungslimit): Hinweis auf unvollständige Folien-Dateien im Folien-Auftrag;
-//    Abbruch statt Integration, wenn keine Folien-Gruppe fertig wurde.
+//    Abbruch statt Integration, wenn eine Folien-Gruppe (Bau, Prüfung oder Überarbeitung) nicht fertig wurde.
 export const meta = {
   name: 'praesentation-account-2',
   description: 'Web-Präsentation Fallstudie 1 ab Fundament: Engine, Folien bauen/prüfen/überarbeiten, Integration, Abschlussprüfung, Feinschliff',
@@ -338,13 +338,21 @@ Rückgabe: behoben, nicht behoben (mit Grund), Dateien, Screenshot-Pfade, Prüfb
 const folienErgebnisse = (await pipeline(
   GRUPPEN,
   g => agent(folienPrompt(g), { label: 'Folien: ' + g.name, phase: 'Folien', schema: FOLIEN_SCHEMA }),
-  (bau, g) => bau ? agent(pruefPrompt(g, bau), { label: 'Prüfung: ' + g.name, phase: 'Prüfung', schema: PRUEF_SCHEMA }).then(pruef => ({ bau, pruef })) : null,
+  // Zusatz Account 2: Ein gescheiterter Prüf- oder Überarbeitungs-Agent (z. B. Nutzungslimit) gilt nicht als „keine
+  // Befunde“, sondern lässt die Gruppe unfertig (Stufe wirft → Gruppe fehlt → Abbruch vor der Integration, resume).
+  (bau, g) => bau ? agent(pruefPrompt(g, bau), { label: 'Prüfung: ' + g.name, phase: 'Prüfung', schema: PRUEF_SCHEMA }).then(pruef => {
+    if (!pruef) throw new Error('Prüfung nicht fertig: ' + g.name)
+    return { bau, pruef }
+  }) : null,
   (x, g) => {
     if (!x) return null
     const befunde = (x.pruef && x.pruef.befunde) || []
     if (!befunde.length) return { gruppe: g.key, name: g.name, bau: x.bau, pruef: x.pruef, fix: null }
     return agent(fixPrompt(g, x.bau, x.pruef), { label: 'Überarbeitung: ' + g.name, phase: 'Überarbeitung', schema: FIX_SCHEMA })
-      .then(fix => ({ gruppe: g.key, name: g.name, bau: x.bau, pruef: x.pruef, fix }))
+      .then(fix => {
+        if (!fix) throw new Error('Überarbeitung nicht fertig: ' + g.name)
+        return { gruppe: g.key, name: g.name, bau: x.bau, pruef: x.pruef, fix }
+      })
   },
 )).filter(Boolean)
 // Zusatz Account 2: Ist keine einzige Gruppe fertig geworden (z. B. Nutzungslimit), nicht integrieren, sondern abbrechen
@@ -352,6 +360,9 @@ const folienErgebnisse = (await pipeline(
 if (!folienErgebnisse.length) throw new Error('Keine Folien-Gruppe fertig geworden – später mit resume fortsetzen')
 const fehlend = GRUPPEN.filter(g => !folienErgebnisse.find(e => e.gruppe === g.key)).map(g => g.name)
 if (fehlend.length) log('Nicht fertig geworden: ' + fehlend.join(', '))
+// Zusatz Account 2: Fehlende Gruppen entstehen hier nur durch abgebrochene Agenten (Nutzungslimit). Dann nicht die
+// Integration alles selbst bauen lassen, sondern abbrechen und mit resume fortsetzen (fertige Agenten bleiben gespeichert).
+if (fehlend.length) throw new Error('Folien-Gruppen unvollständig (' + fehlend.join(', ') + ') – mit resume fortsetzen')
 log(`Folien-Gruppen fertig: ${folienErgebnisse.length}/${GRUPPEN.length}`)
 
 // ---------- Phase 7: Integration ----------

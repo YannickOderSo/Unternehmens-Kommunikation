@@ -31,6 +31,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-05 | 14.10.2026 | System | Automatischer Hinweis: nicht versionierte Dateien (Testausgaben) | – | `.gitignore` für Testordner |
 | A2-06 | 14.10.2026 | System | Workflow-Lauf `wf_878fd85d-3f2` durch Nutzungslimit abgebrochen; Neustart der Sitzung | A2-D01 (fortgesetzt) | Skript ergänzt, Workflow mit resume fortgesetzt |
 | A2-07 | 14.10.2026 | System (Routine aus A2-03) | Geplante Prüfung „7 Uhr: master auf neuen Push prüfen“ (zugestellt erst 11:58 Uhr) | – | neuer Commit auf master ohne Dossier; kein Merge |
+| A2-08 | 14.10.2026 | System | Zweiter Abbruch des Workflows durch Nutzungslimit; mehrere Neustarts der Sitzung | A2-D01 | Zwischenstand gesichert |
+| A2-09 | 14.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Dossier übernommen, Skript gehärtet, Workflow mit resume fortgesetzt |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -166,6 +168,36 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   vor der Integration. Bis dahin gilt: Name HOLY, Inhalte als Beispieldaten, Farben neutral.
 - **Unteragenten:** keine
 
+### A2-08 – 14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ failed: Error: Integration nicht fertig
+> geworden – „You've hit your session limit · resets 2:50pm (UTC)“ bei 8 von 10 Unteragenten.
+> Danach viermal: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** Fertig wurden die Folien-Agenten „Einstieg & Vorgehen“ (f01, f01b, f02) und „Markenkompetenz, Persona,
+  Limbic Map“ (f03–f05). Gescheitert: die übrigen fünf Folien-Agenten, beide gestarteten Prüf-Agenten und die
+  Integration. Schwachstelle im Skript entdeckt: Ein gescheiterter Prüf-Agent wurde wie „keine Befunde“ behandelt, und
+  die Integration startete trotz fehlender Gruppen.
+
+### A2-09 – 14.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (16:52 Uhr):**
+  - Zwischenstand der Folien committet (`1580d7e`).
+  - `master` geprüft: Das **HOLY-Recherche-Dossier** liegt jetzt vor (`d42f681`, dazu `58e3906`). `master` per
+    Merge-Commit übernommen (`bd5f568`, kein Rebase). Damit gilt ab jetzt die Regel aus dem Auftrag: Fakten über HOLY
+    nur aus `fallstudie-1-brand-persona/recherche/holy-recherche.md` mit Quelle und Faktenstatus. Die schon gebauten
+    Folien f01–f05 entstanden noch ohne Dossier; die Prüf-Agenten sehen das Dossier und melden fehlende Fakten als Befund.
+  - Workflow-Skript gehärtet: Ein gescheiterter Prüf- oder Überarbeitungs-Agent lässt die Gruppe unfertig; fehlt eine
+    Gruppe, bricht der Workflow vor der Integration ab und wird später mit resume fortgesetzt. Die Agenten-Aufträge
+    selbst sind unverändert, damit die zwei fertigen Folien-Agenten aus dem Zwischenspeicher kommen.
+  - Workflow `wf_878fd85d-3f2` mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -213,6 +245,10 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Zweite Fortsetzung (A2-09)** (14.10.2026, ca. 17:00 Uhr): nach Merge des HOLY-Dossiers und Härtung des Skripts
+  (gescheiterte Prüf-/Überarbeitungs-Agenten lassen die Gruppe unfertig; Abbruch vor der Integration, solange eine
+  Gruppe fehlt) erneut mit `resumeFromRunId` fortgesetzt. Bisher fertig: Folien „Einstieg & Vorgehen“ und
+  „Markenkompetenz, Persona, Limbic Map“.
 - **Fortsetzung nach Abbruch durch Nutzungslimit (A2-06)** (14.10.2026, ca. 12:05 Uhr): gleicher Lauf
   `wf_878fd85d-3f2` mit `resumeFromRunId` fortgesetzt. Skript vorher ergänzt (Hinweis auf unvollständige Folien-Dateien,
   Abbruch statt Integration ohne fertige Folien-Gruppe, Fundament-Rückgabe als Konstante im Skript statt `args`).
