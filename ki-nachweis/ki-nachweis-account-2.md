@@ -169,6 +169,12 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   |-----|-------|--------------------|---------|----------|-------------------------------------|
   | A2-D01.01 | Fundament | Engine & Designsystem (Agent-Werkzeug, general-purpose; nach Container-Neustart fortgesetzt, ca. 38 min, 105 Werkzeugaufrufe) | [engine-designsystem.md](workflows/2026-10-14_praesentation-account-2_auftraege/engine-designsystem.md) | fertig – Rückgabe: [engine-designsystem.json](workflows/2026-10-14_praesentation-account-2_rueckgaben/engine-designsystem.json); neu: `AUTOREN.md`, `LIESMICH.md` (vorläufig), `werkzeuge/pruefen.mjs`, `folien/_demo.html` (+ CSS/JS), `index.html` (Demo); überarbeitet: Engine, Bausteine, Themen, `marke.js` (Name HOLY, Farben neutral) | Rückgabe gelesen; Demo selbst neu zusammengebaut und mit `pruefen.mjs` geprüft (15 Folien: 0 Fehler, keine externen Anfragen, Schriften lokal, 2 Warnungen Wortbudget 43/44 Wörter); vier Folien als Kontaktbogen angesehen (Titel, Hub, Repertory Grid, Umfrage) – sauber, Editorial-Stil umgesetzt. Auffällig: Markenname in Titeln noch kursiv, Bedienhinweise in der Quellenzeile der Demo-Umfrage → an Folien-/Prüfstufe |
 
+- **Ab Phase „Folien“ mit dem Workflow-Werkzeug** (14.10.2026, ca. 04:05 Uhr; Lauf-ID `wf_878fd85d-3f2`): gestartet mit
+  `scriptPath` = [`workflows/2026-10-14_praesentation-account-2.js`](workflows/2026-10-14_praesentation-account-2.js) und
+  `args.engine` = Rückgabe von A2-D01.01 ([engine-designsystem.json](workflows/2026-10-14_praesentation-account-2_rueckgaben/engine-designsystem.json)).
+  Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
+  Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
+  `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
 - **Fortsetzung nach Container-Neustart (A2-04), Nachricht an A2-D01.01 (wörtlich):**
   > Der Container wurde neu gestartet; dein Lauf wurde dabei unterbrochen. Deine bisherigen Dateien in
   > /home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/ sind erhalten (Zwischenstand ist
