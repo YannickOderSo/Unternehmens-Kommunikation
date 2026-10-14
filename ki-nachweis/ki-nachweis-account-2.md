@@ -213,6 +213,9 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Fortsetzung nach Abbruch durch Nutzungslimit (A2-06)** (14.10.2026, ca. 12:05 Uhr): gleicher Lauf
+  `wf_878fd85d-3f2` mit `resumeFromRunId` fortgesetzt. Skript vorher ergänzt (Hinweis auf unvollständige Folien-Dateien,
+  Abbruch statt Integration ohne fertige Folien-Gruppe, Fundament-Rückgabe als Konstante im Skript statt `args`).
 - **Fortsetzung nach Container-Neustart (A2-04), Nachricht an A2-D01.01 (wörtlich):**
   > Der Container wurde neu gestartet; dein Lauf wurde dabei unterbrochen. Deine bisherigen Dateien in
   > /home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/ sind erhalten (Zwischenstand ist
