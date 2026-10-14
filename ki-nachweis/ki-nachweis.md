@@ -42,6 +42,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier fertig (34 Seiten PDF) |
 | 21 | 14.10.2026 | Yannick | Screenshot: Stand von Account 2 | – | Stand geprüft, Hinweis-Text für Account 2 |
 | 22 | 14.10.2026 | Yannick | Frage: Brauchen wir Interviews? | – | Antwort im Chat (keine Dateien geändert) |
+| 23 | 14.10.2026 | Yannick | Klarstellung: drei getrennte Präsentationen; Aufteilung für Präsentation 1 | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -327,6 +328,22 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen – im Team entscheiden
+
+### 23 – 14.10.2026 – Yannick
+
+> *(Bild: Ausschnitt der Aufgabenfolie 57 – „1. Brand Persona & Markenidentität am 26.10. · 2. Customer Journey & Blog
+> Beitrag am 09.11. · 3. Instagram-Post & Eye-Tracking am 16.11.“)*
+> Nur zur klarstellung das sind 3 verschiedene Präsentations tage und 3 verschiedene Präsentationen. Zur ersten
+> Präsentation wie teilen wir da die arbeit auf?
+
+- **Vorgehen Claude:** Bestätigt, dass Arbeitsplan und Aufgaben-PDF nur Präsentation 1 betreffen. Die Aufteilung für
+  Präsentation 1 an den aktuellen Stand angepasst: Recherche (Dossier) und Folienbau (Account 2) sind schon weit, die
+  Bündel A/B/C bleiben, ihr Inhalt verschiebt sich vom Recherchieren zum Prüfen, Entscheiden, Selbst-Erheben und
+  Präsentieren. Vorschlag zur Rotation der Bündel über die drei Präsentationen. Aktualisierung von Arbeitsplan und
+  PDF angeboten, noch nichts geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
