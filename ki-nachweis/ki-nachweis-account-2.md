@@ -29,6 +29,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-03 | 14.10.2026 | Yannick (Account 2) | Um 7 Uhr prüfen, ob Account 1 neu gepusht hat | – | Prüfung um 07:00 Uhr geplant |
 | A2-04 | 14.10.2026 | System | Container-Neustart: Fundament-Agent unterbrochen, Workflow-Werkzeug nun verfügbar | A2-D01.01 fortgesetzt | Zwischenstand gesichert |
 | A2-05 | 14.10.2026 | System | Automatischer Hinweis: nicht versionierte Dateien (Testausgaben) | – | `.gitignore` für Testordner |
+| A2-06 | 14.10.2026 | System | Workflow-Lauf `wf_878fd85d-3f2` durch Nutzungslimit abgebrochen; Neustart der Sitzung | A2-D01 (fortgesetzt) | Skript ergänzt, Workflow mit resume fortgesetzt |
+| A2-07 | 14.10.2026 | System (Routine aus A2-03) | Geplante Prüfung „7 Uhr: master auf neuen Push prüfen“ (zugestellt erst 11:58 Uhr) | – | neuer Commit auf master ohne Dossier; kein Merge |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -126,6 +128,42 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Herkunft:** automatische Prüfung der Cloud-Umgebung, nicht von der Gruppe geschrieben
 - **Vorgehen Claude:** Die nicht versionierten Dateien waren Testausgaben des Fundament-Agenten (`praesentation/_test/`).
   Statt sie zu committen: `praesentation/.gitignore` für die Testordner angelegt; committet und gepusht.
+- **Unteragenten:** keine
+
+### A2-06 – 14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ failed: Error: Integration nicht fertig
+> geworden – alle sieben Folien-Agenten und der Integrations-Agent mit „You've hit your session limit · resets 5:50am (UTC)“.
+> Danach: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** Kein Unteragent des Laufs `wf_878fd85d-3f2` wurde fertig. Drei Folien-Agenten hatten schon Dateien angelegt
+  (`01-einstieg`, `03-markenkompetenz`, `04-persona`, jeweils HTML/CSS/JS, unvollständig) – als Zwischenstand gesichert.
+- **Vorgehen Claude (ca. 12:00 Uhr):** Workflow-Skript ergänzt – Hinweis im Folien-Auftrag, dass Dateien aus dem
+  abgebrochenen Lauf unvollständig vorliegen können; Abbruch statt Integration, wenn keine Folien-Gruppe fertig wird
+  (sonst würde die Integration bei einem Nutzungslimit alle Folien selbst bauen wollen). Danach den Workflow mit
+  `resumeFromRunId` fortgesetzt (gleiches Skript, gleiche `args`).
+- **Unteragenten:** A2-D01 (fortgesetzt)
+
+### A2-07 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe): geplante Prüfung aus A2-03
+
+> Geplante Prüfung (auf Yannicks Wunsch, Prompt A2-03): Es ist 7 Uhr (Berlin). Prüfe mit git fetch origin master, ob
+> Account 1 neue Commits auf master gepusht hat – vor allem das HOLY-Dossier
+> fallstudie-1-brand-persona/recherche/holy-recherche.md. Falls ja: master in praesentation-account-2 mergen
+> (Merge-Commit, kein Rebase), Dossier sichten und HOLY-Fakten (mit Quelle und Faktenstatus) in die laufende bzw.
+> nächste Workflow-Stufe einfließen lassen (marke.js-Farben nur mit belegter Quelle). Falls nein: in einer Stunde erneut
+> prüfen (send_later), höchstens bis 10 Uhr. Systemhinweis im KI-Nachweis Account 2 vermerken, committen und pushen.
+> Danach mit dem Präsentationsbau weitermachen.
+
+- **Herkunft:** von Claude in A2-03 angelegte Erinnerung (Routine), ausgelöst 07:00 Uhr, in dieser Sitzung erst um
+  11:58 Uhr angekommen (Sitzung war bis dahin durch das Nutzungslimit blockiert)
+- **Ergebnis der Prüfung (11:59 Uhr):** Auf `master` liegt ein neuer Commit von Account 1 (`b04a6bc`, 09:57 Uhr:
+  „KI-Nachweis: dritte Unterbrechung durch Nutzungslimit, Recherche D03 fortgesetzt“ – nur `ki-nachweis.md` und
+  Rohprotokoll). Das HOLY-Dossier liegt **noch nicht** vor.
+- **Vorgehen Claude:** Kein Merge, weil der neue Commit nur den Nachweis von Account 1 betrifft und für die Präsentation
+  nichts bringt (Account 1 führt später ohnehin zusammen). Die stündliche Nachprüfung bis 10 Uhr entfällt, weil 10 Uhr
+  bei Zustellung schon vorbei war; stattdessen prüft Claude `master` weiter bei jeder abgeschlossenen Workflow-Stufe und
+  vor der Integration. Bis dahin gilt: Name HOLY, Inhalte als Beispieldaten, Farben neutral.
 - **Unteragenten:** keine
 
 ---

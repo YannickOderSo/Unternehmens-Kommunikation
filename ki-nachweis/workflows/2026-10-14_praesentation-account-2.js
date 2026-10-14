@@ -9,6 +9,8 @@
 //    und Markenname HOLY in marke.js.
 //  - Jury-Hinweise werden ungekürzt übergeben (kurz-Grenze 12000 statt 4000/3000 Zeichen), damit keine Übernahme fehlt.
 //  - Fundament-Rückgabe kann als args.engine übergeben werden (Fundament lief vor dem Workflow-Start einzeln, siehe unten).
+//  - Nach dem Abbruch des ersten Laufs (Nutzungslimit): Hinweis auf unvollständige Folien-Dateien im Folien-Auftrag;
+//    Abbruch statt Integration, wenn keine Folien-Gruppe fertig wurde.
 export const meta = {
   name: 'praesentation-account-2',
   description: 'Web-Präsentation Fallstudie 1 ab Fundament: Engine, Folien bauen/prüfen/überarbeiten, Integration, Abschlussprüfung, Feinschliff',
@@ -279,6 +281,10 @@ f12 Danke & Fragen (data-zeit 0, alle): „Danke! Fragen?“ mit Gruppe und dem 
     brief: `Backup-Folien b1–b7 (alle mit data-backup, data-zeit 0, Bündel A sammelt) in einer Datei folien/13-backup.html. Informationsdichter als die Hauptfolien, aber genauso sauber: b1 Methodik & Begründung des Vorgehens (Desk Research + KI-Tools: wofür, Qualitätssicherung, Limitationen – Inhalt aus ${FS}/prompts.md Abschnitt C); b2 Prompt-Log (Auszug als Tabelle mit Spalten ID, Tool, Ziel, Prüfung, Folie – Beispielzeilen; Hinweis auf den vollständigen KI-Nachweis); b3 Datenquellen Persona (Tabelle Quelle, Jahr, Stichprobe, genutzt für …); b4 Repertory-Grid-Rohdaten (Tabelle Konstrukte × Elemente mit Mittelwerten, datengetrieben, Beispieldaten – passend zu f06); b5 Laddering-Leitern & Implikationsmatrix (kompakt, passend zu f07); b6 Raster Kommunikationsanalyse (Codiertabelle); b7 Quellenverzeichnis (Literatur aus ${FS}/methoden.md, einheitlich zitiert, plus Hinweis auf eingesetzte Schriften/Bibliotheken). Tabellen gut lesbar (mindestens 22 px), Zebra-Streifen, klare Kopfzeilen; Inhalte datengetrieben oder leicht editierbar.` },
 ]
 
+// Zusatz Account 2: Ein erster Workflow-Lauf (wf_878fd85d-3f2) brach durch ein Nutzungslimit ab; einzelne Folien-Dateien
+// können deshalb unvollständig vorliegen.
+const FORTSETZUNG_FOLIEN = `Hinweis: Ein früherer Lauf wurde durch ein Nutzungslimit abgebrochen. Liegen deine Dateien schon (unvollständig) vor, prüfe sie und baue darauf auf oder ersetze sie.`
+
 const eigeneDateien = g => g.dateien.map(d => `folien/${d}.html, css/folien/${d}.css, js/folien/${d}.js`).join('; ')
 
 const folienPrompt = g => `${REGELN}
@@ -299,6 +305,7 @@ ${g.brief}
 
 Anforderungen an jede Folie: Titel als Kernaussage (mit Platzhaltern über data-marke, solange die Marke fehlt), Kicker mit Methode bzw. Feld, klare visuelle Hierarchie, höchstens ca. 40 Wörter sichtbarer Text (Backup ausgenommen), Fließtext ≥ 28 px, schrittweise Animation, die die Argumentation stützt (ruhig, nicht verspielt), Quellenzeile, Sprechtext-Gerüst in .notizen passend zu data-zeit, data-zeit/data-buendel/data-feld laut Ablauf, Beispieldaten gekennzeichnet, datengetriebene Grafiken über <script type="application/json" class="daten"> mit verständlichen deutschen Feldnamen, damit die Gruppe später echte Werte eintragen kann. Der Druckmodus zeigt den Endzustand. Interaktive Elemente müssen mit Maus UND Tastatur bedienbar sein und dürfen die Navigation nicht stören.
 Ablauf: bauen → zusammenbauen.py --nur ${g.ids} --ausgabe ${P}/_test/${g.key}.html → pruefen.mjs mit --schritte (Ausgabe ${P}/_test/${g.key}-bilder), auch mit --modus dunkel und --druck → JEDEN Screenshot ansehen → verbessern, bis der Prüfbericht fehlerfrei ist und die Folien hochwertig aussehen.
+${FORTSETZUNG_FOLIEN}
 Rückgabe: Dateien, Folienbeschreibung (ID, Titel, Layout, Animationen, Interaktion, Zeit), Screenshot-Pfade, Prüfbericht-Zusammenfassung, Engine-Wünsche, Quellen, offene Punkte.`
 
 const pruefPrompt = (g, bau) => `${REGELN}
@@ -337,6 +344,9 @@ const folienErgebnisse = (await pipeline(
       .then(fix => ({ gruppe: g.key, name: g.name, bau: x.bau, pruef: x.pruef, fix }))
   },
 )).filter(Boolean)
+// Zusatz Account 2: Ist keine einzige Gruppe fertig geworden (z. B. Nutzungslimit), nicht integrieren, sondern abbrechen
+// und später mit resume fortsetzen.
+if (!folienErgebnisse.length) throw new Error('Keine Folien-Gruppe fertig geworden – später mit resume fortsetzen')
 const fehlend = GRUPPEN.filter(g => !folienErgebnisse.find(e => e.gruppe === g.key)).map(g => g.name)
 if (fehlend.length) log('Nicht fertig geworden: ' + fehlend.join(', '))
 log(`Folien-Gruppen fertig: ${folienErgebnisse.length}/${GRUPPEN.length}`)

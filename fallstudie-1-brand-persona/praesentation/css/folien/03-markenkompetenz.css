@@ -1,0 +1,216 @@
+/* =============================================================================
+   css/folien/03-markenkompetenz.css – Gestaltung nur für Folie f03
+   -----------------------------------------------------------------------------
+   Aufbau der Folie (Bühne 1920 × 1080):
+     oben   Zeitleiste über die ganze Breite (Jahr · Punkt auf der Linie · Text)
+     unten  links drei Kennzahlen, rechts Marktrolle + Claim
+   Alle Regeln beginnen mit #f03 bzw. einer eigenen Klasse „g2k-…“.
+   Nur Variablen aus tokens.css verwenden (keine festen Farben/Schriften).
+   ============================================================================= */
+
+/* Inhalt: Zeitleiste oben, unterer Block füllt den Rest */
+#f03 .g2k { gap: var(--abstand-8); }
+#f03 .g2k-zeitleiste { margin-top: var(--abstand-3); }
+
+
+/* ---------------------------------------------------------------------------
+   1. ZEITLEISTE
+   Die Linie liegt genau auf Höhe der Punkte: Jahreszeile (44 px) + Abstand
+   (16 px) + halbe Punktzeile (20 px) = 80 px von oben.
+   --------------------------------------------------------------------------- */
+#f03 .g2k-zeitleiste {
+  --g2k-jahr: 44px;          /* Schriftgröße der Jahreszahlen */
+  --g2k-zeile: 40px;         /* Höhe der Zeile mit den Punkten */
+  position: relative;
+  flex: none;
+}
+#f03 .g2k-linie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--g2k-jahr) + var(--abstand-3) + var(--g2k-zeile) / 2 - var(--linie-stark) / 2);
+  height: var(--linie-stark);
+  background: var(--f-linie-stark);
+}
+/* Pfeilspitze am Ende: die Zeit läuft weiter */
+#f03 .g2k-linie::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+  border-right: var(--linie-stark) solid var(--f-linie-stark);
+  transform: translateY(-50%) rotate(45deg);
+}
+#f03 .g2k-ereignisse {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--g2k-anzahl, 5), minmax(0, 1fr));
+  column-gap: var(--rinne);
+  padding-right: var(--abstand-7);     /* Platz für die Pfeilspitze */
+}
+#f03 .g2k-ereignis {
+  display: grid;
+  grid-template-rows: var(--g2k-jahr) var(--g2k-zeile) auto;
+  row-gap: var(--abstand-3);
+  justify-items: start;
+  min-width: 0;
+}
+#f03 .g2k-jahr {
+  font-family: var(--schrift-zahl);
+  font-size: var(--g2k-jahr);
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-text);
+}
+#f03 .g2k-punkt {
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+  border-radius: 50%;
+  background: var(--f-hintergrund);
+  border: var(--linie-stark) solid var(--f-text);
+}
+#f03 .g2k-text {
+  max-width: 13em;
+  font-size: var(--groesse-text);
+  line-height: 1.25;
+  color: var(--f-text-2);
+}
+/* Gründung: gefüllter, größerer Punkt in Akzentfarbe, Jahr in Akzentfarbe */
+#f03 .g2k-ereignis--start .g2k-jahr { color: var(--f-akzent); }
+#f03 .g2k-ereignis--start .g2k-punkt {
+  width: 34px;
+  height: 34px;
+  margin-left: 0;
+  background: var(--f-akzent);
+  border-color: var(--f-akzent);
+  box-shadow: 0 0 0 6px var(--f-hintergrund);
+}
+#f03 .g2k-ereignis--start .g2k-text { color: var(--f-text); font-weight: var(--gewicht-fett); }
+
+
+/* ---------------------------------------------------------------------------
+   2. UNTERER BLOCK: Kennzahlen (7 Spalten) + Marktrolle (5 Spalten)
+   --------------------------------------------------------------------------- */
+#f03 .g2k-unten {
+  flex: 1;
+  min-height: 0;
+  align-items: start;
+  column-gap: var(--abstand-7);
+}
+
+/* Kennzahlen: drei Spalten mit kräftiger Linie oben (Editorial) */
+#f03 .g2k-kennzahlen {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--rinne);
+}
+#f03 .g2k-kennzahl { gap: 10px; padding-top: var(--abstand-4); }
+#f03 .g2k-kennzahl-zeile {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+}
+#f03 .g2k-kennzahl .kennzahl-wert { font-size: var(--groesse-kennzahl); }
+#f03 .g2k-einheit {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  color: var(--f-akzent);
+}
+#f03 .g2k-kennzahl-text {
+  font-size: var(--groesse-text);
+  color: var(--f-text);
+}
+#f03 .g2k-kennzahl-quelle {
+  font-size: var(--groesse-meta);
+  color: var(--f-text-2);
+}
+
+/* Marktrolle: markantes Label in Akzentfläche + Rollen-Leiste + Claim */
+#f03 .g2k-rolle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-5);
+  padding-top: var(--abstand-4);
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+}
+#f03 .g2k-rolle-kopf { display: flex; flex-direction: column; align-items: flex-start; gap: var(--abstand-2); }
+#f03 .g2k-rolle-label {
+  padding: 6px 26px 10px;
+  border-radius: var(--radius-m);
+  background: var(--f-akzent);
+  color: var(--f-auf-akzent);
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel-klein);
+  font-weight: var(--gewicht-titel);
+  font-variation-settings: "opsz" var(--opsz-titel);
+  letter-spacing: var(--laufweite-titel);
+  line-height: 1.1;
+}
+
+/* Rollen-Leiste: Punkte auf einer Linie, gewählte Rolle gefüllt.
+   Beschriftung = Achsenbeschriftung (Metaangabe, 22 px). Die Stufen stehen
+   mit gleichem Abstand nebeneinander (erste links-, letzte rechtsbündig),
+   die Linie läuft vom ersten bis zum letzten Punkt. */
+#f03 .g2k-rollen {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--abstand-4);
+  padding-top: 4px;
+}
+#f03 .g2k-rollen::before {          /* durchgehende Linie hinter den Punkten */
+  content: "";
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  top: 14px;
+  height: var(--linie-fein);
+  background: var(--f-linie);
+}
+#f03 .g2k-rolle-stufe {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+#f03 .g2k-rolle-stufe:first-child { align-items: flex-start; }
+#f03 .g2k-rolle-stufe:last-child { align-items: flex-end; }
+#f03 .g2k-rolle-punkt {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--f-hintergrund);
+  border: var(--linie-fein) solid var(--f-text-2);
+}
+#f03 .g2k-rolle-name {
+  font-size: var(--groesse-meta);
+  line-height: 1.2;
+  color: var(--f-text-2);
+  white-space: nowrap;
+}
+#f03 .g2k-rolle-stufe.ist-gewaehlt .g2k-rolle-punkt {
+  background: var(--f-akzent);
+  border-color: var(--f-akzent);
+  box-shadow: 0 0 0 5px var(--f-akzent-flaeche);
+}
+#f03 .g2k-rolle-stufe.ist-gewaehlt .g2k-rolle-name { color: var(--f-akzent); font-weight: 700; }
+
+/* Claim: Zitat; solange Platzhalter, gedeckt und gestrichelt unterstrichen */
+#f03 .g2k-claim .zitat-text { font-size: var(--groesse-gross); }
+#f03 .g2k-claim.ist-platzhalter { border-left-style: dashed; border-left-color: var(--f-text-2); }
+#f03 .g2k-claim.ist-platzhalter .zitat-text {
+  color: var(--f-text-2);
+  text-decoration: underline dashed var(--f-text-2);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}

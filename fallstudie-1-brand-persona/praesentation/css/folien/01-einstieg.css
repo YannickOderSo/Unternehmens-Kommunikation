@@ -1,0 +1,165 @@
+/* =============================================================================
+   css/folien/01-einstieg.css – Gestaltung nur für folien/01-einstieg.html (f01)
+   -----------------------------------------------------------------------------
+   Einstieg wie der Auftakt einer Keynote, in drei Zuständen:
+     Schritt 0  randloses, unscharfes Rätselbild, unten die Frage
+     Schritt 1  Bild scharf und herausgezoomt, Markenname groß links
+     Schritt 2  Bild gleitet in die rechte Bildhälfte, links der Titel
+               (Schlussbild = Titelfolie, so auch im Druck/PDF)
+   Die Zustände hängen nur an den Klassen, die die Engine setzt
+   (.schritt-an an den Elementen mit data-schritt) – kein Skript nötig.
+   Alle Farben, Schriften und Dauern kommen aus css/tokens.css.
+   ============================================================================= */
+
+#f01 {
+  /* Breite der linken Textspalte im Schlussbild (Bühnen-Pixel, Bühne = 1920 px).
+     Rechts davon bleibt das Bild sichtbar (1920 − 1088 = 832 px). */
+  --einstieg-teilung: 1088px;
+  /* Größe des Markennamens. Lange Namen verkleinert js/folien/01-einstieg.js
+     automatisch, damit sie in die linke Spalte passen. */
+  --einstieg-marke-groesse: calc(var(--groesse-titel-gross) * 1.8);
+  /* Breite der Textspalte im Schlussbild */
+  --einstieg-spalte: calc(var(--einstieg-teilung) - var(--rand-x) - var(--abstand-7));
+}
+
+
+/* ---------------------------------------------------------------------------
+   KOPF: Frage (Schritt 0) und Komposition (Schritt 1–2) liegen übereinander
+   in derselben Rasterzelle und sind unten bündig.
+   --------------------------------------------------------------------------- */
+#f01 .einstieg-kopf {
+  display: grid;
+  align-items: end;
+  max-width: none;
+}
+#f01 .einstieg-kopf > * {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+
+/* Schritt 0: die Frage – groß, eine Zeile */
+#f01 .einstieg-frage {
+  max-width: 1500px;
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s linear 0s;
+}
+#f01 .einstieg-frage-titel { font-size: var(--groesse-titel-gross); }
+/* … weicht der Auflösung (Schritt 1) */
+#f01:has(.einstieg-marke.schritt-an) .einstieg-frage {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+
+/* Schritt 1–2: Markenname, darunter Titel, Unterzeile und Angaben */
+#f01 .einstieg-komposition {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--einstieg-spalte);
+}
+#f01 .einstieg-kicker {
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+/* „Auflösung“ wird im Schlussbild nicht mehr gebraucht */
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-kicker { opacity: 0; }
+
+#f01 .einstieg-markenname {
+  display: block;
+  width: max-content;
+  max-width: none;
+  margin: 4px 0 0 -0.04em;                 /* optischer Randausgleich des großen Anfangsbuchstabens */
+  font-family: var(--schrift-display);
+  font-style: var(--stil-marke);           /* Markenname immer aufrecht */
+  font-weight: var(--gewicht-zahl);
+  font-size: var(--einstieg-marke-groesse);
+  font-variation-settings: "opsz" var(--opsz-titel);
+  letter-spacing: var(--laufweite-titel);
+  line-height: 0.95;
+  white-space: nowrap;
+  color: var(--f-auf-bild);
+}
+
+#f01 .einstieg-titelblock {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--abstand-5);
+}
+#f01 .einstieg-titel {
+  font-size: var(--groesse-titel);
+  max-width: 13em;
+}
+#f01 .einstieg-unterzeile {
+  margin-top: var(--abstand-4);
+  max-width: none;
+  font-size: var(--groesse-text);
+  text-wrap: balance;
+}
+#f01 .einstieg-angaben {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  margin-top: var(--abstand-6);
+}
+
+
+/* ---------------------------------------------------------------------------
+   BILD: randlos (Schritt 0–1), im Schlussbild nur rechts (Schritt 2).
+   clip-path schneidet links ab, translate rückt die Bildmitte in die Mitte
+   des rechten Feldes – beides gleitet weich (--dauer-lang).
+   --------------------------------------------------------------------------- */
+#f01 .einstieg-bild {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path var(--dauer-lang) var(--kurve);
+}
+#f01 .einstieg-bild .raetsel {
+  transition: translate var(--dauer-lang) var(--kurve);
+}
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-bild {
+  clip-path: inset(0 0 0 var(--einstieg-teilung));
+}
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-bild .raetsel {
+  translate: calc(var(--einstieg-teilung) / 2) 0;
+}
+
+/* Schatten links in Schritt 1: Markenname bleibt auch über hellen Fotos lesbar
+   (Weiß auf ≥ 45 % Schwarz ergibt mindestens 3 : 1 für Großtext) */
+#f01 .einstieg-schleier {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    var(--f-bild-schleier) 0%,
+    color-mix(in srgb, var(--f-bild-schleier) 62%, transparent) 34%,
+    transparent 64%);
+  opacity: 0;
+  transition: opacity var(--dauer-lang) var(--kurve);
+}
+#f01:has(.einstieg-marke.schritt-an) .einstieg-schleier { opacity: 1; }
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-schleier { opacity: 0; }
+
+/* Dunkler Verlauf des Vollbild-Layouts: im Schlussbild unnötig (Text steht
+   dort auf der dunklen Fläche) – das Bild rechts bleibt klar */
+#f01::after { transition: opacity var(--dauer-lang) var(--kurve); }
+#f01:has(.einstieg-titelblock.schritt-an)::after { opacity: 0; }
+
+/* Kopfzeile des Schlussbilds – dieselbe Linie wie die Laufkopfzeile der
+   übrigen Folien, aber nur über der Textspalte */
+#f01 .einstieg-kopfzeile {
+  position: absolute;
+  z-index: 1;
+  left: var(--rand-x);
+  top: var(--rand-oben);
+  width: var(--einstieg-spalte);
+  display: flex;
+  align-items: center;
+  min-height: var(--mini-rad);
+  padding-bottom: 12px;
+  border-bottom: var(--linie-stark) solid var(--f-linie-stark);
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-text-2);
+}

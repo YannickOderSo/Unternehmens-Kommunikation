@@ -1,0 +1,123 @@
+<!--
+  04-persona.html – Folie f04 „Brand Persona“ (Bündel A, 90 s)
+  =========================================================================
+  Rahmen des Markensteuerrads: Brand Persona. Methoden: Desk Research + KI
+  (Prompts P3/P4/P6 in ../prompts.md, Vorlage in ../methoden.md).
+
+  SO ÄNDERN SIE DIE INHALTE
+  • Name, Alter, Zitat, Bild und die fünf Dimensionen stehen unten im
+    <script type="application/json" class="daten">. Das Skript
+    js/folien/04-persona.js baut daraus den Steckbrief.
+  • „status“ je Dimension: "daten" (mit Quelle belegt → Fläche + Datensymbol)
+    oder "annahme" (abgeleitet → gestrichelt + Fragezeichen-Symbol).
+    Die Quellen der Daten-Blöcke gehören ins Backup B3 „Datenquellen Persona“.
+  • Persona-Bild: Pfad unter „bild“ eintragen (z. B. "bilder/persona.jpg").
+    Ist es KI-generiert, unter „bildHinweis“ das Werkzeug nennen, z. B.
+    "Bild KI-generiert (Werkzeug XY)". Leer = gezeichneter Platzhalter.
+  • ALLE WERTE SIND BEISPIELDATEN – durch Ergebnisse aus Desk Research/KI
+    ersetzen. Wortbudget beachten: je Zeile nur Stichworte.
+
+  SCHRITTE (Klicks)
+    0  Bild und Name
+    1  Zitat
+    2  Geografie, Soziodemografie, Kaufverhalten (gestaffelt)
+    3  Mediennutzung (Balken wachsen), Psychografie
+    4  Markierung „Daten vs. Annahme“ + Legende
+-->
+<section class="folie" id="f04" data-titel="Brand Persona" data-feld="persona" data-zeit="90" data-buendel="A">
+  <header class="folie-kopf">
+    <p class="kicker">Persona-Steckbrief <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Unsere Persona: aktiv, digital, preisbewusst</h2>
+  </header>
+
+  <div class="folie-inhalt g2p">
+    <div class="raster-12 g2p-raster">
+
+      <!-- LINKS: Profil (Bild + Name) – erscheint beim Betreten -->
+      <div class="sp-4 g2p-profil">
+        <figure class="g2p-bild" data-animation="zoom">
+          <!-- Gezeichneter Platzhalter (eigene Gestaltung, Farben aus den Tokens).
+               Wird ersetzt, sobald in den Daten unter „bild“ ein Pfad steht. -->
+          <svg class="g2p-silhouette" viewBox="0 0 520 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="g2p-sil-grund" x="0" y="0" width="520" height="400"/>
+            <circle class="g2p-sil-kreis" cx="392" cy="96" r="150"/>
+            <circle class="g2p-sil-form" cx="260" cy="168" r="78"/>
+            <path class="g2p-sil-form" d="M96 400 C 104 300, 176 262, 260 262 S 416 300, 424 400 Z"/>
+          </svg>
+          <figcaption class="g2p-bild-hinweis" data-meta>
+            <svg class="icon" aria-hidden="true"><use href="#i-bild"/></svg>
+            <span data-g2p="bildHinweis">Bild KI-generiert · Platzhalter</span>
+          </figcaption>
+        </figure>
+        <div class="g2p-name" data-animation="hoch" data-verzoegerung="160">
+          <span class="g2p-name-text" data-g2p="name">Lea, 24</span>
+          <span class="g2p-name-meta" data-meta>Persona · fiktive Person</span>
+        </div>
+      </div>
+
+      <!-- RECHTS: Zitat + fünf Dimensionen (werden aus den Daten gebaut) -->
+      <div class="sp-8 g2p-rechts">
+        <blockquote class="zitat g2p-zitat" data-schritt="1" data-animation="hoch">
+          <p class="zitat-text" data-g2p="zitat">„Fit für den Tag – ohne Zucker-Crash.“</p>
+        </blockquote>
+        <!-- Schritt 2: die ersten drei Dimensionen -->
+        <div class="g2p-reihe g2p-reihe--oben" data-schritt="2" data-staffel="110" data-animation="hoch"></div>
+        <!-- Schritt 3: die übrigen Dimensionen (Mediennutzung, Psychografie) -->
+        <div class="g2p-reihe g2p-reihe--unten" data-schritt="3" data-staffel="140" data-animation="hoch"></div>
+        <!-- Schritt 4: unsichtbarer Auslöser – ab hier werden Daten und Annahmen markiert -->
+        <span class="g2p-status-ausloeser" data-schritt="4" data-animation="zustand" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Quellen der Daten-Blöcke: Backup B3 · Bild: Platzhalter, später KI-generiert (Werkzeug nennen)</p>
+    <div class="legende g2p-legende" data-schritt="4" data-animation="einblenden" data-meta>
+      <span class="legende-daten">Daten (Quelle)</span>
+      <span class="legende-annahme">Annahme</span>
+    </div>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Für wen?</b> (ca. 10 s) Das ist Lea – unsere Brand Persona. Sie verkörpert die Kernzielgruppe von <span data-marke></span> und ist der Bezugsrahmen für alle Felder des Steuerrads. Erstellt per Desk Research und KI (Prompts P3/P4 im Prompt-Log).</p>
+    <p data-schritt="1"><b>Zitat</b> (ca. 10 s) So würde Lea über die Kategorie sprechen: „[Zitat]“. Es fasst ihr Bedürfnis in einem Satz.</p>
+    <p data-schritt="2"><b>Wer und wo?</b> (ca. 25 s) Geografie: [Wohnort, Stadt/Land]. Soziodemografie: [Beruf, Haushalt, Einkommen]. Kaufverhalten: [Kanal, Frequenz, Preissensibilität, Entscheidungskriterien].</p>
+    <p data-schritt="3"><b>Wie tickt sie?</b> (ca. 30 s) Mediennutzung: [Plattformen mit Nutzungsdauer] – daraus folgen später die Kanäle der Kommunikationsanalyse. Psychografie: Werte [Werte], Pain [Pain], Gain [Gain].</p>
+    <p data-schritt="4"><b>Was ist belegt?</b> (ca. 15 s) Ausgefüllte Blöcke beruhen auf Daten mit Quelle (Backup B3), gestrichelte Blöcke sind begründete Annahmen. Überleitung: Welche Motive treiben Lea an? → Limbic Map.</p>
+    <p>Hinweis: Alle Angaben sind Beispieldaten. Bild als „KI-generiert“ kennzeichnen (Werkzeug nennen). Rückfrage „Ist die Persona ein Klischee?“ – Antwort: Jede Angabe ist als Daten oder Annahme gekennzeichnet, die Quellen stehen im Backup.</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • Die ersten drei Einträge unter „dimensionen“ erscheinen in Schritt 2
+         (obere Reihe), die übrigen in Schritt 3 (untere Reihe).
+       • „icon“: Name aus dem Icon-Satz (siehe AUTOREN.md, z. B. kompass, person,
+         video, herz) oder „tasche“ (eigenes Einkaufstaschen-Symbol dieser Folie).
+       • „zeilen“: 1–2 kurze Stichwort-Zeilen; die erste wird größer gesetzt.
+       • „balken“: Mediennutzung, Werte in Minuten pro Tag (Länge relativ zum größten Wert).
+       • „werte“, „pain“, „gain“: Psychografie.
+       • „status“: "daten" oder "annahme" (siehe oben). -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – Persona durch Ergebnisse aus Desk Research und KI ersetzen; status 'daten' nur mit Quelle (Backup B3)",
+    "name": "Lea, 24",
+    "zitat": "Fit für den Tag – ohne Zucker-Crash.",
+    "bild": "",
+    "bildHinweis": "Bild KI-generiert · Platzhalter",
+    "dimensionen": [
+      { "titel": "Geografie",       "icon": "kompass", "status": "daten",   "zeilen": ["Mannheim", "Großstadt, Süd-West"] },
+      { "titel": "Soziodemografie", "icon": "person",  "status": "daten",   "zeilen": ["Studentin, WG", "1.100 € netto"] },
+      { "titel": "Kaufverhalten",   "icon": "tasche",  "status": "annahme", "zeilen": ["Online-Abo", "preisbewusst"] },
+      { "titel": "Mediennutzung",   "icon": "video",   "status": "daten",   "einheit": "Min. pro Tag",
+        "balken": [
+          { "name": "TikTok",    "wert": 95 },
+          { "name": "Instagram", "wert": 70 },
+          { "name": "YouTube",   "wert": 45 }
+        ] },
+      { "titel": "Psychografie",    "icon": "herz",    "status": "annahme",
+        "werte": ["Leistung", "Gesundheit", "Freiheit"],
+        "pain": "Zucker-Crash",
+        "gain": "klarer Fokus" }
+    ]
+  }
+  </script>
+</section>
