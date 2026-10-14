@@ -1,0 +1,119 @@
+<!--
+  06-repertory-grid.html – Folie f06 „Repertory Grid → Markenattribute“ (Bündel B, 90 s)
+  =========================================================================
+  Feld im Markensteuerrad: Markenattribute („Über welche Eigenschaften
+  verfüge ich?“). Methode: Repertory Grid nach Kelly (1955), Vorlage und
+  Auswertung in ../methoden.md (Abschnitt 2), Prompts P7/P8 in ../prompts.md.
+
+  WAS DIE FOLIE ZEIGT
+  • Rechts (Schritt 1): die Methode in zehn Sekunden – eine Triade aus drei
+    Markenkarten. Zwei rücken zusammen, eine rückt ab, darüber steht das
+    bipolare Konstrukt (z. B. „traditionell – innovativ“).
+  • Links (Schritt 2): Polaritätenprofil mit allen Konstrukten (Skala 1–7).
+    Ganz links die Zahl der Nennungen (= Relevanz). Die Linien zeichnen sich
+    nacheinander: Idealmarke (gepunktet, Raute) → stärkster Wettbewerber
+    (gestrichelt, hohler Kreis) → [Marke] (durchgezogen, voller Kreis).
+  • Schritt 3: Die Konstrukte, die relevant sind, klar vom Wettbewerb
+    abweichen und nah am Ideal liegen, werden hinterlegt und rechts als
+    „Markenattribute“ benannt (mit Vorsprung vor dem Wettbewerber).
+
+  SO ÄNDERN SIE DIE INHALTE
+  • Alles steht unten im <script type="application/json" class="daten">.
+    Das Skript js/folien/06-repertory-grid.js baut daraus die Grafik.
+  • ALLE WERTE SIND BEISPIELDATEN. Echte Mittelwerte selbst in Excel/Sheets
+    rechnen (nicht von der KI) und hier eintragen; Rohdaten ins Backup (B4).
+  • Den Titel passen Sie hier im HTML an, wenn sich die Aussage ändert.
+  • Der Markenname kommt aus marke.js (data-marke bzw. „[Marke]“ in den
+    Daten) – nie eintippen.
+
+  SCHRITTE (Klicks)
+    0  Raster des Profils + Triade (drei Karten, Frage an die Befragten)
+    1  Zwei Karten rücken zusammen, eine ab; das Konstrukt erscheint über
+       den Karten und als erste Zeile im Profil
+    2  alle Konstrukte + Nennungen; Linien zeichnen sich nacheinander
+    3  Markenattribute: Zeilen hinterlegt, rechts Name + Vorsprung + Kriterien
+-->
+<section class="folie" id="f06" data-titel="Repertory Grid" data-feld="attribute" data-zeit="90" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Repertory Grid nach Kelly <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Drei Attribute heben <em data-marke></em> vom Wettbewerb ab</h2>
+  </header>
+
+  <div class="folie-inhalt rg">
+    <!-- Unsichtbare Auslöser: Die Gestaltung (css/folien/06-repertory-grid.css)
+         reagiert darauf, welcher Schritt erreicht ist – auch im Druck und in
+         der Vorschau. Nicht löschen. -->
+    <span class="rg-zustand rg-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <span class="rg-zustand rg-z2" data-schritt="2" data-animation="zustand" aria-hidden="true"></span>
+    <span class="rg-zustand rg-z3" data-schritt="3" data-animation="zustand" aria-hidden="true"></span>
+
+    <!-- Hier baut das Skript Profil, Triade und Ergebnis-Spalte aus den Daten. -->
+    <div class="rg-buehne" role="img" aria-label="Repertory Grid mit Beispieldaten: Triade und Polaritätenprofil"></div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Quelle: eigene Erhebung, n = 8 (5 KI-simulierte Befragte, 3 Kurzinterviews) – Beispieldaten · Methode nach Kelly (1955) · Skala 1 = linker, 7 = rechter Pol</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Frage und Methode</b> (ca. 15 s) Welche Eigenschaften unterscheiden <span data-marke></span> aus Sicht der Zielgruppe vom Wettbewerb? Dafür nutzen wir das Repertory Grid nach Kelly. Jede befragte Person sieht drei Marken – eine Triade – und beantwortet eine einzige Frage: Was verbindet zwei davon und trennt sie von der dritten?</p>
+    <p data-schritt="1"><b>Triade → Konstrukt</b> (ca. 15 s) Hier wirken Marke A und Marke B traditionell, <span data-marke></span> dagegen innovativ. So entsteht ein bipolares Konstrukt: traditionell – innovativ. Mit acht Triaden je Person kamen [Anzahl] Konstrukte zusammen; Doppelungen haben wir zusammengefasst und gezählt.</p>
+    <p data-schritt="2"><b>Polaritätenprofil</b> (ca. 30 s) Danach haben alle Befragten <span data-marke></span>, den stärksten Wettbewerber und ihre Idealmarke auf jedem Konstrukt von 1 bis 7 bewertet. Links steht, wie oft ein Konstrukt genannt wurde – das ist die Relevanz. Gepunktet: die Idealmarke. Gestrichelt: Marke A. Durchgezogen: <span data-marke></span>.</p>
+    <p data-schritt="3"><b>Markenattribute</b> (ca. 30 s) Als Markenattribute zählen nur Konstrukte, die drei Bedingungen erfüllen: oft genannt, klar anders als der Wettbewerb und nah am Ideal. Das gilt für innovativ, natürlich und unverwechselbar. „Nischenmarke“ unterscheidet zwar stark, wurde aber selten genannt und liegt weit vom Ideal – kein Attribut. Diese drei Attribute sind die Startpunkte für das Laddering.</p>
+    <p>Hinweise: Alle Werte sind Beispieldaten – echte Mittelwerte selbst berechnen (Backup B4: Rohdaten). Relevanz = Zahl der Nennungen; Differenzierung = Abstand <span data-marke></span> zu Marke A (in methoden.md: zum Mittel aller Wettbewerber); Ideal-Nähe = Abstand <span data-marke></span> zur Idealmarke. Begriffe mit der Vorlesungsfolie abgleichen. Rückfrage „Warum KI-simulierte Befragte?“ → Persona als Grundlage, Ergebnisse mit echten Kurzinterviews geprüft, Grenzen offen benennen (Prompt-Log B2).</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • skala: kleinster und größter Skalenwert (1 = linker Pol, 7 = rechter Pol).
+       • marke / wettbewerber / ideal: Namen in der Legende; „[Marke]“ wird
+         durch den Markennamen aus marke.js ersetzt. wettbewerberZusatz steht
+         klein dahinter (leer lassen = kein Zusatz).
+       • konstrukte: 6–8 Zeilen. links/rechts = die beiden Pole,
+         nennungen = wie oft das Konstrukt genannt wurde (Relevanz),
+         marke/wettbewerb/ideal = Mittelwerte auf der Skala,
+         attribut: true = wird in Schritt 3 als Markenattribut markiert.
+         Der Name des Attributs ist der Pol auf der Seite der Marke; ein
+         eigener Name geht so: "attribut": "Natürlichkeit".
+       • attributeOben: true = Attribut-Zeilen stehen oben (empfohlen).
+       • triade: Beispiel für Schritt 1. paar = die zwei ähnlichen Karten,
+         einzeln = die abweichende Karte, polPaar/polEinzeln = die zwei Pole.
+         Dieses Konstrukt sollte auch unter „konstrukte“ vorkommen – dann
+         leuchtet seine Zeile in Schritt 1 mit auf.
+       • kriterien: die drei Auswahlregeln rechts unten (Schritt 3);
+         „erklaerung“ steht klein daneben. -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – durch die eigene Auswertung ersetzen (methoden.md, Abschnitt 2)",
+    "skala": [1, 7],
+    "marke": "[Marke]",
+    "wettbewerber": "Marke A",
+    "wettbewerberZusatz": "stärkster Wettbewerber",
+    "ideal": "Idealmarke",
+    "attributeOben": true,
+    "triade": {
+      "frage": "Was verbindet zwei – und trennt sie von der dritten?",
+      "paar": ["Marke A", "Marke B"],
+      "einzeln": "[Marke]",
+      "polPaar": "traditionell",
+      "polEinzeln": "innovativ",
+      "notiz": "Beispiel: eine von acht Triaden je Person"
+    },
+    "konstrukte": [
+      { "links": "traditionell", "rechts": "innovativ",       "nennungen": 9, "marke": 6.2, "wettbewerb": 3.4, "ideal": 6.4, "attribut": true },
+      { "links": "künstlich",    "rechts": "natürlich",       "nennungen": 8, "marke": 5.8, "wettbewerb": 3.2, "ideal": 6.2, "attribut": true },
+      { "links": "austauschbar", "rechts": "unverwechselbar", "nennungen": 7, "marke": 5.6, "wettbewerb": 3.9, "ideal": 6.0, "attribut": true },
+      { "links": "günstig",      "rechts": "hochwertig",      "nennungen": 6, "marke": 5.3, "wettbewerb": 4.8, "ideal": 5.1 },
+      { "links": "ernst",        "rechts": "verspielt",       "nennungen": 5, "marke": 4.7, "wettbewerb": 5.4, "ideal": 4.2 },
+      { "links": "Massenmarke",  "rechts": "Nischenmarke",    "nennungen": 3, "marke": 5.2, "wettbewerb": 1.8, "ideal": 3.6 }
+    ],
+    "ergebnisTitel": "Markenattribute",
+    "ergebnisErklaerung": "Vorsprung vor Marke A in Skalenpunkten",
+    "kriterienTitel": "Auswahlkriterien",
+    "kriterien": [
+      { "text": "relevant",        "erklaerung": "viele Nennungen" },
+      { "text": "differenzierend", "erklaerung": "Abstand zu Marke A" },
+      { "text": "nah am Ideal",    "erklaerung": "Abstand zur Idealmarke" }
+    ]
+  }
+  </script>
+</section>

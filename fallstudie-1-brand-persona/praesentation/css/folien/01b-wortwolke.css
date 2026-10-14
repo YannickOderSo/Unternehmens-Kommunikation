@@ -1,0 +1,92 @@
+/* =============================================================================
+   css/folien/01b-wortwolke.css – Gestaltung nur für folien/01b-wortwolke.html (f01b)
+   -----------------------------------------------------------------------------
+   Layout „geteilt“: links die Frage (groß) mit Ausblick unten, rechts eine
+   ruhige Tafel, in der die Wortwolke live wächst. Solange noch kein Wort
+   eingetragen ist, zeigt die Tafel eine dezente Zeichnung (Ringe +
+   Sprechblase) statt einer leeren Fläche. Alle Farben aus css/tokens.css.
+   ============================================================================= */
+
+/* Linke Spalte: Kicker + Frage oben, Ausblick unten */
+#f01b .folie-kopf {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+#f01b .wolke-frage { max-width: 7.5em; }
+#f01b .wolke-lead { max-width: 16em; }
+
+#f01b .wolke-ausblick {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-3);
+  margin-top: auto;                         /* an den unteren Rand der Spalte */
+  padding-top: var(--abstand-4);
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-text);
+  line-height: 1.3;
+  color: var(--f-text);
+}
+#f01b .wolke-ausblick .icon {
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--f-akzent);
+}
+
+/* Rechte Spalte: Tafel für die Wolke */
+#f01b .wolke-tafel {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--abstand-6) var(--abstand-6) var(--abstand-5);
+  border: var(--karte-rand) solid var(--f-karte-rand);
+  border-radius: var(--radius-l);
+  background: var(--f-flaeche);
+}
+#f01b .wolke-tafel .wortwolke {
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+}
+
+/* Leertext des Bausteins („Was verbinden Sie mit …?“) wiederholt nur den
+   Titel – er bleibt für Screenreader im Dokument, ist aber unsichtbar */
+#f01b .ww-leer { opacity: 0; }
+
+/* Zeichnung im leeren Zustand: mittig hinter der Wolke, verschwindet mit dem
+   ersten Wort (:has prüft, ob der Leertext noch angezeigt wird) */
+#f01b .wolke-deko {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 62%;
+  max-width: 560px;
+  height: auto;
+  translate: -50% -50%;
+  overflow: visible;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+#f01b .wolke-tafel:has(.ww-leer:not([hidden])) .wolke-deko { opacity: 1; }
+#f01b .wolke-deko-ringe ellipse {
+  fill: none;
+  stroke: var(--f-linie);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 8;
+  stroke-linecap: round;
+}
+#f01b .wolke-deko-blase {
+  fill: var(--f-akzent-flaeche);
+  stroke: var(--f-akzent);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+/* Eingabezeile: ruhiger Abstand zur Wolke */
+#f01b .ww-eingabe {
+  padding-top: var(--abstand-3);
+}

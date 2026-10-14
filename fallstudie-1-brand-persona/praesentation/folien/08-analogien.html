@@ -1,0 +1,209 @@
+<!--
+  08-analogien.html – Folien f08 „Analogien & Live-Umfrage“ (70 s) und
+  f08b „Markentonalität“ (50 s) · Bündel B · Feld Markentonalität
+  =========================================================================
+  Methode: Analogiemethoden (Marke als Mensch / als Tier) → Markentonalität
+  nach Esch; Zuordnung der Merkmale zu den fünf Dimensionen der Brand
+  Personality Scale nach Aaker (1997). Prompt P11 in ../prompts.md, Vorlage in
+  ../methoden.md (Abschnitt 4). Zusammen 120 s – aufgeteilt in zwei Folien,
+  damit jede Folie lesbar bleibt (höchstens ca. 40 Wörter).
+
+  WAS DIE FOLIEN ZEIGEN
+  f08  Schritt 0  Frage ans Publikum + Live-Umfrage (Baustein „umfrage“, ID tier,
+                  Optionen aus marke.js). Mit Link in marke.js: QR-Code; ohne
+                  Link: „Abstimmung per Handzeichen“ und Zählmodus.
+       Schritt 1  Auflösung: Zeile „Unsere Analyse“ wird umrahmt, links die große
+                  Aussagezahl („27 % sehen HOLY wie wir: als Eule“).
+       Schritt 2  Szenenwechsel: Der Titel wird von der Frage zur Kernaussage,
+                  statt der Umfrage erscheinen unsere Analogien: HOLY als Tier
+                  (mit 3 Gründen) und als Mensch (Kurzprofil).
+       Schritt 3  Kontrast: zwei Wettbewerber, klein und zurückgenommen.
+  f08b Schritt 0  Raster: die fünf Aaker-Dimensionen (Skala 1–5)
+       Schritt 1  Werte von HOLY (Balken + Zahl)
+       Schritt 2  Wettbewerber A und B als Marker (Kontrast)
+       Schritt 3  abgeleitete Persönlichkeitsmerkmale an ihren Dimensionen;
+                  Dimensionen ohne Merkmal treten zurück
+       Schritt 4  Ergebnis fürs Steuerrad: Markenemotionen + Markenbeziehung
+
+  SO ÄNDERN SIE DIE INHALTE
+  • Inhalte stehen in den <script type="application/json" class="daten"> unten
+    in jeder Folie. js/folien/08-analogien.js baut daraus die Karten und das
+    Profil. ALLE WERTE UND TEXTE SIND BEISPIELDATEN.
+  • Umfrage (Frage, Tiere, Link für den QR-Code, „unsere Antwort“): in marke.js
+    unter umfragen.tier – NICHT hier. Das Tier in den Daten von f08 und im
+    Titel unten muss zu marke.js → umfragen.tier.unsereAntwort passen.
+  • Die beiden Titel (Kernaussagen) stehen hier im HTML – bei neuen Ergebnissen
+    anpassen. Der Markenname kommt aus marke.js (data-marke) – nie eintippen.
+-->
+
+<!-- ===================================================================
+     f08 · Analogien + Live-Umfrage (70 s)
+     =================================================================== -->
+<section class="folie" id="f08" data-titel="Analogien & Live-Umfrage" data-feld="tonalitaet" data-zeit="70" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Analogiemethoden · Live-Umfrage <span class="beispiel">Beispieldaten</span></p>
+    <!-- Titel mit zwei Fassungen: erst die Frage (kommt aus marke.js → umfragen.tier.frage),
+         ab Schritt 2 die Kernaussage. Die Kernaussage hier ändern. -->
+    <h2 class="titel g4-titel">
+      <span class="g4-titel-frage">Wenn <em data-marke></em> ein Tier wäre – welches?</span>
+      <span class="g4-titel-antwort" data-schritt="2" data-animation="hoch"><em data-marke></em> wäre eine Eule: klug statt laut</span>
+    </h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <!-- Zwei Szenen liegen übereinander: Umfrage (Schritt 0–1), Analogien (ab Schritt 2) -->
+    <div class="g4-buehne">
+
+      <!-- SZENE 1: Live-Umfrage. Daten aus marke.js → umfragen.tier.
+           data-aufloesung="1": Schritt 1 umrahmt „Unsere Analyse“.
+           data-aussage="1":    Schritt 1 ersetzt den QR-Block durch die Aussagezahl. -->
+      <div class="g4-szene g4-szene--umfrage">
+        <div class="umfrage" data-umfrage="tier" data-aufloesung="1" data-aussage="1"></div>
+      </div>
+
+      <!-- SZENE 2: unsere Analogien (Inhalt baut das Skript aus den Daten unten) -->
+      <div class="g4-szene g4-szene--analogien" data-schritt="2" data-animation="keine">
+        <div class="g4-paar" data-staffel="140" data-animation="hoch">
+          <article class="karte karte--weich g4-karte g4-karte--tier" data-g4="tier"></article>
+          <article class="karte karte--weich g4-karte g4-karte--mensch" data-g4="mensch"></article>
+        </div>
+        <div class="g4-kontrast" data-schritt="3" data-animation="keine">
+          <span class="karte-kicker g4-kontrast-kicker" data-meta data-animation="einblenden">Im Kontrast</span>
+          <div class="g4-kontrast-liste" data-g4="wettbewerber" data-staffel="120" data-animation="hoch"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Umfrage = Stimmungsbild im Raum, keine repräsentative Erhebung · Analogien: eigene Analyse (Prompt P11) · Methode nach Esch</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Frage ans Publikum</b> (ca. 35 s) Wie klingt eine Marke? Dafür nutzen wir Analogiemethoden: Über ein Bild – die Marke als Mensch oder als Tier – werden emotionale Eigenschaften sichtbar, die direkte Fragen nicht erfassen. Probieren Sie es selbst: Wenn <span data-marke></span> ein Tier wäre – welches? [Mit Link: Bitte den QR-Code scannen, anonym, ohne Anmeldung – 30 Sekunden.] [Ohne Link: Ich lese die fünf Tiere vor, bitte per Handzeichen; [Name] zählt mit.]</p>
+    <p data-schritt="1"><b>Auflösung</b> (ca. 10 s) Unsere Analyse ergab: die Eule. [27 %] von Ihnen sehen <span data-marke></span> genauso. Das ist ein kleines Stimmungsbild hier im Raum, keine repräsentative Erhebung – aber ein guter Abgleich mit unserer Sicht.</p>
+    <p data-schritt="2"><b>Warum Eule?</b> (ca. 15 s) Hellwach bis spät, klug statt laut, behält den Überblick. Als Mensch wäre <span data-marke></span> [Anfang 30, Produktdesignerin, sportlich und clean gekleidet, wach und direkt – ohne Show]. Wichtig: Das ist die Marke als Mensch, nicht unsere Persona Lea.</p>
+    <p data-schritt="3"><b>Kontrast</b> (ca. 10 s) Dieselbe Frage für zwei Wettbewerber: A wäre ein Löwe – laut, dominant; B ein Hund – treu, bodenständig. Erst der Vergleich zeigt die Eigenart: <span data-marke></span> ist der kluge, leise Typ. Überleitung: Was heißt das für die Tonalität?</p>
+    <p>Bedienung: Klick auf ein Tier oder Ziffer 1–5 = +1 Stimme, Umschalt = −1, Doppelklick auf einen Wert = Zahl eintragen, Knopf „Werte“ = alle Werte (z. B. aus Mentimeter/Particify) übernehmen. VOR DEM VORTRAG: „Zurücksetzen“ zweimal klicken (löscht die Beispielwerte) und den Abstimm-Link in marke.js → umfragen.tier.link eintragen (dann erscheint der QR-Code; mit mehreren Handys testen).</p>
+    <p>Hintergrund: Analogien per KI (Prompt P11) erzeugt und mit den Antworten der Gruppe und von 3–5 weiteren Personen abgeglichen (Backup B2). Alle Inhalte sind Beispieldaten. Rückfrage „Warum ist das wissenschaftlich?“ → Analogien sind projektive Verfahren; sie liefern Hypothesen zur Tonalität, die wir auf der nächsten Folie mit der Brand Personality Scale nach Aaker strukturieren.</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • marke.mensch: genau so viele Zeilen, wie Platz ist (empfohlen: 4).
+         „merkmal“ = kleine Beschriftung links, „wert“ = Text rechts.
+       • marke.tier.name: muss zu marke.js → umfragen.tier.unsereAntwort passen.
+         „gruende“: genau drei kurze Gründe.
+       • Bild: Für Eule, Fuchs, Löwe, Hund und Delfin gibt es eigene
+         Strichzeichnungen; sie werden über den Tiernamen gefunden. Andere Tiere
+         erscheinen ohne Bild. "bild": "" schaltet ein Bild ab.
+       • wettbewerber: genau zwei Einträge. Namen erst eintragen, wenn die
+         Gruppe die Wettbewerber festgelegt hat (Repertory Grid). -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – Ergebnisse aus Prompt P11 nach eigener Prüfung (Gruppe + 3–5 Personen) eintragen",
+    "marke": {
+      "tier": {
+        "name": "Eule",
+        "gruende": ["hellwach bis spät", "klug statt laut", "behält den Überblick"]
+      },
+      "mensch": [
+        { "merkmal": "Alter",     "wert": "Anfang 30" },
+        { "merkmal": "Beruf",     "wert": "Produktdesignerin" },
+        { "merkmal": "Stil",      "wert": "sportlich, clean" },
+        { "merkmal": "Auftreten", "wert": "wach, direkt, ohne Show" }
+      ]
+    },
+    "wettbewerber": [
+      { "name": "Wettbewerber A", "tier": "Löwe", "stichworte": "laut, dominant",     "mensch": "Extremsportler, 25" },
+      { "name": "Wettbewerber B", "tier": "Hund", "stichworte": "treu, bodenständig", "mensch": "Vereinstrainer, 45" }
+    ]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     f08b · Markentonalität (50 s) – Profil nach Aaker + Ergebnis fürs Steuerrad
+     =================================================================== -->
+<section class="folie" id="f08b" data-titel="Markentonalität (Aaker)" data-feld="tonalitaet" data-zeit="50" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Analogien → Markentonalität <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel"><em data-marke></em> ist klug, ehrlich und hellwach</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <div class="raster-12 g4t">
+      <!-- LINKS: Profil nach Aaker (baut das Skript aus den Daten unten) -->
+      <div class="sp-8 g4t-profil" data-g4t="profil"></div>
+
+      <!-- RECHTS: Ergebnis für das Feld „Markentonalität“ im Steuerrad -->
+      <aside class="sp-4 g4t-ergebnis" data-schritt="4" data-animation="hoch">
+        <div class="karte karte--weich g4t-karte">
+          <span class="karte-kicker g4t-kicker"><svg class="icon" aria-hidden="true"><use href="#i-steuerrad"/></svg>Ins Steuerrad</span>
+          <div class="g4t-block">
+            <span class="g4t-label" data-meta>Markenemotionen</span>
+            <ul class="g4t-emotionen" data-g4t="emotionen"></ul>
+          </div>
+          <div class="g4t-block">
+            <span class="g4t-label" data-meta>Markenbeziehung</span>
+            <p class="g4t-beziehung" data-g4t="beziehung"></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Skala 1 = beschreibt die Marke gar nicht, 5 = sehr gut · Dimensionen nach Aaker (1997) · Tonalität nach Esch</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Raster</b> (ca. 8 s) Aus den Analogien leiten wir die Markentonalität ab. Zur Einordnung nutzen wir die fünf Dimensionen der Markenpersönlichkeit nach Aaker: Aufrichtigkeit, Spannung, Kompetenz, Kultiviertheit, Robustheit.</p>
+    <p data-schritt="1"><b><span data-marke></span></b> (ca. 10 s) Am stärksten: Kompetenz [4,4] und Aufrichtigkeit [4,1], dazu Spannung [3,7]. Kultiviertheit und Robustheit spielen kaum eine Rolle.</p>
+    <p data-schritt="2"><b>Wettbewerb</b> (ca. 10 s) Wettbewerber A – der Löwe – liegt bei Spannung und Robustheit vorn, B – der Hund – bei Aufrichtigkeit. <span data-marke></span> verbindet als Einzige Kompetenz mit Aufrichtigkeit.</p>
+    <p data-schritt="3"><b>Merkmale</b> (ca. 10 s) Daraus unsere fünf Persönlichkeitsmerkmale: klug und fokussiert (Kompetenz), ehrlich und unaufgeregt (Aufrichtigkeit), hellwach (Spannung).</p>
+    <p data-schritt="4"><b>Ins Steuerrad</b> (ca. 12 s) Markenemotionen: Klarheit, Fokus, Zuversicht. Beziehung zu den Kund:innen: ein Mentor auf Augenhöhe. Diese Tonalität ist unser Prüfmaßstab für die Kommunikationsanalyse – passt der Auftritt dazu? → nächste Folie.</p>
+    <p>Hintergrund: Die Werte (1–5) sind eine Einschätzung der Gruppe auf Basis von Prompt P11 – keine Befragung; Beispieldaten. Aaker (1997) nennt je Dimension Facetten, z. B. Aufrichtigkeit: bodenständig, ehrlich, gesund, fröhlich; Spannung: gewagt, temperamentvoll, fantasievoll, modern; Kompetenz: zuverlässig, intelligent, erfolgreich; Kultiviertheit: vornehm, charmant; Robustheit: naturverbunden, zäh (Übersetzung aus dem Modellwissen – mit der Vorlesung abgleichen). Für deutsche Marken gibt es angepasste Skalen (nach unserem Kenntnisstand z. B. Mäder 2005 – unsicher, prüfen). Tonalität umfasst nach Esch Markenpersönlichkeit, Markenbeziehung und Markenerlebnisse.</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • skala: kleinster und größter Wert (Aaker: 1–5).
+       • dimensionen: „marke“ = Wert von HOLY, „wettbewerber“ = Werte in der
+         Reihenfolge der Liste „wettbewerber“ unten (A, B). Ohne Wettbewerber-
+         werte entfällt Schritt 2 automatisch.
+       • sortierung: "wert" = stärkste Dimension oben, "aaker" = Reihenfolge wie
+         eingetragen (Aufrichtigkeit, Spannung, Kompetenz, Kultiviertheit, Robustheit).
+       • merkmale: 4–5 Persönlichkeitsmerkmale, „dimension“ muss genau wie ein
+         Name unter „dimensionen“ geschrieben sein. Dimensionen ohne Merkmal
+         treten in Schritt 3 zurück.
+       • emotionen: 2–3 Markenemotionen; beziehung: Rolle gegenüber Kund:innen
+         (z. B. Freund, Mentor, Entertainer, Dienstleister – siehe Prompt P11). -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – Einschätzung der Gruppe (Skala 1–5) aus Prompt P11 nach eigener Prüfung eintragen",
+    "skala": [1, 5],
+    "sortierung": "wert",
+    "wettbewerber": [
+      { "kuerzel": "A", "name": "Wettbewerber A" },
+      { "kuerzel": "B", "name": "Wettbewerber B" }
+    ],
+    "dimensionen": [
+      { "name": "Aufrichtigkeit", "marke": 4.1, "wettbewerber": [2.4, 3.9] },
+      { "name": "Spannung",       "marke": 3.7, "wettbewerber": [4.5, 2.2] },
+      { "name": "Kompetenz",      "marke": 4.4, "wettbewerber": [3.2, 3.4] },
+      { "name": "Kultiviertheit", "marke": 2.3, "wettbewerber": [2.0, 2.6] },
+      { "name": "Robustheit",     "marke": 1.9, "wettbewerber": [4.2, 2.8] }
+    ],
+    "merkmale": [
+      { "merkmal": "klug",        "dimension": "Kompetenz" },
+      { "merkmal": "fokussiert",  "dimension": "Kompetenz" },
+      { "merkmal": "ehrlich",     "dimension": "Aufrichtigkeit" },
+      { "merkmal": "unaufgeregt", "dimension": "Aufrichtigkeit" },
+      { "merkmal": "hellwach",    "dimension": "Spannung" }
+    ],
+    "emotionen": ["Klarheit", "Fokus", "Zuversicht"],
+    "beziehung": "Mentor auf Augenhöhe"
+  }
+  </script>
+</section>

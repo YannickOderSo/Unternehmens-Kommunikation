@@ -1,0 +1,336 @@
+/* =============================================================================
+   css/folien/05-limbic-map.css – Gestaltung nur für Folie f05 „Limbic Map“
+   -----------------------------------------------------------------------------
+   Aufbau (Bühne 1920 × 1080):
+     links (7 Spalten)  Karte: Kreis mit drei Motivsystemen, außen die Namen der
+                        Systeme und Mischbereiche, innen am Rand die Limbic Types,
+                        darin zwei Punkte (Persona, Marke) und ihre Verbindung
+     rechts (5 Spalten) Limbic Type der Persona, Motiv-Überschneidung,
+                        drei Konsequenzen für die Kommunikation
+   Lage und Größe der Kartenteile rechnet js/folien/05-limbic-map.js aus.
+   Alle Regeln beginnen mit #f05 bzw. einer Klasse „g2l-…“.
+   Nur Variablen aus tokens.css verwenden.
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   0. FARBEN DER MOTIVSYSTEME
+   Angelehnt an gängige Darstellungen der Limbic Map (Balance grün, Dominanz
+   rot, Stimulanz gelb-orange) – frei gewählt, mit der Vorlesung abgleichen.
+   Gemischt aus den Signal-Tokens, damit sie in allen Themen und im
+   Dunkelmodus passen:
+     --g2l-farbe-<system>  zarte Fläche des Sektors (Schrift bleibt gut lesbar)
+     --g2l-stark-<system>  kräftiger Farbpunkt vor dem Systemnamen
+   --------------------------------------------------------------------------- */
+#f05 .g2l {
+  --g2l-farbe-balance:   color-mix(in oklab, var(--f-erfolg) 17%, var(--f-hintergrund));
+  --g2l-farbe-dominanz:  color-mix(in oklab, var(--f-fehler) 15%, var(--f-hintergrund));
+  --g2l-farbe-stimulanz: color-mix(in oklab, var(--f-warnung) 22%, var(--f-hintergrund));
+  --g2l-stark-balance:   var(--f-erfolg);
+  --g2l-stark-dominanz:  var(--f-fehler);
+  --g2l-stark-stimulanz: color-mix(in oklab, var(--f-warnung) 80%, var(--f-hintergrund));
+  --g2l-satt-balance:    color-mix(in oklab, var(--f-erfolg) 30%, var(--f-hintergrund));
+  --g2l-satt-dominanz:   color-mix(in oklab, var(--f-fehler) 26%, var(--f-hintergrund));
+  --g2l-satt-stimulanz:  color-mix(in oklab, var(--f-warnung) 36%, var(--f-hintergrund));
+}
+
+#f05 .g2l-raster {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+
+/* ---------------------------------------------------------------------------
+   1. KARTE (links)
+   --------------------------------------------------------------------------- */
+#f05 .g2l-platz {
+  position: relative;
+  min-height: 0;
+}
+#f05 .g2l-karte {
+  position: absolute;     /* Größe setzt das Skript (= Größe des Platzes) */
+  left: 0;
+  top: 0;
+}
+
+/* Kreisscheibe: Farbverlauf der Sektoren kommt aus dem Skript (conic-gradient) */
+#f05 .g2l-scheibe {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--f-flaeche);
+  box-shadow: inset 0 0 0 var(--linie-fein) color-mix(in oklab, var(--f-linie) 70%, transparent);
+}
+
+/* Mittelpunkt = ausgeglichenes Profil (33/33/33 %) */
+#f05 .g2l-mitte {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  border: var(--linie-fein) solid var(--f-text-2);
+  background: var(--f-hintergrund);
+}
+
+/* Ring am Rand mit den Limbic Types (SVG, Ursprung in der Kreismitte).
+   Die helle Ringfläche liegt über dem Farbverlauf, damit die Typ-Namen gut
+   lesbar bleiben. Die Schriftgröße setzt das Skript (MASS.typSchrift). */
+#f05 .g2l-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+#f05 .g2l-ring-flaeche {
+  fill: none;
+  stroke: color-mix(in oklab, var(--f-hintergrund) 62%, transparent);
+}
+#f05 .g2l-ring-kante {
+  fill: none;
+  stroke: color-mix(in oklab, var(--f-linie) 80%, transparent);
+  stroke-width: var(--linie-fein);
+}
+#f05 .g2l-typtext {
+  font-family: var(--schrift-text);
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  fill: var(--f-text);
+  transition: fill var(--dauer-mittel) var(--kurve);
+}
+/* Markierung des Persona-Typs: Bogen auf dem Rand (erst ab Schritt 1) */
+#f05 .g2l-typbogen {
+  fill: none;
+  stroke: var(--f-akzent);
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0;
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+
+/* Äußere Beschriftungen */
+#f05 .g2l-aussen {
+  position: absolute;
+  white-space: nowrap;
+  line-height: 1.12;
+}
+#f05 .g2l-aussen.ist-links { text-align: right; }
+#f05 .g2l-aussen.ist-mitte { text-align: center; }
+#f05 .g2l-zeile { display: block; }
+
+/* Motivsysteme: groß, Display-Schrift, Farbpunkt = Farbe des Sektors */
+#f05 .g2l-aussen--system {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  letter-spacing: -0.01em;
+  color: var(--f-text);
+}
+#f05 .g2l-farbpunkt {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+/* Mischbereiche: kursiv, gedeckt */
+#f05 .g2l-aussen--misch {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-text-min);
+  font-style: italic;
+  font-weight: var(--gewicht-display);
+  color: var(--f-text-2);
+}
+
+/* Verbindungslinie Persona ↔ Marke */
+#f05 .g2l-linien {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+#f05 .g2l-verbindung {
+  stroke: var(--f-text);
+  stroke-width: var(--linie-stark);
+  stroke-linecap: round;
+}
+
+/* Punkte: Container ohne Größe genau auf der berechneten Stelle */
+#f05 .g2l-punkt {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+#f05 .g2l-punkt-form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--f-akzent);
+  box-shadow: 0 0 0 5px var(--f-hintergrund), var(--schatten-1);
+  transform: translate(-50%, -50%);
+}
+/* Marke als Raute (zweite Form, nicht nur zweite Farbe) */
+#f05 .g2l-punkt--marke .g2l-punkt-form {
+  width: 28px;
+  height: 28px;
+  border-radius: min(var(--radius-s), 4px);   /* bleibt in allen Themen eine Raute */
+  background: var(--f-text);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#f05 .g2l-punkt-text {
+  position: absolute;
+  padding: 3px 14px 5px;
+  border-radius: var(--radius-pille);
+  background: var(--f-hintergrund);
+  box-shadow: var(--schatten-1);
+  font-size: var(--groesse-text-min);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--f-akzent);
+}
+#f05 .g2l-punkt--marke .g2l-punkt-text { color: var(--f-text); }
+
+/* Ab Schritt 1 (Persona-Punkt sichtbar): Typ der Persona auf der Karte markieren.
+   Im Druck sind alle Schritte an – dann ist die Markierung automatisch sichtbar. */
+/* … erst, wenn der Punkt gelandet ist (Verzögerung nur beim Einschalten) */
+#f05 .g2l-karte:has(.g2l-punkt--persona.schritt-an) .g2l-typtext.ist-persona-typ { fill: var(--f-akzent); transition-delay: 650ms; }
+#f05 .g2l-karte:has(.g2l-punkt--persona.schritt-an) .g2l-typbogen { opacity: 1; transition-delay: 650ms; }
+
+
+/* ---------------------------------------------------------------------------
+   2. RECHTE SEITE
+   --------------------------------------------------------------------------- */
+#f05 .g2l-seite {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-5);
+  min-height: 0;
+  padding-top: var(--abstand-2);
+}
+
+/* Limbic Type der Persona: kräftige Linie oben (wie Kennzahlen auf f03) */
+#f05 .g2l-typ {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: var(--abstand-3);
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+}
+#f05 .g2l-typ-name {
+  margin-top: 2px;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel);
+  font-weight: var(--gewicht-titel);
+  font-variation-settings: "opsz" var(--opsz-titel);
+  letter-spacing: var(--laufweite-titel);
+  line-height: 1.02;
+  color: var(--f-akzent);
+}
+#f05 .g2l-typ-motive {
+  font-size: var(--groesse-text);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+
+/* Motiv-Überschneidung: Zahl links, Text rechts daneben, Balken darunter */
+#f05 .g2l-fit {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--abstand-4);
+  row-gap: var(--abstand-3);
+}
+#f05 .g2l-fit-text {
+  font-size: var(--groesse-text);
+  line-height: 1.25;
+  color: var(--f-text);
+}
+#f05 .g2l-ohne-umbruch { white-space: nowrap; }
+#f05 .g2l-profile {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#f05 .g2l-profil {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--abstand-3);
+}
+#f05 .g2l-profil-name {
+  font-size: var(--groesse-meta);
+  font-weight: 700;
+  color: var(--f-text-2);
+  white-space: nowrap;
+}
+#f05 .g2l-profil-balken {
+  display: flex;
+  gap: 3px;
+  height: 34px;
+}
+#f05 .g2l-segment {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0 10px;
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-meta);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--f-text);
+}
+#f05 .g2l-segment:first-child { border-radius: var(--radius-s) 0 0 var(--radius-s); }
+#f05 .g2l-segment:last-child { border-radius: 0 var(--radius-s) var(--radius-s) 0; }
+
+/* Konsequenzen: drei Zeilen wie ein Inhaltsverzeichnis */
+#f05 .g2l-folgen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-2);
+  margin-top: auto;           /* unten bündig mit der Karte */
+}
+#f05 .g2l-folgen-liste {
+  display: flex;
+  flex-direction: column;
+}
+#f05 .g2l-folge {
+  display: grid;
+  grid-template-columns: 44px 168px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--abstand-3);
+  padding: 10px 0 11px;
+  border-top: var(--linie-fein) solid var(--f-linie);
+}
+#f05 .g2l-folge-nr {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-akzent);
+}
+#f05 .g2l-folge-bereich {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  color: var(--f-text-2);
+  white-space: nowrap;
+}
+#f05 .g2l-folge-text {
+  font-size: var(--groesse-text);
+  line-height: 1.25;
+  color: var(--f-text);
+}

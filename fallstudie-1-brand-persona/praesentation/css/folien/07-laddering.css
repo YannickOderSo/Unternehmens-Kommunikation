@@ -1,0 +1,212 @@
+/* =============================================================================
+   css/folien/07-laddering.css – Gestaltung nur für Folie f07
+   „Laddering → Markennutzen“ (folien/07-laddering.html)
+   -----------------------------------------------------------------------------
+   Alle Regeln beginnen mit .lad… (eigene Klasse der Folie). Nur Variablen aus
+   tokens.css.
+
+   SCHRITT-ZUSTÄNDE
+   Vier unsichtbare Auslöser (.lad-z1 … .lad-z4) bekommen von der Engine die
+   Klasse .schritt-an (erreicht) bzw. .schritt-aktuell (gerade aktuell).
+   Mit :has() färbt das CSS Ebenen-Beschriftung und Sprossen und bewegt den
+   Kletterpunkt – im Vortrag, in der Vorschau und im Druck gleich.
+   Ebene 0 = Attribute (unten) … Ebene 3 = Werte (oben).
+   ============================================================================= */
+
+.lad-zustand { display: none; }
+
+.lad-buehne {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.lad-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+
+
+/* ---------------------------------------------------------------------------
+   1. LEITER
+   --------------------------------------------------------------------------- */
+/* Geisterleiter: zeigt von Anfang an, wohin es geht */
+.lad-holm-geist,
+.lad-sprosse-geist { stroke: var(--f-linie); stroke-width: var(--linie-fein); }
+.lad-holm-geist { stroke-width: var(--linie-stark); stroke-linecap: round; }
+
+/* kräftige Leiter (wächst nach oben) */
+.lad-holm { fill: none; stroke: var(--f-linie-stark); stroke-width: var(--linie-stark); stroke-linecap: round; }
+.lad-sprosse {
+  fill: none;
+  stroke: var(--f-text-2);
+  stroke-width: var(--linie-fein);
+  transition: stroke var(--dauer-mittel) var(--kurve), stroke-width var(--dauer-mittel) var(--kurve);
+}
+
+/* aktuelle Sprosse in Akzentfarbe */
+.lad:not(:has(.lad-z1.schritt-an)) .lad-sprosse--0,
+.lad:has(.lad-z1.schritt-aktuell) .lad-sprosse--1,
+.lad:has(.lad-z2.schritt-aktuell) .lad-sprosse--2,
+.lad:has(.lad-z3.schritt-aktuell) .lad-sprosse--3 { stroke: var(--f-akzent); stroke-width: var(--linie-stark); }
+/* Schritt 4: Sprossen der Nutzen-Ebenen in ihrer Farbe */
+.lad:has(.lad-z4.schritt-an) .lad-sprosse--hart { stroke: var(--f-hart); stroke-width: var(--linie-stark); }
+.lad:has(.lad-z4.schritt-an) .lad-sprosse--weich { stroke: var(--f-weich); stroke-width: var(--linie-stark); }
+
+/* Kletterpunkt: sitzt auf der aktuellen Sprosse am linken Holm */
+.lad-kletterer {
+  fill: var(--f-akzent);
+  stroke: var(--f-hintergrund);
+  stroke-width: 3;
+  translate: 0 var(--lad-y0);
+  transition: translate var(--dauer-lang) var(--kurve-feder);
+}
+.lad:has(.lad-z1.schritt-an) .lad-kletterer { translate: 0 var(--lad-y1); }
+.lad:has(.lad-z2.schritt-an) .lad-kletterer { translate: 0 var(--lad-y2); }
+.lad:has(.lad-z3.schritt-an) .lad-kletterer { translate: 0 var(--lad-y3); }
+
+
+/* ---------------------------------------------------------------------------
+   2. EBENEN-BESCHRIFTUNG (links neben der Leiter, Metaangabe wie eine Achse)
+   noch nicht erreicht = gedeckt · erreicht = Text · aktuell = Akzent
+   --------------------------------------------------------------------------- */
+.lad-ebene {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.25;
+  text-align: right;
+  white-space: nowrap;
+  color: var(--f-text-2);
+  transition: color var(--dauer-mittel) var(--kurve);
+}
+.lad-ebene--0,
+.lad:has(.lad-z1.schritt-an) .lad-ebene--1,
+.lad:has(.lad-z2.schritt-an) .lad-ebene--2,
+.lad:has(.lad-z3.schritt-an) .lad-ebene--3 { color: var(--f-text); }
+.lad:not(:has(.lad-z1.schritt-an)) .lad-ebene--0,
+.lad:has(.lad-z1.schritt-aktuell) .lad-ebene--1,
+.lad:has(.lad-z2.schritt-aktuell) .lad-ebene--2,
+.lad:has(.lad-z3.schritt-aktuell) .lad-ebene--3 { color: var(--f-akzent); }
+.lad:has(.lad-z4.schritt-an) .lad-ebene--hart.ist-nutzen { color: var(--f-hart); }
+.lad:has(.lad-z4.schritt-an) .lad-ebene--weich.ist-nutzen { color: var(--f-weich); }
+
+
+/* ---------------------------------------------------------------------------
+   3. KNOTEN UND VERBINDUNGEN
+   Farbe je Ebene: Attribute neutral (Startkarte) · funktional = hard facts ·
+   psychosozial = soft facts · Werte = Kernfarbe
+   --------------------------------------------------------------------------- */
+.lad-knoten {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  padding: 9px 22px 10px;
+  border-radius: var(--radius-l);
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-text-min);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  white-space: normal;
+}
+.lad-knoten--neutral {
+  background: var(--f-karte);
+  color: var(--f-text);
+  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-linie-stark);
+}
+.lad-knoten--hart { background: var(--f-hart-flaeche); color: var(--f-hart); }
+.lad-knoten--weich { background: var(--f-weich-flaeche); color: var(--f-weich); }
+.lad-knoten--kern {
+  background: var(--f-kern);
+  color: var(--f-auf-kern);
+  border-radius: var(--radius-pille);
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-text);
+  font-weight: var(--gewicht-display);
+  padding: 8px 26px 10px;
+}
+
+.lad-kante { fill: none; stroke: var(--f-text-2); stroke-linecap: butt; }
+
+
+/* ---------------------------------------------------------------------------
+   4. RECHTE SPALTE
+   --------------------------------------------------------------------------- */
+.lad-seite { position: absolute; top: 0; bottom: 0; }
+.lad-seite > * { position: absolute; left: 0; right: 0; transform: translateY(-50%); }
+
+/* Leiterfrage – wie die Triaden-Frage auf Folie 06 */
+.lad-frage {
+  padding-left: 28px;
+  border-left: var(--linie-stark) solid var(--f-akzent);
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  font-style: var(--stil-hervor);
+  line-height: 1.24;
+  color: var(--f-text);
+  text-wrap: balance;
+}
+.lad-frage-notiz { margin-top: 10px; padding-left: 31px; font-size: var(--groesse-meta); line-height: 1.35; color: var(--f-text-2); }
+
+/* Startpunkte + Legende der Linienstärke */
+.lad-start { display: flex; flex-direction: column; gap: 14px; font-size: var(--groesse-meta); line-height: 1.3; color: var(--f-text-2); }
+.lad-start-notiz { display: flex; align-items: center; gap: 10px; }
+.lad-start-notiz .icon { width: 24px; height: 24px; color: var(--f-text); }
+.lad-legende { display: flex; align-items: center; gap: 10px; }
+.lad-legende-linie { flex: none; overflow: visible; }
+.lad-legende-linie line { stroke: var(--f-text-2); }
+.lad-legende-zahl { font-weight: 650; font-variant-numeric: tabular-nums; color: var(--f-text); margin-right: 8px; }
+
+/* Nutzen-Kästen (Schritt 4) */
+.lad-nutzen {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 24px 18px;
+  border-radius: var(--radius-l);
+  border-left: 6px solid transparent;
+}
+.lad-nutzen--hart { background: var(--f-hart-flaeche); border-left-color: var(--f-hart); }
+.lad-nutzen--weich { background: var(--f-weich-flaeche); border-left-color: var(--f-weich); }
+.lad-nutzen--kern { background: var(--f-akzent-flaeche); border-left-color: var(--f-akzent); }
+.lad-nutzen--neutral { background: var(--f-flaeche); border-left-color: var(--f-linie-stark); }
+.lad-nutzen-titel {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.25;
+}
+.lad-nutzen--hart .lad-nutzen-titel { color: var(--f-hart); }
+.lad-nutzen--weich .lad-nutzen-titel { color: var(--f-weich); }
+.lad-nutzen-text {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-text);
+  font-weight: var(--gewicht-display);
+  line-height: 1.2;
+  color: var(--f-text);
+}
+
+.lad-pfeil { fill: none; stroke-width: var(--linie-stark); stroke-linecap: round; stroke-linejoin: round; }
+.lad-pfeil--hart { stroke: var(--f-hart); }
+.lad-pfeil--weich { stroke: var(--f-weich); }
+.lad-pfeil--kern,
+.lad-pfeil--neutral { stroke: var(--f-text-2); }
+
+
+/* ---------------------------------------------------------------------------
+   5. BEWEGUNG REDUZIEREN: Kletterpunkt springt ohne Weg
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .lad-kletterer { transition: none; }
+}
+html.bewegung-reduziert .lad-kletterer { transition: none; }

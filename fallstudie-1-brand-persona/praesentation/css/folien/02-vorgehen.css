@@ -1,0 +1,104 @@
+/* =============================================================================
+   css/folien/02-vorgehen.css – Gestaltung nur für folien/02-vorgehen.html (f02)
+   -----------------------------------------------------------------------------
+   Das Markensteuerrad selbst gestaltet css/komponenten.css (Baustein). Hier
+   nur, was diese Folie zusätzlich braucht:
+     • Leitfrage unter dem Titel (Etikett + Frage in einer Zeile)
+     • etwas weniger Abstand zwischen Kopf und Rad (größeres Rad)
+     • Schritt 6 „Verkettung“: Pfeiltexte betont, Leitfragen/Beschreibungen aus
+     • Schritt 7 „Rahmen“: Persona-Ring zeichnet sich von unten (bei der Pille)
+   Alle Farben, Schriften und Dauern kommen aus css/tokens.css.
+   ============================================================================= */
+
+/* ---------- Kopf: Titel und Leitfrage ---------- */
+/* Der Titel ist zweizeilig (Umbruch nach dem Doppelpunkt) – dafür ist laut
+   tokens.css --groesse-titel-klein (56 px) gedacht. So bleibt genug Höhe für
+   ein großes Rad (Feld- und Kernbeschriftung ≥ 28 px). */
+#f02 .titel { font-size: var(--groesse-titel-klein); }
+
+#f02 .vorgehen-leitfrage {
+  display: flex;
+  align-items: baseline;
+  gap: var(--abstand-4);
+  margin-top: var(--abstand-4);
+}
+#f02 .vorgehen-leitfrage-etikett {
+  flex: none;
+  position: relative;
+  top: -0.2em;                              /* optisch auf die Mittellinie der Frage */
+  padding: 6px 14px;
+  border: var(--linie-fein) solid var(--f-akzent);
+  border-radius: var(--radius-pille);
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1;
+  color: var(--f-akzent);
+}
+#f02 .vorgehen-leitfrage-text {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  font-style: var(--stil-hervor);
+  line-height: 1.25;
+  color: var(--f-text);
+}
+#f02 .vorgehen-leitfrage-text [data-marke] { font-style: var(--stil-marke); }
+
+/* Kopf und Rad rücken enger zusammen: Die Pille „Desk Research“ oben auf dem
+   Rad schafft selbst genug Abstand – so wird das Rad größer */
+#f02 .folie-kopf ~ .folie-inhalt { margin-top: var(--abstand-4); }
+
+
+/* ---------- Rad ---------- */
+/* Persona-Ring: zeichnet sich in Schritt 7 von unten (dort sitzt die Pille
+   „Brand Persona + Limbic Map“) einmal um das Rad. Ein Kreis beginnt rechts –
+   um 90° gedreht beginnt er unten. */
+#f02 .sr-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(90deg);
+}
+/* Unsichtbarer Klickring erst aktiv, wenn der Rahmen zu sehen ist
+   (sonst springt ein Klick neben das Rad unerwartet zur Persona-Folie) */
+#f02 .sr-rahmen-gruppe:not(:has(.sr-ring.schritt-an)) .sr-ring-klick { pointer-events: none; }
+
+/* Beschreibungen der Methodenkarten (Leitfrage + Kurztext, nur bei der
+   gerade gezeigten Methode) stehen im freien Band zwischen oberer und
+   unterer Kartenreihe: bei den oberen Karten darunter, bei den unteren
+   darüber – so ragen sie nie in die Quellenzeile. Bündig mit dem Kartentext. */
+#f02 .steuerrad[data-beschreibungen="schrittweise"] .sr-karte:not(.sr-pille) .sr-karte-text { left: 22px; right: 22px; }
+#f02 .steuerrad[data-beschreibungen="schrittweise"] :is(.sr-karte--lu, .sr-karte--ru) .sr-karte-text { top: auto; bottom: calc(100% + 12px); }
+/* Ab Schritt „Verkettung“ liegen in diesem Band die Pfeiltexte – dann
+   erscheinen dort keine Beschreibungen mehr (auch nicht beim Zeigen mit der Maus) */
+#f02 .steuerrad:has(.sr-logik-text.schritt-an) .sr-karte:not(.sr-pille) .sr-karte-text { display: none; }
+
+/* Schritt 6 „Verkettung“: Die gestrichelten Pfeile und ihre Texte sind das
+   Neue – sie stehen in Akzentfarbe, die Markenkompetenz (Zentrum, Desk
+   Research) tritt zurück. Leitfragen und Methodenbeschreibungen bleiben aus
+   (die Beschreibung unter „Laddering“ läge sonst auf dem Pfeiltext). */
+#f02 .steuerrad.vorgehen-kette .sr-label-frage,
+#f02 .steuerrad.vorgehen-kette .sr-karte-text {
+  opacity: 0;
+  visibility: hidden;
+}
+#f02 .steuerrad.vorgehen-kette :is(.sr-kern-gruppe, .sr-label--kern, .sr-linie[data-paar="kompetenz"]) { opacity: 0.45; }
+#f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] {
+  border-color: color-mix(in oklab, var(--f-karte-rand) 45%, var(--f-hintergrund));
+  box-shadow: none;
+}
+#f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] > * { opacity: 0.45; }
+#f02 .steuerrad.vorgehen-kette .sr-logik-text { color: var(--f-akzent); }
+#f02 .steuerrad.vorgehen-kette .sr-logik-strich,
+#f02 .steuerrad.vorgehen-kette .sr-pfeilspitze { stroke: var(--f-akzent); stroke-width: var(--linie-stark); }
+#f02 .sr-logik-text { transition: color var(--dauer-mittel) var(--kurve), opacity var(--dauer-mittel) var(--kurve); }
+#f02 .sr-logik-strich,
+#f02 .sr-pfeilspitze { transition: stroke var(--dauer-mittel) var(--kurve), stroke-width var(--dauer-mittel) var(--kurve); }
+#f02 .sr-karte > * { transition: opacity var(--dauer-mittel) var(--kurve); }
+
+/* Aufbau beim Betreten (js/folien/02-vorgehen.js animiert Zentrum und Felder):
+   Die Viertel wachsen aus der Radmitte – Bezugspunkt setzt das Skript. */
+#f02 .sr-viertel,
+#f02 .sr-kern-gruppe { transform-box: view-box; }

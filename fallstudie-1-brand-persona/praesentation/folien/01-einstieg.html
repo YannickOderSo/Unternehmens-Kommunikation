@@ -3,75 +3,82 @@
   =================================================================================
   Bündel A · 45 s · kein Feld des Markensteuerrads (data-feld="leer")
 
-  Ablauf (drei Zustände, zwei Klicks):
-    Schritt 0  stark vergrößerter, unscharfer Bildausschnitt + Frage ans Publikum
-    Schritt 1  Bild wird scharf und zoomt heraus, der Markenname erscheint
-    Schritt 2  das Bild gleitet nach rechts, links erscheint der Titel der
-               Präsentation mit Unterzeile, Gruppe und Termin (= Titelfolie)
-  Der Druck (PDF) und die Übersicht zeigen Schritt 2.
+  Ablauf (drei Zustände, zwei Klicks) – wirkt wie der Auftakt einer Keynote:
+    Schritt 0  randloses Rätselbild, stark vergrößert und unscharf; unten die
+               Frage ans Publikum („Welche Marke steckt dahinter?“)
+    Schritt 1  das Bild wird scharf und zoomt heraus; unten erscheint groß der
+               Markenname (Auflösung)
+    Schritt 2  das Bild zieht sich in die rechte Bildtafel zurück, links steht
+               die Titelfolie: Markenname gleitet nach oben, darunter Titel,
+               Unterzeile, Gruppe und Termin
+  Druck (PDF), Übersicht und Rücksprung zeigen Schritt 2 (= Titelfolie).
 
-  ÄNDERN
-    • Rätselbild: in marke.js → raetselBild (Bild in bilder/ legen, Quelle unten
-      in der Fußzeile nennen). Ausschnitt, auf den gezoomt wird: data-fokus.
+  SO ÄNDERN SIE DIE INHALTE
+    • Rätselbild: marke.js → raetselBild (Bild in bilder/ legen; Nutzungsrechte
+      klären und die Quelle unten in der Fußzeile nennen – class="quelle").
+    • Ausschnitt, auf den im Rätsel gezoomt wird UND der in der Bildtafel
+      (Schritt 2) mittig steht: data-fokus="62% 40%" (waagerecht senkrecht).
     • Mehr Hinweisstufen (z. B. ein Zwischenschritt „etwas schärfer“):
-      data-stufen="300/40,170/14,100/0" – Markenname und Titel rücken
-      automatisch einen Schritt nach hinten (js/folien/01-einstieg.js).
-      Dann auch die Absätze in den Notizen (data-schritt) anpassen.
-    • Gruppe, Datum, Dozent, Veranstaltung kommen aus marke.js.
-    • Bildaufteilung im Schlussbild (links Text, rechts Bildtafel):
-      css/folien/01-einstieg.css → --einstieg-teilung. Welcher Teil des Bildes
-      in der Tafel zu sehen ist, richtet sich nach data-fokus (waagerecht).
+      data-stufen="300/40,170/14,100/0" (Zoom in %/Unschärfe in px). Markenname
+      und Titel rücken dann automatisch einen Klick nach hinten
+      (js/folien/01-einstieg.js). Bitte die Absätze in den Notizen anpassen.
+    • Titel, Fallstudie, Veranstaltung, Dozent, Hochschule, Gruppe und Datum
+      kommen aus marke.js – hier nichts eintippen.
+    • Breite der Textspalte im Schlussbild: css/folien/01-einstieg.css →
+      --einstieg-teilung.
 
   Keine Laufkopfzeile (data-laufkopf="aus"): Sie zeigt den Markennamen und
-  würde das Rätsel verraten.
+  würde das Rätsel verraten. Die Folie ist immer dunkel (data-modus="dunkel").
 -->
 <section class="folie einstieg" id="f01" data-titel="Einstieg: Welche Marke steckt dahinter?" data-feld="leer" data-zeit="45" data-buendel="A" data-layout="vollbild" data-laufkopf="aus" data-modus="dunkel">
   <header class="folie-kopf einstieg-kopf">
 
-    <!-- Schritt 0: die Frage (verschwindet, sobald die Auflösung kommt) -->
+    <!-- Schritt 0: die Frage (weicht der Auflösung in Schritt 1) -->
     <div class="einstieg-frage">
       <p class="kicker">Einstieg</p>
       <h2 class="titel einstieg-frage-titel">Welche Marke steckt dahinter?</h2>
-      <p class="lead" data-anrede-sie="Ihr Tipp? Rufen Sie ihn einfach in den Raum." data-anrede-ihr="Euer Tipp? Ruft ihn einfach rein."></p>
+      <p class="lead einstieg-frage-lead" data-anrede-sie="Ihr Tipp? Rufen Sie ihn einfach in den Raum." data-anrede-ihr="Euer Tipp? Ruft ihn einfach in den Raum.">Ihr Tipp? Rufen Sie ihn einfach in den Raum.</p>
     </div>
 
-    <!-- Schritt 1 und 2: Auflösung und Titel (links bündig, von unten gestapelt) -->
+    <!-- Schritt 1 und 2: Auflösung, dann Titelfolie. Die Titelzeile ist bis
+         Schritt 2 auf Höhe 0 zusammengeklappt – so steht der Markenname in
+         Schritt 1 unten und gleitet in Schritt 2 nach oben. -->
     <div class="einstieg-komposition">
-      <div class="einstieg-marke" data-schritt="1" data-einstieg-schritt="aufloesung" data-staffel="160" data-animation="hoch">
+      <div class="einstieg-marke" data-schritt="1" data-einstieg-schritt="aufloesung" data-staffel="140" data-animation="hoch" data-verzoegerung="320">
         <p class="kicker einstieg-kicker">Auflösung</p>
-        <p class="einstieg-markenname" data-marke data-animation="unschaerfe" data-dauer="900"></p>
+        <p class="einstieg-markenname" data-marke data-animation="zoom" data-dauer="900"></p>
       </div>
-      <div class="einstieg-titelblock" data-schritt="2" data-einstieg-schritt="titel" data-staffel="110" data-animation="hoch" data-verzoegerung="380">
-        <h1 class="titel einstieg-titel">Brand Persona&nbsp;&amp; Markenidentität</h1>
-        <p class="lead einstieg-unterzeile"><span data-fallstudie>Fallstudie 1</span> · <span data-veranstaltung>Unternehmenskommunikation</span> · <span data-dozent>Prof. Dr. Daniel Stenger</span></p>
-        <div class="angaben einstieg-angaben">
-          <div><span class="angaben-titel">Gruppe</span><span class="angaben-wert" data-gruppe="zeilen"></span></div>
-          <div><span class="angaben-titel">Termin</span><span class="angaben-wert" data-datum="lang"></span></div>
+      <div class="einstieg-titelzeile">
+        <div class="einstieg-titelblock" data-schritt="2" data-einstieg-schritt="titel" data-staffel="110" data-animation="hoch" data-verzoegerung="420">
+          <h1 class="titel einstieg-titel"><span data-praesentation>Brand Persona &amp; Markenidentität</span></h1>
+          <p class="lead einstieg-unterzeile"><span data-fallstudie>Fallstudie 1</span> · <span data-veranstaltung>Unternehmenskommunikation</span> · <span data-dozent>Prof. Dr. Daniel Stenger</span></p>
+          <div class="angaben einstieg-angaben">
+            <div><span class="angaben-titel">Gruppe</span><span class="angaben-wert" data-gruppe="zeilen"></span></div>
+            <div><span class="angaben-titel">Termin</span><span class="angaben-wert" data-datum="lang"></span></div>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
   <div class="folie-inhalt">
-    <!-- Bild: randlos; im Schlussbild als Tafel rechts (Ausschnitt um data-fokus) -->
+    <!-- Rätselbild: randlos (Schritt 0–1), im Schlussbild als Bildtafel rechts -->
     <div class="einstieg-bild">
       <div class="raetsel" data-stufen="300/40,100/0" data-fokus="62% 40%" data-alt="Rätselbild zum Einstieg (Ausschnitt eines Markenmotivs)"></div>
     </div>
-    <!-- weicher Schatten links: hält den Markennamen über hellen Bildern lesbar (nur Schritt 1) -->
-    <div class="einstieg-schleier" aria-hidden="true"></div>
-    <!-- Kopfzeile des Schlussbilds (wie die Laufkopfzeile der übrigen Folien) -->
-    <p class="einstieg-kopfzeile" data-meta data-schritt="2" data-einstieg-schritt="titel" data-animation="einblenden" data-verzoegerung="600"><span data-hochschule>Hochschule Kaiserslautern</span></p>
+    <!-- Kopfzeile des Schlussbilds (gleiche Linie wie die Laufkopfzeile der übrigen Folien) -->
+    <p class="einstieg-kopfzeile" data-meta data-schritt="2" data-einstieg-schritt="titel" data-animation="einblenden" data-verzoegerung="700"><span data-hochschule>Hochschule Kaiserslautern</span></p>
   </div>
 
-  <footer class="folie-fuss">
+  <footer class="folie-fuss einstieg-fuss">
     <p class="quelle">Bild: Platzhalter-Motiv (eigene Gestaltung)</p>
   </footer>
 
   <aside class="notizen">
     <p><b>Ziel (45 s):</b> Publikum sofort einbinden, dann Thema und Gruppe nennen. Ruhig sprechen, Pausen aushalten.</p>
-    <p data-schritt="0"><b>Frage stellen (ca. 15 s):</b> „Bevor wir anfangen – ein kurzes Rätsel: Welche Marke steckt hinter diesem Bild? Rufen Sie Ihren Tipp einfach in den Raum.“ – 5 bis 10 Sekunden warten, zwei, drei Zurufe aufgreifen („Ich höre … und …“).</p>
-    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> „Es ist <span data-marke></span>.“ Ein Satz zur Marke aus dem Recherche-Dossier ergänzen (Produktkategorie, Herkunft – nur mit Quelle aus recherche/holy-recherche.md). Wer richtig getippt hat: kurz würdigen.</p>
-    <p data-schritt="2"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02 (bzw. zur optionalen Wortwolke 01b).</p>
-    <p>Technik: Weiter mit Clicker, Pfeiltaste oder Leertaste. Rückwärts nimmt die Schritte wieder zurück. Bild ersetzen: marke.js → raetselBild.</p>
+    <p data-schritt="0"><b>Frage stellen (ca. 15 s):</b> „Bevor wir anfangen – ein kurzes Rätsel: Welche Marke steckt hinter diesem Bild? Rufen Sie Ihren Tipp einfach in den Raum.“ – 5 bis 10 Sekunden warten, zwei, drei Zurufe aufgreifen („Ich höre … und …“). Erst dann klicken.</p>
+    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> „Es ist <span data-marke></span>.“ Wer richtig getippt hat: kurz würdigen. Optional ein Satz zur Marke – nur mit Fakt und Quelle aus dem Recherche-Dossier (recherche/holy-recherche.md), sonst weglassen.</p>
+    <p data-schritt="2"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02 (bzw. zur optionalen Wortwolke 01b).</p>
+    <p>Technik: Weiter mit Clicker, Pfeiltaste oder Leertaste; zurück nimmt die Schritte wieder zurück. Bild ersetzen: marke.js → raetselBild (Quelle in der Fußzeile ergänzen).</p>
   </aside>
 </section>

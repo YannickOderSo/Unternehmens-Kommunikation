@@ -1,0 +1,126 @@
+<!--
+  07-laddering.html – Folie f07 „Laddering → Markennutzen“ (Bündel B, 90 s)
+  =========================================================================
+  Feld im Markensteuerrad: Markennutzen („Was biete ich an?“). Methode:
+  Laddering / Means-End-Chain nach Gutman (1982) und Reynolds & Gutman
+  (1988). Vorlage in ../methoden.md (Abschnitt 3), Prompts P9/P10 in
+  ../prompts.md.
+
+  WAS DIE FOLIE ZEIGT
+  • Eine Hierarchical Value Map (HVM) als Leiter. Die Sprossen sind die
+    vier Ebenen der Means-End-Chain, von unten nach oben:
+    Attribute → funktionale Konsequenzen → psychosoziale Konsequenzen → Werte.
+  • Unten stehen die Attribute aus dem Repertory Grid (Folie 06) – sie sind
+    die Startpunkte der Leitern.
+  • Linienstärke = wie oft eine Verbindung genannt wurde
+    (Implikationsmatrix; Verbindungen unter dem Cut-off fehlen).
+  • Rechts oben die Leiterfrage; am Ende zwei Kästen: sachlich-funktionaler
+    und psychosozialer Nutzen – auf Höhe der Ebene, aus der sie stammen.
+
+  SO ÄNDERN SIE DIE INHALTE
+  • Alles steht unten im <script type="application/json" class="daten">.
+    Das Skript js/folien/07-laddering.js baut daraus die Leiter.
+  • ALLE KNOTEN UND ZAHLEN SIND BEISPIELDATEN. Echte Leitern codieren,
+    Implikationsmatrix selbst auszählen (Backup B5) und hier eintragen.
+  • Die Attribute müssen zu Folie 06 passen (gleiche Wörter).
+  • Den Titel passen Sie hier im HTML an, wenn sich die Aussage ändert.
+
+  SCHRITTE (Klicks) – die Animation klettert Ebene für Ebene
+    0  Leiter (Gerüst), Attribute unten, Leiterfrage rechts oben
+    1  funktionale Konsequenzen: Verbindungen zeichnen sich, Knoten erscheinen
+    2  psychosoziale Konsequenzen
+    3  Werte
+    4  zwei Nutzen-Kästen rechts, Pfeile aus den passenden Ebenen
+-->
+<section class="folie" id="f07" data-titel="Laddering" data-feld="nutzen" data-zeit="90" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Laddering · Means-End-Chain <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel"><em data-marke></em> liefert Fokus – und ein Erfolgsgefühl</h2>
+  </header>
+
+  <div class="folie-inhalt lad">
+    <!-- Unsichtbare Auslöser für die Schritt-Zustände (siehe CSS). Nicht löschen. -->
+    <span class="lad-zustand lad-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <span class="lad-zustand lad-z2" data-schritt="2" data-animation="zustand" aria-hidden="true"></span>
+    <span class="lad-zustand lad-z3" data-schritt="3" data-animation="zustand" aria-hidden="true"></span>
+    <span class="lad-zustand lad-z4" data-schritt="4" data-animation="zustand" aria-hidden="true"></span>
+
+    <!-- Hier baut das Skript die Leiter (HVM) und die rechte Spalte aus den Daten. -->
+    <div class="lad-buehne" role="img" aria-label="Hierarchical Value Map als Leiter (Beispieldaten)"></div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Quelle: eigene Laddering-Interviews, n = 8 (5 KI-simuliert, 3 echt) – Beispieldaten · nach Gutman (1982), Reynolds &amp; Gutman (1988) · Linienstärke = Nennungen, Cut-off ≥ 2</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Methode</b> (ca. 20 s) Vom Repertory Grid nehmen wir die drei Attribute als Startpunkte. Im Laddering fragen wir immer wieder: „Warum ist Ihnen das wichtig?“ – so klettern wir von der Eigenschaft über die Konsequenzen bis zu den Werten. Das ist die Means-End-Chain nach Gutman sowie Reynolds und Gutman.</p>
+    <p data-schritt="1"><b>Funktionale Konsequenzen</b> (ca. 15 s) Erste Sprosse: Was bringt mir das ganz praktisch? „Innovativ“ heißt für die Befragten vor allem Abwechslung, „natürlich“ heißt Fokus, „unverwechselbar“ heißt: fällt auf. Je dicker die Linie, desto öfter wurde die Verbindung genannt.</p>
+    <p data-schritt="2"><b>Psychosoziale Konsequenzen</b> (ca. 15 s) Zweite Sprosse: Wie fühle ich mich dabei, wie wirke ich auf andere? Die stärkste Verbindung: Fokus führt zum Gefühl, mehr zu schaffen.</p>
+    <p data-schritt="3"><b>Werte</b> (ca. 15 s) Oben stehen die Werte: Lebensfreude, Erfolg und Selbstbestimmung. Die dickste Leiter läuft von „natürlich“ über Fokus und „mehr schaffen“ bis zu Erfolg – das passt zu unserer Persona, einer Performerin.</p>
+    <p data-schritt="4"><b>Markennutzen</b> (ca. 25 s) Daraus leiten wir den Markennutzen von <span data-marke></span> ab: sachlich-funktional Fokus und Abwechslung, psychosozial ein Erfolgsgefühl und der eigene Stil. Beides tragen wir ins Feld „Markennutzen“ des Steuerrads ein. Überleitung: Wie ist <span data-marke></span> als Persönlichkeit? → Analogien.</p>
+    <p>Hinweise: Alle Knoten und Zahlen sind Beispieldaten. Implikationsmatrix und Leitern im Backup B5. Cut-off ≥ 2: Verbindungen, die nur einmal genannt wurden, fehlen in der Karte. Begriffe (Means-End-Chain, Hierarchical Value Map, funktionale/psychosoziale Konsequenzen, instrumentelle/terminale Werte) mit der Vorlesungsfolie abgleichen. Rückfrage „Warum genau diese Ebenen?“ → Means-End-Chain nach Gutman (1982), Methode nach Reynolds &amp; Gutman (1988).</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • ebenen: genau vier, von UNTEN nach OBEN. „name“ steht links an der
+         Leiter (bei zwei Wörtern zweizeilig). „farbe“: neutral, hart, weich
+         oder kern (Farben aus tokens.css).
+       • knoten: id (frei wählbar, ohne Leerzeichen), ebene (= schluessel einer
+         Ebene), text (kurz! 1–2 Wörter). Optional "x": 0…1 = Position von
+         links nach rechts (sonst gleichmäßig verteilt).
+       • verbindungen: von/nach = Knoten-ids, anzahl = wie oft diese direkte
+         Verbindung genannt wurde (Implikationsmatrix). Verbindungen unter
+         „cutoff“ werden nicht gezeichnet.
+       • nutzen: Kästen rechts; „ebene“ = auf welcher Höhe der Kasten steht.
+       • frage / frageNotiz / startNotiz / legende: Texte der rechten Spalte. -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – Leitern aus Prompt P9 und echten Interviews codieren, Implikationsmatrix selbst auszählen",
+    "cutoff": 2,
+    "ebenen": [
+      { "schluessel": "attribute",    "name": "Attribute",                  "farbe": "neutral" },
+      { "schluessel": "funktional",   "name": "Funktionale Konsequenzen",   "farbe": "hart" },
+      { "schluessel": "psychosozial", "name": "Psychosoziale Konsequenzen", "farbe": "weich" },
+      { "schluessel": "werte",        "name": "Werte",                      "farbe": "kern" }
+    ],
+    "knoten": [
+      { "id": "innovativ",       "ebene": "attribute",    "text": "innovativ" },
+      { "id": "natuerlich",      "ebene": "attribute",    "text": "natürlich" },
+      { "id": "unverwechselbar", "ebene": "attribute",    "text": "unverwechselbar" },
+      { "id": "abwechslung",     "ebene": "funktional",   "text": "Abwechslung" },
+      { "id": "fokus",           "ebene": "funktional",   "text": "Fokus" },
+      { "id": "faellt-auf",      "ebene": "funktional",   "text": "fällt auf" },
+      { "id": "spass",           "ebene": "psychosozial", "text": "Spaß" },
+      { "id": "mehr-schaffen",   "ebene": "psychosozial", "text": "mehr schaffen" },
+      { "id": "stil-zeigen",     "ebene": "psychosozial", "text": "Stil zeigen" },
+      { "id": "lebensfreude",    "ebene": "werte",        "text": "Lebensfreude" },
+      { "id": "erfolg",          "ebene": "werte",        "text": "Erfolg" },
+      { "id": "selbstbestimmung","ebene": "werte",        "text": "Selbstbestimmung" }
+    ],
+    "verbindungen": [
+      { "von": "innovativ",       "nach": "abwechslung",      "anzahl": 5 },
+      { "von": "innovativ",       "nach": "fokus",            "anzahl": 2 },
+      { "von": "natuerlich",      "nach": "fokus",            "anzahl": 6 },
+      { "von": "natuerlich",      "nach": "abwechslung",      "anzahl": 1 },
+      { "von": "unverwechselbar", "nach": "faellt-auf",       "anzahl": 5 },
+      { "von": "abwechslung",     "nach": "spass",            "anzahl": 4 },
+      { "von": "abwechslung",     "nach": "mehr-schaffen",    "anzahl": 2 },
+      { "von": "fokus",           "nach": "mehr-schaffen",    "anzahl": 7 },
+      { "von": "faellt-auf",      "nach": "stil-zeigen",      "anzahl": 5 },
+      { "von": "spass",           "nach": "lebensfreude",     "anzahl": 4 },
+      { "von": "mehr-schaffen",   "nach": "erfolg",           "anzahl": 6 },
+      { "von": "mehr-schaffen",   "nach": "selbstbestimmung", "anzahl": 2 },
+      { "von": "stil-zeigen",     "nach": "selbstbestimmung", "anzahl": 5 }
+    ],
+    "nutzen": [
+      { "ebene": "funktional",   "titel": "Sachlich-funktionaler Nutzen", "text": "Fokus und Abwechslung" },
+      { "ebene": "psychosozial", "titel": "Psychosozialer Nutzen",        "text": "Erfolgsgefühl und eigener Stil" }
+    ],
+    "frage": "Warum ist Ihnen das wichtig?",
+    "frageNotiz": "Leiterfrage – so oft, bis ein Wert erreicht ist",
+    "startNotiz": "Startpunkte: Attribute aus dem Repertory Grid",
+    "legende": "Nennungen"
+  }
+  </script>
+</section>

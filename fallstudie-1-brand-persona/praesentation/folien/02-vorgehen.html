@@ -1,0 +1,92 @@
+<!--
+  02-vorgehen.html – Folie f02 · Ausgangslage & Vorgehen (Steuerrad als interaktive Agenda)
+  ========================================================================================
+  Bündel A · 60 s · data-feld="hub" (kein Mini-Rad, das große Rad IST die Agenda)
+  Inhalt nach ../folienentwuerfe.md, Abschnitt „Folie 2“ (Titel, Leitfrage,
+  Grafik, Quellenzeile, Sprechtext).
+
+  Modell: Markensteuerrad nach Esch (Felder, Leitfragen) – Bezugsrahmen
+  Brand Persona / Limbic Map nach Häusel. Begriffe aus der Standardliteratur;
+  bitte mit den Vorlesungsfolien abgleichen.
+
+  ABLAUF (Klicks)
+    0  Titel und Leitfrage; das Rad baut sich auf (Zentrum → vier Felder)
+    1  Desk Research        → Markenkompetenz (Zentrum)
+    2  Repertory Grid       → Markenattribute
+    3  Laddering            → Markennutzen
+    4  Analogiemethoden     → Markentonalität
+    5  Kommunikationsanalyse → Markenbild
+       (je Klick leuchten Methode, Verbinder und Feld; der Rest tritt zurück)
+    6  Verkettung: „Attribute sind die Startpunkte“, „Tonalität ist der
+       Prüfmaßstab“ (gestrichelte Pfeile; die vier Felder leuchten)
+    7  Brand Persona + Limbic Map: der Rahmen zeichnet sich um das Rad –
+       Gesamtbild, alles klickbar (= Agenda)
+  Die Schritte 6 und 7 ordnet js/folien/02-vorgehen.js zu (Baustein-Standard
+  wäre: Persona als zweiter Schritt, Pfeile mit Laddering bzw. Analyse).
+
+  INTERAKTIV: Klick (oder Tab + Enter) auf ein Feld oder eine Methodenkarte
+  springt zur ersten Folie mit passendem data-feld (Folienverweise „Folie x →“
+  stehen auf den Karten). Beim Weiterblättern gleitet das Rad in das
+  Mini-Steuerrad oben rechts der Folgefolien (View-Transition-Morph).
+
+  SO ÄNDERN SIE DIE INHALTE
+    • Methoden, Kurzbeschreibungen, Verkettungen: im JSON im Baustein unten
+      („methoden“, „logik“). Die Feldnamen und Leitfragen der Felder kommen aus
+      dem Baustein (js/komponenten.js, nach Esch).
+    • Reihenfolge der Methoden-Klicks: „reihenfolge“ (Persona bitte NICHT
+      eintragen – der Rahmen kommt immer als letzter Schritt).
+    • Titel und Leitfrage: direkt unten im <header>. Den Markennamen nie
+      eintippen – <span data-marke></span> holt ihn aus marke.js.
+-->
+<section class="folie vorgehen" id="f02" data-titel="Ausgangslage &amp; Vorgehen" data-feld="hub" data-zeit="60" data-buendel="A" data-schritte="7">
+  <header class="folie-kopf">
+    <p class="kicker">Ausgangslage &amp; Vorgehen</p>
+    <h2 class="titel">Sechs Methoden, ein Modell: <br class="vorgehen-umbruch">So leiten wir die Identität von <em data-marke></em> her</h2>
+    <p class="vorgehen-leitfrage">
+      <span class="vorgehen-leitfrage-etikett" data-meta>Leitfrage</span>
+      <span class="vorgehen-leitfrage-text">Wofür steht <span data-marke></span> – und passt ihr heutiger Auftritt dazu?</span>
+    </p>
+  </header>
+
+  <div class="folie-inhalt">
+    <!-- Markensteuerrad als interaktive Agenda (Baustein „steuerrad“, Modus „hub“).
+         Feldnamen, Leitfragen und Folienverweise erzeugt der Baustein selbst. -->
+    <div class="steuerrad" data-modus="hub" data-aufbau="schritte">
+      <script type="application/json">
+      {
+        "methoden": [
+          { "feld": "kompetenz",  "name": "Desk Research",              "text": "Herkunft, Historie, Marktrolle" },
+          { "feld": "persona",    "name": "Brand Persona + Limbic Map", "text": "Zielgruppe als Bezugsrahmen" },
+          { "feld": "attribute",  "name": "Repertory Grid",             "text": "Triadenvergleich mit Wettbewerbern" },
+          { "feld": "nutzen",     "name": "Laddering",                  "text": "Means-End-Kette bis zu den Werten" },
+          { "feld": "tonalitaet", "name": "Analogiemethoden",           "text": "Marke als Mensch und als Tier" },
+          { "feld": "bild",       "name": "Kommunikationsanalyse",      "text": "Instagram · Facebook · YouTube" }
+        ],
+        "logik": [
+          { "von": "attribute",  "nach": "nutzen", "text": "Attribute sind die Startpunkte" },
+          { "von": "tonalitaet", "nach": "bild",   "text": "Tonalität ist der Prüfmaßstab" }
+        ],
+        "reihenfolge": ["kompetenz", "attribute", "nutzen", "tonalitaet", "bild"]
+      }
+      </script>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map), erstellt mit KI-Unterstützung</p>
+  </footer>
+
+  <aside class="notizen">
+    <p><b>Ziel (60 s):</b> Fragestellung in einem Satz, dann das Modell und unsere Methoden – die Folie ist zugleich die Agenda. Pro Klick nur einen Satz.</p>
+    <p data-schritt="0"><b>Leitfrage (ca. 15 s):</b> „Unsere Leitfrage lautet: Wofür steht <span data-marke></span> – und passt ihr heutiger Auftritt dazu? Um das zu beantworten, nutzen wir das Markensteuerrad nach Esch. Es beschreibt die Identität einer Marke in fünf Feldern: links die harten Fakten, also Attribute und Nutzen, rechts die weichen, also Tonalität und Markenbild, und in der Mitte die Markenkompetenz.“</p>
+    <p data-schritt="1"><b>Klick 1:</b> „Für jedes Feld haben wir eine eigene Methode eingesetzt: Desk Research für die Kompetenz,</p>
+    <p data-schritt="2"><b>Klick 2:</b> … ein Repertory Grid für die Attribute,</p>
+    <p data-schritt="3"><b>Klick 3:</b> … Laddering für den Nutzen,</p>
+    <p data-schritt="4"><b>Klick 4:</b> … Analogien für die Tonalität</p>
+    <p data-schritt="5"><b>Klick 5:</b> … und eine Kommunikationsanalyse für das Markenbild.“</p>
+    <p data-schritt="6"><b>Klick 6 (ca. 8 s):</b> „Die Methoden bauen aufeinander auf – die Attribute aus dem Repertory Grid sind zum Beispiel die Startpunkte fürs Laddering, und die Tonalität ist der Maßstab, an dem wir den heutigen Auftritt prüfen.“</p>
+    <p data-schritt="7"><b>Klick 7 (ca. 10 s):</b> „Den Rahmen bildet unsere Brand Persona, denn eine Marke wirkt nur über ihre Zielgruppe. Am Ende führen wir alles im Steuerrad zusammen und leiten daraus Empfehlungen ab.“ → weiter zu Folie 03 (das Rad gleitet ins Mini-Rad oben rechts).</p>
+    <p><b>Mögliche Rückfragen</b> (nicht vorlesen): „Warum das Markensteuerrad?“ – durch die Aufgabe vorgegeben; trennt rationale und emotionale Bestandteile, jede Methode liefert genau ein Feld, so ist jede Aussage im Steuerrad rückverfolgbar. „Identität ist Selbstbild – warum fragt ihr die Zielgruppe?“ – wir vergleichen Selbstbild (Website, eigene Kommunikation) und Fremdbild (Repertory Grid, Laddering); wo beides auseinandergeht, setzen die Empfehlungen an. „Wie belastbar sind KI-Ergebnisse?“ – Fakten an Quellen geprüft, Grenzen und alle Prompts im Backup (B1, B2).</p>
+    <p>Technik: Felder und Methodenkarten sind klickbar (Maus oder Tab + Enter) und springen zur passenden Folie – praktisch in der Fragerunde. Auf den Folgefolien öffnet das Mini-Rad oben rechts dasselbe Rad als Sprungmenü.</p>
+  </aside>
+</section>

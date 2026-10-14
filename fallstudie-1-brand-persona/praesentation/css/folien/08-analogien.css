@@ -1,0 +1,500 @@
+/* =============================================================================
+   css/folien/08-analogien.css – Gestaltung nur für die Folien f08 und f08b
+   -----------------------------------------------------------------------------
+   f08  „Analogien & Live-Umfrage“ (Bühne 1920 × 1080)
+        Titel mit zwei Fassungen (Frage → Kernaussage) und zwei Szenen im
+        selben Feld: Umfrage (Schritt 0–1) und Analogien (ab Schritt 2).
+        Analogien: zwei Karten „Als Tier“ / „Als Mensch“ (Farbe der „soft
+        facts“ wie im Steuerrad), darunter die Kontrastzeile mit zwei
+        Wettbewerbern in gedeckter Schrift.
+   f08b „Markentonalität“
+        links (8 Spalten) Profil nach Aaker: je Dimension Name + Merkmale,
+                          darunter Spur mit Balken und Punkt der Marke sowie
+                          Marker A/B der Wettbewerber, rechts der Wert
+        rechts (4 Spalten) Karte „Ins Steuerrad“: Emotionen und Beziehung
+   Inhalte und Werte kommen aus den Daten der Folien (js/folien/08-analogien.js
+   baut daraus die Elemente). Alle Regeln beginnen mit #f08 bzw. #f08b.
+   Nur Variablen aus tokens.css verwenden.
+   ============================================================================= */
+
+
+/* ---------------------------------------------------------------------------
+   0. STRICHZEICHNUNGEN (Tiere, Mensch, Hand) – gemeinsame Regeln
+   Die Strichstärke bleibt in jeder Größe gleich (vector-effect).
+   --------------------------------------------------------------------------- */
+#f08 .g4-bild,
+#f08 .g4-wb-bild,
+#f08 .g4-hand {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+#f08 .g4-bild *,
+#f08 .g4-wb-bild *,
+#f08 .g4-hand * { vector-effect: non-scaling-stroke; }
+#f08 .g4-bild .voll,
+#f08 .g4-wb-bild .voll { fill: currentColor; stroke: none; }
+
+
+/* ---------------------------------------------------------------------------
+   1. f08 – TITEL MIT ZWEI FASSUNGEN
+   Beide Fassungen liegen in derselben Rasterzelle. Erscheint die Kernaussage
+   (Schritt 2), tritt die Frage zurück – rückwärts wieder umgekehrt.
+   --------------------------------------------------------------------------- */
+#f08 .g4-titel { display: grid; }
+#f08 .g4-titel > span { grid-area: 1 / 1; min-width: 0; }
+#f08 .g4-titel-frage {
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s;
+}
+#f08 .g4-titel:has(> .g4-titel-antwort.schritt-an) > .g4-titel-frage {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+
+
+/* ---------------------------------------------------------------------------
+   2. f08 – ZWEI SZENEN IM SELBEN FELD
+   --------------------------------------------------------------------------- */
+#f08 .g4-buehne {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+}
+#f08 .g4-szene {
+  grid-area: 1 / 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+#f08 .g4-szene--umfrage {
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s;
+}
+#f08 .g4-buehne:has(> .g4-szene--analogien.schritt-an) > .g4-szene--umfrage {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+/* Druck/PDF zeigt den Endzustand: nur die Analogien */
+html.druckmodus #f08 .g4-szene--umfrage { display: none; }
+
+
+/* ---------------------------------------------------------------------------
+   3. f08 – UMFRAGE OHNE LINK: „Abstimmung per Handzeichen“
+   (Mit Link in marke.js zeigt der Baustein stattdessen den QR-Code.)
+   --------------------------------------------------------------------------- */
+#f08 .g4-handzeichen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--abstand-4);
+  text-align: center;
+}
+#f08 .g4-hand {
+  width: 128px;
+  height: 128px;
+  color: var(--f-akzent);
+  stroke-width: 4px;
+}
+#f08 .g4-handzeichen-text {
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  max-width: 9em;
+  text-wrap: balance;
+  color: var(--f-text);
+}
+#f08 .umfrage-qr.g4-ohne-qr .umfrage-stimmen {
+  margin-top: var(--abstand-5);
+  padding-top: var(--abstand-5);
+  border-top: var(--linie-fein) solid var(--f-linie);
+}
+
+
+/* ---------------------------------------------------------------------------
+   4. f08 – ANALOGIEN: KARTEN „ALS TIER“ UND „ALS MENSCH“
+   --------------------------------------------------------------------------- */
+#f08 .g4-szene--analogien {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  row-gap: var(--abstand-6);
+}
+#f08 .g4-paar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--rinne);
+  min-height: 0;
+}
+/* Inhalt oben ausgerichtet, damit „Als Tier“ und „Als Mensch“ auf einer Höhe stehen */
+#f08 .g4-karte {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  column-gap: 36px;
+  align-items: start;
+  align-content: start;
+  padding: 52px 40px 40px;
+  min-height: 0;
+}
+#f08 .g4-bild {
+  width: 168px;
+  height: 168px;
+  margin-top: -8px;
+  color: var(--f-weich);
+  stroke-width: 4.5px;
+}
+#f08 .g4-karte-inhalt {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Tier: großer Name, darunter drei nummerierte Gründe */
+#f08 .g4-tiername {
+  margin: 14px 0 22px;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel-gross);
+  font-weight: var(--gewicht-display);
+  font-style: var(--stil-hervor);
+  font-variation-settings: "opsz" var(--opsz-titel);
+  line-height: 1;
+  letter-spacing: var(--laufweite-titel);
+  color: var(--f-weich);
+}
+#f08 .g4-gruende {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+#f08 .g4-gruende li {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: baseline;
+  font-size: var(--groesse-text);
+  line-height: 1.3;
+}
+#f08 .g4-nr {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-meta);
+  font-weight: var(--gewicht-fett);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-weich);
+}
+
+/* Mensch: Kurzprofil als Zeilen „Merkmal | Wert“ mit Haarlinien */
+#f08 .g4-steckbrief {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0 0;
+}
+#f08 .g4-steckbrief-zeile {
+  display: grid;
+  grid-template-columns: 162px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 12px;
+  padding: 13px 0;
+  border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-weich) 24%, transparent);
+}
+#f08 .g4-steckbrief-zeile:first-child { border-top: 0; padding-top: 4px; }
+#f08 .g4-steckbrief dt {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  text-transform: var(--kicker-versalien);
+  color: var(--f-text-2);
+}
+#f08 .g4-steckbrief dd {
+  margin: 0;
+  font-size: var(--groesse-text);
+  line-height: 1.3;
+  color: var(--f-text);
+}
+
+
+/* ---------------------------------------------------------------------------
+   5. f08 – KONTRAST: ZWEI WETTBEWERBER (klein, gedeckt)
+   --------------------------------------------------------------------------- */
+#f08 .g4-kontrast {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--rinne);
+  padding-top: var(--abstand-5);
+  border-top: var(--linie-fein) solid var(--f-linie);
+}
+#f08 .g4-kontrast-kicker { color: var(--f-text-2); }
+#f08 .g4-kontrast-liste {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--rinne);
+}
+#f08 .g4-wb {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  column-gap: var(--abstand-4);
+  align-items: center;
+  min-width: 0;
+  color: var(--f-text-2);
+}
+#f08 .g4-wb-bild {
+  width: 80px;
+  height: 80px;
+  color: var(--f-text-2);
+  stroke-width: 3px;
+}
+#f08 .g4-wb-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+#f08 .g4-wb-name {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  text-transform: var(--kicker-versalien);
+  color: var(--f-text-2);
+}
+#f08 .g4-wb-tier { margin: 0; font-size: var(--groesse-text-min); line-height: 1.25; }
+#f08 .g4-wb-tiername {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  color: var(--f-text);
+}
+#f08 .g4-wb-mensch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: var(--groesse-text-min);
+  line-height: 1.25;
+}
+#f08 .g4-wb-mensch .icon { width: 26px; height: 26px; flex: none; }
+
+
+/* ---------------------------------------------------------------------------
+   6. f08b – PROFIL NACH AAKER
+   --------------------------------------------------------------------------- */
+#f08b .g4t {
+  flex: 1;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+  align-items: stretch;
+}
+#f08b .g4t-profil {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* Breite der Wertspalte rechts und Abstand zur Spur */
+  --g4t-wertspalte: 104px;
+  --g4t-luecke: 24px;
+  /* Marker dürfen an den Enden der Skala nicht über den Rand ragen */
+  --g4t-rand: 21px;
+}
+
+/* Legende (Metaangabe) */
+#f08b .g4t-legende {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 36px;
+  min-height: 40px;
+  font-size: var(--groesse-meta);
+  color: var(--f-text-2);
+}
+#f08b .g4t-leg { display: inline-flex; align-items: center; gap: 12px; }
+#f08b .g4t-leg-punkt {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--f-diagramm-marke);
+}
+
+/* Diagramm: fünf Zeilen, gleichmäßig verteilt, darunter die Skala */
+#f08b .g4t-diagramm {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: var(--abstand-4);
+}
+#f08b .g4t-zeile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--g4t-wertspalte);
+  grid-template-areas: "kopf kopf" "spur wert";
+  column-gap: var(--g4t-luecke);
+  row-gap: 2px;
+  align-items: center;
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+#f08b .g4t-kopf {
+  grid-area: kopf;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 50px;
+}
+#f08b .g4t-name {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  color: var(--f-text);
+}
+#f08b .g4t-merkmale { display: inline-flex; flex-wrap: wrap; gap: 10px; }
+
+/* Spur: Grundlinie, Skalenstriche, Balken, Punkt und Marker */
+#f08b .g4t-spur {
+  grid-area: spur;
+  position: relative;
+  height: 44px;
+  margin: 0 var(--g4t-rand);
+}
+#f08b .g4t-spur::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: var(--linie-fein);
+  margin-top: -1px;
+  background: var(--f-linie);
+}
+#f08b .g4t-strich {
+  position: absolute;
+  top: 50%;
+  width: var(--linie-fein);
+  height: 20px;
+  margin: -10px 0 0 -1px;
+  background: var(--f-linie);
+}
+/* Balken bewusst heller als der Punkt: Er zeigt die Ausprägung, der Punkt
+   den Wert – so lesen sich die Marker A/B auf dem Balken nicht als Teil der Marke */
+#f08b .g4t-balken {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  background: color-mix(in oklab, var(--f-diagramm-marke) 50%, var(--f-hintergrund));
+}
+#f08b .g4t-punkt {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  background: var(--f-diagramm-marke);
+  box-shadow: 0 0 0 4px var(--f-hintergrund);
+}
+#f08b .g4t-wb-marker {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
+  border-radius: 50%;
+  border: var(--linie-fein) solid var(--f-diagramm-wettbewerb);
+  background: var(--f-hintergrund);
+  color: var(--f-diagramm-wettbewerb);
+  font: 700 var(--groesse-meta)/1 var(--schrift-text);
+}
+#f08b .g4t-wb-marker--oben { margin-top: -33px; }
+#f08b .g4t-wb-marker--unten { margin-top: -9px; }
+/* Marker in der Legende: gleiche Form, aber im Textfluss */
+#f08b .g4t-wb-marker--legende {
+  position: static;
+  margin: 0;
+  width: 36px;
+  height: 36px;
+}
+#f08b .g4t-wert {
+  grid-area: wert;
+  font-family: var(--schrift-zahl);
+  font-size: 44px;
+  font-weight: var(--gewicht-zahl);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1;
+  text-align: left;
+  color: var(--f-akzent);
+}
+
+/* Skala unter dem Profil (Metaangabe) */
+#f08b .g4t-skala {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--g4t-wertspalte);
+  column-gap: var(--g4t-luecke);
+}
+#f08b .g4t-skala-spur {
+  position: relative;
+  height: 28px;
+  margin: 0 var(--g4t-rand);
+}
+#f08b .g4t-skala-spur > span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-meta);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.2;
+  color: var(--f-text-2);
+}
+
+/* Schritt „Merkmale“: Dimensionen ohne Merkmal treten zurück */
+#f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.45; }
+
+
+/* ---------------------------------------------------------------------------
+   7. f08b – ERGEBNISKARTE „INS STEUERRAD“
+   --------------------------------------------------------------------------- */
+#f08b .g4t-ergebnis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+#f08b .g4t-karte { gap: var(--abstand-5); padding: 40px 40px 44px; }
+#f08b .g4t-kicker { display: inline-flex; align-items: center; gap: 12px; }
+#f08b .g4t-kicker .icon { width: 30px; height: 30px; }
+#f08b .g4t-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: var(--abstand-4);
+  border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-weich) 24%, transparent);
+}
+#f08b .g4t-label {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  text-transform: var(--kicker-versalien);
+  color: var(--f-text-2);
+}
+#f08b .g4t-emotionen {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#f08b .g4t-emotionen li,
+#f08b .g4t-beziehung {
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.18;
+  color: var(--f-text);
+}
+#f08b .g4t-beziehung { font-style: var(--stil-hervor); color: var(--f-weich); }

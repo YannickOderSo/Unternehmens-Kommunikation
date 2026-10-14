@@ -2,7 +2,7 @@
    js/folien/01-einstieg.js – Folien-Skript für folien/01-einstieg.html (f01)
    -----------------------------------------------------------------------------
    Das Aussehen der drei Zustände regelt css/folien/01-einstieg.css allein.
-   Dieses Skript erledigt nur zwei Komfort-Aufgaben:
+   Dieses Skript erledigt nur drei Komfort-Aufgaben:
 
    1. Schritte an das Rätsel koppeln: Die Auflösung (Markenname) erscheint mit
       der letzten Rätselstufe, der Titel einen Klick später. Wer in
@@ -11,11 +11,15 @@
    2. Markenname einpassen: Ist ein Name zu lang für die linke Spalte, wird
       die Schrift so weit verkleinert, dass er auf eine Zeile passt
       (z. B. bei einer anderen Marke oder dem Platzhalter „[Marke]“).
+   3. Bildtafel ausrichten: Im Schlussbild steht der Bildausschnitt aus
+      data-fokus (waagerecht) mitten in der rechten Bildtafel.
    ============================================================================= */
 (function () {
   'use strict';
 
   var MIN_GROESSE = 96;          // kleinste Schriftgröße des Markennamens (px)
+  var BUEHNE_B = 1920;           // Bühnenbreite (px)
+  var MOTIV_UEBERSTAND = 0.03;   // .raetsel-motiv ragt 3 % über jeden Rand (komponenten.css: inset: -3%)
 
   /* Anzahl der Rätselstufen aus data-stufen ("Zoom/Unschärfe, …") */
   function stufenAnzahl(raetsel) {
@@ -57,11 +61,36 @@
     });
   }
 
+  /* 3. Versatz des Bildes im Schlussbild: Fokuspunkt (data-fokus, waagerecht)
+        in die Mitte der Bildtafel rücken – ohne dass links oder rechts eine
+        Lücke entsteht. Ergebnis als CSS-Variable --einstieg-tafel-versatz. */
+  function tafelAusrichten(folie) {
+    var raetsel = folie.querySelector('.raetsel');
+    if (!raetsel) return;
+    var fokus = (raetsel.getAttribute('data-fokus') || '50% 50%').trim().split(/\s+/)[0];
+    var fx = parseFloat(fokus);
+    fx = isNaN(fx) ? 0.5 : Math.max(0, Math.min(100, fx)) / 100;
+    var teilung = Deck.util.messen(folie, function () {
+      return parseFloat(getComputedStyle(folie).getPropertyValue('--einstieg-teilung')) || 1088;
+    });
+    var motivB = BUEHNE_B * (1 + 2 * MOTIV_UEBERSTAND);
+    var motivLinks = -BUEHNE_B * MOTIV_UEBERSTAND;
+    var fokusX = motivLinks + fx * motivB;                     // Fokus auf der Bühne (ohne Versatz)
+    var tafelMitte = teilung + (BUEHNE_B - teilung) / 2;
+    var versatz = tafelMitte - fokusX;
+    /* Grenzen: Bild deckt die Tafel immer ganz ab */
+    var minV = BUEHNE_B - (motivLinks + motivB);               // rechter Bildrand ≥ Bühnenrand
+    var maxV = teilung - motivLinks;                           // linker Bildrand ≤ Tafelkante
+    versatz = Math.max(minV, Math.min(maxV, versatz));
+    folie.style.setProperty('--einstieg-tafel-versatz', Math.round(versatz) + 'px');
+  }
+
   Deck.registriere('f01', {
     einrichten: function (ctx) {
       schritteKoppeln(ctx.folie);
       markeEinpassen(ctx.folie);
-      /* Nach einem Themenwechsel (andere Schrift) neu einpassen */
+      tafelAusrichten(ctx.folie);
+      /* Nach einem Themenwechsel (andere Schrift, andere Ränder) neu einpassen */
       document.addEventListener('deck:thema', function () { markeEinpassen(ctx.folie); });
       document.addEventListener('deck:groesse', function () { markeEinpassen(ctx.folie); });
     }
