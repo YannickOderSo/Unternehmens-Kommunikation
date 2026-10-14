@@ -22,9 +22,13 @@
   if (['hell', 'dunkel'].indexOf(d) < 0) d = 'hell';
   h.setAttribute('data-thema', t);
   h.setAttribute('data-modus', d);
+  /* Markenfarben: Testfarbe (Farbwähler bzw. ?primaer=…) vor marke.js */
   var f = m.farben || {};
-  if (f.primaer) h.style.setProperty('--marke-primaer', f.primaer);
-  if (f.sekundaer) h.style.setProperty('--marke-sekundaer', f.sekundaer);
+  ['primaer', 'sekundaer'].forEach(function (n) {
+    var w = p.get(n) || s('farbe-' + n) || f[n] || '';
+    if (/^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(w)) w = '#' + w;
+    if (/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(w)) h.style.setProperty('--marke-' + n, w);
+  });
   if (p.has('referent')) h.classList.add('referent');
   if (p.has('druck')) h.classList.add('druckmodus');
   window.DECK_BASIS = '{{BASIS}}';

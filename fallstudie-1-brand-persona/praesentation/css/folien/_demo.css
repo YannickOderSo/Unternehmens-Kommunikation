@@ -1,0 +1,63 @@
+/* =============================================================================
+   css/folien/_demo.css – Gestaltung nur für folien/_demo.html
+   -----------------------------------------------------------------------------
+   Beispiel für eine folienspezifische CSS-Datei. zusammenbauen.py bindet sie
+   automatisch ein (gleicher Name wie die Folien-Datei). Regeln immer mit einer
+   eigenen Klasse oder der Folien-ID beginnen (#d06 …), damit nichts anderes
+   betroffen ist. Nur Variablen aus tokens.css verwenden.
+   ============================================================================= */
+
+/* d04 · Animations-Karten */
+.demo-animationen { gap: var(--abstand-5); }
+.demo-animationen .karte { min-height: 170px; justify-content: flex-end; }
+#d04 .folie-inhalt > .gross { margin-top: var(--abstand-6); }
+
+/* d05 · Persona */
+.demo-persona { flex: 1; min-height: 0; align-items: stretch; }
+.demo-persona-bild { min-height: 0; height: 100%; }
+.demo-persona-text { justify-content: center; gap: var(--abstand-6); }
+.demo-legende { margin-top: var(--abstand-6); }
+
+/* d06 · Polaritätenprofil (SVG wird in js/folien/_demo.js gebaut) */
+.demo-profil { align-items: start; }
+.pp { display: block; overflow: visible; }
+.pp-raster line { stroke: var(--f-linie); stroke-width: var(--linie-fein); }
+.pp-skala { font: 600 22px/1 var(--schrift-text); fill: var(--f-text-2); text-anchor: middle; }
+.pp-pol { font: 400 28px/1 var(--schrift-text); fill: var(--f-text); }
+.pp-pol--links { text-anchor: end; }
+.pp-pol--rechts { text-anchor: start; }
+.pp-band { fill: var(--f-akzent-flaeche); }
+.pp-nr { font: 700 22px/1 var(--schrift-zahl); fill: var(--f-akzent); letter-spacing: 0.04em; }
+.pp-legende-text { font: 600 22px/1 var(--schrift-text); fill: var(--f-text-2); }
+.pp-ideal { fill: none; stroke: var(--f-diagramm-ideal); stroke-width: 4; stroke-dasharray: 1 11; stroke-linecap: round; }
+.pp-wettbewerb { fill: none; stroke: var(--f-diagramm-wettbewerb); stroke-width: 3; stroke-dasharray: 14 10; }
+.pp-marke { fill: none; stroke: var(--f-diagramm-marke); stroke-width: 5; stroke-linejoin: round; }
+.pp-punkt-marke { fill: var(--f-diagramm-marke); }
+.pp-punkt-wettbewerb { fill: var(--f-hintergrund); stroke: var(--f-diagramm-wettbewerb); stroke-width: 3; }
+.demo-kennzahlen { gap: var(--abstand-5); padding-top: 96px; }
+.demo-kennzahlen .kennzahl { gap: 10px; }
+
+/* d07 · Leiter (unten Attribut, oben Wert) */
+.demo-leiter { flex: 1; align-items: center; }
+.demo-leiter-stufen { display: flex; flex-direction: column-reverse; gap: var(--abstand-5); }
+.demo-leiter-stufen > li {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-4);
+  padding: 20px 28px;
+  border-left: var(--linie-stark) solid var(--f-linie);
+}
+.demo-leiter-stufen .chip { min-width: 190px; justify-content: center; }
+.demo-leiter-pfeil { justify-self: center; overflow: visible; }
+.demo-leiter-pfeil path { fill: none; stroke: var(--f-akzent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* d09 · Kanal-Karten */
+.demo-post { min-height: 0; height: 200px; }
+
+/* d12 · kleine Wortwolke im Fazit */
+.demo-wolke-klein { min-height: 440px; }
+.demo-wolke-klein .wortwolke { min-height: 340px; }
+
+/* d13 · Danke-Folie mit Sprungmenü-Rad */
+.demo-danke { flex: 1; align-items: center; }
+.demo-danke-rad { display: flex; justify-content: center; }

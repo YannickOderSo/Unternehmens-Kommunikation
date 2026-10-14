@@ -144,6 +144,8 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 .folie.ist-klon { display: grid; }
 .folie.ist-geht { z-index: 0; pointer-events: none; }
 .folie.ist-aktiv { z-index: 1; }
+/* Messen unsichtbarer Folien (Deck.util.messen): kurz eingeblendet, aber unsichtbar */
+.folie.ist-messung { display: grid !important; visibility: hidden !important; z-index: -1; }
 
 /* Grundwerte ohne Gewicht (:where), damit Bausteine sie leicht überschreiben */
 :where(.folie) :where(h1, h2, h3, h4, p, ol, ul, figure, blockquote, dl, dd, table) { margin: 0; }
@@ -218,7 +220,7 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 }
 .laufkopf-marke {
   font-family: var(--schrift-display);
-  font-style: var(--stil-hervor);
+  font-style: var(--stil-marke);
   font-size: 28px;
   font-weight: var(--gewicht-display);
   color: var(--f-text);
@@ -319,6 +321,7 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 .folie[data-layout="vollbild"] .quelle,
 .folie[data-layout="vollbild"] .folie-kopf { color: var(--f-auf-bild); }
 .folie[data-layout="vollbild"] .titel :is(em, .hervor) { color: var(--f-auf-bild); }
+.folie[data-layout="vollbild"] :is(.lead, .text-2) { color: rgb(255 255 255 / 0.88); }
 .folie[data-layout="vollbild"] .folie-kopf { max-width: 1240px; }
 
 /* backup: dichter, kleinerer Titel; Tabellen dürfen 22–24 px haben */
@@ -369,6 +372,9 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 
 /* Zeichnen: Linien bleiben scharf (keine Unschärfe während der Animation) */
 .folie [data-animation~="zeichnen"] { shape-rendering: geometricPrecision; }
+/* SVG-Formen skalieren um ihre eigene Mitte (zoom, feder) statt um die Ecke des SVG */
+.folie svg [data-animation],
+.folie svg [data-schritt] { transform-box: fill-box; transform-origin: center; }
 
 
 /* ---------------------------------------------------------------------------
@@ -458,6 +464,33 @@ html.vt-menue::view-transition-old(folie) { display: none; }
   color: var(--f-text-2);
 }
 .bedienleiste .bl-trenner { width: 1px; height: 22px; margin: 0 4px; background: var(--f-linie); }
+.bedienleiste button[hidden] { display: none; }
+/* Farbwähler (Markenfarben live testen) */
+.bl-farbe {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bl-farbe:hover { background: var(--f-flaeche-2); }
+.bl-farbe input {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 2px solid var(--f-linie);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.bl-farbe input::-webkit-color-swatch-wrapper { padding: 0; }
+.bl-farbe input::-webkit-color-swatch { border: 0; border-radius: 50%; }
+.bl-farbe input::-moz-color-swatch { border: 0; border-radius: 50%; }
 .fortschritt {
   position: fixed;
   left: 0;
@@ -481,6 +514,10 @@ html.leiste-aus .fortschritt { opacity: 0; pointer-events: none; }
 html.leiste-aus .bedienleiste { transform: translateY(8px); }
 html.aufnahme .bedienleiste,
 html.aufnahme .fortschritt { display: none !important; }
+/* Testmodus (werkzeuge/pruefen.mjs): Endzustände sofort, ohne Übergänge */
+html.testmodus *,
+html.testmodus *::before,
+html.testmodus *::after { transition: none !important; animation: none !important; }
 
 
 /* ---------------------------------------------------------------------------

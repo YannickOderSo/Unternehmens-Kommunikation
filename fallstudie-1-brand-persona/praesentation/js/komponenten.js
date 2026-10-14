@@ -262,45 +262,84 @@
     huelle.addEventListener('focusout', function () { if (!huelle._schrittFokus) fokusSetzen(huelle, null); });
   }
 
-  /* ---------- Hub- und Synthese-Layout: Rad in der Mitte, Karten außen ---------- */
-  function hubBauen(huelle, ctx, modus) {
-    var B = parseFloat(huelle.getAttribute('data-breite')) || 1664;
-    var H = parseFloat(huelle.getAttribute('data-hoehe')) || 760;
-    var kartenB = parseFloat(huelle.getAttribute('data-kartenbreite')) || 480;
-    huelle.style.width = B + 'px';
-    huelle.style.height = H + 'px';
-    var konfig = datenAus(huelle) || {};
-    var synthese = modus === 'synthese';
+  /* ---------- Hub- und Synthese-Layout: Rad in der Mitte, Karten außen ----------
+     Größe: Das Rad füllt den freien Platz im Folieninhalt (oder fest per
+     data-breite/data-hoehe). Beim Betreten und nach einem Themenwechsel wird
+     nachgemessen und bei Bedarf neu gebaut – so wird nie etwas abgeschnitten. */
+  function hubMasse(huelle) {
+    var B = parseFloat(huelle.getAttribute('data-breite'));
+    var H = parseFloat(huelle.getAttribute('data-hoehe'));
+    if (B && H) return { B: B, H: H };
+    var gemessen = util.messen(huelle, function () {
+      return { B: huelle.clientWidth, H: huelle.clientHeight };
+    });
+    /* Kein messbarer Platz (z. B. Rad in einem Element ohne Höhe)? Dann
+       Standardgröße 1664 × 672 und die Hülle selbst so hoch machen. */
+    if (!H && !(gemessen.H >= 360)) huelle.style.minHeight = '672px';
+    return {
+      B: B || (gemessen.B >= 900 ? Math.round(gemessen.B) : 1664),
+      H: H || (gemessen.H >= 360 ? Math.round(gemessen.H) : 672)
+    };
+  }
 
-    /* Radgröße: so groß wie die Höhe erlaubt, aber mit Platz für die Verbinder */
-    var ringMax = (H - 80) / 2;
+  function folienText(ziel) {
+    if (!ziel) return '';
+    var b = ziel.bereich || ziel.nummer;
+    return (b.indexOf('–') >= 0 ? 'Folien ' : 'Folie ') + b;
+  }
+
+  function hubBauen(huelle, ctx, modus) {
+    var synthese = modus === 'synthese';
+    if (huelle._konfig === undefined) huelle._konfig = datenAus(huelle) || {};
+    if (huelle._morph === undefined) huelle._morph = huelle.getAttribute('data-morph') || 'steuerrad';
+    huelle.removeAttribute('data-morph');
+    /* Voreinstellungen: Leitfragen und Methodenbeschreibungen erscheinen nur
+       für das gerade gezeigte Feld (Wortbudget ≤ 40 Wörter, Hinweis der Jury) */
+    if (!synthese && !huelle.hasAttribute('data-leitfragen')) huelle.setAttribute('data-leitfragen', 'schrittweise');
+    if (!synthese && !huelle.hasAttribute('data-beschreibungen')) huelle.setAttribute('data-beschreibungen', 'schrittweise');
+    var konfig = huelle._konfig;
+
+    var masse = hubMasse(huelle);
+    var B = masse.B, H = masse.H;
+    var kartenB = parseFloat(huelle.getAttribute('data-kartenbreite')) || Math.round(Math.min(480, B * 0.29));
+    if (huelle._innen) huelle._innen.remove();
+    var innen = el('div', { class: 'sr-hub' }, null, huelle);
+    innen.style.width = B + 'px';
+    innen.style.height = H + 'px';
+    huelle._innen = innen;
+    huelle._hub = { B: B, H: H, modus: modus };
+
+    /* Radgröße: so groß wie die Höhe erlaubt (oben und unten bleibt Platz für
+       die Pillen „Markenkompetenz“ und „Brand Persona“) und die Breite neben
+       den Karten zulässt */
+    var pilleH = 64;
+    var ringMax = (H - 2 * pilleH + 40) / 2;
     var RfAusBreite = (B / 2 - kartenB - 72) / 0.854;
-    var Rf = Math.min(ringMax - 14, RfAusBreite);
+    var Rf = Math.max(160, Math.min(ringMax - 14, RfAusBreite));
     var d = Math.round((Rf + 24) * 2);
     var cx = B / 2;
     var cy = H / 2;
 
-    var linien = svg('svg', { class: 'sr-verbinder', viewBox: '0 0 ' + B + ' ' + H, width: B, height: H, 'aria-hidden': 'true' }, huelle);
-    var radHuelle = el('div', { class: 'sr-rad-platz' }, null, huelle);
+    var linien = svg('svg', { class: 'sr-verbinder', viewBox: '0 0 ' + B + ' ' + H, width: B, height: H, 'aria-hidden': 'true' }, innen);
+    var radHuelle = el('div', { class: 'sr-rad-platz' }, null, innen);
     radHuelle.style.left = rund(cx - d / 2) + 'px';
     radHuelle.style.top = rund(cy - d / 2) + 'px';
+    var leitfragen = huelle.getAttribute('data-leitfragen');
     var teile = radBauen(radHuelle, d, {
-      beschriftung: huelle.getAttribute('data-leitfragen') === 'aus' || synthese ? 'name' : 'frage',
+      beschriftung: leitfragen === 'aus' || synthese ? 'name' : 'frage',
       klickbar: true
     });
     huelle._teile = teile;
-    if (!huelle.hasAttribute('data-morph')) teile.rad.setAttribute('data-morph', 'steuerrad');
-    else teile.rad.setAttribute('data-morph', huelle.getAttribute('data-morph'));
-    huelle.removeAttribute('data-morph');
+    if (huelle._morph !== 'aus') teile.rad.setAttribute('data-morph', huelle._morph);
     var m = teile.m;
     var RfAbs = m.Rf;
     var dy = Math.round(RfAbs * 0.54);
 
     /* Seitenbeschriftung hard / soft facts */
     if (huelle.getAttribute('data-seiten') !== 'aus') {
-      var sl = el('p', { class: 'sr-seite sr-seite--hart' }, null, huelle);
+      var sl = el('p', { class: 'sr-seite sr-seite--hart' }, null, innen);
       sl.innerHTML = '<b>Hard Facts</b> rational';
-      var sr = el('p', { class: 'sr-seite sr-seite--weich' }, null, huelle);
+      var sr = el('p', { class: 'sr-seite sr-seite--weich' }, null, innen);
       sr.innerHTML = 'emotional <b>Soft Facts</b>';
     }
 
@@ -311,9 +350,9 @@
       eintraege = ['kompetenz', 'persona', 'attribute', 'nutzen', 'tonalitaet', 'bild'].map(function (feld) {
         var e = felder[feld] || {};
         var worte = (e.stichworte || []).map(function (w) { return typeof w === 'string' ? { text: w, quelle: e.quelle || '' } : w; });
-        return { feld: feld, name: FELDER[feld].name, stichworte: worte, quelle: e.quelle || '' };
+        return { feld: feld, name: FELDER[feld].name, stichworte: worte, quelle: e.quelle || '', text: e.text || '' };
       });
-      if (konfig.rahmen) eintraege[1].text = konfig.rahmen;
+      if (konfig.rahmen && !eintraege[1].text) eintraege[1].text = konfig.rahmen;
     } else {
       eintraege = (konfig.methoden || STANDARD_METHODEN).map(function (x) { return Object.assign({}, x); });
     }
@@ -332,7 +371,7 @@
         type: 'button',
         class: 'sr-karte sr-karte--' + platz + (istPille ? ' sr-pille' : '') + ' sr-karte--' + (FELDER[e.feld].seite),
         'data-paar': e.feld
-      }, null, huelle);
+      }, null, innen);
       if (!ziel) karte.classList.add('ist-ohne-ziel');
       var kopf = el('span', { class: 'sr-karte-kopf' }, null, karte);
       if (synthese) {
@@ -348,12 +387,13 @@
           el('span', { class: 'sr-stichwort' }, util.markeText(w.text), inhalt);
         });
         if (!e.stichworte.length && !e.text) el('span', { class: 'sr-stichwort sr-leer' }, '…', inhalt);
-        karte.setAttribute('aria-label', e.name + ': ' + inhalt.textContent + (ziel ? ' – zu Folie ' + ziel.nummer : ''));
+        karte.setAttribute('aria-label', e.name + ': ' + inhalt.textContent + (ziel ? ' – zu ' + folienText(ziel) : ''));
       } else {
-        el('span', { class: 'sr-karte-name' }, e.name, kopf);
-        el('span', { class: 'sr-karte-folie' }, ziel ? 'Folie ' + ziel.nummer : '', kopf);
-        if (mitBeschreibung && e.text) el('span', { class: 'sr-karte-text' }, e.text, karte);
-        karte.setAttribute('aria-label', e.name + ' – füllt ' + FELDER[e.feld].name + (ziel ? ', zu Folie ' + ziel.nummer : ''));
+        el('span', { class: 'sr-karte-name' }, util.markeText(e.name), kopf);
+        /* eindeutiger Klick-Hinweis „Folie x →“ (Pfeil per CSS) */
+        el('span', { class: 'sr-karte-folie' }, folienText(ziel), kopf);
+        if (mitBeschreibung && e.text) el('span', { class: 'sr-karte-text' }, util.markeText(e.text), karte);
+        karte.setAttribute('aria-label', e.name + ' – füllt ' + FELDER[e.feld].name + (ziel ? ', zu ' + folienText(ziel) : ''));
       }
       karte.addEventListener('click', function (ev) { ev.stopPropagation(); springen(e.feld, huelle); });
       karten[e.feld] = karte;
@@ -378,17 +418,17 @@
         karte.style.top = rund(p.y) + 'px';
         karte.style.width = kartenB + 'px';
         var x1 = p.seite < 0 ? kartenB + 12 : B - kartenB - 12;
-        var x2 = p.seite < 0 ? cx - xRand : cx + xRand;
+        var x2 = p.seite < 0 ? cx - xRand + 10 : cx + xRand - 10;
         var g = svg('g', { class: 'sr-linie', 'data-paar': feld }, linien);
         svg('path', { d: 'M' + rund(x1) + ' ' + rund(p.y) + ' H' + rund(x2), class: 'sr-linie-strich' }, g);
-        svg('circle', { cx: rund(x2), cy: rund(p.y), r: 6, class: 'sr-linie-punkt' }, g);
+        svg('circle', { cx: rund(x2), cy: rund(p.y), r: 7, class: 'sr-linie-punkt', 'data-animation': 'feder' }, g);
         verbinder[feld] = g;
       } else if (platz === 'oben') {
         karte.style.left = cx + 'px';
         karte.style.top = '0px';
         var g2 = svg('g', { class: 'sr-linie', 'data-paar': feld }, linien);
-        svg('path', { d: 'M' + cx + ' 64 V' + rund(cy - m.rk - 4), class: 'sr-linie-strich' }, g2);
-        svg('circle', { cx: cx, cy: rund(cy - m.rk - 4), r: 6, class: 'sr-linie-punkt' }, g2);
+        svg('path', { d: 'M' + cx + ' ' + pilleH + ' V' + rund(cy - m.rk - 8), class: 'sr-linie-strich' }, g2);
+        svg('circle', { cx: cx, cy: rund(cy - m.rk - 8), r: 7, class: 'sr-linie-punkt', 'data-animation': 'feder' }, g2);
         verbinder[feld] = g2;
       } else if (platz === 'unten') {
         karte.style.left = cx + 'px';
@@ -401,24 +441,27 @@
     if (!synthese && huelle.getAttribute('data-logik') !== 'aus') {
       var defsId = eindeutig('sr-pfeil');
       var defs = svg('defs', {}, linien);
-      var marker = svg('marker', { id: defsId, viewBox: '0 0 12 12', refX: 10, refY: 6, markerWidth: 12, markerHeight: 12, orient: 'auto-start-reverse', markerUnits: 'userSpaceOnUse' }, defs);
+      var marker = svg('marker', { id: defsId, viewBox: '0 0 12 12', refX: 10, refY: 6, markerWidth: 14, markerHeight: 14, orient: 'auto-start-reverse', markerUnits: 'userSpaceOnUse' }, defs);
       svg('path', { d: 'M1 1 L11 6 L1 11', class: 'sr-pfeilspitze' }, marker);
       (konfig.logik || STANDARD_LOGIK).forEach(function (l) {
         var a = karten[l.von], b = karten[l.nach];
-        if (!a || !b) return;
+        if (!a || !b || !PLATZ[l.von] || PLATZ[l.von].length !== 2) return;
         var links = PLATZ[l.von].charAt(0) === 'l';
-        var x = links ? 36 : B - 36;
-        var y1 = PLATZ[l.von].charAt(1) === 'u' ? yu - 92 : yo + 92;
-        var y2 = PLATZ[l.nach].charAt(1) === 'u' ? yu - 92 : yo + 92;
+        var x = links ? 30 : B - 30;
+        /* senkrechter Pfeil zwischen den beiden Karten einer Seite */
+        var y1 = PLATZ[l.von].charAt(1) === 'u' ? yu - 74 : yo + 74;
+        var y2 = PLATZ[l.nach].charAt(1) === 'u' ? yu - 74 : yo + 74;
         var g = svg('g', { class: 'sr-logik', 'data-paar': l.nach }, linien);
         svg('path', { d: 'M' + x + ' ' + rund(y1) + ' V' + rund(y2), class: 'sr-logik-strich', 'marker-end': 'url(#' + defsId + ')' }, g);
-        var text = el('p', { class: 'sr-logik-text sr-logik-text--' + (links ? 'links' : 'rechts'), 'data-paar': l.nach }, l.text, huelle);
+        var text = el('p', { class: 'sr-logik-text sr-logik-text--' + (links ? 'links' : 'rechts'), 'data-paar': l.nach }, util.markeText(l.text), innen);
         text.style.top = rund(cy) + 'px';
+        text.style.width = Math.max(240, kartenB - 70) + 'px';
         logik[l.nach] = [g, text];
       });
     }
 
     /* Schrittweiser Aufbau: data-aufbau="schritte" */
+    huelle._stufen = null;
     if (huelle.getAttribute('data-aufbau') === 'schritte') {
       var start = parseInt(huelle.getAttribute('data-schritt-start') || '1', 10);
       var stufen = [];
@@ -457,7 +500,20 @@
       }
     }
 
-    zeigenKoppeln(huelle);
+    if (!huelle._gekoppelt) { zeigenKoppeln(huelle); huelle._gekoppelt = true; }
+    Deck.platzhalterFuellen(innen);
+  }
+
+  /* Neu bauen, wenn sich der verfügbare Platz geändert hat (Thema, Schrift) */
+  function hubPruefen(huelle) {
+    if (!huelle._hub || huelle.closest('.ist-klon')) return;
+    var m = hubMasse(huelle);
+    if (Math.abs(m.B - huelle._hub.B) <= 4 && Math.abs(m.H - huelle._hub.H) <= 4) return;
+    hubBauen(huelle, null, huelle._hub.modus);
+    Deck.schritteNeu(huelle);
+    var z = Deck.zustand();
+    var f = util.folieFuerElement(huelle);
+    if (f && f.id === z.folie) hubSchritt(huelle, z.schritt);
   }
 
   function hubSchritt(huelle, n) {
@@ -486,13 +542,14 @@
         var t = radBauen(huelle, dm, {
           beschriftung: 'folie',
           ringtext: true,
-          rahmentext: 'Brand Persona' + (ziel ? ' · Folie ' + ziel.nummer : ''),
+          rahmentext: 'Brand Persona' + (ziel ? ' · ' + folienText(ziel) : ''),
           klickbar: true
         });
         huelle.style.width = dm + 'px';
         huelle.style.height = dm + 'px';
-        if (!huelle.hasAttribute('data-morph') && !huelle.closest('.sprungmenue')) t.rad.setAttribute('data-morph', 'steuerrad');
-        else if (huelle.getAttribute('data-morph')) t.rad.setAttribute('data-morph', huelle.getAttribute('data-morph'));
+        var morph = huelle.getAttribute('data-morph');
+        if (morph === null && !huelle.closest('.sprungmenue')) morph = 'steuerrad';
+        if (morph && morph !== 'aus') t.rad.setAttribute('data-morph', morph);
         huelle.removeAttribute('data-morph');
         aktivSetzen(huelle);
         zeigenKoppeln(huelle);
@@ -501,17 +558,25 @@
       hubBauen(huelle, ctx, modus === 'synthese' ? 'synthese' : 'hub');
     },
     aktualisieren: function (huelle) { aktivSetzen(huelle); },
-    betreten: function (huelle) {
+    betreten: function (huelle, ctx) {
+      hubPruefen(huelle);
       if (!huelle._stufen) fokusSetzen(huelle, null);
     },
     schritt: function (huelle, ctx, n) { hubSchritt(huelle, n); },
-    druck: function (huelle) { huelle._schrittFokus = false; fokusSetzen(huelle, null); },
+    druck: function (huelle) { hubPruefen(huelle); huelle._schrittFokus = false; fokusSetzen(huelle, null); },
     klon: function (kopie, n, original) {
       if (!original || !original._stufen) return;
       kopie._stufen = original._stufen;
       kopie._stufenStart = original._stufenStart;
       hubSchritt(kopie, n);
     }
+  });
+
+  /* Nach einem Themenwechsel (andere Schrift, andere Ränder) nachmessen */
+  document.addEventListener('deck:groesse', function () {
+    util.alle('.steuerrad.sr-modus-hub, .steuerrad.sr-modus-synthese').forEach(function (huelle) {
+      if (util.istAktiv(huelle)) hubPruefen(huelle);
+    });
   });
 
 
@@ -563,6 +628,7 @@
      Ergebnisse bleiben nach dem Neuladen erhalten (Browser-Speicher).
      =========================================================================== */
   var umfragen = [];
+  var umfrageAnzeigen = [];      /* Aussagezahl und Stimmenzähler (siehe unten) */
 
   function umfrageLaden(u) {
     var gespeichert = util.laden('umfrage:' + u.id, null);
@@ -598,15 +664,27 @@
     umfrageLaden(u);
 
     var mitQr = !!konfig.link && huelle.getAttribute('data-qr') !== 'aus';
-    huelle.classList.toggle('umfrage--ohne-qr', !mitQr);
+    var aussageSchritt = huelle.getAttribute('data-aussage');          /* z. B. "2" */
+    var mitStimmen = huelle.getAttribute('data-stimmen') !== 'aus';
+    var linkeSpalte = mitQr || !!aussageSchritt;
+    huelle.classList.toggle('umfrage--ohne-qr', !linkeSpalte);
 
-    if (mitQr) {
-      var links = el('div', { class: 'umfrage-qr' }, null, huelle);
-      var qr = el('div', { class: 'qr', 'data-qr': konfig.link, 'data-groesse': huelle.getAttribute('data-qr-groesse') || '400' }, null, links);
-      if (konfig.kurzLink) qr.setAttribute('data-kurz', konfig.kurzLink);
-      qrBauen(qr);
-      el('p', { class: 'umfrage-aufruf' }, konfig.aufruf || 'Jetzt abstimmen', links);
-      el('p', { class: 'umfrage-hinweis' }, konfig.hinweis || 'anonym · ohne Anmeldung', links);
+    if (linkeSpalte) {
+      /* Linke Spalte: QR-Code, Kurz-URL, Hinweis, Stimmenzähler.
+         Mit data-aussage="n" weicht sie in Schritt n der großen Aussagezahl. */
+      var links = el('div', { class: 'umfrage-links' }, null, huelle);
+      var qrSpalte = el('div', { class: 'umfrage-qr' }, null, links);
+      if (mitQr) {
+        var qr = el('div', { class: 'qr', 'data-qr': konfig.link, 'data-groesse': huelle.getAttribute('data-qr-groesse') || '380' }, null, qrSpalte);
+        if (konfig.kurzLink) qr.setAttribute('data-kurz', konfig.kurzLink);
+        qrBauen(qr);
+        if (konfig.aufruf) el('p', { class: 'umfrage-aufruf' }, util.markeText(konfig.aufruf), qrSpalte);
+        el('p', { class: 'umfrage-hinweis' }, konfig.hinweis || 'anonym · ohne Anmeldung', qrSpalte);
+      }
+      if (mitStimmen) el('div', { class: 'umfrage-stimmen', 'data-umfrage': id }, null, qrSpalte);
+      if (aussageSchritt) {
+        el('div', { class: 'umfrage-aussage', 'data-umfrage': id, 'data-schritt': aussageSchritt, 'data-animation': 'hoch' }, null, links);
+      }
     }
 
     var rechts = el('div', { class: 'umfrage-ergebnis' }, null, huelle);
@@ -750,6 +828,7 @@
       z.alterProzent = neuProzent;
       z.zeile.classList.toggle('ist-fuehrend', max > 0 && u.werte[i] === max);
     });
+    anzeigenAktualisieren(u.id, u.werte, u.konfig, u.beispiel, animiert);
   }
 
   /* Ziffern 1–9 zählen auf der aktiven Umfrage-Folie */
@@ -793,6 +872,117 @@
     klon: function (kopie, n, original) {
       util.alle('.umfrage-werkzeuge', kopie).forEach(function (w) { w.remove(); });
     }
+  });
+
+
+  /* ---------------------------------------------------------------------------
+     3b. AUSSAGEZAHL UND STIMMENZÄHLER zu einer Umfrage
+     <div class="umfrage-aussage" data-umfrage="tier" data-schritt="1"></div>
+        → große Zahl „27 %“ + Satz aus marke.js (umfragen.tier.aussage), z. B.
+          „sehen HOLY wie wir: als Eule“. Prozent = Anteil von unsereAntwort,
+          immer aus den Stimmen berechnet (nie von Hand).
+     <div class="umfrage-stimmen" data-umfrage="tier"></div>
+        → hochzählende Zahl der Stimmen („64 Stimmen“)
+     Beide dürfen auf derselben oder einer späteren Folie stehen.
+     --------------------------------------------------------------------------- */
+  function umfrageKonfig(id, huelle) {
+    return Object.assign({}, (marke.umfragen || {})[id] || {}, datenAus(huelle) || {});
+  }
+  function werteFuer(id, konfig) {
+    var u = { id: id, konfig: konfig };
+    if (!Array.isArray(konfig.optionen)) return { werte: [], beispiel: false };
+    umfrageLaden(u);
+    return { werte: u.werte, beispiel: u.beispiel };
+  }
+  function anteilAntwort(werte, konfig) {
+    var summe = werte.reduce(function (a, b) { return a + b; }, 0);
+    var antwort = String(konfig.unsereAntwort || '').toLowerCase();
+    var i = (konfig.optionen || []).map(function (o) { return String(o).toLowerCase(); }).indexOf(antwort);
+    if (i < 0 || !summe) return { prozent: 0, summe: summe, gueltig: false };
+    return { prozent: Math.round(werte[i] / summe * 100), summe: summe, gueltig: true };
+  }
+  function anzeigenAktualisieren(id, werte, konfig, beispiel, animiert) {
+    umfrageAnzeigen.forEach(function (a) {
+      if (a.id !== id) return;
+      /* nur sichtbar Angezeigtes animieren (aktive Folie, Schritt erreicht) */
+      var sichtbar = util.istAktiv(a.el) && !a.el.closest('[data-schritt]:not(.schritt-an)');
+      a.aktualisieren(werte, beispiel, animiert && sichtbar);
+    });
+  }
+
+  function aussageBauen(huelle) {
+    var id = huelle.getAttribute('data-umfrage');
+    var konfig = umfrageKonfig(id, huelle);
+    var vorlage = util.markeText(konfig.aussage || '{prozent} sehen [Marke] wie wir: als {antwort}');
+    var antwort = konfig.unsereAntwort || '…';
+    huelle.innerHTML = '';
+    var zahl = el('span', { class: 'ua-zahl zahl', 'data-animation': 'zaehlen', 'data-ziel': '0', 'data-einheit': ' %' }, '0 %', huelle);
+    var satz = el('span', { class: 'ua-text' }, null, huelle);
+    var rest = vorlage.replace('{prozent}', '').replace(/^\s+/, '');
+    var teile = rest.split('{antwort}');
+    teile.forEach(function (t, i) {
+      if (t) satz.appendChild(document.createTextNode(t));
+      if (i < teile.length - 1) el('em', { class: 'ua-antwort' }, antwort, satz);
+    });
+    var anzeige = {
+      id: id, el: huelle,
+      aktualisieren: function (werte, beispiel, animiert) {
+        var a = anteilAntwort(werte, konfig);
+        var alt = parseFloat(zahl.getAttribute('data-ziel')) || 0;
+        zahl.setAttribute('data-ziel', String(a.prozent));
+        huelle.classList.toggle('ist-leer', !a.gueltig);
+        if (!a.gueltig) { zahl.textContent = '– %'; return; }
+        if (animiert && alt !== a.prozent) util.zaehle(zahl, alt, a.prozent, { einheit: ' %', dauer: 600 });
+        else zahl.textContent = util.zahlFormat(a.prozent, 0) + ' %';
+      }
+    };
+    huelle._anzeige = anzeige;
+    umfrageAnzeigen.push(anzeige);
+    var stand = werteFuer(id, konfig);
+    anzeige.aktualisieren(stand.werte, stand.beispiel, false);
+  }
+
+  function stimmenBauen(huelle) {
+    var id = huelle.getAttribute('data-umfrage');
+    var konfig = umfrageKonfig(id, huelle);
+    huelle.innerHTML = '';
+    var zahl = el('span', { class: 'us-zahl zahl', 'data-animation': 'zaehlen', 'data-ziel': '0' }, '0', huelle);
+    var text = el('span', { class: 'us-text' }, 'Stimmen', huelle);
+    var anzeige = {
+      id: id, el: huelle,
+      aktualisieren: function (werte, beispiel, animiert) {
+        var summe = werte.reduce(function (a, b) { return a + b; }, 0);
+        var alt = parseFloat(zahl.getAttribute('data-ziel')) || 0;
+        zahl.setAttribute('data-ziel', String(summe));
+        text.textContent = summe === 1 ? 'Stimme' : 'Stimmen';
+        if (animiert && alt !== summe) util.zaehle(zahl, alt, summe, { dauer: 600 });
+        else zahl.textContent = util.zahlFormat(summe, 0);
+      }
+    };
+    huelle._anzeige = anzeige;
+    umfrageAnzeigen.push(anzeige);
+    var stand = werteFuer(id, konfig);
+    anzeige.aktualisieren(stand.werte, stand.beispiel, false);
+  }
+
+  function anzeigeAuffrischen(huelle) {
+    var a = huelle._anzeige;
+    if (!a) return;
+    var konfig = umfrageKonfig(a.id, huelle);
+    var stand = werteFuer(a.id, konfig);
+    a.aktualisieren(stand.werte, stand.beispiel, false);
+  }
+  Deck.baustein('umfrage-aussage', {
+    selektor: '.umfrage-aussage[data-umfrage]',
+    aufbauen: aussageBauen,
+    betreten: anzeigeAuffrischen,
+    druck: anzeigeAuffrischen
+  });
+  Deck.baustein('umfrage-stimmen', {
+    selektor: '.umfrage-stimmen[data-umfrage]',
+    aufbauen: stimmenBauen,
+    betreten: anzeigeAuffrischen,
+    druck: anzeigeAuffrischen
   });
 
 
