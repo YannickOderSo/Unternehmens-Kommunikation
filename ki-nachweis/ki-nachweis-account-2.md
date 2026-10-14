@@ -98,9 +98,17 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
     [`workflows/2026-10-14_praesentation-account-2_auftraege/`](workflows/2026-10-14_praesentation-account-2_auftraege/)
   - Rückgaben der Unteragenten (JSON):
     [`workflows/2026-10-14_praesentation-account-2_rueckgaben/`](workflows/2026-10-14_praesentation-account-2_rueckgaben/)
-  - Nachricht an jeden Unteragenten (Agent-Werkzeug, automatisch im Rohprotokoll als `"art": "delegation"`):
-    > Du bist Unteragent im Workflow „praesentation-account-2“ … Dein Auftrag steht wörtlich in der Datei … Lies die
-    > Datei vollständig und führe den Auftrag genau aus …
+  - Nachricht an jeden Unteragenten (Agent-Werkzeug, automatisch im Rohprotokoll als `"art": "delegation"`; Label,
+    Phase und Dateiname je Agent eingesetzt):
+    > Du bist Unteragent im Workflow „praesentation-account-2“ (Web-Präsentation für Fallstudie 1, Repository
+    > /home/user/Unternehmens-Kommunikation, Branch praesentation-account-2). Label: „…“, Phase „…“.
+    >
+    > Dein Auftrag steht wörtlich in der Datei …/2026-10-14_praesentation-account-2_auftraege/….md. Lies die Datei
+    > vollständig (alle Zeilen, notfalls in mehreren Teilen) und führe den Auftrag genau aus. Halte dich an die
+    > Rahmenregeln darin (u. a. keine git-Commits, ki-nachweis/ nicht bearbeiten – nur lesen). Gib alle verwendeten
+    > Quellen (Schriften, Bibliotheken, Icons, Fachliteratur) mit Lizenz und Herkunft im Feld „quellen“ an und
+    > kennzeichne Inhalte aus deinem Modellwissen. Schreibe zum Schluss deine Rückgabe als gültiges JSON in die im
+    > Auftrag genannte Datei und antworte mit einer kurzen Zusammenfassung.
 - **Vorgaben an alle Unteragenten** (Rahmenregeln im Skript): Marke HOLY; Fakten über HOLY nur aus dem Recherche-Dossier
   mit Quelle und Faktenstatus, sonst sichtbar gekennzeichnete Beispieldaten; nichts erfinden; alles offline lauffähig;
   fremde Schriften/Bibliotheken mit Lizenz und Herkunft melden (Feld `quellen`); Unsicherheiten bei Modellinhalten
