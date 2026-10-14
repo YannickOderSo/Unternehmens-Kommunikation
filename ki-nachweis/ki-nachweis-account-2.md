@@ -33,6 +33,9 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-07 | 14.10.2026 | System (Routine aus A2-03) | Geplante Prüfung „7 Uhr: master auf neuen Push prüfen“ (zugestellt erst 11:58 Uhr) | – | neuer Commit auf master ohne Dossier; kein Merge |
 | A2-08 | 14.10.2026 | System | Zweiter Abbruch des Workflows durch Nutzungslimit; mehrere Neustarts der Sitzung | A2-D01 | Zwischenstand gesichert |
 | A2-09 | 14.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Dossier übernommen, Skript gehärtet, Workflow mit resume fortgesetzt |
+| A2-10 | 14.10.2026 | System | Dritter Abbruch des Workflows durch Nutzungslimit; Neustarts der Sitzung | A2-D01 | Zwischenstand gesichert |
+| A2-11 | 14.10.2026 | Yannick (Account 2) | Frage: Mit wem Interviews führen, sind sie Pflicht? | – | Antwort im Chat (aus Aufgabe, methoden.md, Dossier) |
+| A2-12 | 14.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -198,6 +201,43 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-10 – 14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ failed: Error: Keine Folien-Gruppe fertig
+> geworden – später mit resume fortsetzen („You've hit your session limit · resets 7:50pm (UTC)“ bei 7 Unteragenten).
+> Danach zweimal: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** Fertig sind jetzt die Folien-Agenten für fünf von sieben Gruppen (Einstieg & Vorgehen; Markenkompetenz,
+  Persona, Limbic Map; Repertory Grid & Laddering; Analogien & Live-Umfrage; Kommunikationsanalyse). Alle Prüf-Agenten
+  sowie „Synthese, Fazit, Fragen“ und „Backup“ scheiterten am Limit. Die Härtung aus A2-09 griff: keine Integration.
+
+### A2-11 – 14.10.2026 – Yannick Heisler (Account 2)
+
+> Mit wem sollen die interviews geführt werden? Und sind diese wirklich pflicht?
+
+- **Vorgehen Claude:** Aufgabenstellung (`fallstudie-1-brand-persona/README.md`), `methoden.md`, `arbeitsplan.md`,
+  `prompts.md` und das HOLY-Dossier (Kap. 4.1, 4.3, 4.5, 10.2) gelesen und im Chat geantwortet: Die Interviews sind laut
+  Aufgabenfolie **keine Pflicht** („insbesondere Desk Research und KI-Tools“); sie sind ein Vorschlag aus
+  `methoden.md`/`arbeitsplan.md` (Account 1, Modellwissen) zur Absicherung der KI-simulierten Befragten.
+  Empfehlung: 3–5 Kurzinterviews à ca. 10 Min. mit Personen aus der Zielgruppe laut Dossier (ab 18, Kern 25–40,
+  Schicht- und Büroberufe, Studierende; Nutzer:innen zuckerfreier Softdrinks/Energy Drinks), Inhalt: Triaden fürs
+  Repertory Grid, Laddering ab den Attributen, Analogie-Fragen. Ohne Interviews müssen Quellenzeilen und Sprechtext
+  („KI-simulierte Befragte + Kurzinterviews“) angepasst werden.
+- **Ergebnis:** Antwort im Chat; keine Dateien geändert (außer diesem Nachweis)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – Entscheidung Interviews ja/nein, ggf. bei Prof. Stenger nachfragen
+
+### A2-12 – 14.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (21:52 Uhr):** Zwischenstand committet (`8dc24f6`), Workflow `wf_878fd85d-3f2` mit
+  `resumeFromRunId` fortgesetzt (fünf fertige Folien-Agenten aus dem Zwischenspeicher).
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -245,6 +285,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Dritte Fortsetzung (A2-12)** (14.10.2026, 21:52 Uhr): unverändertes Skript, `resumeFromRunId`. Fertig aus dem
+  Zwischenspeicher: fünf Folien-Agenten; neu: Folien „Synthese, Fazit, Fragen“ und „Backup“, alle Prüfungen usw.
 - **Zweite Fortsetzung (A2-09)** (14.10.2026, ca. 17:00 Uhr): nach Merge des HOLY-Dossiers und Härtung des Skripts
   (gescheiterte Prüf-/Überarbeitungs-Agenten lassen die Gruppe unfertig; Abbruch vor der Integration, solange eine
   Gruppe fehlt) erneut mit `resumeFromRunId` fortgesetzt. Bisher fertig: Folien „Einstieg & Vorgehen“ und
