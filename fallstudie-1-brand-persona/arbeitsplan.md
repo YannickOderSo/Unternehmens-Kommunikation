@@ -42,7 +42,7 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | Markentonalität aus den Analogien | B → C | **Mi 21.10.** |
 | Ergebnisse je Feld des Markensteuerrads (Stichworte + Herkunft) | alle → C | **Do 22.10.** vor dem Termin |
 | Eigene Folien fertig im Master | alle → C | **Fr 23.10.** |
-| Eigene KI-Nutzung vollständig im KI-Nachweis | alle → A | **Sa 24.10.** |
+| Persönliche KI-Liste ([Vorlage](../ki-nachweis/vorlage-ki-nutzung.md)) | alle → Yannick, Übertrag in den KI-Nachweis | **Fr 23.10.** (Nachträge bis So 25.10.) |
 
 ## Tagesplan
 
@@ -81,8 +81,11 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 ## Regeln für den KI-Nachweis
 
 - Prompts an Claude Code (Yannicks Sitzung) protokolliert Claude automatisch, ebenso jede Delegation an Unteragenten.
-- Wer andere Tools nutzt (ChatGPT, Perplexity, Bildgeneratoren …), trägt den Prompt **sofort** in Abschnitt 3 des
-  KI-Nachweises ein und legt den Chatverlauf ab.
+- Wer andere Tools nutzt (ChatGPT, Perplexity, Bildgeneratoren …), trägt den Prompt **sofort** in die persönliche
+  Liste nach [`vorlage-ki-nutzung.md`](../ki-nachweis/vorlage-ki-nutzung.md) ein und legt den Chatverlauf als PDF im
+  Gruppenordner „KI-Chats“ ab (nicht im Repository, es ist öffentlich). Yannick überträgt alles in Abschnitt 3.
+- Keine personenbezogenen Daten (Interviewpartner:innen, Kommentierende) in externe KI-Tools: KI-Richtlinie der HSKL,
+  Nr. 6 (Hochschulanzeiger Nr. 4/2025).
 - Keine KI-Zahl ohne geöffnete Quelle. Berechnungen (Mittelwerte, Engagement-Raten) in Excel/Sheets, nicht per KI.
 
 ## Offene Punkte
@@ -93,3 +96,5 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
 - [ ] Klären: Folie 58 nennt für „Präsentation“ 30 %, die beiden Kriterien ergeben aber nur 15 %
 - [ ] Klären: Zählen Rückfragen zu den 15 Minuten?
+- [ ] Bei Prof. Stenger klären: Gelten besondere KI-Vorgaben (erlaubte Tools, Form der Dokumentation,
+  Eigenständigkeitserklärung)? Laut KI-Richtlinie der HSKL (Nr. 8) teilen Prüfende das vor Beginn mit.

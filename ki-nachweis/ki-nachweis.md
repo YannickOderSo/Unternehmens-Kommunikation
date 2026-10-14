@@ -416,7 +416,8 @@ steht hier mit dem wörtlichen Auftrag.
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
-| D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | *läuft* | – |
+| D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (5 hoch, 15 mittel, 10 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
+| D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -508,6 +509,39 @@ steht hier mit dem wörtlichen Auftrag.
   - Prüfungsanforderungen, Redlichkeit, Datenschutz: mit Websuche nach KI-Vorgaben der Hochschule Kaiserslautern.
 - **Vorgaben:** jeder Befund mit Quelle (Datei und Abschnitt oder URL mit Abrufdatum) oder als Modellwissen
   gekennzeichnet; nichts erfinden; keine Dateien ändern.
+- **Ergebnis:** 30 Befunde mit Quellen (Zusammenführbarkeit 9, Nutzbarkeit 9, Anforderungen 12; 5 davon „hoch“).
+  Die wichtigsten:
+  - Abschnitt 3 hatte keinen Platz für wörtliche Prompts.
+  - Die 9-spaltige Tabelle war für Nicht-GitHub-Nutzer unpraktisch.
+  - Ein eingerückter Codeblock zerbricht beim Einfügen.
+  - Termine und Ablageort widersprachen Arbeitsplan und Aufgaben-PDF.
+  - Hinweise zu Datenschutz und Urheberrecht fehlten (KI-Richtlinie der HSKL, Nr. 6 und 7).
+  - Eine Begründung je KI-Nutzung fehlte (HSKL-Handreichung).
+  - Das Repository ist öffentlich, Chatverläufe gehören also nicht hinein.
+- **Wie Claude das Ergebnis geprüft hat:** Die folgenreichsten Befunde selbst nachgeprüft:
+  - Sichtbarkeit des Repositorys über die GitHub-API: öffentlich.
+  - Beide HSKL-Dokumente geladen und im Originaltext gelesen (pdftotext): „Richtlinie für den Einsatz von
+    Künstlicher Intelligenz an der Hochschule Kaiserslautern“, Präsidium 24.07.2025, Hochschulanzeiger Nr. 4/2025
+    vom 31.07.2025, Nr. 4, 6, 7, 8; Handreichung „Eigenständigkeitserklärung für Prüfungen“ vom 16.09.2024,
+    Abschnitte 2.2, 3, 3.1, 3.2. Die Aussagen der Prüfer stimmten.
+  - Die neue Vorlage mit pandoc gerendert: genau zwei Codeblöcke, alle Überschriften intakt.
+
+  Anders gelöst als vorgeschlagen:
+  - Übersichtstabelle in der Vorlage gestrichen; Yannick baut sie beim Übertragen.
+  - Spalte „Folie“ in Abschnitt 3 heißt jetzt „Verwendet in“; keine zusätzliche Spalte „Herkunft“.
+  - Initialen ergänzt Yannick beim Übertragen.
+
+  Mitgeändert: `ki-nachweis.md` Abschnitte 3 und 4 (Ablauf, ID-Schema, 3.1 Detailblöcke, Chatverläufe nicht im
+  Repository), `aufgaben-im-detail.html` und das PDF, `arbeitsplan.md` (Übergabe, Regeln, offener Punkt zu den
+  KI-Vorgaben von Prof. Stenger).
+
+### D05 – 14.10.2026 – ausgelöst durch Prompt 25
+
+- **Art:** Workflow „vorlage-ki-nutzung-nachpruefung“, ein Unteragent ohne Schreibrechte.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-14_vorlage-ki-nutzung-nachpruefung.js`](workflows/2026-10-14_vorlage-ki-nutzung-nachpruefung.js)
+  und automatisch im Rohprotokoll.
+- **Kurz:** jeden Befund aus D04 prüfen (umgesetzt, falsch umgesetzt, nicht umgesetzt), neue Widersprüche zwischen den
+  vier geänderten Dateien suchen, Angaben zu den HSKL-Dokumenten gegen den Originaltext prüfen; jeder Punkt mit Quelle.
 - **Ergebnis:** *läuft*
 - **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
@@ -515,15 +549,28 @@ steht hier mit dem wörtlichen Auftrag.
 
 ## 3. KI-Nutzung außerhalb von Claude Code
 
-Jede Person trägt ihre Prompts in anderen Tools **sofort** ein. Den vollständigen Chatverlauf als Link oder PDF ablegen
-(z. B. in `ki-nachweis/chats/`) und hier verweisen. Prompt-Vorlagen: [`prompts.md`](../fallstudie-1-brand-persona/prompts.md)
+Jede Person führt ihre KI-Nutzung in anderen Tools **sofort** in einer persönlichen Liste nach der Vorlage
+[`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md) und schickt sie an Yannick: Zwischenstand Di 20.10., Abgabe Fr 23.10.,
+Nachträge bis So 25.10. (Fallstudie 1). Yannick überträgt die Einträge hierher: die Übersicht in die Tabelle, die
+Detailblöcke unverändert nach 3.1. Chatverläufe liegen als PDF im Gruppenordner „KI-Chats“, **nicht** im
+Repository, weil es öffentlich ist. Prompt-Vorlagen: [`prompts.md`](../fallstudie-1-brand-persona/prompts.md)
 
-| ID | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Folie |
-|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|-------|
-| E01 | | | | | | | | |
+**ID-Schema:** `E-Initialen-Nr` (z. B. `E-EK-01`, `E-LW-01`, `E-YH-01`); die Nummern laufen je Person fortlaufend über
+alle Fallstudien. Grundlage für die Angaben: KI-Richtlinie der HSKL (Präsidium 24.07.2025, Hochschulanzeiger
+Nr. 4/2025) und Handreichung „Eigenständigkeitserklärung für Prüfungen“ der HSKL (16.09.2024).
+
+| ID | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Verwendet in |
+|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|--------------|
+| E-__-01 | | | | | | | | |
 
 **Spalte „Prüfung / Anpassung“** ist die wichtigste: Was wurde kontrolliert (Quelle geöffnet, mit echtem Interview
 verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
+
+### 3.1 Einträge im Detail
+
+Detailblöcke aus den persönlichen Listen, unverändert übernommen (Überschrift ergänzt um ID und Person).
+
+_noch keine Einträge_
 
 ---
 
@@ -534,7 +581,7 @@ verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
 | `rohprotokoll.jsonl` | jeder Prompt an Claude Code und jede Delegation an Unteragenten (einzeln oder als Workflow-Skript), wörtlich mit Zeitstempel | automatisch über Claude-Code-Hooks (`.claude/settings.json`, Skript `.claude/hooks/ki_protokoll.py`) |
 | `workflows/` | Skripte der Workflows mit allen Agenten-Aufträgen im Wortlaut | legt Claude bei jedem Workflow ab |
 | Abschnitt 1 und 2 | lesbare Fassung mit Vorgehen, Ergebnis und Prüfstatus | pflegt Claude nach jedem Prompt (Anweisung in `CLAUDE.md`) |
-| Abschnitt 3 | KI-Nutzung in anderen Tools | trägt jede Person selbst ein |
+| Abschnitt 3 | KI-Nutzung in anderen Tools | persönliche Listen nach `vorlage-ki-nutzung.md`, übertragen von Yannick |
 | Git-Verlauf | wann welche Datei entstanden ist | jeder Arbeitsschritt wird committet |
 
 Die automatische Protokollierung wurde während Prompt 03 eingerichtet. Die Einträge 01–03 sind deshalb im Rohprotokoll
