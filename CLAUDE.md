@@ -19,8 +19,9 @@ Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deu
 - **Parallele Sitzungen:** Ein zweiter Account baut die Präsentation auf dem Branch `praesentation-account-2` und führt
   seinen Nachweis in `ki-nachweis/ki-nachweis-account-2.md` (Übergabe-Prompt: `ki-nachweis/uebergaben/`). Account 1
   arbeitet auf `master` und führt später zusammen.
-- **Rollen noch nicht vergeben:** Arbeit ist in Bündel A/B/C aufgeteilt, die Gruppe wählt selbst (siehe
-  `fallstudie-1-brand-persona/arbeitsplan.md`). Keine Namen zuordnen, bis Yannick die Verteilung mitteilt.
+- **Rollen Fallstudie 1 (von Yannick mitgeteilt am 14.10.2026):** Bündel A + Markensteuerrad-Synthese (C2):
+  Yannick Heisler · Bündel B: Lukas Welker · Bündel C: Elias Knauber; Folie 10 (Markensteuerrad) präsentiert trotzdem
+  Elias. Details: `fallstudie-1-brand-persona/arbeitsplan.md`. Für Fallstudie 2 und 3 ist noch nichts verteilt.
 - **Marke:** wird aus der Liste von Prof. Stenger gewählt (10 Marken, siehe `README.md`); die Wahl gilt für alle drei
   Fallstudien. **Gewählt: HOLY** (13.10.2026). Recherche-Dossier: `fallstudie-1-brand-persona/recherche/`.
   Fakten über HOLY nur mit Quelle und Faktenstatus aus dem Dossier verwenden.

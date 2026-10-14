@@ -46,6 +46,9 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 24 | 14.10.2026 | Yannick | Aufgaben der Bündel A/B/C genauer erklären | – | Aufgaben im Detail (HTML + PDF, 8 Seiten) |
 | 25 | 14.10.2026 | Yannick | KI-Nachweis-Datei für die anderen, um ihre KI-Nutzung zu sammeln | D04, D05 (Workflows) | Vorlage `vorlage-ki-nutzung.md`, zweifach geprüft; Ablauf in 7 Dateien angeglichen |
 | 26 | 14.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Zwischenstand committet + gepusht |
+| 27 | 14.10.2026 | System | Benachrichtigung: Workflow D04 fertig | – | Befunde ausgewertet und umgesetzt (siehe 25, D04) |
+| 28 | 14.10.2026 | System | Benachrichtigung: Workflow D05 fertig | – | 15 Punkte umgesetzt (siehe 25, D05) |
+| 29 | 14.10.2026 | Yannick | Einteilung der Bündel für Fallstudie 1 | – | Namen in 6 Dateien eingetragen, PDFs neu erzeugt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -410,6 +413,46 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   gepusht, während D04 noch läuft.
 - **Ergebnis:** Commit + Push
 - **Unteragenten:** keine
+
+### 27 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung, 21:39 Uhr: Workflow „vorlage-ki-nutzung-pruefung“ (D04) abgeschlossen, 3 von 3
+> Unteragenten fertig)*
+
+- **Vorgehen Claude:** Befunde ausgewertet, die wichtigsten an den Originalquellen nachgeprüft, Vorlage überarbeitet,
+  Nachprüfung D05 gestartet (Details unter 25 und D04).
+- **Unteragenten:** D05
+
+### 28 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung, 21:52 Uhr: Workflow „vorlage-ki-nutzung-nachpruefung“ (D05) abgeschlossen)*
+
+- **Vorgehen Claude:** 15 offene Punkte umgesetzt, Dossier und Aufgaben-PDFs neu erzeugt (Details unter D05).
+- **Unteragenten:** keine
+
+### 29 – 14.10.2026 – Yannick
+
+> Folgende Einteilung:
+> Teil A + Markensteuerrad (markensteuerrad präsentiert trotzdem Elias)macht Yannick Heisler
+> Teil B macht Lukas Welker
+> Teil C macht Elias Knauber
+
+- **Vorgehen Claude:** Einteilung überall eingetragen, wo die Bündel noch ohne Namen standen:
+  - `CLAUDE.md`: Regel „Rollen noch nicht vergeben“ ersetzt.
+  - `arbeitsplan.md`: Spalte „Übernimmt“, Hinweis bei „Warum so gebündelt?“, Übergabe der Feld-Ergebnisse an Yannick,
+    Tagesplan Do 22.10., offener Punkt abgehakt.
+  - `README.md` der Fallstudie: Folie 10 als „C (Inhalt: A)“.
+  - `aufgaben-im-detail.html`: Namen in Kopf, Übersicht und Bündelköpfen; Aufgabe C2 an Yannick mit Übergabe an Elias
+    zum Einüben; Synthese-Termin leitet Yannick.
+  - `aufgabenuebersicht.html`: Namensfelder ausgefüllt.
+
+  Die Aufwandsangaben hat Claude angepasst, ebenfalls als Schätzung: A ca. 9 Std. + C2 ca. 1,5 Std.; C ca. 7,5 Std. +
+  Folie 10 einüben. Beide PDFs neu erzeugt (8 bzw. 5 Seiten) und die geänderten Seiten als Vorschau angesehen; die
+  Bündelköpfe danach umgestellt (Name als eigene Zeile). Recherche-Dossier und die Präsentation auf dem Branch von
+  Account 2 nicht geändert.
+- **Ergebnis:** Einteilung in 6 Dateien, PDFs aktualisiert
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
