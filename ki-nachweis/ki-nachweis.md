@@ -33,6 +33,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 11 | 13.10.2026 | System | Nutzungslimit erreicht, Workflow D01 unterbrochen; Sitzung dreimal neu gestartet | – | – |
 | 12 | 13.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D01 fortgesetzt | Präsentation *in Arbeit* |
 | 13 | 13.10.2026 | Yannick | HOLY gewählt; gegengeprüfte Recherche für das Team-Meeting | D03 (Workflow) | Dossier *in Arbeit* |
+| 14 | 13./14.10.2026 | System | Nutzungslimit erneut erreicht: D01 und D03 unterbrochen; Sitzung neu gestartet | – | – |
+| 15 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier *in Arbeit* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -221,6 +223,27 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** D03
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 14 – 13./14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigungen: D01 „failed: Fundament nicht fertig geworden“ (Engine & Designsystem: „You've hit your session
+> limit“); D03 „failed: Dossier nicht fertig geworden“ (11 Unteragenten mit „You've hit your session limit“).
+> Danach mehrfach: „This session's worker process was restarted. …“
+
+- **Stand:** D01 – Gestaltungsrichtungen und Jury fertig, Fundament abgebrochen. D03 – vier Recherche-Bereiche fertig,
+  zwei Recherchen, alle Gegenprüfungen und das Dossier abgebrochen.
+
+### 15 – 14.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache
+> dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Zuerst D03 (Recherche für das heutige Meeting) unverändert fortgesetzt – fertige Agenten kommen
+  aus dem Zwischenspeicher. D01 (Präsentation) wird erst danach fortgesetzt, damit nicht beide Workflows gleichzeitig
+  das Kontingent aufbrauchen.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** D03 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -230,9 +253,9 @@ steht hier mit dem wörtlichen Auftrag.
 
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
-| D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | unterbrochen (Nutzungslimit), fortgesetzt 21:02 Uhr – *läuft* | – |
+| D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); wartet, bis D03 fertig ist | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
-| D03 | 13.10.2026 | 13 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | *läuft* | – |
+| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | unterbrochen (Nutzungslimit), fortgesetzt 14.10. 00:02 UTC – *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
