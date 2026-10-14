@@ -44,6 +44,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 22 | 14.10.2026 | Yannick | Frage: Brauchen wir Interviews? | – | Antwort im Chat (keine Dateien geändert) |
 | 23 | 14.10.2026 | Yannick | Klarstellung: drei getrennte Präsentationen; Aufteilung für Präsentation 1 | – | Antwort im Chat (keine Dateien geändert) |
 | 24 | 14.10.2026 | Yannick | Aufgaben der Bündel A/B/C genauer erklären | – | Aufgaben im Detail (HTML + PDF, 8 Seiten) |
+| 25 | 14.10.2026 | Yannick | KI-Nachweis-Datei für die anderen, um ihre KI-Nutzung zu sammeln | D04 (Workflow) | Vorlage `vorlage-ki-nutzung.md` – *Prüfung läuft* |
+| 26 | 14.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Zwischenstand committet + gepusht |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -376,6 +378,31 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Kontingent zu schonen.
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 25 – 14.10.2026 – Yannick
+
+> Gib mir die KI Nachweis md damit ich sie den anderen schicken kann für ihre KI nutzung damit ich sie alle am ende
+> hier eintragen kann für eine große KI Liste
+
+- **Vorgehen Claude:** Statt der ganzen `ki-nachweis.md` (enthält die Claude-Code-Prompts von Yannick; drei
+  bearbeitete Kopien ließen sich schlecht zusammenführen) eine eigene Vorlage zum Ausfüllen geschrieben. Ihre Spalten
+  entsprechen genau Abschnitt 3 dieser Datei, dazu kommen Detailblöcke mit Prompt (wörtlich), Anhängen, Websuche oder
+  Modellwissen, Prüfung und Chatverlauf. Die IDs folgen dem Schema `E-Initialen-Nr`. Ein erstes Beispiel (Analogien
+  mit Tiernamen) hat Claude selbst verworfen, weil es die Antworten der Gruppe vorprägen würde (Dossier 6.7), und
+  durch ein neutrales Beispiel zur Kommunikationsanalyse ersetzt. Danach drei unabhängige Prüfer per Workflow (D04).
+- **Ergebnis:** [`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md) – *Prüfung läuft*
+- **Unteragenten:** D04
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 26 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Zwischenstand von 25 (Vorlage als Entwurf, Workflow-Skript, dieser Nachweis) committet und
+  gepusht, während D04 noch läuft.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -389,6 +416,7 @@ steht hier mit dem wörtlichen Auftrag.
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
+| D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -468,6 +496,20 @@ steht hier mit dem wörtlichen Auftrag.
   selbst an der Primärquelle nachgeprüft (14.10.2026): Impressum de.holy.com/pages/impressum (HOLY Softdrinks GmbH,
   AG Charlottenburg HRB 222782 B, Geschäftsführer Naß, Horsch, Jost) und AGB de.holy.com/pages/agb § 4 (Energy-Produkte
   mit Koffein nur ab 18) – beide bestätigt.
+
+### D04 – 14.10.2026 – ausgelöst durch Prompt 25
+
+- **Art:** Workflow „vorlage-ki-nutzung-pruefung“, drei Unteragenten parallel, ohne Schreibrechte auf Dateien.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-14_vorlage-ki-nutzung-pruefung.js`](workflows/2026-10-14_vorlage-ki-nutzung-pruefung.js)
+  und automatisch im Rohprotokoll (Eintrag `"art": "workflow"`, 21:29 Uhr).
+- **Prüfer:**
+  - Zusammenführbarkeit: Passt jedes Feld zu Abschnitt 3 und zu den Pflichtangaben aus `CLAUDE.md`?
+  - Nutzbarkeit für Studierende ohne GitHub: Klarheit, Sprache, neutrales Beispiel.
+  - Prüfungsanforderungen, Redlichkeit, Datenschutz: mit Websuche nach KI-Vorgaben der Hochschule Kaiserslautern.
+- **Vorgaben:** jeder Befund mit Quelle (Datei und Abschnitt oder URL mit Abrufdatum) oder als Modellwissen
+  gekennzeichnet; nichts erfinden; keine Dateien ändern.
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
