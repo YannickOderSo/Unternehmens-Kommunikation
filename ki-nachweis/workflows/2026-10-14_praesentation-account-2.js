@@ -8,6 +8,7 @@
 //  - Fundament: Hinweis auf das abgebrochene, unvollständige Fundament (prüfen, darauf aufbauen oder ersetzen)
 //    und Markenname HOLY in marke.js.
 //  - Jury-Hinweise werden ungekürzt übergeben (kurz-Grenze 12000 statt 4000/3000 Zeichen), damit keine Übernahme fehlt.
+//  - Fundament-Rückgabe kann als args.engine übergeben werden (Fundament lief vor dem Workflow-Start einzeln, siehe unten).
 export const meta = {
   name: 'praesentation-account-2',
   description: 'Web-Präsentation Fallstudie 1 ab Fundament: Engine, Folien bauen/prüfen/überarbeiten, Integration, Abschlussprüfung, Feinschliff',
@@ -245,7 +246,11 @@ ${FORTSETZUNG}
 Rückgabe: Dateien, API-Zusammenfassung (so, dass Folien-Agenten damit arbeiten können), Bausteine mit Beispiel-Markup, exakte Aufrufe für pruefen und zusammenbauen, Themenliste, Prüfbericht, offene Punkte, Quellen.`
 
 phase('Fundament')
-const engine = await agent(enginePrompt, { label: 'Engine & Designsystem', phase: 'Fundament', schema: ENGINE_SCHEMA })
+// Das Fundament wurde in dieser Sitzung zuerst ohne Workflow-Werkzeug ausgeführt (Unteragent A2-D01.01 über das
+// Agent-Werkzeug, Ausführungshilfe *_ausfuehrung.mjs). Seine Rückgabe (gleiches Schema) wird beim Start des Workflows
+// als args.engine übergeben; ohne args läuft der Fundament-Agent wie im Original.
+const engine = (typeof args !== 'undefined' && args && args.engine) ? args.engine
+  : await agent(enginePrompt, { label: 'Engine & Designsystem', phase: 'Fundament', schema: ENGINE_SCHEMA })
 if (!engine) throw new Error('Fundament nicht fertig geworden')
 log('Fundament fertig: ' + engine.dateien.length + ' Dateien')
 

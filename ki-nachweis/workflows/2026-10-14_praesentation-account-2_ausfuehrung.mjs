@@ -58,10 +58,10 @@ const pipeline = (elemente, ...stufen) => Promise.all(elemente.map(async e => {
 
 let quelltext = fs.readFileSync(SKRIPT, 'utf8').replace('export const meta =', 'const meta =')
 const AsyncFunction = (async () => {}).constructor
-const lauf = new AsyncFunction('agent', 'parallel', 'pipeline', 'phase', 'log', quelltext)
+const lauf = new AsyncFunction('agent', 'parallel', 'pipeline', 'phase', 'log', 'args', quelltext)
 let ergebnis
 let fertig = false
-lauf(agent, parallel, pipeline, phase, log).then(r => { ergebnis = r; fertig = true }, f => { console.log('[abbruch] ' + f.message); fertig = true })
+lauf(agent, parallel, pipeline, phase, log, undefined).then(r => { ergebnis = r; fertig = true }, f => { console.log('[abbruch] ' + f.message); fertig = true })
 
 process.on('beforeExit', () => {
   if (fertig && ergebnis) {
