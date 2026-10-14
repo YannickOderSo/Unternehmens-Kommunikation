@@ -41,6 +41,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 19 | 14.10.2026 | System | Nutzungslimit erneut erreicht: nur „Dossier schreiben“ in D03 abgebrochen | – | – |
 | 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier fertig (34 Seiten PDF) |
 | 21 | 14.10.2026 | Yannick | Screenshot: Stand von Account 2 | – | Stand geprüft, Hinweis-Text für Account 2 |
+| 22 | 14.10.2026 | Yannick | Frage: Brauchen wir Interviews? | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -314,6 +315,18 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** diese Datei
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 22 – 14.10.2026 – Yannick
+
+> Brauchen wir wirklich interviews für unsere aufgabenerfüllung?
+
+- **Vorgehen Claude:** Aufgabenfolie 60 und Bewertungskriterien (Folie 58) gegen die Planung geprüft und beantwortet:
+  Interviews sind nicht gefordert – die Aufgabe nennt „insbesondere Desk Research und KI-Tools als Methoden“. Die in
+  Arbeitsplan, Methoden, Aufgaben-PDF und Dossier vorgesehenen 3–5 Kurzinterviews waren ein optionaler Vorschlag von
+  Claude zur Absicherung. Alternativen ohne Interviews genannt; Anpassung der Unterlagen angeboten, noch nichts geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – im Team entscheiden
 
 ---
 
