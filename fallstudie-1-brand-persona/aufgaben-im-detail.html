@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fallstudie 1 – Aufgaben im Detail</title>
+<style>
+  :root {
+    --rot: #B3161D;
+    --rot-hell: #F6DCD9;
+    --schiefer: #2F4553;
+    --schiefer-hell: #DDE5EC;
+    --lila: #4B3F7A;
+    --lila-hell: #E4E0F0;
+    --text: #1F2A30;
+    --grau: #5E6A72;
+    --linie: #D3DAE0;
+    --flaeche: #F3F5F7;
+  }
+  @page {
+    size: A4;
+    margin: 14mm 15mm 16mm 15mm;
+    @bottom-left { content: "Fallstudie 1 · Aufgaben im Detail · Stand 14.10.2026"; font: 8pt Inter, sans-serif; color: #5E6A72; }
+    @bottom-right { content: "Seite " counter(page) " von " counter(pages); font: 8pt Inter, sans-serif; color: #5E6A72; }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 9.2pt; line-height: 1.42; color: var(--text); margin: 0; }
+  h1 { font-size: 20pt; line-height: 1.15; margin: 1mm 0 1mm; letter-spacing: -0.01em; }
+  h2 { font-size: 13pt; margin: 0 0 2.5mm; color: var(--schiefer); }
+  h2 .nr { color: var(--rot); margin-right: 1.5mm; }
+  h2 { break-after: avoid; }
+  h3 { font-size: 10.3pt; margin: 0; }
+  h4 { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grau); margin: 0 0 1mm; }
+  p { margin: 0 0 2mm; }
+  ul, ol { margin: 0 0 2mm; padding-left: 4.5mm; }
+  li { margin-bottom: 0.7mm; }
+  .seite { break-before: page; }
+  .kicker { font-size: 8.3pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--rot); font-weight: 600; }
+  .untertitel { font-size: 11.5pt; color: var(--grau); margin-bottom: 2mm; }
+  .meta { font-size: 8.6pt; color: var(--grau); border-bottom: 2px solid var(--rot); padding-bottom: 2.5mm; margin-bottom: 3.5mm; }
+  .kacheln { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-bottom: 3.5mm; }
+  .kachel { background: var(--flaeche); border-radius: 2.5mm; padding: 2.5mm 3.5mm; }
+  .kachel .label { font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grau); }
+  .kachel .wert { font-size: 12pt; font-weight: 700; margin: 0.5mm 0; }
+  .kachel .zusatz { font-size: 8pt; color: var(--grau); line-height: 1.3; }
+  .kachel.akzent { background: var(--rot); color: #fff; }
+  .kachel.akzent .label, .kachel.akzent .zusatz { color: #fbe9e8; }
+  .box { background: var(--flaeche); border-radius: 2.5mm; padding: 3mm 4mm; margin-bottom: 3.5mm; break-inside: avoid; }
+  .hinweis { border: 1px dashed #B9C3CA; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-bottom: 3.5mm; break-inside: avoid; }
+  .zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 3.5mm; }
+  th { text-align: left; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.04em; color: var(--grau); font-weight: 600;
+    border-bottom: 1.5px solid var(--schiefer); padding: 1.3mm 1.8mm; }
+  td { border-bottom: 1px solid var(--linie); padding: 1.6mm 1.8mm; vertical-align: top; font-size: 8.8pt; }
+  tr { break-inside: avoid; }
+  td.nw, th.nw { white-space: nowrap; }
+  .klein { font-size: 8.2pt; color: var(--grau); }
+  .tag { display: inline-block; font-size: 7.4pt; font-weight: 700; padding: 0.3mm 1.6mm; border-radius: 1mm; margin-right: 0.8mm; }
+  .tag.a { background: var(--schiefer-hell); color: var(--schiefer); }
+  .tag.b { background: var(--lila-hell); color: var(--lila); }
+  .tag.c { background: var(--rot-hell); color: #8E1B1B; }
+  .tag.alle { background: var(--flaeche); color: var(--grau); border: 1px solid var(--linie); }
+
+  /* Kette */
+  .kette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin-bottom: 1.5mm; align-items: stretch; }
+  .glied { border-radius: 2mm; padding: 2mm 2.5mm; font-size: 8.2pt; line-height: 1.3; position: relative; }
+  .glied b { display: block; font-size: 8.6pt; margin-bottom: 0.5mm; }
+  .glied.a { background: var(--schiefer-hell); }
+  .glied.b { background: var(--lila-hell); }
+  .glied.c { background: var(--rot-hell); }
+  .glied:not(:last-child)::after { content: "→"; position: absolute; right: -2.1mm; top: 40%; font-weight: 700; color: var(--grau); }
+
+  /* Bündel-Kopf */
+  .buendel-kopf { border-radius: 3mm; padding: 3mm 4.5mm; margin-bottom: 3mm; color: #fff; display: flex; justify-content: space-between; align-items: baseline; }
+  .buendel-kopf.a { background: var(--schiefer); }
+  .buendel-kopf.b { background: var(--lila); }
+  .buendel-kopf.c { background: var(--rot); }
+  .buendel-kopf h2 { color: #fff; margin: 0; font-size: 14pt; }
+  .buendel-kopf .rechts { font-size: 8.6pt; text-align: right; line-height: 1.35; }
+  .kurz { font-size: 9pt; margin-bottom: 3mm; }
+
+  /* Aufgaben */
+  .aufgabe { border: 1.3px solid var(--linie); border-radius: 2.5mm; padding: 2.6mm 3.5mm 1.2mm; margin-bottom: 3mm; break-inside: avoid; }
+  .aufgabe.a { border-left: 5px solid var(--schiefer); }
+  .aufgabe.b { border-left: 5px solid var(--lila); }
+  .aufgabe.c { border-left: 5px solid var(--rot); }
+  .aufgabe-kopf { display: flex; align-items: baseline; gap: 2.5mm; margin-bottom: 1.2mm; }
+  .aufgabe-kopf .id { font-weight: 800; font-size: 10.3pt; }
+  .aufgabe.a .id { color: var(--schiefer); }
+  .aufgabe.b .id { color: var(--lila); }
+  .aufgabe.c .id { color: var(--rot); }
+  .aufgabe-kopf .eck { margin-left: auto; font-size: 8pt; color: var(--grau); white-space: nowrap; }
+  .ziel { font-size: 8.8pt; margin-bottom: 1.6mm; color: #33414A; }
+  .raster { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4mm; }
+  .raster ol li, .raster ul li { font-size: 8.6pt; line-height: 1.38; }
+  .material { font-size: 8.2pt; color: var(--grau); margin-bottom: 1.6mm; }
+  .achtung li::marker { content: "! "; color: var(--rot); font-weight: 700; }
+  .checkliste { list-style: none; padding-left: 0; }
+  .checkliste li::before { content: "☐"; color: var(--rot); margin-right: 2mm; }
+  code { font-family: "DejaVu Sans Mono", monospace; font-size: 7.9pt; background: var(--flaeche); padding: 0 1mm; border-radius: 1mm; }
+</style>
+</head>
+<body>
+
+<!-- ============================ Seite 1: Überblick ============================ -->
+<div class="kicker">Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern</div>
+<h1>Präsentation 1: Wer macht was – Schritt für Schritt</h1>
+<div class="untertitel">Fallstudie 1 „Brand Persona &amp; Markenidentität“ · Marke HOLY</div>
+<div class="meta">Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker &nbsp;|&nbsp; Stand: 14.10.2026 &nbsp;|&nbsp; Bündel noch nicht vergeben</div>
+
+<div class="kacheln">
+  <div class="kachel akzent"><div class="label">Präsentation</div><div class="wert">Mo, 26.10.</div><div class="zusatz">15 Minuten, jede Person spricht ca. 5 Min.</div></div>
+  <div class="kachel"><div class="label">Aufwand</div><div class="wert">ca. 14 Std.</div><div class="zusatz">pro Person: ca. 9 Std. Bündel + Sprechtext + Termine (grob geschätzt)</div></div>
+  <div class="kachel"><div class="label">Schon fertig</div><div class="wert">Dossier + Folien</div><div class="zusatz">34-seitige Recherche, Folien gebaut mit Beispieldaten</div></div>
+  <div class="kachel"><div class="label">Erste Übergabe</div><div class="wert">Fr, 16.10.</div><div class="zusatz">Persona-Kurzfassung von A an B</div></div>
+</div>
+
+<h2>Was jetzt noch zu tun ist</h2>
+<p>Die Recherche zu HOLY liegt geprüft vor (<code>recherche/HOLY_Recherche-Dossier_Teamkickoff.pdf</code>), und die Web-Präsentation
+ist gebaut. Auf den Folien stehen aber noch <b>Beispieldaten</b>. Eure Arbeit besteht deshalb nicht mehr aus Recherche und Foliengestaltung, sondern aus vier Dingen:</p>
+<div class="zwei-spalten" style="margin-bottom:3mm">
+  <ul>
+    <li><b>Prüfen:</b> Angaben aus dem Dossier gegen die Quelle halten, vor allem die mit „~ unsicher“ (Dossier 9.2).</li>
+    <li><b>Entscheiden:</b> Persona, Limbic-Einordnung, Markenattribute, Tonalität, Markenkern, Empfehlungen. Das Dossier liefert nur Hypothesen (H).</li>
+  </ul>
+  <ul>
+    <li><b>Selbst erheben:</b> Social-Media-Stichprobe, Befragungen mit KI-simulierten Befragten, Berechnungen in Excel bzw. Google Sheets.</li>
+    <li><b>Liefern und vortragen:</b> echte Werte für die Folien, Sprechtext, zwei Rückfragen je Folie samt Antwort.</li>
+  </ul>
+</div>
+
+<h2>So hängen die Bündel zusammen</h2>
+<div class="kette">
+  <div class="glied a"><b>A · Persona</b>Grundlage der simulierten Befragten (an B, Fr 16.10.)</div>
+  <div class="glied b"><b>B · Repertory Grid</b>3–5 Markenattribute (an alle, Mo 19.10.)</div>
+  <div class="glied b"><b>B · Laddering</b>startet bei den Attributen → Markennutzen</div>
+  <div class="glied b"><b>B · Analogien</b>Markentonalität = Maßstab für C (Mi 21.10.)</div>
+  <div class="glied c"><b>C · Kommunikationsanalyse</b>Markenbild, Lücken → Empfehlungen</div>
+</div>
+<p class="klein" style="margin-bottom:3.5mm">Dazu: Limbic Map von A an C (Sa 17.10.) als zweiter Maßstab für den Auftritt. Am Do 22.10. führt C alles im Markensteuerrad zusammen.</p>
+
+<table>
+  <tr><th>Bündel</th><th>Folien (Sprechzeit)</th><th>Kern-Ergebnis</th><th class="nw">liefert an</th></tr>
+  <tr><td><span class="tag a">A</span> <b>Marke &amp; Zielgruppe</b></td><td>01 Einstieg, 02 Vorgehen, 03 Markenkompetenz, 04 Persona, 05 Limbic Map (5:00)</td><td>Zentrum des Steuerrads (Wer ist HOLY?), Persona als Bezugsrahmen, KI-Nachweis und Backup</td><td class="nw">B: Fr 16.10.<br>C: Sa 17.10.</td></tr>
+  <tr><td><span class="tag b">B</span> <b>Befragung &amp; Auswertung</b></td><td>06 Repertory Grid, 07 Laddering, 08 Analogien + Live-Umfrage, 08b Tonalität (5:00)</td><td>Markenattribute, Markennutzen, Markentonalität (die drei Felder aus Sicht der Zielgruppe)</td><td class="nw">alle: Mo 19.10.<br>C: Mi 21.10.</td></tr>
+  <tr><td><span class="tag c">C</span> <b>Auftritt &amp; Synthese</b></td><td>09 Kommunikationsanalyse, 10 Markensteuerrad, 11 Fazit &amp; Empfehlungen (4:45)</td><td>Markenbild, fertiges Steuerrad, 2–3 Empfehlungen; Technik am Präsentationstag</td><td class="nw">alle: Do 22.10.</td></tr>
+</table>
+
+<!-- ============================ Seite 2: Zusammenarbeit ============================ -->
+<div class="seite"></div>
+<h2><span class="nr">●</span>So arbeitet ihr zusammen</h2>
+<div class="box">
+  <h3 style="margin-bottom:1.5mm">So liefert ihr eure Ergebnisse</h3>
+  <ol style="margin-bottom:0">
+    <li><b>Ausarbeitung:</b> die passende Vorlage aus <code>methoden.md</code> ausfüllen, jede Angabe als <i>Daten (Quelle)</i> oder <i>Annahme</i> gekennzeichnet.</li>
+    <li><b>Folieninhalte:</b> genau die Angaben, die bei jeder Aufgabe unter „Das braucht die Folie“ stehen. HTML müsst ihr nicht anfassen: Die Folien sind gebaut, ersetzt werden nur die Daten. Wer den Einbau ins Repository übernimmt, legt die Gruppe fest.</li>
+    <li><b>Rohdaten:</b> Google-Sheets-Tabellen, Screenshots mit Datum und KI-Chatverläufe in den gemeinsamen Ordner. Sie kommen später ins Backup.</li>
+    <li><b>KI-Nutzung sofort eintragen:</b> Wer ChatGPT, Perplexity, einen Bildgenerator o. Ä. nutzt, schreibt Prompt (wörtlich), Tool, Datum und Zweck in <code>ki-nachweis/ki-nachweis.md</code>, Abschnitt 3.</li>
+  </ol>
+</div>
+
+<div class="hinweis klein">
+  <b>Kopiervorlagen für Prompts:</b> <code>prompts.md</code> (P0–P14). Jeden neuen KI-Chat mit <b>P0</b> beginnen (Rahmen, keine erfundenen Zahlen).
+  <b>Fakten über HOLY</b> nur mit Quelle und Status aus dem Dossier (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese).
+  <b>Modellbegriffe</b> (Esch, Häusel, Kelly, Reynolds &amp; Gutman, Aaker, Kroeber-Riel) stammen aus der Standardliteratur. Bitte mit den Vorlesungsfolien abgleichen.
+</div>
+
+<h2><span class="nr">●</span>Termine und Übergaben</h2>
+<table>
+  <tr><th class="nw">Wann</th><th>Was</th><th>Wer bereitet vor</th></tr>
+  <tr><td class="nw"><b>Mi 14.10.</b></td><td><b>Kickoff (30 Min.):</b> Bündel verteilen; Wettbewerbsset und Rahmen (Energy- oder Softdrink-Marke) beschließen; Persona-Richtung; echte Interviews ja oder nein; Umgang mit dem Koffein- und Jugendthema (Dossier 10.2)</td><td>alle (Dossier Kap. 10)</td></tr>
+  <tr><td class="nw">Fr 16.10.</td><td>Persona-Kurzfassung</td><td><span class="tag a">A</span> → <span class="tag b">B</span></td></tr>
+  <tr><td class="nw">Sa 17.10.</td><td>Limbic-Map-Ergebnis mit 3 Konsequenzen</td><td><span class="tag a">A</span> → <span class="tag c">C</span></td></tr>
+  <tr><td class="nw">Mo 19.10.</td><td>3–5 Markenattribute</td><td><span class="tag b">B</span> → alle</td></tr>
+  <tr><td class="nw"><b>Di 20.10.</b></td><td><b>Zwischenstand (45 Min.):</b> Persona, Attribute, erste Befunde zum Markenbild; Folie 03 und 09 als Entwurf</td><td>alle</td></tr>
+  <tr><td class="nw">Mi 21.10.</td><td>Markentonalität aus den Analogien</td><td><span class="tag b">B</span> → <span class="tag c">C</span></td></tr>
+  <tr><td class="nw"><b>Do 22.10.</b></td><td><b>Synthese (2 Std.):</b> Markensteuerrad, Markenkern, Empfehlungen</td><td><span class="tag c">C</span> leitet, alle liefern Stichworte</td></tr>
+  <tr><td class="nw">Fr 23.10.</td><td>alle Folieninhalte fertig und eingebaut</td><td>alle</td></tr>
+  <tr><td class="nw">Sa 24.10.</td><td>KI-Nutzung vollständig im KI-Nachweis; Backup komplett; kritische Prüfung (P14)</td><td>alle → <span class="tag a">A</span>; <span class="tag c">C</span></td></tr>
+  <tr><td class="nw"><b>So 25.10.</b></td><td><b>Generalprobe (1 Std.):</b> zweimal mit Stoppuhr (Ziel 14:45), Folienwechsel zwischen den Sprecher:innen üben, Rückfragen gegenseitig stellen</td><td>alle</td></tr>
+  <tr><td class="nw"><b>Mo 26.10.</b></td><td><b>Präsentation.</b> Vorher Follower-Zahlen neu ablesen, Umfrage zurücksetzen</td><td>alle; <span class="tag c">C</span> Technik</td></tr>
+</table>
+
+<!-- ============================ Bündel A ============================ -->
+<div class="seite"></div>
+<div class="buendel-kopf a">
+  <h2>Bündel A · Marke &amp; Zielgruppe</h2>
+  <div class="rechts">Folien 01–05 · Sprechzeit 5:00<br>ca. 9 Std. + Sprechtext + Termine</div>
+</div>
+<p class="kurz">A legt die Basis, auf der B und C aufbauen: Wer ist HOLY, und wen spricht HOLY an? Dazu kommt die Dokumentation (KI-Nachweis, Backup), weil A ohnehin die meisten Quellen in der Hand hat.</p>
+
+<div class="aufgabe a">
+  <div class="aufgabe-kopf"><span class="id">A1</span><h3>Markenkompetenz: Wer ist HOLY?</h3><span class="eck">Folie 03 · 45 s · ca. 2 Std. · Entwurf Di 20.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> das Zentrum des Markensteuerrads: Herkunft, Entwicklung, Rolle im Markt, Kernkompetenz.</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li>Dossier Kap. 1 und 2 lesen (2.1 Zeitleiste, 2.4 Größe, 2.6 Marktrolle, 2.7 Selbstverständnis, 2.8 Repositionierung).</li>
+        <li>4–6 Meilensteine für die Zeitleiste auswählen, nur Angaben mit ✔ oder ✎.</li>
+        <li>3 Kennzahlen wählen. Alle Umsätze sind Selbstauskünfte, also auf der Folie „laut Unternehmen, Stand …“ (Dossier 9.4).</li>
+        <li>Unsichere Angaben prüfen: Jahresabschluss 2024 im Unternehmensregister abrufen (Umsatz, Ergebnis); Verkaufsstellen 6.000 / 8.500 / „10.000+“, Portionen, Website-Demografie, Syrup-Starttag (Dossier 9.2, 10.3). Was sich nicht klären lässt, kommt nicht auf die Folie.</li>
+        <li>Marktrolle festlegen. Dossier-Hypothese: Challenger und Spezialist für zuckerfreie Pulver-Softdrinks, kein Pionier (2.6). Mit einem Satz begründen.</li>
+        <li>Vorlage <code>methoden.md</code> §0 ausfüllen, inkl. des im Kickoff beschlossenen Wettbewerbssets.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>Marktrolle (1–2 Wörter) und Kernkompetenz (2–4 Wörter) → bilden den Titel</li>
+        <li>Zeitleiste: 4–6 Einträge (Jahr + höchstens 5 Wörter)</li>
+        <li>3 Kennzahlen: Wert, Einheit, Bezeichnung, Quelle</li>
+        <li>Claim mit Quelle. Es laufen mindestens sechs Claims parallel (6.5), entscheidet euch für den Dachclaim oder das Markenversprechen</li>
+      </ul>
+      <h4>Prompts · Material</h4>
+      <p class="material">P0, P1 (nur zum Nachrecherchieren) · Dossier Kap. 2, 6.5, 9.2 · <code>methoden.md</code> §0</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe a">
+  <div class="aufgabe-kopf"><span class="id">A2</span><h3>Brand Persona festlegen</h3><span class="eck">Folie 04 · 90 s · ca. 3 Std. · Kurzfassung an B: Fr 16.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> eine datengestützte Person, die die Kernzielgruppe verkörpert. Sie ist auch die Vorlage für die KI-simulierten Befragten von B.</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li>Dossier 4.1–4.3 lesen. Vorschlag: Kern-Persona „Marco, 28“ (männlich, Schichtdienst, Büro oder Studium) und ggf. Wachstums-Persona „Lena, 29“, beide ab 18 (Kickoff-Entscheidung).</li>
+        <li>Datenlücken schließen (4.5): über die Hochschulbibliothek in <b>Statista</b> Energy-Drink-Konsum nach Alter und Geschlecht suchen (AWA/VuMA), in <b>b4p</b> Limbic Types nach Alter und Geschlecht. Jede Zahl mit Quelle, Jahr, Stichprobe.</li>
+        <li>Steckbrief nach <code>methoden.md</code> §1 mit P4 ausfüllen, dann selbst prüfen: Jede Zeile ist <i>Daten</i> (Quelle) oder <i>Annahme</i>.</li>
+        <li>Persona-Bild mit P6 im Bildgenerator erzeugen; auf der Folie „Bild KI-generiert (Tool)“; Prompt in den KI-Nachweis.</li>
+        <li><b>Kurzfassung für B</b> (5–8 Zeilen: Alter, Beruf, Alltag, Kaufverhalten, Motive) bis <b>Fr 16.10.</b> in den Gruppenchat.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>Name, Alter, Zitat (fiktiv, als solches kennzeichnen), Bild</li>
+        <li>5 Blöcke (Geografie, Soziodemografie, Kaufverhalten, Mediennutzung, Psychografie), je 2–3 Stichwortzeilen, jeweils als „Daten“ oder „Annahme“ markiert</li>
+        <li>Mediennutzung als Balken: nur Werte mit Quelle (z. B. ARD/ZDF 2025 für 14- bis 29-Jährige, Dossier 4.2, als Kategoriewert kennzeichnen)</li>
+        <li>Quellenliste für Backup B3; Wachstums-Persona ggf. ins Backup</li>
+      </ul>
+      <h4>Achtung</h4>
+      <ul class="achtung">
+        <li>Kein Klischee-Gamer: Laut Gründer sind die meisten Kund:innen 25–40 und trinken HOLY „in der Regel gar nicht beim Gaming“ (4.3).</li>
+      </ul>
+      <p class="material">P0, P3, P4, P6 · Dossier Kap. 4 · <code>methoden.md</code> §1</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe a">
+  <div class="aufgabe-kopf"><span class="id">A3</span><h3>Limbic Map: Persona und Marke verorten</h3><span class="eck">Folie 05 · 60 s · ca. 1,5 Std. · an C: Sa 17.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> zeigen, welche Motive die Persona antreiben und ob der Auftritt von HOLY dieselben Motive anspricht.</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li>Dossier 4.4 lesen (Startwerte, keine Messung).</li>
+        <li>Mit P5 einordnen lassen, dann kritisch prüfen: Gewichte Balance/Dominanz/Stimulanz der Persona (Summe 100 %), Limbic Type, Mischbereiche.</li>
+        <li>Die Marke über die Emotionsfelder verorten. Ein Limbic Type beschreibt Menschen, nicht Marken.</li>
+        <li>Mit der Limbic-Map-Grafik aus der Vorlesung abgleichen; b4p-Daten aus A2 als Beleg nutzen, falls vorhanden.</li>
+        <li>Drei Konsequenzen ableiten (Bildwelt, Tonalität, Botschaften) und bis Sa 17.10. an C geben.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>Gewichte Persona und Marke (B/D/S in %)</li>
+        <li>Limbic Type der Persona + 3 typische Motive</li>
+        <li>3 Konsequenzen (Bereich + 4–6 Wörter)</li>
+        <li>Titel als Kernaussage (passt die Marke zur Persona oder nicht?)</li>
+      </ul>
+      <h4>Achtung</h4>
+      <ul class="achtung"><li>Die Prozentwerte sind eine Heuristik des Teams. Im Sprechtext so sagen.</li></ul>
+      <p class="material">P5 · Dossier 4.4 · <code>methoden.md</code> §1 (Limbic Map)</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe a">
+  <div class="aufgabe-kopf"><span class="id">A4</span><h3>Einstieg und Vorgehen</h3><span class="eck">Folien 01, 02 (01b optional) · 1:45 · ca. 1 Std. · Fr 23.10.</span></div>
+  <div class="raster">
+    <div>
+      <ol>
+        <li><b>Folie 01 (Rätsel „Welche Marke steckt dahinter?“):</b> ein eigenes Foto eines HOLY-Produkts machen (dann sind die Bildrechte klar). Die Folie zeigt einen stark vergrößerten Ausschnitt und löst dann auf.</li>
+        <li><b>Folie 02 (Vorgehen):</b> Der Entwurf steht in <code>folienentwuerfe.md</code> (Titel, Leitfrage, Sprechtext, drei Rückfragen). Durchlesen, Leitfrage bestätigen, Sprechtext einüben.</li>
+      </ol>
+    </div>
+    <div>
+      <ol start="3">
+        <li><b>Folie 01b (optional):</b> Live-Wortwolke „Was verbinden Sie mit HOLY?“. Entscheiden, ob sie in die 15 Minuten passt.</li>
+        <li><b>Sprechtext</b> für Folien 01–05 schreiben (5:00) und je Folie zwei mögliche Rückfragen samt Antwort notieren.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe a">
+  <div class="aufgabe-kopf"><span class="id">A5</span><h3>KI-Nachweis und Backup zusammenführen</h3><span class="eck">Backup B1–B3, B7 · ca. 1,5 Std. · Sa 24.10.</span></div>
+  <div class="raster">
+    <div>
+      <ol>
+        <li>Bis Sa 24.10. prüfen, ob alle drei ihre KI-Nutzung außerhalb von Claude Code in Abschnitt 3 des KI-Nachweises eingetragen haben (Prompt wörtlich, Tool, Datum, Chatverlauf).</li>
+        <li>„Prüfung durch die Gruppe“ in Abschnitt 1 und 2 durchgehen: „☐ offen“ auf „☑ geprüft“ setzen, sobald jemand aus der Gruppe das Ergebnis kontrolliert hat.</li>
+      </ol>
+    </div>
+    <div>
+      <ol start="3">
+        <li>Backup-Inhalte liefern: <b>B1</b> Methodik &amp; Begründung (Text in <code>prompts.md</code>, Teil C), <b>B2</b> Prompt-Log (Auszug aus dem KI-Nachweis), <b>B3</b> Datenquellen Persona, <b>B7</b> Quellenverzeichnis (nur tatsächlich genutzte Quellen aus Anhang B des Dossiers).</li>
+        <li>B4/B5 liefert B, B6 liefert C.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ Bündel B ============================ -->
+<div class="seite"></div>
+<div class="buendel-kopf b">
+  <h2>Bündel B · Befragung &amp; Auswertung</h2>
+  <div class="rechts">Folien 06, 07, 08, 08b · Sprechzeit 5:00<br>ca. 9 Std. (+ ca. 2 Std. bei echten Interviews)</div>
+</div>
+<p class="kurz">B misst, wie die Zielgruppe HOLY sieht (Fremdbild): drei Methoden mit denselben Befragten, deshalb in einer Hand. Die Kette ist fest: Repertory Grid → Attribute → Laddering → Nutzen. Die Analogien liefern die Tonalität.</p>
+
+<div class="hinweis klein" style="margin-bottom:3mm">
+  <b>Befragte:</b> 5 KI-simulierte Befragte auf Basis der Persona von A (Kern des Vorgehens, P7–P11) plus Abgleich mit <b>echten Kundenstimmen</b>
+  (20–30 Bewertungen und Kommentare aus Shop, Trustpilot, Instagram, YouTube). <b>3–5 echte Kurzinterviews</b> (je ca. 10 Min.) sind
+  <b>optional</b>; ob ihr sie macht, entscheidet die Gruppe. Die Aufgabe verlangt Desk Research und KI-Tools, echte Stimmen machen das Ergebnis aber glaubwürdiger.
+  Simulierte Befragte immer als „KI-simuliert“ kennzeichnen.
+</div>
+
+<div class="aufgabe b">
+  <div class="aufgabe-kopf"><span class="id">B1</span><h3>Repertory Grid: Markenattribute ermitteln</h3><span class="eck">Folie 06 · 90 s · ca. 4 Std. · Attribute an alle: Mo 19.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> herausfinden, mit welchen Eigenschaften die Zielgruppe Drinks unterscheidet und wo HOLY relevant, anders und nah am Ideal ist.</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li><b>Vorbereiten (ab sofort):</b> Elemente aus dem Kickoff eintragen. Vorschlag Dossier 5.3: M HOLY, W1 Red Bull, W2 Monster, W3 Gönrgy, W4 waterdrop, W5 Coca-Cola Zero, I „mein idealer Drink für jeden Tag“. Die 8 Triaden stehen in <code>methoden.md</code> §2.</li>
+        <li><b>Konstrukte erheben</b> (ab Fr 16.10.): P0, dann P7 mit der Persona-Kurzfassung. 5 Befragte × 8 Triaden. Chatverlauf sichern.</li>
+        <li><b>Abgleichen:</b> Kommen die Konstrukte auch in echten Kundenstimmen vor? Dossier 3.6 nur zum Vergleich nutzen, nie vorgeben.</li>
+        <li><b>Konsolidieren:</b> Dubletten zusammenfassen → 8–12 Konstrukte, Nennungen selbst zählen.</li>
+        <li><b>Raten:</b> P8 → CSV → in Google Sheets importieren.</li>
+        <li><b>Auswerten in Sheets</b> je Konstrukt: Ø M, Ø W1–W5, Ø I; Differenzierung <code>=ABS(ØM − ØW)</code>; Ideal-Distanz <code>=ABS(ØM − ØI)</code>; Relevanz = Nennungen.</li>
+        <li><b>Auswahlregel</b> vorher festlegen und begründen (z. B. viele Nennungen, Differenzierung ≥ 1 Skalenpunkt, kleine Ideal-Distanz) → 3–5 Markenattribute. Bis <b>Mo 19.10.</b> an alle.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>je Konstrukt: linker und rechter Pol, Nennungen, Ø HOLY, Ø stärkster Wettbewerber, Ø Ideal, Attribut ja/nein</li>
+        <li>Name des stärksten Wettbewerbers (der im Profil als Linie erscheint)</li>
+        <li>ein Triaden-Beispiel: welche zwei ähnlich, welche anders, mit beiden Polen</li>
+        <li>Stichprobe für die Quellenzeile (z. B. „5 KI-simuliert + 3 echt“)</li>
+        <li>Titel als Kernaussage, z. B. „Drei Attribute heben HOLY ab“</li>
+      </ul>
+      <h4>Achtung</h4>
+      <ul class="achtung">
+        <li>Mittelwerte nie von der KI rechnen lassen.</li>
+        <li>Rohdaten (alle Ratings) als Backup B4 ablegen.</li>
+      </ul>
+      <p class="material">P0, P7, P8 · Dossier 3.6, 5.3 · <code>methoden.md</code> §2</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe b">
+  <div class="aufgabe-kopf"><span class="id">B2</span><h3>Laddering: vom Attribut zum Markennutzen</h3><span class="eck">Folie 07 · 90 s · ca. 2,5 Std. · zur Synthese Do 22.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> Warum sind die Attribute wichtig? Kette Attribut → funktionale Konsequenz → psychosoziale Konsequenz → Wert (Means-End-Chain).</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li>Startpunkte = die Attribute aus B1, <b>mit genau denselben Wörtern</b>.</li>
+        <li>P9 mit 3–5 simulierten Befragten (dieselben wie in P7): je Attribut „Warum ist Ihnen das wichtig?“, bis ein Wert erreicht ist.</li>
+        <li>Leitern in die Tabelle aus <code>methoden.md</code> §3 übertragen; gleichbedeutende Begriffe zusammenfassen und die Codeliste festhalten.</li>
+        <li>Implikationsmatrix in Sheets <b>selbst auszählen</b> (P10 darf einen Vorschlag machen, aber nachzählen!). Cut-off z. B. ≥ 2 Nennungen.</li>
+        <li>Hierarchical Value Map ableiten; Markennutzen formulieren: sachlich-funktional und psychosozial.</li>
+        <li>1–2 echte Kundenzitate als Beleg suchen (Bewertungen, mit Quelle). Abgleich mit Dossier 3.7.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>Knoten je Ebene (Attribute, funktional, psychosozial, Werte), je höchstens 3 Wörter</li>
+        <li>Verbindungen „von → nach“ mit Anzahl der Nennungen (nur über dem Cut-off)</li>
+        <li>2 Nutzen-Kästen: sachlich-funktional, psychosozial (je 1 Zeile)</li>
+        <li>Stichprobe, Titel als Kernaussage</li>
+      </ul>
+      <h4>Achtung</h4>
+      <ul class="achtung">
+        <li>Nur zugelassene Nutzenaussagen verwenden; Hydration nicht überzeichnen (Dossier 3.7, Spannungsfeld S1).</li>
+        <li>Leitern und Matrix als Backup B5 ablegen.</li>
+      </ul>
+      <p class="material">P9, P10 · Dossier 3.7 · <code>methoden.md</code> §3</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe b">
+  <div class="aufgabe-kopf"><span class="id">B3</span><h3>Analogien und Live-Umfrage: Markentonalität</h3><span class="eck">Folien 08 + 08b · 70 s + 50 s · ca. 2,5 Std. · an C: Mi 21.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> die Persönlichkeit von HOLY sichtbar machen (Marke als Mensch und als Tier) und das Publikum einbeziehen.</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li><b>Erst ohne KI:</b> Jede Person der Gruppe schreibt für sich auf: HOLY als Mensch, als Tier, mit 3 Gründen. Optional 3–5 Personen aus dem Umfeld fragen (2 Minuten, keine Antworten vorgeben).</li>
+        <li>P11 für HOLY und 2 Wettbewerber aus dem Set (Kontrast macht die Eigenart sichtbar).</li>
+        <li>Vergleichen: Gruppe ↔ KI ↔ Umfeld ↔ Dossier 6.7 (Maskottchen Adler gegen gelebten frechen Ton). Unterschiede für das Backup notieren.</li>
+        <li>Tonalität ableiten: 4–5 Persönlichkeitsmerkmale, Markenemotionen, Beziehung zu Kund:innen. Für die Aaker-Dimensionen bewertet jede Person einzeln (Skala 1–5); Mittelwert in Sheets. Bis <b>Mi 21.10.</b> an C.</li>
+        <li><b>Live-Umfrage</b> in Mentimeter oder Particify anlegen: „Wenn HOLY ein Tier wäre – welches?“ mit 4–5 Tieren (eure Antwort + plausible andere). Link und Ergebnis-Link weitergeben; Teilnehmergrenze des Gratis-Tarifs prüfen; QR-Code mit mehreren Handys testen.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>HOLY: Tier + 3 Gründe; Mensch mit 4 Merkmalen (z. B. Alter, Beruf, Stil, auf der Party)</li>
+        <li>2 Wettbewerber: Name, Tier, 2 Stichworte, Mensch in einer Zeile</li>
+        <li>Aaker-Profil: 5 Dimensionen mit Wert für HOLY und die 2 Wettbewerber</li>
+        <li>4–5 Merkmale (je mit Aaker-Dimension), 3 Emotionen, Beziehung</li>
+        <li>Umfrage: Tier-Optionen, „unsere Antwort“, Link</li>
+        <li>zwei Titel als Kernaussage (08 und 08b)</li>
+      </ul>
+      <h4>Achtung</h4>
+      <ul class="achtung">
+        <li>Die Umfrage ist ein Stimmungsbild im Raum, keine Erhebung. So auf der Folie und im Sprechtext.</li>
+      </ul>
+      <p class="material">P11 · Dossier 6.2, 6.7 · <code>methoden.md</code> §4</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe b">
+  <div class="aufgabe-kopf"><span class="id">B4</span><h3>Prüfen, Sprechtext, Backup</h3><span class="eck">ca. 1 Std. · Fr 23.10.</span></div>
+  <ul style="margin-bottom:1.5mm">
+    <li>„~“-Angaben aus Dossier 10.3: Regalpreise HOLY, Red Bull, Monster und Rossmann-Listung (Foto mit Datum im Laden, falls ihr ohnehin einkauft).</li>
+    <li>Sprechtext für 06–08b (5:00), je Folie zwei Rückfragen samt Antwort, z. B. „Warum simulierte Befragte?“ (Antwort: <code>prompts.md</code>, Teil C).</li>
+    <li>Backup B4 (Repertory-Grid-Rohdaten) und B5 (Leitern, Implikationsmatrix) liefern.</li>
+  </ul>
+</div>
+
+<!-- ============================ Bündel C ============================ -->
+<div class="seite"></div>
+<div class="buendel-kopf c">
+  <h2>Bündel C · Auftritt &amp; Synthese</h2>
+  <div class="rechts">Folien 09, 10, 11 · Sprechzeit 4:45<br>ca. 9 Std. + Sprechtext + Termine</div>
+</div>
+<p class="kurz">C untersucht, wie HOLY tatsächlich auftritt (Ist), vergleicht das mit Persona und Tonalität (Soll) und macht aus den Lücken die Empfehlungen. Deshalb leitet C auch die Synthese im Markensteuerrad und kümmert sich um die Technik am Präsentationstag.</p>
+
+<div class="aufgabe c">
+  <div class="aufgabe-kopf"><span class="id">C1</span><h3>Kommunikationsanalyse: Wie tritt HOLY auf?</h3><span class="eck">Folie 09 · 120 s · ca. 4,5 Std. · Entwurf Di 20.10.</span></div>
+  <p class="ziel"><b>Ziel:</b> das Markenbild beschreiben (Corporate Design, Schlüsselbilder, Bildwelt, Logo, Claim) und bewerten, ob es zu Tonalität und Persona passt.</p>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li><b>Stichprobe erheben (ab sofort, bis So 18.10.):</b> je Pflichtkanal (Instagram @holysquad.official, Facebook-<b>Seite</b> „HOLY“, YouTube @HOLYSquadOfficial) die letzten 15–20 Beiträge. Instagram geht nur mit Login. Jeder Beitrag mit Screenshot und Datum.</li>
+        <li><b>Raster in Sheets</b> je Beitrag: Datum, Format, Motiv (Produkt-Stillleben / Comic-Tier / Mensch-Vlog / Community / Gewinnspiel / Sonstiges), Ansprache, Emojis, Call to Action, Likes, Kommentare, bei Videos Aufrufe.</li>
+        <li><b>Engagement-Rate selbst rechnen:</b> (Likes + Kommentare) ÷ Follower × 100, Mittel je Kanal. Bei YouTube die Bezugsgröße (Abos oder Aufrufe) festlegen und auf der Folie nennen.</li>
+        <li><b>Meta-Werbebibliothek</b> (Land Deutschland, „HOLY Squad“): Wie viele Anzeigen laufen, welche Motive? Prüft die unsichere Angabe „417 aktive Anzeigen“.</li>
+        <li><b>Corporate Design</b> (Dossier 6.3) mit eigenen Screenshots belegen. Schlüsselbilder zählen: Wie oft kommen Raptor und Dose-Shaker-Stillleben in eurer Stichprobe vor? Das prüft die Hypothese aus 6.4.</li>
+        <li><b>Fit bewerten</b>, sobald A und B geliefert haben: Markenbild ↔ Tonalität (Mi 21.10.), Markenbild ↔ Persona/Limbic Map (Sa 17.10.), Konsistenz über die Kanäle.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>je Kanal: Follower (mit Abrufdatum), Beiträge pro Woche, Hauptformat, Ø Engagement-Rate</li>
+        <li>3–6 typische Beiträge als Screenshot (Quelle + Datum)</li>
+        <li>Logo, Farbpalette (HEX aus Dossier 6.3), Claim</li>
+        <li>3 Fit-Punkte: ✓ oder ✗ + ein Satz Begründung</li>
+        <li>Titel als Kernaussage</li>
+      </ul>
+      <p class="klein">Folie 09 baut die zweite Claude-Sitzung gerade; die Liste gilt unabhängig vom Layout.</p>
+      <h4>Achtung</h4>
+      <ul class="achtung">
+        <li>Follower am <b>26.10.</b> neu ablesen (Dossier 9.3).</li>
+        <li>KI-Codierung der Screenshots (P12) nur mit Stichprobe von Hand gegenprüfen.</li>
+        <li>Raster als Backup B6 ablegen.</li>
+      </ul>
+      <p class="material">P12 · Dossier 6.1–6.7 · <code>methoden.md</code> §5</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe c">
+  <div class="aufgabe-kopf"><span class="id">C2</span><h3>Markensteuerrad: alles zusammenführen</h3><span class="eck">Folie 10 · 75 s · ca. 1,5 Std. + Termin · Do 22.10.</span></div>
+  <div class="raster">
+    <div>
+      <h4>So geht's</h4>
+      <ol>
+        <li>Bis Do 22.10. von allen je Feld 3–5 Stichworte einsammeln, jeweils mit Herkunft: DR Desk Research, LM Limbic Map, RG Repertory Grid, LA Laddering, AN Analogien, KA Kommunikationsanalyse.</li>
+        <li>Mit P13 einen Entwurf vorbereiten (nur eure Ergebnisse einfügen).</li>
+        <li><b>Synthese-Termin leiten</b> (2 Std.): Felder festlegen, Markenkern in einem Satz, Widersprüche zwischen den Feldern markieren.</li>
+        <li>Identität (Selbstbild: Website, Claims) und Image (Fremdbild: RG, Laddering) gegenüberstellen.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>Das braucht die Folie</h4>
+      <ul>
+        <li>Markenkern (ein Satz, höchstens ca. 10 Wörter)</li>
+        <li>je Feld (Kompetenz, Attribute, Nutzen, Tonalität, Bild, Persona-Rahmen): 2–4 Stichworte mit Quellenkürzel</li>
+      </ul>
+      <h4>Achtung</h4>
+      <ul class="achtung"><li>Jedes Stichwort muss sich auf eine Analyse zurückführen lassen; nichts Neues erfinden.</li></ul>
+      <p class="material">P13 · <code>methoden.md</code> §6</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe c">
+  <div class="aufgabe-kopf"><span class="id">C3</span><h3>Fazit und Empfehlungen</h3><span class="eck">Folie 11 · 90 s · ca. 1,5 Std. · Fr 23.10.</span></div>
+  <div class="raster">
+    <div>
+      <ol>
+        <li>3 Kernerkenntnisse formulieren (je ein Satz).</li>
+        <li>2–3 Empfehlungen ableiten, jeweils: <b>Was</b> genau, auf welchem <b>Kanal</b>, <b>warum</b> (Verweis auf eure Analyse).</li>
+        <li>Ausgangspunkt sind die Spannungsfelder S1–S5 im Dossier Kap. 8. Nur übernehmen, was eure eigenen Analysen stützen.</li>
+      </ol>
+    </div>
+    <div>
+      <ul>
+        <li>Bewertet wird „plausibel, begründet, realistisch“ (15 %). Lieber zwei konkrete Empfehlungen als fünf allgemeine.</li>
+        <li>„~“-Angaben aus 10.3 prüfen: Meta-Anzeigen, Creator-Zahlen, TV-Spot, Schriften; Stand Zuckersteuer und Altersgrenze kurz vor dem 26.10.</li>
+      </ul>
+      <p class="material">P13 (Teil 4) · Dossier Kap. 8, 9.3</p>
+    </div>
+  </div>
+</div>
+
+<div class="aufgabe c">
+  <div class="aufgabe-kopf"><span class="id">C4</span><h3>Gesamtdeck und Technik</h3><span class="eck">ca. 1,5 Std. · Sa 24.10. und Mo 26.10.</span></div>
+  <div class="raster">
+    <div>
+      <ol>
+        <li>Alle Folien durchklicken: Kernaussage im Titel, höchstens ca. 40 Wörter, Quellen in der Fußzeile, KI-Bilder gekennzeichnet.</li>
+        <li>Die Pillen „Beispieldaten“ erst abschalten, wenn wirklich keine erfundenen Werte mehr auf den Folien stehen.</li>
+        <li>Mit der Gruppe entscheiden, ob die HOLY-Farben (Dossier 6.3) eingesetzt werden. Sie stehen dann zentral in <code>marke.js</code>.</li>
+        <li>P14 (kritische Prüfung) laufen lassen und die Antworten im Team besprechen.</li>
+      </ol>
+    </div>
+    <div>
+      <ol start="5">
+        <li><b>Technik-Check:</b> Laptop mit Chrome oder Edge, Adapter (HDMI/USB-C), Clicker, Referentenansicht (Taste P) mit zweitem Bildschirm testen.</li>
+        <li><b>Plan B:</b> PDF-Export auf USB-Stick; Umfrage im Hörsaal-WLAN testen, sonst Handzeichen (Zählmodus der Folie).</li>
+        <li>Sprechtext für 09–11 und je Folie zwei Rückfragen samt Antwort.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ Schluss ============================ -->
+<h2 style="margin-top:4mm"><span class="nr">●</span>Spielregeln und Abschluss</h2>
+
+<div class="zwei-spalten">
+  <div class="box">
+    <h3 style="margin-bottom:1.5mm">Spielregeln</h3>
+    <ul style="margin-bottom:0">
+      <li>Keine Zahl ohne geöffnete Quelle. Was die KI behauptet, gilt erst nach eigener Prüfung.</li>
+      <li>Rechnen (Mittelwerte, Engagement-Raten, Matrix) immer in Sheets, nie per KI.</li>
+      <li>Selbstauskünfte von HOLY als solche kennzeichnen („laut Unternehmen, Stand …“).</li>
+      <li>KI-simulierte Befragte und KI-Bilder auf der Folie kennzeichnen.</li>
+      <li>Daten und Annahmen trennen; Hypothesen (H) aus dem Dossier sind keine Ergebnisse.</li>
+      <li>Wer zu spät liefert, blockiert die anderen: Bei Problemen früh im Chat melden.</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3 style="margin-bottom:1.5mm">Eine Aufgabe ist fertig, wenn …</h3>
+    <ul class="checkliste" style="margin-bottom:0">
+      <li>die Vorlage aus <code>methoden.md</code> ausgefüllt ist,</li>
+      <li>jede Zahl eine Quelle hat und Annahmen markiert sind,</li>
+      <li>alle Angaben unter „Das braucht die Folie“ geliefert sind,</li>
+      <li>Rohdaten und Chatverläufe im gemeinsamen Ordner liegen,</li>
+      <li>die KI-Nutzung im KI-Nachweis steht,</li>
+      <li>zwei Rückfragen samt Antwort notiert sind.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="hinweis">
+  <b>Danach: Einzelreflexion.</b> Jede Person schreibt ihre eigene Reflexion (höchstens 500 Wörter, sechs Fragen, 15 % der Note),
+  Vorlage: <code>reflexion-vorlage.md</code>. Tipp: während der Arbeit schon notieren, was schwierig war und wie ihr entschieden habt.
+  Abgabetermin und Form noch bei Prof. Stenger klären.
+</div>
+
+<p class="klein">Grundlagen: Aufgabenfolie 60, Bewertungskriterien Folie 58/59, <code>arbeitsplan.md</code>, <code>methoden.md</code>, <code>prompts.md</code>,
+HOLY-Recherche-Dossier (Stand 13./14.10.2026), Autorenhinweise der Web-Präsentation. Zeitangaben sind grobe Schätzungen. Erstellt mit KI-Unterstützung
+(Claude Code), dokumentiert im KI-Nachweis.</p>
+
+</body>
+</html>

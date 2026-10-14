@@ -43,6 +43,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 21 | 14.10.2026 | Yannick | Screenshot: Stand von Account 2 | – | Stand geprüft, Hinweis-Text für Account 2 |
 | 22 | 14.10.2026 | Yannick | Frage: Brauchen wir Interviews? | – | Antwort im Chat (keine Dateien geändert) |
 | 23 | 14.10.2026 | Yannick | Klarstellung: drei getrennte Präsentationen; Aufteilung für Präsentation 1 | – | Antwort im Chat (keine Dateien geändert) |
+| 24 | 14.10.2026 | Yannick | Aufgaben der Bündel A/B/C genauer erklären | – | Aufgaben im Detail (HTML + PDF, 8 Seiten) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -343,6 +344,36 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   PDF angeboten, noch nichts geändert.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 24 – 14.10.2026 – Yannick
+
+> Kannst du die jeweiligen Aufgaben genauer erklären und was da genau zu tun ist
+
+- **Vorgehen Claude:** Für Präsentation 1 je Bündel eine Schritt-für-Schritt-Anleitung geschrieben:
+  - A1–A5: Markenkompetenz, Persona, Limbic Map, Einstieg/Vorgehen, KI-Nachweis und Backup.
+  - B1–B4: Repertory Grid, Laddering, Analogien mit Live-Umfrage, Prüfen und Backup.
+  - C1–C4: Kommunikationsanalyse, Markensteuerrad, Fazit und Empfehlungen, Gesamtdeck und Technik.
+  - Dazu gemeinsame Termine, Spielregeln und eine Checkliste „fertig, wenn“.
+
+  Jede Aufgabe nennt Ziel, Arbeitsschritte, Material (Dossier-Kapitel, `methoden.md`, Prompts P0–P14), Termin und
+  Fallstricke. Unter „Das braucht die Folie“ steht, welche Angaben die Folie braucht. Diese Liste hat Claude aus den
+  Datenfeldern der Folien abgeleitet, die Account 2 auf dem Branch `praesentation-account-2` gebaut hat
+  (Stand 69271ed; Folie 09 entsteht noch).
+
+  Grundlage für die Inhalte waren Recherche-Dossier, `arbeitsplan.md`, `methoden.md`, `prompts.md` und `AUTOREN.md`;
+  es gab keine Websuche. Die Zeitangaben sind Schätzungen von Claude: ca. 9 Std. Bündelarbeit pro Person, mit
+  Sprechtext und Terminen ca. 14 Std. Echte Interviews sind als optional gekennzeichnet; das entscheidet die Gruppe
+  (siehe 22).
+
+  Das PDF hat Claude mit headless Chromium erzeugt und als Vorschau angesehen. Die Seitenaufteilung wurde einmal
+  korrigiert: Die erste Fassung hatte 9 Seiten mit einer fast leeren Seite 2, die neue hat 8 Seiten.
+  `arbeitsplan.md` und das alte Aufgaben-PDF blieben unverändert.
+- **Ergebnis:**
+  - [`fallstudie-1-brand-persona/aufgaben-im-detail.html`](../fallstudie-1-brand-persona/aufgaben-im-detail.html)
+  - [`fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-im-Detail.pdf`](../fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-im-Detail.pdf) (8 Seiten)
+- **Unteragenten:** keine. Ein zunächst angekündigter Workflow mit Unteragenten wurde nicht gestartet, um das
+  Kontingent zu schonen.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
