@@ -49,6 +49,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 27 | 14.10.2026 | System | Benachrichtigung: Workflow D04 fertig | – | Befunde ausgewertet und umgesetzt (siehe 25, D04) |
 | 28 | 14.10.2026 | System | Benachrichtigung: Workflow D05 fertig | – | 15 Punkte umgesetzt (siehe 25, D05) |
 | 29 | 14.10.2026 | Yannick | Einteilung der Bündel für Fallstudie 1 | – | Namen in 6 Dateien eingetragen, PDFs neu erzeugt |
+| 30 | 14.10.2026 | Yannick | Frage: Was soll ich als erstes machen? | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -451,6 +452,19 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Bündelköpfe danach umgestellt (Name als eigene Zeile). Recherche-Dossier und die Präsentation auf dem Branch von
   Account 2 nicht geändert.
 - **Ergebnis:** Einteilung in 6 Dateien, PDFs aktualisiert
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 30 – 14.10.2026 – Yannick
+
+> Was soll ich als erstes machen?
+
+- **Vorgehen Claude:** Reihenfolge für Yannicks Aufgaben (Bündel A + C2) aus den Übergabeterminen abgeleitet. Zuerst
+  Organisatorisches: Aufgaben-PDF und KI-Vorlage an die Gruppe, Ordner „KI-Chats“, offene Kickoff-Entscheidungen
+  (Wettbewerbsset, Persona-Richtung, Interviews, Repository privat?). Dann die Persona (A2), weil Lukas sie bis
+  Fr 16.10. braucht; danach Limbic Map (A3, Sa 17.10.), Markenkompetenz (A1, Di 20.10.), A4, C2 (Do 22.10.), A5
+  (Sa 24.10.). Persona-Entwurf aus dem Dossier angeboten, noch nicht erstellt.
+- **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
