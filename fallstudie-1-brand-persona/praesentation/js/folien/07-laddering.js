@@ -23,9 +23,14 @@
      Maße in Bühnen-Pixeln (nur bei Bedarf ändern)
      --------------------------------------------------------------------------- */
   var MASS = {
-    lueckeSeite: 56,         // Abstand zwischen Leiter und rechter Spalte
+    seiteAnteil: 0.3,        // rechte Spalte = 30 % der Breite …
+    seiteMin: 460,           // … aber mindestens 460 px …
+    seiteMax: 520,           // … und höchstens 520 px breit
+    lueckeSeite: 48,         // Abstand zwischen Leiter und rechter Spalte
     labelAbstand: 30,        // Lücke zwischen Ebenen-Beschriftung und linkem Holm
-    knotenRand: 40,          // Knoten bleiben so weit von den Holmen weg
+    knotenRand: 16,          // Knoten bleiben so weit von den Holmen weg
+    knotenLuecke: 20,        // Mindestabstand zwischen zwei Knoten einer Ebene
+    schriftMin: 28,          // Knoten-Schrift wird höchstens bis hierhin verkleinert
     ueberstand: 0.4,         // Holme ragen so weit (Anteil einer Ebene) über die Sprossen
     linieMin: 3,             // Linienstärke bei „cutoff“ Nennungen
     linieMax: 12,            // Linienstärke bei den meisten Nennungen
@@ -65,10 +70,8 @@
       return FARBEN.indexOf(f) >= 0 ? f : 'neutral';
     };
 
-    /* Spalten: rechte Spalte = 4 von 12 Rasterspalten (wie .sp-4) */
-    var rinne = u.token('--rinne') || 32;
-    var spalte = (B - 11 * rinne) / 12;
-    var seiteB = Math.round(4 * spalte + 3 * rinne);
+    /* Spalten: rechts Frage und Nutzen-Kästen, links die Leiter (bekommt den Rest) */
+    var seiteB = Math.round(Math.max(MASS.seiteMin, Math.min(MASS.seiteMax, B * MASS.seiteAnteil)));
     var seiteX = B - seiteB;
     var leiterB = seiteX - MASS.lueckeSeite;
 
@@ -147,7 +150,7 @@
         var x = Math.round(links + (rechts - links) * anteil);
         var attr = {
           class: 'lad-knoten lad-knoten--' + farbeVon(e) + (e === 0 ? ' lad-knoten--start' : ''),
-          style: 'left:' + x + 'px;top:' + sprosseY(e) + 'px;max-width:' + Math.floor(slot - 16) + 'px'
+          style: 'left:' + x + 'px;top:' + sprosseY(e) + 'px;max-width:' + Math.floor(slot - MASS.knotenLuecke) + 'px'
         };
         if (e > 0) {
           attr['data-schritt'] = String(e);
@@ -158,11 +161,22 @@
         knotenNachId[kn.id] = { el: el, x: x, y: sprosseY(e), ebene: e, rein: [], raus: [] };
       });
     });
+    /* Knoten einpassen: Mehrwortige Texte brechen (ausgewogen) um. Passt ein
+       einzelnes langes Wort nicht, wird erst der Innenabstand enger, dann die
+       Schrift kleiner – nie unter MASS.schriftMin (28 px). */
     u.messen(buehne, function () {
       Object.keys(knotenNachId).forEach(function (id) {
-        var k = knotenNachId[id];
-        k.w = k.el.offsetWidth;
-        k.h = k.el.offsetHeight;
+        var k = knotenNachId[id], el = k.el;
+        var zuBreit = function () { return el.scrollWidth > el.clientWidth + 1; };
+        if (zuBreit()) el.classList.add('ist-eng');
+        var groesse = parseFloat(getComputedStyle(el).fontSize) || 30;
+        while (zuBreit() && groesse > MASS.schriftMin) {
+          groesse -= 1;
+          el.style.fontSize = groesse + 'px';
+        }
+        if (zuBreit()) console.warn('[f07] Knoten „' + el.textContent + '“ ist zu lang für seine Spalte – kürzeren Text wählen.');
+        k.w = el.offsetWidth;
+        k.h = el.offsetHeight;
       });
     });
 
@@ -250,7 +264,9 @@
         class: 'lad-nutzen lad-nutzen--' + farbe, style: 'top:' + sprosseY(e) + 'px',
         'data-schritt': String(E), 'data-animation': 'links', 'data-verzoegerung': String(250 + i * 160)
       }, null, seite);
-      u.element('span', { class: 'lad-nutzen-titel' }, u.markeText(n.titel || ''), kasten);
+      /* Titel als Kicker (Metaangabe wie .karte-kicker und die Ebenen-Beschriftung
+         links), die eigentliche Aussage steht darunter groß */
+      u.element('span', { class: 'karte-kicker lad-nutzen-titel', 'data-meta': '' }, u.markeText(n.titel || ''), kasten);
       u.element('span', { class: 'lad-nutzen-text' }, u.markeText(n.text || ''), kasten);
       var py = sprosseY(e);
       var x1 = holmR + 12, x2 = seiteX - 14;

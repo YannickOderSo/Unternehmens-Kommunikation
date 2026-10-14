@@ -1,0 +1,258 @@
+<!--
+  09-kommunikationsanalyse.html – Folien f09 „Kanäle & Bildwelt“ (65 s) und
+  f09b „Corporate Design & Fit“ (55 s) · Bündel C · Feld Markenbild
+  =========================================================================
+  Methode: Kommunikationsanalyse (Inhaltsanalyse der Pflichtkanäle Instagram,
+  Facebook, YouTube) → Markenbild nach Esch („Wie trete ich auf?“).
+  Vorlage: ../methoden.md, Abschnitt 5 · Prompt P12 in ../prompts.md.
+  Zusammen 120 s – auf zwei Folien verteilt, damit jede Folie lesbar bleibt
+  (höchstens ca. 40 Wörter).
+
+  INHALTLICHE GRUNDLAGE: Recherche-Dossier ../recherche/holy-recherche.md
+  • Kap. 6.1 Kanäle (Stand 14.10.2026, ✔ gesichert):
+      Instagram @holysquad.official „HOLY Squad®“ ≈ 383.000 Follower [19]
+      Facebook-Seite „HOLY“ ≈ 126.000 Follower [122]
+      YouTube @HOLYSquadOfficial „HOLY®“ 20.500 Abos, fast nur Shorts:
+      15 zwischen 30.08. und 13.10.2026 ≈ 2,3 pro Woche [123, 124]
+    NICHT im Dossier (Instagram ohne Login gesperrt): Beiträge pro Woche auf
+    Instagram und Facebook, alle Engagement-Raten → hier BEISPIELDATEN
+    (gestrichelt umrandet). Die Gruppe erhebt sie selbst (je Kanal die
+    letzten 15–20 Beiträge, Formel siehe Folie, Rechnung in Excel/Sheets).
+  • Kap. 6.4 Bildwelt (✔): vier wiederkehrende Motive – Produkt-Stillleben,
+    Vergleichstabelle, Comic-Tiere (allen voran der Adler „Raptor“),
+    Community-Bilder; Kurzvideos als weitere Bildwelt (Vlogs, Challenges,
+    Gewinnspiele, Popkultur) [1, 5, 73, 39, 124].
+    Schlüsselbild-Kandidaten Raptor und Dose-Shaker-Stillleben = Hypothese (H).
+  • Kap. 6.3 Corporate Design (✔ [1]): Wortmarke in fetten, kursiven
+    Versalien; Web-Farben aus dem CSS der Website (kein offizieller
+    Styleguide); Schriften „ObviouslyNarrow“ Black (Überschriften) und
+    „PP Agrandir“ (Fließtext).
+  • Kap. 6.5 Claims (✔): mindestens sechs Claims parallel [1, 5, 8, 18, 25, 31].
+  • Kap. 8 S5 (✔ Befund / H Deutung): zersplitterter Auftritt – Claims,
+    Profilnamen, Creme-Pastell-Shop neben lauten Comic-Verpackungen.
+  • Kap. 1 Kernerkenntnis 4 (✔): Kundschaft meist 25–40 Jahre [7, 24];
+    Kap. 4.4 (H): Auftritt vor allem im Stimulanz-Bereich der Limbic Map.
+
+  WAS DIE FOLIEN ZEIGEN
+  f09  Beim Betreten  drei Kanal-Spalten: Follower (zählt hoch) mit
+                      Reichweitenbalken, Beiträge pro Woche, Ø Engagement-Rate
+       Schritt 1      Bildwelt: acht Beitrags-Platzhalter in vier Motivgruppen
+       Schritt 2      Schlüsselbild nach Kroeber-Riel: der Raptor wird
+                      hervorgehoben, die übrigen Beiträge treten zurück
+  f09b Beim Betreten  Corporate Design als Datenblatt: Logo, Claims &
+                      Schrift, Farben (mit HEX-Werten)
+       Schritt 1–3    Fit-Bewertung ✓ / ~ / ✗ (Tonalität, Persona, Kanäle);
+                      zu jeder Zeile leuchten links die Belege auf, der Rest
+                      tritt zurück. Die ✗-Zeile ist die Brücke zu Folie 11.
+
+  SO ÄNDERN SIE DIE INHALTE
+  • Alle Werte stehen in den <script type="application/json" class="daten">
+    unten in jeder Folie. js/folien/09-kommunikationsanalyse.js baut daraus
+    die Elemente – im HTML hier nichts nachbauen.
+  • Eigene Erhebung eingetragen? Bei dem Wert "beispiel": false setzen
+    (dann verschwindet die gestrichelte Umrandung). Erst wenn KEIN Wert
+    mehr "beispiel": true hat und alle Bilder echte Screenshots sind, die
+    Pille „Beispieldaten“ im Kicker von f09 löschen.
+  • Screenshots: Datei nach bilder/ legen (Nutzungsrechte und Quelle
+    beachten!) und bei dem Beitrag "bild": "bilder/ka-raptor.png" eintragen.
+  • Logo: kommt aus marke.js → logo (bis dahin neutraler Platzhalter).
+  • Farben: Liste in den Daten von f09b. Sind in marke.js → farben Werte
+    eingetragen, erscheinen sie zusätzlich (falls nicht schon in der Liste).
+  • Die Titel (Kernaussagen) stehen hier im HTML – bei neuen Ergebnissen
+    anpassen. Der Markenname kommt aus marke.js (data-marke).
+-->
+
+<!-- ===================================================================
+     f09 · Kanäle & Bildwelt (65 s)
+     =================================================================== -->
+<section class="folie" id="f09" data-titel="Kommunikationsanalyse: Kanäle & Bildwelt" data-feld="bild" data-zeit="65" data-buendel="C">
+  <header class="folie-kopf">
+    <p class="kicker">Kommunikationsanalyse · Instagram, Facebook, YouTube <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Instagram trägt die Reichweite, der Raptor das Bild</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <div class="g5">
+
+      <!-- ZONE 1 · Kanäle (erscheint beim Betreten, Spalten gestaffelt).
+           Die drei Spalten baut das Skript aus den Daten unten. -->
+      <div class="g5-kanaele" data-g5="kanaele" data-staffel="140" data-animation="hoch"></div>
+
+      <!-- Formel und Kennzeichnung der Beispielwerte -->
+      <div class="g5-erlaeuterung" data-meta data-animation="einblenden" data-verzoegerung="500">
+        <p class="g5-formel">Ø Engagement-Rate = (Likes + Kommentare) / Follower × 100</p>
+        <p class="legende"><span class="legende-annahme">Beispielwert – noch selbst zu erheben</span></p>
+      </div>
+
+      <!-- ZONE 2 · Bildwelt (Schritt 1): vier Motivgruppen mit je zwei
+           Beitrags-Platzhaltern. Schritt 2 (unsichtbarer Auslöser unten)
+           hebt das Schlüsselbild hervor. -->
+      <div class="g5-bildwelt" data-schritt="1" data-animation="keine">
+        <div class="g5-gruppen" data-g5="bildwelt" data-staffel="110" data-animation="hoch"></div>
+        <span class="g5-ausloeser" data-schritt="2" data-animation="zustand" aria-hidden="true"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Quelle: Dossier Kap. 6.1 ✔ [19, 122–124], Stand 14.10.2026 · Motive Kap. 6.4 ✔, Schlüsselbild H · Schlüsselbild nach Kroeber-Riel (1993)</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Kanäle</b> (ca. 25 s) Wie tritt <span data-marke></span> auf? Dafür haben wir die drei Pflichtkanäle analysiert. Die Reichweite liegt klar auf Instagram: rund 383.000 Follower. Facebook hat rund 126.000, YouTube nur 20.500 Abos – fast nur Shorts, etwa 2,3 pro Woche. Gestrichelte Werte sind Platzhalter, bis unsere Stichprobe steht; die Engagement-Rate rechnen wir selbst.</p>
+    <p data-schritt="1"><b>Bildwelt</b> (ca. 20 s) In den Beiträgen wiederholen sich vier Motivgruppen: Produkt – Dose und Shaker, dazu die Vergleichstabelle; Comic-Tiere – vorneweg der Adler „Raptor“; Community – Squad-Tattoos und Events wie Wacken; und in den Kurzvideos Vlogs mit Mitarbeitenden und Popkultur-Bezüge.</p>
+    <p data-schritt="2"><b>Schlüsselbild</b> (ca. 20 s) Ein Schlüsselbild nach Kroeber-Riel ist ein wiederkehrendes, eigenständiges Motiv, das die Positionierung bildlich trägt. Unser Kandidat: der Raptor – Maskottchen, Name der Sorte „Raspberry Raptor“, wiederkehrend in Posts, sogar in den Treue-Leveln vom „Raptor Egg“ bis zum „OG Raptor“. Ob er über alle Kanäle trägt, zeigt die nächste Folie.</p>
+    <p>Hintergrund und Quellen: Follower, Abos und YouTube-Frequenz aus dem Recherche-Dossier Kap. 6.1 (✔, Profile abgerufen am 14.10.2026, [19] Instagram, [122] Facebook-Seite, [123, 124] YouTube) – am Präsentationstag neu ablesen und hier in den Daten eintragen. Facebook-Gruppe „HOLY Squad“ ≈ 40.000 Mitglieder ist eine Selbstangabe und gehört nicht in die Seiten-Follower. Instagram-Frequenz, Facebook-Frequenz und alle Engagement-Raten sind BEISPIELDATEN: selbst erheben (je Kanal die letzten 15–20 Beiträge, Rechnung in Excel/Sheets, nicht per KI) – methoden.md Abschnitt 5. Motive: Dossier Kap. 6.4 ✔ [1, 5, 73] und Kurzvideos [39, 124]; die Einordnung als Schlüsselbild ist eine Hypothese (H). Begriff Schlüsselbild nach Kroeber-Riel (Bildkommunikation, 1993) aus dem Modellwissen – mit der Vorlesung abgleichen. Maskottchen „Raptor“ (von der Sorte Raspberry Raptor) und Treue-Level „Raptor Egg“ bis „OG Raptor“: Dossier Kap. 6.3 ✔ [54, 71]. Die acht Kacheln sind Platzhalter: Screenshots (mit Datum) in bilder/ legen und in den Daten unter "bild" eintragen.</p>
+  </aside>
+
+  <!-- DATEN – hier ändern. Hinweise:
+       • kanaele: genau drei Einträge (Pflichtkanäle laut Aufgabe).
+         „icon“: neutrales Linien-Icon aus dem Sprite (keine Plattform-Logos):
+         bild, sprechblase, video, gruppe, megafon …
+         „profilname“: Anzeigename des Profils (zeigt die uneinheitlichen
+         Namen – Beleg für die Fit-Bewertung auf f09b).
+         Jeder Wert: „wert“ = Zahl (Punkt als Dezimaltrennzeichen: 2.3),
+         „beispiel“: true = Beispielwert (gestrichelt), false = belegt.
+         „follower.bezeichnung“: „Follower“ oder „Abos“.
+         Der Reichweitenbalken wird automatisch am größten Kanal gemessen.
+       • bildwelt: Motivgruppen (empfohlen 4) mit je 2 Beiträgen.
+         „symbol“: Piktogramm im Platzhalter – dose, adler, pfote, tabelle,
+         herz, gruppe, video, stern, bild, megafon, person.
+         „bild“: Pfad zum Screenshot (relativ zu praesentation/), leer = Platzhalter.
+         „schluesselbild“: true bei genau EINEM Beitrag – wird in Schritt 2
+         hervorgehoben. -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "Follower/Abos und YouTube-Frequenz: Dossier Kap. 6.1 (Stand 14.10.2026). Werte mit beispiel: true sind BEISPIELDATEN – selbst erheben.",
+    "kanaele": [
+      {
+        "name": "Instagram",
+        "icon": "bild",
+        "profilname": "„HOLY Squad®“",
+        "follower":          { "wert": 383000, "bezeichnung": "Follower", "beispiel": false },
+        "beitraegeProWoche": { "wert": 4.0, "beispiel": true },
+        "engagementRate":    { "wert": 0.9, "beispiel": true }
+      },
+      {
+        "name": "Facebook",
+        "icon": "sprechblase",
+        "profilname": "„HOLY“",
+        "follower":          { "wert": 126000, "bezeichnung": "Follower", "beispiel": false },
+        "beitraegeProWoche": { "wert": 3.0, "beispiel": true },
+        "engagementRate":    { "wert": 0.1, "beispiel": true }
+      },
+      {
+        "name": "YouTube",
+        "icon": "video",
+        "profilname": "„HOLY®“",
+        "follower":          { "wert": 20500, "bezeichnung": "Abos", "beispiel": false },
+        "beitraegeProWoche": { "wert": 2.3, "beispiel": false },
+        "engagementRate":    { "wert": 1.6, "beispiel": true }
+      }
+    ],
+    "bildwelt": [
+      { "gruppe": "Produkt", "beitraege": [
+        { "motiv": "Dose & Shaker", "symbol": "dose",    "bild": "" },
+        { "motiv": "Vergleich",     "symbol": "tabelle", "bild": "" }
+      ] },
+      { "gruppe": "Comic-Tiere", "beitraege": [
+        { "motiv": "Adler „Raptor“", "symbol": "adler", "bild": "", "schluesselbild": true },
+        { "motiv": "Sorten-Tiere",   "symbol": "pfote", "bild": "" }
+      ] },
+      { "gruppe": "Community", "beitraege": [
+        { "motiv": "Tattoos", "symbol": "herz",   "bild": "" },
+        { "motiv": "Events",  "symbol": "gruppe", "bild": "" }
+      ] },
+      { "gruppe": "Kurzvideos", "beitraege": [
+        { "motiv": "Vlogs",     "symbol": "video", "bild": "" },
+        { "motiv": "Popkultur", "symbol": "stern", "bild": "" }
+      ] }
+    ]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     f09b · Corporate Design & Fit-Bewertung (55 s)
+     =================================================================== -->
+<section class="folie" id="f09b" data-titel="Markenbild: Corporate Design & Fit" data-feld="bild" data-zeit="55" data-buendel="C">
+  <header class="folie-kopf">
+    <p class="kicker">Kommunikationsanalyse → Markenbild</p>
+    <h2 class="titel"><em data-marke></em> trifft den Ton, wirkt aber zersplittert</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <div class="raster-12 g5b">
+
+      <!-- LINKS · Corporate Design als Datenblatt (erscheint beim Betreten).
+           Drei Zeilen: Logo · Claims & Schrift · Farben. -->
+      <div class="sp-7 g5b-cd" data-g5b="cd" data-staffel="120" data-animation="hoch"></div>
+
+      <!-- RECHTS · Fit-Bewertung: Zeile für Zeile (Schritte 1–3) -->
+      <aside class="sp-5 g5b-fit karte karte--flaeche" data-animation="einblenden" data-verzoegerung="300">
+        <span class="karte-kicker g5b-fit-kicker" data-meta>Fit des Markenbilds · Hypothese</span>
+        <ol class="g5b-fit-liste" data-g5b="fit"></ol>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Quelle: Dossier Kap. 6.3 ✔ [1] (Web-CSS, kein Styleguide), 6.5 ✔, 8 S5 ✔, Kap. 1 ✔ [7, 24] · Bewertung: eigene (H) · * Ersatzschrift</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Corporate Design</b> (ca. 15 s) Das Corporate Design: eine Wortmarke in fetten, kursiven Versalien, Überschriften in schmaler, sehr fetter Versalschrift, Gelb und Schwarz als Akzente – daneben die ruhigen Pastelltöne des Shops. Dachclaim: „Die Softdrink Revolution“.</p>
+    <p data-schritt="1"><b>Tonalität – passt</b> (ca. 10 s) Gemessen an der Tonalität von Folie 8, dem frechen Kumpel, passt das Bild: Raptor, Slang, Doppeldeutigkeiten.</p>
+    <p data-schritt="2"><b>Persona – teilweise</b> (ca. 13 s) Zur Persona passt die Stimulanz. Aber Comic-Look und knallige Farben wirken jünger als die Kundschaft – laut Mitgründer meist 25 bis 40, viele im Schichtdienst.</p>
+    <p data-schritt="3"><b>Kanäle – Bruch</b> (ca. 15 s) Der größte Bruch: mindestens sechs Claims, drei Profilnamen, ein ruhiger Pastell-Shop neben lauten Comic-Dosen. Starke Marke, zersplitterter Auftritt – hier setzen unsere Empfehlungen an.</p>
+    <p>Hintergrund und Quellen: Logo, Farben (HEX aus dem CSS der Website und dem Logo-Bild, kein offizieller Styleguide; weitere Web-Werte: Kopfzeile #FFF0DD, Gelbtöne #FED301 und #FFE359, Logo-Gelb ≈ #FFED28, Mint #B3DBC4) und Schriften „ObviouslyNarrow“ Black / „PP Agrandir“: Dossier Kap. 6.3 ✔ [1]. Auf der Folie sind die Schriften mit frei lizenzierten Ersatzschriften angedeutet (Sternchen), die Originale sind kommerziell. Claims: Kap. 6.5 ✔ – Dachclaim „Die Softdrink Revolution“ [1, 8], Versprechen „Geiler Geschmack mit gutem Gewissen“ [5, 20], dazu „Zero Zucker oder Bullsh*t“ [1, 31], „Mach’s dir wie nie zuvor“ (TV 2026) [25], „Änder nix – nur dein Drink“ (Handel 2026) [18], „Turn up the Taste“ (Syrup) [1, 129]; den Claim „Drink soft. Go hard.“ NICHT verwenden (unbelegt). Zersplitterter Auftritt: Kap. 8 S5 (Befund ✔ [1, 20, 31, 125], Deutung H). Kundschaft 25–40, Schichtdienst: Kap. 1 Kernerkenntnis 4 ✔ [7, 24]; „Design für eine jüngere Zielgruppe gedacht“ [7] ✔. Limbic-Verortung (Stimulanz): Kap. 4.4, Hypothese. Tonalität „frecher Kumpel“: Folie 8b (Dossier Kap. 6.7, H). Die ✓/~/✗-Bewertung ist unsere eigene Einschätzung und mit der Gruppe abzustimmen (methoden.md Abschnitt 5, Fit-Bewertung).</p>
+  </aside>
+
+  <!-- DATEN – hier ändern. Hinweise:
+       • logo.beschreibung: kurze Beschreibung der Wortmarke (das Bild kommt
+         aus marke.js → logo; bis dahin neutraler Platzhalter).
+       • claims: „dach“ (Dachclaim) und „versprechen“ (Markenversprechen);
+         „weitere“ = Anzahl weiterer paralleler Claims (Notizen nennen sie).
+         „schriften“: Namen der Markenschriften. Gezeigt werden frei
+         lizenzierte Ersatzschriften (die Originale sind kommerziell).
+       • farben: Gruppen mit Farben („hex“ mit #, sechsstellig). Höchstens
+         FÜNF Farben insgesamt – mehr passen nicht in eine Zeile. Farben aus
+         marke.js → farben erscheinen zusätzlich, falls sie fehlen (dann
+         eine andere Farbe hier herausnehmen).
+       • fit: genau drei Zeilen (Schritt 1, 2, 3). „urteil“: passt | teilweise | bruch.
+         „belege“: welche Zeilen links aufleuchten – logo, claims, farben.
+         „begruendung“: ein kurzer Satz (höchstens ca. 7 Wörter). -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "Corporate Design: Dossier Kap. 6.3 und 6.5 (gesichert). Fit-Bewertung: eigene Einschätzung (Hypothese) – mit der Gruppe abstimmen.",
+    "logo": {
+      "beschreibung": "Wortmarke · fette, kursive Versalien"
+    },
+    "claims": {
+      "dach":        { "text": "Die Softdrink Revolution", "bezeichnung": "Dachclaim" },
+      "versprechen": { "text": "Geiler Geschmack mit gutem Gewissen", "bezeichnung": "Versprechen" },
+      "weitere": 4,
+      "schriften": { "ueberschrift": "ObviouslyNarrow Black", "fliesstext": "PP Agrandir" }
+    },
+    "farben": [
+      { "gruppe": "Logo & Akzent", "liste": [
+        { "name": "Gelb",    "hex": "#FFD007" },
+        { "name": "Schwarz", "hex": "#1D1D1B" }
+      ] },
+      { "gruppe": "Shop-Flächen", "liste": [
+        { "name": "Creme",    "hex": "#F3EDE1" },
+        { "name": "Türkis",   "hex": "#8ECDC1" },
+        { "name": "Hellblau", "hex": "#A4D9F6" }
+      ] }
+    ],
+    "fit": [
+      { "pruefung": "zur Tonalität",   "urteil": "passt",     "begruendung": "Raptor und Slang tragen den frechen Ton.",   "belege": ["logo", "claims"] },
+      { "pruefung": "zur Persona",     "urteil": "teilweise", "begruendung": "Stimulanz passt, der Look wirkt jünger als 25–40.", "belege": ["farben"] },
+      { "pruefung": "über die Kanäle", "urteil": "bruch",     "begruendung": "Sechs Claims, zwei Farbwelten, drei Profilnamen.", "belege": ["claims", "farben"] }
+    ]
+  }
+  </script>
+</section>

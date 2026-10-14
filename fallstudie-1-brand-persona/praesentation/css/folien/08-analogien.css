@@ -5,13 +5,16 @@
         Titel mit zwei Fassungen (Frage → Kernaussage) und zwei Szenen im
         selben Feld: Umfrage (Schritt 0–1) und Analogien (ab Schritt 2).
         Analogien: zwei Karten „Als Tier“ / „Als Mensch“ (Farbe der „soft
-        facts“ wie im Steuerrad), darunter die Kontrastzeile mit zwei
-        Wettbewerbern in gedeckter Schrift.
+        facts“ wie im Steuerrad) – je Kopf mit Zeichnung, Kicker und Name,
+        darunter eine Liste mit Haarlinien; unten je ein belegter Gegenpol
+        (Tier: Selbstbild/Maskottchen, Mensch: tatsächliche Kundschaft). Darunter die Kontrastzeile mit
+        zwei Wettbewerbern in gedeckter Schrift.
    f08b „Markentonalität“
         links (8 Spalten) Profil nach Aaker: je Dimension Name + Merkmale,
                           darunter Spur mit Balken und Punkt der Marke sowie
                           Marker A/B der Wettbewerber, rechts der Wert
-        rechts (4 Spalten) Karte „Ins Steuerrad“: Emotionen und Beziehung
+        rechts (4 Spalten) Karte „Ins Steuerrad“: Emotionen, Beziehung,
+                           Erlebnisse (Tonalität nach Esch)
    Inhalte und Werte kommen aus den Daten der Folien (js/folien/08-analogien.js
    baut daraus die Elemente). Alle Regeln beginnen mit #f08 bzw. #f08b.
    Nur Variablen aus tokens.css verwenden.
@@ -24,6 +27,7 @@
    --------------------------------------------------------------------------- */
 #f08 .g4-bild,
 #f08 .g4-wb-bild,
+#f08 .g4-gegenpol-bild,
 #f08 .g4-hand {
   flex: none;
   fill: none;
@@ -34,9 +38,11 @@
 }
 #f08 .g4-bild *,
 #f08 .g4-wb-bild *,
+#f08 .g4-gegenpol-bild *,
 #f08 .g4-hand * { vector-effect: non-scaling-stroke; }
 #f08 .g4-bild .voll,
-#f08 .g4-wb-bild .voll { fill: currentColor; stroke: none; }
+#f08 .g4-wb-bild .voll,
+#f08 .g4-gegenpol-bild .voll { fill: currentColor; stroke: none; }
 
 
 /* ---------------------------------------------------------------------------
@@ -120,6 +126,8 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 
 /* ---------------------------------------------------------------------------
    4. f08 – ANALOGIEN: KARTEN „ALS TIER“ UND „ALS MENSCH“
+   Aufbau je Karte: Kopf (Zeichnung + Kicker + Name) · Liste mit Haarlinien ·
+   (nur Tier) Selbstbild der Marke am unteren Rand.
    --------------------------------------------------------------------------- */
 #f08 .g4-szene--analogien {
   display: grid;
@@ -132,77 +140,67 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   gap: var(--rinne);
   min-height: 0;
 }
-/* Inhalt oben ausgerichtet, damit „Als Tier“ und „Als Mensch“ auf einer Höhe stehen */
 #f08 .g4-karte {
-  display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
-  column-gap: 36px;
-  align-items: start;
-  align-content: start;
-  padding: 52px 40px 40px;
-  min-height: 0;
-}
-#f08 .g4-bild {
-  width: 168px;
-  height: 168px;
-  margin-top: -8px;
-  color: var(--f-weich);
-  stroke-width: 4.5px;
-}
-#f08 .g4-karte-inhalt {
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  gap: 0;
+  padding: 36px 40px 32px;
+  min-height: 0;
 }
 
-/* Tier: großer Name, darunter drei nummerierte Gründe */
-#f08 .g4-tiername {
-  margin: 14px 0 22px;
+/* Kopf: Zeichnung links, Kicker und Name rechts daneben */
+#f08 .g4-karte-kopf {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  column-gap: 32px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+#f08 .g4-bild {
+  width: 112px;
+  height: 112px;
+  color: var(--f-weich);
+  stroke-width: 4px;
+}
+#f08 .g4-karte-titel { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+#f08 .g4-name {
+  margin: 0;
   font-family: var(--schrift-display);
-  font-size: var(--groesse-titel-gross);
+  font-size: var(--groesse-titel-klein);
   font-weight: var(--gewicht-display);
   font-style: var(--stil-hervor);
   font-variation-settings: "opsz" var(--opsz-titel);
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: var(--laufweite-titel);
   color: var(--f-weich);
 }
-#f08 .g4-gruende {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-#f08 .g4-gruende li {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr);
-  align-items: baseline;
-  font-size: var(--groesse-text);
-  line-height: 1.3;
-}
-#f08 .g4-nr {
-  font-family: var(--schrift-zahl);
-  font-size: var(--groesse-meta);
-  font-weight: var(--gewicht-fett);
-  font-variant-numeric: lining-nums tabular-nums;
-  color: var(--f-weich);
-}
 
-/* Mensch: Kurzprofil als Zeilen „Merkmal | Wert“ mit Haarlinien */
-#f08 .g4-steckbrief {
-  display: flex;
-  flex-direction: column;
-  margin: 16px 0 0;
-}
-#f08 .g4-steckbrief-zeile {
+/* Liste „Stichwort | Text“ mit Haarlinien (Tier: Gründe, Mensch: Profil) */
+#f08 .g4-liste { display: flex; flex-direction: column; margin: 0; }
+#f08 .g4-zeile {
   display: grid;
-  grid-template-columns: 162px minmax(0, 1fr);
+  grid-template-columns: 176px minmax(0, 1fr);
   align-items: baseline;
-  column-gap: 12px;
-  padding: 13px 0;
+  column-gap: 16px;
+  padding: 9px 0;
   border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-weich) 24%, transparent);
 }
-#f08 .g4-steckbrief-zeile:first-child { border-top: 0; padding-top: 4px; }
-#f08 .g4-steckbrief dt {
+#f08 .g4-zeile dd {
+  margin: 0;
+  font-size: var(--groesse-text);
+  line-height: 1.3;
+  color: var(--f-text);
+}
+/* Tier: Eigenschaft in der Titelschrift, Farbe der „soft facts“ */
+#f08 .g4-stichwort {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  line-height: 1.2;
+  color: var(--f-weich);
+}
+/* Mensch: Merkmal als kleine Beschriftung (Metaangabe) */
+#f08 .g4-liste--profil dt {
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
   font-weight: var(--kicker-gewicht);
@@ -210,10 +208,41 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   text-transform: var(--kicker-versalien);
   color: var(--f-text-2);
 }
-#f08 .g4-steckbrief dd {
-  margin: 0;
-  font-size: var(--groesse-text);
-  line-height: 1.3;
+
+/* Gegenpol unten in der Karte (Selbstbild bzw. Kundschaft): belegter Fakt,
+   gestrichelt abgesetzt und gedeckt – er steht der Analogie gegenüber.
+   margin-top: auto schiebt ihn in beiden Karten an den unteren Rand. */
+#f08 .g4-gegenpol {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  column-gap: 32px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: var(--linie-fein) dashed color-mix(in oklab, var(--f-text-2) 55%, transparent);
+}
+#f08 .hat-gegenpol .g4-liste { margin-bottom: 18px; }   /* Mindestabstand zum Gegenpol */
+#f08 .g4-gegenpol-bild {
+  justify-self: center;
+  width: 84px;
+  height: 84px;
+  color: var(--f-text-2);
+  stroke-width: 3px;
+}
+#f08 .g4-gegenpol-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+#f08 .g4-gegenpol-label {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  text-transform: var(--kicker-versalien);
+  color: var(--f-text-2);
+}
+#f08 .g4-gegenpol-inhalt {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  line-height: 1.2;
   color: var(--f-text);
 }
 
@@ -384,6 +413,11 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   border-radius: 0 var(--radius-s) var(--radius-s) 0;
   background: color-mix(in oklab, var(--f-diagramm-marke) 50%, var(--f-hintergrund));
 }
+/* dunkle Darstellung: Balken etwas kräftiger, damit er sich von der Grundlinie abhebt */
+[data-modus="dunkel"] #f08b .g4t-balken,
+#f08b[data-modus="dunkel"] .g4t-balken {
+  background: color-mix(in oklab, var(--f-diagramm-marke) 66%, var(--f-hintergrund));
+}
 #f08b .g4t-punkt {
   position: absolute;
   top: 50%;
@@ -458,6 +492,8 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 
 /* ---------------------------------------------------------------------------
    7. f08b – ERGEBNISKARTE „INS STEUERRAD“
+   Drei Blöcke: Emotionen (mit Punkt davor, umbrechend), Beziehung (kursiv),
+   Erlebnisse (Fließtext).
    --------------------------------------------------------------------------- */
 #f08b .g4t-ergebnis {
   display: flex;
@@ -465,13 +501,13 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   justify-content: center;
   min-height: 0;
 }
-#f08b .g4t-karte { gap: var(--abstand-5); padding: 40px 40px 44px; }
+#f08b .g4t-karte { gap: var(--abstand-4); padding: 36px 40px 40px; }
 #f08b .g4t-kicker { display: inline-flex; align-items: center; gap: 12px; }
 #f08b .g4t-kicker .icon { width: 30px; height: 30px; }
 #f08b .g4t-block {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   padding-top: var(--abstand-4);
   border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-weich) 24%, transparent);
 }
@@ -485,16 +521,33 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 }
 #f08b .g4t-emotionen {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 2px;
 }
+#f08b .g4t-emotionen li { display: inline-flex; align-items: center; gap: 12px; }
 #f08b .g4t-emotionen li,
 #f08b .g4t-beziehung {
   margin: 0;
   font-family: var(--schrift-display);
-  font-size: var(--groesse-untertitel);
+  font-size: var(--groesse-gross);
   font-weight: var(--gewicht-display);
-  line-height: 1.18;
+  line-height: 1.2;
   color: var(--f-text);
 }
-#f08b .g4t-beziehung { font-style: var(--stil-hervor); color: var(--f-weich); }
+/* Punkt vor jeder Emotion (bleibt beim Umbruch am Zeilenanfang) */
+#f08b .g4t-emotionen li::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--f-weich);
+}
+#f08b .g4t-beziehung { font-style: var(--stil-hervor); color: var(--f-weich); text-wrap: balance; }
+#f08b .g4t-erlebnisse {
+  margin: 0;
+  font-size: var(--groesse-text);
+  line-height: 1.3;
+  color: var(--f-text);
+}

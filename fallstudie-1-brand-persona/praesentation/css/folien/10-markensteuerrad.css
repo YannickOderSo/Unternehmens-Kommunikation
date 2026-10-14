@@ -1,0 +1,189 @@
+/* =============================================================================
+   css/folien/10-markensteuerrad.css – nur für Folie f10 (Markensteuerrad, Synthese)
+   -----------------------------------------------------------------------------
+   Das Steuerrad gestaltet der Baustein (css/komponenten.css). Hier stehen nur
+   die Ergänzungen dieser Folie:
+     • Konsistenzprüfung: rote Nummern an Stichworten + Notizen „Lücke 1/2“
+     • optionaler Abgleich mit der Wortwolke (letzter Schritt)
+   Farbe der Lücken: --f-fehler (Signalfarbe „Bruch“, in hell und dunkel
+   kontrastgeprüft). Nur Variablen aus tokens.css verwenden.
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   1. KONSISTENZPRÜFUNG
+   --------------------------------------------------------------------------- */
+
+/* Ebene über dem Rad (Lage und Größe setzt das Skript passend zum Rad) */
+#f10 .g6s-ebene {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Notiz „Lücke n“: sitzt mittig in der freien Fläche zwischen zwei Karten,
+   eine gestrichelte Klammer verbindet die beiden Karten */
+#f10 .g6s-luecke {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 0 0 30px;
+  transform: translateY(-50%);
+}
+#f10 .g6s-luecke::before {            /* gestrichelte Klammer */
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  height: var(--g6s-luecke-hoehe, 100%);
+  transform: translateY(-50%);
+  border-left: var(--linie-stark) dashed var(--f-fehler);
+}
+#f10 .g6s-luecke--rechts {
+  align-items: flex-end;
+  padding: 0 30px 0 0;
+  text-align: right;
+}
+/* rechts: Lücke 2 betrifft Bild (unten) und Persona – die Linie führt
+   deshalb nur nach unten zur Karte „Markenbild“ */
+#f10 .g6s-luecke--rechts::before {
+  left: auto;
+  right: 6px;
+  transform: none;
+  height: calc(var(--g6s-luecke-hoehe, 100%) / 2);
+}
+
+#f10 .g6s-luecke-kopf {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-fehler);
+}
+#f10 .g6s-luecke--rechts .g6s-luecke-kopf { flex-direction: row-reverse; }
+#f10 .g6s-luecke-text {
+  font-size: var(--groesse-text-min);
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--f-text);
+  text-wrap: balance;
+}
+
+/* Nummernkreis (in der Notiz und an den Stichworten) */
+#f10 .g6s-nummer,
+#f10 .g6s-wortmarke {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--f-fehler);
+  color: var(--f-hintergrund);
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-meta);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+}
+/* Nummer am Stichwort: hochgestellt neben dem Wort, ohne eigenen Platz im
+   Textfluss (sonst entstünde vor Schritt 8 eine sichtbare Lücke) */
+#f10 .g6s-wortmarke {
+  position: absolute;
+  left: calc(100% + 3px);
+  top: -12px;
+  width: 26px;
+  height: 26px;
+}
+/* mehr Zeilenabstand in den Karten, damit die hochgestellte Nummer frei steht */
+#f10 .sr-karte-stichworte { row-gap: 14px; }
+#f10 .sr-karte:not(.sr-pille) { gap: 12px; }
+
+/* Markiertes Stichwort: gestrichelte rote Unterstreichung, sobald die Nummer
+   sichtbar ist (gleicher Schritt, auch im Druck und in der Vorschau) */
+#f10 .sr-stichwort.g6s-markiert {
+  position: relative;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: var(--linie-stark);
+  text-underline-offset: 7px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--dauer-mittel) var(--kurve);
+}
+#f10 .sr-stichwort.g6s-markiert:has(> .g6s-wortmarke.schritt-an) {
+  text-decoration-color: var(--f-fehler);
+}
+
+
+/* Markenkern im Zentrum: Kicker „MARKENKERN“ etwas enger gesetzt, damit er
+   im Kreis nicht an den Rand stößt */
+#f10 .sr-label--kerntext .sr-label-klein { letter-spacing: 0.04em; }
+
+
+/* ---------------------------------------------------------------------------
+   2. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt, nur mit Zurufen)
+   Liegt deckend über dem Rad: links unser Kern, rechts die Zurufe.
+   --------------------------------------------------------------------------- */
+#f10 .g6s-abgleich {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--abstand-7);
+  background: var(--f-hintergrund);
+}
+#f10 .g6s-abgleich[hidden] { display: none; }
+html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF bleibt das Rad */
+
+#f10 .g6s-abgleich-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--abstand-5);
+}
+#f10 .g6s-abgleich-kern {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel-klein);
+  font-weight: var(--gewicht-display);
+  line-height: 1.08;
+  letter-spacing: var(--laufweite-titel);
+  color: var(--f-text);
+  text-wrap: balance;
+}
+#f10 .g6s-abgleich-zahl {
+  padding-top: var(--abstand-5);
+  border-top: var(--linie-fein) solid var(--f-linie);
+}
+#f10 .g6s-abgleich-zahl .kennzahl-reihe {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+#f10 .g6s-abgleich-von {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-gross);
+  color: var(--f-text-2);
+}
+#f10 .g6s-abgleich-rechts {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+#f10 .g6s-wolke { flex: 1; min-height: 0; }
+/* Zurufe, die zu unserem Steuerrad passen: Akzentfarbe + Unterstreichung */
+#f10 .g6s-wolke .ww-wort.g6s-treffer {
+  color: var(--f-akzent);
+  text-decoration: underline var(--linie-stark) var(--f-akzent);
+  text-underline-offset: 8px;
+}
