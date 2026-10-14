@@ -36,6 +36,11 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 14 | 13./14.10.2026 | System | Nutzungslimit erneut erreicht: D01 und D03 unterbrochen; Sitzung neu gestartet | – | – |
 | 15 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier *in Arbeit* |
 | 16 | 14.10.2026 | Yannick | Übergabe-Prompt für einen zweiten Account | Ü01 (Übergabe) | Prompt, JURY.md, Entwürfe auf GitHub |
+| 17 | 14.10.2026 | System | Nutzungslimit erneut erreicht: D03 unterbrochen; Sitzung neu gestartet | – | – |
+| 18 | 14.10.2026 | Yannick | „Weiter“ | D03 fortgesetzt | Dossier *in Arbeit* |
+| 19 | 14.10.2026 | System | Nutzungslimit erneut erreicht: nur „Dossier schreiben“ in D03 abgebrochen | – | – |
+| 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier fertig (34 Seiten PDF) |
+| 21 | 14.10.2026 | Yannick | Screenshot: Stand von Account 2 | – | Stand geprüft, Hinweis-Text für Account 2 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -259,6 +264,57 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine (Übergabe an zweiten Account: Ü01)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 17 – 14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: D03 „failed: Dossier nicht fertig geworden“ – acht Unteragenten (sieben Gegenprüfungen und
+> „Dossier schreiben“) mit „You've hit your session limit · resets 5am (UTC)“; danach zweimal „This session's worker
+> process was restarted. …“
+
+- **Stand von D03:** 11 von 19 Agenten fertig (alle sechs Recherchen, fünf Gegenprüfungen).
+
+### 18 – 14.10.2026 – Yannick
+
+> Weiter
+
+- **Vorgehen Claude:** D03 unverändert fortgesetzt (07:57 UTC); fertige Agenten kommen aus dem Zwischenspeicher.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** D03 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 19 – 14.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: D03 „failed: Dossier nicht fertig geworden“ – „Dossier schreiben“ mit „You've hit your session
+> limit · resets 12:50pm (UTC)“; danach mehrfach „This session's worker process was restarted. …“
+
+- **Stand von D03:** 18 von 19 Agenten fertig (alle sechs Recherchen, alle zwölf Gegenprüfungen).
+
+### 20 – 14.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache
+> dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D03 unverändert fortgesetzt (12:52 UTC); Dossier, Schlussprüfung und Korrektur liefen durch.
+  Danach hat Claude das Ergebnis selbst geprüft (siehe D03).
+- **Ergebnis:** `fallstudie-1-brand-persona/recherche/HOLY_Recherche-Dossier_Teamkickoff.pdf` (34 Seiten),
+  `holy-recherche.md` (Arbeitsfassung), `holy-dossier.html` (Druckvorlage)
+- **Unteragenten:** D03 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 21 – 14.10.2026 – Yannick
+
+> *(Bild: Screenshot der Claude-Code-Sitzung von Account 2 – „Workflow ausgeführt 2026-10-14_praesentation-account-2
+> Fehlgeschlagen“; Zusammenfassung: Workflow nach Nutzungslimit wieder angelaufen, Foliengruppen werden gebaut, Skript
+> für resume angepasst, master geprüft – „Das HOLY-Dossier fehlt weiterhin“, Nachweis A2-06/A2-07, letzter Commit
+> b5c0665; Hinweis „Nutzungsguthaben aufgebraucht, automatische Fortsetzung um 16:51“.)*
+> Als info was Account 2 gerade am machen ist
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` abgerufen: Fundament fertig (Commit c9fae0e), Folienphase läuft,
+  durch Nutzungslimit unterbrochen. Das HOLY-Dossier liegt inzwischen auf master (Commit d42f681); Hinweis-Text für
+  Account 2 mit den belegten Web-Farben aus Dossier Kap. 6.3 formuliert (keine Dateien auf dem Branch geändert).
+- **Ergebnis:** diese Datei
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -271,7 +327,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); fertig: 3 Gestaltungsrichtungen, Jury; Rest an Account 2 übergeben (Ü01) | – |
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
-| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | unterbrochen (Nutzungslimit), fortgesetzt 14.10. 00:02 UTC – *läuft* | – |
+| D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -339,8 +395,18 @@ steht hier mit dem wörtlichen Auftrag.
   Gegenprüfung (12 Agenten: je Bereich eine Primärquellen-Prüfung und eine Gegenrecherche zu Aktualität und Widersprüchen)
   → Dossier (1 Agent: Markdown, HTML, PDF mit Faktenstatus) → Schlussprüfung (1 Agent, inkl. eigener Stichprobe der
   wichtigsten Zahlen) → Korrektur (1 Agent).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+- **Verlauf:** dreimal durch das Nutzungslimit unterbrochen und jeweils fortgesetzt (Einträge 14–20); fertige Agenten
+  wurden aus dem Zwischenspeicher übernommen. Insgesamt 21 Unteragenten.
+- **Ergebnis:** Dossier mit 155 Befunden zu sechs Bereichen, davon 98 ✔ gesichert, 42 ✎ korrigiert, 4 ~ unsicher,
+  11 Hypothesen; 32 Einzelaussagen verworfen; 160 Quellen. Die Schlussprüfung fand 23 Punkte (1 hoch: Bündelzuordnung
+  wich vom Arbeitsplan ab; 8 mittel; 14 niedrig), die Korrektur setzte 24 Änderungen um. Nicht umgesetzt (mit Grund im
+  Dossier vermerkt): Daten, die nur mit Login oder Hochschulzugang erreichbar sind (Instagram-Postliste, Facebook-Inhalte,
+  Meta-Werbebibliothek, VuMA/AWA über Statista) – Erhebungsaufträge für die Gruppe.
+- **Wie Claude das Ergebnis geprüft hat:** Zusammenfassungen aller Prüf-Agenten gelesen; PDF komplett als Seitenübersicht
+  gerendert und angesehen (Layout ohne Überlauf, keine leeren Seiten); „Auf einen Blick“ gelesen; zwei Kernaussagen
+  selbst an der Primärquelle nachgeprüft (14.10.2026): Impressum de.holy.com/pages/impressum (HOLY Softdrinks GmbH,
+  AG Charlottenburg HRB 222782 B, Geschäftsführer Naß, Horsch, Jost) und AGB de.holy.com/pages/agb § 4 (Energy-Produkte
+  mit Koffein nur ab 18) – beide bestätigt.
 
 ---
 
