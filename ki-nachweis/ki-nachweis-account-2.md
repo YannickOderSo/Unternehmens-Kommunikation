@@ -26,6 +26,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 |-----|-------|-----|---------------|--------------|----------|
 | A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01 (Workflow) | *in Arbeit* |
 | A2-02 | 14.10.2026 | System | Automatischer Hinweis: nicht committete Änderungen | – | Commit + Push |
+| A2-03 | 14.10.2026 | Yannick (Account 2) | Um 7 Uhr prüfen, ob Account 1 neu gepusht hat | – | Prüfung um 07:00 Uhr geplant |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -88,6 +89,20 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Vorgehen Claude:** offene Änderung (neuer Eintrag des Hooks im Rohprotokoll für die Delegation A2-D01.01) und
   diesen Eintrag committet und gepusht
 - **Unteragenten:** keine
+
+### A2-03 – 14.10.2026 – Yannick Heisler (Account 2)
+
+> Da der Kontigent vom Master account fast aufgebraucht ist schaue spätestens nochmal um 7 uhr wenn sich sein Kontigent erneuert nach ob ein neuer push da ist
+
+- **Vorgehen Claude:** `master` sofort geprüft (03:00 Uhr: kein neuer Commit, letzter Stand `bd71310`, HOLY-Dossier
+  noch nicht vorhanden). Eine einmalige Erinnerung an diese Sitzung für **07:00 Uhr (Berlin)** angelegt (Werkzeug
+  `send_later`, Routine „7 Uhr: master auf neuen Push prüfen“). Dann: `git fetch origin master`; liegt ein neuer Push vor
+  (vor allem `fallstudie-1-brand-persona/recherche/holy-recherche.md`), wird `master` per Merge-Commit in
+  `praesentation-account-2` übernommen und das Dossier in die laufende Stufe eingespeist; sonst stündlich erneut prüfen,
+  höchstens bis 10 Uhr. Zwischendurch prüft Claude `master` bei jeder abgeschlossenen Stufe.
+- **Ergebnis:** Prüfung geplant; Ergebnis folgt als eigener Eintrag
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
