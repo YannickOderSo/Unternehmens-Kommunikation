@@ -1,0 +1,292 @@
+/* =====================================================================
+   Richtung 2 – „Keynote dunkel“ · Design-Tokens
+   ---------------------------------------------------------------------
+   Diese Datei enthält ALLE Gestaltungswerte der Präsentation als
+   CSS-Variablen (Tokens). Wer Farben, Schriften, Größen oder Tempo
+   ändern möchte, ändert sie nur hier – alle Folien passen sich an.
+
+   Aufbau
+     1. Schriften (lokal, keine Internetverbindung nötig)
+     2. Markenfarben  ← NUR HIER die zwei Markenfarben eintragen
+     3. Feste Werte: Schrift, Größen, Abstände, Radien, Bewegung
+     4. Farbmodus „dunkel“ (Standard dieser Richtung)
+     5. Farbmodus „hell“ (für sehr helle Hörsäle)
+     6. Sicherheitsnetz für extreme Markenfarben (moderne Browser)
+
+   Farbmodus umschalten:  <html data-modus="hell">  bzw.  "dunkel"
+   (ohne Angabe gilt „dunkel“). Ein Attribut data-modus kann auch auf
+   einer einzelnen <section> stehen – dann gilt es nur für diese Folie.
+
+   Wichtig für eigene Farbtests: Wer --marke-primaer auf einer einzelnen
+   Folie überschreibt, setzt dort auch data-modus="…" – nur dann werden
+   die abgeleiteten Farben (Akzent, Flächen, Glow …) neu berechnet.
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1. Schriften
+   Variable Schriften (eine Datei für alle Stärken 100–900).
+   Nur die Zeichensätze „latin“ und „latin-ext“ sind kopiert – das deckt
+   Deutsch inkl. ä, ö, ü, ß und typografische Anführungszeichen ab.
+   Lizenz: SIL Open Font License 1.1 (siehe schriften/lizenz-*.txt)
+   --------------------------------------------------------------------- */
+
+/* Inter Tight – Display-Schrift für Titel (enger gesetzt als Inter) */
+@font-face {
+  font-family: "Inter Tight Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("schriften/inter-tight-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter Tight Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("schriften/inter-tight-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Inter – Text-Schrift für Fließtext, Beschriftungen, Karten */
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("schriften/inter-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("schriften/inter-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Space Grotesk – für Zahlen, Folien-Nummern und kleine Überschriften
+   („Kicker“). Gibt der Präsentation den technischen Keynote-Charakter. */
+@font-face {
+  font-family: "Space Grotesk Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url("schriften/space-grotesk-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Grotesk Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url("schriften/space-grotesk-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
+/* ---------------------------------------------------------------------
+   2. Markenfarben – die EINZIGEN zwei Farben, die man ändern muss.
+   Vorerst neutral (Schieferblau + warmes Taupe). Sobald die Marke
+   feststeht, hier die Hex-Werte aus dem Corporate Design eintragen
+   (oder in marke.js – das überschreibt diese Werte).
+     --marke-primaer   → Glow, Akzente, „soft facts“, Zentrum des Steuerrads
+     --marke-sekundaer → „hard facts“, zweiter Glow
+   --------------------------------------------------------------------- */
+:root {
+  --marke-primaer: #5D6E91;
+  --marke-sekundaer: #9C8E7B;
+}
+
+
+/* ---------------------------------------------------------------------
+   3. Feste Werte (gelten in beiden Farbmodi)
+   Alle Größen beziehen sich auf die Bühne von 1920 × 1080 Pixeln.
+   --------------------------------------------------------------------- */
+:root {
+  /* Schriftfamilien (mit Ersatzschriften, falls eine Datei fehlt) */
+  --schrift-display: "Inter Tight Variable", "Inter Tight", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --schrift-text: "Inter Variable", "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --schrift-zahl: "Space Grotesk Variable", "Space Grotesk", "Segoe UI", Arial, sans-serif;
+
+  /* Schriftgrößen – Mindestwerte für den Beamer:
+     Fließtext ≥ 28 px, Titel 56–96 px, Tabellen im Backup ≥ 22 px */
+  --groesse-titel-gross: 96px;   /* nur Titelfolie */
+  --groesse-titel: 72px;         /* Folientitel = Kernaussage */
+  --groesse-untertitel: 40px;
+  --groesse-text: 30px;
+  --groesse-klein: 24px;         /* Quellen, Kicker, Badges – kein Fließtext */
+
+  /* Schriftstärken */
+  --gewicht-titel: 720;
+  --gewicht-fett: 640;
+  --gewicht-text: 420;
+
+  /* Abstände (8er-Raster) */
+  --abstand-1: 8px;
+  --abstand-2: 16px;
+  --abstand-3: 24px;
+  --abstand-4: 32px;
+  --abstand-5: 48px;
+  --abstand-6: 64px;
+  --abstand-7: 96px;    /* Seitenrand der Folie */
+  --abstand-8: 128px;
+
+  /* Eckenradien */
+  --radius-s: 12px;
+  --radius-m: 22px;
+  --radius-l: 36px;
+
+  /* Bewegung – „filmisch“: schnelles Anlaufen, sehr weiches Ausrollen */
+  --dauer-kurz: 260ms;     /* Hover, kleine Rückmeldungen */
+  --dauer-mittel: 700ms;   /* Einblenden einzelner Elemente */
+  --dauer-lang: 1300ms;    /* Zeichnen von Linien, Morph des Steuerrads */
+  --staffel: 110ms;        /* Versatz beim gestaffelten Einblenden */
+  --kurve: cubic-bezier(0.16, 1, 0.3, 1);          /* „expo-out“: filmisches Ausrollen */
+  --kurve-feder: cubic-bezier(0.34, 1.45, 0.64, 1); /* leichtes Nachfedern */
+  --kurve-morph: cubic-bezier(0.65, 0, 0.35, 1);    /* weiches Hin-und-Her für Morphs */
+}
+
+
+/* ---------------------------------------------------------------------
+   4. Farbmodus „dunkel“ – Standard dieser Richtung
+   Jede Farbe wird aus den zwei Markenfarben gemischt (color-mix).
+   Lesbarkeit: Text fast weiß, Zweittext hellgrau (Kontrast > 10 : 1),
+   damit auch ein lichtschwacher Beamer im hellen Hörsaal reicht.
+   --------------------------------------------------------------------- */
+:root:not([data-modus="hell"]),
+[data-modus="dunkel"] {
+  color-scheme: dark;
+
+  /* Grundflächen: fast schwarz, minimal in Markenfarbe getönt */
+  --f-hintergrund: color-mix(in oklch, var(--marke-primaer) 9%, #05060A);
+  --f-flaeche: color-mix(in oklch, var(--marke-primaer) 14%, #12141B);
+  --f-flaeche-2: color-mix(in oklch, var(--marke-primaer) 20%, #1C1F28);
+  --f-glas: color-mix(in oklch, var(--f-flaeche) 70%, transparent);   /* Glaskarten */
+  --f-glas-kante: color-mix(in oklch, var(--f-text) 16%, transparent); /* helle Glaskante */
+  --f-glas-licht: color-mix(in oklch, var(--f-text) 8%, transparent);  /* Lichtkante oben */
+  --f-vignette: rgb(0 0 0 / 0.45);                                      /* Randabdunklung */
+  --f-linie: color-mix(in oklch, var(--marke-primaer) 25%, #4B5162);
+
+  /* Text */
+  --f-text: color-mix(in oklch, var(--marke-primaer) 4%, #F7F8FB);
+  --f-text-2: color-mix(in oklch, var(--marke-primaer) 12%, #C9CED8);
+
+  /* Akzent: aufgehellte Primärfarbe (für Text, Linien, Markierungen) */
+  --f-akzent: color-mix(in oklch, var(--marke-primaer) 62%, #FFFFFF);
+  --f-auf-akzent: color-mix(in oklch, var(--marke-primaer) 20%, #06070B);
+  --f-akzent-schleier: color-mix(in oklch, var(--f-akzent) 14%, transparent);
+
+  /* Markensteuerrad: hard facts (Sekundärfarbe) · soft facts (Primärfarbe) */
+  --f-hart: color-mix(in oklch, var(--marke-sekundaer) 40%, #E3E7EE);
+  --f-hart-flaeche: color-mix(in oklch, var(--f-hart) 17%, transparent);
+  --f-weich: var(--f-akzent);
+  --f-weich-flaeche: color-mix(in oklch, var(--marke-primaer) 28%, transparent);
+
+  /* Zentrum (Markenkompetenz), große Markenflächen: echte Markenfarbe */
+  --f-kern: var(--marke-primaer);
+  --f-auf-kern: #FFFFFF;
+
+  /* Signalfarben – leicht in Markenfarbe getönt, Bedeutung bleibt erkennbar */
+  --f-erfolg: color-mix(in oklch, #3DDC97 88%, var(--marke-primaer));
+  --f-warnung: color-mix(in oklch, #FFC857 88%, var(--marke-primaer));
+
+  /* Glow (Lichthöfe im Hintergrund) */
+  --f-glow-1: color-mix(in oklch, var(--marke-primaer) 62%, transparent);
+  --f-glow-2: color-mix(in oklch, var(--marke-sekundaer) 30%, transparent);
+  --glow-staerke: 1;
+
+  /* Tiefe */
+  --schatten-1:
+    inset 0 1px 0 0 color-mix(in oklch, var(--f-text) 9%, transparent),
+    0 12px 32px -12px rgb(0 0 0 / 0.75);
+  --schatten-2:
+    inset 0 1px 0 0 color-mix(in oklch, var(--f-text) 12%, transparent),
+    0 40px 90px -30px rgb(0 0 0 / 0.9),
+    0 0 80px -24px var(--f-glow-1);
+
+  /* QR-Code bleibt immer dunkel auf hell – sonst scannen viele Handys nicht */
+  --f-qr-grund: #FFFFFF;
+  --f-qr-punkt: #0B0C10;
+}
+
+
+/* ---------------------------------------------------------------------
+   5. Farbmodus „hell“ – für sehr helle Räume oder zum Ausdrucken
+   --------------------------------------------------------------------- */
+[data-modus="hell"] {
+  color-scheme: light;
+
+  --f-hintergrund: color-mix(in oklch, var(--marke-primaer) 6%, #F5F6F8);
+  --f-flaeche: color-mix(in oklch, var(--marke-primaer) 2%, #FFFFFF);
+  --f-flaeche-2: color-mix(in oklch, var(--marke-primaer) 9%, #EDEFF3);
+  --f-glas: color-mix(in oklch, #FFFFFF 78%, transparent);
+  --f-glas-kante: color-mix(in oklch, var(--marke-primaer) 18%, #D5D9E1);
+  --f-glas-licht: color-mix(in oklch, #FFFFFF 70%, transparent);
+  --f-vignette: transparent;
+  --f-linie: color-mix(in oklch, var(--marke-primaer) 22%, #B7BDC9);
+
+  --f-text: color-mix(in oklch, var(--marke-primaer) 10%, #0B0D13);
+  --f-text-2: color-mix(in oklch, var(--marke-primaer) 14%, #3F4552);
+
+  --f-akzent: color-mix(in oklch, var(--marke-primaer) 80%, #000000);
+  --f-auf-akzent: #FFFFFF;
+  --f-akzent-schleier: color-mix(in oklch, var(--f-akzent) 10%, transparent);
+
+  --f-hart: color-mix(in oklch, var(--marke-sekundaer) 58%, #1E222A);
+  --f-hart-flaeche: color-mix(in oklch, var(--f-hart) 11%, transparent);
+  --f-weich: var(--f-akzent);
+  --f-weich-flaeche: color-mix(in oklch, var(--marke-primaer) 15%, transparent);
+
+  --f-kern: var(--marke-primaer);
+  --f-auf-kern: #FFFFFF;
+
+  --f-erfolg: color-mix(in oklch, #08694A 88%, var(--marke-primaer));
+  --f-warnung: color-mix(in oklch, #8A4500 88%, var(--marke-primaer));
+
+  --f-glow-1: color-mix(in oklch, var(--marke-primaer) 24%, transparent);
+  --f-glow-2: color-mix(in oklch, var(--marke-sekundaer) 18%, transparent);
+  --glow-staerke: 0.8;
+
+  --schatten-1:
+    0 1px 2px rgb(16 20 30 / 0.06),
+    0 10px 28px -10px rgb(16 20 30 / 0.16);
+  --schatten-2:
+    0 1px 2px rgb(16 20 30 / 0.06),
+    0 36px 70px -28px rgb(16 20 30 / 0.28);
+
+  --f-qr-grund: #FFFFFF;
+  --f-qr-punkt: #0B0C10;
+}
+
+
+/* ---------------------------------------------------------------------
+   6. Sicherheitsnetz für extreme Markenfarben
+   Moderne Browser (Chrome/Edge ab 119, Firefox ab 128, Safari ab 18)
+   können die Helligkeit einer Farbe direkt begrenzen („relative color“).
+   Damit bleiben Akzente auch dann lesbar, wenn eine Marke z. B. fast
+   schwarz (#1D1D1B) oder sehr hell (Gelb) ist. Ältere Browser
+   überspringen diesen Block und nutzen die Mischwerte von oben.
+   Lesehilfe:  oklch(from X  Helligkeit  Buntheit  Farbton)
+   --------------------------------------------------------------------- */
+@supports (color: oklch(from red l c h)) {
+  :root:not([data-modus="hell"]),
+  [data-modus="dunkel"] {
+    /* Akzent auf Dunkel: Helligkeit zwischen 74 % und 86 % */
+    --f-akzent: oklch(from var(--marke-primaer) clamp(0.74, calc(l + 0.18), 0.86) c h);
+    /* hard facts: hell und etwas entsättigt („rational“) */
+    --f-hart: oklch(from var(--marke-sekundaer) clamp(0.78, calc(l + 0.22), 0.88) min(c, 0.1) h);
+    /* Zentrum: echte Markenfarbe, aber nie zu dunkel oder zu hell */
+    --f-kern: oklch(from var(--marke-primaer) clamp(0.42, l, 0.64) c h);
+    /* Schrift auf dem Zentrum: automatisch weiß (dunkle Farbe) oder schwarz (helle Farbe) */
+    --f-auf-kern: oklch(from var(--f-kern) clamp(0, (0.6 - l) * 1000, 1) 0 0);
+  }
+  [data-modus="hell"] {
+    --f-akzent: oklch(from var(--marke-primaer) clamp(0.36, l, 0.52) c h);
+    --f-hart: oklch(from var(--marke-sekundaer) clamp(0.32, calc(l - 0.18), 0.46) min(c, 0.1) h);
+    --f-kern: oklch(from var(--marke-primaer) clamp(0.42, l, 0.64) c h);
+    --f-auf-kern: oklch(from var(--f-kern) clamp(0, (0.6 - l) * 1000, 1) 0 0);
+  }
+}

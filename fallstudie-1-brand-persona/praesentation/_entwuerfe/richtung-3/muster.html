@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de" data-modus="hell">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Richtung 3 · Bento hell – Musterseite</title>
+  <!--
+    Musterseite der Gestaltungsrichtung 3 „Bento hell“
+    Fallstudie 1 „Brand Persona & Markenidentität“ – Gruppe Heisler, Knauber, Welker
+    Läuft offline per Doppelklick: keine Internetverbindung, kein Server nötig.
+
+    Dateien:
+      tokens.css       Farben, Schriften, Größen, Abstände, Bewegung (hier Markenfarben ändern)
+      komponenten.css  Karten, Folienlayouts, Animationen
+      marke.js         Markenname + Markenfarben zentral eintragen
+      muster.js        Polaritätenprofil, QR-Code, Zähler, Steuerung der Musterseite
+      bibliothek/      qrcode-generator (MIT-Lizenz, Kazuhiko Arase)
+      schriften/       Bricolage Grotesque + Plus Jakarta Sans (SIL Open Font License 1.1)
+  -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="komponenten.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    /* ---- Nur für die Musterseite (nicht Teil der Präsentation) ---- */
+    html { background: #CFCECA; }
+    body { margin: 0; font-family: var(--schrift-text); color: #17181C; }
+    .muster-kopf {
+      max-width: 1920px;
+      padding: 56px 64px 24px;
+      font-size: 22px;
+      line-height: 1.5;
+    }
+    .muster-kopf h1 { margin: 0 0 8px; font: 700 48px/1.1 var(--schrift-display); letter-spacing: -0.02em; }
+    .muster-kopf .spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .muster-kopf h2 { margin: 24px 0 8px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .muster-kopf ul { margin: 0; padding-left: 1.2em; }
+    .muster-label {
+      margin: 0;
+      padding: 40px 64px 14px;
+      font: 700 22px/1.3 var(--schrift-text);
+      color: #2A2B30;
+    }
+    .muster-label span { font-weight: 500; color: #4A4B52; }
+    .muster-werkzeug {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      max-width: 560px;
+      padding: 14px 16px;
+      border-radius: 22px;
+      background: rgb(255 255 255 / 0.94);
+      box-shadow: 0 16px 40px -16px rgb(0 0 0 / 0.45);
+      font: 600 16px/1.2 var(--schrift-text);
+      color: #17181C;
+    }
+    .muster-werkzeug button {
+      padding: 9px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: #ECEBE7;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+    .muster-werkzeug button[aria-pressed="true"] { background: #17181C; color: #FFF; }
+    .muster-werkzeug label { display: inline-flex; align-items: center; gap: 6px; }
+    .muster-werkzeug input[type="color"] { width: 38px; height: 30px; padding: 0; border: 0; background: none; cursor: pointer; }
+    .muster-werkzeug .trenner { width: 1px; height: 26px; background: #D6D5D0; }
+  </style>
+</head>
+<body>
+
+<!-- =====================================================================
+     Icon-Sprite: schlichte Linien-Icons (eigene Zeichnung, 24 × 24).
+     Verwendung: <svg class="icon"><use href="#i-lupe"/></svg>
+     ===================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-lupe" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20.5 20.5"/></symbol>
+  <symbol id="i-raster" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 3.5v17M14.5 3.5v17"/></symbol>
+  <symbol id="i-leiter" viewBox="0 0 24 24"><path d="M7.5 3v18M16.5 3v18M7.5 7.5h9M7.5 12h9M7.5 16.5h9"/></symbol>
+  <symbol id="i-pfote" viewBox="0 0 24 24"><circle cx="6.5" cy="9.5" r="1.9"/><circle cx="10" cy="5.5" r="1.9"/><circle cx="14" cy="5.5" r="1.9"/><circle cx="17.5" cy="9.5" r="1.9"/><path d="M12 11.5c-3 0-5.5 3.2-5.5 5.6 0 1.7 1.3 2.4 2.7 2.4 1.2 0 1.8-.7 2.8-.7s1.6.7 2.8.7c1.4 0 2.7-.7 2.7-2.4 0-2.4-2.5-5.6-5.5-5.6z"/></symbol>
+  <symbol id="i-handy" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3M10.5 8.5v5l4-2.5z"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-4 4-6 7.5-6s6.5 2 7.5 6"/></symbol>
+  <symbol id="i-auge" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-megafon" viewBox="0 0 24 24"><path d="M3.5 10v4a1 1 0 0 0 1 1h2l6 4.5v-15L6.5 9h-2a1 1 0 0 0-1 1z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+  <symbol id="i-funke" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+  <symbol id="i-kolben" viewBox="0 0 24 24"><path d="M9 3.5h6M10.5 3.5V9L5 18.4A1.4 1.4 0 0 0 6.2 20.5h11.6a1.4 1.4 0 0 0 1.2-2.1L13.5 9V3.5M7.6 14.5h8.8"/></symbol>
+  <symbol id="i-pfeil" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-bild" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 15.5l-4.5-4.5-8.5 8.5"/></symbol>
+  <symbol id="i-balken" viewBox="0 0 24 24"><path d="M5.5 20V13M12 20V5M18.5 20v-9"/></symbol>
+</svg>
+
+
+<!-- ===== Erklärung der Richtung (nur Musterseite) ===== -->
+<header class="muster-kopf">
+  <h1>Richtung 3 · Bento hell</h1>
+  <p>Inhalte in klar gegliederten, abgerundeten Karten unterschiedlicher Größe – wie die Fächer einer Bento-Box.
+    Weiche Flächen aus den Markenfarben, große Zahlen, schlichte Linien-Icons. Schriften: <b>Bricolage Grotesque</b>
+    (Titel, Kennzahlen) und <b>Plus Jakarta Sans</b> (Text). Standard ist der Modus „hell“; „dunkel“ ist mit angelegt.
+    Die Farben sind neutrale Platzhalter (Tinte + Sand) und werden später durch die Markenfarben ersetzt.</p>
+  <div class="spalten">
+    <div>
+      <h2>Bewegungssprache</h2>
+      <ul>
+        <li><b>Federnd und gestaffelt:</b> Karten gleiten 56 px von unten (Methodenkarten von der Seite) herein, schwingen
+          leicht über (ca. 9 %) und kommen zur Ruhe – nacheinander im Abstand von 90 ms.</li>
+        <li><b>Zeichnen:</b> Danach entstehen Linien von oben nach unten (Polaritätenprofil) bzw. Pfeile in Leserichtung.</li>
+        <li><b>Ploppen:</b> Datenpunkte und Markierungen („Unsere Analyse“) springen zuletzt federnd auf.</li>
+        <li><b>Wachsen und Zählen:</b> Balken wachsen von links, Zahlen zählen gleichzeitig hoch.</li>
+        <li><b>Antworten statt Dekoration:</b> Karten heben sich beim Zeigen an; Steuerrad-Feld und zugehörige
+          Methodenkarte leuchten gemeinsam auf. Das Rätselbild „atmet“ langsam, ein Klick löst die Unschärfe auf.</li>
+        <li>Wer im System „Bewegung reduzieren“ eingestellt hat, sieht alles sofort ohne Effekte.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Bedienung der Musterseite</h2>
+      <ul>
+        <li>Unten rechts: Modus hell/dunkel umschalten, Markenfarben live ausprobieren, Animationen neu abspielen.</li>
+        <li>Folie c: Methodenkarten und Felder des Steuerrads sind klickbar (Navigation); Zeigen hebt die Zuordnung hervor.</li>
+        <li>Folie a: Klick auf das Bild löst das Rätsel auf (Platzhalter).</li>
+        <li>„[Marke]“ wird aus <code>marke.js</code> befüllt, sobald die Marke feststeht.</li>
+        <li>Alle Zahlen auf den Folien b und d sind <b>Beispieldaten</b>.</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =====================================================================
+     a) EINSTIEG – Rätsel mit dem Publikum + Titel
+     ===================================================================== -->
+<p class="muster-label">a) Einstieg <span>– Rätsel „Welche Marke steckt dahinter?“ + Titel</span></p>
+<section class="folie folie-einstieg" id="folie-a" data-modus="hell" aria-label="Titelfolie mit Rätsel">
+  <div class="einstieg-raster">
+
+    <!-- Rätselbild: später ein echtes Foto/Logo der Marke, stark vergrößert (Quelle angeben!) -->
+    <figure class="karte raetsel-bild anim" style="--i:0" data-aufloesen tabindex="0"
+            aria-label="Bild-Platzhalter: stark vergrößerter, unscharfer Ausschnitt. Klicken zum Auflösen.">
+      <div class="raetsel-motiv" aria-hidden="true">
+        <span class="f1"></span><span class="f2"></span><span class="f3"></span><span class="f4"></span><span class="f5"></span>
+      </div>
+      <figcaption class="raetsel-ebene">
+        <div class="raetsel-ebene-oben">
+          <span class="glas"><svg class="icon"><use href="#i-bild"/></svg>Bild-Platzhalter</span>
+          <span class="glas"><svg class="icon"><use href="#i-lupe"/></svg>800 % vergrößert</span>
+        </div>
+        <div class="raetsel-ebene-unten">
+          <span class="glas aufloesen-text-aus">Hier erscheint das Originalbild der Marke</span>
+          <span></span>
+          <button class="glas" type="button" data-aufloesen-knopf>
+            <svg class="icon"><use href="#i-auge"/></svg>
+            <span class="aufloesen-text-an">Auflösen</span><span class="aufloesen-text-aus">Wieder verstecken</span>
+          </button>
+        </div>
+      </figcaption>
+    </figure>
+
+    <div class="karte karte--akzent raetsel-frage anim" style="--i:1">
+      <span class="fragezeichen" aria-hidden="true">?</span>
+      <span class="karte-label">Rätsel zum Einstieg</span>
+      <h2>Welche Marke steckt dahinter?</h2>
+      <p><svg class="icon"><use href="#i-megafon"/></svg>Ruft es rein!</p>
+    </div>
+
+    <div class="karte titel-karte anim" style="--i:2">
+      <span class="karte-label">Fallstudie 1 · Unternehmenskommunikation</span>
+      <h1>Brand Persona &amp; Markenidentität</h1>
+      <p class="unterzeile">Das Markensteuerrad für <span data-marke>[Marke]</span></p>
+    </div>
+
+    <div class="karte karte--hart gruppe-karte anim" style="--i:3">
+      <span class="karte-label">Gruppe</span>
+      <ul class="gruppe-liste">
+        <li><span class="avatar">YH</span>Yannick Heisler</li>
+        <li><span class="avatar">EK</span>Elias Knauber</li>
+        <li><span class="avatar">LW</span>Lukas Welker</li>
+      </ul>
+    </div>
+
+    <div class="karte karte--weich datum-karte anim" style="--i:4">
+      <span class="karte-label">Präsentation</span>
+      <span class="kennzahl">26.10.</span>
+      <p>Montag · 2026<small>Prof. Dr. Daniel Stenger<br>Hochschule Kaiserslautern</small></p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     b) INHALTSFOLIE – Repertory Grid (Polaritätenprofil + 3 Attribute)
+     ===================================================================== -->
+<p class="muster-label">b) Inhaltsfolie <span>– Repertory Grid: Polaritätenprofil und drei Markenattribute (Beispieldaten)</span></p>
+<section class="folie folie-rg" id="folie-b" data-modus="hell" aria-label="Repertory Grid">
+  <header class="folie-kopf">
+    <div>
+      <p class="kicker">
+        <a class="mini-rad-link" href="#folie-c" title="Zurück zum Steuerrad">
+          <svg class="mini-rad" viewBox="0 0 44 44" aria-label="Feld im Steuerrad: Markenattribute">
+            <path d="M22 22 22 1A21 21 0 0 1 43 22Z"/><path d="M22 22 43 22A21 21 0 0 1 22 43Z"/>
+            <path class="ist-aktiv" d="M22 22 22 43A21 21 0 0 1 1 22Z"/><path d="M22 22 1 22A21 21 0 0 1 22 1Z"/>
+            <circle cx="22" cy="22" r="7.5"/>
+          </svg>
+        </a>
+        Repertory Grid · Markenattribute
+      </p>
+      <h2 class="titel">Drei Eigenschaften heben <span data-marke>[Marke]</span> vom Wettbewerb ab</h2>
+    </div>
+    <span class="badge badge--beispiel"><svg class="icon"><use href="#i-kolben"/></svg>Beispieldaten</span>
+  </header>
+
+  <div class="rg-raster">
+    <div class="karte profil-karte anim" style="--i:0">
+      <ul class="legende" aria-label="Legende">
+        <li><svg viewBox="0 0 56 20"><path class="linie linie-marke" d="M4 10H52"/><circle class="punkt-marke" cx="28" cy="10" r="9"/></svg><span data-marke>[Marke]</span></li>
+        <li><svg viewBox="0 0 56 20"><path class="linie linie-wettb" d="M4 10H52"/><circle class="punkt-wettb" cx="28" cy="10" r="7"/></svg>stärkster Wettbewerber</li>
+        <li><svg viewBox="0 0 56 20"><path class="linie linie-ideal" d="M4 10H52"/><path class="punkt-ideal" d="M28 3l7 7-7 7-7-7z"/></svg>Idealmarke</li>
+      </ul>
+      <!-- Wird von muster.js aus den Daten in PROFIL gezeichnet -->
+      <svg class="profil" viewBox="0 0 1040 640" data-profil role="img"
+           aria-label="Polaritätenprofil mit sechs Gegensatzpaaren für [Marke], stärksten Wettbewerber und Idealmarke (Beispieldaten)"></svg>
+    </div>
+
+    <div class="attribut-spalte">
+      <div class="karte attribut-karte anim" style="--i:1">
+        <div class="attribut-kopf"><span class="nr">1</span><h3>innovativ</h3></div>
+        <span class="kennzahl" data-zaehlen="2.8" data-stellen="1" data-vorzeichen="+">+2,8</span>
+        <p>Punkte vor dem Wettbewerb</p>
+      </div>
+      <div class="karte attribut-karte anim" style="--i:2">
+        <div class="attribut-kopf"><span class="nr">2</span><h3>nahbar</h3></div>
+        <span class="kennzahl" data-zaehlen="2.3" data-stellen="1" data-vorzeichen="+">+2,3</span>
+        <p>Punkte vor dem Wettbewerb</p>
+      </div>
+      <div class="karte attribut-karte anim" style="--i:3">
+        <div class="attribut-kopf"><span class="nr">3</span><h3>nachhaltig</h3></div>
+        <span class="kennzahl" data-zaehlen="1.9" data-stellen="1" data-vorzeichen="+">+1,9</span>
+        <p>Punkte vor dem Wettbewerb</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="fusszeile">
+    <span>Quelle: Beispieldaten · Methode: Repertory Grid nach Kelly (1955), Triadenvergleich, Mittelwerte auf Skala 1–7</span>
+    <span class="fusszeile-rechts"><span><span data-marke>[Marke]</span> · Fallstudie 1</span> <span class="seitenzahl">6</span></span>
+  </footer>
+</section>
+
+
+<!-- =====================================================================
+     c) STEUERRAD-HUB – Markensteuerrad nach Esch, Methoden außen,
+        Brand Persona + Limbic Map als Rahmen. Klickbare Navigation.
+     Alle Positionen sind feste Pixelwerte auf der 1920 × 1080-Bühne.
+     ===================================================================== -->
+<p class="muster-label">c) Steuerrad-Hub <span>– Markensteuerrad nach Esch als klickbare Agenda (Felder und Methodenkarten verlinkt)</span></p>
+<section class="folie hub" id="folie-c" data-modus="hell" aria-label="Markensteuerrad als Übersicht">
+  <header class="folie-kopf">
+    <div>
+      <p class="kicker">Ausgangslage &amp; Vorgehen</p>
+      <h2 class="titel">Jede Methode füllt ein Feld des Markensteuerrads</h2>
+    </div>
+  </header>
+
+  <!-- Grafik: runde Karte, Rahmenring, vier Felder, Zentrum, Pfeile.
+       Mittelpunkt x 960 / y 606 (alle Werte in Pixeln der 1920er-Bühne) -->
+  <svg class="hub-grafik" viewBox="0 0 1920 1080" role="group" aria-label="Markensteuerrad nach Esch">
+    <circle class="hub-teller anim-rad" style="--i:0" cx="960" cy="606" r="378"/>
+    <!-- gestrichelter Ring = Rahmen „Brand Persona + Limbic Map“ -->
+    <circle class="hub-rahmen anim-rad" style="--i:1" cx="960" cy="606" r="364"/>
+
+    <!-- Felder: hard facts links (aus Sekundärfarbe), soft facts rechts (aus Primärfarbe) -->
+    <a href="#folie-7" class="rad-feld rad-feld--hart anim-rad" data-feld="nutzen" style="--i:2" aria-label="Markennutzen – Was biete ich an? (Laddering, Folie 7)">
+      <path d="M604 600A350 350 0 0 1 954 250L954 490A110 110 0 0 0 844 600Z"/>
+    </a>
+    <a href="#folie-d" class="rad-feld rad-feld--weich anim-rad" data-feld="tonalitaet" style="--i:3" aria-label="Markentonalität – Wie bin ich? (Analogien, Folie 8)">
+      <path d="M966 250A350 350 0 0 1 1316 600L1076 600A110 110 0 0 0 966 490Z"/>
+    </a>
+    <a href="#folie-9" class="rad-feld rad-feld--weich anim-rad" data-feld="bild" style="--i:4" aria-label="Markenbild – Wie trete ich auf? (Kommunikationsanalyse, Folie 9)">
+      <path d="M1316 612A350 350 0 0 1 966 962L966 722A110 110 0 0 0 1076 612Z"/>
+    </a>
+    <a href="#folie-b" class="rad-feld rad-feld--hart anim-rad" data-feld="attribute" style="--i:5" aria-label="Markenattribute – Über welche Eigenschaften verfüge ich? (Repertory Grid, Folie 6)">
+      <path d="M954 962A350 350 0 0 1 604 612L844 612A110 110 0 0 0 954 722Z"/>
+    </a>
+    <a href="#folie-3" class="rad-kern anim-rad" data-feld="kern" style="--i:1" aria-label="Markenkompetenz – Wer bin ich? (Desk Research, Folie 3)">
+      <circle cx="960" cy="606" r="96"/>
+    </a>
+
+    <!-- Pfeile: Methode → Feld (werden nacheinander gezeichnet) -->
+    <path class="hub-pfeil hub-pfeil--kern anim-zeichnen" style="--i:6" pathLength="1" d="M960 280V496M949 485 960 496 971 485"/>
+    <path class="hub-pfeil hub-pfeil--hart anim-zeichnen" style="--i:7" pathLength="1" d="M534 446H630M619 435 630 446 619 457"/>
+    <path class="hub-pfeil hub-pfeil--hart anim-zeichnen" style="--i:8" pathLength="1" d="M534 766H630M619 755 630 766 619 777"/>
+    <path class="hub-pfeil hub-pfeil--weich anim-zeichnen" style="--i:9" pathLength="1" d="M1386 446H1290M1301 435 1290 446 1301 457"/>
+    <path class="hub-pfeil hub-pfeil--weich anim-zeichnen" style="--i:10" pathLength="1" d="M1386 766H1290M1301 755 1290 766 1301 777"/>
+    <!-- Verkettung der Methoden -->
+    <path class="hub-pfeil anim-zeichnen" style="--i:11" pathLength="1" d="M170 678V536M159 547 170 536 181 547"/>
+    <path class="hub-pfeil anim-zeichnen" style="--i:12" pathLength="1" d="M1750 536V678M1739 667 1750 678 1761 667"/>
+    <text class="hub-notiz anim-pop" style="--i:6" x="196" y="615">Attribute als Startpunkte</text>
+    <text class="hub-notiz anim-pop" style="--i:7" x="1724" y="615" text-anchor="end">Tonalität als Prüfmaßstab</text>
+  </svg>
+
+  <!-- Beschriftungen der Felder (liegen über der Grafik, Klicks gehen durch) -->
+  <div class="feld-text feld-text--hart anim-pop-mitte" style="left:800px; top:450px; --i:2"><strong>Markennutzen</strong>Was biete ich an?</div>
+  <div class="feld-text feld-text--weich anim-pop-mitte" style="left:1120px; top:450px; --i:3"><strong>Markentonalität</strong>Wie bin ich?</div>
+  <div class="feld-text feld-text--weich anim-pop-mitte" style="left:1120px; top:762px; --i:4"><strong>Markenbild</strong>Wie trete ich auf?</div>
+  <div class="feld-text feld-text--hart anim-pop-mitte" style="left:804px; top:780px; --i:5"><strong>Markenattribute</strong>Über welche Eigenschaften verfüge ich?</div>
+  <div class="feld-text feld-text--kern anim-pop-mitte" style="left:960px; top:606px; --i:1"><strong>Marken-<br>kompetenz</strong>Wer bin ich?</div>
+
+  <!-- Spaltenköpfe -->
+  <p class="fakten-kopf fakten-kopf--hart anim" style="--i:1; --von-x:-40px; --von-y:0px">Hard Facts <span>· rational</span></p>
+  <p class="fakten-kopf fakten-kopf--weich anim" style="--i:1; --von-x:40px; --von-y:0px">Soft Facts <span>· emotional</span></p>
+
+  <!-- Reiter oben: Desk Research liefert das Zentrum -->
+  <a class="karte reiter reiter--oben anim" href="#folie-3" data-feld="kern" style="--i:2; --von-y:-40px">
+    <span class="icon-kachel icon-kachel--akzent"><svg class="icon"><use href="#i-lupe"/></svg></span>
+    <h3>Desk Research</h3>
+    <span class="folienverweis">Folie 3 <svg class="icon"><use href="#i-pfeil"/></svg></span>
+  </a>
+
+  <!-- Methodenkarten (klickbar → Folie der Methode) -->
+  <a class="karte methode methode--links methode--oben anim" href="#folie-7" data-feld="nutzen" style="--i:3; --von-x:-80px; --von-y:0px">
+    <span class="icon-kachel icon-kachel--hart"><svg class="icon"><use href="#i-leiter"/></svg></span>
+    <div><h3>Laddering</h3><span class="folienverweis">Folie 7 <svg class="icon"><use href="#i-pfeil"/></svg></span></div>
+  </a>
+  <a class="karte methode methode--links methode--unten anim" href="#folie-b" data-feld="attribute" style="--i:4; --von-x:-80px; --von-y:0px">
+    <span class="icon-kachel icon-kachel--hart"><svg class="icon"><use href="#i-raster"/></svg></span>
+    <div><h3>Repertory Grid</h3><span class="folienverweis">Folie 6 <svg class="icon"><use href="#i-pfeil"/></svg></span></div>
+  </a>
+  <a class="karte methode methode--rechts methode--oben anim" href="#folie-d" data-feld="tonalitaet" style="--i:5; --von-x:80px; --von-y:0px">
+    <span class="icon-kachel icon-kachel--weich"><svg class="icon"><use href="#i-pfote"/></svg></span>
+    <div><h3>Analogien</h3><span class="folienverweis">Folie 8 <svg class="icon"><use href="#i-pfeil"/></svg></span></div>
+  </a>
+  <a class="karte methode methode--rechts methode--unten anim" href="#folie-9" data-feld="bild" style="--i:6; --von-x:80px; --von-y:0px">
+    <span class="icon-kachel icon-kachel--weich"><svg class="icon"><use href="#i-handy"/></svg></span>
+    <div><h3>Kommunikations&shy;analyse</h3><span class="folienverweis">Folie 9 <svg class="icon"><use href="#i-pfeil"/></svg></span></div>
+  </a>
+
+  <!-- Reiter unten: Brand Persona + Limbic Map = Rahmen für alle Felder -->
+  <a class="karte karte--zwei reiter reiter--unten anim" href="#folie-4" style="--i:7; --von-y:40px">
+    <span class="icon-kachel icon-kachel--akzent"><svg class="icon"><use href="#i-person"/></svg></span>
+    <span class="reiter-text"><h3>Brand Persona + Limbic Map</h3><small>Bezugsrahmen für alle Felder</small></span>
+    <span class="folienverweis">Folien 4–5 <svg class="icon"><use href="#i-pfeil"/></svg></span>
+  </a>
+
+  <footer class="fusszeile">
+    <span>Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map)</span>
+    <span class="fusszeile-rechts"><span><span data-marke>[Marke]</span> · Fallstudie 1</span> <span class="seitenzahl">2</span></span>
+  </footer>
+</section>
+
+
+<!-- =====================================================================
+     d) LIVE-UMFRAGE – QR-Code + Ergebnisbalken (Beispieldaten)
+     ===================================================================== -->
+<p class="muster-label">d) Live-Umfrage <span>– „Wenn [Marke] ein Tier wäre“ mit echtem QR-Code (Beispieldaten)</span></p>
+<section class="folie folie-umfrage" id="folie-d" data-modus="hell" aria-label="Live-Umfrage">
+  <header class="folie-kopf">
+    <div>
+      <p class="kicker">
+        <a class="mini-rad-link" href="#folie-c" title="Zurück zum Steuerrad">
+          <svg class="mini-rad" viewBox="0 0 44 44" aria-label="Feld im Steuerrad: Markentonalität">
+            <path class="ist-aktiv" d="M22 22 22 1A21 21 0 0 1 43 22Z"/><path d="M22 22 43 22A21 21 0 0 1 22 43Z"/>
+            <path d="M22 22 22 43A21 21 0 0 1 1 22Z"/><path d="M22 22 1 22A21 21 0 0 1 22 1Z"/>
+            <circle cx="22" cy="22" r="7.5"/>
+          </svg>
+        </a>
+        Live-Umfrage · Analogien
+      </p>
+      <h2 class="titel">Wenn <span data-marke>[Marke]</span> ein Tier wäre – welches?</h2>
+    </div>
+    <span class="badge badge--beispiel"><svg class="icon"><use href="#i-kolben"/></svg>Beispieldaten</span>
+  </header>
+
+  <div class="umfrage-raster">
+    <div class="karte karte--akzent qr-karte anim" style="--i:0">
+      <h2>Jetzt abstimmen</h2>
+      <!-- QR-Code wird von muster.js erzeugt (Adresse im Attribut data-qr ändern) -->
+      <div class="qr-platte" data-qr="https://beispiel.de/umfrage" role="img"
+           aria-label="QR-Code zur Umfrage: beispiel.de/umfrage"></div>
+      <span class="kurz-url">beispiel.de/umfrage</span>
+      <span class="live"><span class="live-punkt"></span>live · anonym</span>
+    </div>
+
+    <div class="karte ergebnis-karte anim" style="--i:1">
+      <span class="karte-label">Ergebnis im Raum</span>
+      <!-- --skala = rechtes Ende der Balkenspur in Prozent (hier 45 %) -->
+      <ul class="balken-liste" style="--skala:45">
+        <li class="balken-zeile">
+          <span class="balken-name">Löwe</span>
+          <span class="balken-spur"><span class="balken-fuellung anim-wachsen" style="--wert:34; --i:0"></span></span>
+          <span class="balken-wert" data-zaehlen="34" data-einheit=" %">34 %</span>
+        </li>
+        <li class="balken-zeile ist-unsere">
+          <span class="balken-name">Fuchs</span>
+          <span class="balken-spur">
+            <span class="balken-fuellung anim-wachsen" style="--wert:27; --i:1"></span>
+            <span class="badge badge--akzent unsere-markierung anim-pop" style="--wert:27; --i:9"><svg class="icon"><use href="#i-funke"/></svg>Unsere Analyse</span>
+          </span>
+          <span class="balken-wert" data-zaehlen="27" data-einheit=" %">27 %</span>
+        </li>
+        <li class="balken-zeile">
+          <span class="balken-name">Hund</span>
+          <span class="balken-spur"><span class="balken-fuellung anim-wachsen" style="--wert:19; --i:2"></span></span>
+          <span class="balken-wert" data-zaehlen="19" data-einheit=" %">19 %</span>
+        </li>
+        <li class="balken-zeile">
+          <span class="balken-name">Eule</span>
+          <span class="balken-spur"><span class="balken-fuellung anim-wachsen" style="--wert:12; --i:3"></span></span>
+          <span class="balken-wert" data-zaehlen="12" data-einheit=" %">12 %</span>
+        </li>
+        <li class="balken-zeile">
+          <span class="balken-name">Pferd</span>
+          <span class="balken-spur"><span class="balken-fuellung anim-wachsen" style="--wert:8; --i:4"></span></span>
+          <span class="balken-wert" data-zaehlen="8" data-einheit=" %">8 %</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="karte karte--weich zahl-karte zahl1 anim" style="--i:2">
+      <span class="kennzahl"><span data-zaehlen="27">27</span><span class="einheit">%</span></span>
+      <p>sehen <span data-marke>[Marke]</span> wie wir: als Fuchs</p>
+    </div>
+    <div class="karte karte--hart zahl-karte zahl2 anim" style="--i:3">
+      <span class="kennzahl" data-zaehlen="38">38</span>
+      <p>Stimmen bis jetzt</p>
+    </div>
+  </div>
+
+  <footer class="fusszeile">
+    <span>Quelle: Beispieldaten · Live-Umfrage im Hörsaal (anonym) als Ergänzung zur Analogiemethode</span>
+    <span class="fusszeile-rechts"><span><span data-marke>[Marke]</span> · Fallstudie 1</span> <span class="seitenzahl">8</span></span>
+  </footer>
+</section>
+
+
+<!-- =====================================================================
+     e) FARBTAUSCH-TEST – dieselbe Folie c mit fremden Markenfarben.
+     Inhalt wird von muster.js aus Folie c kopiert (data-kopie-von),
+     nur die beiden Markenfarben im style-Attribut sind anders.
+     ===================================================================== -->
+<p class="muster-label">e1) Farbtausch-Test <span>– Folie c mit --marke-primaer #E30613 und --marke-sekundaer #1D1D1B</span></p>
+<section class="folie hub" id="folie-e1" data-modus="hell" data-kopie-von="folie-c"
+         style="--marke-primaer:#E30613; --marke-sekundaer:#1D1D1B" aria-label="Farbtausch-Test Rot"></section>
+
+<p class="muster-label">e2) Farbtausch-Test <span>– Folie c mit --marke-primaer #00754A und --marke-sekundaer #A39382</span></p>
+<section class="folie hub" id="folie-e2" data-modus="hell" data-kopie-von="folie-c"
+         style="--marke-primaer:#00754A; --marke-sekundaer:#A39382" aria-label="Farbtausch-Test Grün"></section>
+
+<div style="height:120px"></div>
+</main>
+
+
+<!-- ===== Steuerung der Musterseite (nicht Teil der Präsentation) ===== -->
+<div class="muster-werkzeug" role="toolbar" aria-label="Musterseite steuern">
+  <button type="button" data-modus-knopf="hell" aria-pressed="true">Hell</button>
+  <button type="button" data-modus-knopf="dunkel" aria-pressed="false">Dunkel</button>
+  <span class="trenner"></span>
+  <label>Primär <input type="color" data-farbe="--marke-primaer" value="#3A3F58"></label>
+  <label>Sekundär <input type="color" data-farbe="--marke-sekundaer" value="#A8957C"></label>
+  <button type="button" data-farben-zuruecksetzen>Zurücksetzen</button>
+  <span class="trenner"></span>
+  <button type="button" data-animation-neu>Animationen neu</button>
+</div>
+
+<script src="marke.js"></script>
+<script src="bibliothek/qrcode-generator.js"></script>
+<script src="muster.js"></script>
+</body>
+</html>

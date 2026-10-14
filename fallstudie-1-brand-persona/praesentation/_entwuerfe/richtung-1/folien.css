@@ -1,0 +1,895 @@
+/* =============================================================================
+   folien.css – Bausteine der Richtung 1 „Editorial“
+   -----------------------------------------------------------------------------
+   Nutzt ausschließlich die Variablen aus tokens.css. Wer Farben, Schriften
+   oder Abstände ändern will, ändert sie dort – nicht hier.
+
+   Aufbau:
+     1. Folie (Bühne 1920 × 1080) und Satzspiegel
+     2. Typografie: Rubrik, Titel, Text, Quelle
+     3. Kopf- und Fußzeile, Mini-Steuerrad
+     4. Kennzeichnungen (Beispieldaten, Platzhalter)
+     5. Folie „Einstieg / Rätsel“
+     6. Folie „Repertory Grid“
+     7. Folie „Markensteuerrad“ (Hub, klickbar)
+     8. Folie „Live-Umfrage“
+     9. Bewegung (Animationen)
+   ============================================================================= */
+
+
+/* ---------------------------------------------------------------------------
+   1. FOLIE UND SATZSPIEGEL
+   --------------------------------------------------------------------------- */
+.folie {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: var(--rand-oben) var(--rand-x) var(--rand-unten);
+  display: grid;
+  grid-template-rows: auto 1fr auto;   /* Kopfzeile | Inhalt | Fußzeile */
+  background: var(--f-hintergrund);
+  color: var(--f-text);
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-text);
+  line-height: var(--zeilenhoehe-text);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.folie *,
+.folie *::before,
+.folie *::after { box-sizing: border-box; }
+/* :where() = Grundwerte ohne Gewicht, damit Bausteine sie überschreiben können */
+:where(.folie) :where(h1, h2, h3, p, ol, ul, figure, dl, dd) { margin: 0; }
+:where(.folie) :where(ol, ul) { padding: 0; list-style: none; }
+.folie a { color: inherit; text-decoration: none; }
+
+/* 12-Spalten-Raster für den Inhaltsbereich */
+.raster {
+  display: grid;
+  grid-template-columns: repeat(var(--spalten), minmax(0, 1fr));
+  column-gap: var(--rinne);
+}
+
+
+/* ---------------------------------------------------------------------------
+   2. TYPOGRAFIE
+   --------------------------------------------------------------------------- */
+
+/* Rubrik: kleine Versalien-Zeile (Kopfzeile, Kicker über dem Titel) */
+.rubrik {
+  font-size: var(--groesse-rubrik);
+  font-weight: 600;
+  letter-spacing: var(--laufweite-rubrik);
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--f-text-2);
+}
+.rubrik--akzent { color: var(--f-akzent); }
+
+/* Folientitel = Kernaussage. Serif, groß, leicht enger gesetzt. */
+.titel {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel);
+  font-weight: 380;
+  line-height: var(--zeilenhoehe-titel);
+  letter-spacing: var(--laufweite-titel);
+  text-wrap: balance;
+  color: var(--f-text);
+}
+/* Hervorhebung im Titel (z. B. der Markenname): kursiv in Akzentfarbe */
+.titel em,
+.titel .hervor {
+  font-style: italic;
+  font-weight: 360;
+  color: var(--f-akzent);
+}
+
+.lead {
+  font-size: var(--groesse-text);
+  color: var(--f-text-2);
+  max-width: 34ch;
+}
+
+/* Quellenzeile unten links */
+.quelle {
+  font-size: var(--groesse-klein);
+  line-height: 1.35;
+  color: var(--f-text-2);
+}
+
+/* Tabellenziffern: Zahlen stehen sauber untereinander */
+.ziffern { font-variant-numeric: tabular-nums lining-nums; }
+
+
+/* ---------------------------------------------------------------------------
+   3. KOPFZEILE, FUSSZEILE, MINI-STEUERRAD
+   --------------------------------------------------------------------------- */
+.kopf {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--abstand-5);
+  padding-bottom: var(--abstand-3);
+}
+/* Kopflinie: kräftige Haarlinie über die volle Satzbreite */
+.kopf::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: var(--linie-stark);
+  background: var(--f-linie-stark);
+  transform-origin: left center;
+}
+.kopf__links,
+.kopf__rechts {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-4);
+}
+.kopf__trenner {
+  width: 1px;
+  height: 22px;
+  background: var(--f-linie);
+}
+.kopf__marke {
+  font-family: var(--schrift-display);
+  font-style: italic;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--f-text);
+}
+.kopf__seite {
+  font-family: var(--schrift-display);
+  font-size: 32px;
+  font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-text);
+}
+
+/* Mini-Steuerrad oben rechts: zeigt, um welches Feld es gerade geht.
+   Klick führt zurück zur Übersicht (Steuerrad-Folie). */
+.mini-rad {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: transform var(--dauer-kurz) var(--kurve);
+}
+.mini-rad:hover { transform: rotate(-12deg) scale(1.06); }
+.mini-rad svg { display: block; width: 100%; height: 100%; }
+.mini-rad .feld { fill: var(--f-flaeche-2); }
+.mini-rad .feld--aktiv { fill: var(--f-akzent); }
+.mini-rad .kern { fill: var(--f-text-2); }
+
+.fuss {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--abstand-6);
+}
+.fuss__hinweis {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--abstand-2);
+  font-size: var(--groesse-klein);
+  color: var(--f-text-2);
+}
+.fuss__hinweis svg { width: 22px; height: 22px; flex: none; }
+
+
+/* ---------------------------------------------------------------------------
+   4. KENNZEICHNUNGEN
+   --------------------------------------------------------------------------- */
+
+/* „Beispieldaten“-Stempel: muss auf jeder Folie mit erfundenen Werten stehen */
+.badge-beispiel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px 7px 12px;
+  border: var(--linie-fein) solid currentColor;
+  border-radius: var(--radius-s);
+  color: var(--f-warnung);
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+.badge-beispiel::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+/* ---------------------------------------------------------------------------
+   5. FOLIE „EINSTIEG / RÄTSEL“
+   --------------------------------------------------------------------------- */
+.einstieg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+}
+.einstieg__oben {
+  align-self: start;
+  margin-top: var(--abstand-6);
+  display: grid;
+  grid-template-columns: repeat(var(--spalten), minmax(0, 1fr));
+  column-gap: var(--rinne);
+  align-items: stretch;
+}
+.raetsel-text {
+  grid-column: 1 / span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4px;
+}
+.raetsel-frage {
+  margin-top: var(--abstand-4);
+  font-family: var(--schrift-display);
+  font-size: 88px;
+  font-weight: 340;
+  line-height: 1.0;
+  letter-spacing: -0.022em;
+}
+.raetsel-frage em {
+  font-style: italic;
+  color: var(--f-akzent);
+}
+.raetsel-tipp {
+  font-size: var(--groesse-text);
+  color: var(--f-text-2);
+  max-width: 15em;
+}
+.raetsel-schritte {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-3);
+  margin-top: var(--abstand-4);
+}
+.raetsel-schritte__balken {
+  display: flex;
+  gap: 6px;
+}
+.raetsel-schritte__balken span {
+  width: 40px;
+  height: 4px;
+  background: var(--f-linie);
+  transition: background var(--dauer-mittel) var(--kurve);
+}
+.raetsel-schritte__balken span.ist-aktiv { background: var(--f-akzent); }
+
+/* Das unscharfe Bild. Später: <img> in .raetsel-motiv einsetzen – die
+   Unschärfe (--unschaerfe) wirkt dann auf das echte Foto. */
+.raetsel-bild {
+  --unschaerfe: 46px;
+  grid-column: 6 / span 7;
+  position: relative;
+  height: 470px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--f-flaeche-2);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+.raetsel-motiv {
+  position: absolute;
+  inset: -12%;
+  filter: blur(var(--unschaerfe)) saturate(1.1);
+  scale: var(--zoom, 3);           /* Vergrößerung, wird pro Klick kleiner (folien.js) */
+  transform-origin: 56% 44%;       /* Bildpunkt, auf den gezoomt wird */
+  transition: filter var(--dauer-lang) var(--kurve), scale var(--dauer-lang) var(--kurve);
+}
+.raetsel-motiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Abstrakte Formen als Platzhalter für den vergrößerten Bildausschnitt */
+.raetsel-form { position: absolute; border-radius: 50%; }
+.raetsel-form--a { width: 440px; height: 440px; left: 25%; top: -17%; background: var(--marke-primaer); }
+.raetsel-form--b { width: 150%; height: 96px; left: -25%; top: 55%; border-radius: 0; transform: rotate(-12deg); background: var(--marke-sekundaer); }
+.raetsel-form--c { width: 150px; height: 150px; left: 58%; top: 21%; background: color-mix(in oklab, var(--marke-primaer) 18%, #FFFFFF); }
+.raetsel-form--d { width: 300px; height: 300px; left: 55%; top: 46%; border: 40px solid var(--f-text); background: transparent; }
+/* Körnung wie bei einem stark vergrößerten Foto */
+.raetsel-korn {
+  position: absolute;
+  inset: 0;
+  opacity: 0.32;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='k'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23k)'/></svg>");
+  pointer-events: none;
+}
+.raetsel-etikett {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  background: var(--f-hintergrund);
+  color: var(--f-text-2);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.raetsel-zoom {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 16px;
+  background: var(--f-hintergrund);
+  color: var(--f-text);
+  font-family: var(--schrift-display);
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1;
+}
+/* Passermarken an den Bildecken (Druckerei-Detail, rein dekorativ) */
+.passer {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: var(--f-text-2);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+.passer--lo { left: -14px;  top: -14px;    border-left-width: 1.5px;  border-top-width: 1.5px; }
+.passer--ro { right: -14px; top: -14px;    border-right-width: 1.5px; border-top-width: 1.5px; }
+.passer--lu { left: -14px;  bottom: -14px; border-left-width: 1.5px;  border-bottom-width: 1.5px; }
+.passer--ru { right: -14px; bottom: -14px; border-right-width: 1.5px; border-bottom-width: 1.5px; }
+.raetsel-bild-rahmen {
+  grid-column: 6 / span 7;
+  position: relative;
+}
+.raetsel-bild-rahmen .raetsel-bild { width: 100%; }
+
+.einstieg__unten {
+  padding-bottom: var(--abstand-3);
+}
+.einstieg__linie {
+  height: var(--linie-fein);
+  background: var(--f-linie);
+  transform-origin: left center;
+  margin-bottom: var(--abstand-6);
+}
+.titel--gross {
+  font-size: var(--groesse-titel-gross);
+  font-weight: 360;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.unterzeile {                  /* Unterzeile als Angabenraster: Marke | Gruppe | Datum */
+  margin-top: var(--abstand-6);
+  display: grid;
+  grid-template-columns: repeat(var(--spalten), minmax(0, 1fr));
+  column-gap: var(--rinne);
+  align-items: start;
+}
+.unterzeile__feld {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: var(--abstand-3);
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-text);
+  line-height: 1.2;
+  color: var(--f-text);
+}
+.unterzeile__feld--marke { grid-column: 1 / span 3; }
+.unterzeile__feld--gruppe { grid-column: 4 / span 6; }
+.unterzeile__feld--datum { grid-column: 10 / span 3; }
+.unterzeile__marke {
+  font-family: var(--schrift-display);
+  font-style: italic;
+  font-size: var(--groesse-untertitel);
+  line-height: 1;
+  color: var(--f-akzent);
+}
+
+/* ---------------------------------------------------------------------------
+   6. FOLIE „REPERTORY GRID“
+   --------------------------------------------------------------------------- */
+.folie__inhalt {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.titelblock {
+  margin-top: var(--abstand-6);
+}
+.titelblock__zeile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.titelblock .titel { margin-top: var(--abstand-3); max-width: 1300px; }
+
+.rg {
+  flex: 1;
+  margin-top: var(--abstand-6);
+  display: grid;
+  grid-template-columns: repeat(var(--spalten), minmax(0, 1fr));
+  column-gap: var(--rinne);
+  align-items: start;
+}
+.rg__grafik { grid-column: 1 / span 7; }
+.rg__legende {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-5);
+  font-size: 28px;
+  color: var(--f-text-2);
+  margin-bottom: var(--abstand-3);
+}
+.rg__legende li {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.rg__legende svg { width: 44px; height: 18px; flex: none; overflow: visible; }
+.rg__legende .badge-beispiel { margin-left: auto; }
+.rg__svg {
+  display: block;
+  width: 960px;                  /* feste Größe: Schrift im SVG bleibt genau 28 px */
+  height: auto;
+  overflow: visible;
+}
+/* Bausteine im Polaritätenprofil */
+.pp-raster { stroke: var(--f-linie); stroke-width: 1.5; }
+.pp-mitte { stroke: var(--f-text-2); stroke-width: 1.5; stroke-dasharray: 2 6; stroke-linecap: round; }
+.pp-band { fill: var(--f-akzent-flaeche); }
+.pp-ziffer { fill: var(--f-text-2); font-size: 22px; font-family: var(--schrift-text); text-anchor: middle; font-variant-numeric: tabular-nums; }
+.pp-pol { fill: var(--f-text-2); font-size: 28px; font-family: var(--schrift-text); dominant-baseline: central; }
+.pp-pol--links { text-anchor: end; }
+.pp-pol--stark { fill: var(--f-text); font-weight: 600; }
+.pp-linie { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.pp-linie--marke { stroke: var(--f-akzent); stroke-width: 4.5; }
+.pp-linie--wettbewerb { stroke: var(--f-hart); stroke-width: 3; }
+.pp-linie--ideal { stroke: var(--f-text-2); stroke-width: 3; stroke-dasharray: 0.1 9; }
+.pp-punkt--marke { fill: var(--f-akzent); stroke: var(--f-hintergrund); stroke-width: 3; }
+.pp-punkt--wettbewerb { fill: var(--f-hintergrund); stroke: var(--f-hart); stroke-width: 3; }
+
+.rg__attribute { grid-column: 9 / span 4; }
+.rg__erklaerung {
+  margin-top: var(--abstand-2);
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--f-text-2);
+}
+.attribut-liste { margin-top: var(--abstand-5); }
+.attribut {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: baseline;
+  padding: 22px 0 24px;
+}
+.attribut::before {            /* Haarlinie über jedem Attribut */
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: var(--linie-fein);
+  background: var(--f-linie);
+  transform-origin: left center;
+}
+.attribut:first-child::before { background: var(--f-linie-stark); height: var(--linie-stark); }
+.attribut__nr {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--f-akzent);
+  font-variant-numeric: tabular-nums;
+}
+.attribut__name {
+  font-family: var(--schrift-display);
+  font-size: 54px;
+  font-weight: 380;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+.attribut__wert {
+  font-family: var(--schrift-display);
+  font-size: 54px;
+  font-weight: 340;
+  line-height: 1;
+  color: var(--f-akzent);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.rg__fazit {
+  padding-top: 22px;
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-text);
+  color: var(--f-text-2);
+}
+
+
+/* ---------------------------------------------------------------------------
+   7. FOLIE „MARKENSTEUERRAD“ (Hub mit klickbarer Navigation)
+   Das Rad ist ein SVG in Folienkoordinaten (1920 × 1080), die Methoden sind
+   HTML-Links, die genau auf den Verbindungslinien sitzen.
+   --------------------------------------------------------------------------- */
+.hub__titel {
+  margin-top: 40px;
+  font-size: 64px;
+}
+.hub__svg {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: visible;
+  pointer-events: none;            /* nur die Felder selbst sind klickbar */
+}
+.hub__svg a { pointer-events: auto; cursor: pointer; }
+
+.rad-feld { transition: fill var(--dauer-kurz) var(--kurve); }
+.rad-feld--hart { fill: var(--f-hart-flaeche); }
+.rad-feld--weich { fill: var(--f-weich-flaeche); }
+.rad-kern { fill: var(--f-kern); }
+.rad-ring { fill: none; stroke: var(--f-text-2); stroke-width: 1.5; }
+.rad-achse { stroke: var(--f-linie); stroke-width: 1.5; }
+
+.rad-label {
+  font-family: var(--schrift-display);
+  font-size: 38px;
+  font-weight: 420;
+  letter-spacing: -0.01em;
+  text-anchor: middle;
+}
+.rad-label--hart { fill: var(--f-hart); }
+.rad-label--weich { fill: var(--f-weich); }
+.rad-frage {
+  font-family: var(--schrift-text);
+  font-size: 28px;
+  text-anchor: middle;
+  fill: var(--f-text-2);
+}
+.rad-kern-label {
+  font-family: var(--schrift-display);
+  font-size: 34px;
+  font-weight: 450;
+  text-anchor: middle;
+  fill: var(--f-auf-kern);
+}
+.rad-kern-frage {
+  font-family: var(--schrift-text);
+  font-size: 28px;
+  text-anchor: middle;
+  fill: var(--f-auf-kern);
+  opacity: 0.86;
+}
+/* Beschriftungen auf dem Ring (hard / soft facts, Persona-Rahmen) */
+.rad-ringtext {
+  font-family: var(--schrift-text);
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  fill: var(--f-text-2);
+}
+.rad-ringtext--hart { fill: var(--f-hart); }
+.rad-ringtext--weich { fill: var(--f-weich); }
+.rad-ringtext--rahmen { fill: var(--f-text); }
+
+/* Verbindungslinien Methode → Feld */
+.verbinder { fill: none; stroke: var(--f-text); stroke-width: 1.5; transition: stroke var(--dauer-kurz) var(--kurve), stroke-width var(--dauer-kurz) var(--kurve); }
+.verbinder-punkt { fill: var(--f-text); transition: fill var(--dauer-kurz) var(--kurve); }
+
+/* Hover / Fokus: Feld färbt sich mit dem Akzent ein */
+.rad-link:hover .rad-feld,
+.rad-link:focus-visible .rad-feld { fill: color-mix(in oklab, var(--f-akzent) 24%, var(--f-hintergrund)); }
+.rad-link:focus-visible { outline: none; }
+
+/* Methoden-Einträge links und rechts */
+.methode {
+  --kopf-hoehe: 52px;            /* Höhe der Namenszeile über der Linie */
+  position: absolute;
+  width: 460px;
+  top: calc(var(--y) - var(--kopf-hoehe) - 14px);   /* --y = Höhe der Verbindungslinie */
+  display: block;
+  color: var(--f-text);
+}
+.methode--zweizeilig { --kopf-hoehe: 100px; }
+.methode--links { left: var(--rand-x); }
+.methode--rechts { right: var(--rand-x); text-align: right; }
+.methode__kopf {
+  display: flex;
+  align-items: last baseline;
+  gap: 18px;
+  height: var(--kopf-hoehe);
+}
+.methode--rechts .methode__kopf { flex-direction: row-reverse; }
+.methode__name {
+  font-family: var(--schrift-display);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: -0.012em;
+  transition: color var(--dauer-kurz) var(--kurve);
+}
+.methode__folie {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--f-akzent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  transition: transform var(--dauer-kurz) var(--kurve);
+}
+.methode__text {
+  display: block;
+  margin-top: 28px;                /* Linie liegt genau in dieser Lücke */
+  font-size: 28px;
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+.methode:hover .methode__name,
+.methode:focus-visible .methode__name { color: var(--f-akzent); }
+.methode--links:hover .methode__folie { transform: translateX(6px); }
+.methode--rechts:hover .methode__folie { transform: translateX(-6px); }
+.methode:focus-visible { outline: 2px solid var(--f-akzent); outline-offset: 10px; }
+
+/* Linie der Methode, über der die Maus steht, wird hervorgehoben (:has) */
+.folie:has(.methode[data-feld="nutzen"]:hover) .verbinder[data-feld="nutzen"],
+.folie:has(.methode[data-feld="attribute"]:hover) .verbinder[data-feld="attribute"],
+.folie:has(.methode[data-feld="kompetenz"]:hover) .verbinder[data-feld="kompetenz"],
+.folie:has(.methode[data-feld="tonalitaet"]:hover) .verbinder[data-feld="tonalitaet"],
+.folie:has(.methode[data-feld="bild"]:hover) .verbinder[data-feld="bild"],
+.folie:has(.methode[data-feld="rahmen"]:hover) .verbinder[data-feld="rahmen"] { stroke: var(--f-akzent); stroke-width: 3; }
+
+
+/* ---------------------------------------------------------------------------
+   8. FOLIE „LIVE-UMFRAGE“
+   --------------------------------------------------------------------------- */
+.umfrage {
+  display: grid;
+  grid-template-columns: repeat(var(--spalten), minmax(0, 1fr));
+  column-gap: var(--rinne);
+  min-height: 0;
+  padding-bottom: var(--abstand-6);   /* QR-Karte und letzter Balken enden auf einer Linie */
+}
+.umfrage__links {
+  grid-column: 1 / span 6;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--abstand-7);
+}
+.umfrage__titel { margin-top: var(--abstand-3); font-size: 76px; }
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.live__punkt {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--f-akzent);
+}
+.live__punkt::after {             /* ruhiges Pulsieren = „läuft gerade“ */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--f-akzent);
+  animation: live-puls 2.4s var(--kurve) infinite;
+}
+
+.qr-block {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--abstand-5);
+}
+.qr-karte {
+  flex: none;
+  width: 360px;
+  height: 360px;
+  padding: 0;
+  background: #FFFFFF;            /* QR-Codes immer dunkel auf hell – sonst scannen manche Handys nicht */
+  border-radius: var(--radius-m);
+  box-shadow: 0 0 0 var(--linie-fein) var(--f-linie);
+}
+.qr-karte svg { display: block; width: 100%; height: 100%; }
+.qr-info { padding-bottom: 6px; }
+.qr-info__aufruf {
+  font-family: var(--schrift-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.qr-info__url {
+  margin-top: var(--abstand-3);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--f-akzent);
+}
+.qr-info__hinweis {
+  margin-top: var(--abstand-1);
+  font-size: 28px;
+  color: var(--f-text-2);
+}
+
+.umfrage__rechts {
+  grid-column: 7 / span 6;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--abstand-7);
+}
+.ergebnis-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--abstand-3);
+  border-bottom: var(--linie-stark) solid var(--f-linie-stark);
+}
+.ergebnis-kopf__zahl {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--abstand-4);
+  font-size: 28px;
+  color: var(--f-text-2);
+}
+.ergebnis-liste {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--abstand-6);
+}
+.antwort {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  row-gap: 14px;
+}
+.antwort__name {
+  font-family: var(--schrift-display);
+  font-size: 46px;
+  font-weight: 380;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: var(--abstand-4);
+}
+.antwort__wert {
+  font-family: var(--schrift-display);
+  font-size: 46px;
+  font-weight: 340;
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.antwort__spur {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 14px;
+  background: var(--f-linie);
+  background: linear-gradient(var(--f-linie), var(--f-linie)) left center / 100% 2px no-repeat;
+}
+.antwort__balken {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: var(--anteil);           /* Breite = Anteil in Prozent vom Höchstwert */
+  background: color-mix(in oklab, var(--f-text-2) 62%, var(--f-hintergrund));
+  transform-origin: left center;
+}
+.antwort--analyse .antwort__name { font-style: italic; color: var(--f-akzent); }
+.antwort--analyse .antwort__wert { color: var(--f-akzent); }
+.antwort--analyse .antwort__balken { background: var(--f-akzent); }
+.analyse-marke {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  background: var(--f-akzent);
+  color: var(--f-auf-akzent);
+  font-family: var(--schrift-text);
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  border-radius: var(--radius-s);
+  transform-origin: left center;
+}
+
+
+/* ---------------------------------------------------------------------------
+   9. BEWEGUNG
+   Grundidee: ruhig und präzise. Kurze Wege (max. 24 px), weiches Ausrollen
+   (--kurve), Linien zeichnen sich von ihrem Ursprung aus, Elemente kommen
+   gestaffelt (--staffel). Nur Punkte und Marker federn ganz leicht nach.
+
+   Verwendung im HTML:  data-anim="einblenden" style="--i: 2"
+     --i      = Position in der Staffel (0, 1, 2 …)
+     --start  = zusätzliche Verzögerung (z. B. style="--start: 400ms")
+   Die Animation startet, sobald die Folie sichtbar ist (Klasse .ist-sichtbar,
+   gesetzt von folien.js). Ohne JavaScript ist alles sofort sichtbar.
+   --------------------------------------------------------------------------- */
+.js [data-anim] {
+  animation-duration: var(--dauer-mittel);
+  animation-timing-function: var(--kurve);
+  animation-fill-mode: both;
+  animation-delay: calc(var(--start, 0ms) + var(--i, 0) * var(--staffel));
+  animation-play-state: paused;
+}
+.js .ist-sichtbar [data-anim] { animation-play-state: running; }
+
+.js [data-anim="einblenden"] { animation-name: einblenden; }
+.js [data-anim="aufblenden"] { animation-name: aufblenden; }
+.js [data-anim="linie"]      { animation-name: linie-x; animation-duration: var(--dauer-lang); }
+.js [data-anim="linie-rechts"] { animation-name: linie-x; animation-duration: var(--dauer-lang); transform-origin: right center; }
+.js [data-anim="zeichnen"]   { animation-name: zeichnen; animation-duration: var(--dauer-lang); stroke-dasharray: 1 1; }
+.js [data-anim="punkt"]      { animation-name: punkt; animation-timing-function: var(--kurve-feder); transform-box: fill-box; transform-origin: center; }
+.js [data-anim="feld"]       { animation-name: feld; transform-box: view-box; transform-origin: 960px 632px; }
+.js [data-anim="balken"]     { animation-name: linie-x; animation-duration: var(--dauer-lang); }
+.js [data-anim="marker"]     { animation-name: marker; animation-timing-function: var(--kurve-feder); }
+.js [data-anim="heranzoomen"] { animation-name: heranzoomen; animation-duration: 2400ms; }
+.js [data-anim="wischen"]    { animation-name: wischen; animation-duration: var(--dauer-lang); }
+
+/* Kopflinie zeichnet sich von links nach rechts */
+.js .kopf::after {
+  animation: linie-x var(--dauer-lang) var(--kurve) both;
+  animation-play-state: paused;
+}
+.js .ist-sichtbar .kopf::after { animation-play-state: running; }
+
+/* Titel: Wörter gleiten einzeln aus einer unsichtbaren Maske nach oben.
+   folien.js zerlegt den Titel in <span class="wort"><span>…</span></span>. */
+.wort {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 0.04em 0.14em;
+  margin: 0 -0.04em -0.14em;
+}
+.wort > span { display: inline-block; }
+.js .wort > span {
+  animation: wort-hoch var(--dauer-mittel) var(--kurve) both;
+  animation-delay: calc(var(--start, 120ms) + var(--w, 0) * 45ms);
+  animation-play-state: paused;
+}
+.js .ist-sichtbar .wort > span { animation-play-state: running; }
+
+@keyframes einblenden { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes aufblenden { from { opacity: 0; } to { opacity: 1; } }
+@keyframes linie-x    { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes zeichnen   { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes punkt      { from { opacity: 0; transform: scale(0.2); } to { opacity: 1; transform: none; } }
+@keyframes feld       { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
+@keyframes marker     { from { opacity: 0; transform: translateX(-10px) scale(0.9); } to { opacity: 1; transform: none; } }
+@keyframes wort-hoch  { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes wischen     { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes heranzoomen { from { opacity: 0; transform: scale(1.12); } to { opacity: 1; transform: none; } }
+@keyframes live-puls  { 0% { transform: scale(1); opacity: 0.8; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
+
+/* Wer in den Systemeinstellungen „Bewegung reduzieren“ gewählt hat,
+   bekommt alles sofort ohne Animation zu sehen. */
+@media (prefers-reduced-motion: reduce) {
+  .js [data-anim],
+  .js .wort > span,
+  .js .kopf::after,
+  .live__punkt::after { animation: none !important; }
+}

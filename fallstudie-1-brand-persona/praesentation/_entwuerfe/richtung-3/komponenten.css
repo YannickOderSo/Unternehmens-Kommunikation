@@ -1,0 +1,736 @@
+/* =====================================================================
+   komponenten.css – Bausteine der Richtung 3 „Bento hell“
+   ---------------------------------------------------------------------
+   Nutzt ausschließlich die Variablen aus tokens.css.
+   Aufbau:
+     1. Bühne (Folie 1920 × 1080) und Grundtypografie
+     2. Bento-Karten, Badges, Icons, Fußzeile
+     3. Folienlayouts: Einstieg, Repertory Grid, Steuerrad-Hub, Umfrage
+     4. Bewegung (Einblenden, Zeichnen, Staffeln) + reduzierte Bewegung
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1. Bühne und Grundtypografie
+   --------------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+.folie {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  isolation: isolate;
+  /* Spalte: Kopf oben, Inhalt füllt den Rest, unten Platz für die Fußzeile.
+     So passt alles, auch wenn ein langer Markenname den Titel umbricht. */
+  display: flex;
+  flex-direction: column;
+  padding: 48px var(--abstand-8) 92px;
+  background: var(--f-hintergrund);
+  color: var(--f-text);
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-text);
+  font-weight: 500;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Kopfbereich: Kicker (Rubrik) + Titel als Kernaussage + optional Badge rechts */
+.folie-kopf {
+  position: relative;
+  flex: none;
+  margin-bottom: 28px;
+}
+/* Badge (z. B. „Beispieldaten“) oben rechts auf Höhe des Kickers */
+.folie-kopf > .badge { position: absolute; top: -4px; right: 0; }
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--abstand-3);
+  margin: 0;
+  font: 700 24px/1 var(--schrift-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--f-text-2);
+}
+.titel {
+  margin: 14px 0 0;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel);
+  font-weight: 650;
+  font-stretch: 96%;
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+.titel [data-marke],
+.akzent-text { color: var(--f-akzent-text); }
+
+
+/* ---------------------------------------------------------------------
+   2. Bento-Karten und kleine Bausteine
+   --------------------------------------------------------------------- */
+.karte {
+  position: relative;
+  border-radius: var(--radius-l);
+  padding: var(--abstand-7);
+  background: var(--f-flaeche);
+  /* feiner Rand: Schatten verschwinden auf dem Beamer oft, der Rand nicht */
+  border: 2px solid color-mix(in oklab, var(--f-linie) 75%, transparent);
+  box-shadow: var(--schatten-1);
+  transition:
+    transform var(--dauer-mittel) var(--kurve-feder),
+    box-shadow var(--dauer-mittel) var(--kurve);
+}
+.karte--weich  { background: var(--f-weich-flaeche); border-color: color-mix(in oklab, var(--f-weich) 16%, transparent); }
+.karte--hart   { background: var(--f-hart-flaeche);  border-color: color-mix(in oklab, var(--f-hart) 16%, transparent); }
+.karte--zwei   { background: var(--f-flaeche-2);     border-color: color-mix(in oklab, var(--f-linie) 90%, transparent); }
+.karte--akzent {
+  background: var(--f-akzent);
+  color: var(--f-auf-akzent);
+  border-color: transparent;
+  box-shadow: var(--schatten-2);
+}
+
+/* Klickbare Karten heben sich federnd an */
+a.karte { color: inherit; text-decoration: none; cursor: pointer; }
+a.karte:hover,
+a.karte:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: var(--schatten-2);
+}
+a:focus-visible { outline: 4px solid var(--f-akzent); outline-offset: 4px; }
+
+/* Rubrik innerhalb einer Karte */
+.karte-label {
+  display: block;
+  margin: 0 0 var(--abstand-4);
+  font: 700 22px/1 var(--schrift-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+/* Große Kennzahl im Bento-Stil */
+.kennzahl {
+  display: block;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-riesig);
+  font-weight: 700;
+  font-stretch: 86%;
+  line-height: 0.9;
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+/* Einheit (%, Punkte) kleiner neben der Zahl */
+.kennzahl .einheit { font-size: 0.5em; font-weight: 650; letter-spacing: 0; margin-left: 0.08em; }
+
+/* Pillen-Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--abstand-2);
+  padding: 10px 18px 10px 14px;
+  border-radius: 999px;
+  font: 700 var(--groesse-klein)/1 var(--schrift-text);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  background: var(--f-flaeche);
+  color: var(--f-text-2);
+}
+.badge .icon { width: 26px; height: 26px; }
+.badge--beispiel { background: var(--f-warnung-flaeche); color: var(--f-warnung); }
+.badge--akzent   { background: var(--f-akzent); color: var(--f-auf-akzent); }
+
+/* Icons: schlichte Linien-Icons aus dem Sprite in muster.html */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Icon-Kachel: farbiges, abgerundetes Quadrat mit Icon */
+.icon-kachel {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  flex: none;
+  border-radius: 22px;
+  background: var(--f-flaeche-2);
+  color: var(--f-text);
+  font-size: 38px;
+}
+.icon-kachel--hart   { background: var(--f-hart-flaeche);  color: var(--f-hart); }
+.icon-kachel--weich  { background: var(--f-weich-flaeche); color: var(--f-weich); }
+.icon-kachel--akzent { background: var(--f-akzent);        color: var(--f-auf-akzent); }
+
+/* Mini-Steuerrad im Kicker: zeigt, welches Feld die Folie füllt (roter Faden) */
+.mini-rad { width: 44px; height: 44px; flex: none; }
+.mini-rad path,
+.mini-rad circle { fill: var(--f-linie); stroke: var(--f-hintergrund); stroke-width: 2.5; }
+.mini-rad .ist-aktiv { fill: var(--f-akzent); }
+a.mini-rad-link { display: inline-flex; border-radius: 50%; }
+
+/* Fußzeile: Quelle links, Marke + Seitenzahl rechts */
+.fusszeile {
+  position: absolute;
+  left: var(--abstand-8);
+  right: var(--abstand-8);
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--abstand-6);
+  font: 500 var(--groesse-klein)/1.3 var(--schrift-text);
+  color: var(--f-text-2);
+}
+.fusszeile-rechts { display: inline-flex; align-items: center; gap: var(--abstand-4); white-space: nowrap; }
+.seitenzahl {
+  display: grid;
+  place-items: center;
+  min-width: 46px;
+  height: 46px;
+  padding: 0 var(--abstand-3);
+  border-radius: 999px;
+  background: var(--f-flaeche);
+  color: var(--f-text);
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------------------
+   3a. Folie „Einstieg“ – Rätsel + Titel
+   --------------------------------------------------------------------- */
+.folie-einstieg { padding: 48px; }
+.einstieg-raster {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.62fr 1fr 0.92fr;
+  grid-template-rows: 1fr 404px;
+  grid-template-areas:
+    "bild  bild   frage"
+    "titel gruppe datum";
+  gap: var(--abstand-5);
+}
+
+/* Rätselbild: Platzhalter, stark vergrößert und unscharf */
+.raetsel-bild {
+  grid-area: bild;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--f-flaeche-2);
+}
+.raetsel-motiv {
+  position: absolute;
+  inset: -12%;
+  filter: blur(38px) saturate(1.15);
+  transform: scale(1.18);
+  transition: filter 1.4s var(--kurve), transform 1.4s var(--kurve);
+  animation: ken-burns 14s ease-in-out infinite alternate;
+}
+/* Formen, die durch die Unschärfe wie ein Fotoausschnitt wirken */
+.raetsel-motiv span { position: absolute; display: block; border-radius: 50%; }
+.raetsel-motiv .f1 { left: 4%;  top: 10%; width: 46%; height: 82%; background: var(--marke-primaer); }
+.raetsel-motiv .f2 { left: 38%; top: -8%; width: 40%; height: 64%; background: var(--marke-sekundaer); }
+.raetsel-motiv .f3 { left: 58%; top: 38%; width: 46%; height: 70%; background: color-mix(in oklab, var(--marke-primaer) 45%, #FFFFFF); }
+.raetsel-motiv .f4 { left: 30%; top: 44%; width: 26%; height: 30%; border-radius: 30%; background: #FFFFFF; transform: rotate(-18deg); }
+.raetsel-motiv .f5 { left: 70%; top: 4%;  width: 18%; height: 26%; background: color-mix(in oklab, var(--marke-sekundaer) 50%, #000000); }
+
+.raetsel-bild.ist-aufgeloest .raetsel-motiv { filter: blur(0) saturate(1); transform: scale(1); animation: none; }
+
+/* Ebene über dem Bild: Hinweise und Schaltfläche (bleiben scharf) */
+.raetsel-ebene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px;
+}
+.raetsel-ebene-oben,
+.raetsel-ebene-unten { display: flex; justify-content: space-between; align-items: center; gap: var(--abstand-4); }
+.glas {
+  /* „Milchglas“-Pille: lesbar auf jedem Bildausschnitt */
+  display: inline-flex;
+  align-items: center;
+  gap: var(--abstand-3);
+  padding: 14px 24px 14px 18px;
+  border-radius: 999px;
+  background: color-mix(in oklab, #FFFFFF 86%, transparent);
+  color: #17181C;
+  font: 700 26px/1 var(--schrift-text);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px -10px rgb(0 0 0 / 0.35);
+}
+.glas .icon { width: 30px; height: 30px; }
+button.glas { border: 0; cursor: pointer; font: inherit; font-weight: 700; font-size: 26px; transition: transform var(--dauer-kurz) var(--kurve-feder); }
+button.glas:hover { transform: scale(1.05); }
+.aufloesen-text-aus { display: none; }
+.raetsel-bild.ist-aufgeloest .aufloesen-text-an { display: none; }
+.raetsel-bild.ist-aufgeloest .aufloesen-text-aus { display: inline; }
+
+/* Rätselfrage in der Akzentkarte */
+.raetsel-frage {
+  grid-area: frage;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.fragezeichen {
+  position: absolute;
+  right: -6px;
+  bottom: -118px;
+  font: 800 440px/1 var(--schrift-display);
+  font-stretch: 80%;
+  opacity: 0.13;
+  transform-origin: 50% 70%;
+  pointer-events: none;
+}
+.raetsel-frage h2 {
+  position: relative;
+  margin: 0;
+  font: 650 60px/1.02 var(--schrift-display);
+  font-stretch: 94%;
+  letter-spacing: -0.01em;
+}
+.raetsel-frage p { position: relative; margin: 0; display: flex; align-items: center; gap: var(--abstand-3); font-weight: 700; }
+.raetsel-frage p .icon { width: 40px; height: 40px; }
+
+/* Titelkarte */
+.titel-karte { grid-area: titel; display: flex; flex-direction: column; justify-content: space-between; }
+.titel-karte h1 {
+  margin: 0;
+  font: 650 86px/0.98 var(--schrift-display);
+  font-stretch: 94%;
+  letter-spacing: -0.015em;
+}
+.titel-karte .unterzeile { margin: 0; font-size: 32px; color: var(--f-text-2); }
+.titel-karte .unterzeile [data-marke] { color: var(--f-akzent-text); font-weight: 700; }
+
+/* Gruppenkarte mit Initialen-Avataren */
+.gruppe-karte { grid-area: gruppe; }
+.gruppe-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.gruppe-liste li { display: flex; align-items: center; gap: var(--abstand-4); font-weight: 650; }
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--f-flaeche);
+  color: var(--f-hart);
+  font: 700 24px/1 var(--schrift-display);
+  letter-spacing: 0.02em;
+}
+
+/* Datumskarte */
+.datum-karte { grid-area: datum; display: flex; flex-direction: column; justify-content: space-between; }
+.datum-karte .kennzahl { font-size: 128px; color: var(--f-weich); }
+.datum-karte p { margin: 0; font-weight: 650; }
+.datum-karte small { display: block; font-size: 24px; font-weight: 600; color: var(--f-text-2); margin-top: 6px; }
+
+
+/* ---------------------------------------------------------------------
+   3b. Folie „Repertory Grid“ – Polaritätenprofil + 3 Attribute
+   --------------------------------------------------------------------- */
+.rg-raster {
+  display: grid;
+  grid-template-columns: 1.78fr 1fr;
+  grid-template-rows: minmax(0, 1fr);
+  gap: var(--abstand-5);
+  flex: 1;
+  min-height: 0;
+}
+.profil-karte { display: flex; flex-direction: column; min-height: 0; padding: 36px 44px 24px; }
+.legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 36px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  font-size: 28px;
+  font-weight: 650;
+}
+.legende li { display: inline-flex; align-items: center; gap: 12px; }
+.legende svg { width: 56px; height: 20px; overflow: visible; }
+.profil { width: 100%; flex: 1; min-height: 0; overflow: visible; }
+.profil .spur { stroke: var(--f-linie); stroke-width: 3; }
+.profil .strich { fill: var(--f-linie); }
+.profil .band { fill: var(--f-akzent-flaeche); }
+.profil .band-nr { fill: var(--f-akzent); }
+.profil .band-nr-text { fill: var(--f-auf-akzent); font: 700 22px var(--schrift-text); }
+.profil .pol { font: 600 30px var(--schrift-text); fill: var(--f-text-2); }
+.profil .pol.ist-stark { fill: var(--f-akzent-text); font-weight: 750; }
+.profil .skala { font: 600 22px var(--schrift-text); fill: var(--f-text-2); }
+.linie { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.linie-marke { stroke: var(--f-diagramm-marke); stroke-width: 6; }
+.linie-wettb { stroke: var(--f-diagramm-wettb); stroke-width: 4; stroke-dasharray: 14 12; }
+.linie-ideal { stroke: var(--f-diagramm-ideal); stroke-width: 3; stroke-dasharray: 2 10; }
+.punkt-marke { fill: var(--f-diagramm-marke); stroke: var(--f-flaeche); stroke-width: 4; }
+.punkt-wettb { fill: var(--f-flaeche); stroke: var(--f-diagramm-wettb); stroke-width: 4; }
+.punkt-ideal { fill: var(--f-diagramm-ideal); }
+
+.attribut-spalte { display: grid; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: var(--abstand-5); min-height: 0; }
+.attribut-karte {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  align-items: end;
+  padding: 32px 40px 30px;
+}
+.attribut-kopf { grid-column: 1 / -1; display: flex; align-items: center; gap: var(--abstand-4); align-self: start; }
+.attribut-kopf .nr {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--f-akzent);
+  color: var(--f-auf-akzent);
+  font: 700 24px/1 var(--schrift-text);
+}
+.attribut-kopf h3 { margin: 0; font: 650 46px/1 var(--schrift-display); font-stretch: 96%; letter-spacing: -0.01em; }
+.attribut-karte .kennzahl { font-size: 112px; color: var(--f-akzent-text); }
+.attribut-karte p { margin: 0 0 8px; max-width: 250px; font-size: 28px; line-height: 1.2; color: var(--f-text-2); text-align: right; }
+
+
+/* ---------------------------------------------------------------------
+   3c. Folie „Steuerrad-Hub“ – feste Positionen auf der 1920er-Bühne
+   Mittelpunkt des Rads: x 960, y 606 · Felder außen r 350, innen r 110
+   · Zentrum r 96 · runde Karte (Rahmen) r 378
+   --------------------------------------------------------------------- */
+.hub-grafik { position: absolute; inset: 0; width: 1920px; height: 1080px; z-index: 0; overflow: visible; }
+.hub-teller { fill: var(--f-flaeche); stroke: color-mix(in oklab, var(--f-linie) 75%, transparent); stroke-width: 2; filter: drop-shadow(0 18px 30px color-mix(in oklab, var(--marke-primaer) 16%, transparent)); }
+.hub-rahmen { fill: none; stroke: var(--f-linie); stroke-width: 3; stroke-dasharray: 2 11; stroke-linecap: round; }
+.hub-pfeil { fill: none; stroke: var(--f-text-2); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.hub-pfeil--hart  { stroke: var(--f-hart); }
+.hub-pfeil--weich { stroke: var(--f-weich); }
+.hub-pfeil--kern  { stroke: var(--f-akzent-text); }
+.hub-notiz { font: italic 600 26px var(--schrift-text); fill: var(--f-text-2); }
+
+/* Felder des Steuerrads (SVG-Pfade, klickbar) */
+.rad-feld path { transition: filter var(--dauer-kurz) var(--kurve); }
+.rad-feld--hart path  { fill: var(--f-hart-flaeche); }
+.rad-feld--weich path { fill: var(--f-weich-flaeche); }
+.rad-feld,
+.rad-kern,
+.hub-teller,
+.hub-rahmen {
+  transform-box: view-box;
+  transform-origin: 960px 606px;   /* Mittelpunkt des Rads */
+  transition: transform var(--dauer-mittel) var(--kurve-feder);
+}
+.rad-kern circle { fill: var(--f-kern); }
+
+/* Hervorheben: Maus auf Feld ODER auf zugehöriger Methodenkarte (:has) */
+.rad-feld:hover,
+.rad-feld:focus-visible,
+.hub:has(.methode[data-feld="nutzen"]:hover)     .rad-feld[data-feld="nutzen"],
+.hub:has(.methode[data-feld="attribute"]:hover)  .rad-feld[data-feld="attribute"],
+.hub:has(.methode[data-feld="tonalitaet"]:hover) .rad-feld[data-feld="tonalitaet"],
+.hub:has(.methode[data-feld="bild"]:hover)       .rad-feld[data-feld="bild"] { transform: scale(1.04); }
+.hub:has(.methode[data-feld="kern"]:hover) .rad-kern,
+.rad-kern:hover { transform: scale(1.07); }
+.rad-feld:hover path,
+.hub:has(.methode[data-feld="nutzen"]:hover)     .rad-feld[data-feld="nutzen"] path,
+.hub:has(.methode[data-feld="attribute"]:hover)  .rad-feld[data-feld="attribute"] path,
+.hub:has(.methode[data-feld="tonalitaet"]:hover) .rad-feld[data-feld="tonalitaet"] path,
+.hub:has(.methode[data-feld="bild"]:hover)       .rad-feld[data-feld="bild"] path { filter: saturate(1.8) brightness(0.93); }
+/* Methodenkarte selbst: Akzentrahmen beim Zeigen */
+.hub a.methode:hover,
+.hub a.reiter:hover { box-shadow: var(--schatten-2), 0 0 0 4px var(--f-akzent); }
+.hub:has(.rad-kern:hover)                        .methode[data-feld="kern"],
+.hub:has(.rad-feld[data-feld="nutzen"]:hover)     .methode[data-feld="nutzen"],
+.hub:has(.rad-feld[data-feld="attribute"]:hover)  .methode[data-feld="attribute"],
+.hub:has(.rad-feld[data-feld="tonalitaet"]:hover) .methode[data-feld="tonalitaet"],
+.hub:has(.rad-feld[data-feld="bild"]:hover)       .methode[data-feld="bild"] {
+  transform: translateY(-6px);
+  box-shadow: var(--schatten-2), 0 0 0 4px var(--f-akzent);
+}
+
+/* Beschriftungen der Felder: HTML über der Grafik, Klicks gehen durch */
+.feld-text {
+  position: absolute;
+  z-index: 1;
+  width: 250px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  font-size: 28px;
+  line-height: 1.16;
+  font-weight: 550;
+  color: var(--f-text-2);
+}
+.feld-text strong {
+  display: block;
+  margin-bottom: 6px;
+  font: 700 33px/1.05 var(--schrift-display);
+  font-stretch: 96%;
+  letter-spacing: -0.01em;
+}
+.feld-text--hart strong  { color: var(--f-hart); }
+.feld-text--weich strong { color: var(--f-weich); }
+.feld-text--kern { width: 190px; color: var(--f-auf-akzent); font-size: 26px; }
+.feld-text--kern strong { font-size: 30px; color: inherit; }
+
+/* Spaltenköpfe hard facts / soft facts */
+.fakten-kopf {
+  position: absolute;
+  margin: 0;
+  top: 314px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 750 24px/1 var(--schrift-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fakten-kopf::before { content: ""; width: 18px; height: 18px; border-radius: 6px; background: currentColor; }
+.fakten-kopf span { font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: var(--f-text-2); }
+.fakten-kopf--hart  { left: 64px;  color: var(--f-hart); }
+.fakten-kopf--weich { right: 64px; color: var(--f-weich); }
+
+/* Methodenkarten rund um das Rad */
+.methode {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 456px;
+  height: 152px;
+  padding: 0 28px 0 26px;
+  border-radius: 32px;
+}
+.methode h3 { margin: 0; font: 700 36px/1.05 var(--schrift-display); font-stretch: 96%; letter-spacing: -0.01em; }
+.methode .folienverweis { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 24px; font-weight: 650; color: var(--f-text-2); white-space: nowrap; }
+.methode .folienverweis .icon { width: 26px; height: 26px; }
+.methode--links  { left: 64px; }
+.methode--rechts { right: 64px; }
+.methode--oben   { top: 370px; }
+.methode--unten  { top: 690px; }
+
+/* Reiter oben (Desk Research → Zentrum) und unten (Persona = Rahmen) */
+.reiter {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 80px;
+  padding: 0 28px 0 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  translate: -50% 0;
+}
+.reiter .icon-kachel { width: 62px; height: 62px; border-radius: 50%; font-size: 32px; }
+.reiter h3 { margin: 0; font: 700 32px/1 var(--schrift-display); font-stretch: 96%; letter-spacing: -0.01em; }
+.reiter .folienverweis { display: inline-flex; align-items: center; gap: 8px; margin-left: 10px; font-size: 24px; font-weight: 650; color: var(--f-text-2); }
+.reiter .folienverweis .icon { width: 26px; height: 26px; }
+.reiter--oben  { top: 190px; }
+.reiter--unten { top: 944px; height: 88px; padding-right: 30px; gap: 16px; }
+.reiter--unten .reiter-text { display: grid; gap: 4px; }
+.reiter--unten small { font-size: 26px; font-weight: 600; color: var(--f-text-2); }
+.hub .fusszeile { bottom: 22px; align-items: flex-end; }
+.hub .fusszeile > span:first-child { max-width: 500px; }
+
+
+/* ---------------------------------------------------------------------
+   3d. Folie „Live-Umfrage“ – QR-Code + Balken
+   --------------------------------------------------------------------- */
+.umfrage-raster {
+  display: grid;
+  grid-template-columns: 500px 1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) 236px;
+  grid-template-areas:
+    "qr ergebnis ergebnis"
+    "qr zahl1    zahl2";
+  gap: var(--abstand-5);
+  flex: 1;
+  min-height: 0;
+}
+.qr-karte { grid-area: qr; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding: 40px; }
+.qr-karte h2 { margin: 0; font: 650 52px/1 var(--schrift-display); font-stretch: 96%; letter-spacing: -0.01em; }
+.qr-platte {
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border-radius: 30px;
+  background: #FFFFFF;           /* QR-Codes brauchen immer hellen Grund */
+  color: #15161A;
+}
+.qr-platte svg { width: 100%; height: auto; display: block; }
+.kurz-url { font: 700 40px/1 var(--schrift-display); letter-spacing: -0.01em; }
+.qr-karte .live { margin-top: auto; display: inline-flex; align-items: center; gap: 14px; font-size: 28px; font-weight: 650; }
+.live-punkt { position: relative; width: 18px; height: 18px; border-radius: 50%; background: currentColor; }
+.live-punkt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: puls 1.8s var(--kurve) infinite;
+}
+
+.ergebnis-karte { grid-area: ergebnis; display: flex; flex-direction: column; padding: 40px 48px; }
+.ergebnis-karte .karte-label { color: var(--f-text-2); opacity: 1; }
+.balken-liste { list-style: none; margin: auto 0 0; padding: 0; display: grid; gap: 16px; }
+.balken-zeile {
+  display: grid;
+  grid-template-columns: 170px 1fr 112px;
+  align-items: center;
+  gap: 24px;
+  font-weight: 650;
+}
+.balken-name { font-size: 32px; }
+.balken-spur { position: relative; height: 54px; border-radius: 18px; background: var(--f-flaeche-2); }
+.balken-fuellung {
+  position: absolute;
+  inset: 0 auto 0 0;
+  /* Länge = Wert / Skalenende, z. B. 34 / 45 → 75,6 % der Spur */
+  width: calc(var(--wert) / var(--skala, 100) * 100%);
+  border-radius: 18px;
+  background: var(--f-balken-neutral);
+  transform-origin: left center;
+}
+.balken-wert { text-align: right; font: 700 44px/1 var(--schrift-display); font-stretch: 86%; font-variant-numeric: tabular-nums; }
+.balken-zeile.ist-unsere .balken-fuellung { background: var(--f-akzent); }
+.balken-zeile.ist-unsere .balken-name,
+.balken-zeile.ist-unsere .balken-wert { color: var(--f-akzent-text); }
+.unsere-markierung {
+  position: absolute;
+  top: 50%;
+  margin-top: -23px;   /* halbe Höhe der Pille */
+  left: calc(var(--wert) / var(--skala, 100) * 100% + 18px);
+}
+
+.zahl-karte { display: flex; align-items: flex-end; gap: 28px; padding: 32px 44px 36px; }
+.zahl-karte .kennzahl { font-size: 144px; }
+.zahl-karte p { margin: 0 0 10px; font-size: 28px; line-height: 1.25; font-weight: 600; }
+.zahl1 { grid-area: zahl1; }
+.zahl1 .kennzahl { color: var(--f-weich); }
+.zahl2 { grid-area: zahl2; }
+.zahl2 .kennzahl { color: var(--f-hart); }
+
+
+/* ---------------------------------------------------------------------
+   4. Bewegung
+   Prinzip: Karten federn gestaffelt herein (nacheinander, je 90 ms),
+   danach werden Linien gezeichnet, Punkte „ploppen“, Balken wachsen,
+   Zahlen zählen hoch. Gestartet wird, sobald die Folie sichtbar ist
+   (Klasse .ist-sichtbar, gesetzt von muster.js). Ohne JavaScript ist
+   alles sofort sichtbar.
+   --------------------------------------------------------------------- */
+@keyframes kopf-rein {
+  from { opacity: 0; transform: translateY(18px); }
+}
+@keyframes karte-rein {
+  from { opacity: 0; transform: translate(var(--von-x, 0), var(--von-y, 56px)) scale(0.94); }
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0); }
+}
+@keyframes pop-mitte {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
+}
+@keyframes zeichnen {
+  from { stroke-dashoffset: 1; }
+}
+@keyframes aufdecken-unten {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@keyframes wachsen {
+  from { transform: scaleX(0); }
+}
+@keyframes rad-rein {
+  from { opacity: 0; transform: scale(0.72) rotate(-8deg); }
+}
+@keyframes ken-burns {
+  from { transform: scale(1.18) translate(0, 0); }
+  to   { transform: scale(1.3) translate(-2%, 1.5%); }
+}
+@keyframes puls {
+  from { transform: scale(1); opacity: 0.55; }
+  to   { transform: scale(2.6); opacity: 0; }
+}
+@keyframes wackeln {
+  0%, 100% { transform: rotate(0); }
+  30% { transform: rotate(-7deg); }
+  60% { transform: rotate(5deg); }
+}
+
+/* Start erst, wenn die Folie sichtbar wird (nur mit JavaScript) */
+.js .folie:not(.ist-sichtbar) .folie-kopf,
+.js .folie:not(.ist-sichtbar) .anim,
+.js .folie:not(.ist-sichtbar) .anim-pop,
+.js .folie:not(.ist-sichtbar) .anim-rad,
+.js .folie:not(.ist-sichtbar) .anim-pop-mitte { opacity: 0; }
+.js .folie:not(.ist-sichtbar) .anim-zeichnen { stroke-dashoffset: 1; }
+.js .folie:not(.ist-sichtbar) .anim-aufdecken { clip-path: inset(0 0 100% 0); }
+.js .folie:not(.ist-sichtbar) .anim-wachsen { transform: scaleX(0); }
+
+/* Titelbereich zuerst: ruhiges Einblenden ohne Feder (Lesbarkeit) */
+.folie.ist-sichtbar .folie-kopf { animation: kopf-rein 600ms var(--kurve) backwards; }
+
+/* „backwards“: Startzustand gilt während der Verzögerung; danach greifen
+   wieder die normalen Regeln (z. B. Hover-Anheben der Karten). */
+.folie.ist-sichtbar .anim {
+  animation: karte-rein var(--dauer-lang) var(--kurve-feder) backwards;
+  animation-delay: calc(var(--i, 0) * var(--staffel) + 120ms);
+}
+.folie.ist-sichtbar .anim-rad {
+  animation: rad-rein var(--dauer-lang) var(--kurve-feder) backwards;
+  animation-delay: calc(var(--i, 0) * var(--staffel) + 120ms);
+}
+.anim-pop { transform-box: fill-box; transform-origin: center; }
+.folie.ist-sichtbar .anim-pop {
+  animation: pop var(--dauer-mittel) var(--kurve-feder) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 900ms);
+}
+.folie.ist-sichtbar .anim-pop-mitte {
+  animation: pop-mitte var(--dauer-lang) var(--kurve-feder) backwards;
+  animation-delay: calc(var(--i, 0) * var(--staffel) + 380ms);
+}
+.anim-zeichnen { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.folie.ist-sichtbar .anim-zeichnen {
+  animation: zeichnen 900ms var(--kurve) backwards;
+  animation-delay: calc(var(--i, 0) * var(--staffel) + 700ms);
+}
+.folie.ist-sichtbar .anim-aufdecken {
+  animation: aufdecken-unten 1300ms var(--kurve) backwards;
+  animation-delay: calc(var(--i, 0) * 160ms + 650ms);
+}
+.folie.ist-sichtbar .anim-wachsen {
+  animation: wachsen 1100ms var(--kurve-feder) backwards;
+  animation-delay: calc(var(--i, 0) * 110ms + 500ms);
+}
+.folie.ist-sichtbar .fragezeichen { animation: wackeln 1.2s var(--kurve) 1s both; }
+
+/* Wer in den Systemeinstellungen „Bewegung reduzieren“ gewählt hat,
+   sieht alles sofort und ohne Effekte. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}

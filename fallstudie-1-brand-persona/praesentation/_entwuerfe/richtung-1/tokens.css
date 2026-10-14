@@ -1,0 +1,248 @@
+/* =============================================================================
+   tokens.css – Gestaltungsrichtung 1 „Editorial“
+   -----------------------------------------------------------------------------
+   Design-Tokens (Gestaltungs-Grundwerte) als CSS-Variablen.
+
+   SO ÄNDERT IHR DIE FARBEN:
+   Nur die beiden Markenfarben unten bei :root austauschen (--marke-primaer,
+   --marke-sekundaer). Alle anderen Farben werden daraus berechnet (color-mix()
+   und „relative Farben“ mit oklch(from …)). Ein Tausch färbt also die ganze
+   Präsentation um.
+
+   WICHTIG: Die abgeleiteten Farben werden auf dem Element berechnet, das das
+   Attribut data-modus trägt. Markenfarben deshalb immer auf DEMSELBEN Element
+   setzen wie data-modus (z. B. <html data-modus="hell" style="--marke-primaer:…">
+   oder auf einer einzelnen Folie <section data-modus="hell" style="…">).
+
+   Modus: hell ist der Standard dieser Richtung, dunkel ist vorbereitet.
+   Alle Größen beziehen sich auf die Bühne von 1920 × 1080 Pixeln.
+   ============================================================================= */
+
+
+/* -----------------------------------------------------------------------------
+   1. SCHRIFTEN (lokal, ohne Internet)
+   Fraunces (Serif, Anzeigeschrift) und Inter (Grotesk, Lesetext), beide unter
+   SIL Open Font License 1.1 – Lizenztexte liegen im Ordner schriften/.
+   Nur die Zeichensätze „latin“ und „latin-ext“ (deckt ä, ö, ü, ß ab).
+   ----------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Fraunces";
+  src: url("schriften/fraunces-latin-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("schriften/fraunces-latin-ext-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("schriften/fraunces-latin-opsz-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("schriften/fraunces-latin-ext-opsz-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("schriften/inter-latin-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("schriften/inter-latin-ext-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
+/* -----------------------------------------------------------------------------
+   2. GRUNDWERTE (gelten in beiden Modi)
+   ----------------------------------------------------------------------------- */
+:root {
+  /* ---- Markenfarben: HIER tauschen, sobald die Marke feststeht ----
+     Standard = neutral: „Tinte“ (gedecktes Blaugrau) und „Stein“ (warmes Grau). */
+  --marke-primaer: #34506B;
+  --marke-sekundaer: #8F877C;
+
+  /* ---- Schriften ---- */
+  --schrift-display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --schrift-text: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* ---- Schriftgrößen (Bühne 1920 × 1080) ----
+     Titel 56–96 px, Fließtext mindestens 28 px (Beamer-Lesbarkeit). */
+  --groesse-titel-gross: 96px;   /* Titelfolie */
+  --groesse-titel: 72px;         /* Folientitel = Kernaussage */
+  --groesse-untertitel: 40px;    /* Zwischenzeilen, große Zahlen, Diagrammtitel */
+  --groesse-text: 30px;          /* Fließtext */
+  --groesse-rubrik: 22px;        /* Rubrikzeile in Versalien (Kopfzeile, Kicker) */
+  --groesse-klein: 22px;         /* Quellenzeile, Achsenbeschriftung */
+
+  --zeilenhoehe-titel: 1.04;
+  --zeilenhoehe-text: 1.4;
+  --laufweite-titel: -0.018em;   /* Titel leicht enger setzen */
+  --laufweite-rubrik: 0.14em;    /* Versalien sperren */
+
+  /* ---- Ecken: Editorial bleibt fast eckig ---- */
+  --radius-s: 2px;
+  --radius-m: 4px;
+  --radius-l: 10px;
+
+  /* ---- Abstände (8er-Raster) ---- */
+  --abstand-1: 8px;
+  --abstand-2: 12px;
+  --abstand-3: 16px;
+  --abstand-4: 24px;
+  --abstand-5: 32px;
+  --abstand-6: 48px;
+  --abstand-7: 64px;
+  --abstand-8: 96px;
+
+  /* ---- Satzspiegel / Raster ---- */
+  --rand-x: 128px;               /* Seitenrand links und rechts */
+  --rand-oben: 48px;
+  --rand-unten: 44px;
+  --spalten: 12;                 /* 12-Spalten-Raster */
+  --rinne: 32px;                 /* Abstand zwischen den Spalten */
+
+  /* ---- Linien ---- */
+  --linie-fein: 1.5px;           /* Haarlinie */
+  --linie-stark: 2px;            /* Kopflinie, Diagrammlinien */
+
+  /* ---- Bewegung: ruhig und präzise ---- */
+  --dauer-kurz: 240ms;           /* Hover, kleine Zustandswechsel */
+  --dauer-mittel: 560ms;         /* Einblenden von Text und Flächen */
+  --dauer-lang: 1100ms;          /* Linien zeichnen, Balken wachsen */
+  --staffel: 70ms;               /* Versatz zwischen gestaffelten Elementen */
+  --kurve: cubic-bezier(0.22, 0.61, 0.36, 1);       /* weiches Ausrollen (ease-out) */
+  --kurve-feder: cubic-bezier(0.34, 1.36, 0.64, 1); /* kleiner Federeffekt, nur für Punkte/Marker */
+}
+
+
+/* -----------------------------------------------------------------------------
+   3. FARBEN – HELL (Standard)
+   Grundprinzip: Papierweiß mit einem Hauch der Sekundärfarbe, fast schwarze
+   Tinte für Text, die Primärfarbe nur als sparsamer Akzent.
+   ----------------------------------------------------------------------------- */
+:root,
+[data-modus="hell"] {
+  color-scheme: light;
+
+  /* Flächen */
+  --f-hintergrund: color-mix(in oklab, var(--marke-sekundaer) 5%, #FCFBF8);
+  --f-flaeche:     color-mix(in oklab, var(--marke-sekundaer) 10%, #FCFBF8);
+  --f-flaeche-2:   color-mix(in oklab, var(--marke-sekundaer) 18%, #FCFBF8);
+
+  /* Text und Linien */
+  --f-text:        color-mix(in oklab, var(--marke-sekundaer) 8%, #121212);
+  --f-text-2:      color-mix(in oklab, var(--f-text) 74%, var(--f-hintergrund));
+  --f-linie:       color-mix(in oklab, var(--f-text) 17%, var(--f-hintergrund));
+  --f-linie-stark: var(--f-text);
+
+  /* Akzent (Primärfarbe) – Ersatzwerte für ältere Browser, siehe @supports unten */
+  --f-akzent:         var(--marke-primaer);
+  --f-auf-akzent:     #FFFFFF;
+  --f-akzent-flaeche: color-mix(in oklab, var(--f-akzent) 9%, var(--f-hintergrund));
+
+  /* Markensteuerrad: hard facts (rational) = Sekundärfarbe,
+     soft facts (emotional) = Primärfarbe, Kern = Primärfarbe voll */
+  --f-hart:          color-mix(in oklab, var(--marke-sekundaer) 55%, #161616);
+  --f-hart-flaeche:  color-mix(in oklab, var(--f-hart) 11%, var(--f-hintergrund));
+  --f-weich:         var(--marke-primaer);
+  --f-weich-flaeche: color-mix(in oklab, var(--marke-primaer) 13%, var(--f-hintergrund));
+  --f-kern:          var(--marke-primaer);
+  --f-auf-kern:      #FFFFFF;
+
+  /* Signalfarben: feste Grundtöne, mit der Primärfarbe harmonisiert */
+  --f-erfolg:  color-mix(in oklab, #2F7A4D 82%, var(--marke-primaer));
+  --f-warnung: color-mix(in oklab, #7A4E00 85%, var(--marke-primaer));
+
+  /* Schatten: sehr zurückhaltend */
+  --schatten-1: 0 1px 2px color-mix(in oklab, var(--f-text) 8%, transparent),
+                0 2px 10px color-mix(in oklab, var(--f-text) 6%, transparent);
+  --schatten-2: 0 2px 4px color-mix(in oklab, var(--f-text) 8%, transparent),
+                0 18px 48px color-mix(in oklab, var(--f-text) 12%, transparent);
+}
+
+
+/* -----------------------------------------------------------------------------
+   4. FARBEN – DUNKEL
+   Tiefes Anthrazit mit einem Hauch der Sekundärfarbe, warmweißer Text.
+   ----------------------------------------------------------------------------- */
+[data-modus="dunkel"] {
+  color-scheme: dark;
+
+  --f-hintergrund: color-mix(in oklab, var(--marke-sekundaer) 7%, #111214);
+  --f-flaeche:     color-mix(in oklab, var(--marke-sekundaer) 10%, #1A1B1E);
+  --f-flaeche-2:   color-mix(in oklab, var(--marke-sekundaer) 14%, #24262A);
+
+  --f-text:        color-mix(in oklab, var(--marke-sekundaer) 6%, #F3F1EC);
+  --f-text-2:      color-mix(in oklab, var(--f-text) 72%, var(--f-hintergrund));
+  --f-linie:       color-mix(in oklab, var(--f-text) 20%, var(--f-hintergrund));
+  --f-linie-stark: var(--f-text);
+
+  --f-akzent:         color-mix(in oklab, var(--marke-primaer) 62%, #FFFFFF);
+  --f-auf-akzent:     #111214;
+  --f-akzent-flaeche: color-mix(in oklab, var(--f-akzent) 14%, var(--f-hintergrund));
+
+  --f-hart:          color-mix(in oklab, var(--marke-sekundaer) 40%, #E6E4DF);
+  --f-hart-flaeche:  color-mix(in oklab, var(--f-hart) 12%, var(--f-hintergrund));
+  --f-weich:         color-mix(in oklab, var(--marke-primaer) 62%, #FFFFFF);
+  --f-weich-flaeche: color-mix(in oklab, var(--f-weich) 18%, var(--f-hintergrund));
+  --f-kern:          color-mix(in oklab, var(--marke-primaer) 85%, #FFFFFF);
+  --f-auf-kern:      #FFFFFF;
+
+  --f-erfolg:  color-mix(in oklab, #7BC59A 85%, var(--marke-primaer));
+  --f-warnung: color-mix(in oklab, #E8B54A 88%, var(--marke-primaer));
+
+  --schatten-1: 0 1px 2px rgb(0 0 0 / 0.35), 0 2px 10px rgb(0 0 0 / 0.25);
+  --schatten-2: 0 2px 4px rgb(0 0 0 / 0.4), 0 18px 48px rgb(0 0 0 / 0.45);
+}
+
+
+/* -----------------------------------------------------------------------------
+   5. KONTRASTSICHERUNG mit relativen Farben (moderne Browser)
+   oklch(from FARBE l c h) zerlegt eine Farbe in Helligkeit (l), Buntheit (c)
+   und Farbton (h). So bleibt der Farbton der Marke erhalten, aber die
+   Helligkeit wird so begrenzt, dass Text und Linien lesbar bleiben (WCAG AA) –
+   auch wenn eine Marke z. B. ein helles Gelb als Primärfarbe hat.
+   „calc((0.62 - l) * 1000)“ ergibt automatisch Weiß auf dunklen und Schwarz
+   auf hellen Akzentflächen.
+   ----------------------------------------------------------------------------- */
+@supports (color: oklch(from red l c h)) {
+  :root,
+  [data-modus="hell"] {
+    --f-akzent:     oklch(from var(--marke-primaer) min(l, 0.54) c h);
+    --f-auf-akzent: oklch(from var(--f-akzent) calc((0.62 - l) * 1000) 0 0);
+    --f-hart:       oklch(from var(--marke-sekundaer) min(l, 0.44) min(c, 0.05) h);
+    --f-weich:      oklch(from var(--marke-primaer) min(l, 0.52) c h);
+    --f-auf-kern:   oklch(from var(--f-kern) calc((0.6 - l) * 1000) 0 0);
+  }
+  [data-modus="dunkel"] {
+    --f-akzent:     oklch(from var(--marke-primaer) max(l, 0.74) c h);
+    --f-auf-akzent: oklch(from var(--f-akzent) calc((0.62 - l) * 1000) 0 0);
+    --f-hart:       oklch(from var(--marke-sekundaer) max(l, 0.8) min(c, 0.04) h);
+    --f-weich:      oklch(from var(--marke-primaer) max(l, 0.76) c h);
+    --f-kern:       oklch(from var(--marke-primaer) clamp(0.4, l, 0.55) c h);
+    --f-auf-kern:   oklch(from var(--f-kern) calc((0.62 - l) * 1000) 0 0);
+  }
+}

@@ -1,0 +1,2275 @@
+/* =============================================================================
+   deck.js – die „Engine“ der Web-Präsentation
+   -----------------------------------------------------------------------------
+   Läuft ohne Server und ohne Internet (Doppelklick auf index.html).
+   Funktionen: Bühne skalieren, Navigation (Tastatur, Clicker, Wischen,
+   Bedienleiste), Schritte und Animationen, Folienübergänge mit View
+   Transitions, Adresse #f06.2, Übersicht, Hilfe, Schwarzbild, Themen,
+   Sprungmenü, Referentenansicht (zweites Fenster), Druck/PDF.
+
+   Schnittstelle für Folien-Skripte (ausführlich in AUTOREN.md):
+     Deck.registriere('f06', { einrichten, betreten, verlassen, schritt, druck, vorschau })
+     Deck.zustand()   Deck.gehe(folie, schritt)   Deck.weiter()   Deck.zurueck()
+     Deck.marke       Deck.util   Deck.folien()   Deck.feldZiel(feld)
+     Ereignisse auf document: 'deck:bereit', 'deck:folie', 'deck:schritt'
+
+   Aufbau dieser Datei
+     1.  Konfiguration (marke.js) und Adress-Parameter
+     2.  Hilfsfunktionen (Deck.util)
+     3.  Thema und Modus
+     4.  Platzhalter ([Marke], Gruppe, Datum …)
+     5.  Folien sammeln, Laufkopf, Mini-Steuerrad
+     6.  Bausteine und Folien-Skripte (Registrierung)
+     7.  Schritte und Animationen
+     8.  Navigation und Übergänge
+     9.  Bedienung: Tastatur, Wischen, Bedienleiste
+     10. Ebenen: Übersicht, Hilfe, Sprungmenü, Hinweise, Schwarzbild
+     11. Kanal: Abgleich zwischen Vortrags- und Referentenfenster
+     12. Referentenansicht
+     13. Druck und PDF
+     14. Start
+   ============================================================================= */
+(function () {
+  'use strict';
+
+  var Deck = window.Deck = window.Deck || {};
+  var html = document.documentElement;
+
+
+  /* ===========================================================================
+     1. KONFIGURATION UND ADRESS-PARAMETER
+     =========================================================================== */
+
+  /* Standardwerte – werden von window.MARKE (marke.js) überschrieben */
+  var STANDARD = {
+    name: '',
+    kurz: '',
+    farben: { primaer: '', sekundaer: '' },
+    logo: 'bilder/platzhalter-logo.svg',
+    raetselBild: 'bilder/platzhalter-raetsel.svg',
+    gruppe: [],
+    datum: '',
+    veranstaltung: '',
+    dozent: '',
+    hochschule: '',
+    titel: 'Brand Persona & Markenidentität',
+    fallstudie: '',
+    dauerMinuten: 15,
+    anrede: 'Sie',
+    umfragen: {},
+    wortwolken: {},
+    optionaleFolien: {},
+    beispieldatenHinweis: true,
+    standardThema: 'editorial',
+    standardModus: 'hell'
+  };
+
+  function mische(basis, extra) {
+    var ergebnis = {};
+    Object.keys(basis).forEach(function (k) { ergebnis[k] = basis[k]; });
+    Object.keys(extra || {}).forEach(function (k) {
+      var wert = extra[k];
+      if (wert && typeof wert === 'object' && !Array.isArray(wert) && basis[k] && typeof basis[k] === 'object' && !Array.isArray(basis[k])) {
+        ergebnis[k] = mische(basis[k], wert);
+      } else if (wert !== undefined && wert !== null) {
+        ergebnis[k] = wert;
+      }
+    });
+    return ergebnis;
+  }
+
+  var marke = mische(STANDARD, window.MARKE || {});
+  /* ältere Schreibweise (primaer/sekundaer direkt im Objekt) ebenfalls erlauben */
+  if (window.MARKE && window.MARKE.primaer && !marke.farben.primaer) marke.farben.primaer = window.MARKE.primaer;
+  if (window.MARKE && window.MARKE.sekundaer && !marke.farben.sekundaer) marke.farben.sekundaer = window.MARKE.sekundaer;
+  Deck.marke = marke;
+
+  var parameter = new URLSearchParams(location.search);
+  var IST_REFERENT = parameter.has('referent');
+  var IST_DRUCK_URL = parameter.has('druck');
+  var MIT_NOTIZEN = parameter.has('notizen');
+  if (parameter.has('aufnahme')) html.classList.add('aufnahme');
+
+  var THEMEN = ['editorial', 'bento', 'keynote'];
+  var THEMEN_NAMEN = { editorial: 'Editorial', bento: 'Bento', keynote: 'Keynote' };
+  var MODI = ['hell', 'dunkel'];
+
+  /* Felder des Markensteuerrads (Namen nach Esch) */
+  var FELD_NAMEN = {
+    kompetenz: 'Markenkompetenz',
+    attribute: 'Markenattribute',
+    nutzen: 'Markennutzen',
+    tonalitaet: 'Markentonalität',
+    bild: 'Markenbild',
+    persona: 'Brand Persona',
+    hub: 'Markensteuerrad',
+    leer: ''
+  };
+  Deck.FELD_NAMEN = FELD_NAMEN;
+
+
+  /* ===========================================================================
+     2. HILFSFUNKTIONEN  (für Folien-Skripte als Deck.util verfügbar)
+     =========================================================================== */
+  var util = Deck.util = {};
+
+  function alle(selektor, wurzel) {
+    return Array.prototype.slice.call((wurzel || document).querySelectorAll(selektor));
+  }
+  util.alle = alle;
+
+  /* Bewegung reduziert? (Betriebssystem-Einstellung oder ?bewegung=reduziert) */
+  var mqReduziert = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  function bewegungReduziert() {
+    return html.classList.contains('bewegung-reduziert') || !!(mqReduziert && mqReduziert.matches);
+  }
+  if (parameter.get('bewegung') === 'reduziert') html.classList.add('bewegung-reduziert');
+  util.bewegungReduziert = bewegungReduziert;
+
+  /* Zahl im deutschen Format: zahlFormat(2.8, 1, { vorzeichen: true }) → „+2,8“ */
+  util.zahlFormat = function (wert, dezimalen, optionen) {
+    dezimalen = dezimalen || 0;
+    optionen = optionen || {};
+    var n = Number(wert) || 0;
+    var text = new Intl.NumberFormat('de-DE', {
+      minimumFractionDigits: dezimalen,
+      maximumFractionDigits: dezimalen
+    }).format(Math.abs(n));
+    var gerundet = Number(n.toFixed(dezimalen));
+    if (gerundet < 0) text = '−' + text;                  // echtes Minuszeichen
+    else if (optionen.vorzeichen && gerundet > 0) text = '+' + text;
+    return text;
+  };
+
+  /* Prozent: prozentFormat(0.342) → „34 %“ (mit schmalem geschütztem Leerzeichen) */
+  util.prozentFormat = function (anteil, dezimalen) {
+    return util.zahlFormat(anteil * 100, dezimalen || 0) + ' %';
+  };
+
+  /* Zeit: zeitFormat(95) → „1:35“ */
+  util.zeitFormat = function (sekunden) {
+    var negativ = sekunden < 0;
+    sekunden = Math.floor(Math.abs(sekunden));
+    var m = Math.floor(sekunden / 60);
+    var s = sekunden % 60;
+    return (negativ ? '−' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  };
+
+  /* Warten: await Deck.util.warte(300) */
+  util.warte = function (ms) {
+    return new Promise(function (fertig) { setTimeout(fertig, ms); });
+  };
+
+  /* Dauer- und Größen-Tokens aus tokens.css lesen (in ms bzw. px) */
+  var tokenCache = {};
+  function token(name) {
+    if (tokenCache[name] !== undefined) return tokenCache[name];
+    var roh = getComputedStyle(html).getPropertyValue(name).trim();
+    var wert = parseFloat(roh);
+    if (!/ms$/.test(roh) && /s$/.test(roh)) wert = wert * 1000;   // Sekunden → ms
+    if (isNaN(wert)) wert = 0;
+    tokenCache[name] = wert;
+    return wert;
+  }
+  function tokenRoh(name) {
+    return getComputedStyle(html).getPropertyValue(name).trim();
+  }
+  util.token = token;
+  util.dauer = function (name) { return token('--dauer-' + name); };
+
+  /* Animation mit Beachtung von „Bewegung reduzieren“.
+     animiere(element, keyframes, { duration, delay, easing, fill })
+     Bei reduzierter Bewegung wird nur die Deckkraft weich überblendet
+     (oder sofort der Endzustand gezeigt). Gibt immer ein Objekt mit
+     .finished (Promise) und .cancel() zurück. */
+  var laufendeAnimationen = new Set();
+  util.animiere = function (element, keyframes, optionen) {
+    optionen = Object.assign({ duration: token('--dauer-mittel'), easing: tokenRoh('--kurve') || 'ease-out', fill: 'backwards' }, optionen || {});
+    if (!element || !element.animate) {
+      return { finished: Promise.resolve(), cancel: function () {}, finish: function () {} };
+    }
+    if (bewegungReduziert() || testSofort) {
+      var nurDeckkraft = keyframes.map(function (k) {
+        return k.opacity !== undefined ? { opacity: k.opacity } : {};
+      });
+      var hatDeckkraft = nurDeckkraft.some(function (k) { return k.opacity !== undefined; });
+      if (!hatDeckkraft || testSofort) {
+        return { finished: Promise.resolve(), cancel: function () {}, finish: function () {} };
+      }
+      optionen = Object.assign({}, optionen, { duration: Math.min(200, optionen.duration || 200), delay: 0, easing: 'linear' });
+      keyframes = nurDeckkraft;
+    }
+    var animation = element.animate(keyframes, optionen);
+    laufendeAnimationen.add(animation);
+    var weg = function () { laufendeAnimationen.delete(animation); };
+    animation.finished.then(weg, weg);
+    return animation;
+  };
+
+  /* SVG-Element erzeugen: svg('circle', { cx: 10, cy: 10, r: 4 }, elternElement) */
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  util.svg = function (tag, attribute, eltern) {
+    var el = document.createElementNS(SVG_NS, tag);
+    Object.keys(attribute || {}).forEach(function (k) {
+      if (attribute[k] !== undefined && attribute[k] !== null) el.setAttribute(k, attribute[k]);
+    });
+    if (eltern) eltern.appendChild(el);
+    return el;
+  };
+  /* HTML-Element erzeugen: element('div', { class: 'karte' }, 'Text', eltern) */
+  util.element = function (tag, attribute, text, eltern) {
+    var el = document.createElement(tag);
+    Object.keys(attribute || {}).forEach(function (k) {
+      if (attribute[k] !== undefined && attribute[k] !== null && attribute[k] !== false) el.setAttribute(k, attribute[k]);
+    });
+    if (text !== undefined && text !== null) el.textContent = text;
+    if (eltern) eltern.appendChild(el);
+    return el;
+  };
+  /* Punkt auf einem Kreis (Winkel in Grad, 0° = rechts, 90° = unten) */
+  util.polar = function (cx, cy, r, winkel) {
+    var w = winkel * Math.PI / 180;
+    return { x: cx + r * Math.cos(w), y: cy + r * Math.sin(w) };
+  };
+  /* Kreisbogen als SVG-Pfad (im Uhrzeigersinn von start nach ende) */
+  util.bogen = function (cx, cy, r, start, ende) {
+    var a = util.polar(cx, cy, r, start);
+    var b = util.polar(cx, cy, r, ende);
+    var gross = ((ende - start) % 360 + 360) % 360 > 180 ? 1 : 0;
+    return 'M' + rund(a.x) + ' ' + rund(a.y) + ' A' + r + ' ' + r + ' 0 ' + gross + ' 1 ' + rund(b.x) + ' ' + rund(b.y);
+  };
+  function rund(x) { return Math.round(x * 100) / 100; }
+  util.rund = rund;
+
+  /* Text sicher in HTML einsetzen */
+  util.escape = function (text) {
+    return String(text === undefined || text === null ? '' : text)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  };
+
+  /* „[Marke]“ und „[Marke kurz]“ in Texten aus marke.js ersetzen */
+  util.markeText = function (text) {
+    return String(text || '')
+      .replace(/\[Marke kurz\]/g, marke.kurz || marke.name || '[Marke]')
+      .replace(/\[Marke\]/g, marke.name || '[Marke]');
+  };
+
+  /* Pfad relativ zum Präsentationsordner (funktioniert auch in _test/…) */
+  util.pfad = function (relativ) {
+    if (!relativ) return relativ;
+    if (/^([a-z]+:|\/|#|data:)/i.test(relativ)) return relativ;
+    return (window.DECK_BASIS || '') + relativ;
+  };
+
+  /* Speichern im Browser (localStorage) – immer mit try/catch, weil der
+     Speicher gesperrt sein kann (privates Fenster, Richtlinien). */
+  var SPEICHER_PRAEFIX = 'deck:' + location.pathname + ':';
+  util.laden = function (schluessel, standard) {
+    try {
+      var roh = window.localStorage.getItem(SPEICHER_PRAEFIX + schluessel);
+      return roh === null ? standard : JSON.parse(roh);
+    } catch (e) {
+      return standard;
+    }
+  };
+  util.speichern = function (schluessel, wert) {
+    try {
+      if (wert === undefined || wert === null) window.localStorage.removeItem(SPEICHER_PRAEFIX + schluessel);
+      else window.localStorage.setItem(SPEICHER_PRAEFIX + schluessel, JSON.stringify(wert));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+  util.speicherSchluessel = function (schluessel) { return SPEICHER_PRAEFIX + schluessel; };
+  function sitzungLaden(schluessel) {
+    try { return window.sessionStorage.getItem(SPEICHER_PRAEFIX + schluessel); } catch (e) { return null; }
+  }
+  function sitzungSpeichern(schluessel, wert) {
+    try { window.sessionStorage.setItem(SPEICHER_PRAEFIX + schluessel, wert); } catch (e) { /* egal */ }
+  }
+
+  /* Zahl hochzählen lassen: zaehle(element, 0, 2.8, { dezimalen: 1, einheit: ' Pkt.', vorzeichen: true }) */
+  util.zaehle = function (element, von, bis, optionen) {
+    optionen = optionen || {};
+    var dezimalen = optionen.dezimalen || 0;
+    var einheit = optionen.einheit || '';
+    var dauer = optionen.dauer || token('--dauer-lang');
+    var verzoegerung = optionen.verzoegerung || 0;
+    var format = function (wert) {
+      return util.zahlFormat(wert, dezimalen, { vorzeichen: optionen.vorzeichen }) + einheit;
+    };
+    var kennung = (element._zaehlKennung || 0) + 1;
+    element._zaehlKennung = kennung;
+    if (bewegungReduziert() || testSofort || dauer <= 1) {
+      element.textContent = format(bis);
+      return Promise.resolve();
+    }
+    element.textContent = format(von);
+    return new Promise(function (fertig) {
+      var start = null;
+      function rahmen(zeit) {
+        if (element._zaehlKennung !== kennung) { fertig(); return; }
+        if (start === null) start = zeit + verzoegerung;
+        var t = Math.min(1, Math.max(0, (zeit - start) / dauer));
+        var e = 1 - Math.pow(1 - t, 3);                            // weiches Abbremsen
+        element.textContent = format(von + (bis - von) * e);
+        if (t < 1) requestAnimationFrame(rahmen);
+        else fertig();
+      }
+      requestAnimationFrame(rahmen);
+    });
+  };
+
+  /* Anrede aus marke.js: Deck.util.anrede('Rufen Sie …', 'Ruft …') */
+  util.anrede = function (sieForm, ihrForm) {
+    return (String(marke.anrede).toLowerCase() === 'ihr' || String(marke.anrede).toLowerCase() === 'du') ? ihrForm : sieForm;
+  };
+
+
+  /* ===========================================================================
+     3. THEMA UND MODUS
+     =========================================================================== */
+  function anfangsThema() {
+    var t = parameter.get('thema') || sitzungLaden('thema') || marke.standardThema;
+    return THEMEN.indexOf(t) >= 0 ? t : 'editorial';
+  }
+  function anfangsModus() {
+    var m = parameter.get('modus') || sitzungLaden('modus') || marke.standardModus;
+    return MODI.indexOf(m) >= 0 ? m : 'hell';
+  }
+
+  function markenfarbenSetzen() {
+    var f = marke.farben || {};
+    if (f.primaer) html.style.setProperty('--marke-primaer', f.primaer);
+    if (f.sekundaer) html.style.setProperty('--marke-sekundaer', f.sekundaer);
+  }
+
+  function themaSetzen(thema, modus, optionen) {
+    optionen = optionen || {};
+    if (THEMEN.indexOf(thema) < 0) thema = 'editorial';
+    if (MODI.indexOf(modus) < 0) modus = 'hell';
+    var geaendert = html.getAttribute('data-thema') !== thema || html.getAttribute('data-modus') !== modus;
+    html.setAttribute('data-thema', thema);
+    html.setAttribute('data-modus', modus);
+    tokenCache = {};
+    if (optionen.merken) {
+      sitzungSpeichern('thema', thema);
+      sitzungSpeichern('modus', modus);
+    }
+    if (geaendert && optionen.melden) {
+      hinweisZeigen('Thema: ' + THEMEN_NAMEN[thema] + ' · ' + (modus === 'hell' ? 'hell' : 'dunkel'));
+    }
+    if (geaendert && !optionen.still) kanalZustandSenden();
+    if (geaendert) document.dispatchEvent(new CustomEvent('deck:thema', { detail: { thema: thema, modus: modus } }));
+  }
+  Deck.thema = function (thema, modus) {
+    themaSetzen(thema || html.getAttribute('data-thema'), modus || html.getAttribute('data-modus'), { merken: true, melden: true });
+  };
+  function naechstesThema(schritt) {
+    var i = THEMEN.indexOf(html.getAttribute('data-thema'));
+    var neu = THEMEN[(i + (schritt || 1) + THEMEN.length) % THEMEN.length];
+    themaSetzen(neu, html.getAttribute('data-modus'), { merken: true, melden: true });
+  }
+  function modusWechseln() {
+    var neu = html.getAttribute('data-modus') === 'dunkel' ? 'hell' : 'dunkel';
+    themaSetzen(html.getAttribute('data-thema'), neu, { merken: true, melden: true });
+  }
+
+
+  /* ===========================================================================
+     4. PLATZHALTER
+     <span data-marke></span>            → Markenname (lang)
+     <span data-marke="kurz"></span>     → Kurzname
+     data-gruppe, data-datum ("lang"), data-veranstaltung, data-dozent,
+     data-hochschule, data-praesentation (Titel), data-fallstudie
+     <img data-marke-logo>               → Logo aus marke.js
+     data-anrede-sie="…" data-anrede-ihr="…" → Text je nach Anrede
+     =========================================================================== */
+  function datumText(art) {
+    if (!marke.datum) return '';
+    var teile = String(marke.datum).split('-');
+    if (teile.length !== 3) return String(marke.datum);
+    var d = new Date(Number(teile[0]), Number(teile[1]) - 1, Number(teile[2]));
+    if (art === 'lang') {
+      return new Intl.DateTimeFormat('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+    }
+    return new Intl.DateTimeFormat('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(d);
+  }
+
+  function platzhalterFuellen(wurzel) {
+    wurzel = wurzel || document;
+    alle('[data-marke]', wurzel).forEach(function (el) {
+      var kurz = el.getAttribute('data-marke') === 'kurz';
+      var text = kurz ? (marke.kurz || marke.name) : marke.name;
+      if (text) el.textContent = text;
+      else if (!el.textContent.trim()) el.textContent = '[Marke]';
+      el.classList.toggle('ist-platzhalter', !text);
+    });
+    alle('[data-gruppe]', wurzel).forEach(function (el) {
+      var namen = Array.isArray(marke.gruppe) ? marke.gruppe : [marke.gruppe];
+      if (el.getAttribute('data-gruppe') === 'zeilen') {
+        el.innerHTML = namen.map(util.escape).join('<br>');
+      } else {
+        el.textContent = namen.join(' · ');
+      }
+    });
+    alle('[data-datum]', wurzel).forEach(function (el) {
+      var t = datumText(el.getAttribute('data-datum'));
+      if (t) el.textContent = t;
+    });
+    [['data-veranstaltung', 'veranstaltung'], ['data-dozent', 'dozent'], ['data-hochschule', 'hochschule'],
+      ['data-praesentation', 'titel'], ['data-fallstudie', 'fallstudie']].forEach(function (paar) {
+      alle('[' + paar[0] + ']', wurzel).forEach(function (el) {
+        if (marke[paar[1]]) el.textContent = marke[paar[1]];
+      });
+    });
+    alle('img[data-marke-logo]', wurzel).forEach(function (el) {
+      if (marke.logo) el.setAttribute('src', util.pfad(marke.logo));
+      if (!el.getAttribute('alt')) el.setAttribute('alt', 'Logo ' + (marke.name || '[Marke]'));
+    });
+    alle('[data-anrede-sie]', wurzel).forEach(function (el) {
+      el.textContent = util.anrede(el.getAttribute('data-anrede-sie'), el.getAttribute('data-anrede-ihr') || el.getAttribute('data-anrede-sie'));
+    });
+    html.classList.toggle('ohne-beispielhinweis', marke.beispieldatenHinweis === false);
+  }
+  Deck.platzhalterFuellen = platzhalterFuellen;
+
+
+  /* ===========================================================================
+     5. FOLIEN SAMMELN, LAUFKOPF, MINI-STEUERRAD
+     =========================================================================== */
+  var buehne = null;          // <main class="buehne">
+  var deckEl = null;          // <div class="deck">
+  var folien = [];            // Navigationsreihenfolge: Hauptfolien, dann Backup
+  var folienNachId = {};
+  var anzahlHaupt = 0;
+  var aktuell = { index: -1, schritt: 0 };
+
+  function zweistellig(n) { return (n < 10 ? '0' : '') + n; }
+
+  function nummerFuer(el, laufendeNummer) {
+    if (el.hasAttribute('data-nummer')) return el.getAttribute('data-nummer');
+    var id = el.id || '';
+    var m = /^f(\d+)([a-z]*)$/i.exec(id);
+    if (m) return zweistellig(Number(m[1])) + m[2];
+    m = /^b(\d+)$/i.exec(id);
+    if (m) return 'B' + Number(m[1]);
+    return zweistellig(laufendeNummer);
+  }
+
+  function datenLesen(el) {
+    var skript = el.querySelector(':scope > script.daten, :scope > script[type="application/json"]');
+    if (!skript) return null;
+    try {
+      return JSON.parse(skript.textContent);
+    } catch (e) {
+      console.error('Folie „' + el.id + '“: JSON in <script class="daten"> ist fehlerhaft – ' + e.message);
+      return null;
+    }
+  }
+
+  function folienSammeln() {
+    var roh = alle(':scope > section.folie', buehne);
+    var haupt = [];
+    var backup = [];
+    var gesehen = {};
+    roh.forEach(function (el, i) {
+      if (!el.id) el.id = 'folie-' + (i + 1);
+      if (gesehen[el.id]) console.error('Folien-ID „' + el.id + '“ ist doppelt vergeben.');
+      gesehen[el.id] = true;
+      var optional = el.hasAttribute('data-optional');
+      if (optional && !(marke.optionaleFolien && marke.optionaleFolien[el.id])) {
+        el.classList.add('ist-ausgeblendet');
+        el.setAttribute('aria-hidden', 'true');
+        return;
+      }
+      (el.hasAttribute('data-backup') ? backup : haupt).push(el);
+    });
+    anzahlHaupt = haupt.length;
+    folien = haupt.concat(backup).map(function (el, i) {
+      var f = {
+        el: el,
+        id: el.id,
+        index: i,
+        backup: el.hasAttribute('data-backup'),
+        optional: el.hasAttribute('data-optional'),
+        titel: el.getAttribute('data-titel') || textVon(el.querySelector('.titel')) || el.id,
+        feld: el.getAttribute('data-feld') || '',
+        zeit: Number(el.getAttribute('data-zeit') || 0),
+        buendel: el.getAttribute('data-buendel') || '',
+        nummer: nummerFuer(el, i + 1),
+        daten: datenLesen(el),
+        schritteGesamt: 0,
+        schrittElemente: [],
+        auftritt: [],
+        bausteinElemente: [],
+        mindestSchritte: 0
+      };
+      el.setAttribute('aria-roledescription', 'Folie');
+      el.setAttribute('aria-label', 'Folie ' + f.nummer + ': ' + f.titel);
+      folienNachId[f.id] = f;
+      return f;
+    });
+  }
+
+  function textVon(el) {
+    return el ? el.textContent.replace(/\s+/g, ' ').trim() : '';
+  }
+
+  /* Ziel-Folie für ein Feld des Steuerrads (erste Hauptfolie mit diesem data-feld) */
+  function feldZiel(feld) {
+    if (feld === 'rahmen') feld = 'persona';
+    for (var i = 0; i < folien.length; i++) {
+      if (!folien[i].backup && folien[i].feld === feld) return folien[i];
+    }
+    return null;
+  }
+  Deck.feldZiel = function (feld) {
+    var f = feldZiel(feld);
+    return f ? { id: f.id, nummer: f.nummer, titel: f.titel, index: f.index } : null;
+  };
+
+  function laufkopfEinfuegen(f) {
+    var el = f.el;
+    var layout = el.getAttribute('data-layout') || 'standard';
+    if (el.getAttribute('data-laufkopf') === 'aus' || layout === 'leer') return;
+    if (el.querySelector(':scope > .laufkopf')) return;          // selbst geschrieben
+    var kopf = document.createElement('div');
+    kopf.className = 'laufkopf';
+    var links = util.element('div', { class: 'laufkopf-links' }, null, kopf);
+    var rechts = util.element('div', { class: 'laufkopf-rechts' }, null, kopf);
+
+    if (layout === 'titel') {
+      kopf.classList.add('laufkopf--titel');
+      util.element('span', { class: 'laufkopf-titel', 'data-veranstaltung': '' }, marke.veranstaltung || 'Unternehmenskommunikation', links);
+      if (marke.dozent || marke.hochschule) {
+        util.element('span', { class: 'laufkopf-trenner', 'aria-hidden': 'true' }, null, links);
+        util.element('span', { class: 'laufkopf-titel' }, [marke.dozent, marke.hochschule].filter(Boolean).join(' · '), links);
+      }
+      if (marke.fallstudie) util.element('span', { class: 'laufkopf-rubrik', 'data-fallstudie': '' }, marke.fallstudie, rechts);
+    } else {
+      util.element('span', { class: 'laufkopf-titel', 'data-praesentation': '' }, marke.titel, links);
+      util.element('span', { class: 'laufkopf-trenner', 'aria-hidden': 'true' }, null, links);
+      util.element('span', { class: 'laufkopf-marke', 'data-marke': el.getAttribute('data-laufkopf-marke') === 'kurz' ? 'kurz' : '' }, '[Marke]', links);
+      var rubrik = el.getAttribute('data-rubrik');
+      if (rubrik === null) rubrik = f.backup ? 'Backup' : (FELD_NAMEN[f.feld] || '');
+      if (rubrik) util.element('span', { class: 'laufkopf-rubrik' }, rubrik, rechts);
+      util.element('span', { class: 'laufkopf-nummer' }, f.nummer, rechts);
+      var hatRad = f.feld && f.feld !== 'hub' && f.feld !== 'leer' && FELD_NAMEN[f.feld] !== undefined && !f.backup;
+      if (hatRad && el.getAttribute('data-mini-rad') !== 'aus') {
+        var knopf = util.element('button', {
+          type: 'button',
+          class: 'steuerrad mini-rad',
+          'data-modus': 'mini',
+          'data-aktiv': f.feld,
+          'data-morph': 'steuerrad',
+          title: 'Markensteuerrad – Sprungmenü öffnen',
+          'aria-label': 'Markensteuerrad, aktuelles Feld: ' + FELD_NAMEN[f.feld] + '. Sprungmenü öffnen'
+        }, null, rechts);
+        knopf.addEventListener('click', function (e) {
+          e.stopPropagation();
+          sprungmenueOeffnen();
+        });
+      }
+    }
+    el.insertBefore(kopf, el.firstChild);
+  }
+
+
+  /* ===========================================================================
+     6. BAUSTEINE UND FOLIEN-SKRIPTE
+     Bausteine (komponenten.js):  Deck.baustein('name', { selektor, aufbauen,
+       betreten, verlassen, schritt, druck, klon })
+     Folien-Skripte (js/folien/…): Deck.registriere('f06', { einrichten,
+       betreten, verlassen, schritt, druck, vorschau })
+     =========================================================================== */
+  var bausteine = [];
+  var folienHooks = {};
+  var istGestartet = false;
+
+  Deck.baustein = function (name, definition) {
+    definition.name = name;
+    bausteine.push(definition);
+    if (istGestartet) {
+      folien.forEach(function (f) { bausteineAufbauen(f.el, f); });
+    }
+  };
+
+  Deck.registriere = function (folienId, hooks) {
+    folienHooks[folienId] = hooks || {};
+    if (istGestartet && folienNachId[folienId]) {
+      var f = folienNachId[folienId];
+      hookAufrufen(f, 'einrichten');
+      schritteErmitteln(f);
+      if (aktuell.index === f.index) {
+        hookAufrufen(f, 'betreten', [aktuell.schritt]);
+        hookAufrufen(f, 'schritt', [aktuell.schritt, 'start']);
+      }
+    }
+  };
+
+  function kontext(f) {
+    return {
+      folie: f.el,
+      id: f.id,
+      daten: f.daten,
+      schritt: aktuell.index === f.index ? aktuell.schritt : 0,
+      schritteGesamt: f.schritteGesamt,
+      richtung: letzteRichtung,
+      bewegungReduziert: bewegungReduziert(),
+      druckmodus: istDruckmodus,
+      referent: IST_REFERENT,
+      marke: marke,
+      util: util,
+      deck: Deck
+    };
+  }
+
+  function hookAufrufen(f, name, argumente) {
+    var hooks = folienHooks[f.id];
+    if (!hooks || typeof hooks[name] !== 'function') return undefined;
+    try {
+      return hooks[name].apply(hooks, [kontext(f)].concat(argumente || []));
+    } catch (e) {
+      console.error('Fehler im Folien-Skript „' + f.id + '“ (' + name + '):', e);
+      return undefined;
+    }
+  }
+
+  function bausteineAufbauen(wurzel, f) {
+    bausteine.forEach(function (b) {
+      alle(b.selektor, wurzel).forEach(function (el) {
+        if (el._baustein) return;
+        if (el.closest('.ist-klon')) return;
+        el._baustein = b;
+        try {
+          if (b.aufbauen) b.aufbauen(el, f ? kontext(f) : null);
+        } catch (e) {
+          console.error('Fehler beim Aufbau des Bausteins „' + b.name + '“:', e);
+        }
+        if (f) f.bausteinElemente.push(el);
+      });
+    });
+  }
+
+  function bausteinHooks(f, name, argumente) {
+    f.bausteinElemente.forEach(function (el) {
+      var b = el._baustein;
+      if (!b || typeof b[name] !== 'function') return;
+      try {
+        b[name].apply(b, [el, kontext(f)].concat(argumente || []));
+      } catch (e) {
+        console.error('Fehler im Baustein „' + b.name + '“ (' + name + '):', e);
+      }
+    });
+  }
+
+  /* Bausteine können verlangen, dass ihre Folie mindestens n Schritte hat */
+  util.mindestSchritte = function (folieEl, n) {
+    var f = folieFuerElement(folieEl);
+    if (!f) return;
+    f.mindestSchritte = Math.max(f.mindestSchritte, n);
+    if (istGestartet) schritteErmitteln(f);
+  };
+  function folieFuerElement(el) {
+    var sec = el && el.closest ? el.closest('section.folie') : null;
+    return sec ? folienNachId[sec.id] : null;
+  }
+  util.folieFuerElement = function (el) {
+    var f = folieFuerElement(el);
+    return f ? { id: f.id, index: f.index } : null;
+  };
+  util.istAktiv = function (el) {
+    var f = folieFuerElement(el);
+    return !!f && f.index === aktuell.index && !el.closest('.ist-klon');
+  };
+
+
+  /* ===========================================================================
+     7. SCHRITTE UND ANIMATIONEN
+     =========================================================================== */
+  function schritteErmitteln(f) {
+    var elemente = alle('[data-schritt]', f.el).filter(function (el) {
+      return !el.closest('.notizen') && !el.closest('.ist-klon');
+    });
+    var max = 0;
+    f.schrittElemente = elemente.map(function (el) {
+      var n = parseInt(el.getAttribute('data-schritt'), 10);
+      if (isNaN(n) || n < 1) n = 1;
+      if (n > max) max = n;
+      return { el: el, n: n };
+    });
+    var angegeben = parseInt(f.el.getAttribute('data-schritte') || '0', 10) || 0;
+    f.schritteGesamt = Math.max(max, angegeben, f.mindestSchritte);
+    /* Auftritt: animierte Elemente ohne eigenen Schritt (beim Betreten) */
+    f.auftritt = alle('[data-animation], [data-staffel]', f.el).filter(function (el) {
+      if (el.closest('.notizen') || el.closest('.ist-klon')) return false;
+      if (el.hasAttribute('data-schritt')) return false;
+      if (el.closest('[data-schritt]')) return false;              // gehört zu einem Schritt
+      var staffelEltern = el.parentElement && el.parentElement.closest('[data-staffel]');
+      if (staffelEltern && f.el.contains(staffelEltern)) return false;  // Staffel übernimmt
+      return true;
+    });
+  }
+
+  function istHervorhebung(el) {
+    return /(^|\s)hervorheben(\s|$)/.test(el.getAttribute('data-animation') || '');
+  }
+
+  /* Klassen für Schritt n setzen (ohne Animation) */
+  function schrittKlassen(f, n, wurzel) {
+    var liste = wurzel ? alle('[data-schritt]', wurzel).filter(function (el) { return !el.closest('.notizen'); })
+      .map(function (el) { return { el: el, n: Math.max(1, parseInt(el.getAttribute('data-schritt'), 10) || 1) }; })
+      : f.schrittElemente;
+    liste.forEach(function (eintrag) {
+      var an = eintrag.n <= n;
+      eintrag.el.classList.toggle('schritt-an', an);
+      eintrag.el.classList.toggle('schritt-aktuell', eintrag.n === n);
+      if (istHervorhebung(eintrag.el)) {
+        var nurAktuell = eintrag.el.getAttribute('data-hervor') === 'aktuell';
+        eintrag.el.classList.toggle('ist-hervor', nurAktuell ? eintrag.n === n : an);
+      }
+    });
+  }
+
+  /* Zähler auf Endwert setzen (ohne Animation) */
+  function zaehlerEndwert(el) {
+    var ziel = parseFloat(el.getAttribute('data-ziel'));
+    if (isNaN(ziel)) return;
+    el._zaehlKennung = (el._zaehlKennung || 0) + 1;
+    el.textContent = util.zahlFormat(ziel, parseInt(el.getAttribute('data-dezimalen') || '0', 10),
+      { vorzeichen: el.hasAttribute('data-vorzeichen') }) + einheitVon(el);
+  }
+  function einheitVon(el) {
+    var e = el.getAttribute('data-einheit') || '';
+    return e.replace(/^ /, ' ');                 // führendes Leerzeichen → schmales, geschütztes
+  }
+
+  var GEOMETRIE = 'path, line, polyline, polygon, circle, ellipse, rect';
+
+  /* Keyframes für eine Animationsart */
+  function keyframesFuer(art) {
+    var weg = token('--weg') || 18;
+    switch (art) {
+      case 'hoch':    return [{ opacity: 0, translate: '0 ' + weg + 'px' }, { opacity: 1, translate: '0 0' }];
+      case 'runter':  return [{ opacity: 0, translate: '0 ' + (-weg) + 'px' }, { opacity: 1, translate: '0 0' }];
+      case 'links':   return [{ opacity: 0, translate: weg + 'px 0' }, { opacity: 1, translate: '0 0' }];
+      case 'rechts':  return [{ opacity: 0, translate: (-weg) + 'px 0' }, { opacity: 1, translate: '0 0' }];
+      case 'zoom':    return [{ opacity: 0, scale: '0.94' }, { opacity: 1, scale: '1' }];
+      case 'unschaerfe': return [{ opacity: 0, filter: 'blur(16px)' }, { opacity: 1, filter: 'blur(0px)' }];
+      default:        return [{ opacity: 0 }, { opacity: 1 }];
+    }
+  }
+
+  /* Ein Element erscheinen lassen (gemäß data-animation) */
+  function elementAnimieren(el, grundVerzoegerung) {
+    var art = (el.getAttribute('data-animation') || 'einblenden').split(/\s+/)[0];
+    var verzoegerung = (grundVerzoegerung || 0) + (parseFloat(el.getAttribute('data-verzoegerung')) || 0);
+    var dauerAttr = parseFloat(el.getAttribute('data-dauer'));
+    var kurve = tokenRoh('--kurve') || 'ease-out';
+
+    if (art === 'hervorheben' || art === 'zustand' || art === 'keine') return;
+
+    if (art === 'zaehlen') {
+      var ziel = parseFloat(el.getAttribute('data-ziel'));
+      var start = parseFloat(el.getAttribute('data-start') || '0');
+      util.animiere(el, [{ opacity: 0 }, { opacity: 1 }], { duration: token('--dauer-kurz'), delay: verzoegerung });
+      if (!isNaN(ziel)) {
+        util.zaehle(el, start, ziel, {
+          dezimalen: parseInt(el.getAttribute('data-dezimalen') || '0', 10),
+          einheit: einheitVon(el),
+          vorzeichen: el.hasAttribute('data-vorzeichen'),
+          dauer: dauerAttr || token('--dauer-lang'),
+          verzoegerung: verzoegerung
+        });
+      }
+      return;
+    }
+
+    if (art === 'zeichnen') {
+      var formen = el.matches(GEOMETRIE) ? [el] : alle(GEOMETRIE, el);
+      if (!(el instanceof SVGElement)) {
+        /* HTML-Element (z. B. Linie, Balken): wächst von links */
+        util.animiere(el, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }],
+          { duration: dauerAttr || token('--dauer-lang'), delay: verzoegerung, easing: kurve });
+        return;
+      }
+      formen.forEach(function (form, i) {
+        var stil = getComputedStyle(form);
+        var hatStrich = stil.stroke && stil.stroke !== 'none';
+        var gestrichelt = stil.strokeDasharray && stil.strokeDasharray !== 'none';
+        var laenge = 0;
+        try { laenge = form.getTotalLength ? form.getTotalLength() : 0; } catch (e) { laenge = 0; }
+        var d = { duration: dauerAttr || token('--dauer-lang'), delay: verzoegerung + i * token('--staffel'), easing: kurve };
+        if (!hatStrich || gestrichelt || !laenge) {
+          util.animiere(form, [{ opacity: 0 }, { opacity: 1 }], d);
+          return;
+        }
+        var L = Math.ceil(laenge) + 2;
+        util.animiere(form, [
+          { strokeDasharray: L + ' ' + L, strokeDashoffset: L },
+          { strokeDasharray: L + ' ' + L, strokeDashoffset: 0 }
+        ], d);
+      });
+      return;
+    }
+
+    var keyframes = keyframesFuer(art);
+    var dauer = dauerAttr || (art === 'unschaerfe' ? token('--dauer-lang') : token('--dauer-mittel'));
+    util.animiere(el, keyframes, { duration: dauer, delay: verzoegerung, easing: kurve });
+  }
+
+  /* Element (oder Staffel-Container) erscheinen lassen */
+  function auftrittAnimieren(el, grundVerzoegerung) {
+    grundVerzoegerung = grundVerzoegerung || 0;
+    if (el.hasAttribute('data-staffel')) {
+      var abstand = parseFloat(el.getAttribute('data-staffel'));
+      if (isNaN(abstand) || abstand <= 0) abstand = token('--staffel') || 70;
+      var eigeneVerz = parseFloat(el.getAttribute('data-verzoegerung')) || 0;
+      var kinder = Array.prototype.slice.call(el.children).filter(function (k) { return !k.hasAttribute('data-schritt'); });
+      var artContainer = el.getAttribute('data-animation');
+      kinder.forEach(function (kind, i) {
+        if (!kind.hasAttribute('data-animation') && artContainer) kind.setAttribute('data-animation', artContainer);
+        elementAnimieren(kind, grundVerzoegerung + eigeneVerz + i * abstand);
+      });
+      return;
+    }
+    elementAnimieren(el, grundVerzoegerung);
+  }
+
+  /* Element beim Zurückgehen ruhig ausblenden */
+  function elementAusblenden(el) {
+    stoppeAnimationen(el);
+    if (istHervorhebung(el)) return;
+    if (bewegungReduziert()) return;
+    util.animiere(el, [{ opacity: 1, visibility: 'visible' }, { opacity: 0, visibility: 'visible' }],
+      { duration: Math.min(220, token('--dauer-kurz')), fill: 'none', easing: 'ease-in' });
+  }
+
+  function stoppeAnimationen(wurzel) {
+    laufendeAnimationen.forEach(function (a) {
+      var ziel = a.effect && a.effect.target;
+      if (ziel && (ziel === wurzel || (wurzel.contains && wurzel.contains(ziel)))) {
+        try { a.cancel(); } catch (e) { /* egal */ }
+        laufendeAnimationen.delete(a);
+      }
+    });
+  }
+
+  /* Alle Zähler einer Folie auf den Stand von Schritt n setzen (ohne Animation) */
+  function zaehlerFuerSchritt(f, n) {
+    alle('[data-animation~="zaehlen"]', f.el).forEach(function (el) {
+      var sichtbarAb = 0;
+      var schrittEl = el.closest('[data-schritt]');
+      if (schrittEl) sichtbarAb = parseInt(schrittEl.getAttribute('data-schritt'), 10) || 1;
+      if (n >= sichtbarAb) zaehlerEndwert(el);
+    });
+  }
+
+  /* Wechsel zu Schritt n auf der aktuellen Folie */
+  function schrittWechsel(n, optionen) {
+    optionen = optionen || {};
+    var f = folien[aktuell.index];
+    if (!f) return;
+    n = Math.max(0, Math.min(f.schritteGesamt, n));
+    var alt = aktuell.schritt;
+    if (n === alt) return;
+    var richtung = n > alt ? 'vor' : 'zurueck';
+    letzteRichtung = richtung;
+    aktuell.schritt = n;
+    schrittKlassen(f, n);
+    var animieren = !optionen.sofort && !testSofort;
+    if (richtung === 'vor') {
+      f.schrittElemente.forEach(function (e) {
+        if (e.n > alt && e.n <= n) {
+          if (animieren && e.n === n) auftrittAnimieren(e.el);
+          else stoppeAnimationen(e.el);
+        }
+      });
+      if (!animieren) zaehlerFuerSchritt(f, n);
+    } else {
+      f.schrittElemente.forEach(function (e) {
+        if (e.n > n && e.n <= alt) {
+          if (animieren && e.n === alt && alt - n === 1) elementAusblenden(e.el);
+          else stoppeAnimationen(e.el);
+        }
+      });
+    }
+    bausteinHooks(f, 'schritt', [n, richtung]);
+    hookAufrufen(f, 'schritt', [n, richtung]);
+    nachZustandswechsel('schritt', richtung);
+  }
+
+
+  /* ===========================================================================
+     8. NAVIGATION UND ÜBERGÄNGE
+     =========================================================================== */
+  var letzteRichtung = 'start';
+  var laufenderUebergang = null;
+  var gehendeFolie = null;
+  var testSofort = false;
+  var unterstuetztVT = typeof document.startViewTransition === 'function';
+
+  function folieAufloesen(ziel) {
+    if (typeof ziel === 'number') return ziel >= 0 && ziel < folien.length ? ziel : -1;
+    if (typeof ziel === 'string') {
+      var f = folienNachId[ziel];
+      if (f) return f.index;
+      /* Nummer als Text („6“, „06“, „B2“) */
+      var such = ziel.trim().toLowerCase();
+      for (var i = 0; i < folien.length; i++) {
+        var nr = String(folien[i].nummer).toLowerCase();
+        if (nr === such || nr.replace(/^0+/, '') === such.replace(/^0+/, '')) return i;
+      }
+      return -1;
+    }
+    if (ziel && ziel.nodeType === 1) {
+      var g = folieFuerElement(ziel);
+      return g ? g.index : -1;
+    }
+    return -1;
+  }
+
+  function morphNamen(f, an) {
+    alle('[data-morph]', f.el).forEach(function (el) {
+      if (el.closest('.ist-klon')) return;
+      var name = (el.getAttribute('data-morph') || '').trim();
+      if (an && /^[a-zA-Z][\w-]*$/.test(name)) el.style.viewTransitionName = name;
+      else el.style.removeProperty('view-transition-name');
+    });
+  }
+
+  /* Folie aktiv setzen (ohne Animation der Folie selbst) */
+  function folieAktivieren(f, schritt) {
+    folien.forEach(function (g) {
+      if (g !== f && g.el.classList.contains('ist-aktiv')) {
+        g.el.classList.remove('ist-aktiv');
+        morphNamen(g, false);
+      }
+    });
+    f.el.classList.add('ist-aktiv');
+    morphNamen(f, true);
+    aktuell.index = f.index;
+    aktuell.schritt = schritt;
+    schrittKlassen(f, schritt);
+  }
+
+  function auftrittStarten(f, schritt, richtung, animieren) {
+    if (animieren && richtung !== 'zurueck') {
+      f.auftritt.forEach(function (el) { auftrittAnimieren(el, 0); });
+      /* Schritte, die beim Sprung schon sichtbar sind, ohne Animation */
+    }
+    zaehlerAufFolie(f, schritt, animieren && richtung !== 'zurueck');
+  }
+
+  function zaehlerAufFolie(f, schritt, animieren) {
+    alle('[data-animation~="zaehlen"]', f.el).forEach(function (el) {
+      var schrittEl = el.closest('[data-schritt]');
+      var ab = schrittEl ? (parseInt(schrittEl.getAttribute('data-schritt'), 10) || 1) : 0;
+      if (ab > schritt) return;
+      if (!animieren || ab > 0) zaehlerEndwert(el);
+    });
+  }
+
+  /* Hauptfunktion: zu Folie (Index, ID oder Nummer) und Schritt wechseln.
+     optionen: { richtung: 'vor'|'zurueck', sofort: true (ohne Übergang),
+                 still: true (nicht an das andere Fenster senden),
+                 vorher: function () {} (läuft im selben Übergang) } */
+  function gehe(ziel, schritt, optionen) {
+    optionen = optionen || {};
+    var index = folieAufloesen(ziel);
+    if (index < 0) {
+      console.warn('Deck.gehe: Folie „' + ziel + '“ nicht gefunden.');
+      return false;
+    }
+    var f = folien[index];
+    if (schritt === 'ende' || schritt === Infinity) schritt = f.schritteGesamt;
+    schritt = Math.max(0, Math.min(f.schritteGesamt, parseInt(schritt, 10) || 0));
+
+    if (index === aktuell.index) {
+      if (typeof optionen.vorher === 'function') optionen.vorher();
+      if (schritt !== aktuell.schritt) schrittWechsel(schritt, optionen);
+      return true;
+    }
+
+    var alt = folien[aktuell.index];
+    var richtung = optionen.richtung || (alt && index < alt.index ? 'zurueck' : 'vor');
+    letzteRichtung = alt ? richtung : 'start';
+    var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus;
+
+    if (alt) {
+      bausteinHooks(alt, 'verlassen');
+      hookAufrufen(alt, 'verlassen');
+      stoppeAnimationen(alt.el);
+    }
+    if (laufenderUebergang) {
+      try { laufenderUebergang.skipTransition(); } catch (e) { /* egal */ }
+      laufenderUebergang = null;
+    }
+    if (gehendeFolie) {
+      gehendeFolie.el.classList.remove('ist-geht');
+      stoppeAnimationen(gehendeFolie.el);
+      gehendeFolie = null;
+    }
+
+    var aendern = function () {
+      if (typeof optionen.vorher === 'function') optionen.vorher();
+      folieAktivieren(f, schritt);
+      auftrittStarten(f, schritt, richtung, animieren);
+      bausteinHooks(f, 'betreten', [schritt, richtung]);
+      hookAufrufen(f, 'betreten', [schritt]);
+      bausteinHooks(f, 'schritt', [schritt, 'start']);
+      hookAufrufen(f, 'schritt', [schritt, 'start']);
+    };
+
+    html.classList.toggle('richtung-zurueck', richtung === 'zurueck');
+    html.classList.toggle('richtung-vor', richtung !== 'zurueck');
+
+    if (!animieren) {
+      aendern();
+    } else if (unterstuetztVT && !bewegungReduziert()) {
+      try {
+        var uebergang = document.startViewTransition(aendern);
+        laufenderUebergang = uebergang;
+        var fertig = function () { if (laufenderUebergang === uebergang) laufenderUebergang = null; };
+        uebergang.finished.then(fertig, fertig);
+        uebergang.ready.catch(function () { /* übersprungen – kein Fehler */ });
+        uebergang.updateCallbackDone.catch(function (e) { console.error(e); });
+      } catch (e) {
+        aendern();
+      }
+    } else {
+      /* Rückfall: einfaches Überblenden (bei „Bewegung reduzieren“ ohne Weg) */
+      var dauer = Math.max(180, Math.min(token('--dauer-folie') || 400, 520));
+      alt.el.classList.add('ist-geht');
+      gehendeFolie = alt;
+      aendern();
+      var weg = bewegungReduziert() ? 0 : 24;
+      var vz = richtung === 'zurueck' ? 1 : -1;
+      util.animiere(alt.el, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: (vz * weg) + 'px 0' }],
+        { duration: dauer, easing: 'ease-in-out', fill: 'forwards' }).finished.then(function () {
+        alt.el.classList.remove('ist-geht');
+        stoppeAnimationen(alt.el);
+        if (gehendeFolie === alt) gehendeFolie = null;
+      }, function () { /* abgebrochen */ });
+      util.animiere(f.el, [{ opacity: 0, translate: (-vz * weg) + 'px 0' }, { opacity: 1, translate: '0 0' }],
+        { duration: dauer, easing: 'ease-out' });
+    }
+
+    if (!optionen.still) {
+      /* Fokus nicht in einer ausgeblendeten Folie stehen lassen */
+      if (document.activeElement && alt && alt.el.contains(document.activeElement)) document.activeElement.blur();
+    }
+    nachZustandswechsel('folie', richtung, optionen);
+    return true;
+  }
+
+  function weiter() {
+    var f = folien[aktuell.index];
+    if (!f) return;
+    if (aktuell.schritt < f.schritteGesamt) { schrittWechsel(aktuell.schritt + 1); return; }
+    /* Auf der letzten Hauptfolie anhalten – Backup nur gezielt (Übersicht) */
+    if (aktuell.index === anzahlHaupt - 1) {
+      hinweisZeigen('Ende der Präsentation · Backup-Folien: Taste O');
+      return;
+    }
+    if (aktuell.index < folien.length - 1) gehe(aktuell.index + 1, 0, { richtung: 'vor' });
+  }
+  function zurueck() {
+    var f = folien[aktuell.index];
+    if (!f) return;
+    if (aktuell.schritt > 0) { schrittWechsel(aktuell.schritt - 1); return; }
+    if (aktuell.index > 0) gehe(aktuell.index - 1, 'ende', { richtung: 'zurueck' });
+  }
+
+  /* Nach jedem Wechsel: Adresse, Ereignisse, Fortschritt, Ansage, Abgleich */
+  function nachZustandswechsel(art, richtung, optionen) {
+    optionen = optionen || {};
+    var f = folien[aktuell.index];
+    if (!f) return;
+    adresseSetzen();
+    leisteAktualisieren();
+    if (art === 'folie') {
+      ansage('Folie ' + f.nummer + ' von ' + folien[anzahlHaupt - 1 >= 0 ? anzahlHaupt - 1 : 0].nummer + ': ' + f.titel);
+    }
+    var detail = {
+      folie: f.id,
+      folienIndex: f.index,
+      schritt: aktuell.schritt,
+      schritteGesamt: f.schritteGesamt,
+      richtung: richtung
+    };
+    document.dispatchEvent(new CustomEvent(art === 'folie' ? 'deck:folie' : 'deck:schritt', { detail: detail }));
+    if (art === 'folie') document.dispatchEvent(new CustomEvent('deck:schritt', { detail: detail }));
+    if (!optionen.still) kanalZustandSenden();
+    if (IST_REFERENT) referentAktualisieren();
+  }
+
+  function adresseSetzen() {
+    var f = folien[aktuell.index];
+    if (!f || istDruckmodus) return;
+    var hash = '#' + f.id + (aktuell.schritt ? '.' + aktuell.schritt : '');
+    if (location.hash !== hash) {
+      try { history.replaceState(null, '', hash); } catch (e) { /* file:// in alten Browsern */ }
+    }
+  }
+  function adresseLesen() {
+    var h = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+    if (!h) return null;
+    var m = /^(.+?)(?:\.(\d+))?$/.exec(h);
+    if (!m) return null;
+    return { folie: m[1], schritt: m[2] ? parseInt(m[2], 10) : 0 };
+  }
+
+  Deck.gehe = function (ziel, schritt, optionen) { return gehe(ziel, schritt, optionen); };
+  Deck.weiter = function () { befehl('weiter'); };
+  Deck.zurueck = function () { befehl('zurueck'); };
+  Deck.zustand = function () {
+    var f = folien[aktuell.index];
+    return {
+      folie: f ? f.id : null,
+      folienIndex: aktuell.index,
+      schritt: aktuell.schritt,
+      schritteGesamt: f ? f.schritteGesamt : 0,
+      anzahlFolien: folien.length,
+      anzahlHauptfolien: anzahlHaupt,
+      titel: f ? f.titel : '',
+      feld: f ? f.feld : '',
+      nummer: f ? f.nummer : '',
+      backup: f ? f.backup : false,
+      thema: html.getAttribute('data-thema'),
+      modus: html.getAttribute('data-modus')
+    };
+  };
+  Deck.folien = function () {
+    return folien.map(function (f) {
+      return { id: f.id, index: f.index, nummer: f.nummer, titel: f.titel, feld: f.feld, zeit: f.zeit,
+        buendel: f.buendel, backup: f.backup, optional: f.optional, schritteGesamt: f.schritteGesamt, element: f.el };
+    });
+  };
+  /* Für Tests (pruefen.mjs): Animationen und Übergänge sofort beenden */
+  Deck.testmodus = function (an) {
+    testSofort = !!an;
+    html.classList.toggle('testmodus', testSofort);
+    if (testSofort) {
+      laufendeAnimationen.forEach(function (a) { try { a.finish(); } catch (e) { a.cancel(); } });
+      if (laufenderUebergang) { try { laufenderUebergang.skipTransition(); } catch (e) { /* egal */ } }
+    }
+  };
+
+
+  /* ===========================================================================
+     9. BEDIENUNG: TASTATUR, WISCHEN, BEDIENLEISTE
+     =========================================================================== */
+  var tastenHandler = [];
+  /* Bausteine können Tasten auf ihrer Folie übernehmen (z. B. Ziffern bei der Umfrage).
+     fn(ereignis, kontext) gibt true zurück, wenn die Taste verbraucht wurde. */
+  Deck.taste = function (fn) { tastenHandler.push(fn); };
+
+  var ziffernPuffer = '';
+  var ziffernTimer = null;
+
+  /* Befehle laufen im Referentenfenster über das Vortragsfenster (Abgleich) */
+  function befehl(aktion, daten) {
+    if (IST_REFERENT && kanal.verbunden) {
+      kanal.senden('befehl', Object.assign({ aktion: aktion }, daten || {}));
+      return;
+    }
+    befehlAusfuehren(aktion, daten || {});
+  }
+  function befehlAusfuehren(aktion, daten) {
+    switch (aktion) {
+      case 'weiter': weiter(); break;
+      case 'zurueck': zurueck(); break;
+      case 'gehe': gehe(daten.folie, daten.schritt || 0); break;
+      case 'anfang': gehe(0, 0); break;
+      case 'ende': gehe(Math.max(0, anzahlHaupt - 1), 'ende'); break;
+      case 'schwarz': schwarzbild(daten.an); break;
+      case 'thema': themaSetzen(daten.thema, daten.modus, { merken: true, melden: true }); break;
+      default: break;
+    }
+  }
+
+  function istEingabe(el) {
+    if (!el || el === document.body) return false;
+    if (el.isContentEditable) return true;
+    var tag = el.tagName;
+    if (tag === 'TEXTAREA' || tag === 'SELECT') return true;
+    if (tag === 'INPUT') {
+      var typ = (el.getAttribute('type') || 'text').toLowerCase();
+      return ['button', 'submit', 'reset', 'checkbox', 'radio', 'range', 'color', 'file', 'image'].indexOf(typ) < 0;
+    }
+    return false;
+  }
+  function istBedienelement(el) {
+    if (!el || el === document.body) return false;
+    return !!el.closest('button, a[href], [role="button"], [role="link"], summary');
+  }
+
+  function tasteGedrueckt(e) {
+    if (e.defaultPrevented || !istGestartet) return;
+    var ziel = e.target;
+    var taste = e.key;
+
+    /* 1. Eingabefeld fokussiert: Tasten gehören dem Feld.
+          Ausnahme: Bild↑/Bild↓ (Präsentations-Clicker) verlassen das Feld und blättern. */
+    if (istEingabe(ziel)) {
+      if (taste === 'Escape') { ziel.blur(); e.preventDefault(); return; }
+      if (taste === 'PageDown' || taste === 'PageUp') { ziel.blur(); }
+      else return;
+    }
+    if (e.ctrlKey || e.metaKey || e.altKey) return;          // Browser-Kürzel (Strg+P …) nicht stören
+
+    /* 2. Schwarzbild: jede Bedientaste blendet es nur wieder ein */
+    if (html.classList.contains('schwarz')) {
+      if (['b', 'B', '.', 'Escape', 'PageDown', 'PageUp', 'ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp', ' ', 'Enter'].indexOf(taste) >= 0) {
+        e.preventDefault();
+        befehl('schwarz', { an: false });
+      }
+      return;
+    }
+
+    /* 3. Offene Ebenen */
+    if (offeneEbene) {
+      if (ebeneTaste(e)) return;
+    }
+
+    /* 4. Bausteine der aktuellen Folie (z. B. Umfrage: Ziffern zählen) */
+    var f = folien[aktuell.index];
+    for (var i = 0; i < tastenHandler.length; i++) {
+      try {
+        if (f && tastenHandler[i](e, kontext(f)) === true) { e.preventDefault(); return; }
+      } catch (fehler) { console.error(fehler); }
+    }
+
+    /* 5. Ziffern + Enter = Folie anspringen */
+    if (/^[0-9]$/.test(taste)) {
+      ziffernPuffer = (ziffernPuffer + taste).slice(-3);
+      ziffernAnzeigen();
+      e.preventDefault();
+      return;
+    }
+    if (ziffernPuffer) {
+      if (taste === 'Enter') {
+        e.preventDefault();
+        var nr = ziffernPuffer;
+        ziffernZuruecksetzen();
+        var index = folieAufloesen(nr);
+        if (index < 0) index = folieAufloesen(Number(nr) - 1);
+        if (index >= 0) befehl('gehe', { folie: folien[index].id, schritt: 0 });
+        else hinweisZeigen('Folie ' + nr + ' gibt es nicht');
+        return;
+      }
+      if (taste === 'Backspace') { e.preventDefault(); ziffernPuffer = ziffernPuffer.slice(0, -1); ziffernAnzeigen(); return; }
+      if (taste === 'Escape') { e.preventDefault(); ziffernZuruecksetzen(); return; }
+    }
+
+    /* Enter/Leertaste auf einem Knopf: Knopf auslösen statt blättern */
+    var aufKnopf = istBedienelement(ziel);
+
+    switch (taste) {
+      case 'ArrowRight': case 'ArrowDown': case 'PageDown':
+        e.preventDefault(); befehl('weiter'); break;
+      case ' ': case 'Enter':
+        if (aufKnopf) return;
+        e.preventDefault(); befehl('weiter'); break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp': case 'Backspace':
+        e.preventDefault(); befehl('zurueck'); break;
+      case 'Home':
+        e.preventDefault(); befehl('anfang'); break;
+      case 'End':
+        e.preventDefault(); befehl('ende'); break;
+      case 'o': case 'O':
+        e.preventDefault(); uebersichtUmschalten(); break;
+      case 'p': case 'P':
+        e.preventDefault(); referentOeffnen(); break;
+      case 'f': case 'F':
+        e.preventDefault(); vollbildUmschalten(); break;
+      case 'b': case 'B': case '.':
+        e.preventDefault();
+        befehl('schwarz', { an: IST_REFERENT && kanal.verbunden ? !html.classList.contains('schwarz-im-saal') : true });
+        break;
+      case 't': case 'T':
+        e.preventDefault();
+        if (IST_REFERENT && kanal.verbunden) {
+          var j = THEMEN.indexOf(html.getAttribute('data-thema'));
+          befehl('thema', { thema: THEMEN[(j + (e.shiftKey ? -1 : 1) + THEMEN.length) % THEMEN.length], modus: html.getAttribute('data-modus') });
+        } else naechstesThema(e.shiftKey ? -1 : 1);
+        break;
+      case 'd': case 'D':
+        e.preventDefault();
+        if (IST_REFERENT && kanal.verbunden) {
+          befehl('thema', { thema: html.getAttribute('data-thema'), modus: html.getAttribute('data-modus') === 'dunkel' ? 'hell' : 'dunkel' });
+        } else modusWechseln();
+        break;
+      case 'h': case 'H': case '?':
+        e.preventDefault(); ebeneOeffnen('hilfe'); break;
+      case 'Escape':
+        if (document.fullscreenElement) return;
+        break;
+      default:
+        break;
+    }
+  }
+
+  function ziffernAnzeigen() {
+    var anzeige = ebenen.ziffern;
+    if (!anzeige) return;
+    anzeige.textContent = ziffernPuffer ? 'Gehe zu Folie ' + ziffernPuffer + ' … Enter' : '';
+    anzeige.classList.toggle('ist-offen', !!ziffernPuffer);
+    clearTimeout(ziffernTimer);
+    if (ziffernPuffer) ziffernTimer = setTimeout(ziffernZuruecksetzen, 3000);
+  }
+  function ziffernZuruecksetzen() {
+    ziffernPuffer = '';
+    ziffernAnzeigen();
+  }
+
+  function vollbildUmschalten() {
+    try {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (html.requestFullscreen) html.requestFullscreen().catch(function () { /* nicht erlaubt */ });
+    } catch (e) { /* nicht unterstützt */ }
+  }
+
+  /* Wischen auf Touch-Geräten */
+  function wischenEinrichten() {
+    var startX = null, startY = null, startZeit = 0;
+    deckEl.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) { startX = null; return; }
+      if (istEingabe(e.target)) { startX = null; return; }
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      startZeit = Date.now();
+    }, { passive: true });
+    deckEl.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      startX = null;
+      if (Date.now() - startZeit > 800) return;
+      if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      if (dx < 0) befehl('weiter'); else befehl('zurueck');
+    }, { passive: true });
+  }
+
+  /* Bedienleiste (unten rechts) und Fortschrittsbalken */
+  var leiste = null;
+  var leisteNummer = null;
+  var fortschrittBalken = null;
+  var ruheTimer = null;
+
+  function icon(name) {
+    return '<svg class="icon" aria-hidden="true"><use href="#i-' + name + '"></use></svg>';
+  }
+  util.icon = icon;
+
+  function leisteBauen() {
+    leiste = util.element('nav', { class: 'bedienleiste', 'aria-label': 'Foliensteuerung' }, null, document.body);
+    leiste.innerHTML =
+      '<button type="button" data-aktion="zurueck" title="Zurück (←)" aria-label="Zurück">' + icon('pfeil-links') + '</button>' +
+      '<span class="bl-nummer" aria-hidden="true"></span>' +
+      '<button type="button" data-aktion="weiter" title="Weiter (→)" aria-label="Weiter">' + icon('pfeil-rechts') + '</button>' +
+      '<span class="bl-trenner" aria-hidden="true"></span>' +
+      '<button type="button" data-aktion="uebersicht" title="Übersicht (O)" aria-label="Übersicht">' + icon('raster') + '</button>' +
+      '<button type="button" data-aktion="referent" title="Referentenansicht (P)" aria-label="Referentenansicht öffnen">' + icon('referent') + '</button>' +
+      '<button type="button" data-aktion="thema" title="Thema wechseln (T)" aria-label="Thema wechseln">' + icon('palette') + '</button>' +
+      '<button type="button" data-aktion="modus" title="Hell/Dunkel (D)" aria-label="Hell oder dunkel">' + icon('mond') + '</button>' +
+      '<button type="button" data-aktion="vollbild" title="Vollbild (F)" aria-label="Vollbild">' + icon('vollbild') + '</button>' +
+      '<button type="button" data-aktion="hilfe" title="Hilfe (H)" aria-label="Hilfe">' + icon('hilfe') + '</button>';
+    leisteNummer = leiste.querySelector('.bl-nummer');
+    leiste.addEventListener('click', function (e) {
+      var knopf = e.target.closest('button[data-aktion]');
+      if (!knopf) return;
+      var a = knopf.getAttribute('data-aktion');
+      if (a === 'weiter' || a === 'zurueck') befehl(a);
+      else if (a === 'uebersicht') uebersichtUmschalten();
+      else if (a === 'referent') referentOeffnen();
+      else if (a === 'thema') naechstesThema(1);
+      else if (a === 'modus') modusWechseln();
+      else if (a === 'vollbild') vollbildUmschalten();
+      else if (a === 'hilfe') ebeneOeffnen('hilfe');
+      knopf.blur();
+    });
+    var fortschritt = util.element('div', { class: 'fortschritt', 'aria-hidden': 'true' }, null, document.body);
+    fortschrittBalken = util.element('div', { class: 'fortschritt-balken' }, null, fortschritt);
+
+    var aufwachen = function () {
+      html.classList.remove('leiste-aus', 'maus-ruht');
+      clearTimeout(ruheTimer);
+      ruheTimer = setTimeout(function () { html.classList.add('leiste-aus', 'maus-ruht'); }, 2500);
+    };
+    document.addEventListener('mousemove', aufwachen, { passive: true });
+    document.addEventListener('mousedown', aufwachen, { passive: true });
+    leiste.addEventListener('mouseenter', function () { clearTimeout(ruheTimer); });
+    leiste.addEventListener('mouseleave', aufwachen);
+    aufwachen();
+  }
+
+  function leisteAktualisieren() {
+    var f = folien[aktuell.index];
+    if (!f || !leisteNummer) return;
+    leisteNummer.textContent = f.backup ? f.nummer : (f.index + 1) + ' / ' + anzahlHaupt;
+    var anteil = f.backup ? 1 : (anzahlHaupt > 1 ? f.index / (anzahlHaupt - 1) : 1);
+    if (f.schritteGesamt && !f.backup && anzahlHaupt > 1) {
+      anteil += (aktuell.schritt / f.schritteGesamt) / (anzahlHaupt - 1) * (f.index < anzahlHaupt - 1 ? 1 : 0);
+    }
+    fortschrittBalken.style.setProperty('--anteil', Math.min(1, anteil).toFixed(4));
+  }
+
+  /* Bühne in den verfügbaren Platz einpassen (Letterbox, ganzzahlige Position) */
+  function einpassen() {
+    if (!deckEl || istDruckmodus) return;
+    var r = deckEl.getBoundingClientRect();
+    var s = Math.min(r.width / 1920, r.height / 1080);
+    if (!(s > 0)) return;
+    var x = Math.round((r.width - 1920 * s) / 2);
+    var y = Math.round((r.height - 1080 * s) / 2);
+    buehne.style.transform = 'translate(' + x + 'px, ' + y + 'px) scale(' + s + ')';
+    buehne.setAttribute('data-skala', s.toFixed(4));
+    /* Ebenen: im Vortrag deckungsgleich mit der Bühne, im Referentenfenster fensterfüllend */
+    var e = IST_REFERENT ? { left: 0, top: 0, width: window.innerWidth, height: window.innerHeight } : r;
+    var se = Math.min(e.width / 1920, e.height / 1080);
+    var ex = Math.round(e.left + (e.width - 1920 * se) / 2);
+    var ey = Math.round(e.top + (e.height - 1080 * se) / 2);
+    if (ebenenWurzel) ebenenWurzel.style.transform = 'translate(' + ex + 'px, ' + ey + 'px) scale(' + se + ')';
+    if (IST_REFERENT) vorschauEinpassen();
+  }
+  Deck.einpassen = einpassen;
+
+
+  /* ===========================================================================
+     10. EBENEN: ÜBERSICHT, HILFE, SPRUNGMENÜ, HINWEISE, SCHWARZBILD
+     =========================================================================== */
+  var ebenenWurzel = null;
+  var ebenen = {};
+  var offeneEbene = null;
+  var liveRegion = null;
+  var hinweisTimer = null;
+
+  function ebenenBauen() {
+    ebenenWurzel = util.element('div', { class: 'ebene' }, null, document.body);
+    ebenen.uebersicht = util.element('div', { class: 'ebene-fenster uebersicht', role: 'dialog', 'aria-label': 'Übersicht aller Folien', 'aria-modal': 'true' }, null, ebenenWurzel);
+    ebenen.hilfe = util.element('div', { class: 'ebene-fenster hilfe', role: 'dialog', 'aria-label': 'Tastenkürzel', 'aria-modal': 'true' }, null, ebenenWurzel);
+    ebenen.sprungmenue = util.element('div', { class: 'ebene-fenster sprungmenue', role: 'dialog', 'aria-label': 'Sprungmenü Markensteuerrad', 'aria-modal': 'true' }, null, ebenenWurzel);
+    ebenen.ziffern = util.element('div', { class: 'ziffern-anzeige', 'aria-hidden': 'true' }, null, ebenenWurzel);
+    ebenen.hinweis = util.element('div', { class: 'hinweis-toast', role: 'status' }, null, ebenenWurzel);
+    util.element('div', { class: 'schwarzbild', 'aria-hidden': 'true' }, null, document.body)
+      .addEventListener('click', function () { befehl('schwarz', { an: false }); });
+    liveRegion = util.element('div', { class: 'nur-screenreader', 'aria-live': 'polite', 'aria-atomic': 'true' }, null, document.body);
+
+    hilfeBauen();
+    sprungmenueBauen();
+
+    /* Klick auf den Hintergrund einer Ebene schließt sie */
+    [ebenen.uebersicht, ebenen.hilfe, ebenen.sprungmenue].forEach(function (eb) {
+      eb.addEventListener('click', function (e) {
+        if (e.target === eb) ebeneSchliessen();
+      });
+    });
+  }
+
+  function ansage(text) {
+    if (liveRegion) liveRegion.textContent = text;
+  }
+
+  function hinweisZeigen(text) {
+    if (!ebenen.hinweis) return;
+    ebenen.hinweis.textContent = text;
+    ebenen.hinweis.classList.add('ist-offen');
+    clearTimeout(hinweisTimer);
+    hinweisTimer = setTimeout(function () { ebenen.hinweis.classList.remove('ist-offen'); }, 2200);
+  }
+  Deck.hinweis = hinweisZeigen;
+
+  function schwarzbild(an) {
+    var neu = an === undefined ? !html.classList.contains('schwarz') : !!an;
+    html.classList.toggle('schwarz', neu);
+    kanalZustandSenden();
+  }
+
+  var fokusVorEbene = null;
+  function ebeneOeffnen(name) {
+    if (offeneEbene === name) { ebeneSchliessen(); return; }
+    if (offeneEbene) ebeneSchliessen(true);
+    fokusVorEbene = document.activeElement;
+    offeneEbene = name;
+    if (name === 'uebersicht') uebersichtFuellen();
+    ebenen[name].classList.add('ist-offen');
+    html.classList.add('ebene-offen');
+    var fokus = name === 'uebersicht' ? ebenen.uebersicht.querySelector('.ue-karte.ist-aktuell') || ebenen.uebersicht.querySelector('.ue-karte')
+      : ebenen[name].querySelector('button, [tabindex="0"]');
+    if (fokus) fokus.focus({ preventScroll: name !== 'uebersicht' });
+    if (name === 'uebersicht' && fokus) fokus.scrollIntoView({ block: 'center' });
+  }
+  function ebeneSchliessen(still) {
+    if (!offeneEbene) return;
+    var name = offeneEbene;
+    if (name === 'sprungmenue' && !still) { sprungmenueSchliessen(); return; }
+    ebenen[name].classList.remove('ist-offen');
+    if (name === 'sprungmenue') {
+      html.classList.remove('menue-offen');
+    }
+    offeneEbene = null;
+    html.classList.remove('ebene-offen');
+    if (name === 'uebersicht') ebenen.uebersicht.innerHTML = '';
+    if (fokusVorEbene && fokusVorEbene.focus && document.contains(fokusVorEbene)) {
+      try { fokusVorEbene.focus({ preventScroll: true }); } catch (e) { /* egal */ }
+    } else if (document.activeElement) document.activeElement.blur();
+  }
+  Deck.ebeneSchliessen = function () { ebeneSchliessen(); };
+
+  function ebeneTaste(e) {
+    var taste = e.key;
+    if (taste === 'Escape') { e.preventDefault(); ebeneSchliessen(); return true; }
+    if (offeneEbene === 'hilfe') {
+      if (taste === 'h' || taste === 'H' || taste === '?') { e.preventDefault(); ebeneSchliessen(); }
+      else e.preventDefault();
+      return true;
+    }
+    if (offeneEbene === 'uebersicht') {
+      if (taste === 'o' || taste === 'O') { e.preventDefault(); ebeneSchliessen(); return true; }
+      var karten = alle('.ue-karte', ebenen.uebersicht);
+      var i = karten.indexOf(document.activeElement);
+      var spalten = 5;
+      var neu = -1;
+      if (taste === 'ArrowRight') neu = i + 1;
+      else if (taste === 'ArrowLeft') neu = i - 1;
+      else if (taste === 'ArrowDown') neu = i + spalten;
+      else if (taste === 'ArrowUp') neu = i - spalten;
+      else if (taste === 'Home') neu = 0;
+      else if (taste === 'End') neu = karten.length - 1;
+      if (neu !== -1 || ['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].indexOf(taste) >= 0) {
+        e.preventDefault();
+        if (i < 0) neu = 0;
+        neu = Math.max(0, Math.min(karten.length - 1, neu));
+        if (karten[neu]) { karten[neu].focus({ preventScroll: true }); karten[neu].scrollIntoView({ block: 'nearest' }); }
+        return true;
+      }
+      if (taste === 'Enter' || taste === ' ') {
+        if (document.activeElement && document.activeElement.classList.contains('ue-karte')) {
+          e.preventDefault();
+          document.activeElement.click();
+        }
+        return true;
+      }
+      if (taste === 'PageDown' || taste === 'PageUp') { e.preventDefault(); return true; }
+      return true;
+    }
+    if (offeneEbene === 'sprungmenue') {
+      if (taste === 'Tab') return false;
+      if (taste === 'Enter' || taste === ' ') return false;
+      e.preventDefault();
+      return true;
+    }
+    return false;
+  }
+
+  /* ----- Klon einer Folie für Übersicht und Vorschau ----- */
+  var klonZaehler = 0;
+  function klonen(f, schritt) {
+    var k = f.el.cloneNode(true);
+    klonZaehler++;
+    k.classList.remove('ist-aktiv', 'ist-geht');
+    k.classList.add('ist-klon');
+    k.setAttribute('aria-hidden', 'true');
+    k.setAttribute('inert', '');
+    k.removeAttribute('aria-label');
+    k.style.removeProperty('view-transition-name');
+    alle('.notizen, script', k).forEach(function (n) { n.remove(); });
+    alle('[style*="view-transition-name"]', k).forEach(function (n) { n.style.removeProperty('view-transition-name'); });
+    /* Innere IDs umbenennen, damit SVG-Verweise (Verläufe, Textpfade) im Klon funktionieren */
+    var ersetzung = {};
+    alle('[id]', k).forEach(function (n) {
+      var neu = n.id + '--k' + klonZaehler;
+      ersetzung[n.id] = neu;
+      n.id = neu;
+    });
+    if (Object.keys(ersetzung).length) {
+      alle('*', k).forEach(function (n) {
+        Array.prototype.slice.call(n.attributes).forEach(function (a) {
+          if (!/(href|url\(|#)/.test(a.value) && !/^aria-(labelledby|describedby)$|^for$/.test(a.name)) return;
+          var wert = a.value.replace(/url\(\s*['"]?#([^'")\s]+)['"]?\s*\)/g, function (m, id) {
+            return ersetzung[id] ? 'url(#' + ersetzung[id] + ')' : m;
+          });
+          if ((a.name === 'href' || a.name === 'xlink:href') && /^#/.test(wert) && ersetzung[wert.slice(1)]) wert = '#' + ersetzung[wert.slice(1)];
+          if (/^aria-(labelledby|describedby)$|^for$/.test(a.name)) {
+            wert = wert.split(/\s+/).map(function (id) { return ersetzung[id] || id; }).join(' ');
+          }
+          if (wert !== a.value) n.setAttribute(a.name, wert);
+        });
+      });
+    }
+    schrittKlassen(null, schritt, k);
+    /* Zähler im Klon auf Endwert */
+    alle('[data-animation~="zaehlen"]', k).forEach(function (el) {
+      var schrittEl = el.closest('[data-schritt]');
+      var ab = schrittEl ? (parseInt(schrittEl.getAttribute('data-schritt'), 10) || 1) : 0;
+      if (ab <= schritt) zaehlerEndwert(el);
+    });
+    /* Bausteine und Folien-Skripte dürfen den Klon anpassen */
+    var originale = f.bausteinElemente;
+    bausteine.forEach(function (b) {
+      if (typeof b.klon !== 'function') return;
+      var kopien = alle(b.selektor, k);
+      var quellen = originale.filter(function (el) { return el._baustein === b; });
+      kopien.forEach(function (kopie, i) {
+        try { b.klon(kopie, schritt, quellen[i] || null); } catch (e) { console.error(e); }
+      });
+    });
+    hookAufrufen(f, 'vorschau', [k, schritt]);
+    return k;
+  }
+  Deck.klonen = function (folie, schritt) {
+    var i = folieAufloesen(folie);
+    return i >= 0 ? klonen(folien[i], schritt === undefined ? folien[i].schritteGesamt : schritt) : null;
+  };
+
+  /* ----- Übersicht (O) ----- */
+  function uebersichtUmschalten() {
+    if (offeneEbene === 'uebersicht') ebeneSchliessen();
+    else ebeneOeffnen('uebersicht');
+  }
+  function sollzeitSumme() {
+    return folien.filter(function (f) { return !f.backup; }).reduce(function (s, f) { return s + f.zeit; }, 0);
+  }
+  function uebersichtFuellen() {
+    var eb = ebenen.uebersicht;
+    eb.innerHTML = '';
+    var ausgeblendet = alle(':scope > section.folie.ist-ausgeblendet', buehne).length;
+    var kopf = util.element('div', { class: 'ue-kopf' }, null, eb);
+    util.element('h2', { class: 'ue-titel' }, 'Übersicht', kopf);
+    var info = util.element('div', { class: 'ue-info' }, null, kopf);
+    info.innerHTML = anzahlHaupt + ' Hauptfolien · Sollzeit ' + util.zeitFormat(sollzeitSumme()) +
+      ' von ' + util.zeitFormat((marke.dauerMinuten || 15) * 60) + ' min' +
+      (ausgeblendet ? '<br>' + ausgeblendet + ' optionale Folie' + (ausgeblendet > 1 ? 'n' : '') + ' ausgeblendet (marke.js)' : '') +
+      '<br>Pfeiltasten + Enter oder Klick · Esc schließt';
+    var gruppen = [
+      { name: 'Präsentation', liste: folien.filter(function (f) { return !f.backup; }) },
+      { name: 'Backup', liste: folien.filter(function (f) { return f.backup; }) }
+    ];
+    gruppen.forEach(function (g) {
+      if (!g.liste.length) return;
+      util.element('h3', { class: 'ue-rubrik' }, g.name, eb);
+      var raster = util.element('div', { class: 'ue-raster' }, null, eb);
+      g.liste.forEach(function (f) {
+        var karte = util.element('button', {
+          type: 'button',
+          class: 'ue-karte' + (f.index === aktuell.index ? ' ist-aktuell' : ''),
+          'aria-label': 'Folie ' + f.nummer + ': ' + f.titel
+        }, null, raster);
+        var bild = util.element('div', { class: 'ue-bild' }, null, karte);
+        bild.appendChild(klonen(f, f.schritteGesamt));
+        var text = util.element('div', { class: 'ue-text' }, null, karte);
+        util.element('span', { class: 'ue-nr' }, f.nummer, text);
+        util.element('span', { class: 'ue-name' }, f.titel, text);
+        var meta = [];
+        if (f.buendel) meta.push('Bündel ' + f.buendel);
+        if (f.zeit) meta.push(util.zeitFormat(f.zeit) + ' min');
+        if (f.schritteGesamt) meta.push(f.schritteGesamt + ' Schritt' + (f.schritteGesamt > 1 ? 'e' : ''));
+        if (f.optional) meta.push('optional');
+        util.element('span', { class: 'ue-meta' }, meta.join(' · ') || ' ', karte);
+        karte.addEventListener('click', function () {
+          ebeneSchliessen(true);
+          befehl('gehe', { folie: f.id, schritt: 0 });
+        });
+      });
+    });
+    /* Vorschaubilder einpassen */
+    requestAnimationFrame(function () {
+      alle('.ue-bild', eb).forEach(function (bild) {
+        var s = bild.offsetWidth / 1920;
+        var k = bild.firstElementChild;
+        if (k) k.style.transform = 'scale(' + s + ')';
+      });
+    });
+  }
+  Deck.uebersicht = uebersichtUmschalten;
+
+  /* ----- Hilfe (H, ?) ----- */
+  function hilfeBauen() {
+    var k = function (t) { return '<kbd>' + t + '</kbd>'; };
+    ebenen.hilfe.innerHTML =
+      '<h2>Tastenkürzel</h2>' +
+      '<div class="hilfe-spalten"><dl>' +
+      '<dt>' + k('→') + k('↓') + k('Leertaste') + k('Bild↓') + k('Enter') + '</dt><dd>weiter (nächster Schritt / nächste Folie)</dd>' +
+      '<dt>' + k('←') + k('↑') + k('Bild↑') + k('⌫') + '</dt><dd>zurück</dd>' +
+      '<dt>' + k('Pos1') + k('Ende') + '</dt><dd>erste / letzte Folie</dd>' +
+      '<dt>' + k('6') + k('Enter') + '</dt><dd>Folie 06 anspringen</dd>' +
+      '<dt>' + k('O') + '</dt><dd>Übersicht aller Folien (mit Backup)</dd>' +
+      '<dt>' + k('P') + '</dt><dd>Referentenansicht im zweiten Fenster</dd>' +
+      '</dl><dl>' +
+      '<dt>' + k('F') + '</dt><dd>Vollbild an/aus</dd>' +
+      '<dt>' + k('B') + k('.') + '</dt><dd>Schwarzbild an/aus</dd>' +
+      '<dt>' + k('T') + '</dt><dd>Thema wechseln (Editorial, Bento, Keynote)</dd>' +
+      '<dt>' + k('D') + '</dt><dd>hell / dunkel</dd>' +
+      '<dt>' + k('H') + k('?') + '</dt><dd>diese Hilfe</dd>' +
+      '<dt>' + k('Esc') + '</dt><dd>Fenster schließen, Eingabefeld verlassen</dd>' +
+      '</dl></div>' +
+      '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
+      'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
+      'Auf Umfrage-Folien zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü.</p>';
+  }
+
+  /* ----- Sprungmenü (Klick auf Mini-Steuerrad) ----- */
+  var menueRad = null;
+  function sprungmenueBauen() {
+    var eb = ebenen.sprungmenue;
+    eb.innerHTML =
+      '<div class="sprungmenue-text"><p class="kicker">Sprungmenü</p><h2>Wohin<br>springen?</h2>' +
+      '<p>Feld anklicken oder mit Tab wählen und Enter drücken. Esc schließt.</p></div>' +
+      '<div class="steuerrad sprungmenue-rad" data-modus="menue" data-groesse="800"></div>' +
+      '<div class="sprungmenue-knoepfe"></div>';
+    menueRad = eb.querySelector('.sprungmenue-rad');
+    var knoepfe = eb.querySelector('.sprungmenue-knoepfe');
+    var hub = folien.filter(function (f) { return f.feld === 'hub' && !f.backup; });
+    hub.forEach(function (f) {
+      var b = util.element('button', { type: 'button', class: 'deck-knopf' }, null, knoepfe);
+      b.innerHTML = icon('steuerrad') + '<span>' + util.escape(f.titel) + ' (' + util.escape(f.nummer) + ')</span>';
+      b.addEventListener('click', function () { menueZiel(f.id); });
+    });
+    var ue = util.element('button', { type: 'button', class: 'deck-knopf' }, null, knoepfe);
+    ue.innerHTML = icon('raster') + '<span>Übersicht (O)</span>';
+    ue.addEventListener('click', function () { ebeneSchliessen(true); ebeneOeffnen('uebersicht'); });
+    var zu = util.element('button', { type: 'button', class: 'deck-knopf' }, null, knoepfe);
+    zu.innerHTML = icon('schliessen') + '<span>Schließen (Esc)</span>';
+    zu.addEventListener('click', function () { sprungmenueSchliessen(); });
+  }
+
+  /* Das Sprungmenü-Rad ruft diese Funktion beim Klick auf ein Feld auf */
+  function menueZiel(folienId) {
+    var f = folienNachId[folienId];
+    if (!f) return;
+    if (IST_REFERENT && kanal.verbunden) {
+      ebeneSchliessen(true);
+      befehl('gehe', { folie: folienId, schritt: 0 });
+      return;
+    }
+    var schliessen = function () {
+      ebenen.sprungmenue.classList.remove('ist-offen');
+      html.classList.remove('menue-offen', 'ebene-offen');
+      if (menueRad) menueRad.style.removeProperty('view-transition-name');
+      offeneEbene = null;
+    };
+    if (f.index === aktuell.index) {
+      sprungmenueSchliessen();
+      return;
+    }
+    gehe(f.index, 0, { vorher: schliessen });
+  }
+  Deck._menueZiel = menueZiel;
+
+  function sprungmenueOeffnen() {
+    if (offeneEbene === 'sprungmenue') { sprungmenueSchliessen(); return; }
+    if (offeneEbene) ebeneSchliessen(true);
+    var aktiv = folien[aktuell.index];
+    if (menueRad) menueRad.setAttribute('data-aktiv', aktiv ? aktiv.feld : '');
+    if (menueRad && menueRad._baustein && menueRad._baustein.aktualisieren) menueRad._baustein.aktualisieren(menueRad);
+    var oeffnen = function () {
+      fokusVorEbene = document.activeElement;
+      html.classList.add('menue-offen', 'ebene-offen');
+      ebenen.sprungmenue.classList.add('ist-offen');
+      if (menueRad) menueRad.style.viewTransitionName = 'steuerrad';
+      offeneEbene = 'sprungmenue';
+    };
+    morphUebergang(oeffnen, function () {
+      var fokus = ebenen.sprungmenue.querySelector('.sr-feld[tabindex="0"]');
+      if (fokus) fokus.focus({ preventScroll: true });
+    });
+  }
+  function sprungmenueSchliessen() {
+    var schliessen = function () {
+      ebenen.sprungmenue.classList.remove('ist-offen');
+      html.classList.remove('menue-offen', 'ebene-offen');
+      if (menueRad) menueRad.style.removeProperty('view-transition-name');
+      offeneEbene = null;
+    };
+    morphUebergang(schliessen, function () {
+      if (document.activeElement) document.activeElement.blur();
+    });
+  }
+  Deck.sprungmenue = sprungmenueOeffnen;
+
+  function morphUebergang(aendern, danach) {
+    if (unterstuetztVT && !bewegungReduziert() && !testSofort) {
+      html.classList.add('vt-menue');
+      try {
+        var t = document.startViewTransition(aendern);
+        var ende = function () { html.classList.remove('vt-menue'); };
+        t.finished.then(ende, ende);
+        t.ready.catch(function () { /* übersprungen */ });
+        t.updateCallbackDone.then(function () { if (danach) danach(); }, function () { /* egal */ });
+        return;
+      } catch (e) {
+        html.classList.remove('vt-menue');
+      }
+    }
+    aendern();
+    if (danach) danach();
+  }
+
+
+  /* ===========================================================================
+     11. KANAL: Abgleich zwischen Vortragsfenster und Referentenfenster
+     window.postMessage (funktioniert auch bei file://) + BroadcastChannel
+     =========================================================================== */
+  var KANAL_NAME = 'deck:' + location.pathname;
+  var kanal = {
+    id: Math.random().toString(36).slice(2),
+    zaehler: 0,
+    gesehen: [],
+    partner: null,
+    bc: null,
+    verbunden: false,
+    zuletzt: 0,
+    empfaenger: {}
+  };
+  Deck.kanal = {
+    /* Bausteine: Deck.kanal.senden('umfrage', { … }) und Deck.kanal.bei('umfrage', fn) */
+    senden: function (typ, daten) { kanalSenden('x:' + typ, daten); },
+    bei: function (typ, fn) { (kanal.empfaenger['x:' + typ] = kanal.empfaenger['x:' + typ] || []).push(fn); }
+  };
+
+  function kanalEinrichten() {
+    try {
+      if ('BroadcastChannel' in window) {
+        kanal.bc = new BroadcastChannel(KANAL_NAME);
+        kanal.bc.onmessage = function (e) { kanalEmpfangen(e.data, null); };
+      }
+    } catch (e) { kanal.bc = null; }
+    window.addEventListener('message', function (e) { kanalEmpfangen(e.data, e.source); });
+    if (IST_REFERENT && window.opener) kanal.partner = window.opener;
+  }
+
+  function kanalSenden(typ, daten) {
+    var nachricht = { deck: KANAL_NAME, von: kanal.id, nr: ++kanal.zaehler, typ: typ, daten: daten || {} };
+    try {
+      if (kanal.partner && !kanal.partner.closed) kanal.partner.postMessage(nachricht, '*');
+    } catch (e) { /* Fenster weg */ }
+    try {
+      if (kanal.bc) kanal.bc.postMessage(nachricht);
+    } catch (e) { /* egal */ }
+  }
+
+  function kanalEmpfangen(n, quelle) {
+    if (!n || typeof n !== 'object' || n.deck !== KANAL_NAME || n.von === kanal.id) return;
+    var schluessel = n.von + ':' + n.nr;
+    if (kanal.gesehen.indexOf(schluessel) >= 0) return;
+    kanal.gesehen.push(schluessel);
+    if (kanal.gesehen.length > 200) kanal.gesehen.splice(0, 100);
+    if (quelle && quelle !== window && !kanal.partner) kanal.partner = quelle;
+
+    if (n.typ === 'zustand' && IST_REFERENT) {
+      kanal.verbunden = true;
+      kanal.zuletzt = Date.now();
+      zustandUebernehmen(n.daten);
+    } else if (n.typ === 'hallo' && !IST_REFERENT) {
+      if (quelle && quelle !== window) kanal.partner = quelle;
+      kanalZustandSenden(true);
+    } else if (n.typ === 'befehl' && !IST_REFERENT) {
+      befehlAusfuehren(n.daten.aktion, n.daten);
+    } else if (kanal.empfaenger[n.typ]) {
+      kanal.empfaenger[n.typ].forEach(function (fn) {
+        try { fn(n.daten); } catch (e) { console.error(e); }
+      });
+    }
+  }
+
+  function kanalZustandSenden(erzwingen) {
+    if (IST_REFERENT || !istGestartet) return;
+    if (!erzwingen && !kanal.partner && !kanal.bc) return;
+    var f = folien[aktuell.index];
+    kanalSenden('zustand', {
+      folie: f ? f.id : null,
+      schritt: aktuell.schritt,
+      thema: html.getAttribute('data-thema'),
+      modus: html.getAttribute('data-modus'),
+      schwarz: html.classList.contains('schwarz')
+    });
+  }
+
+  function zustandUebernehmen(z) {
+    if (!z) return;
+    if (z.thema && (z.thema !== html.getAttribute('data-thema') || z.modus !== html.getAttribute('data-modus'))) {
+      themaSetzen(z.thema, z.modus, { still: true });
+    }
+    html.classList.toggle('schwarz-im-saal', !!z.schwarz);
+    if (z.folie) {
+      var i = folieAufloesen(z.folie);
+      if (i >= 0 && (i !== aktuell.index || z.schritt !== aktuell.schritt)) gehe(i, z.schritt, { still: true });
+    }
+    referentAktualisieren();
+  }
+
+
+  /* ===========================================================================
+     12. REFERENTENANSICHT
+     =========================================================================== */
+  var referentFenster = null;
+  var r = {};                 // Elemente der Referentenansicht
+  var uhr = { laeuft: false, gestartet: false, start: 0, gesammelt: 0, folieStart: 0, folieId: null };
+
+  function referentOeffnen() {
+    if (IST_REFERENT) return;
+    var url = location.href.split('#')[0].split('?')[0] + '?referent' + location.hash;
+    try {
+      referentFenster = window.open(url, 'deck-referent', 'popup=yes,width=1440,height=900');
+    } catch (e) { referentFenster = null; }
+    if (!referentFenster) {
+      hinweisZeigen('Popup blockiert – bitte Popups für diese Datei erlauben');
+      return;
+    }
+    kanal.partner = referentFenster;
+    setTimeout(function () { kanalZustandSenden(true); }, 400);
+  }
+  Deck.referent = referentOeffnen;
+
+  function gesamtMs() {
+    return uhr.gesammelt + (uhr.laeuft ? Date.now() - uhr.start : 0);
+  }
+  function uhrStarten() {
+    if (uhr.laeuft) return;
+    uhr.laeuft = true;
+    uhr.gestartet = true;
+    uhr.start = Date.now();
+    referentAktualisieren();
+  }
+  function uhrPausieren() {
+    if (!uhr.laeuft) return;
+    uhr.gesammelt += Date.now() - uhr.start;
+    uhr.laeuft = false;
+    referentAktualisieren();
+  }
+  function uhrZuruecksetzen() {
+    uhr.laeuft = false;
+    uhr.gestartet = false;
+    uhr.gesammelt = 0;
+    uhr.folieStart = 0;
+    referentAktualisieren();
+  }
+
+  function referentBauen() {
+    html.classList.add('referent');
+    document.title = 'Referentenansicht – ' + (marke.titel || 'Präsentation');
+    var raster = util.element('div', { class: 'referent-raster' }, null, document.body);
+    raster.innerHTML =
+      '<section class="r-feld r-aktuell" aria-label="Aktuelle Folie">' +
+      '  <div class="r-etikett"><span class="r-titel-aktuell">Aktuell</span><span class="r-verbindung" data-stand="getrennt">nicht verbunden</span></div>' +
+      '  <div class="r-buehnenplatz r-platz-aktuell"></div>' +
+      '</section>' +
+      '<section class="r-feld r-naechste" aria-label="Nächster Schritt">' +
+      '  <div class="r-etikett"><span class="r-titel-naechste">Als Nächstes</span></div>' +
+      '  <div class="r-buehnenplatz r-platz-naechste"><div class="r-vorschau"></div></div>' +
+      '  <div class="r-info" style="padding:12px 14px 14px"></div>' +
+      '</section>' +
+      '<section class="r-feld r-notizen" aria-label="Sprechtext">' +
+      '  <div class="r-etikett"><span>Sprechtext</span><span>' +
+      '    <button type="button" class="r-knopf" data-r="kleiner" aria-label="Schrift kleiner">A−</button> ' +
+      '    <button type="button" class="r-knopf" data-r="groesser" aria-label="Schrift größer">A+</button></span></div>' +
+      '  <div class="r-notizen-text"></div>' +
+      '</section>' +
+      '<section class="r-feld r-uhren" aria-label="Zeit">' +
+      '  <div class="r-uhr-zeile r-uhr-gesamt"><span class="r-uhr-name">Gesamtzeit</span><span class="r-uhr-soll"></span>' +
+      '    <span class="r-uhr-wert">0:00</span><span class="r-uhr-soll r-uhr-soll-wert"></span><div class="r-uhr-balken"><span></span></div></div>' +
+      '  <div class="r-uhr-zeile r-uhr-folie"><span class="r-uhr-name">Diese Folie</span><span class="r-uhr-soll"></span>' +
+      '    <span class="r-uhr-wert">0:00</span><span class="r-uhr-soll r-uhr-soll-wert"></span><div class="r-uhr-balken"><span></span></div></div>' +
+      '  <div class="r-plan"></div>' +
+      '  <div class="r-uhr-zeile r-uhrzeit"><span class="r-uhr-name">Uhrzeit</span><span></span><span class="r-uhr-wert" style="font-size:32px">--:--</span><span></span></div>' +
+      '  <div class="r-knoepfe">' +
+      '    <button type="button" class="r-knopf r-knopf--gross" data-r="zurueck" aria-label="Zurück">' + icon('pfeil-links') + '</button>' +
+      '    <button type="button" class="r-knopf r-knopf--gross" data-r="weiter" aria-label="Weiter">' + icon('pfeil-rechts') + '</button>' +
+      '    <button type="button" class="r-knopf" data-r="startpause">' + icon('start') + '<span>Start</span></button>' +
+      '    <button type="button" class="r-knopf" data-r="zuruecksetzen">' + icon('zuruecksetzen') + '<span>Zeit zurücksetzen</span></button>' +
+      '    <button type="button" class="r-knopf" data-r="schwarz">' + icon('schwarz') + '<span>Schwarzbild</span></button>' +
+      '  </div>' +
+      '</section>';
+    r.raster = raster;
+    r.platzAktuell = raster.querySelector('.r-platz-aktuell');
+    r.platzNaechste = raster.querySelector('.r-platz-naechste');
+    r.vorschau = raster.querySelector('.r-vorschau');
+    r.titelAktuell = raster.querySelector('.r-titel-aktuell');
+    r.titelNaechste = raster.querySelector('.r-titel-naechste');
+    r.verbindung = raster.querySelector('.r-verbindung');
+    r.info = raster.querySelector('.r-info');
+    r.notizen = raster.querySelector('.r-notizen-text');
+    r.gesamt = raster.querySelector('.r-uhr-gesamt');
+    r.folie = raster.querySelector('.r-uhr-folie');
+    r.plan = raster.querySelector('.r-plan');
+    r.uhrzeit = raster.querySelector('.r-uhrzeit .r-uhr-wert');
+    r.startpause = raster.querySelector('[data-r="startpause"]');
+    /* Die echte Bühne in den Platz „Aktuell“ verschieben */
+    r.platzAktuell.appendChild(deckEl);
+    r.platzAktuell.style.aspectRatio = '16 / 9';
+    r.platzAktuell.style.flex = 'none';
+    r.platzNaechste.style.aspectRatio = '16 / 9';
+    r.platzNaechste.style.flex = 'none';
+
+    var schrift = util.laden('referent-schrift', 28);
+    r.notizen.style.setProperty('--r-schrift', schrift + 'px');
+
+    raster.addEventListener('click', function (e) {
+      var k = e.target.closest('[data-r]');
+      if (!k) return;
+      var a = k.getAttribute('data-r');
+      if (a === 'weiter' || a === 'zurueck') befehl(a);
+      else if (a === 'startpause') { if (uhr.laeuft) uhrPausieren(); else uhrStarten(); }
+      else if (a === 'zuruecksetzen') uhrZuruecksetzen();
+      else if (a === 'schwarz') befehl('schwarz', { an: !html.classList.contains('schwarz-im-saal') });
+      else if (a === 'kleiner' || a === 'groesser') {
+        var jetzt = parseFloat(getComputedStyle(r.notizen).getPropertyValue('--r-schrift')) || 28;
+        var neu = Math.max(18, Math.min(48, jetzt + (a === 'groesser' ? 2 : -2)));
+        r.notizen.style.setProperty('--r-schrift', neu + 'px');
+        util.speichern('referent-schrift', neu);
+      }
+      k.blur();
+    });
+
+    /* Verbindung zum Vortragsfenster aufbauen und halten */
+    kanalSenden('hallo', {});
+    setInterval(function () {
+      kanalSenden('hallo', {});
+      if (kanal.verbunden && Date.now() - kanal.zuletzt > 7000) {
+        kanal.verbunden = false;
+        referentAktualisieren();
+      }
+    }, 3000);
+    setInterval(uhrAnzeigen, 500);
+    window.addEventListener('resize', einpassen);
+    if ('ResizeObserver' in window) new ResizeObserver(einpassen).observe(r.platzAktuell);
+  }
+
+  var letzteReferentFolie = null;
+  var letzterReferentSchritt = -1;
+  function referentAktualisieren() {
+    if (!IST_REFERENT || !r.raster) return;
+    var f = folien[aktuell.index];
+    if (!f) return;
+    r.verbindung.setAttribute('data-stand', kanal.verbunden ? 'verbunden' : 'getrennt');
+    r.verbindung.textContent = kanal.verbunden ? 'mit Vortragsfenster verbunden' : 'nicht verbunden (steuert sich selbst)';
+
+    /* automatisch starten, sobald zum ersten Mal weitergeschaltet wird */
+    if (letzteReferentFolie && (letzteReferentFolie !== f.id || letzterReferentSchritt !== aktuell.schritt) && !uhr.gestartet) uhrStarten();
+    if (letzteReferentFolie !== f.id) uhr.folieStart = gesamtMs();
+    var folieGewechselt = letzteReferentFolie !== f.id;
+    letzteReferentFolie = f.id;
+    letzterReferentSchritt = aktuell.schritt;
+
+    r.titelAktuell.textContent = 'Aktuell · ' + f.nummer + ' ' + f.titel +
+      (f.schritteGesamt ? ' · Schritt ' + aktuell.schritt + '/' + f.schritteGesamt : '');
+
+    /* Nächster Schritt bzw. nächste Folie */
+    r.vorschau.innerHTML = '';
+    var naechste = null, naechsterSchritt = 0, text = '';
+    if (aktuell.schritt < f.schritteGesamt) {
+      naechste = f; naechsterSchritt = aktuell.schritt + 1;
+      text = 'Als Nächstes · Schritt ' + naechsterSchritt + '/' + f.schritteGesamt + ' auf dieser Folie';
+    } else if (aktuell.index < folien.length - 1 && aktuell.index !== anzahlHaupt - 1) {
+      naechste = folien[aktuell.index + 1];
+      text = 'Als Nächstes · ' + naechste.nummer + ' ' + naechste.titel;
+    } else {
+      text = 'Als Nächstes · Ende';
+    }
+    r.titelNaechste.textContent = text;
+    if (naechste) {
+      var k = klonen(naechste, naechsterSchritt);
+      r.vorschau.appendChild(k);
+    } else {
+      util.element('div', { class: 'r-vorschau-ende' }, 'Ende der Präsentation – Backup über Taste O', r.vorschau);
+    }
+    vorschauEinpassen();
+
+    /* Infos */
+    var info = [];
+    info.push('<span class="r-pille"><b>Folie</b>' + util.escape(f.nummer) + (f.backup ? '' : ' von ' + util.escape(folien[anzahlHaupt - 1].nummer)) + '</span>');
+    if (f.buendel) info.push('<span class="r-pille"><b>Bündel</b>' + util.escape(f.buendel) + '</span>');
+    if (f.feld && FELD_NAMEN[f.feld]) info.push('<span class="r-pille"><b>Feld</b>' + util.escape(FELD_NAMEN[f.feld]) + '</span>');
+    if (f.zeit) info.push('<span class="r-pille"><b>Soll</b>' + util.zeitFormat(f.zeit) + ' min</span>');
+    info.push('<span class="r-pille"><b>Thema</b>' + THEMEN_NAMEN[html.getAttribute('data-thema')] + ' · ' + html.getAttribute('data-modus') + '</span>');
+    if (html.classList.contains('schwarz-im-saal')) info.push('<span class="r-pille" style="background:#5a1d1d"><b>Saal</b>Schwarzbild</span>');
+    r.info.innerHTML = info.join('');
+
+    /* Sprechtext */
+    if (folieGewechselt) {
+      var notiz = f.el.querySelector(':scope > .notizen');
+      r.notizen.innerHTML = notiz && notiz.innerHTML.trim() ? notiz.innerHTML : '<p class="r-notizen-leer">Kein Sprechtext hinterlegt.</p>';
+      r.notizen.scrollTop = 0;
+    }
+    alle('[data-schritt]', r.notizen).forEach(function (el) {
+      var n = parseInt(el.getAttribute('data-schritt'), 10) || 0;
+      el.classList.toggle('ist-erreicht', n <= aktuell.schritt);
+      el.classList.toggle('ist-jetzt', n === aktuell.schritt);
+    });
+    uhrAnzeigen();
+  }
+
+  function vorschauEinpassen() {
+    if (!r.vorschau) return;
+    var k = r.vorschau.firstElementChild;
+    if (!k || !k.classList.contains('folie')) return;
+    var s = r.vorschau.clientWidth / 1920;
+    k.style.transform = 'scale(' + s + ')';
+  }
+
+  function uhrAnzeigen() {
+    if (!r.gesamt) return;
+    var f = folien[aktuell.index];
+    var gesamt = gesamtMs() / 1000;
+    var soll = (marke.dauerMinuten || 15) * 60;
+    zeileSetzen(r.gesamt, gesamt, soll);
+    var folieSek = (gesamtMs() - uhr.folieStart) / 1000;
+    zeileSetzen(r.folie, folieSek, f ? f.zeit : 0);
+    /* Abgleich mit dem Plan: Soll-Start dieser Folie gegen Ist-Start */
+    if (f && !f.backup) {
+      var sollStart = folien.slice(0, f.index).filter(function (g) { return !g.backup; })
+        .reduce(function (s, g) { return s + g.zeit; }, 0);
+      var istStart = uhr.folieStart / 1000;
+      var diff = Math.round(istStart - sollStart);
+      var text = !uhr.gestartet ? 'Zeit startet automatisch beim ersten Weiterschalten.'
+        : (Math.abs(diff) < 10 ? '<strong>im Plan</strong>' : diff > 0 ? '<strong>' + util.zeitFormat(diff) + ' hinter Plan</strong>'
+          : '<strong>' + util.zeitFormat(-diff) + ' vor Plan</strong>');
+      r.plan.innerHTML = 'Plan: Folie startet bei ' + util.zeitFormat(sollStart) + ' · ' + text;
+    } else {
+      r.plan.textContent = f && f.backup ? 'Backup-Folie' : '';
+    }
+    var jetzt = new Date();
+    r.uhrzeit.textContent = (jetzt.getHours() < 10 ? '0' : '') + jetzt.getHours() + ':' + (jetzt.getMinutes() < 10 ? '0' : '') + jetzt.getMinutes();
+    r.startpause.innerHTML = uhr.laeuft ? icon('pause') + '<span>Pause</span>' : icon('start') + '<span>' + (uhr.gestartet ? 'Weiter' : 'Start') + '</span>';
+  }
+  function zeileSetzen(zeile, ist, soll) {
+    zeile.querySelector('.r-uhr-wert').textContent = util.zeitFormat(ist);
+    zeile.querySelector('.r-uhr-soll-wert').textContent = soll ? 'von ' + util.zeitFormat(soll) : '';
+    var anteil = soll ? ist / soll : 0;
+    zeile.querySelector('.r-uhr-balken > span').style.width = Math.min(100, anteil * 100) + '%';
+    zeile.setAttribute('data-stand', !soll ? 'ok' : anteil > 1 ? 'ueber' : anteil >= 0.85 ? 'warn' : 'ok');
+  }
+
+
+  /* ===========================================================================
+     13. DRUCK UND PDF
+     =========================================================================== */
+  var istDruckmodus = false;
+
+  function endzustandFolie(f) {
+    schrittKlassen(f, f.schritteGesamt);
+    alle('[data-animation~="zaehlen"]', f.el).forEach(zaehlerEndwert);
+    bausteinHooks(f, 'druck');
+    hookAufrufen(f, 'druck');
+  }
+
+  function druckmodusAn() {
+    if (istDruckmodus) return;
+    istDruckmodus = true;
+    html.classList.add('druckmodus');
+    if (ebenenWurzel && offeneEbene) ebeneSchliessen(true);
+    laufendeAnimationen.forEach(function (a) { try { a.finish(); } catch (e) { a.cancel(); } });
+    folien.forEach(endzustandFolie);
+  }
+  function druckmodusAus() {
+    if (!istDruckmodus || IST_DRUCK_URL) return;
+    istDruckmodus = false;
+    html.classList.remove('druckmodus');
+    var f = folien[aktuell.index];
+    folien.forEach(function (g) { if (g !== f) schrittKlassen(g, 0); });
+    if (f) {
+      schrittKlassen(f, aktuell.schritt);
+      bausteinHooks(f, 'schritt', [aktuell.schritt, 'start']);
+      hookAufrufen(f, 'schritt', [aktuell.schritt, 'start']);
+    }
+    einpassen();
+  }
+
+  function druckSeitenMitNotizen() {
+    html.classList.add('druck-notizen');
+    var stil = document.createElement('style');
+    stil.textContent = '@page { size: 1920px 1620px; margin: 0; }';
+    document.head.appendChild(stil);
+    folien.forEach(function (f) {
+      var seite = document.createElement('div');
+      seite.className = 'druck-seite';
+      f.el.parentNode.insertBefore(seite, f.el);
+      seite.appendChild(f.el);
+      var notiz = util.element('div', { class: 'druck-notiz' }, null, seite);
+      var quelle = f.el.querySelector(':scope > .notizen');
+      notiz.innerHTML = '<h3>Sprechtext · Folie ' + util.escape(f.nummer) + ' · ' + util.escape(f.titel) + '</h3>' +
+        (quelle && quelle.innerHTML.trim() ? quelle.innerHTML : '<p><em>Kein Sprechtext hinterlegt.</em></p>');
+    });
+  }
+
+
+  /* ===========================================================================
+     14. START
+     =========================================================================== */
+  var bereitAufloesen;
+  Deck.bereit = new Promise(function (fertig) { bereitAufloesen = fertig; });
+  Deck.istBereit = false;
+
+  function start() {
+    buehne = document.querySelector('.buehne');
+    deckEl = document.querySelector('.deck');
+    if (!buehne || !deckEl) {
+      console.error('deck.js: <div class="deck"><main class="buehne"> fehlt in der Seite.');
+      return;
+    }
+    markenfarbenSetzen();
+    themaSetzen(anfangsThema(), anfangsModus(), { still: true });
+    if (marke.titel && !IST_REFERENT) document.title = marke.titel + (marke.name ? ' – ' + marke.name : '');
+
+    folienSammeln();
+    if (!folien.length) {
+      console.error('deck.js: keine Folien gefunden (<section class="folie"> in <main class="buehne">).');
+      return;
+    }
+    folien.forEach(laufkopfEinfuegen);
+    platzhalterFuellen(document);
+    folien.forEach(function (f) { bausteineAufbauen(f.el, f); });
+    folien.forEach(function (f) { hookAufrufen(f, 'einrichten'); });
+    folien.forEach(schritteErmitteln);
+    platzhalterFuellen(document);
+
+    kanalEinrichten();
+    ebenenBauen();
+    bausteineAufbauen(ebenenWurzel, null);
+    platzhalterFuellen(ebenenWurzel);
+
+    if (IST_DRUCK_URL) {
+      istGestartet = true;
+      if (MIT_NOTIZEN) druckSeitenMitNotizen();
+      druckmodusAn();
+      aktuell.index = 0;
+      folien[0].el.classList.add('ist-aktiv');
+    } else {
+      if (IST_REFERENT) referentBauen();
+      else { leisteBauen(); wischenEinrichten(); }
+      istGestartet = true;
+
+      var ziel = adresseLesen();
+      var index = ziel ? folieAufloesen(ziel.folie) : 0;
+      if (index < 0) index = 0;
+      gehe(index, ziel ? ziel.schritt : 0, { sofort: true, still: true });
+
+      document.addEventListener('keydown', tasteGedrueckt);
+      window.addEventListener('resize', einpassen);
+      window.addEventListener('hashchange', function () {
+        var z = adresseLesen();
+        if (!z) return;
+        var i = folieAufloesen(z.folie);
+        if (i >= 0 && (i !== aktuell.index || z.schritt !== aktuell.schritt)) gehe(i, z.schritt);
+      });
+      window.addEventListener('beforeprint', druckmodusAn);
+      window.addEventListener('afterprint', druckmodusAus);
+      einpassen();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(einpassen);
+      if (!IST_REFERENT) kanalZustandSenden();
+    }
+
+    Deck.istBereit = true;
+    bereitAufloesen(Deck);
+    document.dispatchEvent(new CustomEvent('deck:bereit', { detail: Deck.zustand() }));
+  }
+
+  /* Folien-Skripte werden nach deck.js geladen – Start daher erst, wenn das
+     Dokument vollständig eingelesen ist. */
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else setTimeout(start, 0);
+})();

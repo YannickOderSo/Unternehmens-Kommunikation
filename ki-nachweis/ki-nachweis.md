@@ -35,6 +35,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 13 | 13.10.2026 | Yannick | HOLY gewählt; gegengeprüfte Recherche für das Team-Meeting | D03 (Workflow) | Dossier *in Arbeit* |
 | 14 | 13./14.10.2026 | System | Nutzungslimit erneut erreicht: D01 und D03 unterbrochen; Sitzung neu gestartet | – | – |
 | 15 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier *in Arbeit* |
+| 16 | 14.10.2026 | Yannick | Übergabe-Prompt für einen zweiten Account | Ü01 (Übergabe) | Prompt, JURY.md, Entwürfe auf GitHub |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -244,6 +245,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** D03 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 16 – 14.10.2026 – Yannick
+
+> Gib einen Prompt weiter wenn du Arbeit verteilen willst an einen zweiten account
+
+- **Vorgehen Claude:** Den Bau der Präsentation (D01) für den zweiten Account vorbereitet: Jury-Ergebnis aus dem
+  Workflow-Protokoll als `fallstudie-1-brand-persona/praesentation/_entwuerfe/JURY.md` gesichert (Gleichstand Editorial
+  und Bento hell mit je 16,5 Punkten, Keynote dunkel 12,5; Standard laut Skript: Editorial), die drei Entwürfe und das
+  unvollständige Fundament auf GitHub gelegt, `.gitattributes` (Rohprotokoll wird beim Zusammenführen vereinigt statt zu
+  kollidieren), CLAUDE.md um die parallele Arbeit ergänzt und den Übergabe-Prompt geschrieben (siehe Ü01).
+- **Ergebnis:** `ki-nachweis/uebergaben/2026-10-14_account-2_praesentation.md`, `praesentation/_entwuerfe/` (inkl.
+  `JURY.md`), `praesentation/` (unvollständiges Fundament), `.gitattributes`, `CLAUDE.md`, diese Datei
+- **Unteragenten:** keine (Übergabe an zweiten Account: Ü01)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -253,7 +268,8 @@ steht hier mit dem wörtlichen Auftrag.
 
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
-| D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); wartet, bis D03 fertig ist | – |
+| D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); fertig: 3 Gestaltungsrichtungen, Jury; Rest an Account 2 übergeben (Ü01) | – |
+| Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | unterbrochen (Nutzungslimit), fortgesetzt 14.10. 00:02 UTC – *läuft* | – |
 
@@ -290,7 +306,17 @@ steht hier mit dem wörtlichen Auftrag.
   gekennzeichnet), alles offline lauffähig, fremde Schriften/Bibliotheken mit Lizenz melden, Unsicherheiten bei
   Modellinhalten kennzeichnen, KI-Nachweis und Git nicht selbst anfassen.
 - **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+- **Wie Claude das Ergebnis geprüft hat:** Unterbrechungen siehe 11 und 14. Fertig wurden die drei Gestaltungsrichtungen
+  (Kontaktbogen von Claude angesehen, Screenshots in `praesentation/_entwuerfe/*/screenshots/`) und die zwei Jury-Bewertungen
+  (gesichert in `praesentation/_entwuerfe/JURY.md`). Das Fundament blieb unvollständig; der Rest wurde übergeben (Ü01).
+
+### Ü01 – 14.10.2026 – ausgelöst durch Prompt 16
+
+- **Art:** Übergabe an einen zweiten Account (eigene Claude-Code-Sitzung im selben Repository, Branch
+  `praesentation-account-2`). Dessen Prompts und Delegationen stehen in `ki-nachweis-account-2.md`.
+- **Auftrag (wörtlich):** [`uebergaben/2026-10-14_account-2_praesentation.md`](uebergaben/2026-10-14_account-2_praesentation.md)
+- **Ergebnis:** *übergeben*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt beim Zusammenführen*
 
 ### D02 – 13.10.2026 – ausgelöst durch Prompt 09
 

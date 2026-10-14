@@ -1,0 +1,903 @@
+<!doctype html>
+<!--
+  muster.html – Musterseite der Gestaltungsrichtung 1 „Editorial“
+  Fallstudie 1 „Brand Persona & Markenidentität“ · Modul Unternehmenskommunikation
+  Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Präsentation 26.10.2026
+
+  Öffnen: Doppelklick auf diese Datei (läuft offline, ohne Server).
+  Jede Folie ist ein <section class="folie"> im Format 1920 × 1080.
+  Farben, Schriften, Größen: tokens.css · Bausteine: folien.css · Verhalten: folien.js
+  Alle Zahlen auf diesen Folien sind BEISPIELDATEN und als solche gekennzeichnet.
+-->
+<html lang="de" data-modus="hell">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Richtung Editorial</title>
+  <meta name="description" content="Gestaltungsrichtung 1 „Editorial“ für die Präsentation der Fallstudie 1 – Musterfolien, Tokens und Bewegungssprache.">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="folien.css">
+  <style>
+    /* ---------- Nur für diese Musterseite (nicht Teil der Folien) ---------- */
+    html, body { margin: 0; }
+    body {
+      background: color-mix(in oklab, var(--f-text) 9%, var(--f-hintergrund));
+      color: var(--f-text);
+      font-family: var(--schrift-text);
+      font-size: 17px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .muster-seite { max-width: 1984px; margin: 0 auto; padding: 32px 16px 80px; box-sizing: border-box; }
+    .muster-kopf { display: grid; gap: 12px; margin: 8px 0 36px; max-width: 1100px; }
+    .muster-kopf h1 { margin: 0; font-family: var(--schrift-display); font-weight: 380; font-size: clamp(34px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.02em; }
+    .muster-kopf h1 em { color: var(--f-akzent); }
+    .muster-kopf p { margin: 0; max-width: 70ch; color: var(--f-text-2); }
+    .muster-kopf .rubrik { font-size: 14px; }
+    .muster-werkzeuge { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .muster-werkzeuge button {
+      font: 600 15px/1 var(--schrift-text); letter-spacing: 0.04em;
+      padding: 11px 16px; border-radius: var(--radius-m); cursor: pointer;
+      border: 1.5px solid var(--f-text); background: transparent; color: var(--f-text);
+    }
+    .muster-werkzeuge button[aria-pressed="true"] { background: var(--f-text); color: var(--f-hintergrund); }
+    .muster-folie { margin: 0 0 40px; }
+    .muster-folie figcaption { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; margin: 0 0 12px; font-size: 16px; color: var(--f-text-2); }
+    .muster-folie figcaption strong { font-family: var(--schrift-display); font-size: 24px; font-weight: 420; color: var(--f-text); }
+    .muster-folie code { font-size: 14px; }
+    .buehne-rahmen { width: calc(1920px * var(--skala, 1)); height: calc(1080px * var(--skala, 1)); overflow: hidden; box-shadow: var(--schatten-2); }
+    .buehne-rahmen > .folie { transform: scale(var(--skala, 1)); transform-origin: 0 0; }
+    .muster-text { max-width: 1100px; margin-top: 56px; }
+    .muster-text h2 { font-family: var(--schrift-display); font-weight: 400; font-size: 36px; margin: 0 0 12px; }
+    .muster-text dl { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: 10px 24px; margin: 0; }
+    .muster-text dt { font-weight: 650; }
+    .muster-text dd { margin: 0; color: var(--f-text-2); }
+    @media (max-width: 640px) { .muster-text dl { grid-template-columns: 1fr; } }
+    /* Aufnahme-Modus (für Screenshots): keine Ränder, keine Skalierung */
+    .aufnahme body { background: var(--f-hintergrund); }
+    .aufnahme .muster-seite { padding: 0; max-width: none; }
+    .aufnahme .muster-kopf, .aufnahme .muster-text, .aufnahme figcaption { display: none; }
+    .aufnahme .muster-folie { margin: 0; }
+    .aufnahme .buehne-rahmen { box-shadow: none; }
+    .aufnahme ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body>
+<main class="muster-seite">
+
+  <header class="muster-kopf">
+    <p class="rubrik">Gestaltungsrichtung 1 · Entwurf</p>
+    <h1>Editorial – <em>ruhig, präzise, wie ein guter Geschäftsbericht</em></h1>
+    <p>Papierweiße Fläche, strenges 12-Spalten-Raster, große Serif-Titel (Fraunces) mit klarer Grotesk (Inter), feine Linien und eine sparsam eingesetzte Akzentfarbe. Farben vorerst neutral – ein Tausch von <code>--marke-primaer</code> und <code>--marke-sekundaer</code> in <code>tokens.css</code> färbt alles um (siehe Folien e1 und e2).</p>
+    <div class="muster-werkzeuge" role="group" aria-label="Darstellung">
+      <button type="button" data-modus-knopf="hell" aria-pressed="true">Hell</button>
+      <button type="button" data-modus-knopf="dunkel" aria-pressed="false">Dunkel</button>
+      <button type="button" id="animation-neu">Animationen erneut abspielen</button>
+    </div>
+  </header>
+
+
+  <!-- =====================================================================
+       a) EINSTIEG – Rätsel mit dem Publikum
+       ===================================================================== -->
+  <figure class="muster-folie">
+    <figcaption><strong>a) Einstieg</strong> Rätsel mit dem Publikum · Klick auf das Bild = nächster Hinweis (weniger Zoom, weniger Unschärfe)</figcaption>
+    <div class="buehne-rahmen">
+    <section class="folie folie--einstieg" id="folie-01" data-modus="hell" aria-label="Folie 1: Einstieg">
+      <header class="kopf" data-anim="aufblenden">
+        <div class="kopf__links">
+          <span class="rubrik">Unternehmenskommunikation</span>
+          <span class="kopf__trenner"></span>
+          <span class="rubrik">Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern</span>
+        </div>
+        <div class="kopf__rechts">
+          <span class="rubrik">Fallstudie 1</span>
+        </div>
+      </header>
+
+      <div class="einstieg">
+        <div class="einstieg__oben">
+          <div class="raetsel-text">
+            <div>
+              <p class="rubrik rubrik--akzent" data-anim="einblenden" style="--start: 100ms">Zum Einstieg · Rätsel</p>
+              <h2 class="raetsel-frage" style="--start: 250ms">Welche Marke steckt <em>dahinter?</em></h2>
+            </div>
+            <div data-anim="einblenden" style="--start: 900ms">
+              <p class="raetsel-tipp">Ihr Tipp? Rufen Sie ihn einfach in den Raum.</p>
+              <div class="raetsel-schritte">
+                <div class="raetsel-schritte__balken" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <span class="rubrik" data-schritt-anzeige>Hinweis 1 von 4</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="raetsel-bild-rahmen" data-anim="aufblenden" style="--start: 0ms">
+            <span class="passer passer--lo"></span><span class="passer passer--ro"></span>
+            <span class="passer passer--lu"></span><span class="passer passer--ru"></span>
+            <button class="raetsel-bild" type="button" aria-label="Nächsten Hinweis zeigen: Bild weniger vergrößert und schärfer">
+              <!-- PLATZHALTER: Sobald die Marke feststeht, hier ein Foto einsetzen:
+                   <div class="raetsel-motiv"><img src="bilder/raetsel.jpg" alt=""></div> -->
+              <div class="raetsel-motiv" data-anim="heranzoomen">
+                <span class="raetsel-form raetsel-form--a"></span>
+                <span class="raetsel-form raetsel-form--b"></span>
+                <span class="raetsel-form raetsel-form--c"></span>
+                <span class="raetsel-form raetsel-form--d"></span>
+              </div>
+              <span class="raetsel-korn"></span>
+              <span class="raetsel-etikett">Bild-Platzhalter · stark vergrößert</span>
+              <span class="raetsel-zoom">Zoom <span data-zoom-anzeige>300&#8239;%</span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="einstieg__unten">
+          <div class="einstieg__linie" data-anim="linie" style="--start: 300ms"></div>
+          <h1 class="titel titel--gross" style="--start: 500ms">Brand Persona <em>&amp;</em> Markenidentität</h1>
+          <dl class="unterzeile">
+            <div class="unterzeile__feld unterzeile__feld--marke" data-anim="einblenden" style="--start: 1000ms; --i: 0">
+              <dt class="rubrik">Marke</dt><dd class="unterzeile__marke" data-marke>[Marke]</dd>
+            </div>
+            <div class="unterzeile__feld unterzeile__feld--gruppe" data-anim="einblenden" style="--start: 1000ms; --i: 1">
+              <dt class="rubrik">Gruppe</dt><dd>Yannick Heisler · Elias Knauber · Lukas Welker</dd>
+            </div>
+            <div class="unterzeile__feld unterzeile__feld--datum" data-anim="einblenden" style="--start: 1000ms; --i: 2">
+              <dt class="rubrik">Präsentation</dt><dd class="ziffern">26.10.2026</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    </div>
+  </figure>
+
+
+  <!-- =====================================================================
+       b) REPERTORY GRID – Polaritätenprofil → Markenattribute
+       ===================================================================== -->
+  <figure class="muster-folie">
+    <figcaption><strong>b) Inhaltsfolie Repertory Grid</strong> Titel als Kernaussage · Polaritätenprofil · drei Attribute · Beispieldaten</figcaption>
+    <div class="buehne-rahmen">
+    <section class="folie" id="folie-06" data-modus="hell" aria-label="Folie 6: Repertory Grid">
+      <header class="kopf" data-anim="aufblenden">
+        <div class="kopf__links">
+          <span class="rubrik">Brand Persona &amp; Markenidentität</span>
+          <span class="kopf__trenner"></span>
+          <span class="kopf__marke" data-marke>[Marke]</span>
+        </div>
+        <div class="kopf__rechts">
+          <span class="rubrik">Markenattribute</span>
+          <span class="kopf__seite">06</span>
+          <!-- Mini-Steuerrad: aktives Feld = Markenattribute (unten links). Klick → Übersicht -->
+          <a class="mini-rad" href="#folie-02" aria-label="Zur Übersicht: Markensteuerrad">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <path class="feld" d="M22 22 L1 22 A21 21 0 0 1 22 1 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <path class="feld" d="M22 22 L22 1 A21 21 0 0 1 43 22 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <path class="feld" d="M22 22 L43 22 A21 21 0 0 1 22 43 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <path class="feld feld--aktiv" d="M22 22 L22 43 A21 21 0 0 1 1 22 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <circle class="kern" cx="22" cy="22" r="7.5" stroke="var(--f-hintergrund)" stroke-width="3" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <div class="folie__inhalt">
+        <div class="titelblock">
+          <div class="titelblock__zeile" data-anim="einblenden" style="--start: 100ms">
+            <p class="rubrik rubrik--akzent">Repertory Grid</p>
+            <span class="badge-beispiel">Beispieldaten</span>
+          </div>
+          <h2 class="titel" style="--start: 200ms">Drei Eigenschaften heben <em data-marke>[Marke]</em> vom Wettbewerb ab</h2>
+        </div>
+
+        <div class="rg">
+          <!-- Linke Seite: Polaritätenprofil -->
+          <figure class="rg__grafik">
+            <ul class="rg__legende" data-anim="einblenden" style="--start: 600ms">
+              <li><svg viewBox="0 0 44 18" aria-hidden="true"><line x1="0" y1="9" x2="44" y2="9" class="pp-linie pp-linie--marke"/><circle cx="22" cy="9" r="7" class="pp-punkt--marke"/></svg><span data-marke>[Marke]</span></li>
+              <li><svg viewBox="0 0 44 18" aria-hidden="true"><line x1="0" y1="9" x2="44" y2="9" class="pp-linie pp-linie--wettbewerb"/><circle cx="22" cy="9" r="6" class="pp-punkt--wettbewerb"/></svg>Stärkster Wettbewerber</li>
+              <li><svg viewBox="0 0 44 18" aria-hidden="true"><line x1="2" y1="9" x2="44" y2="9" class="pp-linie pp-linie--ideal"/></svg>Idealmarke</li>
+            </ul>
+
+            <!-- Polaritätenprofil. Skala 1 (linker Pol) bis 7 (rechter Pol).
+                 x-Position = 240 + (Wert − 1) × 80 · Zeilenmitten y = 80, 152, 224, 296, 368, 440
+                 Beispieldaten – nach der Erhebung durch die echten Mittelwerte ersetzen. -->
+            <svg class="rg__svg" viewBox="0 0 960 482" width="960" height="482" role="img" aria-label="Polaritätenprofil mit sechs Konstrukten: Marke, stärkster Wettbewerber und Idealmarke im Vergleich (Beispieldaten)">
+              <!-- hervorgehobene Zeilen = abgeleitete Markenattribute -->
+              <g data-anim="aufblenden" style="--start: 1500ms">
+                <rect class="pp-band" x="0" y="44" width="960" height="72" />
+                <rect class="pp-band" x="0" y="116" width="960" height="72" />
+                <rect class="pp-band" x="0" y="260" width="960" height="72" />
+              </g>
+              <!-- Raster -->
+              <g data-anim="aufblenden" style="--start: 500ms">
+                <line class="pp-raster" x1="0" x2="960" y1="44" y2="44" />
+                <line class="pp-raster" x1="0" x2="960" y1="116" y2="116" />
+                <line class="pp-raster" x1="0" x2="960" y1="188" y2="188" />
+                <line class="pp-raster" x1="0" x2="960" y1="260" y2="260" />
+                <line class="pp-raster" x1="0" x2="960" y1="332" y2="332" />
+                <line class="pp-raster" x1="0" x2="960" y1="404" y2="404" />
+                <line class="pp-raster" x1="0" x2="960" y1="476" y2="476" />
+                <line class="pp-raster" x1="240" x2="240" y1="44" y2="476" />
+                <line class="pp-raster" x1="320" x2="320" y1="44" y2="476" />
+                <line class="pp-raster" x1="400" x2="400" y1="44" y2="476" />
+                <line class="pp-mitte" x1="480" x2="480" y1="44" y2="476" />
+                <line class="pp-raster" x1="560" x2="560" y1="44" y2="476" />
+                <line class="pp-raster" x1="640" x2="640" y1="44" y2="476" />
+                <line class="pp-raster" x1="720" x2="720" y1="44" y2="476" />
+                <text class="pp-ziffer" x="240" y="26">1</text>
+                <text class="pp-ziffer" x="320" y="26">2</text>
+                <text class="pp-ziffer" x="400" y="26">3</text>
+                <text class="pp-ziffer" x="480" y="26">4</text>
+                <text class="pp-ziffer" x="560" y="26">5</text>
+                <text class="pp-ziffer" x="640" y="26">6</text>
+                <text class="pp-ziffer" x="720" y="26">7</text>
+              </g>
+              <!-- Pole (Konstrukte); fett = abgeleitetes Markenattribut -->
+              <g data-anim="aufblenden" style="--start: 600ms">
+                <text class="pp-pol pp-pol--links pp-pol--stark" x="212" y="80">innovativ</text>
+                <text class="pp-pol pp-pol--links pp-pol--stark" x="212" y="152">nahbar</text>
+                <text class="pp-pol pp-pol--links" x="212" y="224">hochwertig</text>
+                <text class="pp-pol pp-pol--links pp-pol--stark" x="212" y="296">nachhaltig</text>
+                <text class="pp-pol pp-pol--links" x="212" y="368">verspielt</text>
+                <text class="pp-pol pp-pol--links" x="212" y="440">regional</text>
+                <text class="pp-pol" x="748" y="80">traditionell</text>
+                <text class="pp-pol" x="748" y="152">distanziert</text>
+                <text class="pp-pol" x="748" y="224">preisgünstig</text>
+                <text class="pp-pol" x="748" y="296">konventionell</text>
+                <text class="pp-pol" x="748" y="368">seriös</text>
+                <text class="pp-pol" x="748" y="440">international</text>
+              </g>
+              <!-- Idealmarke (gepunktet): 1,7 · 2,0 · 2,6 · 1,9 · 3,6 · 3,8 -->
+              <polyline class="pp-linie pp-linie--ideal" points="296,80 320,152 368,224 312,296 448,368 464,440"
+                        data-anim="wischen" style="--start: 800ms" />
+              <!-- Stärkster Wettbewerber: 4,9 · 4,6 · 2,8 · 4,4 · 4,4 · 4,2 -->
+              <polyline class="pp-linie pp-linie--wettbewerb" points="552,80 528,152 384,224 512,296 512,368 496,440"
+                        pathLength="1" data-anim="zeichnen" style="--start: 900ms" />
+              <!-- [Marke]: 1,8 · 2,2 · 3,2 · 2,4 · 3,9 · 4,6 -->
+              <polyline class="pp-linie pp-linie--marke" points="304,80 336,152 416,224 352,296 472,368 528,440"
+                        pathLength="1" data-anim="zeichnen" style="--start: 1100ms" />
+              <g>
+                <circle class="pp-punkt--wettbewerb" cx="552" cy="80" r="8" data-anim="punkt" style="--start: 1300ms; --i: 0" />
+                <circle class="pp-punkt--wettbewerb" cx="528" cy="152" r="8" data-anim="punkt" style="--start: 1300ms; --i: 1" />
+                <circle class="pp-punkt--wettbewerb" cx="384" cy="224" r="8" data-anim="punkt" style="--start: 1300ms; --i: 2" />
+                <circle class="pp-punkt--wettbewerb" cx="512" cy="296" r="8" data-anim="punkt" style="--start: 1300ms; --i: 3" />
+                <circle class="pp-punkt--wettbewerb" cx="512" cy="368" r="8" data-anim="punkt" style="--start: 1300ms; --i: 4" />
+                <circle class="pp-punkt--wettbewerb" cx="496" cy="440" r="8" data-anim="punkt" style="--start: 1300ms; --i: 5" />
+                <circle class="pp-punkt--marke" cx="304" cy="80" r="10" data-anim="punkt" style="--start: 1500ms; --i: 0" />
+                <circle class="pp-punkt--marke" cx="336" cy="152" r="10" data-anim="punkt" style="--start: 1500ms; --i: 1" />
+                <circle class="pp-punkt--marke" cx="416" cy="224" r="10" data-anim="punkt" style="--start: 1500ms; --i: 2" />
+                <circle class="pp-punkt--marke" cx="352" cy="296" r="10" data-anim="punkt" style="--start: 1500ms; --i: 3" />
+                <circle class="pp-punkt--marke" cx="472" cy="368" r="10" data-anim="punkt" style="--start: 1500ms; --i: 4" />
+                <circle class="pp-punkt--marke" cx="528" cy="440" r="10" data-anim="punkt" style="--start: 1500ms; --i: 5" />
+              </g>
+            </svg>
+          </figure>
+
+          <!-- Rechte Seite: die drei abgeleiteten Markenattribute -->
+          <div class="rg__attribute">
+            <p class="rubrik rubrik--akzent" data-anim="einblenden" style="--start: 900ms">Abgeleitete Markenattribute</p>
+            <p class="rg__erklaerung" data-anim="einblenden" style="--start: 950ms">Vorsprung vor dem stärksten Wettbewerber, in Skalenpunkten</p>
+            <ol class="attribut-liste">
+              <li class="attribut" data-anim="einblenden" style="--start: 1600ms; --i: 0"><span class="attribut__nr">01</span><span class="attribut__name">Innovativ</span><span class="attribut__wert">3,1</span></li>
+              <li class="attribut" data-anim="einblenden" style="--start: 1600ms; --i: 1"><span class="attribut__nr">02</span><span class="attribut__name">Nahbar</span><span class="attribut__wert">2,4</span></li>
+              <li class="attribut" data-anim="einblenden" style="--start: 1600ms; --i: 2"><span class="attribut__nr">03</span><span class="attribut__name">Nachhaltig</span><span class="attribut__wert">2,0</span></li>
+            </ol>
+            <p class="rg__fazit" data-anim="einblenden" style="--start: 1900ms">Alle drei liegen nah an der Idealmarke.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="fuss" data-anim="aufblenden" style="--start: 1200ms">
+        <p class="quelle">Quelle: eigene Erhebung (Beispieldaten), Methode nach Kelly (1955) · Skala 1 = linker Pol, 7 = rechter Pol</p>
+      </footer>
+    </section>
+    </div>
+  </figure>
+
+
+  <!-- =====================================================================
+       c) MARKENSTEUERRAD – Hub mit klickbarer Navigation
+       ===================================================================== -->
+  <figure class="muster-folie">
+    <figcaption><strong>c) Steuerrad-Hub</strong> Agenda und Navigation in einem: Felder und Methoden sind Links zu den Folien</figcaption>
+    <div class="buehne-rahmen">
+    <section class="folie folie--hub" id="folie-02" data-modus="hell" aria-label="Folie 2: Vorgehen – Markensteuerrad">
+      <header class="kopf">
+        <div class="kopf__links">
+          <span class="rubrik">Brand Persona &amp; Markenidentität</span>
+          <span class="kopf__trenner"></span>
+          <span class="kopf__marke" data-marke>[Marke]</span>
+        </div>
+        <div class="kopf__rechts">
+          <span class="rubrik">Vorgehen</span>
+          <span class="kopf__seite">02</span>
+        </div>
+      </header>
+
+      <div class="folie__inhalt">
+        <h2 class="titel hub__titel">Jede Methode füllt ein Feld des Markensteuerrads</h2>
+      </div>
+
+      <!-- Markensteuerrad nach Esch als SVG in Folienkoordinaten (1920 × 1080).
+           Mittelpunkt 960/632, Felder Radius 126–338, Kern Radius 110, Rahmenring Radius 376. -->
+      <svg class="hub__svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="rad-titel-c">
+        <title id="rad-titel-c">Markensteuerrad nach Esch mit den Methoden, die die einzelnen Felder füllen</title>
+        <defs>
+          <!-- Bögen für die Beschriftung auf dem Ring -->
+          <path id="ringbogen-oben-c" d="M592.06 625.58 A368 368 0 0 1 1327.94 625.58" />
+          <path id="ringbogen-unten-c" d="M576.06 638.7 A384 384 0 0 0 1343.94 638.7" />
+        </defs>
+
+        <!-- Rahmen: Brand Persona + Limbic Map. Der Ring besteht aus zwei Bögen (links/rechts),
+             oben und unten bleibt Platz für die Beschriftung. Bögen zeichnen sich im Uhrzeigersinn.
+             Werden die Ringtexte geändert, die Bogenenden (Winkel) hier anpassen. -->
+        <path class="rad-ring" d="M1274.5 426 A376 376 0 0 1 1247.2 874.7" pathLength="1"
+              data-anim="zeichnen" style="--start: 150ms; --dauer-lang: 1400ms" />
+        <path class="rad-ring" d="M672.8 874.7 A376 376 0 0 1 657.2 409.1" pathLength="1"
+              data-anim="zeichnen" style="--start: 150ms; --dauer-lang: 1400ms" />
+        <!-- Achsmarke oben: Grenze zwischen hard und soft facts -->
+        <line class="rad-ring" x1="960" y1="244" x2="960" y2="268" data-anim="aufblenden" style="--start: 1100ms" />
+
+        <!-- HARD FACTS (links): Markennutzen oben, Markenattribute unten -->
+        <a class="rad-link" href="#folie-07" data-feld="nutzen">
+          <path class="rad-feld rad-feld--hart" d="M622.07 625 A338 338 0 0 1 953 294.07 L953 506.19 A126 126 0 0 0 834.19 625 Z"
+                data-anim="feld" style="--start: 300ms; --i: 0" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 0">
+            <text class="rad-label rad-label--hart" x="805" y="472">Markennutzen</text>
+            <text class="rad-frage" x="805" y="514">Was biete ich an?</text>
+          </g>
+        </a>
+        <!-- SOFT FACTS (rechts): Markentonalität oben, Markenbild unten -->
+        <a class="rad-link" href="#folie-08" data-feld="tonalitaet">
+          <path class="rad-feld rad-feld--weich" d="M967 294.07 A338 338 0 0 1 1297.93 625 L1085.81 625 A126 126 0 0 0 967 506.19 Z"
+                data-anim="feld" style="--start: 300ms; --i: 1" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 1">
+            <text class="rad-label rad-label--weich" x="1115" y="472">Markentonalität</text>
+            <text class="rad-frage" x="1115" y="514">Wie bin ich?</text>
+          </g>
+        </a>
+        <a class="rad-link" href="#folie-09" data-feld="bild">
+          <path class="rad-feld rad-feld--weich" d="M1297.93 639 A338 338 0 0 1 967 969.93 L967 757.81 A126 126 0 0 0 1085.81 639 Z"
+                data-anim="feld" style="--start: 300ms; --i: 2" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 2">
+            <text class="rad-label rad-label--weich" x="1115" y="775">Markenbild</text>
+            <text class="rad-frage" x="1115" y="817">Wie trete ich auf?</text>
+          </g>
+        </a>
+        <a class="rad-link" href="#folie-06" data-feld="attribute">
+          <path class="rad-feld rad-feld--hart" d="M953 969.93 A338 338 0 0 1 622.07 639 L834.19 639 A126 126 0 0 0 953 757.81 Z"
+                data-anim="feld" style="--start: 300ms; --i: 3" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 3">
+            <text class="rad-label rad-label--hart" x="805" y="775">Markenattribute</text>
+            <text class="rad-frage" x="805" y="817">Über welche</text>
+            <text class="rad-frage" x="805" y="851">Eigenschaften</text>
+            <text class="rad-frage" x="805" y="885">verfüge ich?</text>
+          </g>
+        </a>
+
+        <!-- KERN: Markenkompetenz -->
+        <a class="rad-link rad-link--kern" href="#folie-03" data-feld="kompetenz">
+          <circle class="rad-kern" cx="960" cy="632" r="110" data-anim="punkt" style="--start: 560ms" />
+          <g data-anim="aufblenden" style="--start: 900ms">
+            <text class="rad-kern-label" x="960" y="612">Marken-</text>
+            <text class="rad-kern-label" x="960" y="648">kompetenz</text>
+            <text class="rad-kern-frage" x="960" y="690">Wer bin ich?</text>
+          </g>
+        </a>
+
+        <!-- Beschriftung auf dem Ring -->
+        <g data-anim="aufblenden" style="--start: 1100ms">
+          <text class="rad-ringtext rad-ringtext--hart" text-anchor="end"><textPath href="#ringbogen-oben-c" startOffset="554">HARD FACTS · RATIONAL</textPath></text>
+          <text class="rad-ringtext rad-ringtext--weich" text-anchor="start"><textPath href="#ringbogen-oben-c" startOffset="590">SOFT FACTS · EMOTIONAL</textPath></text>
+          <text class="rad-ringtext rad-ringtext--rahmen" text-anchor="middle"><textPath href="#ringbogen-unten-c" startOffset="50%">BRAND PERSONA + LIMBIC MAP · BEZUGSRAHMEN</textPath></text>
+        </g>
+
+        <!-- Verbindungslinien: zeichnen sich von der Methode zum Feld -->
+        <g class="verbinder-gruppe">
+          <path class="verbinder" data-feld="nutzen"     d="M128 442 H680"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 0" />
+          <path class="verbinder" data-feld="kompetenz"  d="M128 632 H850"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 1" />
+          <path class="verbinder" data-feld="attribute"  d="M128 822 H680"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 2" />
+          <path class="verbinder" data-feld="tonalitaet" d="M1792 442 H1240" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 0" />
+          <path class="verbinder" data-feld="rahmen"     d="M1792 632 H1336" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 1" />
+          <path class="verbinder" data-feld="bild"       d="M1792 822 H1240" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 2" />
+          <circle class="verbinder-punkt" cx="680"  cy="442" r="6" data-anim="punkt" style="--start: 1700ms; --i: 0" />
+          <circle class="verbinder-punkt" cx="850"  cy="632" r="6" data-anim="punkt" style="--start: 1700ms; --i: 1" />
+          <circle class="verbinder-punkt" cx="680"  cy="822" r="6" data-anim="punkt" style="--start: 1700ms; --i: 2" />
+          <circle class="verbinder-punkt" cx="1240" cy="442" r="6" data-anim="punkt" style="--start: 1700ms; --i: 0" />
+          <circle class="verbinder-punkt" cx="1336" cy="632" r="6" data-anim="punkt" style="--start: 1700ms; --i: 1" />
+          <circle class="verbinder-punkt" cx="1240" cy="822" r="6" data-anim="punkt" style="--start: 1700ms; --i: 2" />
+        </g>
+      </svg>
+
+      <!-- Methoden als klickbare Einträge. --y = Höhe der Verbindungslinie (wie im SVG). -->
+      <a class="methode methode--links" href="#folie-07" data-feld="nutzen" style="--y: 442px; --i: 0; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">07</span><span class="methode__name">Laddering</span></span>
+        <span class="methode__text">Means-End-Kette bis zum Wert</span>
+      </a>
+      <a class="methode methode--links" href="#folie-03" data-feld="kompetenz" style="--y: 632px; --i: 1; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">03</span><span class="methode__name">Desk Research</span></span>
+        <span class="methode__text">Herkunft, Historie, Marktrolle</span>
+      </a>
+      <a class="methode methode--links" href="#folie-06" data-feld="attribute" style="--y: 822px; --i: 2; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">06</span><span class="methode__name">Repertory Grid</span></span>
+        <span class="methode__text">Triadenvergleich mit Wettbewerbern</span>
+      </a>
+      <a class="methode methode--rechts" href="#folie-08" data-feld="tonalitaet" style="--y: 442px; --i: 0; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">08</span><span class="methode__name">Analogien</span></span>
+        <span class="methode__text">Marke als Mensch und Tier</span>
+      </a>
+      <a class="methode methode--rechts methode--zweizeilig" href="#folie-04" data-feld="rahmen" style="--y: 632px; --i: 1; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">04–05</span><span class="methode__name">Brand Persona +<br>Limbic Map</span></span>
+        <span class="methode__text">Zielgruppe als Bezugsrahmen</span>
+      </a>
+      <a class="methode methode--rechts" href="#folie-09" data-feld="bild" style="--y: 822px; --i: 2; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">09</span><span class="methode__name">Kommunikationsanalyse</span></span>
+        <span class="methode__text">Instagram · Facebook · YouTube</span>
+      </a>
+
+      <footer class="fuss">
+        <p class="quelle">Eigene Darstellung nach Esch und Häusel</p>
+        <p class="fuss__hinweis">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v14l4-4 3 7 3-1.4-3-6.8 5.6-.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Ziffer = Folie · Felder und Methoden sind klickbar
+        </p>
+      </footer>
+    </section>
+    </div>
+  </figure>
+
+
+  <!-- =====================================================================
+       d) LIVE-UMFRAGE – Publikum stimmt per QR-Code ab
+       ===================================================================== -->
+  <figure class="muster-folie">
+    <figcaption><strong>d) Live-Umfrage</strong> echter QR-Code (zeigt auf die Beispieladresse) · Balken mit Beispielzahlen</figcaption>
+    <div class="buehne-rahmen">
+    <section class="folie" id="folie-08" data-modus="hell" aria-label="Folie 8: Live-Umfrage">
+      <header class="kopf" data-anim="aufblenden">
+        <div class="kopf__links">
+          <span class="rubrik">Brand Persona &amp; Markenidentität</span>
+          <span class="kopf__trenner"></span>
+          <span class="kopf__marke" data-marke>[Marke]</span>
+        </div>
+        <div class="kopf__rechts">
+          <span class="rubrik">Markentonalität</span>
+          <span class="kopf__seite">08</span>
+          <a class="mini-rad" href="#folie-02" aria-label="Zur Übersicht: Markensteuerrad">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <path class="feld" d="M22 22 L1 22 A21 21 0 0 1 22 1 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <path class="feld feld--aktiv" d="M22 22 L22 1 A21 21 0 0 1 43 22 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <path class="feld" d="M22 22 L43 22 A21 21 0 0 1 22 43 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <path class="feld" d="M22 22 L22 43 A21 21 0 0 1 1 22 Z" stroke="var(--f-hintergrund)" stroke-width="3" />
+              <circle class="kern" cx="22" cy="22" r="7.5" stroke="var(--f-hintergrund)" stroke-width="3" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <div class="umfrage">
+        <div class="umfrage__links">
+          <p class="rubrik rubrik--akzent live" data-anim="einblenden" style="--start: 100ms"><span class="live__punkt" aria-hidden="true"></span>Live-Umfrage · Analogien</p>
+          <h2 class="titel umfrage__titel" style="--start: 200ms">Wenn <em data-marke>[Marke]</em> ein Tier wäre – welches?</h2>
+
+          <div class="qr-block" data-anim="einblenden" style="--start: 700ms">
+            <div class="qr-karte" data-qr="https://beispiel.de/umfrage" role="img" aria-label="QR-Code zur Umfrage: beispiel.de/umfrage"></div>
+            <div class="qr-info">
+              <p class="qr-info__aufruf">Jetzt abstimmen</p>
+              <p class="qr-info__url">beispiel.de/umfrage</p>
+              <p class="qr-info__hinweis">anonym · ohne Anmeldung</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="umfrage__rechts">
+          <div class="ergebnis-kopf" data-anim="einblenden" style="--start: 400ms">
+            <span class="rubrik">Zwischenstand</span>
+            <span class="ergebnis-kopf__zahl"><span><span class="ziffern">64</span> Stimmen</span><span class="badge-beispiel">Beispieldaten</span></span>
+          </div>
+          <!-- Antworten: --anteil = Breite des Balkens relativ zur stärksten Antwort.
+               Beispielzahlen (n = 64): Fuchs 22, Eule 17, Delfin 11, Löwe 8, Hund 6 -->
+          <ol class="ergebnis-liste">
+            <li class="antwort" style="--anteil: 100%">
+              <span class="antwort__name" data-anim="einblenden" style="--start: 700ms; --i: 0">Fuchs</span>
+              <span class="antwort__wert ziffern" data-anim="einblenden" style="--start: 700ms; --i: 0">34&#8239;%</span>
+              <span class="antwort__spur"><span class="antwort__balken" data-anim="balken" style="--start: 800ms; --i: 0"></span></span>
+            </li>
+            <li class="antwort antwort--analyse" style="--anteil: 79%">
+              <span class="antwort__name" data-anim="einblenden" style="--start: 700ms; --i: 1">Eule <span class="analyse-marke" data-anim="marker" style="--start: 2000ms">Unsere Analyse</span></span>
+              <span class="antwort__wert ziffern" data-anim="einblenden" style="--start: 700ms; --i: 1">27&#8239;%</span>
+              <span class="antwort__spur"><span class="antwort__balken" data-anim="balken" style="--start: 800ms; --i: 1"></span></span>
+            </li>
+            <li class="antwort" style="--anteil: 50%">
+              <span class="antwort__name" data-anim="einblenden" style="--start: 700ms; --i: 2">Delfin</span>
+              <span class="antwort__wert ziffern" data-anim="einblenden" style="--start: 700ms; --i: 2">17&#8239;%</span>
+              <span class="antwort__spur"><span class="antwort__balken" data-anim="balken" style="--start: 800ms; --i: 2"></span></span>
+            </li>
+            <li class="antwort" style="--anteil: 38%">
+              <span class="antwort__name" data-anim="einblenden" style="--start: 700ms; --i: 3">Löwe</span>
+              <span class="antwort__wert ziffern" data-anim="einblenden" style="--start: 700ms; --i: 3">13&#8239;%</span>
+              <span class="antwort__spur"><span class="antwort__balken" data-anim="balken" style="--start: 800ms; --i: 3"></span></span>
+            </li>
+            <li class="antwort" style="--anteil: 26%">
+              <span class="antwort__name" data-anim="einblenden" style="--start: 700ms; --i: 4">Hund</span>
+              <span class="antwort__wert ziffern" data-anim="einblenden" style="--start: 700ms; --i: 4">9&#8239;%</span>
+              <span class="antwort__spur"><span class="antwort__balken" data-anim="balken" style="--start: 800ms; --i: 4"></span></span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <footer class="fuss" data-anim="aufblenden" style="--start: 1200ms">
+        <p class="quelle">Beispieldaten · Umfrage-Werkzeug und Adresse werden vor der Präsentation festgelegt</p>
+        <p class="fuss__hinweis">Begründung unserer Analyse: Folie 08</p>
+      </footer>
+    </section>
+    </div>
+  </figure>
+
+
+  <!-- =====================================================================
+       e) FARBTAUSCH – dieselbe Steuerrad-Folie mit anderen Markenfarben
+       Nur zwei Variablen werden geändert, alles andere leitet sich ab.
+       ===================================================================== -->
+  <figure class="muster-folie">
+    <figcaption><strong>e1) Farbtausch Rot</strong> <code>--marke-primaer: #E30613</code> <code>--marke-sekundaer: #1D1D1B</code></figcaption>
+    <div class="buehne-rahmen">
+    <section class="folie folie--hub" id="folie-02-rot" data-modus="hell" style="--marke-primaer: #E30613; --marke-sekundaer: #1D1D1B" aria-label="Folie 2 mit roten Markenfarben">
+      <header class="kopf">
+        <div class="kopf__links">
+          <span class="rubrik">Brand Persona &amp; Markenidentität</span>
+          <span class="kopf__trenner"></span>
+          <span class="kopf__marke" data-marke>[Marke]</span>
+        </div>
+        <div class="kopf__rechts">
+          <span class="rubrik">Vorgehen</span>
+          <span class="kopf__seite">02</span>
+        </div>
+      </header>
+
+      <div class="folie__inhalt">
+        <h2 class="titel hub__titel">Jede Methode füllt ein Feld des Markensteuerrads</h2>
+      </div>
+
+      <!-- Markensteuerrad nach Esch als SVG in Folienkoordinaten (1920 × 1080).
+           Mittelpunkt 960/632, Felder Radius 126–338, Kern Radius 110, Rahmenring Radius 376. -->
+      <svg class="hub__svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="rad-titel-rot">
+        <title id="rad-titel-rot">Markensteuerrad nach Esch mit den Methoden, die die einzelnen Felder füllen</title>
+        <defs>
+          <!-- Bögen für die Beschriftung auf dem Ring -->
+          <path id="ringbogen-oben-rot" d="M592.06 625.58 A368 368 0 0 1 1327.94 625.58" />
+          <path id="ringbogen-unten-rot" d="M576.06 638.7 A384 384 0 0 0 1343.94 638.7" />
+        </defs>
+
+        <!-- Rahmen: Brand Persona + Limbic Map. Der Ring besteht aus zwei Bögen (links/rechts),
+             oben und unten bleibt Platz für die Beschriftung. Bögen zeichnen sich im Uhrzeigersinn.
+             Werden die Ringtexte geändert, die Bogenenden (Winkel) hier anpassen. -->
+        <path class="rad-ring" d="M1274.5 426 A376 376 0 0 1 1247.2 874.7" pathLength="1"
+              data-anim="zeichnen" style="--start: 150ms; --dauer-lang: 1400ms" />
+        <path class="rad-ring" d="M672.8 874.7 A376 376 0 0 1 657.2 409.1" pathLength="1"
+              data-anim="zeichnen" style="--start: 150ms; --dauer-lang: 1400ms" />
+        <!-- Achsmarke oben: Grenze zwischen hard und soft facts -->
+        <line class="rad-ring" x1="960" y1="244" x2="960" y2="268" data-anim="aufblenden" style="--start: 1100ms" />
+
+        <!-- HARD FACTS (links): Markennutzen oben, Markenattribute unten -->
+        <a class="rad-link" href="#folie-07" data-feld="nutzen">
+          <path class="rad-feld rad-feld--hart" d="M622.07 625 A338 338 0 0 1 953 294.07 L953 506.19 A126 126 0 0 0 834.19 625 Z"
+                data-anim="feld" style="--start: 300ms; --i: 0" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 0">
+            <text class="rad-label rad-label--hart" x="805" y="472">Markennutzen</text>
+            <text class="rad-frage" x="805" y="514">Was biete ich an?</text>
+          </g>
+        </a>
+        <!-- SOFT FACTS (rechts): Markentonalität oben, Markenbild unten -->
+        <a class="rad-link" href="#folie-08" data-feld="tonalitaet">
+          <path class="rad-feld rad-feld--weich" d="M967 294.07 A338 338 0 0 1 1297.93 625 L1085.81 625 A126 126 0 0 0 967 506.19 Z"
+                data-anim="feld" style="--start: 300ms; --i: 1" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 1">
+            <text class="rad-label rad-label--weich" x="1115" y="472">Markentonalität</text>
+            <text class="rad-frage" x="1115" y="514">Wie bin ich?</text>
+          </g>
+        </a>
+        <a class="rad-link" href="#folie-09" data-feld="bild">
+          <path class="rad-feld rad-feld--weich" d="M1297.93 639 A338 338 0 0 1 967 969.93 L967 757.81 A126 126 0 0 0 1085.81 639 Z"
+                data-anim="feld" style="--start: 300ms; --i: 2" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 2">
+            <text class="rad-label rad-label--weich" x="1115" y="775">Markenbild</text>
+            <text class="rad-frage" x="1115" y="817">Wie trete ich auf?</text>
+          </g>
+        </a>
+        <a class="rad-link" href="#folie-06" data-feld="attribute">
+          <path class="rad-feld rad-feld--hart" d="M953 969.93 A338 338 0 0 1 622.07 639 L834.19 639 A126 126 0 0 0 953 757.81 Z"
+                data-anim="feld" style="--start: 300ms; --i: 3" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 3">
+            <text class="rad-label rad-label--hart" x="805" y="775">Markenattribute</text>
+            <text class="rad-frage" x="805" y="817">Über welche</text>
+            <text class="rad-frage" x="805" y="851">Eigenschaften</text>
+            <text class="rad-frage" x="805" y="885">verfüge ich?</text>
+          </g>
+        </a>
+
+        <!-- KERN: Markenkompetenz -->
+        <a class="rad-link rad-link--kern" href="#folie-03" data-feld="kompetenz">
+          <circle class="rad-kern" cx="960" cy="632" r="110" data-anim="punkt" style="--start: 560ms" />
+          <g data-anim="aufblenden" style="--start: 900ms">
+            <text class="rad-kern-label" x="960" y="612">Marken-</text>
+            <text class="rad-kern-label" x="960" y="648">kompetenz</text>
+            <text class="rad-kern-frage" x="960" y="690">Wer bin ich?</text>
+          </g>
+        </a>
+
+        <!-- Beschriftung auf dem Ring -->
+        <g data-anim="aufblenden" style="--start: 1100ms">
+          <text class="rad-ringtext rad-ringtext--hart" text-anchor="end"><textPath href="#ringbogen-oben-rot" startOffset="554">HARD FACTS · RATIONAL</textPath></text>
+          <text class="rad-ringtext rad-ringtext--weich" text-anchor="start"><textPath href="#ringbogen-oben-rot" startOffset="590">SOFT FACTS · EMOTIONAL</textPath></text>
+          <text class="rad-ringtext rad-ringtext--rahmen" text-anchor="middle"><textPath href="#ringbogen-unten-rot" startOffset="50%">BRAND PERSONA + LIMBIC MAP · BEZUGSRAHMEN</textPath></text>
+        </g>
+
+        <!-- Verbindungslinien: zeichnen sich von der Methode zum Feld -->
+        <g class="verbinder-gruppe">
+          <path class="verbinder" data-feld="nutzen"     d="M128 442 H680"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 0" />
+          <path class="verbinder" data-feld="kompetenz"  d="M128 632 H850"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 1" />
+          <path class="verbinder" data-feld="attribute"  d="M128 822 H680"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 2" />
+          <path class="verbinder" data-feld="tonalitaet" d="M1792 442 H1240" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 0" />
+          <path class="verbinder" data-feld="rahmen"     d="M1792 632 H1336" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 1" />
+          <path class="verbinder" data-feld="bild"       d="M1792 822 H1240" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 2" />
+          <circle class="verbinder-punkt" cx="680"  cy="442" r="6" data-anim="punkt" style="--start: 1700ms; --i: 0" />
+          <circle class="verbinder-punkt" cx="850"  cy="632" r="6" data-anim="punkt" style="--start: 1700ms; --i: 1" />
+          <circle class="verbinder-punkt" cx="680"  cy="822" r="6" data-anim="punkt" style="--start: 1700ms; --i: 2" />
+          <circle class="verbinder-punkt" cx="1240" cy="442" r="6" data-anim="punkt" style="--start: 1700ms; --i: 0" />
+          <circle class="verbinder-punkt" cx="1336" cy="632" r="6" data-anim="punkt" style="--start: 1700ms; --i: 1" />
+          <circle class="verbinder-punkt" cx="1240" cy="822" r="6" data-anim="punkt" style="--start: 1700ms; --i: 2" />
+        </g>
+      </svg>
+
+      <!-- Methoden als klickbare Einträge. --y = Höhe der Verbindungslinie (wie im SVG). -->
+      <a class="methode methode--links" href="#folie-07" data-feld="nutzen" style="--y: 442px; --i: 0; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">07</span><span class="methode__name">Laddering</span></span>
+        <span class="methode__text">Means-End-Kette bis zum Wert</span>
+      </a>
+      <a class="methode methode--links" href="#folie-03" data-feld="kompetenz" style="--y: 632px; --i: 1; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">03</span><span class="methode__name">Desk Research</span></span>
+        <span class="methode__text">Herkunft, Historie, Marktrolle</span>
+      </a>
+      <a class="methode methode--links" href="#folie-06" data-feld="attribute" style="--y: 822px; --i: 2; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">06</span><span class="methode__name">Repertory Grid</span></span>
+        <span class="methode__text">Triadenvergleich mit Wettbewerbern</span>
+      </a>
+      <a class="methode methode--rechts" href="#folie-08" data-feld="tonalitaet" style="--y: 442px; --i: 0; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">08</span><span class="methode__name">Analogien</span></span>
+        <span class="methode__text">Marke als Mensch und Tier</span>
+      </a>
+      <a class="methode methode--rechts methode--zweizeilig" href="#folie-04" data-feld="rahmen" style="--y: 632px; --i: 1; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">04–05</span><span class="methode__name">Brand Persona +<br>Limbic Map</span></span>
+        <span class="methode__text">Zielgruppe als Bezugsrahmen</span>
+      </a>
+      <a class="methode methode--rechts" href="#folie-09" data-feld="bild" style="--y: 822px; --i: 2; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">09</span><span class="methode__name">Kommunikationsanalyse</span></span>
+        <span class="methode__text">Instagram · Facebook · YouTube</span>
+      </a>
+
+      <footer class="fuss">
+        <p class="quelle">Eigene Darstellung nach Esch und Häusel</p>
+        <p class="fuss__hinweis">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v14l4-4 3 7 3-1.4-3-6.8 5.6-.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Ziffer = Folie · Felder und Methoden sind klickbar
+        </p>
+      </footer>
+    </section>
+    </div>
+  </figure>
+
+  <figure class="muster-folie">
+    <figcaption><strong>e2) Farbtausch Grün</strong> <code>--marke-primaer: #00754A</code> <code>--marke-sekundaer: #5C6670</code></figcaption>
+    <div class="buehne-rahmen">
+    <section class="folie folie--hub" id="folie-02-gruen" data-modus="hell" style="--marke-primaer: #00754A; --marke-sekundaer: #5C6670" aria-label="Folie 2 mit grünen Markenfarben">
+      <header class="kopf">
+        <div class="kopf__links">
+          <span class="rubrik">Brand Persona &amp; Markenidentität</span>
+          <span class="kopf__trenner"></span>
+          <span class="kopf__marke" data-marke>[Marke]</span>
+        </div>
+        <div class="kopf__rechts">
+          <span class="rubrik">Vorgehen</span>
+          <span class="kopf__seite">02</span>
+        </div>
+      </header>
+
+      <div class="folie__inhalt">
+        <h2 class="titel hub__titel">Jede Methode füllt ein Feld des Markensteuerrads</h2>
+      </div>
+
+      <!-- Markensteuerrad nach Esch als SVG in Folienkoordinaten (1920 × 1080).
+           Mittelpunkt 960/632, Felder Radius 126–338, Kern Radius 110, Rahmenring Radius 376. -->
+      <svg class="hub__svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="rad-titel-gruen">
+        <title id="rad-titel-gruen">Markensteuerrad nach Esch mit den Methoden, die die einzelnen Felder füllen</title>
+        <defs>
+          <!-- Bögen für die Beschriftung auf dem Ring -->
+          <path id="ringbogen-oben-gruen" d="M592.06 625.58 A368 368 0 0 1 1327.94 625.58" />
+          <path id="ringbogen-unten-gruen" d="M576.06 638.7 A384 384 0 0 0 1343.94 638.7" />
+        </defs>
+
+        <!-- Rahmen: Brand Persona + Limbic Map. Der Ring besteht aus zwei Bögen (links/rechts),
+             oben und unten bleibt Platz für die Beschriftung. Bögen zeichnen sich im Uhrzeigersinn.
+             Werden die Ringtexte geändert, die Bogenenden (Winkel) hier anpassen. -->
+        <path class="rad-ring" d="M1274.5 426 A376 376 0 0 1 1247.2 874.7" pathLength="1"
+              data-anim="zeichnen" style="--start: 150ms; --dauer-lang: 1400ms" />
+        <path class="rad-ring" d="M672.8 874.7 A376 376 0 0 1 657.2 409.1" pathLength="1"
+              data-anim="zeichnen" style="--start: 150ms; --dauer-lang: 1400ms" />
+        <!-- Achsmarke oben: Grenze zwischen hard und soft facts -->
+        <line class="rad-ring" x1="960" y1="244" x2="960" y2="268" data-anim="aufblenden" style="--start: 1100ms" />
+
+        <!-- HARD FACTS (links): Markennutzen oben, Markenattribute unten -->
+        <a class="rad-link" href="#folie-07" data-feld="nutzen">
+          <path class="rad-feld rad-feld--hart" d="M622.07 625 A338 338 0 0 1 953 294.07 L953 506.19 A126 126 0 0 0 834.19 625 Z"
+                data-anim="feld" style="--start: 300ms; --i: 0" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 0">
+            <text class="rad-label rad-label--hart" x="805" y="472">Markennutzen</text>
+            <text class="rad-frage" x="805" y="514">Was biete ich an?</text>
+          </g>
+        </a>
+        <!-- SOFT FACTS (rechts): Markentonalität oben, Markenbild unten -->
+        <a class="rad-link" href="#folie-08" data-feld="tonalitaet">
+          <path class="rad-feld rad-feld--weich" d="M967 294.07 A338 338 0 0 1 1297.93 625 L1085.81 625 A126 126 0 0 0 967 506.19 Z"
+                data-anim="feld" style="--start: 300ms; --i: 1" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 1">
+            <text class="rad-label rad-label--weich" x="1115" y="472">Markentonalität</text>
+            <text class="rad-frage" x="1115" y="514">Wie bin ich?</text>
+          </g>
+        </a>
+        <a class="rad-link" href="#folie-09" data-feld="bild">
+          <path class="rad-feld rad-feld--weich" d="M1297.93 639 A338 338 0 0 1 967 969.93 L967 757.81 A126 126 0 0 0 1085.81 639 Z"
+                data-anim="feld" style="--start: 300ms; --i: 2" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 2">
+            <text class="rad-label rad-label--weich" x="1115" y="775">Markenbild</text>
+            <text class="rad-frage" x="1115" y="817">Wie trete ich auf?</text>
+          </g>
+        </a>
+        <a class="rad-link" href="#folie-06" data-feld="attribute">
+          <path class="rad-feld rad-feld--hart" d="M953 969.93 A338 338 0 0 1 622.07 639 L834.19 639 A126 126 0 0 0 953 757.81 Z"
+                data-anim="feld" style="--start: 300ms; --i: 3" />
+          <g data-anim="aufblenden" style="--start: 700ms; --i: 3">
+            <text class="rad-label rad-label--hart" x="805" y="775">Markenattribute</text>
+            <text class="rad-frage" x="805" y="817">Über welche</text>
+            <text class="rad-frage" x="805" y="851">Eigenschaften</text>
+            <text class="rad-frage" x="805" y="885">verfüge ich?</text>
+          </g>
+        </a>
+
+        <!-- KERN: Markenkompetenz -->
+        <a class="rad-link rad-link--kern" href="#folie-03" data-feld="kompetenz">
+          <circle class="rad-kern" cx="960" cy="632" r="110" data-anim="punkt" style="--start: 560ms" />
+          <g data-anim="aufblenden" style="--start: 900ms">
+            <text class="rad-kern-label" x="960" y="612">Marken-</text>
+            <text class="rad-kern-label" x="960" y="648">kompetenz</text>
+            <text class="rad-kern-frage" x="960" y="690">Wer bin ich?</text>
+          </g>
+        </a>
+
+        <!-- Beschriftung auf dem Ring -->
+        <g data-anim="aufblenden" style="--start: 1100ms">
+          <text class="rad-ringtext rad-ringtext--hart" text-anchor="end"><textPath href="#ringbogen-oben-gruen" startOffset="554">HARD FACTS · RATIONAL</textPath></text>
+          <text class="rad-ringtext rad-ringtext--weich" text-anchor="start"><textPath href="#ringbogen-oben-gruen" startOffset="590">SOFT FACTS · EMOTIONAL</textPath></text>
+          <text class="rad-ringtext rad-ringtext--rahmen" text-anchor="middle"><textPath href="#ringbogen-unten-gruen" startOffset="50%">BRAND PERSONA + LIMBIC MAP · BEZUGSRAHMEN</textPath></text>
+        </g>
+
+        <!-- Verbindungslinien: zeichnen sich von der Methode zum Feld -->
+        <g class="verbinder-gruppe">
+          <path class="verbinder" data-feld="nutzen"     d="M128 442 H680"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 0" />
+          <path class="verbinder" data-feld="kompetenz"  d="M128 632 H850"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 1" />
+          <path class="verbinder" data-feld="attribute"  d="M128 822 H680"  pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 2" />
+          <path class="verbinder" data-feld="tonalitaet" d="M1792 442 H1240" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 0" />
+          <path class="verbinder" data-feld="rahmen"     d="M1792 632 H1336" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 1" />
+          <path class="verbinder" data-feld="bild"       d="M1792 822 H1240" pathLength="1" data-anim="zeichnen" style="--start: 900ms; --i: 2" />
+          <circle class="verbinder-punkt" cx="680"  cy="442" r="6" data-anim="punkt" style="--start: 1700ms; --i: 0" />
+          <circle class="verbinder-punkt" cx="850"  cy="632" r="6" data-anim="punkt" style="--start: 1700ms; --i: 1" />
+          <circle class="verbinder-punkt" cx="680"  cy="822" r="6" data-anim="punkt" style="--start: 1700ms; --i: 2" />
+          <circle class="verbinder-punkt" cx="1240" cy="442" r="6" data-anim="punkt" style="--start: 1700ms; --i: 0" />
+          <circle class="verbinder-punkt" cx="1336" cy="632" r="6" data-anim="punkt" style="--start: 1700ms; --i: 1" />
+          <circle class="verbinder-punkt" cx="1240" cy="822" r="6" data-anim="punkt" style="--start: 1700ms; --i: 2" />
+        </g>
+      </svg>
+
+      <!-- Methoden als klickbare Einträge. --y = Höhe der Verbindungslinie (wie im SVG). -->
+      <a class="methode methode--links" href="#folie-07" data-feld="nutzen" style="--y: 442px; --i: 0; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">07</span><span class="methode__name">Laddering</span></span>
+        <span class="methode__text">Means-End-Kette bis zum Wert</span>
+      </a>
+      <a class="methode methode--links" href="#folie-03" data-feld="kompetenz" style="--y: 632px; --i: 1; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">03</span><span class="methode__name">Desk Research</span></span>
+        <span class="methode__text">Herkunft, Historie, Marktrolle</span>
+      </a>
+      <a class="methode methode--links" href="#folie-06" data-feld="attribute" style="--y: 822px; --i: 2; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">06</span><span class="methode__name">Repertory Grid</span></span>
+        <span class="methode__text">Triadenvergleich mit Wettbewerbern</span>
+      </a>
+      <a class="methode methode--rechts" href="#folie-08" data-feld="tonalitaet" style="--y: 442px; --i: 0; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">08</span><span class="methode__name">Analogien</span></span>
+        <span class="methode__text">Marke als Mensch und Tier</span>
+      </a>
+      <a class="methode methode--rechts methode--zweizeilig" href="#folie-04" data-feld="rahmen" style="--y: 632px; --i: 1; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">04–05</span><span class="methode__name">Brand Persona +<br>Limbic Map</span></span>
+        <span class="methode__text">Zielgruppe als Bezugsrahmen</span>
+      </a>
+      <a class="methode methode--rechts" href="#folie-09" data-feld="bild" style="--y: 822px; --i: 2; --start: 500ms" data-anim="einblenden">
+        <span class="methode__kopf"><span class="methode__folie">09</span><span class="methode__name">Kommunikationsanalyse</span></span>
+        <span class="methode__text">Instagram · Facebook · YouTube</span>
+      </a>
+
+      <footer class="fuss">
+        <p class="quelle">Eigene Darstellung nach Esch und Häusel</p>
+        <p class="fuss__hinweis">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v14l4-4 3 7 3-1.4-3-6.8 5.6-.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Ziffer = Folie · Felder und Methoden sind klickbar
+        </p>
+      </footer>
+    </section>
+    </div>
+  </figure>
+
+
+  <!-- =====================================================================
+       Bewegungssprache in Worten
+       ===================================================================== -->
+  <section class="muster-text" aria-labelledby="bewegung-titel">
+    <h2 id="bewegung-titel">Bewegungssprache</h2>
+    <dl>
+      <dt>Grundhaltung</dt>
+      <dd>Ruhig und präzise wie das Umblättern in einem Magazin: kurze Wege (höchstens 18&nbsp;px), weiches Ausrollen (ease-out, <code>--kurve</code>), nichts hüpft oder dreht sich. Bewegung erklärt die Reihenfolge, in der man lesen soll.</dd>
+      <dt>Titel</dt>
+      <dd>Die Wörter gleiten einzeln aus einer unsichtbaren Maske nach oben (560&nbsp;ms, 45&nbsp;ms Versatz) – wie gesetzte Zeilen, die ins Bild geschoben werden.</dd>
+      <dt>Linien zeichnen sich</dt>
+      <dd>Kopflinie und Trennlinien wachsen von links (1,1&nbsp;s). Im Steuerrad zeichnet sich zuerst der Rahmenring (Persona), dann führen die Verbindungslinien von jeder Methode zu ihrem Feld; am Ende setzt ein Punkt mit leichtem Federn (<code>--kurve-feder</code>) an.</dd>
+      <dt>Staffeln</dt>
+      <dd>Gleichartige Elemente kommen nacheinander im Abstand von 70&nbsp;ms (<code>--staffel</code>): Felder im Uhrzeigersinn, Attribute von oben nach unten, Balken der Reihe nach.</dd>
+      <dt>Daten</dt>
+      <dd>Im Polaritätenprofil erscheint zuerst das Raster, dann Ideal, Wettbewerber und zuletzt die eigene Marke – erst danach werden die drei Attributzeilen hinterlegt. Umfrage-Balken wachsen von links, die Markierung „Unsere Analyse“ erscheint als Letztes.</dd>
+      <dt>Interaktion</dt>
+      <dd>Hover über Feld oder Methode: Feld färbt sich mit dem Akzent ein, Verbindungslinie wird kräftiger (240&nbsp;ms). Rätselbild: jeder Klick verringert Zoom und Unschärfe (1,1&nbsp;s). Der Live-Punkt pulsiert ruhig (2,4&nbsp;s).</dd>
+      <dt>Barrierefreiheit</dt>
+      <dd>Bei „Bewegung reduzieren“ im Betriebssystem erscheinen alle Inhalte sofort ohne Animation. Ohne JavaScript sind alle Inhalte statisch sichtbar.</dd>
+    </dl>
+  </section>
+</main>
+
+<!-- Optional: marke.js im Ordner praesentation/ (setzt window.MARKE). Fehlt sie, bleibt „[Marke]“ stehen. -->
+<script src="../../marke.js"></script>
+<script src="bibliotheken/qrcode.js"></script>
+<script src="folien.js"></script>
+<script>
+  /* ---------- Nur für diese Musterseite ---------- */
+  (function () {
+    var wurzel = document.documentElement;
+
+    // Aufnahme-Modus für Screenshots: muster.html?aufnahme
+    if (/[?&]aufnahme/.test(location.search)) wurzel.classList.add('aufnahme');
+
+    // Folien auf Fensterbreite verkleinern (die Bühne bleibt intern 1920 × 1080)
+    function skalieren() {
+      var seite = document.querySelector('.muster-seite');
+      var breite = seite.clientWidth - parseFloat(getComputedStyle(seite).paddingLeft) - parseFloat(getComputedStyle(seite).paddingRight);
+      wurzel.style.setProperty('--skala', Math.min(1, breite / 1920));
+    }
+    skalieren();
+    window.addEventListener('resize', skalieren);
+
+    // Hell / Dunkel umschalten (gilt für Seite und alle Folien)
+    document.querySelectorAll('[data-modus-knopf]').forEach(function (knopf) {
+      knopf.addEventListener('click', function () {
+        var modus = knopf.getAttribute('data-modus-knopf');
+        wurzel.setAttribute('data-modus', modus);
+        document.querySelectorAll('.folie').forEach(function (f) { f.setAttribute('data-modus', modus); });
+        document.querySelectorAll('[data-modus-knopf]').forEach(function (k) {
+          k.setAttribute('aria-pressed', String(k === knopf));
+        });
+      });
+    });
+
+    document.getElementById('animation-neu').addEventListener('click', function () {
+      window.Folien.neuStarten();
+    });
+  })();
+</script>
+</body>
+</html>
