@@ -40,6 +40,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 18 | 14.10.2026 | Yannick | „Weiter“ | D03 fortgesetzt | Dossier *in Arbeit* |
 | 19 | 14.10.2026 | System | Nutzungslimit erneut erreicht: nur „Dossier schreiben“ in D03 abgebrochen | – | – |
 | 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier fertig (34 Seiten PDF) |
+| 21 | 14.10.2026 | Yannick | Screenshot: Stand von Account 2 | – | Stand geprüft, Hinweis-Text für Account 2 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -297,6 +298,21 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** `fallstudie-1-brand-persona/recherche/HOLY_Recherche-Dossier_Teamkickoff.pdf` (34 Seiten),
   `holy-recherche.md` (Arbeitsfassung), `holy-dossier.html` (Druckvorlage)
 - **Unteragenten:** D03 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 21 – 14.10.2026 – Yannick
+
+> *(Bild: Screenshot der Claude-Code-Sitzung von Account 2 – „Workflow ausgeführt 2026-10-14_praesentation-account-2
+> Fehlgeschlagen“; Zusammenfassung: Workflow nach Nutzungslimit wieder angelaufen, Foliengruppen werden gebaut, Skript
+> für resume angepasst, master geprüft – „Das HOLY-Dossier fehlt weiterhin“, Nachweis A2-06/A2-07, letzter Commit
+> b5c0665; Hinweis „Nutzungsguthaben aufgebraucht, automatische Fortsetzung um 16:51“.)*
+> Als info was Account 2 gerade am machen ist
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` abgerufen: Fundament fertig (Commit c9fae0e), Folienphase läuft,
+  durch Nutzungslimit unterbrochen. Das HOLY-Dossier liegt inzwischen auf master (Commit d42f681); Hinweis-Text für
+  Account 2 mit den belegten Web-Farben aus Dossier Kap. 6.3 formuliert (keine Dateien auf dem Branch geändert).
+- **Ergebnis:** diese Datei
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
