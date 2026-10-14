@@ -27,6 +27,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01 (Workflow) | *in Arbeit* |
 | A2-02 | 14.10.2026 | System | Automatischer Hinweis: nicht committete Änderungen | – | Commit + Push |
 | A2-03 | 14.10.2026 | Yannick (Account 2) | Um 7 Uhr prüfen, ob Account 1 neu gepusht hat | – | Prüfung um 07:00 Uhr geplant |
+| A2-04 | 14.10.2026 | System | Container-Neustart: Fundament-Agent unterbrochen, Workflow-Werkzeug nun verfügbar | A2-D01.01 fortgesetzt | Zwischenstand gesichert |
+| A2-05 | 14.10.2026 | System | Automatischer Hinweis: nicht versionierte Dateien (Testausgaben) | – | `.gitignore` für Testordner |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -104,6 +106,28 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-04 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> The container was restarted. The following background tasks were running and are now stopped:
+> - Fundament: Engine & Designsystem (task …)
+
+- **Herkunft:** automatische Meldung der Umgebung (ca. 03:15 Uhr), nicht von der Gruppe geschrieben
+- **Vorgehen Claude:** Zwischenstand des Fundaments committet und gepusht (`33afd3f`), den unterbrochenen Unteragenten
+  A2-D01.01 mit seinem gespeicherten Verlauf fortgesetzt (Nachricht über SendMessage, siehe A2-D01). Nach dem Neustart
+  steht in der Sitzung das Workflow-Werkzeug zur Verfügung: Das Skript wurde so ergänzt, dass die Fundament-Rückgabe
+  als `args.engine` übergeben werden kann; ab Phase „Folien“ läuft der Workflow mit dem Workflow-Werkzeug (`b308d45`).
+- **Unteragenten:** A2-D01.01 (fortgesetzt)
+
+### A2-05 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback:
+> [~/.claude/stop-hook-git-check.sh]: There are untracked files in the repository. Please commit and push these changes to the remote branch.
+
+- **Herkunft:** automatische Prüfung der Cloud-Umgebung, nicht von der Gruppe geschrieben
+- **Vorgehen Claude:** Die nicht versionierten Dateien waren Testausgaben des Fundament-Agenten (`praesentation/_test/`).
+  Statt sie zu committen: `praesentation/.gitignore` für die Testordner angelegt; committet und gepusht.
+- **Unteragenten:** keine
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -145,6 +169,15 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   |-----|-------|--------------------|---------|----------|-------------------------------------|
   | A2-D01.01 | Fundament | Engine & Designsystem | [engine-designsystem.md](workflows/2026-10-14_praesentation-account-2_auftraege/engine-designsystem.md) | *läuft* | – |
 
+- **Fortsetzung nach Container-Neustart (A2-04), Nachricht an A2-D01.01 (wörtlich):**
+  > Der Container wurde neu gestartet; dein Lauf wurde dabei unterbrochen. Deine bisherigen Dateien in
+  > /home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/ sind erhalten (Zwischenstand ist
+  > committet), laufende Prozesse (z. B. Browser, Testläufe) sind beendet. Bitte setze deinen Auftrag genau dort fort, wo
+  > du aufgehört hast (Auftragsdatei: /home/user/Unternehmens-Kommunikation/ki-nachweis/workflows/2026-10-14_praesentation-account-2_auftraege/engine-designsystem.md).
+  > Die Werkzeuge im Scratchpad (playwright-core, Schriften, qrcode-generator) und Chromium unter /opt/pw-browsers/ sind
+  > weiterhin vorhanden. Schreibe zum Schluss deine Rückgabe als gültiges JSON in
+  > /tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/workflow-zustand/rueckgaben/engine-designsystem.json
+  > und antworte mit einer kurzen Zusammenfassung.
 - **Ergebnis:** *läuft*
 - **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
 

@@ -1,0 +1,4 @@
+# Testausgaben der Prüfwerkzeuge (werden beim Bauen und Prüfen erzeugt und wieder gelöscht)
+_test/
+_abschluss-test/
+_abschluss-gestaltung/
