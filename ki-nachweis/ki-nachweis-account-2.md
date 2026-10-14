@@ -25,6 +25,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | Nr. | Datum | Von | Inhalt (kurz) | Unteragenten | Ergebnis |
 |-----|-------|-----|---------------|--------------|----------|
 | A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01 (Workflow) | *in Arbeit* |
+| A2-02 | 14.10.2026 | System | Automatischer Hinweis: nicht committete Änderungen | – | Commit + Push |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -77,6 +78,16 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Ergebnis:** *in Arbeit*
 - **Unteragenten:** A2-D01
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-02 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback:
+> [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+- **Herkunft:** automatische Prüfung der Cloud-Umgebung am Ende einer Antwort, nicht von der Gruppe geschrieben
+- **Vorgehen Claude:** offene Änderung (neuer Eintrag des Hooks im Rohprotokoll für die Delegation A2-D01.01) und
+  diesen Eintrag committet und gepusht
+- **Unteragenten:** keine
 
 ---
 
