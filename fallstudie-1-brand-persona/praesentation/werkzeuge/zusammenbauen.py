@@ -200,6 +200,15 @@ def main():
                                                      f["zeit"] or "–", f["titel"] or "–", zusatz))
         return 0
 
+    if not ausgewaehlt and not argumente.nur:
+        # Noch keine echten Folien (nur Dateien mit _): vorerst die Demo zeigen,
+        # damit index.html schon jetzt funktioniert.
+        demo = [d for d in dateien if d == "_demo.html"]
+        if demo:
+            print("HINWEIS: In folien/ gibt es noch keine Folien ohne _ am Anfang – "
+                  "index.html zeigt vorerst die Demo (folien/_demo.html).", file=sys.stderr)
+            ausgewaehlt = folien_einlesen("_demo.html")
+
     if not ausgewaehlt:
         print("FEHLER: Keine Folien ausgewählt.", file=sys.stderr)
         return 1
@@ -290,4 +299,7 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except BrokenPipeError:      # z. B. bei „… --liste | head“
+        sys.exit(0)

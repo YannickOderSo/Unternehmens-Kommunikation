@@ -291,6 +291,8 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
   color: var(--f-auf-bild);
 }
 .folie[data-layout="vollbild"] > .folie-inhalt {
+  grid-area: auto;                 /* Bezugsrahmen = ganze Folie (dieses Layout hat keinen Bereich „inhalt“;
+                                      sonst fehlt der Inhalt im PDF) */
   position: absolute;
   inset: 0;
   margin: 0;
@@ -331,8 +333,8 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 
 /* leer: kein Laufkopf, freie Fläche (eigene Gestaltung) */
 .folie[data-layout="leer"] {
-  grid-template-rows: minmax(0, 1fr);
-  grid-template-areas: "inhalt";
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: "kopf" "inhalt" "fuss";
 }
 
 
@@ -527,10 +529,20 @@ html.testmodus *::after { transition: none !important; animation: none !importan
   position: absolute;
   inset: 0;
   display: none;
-  background: color-mix(in srgb, var(--f-hintergrund) 97%, transparent);
+  background: var(--f-hintergrund);     /* deckend: die Folie darunter soll nicht durchscheinen */
   color: var(--f-text);
 }
+/* Klone (Übersicht, Vorschau) behalten die volle Bühnengröße und werden skaliert */
+.ue-bild > .folie,
+.r-vorschau > .folie {
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+}
 .ebene-fenster.ist-offen { display: block; }
+.ebene-fenster:focus { outline: none; }        /* das Fenster selbst bekommt nur programmatisch Fokus */
 
 /* ----- Übersicht (Taste O) ----- */
 .uebersicht {
@@ -776,8 +788,8 @@ html.referent body { overflow: hidden; }
   position: fixed;
   inset: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
   grid-template-areas:
     "aktuell naechste"
     "notizen uhren";
@@ -862,8 +874,8 @@ html.referent .deck {
   grid-area: uhren;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 14px 16px 16px;
+  gap: 10px;
+  padding: 12px 16px 14px;
   overflow: auto;
 }
 .r-uhr-zeile {
@@ -873,7 +885,7 @@ html.referent .deck {
   gap: 4px 12px;
 }
 .r-uhr-name { font-size: 14px; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--r-text-2); }
-.r-uhr-wert { font-size: 44px; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.r-uhr-wert { font-size: 40px; line-height: 1.05; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
 .r-uhr-soll { font-size: 20px; color: var(--r-text-2); font-variant-numeric: tabular-nums; }
 .r-uhr-balken { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--r-flaeche-2); overflow: hidden; }
 .r-uhr-balken > span { display: block; height: 100%; width: 0; background: var(--r-gut); transition: width 400ms linear, background-color 400ms ease; }
@@ -961,6 +973,7 @@ html.druckmodus .folie {
   view-transition-name: none !important;
 }
 html.druckmodus .folie.ist-ausgeblendet { display: none !important; }
+html.druckmodus .letzte-seite { break-after: auto !important; page-break-after: auto !important; }
 html.druckmodus .folie [data-schritt] { visibility: visible !important; opacity: 1 !important; }
 html.druckmodus .bedienleiste,
 html.druckmodus .fortschritt,

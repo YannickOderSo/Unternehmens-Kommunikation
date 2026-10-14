@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="de" data-thema="editorial" data-modus="hell">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand Persona &amp; Markenidentität</title>
+<!--
+  ERZEUGT von werkzeuge/zusammenbauen.py am 14.10.2026 01:51 – NICHT VON HAND BEARBEITEN. Änderungen in folien/*.html, css/, js/ oder marke.js machen und neu zusammenbauen.
+  Vorlage: werkzeuge/vorlage.html · Folien: folien/*.html · Engine: js/deck.js
+-->
+<!-- Konfiguration der Gruppe (Markenname, Farben, Umfragen …) – zuerst laden -->
+<script src="marke.js"></script>
+<!-- Thema und Modus sofort setzen, damit nichts aufblitzt -->
+<script>
+(function () {
+  var h = document.documentElement, p = new URLSearchParams(location.search), m = window.MARKE || {};
+  var k = 'deck:' + location.pathname + ':';
+  var s = function (n) { try { return sessionStorage.getItem(k + n); } catch (e) { return null; } };
+  var t = p.get('thema') || s('thema') || m.standardThema || 'editorial';
+  var d = p.get('modus') || s('modus') || m.standardModus || 'hell';
+  if (['editorial', 'bento', 'keynote'].indexOf(t) < 0) t = 'editorial';
+  if (['hell', 'dunkel'].indexOf(d) < 0) d = 'hell';
+  h.setAttribute('data-thema', t);
+  h.setAttribute('data-modus', d);
+  /* Markenfarben: Testfarbe (Farbwähler bzw. ?primaer=…) vor marke.js */
+  var f = m.farben || {};
+  ['primaer', 'sekundaer'].forEach(function (n) {
+    var w = p.get(n) || s('farbe-' + n) || f[n] || '';
+    if (/^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(w)) w = '#' + w;
+    if (/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(w)) h.style.setProperty('--marke-' + n, w);
+  });
+  if (p.has('referent')) h.classList.add('referent');
+  if (p.has('druck')) h.classList.add('druckmodus');
+  window.DECK_BASIS = '';
+})();
+</script>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/deck.css">
+<link rel="stylesheet" href="css/komponenten.css">
+<link rel="stylesheet" href="css/folien/_demo.css">
+</head>
+<body>
+
+<!-- Icon-Satz (eigene, schlichte Linien-Icons, 24 × 24, Strichstärke 2).
+     Verwendung: <svg class="icon"><use href="#i-pfeil-rechts"/></svg> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-pfeil-rechts" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-pfeil-links" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-pfeil-hoch" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-pfeil-runter" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-raster" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-referent" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4M6 8h7M6 11.5h4"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="9" cy="10" r="6"/><circle cx="15" cy="14" r="6"/></symbol>
+    <symbol id="i-mond" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-sonne" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+    <symbol id="i-vollbild" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></symbol>
+    <symbol id="i-hilfe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1.1.9-1.1 1.7v.6M12 17.2h.01"/></symbol>
+    <symbol id="i-steuerrad" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></symbol>
+    <symbol id="i-schliessen" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-start" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="i-zuruecksetzen" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"/></symbol>
+    <symbol id="i-schwarz" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4M4 5l16 11"/></symbol>
+    <symbol id="i-extern" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-stift" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-loeschen" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-haken" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.6h.01"/></symbol>
+    <symbol id="i-lupe" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+    <symbol id="i-gruppe" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 13.6A5 5 0 0 1 21.5 19"/></symbol>
+    <symbol id="i-leiter" viewBox="0 0 24 24"><path d="M8 3v18M16 3v18M8 7h8M8 12h8M8 17h8"/></symbol>
+    <symbol id="i-tabelle" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M3 14.5h18M9 4v16M15 4v16"/></symbol>
+    <symbol id="i-vergleich" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="5.5"/><circle cx="15.5" cy="12" r="5.5"/></symbol>
+    <symbol id="i-sprechblase" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H10l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-megafon" viewBox="0 0 24 24"><path d="M3 10v4h3l8 5V5L6 10H3zM18 9a4 4 0 0 1 0 6"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-bild" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></symbol>
+    <symbol id="i-daten" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></symbol>
+    <symbol id="i-diagramm" viewBox="0 0 24 24"><path d="M4 20h16M7 16v-5M12 16V7M17 16v-8"/></symbol>
+    <symbol id="i-ziel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12h.01"/></symbol>
+    <symbol id="i-kompass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-herz" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+    <symbol id="i-stern" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.7-4.4 4 1.2 5.8L12 16.5l-5.3 2.9 1.2-5.8-4.4-4 5.9-.7z"/></symbol>
+    <symbol id="i-zitat" viewBox="0 0 24 24"><path d="M10 7c-3 .8-5 3-5 6.5V17h4.5v-4.5H6.5M19 7c-3 .8-5 3-5 6.5V17h4.5v-4.5h-3"/></symbol>
+    <symbol id="i-uhr" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2M14 18.5V20M18.5 14H20"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-lampe" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.3.3.5.7.5 1.1V16h6v-1c0-.4.2-.8.5-1.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-blatt" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19l7-7"/></symbol>
+    <symbol id="i-dokument" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-annahme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1.1.9-1.1 1.7v.6M12 17.2h.01"/></symbol>
+  </defs>
+</svg>
+
+<div class="deck" id="deck">
+  <main class="buehne" id="buehne" aria-roledescription="Präsentation">
+<!-- ===== folien/_demo.html ===== -->
+
+<section class="folie" id="d01" data-titel="Titelfolie" data-feld="leer" data-zeit="30" data-buendel="A" data-layout="titel">
+  <header class="folie-kopf">
+    <p class="kicker">Fallstudie 1 · Brand Persona &amp; Markenidentität</p>
+    <h1 class="titel">Wer wäre <em data-marke></em>, wenn die Marke ein Mensch wäre?</h1>
+  </header>
+  <div class="folie-inhalt">
+    <div class="angaben" data-staffel data-animation="hoch">
+      <div><span class="angaben-titel">Marke</span><span class="angaben-wert angaben-wert--marke" data-marke></span></div>
+      <div><span class="angaben-titel">Gruppe</span><span class="angaben-wert" data-gruppe></span></div>
+      <div><span class="angaben-titel">Termin</span><span class="angaben-wert" data-datum="lang"></span></div>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Demo · Layout „titel“ · Platzhalter data-marke, data-gruppe, data-datum · data-staffel</p>
+  </footer>
+  <aside class="notizen">
+    <p>Begrüßung. Name der Gruppe, Thema, Marke. (Demo: Die Angaben unten kommen aus marke.js und erscheinen gestaffelt.)</p>
+  </aside>
+</section>
+
+<section class="folie" id="d01b" data-titel="Optionale Folie" data-feld="leer" data-zeit="30" data-buendel="A" data-optional data-layout="mitte">
+  <header class="folie-kopf">
+    <p class="kicker">Optional</p>
+    <h2 class="titel">Diese Folie erscheint nur, wenn sie eingeschaltet ist</h2>
+  </header>
+  <div class="folie-inhalt">
+    <p class="lead">marke.js → optionaleFolien, oder ?optional=alle in der Adresse</p>
+  </div>
+  <footer class="folie-fuss"><p class="quelle">Demo · data-optional</p></footer>
+  <aside class="notizen"><p>Optionale Folien zählen nicht zur Sollzeit.</p></aside>
+</section>
+
+<section class="folie" id="d02" data-titel="Rätsel (Vollbild)" data-feld="leer" data-zeit="45" data-buendel="A" data-layout="vollbild">
+  <header class="folie-kopf">
+    <p class="kicker">Einstieg · Rätsel</p>
+    <h2 class="titel">Welche Marke steckt dahinter?</h2>
+    <p class="lead" data-anrede-sie="Ihr Tipp? Rufen Sie ihn einfach in den Raum." data-anrede-ihr="Euer Tipp? Ruft ihn einfach rein."></p>
+    <p class="raetsel-loesung" data-schritt="3" data-animation="hoch">Auflösung: <span data-marke></span></p>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raetsel" data-stufen="300/40,210/22,145/9,100/0" data-fokus="64% 36%" data-alt="Abstraktes Platzhalter-Motiv"></div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Bild: neutrales Platzhalter-Motiv (eigene Gestaltung) · ersetzen in marke.js → raetselBild</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="0">Publikum raten lassen – erst nach ein paar Zurufen weiterklicken.</p>
+    <p data-schritt="1">Hinweis 2: etwas schärfer.</p>
+    <p data-schritt="2">Hinweis 3: fast erkennbar.</p>
+    <p data-schritt="3">Auflösung. Überleitung zur Ausgangslage.</p>
+  </aside>
+</section>
+
+<section class="folie" id="d03" data-titel="Vorgehen (Steuerrad-Hub)" data-feld="hub" data-zeit="60" data-buendel="A">
+  <header class="folie-kopf">
+    <p class="kicker">Vorgehen</p>
+    <h2 class="titel">Jede Methode füllt ein Feld des Markensteuerrads</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="steuerrad" data-modus="hub" data-aufbau="schritte"></div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map)</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="0">Unser Rahmen ist das Markensteuerrad nach Esch.</p>
+    <p data-schritt="1">Desk Research → Markenkompetenz.</p>
+    <p data-schritt="2">Brand Persona und Limbic Map bilden den Bezugsrahmen.</p>
+    <p data-schritt="3">Repertory Grid → Markenattribute. Die Attribute sind die Startpunkte fürs Laddering.</p>
+    <p data-schritt="4">Laddering → Markennutzen.</p>
+    <p data-schritt="5">Analogien → Markentonalität.</p>
+    <p data-schritt="6">Kommunikationsanalyse → Markenbild; die Tonalität ist der Prüfmaßstab.</p>
+    <p data-schritt="7">Gesamtbild. Felder und Methoden sind klickbar (Sprung zur Folie).</p>
+  </aside>
+</section>
+
+<section class="folie" id="d04" data-titel="Animationen" data-feld="kompetenz" data-zeit="45" data-buendel="A">
+  <header class="folie-kopf">
+    <p class="kicker">Desk Research · Demo</p>
+    <h2 class="titel">Schritte erscheinen nacheinander – ruhig und ohne Sprung</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-3 demo-animationen">
+      <article class="karte" data-schritt="1" data-animation="einblenden"><span class="karte-kicker">Schritt 1</span><span class="karte-titel">einblenden</span></article>
+      <article class="karte" data-schritt="2" data-animation="hoch"><span class="karte-kicker">Schritt 2</span><span class="karte-titel">hoch</span></article>
+      <article class="karte" data-schritt="3" data-animation="runter"><span class="karte-kicker">Schritt 3</span><span class="karte-titel">runter</span></article>
+      <article class="karte" data-schritt="4" data-animation="links"><span class="karte-kicker">Schritt 4</span><span class="karte-titel">links</span></article>
+      <article class="karte" data-schritt="5" data-animation="rechts"><span class="karte-kicker">Schritt 5</span><span class="karte-titel">rechts</span></article>
+      <article class="karte karte--akzent" data-schritt="6" data-animation="zoom"><span class="karte-kicker">Schritt 6</span><span class="karte-titel">zoom</span></article>
+    </div>
+    <p class="gross unten" data-schritt="7" data-animation="unschaerfe">Schritt 7: <b>unschaerfe</b> – wird scharf.</p>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Demo · data-schritt="n" + data-animation · rückwärts werden Schritte sauber zurückgenommen</p>
+  </footer>
+  <aside class="notizen">
+    <p>Jeder Klick zeigt eine Karte. Zurück (←) nimmt sie wieder weg.</p>
+  </aside>
+</section>
+
+<section class="folie" id="d05" data-titel="Persona (geteilt)" data-feld="persona" data-zeit="60" data-buendel="A" data-layout="geteilt">
+  <header class="folie-kopf">
+    <p class="kicker">Brand Persona <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Die Persona macht die Zielgruppe greifbar</h2>
+    <div class="legende demo-legende" data-schritt="3" data-animation="einblenden">
+      <span class="legende-daten">Daten (Quelle)</span>
+      <span class="legende-annahme">Annahme</span>
+    </div>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-12 demo-persona">
+      <figure class="sp-5 bild-platzhalter demo-persona-bild" data-beschriftung="Persona-Foto">
+        <img src="bilder/platzhalter-persona.svg" alt="Platzhalter für ein Persona-Foto">
+      </figure>
+      <div class="sp-7 stapel demo-persona-text">
+        <blockquote class="zitat" data-schritt="1" data-animation="hoch">
+          <p class="zitat-text">„Ich will wissen, wofür eine Marke steht.“</p>
+          <cite class="zitat-quelle">Persona „Lea, 24“ · erfundenes Beispiel</cite>
+        </blockquote>
+        <div class="reihe" data-schritt="2" data-staffel data-animation="hoch">
+          <span class="chip chip--gross chip--weich">Fitness</span>
+          <span class="chip chip--gross chip--weich">Gaming</span>
+          <span class="chip chip--gross chip--hart">Preisbewusst</span>
+        </div>
+        <article class="karte ist-annahme" data-schritt="3" data-animation="hoch">
+          <span class="karte-kicker">Annahme</span>
+          <span class="karte-text">Informiert sich vor dem Kauf online.</span>
+        </article>
+      </div>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Demo · Layout „geteilt“ · .bild-platzhalter mit Bild · .zitat · .chip · .legende · .ist-annahme</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="1">Zitat der Persona (erfunden – im echten Deck aus Recherche ableiten und kennzeichnen).</p>
+    <p data-schritt="2">Interessen als Chips.</p>
+    <p data-schritt="3">Annahmen gestrichelt umrandet, Daten mit Quelle.</p>
+  </aside>
+</section>
+
+<section class="folie" id="d06" data-titel="Datengrafik + Kennzahlen" data-feld="attribute" data-zeit="90" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Repertory Grid · Demo <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Drei Attribute heben die Marke vom Wettbewerb ab</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-12 demo-profil">
+      <div class="sp-8 demo-profil-grafik" aria-label="Polaritätenprofil (Beispieldaten)"></div>
+      <div class="sp-4 stapel demo-kennzahlen" data-schritt="4" data-staffel="120" data-animation="links">
+        <div class="kennzahl karte karte--linie">
+          <span class="kennzahl-wert kennzahl-wert--mittel" data-animation="zaehlen" data-ziel="3.1" data-dezimalen="1" data-vorzeichen data-morph="kennzahl-vorsprung">+3,1</span>
+          <span class="kennzahl-text">innovativ</span>
+          <span class="hantel" data-wert-marke="6.2" data-wert-wettbewerb="3.1" data-breite="280"></span>
+        </div>
+        <div class="kennzahl karte karte--linie">
+          <span class="kennzahl-wert kennzahl-wert--mittel" data-animation="zaehlen" data-ziel="2.6" data-dezimalen="1" data-vorzeichen>+2,6</span>
+          <span class="kennzahl-text">natürlich</span>
+          <span class="hantel" data-wert-marke="5.6" data-wert-wettbewerb="3.0" data-breite="280"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Skala 1 = linker Pol, 7 = rechter Pol · Grafik aus &lt;script class="daten"&gt; per js/folien/_demo.js</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="1">Ideallinie: so wäre die Marke perfekt.</p>
+    <p data-schritt="2">Wettbewerber (gestrichelt, hohle Punkte).</p>
+    <p data-schritt="3">Unsere Marke (durchgezogen, volle Punkte).</p>
+    <p data-schritt="4">Die drei hinterlegten Zeilen sind die abgeleiteten Attribute.</p>
+  </aside>
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – nur zur Demonstration",
+    "skala": [1, 7],
+    "zeilen": [
+      { "links": "traditionell", "rechts": "innovativ",       "ideal": 6.4, "marke": 6.2, "wettbewerb": 3.1, "attribut": true },
+      { "links": "künstlich",    "rechts": "natürlich",       "ideal": 6.1, "marke": 5.6, "wettbewerb": 3.0, "attribut": true },
+      { "links": "austauschbar", "rechts": "unverwechselbar", "ideal": 6.0, "marke": 5.3, "wettbewerb": 3.4, "attribut": true },
+      { "links": "teuer",        "rechts": "günstig",         "ideal": 4.5, "marke": 3.2, "wettbewerb": 4.4 },
+      { "links": "leise",        "rechts": "laut",            "ideal": 4.8, "marke": 5.1, "wettbewerb": 5.6 }
+    ]
+  }
+  </script>
+</section>
+
+<section class="folie" id="d07" data-titel="Hervorheben + Zeichnen" data-feld="nutzen" data-zeit="90" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Laddering · Demo <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Vom Attribut über die Konsequenz zum Wert</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-12 demo-leiter">
+      <ol class="sp-7 demo-leiter-stufen" data-dimmen>
+        <li data-schritt="1" data-animation="hervorheben" data-hervor="aktuell"><span class="chip chip--gross chip--hart">Attribut</span><span class="gross">z.&nbsp;B. Geschmack</span></li>
+        <li data-schritt="2" data-animation="hervorheben" data-hervor="aktuell"><span class="chip chip--gross chip--rahmen">Konsequenz</span><span class="gross">z.&nbsp;B. Genuss</span></li>
+        <li data-schritt="3" data-animation="hervorheben" data-hervor="aktuell"><span class="chip chip--gross chip--weich">Wert</span><span class="gross">z.&nbsp;B. Lebensfreude</span></li>
+      </ol>
+      <svg class="sp-1 demo-leiter-pfeil" viewBox="0 0 40 420" width="40" height="420" aria-hidden="true" data-schritt="4" data-animation="zeichnen">
+        <path d="M20 400 V24 M8 40 L20 24 L32 40"/>
+      </svg>
+      <div class="sp-4 kennzahl" data-schritt="4" data-animation="feder">
+        <span class="kennzahl-wert" data-morph="kennzahl-vorsprung">3</span>
+        <span class="kennzahl-text">Ebenen der Means-End-Kette</span>
+      </div>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · data-animation="hervorheben" mit data-dimmen · SVG mit data-animation="zeichnen" · data-morph</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="1">Start beim Attribut.</p>
+    <p data-schritt="2">Warum ist das wichtig? → Konsequenz.</p>
+    <p data-schritt="3">Und warum ist das wichtig? → Wert.</p>
+    <p data-schritt="4">Kette fertig.</p>
+  </aside>
+</section>
+
+<section class="folie" id="d08" data-titel="Live-Umfrage" data-feld="tonalitaet" data-zeit="120" data-buendel="B">
+  <header class="folie-kopf">
+    <p class="kicker">Live-Umfrage · Analogien</p>
+    <h2 class="titel">Wenn <em data-marke></em> ein Tier wäre – welches?</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="umfrage" data-umfrage="tier" data-aufloesung="1" data-aussage="2">
+      <script type="application/json">{ "link": "https://example.org/umfrage", "kurzLink": "example.org/umfrage", "ergebnisLink": "https://example.org/umfrage/ergebnis" }</script>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Zählen: Klick +1, Umschalt+Klick −1, Ziffern 1–9 · Doppelklick auf Wert = eintragen</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="0">QR-Code zeigen, 60 Sekunden abstimmen lassen. Alternativ Handzeichen: Ziffern 1–5 zählen mit.</p>
+    <p data-schritt="1">Auflösung: Unsere Analyse.</p>
+    <p data-schritt="2">Aussage: so viel Prozent sehen die Marke wie wir.</p>
+  </aside>
+</section>
+
+<section class="folie" id="d09" data-titel="Karten + Icons" data-feld="bild" data-zeit="90" data-buendel="C">
+  <header class="folie-kopf">
+    <p class="kicker">Kommunikationsanalyse · Demo <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Drei Kanäle, drei Rollen im Auftritt</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-3 demo-kanaele" data-staffel data-animation="hoch">
+      <article class="karte">
+        <div class="bild-platzhalter demo-post" data-beschriftung="Beitrag A"><img src="bilder/platzhalter-post.svg" alt="Platzhalter Beitrag"></div>
+        <span class="karte-kicker"><svg class="icon"><use href="#i-video"/></svg> Kanal A</span>
+        <span class="kennzahl-wert kennzahl-wert--mittel" data-animation="zaehlen" data-ziel="42" data-einheit=" %">42 %</span>
+        <span class="karte-text">Anteil Video</span>
+      </article>
+      <article class="karte karte--flaeche">
+        <div class="bild-platzhalter demo-post" data-beschriftung="Beitrag B"></div>
+        <span class="karte-kicker"><svg class="icon"><use href="#i-sprechblase"/></svg> Kanal B</span>
+        <span class="kennzahl-wert kennzahl-wert--mittel" data-animation="zaehlen" data-ziel="3.4" data-dezimalen="1">3,4</span>
+        <span class="karte-text">Beiträge pro Woche</span>
+      </article>
+      <article class="karte karte--hervor">
+        <div class="bild-platzhalter demo-post" data-beschriftung="Beitrag C"></div>
+        <span class="karte-kicker"><svg class="icon"><use href="#i-megafon"/></svg> Kanal C</span>
+        <span class="kennzahl-wert kennzahl-wert--mittel" data-animation="zaehlen" data-ziel="12">12</span>
+        <span class="karte-text">Aktionen im Quartal</span>
+      </article>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · .karte (--flaeche, --hervor) · .bild-platzhalter · Icons aus dem Sprite (#i-…)</p>
+  </footer>
+  <aside class="notizen"><p>Karten erscheinen gestaffelt, Zahlen zählen hoch.</p></aside>
+</section>
+
+<section class="folie" id="d10" data-titel="Markensteuerrad (Synthese)" data-feld="hub" data-zeit="75" data-buendel="C">
+  <header class="folie-kopf">
+    <p class="kicker">Synthese <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Das Steuerrad bündelt alle Ergebnisse</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="steuerrad" data-modus="synthese" data-aufbau="schritte">
+      <script type="application/json">
+      {
+        "kern": "Beispiel-Kern",
+        "felder": {
+          "attribute":  { "stichworte": ["innovativ", "natürlich", "unverwechselbar"], "quelle": "RG" },
+          "nutzen":     { "stichworte": ["Genuss", "Lebensfreude"], "quelle": "LAD" },
+          "tonalitaet": { "stichworte": ["Eule", "klug", "ruhig"], "quelle": "ANA" },
+          "bild":       { "stichworte": ["Video", "Community"], "quelle": "KA" },
+          "persona":    { "stichworte": ["Lea, 24", "Performer"], "quelle": "PER" },
+          "kompetenz":  { "stichworte": ["Kernprodukt", "Herkunft"], "quelle": "DR" }
+        }
+      }
+      </script>
+    </div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Kürzel: DR Desk Research, PER Persona, RG Repertory Grid, LAD Laddering, ANA Analogien, KA Kommunikationsanalyse</p>
+  </footer>
+  <aside class="notizen">
+    <p data-schritt="1">Attribute.</p><p data-schritt="2">Nutzen.</p><p data-schritt="3">Tonalität.</p>
+    <p data-schritt="4">Bild.</p><p data-schritt="5">Persona als Rahmen.</p><p data-schritt="6">Kompetenz.</p>
+    <p data-schritt="7">Markenkern im Zentrum.</p>
+  </aside>
+</section>
+
+<section class="folie" id="d11" data-titel="Live-Wortwolke" data-feld="leer" data-zeit="45" data-buendel="A">
+  <header class="folie-kopf">
+    <p class="kicker">Einstieg mit dem Publikum</p>
+    <h2 class="titel">Was verbinden Sie mit <em data-marke></em>?</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="wortwolke" data-wortwolke="assoziationen"></div>
+  </div>
+  <footer class="folie-fuss">
+    <p class="quelle">Zurufe aus dem Publikum · Eingabe: Wort tippen + Enter · Alt+Klick entfernt ein Wort</p>
+  </footer>
+  <aside class="notizen"><p>Ein Teammitglied tippt die Zurufe mit. Bild↓ am Clicker verlässt das Feld und blättert weiter.</p></aside>
+</section>
+
+<section class="folie" id="d12" data-titel="Fazit" data-feld="leer" data-zeit="90" data-buendel="C">
+  <header class="folie-kopf">
+    <p class="kicker">Fazit &amp; Empfehlungen</p>
+    <h2 class="titel">Drei Empfehlungen für den Markenauftritt</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-12 luecke-gross">
+      <ol class="sp-7 liste liste--nummern" data-staffel data-animation="hoch">
+        <li>Attribute sichtbar machen</li>
+        <li>Nutzen in den Vordergrund</li>
+        <li>Tonalität konsequent halten</li>
+      </ol>
+      <article class="sp-5 karte karte--flaeche demo-wolke-klein" data-schritt="1" data-animation="einblenden">
+        <span class="karte-kicker">Ihre Zurufe vom Anfang</span>
+        <div class="wortwolke" data-wortwolke="assoziationen" data-nur-anzeige data-schrift="30"></div>
+      </article>
+    </div>
+  </div>
+  <footer class="folie-fuss"><p class="quelle">Demo · .liste--nummern mit data-staffel · .wortwolke data-nur-anzeige</p></footer>
+  <aside class="notizen"><p>Zurück zur Wortwolke vom Einstieg.</p></aside>
+</section>
+
+<section class="folie" id="d13" data-titel="Danke & Fragen" data-feld="leer" data-zeit="0" data-buendel="alle">
+  <header class="folie-kopf">
+    <p class="kicker">Danke!</p>
+    <h2 class="titel">Fragen? Wählen Sie ein Feld.</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-12 demo-danke">
+      <div class="sp-5 stapel">
+        <p class="gross" data-gruppe="zeilen"></p>
+        <p class="text-2"><span data-veranstaltung></span> · <span data-datum></span></p>
+      </div>
+      <div class="sp-7 demo-danke-rad">
+        <div class="steuerrad" data-modus="menue" data-groesse="600"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="folie-fuss"><p class="quelle">Steuerrad im Modus „menue“ · Feld anklicken = Sprung zur Folie</p></footer>
+  <aside class="notizen"><p>Fragen sammeln; bei Rückfragen per Klick ins passende Feld springen.</p></aside>
+</section>
+
+<section class="folie" id="db1" data-titel="Backup: Rohdaten-Tabelle" data-feld="attribute" data-zeit="0" data-buendel="B" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Repertory Grid <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Rohdaten: Mittelwerte je Konstrukt</h2>
+  </header>
+  <div class="folie-inhalt">
+    <table class="tabelle">
+      <thead><tr><th>Konstrukt (linker Pol – rechter Pol)</th><th class="rechts">Marke</th><th class="rechts">Wettbewerb</th><th class="rechts">Ideal</th><th class="rechts">Differenz</th></tr></thead>
+      <tbody>
+        <tr class="ist-markiert"><td>traditionell – innovativ</td><td class="zahl">6,2</td><td class="zahl">3,1</td><td class="zahl">6,4</td><td class="zahl">+3,1</td></tr>
+        <tr class="ist-markiert"><td>künstlich – natürlich</td><td class="zahl">5,6</td><td class="zahl">3,0</td><td class="zahl">6,1</td><td class="zahl">+2,6</td></tr>
+        <tr class="ist-markiert"><td>austauschbar – unverwechselbar</td><td class="zahl">5,3</td><td class="zahl">3,4</td><td class="zahl">6,0</td><td class="zahl">+1,9</td></tr>
+        <tr><td>teuer – günstig</td><td class="zahl">3,2</td><td class="zahl">4,4</td><td class="zahl">4,5</td><td class="zahl">−1,2</td></tr>
+        <tr><td>leise – laut</td><td class="zahl">5,1</td><td class="zahl">5,6</td><td class="zahl">4,8</td><td class="zahl">−0,5</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <footer class="folie-fuss"><p class="quelle">Beispieldaten · Skala 1 = linker Pol, 7 = rechter Pol · Tabellen im Backup mindestens 22 px</p></footer>
+  <aside class="notizen"><p>Nur bei Rückfragen zeigen.</p></aside>
+</section>
+
+<section class="folie" id="db2" data-titel="Backup: QR-Code" data-feld="leer" data-zeit="0" data-buendel="alle" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Material</p>
+    <h2 class="titel">Folien und Quellen zum Nachlesen</h2>
+  </header>
+  <div class="folie-inhalt">
+    <div class="raster-12">
+      <div class="sp-5"><div class="qr" data-qr="https://example.org/folien" data-groesse="400"></div></div>
+      <ul class="sp-7 liste">
+        <li>Esch: Strategie und Technik der Markenführung</li>
+        <li>Häusel: Limbic Map (Gruppe Nymphenburg)</li>
+        <li>Kelly (1955): Psychology of Personal Constructs</li>
+        <li>Reynolds &amp; Gutman (1988): Laddering</li>
+      </ul>
+    </div>
+  </div>
+  <footer class="folie-fuss"><p class="quelle">Demo · .qr mit data-qr · Literaturangaben aus Modellwissen – mit Vorlesungsfolien abgleichen</p></footer>
+  <aside class="notizen"><p>QR-Adresse ist ein Platzhalter (example.org).</p></aside>
+</section>
+  </main>
+</div>
+
+<noscript>
+  <p style="position:fixed;inset:auto 0 0 0;padding:16px;background:#fff;color:#111;font:20px/1.4 sans-serif">
+    Diese Präsentation braucht JavaScript. Bitte in Chrome, Edge, Firefox oder Safari öffnen.
+  </p>
+</noscript>
+
+<script src="js/vendor/qrcode-generator.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/komponenten.js"></script>
+<script src="js/folien/_demo.js"></script>
+</body>
+</html>

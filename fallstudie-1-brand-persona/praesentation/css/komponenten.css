@@ -47,7 +47,7 @@
   font-variation-settings: "opsz" var(--opsz-titel);
   text-wrap: balance;
   color: var(--f-text);
-  max-width: 1500px;
+  max-width: 100%;
 }
 /* Hervorhebung im Titel (z. B. der Markenname): <em> */
 .titel em,
@@ -511,6 +511,9 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 
 /* Zeigen/Fokus: Feld und Methode leuchten gemeinsam, der Rest tritt zurück */
 .steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: 0.45; }
+/* Karten und Pillen: Fläche bleibt deckend (sonst scheint der Ring durch), nur Inhalt und Rand treten zurück */
+.steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) { opacity: 1; border-color: color-mix(in oklab, var(--f-karte-rand) 45%, var(--f-hintergrund)); box-shadow: none; }
+.steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) > * { opacity: 0.45; transition: opacity var(--dauer-mittel) var(--kurve); }
 .steuerrad .sr-feld.ist-fokus .sr-flaeche,
 .steuerrad .sr-feld.ist-fokus .sr-kern { stroke: var(--f-akzent); }
 .steuerrad .sr-rahmen-gruppe.ist-fokus .sr-ring { stroke: var(--f-akzent); stroke-width: 5; }
@@ -532,17 +535,24 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 }
 .sr-label-name {
   font-family: var(--schrift-display);
-  font-size: 32px;
+  font-size: var(--sr-label-groesse, 32px);    /* wird passend zum Feld gemessen */
   font-weight: var(--gewicht-display);
   letter-spacing: -0.01em;
   line-height: 1.08;
   font-variation-settings: "opsz" 32;
 }
+/* obere Felder: Name auf der Zeile, Leitfrage darunter (zur Mitte hin);
+   untere Felder: Leitfrage darüber, Name auf der Zeile */
+.sr-label--oben { transform: translate(-50%, calc(var(--sr-name-hoehe, 35px) * -0.5)); }
+.sr-label--unten { flex-direction: column-reverse; transform: translate(-50%, calc(-100% + var(--sr-name-hoehe, 35px) * 0.5)); }
 .sr-label--hart .sr-label-name { color: var(--f-hart); }
 .sr-label--weich .sr-label-name { color: var(--f-weich); }
 .sr-label-frage { font-size: var(--groesse-text-min); line-height: 1.2; color: var(--f-text-2); transition: opacity var(--dauer-mittel) var(--kurve); }
 /* data-leitfragen="schrittweise" (Standard im Hub): Leitfrage nur beim gezeigten Feld */
 .steuerrad[data-leitfragen="schrittweise"] .sr-label:not(.ist-fokus) .sr-label-frage { opacity: 0; }
+/* Leitfragen passen nicht ins Feld (kleines Rad) → stehen unter der Methodenkarte */
+.sr-ohne-leitfragen .sr-label:not(.sr-label--kern) .sr-label-frage { display: none; }
+.sr-karte-frage { display: block; font-style: italic; color: var(--f-text); }
 .sr-label-folie {
   font-family: var(--schrift-zahl);
   font-size: 24px;
@@ -554,7 +564,7 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .sr-label--kern .sr-label-name,
 .sr-label--kern .sr-label-frage,
 .sr-label--kern .sr-label-folie { color: var(--f-auf-kern); }
-.sr-label--kern .sr-label-name { font-size: 30px; }
+.sr-label--kern .sr-label-name { font-size: var(--sr-kern-groesse, 30px); }
 .sr-label-klein {
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
@@ -608,7 +618,6 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .sr-modus-menue .ist-aktiv .sr-flaeche,
 .sr-modus-menue .sr-kern-gruppe.ist-aktiv .sr-kern { stroke: var(--f-akzent); stroke-width: 6; }
 .sr-modus-menue.rahmen-aktiv .sr-ring { stroke: var(--f-akzent); stroke-width: 6; }
-.sr-modus-menue .sr-label-name { font-size: 34px; }
 
 /* Hub und Synthese: Karten außen, Verbinder, Logikpfeile */
 .sr-verbinder { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
@@ -669,6 +678,12 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .sr-karte.ist-fokus { border-color: var(--f-akzent); box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent); }
 .sr-karte.ist-ohne-ziel { cursor: default; }
 .sr-karte-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+/* Methodenkarten links/rechts: Name, darunter „Folie x →“; rechte Seite gespiegelt */
+.sr-modus-hub .sr-karte:not(.sr-pille) .sr-karte-kopf { flex-direction: column; align-items: flex-start; gap: 4px; }
+.sr-modus-hub .sr-karte--ro .sr-karte-kopf,
+.sr-modus-hub .sr-karte--ru .sr-karte-kopf { align-items: flex-end; }
+.sr-modus-hub .sr-karte--ro,
+.sr-modus-hub .sr-karte--ru { text-align: right; }
 .sr-karte-name {
   font-family: var(--schrift-display);
   font-size: 34px;
@@ -689,7 +704,21 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 /* eindeutiger Klick-Hinweis: „Folie 06 →“ (Jury) */
 .sr-karte-folie:not(:empty)::after { content: "\00a0→"; }
 .sr-karte-text { font-size: var(--groesse-text-min); line-height: 1.25; color: var(--f-text-2); transition: opacity var(--dauer-mittel) var(--kurve); }
+/* data-beschreibungen="schrittweise" (Standard im Hub): Beschreibung erscheint
+   nur für die gezeigte Methode – unter der Karte, ohne dass sich etwas verschiebt */
+/* Einzug 64 px: links davon verläuft der gestrichelte Logikpfeil */
+.steuerrad[data-beschreibungen="schrittweise"] .sr-karte:not(.sr-pille) .sr-karte-text {
+  position: absolute;
+  left: 64px;
+  right: 0;
+  top: calc(100% + 12px);
+  text-align: left;
+  text-wrap: balance;
+}
+.steuerrad[data-beschreibungen="schrittweise"] .sr-karte--ro .sr-karte-text,
+.steuerrad[data-beschreibungen="schrittweise"] .sr-karte--ru .sr-karte-text { left: 0; right: 64px; text-align: right; }
 .steuerrad[data-beschreibungen="schrittweise"] .sr-karte:not(.ist-fokus) .sr-karte-text { opacity: 0; visibility: hidden; }
+.steuerrad[data-beschreibungen="schrittweise"] .sr-pille:not(.ist-fokus) .sr-karte-text { display: none; }
 .sr-pille {
   flex-direction: row;
   align-items: center;
@@ -698,11 +727,10 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
   padding: 0 28px;
   border-radius: var(--radius-pille) !important;
   white-space: nowrap;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);             /* sitzt mittig auf dem Ringrand */
 }
 .sr-pille .sr-karte-kopf { gap: 16px; }
 .sr-pille .sr-karte-text { white-space: nowrap; }
-.sr-karte--unten { top: auto; }
 /* Synthese: Feldname + Quelle, darunter Stichworte */
 .sr-karte-feld {
   font-family: var(--schrift-kicker);
@@ -845,7 +873,7 @@ html.maus-ruht .umfrage:not(:focus-within) .umfrage-werkzeuge { opacity: 0; }
   border-radius: var(--radius-s);
   background: var(--f-flaeche);
   color: var(--f-text);
-  font: 600 20px/1 var(--schrift-text);
+  font: 600 22px/1 var(--schrift-text);
   cursor: pointer;
   white-space: nowrap;
 }
@@ -903,7 +931,7 @@ html.maus-ruht .umfrage-taste { opacity: 0; }
   font-family: var(--schrift-display);
   font-size: 44px;
   font-weight: var(--gewicht-display);
-  line-height: 1.05;
+  line-height: 1.25;                 /* genug Platz für Unterlängen (overflow: hidden) */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1022,6 +1050,7 @@ html.maus-ruht .umfrage-taste { opacity: 0; }
   line-height: 1.15;
   color: var(--f-text);
   max-width: 13em;
+  text-wrap: balance;
 }
 .ua-antwort { font-style: var(--stil-hervor); color: var(--f-akzent); }
 .umfrage-aussage.ist-leer .ua-zahl { color: var(--f-text-2); }
@@ -1127,6 +1156,7 @@ html.maus-ruht .ww-eingabe:not(:focus-within) { opacity: 0; }
   transform: scale(var(--raetsel-zoom));
   transform-origin: 56% 44%;
   filter: blur(var(--raetsel-unschaerfe));
+  will-change: transform, filter;      /* eigene Grafikebene: Unschärfe ruckelt sonst auf schwachen Rechnern */
   transition:
     transform var(--dauer-lang) var(--kurve),
     filter var(--dauer-lang) var(--kurve);
@@ -1187,6 +1217,9 @@ html.maus-ruht .ww-eingabe:not(:focus-within) { opacity: 0; }
 html.druckmodus .umfrage-werkzeuge,
 html.druckmodus .umfrage-taste,
 html.druckmodus .ww-eingabe { display: none !important; }
+/* Rätsel im Druck: aufgelöstes Bild ohne Filter und ohne eigene Grafikebene
+   (sonst fehlt das Bild im PDF) */
+html.druckmodus .raetsel-motiv { filter: none !important; will-change: auto; transform: none !important; inset: 0; }
 html.aufnahme .umfrage-werkzeuge,
 html.aufnahme .umfrage-taste { opacity: 0 !important; }
 

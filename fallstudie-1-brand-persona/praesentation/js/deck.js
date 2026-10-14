@@ -469,6 +469,7 @@
      data-hochschule, data-praesentation (Titel), data-fallstudie
      <img data-marke-logo>               → Logo aus marke.js
      data-anrede-sie="…" data-anrede-ihr="…" → Text je nach Anrede
+     data-umfrage-frage="tier"           → Frage der Umfrage aus marke.js
      =========================================================================== */
   function datumText(art) {
     if (!marke.datum) return '';
@@ -511,6 +512,12 @@
     alle('img[data-marke-logo]', wurzel).forEach(function (el) {
       if (marke.logo) el.setAttribute('src', util.pfad(marke.logo));
       if (!el.getAttribute('alt')) el.setAttribute('alt', 'Logo ' + (marke.name || '[Marke]'));
+    });
+    /* Frage einer Umfrage aus marke.js, z. B. als Folientitel:
+       <h2 class="titel" data-umfrage-frage="tier"></h2> */
+    alle('[data-umfrage-frage]', wurzel).forEach(function (el) {
+      var u = (marke.umfragen || {})[el.getAttribute('data-umfrage-frage')];
+      if (u && u.frage) el.textContent = util.markeText(u.frage);
     });
     alle('[data-anrede-sie]', wurzel).forEach(function (el) {
       el.textContent = util.anrede(el.getAttribute('data-anrede-sie'), el.getAttribute('data-anrede-ihr') || el.getAttribute('data-anrede-sie'));
@@ -1124,6 +1131,7 @@
      optionen: { richtung: 'vor'|'zurueck', sofort: true (ohne Übergang),
                  still: true (nicht an das andere Fenster senden),
                  vorher: function () {} (läuft im selben Übergang) } */
+  var wechselNr = 0;          /* zählt Folienwechsel; überholte Wechsel werden verworfen */
   function gehe(ziel, schritt, optionen) {
     optionen = optionen || {};
     var index = folieAufloesen(ziel);
@@ -1145,6 +1153,7 @@
     var richtung = optionen.richtung || (alt && index < alt.index ? 'zurueck' : 'vor');
     letzteRichtung = alt ? richtung : 'start';
     var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus;
+    var nr = ++wechselNr;
 
     if (alt) {
       bausteinHooks(alt, 'verlassen');
@@ -1161,15 +1170,30 @@
       gehendeFolie = null;
     }
 
+    /* Der logische Stand gilt sofort (Tasten, Deck.zustand(), Abgleich) –
+       die sichtbare Änderung folgt im Übergang. Bei View Transitions läuft
+       „aendern“ erst, wenn das alte Bild aufgenommen ist (einige Frames später). */
+    aktuell.index = f.index;
+    aktuell.schritt = schritt;
+    adresseSetzen();
+    leisteAktualisieren();
+    if (!optionen.still) kanalZustandSenden();
+
     var aendern = function () {
+      if (nr !== wechselNr) return;           /* inzwischen wurde weitergeblättert */
       if (typeof optionen.vorher === 'function') optionen.vorher();
-      folieAktivieren(f, schritt);
-      bausteinHooks(f, 'betreten', [schritt, richtung]);
-      hookAufrufen(f, 'betreten', [schritt]);
-      bausteinHooks(f, 'schritt', [schritt, 'start']);
-      hookAufrufen(f, 'schritt', [schritt, 'start']);
-      auftrittStarten(f, schritt, richtung, animieren);
+      var n = aktuell.schritt;                /* kann sich während des Übergangs geändert haben */
+      folieAktivieren(f, n);
+      bausteinHooks(f, 'betreten', [n, richtung]);
+      hookAufrufen(f, 'betreten', [n]);
+      bausteinHooks(f, 'schritt', [n, 'start']);
+      hookAufrufen(f, 'schritt', [n, 'start']);
+      auftrittStarten(f, n, richtung, animieren);
       morphNamen(f, true);          /* falls ein Baustein beim Betreten neu gebaut hat */
+      if (!optionen.still && document.activeElement && alt && alt.el.contains(document.activeElement)) {
+        document.activeElement.blur();      /* Fokus nicht in der ausgeblendeten Folie lassen */
+      }
+      nachZustandswechsel('folie', richtung, optionen);
     };
 
     html.classList.toggle('richtung-zurueck', richtung === 'zurueck');
@@ -1196,21 +1220,18 @@
       aendern();
       var weg = bewegungReduziert() ? 0 : 24;
       var vz = richtung === 'zurueck' ? 1 : -1;
-      util.animiere(alt.el, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: (vz * weg) + 'px 0' }],
-        { duration: dauer, easing: 'ease-in-out', fill: 'forwards' }).finished.then(function () {
+      var raus = util.animiere(alt.el, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: (vz * weg) + 'px 0' }],
+        { duration: dauer, easing: 'ease-in-out', fill: 'forwards' });
+      var aufraeumen = function () {
+        try { raus.cancel(); } catch (e) { /* egal */ }   /* „forwards“ nicht an der Folie hängen lassen */
         alt.el.classList.remove('ist-geht');
         stoppeAnimationen(alt.el);
         if (gehendeFolie === alt) gehendeFolie = null;
-      }, function () { /* abgebrochen */ });
+      };
+      raus.finished.then(aufraeumen, aufraeumen);
       util.animiere(f.el, [{ opacity: 0, translate: (-vz * weg) + 'px 0' }, { opacity: 1, translate: '0 0' }],
         { duration: dauer, easing: 'ease-out' });
     }
-
-    if (!optionen.still) {
-      /* Fokus nicht in einer ausgeblendeten Folie stehen lassen */
-      if (document.activeElement && alt && alt.el.contains(document.activeElement)) document.activeElement.blur();
-    }
-    nachZustandswechsel('folie', richtung, optionen);
     return true;
   }
 
@@ -1322,7 +1343,7 @@
   /* Befehle laufen im Referentenfenster über das Vortragsfenster (Abgleich) */
   function befehl(aktion, daten) {
     if (IST_REFERENT && kanal.verbunden) {
-      kanal.senden('befehl', Object.assign({ aktion: aktion }, daten || {}));
+      kanalSenden('befehl', Object.assign({ aktion: aktion }, daten || {}));
       return;
     }
     befehlAusfuehren(aktion, daten || {});
@@ -1872,7 +1893,8 @@
       '</dl></div>' +
       '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
       'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
-      'Auf Umfrage-Folien zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü.</p>';
+      'Auf Umfrage-Folien zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'Bedienleiste unten rechts (Maus bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
   }
 
   /* ----- Sprungmenü (Klick auf Mini-Steuerrad) ----- */
@@ -1937,8 +1959,10 @@
       offeneEbene = 'sprungmenue';
     };
     morphUebergang(oeffnen, function () {
-      var fokus = ebenen.sprungmenue.querySelector('.sr-feld[tabindex="0"]');
-      if (fokus) fokus.focus({ preventScroll: true });
+      /* Fokus auf das Menü selbst: Tab führt zum ersten Feld, ohne dass schon
+         beim Öffnen ein Feld hervorgehoben ist */
+      ebenen.sprungmenue.setAttribute('tabindex', '-1');
+      ebenen.sprungmenue.focus({ preventScroll: true });
     });
   }
   function sprungmenueSchliessen() {
@@ -2139,12 +2163,11 @@
       '  <div class="r-notizen-text"></div>' +
       '</section>' +
       '<section class="r-feld r-uhren" aria-label="Zeit">' +
-      '  <div class="r-uhr-zeile r-uhr-gesamt"><span class="r-uhr-name">Gesamtzeit</span><span class="r-uhr-soll"></span>' +
+      '  <div class="r-uhr-zeile r-uhr-gesamt"><span class="r-uhr-name">Gesamtzeit</span><span class="r-uhr-soll r-uhrzeit">Uhrzeit --:--</span>' +
       '    <span class="r-uhr-wert">0:00</span><span class="r-uhr-soll r-uhr-soll-wert"></span><div class="r-uhr-balken"><span></span></div></div>' +
       '  <div class="r-uhr-zeile r-uhr-folie"><span class="r-uhr-name">Diese Folie</span><span class="r-uhr-soll"></span>' +
       '    <span class="r-uhr-wert">0:00</span><span class="r-uhr-soll r-uhr-soll-wert"></span><div class="r-uhr-balken"><span></span></div></div>' +
       '  <div class="r-plan"></div>' +
-      '  <div class="r-uhr-zeile r-uhrzeit"><span class="r-uhr-name">Uhrzeit</span><span></span><span class="r-uhr-wert" style="font-size:32px">--:--</span><span></span></div>' +
       '  <div class="r-knoepfe">' +
       '    <button type="button" class="r-knopf r-knopf--gross" data-r="zurueck" aria-label="Zurück">' + icon('pfeil-links') + '</button>' +
       '    <button type="button" class="r-knopf r-knopf--gross" data-r="weiter" aria-label="Weiter">' + icon('pfeil-rechts') + '</button>' +
@@ -2165,14 +2188,11 @@
     r.gesamt = raster.querySelector('.r-uhr-gesamt');
     r.folie = raster.querySelector('.r-uhr-folie');
     r.plan = raster.querySelector('.r-plan');
-    r.uhrzeit = raster.querySelector('.r-uhrzeit .r-uhr-wert');
+    r.uhrzeit = raster.querySelector('.r-uhrzeit');
     r.startpause = raster.querySelector('[data-r="startpause"]');
     /* Die echte Bühne in den Platz „Aktuell“ verschieben */
+    /* (beide Plätze füllen ihr Feld; die Bühne wird darin mit Rand eingepasst) */
     r.platzAktuell.appendChild(deckEl);
-    r.platzAktuell.style.aspectRatio = '16 / 9';
-    r.platzAktuell.style.flex = 'none';
-    r.platzNaechste.style.aspectRatio = '16 / 9';
-    r.platzNaechste.style.flex = 'none';
 
     var schrift = util.laden('referent-schrift', 28);
     r.notizen.style.setProperty('--r-schrift', schrift + 'px');
@@ -2276,8 +2296,9 @@
     if (!r.vorschau) return;
     var k = r.vorschau.firstElementChild;
     if (!k || !k.classList.contains('folie')) return;
-    var s = r.vorschau.clientWidth / 1920;
-    k.style.transform = 'scale(' + s + ')';
+    var b = r.vorschau.clientWidth, h = r.vorschau.clientHeight;
+    var s = Math.min(b / 1920, h / 1080);
+    k.style.transform = 'translate(' + Math.round((b - 1920 * s) / 2) + 'px, ' + Math.round((h - 1080 * s) / 2) + 'px) scale(' + s + ')';
   }
 
   function uhrAnzeigen() {
@@ -2302,7 +2323,7 @@
       r.plan.textContent = f && f.backup ? 'Backup-Folie' : '';
     }
     var jetzt = new Date();
-    r.uhrzeit.textContent = (jetzt.getHours() < 10 ? '0' : '') + jetzt.getHours() + ':' + (jetzt.getMinutes() < 10 ? '0' : '') + jetzt.getMinutes();
+    r.uhrzeit.textContent = 'Uhrzeit ' + (jetzt.getHours() < 10 ? '0' : '') + jetzt.getHours() + ':' + (jetzt.getMinutes() < 10 ? '0' : '') + jetzt.getMinutes();
     r.startpause.innerHTML = uhr.laeuft ? icon('pause') + '<span>Pause</span>' : icon('start') + '<span>' + (uhr.gestartet ? 'Weiter' : 'Start') + '</span>';
   }
   function zeileSetzen(zeile, ist, soll) {
@@ -2333,6 +2354,11 @@
     if (ebenenWurzel && offeneEbene) ebeneSchliessen(true);
     laufendeAnimationen.forEach(function (a) { try { a.finish(); } catch (e) { a.cancel(); } });
     folien.forEach(endzustandFolie);
+    /* nach der letzten Seite kein Seitenumbruch (sonst leere Seite am Ende) */
+    alle('.letzte-seite').forEach(function (x) { x.classList.remove('letzte-seite'); });
+    var seiten = html.classList.contains('druck-notizen') ? alle(':scope > .druck-seite', buehne)
+      : alle(':scope > section.folie:not(.ist-ausgeblendet)', buehne);
+    if (seiten.length) seiten[seiten.length - 1].classList.add('letzte-seite');
   }
   function druckmodusAus() {
     if (!istDruckmodus || IST_DRUCK_URL) return;

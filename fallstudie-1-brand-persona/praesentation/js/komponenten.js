@@ -51,10 +51,10 @@
      =========================================================================== */
   var FELDER = {
     kompetenz:  { name: 'Markenkompetenz', zeilen: ['Marken-', 'kompetenz'], frage: 'Wer bin ich?', seite: 'kern' },
-    nutzen:     { name: 'Markennutzen', frage: 'Was biete ich an?', seite: 'hart', sx: -1, sy: -1 },
-    attribute:  { name: 'Markenattribute', frage: 'Über welche Eigenschaften verfüge ich?', seite: 'hart', sx: -1, sy: 1 },
-    tonalitaet: { name: 'Markentonalität', frage: 'Wie bin ich?', seite: 'weich', sx: 1, sy: -1 },
-    bild:       { name: 'Markenbild', frage: 'Wie trete ich auf?', seite: 'weich', sx: 1, sy: 1 },
+    nutzen:     { name: 'Markennutzen', zeilen: ['Marken-', 'nutzen'], frage: 'Was biete ich an?', seite: 'hart', sx: -1, sy: -1 },
+    attribute:  { name: 'Markenattribute', zeilen: ['Marken-', 'attribute'], frage: 'Über welche Eigenschaften verfüge ich?', seite: 'hart', sx: -1, sy: 1 },
+    tonalitaet: { name: 'Markentonalität', zeilen: ['Marken-', 'tonalität'], frage: 'Wie bin ich?', seite: 'weich', sx: 1, sy: -1 },
+    bild:       { name: 'Markenbild', zeilen: ['Marken-', 'bild'], frage: 'Wie trete ich auf?', seite: 'weich', sx: 1, sy: 1 },
     persona:    { name: 'Brand Persona', frage: 'Bezugsrahmen', seite: 'rahmen' }
   };
   var VIERTEL = ['nutzen', 'tonalitaet', 'bild', 'attribute'];
@@ -198,17 +198,40 @@
       }
     }
 
-    /* Beschriftungen als HTML über dem SVG (Klicks gehen durch auf die Felder) */
+    /* Beschriftungen als HTML über dem SVG (Klicks gehen durch auf die Felder).
+       Der Feldname sitzt auf der Zeile optionen.zeile (Anteil des Radius, dort
+       enden im Hub die Verbinder); die Leitfrage steht jeweils zur Radmitte hin.
+       Die Schriftgröße der Feldnamen wird gemessen, damit der längste Name in
+       sein Feld passt (höchstens 32 px, mindestens 24 px). */
     if (optionen.beschriftung && optionen.beschriftung !== 'keine') {
-      var rm = m.ri + (m.Rf - m.ri) * 0.5;
-      var versatz = rm * 0.7071;
+      var zeileY = m.Rf * (optionen.zeile || 0.5);
+      var halbBreite = Math.sqrt(m.Rf * m.Rf - zeileY * zeileY);
+      var innenX = m.spalt / 2 + 12;
+      var aussenX = halbBreite - (optionen.randabstand || 30);
+      var verfuegbar = Math.max(120, aussenX - innenX);
+      /* einzeilig, wenn der längste Name mit mindestens 30 px passt –
+         sonst zweizeilig („Marken-“ / „attribute“), dann bis 36 px */
+      var breitester = Math.max.apply(null, VIERTEL.map(function (feld) { return textBreite(FELDER[feld].name, 32, 'display'); }));
+      var groesse = Math.floor(32 * (verfuegbar - 4) / (breitester || 1));
+      var zweizeilig = groesse < 30;
+      if (zweizeilig) {
+        var breitesteZeile = Math.max.apply(null, VIERTEL.map(function (feld) {
+          return Math.max.apply(null, FELDER[feld].zeilen.map(function (z) { return textBreite(z, 32, 'display'); }));
+        }));
+        groesse = Math.floor(32 * (verfuegbar - 4) / (breitesteZeile || 1));
+      }
+      groesse = Math.max(24, Math.min(zweizeilig ? 36 : 34, groesse));
+      rad.style.setProperty('--sr-label-groesse', groesse + 'px');
+      rad.style.setProperty('--sr-name-hoehe', Math.round((zweizeilig ? 2 : 1) * groesse * 1.08) + 'px');
       VIERTEL.forEach(function (feld) {
         var f = FELDER[feld];
-        var label = el('div', { class: 'sr-label sr-label--' + f.seite, 'data-paar': feld }, null, rad);
-        label.style.left = rund(m.cx + f.sx * versatz) + 'px';
-        label.style.top = rund(m.cy + f.sy * versatz) + 'px';
-        label.style.width = rund(m.Rf * 0.86) + 'px';
-        el('span', { class: 'sr-label-name' }, f.name, label);
+        var label = el('div', { class: 'sr-label sr-label--' + f.seite + ' sr-label--' + (f.sy < 0 ? 'oben' : 'unten'), 'data-paar': feld }, null, rad);
+        label.style.left = rund(m.cx + f.sx * (innenX + aussenX) / 2) + 'px';
+        label.style.top = rund(m.cy + f.sy * zeileY) + 'px';
+        label.style.width = rund(verfuegbar) + 'px';
+        var name = el('span', { class: 'sr-label-name' }, null, label);
+        if (zweizeilig) name.innerHTML = f.zeilen.map(util.escape).join('<br>');
+        else name.textContent = f.name;
         zusatzBeschriftung(label, feld, optionen.beschriftung);
         teile.felder[feld].label = label;
       });
@@ -218,10 +241,43 @@
       kl.style.width = rund(m.rk * 1.9) + 'px';
       var kn = el('span', { class: 'sr-label-name' }, null, kl);
       kn.innerHTML = FELDER.kompetenz.zeilen.map(util.escape).join('<br>');
+      kl.style.setProperty('--sr-kern-groesse', Math.max(m.rk >= 80 ? 28 : 22, Math.min(30, Math.floor(30 * (m.rk * 1.75) / (textBreite('kompetenz', 30, 'display') || 1)))) + 'px');
       zusatzBeschriftung(kl, 'kompetenz', optionen.beschriftung);
       teile.felder.kompetenz.label = kl;
+      if (optionen.beschriftung === 'frage') teile.leitfragenPassen = leitfragenPassen(rad, m, d);
     }
     return teile;
+  }
+
+  /* Passen die Leitfragen in ihre Felder? (Sie dürfen weder in den Kern noch
+     über den Feldrand ragen.) Gemessen wird im fertigen Layout. */
+  function leitfragenPassen(rad, m, d) {
+    return util.messen(rad, function () {
+      var rr = rad.getBoundingClientRect();
+      if (!rr.width) return true;
+      var sk = rr.width / d;
+      return !util.alle('.sr-label:not(.sr-label--kern) .sr-label-frage', rad).some(function (fr) {
+        var q = fr.getBoundingClientRect();
+        if (!q.width) return false;
+        var x1 = (q.left - rr.left) / sk - m.cx, x2 = (q.right - rr.left) / sk - m.cx;
+        var y1 = (q.top - rr.top) / sk - m.cy, y2 = (q.bottom - rr.top) / sk - m.cy;
+        var nx = Math.max(x1, Math.min(0, x2)), ny = Math.max(y1, Math.min(0, y2));
+        return Math.hypot(nx, ny) < m.ri + 4;
+      });
+    });
+  }
+
+  /* Textbreite messen (Canvas) – mit der Display- bzw. Textschrift des Themas */
+  var messLeinwand = null;
+  function textBreite(text, px, rolle) {
+    try {
+      messLeinwand = messLeinwand || document.createElement('canvas').getContext('2d');
+      var st = getComputedStyle(document.documentElement);
+      var fam = st.getPropertyValue(rolle === 'text' ? '--schrift-text' : '--schrift-display').trim() || 'serif';
+      var gew = st.getPropertyValue(rolle === 'text' ? '--gewicht-text' : '--gewicht-display').trim() || '400';
+      messLeinwand.font = gew + ' ' + px + 'px ' + fam;
+      return messLeinwand.measureText(text).width * 1.03;
+    } catch (e) { return text.length * px * 0.55; }
   }
 
   function zusatzBeschriftung(label, feld, art) {
@@ -313,27 +369,34 @@
        die Pillen „Markenkompetenz“ und „Brand Persona“) und die Breite neben
        den Karten zulässt */
     var pilleH = 64;
-    var ringMax = (H - 2 * pilleH + 40) / 2;
+    var ringMax = H / 2 - pilleH / 2 + 2;          /* Pillen sitzen mittig auf dem Ring */
     var RfAusBreite = (B / 2 - kartenB - 72) / 0.854;
     var Rf = Math.max(160, Math.min(ringMax - 14, RfAusBreite));
     var d = Math.round((Rf + 24) * 2);
+    var zeile = 0.54;                             /* Höhe der Kartenreihen als Anteil von Rf */
     var cx = B / 2;
     var cy = H / 2;
 
-    var linien = svg('svg', { class: 'sr-verbinder', viewBox: '0 0 ' + B + ' ' + H, width: B, height: H, 'aria-hidden': 'true' }, innen);
     var radHuelle = el('div', { class: 'sr-rad-platz' }, null, innen);
+    /* Verbinder liegen über dem Rad, damit die Punkte auf dem Feldrand ganz sichtbar sind */
+    var linien = svg('svg', { class: 'sr-verbinder', viewBox: '0 0 ' + B + ' ' + H, width: B, height: H, 'aria-hidden': 'true' }, innen);
     radHuelle.style.left = rund(cx - d / 2) + 'px';
     radHuelle.style.top = rund(cy - d / 2) + 'px';
     var leitfragen = huelle.getAttribute('data-leitfragen');
     var teile = radBauen(radHuelle, d, {
       beschriftung: leitfragen === 'aus' || synthese ? 'name' : 'frage',
-      klickbar: true
+      klickbar: true,
+      zeile: zeile
     });
     huelle._teile = teile;
+    /* Leitfragen passen bei dieser Radgröße nicht in die Felder? Dann stehen
+       sie in der Beschreibung unter der Methodenkarte (nur beim gezeigten Feld). */
+    var frageInKarte = !synthese && leitfragen !== 'aus' && teile.leitfragenPassen === false;
+    teile.rad.classList.toggle('sr-ohne-leitfragen', frageInKarte);
     if (huelle._morph !== 'aus') teile.rad.setAttribute('data-morph', huelle._morph);
     var m = teile.m;
     var RfAbs = m.Rf;
-    var dy = Math.round(RfAbs * 0.54);
+    var dy = Math.round(RfAbs * zeile);
 
     /* Seitenbeschriftung hard / soft facts */
     if (huelle.getAttribute('data-seiten') !== 'aus') {
@@ -392,7 +455,12 @@
         el('span', { class: 'sr-karte-name' }, util.markeText(e.name), kopf);
         /* eindeutiger Klick-Hinweis „Folie x →“ (Pfeil per CSS) */
         el('span', { class: 'sr-karte-folie' }, folienText(ziel), kopf);
-        if (mitBeschreibung && e.text) el('span', { class: 'sr-karte-text' }, util.markeText(e.text), karte);
+        var frage = frageInKarte && e.feld !== 'kompetenz' && e.feld !== 'persona' ? FELDER[e.feld].frage : '';
+        if ((mitBeschreibung && e.text) || frage) {
+          var beschreibung = el('span', { class: 'sr-karte-text' }, null, karte);
+          if (frage) el('em', { class: 'sr-karte-frage' }, frage, beschreibung);
+          if (mitBeschreibung && e.text) beschreibung.appendChild(document.createTextNode(util.markeText(e.text)));
+        }
         karte.setAttribute('aria-label', e.name + ' – füllt ' + FELDER[e.feld].name + (ziel ? ', zu ' + folienText(ziel) : ''));
       }
       karte.addEventListener('click', function (ev) { ev.stopPropagation(); springen(e.feld, huelle); });
@@ -418,21 +486,24 @@
         karte.style.top = rund(p.y) + 'px';
         karte.style.width = kartenB + 'px';
         var x1 = p.seite < 0 ? kartenB + 12 : B - kartenB - 12;
-        var x2 = p.seite < 0 ? cx - xRand + 10 : cx + xRand - 10;
+        var x2 = p.seite < 0 ? cx - xRand : cx + xRand;        /* Punkt sitzt auf dem Feldrand */
         var g = svg('g', { class: 'sr-linie', 'data-paar': feld }, linien);
         svg('path', { d: 'M' + rund(x1) + ' ' + rund(p.y) + ' H' + rund(x2), class: 'sr-linie-strich' }, g);
         svg('circle', { cx: rund(x2), cy: rund(p.y), r: 7, class: 'sr-linie-punkt', 'data-animation': 'feder' }, g);
         verbinder[feld] = g;
       } else if (platz === 'oben') {
+        /* Pille mittig auf dem oberen Ringrand, Linie durch den Spalt zum Kern */
+        var obenY = cy - m.ring;
         karte.style.left = cx + 'px';
-        karte.style.top = '0px';
+        karte.style.top = rund(obenY) + 'px';
         var g2 = svg('g', { class: 'sr-linie', 'data-paar': feld }, linien);
-        svg('path', { d: 'M' + cx + ' ' + pilleH + ' V' + rund(cy - m.rk - 8), class: 'sr-linie-strich' }, g2);
+        svg('path', { d: 'M' + cx + ' ' + rund(obenY + pilleH / 2) + ' V' + rund(cy - m.rk - 8), class: 'sr-linie-strich' }, g2);
         svg('circle', { cx: cx, cy: rund(cy - m.rk - 8), r: 7, class: 'sr-linie-punkt', 'data-animation': 'feder' }, g2);
         verbinder[feld] = g2;
       } else if (platz === 'unten') {
+        /* Pille mittig auf dem unteren Ringrand (der Rahmen = Persona) */
         karte.style.left = cx + 'px';
-        karte.style.bottom = '0px';
+        karte.style.top = rund(cy + m.ring) + 'px';
       }
     });
 
@@ -725,7 +796,7 @@
       umfrageZeichnen(u, true);
     });
 
-    var liste = el('ol', { class: 'umfrage-liste' }, null, rechts);
+    var liste = el('ol', { class: 'umfrage-liste', 'aria-label': util.markeText(konfig.frage || 'Ergebnisse der Umfrage') }, null, rechts);
     var antwort = String(konfig.unsereAntwort || '').toLowerCase();
     var aufloesung = huelle.getAttribute('data-aufloesung');
     konfig.optionen.forEach(function (name, i) {
@@ -1232,7 +1303,6 @@
       huelle._start = parseInt(huelle.getAttribute('data-schritt-start') || '1', 10);
       var motiv = el('div', { class: 'raetsel-motiv' }, null, huelle);
       var bild = el('img', { src: util.pfad(quelle), alt: huelle.getAttribute('data-alt') || 'Rätselbild', draggable: 'false' }, null, motiv);
-      bild.decoding = 'async';
       if (huelle.getAttribute('data-fokus')) motiv.style.transformOrigin = huelle.getAttribute('data-fokus');
       if (huelle.getAttribute('data-fortschritt') !== 'aus') {
         var stand = el('div', { class: 'raetsel-fortschritt', 'aria-live': 'polite' }, null, huelle);

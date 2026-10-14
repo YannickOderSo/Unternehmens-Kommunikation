@@ -683,7 +683,7 @@
     --f-akzent:         oklch(from var(--marke-primaer) max(l, 0.8) min(c, 0.14) h);
     --f-akzent-flaeche: oklch(from var(--marke-primaer) 0.29 min(c, 0.045) h);
     --f-hart:           oklch(from var(--marke-sekundaer) max(l, 0.84) min(c, 0.08) h);
-    --f-hart-flaeche:   oklch(from var(--marke-sekundaer) 0.31 min(c, 0.04) h);
+    --f-hart-flaeche:   oklch(from var(--marke-sekundaer) 0.31 min(c, 0.02) h);   /* wenig Buntheit: sonst „schlammig braun“ (Jury) */
     --f-weich:          oklch(from var(--marke-primaer) max(l, 0.82) min(c, 0.14) h);
     --f-weich-flaeche:  oklch(from var(--marke-primaer) 0.33 min(c, 0.065) h);
     --f-kern:           oklch(from var(--marke-primaer) clamp(0.45, l, 0.75) c h);

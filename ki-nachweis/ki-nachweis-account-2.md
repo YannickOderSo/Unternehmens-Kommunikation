@@ -167,7 +167,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 
   | Nr. | Stufe | Unteragent (Label) | Auftrag | Ergebnis | Wie Claude das Ergebnis geprüft hat |
   |-----|-------|--------------------|---------|----------|-------------------------------------|
-  | A2-D01.01 | Fundament | Engine & Designsystem | [engine-designsystem.md](workflows/2026-10-14_praesentation-account-2_auftraege/engine-designsystem.md) | *läuft* | – |
+  | A2-D01.01 | Fundament | Engine & Designsystem (Agent-Werkzeug, general-purpose; nach Container-Neustart fortgesetzt, ca. 38 min, 105 Werkzeugaufrufe) | [engine-designsystem.md](workflows/2026-10-14_praesentation-account-2_auftraege/engine-designsystem.md) | fertig – Rückgabe: [engine-designsystem.json](workflows/2026-10-14_praesentation-account-2_rueckgaben/engine-designsystem.json); neu: `AUTOREN.md`, `LIESMICH.md` (vorläufig), `werkzeuge/pruefen.mjs`, `folien/_demo.html` (+ CSS/JS), `index.html` (Demo); überarbeitet: Engine, Bausteine, Themen, `marke.js` (Name HOLY, Farben neutral) | Rückgabe gelesen; Demo selbst neu zusammengebaut und mit `pruefen.mjs` geprüft (15 Folien: 0 Fehler, keine externen Anfragen, Schriften lokal, 2 Warnungen Wortbudget 43/44 Wörter); vier Folien als Kontaktbogen angesehen (Titel, Hub, Repertory Grid, Umfrage) – sauber, Editorial-Stil umgesetzt. Auffällig: Markenname in Titeln noch kursiv, Bedienhinweise in der Quellenzeile der Demo-Umfrage → an Folien-/Prüfstufe |
 
 - **Fortsetzung nach Container-Neustart (A2-04), Nachricht an A2-D01.01 (wörtlich):**
   > Der Container wurde neu gestartet; dein Lauf wurde dabei unterbrochen. Deine bisherigen Dateien in
