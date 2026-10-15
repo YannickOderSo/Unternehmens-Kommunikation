@@ -5,12 +5,15 @@
   Inhalt nach ../folienentwuerfe.md, Abschnitt „Folie 2“ (Titel, Leitfrage,
   Grafik, Quellenzeile, Sprechtext).
 
-  Modell: Markensteuerrad nach Esch (Felder, Leitfragen) – Bezugsrahmen
-  Brand Persona / Limbic Map nach Häusel. Begriffe aus der Standardliteratur;
-  bitte mit den Vorlesungsfolien abgleichen.
+  Modell: Markensteuerrad nach Esch (fünf Felder, Leitfragen). Der Rahmen
+  „Brand Persona + Limbic Map“ (Limbic Map nach Häusel) gehört NICHT zu Eschs
+  Modell – er ist unsere Ergänzung als Bezugsrahmen (steht so in der
+  Quellenzeile). Begriffe aus der Standardliteratur; bitte mit den
+  Vorlesungsfolien abgleichen.
 
   ABLAUF (Klicks)
-    0  Titel und Leitfrage; das Rad baut sich auf (Zentrum → vier Felder)
+    0  Titel, Ausgangslage (rechts) und Leitfrage; das Rad baut sich auf
+       (Zentrum → vier Felder)
     1  Desk Research        → Markenkompetenz (Zentrum)
     2  Repertory Grid       → Markenattribute
     3  Laddering            → Markennutzen
@@ -19,24 +22,36 @@
        (je Klick leuchten Methode, Verbinder und Feld; der Rest tritt zurück)
     6  Verkettung: „Attribute sind die Startpunkte“, „Tonalität ist der
        Prüfmaßstab“ (gestrichelte Pfeile; die vier Felder leuchten)
-    7  Brand Persona + Limbic Map: der Rahmen zeichnet sich um das Rad –
-       Gesamtbild, alles klickbar (= Agenda)
-  Die Schritte 6 und 7 ordnet js/folien/02-vorgehen.js zu (Baustein-Standard
-  wäre: Persona als zweiter Schritt, Pfeile mit Laddering bzw. Analyse).
+    7  Brand Persona + Limbic Map: die Pille erscheint, danach zeichnet sich
+       der Rahmen um das Rad – Gesamtbild, alles klickbar (= Agenda)
+  Die Schritte 6 und 7, die Kennzeichnung „KI“ auf jeder Methodenkarte und
+  die Mausregel (siehe unten) ergänzt js/folien/02-vorgehen.js.
+
+  KI ALS METHODE (Aufgabenstellung: „insbesondere Desk Research und KI-Tools“):
+  Jede Methodenkarte trägt das Kennzeichen „KI“; die Kurzbeschreibung der
+  gerade gezeigten Methode sagt, wofür KI genutzt wird. Erklärung des
+  Kennzeichens und Verweis auf das Prompt-Log (Backup B2) in der Quellenzeile.
+  Bitte die Kurzbeschreibungen an die TATSÄCHLICHE Durchführung anpassen
+  (z. B. „echte Befragte“ nur, wenn es echte Interviews gab).
 
   INTERAKTIV: Klick (oder Tab + Enter) auf ein Feld oder eine Methodenkarte
   springt zur ersten Folie mit passendem data-feld (Folienverweise „Folie x →“
-  stehen auf den Karten). Beim Weiterblättern gleitet das Rad in das
+  stehen auf den Karten). Die Maus beeinflusst die Hervorhebung erst, wenn sie
+  nach dem letzten Klick bewegt wurde (eine liegen gebliebene Maus graut das
+  Rad also nicht aus). Beim Weiterblättern gleitet das Rad in das
   Mini-Steuerrad oben rechts der Folgefolien (View-Transition-Morph).
 
   SO ÄNDERN SIE DIE INHALTE
     • Methoden, Kurzbeschreibungen, Verkettungen: im JSON im Baustein unten
       („methoden“, „logik“). Die Feldnamen und Leitfragen der Felder kommen aus
-      dem Baustein (js/komponenten.js, nach Esch).
+      dem Baustein (js/komponenten.js, nach Esch). Kurzbeschreibungen höchstens
+      ca. 50 Zeichen (sonst stoßen sie an die Karte darunter).
     • Reihenfolge der Methoden-Klicks: „reihenfolge“ (Persona bitte NICHT
       eintragen – der Rahmen kommt immer als letzter Schritt).
-    • Titel und Leitfrage: direkt unten im <header>. Den Markennamen nie
-      eintippen – <span data-marke></span> holt ihn aus marke.js.
+    • Titel, Leitfrage und Ausgangslage: direkt unten im <header>. Den
+      Markennamen nie eintippen – <span data-marke></span> holt ihn aus marke.js.
+      Ausgangslage nur mit Fakten aus ../recherche/holy-recherche.md (Quelle in
+      der Quellenzeile anpassen).
 -->
 <section class="folie vorgehen" id="f02" data-titel="Ausgangslage &amp; Vorgehen" data-feld="hub" data-zeit="60" data-buendel="A" data-schritte="7">
   <header class="folie-kopf">
@@ -46,21 +61,37 @@
       <span class="vorgehen-leitfrage-etikett" data-meta>Leitfrage</span>
       <span class="vorgehen-leitfrage-text">Wofür steht <span data-marke></span> – und passt ihr heutiger Auftritt dazu?</span>
     </p>
+
+    <!-- Ausgangslage: rechts neben dem Titel, zwei Stationen aus dem
+         Recherche-Dossier (Kap. 2.1, Faktenstatus ✔ gesichert):
+           2021  Marktstart als „Gaming Booster“, nur im eigenen Onlineshop [4, 22]
+           2026  Softdrink-Marke im Lebensmittelhandel (ab 01/2025) und erste
+                 große TV-Kampagne (01/2026) [8, 25]
+         Sie begründet die Leitfrage („passt ihr heutiger Auftritt dazu?“). -->
+    <div class="vorgehen-ausgangslage" data-staffel="120" data-animation="hoch" data-verzoegerung="200">
+      <p class="vorgehen-ausgangslage-etikett" data-meta>Ausgangslage</p>
+      <ol class="vorgehen-zeitleiste" data-staffel="120" data-animation="hoch">
+        <li><span class="vorgehen-jahr">2021</span><span class="vorgehen-station">Gaming-Booster, nur online</span></li>
+        <li><span class="vorgehen-jahr">2026</span><span class="vorgehen-station">Softdrink im Supermarkt und im TV</span></li>
+      </ol>
+    </div>
   </header>
 
   <div class="folie-inhalt">
     <!-- Markensteuerrad als interaktive Agenda (Baustein „steuerrad“, Modus „hub“).
-         Feldnamen, Leitfragen und Folienverweise erzeugt der Baustein selbst. -->
+         Feldnamen, Leitfragen und Folienverweise erzeugt der Baustein selbst.
+         „text“ = Kurzbeschreibung, erscheint nur beim gerade gezeigten Feld.
+         KI-Einsatz je Methode laut ../methoden.md (Prompts P1–P13 in ../prompts.md). -->
     <div class="steuerrad" data-modus="hub" data-aufbau="schritte">
       <script type="application/json">
       {
         "methoden": [
           { "feld": "kompetenz",  "name": "Desk Research",              "text": "Herkunft, Historie, Marktrolle" },
           { "feld": "persona",    "name": "Brand Persona + Limbic Map", "text": "Zielgruppe als Bezugsrahmen" },
-          { "feld": "attribute",  "name": "Repertory Grid",             "text": "Triadenvergleich mit Wettbewerbern" },
-          { "feld": "nutzen",     "name": "Laddering",                  "text": "Means-End-Kette bis zu den Werten" },
-          { "feld": "tonalitaet", "name": "Analogiemethoden",           "text": "Marke als Mensch und als Tier" },
-          { "feld": "bild",       "name": "Kommunikationsanalyse",      "text": "Instagram · Facebook · YouTube" }
+          { "feld": "attribute",  "name": "Repertory Grid",             "text": "Triaden: KI-simulierte und echte Befragte" },
+          { "feld": "nutzen",     "name": "Laddering",                  "text": "Means-End-Kette: KI- und echte Interviews" },
+          { "feld": "tonalitaet", "name": "Analogiemethoden",           "text": "Mensch und Tier: KI und echte Antworten" },
+          { "feld": "bild",       "name": "Kommunikationsanalyse",      "text": "Instagram, Facebook, YouTube – KI-codiert" }
         ],
         "logik": [
           { "von": "attribute",  "nach": "nutzen", "text": "Attribute sind die Startpunkte" },
@@ -73,20 +104,20 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map), erstellt mit KI-Unterstützung</p>
+    <p class="quelle">Eigene Darstellung nach Esch; Rahmen Persona + Limbic Map (Häusel) von uns ergänzt · <b class="vorgehen-ki-legende">KI</b> = KI-gestützt, an Quellen bzw. echten Befragten geprüft; Prompts: Backup B2 · Ausgangslage: Dossier Kap. 2.1 ✔ [4, 8, 22, 25]</p>
   </footer>
 
   <aside class="notizen">
-    <p><b>Ziel (60 s):</b> Fragestellung in einem Satz, dann das Modell und unsere Methoden – die Folie ist zugleich die Agenda. Pro Klick nur einen Satz.</p>
-    <p data-schritt="0"><b>Leitfrage (ca. 15 s):</b> „Unsere Leitfrage lautet: Wofür steht <span data-marke></span> – und passt ihr heutiger Auftritt dazu? Um das zu beantworten, nutzen wir das Markensteuerrad nach Esch. Es beschreibt die Identität einer Marke in fünf Feldern: links die harten Fakten, also Attribute und Nutzen, rechts die weichen, also Tonalität und Markenbild, und in der Mitte die Markenkompetenz.“</p>
-    <p data-schritt="1"><b>Klick 1:</b> „Für jedes Feld haben wir eine eigene Methode eingesetzt: Desk Research für die Kompetenz,</p>
-    <p data-schritt="2"><b>Klick 2:</b> … ein Repertory Grid für die Attribute,</p>
-    <p data-schritt="3"><b>Klick 3:</b> … Laddering für den Nutzen,</p>
-    <p data-schritt="4"><b>Klick 4:</b> … Analogien für die Tonalität</p>
-    <p data-schritt="5"><b>Klick 5:</b> … und eine Kommunikationsanalyse für das Markenbild.“</p>
-    <p data-schritt="6"><b>Klick 6 (ca. 8 s):</b> „Die Methoden bauen aufeinander auf – die Attribute aus dem Repertory Grid sind zum Beispiel die Startpunkte fürs Laddering, und die Tonalität ist der Maßstab, an dem wir den heutigen Auftritt prüfen.“</p>
-    <p data-schritt="7"><b>Klick 7 (ca. 10 s):</b> „Den Rahmen bildet unsere Brand Persona, denn eine Marke wirkt nur über ihre Zielgruppe. Am Ende führen wir alles im Steuerrad zusammen und leiten daraus Empfehlungen ab.“ → weiter zu Folie 03 (das Rad gleitet ins Mini-Rad oben rechts).</p>
-    <p><b>Mögliche Rückfragen</b> (nicht vorlesen): „Warum das Markensteuerrad?“ – durch die Aufgabe vorgegeben; trennt rationale und emotionale Bestandteile, jede Methode liefert genau ein Feld, so ist jede Aussage im Steuerrad rückverfolgbar. „Identität ist Selbstbild – warum fragt ihr die Zielgruppe?“ – wir vergleichen Selbstbild (Website, eigene Kommunikation) und Fremdbild (Repertory Grid, Laddering); wo beides auseinandergeht, setzen die Empfehlungen an. „Wie belastbar sind KI-Ergebnisse?“ – Fakten an Quellen geprüft, Grenzen und alle Prompts im Backup (B1, B2).</p>
-    <p>Technik: Felder und Methodenkarten sind klickbar (Maus oder Tab + Enter) und springen zur passenden Folie – praktisch in der Fragerunde. Auf den Folgefolien öffnet das Mini-Rad oben rechts dasselbe Rad als Sprungmenü.</p>
+    <p><b>Ziel (60 s):</b> Ausgangslage und Leitfrage in zwei Sätzen, dann Modell und Methoden – die Folie ist zugleich die Agenda. Pro Klick nur einen Halbsatz. Einmal mit Stoppuhr proben (Ziel: unter 60 s).</p>
+    <p data-schritt="0"><b>Ausgangslage und Leitfrage (ca. 15 s, ≈ 35 Wörter):</b> „<span data-marke></span> ist 2021 als Gaming-Booster gestartet, nur online. Heute steht die Marke als Softdrink im Supermarkt und läuft im Fernsehen. Daher unsere Leitfrage: Wofür steht <span data-marke></span> – und passt der heutige Auftritt dazu? Unser Werkzeug: das Markensteuerrad nach Esch.“ <i>(Fakten: Dossier Kap. 2.1 ✔ [4, 8, 22, 25] – Marktstart April 2021 im eigenen Onlineshop, ab 01/2025 Rewe, Edeka, Globus, seit 01/2026 TV-Kampagne.)</i></p>
+    <p data-schritt="1"><b>Klicks 1–5 (zusammen ca. 20 s):</b> „Für jedes Feld eine Methode: Desk Research für die Kompetenz,</p>
+    <p data-schritt="2">… ein Repertory Grid für die Attribute,</p>
+    <p data-schritt="3">… Laddering für den Nutzen,</p>
+    <p data-schritt="4">… Analogien für die Tonalität</p>
+    <p data-schritt="5">… und eine Kommunikationsanalyse für das Markenbild. In jeder Methode helfen KI-Tools – jede KI-Aussage prüfen wir an Quellen oder echten Befragten, alle Prompts stehen im Backup.“</p>
+    <p data-schritt="6"><b>Klick 6 (ca. 8 s):</b> „Die Methoden bauen aufeinander auf: Die Attribute sind die Startpunkte fürs Laddering, die Tonalität ist unser Prüfmaßstab.“</p>
+    <p data-schritt="7"><b>Klick 7 (ca. 10 s):</b> „Den Rahmen bildet unsere Brand Persona, denn eine Marke wirkt nur über ihre Zielgruppe. Am Ende führen wir alles im Steuerrad zusammen.“ → weiter zu Folie 03 (das Rad gleitet ins Mini-Rad oben rechts).</p>
+    <p><b>Mögliche Rückfragen</b> (nicht vorlesen): „Warum das Markensteuerrad?“ – durch die Aufgabe vorgegeben; trennt rationale (links, hard facts) und emotionale Bestandteile (rechts, soft facts), jede Methode liefert genau ein Feld, so ist jede Aussage im Steuerrad rückverfolgbar. „Gehört die Persona zum Steuerrad?“ – nein, Eschs Rad hat fünf Felder; Brand Persona und Limbic Map (nach Häusel) sind unsere Ergänzung als Bezugsrahmen, weil Identität für eine Zielgruppe gebaut wird. „Identität ist Selbstbild – warum fragt ihr die Zielgruppe?“ – wir vergleichen Selbstbild (Website, eigene Kommunikation) und Fremdbild (Repertory Grid, Laddering); wo beides auseinandergeht, setzen die Empfehlungen an. „Wie belastbar sind KI-Ergebnisse?“ – simulierte Befragte nur als Ergänzung zu echten Kurzinterviews, Fakten an Quellen geprüft, Grenzen und alle Prompts im Backup (B1, B2).</p>
+    <p>Technik: Felder und Methodenkarten sind klickbar (Maus oder Tab + Enter) und springen zur passenden Folie – praktisch in der Fragerunde. Die Maus hebt erst etwas hervor, wenn sie nach dem Klick bewegt wird. Auf den Folgefolien öffnet das Mini-Rad oben rechts dasselbe Rad als Sprungmenü.</p>
   </aside>
 </section>
