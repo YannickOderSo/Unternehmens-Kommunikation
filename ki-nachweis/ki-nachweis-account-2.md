@@ -38,6 +38,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-12 | 14.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
 | A2-13 | 14./15.10.2026 | System | Vierter Abbruch des Workflows durch Nutzungslimit | A2-D01 | Zwischenstand gesichert |
 | A2-14 | 15.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D01 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
+| A2-15 | 15.10.2026 | System | Fünfter Abbruch des Workflows durch Nutzungslimit (Überarbeitung) | A2-D01 | Zwischenstand gesichert |
+| A2-16 | 15.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -261,6 +263,27 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-15 – 15.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ failed: Error: Keine Folien-Gruppe fertig
+> geworden – später mit resume fortsetzen („You've hit your session limit · resets 5:40pm (UTC)“ bei allen sieben
+> Überarbeitungs-Agenten). Danach: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** Alle sieben Folien-Gruppen gebaut und geprüft (14 Agenten fertig); alle sieben Überarbeitungen am Limit
+  gescheitert (Teiländerungen an `folien/02-vorgehen.html` als Zwischenstand gesichert, `f646a41`).
+
+### A2-16 – 15.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (19:42 Uhr):** Zwischenstand committet (`f646a41`), `master` geprüft (nichts Neues seit A2-14),
+  Workflow `wf_878fd85d-3f2` mit `resumeFromRunId` fortgesetzt (14 fertige Agenten aus dem Zwischenspeicher; es laufen
+  die sieben Überarbeitungen, danach Integration, Abschlussprüfung, Feinschliff).
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -308,6 +331,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Fünfte Fortsetzung (A2-16)** (15.10.2026, 19:42 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
+  Zwischenspeicher: sieben Folien-Agenten, sieben Prüf-Agenten.
 - **Vierte Fortsetzung (A2-14)** (15.10.2026, 17:27 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
   Zwischenspeicher: sieben Folien-Agenten, zwei Prüf-Agenten.
 - **Dritte Fortsetzung (A2-12)** (14.10.2026, 21:52 Uhr): unverändertes Skript, `resumeFromRunId`. Fertig aus dem
