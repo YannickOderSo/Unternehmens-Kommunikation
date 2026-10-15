@@ -39,8 +39,10 @@ Grundlage für die simulierten Befragten (Repertory Grid, Laddering, Analogien).
 3. Auf der Limbic Map verorten (**P5**, siehe unten).
 4. Bild erzeugen (**P6**) und auf der Folie als KI-generiert kennzeichnen.
 
+**Schritt-für-Schritt-Anleitung mit Zugangswegen (geprüft 15.10.2026):** [`persona-datenerhebung.md`](persona-datenerhebung.md)
+
 **Datenquellen (Deutschland):** Statista (Campuslizenz über die Hochschulbibliothek), VuMA, best for planning (b4p),
-ARD/ZDF-Medienstudie, Sinus-Milieus, AGOF, Destatis, Mediadaten der Plattformen, Geschäftsberichte,
+ARD/ZDF-Medienstudie, Sinus-Milieus, Destatis, Eurostat, Mediadaten der Plattformen, Geschäftsberichte,
 Kundenbewertungen (Google, Trustpilot, Amazon), Kommentare auf den Social-Media-Kanälen der Marke, Google Trends.
 
 | Dimension | Inhalt | Daten / Annahme + Quelle |
