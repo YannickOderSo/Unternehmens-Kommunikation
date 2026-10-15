@@ -16,30 +16,37 @@
   • Zwei Punkte: Persona (Kreis) und Marke (Raute). Ihre Lage wird aus den
     Gewichten Balance/Dominanz/Stimulanz (in %) berechnet: gewichteter
     Mittelwert der drei Richtungen. Die Mitte bedeutet 33/33/33 %.
-  • Rechts: Limbic Type der Persona, Motiv-Überschneidung (eigene,
-    vereinfachte Kennzahl = Summe der kleineren Gewichte je System) und drei
-    Konsequenzen für die Kommunikation.
+  • Rechts: Limbic Type der Persona, die größte Lücke zwischen Persona und
+    Marke (in Prozentpunkten, direkt aus den Balken ablesbar) und drei
+    Folgen für die Kommunikation, die sich aus dieser Lücke ergeben.
+  • Die Gewichte sind die Limbic-Map-Hypothese aus dem Recherche-Dossier
+    (../recherche/holy-recherche.md, Kap. 4.4): Startwerte des Teams, KEINE
+    Messung und kein Bestandteil des Modells. Eine Marke hat laut Dossier
+    keinen Limbic Type, sondern wird über Emotionsfelder verortet.
 
   SO ÄNDERN SIE DIE INHALTE
   • Alles steht unten im <script type="application/json" class="daten">.
     Das Skript js/folien/05-limbic-map.js baut daraus die Karte.
-  • ALLE GEWICHTE UND TEXTE SIND BEISPIELDATEN. Echte Werte kommen aus
-    Prompt P5 (mit eigener Prüfung) bzw. aus der Kommunikationsanalyse.
-  • Den Titel passen Sie hier im HTML an, wenn sich die Aussage ändert.
+  • Den Titel passen Sie hier im HTML an, wenn sich die Aussage ändert
+    (er nennt die Persona und die Lücke).
   • Der Markenname kommt aus marke.js (data-marke) – nie eintippen.
+  • Klassen mit „g2l-“ gehören nur zu dieser Folie (g2 = Folien-Gruppe 2,
+    l = Limbic Map) – so überschneiden sie sich nicht mit anderen Folien.
 
   SCHRITTE (Klicks)
     0  Karte mit Systemen, Mischbereichen und Limbic Types
     1  Persona-Punkt fliegt aus der Mitte an seinen Platz, ihr Limbic Type
        leuchtet auf der Karte und erscheint rechts
     2  Marken-Punkt fliegt an seinen Platz, die Verbindungslinie zeigt den
-       Fit, die Motiv-Überschneidung zählt hoch
-    3  drei Konsequenzen für die Kommunikation (gestaffelt)
+       Abstand, die größte Lücke zählt hoch und ist in den Balken markiert
+    3  drei Folgen für die Kommunikation (gestaffelt)
 -->
 <section class="folie" id="f05" data-titel="Limbic Map" data-feld="persona" data-zeit="60" data-buendel="A">
   <header class="folie-kopf">
-    <p class="kicker">Limbic Map nach Häusel <span class="beispiel">Beispieldaten</span></p>
-    <h2 class="titel"><em data-marke></em> trifft die Motive unserer Persona</h2>
+    <!-- Der Name in der Leitfrage kommt aus den Daten (persona.beschriftung) -->
+    <p class="kicker">Limbic Map nach Häusel · Was treibt <span data-g2l="personaName">Marco</span> an?</p>
+    <!-- Titel = Kernaussage aus der größten Lücke (bei neuen Gewichten anpassen) -->
+    <h2 class="titel"><em data-marke></em> spricht Marcos Spaß an, kaum seinen Ehrgeiz</h2>
   </header>
 
   <div class="folie-inhalt g2l">
@@ -48,24 +55,27 @@
       <!-- LINKS: die Karte. Sie wird komplett aus den Daten gebaut
            (Sektoren, Beschriftungen, Punkte, Verbindungslinie). -->
       <div class="sp-7 g2l-platz">
-        <div class="g2l-karte" role="img" aria-label="Vereinfachte Limbic Map mit Persona und Marke (Beispieldaten)"></div>
+        <div class="g2l-karte" role="img" aria-label="Vereinfachte Limbic Map mit Persona und Marke (Hypothese)"></div>
       </div>
 
       <!-- RECHTS: Ergebnis -->
       <div class="sp-5 g2l-seite">
         <!-- Schritt 1: Limbic Type der Persona -->
         <div class="g2l-typ" data-schritt="1" data-animation="hoch" data-verzoegerung="500">
-          <span class="karte-kicker" data-meta>Limbic Type der Persona</span>
-          <p class="g2l-typ-name" data-g2l="limbicType">Performer</p>
-          <p class="g2l-typ-motive" data-g2l="typMotive">Leistung · Status · Effizienz</p>
+          <span class="karte-kicker" data-meta>Limbic Type der Persona · Hypothese</span>
+          <p class="g2l-typ-name" data-g2l="limbicType">Abenteurer</p>
+          <p class="g2l-typ-motive" data-g2l="typMotive">Abwechslung · Mut · Freiheit</p>
         </div>
 
-        <!-- Schritt 2: Fit Persona ↔ Marke als Kennzahl (Wert rechnet das Skript aus) -->
+        <!-- Schritt 2: größte Lücke Persona ↔ Marke (Wert und Text rechnet das
+             Skript aus den Gewichten aus; „kennzahl“ in den Daten wählt die Art) -->
         <div class="g2l-fit" data-schritt="2" data-animation="hoch" data-verzoegerung="900">
-          <span class="kennzahl-wert kennzahl-wert--mittel g2l-fit-wert" data-animation="zaehlen" data-ziel="85" data-einheit=" %" data-dauer="1100">85 %</span>
-          <span class="g2l-fit-text"><span class="g2l-ohne-umbruch">Motiv-Überschneidung</span> mit <span data-marke></span></span>
+          <span class="kennzahl-wert kennzahl-wert--mittel g2l-fit-wert" data-animation="zaehlen" data-ziel="-20" data-einheit=" Pp." data-dauer="1100">−20 Pp.</span>
+          <span class="g2l-fit-text" data-g2l="fitText"><b>Dominanz</b> – größte Lücke</span>
           <!-- Gewichte in % als gestapelte Balken (baut das Skript) -->
           <div class="g2l-profile" data-meta aria-hidden="true"></div>
+          <!-- Erklärung der Zahlen (Metazeile) – Text setzt das Skript -->
+          <p class="g2l-fit-hinweis" data-meta data-g2l="fitHinweis">Pp. = Prozentpunkte · Gewichte: Hypothese (Dossier 4.4)</p>
         </div>
 
         <!-- Schritt 3: drei Konsequenzen (werden aus „folgen“ gebaut) -->
@@ -78,25 +88,30 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Eigene, vereinfachte Darstellung nach Häusel · Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg · Balken: Gewichte B/D/S in %</p>
+    <p class="quelle">Eigene, vereinfachte Darstellung nach Häusel · Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg</p>
   </footer>
 
   <aside class="notizen">
-    <p data-schritt="0"><b>Wie lesen?</b> (ca. 15 s) Die Limbic Map nach Häusel ordnet Kaufmotive drei Emotionssystemen zu: Balance – Sicherheit, Harmonie, Tradition; Dominanz – Leistung, Status, Durchsetzung; Stimulanz – Neugier, Abwechslung, Spaß. Dazwischen liegen die Mischbereiche Abenteuer/Thrill, Disziplin/Kontrolle und Fantasie/Genuss, am Rand die sieben Limbic Types. Die Mitte steht für ein ausgeglichenes Profil.</p>
-    <p data-schritt="1"><b>Persona</b> (ca. 15 s) Lea gewichten wir mit [Dominanz 50 %, Stimulanz 30 %, Balance 20 %] – damit ist sie [Performerin]: Ihr geht es um [Leistung, Status, Effizienz]. [Herkunft der Gewichte nennen, z. B.: aus Prompt P5, von uns geprüft – Backup B2/B3.]</p>
-    <p data-schritt="2"><b>Marke und Fit</b> (ca. 15 s) Den heutigen Auftritt von <span data-marke></span> verorten wir bei [Stimulanz 45 %, Dominanz 40 %, Balance 15 %] – etwas mehr [Abenteuer/Thrill] als die Persona. Die Linie zeigt den Abstand: [85 %] der Motivgewichte teilen beide – ein [hoher] Fit.</p>
-    <p data-schritt="3"><b>Was folgt daraus?</b> (ca. 15 s) Drei Konsequenzen: Bildwelt – [Leistung im Alltag zeigen]; Tonalität – [direkt und selbstbewusst]; Botschaft – [Fokus ohne Zucker-Crash]. Diese Punkte sind später unser Prüfmaßstab in der Kommunikationsanalyse. Überleitung: Welche Eigenschaften unterscheiden <span data-marke></span> vom Wettbewerb? → Repertory Grid.</p>
-    <p>Hinweise: Alle Gewichte und Texte sind Beispieldaten. Die Darstellung ist eine eigene Vereinfachung – Lage der Systeme, Mischbereiche und Limbic Types mit der Vorlesungsfolie abgleichen (Winkel in den Daten der Folie änderbar). Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg. „Motiv-Überschneidung“ ist keine Kennzahl von Häusel, sondern unsere Vereinfachung: Summe der jeweils kleineren Gewichte (z. B. min(20,15) + min(50,40) + min(30,45) = 85 %). Rückfrage „Wie kommt ihr auf die Prozentwerte?“ → Einschätzung anhand der Persona-Daten und der Motivliste von Häusel, mit KI vorgeschlagen und von uns geprüft (Prompt-Log).</p>
+    <p data-schritt="0"><b>Wie lesen?</b> (ca. 15 s) Die Limbic Map nach Häusel ordnet Kaufmotive drei Systemen zu: Balance, Dominanz, Stimulanz. Dazwischen liegen Mischbereiche, am Rand die sieben Limbic Types.</p>
+    <p data-schritt="1"><b>Persona</b> (ca. 15 s) Marco ist vor allem auf Stimulanz und Dominanz aus – Abwechslung und Spaß, aber auch Leistung. Damit ist er ein Abenteurer.</p>
+    <p data-schritt="2"><b>Marke und Lücke</b> (ca. 15 s) <span data-marke></span> sendet vor allem Stimulanz: Sorten, Farben, Comic-Tiere, Provokation. Leistung kommt kaum vor – bei Dominanz liegt die Marke 20 Punkte unter Marco. Das ist die größte Lücke.</p>
+    <p data-schritt="3"><b>Was folgt daraus?</b> (ca. 15 s) Leistung im Schichtalltag zeigen, frech bleiben, aber erwachsen, und als Botschaft: fokussiert ohne Zucker. Überleitung: Welche Eigenschaften unterscheiden <span data-marke></span>? → Repertory Grid.</p>
+    <p>Für Rückfragen: Systeme nach Häusel – Balance (Sicherheit, Harmonie, Tradition), Dominanz (Leistung, Status, Durchsetzung), Stimulanz (Neugier, Abwechslung, Spaß); Mischbereiche Abenteuer/Thrill, Disziplin/Kontrolle, Fantasie/Genuss. Abenteurer liegen zwischen Dominanz und Stimulanz (Dossier 4.4 ✎, [105]); die Motive „Abwechslung, Mut, Freiheit“ sind Modellwissen – mit der Vorlesungsfolie abgleichen, ebenso die Lage der Typen (Winkel in den Daten änderbar). Gewichte: Limbic-Map-Hypothese des Recherche-Dossiers (Kap. 4.4, H) – Marco B 20 / D 35 / S 45, Auftritt von <span data-marke></span> B 30 / D 15 / S 55; Startwerte des Teams, keine Messung, die Prozentanteile sind nicht Teil des Modells. Begründung laut Dossier: Stimulanz durch Sortenvielfalt, Limited Drops, Farben, Comic-Tiere, provokante Kampagne; Balance durch „gutes Gewissen“ und Squad; Dominanz nur über Energy und den Herausforderer-Gestus [1, 25]. Eine Marke hat keinen Limbic Type; man verortet sie über Emotionsfelder. Die Lücke ist die Differenz der Gewichte (15 − 35 = −20 Prozentpunkte). Die Überschneidung (Summe der jeweils kleineren Gewichte: 20 + 15 + 45 = 80 %) ist eine eigene, vereinfachte Kennzahl, keine Kennzahl von Häusel. Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg. Rückfrage „Wie kommt ihr auf die Prozentwerte?“ → Einschätzung anhand der Persona-Daten und Häusels Motivliste, von KI vorgeschlagen (Dossier) und von uns geprüft (Prompt-Log B2).</p>
   </aside>
 
-  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+  <!-- DATEN – hier ändern. Hinweise:
        • persona / marke: Gewichte in Prozent (Summe 100; andere Summen werden
-         automatisch auf 100 umgerechnet). „beschriftung“ steht am Punkt;
-         „[Marke]“ wird durch den Markennamen aus marke.js ersetzt.
+         automatisch auf 100 umgerechnet). „beschriftung“ steht am Punkt und
+         (bei der Persona) in der Leitfrage im Kicker; „[Marke]“ wird durch den
+         Markennamen aus marke.js ersetzt.
        • limbicType: muss genau so heißen wie ein Eintrag unter karte.typen –
          dieser Typ wird auf der Karte markiert. typMotive: 2–3 Stichworte.
-       • folgen: genau drei Konsequenzen; „bereich“ ist die kleine Überschrift.
-       • ueberschneidungZeigen: false blendet die Kennzahl aus (Linie bleibt).
+       • kennzahl: "luecke" (Standard) zeigt die größte Lücke zwischen Persona
+         und Marke in Prozentpunkten und markiert sie in den Balken;
+         "ueberschneidung" zeigt die Motiv-Überschneidung (Summe der kleineren
+         Gewichte, eigene Kennzahl); "keine" blendet die Kennzahl aus.
+       • folgen: genau drei Folgen; „bereich“ ist die kleine Überschrift,
+         „text“ höchstens ca. 26 Zeichen.
        • Unter der Kennzahl stehen die Gewichte als zwei Balken (Reihenfolge
          wie unter karte.systeme).
        • karte.verstaerkung: Abstand der Punkte von der Mitte, rein grafisch.
@@ -107,16 +122,16 @@
          ANORDNUNG MIT DER VORLESUNG ABGLEICHEN. -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "BEISPIELDATEN – Gewichte aus Prompt P5 (mit eigener Prüfung) bzw. aus der Kommunikationsanalyse einsetzen; Anordnung der Karte mit der Vorlesungsfolie abgleichen",
-    "persona": { "beschriftung": "Persona", "balance": 20, "dominanz": 50, "stimulanz": 30 },
-    "marke":   { "beschriftung": "[Marke]", "balance": 15, "dominanz": 40, "stimulanz": 45 },
-    "limbicType": "Performer",
-    "typMotive": ["Leistung", "Status", "Effizienz"],
-    "ueberschneidungZeigen": true,
+    "hinweis": "Limbic-Map-Hypothese aus dem Recherche-Dossier, Kap. 4.4 (H): Startwerte des Teams, keine Messung; Anordnung der Karte mit der Vorlesungsfolie abgleichen",
+    "persona": { "beschriftung": "Marco",   "balance": 20, "dominanz": 35, "stimulanz": 45 },
+    "marke":   { "beschriftung": "[Marke]", "balance": 30, "dominanz": 15, "stimulanz": 55 },
+    "limbicType": "Abenteurer",
+    "typMotive": ["Abwechslung", "Mut", "Freiheit"],
+    "kennzahl": "luecke",
     "folgen": [
-      { "bereich": "Bildwelt",  "text": "Leistung im Alltag zeigen" },
-      { "bereich": "Tonalität", "text": "direkt und selbstbewusst" },
-      { "bereich": "Botschaft", "text": "Fokus ohne Zucker-Crash" }
+      { "bereich": "Bildwelt",  "text": "Leistung im Schichtalltag" },
+      { "bereich": "Tonalität", "text": "frech, aber erwachsen" },
+      { "bereich": "Botschaft", "text": "fokussiert ohne Zucker" }
     ],
     "karte": {
       "verstaerkung": 2,

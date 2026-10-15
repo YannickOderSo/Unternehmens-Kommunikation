@@ -9,9 +9,21 @@
        Leiter wächst Schritt für Schritt nach oben, ein Punkt klettert mit
      • Knoten sitzen auf ihren Sprossen; Verbindungen zeichnen sich von unten
        nach oben, Linienstärke = Anzahl Nennungen (Implikationsmatrix)
-     • rechts: Leiterfrage (oben), Startpunkte + Legende (unten) und in
+     • rechts: Leiterfrage (oben), Legende der Linienstärke (unten) und in
        Schritt 4 die zwei Nutzen-Kästen auf Höhe ihrer Ebene
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
+
+   EINPASSEN DER KNOTEN (Probleme meldet die Konsole als Warnung –
+   pruefen.mjs zeigt sie im Bericht):
+     1. Jeder Knoten bekommt zuerst einen gleich breiten Platz auf seiner
+        Sprosse (gleiche Spalten auf allen Ebenen). Passt ein einzelnes Wort
+        nicht, wird erst der Innenabstand enger, dann die Schrift kleiner –
+        nie unter 28 px.
+     2. Hat ein Knoten dann mehr als 2 Zeilen oder berühren sich Knoten,
+        verteilt das Skript die Breite dieser Ebene neu: Jeder Knoten bekommt
+        so viel Platz, wie er braucht (kurze bleiben einzeilig, lange werden
+        zweizeilig). Knoten mit eigenem "x" werden nicht verschoben.
+     3. Mehr als 2 Zeilen, zu hoch für die Ebene oder Überlappung → Warnung.
 
    Zustände der Schritte steuert das CSS über unsichtbare Auslöser
    (.lad-z1 … .lad-z4) – so stimmen Vortrag, Vorschau und Druck überein.
@@ -31,6 +43,9 @@
     knotenRand: 16,          // Knoten bleiben so weit von den Holmen weg
     knotenLuecke: 20,        // Mindestabstand zwischen zwei Knoten einer Ebene
     schriftMin: 28,          // Knoten-Schrift wird höchstens bis hierhin verkleinert
+    zeilenMax: 2,            // so viele Zeilen darf ein Knoten haben (sonst Warnung)
+    knotenJeEbene: 4,        // mehr Knoten auf einer Ebene → Warnung
+    ebeneLuft: 24,           // ein Knoten bleibt so viel niedriger als eine Ebene
     ueberstand: 0.4,         // Holme ragen so weit (Anteil einer Ebene) über die Sprossen
     linieMin: 3,             // Linienstärke bei „cutoff“ Nennungen
     linieMax: 12,            // Linienstärke bei den meisten Nennungen
@@ -138,6 +153,7 @@
     var links = holmL + MASS.knotenRand, rechts = holmR - MASS.knotenRand;
     var knotenNachId = {};
     var proEbene = ebenen.map(function () { return []; });
+    var knotenJeEbene = ebenen.map(function () { return []; });
     d.knoten.forEach(function (kn) {
       var e = ebeneIndex[kn.ebene];
       if (e === undefined || !kn.id) return;
@@ -158,25 +174,47 @@
           attr['data-verzoegerung'] = String(MASS.knotenStart + i * MASS.knotenStaffel);
         }
         var el = u.element('span', attr, u.markeText(kn.text || kn.id), buehne);
-        knotenNachId[kn.id] = { el: el, x: x, y: sprosseY(e), ebene: e, rein: [], raus: [] };
+        var k = { el: el, x: x, y: sprosseY(e), ebene: e, rein: [], raus: [], slot: slot - MASS.knotenLuecke, eigeneLage: kn.x !== undefined };
+        knotenNachId[kn.id] = k;
+        knotenJeEbene[e].push(k);
       });
+      if (liste.length > MASS.knotenJeEbene) {
+        console.warn('[f07] Ebene „' + (ebenen[e].name || ebenen[e].schluessel) + '“ hat ' + liste.length +
+          ' Knoten – höchstens ' + MASS.knotenJeEbene + ' je Ebene, sonst wird es unlesbar.');
+      }
     });
-    /* Knoten einpassen: Mehrwortige Texte brechen (ausgewogen) um. Passt ein
-       einzelnes langes Wort nicht, wird erst der Innenabstand enger, dann die
-       Schrift kleiner – nie unter MASS.schriftMin (28 px). */
+    /* Knoten einpassen (siehe Kopf der Datei: 1. Rasterplatz, 2. bei Bedarf
+       Ebene neu verteilen, 3. prüfen und warnen) */
     u.messen(buehne, function () {
+      var W = rechts - links;
+      Object.keys(knotenNachId).forEach(function (id) {
+        var k = knotenNachId[id];
+        einpassen(k.el, k.slot);
+      });
+      knotenJeEbene.forEach(function (liste) { platzNutzen(liste, links, rechts); });
+      knotenJeEbene.forEach(function (liste) {
+        if (!liste.length || !hatProblem(liste)) return;
+        if (liste.some(function (k) { return k.eigeneLage; })) return;   // eigene x-Werte bleiben, wie sie sind
+        neuVerteilen(liste, W, links, ebeneH - MASS.ebeneLuft);
+      });
       Object.keys(knotenNachId).forEach(function (id) {
         var k = knotenNachId[id], el = k.el;
-        var zuBreit = function () { return el.scrollWidth > el.clientWidth + 1; };
-        if (zuBreit()) el.classList.add('ist-eng');
-        var groesse = parseFloat(getComputedStyle(el).fontSize) || 30;
-        while (zuBreit() && groesse > MASS.schriftMin) {
-          groesse -= 1;
-          el.style.fontSize = groesse + 'px';
-        }
-        if (zuBreit()) console.warn('[f07] Knoten „' + el.textContent + '“ ist zu lang für seine Spalte – kürzeren Text wählen.');
         k.w = el.offsetWidth;
         k.h = el.offsetHeight;
+        var text = '„' + el.textContent + '“';
+        if (zuBreit(el)) console.warn('[f07] Knoten ' + text + ' ist zu lang für seine Spalte – kürzeren Text wählen.');
+        var z = zeilenZahl(el);
+        if (z > MASS.zeilenMax) {
+          console.warn('[f07] Knoten ' + text + ' hat ' + z + ' Zeilen – höchstens ' + MASS.zeilenMax +
+            ' Zeilen bzw. ca. 20 Zeichen (Kundensprache gehört in die Notizen).');
+        }
+        if (k.h > ebeneH - MASS.ebeneLuft) console.warn('[f07] Knoten ' + text + ' ist zu hoch für seine Ebene und stößt an die Nachbarebene – Text kürzen.');
+      });
+      knotenJeEbene.forEach(function (liste) {
+        ueberlappungen(liste).forEach(function (paar) {
+          console.warn('[f07] Knoten „' + paar[0].el.textContent + '“ und „' + paar[1].el.textContent +
+            '“ berühren sich – weniger Knoten je Ebene oder kürzere Texte.');
+        });
       });
     });
 
@@ -234,7 +272,7 @@
       if (d.frageNotiz) u.element('p', { class: 'lad-frage-notiz', 'data-meta': '' }, u.markeText(d.frageNotiz), frage);
     }
 
-    /* unten: Startpunkte + Legende der Linienstärke */
+    /* unten: (optional) Startpunkte + Legende der Linienstärke */
     var start = u.element('div', { class: 'lad-start', 'data-meta': '', style: 'top:' + sprosseY(0) + 'px' }, null, seite);
     if (d.startNotiz) {
       var sn = u.element('p', { class: 'lad-start-notiz' }, null, start);
@@ -278,6 +316,30 @@
       labels[e].classList.add('ist-nutzen');
     });
 
+    /* Nutzen-Titel einzeilig halten (24 → 22 px), sonst umbrechen lassen;
+       danach prüfen, ob sich Bausteine der rechten Spalte überdecken */
+    u.messen(seite, function () {
+      Array.prototype.forEach.call(seite.querySelectorAll('.lad-nutzen-titel'), function (titel) {
+        titel.style.whiteSpace = 'nowrap';
+        var groesse = parseFloat(getComputedStyle(titel).fontSize) || 24;
+        while (titel.scrollWidth > titel.clientWidth + 1 && groesse > 22) {
+          groesse -= 1;
+          titel.style.fontSize = groesse + 'px';
+        }
+        if (titel.scrollWidth > titel.clientWidth + 1) titel.style.whiteSpace = '';
+      });
+      var teile = Array.prototype.slice.call(seite.children).map(function (el) {
+        var r = el.getBoundingClientRect();
+        return { el: el, oben: r.top, unten: r.bottom };
+      }).sort(function (a, b) { return a.oben - b.oben; });
+      for (var i = 1; i < teile.length; i++) {
+        if (teile[i].oben < teile[i - 1].unten - 1) {
+          console.warn('[f07] Rechte Spalte: „' + teile[i - 1].el.textContent.slice(0, 40) + '“ und „' +
+            teile[i].el.textContent.slice(0, 40) + '“ überdecken sich – Texte kürzen.');
+        }
+      }
+    });
+
     /* Beschreibung für Screenreader */
     var text = 'Hierarchical Value Map als Leiter (Beispieldaten). ' + ebenen.map(function (e, k) {
       return e.name + ': ' + proEbene[k].map(function (kn) { return u.markeText(kn.text); }).join(', ');
@@ -291,6 +353,146 @@
   }
 
   function begrenzt(w) { return Math.max(0, Math.min(1, w)); }
+
+
+  /* ---------------------------------------------------------------------------
+     Einpassen der Knoten (Hilfen; nur innerhalb von util.messen aufrufen)
+     --------------------------------------------------------------------------- */
+  function zuBreit(el) { return el.scrollWidth > el.clientWidth + 1; }
+
+  /* Zahl der Textzeilen eines Knotens (aus Höhe und Zeilenhöhe) */
+  function zeilenZahl(el) {
+    var cs = getComputedStyle(el);
+    var groesse = parseFloat(cs.fontSize) || 28;
+    var lh = parseFloat(cs.lineHeight) || groesse * 1.15;
+    var innen = el.clientHeight - (parseFloat(cs.paddingTop) || 0) - (parseFloat(cs.paddingBottom) || 0);
+    return Math.max(1, Math.round(innen / lh));
+  }
+
+  /* Knoten in eine Breite einpassen: Mehrwortige Texte brechen (ausgewogen)
+     um. Passt ein einzelnes langes Wort nicht, wird erst der Innenabstand
+     enger, dann die Schrift kleiner. Hat der Knoten zu viele Zeilen, wird
+     die Schrift ebenfalls verkleinert (z. B. Werte mit 30 px). Nie unter
+     MASS.schriftMin (28 px). */
+  function einpassen(el, breite) {
+    el.classList.remove('ist-eng');
+    el.style.fontSize = '';
+    el.style.maxWidth = Math.floor(breite) + 'px';
+    if (zuBreit(el)) el.classList.add('ist-eng');
+    var groesse = parseFloat(getComputedStyle(el).fontSize) || 30;
+    while ((zuBreit(el) || zeilenZahl(el) > MASS.zeilenMax) && groesse > MASS.schriftMin) {
+      groesse -= 1;
+      el.style.fontSize = groesse + 'px';
+    }
+  }
+
+  /* kleinste Breite, bei der ein Knoten höchstens „zeilen“ Zeilen hat */
+  function kleinsteBreite(el, zeilen, obergrenze) {
+    var lo = 24, hi = Math.ceil(obergrenze);
+    while (hi - lo > 2) {
+      var mitte = Math.floor((lo + hi) / 2);
+      el.style.maxWidth = mitte + 'px';
+      if (zeilenZahl(el) <= zeilen && !zuBreit(el)) hi = mitte; else lo = mitte;
+    }
+    return hi;
+  }
+
+  /* Freien Platz neben den Nachbarn nutzen: Ein Knoten, der in seinem
+     Rasterplatz umbricht, darf breiter werden, solange er an seiner Stelle
+     bleibt und den Nachbarn nicht näher kommt als MASS.knotenLuecke. So
+     bleibt z. B. „Community-nah“ einzeilig, die Spalten bleiben gleich. */
+  function platzNutzen(liste, links, rechts) {
+    var sortiert = liste.slice().sort(function (a, b) { return a.x - b.x; });
+    sortiert.forEach(function (k, i) {
+      var el = k.el;
+      if (zeilenZahl(el) < 2 && !zuBreit(el)) return;
+      var vor = sortiert[i - 1], nach = sortiert[i + 1];
+      var grenzeL = vor ? vor.x + vor.el.offsetWidth / 2 + MASS.knotenLuecke : links;
+      var grenzeR = nach ? nach.x - nach.el.offsetWidth / 2 - MASS.knotenLuecke : rechts;
+      var erlaubt = Math.floor(2 * Math.min(k.x - grenzeL, grenzeR - k.x));
+      if (erlaubt <= el.offsetWidth) return;
+      var vorher = { max: el.style.maxWidth, groesse: el.style.fontSize, eng: el.classList.contains('ist-eng') };
+      el.classList.remove('ist-eng');
+      el.style.fontSize = '';
+      el.style.maxWidth = 'none';
+      var einzeilig = el.offsetWidth;
+      if (einzeilig <= erlaubt) { einpassen(el, einzeilig + 1); return; }
+      /* sonst nur übernehmen, wenn es weniger Zeilen ergibt */
+      var zeilenVorher = (function () {
+        el.style.maxWidth = vorher.max; el.style.fontSize = vorher.groesse; el.classList.toggle('ist-eng', vorher.eng);
+        return zeilenZahl(el);
+      })();
+      einpassen(el, erlaubt);
+      if (zeilenZahl(el) >= zeilenVorher) {
+        el.style.maxWidth = vorher.max; el.style.fontSize = vorher.groesse; el.classList.toggle('ist-eng', vorher.eng);
+      }
+    });
+  }
+
+  /* Paare von Knoten einer Ebene, die sich berühren (Abstand < 8 px) */
+  function ueberlappungen(liste) {
+    var sortiert = liste.slice().sort(function (a, b) { return a.x - b.x; });
+    var paare = [];
+    for (var i = 1; i < sortiert.length; i++) {
+      var a = sortiert[i - 1], b = sortiert[i];
+      if (a.x + a.el.offsetWidth / 2 + 8 > b.x - b.el.offsetWidth / 2) paare.push([a, b]);
+    }
+    return paare;
+  }
+
+  function hatProblem(liste) {
+    return ueberlappungen(liste).length > 0 || liste.some(function (k) {
+      return zuBreit(k.el) || zeilenZahl(k.el) > MASS.zeilenMax;
+    });
+  }
+
+  /* Ebene neu verteilen: Alle Knoten starten einzeilig. Solange die Summe der
+     Breiten nicht passt, wird der breiteste Knoten auf 2 Zeilen verschmälert
+     (danach – wenn die Höhe reicht – auf 3). Passt es dann noch nicht, werden
+     alle Breiten anteilig gekürzt (die Prüfung danach warnt). Übrig
+     gebliebener Platz wird gleichmäßig um die Knoten verteilt. */
+  function neuVerteilen(liste, W, links, maxHoehe) {
+    var luecke = MASS.knotenLuecke;
+    var platz = W - (liste.length - 1) * luecke;
+    liste.forEach(function (k) {
+      var el = k.el;
+      el.classList.remove('ist-eng');
+      el.style.fontSize = '';
+      el.style.maxWidth = 'none';
+      var einzeilig = Math.min(el.offsetWidth, W);
+      k.breiten = { 1: einzeilig };
+      k.breiten[2] = kleinsteBreite(el, 2, einzeilig);
+      k.breiten[3] = kleinsteBreite(el, 3, einzeilig);
+      el.style.maxWidth = einzeilig + 'px';
+      var cs = getComputedStyle(el);
+      k.hoehe3 = 3 * (parseFloat(cs.lineHeight) || 32) + (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+      k.b = einzeilig;
+    });
+    var summe = function () { return liste.reduce(function (s, k) { return s + k.b; }, 0); };
+    [2, 3].forEach(function (z) {
+      while (summe() > platz) {
+        var kandidat = null;
+        liste.forEach(function (k) {
+          if (z === 3 && k.hoehe3 > maxHoehe) return;
+          if (k.breiten[z] < k.b - 1 && (!kandidat || k.b > kandidat.b)) kandidat = k;
+        });
+        if (!kandidat) break;
+        kandidat.b = kandidat.breiten[z];
+      }
+    });
+    if (summe() > platz) {
+      var faktor = platz / summe();
+      liste.forEach(function (k) { k.b = Math.floor(k.b * faktor); });
+    }
+    var frei = Math.max(0, platz - summe());
+    var cursor = links + frei / (2 * liste.length);
+    liste.forEach(function (k) {
+      k.x = Math.round(cursor + k.b / 2);
+      k.el.style.left = k.x + 'px';
+      einpassen(k.el, k.b + 1);
+      cursor += k.b + luecke + frei / liste.length;
+    });
+  }
 
 
   /* ---------------------------------------------------------------------------

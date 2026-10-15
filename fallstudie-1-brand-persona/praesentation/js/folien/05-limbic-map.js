@@ -10,8 +10,10 @@
      • innen am Rand: die sieben Limbic Types (Typ der Persona wird markiert)
      • zwei Punkte (Persona, Marke), berechnet aus den Gewichten in %;
        sie fliegen beim Klick aus der Mitte an ihren Platz
-     • Verbindungslinie (Fit) und Kennzahl „Motiv-Überschneidung“
-     • rechts: Limbic Type, Motive und drei Konsequenzen
+     • Verbindungslinie und Kennzahl „größte Lücke“ (oder wahlweise
+       „Motiv-Überschneidung“), die Lücke ist in den Gewichtsbalken markiert
+     • rechts: Limbic Type, Motive und drei Folgen für die Kommunikation
+   „g2l“ = Präfix nur für diese Folie (Folien-Gruppe 2, Limbic Map).
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
 
    RECHENWEG (zum Erklären bei Rückfragen)
@@ -20,8 +22,11 @@
      („Dreieckskoordinaten“). 33/33/33 % liegt genau in der Mitte. Der Abstand
      von der Mitte wird mit „verstaerkung“ (Standard 2) vergrößert, damit
      Unterschiede sichtbar werden – das ist rein grafisch.
+     Größte Lücke = System mit dem größten Unterschied der Gewichte
+     (Marke − Persona, in Prozentpunkten).
      Motiv-Überschneidung = Summe der jeweils kleineren Gewichte (eigene
      Vereinfachung, keine Kennzahl von Häusel).
+     Die Gewichte selbst sind eine Hypothese des Teams (Dossier 4.4), keine Messung.
 
    HINWEIS: Lage der Systeme, Mischbereiche und Typen ist nach unserem
    Kenntnisstand aus der Standardliteratur gewählt – mit der Vorlesungsfolie
@@ -81,6 +86,16 @@
       y += a[s.schluessel] * r.y;
     });
     return { x: x, y: y };
+  }
+
+  /* Größte Lücke: System mit dem größten Unterschied (Marke − Persona, −1…1) */
+  function groessteLuecke(persona, marke, systeme) {
+    var beste = null;
+    systeme.forEach(function (s) {
+      var diff = marke[s.schluessel] - persona[s.schluessel];
+      if (!beste || Math.abs(diff) > Math.abs(beste.diff) + 1e-9) beste = { system: s, diff: diff };
+    });
+    return beste;
   }
 
   /* Motiv-Überschneidung: Summe der jeweils kleineren Anteile (0…1) */
@@ -191,8 +206,11 @@
 
     /* --- Scheibe (Sektoren) mit Mittelpunkt --- */
     z.scheibe = u.element('div', { class: 'g2l-scheibe', 'aria-hidden': 'true', 'data-animation': 'zoom', 'data-dauer': '700' }, null, karte);
-    z.scheibe.style.backgroundImage = sektorVerlauf(z.systeme, false);
-    z.scheibe.style.backgroundImage = sektorVerlauf(z.systeme, true);   // genauer, falls der Browser es kann
+    /* Über dem Farbverlauf liegt ein heller „Glanz“ zur Mitte hin (--g2l-glanz im
+       CSS): außen sind die Farben satt, innen bleiben Punkte und Linie gut lesbar */
+    var glanz = 'radial-gradient(circle closest-side, var(--g2l-glanz) 0%, transparent 78%), ';
+    z.scheibe.style.backgroundImage = glanz + sektorVerlauf(z.systeme, false);
+    z.scheibe.style.backgroundImage = glanz + sektorVerlauf(z.systeme, true);   // genauer, falls der Browser es kann
     u.element('span', { class: 'g2l-mitte', 'data-animation': 'einblenden', 'data-verzoegerung': '300' }, null, z.scheibe);
 
     /* --- Ring am Rand mit den Limbic Types (Schrift folgt dem Kreis) ---
@@ -469,21 +487,47 @@
     };
     setzen('limbicType', d.limbicType);
     if (Array.isArray(d.typMotive)) setzen('typMotive', d.typMotive.join(' · '));
+    setzen('personaName', d.persona && d.persona.beschriftung);
+    var markeName = u.markeText((d.marke && d.marke.beschriftung) || '[Marke]');
 
-    /* Kennzahl Motiv-Überschneidung */
+    /* Kennzahl: größte Lücke (Standard) oder Motiv-Überschneidung */
+    var art = d.kennzahl || (d.ueberschneidungZeigen === false ? 'keine' : 'luecke');
     var fit = folie.querySelector('.g2l-fit');
     var p = z && z.punkte.filter(function (x) { return x.schluessel === 'persona'; })[0];
     var m = z && z.punkte.filter(function (x) { return x.schluessel === 'marke'; })[0];
-    if (fit) {
-      if (d.ueberschneidungZeigen === false || !p || !m) {
-        fit.remove();
+    var luecke = null;
+    if (fit && (!p || !m)) {
+      fit.remove();
+      fit = null;
+    } else if (fit) {
+      var zahl = fit.querySelector('.kennzahl-wert');
+      var text = fit.querySelector('.g2l-fit-text');
+      z.fitWert = Math.round(ueberschneidung(p.anteile, m.anteile, z.systeme) * 100);
+      luecke = groessteLuecke(p.anteile, m.anteile, z.systeme);
+      var hinweis = 'Gewichte: Hypothese (Dossier 4.4)';
+      if (art === 'ueberschneidung') {
+        zahl.setAttribute('data-ziel', String(z.fitWert));
+        zahl.setAttribute('data-einheit', ' %');
+        zahl.textContent = u.zahlFormat(z.fitWert, 0) + ' %';
+        text.textContent = 'Motiv-Überschneidung mit ' + markeName;
+        hinweis = 'Eigene Kennzahl (Σ min) · ' + hinweis;   // Summe der kleineren Gewichte, nicht von Häusel
+        luecke = null;
+      } else if (art === 'luecke' && luecke) {
+        var pp = Math.round(luecke.diff * 100);
+        zahl.setAttribute('data-ziel', String(pp));
+        zahl.setAttribute('data-einheit', ' Pp.');
+        if (pp > 0) zahl.setAttribute('data-vorzeichen', '');
+        zahl.textContent = u.zahlFormat(pp, 0, { vorzeichen: true }) + ' Pp.';
+        text.textContent = '';
+        u.element('b', {}, luecke.system.name, text);
+        text.appendChild(document.createTextNode(' – größte Lücke'));
+        hinweis = 'Pp. = Prozentpunkte · ' + hinweis;
       } else {
-        var wert = Math.round(ueberschneidung(p.anteile, m.anteile, z.systeme) * 100);
-        var zahl = fit.querySelector('.kennzahl-wert');
-        zahl.setAttribute('data-ziel', String(wert));
-        zahl.textContent = u.zahlFormat(wert, 0) + ' %';
-        z.fitWert = wert;
+        zahl.remove();
+        text.remove();
+        luecke = null;
       }
+      setzen('fitHinweis', hinweis);
     }
 
     /* Gewichte als zwei gestapelte Balken (zeigen, woher die Kennzahl kommt).
@@ -498,8 +542,9 @@
         z.systeme.forEach(function (s) {
           var prozent = Math.round(eintrag[0].anteile[s.schluessel] * 100);
           if (!prozent) return;
+          var istLuecke = luecke && luecke.system.schluessel === s.schluessel;   // Lücke markieren
           u.element('span', {
-            class: 'g2l-segment',
+            class: 'g2l-segment' + (istLuecke ? ' ist-luecke' : ''),
             style: 'flex: ' + prozent + ' 1 0; background: var(--g2l-satt-' + s.schluessel + ', var(--f-flaeche-2))',
             title: s.name + ' ' + prozent + ' %'
           }, String(s.name).charAt(0) + '\u202f' + prozent, balken);
@@ -527,10 +572,11 @@
       var profil = function (x) {
         return z.systeme.map(function (s) { return s.name + ' ' + Math.round(x.anteile[s.schluessel] * 100) + ' %'; }).join(', ');
       };
-      var text = 'Vereinfachte Limbic Map (Beispieldaten). Persona: ' + profil(p) + (d.limbicType ? ', Limbic Type ' + d.limbicType : '') + '.';
-      if (m) text += ' ' + u.markeText(d.marke.beschriftung || '[Marke]') + ': ' + profil(m) + '.';
-      if (z.fitWert !== undefined) text += ' Motiv-Überschneidung ' + z.fitWert + ' %.';
-      z.karte.setAttribute('aria-label', text);
+      var beschreibung = 'Vereinfachte Limbic Map (Hypothese). Persona: ' + profil(p) + (d.limbicType ? ', Limbic Type ' + d.limbicType : '') + '.';
+      if (m) beschreibung += ' ' + markeName + ': ' + profil(m) + '.';
+      if (luecke) beschreibung += ' Größte Lücke: ' + luecke.system.name + ' ' + u.zahlFormat(Math.round(luecke.diff * 100), 0, { vorzeichen: true }) + ' Prozentpunkte.';
+      if (z.fitWert !== undefined) beschreibung += ' Motiv-Überschneidung ' + z.fitWert + ' %.';
+      z.karte.setAttribute('aria-label', beschreibung);
     }
   }
 

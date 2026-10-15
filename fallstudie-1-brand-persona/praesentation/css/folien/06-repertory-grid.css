@@ -95,7 +95,11 @@
 .rg-punkt--marke { fill: var(--f-diagramm-marke); stroke: var(--f-hintergrund); stroke-width: 3; }
 .rg-punkt--wettbewerb { fill: var(--f-hintergrund); stroke: var(--f-diagramm-wettbewerb); stroke-width: 3; }
 .rg-punkt--ideal { fill: var(--f-diagramm-ideal); stroke: var(--f-hintergrund); stroke-width: 2; }
+/* Schritt 3 (liegen unter den Punkten): Ring um [Marke], Strich = Ø aller
+   Wettbewerber, Abstandslinie vom Strich bis zur Marke = Vorsprung rechts */
 .rg-ring { fill: none; stroke: var(--f-akzent); stroke-width: var(--linie-fein); }
+.rg-mittel { fill: none; stroke: var(--f-text); stroke-width: 4; stroke-linecap: round; }
+.rg-abstand { fill: none; stroke: var(--f-akzent); stroke-width: 3; stroke-linecap: round; opacity: 0.75; }
 
 /* Legende: Strichmuster so, dass links und rechts vom Kreis ein Strich steht */
 .rg-legende .rg-linie--wettbewerb { stroke-dasharray: 12 8; }
@@ -225,7 +229,16 @@
 .rg-ergebnis > * { position: absolute; left: 0; right: 0; }
 
 .rg-ergebnis-kopf { display: flex; flex-direction: column; gap: 8px; padding-left: var(--abstand-4); }
-.rg-ergebnis-erklaerung { font-size: var(--groesse-meta); line-height: 1.3; color: var(--f-text-2); }
+.rg-ergebnis-erklaerung {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+/* kleines Zeichen vor der Erklärung: wie Strich + Abstandslinie im Profil */
+.rg-zeichen { flex: none; overflow: visible; }
 
 .rg-attribut {
   display: flex;
@@ -233,17 +246,10 @@
   gap: var(--abstand-4);
   padding: 0 var(--abstand-4);
 }
-.rg-attribut-nr {
-  font-family: var(--schrift-text);
-  font-size: var(--groesse-meta);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  font-variant-numeric: tabular-nums;
-  color: var(--f-akzent);
-}
 .rg-attribut-name {
   flex: 1;
   min-width: 0;
+  white-space: nowrap;          /* Skript verkleinert bis 28 px, sonst Umbruch + Warnung */
   font-family: var(--schrift-display);
   font-size: var(--groesse-untertitel);
   font-weight: var(--gewicht-display);

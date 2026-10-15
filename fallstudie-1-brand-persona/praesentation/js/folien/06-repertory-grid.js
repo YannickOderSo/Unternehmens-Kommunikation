@@ -10,13 +10,23 @@
      • rechts die Triade (Schritt 0–2): Frage an die Befragten, drei Karten,
        in Schritt 1 rücken zwei zusammen und eine ab, darüber das Konstrukt
      • rechts das Ergebnis (Schritt 3): Markenattribute auf Höhe ihrer Zeilen,
-       mit Vorsprung vor dem Wettbewerber und den drei Auswahlkriterien
+       mit Vorsprung vor dem Wettbewerb und den drei Auswahlkriterien
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
 
-   RECHENWEG (zum Erklären bei Rückfragen)
-     Vorsprung = Mittelwert [Marke] − Mittelwert Wettbewerber auf dem
-     Konstrukt (Betrag, eine Nachkommastelle). Liegt die Marke links (Wert
-     kleiner), heißt das Attribut wie der linke Pol.
+   RECHENWEG (zum Erklären bei Rückfragen) – wie methoden.md, Abschnitt 2
+     Vorsprung = |Mittelwert [Marke] − Ø Wettbewerber W1–W5| auf dem
+     Konstrukt (eine Nachkommastelle). Den Ø trägt die Gruppe je Konstrukt als
+     "wettbewerbMittel" ein (selbst gerechnet, Backup B4). Fehlt der Wert,
+     rechnet das Skript ersatzweise gegen die Linie „Marke A“ ("wettbewerb")
+     und meldet das in der Konsole. Liegt die Marke links (Wert kleiner),
+     heißt das Attribut wie der linke Pol.
+
+   EINPASSEN (meldet Probleme als Warnung in der Konsole – pruefen.mjs zeigt
+   sie im Bericht):
+     • Zu lange Pole brechen zweizeilig um, damit die Skala breit genug bleibt.
+       Passt es auch dann nicht → Warnung „Pol … zu lang“.
+     • Attributnamen rechts werden von 40 bis 28 px verkleinert; passt der
+       Name auch dann nicht in eine Zeile → Warnung (Kurzname eintragen).
 
    Zustände der Schritte steuert das CSS über unsichtbare Auslöser
    (.rg-z1 … .rg-z3) – so stimmen Vortrag, Vorschau und Druck überein.
@@ -37,21 +47,28 @@
     balkenX: 46,             // Beginn des Nennungsbalkens
     balkenMax: 62,           // Länge des Balkens bei den meisten Nennungen
     balkenHoehe: 8,
-    polAbstand: 30,          // Lücke zwischen Polbeschriftung und Skala
+    polAbstand: 24,          // Lücke zwischen Polbeschriftung und Skala
     polMinX: 132,            // linke Polbeschriftungen beginnen frühestens hier
+    polZeile: 30,            // Zeilenabstand, wenn ein Pol zweizeilig umbricht
+    zweizeiligAb: 60,        // Pole brechen nur um, wenn die Zeile so hoch ist
+    skalaWunsch: 6 * 60,     // ab dieser Skalenbreite brechen lange Pole um …
+    skalaMin: 6 * 48,        // … und schmaler wird die Skala nie (Notbremse + Warnung)
     lueckeSeite: 48,         // Abstand zwischen Profil und rechter Spalte
     punktMarke: 11,          // Radius der Punkte [Marke]
     punktWettbewerb: 10,     // Radius der Punkte Wettbewerber
     rauteIdeal: 9,           // halbe Diagonale der Rauten (Idealmarke)
-    ring: 21,                // Radius des Rings um Attribut-Punkte (Schritt 3)
+    ring: 18,                // Radius des Rings um Attribut-Punkte (Schritt 3)
+    mittelStrich: 15,        // halbe Höhe des Strichs „Ø Wettbewerb“ (Schritt 3)
     linienDauer: 1100,       // ms – so lange zeichnet sich eine Linie
     linienStart: [450, 1500, 2550], // ms – Start Ideal, Wettbewerber, [Marke]
     zeilenStaffel: 60,       // ms – Versatz der Zeilen in Schritt 2
     karteBreite: 136,        // Breite einer Triaden-Karte
-    karteWeg: 18             // so weit rücken die Karten (Jury: Wege ≤ 18 px)
+    karteWeg: 18,            // so weit rücken die Karten höchstens (Jury: Wege ≤ 18 px)
+    karteLueckeMin: 14       // kleinste Lücke zwischen den zusammengerückten Karten
   };
 
   var SCHRIFT_KARTE = { start: 34, min: 28 };
+  var SCHRIFT_ATTRIBUT = { start: 40, min: 28 };
 
   /* ---------------------------------------------------------------------------
      Hilfen
@@ -82,24 +99,52 @@
     return bez((lo + hi) / 2, x1, x2);
   }
 
+  /* Text in zwei möglichst gleich lange Zeilen teilen – an einem Leerzeichen
+     oder nach „/“ bzw. „-“ (z. B. „Community-/Startup-Marke“).
+     Gibt null zurück, wenn es keine Trennstelle gibt. */
+  function zweiZeilen(text) {
+    var beste = null;
+    for (var i = 1; i < text.length - 1; i++) {
+      var c = text.charAt(i), a, b;
+      if (c === ' ') { a = text.slice(0, i); b = text.slice(i + 1); }
+      else if ((c === '/' || c === '-') && text.charAt(i + 1) !== ' ') { a = text.slice(0, i + 1); b = text.slice(i + 1); }
+      else continue;
+      if (!a.trim() || !b.trim()) continue;
+      var laenge = Math.max(a.length, b.length);
+      if (!beste || laenge < beste.laenge) beste = { laenge: laenge, zeilen: [a.trim(), b.trim()] };
+    }
+    return beste ? beste.zeilen : null;
+  }
+
   /* Daten lesen und Zeilen ordnen (Attribute auf Wunsch nach oben) */
   function zeilenAusDaten(d, u) {
     var min = zahl(d.skala && d.skala[0], 1);
     var max = zahl(d.skala && d.skala[1], 7);
     var mitte = (min + max) / 2;
+    var ohneMittel = [];
     var liste = d.konstrukte.map(function (k, i) {
       var m = zahl(k.marke, mitte), w = zahl(k.wettbewerb, mitte), id = zahl(k.ideal, mitte);
-      var markeRechts = m >= w;
+      /* Bezugswert für den Vorsprung: Ø aller Wettbewerber (methoden.md),
+         ersatzweise der stärkste Wettbewerber (Linie „Marke A“) */
+      var hatMittel = k.wettbewerbMittel !== undefined && k.wettbewerbMittel !== null && k.wettbewerbMittel !== '';
+      var bezug = hatMittel ? zahl(k.wettbewerbMittel, w) : w;
+      if (!hatMittel) ohneMittel.push(k.links + ' – ' + k.rechts);
+      var markeRechts = m >= bezug;
       var name = typeof k.attribut === 'string' && k.attribut.trim()
         ? k.attribut.trim() : grossAnfang(markeRechts ? k.rechts : k.links);
       return {
         nr: i, links: u.markeText(k.links || ''), rechts: u.markeText(k.rechts || ''),
         nennungen: Math.max(0, zahl(k.nennungen, 0)),
         marke: begrenzen(m, min, max), wettbewerb: begrenzen(w, min, max), ideal: begrenzen(id, min, max),
+        mittel: hatMittel ? begrenzen(bezug, min, max) : null,
         attribut: !!k.attribut, attributName: name, markeRechts: markeRechts,
-        vorsprung: Math.round(Math.abs(m - w) * 10) / 10
+        vorsprung: Math.round(Math.abs(m - bezug) * 10) / 10
       };
     });
+    if (ohneMittel.length) {
+      console.warn('[f06] Ohne "wettbewerbMittel" (Ø W1–W5) wird gegen „Marke A“ gerechnet: ' + ohneMittel.join(' · ') +
+        '. Bitte den Ø aller Wettbewerber eintragen (methoden.md, Abschnitt 2).');
+    }
     if (d.attributeOben !== false) {
       liste = liste.filter(function (z) { return z.attribut; }).concat(liste.filter(function (z) { return !z.attribut; }));
     }
@@ -111,6 +156,37 @@
       z.triade = !!a && !!b && ((l === a && r === b) || (l === b && r === a));
     });
     return { liste: liste, min: min, max: max };
+  }
+
+
+  /* ---------------------------------------------------------------------------
+     Pole: Text setzen (ein- oder zweizeilig), Breite messen, Lage setzen
+     --------------------------------------------------------------------------- */
+  function polSchreiben(r, seite, zeilen, u) {
+    var el = seite === 'l' ? r.polL : r.polR;
+    el.textContent = '';
+    if (zeilen.length === 1) {
+      el.setAttribute('y', r.yMitte + 10);                 // optisch mittig in der Zeile
+      el.textContent = zeilen[0];
+    } else {
+      el.setAttribute('y', r.yMitte + 10 - MASS.polZeile / 2);
+      zeilen.forEach(function (t, k) {
+        u.svg('tspan', { dy: k ? MASS.polZeile : null }, el).textContent = t;
+      });
+    }
+    r[seite === 'l' ? 'zeilenL' : 'zeilenR'] = zeilen.length;
+  }
+  function polBreite(el) {
+    var teile = el.querySelectorAll('tspan');
+    if (!teile.length) return el.getComputedTextLength();
+    var b = 0;
+    for (var i = 0; i < teile.length; i++) b = Math.max(b, teile[i].getComputedTextLength());
+    return b;
+  }
+  function polX(el, x) {
+    el.setAttribute('x', x);
+    var teile = el.querySelectorAll('tspan');
+    for (var i = 0; i < teile.length; i++) teile[i].setAttribute('x', x);
   }
 
 
@@ -130,6 +206,7 @@
     var daten = zeilenAusDaten(d, u);
     var zeilen = daten.liste, min = daten.min, max = daten.max;
     var N = zeilen.length;
+    var dezimalen = d.vorsprungDezimalen === 0 ? 0 : 1;
 
     /* Spalten: rechte Spalte = 4 von 12 Rasterspalten (wie .sp-4) */
     var rinne = u.token('--rinne') || 32;
@@ -144,13 +221,15 @@
 
     var z = { folie: folie, buehne: buehne, B: B, H: H, zeilen: zeilen, reihen: [], laufend: [] };
 
-    /* ---------- SVG-Grundgerüst ---------- */
+    /* ---------- SVG-Grundgerüst (Reihenfolge = Stapelung, unten zuerst) ---------- */
     var svg = u.svg('svg', { class: 'rg-svg', width: B, height: H, viewBox: '0 0 ' + B + ' ' + H }, buehne);
     var defs = u.svg('defs', {}, svg);
     var ebeneBand = u.svg('g', { class: 'rg-baender' }, svg);
     var ebeneRaster = u.svg('g', { class: 'rg-raster' }, svg);
     var ebeneZeilen = u.svg('g', { class: 'rg-zeilen' }, svg);
-    var ebeneReihen = u.svg('g', { class: 'rg-reihen' }, svg);
+    var ebeneLinien = u.svg('g', { class: 'rg-linien' }, svg);    // Linien der drei Reihen
+    var ebeneMarker = u.svg('g', { class: 'rg-marker' }, svg);    // Schritt 3: Ringe + Ø-Striche (unter den Punkten)
+    var ebenePunkte = u.svg('g', { class: 'rg-punkte' }, svg);    // Punkte; Rauten der Idealmarke liegen oben
 
     /* Zeilen mit Polen und Nennungen (erst anlegen, dann messen, dann setzen) */
     var maxNennung = Math.max.apply(null, zeilen.map(function (r) { return r.nennungen; }).concat([1]));
@@ -162,10 +241,11 @@
         'data-verzoegerung': String(schritt === 1 ? 900 : i * MASS.zeilenStaffel)
       }, ebeneZeilen);
       r.el = g;
-      r.polL = u.svg('text', { class: 'rg-pol rg-pol--links' + (!r.markeRechts ? ' ist-markenpol' : ''), y: y(i) + 10 }, g);
-      r.polL.textContent = r.links;
-      r.polR = u.svg('text', { class: 'rg-pol rg-pol--rechts' + (r.markeRechts ? ' ist-markenpol' : ''), y: y(i) + 10 }, g);
-      r.polR.textContent = r.rechts;
+      r.yMitte = y(i);
+      r.polL = u.svg('text', { class: 'rg-pol rg-pol--links' + (!r.markeRechts ? ' ist-markenpol' : '') }, g);
+      r.polR = u.svg('text', { class: 'rg-pol rg-pol--rechts' + (r.markeRechts ? ' ist-markenpol' : '') }, g);
+      polSchreiben(r, 'l', [r.links], u);
+      polSchreiben(r, 'r', [r.rechts], u);
       /* Nennungen = Relevanz (Metaangabe: Zahl + kleiner Balken); erscheinen
          erst in Schritt 2 zusammen mit der Spaltenüberschrift */
       var nAttr = { class: 'rg-nennung', 'data-meta': '' };
@@ -178,25 +258,64 @@
       }, n);
     });
 
-    /* Breite der Polbeschriftungen messen → Skala dazwischen einpassen */
-    /* gemessen in der fetten Schrift, die in Schritt 1 und 3 zum Einsatz kommt */
+    /* Breite der Polbeschriftungen messen → Skala dazwischen einpassen.
+       Gemessen in der fetten Schrift, die in Schritt 1 und 3 zum Einsatz kommt.
+       Bleibt für die Skala zu wenig Platz, brechen die breitesten Pole
+       zweizeilig um (nur bei ausreichender Zeilenhöhe). */
     var breiten = u.messen(buehne, function () {
-      var l = 0, r = 0;
       buehne.classList.add('rg-messen');
-      zeilen.forEach(function (zz) {
-        l = Math.max(l, zz.polL.getComputedTextLength());
-        r = Math.max(r, zz.polR.getComputedTextLength());
-      });
+      var messen = function () {
+        var l = 0, r = 0;
+        zeilen.forEach(function (zz) {
+          zz.breiteL = polBreite(zz.polL);
+          zz.breiteR = polBreite(zz.polR);
+          l = Math.max(l, zz.breiteL);
+          r = Math.max(r, zz.breiteR);
+        });
+        return { l: l, r: r };
+      };
+      var b = messen();
+      var platz = function (skala) { return profilB - Math.max(MASS.polMinX, 120) - 2 * MASS.polAbstand - skala; };
+      if (zeileH >= MASS.zweizeiligAb) {
+        while (b.l + b.r > platz(MASS.skalaWunsch)) {
+          /* der Pol, der eine Seite am breitesten macht – zuerst die breitere Seite */
+          var kandidat = null;
+          [b.r >= b.l ? 'r' : 'l', b.r >= b.l ? 'l' : 'r'].some(function (s) {
+            var breitester = null;
+            zeilen.forEach(function (zz) {
+              var w = s === 'l' ? zz.breiteL : zz.breiteR;
+              if (!breitester || w > breitester.w) breitester = { r: zz, w: w };
+            });
+            var r = breitester && breitester.r;
+            var bereits = r && (s === 'l' ? r.zeilenL : r.zeilenR) > 1;
+            var teile = r && !bereits ? zweiZeilen(s === 'l' ? r.links : r.rechts) : null;
+            if (teile) kandidat = { r: r, s: s, teile: teile };
+            return !!kandidat;
+          });
+          if (!kandidat) break;
+          polSchreiben(kandidat.r, kandidat.s, kandidat.teile, u);
+          b = messen();
+        }
+      }
       buehne.classList.remove('rg-messen');
-      return { l: l, r: r };
+      if (b.l + b.r > platz(MASS.skalaMin)) {
+        var zuLang = [];
+        zeilen.forEach(function (zz) {
+          if (zz.breiteL === b.l || zz.breiteL > 260) zuLang.push(zz.links);
+          if (zz.breiteR === b.r || zz.breiteR > 260) zuLang.push(zz.rechts);
+        });
+        console.warn('[f06] Pol zu lang für das Profil: „' + zuLang.join('“, „') +
+          '“ – höchstens ca. 18 Zeichen je Pol (Langform in die Notizen bzw. ins Backup B4).');
+      }
+      return b;
     });
     var x0 = Math.round(Math.max(MASS.polMinX + breiten.l, 120) + MASS.polAbstand);
     var x1 = Math.round(profilB - breiten.r - MASS.polAbstand);
-    if (x1 - x0 < 6 * 48) x1 = x0 + 6 * 48;            // Notbremse: Skala nie zu eng
+    if (x1 - x0 < MASS.skalaMin) x1 = x0 + MASS.skalaMin;            // Notbremse: Skala nie zu eng (Warnung oben)
     var x = function (w) { return Math.round(x0 + (x1 - x0) * (w - min) / (max - min)); };
     zeilen.forEach(function (r) {
-      r.polL.setAttribute('x', x0 - MASS.polAbstand);
-      r.polR.setAttribute('x', x1 + MASS.polAbstand);
+      polX(r.polL, x0 - MASS.polAbstand);
+      polX(r.polR, x1 + MASS.polAbstand);
     });
 
     /* ---------- Raster (ab Schritt 0 sichtbar) ---------- */
@@ -211,7 +330,12 @@
     }
     /* Überschrift der Nennungs-Spalte (mit Schritt 2) */
     var kopfN = u.svg('text', { class: 'rg-kopf-text', 'data-meta': '', x: 0, y: MASS.skalaY, 'data-schritt': '2', 'data-animation': 'einblenden' }, ebeneRaster);
-    kopfN.textContent = 'Nennungen';
+    kopfN.textContent = u.markeText(d.nennungenTitel || 'Nennungen');
+    u.messen(buehne, function () {
+      if (kopfN.getComputedTextLength() > x(min) - 24) {
+        console.warn('[f06] Spaltenüberschrift „' + kopfN.textContent + '“ ist zu lang und stößt an die Skala – kürzer formulieren.');
+      }
+    });
 
     /* ---------- Bänder ---------- */
     /* Schritt 1 (nur solange aktuell): Zeile der Triade leuchtet */
@@ -231,6 +355,7 @@
       { art: 'wettbewerb', wert: 'wettbewerb', name: u.markeText(d.wettbewerber || 'Wettbewerber') },
       { art: 'marke', wert: 'marke', name: u.markeText(d.marke || '[Marke]') }
     ];
+    var punktGruppen = {};
     reihenDef.forEach(function (def, k) {
       var start = MASS.linienStart[k];
       var pkte = zeilen.map(function (r, i) { return [x(r[def.wert]), y(i)]; });
@@ -249,9 +374,12 @@
       var maske = u.svg('mask', { id: maskeId, maskUnits: 'userSpaceOnUse', x: -40, y: -40, width: B + 80, height: H + 80 }, defs);
       var maskenLinie = u.svg('polyline', { class: 'rg-maskenlinie', points: punkteText }, maske);
 
-      var g = u.svg('g', { class: 'rg-reihe rg-reihe--' + def.art, 'data-schritt': '2', 'data-animation': 'keine' }, ebeneReihen);
-      u.svg('polyline', { class: 'rg-linie rg-linie--' + def.art, points: punkteText, mask: 'url(#' + maskeId + ')' }, g);
+      var gLinie = u.svg('g', { class: 'rg-reihe rg-reihe--' + def.art, 'data-schritt': '2', 'data-animation': 'keine' }, ebeneLinien);
+      u.svg('polyline', { class: 'rg-linie rg-linie--' + def.art, points: punkteText, mask: 'url(#' + maskeId + ')' }, gLinie);
 
+      /* Punkte in eigener Ebene über allen Linien; federn auf, sobald die Linie sie erreicht */
+      var gPunkte = u.svg('g', { class: 'rg-reihe-punkte rg-reihe-punkte--' + def.art, 'data-schritt': '2', 'data-animation': 'keine' });
+      punktGruppen[def.art] = gPunkte;
       pkte.forEach(function (p, i) {
         var v = String(Math.round(start + MASS.linienDauer * zeitFuerFortschritt(kurve, bis[i] / laenge)));
         var r = zeilen[i];
@@ -259,31 +387,48 @@
         var form;
         if (def.art === 'ideal') {
           var s = MASS.rauteIdeal;
-          form = u.svg('path', { class: 'rg-punkt rg-punkt--ideal', d: 'M' + p[0] + ' ' + (p[1] - s) + 'l' + s + ' ' + s + 'l' + (-s) + ' ' + s + 'l' + (-s) + ' ' + (-s) + 'z', 'data-animation': 'feder', 'data-verzoegerung': v }, g);
+          form = u.svg('path', { class: 'rg-punkt rg-punkt--ideal', d: 'M' + p[0] + ' ' + (p[1] - s) + 'l' + s + ' ' + s + 'l' + (-s) + ' ' + s + 'l' + (-s) + ' ' + (-s) + 'z', 'data-animation': 'feder', 'data-verzoegerung': v }, gPunkte);
         } else {
           form = u.svg('circle', {
             class: 'rg-punkt rg-punkt--' + def.art, cx: p[0], cy: p[1],
             r: def.art === 'marke' ? MASS.punktMarke : MASS.punktWettbewerb, 'data-animation': 'feder', 'data-verzoegerung': v
-          }, g);
+          }, gPunkte);
         }
         /* Tooltip mit dem genauen Wert (für Rückfragen); zählt nicht als Folientext */
         u.svg('title', { 'data-meta': '' }, form).textContent = titel;
       });
       z.reihen.push({ maskenLinie: maskenLinie, laenge: laenge, start: start });
     });
+    /* Stapelung der Punkte: Wettbewerber unten, [Marke] darüber, Rauten der
+       Idealmarke ganz oben (sonst verdeckt ein naher Kreis die kleine Raute) */
+    ['wettbewerb', 'marke', 'ideal'].forEach(function (art) { ebenePunkte.appendChild(punktGruppen[art]); });
 
-    /* Schritt 3: Ring um die Punkte der Marke in den Attribut-Zeilen */
-    var ringe = u.svg('g', { class: 'rg-ringe', 'data-schritt': '3', 'data-animation': 'keine' }, ebeneReihen);
+    /* Schritt 3: Ring um die Punkte der Marke in den Attribut-Zeilen und – wenn
+       der Ø aller Wettbewerber in den Daten steht – ein Strich an dessen
+       Stelle plus Abstandslinie bis zur Marke (= der Vorsprung rechts) */
+    var marker = u.svg('g', { class: 'rg-schritt3', 'data-schritt': '3', 'data-animation': 'keine' }, ebeneMarker);
     zeilen.forEach(function (r, i) {
-      if (r.attribut) u.svg('circle', { class: 'rg-ring', cx: x(r.marke), cy: y(i), r: MASS.ring, 'data-animation': 'feder', 'data-verzoegerung': String(260 + i * 90) }, ringe);
+      if (!r.attribut) return;
+      if (r.mittel !== null) {
+        var xm = x(r.mittel), xMarke = x(r.marke);
+        var richtung = xMarke >= xm ? 1 : -1;
+        var ende = xMarke - richtung * (MASS.ring + 2);
+        if ((ende - xm) * richtung > 8) {
+          u.svg('path', { class: 'rg-abstand', d: 'M' + xm + ' ' + y(i) + 'H' + ende, 'data-animation': 'zeichnen', 'data-dauer': '700', 'data-verzoegerung': String(380 + i * 90) }, marker);
+        }
+        var strich = u.svg('path', { class: 'rg-mittel', d: 'M' + xm + ' ' + (y(i) - MASS.mittelStrich) + 'V' + (y(i) + MASS.mittelStrich), 'data-animation': 'einblenden', 'data-verzoegerung': String(200 + i * 90) }, marker);
+        u.svg('title', { 'data-meta': '' }, strich).textContent = 'Ø Wettbewerb: ' + u.zahlFormat(r.mittel, 1) + ' (' + r.links + ' – ' + r.rechts + ')';
+      }
+      u.svg('circle', { class: 'rg-ring', cx: x(r.marke), cy: y(i), r: MASS.ring, 'data-animation': 'feder', 'data-verzoegerung': String(260 + i * 90) }, marker);
     });
 
-    /* ---------- Legende (erscheint mit der jeweiligen Linie) ---------- */
+    /* ---------- Legende (erscheint mit der jeweiligen Linie) ----------
+       Reihenfolge = Zeichenreihenfolge: Idealmarke · Wettbewerber · [Marke];
+       so wächst die Legende mit den Linien von links nach rechts. */
     var legende = u.svg('g', { class: 'rg-legende', 'data-meta': '' }, svg);
     var lx = 0;
     var legendeTeile = [];
-    reihenDef.slice().reverse().forEach(function (def) {
-      var k = reihenDef.indexOf(def);
+    reihenDef.forEach(function (def, k) {
       var g = u.svg('g', { 'data-schritt': '2', 'data-animation': 'einblenden', 'data-verzoegerung': String(MASS.linienStart[k]) }, legende);
       u.svg('line', { class: 'rg-linie rg-linie--' + def.art, x1: 0, y1: MASS.legendeY, x2: 52, y2: MASS.legendeY }, g);
       if (def.art === 'ideal') {
@@ -305,16 +450,18 @@
         teil.g.setAttribute('transform', 'translate(' + Math.round(lx) + ' 0)');
         lx += 66 + teil.text.getComputedTextLength() + 40;
       });
+      if (lx - 40 > profilB) console.warn('[f06] Legende ist breiter als das Profil – Namen bzw. "wettbewerberZusatz" kürzen.');
     });
 
     /* ---------- Rechte Spalte ---------- */
     var seite = u.element('div', { class: 'rg-seite', style: 'left:' + seiteX + 'px;width:' + seiteB + 'px' }, null, buehne);
     triadeBauen(z, seite, seiteB, d, u);
-    ergebnisBauen(z, seite, d, u, { zeileH: zeileH, y: y, unten: unten });
+    ergebnisBauen(z, seite, d, u, { zeileH: zeileH, y: y, unten: unten, dezimalen: dezimalen, mitMittel: zeilen.some(function (r) { return r.attribut && r.mittel !== null; }) });
 
     /* Beschreibung für Screenreader */
+    var bezugText = zeilen.some(function (r) { return r.mittel !== null; }) ? 'Ø Wettbewerb' : reihenDef[1].name;
     var attrText = zeilen.filter(function (r) { return r.attribut; }).map(function (r) {
-      return r.attributName + ' (Vorsprung ' + u.zahlFormat(r.vorsprung, 1) + ')';
+      return r.attributName + ' (Vorsprung vor ' + bezugText + ' ' + u.zahlFormat(r.vorsprung, dezimalen) + ')';
     }).join(', ');
     buehne.setAttribute('aria-label', 'Repertory Grid, Beispieldaten. Polaritätenprofil auf einer Skala von ' + min + ' bis ' + max +
       ' mit ' + N + ' Konstrukten für ' + reihenDef[2].name + ', ' + reihenDef[1].name + ' und ' + reihenDef[0].name +
@@ -335,14 +482,19 @@
     var feld = u.element('div', { class: 'rg-triade-feld' }, null, block);
     if (t.notiz) u.element('p', { class: 'rg-triade-notiz', 'data-meta': '' }, u.markeText(t.notiz), block);
 
-    /* Lage der Karten: gleiche Abstände; in Schritt 1 rückt das Paar um
-       „weg“ zusammen und die einzelne Karte um „wegEinzeln“ nach rechts */
-    var w = MASS.karteBreite, rand = 12;
-    var luecke = (S - 2 * rand - 3 * w) / 2;
-    var weg = Math.max(0, Math.min(MASS.karteWeg, (luecke - 14) / 2));
-    var wegEinzeln = Math.min(MASS.karteWeg, rand);
-    var xs = [rand, rand + w + luecke, rand + 2 * (w + luecke)];
-    var verschiebung = [weg, -weg, wegEinzeln];
+    /* Lage der Karten. Vorher: drei Karten mit gleichen Abständen. In
+       Schritt 1 rückt das Paar um „weg“ zusammen und die einzelne Karte um
+       „weg“ nach rechts. Die Startlage ist so gewählt, dass das Bild NACH dem
+       Rücken mittig in der Spalte steht (gleicher Rand links und rechts). */
+    var w = MASS.karteBreite;
+    var rest = S - 3 * w;                                       // Platz für Lücken und Ränder
+    var weg = Math.max(0, Math.min(MASS.karteWeg, Math.floor((rest - 2 * MASS.karteLueckeMin) / 6)));
+    var lueckeMin = MASS.karteLueckeMin + 2 * weg;              // Paar braucht nach dem Rücken noch eine Lücke
+    var lueckeMax = Math.max(lueckeMin, (rest - 2 * weg) / 2);  // Startlage darf nicht links herausragen
+    var luecke = (lueckeMin + lueckeMax) / 2;
+    var start = Math.max(0, (rest - 2 * luecke) / 2 - weg);
+    var xs = [start, start + w + luecke, start + 2 * (w + luecke)];
+    var verschiebung = [weg, -weg, weg];
     var namen = [paar[0], paar[1], einzeln];
     var karten = namen.map(function (name, i) {
       var k = u.element('div', {
@@ -355,7 +507,7 @@
 
     /* Konstrukt über den Gruppen (nach dem Rücken) */
     var mitPaar = Math.round((xs[0] + weg + xs[1] - weg + w) / 2);
-    var mitEinzeln = Math.round(xs[2] + wegEinzeln + w / 2);
+    var mitEinzeln = Math.round(xs[2] + weg + w / 2);
     var polPaar = u.element('span', { class: 'rg-triade-pol rg-triade-pol--paar', style: 'left:' + mitPaar + 'px', 'data-schritt': '1', 'data-animation': 'hoch', 'data-verzoegerung': '650' }, u.markeText(t.polPaar || ''), feld);
     var polEinzeln = u.element('span', { class: 'rg-triade-pol rg-triade-pol--einzeln', style: 'left:' + mitEinzeln + 'px', 'data-schritt': '1', 'data-animation': 'hoch', 'data-verzoegerung': '750' }, u.markeText(t.polEinzeln || ''), feld);
 
@@ -366,7 +518,7 @@
       u.svg('path', { class: 'rg-klammer rg-klammer--' + art, d: 'M' + a + ' ' + (ky + kh) + 'V' + ky + 'H' + b + 'V' + (ky + kh) }, kl);
     };
     klammer(Math.round(xs[0] + weg), Math.round(xs[1] - weg + w), 'paar');
-    klammer(Math.round(xs[2] + wegEinzeln), Math.round(xs[2] + wegEinzeln + w), 'einzeln');
+    klammer(Math.round(xs[2] + weg), Math.round(xs[2] + weg + w), 'einzeln');
     u.messen(seite, function () {
       var a = mitPaar + polPaar.offsetWidth / 2 + 16;
       var b = mitEinzeln - polEinzeln.offsetWidth / 2 - 16;
@@ -395,25 +547,53 @@
     z.triade = block;
   }
 
-  /* Ergebnis: Markenattribute auf Höhe ihrer Zeilen + Auswahlkriterien */
+  /* Ergebnis: Markenattribute auf Höhe ihrer Zeilen + Auswahlkriterien.
+     Keine Nummern vor den Attributen – sie sähen wie eine Rangfolge aus. */
   function ergebnisBauen(z, seite, d, u, g) {
     var box = u.element('div', { class: 'rg-ergebnis', 'data-schritt': '3', 'data-staffel': '110', 'data-animation': 'links' }, null, seite);
     var kopf = u.element('div', { class: 'rg-ergebnis-kopf', style: 'top:0' }, null, box);
     u.element('span', { class: 'karte-kicker rg-ergebnis-titel' }, u.markeText(d.ergebnisTitel || 'Markenattribute'), kopf);
-    if (d.ergebnisErklaerung) u.element('span', { class: 'rg-ergebnis-erklaerung', 'data-meta': '' }, u.markeText(d.ergebnisErklaerung), kopf);
+    if (d.ergebnisErklaerung) {
+      var erkl = u.element('span', { class: 'rg-ergebnis-erklaerung', 'data-meta': '' }, null, kopf);
+      /* kleines Zeichen wie im Profil: Strich = Ø Wettbewerb, Linie = Abstand */
+      if (g.mitMittel) {
+        erkl.innerHTML = '<svg class="rg-zeichen" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">' +
+          '<path class="rg-abstand" d="M3 11H31"/><path class="rg-mittel" d="M3 3V19"/></svg>';
+      }
+      erkl.appendChild(document.createTextNode(u.markeText(d.ergebnisErklaerung)));
+    }
 
-    var letzte = -1, nr = 0;
+    var letzte = -1;
+    var namen = [];
     z.zeilen.forEach(function (r, i) {
       if (!r.attribut) return;
-      nr++;
       letzte = Math.max(letzte, i);
       var zeile = u.element('div', { class: 'rg-attribut', style: 'top:' + Math.round(g.y(i) - g.zeileH / 2) + 'px;height:' + g.zeileH + 'px' }, null, box);
-      u.element('span', { class: 'rg-attribut-nr', 'data-meta': '' }, (nr < 10 ? '0' : '') + nr, zeile);
-      u.element('span', { class: 'rg-attribut-name' }, r.attributName, zeile);
+      namen.push(u.element('span', { class: 'rg-attribut-name' }, r.attributName, zeile));
       u.element('span', {
         class: 'rg-attribut-wert', 'data-animation': 'zaehlen', 'data-ziel': String(r.vorsprung),
-        'data-dezimalen': '1', 'data-vorzeichen': '', 'data-dauer': '900'
-      }, u.zahlFormat(r.vorsprung, 1, { vorzeichen: true }), zeile);
+        'data-dezimalen': String(g.dezimalen), 'data-vorzeichen': '', 'data-dauer': '900'
+      }, u.zahlFormat(r.vorsprung, g.dezimalen, { vorzeichen: true }), zeile);
+    });
+
+    /* Attributnamen einpassen: einzeilig, Schrift von 40 bis 28 px. Passt
+       der Name auch dann nicht, darf er umbrechen – und die Konsole meldet,
+       dass ein Kurzname ("attribut": "Kurzname") besser wäre. */
+    u.messen(seite, function () {
+      namen.forEach(function (n) {
+        var groesse = SCHRIFT_ATTRIBUT.start;
+        n.style.whiteSpace = 'nowrap';
+        n.style.fontSize = groesse + 'px';
+        while (groesse > SCHRIFT_ATTRIBUT.min && n.scrollWidth > n.clientWidth + 1) {
+          groesse -= 1;
+          n.style.fontSize = groesse + 'px';
+        }
+        if (n.scrollWidth > n.clientWidth + 1) {
+          n.style.whiteSpace = 'normal';
+          console.warn('[f06] Attributname „' + n.textContent + '“ ist zu lang für eine Zeile – Kurzname eintragen ("attribut": "Kurzname", höchstens ca. 16 Zeichen).');
+          if (n.scrollHeight > g.zeileH - 4) console.warn('[f06] Attributname „' + n.textContent + '“ ragt über seine Zeile hinaus.');
+        }
+      });
     });
 
     /* Auswahlkriterien unter der letzten Attribut-Zeile */
@@ -428,6 +608,9 @@
         p.innerHTML = u.icon('haken');
         u.element('span', { class: 'rg-kriterium-text' }, u.markeText(k.text || ''), p);
         if (k.erklaerung) u.element('span', { class: 'rg-kriterium-erklaerung', 'data-meta': '' }, u.markeText(k.erklaerung), p);
+      });
+      u.messen(seite, function () {
+        if (liste.offsetTop + liste.offsetHeight > g.unten + 40) console.warn('[f06] Auswahlkriterien ragen unter das Profil – weniger Attribute oder kürzere Kriterien.');
       });
     }
   }

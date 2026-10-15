@@ -3,31 +3,39 @@
    -----------------------------------------------------------------------------
    Das Markensteuerrad selbst gestaltet css/komponenten.css (Baustein). Hier
    nur, was diese Folie zusätzlich braucht:
-     • Leitfrage unter dem Titel (Etikett + Frage in einer Zeile)
+     • zwei Zeilen unter dem Titel: Ausgangslage und Leitfrage (je mit Etikett)
      • etwas weniger Abstand zwischen Kopf und Rad (größeres Rad)
+     • Kennzeichen „KI“ auf den Methodenkarten
+     • Zurücktreten nur auf 60 % (statt 45 %) – auf blassen Beamern lesbar
      • Schritt 6 „Verkettung“: Pfeiltexte betont, Leitfragen/Beschreibungen aus
-     • Schritt 7 „Rahmen“: Persona-Ring zeichnet sich von unten (bei der Pille)
+     • Schritt 7 „Rahmen“: Persona-Pille mit Beschreibung, Ring zeichnet sich
+     • Folienwechsel: Verbinderpunkte kurz ausgeblendet (sauberer Morph)
    Alle Farben, Schriften und Dauern kommen aus css/tokens.css.
    ============================================================================= */
 
-/* ---------- Kopf: Titel und Leitfrage ---------- */
-/* Der Titel ist zweizeilig (Umbruch nach dem Doppelpunkt) – dafür ist laut
-   tokens.css --groesse-titel-klein (56 px) gedacht. So bleibt genug Höhe für
-   ein großes Rad (Feld- und Kernbeschriftung ≥ 28 px). */
+/* ---------- Kopf: Titel, Ausgangslage, Leitfrage ---------- */
+/* Einzeiliger Titel in 56 px (--groesse-titel-klein): So bleibt unter den
+   zwei Zeilen genug Höhe für ein großes Rad (Feld- und Kernbeschriftung ≥ 28 px). */
 #f02 .titel { font-size: var(--groesse-titel-klein); }
 
-#f02 .vorgehen-leitfrage {
-  display: flex;
+/* Zwei Zeilen: links das Etikett, rechts der Text – die Texte beider Zeilen
+   beginnen auf derselben Linie (Raster mit zwei Spalten) */
+#f02 .vorgehen-zeilen {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
   align-items: baseline;
-  gap: var(--abstand-4);
-  margin-top: var(--abstand-4);
+  column-gap: var(--abstand-4);
+  row-gap: var(--abstand-3);
+  margin: var(--abstand-4) 0 0;
 }
-#f02 .vorgehen-leitfrage-etikett {
-  flex: none;
-  position: relative;
-  top: -0.2em;                              /* optisch auf die Mittellinie der Frage */
+#f02 .vorgehen-zeile { display: contents; }
+#f02 .vorgehen-zeilen dd { margin: 0; min-width: 0; }
+
+/* Etikett (Pille) – neutral für die Ausgangslage, Akzent für die Leitfrage */
+#f02 .vorgehen-etikett {
+  justify-self: start;
   padding: 6px 14px;
-  border: var(--linie-fein) solid var(--f-akzent);
+  border: var(--linie-fein) solid var(--f-linie-stark);
   border-radius: var(--radius-pille);
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
@@ -35,40 +43,125 @@
   letter-spacing: var(--kicker-laufweite);
   text-transform: var(--kicker-versalien);
   line-height: 1;
+  color: var(--f-text-2);
+}
+#f02 .vorgehen-etikett--akzent {
+  border-color: var(--f-akzent);
   color: var(--f-akzent);
 }
-#f02 .vorgehen-leitfrage-text {
+
+/* Ausgangslage: zwei Stationen mit Jahreszahl, verbunden durch einen Pfeil */
+#f02 .vorgehen-lage {
+  font-size: var(--groesse-text);
+  line-height: 1.25;
+  color: var(--f-text-2);
+}
+#f02 .vorgehen-station { white-space: nowrap; }
+#f02 .vorgehen-jahr {
+  margin-right: 0.3em;
+  font-family: var(--schrift-zahl);
+  font-weight: var(--gewicht-fett);
+  font-variant-numeric: tabular-nums;
+  color: var(--f-text);
+}
+#f02 .vorgehen-pfeil {
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em;
+  vertical-align: -0.12em;
+  color: var(--f-akzent);
+}
+
+/* Leitfrage: groß und aufrecht (kursive Display-Schrift liest sich auf
+   Distanz schwer – Hinweis aus der Prüfung) */
+#f02 .vorgehen-frage {
   font-family: var(--schrift-display);
   font-size: var(--groesse-gross);
   font-weight: var(--gewicht-display);
-  font-style: var(--stil-hervor);
+  font-style: normal;
   line-height: 1.25;
   color: var(--f-text);
 }
-#f02 .vorgehen-leitfrage-text [data-marke] { font-style: var(--stil-marke); }
 
 /* Kopf und Rad rücken enger zusammen: Die Pille „Desk Research“ oben auf dem
    Rad schafft selbst genug Abstand – so wird das Rad größer */
 #f02 .folie-kopf ~ .folie-inhalt { margin-top: var(--abstand-4); }
 
+/* Quellenzeile: „KI“ wie das Kennzeichen auf den Karten */
+#f02 .vorgehen-ki-legende {
+  padding: 1px 7px;
+  border: var(--linie-fein) solid var(--f-akzent);
+  border-radius: var(--radius-pille);
+  color: var(--f-akzent);
+  font-weight: var(--kicker-gewicht);
+}
+
+
+/* ---------- Kennzeichen „KI“ auf den Methodenkarten ----------
+   Setzt js/folien/02-vorgehen.js ein. Seitenkarten: in der zweiten Zeile vor
+   „Folie x →“, Pillen: in der Zeile nach dem Methodennamen. */
+#f02 .vorgehen-ki {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px 4px;
+  border: var(--linie-fein) solid var(--f-akzent);
+  border-radius: var(--radius-pille);
+  background: var(--f-karte);
+  color: var(--f-akzent);
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+#f02 .vorgehen-verweiszeile {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+#f02 .sr-pille .vorgehen-ki { align-self: center; }
+
 
 /* ---------- Rad ---------- */
-/* Persona-Ring: zeichnet sich in Schritt 7 von unten (dort sitzt die Pille
-   „Brand Persona + Limbic Map“) einmal um das Rad. Ein Kreis beginnt rechts –
-   um 90° gedreht beginnt er unten. */
-#f02 .sr-ring {
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: rotate(90deg);
+/* Zurücktreten (Baustein: 45 %) auf dieser Folie nur auf 60 %: Methodennamen,
+   Feldnamen und Folienverweise bleiben auch auf blassen Beamern lesbar.
+   Die Schrift im Zentrum bleibt deckend (weiß auf der aufgehellten Fläche
+   ≥ 3 : 1), nur die Fläche tritt zurück. */
+#f02 .steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: 0.6; }
+#f02 .steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) { opacity: 1; }
+#f02 .steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) > * { opacity: 0.6; }
+#f02 .steuerrad.hat-fokus .sr-label--kern:not(.ist-fokus) { opacity: 1; }
+
+/* Ruhende Maus (Klasse setzt das Skript bis zur ersten echten Bewegung nach
+   einem Klick): auch die Hover-Effekte des Bausteins bleiben aus */
+#f02 .steuerrad.vorgehen-maus-ruht .sr-karte:hover:not(.ist-fokus) {
+  border-color: var(--f-karte-rand);
+  box-shadow: none;
 }
-/* Unsichtbarer Klickring erst aktiv, wenn der Rahmen zu sehen ist
+#f02 .steuerrad.vorgehen-maus-ruht .sr-kern-gruppe:hover:not(.ist-fokus) .sr-kern { transform: none; }
+
+/* Persona-Ring: js/folien/02-vorgehen.js ersetzt den Kreis durch zwei Bögen,
+   die hinter den beiden Pillen enden. Sie zeichnen sich in Schritt 7 von der
+   Pille „Brand Persona + Limbic Map“ aus gleichzeitig links und rechts hoch.
+   Unsichtbarer Klickring erst aktiv, wenn der Rahmen zu sehen ist
    (sonst springt ein Klick neben das Rad unerwartet zur Persona-Folie) */
 #f02 .sr-rahmen-gruppe:not(:has(.sr-ring.schritt-an)) .sr-ring-klick { pointer-events: none; }
+#f02 .vorgehen-bogen { stroke-linecap: butt; }
+
+/* Schritt 7 „Rahmen“ (Klasse .vorgehen-rahmen, setzt das Skript): Die
+   Persona-Pille zeigt ihre Kurzbeschreibung wie die Methoden in ihrem Schritt */
+#f02 .steuerrad.vorgehen-rahmen .sr-pille[data-paar="persona"] .sr-karte-text {
+  display: inline;
+  opacity: 1;
+  visibility: visible;
+}
 
 /* Beschreibungen der Methodenkarten (Leitfrage + Kurztext, nur bei der
    gerade gezeigten Methode) stehen im freien Band zwischen oberer und
    unterer Kartenreihe: bei den oberen Karten darunter, bei den unteren
-   darüber – so ragen sie nie in die Quellenzeile. Bündig mit dem Kartentext. */
+   darüber – so ragen
+   sie nie in die Quellenzeile. Bündig mit dem Kartentext. */
 #f02 .steuerrad[data-beschreibungen="schrittweise"] .sr-karte:not(.sr-pille) .sr-karte-text { left: 22px; right: 22px; }
 #f02 .steuerrad[data-beschreibungen="schrittweise"] :is(.sr-karte--lu, .sr-karte--ru) .sr-karte-text { top: auto; bottom: calc(100% + 12px); }
 /* Ab Schritt „Verkettung“ liegen in diesem Band die Pfeiltexte – dann
@@ -84,12 +177,12 @@
   opacity: 0;
   visibility: hidden;
 }
-#f02 .steuerrad.vorgehen-kette :is(.sr-kern-gruppe, .sr-label--kern, .sr-linie[data-paar="kompetenz"]) { opacity: 0.45; }
+#f02 .steuerrad.vorgehen-kette :is(.sr-kern-gruppe, .sr-linie[data-paar="kompetenz"]) { opacity: 0.6; }
 #f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] {
   border-color: color-mix(in oklab, var(--f-karte-rand) 45%, var(--f-hintergrund));
   box-shadow: none;
 }
-#f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] > * { opacity: 0.45; }
+#f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] > * { opacity: 0.6; }
 #f02 .steuerrad.vorgehen-kette .sr-logik-text { color: var(--f-akzent); }
 #f02 .steuerrad.vorgehen-kette .sr-logik-strich,
 #f02 .steuerrad.vorgehen-kette .sr-pfeilspitze { stroke: var(--f-akzent); stroke-width: var(--linie-stark); }
@@ -102,3 +195,11 @@
    Die Viertel wachsen aus der Radmitte – Bezugspunkt setzt das Skript. */
 #f02 .sr-viertel,
 #f02 .sr-kern-gruppe { transform-box: view-box; }
+
+/* Folienwechsel mit Morph ins Mini-Rad: Das Rad liegt dabei als eigene Ebene
+   über der Folie und würde die Verbinderpunkte auf dem Feldrand halb
+   verdecken. Deshalb sind die Punkte beim Verlassen kurz unsichtbar und
+   blenden beim Zurückkommen nach dem Morph wieder ein (Klassen setzt das Skript). */
+#f02 .sr-linie-punkt { transition: opacity var(--dauer-kurz) var(--kurve); }
+#f02 .steuerrad.vorgehen-geht .sr-linie-punkt { visibility: hidden; }
+#f02 .steuerrad.vorgehen-kommt .sr-linie-punkt { opacity: 0; transition: none; }

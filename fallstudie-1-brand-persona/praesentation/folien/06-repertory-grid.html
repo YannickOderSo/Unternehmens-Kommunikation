@@ -16,16 +16,23 @@
     Ganz links die Zahl der Nennungen (= Relevanz). Die Linien zeichnen sich
     nacheinander: Idealmarke (gepunktet, Raute) → stärkster Wettbewerber
     (gestrichelt, hohler Kreis) → [Marke] (durchgezogen, voller Kreis).
-  • Schritt 3: Die Konstrukte, die relevant sind, klar vom Wettbewerb
-    abweichen und nah am Ideal liegen, werden hinterlegt und rechts als
-    „Markenattribute“ benannt (mit Vorsprung vor dem Wettbewerber).
+  • Schritt 3: Die Konstrukte, die relevant sind, klar vom Durchschnitt der
+    fünf Wettbewerber (Ø W1–W5, wie in methoden.md) abweichen und nah am
+    Ideal liegen, werden hinterlegt und rechts als „Markenattribute“
+    benannt – mit Vorsprung vor Ø Wettbewerb. Ein Strich in der Zeile zeigt,
+    wo der Ø liegt; die Linie „Marke A“ dient nur der Veranschaulichung.
 
   SO ÄNDERN SIE DIE INHALTE
   • Alles steht unten im <script type="application/json" class="daten">.
     Das Skript js/folien/06-repertory-grid.js baut daraus die Grafik.
   • ALLE WERTE SIND BEISPIELDATEN. Echte Mittelwerte selbst in Excel/Sheets
     rechnen (nicht von der KI) und hier eintragen; Rohdaten ins Backup (B4).
-  • Den Titel passen Sie hier im HTML an, wenn sich die Aussage ändert.
+  • Den Titel passen Sie hier im HTML an, wenn sich die Aussage ändert –
+    und legen ihn erst nach der echten Auswertung fest (unterscheidet
+    „zuckerfrei“ kaum, siehe Hinweis in den Notizen).
+  • Lange Formulierungen kürzen: Pole höchstens ca. 18 Zeichen (längere
+    brechen zweizeilig um, zu lange meldet die Konsole), Attributnamen über
+    "attribut": "Kurzname". Die Langform gehört in die Notizen bzw. Backup B4.
   • Der Markenname kommt aus marke.js (data-marke bzw. „[Marke]“ in den
     Daten) – nie eintippen.
 
@@ -34,7 +41,8 @@
     1  Zwei Karten rücken zusammen, eine ab; das Konstrukt erscheint über
        den Karten und als erste Zeile im Profil
     2  alle Konstrukte + Nennungen; Linien zeichnen sich nacheinander
-    3  Markenattribute: Zeilen hinterlegt, rechts Name + Vorsprung + Kriterien
+    3  Markenattribute: Zeilen hinterlegt, Strich bei Ø Wettbewerb, rechts
+       Name + Vorsprung + Kriterien
 -->
 <section class="folie" id="f06" data-titel="Repertory Grid" data-feld="attribute" data-zeit="90" data-buendel="B">
   <header class="folie-kopf">
@@ -55,15 +63,15 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: eigene Erhebung, n = 8 (5 KI-simulierte Befragte, 3 Kurzinterviews) – Beispieldaten · Methode nach Kelly (1955) · Skala 1 = linker, 7 = rechter Pol</p>
+    <p class="quelle">Quelle: eigene Erhebung, 5 KI-Personas + 3 echte Kurzinterviews, gemittelt – Beispieldaten · Methode nach Kelly (1955) · Skala 1 = linker, 7 = rechter Pol</p>
   </footer>
 
   <aside class="notizen">
     <p data-schritt="0"><b>Frage und Methode</b> (ca. 15 s) Welche Eigenschaften unterscheiden <span data-marke></span> aus Sicht der Zielgruppe vom Wettbewerb? Dafür nutzen wir das Repertory Grid nach Kelly. Jede befragte Person sieht drei Marken – eine Triade – und beantwortet eine einzige Frage: Was verbindet zwei davon und trennt sie von der dritten?</p>
-    <p data-schritt="1"><b>Triade → Konstrukt</b> (ca. 15 s) In diesem Beispiel stehen Marke A und Marke B für „zuckerhaltig“, <span data-marke></span> für „zuckerfrei“. So entsteht ein bipolares Konstrukt mit zwei Polen. Aus acht Triaden je Person kamen [Anzahl] Konstrukte zusammen; Doppelungen haben wir zusammengefasst und gezählt.</p>
-    <p data-schritt="2"><b>Polaritätenprofil</b> (ca. 30 s) Danach haben alle Befragten <span data-marke></span>, den stärksten Wettbewerber und ihre Idealmarke auf jedem Konstrukt von 1 bis 7 bewertet. Links steht, wie oft ein Konstrukt genannt wurde – das ist die Relevanz. Gepunktet: die Idealmarke. Gestrichelt: Marke A. Durchgezogen: <span data-marke></span>.</p>
-    <p data-schritt="3"><b>Markenattribute</b> (ca. 30 s) Als Markenattribute zählen nur Konstrukte, die drei Bedingungen erfüllen: oft genannt, klar anders als der Wettbewerb und nah am Ideal. Das gilt für zuckerfrei, viele Sorten und Community-nah. „Selbst anrühren“ unterscheidet zwar am stärksten – aber die Idealmarke ist eher trinkfertig. Das ist kein Attribut, sondern eine Hürde; wir greifen sie im Fazit wieder auf. Die drei Attribute sind die Startpunkte für das Laddering.</p>
-    <p>Hinweise: Alle Werte sind Beispieldaten – echte Mittelwerte selbst berechnen (Backup B4: Rohdaten). Die Konstrukte sind Hypothesen aus dem Recherche-Dossier (Abschnitt 3.6), belegt ist nur der Hintergrund: HOLY verkauft Pulver und Sirup, keine trinkfertigen Dosen; 31 Energy-Sorten, laut Press Kit „60+ Geschmacksrichtungen“ über alle Linien (beides Dossier 3.1, gesichert ✔); Community „HOLY Squad“ (Dossier Kap. 1, gesichert ✔). Relevanz = Zahl der Nennungen; Differenzierung = Abstand <span data-marke></span> zu Marke A (in methoden.md: zum Mittel aller Wettbewerber); Ideal-Nähe = Abstand <span data-marke></span> zur Idealmarke. „Marke A“ durch den echten stärksten Wettbewerber ersetzen (Vorschlag im Dossier 5.3: W1 = Red Bull) – erst, wenn echte Bewertungen vorliegen. Begriffe mit der Vorlesungsfolie abgleichen. Rückfrage „Warum KI-simulierte Befragte?“ → Persona als Grundlage, Ergebnisse mit echten Kurzinterviews geprüft, Grenzen offen benennen (Prompt-Log B2).</p>
+    <p data-schritt="1"><b>Triade → Konstrukt</b> (ca. 15 s) In diesem Beispiel stehen Marke A und Marke B für „zuckerhaltig“, <span data-marke></span> für „zuckerfrei“. So entsteht ein bipolares Konstrukt mit zwei Polen. Aus acht Triaden je Person kamen [Anzahl] Konstrukte zusammen; gleichbedeutende haben wir zusammengefasst und gezählt, wie oft sie insgesamt genannt wurden.</p>
+    <p data-schritt="2"><b>Polaritätenprofil</b> (ca. 30 s) Danach haben alle Befragten <span data-marke></span>, fünf Wettbewerber und ihre Idealmarke auf jedem Konstrukt von 1 bis 7 bewertet. Links steht, wie oft ein Konstrukt insgesamt genannt wurde – das ist die Relevanz. Gepunktet: die Idealmarke. Gestrichelt: Marke A, unser stärkster Wettbewerber. Durchgezogen: <span data-marke></span>.</p>
+    <p data-schritt="3"><b>Markenattribute</b> (ca. 30 s) Als Markenattribute zählen nur Konstrukte, die drei Bedingungen erfüllen: oft genannt, klar anders als der Durchschnitt aller fünf Wettbewerber – das ist der kurze Strich in der Zeile – und nah am Ideal. Rechts steht der Vorsprung vor diesem Durchschnitt in Skalenpunkten. Das gilt für zuckerfrei, viele Sorten und Community-nah. „Selbst anrühren“ unterscheidet zwar am stärksten – aber die Idealmarke ist eher trinkfertig. Das ist kein Attribut, sondern eine Hürde; wir greifen sie im Fazit wieder auf. Die drei Attribute sind die Startpunkte für das Laddering.</p>
+    <p>Hinweise: Alle Werte sind Beispieldaten – echte Mittelwerte selbst berechnen (Backup B4: Rohdaten; die Ø-Werte hier stammen aus B4). Die Konstrukte sind Hypothesen aus dem Recherche-Dossier (Abschnitt 3.6), belegt ist nur der Hintergrund: HOLY verkauft Pulver und Sirup, keine trinkfertigen Dosen; 31 Energy-Sorten, laut Press Kit „60+ Geschmacksrichtungen“ über alle Linien (beides Dossier 3.1, gesichert ✔); Community „HOLY Squad“ (Dossier Kap. 1, gesichert ✔). <b>Kriterien</b> (wie methoden.md, Abschnitt 2): relevant = viele Nennungen (gezählt über alle Triaden und Personen, daher auch mehr als 8 möglich); differenzierend = Abstand <span data-marke></span> zum Ø der fünf Wettbewerber |M − Ø W1–W5|; nah am Ideal = kleiner Abstand <span data-marke></span> zur Idealmarke |M − I|. Die Linie „Marke A“ zeigt nur den stärksten Wettbewerber (W1) zur Veranschaulichung. „Marke A“ durch den echten stärksten Wettbewerber ersetzen (Vorschlag Dossier 5.3: W1 = Red Bull) – erst, wenn echte Bewertungen vorliegen. Begriffe mit der Vorlesungsfolie abgleichen. <b>Rückfrage „Zuckerfrei gibt es doch auch bei anderen – warum unterscheidet das?“</b> → Gemessen wird, wie die Befragten die ganze Marke wahrnehmen, nicht einzelne Varianten. Deshalb rechnen wir gegen den Durchschnitt aller fünf Wettbewerber; im vorgeschlagenen Set sind mit Gönrgy (zuckerfrei, Dossier 5.2 ✔) und Coca-Cola Zero auch zuckerfreie Marken (Dossier 5.3, Vorschlag). Darum ist der Vorsprung bei „zuckerfrei“ der kleinste der drei. HOLY selbst vergleicht sich nur mit gezuckerten Standardprodukten (Dossier 3.6, Hypothese). Fällt der Abstand mit echten Daten klein aus: schärferes Konstrukt aus Dossier 3.6 nutzen (z. B. „künstlich gesüßt – natürlich/ungesüßt“) und den Titel anpassen. <b>Rückfrage „Warum KI-simulierte Befragte?“</b> → Persona als Grundlage, Ergebnisse mit drei echten Kurzinterviews geprüft, Grenzen offen benennen (Prompt-Log B2). <b>Rückfrage „Wie genau sind die Werte?“</b> → Die Mittelwerte stammen aus 5 KI-Personas und 3 echten Interviews; sie zeigen Richtungen, keine repräsentativen Messwerte. Vor dem Vortrag prüfen, ob die drei echten Interviews in dieselbe Richtung zeigen, und Abweichungen offen nennen. Ganze Skalenpunkte statt einer Nachkommastelle: in den Daten "vorsprungDezimalen": 0.</p>
   </aside>
 
   <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
@@ -71,27 +79,42 @@
        • marke / wettbewerber / ideal: Namen in der Legende; „[Marke]“ wird
          durch den Markennamen aus marke.js ersetzt. wettbewerberZusatz steht
          klein dahinter (leer lassen = kein Zusatz).
-       • konstrukte: 6–8 Zeilen. links/rechts = die beiden Pole,
-         nennungen = wie oft das Konstrukt genannt wurde (Relevanz),
-         marke/wettbewerb/ideal = Mittelwerte auf der Skala,
+       • nennungenTitel: Überschrift der Spalte ganz links (kurz halten).
+       • vorsprungDezimalen: 1 = eine Nachkommastelle, 0 = ganze Skalenpunkte.
+       • konstrukte: 6–8 Zeilen.
+         links/rechts = die beiden Pole – höchstens ca. 18 Zeichen je Pol
+         (längere brechen zweizeilig um; zu lange meldet die Konsole).
+         nennungen = wie oft das Konstrukt insgesamt genannt wurde, gezählt
+         über alle Triaden und alle Personen nach dem Zusammenfassen
+         gleichbedeutender Konstrukte (= Relevanz; kann größer als n sein).
+         marke / wettbewerb / ideal = Mittelwerte auf der Skala für [Marke],
+         den stärksten Wettbewerber (W1, Linie „Marke A“) und die Idealmarke.
+         wettbewerbMittel = Ø der fünf Wettbewerber W1–W5 (selbst rechnen,
+         Backup B4). Daraus rechnet das Skript den Vorsprung |M − Ø W1–W5|
+         wie in methoden.md. Fehlt der Wert, wird ersatzweise gegen
+         „wettbewerb“ gerechnet (Warnung in der Konsole).
          attribut: true = wird in Schritt 3 als Markenattribut markiert.
          Der Name des Attributs ist der Pol auf der Seite der Marke; ein
-         eigener Name geht so: "attribut": "Community-nah".
+         eigener (kürzerer) Name geht so: "attribut": "Community-nah".
+         Attributnamen höchstens ca. 16 Zeichen.
        • attributeOben: true = Attribut-Zeilen stehen oben (empfohlen).
        • triade: Beispiel für Schritt 1. paar = die zwei ähnlichen Karten,
          einzeln = die abweichende Karte, polPaar/polEinzeln = die zwei Pole.
          Dieses Konstrukt sollte auch unter „konstrukte“ vorkommen – dann
          leuchtet seine Zeile in Schritt 1 mit auf.
-       • kriterien: die drei Auswahlregeln rechts unten (Schritt 3);
-         „erklaerung“ steht klein daneben. -->
+       • kriterien: die drei Auswahlregeln rechts unten (Schritt 3). Ein
+         optionales Feld „erklaerung“ stünde klein daneben – besser in die
+         Notizen schreiben (die Referent:in sagt es ohnehin). -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "BEISPIELDATEN – Konstrukte = Hypothesen aus dem Recherche-Dossier 3.6, Zahlen erfunden; durch die eigene Auswertung ersetzen (methoden.md, Abschnitt 2)",
+    "hinweis": "BEISPIELDATEN – Konstrukte = Hypothesen aus dem Recherche-Dossier 3.6, Zahlen erfunden (Ø W1–W5 wie Backup B4); durch die eigene Auswertung ersetzen (methoden.md, Abschnitt 2)",
     "skala": [1, 7],
     "marke": "[Marke]",
     "wettbewerber": "Marke A",
     "wettbewerberZusatz": "stärkster Wettbewerber",
     "ideal": "Idealmarke",
+    "nennungenTitel": "Nennungen gesamt",
+    "vorsprungDezimalen": 1,
     "attributeOben": true,
     "triade": {
       "frage": "Was verbindet zwei – und trennt sie von der dritten?",
@@ -102,20 +125,20 @@
       "notiz": "Beispiel: eine von acht Triaden je Person"
     },
     "konstrukte": [
-      { "links": "zuckerhaltig",  "rechts": "zuckerfrei",      "nennungen": 9, "marke": 6.6, "wettbewerb": 2.4, "ideal": 6.3, "attribut": true },
-      { "links": "wenige Sorten", "rechts": "viele Sorten",    "nennungen": 7, "marke": 6.4, "wettbewerb": 3.3, "ideal": 5.7, "attribut": true },
-      { "links": "Konzernmarke",  "rechts": "Community-Marke", "nennungen": 6, "marke": 6.0, "wettbewerb": 2.2, "ideal": 5.2, "attribut": "Community-nah" },
-      { "links": "trinkfertig",   "rechts": "selbst anrühren", "nennungen": 8, "marke": 6.8, "wettbewerb": 1.3, "ideal": 3.1 },
-      { "links": "teuer",         "rechts": "preiswert",       "nennungen": 5, "marke": 4.3, "wettbewerb": 3.8, "ideal": 6.2 },
-      { "links": "seriös",        "rechts": "frech",           "nennungen": 4, "marke": 6.1, "wettbewerb": 4.6, "ideal": 4.3 }
+      { "links": "zuckerhaltig",  "rechts": "zuckerfrei",      "nennungen": 9, "marke": 6.6, "wettbewerb": 2.4, "wettbewerbMittel": 4.3,  "ideal": 6.3, "attribut": true },
+      { "links": "wenige Sorten", "rechts": "viele Sorten",    "nennungen": 7, "marke": 6.4, "wettbewerb": 3.3, "wettbewerbMittel": 3.84, "ideal": 5.7, "attribut": true },
+      { "links": "Konzernmarke",  "rechts": "Community-Marke", "nennungen": 6, "marke": 6.0, "wettbewerb": 2.2, "wettbewerbMittel": 3.0,  "ideal": 5.2, "attribut": "Community-nah" },
+      { "links": "trinkfertig",   "rechts": "selbst anrühren", "nennungen": 8, "marke": 6.8, "wettbewerb": 1.3, "wettbewerbMittel": 2.22, "ideal": 3.1 },
+      { "links": "teuer",         "rechts": "preiswert",       "nennungen": 5, "marke": 4.3, "wettbewerb": 3.8, "wettbewerbMittel": 3.96, "ideal": 6.2 },
+      { "links": "seriös",        "rechts": "frech",           "nennungen": 4, "marke": 6.1, "wettbewerb": 4.6, "wettbewerbMittel": 4.36, "ideal": 4.3 }
     ],
     "ergebnisTitel": "Markenattribute",
-    "ergebnisErklaerung": "Vorsprung vor Marke A in Skalenpunkten",
+    "ergebnisErklaerung": "Vorsprung vor Ø Wettbewerb",
     "kriterienTitel": "Auswahlkriterien",
     "kriterien": [
-      { "text": "relevant",        "erklaerung": "viele Nennungen" },
-      { "text": "differenzierend", "erklaerung": "Abstand zu Marke A" },
-      { "text": "nah am Ideal",    "erklaerung": "Abstand zur Idealmarke" }
+      { "text": "relevant" },
+      { "text": "differenzierend" },
+      { "text": "nah am Ideal" }
     ]
   }
   </script>

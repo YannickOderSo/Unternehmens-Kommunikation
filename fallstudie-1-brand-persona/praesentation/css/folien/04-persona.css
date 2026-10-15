@@ -7,7 +7,10 @@
    Ab Schritt 4 werden die Blöcke markiert:
      Daten   = Akzentfläche + Akzentrand + Datensymbol
      Annahme = gestrichelter Rand + Fragezeichen-Symbol
-   Alle Regeln beginnen mit #f04 bzw. einer Klasse „g2p-…“.
+   Passt der Inhalt nicht über die Fußzeile, setzt das Skript .ist-dicht
+   (kleineres Zitat, engere Blöcke).
+   Alle Regeln beginnen mit #f04 bzw. einer Klasse „g2p-…“
+   (g2p = nur Folie 04, Persona – überschneidet sich nicht mit anderen Folien).
    Nur Variablen aus tokens.css verwenden.
    ============================================================================= */
 
@@ -46,7 +49,6 @@
   display: block;
 }
 /* Farben des gezeichneten Platzhalters (passen sich Thema und Modus an) */
-#f04 .g2p-sil-grund { fill: var(--f-flaeche-2); }
 #f04 .g2p-sil-kreis { fill: color-mix(in oklab, var(--f-akzent) 22%, var(--f-flaeche-2)); }
 #f04 .g2p-sil-form  { fill: color-mix(in oklab, var(--f-hart) 38%, var(--f-flaeche-2)); }
 
@@ -95,23 +97,26 @@
 #f04 .g2p-rechts {
   display: flex;
   flex-direction: column;
-  gap: var(--abstand-5);
+  gap: var(--abstand-4);
   min-height: 0;
 }
 #f04 .g2p-zitat { padding-left: 28px; }
-#f04 .g2p-zitat .zitat-text { font-size: var(--groesse-untertitel); }
+#f04 .g2p-zitat .zitat-text { font-size: var(--groesse-gross); }
 
 #f04 .g2p-reihe {
   display: grid;
   grid-template-columns: repeat(var(--g2p-spalten, 3), minmax(0, 1fr));
   gap: var(--abstand-4);
 }
-#f04 .g2p-reihe--unten { flex: 1; min-height: 0; }
+/* untere Reihe füllt den Rest, darf aber nicht über die Fußzeile wachsen
+   (min-height: 0); ob der Inhalt passt, prüft das Skript */
+#f04 .g2p-reihe--unten { flex: 1; min-height: 0; grid-template-rows: minmax(0, 1fr); }
+#f04 .g2p-reihe--unten > .g2p-block { min-height: 0; }
 
 /* Block = Karte mit Kopfzeile; Übergang für die Markierung in Schritt 4 */
 #f04 .g2p-block {
-  gap: var(--abstand-2);
-  padding: 22px 26px 24px;
+  gap: 6px;
+  padding: 18px 22px 16px;
   transition:
     background-color var(--dauer-mittel) var(--kurve),
     border-color var(--dauer-mittel) var(--kurve);
@@ -148,6 +153,24 @@
   border: var(--linie-fein) dashed var(--f-text-2);
 }
 
+/* Platzmangel (setzt das Skript): erst kleineres Zitat und engere Balken,
+   dann kleinere Hauptzeilen ohne Zwischenüberschrift „Werte“ */
+#f04.ist-dicht .g2p-zitat .zitat-text { font-size: var(--groesse-text); }
+#f04.ist-dicht .g2p-rechts { gap: var(--abstand-3); }
+#f04.ist-dicht .g2p-balken { gap: 6px; }
+#f04.ist-sehr-dicht .g2p-zeile--haupt { font-size: var(--groesse-text); }
+#f04.ist-sehr-dicht .g2p-unterlabel { display: none; }
+#f04.ist-sehr-dicht .g2p-pg { margin-top: 0; padding-top: var(--abstand-2); gap: 6px; }
+
+/* Quelle klein unten im Block (nur bei „Daten“) */
+#f04 .g2p-quelle {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+
 /* Stichwort-Zeilen */
 #f04 .g2p-zeile { font-size: var(--groesse-text); line-height: 1.25; color: var(--f-text-2); }
 #f04 .g2p-zeile--haupt {
@@ -157,23 +180,23 @@
   color: var(--f-text);
 }
 
-/* Mediennutzung: Einheit rechts im Kopf, Mini-Balken je Plattform */
+/* Mediennutzung: Einheit in eigener Zeile unter dem Blocktitel, Mini-Balken je Plattform */
 #f04 .g2p-einheit {
-  margin-left: auto;
+  margin-top: -6px;
   font-size: var(--groesse-meta);
+  line-height: 1.3;
   color: var(--f-text-2);
-  white-space: nowrap;
 }
 #f04 .g2p-balken {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px;
+  gap: 10px;
   flex: 1;
 }
 #f04 .g2p-balken-zeile {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr) 44px;
+  grid-template-columns: 150px minmax(0, 1fr) 56px;
   align-items: center;
   gap: var(--abstand-3);
 }
@@ -193,9 +216,10 @@
   border-radius: var(--radius-pille);
   background: var(--f-diagramm-marke);
 }
+/* Werte an den Balken = Inhalt, darum Fließtextgröße (28 px) */
 #f04 .g2p-balken-wert {
   font-family: var(--schrift-zahl);
-  font-size: var(--groesse-meta);
+  font-size: var(--groesse-text-min);
   font-weight: 700;
   font-variant-numeric: lining-nums tabular-nums;
   color: var(--f-text-2);
@@ -219,6 +243,7 @@
 }
 #f04 .g2p-werte { display: flex; flex-wrap: wrap; gap: 10px; }
 #f04 .g2p-werte .chip { padding: 6px 14px; }
+#f04 .g2p-werte--klein { gap: 8px; }
 #f04 .g2p-pg {
   display: flex;
   flex-direction: column;
@@ -269,5 +294,7 @@
 }
 #f04 .g2p:has(.g2p-status-ausloeser.schritt-an) .g2p-status { opacity: 1; }
 
-/* Legende rechts in der Fußzeile */
+/* Legende direkt hinter der Quelle (linksbündig): rechts unten erscheint bei
+   Maus- und Tastaturbedienung die Bedienleiste und würde sie verdecken */
+#f04 .folie-fuss { justify-content: flex-start; }
 #f04 .g2p-legende { flex: none; white-space: nowrap; }

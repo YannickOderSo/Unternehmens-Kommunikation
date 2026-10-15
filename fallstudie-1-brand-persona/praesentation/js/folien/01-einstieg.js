@@ -13,6 +13,10 @@
       (z. B. bei einer anderen Marke oder dem Platzhalter „[Marke]“).
    3. Bildtafel ausrichten: Im Schlussbild steht der Bildausschnitt aus
       data-fokus (waagerecht) mitten in der rechten Bildtafel.
+   4. Platzhalter kennzeichnen: Solange in marke.js → raetselBild (bzw. in
+      data-bild) noch das Platzhalter-Motiv steht, zeigt die Folie oben rechts
+      die Pille „Platzhalterbild“ – so geht der Platzhalter nicht aus
+      Versehen in den Vortrag. Mit eigenem Foto verschwindet sie von selbst.
    ============================================================================= */
 (function () {
   'use strict';
@@ -85,8 +89,23 @@
     folie.style.setProperty('--einstieg-tafel-versatz', Math.round(versatz) + 'px');
   }
 
+  /* 4. Pille „Platzhalterbild“, solange das Platzhalter-Motiv eingetragen ist
+        (Dateiname enthält „platzhalter“, z. B. bilder/platzhalter-raetsel.svg) */
+  function platzhalterKennzeichnen(folie) {
+    var raetsel = folie.querySelector('.raetsel');
+    var pfad = (raetsel && raetsel.getAttribute('data-bild')) || (Deck.marke && Deck.marke.raetselBild) || '';
+    var pille = folie.querySelector('.einstieg-platzhalter');
+    if (!/platzhalter/i.test(pfad)) { if (pille) pille.remove(); return; }
+    if (pille) return;
+    Deck.util.element('span', {
+      class: 'beispiel einstieg-platzhalter',
+      title: 'Eigenes Foto in marke.js → raetselBild eintragen'
+    }, 'Platzhalterbild', folie);
+  }
+
   Deck.registriere('f01', {
     einrichten: function (ctx) {
+      platzhalterKennzeichnen(ctx.folie);
       schritteKoppeln(ctx.folie);
       markeEinpassen(ctx.folie);
       tafelAusrichten(ctx.folie);

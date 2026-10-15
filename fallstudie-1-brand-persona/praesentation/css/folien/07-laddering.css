@@ -70,13 +70,15 @@
 /* ---------------------------------------------------------------------------
    2. EBENEN-BESCHRIFTUNG (links neben der Leiter, Metaangabe wie eine Achse)
    noch nicht erreicht = gedeckt · erreicht = Text · aktuell = Akzent
+   24 px = obere Grenze für Metaangaben: Die Modellbegriffe werden bewertet
+   („Anwendung von Konzepten & Modellen“) und sollen gut lesbar sein.
    --------------------------------------------------------------------------- */
 .lad-ebene {
   position: absolute;
   left: 0;
   transform: translateY(-50%);
   font-family: var(--schrift-kicker);
-  font-size: var(--groesse-meta);
+  font-size: 24px;
   font-weight: var(--kicker-gewicht);
   letter-spacing: var(--kicker-laufweite);
   text-transform: var(--kicker-versalien);
@@ -182,10 +184,12 @@
 .lad-nutzen--weich { background: var(--f-weich-flaeche); border-left-color: var(--f-weich); }
 .lad-nutzen--kern { background: var(--f-akzent-flaeche); border-left-color: var(--f-akzent); }
 .lad-nutzen--neutral { background: var(--f-flaeche); border-left-color: var(--f-linie-stark); }
-/* Titel = .karte-kicker aus komponenten.css (Metaangabe, 22 px, Versalien);
-   etwas engere Laufweite, damit „Sachlich-funktionaler Nutzen“ einzeilig bleibt */
+/* Titel = .karte-kicker aus komponenten.css (Metaangabe, Versalien), hier mit
+   24 px (obere Meta-Grenze, Modellbegriff) und engerer Laufweite. Das Skript
+   verkleinert bis 22 px, damit „Sachlich-funktionaler Nutzen“ einzeilig bleibt. */
 .lad-nutzen-titel {
-  letter-spacing: 0.07em;
+  font-size: 24px;
+  letter-spacing: 0.05em;
   line-height: 1.25;
 }
 .lad-nutzen--hart .lad-nutzen-titel { color: var(--f-hart); }

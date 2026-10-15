@@ -17,8 +17,36 @@
                            Erlebnisse (Tonalität nach Esch)
    Inhalte und Werte kommen aus den Daten der Folien (js/folien/08-analogien.js
    baut daraus die Elemente). Alle Regeln beginnen mit #f08 bzw. #f08b.
-   Nur Variablen aus tokens.css verwenden.
+   Farben, Schriftgrößen und Abstände nur aus tokens.css; die Maße der
+   Zeichnungen und Marker stehen gebündelt als lokale Variablen am Anfang.
    ============================================================================= */
+
+
+/* ---------------------------------------------------------------------------
+   LOKALE MASSE (hier ändern statt in den einzelnen Regeln)
+   --------------------------------------------------------------------------- */
+#f08 {
+  --g4-bild: 96px;               /* Zeichnung im Kartenkopf (Waschbär, Mensch) */
+  --g4-bild-klein: 72px;         /* Zeichnung im Gegenpol (Adler, Kundschaft) */
+  --g4-wb-bild: 80px;            /* Zeichnung der Wettbewerber */
+  --g4-hand: 128px;              /* Hand „Abstimmung per Handzeichen“ */
+  --g4-zeile-polster: var(--abstand-1);
+  /* gemeinsame Zeilenhöhe beider Listen, damit Haarlinien und Gegenpole
+     nebeneinander auf einer Höhe liegen */
+  --g4-zeile-hoehe: calc(var(--groesse-gross) * 1.25 + 2 * var(--g4-zeile-polster) + var(--linie-fein));
+}
+/* Engere Fassung: setzt das Skript, wenn eine Karte sonst überläuft */
+#f08 .g4-paar.ist-eng {
+  --g4-bild: 72px;
+  --g4-bild-klein: 56px;
+  --g4-zeile-polster: 3px;
+}
+#f08b {
+  --g4t-wertspalte: 104px;       /* Breite der Wertspalte rechts */
+  --g4t-luecke: var(--abstand-4);/* Abstand Spur ↔ Wert */
+  --g4t-marker: 42px;            /* Kreis-Marker der Wettbewerber */
+  --g4t-punkt: 30px;             /* Punkt der Marke */
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -102,8 +130,8 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   text-align: center;
 }
 #f08 .g4-hand {
-  width: 128px;
-  height: 128px;
+  width: var(--g4-hand);
+  height: var(--g4-hand);
   color: var(--f-akzent);
   stroke-width: 4px;
 }
@@ -122,6 +150,13 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   padding-top: var(--abstand-5);
   border-top: var(--linie-fein) solid var(--f-linie);
 }
+/* Satz zur Aussagezahl (Schritt 1): „sehen HOLY wie wir: / als Waschbär“ –
+   Umbruch vor „als“ statt mitten in „wie wir“ (Breite passt zum Standardsatz
+   aus marke.js; bei anderem Satz ggf. anpassen) */
+#f08 .umfrage-aussage .ua-text {
+  max-width: 10.4em;
+  text-wrap: wrap;
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -134,6 +169,8 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   grid-template-rows: minmax(0, 1fr) auto;
   row-gap: var(--abstand-6);
 }
+/* engere Fassung: auch der Abstand zur Kontrastzeile schrumpft */
+#f08 .g4-szene--analogien:has(> .g4-paar.ist-eng) { row-gap: var(--abstand-4); }
 #f08 .g4-paar {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -144,25 +181,31 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: 36px 40px 32px;
+  padding: var(--karte-polster);
   min-height: 0;
 }
+#f08 .g4-paar.ist-eng .g4-karte { padding-block: var(--abstand-4); }
 
 /* Kopf: Zeichnung links, Kicker und Name rechts daneben */
 #f08 .g4-karte-kopf {
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  column-gap: 32px;
+  grid-template-columns: var(--g4-bild) minmax(0, 1fr);
+  column-gap: var(--abstand-5);
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: var(--abstand-2);
 }
+#f08 .g4-paar.ist-eng .g4-karte-kopf { margin-bottom: var(--abstand-1); }
+/* ohne Zeichnung ("bild": "") nimmt der Text die ganze Breite ein */
+#f08 .g4-karte-kopf.ohne-bild,
+#f08 .g4-gegenpol.ohne-bild,
+#f08 .g4-wb.ohne-bild { grid-template-columns: minmax(0, 1fr); }
 #f08 .g4-bild {
-  width: 112px;
-  height: 112px;
+  width: var(--g4-bild);
+  height: var(--g4-bild);
   color: var(--f-weich);
   stroke-width: 4px;
 }
-#f08 .g4-karte-titel { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+#f08 .g4-karte-titel { display: flex; flex-direction: column; gap: var(--abstand-1); min-width: 0; }
 #f08 .g4-name {
   margin: 0;
   font-family: var(--schrift-display);
@@ -181,8 +224,10 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   display: grid;
   grid-template-columns: 176px minmax(0, 1fr);
   align-items: baseline;
-  column-gap: 16px;
-  padding: 9px 0;
+  align-content: center;
+  column-gap: var(--abstand-3);
+  min-height: var(--g4-zeile-hoehe);     /* gleiche Zeilenhöhe in beiden Karten */
+  padding: var(--g4-zeile-polster) 0;
   border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-weich) 24%, transparent);
 }
 #f08 .g4-zeile dd {
@@ -214,18 +259,20 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
    margin-top: auto schiebt ihn in beiden Karten an den unteren Rand. */
 #f08 .g4-gegenpol {
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  column-gap: 32px;
+  grid-template-columns: var(--g4-bild) minmax(0, 1fr);
+  column-gap: var(--abstand-5);
   align-items: center;
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: var(--abstand-2);
   border-top: var(--linie-fein) dashed color-mix(in oklab, var(--f-text-2) 55%, transparent);
 }
-#f08 .hat-gegenpol .g4-liste { margin-bottom: 18px; }   /* Mindestabstand zum Gegenpol */
+#f08 .hat-gegenpol .g4-liste { margin-bottom: var(--abstand-3); }   /* Mindestabstand zum Gegenpol */
+#f08 .g4-paar.ist-eng .hat-gegenpol .g4-liste { margin-bottom: var(--abstand-1); }
+#f08 .g4-paar.ist-eng .g4-gegenpol { padding-top: var(--abstand-1); }
 #f08 .g4-gegenpol-bild {
   justify-self: center;
-  width: 84px;
-  height: 84px;
+  width: var(--g4-bild-klein);
+  height: var(--g4-bild-klein);
   color: var(--f-text-2);
   stroke-width: 3px;
 }
@@ -259,6 +306,8 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   border-top: var(--linie-fein) solid var(--f-linie);
 }
 #f08 .g4-kontrast-kicker { color: var(--f-text-2); }
+/* zweite Zeile „(Beispiel)“: Tiere der Wettbewerber sind Beispieldaten */
+#f08 .g4-kontrast-zusatz { text-transform: none; letter-spacing: 0.02em; }
 #f08 .g4-kontrast-liste {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -266,19 +315,19 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 }
 #f08 .g4-wb {
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
+  grid-template-columns: var(--g4-wb-bild) minmax(0, 1fr);
   column-gap: var(--abstand-4);
   align-items: center;
   min-width: 0;
   color: var(--f-text-2);
 }
 #f08 .g4-wb-bild {
-  width: 80px;
-  height: 80px;
+  width: var(--g4-wb-bild);
+  height: var(--g4-wb-bild);
   color: var(--f-text-2);
   stroke-width: 3px;
 }
-#f08 .g4-wb-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+#f08 .g4-wb-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 #f08 .g4-wb-name {
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
@@ -297,7 +346,7 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 #f08 .g4-wb-mensch {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--abstand-2);
   margin: 0;
   font-size: var(--groesse-text-min);
   line-height: 1.25;
@@ -318,11 +367,9 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   display: flex;
   flex-direction: column;
   min-height: 0;
-  /* Breite der Wertspalte rechts und Abstand zur Spur */
-  --g4t-wertspalte: 104px;
-  --g4t-luecke: 24px;
-  /* Marker dürfen an den Enden der Skala nicht über den Rand ragen */
-  --g4t-rand: 21px;
+  /* Marker dürfen an den Enden der Skala nicht über den Rand ragen
+     (Wertspalte, Lücke und Markergröße: lokale Maße oben) */
+  --g4t-rand: calc(var(--g4t-marker) / 2);
 }
 
 /* Legende (Metaangabe) */
@@ -330,12 +377,12 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 36px;
+  gap: var(--abstand-1) var(--abstand-5);
   min-height: 40px;
   font-size: var(--groesse-meta);
   color: var(--f-text-2);
 }
-#f08b .g4t-leg { display: inline-flex; align-items: center; gap: 12px; }
+#f08b .g4t-leg { display: inline-flex; align-items: center; gap: var(--abstand-2); }
 #f08b .g4t-leg-punkt {
   width: 22px;
   height: 22px;
@@ -365,7 +412,7 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   grid-area: kopf;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--abstand-3);
   min-height: 50px;
 }
 #f08b .g4t-name {
@@ -375,7 +422,7 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   line-height: 1.15;
   color: var(--f-text);
 }
-#f08b .g4t-merkmale { display: inline-flex; flex-wrap: wrap; gap: 10px; }
+#f08b .g4t-merkmale { display: inline-flex; flex-wrap: wrap; gap: var(--abstand-1); }
 
 /* Spur: Grundlinie, Skalenstriche, Balken, Punkt und Marker */
 #f08b .g4t-spur {
@@ -422,9 +469,9 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   position: absolute;
   top: 50%;
   z-index: 2;
-  width: 30px;
-  height: 30px;
-  margin: -15px 0 0 -15px;
+  width: var(--g4t-punkt);
+  height: var(--g4t-punkt);
+  margin: calc(var(--g4t-punkt) / -2) 0 0 calc(var(--g4t-punkt) / -2);
   border-radius: 50%;
   background: var(--f-diagramm-marke);
   box-shadow: 0 0 0 4px var(--f-hintergrund);
@@ -435,17 +482,18 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   z-index: 1;
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  margin: -21px 0 0 -21px;
+  width: var(--g4t-marker);
+  height: var(--g4t-marker);
+  margin: calc(var(--g4t-marker) / -2) 0 0 calc(var(--g4t-marker) / -2);
   border-radius: 50%;
   border: var(--linie-fein) solid var(--f-diagramm-wettbewerb);
   background: var(--f-hintergrund);
   color: var(--f-diagramm-wettbewerb);
-  font: 700 var(--groesse-meta)/1 var(--schrift-text);
+  font: var(--gewicht-fett) var(--groesse-meta)/1 var(--schrift-text);
 }
-#f08b .g4t-wb-marker--oben { margin-top: -33px; }
-#f08b .g4t-wb-marker--unten { margin-top: -9px; }
+/* fast gleichauf: Marker rücken leicht über bzw. unter die Linie */
+#f08b .g4t-wb-marker--oben { margin-top: calc(var(--g4t-marker) / -2 - var(--abstand-2)); }
+#f08b .g4t-wb-marker--unten { margin-top: calc(var(--g4t-marker) / -2 + var(--abstand-2)); }
 /* Marker in der Legende: gleiche Form, aber im Textfluss */
 #f08b .g4t-wb-marker--legende {
   position: static;
@@ -456,7 +504,7 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 #f08b .g4t-wert {
   grid-area: wert;
   font-family: var(--schrift-zahl);
-  font-size: 44px;
+  font-size: var(--groesse-untertitel);
   font-weight: var(--gewicht-zahl);
   font-variant-numeric: lining-nums tabular-nums;
   line-height: 1;
@@ -486,14 +534,17 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   color: var(--f-text-2);
 }
 
-/* Schritt „Merkmale“: Dimensionen ohne Merkmal treten zurück */
+/* Schritt „Merkmale“: Dimensionen ohne Merkmal treten zurück.
+   Im Druck/PDF (Handout zum Nachlesen) nur leicht, damit Werte lesbar bleiben. */
 #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.45; }
+html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.8; }
 
 
 /* ---------------------------------------------------------------------------
    7. f08b – ERGEBNISKARTE „INS STEUERRAD“
-   Drei Blöcke: Emotionen (mit Punkt davor, umbrechend), Beziehung (kursiv),
-   Erlebnisse (Fließtext).
+   Rahmen und Beschriftungen stehen ab Schritt 0 (rechte Spalte bleibt nicht
+   leer), die Inhalte erscheinen im letzten Schritt. Drei Blöcke: Emotionen
+   (untereinander, mit Punkt davor), Beziehung (kursiv), Erlebnisse (Fließtext).
    --------------------------------------------------------------------------- */
 #f08b .g4t-ergebnis {
   display: flex;
@@ -501,14 +552,14 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   justify-content: center;
   min-height: 0;
 }
-#f08b .g4t-karte { gap: var(--abstand-4); padding: 36px 40px 40px; }
-#f08b .g4t-kicker { display: inline-flex; align-items: center; gap: 12px; }
+#f08b .g4t-karte { gap: var(--abstand-4); padding: var(--karte-polster); }
+#f08b .g4t-kicker { display: inline-flex; align-items: center; gap: var(--abstand-2); }
 #f08b .g4t-kicker .icon { width: 30px; height: 30px; }
 #f08b .g4t-block {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: var(--abstand-4);
+  gap: var(--abstand-1);
+  padding-top: var(--abstand-3);
   border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-weich) 24%, transparent);
 }
 #f08b .g4t-label {
@@ -521,11 +572,13 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 }
 #f08b .g4t-emotionen {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 28px;
-  row-gap: 2px;
+  flex-direction: column;     /* untereinander: kein unruhiger 2+1-Umbruch */
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-#f08b .g4t-emotionen li { display: inline-flex; align-items: center; gap: 12px; }
+#f08b .g4t-emotionen li { display: flex; align-items: center; gap: var(--abstand-2); }
 #f08b .g4t-emotionen li,
 #f08b .g4t-beziehung {
   margin: 0;

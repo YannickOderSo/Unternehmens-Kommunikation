@@ -12,6 +12,26 @@
                die Titelfolie: Markenname gleitet nach oben, darunter Titel,
                Unterzeile, Gruppe und Termin
   Druck (PDF), Übersicht und Rücksprung zeigen Schritt 2 (= Titelfolie).
+  Die Bildquelle (Fußzeile) erscheint erst mit der Auflösung – sie würde das
+  Rätsel sonst verraten – und steht rechts unten auf dem Bild bzw. in der
+  Bildtafel.
+
+  RÄTSELBILD – BIS SPÄTESTENS FR, 23.10. ERSETZEN
+    Das eingetragene Bild ist ein Platzhalter (Himmel, Sonne, Rechtecke) und
+    hat nichts mit der Marke zu tun. Solange es eingetragen ist, zeigt die
+    Folie oben rechts die Pille „Platzhalterbild“ (js/folien/01-einstieg.js).
+    Vorschlag: eigenes Foto, z. B. Nahaufnahme einer HOLY-Pappdose mit
+    Comic-Tier (Dossier 6.3 ✔ [30, 54, 71]); data-fokus auf ein typisches,
+    aber nicht verräterisches Detail setzen (Tiergesicht, nicht den
+    Schriftzug). Eigenes Foto = Bildrechte geklärt; die Verpackung bleibt
+    © HOLY Softdrinks GmbH → in der Quelle nennen. Danach mit zwei Personen
+    testen, die das Bild nicht kennen. Errät bei 300/40 niemand etwas:
+    Hinweisstufe ergänzen (data-stufen="300/40,170/14,100/0"). Gibt es bis
+    23.10. kein Bild: data-stufen="100/0" (Bild gleich scharf).
+
+  Typografie: Der Markenname steht bewusst in der Schrift des Designsystems,
+  nicht im Stil des HOLY-Logos (fette, kursive Versalien, Dossier 6.3). Wer
+  das Logo zeigen möchte: Logo-Datei mit Quelle in bilder/, marke.js → logo.
 
   SO ÄNDERN SIE DIE INHALTE
     • Rätselbild: marke.js → raetselBild (Bild in bilder/ legen; Nutzungsrechte
@@ -51,7 +71,7 @@
       <div class="einstieg-titelzeile">
         <div class="einstieg-titelblock" data-schritt="2" data-einstieg-schritt="titel" data-staffel="110" data-animation="hoch" data-verzoegerung="420">
           <h1 class="titel einstieg-titel"><span data-praesentation>Brand Persona &amp; Markenidentität</span></h1>
-          <p class="lead einstieg-unterzeile"><span data-fallstudie>Fallstudie 1</span> · <span data-veranstaltung>Unternehmenskommunikation</span> · <span data-dozent>Prof. Dr. Daniel Stenger</span></p>
+          <p class="lead einstieg-unterzeile"><span data-fallstudie>Fallstudie 1</span>&nbsp;· <span data-veranstaltung>Unternehmenskommunikation</span>&nbsp;· <span data-dozent>Prof. Dr. Daniel Stenger</span></p>
           <div class="angaben einstieg-angaben">
             <div><span class="angaben-titel">Gruppe</span><span class="angaben-wert" data-gruppe="zeilen"></span></div>
             <div><span class="angaben-titel">Termin</span><span class="angaben-wert" data-datum="lang"></span></div>
@@ -70,6 +90,9 @@
     <p class="einstieg-kopfzeile" data-meta data-schritt="2" data-einstieg-schritt="titel" data-animation="einblenden" data-verzoegerung="700"><span data-hochschule>Hochschule Kaiserslautern</span></p>
   </div>
 
+  <!-- Bildquelle: erst ab der Auflösung sichtbar (sonst verrät sie das Rätsel),
+       rechts unten auf dem Bild. Mit echtem Foto z. B.:
+       „Foto: eigene Aufnahme · Verpackung © HOLY Softdrinks GmbH“ -->
   <footer class="folie-fuss einstieg-fuss">
     <p class="quelle">Bild: Platzhalter-Motiv (eigene Gestaltung)</p>
   </footer>
@@ -77,8 +100,9 @@
   <aside class="notizen">
     <p><b>Ziel (45 s):</b> Publikum sofort einbinden, dann Thema und Gruppe nennen. Ruhig sprechen, Pausen aushalten.</p>
     <p data-schritt="0"><b>Frage stellen (ca. 15 s):</b> „Bevor wir anfangen – ein kurzes Rätsel: Welche Marke steckt hinter diesem Bild? Rufen Sie Ihren Tipp einfach in den Raum.“ – 5 bis 10 Sekunden warten, zwei, drei Zurufe aufgreifen („Ich höre … und …“). Erst dann klicken.</p>
-    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> „Es ist <span data-marke></span>.“ Wer richtig getippt hat: kurz würdigen. Optional ein Satz zur Marke – nur mit Fakt und Quelle aus dem Recherche-Dossier (recherche/holy-recherche.md), sonst weglassen.</p>
-    <p data-schritt="2"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02 (bzw. zur optionalen Wortwolke 01b).</p>
-    <p>Technik: Weiter mit Clicker, Pfeiltaste oder Leertaste; zurück nimmt die Schritte wieder zurück. Bild ersetzen: marke.js → raetselBild (Quelle in der Fußzeile ergänzen).</p>
+    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> „Es ist <span data-marke></span> – 2020 in Berlin gegründet, seit 2021 auf dem Markt.“ Wer richtig getippt hat: kurz würdigen. <i>(Fakt: Dossier Kap. 2.1 ✔ [3, 4]. Die Gaming-Herkunft erst auf Folie 02 erzählen.)</i></p>
+    <p data-schritt="2"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02. <i>Mit der optionalen Wortwolke 01b stattdessen überleiten: „Vorher noch eine Frage an Sie: Was verbinden Sie mit <span data-marke></span>?“ – nicht zweimal hintereinander zum Zurufen auffordern.</i></p>
+    <p>Technik: Weiter mit Clicker, Pfeiltaste oder Leertaste; zurück nimmt die Schritte wieder zurück. Die Bildquelle erscheint erst mit der Auflösung.</p>
+    <p><b>Vor dem Vortrag (bis Fr, 23.10.):</b> Eigenes Foto in bilder/ legen, in marke.js → raetselBild eintragen und die Quelle in der Fußzeile anpassen (Pille „Platzhalterbild“ verschwindet dann). Mit zwei Personen testen: Errät bei 300/40 niemand etwas, eine Hinweisstufe ergänzen (data-stufen="300/40,170/14,100/0") und hier einen Absatz „Hinweis“ ergänzen. Ohne Bild: data-stufen="100/0".</p>
   </aside>
 </section>

@@ -8,13 +8,16 @@
         • baut aus den Daten der Folie die Karten „Als Tier“ (mit Selbstbild)
           und „Als Mensch“ (mit tatsächlicher Kundschaft) sowie die
           Kontrastzeile mit zwei Wettbewerbern
-        • prüft, ob das Tier der Folie zu marke.js → umfragen.tier.unsereAntwort
-          passt; wenn nicht, steht ein Hinweis in den Notizen (Referentenansicht)
+        • prüft, ob Tier, Selbstbild und Titel der Folie zu marke.js →
+          umfragen.tier (unsereAntwort, optionen) passen und ob die Karten
+          überlaufen (dann enger setzen); bleibt ein Problem, steht ein Hinweis
+          in den Notizen (Referentenansicht) und eine Warnung in der Konsole
    f08b „Markentonalität (Aaker)“
         • baut aus den Daten das Profil der fünf Dimensionen nach Aaker
           (Balken für die Marke, Kreis-Marker für die Wettbewerber) und hängt
           die Persönlichkeitsmerkmale an ihre Dimension
-        • füllt die Ergebniskarte (Emotionen, Beziehung, Erlebnisse)
+        • füllt die Ergebniskarte (Emotionen, Beziehung, Erlebnisse); der
+          Rahmen ist von Anfang an sichtbar, die Inhalte erscheinen zuletzt
    Inhalte ändern Sie NUR in den Daten der Folien (folien/08-analogien.html).
 
    Schritte entstehen über data-schritt-Attribute (im HTML bzw. hier beim
@@ -39,10 +42,25 @@
       '<circle class="voll" cx="44" cy="60" r="2.6"/><circle class="voll" cx="76" cy="60" r="2.6"/>' +
       '<path d="M60 30 V44"/>' +
       '<ellipse class="voll" cx="60" cy="86" rx="6.5" ry="4.5"/><path d="M60 90 V95 M60 95 Q55 99 51 96 M60 95 Q65 99 69 96"/>',
+    /* Adlerkopf im Profil: geschlossene Kontur, nach vorn gerichteter
+       Hakenschnabel, kantige Braue (wirkt auch bei 84 px eindeutig) */
     adler:
-      '<path d="M22 112 C22 90 27 70 37 56 C46 43 58 34 74 31 L91 30 C98 30 102 32 105 35 C113 37 118 44 118 54 C118 59 116 63 112 66 C111 61 109 58 104 57 L91 56"/>' +
-      '<path d="M104 57 C101 61 97 63 91 63 C87 72 85 81 79 88 L86 94 L73 96 L78 104 L63 104 L66 112"/>' +
-      '<circle class="voll" cx="85" cy="43" r="3.8"/><path d="M73 40 Q85 33 98 37"/>',
+      '<path d="M18 112 C18 88 24 64 38 50 C48 40 62 35 78 35 C86 35 92 37 97 41 C106 41 114 45 117 53 C118 58 116 64 111 68 C111 63 108 60 103 60 L86 60 C84 68 81 76 76 82 C71 90 69 100 69 112 Z"/>' +
+      '<path d="M97 41 C94 47 92 53 91 60"/>' +
+      '<circle class="voll" cx="80" cy="49" r="3.6"/><path d="M64 47 L80 42 L93 46"/>',
+    /* Affe (Dossier Kap. 6.7 nennt „Waschbär oder Affe“) */
+    affe:
+      '<path d="M27 48 A12 12 0 1 0 27 70 M93 48 A12 12 0 1 1 93 70"/>' +
+      '<circle cx="60" cy="59" r="34"/>' +
+      '<path d="M60 47 C54 38 39 38 39 53 C39 60 42 64 45 68 C41 76 45 89 60 91 C75 89 79 76 75 68 C78 64 81 60 81 53 C81 38 66 38 60 47 Z"/>' +
+      '<circle class="voll" cx="51" cy="56" r="3.6"/><circle class="voll" cx="69" cy="56" r="3.6"/>' +
+      '<circle class="voll" cx="56" cy="72" r="1.9"/><circle class="voll" cx="64" cy="72" r="1.9"/>' +
+      '<path d="M51 80 Q60 86 69 80"/><path d="M53 26 Q57 18 61 25 Q65 18 69 26"/>',
+    /* Pfotenabdruck: Ersatz für Tiere ohne eigene Zeichnung */
+    pfote:
+      '<path d="M60 62 C48 62 36 74 36 86 C36 96 46 100 54 97 C57 96 58 95 60 95 C62 95 63 96 66 97 C74 100 84 96 84 86 C84 74 72 62 60 62 Z"/>' +
+      '<ellipse cx="31" cy="55" rx="8" ry="10.5" transform="rotate(-25 31 55)"/><ellipse cx="48" cy="36" rx="8" ry="11" transform="rotate(-8 48 36)"/>' +
+      '<ellipse cx="72" cy="36" rx="8" ry="11" transform="rotate(8 72 36)"/><ellipse cx="89" cy="55" rx="8" ry="10.5" transform="rotate(25 89 55)"/>',
     schwan:
       '<path d="M38 86 C24 72 30 60 38 50 C45 41 45 31 38 26"/>' +
       '<path d="M48 82 C38 70 42 60 48 52 C56 41 54 25 44 19 C38 16 31 18 29 23 L17 30 L30 31 C33 31 36 29 38 26"/>' +
@@ -113,10 +131,13 @@
   }
 
   /* Bild für einen Eintrag: "bild" in den Daten hat Vorrang ("" = kein Bild),
-     sonst wird es über den Tiernamen gesucht */
-  function bildFuer(name, bildAngabe) {
+     sonst wird es über den Tiernamen gesucht. Mit ersatz (z. B. 'pfote')
+     bekommt ein Tier ohne eigene Zeichnung dieses Ersatzbild. */
+  function bildFuer(name, bildAngabe, ersatz) {
     if (bildAngabe !== undefined && bildAngabe !== null) return bildSchluessel(bildAngabe);
-    return bildSchluessel(name);
+    var schluessel = bildSchluessel(name);
+    if (BILDER[schluessel]) return schluessel;
+    return ersatz || schluessel;
   }
 
   /* Text mit „[Marke]“ als Knoten einsetzen; der Markenname wird zu
@@ -159,22 +180,24 @@
     spalte.classList.add('g4-ohne-qr');
   }
 
-  /* Kopf einer Karte: Zeichnung, Kicker („Als Tier“), Name */
+  /* Kopf einer Karte: Zeichnung, Kicker („Als Tier“), Name.
+     Ohne Zeichnung (Klasse „ohne-bild“) nimmt der Text die ganze Breite ein. */
   function kartenKopf(ctx, karte, bildSchl, kicker, name) {
     var util = ctx.util;
     var kopf = util.element('div', { class: 'g4-karte-kopf' }, null, karte);
-    bild(util, bildSchl, 'g4-bild', kopf);
+    if (!bild(util, bildSchl, 'g4-bild', kopf)) kopf.classList.add('ohne-bild');
     var titel = util.element('div', { class: 'g4-karte-titel' }, null, kopf);
     util.element('span', { class: 'karte-kicker', 'data-meta': '' }, kicker, titel);
     util.element('p', { class: 'g4-name' }, util.markeText(name || '…'), titel);
   }
 
   /* Karte „Als Tier“: Zeichnung, Tiername, drei Gründe (Eigenschaft + Beleg),
-     darunter das Selbstbild der Marke (z. B. Maskottchen) */
+     darunter das Selbstbild der Marke (z. B. Maskottchen).
+     Tiere ohne eigene Zeichnung bekommen einen Pfotenabdruck. */
   function tierKarte(ctx, karte, tier) {
     var util = ctx.util;
     var name = tier.name || umfrageKonfig(ctx).unsereAntwort || '…';
-    kartenKopf(ctx, karte, bildFuer(name, tier.bild), 'Als Tier', name);
+    kartenKopf(ctx, karte, bildFuer(name, tier.bild, 'pfote'), 'Als Tier', name);
 
     var liste = util.element('dl', { class: 'g4-liste g4-liste--gruende' }, null, karte);
     (tier.gruende || []).slice(0, 3).forEach(function (grund) {
@@ -197,7 +220,7 @@
     if (!text) return;
     karte.classList.add('hat-gegenpol');
     var reihe = util.element('div', { class: 'g4-gegenpol' }, null, karte);
-    bild(util, bildFuer(text, eintrag.bild), 'g4-gegenpol-bild', reihe);
+    if (!bild(util, bildFuer(text, eintrag.bild), 'g4-gegenpol-bild', reihe)) reihe.classList.add('ohne-bild');
     var block = util.element('div', { class: 'g4-gegenpol-text' }, null, reihe);
     util.element('span', { class: 'g4-gegenpol-label', 'data-meta': '' }, eintrag.bezeichnung || standardBezeichnung, block);
     util.element('span', { class: 'g4-gegenpol-inhalt' }, util.markeText(text), block);
@@ -224,7 +247,7 @@
     var util = ctx.util;
     (wettbewerber || []).slice(0, 2).forEach(function (w) {
       var eintrag = util.element('article', { class: 'g4-wb' }, null, liste);
-      bild(util, bildFuer(w.tier, w.bild), 'g4-wb-bild', eintrag);
+      if (!bild(util, bildFuer(w.tier, w.bild, 'pfote'), 'g4-wb-bild', eintrag)) eintrag.classList.add('ohne-bild');
       var text = util.element('div', { class: 'g4-wb-text' }, null, eintrag);
       util.element('span', { class: 'g4-wb-name', 'data-meta': '' }, util.markeText(w.name || ''), text);
       var tier = util.element('p', { class: 'g4-wb-tier' }, null, text);
@@ -238,29 +261,103 @@
     });
   }
 
-  /* Abgleich: Das Tier unserer Analyse (Daten der Folie) muss dasselbe sein wie
-     marke.js → umfragen.tier.unsereAntwort (das hebt die Umfrage hervor).
-     Passt es nicht, erscheint ein Hinweis oben in den Notizen – nur in der
-     Referentenansicht sichtbar, nicht auf der Folie. */
-  function abgleich(ctx, tierName) {
-    var antwort = umfrageKonfig(ctx).unsereAntwort;
-    if (!antwort || !tierName) return;
-    if (bildSchluessel(antwort) === bildSchluessel(tierName)) return;
+  /* Hinweis oben in den Notizen (nur in der Referentenansicht sichtbar, nicht
+     auf der Folie) und zusätzlich als Warnung in der Konsole – so meldet auch
+     werkzeuge/pruefen.mjs das Problem („Konsole (Warnung)“).
+     art = Kennung, damit ein Hinweis beim erneuten Prüfen ersetzt wird. */
+  function notizHinweis(ctx, art, titel, text) {
     var notizen = ctx.folie.querySelector(':scope > .notizen');
+    var alt = notizen && notizen.querySelector(':scope > .g4-hinweis[data-art="' + art + '"]');
+    if (alt) alt.remove();
+    if (!text) return;
+    console.warn('f08: ' + titel + ' – ' + text);
     if (!notizen) return;
-    var p = ctx.util.element('p', { class: 'g4-abgleich' });
-    p.appendChild(ctx.util.element('b', null, 'Bitte abgleichen: '));
-    p.appendChild(document.createTextNode('Die Umfrage hebt „' + antwort + '“ als unsere Analyse hervor ' +
-      '(marke.js → umfragen.tier.unsereAntwort), die Folie zeigt „' + tierName + '“ ' +
-      '(Daten in folien/08-analogien.html). Beides auf dasselbe Tier setzen.'));
+    var p = ctx.util.element('p', { class: 'g4-hinweis g4-abgleich', 'data-art': art });
+    p.appendChild(ctx.util.element('b', null, titel + ': '));
+    p.appendChild(document.createTextNode(text));
     notizen.insertBefore(p, notizen.firstChild);
+  }
+
+  /* Kommt ein Tier (als Schlüssel, z. B. „waschbaer“) in einem Text vor? */
+  function nenntTier(text, schluessel) {
+    return String(text || '').split(/[\s,.;:!?–—\-„“"()]+/).some(function (wort) {
+      return wort && bildSchluessel(wort) === schluessel;
+    });
+  }
+
+  /* Abgleich zwischen Folie und marke.js. Geprüft wird:
+     1. marke.js → umfragen.tier.unsereAntwort = Tier unserer Analyse
+        (das hebt die Umfrage in Schritt 1 als „Unsere Analyse“ hervor),
+     2. marke.js → umfragen.tier.optionen enthält das Tier der Analyse und das
+        Tier des Selbstbilds (sonst behauptet der Titel „Waschbär, kein Adler“
+        über Tiere, die gar nicht zur Wahl standen),
+     3. der Titel ab Schritt 2 nennt beide Tiere. */
+  function abgleich(ctx, tier) {
+    var konfig = umfrageKonfig(ctx);
+    var tierName = tier.name || '';
+    var tierSchl = bildSchluessel(tierName);
+    var selbst = tier.selbstbild || null;
+    /* Tier des Selbstbilds: über die Zeichnung („bild“: "adler") bzw. das erste Wort */
+    var selbstSchl = selbst ? bildSchluessel(selbst.bild || String(selbst.text || '').split(/\s+/)[0]) : '';
+    var selbstName = selbst ? (String(selbst.text || '').split(/\s+/)[0] || selbstSchl) : '';
+    var probleme = [];
+
+    if (tierSchl && konfig.unsereAntwort && bildSchluessel(konfig.unsereAntwort) !== tierSchl) {
+      probleme.push('Die Umfrage löst „' + konfig.unsereAntwort + '“ als unsere Analyse auf ' +
+        '(marke.js → umfragen.tier.unsereAntwort), die Folie zeigt „' + tierName + '“.');
+    }
+    var optionen = (Array.isArray(konfig.optionen) ? konfig.optionen : []).map(bildSchluessel);
+    var fehlen = [];
+    if (tierSchl && optionen.length && optionen.indexOf(tierSchl) < 0) fehlen.push(tierName);
+    if (selbstSchl && optionen.length && optionen.indexOf(selbstSchl) < 0) fehlen.push(selbstName);
+    if (fehlen.length) {
+      probleme.push('Die Umfrage bietet „' + fehlen.join('“ und „') + '“ nicht an ' +
+        '(marke.js → umfragen.tier.optionen: ' + konfig.optionen.join(', ') + ').');
+    }
+    var titel = ctx.folie.querySelector('.g4-titel-antwort');
+    var titelText = titel ? titel.textContent : '';
+    var imTitelFehlt = [];
+    if (titel && tierSchl && !nenntTier(titelText, tierSchl)) imTitelFehlt.push(tierName);
+    if (titel && selbstSchl && !nenntTier(titelText, selbstSchl)) imTitelFehlt.push(selbstName);
+    if (imTitelFehlt.length) {
+      probleme.push('Der Titel ab Schritt 2 („' + titelText.trim() + '“) nennt „' + imTitelFehlt.join('“ und „') +
+        '“ nicht (Titel in folien/08-analogien.html anpassen).');
+    }
+    notizHinweis(ctx, 'abgleich', 'Bitte abgleichen', probleme.length
+      ? probleme.join(' ') + ' Alles auf dieselben Tiere setzen (Notizen „VOR DEM VORTRAG“).'
+      : '');
+  }
+
+  /* Passform der Karten: Läuft eine Karte über (zu lange Belege, eine Zeile
+     mehr …), werden beide Karten enger gesetzt (Klasse „ist-eng“, siehe CSS).
+     Reicht auch das nicht, folgt ein Hinweis in den Notizen und der Konsole.
+     Läuft beim Aufbau, nach jedem Themenwechsel und im Druck. */
+  function passform(ctx) {
+    var paar = ctx.folie.querySelector('.g4-paar');
+    if (!paar) return;
+    var karten = ctx.util.alle('.g4-karte', paar);
+    var zuVoll = function () {
+      return karten.filter(function (k) { return k.scrollHeight > k.clientHeight + 1; });
+    };
+    paar.classList.remove('ist-eng');
+    var voll = ctx.util.messen(paar, zuVoll);
+    if (voll.length) {
+      paar.classList.add('ist-eng');
+      voll = ctx.util.messen(paar, zuVoll);
+    }
+    notizHinweis(ctx, 'passform', 'Karte zu voll', voll.length
+      ? 'Die Karte „' + voll.map(function (k) { return k.querySelector('.karte-kicker').textContent; }).join('“ und „') +
+        '“ läuft über. Belege bzw. Profilzeilen in den Daten kürzen (einzeilig, höchstens 3 Zeilen).'
+      : '');
   }
 
   /* Ab Schritt 2 ist die Umfrage ausgeblendet. Der Baustein würde Ziffern 1–9
      aber weiter als Stimmen zählen (unsichtbar). Deshalb fangen wir Ziffern auf
-     f08 ab Schritt 2 ab, bevor sie die Engine erreichen. (Das Anspringen von
-     Folien per Ziffer + Enter geht auf dieser Folie ohnehin nicht, weil die
-     Umfrage die Ziffern übernimmt – es geht also nichts verloren.) */
+     f08 ab Schritt 2 ab, bevor sie die Engine erreichen. Nachteil: Das Anspringen
+     von Folien per Ziffer + Enter geht auf f08 nicht (in Schritt 0–1 übernimmt
+     ohnehin die Umfrage die Ziffern). Sobald der Umfrage-Baustein selbst nur
+     noch bei sichtbarer Umfrage zählt (Wunsch an js/komponenten.js), kann
+     dieser Abfang entfallen. */
   window.addEventListener('keydown', function (e) {
     if (e.altKey || e.ctrlKey || e.metaKey) return;
     if (!/^(Digit|Numpad)[1-9]$/.test(e.code || '')) return;
@@ -285,8 +382,12 @@
       if (tier) tierKarte(ctx, tier, tierDaten);
       if (mensch) menschKarte(ctx, mensch, m.mensch);
       if (wb) wettbewerberListe(ctx, wb, d.wettbewerber);
-      abgleich(ctx, tierDaten.name);
-    }
+      abgleich(ctx, tierDaten);
+      passform(ctx);
+      /* nach einem Themenwechsel (andere Schrift, andere Abstände) neu prüfen */
+      document.addEventListener('deck:groesse', function () { passform(ctx); });
+    },
+    druck: function (ctx) { passform(ctx); }
   });
 
 
@@ -322,8 +423,11 @@
     /* Schritte: 1 Marke · 2 Wettbewerber · 3 Merkmale · 4 Ergebnis.
        Ohne Wettbewerberwerte rücken Merkmale und Ergebnis einen Schritt vor. */
     var schrittMerkmale = mitWettbewerb ? 3 : 2;
-    var ergebnis = ctx.folie.querySelector('.g4t-ergebnis');
-    if (ergebnis) ergebnis.setAttribute('data-schritt', String(schrittMerkmale + 1));
+    /* Der Rahmen „Ins Steuerrad“ steht von Anfang an; nur seine Inhalte
+       erscheinen im letzten Schritt */
+    ctx.util.alle('.g4t-inhalt', ctx.folie).forEach(function (el) {
+      el.setAttribute('data-schritt', String(schrittMerkmale + 1));
+    });
 
     /* Beschreibung für Screenreader */
     ziel.setAttribute('role', 'group');

@@ -185,6 +185,37 @@
   color: var(--f-text-2);
 }
 
-/* Fußzeile (Bildquelle) bleibt in der Textspalte – sie läuft im Schlussbild
-   nicht in die Bildtafel hinein */
-#f01 .einstieg-fuss { max-width: var(--einstieg-spalte); }
+/* Fußzeile (Bildquelle): gehört zum Bild, nicht zum Text – deshalb rechts
+   unten (Schritt 1 auf dem randlosen Bild, im Schlussbild in der Bildtafel).
+   Sie erscheint erst mit der Auflösung: Während des Ratens würde eine echte
+   Quelle („Verpackung © …“) die Lösung verraten. Die Zeile behält ihren
+   Platz im Raster, damit Frage und Markenname nicht springen. */
+#f01 .einstieg-fuss {
+  justify-self: end;
+  max-width: calc(1920px - var(--einstieg-teilung) - 2 * var(--rand-x) + var(--abstand-7));
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+#f01:has(.einstieg-marke.schritt-an) .einstieg-fuss {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dauer-mittel) var(--kurve) 600ms, visibility 0s linear 0s;
+}
+/* Eigener dunkler Grund: Im Schlussbild fehlt der Verlauf, die helle
+   Schrift steht dann direkt auf dem Foto (Schleier ≥ 78 % → Kontrast ≥ 7 : 1) */
+#f01 .einstieg-fuss .quelle {
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  background: var(--f-bild-schleier);
+  text-align: right;
+}
+
+/* Pille „Platzhalterbild“ (setzt js/folien/01-einstieg.js, solange in
+   marke.js → raetselBild noch das Platzhalter-Motiv eingetragen ist) */
+#f01 .einstieg-platzhalter {
+  position: absolute;
+  z-index: 2;
+  top: var(--rand-oben);
+  right: var(--rand-x);
+}

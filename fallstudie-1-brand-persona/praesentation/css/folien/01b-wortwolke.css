@@ -14,7 +14,7 @@
   align-self: stretch;
 }
 #f01b .wolke-frage { max-width: 7.5em; }
-#f01b .wolke-lead { max-width: 16em; }
+#f01b .wolke-lead { max-width: 16em; text-wrap: balance; }
 
 #f01b .wolke-ausblick {
   display: flex;
@@ -90,3 +90,7 @@
 #f01b .ww-eingabe {
   padding-top: var(--abstand-3);
 }
+/* Knopf „Hinzufügen“ nur als Plus-Zeichen (Enter genügt): So hat der
+   Platzhaltertext im Feld genug Platz und wird nicht abgeschnitten.
+   Screenreader lesen den Titel des Knopfs („Wort hinzufügen (Enter)“). */
+#f01b .ww-eingabe button[type="submit"] span { display: none; }

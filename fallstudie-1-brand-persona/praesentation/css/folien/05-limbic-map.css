@@ -8,7 +8,8 @@
      rechts (5 Spalten) Limbic Type der Persona, Motiv-Überschneidung,
                         drei Konsequenzen für die Kommunikation
    Lage und Größe der Kartenteile rechnet js/folien/05-limbic-map.js aus.
-   Alle Regeln beginnen mit #f05 bzw. einer Klasse „g2l-…“.
+   Alle Regeln beginnen mit #f05 bzw. einer Klasse „g2l-…“
+   (g2l = nur Folie 05, Limbic Map – überschneidet sich nicht mit anderen Folien).
    Nur Variablen aus tokens.css verwenden.
    ============================================================================= */
 
@@ -18,19 +19,32 @@
    rot, Stimulanz gelb-orange) – frei gewählt, mit der Vorlesung abgleichen.
    Gemischt aus den Signal-Tokens, damit sie in allen Themen und im
    Dunkelmodus passen:
-     --g2l-farbe-<system>  zarte Fläche des Sektors (Schrift bleibt gut lesbar)
+     --g2l-farbe-<system>  Fläche des Sektors – kräftig genug für den Beamer;
+                           die Typ-Namen stehen auf einem eigenen hellen Ring
+     --g2l-glanz           heller Schleier zur Mitte hin (Punkte bleiben lesbar,
+                           außen werden die Farben satt)
      --g2l-stark-<system>  kräftiger Farbpunkt vor dem Systemnamen
+     --g2l-satt-<system>   Segmente der Gewichtsbalken rechts
    --------------------------------------------------------------------------- */
 #f05 .g2l {
-  --g2l-farbe-balance:   color-mix(in oklab, var(--f-erfolg) 17%, var(--f-hintergrund));
-  --g2l-farbe-dominanz:  color-mix(in oklab, var(--f-fehler) 15%, var(--f-hintergrund));
-  --g2l-farbe-stimulanz: color-mix(in oklab, var(--f-warnung) 22%, var(--f-hintergrund));
+  --g2l-farbe-balance:   color-mix(in oklab, var(--f-erfolg) 32%, var(--f-hintergrund));
+  --g2l-farbe-dominanz:  color-mix(in oklab, var(--f-fehler) 28%, var(--f-hintergrund));
+  --g2l-farbe-stimulanz: color-mix(in oklab, var(--f-warnung) 38%, var(--f-hintergrund));
+  --g2l-glanz:           color-mix(in oklab, var(--f-hintergrund) 72%, transparent);
   --g2l-stark-balance:   var(--f-erfolg);
   --g2l-stark-dominanz:  var(--f-fehler);
   --g2l-stark-stimulanz: color-mix(in oklab, var(--f-warnung) 80%, var(--f-hintergrund));
   --g2l-satt-balance:    color-mix(in oklab, var(--f-erfolg) 30%, var(--f-hintergrund));
   --g2l-satt-dominanz:   color-mix(in oklab, var(--f-fehler) 26%, var(--f-hintergrund));
   --g2l-satt-stimulanz:  color-mix(in oklab, var(--f-warnung) 36%, var(--f-hintergrund));
+}
+/* Dunkelmodus: eigene Mischwerte, sonst wirken die Sektoren schwarz-braun */
+[data-modus="dunkel"] #f05 .g2l,
+#f05[data-modus="dunkel"] .g2l {
+  --g2l-farbe-balance:   color-mix(in oklab, var(--f-erfolg) 40%, var(--f-hintergrund));
+  --g2l-farbe-dominanz:  color-mix(in oklab, var(--f-fehler) 38%, var(--f-hintergrund));
+  --g2l-farbe-stimulanz: color-mix(in oklab, var(--f-warnung) 42%, var(--f-hintergrund));
+  --g2l-glanz:           color-mix(in oklab, var(--f-hintergrund) 60%, transparent);
 }
 
 #f05 .g2l-raster {
@@ -276,7 +290,7 @@
 #f05 .g2l-profil-balken {
   display: flex;
   gap: 3px;
-  height: 34px;
+  height: 38px;
 }
 #f05 .g2l-segment {
   display: flex;
@@ -284,7 +298,7 @@
   min-width: 0;
   padding: 0 10px;
   font-family: var(--schrift-text);
-  font-size: var(--groesse-meta);
+  font-size: var(--groesse-tabelle);      /* 24 px: Werte, keine reine Achsenangabe */
   font-weight: 650;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -292,6 +306,22 @@
 }
 #f05 .g2l-segment:first-child { border-radius: var(--radius-s) 0 0 var(--radius-s); }
 #f05 .g2l-segment:last-child { border-radius: 0 var(--radius-s) var(--radius-s) 0; }
+/* größte Lücke: in beiden Balken mit kräftigem Rahmen in Akzentfarbe markiert */
+#f05 .g2l-segment.ist-luecke {
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 0 0 var(--linie-stark) var(--f-akzent);
+  font-weight: 800;
+}
+/* Erklärung unter den Balken (Metazeile) */
+#f05 .g2l-fit-hinweis {
+  grid-column: 1 / -1;
+  margin-top: -4px;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+#f05 .g2l-fit-text b { font-weight: var(--gewicht-fett); }
 
 /* Konsequenzen: drei Zeilen wie ein Inhaltsverzeichnis */
 #f05 .g2l-folgen {
