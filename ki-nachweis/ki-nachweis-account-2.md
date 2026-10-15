@@ -36,6 +36,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-10 | 14.10.2026 | System | Dritter Abbruch des Workflows durch Nutzungslimit; Neustarts der Sitzung | A2-D01 | Zwischenstand gesichert |
 | A2-11 | 14.10.2026 | Yannick (Account 2) | Frage: Mit wem Interviews führen, sind sie Pflicht? | – | Antwort im Chat (aus Aufgabe, methoden.md, Dossier) |
 | A2-12 | 14.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
+| A2-13 | 14./15.10.2026 | System | Vierter Abbruch des Workflows durch Nutzungslimit | A2-D01 | Zwischenstand gesichert |
+| A2-14 | 15.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D01 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -238,6 +240,27 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-13 – 14./15.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ failed: Error: Keine Folien-Gruppe fertig
+> geworden – später mit resume fortsetzen („You've hit your session limit · resets 12:50am (UTC)“ bei 7 Unteragenten).
+
+- **Herkunft:** automatische Meldung der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** Alle sieben Folien-Agenten fertig; Prüfungen fertig für „Einstieg & Vorgehen“ und „Markenkompetenz,
+  Persona, Limbic Map“. Gescheitert: fünf Prüfungen und die zwei ersten Überarbeitungen.
+
+### A2-14 – 15.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude (17:27 Uhr):** Zwischenstand committet (`aded21a`). `master` geprüft: neun neue Commits von
+  Account 1 (u. a. Rollenverteilung: Bündel A + Markensteuerrad Yannick, B Lukas, C Elias; echte Interviews durch Lukas
+  geplant; Dossier leicht aktualisiert) – per Merge-Commit übernommen (`451663b`). Workflow `wf_878fd85d-3f2` mit
+  `resumeFromRunId` fortgesetzt (neun fertige Agenten aus dem Zwischenspeicher).
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -285,6 +308,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Vierte Fortsetzung (A2-14)** (15.10.2026, 17:27 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
+  Zwischenspeicher: sieben Folien-Agenten, zwei Prüf-Agenten.
 - **Dritte Fortsetzung (A2-12)** (14.10.2026, 21:52 Uhr): unverändertes Skript, `resumeFromRunId`. Fertig aus dem
   Zwischenspeicher: fünf Folien-Agenten; neu: Folien „Synthese, Fazit, Fragen“ und „Backup“, alle Prüfungen usw.
 - **Zweite Fortsetzung (A2-09)** (14.10.2026, ca. 17:00 Uhr): nach Merge des HOLY-Dossiers und Härtung des Skripts
