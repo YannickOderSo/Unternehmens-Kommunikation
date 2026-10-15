@@ -64,7 +64,7 @@ das *Fremdbild* der Zielgruppe. Diesen Unterschied kurz benennen und beide Sicht
 | 7 | Laddering | Hierarchical Value Map → Markennutzen (funktional / psychosozial) | 1:45 | B |
 | 8 | Analogien | Marke als Mensch und Tier → Persönlichkeit, Emotionen → Markentonalität | 1:15 | B |
 | 9 | Kommunikationsanalyse | Kanäle im Überblick, Corporate Design, Schlüsselbilder, Bildwelt; Fit zur Tonalität | 2:15 | C |
-| 10 | Markensteuerrad | Synthese, je Stichwort Herkunft aus der Analyse kennzeichnen | 1:30 | C |
+| 10 | Markensteuerrad | Synthese, je Stichwort Herkunft aus der Analyse kennzeichnen | 1:30 | C (Inhalt: A) |
 | 11 | Fazit & Empfehlungen | 3 Kernerkenntnisse, 2–3 konkrete Handlungsempfehlungen | 1:15 | C |
 | | | | **15:00** | je ca. 5:00 |
 

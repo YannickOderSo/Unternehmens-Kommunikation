@@ -9,14 +9,16 @@
 
 ## Bündel – jede Person sucht sich eins aus
 
-Die Rollen sind noch **nicht vergeben**. Jede Person wählt bis **Mi 14.10.** im Gruppenchat ein Bündel; einzelne
-Pakete können getauscht werden, solange die Übergabetermine gelten.
+**Einteilung (14.10.2026):** A + Markensteuerrad-Synthese → Yannick Heisler · B → Lukas Welker · C → Elias Knauber.
+Die Synthese im Markensteuerrad (Aufgabe C2) bereitet Yannick vor und leitet sie; Folie 10 präsentiert trotzdem
+Elias. Einzelne Pakete können getauscht werden, solange die Übergabetermine gelten. Schritt-für-Schritt-Anleitung je
+Aufgabe: [`Fallstudie-1_Aufgaben-im-Detail.pdf`](Fallstudie-1_Aufgaben-im-Detail.pdf)
 
 | Bündel | Arbeitspakete | Querschnittsaufgabe | Spricht | Aufwand | Übernimmt |
 |--------|---------------|---------------------|---------|---------|-----------|
-| **A · Daten & Dokumentation** | Markenkompetenz & Wettbewerber, Brand Persona, Limbic Map | Backup & KI-Nachweis | Folien 1–5 · ca. 5:00 | ca. 13–15 Std. | _offen_ |
-| **B · Befragung & Auswertung** | Repertory Grid, Laddering, Analogien | 3–5 echte Kurzinterviews organisieren | Folien 6–8 · ca. 5:00 | ca. 12–14 Std. | _offen_ |
-| **C · Auftritt, Design & Synthese** | Kommunikationsanalyse, Markensteuerrad (Leitung), Empfehlungen | Folienmaster & Gesamtdeck | Folien 9–11 · ca. 5:00 | ca. 12–13 Std. | _offen_ |
+| **A · Daten & Dokumentation** | Markenkompetenz & Wettbewerber, Brand Persona, Limbic Map | Backup & KI-Nachweis | Folien 1–5 · ca. 5:00 | ca. 13–15 Std. | **Yannick Heisler** (+ Markensteuerrad-Synthese) |
+| **B · Befragung & Auswertung** | Repertory Grid, Laddering, Analogien | 3–5 echte Kurzinterviews organisieren | Folien 6–8 · ca. 5:00 | ca. 12–14 Std. | **Lukas Welker** |
+| **C · Auftritt, Design & Synthese** | Kommunikationsanalyse, Markensteuerrad (Leitung), Empfehlungen | Folienmaster & Gesamtdeck | Folien 9–11 · ca. 5:00 | ca. 12–13 Std. | **Elias Knauber** (präsentiert auch Folie 10) |
 
 Dazu kommen für jede Person ca. 2 Std. eigene Folien und Sprechtext sowie ca. 4 Std. gemeinsame Termine.
 
@@ -24,7 +26,7 @@ Dazu kommen für jede Person ca. 2 Std. eigene Folien und Sprechtext sowie ca. 4
 - B bekommt die drei Methoden, die mit denselben (simulierten und echten) Befragten arbeiten. So passen die Ergebnisse
   zusammen, und die Kette Attribute → Laddering → Nutzen bleibt in einer Hand.
 - C analysiert den visuellen Auftritt und baut das Design. Die Kommunikationsanalyse liefert die Lücken, aus denen die
-  Empfehlungen entstehen, deshalb leitet C auch die Synthese.
+  Empfehlungen entstehen. (Abweichend davon übernimmt Yannick die Synthese im Markensteuerrad, Elias präsentiert sie.)
 - A legt die Datenbasis (Marke, Zielgruppe), auf der alle anderen aufbauen, und führt die Dokumentation.
 - Wer ein Bündel übernimmt, präsentiert auch dessen Folien. Das hilft bei Rückfragen.
 
@@ -40,9 +42,9 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | Folienmaster | C → alle | **Mo 19.10.** |
 | 3–5 Markenattribute aus dem Repertory Grid | B → alle | **Mo 19.10.** |
 | Markentonalität aus den Analogien | B → C | **Mi 21.10.** |
-| Ergebnisse je Feld des Markensteuerrads (Stichworte + Herkunft) | alle → C | **Do 22.10.** vor dem Termin |
+| Ergebnisse je Feld des Markensteuerrads (Stichworte + Herkunft) | alle → Yannick | **Do 22.10.** vor dem Termin |
 | Eigene Folien fertig im Master | alle → C | **Fr 23.10.** |
-| Eigene KI-Nutzung vollständig im KI-Nachweis | alle → A | **Sa 24.10.** |
+| Persönliche KI-Liste ([Vorlage](../ki-nachweis/vorlage-ki-nutzung.md)) | alle → Yannick, Übertrag in den KI-Nachweis | Zwischenstand **Di 20.10.**, Abgabe **Fr 23.10.** (Nachträge bis So 25.10.) |
 
 ## Tagesplan
 
@@ -57,9 +59,9 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | **Mo 19.10.** | Folienentwürfe Markenkompetenz + Persona | Auswertung in Sheets → **Attribute an alle** | **Folienmaster an alle** | |
 | **Di 20.10.** | Backup-Struktur, KI-Nachweis nachpflegen | Laddering (P9), HVM (P10) | Entwurf Kommunikationsanalyse | **Zwischenstand, 45 Min.:** Persona, Attribute, erste Befunde zum Markenbild |
 | **Mi 21.10.** | Folien 2–5 im Master | Analogien (P11) → **Tonalität an C** | Fit-Bewertung Markenbild ↔ Tonalität / Persona | |
-| **Do 22.10.** | | | Entwurf Markensteuerrad (P13) vorbereiten | **Synthese, 2 Std.:** Markensteuerrad, Markenkern, Empfehlungen |
+| **Do 22.10.** | Entwurf Markensteuerrad (P13) vorbereiten, Synthese leiten | | Folie 10 übernehmen und einüben | **Synthese, 2 Std.:** Markensteuerrad, Markenkern, Empfehlungen |
 | **Fr 23.10.** | Folien 1–5 final | Folien 6–8 final | Folien 9–11 final | |
-| **Sa 24.10.** | Backup + KI-Nachweis final | Rohdaten ins Backup | Gesamtdeck zusammenführen, kritische Prüfung (P14) | |
+| **Sa 24.10.** | Backup + KI-Listen in den KI-Nachweis übertragen (Nachträge bis So 25.10.) | Rohdaten ins Backup | Gesamtdeck zusammenführen, kritische Prüfung (P14) | |
 | **So 25.10.** | | | | **Generalprobe, 1 Std.:** zweimal mit Stoppuhr, Rückfragen üben |
 | **Mo 26.10.** | | | | **Präsentation** |
 
@@ -74,22 +76,30 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 
 - [ ] Vorlage in `methoden.md` ausgefüllt
 - [ ] Jede Zahl mit Quelle, Daten und Annahmen getrennt gekennzeichnet
-- [ ] Alle verwendeten Prompts im [KI-Nachweis](../ki-nachweis/ki-nachweis.md)
+- [ ] Alle verwendeten Prompts in der persönlichen KI-Liste ([Vorlage](../ki-nachweis/vorlage-ki-nutzung.md)); Claude-Code-Prompts stehen automatisch im [KI-Nachweis](../ki-nachweis/ki-nachweis.md)
 - [ ] Ergebnis auf 1–2 Folien im Master, Kernaussage als Folientitel
 - [ ] Zwei mögliche Rückfragen samt Antwort notiert
 
 ## Regeln für den KI-Nachweis
 
 - Prompts an Claude Code (Yannicks Sitzung) protokolliert Claude automatisch, ebenso jede Delegation an Unteragenten.
-- Wer andere Tools nutzt (ChatGPT, Perplexity, Bildgeneratoren …), trägt den Prompt **sofort** in Abschnitt 3 des
-  KI-Nachweises ein und legt den Chatverlauf ab.
+- Wer andere Tools nutzt (ChatGPT, Perplexity, Bildgeneratoren …), trägt den Prompt **sofort** in die persönliche
+  Liste nach [`vorlage-ki-nutzung.md`](../ki-nachweis/vorlage-ki-nutzung.md) ein und legt den Chatverlauf als PDF im
+  Gruppenordner „KI-Chats“ ab (nicht im Repository, es ist öffentlich). Yannick überträgt alles in Abschnitt 3.
+- Personenbezogene Daten (Interviewpartner:innen, Kommentierende) nur mit ausdrücklicher Einwilligung der Betroffenen
+  in externe KI-Tools, sonst vorher anonymisieren: KI-Richtlinie der HSKL, Nr. 6 (Hochschulanzeiger Nr. 4/2025).
 - Keine KI-Zahl ohne geöffnete Quelle. Berechnungen (Mittelwerte, Engagement-Raten) in Excel/Sheets, nicht per KI.
 
 ## Offene Punkte
 
 - [x] Marke gewählt: HOLY (13.10.2026) – Recherche-Dossier für das Kickoff in [`recherche/`](recherche/)
 - [ ] Gruppe in die Google-Tabelle eintragen
-- [ ] Jede Person: Bündel bis Mi 14.10. im Gruppenchat wählen
+- [x] Bündel verteilt (14.10.): A + Markensteuerrad-Synthese Yannick, B Lukas, C Elias
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
 - [ ] Klären: Folie 58 nennt für „Präsentation“ 30 %, die beiden Kriterien ergeben aber nur 15 %
 - [ ] Klären: Zählen Rückfragen zu den 15 Minuten?
+- [ ] Bei Prof. Stenger klären: Gelten besondere KI-Vorgaben (erlaubte Tools, Form der Dokumentation,
+  Eigenständigkeitserklärung)? Laut KI-Richtlinie der HSKL (Nr. 8) sollen Prüfende die Vorgaben der Handreichung
+  „Eigenständigkeitserklärung für Prüfungen“ vor Beginn der Studienarbeit mitteilen. Außerdem: Welche zentral
+  bereitgestellten KI-Systeme (HSKL/VCRP) können wir nutzen (Richtlinie Nr. 4: vorrangig nutzen)? Ggf. bei
+  hochschuldidaktik@hs-kl.de nachfragen.

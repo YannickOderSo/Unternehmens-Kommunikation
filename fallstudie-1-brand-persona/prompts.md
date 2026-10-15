@@ -247,7 +247,9 @@ Nenne die 5 größten Schwächen mit konkreter Verbesserung und 5 Rückfragen, d
 Das Prompt-Log der Gruppe steht zentral in [`ki-nachweis/ki-nachweis.md`](../ki-nachweis/ki-nachweis.md):
 Abschnitt 1 enthält die Prompts an Claude Code, Abschnitt 2 die Delegationen an Unteragenten, Abschnitt 3 die Prompts
 aus anderen Tools (ChatGPT, Perplexity, Bildgeneratoren …). Wer einen Prompt aus dieser Bibliothek nutzt, trägt ihn
-dort mit P-Nummer ein.
+mit P-Nummer (Feld „Prompt-Vorlage“) in die persönliche KI-Liste nach
+[`ki-nachweis/vorlage-ki-nutzung.md`](../ki-nachweis/vorlage-ki-nutzung.md) ein; Yannick überträgt die Listen in
+Abschnitt 3.
 
 ---
 

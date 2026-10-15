@@ -41,6 +41,16 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 19 | 14.10.2026 | System | Nutzungslimit erneut erreicht: nur „Dossier schreiben“ in D03 abgebrochen | – | – |
 | 20 | 14.10.2026 | Yannick | Limit zurückgesetzt – weitermachen | D03 fortgesetzt | Dossier fertig (34 Seiten PDF) |
 | 21 | 14.10.2026 | Yannick | Screenshot: Stand von Account 2 | – | Stand geprüft, Hinweis-Text für Account 2 |
+| 22 | 14.10.2026 | Yannick | Frage: Brauchen wir Interviews? | – | Antwort im Chat (keine Dateien geändert) |
+| 23 | 14.10.2026 | Yannick | Klarstellung: drei getrennte Präsentationen; Aufteilung für Präsentation 1 | – | Antwort im Chat (keine Dateien geändert) |
+| 24 | 14.10.2026 | Yannick | Aufgaben der Bündel A/B/C genauer erklären | – | Aufgaben im Detail (HTML + PDF, 8 Seiten) |
+| 25 | 14.10.2026 | Yannick | KI-Nachweis-Datei für die anderen, um ihre KI-Nutzung zu sammeln | D04, D05 (Workflows) | Vorlage `vorlage-ki-nutzung.md`, zweifach geprüft; Ablauf in 7 Dateien angeglichen |
+| 26 | 14.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Zwischenstand committet + gepusht |
+| 27 | 14.10.2026 | System | Benachrichtigung: Workflow D04 fertig | – | Befunde ausgewertet und umgesetzt (siehe 25, D04) |
+| 28 | 14.10.2026 | System | Benachrichtigung: Workflow D05 fertig | – | 15 Punkte umgesetzt (siehe 25, D05) |
+| 29 | 14.10.2026 | Yannick | Einteilung der Bündel für Fallstudie 1 | – | Namen in 6 Dateien eingetragen, PDFs neu erzeugt |
+| 30 | 14.10.2026 | Yannick | Frage: Was soll ich als erstes machen? | – | Antwort im Chat (keine Dateien geändert) |
+| 31 | 14.10.2026 | Yannick | Rückmeldung: Organisatorisches geklärt; Lukas plant echte Interviews | – | Interviews in der Aufgabenbeschreibung als geplant eingetragen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -315,6 +325,170 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 22 – 14.10.2026 – Yannick
+
+> Brauchen wir wirklich interviews für unsere aufgabenerfüllung?
+
+- **Vorgehen Claude:** Aufgabenfolie 60 und Bewertungskriterien (Folie 58) gegen die Planung geprüft und beantwortet:
+  Interviews sind nicht gefordert – die Aufgabe nennt „insbesondere Desk Research und KI-Tools als Methoden“. Die in
+  Arbeitsplan, Methoden, Aufgaben-PDF und Dossier vorgesehenen 3–5 Kurzinterviews waren ein optionaler Vorschlag von
+  Claude zur Absicherung. Alternativen ohne Interviews genannt; Anpassung der Unterlagen angeboten, noch nichts geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – im Team entscheiden
+
+### 23 – 14.10.2026 – Yannick
+
+> *(Bild: Ausschnitt der Aufgabenfolie 57 – „1. Brand Persona & Markenidentität am 26.10. · 2. Customer Journey & Blog
+> Beitrag am 09.11. · 3. Instagram-Post & Eye-Tracking am 16.11.“)*
+> Nur zur klarstellung das sind 3 verschiedene Präsentations tage und 3 verschiedene Präsentationen. Zur ersten
+> Präsentation wie teilen wir da die arbeit auf?
+
+- **Vorgehen Claude:** Bestätigt, dass Arbeitsplan und Aufgaben-PDF nur Präsentation 1 betreffen. Die Aufteilung für
+  Präsentation 1 an den aktuellen Stand angepasst: Recherche (Dossier) und Folienbau (Account 2) sind schon weit, die
+  Bündel A/B/C bleiben, ihr Inhalt verschiebt sich vom Recherchieren zum Prüfen, Entscheiden, Selbst-Erheben und
+  Präsentieren. Vorschlag zur Rotation der Bündel über die drei Präsentationen. Aktualisierung von Arbeitsplan und
+  PDF angeboten, noch nichts geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 24 – 14.10.2026 – Yannick
+
+> Kannst du die jeweiligen Aufgaben genauer erklären und was da genau zu tun ist
+
+- **Vorgehen Claude:** Für Präsentation 1 je Bündel eine Schritt-für-Schritt-Anleitung geschrieben:
+  - A1–A5: Markenkompetenz, Persona, Limbic Map, Einstieg/Vorgehen, KI-Nachweis und Backup.
+  - B1–B4: Repertory Grid, Laddering, Analogien mit Live-Umfrage, Prüfen und Backup.
+  - C1–C4: Kommunikationsanalyse, Markensteuerrad, Fazit und Empfehlungen, Gesamtdeck und Technik.
+  - Dazu gemeinsame Termine, Spielregeln und eine Checkliste „fertig, wenn“.
+
+  Jede Aufgabe nennt Ziel, Arbeitsschritte, Material (Dossier-Kapitel, `methoden.md`, Prompts P0–P14), Termin und
+  Fallstricke. Unter „Das braucht die Folie“ steht, welche Angaben die Folie braucht. Diese Liste hat Claude aus den
+  Datenfeldern der Folien abgeleitet, die Account 2 auf dem Branch `praesentation-account-2` gebaut hat
+  (Stand 69271ed; Folie 09 entsteht noch).
+
+  Grundlage für die Inhalte waren Recherche-Dossier, `arbeitsplan.md`, `methoden.md`, `prompts.md` und `AUTOREN.md`;
+  es gab keine Websuche. Die Zeitangaben sind Schätzungen von Claude: ca. 9 Std. Bündelarbeit pro Person, mit
+  Sprechtext und Terminen ca. 14 Std. Echte Interviews sind als optional gekennzeichnet; das entscheidet die Gruppe
+  (siehe 22).
+
+  Das PDF hat Claude mit headless Chromium erzeugt und als Vorschau angesehen. Die Seitenaufteilung wurde einmal
+  korrigiert: Die erste Fassung hatte 9 Seiten mit einer fast leeren Seite 2, die neue hat 8 Seiten.
+  `arbeitsplan.md` und das alte Aufgaben-PDF blieben unverändert.
+- **Ergebnis:**
+  - [`fallstudie-1-brand-persona/aufgaben-im-detail.html`](../fallstudie-1-brand-persona/aufgaben-im-detail.html)
+  - [`fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-im-Detail.pdf`](../fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-im-Detail.pdf) (8 Seiten)
+- **Unteragenten:** keine. Ein zunächst angekündigter Workflow mit Unteragenten wurde nicht gestartet, um das
+  Kontingent zu schonen.
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 25 – 14.10.2026 – Yannick
+
+> Gib mir die KI Nachweis md damit ich sie den anderen schicken kann für ihre KI nutzung damit ich sie alle am ende
+> hier eintragen kann für eine große KI Liste
+
+- **Vorgehen Claude:** Statt der ganzen `ki-nachweis.md` (enthält die Claude-Code-Prompts von Yannick; drei
+  bearbeitete Kopien ließen sich schlecht zusammenführen) eine eigene Vorlage zum Ausfüllen geschrieben. Ihre Spalten
+  entsprechen genau Abschnitt 3 dieser Datei, dazu kommen Detailblöcke mit Prompt (wörtlich), Anhängen, Websuche oder
+  Modellwissen, Prüfung und Chatverlauf. Die IDs folgen dem Schema `E-Initialen-Nr`. Ein erstes Beispiel (Analogien
+  mit Tiernamen) hat Claude selbst verworfen, weil es die Antworten der Gruppe vorprägen würde (Dossier 6.7), und
+  durch ein neutrales Beispiel zur Kommunikationsanalyse ersetzt. Danach drei unabhängige Prüfer per Workflow (D04).
+- **Ergebnis:** [`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md) nach zwei Prüfrunden (D04, D05). Neu darin:
+  - Datenschutz- und Urheberrechtshinweise nach der KI-Richtlinie der HSKL.
+  - Angaben nach der HSKL-Handreichung: Tool, Version, Anbieter, URL, Begründung.
+  - alle Prompts wörtlich, Verlauf als PDF im Gruppenordner (nicht im öffentlichen Repository).
+  - Termine: Zwischenstand Di 20.10., Abgabe Fr 23.10., Nachträge bis So 25.10.
+
+  Derselbe Ablauf steht jetzt auch in `ki-nachweis.md` (Abschnitte 3 und 4, mit 3.1 und Spalte FS), `arbeitsplan.md`,
+  `aufgaben-im-detail.html` und im PDF, `aufgabenuebersicht.html` und im PDF (Aufgaben und Aufteilung), `prompts.md`
+  (Teil B), `reflexion-vorlage.md` sowie im Recherche-Dossier, Kap. 10.2 und 10.3 (md, html, PDF).
+- **Unteragenten:** D04, D05
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 26 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Zwischenstand von 25 (Vorlage als Entwurf, Workflow-Skript, dieser Nachweis) committet und
+  gepusht, während D04 noch läuft.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
+
+### 27 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung, 21:39 Uhr: Workflow „vorlage-ki-nutzung-pruefung“ (D04) abgeschlossen, 3 von 3
+> Unteragenten fertig)*
+
+- **Vorgehen Claude:** Befunde ausgewertet, die wichtigsten an den Originalquellen nachgeprüft, Vorlage überarbeitet,
+  Nachprüfung D05 gestartet (Details unter 25 und D04).
+- **Unteragenten:** D05
+
+### 28 – 14.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung, 21:52 Uhr: Workflow „vorlage-ki-nutzung-nachpruefung“ (D05) abgeschlossen)*
+
+- **Vorgehen Claude:** 15 offene Punkte umgesetzt, Dossier und Aufgaben-PDFs neu erzeugt (Details unter D05).
+- **Unteragenten:** keine
+
+### 29 – 14.10.2026 – Yannick
+
+> Folgende Einteilung:
+> Teil A + Markensteuerrad (markensteuerrad präsentiert trotzdem Elias)macht Yannick Heisler
+> Teil B macht Lukas Welker
+> Teil C macht Elias Knauber
+
+- **Vorgehen Claude:** Einteilung überall eingetragen, wo die Bündel noch ohne Namen standen:
+  - `CLAUDE.md`: Regel „Rollen noch nicht vergeben“ ersetzt.
+  - `arbeitsplan.md`: Spalte „Übernimmt“, Hinweis bei „Warum so gebündelt?“, Übergabe der Feld-Ergebnisse an Yannick,
+    Tagesplan Do 22.10., offener Punkt abgehakt.
+  - `README.md` der Fallstudie: Folie 10 als „C (Inhalt: A)“.
+  - `aufgaben-im-detail.html`: Namen in Kopf, Übersicht und Bündelköpfen; Aufgabe C2 an Yannick mit Übergabe an Elias
+    zum Einüben; Synthese-Termin leitet Yannick.
+  - `aufgabenuebersicht.html`: Namensfelder ausgefüllt.
+
+  Die Aufwandsangaben hat Claude angepasst, ebenfalls als Schätzung: A ca. 9 Std. + C2 ca. 1,5 Std.; C ca. 7,5 Std. +
+  Folie 10 einüben. Beide PDFs neu erzeugt (8 bzw. 5 Seiten) und die geänderten Seiten als Vorschau angesehen; die
+  Bündelköpfe danach umgestellt (Name als eigene Zeile). Recherche-Dossier und die Präsentation auf dem Branch von
+  Account 2 nicht geändert.
+- **Ergebnis:** Einteilung in 6 Dateien, PDFs aktualisiert
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 30 – 14.10.2026 – Yannick
+
+> Was soll ich als erstes machen?
+
+- **Vorgehen Claude:** Reihenfolge für Yannicks Aufgaben (Bündel A + C2) aus den Übergabeterminen abgeleitet. Zuerst
+  Organisatorisches: Aufgaben-PDF und KI-Vorlage an die Gruppe, Ordner „KI-Chats“, offene Kickoff-Entscheidungen
+  (Wettbewerbsset, Persona-Richtung, Interviews, Repository privat?). Dann die Persona (A2), weil Lukas sie bis
+  Fr 16.10. braucht; danach Limbic Map (A3, Sa 17.10.), Markenkompetenz (A1, Di 20.10.), A4, C2 (Do 22.10.), A5
+  (Sa 24.10.). Persona-Entwurf aus dem Dossier angeboten, noch nicht erstellt.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 31 – 14.10.2026 – Yannick
+
+> 1. Ist geklärt
+> 2. Lukas Plant echte interviews
+
+- **Vorgehen Claude:** Antwort auf die Schritte aus 30. Die Entscheidung zu den Interviews (offen seit 22) in
+  `aufgaben-im-detail.html` und dem PDF eingetragen: Die echten Kurzinterviews sind nicht mehr „optional“, sondern
+  von Lukas geplant.
+  - Termine aus dem Arbeitsplan: Leitfaden Do 15.10., Interviews bis So 18.10.
+  - Empfehlung von Claude: dieselben Triaden und Laddering-Fragen wie bei P7/P9, Ergebnisse getrennt nach „echt“ und
+    „KI-simuliert“ zählen.
+  - Datenschutzhinweis nach KI-Richtlinie der HSKL, Nr. 6.
+
+  PDF neu erzeugt (8 Seiten, Seitenfolge geprüft). Wettbewerbsset und Persona-Richtung wurden nicht ausdrücklich
+  bestätigt; Claude fragt nach.
+- **Ergebnis:** [`fallstudie-1-brand-persona/aufgaben-im-detail.html`](../fallstudie-1-brand-persona/aufgaben-im-detail.html),
+  [`Fallstudie-1_Aufgaben-im-Detail.pdf`](../fallstudie-1-brand-persona/Fallstudie-1_Aufgaben-im-Detail.pdf)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -328,6 +502,8 @@ steht hier mit dem wörtlichen Auftrag.
 | Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
+| D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
+| D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | 15 offene Punkte (8 mittel/niedrig neue Widersprüche in weiteren Dateien, 1 falsche Zählung in D04); alle umgesetzt | Claude: Zählung nachgerechnet, PDFs neu erzeugt und verglichen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -408,19 +584,95 @@ steht hier mit dem wörtlichen Auftrag.
   AG Charlottenburg HRB 222782 B, Geschäftsführer Naß, Horsch, Jost) und AGB de.holy.com/pages/agb § 4 (Energy-Produkte
   mit Koffein nur ab 18) – beide bestätigt.
 
+### D04 – 14.10.2026 – ausgelöst durch Prompt 25
+
+- **Art:** Workflow „vorlage-ki-nutzung-pruefung“, drei Unteragenten parallel, ohne Schreibrechte auf Dateien.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-14_vorlage-ki-nutzung-pruefung.js`](workflows/2026-10-14_vorlage-ki-nutzung-pruefung.js)
+  und automatisch im Rohprotokoll (Eintrag `"art": "workflow"`, 21:29 Uhr).
+- **Prüfer:**
+  - Zusammenführbarkeit: Passt jedes Feld zu Abschnitt 3 und zu den Pflichtangaben aus `CLAUDE.md`?
+  - Nutzbarkeit für Studierende ohne GitHub: Klarheit, Sprache, neutrales Beispiel.
+  - Prüfungsanforderungen, Redlichkeit, Datenschutz: mit Websuche nach KI-Vorgaben der Hochschule Kaiserslautern.
+- **Vorgaben:** jeder Befund mit Quelle (Datei und Abschnitt oder URL mit Abrufdatum) oder als Modellwissen
+  gekennzeichnet; nichts erfinden; keine Dateien ändern.
+- **Ergebnis:** 30 Befunde mit Quellen (Zusammenführbarkeit 9, Nutzbarkeit 10, Anforderungen 11; 4 davon „hoch“).
+  Die wichtigsten:
+  - Abschnitt 3 hatte keinen Platz für wörtliche Prompts.
+  - Die 9-spaltige Tabelle war für Nicht-GitHub-Nutzer unpraktisch.
+  - Ein eingerückter Codeblock zerbricht beim Einfügen.
+  - Termine und Ablageort widersprachen Arbeitsplan und Aufgaben-PDF.
+  - Hinweise zu Datenschutz und Urheberrecht fehlten (KI-Richtlinie der HSKL, Nr. 6 und 7).
+  - Eine Begründung je KI-Nutzung fehlte (HSKL-Handreichung).
+  - Das Repository ist öffentlich, Chatverläufe gehören also nicht hinein.
+- **Wie Claude das Ergebnis geprüft hat:** Die folgenreichsten Befunde selbst nachgeprüft:
+  - Sichtbarkeit des Repositorys über die GitHub-API: öffentlich.
+  - Beide HSKL-Dokumente geladen und im Originaltext gelesen (pdftotext): „Richtlinie für den Einsatz von
+    Künstlicher Intelligenz an der Hochschule Kaiserslautern“, Präsidium 24.07.2025, Hochschulanzeiger Nr. 4/2025
+    vom 31.07.2025, Nr. 4, 6, 7, 8; Handreichung „Eigenständigkeitserklärung für Prüfungen“ vom 16.09.2024,
+    Abschnitte 2.2, 3, 3.1, 3.2. Die Aussagen der Prüfer stimmten.
+  - Die neue Vorlage mit pandoc gerendert: genau zwei Codeblöcke, alle Überschriften intakt.
+
+  Anders gelöst als vorgeschlagen:
+  - Übersichtstabelle in der Vorlage gestrichen; Yannick baut sie beim Übertragen.
+  - Spalte „Folie“ in Abschnitt 3 heißt jetzt „Verwendet in“; keine zusätzliche Spalte „Herkunft“.
+  - Initialen ergänzt Yannick beim Übertragen.
+
+  Mitgeändert: `ki-nachweis.md` Abschnitte 3 und 4 (Ablauf, ID-Schema, 3.1 Detailblöcke, Chatverläufe nicht im
+  Repository), `aufgaben-im-detail.html` und das PDF, `arbeitsplan.md` (Übergabe, Regeln, offener Punkt zu den
+  KI-Vorgaben von Prof. Stenger).
+
+### D05 – 14.10.2026 – ausgelöst durch Prompt 25
+
+- **Art:** Workflow „vorlage-ki-nutzung-nachpruefung“, ein Unteragent ohne Schreibrechte.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-14_vorlage-ki-nutzung-nachpruefung.js`](workflows/2026-10-14_vorlage-ki-nutzung-nachpruefung.js)
+  und automatisch im Rohprotokoll.
+- **Kurz:** jeden Befund aus D04 prüfen (umgesetzt, falsch umgesetzt, nicht umgesetzt), neue Widersprüche zwischen den
+  vier geänderten Dateien suchen, Angaben zu den HSKL-Dokumenten gegen den Originaltext prüfen; jeder Punkt mit Quelle.
+- **Ergebnis:** D04 „weitgehend und sauber umgesetzt“, Markdown-Struktur korrekt, HSKL-Angaben im Kern richtig. 15
+  offene Punkte:
+  - Drei weitere Dokumente nannten noch den alten Ablauf: das Aufgaben-PDF vom 13.10., `prompts.md` Teil B und die
+    Kickoff-Checkliste im Dossier.
+  - Drei HSKL-Stellen waren leicht überzeichnet: Nr. 6 als absolutes Verbot, Nr. 7 als wörtliches Upload-Verbot,
+    Nr. 8 im Indikativ. Nr. 4 („vorrangig zentrale KI-Systeme“) fehlte.
+  - Termine waren uneinheitlich: „vollständig“ am Sa gegenüber Nachträgen bis So; die Frist für den Nachtrag zur
+    Reflexion fehlte.
+  - ID-Schema für Fallstudie 2 und 3 offen; Rest „die Übersicht“ in Abschnitt 3.
+  - Die Befundzählung in D04 war falsch: Claude hatte 5/15/10 statt 4/14/12 angegeben.
+  - Kleinigkeiten in der Vorlage: Zeilenumbruch im Kopf; das Beispiel kennzeichnete ohne Tool.
+- **Wie Claude das Ergebnis geprüft hat:** Zählung aus D04 mit Python nachgerechnet; der Prüfer hatte recht, korrigiert.
+  Alle 15 Punkte umgesetzt. Dossier-PDF neu erzeugt und per Textvergleich mit dem alten geprüft: nur die zwei
+  beabsichtigten Stellen geändert, weiter 34 Seiten. Aufgaben-PDFs neu erzeugt (8 bzw. 5 Seiten; die alte Übersicht
+  nach einem Überlauf auf 6 Seiten gekürzt). Vorlage erneut mit pandoc gerendert: zwei Codeblöcke, Struktur intakt.
+
 ---
 
 ## 3. KI-Nutzung außerhalb von Claude Code
 
-Jede Person trägt ihre Prompts in anderen Tools **sofort** ein. Den vollständigen Chatverlauf als Link oder PDF ablegen
-(z. B. in `ki-nachweis/chats/`) und hier verweisen. Prompt-Vorlagen: [`prompts.md`](../fallstudie-1-brand-persona/prompts.md)
+Jede Person führt ihre KI-Nutzung in anderen Tools **sofort** in einer persönlichen Liste nach der Vorlage
+[`vorlage-ki-nutzung.md`](vorlage-ki-nutzung.md): Zwischenstand zum Treffen am Di 20.10. mitbringen, Abgabe an Yannick
+Fr 23.10., Nachträge bis So 25.10., Nachtrag zur Einzelreflexion mit deren Abgabe (Fallstudie 1). Yannick legt aus
+jedem Detailblock eine Tabellenzeile an und übernimmt die Blöcke unverändert nach 3.1, Überschrift als
+`#### E-EK-01 – TT.MM.JJJJ – Vorname`. Chatverläufe liegen als PDF im Gruppenordner „KI-Chats“, **nicht** im
+Repository, weil es öffentlich ist. Prompt-Vorlagen: [`prompts.md`](../fallstudie-1-brand-persona/prompts.md)
 
-| ID | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Folie |
-|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|-------|
-| E01 | | | | | | | | |
+**ID-Schema:** `E-Initialen-Nr` (z. B. `E-EK-01`, `E-LW-01`, `E-YH-01`); die Nummern laufen je Person fortlaufend über
+alle Fallstudien, die neue Liste für Fallstudie 2 und 3 zählt einfach weiter. Spalte „FS“ = Fallstudie. Grundlage für die Angaben: KI-Richtlinie der HSKL (Präsidium 24.07.2025, Hochschulanzeiger
+Nr. 4/2025) und Handreichung „Eigenständigkeitserklärung für Prüfungen“ der HSKL (16.09.2024).
+
+| ID | FS | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Verwendet in |
+|----|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|--------------|
+| E-__-01 | 1 | | | | | | | | |
 
 **Spalte „Prüfung / Anpassung“** ist die wichtigste: Was wurde kontrolliert (Quelle geöffnet, mit echtem Interview
 verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
+
+### 3.1 Einträge im Detail
+
+Detailblöcke aus den persönlichen Listen, unverändert übernommen (Überschrift ergänzt um ID und Person).
+
+**Fallstudie 1**
+
+_noch keine Einträge_
 
 ---
 
@@ -431,7 +683,7 @@ verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
 | `rohprotokoll.jsonl` | jeder Prompt an Claude Code und jede Delegation an Unteragenten (einzeln oder als Workflow-Skript), wörtlich mit Zeitstempel | automatisch über Claude-Code-Hooks (`.claude/settings.json`, Skript `.claude/hooks/ki_protokoll.py`) |
 | `workflows/` | Skripte der Workflows mit allen Agenten-Aufträgen im Wortlaut | legt Claude bei jedem Workflow ab |
 | Abschnitt 1 und 2 | lesbare Fassung mit Vorgehen, Ergebnis und Prüfstatus | pflegt Claude nach jedem Prompt (Anweisung in `CLAUDE.md`) |
-| Abschnitt 3 | KI-Nutzung in anderen Tools | trägt jede Person selbst ein |
+| Abschnitt 3 | KI-Nutzung in anderen Tools | persönliche Listen nach `vorlage-ki-nutzung.md`, übertragen von Yannick |
 | Git-Verlauf | wann welche Datei entstanden ist | jeder Arbeitsschritt wird committet |
 
 Die automatische Protokollierung wurde während Prompt 03 eingerichtet. Die Einträge 01–03 sind deshalb im Rohprotokoll
