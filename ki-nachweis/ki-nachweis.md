@@ -51,6 +51,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 29 | 14.10.2026 | Yannick | Einteilung der Bündel für Fallstudie 1 | – | Namen in 6 Dateien eingetragen, PDFs neu erzeugt |
 | 30 | 14.10.2026 | Yannick | Frage: Was soll ich als erstes machen? | – | Antwort im Chat (keine Dateien geändert) |
 | 31 | 14.10.2026 | Yannick | Rückmeldung: Organisatorisches geklärt; Lukas plant echte Interviews | – | Interviews in der Aufgabenbeschreibung als geplant eingetragen |
+| 32 | 15.10.2026 | Yannick | Lukas arbeitet allein; Frage: Wie erhebe ich die Daten für die Persona? | D06 (Workflow) | Anleitung zur Datenerhebung – *Recherche läuft* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -489,6 +490,19 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 32 – 15.10.2026 – Yannick
+
+> 1. Lukas arbeitet erstmal alleine an seinem Thema seine Arbeit kriegst du dann wenn er fertig ist
+> 2. Wie erhebe ich die Daten für die Persona?
+
+- **Vorgehen Claude:** Zu 1 zur Kenntnis genommen; keine Nachfragen mehr zum Bündel B, Ergebnisse kommen später von
+  Lukas. Hinweis gegeben: Für die KI-simulierten Befragten braucht er weiterhin die Persona-Kurzfassung (Fr 16.10.).
+  Zu 2 hat Claude die Zugangswege nicht aus dem Modellwissen beschrieben, sondern per Workflow recherchieren und gegenprüfen
+  lassen (D06). Grund: Zugänge (Hochschullizenzen, Registrierungen) und Inhalte ändern sich.
+- **Ergebnis:** *Recherche läuft*
+- **Unteragenten:** D06
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -504,6 +518,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
 | D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
 | D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | 15 offene Punkte (8 mittel/niedrig neue Widersprüche in weiteren Dateien, 1 falsche Zählung in D04); alle umgesetzt | Claude: Zählung nachgerechnet, PDFs neu erzeugt und verglichen |
+| D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -643,6 +658,17 @@ steht hier mit dem wörtlichen Auftrag.
   Alle 15 Punkte umgesetzt. Dossier-PDF neu erzeugt und per Textvergleich mit dem alten geprüft: nur die zwei
   beabsichtigten Stellen geändert, weiter 34 Seiten. Aufgaben-PDFs neu erzeugt (8 bzw. 5 Seiten; die alte Übersicht
   nach einem Überlauf auf 6 Seiten gekürzt). Vorlage erneut mit pandoc gerendert: zwei Codeblöcke, Struktur intakt.
+
+### D06 – 15.10.2026 – ausgelöst durch Prompt 32
+
+- **Art:** Workflow „persona-datenquellen“: drei Recherche-Agenten mit Websuche (Zugänge über die HSKL, freie Markt-
+  und Mediadaten, Quellen zur HOLY-Kundschaft), danach je Bereich ein Prüf-Agent, der jede Angabe selbst nachprüft.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-15_persona-datenquellen.js`](workflows/2026-10-15_persona-datenquellen.js)
+  und automatisch im Rohprotokoll.
+- **Vorgaben:** jede Aussage mit URL und Abrufdatum, Ungeprüftes kennzeichnen, keine Zahlen erfinden, keine Dateien
+  ändern.
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
