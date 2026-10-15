@@ -1,0 +1,637 @@
+/* =============================================================================
+   css/folien/13-backup.css – Gestaltung der Backup-Folien B1–B7
+   -----------------------------------------------------------------------------
+   Gehört zu folien/13-backup.html und js/folien/13-backup.js.
+   Nur Tokens aus css/tokens.css (keine festen Farben oder Schriften) – so
+   passt alles in allen Themen (editorial, bento, keynote), hell und dunkel,
+   und mit jeder Markenfarbe.
+
+   Aufbau
+     1. Gemeinsam: Abstände, Tabellen (Zebra, Kopf), Pillen, Sprung-Knöpfe
+     2. B1 Methodik        5. B4 Repertory Grid      8. B7 Quellen
+     3. B2 Prompt-Log      6. B5 Laddering           9. Themen bento/keynote
+     4. B3 Datenquellen    7. B6 Kommunikationsanalyse  10. Druck
+
+   Schritte: Unsichtbare Auslöser <span class="bk-zustand bk-z1" data-schritt="1">
+   bekommen von der Engine die Klasse .schritt-an. Die Regeln
+   „#b4:has(.bk-z1.schritt-an) …“ schalten damit die Hervorhebungen –
+   auch im Druck (Endzustand) und beim Rücksprung.
+   ============================================================================= */
+
+
+/* ---------------------------------------------------------------------------
+   1. GEMEINSAM
+   --------------------------------------------------------------------------- */
+.folie.bk > .folie-inhalt { gap: var(--abstand-4); }
+/* Grundfarbe hinter den Tabellen (für Fugen zwischen Zellen) */
+.folie.bk { --bk-grund: var(--f-hintergrund); }
+[data-thema="bento"] .folie.bk,
+[data-thema="keynote"] .folie.bk { --bk-grund: var(--f-karte); }
+.bk-zustand { display: none; }
+
+/* Zwischenüberschrift über Tabellen/Blöcken (Metaangabe, Kicker-Stil) */
+.folie.bk .bk-zwischentitel {
+  margin: 0 0 10px;
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-text-2);
+}
+
+/* ---- Tabellen: Grundstil auf .tabelle der Engine aufgebaut ---- */
+.folie.bk .bk-tabelle {
+  font-size: var(--groesse-tabelle);          /* 24 px – Backup-Mindestmaß 22 px */
+  line-height: 1.25;
+  /* .tabelle der Engine setzt tabular-nums für die ganze Tabelle – in Inter
+     werden dadurch auch Bindestriche breit („Recherche - Dossier“).
+     Tabellenziffern daher nur in Zahlenzellen (.zahl). */
+  font-variant-numeric: normal;
+}
+.folie.bk .bk-tabelle th,
+.folie.bk .bk-tabelle td {
+  padding: 9px 14px;
+  vertical-align: middle;
+  white-space: nowrap;                         /* Zeilen bleiben einzeilig = ruhiges Raster */
+  transition: background-color var(--dauer-mittel) var(--kurve), color var(--dauer-mittel) var(--kurve), box-shadow var(--dauer-mittel) var(--kurve);
+}
+.folie.bk .bk-tabelle thead th { padding-top: 6px; padding-bottom: 10px; vertical-align: bottom; }
+/* Zeilenköpfe im Körper (erste Spalte) */
+.folie.bk .bk-tabelle tbody th {
+  text-align: left;
+  font-weight: var(--gewicht-fett);
+  color: var(--f-text);
+}
+/* Zebra-Streifen: jede zweite Zeile leicht getönt */
+.folie.bk .bk-tabelle tbody tr:nth-child(even) > * { background: var(--f-flaeche); }
+/* Zahlen rechtsbündig in Tabellenziffern */
+.folie.bk .bk-tabelle .zahl { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+/* Dateinamen nie trennen */
+.folie.bk .bk-datei { white-space: nowrap; }
+
+/* Pillen „belegt“ / „Beispiel“ */
+.bk-stand {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border: var(--linie-fein) solid currentColor;
+  border-radius: var(--radius-pille);
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-meta);
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.bk-stand--belegt { color: var(--f-erfolg); }
+.bk-stand--beispiel { color: var(--f-warnung); border-style: dashed; }
+
+/* Knopf „Zu Folie …“ unten rechts in der Fußzeile */
+.bk-sprung {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 18px 0 14px;
+  border: var(--linie-fein) solid var(--f-linie);
+  border-radius: var(--radius-pille);
+  background: var(--f-hintergrund);
+  color: var(--f-akzent);
+  font: 650 var(--groesse-meta)/1 var(--schrift-text);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color var(--dauer-kurz) var(--kurve), background-color var(--dauer-kurz) var(--kurve);
+}
+.bk-sprung .icon { width: 22px; height: 22px; }
+.bk-sprung:hover { border-color: var(--f-akzent); background: var(--f-akzent-flaeche); }
+.bk-sprung:focus-visible,
+.bk-folienlink:focus-visible { outline: 3px solid var(--f-fokus); outline-offset: 3px; }
+.bk-sprung[hidden] { display: none; }
+/* Während der Vorführung ruht die Maus: Knopf tritt zurück, bleibt aber lesbar */
+html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
+
+
+/* ---------------------------------------------------------------------------
+   2. B1 · METHODIK & BEGRÜNDUNG
+   --------------------------------------------------------------------------- */
+#b1 .bk1-lead {
+  margin: 0;
+  font-size: var(--groesse-text-min);
+  line-height: 1.35;
+  color: var(--f-text-2);
+}
+#b1 .bk1-lead b { color: var(--f-text); font-weight: var(--gewicht-fett); }
+
+#b1 .bk1-spalten {
+  flex: 1;
+  min-height: 0;
+  margin-top: var(--abstand-2);
+  gap: var(--abstand-6);
+  align-items: stretch;
+}
+#b1 .bk1-spalte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-4);
+  min-width: 0;
+  padding-top: 18px;
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+}
+#b1 .bk1-kopf {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--f-text);
+}
+#b1 .bk1-nr {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  color: var(--f-akzent);
+}
+#b1 .bk1-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-text-min);
+  line-height: 1.3;
+  color: var(--f-text);
+}
+#b1 .bk1-liste > li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+}
+#b1 .bk1-liste .icon { width: 28px; height: 28px; margin-top: 3px; stroke-width: 2.5; }
+#b1 .bk1-ja .icon { color: var(--f-erfolg); }
+#b1 .bk1-nein .icon { color: var(--f-fehler); }
+#b1 .bk1-liste b { font-weight: var(--gewicht-fett); }
+/* Spiegelstriche in Akzentfarbe (Spalten 2 und 3) */
+#b1 .bk1-liste--punkte > li::before {
+  content: "";
+  width: 20px;
+  height: var(--linie-stark);
+  margin-top: 0.62em;
+  background: var(--f-akzent);
+}
+
+/* Beleg aus dem Dossier (Schritt 1) – unten in Spalte 2 */
+#b1 .bk1-beleg {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 22px 16px;
+  border-radius: var(--radius-m);
+  background: var(--f-akzent-flaeche);
+  box-shadow: inset 4px 0 0 var(--f-akzent);
+}
+#b1 .bk1-beleg-titel {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.06em;
+  text-transform: var(--kicker-versalien);
+  color: var(--f-akzent);
+}
+#b1 .bk1-zahlen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--abstand-4); }
+#b1 .bk1-zahl { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+#b1 .bk1-zahl-wert {
+  font-family: var(--schrift-zahl);
+  font-size: 56px;
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-akzent);
+}
+#b1 .bk1-zahl-text { font-size: var(--groesse-text-min); line-height: 1.2; color: var(--f-text); }
+
+
+/* ---------------------------------------------------------------------------
+   3. B2 · PROMPT-LOG
+   --------------------------------------------------------------------------- */
+#b2 .bk2-tabelle { table-layout: auto; }
+#b2 .bk2-id { width: 140px; }
+#b2 .bk2-folie { width: 110px; text-align: center; }
+#b2 .bk2-stand { width: 150px; }
+#b2 tbody .bk2-id { font-family: var(--schrift-zahl); font-variant-numeric: lining-nums; }
+#b2 tr.ist-belegt .bk2-id { color: var(--f-akzent); }
+#b2 tbody .bk2-tool { color: var(--f-text-2); }
+
+/* Folien-Nummer als Sprung (nur, wenn die Folie im Deck ist) */
+.bk-folienlink {
+  padding: 0 2px;
+  border: 0;
+  border-bottom: var(--linie-fein) solid currentColor;
+  background: none;
+  color: var(--f-akzent);
+  font: inherit;
+  font-family: var(--schrift-zahl);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.bk-folienlink:hover { background: var(--f-akzent-flaeche); }
+.bk-folie-text { font-family: var(--schrift-zahl); font-variant-numeric: lining-nums tabular-nums; }
+
+/* Schritt 1: Spalte „Prüfung“ hervorheben */
+#b2:has(.bk-z1.schritt-an) .bk2-tabelle td.bk2-pruefung {
+  background: var(--f-akzent-flaeche);
+  color: var(--f-text);
+  font-weight: 560;
+}
+#b2:has(.bk-z1.schritt-an) .bk2-tabelle thead th.bk2-pruefung {
+  color: var(--f-akzent);
+  box-shadow: inset 0 -3px 0 var(--f-akzent);
+}
+
+/* Verweis auf den vollständigen KI-Nachweis */
+#b2 .bk2-verweis {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto;
+  padding: 14px 22px;
+  border: var(--linie-fein) solid var(--f-linie);
+  border-radius: var(--radius-m);
+  background: var(--f-hintergrund);
+}
+#b2 .bk2-verweis .icon { width: 34px; height: 34px; color: var(--f-akzent); }
+#b2 .bk2-verweis p { margin: 0; font-size: var(--groesse-text-min); line-height: 1.3; color: var(--f-text-2); }
+#b2 .bk2-verweis b { color: var(--f-text); font-weight: var(--gewicht-fett); }
+
+
+/* ---------------------------------------------------------------------------
+   4. B3 · DATENQUELLEN PERSONA (gruppiert nach Dimension)
+   --------------------------------------------------------------------------- */
+#b3 .bk3-tabelle tbody tr > * { border-bottom: 0; }
+#b3 .bk3-tabelle tbody tr.ist-gruppenanfang > * { border-top: var(--linie-fein) solid var(--f-linie); }
+#b3 .bk3-tabelle tbody tr:first-child > * { border-top: 0; }
+#b3 .bk3-tabelle tbody tr:last-child > * { border-bottom: var(--linie-fein) solid var(--f-linie); }
+/* Zebra je Gruppe statt je Zeile (gleiche Dimension = gleiche Fläche) */
+#b3 .bk3-tabelle tbody tr:nth-child(even) > * { background: transparent; }
+#b3 .bk3-tabelle tbody tr.bk3-gruppe-b > * { background: var(--f-flaeche); }
+#b3 .bk3-dim { width: 230px; }
+#b3 tbody .bk3-dim { font-weight: var(--gewicht-fett); }
+#b3 .bk3-jahr { width: 90px; }
+#b3 tbody .bk3-jahr { font-family: var(--schrift-zahl); }
+#b3 .bk3-nr { margin-left: 10px; font-size: var(--groesse-meta); color: var(--f-text-2); }
+#b3 tbody .bk3-basis { color: var(--f-text-2); }
+#b3 .bk3-status { width: 170px; }
+
+/* Status mit Icon (gesichert / korrigiert / unsicher) */
+.bk-status { display: inline-flex; align-items: center; gap: 8px; font-size: var(--groesse-meta); font-weight: 650; }
+.bk-status .icon { width: 22px; height: 22px; stroke-width: 2.5; }
+.bk-status--gesichert { color: var(--f-erfolg); }
+.bk-status--korrigiert { color: var(--f-text-2); }
+.bk-status--unsicher { color: var(--f-warnung); }
+
+/* Schritt 1: Kernbelege (Gründeraussagen) */
+#b3:has(.bk-z1.schritt-an) .bk3-tabelle tr.ist-kern > :not(.bk3-dim) { background: var(--f-akzent-flaeche); }
+#b3:has(.bk-z1.schritt-an) .bk3-tabelle tr.ist-kern > td:nth-child(2) { box-shadow: inset 5px 0 0 var(--f-akzent); }
+/* Schritt 2: nur mit Vorsicht nutzen (korrigiert / unsicher) */
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > :not(.bk3-dim) { background: color-mix(in oklab, var(--f-warnung) 11%, var(--f-hintergrund)); }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > td:nth-child(2) { box-shadow: inset 5px 0 0 var(--f-warnung); }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk3-befund { color: var(--f-text); }
+
+/* Hinweis auf die Datenlücke unter der Tabelle */
+#b3 .bk3-luecke {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: auto 0 0;
+  font-size: var(--groesse-text-min);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+#b3 .bk3-luecke .icon { width: 30px; height: 30px; color: var(--f-akzent); }
+#b3 .bk3-luecke b { color: var(--f-text); font-weight: var(--gewicht-fett); }
+
+
+/* ---------------------------------------------------------------------------
+   5. B4 · REPERTORY GRID (Mittelwerte + Auswertung)
+   --------------------------------------------------------------------------- */
+#b4 .bk4-tabelle { font-size: 26px; }
+#b4 .bk4-tabelle tbody th,
+#b4 .bk4-tabelle tbody td { padding-top: 14px; padding-bottom: 14px; }
+#b4 .bk4-tabelle thead th { font-size: var(--groesse-meta); }
+#b4 .bk4-gruppenkopf th {
+  padding-bottom: 6px;
+  border-bottom: var(--linie-fein) solid var(--f-linie);
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+#b4 .bk4-gruppenkopf th.bk4-leer { border-bottom: 0; }
+#b4 .bk4-gruppe--auswertung { color: var(--f-akzent); }
+#b4 .bk4-konstrukt { width: 1%; }
+#b4 tbody .bk4-konstrukt { font-weight: var(--gewicht-text); }
+#b4 .bk4-strich { color: var(--f-text-2); }
+#b4 .bk4-pol--rechts { font-weight: var(--gewicht-fett); }
+#b4 .bk4-n { color: var(--f-text-2); }
+#b4 .bk4-el--marke { color: var(--f-akzent); font-weight: var(--gewicht-fett); }
+#b4 .bk4-schnitt { box-shadow: inset var(--linie-fein) 0 0 var(--f-linie); font-style: italic; }
+#b4 .bk4-el--ideal { font-weight: var(--gewicht-fett); }
+/* Trennlinie vor der Auswertung */
+#b4 .bk4-tabelle tr > .bk4-wert:nth-last-child(4) { box-shadow: inset var(--linie-stark) 0 0 var(--f-linie-stark); }
+#b4 .bk4-ergebnis { width: 1%; text-align: left; }
+
+/* Ergebnis-Pillen erscheinen erst mit Schritt 1 */
+#b4 .bk4-pille {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 14px;
+  border-radius: var(--radius-pille);
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-meta);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  opacity: 0;
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+#b4 .bk4-pille--attribut { background: var(--f-akzent); color: var(--f-auf-akzent); }
+#b4 .bk4-pille--hinweis { border: var(--linie-fein) dashed var(--f-warnung); color: var(--f-warnung); }
+#b4 .bk4-pille--nein { color: var(--f-text-2); }
+#b4:has(.bk-z1.schritt-an) .bk4-pille { opacity: 1; }
+
+/* Schritt 1: Attribute hinterlegen, verfehlte Kriterien markieren */
+#b4:has(.bk-z1.schritt-an) .bk4-tabelle tr.ist-attribut > * { background: var(--f-akzent-flaeche); }
+#b4:has(.bk-z1.schritt-an) .bk4-tabelle tr.ist-attribut > :first-child { box-shadow: inset 5px 0 0 var(--f-akzent); }
+#b4:has(.bk-z1.schritt-an) .bk4-tabelle .ist-verfehlt,
+#b4 .bk4-verfehlt-muster {
+  color: var(--f-warnung);
+  text-decoration: underline dashed var(--f-warnung);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+/* Legenden unter der Tabelle (Metaangaben) */
+#b4 .bk4-legende {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-tabelle);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+#b4 .bk4-legende p { margin: 0; }
+#b4 .bk4-legende b { color: var(--f-text); font-weight: var(--gewicht-fett); }
+#b4 .bk4-verfehlt-muster { margin-left: 18px; font-weight: 650; }
+#b4 .bk4-triaden { word-spacing: 0.06em; }
+
+
+/* ---------------------------------------------------------------------------
+   6. B5 · LADDERING (Leitern, Codierung, Implikationsmatrix)
+   Maße so gewählt, dass beide Spalten in die Bühne passen:
+   Matrix = 240 px Zeilenkopf + 3 × 158 px; Leitern füllen den Rest.
+   --------------------------------------------------------------------------- */
+#b5 .bk5 {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  align-items: start;
+}
+#b5 .bk5-links,
+#b5 .bk5-rechts { display: flex; flex-direction: column; min-width: 0; }
+#b5 .bk5-links > .bk-zwischentitel { margin-top: var(--abstand-4); }
+#b5 .bk-tabelle th,
+#b5 .bk-tabelle td { padding-top: 6px; padding-bottom: 6px; }
+
+/* Kopf der Leitern: Überschrift links, Legende (hohler/voller Punkt) rechts */
+#b5 .bk5-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: var(--abstand-4); }
+#b5 .bk5-legende {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: var(--groesse-meta);
+  color: var(--f-text-2);
+}
+#b5 .bk5-legende .bk5-art + .bk5-art,
+#b5 .bk5-legende .bk5-art--echt { margin-left: 14px; }
+
+/* Farben der vier Ebenen (wie Folie 07: neutral → hart → weich → Akzent) */
+#b5 .bk5-glied--0 { color: var(--f-text); font-weight: var(--gewicht-fett); }
+#b5 .bk5-glied--1 { color: var(--f-hart); }
+#b5 .bk5-glied--2 { color: var(--f-weich); }
+#b5 .bk5-glied--3 { color: var(--f-akzent); font-weight: var(--gewicht-fett); }
+
+/* Leitern: Person + Kette in einer Zeile */
+#b5 .bk5-person { width: 1%; }
+#b5 tbody .bk5-person { font-family: var(--schrift-zahl); }
+#b5 tbody .bk5-person > span:first-child { display: inline-block; min-width: 1.5em; }
+/* Punkt: hohl = KI-simuliert, voll = echtes Interview */
+#b5 .bk5-art {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  border: var(--linie-fein) solid var(--f-text-2);
+  border-radius: 50%;
+  vertical-align: 1px;
+}
+#b5 .bk5-art--echt { border-color: var(--f-erfolg); background: var(--f-erfolg); }
+#b5 .bk5-pfeil { margin: 0 5px; color: var(--f-text-2); }
+#b5 .bk5-code { color: var(--f-akzent); font-weight: var(--gewicht-fett); }
+#b5 .bk5-original { color: var(--f-text-2); }
+
+/* Implikationsmatrix: drei Blöcke (Ebene → nächste Ebene) */
+#b5 .bk5-matrix { width: auto; table-layout: fixed; }
+#b5 .bk5-matrix tbody tr:nth-child(even) > * { background: transparent; }  /* kein Zebra in der Matrix */
+#b5 .bk5-matrix th,
+#b5 .bk5-matrix td { padding-left: 8px; padding-right: 8px; }
+#b5 .bk5-matrix .bk5-blockkopf > th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: var(--groesse-meta);
+  font-weight: 650;
+  line-height: 1.15;
+  white-space: normal;
+  vertical-align: bottom;
+  border-bottom: var(--linie-stark) solid var(--f-linie-stark);
+}
+#b5 .bk5-matrix tbody + tbody .bk5-blockkopf > th { padding-top: 16px; }
+#b5 .bk5-ecke { width: 240px; text-align: left; }
+#b5 .bk5-ecke > span { display: block; font-family: var(--schrift-kicker); letter-spacing: 0.04em; text-transform: var(--kicker-versalien); }
+#b5 .bk5-ziel { width: 158px; text-align: center; }
+#b5 .bk5-von { font-size: var(--groesse-meta); font-weight: 600; padding-left: 14px; }
+#b5 .bk5-wert {
+  text-align: center;
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-tabelle);
+  font-weight: 600;
+}
+#b5 .bk5-wert.ist-null { color: var(--f-text-2); font-weight: 400; }
+/* schmale Fuge zwischen den Zellen, damit benachbarte Hervorhebungen getrennt bleiben */
+#b5 .bk5-matrix td.bk5-wert { border-left: 4px solid var(--bk-grund); border-right: 4px solid var(--bk-grund); }
+/* Kopf der Leitern: Ebenen-Namen in ihren Farben (statt Grau) */
+#b5 .bk5-leitern thead th.bk5-kette > span:not(.bk5-pfeil) { font-weight: var(--kicker-gewicht); }
+/* Schritt 1: Cut-off – Verbindungen ab 2 Nennungen hinterlegt */
+#b5:has(.bk-z1.schritt-an) .bk5-wert.ist-ueber { background: var(--f-akzent-flaeche); color: var(--f-akzent); }
+#b5:has(.bk-z1.schritt-an) .bk5-wert.ist-unter {
+  color: var(--f-warnung);
+  text-decoration: line-through 2px;
+}
+/* Schritt 2: stärkste Leiter in Tabelle und Matrix */
+#b5:has(.bk-z2.schritt-an) .bk5-leitern tr.ist-staerkste > * { background: var(--f-akzent-flaeche); }
+#b5:has(.bk-z2.schritt-an) .bk5-leitern tr.ist-staerkste > :first-child { box-shadow: inset 5px 0 0 var(--f-akzent); }
+#b5:has(.bk-z2.schritt-an) .bk5-wert.ist-staerkste { box-shadow: inset 0 0 0 3px var(--f-akzent); color: var(--f-akzent); }
+
+/* Legende Cut-off unter der Matrix */
+#b5 .bk5-cutoff {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 0;
+  font-size: var(--groesse-meta);
+  color: var(--f-text-2);
+}
+#b5 .bk5-cutoff-muster {
+  flex: none;
+  width: 34px;
+  height: 24px;
+  border-radius: var(--radius-s);
+  background: var(--f-akzent-flaeche);
+  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-akzent);
+}
+
+
+/* ---------------------------------------------------------------------------
+   7. B6 · CODIERTABELLE KOMMUNIKATIONSANALYSE
+   --------------------------------------------------------------------------- */
+#b6 .bk6-tabelle tbody th,
+#b6 .bk6-tabelle tbody td { padding-top: 12px; padding-bottom: 12px; }
+#b6 tbody .bk6-nr { font-family: var(--schrift-zahl); font-variant-numeric: lining-nums tabular-nums; }
+#b6 tbody .bk6-kanal { font-weight: 600; }
+#b6 tbody .bk6-format,
+#b6 tbody .bk6-cta { color: var(--f-text-2); }
+/* Schritt 1: Beiträge mit dem Schlüsselbild-Kandidaten */
+#b6:has(.bk-z1.schritt-an) .bk6-tabelle tr.ist-schluesselbild > * { background: var(--f-akzent-flaeche); }
+#b6:has(.bk-z1.schritt-an) .bk6-tabelle tr.ist-schluesselbild > :first-child { box-shadow: inset 5px 0 0 var(--f-akzent); }
+#b6:has(.bk-z1.schritt-an) .bk6-tabelle tr.ist-schluesselbild .bk6-motiv { color: var(--f-akzent); font-weight: var(--gewicht-fett); }
+
+#b6 .bk6-infos { margin-top: auto; gap: var(--abstand-6); }
+#b6 .bk6-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+}
+#b6 .bk6-info--ergebnis { border-top-color: var(--f-akzent); }
+#b6 .bk6-info-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  color: var(--f-akzent);
+}
+#b6 .bk6-info-kicker .icon { width: 24px; height: 24px; }
+#b6 .bk6-info-text { margin: 0; font-size: var(--groesse-text-min); line-height: 1.3; color: var(--f-text); }
+
+
+/* ---------------------------------------------------------------------------
+   8. B7 · QUELLENVERZEICHNIS
+   --------------------------------------------------------------------------- */
+#b7 .bk7 { flex: 1; min-height: 0; align-items: start; }
+#b7 .bk7-block { min-width: 0; }
+#b7 .bk7-rechts { display: flex; flex-direction: column; gap: var(--abstand-6); min-width: 0; }
+#b7 .bk7-literatur,
+#b7 .bk7-liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--f-text);
+}
+/* Literatur: hängender Einzug, Autor fett */
+#b7 .bk7-literatur { display: flex; flex-direction: column; gap: 16px; font-size: 26px; line-height: 1.32; }
+#b7 .bk7-literatur > li { padding-left: 1.4em; text-indent: -1.4em; }
+#b7 .bk7-literatur b,
+#b7 .bk7-liste b { font-weight: var(--gewicht-fett); }
+#b7 .bk7-literatur i { font-style: italic; }
+/* Noch zu ergänzende Angaben: orange gestrichelt (vor der Präsentation löschen) */
+#b7 .bk7-ergaenzen {
+  color: var(--f-warnung);
+  font-weight: 650;
+  text-decoration: underline dashed;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+#b7 .bk7-liste { display: flex; flex-direction: column; gap: 12px; font-size: var(--groesse-tabelle); line-height: 1.32; }
+#b7 .bk7-liste > li { padding-left: 22px; position: relative; }
+#b7 .bk7-liste > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 12px;
+  height: var(--linie-fein);
+  background: var(--f-akzent);
+}
+#b7 .bk7-liste--klein { font-size: var(--groesse-meta); color: var(--f-text-2); }
+#b7 .bk7-liste--klein b { color: var(--f-text); }
+#b7 .bk7-rechts .bk7-block { padding-top: 16px; border-top: var(--linie-fein) solid var(--f-linie); }
+#b7 .sp-7.bk7-block { padding-top: 16px; border-top: var(--linie-stark) solid var(--f-linie-stark); }
+
+
+/* ---------------------------------------------------------------------------
+   9. THEMEN „BENTO“ UND „KEYNOTE“: Tabellen und Blöcke als Karten
+   --------------------------------------------------------------------------- */
+[data-thema="bento"] .folie.bk .bk-tabellenplatz,
+[data-thema="keynote"] .folie.bk .bk-tabellenplatz {
+  padding: 0 16px 4px;
+  border: var(--karte-rand) solid var(--f-karte-rand);
+  border-radius: var(--radius-l);
+  background: var(--f-karte);
+  box-shadow: var(--schatten-1);
+}
+[data-thema="bento"] #b5 .bk-tabellenplatz,
+[data-thema="keynote"] #b5 .bk-tabellenplatz { padding: 0 6px 2px; }
+[data-thema="bento"] #b2 .bk2-verweis,
+[data-thema="keynote"] #b2 .bk2-verweis { padding-top: 10px; padding-bottom: 10px; border-radius: var(--radius-l); }
+[data-thema="bento"] .folie.bk .bk-tabelle tbody tr:last-child > *,
+[data-thema="keynote"] .folie.bk .bk-tabelle tbody tr:last-child > * { border-bottom: 0; }
+[data-thema="bento"] #b1 .bk1-spalten,
+[data-thema="keynote"] #b1 .bk1-spalten { gap: var(--abstand-5); }
+[data-thema="bento"] #b1 .bk1-spalte,
+[data-thema="keynote"] #b1 .bk1-spalte {
+  padding: 18px 22px 18px;
+  border: var(--karte-rand) solid var(--f-karte-rand);
+  border-radius: var(--radius-l);
+  background: var(--f-karte);
+  box-shadow: var(--schatten-1);
+}
+[data-thema="bento"] .bk-stand,
+[data-thema="keynote"] .bk-stand { border-radius: var(--radius-pille); }
+
+
+/* ---------------------------------------------------------------------------
+   10. DRUCK: Bedienelemente ausblenden (Endzustand zeigt die Engine)
+   --------------------------------------------------------------------------- */
+html.druckmodus .bk-sprung { display: none !important; }
+html.druckmodus .bk-folienlink { border-bottom-color: transparent; }
+html.druckmodus #b4 .bk4-pille { transition: none; }

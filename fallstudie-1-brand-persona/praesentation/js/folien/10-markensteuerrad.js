@@ -13,7 +13,8 @@
       Nummern und Notizen automatisch neu.
 
    2. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
-      Nur wenn in der Wortwolke von Folie 1b Wörter stehen, gibt es einen
+      Nur wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true)
+      und in ihrer Wortwolke Wörter stehen, gibt es einen
       zusätzlichen Schritt: links „Unsere Analyse“ (Markenkern + wie viele Zurufe
       zu unserem Steuerrad passen), rechts die Zurufe (Treffer hervorgehoben).
       Im Druck/PDF bleibt stattdessen das fertige Steuerrad stehen.
@@ -119,12 +120,14 @@
         });
         if (!neu) return;
         markieren(zustand);
+        trennerGruppieren(rad);
         Deck.schritteNeu(folie);
         requestAnimationFrame(function () { platzieren(zustand); });
       });
       beobachter.observe(rad, { childList: true });
 
       markieren(zustand);
+      trennerGruppieren(rad);
       u.messen(rad, function () { platzieren(zustand); });
 
       ['deck:groesse', 'deck:thema'].forEach(function (name) {
@@ -192,11 +195,23 @@
     var rad = zustand.rad;
     var hub = rad.querySelector(':scope > .sr-hub');
     if (!hub || !hub.offsetWidth) return;
+    trennerAmZeilenende(rad);
     var ebene = zustand.ebene;
     ebene.style.left = hub.offsetLeft + 'px';
     ebene.style.top = hub.offsetTop + 'px';
     ebene.style.width = hub.offsetWidth + 'px';
     ebene.style.height = hub.offsetHeight + 'px';
+
+    /* Ring des Rads (SVG-Kreis): Die Notiz darf über die Kartenbreite hinaus
+       bis kurz vor den Ring reichen – dann bleibt der Text auch in Themen mit
+       breiterer Schrift einzeilig */
+    var platz = hub.querySelector('.sr-rad-platz');
+    var ring = hub.querySelector('.sr-ring');
+    var ringLinks = null, ringRechts = null;
+    if (platz && ring && ring.cx && ring.r) {
+      ringLinks = platz.offsetLeft + ring.cx.baseVal.value - ring.r.baseVal.value;
+      ringRechts = platz.offsetLeft + ring.cx.baseVal.value + ring.r.baseVal.value;
+    }
 
     zustand.notizen.forEach(function (n) {
       var oben = hub.querySelector('.sr-karte--' + (n.seite === 'links' ? 'lo' : 'ro'));
@@ -206,10 +221,12 @@
       var obenUnterkante = oben.offsetTop + oben.offsetHeight / 2;
       var untenOberkante = unten.offsetTop - unten.offsetHeight / 2;
       var breite = oben.offsetWidth;
+      if (n.seite === 'links' && ringLinks !== null) breite = Math.max(breite, Math.round(ringLinks - 24 - oben.offsetLeft));
+      if (n.seite === 'rechts' && ringRechts !== null) breite = Math.max(breite, Math.round(oben.offsetLeft + oben.offsetWidth - ringRechts - 24));
       n.el.style.width = breite + 'px';
       n.el.style.top = Math.round((obenUnterkante + untenOberkante) / 2) + 'px';
       n.el.style.left = n.seite === 'links' ? oben.offsetLeft + 'px' : '';
-      n.el.style.right = n.seite === 'rechts' ? (hub.offsetWidth - oben.offsetLeft - breite) + 'px' : '';
+      n.el.style.right = n.seite === 'rechts' ? (hub.offsetWidth - oben.offsetLeft - oben.offsetWidth) + 'px' : '';
       /* Platz zwischen den Karten als Variable – das CSS zeichnet die
          gestrichelte Klammer genau so hoch */
       n.el.style.setProperty('--g6s-luecke-hoehe', Math.max(0, Math.round(untenOberkante - obenUnterkante - 24)) + 'px');
@@ -228,6 +245,33 @@
       if (seite.offsetTop + seite.offsetHeight > kartenOberkante - 10 && pille) {
         seite.style.top = Math.max(0, Math.round(pille.offsetTop - seite.offsetHeight / 2)) + 'px';
       }
+    });
+  }
+
+
+  /* Stichworte und ihr folgender Trenner „·“ bilden eine Gruppe, die nicht
+     umbrochen wird. So steht ein Trenner nie am Anfang einer Zeile; steht er
+     am Zeilenende, blendet trennerAmZeilenende() ihn aus. */
+  function trennerGruppieren(rad) {
+    Array.prototype.forEach.call(rad.querySelectorAll('.sr-karte-stichworte'), function (liste) {
+      Array.prototype.slice.call(liste.querySelectorAll(':scope > .sr-trenner')).forEach(function (trenner) {
+        var vorher = trenner.previousElementSibling;
+        if (!vorher || !vorher.classList.contains('sr-stichwort')) return;
+        var gruppe = document.createElement('span');
+        gruppe.className = 'g6s-gruppe';
+        liste.insertBefore(gruppe, vorher);
+        gruppe.appendChild(vorher);
+        gruppe.appendChild(trenner);
+      });
+    });
+  }
+  function trennerAmZeilenende(rad) {
+    Array.prototype.forEach.call(rad.querySelectorAll('.g6s-gruppe'), function (gruppe) {
+      var trenner = gruppe.querySelector('.sr-trenner');
+      var naechstes = gruppe.nextElementSibling;
+      if (!trenner) return;
+      trenner.classList.remove('g6s-trenner-aus');
+      if (naechstes && naechstes.offsetTop > gruppe.offsetTop + 4) trenner.classList.add('g6s-trenner-aus');
     });
   }
 
@@ -266,11 +310,20 @@
     return start.map(function (t) { return { text: typeof t === 'string' ? t : t.text }; }).filter(function (w) { return w.text; });
   }
 
+  /* Ist die Eingabe-Wortwolke (Folie 1b) Teil dieses Vortrags? Ausgeblendete
+     optionale Folien fehlen in Deck.folien(). So erscheinen alte Zurufe aus
+     einer Probe nicht, wenn Folie 1b gar nicht gezeigt wird. */
+  function wolkeImDeck(id) {
+    return Deck.folien().some(function (f) {
+      return !!(f.element && f.element.querySelector('.wortwolke[data-wortwolke="' + id + '"]:not([data-nur-anzeige])'));
+    });
+  }
+
   /* Gibt es Zurufe? Dann wird der Abgleich ein eigener (letzter) Schritt. */
   function abgleichPruefen(ctx, zustand) {
     var el = zustand.abgleichEl;
     if (!el) return;
-    var woerter = gespeicherteWoerter(ctx, zustand);
+    var woerter = wolkeImDeck(zustand.wolkeId) ? gespeicherteWoerter(ctx, zustand) : [];
     var an = woerter.length > 0;
     var schritt = String(zustand.schrittLuecken + 1);
     var vorher = el.getAttribute('data-schritt');

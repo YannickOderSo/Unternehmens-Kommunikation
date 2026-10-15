@@ -1,0 +1,258 @@
+/* =============================================================================
+   css/folien/11-fazit.css – nur für Folie f11 (Fazit & Empfehlungen)
+   -----------------------------------------------------------------------------
+   Drei Zeilen „Erkenntnis → Empfehlung“. Links die Lücke (rote Verweis-Pille
+   wie die Lücken-Nummern auf Folie 10), rechts die Empfehlung als Karte mit
+   Akzentstrich. Nur Variablen aus tokens.css verwenden.
+
+   Spaltenbreiten (bei Bedarf hier ändern – gelten für Kopfzeile und Zeilen):
+     --g6f-befund  Spalte „Erkenntnis“
+     --g6f-pfeil   Pfeil zwischen Erkenntnis und Empfehlung
+     --g6f-kanal   Spalte „Kanal“ (innerhalb der Karte, rechts)
+   ============================================================================= */
+
+#f11 .g6f {
+  --g6f-befund: 520px;
+  --g6f-pfeil: 84px;
+  --g6f-kanal: 300px;
+  --g6f-nr: 56px;
+  --g6f-polster-x: 32px;
+  --g6f-luecke: 22px;                /* Abstand zwischen den Zeilen */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+#f11 .g6f-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------------------------------------------------------------------------
+   Spaltenköpfe
+   --------------------------------------------------------------------------- */
+#f11 .g6f-kopfzeile {
+  display: grid;
+  grid-template-columns: var(--g6f-befund) var(--g6f-pfeil) minmax(0, 1fr) var(--g6f-kanal);
+  align-items: end;
+  padding-bottom: 12px;
+  margin-bottom: var(--g6f-luecke);
+  border-bottom: var(--linie-fein) solid var(--f-linie);
+}
+#f11 .g6f-spalte {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-text-2);
+}
+#f11 .g6f-spalte--befund { grid-column: 1; }
+/* „Was?“ beginnt dort, wo in der Karte der Titel beginnt (nach der Nummer) */
+#f11 .g6f-spalte--was {
+  grid-column: 3;
+  padding-left: calc(var(--g6f-polster-x) + var(--g6f-nr) + 20px);
+  color: var(--f-akzent);
+}
+#f11 .g6f-spalte--kanal { grid-column: 4; padding-left: 24px; color: var(--f-akzent); }
+
+/* ---------------------------------------------------------------------------
+   Zeilen
+   --------------------------------------------------------------------------- */
+#f11 .g6f-zeilen {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: var(--g6f-luecke);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#f11 .g6f-zeile {
+  display: grid;
+  grid-template-columns: var(--g6f-befund) var(--g6f-pfeil) minmax(0, 1fr);
+  align-items: center;
+  min-height: 0;
+}
+
+/* ----- Erkenntnis (links) ----- */
+#f11 .g6f-befund {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-right: 8px;
+}
+#f11 .g6f-befund-text {
+  margin: 0;
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--f-text);
+  text-wrap: balance;
+}
+
+/* Verweis-Pille = Knopf: springt zur Herleitung (Folie 10 bzw. 09b).
+   Rot wie die Lücken-Nummern im Steuerrad (Folie 10). */
+#f11 .g6f-verweis {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: var(--linie-fein) solid var(--f-fehler);
+  border-radius: var(--radius-pille);
+  background: var(--f-hintergrund);
+  color: var(--f-fehler);
+  font: inherit;
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--dauer-kurz) var(--kurve), color var(--dauer-kurz) var(--kurve);
+}
+#f11 .g6f-verweis > span { padding: 8px 14px; }
+#f11 .g6f-verweis-art { background: var(--f-fehler); color: var(--f-hintergrund); border-radius: var(--radius-pille) 0 0 var(--radius-pille); }
+#f11 .g6f-verweis-folie { text-transform: none; letter-spacing: 0.02em; }
+#f11 .g6f-verweis-folie::after { content: "\00a0→"; }
+#f11 .g6f-verweis:hover .g6f-verweis-folie,
+#f11 .g6f-verweis:focus-visible .g6f-verweis-folie {
+  background: color-mix(in oklab, var(--f-fehler) 12%, var(--f-hintergrund));
+  border-radius: 0 var(--radius-pille) var(--radius-pille) 0;
+}
+#f11 .g6f-verweis:focus-visible { outline: var(--linie-stark) solid var(--f-fokus); outline-offset: 4px; }
+/* Zielfolie fehlt (z. B. Testausgabe nur mit dieser Folie): kein Knopf-Verhalten */
+#f11 .g6f-verweis[aria-disabled="true"] { cursor: default; }
+
+/* ----- Pfeil Erkenntnis → Empfehlung ----- */
+#f11 .g6f-pfeil {
+  grid-column: 2;
+  width: 64px;
+  height: 36px;
+  justify-self: center;
+  overflow: visible;
+  fill: none;
+  stroke: var(--f-text-2);
+  stroke-width: var(--linie-stark);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--dauer-mittel) var(--kurve);
+}
+/* Pfeil der gerade besprochenen Empfehlung in Akzentfarbe */
+#f11 .g6f-zeile:has(> .g6f-empfehlung.schritt-aktuell) > .g6f-pfeil { stroke: var(--f-akzent); }
+html.druckmodus #f11 .g6f-pfeil { stroke: var(--f-text-2) !important; }
+
+/* ----- Leerer Platz für die Empfehlung (bis sie erscheint) ----- */
+#f11 .g6f-platz,
+#f11 .g6f-empfehlung {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: stretch;
+}
+#f11 .g6f-platz {
+  display: flex;
+  align-items: center;
+  padding-left: var(--g6f-polster-x);
+  border: var(--linie-fein) dashed var(--f-linie);
+  border-radius: var(--radius-l);
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+#f11 .g6f-platz span {
+  width: var(--g6f-nr);
+  font-family: var(--schrift-zahl);
+  font-size: 64px;
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  color: var(--f-linie);
+}
+#f11 .g6f-zeile:has(> .g6f-empfehlung.schritt-an) > .g6f-platz { opacity: 0; }
+html.druckmodus #f11 .g6f-platz { display: none; }
+
+/* ----- Empfehlung (Karte) ----- */
+#f11 .g6f-empfehlung {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: var(--g6f-nr) minmax(0, 1fr) calc(var(--g6f-kanal) - var(--g6f-polster-x));
+  align-items: center;
+  column-gap: 20px;
+  min-height: 0;
+  padding: 16px var(--g6f-polster-x);
+  border: var(--karte-rand) solid var(--f-karte-rand);
+  border-radius: var(--radius-l);
+  background: var(--f-karte);
+  box-shadow: inset 6px 0 0 var(--f-akzent);
+  transition: border-color var(--dauer-kurz) var(--kurve), box-shadow var(--dauer-kurz) var(--kurve);
+}
+[data-thema="bento"] #f11 .g6f-empfehlung,
+[data-thema="keynote"] #f11 .g6f-empfehlung { box-shadow: inset 6px 0 0 var(--f-akzent), var(--schatten-1); }
+/* die gerade besprochene Empfehlung: Rahmen in Akzentfarbe */
+#f11 .g6f-empfehlung.schritt-aktuell {
+  border-color: var(--f-akzent);
+  box-shadow: inset 6px 0 0 var(--f-akzent), 0 0 0 var(--linie-fein) var(--f-akzent);
+}
+html.druckmodus #f11 .g6f-empfehlung.schritt-aktuell {
+  border-color: var(--f-karte-rand);
+  box-shadow: inset 6px 0 0 var(--f-akzent);
+}
+
+#f11 .g6f-nr {
+  font-family: var(--schrift-zahl);
+  font-size: 64px;
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: var(--f-akzent);
+}
+/* Was? = Titel + Zeile „wie genau“. Die Zeile klappt nur bei der gerade
+   besprochenen Empfehlung auf (Zeilenhöhe 0fr → 1fr): Der Titel gleitet dabei
+   ein Stück nach oben, die Karte selbst bleibt gleich groß. Im Druck immer offen. */
+#f11 .g6f-was {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  row-gap: 0;
+  align-content: center;
+  min-width: 0;
+  transition: grid-template-rows var(--dauer-mittel) var(--kurve), row-gap var(--dauer-mittel) var(--kurve);
+}
+#f11 .g6f-was-titel {
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--f-text);
+}
+#f11 .g6f-wie {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  font-size: var(--groesse-text-min);
+  line-height: 1.25;
+  color: var(--f-text-2);
+  text-wrap: balance;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+#f11 .g6f-empfehlung.schritt-aktuell .g6f-was,
+html.druckmodus #f11 .g6f-was { grid-template-rows: auto 1fr; row-gap: 8px; }
+#f11 .g6f-empfehlung.schritt-aktuell .g6f-wie,
+html.druckmodus #f11 .g6f-wie {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dauer-mittel) var(--kurve) 180ms, visibility 0s;
+}
+
+#f11 .g6f-kanal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 24px;
+  border-left: var(--linie-fein) solid var(--f-linie);
+}
+#f11 .g6f-kanal .chip { background: var(--f-flaeche); }

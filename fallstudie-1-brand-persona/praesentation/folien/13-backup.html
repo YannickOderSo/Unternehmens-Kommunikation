@@ -1,0 +1,554 @@
+<!--
+  13-backup.html – Backup-Folien B1–B7 (liegen hinter der Schlussfolie)
+  =========================================================================
+  Die Aufgabe verlangt: „Dokumentieren Sie Ihre Prompts und begründen Sie Ihr
+  Vorgehen (Backup).“ Diese Folien werden nur bei Rückfragen gezeigt
+  (Übersicht mit Taste O → Rubrik „Backup“). Sie zählen nicht zur Redezeit
+  (data-zeit="0"). Bündel A sammelt die Inhalte; data-buendel nennt, aus
+  welchem Bündel der Inhalt stammt (wer bei Rückfragen antwortet).
+
+    B1  Methodik & Begründung des Vorgehens   (Inhalt: ../prompts.md, Abschnitt C)
+    B2  Prompt-Log (Auszug)                   (vollständig: ../../ki-nachweis/ki-nachweis.md)
+    B3  Datenquellen Persona                  (Recherche-Dossier Kap. 4)
+    B4  Repertory-Grid-Rohdaten               (passt zu Folie 06)
+    B5  Laddering-Leitern & Implikationsmatrix (passt zu Folie 07)
+    B6  Raster Kommunikationsanalyse          (passt zu Folie 09)
+    B7  Quellenverzeichnis                    (Literatur aus ../methoden.md)
+
+  SO ÄNDERN SIE DIE INHALTE
+  • B1 und B7: Texte direkt hier im HTML ändern.
+  • B2–B6: Die Tabellen baut js/folien/13-backup.js aus dem Block
+    <script type="application/json" class="daten"> unten in jeder Folie.
+    Dort nur Werte und Texte ändern – Spaltenbreiten und Farben regelt das
+    CSS (css/folien/13-backup.css). Zahlen mit Punkt schreiben (6.6), die
+    Folie zeigt sie im deutschen Format (6,6).
+  • B4 und B5 rechnen selbst: Mittelwert der Wettbewerber, Abstände,
+    Attribut ja/nein (B4) bzw. Cut-off und stärkste Leiter (B5).
+    Die Werte MÜSSEN zu Folie 06 bzw. 07 passen – bei Änderungen dort
+    hier dieselben Zahlen eintragen.
+  • „beispiel": true markiert eine Zeile als Beispiel (gestrichelte Pille
+    „Beispiel“). Erst wenn KEINE Zeile mehr Beispiel ist, die Pille
+    „Beispieldaten“ im Kicker löschen.
+  • Knopf „Zurück zu Folie …“ unten rechts: Ziel steht in data-bk-ziel
+    (Folien-ID). Fehlt die Zielfolie, verschwindet der Knopf von selbst.
+  • Der Markenname kommt aus marke.js (data-marke bzw. „[Marke]“ in den
+    Daten) – nie eintippen.
+-->
+
+<!-- ===================================================================
+     B1 · Methodik & Begründung des Vorgehens
+     Schritt 0: drei Spalten (Einsatz · Prüfung · Grenzen)
+     Schritt 1: Beleg – Gegenprüfung des Recherche-Dossiers (Zahlen zählen)
+     =================================================================== -->
+<section class="folie bk" id="b1" data-titel="Backup: Methodik & Begründung" data-feld="leer" data-zeit="0" data-buendel="A" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Methodik &amp; Begründung des Vorgehens</p>
+    <h2 class="titel">KI liefert Tempo, die Fakten prüfen wir selbst</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <p class="bk1-lead" data-animation="einblenden"><b>Desk Research</b> liefert die Fakten – jede Zahl mit Quelle und Jahr. <b>KI-Tools</b> beschleunigen und strukturieren.</p>
+
+    <div class="raster-3 bk1-spalten" data-staffel="120" data-animation="hoch">
+
+      <!-- Spalte 1: Wofür KI – und wofür nicht (Häkchen = genutzt, Kreuz = nicht genutzt) -->
+      <article class="bk1-spalte">
+        <h3 class="bk1-kopf"><span class="bk1-nr">01</span>Wofür KI – und wofür nicht</h3>
+        <ul class="bk1-liste">
+          <li class="bk1-ja"><svg class="icon" aria-hidden="true"><use href="#i-haken"/></svg><span><b>Recherche</b> beschleunigen – nur mit Quelle, jede geöffnet</span></li>
+          <li class="bk1-ja"><svg class="icon" aria-hidden="true"><use href="#i-haken"/></svg><span><b>Befragte simulieren</b> – Primärerhebung zeitlich nicht machbar, Basis ist die Persona</span></li>
+          <li class="bk1-ja"><svg class="icon" aria-hidden="true"><use href="#i-haken"/></svg><span><b>Codieren, verdichten</b> – die Auswahl trifft die Gruppe</span></li>
+          <li class="bk1-nein"><svg class="icon" aria-hidden="true"><use href="#i-schliessen"/></svg><span><b>Nicht rechnen</b> – Mittelwerte und Raten in Excel</span></li>
+          <li class="bk1-nein"><svg class="icon" aria-hidden="true"><use href="#i-schliessen"/></svg><span><b>Nicht</b> als Quelle für Fakten</span></li>
+        </ul>
+      </article>
+
+      <!-- Spalte 2: Qualitätssicherung + Beleg (Schritt 1) -->
+      <article class="bk1-spalte">
+        <h3 class="bk1-kopf"><span class="bk1-nr">02</span>Qualitätssicherung</h3>
+        <ul class="bk1-liste bk1-liste--punkte">
+          <li>Daten und Annahmen getrennt gekennzeichnet</li>
+          <li>Simulation mit 3–5 echten Kurzinterviews abgeglichen</li>
+          <li>Faktenstatus je Aussage, z.&nbsp;B. gesichert oder Hypothese</li>
+          <li>Gegenprüfung mit kritischem Review-Prompt (P14)</li>
+        </ul>
+        <!-- Beleg aus dem Recherche-Dossier (Kap. 9.5, Anhang A) – echte Zahlen -->
+        <div class="bk1-beleg" data-schritt="1" data-animation="hoch">
+          <span class="bk1-beleg-titel" data-meta>Dossier-Gegenprüfung</span>
+          <div class="bk1-zahlen">
+            <span class="bk1-zahl"><span class="bk1-zahl-wert" data-animation="zaehlen" data-ziel="155">155</span><span class="bk1-zahl-text">Befunde</span></span>
+            <span class="bk1-zahl"><span class="bk1-zahl-wert" data-animation="zaehlen" data-ziel="42" data-verzoegerung="120">42</span><span class="bk1-zahl-text">korrigiert</span></span>
+            <span class="bk1-zahl"><span class="bk1-zahl-wert" data-animation="zaehlen" data-ziel="32" data-verzoegerung="240">32</span><span class="bk1-zahl-text">verworfen</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Spalte 3: Grenzen (Limitationen) -->
+      <article class="bk1-spalte">
+        <h3 class="bk1-kopf"><span class="bk1-nr">03</span>Grenzen</h3>
+        <ul class="bk1-liste bk1-liste--punkte">
+          <li>Simulierte Befragte spiegeln Trainingsdaten: Klischees verstärkt, Nischenwissen fehlt</li>
+          <li>Nicht repräsentativ – kleine, gezielte Stichprobe</li>
+          <li>Sprachmodelle erfinden Fakten – nichts ungeprüft übernommen</li>
+          <li>KI-generierte Bilder sind gekennzeichnet</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Quelle: eigenes Vorgehen (prompts.md, Abschnitt C) · Beleg: Recherche-Dossier, Kap. 9.5 und Anhang A (Stand 14.10.2026)</p>
+    <button type="button" class="bk-sprung" data-meta data-bk-ziel="f02"><svg class="icon" aria-hidden="true"><use href="#i-pfeil-links"/></svg><span class="bk-sprung-text">Zu Folie</span></button>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Warum KI?“, „Wie habt ihr das geprüft?“ oder „Wie belastbar ist das?“. <b>Kernsatz:</b> Desk Research liefert die Fakten, KI bringt Tempo und Struktur – Fakten und Auswahl verantworten wir. KI haben wir genutzt, um Recherche zu beschleunigen, Befragte zu simulieren und Ergebnisse zu codieren; nicht zum Rechnen und nicht als Faktenquelle. Simuliert haben wir, weil eine Primärerhebung im Zeitrahmen nicht möglich war – Grundlage ist die datengestützte Persona.</p>
+    <p data-schritt="1"><b>Beleg</b> Wie nötig die Prüfung ist, zeigt unser Recherche-Dossier: Von 155 Befunden mussten nach zwei unabhängigen Gegenprüfungen 42 korrigiert und 32 Einzelaussagen verworfen werden. Grenzen offen benennen: simulierte Befragte geben wieder, was über die Marke in den Trainingsdaten steht – Klischees werden verstärkt, es gibt keine Repräsentativität.</p>
+    <p>Hinweise: Texte aus prompts.md, Abschnitt C (Textbaustein der Gruppe). Zahlen 155/42/32: Recherche-Dossier, Einleitung und Kap. 9.5 (Anhang A). „3–5 echte Kurzinterviews“ ist der Plan aus methoden.md – vor der Präsentation die tatsächliche Zahl eintragen (Folie 06/07 nennen derzeit n = 8, davon 3 Interviews, als Beispieldaten). Faktenstatus-Symbole des Dossiers: ✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese. Zurück-Knopf unten rechts springt zum Vorgehen (Folie 02).</p>
+  </aside>
+</section>
+
+
+<!-- ===================================================================
+     B2 · Prompt-Log (Auszug)
+     Schritt 0: Tabelle (Zeilen gestaffelt) + Verweis auf den KI-Nachweis
+     Schritt 1: Spalte „Prüfung“ wird hervorgehoben
+     =================================================================== -->
+<section class="folie bk" id="b2" data-titel="Backup: Prompt-Log" data-feld="leer" data-zeit="0" data-buendel="A" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Prompt-Log (Auszug) <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Jeder KI-Schritt ist dokumentiert und geprüft</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <!-- unsichtbarer Auslöser für Schritt 1 (siehe CSS) – nicht löschen -->
+    <span class="bk-zustand bk-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <!-- Hier baut das Skript die Tabelle aus den Daten unten. -->
+    <div class="bk-tabellenplatz" data-bk="promptlog"></div>
+    <div class="bk2-verweis" data-animation="einblenden" data-verzoegerung="400">
+      <svg class="icon" aria-hidden="true"><use href="#i-dokument"/></svg>
+      <p><b>Vollständig im KI-Nachweis:</b> jeder Prompt wörtlich, mit Datum, Tool und Prüfstatus (<span class="bk-datei">ki-nachweis.md</span>)</p>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">P = Prompt aus der Bibliothek (prompts.md, P0–P14) · KI = Nummer im KI-Nachweis · „Beispiel“ = geplante Nutzung, nach Durchführung ersetzen</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Welche Prompts habt ihr genutzt?“ oder „Mit welchem Tool?“. <b>Kernsatz:</b> Jeder KI-Einsatz steht im Prompt-Log – mit Ziel, Tool und Folie. Vollständig und wörtlich steht alles im KI-Nachweis; hier ist ein Auszug je Methode.</p>
+    <p data-schritt="1"><b>Prüfung</b> Entscheidend ist die rechte Spalte: Zu jedem Prompt gehört eine eigene Prüfung – Quellen geöffnet, echte Interviews, von Hand nachgezählt. Belegt sind bereits das Recherche-Dossier (doppelt gegengeprüft) und der Bau dieser Präsentation.</p>
+    <p>Hinweise: Zeilen mit „belegt“ stammen aus dem KI-Nachweis (Nr. 13: Recherche-Dossier, Workflow D03; Nr. 07: Web-Präsentation, Workflow D01) und dem Dossier (Kap. 9.5). Alle Zeilen „Beispiel“ zeigen die geplante Nutzung der Prompts P1–P14 aus prompts.md – Tool, Ziel und Prüfung nach der Durchführung durch die echten Einträge ersetzen und „beispiel“: false setzen. Tool-Wahl laut prompts.md: Recherche mit Quellenangaben (Perplexity oder Chat mit Websuche), Simulation und Synthese (ChatGPT oder Claude); Version im KI-Nachweis notieren.</p>
+  </aside>
+
+  <!-- DATEN – hier ändern. Hinweise:
+       • zeilen: id (P-Nummer aus prompts.md oder „KI nn“ = Nummer im
+         KI-Nachweis), tool, ziel, pruefung, folie (Text), sprung (Folien-ID,
+         macht die Foliennummer klickbar; leer = kein Sprung),
+         beispiel: true = geplante Nutzung (Pille „Beispiel“), false = belegt.
+       • Texte kurz halten (Tool ≤ 22, Ziel ≤ 26, Prüfung ≤ 46 Zeichen),
+         sonst brechen Zeilen um und die Tabelle wird zu hoch.
+       • Höchstens ca. 10 Zeilen – der Rest steht im KI-Nachweis. -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "Zeilen mit beispiel: true sind BEISPIELDATEN (geplante Nutzung). Belegt: KI-Nachweis Nr. 07 und 13, Dossier Kap. 9.5.",
+    "spalten": { "id": "ID", "tool": "Tool", "ziel": "Ziel", "pruefung": "Prüfung", "folie": "Folie", "stand": "Stand" },
+    "zeilen": [
+      { "id": "KI 13",   "tool": "Claude Code, Websuche", "ziel": "Recherche-Dossier",          "pruefung": "doppelt geprüft: 42 korrigiert, 32 verworfen",   "folie": "03–09", "sprung": "f03", "beispiel": false },
+      { "id": "P1, P2",  "tool": "Perplexity",            "ziel": "Markenkompetenz, Wettbewerb", "pruefung": "jede Quelle geöffnet, Faktenstatus vergeben",    "folie": "03",    "sprung": "f03", "beispiel": true },
+      { "id": "P3, P4",  "tool": "ChatGPT",               "ziel": "Datenbasis, Persona",         "pruefung": "jede Angabe als Daten oder Annahme markiert",    "folie": "04",    "sprung": "f04", "beispiel": true },
+      { "id": "P5",      "tool": "ChatGPT",               "ziel": "Limbic-Map-Gewichte",         "pruefung": "im Team diskutiert, mit Vorlesung abgeglichen",  "folie": "05",    "sprung": "f05", "beispiel": true },
+      { "id": "P7, P8",  "tool": "Claude",                "ziel": "Repertory Grid",              "pruefung": "3 echte Kurzinterviews; Mittelwerte in Excel",   "folie": "06",    "sprung": "f06", "beispiel": true },
+      { "id": "P9, P10", "tool": "Claude",                "ziel": "Laddering, Matrix",           "pruefung": "Implikationsmatrix von Hand nachgezählt",        "folie": "07",    "sprung": "f07", "beispiel": true },
+      { "id": "P11",     "tool": "ChatGPT",               "ziel": "Analogien Mensch, Tier",      "pruefung": "mit Gruppe und 3–5 Befragten abgeglichen",       "folie": "08",    "sprung": "f08", "beispiel": true },
+      { "id": "P12",     "tool": "ChatGPT",               "ziel": "Beiträge codieren",           "pruefung": "nur Sichtbares; Codes stichprobenartig geprüft", "folie": "09",    "sprung": "f09", "beispiel": true },
+      { "id": "P13, P14","tool": "Claude",                "ziel": "Steuerrad, Review",           "pruefung": "jedes Stichwort einer Analyse zugeordnet",       "folie": "10",    "sprung": "f10", "beispiel": true },
+      { "id": "KI 07",   "tool": "Claude Code",           "ziel": "Web-Präsentation",            "pruefung": "Prüfskript: Kontrast, Schriftgröße, Überlauf",   "folie": "alle",  "sprung": "",    "beispiel": false }
+    ]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     B3 · Datenquellen Persona (echte Quellen aus dem Recherche-Dossier)
+     Schritt 0: Tabelle, nach Persona-Dimension gruppiert
+     Schritt 1: Kernbelege hervorheben (Gründeraussagen)
+     Schritt 2: Quellen „mit Vorsicht“ markieren (korrigiert / unsicher)
+     =================================================================== -->
+<section class="folie bk" id="b3" data-titel="Backup: Datenquellen Persona" data-feld="persona" data-zeit="0" data-buendel="A" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Brand Persona · Datenbasis</p>
+    <h2 class="titel">Gründeraussagen und Studien tragen unsere Persona</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <span class="bk-zustand bk-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <span class="bk-zustand bk-z2" data-schritt="2" data-animation="zustand" aria-hidden="true"></span>
+    <div class="bk-tabellenplatz" data-bk="quellen"></div>
+    <p class="bk3-luecke" data-animation="einblenden" data-verzoegerung="400"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span><b>Datenlücke:</b> <span data-marke></span> veröffentlicht keine Kundendaten – ergänzen mit Statista (AWA/VuMA), b4p und 3–5 Kurzinterviews.</span></p>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Quelle: Recherche-Dossier Kap. 4.1–4.5, Nummern = Quellenverzeichnis (Anhang B), Abruf 13./14.10.2026 · Selbstauskünfte als solche behandeln</p>
+    <button type="button" class="bk-sprung" data-meta data-bk-ziel="f04"><svg class="icon" aria-hidden="true"><use href="#i-pfeil-links"/></svg><span class="bk-sprung-text">Zu Folie</span></button>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Woher stammen die Angaben der Persona?“ oder „Ist die Persona ein Klischee?“. <b>Kernsatz:</b> Jede Dimension der Persona hat eine Quelle mit Jahr; was nicht belegt ist, ist auf Folie 04 gestrichelt als Annahme markiert.</p>
+    <p data-schritt="1"><b>Kernbelege</b> Die wichtigste Quelle sind die Gründer selbst: Laut Mitgründer Jost ist die Kundschaft meist 25 bis 40, etwa zu zwei Dritteln männlich, viele arbeiten im Schichtdienst. Das ist eine Selbstauskunft – aber die beste verfügbare, weil <span data-marke></span> keine Kundendaten veröffentlicht.</p>
+    <p data-schritt="2"><b>Mit Vorsicht</b> Markiert sind Quellen, die wir nur eingeschränkt nutzen: Die Kategoriedaten im Markentrainer entstanden mit Red Bull und sind teils fünf Jahre alt; Similarweb ist eine modellierte Schätzung und widerspricht der Gründeraussage – deshalb nur als Indiz.</p>
+    <p>Hinweise: Alle Angaben aus dem Recherche-Dossier Kap. 4.1 (Selbstauskünfte), 4.2 (Kategorie- und Umfelddaten), 4.3 (Spalte „Belegt durch“), 4.4 und 4.5; Status wie im Dossier (gesichert ✔, korrigiert ✎, unsicher ~). Stichprobengrößen stehen nicht im Dossier – vor der Präsentation aus den Originalstudien nachtragen (Spalte „Basis“). Achtung: Die Beispiel-Persona auf Folie 04 („Lea, 24, Studentin“) passt noch nicht zu diesen Belegen (Kern 25–40, primär männlich, Schichtdienst; Dossier 4.3 schlägt „Marco, 28“ und „Lena, 29“ vor) – Bündel A gleicht ab. Jost-Zitate stammen aus einem automatischen Transkript – Wortlaut im Audio prüfen (Dossier 9.4).</p>
+  </aside>
+
+  <!-- DATEN – hier ändern. Hinweise:
+       • zeilen: dimension (Persona-Dimension; gleiche Dimension
+         untereinander = Gruppe), quelle, nr (Nummer im Quellenverzeichnis
+         des Dossiers), jahr, basis (Art der Daten bzw. Stichprobe),
+         befund (kurz!), status: gesichert | korrigiert | unsicher.
+       • kern: true = wird in Schritt 1 als Kernbeleg hervorgehoben.
+       • vorsicht: true = wird in Schritt 2 als „mit Vorsicht“ markiert.
+       • Höchstens ca. 11 Zeilen, Befund ≤ 34 Zeichen. -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "Echte Angaben aus dem Recherche-Dossier (Kap. 4.1–4.5, Quellen Anhang B). Stichproben aus den Originalstudien ergänzen.",
+    "spalten": { "dimension": "Dimension", "quelle": "Quelle", "jahr": "Jahr", "basis": "Basis", "befund": "Befund (Auszug)", "status": "Status" },
+    "zeilen": [
+      { "dimension": "Soziodemografie", "quelle": "F. Jost (Mitgründer), Podcast", "nr": "24", "jahr": "2024", "basis": "Gründeraussage",         "befund": "meist 25–40 J., ca. ⅔ männlich",   "status": "gesichert",  "kern": true },
+      { "dimension": "Soziodemografie", "quelle": "Trending Topics",               "nr": "7",  "jahr": "2024", "basis": "Presse",                 "befund": "viele Schichtberufe, z. B. Pflege", "status": "gesichert",  "kern": true },
+      { "dimension": "Soziodemografie", "quelle": "Markentrainer Energy Drinks",   "nr": "65", "jahr": "2025", "basis": "Shopper-Studie, mit Red Bull", "befund": "Kategorie: Ø 37,7 J., 60 % Männer", "status": "korrigiert", "vorsicht": true },
+      { "dimension": "Geografie",       "quelle": "Mintel, Marktreport",           "nr": "98", "jahr": "2025", "basis": "nur Produktseite",       "befund": "Kategorie: Männer in Städten",      "status": "gesichert" },
+      { "dimension": "Kaufverhalten",   "quelle": "Markentrainer (YouGov)",        "nr": "65", "jahr": "2024", "basis": "YouGov-Daten",           "befund": "34 % der Haushalte kaufen Energy",  "status": "korrigiert" },
+      { "dimension": "Kaufverhalten",   "quelle": "HOLY-Anzeige an den Handel",    "nr": "18", "jahr": "2025", "basis": "Firmenangabe",           "befund": "Impuls- und Erstkäufer",            "status": "gesichert" },
+      { "dimension": "Mediennutzung",   "quelle": "ARD/ZDF-Medienstudie",          "nr": "102","jahr": "2025", "basis": "14–29 Jahre",            "befund": "Instagram 77 %, TikTok 50 %",       "status": "gesichert" },
+      { "dimension": "Psychografie",    "quelle": "Ernährungsreport (forsa)",      "nr": "99", "jahr": "2025", "basis": "Befragung",              "befund": "64 % achten auf Zucker",            "status": "gesichert" },
+      { "dimension": "Psychografie",    "quelle": "Trustpilot, REVIEWS.io",        "nr": "88, 89", "jahr": "2026", "basis": "Bewertungen (schwach)", "befund": "Motive, Kundensprache",          "status": "gesichert" },
+      { "dimension": "Limbic Map",      "quelle": "b4p: Limbic Types",             "nr": "105","jahr": "2020", "basis": "best for planning",      "befund": "Jüngere: mehr Stimulanz",           "status": "gesichert" },
+      { "dimension": "nur Indiz",       "quelle": "Similarweb",                    "nr": "92", "jahr": "2026", "basis": "modellierte Web-Besuche", "befund": "63,5 % männlich, meist 18–24",     "status": "unsicher",   "vorsicht": true }
+    ]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     B4 · Repertory-Grid-Rohdaten (Mittelwerte Konstrukte × Elemente)
+     Schritt 0: Tabelle mit allen Elementen und berechneten Abständen
+     Schritt 1: Auswertung – Attribute markiert, verfehlte Kriterien sichtbar
+     =================================================================== -->
+<section class="folie bk" id="b4" data-titel="Backup: Repertory-Grid-Rohdaten" data-feld="attribute" data-zeit="0" data-buendel="B" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Repertory Grid · Mittelwerte <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Nur drei Konstrukte erfüllen alle drei Kriterien</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <span class="bk-zustand bk-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <div class="bk-tabellenplatz" data-bk="grid"></div>
+    <div class="bk4-legende" data-animation="einblenden" data-verzoegerung="400">
+      <p class="bk4-elemente" data-bk="elemente"></p>
+      <p class="bk4-kriterien" data-bk="kriterien"></p>
+      <p class="bk4-triaden" data-bk="triaden"></p>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · eigene Erhebung, n = 8 (5 KI-simuliert, 3 Kurzinterviews) · Methode nach Kelly (1955) · Skala 1 = linker, 7 = rechter Pol</p>
+    <button type="button" class="bk-sprung" data-meta data-bk-ziel="f06"><svg class="icon" aria-hidden="true"><use href="#i-pfeil-links"/></svg><span class="bk-sprung-text">Zu Folie</span></button>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Woher kommen die Werte im Polaritätenprofil?“ oder „Warum gerade diese Attribute?“. <b>Kernsatz:</b> Hier stehen die Mittelwerte aller Elemente – unsere Marke, fünf Wettbewerber und die Idealmarke – auf jedem Konstrukt. Daraus rechnen wir drei Kennwerte: wie oft ein Konstrukt genannt wurde, wie weit <span data-marke></span> vom Durchschnitt der Wettbewerber entfernt ist und wie nah an der Idealmarke.</p>
+    <p data-schritt="1"><b>Auswertung</b> Attribut wird nur, was alle drei Kriterien erfüllt: zuckerfrei, viele Sorten, Community-nah. „Selbst anrühren“ unterscheidet am stärksten, liegt aber weit von der Idealmarke entfernt – keine Stärke, sondern eine Hürde. Preis und Frechheit wurden zu selten genannt.</p>
+    <p>Hinweise: ALLE ZAHLEN SIND BEISPIELDATEN und passen zu Folie 06 (dort: [Marke], „Marke A“ = W1, Idealmarke). W2–W5 sind ergänzte Beispielwerte. Mittelwerte selbst in Excel/Sheets rechnen (Prompt P8 liefert nur die Einzelbewertungen als CSV). Folie 06 zeigt den Vorsprung vor dem stärksten Wettbewerber (Spalte „M − W1“); methoden.md definiert Differenzierung als Abstand zum Mittel aller Wettbewerber (Spalte „|M − Ø W|“) – beide Sichten führen hier zu denselben Attributen. Die Schwellen (n ≥ 6, Abstand ≥ 1,5, Ideal-Distanz ≤ 1,0) sind eine eigene Festlegung – mit der Gruppe abstimmen. Wettbewerbsset laut Dossier 5.3 (Vorschlag, H): W1 Red Bull, W2 Monster, W3 Gönrgy, W4 waterdrop, W5 Coca-Cola Zero – Namen erst eintragen, wenn echte Bewertungen vorliegen.</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • elemente: Kürzel und Name für die Legende. „[Marke]“ wird ersetzt.
+         Rolle: marke (genau eins), wettbewerber, ideal (genau eins).
+       • konstrukte: links/rechts = Pole (1 = links, 7 = rechts),
+         nennungen = wie oft genannt (Relevanz), werte = Mittelwert je
+         Element-Kürzel. Die Werte von M, W1 und I müssen zu Folie 06 passen
+         (dort „marke“, „wettbewerb“ = Marke A = W1, „ideal“).
+         hinweis: kurzer Vermerk in der Spalte „Ergebnis“ (z. B. „Hürde“).
+       • schwellen: ab wann ein Kriterium erfüllt ist – das Skript markiert
+         daraus die Attribute (alle drei erfüllt) und die verfehlten Werte.
+       • triaden: die acht Dreiervergleiche je Person (methoden.md). -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – passend zu Folie 06 (M, W1, I, Nennungen). W2–W5 ergänzt. Durch die eigene Auswertung ersetzen.",
+    "skala": [1, 7],
+    "elemente": [
+      { "kuerzel": "M",  "name": "[Marke]",            "rolle": "marke" },
+      { "kuerzel": "W1", "name": "stärkster Wettbewerber (Folie 06: Marke A)", "rolle": "wettbewerber" },
+      { "kuerzel": "W2", "name": "Wettbewerber 2",     "rolle": "wettbewerber" },
+      { "kuerzel": "W3", "name": "Wettbewerber 3",     "rolle": "wettbewerber" },
+      { "kuerzel": "W4", "name": "Wettbewerber 4",     "rolle": "wettbewerber" },
+      { "kuerzel": "W5", "name": "Wettbewerber 5",     "rolle": "wettbewerber" },
+      { "kuerzel": "I",  "name": "Idealmarke",         "rolle": "ideal" }
+    ],
+    "schwellen": { "nennungenMin": 6, "abstandWettbewerbMin": 1.5, "idealDistanzMax": 1.0 },
+    "konstrukte": [
+      { "links": "zuckerhaltig",  "rechts": "zuckerfrei",      "nennungen": 9, "werte": { "M": 6.6, "W1": 2.4, "W2": 2.9, "W3": 3.6, "W4": 6.2, "W5": 6.4, "I": 6.3 } },
+      { "links": "wenige Sorten", "rechts": "viele Sorten",    "nennungen": 7, "werte": { "M": 6.4, "W1": 3.3, "W2": 4.6, "W3": 4.2, "W4": 5.1, "W5": 2.0, "I": 5.7 } },
+      { "links": "Konzernmarke",  "rechts": "Community-Marke", "nennungen": 6, "werte": { "M": 6.0, "W1": 2.2, "W2": 2.0, "W3": 5.4, "W4": 4.0, "W5": 1.4, "I": 5.2 } },
+      { "links": "trinkfertig",   "rechts": "selbst anrühren", "nennungen": 8, "werte": { "M": 6.8, "W1": 1.3, "W2": 1.2, "W3": 1.6, "W4": 5.9, "W5": 1.1, "I": 3.1 }, "hinweis": "Hürde" },
+      { "links": "teuer",         "rechts": "preiswert",       "nennungen": 5, "werte": { "M": 4.3, "W1": 3.8, "W2": 4.2, "W3": 4.0, "W4": 3.2, "W5": 4.6, "I": 6.2 } },
+      { "links": "seriös",        "rechts": "frech",           "nennungen": 4, "werte": { "M": 6.1, "W1": 4.6, "W2": 5.4, "W3": 5.8, "W4": 2.6, "W5": 3.4, "I": 4.3 } }
+    ],
+    "triaden": ["M · W1 · W2", "M · W3 · I", "W1 · W4 · I", "M · W5 · W2", "W2 · W3 · W4", "M · W4 · I", "W1 · W3 · W5", "M · W5 · I"]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     B5 · Laddering-Leitern & Implikationsmatrix
+     Schritt 0: Leitern (Auszug), Codierung, Implikationsmatrix
+     Schritt 1: Cut-off – Verbindungen ab 2 Nennungen (gehen in die HVM)
+     Schritt 2: stärkste Leiter in Tabelle und Matrix markiert
+     =================================================================== -->
+<section class="folie bk" id="b5" data-titel="Backup: Laddering-Matrix" data-feld="nutzen" data-zeit="0" data-buendel="B" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Laddering · Implikationsmatrix <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Die stärkste Leiter führt von „zuckerfrei“ zur Gesundheit</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <span class="bk-zustand bk-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <span class="bk-zustand bk-z2" data-schritt="2" data-animation="zustand" aria-hidden="true"></span>
+    <div class="bk5">
+      <div class="bk5-links">
+        <div class="bk5-kopf"><h3 class="bk-zwischentitel" data-meta>Leitern (Auszug, codiert)</h3><p class="bk5-legende" data-meta><span class="bk5-art" aria-hidden="true"></span>KI-simuliert <span class="bk5-art bk5-art--echt" aria-hidden="true"></span>Interview</p></div>
+        <div class="bk-tabellenplatz" data-bk="leitern"></div>
+        <h3 class="bk-zwischentitel" data-meta>Codierung (Auszug)</h3>
+        <div class="bk-tabellenplatz" data-bk="codes"></div>
+      </div>
+      <div class="bk5-rechts">
+        <h3 class="bk-zwischentitel" data-meta>Implikationsmatrix (direkt)</h3>
+        <div class="bk-tabellenplatz" data-bk="matrix"></div>
+        <p class="bk5-cutoff" data-meta><span class="bk5-cutoff-muster" aria-hidden="true"></span><span data-bk="cutoff">ab 2 Nennungen → in die HVM</span></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · eigene Interviews, n = 8 (B1–B5 KI-simuliert, B6–B8 echt) · Means-End-Chain nach Gutman (1982), Reynolds &amp; Gutman (1988)</p>
+    <button type="button" class="bk-sprung" data-meta data-bk-ziel="f07"><svg class="icon" aria-hidden="true"><use href="#i-pfeil-links"/></svg><span class="bk-sprung-text">Zu Folie</span></button>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Wie seid ihr von den Leitern zur Hierarchical Value Map gekommen?“. <b>Kernsatz:</b> Jede befragte Person liefert Leitern vom Attribut bis zum Wert. Gleichbedeutende Antworten codieren wir einheitlich, dann zählen wir in der Implikationsmatrix, wie oft ein Element direkt zum nächsten führt.</p>
+    <p data-schritt="1"><b>Cut-off</b> In die Hierarchical Value Map auf Folie 07 kommen nur Verbindungen mit mindestens zwei Nennungen. „Zuckerfrei → Abwechslung“ wurde nur einmal genannt und fällt heraus.</p>
+    <p data-schritt="2"><b>Stärkste Leiter</b> Die stärkste Kette läuft von „zuckerfrei“ über „Genuss ohne Zucker“ und „gutes Gewissen“ bis zum Wert Gesundheit – jede Verbindung mindestens sechsmal genannt. Daraus folgt der Markennutzen auf Folie 07.</p>
+    <p>Hinweise: ALLE LEITERN UND ZAHLEN SIND BEISPIELDATEN; die Matrix entspricht genau den Verbindungen auf Folie 07 (Daten dort: „verbindungen“). Echte Leitern aus Prompt P9 und den Interviews codieren und die Matrix von Hand auszählen (P10, Stichprobe nachzählen). Die Matrix zeigt nur direkte Verbindungen zwischen benachbarten Ebenen (übliche Kurzform); eine vollständige Implikationsmatrix zählt zusätzlich indirekte Verbindungen. „Stärkste Leiter“ = Kette, deren schwächste Verbindung am häufigsten genannt wurde (rechnet das Skript). Codierungs-Beispiele sind erfundene Formulierungen. Begriffe (Means-End-Chain, Implikationsmatrix, HVM, Cut-off) mit der Vorlesung abgleichen. Vorsicht bei „Gesundheit“: Wert der Befragten, keine Gesundheitsaussage über das Produkt (Dossier S1).</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • ebenen und knoten wie auf Folie 07 (gleiche ids und Texte!).
+         „kurz“ = Kurzname der Ebene (Kopf der Leitern, Ecke der Matrix).
+       • verbindungen: von/nach/anzahl wie auf Folie 07 → daraus entsteht
+         die Implikationsmatrix (fehlende Paare = 0).
+       • cutoff: ab wie vielen Nennungen eine Verbindung in die HVM kommt.
+       • leitern: Auszug – je Zeile befragte Person (B1 …) und die Kette
+         als Liste von Knoten-ids (Attribut → … → Wert).
+         simuliert: true = KI-simulierte Person, false = echtes Interview.
+       • codes: Beispiele für die Codierung (Original-Formulierungen → Code). -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – Knoten und Verbindungen identisch mit Folie 07; Leitern und Codierung erfunden. Durch echte, codierte Leitern ersetzen.",
+    "cutoff": 2,
+    "ebenen": [
+      { "schluessel": "attribute",    "name": "Attribute",                  "kurz": "Attribut" },
+      { "schluessel": "funktional",   "name": "funktionale Konsequenzen",   "kurz": "funktional" },
+      { "schluessel": "psychosozial", "name": "psychosoziale Konsequenzen", "kurz": "psychosozial" },
+      { "schluessel": "werte",        "name": "Werte",                      "kurz": "Wert" }
+    ],
+    "knoten": [
+      { "id": "zuckerfrei",     "ebene": "attribute",    "text": "zuckerfrei" },
+      { "id": "viele-sorten",   "ebene": "attribute",    "text": "viele Sorten" },
+      { "id": "community",      "ebene": "attribute",    "text": "Community-nah" },
+      { "id": "genuss",         "ebene": "funktional",   "text": "Genuss ohne Zucker" },
+      { "id": "abwechslung",    "ebene": "funktional",   "text": "Abwechslung" },
+      { "id": "mitreden",       "ebene": "funktional",   "text": "mitreden" },
+      { "id": "gewissen",       "ebene": "psychosozial", "text": "gutes Gewissen" },
+      { "id": "spass",          "ebene": "psychosozial", "text": "Spaß" },
+      { "id": "dazugehoeren",   "ebene": "psychosozial", "text": "dazugehören" },
+      { "id": "gesundheit",     "ebene": "werte",        "text": "Gesundheit" },
+      { "id": "lebensfreude",   "ebene": "werte",        "text": "Lebensfreude" },
+      { "id": "zugehoerigkeit", "ebene": "werte",        "text": "Zugehörigkeit" }
+    ],
+    "verbindungen": [
+      { "von": "zuckerfrei",   "nach": "genuss",         "anzahl": 7 },
+      { "von": "zuckerfrei",   "nach": "abwechslung",    "anzahl": 1 },
+      { "von": "viele-sorten", "nach": "abwechslung",    "anzahl": 6 },
+      { "von": "viele-sorten", "nach": "mitreden",       "anzahl": 2 },
+      { "von": "community",    "nach": "mitreden",       "anzahl": 5 },
+      { "von": "genuss",       "nach": "gewissen",       "anzahl": 7 },
+      { "von": "abwechslung",  "nach": "spass",          "anzahl": 5 },
+      { "von": "abwechslung",  "nach": "dazugehoeren",   "anzahl": 2 },
+      { "von": "mitreden",     "nach": "dazugehoeren",   "anzahl": 5 },
+      { "von": "gewissen",     "nach": "gesundheit",     "anzahl": 6 },
+      { "von": "gewissen",     "nach": "lebensfreude",   "anzahl": 2 },
+      { "von": "spass",        "nach": "lebensfreude",   "anzahl": 4 },
+      { "von": "dazugehoeren", "nach": "zugehoerigkeit", "anzahl": 5 }
+    ],
+    "leitern": [
+      { "person": "B1", "simuliert": true,  "kette": ["zuckerfrei", "genuss", "gewissen", "gesundheit"] },
+      { "person": "B2", "simuliert": true,  "kette": ["viele-sorten", "abwechslung", "spass", "lebensfreude"] },
+      { "person": "B3", "simuliert": true,  "kette": ["community", "mitreden", "dazugehoeren", "zugehoerigkeit"] },
+      { "person": "B4", "simuliert": true,  "kette": ["zuckerfrei", "genuss", "gewissen", "lebensfreude"] },
+      { "person": "B5", "simuliert": true,  "kette": ["viele-sorten", "mitreden", "dazugehoeren", "zugehoerigkeit"] },
+      { "person": "B6", "simuliert": false, "kette": ["zuckerfrei", "genuss", "gewissen", "gesundheit"] },
+      { "person": "B7", "simuliert": false, "kette": ["viele-sorten", "abwechslung", "dazugehoeren", "zugehoerigkeit"] },
+      { "person": "B8", "simuliert": false, "kette": ["community", "mitreden", "dazugehoeren", "zugehoerigkeit"] }
+    ],
+    "codes": [
+      { "original": "„kein Zucker drin“, „zero sugar“", "code": "zuckerfrei" },
+      { "original": "„nicht immer dasselbe trinken“",    "code": "Abwechslung" },
+      { "original": "„bei neuen Sorten mitvoten“",       "code": "mitreden" }
+    ]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     B6 · Raster der Kommunikationsanalyse (Codiertabelle)
+     Schritt 0: Codiertabelle (Auszug) + Stichprobe, Formel, Ergebnis
+     Schritt 1: Beiträge mit dem Schlüsselbild-Kandidaten markiert
+     =================================================================== -->
+<section class="folie bk" id="b6" data-titel="Backup: Raster Kommunikationsanalyse" data-feld="bild" data-zeit="0" data-buendel="C" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Kommunikationsanalyse · Codiertabelle <span class="beispiel">Beispieldaten</span></p>
+    <h2 class="titel">Ein Raster für alle Beiträge macht die Kanäle vergleichbar</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <span class="bk-zustand bk-z1" data-schritt="1" data-animation="zustand" aria-hidden="true"></span>
+    <div class="bk-tabellenplatz" data-bk="raster"></div>
+    <div class="raster-3 bk6-infos" data-staffel="100" data-animation="hoch" data-verzoegerung="300">
+      <article class="bk6-info">
+        <span class="bk6-info-kicker" data-meta><svg class="icon" aria-hidden="true"><use href="#i-raster"/></svg>Stichprobe</span>
+        <p class="bk6-info-text">Je Kanal die letzten 15–20 Beiträge, Screenshot mit Datum</p>
+      </article>
+      <article class="bk6-info">
+        <span class="bk6-info-kicker" data-meta><svg class="icon" aria-hidden="true"><use href="#i-diagramm"/></svg>Kennzahl</span>
+        <p class="bk6-info-text">Ø Engagement-Rate = (Likes + Kommentare) / Follower × 100</p>
+      </article>
+      <article class="bk6-info bk6-info--ergebnis">
+        <span class="bk6-info-kicker" data-meta><svg class="icon" aria-hidden="true"><use href="#i-lupe"/></svg>Ergebnis → Folie 09</span>
+        <p class="bk6-info-text">Vier Motivgruppen; Schlüsselbild-Kandidat: Adler „Raptor“</p>
+      </article>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Beispieldaten · Raster nach Prompt P12 und methoden.md (Abschnitt 5) · Motivgruppen: Dossier Kap. 6.4 ✔, Schlüsselbild: Hypothese</p>
+    <button type="button" class="bk-sprung" data-meta data-bk-ziel="f09"><svg class="icon" aria-hidden="true"><use href="#i-pfeil-links"/></svg><span class="bk-sprung-text">Zu Folie</span></button>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Wie habt ihr die Beiträge ausgewertet?“. <b>Kernsatz:</b> Jeden Beitrag haben wir nach demselben Raster codiert: Kanal, Format, Motiv, Farbwelt, Ton der Caption, Markenpräsenz und Handlungsaufforderung. So werden Instagram, Facebook und YouTube vergleichbar. Engagement-Raten rechnen wir selbst in Excel.</p>
+    <p data-schritt="1"><b>Schlüsselbild</b> Markiert sind die Beiträge mit dem Adler „Raptor“ – er taucht kanalübergreifend auf, in den Markenfarben Gelb und Schwarz. Deshalb ist er unser Kandidat für das Schlüsselbild nach Kroeber-Riel.</p>
+    <p>Hinweise: DIE ZEILEN SIND BEISPIELDATEN (keine echten Beiträge). Die Gruppe erhebt je Kanal die letzten 15–20 Beiträge (Screenshots mit Datum) und trägt die Codes hier ein (Prompt P12 nur mit Screenshots, Ergebnis stichprobenartig prüfen). Motivgruppen Produkt, Comic-Tiere, Community und Kurzvideos: Dossier Kap. 6.4 ✔ [1, 5, 73, 39, 124]; Raptor als Schlüsselbild: Hypothese (H). Farben Gelb/Schwarz und Pastell-Shop: Dossier Kap. 6.3 ✔ [1]. Ton „Du, Slang“: Dossier 6.2 ✔ [30]. Formel der Engagement-Rate: methoden.md Abschnitt 5.</p>
+  </aside>
+
+  <!-- DATEN (Beispieldaten) – hier ändern. Hinweise:
+       • spalten: Überschriften (Reihenfolge = Reihenfolge in der Tabelle).
+         Die Schlüssel müssen in jeder Zeile vorkommen.
+       • zeilen: ein Beitrag je Zeile. Kurz halten (≤ 20 Zeichen je Zelle).
+         schluesselbild: true = wird in Schritt 1 markiert.
+       • Höchstens ca. 8 Zeilen – die vollständige Codierung gehört in eine
+         Tabelle (Excel/Sheets) und als Anhang zum KI-Nachweis. -->
+  <script type="application/json" class="daten">
+  {
+    "hinweis": "BEISPIELDATEN – erfundene Beispielbeiträge zur Erklärung des Rasters; durch die eigene Codierung ersetzen.",
+    "spalten": [
+      { "schluessel": "nr",     "titel": "Nr." },
+      { "schluessel": "kanal",  "titel": "Kanal" },
+      { "schluessel": "format", "titel": "Format" },
+      { "schluessel": "motiv",  "titel": "Motiv (Bildwelt)" },
+      { "schluessel": "farbe",  "titel": "Farbwelt" },
+      { "schluessel": "ton",    "titel": "Ton der Caption" },
+      { "schluessel": "marke",  "titel": "Marke sichtbar" },
+      { "schluessel": "cta",    "titel": "Aufforderung" }
+    ],
+    "zeilen": [
+      { "nr": "IG-01", "kanal": "Instagram", "format": "Reel",      "motiv": "Comic-Tier: Raptor",   "farbe": "Gelb, Schwarz", "ton": "Du, Slang, Humor", "marke": "Logo, Dose", "cta": "Link in Bio", "schluesselbild": true },
+      { "nr": "IG-02", "kanal": "Instagram", "format": "Bild",      "motiv": "Produkt: Dose",        "farbe": "Pastell",       "ton": "Du, Ausrufe",      "marke": "Produkt",    "cta": "Shop" },
+      { "nr": "IG-03", "kanal": "Instagram", "format": "Karussell", "motiv": "Produkt: Vergleich",   "farbe": "Gelb, Weiß",    "ton": "frech-sachlich",   "marke": "Logo",       "cta": "Kommentar" },
+      { "nr": "IG-04", "kanal": "Instagram", "format": "Bild",      "motiv": "Community: Tattoo",    "farbe": "Schwarz",       "ton": "Du, Stolz",        "marke": "Logo",       "cta": "Kommentar" },
+      { "nr": "FB-01", "kanal": "Facebook",  "format": "Reel",      "motiv": "Kurzvideo: Vlog",      "farbe": "bunt",          "ton": "Du, Slang",        "marke": "Logo",       "cta": "keine" },
+      { "nr": "FB-02", "kanal": "Facebook",  "format": "Bild",      "motiv": "Community: Event",     "farbe": "bunt",          "ton": "Du, Emojis",       "marke": "Logo",       "cta": "Gewinnspiel" },
+      { "nr": "YT-01", "kanal": "YouTube",   "format": "Short",     "motiv": "Kurzvideo: Popkultur", "farbe": "bunt",          "ton": "Slang, Humor",     "marke": "Produkt",    "cta": "Abonnieren" },
+      { "nr": "YT-02", "kanal": "YouTube",   "format": "Short",     "motiv": "Comic-Tier: Raptor",   "farbe": "Gelb, Schwarz", "ton": "Humor",            "marke": "Logo, Dose", "cta": "Link", "schluesselbild": true }
+    ]
+  }
+  </script>
+</section>
+
+
+<!-- ===================================================================
+     B7 · Quellenverzeichnis
+     Literatur einheitlich zitiert (Vorlage: ../methoden.md, Abschnitt
+     „Literatur“), dazu Daten/Dokumentation und Technik der Präsentation.
+     Keine Schritte – die Blöcke erscheinen gestaffelt.
+     Zitierweise: Name, Initiale(n) (Jahr): Titel. Ort: Verlag.
+                  Zeitschrift: Name (Jahr): Titel. Zeitschrift, Jg.(Heft), Seiten.
+     =================================================================== -->
+<section class="folie bk" id="b7" data-titel="Backup: Quellenverzeichnis" data-feld="leer" data-zeit="0" data-buendel="A" data-backup data-layout="backup">
+  <header class="folie-kopf">
+    <p class="kicker">Backup · Quellenverzeichnis</p>
+    <h2 class="titel">Modelle aus der Literatur, Fakten aus geprüften Quellen</h2>
+  </header>
+
+  <div class="folie-inhalt">
+    <div class="raster-12 bk7">
+      <!-- LINKS: Literatur (alphabetisch) -->
+      <section class="sp-7 bk7-block" data-animation="hoch">
+        <h3 class="bk-zwischentitel" data-meta>Literatur zu den Modellen</h3>
+        <ol class="bk7-literatur" data-meta data-staffel="60" data-animation="einblenden">
+          <li><b>Aaker, J. L.</b> (1997): Dimensions of Brand Personality. <i>Journal of Marketing Research</i>, 34(3), 347–356.</li>
+          <li><b>Esch, F.-R.</b> (<span class="bk7-ergaenzen">Jahr, Aufl. ergänzen</span>): <i>Strategie und Technik der Markenführung.</i> München: Vahlen.</li>
+          <li><b>Gutman, J.</b> (1982): A Means-End Chain Model Based on Consumer Categorization Processes. <i>Journal of Marketing</i>, 46(2), 60–72.</li>
+          <li><b>Häusel, H.-G.</b> (<span class="bk7-ergaenzen">Jahr, Aufl. ergänzen</span>): <i>Think Limbic!</i> bzw. <i>Brain View.</i> Freiburg: Haufe.</li>
+          <li><b>Kelly, G. A.</b> (1955): <i>The Psychology of Personal Constructs.</i> New York: Norton.</li>
+          <li><b>Kroeber-Riel, W.</b> (1993): <i>Bildkommunikation.</i> München: Vahlen.</li>
+          <li><b>Reynolds, T. J. &amp; Gutman, J.</b> (1988): Laddering Theory, Method, Analysis, and Interpretation. <i>Journal of Advertising Research</i>, 28(1), 11–31.</li>
+          <li><b>Stenger, D.</b> (2026): <i>Unternehmenskommunikation.</i> Vorlesungsunterlagen, Hochschule Kaiserslautern.</li>
+        </ol>
+      </section>
+
+      <!-- RECHTS: Daten & Dokumentation, Technik -->
+      <div class="sp-5 bk7-rechts">
+        <section class="bk7-block" data-animation="hoch" data-verzoegerung="160">
+          <h3 class="bk-zwischentitel" data-meta>Daten &amp; Dokumentation</h3>
+          <ul class="bk7-liste" data-meta>
+            <li><b>Recherche-Dossier <span data-marke></span></b>, Stand 13./14.10.2026 – 160 nummerierte Quellen, Faktenstatus je Aussage</li>
+            <li><b>KI-Nachweis</b> der Gruppe – alle Prompts wörtlich (<span class="bk-datei">ki-nachweis.md</span>)</li>
+            <li><b>Prompt-Bibliothek</b> P0–P14 (<span class="bk-datei">prompts.md</span>)</li>
+          </ul>
+        </section>
+        <section class="bk7-block" data-animation="hoch" data-verzoegerung="260">
+          <h3 class="bk-zwischentitel" data-meta>Technik dieser Präsentation</h3>
+          <ul class="bk7-liste bk7-liste--klein" data-meta>
+            <li><b>Schriften:</b> Fraunces, Inter, Inter Tight, Space Grotesk, Bricolage Grotesque, Plus Jakarta Sans – SIL Open Font License 1.1 (Fontsource)</li>
+            <li><b>QR-Code:</b> qrcode-generator 2.0.4, K. Arase – MIT-Lizenz</li>
+            <li><b>Icons, Grafiken:</b> eigene Gestaltung · erstellt mit KI-Unterstützung (Claude Code, siehe KI-Nachweis)</li>
+            <li>Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="folie-fuss">
+    <p class="quelle">Modellbegriffe nach Standardliteratur (Modellwissen) – mit den Vorlesungsfolien abgleichen · Lizenztexte: schriften/, js/vendor/</p>
+  </footer>
+
+  <aside class="notizen">
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage nach Literatur, Quellen oder Bildrechten. <b>Kernsatz:</b> Die Modelle stammen aus der Standardliteratur und der Vorlesung; alle Fakten über <span data-marke></span> aus unserem Recherche-Dossier mit nummerierten, geprüften Quellen. Schriften und Bibliothek sind frei lizenziert.</p>
+    <p>Hinweise: Literaturangaben aus methoden.md, einheitlich zitiert (Name, Jahr, Titel, Ort: Verlag bzw. Zeitschrift, Jahrgang(Heft), Seiten). Bei Esch und Häusel stehen in methoden.md weder Jahr noch Auflage – vor der Präsentation die tatsächlich genutzte Auflage aus dem Bibliothekskatalog eintragen (orange Markierung löschen). Vorlesungsunterlagen: Foliennummern ergänzen, sobald die Folien vorliegen. Die Zahl 160 = Einträge im Quellenverzeichnis des Dossiers (Anhang B). Schriften: Lizenztexte in schriften/, Herkunft in schriften/HERKUNFT.txt; qrcode-generator: js/vendor/LIZENZ-qrcode-generator.txt.</p>
+  </aside>
+</section>

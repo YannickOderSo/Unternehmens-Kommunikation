@@ -105,6 +105,16 @@
   width: 26px;
   height: 26px;
 }
+/* Stichwort + folgender Trenner „·“ als Gruppe ohne Umbruch (Skript):
+   kein Trenner am Zeilenanfang; am Zeilenende wird er ausgeblendet */
+#f10 .g6s-gruppe {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  white-space: nowrap;
+}
+#f10 .sr-trenner.g6s-trenner-aus { visibility: hidden; }
+
 /* mehr Zeilenabstand in den Karten, damit die hochgestellte Nummer frei steht */
 #f10 .sr-karte-stichworte { row-gap: 14px; }
 #f10 .sr-karte:not(.sr-pille) { gap: 12px; }
@@ -125,9 +135,12 @@
 }
 
 
-/* Markenkern im Zentrum: Kicker „MARKENKERN“ etwas enger gesetzt, damit er
-   im Kreis nicht an den Rand stößt */
-#f10 .sr-label--kerntext .sr-label-klein { letter-spacing: 0.04em; }
+/* Markenkern im Zentrum: Block (Kicker „MARKENKERN“ + Kern-Satz) kompakter
+   gesetzt, damit der Kicker oben im Kreis nicht an den Rand stößt
+   (gemessen: Kreis Ø 193 px, Kicker ≈ 158 px breit) */
+#f10 .sr-label--kerntext { gap: 4px; }
+#f10 .sr-label--kerntext .sr-label-klein { letter-spacing: 0.01em; line-height: 1; }
+#f10 .sr-label--kerntext .sr-label-kern { font-size: var(--groesse-text-min); line-height: 1.04; }
 
 
 /* ---------------------------------------------------------------------------
@@ -144,6 +157,11 @@
   background: var(--f-hintergrund);
 }
 #f10 .g6s-abgleich[hidden] { display: none; }
+/* Während des Abgleichs tritt das Rad ganz zurück (sonst lugen die Pillen
+   „Markenkompetenz“ und „Brand Persona“ oben und unten unter der Fläche hervor) */
+#f10 .g6s-rad { transition: opacity var(--dauer-mittel) var(--kurve); }
+#f10 .g6s:has(> .g6s-abgleich.schritt-an:not([hidden])) > .g6s-rad { opacity: 0; }
+html.druckmodus #f10 .g6s > .g6s-rad { opacity: 1 !important; }
 html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF bleibt das Rad */
 
 #f10 .g6s-abgleich-links {
