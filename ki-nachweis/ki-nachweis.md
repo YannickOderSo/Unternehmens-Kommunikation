@@ -55,6 +55,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 33 | 15.10.2026 | System | Benachrichtigung: Workflow D06 fertig | – | Ergebnisse ausgewertet (siehe 32, D06) |
 | 34 | 16.10.2026 | Yannick | Frage: Status des zweiten Agenten (Account 2)? | – | Antwort im Chat; Übersichtsbild gezeigt (keine Dateien geändert) |
 | 35 | 16.10.2026 | Yannick | Screenshot Account 2; Frage: Wie rufen wir die Präsentation auf (Link?) | – | Antwort im Chat (keine Dateien geändert) |
+| 36 | 16.10.2026 | Yannick | Webseite (GitHub Pages) einrichten | – | Zwischenstand Account 2 zusammengeführt, Startseite, lokal als Webseite getestet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -560,6 +561,27 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 36 – 16.10.2026 – Yannick
+
+> Machen wir ebenfalls die Webseite
+
+- **Vorgehen Claude:**
+  - Branch `praesentation-account-2` (Stand `21d283a`) nach `master` zusammengeführt (Merge-Commit `4f46a08`, ohne
+    Konflikte), damit die Webseite die Präsentation schon zeigt. Account 2 arbeitet noch an Abschlussprüfung und
+    Feinschliff; spätere Stände werden erneut zusammengeführt.
+  - Startseite `index.html` im Hauptverzeichnis erstellt: Links zur Präsentation, zum PDF (Plan B), zur Folienübersicht
+    und zu den Unterlagen; HOLY-Farben aus dem Dossier und Schriften aus dem Präsentationsordner.
+  - Leere Datei `.nojekyll` angelegt, damit GitHub Pages alle Dateien unverändert ausliefert.
+  - Getestet mit einem lokalen Webserver unter dem Pfad `/Unternehmens-Kommunikation/`, wie bei GitHub Pages, und
+    Chromium (Playwright): Startseite am Desktop (1280 px) und auf dem Handy (390 px) ohne seitliches Scrollen. Alle
+    internen Links erreichbar, die Präsentation lädt alle Dateien und Schriften (22 Folien-Abschnitte), Folie 06
+    schaltet die Schritte weiter. Einzige 404 war das fehlende Favicon; ergänzt.
+  - Aktivieren muss Yannick GitHub Pages selbst in den Repository-Einstellungen; Claude hat dafür keinen Zugriff.
+- **Ergebnis:** [`index.html`](../index.html), `.nojekyll`, Präsentation unter `fallstudie-1-brand-persona/praesentation/`
+  auf `master`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -570,7 +592,7 @@ steht hier mit dem wörtlichen Auftrag.
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); fertig: 3 Gestaltungsrichtungen, Jury; Rest an Account 2 übergeben (Ü01) | – |
-| Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
+| Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | Zwischenstand `21d283a` am 16.10. nach `master` zusammengeführt; Abschluss läuft | Claude: Test als Webseite (Prompt 36) |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
 | D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
@@ -620,7 +642,10 @@ steht hier mit dem wörtlichen Auftrag.
   `praesentation-account-2`). Dessen Prompts und Delegationen stehen in `ki-nachweis-account-2.md`.
 - **Auftrag (wörtlich):** [`uebergaben/2026-10-14_account-2_praesentation.md`](uebergaben/2026-10-14_account-2_praesentation.md)
 - **Ergebnis:** *übergeben*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt beim Zusammenführen*
+- **Wie Claude das Ergebnis geprüft hat:** Zwischenstand `21d283a` (alle Folien gebaut, geprüft, überarbeitet und
+  exportiert) am 16.10.2026 nach `master` zusammengeführt und als Webseite getestet (siehe 36). Übersicht
+  `export/uebersicht.png` angesehen: Beispieldaten bzw. Dossier-Hypothesen sind gekennzeichnet (siehe 34). Endgültige
+  Prüfung nach Abschluss von Account 2.
 
 ### D02 – 13.10.2026 – ausgelöst durch Prompt 09
 
