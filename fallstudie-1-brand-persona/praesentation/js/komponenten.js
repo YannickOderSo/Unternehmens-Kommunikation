@@ -985,19 +985,31 @@
   }
 
   /* Ziffern 1–9 zählen nur, solange die Umfrage sichtbar ist – sonst gehen
-     sie an die Navigation (Ziffer + Enter springt zu einer Folie) */
+     sie an die Navigation (Ziffer + Enter springt zu einer Folie).
+     Eine gezählte Stimme (+1) lässt sich zurücknehmen: deck.js ruft
+     rueckgaengig() auf, wenn die Ziffer doch der Anfang einer Foliennummer
+     war (z. B. „1“ „0“ Enter → Folie 10, keine Stimme für Antwort 1). */
   Deck.taste(function (e) {
     if (!/^(Digit|Numpad)[1-9]$/.test(e.code || '')) return false;
     var aktiv = umfragen.filter(umfrageSichtbar)[0];
     if (!aktiv) return false;
     var i = parseInt(e.code.replace(/\D/g, ''), 10) - 1;
     if (i >= aktiv.werte.length) return false;
+    var vorher = { werte: aktiv.werte.slice(), beispiel: aktiv.beispiel };
     umfrageAendern(aktiv, i, e.shiftKey ? -1 : 1);
     var z = aktiv.zeilen[i];
     z.zeile.classList.remove('ist-gezaehlt');
     void z.zeile.offsetWidth;
     z.zeile.classList.add('ist-gezaehlt');
-    return true;
+    if (e.shiftKey) return true;
+    return {
+      rueckgaengig: function () {
+        aktiv.werte = vorher.werte;
+        aktiv.beispiel = vorher.beispiel;
+        umfrageSpeichern(aktiv);
+        umfrageZeichnen(aktiv, true);
+      }
+    };
   });
 
   /* Abgleich mit dem anderen Fenster (Referentenansicht) */

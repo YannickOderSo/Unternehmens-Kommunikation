@@ -520,6 +520,45 @@ html.vt-menue::view-transition-old(folie) { display: none; }
 html.leiste-aus .bedienleiste,
 html.leiste-aus .fortschritt { opacity: 0; pointer-events: none; }
 html.leiste-aus .bedienleiste { transform: translateY(8px); }
+
+/* Touch-Bildschirme (Finger statt Maus): Knöpfe mindestens 44 × 44 px */
+@media (pointer: coarse) {
+  .bedienleiste button,
+  .bl-farbe { width: 44px; height: 44px; }
+}
+/* Schmale Bildschirme (Handy hochkant): Die Leiste passt in die Breite.
+   Es bleiben Zurück, Nummer, Weiter, Übersicht, Vollbild und Hilfe; Referent,
+   Thema, hell/dunkel und Farbwähler (Werkzeuge für den Laptop) entfallen. */
+@media (max-width: 560px) {
+  .bedienleiste {
+    max-width: calc(100vw - 32px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bedienleiste .bl-trenner,
+  .bedienleiste .bl-farbe,
+  .bedienleiste [data-aktion="referent"],
+  .bedienleiste [data-aktion="thema"],
+  .bedienleiste [data-aktion="modus"],
+  .bedienleiste [data-aktion="farben-zurueck"] { display: none; }
+  .bedienleiste .bl-nummer { min-width: 56px; padding: 0 4px; }
+}
+/* Handy hochkant: Die Folie (16 : 9) ist dann sehr klein – kurzer Hinweis
+   im freien Rand über der Folie (nicht im Druck, nicht in der Referentenansicht) */
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  html:not(.referent):not(.druckmodus):not(.aufnahme) body::after {
+    content: "\21BB  Gerät quer halten – dann wird die Folie größer";
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 58;
+    text-align: center;
+    font: 500 15px/1.35 var(--schrift-text);
+    color: var(--f-text-2);
+    pointer-events: none;
+  }
+}
 html.aufnahme .bedienleiste,
 html.aufnahme .fortschritt { display: none !important; }
 /* Testmodus (werkzeuge/pruefen.mjs): Endzustände sofort, ohne Übergänge */

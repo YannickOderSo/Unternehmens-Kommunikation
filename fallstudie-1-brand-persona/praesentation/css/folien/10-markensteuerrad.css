@@ -5,11 +5,14 @@
    die Ergänzungen dieser Folie:
      • Markenkern als Band über dem Rad (mit gestricheltem Platzhalter)
      • Quellenkürzel direkt hinter einzelnen Stichworten
-     • Konsistenzprüfung: rote Nummern an Stichworten + Notizen „Lücke 1/2“
+     • Konsistenzprüfung: Nummern (Lückenfarbe) an Stichworten + Notizen „Lücke 1/2“
      • optionaler Abgleich mit der Wortwolke (letzter Schritt)
-   Farbe der Lücken: --f-fehler (Signalfarbe „Bruch“, in hell und dunkel
-   kontrastgeprüft). Nur Variablen aus tokens.css verwenden.
+   Farbe der Lücken: --f-warnung (Braun-Orange) wie „teilweise“ auf Folie 09b
+   und die Lücken auf Folie 11; Rot (--f-fehler) bleibt dem „Bruch“
+   vorbehalten (Folie 09b, 11). In hell und dunkel kontrastgeprüft.
+   Nur Variablen aus tokens.css verwenden.
    ============================================================================= */
+#f10 { --g6s-luecke: var(--f-warnung); }
 
 /* ---------------------------------------------------------------------------
    0. MARKENKERN – eigenes Band über dem Rad
@@ -71,7 +74,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
    1. QUELLENKÜRZEL JE STICHWORT
    Weicht die Quelle eines Stichworts vom Kürzel im Kartenkopf ab, steht ihr
    Kürzel klein direkt dahinter (gleiche Gestaltung wie die Kopf-Kürzel).
-   inline-block: Die rote Unterstreichung markierter Wörter läuft so nicht
+   inline-block: Die Unterstreichung markierter Wörter läuft so nicht
    unter dem Kürzel weiter.
    --------------------------------------------------------------------------- */
 #f10 .g6s-quelle {
@@ -122,7 +125,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   top: 50%;
   height: var(--g6s-luecke-hoehe, 100%);
   transform: translateY(-50%);
-  border-left: var(--linie-stark) dashed var(--f-fehler);
+  border-left: var(--linie-stark) dashed var(--g6s-luecke);
 }
 #f10 .g6s-luecke--rechts {
   align-items: flex-end;
@@ -148,7 +151,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   letter-spacing: var(--kicker-laufweite);
   text-transform: var(--kicker-versalien);
   line-height: 1.2;
-  color: var(--f-fehler);
+  color: var(--g6s-luecke);
 }
 #f10 .g6s-luecke--rechts .g6s-luecke-kopf { flex-direction: row-reverse; }
 #f10 .g6s-luecke-titel { white-space: nowrap; }
@@ -173,7 +176,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--f-fehler);
+  background: var(--g6s-luecke);
   color: var(--f-hintergrund);
   font-family: var(--schrift-zahl);
   font-size: var(--groesse-meta);
@@ -201,7 +204,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   white-space: nowrap;
 }
 #f10 .sr-trenner.g6s-trenner-aus { visibility: hidden; }
-/* Hinter einem markierten Stichwort steht ab der Konsistenzprüfung die rote
+/* Hinter einem markierten Stichwort steht ab der Konsistenzprüfung die
    Nummer an der Stelle des Trenners – der Trenner tritt dann zurück (die
    Gruppe bleibt gleich breit, nichts verschiebt sich) */
 #f10 .g6s-gruppe:has(.g6s-wortmarke.schritt-an) > .sr-trenner { visibility: hidden; }
@@ -223,7 +226,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
 #f10 .sr-karte-stichworte { row-gap: 14px; }
 #f10 .sr-karte:not(.sr-pille) { gap: 12px; }
 
-/* Markiertes Stichwort: gestrichelte rote Unterstreichung, sobald die Nummer
+/* Markiertes Stichwort: gestrichelte Unterstreichung in Lückenfarbe, sobald die Nummer
    sichtbar ist (gleicher Schritt, auch im Druck und in der Vorschau) */
 #f10 .sr-stichwort.g6s-markiert {
   position: relative;
@@ -235,7 +238,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   transition: text-decoration-color var(--dauer-mittel) var(--kurve);
 }
 #f10 .sr-stichwort.g6s-markiert:has(> .g6s-wortmarke.schritt-an) {
-  text-decoration-color: var(--f-fehler);
+  text-decoration-color: var(--g6s-luecke);
 }
 
 
@@ -334,5 +337,5 @@ html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF ble
 #f10 .sr-pille .g6s-wortmarke { top: -8px; }
 /* Feldpaar („· Nutzen ↔ Attribute“) im Kopf der Lücken-Notiz ausgeblendet:
    In 28 px passt es nicht mehr neben „Lücke n“; welche Felder betroffen
-   sind, zeigen die roten Nummern an den Stichworten. */
+   sind, zeigen die Nummern an den Stichworten. */
 #f10 .g6s-luecke-paar { display: none; }

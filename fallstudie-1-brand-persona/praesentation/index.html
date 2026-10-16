@@ -227,6 +227,10 @@
             <div><span class="angaben-titel">Gruppe</span><span class="angaben-wert" data-gruppe="zeilen"></span></div>
             <div><span class="angaben-titel">Termin</span><span class="angaben-wert" data-datum="lang"></span></div>
           </div>
+          <!-- Einordnung (Metaangabe, zählt nicht zum Wortbudget): Wer nur das PDF
+               oder eine einzelne Folie sieht, erkennt die studentische Arbeit.
+               Firmenname aus marke.js → unternehmen (Dossier Kap. 1 ✔ [2, 3]). -->
+          <p class="einstieg-einordnung" data-meta>Studentische Fallstudie · keine Verbindung zur <span data-unternehmen>HOLY Softdrinks GmbH</span></p>
         </div>
       </div>
     </div>
@@ -265,6 +269,10 @@
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • OPTIONAL: wird nur gezeigt mit marke.js → optionaleFolien.f01b: true (zählt nicht zur Sollzeit).
+     ║ • Zeit: Hauptfolien 14:00 + diese Folie 0:45 + Abgleich auf Folie 10 (ca. 0:10) = 14:55 – kein Puffer
+     ║     mehr. Nur einschalten, wenn dafür auf Folie 08 die Live-Umfrage entfällt (Frage nur rhetorisch
+     ║     stellen, zweimal weiterklicken, direkt die Analogie-Karten; spart ca. 30 s) – zwei Live-Momente
+     ║     mit Zurufen und Abstimmung passen nicht in 15 Minuten.
      ║ • Dann greift Folie 10 die Zurufe im letzten Schritt auf („Wir kommen am Ende darauf zurück“).
      ║ • Vor dem Vortrag Probe-Zurufe löschen: „Wolke leeren“ zweimal klicken.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
@@ -328,7 +336,7 @@
   </footer>
 
   <aside class="notizen">
-    <p><b>Optionale Folie (45 s)!</b> Nur einschalten, wenn die gestoppte Probe aller Hauptfolien höchstens 14:00 dauert (mit dieser Folie dann ≤ 14:45 von 15:00) – sonst in marke.js → optionaleFolien → f01b: false lassen. Wird sie gezeigt, auf Folie 01 nicht noch einmal „Rufen Sie …“ sagen, sondern direkt hierher überleiten (siehe Notiz Folie 01, Schritt 2).</p>
+    <p><b>Optionale Folie (45 s)!</b> Nur einschalten, wenn dafür auf Folie 08 die Live-Umfrage entfällt (spart ca. 30 s) und die gestoppte Probe aller Hauptfolien höchstens 14:00 dauert (mit dieser Folie und dem Abgleich auf Folie 10 dann ca. 14:25 von 15:00) – sonst in marke.js → optionaleFolien → f01b: false lassen. Wird sie gezeigt, auf Folie 01 nicht noch einmal „Rufen Sie …“ sagen, sondern direkt hierher überleiten (siehe Notiz Folie 01, Schritt 2).</p>
     <p data-schritt="0"><b>Frage stellen (ca. 10 s):</b> „Bevor wir tiefer einsteigen: Was verbinden Sie spontan mit <span data-marke></span>? Ein Wort genügt – rufen Sie es einfach rein.“</p>
     <p><b>Mitschreiben (ca. 25 s):</b> Ein Teammitglied klickt ins Feld unter der Wolke und tippt jeden Zuruf + Enter. Doppelte Nennungen ruhig erneut eintippen – sie werden größer. Laut mitlesen: „Ich höre … und … – mehrfach …“.</p>
     <p><b>Überleiten (ca. 10 s):</b> „Spannend – genau diese Bilder im Kopf sind die Wirkung einer Markenidentität. Wir kommen am Ende darauf zurück und prüfen auf Folie 10, ob unsere Analyse dazu passt.“ → Bild↓ (Clicker) verlässt das Eingabefeld und blättert zu Folie 02.</p>
@@ -608,7 +616,7 @@
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 04 · Brand Persona
-     ║ Bündel A – Yannick Heisler · Sollzeit 90 s · Feld: Brand Persona (Rahmen)
+     ║ Bündel A – Yannick Heisler · Sollzeit 80 s · Feld: Brand Persona (Rahmen)
      ║ Gestaltung: css/folien/04-persona.css · Skript: js/folien/04-persona.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
@@ -618,7 +626,7 @@
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
-  04-persona.html – Folie f04 „Brand Persona“ (Bündel A, 90 s)
+  04-persona.html – Folie f04 „Brand Persona“ (Bündel A, 80 s)
   =========================================================================
   Rahmen des Markensteuerrads: Brand Persona. Methoden: Desk Research + KI
   (Prompts P3/P4/P6 in ../prompts.md, Vorlage in ../methoden.md).
@@ -648,7 +656,7 @@
     3  Mediennutzung (Balken wachsen), Psychografie
     4  Markierung „Daten vs. Annahme“ + Legende
 -->
-<section class="folie" id="f04" data-titel="Brand Persona" data-feld="persona" data-zeit="90" data-buendel="A">
+<section class="folie" id="f04" data-titel="Brand Persona" data-feld="persona" data-zeit="80" data-buendel="A">
   <header class="folie-kopf">
     <p class="kicker">Desk Research + KI · Für wen?</p>
     <!-- Der Titel kommt aus den Daten (Feld „titel“), damit Persona und
@@ -737,8 +745,8 @@
   <aside class="notizen">
     <p data-schritt="0"><b>Für wen?</b> (ca. 10 s) Das ist Marco, 28 – unsere Brand Persona und der Bezugsrahmen für alle Felder des Steuerrads. Erstellt per Desk Research und KI, geprüft am Dossier.</p>
     <p data-schritt="1"><b>Zitat</b> (ca. 10 s) Sein Satz: „Ohne Zucker durch die Nachtschicht – und es schmeckt.“ Erfunden, aber angelehnt an echte Kundenstimmen.</p>
-    <p data-schritt="2"><b>Wer und wo?</b> (ca. 25 s) Laut Mitgründer Jost ist die Kundschaft meist 25 bis 40, zu etwa zwei Dritteln männlich, viele im Schichtdienst – also kein junger Gamer. Marco bestellt online auf Vorrat und nutzt Rabatte. Wohnort ist unsere Annahme.</p>
-    <p data-schritt="3"><b>Wie tickt er?</b> (ca. 30 s) Er ist auf Instagram, TikTok und Twitch – die Werte sind Nutzungsquoten der 14- bis 29-Jährigen, keine Daten über <span data-marke></span>-Kundschaft. Ihm geht es um Geschmack, Wachbleiben und den Squad; Zucker und Kalorien stören ihn.</p>
+    <p data-schritt="2"><b>Wer und wo?</b> (ca. 20 s) Laut Mitgründer Jost ist die Kundschaft meist 25 bis 40, zu etwa zwei Dritteln männlich, viele im Schichtdienst – also kein junger Gamer. Marco bestellt online auf Vorrat und nutzt Rabatte. Wohnort ist unsere Annahme.</p>
+    <p data-schritt="3"><b>Wie tickt er?</b> (ca. 25 s) Er ist auf Instagram, TikTok und Twitch – die Werte sind Nutzungsquoten der 14- bis 29-Jährigen, keine Daten über <span data-marke></span>-Kundschaft. Ihm geht es um Geschmack, Wachbleiben und den Squad; Zucker und Kalorien stören ihn.</p>
     <p data-schritt="4"><b>Was ist belegt?</b> (ca. 15 s) Flächen mit Datensymbol beruhen auf Quellen, gestrichelte Blöcke sind begründete Annahmen. Überleitung: Welche Motive treiben Marco an? → Limbic Map.</p>
     <p>Belege (Recherche-Dossier, Stand 14.10.2026): Soziodemografie – Jost 08/2024 „zwischen 25 und 40“, „primär männlich“, etwa 2/3 zu 1/3, Schichtdienst ✔ [24]; Trending Topics: Pflege, Polizei, Feuerwehr, Lkw ✔ [7]. Kaufverhalten – Kern ist der eigene Onlineshop ✔ [4]; günstigste Portion (ab 0,80 €) nur in der 50er-Dose online ✔ [1]; Rabattstaffel Mix &amp; Match ✔ [48]; kein Abo (alle 213 Shop-Produkte geprüft) ✔ [30, 48]. Mediennutzung – ARD/ZDF-Medienstudie 2025, 14–29 J., mind. wöchentlich: Instagram 77 %, TikTok 50 %, Twitch 19 % ✔ [102]; für YouTube nennt das Dossier keine Zahl. Geografie – Annahme, gestützt auf Mintel (Kategorie, nicht <span data-marke></span>): „In Städten lebende Männer …“ [98]. Psychografie – Annahme aus Kundenstimmen (Trustpilot, REVIEWS.io, schwache Quellen) [88, 89]. Zitat fiktiv, angelehnt an Kundenstimmen und den Claim „Änder nix – nur dein Drink“ [18]. Wachstums-Persona „Lena, 29“ (Pflegefachkraft, Einstieg im Supermarkt, Instagram/TikTok/Pinterest) steht im Dossier 4.3 und im Backup B3 – Richtung der Kampagne 2026. Rückfrage „Ist die Persona ein Klischee?“ → Jede Angabe ist als Daten oder Annahme gekennzeichnet; der erste Entwurf (21-jähriger Gamer) wurde verworfen, weil er der Gründeraussage widerspricht. Bild: Platzhalter – das KI-Bild wird mit Werkzeug und Datum gekennzeichnet (P6).</p>
   </aside>
@@ -794,7 +802,7 @@
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 05 · Limbic Map
-     ║ Bündel A – Yannick Heisler · Sollzeit 60 s · Feld: Brand Persona (Rahmen)
+     ║ Bündel A – Yannick Heisler · Sollzeit 55 s · Feld: Brand Persona (Rahmen)
      ║ Gestaltung: css/folien/05-limbic-map.css · Skript: js/folien/05-limbic-map.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
@@ -803,7 +811,7 @@
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
-  05-limbic-map.html – Folie f05 „Limbic Map“ (Bündel A, 60 s)
+  05-limbic-map.html – Folie f05 „Limbic Map“ (Bündel A, 55 s)
   =========================================================================
   Rahmen des Markensteuerrads: Brand Persona. Methode: Limbic® Map nach
   Häusel (Gruppe Nymphenburg) – Prompt P5 in ../prompts.md, Vorlage in
@@ -845,7 +853,7 @@
        Abstand, die größte Lücke zählt hoch und ist in den Balken markiert
     3  drei Folgen für die Kommunikation (gestaffelt)
 -->
-<section class="folie" id="f05" data-titel="Limbic Map" data-feld="persona" data-zeit="60" data-buendel="A">
+<section class="folie" id="f05" data-titel="Limbic Map" data-feld="persona" data-zeit="55" data-buendel="A">
   <header class="folie-kopf">
     <!-- Der Name in der Leitfrage kommt aus den Daten (persona.beschriftung) -->
     <p class="kicker">Limbic Map nach Häusel · Was treibt <span data-g2l="personaName">Marco</span> an?</p>
@@ -899,7 +907,7 @@
     <p data-schritt="0"><b>Wie lesen?</b> (ca. 15 s) Die Limbic Map nach Häusel ordnet Kaufmotive drei Systemen zu: Balance, Dominanz, Stimulanz. Dazwischen liegen Mischbereiche, am Rand die sieben Limbic Types.</p>
     <p data-schritt="1"><b>Persona</b> (ca. 15 s) Marco ist vor allem auf Stimulanz und Dominanz aus – Abwechslung und Spaß, aber auch Leistung. Damit ist er ein Abenteurer.</p>
     <p data-schritt="2"><b>Marke und Lücke</b> (ca. 15 s) <span data-marke></span> sendet vor allem Stimulanz: Sorten, Farben, Comic-Tiere, Provokation. Leistung kommt kaum vor – bei Dominanz liegt die Marke 20 Punkte unter Marco. Das ist die größte Lücke.</p>
-    <p data-schritt="3"><b>Was folgt daraus?</b> (ca. 15 s) Leistung im Schichtalltag zeigen, frech bleiben, aber erwachsen, und als Botschaft: fokussiert ohne Zucker. Überleitung: Welche Eigenschaften unterscheiden <span data-marke></span>? → Repertory Grid.</p>
+    <p data-schritt="3"><b>Was folgt daraus?</b> (ca. 10 s) Leistung im Schichtalltag zeigen, frech bleiben, aber erwachsen, und als Botschaft: fokussiert ohne Zucker. Überleitung: Welche Eigenschaften unterscheiden <span data-marke></span>? → Repertory Grid.</p>
     <p>Für Rückfragen: Systeme nach Häusel – Balance (Sicherheit, Harmonie, Tradition), Dominanz (Leistung, Status, Durchsetzung), Stimulanz (Neugier, Abwechslung, Spaß); Mischbereiche Abenteuer/Thrill, Disziplin/Kontrolle, Fantasie/Genuss. Abenteurer liegen zwischen Dominanz und Stimulanz (Dossier 4.4 ✎, [105]); die Motive „Abwechslung, Mut, Freiheit“ sind Modellwissen – mit der Vorlesungsfolie abgleichen, ebenso die Lage der Typen (Winkel in den Daten änderbar). Gewichte: Limbic-Map-Hypothese des Recherche-Dossiers (Kap. 4.4, H) – Marco B 20 / D 35 / S 45, Auftritt von <span data-marke></span> B 30 / D 15 / S 55; Startwerte des Teams, keine Messung, die Prozentanteile sind nicht Teil des Modells. Begründung laut Dossier: Stimulanz durch Sortenvielfalt, Limited Drops, Farben, Comic-Tiere, provokante Kampagne; Balance durch „gutes Gewissen“ und Squad; Dominanz nur über Energy und den Herausforderer-Gestus [1, 25]. Eine Marke hat keinen Limbic Type; man verortet sie über Emotionsfelder. Die Lücke ist die Differenz der Gewichte (15 − 35 = −20 Prozentpunkte). Die Überschneidung (Summe der jeweils kleineren Gewichte: 20 + 15 + 45 = 80 %) ist eine eigene, vereinfachte Kennzahl, keine Kennzahl von Häusel. Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg. Rückfrage „Wie kommt ihr auf die Prozentwerte?“ → Einschätzung anhand der Persona-Daten und Häusels Motivliste, von KI vorgeschlagen (Dossier) und von uns geprüft (Prompt-Log B2).</p>
   </aside>
 
@@ -965,7 +973,7 @@
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 06 · Repertory Grid
-     ║ Bündel B – Lukas Welker · Sollzeit 90 s · Feld: Markenattribute
+     ║ Bündel B – Lukas Welker · Sollzeit 80 s · Feld: Markenattribute
      ║ Gestaltung: css/folien/06-repertory-grid.css · Skript: js/folien/06-repertory-grid.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
@@ -975,7 +983,7 @@
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
-  06-repertory-grid.html – Folie f06 „Repertory Grid → Markenattribute“ (Bündel B, 90 s)
+  06-repertory-grid.html – Folie f06 „Repertory Grid → Markenattribute“ (Bündel B, 80 s)
   =========================================================================
   Feld im Markensteuerrad: Markenattribute („Über welche Eigenschaften
   verfüge ich?“). Methode: Repertory Grid nach Kelly (1955), Vorlage und
@@ -1024,7 +1032,7 @@
     3  Markenattribute: Zeilen hinterlegt, Strich bei Ø Wettbewerb, rechts
        Name + Vorsprung + Kriterien; Chip „Hürde“ bei „selbst anrühren“
 -->
-<section class="folie" id="f06" data-titel="Repertory Grid" data-feld="attribute" data-zeit="90" data-buendel="B">
+<section class="folie" id="f06" data-titel="Repertory Grid" data-feld="attribute" data-zeit="80" data-buendel="B">
   <header class="folie-kopf">
     <p class="kicker">Repertory Grid nach Kelly <span class="beispiel">Beispieldaten</span></p>
     <h2 class="titel">Drei Attribute heben <em data-marke></em> vom Wettbewerb ab</h2>
@@ -1051,10 +1059,10 @@
   </footer>
 
   <aside class="notizen">
-    <p data-schritt="0"><b>Frage und Methode</b> (ca. 20 s) Welche Eigenschaften unterscheiden <span data-marke></span> aus Sicht der Zielgruppe vom Wettbewerb? Dafür nutzen wir das Repertory Grid nach Kelly. Jede befragte Person sieht drei Marken – eine Triade – und beantwortet eine Frage: Was verbindet zwei davon und trennt sie von der dritten?</p>
-    <p data-schritt="1"><b>Triade → Konstrukt</b> (ca. 20 s) Hier stehen Marke A und Marke B für „zuckerhaltig“, <span data-marke></span> für „zuckerfrei“. So entsteht ein bipolares Konstrukt mit zwei Polen. Aus acht Triaden je Person kamen viele Konstrukte zusammen; gleichbedeutende haben wir zusammengefasst und gezählt, wie oft sie genannt wurden.</p>
-    <p data-schritt="2"><b>Polaritätenprofil</b> (ca. 20 s) Dann haben alle Befragten <span data-marke></span>, fünf Wettbewerber und ihre Idealmarke auf jedem Konstrukt von 1 bis 7 bewertet. Links steht, wie oft ein Konstrukt genannt wurde – die Relevanz. Gepunktet: die Idealmarke. Gestrichelt: Marke A, unser stärkster Wettbewerber. Durchgezogen: <span data-marke></span>.</p>
-    <p data-schritt="3"><b>Markenattribute</b> (ca. 30 s) Markenattribute sind Konstrukte, die drei Bedingungen erfüllen: oft genannt, klar anders als der Durchschnitt der fünf Wettbewerber – der kurze Strich – und nah am Ideal. Rechts steht der Vorsprung vor diesem Durchschnitt in Skalenpunkten. Das gilt für zuckerfrei, viele Sorten und Community-nah. „Selbst anrühren“ unterscheidet am stärksten, liegt aber weit vom Ideal entfernt: eine Hürde, kein Attribut. Die drei Attribute sind die Startpunkte für das Laddering.</p>
+    <p data-schritt="0"><b>Frage und Methode</b> (ca. 18 s) Welche Eigenschaften unterscheiden <span data-marke></span> aus Sicht der Zielgruppe vom Wettbewerb? Dafür nutzen wir das Repertory Grid nach Kelly. Jede befragte Person sieht drei Marken – eine Triade – und beantwortet: Was verbindet zwei davon und trennt sie von der dritten?</p>
+    <p data-schritt="1"><b>Triade → Konstrukt</b> (ca. 18 s) Hier stehen Marke A und Marke B für „zuckerhaltig“, <span data-marke></span> für „zuckerfrei“ – ein bipolares Konstrukt. Aus acht Triaden je Person kamen viele Konstrukte zusammen; gleichbedeutende haben wir zusammengefasst und ihre Nennungen gezählt.</p>
+    <p data-schritt="2"><b>Polaritätenprofil</b> (ca. 18 s) Dann haben alle Befragten <span data-marke></span>, fünf Wettbewerber und ihre Idealmarke auf jedem Konstrukt von 1 bis 7 bewertet. Links steht, wie oft ein Konstrukt genannt wurde – die Relevanz. Gepunktet: die Idealmarke. Gestrichelt: Marke A, unser stärkster Wettbewerber. Durchgezogen: <span data-marke></span>.</p>
+    <p data-schritt="3"><b>Markenattribute</b> (ca. 26 s) Markenattribute erfüllen drei Bedingungen: oft genannt, klar anders als der Durchschnitt der fünf Wettbewerber – der kurze Strich – und nah am Ideal. Rechts: der Vorsprung in Skalenpunkten. Das gilt für zuckerfrei, viele Sorten und Community-nah. „Selbst anrühren“ unterscheidet am stärksten, liegt aber weit vom Ideal: eine Hürde, kein Attribut. Die drei Attribute sind die Startpunkte fürs Laddering.</p>
     <p>Hinweise: Alle Werte sind Beispieldaten – echte Mittelwerte selbst berechnen (Backup B4: Rohdaten; die Ø-Werte hier stammen aus B4). TODO nach der Auswertung: in Schritt 1 die echte Zahl nennen („Aus acht Triaden je Person kamen [Zahl] Konstrukte zusammen“). Die Konstrukte sind Hypothesen aus dem Recherche-Dossier (Abschnitt 3.6), belegt ist nur der Hintergrund: <span data-marke></span> verkauft Pulver und Sirup, keine trinkfertigen Dosen; 31 Energy-Sorten, laut Press Kit „60+ Geschmacksrichtungen“ über alle Linien (beides Dossier 3.1, gesichert ✔); Community „HOLY Squad“ (Dossier 2.1, gesichert ✔ [5, 24]). <b>Kriterien</b> (wie methoden.md, Abschnitt 2): relevant = viele Nennungen (gezählt über alle Triaden und Personen, daher auch mehr als 8 möglich); differenzierend = Abstand <span data-marke></span> zum Ø der fünf Wettbewerber |M − Ø W1–W5|; nah am Ideal = kleiner Abstand <span data-marke></span> zur Idealmarke |M − I|. Die Linie „Marke A“ zeigt nur den stärksten Wettbewerber (W1) zur Veranschaulichung. „Marke A“ durch den echten stärksten Wettbewerber ersetzen (Vorschlag Dossier 5.3: W1 = Red Bull) – erst, wenn echte Bewertungen vorliegen. Hürde „selbst anrühren“: Linie in Warnfarbe = Abstand <span data-marke></span> zur Idealmarke (Beispieldaten 6,8 zu 3,1). Begriffe mit der Vorlesungsfolie abgleichen. <b>Rückfrage „Zuckerfrei gibt es doch auch bei anderen – warum unterscheidet das?“</b> → Gemessen wird, wie die Befragten die ganze Marke wahrnehmen, nicht einzelne Varianten. Deshalb rechnen wir gegen den Durchschnitt aller fünf Wettbewerber; im vorgeschlagenen Set ist Gönrgy zuckerfrei (Dossier 5.2 ✔), dazu kommt Coca-Cola Zero (Set-Vorschlag Dossier 5.3; dass Zero zuckerfrei ist, steht nicht im Dossier – Modellwissen, vor dem Vortrag prüfen). Darum ist der Vorsprung bei „zuckerfrei“ der kleinste der drei. <span data-marke></span> selbst vergleicht sich nur mit gezuckerten Standardprodukten (Dossier 3.6, Hypothese). Fällt der Abstand mit echten Daten klein aus: schärferes Konstrukt aus Dossier 3.6 nutzen (z. B. „künstlich gesüßt – natürlich/ungesüßt“) und den Titel anpassen – den Titel erst nach der echten Auswertung festlegen. <b>Rückfrage „Warum KI-simulierte Befragte?“</b> → Persona als Grundlage, Ergebnisse mit drei echten Kurzinterviews geprüft, Grenzen offen benennen (Prompt-Log B2). <b>Rückfrage „Wie genau sind die Werte?“</b> → Die Mittelwerte stammen aus 5 KI-Personas und 3 echten Interviews; sie zeigen Richtungen, keine repräsentativen Messwerte. Deshalb steht der Vorsprung in ganzen Skalenpunkten (genaue Werte per Maus-Tooltip auf den Punkten und im Backup B4). Vor dem Vortrag KI-Personas und echte Interviews getrennt auswerten, prüfen, ob beide in dieselbe Richtung zeigen, und Abweichungen offen nennen. Eine Nachkommastelle: in den Daten "vorsprungDezimalen": 1.</p>
   </aside>
 
@@ -1610,7 +1618,7 @@
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 09 · Kommunikationsanalyse: Kanäle & Bildwelt
-     ║ Bündel C – Elias Knauber · Sollzeit 65 s · Feld: Markenbild
+     ║ Bündel C – Elias Knauber · Sollzeit 60 s · Feld: Markenbild
      ║ Gestaltung: css/folien/09-kommunikationsanalyse.css · Skript: js/folien/09-kommunikationsanalyse.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
@@ -1620,7 +1628,7 @@
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
-  09-kommunikationsanalyse.html – Folien f09 „Kanäle & Bildwelt“ (65 s) und
+  09-kommunikationsanalyse.html – Folien f09 „Kanäle & Bildwelt“ (60 s) und
   f09b „Corporate Design & Fit“ (55 s) · Bündel C · Feld Markenbild
   =========================================================================
   Methode: Kommunikationsanalyse (Inhaltsanalyse der Pflichtkanäle Instagram,
@@ -1694,9 +1702,9 @@
 -->
 
 <!-- ===================================================================
-     f09 · Kanäle & Bildwelt (65 s)
+     f09 · Kanäle & Bildwelt (60 s)
      =================================================================== -->
-<section class="folie" id="f09" data-titel="Kommunikationsanalyse: Kanäle & Bildwelt" data-feld="bild" data-zeit="65" data-buendel="C">
+<section class="folie" id="f09" data-titel="Kommunikationsanalyse: Kanäle & Bildwelt" data-feld="bild" data-zeit="60" data-buendel="C">
   <header class="folie-kopf">
     <p class="kicker">Kommunikationsanalyse · Instagram, Facebook, YouTube <span class="beispiel">Beispieldaten</span></p>
     <h2 class="titel">Instagram trägt die Reichweite, der Raptor das Bild</h2>
@@ -1732,7 +1740,7 @@
   </footer>
 
   <aside class="notizen">
-    <p data-schritt="0"><b>Kanäle</b> (ca. 22 s) Wie tritt <span data-marke></span> auf? Wir haben die drei Pflichtkanäle analysiert. Die Reichweite liegt klar auf Instagram mit rund 383.000 Followern; Facebook hat 126.000, YouTube nur 20.500 Abos – fast nur Shorts. Gestrichelt sind Werte, die wir noch selbst erheben.</p>
+    <p data-schritt="0"><b>Kanäle</b> (ca. 20 s) Wie tritt <span data-marke></span> auf? Wir haben die drei Pflichtkanäle analysiert. Die Reichweite liegt klar auf Instagram mit rund 383.000 Followern; Facebook hat 126.000, YouTube nur 20.500 Abos – fast nur Shorts. Gestrichelt sind Werte, die wir noch selbst erheben.</p>
     <p data-schritt="1"><b>Bildwelt</b> (ca. 15 s) In den Beiträgen wiederholen sich vier Motivgruppen: Produkt, Comic-Tiere, Community und Kurzvideos. Am häufigsten sind die Comic-Tiere, vorneweg der Adler „Raptor“.</p>
     <p data-schritt="2"><b>Schlüsselbild?</b> (ca. 25 s) Ein Schlüsselbild nach Kroeber-Riel ist ein wiederkehrendes Motiv, das die Positionierung bildlich trägt. Unser Kandidat: der Raptor – Maskottchen, Sortenname, sogar die Treue-Level. Er steht für den lauten Herausforderer. Ob er über alle Kanäle trägt, klärt die Stichprobe – daher das Fragezeichen.</p>
     <p>Hintergrund und Quellen: Follower, Abos und YouTube-Frequenz aus dem Recherche-Dossier Kap. 6.1 (✔, Profile abgerufen am 14.10.2026, [19] Instagram, [122] Facebook-Seite, [123, 124] YouTube) – am Präsentationstag neu ablesen und hier in den Daten eintragen. Facebook-Gruppe „HOLY Squad“ ≈ 40.000 Mitglieder ist eine Selbstangabe und gehört nicht in die Seiten-Follower. Instagram-Frequenz, Facebook-Frequenz, alle Engagement-Raten und die Anteile der Motivgruppen („x von 50“) sind BEISPIELDATEN: selbst erheben (je Kanal die letzten 15–20 Beiträge, jedem Beitrag ein Hauptmotiv zuordnen, Rechnung in Excel/Sheets, nicht per KI) – methoden.md Abschnitt 5, Dossier To-do Kap. 6.7. Motive: Dossier Kap. 6.4 ✔ [1, 5, 73] und Kurzvideos [39, 124]; die Einordnung als Schlüsselbild (Raptor und Dose-Shaker-Stillleben) ist eine Hypothese (H, Kap. 6.4). Rückfrage „Gibt es einen zweiten Kandidaten?“ – das Dose-Shaker-Stillleben; es zeigt eher das „gute Gewissen“ (H). Treue-Level „Raptor Egg“ bis „OG Raptor“ siehe unten. „Herausforderer“: Press Kit „Challenger-Brand“ ✔ [13], die Einordnung ist H (Kap. 2.6); dass der Raptor dafür steht, ist unsere Deutung (H). Begriff Schlüsselbild nach Kroeber-Riel (Bildkommunikation, 1993) aus dem Modellwissen – mit der Vorlesung abgleichen. Unsicher (Modellwissen): Esch unterscheidet Präsenzsignale (Logo, Farben, Maskottchen – sorgen für Wiedererkennung) von Schlüsselbildern, die einen Positionierungsinhalt tragen; ein Maskottchen ist also nur dann ein Schlüsselbild, wenn es für die Positionierung steht. Maskottchen „Raptor“ (von der Sorte Raspberry Raptor) und Treue-Level „Raptor Egg“ bis „OG Raptor“: Dossier Kap. 6.3 ✔ [54, 71]. Das Schlüsselbild rechts ist ein Platzhalter: Screenshot des Raptor-Beitrags (mit Datum) in bilder/ legen und in den Daten unter "bild" eintragen; ein echter Screenshot bekommt automatisch einen durchgezogenen Rahmen.</p>
@@ -2006,7 +2014,7 @@
     3  Markenattribute    4  Markennutzen    5  Markentonalität    6  Markenbild
        (jeweils leuchten Feld und Karte, der Rest tritt zurück)
     7  Markenkern erscheint im Band über dem Rad
-    8  Konsistenzprüfung: zwei Lücken werden markiert (rot, Nummern 1 und 2)
+    8  Konsistenzprüfung: zwei Lücken werden markiert (Braun-Orange, Nummern 1 und 2)
     9  NUR wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b) und
        in ihrer Wortwolke Wörter stehen: Abgleich „Unsere Analyse“ ↔
        „Ihre Zurufe“ (sonst endet die Folie mit Schritt 8)
@@ -2014,7 +2022,15 @@
 <section class="folie" id="f10" data-titel="Markensteuerrad (Synthese)" data-feld="hub" data-zeit="75" data-buendel="C">
   <header class="folie-kopf">
     <p class="kicker">Synthese · Markensteuerrad nach Esch <span class="beispiel">Beispieldaten</span></p>
-    <h2 class="titel"><em data-marke></em>: stimmige Identität – bis auf zwei Lücken</h2>
+    <!-- Titel mit zwei Fassungen: die Kernaussage und – nur im optionalen
+         Abgleich-Schritt mit der Wortwolke von Folie 01b – ein eigener Titel.
+         Das Ende des Abgleich-Titels setzt das Skript nach dem Ergebnis:
+         data-text-teil (einige Zurufe passen), -keiner (kein Zuruf passt),
+         -alle (alle passen). Texte hier ändern. -->
+    <h2 class="titel g6s-titel">
+      <span class="g6s-titel-standard"><em data-marke></em>: stimmige Identität – bis auf zwei Lücken</span>
+      <span class="g6s-titel-abgleich" hidden><span data-anrede-sie="Ihr" data-anrede-ihr="Euer">Ihr</span> Bild von <em data-marke></em> trifft unseren Kern<span data-g6s="titel-ergebnis" data-text-teil=" – teilweise" data-text-keiner=" – noch nicht" data-text-alle=""> – teilweise</span></span>
+    </h2>
   </header>
 
   <div class="folie-inhalt g6s">
@@ -2124,7 +2140,7 @@
        • kern: Markenkern – EIN kurzer Satz (höchstens ca. 5 Wörter). Steht im
          Band über dem Rad, im Abgleich und auf Folie 11 (Zeile „Kern“).
        • luecken: genau die Lücken der Konsistenzprüfung (empfohlen: zwei).
-           nummer  1, 2 … (erscheint als rote Nummer an den Stichworten)
+           nummer  1, 2 … (erscheint als Nummer an den Stichworten)
            seite   "links" = Notiz zwischen den Karten Nutzen und Attribute,
                    "rechts" = Notiz zwischen den Karten Tonalität und Bild
            text    Notiz, kurz (höchstens ca. 5 Wörter, einzeilig) – am besten
@@ -2134,7 +2150,7 @@
                    „markieren“ zusammen.
            markieren  welche Stichworte die Lücke bilden: Feld + Stichwort,
                    genau wie oben im Steuerrad geschrieben (sonst fehlt die
-                   rote Nummer – die Konsole meldet dann „Stichwort … steht
+                   Nummer – die Konsole meldet dann „Stichwort … steht
                    nicht im Feld …“)
        • abgleich: Wortwolke von Folie 1b (Name wie in marke.js → wortwolken).
          Treffer = Zurufe, die einem Stichwort oder dem Kern ähneln (gleicher
@@ -2175,7 +2191,7 @@
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 11 · Fazit & Empfehlungen
-     ║ Bündel C – Elias Knauber · Sollzeit 90 s · Feld: –
+     ║ Bündel C – Elias Knauber · Sollzeit 75 s · Feld: –
      ║ Gestaltung: css/folien/11-fazit.css · Skript: js/folien/11-fazit.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
@@ -2233,7 +2249,7 @@
   • Solange Steuerrad und Laddering auf Beispieldaten beruhen, bleibt die
     Pille „Beispieldaten“ im Kicker.
 -->
-<section class="folie" id="f11" data-titel="Fazit & Empfehlungen" data-feld="leer" data-zeit="90" data-buendel="C">
+<section class="folie" id="f11" data-titel="Fazit & Empfehlungen" data-feld="leer" data-zeit="75" data-buendel="C">
   <header class="folie-kopf">
     <p class="kicker">Fazit &amp; Empfehlungen <span class="beispiel">Beispieldaten</span></p>
     <h2 class="titel"><em data-marke></em>: starker Kern, zwei Lücken, ein Bruch</h2>
@@ -2346,14 +2362,14 @@
     <p class="quelle">Quelle: Folien 09b und 10 · Dossier Kap. 8 (S1–S3, S5), Belege ✔ · Empfehlungen: eigene Hypothesen (H)</p>
   </footer>
 
-  <!-- SPRECHTEXT: 90 s ≈ 155 gesprochene Wörter (gekürzt am 16.10.2026; Ziel ca.
-       1,75 Wörter/s wie auf Folie 02). Befunde und Empfehlungen
+  <!-- SPRECHTEXT: 75 s ≈ 140 gesprochene Wörter (gekürzt am 16.10.2026, Sollzeit
+       90 → 75 s für mehr Puffer; ca. 1,9 Wörter/s). Befunde und Empfehlungen
        stehen auf der Folie – nur begründen, nicht vorlesen. -->
   <aside class="notizen">
-    <p data-schritt="0"><b>Fazit</b> (ca. 20 s) Zurück zu unserer Leitfrage: Wofür steht <span data-marke></span> – und passt der Auftritt dazu? Der Kern ist stark: Genuss mit gutem Gewissen, frech im Ton, getragen von der Community. Aber im Auftritt gibt es zwei Lücken und einen Bruch.</p>
-    <p data-schritt="1"><b>Empfehlung 1 – Koffein offen zeigen</b> (ca. 20 s) Erstens: Wer ein gutes Gewissen verspricht, muss beim Koffein ehrlich sein. Wir empfehlen, Koffein pro Portion und „18+“ gut sichtbar vorn auf Dose und Posts zu zeigen, dazu ein kurzes Erklärvideo. So wird der Kritikpunkt zum Beweis für Glaubwürdigkeit.</p>
-    <p data-schritt="2"><b>Empfehlung 2 – Echte Kundschaft zeigen</b> (ca. 20 s) Zweitens: Die Bildwelt ist zu jung für die Kundschaft von 25 bis 40, oft im Schichtdienst. Also echte Kundschaft zeigen – Creator aus Pflege, Schichtdienst und Sport auf Instagram und YouTube. Nebenbei zeigen sie, wie einfach das Anrühren ist.</p>
-    <p data-schritt="3"><b>Empfehlung 3 – Ein Dachclaim, ein Raptor</b> (ca. 25 s) Drittens, gegen den zersplitterten Auftritt: ein Dachclaim – „Die Softdrink Revolution“ –, darunter das Versprechen „Geiler Geschmack mit gutem Gewissen“. Der Raptor wird zum durchgängigen Schlüsselbild, frecher inszeniert, und es gibt einen Profilnamen auf allen Kanälen. (ca. 5 s) Damit sind wir am Ende – vielen Dank!</p>
+    <p data-schritt="0"><b>Fazit</b> (ca. 15 s) Zurück zur Leitfrage: Wofür steht <span data-marke></span> – und passt der Auftritt dazu? Der Kern ist stark: Genuss mit gutem Gewissen, frech im Ton, getragen von der Community. Aber der Auftritt hat zwei Lücken und einen Bruch.</p>
+    <p data-schritt="1"><b>Empfehlung 1 – Koffein offen zeigen</b> (ca. 18 s) Erstens: Wer ein gutes Gewissen verspricht, muss beim Koffein ehrlich sein. Also Koffein pro Portion und „18+“ gut sichtbar vorn auf Dose und Posts, dazu ein kurzes Erklärvideo. So wird der Kritikpunkt zum Beweis für Glaubwürdigkeit.</p>
+    <p data-schritt="2"><b>Empfehlung 2 – Echte Kundschaft zeigen</b> (ca. 18 s) Zweitens: Die Bildwelt ist zu jung für die Kundschaft von 25 bis 40, oft im Schichtdienst. Also echte Kundschaft zeigen – Creator aus Pflege, Schichtdienst und Sport. Nebenbei zeigen sie, wie einfach das Anrühren ist.</p>
+    <p data-schritt="3"><b>Empfehlung 3 – Ein Dachclaim, ein Raptor</b> (ca. 20 s) Drittens, gegen den zersplitterten Auftritt: ein Dachclaim – „Die Softdrink Revolution“ –, darunter das Versprechen „Geiler Geschmack mit gutem Gewissen“. Der Raptor wird durchgängiges Schlüsselbild, frecher inszeniert, mit einem Profilnamen auf allen Kanälen. (ca. 4 s) Damit sind wir am Ende – vielen Dank!</p>
     <p>Bedienung: Die Verweise („Kern · Folie 10“, „Lücke 1 · Folie 10“, „Bruch · Folie 09b“) sind Knöpfe und springen zur Herleitung (Maus oder Tab + Enter) – praktisch für Rückfragen. Danach mit Ziffern + Enter (11) oder über die Übersicht (O) zurück.</p>
     <p>Belege (Recherche-Dossier, Stand 14.10.2026): Kern = Markenkern aus Folie 10 (unsere Verdichtung, H); „frech“ = Tonalität (Folie 8b, Kap. 6.7 H), „Community-nah“ = Attribut aus dem Repertory Grid (Folie 6, Beispieldaten), Community „HOLY Squad“ ✔ [5, 24]. Lücke 1 = Spannungsfeld S1: Versprechen „Geiler Geschmack mit gutem Gewissen“ ✔ [1, 5]; 160 mg Koffein pro Portion ✔ [56, 72]; Kritik von Verbraucherschützern, Bericht über Koffeinvergiftung eines Zehnjährigen ✔ [27–29]; Energy im Shop nur ab 18 ✔ [12]. Lücke 2 = S2/S3: Kundschaft meist 25–40, viele im Schichtdienst ✔ [7, 24] (Gründeraussage, keine Kundendaten); Design „für eine jüngere Zielgruppe gedacht“ ✔ [7]; Verbraucherzentrale sieht Ansprache von Kindern und Jugendlichen ✔ [27, 28, 82]. Bruch = S5 (auf Folie 9b „über die Kanäle: Bruch“): mindestens sechs Claims, unterschiedliche Profilnamen, Creme-Pastell-Shop neben Comic-Verpackungen ✔ [1, 20, 31, 125]. Dachclaim „Die Softdrink Revolution“ ✔ [1, 8] (Kap. 6.5). Die drei Empfehlungen folgen den Empfehlungsrichtungen im Dossier Kap. 8 (S1: Koffein und „18+“ vorn; S3: Alltagssituationen statt Gaming; S5: Claim-Hierarchie Dachclaim + Versprechen, Raptor als durchgängiges Schlüsselbild, Namen vereinheitlichen) und sind Hypothesen (H) – mit der Gruppe abstimmen. „Erklärvideo“, „Creator aus Pflege, Schichtdienst und Sport“, „Anrühren zeigen“ und „Raptor frecher inszenieren“ (Brücke zu Folie 8 und 9b: Selbstbild Adler, gelebt wird der Waschbär) sind unsere Konkretisierung.</p>
     <p>Rückfragen: „Steht der Koffeingehalt nicht schon auf der Packung?“ – Gemeint ist eine gut sichtbare Angabe vorn auf der Dose und in der Kommunikation, nicht nur in den Pflichtangaben (vor dem Vortrag an einer echten Packung prüfen). „Und Gaming?“ – bleibt eine Szene unter mehreren, aber nicht mehr der Kern der Bildwelt (Dossier S3, H). „Was ist mit ‚selbst anrühren‘?“ – Im Repertory Grid unterscheidet es stark, liegt aber weit vom Ideal: eine Hürde, kein Attribut (Folie 6). Die Creator-Videos aus Empfehlung 2 zeigen das Anrühren nebenbei. „Warum nicht TikTok?“ – Die Aufgabe nennt Instagram, Facebook und YouTube; TikTok (≈ 270.000 Follower, Dossier Kap. 1 ✔ [20]) wäre die naheliegende Erweiterung. „Was kostet das?“ – Budget haben wir nicht bewertet; alle drei Empfehlungen nutzen vorhandene Kanäle.</p>

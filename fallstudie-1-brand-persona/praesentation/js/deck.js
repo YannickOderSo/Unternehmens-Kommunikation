@@ -506,7 +506,7 @@
       if (t) el.textContent = t;
     });
     [['data-veranstaltung', 'veranstaltung'], ['data-dozent', 'dozent'], ['data-hochschule', 'hochschule'],
-      ['data-praesentation', 'titel'], ['data-fallstudie', 'fallstudie']].forEach(function (paar) {
+      ['data-praesentation', 'titel'], ['data-fallstudie', 'fallstudie'], ['data-unternehmen', 'unternehmen']].forEach(function (paar) {
       alle('[' + paar[0] + ']', wurzel).forEach(function (el) {
         if (marke[paar[1]]) el.textContent = marke[paar[1]];
       });
@@ -1358,11 +1358,14 @@
      =========================================================================== */
   var tastenHandler = [];
   /* Bausteine können Tasten auf ihrer Folie übernehmen (z. B. Ziffern bei der Umfrage).
-     fn(ereignis, kontext) gibt true zurück, wenn die Taste verbraucht wurde. */
+     fn(ereignis, kontext) gibt true zurück, wenn die Taste verbraucht wurde – oder
+     { rueckgaengig: function () {…} }, wenn sie verbraucht wurde, sich aber noch
+     zurücknehmen lässt (siehe „vorläufig gezählte Ziffer“ in tasteGedrueckt). */
   Deck.taste = function (fn) { tastenHandler.push(fn); };
 
   var ziffernPuffer = '';
   var ziffernTimer = null;
+  var letzteZaehlZiffer = null;   /* { ziffer, zeit, rueckgaengig } – zuletzt als Stimme gezählte Ziffer */
 
   /* Befehle laufen im Referentenfenster über das Vortragsfenster (Abgleich) */
   function befehl(aktion, daten) {
@@ -1429,17 +1432,37 @@
       if (ebeneTaste(e)) return;
     }
 
-    /* 4. Bausteine der aktuellen Folie (z. B. Umfrage: Ziffern zählen) */
+    /* 4. Bausteine der aktuellen Folie (z. B. Umfrage: Ziffern zählen).
+          Läuft schon eine Foliennummer (Ziffernpuffer, z. B. nach „8“), gehören
+          weitere Ziffern zu ihr und zählen keine Stimme. */
     var f = folien[aktuell.index];
-    for (var i = 0; i < tastenHandler.length; i++) {
-      try {
-        if (f && tastenHandler[i](e, kontext(f)) === true) { e.preventDefault(); return; }
-      } catch (fehler) { console.error(fehler); }
+    var istZiffer = /^[0-9]$/.test(taste);
+    if (!(istZiffer && ziffernPuffer)) {
+      for (var i = 0; i < tastenHandler.length; i++) {
+        var ergebnis = false;
+        try {
+          ergebnis = f ? tastenHandler[i](e, kontext(f)) : false;
+        } catch (fehler) { console.error(fehler); }
+        if (ergebnis === true || (ergebnis && typeof ergebnis.rueckgaengig === 'function')) {
+          e.preventDefault();
+          letzteZaehlZiffer = ergebnis.rueckgaengig ? { ziffer: taste, zeit: Date.now(), rueckgaengig: ergebnis.rueckgaengig } : null;
+          return;
+        }
+      }
     }
+    var vorlaeufig = letzteZaehlZiffer;
+    letzteZaehlZiffer = null;
 
     /* 5. Ziffern + Enter = Folie anspringen. Nach einer Ziffer gehört „b“ zur Nummer
-          (8 b Enter → Folie 08b); ohne Ziffer davor bleibt B das Schwarzbild. */
-    if (/^[0-9]$/.test(taste)) {
+          (8 b Enter → Folie 08b); ohne Ziffer davor bleibt B das Schwarzbild.
+          Vorläufig gezählte Ziffer: Auf Folie 08 zählt „1“ eine Stimme. Folgt sofort
+          eine Ziffer, die keine Stimme sein kann (z. B. die 0 von „10“), war die „1“
+          der Anfang einer Foliennummer → die Stimme wird zurückgenommen. */
+    if (istZiffer) {
+      if (vorlaeufig && !ziffernPuffer && Date.now() - vorlaeufig.zeit < 1500) {
+        try { vorlaeufig.rueckgaengig(); } catch (fehler) { console.error(fehler); }
+        ziffernPuffer = vorlaeufig.ziffer;
+      }
       ziffernPuffer = (/b$/.test(ziffernPuffer) ? taste : (ziffernPuffer + taste).slice(-3));
       ziffernAnzeigen();
       e.preventDefault();
@@ -1613,16 +1636,38 @@
     var fortschritt = util.element('div', { class: 'fortschritt', 'aria-hidden': 'true' }, null, document.body);
     fortschrittBalken = util.element('div', { class: 'fortschritt-balken' }, null, fortschritt);
 
-    var aufwachen = function () {
-      html.classList.remove('leiste-aus', 'maus-ruht');
-      clearTimeout(ruheTimer);
-      ruheTimer = setTimeout(function () { html.classList.add('leiste-aus', 'maus-ruht'); }, 2500);
+    /* Zwei Zeitgeber: Der Mauszeiger erscheint bei jeder Bewegung (und
+       verschwindet nach 2,5 s Ruhe). Die Leiste erscheint nur, wenn die Maus
+       im unteren Bereich des Fensters bewegt wird oder der Bildschirm berührt
+       wird – sonst verdeckte sie bei jedem Klick 2,5 s lang das Ende der
+       Quellenzeile. Ein Mausklick (z. B. zum Weiterschalten) weckt sie nicht. */
+    var mausTimer = null;
+    var mausWecken = function () {
+      html.classList.remove('maus-ruht');
+      clearTimeout(mausTimer);
+      mausTimer = setTimeout(function () { html.classList.add('maus-ruht'); }, 2500);
     };
-    document.addEventListener('mousemove', aufwachen, { passive: true });
-    document.addEventListener('mousedown', aufwachen, { passive: true });
-    leiste.addEventListener('mouseenter', function () { clearTimeout(ruheTimer); });
-    leiste.addEventListener('mouseleave', aufwachen);
-    aufwachen();
+    var leisteWecken = function () {
+      html.classList.remove('leiste-aus');
+      clearTimeout(ruheTimer);
+      ruheTimer = setTimeout(function () { html.classList.add('leiste-aus'); }, 2500);
+    };
+    var LEISTE_ZONE = 160;   /* px vom unteren Fensterrand, in denen die Maus die Leiste weckt */
+    document.addEventListener('mousemove', function (e) {
+      mausWecken();
+      if (e.clientY >= window.innerHeight - LEISTE_ZONE) leisteWecken();
+    }, { passive: true });
+    document.addEventListener('mousedown', mausWecken, { passive: true });
+    /* Finger oder Stift: Antippen zeigt die Leiste (es gibt keine Mausbewegung) */
+    document.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch' || e.pointerType === 'pen') leisteWecken();
+    }, { passive: true });
+    leiste.addEventListener('mouseenter', function () { clearTimeout(ruheTimer); clearTimeout(mausTimer); });
+    leiste.addEventListener('mouseleave', leisteWecken);
+    /* Tastaturfokus in der Leiste (Tab): sichtbar bleiben */
+    leiste.addEventListener('focusin', leisteWecken);
+    mausWecken();
+    leisteWecken();
   }
 
   function leisteAktualisieren() {
@@ -1935,9 +1980,11 @@
       '</dl></div>' +
       '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
       'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
-      'Solange eine Umfrage zu sehen ist, zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'Solange eine Umfrage zu sehen ist (Folie 08), zählen die Ziffern 1–5 Stimmen (Umschalt = minus) – zum Springen von dort ' +
+      'erst weiterklicken oder O nutzen (nur „1“ „0“ Enter erkennt die Präsentation als Foliennummer). Mini-Steuerrad oben rechts = Sprungmenü. ' +
       'Nach einem Sprung aus dem Backup führt Z zurück zur Backup-Folie. ' +
-      'Bedienleiste unten rechts (Maus bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
+      'Touch: nach links wischen = weiter, nach rechts = zurück; Antippen zeigt die Bedienleiste. ' +
+      'Bedienleiste unten rechts (Maus im unteren Bildrand bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
   }
 
   /* ----- Sprungmenü (Klick auf Mini-Steuerrad) ----- */
@@ -2253,6 +2300,7 @@
         var neu = Math.max(18, Math.min(48, jetzt + (a === 'groesser' ? 2 : -2)));
         r.notizen.style.setProperty('--r-schrift', neu + 'px');
         util.speichern('referent-schrift', neu);
+        sprechtextZumSchritt(false);     // Absätze haben sich verschoben
       }
       k.blur();
     });
@@ -2332,7 +2380,34 @@
       el.classList.toggle('ist-erreicht', n <= aktuell.schritt);
       el.classList.toggle('ist-jetzt', n === aktuell.schritt);
     });
+    /* Absatz zum aktuellen Schritt in den Blick holen (beim Folienwechsel ohne
+       Gleiten, innerhalb der Folie sanft) */
+    sprechtextZumSchritt(!folieGewechselt);
     uhrAnzeigen();
+  }
+
+  /* Sprechtext so scrollen, dass der Absatz zum aktuellen Schritt oben im Feld
+     steht (mit etwas Luft). Gibt es für den Schritt keinen eigenen Absatz, gilt
+     der zuletzt erreichte. Steht der Absatz ganz vorn (Schritt 0), beginnt der
+     Text oben – so bleiben einleitende Absätze ohne Schritt sichtbar.
+     Auch nach A− / A+ aufgerufen, weil sich dann alle Absätze verschieben. */
+  function sprechtextZumSchritt(sanft) {
+    if (!r.notizen) return;
+    var absaetze = alle('[data-schritt]', r.notizen);
+    var ziel = absaetze.filter(function (el) { return el.classList.contains('ist-jetzt'); })[0];
+    if (!ziel) {
+      var erreicht = absaetze.filter(function (el) { return el.classList.contains('ist-erreicht'); });
+      ziel = erreicht[erreicht.length - 1];
+    }
+    var oben = 0;
+    if (ziel && absaetze.indexOf(ziel) > 0) {
+      oben = r.notizen.scrollTop + ziel.getBoundingClientRect().top - r.notizen.getBoundingClientRect().top - 16;
+    }
+    oben = Math.max(0, Math.round(oben));
+    if (Math.abs(r.notizen.scrollTop - oben) < 2) return;
+    try {
+      r.notizen.scrollTo({ top: oben, behavior: sanft && !bewegungReduziert() ? 'smooth' : 'auto' });
+    } catch (e) { r.notizen.scrollTop = oben; }
   }
 
   function vorschauEinpassen() {

@@ -68,6 +68,10 @@ window.MARKE = {
   veranstaltung: 'Unternehmenskommunikation',
   dozent: 'Prof. Dr. Daniel Stenger',
   hochschule: 'Hochschule Kaiserslautern',
+  // Firma hinter der Marke – nur für die Einordnungszeile auf Folie 01 und 12
+  // („Studentische Fallstudie · keine Verbindung zur …“). Quelle: Recherche-
+  // Dossier Kap. 1, Impressum und Handelsregister ✔ [2, 3].
+  unternehmen: 'HOLY Softdrinks GmbH',
   gruppe: ['Yannick Heisler', 'Elias Knauber', 'Lukas Welker'],
   datum: '2026-10-26',            // Jahr-Monat-Tag
   dauerMinuten: 15,               // Sollzeit für die Uhr in der Referentenansicht
@@ -125,7 +129,8 @@ window.MARKE = {
      7. OPTIONALE FOLIEN (Folien mit data-optional) – true = zeigen
      --------------------------------------------------------------------------- */
   optionaleFolien: {
-    f01b: false                   // Live-Wortwolke zum Einstieg
+    f01b: false                   // Live-Wortwolke zum Einstieg (+45 s – nur mit true, wenn dafür
+                                  // auf Folie 08 die Live-Umfrage entfällt; siehe LIESMICH, Abschnitt 7)
   },
 
   /* ---------------------------------------------------------------------------

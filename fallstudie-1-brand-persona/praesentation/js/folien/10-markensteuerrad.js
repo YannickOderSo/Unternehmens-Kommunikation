@@ -13,7 +13,7 @@
       Stichwort (z. B. „Abenteurer LM“, „160 mg Koffein DR“).
 
    3. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
-      • rote Nummern an den Stichworten, die eine Lücke bilden
+      • Nummern (Lückenfarbe, Braun-Orange) an den Stichworten, die eine Lücke bilden
         (Daten: „luecken“ → „markieren“ im JSON der Folie),
       • je Lücke eine kurze Notiz in der freien Fläche zwischen den Karten
         (links: zwischen Nutzen und Attributen, rechts: zwischen Tonalität und Bild).
@@ -333,7 +333,7 @@
      KONSISTENZPRÜFUNG
      =========================================================================== */
 
-  /* Rote Nummer an jedes Stichwort hängen, das eine Lücke bildet.
+  /* Nummer an jedes Stichwort hängen, das eine Lücke bildet.
      Die Nummer ist ein eigener Schritt (erscheint mit den Notizen). */
   function markieren(zustand) {
     var rad = zustand.rad;
@@ -489,7 +489,7 @@
   /* Stichworte und ihr folgender Trenner „·“ bilden eine Gruppe, die nicht
      umbrochen wird. So steht ein Trenner nie am Anfang einer Zeile; steht er
      am Zeilenende, blendet trennerAmZeilenende() ihn aus. Hinter markierten
-     Stichworten blendet das CSS den Trenner aus, sobald die rote Nummer
+     Stichworten blendet das CSS den Trenner aus, sobald die Nummer
      erscheint (sie steht dann an seiner Stelle). */
   function trennerGruppieren(rad) {
     Array.prototype.forEach.call(rad.querySelectorAll('.sr-karte-stichworte'), function (liste) {
@@ -522,6 +522,7 @@
     var el = ctx.folie.querySelector('.g6s-abgleich');
     if (!el) return;
     zustand.abgleichEl = el;
+    zustand.titelEl = ctx.folie.querySelector('.g6s-titel-abgleich');
     zustand.wolkeId = zustand.abgleich.wortwolke ||
       (el.querySelector('.wortwolke') && el.querySelector('.wortwolke').getAttribute('data-wortwolke')) || 'assoziationen';
 
@@ -581,12 +582,36 @@
       el.hidden = false;
       el.setAttribute('data-schritt', schritt);
       el.setAttribute('data-animation', 'einblenden');
+      abgleichTitel(zustand, schritt, treffer, alle);
     } else {
       el.hidden = true;
       el.removeAttribute('data-schritt');
+      abgleichTitel(zustand, null);
     }
     if (vorher !== el.getAttribute('data-schritt')) Deck.schritteNeu(ctx.folie);
     trefferMarkieren(zustand);
+  }
+
+  /* Eigener Titel im Abgleich-Schritt (statt „stimmige Identität …“, der sich
+     auf das Rad bezieht). Das Ende („ – teilweise“ …) steht im HTML in
+     data-text-teil / data-text-keiner / data-text-alle. */
+  function abgleichTitel(zustand, schritt, treffer, alle) {
+    var t = zustand.titelEl;
+    if (!t) return;
+    if (!schritt) {
+      t.hidden = true;
+      t.removeAttribute('data-schritt');
+      return;
+    }
+    t.hidden = false;
+    t.setAttribute('data-schritt', schritt);
+    t.setAttribute('data-animation', 'hoch');
+    var ende = t.querySelector('[data-g6s="titel-ergebnis"]');
+    if (ende) {
+      var art = treffer === 0 ? 'keiner' : (treffer >= alle ? 'alle' : 'teil');
+      var text = ende.getAttribute('data-text-' + art);
+      if (text !== null) ende.textContent = text;
+    }
   }
 
   function trefferMarkieren(zustand) {
