@@ -59,6 +59,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 37 | 16.10.2026 | Yannick | GitHub Pages aktiviert („Ja ist gepusht“) | D07 (Workflow) | Live-Seite erreichbar; Prüfung *läuft* |
 | 38 | 16.10.2026 | Yannick | HOLY-Logos einfügen, wenn die Prüfung fertig ist | – | Logos von de.holy.com geladen und geprüft; Einbau nach D07 – *in Arbeit* |
 | 39 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Rohprotokoll und Nachweis committet + gepusht |
+| 40 | 16.10.2026 | Yannick | Statista-Zugang vorhanden: Welche Daten erheben? | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -624,6 +625,24 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Vorgehen Claude:** Rohprotokoll und KI-Nachweis committet und gepusht; an der Präsentation nichts geändert.
 - **Ergebnis:** Commit + Push
 - **Unteragenten:** keine
+
+### 40 – 16.10.2026 – Yannick
+
+> Ich habe jetzt auch den Statista login, welche Daten soll ich erheben?
+
+- **Vorgehen Claude:** Aus den geprüften Ergebnissen von D06 (keine neue Websuche) eine priorisierte Liste mit
+  Statista-Links zusammengestellt:
+  1. VuMA 2022 (Daten 2021): Konsument:innen nach Alter, Geschlecht, Einkommen, Schulabschluss und Häufigkeit.
+  2. Consumer-Insights-Report „Zielgruppe Energydrinks“ (2025): Wohnort-Typ, Werte, Interessen, Social Media.
+  3. Kaufverhalten: AWA 2025 und Kantar TGI 2023 (Häufigkeit, Marken).
+  4. Optional: Dossier „Energy Drinks“ 2026 für A1.
+
+  Dazu was je Statistik zu notieren ist (Erheber, Jahr, Basis, n, URL, Abruf), wie zitiert wird, und die Regel,
+  keine kompletten Reports in KI-Tools zu laden; eigene Notizen dürfen geteilt werden. Angeboten: Auswertung der
+  notierten Zahlen und Steckbrief-Entwurf.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
