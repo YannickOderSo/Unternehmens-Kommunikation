@@ -94,7 +94,7 @@ P7 verlangt: Alter, Geschlecht und Nutzungsintensität variieren. Ein **Vorschla
 |---|---|---|
 | 1 | Mann, 28, Schichtdienst Logistik, Vieltrinker, HOLY-Kunde (= Marco) | Kern-Persona |
 | 2 | Frau, 29, Pflegefachkraft im Schichtdienst, trinkt etwa 1× pro Woche, hat HOLY im Supermarkt entdeckt | Wachstums-Persona „Lena“; Frauenanteil 33–46 % |
-| 3 | Mann, 22, Student, zockt viel, trinkt Monster aus der Dose, kennt HOLY von YouTube | Generation Z (32 % der Konsument:innen) |
+| 3 | Mann, 22, Student, zockt viel, trinkt Monster aus der Dose, kennt HOLY von YouTube | Generation Z (32 % der Konsument:innen, Statista CI 2025) |
 | 4 | Frau, 35, Bürojob, trinkt selten Energy, eher Cola Zero, achtet auf Zucker | Wenigtrinkerin; HOLYs Softdrink-Richtung [25] |
 | 5 | Mann, 39, Lkw-Fahrer, trinkt täglich Red Bull, preisbewusst, skeptisch gegenüber Pulver | obere Altersgrenze laut Gründer; Nicht-Kunde |
 

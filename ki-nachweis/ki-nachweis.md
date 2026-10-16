@@ -69,6 +69,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 47 | 16.10.2026 | Yannick | „B“: Freigabe, die relevanten Seiten des Statista-Zielgruppen-Reports selbst zu lesen | – | Persona-Steckbrief „Marco, 28“ (A2) mit Kurzfassung für Lukas, `persona-daten.md` ergänzt, Folienentwurf Folie 4 |
 | 48 | 16.10.2026 | Yannick | Dossier für Lukas mit Anweisungen, wie er die Persona-Informationen nutzt | D08 | in Arbeit (Workflow D08 läuft) |
 | 49 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Workflow-Skript, Rohprotokoll und Nachweis committet + gepusht |
+| 50 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | gekürztes Dossier (Zwischenstand), HTML, PDF, Prüfskript committet + gepusht |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -820,6 +821,17 @@ Workflows für jede größere Aufgabe.)*
 
 - **Vorgehen Claude:** Workflow-Skript D08, Rohprotokoll und KI-Nachweis committet und gepusht. Der Dossier-Entwurf
   ist noch nicht dabei, weil D08 noch läuft.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
+
+### 50 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Zwischenstand committet und gepusht: das von Claude gekürzte Dossier (HTML, PDF), die Quelle
+  der Generation-Z-Zahl im Steckbrief und das Skript der Nachprüfung D09. Die Nachprüfung lief zu diesem Zeitpunkt
+  noch.
 - **Ergebnis:** Commit + Push
 - **Unteragenten:** keine
 
