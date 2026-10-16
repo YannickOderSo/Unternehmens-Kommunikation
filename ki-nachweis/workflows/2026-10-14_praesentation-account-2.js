@@ -10,7 +10,8 @@
 //  - Jury-Hinweise werden ungekürzt übergeben (kurz-Grenze 12000 statt 4000/3000 Zeichen), damit keine Übernahme fehlt.
 //  - Fundament-Rückgabe kann als args.engine übergeben werden (Fundament lief vor dem Workflow-Start einzeln, siehe unten).
 //  - Nach dem Abbruch des ersten Laufs (Nutzungslimit): Hinweis auf unvollständige Folien-Dateien im Folien-Auftrag;
-//    Abbruch statt Integration, wenn eine Folien-Gruppe (Bau, Prüfung oder Überarbeitung) nicht fertig wurde.
+//    Abbruch statt Integration, wenn eine Folien-Gruppe (Bau, Prüfung oder Überarbeitung) nicht fertig wurde;
+//    ebenso Abbruch, wenn ein Abschlussprüfer oder der Feinschliff nicht fertig wurde (statt „keine Befunde“).
 export const meta = {
   name: 'praesentation-account-2',
   description: 'Web-Präsentation Fallstudie 1 ab Fundament: Engine, Folien bauen/prüfen/überarbeiten, Integration, Abschlussprüfung, Feinschliff',
@@ -416,6 +417,9 @@ const [anforderungen, gestaltung] = await parallel([
   () => agent(anforderungenPrompt, { label: 'Abschluss: Anforderungen', phase: 'Abschlussprüfung', schema: KRITIK_SCHEMA }),
   () => agent(gestaltungPrompt, { label: 'Abschluss: Gestaltung', phase: 'Abschlussprüfung', schema: KRITIK_SCHEMA }),
 ])
+// Zusatz Account 2: Ein abgebrochener Prüf-Agent (Nutzungslimit) liefert null – das darf nicht als „keine Befunde“
+// gelten (sonst entfiele der Feinschliff). Dann abbrechen und mit resume fortsetzen.
+if (!anforderungen || !gestaltung) throw new Error('Abschlussprüfung unvollständig – mit resume fortsetzen')
 const abschlussBefunde = [...((anforderungen && anforderungen.befunde) || []), ...((gestaltung && gestaltung.befunde) || [])]
 const wichtig = abschlussBefunde.filter(b => b.schwere !== 'niedrig')
 log(`Abschlussprüfung: ${abschlussBefunde.length} Befunde, davon ${wichtig.length} hoch/mittel`)
@@ -430,6 +434,8 @@ Aufgabe: Setze die Befunde der beiden Abschlussprüfungen in der Web-Präsentati
 Befunde: ${kurz(abschlussBefunde, 16000)}
 Priorität: hoch → mittel → niedrig (niedrige nur, wenn eindeutig und risikoarm). Danach vollständig prüfen (pruefen.mjs mit --schritte, hell und dunkel, Druck; Interaktionen stichprobenartig mit Playwright) und die Exporte aktualisieren (export/praesentation.pdf, export/uebersicht.png, export/folien/*.png). Entferne alle Testordner (_test, _abschluss-test, _abschluss-gestaltung), falls noch vorhanden. Aktualisiere LIESMICH.md, QUELLEN.md und AUTOREN.md, falls sich etwas geändert hat.
 Rückgabe: behoben, nicht behoben (mit Grund), Dateien, Screenshot-Pfade, Prüfbericht, Quellen.`, { label: 'Feinschliff', phase: 'Feinschliff', schema: FIX_SCHEMA })
+  // Zusatz Account 2: abgebrochener Feinschliff (Nutzungslimit) → abbrechen und mit resume fortsetzen
+  if (!feinschliff) throw new Error('Feinschliff nicht fertig – mit resume fortsetzen')
 }
 
 return {
