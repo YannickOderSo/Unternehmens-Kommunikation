@@ -46,12 +46,12 @@ window.MARKE = {
      Eigene Bilder in den Ordner bilder/ legen. Nur Bilder verwenden, deren
      Nutzung erlaubt ist (Quelle in der Folienfußzeile angeben).
      --------------------------------------------------------------------------- */
-  // Logo: Platzhalter. Erscheint auf Folie 09b (Zeile „Logo“ im Datenblatt);
-  // solange hier der Platzhalter steht, zeigt die Zeile nur die Beschreibung
-  // der Wortmarke. Ein echtes HOLY-Logo (z. B. Website-Screenshot) nur mit
-  // geklärten Rechten einsetzen – bis dahin Platzhalter lassen – und die
-  // Quelle [1] in die Fußzeile von Folie 09b schreiben.
-  logo: 'bilder/platzhalter-logo.svg',
+  // Logo: offizielle HOLY-Wortmarke von de.holy.com (Seitenkopf, Datei HOLY_Logo_1.png,
+  // 389 × 105 px), abgerufen 16.10.2026. Marke der HOLY Softdrinks GmbH – nur zur
+  // Kennzeichnung der analysierten Marke; Quelle steht in der Fußzeile von Folie 09b
+  // und in QUELLEN.md. Gezeigt auf Folie 09b (Corporate Design).
+  // Zweite Variante (gelbes Oval, Seitenfuß, 692 × 400 px): 'bilder/holy-logo-oval.png'
+  logo: 'bilder/holy-logo-wortmarke.png',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
   // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen
   // (z. B. HOLY-Dose oder -Shaker, selbst fotografiert), z. B.

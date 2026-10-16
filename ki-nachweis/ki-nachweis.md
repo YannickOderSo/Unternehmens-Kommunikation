@@ -53,6 +53,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 31 | 14.10.2026 | Yannick | Rückmeldung: Organisatorisches geklärt; Lukas plant echte Interviews | – | Interviews in der Aufgabenbeschreibung als geplant eingetragen |
 | 32 | 15.10.2026 | Yannick | Lukas arbeitet allein; Frage: Wie erhebe ich die Daten für die Persona? | D06 (Workflow) | Anleitung `persona-datenerhebung.md` mit geprüften Zugangswegen |
 | 33 | 15.10.2026 | System | Benachrichtigung: Workflow D06 fertig | – | Ergebnisse ausgewertet (siehe 32, D06) |
+| 34 | 16.10.2026 | Yannick | Frage: Status des zweiten Agenten (Account 2)? | – | Antwort im Chat; Übersichtsbild gezeigt (keine Dateien geändert) |
+| 35 | 16.10.2026 | Yannick | Screenshot Account 2; Frage: Wie rufen wir die Präsentation auf (Link?) | – | Antwort im Chat (keine Dateien geändert) |
+| 36 | 16.10.2026 | Yannick | Webseite (GitHub Pages) einrichten | – | Zwischenstand Account 2 zusammengeführt, Startseite, lokal als Webseite getestet |
+| 37 | 16.10.2026 | Yannick | GitHub Pages aktiviert („Ja ist gepusht“) | D07 (Workflow) | Live-Seite erreichbar; Prüfung *läuft* |
+| 38 | 16.10.2026 | Yannick | HOLY-Logos einfügen, wenn die Prüfung fertig ist | – | Wortmarke auf Folie 09b eingebaut, Oval-Variante bereitgelegt, Quellen ergänzt (siehe 45) |
+| 39 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Rohprotokoll und Nachweis committet + gepusht |
+| 40 | 16.10.2026 | Yannick | Statista-Zugang vorhanden: Welche Daten erheben? | – | Antwort im Chat (keine Dateien geändert) |
+| 41 | 16.10.2026 | Yannick | Screenshot Statista-Downloadmenü: In welchem Format hochladen? | – | Antwort im Chat (keine Dateien geändert) |
+| 42 | 16.10.2026 | Yannick | Frage: Wo soll ich die Dateien hochladen? | – | Antwort im Chat (keine Dateien geändert) |
+| 43 | 16.10.2026 | Yannick | Upload: 3 Statista-XLSX + 2 komplette Statista-Reports (PDF) | – | XLSX ausgewertet; Reports nicht geöffnet, Rückfrage (Statista-Bedingungen) |
+| 44 | 16.10.2026 | Yannick | Upload: 4 weitere Statista-XLSX | – | `persona-daten.md` (Anteile, Indizes, Persona-Folgerungen) |
+| 45 | 16.10.2026 | System | Benachrichtigung: Workflow D07 fertig | – | `persona-daten.md` auf Kurzfassung reduziert; noindex, Startseite, Logos; Übergabe Ü02 an Account 2 |
+| 46 | 16.10.2026 | System | Benachrichtigung: Hintergrundprüfung „neue Fassung live“ fertig | – | Live bestätigt: Logo 200, Kurzfassung ohne Tabellen, noindex |
+| 47 | 16.10.2026 | Yannick | „B“: Freigabe, die relevanten Seiten des Statista-Zielgruppen-Reports selbst zu lesen | – | Persona-Steckbrief „Marco, 28“ (A2) mit Kurzfassung für Lukas, `persona-daten.md` ergänzt, Folienentwurf Folie 4 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -516,6 +530,274 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Vorgehen Claude:** Ergebnisse ausgewertet, Stichproben selbst geprüft, Anleitung geschrieben (siehe 32 und D06).
 - **Unteragenten:** keine
 
+### 34 – 16.10.2026 – Yannick
+
+> Wie ist der Status beim Zweiten Agenten?
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` geholt und gelesen: Commits, `ki-nachweis-account-2.md`
+  (Einträge A2-19 bis A2-22), `export/uebersicht.png`, `export/praesentation.pdf` und `marke.js`. Stand (letzter Commit
+  `21d283a`, 16.10.):
+  - Alle Folien sind gebaut, geprüft, überarbeitet, integriert und exportiert: 21 Seiten im PDF, davon 14 Hauptfolien
+    mit 14:45 min Sollzeit plus 7 Backup-Folien; Folie 01b ist optional.
+  - HOLY-Farben stehen in `marke.js`.
+  - Abschlussprüfung und Feinschliff liefen nach sieben Abbrüchen durch das Nutzungslimit noch.
+
+  Claude hat die Übersicht angesehen und dabei festgestellt: Die Folien enthalten noch Beispieldaten bzw. Hypothesen
+  aus dem Dossier, z. B. Folie 08 „Waschbär, kein Adler“. Hinweis an Yannick, dass Lukas seine Analogie-Befragung
+  nicht davon vorprägen lassen sollte (Dossier 6.7). Zusammenführung nach `master` erst, wenn Account 2 fertig meldet.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 35 – 16.10.2026 – Yannick
+
+> *(Bild: Screenshot aus der Sitzung von Account 2. Zu sehen: Workflow-Fortschritt; „Integration“ 1/1 fertig,
+> „Abschlussprüfung“ 0/2 läuft („Abschluss: Anforderungen“ und „Abschluss: Gestaltung“, je ca. 9 Min.), „Feinschliff“
+> ausstehend; darunter eine Liste von Testläufen, davon einer „Fehlgeschlagen“.)*
+> Die Sachen werden gerade gemacht.
+> Wie werde ich dann die Präsentations aufrufen können? Werden wir es über ein Link öffnen oder was ist der plan?
+
+- **Vorgehen Claude:** `LIESMICH.md` und `index.html` auf dem Branch von Account 2 gelesen: Die Präsentation ist ein
+  Ordner mit HTML, CSS und JS, läuft per Doppelklick auf `index.html` offline in Chrome oder Edge, ohne Server.
+  Empfehlung:
+  - Am Präsentationstag den lokalen Ordner auf dem Laptop nutzen, ohne Abhängigkeit vom WLAN; nur die Live-Umfrage
+    braucht Internet auf den Handys des Publikums.
+  - Plan B: das PDF auf einem USB-Stick.
+  - Für Proben und Abstimmung in der Gruppe optional ein Link über GitHub Pages. Den müsste Yannick einmal in den
+    Repository-Einstellungen aktivieren; die Seite wäre öffentlich.
+
+  Angeboten: nach dem Zusammenführen eine ZIP-Datei nur mit dem Präsentationsordner bzw. die Einrichtung von Pages.
+  Aussage zu GitHub Pages (kostenlos für öffentliche Repositorys) aus dem Modellwissen, nicht per Websuche geprüft.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 36 – 16.10.2026 – Yannick
+
+> Machen wir ebenfalls die Webseite
+
+- **Vorgehen Claude:**
+  - Branch `praesentation-account-2` (Stand `21d283a`) nach `master` zusammengeführt (Merge-Commit `4f46a08`, ohne
+    Konflikte), damit die Webseite die Präsentation schon zeigt. Account 2 arbeitet noch an Abschlussprüfung und
+    Feinschliff; spätere Stände werden erneut zusammengeführt.
+  - Startseite `index.html` im Hauptverzeichnis erstellt: Links zur Präsentation, zum PDF (Plan B), zur Folienübersicht
+    und zu den Unterlagen; HOLY-Farben aus dem Dossier und Schriften aus dem Präsentationsordner.
+  - Leere Datei `.nojekyll` angelegt, damit GitHub Pages alle Dateien unverändert ausliefert.
+  - Getestet mit einem lokalen Webserver unter dem Pfad `/Unternehmens-Kommunikation/`, wie bei GitHub Pages, und
+    Chromium (Playwright): Startseite am Desktop (1280 px) und auf dem Handy (390 px) ohne seitliches Scrollen. Alle
+    internen Links erreichbar, die Präsentation lädt alle Dateien und Schriften (22 Folien-Abschnitte), Folie 06
+    schaltet die Schritte weiter. Einzige 404 war das fehlende Favicon; ergänzt.
+  - Aktivieren muss Yannick GitHub Pages selbst in den Repository-Einstellungen; Claude hat dafür keinen Zugriff.
+- **Ergebnis:** [`index.html`](../index.html), `.nojekyll`, Präsentation unter `fallstudie-1-brand-persona/praesentation/`
+  auf `master`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 37 – 16.10.2026 – Yannick
+
+> Ja ist gepusht
+
+- **Vorgehen Claude:** Als Bestätigung verstanden, dass GitHub Pages aktiviert ist; Account 2 hatte keine neuen Commits.
+  Live geprüft:
+  - Per curl (16.10.2026): Startseite, Präsentation, Präsentations-PDF und Aufgaben-PDF antworten mit 200.
+  - Im Browser (Playwright über den Proxy): Präsentation lädt mit 22 Folien-Abschnitten ohne Fehler.
+  - Danach gründliche Prüfung der Live-Seite durch drei Unteragenten (D07).
+- **Ergebnis:** Webseite online unter https://yannickoderso.github.io/Unternehmens-Kommunikation/ – Prüfung *läuft*
+- **Unteragenten:** D07
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 38 – 16.10.2026 – Yannick
+
+> *(davor in Claude Code ausgeführt: Befehl /usage – Ausgabe nur für Yannick, kein Prompt an Claude)*
+> Und füge schon mal die Holy Logos ein wenn du fertig bist
+
+- **Vorgehen Claude:** Beide Logos von der offiziellen HOLY-Website geladen (16.10.2026, Abruf per curl):
+  - Wortmarke aus dem Seitenkopf: `de.holy.com/cdn/shop/files/HOLY_Logo_1.png`, 389 × 105 px.
+  - Gelbes Oval aus dem Seitenfuß: `…/HOLY_Logo_NewYellow.png`, 692 × 400 px.
+
+  Eine Vektorfassung ist auf der Seite nicht verlinkt. Claude hat beide Dateien als Vorschau angesehen; sie entsprechen
+  der Beschreibung im Dossier 6.3. In der Präsentation gibt es genau einen Logo-Platz, Folie 09b, mit 96 px Höhe auf
+  der 1920er-Bühne. Die Wortmarke reicht dafür in ihrer Auflösung.
+
+  Einbau erst nach Abschluss von D07, weil die Prüfer gerade dieselben Dateien und die Live-Seite testen.
+- **Ergebnis:** eingebaut nach D07 (Details unter 45): `bilder/holy-logo-wortmarke.png` auf Folie 09b,
+  `bilder/holy-logo-oval.png` bereitgelegt, Quelle in `marke.js`, `QUELLEN.md` und in der Fußzeile von Folie 09b.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 39 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Rohprotokoll und KI-Nachweis committet und gepusht; an der Präsentation nichts geändert.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
+
+### 40 – 16.10.2026 – Yannick
+
+> Ich habe jetzt auch den Statista login, welche Daten soll ich erheben?
+
+- **Vorgehen Claude:** Aus den geprüften Ergebnissen von D06 (keine neue Websuche) eine priorisierte Liste mit
+  Statista-Links zusammengestellt:
+  1. VuMA 2022 (Daten 2021): Konsument:innen nach Alter, Geschlecht, Einkommen, Schulabschluss und Häufigkeit.
+  2. Consumer-Insights-Report „Zielgruppe Energydrinks“ (2025): Wohnort-Typ, Werte, Interessen, Social Media.
+  3. Kaufverhalten: AWA 2025 und Kantar TGI 2023 (Häufigkeit, Marken).
+  4. Optional: Dossier „Energy Drinks“ 2026 für A1.
+
+  Dazu was je Statistik zu notieren ist (Erheber, Jahr, Basis, n, URL, Abruf), wie zitiert wird, und die Regel,
+  keine kompletten Reports in KI-Tools zu laden; eigene Notizen dürfen geteilt werden. Angeboten: Auswertung der
+  notierten Zahlen und Steckbrief-Entwurf.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 41 – 16.10.2026 – Yannick
+
+> *(Bild: Ausschnitt des Statista-Menüs „Herunterladen“ mit den Optionen CSV, Grafik (SVG), Grafik (PNG), PDF, XLSX,
+> PPT)*
+> In welcher Form soll ich sie für dich hochladen?
+
+- **Vorgehen Claude:** Empfehlung XLSX, eine Datei pro Statistik: Sie enthält meist die Daten und die Quellenangaben;
+  Claude kann sie lesen (openpyxl/pandas vorhanden, geprüft). Keine Grafiken, weil die Diagramme im Stil der
+  Präsentation nachgebaut werden. Den Consumer-Insights-Report nicht hochladen, nur notierte Zahlen. Statista-Dateien
+  nicht ins öffentliche Repository und nicht auf die Webseite, nur in den Gruppenordner. Dass die XLSX-Datei die
+  Quellenangaben enthält, ist eine Annahme aus dem Modellwissen und wird beim ersten Upload geprüft.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 42 – 16.10.2026 – Yannick
+
+> Wo soll ich sie hochladen?
+
+- **Vorgehen Claude:** Zwei Wege genannt:
+  1. Direkt als Anhang im Chat, ggf. als ZIP.
+  2. Über Google Drive: Die Verbindung ist in der Sitzung vorhanden (nur Werkzeugschema geladen, keine Dateien
+     angesehen). Claude liest dann gezielt nur den genannten Ordner.
+
+  Ausweg: Tabelle als Text einfügen. Nicht ins öffentliche GitHub-Repository.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 43 – 16.10.2026 – Yannick
+
+> *(Anhänge: fünf Dateien von Statista –*
+> *(1) PDF „study_id120400_zielgruppe-konsumentinnen-von-energydrinks-in-deutschland“, 35 S., kompletter
+> Consumer-Insights-Report;*
+> *(2) XLSX „Bevölkerung in Deutschland nach Häufigkeit des Konsums von Energy-Drinks 2018 bis 2021“;*
+> *(3) PDF „study_id32255_energy-drinks-statista-dossier“, 33 S., komplettes Dossier;*
+> *(4) XLSX „Anzahl der Konsumenten in der Kategorie Energy-Drinks nach Häufigkeit 2023“;*
+> *(5) XLSX „Anzahl der Personen …, die innerhalb der letzten 14 Tage Energy Drinks gekauft oder konsumiert haben,
+> 2019 bis 2025“)*
+> Die ersten 5
+
+### 44 – 16.10.2026 – Yannick
+
+> *(Anhänge: vier XLSX-Dateien von Statista – Konsumenten von Energy-Drinks nach Netto-Einkommen, nach Geschlecht,
+> nach Alter und nach höchstem Schulabschluss im Vergleich zur Bevölkerung 2021)*
+> Und die letzten 4
+
+- **Vorgehen Claude (zu 43 und 44):**
+  - **Bedingungen zu KI-Tools geprüft,** weil zwei komplette Reports hochgeladen wurden, was die Regel in
+    `vorlage-ki-nutzung.md` ausschließt. Websuche, dann das Statista-Impressum selbst gelesen (16.10.2026,
+    https://de.statista.com/impressum/): Ohne Zustimmung ist untersagt, Inhalte „für Zwecke des Trainings, der
+    Entwicklung, der Programmierung, der Verbesserung und/oder des Anreicherungsprozesses von KI-Systemen zu
+    verwenden“. Die Statista-Seite zum Veröffentlichungsrecht nennt für Campuslizenzen ein „limitiertes
+    Veröffentlichungsrecht … für wissenschaftliche Publikationen“ und erwähnt KI nicht. Die Campus-Bedingungen der
+    MPG ließen sich nicht abrufen. Ergebnis: Die beiden **Reports hat Claude nicht geöffnet;** Yannick entscheidet.
+  - **Die 9 XLSX-Einzelstatistiken mit Python ausgelesen.** Jede enthält ein Blatt „Übersicht“ mit Quelle,
+    Erhebungszeitraum, Basis und Stichprobe; damit ist die Annahme aus 41 bestätigt. Anteile, Indizes, Summen und
+    Wachstumsraten berechnet; Plausibilität geprüft, z. B. Summe der Häufigkeitsstufen 2021 = 11,43 Mio. =
+    Konsument:innen in den Tabellen nach Alter und Geschlecht.
+  - **Datenblatt `persona-daten.md` geschrieben:** Werte mit Quelle, Interpretation getrennt gekennzeichnet, Grenzen.
+    Die Statista-Dateien selbst kommen nicht ins öffentliche Repository.
+- **Ergebnis:** [`fallstudie-1-brand-persona/persona-daten.md`](../fallstudie-1-brand-persona/persona-daten.md)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – Zahlen stichprobenartig mit den XLSX-Dateien vergleichen
+
+### 45 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung: Workflow „webseite-live-pruefung“ (D07) abgeschlossen, 3 von 3 Unteragenten
+> fertig)*
+
+- **Vorgehen Claude:**
+  - **Befund „hoch“ sofort umgesetzt:** Die eben gepushte `persona-daten.md` gab die Statista-Tabellen (Campuslizenz)
+    fast vollständig öffentlich wieder (Repository und Webseite). Neu ist eine öffentliche Kurzfassung mit den
+    wenigen Kennzahlen für die Folien, gepusht als `67fbd34`. Die vollständige Auswertung bekam Yannick als Datei für
+    den Gruppenordner. Der Commit `301969e` bleibt in der Git-Historie des öffentlichen Repositorys; Entscheidung
+    (Repo privat oder Historie bereinigen) liegt bei Yannick.
+  - **Eigene Befunde behoben:**
+    - `noindex, nofollow` in der Startseite, `aufgaben-im-detail.html`, `aufgabenuebersicht.html`,
+      `holy-dossier.html`, der Präsentation und den drei Gestaltungsentwürfen.
+    - Startseite: deutlich sichtbarer Tastaturfokus, Hinweis „Am Handy quer halten oder das PDF öffnen“,
+      Hosting- und Datenschutzhinweis mit Link zur GitHub-Datenschutzerklärung.
+    - Favicon in der Präsentation, damit verschwindet die einzige 404-Meldung.
+  - **Logos (Prompt 38) eingebaut:**
+    - `marke.js → logo` zeigt auf die Wortmarke.
+    - Quellenzeile von Folie 09b beginnt mit „Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“.
+    - `QUELLEN.md` Abschnitt 4 angepasst, alt-Text in `js/folien/09-kommunikationsanalyse.js` korrigiert.
+    - Lokal getestet (Playwright): Logo geladen, 356 × 96 px auf der 1920er-Bühne, Quellenzeile ohne Überlauf, keine
+      Fehler.
+  - **Befunde zur Präsentation** (Referentenansicht-Scrollen, Bedienleiste im Handy-Hochformat, Ziffern auf Folie 08,
+    Touch-Ziele, Hinweis „studentische Arbeit“ auf Folie 01/12, neuer Export) als Übergabe Ü02 an Account 2.
+  - **Entscheidungen für die Gruppe** an Yannick gemeldet: Veröffentlichungsumfang, Repository privat, Vorlesungs-PDF,
+    Namen, Sprechernotizen, Dauer der Veröffentlichung.
+- **Ergebnis:** [`persona-daten.md`](../fallstudie-1-brand-persona/persona-daten.md) (Kurzfassung),
+  [`index.html`](../index.html), Präsentation und Logos, Übergabe
+  [`uebergaben/2026-10-16_account-2_befunde-live-pruefung.md`](uebergaben/2026-10-16_account-2_befunde-live-pruefung.md)
+- **Unteragenten:** keine (Auswertung von D07)
+
+### 46 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung: Hintergrundbefehl „Poll until GitHub Pages serves the new version“ beendet,
+> exit code 0)*
+
+- **Vorgehen Claude:** Ergebnis gelesen: Nach ca. 40 s lieferte GitHub Pages die neue Fassung aus. Logo-Datei 200,
+  `persona-daten.md` ohne Tabellen, robots-Meta auf der Startseite.
+- **Unteragenten:** keine
+
+### 47 – 16.10.2026 – Yannick
+
+> B
+
+*(Antwort auf Claudes Rückfrage aus 43/45: „A: Du schreibst mir die vier Werte aus dem Zielgruppen-Report heraus … B: Du
+gibst mir ausdrücklich frei, die betreffenden Seiten selbst zu lesen.“)*
+
+- **Vorgehen Claude:**
+  - **Gelesen:** Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“ (Stand
+    02/2025, Datei von Yannick, Campuslizenz), Seiten 1–32. Die Seiten 33–35 sind Werbung und Autorenangaben. Das
+    zweite PDF (Statista-Dossier) blieb **ungeöffnet**. Die Werte hat Claude aus den Diagrammen abgelesen, nicht
+    berechnet.
+  - **Kontextgrenze:** Während der Arbeit wurde der Gesprächsverlauf automatisch zusammengefasst. Danach lagen die
+    Notizen zu den Seiten 3–18 nicht mehr vor, deshalb hat Claude diese Seiten ein zweites Mal gelesen.
+  - **Gruppenordner-Datei** (nicht im Repository): Alle abgelesenen Werte stehen jetzt in Abschnitt 5 der Datei
+    „Persona-Daten_Statista_vollstaendig_NUR-Gruppenordner.md“. Das sind Soziodemografie, Lebensstil, Einstellungen,
+    Medien und Werbekontakte, dazu eine Erklärung, warum die Quellen beim Männeranteil abweichen (54 % gegenüber
+    67,5 %). Yannick bekommt die Datei für den Gruppenordner.
+  - **Persona-Steckbrief (A2)** nach `methoden.md` §1 bzw. P4. Jede Angabe ist als D (Daten mit Quelle) oder A
+    (Annahme mit Begründung) markiert. Grundlage: Kern-Persona aus Dossier 4.3, gestützt durch
+    - VuMA, Kantar, AWA (Statista-XLSX, Einträge 43/44),
+    - Consumer Insights (s. o.),
+    - die Gründeraussagen mit Zeitmarken und Eurostat (D06).
+  - **Vorschläge von Claude (Annahmen, von der Gruppe zu prüfen):** Name, Wohnort, Beruf (Fachkraft für
+    Lagerlogistik), Haushalt, Alltag, Ziele, Pains und Gains. Ebenso die fünf Profile für die simulierten Befragten
+    von Bündel B.
+  - **Kurzfassung für Lukas** (7 Punkte, fällig heute) steht oben im Steckbrief und im Chat zum Kopieren.
+  - **Öffentliche Kurzfassung** `persona-daten.md`: um fünf Kennzahlen aus Consumer Insights mit Quelle ergänzt. Die
+    vollständigen Tabellen bleiben aus Lizenzgründen im Gruppenordner (wie in 45).
+  - **Folienentwurf Folie 4:** Titel, Folientext mit D/A-Kennzeichnung, Balken zur Mediennutzung mit Ø-Strich,
+    Bildidee, Sprechtext (ca. 1:20), 4 Rückfragen, Prüfliste.
+  - **Herkunft:** Statista-Dateien und Recherche-Dossier (Websuche D03); in diesem Schritt keine neue Websuche.
+    Formulierungen und Annahmen stammen aus dem Modellwissen von Claude.
+- **Ergebnis:** [`persona-steckbrief.md`](../fallstudie-1-brand-persona/persona-steckbrief.md) (neu),
+  [`persona-daten.md`](../fallstudie-1-brand-persona/persona-daten.md),
+  [`folienentwuerfe.md`](../fallstudie-1-brand-persona/folienentwuerfe.md) (Folie 4); Gruppenordner-Datei als Anhang
+  im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -526,12 +808,14 @@ steht hier mit dem wörtlichen Auftrag.
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 13.10.2026 | 07, 12 | Workflow „praesentation-layout“ (bis zu 31 Unteragenten) | Web-Präsentation gestalten, bauen, prüfen | zweimal unterbrochen (Nutzungslimit); fertig: 3 Gestaltungsrichtungen, Jury; Rest an Account 2 übergeben (Ü01) | – |
-| Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | *übergeben* | – |
+| Ü01 | 14.10.2026 | 16 | Übergabe an zweiten Account (eigene Claude-Code-Sitzung) | D01 ab „Fundament“ zu Ende führen, Branch `praesentation-account-2` | Zwischenstand `21d283a` am 16.10. nach `master` zusammengeführt; Abschluss läuft | Claude: Test als Webseite (Prompt 36) |
 | D02 | 13.10.2026 | 09 | Workflow „unternehmensvergleich“ (geplant 22 Unteragenten, mit Websuche) | 10 Marken recherchieren, gegenprüfen, bewerten | abgebrochen (Prompt 10) | – |
 | D03 | 13.10.2026 | 13, 15 | Workflow „holy-recherche“ (bis zu 21 Unteragenten, mit Websuche) | HOLY recherchieren, je Bereich zweifach gegenprüfen, Dossier | fertig: Dossier 34 Seiten, 155 Befunde (98 ✔, 42 ✎, 4 ~, 11 Hypothesen), 32 verworfene Einzelaussagen | Schlussprüfung (Agent) + Stichproben Claude |
 | D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
 | D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | 15 offene Punkte (8 mittel/niedrig neue Widersprüche in weiteren Dateien, 1 falsche Zählung in D04); alle umgesetzt | Claude: Zählung nachgerechnet, PDFs neu erzeugt und verglichen |
 | D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | 48 Quellen geprüft (18 bestätigt, 25 korrigiert, 4 nicht bestätigt, 1 verworfen) + 4 Ergänzungen | Claude: 5 Stichproben an der Quelle |
+| D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
+| Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -576,7 +860,10 @@ steht hier mit dem wörtlichen Auftrag.
   `praesentation-account-2`). Dessen Prompts und Delegationen stehen in `ki-nachweis-account-2.md`.
 - **Auftrag (wörtlich):** [`uebergaben/2026-10-14_account-2_praesentation.md`](uebergaben/2026-10-14_account-2_praesentation.md)
 - **Ergebnis:** *übergeben*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt beim Zusammenführen*
+- **Wie Claude das Ergebnis geprüft hat:** Zwischenstand `21d283a` (alle Folien gebaut, geprüft, überarbeitet und
+  exportiert) am 16.10.2026 nach `master` zusammengeführt und als Webseite getestet (siehe 36). Übersicht
+  `export/uebersicht.png` angesehen: Beispieldaten bzw. Dossier-Hypothesen sind gekennzeichnet (siehe 34). Endgültige
+  Prüfung nach Abschluss von Account 2.
 
 ### D02 – 13.10.2026 – ausgelöst durch Prompt 09
 
@@ -700,6 +987,46 @@ steht hier mit dem wörtlichen Auftrag.
 
   Werte, die Claude nicht selbst geprüft hat, sind in der Anleitung als „Beispiel, was du findest“ markiert; die
   Gruppe liest sie vor der Übernahme in der Quelle nach.
+
+### D07 – 16.10.2026 – ausgelöst durch Prompt 37
+
+- **Art:** Workflow „webseite-live-pruefung“, drei Unteragenten parallel. Sie testen die Live-Seite im Browser
+  (Playwright, Chromium); Dateien im Repository ändern sie nicht.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-16_webseite-live-pruefung.js`](workflows/2026-10-16_webseite-live-pruefung.js)
+  und automatisch im Rohprotokoll.
+- **Prüfer:**
+  - Technik & Bedienung: jede Folie und jeder Schritt, Tasten, Referentenansicht, Umfrage, Links.
+  - Geräte & Darstellung: Beamer-Formate, Handy, Touch, Kontrast, Bewegung reduzieren.
+  - Öffentlichkeit & Inhalte: Was ist durch `.nojekyll` öffentlich abrufbar, sensible Inhalte, Indexierung, Fakten zu
+    GitHub Pages mit Quelle.
+- **Ergebnis:**
+  - **Technik & Bedienung:** fehlerfrei auf der Live-Seite: 63 Folienzustände vor und zurück; Sprünge, Übersicht,
+    Backup, Hilfe, Themen, Schwarzbild; Referentenansicht in beide Richtungen synchron. Nichts ragt über die Bühne,
+    in 6 Kombinationen aus Thema und Modus. Ladezeit ca. 1 s, ca. 520 KB.
+  - **Geräte:** Letterboxing in 4 Fenstergrößen korrekt; Startseite auf dem Handy ohne seitliches Scrollen.
+  - **Öffentlichkeit:** keine Zugangsdaten oder privaten Kontaktdaten; Lizenzen von Schriften und Bibliotheken
+    vorhanden.
+  - **19 Befunde (1 hoch, 9 mittel, 9 niedrig):**
+    - hoch: Statista-Tabellen in `persona-daten.md` öffentlich.
+    - mittel: Pages liefert das ganze Repository aus; kein noindex; kein Hinweis „studentische Arbeit“ auf den
+      Folien; Vorlesungs-PDF öffentlich; geplante Logos und Screenshots; Namen öffentlich; Repository öffentlich;
+      Sprechtext in der Referentenansicht scrollt nicht mit; Bedienleiste im Handy-Hochformat.
+    - niedrig: u. a. Favicon, Fokus auf der Startseite, Ziffern auf Folie 08, Touch-Ziele, interne Kennungen
+      sichtbar, Sprechernotizen lesbar, kein Hosting-Hinweis.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Alle Befunde gelesen.
+  - Den Befund „hoch“ an der Datei bestätigt (Commit `301969e`, Tabellen mit absoluten Werten) und sofort behoben.
+  - Live-Erreichbarkeit vorab selbst geprüft (curl, Playwright).
+  - Eigene Änderungen lokal mit Playwright getestet (Logo auf Folie 09b, robots-Meta, keine Fehler).
+  - Eine Aussage aus Prompt 35 (Pages kostenlos für öffentliche Repositorys) hat der Prüfer mit der GitHub-Doku
+    bestätigt.
+
+### Ü02 – 16.10.2026 – ausgelöst durch 45 (Ergebnis von D07)
+
+- **Art:** Übergabe an Account 2 (Text, den Yannick in dessen Sitzung kopiert).
+- **Auftrag (wörtlich):** [`uebergaben/2026-10-16_account-2_befunde-live-pruefung.md`](uebergaben/2026-10-16_account-2_befunde-live-pruefung.md)
+- **Ergebnis:** *übergeben*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt beim nächsten Zusammenführen*
 
 ---
 
