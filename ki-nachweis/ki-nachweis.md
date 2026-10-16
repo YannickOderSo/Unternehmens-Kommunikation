@@ -67,7 +67,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 45 | 16.10.2026 | System | Benachrichtigung: Workflow D07 fertig | – | `persona-daten.md` auf Kurzfassung reduziert; noindex, Startseite, Logos; Übergabe Ü02 an Account 2 |
 | 46 | 16.10.2026 | System | Benachrichtigung: Hintergrundprüfung „neue Fassung live“ fertig | – | Live bestätigt: Logo 200, Kurzfassung ohne Tabellen, noindex |
 | 47 | 16.10.2026 | Yannick | „B“: Freigabe, die relevanten Seiten des Statista-Zielgruppen-Reports selbst zu lesen | – | Persona-Steckbrief „Marco, 28“ (A2) mit Kurzfassung für Lukas, `persona-daten.md` ergänzt, Folienentwurf Folie 4 |
-| 48 | 16.10.2026 | Yannick | Dossier für Lukas mit Anweisungen, wie er die Persona-Informationen nutzt | D08 | in Arbeit (Workflow D08 läuft) |
+| 48 | 16.10.2026 | Yannick | Dossier für Lukas mit Anweisungen, wie er die Persona-Informationen nutzt | D08, D09 | `dossier-buendel-b.md` + HTML + PDF (13 S.) für Lukas |
 | 49 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Workflow-Skript, Rohprotokoll und Nachweis committet + gepusht |
 | 50 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | gekürztes Dossier (Zwischenstand), HTML, PDF, Prüfskript committet + gepusht |
 
@@ -808,10 +808,30 @@ gibst mir ausdrücklich frei, die betreffenden Seiten selbst zu lesen.“)*
 *(Mit dem Prompt wurde automatisch die Workflow-Referenz geladen; laut Systemhinweis ist „Ultracode“ aktiv, also
 Workflows für jede größere Aufgabe.)*
 
-- **Vorgehen Claude:** Workflow D08 gestartet (3 Leser, 1 Autor, 3 Prüfer, 1 Bearbeiter, siehe Abschnitt 2).
-  Wird nach Abschluss ergänzt.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D08
+- **Vorgehen Claude:**
+  - **Workflow D08** (3 Leser, 1 Autor, 3 Prüfer, 1 Bearbeiter; siehe Abschnitt 2). Er schrieb das Dossier aus den
+    Repository-Dateien, prüfte es aus drei Blickwinkeln und arbeitete die Befunde ein. Ergebnis: 7.279 Wörter mit
+    Zeilen-Fundstellen, als Zwischenstand committet (`a2ffb07`).
+  - **Gekürzt von Claude:** Die Fassung war für Lukas zu lang (etwa 16 PDF-Seiten) und durch die Zeilennummern schwer
+    lesbar. Claude hat sie selbst gelesen und auf die Hälfte gekürzt. Fundstellen stehen jetzt als Datei + Abschnitt;
+    die Gliederung ist neu, mit einer Tabelle „Wofür die Persona-Daten gut sind“. Stellen, die Claude dabei
+    umformuliert hat, hat Claude an den Quellen geprüft (Arbeitsplan, Vorlage-KI, Aufgaben B1–B4, prompts.md
+    Teil C, Recherche-Dossier 6.5, Präsentation Folie 08).
+  - **Workflow D09** (2 Prüfer): Faktentreue der Kürzung und Vollständigkeit gegenüber `a2ffb07`. 26 Befunde
+    (1 hoch: im Einwilligungstext fehlten Tonaufnahme, Löschtermin und Kontakt; 14 mittel; 11 niedrig). Claude hat
+    sie an den Quellen nachgeprüft und alle umgesetzt, bis auf einen Hinweis zur Quelle „32 % Generation Z“. Diesen
+    Wert hat Claude selbst im Statista-Report abgelesen (Eintrag 47, S. 5); die Quelle steht jetzt im Steckbrief.
+  - **HTML und PDF** erzeugt (13 Seiten: Anleitung, dann Anhang mit kopierfertigen Prompts, Hypothesen „erst nach
+    der Auswertung lesen“ und Quellen) und als Seitenübersicht angesehen.
+  - **Herkunft:** nur Repository-Dateien. Methodische Hinweise ohne Fundstelle (Interviewablauf, Auswahlfragen,
+    Einwilligungstext, Handgriffe in Sheets) stammen aus dem Modellwissen und sind im Dossier als „Vorschlag“ oder
+    „Modellwissen“ gekennzeichnet. Ein Prüfer nutzte Websuche für Methodenfragen; diese externen Quellen wurden nicht
+    übernommen, weil Claude sie nicht selbst geöffnet hat.
+- **Ergebnis:** [`dossier-buendel-b.md`](../fallstudie-1-brand-persona/dossier-buendel-b.md),
+  [`dossier-buendel-b.html`](../fallstudie-1-brand-persona/dossier-buendel-b.html),
+  [`Fallstudie-1_Dossier-Buendel-B_Lukas.pdf`](../fallstudie-1-brand-persona/Fallstudie-1_Dossier-Buendel-B_Lukas.pdf);
+  Quelle der Generation-Z-Zahl in `persona-steckbrief.md` ergänzt
+- **Unteragenten:** D08, D09
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 49 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -853,6 +873,8 @@ steht hier mit dem wörtlichen Auftrag.
 | D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | 48 Quellen geprüft (18 bestätigt, 25 korrigiert, 4 nicht bestätigt, 1 verworfen) + 4 Ergänzungen | Claude: 5 Stichproben an der Quelle |
 | D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
 | Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
+| D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
+| D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1064,6 +1086,56 @@ steht hier mit dem wörtlichen Auftrag.
 - **Auftrag (wörtlich):** [`uebergaben/2026-10-16_account-2_befunde-live-pruefung.md`](uebergaben/2026-10-16_account-2_befunde-live-pruefung.md)
 - **Ergebnis:** *übergeben*
 - **Wie Claude das Ergebnis geprüft hat:** *folgt beim nächsten Zusammenführen*
+
+### D08 – 16.10.2026 – ausgelöst durch Prompt 48
+
+- **Art:** Workflow „dossier-buendel-b“, acht Unteragenten in vier Phasen:
+  - 3 Leser: Methoden, Prompts und Aufgaben; Inhalte zu HOLY und zur Persona; Regeln zu Datenschutz und KI-Nachweis.
+  - 1 Autor.
+  - 3 Prüfer: Belege; Methodik und Brauchbarkeit (mit Websuche); Regeln und Sprache.
+  - 1 Bearbeiter.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-16_dossier-buendel-b.js`](workflows/2026-10-16_dossier-buendel-b.js)
+  und automatisch im Rohprotokoll.
+- **Vorgaben:** nur Repository-Dateien. Keine Uploads und keine Gruppenordner-Datei öffnen (Statista-Lizenz). Jede
+  Aussage mit Fundstelle, nichts erfinden. Nur die Zieldatei schreiben, den KI-Nachweis nicht ändern, kein Commit.
+- **Ergebnis:**
+  - 114 Auszüge mit Fundstellen, dazu eine Liste von Widersprüchen zwischen den Dateien, z. B.:
+    - Du- oder Sie-Form der Laddering-Frage;
+    - Folienzeiten;
+    - 8–12 Konstrukte gegenüber 6–8 Zeilen auf Folie 06;
+    - Wettbewerber für die Analogien;
+    - Wettbewerbsset nicht als beschlossen dokumentiert;
+    - kein Interviewleitfaden und keine Einwilligungsvorlage im Repository.
+  - Entwurf mit 4.268 Wörtern.
+  - 55 Befunde (2 hoch, 16 mittel, 37 niedrig). Die zwei hohen: Der Persona-Block prägt Konstrukte vor, und der
+    Aufbau der KI-Chats war unklar.
+  - Der Bearbeiter meldet 53 umgesetzte und 8 nicht oder nur teilweise umgesetzte Punkte, jeweils begründet.
+    Externe Quellen eines Prüfers hat er nicht übernommen, weil sie nicht selbst geöffnet wurden.
+  - Endfassung: 7.279 Wörter.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Die Endfassung ganz gelesen und als Zwischenstand committet (`a2ffb07`).
+  - Danach selbst gekürzt (siehe 48) und die umformulierten Stellen an den Quellen geprüft.
+  - Die Kürzung von D09 gegenprüfen lassen.
+
+### D09 – 16.10.2026 – ausgelöst durch Prompt 48
+
+- **Art:** Workflow „dossier-buendel-b-nachpruefung“, zwei Prüfer parallel, ohne Schreibrechte.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-16_dossier-buendel-b-nachpruefung.js`](workflows/2026-10-16_dossier-buendel-b-nachpruefung.js)
+  und automatisch im Rohprotokoll.
+- **Prüfer:** (1) Faktentreue der gekürzten Fassung gegenüber dem Repository, (2) Vollständigkeit gegenüber der
+  Workflow-Fassung `a2ffb07`.
+- **Ergebnis:** 26 Befunde.
+  - hoch (1): Im Einwilligungstext fehlten Tonaufnahme, Löschtermin und Kontakt.
+  - mittel (14): u. a. Abwandlungen der Prompts nicht vollständig genannt; Modellwissen als „Methodenliteratur“
+    bezeichnet; 3–5 statt 2–4 Stichworte je Feld; Regeln zu echten Leitern, zum Aaker-Bogen und zur Live-Umfrage
+    sowie die Rückfallregel für Gruppenentscheidungen weggefallen.
+  - niedrig (11): u. a. Spaltenbelegung in Sheets, Quellenverweise, Termin Backup.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Strittige Stellen selbst an den Quellen geprüft: Aufgaben C2 (3–5 Stichworte), Präsentation Folie 08
+    („Waschbär“ und „Adler“ als Optionen, „Zurücksetzen“ zweimal), Recherche-Dossier 10.3 („Rückfallebene“) und [81].
+  - 25 Befunde umgesetzt.
+  - Nicht umgesetzt: der Hinweis zur Quelle „32 % Generation Z“. Claude hat den Wert selbst im Report gelesen.
+  - HTML und PDF neu erzeugt (13 Seiten).
 
 ---
 

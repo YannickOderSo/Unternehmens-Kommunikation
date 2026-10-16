@@ -1,7 +1,7 @@
 # Dossier für Lukas: Persona und Daten für Bündel B nutzen
 
 **Fallstudie 1 · HOLY · Bündel B · Stand 16.10.2026** · von Yannick Heisler (Bündel A), erstellt mit KI-Unterstützung
-(Claude Code; KI-Nachweis 48, Delegation D08). Alles stützt sich auf die Dateien im Repository; die Fundstellen stehen
+(Claude Code; KI-Nachweis 48, Delegationen D08 und D09). Alles stützt sich auf die Dateien im Repository; die Fundstellen stehen
 in Klammern, die Kurznamen erklärt Anhang 3. Stellen mit **„Vorschlag“** sind Abwägungen aus dem Modellwissen und
 nicht mit der Gruppe abgestimmt: Du entscheidest. Die Methodenbegriffe stammen aus der Standardliteratur; gleiche sie
 mit den Vorlesungsfolien ab.
@@ -11,18 +11,19 @@ mit den Vorlesungsfolien ab.
 > 1. **Die Persona „Marco, 28“ steht, ist aber noch ein Entwurf.** Die Gruppe muss die Richtung noch bestätigen
 >    (Steckbrief, Kopf und Abschnitt 6).
 > 2. **Kopieren statt neu schreiben:** Jeder KI-Chat beginnt mit P0, dann folgt der Befragten-Block (Abschnitt 2),
->    dann der fertige Prompt aus Anhang 1. So bleiben deine 5 simulierten Befragten in jedem Chat gleich.
-> 3. **Die Hypothesen aus dem Recherche-Dossier sind eine Prüfliste, keine Vorgabe.** Gib sie nie vor (Aufgaben B1)
->    und lies Anhang 2 erst, wenn du ausgewertet hast.
+>    dann der fertige Prompt aus Anhang 1 (Ausnahme P11: nur P0, dann P11). So bleiben deine 5 simulierten Befragten
+>    in jedem Chat gleich.
+> 3. **Die Hypothesen aus dem Recherche-Dossier sind eine Prüfliste, keine Vorgabe.** Gib sie nie vor (Aufgaben B1).
+>    Vorschlag: Lies Anhang 2 erst, wenn du ausgewertet hast.
 > 4. **Rechne nur in Sheets. Zähle „echt“ und „KI-simuliert“ getrennt** und kennzeichne simulierte Befragte immer
->    als „KI-simuliert“ (Aufgaben, Kopf Bündel B).
+>    als „KI-simuliert“ (Aufgaben B1 und Kopf Bündel B).
 > 5. **Fristen:** Attribute an alle **Mo 19.10.**, Tonalität an Elias **Mi 21.10.**, KI-Liste: Zwischenstand
->    Di 20.10., Abgabe Fr 23.10. abends (Arbeitsplan, Übergaben). Das Wettbewerbsset ist noch nicht beschlossen;
+>    Di 20.10., Abgabe Fr 23.10. abends (Arbeitsplan, Übergaben; Vorlage-KI). Das Wettbewerbsset ist noch nicht beschlossen;
 >    kläre es vor P7 (Abschnitt 10, Punkt 1).
 
 **Die nächsten Tage (Vorschlag)**
 - **Heute, Fr 16.10.:** 3–5 Personen für die Interviews am So 18.10. fest zusagen lassen (Abschnitt 5). Im
-  Gruppenchat die offenen Punkte 1–3 aus Abschnitt 10 klären.
+  Gruppenchat die offenen Punkte 1–3 und 10 aus Abschnitt 10 klären.
 - **Sa 17.10.:** P7 im Chat A (Anhang 1), Chat sichern, KI-Liste ergänzen. Den Interviewablauf einmal laut
   durchspielen.
 - **So 18.10.:** echte Kurzinterviews; Kundenstimmen codieren (Abschnitt 6).
@@ -81,7 +82,8 @@ Fast alle Zahlen beschreiben **Energy-Drink-Konsument:innen in Deutschland**, ni
 3. **Nachricht 3:** der fertige Prompt aus Anhang 1.
 4. Chat als PDF sichern und sofort in deine KI-Liste eintragen (Abschnitt 8).
 5. Ergebnisse von P7–P9 kennzeichnen als „KI-simuliert (Tool), n = 5“, Ergebnisse von P10 und P11 als
-   „KI-gestützt (Tool)“ (Vorlage-KI, „So füllst du einen Eintrag aus“, Punkt 6).
+   „KI-gestützt (Tool)“ (Regel aus Vorlage-KI, „So füllst du einen Eintrag aus“, Punkt 6; die Zuordnung ist ein
+   Vorschlag). Persona- und Befragten-Block änderst du zwischen den Chats nie.
 
 ```text
 Verwende in diesem Chat immer genau diese 5 Befragten (alle fiktiv) und nenne sie T1 bis T5:
@@ -117,8 +119,8 @@ Bündel B und C).
 |---|---|---|---|---|---|---|
 | HOLY | Red Bull | Monster | Gönrgy | waterdrop | Coca-Cola Zero | „mein idealer Drink für jeden Tag“ |
 
-Ob HOLY als Energy- oder als Softdrink-Marke verglichen wird, entscheidet über W5, die Idealmarke und damit über die
-Konstrukte (Recherche-Dossier 5.3, 10.2).
+Ob HOLY als Energy- oder als Softdrink-Marke verglichen wird, entscheidet über W5 und die Konstrukte
+(Recherche-Dossier 5.3, 10.2) und damit auch über den Wortlaut der Idealmarke (Vorschlag).
 
 ### B1 Repertory Grid → Markenattribute (Folie 06 · 90 s · an alle Mo 19.10.)
 
@@ -132,8 +134,8 @@ selbst anrühren“. Die 8 Triaden stehen in methoden.md §2 und in P7.
 3. **Mo 19.10. früh:** alle Konstrukte aus KI und Interviews zusammenführen. Dubletten zusammenfassen, Nennungen
    **selbst** zählen, in zwei Spalten (KI, echt) → 8–12 Konstrukte. Konstrukte im Wortlaut der Befragten benennen,
    nicht mit Begriffen aus dem Recherche-Dossier.
-4. P8 im selben Chat A (Anhang 1) → CSV → Google Sheets, Skala 1–7. Die Bewertungen kommen nur von den 5 simulierten
-   Befragten; für echte Befragte ist in 10–15 Minuten keine Zeit.
+4. P8 im selben Chat A (Anhang 1) → CSV → Google Sheets, Skala 1–7. Vorschlag: Die Bewertungen kommen nur von den
+   5 simulierten Befragten, weil für echte Befragte in 10–15 Minuten keine Zeit ist (Abschnitt 10, Punkt 12).
 5. **Auswahlregel vorher festlegen** und notieren, z. B. viele Nennungen, Abstand zum Wettbewerb ≥ 1 Skalenpunkt,
    kleine Ideal-Distanz → 3–5 Attribute (Aufgaben B1). Vorschlag: Ein Attribut muss außerdem in echten Interviews oder
    Kundenstimmen vorkommen.
@@ -145,19 +147,22 @@ echten Interviews bewertet werden.
 - CSV in A1 einfügen, dann *Daten → Text in Spalten aufteilen* (Trennzeichen Semikolon).
 - *Einfügen → Pivot-Tabelle*: Zeilen = Konstrukt, Werte = M, W1–W5 und I als Mittelwert.
 - Je Konstrukt: Ø W = Mittelwert von Ø W1–W5 · Differenzierung = |Ø M − Ø W| · Ideal-Distanz = |Ø M − Ø I|
-  (klein ist gut) · Relevanz = Nennungen. In Sheets z. B. `=MITTELWERT(C2:G2)` und `=ABS(B2-I2)`.
+  (klein ist gut) · Relevanz = Nennungen. Beispiel mit Spalte A Konstrukt, B Ø M, C–G Ø W1–W5, H Ø I: in I2
+  `=MITTELWERT(C2:G2)` (Ø W), in J2 `=ABS(B2-I2)` (Differenzierung), in K2 `=ABS(B2-H2)` (Ideal-Distanz), dann nach
+  unten ziehen.
 - Mittelwerte nie von der KI rechnen lassen (Aufgaben B1).
 
 **Das braucht Folie 06** (Aufgaben B1): je Konstrukt beide Pole, Nennungen, Ø HOLY, Ø stärkster Wettbewerber, Ø Ideal,
-Attribut ja/nein; Name des stärksten Wettbewerbers; ein Triaden-Beispiel; Stichprobe; Titel als Kernaussage. Die Folie
+Attribut ja/nein; dazu Ø aller fünf Wettbewerber (Ø W1–W5 aus Sheets), denn daraus rechnet die Folie den Vorsprung
+wie in methoden.md (Präsentation, Folie 06); Name des stärksten Wettbewerbers; ein Triaden-Beispiel; Stichprobe; Titel als Kernaussage. Die Folie
 fasst 6–8 Konstrukte, der Rest kommt ins Backup B4 (alle Bewertungen und deine Auswahlregel). In der Fußzeile steht
 bisher „5 KI-Personas + 3 Kurzinterviews, gemittelt“; ersetze das durch die echte Aufteilung, z. B. „Konstrukte:
 5 KI-simuliert (Tool) + n echte Kurzinterviews; Bewertungen: 5 KI-simuliert (Tool)“. Die Folie zeigt bis jetzt nur
 Beispieldaten: nicht als Vorlage nutzen.
 
 **Typische Fehler:** Konstrukte aus dem Recherche-Dossier vorgeben · Mittelwerte von der KI rechnen lassen · Grid ohne
-Wettbewerber oder Idealmarke (README) · Titel vor der Auswertung festlegen · bei KI-Werten von Streuung oder
-Signifikanz sprechen.
+Wettbewerber oder Idealmarke (README) · Gegensätze mit mehr als zwei Polen nicht aufteilen · Titel vor der Auswertung
+festlegen · bei KI-Werten von Streuung oder Signifikanz sprechen.
 
 ### B2 Laddering → Markennutzen (Folie 07 · 90 s · zur Synthese Do 22.10.)
 
@@ -173,17 +178,23 @@ Verbindungen, die oft genug genannt wurden (Cut-off).
    zähle diese Abbrüche und nenne sie im Backup B5.
 3. Leitern in die Tabelle aus methoden.md §3 übertragen, gleichbedeutende Begriffe zusammenfassen, Codeliste festhalten.
 4. Implikationsmatrix (wie oft führt A direkt zu B) in Sheets **selbst** auszählen; P10 darf nur einen Vorschlag
-   machen. Cut-off z. B. ≥ 2 Nennungen.
+   machen. Cut-off z. B. ≥ 2 Nennungen. Gezählt werden nur direkte Verbindungen; das ist die vereinfachte Form, mit
+   der Vorlesung abgleichen.
+   Vorschlag für echte Leitern: Sie zählen in der Matrix nur mit, wenn ihr Startkonstrukt laut Codeliste einem
+   deiner Attribute entspricht; die übrigen kommen nur ins Backup B5. In der Fußzeile von Folie 07 KI und echt
+   getrennt angeben.
 5. HVM ableiten, Nutzen sachlich-funktional und psychosozial formulieren, 1–2 echte Kundenzitate als Beleg suchen
    (Aufgaben B2).
 
-**Das braucht Folie 07** (Aufgaben B2): Knoten je Ebene (je höchstens 3 Wörter, höchstens 3–4 je Ebene), Verbindungen
+**Das braucht Folie 07** (Aufgaben B2): Knoten je Ebene (je höchstens 3 Wörter; laut Präsentation passen höchstens
+3–4 je Ebene), Verbindungen
 mit Anzahl der Nennungen über dem Cut-off, 2 Nutzen-Kästen (je 1 Zeile), Stichprobe, Titel. Leitern und Matrix
 kommen ins Backup B5.
 
 **Typische Fehler:** andere Wörter als auf Folie 06 · unter 3 Stufen abbrechen · den Vorschlag aus P10 ungeprüft
 übernehmen · „Gesundheit“ als Produktversprechen lesen (es ist ein Wert der Befragten) · nicht zugelassene
-Nutzenaussagen verwenden oder Hydration überzeichnen (Aufgaben B2; Recherche-Dossier 3.7).
+Nutzenaussagen verwenden oder Hydration überzeichnen (Aufgaben B2; Recherche-Dossier 3.7). Beim Nutzen „gutes
+Gewissen“ an das Spannungsfeld denken: 160 mg Koffein und die Kritik von Verbraucherschützern [81].
 
 ### B3 Analogien und Live-Umfrage → Markentonalität (Folien 08 + 08b · 70 s + 50 s · an Elias Mi 21.10.)
 
@@ -198,22 +209,33 @@ Die echte Kundschaft ist meist 25–40, oft im Schichtdienst [7, 24].
 **So gehst du vor:**
 1. **Erst ohne KI:** Jede Person der Gruppe schreibt HOLY als Mensch und als Tier mit 3 Gründen auf (Aufgaben B3).
    Die Gruppe kennt die Hypothese aus dem Recherche-Dossier und die Beispielfolien schon; ihre Antworten sind also
-   nicht unvoreingenommen. Mehr Gewicht haben 3–5 Personen aus deinem Umfeld, die die Folien nicht kennen (2 Minuten,
-   nichts vorgeben, ohne Namen notieren), und die Tierfrage in den echten Interviews.
+   nicht unvoreingenommen. Kennzeichne sie im Backup als „Hypothese vorher bekannt“. Aufgaben B3 nennt außerdem
+   optional 3–5 Personen aus dem Umfeld (2 Minuten, nichts vorgeben). Vorschlag: Mach das, denn diese Personen kennen
+   die Folien nicht. Bitte kurz um Einverständnis und notiere ohne Namen (z. B. „Umfeld 1, 24 J.“). Dazu kommt die
+   Tierfrage in den echten Interviews.
 2. P11 aus Anhang 1 für HOLY und 2 Wettbewerber (Vorschlag: Red Bull und waterdrop, wie auf den Folien). Ergebnis
    als „KI-gestützt (Tool)“ kennzeichnen, denn P11 simuliert keine Befragten.
 3. Vergleichen: Gruppe ↔ KI ↔ Umfeld ↔ echte Interviews ↔ Hypothese (Anhang 2). Unterschiede ins Backup.
 4. Tonalität ableiten: 4–5 Persönlichkeitsmerkmale, Markenemotionen, Beziehung zu den Kund:innen (Aufgaben B3).
 5. Aaker-Profil: Jede Person bewertet HOLY und die 2 Wettbewerber einzeln auf einer Skala von 1 bis 5 (Aufgaben B3).
+   Vorschlag: Den Bogen füllen nur Menschen aus (Gruppe, ggf. Umfeld). Die Aaker-Zuordnung aus P11 bleibt getrennt
+   und wird als „KI-gestützt (Tool)“ gekennzeichnet, auch wenn die Notiz auf Folie 08b etwas anderes nahelegt.
    Mittelwert in Sheets. In der Fußzeile von 08b die tatsächliche Zahl der Bewertenden eintragen.
 
-**Das brauchen Folie 08 und 08b** (Aufgaben B3): HOLY als Tier mit 3 Gründen und als Mensch; 2 Wettbewerber mit Tier
-und Stichworten; Aaker-Profil mit 5 Dimensionen; 4–5 Merkmale, Emotionen, Beziehung; zwei Titel als Kernaussage; das
-tatsächliche n.
+**Das brauchen Folie 08 und 08b** (Aufgaben B3): HOLY als Tier mit 3 Gründen und als Mensch mit 4 Merkmalen (z. B.
+Alter, Beruf, Stil, auf der Party); 2 Wettbewerber mit Tier, 2 Stichworten und dem Menschen in einer Zeile;
+Aaker-Profil mit 5 Dimensionen für HOLY und die 2 Wettbewerber; 4–5 Merkmale, jedes mit seiner Aaker-Dimension;
+3 Emotionen; Beziehung; für die Umfrage die Tier-Optionen, „unsere Antwort“ und den Link; zwei Titel als
+Kernaussage. Laut Präsentation außerdem ein kurzer Satz zu den Markenerlebnissen (Folie 08b) und das tatsächliche n
+in beiden Fußzeilen. Wo die Präsentation weniger Platz hat als die Aufgaben verlangen (z. B. 3 statt 4 Zeilen für
+den Menschen), gilt die Präsentation (Abschnitt 10, Punkt 13).
 
 **Live-Umfrage** (Aufgaben B3): In Mentimeter oder Particify „Wenn HOLY ein Tier wäre – welches?“ mit 4–5 Tieren
-anlegen (euer Ergebnis plus plausible andere). Link und Ergebnis-Link weitergeben, die Teilnehmergrenze des
-Gratis-Tarifs prüfen, den QR-Code mit mehreren Handys testen. Die Umfrage ist ein **Stimmungsbild, keine Erhebung**: So
+anlegen (euer Ergebnis plus plausible andere). Unter den Optionen müssen euer Analyse-Tier und der Adler (Selbstbild
+der Marke) sein, darauf baut der Sprechtext auf. Link und Ergebnis-Link weitergeben, die Teilnehmergrenze des
+Gratis-Tarifs prüfen, den QR-Code mit mehreren Handys testen. Plan B: Handzeichen im Zählmodus der Folie. Vor dem
+Vortrag auf Folie 08 zweimal „Zurücksetzen“ klicken, sonst zählen Beispiel- und Probestimmen mit (Präsentation,
+Folie 08). Die Umfrage ist ein **Stimmungsbild, keine Erhebung**: So
 steht es auf der Folie und so sagst du es.
 
 **Typische Fehler:** Tiere oder Adjektive vorgeben · Persona und Markenpersönlichkeit verwechseln · das Beispiel auf
@@ -268,14 +290,16 @@ das Interview nur, wenn die Person HOLY und mindestens 3 der 5 Wettbewerber kenn
 | 12–14 | HOLY als Tier und als Mensch, je 3 Gründe | offen fragen, nichts vorschlagen |
 | 14–15 | Auswahlfrage 5, Dank | – |
 
-Wird die Zeit knapp, mach nur die 5 Triaden mit HOLY. Die Frageformulierungen sind wortgleich mit P7 und P9, damit
-du echte und simulierte Antworten vergleichen kannst (Aufgaben, Kopf Bündel B). Für die Laddering-Frage gilt die
-Du-Form wie in methoden.md und prompts.md.
+Wird die Zeit knapp, mach nur die 5 Triaden mit HOLY. Fällt einer Person zu einer Triade nichts ein, geh zur nächsten
+und notiere das; gib in der Auswertung die Zahl der gültigen Triaden je Person an. Biete nie Konstrukte aus dem
+Recherche-Dossier an, auch wenn es sie in 10.3 als „Rückfallebene“ nennt: Es gelten die Aufgaben („nie vorgeben“).
+Die Frageformulierungen sind wortgleich mit P7 und P9, damit du echte und simulierte Antworten vergleichen kannst
+(Aufgaben, Kopf Bündel B). Vorschlag: Für die Laddering-Frage die Du-Form wie in methoden.md und prompts.md.
 
 **Warum das Laddering hier bei den eigenen Konstrukten startet:** Die Interviews sind am So 18.10., deine Attribute
 stehen aber erst am Mo 19.10. fest. Klassisch startet Laddering ohnehin bei Unterscheidungen, die die Person selbst
-genannt hat (Hinweis aus der Methodenliteratur, mit der Vorlesung abgleichen). Begründe die Abweichung von
-methoden.md §3 im Backup.
+genannt hat. Das ist ein Hinweis aus dem Modellwissen ohne geprüfte Fundstelle (nachzulesen bei Reynolds & Gutman
+1988; mit der Vorlesung abgleichen). Begründe die Abweichung von methoden.md §3 im Backup.
 
 **Einwilligung und Datenschutz**
 - Einwilligung **vor** dem Interview einholen (Aufgaben, Kopf Bündel B). Vorschlag für einen Text zum Vorlesen
@@ -283,10 +307,12 @@ methoden.md §3 im Backup.
 
   > „Ich mache für eine Studienarbeit an der Hochschule Kaiserslautern ein Kurzinterview zu Getränkemarken, etwa
   > 15 Minuten. Mitmachen ist freiwillig. Du kannst jederzeit abbrechen und deine Zustimmung auch später widerrufen,
-  > dann lösche ich deine Notizen. Ich notiere nichts mit deinem Namen. Die anonymen Notizen werte ich auch mit
+  > dann lösche ich deine Notizen. Ich notiere nichts mit deinem Namen. Ich nehme nur auf, wenn du ausdrücklich
+  > zustimmst; eine Aufnahme würde ich mit einem KI-Tool abschreiben lassen. Die anonymen Notizen werte ich auch mit
   > KI-Tools aus. Anonyme Ergebnisse und kurze Zitate erscheinen in einer Präsentation, die öffentlich im Internet
-  > steht. Bist du einverstanden?“
+  > steht. Notizen und Aufnahme lösche ich bis [Datum]; Fragen an Lukas Welker, [Kontakt]. Bist du einverstanden?“
 
+- Löschtermin vor So 18.10. festlegen (Abschnitt 10, Punkt 11). Ohne ausdrückliches Ja keine Aufnahme.
 - Die Zustimmung mit Datum im Gruppenordner vermerken, nicht im Repository.
 - KI-Richtlinie der HSKL, Nr. 6: personenbezogene Daten nur mit ausdrücklicher Genehmigung der Betroffenen in
   KI-Tools außerhalb der Hochschule bzw. der Rechenzentrumsallianz Rheinland-Pfalz (Vorlage-KI, Datenschutz). Deshalb: Einwilligung **und** anonymisieren
@@ -313,9 +339,11 @@ noch nicht (Steckbrief, Abschnitt 6). Ein gemeinsames Sheet reicht für A und B.
   Datenerhebung Elias für Folie 09; stimm dich mit ihm ab, damit ihr nichts doppelt macht.
 - **Wie:** z. B. 20 Bewertungen der letzten 6 Monate plus 10 kritische (1–2 Sterne); die Auswahlregel notieren. Eine
   Zeile je Bewertung, Codes nach dem Codebuch K1–K8 (Datenerhebung), Häufigkeiten mit `ZÄHLENWENN`.
-- **Wofür:** Motiv- und Kritik-Codes → Kommen deine Konstrukte auch bei echten Kund:innen vor? · Anlass + Motiv →
-  Leitern in Kundensprache, 1–2 Belegzitate (anonym, mit Portal und Datum) · Tonalität → Abgleich mit deiner
+- **Wofür:** K3 Motiv und K4 Kritik → Kommen deine Konstrukte auch bei echten Kund:innen vor? · K1 Anlass + K3 →
+  Leitern in Kundensprache, 1–2 Belegzitate (anonym, mit Portal und Datum) · K7 Tonalität → Abgleich mit deiner
   Tonalität.
+- **Wer und wann** (Vorschlag): Ist bis Sa 17.10. nichts anderes abgesprochen, codierst du K1, K3, K4 und K7 bis
+  So 18.10. selbst, weil deine Auswahlregel am Mo 19.10. die Codes K3 und K4 braucht.
 - **Typisch** laut Recherche-Dossier 3.5 [88, 89]: Lob für Geschmack, Sorten, zuckerfrei, Service; Kritik am Preis ohne
   Rabattcode, an Süße und am Shaker.
 - **Grenzen:** Bewertende wählen sich selbst aus, HOLY lädt nach dem Kauf zur Bewertung ein, Alter und Geschlecht sind
@@ -332,7 +360,7 @@ noch nicht (Steckbrief, Abschnitt 6). Ein gemeinsames Sheet reicht für A und B.
 - **Die Persona ist annahmegestützt.** Die Statista-Werte sind noch nicht gegengelesen, die Gründerzitate noch nicht
   im Audio geprüft. Das Persona-Zitat ist erfunden und nie ein Beleg.
 - **Simulierte Befragte sind keine Daten.** Die 5 Profile entstehen in einer Antwort desselben Tools und sind keine
-  unabhängigen Beobachtungen; Nischenwissen fehlt (prompts.md, Teil C). Formuliere ehrlich: „Die KI-Simulation
+  unabhängigen Beobachtungen; bekannte Klischees werden verstärkt, Nischenwissen fehlt (prompts.md, Teil C). Formuliere ehrlich: „Die KI-Simulation
   liefert Hypothesen; ob sie tragen, zeigen die echten Interviews und Kundenstimmen.“ Schreib nie „Befragte sagen“
   ohne „KI-simuliert“.
 
@@ -343,9 +371,11 @@ noch nicht (Steckbrief, Abschnitt 6). Ein gemeinsames Sheet reicht für A und B.
 - **Liste:** Du führst deine eigene Liste nach `ki-nachweis/vorlage-ki-nutzung.md` und trägst **nicht** selbst in
   `ki-nachweis.md` ein; Yannick überträgt. Nummeriere 01, 02 …; Yannick ergänzt beim Übertragen deine Initialen.
 - **Was:** jede KI-Nutzung, auch Rechtschreibung, Übersetzung und Transkription. Im Zweifel eintragen.
-- **Wie:** sofort und alle Prompts wörtlich, mit Tippfehlern. P0 nicht abschreiben, nur bei „Prompt-Vorlage“ vermerken
-  (z. B. „P0, dann Befragten-Block, dann P7-Abwandlung aus dem Dossier für Lukas“). Sehr lange Prompts: die ersten
-  zwei Zeilen plus „…“. Das wichtigste Feld ist „Prüfung“: Was hast du kontrolliert, übernommen, verworfen?
+- **Wie:** sofort und alle Prompts wörtlich, mit Tippfehlern. Nur P0 schreibst du nicht ab, sondern vermerkst ihn bei
+  „Prompt-Vorlage“ (z. B. „P0, dann Befragten-Block, dann P7-Abwandlung aus dem Dossier für Lukas“). Befragten-Block
+  und Abwandlung kommen wörtlich in die Liste; sehr lange Prompts mit den ersten zwei Zeilen plus „…“. Fülle auch
+  „Woher stammt der Inhalt?“ aus. Das wichtigste Feld ist „Prüfung“: Was hast du kontrolliert, übernommen,
+  verworfen? „Prüfung durch die Gruppe“ lässt du offen.
 - **Zahlen aus einer KI** nur, wenn du die Originalquelle geöffnet hast. Ins Quellenverzeichnis kommt die
   Originalquelle, nie das Tool. Was P11 über Red Bull und waterdrop sagt, ist Modellwissen.
 - **Chatverläufe:** als PDF in den Gruppenordner, Unterordner „KI-Chats“, Dateiname `JJJJ-MM-TT_LW_Nr_Tool.pdf`. Ein
@@ -353,7 +383,8 @@ noch nicht (Steckbrief, Abschnitt 6). Ein gemeinsames Sheet reicht für A und B.
 - **Urheberrecht:** keine kompletten Statista- oder VuMA-Berichte, Buchkapitel oder Vorlesungsfolien in externe
   KI-Tools; der Persona-Block ist eine eigene Zusammenfassung. Wo es geht, das Training mit deinen Chats ausschalten.
 - **Fristen:** Di 20.10. Zwischenstand mitbringen · **Fr 23.10. abends** an Yannick · bis So 25.10. Nachträge ·
-  mit der Einzelreflexion ein Nachtrag (Termin folgt).
+  mit der Einzelreflexion ein Nachtrag (Termin folgt). Vor dem Abschicken das Beispiel Nr. 00 löschen und die
+  Erklärung am Ende ausfüllen (Vorlage-KI).
 
 ---
 
@@ -365,14 +396,15 @@ noch nicht (Steckbrief, Abschnitt 6). Ein gemeinsames Sheet reicht für A und B.
 | Persona-Kurzfassung | A → B | Fr 16.10. | liegt vor (dieses Dossier) |
 | 3–5 Markenattribute | B → alle | **Mo 19.10.** | Attribute wortgleich für 06 und 07, Auswahlregel, Stichprobe |
 | Markentonalität | B → C | **Mi 21.10.** | Merkmale, Emotionen, Beziehung, Tier und Mensch |
-| Ergebnisse je Feld des Markensteuerrads | alle → Yannick | Do 22.10. vor dem Termin | je Feld (Attribute, Nutzen, Tonalität) 2–4 Stichworte mit Herkunft |
+| Ergebnisse je Feld des Markensteuerrads | alle → Yannick | Do 22.10. vor dem Termin | je Feld (Attribute, Nutzen, Tonalität) 3–5 Stichworte mit Herkunftskürzel (RG, LA, AN); Yannick wählt daraus 2–4 für Folie 10 (Aufgaben C2) |
 | Eigene Folien fertig | alle → C | Fr 23.10. | Inhalte der Folien 06–08b, Sprechtext, Rückfragen, B4/B5 |
 | Persönliche KI-Liste | alle → Yannick | Di 20.10. / Fr 23.10. | Zwischenstand / Abgabe (Nachträge bis So 25.10.) |
 
 **Tagesplan B** (Arbeitsplan, angepasst): Sa 17.10. P7 · So 18.10. echte Interviews, Kundenstimmen · Mo 19.10.
 Konstrukte zusammenführen, P8, Sheets → Attribute an alle · Di 20.10. Laddering (P9), HVM (P10), Zwischenstand der
 Gruppe (dort Mensch/Tier ohne KI und Aaker-Bogen) · Mi 21.10. Analogien (P11) → Tonalität an Elias · Do 22.10.
-Synthese (2 Std.) · Fr 23.10. Folien 06–08b final · Sa 24.10. Rohdaten ins Backup · So 25.10. Generalprobe ·
+Synthese (2 Std.) · Fr 23.10. Folien 06–08b final, Backup B4/B5 fertig (Aufgaben B4) · Sa 24.10. Puffer, laut
+Arbeitsplan Rohdaten ins Backup · So 25.10. Generalprobe ·
 Mo 26.10. Präsentation. Am Wochenende ist die Einteilung flexibel, die Übergaben nicht.
 
 Folie 10 (Markensteuerrad) übernimmt deine Stichworte, und die Folien 09b und 11 bauen auf der Tonalität auf. Weichen
@@ -381,6 +413,9 @@ deine Ergebnisse von den Beispieldaten ab, sag es Yannick und Elias sofort.
 ---
 
 ## 10. Noch offen: was die Gruppe klären muss
+
+Vorschlag zum Verfahren: Beschließt die Gruppe bis zur Frist nichts anderes, gilt der Vorschlag; halte das im
+Gruppenchat fest. Für die Punkte 1 und 2 ist die Frist Sa 17.10. vormittags, danach startest du P7 mit dem Vorschlag.
 
 | # | Punkt | Vorschlag |
 |---|---|---|
@@ -394,7 +429,9 @@ deine Ergebnisse von den Beispieldaten ab, sag es Yannick und Elias sofort.
 | 8 | Auswahlschwelle: ≥ 1 Skalenpunkt (Aufgaben) gegen ≥ 1,5 im Backup B4 der Präsentation | vor dem Rechnen festlegen und im Backup eintragen |
 | 9 | Anzahl Attribute: 3–5 (Aufgaben) gegen 3–4 Knoten auf Folie 07 und 2–4 Stichworte auf Folie 10 | 3–4 Attribute, der Rest ins Backup |
 | 10 | Wer wertet die Kundenstimmen aus, und wer erhebt Instagram (B laut Aufgaben, C laut Datenerhebung)? | ein gemeinsames Sheet; Instagram mit Elias abstimmen |
-| 11 | Wo liegen Einwilligungen und Interviewnotizen, und wann werden sie gelöscht? | im Gruppenordner; Löschtermin festlegen |
+| 11 | Wo liegen Einwilligungen und Interviewnotizen, und wann werden sie gelöscht? | im Gruppenordner; Löschtermin vor So 18.10. festlegen |
+| 12 | Bewerten echte Befragte die Konstrukte (P8) mit? In 10–15 Minuten ist dafür keine Zeit; Präsentation und Aufgaben gehen bisher von gemeinsamen Daten aus („5 KI-simuliert + 3 echt“). | nein: Bewertungen nur von den 5 simulierten Befragten, so in Fußzeile und Backup B4; Frist Mo 19.10. früh |
+| 13 | Folie 08/08b: Die Aufgaben verlangen mehr, als die Präsentation fasst (Mensch mit 4 Merkmalen gegen 3 Zeilen; Wettbewerber-Mensch ohne eigenes Feld). | die Präsentation gilt; den Aufgaben-Text anpassen |
 
 ---
 
@@ -402,7 +439,7 @@ deine Ergebnisse von den Beispieldaten ab, sag es Yannick und Elias sofort.
 
 - [ ] Wettbewerbsset, Rahmen und Idealmarke mit der Gruppe bestätigt
 - [ ] Interviewpartner:innen für So 18.10. bestätigt (mind. 2 Frauen, ab 18, mind. eine berufstätige Person)
-- [ ] Jeder Chat: P0 → Befragten-Block → Prompt aus Anhang 1; Chat als PDF gesichert, KI-Liste ergänzt
+- [ ] Jeder Chat: P0 → Befragten-Block → Prompt aus Anhang 1 (P11 ohne Befragten-Block); Chat als PDF gesichert, KI-Liste ergänzt
 - [ ] P7 gelaufen; Konstrukte aus KI und Interviews zusammengeführt, Nennungen selbst gezählt
 - [ ] 3–5 echte Interviews mit Einwilligung und anonymen Notizen
 - [ ] „Echt“ und „KI-simuliert“ getrennt gezählt, Spalte „im Persona-Block angelegt“ ausgefüllt
@@ -411,8 +448,8 @@ deine Ergebnisse von den Beispieldaten ab, sag es Yannick und Elias sofort.
 - [ ] 20–30 Kundenstimmen codiert, 1–2 anonyme Belegzitate mit Portal und Datum
 - [ ] Analogien erst ohne KI, dann P11; Aaker-Bogen gemittelt; Tonalität Mi 21.10. an Elias
 - [ ] Anhang 2 erst nach der Auswertung gelesen, Unterschiede im Backup
-- [ ] Live-Umfrage angelegt und mit mehreren Handys getestet
-- [ ] Folien 06–08b: Titel, tatsächliches n, Kennzeichnung „KI-simuliert (Tool)“ bzw. „KI-gestützt (Tool)“
+- [ ] Live-Umfrage angelegt (mit Analyse-Tier und Adler), mit mehreren Handys getestet, Plan B Handzeichen geklärt
+- [ ] Folien 06–08b: Titel, tatsächliches n, Kennzeichnung „KI-simuliert (Tool)“ bzw. „KI-gestützt (Tool)“, Kennzeichen „Beispieldaten“ entfernt
 - [ ] Sprechtext in der Sollzeit, je Folie 2 Rückfragen, Backup B4/B5, Regalpreise fotografiert
 - [ ] KI-Liste: Zwischenstand Di 20.10., Abgabe Fr 23.10. abends
 
@@ -421,11 +458,13 @@ deine Ergebnisse von den Beispieldaten ab, sag es Yannick und Elias sofort.
 ## Anhang 1: Kopierfertige Prompts
 
 Reihenfolge in jedem Chat: Nachricht 1 = P0, Nachricht 2 = Befragten-Block (Abschnitt 2), Nachricht 3 = Prompt von
-hier. Ausnahme: P11 ohne Befragten-Block. Die Texte sind **Abwandlungen** der Prompts aus prompts.md: Platzhalter sind
-eingesetzt, und statt „Variiere Alter, Geschlecht und Nutzungsintensität“ steht der Verweis auf T1–T5. Trag sie so in
-die KI-Liste ein. Ändert die Gruppe Wettbewerber oder Idealmarke, änderst du nur diese Wörter.
+hier. Ausnahme: P11 ohne Befragten-Block. Die Texte sind **Abwandlungen** der Prompts aus prompts.md; was geändert
+ist, steht über jedem Prompt. Trag sie wörtlich in die KI-Liste ein und nenne die Abwandlung im Feld
+„Prompt-Vorlage“. Ändert die Gruppe Wettbewerber oder Idealmarke, änderst du nur diese Wörter.
 
-**P7, Chat A, Sa 17.10.**
+**P7, Chat A, Sa 17.10.** Abwandlung: Platzhalter eingesetzt; „Variiere Alter, Geschlecht und Nutzungsintensität der
+Kategorie“ ersetzt durch den Verweis auf T1–T5; Idealmarke „mein idealer Drink für jeden Tag“ statt „meine
+Idealmarke“ (Abschnitt 10, Punkt 2).
 
 ```text
 Simuliere 5 unterschiedliche Befragte aus der Zielgruppe von HOLY. Grundlage ist diese Persona:
@@ -447,7 +486,8 @@ Zum Schluss: Liste alle Konstrukte, fasse inhaltlich gleiche zusammen und gib an
 **P8, Chat A, Mo 19.10.** Unverändert aus prompts.md; du setzt nur deine 8–12 zusammengeführten Konstrukte ein, je
 „Pol 1 – Pol 7“. Die Zählung der KI aus P7 ersetzt deine eigene Zählung nicht.
 
-**P9, Chat B, Di 20.10.** Zuerst für T1:
+**P9, Chat B, Di 20.10.** Abwandlung: `[PERSONA]` ersetzt durch die jeweilige Person T1–T5; Prüffrage vor jeder Leiter
+ergänzt. Zuerst für T1:
 
 ```text
 Führe ein Laddering-Interview nach der Means-End-Chain-Theorie (Gutman; Reynolds & Gutman) mit T1 aus meiner vorigen Nachricht.
@@ -466,7 +506,8 @@ Danach im selben Chat viermal, für T2, T3, T4 und T5:
 Führe jetzt dasselbe Interview mit T2 aus der Liste T1 bis T5 oben durch: gleiche Startpunkte, gleiche Regeln.
 ```
 
-**P11, Chat C, Mi 21.10.** Nur P0, dann dieser Text:
+**P11, Chat C, Mi 21.10.** Nur P0, dann dieser Text. Abwandlung: `[W1]` und `[W2]` ersetzt durch Red Bull (W1) und
+waterdrop (W4) (Abschnitt 10, Punkt 7).
 
 ```text
 Stell dir vor, die Marke HOLY wäre ein Mensch. Beschreibe: Alter, Geschlecht, Beruf, Wohnort, Kleidungsstil, Hobbys, wie die Person spricht, welches Auto sie fährt, wie sie sich auf einer Party verhält und welche Beziehung sie zu ihren Kund:innen hat (z. B. Freund, Mentor, Entertainer, Dienstleister).
@@ -544,6 +585,6 @@ Die Persönlichkeiten von Red Bull und waterdrop sind Modellwissen.
   2023 · Statista Consumer Insights 2025.
 - **HOLY (Recherche-Dossier, Anhang B):** [1] de.holy.com · [7] Trending Topics, 08/2024 · [24] Podcast „Digitale
   Vorreiter:innen“ #281 mit Frederick Jost, 08/2024 · [25] HORIZONT, 01/2026 · [30] Shop-Produktdaten ·
-  [88] Trustpilot · [89] REVIEWS.io.
+  [81] Lebensmittelklarheit, 03/2025 · [88] Trustpilot · [89] REVIEWS.io.
 - **Literatur** (methoden.md): Kelly (1955) · Gutman (1982) · Reynolds & Gutman (1988) · Aaker (1997) · Esch,
   *Strategie und Technik der Markenführung*. Dazu die Vorlesungsfolien.
