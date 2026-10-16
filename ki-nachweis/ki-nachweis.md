@@ -56,6 +56,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 34 | 16.10.2026 | Yannick | Frage: Status des zweiten Agenten (Account 2)? | – | Antwort im Chat; Übersichtsbild gezeigt (keine Dateien geändert) |
 | 35 | 16.10.2026 | Yannick | Screenshot Account 2; Frage: Wie rufen wir die Präsentation auf (Link?) | – | Antwort im Chat (keine Dateien geändert) |
 | 36 | 16.10.2026 | Yannick | Webseite (GitHub Pages) einrichten | – | Zwischenstand Account 2 zusammengeführt, Startseite, lokal als Webseite getestet |
+| 37 | 16.10.2026 | Yannick | GitHub Pages aktiviert („Ja ist gepusht“) | D07 (Workflow) | Live-Seite erreichbar; Prüfung *läuft* |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -582,6 +583,19 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 37 – 16.10.2026 – Yannick
+
+> Ja ist gepusht
+
+- **Vorgehen Claude:** Als Bestätigung verstanden, dass GitHub Pages aktiviert ist; Account 2 hatte keine neuen Commits.
+  Live geprüft:
+  - Per curl (16.10.2026): Startseite, Präsentation, Präsentations-PDF und Aufgaben-PDF antworten mit 200.
+  - Im Browser (Playwright über den Proxy): Präsentation lädt mit 22 Folien-Abschnitten ohne Fehler.
+  - Danach gründliche Prüfung der Live-Seite durch drei Unteragenten (D07).
+- **Ergebnis:** Webseite online unter https://yannickoderso.github.io/Unternehmens-Kommunikation/ – Prüfung *läuft*
+- **Unteragenten:** D07
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -598,6 +612,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
 | D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | 15 offene Punkte (8 mittel/niedrig neue Widersprüche in weiteren Dateien, 1 falsche Zählung in D04); alle umgesetzt | Claude: Zählung nachgerechnet, PDFs neu erzeugt und verglichen |
 | D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | 48 Quellen geprüft (18 bestätigt, 25 korrigiert, 4 nicht bestätigt, 1 verworfen) + 4 Ergänzungen | Claude: 5 Stichproben an der Quelle |
+| D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -769,6 +784,20 @@ steht hier mit dem wörtlichen Auftrag.
 
   Werte, die Claude nicht selbst geprüft hat, sind in der Anleitung als „Beispiel, was du findest“ markiert; die
   Gruppe liest sie vor der Übernahme in der Quelle nach.
+
+### D07 – 16.10.2026 – ausgelöst durch Prompt 37
+
+- **Art:** Workflow „webseite-live-pruefung“, drei Unteragenten parallel. Sie testen die Live-Seite im Browser
+  (Playwright, Chromium); Dateien im Repository ändern sie nicht.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-16_webseite-live-pruefung.js`](workflows/2026-10-16_webseite-live-pruefung.js)
+  und automatisch im Rohprotokoll.
+- **Prüfer:**
+  - Technik & Bedienung: jede Folie und jeder Schritt, Tasten, Referentenansicht, Umfrage, Links.
+  - Geräte & Darstellung: Beamer-Formate, Handy, Touch, Kontrast, Bewegung reduzieren.
+  - Öffentlichkeit & Inhalte: Was ist durch `.nojekyll` öffentlich abrufbar, sensible Inhalte, Indexierung, Fakten zu
+    GitHub Pages mit Quelle.
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
