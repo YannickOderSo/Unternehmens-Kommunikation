@@ -53,6 +53,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 31 | 14.10.2026 | Yannick | Rückmeldung: Organisatorisches geklärt; Lukas plant echte Interviews | – | Interviews in der Aufgabenbeschreibung als geplant eingetragen |
 | 32 | 15.10.2026 | Yannick | Lukas arbeitet allein; Frage: Wie erhebe ich die Daten für die Persona? | D06 (Workflow) | Anleitung `persona-datenerhebung.md` mit geprüften Zugangswegen |
 | 33 | 15.10.2026 | System | Benachrichtigung: Workflow D06 fertig | – | Ergebnisse ausgewertet (siehe 32, D06) |
+| 34 | 16.10.2026 | Yannick | Frage: Status des zweiten Agenten (Account 2)? | – | Antwort im Chat; Übersichtsbild gezeigt (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -515,6 +516,25 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 
 - **Vorgehen Claude:** Ergebnisse ausgewertet, Stichproben selbst geprüft, Anleitung geschrieben (siehe 32 und D06).
 - **Unteragenten:** keine
+
+### 34 – 16.10.2026 – Yannick
+
+> Wie ist der Status beim Zweiten Agenten?
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` geholt und gelesen: Commits, `ki-nachweis-account-2.md`
+  (Einträge A2-19 bis A2-22), `export/uebersicht.png`, `export/praesentation.pdf` und `marke.js`. Stand (letzter Commit
+  `21d283a`, 16.10.):
+  - Alle Folien sind gebaut, geprüft, überarbeitet, integriert und exportiert: 21 Seiten im PDF, davon 14 Hauptfolien
+    mit 14:45 min Sollzeit plus 7 Backup-Folien; Folie 01b ist optional.
+  - HOLY-Farben stehen in `marke.js`.
+  - Abschlussprüfung und Feinschliff liefen nach sieben Abbrüchen durch das Nutzungslimit noch.
+
+  Claude hat die Übersicht angesehen und dabei festgestellt: Die Folien enthalten noch Beispieldaten bzw. Hypothesen
+  aus dem Dossier, z. B. Folie 08 „Waschbär, kein Adler“. Hinweis an Yannick, dass Lukas seine Analogie-Befragung
+  nicht davon vorprägen lassen sollte (Dossier 6.7). Zusammenführung nach `master` erst, wenn Account 2 fertig meldet.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
