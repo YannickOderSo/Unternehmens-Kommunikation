@@ -45,9 +45,13 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 - **Icon-Satz** (Linien-Icons 24 × 24, Strichstärke 2; Inline-SVG-Sprite am Anfang von `index.html`):
   eigene Gestaltung, keine fremden Icon-Bibliotheken, keine Plattform-Logos.
 - **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Waschbär, Adler, Löwe, Schwan auf Folie 08,
-  Motiv-Piktogramme auf Folie 09/09b, Persona-Platzhalter auf Folie 04, Markensteuerrad, Limbic Map,
-  Diagramme): eigene SVG-Zeichnungen bzw. per Skript aus den Daten erzeugt – kein Nachbau von
-  Markenzeichen. Das Maskottchen „Raptor“ von HOLY wird nur benannt, nicht abgebildet.
+  Motiv-Piktogramme auf Folie 09/09b, Markensteuerrad, Limbic Map, Diagramme): eigene SVG-Zeichnungen
+  bzw. per Skript aus den Daten erzeugt – kein Nachbau von Markenzeichen. Das Maskottchen „Raptor“ von
+  HOLY wird nur benannt (Folie 09: Adler-Piktogramm als Platzhalter), nicht abgebildet.
+- **Persona-Platzhalter auf Folie 04** (Inline-SVG in `index.html`, Stand 16.10.2026): eigene,
+  stilisierte Zeichnung „Marco in der Nachtschicht“ – Figur ohne Gesicht, Arbeitsjacke mit
+  Reflexstreifen, Shaker, Mond und Häuser. Fiktive Person, kein Foto, kein KI-Bild; gekennzeichnet
+  „Platzhalter – KI-Bild folgt“, bis die Gruppe das gekennzeichnete KI-Bild (Prompt P4/P6) einträgt.
 - **Markensteuerrad** nach Esch, **Limbic Map** nach Häusel: eigene, vereinfachte Darstellungen.
   Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg.
 
@@ -55,8 +59,8 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 
 | Datei | Inhalt | Herkunft |
 |---|---|---|
-| `platzhalter-raetsel.svg` | abstraktes Platzhalter-Motiv für das Einstiegsrätsel (Folie 01) | eigene Gestaltung – **bis 23.10. durch eigenes Foto ersetzen** |
-| `platzhalter-logo.svg` | neutraler Logo-Platzhalter (Folie 09b) | eigene Gestaltung |
+| `platzhalter-raetsel.svg` | gezeichnetes Produkt-Stillleben für das Einstiegsrätsel (Folie 01): Dose und Shaker vor gelbem Hintergrund, Früchte, Eiswürfel – **ohne Logo, Schrift oder Verpackungsdesign**; Motiv nach Dossier Kap. 6.4 ✔ [1, 5, 73], Farben Gelb `#FFD007`, Schwarz `#1D1D1B`, Creme `#F3EDE1` nach Kap. 6.3 ✔ [1] (Stand 16.10.2026) | eigene Gestaltung – **bis 23.10. durch eigenes Foto ersetzen** |
+| `platzhalter-logo.svg` | neutraler Logo-Platzhalter; solange er in `marke.js → logo` steht, zeigt Folie 09b **kein** Bild, nur die Beschreibung der Wortmarke | eigene Gestaltung |
 | `platzhalter-persona.svg`, `platzhalter-post.svg` | weitere Platzhalter (zurzeit nicht verwendet) | eigene Gestaltung |
 
 Es sind **keine** Logos, Produktfotos oder Social-Media-Bilder von HOLY eingebunden. Eigene Bilder nur mit
@@ -67,7 +71,8 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
 - **Fakten über HOLY** (Zahlen, Historie, Produkte, Zielgruppe, Kanäle, Farben, Claims): ausschließlich aus
   dem Recherche-Dossier `../recherche/holy-recherche.md` (Stand 13./14.10.2026), jeweils mit Quellennummer
   [n] und Faktenstatus (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese). Das vollständige
-  Quellenverzeichnis steht im Dossier (Anhang B) und auf Backup-Folie B7.
+  Quellenverzeichnis steht im Dossier (Anhang B); Backup-Folie **B8** löst alle Nummern auf, die sichtbar
+  auf den Folien stehen (Kurzangaben aus Anhang B), B7 nennt Literatur und Technik.
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
 - **Beispieldaten:** Werte auf den Folien 06–11 und B2, B4–B6 sind Beispieldaten (Pille „Beispieldaten“),

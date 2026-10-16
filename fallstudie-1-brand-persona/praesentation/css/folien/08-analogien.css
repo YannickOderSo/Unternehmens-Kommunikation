@@ -494,6 +494,10 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 /* fast gleichauf: Marker rücken leicht über bzw. unter die Linie */
 #f08b .g4t-wb-marker--oben { margin-top: calc(var(--g4t-marker) / -2 - var(--abstand-2)); }
 #f08b .g4t-wb-marker--unten { margin-top: calc(var(--g4t-marker) / -2 + var(--abstand-2)); }
+/* Wettbewerber noch nicht erhoben ("beispiel": true): gestrichelter Rand –
+   wie alle Beispielwerte der Präsentation */
+#f08b .g4t-wb-marker--beispiel { border-style: dashed; }
+#f08b .g4t-leg-hinweis { font-style: italic; }
 /* Marker in der Legende: gleiche Form, aber im Textfluss */
 #f08b .g4t-wb-marker--legende {
   position: static;

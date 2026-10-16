@@ -269,6 +269,9 @@ Handys testen.
   `data-qr="aus"`, `data-qr-groesse="380"`).
 - Ergebnis: Pille LIVE (ruhig pulsierend), `n = …`, Pille Beispieldaten (solange Beispielwerte),
   Balken mit Prozent (aus den Stimmen berechnet) und Anzahl.
+- **Beispielwerte werden nie mit echten Stimmen gemischt:** Die erste echte Stimme (Klick, Ziffer oder
+  eine Zahl > 0 über „Werte“) setzt alle Beispielwerte auf 0; die Pille „Beispieldaten“ verschwindet.
+  Solange Beispielwerte stehen, beginnen die Felder unter „Werte“ bei 0.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
   wir: als Waschbär“.
@@ -486,3 +489,32 @@ HTML-Kommentar begründen.
 | `werkzeuge/pruefen.mjs` | Prüfung in jedem Schritt, Überlappungsprüfung, Wortzählung mit Silbentrennung, Ausnahmen dokumentiert, Aufruf für `index.html`. |
 | Fußzeilen | Einheitlich „Quelle: …“ (Bildnachweis auf Folie 01: „Bild: …“, B7: „Hinweis: …“). |
 | `bilder/platzhalter-raetsel.svg` | eingebauter Hinweistext entfernt (wurde in der Bildtafel von Folie 01 abgeschnitten). |
+
+
+## 11. Änderungen nach der Abschlussprüfung (16.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| Ebenen (`js/deck.js`) | Nach dem Schließen von Übersicht/Hilfe geht der Fokus **nicht** zurück an einen Knopf der Bedienleiste (sonst öffnete die nächste Leertaste/Enter die Ebene erneut, statt weiterzuschalten). |
+| Bedienleiste (`js/deck.js`) | zeigt die Foliennummer wie Kopfzeile und Übersicht („08b / 12“, „12 / 12“), nicht mehr die Position. |
+| Ziffernsprung (`js/deck.js`) | Nach einer Ziffer gehört „b“ zur Nummer: `8` `B` `Enter` → Folie 08b. Jede andere Taste (Pfeil, Leertaste, Schwarzbild …) verwirft eine angefangene Nummer; Schwarzbild leert den Puffer. Hilfe ergänzt. |
+| Umfrage (`js/komponenten.js`) | Erste echte Stimme löscht die Beispielwerte (siehe 6c). |
+| Steuerrad (`js/komponenten.js`, `css/komponenten.css`) | Ringbeschriftung „Brand Persona · Folien 04–05“ gehört bei klickbaren Rädern zum Persona-Knopf (Klick auf die Schrift springt zu Folie 04); „Hard/Soft Facts“ und der Trennstrich lassen Klicks durch (`pointer-events: none`). |
+| Druck mit Notizen (`css/deck.css`) | `?druck&notizen`: Sprechtext wird nicht mehr abgeschnitten, sondern läuft auf Folgeseiten weiter (Seite 1920 × 1620 px, nächste Folie immer auf neuer Seite). |
+| Bewegung reduzieren (`css/deck.css`) | Bedienleiste und Hinweis blenden nur über die Deckkraft ein/aus (kein Weg). |
+| Folie 01 | neues gezeichnetes Rätselmotiv (Dose + Shaker vor Gelb, ohne Logo), `data-fokus="66% 42%"` – das Motiv bleibt im Schlussbild ganz in der Bildtafel. |
+| Folie 02 | Zeile „Ausgangslage 2021 → 2026“ nur noch im Sprechtext (Zeitleiste steht auf Folie 03); Sprechtext nennt Identität = Selbstbild, Repertory Grid/Laddering = Fremdbild. |
+| Folie 03 | „Spezialist“ in der Quellzeile als eigene Einordnung (H) gekennzeichnet. |
+| Folie 04 | Persona-Platzhalter als gezeichnete Szene „Marco in der Nachtschicht“ (feste Nachtfarben, Reflexstreifen in der Markenfarbe). |
+| Folie 05 (`js/folien/05-limbic-map.js`) | Bricht der Titel um (z. B. längerer Markenname), wird er automatisch auf 56 px gesetzt – sonst rückte die Liste „Folgen“ in die Quellzeile. |
+| Folie 07 | Verbindungen gedeckter; die tragende Leiter (`"kern": true` in den Daten) färbt sich im letzten Schritt in der Akzentfarbe. |
+| Folie 08b | Wettbewerber mit `"beispiel": true`: Marker gestrichelt, Legende „gestrichelt: Beispielwert, nicht erhoben“; Fußzeile entsprechend. |
+| Folie 09 | Bildwelt als waagerechte Balken je Motivgruppe (Zahl in 44 px, Comic-Tiere in Akzentfarbe) plus **ein** Schlüsselbild rechts (Schritt 2) statt acht Platzhalter-Kacheln. Daten: `bildwelt[].anteil`, Schlüsselbild = Beitrag mit `"schluesselbild": true`. |
+| Folie 09b | Logo-Zeile ohne Bild, solange `marke.js → logo` nur der Platzhalter ist (Beschreibung in Textgröße). Palette: Farben aus den Daten haben Vorrang (Dubletten werden entfernt, Warnung nur bei mehr als 5 eigenen Farben); Farben aus `marke.js` kommen nur dazu, solange Platz ist – andere Testfarben erzeugen keine Konsolenwarnung mehr. |
+| Folie 10 | Methodenkürzel und Legende auf der Folie ausgeblendet (Legende in den Notizen); Lücken größer (Kopf 28 px, Text 32 px, Nummern 40 px), kürzer („Koffein vs. gutes Gewissen“, „Bildwelt zu jung“) und ohne Feldpaar; Feldnamen 24 px; Persona-Leiste „Marco, 28 · Abenteurer“. |
+| Folie 11 | Befunde gekürzt (wortgleich mit Folie 10); Sprechtexte der Folien 09, 09b und 11 um ca. 20–25 % gekürzt (≈ 1,5–1,8 Wörter/s). |
+| Backup B8 (neu) | „Belege der Folien“: alle sichtbar zitierten Quellennummern mit Kurzangaben aus Dossier Anhang B; B7 verweist darauf. |
+
+**Testen mit anderem Markennamen/anderen Farben** (z. B. für eine andere Marke): Ordner kopieren, in der
+Kopie `marke.js` ändern und `node werkzeuge/pruefen.mjs index.html --schritte` laufen lassen. Geprüft am
+16.10.2026 mit „Testmarke“ und `#2A6FDB`/`#3B2A1A`: keine Fehler, Konsole leer.

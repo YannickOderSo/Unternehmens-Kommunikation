@@ -192,7 +192,9 @@
       svg('textPath', { href: '#' + id + '-o', startOffset: rund(halbe + 16) }, t2).textContent = 'SOFT FACTS · EMOTIONAL';
       svg('line', { class: 'sr-ringstrich', x1: m.cx, y1: rund(m.cy - m.ring - 6), x2: m.cx, y2: rund(m.cy - m.ring - 26) }, s);
       if (optionen.rahmentext) {
-        var t3 = svg('text', { class: 'sr-ringtext sr-ringtext--rahmen', 'text-anchor': 'middle', 'data-paar': 'persona' }, s);
+        /* Ist das Rad klickbar, gehört die Beschriftung zum Persona-Knopf:
+           Ein Klick genau auf die Schrift springt dann ebenfalls zu Folie 04. */
+        var t3 = svg('text', { class: 'sr-ringtext sr-ringtext--rahmen', 'text-anchor': 'middle', 'data-paar': 'persona' }, optionen.klickbar ? rahmen : s);
         svg('textPath', { href: '#' + id + '-u', startOffset: '50%' }, t3).textContent = optionen.rahmentext.toUpperCase();
         teile.rahmentext = t3;
       }
@@ -870,7 +872,16 @@
     umfrageZeichnen(u, false);
   }
 
+  /* Beispielwerte (marke.js → beispielwerte) sind nur Platzhalter: Die erste echte
+     Stimme löscht sie, damit nie ein Mischergebnis aus Beispiel- und Live-Stimmen
+     entsteht. Die Pille „Beispieldaten“ verschwindet dann von selbst. */
+  function beispielwerteVerwerfen(u) {
+    if (!u.beispiel) return;
+    u.werte = u.werte.map(function () { return 0; });
+    u.beispiel = false;
+  }
   function umfrageAendern(u, i, delta) {
+    beispielwerteVerwerfen(u);
     u.werte[i] = Math.max(0, (u.werte[i] || 0) + delta);
     umfrageSpeichern(u);
     umfrageZeichnen(u, true);
@@ -879,7 +890,9 @@
   function umfrageWertEingeben(u, i, ohneFokus) {
     var z = u.zeilen[i];
     if (z.eingabe) return z.eingabe;
-    var eingabe = el('input', { type: 'number', min: '0', step: '1', class: 'umfrage-eingabe', value: String(u.werte[i]), 'aria-label': 'Anzahl für ' + u.konfig.optionen[i] });
+    /* Solange Beispielwerte stehen, starten die Felder bei 0 (echte Zahlen eintragen) */
+    var startwert = u.beispiel ? 0 : u.werte[i];
+    var eingabe = el('input', { type: 'number', min: '0', step: '1', class: 'umfrage-eingabe', value: String(startwert), 'aria-label': 'Anzahl für ' + u.konfig.optionen[i] });
     z.wert.appendChild(eingabe);
     z.eingabe = eingabe;
     var fertig = function (uebernehmen, ohneZeichnen) {
@@ -888,9 +901,13 @@
       z.eingabe = null;
       z.fertig = null;
       eingabe.remove();
-      if (uebernehmen && !isNaN(wert) && wert >= 0 && wert !== u.werte[i]) {
-        u.werte[i] = wert;
-        umfrageSpeichern(u);
+      if (uebernehmen && !isNaN(wert) && wert >= 0) {
+        /* erste echte Zahl ersetzt alle Beispielwerte */
+        if (u.beispiel && wert > 0) beispielwerteVerwerfen(u);
+        if (!u.beispiel && wert !== u.werte[i]) {
+          u.werte[i] = wert;
+          umfrageSpeichern(u);
+        }
       }
       if (!ohneZeichnen) umfrageZeichnen(u, true);
     };

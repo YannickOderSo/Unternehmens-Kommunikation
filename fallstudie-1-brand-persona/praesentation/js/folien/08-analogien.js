@@ -433,12 +433,18 @@
     var legMarke = util.element('span', { class: 'g4t-leg', 'data-schritt': '1' }, null, legende);
     util.element('span', { class: 'g4t-leg-punkt', 'aria-hidden': 'true' }, null, legMarke);
     util.element('span', null, markeName, legMarke);
+    /* Wettbewerber mit "beispiel": true (Standard, solange nichts erhoben ist):
+       gestrichelter Marker wie alle Beispielwerte + Hinweis in der Legende */
+    var istBeispielWb = function (w) { return !w || w.beispiel !== false; };
     if (mitWettbewerb) {
       wettbewerber.forEach(function (w) {
         var leg = util.element('span', { class: 'g4t-leg', 'data-schritt': '2' }, null, legende);
-        util.element('span', { class: 'g4t-wb-marker g4t-wb-marker--legende', 'aria-hidden': 'true' }, w.kuerzel || '', leg);
+        util.element('span', { class: 'g4t-wb-marker g4t-wb-marker--legende' + (istBeispielWb(w) ? ' g4t-wb-marker--beispiel' : ''), 'aria-hidden': 'true' }, w.kuerzel || '', leg);
         util.element('span', null, util.markeText(w.name || ''), leg);
       });
+      if (wettbewerber.some(istBeispielWb)) {
+        util.element('span', { class: 'g4t-leg g4t-leg-hinweis', 'data-schritt': '2' }, 'gestrichelt: Beispielwert, nicht erhoben', legende);
+      }
     }
 
     var diagramm = util.element('div', { class: 'g4t-diagramm' }, null, ziel);
@@ -475,7 +481,7 @@
           if (w === null || w === undefined || !wettbewerber[i]) return;
           var versatz = eng ? (i === 0 ? ' g4t-wb-marker--oben' : ' g4t-wb-marker--unten') : '';
           util.element('span', {
-            class: 'g4t-wb-marker' + versatz, 'data-meta': '', 'aria-hidden': 'true',
+            class: 'g4t-wb-marker' + versatz + (istBeispielWb(wettbewerber[i]) ? ' g4t-wb-marker--beispiel' : ''), 'data-meta': '', 'aria-hidden': 'true',
             'data-schritt': '2', 'data-animation': 'feder', 'data-verzoegerung': String(i * 120),
             style: 'left:' + lage(w, skala) + '%'
           }, wettbewerber[i].kuerzel || '', spur);

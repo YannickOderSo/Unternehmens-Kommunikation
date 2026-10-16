@@ -302,3 +302,37 @@ html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF ble
   text-decoration: underline var(--linie-stark) var(--f-akzent);
   text-underline-offset: 8px;
 }
+
+
+/* ---------------------------------------------------------------------------
+   4. LESBARKEIT UND WORTBUDGET (Abschlussprüfung 16.10.2026)
+   • Methodenkürzel (DR, LM, RG, LA, AN, KA) sind auf dieser Folie
+     ausgeblendet – die Herkunft jedes Felds zeigt Folie 02, die Legende
+     steht in den Notizen und auf B1. Wieder einblenden: diese Regel löschen.
+   • Die Kernaussage („zwei Lücken“) bekommt die größere Schrift:
+     Kopf der Lücken-Notiz 28 px, Text 32 px, Nummernmarken größer.
+   • Feldnamen in den Karten 24 px statt 22 px.
+   --------------------------------------------------------------------------- */
+#f10 .sr-quelle,
+#f10 .g6s-quelle { display: none; }
+#f10 .sr-karte-feld { font-size: 24px; }
+#f10 .g6s-luecke-kopf { font-size: var(--groesse-text-min); }
+#f10 .g6s-luecke-text { font-size: 32px; }
+#f10 .g6s-nummer {
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+}
+#f10 .g6s-wortmarke {
+  width: 30px;
+  height: 30px;
+  top: -13px;
+  font-size: var(--groesse-meta);
+}
+/* in den einzeiligen Pillen (Kompetenz, Persona) weniger hoch, damit die
+   Nummer nicht über den Pillenrand ragt */
+#f10 .sr-pille .g6s-wortmarke { top: -8px; }
+/* Feldpaar („· Nutzen ↔ Attribute“) im Kopf der Lücken-Notiz ausgeblendet:
+   In 28 px passt es nicht mehr neben „Lücke n“; welche Felder betroffen
+   sind, zeigen die roten Nummern an den Stichworten. */
+#f10 .g6s-luecke-paar { display: none; }

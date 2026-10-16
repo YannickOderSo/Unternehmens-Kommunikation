@@ -738,6 +738,15 @@ html.testmodus *::after { transition: none !important; animation: none !importan
 }
 .hinweis-toast.ist-offen { opacity: 1; transform: translate(-50%, 0); }
 
+/* Bewegung reduzieren (Betriebssystem oder ?bewegung=reduziert): Bedienleiste
+   und Hinweis blenden nur über die Deckkraft ein und aus, ohne Weg */
+html.bewegung-reduziert.leiste-aus .bedienleiste { transform: none; }
+html.bewegung-reduziert .hinweis-toast { transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) {
+  html.leiste-aus .bedienleiste { transform: none; }
+  .hinweis-toast { transform: translate(-50%, 0); }
+}
+
 /* ----- Schwarzbild (Taste B oder .) – deckt das ganze Fenster ab ----- */
 .schwarzbild {
   position: fixed;
@@ -998,29 +1007,35 @@ html.druckmodus *::after {
   html.druckmodus .folie,
   html.druckmodus .druck-seite { margin: 0 auto 24px; box-shadow: 0 6px 24px rgb(0 0 0 / 0.35); }
 }
-/* Sprechtext unter der Folie (?druck&notizen) */
+/* Sprechtext unter der Folie (?druck&notizen). Seite 1920 × 1620 px: oben die Folie,
+   darunter der Sprechtext. Längere Sprechtexte laufen auf Folgeseiten weiter
+   (nichts wird abgeschnitten); die nächste Folie beginnt immer auf einer neuen Seite. */
 .druck-seite { display: contents; }
 html.druck-notizen .druck-seite {
   display: block;
   width: 1920px;
-  height: 1620px;
+  min-height: 1620px;
   break-after: page;
   page-break-after: always;
   background: #FFFFFF;
-  overflow: hidden;
+  overflow: visible;
 }
-html.druck-notizen .druck-seite > .folie { break-after: auto; page-break-after: auto; }
+html.druck-notizen .druck-seite > .folie { break-after: auto; page-break-after: auto; break-inside: avoid; }
 .druck-notiz { display: none; }
 html.druck-notizen .druck-notiz {
   display: block;
-  height: 540px;
+  min-height: 540px;
   padding: 40px 128px;
   border-top: 3px solid #222;
   background: #FFFFFF;
   color: #1A1A1A;
   font: 400 28px/1.45 "Inter Deck", Arial, sans-serif;
-  overflow: hidden;
+  overflow: visible;
+  /* auf der Folgeseite wieder mit Innenabstand beginnen */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
+html.druck-notizen .druck-notiz p { break-inside: avoid; orphans: 3; widows: 3; }
 html.druck-notizen .druck-notiz h3 {
   margin: 0 0 16px;
   font: 650 20px/1.2 "Inter Deck", Arial, sans-serif;

@@ -48,9 +48,22 @@
   object-fit: cover;
   display: block;
 }
-/* Farben des gezeichneten Platzhalters (passen sich Thema und Modus an) */
-#f04 .g2p-sil-kreis { fill: color-mix(in oklab, var(--f-akzent) 22%, var(--f-flaeche-2)); }
-#f04 .g2p-sil-form  { fill: color-mix(in oklab, var(--f-hart) 38%, var(--f-flaeche-2)); }
+/* Farben des gezeichneten Platzhalters „Marco in der Nachtschicht“.
+   Feste Nachtfarben wie bei einem Bild (in allen Themen und Modi gleich);
+   nur die Reflexstreifen tragen die Markenfarbe aus marke.js. Ist in den
+   Daten ein echtes Bild eingetragen, entfällt die Zeichnung (Skript). */
+#f04 .g2p-bild:has(> .g2p-silhouette) { background: #2E4466; }   /* Nachthimmel */
+#f04 .g2p-sil-kreis    { fill: #F3E6B0; }                         /* Mond */
+#f04 .g2p-sil-stadt    { fill: #22365A; }
+#f04 .g2p-sil-fenster  { fill: #F2C94C; }
+#f04 .g2p-sil-haut     { fill: #C9A88C; }
+#f04 .g2p-sil-haar     { fill: #2B2522; }
+#f04 .g2p-sil-form     { fill: #15191F; }                         /* Arbeitsjacke */
+#f04 .g2p-sil-streifen { fill: var(--marke-primaer); }
+#f04 .g2p-sil-kragen   { fill: #E8E2D6; }
+#f04 .g2p-sil-shaker   { fill: #F4F4F2; }
+#f04 .g2p-sil-getraenk { fill: #E2506F; }
+#f04 .g2p-sil-deckel   { fill: #15191F; }
 
 /* Kennzeichnung „Bild KI-generiert“ unten links auf dem Bild */
 #f04 .g2p-bild-hinweis {

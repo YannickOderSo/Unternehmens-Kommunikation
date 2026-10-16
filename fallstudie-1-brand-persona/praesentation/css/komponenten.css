@@ -602,6 +602,11 @@ html:not(.zeiger-gesperrt) .sr-kern-gruppe:hover .sr-kern { transform: scale(1.0
 .sr-ringtext--weich { fill: var(--f-weich); }
 .sr-ringtext--rahmen { fill: var(--f-text); }
 .sr-ringstrich { stroke: var(--f-linie); stroke-width: var(--linie-fein); }
+/* „Hard/Soft Facts“ und der Trennstrich sind nur Beschriftung: Klicks gehen
+   hindurch auf das Feld darunter (sonst „schluckt“ die Schrift den Klick) */
+.sr-ringtext--hart,
+.sr-ringtext--weich,
+.sr-ringstrich { pointer-events: none; }
 
 /* Mini-Rad (Laufkopf): aktuelles Feld in Akzentfarbe */
 .mini-rad {

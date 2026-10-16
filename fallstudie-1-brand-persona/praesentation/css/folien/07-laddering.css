@@ -142,7 +142,18 @@
 }
 .lad-knoten--kern.ist-eng { padding-left: var(--abstand-2); padding-right: var(--abstand-2); }
 
-.lad-kante { fill: none; stroke: var(--f-text-2); stroke-linecap: butt; }
+/* Verbindungen in gedecktem Grau (leichter als die Knotenbeschriftung,
+   Kontrast zum Hintergrund weiterhin ≥ 3 : 1).
+   Die tragende Leiter ("kern": true in den Daten, z. B. zuckerfrei →
+   Genuss ohne Zucker → gutes Gewissen → Gesundheit) färbt sich im letzten
+   Schritt (Markennutzen) in der Akzentfarbe – sie belegt den Titel. */
+.lad-kante {
+  fill: none;
+  stroke: color-mix(in oklab, var(--f-text-2) 65%, var(--f-hintergrund));
+  stroke-linecap: butt;
+  transition: stroke var(--dauer-mittel) var(--kurve);
+}
+.lad:has(.lad-z4.schritt-an) .lad-kante--kern { stroke: var(--f-akzent); }
 
 
 /* ---------------------------------------------------------------------------
@@ -171,7 +182,7 @@
 .lad-start-notiz .icon { width: 24px; height: 24px; color: var(--f-text); }
 .lad-legende { display: flex; align-items: center; gap: var(--abstand-2); }
 .lad-legende-linie { flex: none; overflow: visible; }
-.lad-legende-linie line { stroke: var(--f-text-2); }
+.lad-legende-linie line { stroke: color-mix(in oklab, var(--f-text-2) 65%, var(--f-hintergrund)); }   /* wie die Verbindungen */
 .lad-legende-zahl { font-weight: var(--gewicht-fett); font-variant-numeric: tabular-nums; color: var(--f-text); margin-right: var(--abstand-1); }
 
 /* Nutzen-Kästen (Schritt 4) */

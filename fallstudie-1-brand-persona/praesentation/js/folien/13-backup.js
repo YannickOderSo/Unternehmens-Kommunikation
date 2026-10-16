@@ -1,5 +1,5 @@
 /* =============================================================================
-   js/folien/13-backup.js – Skript zu index.html, Backup B1–B7 (Backup B1–B7)
+   js/folien/13-backup.js – Skript zu index.html, Backup B1–B8
    -----------------------------------------------------------------------------
    Baut die Tabellen der Backup-Folien aus den Daten in
    <script type="application/json" class="daten"> (je Folie):
@@ -19,7 +19,7 @@
    über unsichtbare Auslöser <span class="bk-zustand bk-z1" data-schritt="1">.
    Deshalb stimmen Druck (Endzustand), Vorschau und Rücksprung automatisch.
 
-   Inhalte ändern: NUR in den Daten der Folie (index.html, Backup B1–B7).
+   Inhalte ändern: NUR in den Daten der Folie (index.html, Backup B1–B8).
    ============================================================================= */
 (function () {
   'use strict';
@@ -566,7 +566,7 @@
 
 
   /* ---------------------------------------------------------------------------
-     Registrierung der sieben Backup-Folien
+     Registrierung der acht Backup-Folien
      --------------------------------------------------------------------------- */
   var BAUER = {
     b1: null,
@@ -575,7 +575,8 @@
     b4: gridBauen,
     b5: ladderingBauen,
     b6: rasterBauen,
-    b7: null
+    b7: null,
+    b8: null          // Belege der Folien: reines HTML, nichts zu bauen
   };
 
   Object.keys(BAUER).forEach(function (id) {

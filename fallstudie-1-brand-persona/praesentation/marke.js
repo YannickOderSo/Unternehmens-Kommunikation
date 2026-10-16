@@ -46,8 +46,11 @@ window.MARKE = {
      Eigene Bilder in den Ordner bilder/ legen. Nur Bilder verwenden, deren
      Nutzung erlaubt ist (Quelle in der Folienfußzeile angeben).
      --------------------------------------------------------------------------- */
-  // Logo: Platzhalter. Ein echtes HOLY-Logo nur mit geklärten Rechten einsetzen
-  // (Quelle in die Fußzeile der Folie). Wird zurzeit auf keiner Folie gezeigt.
+  // Logo: Platzhalter. Erscheint auf Folie 09b (Zeile „Logo“ im Datenblatt);
+  // solange hier der Platzhalter steht, zeigt die Zeile nur die Beschreibung
+  // der Wortmarke. Ein echtes HOLY-Logo (z. B. Website-Screenshot) nur mit
+  // geklärten Rechten einsetzen – bis dahin Platzhalter lassen – und die
+  // Quelle [1] in die Fußzeile von Folie 09b schreiben.
   logo: 'bilder/platzhalter-logo.svg',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
   // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen

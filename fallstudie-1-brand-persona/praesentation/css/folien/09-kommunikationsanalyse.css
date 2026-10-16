@@ -6,10 +6,10 @@
                Profilname, Follower (große Zahl), Reichweitenbalken, darunter
                Beiträge pro Woche und Ø Engagement-Rate
         Mitte  Formel der Engagement-Rate + Legende „Beispielwert“
-        unten  Bildwelt: vier Motivgruppen (Name + Anteil „17 von 50“) mit
-               je zwei Beitrags-Platzhaltern; in Schritt 2 wird das
-               Schlüsselbild betont, der Rest tritt zurück (gleiche Wirkung
-               wie data-dimmen der Engine)
+        unten  Bildwelt: je Motivgruppe ein waagerechter Balken mit Zahl
+               (Comic-Tiere in Akzentfarbe); in Schritt 2 erscheint rechts
+               EIN Schlüsselbild, die übrigen Gruppen treten zurück (gleiche
+               Wirkung wie data-dimmen der Engine)
    f09b „Corporate Design & Fit“
         links  (7 Spalten) Datenblatt: Logo · Claims & Schrift · Farben ·
                Bildwelt
@@ -154,7 +154,11 @@
 
 
 /* ---------------------------------------------------------------------------
-   3. f09 – BILDWELT (Motivgruppen mit Beitrags-Platzhaltern)
+   3. f09 – BILDWELT (Balken je Motivgruppe + ein Schlüsselbild)
+   links  Überschrift „Hauptmotiv in 50 codierten Beiträgen“, darunter je
+          Motivgruppe eine Zeile: Name · Balken · Zahl. Die Gruppe mit dem
+          Schlüsselbild (Comic-Tiere) trägt die Akzentfarbe.
+   rechts genau ein Schlüsselbild (Hochformat), erscheint in Schritt 2
    --------------------------------------------------------------------------- */
 #f09 .g5-bildwelt {
   flex: 1;
@@ -167,104 +171,127 @@
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--abstand-5);
+  grid-template-columns: minmax(0, 1fr) 272px;
+  gap: var(--abstand-7);
 }
-#f09 .g5-gruppe {
+#f09 .g5-motive {
   display: flex;
   flex-direction: column;
-  gap: var(--abstand-2);
   min-width: 0;
   min-height: 0;
-}
-/* Gruppenkopf: Name links, Anteil an der Stichprobe rechts („17 von 50“) */
-#f09 .g5-gruppe-kopf {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--abstand-3);
-  min-width: 0;
   padding-top: 10px;
   border-top: var(--linie-fein) solid var(--f-linie);
+}
+#f09 .g5-motive-kopf {
+  margin: 0 0 var(--abstand-2);
+  font-size: var(--groesse-meta);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--f-text-2);
+}
+#f09 .g5-motiv-liste {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* eine Zeile: Name (feste Spalte) · Balken (flexibel) · Zahl (rechtsbündig) */
+#f09 .g5-motiv {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 96px;
+  align-items: center;
+  gap: var(--abstand-4);
   transition: opacity var(--dauer-mittel) var(--kurve);
 }
-#f09 .g5-gruppe-name {
-  margin: 0;
+#f09 .g5-motiv-name {
+  font-size: var(--groesse-text);
+  font-weight: var(--gewicht-fett);
+  line-height: 1.15;
   color: var(--f-text);
 }
-#f09 .g5-anteil {
-  font-size: var(--groesse-meta);
+/* keine Spur im Hintergrund: Die Länge ist relativ zur größten Gruppe,
+   nicht „von 100 %“ – die Zahl rechts trägt den genauen Wert */
+#f09 .g5-motiv-spur {
+  display: block;
+  height: 22px;
+  border-left: var(--linie-fein) solid var(--f-linie-stark);
+}
+#f09 .g5-motiv-balken {
+  display: block;
+  height: 100%;
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  /* zurückhaltendes Grau (Kontrast zum Hintergrund ≥ 3 : 1), damit der
+     Akzentbalken der Comic-Tiere heraussticht */
+  background: color-mix(in oklab, var(--f-text-2) 75%, var(--f-hintergrund));
+}
+#f09 .hat-schluesselbild .g5-motiv-balken { background: var(--f-akzent); }
+/* Beispielwerte: Der Balken bleibt voll (gut lesbar aus der letzten Reihe);
+   gekennzeichnet ist die Zahl rechts (gestrichelt wie in der Legende
+   „Beispielwert – noch selbst zu erheben“). */
+#f09 .g5-motiv-zahl {
+  justify-self: end;
+  font-family: var(--schrift-zahl);
+  font-size: 44px;
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
   font-variant-numeric: lining-nums tabular-nums;
-  line-height: 1.1;
-  color: var(--f-text-2);
-  white-space: nowrap;
+  color: var(--f-text);
 }
-/* gestrichelter Rahmen genau auf der Kante – so bleibt er rechts bündig
-   mit der Spalte (kein Überstand über den Satzspiegel) */
-#f09 .g5-anteil.g5-beispielwert {
-  padding: 3px 7px;
-  outline-offset: 0;
-}
-#f09 .g5-beitraege {
-  flex: 1;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-#f09 .g5-beitrag {
+#f09 .hat-schluesselbild .g5-motiv-name,
+#f09 .hat-schluesselbild .g5-motiv-zahl { color: var(--f-akzent); }
+
+/* Schlüsselbild (rechts): Hochformat, Beschriftung darunter */
+#f09 .g5-schluessel {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 0;
   min-height: 0;
   margin: 0;
-  transition: opacity var(--dauer-mittel) var(--kurve);
 }
-/* Platzhalter-Fläche (Baustein .bild-platzhalter, ohne Beschriftung innen) */
-#f09 .g5-beitrag-bild {
+#f09 .g5-schluessel-bild {
   flex: 1;
   min-height: 0;
   border-radius: var(--radius-m);
-}
-#f09 .g5-beitrag-bild::after { content: none; }
-/* Akzentfläche als eigene Ebene: beim Hervorheben ändert sich nur ihre
-   Deckkraft (Farbübergänge mit oklch-Werten malten in Chromium-Tests kurz
-   falsche Kacheln). Piktogramm, Bild und Hinweis liegen darüber. */
-#f09 .g5-beitrag-bild::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--f-akzent-flaeche);
-  opacity: 0;
-  transition: opacity var(--dauer-mittel) var(--kurve);
-}
-#f09 .g5-beitrag-bild > * { position: relative; }
-#f09 .g5-beitrag-bild > img { position: absolute; }
-/* Echter Screenshot = belegt: durchgezogener Rahmen (gestrichelt bleibt nur,
-   was Platzhalter oder Beispiel ist – siehe Legende „Beispielwert“) */
-#f09 .g5-beitrag-bild--beleg {
   border-style: solid;
-  border-color: var(--f-linie);
+  border-color: var(--f-akzent);
+  box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 22px, color-mix(in oklab, var(--f-akzent) 10%, transparent) 22px 24px),
+    var(--f-akzent-flaeche);
+  align-content: center;
+  gap: var(--abstand-3);
 }
+#f09 .g5-schluessel-bild::after { content: none; }
+#f09 .g5-schluessel-bild > * { position: relative; }
+#f09 .g5-schluessel-bild > img { position: absolute; }
+/* Beispielbild (nachgestellt/KI): gestrichelt */
+#f09 .g5-schluessel-bild--beispiel { border-style: dashed; }
 #f09 .g5-symbol {
-  width: 72px;
-  height: 72px;
-  color: var(--f-text-2);
-  stroke-width: 1.5;
+  width: 120px;
+  height: 120px;
+  color: var(--f-akzent);
+  stroke-width: 1.3;
 }
 #f09 .g5-symbol .voll { fill: currentColor; }
-#f09 .g5-beitrag-text {
-  font-size: 24px;
+#f09 .g5-schluessel-hinweis {
+  max-width: 85%;
+  font-size: var(--groesse-meta);
+  line-height: 1.25;
+  text-align: center;
+  color: var(--f-text-2);
+}
+#f09 .g5-schluessel-text {
+  font-size: var(--groesse-text-min);
+  font-weight: var(--gewicht-fett);
   line-height: 1.2;
   text-align: center;
-  color: var(--f-text);
+  color: var(--f-akzent);
 }
-
-/* Hinweis „Schlüsselbild?“ oben im Beitrag (Schritt 2).
-   Zentriert über left/right/margin – NICHT über translate: die Engine-
-   Animation „hoch“ bewegt das Element selbst per translate und würde eine
-   Zentrierung mit translate während der Animation überschreiben (Sprung). */
+/* Hinweis „Schlüsselbild?“ oben im Bild */
 #f09 .g5-schluessel-chip {
   position: absolute;
   top: 12px;
@@ -275,22 +302,10 @@
   margin-inline: auto;
 }
 
-/* Schritt 2: Schlüsselbild betonen, alles andere tritt zurück (Token --dimmen).
+/* Schritt 2: die übrigen Gruppen treten zurück (Token --dimmen).
    Auslöser ist das unsichtbare Element .g5-ausloeser (data-schritt="2"). */
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-beitrag:not(.ist-schluesselbild),
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-gruppe:not(.hat-schluesselbild) .g5-gruppe-kopf {
+#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-motiv:not(.hat-schluesselbild) {
   opacity: var(--dimmen);
-}
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .ist-schluesselbild .g5-beitrag-bild {
-  border-style: solid;
-  border-color: var(--f-akzent);
-  box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent);
-}
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .ist-schluesselbild .g5-beitrag-bild::before { opacity: 1; }
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .ist-schluesselbild .g5-symbol { color: var(--f-akzent); }
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .ist-schluesselbild .g5-beitrag-text {
-  color: var(--f-akzent);
-  font-weight: var(--gewicht-fett);
 }
 
 
@@ -368,6 +383,11 @@
   font-size: var(--groesse-meta);
   line-height: 1.35;
   color: var(--f-text-2);
+}
+/* ohne Logo-Bild (nur Platzhalter in marke.js): Beschreibung ist der Inhalt */
+#f09b .g5b-logo--ohne-bild .g5b-logo-text {
+  font-size: var(--groesse-text-min);
+  color: var(--f-text);
 }
 
 /* Claims & Schrift: Schriftproben.

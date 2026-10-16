@@ -1437,9 +1437,16 @@
       } catch (fehler) { console.error(fehler); }
     }
 
-    /* 5. Ziffern + Enter = Folie anspringen */
+    /* 5. Ziffern + Enter = Folie anspringen. Nach einer Ziffer gehört „b“ zur Nummer
+          (8 b Enter → Folie 08b); ohne Ziffer davor bleibt B das Schwarzbild. */
     if (/^[0-9]$/.test(taste)) {
-      ziffernPuffer = (ziffernPuffer + taste).slice(-3);
+      ziffernPuffer = (/b$/.test(ziffernPuffer) ? taste : (ziffernPuffer + taste).slice(-3));
+      ziffernAnzeigen();
+      e.preventDefault();
+      return;
+    }
+    if (ziffernPuffer && (taste === 'b' || taste === 'B') && /^[0-9]+$/.test(ziffernPuffer)) {
+      ziffernPuffer += 'b';
       ziffernAnzeigen();
       e.preventDefault();
       return;
@@ -1457,6 +1464,9 @@
       }
       if (taste === 'Backspace') { e.preventDefault(); ziffernPuffer = ziffernPuffer.slice(0, -1); ziffernAnzeigen(); return; }
       if (taste === 'Escape') { e.preventDefault(); ziffernZuruecksetzen(); return; }
+      /* jede andere Taste (Pfeil, Leertaste, Schwarzbild …) verwirft die angefangene Nummer,
+         damit sie nicht mit der nächsten Eingabe zu „910“ zusammenläuft */
+      ziffernZuruecksetzen();
     }
 
     /* Enter/Leertaste auf einem Knopf: Knopf auslösen statt blättern */
@@ -1618,7 +1628,10 @@
   function leisteAktualisieren() {
     var f = folien[aktuell.index];
     if (!f || !leisteNummer) return;
-    leisteNummer.textContent = f.backup ? f.nummer : (f.index + 1) + ' / ' + anzahlHaupt;
+    /* Foliennummer wie in Kopfzeile, Übersicht und Referentenansicht (z. B. „08b / 12“),
+       nicht die Position in der Liste */
+    var letzte = folien[anzahlHaupt - 1];
+    leisteNummer.textContent = f.backup ? f.nummer : f.nummer + ' / ' + (letzte ? letzte.nummer : anzahlHaupt);
     var anteil = f.backup ? 1 : (anzahlHaupt > 1 ? f.index / (anzahlHaupt - 1) : 1);
     if (f.schritteGesamt && !f.backup && anzahlHaupt > 1) {
       anteil += (aktuell.schritt / f.schritteGesamt) / (anzahlHaupt - 1) * (f.index < anzahlHaupt - 1 ? 1 : 0);
@@ -1693,6 +1706,7 @@
 
   function schwarzbild(an) {
     var neu = an === undefined ? !html.classList.contains('schwarz') : !!an;
+    if (neu) ziffernZuruecksetzen();       // angefangene Foliennummer verwerfen
     html.classList.toggle('schwarz', neu);
     kanalZustandSenden();
   }
@@ -1722,7 +1736,10 @@
     offeneEbene = null;
     html.classList.remove('ebene-offen');
     if (name === 'uebersicht') ebenen.uebersicht.innerHTML = '';
-    if (fokusVorEbene && fokusVorEbene.focus && document.contains(fokusVorEbene)) {
+    /* Fokus zurückgeben – aber NICHT an Knöpfe der Bedienleiste: Sonst würde die nächste
+       Leertaste/Enter die Ebene (Übersicht, Hilfe) wieder öffnen, statt weiterzuschalten. */
+    var zurueckAnLeiste = fokusVorEbene && fokusVorEbene.closest && fokusVorEbene.closest('.bedienleiste');
+    if (fokusVorEbene && !zurueckAnLeiste && fokusVorEbene.focus && document.contains(fokusVorEbene)) {
       try { fokusVorEbene.focus({ preventScroll: true }); } catch (e) { /* egal */ }
     } else if (document.activeElement) document.activeElement.blur();
   }
@@ -1905,6 +1922,7 @@
       '<dt>' + k('←') + k('↑') + k('Bild↑') + k('⌫') + '</dt><dd>zurück</dd>' +
       '<dt>' + k('Pos1') + k('Ende') + '</dt><dd>erste / letzte Folie</dd>' +
       '<dt>' + k('6') + k('Enter') + '</dt><dd>Folie 06 anspringen</dd>' +
+      '<dt>' + k('8') + k('B') + k('Enter') + '</dt><dd>Folie 08b anspringen</dd>' +
       '<dt>' + k('O') + '</dt><dd>Übersicht aller Folien (mit Backup)</dd>' +
       '<dt>' + k('P') + '</dt><dd>Referentenansicht im zweiten Fenster</dd>' +
       '</dl><dl>' +
