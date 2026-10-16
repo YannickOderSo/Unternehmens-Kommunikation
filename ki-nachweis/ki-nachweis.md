@@ -67,6 +67,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 45 | 16.10.2026 | System | Benachrichtigung: Workflow D07 fertig | – | `persona-daten.md` auf Kurzfassung reduziert; noindex, Startseite, Logos; Übergabe Ü02 an Account 2 |
 | 46 | 16.10.2026 | System | Benachrichtigung: Hintergrundprüfung „neue Fassung live“ fertig | – | Live bestätigt: Logo 200, Kurzfassung ohne Tabellen, noindex |
 | 47 | 16.10.2026 | Yannick | „B“: Freigabe, die relevanten Seiten des Statista-Zielgruppen-Reports selbst zu lesen | – | Persona-Steckbrief „Marco, 28“ (A2) mit Kurzfassung für Lukas, `persona-daten.md` ergänzt, Folienentwurf Folie 4 |
+| 48 | 16.10.2026 | Yannick | Dossier für Lukas mit Anweisungen, wie er die Persona-Informationen nutzt | D08 | in Arbeit (Workflow D08 läuft) |
+| 49 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Workflow-Skript, Rohprotokoll und Nachweis committet + gepusht |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -797,6 +799,29 @@ gibst mir ausdrücklich frei, die betreffenden Seiten selbst zu lesen.“)*
   im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 48 – 16.10.2026 – Yannick
+
+> Erstell mir den Dossier für Lukas mit Anweisungen wie er diese Informationen nutzen kann
+
+*(Mit dem Prompt wurde automatisch die Workflow-Referenz geladen; laut Systemhinweis ist „Ultracode“ aktiv, also
+Workflows für jede größere Aufgabe.)*
+
+- **Vorgehen Claude:** Workflow D08 gestartet (3 Leser, 1 Autor, 3 Prüfer, 1 Bearbeiter, siehe Abschnitt 2).
+  Wird nach Abschluss ergänzt.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D08
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 49 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Workflow-Skript D08, Rohprotokoll und KI-Nachweis committet und gepusht. Der Dossier-Entwurf
+  ist noch nicht dabei, weil D08 noch läuft.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
 
 ---
 
