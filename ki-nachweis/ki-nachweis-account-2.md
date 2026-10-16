@@ -42,6 +42,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-16 | 15.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
 | A2-17 | 15.10.2026 | System | Sechster Abbruch des Workflows durch Nutzungslimit (Überarbeitung) | A2-D01 | Zwischenstand gesichert |
 | A2-18 | 16.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D01 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
+| A2-19 | 16.10.2026 | System | Siebter Abbruch des Workflows durch Nutzungslimit (zwei Überarbeitungen offen) | A2-D01 | Zwischenstand gesichert |
+| A2-20 | 16.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -309,6 +311,26 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-19 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ failed: Error: Folien-Gruppen unvollständig
+> (Synthese, Fazit, Fragen, Backup) – mit resume fortsetzen („You've hit your session limit · resets 3am (UTC)“ bei
+> zwei Überarbeitungs-Agenten).
+
+- **Herkunft:** automatische Meldung der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** 19 Agenten fertig – alle Folien gebaut und geprüft, fünf von sieben Gruppen überarbeitet; offen:
+  Überarbeitung „Synthese, Fazit, Fragen“ und „Backup“ (Teiländerungen gesichert, `d48dc15`).
+
+### A2-20 – 16.10.2026 – Yannick Heisler (Account 2)
+
+> Erneut versuchen
+
+- **Vorgehen Claude (11:45 Uhr):** Zwischenstand committet (`d48dc15`), `master` geprüft (nichts Neues seit A2-18),
+  Workflow `wf_878fd85d-3f2` mit `resumeFromRunId` fortgesetzt (19 fertige Agenten aus dem Zwischenspeicher).
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -356,6 +378,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Siebte Fortsetzung (A2-20)** (16.10.2026, 11:45 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
+  Zwischenspeicher: 7 Folien-, 7 Prüf- und 5 Überarbeitungs-Agenten.
 - **Sechste Fortsetzung (A2-18)** (16.10.2026, 00:07 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
   Zwischenspeicher: 7 Folien-, 7 Prüf- und 2 Überarbeitungs-Agenten.
 - **Fünfte Fortsetzung (A2-16)** (15.10.2026, 19:42 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
