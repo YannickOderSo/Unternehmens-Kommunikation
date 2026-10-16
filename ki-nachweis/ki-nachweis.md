@@ -65,6 +65,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 43 | 16.10.2026 | Yannick | Upload: 3 Statista-XLSX + 2 komplette Statista-Reports (PDF) | – | XLSX ausgewertet; Reports nicht geöffnet, Rückfrage (Statista-Bedingungen) |
 | 44 | 16.10.2026 | Yannick | Upload: 4 weitere Statista-XLSX | – | `persona-daten.md` (Anteile, Indizes, Persona-Folgerungen) |
 | 45 | 16.10.2026 | System | Benachrichtigung: Workflow D07 fertig | – | `persona-daten.md` auf Kurzfassung reduziert; noindex, Startseite, Logos; Übergabe Ü02 an Account 2 |
+| 46 | 16.10.2026 | System | Benachrichtigung: Hintergrundprüfung „neue Fassung live“ fertig | – | Live bestätigt: Logo 200, Kurzfassung ohne Tabellen, noindex |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -746,6 +747,15 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   [`index.html`](../index.html), Präsentation und Logos, Übergabe
   [`uebergaben/2026-10-16_account-2_befunde-live-pruefung.md`](uebergaben/2026-10-16_account-2_befunde-live-pruefung.md)
 - **Unteragenten:** keine (Auswertung von D07)
+
+### 46 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung: Hintergrundbefehl „Poll until GitHub Pages serves the new version“ beendet,
+> exit code 0)*
+
+- **Vorgehen Claude:** Ergebnis gelesen: Nach ca. 40 s lieferte GitHub Pages die neue Fassung aus. Logo-Datei 200,
+  `persona-daten.md` ohne Tabellen, robots-Meta auf der Startseite.
+- **Unteragenten:** keine
 
 ---
 
