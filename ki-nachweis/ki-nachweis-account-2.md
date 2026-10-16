@@ -50,6 +50,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-24 | 16.10.2026 | System | Nacharbeit sofort am Nutzungslimit gescheitert; mehrere Neustarts | – | – |
 | A2-25 | 16.10.2026 | Yannick (Account 2) | „Weiter“ | – | (in A2-26 bearbeitet) |
 | A2-26 | 16.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | master (Ü02) übernommen, Nacharbeit erweitert und gestartet |
+| A2-27 | 16.10.2026 | Yannick (Account 2) | HOLY-Logo auf Folie 1 fehlt | A2-D02 (angehalten, erweitert, fortgesetzt) | *in Arbeit* |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -407,6 +408,21 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D02
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-27 – 16.10.2026 – Yannick Heisler (Account 2)
+
+> Auf folie 1 fehlt das holy logo
+
+- **Vorgehen Claude (22:00 Uhr):** Folie 01 zeigt den Markennamen bisher nur als gesetzten Text. Die offiziellen Logos
+  liegen seit dem Merge von master in `bilder/` (Quelle: de.holy.com, Abruf 16.10.2026, laut QUELLEN.md). Weil der
+  Nacharbeit-Agent gerade `index.html` und das CSS von Folie 01 bearbeitete, den Lauf angehalten (Zwischenstand
+  `4b9cd01`), den Wunsch wörtlich mit genauer Vorgabe in den Nacharbeit-Auftrag aufgenommen (gelbes Oval-Logo in
+  Auflösung und Titelzustand, Datei unverändert, Pfad über `marke.js`, alt-Text, Quelle in der Fußzeile, QUELLEN.md und
+  LIESMICH.md anpassen, nicht schon im Rätsel zeigen; `9765070`) und den Workflow mit `resumeFromRunId` fortgesetzt.
+  So prüfen beide zweiten Abschlussprüfer das Logo mit.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D02
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -414,7 +430,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | A2-D01 | 14.–16.10.2026 | A2-01 (fortgesetzt in A2-09 bis A2-22) | Fundament: Agent-Werkzeug (general-purpose); ab „Folien“: Workflow-Werkzeug, Lauf `wf_878fd85d-3f2` (25 Unteragenten) | Web-Präsentation ab „Fundament“ bauen, prüfen, überarbeiten, integrieren, exportieren | fertig (26 Unteragenten; 46 Abbrüche durch Nutzungslimit, jeweils per resume fortgesetzt) | Claude: Rückgaben gelesen, Demo/Deck selbst mit `pruefen.mjs` geprüft, Kontaktbogen angesehen |
-| A2-D02 | 16.10.2026 | A2-23, A2-26 | Workflow „praesentation-account-2-nacharbeit“, Lauf `wf_fe26464c-97a` (bis zu 4 Unteragenten) | abgeschnittene Abschlussbefunde + Befunde der Live-Prüfung (Ü02) umsetzen, zweite Abschlussprüfung (Anforderungen; Inhalt & Fakten gegen Dossier), letzter Feinschliff | *läuft* | – |
+| A2-D02 | 16.10.2026 | A2-23, A2-26, A2-27 | Workflow „praesentation-account-2-nacharbeit“, Lauf `wf_fe26464c-97a` (bis zu 4 Unteragenten) | abgeschnittene Abschlussbefunde + Befunde der Live-Prüfung (Ü02) umsetzen, zweite Abschlussprüfung (Anforderungen; Inhalt & Fakten gegen Dossier), letzter Feinschliff | *läuft* | – |
 
 ### A2-D01 – 14.10.2026 – ausgelöst durch Prompt A2-01
 
