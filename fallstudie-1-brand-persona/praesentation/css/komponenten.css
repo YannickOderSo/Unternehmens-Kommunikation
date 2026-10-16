@@ -35,7 +35,13 @@
   color: var(--f-akzent);
 }
 .kicker .beispiel,
-.kicker .live { margin-left: 16px; vertical-align: 2px; }
+.kicker .live {
+  margin-left: 16px;
+  vertical-align: 2px;
+  /* Pille (40 px) macht die Kickerzeile (26 px) nicht höher: sonst stünde der
+     Titel auf Folien mit „Beispieldaten“ 14 px tiefer als auf Folien ohne */
+  margin-block: -8px;
+}
 
 /* Folientitel = Kernaussage (ein vollständiger Satz, höchstens zwei Zeilen) */
 .titel {
@@ -502,18 +508,23 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
   transform-origin: center;
   transition: fill var(--dauer-kurz) var(--kurve), stroke var(--dauer-kurz) var(--kurve), transform var(--dauer-mittel) var(--kurve-feder);
 }
+/* Hover-Effekte nur, wenn die Maus seit dem letzten Klick wirklich bewegt
+   wurde (Klasse html.zeiger-gesperrt setzt js/komponenten.js, „Mausregel“) */
 .sr-kern-gruppe.ist-fokus .sr-kern,
-.sr-kern-gruppe:hover .sr-kern { transform: scale(1.05); }
+html:not(.zeiger-gesperrt) .sr-kern-gruppe:hover .sr-kern { transform: scale(1.05); }
 .mini-rad:hover .sr-kern { transform: scale(1.18); }
 .sr-feld { cursor: pointer; outline: none; }
 .sr-feld.ist-ohne-ziel { cursor: default; }
 [data-paar] { transition: opacity var(--dauer-mittel) var(--kurve); }
 
-/* Zeigen/Fokus: Feld und Methode leuchten gemeinsam, der Rest tritt zurück */
-.steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: 0.45; }
+/* Zeigen/Fokus: Feld und Methode leuchten gemeinsam, der Rest tritt zurück
+   (Deckkraft: Token --dimmen). Die Schrift im Zentrum bleibt deckend, damit
+   sie auf der aufgehellten Kernfläche lesbar bleibt (≥ 3 : 1). */
+.steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: var(--dimmen); }
+.steuerrad.hat-fokus .sr-label--kern:not(.ist-fokus) { opacity: 1; }
 /* Karten und Pillen: Fläche bleibt deckend (sonst scheint der Ring durch), nur Inhalt und Rand treten zurück */
 .steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) { opacity: 1; border-color: color-mix(in oklab, var(--f-karte-rand) 45%, var(--f-hintergrund)); box-shadow: none; }
-.steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) > * { opacity: 0.45; transition: opacity var(--dauer-mittel) var(--kurve); }
+.steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) > * { opacity: var(--dimmen); transition: opacity var(--dauer-mittel) var(--kurve); }
 .steuerrad .sr-feld.ist-fokus .sr-flaeche,
 .steuerrad .sr-feld.ist-fokus .sr-kern { stroke: var(--f-akzent); }
 .steuerrad .sr-rahmen-gruppe.ist-fokus .sr-ring { stroke: var(--f-akzent); stroke-width: 5; }
@@ -674,16 +685,15 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 }
 [data-thema="bento"] .sr-karte,
 [data-thema="keynote"] .sr-karte { box-shadow: var(--schatten-1); border-radius: var(--radius-l); }
-.sr-karte:hover,
+html:not(.zeiger-gesperrt) .sr-karte:hover,
 .sr-karte.ist-fokus { border-color: var(--f-akzent); box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent); }
 .sr-karte.ist-ohne-ziel { cursor: default; }
 .sr-karte-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-/* Methodenkarten links/rechts: Name, darunter „Folie x →“; rechte Seite gespiegelt */
+/* Methodenkarten links/rechts: Name, darunter „Folie x →“. Alle Karten sind
+   linksbündig (auch rechts vom Rad) – gleiche Lesekante wie der übrige
+   Folientext; die frühere, wirkungslose Regel für rechtsbündige Karten ist
+   entfernt (Entscheidung Zusammenführung 16.10.2026). */
 .sr-modus-hub .sr-karte:not(.sr-pille) .sr-karte-kopf { flex-direction: column; align-items: flex-start; gap: 4px; }
-.sr-modus-hub .sr-karte--ro .sr-karte-kopf,
-.sr-modus-hub .sr-karte--ru .sr-karte-kopf { align-items: flex-end; }
-.sr-modus-hub .sr-karte--ro,
-.sr-modus-hub .sr-karte--ru { text-align: right; }
 .sr-karte-name {
   font-family: var(--schrift-display);
   font-size: 34px;

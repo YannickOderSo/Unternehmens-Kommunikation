@@ -24,7 +24,7 @@
         • vergleicht die Steuerrad-Stichworte mit Folie 10 (Warnung, wenn
           sie voneinander abweichen).
    Inhalte ändern Sie NUR in den Daten der Folien
-   (folien/09-kommunikationsanalyse.html).
+   (index.html, Folien 09/09b).
 
    Schritte entstehen über data-schritt-Attribute (im HTML bzw. hier beim
    Aufbau); die Engine blendet sie ein, zählt Zahlen hoch und zeigt im Druck
@@ -288,7 +288,7 @@
     });
     if (weg.length) {
       console.warn('f09b: mehr als ' + MAX_FARBEN + ' Farben – ' + weg.join(', ') +
-        ' ausgeblendet. Bitte in folien/09-kommunikationsanalyse.html (Daten von f09b → farben) eine Farbe herausnehmen.');
+        ' ausgeblendet. Bitte in index.html, Folien 09/09b (Daten von f09b → farben) eine Farbe herausnehmen.');
     }
     return ergebnis.filter(function (g) { return g.liste.length; });
   }
@@ -430,7 +430,7 @@
   /* Abgleich mit Folie 10: stehen dort im Feld „bild“ andere Stichworte, gibt
      es eine Warnung in der Konsole (pruefen.mjs meldet sie). Beide Listen
      müssen gleich gepflegt werden: hier "steuerrad", in
-     folien/10-markensteuerrad.html → felder → bild → stichworte. */
+     index.html, Folie 10 → felder → bild → stichworte. */
   function steuerradAbgleichen(stichworte) {
     var skript = document.querySelector('#f10 .steuerrad > script[type="application/json"]');
     if (!skript || !stichworte || !stichworte.length) return;

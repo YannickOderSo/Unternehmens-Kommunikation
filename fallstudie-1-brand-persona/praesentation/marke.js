@@ -23,20 +23,22 @@ window.MARKE = {
   kurz: 'HOLY',                   // Kurzform (hier gleich)
 
   /* ---------------------------------------------------------------------------
-     2. MARKENFARBEN (Hex-Werte aus dem Corporate Design der Marke)
-     Leer = neutrale Farben des gewählten Themas. Alle anderen Farben werden
-     daraus berechnet; die Lesbarkeit (Kontrast) bleibt automatisch erhalten.
+     2. MARKENFARBEN (Hex-Werte aus dem Auftritt der Marke)
+     Alle anderen Farben werden daraus berechnet; die Lesbarkeit (Kontrast)
+     bleibt automatisch erhalten (geprüft mit werkzeuge/pruefen.mjs).
        primaer   → Akzent, „soft facts“ (rechte Steuerrad-Hälfte), Zentrum
        sekundaer → „hard facts“ (linke Steuerrad-Hälfte), Flächentöne
-     BLEIBEN LEER, bis das Recherche-Dossier
-     (fallstudie-1-brand-persona/recherche/holy-recherche.md) die Markenfarben
-     mit Quelle belegt. Keine Farben raten! Quelle dann hier im Kommentar nennen.
+     Leer ('') = neutrale Farben des gewählten Themas.
+     QUELLE: Recherche-Dossier (../recherche/holy-recherche.md), Kap. 6.3
+     „Corporate Design“, Status ✔, Quelle [1] (de.holy.com, CSS der Website,
+     abgerufen 13./14.10.2026): Gelb #FFD007 (häufigster Wert), Schwarz #1D1D1B.
+     Achtung: Web-Werte, kein offizieller Styleguide (Dossier 6.3).
      Ausprobieren ohne diese Datei zu ändern: Farbwähler in der Bedienleiste
      unten rechts (Maus bewegen) – gilt nur bis zum Schließen des Tabs.
      --------------------------------------------------------------------------- */
   farben: {
-    primaer: '',                  // z. B. '#E30613'
-    sekundaer: ''                 // z. B. '#1D1D1B'
+    primaer: '#FFD007',           // HOLY-Gelb (Dossier 6.3 ✔ [1])
+    sekundaer: '#1D1D1B'          // HOLY-Schwarz (Dossier 6.3 ✔ [1])
   },
 
   /* ---------------------------------------------------------------------------
@@ -44,8 +46,16 @@ window.MARKE = {
      Eigene Bilder in den Ordner bilder/ legen. Nur Bilder verwenden, deren
      Nutzung erlaubt ist (Quelle in der Folienfußzeile angeben).
      --------------------------------------------------------------------------- */
+  // Logo: Platzhalter. Ein echtes HOLY-Logo nur mit geklärten Rechten einsetzen
+  // (Quelle in die Fußzeile der Folie). Wird zurzeit auf keiner Folie gezeigt.
   logo: 'bilder/platzhalter-logo.svg',
-  raetselBild: 'bilder/platzhalter-raetsel.svg',   // Einstiegsrätsel (Ausschnitt wird stark vergrößert)
+  // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
+  // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen
+  // (z. B. HOLY-Dose oder -Shaker, selbst fotografiert), z. B.
+  //   raetselBild: 'bilder/raetsel-holy.jpg',   // eigenes Foto (Gruppe, Datum)
+  // Danach in index.html bei Folie 01: data-fokus (Zoompunkt) prüfen und die
+  // Bildquelle in der Fußzeile eintragen.
+  raetselBild: 'bilder/platzhalter-raetsel.svg',
 
   /* ---------------------------------------------------------------------------
      4. ANGABEN ZUR PRÄSENTATION
@@ -79,14 +89,18 @@ window.MARKE = {
   umfragen: {
     tier: {
       frage: 'Wenn [Marke] ein Tier wäre – welches?',
-      optionen: ['Fuchs', 'Eule', 'Delfin', 'Löwe', 'Hund'],   // BEISPIEL – Gruppe legt fest
+      // Antwortoptionen (BEISPIEL – Gruppe legt fest). Folie 08 verlangt:
+      // „Waschbär“ (unsere Analyse) und „Adler“ (Selbstbild, Maskottchen
+      // „Raptor“) müssen dabei sein – sonst Hinweis in den Notizen von Folie 08.
+      // Reihenfolge = Reihenfolge im Werkzeug (Mentimeter/Particify) und Ziffern 1–5.
+      optionen: ['Adler', 'Löwe', 'Waschbär', 'Fuchs', 'Delfin'],
       link: '',                                                 // z. B. 'https://…' (Mentimeter/Particify)
-      kurzLink: '',
-      ergebnisLink: '',
-      unsereAntwort: 'Eule',                                    // BEISPIEL
+      kurzLink: '',                                             // z. B. 'particify.de/p/12345678'
+      ergebnisLink: '',                                         // Ergebnisseite des Werkzeugs
+      unsereAntwort: 'Waschbär',                                // Ergebnis unserer Analyse (Folie 08, Titel)
       // Satz der großen Aussagezahl; {prozent} und {antwort} werden ersetzt
       aussage: '{prozent} sehen [Marke] wie wir: als {antwort}',
-      beispielwerte: [22, 17, 11, 8, 6]                         // BEISPIELDATEN (64 Stimmen)
+      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen) – vor dem Vortrag „Zurücksetzen“
     }
   },
 

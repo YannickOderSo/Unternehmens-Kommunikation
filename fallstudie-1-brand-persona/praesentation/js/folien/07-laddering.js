@@ -2,7 +2,7 @@
    js/folien/07-laddering.js – Skript für Folie f07 „Laddering“
    -----------------------------------------------------------------------------
    Baut aus den Daten der Folie (<script type="application/json" class="daten">
-   in folien/07-laddering.html) eine Hierarchical Value Map (HVM) als Leiter:
+   in index.html, Folie 07) eine Hierarchical Value Map (HVM) als Leiter:
      • links die vier Ebenen der Means-End-Chain als Sprossen (unten
        Attribute, oben Werte), Beschriftung links neben der Leiter
      • eine helle „Geisterleiter“ zeigt von Anfang an das Ziel; die kräftige

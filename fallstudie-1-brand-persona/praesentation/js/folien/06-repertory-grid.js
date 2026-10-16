@@ -2,7 +2,7 @@
    js/folien/06-repertory-grid.js – Skript für Folie f06 „Repertory Grid“
    -----------------------------------------------------------------------------
    Baut aus den Daten der Folie (<script type="application/json" class="daten">
-   in folien/06-repertory-grid.html):
+   in index.html, Folie 06):
      • links ein Polaritätenprofil (SVG): Raster mit Skala, je Konstrukt eine
        Zeile mit beiden Polen und der Zahl der Nennungen, drei Linien
        (Idealmarke · stärkster Wettbewerber · [Marke]), die sich in Schritt 2

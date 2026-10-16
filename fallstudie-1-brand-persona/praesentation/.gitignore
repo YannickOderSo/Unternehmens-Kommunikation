@@ -1,4 +1,4 @@
-# Testausgaben der Prüfwerkzeuge (werden beim Bauen und Prüfen erzeugt und wieder gelöscht)
+# Testausgaben von werkzeuge/pruefen.mjs (Screenshots, Berichte) – nicht einchecken
 _test/
 _abschluss-test/
 _abschluss-gestaltung/

@@ -1,11 +1,56 @@
 /* =============================================================================
    css/folien/12-fragen.css – nur für Folie f12 (Danke & Fragen)
    -----------------------------------------------------------------------------
+   Kopf: links „Danke! Fragen?“, rechts unser Fazit in einer Zeile.
    Drei Spalten: links Gruppe + Backup-Sprünge, Mitte Steuerrad (Sprungmenü,
-   gestaltet vom Baustein), rechts Methoden-Sprünge.
+   gestaltet vom Baustein), rechts Methoden- und Ergebnis-Sprünge.
    Die Sprunglisten sind Bedienelemente (Metaangaben, 24 px) – sie sind für
    die Fragerunde da, nicht zum Vorlesen. Nur Variablen aus tokens.css.
    ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   Kopf: Titel links, Fazit rechts (unten bündig mit dem Titel)
+   --------------------------------------------------------------------------- */
+#f12 .folie-kopf {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--abstand-8);
+  align-items: end;
+}
+#f12 .folie-kopf > .kicker { grid-column: 1; grid-row: 1; }
+#f12 .folie-kopf > .titel { grid-column: 1; grid-row: 2; margin: 0; }
+#f12 .g6d-fazit {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  justify-self: start;
+  align-self: stretch;            /* Kicker auf Höhe „Fragerunde“, Text unten */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  max-width: 860px;
+  margin: 0 0 18px;               /* Text endet etwa auf der Titel-Grundlinie */
+  padding-left: 22px;
+  border-left: 6px solid var(--f-akzent);   /* wie das Kern-Band auf Folie 10 */
+}
+#f12 .g6d-fazit-kicker {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-akzent);
+}
+#f12 .g6d-fazit-text {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  line-height: 1.25;
+  color: var(--f-text);
+  text-wrap: balance;
+}
+#f12 .g6d-fazit-zusatz { color: var(--f-text-2); }
 
 #f12 .g6d {
   justify-content: center;
@@ -77,6 +122,14 @@
   flex-direction: column;
   gap: 2px;
 }
+/* rechte Spalte: zwei Listen untereinander (Methoden, Ergebnisse) */
+#f12 .g6d-rechts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-5);
+  min-width: 0;
+}
+#f12 .g6d-rechts .g6d-sprung { padding-top: 5px; padding-bottom: 5px; }
 
 /* Ein Sprung-Knopf: Nummer (Akzent) + Name */
 #f12 .g6d-sprung {
@@ -122,7 +175,7 @@
 #f12 .g6d-sprung[aria-disabled="true"] .g6d-sprung-nr { color: var(--f-text-2); }
 #f12 .g6d-sprung[aria-disabled="true"] .g6d-sprung-name::after { content: none; }
 
-/* Hinweis „Taste O“ – bewusst dezent */
+/* Hinweis „Taste O“ – bewusst dezent; im Druck/PDF ohne Sinn → ausgeblendet */
 #f12 .g6d-hinweis {
   display: inline-flex;
   align-items: center;
@@ -131,6 +184,7 @@
   font-size: var(--groesse-meta);
   color: var(--f-text-2);
 }
+html.druckmodus #f12 .g6d-hinweis { display: none; }
 
 /* ---------------------------------------------------------------------------
    Mitte: Steuerrad (Baustein) – nur Platz und Ausrichtung

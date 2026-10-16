@@ -186,6 +186,10 @@
   --dauer-folie: 520ms;            /* Folienwechsel */
   --staffel: 70ms;                 /* Versatz zwischen gestaffelten Elementen */
   --weg: 18px;                     /* Weg der Einblend-Bewegungen */
+  /* Deckkraft zurücktretender Elemente (Steuerrad-Fokus, data-dimmen,
+     Hervorhebungen auf Folien). 0.6 statt 0.45: bleibt auch auf blassen
+     Beamern lesbar, der Unterschied zum betonten Element ist trotzdem klar. */
+  --dimmen: 0.6;
   --kurve: cubic-bezier(0.22, 0.61, 0.36, 1);        /* weiches Ausrollen */
   --kurve-feder: cubic-bezier(0.34, 1.36, 0.64, 1);  /* kleines Nachfedern (nur Punkte/Marker);
                                                         Ersatz für Browser ohne linear(), echte Feder siehe unten */

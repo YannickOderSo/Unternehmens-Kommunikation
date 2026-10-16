@@ -1,5 +1,5 @@
 /* =============================================================================
-   css/folien/02-vorgehen.css – Gestaltung nur für folien/02-vorgehen.html (f02)
+   css/folien/02-vorgehen.css – Gestaltung nur für index.html, Folie 02
    -----------------------------------------------------------------------------
    Das Markensteuerrad selbst gestaltet css/komponenten.css (Baustein). Hier
    nur, was diese Folie zusätzlich braucht:
@@ -124,22 +124,8 @@
 
 
 /* ---------- Rad ---------- */
-/* Zurücktreten (Baustein: 45 %) auf dieser Folie nur auf 60 %: Methodennamen,
-   Feldnamen und Folienverweise bleiben auch auf blassen Beamern lesbar.
-   Die Schrift im Zentrum bleibt deckend (weiß auf der aufgehellten Fläche
-   ≥ 3 : 1), nur die Fläche tritt zurück. */
-#f02 .steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: 0.6; }
-#f02 .steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) { opacity: 1; }
-#f02 .steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) > * { opacity: 0.6; }
-#f02 .steuerrad.hat-fokus .sr-label--kern:not(.ist-fokus) { opacity: 1; }
-
-/* Ruhende Maus (Klasse setzt das Skript bis zur ersten echten Bewegung nach
-   einem Klick): auch die Hover-Effekte des Bausteins bleiben aus */
-#f02 .steuerrad.vorgehen-maus-ruht .sr-karte:hover:not(.ist-fokus) {
-  border-color: var(--f-karte-rand);
-  box-shadow: none;
-}
-#f02 .steuerrad.vorgehen-maus-ruht .sr-kern-gruppe:hover:not(.ist-fokus) .sr-kern { transform: none; }
+/* Zurücktreten: Deckkraft kommt jetzt zentral aus dem Token --dimmen (0.6,
+   css/tokens.css); die Schrift im Zentrum bleibt deckend (css/komponenten.css). */
 
 /* Persona-Ring: js/folien/02-vorgehen.js ersetzt den Kreis durch zwei Bögen,
    die hinter den beiden Pillen enden. Sie zeichnen sich in Schritt 7 von der
@@ -177,12 +163,12 @@
   opacity: 0;
   visibility: hidden;
 }
-#f02 .steuerrad.vorgehen-kette :is(.sr-kern-gruppe, .sr-linie[data-paar="kompetenz"]) { opacity: 0.6; }
+#f02 .steuerrad.vorgehen-kette :is(.sr-kern-gruppe, .sr-linie[data-paar="kompetenz"]) { opacity: var(--dimmen); }
 #f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] {
   border-color: color-mix(in oklab, var(--f-karte-rand) 45%, var(--f-hintergrund));
   box-shadow: none;
 }
-#f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] > * { opacity: 0.6; }
+#f02 .steuerrad.vorgehen-kette .sr-karte[data-paar="kompetenz"] > * { opacity: var(--dimmen); }
 #f02 .steuerrad.vorgehen-kette .sr-logik-text { color: var(--f-akzent); }
 #f02 .steuerrad.vorgehen-kette .sr-logik-strich,
 #f02 .steuerrad.vorgehen-kette .sr-pfeilspitze { stroke: var(--f-akzent); stroke-width: var(--linie-stark); }

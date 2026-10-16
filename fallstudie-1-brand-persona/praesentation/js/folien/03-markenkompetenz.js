@@ -2,7 +2,7 @@
    js/folien/03-markenkompetenz.js – Skript für Folie f03 „Markenkompetenz“
    -----------------------------------------------------------------------------
    Baut aus den Daten der Folie (<script type="application/json" class="daten">
-   in folien/03-markenkompetenz.html):
+   in index.html, Folie 03):
      • den Titel „[Marke]: <rolle> mit <kernkompetenz>“
      • die Zeitleiste (Gründung + Meilensteine; Abstände nach Jahren)
      • die drei Kennzahlen (zählen beim Klick hoch; mit Präfix „≈“/„über“,

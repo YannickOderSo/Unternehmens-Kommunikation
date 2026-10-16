@@ -275,11 +275,11 @@
   margin-inline: auto;
 }
 
-/* Schritt 2: Schlüsselbild betonen, alles andere tritt auf 45 % zurück.
+/* Schritt 2: Schlüsselbild betonen, alles andere tritt zurück (Token --dimmen).
    Auslöser ist das unsichtbare Element .g5-ausloeser (data-schritt="2"). */
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-beitrag:not(.ist-schluesselbild),
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-gruppe:not(.hat-schluesselbild) .g5-gruppe-kopf {
-  opacity: 0.45;
+  opacity: var(--dimmen);
 }
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .ist-schluesselbild .g5-beitrag-bild {
   border-style: solid;
@@ -482,7 +482,7 @@
 #f09b .g5b:has([data-fit-schritt="2"].schritt-aktuell) .g5b-zeile:not([data-belege~="2"]),
 #f09b .g5b:has([data-fit-schritt="3"].schritt-aktuell) .g5b-zeile:not([data-belege~="3"]),
 #f09b .g5b:has([data-fit-schritt="4"].schritt-aktuell) .g5b-zeile:not([data-belege~="4"]) {
-  opacity: 0.45;
+  opacity: var(--dimmen);
 }
 #f09b .g5b:has([data-fit-schritt="1"].schritt-aktuell) .g5b-zeile[data-belege~="1"]::before,
 #f09b .g5b:has([data-fit-schritt="2"].schritt-aktuell) .g5b-zeile[data-belege~="2"]::before,
@@ -496,7 +496,7 @@
 #f09b .g5b:has([data-fit-schritt="2"].schritt-aktuell) .g5b-zeile[data-belege-teil~="2"] [data-teil]:not([data-belege~="2"]),
 #f09b .g5b:has([data-fit-schritt="3"].schritt-aktuell) .g5b-zeile[data-belege-teil~="3"] [data-teil]:not([data-belege~="3"]),
 #f09b .g5b:has([data-fit-schritt="4"].schritt-aktuell) .g5b-zeile[data-belege-teil~="4"] [data-teil]:not([data-belege~="4"]) {
-  opacity: 0.45;
+  opacity: var(--dimmen);
 }
 /* Druck/PDF: ruhiger Endzustand ohne Hervorhebung */
 html.druckmodus #f09b .g5b-zeile,

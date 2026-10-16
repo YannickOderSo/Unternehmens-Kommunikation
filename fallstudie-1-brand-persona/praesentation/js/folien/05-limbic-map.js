@@ -2,7 +2,7 @@
    js/folien/05-limbic-map.js – Skript für Folie f05 „Limbic Map“
    -----------------------------------------------------------------------------
    Baut aus den Daten der Folie (<script type="application/json" class="daten">
-   in folien/05-limbic-map.html) eine EIGENE, VEREINFACHTE Darstellung in
+   in index.html, Folie 05) eine EIGENE, VEREINFACHTE Darstellung in
    Anlehnung an die Limbic® Map nach Häusel (Gruppe Nymphenburg):
      • Kreis mit drei Motivsystemen (Balance, Dominanz, Stimulanz) als farbige
        Sektoren mit weichen Übergängen = Mischbereiche

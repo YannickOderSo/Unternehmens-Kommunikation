@@ -305,8 +305,40 @@
       k.classList.toggle('ist-fokus', !!feld && k.getAttribute('data-paar') === feld);
     });
   }
+  /* ---------- Mausregel (alle Steuerräder) ----------
+     Eine liegen gebliebene Maus (z. B. noch über einem Feld, während mit dem
+     Clicker weitergeschaltet wird) soll nichts hervorheben. Nach jedem
+     Folien- oder Schrittwechsel ist der Zeiger „gesperrt“ (Klasse
+     html.zeiger-gesperrt, schaltet auch die CSS-Hover-Effekte ab), bis die
+     Maus mindestens MAUS_SCHWELLE px bewegt wurde. Danach wird das Zeigen
+     für das Element unter der Maus nachgeholt. Tastaturfokus bleibt frei. */
+  var MAUS_SCHWELLE = 6;
+  var zeiger = { x: null, y: null, bezug: null, frei: true };
+  function zeigerSperren() {
+    zeiger.frei = false;
+    zeiger.bezug = zeiger.x === null ? null : { x: zeiger.x, y: zeiger.y };
+    document.documentElement.classList.add('zeiger-gesperrt');
+  }
+  document.addEventListener('deck:folie', zeigerSperren);
+  document.addEventListener('deck:schritt', zeigerSperren);
+  document.addEventListener('pointermove', function (e) {
+    zeiger.x = e.clientX;
+    zeiger.y = e.clientY;
+    if (zeiger.frei) return;
+    if (!zeiger.bezug) { zeiger.bezug = { x: e.clientX, y: e.clientY }; return; }
+    if (Math.abs(e.clientX - zeiger.bezug.x) + Math.abs(e.clientY - zeiger.bezug.y) < MAUS_SCHWELLE) return;
+    zeiger.frei = true;
+    document.documentElement.classList.remove('zeiger-gesperrt');
+    /* Zeigen nachholen: liegt die Maus über einem Feld oder einer Karte? */
+    var unter = document.elementFromPoint(e.clientX, e.clientY);
+    var k = unter && unter.closest && unter.closest('.steuerrad [data-paar]');
+    var huelle = k && k.closest('.steuerrad');
+    if (huelle && util.istAktiv(huelle) && !huelle._schrittFokus) fokusSetzen(huelle, k.getAttribute('data-paar'));
+  }, { passive: true, capture: true });
+
   function zeigenKoppeln(huelle) {
     huelle.addEventListener('pointerover', function (e) {
+      if (!zeiger.frei) return;          /* Mausregel: ruhende Maus zeigt nichts */
       var k = e.target.closest('[data-paar]');
       if (k && huelle.contains(k) && !huelle._schrittFokus) fokusSetzen(huelle, k.getAttribute('data-paar'));
     });
@@ -790,6 +822,7 @@
       }
       bestaetigt = 0;
       zurueck.querySelector('span').textContent = 'Zurücksetzen';
+      umfrageFelderSchliessen(u, false);     /* offene Eingabefelder verwerfen */
       u.werte = u.werte.map(function () { return 0; });
       u.beispiel = false;
       umfrageSpeichern(u);
@@ -849,32 +882,52 @@
     var eingabe = el('input', { type: 'number', min: '0', step: '1', class: 'umfrage-eingabe', value: String(u.werte[i]), 'aria-label': 'Anzahl für ' + u.konfig.optionen[i] });
     z.wert.appendChild(eingabe);
     z.eingabe = eingabe;
-    var fertig = function (uebernehmen) {
+    var fertig = function (uebernehmen, ohneZeichnen) {
       if (!z.eingabe) return;
       var wert = parseInt(eingabe.value, 10);
       z.eingabe = null;
+      z.fertig = null;
       eingabe.remove();
-      if (uebernehmen && !isNaN(wert) && wert >= 0) {
+      if (uebernehmen && !isNaN(wert) && wert >= 0 && wert !== u.werte[i]) {
         u.werte[i] = wert;
         umfrageSpeichern(u);
       }
-      umfrageZeichnen(u, true);
+      if (!ohneZeichnen) umfrageZeichnen(u, true);
     };
+    z.fertig = fertig;
     eingabe.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); fertig(true); }
       else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); fertig(false); }
+      else if (e.key === 'Tab') {
+        /* Tab / Umschalt+Tab: Wert übernehmen und ins nächste bzw. vorige Feld
+           (wird bei Bedarf geöffnet). Nach dem letzten bzw. vor dem ersten Feld
+           werden alle Werte übernommen und die Felder geschlossen – so landet
+           eine getippte Ziffer nie unsichtbar als Stimme auf einem Knopf. */
+        e.preventDefault();
+        e.stopPropagation();
+        var ziel = i + (e.shiftKey ? -1 : 1);
+        if (ziel < 0 || ziel >= u.zeilen.length) { umfrageFelderSchliessen(u, true); return; }
+        var naechstes = umfrageWertEingeben(u, ziel, true);
+        naechstes.focus();
+        naechstes.select();
+      }
     });
     eingabe.addEventListener('blur', function () { fertig(true); });
     eingabe.addEventListener('click', function (e) { e.stopPropagation(); });
     if (!ohneFokus) { eingabe.focus(); eingabe.select(); }
     return eingabe;
   }
+  /* Alle offenen Eingabefelder schließen (uebernehmen = Werte speichern) */
+  function umfrageFelderSchliessen(u, uebernehmen) {
+    var offen = u.zeilen.filter(function (z) { return z.fertig; });
+    if (!offen.length) return false;
+    offen.forEach(function (z) { z.fertig(uebernehmen, true); });
+    umfrageZeichnen(u, true);
+    return true;
+  }
   function umfrageAlleBearbeiten(u, knopf) {
-    var offen = u.zeilen.some(function (z) { return z.eingabe; });
-    if (offen) {
-      u.zeilen.forEach(function (z) { if (z.eingabe) z.eingabe.blur(); });
-      return;
-    }
+    /* zweiter Klick auf „Werte“: alle offenen Felder übernehmen und schließen */
+    if (umfrageFelderSchliessen(u, true)) return;
     u.zeilen.forEach(function (z, i) { umfrageWertEingeben(u, i, true); });
     if (u.zeilen[0] && u.zeilen[0].eingabe) { u.zeilen[0].eingabe.focus(); u.zeilen[0].eingabe.select(); }
   }
@@ -902,10 +955,23 @@
     anzeigenAktualisieren(u.id, u.werte, u.konfig, u.beispiel, animiert);
   }
 
-  /* Ziffern 1–9 zählen auf der aktiven Umfrage-Folie */
+  /* Ist die Umfrage gerade zu sehen? (Folie aktiv und nicht von einem
+     Folienschritt ausgeblendet, z. B. Folie 08 ab Schritt 2) */
+  function umfrageSichtbar(u) {
+    if (!util.istAktiv(u.huelle)) return false;
+    var folie = u.huelle.closest('.folie');
+    for (var e = u.huelle; e && e !== folie; e = e.parentElement) {
+      var st = getComputedStyle(e);
+      if (st.display === 'none' || st.visibility === 'hidden' || parseFloat(st.opacity) < 0.05) return false;
+    }
+    return true;
+  }
+
+  /* Ziffern 1–9 zählen nur, solange die Umfrage sichtbar ist – sonst gehen
+     sie an die Navigation (Ziffer + Enter springt zu einer Folie) */
   Deck.taste(function (e) {
     if (!/^(Digit|Numpad)[1-9]$/.test(e.code || '')) return false;
-    var aktiv = umfragen.filter(function (u) { return util.istAktiv(u.huelle); })[0];
+    var aktiv = umfragen.filter(umfrageSichtbar)[0];
     if (!aktiv) return false;
     var i = parseInt(e.code.replace(/\D/g, ''), 10) - 1;
     if (i >= aktiv.werte.length) return false;
@@ -940,6 +1006,10 @@
       umfrageLaden(u);
       umfrageZeichnen(u, false);
     },
+    /* Weiterblättern (z. B. Clicker), während Eingabefelder offen sind:
+       Werte übernehmen und Felder schließen */
+    schritt: function (huelle) { if (huelle._umfrage) umfrageFelderSchliessen(huelle._umfrage, true); },
+    verlassen: function (huelle) { if (huelle._umfrage) umfrageFelderSchliessen(huelle._umfrage, true); },
     klon: function (kopie, n, original) {
       util.alle('.umfrage-werkzeuge', kopie).forEach(function (w) { w.remove(); });
     }

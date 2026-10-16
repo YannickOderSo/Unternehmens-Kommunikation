@@ -1,5 +1,5 @@
 /* =============================================================================
-   js/folien/01-einstieg.js – Folien-Skript für folien/01-einstieg.html (f01)
+   js/folien/01-einstieg.js – Folien-Skript für index.html, Folie 01
    -----------------------------------------------------------------------------
    Das Aussehen der drei Zustände regelt css/folien/01-einstieg.css allein.
    Dieses Skript erledigt nur drei Komfort-Aufgaben:

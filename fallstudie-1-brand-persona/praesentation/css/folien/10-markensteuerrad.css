@@ -151,6 +151,10 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   color: var(--f-fehler);
 }
 #f10 .g6s-luecke--rechts .g6s-luecke-kopf { flex-direction: row-reverse; }
+#f10 .g6s-luecke-titel { white-space: nowrap; }
+/* Feldpaar hinter „Lücke n“ (z. B. „· Bild ↔ Persona“): gedeckt wie der Zusatz
+   im Kern-Band – zeigt, zwischen welchen Feldern die Lücke klafft */
+#f10 .g6s-luecke-paar { color: var(--f-text-2); }
 #f10 .g6s-luecke-text {
   font-size: var(--groesse-text-min);
   font-weight: 600;
@@ -204,6 +208,12 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
 /* etwas mehr Abstand hinter markierten Stichworten, damit die Nummer frei
    steht (gilt von Anfang an – kein Sprung, wenn die Nummer erscheint) */
 #f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert) { gap: 18px; }
+
+/* Ruhe nach dem Betreten (Skript: ruheStarten): Bis sich die Maus bewegt,
+   nehmen Felder, Karten und Pillen keine Mausereignisse an – kein
+   ungewolltes Abdunkeln, kein Sprung durch einen zweiten Klick */
+#f10 .g6s-rad.g6s-ruhe .sr-hub,
+#f10 .g6s-rad.g6s-ruhe .sr-hub * { pointer-events: none; }
 
 /* Karte mit mehr als zwei Zeilen Stichworten (Skript: kartenVerdichten):
    28 px statt 30 px – meist passen sie dann wieder in zwei Zeilen */

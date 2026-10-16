@@ -1,6 +1,6 @@
 /* =============================================================================
    css/folien/06-repertory-grid.css – Gestaltung nur für Folie f06
-   „Repertory Grid → Markenattribute“ (folien/06-repertory-grid.html)
+   „Repertory Grid → Markenattribute“ (index.html, Folie 06)
    -----------------------------------------------------------------------------
    Alle Regeln beginnen mit .rg… (eigene Klasse der Folie). Nur Variablen aus
    tokens.css – dann stimmt die Folie in allen Themen, hell/dunkel und mit den
@@ -165,7 +165,7 @@
   transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s;
 }
 /* Schritt 2: tritt zurück · Schritt 3: macht Platz für das Ergebnis */
-.rg:has(.rg-z2.schritt-an) .rg-triade { opacity: 0.45; }
+.rg:has(.rg-z2.schritt-an) .rg-triade { opacity: var(--dimmen); }
 .rg:has(.rg-z3.schritt-an) .rg-triade {
   opacity: 0;
   visibility: hidden;

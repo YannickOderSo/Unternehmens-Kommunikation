@@ -536,7 +536,7 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 
 /* Schritt „Merkmale“: Dimensionen ohne Merkmal treten zurück.
    Im Druck/PDF (Handout zum Nachlesen) nur leicht, damit Werte lesbar bleiben. */
-#f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.45; }
+#f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: var(--dimmen); }
 html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.8; }
 
 

@@ -1,14 +1,21 @@
-# AUTOREN.md – Schnittstelle für Folien-Autor:innen
+# AUTOREN.md – Schnittstelle für alle, die Folien ändern
 
-Diese Datei beschreibt verbindlich, wie Folien für die Web-Präsentation (Fallstudie 1 „Brand Persona &
-Markenidentität“, Marke **HOLY**) gebaut werden. Die Engine (`js/deck.js`), die Bausteine
-(`js/komponenten.js`, `css/komponenten.css`) und die Tokens (`css/tokens.css`) sind fertig – Folien
-bestehen nur aus HTML mit den Klassen und Attributen unten, optional ergänzt um eine CSS- und eine
-JS-Datei je Folien-Datei.
+Diese Datei beschreibt verbindlich, wie die Folien der Web-Präsentation (Fallstudie 1 „Brand Persona &
+Markenidentität“, Marke **HOLY**) aufgebaut sind und wie man sie ändert. Die Engine (`js/deck.js`), die
+Bausteine (`js/komponenten.js`, `css/komponenten.css`) und die Tokens (`css/tokens.css`) sind fertig –
+Folien bestehen nur aus HTML mit den Klassen und Attributen unten, ergänzt um eine CSS- und eine
+JS-Datei je Folien-Gruppe.
 
-**Lebende Referenz:** `folien/_demo.html` (+ `css/folien/_demo.css`, `js/folien/_demo.js`) zeigt jeden
-Baustein und jede Animation. Bauen und ansehen:
-`python3 werkzeuge/zusammenbauen.py --nur _demo --ausgabe _test/demo.html` → `_test/demo.html` im Browser öffnen.
+**Stand 16.10.2026 (Zusammenführung):** Alle Folien stehen direkt in **`index.html`** – das ist die
+einzige Quelle für Folieninhalte. Den früheren Bauschritt (`folien/*.html` + `werkzeuge/zusammenbauen.py`)
+gibt es nicht mehr. Ändern = `index.html` bearbeiten, speichern, im Browser **F5**.
+Vor jeder Folie steht ein Kommentarkasten `FOLIE xx` (in `index.html` mit Strg+F „FOLIE 06“ suchen):
+Bündel, Sollzeit, zugehörige CSS-/JS-Datei und was vor dem 26.10. noch zu ändern ist. Darunter folgt die
+ausführliche Anleitung der Folie, dann die Folie selbst.
+
+**Beispiele:** Die bisherige Demo-Datei ist entfernt; die echten Folien zeigen jeden Baustein in Benutzung
+(Steuerrad: Folie 02, 10, 12 · Umfrage: 08 · Wortwolke: 01b, 10 · Rätsel: 01 · Kennzahlen/Zähler: 03, 09 ·
+Tabellen: Backup B2–B6).
 
 Alle Befehle unten werden im Ordner `fallstudie-1-brand-persona/praesentation/` ausgeführt.
 
@@ -37,11 +44,11 @@ Alle Befehle unten werden im Ordner `fallstudie-1-brand-persona/praesentation/` 
 
 ## 2. Dateien und Ablaufplan
 
-Je Folie(ngruppe) eine Datei in `folien/`, Reihenfolge = Dateiname. Optional gleichnamig
-`css/folien/<name>.css` und `js/folien/<name>.js` – werden automatisch eingebunden.
-Dateien mit `_` am Anfang werden beim normalen Zusammenbauen übersprungen (nur mit `--nur _name`).
+Alle Folien stehen in `index.html` in Vortragsreihenfolge (Reihenfolge im Dokument = Reihenfolge im Vortrag).
+Zu jeder Folien-Gruppe gehören `css/folien/<name>.css` und `js/folien/<name>.js` (in `index.html` im
+`<head>` bzw. am Ende eingebunden; neue Dateien dort selbst eintragen).
 
-| ID | Datei | Inhalt | data-zeit | Bündel | data-feld |
+| ID | CSS/JS-Name | Inhalt | data-zeit | Bündel | data-feld |
 |---|---|---|---|---|---|
 | f01 | `01-einstieg.html` | Einstieg: Welche Marke steckt dahinter? + Titel | 45 | A | – (`leer`) |
 | f01b | `01b-wortwolke.html` | (optional) Live-Wortwolke „Was verbinden Sie mit [Marke]?“ | 45 | A | `leer`, `data-optional` |
@@ -51,15 +58,16 @@ Dateien mit `_` am Anfang werden beim normalen Zusammenbauen übersprungen (nur 
 | f05 | `05-limbic-map.html` | Limbic Map | 60 | A | `persona` |
 | f06 | `06-repertory-grid.html` | Repertory Grid → Markenattribute | 90 | B | `attribute` |
 | f07 | `07-laddering.html` | Laddering → Markennutzen | 90 | B | `nutzen` |
-| f08 | `08-analogien.html` | Analogien + Live-Umfrage → Markentonalität | 120 | B | `tonalitaet` |
-| f09 | `09-kommunikationsanalyse.html` | Kommunikationsanalyse → Markenbild | 120 | C | `bild` |
+| f08 + f08b | `08-analogien` | Analogien + Live-Umfrage (70) · Markentonalität nach Aaker (50) | 70 + 50 | B | `tonalitaet` |
+| f09 + f09b | `09-kommunikationsanalyse` | Kanäle & Bildwelt (65) · Markenbild: Corporate Design & Fit (55) | 65 + 55 | C | `bild` |
 | f10 | `10-markensteuerrad.html` | Markensteuerrad (Synthese) | 75 | C | `hub` |
 | f11 | `11-fazit.html` | Fazit & Empfehlungen | 90 | C | – (`leer`) |
 | f12 | `12-fragen.html` | Danke & Fragen (Steuerrad als Sprungmenü) | 0 | alle | – (`leer`) |
 | b1–b7 | `13-backup.html` | Backup: Methodik, Prompt-Log, Datenquellen Persona, RG-Rohdaten, Laddering-Matrix, KA-Raster, Quellenverzeichnis | 0 | je nach Inhalt | passend oder `leer`, `data-backup` |
 
-Summe Hauptfolien ohne optionale Folie: 885 s = 14:45 (15 s Puffer). `zusammenbauen.py` gibt die Summe aus.
-Solange `folien/` nur `_demo.html` enthält, erzeugt `zusammenbauen.py` die `index.html` aus der Demo.
+Summe Hauptfolien ohne optionale Folie: 885 s = 14:45 (15 s Puffer); optionale Folie f01b 45 s, Backup 0 s.
+Die Referentenansicht rechnet mit diesen Sollzeiten (`data-zeit`). Wer eine Sollzeit ändert, gleicht die
+Summe wieder auf höchstens 900 s ab.
 
 ---
 
@@ -119,15 +127,14 @@ Solange `folien/` nur `_demo.html` enthält, erzeugt `zusammenbauen.py` die `ind
 | `data-anrede-sie="…" data-anrede-ihr="…"` | Text passend zur Anrede |
 | `<span class="beispiel">Beispieldaten</span>` | Pille; per `marke.js → beispieldatenHinweis: false` ausblendbar (erst, wenn keine erfundenen Werte mehr da sind!) |
 
-Pfade: `src="bilder/…"` in Folien relativ zum Ordner `praesentation/` schreiben – `zusammenbauen.py`
-passt sie für Ausgaben in Unterordnern an. In `data-*`-Attributen (z. B. `data-bild`) ebenfalls relativ
+Pfade: `src="bilder/…"` in Folien relativ zum Ordner `praesentation/` schreiben (dort liegt `index.html`). In `data-*`-Attributen (z. B. `data-bild`) ebenfalls relativ
 zu `praesentation/`; die Engine löst sie selbst auf.
 
 ---
 
 ## 4. Layouts (`data-layout`)
 
-| Wert | Aufbau | Beispiel in der Demo |
+| Wert | Aufbau | Beispiel |
 |---|---|---|
 | (ohne) | Kopfzeile · Kopf · Inhalt (füllt den Rest) · Fuß | d04, d06 |
 | `titel` | großer Titel im unteren Drittel, darunter `.angaben` | d01 |
@@ -160,7 +167,7 @@ Betreten der Folie. Animationen in einem Schritt-Container (z. B. ein Zähler in
 | `zeichnen` | SVG-Linien zeichnen sich (stroke-dashoffset); gestrichelte Linien/Flächen blenden ein; HTML-Element wächst von links |
 | `zaehlen` | Zahl zählt hoch: `data-ziel="2.8"` `data-dezimalen="1"` `data-einheit=" %"` `data-vorzeichen` `data-start="0"` (deutsches Format: „+2,8“) |
 | `unschaerfe` | wird scharf |
-| `hervorheben` | immer sichtbar, wird ab Schritt n betont (`.ist-hervor`); `data-hervor="aktuell"` = nur solange der Schritt aktuell ist; `data-hervor-stil="flaeche|rahmen|text"`; Elterncontainer mit `data-dimmen` lässt Geschwister auf 45 % zurücktreten |
+| `hervorheben` | immer sichtbar, wird ab Schritt n betont (`.ist-hervor`); `data-hervor="aktuell"` = nur solange der Schritt aktuell ist; `data-hervor-stil="flaeche|rahmen|text"`; Elterncontainer mit `data-dimmen` lässt Geschwister zurücktreten (Deckkraft: Token `--dimmen`, 0.6) |
 | `zustand` | unsichtbarer Auslöser für Folien-Skripte (Hook `schritt`) |
 | `keine` | keine Animation |
 
@@ -188,7 +195,7 @@ Mini-Steuerrad der Zielfolie (Name `steuerrad`, nicht selbst vergeben).
 
 ---
 
-## 6. Bausteine (jeweils Beispiel in `folien/_demo.html`)
+## 6. Bausteine (Beispiele: die Folien in `index.html`)
 
 ### a) Markensteuerrad `.steuerrad` (Felder und Leitfragen nach Esch – mit Vorlesung abgleichen)
 
@@ -203,7 +210,7 @@ und springen zur ersten Hauptfolie mit dem passenden `data-feld`.
 ```
 - `data-aufbau="schritte"`: Methode für Methode (Reihenfolge Desk Research, Persona, Repertory Grid,
   Laddering, Analogien, Kommunikationsanalyse) + Schlussschritt; das gezeigte Feld und seine Methode
-  leuchten, der Rest tritt auf 45 % zurück (funktioniert mit Clicker, ohne Maus).
+  leuchten, der Rest tritt zurück (Token `--dimmen`; funktioniert mit Clicker, ohne Maus).
   `data-schritt-start="n"` (erster Schritt), `data-schluss="aus"`.
 - `data-leitfragen="schrittweise"` (Standard: Leitfrage nur beim gezeigten Feld; passt sie nicht ins
   Feld, steht sie automatisch unter der Methodenkarte) | `an` | `aus`.
@@ -264,10 +271,12 @@ Handys testen.
   Balken mit Prozent (aus den Stimmen berechnet) und Anzahl.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
-  wir: als Eule“.
-- Bedienung im Vortrag: Klick auf Option = +1, Umschalt+Klick oder Rechtsklick = −1, Ziffern 1–9 auf
-  der Folie (Umschalt = −1), Doppelklick auf einen Wert = Zahl eintippen, Knopf „Werte“ = alle
-  eintragen (z. B. aus Mentimeter/Particify), „Zurücksetzen“ (zweimal klicken). Ergebnisse überstehen
+  wir: als Waschbär“.
+- Bedienung im Vortrag: Klick auf Option = +1, Umschalt+Klick oder Rechtsklick = −1, Ziffern 1–9
+  (Umschalt = −1, nur solange die Umfrage zu sehen ist), Doppelklick auf einen Wert = Zahl eintippen,
+  Knopf „Werte“ = alle eintragen (z. B. aus Mentimeter/Particify; Tab = nächstes Feld, nach dem letzten
+  bzw. mit erneutem Klick auf „Werte“ wird alles übernommen), „Zurücksetzen“ (zweimal innerhalb von 3 s
+  klicken). Ergebnisse überstehen
   ein Neuladen (Browser-Speicher) und erscheinen auch im Referentenfenster.
 - Getrennt platzierbar (auch auf späteren Folien):
   `<div class="umfrage-aussage" data-umfrage="tier"></div>`, `<div class="umfrage-stimmen" data-umfrage="tier"></div>`.
@@ -335,8 +344,8 @@ auf der Skala – zeigt, woher die Zahl kommt.
 Weitere Textklassen: `.text`, `.gross`, `.untertitel`, `.text-2` (gedeckt), `.akzent`, `.zahl`,
 `.fett`, `.titel--gross`, `.titel--klein`, `<em>` im Titel (Akzent), `.quelle`, `.meta`.
 
-**Icons** (eigene, schlichte Linien-Icons 24 × 24, Strich 2, Inline-SVG-Sprite in
-`werkzeuge/vorlage.html`, keine Plattform-Logos): `pfeil-rechts pfeil-links pfeil-hoch pfeil-runter
+**Icons** (eigene, schlichte Linien-Icons 24 × 24, Strich 2, Inline-SVG-Sprite am Anfang
+von `index.html`, keine Plattform-Logos): `pfeil-rechts pfeil-links pfeil-hoch pfeil-runter
 raster referent palette mond sonne vollbild hilfe steuerrad schliessen start pause zuruecksetzen
 schwarz extern stift plus minus loeschen haken info lupe person gruppe leiter tabelle vergleich
 sprechblase megafon video bild daten diagramm ziel kompass herz stern zitat uhr qr link lampe blatt
@@ -366,7 +375,7 @@ dokument annahme` → `<svg class="icon"><use href="#i-NAME"/></svg>` (Größe =
 - **Form**: `--radius-s`, `--radius-m`, `--radius-l`, `--radius-pille`, `--karte-rand`, `--karte-polster`,
   `--linie-fein` (2 px), `--linie-stark` (3 px), `--schatten-1`, `--schatten-2`, `--mini-rad`.
 - **Bewegung**: `--dauer-kurz` 240 ms, `--dauer-mittel` 560 ms, `--dauer-lang` 1100 ms,
-  `--dauer-folie`, `--staffel` 70 ms, `--weg` 18 px, `--kurve`, `--kurve-feder` (echte Feder per
+  `--dauer-folie`, `--staffel` 70 ms, `--weg` 18 px, `--dimmen` 0.6 (Deckkraft zurücktretender Elemente), `--kurve`, `--kurve-feder` (echte Feder per
   `linear()`, Ersatz cubic-bezier), `--kurve-wechsel`.
 
 Themen: `editorial` (Standard, Jury-Wahl), `bento`, `keynote`, je `hell`/`dunkel` – Taste T / D.
@@ -393,7 +402,12 @@ aus der Marke; Schrift auf Akzent/Kern automatisch schwarz oder weiß).
 `ctx`: `folie` (das `<section>`-Element), `id`, `daten` (geparstes JSON aus `script.daten`), `schritt`,
 `schritteGesamt`, `richtung`, `bewegungReduziert`, `druckmodus`, `referent`, `marke`, `util`, `deck`.
 Elemente, die in `einrichten` mit `data-schritt` entstehen, zählen automatisch als Schritte. Baut ein
-Skript später neu: `Deck.schritteNeu(ctx.folie)`. Vollständiges Beispiel: `js/folien/_demo.js`.
+Skript später neu: `Deck.schritteNeu(ctx.folie)`. Beispiele: `js/folien/*.js`.
+
+Seit 16.10.2026 zusätzlich: `ctx.sofort` (true = Folie ohne Übergang erreicht – Start, Sprung aus der
+Übersicht, per Adresse, Prüfwerkzeug; Auftrittsanimationen können dann entfallen). Während eines
+animierten Folienwechsels trägt `<html>` die Klasse `wechsel-laeuft`; an seinem Ende kommt das Ereignis
+`deck:wechsel-ende` (`detail: { folie }`) – statt eigener Timer verwenden.
 
 **Deck-Schnittstelle**
 - `Deck.zustand()` → `{ folie, folienIndex, schritt, schritteGesamt, anzahlFolien, anzahlHauptfolien, titel, feld, nummer, backup, thema, modus }`
@@ -419,35 +433,56 @@ eigener Klasse oder `#f06` beginnen.
 
 ---
 
-## 9. Arbeitsablauf für Folien-Agenten
+## 9. Arbeitsablauf: Folie ändern und prüfen
+
+1. `index.html` im Editor öffnen, mit Strg+F den Kasten `FOLIE 06` suchen, Text in der `<section>` ändern
+   (Titel `h2.titel`, Sprechtext `aside.notizen`, Daten `script.daten` – JSON: Anführungszeichen und Kommas
+   beachten). Gestaltung in `css/folien/<name>.css`, Verhalten in `js/folien/<name>.js`.
+2. Speichern, im Browser **F5**, Folie ansehen (alle Schritte durchklicken). Konsole (F12) muss leer sein.
+3. Automatisch prüfen (braucht Node.js und playwright-core mit Chromium – nur für die Prüfung):
 
 ```bash
 cd fallstudie-1-brand-persona/praesentation
-export PLAYWRIGHT_CORE=/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/werkzeuge/node_modules/playwright-core
-export CHROME_PFAD=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+export PLAYWRIGHT_CORE=/pfad/zu/node_modules/playwright-core
+export CHROME_PFAD=/pfad/zu/chrome            # Standard: /opt/pw-browsers/chromium-1194/chrome-linux/chrome
 
-# 1. Datei anlegen: folien/06-repertory-grid.html (+ optional css/folien/06-repertory-grid.css, js/folien/06-repertory-grid.js)
-
-# 2. Nur die eigenen Folien zusammenbauen (Test-Ausgabe, nicht index.html):
-python3 werkzeuge/zusammenbauen.py --nur 06-repertory-grid --ausgabe _test/f06.html
-#    (auch per ID: --nur f06,f07 · Liste ansehen: --liste)
-
-# 3. Prüfen, jeden Schritt fotografieren:
-node werkzeuge/pruefen.mjs _test/f06.html --ausgabe _test/f06-bilder --schritte
-#    weitere Optionen: --thema bento|keynote --modus dunkel --skala 0.5 --nur f06
-#    --druck _test/f06.pdf --optional --primaer FFD400 --sekundaer 1D1D1B --bewegung-reduziert --ohne-bilder
-
-# 4. Screenshots in _test/f06-bilder/ ansehen (f06_s0.png, f06_s1.png …), bericht.json lesen:
-#    "fehler" müssen leer sein; "warnungen" (Wortbudget, Schrift < 28 px) begründen oder beheben.
-
-# 5. Mindestens einmal auch dunkel und in einem anderen Thema prüfen.
+node werkzeuge/pruefen.mjs index.html --ausgabe _test/pruefung --schritte
+#    nur einzelne Folien: --nur f06,f07 · weitere Optionen: --thema bento|keynote --modus dunkel
+#    --skala 0.5 --druck _test/probe.pdf --optional --primaer FFD007 --sekundaer 1D1D1B
+#    --bewegung-reduziert --ohne-bilder
 ```
-`zusammenbauen.py` ohne Optionen erzeugt `index.html` mit allen Folien (Dateien mit `_` ausgenommen) und
-meldet fehlende Notizen, Sollzeiten, doppelte IDs. `--ausgabe` relativ zum Ordner `praesentation/`.
+4. Screenshots in `_test/pruefung/` ansehen (`f06_s0.png`, `f06_s1.png` …), `bericht.json` lesen:
+   „fehler“ müssen leer sein; „warnungen“ (Wortbudget, Schrift < 28 px) begründen oder beheben.
+5. Mindestens einmal auch dunkel und in einem anderen Thema prüfen. `_test/` ist in `.gitignore`.
+
 `pruefen.mjs` endet mit Exit-Code 0 (keine Fehler), 1 (Fehler) oder 2 (Abbruch).
 
 Was `pruefen.mjs` prüft: Konsolen- und Seitenfehler, fehlende Dateien, externe Anfragen (blockiert),
 geladene Schriften, Farbpaare aus den Tokens (auch Text auf Steuerrad-Feldern), Elemente außerhalb der
-Bühne, abgeschnittener bzw. aus einem Kasten ragender Text, Schriftgrößen (< 22 px Fehler, < 28 px
-Warnung außer Metaangaben), Kontrast jedes Textes zu seinem Hintergrund, Wortbudget, fehlende
-Notizen, fehlendes `data-zeit`/`data-titel`; mit `--druck` zusätzlich PDF mit einer Seite je Folie.
+Bühne, abgeschnittener bzw. aus einem Kasten ragender Text, **überlappender Text**, Schriftgrößen (< 22 px
+Fehler, < 28 px Warnung außer Metaangaben), Kontrast jedes Textes zu seinem Hintergrund, Wortbudget
+(„Marken-<br>nutzen“ zählt als ein Wort), fehlende Notizen, fehlendes `data-zeit`/`data-titel`; mit
+`--schritte` die Text- und Kontrastprüfungen in **jedem** Schritt (Befunde nur in Zwischenschritten
+tragen „nur in Schritt n“); mit `--druck` zusätzlich PDF mit einer Seite je Folie.
+
+Ausnahmen: `data-ueberlauf-ok` an einem Element (z. B. absichtlich angeschnittenes Bild) nimmt es samt
+Inhalt von der Überlauf- und Abschneideprüfung aus, `data-ueberlappung-ok` von der Überlappungsprüfung.
+Absolut positionierte Beschriftungen, die ganz außerhalb ihres Kastens stehen (z. B. Methodenbeschreibung
+unter einer Steuerrad-Karte), gelten nicht als „aus dem Kasten ragend“. Ausnahmen sparsam verwenden und im
+HTML-Kommentar begründen.
+
+---
+
+## 10. Änderungen an der Engine bei der Zusammenführung (16.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| `marke.js` | Markenfarben Gelb `#FFD007` / Schwarz `#1D1D1B` (Dossier 6.3 ✔ [1], Web-Werte); Umfrage-Optionen passend zu Folie 08 (Adler, Löwe, Waschbär, Fuchs, Delfin; unsere Antwort: Waschbär); Hinweise zu Logo und Rätselbild. |
+| Umfrage (`js/komponenten.js`) | Ziffern 1–9 zählen nur, solange die Umfrage sichtbar ist (sonst Navigation, z. B. „7 Enter“); Tab/Umschalt+Tab springt durch die Eingabefelder („Werte“), nach dem letzten werden alle übernommen; zweiter Klick auf „Werte“ übernimmt und schließt; „Zurücksetzen“ verwirft offene Felder; Weiterblättern übernimmt offene Felder. Die Übergangslösung in `js/folien/08-analogien.js` ist entfernt. |
+| Steuerrad (`js/komponenten.js`, `css/komponenten.css`) | „Mausregel“ zentral für alle Steuerräder: Nach jedem Folien-/Schrittwechsel hebt eine ruhende Maus nichts hervor (`html.zeiger-gesperrt`), erst nach ≥ 6 px Bewegung; CSS-Hover-Effekte ebenso. Lokale Lösung in `02-vorgehen.js/.css` entfernt. Alle Methodenkarten linksbündig (tote Regel für rechtsbündige Karten entfernt). |
+| Token `--dimmen` (`css/tokens.css`) | Deckkraft zurücktretender Elemente zentral 0.6 (vorher 0.45 bzw. je Folie verschieden): Steuerrad-Fokus, `data-dimmen`, Hervorhebungen auf 06, 08b, 09, 09b. Kernbeschriftung bleibt deckend. |
+| Kopfbereich (`css/deck.css`, `css/komponenten.css`) | Kopfzeile auf allen Folien gleich hoch (Mini-Rad ragt in den Rand statt die Zeile zu vergrößern); Pillen „Beispieldaten“/„Live“ machen die Kickerzeile nicht höher → Kicker und Titel stehen auf allen Hauptfolien auf derselben Höhe. |
+| `js/deck.js` | `ctx.sofort`, Klasse `html.wechsel-laeuft`, Ereignis `deck:wechsel-ende`; Hilfe-Text ergänzt (Ziffern, Taste Z). `02-vorgehen.js` nutzt beides (kein eigener Timer, kein Radaufbau bei Direktsprüngen). |
+| `werkzeuge/pruefen.mjs` | Prüfung in jedem Schritt, Überlappungsprüfung, Wortzählung mit Silbentrennung, Ausnahmen dokumentiert, Aufruf für `index.html`. |
+| Fußzeilen | Einheitlich „Quelle: …“ (Bildnachweis auf Folie 01: „Bild: …“, B7: „Hinweis: …“). |
+| `bilder/platzhalter-raetsel.svg` | eingebauter Hinweistext entfernt (wurde in der Bildtafel von Folie 01 abgeschnitten). |

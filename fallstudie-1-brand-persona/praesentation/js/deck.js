@@ -11,7 +11,9 @@
      Deck.registriere('f06', { einrichten, betreten, verlassen, schritt, druck, vorschau })
      Deck.zustand()   Deck.gehe(folie, schritt)   Deck.weiter()   Deck.zurueck()
      Deck.marke       Deck.util   Deck.folien()   Deck.feldZiel(feld)
-     Ereignisse auf document: 'deck:bereit', 'deck:folie', 'deck:schritt'
+     Ereignisse auf document: 'deck:bereit', 'deck:folie', 'deck:schritt',
+       'deck:wechsel-ende' (Folienwechsel fertig; währenddessen html.wechsel-laeuft)
+     Kontext ctx der Hooks: … ctx.sofort = Folie ohne Übergang erreicht
 
    Aufbau dieser Datei
      1.  Konfiguration (marke.js) und Adress-Parameter
@@ -265,7 +267,7 @@
       .replace(/\[Marke\]/g, marke.name || '[Marke]');
   };
 
-  /* Pfad relativ zum Präsentationsordner (funktioniert auch in _test/…) */
+  /* Pfad relativ zum Präsentationsordner (funktioniert auch für Kopien in Unterordnern) */
   util.pfad = function (relativ) {
     if (!relativ) return relativ;
     if (/^([a-z]+:|\/|#|data:)/i.test(relativ)) return relativ;
@@ -728,6 +730,10 @@
       schritt: aktuell.index === f.index ? aktuell.schritt : 0,
       schritteGesamt: f.schritteGesamt,
       richtung: letzteRichtung,
+      /* true = Folie wurde ohne Übergang erreicht (Start, Sprung per Adresse,
+         Übersicht/Prüfwerkzeug mit { sofort: true }, Druck). Auftritts-
+         Animationen können dann entfallen. */
+      sofort: letzterWechselSofort,
       bewegungReduziert: bewegungReduziert(),
       druckmodus: istDruckmodus,
       referent: IST_REFERENT,
@@ -1061,6 +1067,16 @@
      8. NAVIGATION UND ÜBERGÄNGE
      =========================================================================== */
   var letzteRichtung = 'start';
+  var letzterWechselSofort = true;      /* ctx.sofort (siehe kontext) */
+
+  /* Während ein animierter Folienwechsel läuft, trägt <html> die Klasse
+     „wechsel-laeuft“; an seinem Ende kommt das Ereignis „deck:wechsel-ende“
+     (detail: { folie }). Folien-Skripte brauchen so keinen eigenen Timer. */
+  function wechselEnde(f, nr) {
+    if (nr !== wechselNr) return;           /* inzwischen neuer Wechsel */
+    html.classList.remove('wechsel-laeuft');
+    document.dispatchEvent(new CustomEvent('deck:wechsel-ende', { detail: { folie: f.id } }));
+  }
   var laufenderUebergang = null;
   var gehendeFolie = null;
   var testSofort = false;
@@ -1154,6 +1170,7 @@
     letzteRichtung = alt ? richtung : 'start';
     var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus;
     var nr = ++wechselNr;
+    letzterWechselSofort = !animieren;
 
     if (alt) {
       bausteinHooks(alt, 'verlassen');
@@ -1199,18 +1216,24 @@
     html.classList.toggle('richtung-zurueck', richtung === 'zurueck');
     html.classList.toggle('richtung-vor', richtung !== 'zurueck');
 
+    html.classList.toggle('wechsel-laeuft', animieren);
     if (!animieren) {
       aendern();
+      wechselEnde(f, nr);
     } else if (unterstuetztVT && !bewegungReduziert()) {
       try {
         var uebergang = document.startViewTransition(aendern);
         laufenderUebergang = uebergang;
-        var fertig = function () { if (laufenderUebergang === uebergang) laufenderUebergang = null; };
+        var fertig = function () {
+          if (laufenderUebergang === uebergang) laufenderUebergang = null;
+          wechselEnde(f, nr);
+        };
         uebergang.finished.then(fertig, fertig);
         uebergang.ready.catch(function () { /* übersprungen – kein Fehler */ });
         uebergang.updateCallbackDone.catch(function (e) { console.error(e); });
       } catch (e) {
         aendern();
+        wechselEnde(f, nr);
       }
     } else {
       /* Rückfall: einfaches Überblenden (bei „Bewegung reduzieren“ ohne Weg) */
@@ -1227,6 +1250,7 @@
         alt.el.classList.remove('ist-geht');
         stoppeAnimationen(alt.el);
         if (gehendeFolie === alt) gehendeFolie = null;
+        wechselEnde(f, nr);
       };
       raus.finished.then(aufraeumen, aufraeumen);
       util.animiere(f.el, [{ opacity: 0, translate: (-vz * weg) + 'px 0' }, { opacity: 1, translate: '0 0' }],
@@ -1893,7 +1917,8 @@
       '</dl></div>' +
       '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
       'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
-      'Auf Umfrage-Folien zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'Solange eine Umfrage zu sehen ist, zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'Nach einem Sprung aus dem Backup führt Z zurück zur Backup-Folie. ' +
       'Bedienleiste unten rechts (Maus bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
   }
 

@@ -199,7 +199,9 @@ html.druckmodus #f11 .g6f-pfeil { stroke: var(--f-text-2) !important; }
   font-size: 64px;
   font-weight: var(--gewicht-zahl);
   line-height: 1;
-  color: var(--f-linie);
+  /* gedeckt, aber lesbar (≥ 3 : 1 auch auf dem Beamer); vorher Linienfarbe */
+  color: var(--f-text-2);
+  opacity: 1;
 }
 #f11 .g6f-zeile:has(> .g6f-empfehlung.schritt-an) > .g6f-platz { opacity: 0; }
 html.druckmodus #f11 .g6f-platz { display: none; }

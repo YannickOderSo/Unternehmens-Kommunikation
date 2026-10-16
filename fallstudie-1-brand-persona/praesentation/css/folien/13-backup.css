@@ -1,7 +1,7 @@
 /* =============================================================================
    css/folien/13-backup.css – Gestaltung der Backup-Folien B1–B7
    -----------------------------------------------------------------------------
-   Gehört zu folien/13-backup.html und js/folien/13-backup.js.
+   Gehört zu index.html, Backup B1–B7 und js/folien/13-backup.js.
    Nur Tokens aus css/tokens.css (keine festen Farben oder Schriften) – so
    passt alles in allen Themen (editorial, bento, keynote), hell und dunkel,
    und mit jeder Markenfarbe.
@@ -330,11 +330,16 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
    Zeilen tritt zurück (Gruppenlinien bleiben), damit die zwei Zeilen auch am
    Beamer und im dunklen Modus klar hervorstechen. */
 #b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.bk3-gruppe-b:not(.ist-vorsicht):not(.ist-kern) > * { background: transparent; }
-#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > :not(.bk3-dim) { background: color-mix(in oklab, var(--f-warnung) 22%, var(--f-hintergrund)); }
+/* Fläche mit --bk-grund mischen (Editorial: Hintergrund, Bento/Keynote:
+   Karte), damit sie auf jeder Unterlage gleich hell wirkt. Die Schrift wird
+   etwas zur Textfarbe hin gezogen – so bleibt der Kontrast in allen Themen
+   und Modi über 4,5 : 1 (WCAG AA). */
+#b3 { --bk3-warnschrift: color-mix(in oklab, var(--f-warnung) 80%, var(--f-text)); }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > :not(.bk3-dim) { background: color-mix(in oklab, var(--f-warnung) 22%, var(--bk-grund)); }
 #b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > td:nth-child(2) { box-shadow: inset 6px 0 0 var(--f-warnung); }
 #b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk3-befund,
 #b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk3-jahr,
-#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk-status { color: var(--f-warnung); font-weight: 650; }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk-status { color: var(--bk3-warnschrift); font-weight: 650; }
 
 /* Unter der Tabelle: Datenlücke und Persona (zwei Zeilen, unten bündig) */
 #b3 .bk3-unten { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }

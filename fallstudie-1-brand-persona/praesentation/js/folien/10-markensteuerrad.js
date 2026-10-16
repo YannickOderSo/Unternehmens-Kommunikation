@@ -17,20 +17,42 @@
         (Daten: „luecken“ → „markieren“ im JSON der Folie),
       • je Lücke eine kurze Notiz in der freien Fläche zwischen den Karten
         (links: zwischen Nutzen und Attributen, rechts: zwischen Tonalität und Bild).
+        Im Kopf der Notiz steht das Feldpaar („Lücke 2 · Bild ↔ Persona“) –
+        automatisch aus „markieren“, oder fest über „paar“ im JSON.
       Das Rad wird bei einem Themenwechsel neu gebaut – dann setzt das Skript
       Kürzel, Nummern und Notizen automatisch neu.
+      Steht ein Stichwort aus „markieren“ nicht (genau so) im Rad, meldet das
+      Skript das in der Konsole (pruefen.mjs zeigt es dann an).
 
    4. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
       Nur wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true)
       und in ihrer Wortwolke Wörter stehen, gibt es einen
       zusätzlichen Schritt: links „Unsere Analyse“ (Markenkern + wie viele Zurufe
       zu unserem Steuerrad passen), rechts die Zurufe (Treffer hervorgehoben).
+      Gezählt werden Zurufe, nicht Begriffe: „Gaming“ viermal gerufen = 4.
       Im Druck/PDF bleibt stattdessen das fertige Steuerrad stehen.
 
-   Texte ändern: im HTML (folien/10-markensteuerrad.html), nicht hier.
+   5. RUHE NACH DEM BETRETEN: Steht der Mauszeiger nach einem Sprung (z. B.
+      über die Verweise auf Folie 11) zufällig über einer Karte, würde das Rad
+      sofort alles andere abdunkeln, und ein zweiter Klick spränge ungewollt
+      weiter. Deshalb reagiert das Rad erst auf die Maus, wenn sie sich
+      wirklich bewegt (mehr als 10 px). Tastatur (Tab + Enter) geht sofort.
+
+   Texte ändern: im HTML (index.html, Folie 10), nicht hier.
    ============================================================================= */
 (function () {
   'use strict';
+
+  /* Kurznamen der Felder – für den Kopf der Lücken-Notizen („Bild ↔ Persona“) */
+  var FELDNAMEN = {
+    kompetenz: 'Kompetenz', persona: 'Persona', attribute: 'Attribute',
+    nutzen: 'Nutzen', tonalitaet: 'Tonalität', bild: 'Bild'
+  };
+
+  /* Füllwörter, die beim Abgleich mit der Wortwolke NICHT als Treffer zählen
+     (sonst passte z. B. der Zuruf „gute Laune“ über „gutes“ zu „gutes Gewissen“) */
+  var STOPPWOERTER = ['ohne', 'seit', 'viele', 'vielen', 'gute', 'guter', 'gutes', 'gutem', 'guten',
+    'jahre', 'jahren', 'mit', 'und', 'oder', 'aber', 'sehr', 'mehr', 'eine', 'einer', 'nicht'];
 
   /* Text vergleichbar machen: klein, ohne Anführungszeichen und Satzzeichen */
   function normal(text) {
@@ -76,16 +98,17 @@
     var teile = [];
     texte.forEach(function (t) {
       normal(t).split(/[\s\-–&]+/).forEach(function (teil) {
-        if (teil.length >= 4 && teile.indexOf(teil) < 0) teile.push(teil);
+        if (teil.length >= 4 && teile.indexOf(teil) < 0 && STOPPWOERTER.indexOf(teil) < 0) teile.push(teil);
       });
     });
     return teile;
   }
 
-  /* Passt ein Zuruf zu einem Wortteil? (gleicher Wortanfang, mind. 4 Zeichen) */
+  /* Passt ein Zuruf zu einem Wortteil? (gleicher Wortanfang, mind. 4 Zeichen,
+     Füllwörter zählen nicht) */
   function istTreffer(zuruf, teile) {
     return normal(zuruf).split(/[\s\-–&]+/).some(function (t) {
-      if (t.length < 4) return false;
+      if (t.length < 4 || STOPPWOERTER.indexOf(t) >= 0) return false;
       return teile.some(function (s) {
         return s.indexOf(t) === 0 || t.indexOf(s) === 0 || (t.length >= 5 && s.length >= 5 && t.slice(0, 5) === s.slice(0, 5));
       });
@@ -143,7 +166,11 @@
         }, null, ebene);
         var kopf = u.element('span', { class: 'g6s-luecke-kopf', 'data-meta': '' }, null, notiz);
         u.element('span', { class: 'g6s-nummer', 'aria-hidden': 'true' }, String(l.nummer), kopf);
-        u.element('span', { class: 'g6s-luecke-titel' }, 'Lücke ' + l.nummer, kopf);
+        /* „Lücke 1“ + Feldpaar in EINEM Block: Rechts dreht das CSS nur
+           Nummer und Block um, die Lesereihenfolge bleibt „Lücke 2 · Bild ↔ Persona“ */
+        var titel = u.element('span', { class: 'g6s-luecke-titel' }, 'Lücke ' + l.nummer, kopf);
+        var paar = paarText(l);
+        if (paar) u.element('span', { class: 'g6s-luecke-paar' }, ' · ' + paar, titel);
         u.element('span', { class: 'g6s-luecke-text' }, u.markeText(l.text || ''), notiz);
         return { luecke: l, el: notiz, seite: seite };
       });
@@ -181,14 +208,64 @@
       if (!zustand) return;
       platzieren(zustand);
       abgleichPruefen(ctx, zustand);
+      if (!ctx.druckmodus) ruheStarten(zustand);
+    },
+
+    verlassen: function (ctx) {
+      var zustand = ctx.folie._g6s;
+      if (zustand) ruheBeenden(zustand);
     },
 
     druck: function (ctx) {
       var zustand = ctx.folie._g6s;
       if (!zustand) return;
+      ruheBeenden(zustand);
       ctx.util.messen(zustand.rad, function () { platzieren(zustand); });
     }
   });
+
+  /* Feldpaar einer Lücke: fest aus „paar“ im JSON oder aus den Feldern unter
+     „markieren“ (in deren Reihenfolge, jedes Feld nur einmal) */
+  function paarText(l) {
+    if (l.paar) return Deck.util.markeText(l.paar);
+    var namen = [];
+    (l.markieren || []).forEach(function (m) {
+      var name = FELDNAMEN[m.feld] || m.feld;
+      if (name && namen.indexOf(name) < 0) namen.push(name);
+    });
+    return namen.length > 1 ? namen.join(' ↔ ') : '';
+  }
+
+
+  /* ===========================================================================
+     RUHE NACH DEM BETRETEN (siehe Kopfkommentar, Punkt 5)
+     Klasse g6s-ruhe am Rad = Felder, Karten und Pillen nehmen keine
+     Mausereignisse an (CSS). Sie fällt weg, sobald sich die Maus mehr als
+     10 px bewegt hat (gemessen ab der ersten Bewegung nach dem Betreten).
+     =========================================================================== */
+  function ruheStarten(zustand) {
+    var rad = zustand.rad;
+    ruheBeenden(zustand);
+    rad.classList.add('g6s-ruhe');
+    /* Hat die Maus schon während des Übergangs eine Karte „berührt“, steht
+       die Abdunkelung noch – zurücknehmen, außer das Rad hebt gerade selbst
+       das Feld des aktuellen Schritts hervor (Schritte 1–6) */
+    if (!rad._schrittFokus) {
+      rad.classList.remove('hat-fokus');
+      Array.prototype.forEach.call(rad.querySelectorAll('.ist-fokus'), function (k) { k.classList.remove('ist-fokus'); });
+    }
+    var start = null;
+    zustand.ruheBewegung = function (e) {
+      if (!start) { start = { x: e.clientX, y: e.clientY }; return; }
+      if (Math.abs(e.clientX - start.x) + Math.abs(e.clientY - start.y) > 10) ruheBeenden(zustand);
+    };
+    document.addEventListener('pointermove', zustand.ruheBewegung, true);
+  }
+  function ruheBeenden(zustand) {
+    zustand.rad.classList.remove('g6s-ruhe');
+    if (zustand.ruheBewegung) document.removeEventListener('pointermove', zustand.ruheBewegung, true);
+    zustand.ruheBewegung = null;
+  }
 
   /* Alles, was dieses Skript in den (neu) gebauten Rad-Inhalt einfügt */
   function radErgaenzen(zustand) {
@@ -260,11 +337,29 @@
      Die Nummer ist ein eigener Schritt (erscheint mit den Notizen). */
   function markieren(zustand) {
     var rad = zustand.rad;
+    if (!rad.querySelector('.sr-karte')) return;                  // Rad noch nicht gebaut
+    zustand.gewarnt = zustand.gewarnt || {};
     zustand.luecken.forEach(function (l) {
       (l.markieren || []).forEach(function (m) {
         var karte = rad.querySelector('.sr-karte[data-paar="' + m.feld + '"]');
-        if (!karte) return;
         var gesucht = normal(Deck.util.markeText(m.stichwort));
+        var gefunden = false;
+        if (karte) {
+          Array.prototype.forEach.call(karte.querySelectorAll('.sr-stichwort'), function (sw) {
+            if (normal(wortText(sw)) === gesucht) gefunden = true;
+          });
+        }
+        /* Tippfehler-Hilfe für Studierende: Stichwort aus „markieren“ fehlt im Rad
+           (je Stichwort nur einmal melden, auch wenn das Rad neu gebaut wird) */
+        if (!gefunden) {
+          var schluessel = l.nummer + '|' + m.feld + '|' + gesucht;
+          if (!zustand.gewarnt[schluessel]) {
+            zustand.gewarnt[schluessel] = true;
+            console.warn('f10: Stichwort „' + m.stichwort + '“ (Lücke ' + l.nummer + ') steht nicht im Feld „' + m.feld +
+              '“ des Steuerrads – in index.html, Folie 10 unter „markieren“ genau wie im Rad schreiben.');
+          }
+          return;
+        }
         Array.prototype.forEach.call(karte.querySelectorAll('.sr-stichwort'), function (sw) {
           if (sw.querySelector('.g6s-wortmarke')) return;          // schon markiert
           if (normal(wortText(sw)) !== gesucht) return;
@@ -471,11 +566,18 @@
     var schritt = String(zustand.schrittLuecken + 1);
     var vorher = el.getAttribute('data-schritt');
     if (an) {
-      var treffer = woerter.filter(function (w) { return istTreffer(w.text, zustand.teile); }).length;
+      /* Zurufe zählen, nicht Begriffe: Ein Wort, das viermal gerufen wurde,
+         zählt viermal (anzahl aus der Wortwolke) */
+      var zurufe = function (w) { return Math.max(1, parseInt(w.anzahl, 10) || 1); };
+      var treffer = 0, alle = 0;
+      woerter.forEach(function (w) {
+        alle += zurufe(w);
+        if (istTreffer(w.text, zustand.teile)) treffer += zurufe(w);
+      });
       var zahl = el.querySelector('[data-g6s="treffer"]');
       if (zahl) { zahl.setAttribute('data-ziel', String(treffer)); zahl.textContent = String(treffer); }
       var gesamt = el.querySelector('[data-g6s="gesamt"]');
-      if (gesamt) gesamt.textContent = 'von ' + woerter.length;
+      if (gesamt) gesamt.textContent = 'von ' + alle;
       el.hidden = false;
       el.setAttribute('data-schritt', schritt);
       el.setAttribute('data-animation', 'einblenden');

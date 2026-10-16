@@ -2,7 +2,7 @@
    js/folien/04-persona.js – Skript für Folie f04 „Brand Persona“
    -----------------------------------------------------------------------------
    Baut den Persona-Steckbrief aus den Daten der Folie
-   (<script type="application/json" class="daten"> in folien/04-persona.html):
+   (<script type="application/json" class="daten"> in index.html, Folie 04):
      • Titel, Name, Zitat, Bild-Hinweis (und das Bild, falls ein Pfad eingetragen ist)
      • fünf Dimensionen als Blöcke mit Symbol:
          obere Reihe (Schritt 2): die ersten drei Einträge

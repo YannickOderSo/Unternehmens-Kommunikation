@@ -1,9 +1,11 @@
 /* =============================================================================
    js/folien/12-fragen.js – Folie f12 · Danke & Fragen
    -----------------------------------------------------------------------------
-   Baut die Sprunglisten „Methoden“ und „Backup“ aus dem JSON der Folie
-   (<script class="daten"> in folien/12-fragen.html) und koppelt sie mit dem
-   Steuerrad (Baustein der Engine, Modus „menue“):
+   Baut die Sprunglisten „Methoden“, „Ergebnisse“ und „Backup“ aus dem JSON
+   der Folie (<script class="daten"> in index.html, Folie 12), setzt den
+   Kern-Satz von Folie 10 in die Fazit-Zeile oben rechts (eine Quelle für
+   Folie 10, 11 und 12; fehlt Folie 10, bleibt der Text im HTML) und koppelt
+   die Listen mit dem Steuerrad (Baustein der Engine, Modus „menue“):
      • Klick oder Tab + Enter auf einen Eintrag springt zur Folie.
      • Zeigen/Fokus auf eine Methode lässt ihr Feld im Rad leuchten,
        Zeigen auf ein Feld im Rad hebt die passenden Methoden hervor.
@@ -18,6 +20,17 @@
     var treffer = null;
     Deck.folien().forEach(function (f) { if (f.id === id) treffer = f; });
     return treffer;
+  }
+
+  /* Kern-Satz aus den Daten von Folie 10 lesen (<script class="daten"> → „kern“) */
+  function kernEinsetzen(ctx) {
+    var platz = ctx.folie.querySelector('[data-g6d="kern"]');
+    var f10 = folieSuchen('f10');
+    if (!platz || !f10 || !f10.element) return;
+    var skript = f10.element.querySelector(':scope > script.daten');
+    var daten = null;
+    try { daten = skript ? JSON.parse(skript.textContent) : null; } catch (e) { daten = null; }
+    if (daten && daten.kern) platz.textContent = ctx.util.markeText(daten.kern);
   }
 
   /* Einen Sprung-Knopf bauen: <li><button>Nummer Name</button></li> */
@@ -82,10 +95,15 @@
       var zustand = { knoepfe: [], rad: ctx.folie.querySelector('.steuerrad') };
       ctx.folie._g6d = zustand;
 
-      var methodenListe = ctx.folie.querySelector('[data-g6d="methoden"]');
-      var backupListe = ctx.folie.querySelector('[data-g6d="backup"]');
-      (daten.methoden || []).forEach(function (m) { if (methodenListe) zustand.knoepfe.push(knopfBauen(u, methodenListe, m)); });
-      (daten.backup || []).forEach(function (b) { if (backupListe) zustand.knoepfe.push(knopfBauen(u, backupListe, b)); });
+      kernEinsetzen(ctx);
+
+      /* Listen füllen: Schlüssel im JSON → Liste mit data-g6d="…" im HTML */
+      ['methoden', 'ergebnisse', 'backup'].forEach(function (schluessel) {
+        var liste = ctx.folie.querySelector('[data-g6d="' + schluessel + '"]');
+        (daten[schluessel] || []).forEach(function (eintrag) {
+          if (liste) zustand.knoepfe.push(knopfBauen(u, liste, eintrag));
+        });
+      });
       zieleAktualisieren(zustand);
 
       /* Kopplung Liste → Rad */

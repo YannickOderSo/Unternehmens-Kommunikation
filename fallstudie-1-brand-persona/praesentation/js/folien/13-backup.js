@@ -1,5 +1,5 @@
 /* =============================================================================
-   js/folien/13-backup.js – Skript zu folien/13-backup.html (Backup B1–B7)
+   js/folien/13-backup.js – Skript zu index.html, Backup B1–B7 (Backup B1–B7)
    -----------------------------------------------------------------------------
    Baut die Tabellen der Backup-Folien aus den Daten in
    <script type="application/json" class="daten"> (je Folie):
@@ -11,14 +11,15 @@
    Außerdem auf allen Backup-Folien: Knopf „Zu Folie …“ (data-bk-ziel) springt
    zur passenden Hauptfolie (Endzustand) – mit Maus, Tab + Enter oder Leertaste.
    Rückweg: Nach dem Sprung führt Taste Z zurück zur Backup-Folie (in den
-   Schritt, in dem man sie verlassen hat). Ein kurzer Hinweis unten zeigt das
-   nach jedem Sprung an.
+   Schritt, in dem man sie verlassen hat). Ein kurzer Hinweis zeigt das
+   nach jedem Sprung an. Sprung und Rückweg funktionieren auch aus der
+   Referentenansicht heraus (Beamer folgt).
 
    Hervorhebungen in den Schritten steuert das CSS (css/folien/13-backup.css)
    über unsichtbare Auslöser <span class="bk-zustand bk-z1" data-schritt="1">.
    Deshalb stimmen Druck (Endzustand), Vorschau und Rücksprung automatisch.
 
-   Inhalte ändern: NUR in den Daten der Folie (folien/13-backup.html).
+   Inhalte ändern: NUR in den Daten der Folie (index.html, Backup B1–B7).
    ============================================================================= */
 (function () {
   'use strict';
@@ -85,21 +86,55 @@
 
   /* ---------------------------------------------------------------------------
      Sprung zur Hauptfolie und Rückweg (Taste Z)
+     Mit Referentenansicht (Taste P) laufen ZWEI Fenster: das Vortragsfenster
+     (Beamer) und das Referentenfenster. Deck.gehe() wirkt nur im eigenen
+     Fenster. Deshalb:
+       • Das Vortragsfenster springt, merkt sich den Rückweg und schickt jede
+         Änderung des Rückwegs an das Referentenfenster („bk-rueckweg“).
+       • Das Referentenfenster schickt Sprung („bk-sprung“) und Rückweg
+         („bk-zurueck“) über Deck.kanal an das Vortragsfenster und springt
+         zusätzlich selbst – so klappt es auch, wenn es allein geöffnet ist.
+     Ohne Referentenansicht läuft alles nur im Vortragsfenster.
      --------------------------------------------------------------------------- */
 
   /* Gemerkter Rückweg nach einem Sprung (null = keiner):
      { backup: 'b4', nummer: 'B4', schritt: 1 } */
   var rueckweg = null;
   var RUECK_TASTE = 'z';                        // Taste für den Rückweg (klein geschrieben)
+  /* Läuft dieses Skript im Referentenfenster? (wie die Engine: Adresse
+     enthält „?referent“; einrichten() übernimmt zusätzlich ctx.referent) */
+  var imReferentFenster = new URLSearchParams(location.search).has('referent');
+
+  /* Nachricht an das jeweils andere Fenster (still, wenn es keins gibt) */
+  function melden(typ, daten) {
+    if (Deck.kanal && Deck.kanal.senden) Deck.kanal.senden(typ, daten || {});
+  }
+
+  /* Rückweg setzen – das Vortragsfenster teilt ihn dem Referentenfenster mit */
+  function rueckwegSetzen(wert) {
+    rueckweg = wert;
+    if (!imReferentFenster) melden('bk-rueckweg', { rueckweg: wert });
+  }
 
   /* Sprung zur Zielfolie – im Endzustand, damit man dort weiterreden kann.
      vonId = Backup-Folie, von der aus gesprungen wird (für den Rückweg). */
   function springe(id, vonId) {
+    if (imReferentFenster) melden('bk-sprung', { ziel: id, von: vonId });
     var von = folieMitId(vonId);
     var stand = Deck.zustand();
-    rueckweg = von ? { backup: von.id, nummer: von.nummer, schritt: stand.folie === von.id ? stand.schritt : 'ende' } : null;
+    rueckwegSetzen(von ? { backup: von.id, nummer: von.nummer, schritt: stand.folie === von.id ? stand.schritt : 'ende' } : null);
     Deck.gehe(id, 'ende');
     if (rueckweg && Deck.hinweis) Deck.hinweis('Zurück zu ' + rueckweg.nummer + ': Taste Z');
+  }
+
+  /* Rückweg ausführen. Gibt true zurück, wenn gesprungen wurde. */
+  function zurueckSpringen() {
+    var ziel = rueckweg;
+    if (!ziel) return false;
+    rueckwegSetzen(null);                       // Rückweg gilt genau einmal
+    if (Deck.zustand().folie === ziel.backup) return false;
+    Deck.gehe(ziel.backup, ziel.schritt);
+    return true;
   }
 
   /* Taste Z: zurück zur gemerkten Backup-Folie. Gibt true zurück, wenn die
@@ -108,12 +143,23 @@
     Deck.taste(function (e) {
       if (!rueckweg || String(e.key).toLowerCase() !== RUECK_TASTE) return false;
       if (document.documentElement.classList.contains('ebene-offen')) return false;   // Übersicht/Hilfe offen
-      var jetzt = Deck.zustand();
-      var ziel = rueckweg;
-      rueckweg = null;                          // Rückweg gilt genau einmal
-      if (jetzt.folie === ziel.backup) return false;
-      Deck.gehe(ziel.backup, ziel.schritt);
-      return true;
+      if (imReferentFenster) melden('bk-zurueck');
+      return zurueckSpringen();
+    });
+  }
+
+  /* Nachrichten zwischen den Fenstern (Deck.kanal der Engine) */
+  if (Deck.kanal && Deck.kanal.bei) {
+    /* im Vortragsfenster: Sprung bzw. Rückweg, ausgelöst im Referentenfenster */
+    Deck.kanal.bei('bk-sprung', function (d) {
+      if (!imReferentFenster && d && folieMitId(d.ziel)) springe(d.ziel, d.von);
+    });
+    Deck.kanal.bei('bk-zurueck', function () {
+      if (!imReferentFenster) zurueckSpringen();
+    });
+    /* im Referentenfenster: Rückweg des Vortragsfensters übernehmen */
+    Deck.kanal.bei('bk-rueckweg', function (d) {
+      if (imReferentFenster) rueckweg = (d && d.rueckweg) || null;
     });
   }
 
@@ -535,6 +581,7 @@
   Object.keys(BAUER).forEach(function (id) {
     Deck.registriere(id, {
       einrichten: function (ctx) {
+        if (ctx.referent) imReferentFenster = true;
         /* nur einmal bauen (Schutz, falls einrichten erneut aufgerufen wird) */
         if (!ctx.folie._bkGebaut && BAUER[id]) {
           ctx.folie._bkGebaut = true;

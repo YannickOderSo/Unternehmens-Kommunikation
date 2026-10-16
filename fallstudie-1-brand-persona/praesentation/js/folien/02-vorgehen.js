@@ -1,5 +1,5 @@
 /* =============================================================================
-   js/folien/02-vorgehen.js – Folien-Skript für folien/02-vorgehen.html (f02)
+   js/folien/02-vorgehen.js – Folien-Skript für index.html, Folie 02
    -----------------------------------------------------------------------------
    Das Markensteuerrad baut der Baustein „steuerrad“ (js/komponenten.js) im
    Modus „hub“ mit data-aufbau="schritte": je Klick eine Methode (Reihenfolge
@@ -21,9 +21,8 @@
       Aufgabenstellung); Tab springt nur über die sechs Karten, in der
       Reihenfolge des Vortrags; „Folien 08–08b“ wird zu „Folie 08 f.“;
       Seitenbeschriftung nur „Hard Facts“ / „Soft Facts“ (Wortbudget).
-   5. Mausregel: Eine liegen gebliebene Maus (z. B. noch über dem Feld der
-      Wortwolke auf Folie 01b) hebt nichts hervor. Die Maus zählt erst, wenn
-      sie seit dem letzten Klick mindestens 6 px bewegt wurde.
+   5. Mausregel (liegen gebliebene Maus hebt nichts hervor): jetzt zentral
+      im Baustein, siehe js/komponenten.js.
    6. Folienwechsel mit Morph ins Mini-Rad: Die beiden Pillen bekommen kurz
       einen eigenen View-Transition-Namen (liegen dann über dem gleitenden
       Rad), die Verbinderpunkte sind kurz unsichtbar.
@@ -44,14 +43,8 @@
 
   /* Reihenfolge der Felder beim Aufbau (im Uhrzeigersinn ab oben links) */
   var AUFBAU = ['nutzen', 'tonalitaet', 'bild', 'attribute'];
-  /* So weit (px) muss die Maus nach einem Klick bewegt werden, bevor sie
-     wieder etwas hervorhebt */
-  var MAUS_SCHWELLE = 6;
   /* Der Ring endet so viele px innerhalb der Pillenkante (läuft unter den Rand) */
   var RING_UNTER_RAND = 2;
-  /* Pillen und Punkte gelten so lange als „im Folienwechsel“ (ms) –
-     etwas länger als der Morph (--dauer-folie × 1,15) */
-  var WECHSEL_DAUER = 900;
 
   function huelleVon(wurzel) {
     return wurzel.querySelector('.steuerrad.sr-modus-hub');
@@ -222,64 +215,14 @@
        Methoden im JSON ändert) */
     folie.setAttribute('data-schritte', String(s.rahmen));
     huelle._innen._vorgehenAngepasst = true;
-    mausKoppeln(huelle);
     Deck.schritteNeu(folie);
     return true;
   }
 
 
-  /* ---------- 5. Mausregel ---------- */
-  var maus = { x: null, y: null, bezug: null, frei: true };
-
-  /* Klasse .vorgehen-maus-ruht: schaltet auch die reinen CSS-Hover-Effekte
-     (Kartenrand, Kern) ab, solange die Maus gesperrt ist */
-  function mausKlasse() {
-    var folie = document.getElementById('f02');
-    var huelle = folie && huelleVon(folie);
-    if (huelle) huelle.classList.toggle('vorgehen-maus-ruht', !maus.frei);
-  }
-
-  /* Nach jedem Schrittwechsel: Maus „gesperrt“, bis sie bewegt wird */
-  function mausSperren() {
-    maus.frei = false;
-    maus.bezug = maus.x === null ? null : { x: maus.x, y: maus.y };
-    mausKlasse();
-  }
-
-  /* Freigabe: Liegt die Maus über einem Feld oder einer Karte, das Zeigen
-     nachholen (der Baustein reagiert auf „pointerover“) */
-  function mausNachholen() {
-    var folie = document.getElementById('f02');
-    var huelle = folie && huelleVon(folie);
-    if (!huelle || !util.istAktiv(huelle) || huelle._schrittFokus) return;
-    var el = document.elementFromPoint(maus.x, maus.y);
-    if (el && huelle.contains(el)) {
-      el.dispatchEvent(new PointerEvent('pointerover', { bubbles: true, pointerType: 'mouse', clientX: maus.x, clientY: maus.y }));
-    }
-  }
-
-  document.addEventListener('pointermove', function (e) {
-    maus.x = e.clientX;
-    maus.y = e.clientY;
-    if (maus.frei) return;
-    if (!maus.bezug) { maus.bezug = { x: e.clientX, y: e.clientY }; return; }
-    if (Math.abs(e.clientX - maus.bezug.x) + Math.abs(e.clientY - maus.bezug.y) >= MAUS_SCHWELLE) {
-      maus.frei = true;
-      mausKlasse();
-      mausNachholen();
-    }
-  }, { passive: true, capture: true });
-
-  /* Solange gesperrt, erreicht „pointerover“ den Baustein nicht (auch nicht
-     die Ereignisse, die der Browser schickt, wenn unter einer ruhenden Maus
-     ein Element erscheint). Tastaturfokus bleibt unberührt. */
-  function mausKoppeln(huelle) {
-    if (huelle._vorgehenMaus) return;
-    huelle._vorgehenMaus = true;
-    huelle.addEventListener('pointerover', function (e) {
-      if (!maus.frei) e.stopPropagation();
-    }, true);
-  }
+  /* ---------- 5. Mausregel ----------
+     Seit 16.10.2026 zentral im Baustein (js/komponenten.js, „Mausregel“):
+     gilt für alle Steuerräder (auch Folie 10 und 12). */
 
 
   /* ---------- Zustände der Schritte 6 und 7 ---------- */
@@ -351,16 +294,21 @@
     if (oben) oben.style.viewTransitionName = an ? 'vorgehen-pille-oben' : '';
     if (unten) unten.style.viewTransitionName = an ? 'vorgehen-pille-unten' : '';
   }
+  /* Pillen und Punkte gelten als „im Folienwechsel“, bis die Engine das Ende
+     des Übergangs meldet (Ereignis deck:wechsel-ende, seit 16.10.2026 –
+     vorher ein eigener Timer von 900 ms) */
   function wechselBeginnen(huelle, klasse) {
     var nr = ++wechselNr;
     huelle.classList.remove('vorgehen-geht', 'vorgehen-kommt');
     huelle.classList.add(klasse);
     pillenNamen(huelle, true);
-    setTimeout(function () {
+    var ende = function () {
+      document.removeEventListener('deck:wechsel-ende', ende);
       if (nr !== wechselNr) return;
       huelle.classList.remove(klasse);
       pillenNamen(huelle, false);
-    }, WECHSEL_DAUER);
+    };
+    document.addEventListener('deck:wechsel-ende', ende);
   }
   function wechselBeenden(huelle) {
     wechselNr++;
@@ -381,13 +329,14 @@
     },
     betreten: function (ctx, schritt) {
       anpassen(ctx.folie);
-      mausSperren();
       var huelle = huelleVon(ctx.folie);
       if (!huelle) return;
       var animiert = !ctx.druckmodus && !ctx.bewegungReduziert;
       if (animiert && ctx.richtung === 'zurueck') wechselBeginnen(huelle, 'vorgehen-kommt');
       else wechselBeenden(huelle);
-      if (schritt === 0 && ctx.richtung !== 'zurueck' && animiert) radAufbauen(huelle);
+      /* Aufbau nur beim normalen Weiterblättern – nicht bei Sprüngen ohne
+         Übergang (Übersicht, Adresse, Start), dort steht das Rad sofort */
+      if (schritt === 0 && ctx.richtung !== 'zurueck' && animiert && !ctx.sofort) radAufbauen(huelle);
     },
     verlassen: function (ctx) {
       var huelle = huelleVon(ctx.folie);
@@ -396,7 +345,6 @@
     schritt: function (ctx, n) {
       anpassen(ctx.folie);
       zustand(ctx.folie, n);
-      mausSperren();
     },
     druck: function (ctx) {
       anpassen(ctx.folie);
@@ -414,7 +362,7 @@
       var s = schrittNummern(original);
       ketteZeigen(kopie, schritt === s.kette);
       rahmenZeigen(kopie, schritt >= s.rahmen);
-      kopie.classList.remove('vorgehen-geht', 'vorgehen-kommt', 'vorgehen-maus-ruht');
+      kopie.classList.remove('vorgehen-geht', 'vorgehen-kommt');
     }
   });
 })();
