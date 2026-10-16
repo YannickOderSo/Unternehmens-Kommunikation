@@ -11,7 +11,7 @@ export const meta = {
 // Anlass: Im Feinschliff-Auftrag des Hauptworkflows wurde die Befundliste der Abschlussprüfung mit kurz(…, 16000)
 // gekürzt; 18 von 40 Befunden (Index 22–39) erreichten den Feinschliff-Agenten nicht. Sie stehen hier wörtlich als
 // Konstante RESTBEFUNDE (aus dem Workflow-Protokoll). Ergänzt (16.10., nach Merge von master): Befunde der Live-Prüfung
-// von Account 1 (Übergabe Ü02) als U02_BEFUNDE. Rahmenregeln, Aufgabe, Ablaufplan, Schemas und der Auftrag der
+// von Account 1 (Übergabe Ü02) als U02_BEFUNDE; Wunsch „HOLY-Logo auf Folie 1“ (Prompt A2-27) im Nacharbeit-Auftrag. Rahmenregeln, Aufgabe, Ablaufplan, Schemas und der Auftrag der
 // Anforderungsprüfung sind wörtlich aus dem Hauptskript übernommen.
 
 const REPO = '/home/user/Unternehmens-Kommunikation'
@@ -119,6 +119,8 @@ Zusätzlich die Befunde aus der Live-Prüfung der Webseite durch Account 1 (Übe
 ${U02_BEFUNDE}
 Diese Änderungen von master sind bereits in deinem Stand enthalten und dürfen NICHT zurückgedreht werden (Ü02, wörtlich):
 ${U02_ERHALTEN}
+Zusätzlicher Wunsch von Yannick Heisler (Prompt A2-27, wörtlich): „Auf folie 1 fehlt das holy logo“. Setze das offizielle HOLY-Logo auf Folie 01 (Einstieg/Titel): Empfehlung – in der Auflösung (Schritt 1) und im Titelzustand anstelle oder neben dem gesetzten Markennamen das Logo im gelben Oval bilder/holy-logo-oval.png (passt zur dunklen Bühne und zur gelben Bildfläche); Datei unverändert verwenden (nur skalieren, nicht umfärben oder beschneiden), Pfad über marke.js (neuer, kommentierter Eintrag, z. B. logoTitel), Markenname für Screenreader erhalten (alt-Text bzw. visuell verborgener Text), Rätsel in Schritt 0 darf das Logo noch nicht zeigen. Quelle in die Fußzeile von Folie 01: „Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“; QUELLEN.md (holy-logo-oval.png jetzt auf Folie 01 verwendet) und LIESMICH.md (neuer marke.js-Eintrag) anpassen. Prüfe Folie 01 in allen Schritten, in allen Themen hell/dunkel, im Druck/PDF und in der Übersicht und sieh dir die Screenshots an.
+Hinweis: Ein erster Lauf dieses Auftrags wurde angehalten, um den Wunsch oben aufzunehmen; Teile der Befunde können schon umgesetzt sein (siehe git diff 7c715ab 4b9cd01 -- fallstudie-1-brand-persona/praesentation bzw. den aktuellen Stand der Dateien) – prüfe das je Befund.
 Passe LIESMICH.md an diesen Stand an (das Logo auf Folie 09b ist jetzt die offizielle Wortmarke, kein Platzhalter mehr). Folie 04 (Persona) inhaltlich nicht umbauen – die Gruppe ersetzt die Inhalte selbst (Grundlage: ${FS}/persona-daten.md, ${FS}/persona-steckbrief.md).
 Priorität: hoch → mittel → niedrig (niedrige nur, wenn eindeutig und risikoarm). Keine Inhalte erfinden; Fakten über HOLY nur aus dem Dossier ${FS}/recherche/holy-recherche.md. Danach vollständig prüfen (werkzeuge/pruefen.mjs mit --schritte, hell und dunkel, Druck; Interaktionen stichprobenartig mit Playwright), geänderte Screenshots ansehen und die Exporte aktualisieren (${EXPORTE}). Entferne alle Testordner (_test, _abschluss-test, _abschluss-gestaltung), falls vorhanden. Aktualisiere LIESMICH.md, QUELLEN.md und AUTOREN.md, falls sich etwas geändert hat.
 Rückgabe: behoben, nicht behoben (mit Grund), Dateien, Screenshot-Pfade, Prüfbericht, Quellen.`, { label: 'Nacharbeit: abgeschnittene Befunde', phase: 'Nacharbeit', schema: FIX_SCHEMA })
