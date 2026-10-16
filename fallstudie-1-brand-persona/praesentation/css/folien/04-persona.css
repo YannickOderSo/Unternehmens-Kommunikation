@@ -1,0 +1,300 @@
+/* =============================================================================
+   css/folien/04-persona.css – Gestaltung nur für Folie f04 „Brand Persona“
+   -----------------------------------------------------------------------------
+   Aufbau (Bühne 1920 × 1080):
+     links (4 Spalten)  Profil: Bild + Name
+     rechts (8 Spalten) Zitat, darunter fünf Blöcke in zwei Reihen (3 + 2)
+   Ab Schritt 4 werden die Blöcke markiert:
+     Daten   = Akzentfläche + Akzentrand + Datensymbol
+     Annahme = gestrichelter Rand + Fragezeichen-Symbol
+   Passt der Inhalt nicht über die Fußzeile, setzt das Skript .ist-dicht
+   (kleineres Zitat, engere Blöcke).
+   Alle Regeln beginnen mit #f04 bzw. einer Klasse „g2p-…“
+   (g2p = nur Folie 04, Persona – überschneidet sich nicht mit anderen Folien).
+   Nur Variablen aus tokens.css verwenden.
+   ============================================================================= */
+
+#f04 .g2p-raster {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+
+/* ---------------------------------------------------------------------------
+   1. PROFIL (links): Bild füllt die Höhe, Name darunter
+   --------------------------------------------------------------------------- */
+#f04 .g2p-profil {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-4);
+  min-height: 0;
+}
+#f04 .g2p-bild {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  background: var(--f-flaeche-2);
+}
+#f04 .g2p-silhouette,
+#f04 .g2p-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Farben des gezeichneten Platzhalters (passen sich Thema und Modus an) */
+#f04 .g2p-sil-kreis { fill: color-mix(in oklab, var(--f-akzent) 22%, var(--f-flaeche-2)); }
+#f04 .g2p-sil-form  { fill: color-mix(in oklab, var(--f-hart) 38%, var(--f-flaeche-2)); }
+
+/* Kennzeichnung „Bild KI-generiert“ unten links auf dem Bild */
+#f04 .g2p-bild-hinweis {
+  position: absolute;
+  left: var(--abstand-3);
+  bottom: var(--abstand-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100% - 2 * var(--abstand-3));
+  padding: 8px 16px;
+  border-radius: var(--radius-pille);
+  background: var(--f-hintergrund);
+  color: var(--f-text);
+  font-size: var(--groesse-meta);
+  font-weight: 600;
+  line-height: 1.2;
+}
+#f04 .g2p-bild-hinweis .icon { width: 24px; height: 24px; color: var(--f-akzent); }
+
+#f04 .g2p-name { display: flex; flex-direction: column; gap: 6px; }
+#f04 .g2p-name-text {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel-klein);
+  font-weight: var(--gewicht-titel);
+  font-variation-settings: "opsz" var(--opsz-titel);
+  letter-spacing: var(--laufweite-titel);
+  line-height: 1.05;
+  color: var(--f-text);
+}
+#f04 .g2p-name-meta {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  color: var(--f-text-2);
+}
+
+
+/* ---------------------------------------------------------------------------
+   2. RECHTE SEITE: Zitat + zwei Reihen mit Blöcken
+   --------------------------------------------------------------------------- */
+#f04 .g2p-rechts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-4);
+  min-height: 0;
+}
+#f04 .g2p-zitat { padding-left: 28px; }
+#f04 .g2p-zitat .zitat-text { font-size: var(--groesse-gross); }
+
+#f04 .g2p-reihe {
+  display: grid;
+  grid-template-columns: repeat(var(--g2p-spalten, 3), minmax(0, 1fr));
+  gap: var(--abstand-4);
+}
+/* untere Reihe füllt den Rest, darf aber nicht über die Fußzeile wachsen
+   (min-height: 0); ob der Inhalt passt, prüft das Skript */
+#f04 .g2p-reihe--unten { flex: 1; min-height: 0; grid-template-rows: minmax(0, 1fr); }
+#f04 .g2p-reihe--unten > .g2p-block { min-height: 0; }
+
+/* Block = Karte mit Kopfzeile; Übergang für die Markierung in Schritt 4 */
+#f04 .g2p-block {
+  gap: 6px;
+  padding: 18px 22px 16px;
+  transition:
+    background-color var(--dauer-mittel) var(--kurve),
+    border-color var(--dauer-mittel) var(--kurve);
+}
+#f04 .g2p-block-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-2);
+  min-height: 34px;
+}
+#f04 .g2p-block-icon { width: 30px; height: 30px; color: var(--f-akzent); }
+#f04 .g2p-block-titel { white-space: nowrap; }
+/* Status-Stempel: sitzt rechts oben auf dem Rand des Blocks (erst ab Schritt 4 sichtbar) */
+#f04 .g2p-status {
+  position: absolute;
+  top: -19px;
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--f-hintergrund);
+  color: var(--f-text-2);
+  opacity: 0;
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+#f04 .g2p-status .icon { width: 26px; height: 26px; }
+#f04 .g2p-block[data-status="daten"] .g2p-status {
+  background: var(--f-akzent);
+  color: var(--f-auf-akzent);
+}
+#f04 .g2p-block[data-status="annahme"] .g2p-status {
+  border: var(--linie-fein) dashed var(--f-text-2);
+}
+
+/* Platzmangel (setzt das Skript): erst kleineres Zitat und engere Balken,
+   dann kleinere Hauptzeilen ohne Zwischenüberschrift „Werte“ */
+#f04.ist-dicht .g2p-zitat .zitat-text { font-size: var(--groesse-text); }
+#f04.ist-dicht .g2p-rechts { gap: var(--abstand-3); }
+#f04.ist-dicht .g2p-balken { gap: 6px; }
+#f04.ist-sehr-dicht .g2p-zeile--haupt { font-size: var(--groesse-text); }
+#f04.ist-sehr-dicht .g2p-unterlabel { display: none; }
+#f04.ist-sehr-dicht .g2p-pg { margin-top: 0; padding-top: var(--abstand-2); gap: 6px; }
+
+/* Quelle klein unten im Block (nur bei „Daten“) */
+#f04 .g2p-quelle {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+
+/* Stichwort-Zeilen */
+#f04 .g2p-zeile { font-size: var(--groesse-text); line-height: 1.25; color: var(--f-text-2); }
+#f04 .g2p-zeile--haupt {
+  margin-top: 4px;
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-fett);
+  color: var(--f-text);
+}
+
+/* Mediennutzung: Einheit in eigener Zeile unter dem Blocktitel, Mini-Balken je Plattform */
+#f04 .g2p-einheit {
+  margin-top: -6px;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+#f04 .g2p-balken {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+#f04 .g2p-balken-zeile {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 56px;
+  align-items: center;
+  gap: var(--abstand-3);
+}
+#f04 .g2p-balken-name { font-size: var(--groesse-text-min); color: var(--f-text); white-space: nowrap; }
+#f04 .g2p-balken-spur {
+  position: relative;
+  height: 24px;
+  border-radius: var(--radius-pille);
+  background: var(--f-flaeche-2);
+  overflow: hidden;
+}
+#f04 .g2p-balken-fuellung {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: var(--radius-pille);
+  background: var(--f-diagramm-marke);
+}
+/* Werte an den Balken = Inhalt, darum Fließtextgröße (28 px) */
+#f04 .g2p-balken-wert {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-text-min);
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-text-2);
+  text-align: right;
+}
+
+/* Psychografie: Werte als Chips, Pain (−) und Gain (+) */
+#f04 .g2p-psycho {                 /* Werte, Pain und Gain als Gruppe, senkrecht mittig */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--abstand-2);
+}
+#f04 .g2p-unterlabel {
+  font-size: var(--groesse-meta);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--f-text-2);
+}
+#f04 .g2p-werte { display: flex; flex-wrap: wrap; gap: 10px; }
+#f04 .g2p-werte .chip { padding: 6px 14px; }
+#f04 .g2p-werte--klein { gap: 8px; }
+#f04 .g2p-pg {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--abstand-2);
+  padding-top: var(--abstand-3);
+  border-top: var(--linie-fein) solid var(--f-linie);
+}
+#f04 .g2p-pg-zeile { display: flex; align-items: center; gap: var(--abstand-3); }
+#f04 .g2p-pg-marke {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 104px;
+  padding: 5px 12px 5px 8px;
+  border-radius: var(--radius-pille);
+  font-size: var(--groesse-meta);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+#f04 .g2p-pg-marke .icon { width: 22px; height: 22px; stroke-width: 3; }
+#f04 .g2p-pg-zeile--pain .g2p-pg-marke {
+  color: var(--f-fehler);
+  background: color-mix(in oklab, var(--f-fehler) 10%, var(--f-hintergrund));
+}
+#f04 .g2p-pg-zeile--gain .g2p-pg-marke {
+  color: var(--f-erfolg);
+  background: color-mix(in oklab, var(--f-erfolg) 10%, var(--f-hintergrund));
+}
+#f04 .g2p-pg-text { font-size: var(--groesse-text); color: var(--f-text); }
+
+
+/* ---------------------------------------------------------------------------
+   3. MARKIERUNG „DATEN vs. ANNAHME“ (ab Schritt 4)
+   Der unsichtbare Auslöser .g2p-status-ausloeser bekommt in Schritt 4 die
+   Klasse .schritt-an (setzt die Engine). Im Druck ist das automatisch so.
+   --------------------------------------------------------------------------- */
+#f04 .g2p:has(.g2p-status-ausloeser.schritt-an) .g2p-block[data-status="daten"] {
+  background-color: var(--f-akzent-flaeche);
+  border-color: var(--f-akzent);
+}
+#f04 .g2p:has(.g2p-status-ausloeser.schritt-an) .g2p-block[data-status="annahme"] {
+  border-style: dashed;
+  border-color: var(--f-text-2);
+}
+#f04 .g2p:has(.g2p-status-ausloeser.schritt-an) .g2p-status { opacity: 1; }
+
+/* Legende direkt hinter der Quelle (linksbündig): rechts unten erscheint bei
+   Maus- und Tastaturbedienung die Bedienleiste und würde sie verdecken */
+#f04 .folie-fuss { justify-content: flex-start; }
+#f04 .g2p-legende { flex: none; white-space: nowrap; }

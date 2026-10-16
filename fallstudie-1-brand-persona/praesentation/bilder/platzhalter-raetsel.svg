@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Abstraktes Platzhalter-Motiv für das Einstiegsrätsel">
   <!-- Neutrales, abstraktes Platzhalter-Motiv (eigene Gestaltung, kein Markenbezug).
-       Ersetzen: eigenes Foto in bilder/ legen und in marke.js → raetselBild eintragen. -->
+       Ersetzen: eigenes Foto in bilder/ legen und in marke.js → raetselBild eintragen.
+       Ohne eingebauten Text: Folie 01 zeigt ihn als Ausschnitt; den Hinweis
+       „Platzhalterbild“ setzt die Folie selbst (Pille und Bildnachweis). -->
   <defs>
     <linearGradient id="himmel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#2E4A66"/>
@@ -23,5 +25,4 @@
   <g fill="#FFFFFF" opacity="0.85">
     <circle cx="780" cy="220" r="6"/><circle cx="860" cy="180" r="4"/><circle cx="660" cy="260" r="5"/>
   </g>
-  <text x="56" y="1036" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#F3F1EC" opacity="0.9">Platzhalter-Motiv · eigenes Bild in marke.js → raetselBild eintragen</text>
 </svg>

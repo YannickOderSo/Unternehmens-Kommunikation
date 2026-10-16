@@ -1,0 +1,221 @@
+/* =============================================================================
+   css/folien/01-einstieg.css – Gestaltung nur für index.html, Folie 01
+   -----------------------------------------------------------------------------
+   Einstieg wie der Auftakt einer Keynote, in drei Zuständen:
+     Schritt 0  randloses, unscharfes Rätselbild, unten die Frage
+     Schritt 1  Bild scharf und herausgezoomt, unten groß der Markenname
+     Schritt 2  Bild zieht sich in die rechte Bildtafel zurück, links die
+               Titelfolie (Markenname gleitet nach oben, Titel erscheint).
+               So sieht die Folie auch im Druck/PDF und in der Übersicht aus.
+   Die Zustände hängen nur an den Klassen, die die Engine setzt
+   (.schritt-an an den Elementen mit data-schritt) – dafür ist kein Skript
+   nötig. Alle Farben, Schriften und Dauern kommen aus css/tokens.css.
+   ============================================================================= */
+
+#f01 {
+  /* Breite der linken Textspalte im Schlussbild (Bühnen-Pixel, Bühne = 1920 px).
+     Rechts davon bleibt das Bild als Tafel sichtbar (1920 − 1088 = 832 px). */
+  --einstieg-teilung: 1088px;
+  /* Breite des Textes in der linken Spalte (Rand links, 64 px Luft zur Tafel) */
+  --einstieg-spalte: calc(var(--einstieg-teilung) - var(--rand-x) - var(--abstand-7));
+  /* Größe des Markennamens. Ist ein Name zu lang für die Spalte, verkleinert
+     js/folien/01-einstieg.js ihn automatisch (mindestens 96 px). */
+  --einstieg-marke-groesse: calc(var(--groesse-titel-gross) * 1.8);
+  /* Versatz des Bildes in Schritt 2, damit data-fokus mitten in der Tafel
+     steht. Wird von js/folien/01-einstieg.js aus data-fokus berechnet;
+     dieser Wert gilt nur ohne Skript (Bildmitte = Tafelmitte). */
+  --einstieg-tafel-versatz: calc(var(--einstieg-teilung) / 2);
+}
+
+
+/* ---------------------------------------------------------------------------
+   KOPF: Frage (Schritt 0) und Komposition (Schritt 1–2) liegen übereinander
+   in derselben Rasterzelle und sind unten bündig (unteres Drittel – dort ist
+   der Verlauf des Vollbild-Layouts dunkel genug für helle Schrift).
+   --------------------------------------------------------------------------- */
+#f01 .einstieg-kopf {
+  display: grid;
+  align-items: end;
+  max-width: none;
+}
+#f01 .einstieg-kopf > * {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+
+/* Schritt 0: die Frage – groß, eine Zeile */
+#f01 .einstieg-frage {
+  max-width: 1500px;
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s linear 0s;
+}
+#f01 .einstieg-frage-titel { font-size: var(--groesse-titel-gross); }
+#f01 .einstieg-frage-lead { margin-top: var(--abstand-3); }
+/* … und weicht der Auflösung (Schritt 1) */
+#f01:has(.einstieg-marke.schritt-an) .einstieg-frage {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+
+/* Schritt 1–2: Markenname, darunter (ab Schritt 2) die Titelzeile.
+   Die Titelzeile ist bis Schritt 2 auf 0 zusammengeklappt (0fr) und klappt
+   dann weich auf (1fr). Weil der Kopf unten bündig ist, gleitet der
+   Markenname dabei nach oben – ohne Messen, ohne Sprung. */
+#f01 .einstieg-komposition {
+  display: grid;
+  grid-template-rows: min-content 0fr;
+  max-width: var(--einstieg-spalte);
+  transition: grid-template-rows var(--dauer-lang) var(--kurve);
+}
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-komposition {
+  grid-template-rows: min-content 1fr;
+}
+#f01 .einstieg-titelzeile {
+  min-height: 0;
+  overflow: hidden;            /* schneidet nur während des Aufklappens */
+}
+
+#f01 .einstieg-kicker {
+  transition: opacity var(--dauer-mittel) var(--kurve);
+}
+/* „Auflösung“ wird im Schlussbild nicht mehr gebraucht */
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-kicker { opacity: 0; }
+
+#f01 .einstieg-markenname {
+  display: block;
+  width: max-content;
+  max-width: none;
+  margin: 8px 0 0 -0.04em;                 /* optischer Randausgleich des großen Anfangsbuchstabens */
+  font-family: var(--schrift-display);
+  font-style: var(--stil-marke);           /* Markenname immer aufrecht */
+  font-weight: var(--gewicht-zahl);
+  font-size: var(--einstieg-marke-groesse);
+  font-variation-settings: "opsz" var(--opsz-titel);
+  letter-spacing: var(--laufweite-titel);
+  line-height: 0.92;
+  white-space: nowrap;
+  color: var(--f-auf-bild);
+}
+
+#f01 .einstieg-titelblock {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--abstand-6);
+}
+#f01 .einstieg-titel {
+  font-size: var(--groesse-titel);
+  max-width: 13em;
+  text-wrap: balance;
+}
+#f01 .einstieg-unterzeile {
+  margin-top: var(--abstand-4);
+  max-width: none;
+  font-size: var(--groesse-text);
+  text-wrap: balance;
+}
+#f01 .einstieg-angaben {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  margin-top: var(--abstand-6);
+}
+
+
+/* ---------------------------------------------------------------------------
+   BILD: randlos (Schritt 0–1), im Schlussbild nur rechts als Tafel (Schritt 2).
+   clip-path schneidet links ab, translate rückt den Fokuspunkt des Bildes in
+   die Mitte der Tafel – beides gleitet weich (--dauer-lang).
+   --------------------------------------------------------------------------- */
+#f01 .einstieg-bild {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path var(--dauer-lang) var(--kurve);
+}
+#f01 .einstieg-bild .raetsel {
+  transition: translate var(--dauer-lang) var(--kurve);
+}
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-bild {
+  clip-path: inset(0 0 0 var(--einstieg-teilung));
+}
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-bild .raetsel {
+  translate: var(--einstieg-tafel-versatz) 0;
+}
+/* feine Kante zwischen Textspalte und Bildtafel */
+#f01 .einstieg-bild::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--einstieg-teilung);
+  width: var(--linie-fein);
+  background: color-mix(in srgb, var(--f-auf-bild) 22%, transparent);
+  opacity: 0;
+  transition: opacity var(--dauer-kurz) var(--kurve);
+}
+/* erscheint erst, wenn die Bildkante angekommen ist */
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-bild::after {
+  opacity: 1;
+  transition: opacity var(--dauer-mittel) var(--kurve) var(--dauer-lang);
+}
+
+/* Dunkler Verlauf des Vollbild-Layouts: im Schlussbild unnötig (Text steht
+   dort auf der dunklen Fläche) – das Bild in der Tafel bleibt klar */
+#f01::after { transition: opacity var(--dauer-lang) var(--kurve); }
+#f01:has(.einstieg-titelblock.schritt-an)::after { opacity: 0; }
+
+/* Kopfzeile des Schlussbilds – dieselbe Linie wie die Laufkopfzeile der
+   übrigen Folien, aber nur über der Textspalte */
+#f01 .einstieg-kopfzeile {
+  position: absolute;
+  z-index: 1;
+  left: var(--rand-x);
+  top: var(--rand-oben);
+  width: var(--einstieg-spalte);
+  display: flex;
+  align-items: center;
+  min-height: var(--mini-rad);
+  padding-bottom: 12px;
+  border-bottom: var(--linie-stark) solid var(--f-linie-stark);
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-text-2);
+}
+
+/* Fußzeile (Bildquelle): gehört zum Bild, nicht zum Text – deshalb rechts
+   unten (Schritt 1 auf dem randlosen Bild, im Schlussbild in der Bildtafel).
+   Sie erscheint erst mit der Auflösung: Während des Ratens würde eine echte
+   Quelle („Verpackung © …“) die Lösung verraten. Die Zeile behält ihren
+   Platz im Raster, damit Frage und Markenname nicht springen. */
+#f01 .einstieg-fuss {
+  justify-self: end;
+  max-width: calc(1920px - var(--einstieg-teilung) - 2 * var(--rand-x) + var(--abstand-7));
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+#f01:has(.einstieg-marke.schritt-an) .einstieg-fuss {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dauer-mittel) var(--kurve) 600ms, visibility 0s linear 0s;
+}
+/* Eigener dunkler Grund: Im Schlussbild fehlt der Verlauf, die helle
+   Schrift steht dann direkt auf dem Foto (Schleier ≥ 78 % → Kontrast ≥ 7 : 1) */
+#f01 .einstieg-fuss .quelle {
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  background: var(--f-bild-schleier);
+  text-align: right;
+}
+
+/* Pille „Platzhalterbild“ (setzt js/folien/01-einstieg.js, solange in
+   marke.js → raetselBild noch das Platzhalter-Motiv eingetragen ist) */
+#f01 .einstieg-platzhalter {
+  position: absolute;
+  z-index: 2;
+  top: var(--rand-oben);
+  right: var(--rand-x);
+}

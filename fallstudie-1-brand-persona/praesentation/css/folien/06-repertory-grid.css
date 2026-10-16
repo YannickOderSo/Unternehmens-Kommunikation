@@ -1,0 +1,317 @@
+/* =============================================================================
+   css/folien/06-repertory-grid.css – Gestaltung nur für Folie f06
+   „Repertory Grid → Markenattribute“ (index.html, Folie 06)
+   -----------------------------------------------------------------------------
+   Alle Regeln beginnen mit .rg… (eigene Klasse der Folie). Nur Variablen aus
+   tokens.css – dann stimmt die Folie in allen Themen, hell/dunkel und mit den
+   Markenfarben aus marke.js.
+
+   SCHRITT-ZUSTÄNDE
+   Die Folie enthält drei unsichtbare Auslöser (.rg-z1 … .rg-z3). Die Engine
+   gibt ihnen die Klasse .schritt-an, sobald der Schritt erreicht ist, und
+   .schritt-aktuell, solange er der aktuelle ist. Mit :has() reagiert die
+   Gestaltung darauf – im Vortrag, in der Vorschau und im Druck gleich.
+   ============================================================================= */
+
+.rg-zustand { display: none; }
+
+.rg-buehne {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.rg-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+
+
+/* ---------------------------------------------------------------------------
+   1. PROFIL: Raster, Zeilen, Nennungen
+   --------------------------------------------------------------------------- */
+.rg-gitter { stroke: var(--f-linie); stroke-width: var(--linie-fein); }
+/* Skalenmitte (neutral) etwas kräftiger, gestrichelt */
+.rg-gitter--mitte { stroke: var(--f-text-2); stroke-dasharray: 2 8; stroke-linecap: round; }
+.rg-trenner { stroke: var(--f-linie); stroke-width: var(--linie-fein); }
+.rg-trenner--rand { stroke: var(--f-linie-stark); }
+
+.rg-skala {
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-meta);
+  font-weight: var(--gewicht-fett);
+  font-variant-numeric: tabular-nums;
+  fill: var(--f-text-2);
+  text-anchor: middle;
+}
+.rg-kopf-text,
+.rg-profil-titel {
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  fill: var(--f-text-2);
+}
+/* Überschrift über dem leeren Profil (Schritt 0–1) – macht in Schritt 2
+   der Legende Platz */
+.rg-profil-titel { fill: var(--f-akzent); transition: opacity var(--dauer-kurz) var(--kurve); }
+.rg:has(.rg-z2.schritt-an) .rg-profil-titel { opacity: 0; }
+
+/* Pole (Fließtext-Größe 28 px) */
+.rg-pol {
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-text-min);
+  font-weight: var(--gewicht-text);
+  fill: var(--f-text);
+  transition: fill var(--dauer-mittel) var(--kurve);
+}
+.rg-pol--links { text-anchor: end; }
+.rg-pol--rechts { text-anchor: start; }
+
+/* Nennungen (Relevanz) als Metaangabe */
+.rg-nennung-zahl {
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-meta);
+  font-weight: var(--gewicht-fett);
+  font-variant-numeric: tabular-nums;
+  fill: var(--f-text-2);
+  text-anchor: end;
+}
+.rg-balken { fill: var(--f-balken); transition: fill var(--dauer-mittel) var(--kurve); }
+
+
+/* ---------------------------------------------------------------------------
+   2. LINIEN, PUNKTE, LEGENDE
+   Drei Merkmale unterscheiden die Reihen (nicht nur die Farbe):
+   [Marke] durchgezogen + voller Kreis · Wettbewerber gestrichelt + hohler
+   Kreis · Idealmarke gepunktet + Raute
+   --------------------------------------------------------------------------- */
+.rg-linie { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.rg-linie--marke { stroke: var(--f-diagramm-marke); stroke-width: 5; }
+.rg-linie--wettbewerb { stroke: var(--f-diagramm-wettbewerb); stroke-width: 3; stroke-dasharray: 14 10; stroke-linecap: butt; }
+.rg-linie--ideal { stroke: var(--f-diagramm-ideal); stroke-width: 5; stroke-dasharray: 0.1 12; }
+
+/* Maske zum „Zeichnen“: nur die Deckkraft zählt (mask-type: alpha) */
+.rg-svg mask { mask-type: alpha; }
+.rg-maskenlinie { fill: none; stroke: var(--f-text); stroke-width: 40; stroke-linecap: round; stroke-linejoin: round; }
+
+.rg-punkt--marke { fill: var(--f-diagramm-marke); stroke: var(--f-hintergrund); stroke-width: 3; }
+.rg-punkt--wettbewerb { fill: var(--f-hintergrund); stroke: var(--f-diagramm-wettbewerb); stroke-width: 3; }
+.rg-punkt--ideal { fill: var(--f-diagramm-ideal); stroke: var(--f-hintergrund); stroke-width: 2; }
+/* Schritt 3 (liegen unter den Punkten): Ring um [Marke], Strich = Ø aller
+   Wettbewerber, Abstandslinie vom Strich bis zur Marke = Vorsprung rechts */
+.rg-ring { fill: none; stroke: var(--f-akzent); stroke-width: var(--linie-fein); }
+.rg-mittel { fill: none; stroke: var(--f-text); stroke-width: 4; stroke-linecap: round; }
+.rg-abstand { fill: none; stroke: var(--f-akzent); stroke-width: 3; stroke-linecap: round; opacity: 0.75; }
+/* Konstrukt mit Hinweis (z. B. „Hürde“): Linie Idealmarke → Marke in
+   Warnfarbe, Chip in der Mitte, Pol auf der Seite der Marke ebenfalls */
+.rg-ideal-abstand { fill: none; stroke: var(--f-warnung); stroke-width: 3; stroke-linecap: round; opacity: 0.85; }
+.rg-hinweis {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: var(--f-hintergrund);
+  color: var(--f-warnung);
+  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-warnung);
+  font-weight: var(--gewicht-fett);
+}
+
+/* Legende: Strichmuster so, dass links und rechts vom Kreis ein Strich steht */
+.rg-legende .rg-linie--wettbewerb { stroke-dasharray: 12 8; }
+.rg-legende-text {
+  font-family: var(--schrift-text);
+  font-size: var(--groesse-meta);
+  font-weight: var(--gewicht-fett);
+  fill: var(--f-text);
+}
+.rg-legende-zusatz { font-weight: var(--gewicht-text); fill: var(--f-text-2); }
+
+
+/* ---------------------------------------------------------------------------
+   3. BÄNDER UND SCHRITT-ZUSTÄNDE DES PROFILS
+   --------------------------------------------------------------------------- */
+.rg-band { fill: var(--f-akzent-flaeche); }
+
+/* Schritt 1 (solange aktuell): Zeile der Triade leuchtet, Pole in Akzentfarbe */
+.rg-band-triade { fill: var(--f-akzent-flaeche); opacity: 0; transition: opacity var(--dauer-mittel) var(--kurve); }
+.rg:has(.rg-z1.schritt-aktuell) .rg-band-triade { opacity: 1; }
+.rg:has(.rg-z1.schritt-aktuell) .ist-triade .rg-pol { fill: var(--f-hart); font-weight: var(--gewicht-fett); }
+.rg:has(.rg-z1.schritt-aktuell) .ist-triade .rg-pol.ist-markenpol { fill: var(--f-akzent); }
+/* nur zum Messen der Polbreiten (Skript): fette Schrift wie in Schritt 1/3 */
+.rg-messen .rg-pol { font-weight: var(--gewicht-fett); }
+
+/* Schritt 3: Attribut-Pol in Akzentfarbe, übrige Zeilen treten zurück
+   (über die Farbe statt Deckkraft – so bleibt es auch im Druck richtig) */
+.rg:has(.rg-z3.schritt-an) .ist-attribut .rg-pol.ist-markenpol { fill: var(--f-akzent); }
+.rg:has(.rg-z3.schritt-an) .rg-zeile:not(.ist-attribut) .rg-pol { fill: var(--f-text-2); }
+.rg:has(.rg-z3.schritt-an) .ist-attribut .rg-balken { fill: var(--f-akzent); }
+/* Konstrukt mit Hinweis („Hürde“): Pol auf der Seite der Marke in Warnfarbe */
+.rg:has(.rg-z3.schritt-an) .ist-hinweis .rg-pol.ist-markenpol { fill: var(--f-warnung); }
+
+
+/* ---------------------------------------------------------------------------
+   4. RECHTE SPALTE: Triade (Schritt 0–2)
+   --------------------------------------------------------------------------- */
+.rg-seite { position: absolute; top: 0; bottom: 0; }
+
+.rg-triade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--abstand-5);
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s;
+}
+/* Schritt 2: tritt zurück · Schritt 3: macht Platz für das Ergebnis */
+.rg:has(.rg-z2.schritt-an) .rg-triade { opacity: var(--dimmen); }
+.rg:has(.rg-z3.schritt-an) .rg-triade {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+
+/* Frage an die Befragten – wie ein Zitat */
+.rg-frage {
+  padding-left: var(--abstand-4);
+  border-left: var(--linie-stark) solid var(--f-akzent);
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);
+  font-weight: var(--gewicht-display);
+  font-style: var(--stil-hervor);
+  line-height: 1.24;
+  letter-spacing: -0.005em;
+  color: var(--f-text);
+  text-wrap: balance;
+}
+
+.rg-triade-feld { position: relative; height: 262px; flex: none; }
+.rg-klammern { position: absolute; left: 0; top: 0; overflow: visible; }
+.rg-klammer { fill: none; stroke-width: var(--linie-stark); stroke-linecap: round; stroke-linejoin: round; }
+.rg-klammer--paar { stroke: var(--f-hart); }
+.rg-klammer--einzeln { stroke: var(--f-akzent); }
+.rg-doppelpfeil { fill: none; stroke: var(--f-text-2); stroke-width: var(--linie-fein); stroke-linecap: round; stroke-linejoin: round; }
+
+/* Pole des Konstrukts über den Gruppen */
+.rg-triade-pol {
+  position: absolute;
+  top: var(--abstand-1);
+  transform: translateX(-50%);
+  font-size: var(--groesse-text);
+  font-weight: var(--gewicht-fett);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.rg-triade-pol--paar { color: var(--f-hart); }
+.rg-triade-pol--einzeln { color: var(--f-akzent); }
+
+/* Markenkarten (wie Karteikarten im Interview) */
+.rg-karte {
+  position: absolute;
+  top: 92px;
+  height: 168px;
+  display: grid;
+  place-items: center;
+  padding: var(--abstand-2) var(--abstand-1);
+  border: var(--linie-fein) solid var(--f-karte-rand);
+  border-radius: var(--radius-l);
+  background: var(--f-karte);
+  box-shadow: var(--schatten-1);
+  transition: translate var(--dauer-lang) var(--kurve), border-color var(--dauer-mittel) var(--kurve);
+}
+.rg-karte--paar { border-color: var(--f-hart); }
+.rg-karte--marke { border-color: var(--f-akzent); border-width: var(--linie-stark); }
+.rg-karte-name {
+  max-width: 100%;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-gross);   /* Skript verkleinert bei Bedarf bis 28 px */
+  font-weight: var(--gewicht-display);
+  line-height: 1.08;
+  text-align: center;
+  color: var(--f-text);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.rg-karte--marke .rg-karte-name { color: var(--f-akzent); font-style: var(--stil-marke); }
+/* Schritt 1: zwei rücken zusammen, eine rückt ab (Weg ≤ 18 px) */
+.rg:has(.rg-z1.schritt-an) .rg-karte { translate: var(--rg-weg, 0px) 0; }
+
+.rg-triade-notiz { font-size: var(--groesse-meta); line-height: 1.35; color: var(--f-text-2); }
+
+
+/* ---------------------------------------------------------------------------
+   5. RECHTE SPALTE: Ergebnis (Schritt 3)
+   --------------------------------------------------------------------------- */
+.rg-ergebnis { position: absolute; inset: 0; }
+.rg-ergebnis > * { position: absolute; left: 0; right: 0; }
+
+.rg-ergebnis-kopf { display: flex; flex-direction: column; gap: var(--abstand-1); padding-left: var(--abstand-4); }
+.rg-ergebnis-erklaerung {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-2);
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+/* kleines Zeichen vor der Erklärung: wie Strich + Abstandslinie im Profil */
+.rg-zeichen { flex: none; overflow: visible; }
+
+.rg-attribut {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-4);
+  padding: 0 var(--abstand-4);
+}
+.rg-attribut-name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;          /* Skript verkleinert bis 28 px, sonst Umbruch + Warnung */
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--f-text);
+}
+.rg-attribut-wert {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-akzent);
+  white-space: nowrap;
+}
+
+/* Auswahlkriterien mit Haken */
+.rg-kriterien { display: flex; flex-direction: column; gap: var(--abstand-2); padding-left: var(--abstand-4); }
+.rg-kriterien-titel { margin-bottom: var(--abstand-1); }
+.rg-kriterium {
+  display: flex;
+  align-items: baseline;
+  gap: var(--abstand-2);
+  font-size: var(--groesse-text-min);
+  line-height: 1.2;
+  color: var(--f-text);
+}
+.rg-kriterium .icon {
+  align-self: center;
+  width: var(--groesse-text-min);
+  height: var(--groesse-text-min);
+  color: var(--f-akzent);
+  stroke-width: 2.6;
+}
+.rg-kriterium-text { font-weight: var(--gewicht-fett); }
+.rg-kriterium-erklaerung { font-size: var(--groesse-meta); color: var(--f-text-2); }
+.rg-kriterien.ist-eng { gap: var(--abstand-1); }
+
+
+/* ---------------------------------------------------------------------------
+   6. BEWEGUNG REDUZIEREN: Karten springen ohne Weg an ihren Platz
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .rg-karte { transition: none; }
+}
+html.bewegung-reduziert .rg-karte { transition: none; }

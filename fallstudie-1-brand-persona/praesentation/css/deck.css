@@ -62,7 +62,7 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
   border-radius: var(--radius-s);
 }
 
-/* Icon-Satz (Inline-SVG-Sprite in vorlage.html): <svg class="icon"><use href="#i-…"/></svg> */
+/* Icon-Satz (Inline-SVG-Sprite am Anfang von index.html): <svg class="icon"><use href="#i-…"/></svg> */
 .icon {
   width: 1em;
   height: 1em;
@@ -144,6 +144,8 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 .folie.ist-klon { display: grid; }
 .folie.ist-geht { z-index: 0; pointer-events: none; }
 .folie.ist-aktiv { z-index: 1; }
+/* Messen unsichtbarer Folien (Deck.util.messen): kurz eingeblendet, aber unsichtbar */
+.folie.ist-messung { display: grid !important; visibility: hidden !important; z-index: -1; }
 
 /* Grundwerte ohne Gewicht (:where), damit Bausteine sie leicht überschreiben */
 :where(.folie) :where(h1, h2, h3, h4, p, ol, ul, figure, blockquote, dl, dd, table) { margin: 0; }
@@ -218,7 +220,7 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 }
 .laufkopf-marke {
   font-family: var(--schrift-display);
-  font-style: var(--stil-hervor);
+  font-style: var(--stil-marke);
   font-size: 28px;
   font-weight: var(--gewicht-display);
   color: var(--f-text);
@@ -233,7 +235,13 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
   min-width: 1.6em;
   text-align: right;
 }
-.laufkopf .mini-rad { margin-left: 4px; }
+.laufkopf .mini-rad {
+  margin-left: 4px;
+  /* Das Mini-Rad (60 px) ragt oben und unten in den Rand, statt die Kopfzeile
+     zu vergrößern: Kopfzeile, Kicker und Titel stehen so auf allen Folien
+     gleich hoch – mit und ohne Mini-Rad */
+  margin-block: -8px;
+}
 
 /* Thema-Varianten des Laufkopfs */
 [data-thema="keynote"] .laufkopf { border-bottom-width: var(--linie-fein); border-bottom-color: var(--f-linie); }
@@ -289,6 +297,8 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
   color: var(--f-auf-bild);
 }
 .folie[data-layout="vollbild"] > .folie-inhalt {
+  grid-area: auto;                 /* Bezugsrahmen = ganze Folie (dieses Layout hat keinen Bereich „inhalt“;
+                                      sonst fehlt der Inhalt im PDF) */
   position: absolute;
   inset: 0;
   margin: 0;
@@ -319,6 +329,7 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 .folie[data-layout="vollbild"] .quelle,
 .folie[data-layout="vollbild"] .folie-kopf { color: var(--f-auf-bild); }
 .folie[data-layout="vollbild"] .titel :is(em, .hervor) { color: var(--f-auf-bild); }
+.folie[data-layout="vollbild"] :is(.lead, .text-2) { color: rgb(255 255 255 / 0.88); }
 .folie[data-layout="vollbild"] .folie-kopf { max-width: 1240px; }
 
 /* backup: dichter, kleinerer Titel; Tabellen dürfen 22–24 px haben */
@@ -328,8 +339,8 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 
 /* leer: kein Laufkopf, freie Fläche (eigene Gestaltung) */
 .folie[data-layout="leer"] {
-  grid-template-rows: minmax(0, 1fr);
-  grid-template-areas: "inhalt";
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: "kopf" "inhalt" "fuss";
 }
 
 
@@ -365,10 +376,13 @@ html.maus-ruht:not(.referent) * { cursor: none !important; }
 .folie .ist-hervor[data-hervor-stil="text"] { color: var(--f-akzent); }
 /* Container mit data-dimmen: Geschwister eines hervorgehobenen Elements treten zurück */
 .folie [data-dimmen] > * { transition: opacity var(--dauer-mittel) var(--kurve); }
-.folie [data-dimmen]:has(> .ist-hervor) > :not(.ist-hervor) { opacity: 0.45; }
+.folie [data-dimmen]:has(> .ist-hervor) > :not(.ist-hervor) { opacity: var(--dimmen, 0.6); }
 
 /* Zeichnen: Linien bleiben scharf (keine Unschärfe während der Animation) */
 .folie [data-animation~="zeichnen"] { shape-rendering: geometricPrecision; }
+/* SVG-Formen skalieren um ihre eigene Mitte (zoom, feder) statt um die Ecke des SVG */
+.folie svg [data-animation],
+.folie svg [data-schritt] { transform-box: fill-box; transform-origin: center; }
 
 
 /* ---------------------------------------------------------------------------
@@ -458,6 +472,33 @@ html.vt-menue::view-transition-old(folie) { display: none; }
   color: var(--f-text-2);
 }
 .bedienleiste .bl-trenner { width: 1px; height: 22px; margin: 0 4px; background: var(--f-linie); }
+.bedienleiste button[hidden] { display: none; }
+/* Farbwähler (Markenfarben live testen) */
+.bl-farbe {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bl-farbe:hover { background: var(--f-flaeche-2); }
+.bl-farbe input {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 2px solid var(--f-linie);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.bl-farbe input::-webkit-color-swatch-wrapper { padding: 0; }
+.bl-farbe input::-webkit-color-swatch { border: 0; border-radius: 50%; }
+.bl-farbe input::-moz-color-swatch { border: 0; border-radius: 50%; }
 .fortschritt {
   position: fixed;
   left: 0;
@@ -481,6 +522,10 @@ html.leiste-aus .fortschritt { opacity: 0; pointer-events: none; }
 html.leiste-aus .bedienleiste { transform: translateY(8px); }
 html.aufnahme .bedienleiste,
 html.aufnahme .fortschritt { display: none !important; }
+/* Testmodus (werkzeuge/pruefen.mjs): Endzustände sofort, ohne Übergänge */
+html.testmodus *,
+html.testmodus *::before,
+html.testmodus *::after { transition: none !important; animation: none !important; }
 
 
 /* ---------------------------------------------------------------------------
@@ -490,10 +535,20 @@ html.aufnahme .fortschritt { display: none !important; }
   position: absolute;
   inset: 0;
   display: none;
-  background: color-mix(in srgb, var(--f-hintergrund) 97%, transparent);
+  background: var(--f-hintergrund);     /* deckend: die Folie darunter soll nicht durchscheinen */
   color: var(--f-text);
 }
+/* Klone (Übersicht, Vorschau) behalten die volle Bühnengröße und werden skaliert */
+.ue-bild > .folie,
+.r-vorschau > .folie {
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+}
 .ebene-fenster.ist-offen { display: block; }
+.ebene-fenster:focus { outline: none; }        /* das Fenster selbst bekommt nur programmatisch Fokus */
 
 /* ----- Übersicht (Taste O) ----- */
 .uebersicht {
@@ -739,8 +794,8 @@ html.referent body { overflow: hidden; }
   position: fixed;
   inset: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
   grid-template-areas:
     "aktuell naechste"
     "notizen uhren";
@@ -825,8 +880,8 @@ html.referent .deck {
   grid-area: uhren;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 14px 16px 16px;
+  gap: 10px;
+  padding: 12px 16px 14px;
   overflow: auto;
 }
 .r-uhr-zeile {
@@ -836,7 +891,7 @@ html.referent .deck {
   gap: 4px 12px;
 }
 .r-uhr-name { font-size: 14px; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--r-text-2); }
-.r-uhr-wert { font-size: 44px; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.r-uhr-wert { font-size: 40px; line-height: 1.05; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
 .r-uhr-soll { font-size: 20px; color: var(--r-text-2); font-variant-numeric: tabular-nums; }
 .r-uhr-balken { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--r-flaeche-2); overflow: hidden; }
 .r-uhr-balken > span { display: block; height: 100%; width: 0; background: var(--r-gut); transition: width 400ms linear, background-color 400ms ease; }
@@ -924,6 +979,7 @@ html.druckmodus .folie {
   view-transition-name: none !important;
 }
 html.druckmodus .folie.ist-ausgeblendet { display: none !important; }
+html.druckmodus .letzte-seite { break-after: auto !important; page-break-after: auto !important; }
 html.druckmodus .folie [data-schritt] { visibility: visible !important; opacity: 1 !important; }
 html.druckmodus .bedienleiste,
 html.druckmodus .fortschritt,

@@ -11,7 +11,9 @@
      Deck.registriere('f06', { einrichten, betreten, verlassen, schritt, druck, vorschau })
      Deck.zustand()   Deck.gehe(folie, schritt)   Deck.weiter()   Deck.zurueck()
      Deck.marke       Deck.util   Deck.folien()   Deck.feldZiel(feld)
-     Ereignisse auf document: 'deck:bereit', 'deck:folie', 'deck:schritt'
+     Ereignisse auf document: 'deck:bereit', 'deck:folie', 'deck:schritt',
+       'deck:wechsel-ende' (Folienwechsel fertig; währenddessen html.wechsel-laeuft)
+     Kontext ctx der Hooks: … ctx.sofort = Folie ohne Übergang erreicht
 
    Aufbau dieser Datei
      1.  Konfiguration (marke.js) und Adress-Parameter
@@ -177,6 +179,17 @@
   util.token = token;
   util.dauer = function (name) { return token('--dauer-' + name); };
 
+  /* Bewegungskurve aus tokens.css für Web-Animationen:
+     util.kurve() → --kurve, util.kurve('feder') → --kurve-feder (echte Feder per
+     linear(), sonst cubic-bezier-Ersatz), util.kurve('wechsel') → --kurve-wechsel */
+  util.kurve = function (name) {
+    var wert = tokenRoh(name ? '--kurve-' + name : '--kurve').replace(/\s+/g, ' ');
+    var geht = false;
+    try { geht = !!wert && (!window.CSS || !CSS.supports || CSS.supports('animation-timing-function', wert)); } catch (e) { geht = false; }
+    if (geht) return wert;
+    return name === 'feder' ? 'cubic-bezier(0.34, 1.36, 0.64, 1)' : 'cubic-bezier(0.22, 0.61, 0.36, 1)';
+  };
+
   /* Animation mit Beachtung von „Bewegung reduzieren“.
      animiere(element, keyframes, { duration, delay, easing, fill })
      Bei reduzierter Bewegung wird nur die Deckkraft weich überblendet
@@ -184,7 +197,7 @@
      .finished (Promise) und .cancel() zurück. */
   var laufendeAnimationen = new Set();
   util.animiere = function (element, keyframes, optionen) {
-    optionen = Object.assign({ duration: token('--dauer-mittel'), easing: tokenRoh('--kurve') || 'ease-out', fill: 'backwards' }, optionen || {});
+    optionen = Object.assign({ duration: token('--dauer-mittel'), easing: util.kurve(), fill: 'backwards' }, optionen || {});
     if (!element || !element.animate) {
       return { finished: Promise.resolve(), cancel: function () {}, finish: function () {} };
     }
@@ -254,7 +267,7 @@
       .replace(/\[Marke\]/g, marke.name || '[Marke]');
   };
 
-  /* Pfad relativ zum Präsentationsordner (funktioniert auch in _test/…) */
+  /* Pfad relativ zum Präsentationsordner (funktioniert auch für Kopien in Unterordnern) */
   util.pfad = function (relativ) {
     if (!relativ) return relativ;
     if (/^([a-z]+:|\/|#|data:)/i.test(relativ)) return relativ;
@@ -339,10 +352,57 @@
     return MODI.indexOf(m) >= 0 ? m : 'hell';
   }
 
+  /* Markenfarben: marke.js → farben. Zum Ausprobieren überschreiben (nur in
+     diesem Tab, ohne marke.js zu ändern): Farbwähler in der Bedienleiste oder
+     Adresse ?primaer=E30613&sekundaer=1D1D1B. „Zurück“ stellt marke.js her. */
+  var farbTest = { primaer: '', sekundaer: '' };
+  function hexNormal(wert) {
+    var w = String(wert || '').trim();
+    if (!w) return '';
+    if (/^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(w)) w = '#' + w;
+    return /^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(w) ? w : '';
+  }
+  ['primaer', 'sekundaer'].forEach(function (n) {
+    farbTest[n] = hexNormal(parameter.get(n)) || hexNormal(sitzungLaden('farbe-' + n));
+  });
   function markenfarbenSetzen() {
     var f = marke.farben || {};
-    if (f.primaer) html.style.setProperty('--marke-primaer', f.primaer);
-    if (f.sekundaer) html.style.setProperty('--marke-sekundaer', f.sekundaer);
+    ['primaer', 'sekundaer'].forEach(function (n) {
+      var wert = farbTest[n] || hexNormal(f[n]);
+      if (wert) html.style.setProperty('--marke-' + n, wert);
+      else html.style.removeProperty('--marke-' + n);
+    });
+    tokenCache = {};
+  }
+  /* Farbe testen: Deck.farbe('primaer', '#E30613') · Deck.farbe() = zurück zu marke.js */
+  Deck.farbe = function (name, wert, optionen) {
+    optionen = optionen || {};
+    if (!name) { farbTest.primaer = ''; farbTest.sekundaer = ''; }
+    else if (farbTest.hasOwnProperty(name)) farbTest[name] = hexNormal(wert);
+    ['primaer', 'sekundaer'].forEach(function (n) { sitzungSpeichern('farbe-' + n, farbTest[n]); });
+    markenfarbenSetzen();
+    farbWaehlerAktualisieren();
+    if (!optionen.still) kanalZustandSenden();
+    document.dispatchEvent(new CustomEvent('deck:thema', { detail: { thema: html.getAttribute('data-thema'), modus: html.getAttribute('data-modus'), farben: Object.assign({}, farbTest) } }));
+  };
+  /* Aktuell wirksame Markenfarbe als #rrggbb (für den Farbwähler) */
+  function farbeAlsHex(name) {
+    var roh = getComputedStyle(html).getPropertyValue('--marke-' + name).trim();
+    if (/^#[0-9a-f]{6}$/i.test(roh)) return roh.toLowerCase();
+    if (/^#[0-9a-f]{3}$/i.test(roh)) return ('#' + roh[1] + roh[1] + roh[2] + roh[2] + roh[3] + roh[3]).toLowerCase();
+    try {
+      var c = document.createElement('canvas').getContext('2d');
+      c.fillStyle = roh;
+      return /^#[0-9a-f]{6}$/i.test(c.fillStyle) ? c.fillStyle : '#808080';
+    } catch (e) { return '#808080'; }
+  }
+  function farbWaehlerAktualisieren() {
+    if (!leiste) return;
+    alle('input[data-farbe]', leiste).forEach(function (eingabe) {
+      eingabe.value = farbeAlsHex(eingabe.getAttribute('data-farbe'));
+    });
+    var zurueckKnopf = leiste.querySelector('[data-aktion="farben-zurueck"]');
+    if (zurueckKnopf) zurueckKnopf.hidden = !farbTest.primaer && !farbTest.sekundaer;
   }
 
   function themaSetzen(thema, modus, optionen) {
@@ -361,8 +421,34 @@
       hinweisZeigen('Thema: ' + THEMEN_NAMEN[thema] + ' · ' + (modus === 'hell' ? 'hell' : 'dunkel'));
     }
     if (geaendert && !optionen.still) kanalZustandSenden();
-    if (geaendert) document.dispatchEvent(new CustomEvent('deck:thema', { detail: { thema: thema, modus: modus } }));
+    if (geaendert) {
+      farbWaehlerAktualisieren();
+      document.dispatchEvent(new CustomEvent('deck:thema', { detail: { thema: thema, modus: modus } }));
+      /* Schriften des neuen Themas laden, dann Bausteine nachmessen lassen */
+      schriftenLaden().then(function () {
+        tokenCache = {};
+        document.dispatchEvent(new CustomEvent('deck:groesse', { detail: { thema: thema, modus: modus } }));
+      });
+    }
   }
+
+  /* Schriften des aktuellen Themas laden (lokale Dateien, dauert Millisekunden).
+     Wichtig, damit Bausteine erst messen, wenn die echte Schrift da ist. */
+  function schriftenLaden() {
+    if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    var stil = getComputedStyle(html);
+    var familien = ['--schrift-display', '--schrift-text', '--schrift-zahl', '--schrift-kicker'].map(function (t) {
+      return stil.getPropertyValue(t).trim();
+    }).filter(Boolean);
+    var laden = [];
+    familien.forEach(function (fam) {
+      laden.push(document.fonts.load('400 40px ' + fam, 'Aäß'));
+      laden.push(document.fonts.load('italic 400 40px ' + fam, 'Aäß'));
+    });
+    var zeitlimit = new Promise(function (fertig) { setTimeout(fertig, 2500); });
+    return Promise.race([Promise.all(laden).catch(function () { /* egal */ }), zeitlimit]);
+  }
+  util.schriftenLaden = schriftenLaden;
   Deck.thema = function (thema, modus) {
     themaSetzen(thema || html.getAttribute('data-thema'), modus || html.getAttribute('data-modus'), { merken: true, melden: true });
   };
@@ -385,6 +471,7 @@
      data-hochschule, data-praesentation (Titel), data-fallstudie
      <img data-marke-logo>               → Logo aus marke.js
      data-anrede-sie="…" data-anrede-ihr="…" → Text je nach Anrede
+     data-umfrage-frage="tier"           → Frage der Umfrage aus marke.js
      =========================================================================== */
   function datumText(art) {
     if (!marke.datum) return '';
@@ -428,6 +515,12 @@
       if (marke.logo) el.setAttribute('src', util.pfad(marke.logo));
       if (!el.getAttribute('alt')) el.setAttribute('alt', 'Logo ' + (marke.name || '[Marke]'));
     });
+    /* Frage einer Umfrage aus marke.js, z. B. als Folientitel:
+       <h2 class="titel" data-umfrage-frage="tier"></h2> */
+    alle('[data-umfrage-frage]', wurzel).forEach(function (el) {
+      var u = (marke.umfragen || {})[el.getAttribute('data-umfrage-frage')];
+      if (u && u.frage) el.textContent = util.markeText(u.frage);
+    });
     alle('[data-anrede-sie]', wurzel).forEach(function (el) {
       el.textContent = util.anrede(el.getAttribute('data-anrede-sie'), el.getAttribute('data-anrede-ihr') || el.getAttribute('data-anrede-sie'));
     });
@@ -448,14 +541,16 @@
 
   function zweistellig(n) { return (n < 10 ? '0' : '') + n; }
 
+  /* Angezeigte Foliennummer: data-nummer, sonst aus der ID (f06 → „06“,
+     f01b → „01b“, b3 → „B3“; Demo: d04 → „04“, db2 → „B2“), sonst laufend. */
   function nummerFuer(el, laufendeNummer) {
     if (el.hasAttribute('data-nummer')) return el.getAttribute('data-nummer');
     var id = el.id || '';
-    var m = /^f(\d+)([a-z]*)$/i.exec(id);
-    if (m) return zweistellig(Number(m[1])) + m[2];
-    m = /^b(\d+)$/i.exec(id);
-    if (m) return 'B' + Number(m[1]);
-    return zweistellig(laufendeNummer);
+    var m = /^[a-z]?b(\d+)$/i.exec(id);
+    if (m && el.hasAttribute('data-backup')) return 'B' + Number(m[1]);
+    m = /^[a-z]{1,2}(\d+)([a-z]*)$/i.exec(id);
+    if (m && !el.hasAttribute('data-backup')) return zweistellig(Number(m[1])) + m[2];
+    return el.hasAttribute('data-backup') ? 'B' + laufendeNummer : zweistellig(laufendeNummer);
   }
 
   function datenLesen(el) {
@@ -469,6 +564,14 @@
     }
   }
 
+  /* Optionale Folien zeigen? marke.js → optionaleFolien, oder zum Proben/Testen
+     per Adresse: ?optional=alle bzw. ?optional=f01b,f05 */
+  var OPTIONAL_PARAM = (parameter.get('optional') || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+  function optionalAn(id) {
+    if (OPTIONAL_PARAM.indexOf('alle') >= 0 || OPTIONAL_PARAM.indexOf(id) >= 0) return true;
+    return !!(marke.optionaleFolien && marke.optionaleFolien[id]);
+  }
+
   function folienSammeln() {
     var roh = alle(':scope > section.folie', buehne);
     var haupt = [];
@@ -479,7 +582,7 @@
       if (gesehen[el.id]) console.error('Folien-ID „' + el.id + '“ ist doppelt vergeben.');
       gesehen[el.id] = true;
       var optional = el.hasAttribute('data-optional');
-      if (optional && !(marke.optionaleFolien && marke.optionaleFolien[el.id])) {
+      if (optional && !optionalAn(el.id)) {
         el.classList.add('ist-ausgeblendet');
         el.setAttribute('aria-hidden', 'true');
         return;
@@ -527,7 +630,17 @@
   }
   Deck.feldZiel = function (feld) {
     var f = feldZiel(feld);
-    return f ? { id: f.id, nummer: f.nummer, titel: f.titel, index: f.index } : null;
+    if (!f) return null;
+    var alleZiele = Deck.feldZiele(feld);
+    var bereich = alleZiele.length > 1 && alleZiele[alleZiele.length - 1].index - alleZiele[0].index === alleZiele.length - 1
+      ? alleZiele[0].nummer + '–' + alleZiele[alleZiele.length - 1].nummer : f.nummer;
+    return { id: f.id, nummer: f.nummer, titel: f.titel, index: f.index, bereich: bereich };
+  };
+  /* Alle Hauptfolien mit diesem data-feld (z. B. Persona + Limbic Map) */
+  Deck.feldZiele = function (feld) {
+    if (feld === 'rahmen') feld = 'persona';
+    return folien.filter(function (f) { return !f.backup && f.feld === feld; })
+      .map(function (f) { return { id: f.id, nummer: f.nummer, titel: f.titel, index: f.index }; });
   };
 
   function laufkopfEinfuegen(f) {
@@ -617,6 +730,10 @@
       schritt: aktuell.index === f.index ? aktuell.schritt : 0,
       schritteGesamt: f.schritteGesamt,
       richtung: letzteRichtung,
+      /* true = Folie wurde ohne Übergang erreicht (Start, Sprung per Adresse,
+         Übersicht/Prüfwerkzeug mit { sofort: true }, Druck). Auftritts-
+         Animationen können dann entfallen. */
+      sofort: letzterWechselSofort,
       bewegungReduziert: bewegungReduziert(),
       druckmodus: istDruckmodus,
       referent: IST_REFERENT,
@@ -685,6 +802,28 @@
     return !!f && f.index === aktuell.index && !el.closest('.ist-klon');
   };
 
+  /* Größen messen, auch wenn die Folie gerade nicht sichtbar ist:
+     util.messen(element, function () { return element.clientHeight; })
+     Die Folie wird dafür kurz unsichtbar eingeblendet. */
+  util.messen = function (element, fn) {
+    var sec = element && element.closest ? element.closest('section.folie') : null;
+    var sichtbar = !sec || getComputedStyle(sec).display !== 'none';
+    if (sichtbar) return fn();
+    sec.classList.add('ist-messung');
+    try { return fn(); } finally { sec.classList.remove('ist-messung'); }
+  };
+
+  /* Nachdem ein Baustein seine Elemente neu gebaut hat: Schritte der Folie
+     neu einsammeln und den aktuellen Stand wieder anwenden. */
+  Deck.schritteNeu = function (folieEl) {
+    var f = folieFuerElement(folieEl);
+    if (!f) return;
+    schritteErmitteln(f);
+    var n = istDruckmodus ? f.schritteGesamt : (f.index === aktuell.index ? aktuell.schritt : 0);
+    schrittKlassen(f, n);
+    if (f.index === aktuell.index) morphNamen(f, true);
+  };
+
 
   /* ===========================================================================
      7. SCHRITTE UND ANIMATIONEN
@@ -703,13 +842,24 @@
     var angegeben = parseInt(f.el.getAttribute('data-schritte') || '0', 10) || 0;
     f.schritteGesamt = Math.max(max, angegeben, f.mindestSchritte);
     /* Auftritt: animierte Elemente ohne eigenen Schritt (beim Betreten) */
-    f.auftritt = alle('[data-animation], [data-staffel]', f.el).filter(function (el) {
-      if (el.closest('.notizen') || el.closest('.ist-klon')) return false;
+    f.auftritt = eigeneAnimierte(f.el);
+  }
+
+  /* Animierte Nachfahren, die direkt zu „wurzel“ gehören: Elemente mit
+     data-animation oder data-staffel, die weder selbst ein Schritt sind noch
+     in einem anderen Schritt oder einer Staffel stecken (die animieren ihre
+     Inhalte selbst). Gilt für die Folie (Auftritt beim Betreten) und für
+     jeden Schritt-Container (z. B. Zähler in einer Karte mit data-schritt). */
+  function eigeneAnimierte(wurzel) {
+    return alle('[data-animation], [data-staffel]', wurzel).filter(function (el) {
+      if (el.closest('.notizen') || el.closest('.ist-klon') || el.closest('.laufkopf')) return false;
       if (el.hasAttribute('data-schritt')) return false;
-      if (el.closest('[data-schritt]')) return false;              // gehört zu einem Schritt
-      var staffelEltern = el.parentElement && el.parentElement.closest('[data-staffel]');
-      if (staffelEltern && f.el.contains(staffelEltern)) return false;  // Staffel übernimmt
-      return true;
+      var p = el.parentElement;
+      while (p && p !== wurzel) {
+        if (p.hasAttribute('data-schritt') || p.hasAttribute('data-staffel') || p.hasAttribute('data-animation')) return false;
+        p = p.parentElement;
+      }
+      return p === wurzel;
     });
   }
 
@@ -757,6 +907,7 @@
       case 'links':   return [{ opacity: 0, translate: weg + 'px 0' }, { opacity: 1, translate: '0 0' }];
       case 'rechts':  return [{ opacity: 0, translate: (-weg) + 'px 0' }, { opacity: 1, translate: '0 0' }];
       case 'zoom':    return [{ opacity: 0, scale: '0.94' }, { opacity: 1, scale: '1' }];
+      case 'feder':   return [{ opacity: 0, scale: '0.4' }, { opacity: 1, scale: '1' }];   /* mit Federkurve */
       case 'unschaerfe': return [{ opacity: 0, filter: 'blur(16px)' }, { opacity: 1, filter: 'blur(0px)' }];
       default:        return [{ opacity: 0 }, { opacity: 1 }];
     }
@@ -767,7 +918,7 @@
     var art = (el.getAttribute('data-animation') || 'einblenden').split(/\s+/)[0];
     var verzoegerung = (grundVerzoegerung || 0) + (parseFloat(el.getAttribute('data-verzoegerung')) || 0);
     var dauerAttr = parseFloat(el.getAttribute('data-dauer'));
-    var kurve = tokenRoh('--kurve') || 'ease-out';
+    var kurve = util.kurve(art === 'feder' ? 'feder' : '');
 
     if (art === 'hervorheben' || art === 'zustand' || art === 'keine') return;
 
@@ -788,7 +939,10 @@
     }
 
     if (art === 'zeichnen') {
-      var formen = el.matches(GEOMETRIE) ? [el] : alle(GEOMETRIE, el);
+      /* Formen mit eigener data-animation (z. B. Punkte mit „feder“) animieren sich selbst */
+      var formen = el.matches(GEOMETRIE) ? [el] : alle(GEOMETRIE, el).filter(function (form) {
+        return !form.closest('defs, marker') && !form.hasAttribute('data-animation');
+      });
       if (!(el instanceof SVGElement)) {
         /* HTML-Element (z. B. Linie, Balken): wächst von links */
         util.animiere(el, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }],
@@ -820,22 +974,29 @@
     util.animiere(el, keyframes, { duration: dauer, delay: verzoegerung, easing: kurve });
   }
 
-  /* Element (oder Staffel-Container) erscheinen lassen */
+  /* Element (oder Staffel-Container) erscheinen lassen – samt der animierten
+     Elemente, die darin stecken (Zähler, Linien …) */
   function auftrittAnimieren(el, grundVerzoegerung) {
     grundVerzoegerung = grundVerzoegerung || 0;
     if (el.hasAttribute('data-staffel')) {
       var abstand = parseFloat(el.getAttribute('data-staffel'));
       if (isNaN(abstand) || abstand <= 0) abstand = token('--staffel') || 70;
       var eigeneVerz = parseFloat(el.getAttribute('data-verzoegerung')) || 0;
-      var kinder = Array.prototype.slice.call(el.children).filter(function (k) { return !k.hasAttribute('data-schritt'); });
+      var kinder = Array.prototype.slice.call(el.children).filter(function (k) {
+        return !k.hasAttribute('data-schritt') && !k.matches('script, template, .notizen');
+      });
       var artContainer = el.getAttribute('data-animation');
       kinder.forEach(function (kind, i) {
         if (!kind.hasAttribute('data-animation') && artContainer) kind.setAttribute('data-animation', artContainer);
-        elementAnimieren(kind, grundVerzoegerung + eigeneVerz + i * abstand);
+        var v = grundVerzoegerung + eigeneVerz + i * abstand;
+        elementAnimieren(kind, v);
+        eigeneAnimierte(kind).forEach(function (innen) { auftrittAnimieren(innen, v); });
       });
       return;
     }
     elementAnimieren(el, grundVerzoegerung);
+    var v2 = grundVerzoegerung + (parseFloat(el.getAttribute('data-verzoegerung')) || 0);
+    eigeneAnimierte(el).forEach(function (innen) { auftrittAnimieren(innen, v2); });
   }
 
   /* Element beim Zurückgehen ruhig ausblenden */
@@ -906,6 +1067,16 @@
      8. NAVIGATION UND ÜBERGÄNGE
      =========================================================================== */
   var letzteRichtung = 'start';
+  var letzterWechselSofort = true;      /* ctx.sofort (siehe kontext) */
+
+  /* Während ein animierter Folienwechsel läuft, trägt <html> die Klasse
+     „wechsel-laeuft“; an seinem Ende kommt das Ereignis „deck:wechsel-ende“
+     (detail: { folie }). Folien-Skripte brauchen so keinen eigenen Timer. */
+  function wechselEnde(f, nr) {
+    if (nr !== wechselNr) return;           /* inzwischen neuer Wechsel */
+    html.classList.remove('wechsel-laeuft');
+    document.dispatchEvent(new CustomEvent('deck:wechsel-ende', { detail: { folie: f.id } }));
+  }
   var laufenderUebergang = null;
   var gehendeFolie = null;
   var testSofort = false;
@@ -976,6 +1147,7 @@
      optionen: { richtung: 'vor'|'zurueck', sofort: true (ohne Übergang),
                  still: true (nicht an das andere Fenster senden),
                  vorher: function () {} (läuft im selben Übergang) } */
+  var wechselNr = 0;          /* zählt Folienwechsel; überholte Wechsel werden verworfen */
   function gehe(ziel, schritt, optionen) {
     optionen = optionen || {};
     var index = folieAufloesen(ziel);
@@ -997,6 +1169,8 @@
     var richtung = optionen.richtung || (alt && index < alt.index ? 'zurueck' : 'vor');
     letzteRichtung = alt ? richtung : 'start';
     var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus;
+    var nr = ++wechselNr;
+    letzterWechselSofort = !animieren;
 
     if (alt) {
       bausteinHooks(alt, 'verlassen');
@@ -1013,31 +1187,53 @@
       gehendeFolie = null;
     }
 
+    /* Der logische Stand gilt sofort (Tasten, Deck.zustand(), Abgleich) –
+       die sichtbare Änderung folgt im Übergang. Bei View Transitions läuft
+       „aendern“ erst, wenn das alte Bild aufgenommen ist (einige Frames später). */
+    aktuell.index = f.index;
+    aktuell.schritt = schritt;
+    adresseSetzen();
+    leisteAktualisieren();
+    if (!optionen.still) kanalZustandSenden();
+
     var aendern = function () {
+      if (nr !== wechselNr) return;           /* inzwischen wurde weitergeblättert */
       if (typeof optionen.vorher === 'function') optionen.vorher();
-      folieAktivieren(f, schritt);
-      auftrittStarten(f, schritt, richtung, animieren);
-      bausteinHooks(f, 'betreten', [schritt, richtung]);
-      hookAufrufen(f, 'betreten', [schritt]);
-      bausteinHooks(f, 'schritt', [schritt, 'start']);
-      hookAufrufen(f, 'schritt', [schritt, 'start']);
+      var n = aktuell.schritt;                /* kann sich während des Übergangs geändert haben */
+      folieAktivieren(f, n);
+      bausteinHooks(f, 'betreten', [n, richtung]);
+      hookAufrufen(f, 'betreten', [n]);
+      bausteinHooks(f, 'schritt', [n, 'start']);
+      hookAufrufen(f, 'schritt', [n, 'start']);
+      auftrittStarten(f, n, richtung, animieren);
+      morphNamen(f, true);          /* falls ein Baustein beim Betreten neu gebaut hat */
+      if (!optionen.still && document.activeElement && alt && alt.el.contains(document.activeElement)) {
+        document.activeElement.blur();      /* Fokus nicht in der ausgeblendeten Folie lassen */
+      }
+      nachZustandswechsel('folie', richtung, optionen);
     };
 
     html.classList.toggle('richtung-zurueck', richtung === 'zurueck');
     html.classList.toggle('richtung-vor', richtung !== 'zurueck');
 
+    html.classList.toggle('wechsel-laeuft', animieren);
     if (!animieren) {
       aendern();
+      wechselEnde(f, nr);
     } else if (unterstuetztVT && !bewegungReduziert()) {
       try {
         var uebergang = document.startViewTransition(aendern);
         laufenderUebergang = uebergang;
-        var fertig = function () { if (laufenderUebergang === uebergang) laufenderUebergang = null; };
+        var fertig = function () {
+          if (laufenderUebergang === uebergang) laufenderUebergang = null;
+          wechselEnde(f, nr);
+        };
         uebergang.finished.then(fertig, fertig);
         uebergang.ready.catch(function () { /* übersprungen – kein Fehler */ });
         uebergang.updateCallbackDone.catch(function (e) { console.error(e); });
       } catch (e) {
         aendern();
+        wechselEnde(f, nr);
       }
     } else {
       /* Rückfall: einfaches Überblenden (bei „Bewegung reduzieren“ ohne Weg) */
@@ -1047,21 +1243,19 @@
       aendern();
       var weg = bewegungReduziert() ? 0 : 24;
       var vz = richtung === 'zurueck' ? 1 : -1;
-      util.animiere(alt.el, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: (vz * weg) + 'px 0' }],
-        { duration: dauer, easing: 'ease-in-out', fill: 'forwards' }).finished.then(function () {
+      var raus = util.animiere(alt.el, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: (vz * weg) + 'px 0' }],
+        { duration: dauer, easing: 'ease-in-out', fill: 'forwards' });
+      var aufraeumen = function () {
+        try { raus.cancel(); } catch (e) { /* egal */ }   /* „forwards“ nicht an der Folie hängen lassen */
         alt.el.classList.remove('ist-geht');
         stoppeAnimationen(alt.el);
         if (gehendeFolie === alt) gehendeFolie = null;
-      }, function () { /* abgebrochen */ });
+        wechselEnde(f, nr);
+      };
+      raus.finished.then(aufraeumen, aufraeumen);
       util.animiere(f.el, [{ opacity: 0, translate: (-vz * weg) + 'px 0' }, { opacity: 1, translate: '0 0' }],
         { duration: dauer, easing: 'ease-out' });
     }
-
-    if (!optionen.still) {
-      /* Fokus nicht in einer ausgeblendeten Folie stehen lassen */
-      if (document.activeElement && alt && alt.el.contains(document.activeElement)) document.activeElement.blur();
-    }
-    nachZustandswechsel('folie', richtung, optionen);
     return true;
   }
 
@@ -1173,7 +1367,7 @@
   /* Befehle laufen im Referentenfenster über das Vortragsfenster (Abgleich) */
   function befehl(aktion, daten) {
     if (IST_REFERENT && kanal.verbunden) {
-      kanal.senden('befehl', Object.assign({ aktion: aktion }, daten || {}));
+      kanalSenden('befehl', Object.assign({ aktion: aktion }, daten || {}));
       return;
     }
     befehlAusfuehren(aktion, daten || {});
@@ -1376,6 +1570,14 @@
       '<button type="button" data-aktion="referent" title="Referentenansicht (P)" aria-label="Referentenansicht öffnen">' + icon('referent') + '</button>' +
       '<button type="button" data-aktion="thema" title="Thema wechseln (T)" aria-label="Thema wechseln">' + icon('palette') + '</button>' +
       '<button type="button" data-aktion="modus" title="Hell/Dunkel (D)" aria-label="Hell oder dunkel">' + icon('mond') + '</button>' +
+      '<span class="bl-trenner" aria-hidden="true"></span>' +
+      /* Farbwähler: Markenfarben live ausprobieren (gilt nur in diesem Tab) */
+      '<label class="bl-farbe" title="Primärfarbe ausprobieren (nur in diesem Tab – dauerhaft: marke.js)">' +
+      '<input type="color" data-farbe="primaer" aria-label="Primärfarbe ausprobieren"></label>' +
+      '<label class="bl-farbe" title="Sekundärfarbe ausprobieren (nur in diesem Tab – dauerhaft: marke.js)">' +
+      '<input type="color" data-farbe="sekundaer" aria-label="Sekundärfarbe ausprobieren"></label>' +
+      '<button type="button" data-aktion="farben-zurueck" title="Farben wieder aus marke.js" aria-label="Testfarben zurücksetzen" hidden>' + icon('zuruecksetzen') + '</button>' +
+      '<span class="bl-trenner" aria-hidden="true"></span>' +
       '<button type="button" data-aktion="vollbild" title="Vollbild (F)" aria-label="Vollbild">' + icon('vollbild') + '</button>' +
       '<button type="button" data-aktion="hilfe" title="Hilfe (H)" aria-label="Hilfe">' + icon('hilfe') + '</button>';
     leisteNummer = leiste.querySelector('.bl-nummer');
@@ -1390,8 +1592,14 @@
       else if (a === 'modus') modusWechseln();
       else if (a === 'vollbild') vollbildUmschalten();
       else if (a === 'hilfe') ebeneOeffnen('hilfe');
+      else if (a === 'farben-zurueck') Deck.farbe();
       knopf.blur();
     });
+    alle('input[data-farbe]', leiste).forEach(function (eingabe) {
+      eingabe.addEventListener('input', function () { Deck.farbe(eingabe.getAttribute('data-farbe'), eingabe.value); });
+      eingabe.addEventListener('change', function () { eingabe.blur(); });
+    });
+    farbWaehlerAktualisieren();
     var fortschritt = util.element('div', { class: 'fortschritt', 'aria-hidden': 'true' }, null, document.body);
     fortschrittBalken = util.element('div', { class: 'fortschritt-balken' }, null, fortschritt);
 
@@ -1709,7 +1917,9 @@
       '</dl></div>' +
       '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
       'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
-      'Auf Umfrage-Folien zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü.</p>';
+      'Solange eine Umfrage zu sehen ist, zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'Nach einem Sprung aus dem Backup führt Z zurück zur Backup-Folie. ' +
+      'Bedienleiste unten rechts (Maus bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
   }
 
   /* ----- Sprungmenü (Klick auf Mini-Steuerrad) ----- */
@@ -1774,8 +1984,10 @@
       offeneEbene = 'sprungmenue';
     };
     morphUebergang(oeffnen, function () {
-      var fokus = ebenen.sprungmenue.querySelector('.sr-feld[tabindex="0"]');
-      if (fokus) fokus.focus({ preventScroll: true });
+      /* Fokus auf das Menü selbst: Tab führt zum ersten Feld, ohne dass schon
+         beim Öffnen ein Feld hervorgehoben ist */
+      ebenen.sprungmenue.setAttribute('tabindex', '-1');
+      ebenen.sprungmenue.focus({ preventScroll: true });
     });
   }
   function sprungmenueSchliessen() {
@@ -1885,6 +2097,7 @@
       schritt: aktuell.schritt,
       thema: html.getAttribute('data-thema'),
       modus: html.getAttribute('data-modus'),
+      farben: { primaer: farbTest.primaer, sekundaer: farbTest.sekundaer },
       schwarz: html.classList.contains('schwarz')
     });
   }
@@ -1893,6 +2106,11 @@
     if (!z) return;
     if (z.thema && (z.thema !== html.getAttribute('data-thema') || z.modus !== html.getAttribute('data-modus'))) {
       themaSetzen(z.thema, z.modus, { still: true });
+    }
+    if (z.farben && (z.farben.primaer !== farbTest.primaer || z.farben.sekundaer !== farbTest.sekundaer)) {
+      farbTest.primaer = z.farben.primaer || '';
+      farbTest.sekundaer = z.farben.sekundaer || '';
+      markenfarbenSetzen();
     }
     html.classList.toggle('schwarz-im-saal', !!z.schwarz);
     if (z.folie) {
@@ -1970,12 +2188,11 @@
       '  <div class="r-notizen-text"></div>' +
       '</section>' +
       '<section class="r-feld r-uhren" aria-label="Zeit">' +
-      '  <div class="r-uhr-zeile r-uhr-gesamt"><span class="r-uhr-name">Gesamtzeit</span><span class="r-uhr-soll"></span>' +
+      '  <div class="r-uhr-zeile r-uhr-gesamt"><span class="r-uhr-name">Gesamtzeit</span><span class="r-uhr-soll r-uhrzeit">Uhrzeit --:--</span>' +
       '    <span class="r-uhr-wert">0:00</span><span class="r-uhr-soll r-uhr-soll-wert"></span><div class="r-uhr-balken"><span></span></div></div>' +
       '  <div class="r-uhr-zeile r-uhr-folie"><span class="r-uhr-name">Diese Folie</span><span class="r-uhr-soll"></span>' +
       '    <span class="r-uhr-wert">0:00</span><span class="r-uhr-soll r-uhr-soll-wert"></span><div class="r-uhr-balken"><span></span></div></div>' +
       '  <div class="r-plan"></div>' +
-      '  <div class="r-uhr-zeile r-uhrzeit"><span class="r-uhr-name">Uhrzeit</span><span></span><span class="r-uhr-wert" style="font-size:32px">--:--</span><span></span></div>' +
       '  <div class="r-knoepfe">' +
       '    <button type="button" class="r-knopf r-knopf--gross" data-r="zurueck" aria-label="Zurück">' + icon('pfeil-links') + '</button>' +
       '    <button type="button" class="r-knopf r-knopf--gross" data-r="weiter" aria-label="Weiter">' + icon('pfeil-rechts') + '</button>' +
@@ -1996,14 +2213,11 @@
     r.gesamt = raster.querySelector('.r-uhr-gesamt');
     r.folie = raster.querySelector('.r-uhr-folie');
     r.plan = raster.querySelector('.r-plan');
-    r.uhrzeit = raster.querySelector('.r-uhrzeit .r-uhr-wert');
+    r.uhrzeit = raster.querySelector('.r-uhrzeit');
     r.startpause = raster.querySelector('[data-r="startpause"]');
     /* Die echte Bühne in den Platz „Aktuell“ verschieben */
+    /* (beide Plätze füllen ihr Feld; die Bühne wird darin mit Rand eingepasst) */
     r.platzAktuell.appendChild(deckEl);
-    r.platzAktuell.style.aspectRatio = '16 / 9';
-    r.platzAktuell.style.flex = 'none';
-    r.platzNaechste.style.aspectRatio = '16 / 9';
-    r.platzNaechste.style.flex = 'none';
 
     var schrift = util.laden('referent-schrift', 28);
     r.notizen.style.setProperty('--r-schrift', schrift + 'px');
@@ -2107,8 +2321,9 @@
     if (!r.vorschau) return;
     var k = r.vorschau.firstElementChild;
     if (!k || !k.classList.contains('folie')) return;
-    var s = r.vorschau.clientWidth / 1920;
-    k.style.transform = 'scale(' + s + ')';
+    var b = r.vorschau.clientWidth, h = r.vorschau.clientHeight;
+    var s = Math.min(b / 1920, h / 1080);
+    k.style.transform = 'translate(' + Math.round((b - 1920 * s) / 2) + 'px, ' + Math.round((h - 1080 * s) / 2) + 'px) scale(' + s + ')';
   }
 
   function uhrAnzeigen() {
@@ -2133,7 +2348,7 @@
       r.plan.textContent = f && f.backup ? 'Backup-Folie' : '';
     }
     var jetzt = new Date();
-    r.uhrzeit.textContent = (jetzt.getHours() < 10 ? '0' : '') + jetzt.getHours() + ':' + (jetzt.getMinutes() < 10 ? '0' : '') + jetzt.getMinutes();
+    r.uhrzeit.textContent = 'Uhrzeit ' + (jetzt.getHours() < 10 ? '0' : '') + jetzt.getHours() + ':' + (jetzt.getMinutes() < 10 ? '0' : '') + jetzt.getMinutes();
     r.startpause.innerHTML = uhr.laeuft ? icon('pause') + '<span>Pause</span>' : icon('start') + '<span>' + (uhr.gestartet ? 'Weiter' : 'Start') + '</span>';
   }
   function zeileSetzen(zeile, ist, soll) {
@@ -2164,6 +2379,11 @@
     if (ebenenWurzel && offeneEbene) ebeneSchliessen(true);
     laufendeAnimationen.forEach(function (a) { try { a.finish(); } catch (e) { a.cancel(); } });
     folien.forEach(endzustandFolie);
+    /* nach der letzten Seite kein Seitenumbruch (sonst leere Seite am Ende) */
+    alle('.letzte-seite').forEach(function (x) { x.classList.remove('letzte-seite'); });
+    var seiten = html.classList.contains('druck-notizen') ? alle(':scope > .druck-seite', buehne)
+      : alle(':scope > section.folie:not(.ist-ausgeblendet)', buehne);
+    if (seiten.length) seiten[seiten.length - 1].classList.add('letzte-seite');
   }
   function druckmodusAus() {
     if (!istDruckmodus || IST_DRUCK_URL) return;
@@ -2214,7 +2434,12 @@
     markenfarbenSetzen();
     themaSetzen(anfangsThema(), anfangsModus(), { still: true });
     if (marke.titel && !IST_REFERENT) document.title = marke.titel + (marke.name ? ' – ' + marke.name : '');
+    /* erst die Schriften laden (lokal, wenige Millisekunden), dann aufbauen –
+       so messen Bausteine wie das Steuerrad mit der richtigen Schrift */
+    schriftenLaden().then(aufbauenUndStarten, aufbauenUndStarten);
+  }
 
+  function aufbauenUndStarten() {
     folienSammeln();
     if (!folien.length) {
       console.error('deck.js: keine Folien gefunden (<section class="folie"> in <main class="buehne">).');

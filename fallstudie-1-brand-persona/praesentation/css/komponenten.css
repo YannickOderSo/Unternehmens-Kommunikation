@@ -35,7 +35,13 @@
   color: var(--f-akzent);
 }
 .kicker .beispiel,
-.kicker .live { margin-left: 16px; vertical-align: 2px; }
+.kicker .live {
+  margin-left: 16px;
+  vertical-align: 2px;
+  /* Pille (40 px) macht die Kickerzeile (26 px) nicht höher: sonst stünde der
+     Titel auf Folien mit „Beispieldaten“ 14 px tiefer als auf Folien ohne */
+  margin-block: -8px;
+}
 
 /* Folientitel = Kernaussage (ein vollständiger Satz, höchstens zwei Zeilen) */
 .titel {
@@ -47,7 +53,7 @@
   font-variation-settings: "opsz" var(--opsz-titel);
   text-wrap: balance;
   color: var(--f-text);
-  max-width: 1500px;
+  max-width: 100%;
 }
 /* Hervorhebung im Titel (z. B. der Markenname): <em> */
 .titel em,
@@ -303,7 +309,7 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .kennzahl-wert {
   font-family: var(--schrift-zahl);
   font-size: var(--groesse-kennzahl);
-  font-weight: var(--gewicht-display);
+  font-weight: var(--gewicht-zahl);
   line-height: 0.95;
   letter-spacing: -0.02em;
   font-variant-numeric: lining-nums tabular-nums;
@@ -450,7 +456,7 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .angaben-wert { font-size: var(--groesse-text); line-height: 1.25; color: var(--f-text); }
 .angaben-wert--marke {
   font-family: var(--schrift-display);
-  font-style: var(--stil-hervor);
+  font-style: var(--stil-marke);
   font-size: var(--groesse-untertitel);
   line-height: 1;
   color: var(--f-akzent);
@@ -468,8 +474,18 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
    Farben: --f-hart(-flaeche) links, --f-weich(-flaeche) rechts, --f-kern Mitte
    --------------------------------------------------------------------------- */
 .steuerrad { position: relative; flex: none; }
-.sr-modus-hub,
-.sr-modus-synthese { margin: 0 auto; }
+/* Hub und Synthese füllen den freien Platz im Folieninhalt; das Rad wird
+   in genau dieser Größe gebaut (.sr-hub) und bei Bedarf neu vermessen */
+.steuerrad.sr-modus-hub,
+.steuerrad.sr-modus-synthese {
+  flex: 1 1 0;
+  align-self: stretch;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.sr-hub { position: relative; flex: none; }
 .sr-modus-menue { margin: 0 auto; }
 .sr-rad { position: relative; }
 .sr-rad-platz { position: absolute; }
@@ -486,12 +502,29 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
   stroke-width: 4;
   transition: fill var(--dauer-kurz) var(--kurve), stroke var(--dauer-kurz) var(--kurve);
 }
+/* Kern federt beim Zeigen leicht (echte Federkurve aus tokens.css) */
+.sr-kern {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill var(--dauer-kurz) var(--kurve), stroke var(--dauer-kurz) var(--kurve), transform var(--dauer-mittel) var(--kurve-feder);
+}
+/* Hover-Effekte nur, wenn die Maus seit dem letzten Klick wirklich bewegt
+   wurde (Klasse html.zeiger-gesperrt setzt js/komponenten.js, „Mausregel“) */
+.sr-kern-gruppe.ist-fokus .sr-kern,
+html:not(.zeiger-gesperrt) .sr-kern-gruppe:hover .sr-kern { transform: scale(1.05); }
+.mini-rad:hover .sr-kern { transform: scale(1.18); }
 .sr-feld { cursor: pointer; outline: none; }
 .sr-feld.ist-ohne-ziel { cursor: default; }
 [data-paar] { transition: opacity var(--dauer-mittel) var(--kurve); }
 
-/* Zeigen/Fokus: Feld und Methode leuchten gemeinsam, der Rest tritt zurück */
-.steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: 0.45; }
+/* Zeigen/Fokus: Feld und Methode leuchten gemeinsam, der Rest tritt zurück
+   (Deckkraft: Token --dimmen). Die Schrift im Zentrum bleibt deckend, damit
+   sie auf der aufgehellten Kernfläche lesbar bleibt (≥ 3 : 1). */
+.steuerrad.hat-fokus [data-paar]:not(.ist-fokus) { opacity: var(--dimmen); }
+.steuerrad.hat-fokus .sr-label--kern:not(.ist-fokus) { opacity: 1; }
+/* Karten und Pillen: Fläche bleibt deckend (sonst scheint der Ring durch), nur Inhalt und Rand treten zurück */
+.steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) { opacity: 1; border-color: color-mix(in oklab, var(--f-karte-rand) 45%, var(--f-hintergrund)); box-shadow: none; }
+.steuerrad.hat-fokus .sr-karte[data-paar]:not(.ist-fokus) > * { opacity: var(--dimmen); transition: opacity var(--dauer-mittel) var(--kurve); }
 .steuerrad .sr-feld.ist-fokus .sr-flaeche,
 .steuerrad .sr-feld.ist-fokus .sr-kern { stroke: var(--f-akzent); }
 .steuerrad .sr-rahmen-gruppe.ist-fokus .sr-ring { stroke: var(--f-akzent); stroke-width: 5; }
@@ -513,15 +546,24 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 }
 .sr-label-name {
   font-family: var(--schrift-display);
-  font-size: 32px;
+  font-size: var(--sr-label-groesse, 32px);    /* wird passend zum Feld gemessen */
   font-weight: var(--gewicht-display);
   letter-spacing: -0.01em;
   line-height: 1.08;
   font-variation-settings: "opsz" 32;
 }
+/* obere Felder: Name auf der Zeile, Leitfrage darunter (zur Mitte hin);
+   untere Felder: Leitfrage darüber, Name auf der Zeile */
+.sr-label--oben { transform: translate(-50%, calc(var(--sr-name-hoehe, 35px) * -0.5)); }
+.sr-label--unten { flex-direction: column-reverse; transform: translate(-50%, calc(-100% + var(--sr-name-hoehe, 35px) * 0.5)); }
 .sr-label--hart .sr-label-name { color: var(--f-hart); }
 .sr-label--weich .sr-label-name { color: var(--f-weich); }
-.sr-label-frage { font-size: var(--groesse-text-min); line-height: 1.2; color: var(--f-text-2); }
+.sr-label-frage { font-size: var(--groesse-text-min); line-height: 1.2; color: var(--f-text-2); transition: opacity var(--dauer-mittel) var(--kurve); }
+/* data-leitfragen="schrittweise" (Standard im Hub): Leitfrage nur beim gezeigten Feld */
+.steuerrad[data-leitfragen="schrittweise"] .sr-label:not(.ist-fokus) .sr-label-frage { opacity: 0; }
+/* Leitfragen passen nicht ins Feld (kleines Rad) → stehen unter der Methodenkarte */
+.sr-ohne-leitfragen .sr-label:not(.sr-label--kern) .sr-label-frage { display: none; }
+.sr-karte-frage { display: block; font-style: italic; color: var(--f-text); }
 .sr-label-folie {
   font-family: var(--schrift-zahl);
   font-size: 24px;
@@ -533,7 +575,7 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .sr-label--kern .sr-label-name,
 .sr-label--kern .sr-label-frage,
 .sr-label--kern .sr-label-folie { color: var(--f-auf-kern); }
-.sr-label--kern .sr-label-name { font-size: 30px; }
+.sr-label--kern .sr-label-name { font-size: var(--sr-kern-groesse, 30px); }
 .sr-label-klein {
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
@@ -587,7 +629,6 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .sr-modus-menue .ist-aktiv .sr-flaeche,
 .sr-modus-menue .sr-kern-gruppe.ist-aktiv .sr-kern { stroke: var(--f-akzent); stroke-width: 6; }
 .sr-modus-menue.rahmen-aktiv .sr-ring { stroke: var(--f-akzent); stroke-width: 6; }
-.sr-modus-menue .sr-label-name { font-size: 34px; }
 
 /* Hub und Synthese: Karten außen, Verbinder, Logikpfeile */
 .sr-verbinder { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
@@ -644,10 +685,15 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 }
 [data-thema="bento"] .sr-karte,
 [data-thema="keynote"] .sr-karte { box-shadow: var(--schatten-1); border-radius: var(--radius-l); }
-.sr-karte:hover,
+html:not(.zeiger-gesperrt) .sr-karte:hover,
 .sr-karte.ist-fokus { border-color: var(--f-akzent); box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent); }
 .sr-karte.ist-ohne-ziel { cursor: default; }
 .sr-karte-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+/* Methodenkarten links/rechts: Name, darunter „Folie x →“. Alle Karten sind
+   linksbündig (auch rechts vom Rad) – gleiche Lesekante wie der übrige
+   Folientext; die frühere, wirkungslose Regel für rechtsbündige Karten ist
+   entfernt (Entscheidung Zusammenführung 16.10.2026). */
+.sr-modus-hub .sr-karte:not(.sr-pille) .sr-karte-kopf { flex-direction: column; align-items: flex-start; gap: 4px; }
 .sr-karte-name {
   font-family: var(--schrift-display);
   font-size: 34px;
@@ -658,15 +704,31 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 }
 .sr-karte-folie {
   flex: none;
-  font-family: var(--schrift-zahl);
+  font-family: var(--schrift-text);
   font-size: var(--groesse-meta);
   font-weight: 650;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--f-akzent);
   white-space: nowrap;
 }
+/* eindeutiger Klick-Hinweis: „Folie 06 →“ (Jury) */
+.sr-karte-folie:not(:empty)::after { content: "\00a0→"; }
 .sr-karte-text { font-size: var(--groesse-text-min); line-height: 1.25; color: var(--f-text-2); transition: opacity var(--dauer-mittel) var(--kurve); }
+/* data-beschreibungen="schrittweise" (Standard im Hub): Beschreibung erscheint
+   nur für die gezeigte Methode – unter der Karte, ohne dass sich etwas verschiebt */
+/* Einzug 64 px: links davon verläuft der gestrichelte Logikpfeil */
+.steuerrad[data-beschreibungen="schrittweise"] .sr-karte:not(.sr-pille) .sr-karte-text {
+  position: absolute;
+  left: 64px;
+  right: 0;
+  top: calc(100% + 12px);
+  text-align: left;
+  text-wrap: balance;
+}
+.steuerrad[data-beschreibungen="schrittweise"] .sr-karte--ro .sr-karte-text,
+.steuerrad[data-beschreibungen="schrittweise"] .sr-karte--ru .sr-karte-text { left: 0; right: 64px; text-align: right; }
 .steuerrad[data-beschreibungen="schrittweise"] .sr-karte:not(.ist-fokus) .sr-karte-text { opacity: 0; visibility: hidden; }
+.steuerrad[data-beschreibungen="schrittweise"] .sr-pille:not(.ist-fokus) .sr-karte-text { display: none; }
 .sr-pille {
   flex-direction: row;
   align-items: center;
@@ -675,11 +737,10 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
   padding: 0 28px;
   border-radius: var(--radius-pille) !important;
   white-space: nowrap;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);             /* sitzt mittig auf dem Ringrand */
 }
 .sr-pille .sr-karte-kopf { gap: 16px; }
 .sr-pille .sr-karte-text { white-space: nowrap; }
-.sr-karte--unten { top: auto; }
 /* Synthese: Feldname + Quelle, darunter Stichworte */
 .sr-karte-feld {
   font-family: var(--schrift-kicker);
@@ -739,7 +800,7 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .qr-bild svg { display: block; width: 100%; height: 100%; }
 .qr-kurz {
   margin: 0;
-  font-size: 32px;
+  font-size: 40px;               /* Jury: Kurz-URL mindestens 40 px */
   font-weight: 700;
   letter-spacing: -0.005em;
   color: var(--f-akzent);
@@ -759,13 +820,25 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
   align-items: stretch;
 }
 .umfrage--ohne-qr { grid-template-columns: minmax(0, 1fr); }
+/* Linke Spalte: QR-Block und (ab data-aussage="n") die Aussagezahl im selben Feld */
+.umfrage-links {
+  display: grid;
+  align-items: center;
+  width: var(--umfrage-links-breite, 460px);
+  min-height: 0;
+}
+.umfrage-links > * { grid-area: 1 / 1; min-width: 0; }
 .umfrage-qr {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility var(--dauer-mittel);
 }
+.umfrage-links:has(> .umfrage-aussage.schritt-an) > .umfrage-qr { opacity: 0; visibility: hidden; }
+.umfrage-qr .umfrage-stimmen { margin-top: 18px; }
+.umfrage-links > .umfrage-aussage { align-self: center; }
 .umfrage-aufruf {
   margin: 14px 0 0;
   font-family: var(--schrift-display);
@@ -810,7 +883,7 @@ html.maus-ruht .umfrage:not(:focus-within) .umfrage-werkzeuge { opacity: 0; }
   border-radius: var(--radius-s);
   background: var(--f-flaeche);
   color: var(--f-text);
-  font: 600 20px/1 var(--schrift-text);
+  font: 600 22px/1 var(--schrift-text);
   cursor: pointer;
   white-space: nowrap;
 }
@@ -868,7 +941,7 @@ html.maus-ruht .umfrage-taste { opacity: 0; }
   font-family: var(--schrift-display);
   font-size: 44px;
   font-weight: var(--gewicht-display);
-  line-height: 1.05;
+  line-height: 1.25;                 /* genug Platz für Unterlängen (overflow: hidden) */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -962,6 +1035,52 @@ html.maus-ruht .umfrage-taste { opacity: 0; }
 [data-thema="keynote"] .umfrage-balken { border-radius: 999px; }
 
 
+/* Große Aussagezahl: „27 % sehen HOLY wie wir: als Eule“ */
+.umfrage-aussage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 0 0;
+  border-top: var(--linie-stark) solid var(--f-akzent);
+}
+.ua-zahl {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-kennzahl);
+  font-weight: var(--gewicht-zahl);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-akzent);
+  white-space: nowrap;
+}
+.ua-text {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  color: var(--f-text);
+  max-width: 13em;
+  text-wrap: balance;
+}
+.ua-antwort { font-style: var(--stil-hervor); color: var(--f-akzent); }
+.umfrage-aussage.ist-leer .ua-zahl { color: var(--f-text-2); }
+/* Stimmenzähler: große Ziffer + „Stimmen“ */
+.umfrage-stimmen {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.us-zahl {
+  font-family: var(--schrift-zahl);
+  font-size: 88px;
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-text);
+}
+.us-text { font-size: var(--groesse-text); color: var(--f-text-2); }
+
+
 /* ---------------------------------------------------------------------------
    9. LIVE-WORTWOLKE
    --------------------------------------------------------------------------- */
@@ -1047,6 +1166,7 @@ html.maus-ruht .ww-eingabe:not(:focus-within) { opacity: 0; }
   transform: scale(var(--raetsel-zoom));
   transform-origin: 56% 44%;
   filter: blur(var(--raetsel-unschaerfe));
+  will-change: transform, filter;      /* eigene Grafikebene: Unschärfe ruckelt sonst auf schwachen Rechnern */
   transition:
     transform var(--dauer-lang) var(--kurve),
     filter var(--dauer-lang) var(--kurve);
@@ -1078,6 +1198,15 @@ html.maus-ruht .ww-eingabe:not(:focus-within) { opacity: 0; }
   transition: background-color var(--dauer-mittel) var(--kurve);
 }
 .raetsel-balken > span.ist-an { background: #FFFFFF; }
+/* Auflösung (z. B. im Kopf der Vollbild-Folie): <p class="raetsel-loesung" data-schritt="3"> */
+.raetsel-loesung {
+  margin-top: 18px;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.1;
+}
+.raetsel-loesung [data-marke] { font-style: var(--stil-marke); }
 
 
 /* ---------------------------------------------------------------------------
@@ -1098,6 +1227,9 @@ html.maus-ruht .ww-eingabe:not(:focus-within) { opacity: 0; }
 html.druckmodus .umfrage-werkzeuge,
 html.druckmodus .umfrage-taste,
 html.druckmodus .ww-eingabe { display: none !important; }
+/* Rätsel im Druck: aufgelöstes Bild ohne Filter und ohne eigene Grafikebene
+   (sonst fehlt das Bild im PDF) */
+html.druckmodus .raetsel-motiv { filter: none !important; will-change: auto; transform: none !important; inset: 0; }
 html.aufnahme .umfrage-werkzeuge,
 html.aufnahme .umfrage-taste { opacity: 0 !important; }
 

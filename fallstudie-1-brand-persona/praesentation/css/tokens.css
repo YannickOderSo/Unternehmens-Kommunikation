@@ -186,8 +186,13 @@
   --dauer-folie: 520ms;            /* Folienwechsel */
   --staffel: 70ms;                 /* Versatz zwischen gestaffelten Elementen */
   --weg: 18px;                     /* Weg der Einblend-Bewegungen */
+  /* Deckkraft zurücktretender Elemente (Steuerrad-Fokus, data-dimmen,
+     Hervorhebungen auf Folien). 0.6 statt 0.45: bleibt auch auf blassen
+     Beamern lesbar, der Unterschied zum betonten Element ist trotzdem klar. */
+  --dimmen: 0.6;
   --kurve: cubic-bezier(0.22, 0.61, 0.36, 1);        /* weiches Ausrollen */
-  --kurve-feder: cubic-bezier(0.34, 1.36, 0.64, 1);  /* kleines Nachfedern (nur Punkte/Marker) */
+  --kurve-feder: cubic-bezier(0.34, 1.36, 0.64, 1);  /* kleines Nachfedern (nur Punkte/Marker);
+                                                        Ersatz für Browser ohne linear(), echte Feder siehe unten */
   --kurve-wechsel: cubic-bezier(0.4, 0, 0.2, 1);     /* Folienwechsel */
 
   /* ---- Feste Farben, die nie vom Thema abhängen ---- */
@@ -195,6 +200,21 @@
   --f-qr-punkt: #111111;
   --f-auf-bild: #FFFFFF;           /* Schrift auf Fotos (über abgedunkeltem Verlauf) */
   --f-bild-schleier: rgb(8 9 12 / 0.78);  /* dunkelste Stelle des Verlaufs über Vollbild-Fotos */
+}
+
+/* ECHTE FEDERKURVE (Jury: „linear() mit cubic-bezier-Ersatz“)
+   linear(…) listet die Position der Bewegung zu 29 gleich weit auseinander
+   liegenden Zeitpunkten auf – berechnet aus einer gedämpften Feder
+   (Dämpfung 0,7, schwingt höchstens 4,6 % über das Ziel hinaus, dann Ruhe).
+   Nur für Punkte, Marker und den Kern des Steuerrads verwenden – nie für Text.
+   Browser ohne linear() (vor Chrome/Edge 113, Firefox 112, Safari 17.2)
+   behalten die cubic-bezier-Kurve von oben. */
+@supports (transition-timing-function: linear(0, 1)) {
+  :root {
+    --kurve-feder: linear(0, 0.034, 0.12, 0.235, 0.362, 0.489, 0.608, 0.713, 0.803,
+      0.876, 0.934, 0.977, 1.008, 1.028, 1.04, 1.045, 1.046, 1.043, 1.039, 1.033,
+      1.027, 1.022, 1.016, 1.012, 1.008, 1.005, 1.002, 1.001, 1);
+  }
 }
 
 
@@ -214,12 +234,14 @@
   /* Fraunces: Gewicht mindestens 450 und optische Größe begrenzt,
      sonst werden die Haarstriche am Beamer zu dünn (Hinweis der Jury). */
   --gewicht-titel: 460;
-  --gewicht-display: 460;          /* Kartentitel, Zahlen in Display-Schrift */
+  --gewicht-display: 460;          /* Kartentitel, Feldnamen in Display-Schrift */
+  --gewicht-zahl: 540;             /* große Kennzahlen (Jury: kräftiger, mind. 500) */
   --gewicht-text: 400;
   --gewicht-fett: 620;
   --opsz-titel: 48;                /* optische Größe der Titel (9–144); kleiner = kräftiger */
-  --laufweite-titel: -0.016em;
-  --stil-hervor: italic;           /* Hervorhebung im Titel (z. B. Markenname) */
+  --laufweite-titel: -0.015em;
+  --stil-hervor: italic;           /* Hervorhebung im Titel (<em>) */
+  --stil-marke: normal;            /* Markenname immer aufrecht (Jury: Corporate Design nicht verfälschen) */
   --kicker-versalien: uppercase;
   --kicker-laufweite: 0.14em;
   --kicker-gewicht: 650;
@@ -249,11 +271,13 @@
 
   --gewicht-titel: 680;
   --gewicht-display: 640;
+  --gewicht-zahl: 700;
   --gewicht-text: 450;
   --gewicht-fett: 700;
   --opsz-titel: 48;
-  --laufweite-titel: -0.022em;
+  --laufweite-titel: -0.015em;     /* Jury: enger als −0,015 em lässt Buchstaben kollidieren */
   --stil-hervor: normal;
+  --stil-marke: normal;
   --kicker-versalien: uppercase;
   --kicker-laufweite: 0.1em;
   --kicker-gewicht: 700;
@@ -286,13 +310,15 @@
   --schrift-zahl: "Space Grotesk Deck", "Inter Deck", "Segoe UI", Arial, sans-serif;
   --schrift-kicker: "Space Grotesk Deck", "Inter Deck", sans-serif;
 
-  --gewicht-titel: 720;
-  --gewicht-display: 680;
+  --gewicht-titel: 700;
+  --gewicht-display: 660;
+  --gewicht-zahl: 640;
   --gewicht-text: 420;
   --gewicht-fett: 640;
   --opsz-titel: 32;
-  --laufweite-titel: -0.032em;
+  --laufweite-titel: -0.015em;     /* Jury: −0,03 em (Richtung 2) ließ Buchstaben kollidieren */
   --stil-hervor: normal;
+  --stil-marke: normal;
   --kicker-versalien: uppercase;
   --kicker-laufweite: 0.12em;
   --kicker-gewicht: 600;
@@ -661,7 +687,7 @@
     --f-akzent:         oklch(from var(--marke-primaer) max(l, 0.8) min(c, 0.14) h);
     --f-akzent-flaeche: oklch(from var(--marke-primaer) 0.29 min(c, 0.045) h);
     --f-hart:           oklch(from var(--marke-sekundaer) max(l, 0.84) min(c, 0.08) h);
-    --f-hart-flaeche:   oklch(from var(--marke-sekundaer) 0.31 min(c, 0.04) h);
+    --f-hart-flaeche:   oklch(from var(--marke-sekundaer) 0.31 min(c, 0.02) h);   /* wenig Buntheit: sonst „schlammig braun“ (Jury) */
     --f-weich:          oklch(from var(--marke-primaer) max(l, 0.82) min(c, 0.14) h);
     --f-weich-flaeche:  oklch(from var(--marke-primaer) 0.33 min(c, 0.065) h);
     --f-kern:           oklch(from var(--marke-primaer) clamp(0.45, l, 0.75) c h);
