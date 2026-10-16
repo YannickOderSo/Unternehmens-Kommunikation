@@ -54,6 +54,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 32 | 15.10.2026 | Yannick | Lukas arbeitet allein; Frage: Wie erhebe ich die Daten für die Persona? | D06 (Workflow) | Anleitung `persona-datenerhebung.md` mit geprüften Zugangswegen |
 | 33 | 15.10.2026 | System | Benachrichtigung: Workflow D06 fertig | – | Ergebnisse ausgewertet (siehe 32, D06) |
 | 34 | 16.10.2026 | Yannick | Frage: Status des zweiten Agenten (Account 2)? | – | Antwort im Chat; Übersichtsbild gezeigt (keine Dateien geändert) |
+| 35 | 16.10.2026 | Yannick | Screenshot Account 2; Frage: Wie rufen wir die Präsentation auf (Link?) | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -532,6 +533,29 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Claude hat die Übersicht angesehen und dabei festgestellt: Die Folien enthalten noch Beispieldaten bzw. Hypothesen
   aus dem Dossier, z. B. Folie 08 „Waschbär, kein Adler“. Hinweis an Yannick, dass Lukas seine Analogie-Befragung
   nicht davon vorprägen lassen sollte (Dossier 6.7). Zusammenführung nach `master` erst, wenn Account 2 fertig meldet.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 35 – 16.10.2026 – Yannick
+
+> *(Bild: Screenshot aus der Sitzung von Account 2. Zu sehen: Workflow-Fortschritt; „Integration“ 1/1 fertig,
+> „Abschlussprüfung“ 0/2 läuft („Abschluss: Anforderungen“ und „Abschluss: Gestaltung“, je ca. 9 Min.), „Feinschliff“
+> ausstehend; darunter eine Liste von Testläufen, davon einer „Fehlgeschlagen“.)*
+> Die Sachen werden gerade gemacht.
+> Wie werde ich dann die Präsentations aufrufen können? Werden wir es über ein Link öffnen oder was ist der plan?
+
+- **Vorgehen Claude:** `LIESMICH.md` und `index.html` auf dem Branch von Account 2 gelesen: Die Präsentation ist ein
+  Ordner mit HTML, CSS und JS, läuft per Doppelklick auf `index.html` offline in Chrome oder Edge, ohne Server.
+  Empfehlung:
+  - Am Präsentationstag den lokalen Ordner auf dem Laptop nutzen, ohne Abhängigkeit vom WLAN; nur die Live-Umfrage
+    braucht Internet auf den Handys des Publikums.
+  - Plan B: das PDF auf einem USB-Stick.
+  - Für Proben und Abstimmung in der Gruppe optional ein Link über GitHub Pages. Den müsste Yannick einmal in den
+    Repository-Einstellungen aktivieren; die Seite wäre öffentlich.
+
+  Angeboten: nach dem Zusammenführen eine ZIP-Datei nur mit dem Präsentationsordner bzw. die Einrichtung von Pages.
+  Aussage zu GitHub Pages (kostenlos für öffentliche Repositorys) aus dem Modellwissen, nicht per Websuche geprüft.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
