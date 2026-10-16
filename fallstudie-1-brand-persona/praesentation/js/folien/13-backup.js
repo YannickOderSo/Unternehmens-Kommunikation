@@ -10,6 +10,9 @@
      B6  Kommunikationsanalyse→ Codiertabelle
    Außerdem auf allen Backup-Folien: Knopf „Zu Folie …“ (data-bk-ziel) springt
    zur passenden Hauptfolie (Endzustand) – mit Maus, Tab + Enter oder Leertaste.
+   Rückweg: Nach dem Sprung führt Taste Z zurück zur Backup-Folie (in den
+   Schritt, in dem man sie verlassen hat). Ein kurzer Hinweis unten zeigt das
+   nach jedem Sprung an.
 
    Hervorhebungen in den Schritten steuert das CSS (css/folien/13-backup.css)
    über unsichtbare Auslöser <span class="bk-zustand bk-z1" data-schritt="1">.
@@ -80,9 +83,38 @@
     return treffer.length ? treffer[0] : null;
   }
 
-  /* Sprung zur Zielfolie – im Endzustand, damit man dort weiterreden kann */
-  function springe(id) {
+  /* ---------------------------------------------------------------------------
+     Sprung zur Hauptfolie und Rückweg (Taste Z)
+     --------------------------------------------------------------------------- */
+
+  /* Gemerkter Rückweg nach einem Sprung (null = keiner):
+     { backup: 'b4', nummer: 'B4', schritt: 1 } */
+  var rueckweg = null;
+  var RUECK_TASTE = 'z';                        // Taste für den Rückweg (klein geschrieben)
+
+  /* Sprung zur Zielfolie – im Endzustand, damit man dort weiterreden kann.
+     vonId = Backup-Folie, von der aus gesprungen wird (für den Rückweg). */
+  function springe(id, vonId) {
+    var von = folieMitId(vonId);
+    var stand = Deck.zustand();
+    rueckweg = von ? { backup: von.id, nummer: von.nummer, schritt: stand.folie === von.id ? stand.schritt : 'ende' } : null;
     Deck.gehe(id, 'ende');
+    if (rueckweg && Deck.hinweis) Deck.hinweis('Zurück zu ' + rueckweg.nummer + ': Taste Z');
+  }
+
+  /* Taste Z: zurück zur gemerkten Backup-Folie. Gibt true zurück, wenn die
+     Taste verbraucht wurde (sonst arbeitet die Präsentation normal weiter). */
+  if (Deck.taste) {
+    Deck.taste(function (e) {
+      if (!rueckweg || String(e.key).toLowerCase() !== RUECK_TASTE) return false;
+      if (document.documentElement.classList.contains('ebene-offen')) return false;   // Übersicht/Hilfe offen
+      var jetzt = Deck.zustand();
+      var ziel = rueckweg;
+      rueckweg = null;                          // Rückweg gilt genau einmal
+      if (jetzt.folie === ziel.backup) return false;
+      Deck.gehe(ziel.backup, ziel.schritt);
+      return true;
+    });
   }
 
   /* Knöpfe „Zu Folie …“ einrichten: <button class="bk-sprung" data-bk-ziel="f06"> */
@@ -95,26 +127,26 @@
       }
       var beschriftung = knopf.querySelector('.bk-sprung-text');
       if (beschriftung) beschriftung.textContent = 'Zu Folie ' + ziel.nummer;
-      knopf.setAttribute('aria-label', 'Zur Folie ' + ziel.nummer + ': ' + ziel.titel);
-      knopf.setAttribute('title', 'Zur Folie ' + ziel.nummer + ' (' + ziel.titel + ')');
+      knopf.setAttribute('aria-label', 'Zur Folie ' + ziel.nummer + ': ' + ziel.titel + ' (zurück mit Taste Z)');
+      knopf.setAttribute('title', 'Zur Folie ' + ziel.nummer + ' (' + ziel.titel + ') – zurück mit Taste Z');
       if (!knopf._bkSprung) {
         knopf._bkSprung = true;
-        knopf.addEventListener('click', function () { springe(ziel.id); });
+        knopf.addEventListener('click', function () { springe(ziel.id, folie.id); });
       }
     });
   }
 
   /* Folien-Nummer in einer Tabellenzelle klickbar machen (B2, Spalte „Folie“) */
-  function folienVerweis(beschriftung, id) {
+  function folienVerweis(beschriftung, id, vonId) {
     var ziel = folieMitId(id);
     if (!ziel || ziel.backup) return u.element('span', { class: 'bk-folie-text' }, beschriftung);
     var knopf = u.element('button', {
       type: 'button',
       class: 'bk-folienlink',
-      title: 'Zur Folie ' + ziel.nummer + ' (' + ziel.titel + ')',
-      'aria-label': 'Zur Folie ' + ziel.nummer + ': ' + ziel.titel
+      title: 'Zur Folie ' + ziel.nummer + ' (' + ziel.titel + ') – zurück mit Taste Z',
+      'aria-label': 'Zur Folie ' + ziel.nummer + ': ' + ziel.titel + ' (zurück mit Taste Z)'
     }, beschriftung);
-    knopf.addEventListener('click', function () { springe(ziel.id); });
+    knopf.addEventListener('click', function () { springe(ziel.id, vonId); });
     return knopf;
   }
 
@@ -158,7 +190,7 @@
       zelle(tr, 'td', 'bk2-tool', z.tool);
       zelle(tr, 'td', 'bk2-ziel', z.ziel);
       zelle(tr, 'td', 'bk2-pruefung', z.pruefung);
-      zelle(tr, 'td', 'bk2-folie', folienVerweis(text(z.folie), z.sprung));
+      zelle(tr, 'td', 'bk2-folie', folienVerweis(text(z.folie), z.sprung, ctx.folie.id));
       zelle(tr, 'td', 'bk2-stand', standPille(!!z.beispiel));
     });
     ziel.appendChild(t);
@@ -206,9 +238,11 @@
 
   /* ---------------------------------------------------------------------------
      B4 · Repertory-Grid-Rohdaten
-     Rechnet je Konstrukt: Ø der Wettbewerber, M − W1 (wie Folie 06),
-     |M − Ø W| (Differenzierung laut methoden.md), |M − I| (Ideal-Distanz)
-     und prüft die drei Kriterien. Attribut = alle drei erfüllt.
+     Rechnet je Konstrukt: Ø der Wettbewerber (Ø W), |M − Ø W|
+     (Differenzierung laut methoden.md = „Vorsprung vor Ø Wettbewerb“ auf
+     Folie 06) und |M − I| (Ideal-Distanz) und prüft die drei Kriterien.
+     Attribut = alle drei erfüllt. Funktioniert mit 1 bis beliebig vielen
+     Wettbewerbern.
      --------------------------------------------------------------------------- */
   function gridBauen(ctx) {
     var d = ctx.daten, f = ctx.folie, ziel = platz(f, 'grid');
@@ -218,7 +252,6 @@
     var ideal = d.elemente.filter(function (e) { return e.rolle === 'ideal'; })[0];
     var wettbewerber = d.elemente.filter(function (e) { return e.rolle === 'wettbewerber'; });
     if (!marke || !ideal || !wettbewerber.length) return;
-    var w1 = wettbewerber[0];
     var s = d.schwellen || {};
     var nMin = s.nennungenMin !== undefined ? s.nennungenMin : 6;
     var abstandMin = s.abstandWettbewerbMin !== undefined ? s.abstandWettbewerbMin : 1.5;
@@ -235,19 +268,21 @@
     g1.setAttribute('colspan', String(d.elemente.length + 1));
     g1.setAttribute('scope', 'colgroup');
     var g2 = zelle(r1, 'th', 'bk4-gruppe bk4-gruppe--auswertung', 'Auswertung');
-    g2.setAttribute('colspan', '4');
+    g2.setAttribute('colspan', '3');
     g2.setAttribute('scope', 'colgroup');
 
     var r2 = u.element('tr', null, null, thead);
     zelle(r2, 'th', 'bk4-konstrukt', 'Konstrukt (Pol 1 – Pol 7)');
-    zelle(r2, 'th', 'bk4-n rechts', 'n');
+    /* „Nenn.“ = Nennungen über alle Triaden (nicht n = Zahl der Befragten) */
+    var kn = zelle(r2, 'th', 'bk4-n rechts', 'Nenn.');
+    kn.setAttribute('title', 'Nennungen des Konstrukts über alle Triaden aller Befragten');
+    kn.setAttribute('aria-label', 'Nennungen');
     d.elemente.forEach(function (e) {
       var k = 'bk4-el rechts' + (e.rolle === 'marke' ? ' bk4-el--marke' : '') + (e.rolle === 'ideal' ? ' bk4-el--ideal' : '');
       if (e.rolle === 'ideal') zelle(r2, 'th', 'bk4-el rechts bk4-schnitt', 'Ø W');   // Ø W vor der Idealmarke
       zelle(r2, 'th', k, e.kuerzel);
     });
-    zelle(r2, 'th', 'bk4-wert rechts', marke.kuerzel + ' − ' + w1.kuerzel);
-    zelle(r2, 'th', 'bk4-wert rechts', '|' + marke.kuerzel + ' − Ø W|');
+    zelle(r2, 'th', 'bk4-wert bk4-wert--erst rechts', '|' + marke.kuerzel + ' − Ø W|');
     zelle(r2, 'th', 'bk4-wert rechts', '|' + marke.kuerzel + ' − ' + ideal.kuerzel + '|');
     zelle(r2, 'th', 'bk4-ergebnis', 'Ergebnis');
     u.alle('th', thead).forEach(function (th) { if (!th.hasAttribute('scope')) th.setAttribute('scope', 'col'); });
@@ -262,7 +297,6 @@
         if (w[e.kuerzel] !== undefined) { summe += Number(w[e.kuerzel]); anzahl++; }
       });
       var schnitt = anzahl ? summe / anzahl : NaN;
-      var vorW1 = m - Number(w[w1.kuerzel]);
       var abstand = Math.abs(m - schnitt);
       var idealDistanz = Math.abs(m - i);
       /* gerundet vergleichen – so, wie die Werte auf der Folie stehen */
@@ -284,8 +318,7 @@
         var kl = 'bk4-el zahl' + (e.rolle === 'marke' ? ' bk4-el--marke' : '') + (e.rolle === 'ideal' ? ' bk4-el--ideal' : '');
         zelle(tr, 'td', kl, w[e.kuerzel] === undefined ? '–' : zahl(w[e.kuerzel]));
       });
-      zelle(tr, 'td', 'bk4-wert zahl', zahl(vorW1, 1, true));
-      zelle(tr, 'td', 'bk4-wert zahl' + (okAbstand ? '' : ' ist-verfehlt'), zahl(abstand));
+      zelle(tr, 'td', 'bk4-wert bk4-wert--erst zahl' + (okAbstand ? '' : ' ist-verfehlt'), zahl(abstand));
       zelle(tr, 'td', 'bk4-wert zahl' + (okIdeal ? '' : ' ist-verfehlt'), zahl(idealDistanz));
       var erg = zelle(tr, 'td', 'bk4-ergebnis', null);
       if (istAttribut) u.element('span', { class: 'bk4-pille bk4-pille--attribut' }, 'Attribut', erg);
@@ -299,17 +332,27 @@
     if (el) {
       el.innerHTML = '';
       u.element('b', null, 'Elemente: ', el);
-      el.appendChild(document.createTextNode(
-        marke.kuerzel + ' = ' + text(marke.name) + ' · ' + w1.kuerzel + ' = ' + text(w1.name) + ' · ' +
-        wettbewerber[1].kuerzel + '–' + wettbewerber[wettbewerber.length - 1].kuerzel + ' = weitere Wettbewerber · ' +
-        ideal.kuerzel + ' = ' + text(ideal.name)));
+      /* Wettbewerber je nach Anzahl: 1 → nur W1, 2 → W1 und W2 mit Namen,
+         ab 3 → W1 mit Namen, dann „W2–Wn = weitere Wettbewerber“ */
+      var teile = [marke.kuerzel + ' = ' + text(marke.name)];
+      var w1 = wettbewerber[0];
+      var wn = wettbewerber[wettbewerber.length - 1];
+      teile.push(w1.kuerzel + ' = ' + text(w1.name));
+      if (wettbewerber.length === 2) teile.push(wn.kuerzel + ' = ' + text(wn.name));
+      else if (wettbewerber.length > 2) teile.push(wettbewerber[1].kuerzel + '–' + wn.kuerzel + ' = weitere Wettbewerber');
+      teile.push('Ø W = ' + (wettbewerber.length > 1 ? 'Mittel ' + w1.kuerzel + '–' + wn.kuerzel : w1.kuerzel));
+      teile.push(ideal.kuerzel + ' = ' + text(ideal.name));
+      el.appendChild(document.createTextNode(teile.join(' · ')));
     }
     var kr = platz(f, 'kriterien');
     if (kr) {
       kr.innerHTML = '';
       u.element('b', null, 'Attribut, wenn alle drei erfüllt: ', kr);
+      /* Nennungen stammen aus allen Triaden aller Befragten (z. B. 8 × 8 = 64) */
+      var triadenGesamt = (Number(d.befragte) > 0 && d.triaden) ? Number(d.befragte) * d.triaden.length : 0;
       kr.appendChild(document.createTextNode(
-        'relevant (n ≥ ' + nMin + ') · differenzierend (|M − Ø W| ≥ ' + zahl(abstandMin) + ') · nah am Ideal (|M − I| ≤ ' + zahl(idealMax) + ')'));
+        'relevant (≥ ' + nMin + ' Nennungen' + (triadenGesamt ? ' aus ' + triadenGesamt + ' Triaden' : '') + ') · ' +
+        'differenzierend (|M − Ø W| ≥ ' + zahl(abstandMin) + ') · nah am Ideal (|M − I| ≤ ' + zahl(idealMax) + ')'));
       u.element('span', { class: 'bk4-verfehlt-muster' }, 'verfehlt', kr);
     }
     var tr8 = platz(f, 'triaden');

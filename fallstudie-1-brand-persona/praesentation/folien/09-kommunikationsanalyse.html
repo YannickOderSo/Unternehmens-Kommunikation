@@ -36,14 +36,18 @@
   WAS DIE FOLIEN ZEIGEN
   f09  Beim Betreten  drei Kanal-Spalten: Follower (zählt hoch) mit
                       Reichweitenbalken, Beiträge pro Woche, Ø Engagement-Rate
-       Schritt 1      Bildwelt: acht Beitrags-Platzhalter in vier Motivgruppen
-       Schritt 2      Schlüsselbild nach Kroeber-Riel: der Raptor wird
-                      hervorgehoben, die übrigen Beiträge treten zurück
+       Schritt 1      Bildwelt: acht Beitrags-Platzhalter in vier Motivgruppen,
+                      je Gruppe der Anteil an der Stichprobe („17 von 50“)
+       Schritt 2      Schlüsselbild-Kandidat nach Kroeber-Riel („Schlüsselbild?“):
+                      der Raptor wird hervorgehoben, die übrigen Beiträge
+                      treten zurück
   f09b Beim Betreten  Corporate Design als Datenblatt: Logo, Claims &
-                      Schrift, Farben (mit HEX-Werten)
+                      Schrift, Farben (mit HEX-Werten), Bildwelt (→ Folie 09)
        Schritt 1–3    Fit-Bewertung ✓ / ~ / ✗ (Tonalität, Persona, Kanäle);
                       zu jeder Zeile leuchten links die Belege auf, der Rest
                       tritt zurück. Die ✗-Zeile ist die Brücke zu Folie 11.
+       Schritt 4      „Ins Steuerrad · Markenbild“: drei Stichworte (wie
+                      auf Folie 10 im Feld Markenbild)
 
   SO ÄNDERN SIE DIE INHALTE
   • Alle Werte stehen in den <script type="application/json" class="daten">
@@ -57,7 +61,10 @@
     beachten!) und bei dem Beitrag "bild": "bilder/ka-raptor.png" eintragen.
   • Logo: kommt aus marke.js → logo (bis dahin neutraler Platzhalter).
   • Farben: Liste in den Daten von f09b. Sind in marke.js → farben Werte
-    eingetragen, erscheinen sie zusätzlich (falls nicht schon in der Liste).
+    eingetragen, erscheinen sie zusätzlich (falls nicht schon in der Liste;
+    insgesamt höchstens fünf Farben, sonst Warnung in der Konsole).
+  • Stichworte „Ins Steuerrad“ (f09b) und Folie 10 (Feld Markenbild) immer
+    gemeinsam ändern – bei Abweichung meldet die Konsole eine Warnung.
   • Die Titel (Kernaussagen) stehen hier im HTML – bei neuen Ergebnissen
     anpassen. Der Markenname kommt aus marke.js (data-marke).
 -->
@@ -101,9 +108,9 @@
 
   <aside class="notizen">
     <p data-schritt="0"><b>Kanäle</b> (ca. 25 s) Wie tritt <span data-marke></span> auf? Dafür haben wir die drei Pflichtkanäle analysiert. Die Reichweite liegt klar auf Instagram: rund 383.000 Follower. Facebook hat rund 126.000, YouTube nur 20.500 Abos – fast nur Shorts, etwa 2,3 pro Woche. Gestrichelte Werte sind Platzhalter, bis unsere Stichprobe steht; die Engagement-Rate rechnen wir selbst.</p>
-    <p data-schritt="1"><b>Bildwelt</b> (ca. 20 s) In den Beiträgen wiederholen sich vier Motivgruppen: Produkt – Dose und Shaker, dazu die Vergleichstabelle; Comic-Tiere – vorneweg der Adler „Raptor“; Community – Squad-Tattoos und Events wie Wacken; und in den Kurzvideos Vlogs mit Mitarbeitenden und Popkultur-Bezüge.</p>
-    <p data-schritt="2"><b>Schlüsselbild</b> (ca. 20 s) Ein Schlüsselbild nach Kroeber-Riel ist ein wiederkehrendes, eigenständiges Motiv, das die Positionierung bildlich trägt. Unser Kandidat: der Raptor – Maskottchen, Name der Sorte „Raspberry Raptor“, wiederkehrend in Posts, sogar in den Treue-Leveln vom „Raptor Egg“ bis zum „OG Raptor“. Ob er über alle Kanäle trägt, zeigt die nächste Folie.</p>
-    <p>Hintergrund und Quellen: Follower, Abos und YouTube-Frequenz aus dem Recherche-Dossier Kap. 6.1 (✔, Profile abgerufen am 14.10.2026, [19] Instagram, [122] Facebook-Seite, [123, 124] YouTube) – am Präsentationstag neu ablesen und hier in den Daten eintragen. Facebook-Gruppe „HOLY Squad“ ≈ 40.000 Mitglieder ist eine Selbstangabe und gehört nicht in die Seiten-Follower. Instagram-Frequenz, Facebook-Frequenz und alle Engagement-Raten sind BEISPIELDATEN: selbst erheben (je Kanal die letzten 15–20 Beiträge, Rechnung in Excel/Sheets, nicht per KI) – methoden.md Abschnitt 5. Motive: Dossier Kap. 6.4 ✔ [1, 5, 73] und Kurzvideos [39, 124]; die Einordnung als Schlüsselbild ist eine Hypothese (H). Begriff Schlüsselbild nach Kroeber-Riel (Bildkommunikation, 1993) aus dem Modellwissen – mit der Vorlesung abgleichen. Maskottchen „Raptor“ (von der Sorte Raspberry Raptor) und Treue-Level „Raptor Egg“ bis „OG Raptor“: Dossier Kap. 6.3 ✔ [54, 71]. Die acht Kacheln sind Platzhalter: Screenshots (mit Datum) in bilder/ legen und in den Daten unter "bild" eintragen.</p>
+    <p data-schritt="1"><b>Bildwelt</b> (ca. 18 s) In den Beiträgen wiederholen sich vier Motivgruppen: Produkt mit Dose, Shaker und Vergleichstabelle; Comic-Tiere, vorneweg der Adler „Raptor“; Community mit Squad-Tattoos und Events; Kurzvideos mit Vlogs und Popkultur. Rechts daneben steht, wie oft jede Gruppe in unserer Stichprobe vorkommt.</p>
+    <p data-schritt="2"><b>Schlüsselbild?</b> (ca. 22 s) Ein Schlüsselbild nach Kroeber-Riel ist ein wiederkehrendes, eigenständiges Motiv, das die Positionierung bildlich trägt. Unser Kandidat: der Raptor – Maskottchen, Sortenname, sogar die Treue-Level vom „Raptor Egg“ bis zum „OG Raptor“. Er steht für den lauten Herausforderer. Das „gute Gewissen“ zeigt eher das Dose-Shaker-Stillleben, unser zweiter Kandidat. Ob der Raptor über alle Kanäle trägt, klärt die Stichprobe – daher das Fragezeichen.</p>
+    <p>Hintergrund und Quellen: Follower, Abos und YouTube-Frequenz aus dem Recherche-Dossier Kap. 6.1 (✔, Profile abgerufen am 14.10.2026, [19] Instagram, [122] Facebook-Seite, [123, 124] YouTube) – am Präsentationstag neu ablesen und hier in den Daten eintragen. Facebook-Gruppe „HOLY Squad“ ≈ 40.000 Mitglieder ist eine Selbstangabe und gehört nicht in die Seiten-Follower. Instagram-Frequenz, Facebook-Frequenz, alle Engagement-Raten und die Anteile der Motivgruppen („x von 50“) sind BEISPIELDATEN: selbst erheben (je Kanal die letzten 15–20 Beiträge, jedem Beitrag ein Hauptmotiv zuordnen, Rechnung in Excel/Sheets, nicht per KI) – methoden.md Abschnitt 5, Dossier To-do Kap. 6.7. Motive: Dossier Kap. 6.4 ✔ [1, 5, 73] und Kurzvideos [39, 124]; die Einordnung als Schlüsselbild (Raptor und Dose-Shaker-Stillleben) ist eine Hypothese (H, Kap. 6.4). „Herausforderer“: Press Kit „Challenger-Brand“ ✔ [13], die Einordnung ist H (Kap. 2.6); dass der Raptor dafür steht, ist unsere Deutung (H). Begriff Schlüsselbild nach Kroeber-Riel (Bildkommunikation, 1993) aus dem Modellwissen – mit der Vorlesung abgleichen. Unsicher (Modellwissen): Esch unterscheidet Präsenzsignale (Logo, Farben, Maskottchen – sorgen für Wiedererkennung) von Schlüsselbildern, die einen Positionierungsinhalt tragen; ein Maskottchen ist also nur dann ein Schlüsselbild, wenn es für die Positionierung steht. Maskottchen „Raptor“ (von der Sorte Raspberry Raptor) und Treue-Level „Raptor Egg“ bis „OG Raptor“: Dossier Kap. 6.3 ✔ [54, 71]. Die acht Kacheln sind Platzhalter: Screenshots (mit Datum) in bilder/ legen und in den Daten unter "bild" eintragen; echte Screenshots bekommen automatisch einen durchgezogenen Rahmen.</p>
   </aside>
 
   <!-- DATEN – hier ändern. Hinweise:
@@ -116,12 +123,31 @@
          „beispiel“: true = Beispielwert (gestrichelt), false = belegt.
          „follower.bezeichnung“: „Follower“ oder „Abos“.
          Der Reichweitenbalken wird automatisch am größten Kanal gemessen.
+       • stichprobe: Zahl der codierten Beiträge (alle drei Kanäle zusammen,
+         je Kanal die letzten 15–20). „beispiel“ wie oben.
        • bildwelt: Motivgruppen (empfohlen 4) mit je 2 Beiträgen.
+         „anteil“: wie viele Beiträge der Stichprobe diese Gruppe als
+         Hauptmotiv haben → erscheint als „17 von 50“ neben dem Gruppennamen
+         (Summe aller Gruppen = stichprobe). Weglassen = keine Zahl.
          „symbol“: Piktogramm im Platzhalter – dose, adler, pfote, tabelle,
          herz, gruppe, video, stern, bild, megafon, person.
-         „bild“: Pfad zum Screenshot (relativ zu praesentation/), leer = Platzhalter.
+         „bild“: Pfad zum Screenshot (relativ zu praesentation/), leer =
+         Platzhalter. Echte Screenshots bekommen einen durchgezogenen Rahmen;
+         „beispiel“: true am Beitrag (nachgestelltes/KI-Motiv) = gestrichelt.
+         Quelle jedes Screenshots (Kanal, Datum) in die Fußzeile (Bildzitat).
          „schluesselbild“: true bei genau EINEM Beitrag – wird in Schritt 2
-         hervorgehoben. -->
+         hervorgehoben.
+       • schluesselbildText: Hinweis am Schlüsselbild in Schritt 2. Mit „?“,
+         solange die Einordnung eine Hypothese ist; erst wenn die Stichprobe
+         den Raptor kanalübergreifend zeigt, auf „Schlüsselbild“ ändern.
+
+       OFFEN BIS MI, 21.10. (Bündel C, Dossier-To-do Kap. 6.7):
+         1. je Kanal 15–20 Beiträge erfassen, Engagement in Excel/Sheets rechnen,
+            Werte oben mit "beispiel": false eintragen (auch stichprobe/anteil);
+         2. acht repräsentative Screenshots mit Datum nach bilder/ legen, unter
+            "bild" eintragen, Quellen in die Fußzeile;
+         3. erst wenn kein Wert mehr "beispiel": true hat: Pille „Beispieldaten“
+            im Kicker löschen und den Platzhalter-Satz in den Notizen streichen. -->
   <script type="application/json" class="daten">
   {
     "hinweis": "Follower/Abos und YouTube-Frequenz: Dossier Kap. 6.1 (Stand 14.10.2026). Werte mit beispiel: true sind BEISPIELDATEN – selbst erheben.",
@@ -151,20 +177,22 @@
         "engagementRate":    { "wert": 1.6, "beispiel": true }
       }
     ],
+    "stichprobe": { "wert": 50, "beispiel": true },
+    "schluesselbildText": "Schlüsselbild?",
     "bildwelt": [
-      { "gruppe": "Produkt", "beitraege": [
+      { "gruppe": "Produkt", "anteil": { "wert": 15, "beispiel": true }, "beitraege": [
         { "motiv": "Dose & Shaker", "symbol": "dose",    "bild": "" },
         { "motiv": "Vergleich",     "symbol": "tabelle", "bild": "" }
       ] },
-      { "gruppe": "Comic-Tiere", "beitraege": [
+      { "gruppe": "Comic-Tiere", "anteil": { "wert": 17, "beispiel": true }, "beitraege": [
         { "motiv": "Adler „Raptor“", "symbol": "adler", "bild": "", "schluesselbild": true },
         { "motiv": "Sorten-Tiere",   "symbol": "pfote", "bild": "" }
       ] },
-      { "gruppe": "Community", "beitraege": [
+      { "gruppe": "Community", "anteil": { "wert": 8, "beispiel": true }, "beitraege": [
         { "motiv": "Tattoos", "symbol": "herz",   "bild": "" },
         { "motiv": "Events",  "symbol": "gruppe", "bild": "" }
       ] },
-      { "gruppe": "Kurzvideos", "beitraege": [
+      { "gruppe": "Kurzvideos", "anteil": { "wert": 10, "beispiel": true }, "beitraege": [
         { "motiv": "Vlogs",     "symbol": "video", "bild": "" },
         { "motiv": "Popkultur", "symbol": "stern", "bild": "" }
       ] }
@@ -187,10 +215,11 @@
     <div class="raster-12 g5b">
 
       <!-- LINKS · Corporate Design als Datenblatt (erscheint beim Betreten).
-           Drei Zeilen: Logo · Claims & Schrift · Farben. -->
+           Vier Zeilen: Logo · Claims & Schrift · Farben · Bildwelt. -->
       <div class="sp-7 g5b-cd" data-g5b="cd" data-staffel="120" data-animation="hoch"></div>
 
-      <!-- RECHTS · Fit-Bewertung: Zeile für Zeile (Schritte 1–3) -->
+      <!-- RECHTS · Fit-Bewertung: Zeile für Zeile (Schritte 1–3), danach
+           „Ins Steuerrad · Markenbild“ (Schritt 4, baut das Skript) -->
       <aside class="sp-5 g5b-fit karte karte--flaeche" data-animation="einblenden" data-verzoegerung="300">
         <span class="karte-kicker g5b-fit-kicker" data-meta>Fit des Markenbilds · Hypothese</span>
         <ol class="g5b-fit-liste" data-g5b="fit"></ol>
@@ -200,15 +229,16 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: Dossier Kap. 6.3 ✔ [1] (Web-CSS, kein Styleguide), 6.5 ✔, 8 S5 ✔, Kap. 1 ✔ [7, 24] · Bewertung: eigene (H) · * Ersatzschrift</p>
+    <p class="quelle">Quelle: Dossier Kap. 6.3 ✔ [1] (Web-CSS, kein Styleguide), 6.4 ✔, 6.5 ✔, 8 S5 ✔, Kap. 1 ✔ [7, 24] · „knallig“: LZ ✔ [8] · Bewertung: eigene (H) · * Ersatzschrift</p>
   </footer>
 
   <aside class="notizen">
-    <p data-schritt="0"><b>Corporate Design</b> (ca. 15 s) Das Corporate Design: eine Wortmarke in fetten, kursiven Versalien, Überschriften in schmaler, sehr fetter Versalschrift, Gelb und Schwarz als Akzente – daneben die ruhigen Pastelltöne des Shops. Dachclaim: „Die Softdrink Revolution“.</p>
-    <p data-schritt="1"><b>Tonalität – passt</b> (ca. 10 s) Gemessen an der Tonalität von Folie 8, dem frechen Kumpel, passt das Bild: Raptor, Slang, Doppeldeutigkeiten.</p>
-    <p data-schritt="2"><b>Persona – teilweise</b> (ca. 13 s) Zur Persona passt die Stimulanz. Aber Comic-Look und knallige Farben wirken jünger als die Kundschaft – laut Mitgründer meist 25 bis 40, viele im Schichtdienst.</p>
-    <p data-schritt="3"><b>Kanäle – Bruch</b> (ca. 15 s) Der größte Bruch: mindestens sechs Claims, drei Profilnamen, ein ruhiger Pastell-Shop neben lauten Comic-Dosen. Starke Marke, zersplitterter Auftritt – hier setzen unsere Empfehlungen an.</p>
-    <p>Hintergrund und Quellen: Logo, Farben (HEX aus dem CSS der Website und dem Logo-Bild, kein offizieller Styleguide; weitere Web-Werte: Kopfzeile #FFF0DD, Gelbtöne #FED301 und #FFE359, Logo-Gelb ≈ #FFED28, Mint #B3DBC4) und Schriften „ObviouslyNarrow“ Black / „PP Agrandir“: Dossier Kap. 6.3 ✔ [1]. Auf der Folie sind die Schriften mit frei lizenzierten Ersatzschriften angedeutet (Sternchen), die Originale sind kommerziell. Claims: Kap. 6.5 ✔ – Dachclaim „Die Softdrink Revolution“ [1, 8], Versprechen „Geiler Geschmack mit gutem Gewissen“ [5, 20], dazu „Zero Zucker oder Bullsh*t“ [1, 31], „Mach’s dir wie nie zuvor“ (TV 2026) [25], „Änder nix – nur dein Drink“ (Handel 2026) [18], „Turn up the Taste“ (Syrup) [1, 129]; den Claim „Drink soft. Go hard.“ NICHT verwenden (unbelegt). Zersplitterter Auftritt: Kap. 8 S5 (Befund ✔ [1, 20, 31, 125], Deutung H). Kundschaft 25–40, Schichtdienst: Kap. 1 Kernerkenntnis 4 ✔ [7, 24]; „Design für eine jüngere Zielgruppe gedacht“ [7] ✔. Limbic-Verortung (Stimulanz): Kap. 4.4, Hypothese. Tonalität „frecher Kumpel“: Folie 8b (Dossier Kap. 6.7, H). Die ✓/~/✗-Bewertung ist unsere eigene Einschätzung und mit der Gruppe abzustimmen (methoden.md Abschnitt 5, Fit-Bewertung).</p>
+    <p data-schritt="0"><b>Corporate Design</b> (ca. 12 s) Das Corporate Design: eine Wortmarke in fetten, kursiven Versalien, Überschriften in schmaler, sehr fetter Versalschrift, Gelb und Schwarz als Akzente – daneben die ruhigen Pastelltöne des Shops. Dazu die Comic-Tiere von eben.</p>
+    <p data-schritt="1"><b>Tonalität – passt</b> (ca. 13 s) Zum frechen Kumpel von Folie 8 passt das: Slang, Doppeldeutigkeiten, Comic-Look. Nur der Raptor wirkt eher stolz als frech – wie auf Folie 8: Der Adler ist das Selbstbild, gelebt wird der Waschbär. Darum schlagen wir auf Folie 11 vor, den Raptor frecher zu inszenieren.</p>
+    <p data-schritt="2"><b>Persona – teilweise</b> (ca. 11 s) Zur Persona passt die Stimulanz. Aber Comic-Tiere und knalliges Gelb-Schwarz wirken jünger als die Kundschaft – laut Mitgründer meist 25 bis 40, viele im Schichtdienst.</p>
+    <p data-schritt="3"><b>Kanäle – Bruch</b> (ca. 10 s) Der größte Bruch: mindestens sechs Claims, drei Profilnamen, ein ruhiger Pastell-Shop neben lauten Comic-Dosen. Starke Marke, zersplitterter Auftritt.</p>
+    <p data-schritt="4"><b>Ins Steuerrad</b> (ca. 8 s) Für das Feld Markenbild halten wir fest: Comic-Tiere, Gelb und Schwarz, knallig. Und genau an den Brüchen setzen unsere Empfehlungen an.</p>
+    <p>Hintergrund und Quellen: Logo, Farben (HEX aus dem CSS der Website und dem Logo-Bild, kein offizieller Styleguide; weitere Web-Werte: Kopfzeile #FFF0DD, Gelbtöne #FED301 und #FFE359, Logo-Gelb ≈ #FFED28, Mint #B3DBC4) und Schriften „ObviouslyNarrow“ Black / „PP Agrandir“: Dossier Kap. 6.3 ✔ [1]. Auf der Folie sind die Schriften mit frei lizenzierten Ersatzschriften angedeutet (Sternchen), die Originale sind kommerziell. Claims: Kap. 6.5 ✔ – Dachclaim „Die Softdrink Revolution“ [1, 8], Versprechen „Geiler Geschmack mit gutem Gewissen“ [5, 20], dazu (Badge „+4 weitere“) „Zero Zucker oder Bullsh*t“ [1, 31], „Mach’s dir wie nie zuvor“ (TV 2026) [25], „Änder nix – nur dein Drink“ (Handel 2026) [18], „Turn up the Taste“ (Syrup) [1, 129]; den Claim „Drink soft. Go hard.“ NICHT verwenden (unbelegt). Bildwelt: Comic-Tiere, allen voran der Adler „Raptor“ – Kap. 6.4 ✔ [1, 5, 73], Maskottchen Kap. 6.3 ✔ [54, 71], je Energy-Sorte ein Comic-Tier [30]; die Piktogramme sind eigene Zeichnungen, kein Nachbau. Tonalität „frecher Kumpel“ und „Waschbär statt Adler“: Folie 8/8b (Dossier Kap. 6.7, H) – die Einschränkung zum Raptor ist die Brücke zu Empfehlung 3 auf Folie 11 („Ein Claim, ein Raptor“). Zersplitterter Auftritt: Kap. 8 S5 (Befund ✔ [1, 20, 31, 125], Deutung H). Kundschaft 25–40, Schichtdienst: Kap. 1 Kernerkenntnis 4 ✔ [7, 24]; „Design für eine jüngere Zielgruppe gedacht“ [7] ✔; Lebensmittel Zeitung: „auffälliges und knalliges Design“, das „vor allem junge Kunden“ ansprechen soll – Kap. 6.3 ✔ [8]. Limbic-Verortung (Stimulanz): Kap. 4.4, Hypothese. Ins Steuerrad: dieselben drei Stichworte stehen auf Folie 10 im Feld Markenbild (Quelle KA) – bei Änderungen beide Listen anpassen. Die ✓/~/✗-Bewertung ist unsere eigene Einschätzung und mit der Gruppe abzustimmen (methoden.md Abschnitt 5, Fit-Bewertung).</p>
   </aside>
 
   <!-- DATEN – hier ändern. Hinweise:
@@ -219,12 +249,21 @@
          „schriften“: Namen der Markenschriften. Gezeigt werden frei
          lizenzierte Ersatzschriften (die Originale sind kommerziell).
        • farben: Gruppen mit Farben („hex“ mit #, sechsstellig). Höchstens
-         FÜNF Farben insgesamt – mehr passen nicht in eine Zeile. Farben aus
-         marke.js → farben erscheinen zusätzlich, falls sie fehlen (dann
-         eine andere Farbe hier herausnehmen).
+         FÜNF Farben insgesamt – mehr passen nicht in eine Zeile; weitere
+         werden ausgeblendet (Warnung in der Konsole). Farben aus
+         marke.js → farben erscheinen zusätzlich vorn, falls sie fehlen (dann
+         eine andere Farbe hier herausnehmen). „schluessel“: Kurzname der
+         Gruppe, damit eine Fit-Zeile nur diese Gruppe als Beleg zeigen kann.
+       • bildwelt: Verweis auf Folie 09 – „symbole“ (Piktogramme wie dort),
+         „beschreibung“ und „verweis“ (zweite Zeile).
        • fit: genau drei Zeilen (Schritt 1, 2, 3). „urteil“: passt | teilweise | bruch.
-         „belege“: welche Zeilen links aufleuchten – logo, claims, farben.
-         „begruendung“: ein kurzer Satz (höchstens ca. 7 Wörter). -->
+         „belege“: welche Zeilen links aufleuchten – logo, claims, farben,
+         bildwelt; nur eine Farbgruppe: "farben.akzent" bzw. "farben.shop".
+         „begruendung“: ein kurzer Satz (höchstens ca. 8 Wörter).
+       • steuerrad: Ergebnis für das Feld „Markenbild“ (Schritt 4), drei
+         Stichworte. Dieselbe Liste steht auf Folie 10
+         (10-markensteuerrad.html → felder → bild) – beide gleich pflegen,
+         sonst meldet die Konsole eine Abweichung. -->
   <script type="application/json" class="daten">
   {
     "hinweis": "Corporate Design: Dossier Kap. 6.3 und 6.5 (gesichert). Fit-Bewertung: eigene Einschätzung (Hypothese) – mit der Gruppe abstimmen.",
@@ -238,21 +277,27 @@
       "schriften": { "ueberschrift": "ObviouslyNarrow Black", "fliesstext": "PP Agrandir" }
     },
     "farben": [
-      { "gruppe": "Logo & Akzent", "liste": [
+      { "gruppe": "Logo & Akzent", "schluessel": "akzent", "liste": [
         { "name": "Gelb",    "hex": "#FFD007" },
         { "name": "Schwarz", "hex": "#1D1D1B" }
       ] },
-      { "gruppe": "Shop-Flächen", "liste": [
+      { "gruppe": "Shop-Flächen", "schluessel": "shop", "liste": [
         { "name": "Creme",    "hex": "#F3EDE1" },
         { "name": "Türkis",   "hex": "#8ECDC1" },
         { "name": "Hellblau", "hex": "#A4D9F6" }
       ] }
     ],
+    "bildwelt": {
+      "symbole": ["adler", "pfote"],
+      "beschreibung": "Comic-Tiere, vorneweg der Adler „Raptor“",
+      "verweis": "→ Folie 09"
+    },
     "fit": [
-      { "pruefung": "zur Tonalität",   "urteil": "passt",     "begruendung": "Raptor und Slang tragen den frechen Ton.",   "belege": ["logo", "claims"] },
-      { "pruefung": "zur Persona",     "urteil": "teilweise", "begruendung": "Stimulanz passt, der Look wirkt jünger als 25–40.", "belege": ["farben"] },
+      { "pruefung": "zur Tonalität",   "urteil": "passt",     "begruendung": "Frech dank Slang und Comic-Look.",   "belege": ["claims", "bildwelt"] },
+      { "pruefung": "zur Persona",     "urteil": "teilweise", "begruendung": "Stimulanz passt, Comic-Tiere wirken jünger als die Kundschaft.", "belege": ["bildwelt", "farben.akzent"] },
       { "pruefung": "über die Kanäle", "urteil": "bruch",     "begruendung": "Sechs Claims, zwei Farbwelten, drei Profilnamen.", "belege": ["claims", "farben"] }
-    ]
+    ],
+    "steuerrad": ["Comic-Tiere", "Gelb & Schwarz", "knallig"]
   }
   </script>
 </section>

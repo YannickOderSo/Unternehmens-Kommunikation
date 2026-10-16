@@ -6,13 +6,16 @@
                Profilname, Follower (große Zahl), Reichweitenbalken, darunter
                Beiträge pro Woche und Ø Engagement-Rate
         Mitte  Formel der Engagement-Rate + Legende „Beispielwert“
-        unten  Bildwelt: vier Motivgruppen mit je zwei Beitrags-Platzhaltern;
-               in Schritt 2 wird das Schlüsselbild betont, der Rest tritt
-               zurück (gleiche Wirkung wie data-dimmen der Engine)
+        unten  Bildwelt: vier Motivgruppen (Name + Anteil „17 von 50“) mit
+               je zwei Beitrags-Platzhaltern; in Schritt 2 wird das
+               Schlüsselbild betont, der Rest tritt zurück (gleiche Wirkung
+               wie data-dimmen der Engine)
    f09b „Corporate Design & Fit“
-        links  (7 Spalten) Datenblatt: Logo · Claims & Schrift · Farben
+        links  (7 Spalten) Datenblatt: Logo · Claims & Schrift · Farben ·
+               Bildwelt
         rechts (5 Spalten) Karte „Fit des Markenbilds“ mit ✓ / ~ / ✗;
-               zur aktuellen Fit-Zeile leuchten links die Belege auf
+               zur aktuellen Fit-Zeile leuchten links die Belege auf;
+               zuletzt „Ins Steuerrad · Markenbild“
    Inhalte kommen aus den Daten der Folien (js/folien/09-kommunikationsanalyse.js
    baut daraus die Elemente). Alle Regeln beginnen mit #f09 bzw. #f09b.
    Nur Variablen aus tokens.css verwenden. Ausnahmen (bewusst, weil Inhalt):
@@ -123,7 +126,6 @@
   color: var(--f-text);
   white-space: nowrap;
 }
-/* Beispielwerte: gestrichelt umrandet (.ist-annahme), etwas Luft innen */
 /* Beispielwerte: gestrichelt umrandet (.ist-annahme). Der Rahmen liegt als
    outline außerhalb – die Zahl bleibt bündig mit ihrer Beschriftung. */
 #f09 .g5-beispielwert {
@@ -175,12 +177,33 @@
   min-width: 0;
   min-height: 0;
 }
-#f09 .g5-gruppe-name {
-  margin: 0;
+/* Gruppenkopf: Name links, Anteil an der Stichprobe rechts („17 von 50“) */
+#f09 .g5-gruppe-kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--abstand-3);
+  min-width: 0;
   padding-top: 10px;
   border-top: var(--linie-fein) solid var(--f-linie);
-  color: var(--f-text);
   transition: opacity var(--dauer-mittel) var(--kurve);
+}
+#f09 .g5-gruppe-name {
+  margin: 0;
+  color: var(--f-text);
+}
+#f09 .g5-anteil {
+  font-size: var(--groesse-meta);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.1;
+  color: var(--f-text-2);
+  white-space: nowrap;
+}
+/* gestrichelter Rahmen genau auf der Kante – so bleibt er rechts bündig
+   mit der Spalte (kein Überstand über den Satzspiegel) */
+#f09 .g5-anteil.g5-beispielwert {
+  padding: 3px 7px;
+  outline-offset: 0;
 }
 #f09 .g5-beitraege {
   flex: 1;
@@ -218,6 +241,12 @@
 }
 #f09 .g5-beitrag-bild > * { position: relative; }
 #f09 .g5-beitrag-bild > img { position: absolute; }
+/* Echter Screenshot = belegt: durchgezogener Rahmen (gestrichelt bleibt nur,
+   was Platzhalter oder Beispiel ist – siehe Legende „Beispielwert“) */
+#f09 .g5-beitrag-bild--beleg {
+  border-style: solid;
+  border-color: var(--f-linie);
+}
 #f09 .g5-symbol {
   width: 72px;
   height: 72px;
@@ -232,18 +261,24 @@
   color: var(--f-text);
 }
 
-/* Hinweis „Schlüsselbild“ oben im Beitrag (Schritt 2) */
+/* Hinweis „Schlüsselbild?“ oben im Beitrag (Schritt 2).
+   Zentriert über left/right/margin – NICHT über translate: die Engine-
+   Animation „hoch“ bewegt das Element selbst per translate und würde eine
+   Zentrierung mit translate während der Animation überschreiben (Sprung). */
 #f09 .g5-schluessel-chip {
   position: absolute;
   top: 12px;
-  left: 50%;
-  translate: -50% 0;
+  left: 0;
+  right: 0;
+  width: max-content;
+  max-width: calc(100% - 16px);
+  margin-inline: auto;
 }
 
 /* Schritt 2: Schlüsselbild betonen, alles andere tritt auf 45 % zurück.
    Auslöser ist das unsichtbare Element .g5-ausloeser (data-schritt="2"). */
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-beitrag:not(.ist-schluesselbild),
-#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-gruppe:not(.hat-schluesselbild) .g5-gruppe-name {
+#f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-gruppe:not(.hat-schluesselbild) .g5-gruppe-kopf {
   opacity: 0.45;
 }
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .ist-schluesselbild .g5-beitrag-bild {
@@ -402,6 +437,44 @@
   font-variant-numeric: lining-nums tabular-nums;
   line-height: 1;
 }
+/* Farbgruppen können einzeln Beleg sein (siehe unten) */
+#f09b .g5b-farbgruppe { transition: opacity var(--dauer-mittel) var(--kurve); }
+
+/* Bildwelt: kleine Piktogramm-Kacheln (wie auf Folie 09) + Beschreibung */
+#f09b .g5b-bildwelt {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-5);
+  margin: 0;
+}
+#f09b .g5b-bildwelt-kacheln {
+  display: flex;
+  gap: 10px;
+  flex: none;
+}
+#f09b .g5b-bildwelt-kachel {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-m);
+  background: var(--f-flaeche);
+  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-linie);
+  color: var(--f-text-2);
+}
+#f09b .g5b-bildwelt-symbol {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.5;
+}
+#f09b .g5b-bildwelt-symbol .voll { fill: currentColor; }
+#f09b .g5b-bildwelt-text {
+  font-size: var(--groesse-meta);
+  line-height: 1.35;
+  color: var(--f-text-2);
+}
+#f09b .g5b-bildwelt-zeile { display: block; }
+#f09b .g5b-bildwelt-verweis { margin-top: 4px; }
 
 /* Belege zur aktuellen Fit-Zeile hervorheben, Rest tritt zurück.
    Aktuelle Fit-Zeile = das Urteilszeichen mit .schritt-aktuell (von deck.js). */
@@ -417,8 +490,17 @@
 #f09b .g5b:has([data-fit-schritt="4"].schritt-aktuell) .g5b-zeile[data-belege~="4"]::before {
   opacity: 1;
 }
+/* Ist nur ein TEIL einer Zeile Beleg (data-belege-teil, z. B. nur die
+   Farbgruppe „Logo & Akzent“), treten die übrigen Teile dieser Zeile zurück. */
+#f09b .g5b:has([data-fit-schritt="1"].schritt-aktuell) .g5b-zeile[data-belege-teil~="1"] [data-teil]:not([data-belege~="1"]),
+#f09b .g5b:has([data-fit-schritt="2"].schritt-aktuell) .g5b-zeile[data-belege-teil~="2"] [data-teil]:not([data-belege~="2"]),
+#f09b .g5b:has([data-fit-schritt="3"].schritt-aktuell) .g5b-zeile[data-belege-teil~="3"] [data-teil]:not([data-belege~="3"]),
+#f09b .g5b:has([data-fit-schritt="4"].schritt-aktuell) .g5b-zeile[data-belege-teil~="4"] [data-teil]:not([data-belege~="4"]) {
+  opacity: 0.45;
+}
 /* Druck/PDF: ruhiger Endzustand ohne Hervorhebung */
-html.druckmodus #f09b .g5b-zeile { opacity: 1 !important; }
+html.druckmodus #f09b .g5b-zeile,
+html.druckmodus #f09b .g5b-farbgruppe { opacity: 1 !important; }
 html.druckmodus #f09b .g5b-zeile::before { opacity: 0 !important; }
 
 
@@ -503,18 +585,59 @@ html.druckmodus #f09b .g5b-zeile::before { opacity: 0 !important; }
   text-transform: var(--kicker-versalien);
   color: var(--f-text-2);
 }
+/* Urteilswort: die eigentliche Aussage der Zeile → 28 px (Beamer) */
 #f09b .g5b-urteil-wort {
-  font-size: var(--groesse-meta);
+  font-size: var(--groesse-text-min);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--g5b-farbe);
   white-space: nowrap;
 }
 #f09b .g5b-fit-grund {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: var(--groesse-text);
   line-height: 1.3;
   text-wrap: pretty;
   color: var(--f-text);
+}
+
+
+/* ---------------------------------------------------------------------------
+   7. f09b – ERGEBNIS „INS STEUERRAD · MARKENBILD“ (letzter Schritt)
+   Gleiche Rolle wie die Karte „Ins Steuerrad“ auf f08b; Markenbild ist im
+   Steuerrad ein „Soft Fact“ → Farben --f-weich / --f-weich-flaeche.
+   --------------------------------------------------------------------------- */
+#f09b .g5b-steuerrad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px var(--abstand-4) 16px;
+  border-radius: var(--radius-m);
+  background: var(--f-weich-flaeche);
+}
+#f09b .g5b-steuerrad-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--f-weich);
+}
+#f09b .g5b-steuerrad-kicker .icon { width: 26px; height: 26px; flex: none; }
+#f09b .g5b-steuerrad-liste {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-text);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--f-text);
+}
+#f09b .g5b-steuerrad-liste li { white-space: nowrap; }
+#f09b .g5b-steuerrad-liste li + li::before {
+  content: "·";
+  margin: 0 12px;
+  color: var(--f-text-2);
 }

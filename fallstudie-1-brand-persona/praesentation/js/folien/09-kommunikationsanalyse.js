@@ -6,18 +6,23 @@
           hoch) mit Reichweitenbalken (gemessen am größten Kanal), Beiträge pro
           Woche und Ø Engagement-Rate. Beispielwerte werden gestrichelt
           umrandet (Klasse .ist-annahme aus dem Designsystem).
-        • baut die Bildwelt: Motivgruppen mit Beitrags-Platzhaltern (eigenes
-          Piktogramm oder – wenn eingetragen – der echte Screenshot). Der
-          Beitrag mit "schluesselbild": true bekommt den Hinweis
-          „Schlüsselbild“ (Schritt 2). Das Hervorheben selbst regelt CSS.
+        • baut die Bildwelt: Motivgruppen mit Anteil an der Stichprobe
+          („17 von 50“) und Beitrags-Platzhaltern (eigenes Piktogramm oder –
+          wenn eingetragen – der echte Screenshot mit durchgezogenem Rahmen).
+          Der Beitrag mit "schluesselbild": true bekommt den Hinweis
+          „Schlüsselbild?“ (Schritt 2). Das Hervorheben selbst regelt CSS.
    f09b „Corporate Design & Fit“
-        • baut das Datenblatt (Logo · Claims & Schrift · Farben mit HEX) und
-          die Fit-Bewertung (✓ / ~ / ✗, ein Schritt je Zeile).
+        • baut das Datenblatt (Logo · Claims & Schrift · Farben mit HEX ·
+          Bildwelt) und die Fit-Bewertung (✓ / ~ / ✗, ein Schritt je Zeile),
+          danach als letzten Schritt „Ins Steuerrad · Markenbild“.
         • merkt sich an jeder Datenblatt-Zeile, zu welcher Fit-Zeile sie ein
           Beleg ist (data-belege="1 3"). Ist Fit-Zeile n der aktuelle Schritt,
           leuchten die passenden Zeilen auf, der Rest tritt zurück (CSS).
+          Auch eine einzelne Farbgruppe kann Beleg sein ("farben.akzent").
         • Markenfarben aus marke.js → farben erscheinen in der Palette, falls
-          sie dort noch nicht stehen.
+          sie dort noch nicht stehen (insgesamt höchstens 5 Farben).
+        • vergleicht die Steuerrad-Stichworte mit Folie 10 (Warnung, wenn
+          sie voneinander abweichen).
    Inhalte ändern Sie NUR in den Daten der Folien
    (folien/09-kommunikationsanalyse.html).
 
@@ -147,30 +152,56 @@
     });
   }
 
-  /* Bildwelt: Motivgruppen mit Beitrags-Platzhaltern */
-  function bildweltBauen(ziel, gruppen, u) {
+  /* Bildwelt: Motivgruppen mit Beitrags-Platzhaltern.
+     d.stichprobe     = Zahl der codierten Beiträge ({ "wert": 50, "beispiel": true })
+     g.anteil         = wie viele davon zu dieser Gruppe gehören → „17 von 50“
+     d.schluesselbildText = Text des Hinweises in Schritt 2 (Standard „Schlüsselbild?“) */
+  function bildweltBauen(ziel, d, u) {
     ziel.innerHTML = '';
+    var gruppen = d.bildwelt || [];
+    var stichprobe = d.stichprobe || null;
+    var chipText = d.schluesselbildText || 'Schlüsselbild?';
+
     gruppen.forEach(function (g) {
       var gruppe = u.element('div', { class: 'g5-gruppe' }, null, ziel);
       if ((g.beitraege || []).some(function (b) { return b.schluesselbild; })) gruppe.classList.add('hat-schluesselbild');
-      u.element('h3', { class: 'karte-kicker g5-gruppe-name', 'data-meta': '' }, g.gruppe || '', gruppe);
+
+      /* Kopf: Gruppenname links, Anteil an der Stichprobe rechts */
+      var kopf = u.element('div', { class: 'g5-gruppe-kopf' }, null, gruppe);
+      u.element('h3', { class: 'karte-kicker g5-gruppe-name', 'data-meta': '' }, g.gruppe || '', kopf);
+      if (g.anteil !== undefined && g.anteil !== null && stichprobe) {
+        /* Beispielwert, wenn der Anteil ODER die Stichprobe noch Beispiel ist */
+        var beispiel = istBeispiel(g.anteil) || istBeispiel(stichprobe);
+        var text = u.zahlFormat(wertVon(g.anteil), 0) + ' von ' + u.zahlFormat(wertVon(stichprobe), 0);
+        u.element('span', {
+          class: 'g5-anteil' + (beispiel ? ' ist-annahme g5-beispielwert' : ''),
+          'data-meta': '',
+          title: beispiel ? 'Beispielwert – noch selbst zu erheben' : 'Anteil an den codierten Beiträgen'
+        }, text, kopf);
+      }
       var liste = u.element('div', { class: 'g5-beitraege' }, null, gruppe);
 
       (g.beitraege || []).forEach(function (b) {
         var fig = u.element('figure', { class: 'g5-beitrag' + (b.schluesselbild ? ' ist-schluesselbild' : '') }, null, liste);
         var flaeche = u.element('div', { class: 'bild-platzhalter g5-beitrag-bild' }, null, fig);
         if (b.bild) {
-          /* echter Screenshot (Pfad relativ zu praesentation/) */
+          /* echter Screenshot (Pfad relativ zu praesentation/): durchgezogener
+             Rahmen = belegt. Mit "beispiel": true (z. B. nachgestelltes oder
+             KI-erzeugtes Motiv) bleibt der Rahmen gestrichelt. */
           u.element('img', { src: u.pfad(b.bild), alt: 'Beitrag: ' + (b.motiv || '') }, null, flaeche);
+          flaeche.classList.add(b.beispiel ? 'g5-beitrag-bild--beispiel' : 'g5-beitrag-bild--beleg');
+          if (b.beispiel) flaeche.title = 'Beispielbild – kein echter Beitrag';
         } else {
           flaeche.setAttribute('role', 'img');
           flaeche.setAttribute('aria-label', 'Platzhalter für einen Beitrag: ' + (b.motiv || ''));
           flaeche.insertAdjacentHTML('beforeend', symbolSvg(b.symbol, 'g5-symbol'));
         }
         if (b.schluesselbild) {
-          /* Hinweis „Schlüsselbild“ – erscheint in Schritt 2 */
+          /* Hinweis „Schlüsselbild?“ – erscheint in Schritt 2. Zentriert per
+             left/right/margin (NICHT per translate: die Engine-Animation „hoch“
+             verschiebt selbst über translate und würde die Zentrierung stören). */
           u.element('span', { class: 'chip chip--akzent g5-schluessel-chip', 'data-schritt': '2', 'data-animation': 'hoch' },
-            'Schlüsselbild', flaeche);
+            chipText, flaeche);
         }
         u.element('figcaption', { class: 'g5-beitrag-text' }, b.motiv || '', fig);
       });
@@ -183,7 +214,7 @@
       var kanaeleZiel = ctx.folie.querySelector('[data-g5="kanaele"]');
       var bildweltZiel = ctx.folie.querySelector('[data-g5="bildwelt"]');
       if (kanaeleZiel) kanaeleBauen(kanaeleZiel, d.kanaele || [], ctx.util);
-      if (bildweltZiel) bildweltBauen(bildweltZiel, d.bildwelt || [], ctx.util);
+      if (bildweltZiel) bildweltBauen(bildweltZiel, d, ctx.util);
     }
   });
 
@@ -193,12 +224,16 @@
      =========================================================================== */
 
   /* Eine Zeile des Datenblatts: Bezeichnung links, Inhalt rechts.
-     data-belege = Nummern der Fit-Zeilen, für die diese Zeile ein Beleg ist. */
+     data-belege      = Nummern der Fit-Zeilen, für die diese Zeile ein Beleg ist
+     data-belege-teil = Nummern der Fit-Zeilen, für die nur ein TEIL der Zeile
+                        Beleg ist (z. B. nur die Farbgruppe „Logo & Akzent“);
+                        die übrigen Teile treten dann zurück. */
   function datenblattZeile(eltern, schluessel, bezeichnung, belege, u) {
     var zeile = u.element('section', {
       class: 'g5b-zeile g5b-zeile--' + schluessel,
       'data-zeile': schluessel,
-      'data-belege': (belege[schluessel] || []).join(' ') || null
+      'data-belege': (belege.zeilen[schluessel] || []).join(' ') || null,
+      'data-belege-teil': (belege.teilZeilen[schluessel] || []).join(' ') || null
     }, null, eltern);
     var kopf = u.element('div', { class: 'g5b-zeile-kopf' }, null, zeile);
     u.element('h3', { class: 'karte-kicker g5b-zeile-name', 'data-meta': '' }, bezeichnung, kopf);
@@ -213,10 +248,21 @@
     return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(w) ? w.toUpperCase() : '';
   }
 
-  /* Palette: Gruppen aus den Daten + Markenfarben aus marke.js (falls neu) */
+  /* Höchstens so viele Farbfelder passen in eine Zeile des Datenblatts */
+  var MAX_FARBEN = 5;
+
+  /* Palette: Gruppen aus den Daten + Markenfarben aus marke.js (falls neu).
+     Markenfarben kommen nach vorn in die erste Gruppe; sind es dann mehr als
+     MAX_FARBEN, fallen die letzten Farben der Liste weg (Warnung in der
+     Konsole – pruefen.mjs meldet sie). Abhilfe: in den Daten eine Farbe
+     herausnehmen. */
   function paletteSammeln(gruppen, marke) {
     var ergebnis = (gruppen || []).map(function (g) {
-      return { gruppe: g.gruppe || '', liste: (g.liste || []).filter(function (f) { return hexNormal(f.hex); }) };
+      return {
+        gruppe: g.gruppe || '',
+        schluessel: g.schluessel || '',
+        liste: (g.liste || []).filter(function (f) { return hexNormal(f.hex); })
+      };
     });
     var vorhanden = {};
     ergebnis.forEach(function (g) { g.liste.forEach(function (f) { vorhanden[hexNormal(f.hex)] = true; }); });
@@ -228,9 +274,23 @@
     });
     if (ausMarke.length) {
       if (ergebnis.length) ergebnis[0].liste = ausMarke.concat(ergebnis[0].liste);
-      else ergebnis.push({ gruppe: 'Markenfarben', liste: ausMarke });
+      else ergebnis.push({ gruppe: 'Markenfarben', schluessel: '', liste: ausMarke });
     }
-    return ergebnis;
+
+    /* auf MAX_FARBEN begrenzen: von vorn zählen, Überzählige hinten abschneiden */
+    var platz = MAX_FARBEN;
+    var weg = [];
+    ergebnis.forEach(function (g) {
+      var behalten = g.liste.slice(0, Math.max(0, platz));
+      g.liste.slice(behalten.length).forEach(function (f) { weg.push(hexNormal(f.hex)); });
+      g.liste = behalten;
+      platz -= behalten.length;
+    });
+    if (weg.length) {
+      console.warn('f09b: mehr als ' + MAX_FARBEN + ' Farben – ' + weg.join(', ') +
+        ' ausgeblendet. Bitte in folien/09-kommunikationsanalyse.html (Daten von f09b → farben) eine Farbe herausnehmen.');
+    }
+    return ergebnis.filter(function (g) { return g.liste.length; });
   }
 
   function datenblattBauen(ziel, d, belege, ctx) {
@@ -251,7 +311,8 @@
     var schriften = c.schriften || {};
     var claims = datenblattZeile(ziel, 'claims', 'Claims & Schrift', belege, u);
     if (c.weitere) {
-      u.element('span', { class: 'chip chip--rahmen g5b-weitere', title: 'weitere Claims laufen parallel (siehe Notizen)' },
+      /* Zähl-Badge: belegt „mindestens sechs Claims“ (Fit-Zeile „über die Kanäle“) */
+      u.element('span', { class: 'chip chip--rahmen g5b-weitere', 'data-meta': '', title: 'weitere Claims laufen parallel (siehe Notizen)' },
         '+' + c.weitere + ' weitere', claims.kopf);
     }
     [
@@ -269,7 +330,14 @@
     var farben = datenblattZeile(ziel, 'farben', 'Farben (Web)', belege, u);
     var gruppenEl = u.element('div', { class: 'g5b-farbgruppen' }, null, farben.inhalt);
     paletteSammeln(d.farben, ctx.marke).forEach(function (g) {
-      var gruppe = u.element('div', { class: 'g5b-farbgruppe' }, null, gruppenEl);
+      /* data-teil + data-belege: diese Farbgruppe allein kann Beleg sein
+         ("belege": ["farben.akzent"] in den Fit-Zeilen) */
+      var teilBelege = g.schluessel ? (belege.teile['farben.' + g.schluessel] || []) : [];
+      var gruppe = u.element('div', {
+        class: 'g5b-farbgruppe',
+        'data-teil': g.schluessel || '',
+        'data-belege': teilBelege.join(' ') || null
+      }, null, gruppenEl);
       u.element('span', { class: 'g5b-farbgruppe-name', 'data-meta': '' }, g.gruppe, gruppe);
       var liste = u.element('ul', { class: 'g5b-farben' }, null, gruppe);
       g.liste.forEach(function (f) {
@@ -281,6 +349,25 @@
         wert.style.color = schriftAuf(hex);
       });
     });
+
+    /* 4. Bildwelt (Verweis auf Folie 09): kleine Piktogramm-Kacheln wie auf
+          f09 + Beschreibung. Beleg für „Comic-Look“ (Tonalität) und „wirkt
+          jünger“ (Persona). */
+    var bw = d.bildwelt || null;
+    if (bw) {
+      var bildwelt = datenblattZeile(ziel, 'bildwelt', 'Bildwelt', belege, u);
+      var bfig = u.element('figure', { class: 'g5b-bildwelt' }, null, bildwelt.inhalt);
+      var kacheln = u.element('div', { class: 'g5b-bildwelt-kacheln' }, null, bfig);
+      (bw.symbole || []).forEach(function (s) {
+        var k = u.element('span', { class: 'g5b-bildwelt-kachel', 'aria-hidden': 'true' }, null, kacheln);
+        k.innerHTML = symbolSvg(s, 'g5b-bildwelt-symbol');
+      });
+      if (bw.beschreibung || bw.verweis) {
+        var cap = u.element('figcaption', { class: 'g5b-bildwelt-text', 'data-meta': '' }, null, bfig);
+        if (bw.beschreibung) u.element('span', { class: 'g5b-bildwelt-zeile' }, bw.beschreibung, cap);
+        if (bw.verweis) u.element('span', { class: 'g5b-bildwelt-zeile g5b-bildwelt-verweis' }, bw.verweis, cap);
+      }
+    }
   }
 
   /* Schriftfarbe auf einem Farbfeld: schwarz oder weiß – je nachdem, was den
@@ -317,6 +404,9 @@
       var text = u.element('div', { class: 'g5b-fit-text' }, null, li);
       var kopf = u.element('div', { class: 'g5b-fit-kopf' }, null, text);
       u.element('span', { class: 'g5b-fit-pruefung', 'data-meta': '' }, z.pruefung || '', kopf);
+      /* Urteilswort in 28 px (Kernaussage der Zeile). data-meta nur, weil es
+         wie ein Badge zusammen mit Zeichen und Farbe das Urteil kennzeichnet –
+         es zählt deshalb nicht ins Wortbudget. */
       u.element('span', { class: 'g5b-urteil-wort', 'data-meta': '', 'data-schritt': n, 'data-animation': 'einblenden' },
         URTEILE[urteil].wort, kopf);
       u.element('p', { class: 'g5b-fit-grund', 'data-schritt': n, 'data-animation': 'hoch', 'data-verzoegerung': '120' },
@@ -324,22 +414,73 @@
     });
   }
 
+  /* Ergebnis für das Steuerradfeld „Markenbild“ (wie „Ins Steuerrad“ auf f08b):
+     erscheint im Schritt nach der letzten Fit-Zeile. */
+  function steuerradBauen(ziel, stichworte, schritt, u) {
+    if (!stichworte || !stichworte.length) return;
+    var block = u.element('div', {
+      class: 'g5b-steuerrad', 'data-schritt': String(schritt), 'data-animation': 'hoch'
+    }, null, ziel);
+    var kicker = u.element('span', { class: 'karte-kicker g5b-steuerrad-kicker', 'data-meta': '' }, null, block);
+    kicker.innerHTML = u.icon('steuerrad') + '<span>Ins Steuerrad · Markenbild</span>';
+    var liste = u.element('ul', { class: 'g5b-steuerrad-liste' }, null, block);
+    stichworte.forEach(function (s) { u.element('li', null, String(s), liste); });
+  }
+
+  /* Abgleich mit Folie 10: stehen dort im Feld „bild“ andere Stichworte, gibt
+     es eine Warnung in der Konsole (pruefen.mjs meldet sie). Beide Listen
+     müssen gleich gepflegt werden: hier "steuerrad", in
+     folien/10-markensteuerrad.html → felder → bild → stichworte. */
+  function steuerradAbgleichen(stichworte) {
+    var skript = document.querySelector('#f10 .steuerrad > script[type="application/json"]');
+    if (!skript || !stichworte || !stichworte.length) return;
+    var dort;
+    try {
+      var j = JSON.parse(skript.textContent);
+      dort = ((((j || {}).felder || {}).bild || {}).stichworte || []).map(function (s) {
+        return typeof s === 'string' ? s : (s && s.text) || '';
+      });
+    } catch (e) { return; }
+    var hier = stichworte.map(String);
+    if (dort.join('|') !== hier.join('|')) {
+      console.warn('f09b: Stichworte „Markenbild“ weichen von Folie 10 ab (hier: ' + hier.join(', ') +
+        ' · Folie 10: ' + dort.join(', ') + '). Beide Listen gleich pflegen.');
+    }
+  }
+
   Deck.registriere('f09b', {
     einrichten: function (ctx) {
       var d = ctx.daten || {};
       var cd = ctx.folie.querySelector('[data-g5b="cd"]');
       var fit = ctx.folie.querySelector('[data-g5b="fit"]');
+      var karte = ctx.folie.querySelector('.g5b-fit');
 
-      /* Belege je Datenblatt-Zeile: { logo: [1], claims: [1, 3], farben: [2, 3] } */
-      var belege = {};
+      /* Belege je Datenblatt-Zeile, z. B.
+           "belege": ["claims", "bildwelt"]        → ganze Zeilen
+           "belege": ["bildwelt", "farben.akzent"] → Zeile Bildwelt + nur die
+                                                      Farbgruppe mit "schluessel": "akzent"
+         Ergebnis: zeilen { claims: [1, 3], farben: [2, 3] … },
+                   teilZeilen { farben: [2] }, teile { 'farben.akzent': [2] } */
+      var belege = { zeilen: {}, teilZeilen: {}, teile: {} };
+      var dazu = function (tabelle, schluessel, n) {
+        var liste = tabelle[schluessel] = tabelle[schluessel] || [];
+        if (liste.indexOf(n) < 0) liste.push(n);
+      };
       (d.fit || []).forEach(function (z, i) {
         (z.belege || []).forEach(function (b) {
-          (belege[b] = belege[b] || []).push(i + 1);
+          var teile = String(b).split('.');
+          dazu(belege.zeilen, teile[0], i + 1);
+          if (teile[1]) {
+            dazu(belege.teilZeilen, teile[0], i + 1);
+            dazu(belege.teile, b, i + 1);
+          }
         });
       });
 
       if (cd) datenblattBauen(cd, d, belege, ctx);
       if (fit) fitBauen(fit, d.fit || [], ctx.util);
+      if (karte) steuerradBauen(karte, d.steuerrad, (d.fit || []).length + 1, ctx.util);
+      steuerradAbgleichen(d.steuerrad);
     }
   });
 })();

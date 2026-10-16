@@ -40,12 +40,13 @@
 .rg-skala {
   font-family: var(--schrift-text);
   font-size: var(--groesse-meta);
-  font-weight: 600;
+  font-weight: var(--gewicht-fett);
   font-variant-numeric: tabular-nums;
   fill: var(--f-text-2);
   text-anchor: middle;
 }
-.rg-kopf-text {
+.rg-kopf-text,
+.rg-profil-titel {
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
   font-weight: var(--kicker-gewicht);
@@ -53,6 +54,10 @@
   text-transform: var(--kicker-versalien);
   fill: var(--f-text-2);
 }
+/* Überschrift über dem leeren Profil (Schritt 0–1) – macht in Schritt 2
+   der Legende Platz */
+.rg-profil-titel { fill: var(--f-akzent); transition: opacity var(--dauer-kurz) var(--kurve); }
+.rg:has(.rg-z2.schritt-an) .rg-profil-titel { opacity: 0; }
 
 /* Pole (Fließtext-Größe 28 px) */
 .rg-pol {
@@ -69,7 +74,7 @@
 .rg-nennung-zahl {
   font-family: var(--schrift-text);
   font-size: var(--groesse-meta);
-  font-weight: 650;
+  font-weight: var(--gewicht-fett);
   font-variant-numeric: tabular-nums;
   fill: var(--f-text-2);
   text-anchor: end;
@@ -100,16 +105,27 @@
 .rg-ring { fill: none; stroke: var(--f-akzent); stroke-width: var(--linie-fein); }
 .rg-mittel { fill: none; stroke: var(--f-text); stroke-width: 4; stroke-linecap: round; }
 .rg-abstand { fill: none; stroke: var(--f-akzent); stroke-width: 3; stroke-linecap: round; opacity: 0.75; }
+/* Konstrukt mit Hinweis (z. B. „Hürde“): Linie Idealmarke → Marke in
+   Warnfarbe, Chip in der Mitte, Pol auf der Seite der Marke ebenfalls */
+.rg-ideal-abstand { fill: none; stroke: var(--f-warnung); stroke-width: 3; stroke-linecap: round; opacity: 0.85; }
+.rg-hinweis {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: var(--f-hintergrund);
+  color: var(--f-warnung);
+  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-warnung);
+  font-weight: var(--gewicht-fett);
+}
 
 /* Legende: Strichmuster so, dass links und rechts vom Kreis ein Strich steht */
 .rg-legende .rg-linie--wettbewerb { stroke-dasharray: 12 8; }
 .rg-legende-text {
   font-family: var(--schrift-text);
   font-size: var(--groesse-meta);
-  font-weight: 600;
+  font-weight: var(--gewicht-fett);
   fill: var(--f-text);
 }
-.rg-legende-zusatz { font-weight: 400; fill: var(--f-text-2); }
+.rg-legende-zusatz { font-weight: var(--gewicht-text); fill: var(--f-text-2); }
 
 
 /* ---------------------------------------------------------------------------
@@ -130,6 +146,8 @@
 .rg:has(.rg-z3.schritt-an) .ist-attribut .rg-pol.ist-markenpol { fill: var(--f-akzent); }
 .rg:has(.rg-z3.schritt-an) .rg-zeile:not(.ist-attribut) .rg-pol { fill: var(--f-text-2); }
 .rg:has(.rg-z3.schritt-an) .ist-attribut .rg-balken { fill: var(--f-akzent); }
+/* Konstrukt mit Hinweis („Hürde“): Pol auf der Seite der Marke in Warnfarbe */
+.rg:has(.rg-z3.schritt-an) .ist-hinweis .rg-pol.ist-markenpol { fill: var(--f-warnung); }
 
 
 /* ---------------------------------------------------------------------------
@@ -156,7 +174,7 @@
 
 /* Frage an die Befragten – wie ein Zitat */
 .rg-frage {
-  padding-left: 28px;
+  padding-left: var(--abstand-4);
   border-left: var(--linie-stark) solid var(--f-akzent);
   font-family: var(--schrift-display);
   font-size: var(--groesse-gross);
@@ -178,7 +196,7 @@
 /* Pole des Konstrukts über den Gruppen */
 .rg-triade-pol {
   position: absolute;
-  top: 6px;
+  top: var(--abstand-1);
   transform: translateX(-50%);
   font-size: var(--groesse-text);
   font-weight: var(--gewicht-fett);
@@ -195,7 +213,7 @@
   height: 168px;
   display: grid;
   place-items: center;
-  padding: 12px 8px;
+  padding: var(--abstand-2) var(--abstand-1);
   border: var(--linie-fein) solid var(--f-karte-rand);
   border-radius: var(--radius-l);
   background: var(--f-karte);
@@ -207,7 +225,7 @@
 .rg-karte-name {
   max-width: 100%;
   font-family: var(--schrift-display);
-  font-size: 34px;
+  font-size: var(--groesse-gross);   /* Skript verkleinert bei Bedarf bis 28 px */
   font-weight: var(--gewicht-display);
   line-height: 1.08;
   text-align: center;
@@ -228,11 +246,11 @@
 .rg-ergebnis { position: absolute; inset: 0; }
 .rg-ergebnis > * { position: absolute; left: 0; right: 0; }
 
-.rg-ergebnis-kopf { display: flex; flex-direction: column; gap: 8px; padding-left: var(--abstand-4); }
+.rg-ergebnis-kopf { display: flex; flex-direction: column; gap: var(--abstand-1); padding-left: var(--abstand-4); }
 .rg-ergebnis-erklaerung {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--abstand-2);
   font-size: var(--groesse-meta);
   line-height: 1.3;
   color: var(--f-text-2);
@@ -268,26 +286,26 @@
 }
 
 /* Auswahlkriterien mit Haken */
-.rg-kriterien { display: flex; flex-direction: column; gap: 14px; padding-left: var(--abstand-4); }
-.rg-kriterien-titel { margin-bottom: 4px; }
+.rg-kriterien { display: flex; flex-direction: column; gap: var(--abstand-2); padding-left: var(--abstand-4); }
+.rg-kriterien-titel { margin-bottom: var(--abstand-1); }
 .rg-kriterium {
   display: flex;
   align-items: baseline;
-  gap: 14px;
+  gap: var(--abstand-2);
   font-size: var(--groesse-text-min);
   line-height: 1.2;
   color: var(--f-text);
 }
 .rg-kriterium .icon {
   align-self: center;
-  width: 28px;
-  height: 28px;
+  width: var(--groesse-text-min);
+  height: var(--groesse-text-min);
   color: var(--f-akzent);
   stroke-width: 2.6;
 }
 .rg-kriterium-text { font-weight: var(--gewicht-fett); }
 .rg-kriterium-erklaerung { font-size: var(--groesse-meta); color: var(--f-text-2); }
-.rg-kriterien.ist-eng { gap: 8px; }
+.rg-kriterien.ist-eng { gap: var(--abstand-1); }
 
 
 /* ---------------------------------------------------------------------------

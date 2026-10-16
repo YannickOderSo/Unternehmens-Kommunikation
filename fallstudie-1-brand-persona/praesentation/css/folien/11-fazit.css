@@ -1,12 +1,13 @@
 /* =============================================================================
    css/folien/11-fazit.css – nur für Folie f11 (Fazit & Empfehlungen)
    -----------------------------------------------------------------------------
-   Drei Zeilen „Erkenntnis → Empfehlung“. Links die Lücke (rote Verweis-Pille
+   Oben eine Zeile „Kern“ (grüne Verweis-Pille = positiver Befund), darunter
+   drei Zeilen „Befund → Empfehlung“. Links der Befund (rote Verweis-Pille
    wie die Lücken-Nummern auf Folie 10), rechts die Empfehlung als Karte mit
    Akzentstrich. Nur Variablen aus tokens.css verwenden.
 
    Spaltenbreiten (bei Bedarf hier ändern – gelten für Kopfzeile und Zeilen):
-     --g6f-befund  Spalte „Erkenntnis“
+     --g6f-befund  Spalte „Befund“
      --g6f-pfeil   Pfeil zwischen Erkenntnis und Empfehlung
      --g6f-kanal   Spalte „Kanal“ (innerhalb der Karte, rechts)
    ============================================================================= */
@@ -23,6 +24,26 @@
   min-height: 0;
 }
 #f11 .g6f-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------------------------------------------------------------------------
+   Kern (positiver Befund) – eine Zeile über den Spaltenköpfen
+   --------------------------------------------------------------------------- */
+#f11 .g6f-kern {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0 0 24px;
+}
+#f11 .g6f-kern-text {
+  margin: 0;
+  min-width: 0;
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--f-text);
+}
+#f11 .g6f-kern-zusatz { font-weight: 500; color: var(--f-text-2); }
 
 /* ---------------------------------------------------------------------------
    Spaltenköpfe
@@ -123,6 +144,19 @@
   border-radius: 0 var(--radius-pille) var(--radius-pille) 0;
 }
 #f11 .g6f-verweis:focus-visible { outline: var(--linie-stark) solid var(--f-fokus); outline-offset: 4px; }
+/* Variante „Kern“: Signalfarbe Erfolg statt Fehler, mit Haken-Icon */
+#f11 .g6f-verweis--kern { border-color: var(--f-erfolg); color: var(--f-erfolg); }
+#f11 .g6f-verweis--kern .g6f-verweis-art {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--f-erfolg);
+}
+#f11 .g6f-verweis--kern .icon { width: 20px; height: 20px; stroke-width: 2.6; }
+#f11 .g6f-verweis--kern:hover .g6f-verweis-folie,
+#f11 .g6f-verweis--kern:focus-visible .g6f-verweis-folie {
+  background: color-mix(in oklab, var(--f-erfolg) 12%, var(--f-hintergrund));
+}
 /* Zielfolie fehlt (z. B. Testausgabe nur mit dieser Folie): kein Knopf-Verhalten */
 #f11 .g6f-verweis[aria-disabled="true"] { cursor: default; }
 

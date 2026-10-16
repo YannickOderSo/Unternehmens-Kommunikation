@@ -71,6 +71,18 @@
 /* Dateinamen nie trennen */
 .folie.bk .bk-datei { white-space: nowrap; }
 
+/* Noch einzutragende Angaben, z. B. „[N]“ (Zahl der echten Interviews auf B1):
+   orange, gestrichelt unterstrichen – vor der Präsentation ersetzen und die
+   Klasse bk-ergaenzen löschen. */
+.folie.bk .bk-ergaenzen {
+  color: var(--f-warnung);
+  font-weight: 650;
+  text-decoration: underline dashed;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  white-space: nowrap;
+}
+
 /* Pillen „belegt“ / „Beispiel“ */
 .bk-stand {
   display: inline-flex;
@@ -208,18 +220,27 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
   text-transform: var(--kicker-versalien);
   color: var(--f-akzent);
 }
-#b1 .bk1-zahlen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--abstand-4); }
-#b1 .bk1-zahl { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+/* Drei Zeilen „Zahl – Beschriftung“: So bleibt lesbar, dass 155 und 42
+   Befunde zählen, 32 aber Einzelaussagen (Dossier, Anhang A). */
+#b1 .bk1-zahlen {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 18px;
+  row-gap: 4px;
+  align-items: baseline;
+}
+#b1 .bk1-zahl { display: contents; }
 #b1 .bk1-zahl-wert {
   font-family: var(--schrift-zahl);
-  font-size: 56px;
+  font-size: 48px;
   font-weight: var(--gewicht-zahl);
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
+  text-align: right;
   font-variant-numeric: lining-nums tabular-nums;
   color: var(--f-akzent);
 }
-#b1 .bk1-zahl-text { font-size: var(--groesse-text-min); line-height: 1.2; color: var(--f-text); }
+#b1 .bk1-zahl-text { min-width: 0; font-size: var(--groesse-text-min); line-height: 1.2; color: var(--f-text); }
 
 
 /* ---------------------------------------------------------------------------
@@ -288,7 +309,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b3 .bk3-tabelle tbody tr.bk3-gruppe-b > * { background: var(--f-flaeche); }
 #b3 .bk3-dim { width: 230px; }
 #b3 tbody .bk3-dim { font-weight: var(--gewicht-fett); }
-#b3 .bk3-jahr { width: 90px; }
+#b3 .bk3-jahr { width: 110px; }   /* „Stand“ der Daten, z. B. 2020/21 */
 #b3 tbody .bk3-jahr { font-family: var(--schrift-zahl); }
 #b3 .bk3-nr { margin-left: 10px; font-size: var(--groesse-meta); color: var(--f-text-2); }
 #b3 tbody .bk3-basis { color: var(--f-text-2); }
@@ -304,17 +325,24 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 /* Schritt 1: Kernbelege (Gründeraussagen) */
 #b3:has(.bk-z1.schritt-an) .bk3-tabelle tr.ist-kern > :not(.bk3-dim) { background: var(--f-akzent-flaeche); }
 #b3:has(.bk-z1.schritt-an) .bk3-tabelle tr.ist-kern > td:nth-child(2) { box-shadow: inset 5px 0 0 var(--f-akzent); }
-/* Schritt 2: nur mit Vorsicht nutzen (korrigiert / unsicher) */
-#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > :not(.bk3-dim) { background: color-mix(in oklab, var(--f-warnung) 11%, var(--f-hintergrund)); }
-#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > td:nth-child(2) { box-shadow: inset 5px 0 0 var(--f-warnung); }
-#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk3-befund { color: var(--f-text); }
+/* Schritt 2: nur mit Vorsicht nutzen (korrigiert / unsicher).
+   Deutlich kräftiger als das Gruppen-Zebra; die Zebra-Fläche der übrigen
+   Zeilen tritt zurück (Gruppenlinien bleiben), damit die zwei Zeilen auch am
+   Beamer und im dunklen Modus klar hervorstechen. */
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.bk3-gruppe-b:not(.ist-vorsicht):not(.ist-kern) > * { background: transparent; }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > :not(.bk3-dim) { background: color-mix(in oklab, var(--f-warnung) 22%, var(--f-hintergrund)); }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht > td:nth-child(2) { box-shadow: inset 6px 0 0 var(--f-warnung); }
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk3-befund,
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk3-jahr,
+#b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk-status { color: var(--f-warnung); font-weight: 650; }
 
-/* Hinweis auf die Datenlücke unter der Tabelle */
+/* Unter der Tabelle: Datenlücke und Persona (zwei Zeilen, unten bündig) */
+#b3 .bk3-unten { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
 #b3 .bk3-luecke {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin: auto 0 0;
+  margin: 0;
   font-size: var(--groesse-text-min);
   line-height: 1.3;
   color: var(--f-text-2);
@@ -347,7 +375,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b4 .bk4-schnitt { box-shadow: inset var(--linie-fein) 0 0 var(--f-linie); font-style: italic; }
 #b4 .bk4-el--ideal { font-weight: var(--gewicht-fett); }
 /* Trennlinie vor der Auswertung */
-#b4 .bk4-tabelle tr > .bk4-wert:nth-last-child(4) { box-shadow: inset var(--linie-stark) 0 0 var(--f-linie-stark); }
+#b4 .bk4-tabelle tr > .bk4-wert--erst { box-shadow: inset var(--linie-stark) 0 0 var(--f-linie-stark); }
 #b4 .bk4-ergebnis { width: 1%; text-align: left; }
 
 /* Ergebnis-Pillen erscheinen erst mit Schritt 1 */

@@ -11,6 +11,10 @@
        nach oben, Linienstärke = Anzahl Nennungen (Implikationsmatrix)
      • rechts: Leiterfrage (oben), Legende der Linienstärke (unten) und in
        Schritt 4 die zwei Nutzen-Kästen auf Höhe ihrer Ebene
+     • Sprossen bleiben hell und dünn (sie sind keine Verbindungen zwischen
+       den Knoten). In Schritt 4 färbt sich nur das Stück der Sprosse
+       zwischen dem letzten Knoten und dem rechten Holm – daran schließt der
+       Pfeil zum Nutzen-Kasten an.
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
 
    EINPASSEN DER KNOTEN (Probleme meldet die Konsole als Warnung –
@@ -131,7 +135,8 @@
       u.svg('line', { class: 'lad-sprosse-geist', x1: holmL, y1: sprosseY(k), x2: holmR, y2: sprosseY(k) }, ebeneGeist);
     }
 
-    /* ---------- Kräftige Leiter: wächst je Schritt eine Ebene nach oben ---------- */
+    /* ---------- Kräftige Leiter: wächst je Schritt eine Ebene nach oben ----------
+       (Holme kräftig, Sprossen hell – siehe CSS, Abschnitt 1) */
     for (var s = 0; s < E; s++) {
       var von = s === 0 ? unten : sprosseY(s - 1);
       var bis = s === E - 1 ? oben : sprosseY(s);
@@ -307,11 +312,20 @@
       u.element('span', { class: 'karte-kicker lad-nutzen-titel', 'data-meta': '' }, u.markeText(n.titel || ''), kasten);
       u.element('span', { class: 'lad-nutzen-text' }, u.markeText(n.text || ''), kasten);
       var py = sprosseY(e);
+      /* farbiges Sprossen-Stück vom letzten Knoten der Ebene bis zum rechten
+         Holm, daran anschließend der Pfeil zum Kasten */
+      var rechtsKante = knotenJeEbene[e].reduce(function (m, k) { return Math.max(m, k.x + (k.w || 0) / 2); }, holmL);
+      if (holmR - rechtsKante > 20) {
+        u.svg('path', {
+          class: 'lad-stummel lad-stummel--' + farbe, d: 'M' + Math.round(rechtsKante + 8) + ' ' + py + 'H' + holmR,
+          'data-schritt': String(E), 'data-animation': 'zeichnen', 'data-dauer': '300', 'data-verzoegerung': String(i * 160)
+        }, ebeneLeiter);
+      }
       var x1 = holmR + 12, x2 = seiteX - 14;
       u.svg('path', {
         class: 'lad-pfeil lad-pfeil--' + farbe,
         d: 'M' + x1 + ' ' + py + 'H' + x2 + 'M' + (x2 - 10) + ' ' + (py - 9) + 'L' + x2 + ' ' + py + 'L' + (x2 - 10) + ' ' + (py + 9),
-        'data-schritt': String(E), 'data-animation': 'zeichnen', 'data-dauer': '500', 'data-verzoegerung': String(i * 160)
+        'data-schritt': String(E), 'data-animation': 'zeichnen', 'data-dauer': '500', 'data-verzoegerung': String(200 + i * 160)
       }, ebeneOben);
       labels[e].classList.add('ist-nutzen');
     });
@@ -358,7 +372,21 @@
   /* ---------------------------------------------------------------------------
      Einpassen der Knoten (Hilfen; nur innerhalb von util.messen aufrufen)
      --------------------------------------------------------------------------- */
-  function zuBreit(el) { return el.scrollWidth > el.clientWidth + 1; }
+  /* Ragt der Text über die Innenfläche hinaus? scrollWidth allein reicht
+     nicht: Ein zu langes Wort läuft zuerst in den Innenabstand (padding),
+     das zählt der Browser nicht als Überlauf. Deshalb zusätzlich die echte
+     Textbreite messen (Range) – umgerechnet, falls die Bühne skaliert ist. */
+  function zuBreit(el) {
+    if (el.scrollWidth > el.clientWidth + 1) return true;
+    var cs = getComputedStyle(el);
+    var innen = el.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+    var aussen = el.getBoundingClientRect();
+    if (!aussen.width || !el.offsetWidth) return false;
+    var r = document.createRange();
+    r.selectNodeContents(el);
+    var text = r.getBoundingClientRect().width * el.offsetWidth / aussen.width;
+    return text > innen + 1;
+  }
 
   /* Zahl der Textzeilen eines Knotens (aus Höhe und Zeilenhöhe) */
   function zeilenZahl(el) {
@@ -449,7 +477,8 @@
   /* Ebene neu verteilen: Alle Knoten starten einzeilig. Solange die Summe der
      Breiten nicht passt, wird der breiteste Knoten auf 2 Zeilen verschmälert
      (danach – wenn die Höhe reicht – auf 3). Passt es dann noch nicht, werden
-     alle Breiten anteilig gekürzt (die Prüfung danach warnt). Übrig
+     erst die umbrechbaren Knoten schmaler (nie schmaler als ihr längstes
+     Wort), zuletzt alle anteilig (die Prüfung danach warnt). Übrig
      gebliebener Platz wird gleichmäßig um die Knoten verteilt. */
   function neuVerteilen(liste, W, links, maxHoehe) {
     var luecke = MASS.knotenLuecke;
@@ -463,6 +492,8 @@
       k.breiten = { 1: einzeilig };
       k.breiten[2] = kleinsteBreite(el, 2, einzeilig);
       k.breiten[3] = kleinsteBreite(el, 3, einzeilig);
+      el.style.maxWidth = 'min-content';            // schmalste Breite = längstes Wort
+      k.minB = Math.min(einzeilig, el.offsetWidth);
       el.style.maxWidth = einzeilig + 'px';
       var cs = getComputedStyle(el);
       k.hoehe3 = 3 * (parseFloat(cs.lineHeight) || 32) + (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
@@ -480,6 +511,17 @@
         kandidat.b = kandidat.breiten[z];
       }
     });
+    /* Reicht das nicht: zuerst nur Knoten schmaler machen, die noch weiter
+       umbrechen können – nie schmaler als ihr längstes Wort (sonst ragt z. B.
+       „Abwechslung“ aus dem Kasten). Erst danach alle anteilig kürzen. */
+    if (summe() > platz) {
+      var zuViel = summe() - platz;
+      var spiel = liste.reduce(function (s, k) { return s + Math.max(0, k.b - k.minB); }, 0);
+      if (spiel > 0) {
+        var anteil = Math.min(1, zuViel / spiel);
+        liste.forEach(function (k) { k.b = Math.floor(k.b - Math.max(0, k.b - k.minB) * anteil); });
+      }
+    }
     if (summe() > platz) {
       var faktor = platz / summe();
       liste.forEach(function (k) { k.b = Math.floor(k.b * faktor); });

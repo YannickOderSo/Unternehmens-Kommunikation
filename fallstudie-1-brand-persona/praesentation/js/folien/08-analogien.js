@@ -12,6 +12,8 @@
           umfragen.tier (unsereAntwort, optionen) passen und ob die Karten
           überlaufen (dann enger setzen); bleibt ein Problem, steht ein Hinweis
           in den Notizen (Referentenansicht) und eine Warnung in der Konsole
+        • sichert die Werteingabe der Umfrage ab (Tab, „Werte“, „Zurücksetzen“;
+          Übergangslösung, bis der Baustein das selbst kann)
    f08b „Markentonalität (Aaker)“
         • baut aus den Daten das Profil der fünf Dimensionen nach Aaker
           (Balken für die Marke, Kreis-Marker für die Wettbewerber) und hängt
@@ -273,7 +275,8 @@
     console.warn('f08: ' + titel + ' – ' + text);
     if (!notizen) return;
     var p = ctx.util.element('p', { class: 'g4-hinweis g4-abgleich', 'data-art': art });
-    p.appendChild(ctx.util.element('b', null, titel + ': '));
+    /* „ACHTUNG“ in Versalien, damit der Hinweis in der Probe auffällt */
+    p.appendChild(ctx.util.element('b', null, 'ACHTUNG – ' + titel + ': '));
     p.appendChild(document.createTextNode(text));
     notizen.insertBefore(p, notizen.firstChild);
   }
@@ -369,6 +372,84 @@
     e.preventDefault();
   }, true);
 
+  /* ---------------------------------------------------------------------------
+     ÜBERGANGSLÖSUNG: Werteingabe der Umfrage (Knopf „Werte“, Doppelklick)
+     Der Umfrage-Baustein (js/komponenten.js) hat dabei drei Schwächen – als
+     Wunsch an die Engine gemeldet:
+       1. Tab springt aus dem Eingabefeld auf den nächsten Tier-Knopf; eine
+          dort getippte Ziffer zählt dann unsichtbar als Stimme.
+       2. Ein zweiter Klick auf „Werte“ schließt die offenen Felder nicht.
+       3. „Zurücksetzen“ lässt offene Felder samt alten Balken stehen.
+     Bis der Baustein das selbst regelt, übernimmt dieses Skript auf f08:
+       • Tab / Umschalt+Tab: Wert übernehmen und ins nächste bzw. vorige Feld
+         springen (ist das Feld zu, wird es geöffnet); nach dem letzten bzw.
+         vor dem ersten Feld werden alle Werte übernommen und die Felder zu.
+       • zweiter Klick auf „Werte“: alle offenen Felder übernehmen und schließen.
+       • „Zurücksetzen“: offene Felder vorher schließen (ohne Übernahme – sie
+         enthalten ohnehin nur die gespeicherten Werte).
+     Das Skript bedient dafür nur, was der Baustein selbst anbietet: Enter
+     (übernehmen) bzw. Escape (verwerfen) im Feld und Doppelklick auf einen
+     Wert (Feld öffnen). Ist der Baustein repariert, kann dieser Abschnitt
+     samt Aufruf in einrichten() entfallen.
+     --------------------------------------------------------------------------- */
+  function feldSchliessen(eingabe, uebernehmen) {
+    /* bubbles: false – die Taste erreicht nur das Feld, nicht die Navigation */
+    eingabe.dispatchEvent(new KeyboardEvent('keydown', {
+      key: uebernehmen ? 'Enter' : 'Escape', bubbles: false, cancelable: true
+    }));
+  }
+  function alleFelderSchliessen(huelle, uebernehmen) {
+    Array.prototype.slice.call(huelle.querySelectorAll('.umfrage-eingabe')).forEach(function (feld) {
+      feldSchliessen(feld, uebernehmen);
+    });
+  }
+
+  function werteingabeAbsichern(ctx) {
+    var huelle = ctx.folie.querySelector('.umfrage[data-umfrage]');
+    if (!huelle) return;
+
+    /* Tab im Eingabefeld (Erfassungsphase, also vor dem Baustein) */
+    huelle.addEventListener('keydown', function (e) {
+      var feld = e.target;
+      if (e.key !== 'Tab' || !feld.classList || !feld.classList.contains('umfrage-eingabe')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var zeilen = Array.prototype.slice.call(huelle.querySelectorAll('.umfrage-zeile'));
+      var ziel = zeilen[zeilen.indexOf(feld.closest('.umfrage-zeile')) + (e.shiftKey ? -1 : 1)];
+      if (!ziel) {
+        alleFelderSchliessen(huelle, true);
+        return;
+      }
+      var naechstes = ziel.querySelector('.umfrage-eingabe');
+      if (naechstes) {
+        /* Fokuswechsel: das bisherige Feld übernimmt seinen Wert beim Verlassen */
+        naechstes.focus();
+        naechstes.select();
+      } else {
+        /* Feld per Doppelklick öffnen – der Baustein setzt dann den Fokus */
+        var wert = ziel.querySelector('.umfrage-wert');
+        if (wert) wert.dispatchEvent(new MouseEvent('dblclick', { bubbles: true, cancelable: true }));
+      }
+    }, true);
+
+    /* Knöpfe „Werte“ und „Zurücksetzen“ (die beiden letzten im Kopf der Umfrage) */
+    huelle.addEventListener('click', function (e) {
+      var knopf = e.target.closest ? e.target.closest('.umfrage-werkzeuge .umfrage-knopf') : null;
+      if (!knopf || !huelle.querySelector('.umfrage-eingabe')) return;
+      var knoepfe = Array.prototype.slice.call(huelle.querySelectorAll('.umfrage-werkzeuge .umfrage-knopf'));
+      var zuruecksetzen = knoepfe[knoepfe.length - 1];
+      var werte = knoepfe[knoepfe.length - 2];
+      if (knopf === werte) {
+        /* offene Felder übernehmen und schließen; der Baustein soll sie danach
+           nicht gleich wieder öffnen */
+        e.stopPropagation();
+        alleFelderSchliessen(huelle, true);
+      } else if (knopf === zuruecksetzen) {
+        alleFelderSchliessen(huelle, false);   // danach setzt der Baustein zurück
+      }
+    }, true);
+  }
+
   Deck.registriere('f08', {
     einrichten: function (ctx) {
       var d = ctx.daten || {};
@@ -376,6 +457,7 @@
       var tierDaten = m.tier || {};
       frageSetzen(ctx);
       handzeichen(ctx);
+      werteingabeAbsichern(ctx);
       var tier = ctx.folie.querySelector('[data-g4="tier"]');
       var mensch = ctx.folie.querySelector('[data-g4="mensch"]');
       var wb = ctx.folie.querySelector('[data-g4="wettbewerber"]');
@@ -386,6 +468,17 @@
       passform(ctx);
       /* nach einem Themenwechsel (andere Schrift, andere Abstände) neu prüfen */
       document.addEventListener('deck:groesse', function () { passform(ctx); });
+    },
+    /* Beim Weiterblättern (z. B. Bild↓ am Clicker, während Eingabefelder der
+       Umfrage offen sind) alle Felder übernehmen und schließen – sonst stehen
+       sie in Schritt 1 neben der Aussagezahl. Teil der Übergangslösung oben. */
+    schritt: function (ctx) {
+      var huelle = ctx.folie.querySelector('.umfrage[data-umfrage]');
+      if (huelle) alleFelderSchliessen(huelle, true);
+    },
+    verlassen: function (ctx) {
+      var huelle = ctx.folie.querySelector('.umfrage[data-umfrage]');
+      if (huelle) alleFelderSchliessen(huelle, true);
     },
     druck: function (ctx) { passform(ctx); }
   });

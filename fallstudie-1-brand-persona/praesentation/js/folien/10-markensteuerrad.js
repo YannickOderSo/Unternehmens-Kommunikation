@@ -2,17 +2,25 @@
    js/folien/10-markensteuerrad.js – Folie f10 · Markensteuerrad (Synthese)
    -----------------------------------------------------------------------------
    Das Steuerrad selbst baut die Engine (Baustein „steuerrad“, Modus
-   „synthese“). Dieses Skript ergänzt zwei Dinge:
+   „synthese“). Dieses Skript ergänzt:
 
-   1. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
+   1. MARKENKERN als Band über dem Rad (Text: „kern“ im Daten-JSON der Folie).
+      Er erscheint mit dem Schlussschritt nach dem letzten Feld. Das Zentrum
+      des Rads bleibt – wie auf Folie 2 und 12 – die Markenkompetenz.
+
+   2. QUELLENKÜRZEL JE STICHWORT: Im Kartenkopf bleibt nur das häufigste
+      Kürzel des Felds; ein abweichendes Kürzel steht klein direkt hinter dem
+      Stichwort (z. B. „Abenteurer LM“, „160 mg Koffein DR“).
+
+   3. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
       • rote Nummern an den Stichworten, die eine Lücke bilden
         (Daten: „luecken“ → „markieren“ im JSON der Folie),
       • je Lücke eine kurze Notiz in der freien Fläche zwischen den Karten
         (links: zwischen Nutzen und Attributen, rechts: zwischen Tonalität und Bild).
       Das Rad wird bei einem Themenwechsel neu gebaut – dann setzt das Skript
-      Nummern und Notizen automatisch neu.
+      Kürzel, Nummern und Notizen automatisch neu.
 
-   2. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
+   4. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
       Nur wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true)
       und in ihrer Wortwolke Wörter stehen, gibt es einen
       zusätzlichen Schritt: links „Unsere Analyse“ (Markenkern + wie viele Zurufe
@@ -32,21 +40,37 @@
       .trim();
   }
 
-  /* JSON direkt im Steuerrad-Baustein lesen (Kern und Stichworte) */
+  /* JSON direkt im Steuerrad-Baustein lesen (Felder und Stichworte) */
   function radKonfig(rad) {
     var skript = rad ? rad.querySelector(':scope > script[type="application/json"]') : null;
     if (!skript) return {};
     try { return JSON.parse(skript.textContent) || {}; } catch (e) { return {}; }
   }
 
+  /* Stichworte eines Felds als Liste { text, quelle } (Text oder Objekt erlaubt) */
+  function stichworteVon(konfig, feld) {
+    var e = (konfig.felder || {})[feld] || {};
+    return (e.stichworte || []).map(function (w) {
+      return typeof w === 'string' ? { text: w, quelle: e.quelle || '' } : { text: (w && w.text) || '', quelle: (w && w.quelle) || e.quelle || '' };
+    });
+  }
+
+  /* Nur der eigentliche Text eines Stichworts – ohne die Nummer und das
+     Quellenkürzel, die dieses Skript selbst anhängt */
+  function wortText(sw) {
+    var text = '';
+    Array.prototype.forEach.call(sw.childNodes, function (k) {
+      if (k.nodeType === 3) text += k.textContent;
+      else if (k.nodeType === 1 && !k.classList.contains('g6s-wortmarke') && !k.classList.contains('g6s-quelle')) text += k.textContent;
+    });
+    return text;
+  }
+
   /* Alle Stichworte (und den Kern) als Liste von Wortteilen – für den Abgleich */
-  function wortteileAus(konfig, weitere) {
-    var texte = [konfig.kern || ''];
-    var felder = konfig.felder || {};
-    Object.keys(felder).forEach(function (feld) {
-      (felder[feld].stichworte || []).forEach(function (w) {
-        texte.push(typeof w === 'string' ? w : (w && w.text) || '');
-      });
+  function wortteileAus(konfig, kern, weitere) {
+    var texte = [kern || ''];
+    Object.keys(konfig.felder || {}).forEach(function (feld) {
+      stichworteVon(konfig, feld).forEach(function (w) { texte.push(w.text); });
     });
     (weitere || []).forEach(function (w) { texte.push(w); });
     var teile = [];
@@ -68,7 +92,7 @@
     });
   }
 
-  /* höchster Schritt, den das Steuerrad selbst belegt (Markenkern = Schluss) */
+  /* höchster Schritt, den das Steuerrad selbst belegt (= letztes Feld) */
   function letzterRadSchritt(rad) {
     var max = 0;
     Array.prototype.forEach.call(rad.querySelectorAll('[data-schritt]'), function (el) {
@@ -87,11 +111,22 @@
       var daten = ctx.daten || {};
       var rad = folie.querySelector('.steuerrad');
       if (!rad) return;
-      var zustand = { rad: rad, luecken: daten.luecken || [], abgleich: daten.abgleich || {} };
+      var zustand = {
+        rad: rad,
+        konfig: radKonfig(rad),
+        kern: daten.kern || '',
+        luecken: daten.luecken || [],
+        abgleich: daten.abgleich || {}
+      };
       folie._g6s = zustand;
 
-      /* Schritt der Konsistenzprüfung = direkt nach dem Markenkern */
-      zustand.schrittLuecken = letzterRadSchritt(rad) + 1;
+      /* Schritte: nach dem letzten Feld der Markenkern (= Schlussschritt der
+         Engine), danach die Konsistenzprüfung */
+      zustand.schrittKern = letzterRadSchritt(rad) + 1;
+      zustand.schrittLuecken = zustand.schrittKern + 1;
+
+      /* ---- Markenkern-Band über dem Rad */
+      kernEinrichten(folie, zustand);
 
       /* ---- Ebene für die Lücken-Notizen: liegt deckungsgleich über dem Rad,
               aber AUSSERHALB des Rad-Inhalts (der wird bei Themenwechseln neu
@@ -113,21 +148,19 @@
         return { luecke: l, el: notiz, seite: seite };
       });
 
-      /* ---- Rad neu gebaut (Themenwechsel)? Dann Nummern und Lage erneuern */
+      /* ---- Rad neu gebaut (Themenwechsel)? Dann Kürzel, Nummern und Lage erneuern */
       var beobachter = new MutationObserver(function (aenderungen) {
         var neu = aenderungen.some(function (a) {
           return Array.prototype.some.call(a.addedNodes, function (k) { return k.classList && k.classList.contains('sr-hub'); });
         });
         if (!neu) return;
-        markieren(zustand);
-        trennerGruppieren(rad);
+        radErgaenzen(zustand);
         Deck.schritteNeu(folie);
         requestAnimationFrame(function () { platzieren(zustand); });
       });
       beobachter.observe(rad, { childList: true });
 
-      markieren(zustand);
-      trennerGruppieren(rad);
+      radErgaenzen(zustand);
       u.messen(rad, function () { platzieren(zustand); });
 
       ['deck:groesse', 'deck:thema'].forEach(function (name) {
@@ -157,6 +190,67 @@
     }
   });
 
+  /* Alles, was dieses Skript in den (neu) gebauten Rad-Inhalt einfügt */
+  function radErgaenzen(zustand) {
+    markieren(zustand);
+    quellenJeWort(zustand);
+    trennerGruppieren(zustand.rad);
+  }
+
+
+  /* ===========================================================================
+     MARKENKERN (Band über dem Rad)
+     =========================================================================== */
+  function kernEinrichten(folie, zustand) {
+    var band = folie.querySelector('.g6s-kern');
+    if (!band) return;
+    var text = band.querySelector('[data-g6s="kern-text"]');
+    if (!zustand.kern) { band.hidden = true; return; }        // kein Kern eingetragen → kein Band
+    if (text) {
+      text.textContent = Deck.util.markeText(zustand.kern);
+      text.setAttribute('data-schritt', String(zustand.schrittKern));
+    }
+  }
+
+
+  /* ===========================================================================
+     QUELLENKÜRZEL JE STICHWORT
+     =========================================================================== */
+  function quellenJeWort(zustand) {
+    var rad = zustand.rad;
+    Object.keys(zustand.konfig.felder || {}).forEach(function (feld) {
+      var karte = rad.querySelector('.sr-karte[data-paar="' + feld + '"]');
+      if (!karte) return;
+      var worte = stichworteVon(zustand.konfig, feld);
+
+      /* Hauptquelle = häufigstes Kürzel (bei Gleichstand das erste) */
+      var anzahl = {};
+      var haupt = '';
+      worte.forEach(function (w) {
+        if (!w.quelle) return;
+        anzahl[w.quelle] = (anzahl[w.quelle] || 0) + 1;
+        if (!haupt || anzahl[w.quelle] > anzahl[haupt]) haupt = w.quelle;
+      });
+      if (!haupt) return;
+
+      /* Kopf: nur noch die Hauptquelle */
+      Array.prototype.forEach.call(karte.querySelectorAll('.sr-karte-kopf .sr-quelle'), function (q) {
+        if (q.textContent.trim() !== haupt) q.remove();
+      });
+
+      /* Stichworte mit abweichender Quelle: Kürzel direkt hinter das Wort */
+      var abweichend = {};
+      worte.forEach(function (w) { if (w.quelle && w.quelle !== haupt) abweichend[normal(Deck.util.markeText(w.text))] = w.quelle; });
+      Array.prototype.forEach.call(karte.querySelectorAll('.sr-stichwort'), function (sw) {
+        if (sw.querySelector('.g6s-quelle')) return;               // schon ergänzt
+        var q = abweichend[normal(wortText(sw))];
+        if (!q) return;
+        /* data-meta: Metaangabe (22 px wie die Kopf-Kürzel), kein Folientext */
+        Deck.util.element('span', { class: 'g6s-quelle', 'data-meta': '', title: 'Quelle: ' + q }, q, sw);
+      });
+    });
+  }
+
 
   /* ===========================================================================
      KONSISTENZPRÜFUNG
@@ -173,7 +267,7 @@
         var gesucht = normal(Deck.util.markeText(m.stichwort));
         Array.prototype.forEach.call(karte.querySelectorAll('.sr-stichwort'), function (sw) {
           if (sw.querySelector('.g6s-wortmarke')) return;          // schon markiert
-          if (normal(sw.textContent) !== gesucht) return;
+          if (normal(wortText(sw)) !== gesucht) return;
           sw.classList.add('g6s-markiert');
           Deck.util.element('span', {
             class: 'g6s-wortmarke',
@@ -195,6 +289,7 @@
     var rad = zustand.rad;
     var hub = rad.querySelector(':scope > .sr-hub');
     if (!hub || !hub.offsetWidth) return;
+    kartenVerdichten(hub);
     trennerAmZeilenende(rad);
     var ebene = zustand.ebene;
     ebene.style.left = hub.offsetLeft + 'px';
@@ -212,6 +307,8 @@
       ringLinks = platz.offsetLeft + ring.cx.baseVal.value - ring.r.baseVal.value;
       ringRechts = platz.offsetLeft + ring.cx.baseVal.value + ring.r.baseVal.value;
     }
+
+    pillenAbstand(hub);
 
     zustand.notizen.forEach(function (n) {
       var oben = hub.querySelector('.sr-karte--' + (n.seite === 'links' ? 'lo' : 'ro'));
@@ -249,9 +346,56 @@
   }
 
 
+  /* Stichworte einer Seitenkarte brauchen mehr als zwei Zeilen (z. B. im
+     Thema Bento mit breiterer Schrift)? Dann setzt die Karte sie in 28 px
+     (kleinste erlaubte Inhaltsgröße, Klasse g6s-eng im CSS). */
+  function kartenVerdichten(hub) {
+    Array.prototype.forEach.call(hub.querySelectorAll('.sr-karte:not(.sr-pille)'), function (karte) {
+      var liste = karte.querySelector('.sr-karte-stichworte');
+      if (!liste) return;
+      karte.classList.remove('g6s-eng');
+      if (zeilenVon(liste) > 2) karte.classList.add('g6s-eng');
+    });
+  }
+  function zeilenVon(liste) {
+    var oben = [];
+    Array.prototype.forEach.call(liste.children, function (k) {
+      if (!k.offsetHeight) return;
+      if (!oben.some(function (t) { return Math.abs(t - k.offsetTop) < 6; })) oben.push(k.offsetTop);
+    });
+    return oben.length;
+  }
+
+  /* Sicherheitsnetz: Wird eine Karte höher als geplant (z. B. eine Zeile mehr
+     in einem Thema mit breiterer Schrift), darf sie die Pille „Brand Persona“
+     (unten) bzw. „Markenkompetenz“ (oben) nicht berühren. Dann rückt sie um
+     genau so viel zur Radmitte, dass 12 px Luft bleiben. Pillen und Karten
+     sind per transform zentriert: offsetLeft/offsetTop = Mittelpunkt
+     (Pille) bzw. linker Rand und senkrechte Mitte (Karte). */
+  function pillenAbstand(hub) {
+    var luft = 12;
+    ['lo', 'ro', 'lu', 'ru'].forEach(function (platz) {
+      var karte = hub.querySelector('.sr-karte--' + platz);
+      var unten = platz.charAt(1) === 'u';
+      var pille = hub.querySelector(unten ? '.sr-karte--unten' : '.sr-karte--oben');
+      if (!karte || !pille) return;
+      karte.style.marginTop = '';
+      var pilleLinks = pille.offsetLeft - pille.offsetWidth / 2;
+      var pilleRechts = pilleLinks + pille.offsetWidth;
+      if (karte.offsetLeft + karte.offsetWidth < pilleLinks || karte.offsetLeft > pilleRechts) return;
+      var zuviel = unten
+        ? (karte.offsetTop + karte.offsetHeight / 2) - (pille.offsetTop - pille.offsetHeight / 2 - luft)
+        : (pille.offsetTop + pille.offsetHeight / 2 + luft) - (karte.offsetTop - karte.offsetHeight / 2);
+      if (zuviel > 0) karte.style.marginTop = (unten ? -zuviel : zuviel) + 'px';
+    });
+  }
+
+
   /* Stichworte und ihr folgender Trenner „·“ bilden eine Gruppe, die nicht
      umbrochen wird. So steht ein Trenner nie am Anfang einer Zeile; steht er
-     am Zeilenende, blendet trennerAmZeilenende() ihn aus. */
+     am Zeilenende, blendet trennerAmZeilenende() ihn aus. Hinter markierten
+     Stichworten blendet das CSS den Trenner aus, sobald die rote Nummer
+     erscheint (sie steht dann an seiner Stelle). */
   function trennerGruppieren(rad) {
     Array.prototype.forEach.call(rad.querySelectorAll('.sr-karte-stichworte'), function (liste) {
       Array.prototype.slice.call(liste.querySelectorAll(':scope > .sr-trenner')).forEach(function (trenner) {
@@ -286,11 +430,10 @@
     zustand.wolkeId = zustand.abgleich.wortwolke ||
       (el.querySelector('.wortwolke') && el.querySelector('.wortwolke').getAttribute('data-wortwolke')) || 'assoziationen';
 
-    /* Kern aus dem Steuerrad übernehmen (eine Quelle für beide Stellen) */
-    var konfig = radKonfig(zustand.rad);
+    /* Kern aus den Daten der Folie übernehmen (eine Quelle für alle Stellen) */
     var kernEl = el.querySelector('[data-g6s="kern"]');
-    if (kernEl && konfig.kern) kernEl.textContent = ctx.util.markeText(konfig.kern);
-    zustand.teile = wortteileAus(konfig, zustand.abgleich.weitereTreffer);
+    if (kernEl) kernEl.textContent = ctx.util.markeText(zustand.kern);
+    zustand.teile = wortteileAus(zustand.konfig, zustand.kern, zustand.abgleich.weitereTreffer);
 
     /* Treffer in der Wolke hervorheben – auch nach jedem Neuzeichnen */
     var flaeche = el.querySelector('.ww-flaeche');

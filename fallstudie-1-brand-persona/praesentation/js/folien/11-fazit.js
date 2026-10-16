@@ -1,8 +1,11 @@
 /* =============================================================================
    js/folien/11-fazit.js – Folie f11 · Fazit & Empfehlungen
    -----------------------------------------------------------------------------
-   Die Folie ist reines HTML (Texte dort ändern). Dieses Skript macht nur die
-   roten Verweis-Pillen („Lücke 1 · Folie 10“) lebendig:
+   Die Folie ist reines HTML (Texte dort ändern). Dieses Skript
+     • setzt den Kern-Satz aus Folie 10 ein (Daten-JSON „kern“ von f10 –
+       eine Quelle für beide Folien; fehlt Folie 10, bleibt der Text im HTML),
+     • und macht die Verweis-Pillen („Kern · Folie 10“, „Lücke 1 · Folie 10“)
+       lebendig:
      • die Foliennummer wird aus dem Deck gelesen (stimmt also auch, wenn sich
        die Reihenfolge ändert),
      • Klick oder Tab + Enter springt zur Herleitung – auf den Schritt, der in
@@ -30,6 +33,17 @@
     try { el = ziel.element.querySelector(angabe); } catch (e) { el = null; }
     var n = el ? parseInt(el.getAttribute('data-schritt'), 10) : NaN;
     return isNaN(n) ? 'ende' : n;
+  }
+
+  /* Kern-Satz aus den Daten von Folie 10 lesen (<script class="daten"> → „kern“) */
+  function kernEinsetzen(ctx) {
+    var platz = ctx.folie.querySelector('[data-g6f="kern"]');
+    var f10 = zielSuchen('f10');
+    if (!platz || !f10 || !f10.element) return;
+    var skript = f10.element.querySelector(':scope > script.daten');
+    var daten = null;
+    try { daten = skript ? JSON.parse(skript.textContent) : null; } catch (e) { daten = null; }
+    if (daten && daten.kern) platz.textContent = ctx.util.markeText(daten.kern);
   }
 
   function verweiseEinrichten(ctx) {
@@ -62,6 +76,7 @@
 
   Deck.registriere('f11', {
     einrichten: function (ctx) {
+      kernEinsetzen(ctx);
       verweiseEinrichten(ctx);
       /* Optionale Folien können sich später ein-/ausblenden → beim Start nachziehen */
       if (Deck.bereit && Deck.bereit.then) Deck.bereit.then(function () { verweiseEinrichten(ctx); });

@@ -11,11 +11,17 @@
        in Schritt 1 rücken zwei zusammen und eine ab, darüber das Konstrukt
      • rechts das Ergebnis (Schritt 3): Markenattribute auf Höhe ihrer Zeilen,
        mit Vorsprung vor dem Wettbewerb und den drei Auswahlkriterien
+     • Schritt 3 im Profil: Konstrukte mit "hinweis" (z. B. „Hürde“) bekommen
+       eine Linie von der Idealmarke bis zur Marke (= Abstand zum Ideal) und
+       in der Mitte einen kleinen Chip mit dem Hinweis
+     • Schritt 0–1: kleine Überschrift über dem leeren Profil („Polaritäten-
+       profil · Skala 1–7“), die in Schritt 2 der Legende Platz macht
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
 
    RECHENWEG (zum Erklären bei Rückfragen) – wie methoden.md, Abschnitt 2
      Vorsprung = |Mittelwert [Marke] − Ø Wettbewerber W1–W5| auf dem
-     Konstrukt (eine Nachkommastelle). Den Ø trägt die Gruppe je Konstrukt als
+     Konstrukt, gerundet auf ganze Skalenpunkte (mit "vorsprungDezimalen": 1
+     auf eine Nachkommastelle). Den Ø trägt die Gruppe je Konstrukt als
      "wettbewerbMittel" ein (selbst gerechnet, Backup B4). Fehlt der Wert,
      rechnet das Skript ersatzweise gegen die Linie „Marke A“ ("wettbewerb")
      und meldet das in der Konsole. Liegt die Marke links (Wert kleiner),
@@ -67,8 +73,10 @@
     karteLueckeMin: 14       // kleinste Lücke zwischen den zusammengerückten Karten
   };
 
-  var SCHRIFT_KARTE = { start: 34, min: 28 };
-  var SCHRIFT_ATTRIBUT = { start: 40, min: 28 };
+  /* Schriftgrößen beim Einpassen: Startwert aus tokens.css (Ersatzwert in
+     Klammern), nie kleiner als 28 px (= --groesse-text-min) */
+  var SCHRIFT_KARTE = { token: '--groesse-gross', start: 34, min: 28 };
+  var SCHRIFT_ATTRIBUT = { token: '--groesse-untertitel', start: 40, min: 28 };
 
   /* ---------------------------------------------------------------------------
      Hilfen
@@ -121,6 +129,7 @@
     var min = zahl(d.skala && d.skala[0], 1);
     var max = zahl(d.skala && d.skala[1], 7);
     var mitte = (min + max) / 2;
+    var faktor = d.vorsprungDezimalen === 1 ? 10 : 1;      // Rundung des Vorsprungs (0 oder 1 Nachkommastelle)
     var ohneMittel = [];
     var liste = d.konstrukte.map(function (k, i) {
       var m = zahl(k.marke, mitte), w = zahl(k.wettbewerb, mitte), id = zahl(k.ideal, mitte);
@@ -138,7 +147,8 @@
         marke: begrenzen(m, min, max), wettbewerb: begrenzen(w, min, max), ideal: begrenzen(id, min, max),
         mittel: hatMittel ? begrenzen(bezug, min, max) : null,
         attribut: !!k.attribut, attributName: name, markeRechts: markeRechts,
-        vorsprung: Math.round(Math.abs(m - bezug) * 10) / 10
+        hinweis: !k.attribut && typeof k.hinweis === 'string' && k.hinweis.trim() ? u.markeText(k.hinweis.trim()) : '',
+        vorsprung: Math.round(Math.abs(m - bezug) * faktor) / faktor
       };
     });
     if (ohneMittel.length) {
@@ -206,7 +216,7 @@
     var daten = zeilenAusDaten(d, u);
     var zeilen = daten.liste, min = daten.min, max = daten.max;
     var N = zeilen.length;
-    var dezimalen = d.vorsprungDezimalen === 0 ? 0 : 1;
+    var dezimalen = d.vorsprungDezimalen === 1 ? 1 : 0;    // Standard: ganze Skalenpunkte
 
     /* Spalten: rechte Spalte = 4 von 12 Rasterspalten (wie .sp-4) */
     var rinne = u.token('--rinne') || 32;
@@ -236,7 +246,7 @@
     zeilen.forEach(function (r, i) {
       var schritt = r.triade ? 1 : 2;
       var g = u.svg('g', {
-        class: 'rg-zeile' + (r.attribut ? ' ist-attribut' : '') + (r.triade ? ' ist-triade' : ''),
+        class: 'rg-zeile' + (r.attribut ? ' ist-attribut' : '') + (r.hinweis ? ' ist-hinweis' : '') + (r.triade ? ' ist-triade' : ''),
         'data-schritt': String(schritt), 'data-animation': 'einblenden',
         'data-verzoegerung': String(schritt === 1 ? 900 : i * MASS.zeilenStaffel)
       }, ebeneZeilen);
@@ -328,6 +338,13 @@
       var ty = MASS.zeilenOben + zeileH * t;
       u.svg('line', { class: 'rg-trenner' + (t === 0 || t === N ? ' rg-trenner--rand' : ''), x1: 0, y1: ty, x2: profilB, y2: ty }, ebeneRaster);
     }
+    /* Überschrift über dem leeren Profil (Schritt 0–1): sagt, was hier
+       entsteht. In Schritt 2 blendet das CSS sie aus – dort steht dann die
+       Legende. Leer lassen ("profilTitel": "") = keine Überschrift. */
+    var profilTitel = d.profilTitel === undefined ? 'Polaritätenprofil · Skala ' + min + '–' + max : d.profilTitel;
+    if (profilTitel) {
+      u.svg('text', { class: 'rg-profil-titel', 'data-meta': '', x: 0, y: MASS.legendeY + 8 }, ebeneRaster).textContent = u.markeText(profilTitel);
+    }
     /* Überschrift der Nennungs-Spalte (mit Schritt 2) */
     var kopfN = u.svg('text', { class: 'rg-kopf-text', 'data-meta': '', x: 0, y: MASS.skalaY, 'data-schritt': '2', 'data-animation': 'einblenden' }, ebeneRaster);
     kopfN.textContent = u.markeText(d.nennungenTitel || 'Nennungen');
@@ -407,7 +424,20 @@
        der Ø aller Wettbewerber in den Daten steht – ein Strich an dessen
        Stelle plus Abstandslinie bis zur Marke (= der Vorsprung rechts) */
     var marker = u.svg('g', { class: 'rg-schritt3', 'data-schritt': '3', 'data-animation': 'keine' }, ebeneMarker);
+    var hinweisChips = [];
     zeilen.forEach(function (r, i) {
+      /* Konstrukt mit Hinweis (z. B. „Hürde“): Linie Idealmarke → Marke
+         (= Abstand zum Ideal) und ein Chip in der Mitte der Linie */
+      if (r.hinweis) {
+        var xi = x(r.ideal), xk = x(r.marke);
+        var ri = xk >= xi ? 1 : -1;
+        var a = xi + ri * (MASS.rauteIdeal + 6), b = xk - ri * (MASS.punktMarke + 6);
+        if ((b - a) * ri > 8) {
+          var linie = u.svg('path', { class: 'rg-ideal-abstand', d: 'M' + a + ' ' + y(i) + 'H' + b, 'data-animation': 'zeichnen', 'data-dauer': '700', 'data-verzoegerung': '450' }, marker);
+          u.svg('title', { 'data-meta': '' }, linie).textContent = 'Abstand zur Idealmarke: ' + u.zahlFormat(Math.abs(r.marke - r.ideal), 1) + ' (' + r.links + ' – ' + r.rechts + ')';
+        }
+        hinweisChips.push({ r: r, x: Math.round((xi + xk) / 2), y: y(i), luecke: Math.abs(xk - xi) });
+      }
       if (!r.attribut) return;
       if (r.mittel !== null) {
         var xm = x(r.mittel), xMarke = x(r.marke);
@@ -458,6 +488,20 @@
     triadeBauen(z, seite, seiteB, d, u);
     ergebnisBauen(z, seite, d, u, { zeileH: zeileH, y: y, unten: unten, dezimalen: dezimalen, mitMittel: zeilen.some(function (r) { return r.attribut && r.mittel !== null; }) });
 
+    /* Hinweis-Chips (Schritt 3) – HTML über der Grafik, mittig zwischen
+       Idealmarke und Marke. Ist die Lücke zu schmal, meldet die Konsole es. */
+    hinweisChips.forEach(function (h) {
+      var chip = u.element('span', {
+        class: 'chip rg-hinweis', 'data-schritt': '3', 'data-animation': 'einblenden', 'data-verzoegerung': '700',
+        style: 'left:' + h.x + 'px;top:' + h.y + 'px'
+      }, h.r.hinweis, buehne);
+      u.messen(buehne, function () {
+        if (chip.offsetWidth + 2 * (MASS.punktMarke + 6) > h.luecke) {
+          console.warn('[f06] Hinweis „' + h.r.hinweis + '“ (' + h.r.links + ' – ' + h.r.rechts + '): Marke und Idealmarke liegen zu nah beieinander – der Chip verdeckt die Punkte. Hinweis kürzen oder weglassen.');
+        }
+      });
+    });
+
     /* Beschreibung für Screenreader */
     var bezugText = zeilen.some(function (r) { return r.mittel !== null; }) ? 'Ø Wettbewerb' : reihenDef[1].name;
     var attrText = zeilen.filter(function (r) { return r.attribut; }).map(function (r) {
@@ -465,7 +509,9 @@
     }).join(', ');
     buehne.setAttribute('aria-label', 'Repertory Grid, Beispieldaten. Polaritätenprofil auf einer Skala von ' + min + ' bis ' + max +
       ' mit ' + N + ' Konstrukten für ' + reihenDef[2].name + ', ' + reihenDef[1].name + ' und ' + reihenDef[0].name +
-      '. Markenattribute: ' + attrText + '.');
+      '. Markenattribute: ' + attrText + '.' + hinweisChips.map(function (h) {
+        return ' ' + h.r.hinweis + ': ' + (h.r.markeRechts ? h.r.rechts : h.r.links) + ' (weit von der Idealmarke entfernt).';
+      }).join(''));
 
     Deck.platzhalterFuellen(buehne);
     return z;
@@ -520,6 +566,14 @@
     klammer(Math.round(xs[0] + weg), Math.round(xs[1] - weg + w), 'paar');
     klammer(Math.round(xs[2] + weg), Math.round(xs[2] + weg + w), 'einzeln');
     u.messen(seite, function () {
+      /* Pole nie über den Spaltenrand hinaus: notfalls nach innen rücken */
+      [polPaar, polEinzeln].forEach(function (pol) {
+        var mitte = parseFloat(pol.style.left), halb = pol.offsetWidth / 2;
+        var neu = Math.max(halb, Math.min(S - halb, mitte));
+        if (neu !== mitte) pol.style.left = Math.round(neu) + 'px';
+      });
+      mitPaar = parseFloat(polPaar.style.left);
+      mitEinzeln = parseFloat(polEinzeln.style.left);
       var a = mitPaar + polPaar.offsetWidth / 2 + 16;
       var b = mitEinzeln - polEinzeln.offsetWidth / 2 - 16;
       if (b - a >= 36) {
@@ -528,10 +582,11 @@
       }
       /* Kartennamen einpassen: möglichst einzeilig (Schrift bis 28 px
          verkleinern); passt es auch dann nicht, darf er umbrechen */
+      var startKarte = u.token(SCHRIFT_KARTE.token) || SCHRIFT_KARTE.start;
       karten.forEach(function (k) {
         var n = k.firstChild;
         var platz = k.clientWidth - 20;
-        var groesse = SCHRIFT_KARTE.start;
+        var groesse = startKarte;
         n.style.whiteSpace = 'nowrap';
         n.style.fontSize = groesse + 'px';
         while (groesse > SCHRIFT_KARTE.min && n.scrollWidth > platz) {
@@ -540,7 +595,7 @@
         }
         if (n.scrollWidth > platz) {
           n.style.whiteSpace = '';
-          n.style.fontSize = SCHRIFT_KARTE.start + 'px';
+          n.style.fontSize = startKarte + 'px';
         }
       });
     });
@@ -580,8 +635,9 @@
        der Name auch dann nicht, darf er umbrechen – und die Konsole meldet,
        dass ein Kurzname ("attribut": "Kurzname") besser wäre. */
     u.messen(seite, function () {
+      var startAttribut = u.token(SCHRIFT_ATTRIBUT.token) || SCHRIFT_ATTRIBUT.start;
       namen.forEach(function (n) {
-        var groesse = SCHRIFT_ATTRIBUT.start;
+        var groesse = startAttribut;
         n.style.whiteSpace = 'nowrap';
         n.style.fontSize = groesse + 'px';
         while (groesse > SCHRIFT_ATTRIBUT.min && n.scrollWidth > n.clientWidth + 1) {

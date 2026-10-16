@@ -602,5 +602,6 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
   margin: 0;
   font-size: var(--groesse-text);
   line-height: 1.3;
+  text-wrap: balance;         /* kein einzelnes Wort in der letzten Zeile */
   color: var(--f-text);
 }
