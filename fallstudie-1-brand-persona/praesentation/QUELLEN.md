@@ -56,11 +56,15 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 | Datei | Inhalt | Herkunft |
 |---|---|---|
 | `platzhalter-raetsel.svg` | abstraktes Platzhalter-Motiv für das Einstiegsrätsel (Folie 01) | eigene Gestaltung – **bis 23.10. durch eigenes Foto ersetzen** |
-| `platzhalter-logo.svg` | neutraler Logo-Platzhalter (Folie 09b) | eigene Gestaltung |
+| `holy-logo-wortmarke.png` | offizielle HOLY-Wortmarke, 389 × 105 px (Folie 09b, über `marke.js → logo`) | © HOLY Softdrinks GmbH; Seitenkopf von https://de.holy.com (Datei `HOLY_Logo_1.png`), abgerufen 16.10.2026, unverändert |
+| `holy-logo-oval.png` | offizielles HOLY-Logo im gelben Oval, 692 × 400 px (zurzeit nicht verwendet) | © HOLY Softdrinks GmbH; Seitenfuß von https://de.holy.com (Datei `HOLY_Logo_NewYellow.png`), abgerufen 16.10.2026, unverändert |
+| `platzhalter-logo.svg` | neutraler Logo-Platzhalter (früher Folie 09b) | eigene Gestaltung |
 | `platzhalter-persona.svg`, `platzhalter-post.svg` | weitere Platzhalter (zurzeit nicht verwendet) | eigene Gestaltung |
 
-Es sind **keine** Logos, Produktfotos oder Social-Media-Bilder von HOLY eingebunden. Eigene Bilder nur mit
-geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
+Von HOLY sind nur die beiden **offiziellen Logos** eingebunden, unverändert und ausschließlich zur Kennzeichnung der
+analysierten Marke im Rahmen einer studentischen Fallstudie; es besteht keine Verbindung zur HOLY Softdrinks GmbH.
+Keine Produktfotos oder Social-Media-Bilder von HOLY. Eigene Bilder nur mit geklärten Rechten verwenden und die
+Quelle in der Fußzeile der Folie nennen.
 
 ## 5. Inhalte und Fakten
 

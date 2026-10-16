@@ -57,13 +57,14 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 35 | 16.10.2026 | Yannick | Screenshot Account 2; Frage: Wie rufen wir die Präsentation auf (Link?) | – | Antwort im Chat (keine Dateien geändert) |
 | 36 | 16.10.2026 | Yannick | Webseite (GitHub Pages) einrichten | – | Zwischenstand Account 2 zusammengeführt, Startseite, lokal als Webseite getestet |
 | 37 | 16.10.2026 | Yannick | GitHub Pages aktiviert („Ja ist gepusht“) | D07 (Workflow) | Live-Seite erreichbar; Prüfung *läuft* |
-| 38 | 16.10.2026 | Yannick | HOLY-Logos einfügen, wenn die Prüfung fertig ist | – | Logos von de.holy.com geladen und geprüft; Einbau nach D07 – *in Arbeit* |
+| 38 | 16.10.2026 | Yannick | HOLY-Logos einfügen, wenn die Prüfung fertig ist | – | Wortmarke auf Folie 09b eingebaut, Oval-Variante bereitgelegt, Quellen ergänzt (siehe 45) |
 | 39 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Rohprotokoll und Nachweis committet + gepusht |
 | 40 | 16.10.2026 | Yannick | Statista-Zugang vorhanden: Welche Daten erheben? | – | Antwort im Chat (keine Dateien geändert) |
 | 41 | 16.10.2026 | Yannick | Screenshot Statista-Downloadmenü: In welchem Format hochladen? | – | Antwort im Chat (keine Dateien geändert) |
 | 42 | 16.10.2026 | Yannick | Frage: Wo soll ich die Dateien hochladen? | – | Antwort im Chat (keine Dateien geändert) |
 | 43 | 16.10.2026 | Yannick | Upload: 3 Statista-XLSX + 2 komplette Statista-Reports (PDF) | – | XLSX ausgewertet; Reports nicht geöffnet, Rückfrage (Statista-Bedingungen) |
 | 44 | 16.10.2026 | Yannick | Upload: 4 weitere Statista-XLSX | – | `persona-daten.md` (Anteile, Indizes, Persona-Folgerungen) |
+| 45 | 16.10.2026 | System | Benachrichtigung: Workflow D07 fertig | – | `persona-daten.md` auf Kurzfassung reduziert; noindex, Startseite, Logos; Übergabe Ü02 an Account 2 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -617,7 +618,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   der 1920er-Bühne. Die Wortmarke reicht dafür in ihrer Auflösung.
 
   Einbau erst nach Abschluss von D07, weil die Prüfer gerade dieselben Dateien und die Live-Seite testen.
-- **Ergebnis:** *in Arbeit*
+- **Ergebnis:** eingebaut nach D07 (Details unter 45): `bilder/holy-logo-wortmarke.png` auf Folie 09b,
+  `bilder/holy-logo-oval.png` bereitgelegt, Quelle in `marke.js`, `QUELLEN.md` und in der Fußzeile von Folie 09b.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -713,6 +715,38 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen – Zahlen stichprobenartig mit den XLSX-Dateien vergleichen
 
+### 45 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> *(automatische Benachrichtigung: Workflow „webseite-live-pruefung“ (D07) abgeschlossen, 3 von 3 Unteragenten
+> fertig)*
+
+- **Vorgehen Claude:**
+  - **Befund „hoch“ sofort umgesetzt:** Die eben gepushte `persona-daten.md` gab die Statista-Tabellen (Campuslizenz)
+    fast vollständig öffentlich wieder (Repository und Webseite). Neu ist eine öffentliche Kurzfassung mit den
+    wenigen Kennzahlen für die Folien, gepusht als `67fbd34`. Die vollständige Auswertung bekam Yannick als Datei für
+    den Gruppenordner. Der Commit `301969e` bleibt in der Git-Historie des öffentlichen Repositorys; Entscheidung
+    (Repo privat oder Historie bereinigen) liegt bei Yannick.
+  - **Eigene Befunde behoben:**
+    - `noindex, nofollow` in der Startseite, `aufgaben-im-detail.html`, `aufgabenuebersicht.html`,
+      `holy-dossier.html`, der Präsentation und den drei Gestaltungsentwürfen.
+    - Startseite: deutlich sichtbarer Tastaturfokus, Hinweis „Am Handy quer halten oder das PDF öffnen“,
+      Hosting- und Datenschutzhinweis mit Link zur GitHub-Datenschutzerklärung.
+    - Favicon in der Präsentation, damit verschwindet die einzige 404-Meldung.
+  - **Logos (Prompt 38) eingebaut:**
+    - `marke.js → logo` zeigt auf die Wortmarke.
+    - Quellenzeile von Folie 09b beginnt mit „Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“.
+    - `QUELLEN.md` Abschnitt 4 angepasst, alt-Text in `js/folien/09-kommunikationsanalyse.js` korrigiert.
+    - Lokal getestet (Playwright): Logo geladen, 356 × 96 px auf der 1920er-Bühne, Quellenzeile ohne Überlauf, keine
+      Fehler.
+  - **Befunde zur Präsentation** (Referentenansicht-Scrollen, Bedienleiste im Handy-Hochformat, Ziffern auf Folie 08,
+    Touch-Ziele, Hinweis „studentische Arbeit“ auf Folie 01/12, neuer Export) als Übergabe Ü02 an Account 2.
+  - **Entscheidungen für die Gruppe** an Yannick gemeldet: Veröffentlichungsumfang, Repository privat, Vorlesungs-PDF,
+    Namen, Sprechernotizen, Dauer der Veröffentlichung.
+- **Ergebnis:** [`persona-daten.md`](../fallstudie-1-brand-persona/persona-daten.md) (Kurzfassung),
+  [`index.html`](../index.html), Präsentation und Logos, Übergabe
+  [`uebergaben/2026-10-16_account-2_befunde-live-pruefung.md`](uebergaben/2026-10-16_account-2_befunde-live-pruefung.md)
+- **Unteragenten:** keine (Auswertung von D07)
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -729,7 +763,8 @@ steht hier mit dem wörtlichen Auftrag.
 | D04 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-pruefung“ (3 Unteragenten, einer mit Websuche) | Vorlage für die KI-Nutzung der Gruppe aus drei Blickwinkeln prüfen | 30 Befunde (4 hoch, 14 mittel, 12 niedrig); fast alle umgesetzt | Claude: HSKL-Quellen im Originaltext, Repo-Sichtbarkeit, Markdown-Darstellung |
 | D05 | 14.10.2026 | 25 | Workflow „vorlage-ki-nutzung-nachpruefung“ (1 Unteragent) | überarbeitete Vorlage gegen alle Befunde aus D04 nachprüfen | 15 offene Punkte (8 mittel/niedrig neue Widersprüche in weiteren Dateien, 1 falsche Zählung in D04); alle umgesetzt | Claude: Zählung nachgerechnet, PDFs neu erzeugt und verglichen |
 | D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | 48 Quellen geprüft (18 bestätigt, 25 korrigiert, 4 nicht bestätigt, 1 verworfen) + 4 Ergänzungen | Claude: 5 Stichproben an der Quelle |
-| D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | *läuft* | – |
+| D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
+| Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -913,8 +948,34 @@ steht hier mit dem wörtlichen Auftrag.
   - Geräte & Darstellung: Beamer-Formate, Handy, Touch, Kontrast, Bewegung reduzieren.
   - Öffentlichkeit & Inhalte: Was ist durch `.nojekyll` öffentlich abrufbar, sensible Inhalte, Indexierung, Fakten zu
     GitHub Pages mit Quelle.
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:**
+  - **Technik & Bedienung:** fehlerfrei auf der Live-Seite: 63 Folienzustände vor und zurück; Sprünge, Übersicht,
+    Backup, Hilfe, Themen, Schwarzbild; Referentenansicht in beide Richtungen synchron. Nichts ragt über die Bühne,
+    in 6 Kombinationen aus Thema und Modus. Ladezeit ca. 1 s, ca. 520 KB.
+  - **Geräte:** Letterboxing in 4 Fenstergrößen korrekt; Startseite auf dem Handy ohne seitliches Scrollen.
+  - **Öffentlichkeit:** keine Zugangsdaten oder privaten Kontaktdaten; Lizenzen von Schriften und Bibliotheken
+    vorhanden.
+  - **19 Befunde (1 hoch, 9 mittel, 9 niedrig):**
+    - hoch: Statista-Tabellen in `persona-daten.md` öffentlich.
+    - mittel: Pages liefert das ganze Repository aus; kein noindex; kein Hinweis „studentische Arbeit“ auf den
+      Folien; Vorlesungs-PDF öffentlich; geplante Logos und Screenshots; Namen öffentlich; Repository öffentlich;
+      Sprechtext in der Referentenansicht scrollt nicht mit; Bedienleiste im Handy-Hochformat.
+    - niedrig: u. a. Favicon, Fokus auf der Startseite, Ziffern auf Folie 08, Touch-Ziele, interne Kennungen
+      sichtbar, Sprechernotizen lesbar, kein Hosting-Hinweis.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Alle Befunde gelesen.
+  - Den Befund „hoch“ an der Datei bestätigt (Commit `301969e`, Tabellen mit absoluten Werten) und sofort behoben.
+  - Live-Erreichbarkeit vorab selbst geprüft (curl, Playwright).
+  - Eigene Änderungen lokal mit Playwright getestet (Logo auf Folie 09b, robots-Meta, keine Fehler).
+  - Eine Aussage aus Prompt 35 (Pages kostenlos für öffentliche Repositorys) hat der Prüfer mit der GitHub-Doku
+    bestätigt.
+
+### Ü02 – 16.10.2026 – ausgelöst durch 45 (Ergebnis von D07)
+
+- **Art:** Übergabe an Account 2 (Text, den Yannick in dessen Sitzung kopiert).
+- **Auftrag (wörtlich):** [`uebergaben/2026-10-16_account-2_befunde-live-pruefung.md`](uebergaben/2026-10-16_account-2_befunde-live-pruefung.md)
+- **Ergebnis:** *übergeben*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt beim nächsten Zusammenführen*
 
 ---
 

@@ -300,7 +300,7 @@
     /* 1. Logo (Bild aus marke.js → logo, bis dahin neutraler Platzhalter) */
     var logo = datenblattZeile(ziel, 'logo', 'Logo', belege, u);
     var fig = u.element('figure', { class: 'g5b-logo' }, null, logo.inhalt);
-    u.element('img', { class: 'g5b-logo-bild', 'data-marke-logo': '', alt: 'Logo der Marke (Platzhalter, bis das Logo in marke.js eingetragen ist)' }, null, fig);
+    u.element('img', { class: 'g5b-logo-bild', 'data-marke-logo': '', alt: 'Logo der Marke' }, null, fig);
     if (d.logo && d.logo.beschreibung) {
       u.element('figcaption', { class: 'g5b-logo-text', 'data-meta': '' }, d.logo.beschreibung, fig);
     }
