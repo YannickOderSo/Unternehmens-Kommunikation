@@ -57,6 +57,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 35 | 16.10.2026 | Yannick | Screenshot Account 2; Frage: Wie rufen wir die Präsentation auf (Link?) | – | Antwort im Chat (keine Dateien geändert) |
 | 36 | 16.10.2026 | Yannick | Webseite (GitHub Pages) einrichten | – | Zwischenstand Account 2 zusammengeführt, Startseite, lokal als Webseite getestet |
 | 37 | 16.10.2026 | Yannick | GitHub Pages aktiviert („Ja ist gepusht“) | D07 (Workflow) | Live-Seite erreichbar; Prüfung *läuft* |
+| 38 | 16.10.2026 | Yannick | HOLY-Logos einfügen, wenn die Prüfung fertig ist | – | Logos von de.holy.com geladen und geprüft; Einbau nach D07 – *in Arbeit* |
+| 39 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Rohprotokoll und Nachweis committet + gepusht |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -595,6 +597,33 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** Webseite online unter https://yannickoderso.github.io/Unternehmens-Kommunikation/ – Prüfung *läuft*
 - **Unteragenten:** D07
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 38 – 16.10.2026 – Yannick
+
+> *(davor in Claude Code ausgeführt: Befehl /usage – Ausgabe nur für Yannick, kein Prompt an Claude)*
+> Und füge schon mal die Holy Logos ein wenn du fertig bist
+
+- **Vorgehen Claude:** Beide Logos von der offiziellen HOLY-Website geladen (16.10.2026, Abruf per curl):
+  - Wortmarke aus dem Seitenkopf: `de.holy.com/cdn/shop/files/HOLY_Logo_1.png`, 389 × 105 px.
+  - Gelbes Oval aus dem Seitenfuß: `…/HOLY_Logo_NewYellow.png`, 692 × 400 px.
+
+  Eine Vektorfassung ist auf der Seite nicht verlinkt. Claude hat beide Dateien als Vorschau angesehen; sie entsprechen
+  der Beschreibung im Dossier 6.3. In der Präsentation gibt es genau einen Logo-Platz, Folie 09b, mit 96 px Höhe auf
+  der 1920er-Bühne. Die Wortmarke reicht dafür in ihrer Auflösung.
+
+  Einbau erst nach Abschluss von D07, weil die Prüfer gerade dieselben Dateien und die Live-Seite testen.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 39 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Rohprotokoll und KI-Nachweis committet und gepusht; an der Präsentation nichts geändert.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
 
 ---
 
