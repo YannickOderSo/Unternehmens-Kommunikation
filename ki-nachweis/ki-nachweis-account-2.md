@@ -44,6 +44,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-18 | 16.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D01 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
 | A2-19 | 16.10.2026 | System | Siebter Abbruch des Workflows durch Nutzungslimit (zwei Überarbeitungen offen) | A2-D01 | Zwischenstand gesichert |
 | A2-20 | 16.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
+| A2-21 | 16.10.2026 | System | Workflow „completed“, aber beide Abschlussprüfer am Nutzungslimit gescheitert; Neustarts | A2-D01 | Integration gesichert, Skript abgesichert |
+| A2-22 | 16.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Abschlussprüfung und Feinschliff gestartet |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -331,6 +333,31 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-21 – 16.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ completed – mit Fehlern bei
+> „Abschluss: Gestaltung“ und „Abschluss: Anforderungen“ („You've hit your session limit · resets 2:40pm (UTC)“).
+> Danach mehrfach: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung, nicht von der Gruppe geschrieben
+- **Stand:** 22 Agenten fertig – alle Folien gebaut, geprüft und überarbeitet, **Integration & Export fertig**
+  (`index.html` mit 21 Folien + optionaler Folie f01b, 885 s = 14:45 Hauptfolien, `export/praesentation.pdf`,
+  `export/uebersicht.png`, `export/folien/*.png`, `LIESMICH.md`, `QUELLEN.md`; HOLY-Web-Farben aus dem Dossier in
+  `marke.js`). Weil beide Abschlussprüfer am Limit scheiterten, wertete das Skript das als „keine Befunde“ und übersprang
+  den Feinschliff – zweite Schwachstelle im Skript.
+
+### A2-22 – 16.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (16:42 Uhr):** Ergebnis der Integration committet (`1750f6d`). Skript abgesichert: Scheitert ein
+  Abschlussprüfer oder der Feinschliff, bricht der Workflow ab (resume), statt „keine Befunde“ anzunehmen (`1cc41ea`).
+  Workflow `wf_878fd85d-3f2` mit `resumeFromRunId` fortgesetzt: 22 Agenten aus dem Zwischenspeicher, neu laufen die
+  beiden Abschlussprüfungen und danach der Feinschliff.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D01 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -378,6 +405,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Die Aufträge der folgenden Unteragenten entstehen aus den Textvorlagen im Skript (identischer Wortlaut wie im
   Original D01, nur mit den im Kopf des Skripts genannten Änderungen); der Hook protokolliert den Start als
   `"art": "workflow"`. Wegen 4 Prozessorkernen laufen höchstens 2 Unteragenten gleichzeitig.
+- **Achte Fortsetzung (A2-22)** (16.10.2026, 16:42 Uhr): Skript um Absicherung von Abschlussprüfung und Feinschliff
+  ergänzt (Aufträge unverändert), `resumeFromRunId`. Aus dem Zwischenspeicher: 22 Agenten bis einschließlich Integration.
 - **Siebte Fortsetzung (A2-20)** (16.10.2026, 11:45 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
   Zwischenspeicher: 7 Folien-, 7 Prüf- und 5 Überarbeitungs-Agenten.
 - **Sechste Fortsetzung (A2-18)** (16.10.2026, 00:07 Uhr): unverändertes Skript, `resumeFromRunId`. Aus dem
