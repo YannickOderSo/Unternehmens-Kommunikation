@@ -66,6 +66,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 44 | 16.10.2026 | Yannick | Upload: 4 weitere Statista-XLSX | – | `persona-daten.md` (Anteile, Indizes, Persona-Folgerungen) |
 | 45 | 16.10.2026 | System | Benachrichtigung: Workflow D07 fertig | – | `persona-daten.md` auf Kurzfassung reduziert; noindex, Startseite, Logos; Übergabe Ü02 an Account 2 |
 | 46 | 16.10.2026 | System | Benachrichtigung: Hintergrundprüfung „neue Fassung live“ fertig | – | Live bestätigt: Logo 200, Kurzfassung ohne Tabellen, noindex |
+| 47 | 16.10.2026 | Yannick | „B“: Freigabe, die relevanten Seiten des Statista-Zielgruppen-Reports selbst zu lesen | – | Persona-Steckbrief „Marco, 28“ (A2) mit Kurzfassung für Lukas, `persona-daten.md` ergänzt, Folienentwurf Folie 4 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -756,6 +757,46 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Vorgehen Claude:** Ergebnis gelesen: Nach ca. 40 s lieferte GitHub Pages die neue Fassung aus. Logo-Datei 200,
   `persona-daten.md` ohne Tabellen, robots-Meta auf der Startseite.
 - **Unteragenten:** keine
+
+### 47 – 16.10.2026 – Yannick
+
+> B
+
+*(Antwort auf Claudes Rückfrage aus 43/45: „A: Du schreibst mir die vier Werte aus dem Zielgruppen-Report heraus … B: Du
+gibst mir ausdrücklich frei, die betreffenden Seiten selbst zu lesen.“)*
+
+- **Vorgehen Claude:**
+  - **Gelesen:** Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“ (Stand
+    02/2025, Datei von Yannick, Campuslizenz), Seiten 1–32. Die Seiten 33–35 sind Werbung und Autorenangaben. Das
+    zweite PDF (Statista-Dossier) blieb **ungeöffnet**. Die Werte hat Claude aus den Diagrammen abgelesen, nicht
+    berechnet.
+  - **Kontextgrenze:** Während der Arbeit wurde der Gesprächsverlauf automatisch zusammengefasst. Danach lagen die
+    Notizen zu den Seiten 3–18 nicht mehr vor, deshalb hat Claude diese Seiten ein zweites Mal gelesen.
+  - **Gruppenordner-Datei** (nicht im Repository): Alle abgelesenen Werte stehen jetzt in Abschnitt 5 der Datei
+    „Persona-Daten_Statista_vollstaendig_NUR-Gruppenordner.md“. Das sind Soziodemografie, Lebensstil, Einstellungen,
+    Medien und Werbekontakte, dazu eine Erklärung, warum die Quellen beim Männeranteil abweichen (54 % gegenüber
+    67,5 %). Yannick bekommt die Datei für den Gruppenordner.
+  - **Persona-Steckbrief (A2)** nach `methoden.md` §1 bzw. P4. Jede Angabe ist als D (Daten mit Quelle) oder A
+    (Annahme mit Begründung) markiert. Grundlage: Kern-Persona aus Dossier 4.3, gestützt durch
+    - VuMA, Kantar, AWA (Statista-XLSX, Einträge 43/44),
+    - Consumer Insights (s. o.),
+    - die Gründeraussagen mit Zeitmarken und Eurostat (D06).
+  - **Vorschläge von Claude (Annahmen, von der Gruppe zu prüfen):** Name, Wohnort, Beruf (Fachkraft für
+    Lagerlogistik), Haushalt, Alltag, Ziele, Pains und Gains. Ebenso die fünf Profile für die simulierten Befragten
+    von Bündel B.
+  - **Kurzfassung für Lukas** (7 Punkte, fällig heute) steht oben im Steckbrief und im Chat zum Kopieren.
+  - **Öffentliche Kurzfassung** `persona-daten.md`: um fünf Kennzahlen aus Consumer Insights mit Quelle ergänzt. Die
+    vollständigen Tabellen bleiben aus Lizenzgründen im Gruppenordner (wie in 45).
+  - **Folienentwurf Folie 4:** Titel, Folientext mit D/A-Kennzeichnung, Balken zur Mediennutzung mit Ø-Strich,
+    Bildidee, Sprechtext (ca. 1:20), 4 Rückfragen, Prüfliste.
+  - **Herkunft:** Statista-Dateien und Recherche-Dossier (Websuche D03); in diesem Schritt keine neue Websuche.
+    Formulierungen und Annahmen stammen aus dem Modellwissen von Claude.
+- **Ergebnis:** [`persona-steckbrief.md`](../fallstudie-1-brand-persona/persona-steckbrief.md) (neu),
+  [`persona-daten.md`](../fallstudie-1-brand-persona/persona-daten.md),
+  [`folienentwuerfe.md`](../fallstudie-1-brand-persona/folienentwuerfe.md) (Folie 4); Gruppenordner-Datei als Anhang
+  im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 

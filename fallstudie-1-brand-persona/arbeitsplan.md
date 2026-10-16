@@ -95,6 +95,8 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - [x] Marke gewählt: HOLY (13.10.2026) – Recherche-Dossier für das Kickoff in [`recherche/`](recherche/)
 - [ ] Gruppe in die Google-Tabelle eintragen
 - [x] Bündel verteilt (14.10.): A + Markensteuerrad-Synthese Yannick, B Lukas, C Elias
+- [ ] Persona-Richtung bestätigen: Kern-Persona „Marco, 28“, Wachstums-Persona „Lena, 29“ im Backup (Entwurf:
+  [`persona-steckbrief.md`](persona-steckbrief.md), 16.10.)
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
 - [ ] Klären: Folie 58 nennt für „Präsentation“ 30 %, die beiden Kriterien ergeben aber nur 15 %
 - [ ] Klären: Zählen Rückfragen zu den 15 Minuten?
