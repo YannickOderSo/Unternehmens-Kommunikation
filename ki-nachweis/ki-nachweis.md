@@ -62,6 +62,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 40 | 16.10.2026 | Yannick | Statista-Zugang vorhanden: Welche Daten erheben? | – | Antwort im Chat (keine Dateien geändert) |
 | 41 | 16.10.2026 | Yannick | Screenshot Statista-Downloadmenü: In welchem Format hochladen? | – | Antwort im Chat (keine Dateien geändert) |
 | 42 | 16.10.2026 | Yannick | Frage: Wo soll ich die Dateien hochladen? | – | Antwort im Chat (keine Dateien geändert) |
+| 43 | 16.10.2026 | Yannick | Upload: 3 Statista-XLSX + 2 komplette Statista-Reports (PDF) | – | XLSX ausgewertet; Reports nicht geöffnet, Rückfrage (Statista-Bedingungen) |
+| 44 | 16.10.2026 | Yannick | Upload: 4 weitere Statista-XLSX | – | `persona-daten.md` (Anteile, Indizes, Persona-Folgerungen) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -674,6 +676,42 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 43 – 16.10.2026 – Yannick
+
+> *(Anhänge: fünf Dateien von Statista –*
+> *(1) PDF „study_id120400_zielgruppe-konsumentinnen-von-energydrinks-in-deutschland“, 35 S., kompletter
+> Consumer-Insights-Report;*
+> *(2) XLSX „Bevölkerung in Deutschland nach Häufigkeit des Konsums von Energy-Drinks 2018 bis 2021“;*
+> *(3) PDF „study_id32255_energy-drinks-statista-dossier“, 33 S., komplettes Dossier;*
+> *(4) XLSX „Anzahl der Konsumenten in der Kategorie Energy-Drinks nach Häufigkeit 2023“;*
+> *(5) XLSX „Anzahl der Personen …, die innerhalb der letzten 14 Tage Energy Drinks gekauft oder konsumiert haben,
+> 2019 bis 2025“)*
+> Die ersten 5
+
+### 44 – 16.10.2026 – Yannick
+
+> *(Anhänge: vier XLSX-Dateien von Statista – Konsumenten von Energy-Drinks nach Netto-Einkommen, nach Geschlecht,
+> nach Alter und nach höchstem Schulabschluss im Vergleich zur Bevölkerung 2021)*
+> Und die letzten 4
+
+- **Vorgehen Claude (zu 43 und 44):**
+  - **Bedingungen zu KI-Tools geprüft,** weil zwei komplette Reports hochgeladen wurden, was die Regel in
+    `vorlage-ki-nutzung.md` ausschließt. Websuche, dann das Statista-Impressum selbst gelesen (16.10.2026,
+    https://de.statista.com/impressum/): Ohne Zustimmung ist untersagt, Inhalte „für Zwecke des Trainings, der
+    Entwicklung, der Programmierung, der Verbesserung und/oder des Anreicherungsprozesses von KI-Systemen zu
+    verwenden“. Die Statista-Seite zum Veröffentlichungsrecht nennt für Campuslizenzen ein „limitiertes
+    Veröffentlichungsrecht … für wissenschaftliche Publikationen“ und erwähnt KI nicht. Die Campus-Bedingungen der
+    MPG ließen sich nicht abrufen. Ergebnis: Die beiden **Reports hat Claude nicht geöffnet;** Yannick entscheidet.
+  - **Die 9 XLSX-Einzelstatistiken mit Python ausgelesen.** Jede enthält ein Blatt „Übersicht“ mit Quelle,
+    Erhebungszeitraum, Basis und Stichprobe; damit ist die Annahme aus 41 bestätigt. Anteile, Indizes, Summen und
+    Wachstumsraten berechnet; Plausibilität geprüft, z. B. Summe der Häufigkeitsstufen 2021 = 11,43 Mio. =
+    Konsument:innen in den Tabellen nach Alter und Geschlecht.
+  - **Datenblatt `persona-daten.md` geschrieben:** Werte mit Quelle, Interpretation getrennt gekennzeichnet, Grenzen.
+    Die Statista-Dateien selbst kommen nicht ins öffentliche Repository.
+- **Ergebnis:** [`fallstudie-1-brand-persona/persona-daten.md`](../fallstudie-1-brand-persona/persona-daten.md)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen – Zahlen stichprobenartig mit den XLSX-Dateien vergleichen
 
 ---
 
