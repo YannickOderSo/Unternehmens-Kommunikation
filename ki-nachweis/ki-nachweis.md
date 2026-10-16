@@ -61,6 +61,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 39 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Rohprotokoll und Nachweis committet + gepusht |
 | 40 | 16.10.2026 | Yannick | Statista-Zugang vorhanden: Welche Daten erheben? | – | Antwort im Chat (keine Dateien geändert) |
 | 41 | 16.10.2026 | Yannick | Screenshot Statista-Downloadmenü: In welchem Format hochladen? | – | Antwort im Chat (keine Dateien geändert) |
+| 42 | 16.10.2026 | Yannick | Frage: Wo soll ich die Dateien hochladen? | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -656,6 +657,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Präsentation nachgebaut werden. Den Consumer-Insights-Report nicht hochladen, nur notierte Zahlen. Statista-Dateien
   nicht ins öffentliche Repository und nicht auf die Webseite, nur in den Gruppenordner. Dass die XLSX-Datei die
   Quellenangaben enthält, ist eine Annahme aus dem Modellwissen und wird beim ersten Upload geprüft.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 42 – 16.10.2026 – Yannick
+
+> Wo soll ich sie hochladen?
+
+- **Vorgehen Claude:** Zwei Wege genannt:
+  1. Direkt als Anhang im Chat, ggf. als ZIP.
+  2. Über Google Drive: Die Verbindung ist in der Sitzung vorhanden (nur Werkzeugschema geladen, keine Dateien
+     angesehen). Claude liest dann gezielt nur den genannten Ordner.
+
+  Ausweg: Tabelle als Text einfügen. Nicht ins öffentliche GitHub-Repository.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
