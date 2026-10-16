@@ -60,6 +60,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 38 | 16.10.2026 | Yannick | HOLY-Logos einfügen, wenn die Prüfung fertig ist | – | Logos von de.holy.com geladen und geprüft; Einbau nach D07 – *in Arbeit* |
 | 39 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Rohprotokoll und Nachweis committet + gepusht |
 | 40 | 16.10.2026 | Yannick | Statista-Zugang vorhanden: Welche Daten erheben? | – | Antwort im Chat (keine Dateien geändert) |
+| 41 | 16.10.2026 | Yannick | Screenshot Statista-Downloadmenü: In welchem Format hochladen? | – | Antwort im Chat (keine Dateien geändert) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -640,6 +641,21 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Dazu was je Statistik zu notieren ist (Erheber, Jahr, Basis, n, URL, Abruf), wie zitiert wird, und die Regel,
   keine kompletten Reports in KI-Tools zu laden; eigene Notizen dürfen geteilt werden. Angeboten: Auswertung der
   notierten Zahlen und Steckbrief-Entwurf.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 41 – 16.10.2026 – Yannick
+
+> *(Bild: Ausschnitt des Statista-Menüs „Herunterladen“ mit den Optionen CSV, Grafik (SVG), Grafik (PNG), PDF, XLSX,
+> PPT)*
+> In welcher Form soll ich sie für dich hochladen?
+
+- **Vorgehen Claude:** Empfehlung XLSX, eine Datei pro Statistik: Sie enthält meist die Daten und die Quellenangaben;
+  Claude kann sie lesen (openpyxl/pandas vorhanden, geprüft). Keine Grafiken, weil die Diagramme im Stil der
+  Präsentation nachgebaut werden. Den Consumer-Insights-Report nicht hochladen, nur notierte Zahlen. Statista-Dateien
+  nicht ins öffentliche Repository und nicht auf die Webseite, nur in den Gruppenordner. Dass die XLSX-Datei die
+  Quellenangaben enthält, ist eine Annahme aus dem Modellwissen und wird beim ersten Upload geprüft.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
