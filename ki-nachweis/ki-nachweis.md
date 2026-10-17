@@ -76,6 +76,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
 | 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | `markenkompetenz.md`, Folienentwurf Folie 3, Grafik SVG + PNG |
 | 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
+| 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -989,6 +990,28 @@ los.“)*
   [`grafiken/folie-03-markenkompetenz.svg`](../fallstudie-1-brand-persona/grafiken/folie-03-markenkompetenz.svg) + PNG + Skript,
   `persona-steckbrief.md`
 - **Unteragenten:** D11
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 57 – 17.10.2026 – Yannick
+
+> Übernehme die Aufgabe vom zweiten Account mit den Präsentationsfolien, prüfe gerade die Grafiken nochmal und Füge gerade auf der ersten Folie und sonst wo die Holy logos ein und füge fehlende Platzhalter aus
+
+- **Vorgehen Claude:**
+  - **Stand von Account 2:** Branch `praesentation-account-2` gelesen. Letzter Stand 17.10.2026: „Präsentation
+    fertig“ (A2-33). Die Befunde der Live-Prüfung (Ü02) sind umgesetzt, das HOLY-Logo steht auf Folie 01. Ü01 und
+    Ü02 sind damit abgeschlossen; Account 1 übernimmt die Präsentation.
+  - **Zusammengeführt:** Branch nach `master` (Merge-Commit `794c8d3`). Konfliktfrei; das Rohprotokoll ist
+    vollständig (133 + 2 + 27 = 162 Zeilen, alle gültig).
+  - **Prüflauf** mit `werkzeuge/pruefen.mjs` vor allen Änderungen: 23 Folien, 80 Zustände, 0 Fehler, 4 Warnungen
+    (Wortbudget f03, f04, f10, f11).
+  - **Übersicht angesehen:** Die Folien 03, 05 und 10 zeigen noch Dossier-Werte statt der Ergebnisse von A1/A3.
+  - **Workflow D12 gestartet:**
+    - Bestandsaufnahme: Platzhalter, Grafiken, Logo-Konzept.
+    - Umsetzung in drei Schritten nacheinander.
+    - Prüfung: Darstellung, Inhalt, Rechte.
+    - Nacharbeit mit neuen Exporten.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D12
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
