@@ -70,6 +70,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 48 | 16.10.2026 | Yannick | Dossier für Lukas mit Anweisungen, wie er die Persona-Informationen nutzt | D08, D09 | `dossier-buendel-b.md` + HTML + PDF (13 S.) für Lukas |
 | 49 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Workflow-Skript, Rohprotokoll und Nachweis committet + gepusht |
 | 50 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | gekürztes Dossier (Zwischenstand), HTML, PDF, Prüfskript committet + gepusht |
+| 51 | 16.10.2026 | Yannick | Frage: Was steht für mich als nächstes an? | – | Antwort im Chat zusammen mit 52 (Übersicht Bündel A + C2) |
+| 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | in Arbeit (Workflow D10 läuft) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -854,6 +856,30 @@ Workflows für jede größere Aufgabe.)*
   noch.
 - **Ergebnis:** Commit + Push
 - **Unteragenten:** keine
+
+### 51 – 16.10.2026 – Yannick
+
+> Was steht für mich als nächstes an?
+
+- **Vorgehen Claude:** Vor der Antwort kam Prompt 52; beide zusammen beantwortet (siehe 52): Übersicht der nächsten
+  Schritte für Bündel A und C2 nach `arbeitsplan.md` und `aufgaben-im-detail.html`.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 52 – 17.10.2026 – Yannick
+
+> Weiter
+
+*(Bezug: Claudes letzte Nachricht endete mit „Als nächstes Paket wäre die Limbic Map (A3) dran, sie ist morgen an
+Elias fällig. Ich warte auf deine Freigabe.“)*
+
+- **Vorgehen Claude:** A3 gestartet: Vorgaben (Aufgaben A3, methoden.md §1) und die aktuellen Daten von Folie 05 in
+  der Präsentation gelesen (Startwerte aus Dossier 4.4). Workflow D10 gestartet (Modell mit Websuche, Persona-Signale,
+  Marken-Signale; Synthese; 3 Prüfer; Bearbeiter). Wird nach Abschluss ergänzt.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D10
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
