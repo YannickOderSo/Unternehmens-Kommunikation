@@ -77,6 +77,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | `markenkompetenz.md`, Folienentwurf Folie 3, Grafik SVG + PNG |
 | 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
 | 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
+| 58 | 17.10.2026 | Yannick | Account 2 arbeitet weiter; neue Aufgabe vorbereiten, sobald dessen Kontingent aufgefüllt ist | Ü03 | Übergabe Ü03: Fallstudie 2 vorbereiten |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1013,6 +1014,27 @@ los.“)*
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D12
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 58 – 17.10.2026 – Yannick
+
+> Der 2te Account wird trotzdem weiter arbeiten an einer Task du kannst ihm eine neue geben sobald sein kontigent wieder aufgefüllt ist
+
+- **Vorgehen Claude:**
+  - **Auswahl der Aufgabe:** eine, die sich nicht mit der Präsentation von Fallstudie 1 überschneidet; an der arbeitet
+    Account 1 gerade (D12).
+  - **Ausgangslage geprüft:** README (Termine), Dossier Kap. 7 (Customer Journey, Blog). Für Fallstudie 2 gibt es
+    bisher keine Dateien und keine Aufgabenstellung des Profs im Repository.
+  - **Übergabe Ü03 geschrieben:** Fallstudie 2 vorbereiten, Arbeitspaket 1 (README, Methoden, Recherche-Dossier
+    Customer Journey mit Gegenprüfung, Arbeitsplan ohne Rollen).
+  - **Regeln für Account 2:**
+    - Arbeitsbereich nur `fallstudie-2-customer-journey/` und der eigene KI-Nachweis.
+    - Nichts in Fallstudie 1 ändern; nur auf dem eigenen Branch arbeiten.
+    - Die Annahmen zur Aufgabenstellung beim Prof klären.
+  - **Literatur in der Übergabe** (Court et al. 2009, Lemon & Verhoef 2016) stammt aus dem Modellwissen von Claude.
+    Account 2 soll sie prüfen.
+- **Ergebnis:** [`uebergaben/2026-10-17_account-2_fallstudie-2-vorbereitung.md`](uebergaben/2026-10-17_account-2_fallstudie-2-vorbereitung.md)
+- **Unteragenten:** keine (Übergabe Ü03 an Account 2)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1031,6 +1053,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | 48 Quellen geprüft (18 bestätigt, 25 korrigiert, 4 nicht bestätigt, 1 verworfen) + 4 Ergänzungen | Claude: 5 Stichproben an der Quelle |
 | D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
 | Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
+| Ü03 | 17.10.2026 | 58 | Übergabe an Account 2 (Text zum Kopieren) | Fallstudie 2 vorbereiten, Arbeitspaket 1: README, Methoden, Recherche-Dossier Customer Journey, Arbeitsplan-Entwurf | *wartet auf Kontingent von Account 2* | – |
 | D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
