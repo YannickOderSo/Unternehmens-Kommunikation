@@ -216,6 +216,14 @@
       if (zustand) ruheBeenden(zustand);
     },
 
+    /* Vor Deck.gehe('f10', 'ende') (deck.js): Gibt es inzwischen Zurufe in
+       der Wortwolke (oder keine mehr), ändert sich die Zahl der Schritte –
+       hier neu zählen, damit „ende“ den richtigen letzten Schritt trifft. */
+    schritteAktualisieren: function (ctx) {
+      var zustand = ctx.folie._g6s;
+      if (zustand) abgleichPruefen(ctx, zustand);
+    },
+
     /* Konsistenzprüfung an/aus: Hinter den markierten Stichworten wächst der
        Abstand zum Trenner (CSS, Abschnitt 2) – danach Zeilenenden und Lage
        der Notizen neu messen (nach dem Übergang) */

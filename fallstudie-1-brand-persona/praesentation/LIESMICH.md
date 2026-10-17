@@ -4,8 +4,10 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 16.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung und der Live-Prüfung
-überarbeitet; offizielles HOLY-Logo auf Folie 01 und 09b (Änderungen: `AUTOREN.md`, Abschnitte 11 und 12).
+Stand: 17.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+der zweiten Abschlussprüfung überarbeitet; offizielles HOLY-Logo auf Folie 01 und 09b (Änderungen:
+`AUTOREN.md`, Abschnitte 11–13). Folie 04 zeigt seit 17.10. den **Entwurf** des Persona-Steckbriefs (A2) –
+Freigabe durch Yannick offen (Checkliste, Abschnitt 12).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
@@ -78,8 +80,9 @@ Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
 | B1–B8 | Backup (Methodik, Prompt-Log, Datenquellen, Rohdaten, Matrix, Raster, Quellen, Belege der Folien) | je Bündel | – |
 
 **Summe Hauptfolien: 14:00 min** (60 s Puffer für die zwei Live-Momente: Zurufe auf Folie 01 und
-Handzeichen-Umfrage auf Folie 08). Die Sollzeiten der Folien 04, 05, 06, 09 und 11 wurden dafür am
-16.10.2026 gekürzt (Sprechtexte angepasst). Die optionale Folie 01b (+0:45, mit dem Abgleich auf Folie 10
+Handzeichen-Umfrage auf Folie 08). Die Sollzeiten der Folien 04, 05, 06, 09, 09b und 11 wurden dafür am
+16.10.2026 gekürzt (Sprechtexte angepasst). Der ursprüngliche Ablaufplan sah 14:45 vor – **die Gruppe
+bestätigt den 14:00-Plan** und gleicht `../arbeitsplan.md` an (Checkliste, Abschnitt 12). Die optionale Folie 01b (+0:45, mit dem Abgleich auf Folie 10
 ca. +0:55) nur einschalten, wenn dafür auf Folie 08 die Live-Umfrage entfällt (spart ca. 0:30). In der
 Generalprobe die Umfrage mit Stoppuhr testen. Wer spricht, ist ein Vorschlag nach dem Arbeitsplan – die
 Gruppe legt es fest.
@@ -95,10 +98,13 @@ Gruppe legt es fest.
 4. Geblättert wird in beiden Fenstern; beide bleiben synchron (auch Umfrage und Wortwolke).
 
 Das Referentenfenster zeigt: aktuelle Folie, nächste Folie bzw. nächsten Schritt, Sprechtext groß
-(A− / A+), Absätze zum aktuellen Schritt markiert (der Text rollt automatisch zum aktuellen Absatz), Gesamtuhr gegen 15:00, Folienuhr gegen die Sollzeit
+(A− / A+), Absätze zum aktuellen Schritt markiert (der Text rollt beim Weiterschalten automatisch zum
+aktuellen Absatz; von Hand gescrollter Text – z. B. „Mögliche Rückfragen“ in der Fragerunde – bleibt stehen),
+Vorschau des nächsten Schritts (mit den aktuellen Umfrage-Stimmen), Gesamtuhr gegen 15:00, Folienuhr gegen die Sollzeit
 (ab 85 % gelb, darüber rot), Abgleich mit dem Plan („im Plan“, „0:20 hinter Plan“) und die Uhrzeit. Die Uhr
 startet beim ersten Weiterschalten; Pause und „Zeit zurücksetzen“ per Knopf. Der Knopf „Schwarzbild“
-schaltet nur den Saal schwarz. Direkt aufrufen geht auch: `index.html?referent`.
+schaltet nur den Saal schwarz. Direkt aufrufen geht auch: `index.html?referent`. Adressparameter wie
+`?optional=alle` übernimmt **P** automatisch ins Referentenfenster (gleiche Folienliste).
 
 ## 5. Präsentations-Clicker
 
@@ -130,8 +136,8 @@ Im Vortrag die Ergebnisse auf die Folie bringen:
   oder Klick auf ein Tier = +1 (Umschalt+Klick oder Rechtsklick = −1), Ziffern 1–5 = +1. Solange die
   Umfrage zu sehen ist, gehören Ziffern der Umfrage – zum Springen erst weiterklicken oder **O** nutzen.
 - Prozente rechnet die Präsentation selbst aus den Stimmen. Der nächste Klick (Schritt 1) zeigt
-  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“). Keine Stimmen? Schritt 1
-  überspringen (zweimal weiter).
+  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“). Keine Stimmen? Dann steht
+  dort „Noch keine Stimmen“ (keine „0 %“) – Analyse trotzdem erzählen oder Schritt 1 überspringen.
 - Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher) und erscheinen auch im Referentenfenster.
 
 ## 7. Live-Wortwolke (Folie 01b, optional)
@@ -166,6 +172,11 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 
 Regeln: Texte in einfachen Anführungszeichen, nach jedem Eintrag ein Komma. Nach dem Ändern F5 – die
 Konsole (F12) muss leer bleiben. Fakten über HOLY nur aus dem Recherche-Dossier (mit Quelle).
+
+**Anderer Markenname?** Ein längerer Name als „HOLY“ macht einige Titel länger: Getestet mit „TESTMARKE“
+bricht der Titel auf Folie 10 zweizeilig um, und die Beschriftung „Markenkompetenz“ im Rad wird kleiner
+(25 px). Nach einem Markenwechsel `werkzeuge/pruefen.mjs` laufen lassen (Abschnitt 9) und Titel ggf. kürzen.
+Der Textmarker hinter dem Markennamen im Titel wird aus der Primärfarbe immer hell berechnet.
 
 ## 9. Texte ändern (`index.html`)
 
@@ -225,21 +236,37 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in `index.html` nennt Details)
 - [ ] **Folie 01 – Rätselbild** (A · Yannick): eigenes Foto statt des gezeichneten Platzhalters, Quelle in
       der Fußzeile, Zoompunkt `data-fokus` geprüft, mit zwei Personen getestet
-- [ ] **Folie 04 – Persona-Bild** (A · Yannick): gekennzeichnetes KI-Bild (Prompt P4/P6) unter `"bild"`
-      eintragen, `"bildHinweis"` z. B. „KI-generiert (Prompt P4)“
+- [ ] **Folie 04 – Persona-Bild** (A · Yannick): gekennzeichnetes KI-Bild (Prompt P6) unter `"bild"`
+      eintragen, `"bildHinweis"` z. B. „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“
+- [ ] **Folie 04 + B3 – Persona-Steckbrief freigeben** (A · Yannick): Folie 04 zeigt seit 17.10. den Entwurf
+      aus `../persona-steckbrief.md` und Folienentwurf 4 (Titel, Großstadt, Kaufverhalten als Annahme,
+      Mediennutzung Statista Consumer Insights 2025 – nicht im Recherche-Dossier). Nach der Freigabe Werte,
+      Titel und Beruf bestätigen oder in den Daten von Folie 04 und B3 anpassen
+- [ ] **Folie 05 und 10 – Limbic Type** (A · Yannick): `../limbic-map.md` (A3, 17.10.) stuft Marco als
+      **Hedonisten** ein (Gewichte B 30 / D 30 / S 40, Lücke Dominanz −10, neue „Folgen“ und neuer Titel;
+      Daten-JSON in `../folienentwuerfe.md`, Folie 5). Die Präsentation zeigt noch den Dossier-Stand
+      „Abenteurer“ (Folie 05, Persona-Pille auf Folie 10, Sprechtexte 10/11 „Dominanz-Lücke −20“). Nach der
+      Freigabe überall angleichen
+- [ ] **Zeitplan** (alle): 14:00-Plan der Präsentation (Abschnitt 3) bestätigen und `../arbeitsplan.md`
+      angleichen (ursprünglich 14:45)
 - [ ] **Beispieldaten** durch echte Ergebnisse ersetzen (dann Pillen „Beispieldaten“ entfernen):
-      06, 07, 08, 08b (inkl. Wettbewerberwerte), B4, B5 (B · Lukas) · 09, 09b, 11, B6 (C · Elias) ·
-      10 (Synthese) und B2 (Prompt-Log) (A · Yannick)
+      06, 07, 08, 08b (inkl. Wettbewerberwerte), B4, B5 (B · Lukas) · 09, 11, B6 (C · Elias) ·
+      10 (Synthese), 12 (Pille am Fazit, erst löschen, wenn 10 und 11 keine Beispieldaten mehr tragen) und
+      B2 (Prompt-Log) (A · Yannick). Folie 09b hat keine Beispielwerte, nur die Fit-Bewertung als Hypothese
+- [ ] **Folie 08b – Fußzeile „n = 8“** (B · Lukas): an die tatsächlich Bewertenden anpassen (Dossier
+      Bündel B: Aaker-Bogen nur von Menschen ausfüllen lassen, z. B. „Gruppe + 3 Befragte, n = 6“)
 - [ ] **Folie 09 – Schlüsselbild** (C · Elias): Screenshot des Raptor-Beitrags mit Datum, Nutzungsrecht
-      mit dem Betreuer klären, Quelle in die Fußzeile
+      mit dem Betreuer klären, Quelle in die Fußzeile; **Titel** endet mit „?“, bis die Codierung den Raptor
+      kanalübergreifend zeigt – dann „?“ streichen (Kasten „FOLIE 09“)
 - [ ] **HOLY-Logos auf Folie 01 und 09b** (offizielle Dateien von de.holy.com, Quelle in den Fußzeilen):
       kurz mit dem Betreuer abstimmen, dass die Logos zur Kennzeichnung der analysierten Marke genutzt
       werden dürfen (A · Yannick)
 - [ ] **Umfrage** (B · Lukas): im Werkzeug angelegt, `link` in `marke.js` eingetragen, QR-Code mit mehreren
       Handys aus der letzten Reihe getestet
 - [ ] **Zahl der echten Kurzinterviews** – zurzeit steht überall die geplante Zahl „3“ (Folie 06–08, B1, B2,
-      B4, B5); nach den Interviews überall dieselbe tatsächliche Zahl eintragen, auf B1 die Pille „teils
-      geplant“ löschen (A · Yannick, Zahl von Lukas)
+      B4, B5) und auf **Folie 02** in den Methodenkarten „KI + Kurzinterviews“; nach den Interviews überall
+      dieselbe tatsächliche Zahl eintragen, auf B1 die Pille „teils geplant“ löschen; gibt es keine echten
+      Interviews, auf Folie 02 „+ Kurzinterviews“ streichen (Kasten „FOLIE 02“) (A · Yannick, Zahl von Lukas)
 - [ ] **B7: Jahr und Auflage bei Esch und Häusel** ergänzen, orange Markierung löschen (A · Yannick)
 - [ ] Fachbegriffe und Modelle mit den Vorlesungsfolien abgeglichen (Steuerrad nach Esch, Limbic Map nach
       Häusel, Repertory Grid nach Kelly, Laddering nach Reynolds & Gutman, Brand Personality nach Aaker)
@@ -274,7 +301,7 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `bilder/` | offizielle HOLY-Logos (Folie 01 und 09b, Quelle in `QUELLEN.md`) und Platzhalterbilder (eigene Gestaltung) – eigene Bilder hier ablegen |
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
 | `werkzeuge/pruefen.mjs` | automatische Prüfung und Screenshots (optional, braucht Node.js) |
-| `export/` | PDF, Übersicht, Einzelbilder der Folien (Stand 16.10.2026, nach Abschluss- und Live-Prüfung, mit HOLY-Logo) |
+| `export/` | PDF, Übersicht, Einzelbilder der Folien (Stand 17.10.2026, nach der zweiten Abschlussprüfung) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |
 | `_entwuerfe/` | die drei Gestaltungsrichtungen und die Jury-Entscheidung (Dokumentation; die Musterseiten zeigen die Ersatzschrift, weil doppelte Schriftdateien entfernt wurden) |

@@ -321,6 +321,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 .bk-status--gesichert { color: var(--f-erfolg); }
 .bk-status--korrigiert { color: var(--f-text-2); }
 .bk-status--unsicher { color: var(--f-warnung); }
+.bk-status--extern { color: var(--f-text-2); }      /* Quelle außerhalb des Dossiers (B3) */
 
 /* Schritt 1: Kernbelege (Gründeraussagen) */
 #b3:has(.bk-z1.schritt-an) .bk3-tabelle tr.ist-kern > :not(.bk3-dim) { background: var(--f-akzent-flaeche); }

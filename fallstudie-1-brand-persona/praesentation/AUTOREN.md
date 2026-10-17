@@ -221,7 +221,8 @@ und springen zur ersten Hauptfolie mit dem passenden `data-feld`.
   Feld, steht sie automatisch unter der Methodenkarte) | `an` | `aus`.
 - `data-beschreibungen="schrittweise"` (Standard) | `an` | `aus` – Methodenbeschreibung.
 - `data-logik="aus"` (gestrichelte Logikpfeile „Attribute sind die Startpunkte“, „Tonalität ist der
-  Prüfmaßstab“), `data-seiten="aus"` (Hard/Soft-Facts-Beschriftung), `data-breite`/`data-hoehe`
+  Prüfmaßstab“), `data-seiten="aus"` (Hard/Soft-Facts-Beschriftung; `data-seiten="kurz"` = nur
+  „Hard Facts“/„Soft Facts“ ohne „rational“/„emotional“, so auf Folie 10), `data-breite`/`data-hoehe`
   (feste Größe), `data-kartenbreite`, `data-morph="aus"`.
 - Methoden, Texte, Logik und Reihenfolge per JSON im Baustein überschreibbar:
 ```html
@@ -279,7 +280,8 @@ Handys testen.
   Solange Beispielwerte stehen, beginnen die Felder unter „Werte“ bei 0.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
-  wir: als Waschbär“.
+  wir: als Waschbär“. Ohne Stimmen (n = 0) steht dort nur „Noch keine Stimmen“ (Text änderbar:
+  `marke.js → umfragen.tier.aussageLeer`); die Zahl zählt dann nicht auf „0 %“ hoch.
 - Bedienung im Vortrag: Klick auf Option = +1, Umschalt+Klick oder Rechtsklick = −1, Ziffern 1–9
   (Umschalt = −1, nur solange die Umfrage zu sehen ist), Doppelklick auf einen Wert = Zahl eintippen,
   Knopf „Werte“ = alle eintragen (z. B. aus Mentimeter/Particify; Tab = nächstes Feld, nach dem letzten
@@ -407,7 +409,9 @@ aus der Marke; Schrift auf Akzent/Kern automatisch schwarz oder weiß).
     verlassen:  function (ctx) { /* Folie wird verlassen */ },
     schritt:    function (ctx, n, richtung) { /* richtung: 'vor' | 'zurueck' | 'start' */ },
     druck:      function (ctx) { /* Endzustand für PDF herstellen */ },
-    vorschau:   function (ctx, klon, schritt) { /* Miniatur (Übersicht/Referent) anpassen */ }
+    vorschau:   function (ctx, klon, schritt) { /* Miniatur (Übersicht/Referent) anpassen */ },
+    schritteAktualisieren: function (ctx) { /* vor Deck.gehe(…, 'ende'): Schrittzahl neu ermitteln,
+                 wenn sie von gespeicherten Daten abhängt (Folie 10: Abgleich mit der Wortwolke) */ }
   });
 })();
 ```
@@ -425,7 +429,12 @@ animierten Folienwechsels trägt `<html>` die Klasse `wechsel-laeuft`; an seinem
 - `Deck.zustand()` → `{ folie, folienIndex, schritt, schritteGesamt, anzahlFolien, anzahlHauptfolien, titel, feld, nummer, backup, thema, modus }`
 - `Deck.gehe(folie, schritt, optionen)` – Folie als ID, Index, Nummer („6“, „B2“) oder Element; Schritt
   Zahl oder `'ende'`; optionen `{ sofort: true }` (ohne Übergang)
-- `Deck.weiter()`, `Deck.zurueck()`, `Deck.folien()`, `Deck.feldZiel(feld)`, `Deck.feldZiele(feld)`,
+- `Deck.weiter()`, `Deck.zurueck()` – ein Klick während eines laufenden Übergangs bzw. laufender
+  Schritt-Animationen beendet diese sofort (kein Klickstau); ein neuer Folienwechsel während eines
+  laufenden Übergangs erfolgt ohne Animation
+- `Deck.vorschauAuffrischen()` – Referentenansicht: Vorschau „Als Nächstes“ neu bauen (Bausteine mit
+  Live-Daten rufen das nach einer Änderung auf, z. B. Umfrage, Wortwolke)
+- `Deck.folien()`, `Deck.feldZiel(feld)`, `Deck.feldZiele(feld)`,
   `Deck.marke` (Konfiguration aus marke.js), `Deck.hinweis(text)`, `Deck.thema(name, modus)`,
   `Deck.farbe('primaer', '#…')`, `Deck.bereit` (Promise), `Deck.taste(fn)`, `Deck.baustein(name, def)`
 - Ereignisse auf `document`: `deck:bereit`, `deck:folie`, `deck:schritt`
@@ -550,3 +559,22 @@ Kopie `marke.js` ändern und `node werkzeuge/pruefen.mjs index.html --schritte` 
 | Umfrage-Ziffern (`js/deck.js`, `js/komponenten.js`) | Folgt auf eine gezählte „1“ sofort eine weitere Ziffer (z. B. „1“ „0“ Enter → Folie 10), wird die Stimme zurückgenommen; läuft schon eine Foliennummer, zählen Ziffern keine Stimme. Hilfe (H) ergänzt. |
 | Übersicht (O) | beginnt oben (Überschrift sichtbar), solange die aktuelle Folie dabei ganz zu sehen ist; sonst steht die Kachel mittig. |
 | Zeitplan | Sollzeiten 04: 80 s, 05: 55 s, 06: 80 s, 09: 60 s, 11: 75 s → Hauptfolien 14:00 (60 s Puffer). |
+
+## 13. Feinschliff nach der zweiten Abschlussprüfung (17.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| Referentenansicht (`js/deck.js`) | Sprechtext rollt nur noch bei einem Folien- oder Schrittwechsel zum aktuellen Absatz – der Abgleich alle 3 s setzte von Hand gescrollten Text zurück. Vorschau „Als Nächstes“ wird bei neuen Umfrage-Stimmen/Zurufen sofort neu gebaut (`Deck.vorschauAuffrischen`). Taste P übernimmt die Adressparameter `optional`, `thema`, `modus`, `primaer`, `sekundaer`, `bewegung` (z. B. `?optional=alle` → gleiche Folienliste in beiden Fenstern). |
+| Navigation (`js/deck.js`) | Klickstau: Ein Klick während eines Übergangs oder laufender Schritt-Animationen beendet diese sofort; ein Folienwechsel während eines laufenden Übergangs geschieht ohne Animation (kein Zwischenbild nach Clicker-Doppeldruck über den Morph 02 → 03 bzw. 09b → 10). `Deck.gehe(id, 'ende')` ruft vorher den Hook `schritteAktualisieren` (Folie 10 zählt den Abgleich-Schritt neu). |
+| Umfrage-Aussage (`js/komponenten.js`, `css/komponenten.css`) | Ohne Stimmen kein „0 %“ mehr: Die Zahl hat dann keinen Zielwert (`data-ziel` fehlt), angezeigt wird „Noch keine Stimmen“. Im Klon (Vorschau, Übersicht) stehen die Prozente der Umfrage sofort auf dem Endwert. |
+| Titel-Marker (`css/komponenten.css`) | Markenname im Titel: Marker immer hell (OKLCH: Helligkeit ≥ 0,86, Buntheit ≤ 0,18) – HOLY-Gelb unverändert, dunkle/satte Primärfarben wirken nicht mehr wie Durchstreichen. |
+| Beschriftungen (`js/komponenten.js`, `index.html`) | Feldnamen im Steuerrad, Kartenköpfe, Ringtexte, „Hard/Soft Facts“, „Gruppe“/„Termin“ (Folie 01) tragen `data-meta` (zählen nicht zum Wortbudget). Kartenköpfe Folie 10, Chip „Hürde“ (06) und „Schlüsselbild?“ (09) 26 px. |
+| Folie 02 (`js/folien/02-vorgehen.js`) | Etikett „Fremdbild“ an den Karten Repertory Grid und Laddering (Liste `SICHT_FREMDBILD`); Methodenkarten sagen „KI + Kurzinterviews“ (= Planung, Kasten „FOLIE 02“). |
+| Folie 03 | nur noch die gewählten Rollen-Chips; Beleg „fordert … heraus“ [7] in der Metazeile; zweite Fußzeile mit Bezug und Absender der Red-Bull-Zahl (Circana MAT 08/2025, Lehrbrief mit Red Bull); „große TV-Kampagne“. |
+| Folie 04 (`js/folien/04-persona.js`) | Inhalt nach Persona-Steckbrief A2 und Folienentwurf 4 (Entwurf, Freigabe offen): Mediennutzung Statista Consumer Insights 2025 (YouTube/Instagram/TikTok) mit Strich für den Ø aller Befragten (Daten `skala`, `schnitt`); Kaufverhalten als Annahme. |
+| Folie 06 / B4 | Beispielwert W3 „zuckerfrei“ 6,0 (Gönrgy ist zuckerfrei), Ø Wettbewerb 4,78. |
+| Folie 09 (`js/folien/09-kommunikationsanalyse.js`) | Motivgruppe „Team & Popkultur“ statt „Kurzvideos“ (Motiv ≠ Format); Zahl der codierten Beiträge gestrichelt als Beispielwert; Titel mit „?“ bis zur Codierung. |
+| Folie 10 (`css/folien/10-markensteuerrad.css`, JS) | höchstens 3 Stichworte je Feld; „Energy: 160 mg Koffein“ (nur Energy-Linie, Quelle [56] in der Fußzeile); Nummern der Lücken hochgestellt direkt am Wort, der Trenner „·“ bleibt sichtbar. |
+| Folie 11 / 12 | Kern-Zusatz gestrichen, Kanal-Chips ein Wort, „wie genau“ kürzer; Fazit auf Folie 12 mit Pille „Beispieldaten“. |
+| Backup B1, B3, B8 (`js/folien/13-backup.js`, `css/folien/13-backup.css`) | B1 Formulierungen präzisiert; B3: Mediennutzung = Statista CI 2025 mit neuem Status `extern` (Quelle nicht im Dossier); B8: [56] und „extern“ ergänzt, [48] und [102] entfernt (nicht mehr sichtbar zitiert), [26] mit Absender. |
+

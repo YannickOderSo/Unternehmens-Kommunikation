@@ -2,7 +2,7 @@
 
 Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `praesentation/` – es wird
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
-Stand: 16.10.2026.
+Stand: 17.10.2026.
 
 ## 1. Schriften (Ordner `schriften/`)
 
@@ -54,7 +54,8 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 - **Persona-Platzhalter auf Folie 04** (Inline-SVG in `index.html`, Stand 16.10.2026): eigene,
   stilisierte Zeichnung „Marco in der Nachtschicht“ – Figur ohne Gesicht, Arbeitsjacke mit
   Reflexstreifen, Shaker, Mond und Häuser. Fiktive Person, kein Foto, kein KI-Bild; gekennzeichnet
-  „Platzhalter – KI-Bild folgt“, bis die Gruppe das gekennzeichnete KI-Bild (Prompt P4/P6) einträgt.
+  „Platzhalter – KI-Bild folgt“, bis die Gruppe das gekennzeichnete KI-Bild (Bild-Prompt P6 in
+  `../prompts.md`) einträgt.
 - **Markensteuerrad** nach Esch, **Limbic Map** nach Häusel: eigene, vereinfachte Darstellungen.
   Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg.
 
@@ -80,10 +81,19 @@ Quelle in der Fußzeile der Folie nennen.
   [n] und Faktenstatus (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese). Das vollständige
   Quellenverzeichnis steht im Dossier (Anhang B); Backup-Folie **B8** löst alle Nummern auf, die sichtbar
   auf den Folien stehen (Kurzangaben aus Anhang B), B7 nennt Literatur und Technik.
+- **Ausnahme – Kategoriedaten außerhalb des Dossiers:** Die Mediennutzung auf Folie 04 und in B3 stammt aus
+  **Statista Consumer Insights**, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“, Stand
+  02/2025, Online-Befragung 18–64 J., n = 1.583 (Vergleich: alle Befragten, n = 35.956), abgerufen
+  16.10.2026 über die Campuslizenz der HSKL (Kurzfassung mit Quellenangabe: `../persona-daten.md`; ausgewertet
+  im Persona-Steckbrief A2, `../persona-steckbrief.md`). Sie steht **nicht** im Recherche-Dossier und ist
+  auf den Folien als Kategoriedaten („nicht HOLY“) bzw. in B3/B8 als „extern“ gekennzeichnet.
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
-- **Beispieldaten:** Werte auf den Folien 06–11 und B2, B4–B6 sind Beispieldaten (Pille „Beispieldaten“),
-  bis die Gruppe eigene Erhebungen einträgt.
+- **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08, 08b, 09 (Beiträge,
+  Engagement, Motivanteile und Zahl der codierten Beiträge – die Follower-Zahlen sind belegt), 10, 11, 12
+  (Fazit, beruht auf 10/11) sowie B2, B4–B6; B1 trägt „teils geplant“ (Kurzinterviews stehen aus). Folie 09b
+  enthält keine Beispielwerte: Fakten belegt, die Fit-Bewertung ist als Hypothese gekennzeichnet. Alles
+  bleibt Beispiel, bis die Gruppe eigene Erhebungen einträgt.
 - **Modelle und Fachbegriffe** (Markensteuerrad nach Esch, Limbic Map nach Häusel, Repertory Grid nach
   Kelly, Laddering/Means-End-Chain nach Gutman sowie Reynolds & Gutman, Brand Personality nach Aaker,
   Schlüsselbild nach Kroeber-Riel): nach Standardliteratur aus dem Modellwissen der KI – **mit den

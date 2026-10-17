@@ -64,12 +64,16 @@
 /* Markenname im Titel (<em data-marke>): auf hellen Folien schwarz mit
    gelbem Textmarker – die Markenfarben Gelb/Schwarz statt Braun
    (Abschlussprüfung 16.10.2026). Auf dunklen Folien bleibt er in der hellen
-   Akzentfarbe (dort ein helles Gelb). Der Marker nutzt --f-kern (= Primär-
-   farbe aus marke.js); wählt die Gruppe eine DUNKLE Primärfarbe, diese Regel
-   löschen (schwarze Schrift auf dunklem Marker wäre schlecht lesbar). */
+   Akzentfarbe (dort ein helles Gelb). Der Marker nutzt die Primärfarbe aus
+   marke.js, aber immer HELL (Helligkeit mind. 0,86, Buntheit höchstens 0,18
+   in OKLCH): HOLY-Gelb #FFD007 bleibt unverändert, eine dunkle oder sehr
+   satte Primärfarbe (z. B. Rot #E4003A) wird zu einem hellen Marker statt zu
+   einem Balken, der wie Durchstreichen wirkt (Abschlussprüfung 17.10.2026).
+   Ältere Browser ohne „oklch(from …)“ nehmen die erste Zeile (--f-kern). */
 html[data-modus="hell"] .folie:not([data-modus="dunkel"]) .titel em[data-marke] {
   color: var(--f-text);
   background: linear-gradient(transparent 46%, var(--f-kern) 46% 80%, transparent 80%);
+  background: linear-gradient(transparent 46%, oklch(from var(--marke-primaer) max(l, 0.86) min(c, 0.18) h) 46% 80%, transparent 80%);
   padding: 0 0.08em;
   margin: 0 -0.04em;
   -webkit-box-decoration-break: clone;
@@ -1089,6 +1093,19 @@ html.maus-ruht .umfrage-taste { opacity: 0; }
 }
 .ua-antwort { font-style: var(--stil-hervor); color: var(--f-akzent); }
 .umfrage-aussage.ist-leer .ua-zahl { color: var(--f-text-2); }
+/* Ohne Stimmen: Satz ausblenden, stattdessen „Noch keine Stimmen“ (Text aus
+   marke.js → umfragen.<id>.aussageLeer, sonst Standard) */
+.ua-leer {
+  display: none;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  color: var(--f-text-2);
+}
+.umfrage-aussage.ist-leer .ua-text,
+.umfrage-aussage.ist-leer .ua-zahl { display: none; }   /* kein „– %“, nur der Hinweis */
+.umfrage-aussage.ist-leer .ua-leer { display: block; }
 /* Stimmenzähler: große Ziffer + „Stimmen“ */
 .umfrage-stimmen {
   display: inline-flex;

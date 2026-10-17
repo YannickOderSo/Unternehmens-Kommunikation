@@ -24,7 +24,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 
 | Nr. | Datum | Von | Inhalt (kurz) | Unteragenten | Ergebnis |
 |-----|-------|-----|---------------|--------------|----------|
-| A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01 (Workflow) | *in Arbeit* |
+| A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01, A2-D02 (Workflows) | fertig (17.10.2026): `praesentation/index.html`, Exporte, LIESMICH, QUELLEN |
 | A2-02 | 14.10.2026 | System | Automatischer Hinweis: nicht committete Änderungen | – | Commit + Push |
 | A2-03 | 14.10.2026 | Yannick (Account 2) | Um 7 Uhr prüfen, ob Account 1 neu gepusht hat | – | Prüfung um 07:00 Uhr geplant |
 | A2-04 | 14.10.2026 | System | Container-Neustart: Fundament-Agent unterbrochen, Workflow-Werkzeug nun verfügbar | A2-D01.01 fortgesetzt | Zwischenstand gesichert |
@@ -55,7 +55,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-29 | 17.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D02 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
 | A2-30 | 17.10.2026 | System | Zweite Abschlussprüfung fertig; letzter Feinschliff am Nutzungslimit gescheitert; Neustarts | A2-D02 | Zwischenstand gesichert |
 | A2-31 | 17.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | – | (in A2-32 bearbeitet) |
-| A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff neu gestartet |
+| A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff fertig |
+| A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -104,8 +105,11 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
     Ausführungshilfe abgearbeitet, die die Aufträge wörtlich als Dateien erzeugt; Claude startet für jeden Auftrag einen
     Unteragenten mit dem Agent-Werkzeug und setzt nach jeder Stufe mit den gespeicherten Rückgaben fort (siehe A2-D01).
   - HOLY-Dossier (`fallstudie-1-brand-persona/recherche/holy-recherche.md`) lag beim Start noch nicht auf `master` →
-    Markenname „HOLY“, Inhalte als Beispieldaten, Farben neutral.
-- **Ergebnis:** *in Arbeit*
+    Markenname „HOLY“, Inhalte als Beispieldaten, Farben neutral (ab 14.10. abends galt das Dossier, siehe A2-09).
+- **Ergebnis:** fertig am 17.10.2026 (Details A2-D01, A2-D02, A2-33): `fallstudie-1-brand-persona/praesentation/index.html`
+  (15 Hauptfolien f01–f12 inkl. f01b optional, f08b, f09b; 8 Backup-Folien B1–B8), Engine und Designsystem (`css/`,
+  `js/`, `marke.js`), `werkzeuge/pruefen.mjs`, `export/praesentation.pdf`, `export/uebersicht.png`,
+  `export/folien/*.png`, `LIESMICH.md`, `QUELLEN.md`, `AUTOREN.md`. Läuft offline per Doppelklick.
 - **Unteragenten:** A2-D01
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -478,9 +482,28 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Testordner `_abschluss-fakten/` entfernt und in `.gitignore` aufgenommen (`944155a`); `master` übernommen (`570a085`);
   Workflow `wf_fe26464c-97a` mit `resumeFromRunId` fortgesetzt – es läuft nur noch der letzte Feinschliff mit allen
   40 Befunden der zweiten Prüfung (ungekürzt).
-- **Ergebnis:** *in Arbeit*
+- **Ergebnis:** letzter Feinschliff fertig (30 Befunde behoben, 6 mit Begründung offen – siehe A2-D02)
 - **Unteragenten:** A2-D02 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-33 – 17.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ completed (4 Agenten, alle fertig).
+
+- **Herkunft:** automatische Meldung der Umgebung
+- **Vorgehen Claude (Endprüfung, 17.10.2026 ca. 16:30 Uhr):**
+  - Rückgaben gesichert ([`workflow-wf_fe26464c-97a.json`](workflows/2026-10-14_praesentation-account-2_rueckgaben/workflow-wf_fe26464c-97a.json)).
+  - Eigener Prüflauf `pruefen.mjs index.html --schritte --optional --druck`: 23 Folien, 80 Folienzustände, **0 Fehler**,
+    keine externen Anfragen, alle Schriften lokal geladen, PDF 23/23 Seiten; 4 Warnungen nur zum Wortbudget
+    (f03 44, f04 44, f10 48, f11 55 Wörter im Druckzustand). Keine externen `src`/`href` in `index.html`.
+  - `export/praesentation.pdf` (22 Seiten, ohne optionale f01b), `export/uebersicht.png` (Stand 17.10.) und
+    `export/folien/*.png` vorhanden; Kontaktbogen angesehen (HOLY-Logo auf f01 und f09b, einheitliches Editorial-Design).
+  - `LIESMICH.md` (13 Abschnitte inkl. Technik-Checkliste) und `QUELLEN.md` (Schriften, Bibliotheken, Icons, Bilder,
+    Inhalte, KI-Unterstützung) vollständig.
+  - Nicht möglich: Löschen verirrter Testausgaben eines Unteragenten außerhalb des Repositorys (`/pruef-bento/`,
+    `/pruef-keynote-dunkel/`, `/pruef-*.log` im Wurzelverzeichnis des Containers) – von der Sicherheitsprüfung der
+    Umgebung blockiert; harmlos, verschwinden mit dem Container.
+- **Unteragenten:** keine
 
 ---
 
@@ -489,7 +512,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | A2-D01 | 14.–16.10.2026 | A2-01 (fortgesetzt in A2-09 bis A2-22) | Fundament: Agent-Werkzeug (general-purpose); ab „Folien“: Workflow-Werkzeug, Lauf `wf_878fd85d-3f2` (25 Unteragenten) | Web-Präsentation ab „Fundament“ bauen, prüfen, überarbeiten, integrieren, exportieren | fertig (26 Unteragenten; 46 Abbrüche durch Nutzungslimit, jeweils per resume fortgesetzt) | Claude: Rückgaben gelesen, Demo/Deck selbst mit `pruefen.mjs` geprüft, Kontaktbogen angesehen |
-| A2-D02 | 16.10.2026 | A2-23, A2-26, A2-27 | Workflow „praesentation-account-2-nacharbeit“, Lauf `wf_fe26464c-97a` (bis zu 4 Unteragenten) | abgeschnittene Abschlussbefunde + Befunde der Live-Prüfung (Ü02) umsetzen, zweite Abschlussprüfung (Anforderungen; Inhalt & Fakten gegen Dossier), letzter Feinschliff | *läuft* | – |
+| A2-D02 | 16.10.2026 | A2-23, A2-26, A2-27 | Workflow „praesentation-account-2-nacharbeit“, Lauf `wf_fe26464c-97a` (bis zu 4 Unteragenten) | abgeschnittene Abschlussbefunde + Befunde der Live-Prüfung (Ü02) + HOLY-Logo auf Folie 1 umsetzen, zweite Abschlussprüfung (Anforderungen; Inhalt & Fakten gegen Dossier), letzter Feinschliff | fertig (4 Unteragenten; 1× angehalten, 4× Nutzungslimit) | Claude: Endprüfung mit `pruefen.mjs`, Kontaktbogen, Folie 01 angesehen |
 
 ### A2-D01 – 14.10.2026 – ausgelöst durch Prompt A2-01
 
@@ -601,8 +624,21 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   abgeschnittenen Befunde und die Befunde aus Ü02 wörtlich als Konstanten).
 - **Stufen:** Nacharbeit (1 Agent) → zweite Abschlussprüfung (2 Agenten parallel: Anforderungen/Technik; Inhalt &
   Fakten gegen das Dossier) → letzter Feinschliff (1 Agent, alle Befunde ungekürzt).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+- **Unteragenten und Ergebnisse** (Rückgaben: [`workflow-wf_fe26464c-97a.json`](workflows/2026-10-14_praesentation-account-2_rueckgaben/workflow-wf_fe26464c-97a.json)):
+
+  | Nr. | Unteragent (Label) | Ergebnis |
+  |-----|--------------------|----------|
+  | A2-D02.01 | Nacharbeit: abgeschnittene Befunde | 28 Punkte behoben (18 Abschlussbefunde, 5 Befunde aus Ü02, HOLY-Logo auf f01, Exporte, Doku), 5 mit Begründung offen; einmal angehalten (A2-27), einmal Nutzungslimit |
+  | A2-D02.02 | Zweite Prüfung: Anforderungen | 16 Befunde (0 hoch, 3 mittel, 13 niedrig); zweimal Nutzungslimit |
+  | A2-D02.03 | Zweite Prüfung: Inhalt & Fakten | 24 Befunde (0 hoch, 8 mittel, 16 niedrig); alle HOLY-Zahlen, Quellennummern und Faktenstatus stimmen mit dem Dossier |
+  | A2-D02.04 | Letzter Feinschliff | 30 Befunde behoben, 6 mit Begründung offen (Gruppenentscheidungen, siehe unten); einmal Nutzungslimit |
+
+- **Offen (nur die Gruppe kann entscheiden/liefern):** Limbic Type der Persona (master/A3: „Hedonist“, Präsentation
+  noch „Abenteurer“); Folie 04/B3 beruhen auf dem Entwurf des Persona-Steckbriefs (Freigabe durch Yannick offen);
+  Sollzeit der Hauptfolien jetzt 14:00 statt 14:45 (bestätigen, `arbeitsplan.md` angleichen); Wortbudget f03/f04/f10/f11
+  leicht über 40; echte Kurzinterviews und Erhebungsdaten statt Beispieldaten; optional Jahresabschluss 2024 als Beleg.
+- **Ergebnis:** fertig – Präsentation vortragsbereit bis auf die offenen Gruppenpunkte (Checkliste in `LIESMICH.md` §12).
+- **Wie Claude das Ergebnis geprüft hat:** siehe A2-33 (eigener Prüflauf, 0 Fehler; Kontaktbogen und Folie 01 angesehen).
 
 ---
 

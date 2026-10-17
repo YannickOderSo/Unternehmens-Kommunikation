@@ -1,0 +1,601 @@
+{
+ "Nacharbeit: abgeschnittene Befunde": {
+  "behoben": [
+   "Wunsch A2-27 (Yannick): Das offizielle HOLY-Logo im gelben Oval (bilder/holy-logo-oval.png, unverändert, nur verkleinert angezeigt) steht jetzt auf Folie 01. Es erscheint mit der Auflösung in Schritt 1 (Bildhöhe 340 px) und gleitet im Titelzustand nach oben (240 px), an der Stelle des Namens in Schrift. Im Rätsel (Schritt 0) ist es unsichtbar (visibility hidden, geprüft). Der Pfad steht in einem neuen, kommentierten Eintrag marke.js → logoTitel. Der alt-Text ist der Markenname, und lädt das Bild nicht, steht wieder der Name in Schrift da. Die Fußzeile von Folie 01 trägt die Zeile „Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“, die wie die Bildquelle erst mit der Auflösung erscheint. Geprüft in allen Schritten, in Editorial, Bento und Keynote jeweils hell und dunkel, im Druck/PDF, in der Übersicht (O) und im Live-Übergang.",
+   "f08b Wettbewerber-Marker: bereits erledigt. Die Marker sind gestrichelt, die Legende sagt „gestrichelt: Beispielwert, nicht erhoben“ und die Fußzeile „Wettbewerber: Beispielwerte, noch nicht erhoben“.",
+   "Zeitplan: Im Lauf vorher waren schon die Sollzeiten gekürzt (04: 80 s, 05: 55 s, 06: 80 s, 09: 60 s, 11: 75 s), dazu die Sprechtexte und die Notiz zu f01b. Hauptfolien jetzt 14:00 von 15:00. Neu: Im Kasten und in den Notizen von Folie 08 steht, dass die Umfrage in der Probe mit Stoppuhr zu testen ist (Ziel ca. 40 s) und dass sie mit f01b entfällt. Die Zeitplan-Tabelle, Abschnitt 7 und die Checkliste in LIESMICH sind angepasst.",
+   "f10 Abgleich-Schritt: Die Titel-Logik aus dem Lauf vorher hatte kein CSS. Ergänzt habe ich: beide Titelfassungen in derselben Rasterzelle, die Kernaussage tritt im Abgleich zurück, und im Druck bleibt die Kernaussage stehen. Mit f01b und Zurufen getestet: „Ihr Bild von HOLY trifft unseren Kern – teilweise“. Die Kürzel-Legende im Fuß gab es schon nicht mehr (bereits erledigt).",
+   "f02 → f03 Steuerrad-Morph: Neue Klasse html.wechsel-rad-gross nur beim Wechsel zwischen großem Rad und Mini-Rad. Das alte Bild ist nach 140 ms weg, das neue erscheint ab 320 ms. Die Einzelbilder zeigen keine Scheibe mehr über dem Titel; der Wechsel Mini-Rad → Mini-Rad ist unverändert.",
+   "f01 → f02 Moduswechsel: Neue Klasse html.wechsel-modus beim Wechsel hell ↔ dunkel. Die alte Folie (samt Steuerrad und Pillen) blendet in 180 ms aus, die neue setzt nach 160 ms ein. Beide Richtungen sind geprüft, ohne Doppelbild.",
+   "f08b leere Rahmen: Die Karte „Ins Steuerrad“ erscheint jetzt samt Überschriften im letzten Schritt; der Platz bleibt reserviert.",
+   "f10 leerer Kasten: Das ganze Band „Markenkern“ (Kicker, Strich, Satz) erscheint erst in seinem Schritt. Der gestrichelte Kasten ist entfernt, die Höhe bleibt unsichtbar reserviert.",
+   "Kursive Fraunces: Die Vermutung habe ich vorher per Testrender geprüft und bestätigt. Die opsz-Datei setzt bei großen Graden die wonky-Formen b, h, k, l ein. Jetzt sind fraunces-latin(-ext)-full-italic.woff2 eingebunden und \"WONK\" 0 ist gesetzt (neues Token --achsen-ruhig, steht in allen 10 Angaben font-variation-settings und am body). „Abenteuer/Thrill“, „Kontrolle“ und „Kumpel und Anführer“ haben jetzt ruhige Formen.",
+   "Kursive Inter: inter-latin(-ext)-opsz-italic.woff2 kopiert, zwei @font-face-Regeln ergänzt; es gibt keine falsche Schrägstellung mehr.",
+   "f02 „Wer bin ich?“: Die Frage steht nicht mehr im Zentrum, sondern in Schritt 1 vorn in der Pille „Desk Research“ (js/folien/02-vorgehen.js → kernFrageInPille).",
+   "f02 Titel: jetzt 72 px wie alle Inhaltsfolien; die Ausgangslage-Zeile stand schon im Sprechtext.",
+   "f06 Kopfzeile: „Nennungen“ über der linken Spalte und „Skala“ direkt vor den Zahlen 1–7 (Daten: nennungenTitel, neu skalaTitel); die Konsole warnt bei Überlänge.",
+   "B1 [N]: ersetzt durch die geplante Zahl „3“, wie auf 06–08, B2, B4 und B5. Die Pille „teils geplant“ bleibt; Kommentare, Notizen und die LIESMICH-Checkliste sind angepasst.",
+   "Ampellogik: f10-Lücken (schon im Lauf vorher) und jetzt auch die f11-Pillen „Lücke 1/2“ in --f-warnung, nur „Bruch“ ist rot. Der f05-Dominanzpunkt ist gedecktes Rosé (aus dem Lauf vorher).",
+   "f11 Unterzeilen: im Druck (war schon so) und jetzt auch in html.aufnahme immer offen, also auch in export/folien/f11.png.",
+   "Bedienleiste weckt nicht mehr bei jedem Klick: bereits im Lauf vorher erledigt (nur Maus im unteren 160-px-Rand, Tastaturfokus oder Antippen) und geprüft.",
+   "Übersicht (O): Sie beginnt jetzt oben und die Überschrift ist sichtbar, solange die aktuelle Kachel dabei ganz zu sehen ist; sonst steht die Kachel mittig. Geprüft bei 1920×1080, 1440×900, 1366×768 und 1280×720.",
+   "Dunkelmodus: Akzent- und Soft-Facts-Flächen sind gedeckter (OKLCH-Chroma 0,05 → 0,028 bzw. 0,055 → 0,036, Fallback-Werte wie vorgeschlagen 12 % / 15 %). Weiche Karten im Editorial-Dunkelmodus haben eine 1-px-Kante in Markenfarbe. Kontraste: 0 Fehler.",
+   "Markenname im Titel: auf hellen Folien schwarz mit gelbem Textmarker (--f-kern, Band 46–80 %), auf dunklen Folien bleibt er Akzentgelb.",
+   "Live 1, Referentenansicht: Das Mitscrollen gab es schon aus dem Lauf vorher; jetzt geprüft. In allen 78 Zuständen ist der aktuelle Absatz sichtbar, bei 1440×900 und bei 1920×1080.",
+   "Live 2, Handy 390×844: aus dem Lauf vorher, geprüft. Die Leiste liegt innerhalb des Bildschirms (5 Knöpfe, 44×44), der Hinweis „Gerät quer halten“ erscheint, Wischen schaltet weiter und die Hilfe nennt Touch.",
+   "Live 3, Ziffern auf f08: aus dem Lauf vorher, geprüft. „1“ „0“ Enter führt zu Folie 10 und lässt die Stimmen unverändert; „2“ zählt eine Stimme. Hilfe und LIESMICH weisen darauf hin.",
+   "Live 4, Touch-Ziele: 44×44 px bei pointer: coarse (geprüft).",
+   "Live 5, Einordnung: Folie 01 hatte sie schon; neu ist die zweite Fußzeile auf Folie 12 „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“ (data-unternehmen).",
+   "Live 6, Exporte erneuert: export/praesentation.pdf (Druckmodus, 22 Seiten), export/uebersicht.png (Kontaktbogen, Sollzeit 14:00) und export/folien/*.png (23 Bilder, 1600×900; f09b zeigt die Wortmarke, f01 das Oval-Logo).",
+   "LIESMICH.md, QUELLEN.md, AUTOREN.md (neuer Abschnitt 12) und schriften/HERKUNFT.txt aktualisiert. Veraltete Platzhalter-Hinweise zum 09b-Logo in index.html und 09-kommunikationsanalyse.js korrigiert.",
+   "Testordner (_test, _abschluss-test, _abschluss-gestaltung): nicht vorhanden."
+  ],
+  "nicht_behoben": [
+   {
+    "befund": "f06: „⊢ Vorsprung vor Ø Wettbewerb“ in die Linien-Legende neben „HOLY“ verschieben",
+    "grund": "Nicht gemacht. Der Eintrag erklärt die Zahlen +2/+3 in der rechten Spalte und steht deshalb dort sinnvoll; außerdem ist die Legendenzeile links fast voll. Behoben ist der Hauptpunkt, die Kopfzeile „Nennungen / Skala“."
+   },
+   {
+    "befund": "f06 optional: Ideal- und Wettbewerberlinie im Endzustand auf opacity .6",
+    "grund": "Bewusst weggelassen, weil der Vorschlag optional war. Die gepunktete Ideallinie würde bei 60 % Deckkraft auf dem Beamer den Grafikkontrast (3 : 1) gefährden."
+   },
+   {
+    "befund": "Wortbudget f11 im Prüfbericht: 61 statt 46 Wörter",
+    "grund": "Folge der gewünschten Regel „alle Unterzeilen in der Aufnahme“. pruefen.mjs misst im Modus ?aufnahme, also im Handout-Zustand. Im Vortrag sind es weiter 46 Wörter, weil nur die aktuelle Unterzeile offen ist. Die übrigen Warnungen (02, 03, 04, 10) sind unverändert und betreffen Inhalte."
+   },
+   {
+    "befund": "Startseite der Webseite (index.html im Hauptverzeichnis) nutzt noch die kursive Fraunces mit wonky-Formen",
+    "grund": "Die Datei liegt außerhalb meines Auftrags. Deshalb habe ich fraunces-latin(-ext)-opsz-italic.woff2 nicht gelöscht, damit die Startseite nicht bricht. Vermerkt in HERKUNFT.txt und QUELLEN.md."
+   },
+   {
+    "befund": "Verirrte Testausgaben im Wurzelverzeichnis des Containers: /pruef-dunkel.log, /pruef-bento.log, /pruef-keynote.log, /pruef-bento/, /pruef-keynote-dunkel/",
+    "grund": "Sie sind durch einen Shell-Fehler entstanden (Variable in einem Hintergrund-Subshell nicht gesetzt). Löschen hat die Sicherheitsprüfung für Pfade unter / verhindert. Sie liegen außerhalb des Repositorys und sind harmlos, bitte von Hand entfernen."
+   }
+  ],
+  "dateien": [
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/index.html",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/marke.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/tokens.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/deck.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/komponenten.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/01-einstieg.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/02-vorgehen.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/04-persona.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/05-limbic-map.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/06-repertory-grid.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/08-analogien.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/10-markensteuerrad.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/11-fazit.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/13-backup.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/deck.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/01-einstieg.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/02-vorgehen.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/06-repertory-grid.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/08-analogien.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/09-kommunikationsanalyse.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/schriften/fraunces-latin-full-italic.woff2 (neu)",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/schriften/fraunces-latin-ext-full-italic.woff2 (neu)",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/schriften/inter-latin-opsz-italic.woff2 (neu)",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/schriften/inter-latin-ext-opsz-italic.woff2 (neu)",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/schriften/HERKUNFT.txt",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/LIESMICH.md",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/QUELLEN.md",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/AUTOREN.md",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/praesentation.pdf",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/uebersicht.png",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/folien/*.png (23 Dateien)"
+  ],
+  "screenshots": [
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/logo/f01_1.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/logo/f01_2.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/logo/themen.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/logo/live-2-550.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/ue/f01-ue.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/pdfneu/bogen.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f02/f02_1.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f02/f02_7.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f06/kopf.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f08b/f08b_3.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f08b/f08b_4_dunkel.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/abgleich/f10_0_abgleich.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/abgleich/f10_9_abgleich.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/abgleich/f10_druck.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f11/f11_3.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/f12/fuss.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/fonts/f05_3.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/schrifttest/t.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/dunkel/f08_3_dunkel.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/marke/f10_8_titel.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/ueb23/t160.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/ueb23/streifen.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/ueb12/raster.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/interaktion/handy-390.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/interaktion/referent-1440-f07_3.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/uebersicht-klein.png"
+  ],
+  "pruefbericht": "werkzeuge/pruefen.mjs (Playwright, Chromium 141, Bühne 1920×1080), Ausgaben im Scratchpad:\n- Editorial hell mit --schritte und --druck: 22 Folien, 79 Schritt-Screenshots, 0 Fehler, 0 externe Anfragen, Druck 22/22 Seiten.\n- Editorial dunkel mit --schritte: 0 Fehler.\n- Bento hell und dunkel, Keynote hell und dunkel (Endzustand): je 0 Fehler.\n- --bewegung-reduziert --optional (inkl. f01b): 0 Fehler.\n- Export-Lauf mit --druck export/praesentation.pdf: 0 Fehler.\nIn allen Läufen bleiben dieselben 5 Wortbudget-Warnungen: f02 43, f03 44, f04 47, f10 68, f11 61. f11 ist im Aufnahme-Zustand höher, weil alle Unterzeilen offen sind; live sind es 46.\nKonsole beim Export der Folienbilder: leer. Alle JS-Dateien bestehen node --check.\n\nFolie 01 gesondert geprüft:\n- Schritt 0: Logo verborgen, Fuß verborgen.\n- Schritt 1: Logo sichtbar und geladen (692 px).\n- Rückwärts: wieder verborgen.\n- Live-Übergang 1→2 flüssig.\n- Druck/PDF Seite 1 und Übersicht (O): Logo im Titelzustand.\n- In allen Themen hell/dunkel geprüft (die Folie ist immer dunkel).\n\nInteraktionen mit Playwright:\n- Referentenansicht: aktueller Absatz in allen 78 Zuständen sichtbar (1440×900 und 1920×1080).\n- Handy 390×844: Leiste innerhalb des Bildschirms, Knöpfe 44×44, Wischen nach links = weiter.\n- f08: „1“ „0“ Enter führt zu f10 und lässt die Stimmen unverändert; „2“ zählt eine Stimme.\n- pointer: coarse: alle Knöpfe 44×44.\n- Übersicht beginnt oben, wenn die Kachel passt (4 Fenstergrößen).\n- f10 Abgleich mit 6 Zurufen: eigener Titel „… – teilweise“, im Druck die Kernaussage.\n- View-Transition-Einzelbilder eingefroren: 02→03 bei 100, 160, 240, 360, 420 und 500 ms ohne Scheibe über dem Titel; 01→02 und 02→01 bei 120 und 300 ms ohne Doppelbild.\n- Wonky-Formen vorher und nachher per Testrender verglichen.\n\nExporte:\n- PDF: 22 Seiten, 1440×810 pt, als Kontaktbogen angesehen.\n- 23 Folienbilder in 1600×900.\n- Kontaktbogen 2400×2734 mit Sollzeit 14:00.\n\nKeine git-Commits. ki-nachweis, CLAUDE.md, README und die Startseite im Hauptverzeichnis sind unverändert. Folie 04 ist inhaltlich unverändert (nur der Titel-Marker und die Sollzeit/Notizen aus dem Lauf vorher). Die master-Änderungen sind erhalten: Logos, logo → Wortmarke, Quellenzeile von 09b, alt-Text, noindex und Favicon.",
+  "quellen": [
+   {
+    "was": "Fraunces Kursiv, Datei mit allen Achsen (fraunces-latin-full-italic.woff2, fraunces-latin-ext-full-italic.woff2), nur latin und latin-ext",
+    "lizenz": "SIL Open Font License 1.1 (Lizenztext schriften/LIZENZ-fraunces-OFL.txt, identisch mit dem Paket)",
+    "herkunft": "npm-Paket @fontsource-variable/fraunces 5.3.0 (Fontsource), Original github.com/undercasetype/Fraunces"
+   },
+   {
+    "was": "Inter Kursiv (inter-latin-opsz-italic.woff2, inter-latin-ext-opsz-italic.woff2)",
+    "lizenz": "SIL Open Font License 1.1 (schriften/LIZENZ-inter-OFL.txt, identisch)",
+    "herkunft": "npm-Paket @fontsource-variable/inter 5.3.0, Original github.com/rsms/inter"
+   },
+   {
+    "was": "HOLY-Logo im gelben Oval (bilder/holy-logo-oval.png), jetzt auf Folie 01 verwendet; die Datei lag schon im Repo (von master) und ist unverändert",
+    "lizenz": "© HOLY Softdrinks GmbH; nur zur Kennzeichnung der analysierten Marke in einer studentischen Fallstudie. Die Nutzung sollte mit dem Betreuer abgestimmt werden (steht in der LIESMICH-Checkliste).",
+    "herkunft": "https://de.holy.com, Seitenfuß, Datei HOLY_Logo_NewYellow.png, abgerufen 16.10.2026 (laut QUELLEN.md und Übergabe Ü02)"
+   },
+   {
+    "was": "Firmenname „HOLY Softdrinks GmbH“ in der Einordnungszeile auf Folie 12",
+    "lizenz": "Fakt aus dem Recherche-Dossier",
+    "herkunft": "Recherche-Dossier Kap. 1 ✔ [2, 3] (Impressum, Handelsregister), über marke.js → unternehmen"
+   },
+   {
+    "was": "playwright-core mit Chromium, nur für Prüfung, Screenshots und Export (nicht Teil der Präsentation)",
+    "lizenz": "Apache-2.0",
+    "herkunft": "npm playwright-core 1.56.1 im Scratchpad-Werkzeugordner"
+   },
+   {
+    "was": "Verhalten der Fraunces-Achse WONK (wonky-Formen bei großem opsz, mit \"WONK\" 0 abschaltbar)",
+    "lizenz": "–",
+    "herkunft": "Modellwissen. Vor dem Umbau per Testrender beider Dateien selbst geprüft und bestätigt (Scratchpad schrifttest/t.png)."
+   }
+  ]
+ },
+ "Zweite Prüfung: Inhalt & Fakten": {
+  "befunde": [
+   {
+    "schwere": "mittel",
+    "folie": "f10 (auch f11, f03)",
+    "kategorie": "inhalt",
+    "beschreibung": "Im Feld „Markenattribute“ steht „160 mg Koffein“. Das trifft nur auf HOLY Energy zu (Dossier 3.1 ✔ [56]). Iced Tea, Hydration, Milkshake und Syrup haben in der Regel kein Koffein, und die Marke positioniert sich ausdrücklich als Softdrink-Marke. Das Stichwort steht außerdem auf keiner Methodenfolie (die Fußzeile behauptet aber „Stichworte aus den Folien 03–09b“). Weil das Kürzel DR per CSS ausgeblendet ist, wirkt es wie ein Ergebnis des Repertory Grid. Gleiches gilt für Empfehlung 1 auf f11 („160 mg … vorn drauf“).",
+    "vorschlag": "In index.html bei f10 (Zeile ~2084) den Text auf „Energy: 160 mg Koffein“ ändern, ebenso das Stichwort unter luecken[0].markieren (Zeile ~2189). Auf f11 „wie genau“ (Zeile ~2318) auf „Energy-Dose: 160 mg und „18+“ vorn, Erklärvideo“ ändern. Fußzeile f10 ergänzen: „· „160 mg Koffein“: Desk Research, Dossier 3.1 ✔ [56]“. Alternativ den Wert schon auf f03 einführen, z. B. in den Notizen und als Detail der Zeitleiste, damit das Stichwort vor der Synthese bekannt ist."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f04 (auch B3)",
+    "kategorie": "inhalt",
+    "beschreibung": "Die Dimension Kaufverhalten („online auf Vorrat · nutzt Rabatte“) ist als „daten“ markiert und erscheint deshalb mit Datensymbol und „Shop, Gründer ✔ [1, 4, 48]“. Die Quellen belegen aber nur HOLYs Angebot (50er-Dose, Mix & Match, Onlineshop), nicht das Verhalten der Kundschaft. Im Dossier ist der Vorratskauf ausdrücklich eine Hypothese (5.1: „Pulver passt zu Vorratskauf … H“), und Rabatte stützt nur eine Einzelstimme (7.2 [89]). B3 enthält keine Zeile, die das Verhalten belegt. Die HOLY-Anzeige [18] nennt sogar „Impuls- und Erstkäufer“. Auch der Persona-Steckbrief führt das Preisbewusstsein als Annahme.",
+    "vorschlag": "Im JSON von f04 (Zeile ~791–793) für Kaufverhalten \"status\": \"annahme\" setzen und \"quelle\": \"Annahme aus Shop-Angebot [1, 48] und Kundenstimmen [89]\" eintragen. In den Notizen Schritt 2 (Zeile 757) nach „nutzt Rabatte“ ergänzen: „– das leiten wir aus HOLYs Angebot ab, Kundendaten gibt es nicht“. Im Absatz „Belege“ (Zeile 760) „Kaufverhalten – Annahme, gestützt auf …“ schreiben."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f02",
+    "kategorie": "inhalt",
+    "beschreibung": "Die Methodenkarten sagen sichtbar „Triaden: KI-simulierte und echte Befragte“, „Means-End-Kette mit KI und echten Interviews“ und „Mensch und Tier: KI und echte Antworten“. Die Fußzeile sagt „an Quellen/Befragten geprüft“. Die echten Kurzinterviews stehen aber noch aus: B1 trägt die Pille „teils geplant“, alle Ergebnisfolien tragen „Beispieldaten“. f02 trägt keine Kennzeichnung und fehlt im Kasten „VOR DEM 26.10.“ (Zeile 361–364) und in der LIESMICH-Checkliste (§12, Zeile 240–242 nennt nur 06–08, B1, B2, B4, B5). Werden die Interviews nicht oder in anderer Zahl geführt, steht eine falsche Verfahrensangabe auf einer bewerteten Folie.",
+    "vorschlag": "Im Kasten von Folie 02 einen Punkt ergänzen: „• Methodenkarten (JSON „methoden“) nennen „echte Befragte/Interviews/Antworten“ – nur so lassen, wenn die Kurzinterviews geführt wurden; sonst „KI-simuliert“.“ In LIESMICH §12 im Punkt „Zahl der echten Kurzinterviews“ die Folie 02 ergänzen. Bis dahin optional: \"text\": \"Triaden: KI-simuliert + Kurzinterviews\" (ohne „echte“)."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f03 (Sprechtext)",
+    "kategorie": "inhalt",
+    "beschreibung": "Im Sprechtext Schritt 1 (Zeile 571) steht „Geprüfte Bilanzzahlen gibt es nicht.“ Das widerspricht dem Dossier 2.4 und 9.1: Die Jahresabschlüsse 2021–2024 sind offengelegt, für 2023 und 2024 mit Gewinn- und Verlustrechnung (Abschluss 2024 veröffentlicht am 31.03.2026). Nur für 2025 gibt es ausschließlich Selbstauskünfte. Auf Rückfrage wäre die Aussage widerlegbar.",
+    "vorschlag": "Satz ersetzen durch: „Unabhängig belegt sind diese Zahlen nicht: Die Jahresabschlüsse bis 2024 sind offengelegt, für 2025 gibt es nur Angaben des Unternehmens (Dossier 2.4).“ Optional (Bündel A, Dossier 10.3): den Abschluss 2024 im Unternehmensregister abrufen und als Beleg ins Backup nehmen."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f11 (Bezug f08, f09b, f10)",
+    "kategorie": "inhalt",
+    "beschreibung": "Empfehlung 3 „Ein Dachclaim, ein Raptor“ macht ein Comic-Tier zum durchgängigen Schlüsselbild auf allen Kanälen. Zwei Folien vorher lautet Lücke 2 aber „Bildwelt zu jung“, gestützt auf Verbraucherschützer, die die kindliche Comic-Ansprache kritisieren (S2 [27, 28, 82]). f08 sagt außerdem „HOLY wäre ein Waschbär, kein Adler“: Der Raptor ist das Selbstbild, nicht der gelebte Ton. Die Auflösung („frecher inszenieren“) steht nur in den Notizen von f09b und f11. Eine naheliegende Rückfrage (Widerspruch zu Lücke 2) ist nicht vorbereitet.",
+    "vorschlag": "In den Notizen von f11 Schritt 3 (Zeile 2390) ergänzen: „Der Raptor bleibt, wird aber erwachsener und frecher inszeniert – kein Kinder-Comic (Folie 5: „frech, aber erwachsen“; Lücke 2).“ Unter „Rückfragen“ (Zeile 2393) ergänzen: „„Verstärkt der Raptor nicht die zu junge Bildwelt?“ – Nein, wenn er erwachsen gestaltet wird; für die Energy-Linie keine kindlichen Frucht-Comics (Dossier S2).“ Optional „wie genau“: „Raptor erwachsen, Versprechen darunter“."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f05 → f10/f11",
+    "kategorie": "inhalt",
+    "beschreibung": "Roter Faden: f05 stellt als Kernaussage die größte Lücke zwischen Persona und Marke vor (Dominanz −20 Pp., „kaum seinen Ehrgeiz“) und leitet „Leistung im Schichtalltag“ ab. In der Konsistenzprüfung (f10) und im Fazit (f11) taucht dieser Befund nicht mehr auf; dort stehen „Koffein vs. gutes Gewissen“ und „Bildwelt zu jung“. Zuhörende können fragen, was aus der größten Lücke geworden ist.",
+    "vorschlag": "Die Verbindung ausdrücklich machen. In den Notizen von f10 Schritt 8 (Zeile 2149) nach „Zweitens …“ ergänzen: „– dazu passt die Dominanz-Lücke aus der Limbic Map: Marco will Leistung im Alltag sehen, nicht Kinder-Comics.“ In den Notizen von f11 Schritt 2 (Zeile 2389) ergänzen: „Das schließt auch die Dominanz-Lücke von Folie 5.“ Optional „wie genau“ der Empfehlung 2: „Creator aus Pflege, Schicht, Sport – Leistung im Alltag“."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f04 (Bezug persona-steckbrief.md)",
+    "kategorie": "konsistenz",
+    "beschreibung": "Der Persona-Steckbrief A2 (fallstudie-1-brand-persona/persona-steckbrief.md, auf master am 16.10. 18:41, am 17.10. in diesen Branch übernommen; „Prüfung durch Yannick offen“) weicht von Folie 04 ab. Mediennutzung: Der Steckbrief nennt YouTube, Instagram und TikTok, „Twitch und Discord nur am Rand“; die Folie zeigt Twitch als einen von drei Balken, YouTube fehlt. Geografie: „Großstadt, Mietwohnung; z. B. Dortmund“ statt „Stadt oder Vorort, z. B. Ruhrgebiet“. Beruf: Lagerlogistik im Drei-Schicht-Betrieb. Kaufverhalten: Preisbewusstsein als Annahme. Die Kennzahlen des Steckbriefs (Statista CI 2025, VuMA 2021) stehen nicht im Recherche-Dossier.",
+    "vorschlag": "Nach Yannicks Freigabe des Steckbriefs Folie 04 und B3 angleichen. Für die Mediennutzung z. B. YouTube 73 %, Instagram 71 %, TikTok 58 % (Energy-Drink-Konsument:innen, Statista Consumer Insights 2025) mit eigener Quellenangabe in B3 und B8 eintragen; die Quelle als „nicht im Dossier, Campuslizenz“ kennzeichnen. Bis dahin in den Notizen von f04 Schritt 3 (Zeile 758) ergänzen: „Twitch ist für Marco eher Randkanal.“"
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f03 (auch B8)",
+    "kategorie": "inhalt",
+    "beschreibung": "„Red Bull ≈ 58 % ✔ [26]“ steht ohne Angabe von Bezugsgröße und Zeitraum (Umsatzanteil Energy Drinks Deutschland, Circana MAT 08/2025). Es fehlt auch die Quellenkritik, die das Dossier für die Marktfolie ausdrücklich verlangt (9.4: Die Circana-Zahlen stammen aus Schulungsheften, die mit Red Bull entstanden sind – „das auf der Marktfolie erwähnen“). B8 [26] lässt „mit Red Bull“ ebenfalls weg.",
+    "vorschlag": "Fußzeile von f03 (Zeile 566 bzw. Ausgabe des Skripts) ergänzen: „· Red Bull ≈ 58 % = Umsatzanteil Energy Drinks DE, Circana MAT 08/2025, Lehrbrief mit Red Bull [26]“. In B8 (Zeile 3235) eintragen: „LZ direkt: Markenlehrbrief Energy Drink, 10. Aufl. (mit Red Bull; Circana MAT 08/2025)“. In die Notizen von f03 einen Satz zur Quellenkritik aufnehmen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f03",
+    "kategorie": "inhalt",
+    "beschreibung": "Die Zeitleiste und die Notizen nennen „erste TV-Kampagne“ (01/2026). Das Dossier formuliert vorsichtiger: „die erste große TV-Kampagne“ (Kap. 1 ✔ [25]) bzw. „erste große Massenmedien-Kampagne“ (2.1). Laut adclips.tv lief bereits 09/2025 ein TV-Spot (~ unsicher, [130]).",
+    "vorschlag": "Zeitleiste (Zeile 614): \"text\": \"große TV-Kampagne\" (passt in ca. 22 Zeichen). In den Notizen (Zeile 573) „erste große TV-Kampagne“ schreiben."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f03 / B8",
+    "kategorie": "dokumentation",
+    "beschreibung": "Die Begründung „Fordert Red Bull und Coca-Cola heraus“ ist auf der Folie nur mit [13] und [26] belegt; der passende Beleg [7] (Trending Topics) steht nur in den Notizen. Die gerenderte Quellzeile lautet deshalb „2–5, 8, 9, 13–17, 22, 24–26“. Der Ersatztext im HTML (Zeile 566) und die Notiz zu B8 (Zeile 3257) nennen dagegen „7–9“.",
+    "vorschlag": "In begruendung.quelle (Zeile 605) „· „fordert … heraus“ ✔ [7]“ ergänzen; dann stimmen Quellzeile, Ersatztext und B8-Notiz überein. Alternativ Ersatztext und B8-Notiz auf „2–5, 8, 9, …“ korrigieren."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f10, f11 (Sprechtext)",
+    "kategorie": "inhalt",
+    "beschreibung": "f10 Schritt 8: „Das gute Gewissen trifft auf 160 mg Koffein; genau das kritisieren Verbraucherschützer“ überzeichnet. Kritisiert werden der hohe Koffeingehalt, die fehlende Höchstmenge und die Ansprache Jugendlicher, nicht das Versprechen. f11 Belege (Zeile 2392): „Verbraucherzentrale sieht Ansprache … ✔ [27, 28, 82]“ – [27] und [28] stammen vom österreichischen VKI bzw. KONSUMENT, nicht von einer Verbraucherzentrale.",
+    "vorschlag": "f10 (Zeile 2149): „… trifft auf 160 mg Koffein pro Portion Energy; den hohen Koffeingehalt und die Ansprache Jugendlicher kritisieren Verbraucherschützer.“ f11: „Verbraucherschützer (VKI [27, 28], VZ Sachsen-Anhalt [82]) sehen eine Ansprache von Kindern und Jugendlichen.“"
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f05",
+    "kategorie": "inhalt",
+    "beschreibung": "Folge 3 „Botschaft: fokussiert ohne Zucker“ ist eine leistungs- bzw. konzentrationsbezogene Aussage. Das Dossier mahnt, nur zugelassene Nutzenaussagen zu verwenden (3.7, S1, Lebensmittelklarheit 2025). Dazu kommt Modellwissen: Die Motive „Abwechslung · Mut · Freiheit“ für Abenteurer sind unsicher, denn „Abwechslung“ gilt eher als Kernmotiv der Hedonisten.",
+    "vorschlag": "In den Notizen von f05 ergänzen: „Leistungsaussagen nur für Energy und nur mit zugelassenen Koffein-Angaben (Dossier S1).“ Alternativ \"text\": \"Schichtpartner ohne Zucker\". Für typMotive prüfen: \"Risiko\", \"Mut\", \"Freiheit\"; als Modellwissen mit der Vorlesungsfolie abgleichen (Hinweis steht schon in den Notizen)."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "B4 (↔ f06)",
+    "kategorie": "konsistenz",
+    "beschreibung": "Die Beispieldaten von W3 (laut B4-Notiz Gönrgy aus dem Set-Vorschlag) liegen bei „zuckerhaltig – zuckerfrei“ auf 3,6. Gönrgy ist laut Dossier 5.2 zuckerfrei ✔. Die Notiz von f06 argumentiert gerade damit („im vorgeschlagenen Set ist Gönrgy zuckerfrei … darum ist der Vorsprung bei „zuckerfrei“ der kleinste“).",
+    "vorschlag": "B4 (Zeile 2893): \"W3\": 6.0. f06 (Zeile 1140): \"wettbewerbMittel\": 4.78. Neu: Ø W = (2,4 + 2,9 + 6,0 + 6,2 + 6,4)/5 = 4,78, Abstand 1,82 ≥ 1,5. „Zuckerfrei“ bleibt Attribut mit „+2“ und bleibt der kleinste Vorsprung."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "B6 (Sprechtext)",
+    "kategorie": "inhalt",
+    "beschreibung": "B6 Schritt 1 behauptet, der Raptor „taucht kanalübergreifend auf … Deshalb ist er unser Kandidat“. Die Beispielzeilen zeigen ihn nur auf Instagram und YouTube, nicht auf Facebook. Die Notizen von f09 lassen die Frage ausdrücklich offen („Ob er über alle Kanäle trägt, klärt die Stichprobe“).",
+    "vorschlag": "Zeile 3072 ersetzen durch: „Markiert sind die Beiträge mit dem Adler „Raptor“ – im Beispielraster auf Instagram und YouTube; ob er wirklich über alle Kanäle trägt, zeigt erst die echte Stichprobe. Deshalb steht auf Folie 09 noch ein Fragezeichen.“"
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f09 (↔ B6)",
+    "kategorie": "konsistenz",
+    "beschreibung": "Die vierte Motivgruppe auf f09 heißt „Kurzvideos“. Das ist ein Format. B6 legt fest: „motiv = WAS zu sehen ist, nie das Format“, „Format und Motiv sind getrennt“. Die Motiv-Codes dieser Gruppe in B6 heißen „Team“ und „Popkultur-Bezug“.",
+    "vorschlag": "In den f09-Daten (Zeile 1846) \"gruppe\": \"Team & Popkultur\" setzen. Notizen f09 Schritt 1 entsprechend anpassen: „Produkt, Comic-Tiere, Community, Team & Popkultur“. B6-Ergebnis (Zeile 3060): „Vier Motivgruppen; Schlüsselbild-Kandidat: Adler „Raptor““."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f09",
+    "kategorie": "inhalt",
+    "beschreibung": "Der Titel „… der Raptor [trägt] das Bild“ behauptet ein Ergebnis. Die Folie selbst sagt „Schlüsselbild?“, die Fußzeile „Schlüsselbild H“, und die Motivzahlen sind Beispieldaten.",
+    "vorschlag": "Den Titel erst nach der Codierung festlegen. Bis dahin z. B. „Instagram trägt die Reichweite – der Raptor das Bild?“ oder den Punkt „Titel nach der Stichprobe prüfen“ in den Kasten „VOR DEM 26.10.“ von Folie 09 aufnehmen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f08b",
+    "kategorie": "konsistenz",
+    "beschreibung": "Die Karte „Ins Steuerrad“ beschriftet Markenemotionen, Markenbeziehung und Markenerlebnisse. Die eigenen Notizen und methoden.md nennen nach Esch aber „Persönlichkeit, Beziehung, Erlebnisse“; die Persönlichkeitsmerkmale stehen nur links im Profil. Außerdem: Die Fußzeile „Einschätzung von Gruppe und Befragten (n = 8)“ schließt die 5 KI-Personas ein. Das Bündel-B-Dossier schlägt dagegen vor, den Aaker-Bogen nur von Menschen ausfüllen zu lassen.",
+    "vorschlag": "In den Notizen ergänzen: „Markenpersönlichkeit = Merkmale links (frech, rebellisch, verspielt, nahbar, selbstironisch); Emotionen ergänzen wir nach methoden.md – mit Vorlesung abgleichen.“ Die Fußzeile nach der Erhebung an die tatsächlichen Bewertenden anpassen (z. B. „Gruppe + 3 Befragte, n = 6“)."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f10 (↔ f09b, f11)",
+    "kategorie": "inhalt",
+    "beschreibung": "Der Titel „stimmige Identität – bis auf zwei Lücken“ steht neben f09b („wirkt aber zersplittert“) und f11 („zwei Lücken, ein Bruch“). Ohne Erklärung wirkt der Bruch wie ein vergessener dritter Befund der Konsistenzprüfung.",
+    "vorschlag": "In den Notizen von f10 Schritt 8 (Zeile 2149) am Ende ergänzen: „Dazu kommt der Bruch im Auftritt aus Folie 9b – er liegt nicht zwischen den Feldern, sondern in der Umsetzung über die Kanäle.“"
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f12",
+    "kategorie": "inhalt",
+    "beschreibung": "Die Fazit-Zeile („HOLY: Genuss mit gutem Gewissen – jetzt muss der Auftritt nachziehen“) bleibt in der ganzen Fragerunde stehen. Sie beruht auf f10 und f11, die als Beispieldaten gekennzeichnet sind; f12 trägt keine Kennzeichnung.",
+    "vorschlag": "Solange f10 und f11 die Pille tragen, im Kicker von f12 (Zeile 2443) <span class=\"beispiel\">Beispieldaten</span> ergänzen und in die LIESMICH-Checkliste §12 aufnehmen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "B1",
+    "kategorie": "inhalt",
+    "beschreibung": "„Befragte simulieren – Primärerhebung zeitlich nicht machbar“ widerspricht den geplanten 3 echten Kurzinterviews auf derselben Folie. „Recherche … nur mit Quelle, jede geöffnet“ ist für das Dossier zu absolut: Einige Angaben stützen sich nur auf Suchauszüge und sind dort als ~ bzw. „nur Suchauszug“ markiert (z. B. Regalpreise, Syrup-Starttag).",
+    "vorschlag": "Zeile 2613: „– repräsentative Befragung zeitlich nicht machbar, Basis ist die Persona“. Zeile 2612: „– nur mit Quelle; Suchauszüge als unsicher markiert“."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f04 / LIESMICH / QUELLEN",
+    "kategorie": "dokumentation",
+    "beschreibung": "Für das Persona-Bild werden verschiedene Prompts genannt. Laut prompts.md ist P6 der Bild-Prompt und P4 der Steckbrief. Trotzdem nennt der SVG-Kommentar in f04 (Zeile ~686) „Prompt P4“, LIESMICH §12 (Zeile 228–229) „(Prompt P4/P6)“ und als Beispiel „KI-generiert (Prompt P4)“, QUELLEN.md §3 (Zeile 57) „Prompt P4/P6“. Die Notizen von f04 sagen richtig „P6“.",
+    "vorschlag": "An den drei Stellen einheitlich „Prompt P6“ schreiben. In LIESMICH das Beispiel auf „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“ ändern."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f11 / LIESMICH / Ablaufplan",
+    "kategorie": "dokumentation",
+    "beschreibung": "Die Sollzeiten sind nicht einheitlich dokumentiert. Der Erklärkommentar von f11 (Zeile ~2222) nennt noch „90 Sekunden“, data-zeit ist 75. LIESMICH Zeile 81 nennt als gekürzt „04, 05, 06, 09 und 11“, Zeile 248 zusätzlich 09b (60 + 55 = 115 s statt 120 s). Das Deck ergibt 840 s = 14:00, der Ablaufplan im Auftrag 885 s; die Abweichung ist in LIESMICH als Entscheidung vom 16.10. begründet.",
+    "vorschlag": "In Zeile ~2222 „Bündel C · 75 Sekunden“ schreiben. In LIESMICH Zeile 81 „09b“ ergänzen. Die geänderten Sollzeiten in den Ablaufplan bzw. arbeitsplan.md übernehmen oder von der Gruppe bestätigen lassen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "QUELLEN.md",
+    "kategorie": "dokumentation",
+    "beschreibung": "§5 (Zeile 85): „Werte auf den Folien 06–11 und B2, B4–B6 sind Beispieldaten“ ist ungenau. f09b enthält keine Beispielwerte (nur eine Bewertung als Hypothese, ohne Pille), und f09 mischt belegte Follower-Zahlen mit Beispielwerten.",
+    "vorschlag": "Ersetzen durch: „Beispieldaten (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08, 08b, 09 (Beiträge, Engagement, Motive), 10, 11 sowie B2, B4–B6; B1 ist „teils geplant“.“"
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f02, f03, f08, f09b",
+    "kategorie": "konsistenz",
+    "beschreibung": "Kleine Uneinheitlichkeiten in den Schreibweisen: „Mach's dir wie nie zuvor“ (gerader Apostroph, f03-Daten und -Notizen) neben „Mach’s“ (typografisch, Notizen f08 Zeile 1457 und f09b Zeile 1903). „Means-End-Kette“ auf der Methodenkarte von f02 (Zeile 459) neben „Means-End-Chain“ auf f07, B5 und in LIESMICH.",
+    "vorschlag": "Einheitlich „Mach’s dir wie nie zuvor“ (typografischer Apostroph) und auf f02 \"text\": \"Means-End-Chain mit KI und Interviews\" schreiben."
+   }
+  ],
+  "erfuellt": [
+   "Alle sichtbaren HOLY-Zahlen und Daten stimmen mit Wert, Quelle und Faktenstatus im Dossier überein. Geprüft wurden: f03 (Gründung 2020 [2, 3], Marktstart 04/2021 [4, 22], Iced Tea 2022 [4, 24], Series A 10,5 Mio. € [15], ab 01/2025 Rewe/Edeka/Globus [8, 9], ≈ 170 Mio. € ✎ [13, 16], über 2 Mio. Kund:innen ✔ [13, 14], 170+ Mitarbeitende ✎ [17], „Challenger-Brand“ ✔ [13], Red Bull ≈ 58 % ✔ [26], Versprechen ✔ [5]). f04: 25–40 Jahre, ⅔ männlich, Schichtdienst [7, 24]; ARD/ZDF 14–29: 77/50/19 % [102]. f09: 383.000, 126.000, 20.500 Abos, 2,3 Shorts pro Woche [19, 122–124]. f09b: HEX-Werte, Schriften, sechs Claims [1, 5, 8, 18, 25, 31]. B3 (alle 11 Zeilen inkl. Jahr und Status). B8 (alle 30 Einträge gegen Anhang B; 160 Quellen auf B7 stimmen).",
+   "Keine als „✗ verworfen“ geführte Aussage wird verwendet; „Drink soft. Go hard.“ steht nur als „nicht verwenden“. Die einzige „~ unsicher“-Angabe (Similarweb, B3) ist als unsicher und „nur Indiz“ markiert. Die übrigen ~-Angaben (Verkaufsstellen, Rossmann, Syrup-Starttag u. a.) kommen nicht vor.",
+   "Selbstauskünfte sind gekennzeichnet: „laut Unternehmen“ und „Kennzahlen = Selbstauskünfte“ (f03), „laut Mitgründer“ (f08), „Gründeraussage“ (B3), „Firmen- und Investorenquellen = Selbstauskünfte“ (B8). Hypothesen sind erkennbar markiert: Persona „Hypothese · fiktive Person“, Limbic-Gewichte, Schlüsselbild H, Fit-Bewertung, Lücken und Empfehlungen als eigene Hypothesen (H).",
+   "Beispieldaten sind sichtbar gekennzeichnet: Pille auf 06, 07, 08, 08b, 09, 10, 11, B2, B4, B5, B6; gestrichelte Beispielwerte auf 09 und 08b; Umfrage „n = 64 · Beispieldaten“; B1 „teils geplant“.",
+   "Folienübergreifende Konsistenz der Beispieldaten nachgerechnet: f06 ↔ B4 stimmt vollständig (M, W1, I, Nennungen; Ø W1–W5 = 4,3 / 3,84 / 3,0 / 2,22 / 3,96 / 4,36 exakt; Schwellen ergeben dieselben drei Attribute und die Hürde „selbst anrühren“). f07 ↔ B5: 13 Verbindungen identisch, Cut-off 2, stärkste Kette mit Minimum 6. f08/f08b ↔ marke.js: Waschbär und Adler unter den Optionen, unsereAntwort = Waschbär, 17/64 = 27 % wie in den Notizen. f09 ↔ B6: 15 + 17 + 8 + 10 = 50. f10 ↔ f03–f09b wortgleich (Ausnahme „160 mg Koffein“). f11 ↔ f10: Kern und beide Lücken wortgleich. f12 übernimmt den Kern.",
+   "Modellbegriffe fachlich korrekt und einheitlich. Esch: fünf Felder mit den richtigen Leitfragen, Hard Facts links (Nutzen, Attribute), Soft Facts rechts (Tonalität, Bild), Kompetenz im Zentrum, Markenkern ausdrücklich als eigene Verdichtung. Häusel: Balance, Dominanz, Stimulanz; Mischbereiche und sieben Limbic Types richtig angeordnet; keine Limbic Type für die Marke. Kelly: bipolare Konstrukte, 8 Triaden wie P7 und methoden.md. Gutman 1982 und Reynolds & Gutman 1988: Ebenen, Implikationsmatrix, HVM, Cut-off. Aaker 1997: fünf Dimensionen, 42 Eigenschaften, 15 Facetten. Kroeber-Riel 1993. Literaturangaben (Zeitschrift, Jahrgang, Heft, Seiten) korrekt. Unsicherheiten durchgängig als „mit Vorlesung abgleichen“ bzw. „Modellwissen, unsicher“ markiert.",
+   "Rechtschreibung und Umlaute in allen sichtbaren Texten fehlerfrei. Anrede „Sie“ einheitlich; die Du-Form nur in der zitierten Leiterfrage (begründet), „ihr“ nur in zitierten Rückfragen. HOLY überall in Versalien, außer in Originaltiteln von Quellen. Markensteuerrad, Brand Persona, Repertory Grid, Limbic Map einheitlich geschrieben.",
+   "Roter Faden im Kern schlüssig: Die Leitfrage von f02 wird in f11 aufgegriffen; Titel sind Kernaussagen. Die Ableitungskette ist sichtbar: Attribute als Startpunkte des Laddering, Tonalität als Prüfmaßstab der Fit-Bewertung, Markenkern = stärkste Leiter + eigenes Markenversprechen, Lücken → Empfehlungen mit Kanal. Die Aufgabe ist vollständig abgedeckt: fünf Persona-Dimensionen + Limbic Map, Repertory Grid, Laddering, Analogien Mensch/Tier, Kommunikationsanalyse mit Instagram, Facebook, YouTube, Corporate Design, Schlüsselbild, Bildwelt, Logo und Slogan, Steuerrad, Backup mit Methodik und Prompt-Log.",
+   "B2: Die KI-Nachweis-Nummern 07 (Web-Präsentation) und 13 (Recherche-Dossier) stimmen mit ki-nachweis.md überein. B1 und B2: 155 / 42 / 32 korrekt aus Dossier Anhang A. P-Nummern in B2 passen zu prompts.md.",
+   "LIESMICH und QUELLEN: Die Summe 14:00 entspricht den data-zeit-Werten (840 s). Optionale Folie 01b, Plan B, PDF mit 22 Seiten, Lizenzen (OFL über Fontsource, qrcode-generator 2.0.4 MIT) stimmen mit den Dateien überein. Die Exporte sind jünger als index.html."
+  ],
+  "gesamturteil": "Inhaltlich und faktisch ist die Präsentation sehr sauber. Ich habe jede sichtbare Zahl und Jahreszahl über HOLY, Wettbewerber und den Markt sowie alle Belege in Sprechtext, B3 und B8 am Dossier geprüft. Werte, Quellennummern und Faktenstatus stimmen. Keine verworfene Aussage wird verwendet, unsichere Angaben sind gekennzeichnet, ebenso Selbstauskünfte und Hypothesen. Die Beispieldaten passen folienübergreifend genau zusammen (f06 ↔ B4, f07 ↔ B5, f08 ↔ marke.js, f09 ↔ B6, f10 ↔ f03–f09b, f11 ↔ f10). Die Modellbegriffe sind korrekt und mit Unsicherheitshinweisen versehen; Rechtschreibung, Umlaute und Anrede sind fehlerfrei. Hohe Befunde gibt es nicht.\n\nEs gibt acht mittlere Befunde:\n- „160 mg Koffein“ im Steuerrad gilt nur für Energy und ist auf keiner Methodenfolie hergeleitet.\n- Das Kaufverhalten der Persona ist als „Daten“ markiert, obwohl das Dossier es als Hypothese führt.\n- Folie 02 nennt „echte Befragte“, obwohl die Interviews noch ausstehen; ungekennzeichnet und nicht in der Checkliste.\n- Der Sprechtext von f03 sagt „Geprüfte Bilanzzahlen gibt es nicht“; das widerspricht Dossier 2.4.\n- Empfehlung „ein Raptor“ steht in Spannung zu „Bildwelt zu jung“ und zu „Waschbär, kein Adler“.\n- Die größte Limbic-Lücke (Dominanz) wird in Synthese und Fazit nicht aufgegriffen.\n- Folie 04 weicht vom inzwischen übernommenen Persona-Steckbrief ab.\n- Für „Red Bull ≈ 58 %“ fehlt die vom Dossier verlangte Quellenkritik (Lehrbrief mit Red Bull).\n\nAlle acht lassen sich mit wenigen Textänderungen in index.html beheben; die genaue Fundstelle steht jeweils im Vorschlag. Dazu kommen 14 niedrige Befunde (Präzisierungen, Sprechtext, Dokumentation). Vor dem 26.10. bleiben wie geplant: Beispieldaten durch echte Ergebnisse ersetzen, Titel von 06, 07 und 09 nach der Auswertung festlegen, die Zahl der Interviews überall einheitlich eintragen.\n\nHinweis für die Hauptsitzung: Ich habe keine Projektdateien geändert. Den Prüfordner praesentation/_abschluss-fakten/ habe ich wie beauftragt gelöscht. Er war in einem früheren Commit bereits eingecheckt, deshalb zeigt git status jetzt die gelöschten Dateien (D) – bitte die Löschung mitcommitten. Quellen: Recherche-Dossier holy-recherche.md (Kap. 1–9, Anhang A und B), prompts.md, methoden.md, persona-steckbrief.md, dossier-buendel-b.md, ki-nachweis.md (nur gelesen). Die Modellangaben (Esch, Häusel, Kelly, Gutman, Reynolds & Gutman, Aaker, Kroeber-Riel, Kotler, Hieronimus, Mäder) beruhen auf meinem Modellwissen und sind nicht per Websuche geprüft. Unsicher sind insbesondere die Motive der Limbic Types und die Beschriftung des Tonalitätsfelds nach Esch."
+ },
+ "Zweite Prüfung: Anforderungen": {
+  "befunde": [
+   {
+    "schwere": "mittel",
+    "folie": "f04 (Brand Persona), auch B3",
+    "kategorie": "inhalt",
+    "beschreibung": "Folie 04 hat noch den alten Stand aus dem Dossier und passt nicht mehr zu folienentwuerfe.md (Folie 4) und persona-steckbrief.md (Stand 16.10.). Die Mediennutzung zeigt Nutzungsquoten der 14- bis 29-Jährigen (ARD/ZDF 2025: Instagram 77, TikTok 50, Twitch 19), obwohl die Persona 28 Jahre alt ist und die Zielgruppe 25–40. Twitch steht als belegter Wert auf der Folie, gilt im Dossier 4.3 aber nur als Annahme für eine Gaming-Nische. Das widerspricht der Kernaussage „kein Gamer“. YouTube fehlt. Titel, Geografie und Psychografie weichen vom Folienentwurf ab („Ende 20, Schichtdienst – und Energie ohne Zucker“, Großstadt/Dortmund). folienentwuerfe.md führt den Austausch der f04-Werte ausdrücklich als offenen Punkt.",
+    "vorschlag": "Nach Yannicks Freigabe des Steckbriefs den Folienentwurf 4 in das Daten-JSON von f04 übernehmen: Statista Consumer Insights 2025, Energy-Drink-Konsument:innen, YouTube 73 (Ø 63), Instagram 71 (Ø 58), TikTok 58 (Ø 41), mit Ø-Strich und Quellenzeile laut Entwurf. Dazu Geografie und Psychografie angleichen und die B3-Zeile „Mediennutzung“ sowie die Notizen (Schritt 3) anpassen. Diese Werte beschreiben die Kategorie, nicht HOLY; die Quelle steht in persona-daten.md."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "f10, f11 (geringfügig auch f02, f03, f04)",
+    "kategorie": "lesbarkeit",
+    "beschreibung": "Das Wortbudget von höchstens ca. 40 sichtbaren Wörtern je Hauptfolie wird deutlich überschritten. pruefen.mjs zählt im Endzustand f10: 68, f11: 61, f02: 43, f03: 44, f04: 47 Wörter. Mit eigener Zählung ohne Metaangaben kommen f10 auf ca. 69 und f12 auf 48 Wörter. Die Kommentare im Code unterschätzen das (f10 „ca. 60“, f11 „ca. 48“). Der schrittweise Aufbau mildert das Problem, aber der Endzustand bleibt dicht und wird im PDF und in der Übersicht genau so gezeigt.",
+    "vorschlag": "f10: je Feld höchstens 2–3 Stichworte, „rational/emotional“ und die Zusätze an „Hard/Soft Facts“ streichen, „Berlin“ nur im Sprechtext nennen. f11: „– frech, Community-nah“ in der Kern-Zeile streichen und die Kanal-Chips auf ein Wort reduzieren. Die „wie genau“-Zeile in die Notizen verschieben. f02–f04: je 3–7 Wörter kürzen, z. B. f04 „z. B. Ruhrgebiet“ und f03 die Rollen-Chips „Pionier/Marktführer“."
+   },
+   {
+    "schwere": "mittel",
+    "folie": "Referentenansicht (alle Folien, vor allem lange Notizen wie f03, f06, f07, f10)",
+    "kategorie": "interaktion",
+    "beschreibung": "Scrollt die Referentin den Sprechtext von Hand, springt er spätestens nach 3 s zum aktuellen Absatz zurück. Ursache: Das Referentenfenster sendet alle 3 s „hallo“, das Vortragsfenster antwortet mit „zustand“, und referentAktualisieren() ruft jedes Mal sprechtextZumSchritt() auf (deck.js ca. Z. 2342 und 2416). Gemessen auf f10: scrollTop wird von Hand auf 3802 gesetzt und steht nach 7 s wieder auf 363. Das Notizfeld ist bei 1440 × 900 nur 277 px hoch (Notizen auf f10: 4.079 px). Die Absätze „Mögliche Rückfragen“ und „Belege“ lassen sich in der Fragerunde deshalb praktisch nicht lesen.",
+    "vorschlag": "In referentAktualisieren() nur dann automatisch scrollen, wenn sich Folie oder Schritt geändert haben (alten Schritt vor dem Überschreiben von letzterReferentSchritt merken). Alternativ das automatische Scrollen nach einer Wheel- oder Scroll-Eingabe für ca. 20 s aussetzen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f08 (Referentenansicht, Vorschau „Als Nächstes“)",
+    "kategorie": "interaktion",
+    "beschreibung": "Die Vorschau des nächsten Schritts (Auflösung der Umfrage) ist ein Klon. Er wird nur beim Zustandsabgleich neu gebaut, nicht bei der Nachricht „umfrage“. Bis zu 3 s nach Live-Stimmen zeigt die Vorschau deshalb noch die Beispielwerte (gemessen: aktuell n = 4, Vorschau n = 64, „27 % sehen HOLY wie wir“). Der Sprechtext verweist auf diese Zahl („[27 %] sehen das auch“).",
+    "vorschlag": "Bei den Kanal-Nachrichten „umfrage“ und „wortwolke“ im Referentenfenster auch die Vorschau neu klonen (referentAktualisieren oder nur den Vorschau-Teil aufrufen)."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f08",
+    "kategorie": "interaktion",
+    "beschreibung": "Steht noch keine Stimme fest, zeigt die Aussagezahl in Schritt 0 „– %“, nach dem Klick auf Schritt 1 (Animation „zaehlen“) aber „0 % sehen HOLY wie wir: als Waschbär“. Das ist in LIESMICH und den Notizen als „Schritt 1 überspringen“ dokumentiert, wirkt im Ernstfall aber peinlich.",
+    "vorschlag": "Bei n = 0 die Animation „zaehlen“ der Aussagezahl unterdrücken (ist-leer beibehalten) oder die Aussage ausblenden und „Keine Stimmen“ zeigen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f02 (auch 09b → 10)",
+    "kategorie": "animation",
+    "beschreibung": "Bei schnellem Mehrfachklicken (Clicker-Doppeldruck, 3–10 Tasten im Abstand von 60–100 ms) über den Morph-Übergang des Steuerrads hinweg bleibt die Folie 1,7–4 s auf einem Zwischenbild stehen (html.wechsel-laeuft). Auf f02 sind dann nur Titel und Rad zu sehen, ohne Leitfrage und Methodenkarten; auf f10 fehlt das Band für den Markenkern. Danach ist alles korrekt (geprüft: alle Elemente opacity 1, nicht verdeckt). Es gibt keine Konsolenfehler.",
+    "vorschlag": "Bei neuer Navigation während eines laufenden Übergangs laufenderUebergang.skipTransition() aufrufen und laufende Schritt-Animationen beenden (die Logik aus Deck.testmodus wiederverwenden), damit sich Klicks nicht aufstauen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f10",
+    "kategorie": "gestaltung",
+    "beschreibung": "Die Nummern-Badges der Lücken (1/2) stehen genau dort, wo sonst der Trenner „·“ zwischen den Stichworten steht: „gutes Gewissen ❶ dazugehören“, „160 mg Koffein ❶ zuckerfrei“, „Comic-Tiere ❷ Gelb & Schwarz“, „Marco, 28 ❷ Abenteurer“. Aus der Entfernung ist nicht klar, wo ein Stichwort endet. Das liest sich wie „gutes Gewissen 1 dazugehören“.",
+    "vorschlag": "Badge direkt an das markierte Stichwort setzen (hochgestellt, mit Abstand) und den Trenner „·“ danach sichtbar lassen, oder das Badge vor das Stichwort stellen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f10, f12, f02, f06, f09, f01",
+    "kategorie": "lesbarkeit",
+    "beschreibung": "Einige inhaltlich wichtige Beschriftungen sind auf Hauptfolien nur 22–24 px groß. Sie zählen nicht als Fließtext, sind aber nicht als Metaangabe markiert: f10 Kartenköpfe „MARKENNUTZEN“ usw. (24 px) und „Hard Facts/rational/emotional“ (22 px), f12 Ringtext und „Folie 0x“ im Rad (22–24 px), f02 „Folie 03 →“ (22 px), f06 Chip „Hürde“ (22 px), f09 „Schlüsselbild?“ (22 px), f01 „Gruppe/Termin“ (22 px). Nach der Projektregel (Metaangaben ab 22 px) ist das zulässig, aus der letzten Reihe aber knapp.",
+    "vorschlag": "Die f10-Kartenköpfe und die Chips „Hürde“ und „Schlüsselbild?“ auf 26–28 px setzen. Rein beschriftende Elemente konsequent mit data-meta auszeichnen, damit pruefen.mjs sie richtig einordnet."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "alle Hauptfolien (Zeitplan)",
+    "kategorie": "konsistenz",
+    "beschreibung": "Der Zeitplan weicht vom vorgegebenen Ablaufplan ab. Die Summe der Sollzeiten beträgt 840 s (14:00, 60 s Puffer) statt 885 s (14:45). f04 80 statt 90, f05 55 statt 60, f06 80 statt 90, f09+f09b 115 statt 120, f11 75 statt 90. Zusätzlich gibt es die Folien f08b, f09b und B8. Die Änderung ist bewusst und in LIESMICH §3 begründet (Puffer für zwei Live-Momente). Veraltete Angaben stehen noch im Kommentarkopf von f11 („Bündel C · 90 Sekunden“), in den Wortbudget-Kommentaren von f10/f11 und in der B8-Notiz (Quellzeile f03 „2–5, 7–9 …“, tatsächlich „2–5, 8, 9 …“).",
+    "vorschlag": "Die Hauptsitzung bzw. Yannick sollte den 14:00-Plan als verbindlich bestätigen und die Planungsunterlagen angleichen. Die veralteten Kommentare in index.html korrigieren."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f02",
+    "kategorie": "inhalt",
+    "beschreibung": "Die Methodenkarten behaupten bereits durchgeführte Schritte: „Triaden: KI-simulierte und echte Befragte“, „mit KI und echten Interviews“, „KI und echte Antworten“, „mit KI codiert“. Die Folie trägt dabei keine Pille. Die echten Kurzinterviews sind laut B1 aber noch „teils geplant“. Die Checkliste in LIESMICH §12 („Zahl der echten Kurzinterviews“) nennt f02 nicht.",
+    "vorschlag": "f02 in die Checkliste aufnehmen (Kurzbeschreibungen an die tatsächliche Durchführung anpassen) oder bis dahin neutral formulieren (z. B. „Triaden mit simulierten + Kurzinterviews“)."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f03",
+    "kategorie": "inhalt",
+    "beschreibung": "Die Begründung „Fordert Red Bull und Coca-Cola heraus“ ist in der Metazeile mit „Challenger-Brand“ [13] und Red Bull ≈ 58 % [26] belegt. Die wörtliche Aussage stammt aber aus Trending Topics [7] („fordert Coca-Cola, Red Bull und Co. heraus“, Dossier ✔). [7] steht nur in den Notizen.",
+    "vorschlag": "In den Daten von f03 unter begruendung.quelle „[7, 13]“ ergänzen ([7] ist in B8 bereits aufgelöst)."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f09, f09b, f12; QUELLEN.md §5",
+    "kategorie": "dokumentation",
+    "beschreibung": "Die Kennzeichnung der Beispieldaten ist nicht ganz einheitlich. QUELLEN.md nennt die Pille „Beispieldaten“ für die Folien 06–11, f09b hat aber keine (stattdessen „Hypothese“ an der Fit-Bewertung). Die Fazit-Zeile auf f12 fasst Beispielergebnisse ohne Hinweis zusammen. Auf f09 ist die Zahl „50“ in „Hauptmotiv in 50 codierten Beiträgen“ ein Beispielwert (stichprobe.beispiel: true), aber nicht gestrichelt markiert.",
+    "vorschlag": "QUELLEN.md präzisieren (f09b: Fakten belegt, Fit = Hypothese) und die „50“ in der f09-Überschrift wie die übrigen Beispielwerte markieren oder „(Beispiel)“ ergänzen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "Titel mit Markenname (f03, f05–f11)",
+    "kategorie": "gestaltung",
+    "beschreibung": "Farbtausch über marke.js: Mit einer dunklen oder gesättigten Primärfarbe (getestet #E4003A, Kopie in _abschluss-test) wirkt der Markerstreifen hinter dem Markennamen in den Titeln wie ein Durchstreichen. Bei HOLY-Gelb tritt das nicht auf. Die Kontrastprüfung bleibt trotzdem fehlerfrei.",
+    "vorschlag": "Den Marker aus einem aufgehellten Ton berechnen, z. B. color-mix(in oklab, var(--marke-primaer) 35%, var(--f-hintergrund)), oder die Helligkeit begrenzen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f10 (Robustheit), Referentenansicht",
+    "kategorie": "technik",
+    "beschreibung": "Drei Randfälle: (1) Mit einem längeren Markennamen (Test „TESTMARKE“) bricht der Titel auf f10 zweizeilig um, und der Kernlabel im Rad schrumpft auf 25 px (Warnung von pruefen.mjs). (2) Das Referentenfenster (Taste P) übernimmt keine Adressparameter außer dem Hash. Mit ?optional=alle haben die beiden Fenster deshalb unterschiedliche Folienlisten (23 statt 22), und die Referentenansicht kann f01b nicht zeigen. Über marke.js funktioniert es korrekt (getestet). (3) Deck.gehe('f10','ende') nutzt nach einer Änderung der Wortwolke eine veraltete Schrittzahl (8/9 bzw. 9/8). Das normale Blättern ist korrekt (f10.0–9, Rücksprung von f11 auf f10.9).",
+    "vorschlag": "In referentOeffnen() die Parameter optional, thema und modus übernehmen. Die Schrittzahl von f10 vor der Auflösung von „ende“ neu berechnen. Die Titellänge von f10 bei einem Markenwechsel in LIESMICH erwähnen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "f02 (alle)",
+    "kategorie": "inhalt",
+    "beschreibung": "Der Unterschied Identität (Selbstbild) vs. Image (Fremdbild) ist ein Punkt der README-Checkliste. Er kommt nur im Sprechtext vor (f02, Klick 1–3) und im optionalen Abgleich auf f10. Auf keiner Pflichtfolie ist er sichtbar.",
+    "vorschlag": "Optional auf f02 die Karten Repertory Grid und Laddering mit einem kleinen Etikett „Fremdbild“ versehen, alles Übrige als „Selbstbild“. Dafür an anderer Stelle Wörter einsparen."
+   },
+   {
+    "schwere": "niedrig",
+    "folie": "– (Repository)",
+    "kategorie": "technik",
+    "beschreibung": "Testausgaben früherer Prüfungen wurden eingecheckt: praesentation/_abschluss-fakten/ (text.mjs und 23 PNGs), nicht in .gitignore. Während dieser Prüfung hat ein anderer Prozess den Ordner im Arbeitsverzeichnis gelöscht; git status zeigt 24 gelöschte Dateien, nicht committet. Außerdem liegen in _abschluss-test/ noch die ignorierten Ausgaben vom 16.10. (bilder/, pruefung/, pruefung.log, test-funktionen.mjs). Sie stammen nicht von dieser Prüfung, deshalb habe ich sie nicht gelöscht.",
+    "vorschlag": "Hauptsitzung: die Löschung bewusst committen, „_abschluss-*/“ in praesentation/.gitignore aufnehmen und den alten Inhalt von _abschluss-test/ entfernen, sobald keine parallele Prüfung mehr läuft."
+   }
+  ],
+  "erfuellt": [
+   "Offline per file:// in Chromium 141 ohne --allow-file-access-from-files geprüft (wie Doppelklick): 0 externe Anfragen, 0 Konsolenfehler oder -warnungen, 0 Seitenfehler, 0 fehlende Dateien, in allen Testläufen (Haupt- und Referentenfenster, Druck, Themen, Farbtausch-Kopie).",
+   "Schriften lokal als woff2 (latin und latin-ext) mit OFL-Lizenztexten, Fontsource 5.3.0 (Version per package.json bestätigt). qrcode-generator 2.0.4 (MIT) ist byte-identisch mit dist/qrcode.js aus npm, Lizenzdatei liegt bei.",
+   "Tastaturnavigation: vorwärts alle 62 Schritte f01.0–f12.0 und rückwärts exakt gespiegelt. Leertaste/Bild↓/Enter/↓ und Bild↑/Rücktaste/↑ funktionieren, ebenso Pos1/Ende. Nach f12 geht es nicht automatisch ins Backup. Ziffernsprünge 3, 6, 8b, 9B, 10, 12 gehen zur richtigen Folie, 99 zeigt den Hinweis „gibt es nicht“. F5 stellt #f06.2 wieder her.",
+   "Übersicht (O) mit allen 22 Folien inkl. Backup, Sollzeit-Kopf „14:00 von 15:00“, Pfeile + Enter, Esc. Hilfe (H) ist vollständig. Schwarzbild (B) wird mit jeder Blättertaste aufgehoben. T schaltet Editorial → Bento → Keynote, D hell/dunkel.",
+   "Referentenansicht (P, zweites Fenster): Synchronisation in beide Richtungen (Pfeile, Ziffern, Thema, Schwarzbild nur im Saal). Notizen sind schrittgenau markiert. Gesamtuhr gegen 15:00, Folienuhr gegen Sollzeit, Planabgleich („0:43 vor Plan“), Pause, Zurücksetzen, A−/A+ und Uhrzeit funktionieren. Direkter Aufruf ?referent ohne opener koppelt über BroadcastChannel in beide Richtungen.",
+   "Live-Umfrage f08: Beispielwerte (64) mit Pille; die erste echte Stimme verwirft sie. Ziffern 1–5, Klick +1, Umschalt-Klick und Rechtsklick −1, „Werte“ mit Tab-Eingabe, Doppelklick für Einzelwert, „Zurücksetzen“ mit Bestätigung. Die Auflösung rechnet den Prozentwert selbst (40 % bei 20/50). „1“ „0“ Enter springt zu f10 und nimmt die Stimme zurück. Ab Schritt 2 zählen Ziffern nicht mehr. Mit eingetragenem Link wird der QR-Code samt Kurzlink gezeichnet. Stimmen erscheinen auch im Referentenfenster und lassen sich dort zählen.",
+   "Live-Wortwolke f01b: Tippen inkl. Kürzeltasten (o, p, f, b, t, d, h, Pfeile, Leertaste, Ziffern) löst keine Navigation aus. Mehrfachnennungen werden größer. Alt+Klick entfernt ein Wort, Bild↓ verlässt das Feld und blättert, „Wolke leeren“ hat eine Bestätigung. Auf f10 erscheint im Schritt 9 der Abgleich mit eigenem Titel („Ihr Bild von HOLY trifft unseren Kern – teilweise“, „3 von 6“). Das Referentenfenster zeigt die Wörter (bei f01b über marke.js).",
+   "Steuerrad-Klicks führen zur richtigen Folie: f02-Karten (Tab-Reihenfolge wie im Vortrag), f10-Felder und f12-Felder springen nach 03/04/06/07/08/09, der Persona-Ring auf f12 und im Sprungmenü nach 04. Das Mini-Rad steht auf 03–09b und öffnet das Sprungmenü (Esc schließt). Die Verweise auf f11 springen nach f10.7, f10.8 und f09b.4. Backup-Knopf „Zu Folie“ plus Taste Z führt zurück.",
+   "Druck/PDF: ?druck und Strg+P im normalen Fenster ergeben 22 Seiten mit allen Endzuständen; danach bleibt der Zustand erhalten. ?druck&notizen ergibt 43 Seiten. export/praesentation.pdf (22 S.) und export/folien sind neuer als die letzte Änderung an index.html.",
+   "Reduzierte Bewegung: Nach dem Blättern laufen keine Animationen mehr, Endzustände sofort, 70 schnelle Schritte ohne Fehler. Touch: Wischen links/rechts blättert, im Hochformat erscheint der Hinweis „Gerät quer halten“. 16:10 (1280 × 800) mit Letterbox ohne Abschneiden.",
+   "pruefen.mjs mit --schritte ist in Editorial, Bento und Keynote jeweils hell und dunkel fehlerfrei (Kontrast WCAG AA, Schriftgröße, Überlauf, Überlappung). Es gibt nur die Warnungen zum Wortbudget.",
+   "Farbtausch über marke.js in einer Kopie getestet: Rot/Navy, neutral (''), sehr helle Farben – überall 0 Kontrastfehler. Markenname über data-marke wird überall ersetzt; hart verdrahtet bleibt „HOLY“ nur in Quellenangaben, Profilnamen (Zitat) und Logo-Copyright. marke.js ist auf Deutsch, verständlich kommentiert und nennt Quelle und Status je Farbe.",
+   "Fakten gegen das Recherche-Dossier geprüft, alle mit Quelle und Status korrekt: Zeitleiste 2020/2021/2022/2023/2025/2026, ≈170 Mio. € ✎ [13, 16], >2 Mio. Kund:innen ✔ [13, 14], 170+ ✎ [17], „Challenger-Brand“ [13], Red Bull ≈ 58 % [26], Claim [5], Jost 25–40/⅔ männlich [24], Follower 383.000/126.000/20.500 und 2,3 Shorts/Woche [19, 122–124], Farben und Schriften 6.3, Claims 6.5, S1–S5, 160 mg Koffein, 155/42/32 (Anhang A), 160 Quellen. B8 löst alle 31 sichtbaren Nummern passend zu Anhang B auf.",
+   "Beispieldaten sind sichtbar gekennzeichnet: Pillen auf 06, 07, 08, 08b, 09, 10, 11, B2, B4, B5, B6 und in der Umfrage, gestrichelte Beispielwerte, „(Beispiel)“ beim Wettbewerbskontrast. Hypothesen tragen „H“, Persona und Zitat „fiktiv“, die Bilder „Platzhalter“. B4- und B5-Rechnungen sind konsistent mit f06/f07 (Ø W1–W5 nachgerechnet).",
+   "Aufgabe und Methoden sind vollständig abgedeckt (README, methoden.md): Persona mit fünf Dimensionen und Daten/Annahme-Kennzeichnung, Limbic Map (Typen und Lage nach Häusel stimmig), Repertory Grid mit Idealmarke und Ø-Wettbewerb, Laddering/HVM mit Cut-off, Analogien Mensch/Tier mit Aaker-Dimensionen, Kommunikationsanalyse mit CD und Fit ✓/~/✗, Steuerrad-Synthese mit zwei Lücken, drei Empfehlungen mit Kanal, Backup B1–B8 mit Prompt-Log und Methodik. Die Zuordnung Methode → Feld ist auf f02, im Mini-Rad und auf f10 sichtbar. Die Literaturangaben in B7 stimmen.",
+   "Bewertungskriterien Visualisierung und Vermittlung: einheitliches, modernes Editorial-Design mit Kernaussagen als Titel, Grafiken statt Tabellen, schrittweiser Aufbau mit Animationen (Count-ups, Linien zeichnen, View-Transition-Morph des Rads) und interaktiven Elementen (Rätsel-Einstieg mit Zurufen, Umfrage mit QR-Code/Handzeichen, Wortwolke, klickbare Agenda und Sprungmenü). Die Sprechtexte haben Zeitangaben je Schritt und Rückfrage-Antworten.",
+   "Texte sind deutsch mit korrekten Umlauten, beim Durchlesen aller sichtbaren Folientexte keine Tippfehler gefunden. LIESMICH.md und QUELLEN.md sind vollständig, die beschriebenen Bedienwege verhalten sich wie dokumentiert. Versionen und Lizenzen (Fontsource 5.3.0, qrcode-generator 2.0.4, playwright-core 1.56.1) stimmen."
+  ],
+  "gesamturteil": "Die Präsentation ist technisch ausgereift und erfüllt die Kernanforderungen. Sie läuft offline per file:// ohne Fehler oder externe Anfragen; Navigation, Übersicht, Referentenansicht, Umfrage, Wortwolke, Steuerrad-Sprünge, Mini-Navigator, Druck/PDF, reduzierte Bewegung, Themen und der Farbtausch über marke.js funktionieren im Test. Die HOLY-Fakten sind sauber mit Quelle und Status aus dem Dossier belegt, Beispieldaten sind gekennzeichnet. Das Design ist modern, die Animationen sind gezielt eingesetzt, und die Interaktion (Rätsel, Umfrage, Wortwolke, klickbare Agenda) ist überzeugend.\n\nEin inhaltlicher Mangel: Folie 04 hat noch den alten Persona-Stand (14- bis 29-Jährige, Twitch), statt Folienentwurf und Steckbrief vom 16.10. zu folgen. Dazu kommt ein Verstoß gegen die Vorgabe: Folie 10 und 11 überschreiten das Wortbudget deutlich (68 bzw. 61 statt ca. 40). Der wichtigste neue Technikbefund: In der Referentenansicht springt der Sprechtext alle 3 s zum aktuellen Absatz zurück, sodass sich Rückfragen und Belege nicht in Ruhe lesen lassen.\n\nDie übrigen Befunde sind niedrig: kleine Darstellungs- und Robustheitsthemen, veraltete Kommentare, eine bewusste und dokumentierte Abweichung vom Zeitplan (14:00 statt 14:45) und eingecheckte Testausgaben. Unabhängig von dieser Prüfung bleiben die bekannten Aufgaben der Gruppe bis zum 23.10. offen (echte Daten, Fotos, Umfrage-Link, Interviews, Abgleich mit der Vorlesung). Nach Behebung der drei mittleren Befunde ist die Präsentation vortragsreif.\n\nPrüfweg: eigene Playwright-Skripte (playwright-core 1.56.1, Apache-2.0, nur zum Testen, nichts davon ins Projekt übernommen) und werkzeuge/pruefen.mjs. Alle Screenshots habe ich selbst angesehen. Projektdateien wurden nicht verändert. Mein Testordner _abschluss-test/streng-ko/ ist gelöscht. Die übrigen, nicht von mir stammenden Inhalte in _abschluss-test/ (Stand 16.10.) habe ich stehen lassen, weil parallel offenbar ein weiterer Prüfprozess im Ordner praesentation/ arbeitet (er hat _abschluss-fakten/ gelöscht). Die Einordnungen zu Esch, Häusel, Kelly, Gutman, Reynolds & Gutman, Aaker und Kroeber-Riel stammen aus meinem Modellwissen und sind mit den Vorlesungsfolien abzugleichen. Unsicher bin ich bei Hieronimus 2003 / Mäder 2005 in den Notizen von f08b."
+ },
+ "Letzter Feinschliff": {
+  "behoben": [
+   "Fortsetzung nach Nutzungslimit: Ein Teil der Befunde war schon im Zwischenstand umgesetzt und eingecheckt (Commit 944155a). Alle Punkte habe ich gegen den aktuellen Code geprüft. Die übrigen Punkte sind jetzt umgesetzt, nicht committet (macht die Hauptsitzung).",
+   "f04 Persona (mittel) und Steckbrief-Abgleich: Titel „Ende 20, Schichtdienst – und Energie ohne Zucker“, „Großstadt, Mietwohnung“, Mediennutzung jetzt Statista CI 2025 (YouTube 73/Ø 63, Instagram 71/Ø 58, TikTok 58/Ø 41) mit Strich für den Durchschnitt und eigener Quellenzeile, Psychografie wie im Folienentwurf (Zwischenstand). Neu: B3-Zeile „Mediennutzung“ auf Statista CI 2025 umgestellt, mit neuem Status „extern“ und erklärender Fußzeile. B3-Notizen aktualisiert, Twitch als Randkanal benannt. f04-Notiz „Erfolg und Spaß über dem Schnitt“ an den korrigierten Steckbrief angepasst (Spaß liegt etwa im Schnitt).",
+   "f04 Kaufverhalten (mittel): als „annahme“ markiert, Quelle „Annahme aus Shop-Angebot [1, 48] und Kundenstimmen [89]“. Notizen und Belege sagen jetzt „Kundendaten gibt es nicht“ (Zwischenstand, geprüft).",
+   "Wortbudget (mittel): f10 hat höchstens 3 Stichworte je Feld, „Berlin“ und „viele Sorten“ nur im Sprechtext, „Hard/Soft Facts“ ohne „rational/emotional“ (data-seiten=\"kurz\"). f11 ohne Kern-Zusatz, Kanal-Chips je ein Wort, „wie genau“ gekürzt. f02 gekürzt, f03 ohne die Chips Pionier/Marktführer, f04 eine Zeile Geografie. Beschriftungen tragen data-meta. Stand laut pruefen.mjs: f02 37, f03 44, f04 44, f10 68→48, f11 61→55 (Druck) bzw. 43 im Vortrag. Kommentare in index.html korrigiert (f10 „ca. 45“, f11 Wortbudget, Bedienungsnotiz f10).",
+   "Referentenansicht springt beim Scrollen zurück (mittel): referentAktualisieren() merkt sich den alten Schritt und scrollt nur noch bei einem Folien- oder Schrittwechsel (deck.js). Getestet: scrollTop bleibt nach 7,5 s bei 4289, nach dem nächsten Schritt rollt der Text wieder zum Absatz.",
+   "f08 Vorschau „Als Nächstes“ veraltet: neue Funktion Deck.vorschauAuffrischen(), aufgerufen aus umfrageNeuLaden und wolkeNeuLaden. Der Klon setzt die Umfrage-Prozente sofort auf den Endwert. Getestet: Die Vorschau zeigt 67 % und 33/67 % innerhalb von 0,5 s statt der Beispielwerte (27 %).",
+   "f08 „0 % sehen HOLY wie wir“ bei n = 0: Ohne Stimmen hat die Zahl keinen data-ziel mehr, angezeigt wird nur „Noch keine Stimmen“ (Text in marke.js über aussageLeer änderbar). Notizen und LIESMICH §6 angepasst.",
+   "Klickstau beim Morph (f02→f03, f09b→f10): laufendesBeenden() in weiter() und zurueck() bricht den laufenden Übergang ab (skipTransition) und beendet laufende Animationen und Zähler. Ein Folienwechsel während eines laufenden Übergangs passiert sofort. Gemessen: nach 3–10 Klicks im Abstand von 60–100 ms ist alles in 0,3–1,2 s stabil und gleicht dem Sollbild. wechsel-laeuft verschwindet sofort. Ein normaler Einzelklick wird weiter animiert.",
+   "f10 Nummern-Badges: hochgestellt direkt am Wort, der Trenner „·“ bleibt sichtbar (Zwischenstand, im Screenshot geprüft).",
+   "Kleine Beschriftungen: Kartenköpfe auf f10 und die Chips „Hürde“ (f06) und „Schlüsselbild?“ (f09) jetzt 26 px. Ringtexte, Feldnamen, Kartenköpfe und „Hard/Soft Facts“ tragen data-meta (Zwischenstand). Neu: „Gruppe/Termin“ auf f01 mit data-meta.",
+   "Zeitplan: Kommentarkopf f11 auf „75 Sekunden“ (Zwischenstand). LIESMICH §3 nennt jetzt 09b und den Hinweis zu 14:00 statt 14:45 mit Bestätigungsaufgabe. Die B8-Notiz zur Quellzeile stimmt jetzt („2–5, 7–9 …“ wird wirklich so gerendert).",
+   "f02 Methodenkarten (mittel und niedrig): „KI-simuliert + Kurzinterviews“, „Means-End-Chain: KI + Kurzinterviews“, Fußzeile „Ergebnisse geprüft“, Kasten FOLIE 02 ergänzt (Zwischenstand). Neu: LIESMICH §12 nennt Folie 02 beim Punkt Kurzinterviews.",
+   "f02 Identität und Image: Etikett „Fremdbild“ an Repertory Grid und Laddering (Zwischenstand, geprüft).",
+   "f03: begruendung.quelle mit „fordert … heraus“ ✔ [7]. Zweite Fußzeile zu Red Bull ≈ 58 % (Umsatzanteil DE, Circana MAT 08/2025, Lehrbrief mit Red Bull, Dossier 9.4). „große TV-Kampagne“. Sprechtext zu den Bilanzzahlen nach Dossier 2.4 und 9.1 korrigiert (Zwischenstand). Neu: B8 [26] mit „(mit Red Bull) · Circana MAT 08/2025“.",
+   "160 mg Koffein (mittel): „Energy: 160 mg Koffein“ auf f10 (Daten und Lücke), Fußzeile f10 „Energy-Koffein: Dossier 3.1 ✔ [56]“, f11 „Energy-Dose: 160 mg und „18+“ vorn“, Hinweis in den f03-Notizen (Zwischenstand). Neu: [56] in B8 ergänzt.",
+   "Roter Faden f05→f10/f11, Raptor-Widerspruch, Verbraucherschützer-Formulierung, Bruch-Erklärung auf f10: Notizen von f10 und f11 ergänzt und korrigiert, VKI/KONSUMENT [27, 28] und VZ Sachsen-Anhalt [82] richtig benannt (Zwischenstand, geprüft).",
+   "f05: Botschaft „Schichtpartner ohne Zucker“, Motive „Risikofreude · Mut · Freiheit“, Notiz zu den zugelassenen Nutzenaussagen (Dossier S1) (Zwischenstand).",
+   "B4 und f06: W3 „zuckerfrei“ = 6,0, wettbewerbMittel 4,78 (Zwischenstand, auf f06 weiterhin +2).",
+   "B6 Sprechtext (Raptor nur auf Instagram und YouTube im Beispielraster), f09 „Team & Popkultur“, B6-Ergebnis „Vier Motivgruppen“, f09-Titel mit „?“ und Kasten-Hinweis, die Zahl „50“ gestrichelt als Beispielwert (Zwischenstand).",
+   "f08b: Notiz zu Persönlichkeit, Emotionen, Beziehung und Erlebnisse. Kasten mit der Fußzeile n = 8 und dem Hinweis, den Bogen nur von Menschen ausfüllen zu lassen (Zwischenstand). Neu: als Punkt in LIESMICH §12.",
+   "f12: Pille „Beispieldaten“ am Fazit, Kasten und Notiz (Zwischenstand). Neu: in LIESMICH §12 aufgenommen.",
+   "B1: „nur mit Quelle; Suchauszüge als unsicher markiert“ und „repräsentative Befragung zeitlich nicht machbar“, Sprechtext entsprechend angepasst.",
+   "Prompt P6 einheitlich: SVG-Kommentar f04 und Kasten (Zwischenstand), dazu LIESMICH §12 und QUELLEN §3.",
+   "QUELLEN.md §5: Beispieldaten genau benannt (06, 07, 08, 08b, 09 nur Beiträge/Engagement/Motive, 10, 11, 12, B2, B4–B6; B1 teils geplant; 09b ohne Beispielwerte, nur Fit als Hypothese). Neu: Statista CI 2025 als ausdrückliche Ausnahme außerhalb des Dossiers.",
+   "Apostroph „Mach’s“ einheitlich typografisch, „Means-End-Chain“ auf f02 (Zwischenstand).",
+   "Marker hinter dem Markennamen im Titel: wird über oklch(from primaer max(l, 0,86) min(c, 0,18) h) immer hell berechnet. HOLY-Gelb bleibt unverändert, Rot #E4003A und Blau #0057B8 werden zu einem hellen Marker statt zu einem Durchstreich-Balken (Vergleichsbild erstellt), mit Ersatzwert für alte Browser.",
+   "Randfälle: referentOeffnen() übernimmt optional, thema, modus, primaer, sekundaer und bewegung (getestet: 23/23 Folien in beiden Fenstern). Deck.gehe(id, 'ende') ruft den neuen Hook schritteAktualisieren auf, f10 zählt den Abgleich neu (getestet: 8/8 → 9/9 → 8/8). Längerer Markenname: Hinweis in LIESMICH §8.",
+   "Repository: alle Testordner entfernt (_abschluss-test mit bilder/, pruefung/, pruefung.log, test-funktionen.mjs; _test, _abschluss-gestaltung und _abschluss-fakten gab es nicht mehr). .gitignore enthält _abschluss-*/ schon. Meine Testausgaben liegen nur im Scratchpad.",
+   "B8: Liste per Skript mit allen sichtbaren Nummern abgeglichen. [56] und „extern“ (Statista) ergänzt, [48] und [102] entfernt (nicht mehr sichtbar zitiert). Einträge gekürzt, weil die Liste sonst in die Fußzeile ragte. Die Notiz nennt die geprüften Folien.",
+   "Exporte erneuert: export/praesentation.pdf (22 Seiten, Druckmodus), export/uebersicht.png (2400 × 2734), export/folien/<id>.png (23 Bilder, 1600 × 900). Dazu LIESMICH (Stand, §3, §4, §6, §8, §12, §13), QUELLEN (Stand, §3, §5) und AUTOREN (§6a data-seiten=\"kurz\", §6c leere Umfrage, §8 Hook schritteAktualisieren, Deck.vorschauAuffrischen, Klickstau, neuer Abschnitt 13)."
+  ],
+  "nicht_behoben": [
+   {
+    "befund": "f05/f10 Limbic Type: master (A3 limbic-map.md, Commit f16a32b vom 17.10.) stuft Marco jetzt als „Hedonisten“ ein (B 30 / D 30 / S 40, Dominanz −10, neue Folgen, neuer Titel). Die Präsentation zeigt noch „Abenteurer“ (f05, Persona-Pille auf f10, Notizen f10/f11 „Dominanz-Lücke −20“).",
+    "grund": "Das war kein Befund dieser Prüfung, und der Inhalt ist eine noch nicht freigegebene Arbeit von Yannick (A3). Das Daten-JSON steht fertig in folienentwuerfe.md, Folie 5. Hinweis ist im Kasten FOLIE 05 und in LIESMICH §12 eingetragen."
+   },
+   {
+    "befund": "f04 und B3 beruhen auf dem Entwurf des Persona-Steckbriefs (Prüfung durch Yannick offen). Die Statista-Werte stehen nicht im Recherche-Dossier.",
+    "grund": "Freigabe kann nur Yannick geben. Die Quelle ist überall als „Kategoriedaten, nicht HOLY“ bzw. „extern“ gekennzeichnet (Folie 04, B3, B8, QUELLEN §5). Als Punkt in LIESMICH §12."
+   },
+   {
+    "befund": "Zeitplan 14:00 statt 14:45 (Ablaufplan) muss bestätigt und arbeitsplan.md angeglichen werden.",
+    "grund": "Entscheidung der Gruppe, und arbeitsplan.md liegt außerhalb meines Auftrags. Als Punkt in LIESMICH §3 und §12."
+   },
+   {
+    "befund": "Wortbudget noch leicht über ca. 40: f03 44 und f04 44 (jeweils mit Kicker; „Kund:innen“ zählt das Skript als 2 Wörter), f10 48 (mit Kicker), f11 55 im Druck bzw. 43 im Vortrag.",
+    "grund": "Weitere Kürzungen würden Feldinhalte der Synthese bzw. belegte Kennzahlen streichen. Die Folien bauen sich schrittweise auf. Gegenüber der Prüfung: f10 von 68 auf 48, f11 von 61 auf 55 bzw. 43. Wenn die Gruppe stärker kürzen will: „Zugehörigkeit“ (Tonalität) bzw. „knallig“ (Bild) auf f10 streichen."
+   },
+   {
+    "befund": "Echte Kurzinterviews (Folie 02, 06–08, B1, B2, B4, B5), Aaker-Bewertende auf f08b (n = 8), Codierung und Titel-„?“ auf f09, Beispieldaten-Pillen auf 06–12.",
+    "grund": "Das können nur die Erhebungen der Gruppe liefern. Alle Punkte stehen in LIESMICH §12 und in den Kästen vor den Folien."
+   },
+   {
+    "befund": "Optional aus Dossier 10.3: Jahresabschluss 2024 im Unternehmensregister abrufen und als Beleg ins Backup aufnehmen.",
+    "grund": "Dafür ist eine neue Recherche außerhalb des Dossiers nötig. Der Hinweis steht in den Belegen von f03 (Bündel A)."
+   }
+  ],
+  "dateien": [
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/index.html",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/deck.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/komponenten.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/10-markensteuerrad.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/js/folien/13-backup.js",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/komponenten.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/css/folien/13-backup.css",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/LIESMICH.md",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/QUELLEN.md",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/AUTOREN.md",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/praesentation.pdf",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/uebersicht.png",
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/folien/ (23 PNG, geändert: b1, b3, b4, b6, b8, f02–f06, f09–f12)",
+   "gelöscht: /home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/_abschluss-test/ (war in .gitignore, daher nicht in git status)",
+   "bereits im Zwischenstand 944155a eingecheckt (geprüft, nicht erneut geändert): css/folien/02-vorgehen.css, 04-persona.css, 06-repertory-grid.css, 09-kommunikationsanalyse.css, 10-markensteuerrad.css, js/folien/02-vorgehen.js, 04-persona.js, 09-kommunikationsanalyse.js"
+  ],
+  "screenshots": [
+   "/home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/export/uebersicht.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/b1/f10-ende.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/b1/f04-ende.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/b1/f03-ende.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/b1/b3-ende.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/b2/b8-0.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/i2/f08-ohne-stimmen-schritt1.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/i4/referent-f08.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/marker-vergleich.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/bogen-dunkel-1.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/bogen-dunkel-2.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/bogen-hell-1.png",
+   "/tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/pdf-bogen-neu.png"
+  ],
+  "pruefbericht": "Ausgangslage: Die erste Sitzung war durch das Nutzungslimit unterbrochen worden. Ihr Zwischenstand (Commit 944155a) enthielt schon die meisten Inhaltsbefunde. Ich habe ihn gegen alle 40 Befunde abgeglichen und die offenen Punkte umgesetzt: Referentenansicht, Vorschau, Klickstau, n = 0, Marker, Parameter, gehe('ende'), B1, B3, B8, Dokumentation, Exporte, Testordner.\n\nPrüfung mit werkzeuge/pruefen.mjs und --schritte, jeweils 22 Folien:\n- hell: 0 Fehler, 4 Warnungen\n- dunkel: 0 Fehler, 4 Warnungen\n- Druck (--druck): PDF mit 22 Seiten, 22 erwartet\n- Farbtest --primaer E4003A: 0 Fehler\n- Keine externen Anfragen, Konsole leer.\n\nDie einzigen Warnungen betreffen das Wortbudget (f03 44, f04 44, f10 48, f11 55). Der Notizdruck (?druck&notizen) hat weiter 43 Seiten.\n\nInteraktionen, Stichproben mit Playwright, alle OK:\n1. f08 ohne Stimmen: Schritt 1 zeigt „Noch keine Stimmen“ statt „0 %“. Mit einer Stimme erscheinen 100 %.\n2. Referentenfenster:\n   - Die Adresse übernimmt ?optional=alle, beide Fenster haben 23 Folien.\n   - Von Hand gescrollter Sprechtext bleibt 7,5 s stehen. Nach einem Schrittwechsel rollt er zum Absatz.\n   - Die Vorschau zeigt Live-Stimmen innerhalb von 0,5 s (67 % bzw. 33/67 %, keine Zwischenwerte der Zähl-Animation mehr).\n3. Deck.gehe('f10', 'ende') trifft nach Änderungen der Wortwolke den richtigen letzten Schritt: 8/8, dann 9/9, dann 8/8.\n4. Klickstau: 6 Folgen schneller Klicks (3–10 Tasten im Abstand von 60–100 ms, vor und zurück über den Morph f02/f03 und f09b/f10).\n   - wechsel-laeuft verschwindet sofort.\n   - Das Bild ist nach 0,3–1,2 s stabil und gleicht dem Sollbild.\n   - Gegenprobe mit der alten Version: 0,5–1,3 s.\n   - Ein einzelner Klick wird weiter animiert.\n5. Sichtbare Quellennummern aller Folien per Skript gegen B8 abgeglichen: keine fehlt, keine ist überzählig.\n\nAngesehen habe ich:\n- Screenshots von f02, f03, f04, f08 (leer), f09, f10, f11, f12, B1, B3 und B8 in hell und dunkel, dazu den Marker-Vergleich mit Gelb, Rot und Blau.\n- PDF-Kontaktbogen und Übersicht.\n\nDaraus folgte eine Korrektur: B8 ragte nach den neuen Einträgen in die Fußzeile. Ich habe die Einträge gekürzt und es erneut geprüft.\n\nTestordner im Projekt sind entfernt. Alle Testausgaben liegen im Scratchpad.\n\nHinweis für die Hauptsitzung: Nichts ist committet. Bitte KI-Nachweis führen und committen. Wichtigste inhaltliche Inkonsistenz: Folie 05 und Folie 10 zeigen noch „Abenteurer“, master hat auf „Hedonisten“ umgestellt (siehe „nicht behoben“).",
+  "quellen": [
+   {
+    "was": "HOLY-Fakten (160 mg Koffein nur Energy [56], Red Bull ≈ 58 % Circana MAT 08/2025 mit Red Bull [26], Jahresabschlüsse 2021–2024 offengelegt, Trending Topics [7], VKI/KONSUMENT [27, 28], VZ Sachsen-Anhalt [82])",
+    "lizenz": "eigene Recherche der Gruppe",
+    "herkunft": "Recherche-Dossier fallstudie-1-brand-persona/recherche/holy-recherche.md (Kap. 2.4, 3.1, 9.1, 9.4, Anhang B)"
+   },
+   {
+    "was": "Mediennutzung und Psychografie der Persona (YouTube 73/71/58 %, Ø-Werte, „Spaß“ etwa im Schnitt)",
+    "lizenz": "Statista Consumer Insights, Campuslizenz HSKL – nur Kurzwerte zitiert, nicht im Dossier",
+    "herkunft": "fallstudie-1-brand-persona/persona-daten.md und persona-steckbrief.md (Stand 16./17.10.2026)"
+   },
+   {
+    "was": "Limbic Type „Hedonisten“ (nur als Hinweis, nicht übernommen)",
+    "lizenz": "eigene Ausarbeitung der Gruppe",
+    "herkunft": "fallstudie-1-brand-persona/limbic-map.md und folienentwuerfe.md (master, Commit f16a32b)"
+   },
+   {
+    "was": "Schriften, QR-Bibliothek, Icons",
+    "lizenz": "unverändert (SIL OFL 1.1 bzw. MIT, eigene Icons)",
+    "herkunft": "keine neuen fremden Ressourcen hinzugefügt"
+   },
+   {
+    "was": "Prüfen und Exporte: playwright-core mit Chromium 141",
+    "lizenz": "Apache-2.0",
+    "herkunft": "Scratchpad werkzeuge/node_modules (nicht mitgeliefert)"
+   },
+   {
+    "was": "OKLCH-Farbberechnung für den Titel-Marker",
+    "lizenz": "eigener Code",
+    "herkunft": "Modellwissen (CSS Color 5 relative Farbsyntax)"
+   }
+  ],
+  "engine_wuensche": [
+   "pruefen.mjs: „Kund:innen“ (Doppelpunkt) als ein Wort zählen und den Kicker optional aus dem Wortbudget nehmen. Sonst wirken f03 und f04 um 1–5 Wörter dichter, als sie sind.",
+   "pruefen.mjs: eigene Prüfung, ob die Quellennummern auf B8 mit den sichtbaren Nummern übereinstimmen (Skript liegt im Scratchpad: skripte/nummern.mjs).",
+   "Export-Skripte (export-folien.mjs, kontaktbogen.mjs) aus dem Scratchpad nach werkzeuge/ übernehmen, damit die Gruppe die Exporte selbst erneuern kann."
+  ]
+ }
+}

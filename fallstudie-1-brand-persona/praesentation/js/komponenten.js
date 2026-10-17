@@ -1026,6 +1026,8 @@
       umfrageLaden(u);
       umfrageZeichnen(u, true);
     });
+    /* Referentenansicht: Vorschau „Als Nächstes“ mit den neuen Stimmen */
+    if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
   }
   Deck.kanal.bei('umfrage', function (d) { umfrageNeuLaden(d && d.id); });
   window.addEventListener('storage', function (e) {
@@ -1048,6 +1050,15 @@
     verlassen: function (huelle) { if (huelle._umfrage) umfrageFelderSchliessen(huelle._umfrage, true); },
     klon: function (kopie, n, original) {
       util.alle('.umfrage-werkzeuge', kopie).forEach(function (w) { w.remove(); });
+      /* Prozente im Klon gleich auf den Endwert setzen – sonst zeigt die
+         Vorschau der Referentenansicht kurz nach einer neuen Stimme noch
+         den Zwischenstand der Zähl-Animation (z. B. 10 % statt 33 %) */
+      var u = original && original._umfrage;
+      if (!u || !u.werte) return;
+      var summe = u.werte.reduce(function (a, b) { return a + b; }, 0);
+      util.alle('.umfrage-prozent', kopie).forEach(function (el, i) {
+        if (i < u.werte.length) el.textContent = (summe ? Math.round(u.werte[i] / summe * 100) : 0) + '\u202f%';
+      });
     }
   });
 
@@ -1101,14 +1112,20 @@
       if (t) satz.appendChild(document.createTextNode(t));
       if (i < teile.length - 1) el('em', { class: 'ua-antwort' }, antwort, satz);
     });
+    /* Ersatz ohne Stimmen (Klasse „ist-leer“): statt „– % sehen … wie wir“
+       steht „Noch keine Stimmen“ (CSS blendet den Satz aus, komponenten.css) */
+    el('span', { class: 'ua-leer' }, konfig.aussageLeer || 'Noch keine Stimmen', huelle);
     var anzeige = {
       id: id, el: huelle,
       aktualisieren: function (werte, beispiel, animiert) {
         var a = anteilAntwort(werte, konfig);
         var alt = parseFloat(zahl.getAttribute('data-ziel')) || 0;
-        zahl.setAttribute('data-ziel', String(a.prozent));
         huelle.classList.toggle('ist-leer', !a.gueltig);
-        if (!a.gueltig) { zahl.textContent = '– %'; return; }
+        /* Keine Stimmen: KEIN Zielwert setzen – sonst zählt die Schritt-Animation
+           („zaehlen“) beim Weiterklicken von „– %“ auf „0 %“ hoch. Ohne data-ziel
+           überspringt die Engine das Zählen, „– %“ bleibt stehen. */
+        if (!a.gueltig) { zahl.removeAttribute('data-ziel'); zahl.textContent = '– %'; return; }
+        zahl.setAttribute('data-ziel', String(a.prozent));
         if (animiert && alt !== a.prozent) util.zaehle(zahl, alt, a.prozent, { einheit: ' %', dauer: 600 });
         else zahl.textContent = util.zahlFormat(a.prozent, 0) + ' %';
       }
@@ -1345,6 +1362,8 @@
       wolkeLaden(w);
       wolkeZeichnen(w, true);
     });
+    /* Referentenansicht: Vorschau „Als Nächstes“ mit den neuen Wörtern */
+    if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
   }
   Deck.kanal.bei('wortwolke', function (d) { wolkeNeuLaden(d && d.id); });
 

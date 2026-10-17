@@ -206,7 +206,10 @@
   var STATUS = {
     gesichert:  { icon: 'haken',   text: 'gesichert' },
     korrigiert: { icon: 'stift',   text: 'korrigiert' },
-    unsicher:   { icon: 'annahme', text: 'unsicher' }
+    unsicher:   { icon: 'annahme', text: 'unsicher' },
+    /* „extern“: Quelle steht NICHT im Recherche-Dossier (z. B. Statista
+       Consumer Insights aus der Campuslizenz) – Erklärung in der Fußzeile */
+    extern:     { icon: 'info',    text: 'extern' }
   };
   function statusMarke(status) {
     var s = STATUS[status] || { icon: 'info', text: status || '–' };

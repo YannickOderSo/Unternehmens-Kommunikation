@@ -1169,7 +1169,13 @@
       return false;
     }
     var f = folien[index];
-    if (schritt === 'ende' || schritt === Infinity) schritt = f.schritteGesamt;
+    if (schritt === 'ende' || schritt === Infinity) {
+      /* Folien, deren Schrittzahl von gespeicherten Daten abhängt (Folie 10:
+         Abgleich mit der Wortwolke), zählen vorher neu – sonst landet
+         Deck.gehe('f10', 'ende') nach einer Änderung auf einem alten Schritt. */
+      hookAufrufen(f, 'schritteAktualisieren');
+      schritt = f.schritteGesamt;
+    }
     schritt = Math.max(0, Math.min(f.schritteGesamt, parseInt(schritt, 10) || 0));
 
     if (index === aktuell.index) {
@@ -1181,7 +1187,11 @@
     var alt = folien[aktuell.index];
     var richtung = optionen.richtung || (alt && index < alt.index ? 'zurueck' : 'vor');
     letzteRichtung = alt ? richtung : 'start';
-    var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus;
+    /* Läuft noch ein Folienübergang (z. B. Clicker-Doppeldruck über den Morph
+       des Steuerrads), wechselt die Folie sofort – Übergänge stapeln sich
+       sonst, und die Folie steht sekundenlang auf einem Zwischenbild. */
+    var stau = !!laufenderUebergang || !!gehendeFolie;
+    var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus && !stau;
     var nr = ++wechselNr;
     letzterWechselSofort = !animieren;
 
@@ -1282,9 +1292,24 @@
     return true;
   }
 
+  /* Klickstau verhindern (Abschlussprüfung 17.10.2026): Kommt ein Klick,
+     während ein Folienübergang oder Schritt-Animationen noch laufen, wird das
+     Laufende sofort beendet (wie im Testmodus, siehe Deck.testmodus) – jeder
+     Klick zeigt dann sofort den fertigen Stand des vorigen. */
+  function laufendesBeenden() {
+    if (laufenderUebergang) { try { laufenderUebergang.skipTransition(); } catch (e) { /* egal */ } }
+    if (!laufendeAnimationen.size) return;
+    laufendeAnimationen.forEach(function (a) {
+      try { a.finish(); } catch (e) { try { a.cancel(); } catch (e2) { /* egal */ } }
+    });
+    var f = folien[aktuell.index];
+    if (f) zaehlerFuerSchritt(f, aktuell.schritt);      /* hochzählende Zahlen auf Endwert */
+  }
+
   function weiter() {
     var f = folien[aktuell.index];
     if (!f) return;
+    laufendesBeenden();
     if (aktuell.schritt < f.schritteGesamt) { schrittWechsel(aktuell.schritt + 1); return; }
     /* Auf der letzten Hauptfolie anhalten – Backup nur gezielt (Übersicht) */
     if (aktuell.index === anzahlHaupt - 1) {
@@ -1296,6 +1321,7 @@
   function zurueck() {
     var f = folien[aktuell.index];
     if (!f) return;
+    laufendesBeenden();
     if (aktuell.schritt > 0) { schrittWechsel(aktuell.schritt - 1); return; }
     if (aktuell.index > 0) gehe(aktuell.index - 1, 'ende', { richtung: 'zurueck' });
   }
@@ -2227,7 +2253,14 @@
 
   function referentOeffnen() {
     if (IST_REFERENT) return;
-    var url = location.href.split('#')[0].split('?')[0] + '?referent' + location.hash;
+    /* Adressparameter mitgeben, die die Folienliste oder das Aussehen ändern
+       (z. B. ?optional=alle) – sonst hätten beide Fenster verschiedene Folien */
+    var mit = ['optional', 'thema', 'modus', 'primaer', 'sekundaer', 'bewegung'].filter(function (k) {
+      return parameter.has(k);
+    }).map(function (k) {
+      return encodeURIComponent(k) + (parameter.get(k) ? '=' + encodeURIComponent(parameter.get(k)) : '');
+    });
+    var url = location.href.split('#')[0].split('?')[0] + '?referent' + (mit.length ? '&' + mit.join('&') : '') + location.hash;
     try {
       referentFenster = window.open(url, 'deck-referent', 'popup=yes,width=1440,height=900');
     } catch (e) { referentFenster = null; }
@@ -2364,6 +2397,11 @@
     if (letzteReferentFolie && (letzteReferentFolie !== f.id || letzterReferentSchritt !== aktuell.schritt) && !uhr.gestartet) uhrStarten();
     if (letzteReferentFolie !== f.id) uhr.folieStart = gesamtMs();
     var folieGewechselt = letzteReferentFolie !== f.id;
+    /* Nur bei echtem Folien- oder Schrittwechsel zum Absatz scrollen: Der
+       Abgleich alle 3 s („hallo“ → „zustand“) ruft diese Funktion ebenfalls
+       auf – sonst spränge von Hand gescrollter Sprechtext ständig zurück
+       (Abschlussprüfung 17.10.2026). Alten Schritt VOR dem Überschreiben merken. */
+    var schrittGewechselt = folieGewechselt || letzterReferentSchritt !== aktuell.schritt;
     letzteReferentFolie = f.id;
     letzterReferentSchritt = aktuell.schritt;
 
@@ -2371,25 +2409,7 @@
       (f.schritteGesamt ? ' · Schritt ' + aktuell.schritt + '/' + f.schritteGesamt : '');
 
     /* Nächster Schritt bzw. nächste Folie */
-    r.vorschau.innerHTML = '';
-    var naechste = null, naechsterSchritt = 0, text = '';
-    if (aktuell.schritt < f.schritteGesamt) {
-      naechste = f; naechsterSchritt = aktuell.schritt + 1;
-      text = 'Als Nächstes · Schritt ' + naechsterSchritt + '/' + f.schritteGesamt + ' auf dieser Folie';
-    } else if (aktuell.index < folien.length - 1 && aktuell.index !== anzahlHaupt - 1) {
-      naechste = folien[aktuell.index + 1];
-      text = 'Als Nächstes · ' + naechste.nummer + ' ' + naechste.titel;
-    } else {
-      text = 'Als Nächstes · Ende';
-    }
-    r.titelNaechste.textContent = text;
-    if (naechste) {
-      var k = klonen(naechste, naechsterSchritt);
-      r.vorschau.appendChild(k);
-    } else {
-      util.element('div', { class: 'r-vorschau-ende' }, 'Ende der Präsentation – Backup über Taste O', r.vorschau);
-    }
-    vorschauEinpassen();
+    referentVorschauBauen(f);
 
     /* Infos */
     var info = [];
@@ -2413,10 +2433,47 @@
       el.classList.toggle('ist-jetzt', n === aktuell.schritt);
     });
     /* Absatz zum aktuellen Schritt in den Blick holen (beim Folienwechsel ohne
-       Gleiten, innerhalb der Folie sanft) */
-    sprechtextZumSchritt(!folieGewechselt);
+       Gleiten, innerhalb der Folie sanft) – nur nach einem Wechsel, siehe oben */
+    if (schrittGewechselt) sprechtextZumSchritt(!folieGewechselt);
     uhrAnzeigen();
   }
+
+  /* „Als Nächstes“: Klon des nächsten Schritts bzw. der nächsten Folie */
+  function referentVorschauBauen(f) {
+    r.vorschau.innerHTML = '';
+    var naechste = null, naechsterSchritt = 0, text = '';
+    if (aktuell.schritt < f.schritteGesamt) {
+      naechste = f; naechsterSchritt = aktuell.schritt + 1;
+      text = 'Als Nächstes · Schritt ' + naechsterSchritt + '/' + f.schritteGesamt + ' auf dieser Folie';
+    } else if (aktuell.index < folien.length - 1 && aktuell.index !== anzahlHaupt - 1) {
+      naechste = folien[aktuell.index + 1];
+      text = 'Als Nächstes · ' + naechste.nummer + ' ' + naechste.titel;
+    } else {
+      text = 'Als Nächstes · Ende';
+    }
+    r.titelNaechste.textContent = text;
+    if (naechste) {
+      var k = klonen(naechste, naechsterSchritt);
+      r.vorschau.appendChild(k);
+    } else {
+      util.element('div', { class: 'r-vorschau-ende' }, 'Ende der Präsentation – Backup über Taste O', r.vorschau);
+    }
+    vorschauEinpassen();
+  }
+
+  /* Vorschau neu bauen, wenn sich Live-Daten ändern (Umfrage, Wortwolke):
+     Der Klon zeigte sonst bis zum nächsten Abgleich (bis 3 s) alte Werte,
+     z. B. die Beispielzahl „27 %“ statt der Live-Stimmen. Aufruf aus
+     komponenten.js (umfrageNeuLaden, wolkeNeuLaden); kurz gebündelt. */
+  var vorschauTimer = null;
+  Deck.vorschauAuffrischen = function () {
+    if (!IST_REFERENT || !r.raster) return;
+    clearTimeout(vorschauTimer);
+    vorschauTimer = setTimeout(function () {
+      var f = folien[aktuell.index];
+      if (f) referentVorschauBauen(f);
+    }, 60);
+  };
 
   /* Sprechtext so scrollen, dass der Absatz zum aktuellen Schritt oben im Feld
      steht (mit etwas Luft). Gibt es für den Schritt keinen eigenen Absatz, gilt
