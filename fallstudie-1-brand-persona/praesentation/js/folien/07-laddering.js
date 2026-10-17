@@ -258,8 +258,10 @@
       var mitte = (ay - by) / 2;
       var pfad = 'M' + k.ax + ' ' + ay + 'C' + k.ax + ' ' + Math.round(ay - mitte) + ' ' + k.bx + ' ' + Math.round(by + mitte) + ' ' + k.bx + ' ' + by;
       var e = k.nach.ebene;
+      /* "kern": true in den Daten = tragende Leiter (Titel der Folie);
+         sie färbt sich im letzten Schritt in der Akzentfarbe (CSS) */
       var p = u.svg('path', {
-        class: 'lad-kante', d: pfad, 'stroke-width': staerke(k.anzahl),
+        class: 'lad-kante' + (k.roh.kern ? ' lad-kante--kern' : ''), d: pfad, 'stroke-width': staerke(k.anzahl),
         'data-schritt': String(e), 'data-animation': 'zeichnen', 'data-dauer': '850',
         'data-verzoegerung': String(MASS.kantenStart + reihenfolge[e]++ * MASS.kantenStaffel)
       }, ebeneKanten);

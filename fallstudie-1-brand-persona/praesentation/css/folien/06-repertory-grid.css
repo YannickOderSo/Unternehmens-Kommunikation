@@ -54,6 +54,8 @@
   text-transform: var(--kicker-versalien);
   fill: var(--f-text-2);
 }
+/* „Skala“ steht rechtsbündig direkt vor den Skalenzahlen 1–7 */
+.rg-kopf-text--skala { text-anchor: end; }
 /* Überschrift über dem leeren Profil (Schritt 0–1) – macht in Schritt 2
    der Legende Platz */
 .rg-profil-titel { fill: var(--f-akzent); transition: opacity var(--dauer-kurz) var(--kurve); }
@@ -115,6 +117,7 @@
   color: var(--f-warnung);
   box-shadow: inset 0 0 0 var(--linie-fein) var(--f-warnung);
   font-weight: var(--gewicht-fett);
+  font-size: 26px;              /* inhaltlich wichtig: 26 px statt 22 px (Abschlussprüfung 17.10.2026) */
 }
 
 /* Legende: Strichmuster so, dass links und rechts vom Kreis ein Strich steht */

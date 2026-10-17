@@ -10,12 +10,19 @@ Herkunft jeweils: npm-Pakete von Fontsource (https://fontsource.org), Version 5.
 Originalquelle Google Fonts.
 
 Thema „Editorial“ (Standard)
-  Fraunces (Achsen wght 100–900, opsz 9–144; normal + kursiv)  – @fontsource-variable/fraunces
+  Fraunces (normal: Achsen wght 100–900, opsz 9–144;
+            kursiv: alle Achsen wght, opsz, SOFT, WONK)          – @fontsource-variable/fraunces
     fraunces-latin-opsz-normal.woff2, fraunces-latin-ext-opsz-normal.woff2,
-    fraunces-latin-opsz-italic.woff2, fraunces-latin-ext-opsz-italic.woff2
+    fraunces-latin-full-italic.woff2, fraunces-latin-ext-full-italic.woff2
+    (Kursive seit 16.10.2026 aus der „full“-Datei: nur dort lassen sich mit
+    "WONK" 0 die verspielten Formen b, h, k, l abschalten – css/tokens.css.
+    Die bisherigen Dateien fraunces-latin-opsz-italic.woff2 und
+    fraunces-latin-ext-opsz-italic.woff2 bleiben liegen: Die Startseite der
+    Webseite (index.html im Hauptverzeichnis des Repositorys) bindet sie ein.)
     Original: github.com/undercasetype/Fraunces
-  Inter (Achsen wght 100–900, opsz 14–32)                      – @fontsource-variable/inter
-    inter-latin-opsz-normal.woff2, inter-latin-ext-opsz-normal.woff2
+  Inter (Achsen wght 100–900, opsz 14–32; normal + kursiv)     – @fontsource-variable/inter
+    inter-latin-opsz-normal.woff2, inter-latin-ext-opsz-normal.woff2,
+    inter-latin-opsz-italic.woff2, inter-latin-ext-opsz-italic.woff2
     Original: github.com/rsms/inter
 
 Thema „Keynote“

@@ -50,8 +50,16 @@ window.MARKE = {
   // 389 × 105 px), abgerufen 16.10.2026. Marke der HOLY Softdrinks GmbH – nur zur
   // Kennzeichnung der analysierten Marke; Quelle steht in der Fußzeile von Folie 09b
   // und in QUELLEN.md. Gezeigt auf Folie 09b (Corporate Design).
-  // Zweite Variante (gelbes Oval, Seitenfuß, 692 × 400 px): 'bilder/holy-logo-oval.png'
+  // Zweite Variante (gelbes Oval) steht unten bei logoTitel (Folie 01).
   logo: 'bilder/holy-logo-wortmarke.png',
+  // Logo für die Titelfolie (Folie 01): offizielles HOLY-Logo im gelben Oval
+  // (Seitenfuß von de.holy.com, Datei HOLY_Logo_NewYellow.png, 692 × 400 px),
+  // abgerufen 16.10.2026, unverändert (nur verkleinert angezeigt). Es erscheint
+  // mit der Auflösung des Rätsels (Schritt 1, nicht vorher) und bleibt auf der
+  // Titelfolie stehen – anstelle des gesetzten Markennamens; Screenreader lesen
+  // weiter den Namen (name oben). Quelle steht in der Fußzeile von Folie 01 und
+  // in QUELLEN.md. Leer ('') = Markenname in Schrift wie bisher.
+  logoTitel: 'bilder/holy-logo-oval.png',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
   // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen
   // (z. B. HOLY-Dose oder -Shaker, selbst fotografiert), z. B.
@@ -68,6 +76,10 @@ window.MARKE = {
   veranstaltung: 'Unternehmenskommunikation',
   dozent: 'Prof. Dr. Daniel Stenger',
   hochschule: 'Hochschule Kaiserslautern',
+  // Firma hinter der Marke – nur für die Einordnungszeile auf Folie 01 und 12
+  // („Studentische Fallstudie · keine Verbindung zur …“). Quelle: Recherche-
+  // Dossier Kap. 1, Impressum und Handelsregister ✔ [2, 3].
+  unternehmen: 'HOLY Softdrinks GmbH',
   gruppe: ['Yannick Heisler', 'Elias Knauber', 'Lukas Welker'],
   datum: '2026-10-26',            // Jahr-Monat-Tag
   dauerMinuten: 15,               // Sollzeit für die Uhr in der Referentenansicht
@@ -125,7 +137,8 @@ window.MARKE = {
      7. OPTIONALE FOLIEN (Folien mit data-optional) – true = zeigen
      --------------------------------------------------------------------------- */
   optionaleFolien: {
-    f01b: false                   // Live-Wortwolke zum Einstieg
+    f01b: false                   // Live-Wortwolke zum Einstieg (+45 s – nur mit true, wenn dafür
+                                  // auf Folie 08 die Live-Umfrage entfällt; siehe LIESMICH, Abschnitt 7)
   },
 
   /* ---------------------------------------------------------------------------

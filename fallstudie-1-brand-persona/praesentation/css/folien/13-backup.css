@@ -1,7 +1,7 @@
 /* =============================================================================
-   css/folien/13-backup.css – Gestaltung der Backup-Folien B1–B7
+   css/folien/13-backup.css – Gestaltung der Backup-Folien B1–B8
    -----------------------------------------------------------------------------
-   Gehört zu index.html, Backup B1–B7 und js/folien/13-backup.js.
+   Gehört zu index.html, Backup B1–B8 und js/folien/13-backup.js.
    Nur Tokens aus css/tokens.css (keine festen Farben oder Schriften) – so
    passt alles in allen Themen (editorial, bento, keynote), hell und dunkel,
    und mit jeder Markenfarbe.
@@ -71,7 +71,7 @@
 /* Dateinamen nie trennen */
 .folie.bk .bk-datei { white-space: nowrap; }
 
-/* Noch einzutragende Angaben, z. B. „[N]“ (Zahl der echten Interviews auf B1):
+/* Noch einzutragende Angaben (zurzeit nicht genutzt; B7 hat bk7-ergaenzen):
    orange, gestrichelt unterstrichen – vor der Präsentation ersetzen und die
    Klasse bk-ergaenzen löschen. */
 .folie.bk .bk-ergaenzen {
@@ -321,6 +321,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 .bk-status--gesichert { color: var(--f-erfolg); }
 .bk-status--korrigiert { color: var(--f-text-2); }
 .bk-status--unsicher { color: var(--f-warnung); }
+.bk-status--extern { color: var(--f-text-2); }      /* Quelle außerhalb des Dossiers (B3) */
 
 /* Schritt 1: Kernbelege (Gründeraussagen) */
 #b3:has(.bk-z1.schritt-an) .bk3-tabelle tr.ist-kern > :not(.bk3-dim) { background: var(--f-akzent-flaeche); }
@@ -668,3 +669,33 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 html.druckmodus .bk-sprung { display: none !important; }
 html.druckmodus .bk-folienlink { border-bottom-color: transparent; }
 html.druckmodus #b4 .bk4-pille { transition: none; }
+
+
+/* ---------------------------------------------------------------------------
+   B8 · Belege der Folien (zweispaltige Liste, 22 px wie Tabellen im Backup)
+   Je Eintrag: Nummer (feste Spalte) · Urheber: Titel · Art/Datum (grau)
+   --------------------------------------------------------------------------- */
+#b8 .bk8-liste {
+  columns: 2;
+  column-gap: var(--abstand-6);
+  column-rule: var(--linie-fein) solid var(--f-linie);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text);
+}
+#b8 .bk8-liste > li {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  break-inside: avoid;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--f-linie);
+}
+#b8 .bk8-nr {
+  font-weight: var(--gewicht-fett);
+  font-variant-numeric: tabular-nums;
+  color: var(--f-akzent);
+}
+#b8 .bk8-art { color: var(--f-text-2); }

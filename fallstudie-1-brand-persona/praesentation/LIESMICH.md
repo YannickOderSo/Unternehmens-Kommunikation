@@ -4,9 +4,13 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 16.10.2026 – alle Folien zusammengeführt und geprüft. Auf vielen Folien stehen noch
-**Beispieldaten** (orange Pille „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in
-`index.html` in einem Kasten vor jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste.
+Stand: 17.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+der zweiten Abschlussprüfung überarbeitet; offizielles HOLY-Logo auf Folie 01 und 09b (Änderungen:
+`AUTOREN.md`, Abschnitte 11–13). Folie 04 zeigt seit 17.10. den **Entwurf** des Persona-Steckbriefs (A2) –
+Freigabe durch Yannick offen (Checkliste, Abschnitt 12).
+Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
+„Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
+jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
 
 Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
 `export/uebersicht.png` (alle Folien auf einen Blick), `export/folien/<id>.png` (jede Folie einzeln).
@@ -24,6 +28,7 @@ Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
 
 - Läuft **ohne Internet und ohne Server** (Schriften, Bilder und Programme liegen im Ordner).
 - **F5** (Neuladen) bleibt auf derselben Folie und demselben Schritt (Adresse z. B. `index.html#f06.2`).
+- **Tablet/Handy:** quer halten (im Hochformat erscheint ein Hinweis); wischen und antippen, siehe Abschnitt 2.
 - Die Präsentation startet im Thema „Editorial“, hell, mit den HOLY-Farben (Gelb/Schwarz).
 
 ## 2. Tasten
@@ -33,7 +38,7 @@ Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
 | → ↓ Leertaste Bild↓ Enter | weiter (nächster Schritt bzw. nächste Folie) |
 | ← ↑ Bild↑ Rücktaste | zurück |
 | Pos1 / Ende | erste / letzte Hauptfolie |
-| Ziffern + Enter (z. B. `6` `Enter`) | Folie 06 anspringen |
+| Ziffern + Enter (z. B. `6` `Enter`) | Folie 06 anspringen; `8` `B` `Enter` = Folie 08b, `9` `B` `Enter` = 09b |
 | O | Übersicht aller Folien (mit Backup), Pfeile + Enter oder Klick |
 | P | Referentenansicht im zweiten Fenster |
 | F | Vollbild an/aus |
@@ -42,16 +47,18 @@ Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
 | H oder ? | Hilfe mit allen Tasten |
 | Esc | Fenster schließen, Eingabefeld verlassen |
 | Z | nach einem Sprung aus einer Backup-Folie („Zu Folie …“) zurück ins Backup |
-| 1–9 | nur auf Folie 08, solange die Umfrage zu sehen ist: Stimme zählen (Umschalt = −1) |
+| 1–5 | nur auf Folie 08, solange die Umfrage zu sehen ist: Stimme zählen (Umschalt = −1). Zum Springen von dort erst weiterklicken oder **O** nutzen; „1“ „0“ Enter erkennt die Präsentation als Folie 10 (die „1“ zählt dann nicht) |
 
 - **Nach der letzten Hauptfolie (12) geht es nicht automatisch ins Backup** – Backup nur über **O**.
-- **Bedienleiste** unten rechts erscheint bei Mausbewegung und verschwindet nach 2,5 s (Pfeile, Nummer,
-  Übersicht, Referentenansicht, Thema, hell/dunkel, Farbwähler, Vollbild, Hilfe).
+- **Bedienleiste** unten rechts erscheint, wenn die Maus im **unteren Bildrand** bewegt wird (nicht bei
+  jedem Klick – sonst verdeckte sie die Quellenzeile), und verschwindet nach 2,5 s (Pfeile, Nummer,
+  Übersicht, Referentenansicht, Thema, hell/dunkel, Farbwähler, Vollbild, Hilfe). Auf Touch-Geräten:
+  Antippen zeigt sie (Knöpfe 44 × 44 px); auf dem Handy im Hochformat nur die Grundknöpfe.
 - **Mini-Steuerrad** oben rechts (Folien 03–09b): Klick öffnet das Sprungmenü, ein Feld anklicken springt
   zur passenden Folie. Auch die Steuerräder auf Folie 02, 10 und 12 sind klickbar (Maus oder Tab + Enter).
 - **Ruhende Maus:** Liegt der Mauszeiger beim Weiterschalten zufällig auf dem Steuerrad, wird nichts
   hervorgehoben – erst wenn die Maus bewegt wird.
-- **Touch:** nach links wischen = weiter, nach rechts = zurück.
+- **Touch:** nach links wischen = weiter, nach rechts = zurück; Antippen zeigt die Bedienleiste.
 
 ## 3. Ablauf und Zeitplan (Sollzeiten, Referentenuhr)
 
@@ -61,19 +68,24 @@ Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
 | 01b | (optional, ausgeblendet) Live-Wortwolke | A · Yannick | (0:45) |
 | 02 | Ausgangslage & Vorgehen (Steuerrad als Agenda) | A · Yannick | 1:00 |
 | 03 | Markenkompetenz | A · Yannick | 0:45 |
-| 04 | Brand Persona | A · Yannick | 1:30 |
-| 05 | Limbic Map | A · Yannick | 1:00 |
-| 06 | Repertory Grid → Markenattribute | B · Lukas | 1:30 |
+| 04 | Brand Persona | A · Yannick | 1:20 |
+| 05 | Limbic Map | A · Yannick | 0:55 |
+| 06 | Repertory Grid → Markenattribute | B · Lukas | 1:20 |
 | 07 | Laddering → Markennutzen | B · Lukas | 1:30 |
 | 08 / 08b | Analogien + Live-Umfrage / Markentonalität (Aaker) | B · Lukas | 1:10 + 0:50 |
-| 09 / 09b | Kommunikationsanalyse / Markenbild | C · Elias | 1:05 + 0:55 |
+| 09 / 09b | Kommunikationsanalyse / Markenbild | C · Elias | 1:00 + 0:55 |
 | 10 | Markensteuerrad (Synthese) | Inhalt Yannick, spricht Elias | 1:15 |
-| 11 | Fazit & Empfehlungen | C · Elias | 1:30 |
+| 11 | Fazit & Empfehlungen | C · Elias | 1:15 |
 | 12 | Danke & Fragen (Steuerrad als Sprungmenü) | alle | – |
-| B1–B7 | Backup (Methodik, Prompt-Log, Datenquellen, Rohdaten, Matrix, Raster, Quellen) | je Bündel | – |
+| B1–B8 | Backup (Methodik, Prompt-Log, Datenquellen, Rohdaten, Matrix, Raster, Quellen, Belege der Folien) | je Bündel | – |
 
-**Summe Hauptfolien: 14:45 min** (15 s Puffer). Mit der optionalen Folie 01b wären es 15:30 – dann an
-anderer Stelle kürzen. Wer spricht, ist ein Vorschlag nach dem Arbeitsplan – die Gruppe legt es fest.
+**Summe Hauptfolien: 14:00 min** (60 s Puffer für die zwei Live-Momente: Zurufe auf Folie 01 und
+Handzeichen-Umfrage auf Folie 08). Die Sollzeiten der Folien 04, 05, 06, 09, 09b und 11 wurden dafür am
+16.10.2026 gekürzt (Sprechtexte angepasst). Der ursprüngliche Ablaufplan sah 14:45 vor – **die Gruppe
+bestätigt den 14:00-Plan** und gleicht `../arbeitsplan.md` an (Checkliste, Abschnitt 12). Die optionale Folie 01b (+0:45, mit dem Abgleich auf Folie 10
+ca. +0:55) nur einschalten, wenn dafür auf Folie 08 die Live-Umfrage entfällt (spart ca. 0:30). In der
+Generalprobe die Umfrage mit Stoppuhr testen. Wer spricht, ist ein Vorschlag nach dem Arbeitsplan – die
+Gruppe legt es fest.
 
 ## 4. Referentenansicht mit zweitem Bildschirm
 
@@ -86,10 +98,13 @@ anderer Stelle kürzen. Wer spricht, ist ein Vorschlag nach dem Arbeitsplan – 
 4. Geblättert wird in beiden Fenstern; beide bleiben synchron (auch Umfrage und Wortwolke).
 
 Das Referentenfenster zeigt: aktuelle Folie, nächste Folie bzw. nächsten Schritt, Sprechtext groß
-(A− / A+), Absätze zum aktuellen Schritt markiert, Gesamtuhr gegen 15:00, Folienuhr gegen die Sollzeit
+(A− / A+), Absätze zum aktuellen Schritt markiert (der Text rollt beim Weiterschalten automatisch zum
+aktuellen Absatz; von Hand gescrollter Text – z. B. „Mögliche Rückfragen“ in der Fragerunde – bleibt stehen),
+Vorschau des nächsten Schritts (mit den aktuellen Umfrage-Stimmen), Gesamtuhr gegen 15:00, Folienuhr gegen die Sollzeit
 (ab 85 % gelb, darüber rot), Abgleich mit dem Plan („im Plan“, „0:20 hinter Plan“) und die Uhrzeit. Die Uhr
 startet beim ersten Weiterschalten; Pause und „Zeit zurücksetzen“ per Knopf. Der Knopf „Schwarzbild“
-schaltet nur den Saal schwarz. Direkt aufrufen geht auch: `index.html?referent`.
+schaltet nur den Saal schwarz. Direkt aufrufen geht auch: `index.html?referent`. Adressparameter wie
+`?optional=alle` übernimmt **P** automatisch ins Referentenfenster (gleiche Folienliste).
 
 ## 5. Präsentations-Clicker
 
@@ -110,26 +125,30 @@ Teammitglied auf der Folie ein. **Das Publikum braucht Internet für das Werkzeu
    (Ergebnisseite → Knopf „Ergebnisse öffnen“). Speichern, F5.
 3. QR-Code mit mehreren Handys aus der **letzten Reihe** testen.
 4. **Vor dem Vortrag:** auf Folie 08 die Maus über die Ergebnisse bewegen → **„Zurücksetzen“ zweimal**
-   klicken. Sonst stehen die Beispielwerte (Pille „Beispieldaten“) da.
+   klicken – das löscht Beispielwerte **und** Probestimmen. (Sicherung: Die erste echte Stimme ersetzt
+   die Beispielwerte ohnehin automatisch; Beispiel- und Live-Stimmen werden nie gemischt. Probestimmen aus
+   der Generalprobe bleiben aber stehen, bis „Zurücksetzen“ geklickt wird.)
 
 Im Vortrag die Ergebnisse auf die Folie bringen:
 - **Eintragen:** Knopf **„Werte“** → Zahl aus dem Werkzeug tippen → **Tab** → nächste Zahl … nach der
   letzten Zahl wird alles übernommen. Einzelwert: Doppelklick auf die Zahl.
 - **Plan B – Zählmodus** (kein Internet, QR geht nicht): Tiere vorlesen, Hände zählen und eintragen,
-  oder Klick auf ein Tier = +1 (Umschalt+Klick oder Rechtsklick = −1), Ziffern 1–5 = +1.
+  oder Klick auf ein Tier = +1 (Umschalt+Klick oder Rechtsklick = −1), Ziffern 1–5 = +1. Solange die
+  Umfrage zu sehen ist, gehören Ziffern der Umfrage – zum Springen erst weiterklicken oder **O** nutzen.
 - Prozente rechnet die Präsentation selbst aus den Stimmen. Der nächste Klick (Schritt 1) zeigt
-  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“). Keine Stimmen? Schritt 1
-  überspringen (zweimal weiter).
+  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“). Keine Stimmen? Dann steht
+  dort „Noch keine Stimmen“ (keine „0 %“) – Analyse trotzdem erzählen oder Schritt 1 überspringen.
 - Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher) und erscheinen auch im Referentenfenster.
 
 ## 7. Live-Wortwolke (Folie 01b, optional)
 
-Folie 01b ist **ausgeblendet**. Einschalten: `marke.js → optionaleFolien.f01b: true` (dann 45 s an anderer
-Stelle kürzen). Im Vortrag klickt ein Teammitglied ins Eingabefeld, tippt die Zurufe und drückt Enter;
+Folie 01b ist **ausgeblendet**. Einschalten: `marke.js → optionaleFolien.f01b: true` – nur, wenn dafür auf
+Folie 08 die Live-Umfrage entfällt (Frage rhetorisch stellen, direkt zu den Analogie-Karten; siehe Notizen
+der Folien 01b und 08), sonst reicht die Zeit nicht. Im Vortrag klickt ein Teammitglied ins Eingabefeld, tippt die Zurufe und drückt Enter;
 Mehrfachnennungen werden größer, Alt+Klick entfernt ein Wort, „Wolke leeren“ (zweimal klicken) löscht alles.
 Während das Feld aktiv ist, blättern nur Clicker (Bild↑/Bild↓); Esc verlässt das Feld. Folie 10 greift die
-Zurufe im letzten Schritt wieder auf („x von y Ihrer Zurufe stecken in unserem Steuerrad“). Vor dem Vortrag
-Probe-Zurufe löschen.
+Zurufe im letzten Schritt wieder auf – mit eigenem Titel („Ihr Bild von HOLY trifft unseren Kern – teilweise“)
+und „x von y Ihrer Zurufe stecken in unserem Steuerrad“. Vor dem Vortrag Probe-Zurufe löschen.
 
 ## 8. Marke und Bilder eintragen (`marke.js`)
 
@@ -139,9 +158,11 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 |---|---|
 | `name`, `kurz` | Markenname „HOLY“ – erscheint überall automatisch |
 | `farben.primaer`, `farben.sekundaer` | HOLY-Gelb `#FFD007` und Schwarz `#1D1D1B` (Quelle: Recherche-Dossier Kap. 6.3 ✔ [1], Werte der Website, kein offizieller Styleguide). Alle anderen Farben werden daraus berechnet, Kontraste bleiben lesbar. Leer `''` = neutrale Farben. |
-| `logo` | zurzeit Platzhalter; ein echtes HOLY-Logo nur mit geklärten Rechten (Quelle in die Fußzeile) |
-| `raetselBild` | Bild für das Einstiegsrätsel (Folie 01) – **bis Fr, 23.10. durch ein eigenes Foto ersetzen** (z. B. selbst fotografierte HOLY-Dose). Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 Zoompunkt `data-fokus` prüfen und die Bildquelle in der Fußzeile eintragen. |
+| `logo` | Logo auf Folie 09b (Zeile „Logo“): offizielle **HOLY-Wortmarke** `bilder/holy-logo-wortmarke.png` (von de.holy.com, Abruf 16.10.2026, unverändert); Quelle steht in der Fußzeile von 09b und in `QUELLEN.md`. Steht hier wieder `bilder/platzhalter-logo.svg`, zeigt 09b nur die Beschreibung der Wortmarke. |
+| `logoTitel` | Logo auf **Folie 01**: offizielles HOLY-Logo im gelben Oval `bilder/holy-logo-oval.png` (de.holy.com, Abruf 16.10.2026, unverändert, nur verkleinert). Erscheint mit der Auflösung des Rätsels und bleibt auf der Titelfolie – anstelle des Namens in Schrift (Screenreader lesen den Namen). Quelle in der Fußzeile von Folie 01. Leer `''` = Name in Schrift wie früher. |
+| `raetselBild` | Bild für das Einstiegsrätsel (Folie 01). Zurzeit ein gezeichneter Platzhalter (Dose und Shaker vor Gelb, ohne Logo) – **bis Fr, 23.10. durch ein eigenes Foto ersetzen** (z. B. selbst fotografierte HOLY-Dose). Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 Zoompunkt `data-fokus` prüfen und die Bildquelle in der Fußzeile eintragen. |
 | `titel`, `gruppe`, `datum`, `dozent` … | Angaben für Titelfolie, Kopfzeilen und Schlussfolie |
+| `unternehmen` | Firma hinter der Marke („HOLY Softdrinks GmbH“, Dossier Kap. 1 ✔ [2, 3]) – für die Zeile „Studentische Fallstudie · keine Verbindung zur …“ auf Folie 01 und 12 |
 | `anrede` | „Sie“ (einheitlich) |
 | `umfragen.tier` | Live-Umfrage (siehe Abschnitt 6) |
 | `wortwolken.assoziationen` | Texte der Wortwolke |
@@ -152,6 +173,11 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 Regeln: Texte in einfachen Anführungszeichen, nach jedem Eintrag ein Komma. Nach dem Ändern F5 – die
 Konsole (F12) muss leer bleiben. Fakten über HOLY nur aus dem Recherche-Dossier (mit Quelle).
 
+**Anderer Markenname?** Ein längerer Name als „HOLY“ macht einige Titel länger: Getestet mit „TESTMARKE“
+bricht der Titel auf Folie 10 zweizeilig um, und die Beschriftung „Markenkompetenz“ im Rad wird kleiner
+(25 px). Nach einem Markenwechsel `werkzeuge/pruefen.mjs` laufen lassen (Abschnitt 9) und Titel ggf. kürzen.
+Der Textmarker hinter dem Markennamen im Titel wird aus der Primärfarbe immer hell berechnet.
+
 ## 9. Texte ändern (`index.html`)
 
 Alle Folien stehen in **`index.html`** (mit einem Texteditor öffnen, z. B. VS Code oder Notepad++ –
@@ -160,7 +186,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 ```
 <!-- ══════════════════════════════════════════
      ║ FOLIE 06 · Repertory Grid
-     ║ Bündel B – Lukas Welker · Sollzeit 90 s · Feld: Markenattribute
+     ║ Bündel B – Lukas Welker · Sollzeit 80 s · Feld: Markenattribute
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN: …
 ```
 
@@ -191,28 +217,64 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 
 ## 11. Plan B
 
-1. **PDF:** `export/praesentation.pdf` (21 Seiten: alle Hauptfolien im Endzustand + Backup B1–B7, ohne die
+1. **PDF:** `export/praesentation.pdf` (22 Seiten: alle Hauptfolien im Endzustand + Backup B1–B8, ohne die
    ausgeblendete Folie 01b) auf einen **USB-Stick** und zusätzlich per Mail/Cloud bereithalten. Öffnet in
    jedem PDF-Programm; keine Animationen, keine Live-Funktionen.
 2. **Ganzer Ordner** `praesentation/` ebenfalls auf den USB-Stick – läuft auf jedem Rechner mit Chrome/Edge
    ohne Installation und ohne Internet.
 3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext als Handout drucken:
-   `index.html?druck&notizen` öffnen → Strg+P.
+   `index.html?druck&notizen` öffnen → Strg+P (Ränder „Keine“, „Hintergrundgrafiken“ an). Oben die Folie,
+   darunter der vollständige Sprechtext; lange Sprechtexte laufen auf eine Folgeseite weiter (ca. 43 Seiten).
+   Wer nur den gesprochenen Text braucht: die Absätze mit Zeitangabe „(ca. … s)“ lesen.
 5. **PDF neu erzeugen** (nach Änderungen): `index.html?druck` in Chrome öffnen → Strg+P → „Als PDF
    speichern“, Ränder „Keine“, „Hintergrundgrafiken“ an. Jede Folie wird eine Seite, alle Schritte sichtbar.
 
 ## 12. Technik-Checkliste für den Präsentationstag
 
-**Bis Fr, 23.10.**
-- [ ] Rätselbild (Folie 01) durch eigenes Foto ersetzt, Quelle in der Fußzeile, Zoompunkt geprüft
-- [ ] Beispieldaten auf 06, 07, 08, 08b, 09, 10, 11 und B2, B4–B6 durch echte Ergebnisse ersetzt
-      (dann Pillen „Beispieldaten“ entfernen; Kästen „FOLIE xx“ in `index.html` abarbeiten)
-- [ ] Umfrage im Werkzeug angelegt, Link in `marke.js`, QR mit mehreren Handys getestet
+**Bis Fr, 23.10.** (zuständig nach Bündel: A = Yannick Heisler, B = Lukas Welker, C = Elias Knauber –
+Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in `index.html` nennt Details)
+- [ ] **Folie 01 – Rätselbild** (A · Yannick): eigenes Foto statt des gezeichneten Platzhalters, Quelle in
+      der Fußzeile, Zoompunkt `data-fokus` geprüft, mit zwei Personen getestet
+- [ ] **Folie 04 – Persona-Bild** (A · Yannick): gekennzeichnetes KI-Bild (Prompt P6) unter `"bild"`
+      eintragen, `"bildHinweis"` z. B. „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“
+- [ ] **Folie 04 + B3 – Persona-Steckbrief freigeben** (A · Yannick): Folie 04 zeigt seit 17.10. den Entwurf
+      aus `../persona-steckbrief.md` und Folienentwurf 4 (Titel, Großstadt, Kaufverhalten als Annahme,
+      Mediennutzung Statista Consumer Insights 2025 – nicht im Recherche-Dossier). Nach der Freigabe Werte,
+      Titel und Beruf bestätigen oder in den Daten von Folie 04 und B3 anpassen
+- [ ] **Folie 05 und 10 – Limbic Type** (A · Yannick): `../limbic-map.md` (A3, 17.10.) stuft Marco als
+      **Hedonisten** ein (Gewichte B 30 / D 30 / S 40, Lücke Dominanz −10, neue „Folgen“ und neuer Titel;
+      Daten-JSON in `../folienentwuerfe.md`, Folie 5). Die Präsentation zeigt noch den Dossier-Stand
+      „Abenteurer“ (Folie 05, Persona-Pille auf Folie 10, Sprechtexte 10/11 „Dominanz-Lücke −20“). Nach der
+      Freigabe überall angleichen
+- [ ] **Zeitplan** (alle): 14:00-Plan der Präsentation (Abschnitt 3) bestätigen und `../arbeitsplan.md`
+      angleichen (ursprünglich 14:45)
+- [ ] **Beispieldaten** durch echte Ergebnisse ersetzen (dann Pillen „Beispieldaten“ entfernen):
+      06, 07, 08, 08b (inkl. Wettbewerberwerte), B4, B5 (B · Lukas) · 09, 11, B6 (C · Elias) ·
+      10 (Synthese), 12 (Pille am Fazit, erst löschen, wenn 10 und 11 keine Beispieldaten mehr tragen) und
+      B2 (Prompt-Log) (A · Yannick). Folie 09b hat keine Beispielwerte, nur die Fit-Bewertung als Hypothese
+- [ ] **Folie 08b – Fußzeile „n = 8“** (B · Lukas): an die tatsächlich Bewertenden anpassen (Dossier
+      Bündel B: Aaker-Bogen nur von Menschen ausfüllen lassen, z. B. „Gruppe + 3 Befragte, n = 6“)
+- [ ] **Folie 09 – Schlüsselbild** (C · Elias): Screenshot des Raptor-Beitrags mit Datum, Nutzungsrecht
+      mit dem Betreuer klären, Quelle in die Fußzeile; **Titel** endet mit „?“, bis die Codierung den Raptor
+      kanalübergreifend zeigt – dann „?“ streichen (Kasten „FOLIE 09“)
+- [ ] **HOLY-Logos auf Folie 01 und 09b** (offizielle Dateien von de.holy.com, Quelle in den Fußzeilen):
+      kurz mit dem Betreuer abstimmen, dass die Logos zur Kennzeichnung der analysierten Marke genutzt
+      werden dürfen (A · Yannick)
+- [ ] **Umfrage** (B · Lukas): im Werkzeug angelegt, `link` in `marke.js` eingetragen, QR-Code mit mehreren
+      Handys aus der letzten Reihe getestet
+- [ ] **Zahl der echten Kurzinterviews** – zurzeit steht überall die geplante Zahl „3“ (Folie 06–08, B1, B2,
+      B4, B5) und auf **Folie 02** in den Methodenkarten „KI + Kurzinterviews“; nach den Interviews überall
+      dieselbe tatsächliche Zahl eintragen, auf B1 die Pille „teils geplant“ löschen; gibt es keine echten
+      Interviews, auf Folie 02 „+ Kurzinterviews“ streichen (Kasten „FOLIE 02“) (A · Yannick, Zahl von Lukas)
+- [ ] **B7: Jahr und Auflage bei Esch und Häusel** ergänzen, orange Markierung löschen (A · Yannick)
 - [ ] Fachbegriffe und Modelle mit den Vorlesungsfolien abgeglichen (Steuerrad nach Esch, Limbic Map nach
       Häusel, Repertory Grid nach Kelly, Laddering nach Reynolds & Gutman, Brand Personality nach Aaker)
-- [ ] Generalprobe mit Referentenuhr: Ziel ≤ 15:00, jede Person kennt ihre Folien und Übergaben
-- [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick
+      (alle, je eigene Folien)
+- [ ] Generalprobe mit Referentenuhr: Ziel ≤ 15:00 (Plan 14:00), jede Person kennt ihre Folien und
+      Übergaben; die Live-Umfrage auf Folie 08 mit Stoppuhr testen (Sollzeit der Folie 1:10). Gekürzt
+      wurden die Folien 04, 05, 06, 09, 09b und 11 – Zeiten prüfen
+- [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**
 - [ ] Ordner kopiert, `index.html` öffnet in Chrome/Edge, Übergänge laufen flüssig
@@ -222,7 +284,8 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 - [ ] Ton aus, Benachrichtigungen aus (Fokus-/Nicht-stören-Modus), Netzteil angeschlossen, Bildschirmsperre aus
 
 **30 Minuten vorher**
-- [ ] Umfrage im Werkzeug zurückgesetzt/geöffnet; auf Folie 08 „Zurücksetzen“ (zweimal)
+- [ ] Umfrage im Werkzeug zurückgesetzt/geöffnet; **auf Folie 08 „Zurücksetzen“ (zweimal)** – sonst stehen
+      Probestimmen da
 - [ ] Falls Folie 01b genutzt wird: „Wolke leeren“ (zweimal)
 - [ ] Präsentation auf Folie 01 (Pos1), Referentenuhr „Zeit zurücksetzen“
 - [ ] Handy-Hotspot als Reserve für die Umfrage, USB-Stick mit PDF griffbereit
@@ -235,10 +298,10 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 | `marke.js` | alles, was sich mit der Marke ändert (Name, Farben, Bilder, Umfrage, Wortwolke) |
 | `css/` | `tokens.css` (Farben, Schriften, Größen), `deck.css` (Bühne, Bedienung), `komponenten.css` (Bausteine), `folien/` (je Folien-Gruppe) |
 | `js/` | `deck.js` (Steuerung, Referentenansicht, Druck), `komponenten.js` (Steuerrad, Umfrage, Wortwolke, QR, Rätsel), `folien/` (je Folien-Gruppe), `vendor/` (QR-Code-Bibliothek) |
-| `bilder/` | Platzhalterbilder (eigene Gestaltung) – eigene Bilder hier ablegen |
+| `bilder/` | offizielle HOLY-Logos (Folie 01 und 09b, Quelle in `QUELLEN.md`) und Platzhalterbilder (eigene Gestaltung) – eigene Bilder hier ablegen |
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
 | `werkzeuge/pruefen.mjs` | automatische Prüfung und Screenshots (optional, braucht Node.js) |
-| `export/` | PDF, Übersicht, Einzelbilder der Folien (Stand 16.10.2026) |
+| `export/` | PDF, Übersicht, Einzelbilder der Folien (Stand 17.10.2026, nach der zweiten Abschlussprüfung) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |
 | `_entwuerfe/` | die drei Gestaltungsrichtungen und die Jury-Entscheidung (Dokumentation; die Musterseiten zeigen die Ersatzschrift, weil doppelte Schriftdateien entfernt wurden) |

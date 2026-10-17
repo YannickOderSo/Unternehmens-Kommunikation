@@ -6,11 +6,12 @@
           hoch) mit Reichweitenbalken (gemessen am größten Kanal), Beiträge pro
           Woche und Ø Engagement-Rate. Beispielwerte werden gestrichelt
           umrandet (Klasse .ist-annahme aus dem Designsystem).
-        • baut die Bildwelt: Motivgruppen mit Anteil an der Stichprobe
-          („17 von 50“) und Beitrags-Platzhaltern (eigenes Piktogramm oder –
-          wenn eingetragen – der echte Screenshot mit durchgezogenem Rahmen).
-          Der Beitrag mit "schluesselbild": true bekommt den Hinweis
-          „Schlüsselbild?“ (Schritt 2). Das Hervorheben selbst regelt CSS.
+        • baut die Bildwelt: je Motivgruppe ein waagerechter Balken mit der
+          Zahl der Beiträge („17“ von 50 codierten) und rechts daneben EIN
+          Schlüsselbild – der Beitrag mit "schluesselbild": true (eigenes
+          Piktogramm als Platzhalter oder – wenn eingetragen – der echte
+          Screenshot mit durchgezogenem Rahmen). Es erscheint in Schritt 2 mit
+          dem Hinweis „Schlüsselbild?“. Das Hervorheben selbst regelt CSS.
    f09b „Corporate Design & Fit“
         • baut das Datenblatt (Logo · Claims & Schrift · Farben mit HEX ·
           Bildwelt) und die Fit-Bewertung (✓ / ~ / ✗, ein Schritt je Zeile),
@@ -20,7 +21,8 @@
           leuchten die passenden Zeilen auf, der Rest tritt zurück (CSS).
           Auch eine einzelne Farbgruppe kann Beleg sein ("farben.akzent").
         • Markenfarben aus marke.js → farben erscheinen in der Palette, falls
-          sie dort noch nicht stehen (insgesamt höchstens 5 Farben).
+          sie dort noch nicht stehen und noch Platz ist (insgesamt höchstens
+          5 Farben; Vorrang haben die Farben aus den Daten).
         • vergleicht die Steuerrad-Stichworte mit Folie 10 (Warnung, wenn
           sie voneinander abweichen).
    Inhalte ändern Sie NUR in den Daten der Folien
@@ -152,60 +154,73 @@
     });
   }
 
-  /* Bildwelt: Motivgruppen mit Beitrags-Platzhaltern.
+  /* Bildwelt: waagerechte Balken je Motivgruppe + EIN Schlüsselbild.
      d.stichprobe     = Zahl der codierten Beiträge ({ "wert": 50, "beispiel": true })
-     g.anteil         = wie viele davon zu dieser Gruppe gehören → „17 von 50“
-     d.schluesselbildText = Text des Hinweises in Schritt 2 (Standard „Schlüsselbild?“) */
+     g.anteil         = wie viele davon diese Gruppe als Hauptmotiv haben → Balken + Zahl
+     g.beitraege      = Beispiele der Gruppe; der Beitrag mit "schluesselbild": true
+                        erscheint rechts als großes Bild (Platzhalter, bis "bild" gesetzt ist)
+     d.schluesselbildText = Text des Hinweises in Schritt 2 (Standard „Schlüsselbild?“)
+     Die Balkenlänge ist proportional zum Anteil (längster Balken = größte Gruppe). */
   function bildweltBauen(ziel, d, u) {
     ziel.innerHTML = '';
     var gruppen = d.bildwelt || [];
     var stichprobe = d.stichprobe || null;
     var chipText = d.schluesselbildText || 'Schlüsselbild?';
+    var groesste = Math.max.apply(null, gruppen.map(function (g) { return wertVon(g.anteil); }).concat([1]));
+    var schluessel = null;
+
+    /* linke Seite: Balkendiagramm */
+    var diagramm = u.element('div', { class: 'g5-motive' }, null, ziel);
+    var kopf = u.element('p', { class: 'g5-motive-kopf', 'data-meta': '' }, null, diagramm);
+    var n = stichprobe ? u.zahlFormat(wertVon(stichprobe), 0) : '';
+    if (n) {
+      /* Die Zahl der codierten Beiträge ist (noch) ein Beispielwert → gestrichelt wie die übrigen */
+      kopf.appendChild(document.createTextNode('Hauptmotiv in '));
+      u.element('span', {
+        class: 'g5-motive-n' + (istBeispiel(stichprobe) ? ' ist-annahme g5-beispielwert' : ''),
+        title: istBeispiel(stichprobe) ? 'Beispielwert – noch selbst zu erheben' : null
+      }, n, kopf);
+      kopf.appendChild(document.createTextNode(' codierten Beiträgen'));
+    } else {
+      kopf.textContent = 'Hauptmotive der Beiträge';
+    }
+    var liste = u.element('ol', { class: 'g5-motiv-liste', 'data-staffel': '110', 'data-animation': 'hoch' }, null, diagramm);
 
     gruppen.forEach(function (g) {
-      var gruppe = u.element('div', { class: 'g5-gruppe' }, null, ziel);
-      if ((g.beitraege || []).some(function (b) { return b.schluesselbild; })) gruppe.classList.add('hat-schluesselbild');
-
-      /* Kopf: Gruppenname links, Anteil an der Stichprobe rechts */
-      var kopf = u.element('div', { class: 'g5-gruppe-kopf' }, null, gruppe);
-      u.element('h3', { class: 'karte-kicker g5-gruppe-name', 'data-meta': '' }, g.gruppe || '', kopf);
-      if (g.anteil !== undefined && g.anteil !== null && stichprobe) {
-        /* Beispielwert, wenn der Anteil ODER die Stichprobe noch Beispiel ist */
-        var beispiel = istBeispiel(g.anteil) || istBeispiel(stichprobe);
-        var text = u.zahlFormat(wertVon(g.anteil), 0) + ' von ' + u.zahlFormat(wertVon(stichprobe), 0);
-        u.element('span', {
-          class: 'g5-anteil' + (beispiel ? ' ist-annahme g5-beispielwert' : ''),
-          'data-meta': '',
-          title: beispiel ? 'Beispielwert – noch selbst zu erheben' : 'Anteil an den codierten Beiträgen'
-        }, text, kopf);
-      }
-      var liste = u.element('div', { class: 'g5-beitraege' }, null, gruppe);
-
-      (g.beitraege || []).forEach(function (b) {
-        var fig = u.element('figure', { class: 'g5-beitrag' + (b.schluesselbild ? ' ist-schluesselbild' : '') }, null, liste);
-        var flaeche = u.element('div', { class: 'bild-platzhalter g5-beitrag-bild' }, null, fig);
-        if (b.bild) {
-          /* echter Screenshot (Pfad relativ zu praesentation/): durchgezogener
-             Rahmen = belegt. Mit "beispiel": true (z. B. nachgestelltes oder
-             KI-erzeugtes Motiv) bleibt der Rahmen gestrichelt. */
-          u.element('img', { src: u.pfad(b.bild), alt: 'Beitrag: ' + (b.motiv || '') }, null, flaeche);
-          flaeche.classList.add(b.beispiel ? 'g5-beitrag-bild--beispiel' : 'g5-beitrag-bild--beleg');
-          if (b.beispiel) flaeche.title = 'Beispielbild – kein echter Beitrag';
-        } else {
-          flaeche.setAttribute('role', 'img');
-          flaeche.setAttribute('aria-label', 'Platzhalter für einen Beitrag: ' + (b.motiv || ''));
-          flaeche.insertAdjacentHTML('beforeend', symbolSvg(b.symbol, 'g5-symbol'));
-        }
-        if (b.schluesselbild) {
-          /* Hinweis „Schlüsselbild?“ – erscheint in Schritt 2. Zentriert per
-             left/right/margin (NICHT per translate: die Engine-Animation „hoch“
-             verschiebt selbst über translate und würde die Zentrierung stören). */
-          u.element('span', { class: 'chip chip--akzent g5-schluessel-chip', 'data-schritt': '2', 'data-animation': 'hoch' },
-            chipText, flaeche);
-        }
-        u.element('figcaption', { class: 'g5-beitrag-text' }, b.motiv || '', fig);
-      });
+      var hatSchluessel = (g.beitraege || []).filter(function (b) { return b.schluesselbild; })[0];
+      if (hatSchluessel && !schluessel) schluessel = hatSchluessel;
+      var zeile = u.element('li', { class: 'g5-motiv' + (hatSchluessel ? ' hat-schluesselbild' : '') }, null, liste);
+      u.element('span', { class: 'g5-motiv-name' }, g.gruppe || '', zeile);
+      var spur = u.element('span', { class: 'g5-motiv-spur', 'aria-hidden': 'true' }, null, zeile);
+      var balken = u.element('span', { class: 'g5-motiv-balken', 'data-animation': 'zeichnen', 'data-verzoegerung': '150' }, null, spur);
+      balken.style.width = Math.max(2, wertVon(g.anteil) / groesste * 100).toFixed(2) + '%';
+      /* Beispielwert, wenn der Anteil ODER die Stichprobe noch Beispiel ist */
+      var beispiel = istBeispiel(g.anteil) || istBeispiel(stichprobe);
+      if (beispiel) balken.classList.add('g5-motiv-balken--beispiel');
+      zaehler(zeile, g.anteil, { klasse: 'g5-motiv-zahl', verzoegerung: '150' }, u);
+      if (beispiel && !istBeispiel(g.anteil)) zeile.lastChild.classList.add('ist-annahme', 'g5-beispielwert');
+      /* Beispiele der Gruppe für Screenreader (auf der Folie nennt sie der Sprechtext) */
+      var beispiele = (g.beitraege || []).map(function (b) { return b.motiv; }).filter(Boolean).join(', ');
+      if (beispiele) u.element('span', { class: 'nur-screenreader' }, ' (' + beispiele + ')', zeile);
     });
+
+    /* rechte Seite: genau ein Schlüsselbild (erscheint in Schritt 2) */
+    if (!schluessel) return;
+    var fig = u.element('figure', { class: 'g5-schluessel', 'data-schritt': '2', 'data-animation': 'hoch' }, null, ziel);
+    var flaeche = u.element('div', { class: 'bild-platzhalter g5-schluessel-bild' }, null, fig);
+    if (schluessel.bild) {
+      /* echter Screenshot (Pfad relativ zu praesentation/): durchgezogener Rahmen = belegt.
+         Mit "beispiel": true (nachgestelltes oder KI-erzeugtes Motiv) bleibt er gestrichelt. */
+      u.element('img', { src: u.pfad(schluessel.bild), alt: 'Beitrag: ' + (schluessel.motiv || '') }, null, flaeche);
+      flaeche.classList.add(schluessel.beispiel ? 'g5-schluessel-bild--beispiel' : 'g5-schluessel-bild--beleg');
+    } else {
+      flaeche.setAttribute('role', 'img');
+      flaeche.setAttribute('aria-label', 'Platzhalter für den Screenshot: ' + (schluessel.motiv || ''));
+      flaeche.insertAdjacentHTML('beforeend', symbolSvg(schluessel.symbol, 'g5-symbol'));
+      u.element('span', { class: 'g5-schluessel-hinweis', 'data-meta': '' }, 'Platzhalter – Screenshot folgt', flaeche);
+    }
+    u.element('span', { class: 'chip chip--akzent g5-schluessel-chip' }, chipText, flaeche);
+    u.element('figcaption', { class: 'g5-schluessel-text' }, schluessel.motiv || '', fig);
   }
 
   Deck.registriere('f09', {
@@ -252,10 +267,13 @@
   var MAX_FARBEN = 5;
 
   /* Palette: Gruppen aus den Daten + Markenfarben aus marke.js (falls neu).
-     Markenfarben kommen nach vorn in die erste Gruppe; sind es dann mehr als
-     MAX_FARBEN, fallen die letzten Farben der Liste weg (Warnung in der
-     Konsole – pruefen.mjs meldet sie). Abhilfe: in den Daten eine Farbe
-     herausnehmen. */
+     Vorrang haben die Farben aus den Daten (das Ergebnis der Analyse):
+     • Stehen dort mehr als MAX_FARBEN Farben, fallen die letzten weg
+       (Warnung in der Konsole – pruefen.mjs meldet sie). Abhilfe: in den
+       Daten eine Farbe herausnehmen.
+     • Markenfarben aus marke.js, die in den Daten noch fehlen, kommen nach
+       vorn in die erste Gruppe – aber nur, solange Platz ist (keine Warnung:
+       Wer in marke.js andere Farben testet, soll keine Fehlermeldung sehen). */
   function paletteSammeln(gruppen, marke) {
     var ergebnis = (gruppen || []).map(function (g) {
       return {
@@ -264,31 +282,40 @@
         liste: (g.liste || []).filter(function (f) { return hexNormal(f.hex); })
       };
     });
+
+    /* 1. Farben aus den Daten: Dubletten entfernen, auf MAX_FARBEN begrenzen */
     var vorhanden = {};
-    ergebnis.forEach(function (g) { g.liste.forEach(function (f) { vorhanden[hexNormal(f.hex)] = true; }); });
+    var platz = MAX_FARBEN;
+    var weg = [];
+    ergebnis.forEach(function (g) {
+      g.liste = g.liste.filter(function (f) {
+        var hex = hexNormal(f.hex);
+        if (vorhanden[hex]) return false;            // doppelt eingetragen
+        vorhanden[hex] = true;
+        if (platz <= 0) { weg.push(hex); return false; }
+        platz -= 1;
+        return true;
+      });
+    });
+    if (weg.length) {
+      console.warn('f09b: mehr als ' + MAX_FARBEN + ' Farben in den Daten – ' + weg.join(', ') +
+        ' ausgeblendet. Bitte in index.html, Folien 09/09b (Daten von f09b → farben) eine Farbe herausnehmen.');
+    }
+
+    /* 2. Markenfarben aus marke.js ergänzen, falls neu und noch Platz ist */
     var ausMarke = [];
     var farben = (marke && marke.farben) || {};
     [['primaer', 'Primärfarbe'], ['sekundaer', 'Sekundärfarbe']].forEach(function (p) {
       var hex = hexNormal(farben[p[0]]);
-      if (hex && !vorhanden[hex]) { ausMarke.push({ name: p[1] + ' (marke.js)', hex: hex }); vorhanden[hex] = true; }
+      if (hex && !vorhanden[hex] && platz > 0) {
+        ausMarke.push({ name: p[1] + ' (marke.js)', hex: hex });
+        vorhanden[hex] = true;
+        platz -= 1;
+      }
     });
     if (ausMarke.length) {
       if (ergebnis.length) ergebnis[0].liste = ausMarke.concat(ergebnis[0].liste);
       else ergebnis.push({ gruppe: 'Markenfarben', schluessel: '', liste: ausMarke });
-    }
-
-    /* auf MAX_FARBEN begrenzen: von vorn zählen, Überzählige hinten abschneiden */
-    var platz = MAX_FARBEN;
-    var weg = [];
-    ergebnis.forEach(function (g) {
-      var behalten = g.liste.slice(0, Math.max(0, platz));
-      g.liste.slice(behalten.length).forEach(function (f) { weg.push(hexNormal(f.hex)); });
-      g.liste = behalten;
-      platz -= behalten.length;
-    });
-    if (weg.length) {
-      console.warn('f09b: mehr als ' + MAX_FARBEN + ' Farben – ' + weg.join(', ') +
-        ' ausgeblendet. Bitte in index.html, Folien 09/09b (Daten von f09b → farben) eine Farbe herausnehmen.');
     }
     return ergebnis.filter(function (g) { return g.liste.length; });
   }
@@ -297,12 +324,21 @@
     var u = ctx.util;
     ziel.innerHTML = '';
 
-    /* 1. Logo (Bild aus marke.js → logo, bis dahin neutraler Platzhalter) */
+    /* 1. Logo: Bild aus marke.js → logo. Solange dort nur der Platzhalter steht
+          (Dateiname enthält „platzhalter“ oder leer), zeigt die Zeile KEIN Bild,
+          sondern nur die Beschreibung der Wortmarke in Textgröße – ein leerer
+          Platzhalter-Kasten würde die Analyse schwächen. Seit 16.10.2026 steht
+          dort die offizielle Wortmarke (bilder/holy-logo-wortmarke.png, Quelle
+          in der Fußzeile von 09b und in QUELLEN.md). */
     var logo = datenblattZeile(ziel, 'logo', 'Logo', belege, u);
-    var fig = u.element('figure', { class: 'g5b-logo' }, null, logo.inhalt);
-    u.element('img', { class: 'g5b-logo-bild', 'data-marke-logo': '', alt: 'Logo der Marke' }, null, fig);
+    var logoPfad = (Deck.marke && Deck.marke.logo) || '';
+    var ohneBild = !logoPfad || /platzhalter/i.test(logoPfad);
+    var fig = u.element('figure', { class: 'g5b-logo' + (ohneBild ? ' g5b-logo--ohne-bild' : '') }, null, logo.inhalt);
+    if (!ohneBild) {
+      u.element('img', { class: 'g5b-logo-bild', 'data-marke-logo': '', alt: 'Logo der Marke' }, null, fig);
+    }
     if (d.logo && d.logo.beschreibung) {
-      u.element('figcaption', { class: 'g5b-logo-text', 'data-meta': '' }, d.logo.beschreibung, fig);
+      u.element('figcaption', ohneBild ? { class: 'g5b-logo-text' } : { class: 'g5b-logo-text', 'data-meta': '' }, d.logo.beschreibung, fig);
     }
 
     /* 2. Claims & Schrift: Dachclaim im Stil der Überschriften-Schrift,

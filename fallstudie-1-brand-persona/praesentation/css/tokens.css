@@ -58,15 +58,22 @@
   font-weight: 100 900; font-style: normal; font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* Kursive Fraunces: Datei mit ALLEN Achsen (wght, opsz, SOFT, WONK). Nur so
+   lassen sich die verspielten „wonky“-Formen (b, h, k, l) abschalten, die die
+   reine opsz-Datei bei großen Schriftgraden einsetzt – sie lasen sich auf dem
+   Beamer unruhig (b ähnlich einer 6). Abgeschaltet wird mit "WONK" 0 über
+   das Token --achsen-ruhig (Abschnitt 2), das in jeder Angabe
+   font-variation-settings mitsteht und für <body> gilt (Abschlussprüfung
+   16.10.2026). Andere Schriften kennen die Achse nicht und ignorieren sie. */
 @font-face {
   font-family: "Fraunces Deck";
-  src: url("../schriften/fraunces-latin-opsz-italic.woff2") format("woff2");
+  src: url("../schriften/fraunces-latin-full-italic.woff2") format("woff2");
   font-weight: 100 900; font-style: italic; font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
   font-family: "Fraunces Deck";
-  src: url("../schriften/fraunces-latin-ext-opsz-italic.woff2") format("woff2");
+  src: url("../schriften/fraunces-latin-ext-full-italic.woff2") format("woff2");
   font-weight: 100 900; font-style: italic; font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -80,6 +87,20 @@
   font-family: "Inter Deck";
   src: url("../schriften/inter-latin-ext-opsz-normal.woff2") format("woff2");
   font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Echte Kursive der Inter (sonst stellt der Browser den Normalschnitt nur
+   schräg, z. B. „Attribute als Startpunkte“ auf Folie 02) */
+@font-face {
+  font-family: "Inter Deck";
+  src: url("../schriften/inter-latin-opsz-italic.woff2") format("woff2");
+  font-weight: 100 900; font-style: italic; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter Deck";
+  src: url("../schriften/inter-latin-ext-opsz-italic.woff2") format("woff2");
+  font-weight: 100 900; font-style: italic; font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -150,6 +171,10 @@
   --groesse-tabelle: 24px;         /* Tabellen im Backup (min. 22 px) */
   --groesse-meta: 22px;            /* Quelle, Kicker, Seitenzahl, Badges */
   --groesse-kennzahl: 120px;       /* große Zahl in .kennzahl */
+
+  /* Ruhige Buchstabenformen der kursiven Fraunces (keine „wonky“-Formen).
+     Steht in jeder Angabe font-variation-settings mit: "opsz" …, var(--achsen-ruhig) */
+  --achsen-ruhig: "WONK" 0;
 
   --zeilenhoehe-titel: 1.06;
   --zeilenhoehe-text: 1.38;
@@ -417,12 +442,12 @@
   --f-linie:       color-mix(in oklab, var(--marke-sekundaer) 18%, #3C3E43);
   --f-linie-stark: var(--f-text);
   --f-akzent:         color-mix(in oklab, var(--marke-primaer) 45%, #FFFFFF);
-  --f-akzent-flaeche: color-mix(in oklab, var(--marke-primaer) 22%, #1B1C1F);
+  --f-akzent-flaeche: color-mix(in oklab, var(--marke-primaer) 12%, #1B1C1F);   /* gedeckt, nicht olivbraun (Prüfung 16.10.) */
   --f-auf-akzent:     #121316;
   --f-hart:           color-mix(in oklab, var(--marke-sekundaer) 35%, #EEECE7);
   --f-hart-flaeche:   color-mix(in oklab, var(--marke-sekundaer) 16%, #1E1F22);
   --f-weich:          color-mix(in oklab, var(--marke-primaer) 40%, #FFFFFF);
-  --f-weich-flaeche:  color-mix(in oklab, var(--marke-primaer) 26%, #1E1F22);
+  --f-weich-flaeche:  color-mix(in oklab, var(--marke-primaer) 15%, #1E1F22);
   --f-kern:           color-mix(in oklab, var(--marke-primaer) 85%, #FFFFFF);
   --f-auf-kern:       #FFFFFF;
   --f-rahmen:         var(--f-text);
@@ -642,11 +667,15 @@
     --f-text-2:         oklch(from var(--marke-sekundaer) 0.8 min(c, 0.014) h);
     --f-linie:          oklch(from var(--marke-sekundaer) 0.38 min(c, 0.014) h);
     --f-akzent:         oklch(from var(--marke-primaer) max(l, 0.8) min(c, 0.13) h);
-    --f-akzent-flaeche: oklch(from var(--marke-primaer) 0.3 min(c, 0.05) h);
+    /* Akzent- und Soft-Facts-Flächen: weniger Buntheit (0,05/0,055 → 0,028/0,036),
+       sonst wirken große Karten (z. B. Folie 08) im Dunkeln schwer und
+       khakifarben (Abschlussprüfung 16.10.2026). Karten bekommen dafür eine
+       feine Kante in Markenfarbe (css/komponenten.css, Karten). */
+    --f-akzent-flaeche: oklch(from var(--marke-primaer) 0.29 min(c, 0.028) h);
     --f-hart:           oklch(from var(--marke-sekundaer) max(l, 0.85) min(c, 0.05) h);
     --f-hart-flaeche:   oklch(from var(--marke-sekundaer) 0.3 min(c, 0.025) h);
     --f-weich:          oklch(from var(--marke-primaer) max(l, 0.83) min(c, 0.12) h);
-    --f-weich-flaeche:  oklch(from var(--marke-primaer) 0.32 min(c, 0.055) h);
+    --f-weich-flaeche:  oklch(from var(--marke-primaer) 0.31 min(c, 0.036) h);
     --f-kern:           oklch(from var(--marke-primaer) clamp(0.45, l, 0.75) c h);
     --f-auf-akzent:     color(from var(--f-akzent) xyz-d65 clamp(0, (0.179 - y) * 1000, 0.9505) clamp(0, (0.179 - y) * 1000, 1) clamp(0, (0.179 - y) * 1000, 1.089));
     --f-auf-kern:       color(from var(--f-kern) xyz-d65 clamp(0, (0.179 - y) * 1000, 0.9505) clamp(0, (0.179 - y) * 1000, 1) clamp(0, (0.179 - y) * 1000, 1.089));

@@ -5,19 +5,24 @@
    die Ergänzungen dieser Folie:
      • Markenkern als Band über dem Rad (mit gestricheltem Platzhalter)
      • Quellenkürzel direkt hinter einzelnen Stichworten
-     • Konsistenzprüfung: rote Nummern an Stichworten + Notizen „Lücke 1/2“
+     • Konsistenzprüfung: Nummern (Lückenfarbe) an Stichworten + Notizen „Lücke 1/2“
      • optionaler Abgleich mit der Wortwolke (letzter Schritt)
-   Farbe der Lücken: --f-fehler (Signalfarbe „Bruch“, in hell und dunkel
-   kontrastgeprüft). Nur Variablen aus tokens.css verwenden.
+   Farbe der Lücken: --f-warnung (Braun-Orange) wie „teilweise“ auf Folie 09b
+   und die Lücken auf Folie 11; Rot (--f-fehler) bleibt dem „Bruch“
+   vorbehalten (Folie 09b, 11). In hell und dunkel kontrastgeprüft.
+   Nur Variablen aus tokens.css verwenden.
    ============================================================================= */
+#f10 { --g6s-luecke: var(--f-warnung); }
 
 /* ---------------------------------------------------------------------------
    0. MARKENKERN – eigenes Band über dem Rad
    Das Zentrum des Rads ist (wie auf Folie 2 und 12) die Markenkompetenz.
    Der Markenkern ist unsere Verdichtung aller Felder und steht deshalb
-   außerhalb des Rads. Bis zu seinem Schritt zeigt ein gestrichelter Rahmen,
-   wo er erscheinen wird; der Platz ist von Anfang an reserviert (das Rad
-   misst den Rest der Fläche aus – kein Layoutsprung).
+   außerhalb des Rads. Das ganze Band (Überschrift, Akzentstrich, Satz)
+   erscheint erst in seinem Schritt; bis dahin bleibt der Platz frei, aber
+   unsichtbar reserviert (das Rad misst den Rest der Fläche aus – kein
+   Layoutsprung). Bis 16.10.2026 stand dort vorher ein gestrichelter Leerkasten –
+   er las sich wie „hier fehlt etwas“ (Abschlussprüfung).
    --------------------------------------------------------------------------- */
 #f10 .folie-kopf ~ .folie-inhalt { margin-top: 26px; }   /* Band rückt näher an den Titel */
 #f10 .g6s-kern {
@@ -44,17 +49,22 @@
 #f10 .g6s-kern-zusatz { color: var(--f-text-2); }
 #f10 .g6s-kern-platz,
 #f10 .g6s-kern-text { grid-column: 2; grid-row: 1; }
-/* Platzhalter: gestrichelter Rahmen in der Größe des Kern-Satzes */
+/* Platzhalter: hält nur die Höhe des Kern-Satzes frei (unsichtbar) */
 #f10 .g6s-kern-platz {
   justify-self: start;
   width: min(100%, 520px);
   height: 52px;
-  border: var(--linie-fein) dashed var(--f-linie);
-  border-radius: var(--radius-m);
-  transition: opacity var(--dauer-mittel) var(--kurve);
+  visibility: hidden;
 }
-#f10 .g6s-kern:has(> .g6s-kern-text.schritt-an) > .g6s-kern-platz { opacity: 0; }
 html.druckmodus #f10 .g6s-kern-platz { display: none; }
+/* Band erst mit dem Kern-Satz zeigen (Schritt „Markenkern“) */
+#f10 .g6s-kern { transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s; }
+#f10 .g6s-kern:not(:has(> .g6s-kern-text.schritt-an)) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
 #f10 .g6s-kern-text {
   margin: 0;
   font-family: var(--schrift-display);
@@ -71,7 +81,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
    1. QUELLENKÜRZEL JE STICHWORT
    Weicht die Quelle eines Stichworts vom Kürzel im Kartenkopf ab, steht ihr
    Kürzel klein direkt dahinter (gleiche Gestaltung wie die Kopf-Kürzel).
-   inline-block: Die rote Unterstreichung markierter Wörter läuft so nicht
+   inline-block: Die Unterstreichung markierter Wörter läuft so nicht
    unter dem Kürzel weiter.
    --------------------------------------------------------------------------- */
 #f10 .g6s-quelle {
@@ -122,7 +132,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   top: 50%;
   height: var(--g6s-luecke-hoehe, 100%);
   transform: translateY(-50%);
-  border-left: var(--linie-stark) dashed var(--f-fehler);
+  border-left: var(--linie-stark) dashed var(--g6s-luecke);
 }
 #f10 .g6s-luecke--rechts {
   align-items: flex-end;
@@ -148,7 +158,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   letter-spacing: var(--kicker-laufweite);
   text-transform: var(--kicker-versalien);
   line-height: 1.2;
-  color: var(--f-fehler);
+  color: var(--g6s-luecke);
 }
 #f10 .g6s-luecke--rechts .g6s-luecke-kopf { flex-direction: row-reverse; }
 #f10 .g6s-luecke-titel { white-space: nowrap; }
@@ -173,7 +183,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--f-fehler);
+  background: var(--g6s-luecke);
   color: var(--f-hintergrund);
   font-family: var(--schrift-zahl);
   font-size: var(--groesse-meta);
@@ -201,13 +211,15 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   white-space: nowrap;
 }
 #f10 .sr-trenner.g6s-trenner-aus { visibility: hidden; }
-/* Hinter einem markierten Stichwort steht ab der Konsistenzprüfung die rote
-   Nummer an der Stelle des Trenners – der Trenner tritt dann zurück (die
-   Gruppe bleibt gleich breit, nichts verschiebt sich) */
-#f10 .g6s-gruppe:has(.g6s-wortmarke.schritt-an) > .sr-trenner { visibility: hidden; }
-/* etwas mehr Abstand hinter markierten Stichworten, damit die Nummer frei
-   steht (gilt von Anfang an – kein Sprung, wenn die Nummer erscheint) */
-#f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert) { gap: 18px; }
+/* Hinter einem markierten Stichwort steht die Nummer hochgestellt direkt
+   am Wort; der Trenner „·“ bleibt sichtbar und steht rechts daneben
+   (Abschlussprüfung 17.10.2026: Stand die Nummer an der Stelle des
+   Trenners, las sich „gutes Gewissen 1 dazugehören“ wie ein Stichwort).
+   Der Abstand zum Trenner wächst erst, wenn die Nummer erscheint (sanft,
+   damit vorher keine auffällige Lücke steht); danach misst das Skript die
+   Zeilen neu (js/folien/10-markensteuerrad.js, Hook „schritt“). */
+#f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert) { transition: gap var(--dauer-mittel) var(--kurve); }
+#f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert > .g6s-wortmarke.schritt-an) { gap: 40px; }
 
 /* Ruhe nach dem Betreten (Skript: ruheStarten): Bis sich die Maus bewegt,
    nehmen Felder, Karten und Pillen keine Mausereignisse an – kein
@@ -223,7 +235,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
 #f10 .sr-karte-stichworte { row-gap: 14px; }
 #f10 .sr-karte:not(.sr-pille) { gap: 12px; }
 
-/* Markiertes Stichwort: gestrichelte rote Unterstreichung, sobald die Nummer
+/* Markiertes Stichwort: gestrichelte Unterstreichung in Lückenfarbe, sobald die Nummer
    sichtbar ist (gleicher Schritt, auch im Druck und in der Vorschau) */
 #f10 .sr-stichwort.g6s-markiert {
   position: relative;
@@ -235,7 +247,7 @@ html.druckmodus #f10 .g6s-kern-platz { display: none; }
   transition: text-decoration-color var(--dauer-mittel) var(--kurve);
 }
 #f10 .sr-stichwort.g6s-markiert:has(> .g6s-wortmarke.schritt-an) {
-  text-decoration-color: var(--f-fehler);
+  text-decoration-color: var(--g6s-luecke);
 }
 
 
@@ -302,3 +314,59 @@ html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF ble
   text-decoration: underline var(--linie-stark) var(--f-akzent);
   text-underline-offset: 8px;
 }
+
+
+/* ---------------------------------------------------------------------------
+   4. LESBARKEIT UND WORTBUDGET (Abschlussprüfung 16.10.2026)
+   • Methodenkürzel (DR, LM, RG, LA, AN, KA) sind auf dieser Folie
+     ausgeblendet – die Herkunft jedes Felds zeigt Folie 02, die Legende
+     steht in den Notizen und auf B1. Wieder einblenden: diese Regel löschen.
+   • Die Kernaussage („zwei Lücken“) bekommt die größere Schrift:
+     Kopf der Lücken-Notiz 28 px, Text 32 px, Nummernmarken größer.
+   • Feldnamen in den Karten 26 px (Beschriftung, data-meta; bis 17.10.2026 24 px).
+   --------------------------------------------------------------------------- */
+#f10 .sr-quelle,
+#f10 .g6s-quelle { display: none; }
+#f10 .sr-karte-feld { font-size: 26px; }     /* Kartenköpfe (Beschriftung) – 26 px statt 24 px */
+#f10 .g6s-luecke-kopf { font-size: var(--groesse-text-min); }
+#f10 .g6s-luecke-text { font-size: 32px; }
+#f10 .g6s-nummer {
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+}
+#f10 .g6s-wortmarke {
+  width: 30px;
+  height: 30px;
+  left: calc(100% + 4px);
+  top: -16px;
+  font-size: var(--groesse-meta);
+}
+/* in den einzeiligen Pillen (Kompetenz, Persona) weniger hoch, damit die
+   Nummer nicht über den Pillenrand ragt */
+#f10 .sr-pille .g6s-wortmarke { top: -8px; }
+/* Feldpaar („· Nutzen ↔ Attribute“) im Kopf der Lücken-Notiz ausgeblendet:
+   In 28 px passt es nicht mehr neben „Lücke n“; welche Felder betroffen
+   sind, zeigen die Nummern an den Stichworten. */
+#f10 .g6s-luecke-paar { display: none; }
+
+
+/* ---------------------------------------------------------------------------
+   5. TITEL IM ABGLEICH-SCHRITT (nur mit Folie 01b und Zurufen in der Wortwolke)
+   Beide Titelfassungen liegen in derselben Rasterzelle (wie auf Folie 08):
+   Erscheint der Abgleich-Titel, tritt die Kernaussage zurück. Im Druck gibt
+   es keinen Abgleich (siehe oben) – dort bleibt die Kernaussage stehen.
+   --------------------------------------------------------------------------- */
+#f10 .g6s-titel { display: grid; }
+#f10 .g6s-titel > span { grid-area: 1 / 1; min-width: 0; }
+#f10 .g6s-titel > span[hidden] { display: none; }
+#f10 .g6s-titel-standard {
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s;
+}
+#f10 .g6s-titel:has(> .g6s-titel-abgleich.schritt-an) > .g6s-titel-standard {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+html.druckmodus #f10 .g6s-titel-abgleich { display: none !important; }
+html.druckmodus #f10 .g6s-titel-standard { opacity: 1 !important; visibility: visible !important; }

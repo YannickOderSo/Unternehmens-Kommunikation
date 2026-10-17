@@ -10,10 +10,10 @@
 
    2. QUELLENKÜRZEL JE STICHWORT: Im Kartenkopf bleibt nur das häufigste
       Kürzel des Felds; ein abweichendes Kürzel steht klein direkt hinter dem
-      Stichwort (z. B. „Abenteurer LM“, „160 mg Koffein DR“).
+      Stichwort (z. B. „Abenteurer LM“, „Energy: 160 mg Koffein DR“).
 
    3. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
-      • rote Nummern an den Stichworten, die eine Lücke bilden
+      • Nummern (Lückenfarbe, Braun-Orange) an den Stichworten, die eine Lücke bilden
         (Daten: „luecken“ → „markieren“ im JSON der Folie),
       • je Lücke eine kurze Notiz in der freien Fläche zwischen den Karten
         (links: zwischen Nutzen und Attributen, rechts: zwischen Tonalität und Bild).
@@ -216,6 +216,26 @@
       if (zustand) ruheBeenden(zustand);
     },
 
+    /* Vor Deck.gehe('f10', 'ende') (deck.js): Gibt es inzwischen Zurufe in
+       der Wortwolke (oder keine mehr), ändert sich die Zahl der Schritte –
+       hier neu zählen, damit „ende“ den richtigen letzten Schritt trifft. */
+    schritteAktualisieren: function (ctx) {
+      var zustand = ctx.folie._g6s;
+      if (zustand) abgleichPruefen(ctx, zustand);
+    },
+
+    /* Konsistenzprüfung an/aus: Hinter den markierten Stichworten wächst der
+       Abstand zum Trenner (CSS, Abschnitt 2) – danach Zeilenenden und Lage
+       der Notizen neu messen (nach dem Übergang) */
+    schritt: function (ctx, n) {
+      var zustand = ctx.folie._g6s;
+      if (!zustand) return;
+      if (n !== zustand.schrittLuecken && n !== zustand.schrittLuecken - 1) return;
+      clearTimeout(zustand.messTimer);
+      var sofort = document.documentElement.classList.contains('testmodus') || ctx.bewegungReduziert || ctx.druckmodus;
+      zustand.messTimer = setTimeout(function () { platzieren(zustand); }, sofort ? 0 : 450);
+    },
+
     druck: function (ctx) {
       var zustand = ctx.folie._g6s;
       if (!zustand) return;
@@ -333,7 +353,7 @@
      KONSISTENZPRÜFUNG
      =========================================================================== */
 
-  /* Rote Nummer an jedes Stichwort hängen, das eine Lücke bildet.
+  /* Nummer an jedes Stichwort hängen, das eine Lücke bildet.
      Die Nummer ist ein eigener Schritt (erscheint mit den Notizen). */
   function markieren(zustand) {
     var rad = zustand.rad;
@@ -489,7 +509,7 @@
   /* Stichworte und ihr folgender Trenner „·“ bilden eine Gruppe, die nicht
      umbrochen wird. So steht ein Trenner nie am Anfang einer Zeile; steht er
      am Zeilenende, blendet trennerAmZeilenende() ihn aus. Hinter markierten
-     Stichworten blendet das CSS den Trenner aus, sobald die rote Nummer
+     Stichworten blendet das CSS den Trenner aus, sobald die Nummer
      erscheint (sie steht dann an seiner Stelle). */
   function trennerGruppieren(rad) {
     Array.prototype.forEach.call(rad.querySelectorAll('.sr-karte-stichworte'), function (liste) {
@@ -522,6 +542,7 @@
     var el = ctx.folie.querySelector('.g6s-abgleich');
     if (!el) return;
     zustand.abgleichEl = el;
+    zustand.titelEl = ctx.folie.querySelector('.g6s-titel-abgleich');
     zustand.wolkeId = zustand.abgleich.wortwolke ||
       (el.querySelector('.wortwolke') && el.querySelector('.wortwolke').getAttribute('data-wortwolke')) || 'assoziationen';
 
@@ -581,12 +602,36 @@
       el.hidden = false;
       el.setAttribute('data-schritt', schritt);
       el.setAttribute('data-animation', 'einblenden');
+      abgleichTitel(zustand, schritt, treffer, alle);
     } else {
       el.hidden = true;
       el.removeAttribute('data-schritt');
+      abgleichTitel(zustand, null);
     }
     if (vorher !== el.getAttribute('data-schritt')) Deck.schritteNeu(ctx.folie);
     trefferMarkieren(zustand);
+  }
+
+  /* Eigener Titel im Abgleich-Schritt (statt „stimmige Identität …“, der sich
+     auf das Rad bezieht). Das Ende („ – teilweise“ …) steht im HTML in
+     data-text-teil / data-text-keiner / data-text-alle. */
+  function abgleichTitel(zustand, schritt, treffer, alle) {
+    var t = zustand.titelEl;
+    if (!t) return;
+    if (!schritt) {
+      t.hidden = true;
+      t.removeAttribute('data-schritt');
+      return;
+    }
+    t.hidden = false;
+    t.setAttribute('data-schritt', schritt);
+    t.setAttribute('data-animation', 'hoch');
+    var ende = t.querySelector('[data-g6s="titel-ergebnis"]');
+    if (ende) {
+      var art = treffer === 0 ? 'keiner' : (treffer >= alle ? 'alle' : 'teil');
+      var text = ende.getAttribute('data-text-' + art);
+      if (text !== null) ende.textContent = text;
+    }
   }
 
   function trefferMarkieren(zustand) {

@@ -506,7 +506,7 @@
       if (t) el.textContent = t;
     });
     [['data-veranstaltung', 'veranstaltung'], ['data-dozent', 'dozent'], ['data-hochschule', 'hochschule'],
-      ['data-praesentation', 'titel'], ['data-fallstudie', 'fallstudie']].forEach(function (paar) {
+      ['data-praesentation', 'titel'], ['data-fallstudie', 'fallstudie'], ['data-unternehmen', 'unternehmen']].forEach(function (paar) {
       alle('[' + paar[0] + ']', wurzel).forEach(function (el) {
         if (marke[paar[1]]) el.textContent = marke[paar[1]];
       });
@@ -1074,13 +1074,26 @@
      (detail: { folie }). Folien-Skripte brauchen so keinen eigenen Timer. */
   function wechselEnde(f, nr) {
     if (nr !== wechselNr) return;           /* inzwischen neuer Wechsel */
-    html.classList.remove('wechsel-laeuft');
+    html.classList.remove('wechsel-laeuft', 'wechsel-modus', 'wechsel-rad-gross');
     document.dispatchEvent(new CustomEvent('deck:wechsel-ende', { detail: { folie: f.id } }));
   }
   var laufenderUebergang = null;
   var gehendeFolie = null;
   var testSofort = false;
   var unterstuetztVT = typeof document.startViewTransition === 'function';
+
+  /* Hell/dunkel einer Folie (eigenes data-modus, sonst der des Dokuments) */
+  function folienModus(f) {
+    return (f && f.el.getAttribute('data-modus')) || html.getAttribute('data-modus') || 'hell';
+  }
+  /* Hat die Folie ein großes Steuerrad bzw. das Mini-Rad, das beim Wechsel
+     ineinander gleitet (data-morph="steuerrad")? */
+  function radArt(f) {
+    if (!f) return '';
+    var rad = f.el.querySelector('[data-morph="steuerrad"]');
+    if (!rad) return '';
+    return rad.classList.contains('mini-rad') ? 'mini' : 'gross';
+  }
 
   function folieAufloesen(ziel) {
     if (typeof ziel === 'number') return ziel >= 0 && ziel < folien.length ? ziel : -1;
@@ -1156,7 +1169,13 @@
       return false;
     }
     var f = folien[index];
-    if (schritt === 'ende' || schritt === Infinity) schritt = f.schritteGesamt;
+    if (schritt === 'ende' || schritt === Infinity) {
+      /* Folien, deren Schrittzahl von gespeicherten Daten abhängt (Folie 10:
+         Abgleich mit der Wortwolke), zählen vorher neu – sonst landet
+         Deck.gehe('f10', 'ende') nach einer Änderung auf einem alten Schritt. */
+      hookAufrufen(f, 'schritteAktualisieren');
+      schritt = f.schritteGesamt;
+    }
     schritt = Math.max(0, Math.min(f.schritteGesamt, parseInt(schritt, 10) || 0));
 
     if (index === aktuell.index) {
@@ -1168,7 +1187,11 @@
     var alt = folien[aktuell.index];
     var richtung = optionen.richtung || (alt && index < alt.index ? 'zurueck' : 'vor');
     letzteRichtung = alt ? richtung : 'start';
-    var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus;
+    /* Läuft noch ein Folienübergang (z. B. Clicker-Doppeldruck über den Morph
+       des Steuerrads), wechselt die Folie sofort – Übergänge stapeln sich
+       sonst, und die Folie steht sekundenlang auf einem Zwischenbild. */
+    var stau = !!laufenderUebergang || !!gehendeFolie;
+    var animieren = !!alt && !optionen.sofort && !testSofort && !istDruckmodus && !stau;
     var nr = ++wechselNr;
     letzterWechselSofort = !animieren;
 
@@ -1217,6 +1240,16 @@
     html.classList.toggle('richtung-vor', richtung !== 'zurueck');
 
     html.classList.toggle('wechsel-laeuft', animieren);
+    /* Feinheiten des Übergangs (Abschlussprüfung 16.10.2026, Aussehen in
+       css/deck.css, Abschnitt 7):
+       • wechsel-modus: dunkle ↔ helle Folie (z. B. 01 → 02) nacheinander statt
+         gleichzeitig überblenden – sonst entsteht ein graues Doppelbild.
+       • wechsel-rad-gross: großes Steuerrad ↔ Mini-Rad (z. B. 02 → 03) – das
+         gleitende Rad wird unterwegs ausgeblendet, statt als graue Scheibe
+         über den neuen Titel zu fliegen. */
+    html.classList.toggle('wechsel-modus', animieren && !!alt && folienModus(alt) !== folienModus(f));
+    var radAlt = radArt(alt), radNeu = radArt(f);
+    html.classList.toggle('wechsel-rad-gross', animieren && !!radAlt && !!radNeu && radAlt !== radNeu);
     if (!animieren) {
       aendern();
       wechselEnde(f, nr);
@@ -1259,9 +1292,24 @@
     return true;
   }
 
+  /* Klickstau verhindern (Abschlussprüfung 17.10.2026): Kommt ein Klick,
+     während ein Folienübergang oder Schritt-Animationen noch laufen, wird das
+     Laufende sofort beendet (wie im Testmodus, siehe Deck.testmodus) – jeder
+     Klick zeigt dann sofort den fertigen Stand des vorigen. */
+  function laufendesBeenden() {
+    if (laufenderUebergang) { try { laufenderUebergang.skipTransition(); } catch (e) { /* egal */ } }
+    if (!laufendeAnimationen.size) return;
+    laufendeAnimationen.forEach(function (a) {
+      try { a.finish(); } catch (e) { try { a.cancel(); } catch (e2) { /* egal */ } }
+    });
+    var f = folien[aktuell.index];
+    if (f) zaehlerFuerSchritt(f, aktuell.schritt);      /* hochzählende Zahlen auf Endwert */
+  }
+
   function weiter() {
     var f = folien[aktuell.index];
     if (!f) return;
+    laufendesBeenden();
     if (aktuell.schritt < f.schritteGesamt) { schrittWechsel(aktuell.schritt + 1); return; }
     /* Auf der letzten Hauptfolie anhalten – Backup nur gezielt (Übersicht) */
     if (aktuell.index === anzahlHaupt - 1) {
@@ -1273,6 +1321,7 @@
   function zurueck() {
     var f = folien[aktuell.index];
     if (!f) return;
+    laufendesBeenden();
     if (aktuell.schritt > 0) { schrittWechsel(aktuell.schritt - 1); return; }
     if (aktuell.index > 0) gehe(aktuell.index - 1, 'ende', { richtung: 'zurueck' });
   }
@@ -1358,11 +1407,14 @@
      =========================================================================== */
   var tastenHandler = [];
   /* Bausteine können Tasten auf ihrer Folie übernehmen (z. B. Ziffern bei der Umfrage).
-     fn(ereignis, kontext) gibt true zurück, wenn die Taste verbraucht wurde. */
+     fn(ereignis, kontext) gibt true zurück, wenn die Taste verbraucht wurde – oder
+     { rueckgaengig: function () {…} }, wenn sie verbraucht wurde, sich aber noch
+     zurücknehmen lässt (siehe „vorläufig gezählte Ziffer“ in tasteGedrueckt). */
   Deck.taste = function (fn) { tastenHandler.push(fn); };
 
   var ziffernPuffer = '';
   var ziffernTimer = null;
+  var letzteZaehlZiffer = null;   /* { ziffer, zeit, rueckgaengig } – zuletzt als Stimme gezählte Ziffer */
 
   /* Befehle laufen im Referentenfenster über das Vortragsfenster (Abgleich) */
   function befehl(aktion, daten) {
@@ -1429,17 +1481,44 @@
       if (ebeneTaste(e)) return;
     }
 
-    /* 4. Bausteine der aktuellen Folie (z. B. Umfrage: Ziffern zählen) */
+    /* 4. Bausteine der aktuellen Folie (z. B. Umfrage: Ziffern zählen).
+          Läuft schon eine Foliennummer (Ziffernpuffer, z. B. nach „8“), gehören
+          weitere Ziffern zu ihr und zählen keine Stimme. */
     var f = folien[aktuell.index];
-    for (var i = 0; i < tastenHandler.length; i++) {
-      try {
-        if (f && tastenHandler[i](e, kontext(f)) === true) { e.preventDefault(); return; }
-      } catch (fehler) { console.error(fehler); }
+    var istZiffer = /^[0-9]$/.test(taste);
+    if (!(istZiffer && ziffernPuffer)) {
+      for (var i = 0; i < tastenHandler.length; i++) {
+        var ergebnis = false;
+        try {
+          ergebnis = f ? tastenHandler[i](e, kontext(f)) : false;
+        } catch (fehler) { console.error(fehler); }
+        if (ergebnis === true || (ergebnis && typeof ergebnis.rueckgaengig === 'function')) {
+          e.preventDefault();
+          letzteZaehlZiffer = ergebnis.rueckgaengig ? { ziffer: taste, zeit: Date.now(), rueckgaengig: ergebnis.rueckgaengig } : null;
+          return;
+        }
+      }
     }
+    var vorlaeufig = letzteZaehlZiffer;
+    letzteZaehlZiffer = null;
 
-    /* 5. Ziffern + Enter = Folie anspringen */
-    if (/^[0-9]$/.test(taste)) {
-      ziffernPuffer = (ziffernPuffer + taste).slice(-3);
+    /* 5. Ziffern + Enter = Folie anspringen. Nach einer Ziffer gehört „b“ zur Nummer
+          (8 b Enter → Folie 08b); ohne Ziffer davor bleibt B das Schwarzbild.
+          Vorläufig gezählte Ziffer: Auf Folie 08 zählt „1“ eine Stimme. Folgt sofort
+          eine Ziffer, die keine Stimme sein kann (z. B. die 0 von „10“), war die „1“
+          der Anfang einer Foliennummer → die Stimme wird zurückgenommen. */
+    if (istZiffer) {
+      if (vorlaeufig && !ziffernPuffer && Date.now() - vorlaeufig.zeit < 1500) {
+        try { vorlaeufig.rueckgaengig(); } catch (fehler) { console.error(fehler); }
+        ziffernPuffer = vorlaeufig.ziffer;
+      }
+      ziffernPuffer = (/b$/.test(ziffernPuffer) ? taste : (ziffernPuffer + taste).slice(-3));
+      ziffernAnzeigen();
+      e.preventDefault();
+      return;
+    }
+    if (ziffernPuffer && (taste === 'b' || taste === 'B') && /^[0-9]+$/.test(ziffernPuffer)) {
+      ziffernPuffer += 'b';
       ziffernAnzeigen();
       e.preventDefault();
       return;
@@ -1457,6 +1536,9 @@
       }
       if (taste === 'Backspace') { e.preventDefault(); ziffernPuffer = ziffernPuffer.slice(0, -1); ziffernAnzeigen(); return; }
       if (taste === 'Escape') { e.preventDefault(); ziffernZuruecksetzen(); return; }
+      /* jede andere Taste (Pfeil, Leertaste, Schwarzbild …) verwirft die angefangene Nummer,
+         damit sie nicht mit der nächsten Eingabe zu „910“ zusammenläuft */
+      ziffernZuruecksetzen();
     }
 
     /* Enter/Leertaste auf einem Knopf: Knopf auslösen statt blättern */
@@ -1603,22 +1685,47 @@
     var fortschritt = util.element('div', { class: 'fortschritt', 'aria-hidden': 'true' }, null, document.body);
     fortschrittBalken = util.element('div', { class: 'fortschritt-balken' }, null, fortschritt);
 
-    var aufwachen = function () {
-      html.classList.remove('leiste-aus', 'maus-ruht');
-      clearTimeout(ruheTimer);
-      ruheTimer = setTimeout(function () { html.classList.add('leiste-aus', 'maus-ruht'); }, 2500);
+    /* Zwei Zeitgeber: Der Mauszeiger erscheint bei jeder Bewegung (und
+       verschwindet nach 2,5 s Ruhe). Die Leiste erscheint nur, wenn die Maus
+       im unteren Bereich des Fensters bewegt wird oder der Bildschirm berührt
+       wird – sonst verdeckte sie bei jedem Klick 2,5 s lang das Ende der
+       Quellenzeile. Ein Mausklick (z. B. zum Weiterschalten) weckt sie nicht. */
+    var mausTimer = null;
+    var mausWecken = function () {
+      html.classList.remove('maus-ruht');
+      clearTimeout(mausTimer);
+      mausTimer = setTimeout(function () { html.classList.add('maus-ruht'); }, 2500);
     };
-    document.addEventListener('mousemove', aufwachen, { passive: true });
-    document.addEventListener('mousedown', aufwachen, { passive: true });
-    leiste.addEventListener('mouseenter', function () { clearTimeout(ruheTimer); });
-    leiste.addEventListener('mouseleave', aufwachen);
-    aufwachen();
+    var leisteWecken = function () {
+      html.classList.remove('leiste-aus');
+      clearTimeout(ruheTimer);
+      ruheTimer = setTimeout(function () { html.classList.add('leiste-aus'); }, 2500);
+    };
+    var LEISTE_ZONE = 160;   /* px vom unteren Fensterrand, in denen die Maus die Leiste weckt */
+    document.addEventListener('mousemove', function (e) {
+      mausWecken();
+      if (e.clientY >= window.innerHeight - LEISTE_ZONE) leisteWecken();
+    }, { passive: true });
+    document.addEventListener('mousedown', mausWecken, { passive: true });
+    /* Finger oder Stift: Antippen zeigt die Leiste (es gibt keine Mausbewegung) */
+    document.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch' || e.pointerType === 'pen') leisteWecken();
+    }, { passive: true });
+    leiste.addEventListener('mouseenter', function () { clearTimeout(ruheTimer); clearTimeout(mausTimer); });
+    leiste.addEventListener('mouseleave', leisteWecken);
+    /* Tastaturfokus in der Leiste (Tab): sichtbar bleiben */
+    leiste.addEventListener('focusin', leisteWecken);
+    mausWecken();
+    leisteWecken();
   }
 
   function leisteAktualisieren() {
     var f = folien[aktuell.index];
     if (!f || !leisteNummer) return;
-    leisteNummer.textContent = f.backup ? f.nummer : (f.index + 1) + ' / ' + anzahlHaupt;
+    /* Foliennummer wie in Kopfzeile, Übersicht und Referentenansicht (z. B. „08b / 12“),
+       nicht die Position in der Liste */
+    var letzte = folien[anzahlHaupt - 1];
+    leisteNummer.textContent = f.backup ? f.nummer : f.nummer + ' / ' + (letzte ? letzte.nummer : anzahlHaupt);
     var anteil = f.backup ? 1 : (anzahlHaupt > 1 ? f.index / (anzahlHaupt - 1) : 1);
     if (f.schritteGesamt && !f.backup && anzahlHaupt > 1) {
       anteil += (aktuell.schritt / f.schritteGesamt) / (anzahlHaupt - 1) * (f.index < anzahlHaupt - 1 ? 1 : 0);
@@ -1693,6 +1800,7 @@
 
   function schwarzbild(an) {
     var neu = an === undefined ? !html.classList.contains('schwarz') : !!an;
+    if (neu) ziffernZuruecksetzen();       // angefangene Foliennummer verwerfen
     html.classList.toggle('schwarz', neu);
     kanalZustandSenden();
   }
@@ -1708,8 +1816,17 @@
     html.classList.add('ebene-offen');
     var fokus = name === 'uebersicht' ? ebenen.uebersicht.querySelector('.ue-karte.ist-aktuell') || ebenen.uebersicht.querySelector('.ue-karte')
       : ebenen[name].querySelector('button, [tabindex="0"]');
-    if (fokus) fokus.focus({ preventScroll: name !== 'uebersicht' });
-    if (name === 'uebersicht' && fokus) fokus.scrollIntoView({ block: 'center' });
+    if (fokus) fokus.focus({ preventScroll: true });
+    /* Übersicht: von oben beginnen (Überschrift „Übersicht“ sichtbar), solange
+       die aktuelle Folie dabei ganz zu sehen ist – sonst die Kachel mittig
+       zeigen (Abschlussprüfung 16.10.2026: Überschrift war abgeschnitten) */
+    if (name === 'uebersicht' && fokus) {
+      var fenster = ebenen.uebersicht;
+      fenster.scrollTop = 0;
+      if (fokus.getBoundingClientRect().bottom > fenster.getBoundingClientRect().bottom - 24) {
+        fokus.scrollIntoView({ block: 'center' });
+      }
+    }
   }
   function ebeneSchliessen(still) {
     if (!offeneEbene) return;
@@ -1722,7 +1839,10 @@
     offeneEbene = null;
     html.classList.remove('ebene-offen');
     if (name === 'uebersicht') ebenen.uebersicht.innerHTML = '';
-    if (fokusVorEbene && fokusVorEbene.focus && document.contains(fokusVorEbene)) {
+    /* Fokus zurückgeben – aber NICHT an Knöpfe der Bedienleiste: Sonst würde die nächste
+       Leertaste/Enter die Ebene (Übersicht, Hilfe) wieder öffnen, statt weiterzuschalten. */
+    var zurueckAnLeiste = fokusVorEbene && fokusVorEbene.closest && fokusVorEbene.closest('.bedienleiste');
+    if (fokusVorEbene && !zurueckAnLeiste && fokusVorEbene.focus && document.contains(fokusVorEbene)) {
       try { fokusVorEbene.focus({ preventScroll: true }); } catch (e) { /* egal */ }
     } else if (document.activeElement) document.activeElement.blur();
   }
@@ -1905,6 +2025,7 @@
       '<dt>' + k('←') + k('↑') + k('Bild↑') + k('⌫') + '</dt><dd>zurück</dd>' +
       '<dt>' + k('Pos1') + k('Ende') + '</dt><dd>erste / letzte Folie</dd>' +
       '<dt>' + k('6') + k('Enter') + '</dt><dd>Folie 06 anspringen</dd>' +
+      '<dt>' + k('8') + k('B') + k('Enter') + '</dt><dd>Folie 08b anspringen</dd>' +
       '<dt>' + k('O') + '</dt><dd>Übersicht aller Folien (mit Backup)</dd>' +
       '<dt>' + k('P') + '</dt><dd>Referentenansicht im zweiten Fenster</dd>' +
       '</dl><dl>' +
@@ -1917,9 +2038,11 @@
       '</dl></div>' +
       '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
       'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
-      'Solange eine Umfrage zu sehen ist, zählen die Ziffern 1–9 Stimmen (Umschalt = minus). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'Solange eine Umfrage zu sehen ist (Folie 08), zählen die Ziffern 1–5 Stimmen (Umschalt = minus) – zum Springen von dort ' +
+      'erst weiterklicken oder O nutzen (nur „1“ „0“ Enter erkennt die Präsentation als Foliennummer). Mini-Steuerrad oben rechts = Sprungmenü. ' +
       'Nach einem Sprung aus dem Backup führt Z zurück zur Backup-Folie. ' +
-      'Bedienleiste unten rechts (Maus bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
+      'Touch: nach links wischen = weiter, nach rechts = zurück; Antippen zeigt die Bedienleiste. ' +
+      'Bedienleiste unten rechts (Maus im unteren Bildrand bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';
   }
 
   /* ----- Sprungmenü (Klick auf Mini-Steuerrad) ----- */
@@ -2130,7 +2253,14 @@
 
   function referentOeffnen() {
     if (IST_REFERENT) return;
-    var url = location.href.split('#')[0].split('?')[0] + '?referent' + location.hash;
+    /* Adressparameter mitgeben, die die Folienliste oder das Aussehen ändern
+       (z. B. ?optional=alle) – sonst hätten beide Fenster verschiedene Folien */
+    var mit = ['optional', 'thema', 'modus', 'primaer', 'sekundaer', 'bewegung'].filter(function (k) {
+      return parameter.has(k);
+    }).map(function (k) {
+      return encodeURIComponent(k) + (parameter.get(k) ? '=' + encodeURIComponent(parameter.get(k)) : '');
+    });
+    var url = location.href.split('#')[0].split('?')[0] + '?referent' + (mit.length ? '&' + mit.join('&') : '') + location.hash;
     try {
       referentFenster = window.open(url, 'deck-referent', 'popup=yes,width=1440,height=900');
     } catch (e) { referentFenster = null; }
@@ -2235,6 +2365,7 @@
         var neu = Math.max(18, Math.min(48, jetzt + (a === 'groesser' ? 2 : -2)));
         r.notizen.style.setProperty('--r-schrift', neu + 'px');
         util.speichern('referent-schrift', neu);
+        sprechtextZumSchritt(false);     // Absätze haben sich verschoben
       }
       k.blur();
     });
@@ -2266,6 +2397,11 @@
     if (letzteReferentFolie && (letzteReferentFolie !== f.id || letzterReferentSchritt !== aktuell.schritt) && !uhr.gestartet) uhrStarten();
     if (letzteReferentFolie !== f.id) uhr.folieStart = gesamtMs();
     var folieGewechselt = letzteReferentFolie !== f.id;
+    /* Nur bei echtem Folien- oder Schrittwechsel zum Absatz scrollen: Der
+       Abgleich alle 3 s („hallo“ → „zustand“) ruft diese Funktion ebenfalls
+       auf – sonst spränge von Hand gescrollter Sprechtext ständig zurück
+       (Abschlussprüfung 17.10.2026). Alten Schritt VOR dem Überschreiben merken. */
+    var schrittGewechselt = folieGewechselt || letzterReferentSchritt !== aktuell.schritt;
     letzteReferentFolie = f.id;
     letzterReferentSchritt = aktuell.schritt;
 
@@ -2273,25 +2409,7 @@
       (f.schritteGesamt ? ' · Schritt ' + aktuell.schritt + '/' + f.schritteGesamt : '');
 
     /* Nächster Schritt bzw. nächste Folie */
-    r.vorschau.innerHTML = '';
-    var naechste = null, naechsterSchritt = 0, text = '';
-    if (aktuell.schritt < f.schritteGesamt) {
-      naechste = f; naechsterSchritt = aktuell.schritt + 1;
-      text = 'Als Nächstes · Schritt ' + naechsterSchritt + '/' + f.schritteGesamt + ' auf dieser Folie';
-    } else if (aktuell.index < folien.length - 1 && aktuell.index !== anzahlHaupt - 1) {
-      naechste = folien[aktuell.index + 1];
-      text = 'Als Nächstes · ' + naechste.nummer + ' ' + naechste.titel;
-    } else {
-      text = 'Als Nächstes · Ende';
-    }
-    r.titelNaechste.textContent = text;
-    if (naechste) {
-      var k = klonen(naechste, naechsterSchritt);
-      r.vorschau.appendChild(k);
-    } else {
-      util.element('div', { class: 'r-vorschau-ende' }, 'Ende der Präsentation – Backup über Taste O', r.vorschau);
-    }
-    vorschauEinpassen();
+    referentVorschauBauen(f);
 
     /* Infos */
     var info = [];
@@ -2314,7 +2432,71 @@
       el.classList.toggle('ist-erreicht', n <= aktuell.schritt);
       el.classList.toggle('ist-jetzt', n === aktuell.schritt);
     });
+    /* Absatz zum aktuellen Schritt in den Blick holen (beim Folienwechsel ohne
+       Gleiten, innerhalb der Folie sanft) – nur nach einem Wechsel, siehe oben */
+    if (schrittGewechselt) sprechtextZumSchritt(!folieGewechselt);
     uhrAnzeigen();
+  }
+
+  /* „Als Nächstes“: Klon des nächsten Schritts bzw. der nächsten Folie */
+  function referentVorschauBauen(f) {
+    r.vorschau.innerHTML = '';
+    var naechste = null, naechsterSchritt = 0, text = '';
+    if (aktuell.schritt < f.schritteGesamt) {
+      naechste = f; naechsterSchritt = aktuell.schritt + 1;
+      text = 'Als Nächstes · Schritt ' + naechsterSchritt + '/' + f.schritteGesamt + ' auf dieser Folie';
+    } else if (aktuell.index < folien.length - 1 && aktuell.index !== anzahlHaupt - 1) {
+      naechste = folien[aktuell.index + 1];
+      text = 'Als Nächstes · ' + naechste.nummer + ' ' + naechste.titel;
+    } else {
+      text = 'Als Nächstes · Ende';
+    }
+    r.titelNaechste.textContent = text;
+    if (naechste) {
+      var k = klonen(naechste, naechsterSchritt);
+      r.vorschau.appendChild(k);
+    } else {
+      util.element('div', { class: 'r-vorschau-ende' }, 'Ende der Präsentation – Backup über Taste O', r.vorschau);
+    }
+    vorschauEinpassen();
+  }
+
+  /* Vorschau neu bauen, wenn sich Live-Daten ändern (Umfrage, Wortwolke):
+     Der Klon zeigte sonst bis zum nächsten Abgleich (bis 3 s) alte Werte,
+     z. B. die Beispielzahl „27 %“ statt der Live-Stimmen. Aufruf aus
+     komponenten.js (umfrageNeuLaden, wolkeNeuLaden); kurz gebündelt. */
+  var vorschauTimer = null;
+  Deck.vorschauAuffrischen = function () {
+    if (!IST_REFERENT || !r.raster) return;
+    clearTimeout(vorschauTimer);
+    vorschauTimer = setTimeout(function () {
+      var f = folien[aktuell.index];
+      if (f) referentVorschauBauen(f);
+    }, 60);
+  };
+
+  /* Sprechtext so scrollen, dass der Absatz zum aktuellen Schritt oben im Feld
+     steht (mit etwas Luft). Gibt es für den Schritt keinen eigenen Absatz, gilt
+     der zuletzt erreichte. Steht der Absatz ganz vorn (Schritt 0), beginnt der
+     Text oben – so bleiben einleitende Absätze ohne Schritt sichtbar.
+     Auch nach A− / A+ aufgerufen, weil sich dann alle Absätze verschieben. */
+  function sprechtextZumSchritt(sanft) {
+    if (!r.notizen) return;
+    var absaetze = alle('[data-schritt]', r.notizen);
+    var ziel = absaetze.filter(function (el) { return el.classList.contains('ist-jetzt'); })[0];
+    if (!ziel) {
+      var erreicht = absaetze.filter(function (el) { return el.classList.contains('ist-erreicht'); });
+      ziel = erreicht[erreicht.length - 1];
+    }
+    var oben = 0;
+    if (ziel && absaetze.indexOf(ziel) > 0) {
+      oben = r.notizen.scrollTop + ziel.getBoundingClientRect().top - r.notizen.getBoundingClientRect().top - 16;
+    }
+    oben = Math.max(0, Math.round(oben));
+    if (Math.abs(r.notizen.scrollTop - oben) < 2) return;
+    try {
+      r.notizen.scrollTo({ top: oben, behavior: sanft && !bewegungReduziert() ? 'smooth' : 'auto' });
+    } catch (e) { r.notizen.scrollTop = oben; }
   }
 
   function vorschauEinpassen() {

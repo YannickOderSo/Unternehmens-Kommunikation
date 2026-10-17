@@ -48,9 +48,22 @@
   object-fit: cover;
   display: block;
 }
-/* Farben des gezeichneten Platzhalters (passen sich Thema und Modus an) */
-#f04 .g2p-sil-kreis { fill: color-mix(in oklab, var(--f-akzent) 22%, var(--f-flaeche-2)); }
-#f04 .g2p-sil-form  { fill: color-mix(in oklab, var(--f-hart) 38%, var(--f-flaeche-2)); }
+/* Farben des gezeichneten Platzhalters „Marco in der Nachtschicht“.
+   Feste Nachtfarben wie bei einem Bild (in allen Themen und Modi gleich);
+   nur die Reflexstreifen tragen die Markenfarbe aus marke.js. Ist in den
+   Daten ein echtes Bild eingetragen, entfällt die Zeichnung (Skript). */
+#f04 .g2p-bild:has(> .g2p-silhouette) { background: #2E4466; }   /* Nachthimmel */
+#f04 .g2p-sil-kreis    { fill: #F3E6B0; }                         /* Mond */
+#f04 .g2p-sil-stadt    { fill: #22365A; }
+#f04 .g2p-sil-fenster  { fill: #F2C94C; }
+#f04 .g2p-sil-haut     { fill: #C9A88C; }
+#f04 .g2p-sil-haar     { fill: #2B2522; }
+#f04 .g2p-sil-form     { fill: #15191F; }                         /* Arbeitsjacke */
+#f04 .g2p-sil-streifen { fill: var(--marke-primaer); }
+#f04 .g2p-sil-kragen   { fill: #E8E2D6; }
+#f04 .g2p-sil-shaker   { fill: #F4F4F2; }
+#f04 .g2p-sil-getraenk { fill: #E2506F; }
+#f04 .g2p-sil-deckel   { fill: #15191F; }
 
 /* Kennzeichnung „Bild KI-generiert“ unten links auf dem Bild */
 #f04 .g2p-bild-hinweis {
@@ -76,7 +89,7 @@
   font-family: var(--schrift-display);
   font-size: var(--groesse-titel-klein);
   font-weight: var(--gewicht-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   letter-spacing: var(--laufweite-titel);
   line-height: 1.05;
   color: var(--f-text);
@@ -217,6 +230,33 @@
   background: var(--f-diagramm-marke);
 }
 /* Werte an den Balken = Inhalt, darum Fließtextgröße (28 px) */
+/* Durchschnitt aller Befragten (Daten „schnitt“): dünner dunkler Strich im
+   Balken, mit hellem Rand – auf der Füllung und auf der leeren Spur sichtbar */
+#f04 .g2p-balken-schnitt {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background: var(--f-text);
+  box-shadow: 0 0 0 2px var(--f-karte);
+  border-radius: 2px;
+}
+/* Legende hinter der Einheit: „┃ Ø aller Befragten“ */
+#f04 .g2p-schnitt-legende {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 14px;
+  white-space: nowrap;
+}
+#f04 .g2p-schnitt-muster {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: var(--f-text);
+}
 #f04 .g2p-balken-wert {
   font-family: var(--schrift-zahl);
   font-size: var(--groesse-text-min);

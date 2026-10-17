@@ -24,7 +24,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 
 | Nr. | Datum | Von | Inhalt (kurz) | Unteragenten | Ergebnis |
 |-----|-------|-----|---------------|--------------|----------|
-| A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01 (Workflow) | *in Arbeit* |
+| A2-01 | 14.10.2026 | Yannick (Account 2) | Übergabe-Prompt: Web-Präsentation ab „Fundament“ zu Ende bauen | A2-D01, A2-D02 (Workflows) | fertig (17.10.2026): `praesentation/index.html`, Exporte, LIESMICH, QUELLEN |
 | A2-02 | 14.10.2026 | System | Automatischer Hinweis: nicht committete Änderungen | – | Commit + Push |
 | A2-03 | 14.10.2026 | Yannick (Account 2) | Um 7 Uhr prüfen, ob Account 1 neu gepusht hat | – | Prüfung um 07:00 Uhr geplant |
 | A2-04 | 14.10.2026 | System | Container-Neustart: Fundament-Agent unterbrochen, Workflow-Werkzeug nun verfügbar | A2-D01.01 fortgesetzt | Zwischenstand gesichert |
@@ -46,6 +46,18 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-20 | 16.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D01 (fortgesetzt) | Workflow mit resume fortgesetzt |
 | A2-21 | 16.10.2026 | System | Workflow „completed“, aber beide Abschlussprüfer am Nutzungslimit gescheitert; Neustarts | A2-D01 | Integration gesichert, Skript abgesichert |
 | A2-22 | 16.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D01 (fortgesetzt) | Abschlussprüfung und Feinschliff gestartet |
+| A2-23 | 16.10.2026 | System | Hauptworkflow abgeschlossen (25/25 Agenten) | A2-D02 (Workflow) | Ergebnis gesichert; Nacharbeit für 18 abgeschnittene Befunde gestartet |
+| A2-24 | 16.10.2026 | System | Nacharbeit sofort am Nutzungslimit gescheitert; mehrere Neustarts | – | – |
+| A2-25 | 16.10.2026 | Yannick (Account 2) | „Weiter“ | – | (in A2-26 bearbeitet) |
+| A2-26 | 16.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | master (Ü02) übernommen, Nacharbeit erweitert und gestartet |
+| A2-27 | 16.10.2026 | Yannick (Account 2) | HOLY-Logo auf Folie 1 fehlt | A2-D02 (angehalten, erweitert, fortgesetzt) | Logo eingebaut (Nacharbeit, `869a3a3`), von der zweiten Abschlussprüfung mitgeprüft |
+| A2-28 | 16./17.10.2026 | System | Nacharbeit fertig; zweite Abschlussprüfung am Nutzungslimit gescheitert | A2-D02 | Ergebnis gesichert |
+| A2-29 | 17.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D02 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
+| A2-30 | 17.10.2026 | System | Zweite Abschlussprüfung fertig; letzter Feinschliff am Nutzungslimit gescheitert; Neustarts | A2-D02 | Zwischenstand gesichert |
+| A2-31 | 17.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | – | (in A2-32 bearbeitet) |
+| A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff fertig |
+| A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
+| A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -94,8 +106,11 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
     Ausführungshilfe abgearbeitet, die die Aufträge wörtlich als Dateien erzeugt; Claude startet für jeden Auftrag einen
     Unteragenten mit dem Agent-Werkzeug und setzt nach jeder Stufe mit den gespeicherten Rückgaben fort (siehe A2-D01).
   - HOLY-Dossier (`fallstudie-1-brand-persona/recherche/holy-recherche.md`) lag beim Start noch nicht auf `master` →
-    Markenname „HOLY“, Inhalte als Beispieldaten, Farben neutral.
-- **Ergebnis:** *in Arbeit*
+    Markenname „HOLY“, Inhalte als Beispieldaten, Farben neutral (ab 14.10. abends galt das Dossier, siehe A2-09).
+- **Ergebnis:** fertig am 17.10.2026 (Details A2-D01, A2-D02, A2-33): `fallstudie-1-brand-persona/praesentation/index.html`
+  (15 Hauptfolien f01–f12 inkl. f01b optional, f08b, f09b; 8 Backup-Folien B1–B8), Engine und Designsystem (`css/`,
+  `js/`, `marke.js`), `werkzeuge/pruefen.mjs`, `export/praesentation.pdf`, `export/uebersicht.png`,
+  `export/folien/*.png`, `LIESMICH.md`, `QUELLEN.md`, `AUTOREN.md`. Läuft offline per Doppelklick.
 - **Unteragenten:** A2-D01
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -358,13 +373,162 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** A2-D01 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-23 – 16.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Web-Präsentation Fallstudie 1 ab Fundament …“ completed (25 Agenten, alle fertig).
+
+- **Herkunft:** automatische Meldung der Umgebung
+- **Vorgehen Claude:** Ergebnis committet (`bd5e579`); Rückgaben aller 25 Agenten aus dem Workflow-Protokoll gesichert
+  ([`workflow-wf_878fd85d-3f2.json`](workflows/2026-10-14_praesentation-account-2_rueckgaben/workflow-wf_878fd85d-3f2.json)).
+  Dabei entdeckt: Der Feinschliff-Auftrag kürzte die 40 Befunde der Abschlussprüfung auf 16 000 Zeichen
+  (`kurz(abschlussBefunde, 16000)` aus dem Original-Skript) – 18 Befunde (2 mittel, 16 niedrig) erreichten den
+  Feinschliff nicht; der Feinschliff-Agent meldete das selbst. Deshalb Nacharbeit-Workflow A2-D02 geschrieben und gestartet.
+- **Unteragenten:** A2-D02
+
+### A2-24 – 16.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ failed: Nacharbeit nicht fertig – mit resume fortsetzen
+> („You've hit your session limit · resets 7:40pm (UTC)“). Danach mehrfach: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung; der Agent wurde gar nicht erst ausgeführt.
+
+### A2-25 – 16.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Die Nachricht kam während des Nutzungslimits an; die Sitzung lief erst mit A2-26 weiter (dort bearbeitet).
+- **Unteragenten:** keine
+
+### A2-26 – 16.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (21:42 Uhr):**
+  - `master` geprüft: Account 1 hat den Stand `21d283a` nach `master` übernommen, über GitHub Pages veröffentlicht, live
+    prüfen lassen (D07) und Präsentationsdateien ergänzt (offizielle HOLY-Logos auf Folie 09b, `noindex`, Favicon,
+    Quellenzeile 09b, QUELLEN.md) sowie eine Übergabe Ü02 mit Befunden für Account 2 hinterlegt.
+  - `master` per Merge-Commit übernommen (`4635c96`). Konflikte in `QUELLEN.md`, `marke.js`,
+    `js/folien/09-kommunikationsanalyse.js` so gelöst, dass die Änderungen von master erhalten bleiben (Logo, Quellen);
+    aus dem eigenen Feinschliff blieben die neue Beschreibung des Rätselbilds und die robustere Logo-Logik (zeigt bei
+    Platzhalter kein Bild). Danach `pruefen.mjs` auf `index.html`: 22 Folien, 0 Fehler, keine externen Anfragen,
+    5 Warnungen (Wortbudget).
+  - Nacharbeit-Workflow um die Befunde aus Ü02 ergänzt (wörtlich, inkl. der Liste „nicht zurückdrehen“) und mit
+    `resumeFromRunId` gestartet (`e5c7140`).
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D02
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-27 – 16.10.2026 – Yannick Heisler (Account 2)
+
+> Auf folie 1 fehlt das holy logo
+
+- **Vorgehen Claude (22:00 Uhr):** Folie 01 zeigt den Markennamen bisher nur als gesetzten Text. Die offiziellen Logos
+  liegen seit dem Merge von master in `bilder/` (Quelle: de.holy.com, Abruf 16.10.2026, laut QUELLEN.md). Weil der
+  Nacharbeit-Agent gerade `index.html` und das CSS von Folie 01 bearbeitete, den Lauf angehalten (Zwischenstand
+  `4b9cd01`), den Wunsch wörtlich mit genauer Vorgabe in den Nacharbeit-Auftrag aufgenommen (gelbes Oval-Logo in
+  Auflösung und Titelzustand, Datei unverändert, Pfad über `marke.js`, alt-Text, Quelle in der Fußzeile, QUELLEN.md und
+  LIESMICH.md anpassen, nicht schon im Rätsel zeigen; `9765070`) und den Workflow mit `resumeFromRunId` fortgesetzt.
+  So prüfen beide zweiten Abschlussprüfer das Logo mit.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D02
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-28 – 16./17.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ failed: Zweite Abschlussprüfung unvollständig – mit resume
+> fortsetzen („You've hit your session limit · resets 12:40am (UTC)“ bei beiden Prüf-Agenten).
+
+- **Herkunft:** automatische Meldung der Umgebung
+- **Stand:** Der Nacharbeit-Agent ist fertig (abgeschnittene Befunde, Befunde aus Ü02, HOLY-Logo auf Folie 01, Exporte
+  erneuert). Beide zweiten Abschlussprüfer scheiterten am Limit; dank der Absicherung im Skript kein Feinschliff ohne Prüfung.
+
+### A2-29 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude (10:47 Uhr):** Ergebnis der Nacharbeit committet (`869a3a3`) und Folie 01 selbst angesehen
+  (`export/folien/f01.png`: gelbes HOLY-Oval-Logo im Titelzustand, Quelle „Logo © HOLY Softdrinks GmbH, de.holy.com
+  (Abruf 16.10.2026)“ in der Fußzeile, Zeile „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“).
+  `master` übernommen (Dossier für Bündel B; keine Präsentationsdateien betroffen; `074530e`). Workflow
+  `wf_fe26464c-97a` mit `resumeFromRunId` fortgesetzt: Nacharbeit aus dem Zwischenspeicher, neu laufen die zwei
+  Abschlussprüfer und danach der letzte Feinschliff.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D02 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-30 – 17.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ failed: Letzter Feinschliff nicht fertig – mit resume
+> fortsetzen („You've hit your session limit · resets 1:40pm (UTC)“). Danach mehrfach: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung
+- **Stand:** Zweite Abschlussprüfung fertig – „Anforderungen“: 3 mittlere, 13 niedrige Befunde, kein hoher; „Inhalt &
+  Fakten“: 8 mittlere, 16 niedrige, kein hoher („Werte, Quellennummern und Faktenstatus stimmen“, Beispieldaten
+  folienübergreifend stimmig). Wichtigste mittlere Befunde: „160 mg Koffein“ gilt nur für HOLY Energy; Kaufverhalten auf
+  f04 als Daten statt Annahme markiert; f02 nennt „echte Befragte“, obwohl die Interviews noch ausstehen; Sprechtext f03
+  zu Bilanzzahlen widerspricht dem Dossier; Folie 04 weicht vom neuen Persona-Steckbrief (master) ab; Wortbudget f10/f11;
+  Referentenansicht springt beim Scrollen alle 3 s zurück.
+
+### A2-31 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Erneut versuchen
+
+- **Vorgehen Claude:** kam während des Nutzungslimits an; in A2-32 bearbeitet.
+
+### A2-32 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (15:42 Uhr):** Zwischenstand des abgebrochenen Feinschliffs committet; versehentlich mitcommitteten
+  Testordner `_abschluss-fakten/` entfernt und in `.gitignore` aufgenommen (`944155a`); `master` übernommen (`570a085`);
+  Workflow `wf_fe26464c-97a` mit `resumeFromRunId` fortgesetzt – es läuft nur noch der letzte Feinschliff mit allen
+  40 Befunden der zweiten Prüfung (ungekürzt).
+- **Ergebnis:** letzter Feinschliff fertig (30 Befunde behoben, 6 mit Begründung offen – siehe A2-D02)
+- **Unteragenten:** A2-D02 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-33 – 17.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ completed (4 Agenten, alle fertig).
+
+- **Herkunft:** automatische Meldung der Umgebung
+- **Vorgehen Claude (Endprüfung, 17.10.2026 ca. 16:30 Uhr):**
+  - Rückgaben gesichert ([`workflow-wf_fe26464c-97a.json`](workflows/2026-10-14_praesentation-account-2_rueckgaben/workflow-wf_fe26464c-97a.json)).
+  - Eigener Prüflauf `pruefen.mjs index.html --schritte --optional --druck`: 23 Folien, 80 Folienzustände, **0 Fehler**,
+    keine externen Anfragen, alle Schriften lokal geladen, PDF 23/23 Seiten; 4 Warnungen nur zum Wortbudget
+    (f03 44, f04 44, f10 48, f11 55 Wörter im Druckzustand). Keine externen `src`/`href` in `index.html`.
+  - `export/praesentation.pdf` (22 Seiten, ohne optionale f01b), `export/uebersicht.png` (Stand 17.10.) und
+    `export/folien/*.png` vorhanden; Kontaktbogen angesehen (HOLY-Logo auf f01 und f09b, einheitliches Editorial-Design).
+  - `LIESMICH.md` (13 Abschnitte inkl. Technik-Checkliste) und `QUELLEN.md` (Schriften, Bibliotheken, Icons, Bilder,
+    Inhalte, KI-Unterstützung) vollständig.
+  - Nicht möglich: Löschen verirrter Testausgaben eines Unteragenten außerhalb des Repositorys (`/pruef-bento/`,
+    `/pruef-keynote-dunkel/`, `/pruef-*.log` im Wurzelverzeichnis des Containers) – von der Sicherheitsprüfung der
+    Umgebung blockiert; harmlos, verschwinden mit dem Container.
+- **Unteragenten:** keine
+
+### A2-34 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Also sind auch alle Grafiken und Bilder richtig?
+
+- **Vorgehen Claude:** Ergebnis des Prüflaufs aus A2-33 herangezogen (alle Bilder laden, nichts ragt über die Bühne,
+  Kontraste in Ordnung), Platzhalter-Kennzeichnungen in `index.html` gesucht und die datenlastigen Folien f04, f05, f06
+  und f09 selbst angesehen (Werte gegen die Beschriftungen nachgerechnet, z. B. Vorsprünge +2/+3/+3 auf f06,
+  Lücke −20 Pp. auf f05, 15 + 17 + 8 + 10 = 50 codierte Beiträge auf f09). Antwort im Chat: technisch korrekt und in
+  sich stimmig; inhaltlich gibt es vier Arten von Grafiken/Bildern – offizielle Logos, Platzhalter (Rätselbild,
+  Persona-Bild, Schlüsselbild), Diagramme mit gekennzeichneten Beispieldaten und Modellgrafiken aus dem Modellwissen –,
+  die die Gruppe noch ersetzen bzw. abgleichen muss.
+- **Ergebnis:** Antwort im Chat; keine Dateien geändert (außer diesem Nachweis)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
 
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
-| A2-D01 | 14.10.2026 | A2-01 | Workflow „praesentation-account-2“ (ausgeführt über das Agent-Werkzeug, bis zu 27 Unteragenten vom Typ general-purpose) | Web-Präsentation ab „Fundament“ bauen, prüfen, überarbeiten, integrieren, exportieren | *läuft* | – |
+| A2-D01 | 14.–16.10.2026 | A2-01 (fortgesetzt in A2-09 bis A2-22) | Fundament: Agent-Werkzeug (general-purpose); ab „Folien“: Workflow-Werkzeug, Lauf `wf_878fd85d-3f2` (25 Unteragenten) | Web-Präsentation ab „Fundament“ bauen, prüfen, überarbeiten, integrieren, exportieren | fertig (26 Unteragenten; 46 Abbrüche durch Nutzungslimit, jeweils per resume fortgesetzt) | Claude: Rückgaben gelesen, Demo/Deck selbst mit `pruefen.mjs` geprüft, Kontaktbogen angesehen |
+| A2-D02 | 16.10.2026 | A2-23, A2-26, A2-27 | Workflow „praesentation-account-2-nacharbeit“, Lauf `wf_fe26464c-97a` (bis zu 4 Unteragenten) | abgeschnittene Abschlussbefunde + Befunde der Live-Prüfung (Ü02) + HOLY-Logo auf Folie 1 umsetzen, zweite Abschlussprüfung (Anforderungen; Inhalt & Fakten gegen Dossier), letzter Feinschliff | fertig (4 Unteragenten; 1× angehalten, 4× Nutzungslimit) | Claude: Endprüfung mit `pruefen.mjs`, Kontaktbogen, Folie 01 angesehen |
 
 ### A2-D01 – 14.10.2026 – ausgelöst durch Prompt A2-01
 
@@ -398,6 +562,31 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   | Nr. | Stufe | Unteragent (Label) | Auftrag | Ergebnis | Wie Claude das Ergebnis geprüft hat |
   |-----|-------|--------------------|---------|----------|-------------------------------------|
   | A2-D01.01 | Fundament | Engine & Designsystem (Agent-Werkzeug, general-purpose; nach Container-Neustart fortgesetzt, ca. 38 min, 105 Werkzeugaufrufe) | [engine-designsystem.md](workflows/2026-10-14_praesentation-account-2_auftraege/engine-designsystem.md) | fertig – Rückgabe: [engine-designsystem.json](workflows/2026-10-14_praesentation-account-2_rueckgaben/engine-designsystem.json); neu: `AUTOREN.md`, `LIESMICH.md` (vorläufig), `werkzeuge/pruefen.mjs`, `folien/_demo.html` (+ CSS/JS), `index.html` (Demo); überarbeitet: Engine, Bausteine, Themen, `marke.js` (Name HOLY, Farben neutral) | Rückgabe gelesen; Demo selbst neu zusammengebaut und mit `pruefen.mjs` geprüft (15 Folien: 0 Fehler, keine externen Anfragen, Schriften lokal, 2 Warnungen Wortbudget 43/44 Wörter); vier Folien als Kontaktbogen angesehen (Titel, Hub, Repertory Grid, Umfrage) – sauber, Editorial-Stil umgesetzt. Auffällig: Markenname in Titeln noch kursiv, Bedienhinweise in der Quellenzeile der Demo-Umfrage → an Folien-/Prüfstufe |
+  | A2-D01.02 | Folien | Folien: Einstieg & Vorgehen | Textvorlage im Skript (`folienPrompt`) | fertig (1× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien f01, f01b, f02; 12 Dateien, 11 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.03 | Prüfung | Prüfung: Einstieg & Vorgehen | Textvorlage im Skript (`pruefPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 16 Befunde (hoch 2, mittel 5, niedrig 9) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.04 | Überarbeitung | Überarbeitung: Einstieg & Vorgehen | Textvorlage im Skript (`fixPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 16 behoben, 6 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.05 | Folien | Folien: Markenkompetenz, Persona, Limbic Map | Textvorlage im Skript (`folienPrompt`) | fertig (1× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien f03, f04, f05; 11 Dateien, 28 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.06 | Prüfung | Prüfung: Markenkompetenz, Persona, Limbic Map | Textvorlage im Skript (`pruefPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 21 Befunde (hoch 3, mittel 10, niedrig 8) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.07 | Überarbeitung | Überarbeitung: Markenkompetenz, Persona, Limbic Map | Textvorlage im Skript (`fixPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 21 behoben, 9 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.08 | Folien | Folien: Repertory Grid & Laddering | Textvorlage im Skript (`folienPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien f06, f07; 8 Dateien, 21 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.09 | Prüfung | Prüfung: Repertory Grid & Laddering | Textvorlage im Skript (`pruefPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 19 Befunde (hoch 0, mittel 5, niedrig 14) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.10 | Überarbeitung | Überarbeitung: Repertory Grid & Laddering | Textvorlage im Skript (`fixPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 19 behoben, 7 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.11 | Folien | Folien: Analogien & Live-Umfrage | Textvorlage im Skript (`folienPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien f08, f08b; 6 Dateien, 19 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.12 | Prüfung | Prüfung: Analogien & Live-Umfrage | Textvorlage im Skript (`pruefPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 22 Befunde (hoch 3, mittel 5, niedrig 14) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.13 | Überarbeitung | Überarbeitung: Analogien & Live-Umfrage | Textvorlage im Skript (`fixPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 19 behoben, 7 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.14 | Folien | Folien: Kommunikationsanalyse | Textvorlage im Skript (`folienPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien f09, f09b; 6 Dateien, 19 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.15 | Prüfung | Prüfung: Kommunikationsanalyse | Textvorlage im Skript (`pruefPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 14 Befunde (hoch 3, mittel 5, niedrig 6) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.16 | Überarbeitung | Überarbeitung: Kommunikationsanalyse | Textvorlage im Skript (`fixPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 9 behoben, 7 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.17 | Folien | Folien: Synthese, Fazit, Fragen | Textvorlage im Skript (`folienPrompt`) | fertig (3× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien f10, f11, f12; 12 Dateien, 14 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.18 | Prüfung | Prüfung: Synthese, Fazit, Fragen | Textvorlage im Skript (`pruefPrompt`) | fertig (1× am Nutzungslimit abgebrochen, per resume neu gestartet) – 21 Befunde (hoch 1, mittel 7, niedrig 13) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.19 | Überarbeitung | Überarbeitung: Synthese, Fazit, Fragen | Textvorlage im Skript (`fixPrompt`) | fertig (3× am Nutzungslimit abgebrochen, per resume neu gestartet) – 20 behoben, 2 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.20 | Folien | Folien: Backup | Textvorlage im Skript (`folienPrompt`) | fertig (3× am Nutzungslimit abgebrochen, per resume neu gestartet) – Folien b1, b2, b3, b4, b5, b6, b7; 6 Dateien, 23 Screenshots | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.21 | Prüfung | Prüfung: Backup | Textvorlage im Skript (`pruefPrompt`) | fertig (1× am Nutzungslimit abgebrochen, per resume neu gestartet) – 26 Befunde (hoch 2, mittel 11, niedrig 13) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.22 | Überarbeitung | Überarbeitung: Backup | Textvorlage im Skript (`fixPrompt`) | fertig (3× am Nutzungslimit abgebrochen, per resume neu gestartet) – 12 behoben, 6 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.23 | Integration | Integration & Export | Textvorlage im Skript (`integrationPrompt`) | fertig (2× am Nutzungslimit abgebrochen, per resume neu gestartet) – 22 Folien, Zeitsumme 885 s, PDF + Übersicht + Folienbilder, LIESMICH/QUELLEN | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.24 | Abschlussprüfung | Abschluss: Anforderungen | Textvorlage im Skript (`anforderungenPrompt`) | fertig (1× am Nutzungslimit abgebrochen, per resume neu gestartet) – 16 Befunde (hoch 0, mittel 5, niedrig 11) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.25 | Abschlussprüfung | Abschluss: Gestaltung | Textvorlage im Skript (`gestaltungPrompt`) | fertig (1× am Nutzungslimit abgebrochen, per resume neu gestartet) – 24 Befunde (hoch 2, mittel 6, niedrig 16) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
+  | A2-D01.26 | Feinschliff | Feinschliff | Textvorlage im Skript (`Feinschliff-Auftrag`) | fertig – 23 behoben, 10 nicht behoben (mit Grund) | Rückgabe gelesen (Workflow-Protokoll); Ergebnis im nächsten Schritt weiterverwendet |
 
 - **Ab Phase „Folien“ mit dem Workflow-Werkzeug** (14.10.2026, ca. 04:05 Uhr; Lauf-ID `wf_878fd85d-3f2`): gestartet mit
   `scriptPath` = [`workflows/2026-10-14_praesentation-account-2.js`](workflows/2026-10-14_praesentation-account-2.js) und
@@ -433,8 +622,39 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   > weiterhin vorhanden. Schreibe zum Schluss deine Rückgabe als gültiges JSON in
   > /tmp/claude-0/-home-user-Unternehmens-Kommunikation/de57a793-3a57-5bbc-8922-be77d2a31fa2/scratchpad/workflow-zustand/rueckgaben/engine-designsystem.json
   > und antworte mit einer kurzen Zusammenfassung.
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt nach Abschluss*
+- **Ergebnis:** fertig – `praesentation/index.html` (21 Hauptfolien f01–f12 inkl. f08b/f09b, optionale f01b, Backup
+  B1–B8 nach dem Feinschliff), Engine/Designsystem in `css/`, `js/`, `marke.js` (HOLY, Web-Farben aus dem Dossier),
+  `export/praesentation.pdf`, `export/uebersicht.png`, `export/folien/*.png`, `LIESMICH.md`, `QUELLEN.md`, `AUTOREN.md`,
+  `werkzeuge/pruefen.mjs`. Sollzeit Hauptfolien 885 s (14:45). Rückgaben aller Agenten:
+  [`workflow-wf_878fd85d-3f2.json`](workflows/2026-10-14_praesentation-account-2_rueckgaben/workflow-wf_878fd85d-3f2.json).
+- **Wie Claude das Ergebnis geprüft hat:** Rückgaben jeder Stufe gelesen; Fundament selbst nachgeprüft (Demo, `pruefen.mjs`,
+  Kontaktbogen); Kontaktbogen `export/uebersicht.png` nach der Integration angesehen; nach dem Merge von master
+  `pruefen.mjs` auf `index.html` (0 Fehler). Schwachstellen des Skripts selbst gefunden und behoben (gescheiterte Agenten
+  wurden als „keine Befunde“ gewertet; Befundliste im Feinschliff abgeschnitten → A2-D02).
+
+### A2-D02 – 16.10.2026 – ausgelöst durch A2-23 / A2-26
+
+- **Art:** Workflow „praesentation-account-2-nacharbeit“ (Workflow-Werkzeug, Lauf `wf_fe26464c-97a`).
+- **Auftrag (wörtlich):** Skript [`workflows/2026-10-16_praesentation-account-2_nacharbeit.js`](workflows/2026-10-16_praesentation-account-2_nacharbeit.js)
+  (Rahmenregeln, Aufgabe, Ablaufplan, Schemas und Anforderungsprüfung wörtlich aus dem Hauptskript; die 18
+  abgeschnittenen Befunde und die Befunde aus Ü02 wörtlich als Konstanten).
+- **Stufen:** Nacharbeit (1 Agent) → zweite Abschlussprüfung (2 Agenten parallel: Anforderungen/Technik; Inhalt &
+  Fakten gegen das Dossier) → letzter Feinschliff (1 Agent, alle Befunde ungekürzt).
+- **Unteragenten und Ergebnisse** (Rückgaben: [`workflow-wf_fe26464c-97a.json`](workflows/2026-10-14_praesentation-account-2_rueckgaben/workflow-wf_fe26464c-97a.json)):
+
+  | Nr. | Unteragent (Label) | Ergebnis |
+  |-----|--------------------|----------|
+  | A2-D02.01 | Nacharbeit: abgeschnittene Befunde | 28 Punkte behoben (18 Abschlussbefunde, 5 Befunde aus Ü02, HOLY-Logo auf f01, Exporte, Doku), 5 mit Begründung offen; einmal angehalten (A2-27), einmal Nutzungslimit |
+  | A2-D02.02 | Zweite Prüfung: Anforderungen | 16 Befunde (0 hoch, 3 mittel, 13 niedrig); zweimal Nutzungslimit |
+  | A2-D02.03 | Zweite Prüfung: Inhalt & Fakten | 24 Befunde (0 hoch, 8 mittel, 16 niedrig); alle HOLY-Zahlen, Quellennummern und Faktenstatus stimmen mit dem Dossier |
+  | A2-D02.04 | Letzter Feinschliff | 30 Befunde behoben, 6 mit Begründung offen (Gruppenentscheidungen, siehe unten); einmal Nutzungslimit |
+
+- **Offen (nur die Gruppe kann entscheiden/liefern):** Limbic Type der Persona (master/A3: „Hedonist“, Präsentation
+  noch „Abenteurer“); Folie 04/B3 beruhen auf dem Entwurf des Persona-Steckbriefs (Freigabe durch Yannick offen);
+  Sollzeit der Hauptfolien jetzt 14:00 statt 14:45 (bestätigen, `arbeitsplan.md` angleichen); Wortbudget f03/f04/f10/f11
+  leicht über 40; echte Kurzinterviews und Erhebungsdaten statt Beispieldaten; optional Jahresabschluss 2024 als Beleg.
+- **Ergebnis:** fertig – Präsentation vortragsbereit bis auf die offenen Gruppenpunkte (Checkliste in `LIESMICH.md` §12).
+- **Wie Claude das Ergebnis geprüft hat:** siehe A2-33 (eigener Prüflauf, 0 Fehler; Kontaktbogen und Folie 01 angesehen).
 
 ---
 

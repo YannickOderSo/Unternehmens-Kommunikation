@@ -32,7 +32,9 @@
   --g2l-farbe-stimulanz: color-mix(in oklab, var(--f-warnung) 38%, var(--f-hintergrund));
   --g2l-glanz:           color-mix(in oklab, var(--f-hintergrund) 72%, transparent);
   --g2l-stark-balance:   var(--f-erfolg);
-  --g2l-stark-dominanz:  var(--f-fehler);
+  /* Dominanz: gedecktes Rosé statt Signalrot – Rot steht in der Präsentation
+     für „Bruch“ (Folien 09b, 11); die Fläche bleibt in der Rot-Familie */
+  --g2l-stark-dominanz:  color-mix(in oklab, var(--f-fehler) 50%, var(--f-text-2));
   --g2l-stark-stimulanz: color-mix(in oklab, var(--f-warnung) 80%, var(--f-hintergrund));
   --g2l-satt-balance:    color-mix(in oklab, var(--f-erfolg) 30%, var(--f-hintergrund));
   --g2l-satt-dominanz:   color-mix(in oklab, var(--f-fehler) 26%, var(--f-hintergrund));
@@ -244,7 +246,7 @@
   font-family: var(--schrift-display);
   font-size: var(--groesse-titel);
   font-weight: var(--gewicht-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   letter-spacing: var(--laufweite-titel);
   line-height: 1.02;
   color: var(--f-akzent);

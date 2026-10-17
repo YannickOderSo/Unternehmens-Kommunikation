@@ -50,7 +50,7 @@
   font-weight: var(--gewicht-titel);
   line-height: var(--zeilenhoehe-titel);
   letter-spacing: var(--laufweite-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   text-wrap: balance;
   color: var(--f-text);
   max-width: 100%;
@@ -60,6 +60,24 @@
 .titel .hervor {
   font-style: var(--stil-hervor);
   color: var(--f-akzent);
+}
+/* Markenname im Titel (<em data-marke>): auf hellen Folien schwarz mit
+   gelbem Textmarker – die Markenfarben Gelb/Schwarz statt Braun
+   (Abschlussprüfung 16.10.2026). Auf dunklen Folien bleibt er in der hellen
+   Akzentfarbe (dort ein helles Gelb). Der Marker nutzt die Primärfarbe aus
+   marke.js, aber immer HELL (Helligkeit mind. 0,86, Buntheit höchstens 0,18
+   in OKLCH): HOLY-Gelb #FFD007 bleibt unverändert, eine dunkle oder sehr
+   satte Primärfarbe (z. B. Rot #E4003A) wird zu einem hellen Marker statt zu
+   einem Balken, der wie Durchstreichen wirkt (Abschlussprüfung 17.10.2026).
+   Ältere Browser ohne „oklch(from …)“ nehmen die erste Zeile (--f-kern). */
+html[data-modus="hell"] .folie:not([data-modus="dunkel"]) .titel em[data-marke] {
+  color: var(--f-text);
+  background: linear-gradient(transparent 46%, var(--f-kern) 46% 80%, transparent 80%);
+  background: linear-gradient(transparent 46%, oklch(from var(--marke-primaer) max(l, 0.86) min(c, 0.18) h) 46% 80%, transparent 80%);
+  padding: 0 0.08em;
+  margin: 0 -0.04em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .titel--gross { font-size: var(--groesse-titel-gross); }
 .titel--klein { font-size: var(--groesse-titel-klein); }
@@ -273,6 +291,12 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .karte--akzent { background: var(--f-akzent-flaeche); border-color: var(--f-akzent); }
 .karte--hart { background: var(--f-hart-flaeche); border-color: transparent; }
 .karte--weich { background: var(--f-weich-flaeche); border-color: transparent; }
+/* Editorial dunkel: gedeckte Flächen + feine Kante in Markenfarbe, damit die
+   Karten nicht in den Hintergrund sinken (Abschlussprüfung 16.10.2026) */
+[data-thema="editorial"][data-modus="dunkel"] .karte--weich,
+[data-thema="editorial"] [data-modus="dunkel"] .karte--weich {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--marke-primaer) 30%, transparent);
+}
 .karte--hervor { border-color: var(--f-akzent); box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent); }
 .karte--linie {
   padding: 20px 0 0;
@@ -550,7 +574,7 @@ html:not(.zeiger-gesperrt) .sr-kern-gruppe:hover .sr-kern { transform: scale(1.0
   font-weight: var(--gewicht-display);
   letter-spacing: -0.01em;
   line-height: 1.08;
-  font-variation-settings: "opsz" 32;
+  font-variation-settings: "opsz" 32, var(--achsen-ruhig);
 }
 /* obere Felder: Name auf der Zeile, Leitfrage darunter (zur Mitte hin);
    untere Felder: Leitfrage darüber, Name auf der Zeile */
@@ -602,6 +626,11 @@ html:not(.zeiger-gesperrt) .sr-kern-gruppe:hover .sr-kern { transform: scale(1.0
 .sr-ringtext--weich { fill: var(--f-weich); }
 .sr-ringtext--rahmen { fill: var(--f-text); }
 .sr-ringstrich { stroke: var(--f-linie); stroke-width: var(--linie-fein); }
+/* „Hard/Soft Facts“ und der Trennstrich sind nur Beschriftung: Klicks gehen
+   hindurch auf das Feld darunter (sonst „schluckt“ die Schrift den Klick) */
+.sr-ringtext--hart,
+.sr-ringtext--weich,
+.sr-ringstrich { pointer-events: none; }
 
 /* Mini-Rad (Laufkopf): aktuelles Feld in Akzentfarbe */
 .mini-rad {
@@ -700,7 +729,7 @@ html:not(.zeiger-gesperrt) .sr-karte:hover,
   font-weight: var(--gewicht-display);
   line-height: 1.1;
   letter-spacing: -0.012em;
-  font-variation-settings: "opsz" 36;
+  font-variation-settings: "opsz" 36, var(--achsen-ruhig);
 }
 .sr-karte-folie {
   flex: none;
@@ -1064,6 +1093,19 @@ html.maus-ruht .umfrage-taste { opacity: 0; }
 }
 .ua-antwort { font-style: var(--stil-hervor); color: var(--f-akzent); }
 .umfrage-aussage.ist-leer .ua-zahl { color: var(--f-text-2); }
+/* Ohne Stimmen: Satz ausblenden, stattdessen „Noch keine Stimmen“ (Text aus
+   marke.js → umfragen.<id>.aussageLeer, sonst Standard) */
+.ua-leer {
+  display: none;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  color: var(--f-text-2);
+}
+.umfrage-aussage.ist-leer .ua-text,
+.umfrage-aussage.ist-leer .ua-zahl { display: none; }   /* kein „– %“, nur der Hinweis */
+.umfrage-aussage.ist-leer .ua-leer { display: block; }
 /* Stimmenzähler: große Ziffer + „Stimmen“ */
 .umfrage-stimmen {
   display: inline-flex;

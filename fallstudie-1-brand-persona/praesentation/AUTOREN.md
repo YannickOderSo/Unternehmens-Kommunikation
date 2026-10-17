@@ -117,12 +117,13 @@ Summe wieder auf höchstens 900 s ab.
 
 | Markup | Ergebnis |
 |---|---|
-| `<span data-marke></span>` / `<em data-marke></em>` | Markenname („HOLY“); `<em>` im Titel = Akzentfarbe |
+| `<span data-marke></span>` / `<em data-marke></em>` | Markenname („HOLY“); `<em data-marke>` im Titel: auf hellen Folien schwarz mit gelbem Textmarker (`--f-kern`), auf dunklen in der Akzentfarbe (`css/komponenten.css`) |
 | `<span data-marke="kurz"></span>` | Kurzname |
 | `<span data-gruppe></span>` / `data-gruppe="zeilen"` | Namen mit „·“ bzw. untereinander |
 | `<span data-datum></span>` / `data-datum="lang"` | 26.10.2026 bzw. „Montag, 26. Oktober 2026“ |
 | `data-veranstaltung`, `data-dozent`, `data-hochschule`, `data-praesentation`, `data-fallstudie` | Angaben aus marke.js |
-| `<img data-marke-logo>` | Logo-Pfad aus marke.js |
+| `<span data-unternehmen></span>` | Firma hinter der Marke (`marke.js → unternehmen`, Einordnungszeile auf Folie 01 und 12) |
+| `<img data-marke-logo>` | Logo-Pfad aus marke.js (`logo`, Folie 09b); das Logo der Titelfolie kommt aus `logoTitel` (setzt `js/folien/01-einstieg.js`) |
 | `<h2 class="titel" data-umfrage-frage="tier"></h2>` | Frage der Umfrage aus marke.js |
 | `data-anrede-sie="…" data-anrede-ihr="…"` | Text passend zur Anrede |
 | `<span class="beispiel">Beispieldaten</span>` | Pille; per `marke.js → beispieldatenHinweis: false` ausblendbar (erst, wenn keine erfundenen Werte mehr da sind!) |
@@ -191,7 +192,11 @@ Endlosanimationen, kein `backdrop-filter`, kein Blur in Übergängen. Bei „Bew
 **Morph zwischen Folien:** gleiches `data-morph="name"` auf zwei Folien → das Element gleitet beim
 Wechsel von der einen in die andere Position (View Transitions; ohne Unterstützung einfache
 Überblendung). Pro Folie jeder Name nur einmal. Das Hub-Steuerrad morpht automatisch in das
-Mini-Steuerrad der Zielfolie (Name `steuerrad`, nicht selbst vergeben).
+Mini-Steuerrad der Zielfolie (Name `steuerrad`, nicht selbst vergeben). Zwischen großem Rad und Mini-Rad
+setzt `deck.js` die Klasse `html.wechsel-rad-gross`: Das Rad ist unterwegs ausgeblendet (sonst flog es als
+graue Scheibe über den neuen Titel). Wechselt hell ↔ dunkel (z. B. Folie 01 → 02), setzt `deck.js`
+`html.wechsel-modus`: alte Folie erst aus-, dann die neue einblenden (kein graues Doppelbild). Aussehen:
+`css/deck.css`, Abschnitt 7.
 
 ---
 
@@ -216,7 +221,8 @@ und springen zur ersten Hauptfolie mit dem passenden `data-feld`.
   Feld, steht sie automatisch unter der Methodenkarte) | `an` | `aus`.
 - `data-beschreibungen="schrittweise"` (Standard) | `an` | `aus` – Methodenbeschreibung.
 - `data-logik="aus"` (gestrichelte Logikpfeile „Attribute sind die Startpunkte“, „Tonalität ist der
-  Prüfmaßstab“), `data-seiten="aus"` (Hard/Soft-Facts-Beschriftung), `data-breite`/`data-hoehe`
+  Prüfmaßstab“), `data-seiten="aus"` (Hard/Soft-Facts-Beschriftung; `data-seiten="kurz"` = nur
+  „Hard Facts“/„Soft Facts“ ohne „rational“/„emotional“, so auf Folie 10), `data-breite`/`data-hoehe`
   (feste Größe), `data-kartenbreite`, `data-morph="aus"`.
 - Methoden, Texte, Logik und Reihenfolge per JSON im Baustein überschreibbar:
 ```html
@@ -269,9 +275,13 @@ Handys testen.
   `data-qr="aus"`, `data-qr-groesse="380"`).
 - Ergebnis: Pille LIVE (ruhig pulsierend), `n = …`, Pille Beispieldaten (solange Beispielwerte),
   Balken mit Prozent (aus den Stimmen berechnet) und Anzahl.
+- **Beispielwerte werden nie mit echten Stimmen gemischt:** Die erste echte Stimme (Klick, Ziffer oder
+  eine Zahl > 0 über „Werte“) setzt alle Beispielwerte auf 0; die Pille „Beispieldaten“ verschwindet.
+  Solange Beispielwerte stehen, beginnen die Felder unter „Werte“ bei 0.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
-  wir: als Waschbär“.
+  wir: als Waschbär“. Ohne Stimmen (n = 0) steht dort nur „Noch keine Stimmen“ (Text änderbar:
+  `marke.js → umfragen.tier.aussageLeer`); die Zahl zählt dann nicht auf „0 %“ hoch.
 - Bedienung im Vortrag: Klick auf Option = +1, Umschalt+Klick oder Rechtsklick = −1, Ziffern 1–9
   (Umschalt = −1, nur solange die Umfrage zu sehen ist), Doppelklick auf einen Wert = Zahl eintippen,
   Knopf „Werte“ = alle eintragen (z. B. aus Mentimeter/Particify; Tab = nächstes Feld, nach dem letzten
@@ -310,6 +320,9 @@ Tasten Texteingabe; Bild↑/Bild↓ (Clicker) und Esc verlassen das Feld. Texte 
 Bild aus `marke.js → raetselBild` (oder `data-bild="bilder/…"`). Stufen „Zoom %/Unschärfe px“ – vier
 Stufen = drei Klicks, Fortschritt „Hinweis x von 4“ oben rechts (`data-fortschritt="aus"`).
 `data-fokus` = Bildausschnitt, auf den gezoomt wird. `data-schritt-start` verschiebt den Beginn.
+Auf Folie 01 erscheint mit der Auflösung das Logo aus `marke.js → logoTitel` (gelbes Oval, unverändert,
+nur verkleinert; Höhe in `css/folien/01-einstieg.css` → `--einstieg-logo-gross` / `--einstieg-logo-titel`)
+anstelle des Markennamens in Schrift; der Name bleibt als alt-Text. Ohne `logoTitel` steht der Name da.
 
 ### f) Zähler, Kennzahl, Hantel
 ```html
@@ -365,7 +378,8 @@ dokument annahme` → `<svg class="icon"><use href="#i-NAME"/></svg>` (Größe =
 - **Schrift**: `--schrift-display`, `--schrift-text`, `--schrift-zahl`, `--schrift-kicker`,
   `--gewicht-titel`, `--gewicht-display`, `--gewicht-zahl`, `--gewicht-text`, `--gewicht-fett`,
   `--opsz-titel`, `--laufweite-titel`, `--stil-hervor`, `--stil-marke`, `--kicker-versalien`,
-  `--kicker-laufweite`, `--kicker-gewicht`.
+  `--kicker-laufweite`, `--kicker-gewicht`, `--achsen-ruhig` (`"WONK" 0` – ruhige Formen der kursiven
+  Fraunces; wer `font-variation-settings` setzt, schreibt es mit: `"opsz" 36, var(--achsen-ruhig)`).
 - **Größen**: `--groesse-titel-gross` 96, `--groesse-titel` 72, `--groesse-titel-klein` 56,
   `--groesse-untertitel` 40, `--groesse-gross` 34, `--groesse-text` 30, `--groesse-text-min` 28,
   `--groesse-tabelle` 24, `--groesse-meta` 22, `--groesse-kennzahl` 120; `--zeilenhoehe-titel`,
@@ -395,7 +409,9 @@ aus der Marke; Schrift auf Akzent/Kern automatisch schwarz oder weiß).
     verlassen:  function (ctx) { /* Folie wird verlassen */ },
     schritt:    function (ctx, n, richtung) { /* richtung: 'vor' | 'zurueck' | 'start' */ },
     druck:      function (ctx) { /* Endzustand für PDF herstellen */ },
-    vorschau:   function (ctx, klon, schritt) { /* Miniatur (Übersicht/Referent) anpassen */ }
+    vorschau:   function (ctx, klon, schritt) { /* Miniatur (Übersicht/Referent) anpassen */ },
+    schritteAktualisieren: function (ctx) { /* vor Deck.gehe(…, 'ende'): Schrittzahl neu ermitteln,
+                 wenn sie von gespeicherten Daten abhängt (Folie 10: Abgleich mit der Wortwolke) */ }
   });
 })();
 ```
@@ -413,7 +429,12 @@ animierten Folienwechsels trägt `<html>` die Klasse `wechsel-laeuft`; an seinem
 - `Deck.zustand()` → `{ folie, folienIndex, schritt, schritteGesamt, anzahlFolien, anzahlHauptfolien, titel, feld, nummer, backup, thema, modus }`
 - `Deck.gehe(folie, schritt, optionen)` – Folie als ID, Index, Nummer („6“, „B2“) oder Element; Schritt
   Zahl oder `'ende'`; optionen `{ sofort: true }` (ohne Übergang)
-- `Deck.weiter()`, `Deck.zurueck()`, `Deck.folien()`, `Deck.feldZiel(feld)`, `Deck.feldZiele(feld)`,
+- `Deck.weiter()`, `Deck.zurueck()` – ein Klick während eines laufenden Übergangs bzw. laufender
+  Schritt-Animationen beendet diese sofort (kein Klickstau); ein neuer Folienwechsel während eines
+  laufenden Übergangs erfolgt ohne Animation
+- `Deck.vorschauAuffrischen()` – Referentenansicht: Vorschau „Als Nächstes“ neu bauen (Bausteine mit
+  Live-Daten rufen das nach einer Änderung auf, z. B. Umfrage, Wortwolke)
+- `Deck.folien()`, `Deck.feldZiel(feld)`, `Deck.feldZiele(feld)`,
   `Deck.marke` (Konfiguration aus marke.js), `Deck.hinweis(text)`, `Deck.thema(name, modus)`,
   `Deck.farbe('primaer', '#…')`, `Deck.bereit` (Promise), `Deck.taste(fn)`, `Deck.baustein(name, def)`
 - Ereignisse auf `document`: `deck:bereit`, `deck:folie`, `deck:schritt`
@@ -486,3 +507,74 @@ HTML-Kommentar begründen.
 | `werkzeuge/pruefen.mjs` | Prüfung in jedem Schritt, Überlappungsprüfung, Wortzählung mit Silbentrennung, Ausnahmen dokumentiert, Aufruf für `index.html`. |
 | Fußzeilen | Einheitlich „Quelle: …“ (Bildnachweis auf Folie 01: „Bild: …“, B7: „Hinweis: …“). |
 | `bilder/platzhalter-raetsel.svg` | eingebauter Hinweistext entfernt (wurde in der Bildtafel von Folie 01 abgeschnitten). |
+
+
+## 11. Änderungen nach der Abschlussprüfung (16.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| Ebenen (`js/deck.js`) | Nach dem Schließen von Übersicht/Hilfe geht der Fokus **nicht** zurück an einen Knopf der Bedienleiste (sonst öffnete die nächste Leertaste/Enter die Ebene erneut, statt weiterzuschalten). |
+| Bedienleiste (`js/deck.js`) | zeigt die Foliennummer wie Kopfzeile und Übersicht („08b / 12“, „12 / 12“), nicht mehr die Position. |
+| Ziffernsprung (`js/deck.js`) | Nach einer Ziffer gehört „b“ zur Nummer: `8` `B` `Enter` → Folie 08b. Jede andere Taste (Pfeil, Leertaste, Schwarzbild …) verwirft eine angefangene Nummer; Schwarzbild leert den Puffer. Hilfe ergänzt. |
+| Umfrage (`js/komponenten.js`) | Erste echte Stimme löscht die Beispielwerte (siehe 6c). |
+| Steuerrad (`js/komponenten.js`, `css/komponenten.css`) | Ringbeschriftung „Brand Persona · Folien 04–05“ gehört bei klickbaren Rädern zum Persona-Knopf (Klick auf die Schrift springt zu Folie 04); „Hard/Soft Facts“ und der Trennstrich lassen Klicks durch (`pointer-events: none`). |
+| Druck mit Notizen (`css/deck.css`) | `?druck&notizen`: Sprechtext wird nicht mehr abgeschnitten, sondern läuft auf Folgeseiten weiter (Seite 1920 × 1620 px, nächste Folie immer auf neuer Seite). |
+| Bewegung reduzieren (`css/deck.css`) | Bedienleiste und Hinweis blenden nur über die Deckkraft ein/aus (kein Weg). |
+| Folie 01 | neues gezeichnetes Rätselmotiv (Dose + Shaker vor Gelb, ohne Logo), `data-fokus="66% 42%"` – das Motiv bleibt im Schlussbild ganz in der Bildtafel. |
+| Folie 02 | Zeile „Ausgangslage 2021 → 2026“ nur noch im Sprechtext (Zeitleiste steht auf Folie 03); Sprechtext nennt Identität = Selbstbild, Repertory Grid/Laddering = Fremdbild. |
+| Folie 03 | „Spezialist“ in der Quellzeile als eigene Einordnung (H) gekennzeichnet. |
+| Folie 04 | Persona-Platzhalter als gezeichnete Szene „Marco in der Nachtschicht“ (feste Nachtfarben, Reflexstreifen in der Markenfarbe). |
+| Folie 05 (`js/folien/05-limbic-map.js`) | Bricht der Titel um (z. B. längerer Markenname), wird er automatisch auf 56 px gesetzt – sonst rückte die Liste „Folgen“ in die Quellzeile. |
+| Folie 07 | Verbindungen gedeckter; die tragende Leiter (`"kern": true` in den Daten) färbt sich im letzten Schritt in der Akzentfarbe. |
+| Folie 08b | Wettbewerber mit `"beispiel": true`: Marker gestrichelt, Legende „gestrichelt: Beispielwert, nicht erhoben“; Fußzeile entsprechend. |
+| Folie 09 | Bildwelt als waagerechte Balken je Motivgruppe (Zahl in 44 px, Comic-Tiere in Akzentfarbe) plus **ein** Schlüsselbild rechts (Schritt 2) statt acht Platzhalter-Kacheln. Daten: `bildwelt[].anteil`, Schlüsselbild = Beitrag mit `"schluesselbild": true`. |
+| Folie 09b | Logo-Zeile ohne Bild, solange `marke.js → logo` nur der Platzhalter ist (Beschreibung in Textgröße). Palette: Farben aus den Daten haben Vorrang (Dubletten werden entfernt, Warnung nur bei mehr als 5 eigenen Farben); Farben aus `marke.js` kommen nur dazu, solange Platz ist – andere Testfarben erzeugen keine Konsolenwarnung mehr. |
+| Folie 10 | Methodenkürzel und Legende auf der Folie ausgeblendet (Legende in den Notizen); Lücken größer (Kopf 28 px, Text 32 px, Nummern 40 px), kürzer („Koffein vs. gutes Gewissen“, „Bildwelt zu jung“) und ohne Feldpaar; Feldnamen 24 px; Persona-Leiste „Marco, 28 · Abenteurer“. |
+| Folie 11 | Befunde gekürzt (wortgleich mit Folie 10); Sprechtexte der Folien 09, 09b und 11 um ca. 20–25 % gekürzt (≈ 1,5–1,8 Wörter/s). |
+| Backup B8 (neu) | „Belege der Folien“: alle sichtbar zitierten Quellennummern mit Kurzangaben aus Dossier Anhang B; B7 verweist darauf. |
+
+**Testen mit anderem Markennamen/anderen Farben** (z. B. für eine andere Marke): Ordner kopieren, in der
+Kopie `marke.js` ändern und `node werkzeuge/pruefen.mjs index.html --schritte` laufen lassen. Geprüft am
+16.10.2026 mit „Testmarke“ und `#2A6FDB`/`#3B2A1A`: keine Fehler, Konsole leer.
+
+## 12. Nacharbeit nach Abschluss- und Live-Prüfung (16.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| Folie 01 | Offizielles HOLY-Logo (gelbes Oval, `marke.js → logoTitel`, `bilder/holy-logo-oval.png`) erscheint mit der Auflösung (Schritt 1) und bleibt auf der Titelfolie – anstelle des Markennamens in Schrift; im Rätsel (Schritt 0) nicht zu sehen. Quelle in der Fußzeile („Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“, erscheint wie die Bildquelle erst mit der Auflösung). Einordnungszeile „Studentische Fallstudie · keine Verbindung zur …“ unter den Angaben. |
+| Folie 02 | Titel in 72 px wie die übrigen Inhaltsfolien; die Leitfrage „Wer bin ich?“ steht in Schritt 1 vorn in der Pille „Desk Research“ statt im gelben Zentrum (stieß dort an den Kernring). |
+| Folie 06 | Kopfzeile getrennt: „Nennungen“ über der linken Spalte, „Skala“ direkt vor den Zahlen 1–7 (Daten: `nennungenTitel`, `skalaTitel`). |
+| Folie 08b | Karte „Ins Steuerrad“ erscheint samt Überschriften erst im letzten Schritt (vorher leerer Rahmen). |
+| Folie 10 | Band „Markenkern“ erscheint erst in seinem Schritt (kein gestrichelter Leerkasten mehr); Lücken in Braun-Orange (`--f-warnung`), Rot nur für „Bruch“; eigener Titel im optionalen Abgleich-Schritt („Ihr Bild von HOLY trifft unseren Kern – teilweise“), im Druck bleibt die Kernaussage. |
+| Folie 11 | Verweis-Pillen „Lücke 1/2“ in Braun-Orange, „Bruch“ rot; Unterzeilen der Empfehlungen im Druck und in Aufnahmen (`?aufnahme`, Exportbilder) immer offen. |
+| Folie 12 | zweite Fußzeile mit der Einordnung (studentische Fallstudie). |
+| Folie 05 | Dominanz-Punkt gedecktes Rosé statt Signalrot. |
+| B1 | „[N]“ durch die geplante Zahl „3“ ersetzt (wie auf Folie 06–08, B2, B4, B5); Pille „teils geplant“ bleibt bis zu den Interviews. |
+| Titel aller Folien | Markenname schwarz mit gelbem Textmarker (helle Folien), dunkel: Akzentgelb. |
+| Schriften | Kursive Fraunces aus der Datei mit allen Achsen (`fraunces-latin(-ext)-full-italic.woff2`) und `"WONK" 0` (keine „wonky“-Formen b, h, k, l); echte kursive Inter (`inter-latin(-ext)-opsz-italic.woff2`). |
+| Dunkelmodus Editorial | Akzent- und Soft-Facts-Flächen gedeckter (weniger Olivbraun); weiche Karten mit feiner Kante in Markenfarbe. |
+| Übergänge (`js/deck.js`, `css/deck.css`) | `html.wechsel-modus` (hell ↔ dunkel nacheinander überblenden) und `html.wechsel-rad-gross` (großes Rad ↔ Mini-Rad ohne „fliegende Scheibe“), siehe Abschnitt 5. |
+| Bedienleiste (`js/deck.js`, `css/deck.css`) | erscheint nur bei Mausbewegung im unteren Bildrand (160 px), bei Tastaturfokus oder Antippen – nicht mehr bei jedem Klick; Touch: Knöpfe 44 × 44 px; Handy hochkant: nur Grundknöpfe, Hinweis „Gerät quer halten“. |
+| Referentenansicht (`js/deck.js`) | Sprechtext rollt zum Absatz des aktuellen Schritts (auch nach A− / A+). |
+| Umfrage-Ziffern (`js/deck.js`, `js/komponenten.js`) | Folgt auf eine gezählte „1“ sofort eine weitere Ziffer (z. B. „1“ „0“ Enter → Folie 10), wird die Stimme zurückgenommen; läuft schon eine Foliennummer, zählen Ziffern keine Stimme. Hilfe (H) ergänzt. |
+| Übersicht (O) | beginnt oben (Überschrift sichtbar), solange die aktuelle Folie dabei ganz zu sehen ist; sonst steht die Kachel mittig. |
+| Zeitplan | Sollzeiten 04: 80 s, 05: 55 s, 06: 80 s, 09: 60 s, 11: 75 s → Hauptfolien 14:00 (60 s Puffer). |
+
+## 13. Feinschliff nach der zweiten Abschlussprüfung (17.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| Referentenansicht (`js/deck.js`) | Sprechtext rollt nur noch bei einem Folien- oder Schrittwechsel zum aktuellen Absatz – der Abgleich alle 3 s setzte von Hand gescrollten Text zurück. Vorschau „Als Nächstes“ wird bei neuen Umfrage-Stimmen/Zurufen sofort neu gebaut (`Deck.vorschauAuffrischen`). Taste P übernimmt die Adressparameter `optional`, `thema`, `modus`, `primaer`, `sekundaer`, `bewegung` (z. B. `?optional=alle` → gleiche Folienliste in beiden Fenstern). |
+| Navigation (`js/deck.js`) | Klickstau: Ein Klick während eines Übergangs oder laufender Schritt-Animationen beendet diese sofort; ein Folienwechsel während eines laufenden Übergangs geschieht ohne Animation (kein Zwischenbild nach Clicker-Doppeldruck über den Morph 02 → 03 bzw. 09b → 10). `Deck.gehe(id, 'ende')` ruft vorher den Hook `schritteAktualisieren` (Folie 10 zählt den Abgleich-Schritt neu). |
+| Umfrage-Aussage (`js/komponenten.js`, `css/komponenten.css`) | Ohne Stimmen kein „0 %“ mehr: Die Zahl hat dann keinen Zielwert (`data-ziel` fehlt), angezeigt wird „Noch keine Stimmen“. Im Klon (Vorschau, Übersicht) stehen die Prozente der Umfrage sofort auf dem Endwert. |
+| Titel-Marker (`css/komponenten.css`) | Markenname im Titel: Marker immer hell (OKLCH: Helligkeit ≥ 0,86, Buntheit ≤ 0,18) – HOLY-Gelb unverändert, dunkle/satte Primärfarben wirken nicht mehr wie Durchstreichen. |
+| Beschriftungen (`js/komponenten.js`, `index.html`) | Feldnamen im Steuerrad, Kartenköpfe, Ringtexte, „Hard/Soft Facts“, „Gruppe“/„Termin“ (Folie 01) tragen `data-meta` (zählen nicht zum Wortbudget). Kartenköpfe Folie 10, Chip „Hürde“ (06) und „Schlüsselbild?“ (09) 26 px. |
+| Folie 02 (`js/folien/02-vorgehen.js`) | Etikett „Fremdbild“ an den Karten Repertory Grid und Laddering (Liste `SICHT_FREMDBILD`); Methodenkarten sagen „KI + Kurzinterviews“ (= Planung, Kasten „FOLIE 02“). |
+| Folie 03 | nur noch die gewählten Rollen-Chips; Beleg „fordert … heraus“ [7] in der Metazeile; zweite Fußzeile mit Bezug und Absender der Red-Bull-Zahl (Circana MAT 08/2025, Lehrbrief mit Red Bull); „große TV-Kampagne“. |
+| Folie 04 (`js/folien/04-persona.js`) | Inhalt nach Persona-Steckbrief A2 und Folienentwurf 4 (Entwurf, Freigabe offen): Mediennutzung Statista Consumer Insights 2025 (YouTube/Instagram/TikTok) mit Strich für den Ø aller Befragten (Daten `skala`, `schnitt`); Kaufverhalten als Annahme. |
+| Folie 06 / B4 | Beispielwert W3 „zuckerfrei“ 6,0 (Gönrgy ist zuckerfrei), Ø Wettbewerb 4,78. |
+| Folie 09 (`js/folien/09-kommunikationsanalyse.js`) | Motivgruppe „Team & Popkultur“ statt „Kurzvideos“ (Motiv ≠ Format); Zahl der codierten Beiträge gestrichelt als Beispielwert; Titel mit „?“ bis zur Codierung. |
+| Folie 10 (`css/folien/10-markensteuerrad.css`, JS) | höchstens 3 Stichworte je Feld; „Energy: 160 mg Koffein“ (nur Energy-Linie, Quelle [56] in der Fußzeile); Nummern der Lücken hochgestellt direkt am Wort, der Trenner „·“ bleibt sichtbar. |
+| Folie 11 / 12 | Kern-Zusatz gestrichen, Kanal-Chips ein Wort, „wie genau“ kürzer; Fazit auf Folie 12 mit Pille „Beispieldaten“. |
+| Backup B1, B3, B8 (`js/folien/13-backup.js`, `css/folien/13-backup.css`) | B1 Formulierungen präzisiert; B3: Mediennutzung = Statista CI 2025 mit neuem Status `extern` (Quelle nicht im Dossier); B8: [56] und „extern“ ergänzt, [48] und [102] entfernt (nicht mehr sichtbar zitiert), [26] mit Absender. |
+

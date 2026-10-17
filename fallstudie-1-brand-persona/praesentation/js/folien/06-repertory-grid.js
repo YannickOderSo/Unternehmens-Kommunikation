@@ -345,12 +345,22 @@
     if (profilTitel) {
       u.svg('text', { class: 'rg-profil-titel', 'data-meta': '', x: 0, y: MASS.legendeY + 8 }, ebeneRaster).textContent = u.markeText(profilTitel);
     }
-    /* Überschrift der Nennungs-Spalte (mit Schritt 2) */
+    /* Überschriften der Kopfzeile (mit Schritt 2): links über der Spalte
+       „Nennungen“, rechtsbündig vor den Skalenzahlen „Skala“ – so ist klar, dass
+       die Zahlen 1–7 zur Bewertungsskala gehören und nicht zu den Nennungen
+       (Abschlussprüfung 16.10.2026). "skalaTitel": "" = ohne Skalen-Überschrift. */
     var kopfN = u.svg('text', { class: 'rg-kopf-text', 'data-meta': '', x: 0, y: MASS.skalaY, 'data-schritt': '2', 'data-animation': 'einblenden' }, ebeneRaster);
     kopfN.textContent = u.markeText(d.nennungenTitel || 'Nennungen');
+    var skalaTitel = d.skalaTitel === undefined ? 'Skala' : d.skalaTitel;
+    var kopfS = null;
+    if (skalaTitel) {
+      kopfS = u.svg('text', { class: 'rg-kopf-text rg-kopf-text--skala', 'data-meta': '', x: x(min) - 22, y: MASS.skalaY, 'data-schritt': '2', 'data-animation': 'einblenden' }, ebeneRaster);
+      kopfS.textContent = u.markeText(skalaTitel);
+    }
     u.messen(buehne, function () {
-      if (kopfN.getComputedTextLength() > x(min) - 24) {
-        console.warn('[f06] Spaltenüberschrift „' + kopfN.textContent + '“ ist zu lang und stößt an die Skala – kürzer formulieren.');
+      var frei = x(min) - 24 - (kopfS ? kopfS.getComputedTextLength() + 22 + 32 : 0);
+      if (kopfN.getComputedTextLength() > frei) {
+        console.warn('[f06] Spaltenüberschrift „' + kopfN.textContent + '“ ist zu lang und stößt an „' + (kopfS ? kopfS.textContent : 'die Skala') + '“ – kürzer formulieren.');
       }
     });
 

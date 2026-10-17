@@ -186,13 +186,15 @@
       svg('path', { id: id + '-o', d: 'M' + rund(m.cx - rOben) + ' ' + m.cy + ' A' + rund(rOben) + ' ' + rund(rOben) + ' 0 0 1 ' + rund(m.cx + rOben) + ' ' + m.cy }, defs);
       svg('path', { id: id + '-u', d: 'M' + rund(m.cx - rUnten) + ' ' + m.cy + ' A' + rund(rUnten) + ' ' + rund(rUnten) + ' 0 0 0 ' + rund(m.cx + rUnten) + ' ' + m.cy }, defs);
       var halbe = Math.PI * rOben / 2;
-      var t1 = svg('text', { class: 'sr-ringtext sr-ringtext--hart', 'text-anchor': 'end' }, s);
+      var t1 = svg('text', { class: 'sr-ringtext sr-ringtext--hart', 'text-anchor': 'end', 'data-meta': '' }, s);   /* Ringtexte = Beschriftung (data-meta) */
       svg('textPath', { href: '#' + id + '-o', startOffset: rund(halbe - 16) }, t1).textContent = 'HARD FACTS · RATIONAL';
-      var t2 = svg('text', { class: 'sr-ringtext sr-ringtext--weich', 'text-anchor': 'start' }, s);
+      var t2 = svg('text', { class: 'sr-ringtext sr-ringtext--weich', 'text-anchor': 'start', 'data-meta': '' }, s);
       svg('textPath', { href: '#' + id + '-o', startOffset: rund(halbe + 16) }, t2).textContent = 'SOFT FACTS · EMOTIONAL';
       svg('line', { class: 'sr-ringstrich', x1: m.cx, y1: rund(m.cy - m.ring - 6), x2: m.cx, y2: rund(m.cy - m.ring - 26) }, s);
       if (optionen.rahmentext) {
-        var t3 = svg('text', { class: 'sr-ringtext sr-ringtext--rahmen', 'text-anchor': 'middle', 'data-paar': 'persona' }, s);
+        /* Ist das Rad klickbar, gehört die Beschriftung zum Persona-Knopf:
+           Ein Klick genau auf die Schrift springt dann ebenfalls zu Folie 04. */
+        var t3 = svg('text', { class: 'sr-ringtext sr-ringtext--rahmen', 'text-anchor': 'middle', 'data-paar': 'persona', 'data-meta': '' }, optionen.klickbar ? rahmen : s);
         svg('textPath', { href: '#' + id + '-u', startOffset: '50%' }, t3).textContent = optionen.rahmentext.toUpperCase();
         teile.rahmentext = t3;
       }
@@ -225,7 +227,9 @@
       rad.style.setProperty('--sr-name-hoehe', Math.round((zweizeilig ? 2 : 1) * groesse * 1.08) + 'px');
       VIERTEL.forEach(function (feld) {
         var f = FELDER[feld];
-        var label = el('div', { class: 'sr-label sr-label--' + f.seite + ' sr-label--' + (f.sy < 0 ? 'oben' : 'unten'), 'data-paar': feld }, null, rad);
+        /* data-meta: Feldname = Beschriftung des Modells (zählt nicht zum
+           Wortbudget, Mindestgröße wie Metaangaben – siehe werkzeuge/pruefen.mjs) */
+        var label = el('div', { class: 'sr-label sr-label--' + f.seite + ' sr-label--' + (f.sy < 0 ? 'oben' : 'unten'), 'data-paar': feld, 'data-meta': '' }, null, rad);
         label.style.left = rund(m.cx + f.sx * (innenX + aussenX) / 2) + 'px';
         label.style.top = rund(m.cy + f.sy * zeileY) + 'px';
         label.style.width = rund(verfuegbar) + 'px';
@@ -235,7 +239,7 @@
         zusatzBeschriftung(label, feld, optionen.beschriftung);
         teile.felder[feld].label = label;
       });
-      var kl = el('div', { class: 'sr-label sr-label--kern', 'data-paar': 'kompetenz' }, null, rad);
+      var kl = el('div', { class: 'sr-label sr-label--kern', 'data-paar': 'kompetenz', 'data-meta': '' }, null, rad);
       kl.style.left = m.cx + 'px';
       kl.style.top = m.cy + 'px';
       kl.style.width = rund(m.rk * 1.9) + 'px';
@@ -430,12 +434,16 @@
     var RfAbs = m.Rf;
     var dy = Math.round(RfAbs * zeile);
 
-    /* Seitenbeschriftung hard / soft facts */
-    if (huelle.getAttribute('data-seiten') !== 'aus') {
-      var sl = el('p', { class: 'sr-seite sr-seite--hart' }, null, innen);
-      sl.innerHTML = '<b>Hard Facts</b> rational';
-      var sr = el('p', { class: 'sr-seite sr-seite--weich' }, null, innen);
-      sr.innerHTML = 'emotional <b>Soft Facts</b>';
+    /* Seitenbeschriftung hard / soft facts (Achsenbeschriftung → data-meta).
+       data-seiten="kurz": nur „Hard Facts“ / „Soft Facts“ (ohne „rational“ /
+       „emotional“ – spart Wörter); data-seiten="aus": keine Beschriftung. */
+    var seiten = huelle.getAttribute('data-seiten');
+    if (seiten !== 'aus') {
+      var kurz = seiten === 'kurz';
+      var sl = el('p', { class: 'sr-seite sr-seite--hart', 'data-meta': '' }, null, innen);
+      sl.innerHTML = kurz ? '<b>Hard Facts</b>' : '<b>Hard Facts</b> rational';
+      var sr = el('p', { class: 'sr-seite sr-seite--weich', 'data-meta': '' }, null, innen);
+      sr.innerHTML = kurz ? '<b>Soft Facts</b>' : 'emotional <b>Soft Facts</b>';
     }
 
     /* Inhalte der Karten: Methoden (hub) oder Ergebnisse (synthese) */
@@ -470,7 +478,8 @@
       if (!ziel) karte.classList.add('ist-ohne-ziel');
       var kopf = el('span', { class: 'sr-karte-kopf' }, null, karte);
       if (synthese) {
-        el('span', { class: 'sr-karte-feld' }, e.name, kopf);
+        /* Feldname im Kartenkopf = Beschriftung (data-meta, siehe oben) */
+        el('span', { class: 'sr-karte-feld', 'data-meta': '' }, e.name, kopf);
         var quellen = [];
         e.stichworte.forEach(function (w) { if (w.quelle && quellen.indexOf(w.quelle) < 0) quellen.push(w.quelle); });
         if (!quellen.length && e.quelle) quellen.push(e.quelle);
@@ -870,7 +879,16 @@
     umfrageZeichnen(u, false);
   }
 
+  /* Beispielwerte (marke.js → beispielwerte) sind nur Platzhalter: Die erste echte
+     Stimme löscht sie, damit nie ein Mischergebnis aus Beispiel- und Live-Stimmen
+     entsteht. Die Pille „Beispieldaten“ verschwindet dann von selbst. */
+  function beispielwerteVerwerfen(u) {
+    if (!u.beispiel) return;
+    u.werte = u.werte.map(function () { return 0; });
+    u.beispiel = false;
+  }
   function umfrageAendern(u, i, delta) {
+    beispielwerteVerwerfen(u);
     u.werte[i] = Math.max(0, (u.werte[i] || 0) + delta);
     umfrageSpeichern(u);
     umfrageZeichnen(u, true);
@@ -879,7 +897,9 @@
   function umfrageWertEingeben(u, i, ohneFokus) {
     var z = u.zeilen[i];
     if (z.eingabe) return z.eingabe;
-    var eingabe = el('input', { type: 'number', min: '0', step: '1', class: 'umfrage-eingabe', value: String(u.werte[i]), 'aria-label': 'Anzahl für ' + u.konfig.optionen[i] });
+    /* Solange Beispielwerte stehen, starten die Felder bei 0 (echte Zahlen eintragen) */
+    var startwert = u.beispiel ? 0 : u.werte[i];
+    var eingabe = el('input', { type: 'number', min: '0', step: '1', class: 'umfrage-eingabe', value: String(startwert), 'aria-label': 'Anzahl für ' + u.konfig.optionen[i] });
     z.wert.appendChild(eingabe);
     z.eingabe = eingabe;
     var fertig = function (uebernehmen, ohneZeichnen) {
@@ -888,9 +908,13 @@
       z.eingabe = null;
       z.fertig = null;
       eingabe.remove();
-      if (uebernehmen && !isNaN(wert) && wert >= 0 && wert !== u.werte[i]) {
-        u.werte[i] = wert;
-        umfrageSpeichern(u);
+      if (uebernehmen && !isNaN(wert) && wert >= 0) {
+        /* erste echte Zahl ersetzt alle Beispielwerte */
+        if (u.beispiel && wert > 0) beispielwerteVerwerfen(u);
+        if (!u.beispiel && wert !== u.werte[i]) {
+          u.werte[i] = wert;
+          umfrageSpeichern(u);
+        }
       }
       if (!ohneZeichnen) umfrageZeichnen(u, true);
     };
@@ -968,19 +992,31 @@
   }
 
   /* Ziffern 1–9 zählen nur, solange die Umfrage sichtbar ist – sonst gehen
-     sie an die Navigation (Ziffer + Enter springt zu einer Folie) */
+     sie an die Navigation (Ziffer + Enter springt zu einer Folie).
+     Eine gezählte Stimme (+1) lässt sich zurücknehmen: deck.js ruft
+     rueckgaengig() auf, wenn die Ziffer doch der Anfang einer Foliennummer
+     war (z. B. „1“ „0“ Enter → Folie 10, keine Stimme für Antwort 1). */
   Deck.taste(function (e) {
     if (!/^(Digit|Numpad)[1-9]$/.test(e.code || '')) return false;
     var aktiv = umfragen.filter(umfrageSichtbar)[0];
     if (!aktiv) return false;
     var i = parseInt(e.code.replace(/\D/g, ''), 10) - 1;
     if (i >= aktiv.werte.length) return false;
+    var vorher = { werte: aktiv.werte.slice(), beispiel: aktiv.beispiel };
     umfrageAendern(aktiv, i, e.shiftKey ? -1 : 1);
     var z = aktiv.zeilen[i];
     z.zeile.classList.remove('ist-gezaehlt');
     void z.zeile.offsetWidth;
     z.zeile.classList.add('ist-gezaehlt');
-    return true;
+    if (e.shiftKey) return true;
+    return {
+      rueckgaengig: function () {
+        aktiv.werte = vorher.werte;
+        aktiv.beispiel = vorher.beispiel;
+        umfrageSpeichern(aktiv);
+        umfrageZeichnen(aktiv, true);
+      }
+    };
   });
 
   /* Abgleich mit dem anderen Fenster (Referentenansicht) */
@@ -990,6 +1026,8 @@
       umfrageLaden(u);
       umfrageZeichnen(u, true);
     });
+    /* Referentenansicht: Vorschau „Als Nächstes“ mit den neuen Stimmen */
+    if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
   }
   Deck.kanal.bei('umfrage', function (d) { umfrageNeuLaden(d && d.id); });
   window.addEventListener('storage', function (e) {
@@ -1012,6 +1050,15 @@
     verlassen: function (huelle) { if (huelle._umfrage) umfrageFelderSchliessen(huelle._umfrage, true); },
     klon: function (kopie, n, original) {
       util.alle('.umfrage-werkzeuge', kopie).forEach(function (w) { w.remove(); });
+      /* Prozente im Klon gleich auf den Endwert setzen – sonst zeigt die
+         Vorschau der Referentenansicht kurz nach einer neuen Stimme noch
+         den Zwischenstand der Zähl-Animation (z. B. 10 % statt 33 %) */
+      var u = original && original._umfrage;
+      if (!u || !u.werte) return;
+      var summe = u.werte.reduce(function (a, b) { return a + b; }, 0);
+      util.alle('.umfrage-prozent', kopie).forEach(function (el, i) {
+        if (i < u.werte.length) el.textContent = (summe ? Math.round(u.werte[i] / summe * 100) : 0) + '\u202f%';
+      });
     }
   });
 
@@ -1065,14 +1112,20 @@
       if (t) satz.appendChild(document.createTextNode(t));
       if (i < teile.length - 1) el('em', { class: 'ua-antwort' }, antwort, satz);
     });
+    /* Ersatz ohne Stimmen (Klasse „ist-leer“): statt „– % sehen … wie wir“
+       steht „Noch keine Stimmen“ (CSS blendet den Satz aus, komponenten.css) */
+    el('span', { class: 'ua-leer' }, konfig.aussageLeer || 'Noch keine Stimmen', huelle);
     var anzeige = {
       id: id, el: huelle,
       aktualisieren: function (werte, beispiel, animiert) {
         var a = anteilAntwort(werte, konfig);
         var alt = parseFloat(zahl.getAttribute('data-ziel')) || 0;
-        zahl.setAttribute('data-ziel', String(a.prozent));
         huelle.classList.toggle('ist-leer', !a.gueltig);
-        if (!a.gueltig) { zahl.textContent = '– %'; return; }
+        /* Keine Stimmen: KEIN Zielwert setzen – sonst zählt die Schritt-Animation
+           („zaehlen“) beim Weiterklicken von „– %“ auf „0 %“ hoch. Ohne data-ziel
+           überspringt die Engine das Zählen, „– %“ bleibt stehen. */
+        if (!a.gueltig) { zahl.removeAttribute('data-ziel'); zahl.textContent = '– %'; return; }
+        zahl.setAttribute('data-ziel', String(a.prozent));
         if (animiert && alt !== a.prozent) util.zaehle(zahl, alt, a.prozent, { einheit: ' %', dauer: 600 });
         else zahl.textContent = util.zahlFormat(a.prozent, 0) + ' %';
       }
@@ -1309,6 +1362,8 @@
       wolkeLaden(w);
       wolkeZeichnen(w, true);
     });
+    /* Referentenansicht: Vorschau „Als Nächstes“ mit den neuen Wörtern */
+    if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
   }
   Deck.kanal.bei('wortwolke', function (d) { wolkeNeuLaden(d && d.id); });
 

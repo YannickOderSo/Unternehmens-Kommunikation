@@ -586,8 +586,24 @@
      --------------------------------------------------------------------------- */
   var zustand = null;
 
+  /* Titel einzeilig halten: Bricht er um (z. B. bei einem längeren
+     Markennamen in marke.js), wird er auf --groesse-titel-klein (56 px)
+     gesetzt – sonst rückt die Liste „Folgen“ unten in die Quellzeile.
+     offsetHeight misst ohne die Skalierung der Bühne. */
+  function titelEinpassen(folie) {
+    var titel = folie.querySelector('.folie-kopf .titel');
+    if (!titel) return;
+    titel.classList.remove('titel--klein');
+    Deck.util.messen(folie, function () {
+      var stil = getComputedStyle(titel);
+      var zeile = parseFloat(stil.lineHeight) || parseFloat(stil.fontSize) * 1.2;
+      if (titel.offsetHeight > zeile * 1.5) titel.classList.add('titel--klein');
+    });
+  }
+
   Deck.registriere('f05', {
     einrichten: function (ctx) {
+      titelEinpassen(ctx.folie);
       zustand = aufbauen(ctx);
       rechteSeite(ctx, zustand);
       if (zustand) anordnen(zustand);
@@ -603,7 +619,11 @@
   /* Nach einem Themenwechsel (Taste T) neu anordnen – andere Schriften, andere Breiten */
   document.addEventListener('deck:thema', function () {
     if (!zustand) return;
-    var neu = function () { anordnen(zustand); };
+    var neu = function () {
+      var folie = document.getElementById('f05');
+      if (folie) titelEinpassen(folie);
+      anordnen(zustand);
+    };
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(neu, neu);
     else neu();
   });
