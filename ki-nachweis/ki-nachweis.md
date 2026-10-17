@@ -74,6 +74,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | `limbic-map.md`, Folienentwurf Folie 5, Grafik SVG + PNG; Persona neu: Hedonisten statt Abenteurer |
 | 53 | 17.10.2026 | Yannick | Info: Lukas hat den Gründer per LinkedIn befragt (14 Fragen, Antwort als Sprachnachricht) | – | Antwort im Chat: Nutzung, Einwilligung, nächste Schritte |
 | 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
+| 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | in Arbeit (Workflow D11) |
+| 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -934,6 +936,30 @@ Elias fällig. Ich warte auf deine Freigabe.“)*
   nach „nur Yannick“ (Freigaben, Foto, Podcast, Bildgenerator, Repository-Einstellungen) und „mit Claude“.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 55 – 17.10.2026 – Yannick
+
+> weiter
+
+*(Bezug: Claudes Vorschlag „Als nächstes Paket schlage ich A1 vor, die Markenkompetenz … Sag „weiter“, dann lege ich
+los.“)*
+
+- **Vorgehen Claude:** Vorgaben (Aufgaben A1, methoden.md §0) und die Daten der Web-Folie f03 gelesen (Entwurf aus dem
+  Recherche-Dossier). Workflow D11 gestartet (Dossier-Auszug, zwei Web-Prüfungen, Synthese, drei Prüfer, Bearbeiter).
+  Der erste Lauf brach sofort ab: Alle 8 Unteragenten scheiterten am Nutzungslimit („You've hit your session limit“),
+  ohne Ergebnis.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D11
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 56 – 17.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Workflow D11 mit demselben Skript neu gestartet (zweiter Lauf).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D11
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
