@@ -50,7 +50,9 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-24 | 16.10.2026 | System | Nacharbeit sofort am Nutzungslimit gescheitert; mehrere Neustarts | – | – |
 | A2-25 | 16.10.2026 | Yannick (Account 2) | „Weiter“ | – | (in A2-26 bearbeitet) |
 | A2-26 | 16.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | master (Ü02) übernommen, Nacharbeit erweitert und gestartet |
-| A2-27 | 16.10.2026 | Yannick (Account 2) | HOLY-Logo auf Folie 1 fehlt | A2-D02 (angehalten, erweitert, fortgesetzt) | *in Arbeit* |
+| A2-27 | 16.10.2026 | Yannick (Account 2) | HOLY-Logo auf Folie 1 fehlt | A2-D02 (angehalten, erweitert, fortgesetzt) | Logo eingebaut (Nacharbeit, `869a3a3`), von der zweiten Abschlussprüfung mitgeprüft |
+| A2-28 | 16./17.10.2026 | System | Nacharbeit fertig; zweite Abschlussprüfung am Nutzungslimit gescheitert | A2-D02 | Ergebnis gesichert |
+| A2-29 | 17.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D02 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -421,6 +423,29 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   So prüfen beide zweiten Abschlussprüfer das Logo mit.
 - **Ergebnis:** *in Arbeit*
 - **Unteragenten:** A2-D02
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-28 – 16./17.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ failed: Zweite Abschlussprüfung unvollständig – mit resume
+> fortsetzen („You've hit your session limit · resets 12:40am (UTC)“ bei beiden Prüf-Agenten).
+
+- **Herkunft:** automatische Meldung der Umgebung
+- **Stand:** Der Nacharbeit-Agent ist fertig (abgeschnittene Befunde, Befunde aus Ü02, HOLY-Logo auf Folie 01, Exporte
+  erneuert). Beide zweiten Abschlussprüfer scheiterten am Limit; dank der Absicherung im Skript kein Feinschliff ohne Prüfung.
+
+### A2-29 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude (10:47 Uhr):** Ergebnis der Nacharbeit committet (`869a3a3`) und Folie 01 selbst angesehen
+  (`export/folien/f01.png`: gelbes HOLY-Oval-Logo im Titelzustand, Quelle „Logo © HOLY Softdrinks GmbH, de.holy.com
+  (Abruf 16.10.2026)“ in der Fußzeile, Zeile „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“).
+  `master` übernommen (Dossier für Bündel B; keine Präsentationsdateien betroffen; `074530e`). Workflow
+  `wf_fe26464c-97a` mit `resumeFromRunId` fortgesetzt: Nacharbeit aus dem Zwischenspeicher, neu laufen die zwei
+  Abschlussprüfer und danach der letzte Feinschliff.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D02 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
