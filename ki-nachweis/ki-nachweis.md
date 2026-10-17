@@ -73,6 +73,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 51 | 16.10.2026 | Yannick | Frage: Was steht für mich als nächstes an? | – | Antwort im Chat zusammen mit 52 (Übersicht Bündel A + C2) |
 | 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | `limbic-map.md`, Folienentwurf Folie 5, Grafik SVG + PNG; Persona neu: Hedonisten statt Abenteurer |
 | 53 | 17.10.2026 | Yannick | Info: Lukas hat den Gründer per LinkedIn befragt (14 Fragen, Antwort als Sprachnachricht) | – | Antwort im Chat: Nutzung, Einwilligung, nächste Schritte |
+| 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -920,6 +921,17 @@ Elias fällig. Ich warte auf deine Freigabe.“)*
     KI-Transkription oder einem Zitat mit Namen in der öffentlichen Präsentation ist die Zustimmung des Gründers nötig.
   - Entwurf einer kurzen Nachricht, mit der Lukas die Zustimmung einholen kann.
   - Vorschlag zum weiteren Vorgehen: Antworten abtippen, Abgleich mit Persona und Limbic Map.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 54 – 17.10.2026 – Yannick
+
+> Was sind die nächsten Aufgaben für mich selbst, was muss ich noch erledigen, lass erstmal die anderen Arbeitsgruppen außen vor, die haben wahrscheinlich eigene Arbeitsweisen
+
+- **Vorgehen Claude:** Aufgaben A1–A5 und C2 in `aufgaben-im-detail.html` sowie die offenen Punkte in
+  `persona-steckbrief.md`, `limbic-map.md` und `arbeitsplan.md` gelesen. Daraus eine Liste nach Termin erstellt, getrennt
+  nach „nur Yannick“ (Freigaben, Foto, Podcast, Bildgenerator, Repository-Einstellungen) und „mit Claude“.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
