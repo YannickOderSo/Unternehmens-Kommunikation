@@ -57,6 +57,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-31 | 17.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | – | (in A2-32 bearbeitet) |
 | A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff fertig |
 | A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
+| A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -504,6 +505,21 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
     `/pruef-keynote-dunkel/`, `/pruef-*.log` im Wurzelverzeichnis des Containers) – von der Sicherheitsprüfung der
     Umgebung blockiert; harmlos, verschwinden mit dem Container.
 - **Unteragenten:** keine
+
+### A2-34 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Also sind auch alle Grafiken und Bilder richtig?
+
+- **Vorgehen Claude:** Ergebnis des Prüflaufs aus A2-33 herangezogen (alle Bilder laden, nichts ragt über die Bühne,
+  Kontraste in Ordnung), Platzhalter-Kennzeichnungen in `index.html` gesucht und die datenlastigen Folien f04, f05, f06
+  und f09 selbst angesehen (Werte gegen die Beschriftungen nachgerechnet, z. B. Vorsprünge +2/+3/+3 auf f06,
+  Lücke −20 Pp. auf f05, 15 + 17 + 8 + 10 = 50 codierte Beiträge auf f09). Antwort im Chat: technisch korrekt und in
+  sich stimmig; inhaltlich gibt es vier Arten von Grafiken/Bildern – offizielle Logos, Platzhalter (Rätselbild,
+  Persona-Bild, Schlüsselbild), Diagramme mit gekennzeichneten Beispieldaten und Modellgrafiken aus dem Modellwissen –,
+  die die Gruppe noch ersetzen bzw. abgleichen muss.
+- **Ergebnis:** Antwort im Chat; keine Dateien geändert (außer diesem Nachweis)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
