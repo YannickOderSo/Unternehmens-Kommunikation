@@ -14,9 +14,10 @@
    ============================================================================= */
 
 /* ---------- Kopf: Titel, Ausgangslage, Leitfrage ---------- */
-/* Einzeiliger Titel in 56 px (--groesse-titel-klein): So bleibt unter den
-   zwei Zeilen genug Höhe für ein großes Rad (Feld- und Kernbeschriftung ≥ 28 px). */
-#f02 .titel { font-size: var(--groesse-titel-klein); }
+/* Titel in der Standardgröße der Inhaltsfolien (72 px, --groesse-titel). Bis
+   16.10.2026 stand er in 56 px, solange unter ihm zwei Zeilen (Ausgangslage
+   und Leitfrage) Platz brauchten; seit die Ausgangslage im Sprechtext steht,
+   reicht die Höhe auch für den großen Titel. */
 
 /* Zwei Zeilen: links das Etikett, rechts der Text – die Texte beider Zeilen
    beginnen auf derselben Linie (Raster mit zwei Spalten) */
@@ -121,6 +122,15 @@
   gap: 12px;
 }
 #f02 .sr-pille .vorgehen-ki { align-self: center; }
+
+/* ---------- Kernfrage ----------
+   „Wer bin ich?“ steht nicht im gelben Zentrum (stieß dort an den Kernring),
+   sondern vorn in der Pille „Desk Research“ (setzt js/folien/02-vorgehen.js). */
+#f02 .sr-label--kern .sr-label-frage { display: none; }
+#f02 .sr-pille .vorgehen-kernfrage {
+  display: inline;
+  margin-right: 0.45em;
+}
 
 
 /* ---------- Rad ---------- */

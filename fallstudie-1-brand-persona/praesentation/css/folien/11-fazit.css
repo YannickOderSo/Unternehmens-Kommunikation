@@ -2,8 +2,9 @@
    css/folien/11-fazit.css – nur für Folie f11 (Fazit & Empfehlungen)
    -----------------------------------------------------------------------------
    Oben eine Zeile „Kern“ (grüne Verweis-Pille = positiver Befund), darunter
-   drei Zeilen „Befund → Empfehlung“. Links der Befund (rote Verweis-Pille
-   wie die Lücken-Nummern auf Folie 10), rechts die Empfehlung als Karte mit
+   drei Zeilen „Befund → Empfehlung“. Links der Befund (Verweis-Pille: Lücke
+   braun-orange wie die Lücken-Nummern auf Folie 10, Bruch rot), rechts die
+   Empfehlung als Karte mit
    Akzentstrich. Nur Variablen aus tokens.css verwenden.
 
    Spaltenbreiten (bei Bedarf hier ändern – gelten für Kopfzeile und Zeilen):
@@ -113,16 +114,19 @@
 }
 
 /* Verweis-Pille = Knopf: springt zur Herleitung (Folie 10 bzw. 09b).
-   Rot wie die Lücken-Nummern im Steuerrad (Folie 10). */
+   Farblogik wie auf Folie 09b und 10 (Abschlussprüfung 16.10.2026):
+   Lücke = Braun-Orange (--f-warnung, wie „teilweise“ auf 09b und die
+   Lücken-Nummern auf Folie 10), Bruch = Rot (--f-fehler), Kern = Grün. */
 #f11 .g6f-verweis {
+  --g6f-farbe: var(--f-fehler);
   display: inline-flex;
   align-items: center;
   gap: 0;
   padding: 0;
-  border: var(--linie-fein) solid var(--f-fehler);
+  border: var(--linie-fein) solid var(--g6f-farbe);
   border-radius: var(--radius-pille);
   background: var(--f-hintergrund);
-  color: var(--f-fehler);
+  color: var(--g6f-farbe);
   font: inherit;
   font-family: var(--schrift-kicker);
   font-size: var(--groesse-meta);
@@ -135,12 +139,13 @@
   transition: background-color var(--dauer-kurz) var(--kurve), color var(--dauer-kurz) var(--kurve);
 }
 #f11 .g6f-verweis > span { padding: 8px 14px; }
-#f11 .g6f-verweis-art { background: var(--f-fehler); color: var(--f-hintergrund); border-radius: var(--radius-pille) 0 0 var(--radius-pille); }
+#f11 .g6f-verweis--luecke { --g6f-farbe: var(--f-warnung); }
+#f11 .g6f-verweis-art { background: var(--g6f-farbe); color: var(--f-hintergrund); border-radius: var(--radius-pille) 0 0 var(--radius-pille); }
 #f11 .g6f-verweis-folie { text-transform: none; letter-spacing: 0.02em; }
 #f11 .g6f-verweis-folie::after { content: "\00a0→"; }
 #f11 .g6f-verweis:hover .g6f-verweis-folie,
 #f11 .g6f-verweis:focus-visible .g6f-verweis-folie {
-  background: color-mix(in oklab, var(--f-fehler) 12%, var(--f-hintergrund));
+  background: color-mix(in oklab, var(--g6f-farbe) 12%, var(--f-hintergrund));
   border-radius: 0 var(--radius-pille) var(--radius-pille) 0;
 }
 #f11 .g6f-verweis:focus-visible { outline: var(--linie-stark) solid var(--f-fokus); outline-offset: 4px; }
@@ -274,10 +279,15 @@ html.druckmodus #f11 .g6f-empfehlung.schritt-aktuell {
   visibility: hidden;
   transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
 }
+/* Im Druck/PDF und in Aufnahmen (?aufnahme, z. B. export/folien/f11.png)
+   stehen alle Unterzeilen offen – sonst fehlten die Erläuterungen zu
+   Empfehlung 1 und 2 im Handout (Abschlussprüfung 16.10.2026). */
 #f11 .g6f-empfehlung.schritt-aktuell .g6f-was,
-html.druckmodus #f11 .g6f-was { grid-template-rows: auto 1fr; row-gap: 8px; }
+html.druckmodus #f11 .g6f-was,
+html.aufnahme #f11 .g6f-empfehlung.schritt-an .g6f-was { grid-template-rows: auto 1fr; row-gap: 8px; }
 #f11 .g6f-empfehlung.schritt-aktuell .g6f-wie,
-html.druckmodus #f11 .g6f-wie {
+html.druckmodus #f11 .g6f-wie,
+html.aufnahme #f11 .g6f-empfehlung.schritt-an .g6f-wie {
   opacity: 1;
   visibility: visible;
   transition: opacity var(--dauer-mittel) var(--kurve) 180ms, visibility 0s;

@@ -3,9 +3,11 @@
    -----------------------------------------------------------------------------
    Einstieg wie der Auftakt einer Keynote, in drei Zuständen:
      Schritt 0  randloses, unscharfes Rätselbild, unten die Frage
-     Schritt 1  Bild scharf und herausgezoomt, unten groß der Markenname
+     Schritt 1  Bild scharf und herausgezoomt, unten groß das HOLY-Logo
+               (marke.js → logoTitel; ohne Logo der Markenname in Schrift)
      Schritt 2  Bild zieht sich in die rechte Bildtafel zurück, links die
-               Titelfolie (Markenname gleitet nach oben, Titel erscheint).
+               Titelfolie (Logo gleitet nach oben und wird etwas kleiner,
+               Titel erscheint).
                So sieht die Folie auch im Druck/PDF und in der Übersicht aus.
    Die Zustände hängen nur an den Klassen, die die Engine setzt
    (.schritt-an an den Elementen mit data-schritt) – dafür ist kein Skript
@@ -90,11 +92,40 @@
   font-style: var(--stil-marke);           /* Markenname immer aufrecht */
   font-weight: var(--gewicht-zahl);
   font-size: var(--einstieg-marke-groesse);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   letter-spacing: var(--laufweite-titel);
   line-height: 0.92;
   white-space: nowrap;
   color: var(--f-auf-bild);
+}
+
+/* Logo statt Markenname (marke.js → logoTitel; setzt js/folien/01-einstieg.js
+   als <img class="einstieg-logo"> ein und gibt dem Absatz die Klasse .hat-logo).
+   Die Bilddatei bleibt unverändert – sie wird nur verkleinert angezeigt.
+   Höhe in Schritt 1 (Auflösung) und im Titelzustand (Schritt 2) hier ändern.
+   Die Datei hat ringsum einen durchsichtigen Rand von 34 von 400 px (8,5 %
+   der Bildhöhe): Die negativen Ränder gleichen ihn aus, damit das Oval genau
+   an der Textkante beginnt und nicht zu viel Luft über und unter sich hat. */
+#f01 {
+  --einstieg-logo-gross: 340px;   /* Bildhöhe in der Auflösung (Oval ≈ 590 × 282 px) */
+  --einstieg-logo-titel: 240px;   /* Bildhöhe auf der Titelfolie (Oval ≈ 415 × 200 px) */
+}
+#f01 .einstieg-markenname.hat-logo {
+  line-height: 0;
+  margin-left: 0;
+}
+#f01 .einstieg-markenname.hat-logo .einstieg-markenname-text { display: none; }
+#f01 .einstieg-logo {
+  display: block;
+  width: auto;
+  height: var(--einstieg-logo-gross);
+  max-width: none;
+  margin: calc(var(--einstieg-logo-gross) * -0.085) 0 calc(var(--einstieg-logo-gross) * -0.085) calc(var(--einstieg-logo-gross) * -0.085);
+  transition: height var(--dauer-lang) var(--kurve), margin var(--dauer-lang) var(--kurve);
+}
+#f01:has(.einstieg-titelblock.schritt-an) .einstieg-logo {
+  height: var(--einstieg-logo-titel);
+  margin: calc(var(--einstieg-logo-titel) * -0.085) 0 calc(var(--einstieg-logo-titel) * -0.085) calc(var(--einstieg-logo-titel) * -0.085);
 }
 
 #f01 .einstieg-titelblock {
@@ -220,6 +251,11 @@
   background: var(--f-bild-schleier);
   text-align: right;
 }
+/* Logo- und Bildquelle je in einer eigenen Zeile (ohne Umbruch; die Zeile
+   ist schmaler als die Bildtafel) */
+#f01 .einstieg-fuss { max-width: calc(1920px - var(--einstieg-teilung) - var(--rand-x) - var(--abstand-5)); }
+#f01 .einstieg-fuss .quelle > span { display: block; white-space: nowrap; }
+#f01 .einstieg-fuss .quelle > span[hidden] { display: none; }
 
 /* Pille „Platzhalterbild“ (setzt js/folien/01-einstieg.js, solange in
    marke.js → raetselBild noch das Platzhalter-Motiv eingetragen ist) */

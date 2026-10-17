@@ -117,12 +117,13 @@ Summe wieder auf höchstens 900 s ab.
 
 | Markup | Ergebnis |
 |---|---|
-| `<span data-marke></span>` / `<em data-marke></em>` | Markenname („HOLY“); `<em>` im Titel = Akzentfarbe |
+| `<span data-marke></span>` / `<em data-marke></em>` | Markenname („HOLY“); `<em data-marke>` im Titel: auf hellen Folien schwarz mit gelbem Textmarker (`--f-kern`), auf dunklen in der Akzentfarbe (`css/komponenten.css`) |
 | `<span data-marke="kurz"></span>` | Kurzname |
 | `<span data-gruppe></span>` / `data-gruppe="zeilen"` | Namen mit „·“ bzw. untereinander |
 | `<span data-datum></span>` / `data-datum="lang"` | 26.10.2026 bzw. „Montag, 26. Oktober 2026“ |
 | `data-veranstaltung`, `data-dozent`, `data-hochschule`, `data-praesentation`, `data-fallstudie` | Angaben aus marke.js |
-| `<img data-marke-logo>` | Logo-Pfad aus marke.js |
+| `<span data-unternehmen></span>` | Firma hinter der Marke (`marke.js → unternehmen`, Einordnungszeile auf Folie 01 und 12) |
+| `<img data-marke-logo>` | Logo-Pfad aus marke.js (`logo`, Folie 09b); das Logo der Titelfolie kommt aus `logoTitel` (setzt `js/folien/01-einstieg.js`) |
 | `<h2 class="titel" data-umfrage-frage="tier"></h2>` | Frage der Umfrage aus marke.js |
 | `data-anrede-sie="…" data-anrede-ihr="…"` | Text passend zur Anrede |
 | `<span class="beispiel">Beispieldaten</span>` | Pille; per `marke.js → beispieldatenHinweis: false` ausblendbar (erst, wenn keine erfundenen Werte mehr da sind!) |
@@ -191,7 +192,11 @@ Endlosanimationen, kein `backdrop-filter`, kein Blur in Übergängen. Bei „Bew
 **Morph zwischen Folien:** gleiches `data-morph="name"` auf zwei Folien → das Element gleitet beim
 Wechsel von der einen in die andere Position (View Transitions; ohne Unterstützung einfache
 Überblendung). Pro Folie jeder Name nur einmal. Das Hub-Steuerrad morpht automatisch in das
-Mini-Steuerrad der Zielfolie (Name `steuerrad`, nicht selbst vergeben).
+Mini-Steuerrad der Zielfolie (Name `steuerrad`, nicht selbst vergeben). Zwischen großem Rad und Mini-Rad
+setzt `deck.js` die Klasse `html.wechsel-rad-gross`: Das Rad ist unterwegs ausgeblendet (sonst flog es als
+graue Scheibe über den neuen Titel). Wechselt hell ↔ dunkel (z. B. Folie 01 → 02), setzt `deck.js`
+`html.wechsel-modus`: alte Folie erst aus-, dann die neue einblenden (kein graues Doppelbild). Aussehen:
+`css/deck.css`, Abschnitt 7.
 
 ---
 
@@ -313,6 +318,9 @@ Tasten Texteingabe; Bild↑/Bild↓ (Clicker) und Esc verlassen das Feld. Texte 
 Bild aus `marke.js → raetselBild` (oder `data-bild="bilder/…"`). Stufen „Zoom %/Unschärfe px“ – vier
 Stufen = drei Klicks, Fortschritt „Hinweis x von 4“ oben rechts (`data-fortschritt="aus"`).
 `data-fokus` = Bildausschnitt, auf den gezoomt wird. `data-schritt-start` verschiebt den Beginn.
+Auf Folie 01 erscheint mit der Auflösung das Logo aus `marke.js → logoTitel` (gelbes Oval, unverändert,
+nur verkleinert; Höhe in `css/folien/01-einstieg.css` → `--einstieg-logo-gross` / `--einstieg-logo-titel`)
+anstelle des Markennamens in Schrift; der Name bleibt als alt-Text. Ohne `logoTitel` steht der Name da.
 
 ### f) Zähler, Kennzahl, Hantel
 ```html
@@ -368,7 +376,8 @@ dokument annahme` → `<svg class="icon"><use href="#i-NAME"/></svg>` (Größe =
 - **Schrift**: `--schrift-display`, `--schrift-text`, `--schrift-zahl`, `--schrift-kicker`,
   `--gewicht-titel`, `--gewicht-display`, `--gewicht-zahl`, `--gewicht-text`, `--gewicht-fett`,
   `--opsz-titel`, `--laufweite-titel`, `--stil-hervor`, `--stil-marke`, `--kicker-versalien`,
-  `--kicker-laufweite`, `--kicker-gewicht`.
+  `--kicker-laufweite`, `--kicker-gewicht`, `--achsen-ruhig` (`"WONK" 0` – ruhige Formen der kursiven
+  Fraunces; wer `font-variation-settings` setzt, schreibt es mit: `"opsz" 36, var(--achsen-ruhig)`).
 - **Größen**: `--groesse-titel-gross` 96, `--groesse-titel` 72, `--groesse-titel-klein` 56,
   `--groesse-untertitel` 40, `--groesse-gross` 34, `--groesse-text` 30, `--groesse-text-min` 28,
   `--groesse-tabelle` 24, `--groesse-meta` 22, `--groesse-kennzahl` 120; `--zeilenhoehe-titel`,
@@ -518,3 +527,26 @@ HTML-Kommentar begründen.
 **Testen mit anderem Markennamen/anderen Farben** (z. B. für eine andere Marke): Ordner kopieren, in der
 Kopie `marke.js` ändern und `node werkzeuge/pruefen.mjs index.html --schritte` laufen lassen. Geprüft am
 16.10.2026 mit „Testmarke“ und `#2A6FDB`/`#3B2A1A`: keine Fehler, Konsole leer.
+
+## 12. Nacharbeit nach Abschluss- und Live-Prüfung (16.10.2026)
+
+| Bereich | Änderung |
+|---|---|
+| Folie 01 | Offizielles HOLY-Logo (gelbes Oval, `marke.js → logoTitel`, `bilder/holy-logo-oval.png`) erscheint mit der Auflösung (Schritt 1) und bleibt auf der Titelfolie – anstelle des Markennamens in Schrift; im Rätsel (Schritt 0) nicht zu sehen. Quelle in der Fußzeile („Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“, erscheint wie die Bildquelle erst mit der Auflösung). Einordnungszeile „Studentische Fallstudie · keine Verbindung zur …“ unter den Angaben. |
+| Folie 02 | Titel in 72 px wie die übrigen Inhaltsfolien; die Leitfrage „Wer bin ich?“ steht in Schritt 1 vorn in der Pille „Desk Research“ statt im gelben Zentrum (stieß dort an den Kernring). |
+| Folie 06 | Kopfzeile getrennt: „Nennungen“ über der linken Spalte, „Skala“ direkt vor den Zahlen 1–7 (Daten: `nennungenTitel`, `skalaTitel`). |
+| Folie 08b | Karte „Ins Steuerrad“ erscheint samt Überschriften erst im letzten Schritt (vorher leerer Rahmen). |
+| Folie 10 | Band „Markenkern“ erscheint erst in seinem Schritt (kein gestrichelter Leerkasten mehr); Lücken in Braun-Orange (`--f-warnung`), Rot nur für „Bruch“; eigener Titel im optionalen Abgleich-Schritt („Ihr Bild von HOLY trifft unseren Kern – teilweise“), im Druck bleibt die Kernaussage. |
+| Folie 11 | Verweis-Pillen „Lücke 1/2“ in Braun-Orange, „Bruch“ rot; Unterzeilen der Empfehlungen im Druck und in Aufnahmen (`?aufnahme`, Exportbilder) immer offen. |
+| Folie 12 | zweite Fußzeile mit der Einordnung (studentische Fallstudie). |
+| Folie 05 | Dominanz-Punkt gedecktes Rosé statt Signalrot. |
+| B1 | „[N]“ durch die geplante Zahl „3“ ersetzt (wie auf Folie 06–08, B2, B4, B5); Pille „teils geplant“ bleibt bis zu den Interviews. |
+| Titel aller Folien | Markenname schwarz mit gelbem Textmarker (helle Folien), dunkel: Akzentgelb. |
+| Schriften | Kursive Fraunces aus der Datei mit allen Achsen (`fraunces-latin(-ext)-full-italic.woff2`) und `"WONK" 0` (keine „wonky“-Formen b, h, k, l); echte kursive Inter (`inter-latin(-ext)-opsz-italic.woff2`). |
+| Dunkelmodus Editorial | Akzent- und Soft-Facts-Flächen gedeckter (weniger Olivbraun); weiche Karten mit feiner Kante in Markenfarbe. |
+| Übergänge (`js/deck.js`, `css/deck.css`) | `html.wechsel-modus` (hell ↔ dunkel nacheinander überblenden) und `html.wechsel-rad-gross` (großes Rad ↔ Mini-Rad ohne „fliegende Scheibe“), siehe Abschnitt 5. |
+| Bedienleiste (`js/deck.js`, `css/deck.css`) | erscheint nur bei Mausbewegung im unteren Bildrand (160 px), bei Tastaturfokus oder Antippen – nicht mehr bei jedem Klick; Touch: Knöpfe 44 × 44 px; Handy hochkant: nur Grundknöpfe, Hinweis „Gerät quer halten“. |
+| Referentenansicht (`js/deck.js`) | Sprechtext rollt zum Absatz des aktuellen Schritts (auch nach A− / A+). |
+| Umfrage-Ziffern (`js/deck.js`, `js/komponenten.js`) | Folgt auf eine gezählte „1“ sofort eine weitere Ziffer (z. B. „1“ „0“ Enter → Folie 10), wird die Stimme zurückgenommen; läuft schon eine Foliennummer, zählen Ziffern keine Stimme. Hilfe (H) ergänzt. |
+| Übersicht (O) | beginnt oben (Überschrift sichtbar), solange die aktuelle Folie dabei ganz zu sehen ist; sonst steht die Kachel mittig. |
+| Zeitplan | Sollzeiten 04: 80 s, 05: 55 s, 06: 80 s, 09: 60 s, 11: 75 s → Hauptfolien 14:00 (60 s Puffer). |

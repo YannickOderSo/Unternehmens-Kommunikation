@@ -89,7 +89,7 @@
   font-family: var(--schrift-display);
   font-size: var(--groesse-titel-klein);
   font-weight: var(--gewicht-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   letter-spacing: var(--laufweite-titel);
   line-height: 1.05;
   color: var(--f-text);

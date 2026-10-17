@@ -13,12 +13,15 @@ Google Fonts. Einzelheiten: `schriften/HERKUNFT.txt`.
 
 | Schrift | Verwendung | Paket | Original |
 |---|---|---|---|
-| Fraunces (normal + kursiv) | Titel, Zahlen – Thema „Editorial“ (Standard) | `@fontsource-variable/fraunces` | github.com/undercasetype/Fraunces |
-| Inter | Fließtext, Kicker – Editorial und Keynote | `@fontsource-variable/inter` | github.com/rsms/inter |
+| Fraunces (normal + kursiv) | Titel, Zahlen – Thema „Editorial“ (Standard); kursiv aus der Datei mit allen Achsen („full“: wght, opsz, SOFT, WONK), damit die „wonky“-Formen abgeschaltet werden können | `@fontsource-variable/fraunces` | github.com/undercasetype/Fraunces |
+| Inter (normal + kursiv) | Fließtext, Kicker – Editorial und Keynote | `@fontsource-variable/inter` | github.com/rsms/inter |
 | Inter Tight | Titel – Thema „Keynote“ | `@fontsource-variable/inter-tight` | github.com/rsms/inter |
 | Space Grotesk | Zahlen/Kicker – Thema „Keynote“ | `@fontsource-variable/space-grotesk` | github.com/floriankarsten/space-grotesk |
 | Bricolage Grotesque | Titel – Thema „Bento“; Ersatzschrift für die HOLY-Überschriften auf Folie 09b | `@fontsource-variable/bricolage-grotesque` | github.com/ateliertriay/bricolage |
 | Plus Jakarta Sans | Fließtext – Thema „Bento“; Ersatzschrift für den HOLY-Fließtext auf Folie 09b | `@fontsource-variable/plus-jakarta-sans` | github.com/tokotype/PlusJakartaSans |
+
+Die frühere kursive Fraunces-Datei ohne WONK-Achse (`fraunces-latin(-ext)-opsz-italic.woff2`) liegt weiter in
+`schriften/`, weil die Startseite der Webseite (`index.html` im Hauptverzeichnis) sie einbindet.
 
 Die Originalschriften von HOLY („ObviouslyNarrow“, „PP Agrandir“, laut Recherche-Dossier Kap. 6.3) sind
 kommerziell und werden **nicht** verwendet; Folie 09b deutet sie mit frei lizenzierten Ersatzschriften an
@@ -61,7 +64,7 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 |---|---|---|
 | `platzhalter-raetsel.svg` | gezeichnetes Produkt-Stillleben für das Einstiegsrätsel (Folie 01): Dose und Shaker vor gelbem Hintergrund, Früchte, Eiswürfel – **ohne Logo, Schrift oder Verpackungsdesign**; Motiv nach Dossier Kap. 6.4 ✔ [1, 5, 73], Farben Gelb `#FFD007`, Schwarz `#1D1D1B`, Creme `#F3EDE1` nach Kap. 6.3 ✔ [1] (Stand 16.10.2026) | eigene Gestaltung – **bis 23.10. durch eigenes Foto ersetzen** |
 | `holy-logo-wortmarke.png` | offizielle HOLY-Wortmarke, 389 × 105 px (Folie 09b, über `marke.js → logo`) | © HOLY Softdrinks GmbH; Seitenkopf von https://de.holy.com (Datei `HOLY_Logo_1.png`), abgerufen 16.10.2026, unverändert |
-| `holy-logo-oval.png` | offizielles HOLY-Logo im gelben Oval, 692 × 400 px (zurzeit nicht verwendet) | © HOLY Softdrinks GmbH; Seitenfuß von https://de.holy.com (Datei `HOLY_Logo_NewYellow.png`), abgerufen 16.10.2026, unverändert |
+| `holy-logo-oval.png` | offizielles HOLY-Logo im gelben Oval, 692 × 400 px – **Folie 01** (Auflösung des Rätsels und Titelfolie, über `marke.js → logoTitel`; nur verkleinert angezeigt, Quelle in der Fußzeile von Folie 01) | © HOLY Softdrinks GmbH; Seitenfuß von https://de.holy.com (Datei `HOLY_Logo_NewYellow.png`), abgerufen 16.10.2026, unverändert |
 | `platzhalter-logo.svg` | neutraler Logo-Platzhalter (früher Folie 09b; steht er wieder in `marke.js → logo`, zeigt Folie 09b kein Bild, nur die Beschreibung der Wortmarke) | eigene Gestaltung |
 | `platzhalter-persona.svg`, `platzhalter-post.svg` | weitere Platzhalter (zurzeit nicht verwendet) | eigene Gestaltung |
 

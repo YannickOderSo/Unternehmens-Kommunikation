@@ -317,8 +317,9 @@
     /* 1. Logo: Bild aus marke.js → logo. Solange dort nur der Platzhalter steht
           (Dateiname enthält „platzhalter“ oder leer), zeigt die Zeile KEIN Bild,
           sondern nur die Beschreibung der Wortmarke in Textgröße – ein leerer
-          Platzhalter-Kasten würde die Analyse schwächen. Echtes Logo nur mit
-          geklärten Rechten eintragen (Quelle [1] in die Fußzeile). */
+          Platzhalter-Kasten würde die Analyse schwächen. Seit 16.10.2026 steht
+          dort die offizielle Wortmarke (bilder/holy-logo-wortmarke.png, Quelle
+          in der Fußzeile von 09b und in QUELLEN.md). */
     var logo = datenblattZeile(ziel, 'logo', 'Logo', belege, u);
     var logoPfad = (Deck.marke && Deck.marke.logo) || '';
     var ohneBild = !logoPfad || /platzhalter/i.test(logoPfad);

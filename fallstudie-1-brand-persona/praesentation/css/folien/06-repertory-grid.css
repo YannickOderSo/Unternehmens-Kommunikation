@@ -54,6 +54,8 @@
   text-transform: var(--kicker-versalien);
   fill: var(--f-text-2);
 }
+/* „Skala“ steht rechtsbündig direkt vor den Skalenzahlen 1–7 */
+.rg-kopf-text--skala { text-anchor: end; }
 /* Überschrift über dem leeren Profil (Schritt 0–1) – macht in Schritt 2
    der Legende Platz */
 .rg-profil-titel { fill: var(--f-akzent); transition: opacity var(--dauer-kurz) var(--kurve); }

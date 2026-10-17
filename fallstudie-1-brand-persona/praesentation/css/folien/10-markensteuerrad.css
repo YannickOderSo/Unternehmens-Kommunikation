@@ -18,9 +18,11 @@
    0. MARKENKERN – eigenes Band über dem Rad
    Das Zentrum des Rads ist (wie auf Folie 2 und 12) die Markenkompetenz.
    Der Markenkern ist unsere Verdichtung aller Felder und steht deshalb
-   außerhalb des Rads. Bis zu seinem Schritt zeigt ein gestrichelter Rahmen,
-   wo er erscheinen wird; der Platz ist von Anfang an reserviert (das Rad
-   misst den Rest der Fläche aus – kein Layoutsprung).
+   außerhalb des Rads. Das ganze Band (Überschrift, Akzentstrich, Satz)
+   erscheint erst in seinem Schritt; bis dahin bleibt der Platz frei, aber
+   unsichtbar reserviert (das Rad misst den Rest der Fläche aus – kein
+   Layoutsprung). Bis 16.10.2026 stand dort vorher ein gestrichelter Leerkasten –
+   er las sich wie „hier fehlt etwas“ (Abschlussprüfung).
    --------------------------------------------------------------------------- */
 #f10 .folie-kopf ~ .folie-inhalt { margin-top: 26px; }   /* Band rückt näher an den Titel */
 #f10 .g6s-kern {
@@ -47,17 +49,22 @@
 #f10 .g6s-kern-zusatz { color: var(--f-text-2); }
 #f10 .g6s-kern-platz,
 #f10 .g6s-kern-text { grid-column: 2; grid-row: 1; }
-/* Platzhalter: gestrichelter Rahmen in der Größe des Kern-Satzes */
+/* Platzhalter: hält nur die Höhe des Kern-Satzes frei (unsichtbar) */
 #f10 .g6s-kern-platz {
   justify-self: start;
   width: min(100%, 520px);
   height: 52px;
-  border: var(--linie-fein) dashed var(--f-linie);
-  border-radius: var(--radius-m);
-  transition: opacity var(--dauer-mittel) var(--kurve);
+  visibility: hidden;
 }
-#f10 .g6s-kern:has(> .g6s-kern-text.schritt-an) > .g6s-kern-platz { opacity: 0; }
 html.druckmodus #f10 .g6s-kern-platz { display: none; }
+/* Band erst mit dem Kern-Satz zeigen (Schritt „Markenkern“) */
+#f10 .g6s-kern { transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s; }
+#f10 .g6s-kern:not(:has(> .g6s-kern-text.schritt-an)) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
 #f10 .g6s-kern-text {
   margin: 0;
   font-family: var(--schrift-display);
@@ -339,3 +346,24 @@ html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF ble
    In 28 px passt es nicht mehr neben „Lücke n“; welche Felder betroffen
    sind, zeigen die Nummern an den Stichworten. */
 #f10 .g6s-luecke-paar { display: none; }
+
+
+/* ---------------------------------------------------------------------------
+   5. TITEL IM ABGLEICH-SCHRITT (nur mit Folie 01b und Zurufen in der Wortwolke)
+   Beide Titelfassungen liegen in derselben Rasterzelle (wie auf Folie 08):
+   Erscheint der Abgleich-Titel, tritt die Kernaussage zurück. Im Druck gibt
+   es keinen Abgleich (siehe oben) – dort bleibt die Kernaussage stehen.
+   --------------------------------------------------------------------------- */
+#f10 .g6s-titel { display: grid; }
+#f10 .g6s-titel > span { grid-area: 1 / 1; min-width: 0; }
+#f10 .g6s-titel > span[hidden] { display: none; }
+#f10 .g6s-titel-standard {
+  transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s;
+}
+#f10 .g6s-titel:has(> .g6s-titel-abgleich.schritt-an) > .g6s-titel-standard {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
+}
+html.druckmodus #f10 .g6s-titel-abgleich { display: none !important; }
+html.druckmodus #f10 .g6s-titel-standard { opacity: 1 !important; visibility: visible !important; }

@@ -143,6 +143,7 @@
      ║     Pfad in marke.js → raetselBild; danach hier data-fokus (Zoompunkt) prüfen und die
      ║     Fußzeile „Bild: …“ mit der Bildquelle anpassen. Die Pille „Platzhalterbild“ verschwindet dann.
      ║ • Titel, Gruppe, Termin, Dozent, Hochschule kommen aus marke.js (nicht hier tippen).
+     ║ • Logo (gelbes Oval) ab der Auflösung: marke.js → logoTitel; Quelle steht in der Fußzeile.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -153,10 +154,10 @@
   Ablauf (drei Zustände, zwei Klicks) – wirkt wie der Auftakt einer Keynote:
     Schritt 0  randloses Rätselbild, stark vergrößert und unscharf; unten die
                Frage ans Publikum („Welche Marke steckt dahinter?“)
-    Schritt 1  das Bild wird scharf und zoomt heraus; unten erscheint groß der
-               Markenname (Auflösung)
+    Schritt 1  das Bild wird scharf und zoomt heraus; unten erscheint groß das
+               HOLY-Logo (Auflösung; ohne logoTitel der Markenname in Schrift)
     Schritt 2  das Bild zieht sich in die rechte Bildtafel zurück, links steht
-               die Titelfolie: Markenname gleitet nach oben, darunter Titel,
+               die Titelfolie: Logo gleitet nach oben (und wird etwas kleiner), darunter Titel,
                Unterzeile, Gruppe und Termin
   Druck (PDF), Übersicht und Rücksprung zeigen Schritt 2 (= Titelfolie).
   Die Bildquelle (Fußzeile) erscheint erst mit der Auflösung – sie würde das
@@ -180,9 +181,13 @@
     Hinweisstufe ergänzen (data-stufen="300/40,170/14,100/0"). Gibt es bis
     23.10. kein Bild: data-stufen="100/0" (Bild gleich scharf).
 
-  Typografie: Der Markenname steht bewusst in der Schrift des Designsystems,
-  nicht im Stil des HOLY-Logos (fette, kursive Versalien, Dossier 6.3). Wer
-  das Logo zeigen möchte: Logo-Datei mit Quelle in bilder/, marke.js → logo.
+  LOGO (seit 16.10.2026, Wunsch der Gruppe): Mit der Auflösung (Schritt 1)
+  erscheint das offizielle HOLY-Logo im gelben Oval (marke.js → logoTitel,
+  bilder/holy-logo-oval.png, unverändert, nur verkleinert) anstelle des
+  gesetzten Markennamens und bleibt auf der Titelfolie stehen. Im Rätsel
+  (Schritt 0) ist es nicht zu sehen. Quelle: Fußzeile („Logo © …“) und
+  QUELLEN.md. Ohne logoTitel ('') steht der Name in der Schrift des
+  Designsystems wie zuvor; die Logo-Zeile der Fußzeile verschwindet dann.
 
   SO ÄNDERN SIE DIE INHALTE
     • Rätselbild: marke.js → raetselBild (Bild in bilder/ legen; Nutzungsrechte
@@ -217,7 +222,10 @@
     <div class="einstieg-komposition">
       <div class="einstieg-marke" data-schritt="1" data-einstieg-schritt="aufloesung" data-staffel="140" data-animation="hoch" data-verzoegerung="320">
         <p class="kicker einstieg-kicker">Auflösung</p>
-        <p class="einstieg-markenname" data-marke data-animation="zoom" data-dauer="900"></p>
+        <!-- Markenname: Mit marke.js → logoTitel zeigt js/folien/01-einstieg.js hier
+             das offizielle Logo (gelbes Oval) statt des Namens in Schrift. Der Name
+             bleibt im Text für Screenreader und als Ersatz, falls das Bild fehlt. -->
+        <p class="einstieg-markenname" data-animation="zoom" data-dauer="900"><span class="einstieg-markenname-text" data-marke></span></p>
       </div>
       <div class="einstieg-titelzeile">
         <div class="einstieg-titelblock" data-schritt="2" data-einstieg-schritt="titel" data-staffel="110" data-animation="hoch" data-verzoegerung="420">
@@ -245,17 +253,18 @@
     <p class="einstieg-kopfzeile" data-meta data-schritt="2" data-einstieg-schritt="titel" data-animation="einblenden" data-verzoegerung="700"><span data-hochschule>Hochschule Kaiserslautern</span></p>
   </div>
 
-  <!-- Bildquelle: erst ab der Auflösung sichtbar (sonst verrät sie das Rätsel),
-       rechts unten auf dem Bild. Mit echtem Foto z. B.:
+  <!-- Bild- und Logoquelle: erst ab der Auflösung sichtbar (sonst verraten sie
+       das Rätsel), rechts unten auf dem Bild. Die Logo-Zeile blendet das Skript
+       aus, wenn in marke.js kein logoTitel eingetragen ist. Mit echtem Foto z. B.:
        „Foto: eigene Aufnahme · Verpackung © HOLY Softdrinks GmbH“ -->
   <footer class="folie-fuss einstieg-fuss">
-    <p class="quelle">Bild: Platzhalter, eigene Zeichnung (kein Originalprodukt)</p>
+    <p class="quelle"><span class="einstieg-quelle-logo">Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)</span><span class="einstieg-quelle-bild">Bild: Platzhalter, eigene Zeichnung (kein Originalprodukt)</span></p>
   </footer>
 
   <aside class="notizen">
     <p><b>Ziel (45 s):</b> Publikum sofort einbinden, dann Thema und Gruppe nennen. Ruhig sprechen, Pausen aushalten.</p>
     <p data-schritt="0"><b>Frage stellen (ca. 15 s):</b> „Bevor wir anfangen – ein kurzes Rätsel: Welche Marke steckt hinter diesem Bild? Rufen Sie Ihren Tipp einfach in den Raum.“ – 5 bis 10 Sekunden warten, zwei, drei Zurufe aufgreifen („Ich höre … und …“). Erst dann klicken.</p>
-    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> „Es ist <span data-marke></span> – 2020 in Berlin gegründet, seit 2021 auf dem Markt.“ Wer richtig getippt hat: kurz würdigen. <i>(Fakt: Dossier Kap. 2.1 ✔ [3, 4]. Die Gaming-Herkunft erst auf Folie 02 erzählen.)</i></p>
+    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> Das Logo erscheint. „Es ist <span data-marke></span> – 2020 in Berlin gegründet, seit 2021 auf dem Markt.“ Wer richtig getippt hat: kurz würdigen. <i>(Fakt: Dossier Kap. 2.1 ✔ [3, 4]. Die Gaming-Herkunft erst auf Folie 02 erzählen.)</i></p>
     <p data-schritt="2"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02. <i>Mit der optionalen Wortwolke 01b stattdessen überleiten: „Vorher noch eine Frage an Sie: Was verbinden Sie mit <span data-marke></span>?“ – nicht zweimal hintereinander zum Zurufen auffordern.</i></p>
     <p>Technik: Weiter mit Clicker, Pfeiltaste oder Leertaste; zurück nimmt die Schritte wieder zurück. Die Bildquelle erscheint erst mit der Auflösung.</p>
     <p><b>Vor dem Vortrag (bis Fr, 23.10.):</b> Eigenes Foto in bilder/ legen, in marke.js → raetselBild eintragen und die Quelle in der Fußzeile anpassen (Pille „Platzhalterbild“ verschwindet dann). Mit zwei Personen testen: Errät bei 300/40 niemand etwas, eine Hinweisstufe ergänzen (data-stufen="300/40,170/14,100/0") und hier einen Absatz „Hinweis“ ergänzen. Ohne Bild: data-stufen="100/0".</p>
@@ -1071,7 +1080,10 @@
        • marke / wettbewerber / ideal: Namen in der Legende; „[Marke]“ wird
          durch den Markennamen aus marke.js ersetzt. wettbewerberZusatz steht
          klein dahinter (leer lassen = kein Zusatz).
-       • nennungenTitel: Überschrift der Spalte ganz links (kurz halten).
+       • nennungenTitel: Überschrift der Spalte ganz links (kurz halten,
+         ein Wort – rechts daneben steht skalaTitel).
+       • skalaTitel: Überschrift direkt vor den Skalenzahlen 1–7
+         (weglassen = „Skala“, "" = keine; kurz halten, sonst stößt sie an nennungenTitel).
        • vorsprungDezimalen: 0 = ganze Skalenpunkte (empfohlen bei wenigen
          Befragten – Dezimalen täuschen sonst Genauigkeit vor), 1 = eine
          Nachkommastelle.
@@ -1112,7 +1124,8 @@
     "wettbewerber": "Marke A",
     "wettbewerberZusatz": "stärkster Wettbewerber",
     "ideal": "Idealmarke",
-    "nennungenTitel": "Nennungen gesamt",
+    "nennungenTitel": "Nennungen",
+    "skalaTitel": "Skala",
     "vorsprungDezimalen": 0,
     "attributeOben": true,
     "triade": {
@@ -1311,6 +1324,8 @@
      ║     müssen Optionen bleiben). Vor dem Vortrag auf der Folie „Zurücksetzen“ zweimal klicken.
      ║ • Analogien (Tier, Mensch, Wettbewerber) sind Beispieldaten → mit Prompt P11 + Interviews ersetzen;
      ║     tatsächliches n in beiden Fußzeilen (08 und 08b) eintragen.
+     ║ • Zeit: Die Umfrage (Schritt 0–1) in der Generalprobe mit Stoppuhr testen – Ziel ca. 40 s, die Folie
+     ║     hat 70 s. Wird die optionale Folie 01b gezeigt, entfällt die Umfrage (siehe Notizen „Mit Folie 01b“).
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -1436,6 +1451,7 @@
     <p data-schritt="1"><b>Auflösung</b> (ca. 10 s) Unsere Analyse: der Waschbär – [27 %] sehen das auch. Hier vorgegeben, im Interview offen gefragt. [Liegt der Adler vorn: „Genau das Selbstbild der Marke.“]</p>
     <p data-schritt="2"><b>Warum Waschbär?</b> (ca. 20 s) Das Maskottchen ist ein Adler, der „Raptor“. Gelebt wird aber ein frecher, cleverer, verspielter Ton – bis hin zu anzüglichen Doppeldeutigkeiten. Als Mensch: ein lauter Gründer Ende 20. Achtung: Das ist nicht die Zielgruppe, sondern die Marke als Person – jünger und lauter als ihre Kundschaft. [Rückfrage Methode: Prompt P11, Backup B2]</p>
     <p data-schritt="3"><b>Kontrast</b> (ca. 10 s) Zum Vergleich: Red Bull wäre ein Löwe, waterdrop ein Schwan. Dazwischen der freche Waschbär. Was heißt das für die Tonalität?</p>
+    <p><b>Mit Folie 01b (optional):</b> Keine Abstimmung – die Frage nur rhetorisch stellen („Welches Tier wäre <span data-marke></span>? Wir haben es untersucht.“), zweimal weiterklicken und direkt mit den Analogie-Karten (Schritt 2) weitermachen. Spart ca. 30 s, damit die Zurufe auf 01b in die 15 Minuten passen.</p>
     <p>Bedienung: Klick auf ein Tier oder Ziffer 1–5 = +1 Stimme, Umschalt = −1, Doppelklick auf einen Wert = Zahl eintragen, Knopf „Werte“ = alle Werte eintragen (z. B. gezählte Hände oder Werte aus Mentimeter/Particify): Zahl tippen, Tab = nächstes Tier; nach dem letzten Tier (oder mit erneutem Klick auf „Werte“) wird alles übernommen. Keine Stimmen? Schritt 1 überspringen (Pfeil zweimal), sonst steht dort „0 %“. VOR DEM VORTRAG: (1) marke.js → umfragen.tier.optionen muss Waschbär und Adler enthalten und unsereAntwort = Waschbär sein (sonst löst die Umfrage ein anderes Tier auf, als der Titel nennt – dann steht oben in diesen Notizen ein Hinweis); (2) „Zurücksetzen“ zweimal klicken (löscht die Beispielwerte); (3) Abstimm-Link in marke.js → umfragen.tier.link eintragen (dann erscheint der QR-Code; mit mehreren Handys testen). Mit der Referentenuhr proben, einschließlich echter Abstimmung.</p>
     <p>Mögliche Rückfragen: „Sie haben die Tiere doch vorgegeben?“ – Ja, hier im Raum, damit es schnell geht. In den Interviews fragen wir offen, weil Vorgaben das Ergebnis lenken (Dossier Kap. 6.7: Antworten nicht vorgeben). „Clever – ist das nicht eher anzüglich?“ – Ja, die TV-Spots arbeiten mit sexuellen Doppeldeutigkeiten (Kap. 6.6 ✔ [25]); das polarisiert und gehört zum Spannungsfeld S2 (Massenmarkt gegen Szene-Codes, Kap. 8) – mehr dazu im Fazit. „Ist der Gründer Ende 20 eure Persona?“ – Nein: Die Persona (Folie 4) beschreibt die Zielgruppe, die Analogie die Marke als Person. Die echte Kundschaft steht in der Karte nur zum Vergleich (Spannungsfeld S3, Kap. 8).</p>
     <p>Hintergrund und Quellen: Analogien sind projektive Verfahren – sie liefern Hypothesen zur Tonalität, die wir auf der nächsten Folie mit Aakers Brand Personality Scale ordnen. Datenbasis wie Folie 06/07: n = 8 (5 mit Prompt P11 KI-simulierte Befragte, 3 Kurzinterviews) – Beispieldaten, nach den Interviews die tatsächliche Zahl eintragen; Prompt-Log: Backup B2. Grundlage ist die Tonalitäts-Hypothese im Recherche-Dossier, Kap. 6.7 (Status H, nicht direkt geprüft; dort „Waschbär oder Affe“); die Belege für den Ton sind gesichert (✔, Kap. 6.2: Du-Form, „geil“, „Zero Zucker oder Bullsh*t.“, Doppeldeutigkeiten wie im TV-Spot „Mach’s dir wie nie zuvor“, „Squad“, „HOLY Temple“, Beichtstuhl auf Wacken; Quellen [1, 5, 25, 30, 31]), ebenso das Maskottchen „Raptor“ (✔, Kap. 6.3, [54, 71]) und die Kundschaft laut Mitgründer Jost (08/2024): meist 25–40 Jahre, etwa zwei Drittel männlich, viele im Schichtdienst, z. B. Pflege, Lkw, Polizei, Feuerwehr (✔, Kap. 1 und 4.1, [7, 24]; belastbare Kundendaten veröffentlicht die Marke nicht). Die Persönlichkeit von Red Bull („Leistung und Abenteuer“) und waterdrop („ruhig und natürlich“) ist laut Dossier Kap. 5.2 Modellwissen (H); ihre Tiere sind Beispieldaten. „Analogien nach Esch“ (Markentonalität: Persönlichkeit, Beziehung, Erlebnisse) stammt aus dem Modellwissen – mit den Vorlesungsfolien abgleichen.</p>
@@ -1525,12 +1541,12 @@
       <div class="sp-8 g4t-profil" data-g4t="profil"></div>
 
       <!-- RECHTS: Ergebnis für das Feld „Markentonalität“ im Steuerrad
-           (Esch: Persönlichkeit, Beziehung, Erlebnisse). Der Rahmen mit den
-           Beschriftungen steht von Anfang an da; die Inhalte erscheinen im
-           letzten Schritt (die Schrittnummer setzt das Skript: 4, ohne
-           Wettbewerberwerte 3). -->
+           (Esch: Persönlichkeit, Beziehung, Erlebnisse). Die Karte erscheint
+           mit Überschriften und Inhalten im letzten Schritt (die Schrittnummer
+           setzt das Skript: 4, ohne Wettbewerberwerte 3); ihr Platz ist von
+           Anfang an reserviert. -->
       <aside class="sp-4 g4t-ergebnis">
-        <div class="karte karte--weich g4t-karte">
+        <div class="karte karte--weich g4t-karte" data-animation="einblenden">
           <span class="karte-kicker g4t-kicker"><svg class="icon" aria-hidden="true"><use href="#i-steuerrad"/></svg>Ins Steuerrad</span>
           <div class="g4t-block">
             <span class="g4t-label" data-meta>Markenemotionen</span>
@@ -1842,7 +1858,9 @@
      ║ Gestaltung: css/folien/09-kommunikationsanalyse.css · Skript: js/folien/09-kommunikationsanalyse.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • Logo: kommt aus marke.js → logo (zurzeit Platzhalter → Zeile zeigt nur die Beschreibung; echtes Logo nur mit geklärten Rechten, z. B. Website-Screenshot mit Quelle [1]).
+     ║ • Logo: kommt aus marke.js → logo – seit 16.10.2026 die offizielle HOLY-Wortmarke (bilder/holy-logo-wortmarke.png,
+     ║     de.holy.com, Abruf 16.10.2026; Quelle steht in der Fußzeile). Mit dem Betreuer abstimmen, dass die Logos zur
+     ║     Kennzeichnung der analysierten Marke genutzt werden dürfen. Mit platzhalter-logo.svg zeigt die Zeile nur die Beschreibung.
      ║ • Fit-Bewertung (passt / teilweise / Bruch) ist eine Hypothese der Gruppe – nach den Ergebnissen prüfen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -2284,7 +2302,7 @@
       <!-- ===== Zeile 1 · Lücke 1 (Folie 10) → Empfehlung 1 ===== -->
       <li class="g6f-zeile" data-nr="1">
         <div class="g6f-befund" data-animation="hoch" data-verzoegerung="140">
-          <button type="button" class="g6f-verweis" data-ziel="f10" data-ziel-schritt=".g6s-luecke" data-meta>
+          <button type="button" class="g6f-verweis g6f-verweis--luecke" data-ziel="f10" data-ziel-schritt=".g6s-luecke" data-meta>
             <span class="g6f-verweis-art">Lücke 1</span><span class="g6f-verweis-folie">Folie 10</span>
           </button>
           <p class="g6f-befund-text">Koffein vs. gutes Gewissen</p>
@@ -2309,7 +2327,7 @@
       <!-- ===== Zeile 2 · Lücke 2 (Folie 10) → Empfehlung 2 ===== -->
       <li class="g6f-zeile" data-nr="2">
         <div class="g6f-befund" data-animation="hoch" data-verzoegerung="280">
-          <button type="button" class="g6f-verweis" data-ziel="f10" data-ziel-schritt=".g6s-luecke" data-meta>
+          <button type="button" class="g6f-verweis g6f-verweis--luecke" data-ziel="f10" data-ziel-schritt=".g6s-luecke" data-meta>
             <span class="g6f-verweis-art">Lücke 2</span><span class="g6f-verweis-folie">Folie 10</span>
           </button>
           <p class="g6f-befund-text">Bildwelt zu jung</p>
@@ -2471,7 +2489,9 @@
 
   <footer class="folie-fuss">
     <!-- kurz halten (≤ ca. 1250 px): unten rechts liegt die Bedienleiste -->
-    <p class="quelle">Quelle: Steuerrad nach Esch, Limbic Map nach Häusel · Recherche-Dossier, Stand 14.10.2026 · Literatur: B7, Belege [n]: B8</p>
+    <!-- Zweite Zeile = Einordnung (wie auf Folie 01): Die Schlussfolie steht in
+         der Fragerunde lange da. Firmenname aus marke.js → unternehmen. -->
+    <p class="quelle">Quelle: Steuerrad nach Esch, Limbic Map nach Häusel · Recherche-Dossier, Stand 14.10.2026 · Literatur: B7, Belege [n]: B8<br>Studentische Fallstudie · keine Verbindung zur <span data-unternehmen>HOLY Softdrinks GmbH</span></p>
   </footer>
 
   <aside class="notizen">
@@ -2520,8 +2540,8 @@
      ║ Gestaltung: css/folien/13-backup.css · Skript: js/folien/13-backup.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • [N] (orange) nach den Interviews durch die Zahl der echten Kurzinterviews ersetzen,
-     ║     dann Klasse bk-ergaenzen und die Pille „teils geplant“ löschen.
+     ║ • „3 echte Kurzinterviews“ ist die geplante Zahl (wie auf Folie 06–08, B2, B4, B5). Nach den
+     ║     Interviews überall dieselbe tatsächliche Zahl eintragen und die Pille „teils geplant“ löschen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -2560,8 +2580,9 @@
     Nach dem Sprung führt Taste Z zurück auf die Backup-Folie (ein kurzer
     Hinweis oben sagt das an). Knopf und Taste Z gehen auch in der
     Referentenansicht – der Beamer springt mit.
-  • [N] in Orange (Klasse bk-ergaenzen) = noch einzutragen, z. B. die Zahl
-    der echten Kurzinterviews auf B1. Nach dem Eintragen die Klasse löschen.
+  • Text in Orange (Klasse bk-ergaenzen bzw. bk7-ergaenzen auf B7) = noch
+    einzutragen (z. B. Jahr und Auflage auf B7). Nach dem Eintragen die
+    Klasse löschen.
   • Der Markenname kommt aus marke.js (data-marke bzw. „[Marke]“ in den
     Daten) – nie eintippen.
 -->
@@ -2574,7 +2595,7 @@
 <section class="folie bk" id="b1" data-titel="Backup: Methodik & Begründung" data-feld="leer" data-zeit="0" data-buendel="A" data-backup data-layout="backup">
   <header class="folie-kopf">
     <!-- Pille „teils geplant“: Die echten Kurzinterviews stehen noch aus.
-         Löschen, sobald [N] in Spalte 02 durch die echte Zahl ersetzt ist. -->
+         Löschen, sobald sie geführt sind und die Zahl in Spalte 02 stimmt. -->
     <p class="kicker">Backup · Methodik &amp; Begründung des Vorgehens <span class="beispiel">teils geplant</span></p>
     <h2 class="titel">KI liefert Tempo, die Fakten prüfen wir selbst</h2>
   </header>
@@ -2599,14 +2620,15 @@
       <!-- Spalte 2: Qualitätssicherung + Beleg (Schritt 1) -->
       <article class="bk1-spalte">
         <h3 class="bk1-kopf"><span class="bk1-nr">02</span>Qualitätssicherung</h3>
-        <!-- [N] = Zahl der echten Kurzinterviews: nach den Interviews
-             eintragen (dieselbe Zahl wie auf Folie 06–08, B2, B4, B5) und
-             class="bk-ergaenzen" sowie die Pille „teils geplant“ löschen.
+        <!-- 3 = geplante Zahl der echten Kurzinterviews – dieselbe Zahl wie
+             auf Folie 06–08, B2, B4, B5 (dort als Beispieldaten). Nach den
+             Interviews überall die tatsächliche Zahl eintragen und die Pille
+             „teils geplant“ löschen (bis 16.10.2026 stand hier „[N]“).
              Text mit Hervorhebungen in <span>…</span> einschließen, sonst
              zerfällt die Zeile im Raster (Strich | Text). -->
         <ul class="bk1-liste bk1-liste--punkte">
           <li>Daten und Annahmen getrennt, Faktenstatus je Aussage</li>
-          <li><span>Simulation mit <span class="bk-ergaenzen">[N]</span> echten Kurzinterviews abgleichen</span></li>
+          <li><span>Simulation mit 3 echten Kurzinterviews abgleichen</span></li>
           <li>Gegenprüfung mit kritischem Review-Prompt (P14)</li>
         </ul>
         <!-- Beleg aus dem Recherche-Dossier (Kap. 9.5, Anhang A) – echte Zahlen.
@@ -2643,7 +2665,7 @@
   <aside class="notizen">
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Warum KI?“, „Wie habt ihr das geprüft?“ oder „Wie belastbar ist das?“. <b>Kernsatz:</b> Desk Research liefert die Fakten, KI bringt Tempo und Struktur – Fakten und Auswahl verantworten wir. KI haben wir genutzt, um Recherche zu beschleunigen, Befragte zu simulieren und Ergebnisse zu codieren; nicht zum Rechnen und nicht als Faktenquelle. Simuliert haben wir, weil eine Primärerhebung im Zeitrahmen nicht möglich war – Grundlage ist die datengestützte Persona.</p>
     <p data-schritt="1"><b>Beleg</b> Wie nötig die Prüfung ist, zeigt unser Recherche-Dossier: Jeder Bereich wurde zweimal unabhängig geprüft. Von 155 Befunden mussten 42 korrigiert werden, 32 Einzelaussagen haben wir verworfen – kein Befund fiel als Ganzes weg. Grenzen offen benennen: simulierte Befragte geben wieder, was über die Marke in den Trainingsdaten steht – Klischees werden verstärkt, es gibt keine Repräsentativität.</p>
-    <p>Hinweise: Texte aus prompts.md, Abschnitt C (Textbaustein der Gruppe). Zahlen: Recherche-Dossier Kap. 9.5 und Anhang A, Statistik: 155 Befunde = 98 gesichert, 42 korrigiert, 4 unsicher, 11 Hypothesen; dazu 32 verworfene Einzelaussagen (Tabelle A.7). Pille „teils geplant“: Die echten Kurzinterviews stehen noch aus (methoden.md: 3–5). [N] in Orange nach den Interviews durch die tatsächliche Zahl ersetzen – dieselbe Zahl auf Folie 06, 07, 08 und in B2, B4, B5 (dort stehen derzeit 3 Interviews als Beispieldaten); danach Pille und orange Markierung löschen. „Mittelwerte selbst in Excel“ und „KI-Bilder werden gekennzeichnet“ sind Regeln für die Auswertung – das Persona-Bild auf Folie 04 ist noch ein Platzhalter. Faktenstatus-Symbole des Dossiers: ✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese. Knopf unten rechts springt zum Vorgehen (Folie 02), Taste Z führt zurück hierher.</p>
+    <p>Hinweise: Texte aus prompts.md, Abschnitt C (Textbaustein der Gruppe). Zahlen: Recherche-Dossier Kap. 9.5 und Anhang A, Statistik: 155 Befunde = 98 gesichert, 42 korrigiert, 4 unsicher, 11 Hypothesen; dazu 32 verworfene Einzelaussagen (Tabelle A.7). Pille „teils geplant“: Die echten Kurzinterviews stehen noch aus (methoden.md: 3–5); „3“ ist die geplante Zahl, wie auf Folie 06, 07, 08 und in B2, B4, B5 (dort als Beispieldaten). Nach den Interviews überall dieselbe tatsächliche Zahl eintragen und die Pille löschen. „Mittelwerte selbst in Excel“ und „KI-Bilder werden gekennzeichnet“ sind Regeln für die Auswertung – das Persona-Bild auf Folie 04 ist noch ein Platzhalter. Faktenstatus-Symbole des Dossiers: ✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese. Knopf unten rechts springt zum Vorgehen (Folie 02), Taste Z führt zurück hierher.</p>
   </aside>
 </section>
 

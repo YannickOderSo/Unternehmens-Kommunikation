@@ -212,7 +212,7 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   font-size: var(--groesse-titel-klein);
   font-weight: var(--gewicht-display);
   font-style: var(--stil-hervor);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   line-height: 1.05;
   letter-spacing: var(--laufweite-titel);
   color: var(--f-weich);
@@ -546,8 +546,9 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
 
 /* ---------------------------------------------------------------------------
    7. f08b – ERGEBNISKARTE „INS STEUERRAD“
-   Rahmen und Beschriftungen stehen ab Schritt 0 (rechte Spalte bleibt nicht
-   leer), die Inhalte erscheinen im letzten Schritt. Drei Blöcke: Emotionen
+   Die Karte erscheint samt Überschriften im letzten Schritt (ein leerer
+   Rahmen las sich wie „hier fehlt etwas“); die Inhalte gleiten gestaffelt
+   nach. Der Platz bleibt reserviert. Drei Blöcke: Emotionen
    (untereinander, mit Punkt davor), Beziehung (kursiv), Erlebnisse (Fließtext).
    --------------------------------------------------------------------------- */
 #f08b .g4t-ergebnis {

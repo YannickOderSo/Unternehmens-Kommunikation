@@ -411,9 +411,11 @@
     /* Schritte: 1 Marke · 2 Wettbewerber · 3 Merkmale · 4 Ergebnis.
        Ohne Wettbewerberwerte rücken Merkmale und Ergebnis einen Schritt vor. */
     var schrittMerkmale = mitWettbewerb ? 3 : 2;
-    /* Der Rahmen „Ins Steuerrad“ steht von Anfang an; nur seine Inhalte
-       erscheinen im letzten Schritt */
-    ctx.util.alle('.g4t-inhalt', ctx.folie).forEach(function (el) {
+    /* Die Karte „Ins Steuerrad“ erscheint erst im letzten Schritt – mit ihren
+       Überschriften und Inhalten (vorher stand der leere Rahmen da und las sich
+       wie „hier fehlt etwas“, Abschlussprüfung 16.10.2026). Der Platz bleibt
+       reserviert; die Inhalte gleiten gestaffelt nach. */
+    ctx.util.alle('.g4t-karte, .g4t-inhalt', ctx.folie).forEach(function (el) {
       el.setAttribute('data-schritt', String(schrittMerkmale + 1));
     });
 

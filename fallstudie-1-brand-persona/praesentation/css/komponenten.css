@@ -50,7 +50,7 @@
   font-weight: var(--gewicht-titel);
   line-height: var(--zeilenhoehe-titel);
   letter-spacing: var(--laufweite-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   text-wrap: balance;
   color: var(--f-text);
   max-width: 100%;
@@ -60,6 +60,20 @@
 .titel .hervor {
   font-style: var(--stil-hervor);
   color: var(--f-akzent);
+}
+/* Markenname im Titel (<em data-marke>): auf hellen Folien schwarz mit
+   gelbem Textmarker – die Markenfarben Gelb/Schwarz statt Braun
+   (Abschlussprüfung 16.10.2026). Auf dunklen Folien bleibt er in der hellen
+   Akzentfarbe (dort ein helles Gelb). Der Marker nutzt --f-kern (= Primär-
+   farbe aus marke.js); wählt die Gruppe eine DUNKLE Primärfarbe, diese Regel
+   löschen (schwarze Schrift auf dunklem Marker wäre schlecht lesbar). */
+html[data-modus="hell"] .folie:not([data-modus="dunkel"]) .titel em[data-marke] {
+  color: var(--f-text);
+  background: linear-gradient(transparent 46%, var(--f-kern) 46% 80%, transparent 80%);
+  padding: 0 0.08em;
+  margin: 0 -0.04em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .titel--gross { font-size: var(--groesse-titel-gross); }
 .titel--klein { font-size: var(--groesse-titel-klein); }
@@ -273,6 +287,12 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
 .karte--akzent { background: var(--f-akzent-flaeche); border-color: var(--f-akzent); }
 .karte--hart { background: var(--f-hart-flaeche); border-color: transparent; }
 .karte--weich { background: var(--f-weich-flaeche); border-color: transparent; }
+/* Editorial dunkel: gedeckte Flächen + feine Kante in Markenfarbe, damit die
+   Karten nicht in den Hintergrund sinken (Abschlussprüfung 16.10.2026) */
+[data-thema="editorial"][data-modus="dunkel"] .karte--weich,
+[data-thema="editorial"] [data-modus="dunkel"] .karte--weich {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--marke-primaer) 30%, transparent);
+}
 .karte--hervor { border-color: var(--f-akzent); box-shadow: 0 0 0 var(--linie-fein) var(--f-akzent); }
 .karte--linie {
   padding: 20px 0 0;
@@ -550,7 +570,7 @@ html:not(.zeiger-gesperrt) .sr-kern-gruppe:hover .sr-kern { transform: scale(1.0
   font-weight: var(--gewicht-display);
   letter-spacing: -0.01em;
   line-height: 1.08;
-  font-variation-settings: "opsz" 32;
+  font-variation-settings: "opsz" 32, var(--achsen-ruhig);
 }
 /* obere Felder: Name auf der Zeile, Leitfrage darunter (zur Mitte hin);
    untere Felder: Leitfrage darüber, Name auf der Zeile */
@@ -705,7 +725,7 @@ html:not(.zeiger-gesperrt) .sr-karte:hover,
   font-weight: var(--gewicht-display);
   line-height: 1.1;
   letter-spacing: -0.012em;
-  font-variation-settings: "opsz" 36;
+  font-variation-settings: "opsz" 36, var(--achsen-ruhig);
 }
 .sr-karte-folie {
   flex: none;

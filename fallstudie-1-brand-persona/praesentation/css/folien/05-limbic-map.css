@@ -246,7 +246,7 @@
   font-family: var(--schrift-display);
   font-size: var(--groesse-titel);
   font-weight: var(--gewicht-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
   letter-spacing: var(--laufweite-titel);
   line-height: 1.02;
   color: var(--f-akzent);

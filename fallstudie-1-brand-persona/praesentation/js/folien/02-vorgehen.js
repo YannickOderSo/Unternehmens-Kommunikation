@@ -178,6 +178,20 @@
   }
 
 
+  /* Leitfrage der Markenkompetenz („Wer bin ich?“): Im gelben Zentrum stieß
+     sie an den Kernring (Abschlussprüfung 16.10.2026). Sie steht deshalb vorn
+     in der Pille „Desk Research“ und erscheint mit deren Beschreibung in
+     Schritt 1 – wie bei den anderen Methoden die Leitfrage an der Karte. Das
+     Zentrum zeigt nur den Feldnamen (css/folien/02-vorgehen.css → „Kernfrage“). */
+  function kernFrageInPille(huelle) {
+    var frage = huelle.querySelector('.sr-label--kern .sr-label-frage');
+    var text = huelle.querySelector('.sr-pille[data-paar="kompetenz"] .sr-karte-text');
+    if (!frage || !text || text.querySelector('.vorgehen-kernfrage')) return;
+    var em = util.element('em', { class: 'sr-karte-frage vorgehen-kernfrage' }, frage.textContent);
+    text.insertBefore(em, text.firstChild);
+  }
+
+
   /* ---------- 1 + 2: Schritte der Pfeile, der Persona-Pille und des Rings ----------
      Gibt true zurück, wenn etwas geändert wurde (= Rad wurde neu gebaut). */
   function anpassen(folie) {
@@ -186,6 +200,7 @@
     var s = schrittNummern(huelle);
 
     kiKennzeichnen(huelle);
+    kernFrageInPille(huelle);
     tabReihenfolge(huelle);
     verweiseGlaetten(huelle);
     seitenKuerzen(huelle);

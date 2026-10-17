@@ -35,6 +35,7 @@ body {
   background: var(--f-letterbox);       /* Rand um die Bühne, falls das Fenster nicht 16:9 ist */
   color: var(--f-text);
   font-family: var(--schrift-text);
+  font-variation-settings: var(--achsen-ruhig);   /* ruhige Kursive (tokens.css) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -417,6 +418,27 @@ html.vt-menue::view-transition-old(folie),
 html.vt-menue::view-transition-new(folie) { animation: none; }
 html.vt-menue::view-transition-old(folie) { display: none; }
 
+/* Wechsel zwischen dunkler und heller Folie (html.wechsel-modus, setzt
+   deck.js): erst die alte Folie zügig aus-, dann die neue einblenden. Beim
+   gleichzeitigen Überblenden lag sonst ein graues Doppelbild dazwischen. */
+html.wechsel-modus::view-transition-old(folie),
+html.wechsel-modus::view-transition-old(steuerrad),
+html.wechsel-modus::view-transition-old(vorgehen-pille-oben),
+html.wechsel-modus::view-transition-old(vorgehen-pille-unten) { animation-duration: 180ms; }
+html.wechsel-modus::view-transition-new(folie),
+html.wechsel-modus::view-transition-new(steuerrad) { animation-delay: 160ms; animation-fill-mode: both; }
+
+/* Großes Steuerrad ↔ Mini-Rad (html.wechsel-rad-gross, z. B. Folie 02 → 03):
+   Das Rad gleitet weiter an seinen Platz, ist aber auf dem Weg über den
+   neuen Titel unsichtbar – das alte Bild verblasst schnell, das neue
+   erscheint erst kurz vor dem Ziel. Mini-Rad → Mini-Rad bleibt unverändert. */
+html.wechsel-rad-gross::view-transition-old(steuerrad) { animation-duration: 140ms; }
+html.wechsel-rad-gross::view-transition-new(steuerrad) {
+  animation-delay: 320ms;
+  animation-duration: calc(var(--dauer-folie) * 1.15 - 320ms);
+  animation-fill-mode: both;
+}
+
 @keyframes deck-raus-vor     { to   { opacity: 0; transform: translateX(-24px); } }
 @keyframes deck-rein-vor     { from { opacity: 0; transform: translateX(24px); } }
 @keyframes deck-raus-zurueck { to   { opacity: 0; transform: translateX(24px); } }
@@ -610,7 +632,7 @@ html.testmodus *::after { transition: none !important; animation: none !importan
   font-size: 56px;
   font-weight: var(--gewicht-titel);
   letter-spacing: var(--laufweite-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
 }
 .ue-info { font-size: 24px; color: var(--f-text-2); text-align: right; }
 .ue-rubrik {
@@ -683,7 +705,7 @@ html.testmodus *::after { transition: none !important; animation: none !importan
   font-family: var(--schrift-display);
   font-size: 56px;
   font-weight: var(--gewicht-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
 }
 .hilfe-spalten {
   display: grid;
@@ -731,7 +753,7 @@ html.testmodus *::after { transition: none !important; animation: none !importan
   line-height: 1.05;
   font-weight: var(--gewicht-titel);
   letter-spacing: var(--laufweite-titel);
-  font-variation-settings: "opsz" var(--opsz-titel);
+  font-variation-settings: "opsz" var(--opsz-titel), var(--achsen-ruhig);
 }
 .sprungmenue-text p { margin: 24px 0 0; font-size: 28px; color: var(--f-text-2); max-width: 14em; }
 .sprungmenue-knoepfe {

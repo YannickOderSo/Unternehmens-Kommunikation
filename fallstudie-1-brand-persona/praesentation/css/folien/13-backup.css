@@ -71,7 +71,7 @@
 /* Dateinamen nie trennen */
 .folie.bk .bk-datei { white-space: nowrap; }
 
-/* Noch einzutragende Angaben, z. B. „[N]“ (Zahl der echten Interviews auf B1):
+/* Noch einzutragende Angaben (zurzeit nicht genutzt; B7 hat bk7-ergaenzen):
    orange, gestrichelt unterstrichen – vor der Präsentation ersetzen und die
    Klasse bk-ergaenzen löschen. */
 .folie.bk .bk-ergaenzen {

@@ -50,8 +50,16 @@ window.MARKE = {
   // 389 × 105 px), abgerufen 16.10.2026. Marke der HOLY Softdrinks GmbH – nur zur
   // Kennzeichnung der analysierten Marke; Quelle steht in der Fußzeile von Folie 09b
   // und in QUELLEN.md. Gezeigt auf Folie 09b (Corporate Design).
-  // Zweite Variante (gelbes Oval, Seitenfuß, 692 × 400 px): 'bilder/holy-logo-oval.png'
+  // Zweite Variante (gelbes Oval) steht unten bei logoTitel (Folie 01).
   logo: 'bilder/holy-logo-wortmarke.png',
+  // Logo für die Titelfolie (Folie 01): offizielles HOLY-Logo im gelben Oval
+  // (Seitenfuß von de.holy.com, Datei HOLY_Logo_NewYellow.png, 692 × 400 px),
+  // abgerufen 16.10.2026, unverändert (nur verkleinert angezeigt). Es erscheint
+  // mit der Auflösung des Rätsels (Schritt 1, nicht vorher) und bleibt auf der
+  // Titelfolie stehen – anstelle des gesetzten Markennamens; Screenreader lesen
+  // weiter den Namen (name oben). Quelle steht in der Fußzeile von Folie 01 und
+  // in QUELLEN.md. Leer ('') = Markenname in Schrift wie bisher.
+  logoTitel: 'bilder/holy-logo-oval.png',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
   // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen
   // (z. B. HOLY-Dose oder -Shaker, selbst fotografiert), z. B.

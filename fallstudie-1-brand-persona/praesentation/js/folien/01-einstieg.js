@@ -17,6 +17,11 @@
       data-bild) noch das Platzhalter-Motiv steht, zeigt die Folie oben rechts
       die Pille „Platzhalterbild“ – so geht der Platzhalter nicht aus
       Versehen in den Vortrag. Mit eigenem Foto verschwindet sie von selbst.
+   5. Logo einsetzen: Steht in marke.js → logoTitel ein Bild (HOLY-Logo im
+      gelben Oval), erscheint es in der Auflösung und auf der Titelfolie
+      anstelle des Markennamens in Schrift. Der Name bleibt im HTML (für
+      Screenreader als alt-Text des Bildes). Lädt das Bild nicht, steht
+      wieder der Name in Schrift da (und die Konsole meldet den Pfad).
    ============================================================================= */
 (function () {
   'use strict';
@@ -54,7 +59,7 @@
   /* 2. Markenname in die Spalte einpassen (gemessen auch bei verborgener Folie) */
   function markeEinpassen(folie) {
     var name = folie.querySelector('.einstieg-markenname');
-    if (!name) return;
+    if (!name || name.classList.contains('hat-logo')) return;   /* Logo hat eine feste Größe */
     name.style.removeProperty('font-size');
     Deck.util.messen(name, function () {
       var spalte = name.parentElement ? name.parentElement.clientWidth : 0;
@@ -103,8 +108,37 @@
     }, 'Platzhalterbild', folie);
   }
 
+  /* 5. Logo statt Markenname (marke.js → logoTitel). Das Bild bekommt den
+        Markennamen als alt-Text; der Name in Schrift wird nur ausgeblendet
+        (CSS: .hat-logo). Die Zeile „Logo © …“ in der Fußzeile gilt nur mit Logo. */
+  function logoEinsetzen(folie) {
+    var name = folie.querySelector('.einstieg-markenname');
+    var quelle = folie.querySelector('.einstieg-quelle-logo');
+    var pfad = (Deck.marke && Deck.marke.logoTitel) || '';
+    if (!name) return;
+    var bild = name.querySelector('.einstieg-logo');
+    var ohneLogo = function () {
+      if (bild) bild.remove();
+      name.classList.remove('hat-logo');
+      if (quelle) quelle.hidden = true;
+    };
+    if (!pfad) { ohneLogo(); return; }
+    if (!bild) {
+      bild = Deck.util.element('img', { class: 'einstieg-logo', decoding: 'async' }, null, name);
+      bild.addEventListener('error', function () {
+        console.warn('Folie 01: Logo „' + pfad + '“ nicht gefunden (marke.js → logoTitel) – der Markenname steht in Schrift da.');
+        ohneLogo();
+      });
+    }
+    bild.setAttribute('alt', (Deck.marke && Deck.marke.name) || '[Marke]');
+    bild.setAttribute('src', Deck.util.pfad(pfad));
+    name.classList.add('hat-logo');
+    if (quelle) quelle.hidden = false;
+  }
+
   Deck.registriere('f01', {
     einrichten: function (ctx) {
+      logoEinsetzen(ctx.folie);
       platzhalterKennzeichnen(ctx.folie);
       schritteKoppeln(ctx.folie);
       markeEinpassen(ctx.folie);

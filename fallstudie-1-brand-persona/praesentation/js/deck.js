@@ -1074,13 +1074,26 @@
      (detail: { folie }). Folien-Skripte brauchen so keinen eigenen Timer. */
   function wechselEnde(f, nr) {
     if (nr !== wechselNr) return;           /* inzwischen neuer Wechsel */
-    html.classList.remove('wechsel-laeuft');
+    html.classList.remove('wechsel-laeuft', 'wechsel-modus', 'wechsel-rad-gross');
     document.dispatchEvent(new CustomEvent('deck:wechsel-ende', { detail: { folie: f.id } }));
   }
   var laufenderUebergang = null;
   var gehendeFolie = null;
   var testSofort = false;
   var unterstuetztVT = typeof document.startViewTransition === 'function';
+
+  /* Hell/dunkel einer Folie (eigenes data-modus, sonst der des Dokuments) */
+  function folienModus(f) {
+    return (f && f.el.getAttribute('data-modus')) || html.getAttribute('data-modus') || 'hell';
+  }
+  /* Hat die Folie ein großes Steuerrad bzw. das Mini-Rad, das beim Wechsel
+     ineinander gleitet (data-morph="steuerrad")? */
+  function radArt(f) {
+    if (!f) return '';
+    var rad = f.el.querySelector('[data-morph="steuerrad"]');
+    if (!rad) return '';
+    return rad.classList.contains('mini-rad') ? 'mini' : 'gross';
+  }
 
   function folieAufloesen(ziel) {
     if (typeof ziel === 'number') return ziel >= 0 && ziel < folien.length ? ziel : -1;
@@ -1217,6 +1230,16 @@
     html.classList.toggle('richtung-vor', richtung !== 'zurueck');
 
     html.classList.toggle('wechsel-laeuft', animieren);
+    /* Feinheiten des Übergangs (Abschlussprüfung 16.10.2026, Aussehen in
+       css/deck.css, Abschnitt 7):
+       • wechsel-modus: dunkle ↔ helle Folie (z. B. 01 → 02) nacheinander statt
+         gleichzeitig überblenden – sonst entsteht ein graues Doppelbild.
+       • wechsel-rad-gross: großes Steuerrad ↔ Mini-Rad (z. B. 02 → 03) – das
+         gleitende Rad wird unterwegs ausgeblendet, statt als graue Scheibe
+         über den neuen Titel zu fliegen. */
+    html.classList.toggle('wechsel-modus', animieren && !!alt && folienModus(alt) !== folienModus(f));
+    var radAlt = radArt(alt), radNeu = radArt(f);
+    html.classList.toggle('wechsel-rad-gross', animieren && !!radAlt && !!radNeu && radAlt !== radNeu);
     if (!animieren) {
       aendern();
       wechselEnde(f, nr);
@@ -1767,8 +1790,17 @@
     html.classList.add('ebene-offen');
     var fokus = name === 'uebersicht' ? ebenen.uebersicht.querySelector('.ue-karte.ist-aktuell') || ebenen.uebersicht.querySelector('.ue-karte')
       : ebenen[name].querySelector('button, [tabindex="0"]');
-    if (fokus) fokus.focus({ preventScroll: name !== 'uebersicht' });
-    if (name === 'uebersicht' && fokus) fokus.scrollIntoView({ block: 'center' });
+    if (fokus) fokus.focus({ preventScroll: true });
+    /* Übersicht: von oben beginnen (Überschrift „Übersicht“ sichtbar), solange
+       die aktuelle Folie dabei ganz zu sehen ist – sonst die Kachel mittig
+       zeigen (Abschlussprüfung 16.10.2026: Überschrift war abgeschnitten) */
+    if (name === 'uebersicht' && fokus) {
+      var fenster = ebenen.uebersicht;
+      fenster.scrollTop = 0;
+      if (fokus.getBoundingClientRect().bottom > fenster.getBoundingClientRect().bottom - 24) {
+        fokus.scrollIntoView({ block: 'center' });
+      }
+    }
   }
   function ebeneSchliessen(still) {
     if (!offeneEbene) return;
