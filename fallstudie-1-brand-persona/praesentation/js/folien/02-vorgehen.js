@@ -45,6 +45,9 @@
   var AUFBAU = ['nutzen', 'tonalitaet', 'bild', 'attribute'];
   /* Der Ring endet so viele px innerhalb der Pillenkante (läuft unter den Rand) */
   var RING_UNTER_RAND = 2;
+  /* Methodenkarten mit dem Etikett „Fremdbild“ (Sicht der Zielgruppe, laut
+     Aufgabe: Repertory Grid und Laddering). Leer [] = kein Etikett. */
+  var SICHT_FREMDBILD = ['attribute', 'nutzen'];
 
   function huelleVon(wurzel) {
     return wurzel.querySelector('.steuerrad.sr-modus-hub');
@@ -79,6 +82,12 @@
         zeile.appendChild(chip);
         kopf.insertBefore(zeile, verweis || null);
         if (verweis) zeile.appendChild(verweis);
+        /* Etikett „Fremdbild“: Repertory Grid und Laddering fragen die
+           Zielgruppe (Image = Fremdbild); das Steuerrad selbst beschreibt die
+           Identität (= Selbstbild). Felder in SICHT_FREMDBILD (oben). */
+        if (SICHT_FREMDBILD.indexOf(karte.getAttribute('data-paar')) >= 0) {
+          util.element('span', { class: 'vorgehen-sicht', 'data-meta': '' }, 'Fremdbild', zeile);
+        }
       }
       var label = karte.getAttribute('aria-label');
       if (label) karte.setAttribute('aria-label', label + ' (KI-gestützt)');

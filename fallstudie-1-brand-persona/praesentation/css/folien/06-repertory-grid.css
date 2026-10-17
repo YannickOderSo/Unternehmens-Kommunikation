@@ -117,6 +117,7 @@
   color: var(--f-warnung);
   box-shadow: inset 0 0 0 var(--linie-fein) var(--f-warnung);
   font-weight: var(--gewicht-fett);
+  font-size: 26px;              /* inhaltlich wichtig: 26 px statt 22 px (Abschlussprüfung 17.10.2026) */
 }
 
 /* Legende: Strichmuster so, dass links und rechts vom Kreis ein Strich steht */

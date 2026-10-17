@@ -173,7 +173,17 @@
     var diagramm = u.element('div', { class: 'g5-motive' }, null, ziel);
     var kopf = u.element('p', { class: 'g5-motive-kopf', 'data-meta': '' }, null, diagramm);
     var n = stichprobe ? u.zahlFormat(wertVon(stichprobe), 0) : '';
-    kopf.textContent = n ? 'Hauptmotiv in ' + n + ' codierten Beiträgen' : 'Hauptmotive der Beiträge';
+    if (n) {
+      /* Die Zahl der codierten Beiträge ist (noch) ein Beispielwert → gestrichelt wie die übrigen */
+      kopf.appendChild(document.createTextNode('Hauptmotiv in '));
+      u.element('span', {
+        class: 'g5-motive-n' + (istBeispiel(stichprobe) ? ' ist-annahme g5-beispielwert' : ''),
+        title: istBeispiel(stichprobe) ? 'Beispielwert – noch selbst zu erheben' : null
+      }, n, kopf);
+      kopf.appendChild(document.createTextNode(' codierten Beiträgen'));
+    } else {
+      kopf.textContent = 'Hauptmotive der Beiträge';
+    }
     var liste = u.element('ol', { class: 'g5-motiv-liste', 'data-staffel': '110', 'data-animation': 'hoch' }, null, diagramm);
 
     gruppen.forEach(function (g) {

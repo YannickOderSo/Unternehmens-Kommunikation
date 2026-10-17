@@ -121,6 +121,21 @@
   align-items: center;
   gap: 12px;
 }
+/* Etikett „Fremdbild“ (Repertory Grid, Laddering – Sicht der Zielgruppe):
+   kleine Versalien wie „Hard Facts“, durch einen Haarstrich abgesetzt */
+#f02 .vorgehen-sicht {
+  margin-left: 6px;
+  padding-left: 18px;
+  border-left: var(--linie-fein) solid var(--f-linie);
+  color: var(--f-text-2);
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  white-space: nowrap;
+}
 #f02 .sr-pille .vorgehen-ki { align-self: center; }
 
 /* ---------- Kernfrage ----------

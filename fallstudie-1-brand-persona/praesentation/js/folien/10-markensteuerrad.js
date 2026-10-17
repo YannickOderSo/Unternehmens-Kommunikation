@@ -10,7 +10,7 @@
 
    2. QUELLENKÜRZEL JE STICHWORT: Im Kartenkopf bleibt nur das häufigste
       Kürzel des Felds; ein abweichendes Kürzel steht klein direkt hinter dem
-      Stichwort (z. B. „Abenteurer LM“, „160 mg Koffein DR“).
+      Stichwort (z. B. „Abenteurer LM“, „Energy: 160 mg Koffein DR“).
 
    3. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
       • Nummern (Lückenfarbe, Braun-Orange) an den Stichworten, die eine Lücke bilden
@@ -214,6 +214,18 @@
     verlassen: function (ctx) {
       var zustand = ctx.folie._g6s;
       if (zustand) ruheBeenden(zustand);
+    },
+
+    /* Konsistenzprüfung an/aus: Hinter den markierten Stichworten wächst der
+       Abstand zum Trenner (CSS, Abschnitt 2) – danach Zeilenenden und Lage
+       der Notizen neu messen (nach dem Übergang) */
+    schritt: function (ctx, n) {
+      var zustand = ctx.folie._g6s;
+      if (!zustand) return;
+      if (n !== zustand.schrittLuecken && n !== zustand.schrittLuecken - 1) return;
+      clearTimeout(zustand.messTimer);
+      var sofort = document.documentElement.classList.contains('testmodus') || ctx.bewegungReduziert || ctx.druckmodus;
+      zustand.messTimer = setTimeout(function () { platzieren(zustand); }, sofort ? 0 : 450);
     },
 
     druck: function (ctx) {

@@ -79,28 +79,47 @@
     });
   }
 
-  /* Inhalt: Mini-Balken je Plattform (Länge relativ zum größten Wert) */
+  /* Inhalt: Mini-Balken je Plattform.
+     Länge: relativ zu „skala“ (z. B. 100 bei Prozentwerten), ohne „skala“
+     relativ zum größten Wert. Optional „schnitt“ je Balken: Durchschnitt aller
+     Befragten derselben Studie → dünner dunkler Strich im Balken, dazu eine
+     kleine Legende hinter der Einheit („Strich = Ø aller Befragten“). */
   function balkenInhalt(u, dim, karte) {
     var liste = dim.balken || [];
-    var max = Math.max.apply(null, liste.map(function (b) { return Number(b.wert) || 0; }).concat([1]));
+    var skala = Number(dim.skala) || 0;
+    var max = skala > 0 ? skala : Math.max.apply(null, liste.map(function (b) { return Number(b.wert) || 0; }).concat([1]));
+    var mitSchnitt = liste.some(function (b) { return b.schnitt !== undefined && b.schnitt !== null && b.schnitt !== ''; });
     var tabelle = u.element('div', { class: 'g2p-balken', role: 'list' }, null, karte);
     liste.forEach(function (b) {
+      var schnitt = Number(b.schnitt);
+      var hatSchnitt = b.schnitt !== undefined && b.schnitt !== null && b.schnitt !== '' && !isNaN(schnitt);
       var zeile = u.element('div', {
         class: 'g2p-balken-zeile',
         role: 'listitem',
-        'aria-label': b.name + ': ' + b.wert + ' ' + (dim.einheit || '')
+        'aria-label': b.name + ': ' + b.wert + ' ' + (dim.einheit || '') + (hatSchnitt ? ' (Durchschnitt aller Befragten: ' + schnitt + ')' : '')
       }, null, tabelle);
       u.element('span', { class: 'g2p-balken-name' }, b.name, zeile);
       var spur = u.element('span', { class: 'g2p-balken-spur', 'aria-hidden': 'true' }, null, zeile);
-      var anteil = Math.max(4, Math.round((Number(b.wert) || 0) / max * 100));
+      var anteil = Math.max(4, Math.min(100, Math.round((Number(b.wert) || 0) / max * 100)));
       u.element('span', {
         class: 'g2p-balken-fuellung',
         style: 'width: ' + anteil + '%',
         'data-animation': 'zeichnen',
         'data-dauer': '900'
       }, null, spur);
+      if (hatSchnitt) {
+        var lage = Math.max(1, Math.min(99, schnitt / max * 100));
+        u.element('span', { class: 'g2p-balken-schnitt', style: 'left: ' + lage.toFixed(1) + '%', title: 'Ø aller Befragten: ' + u.zahlFormat(schnitt, 0) }, null, spur);
+      }
       u.element('span', { class: 'g2p-balken-wert', 'aria-hidden': 'true' }, u.zahlFormat(b.wert, 0), zeile);
     });
+    /* Legende zum Strich hinter der Einheit (Metazeile) */
+    var einheit = karte.querySelector('.g2p-einheit');
+    if (mitSchnitt && einheit && dim.schnittText !== '') {
+      var leg = u.element('span', { class: 'g2p-schnitt-legende' }, null, einheit);
+      u.element('span', { class: 'g2p-schnitt-muster', 'aria-hidden': 'true' }, null, leg);
+      leg.appendChild(document.createTextNode(dim.schnittText || 'Ø aller Befragten'));
+    }
   }
 
   /* Inhalt: Werte als Chips, darunter Pain (−) und Gain (+) */

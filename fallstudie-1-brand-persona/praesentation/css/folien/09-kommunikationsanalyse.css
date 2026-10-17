@@ -190,6 +190,9 @@
   text-transform: uppercase;
   color: var(--f-text-2);
 }
+/* Zahl der codierten Beiträge als Beispielwert: gestrichelt wie die übrigen
+   Beispielwerte, aber enger (steht in der Überschriftenzeile) */
+#f09 .g5-motive-kopf .g5-beispielwert { padding: 0 4px; outline-offset: 2px; }
 #f09 .g5-motiv-liste {
   flex: 1;
   display: flex;
@@ -293,6 +296,7 @@
 }
 /* Hinweis „Schlüsselbild?“ oben im Bild */
 #f09 .g5-schluessel-chip {
+  font-size: 26px;              /* inhaltlich wichtig: 26 px statt 22 px (Abschlussprüfung 17.10.2026) */
   position: absolute;
   top: 12px;
   left: 0;

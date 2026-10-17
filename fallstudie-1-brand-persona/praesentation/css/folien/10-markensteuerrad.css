@@ -211,13 +211,15 @@ html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
   white-space: nowrap;
 }
 #f10 .sr-trenner.g6s-trenner-aus { visibility: hidden; }
-/* Hinter einem markierten Stichwort steht ab der Konsistenzprüfung die
-   Nummer an der Stelle des Trenners – der Trenner tritt dann zurück (die
-   Gruppe bleibt gleich breit, nichts verschiebt sich) */
-#f10 .g6s-gruppe:has(.g6s-wortmarke.schritt-an) > .sr-trenner { visibility: hidden; }
-/* etwas mehr Abstand hinter markierten Stichworten, damit die Nummer frei
-   steht (gilt von Anfang an – kein Sprung, wenn die Nummer erscheint) */
-#f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert) { gap: 18px; }
+/* Hinter einem markierten Stichwort steht die Nummer hochgestellt direkt
+   am Wort; der Trenner „·“ bleibt sichtbar und steht rechts daneben
+   (Abschlussprüfung 17.10.2026: Stand die Nummer an der Stelle des
+   Trenners, las sich „gutes Gewissen 1 dazugehören“ wie ein Stichwort).
+   Der Abstand zum Trenner wächst erst, wenn die Nummer erscheint (sanft,
+   damit vorher keine auffällige Lücke steht); danach misst das Skript die
+   Zeilen neu (js/folien/10-markensteuerrad.js, Hook „schritt“). */
+#f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert) { transition: gap var(--dauer-mittel) var(--kurve); }
+#f10 .g6s-gruppe:has(> .sr-stichwort.g6s-markiert > .g6s-wortmarke.schritt-an) { gap: 40px; }
 
 /* Ruhe nach dem Betreten (Skript: ruheStarten): Bis sich die Maus bewegt,
    nehmen Felder, Karten und Pillen keine Mausereignisse an – kein
@@ -321,11 +323,11 @@ html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF ble
      steht in den Notizen und auf B1. Wieder einblenden: diese Regel löschen.
    • Die Kernaussage („zwei Lücken“) bekommt die größere Schrift:
      Kopf der Lücken-Notiz 28 px, Text 32 px, Nummernmarken größer.
-   • Feldnamen in den Karten 24 px statt 22 px.
+   • Feldnamen in den Karten 26 px (Beschriftung, data-meta; bis 17.10.2026 24 px).
    --------------------------------------------------------------------------- */
 #f10 .sr-quelle,
 #f10 .g6s-quelle { display: none; }
-#f10 .sr-karte-feld { font-size: 24px; }
+#f10 .sr-karte-feld { font-size: 26px; }     /* Kartenköpfe (Beschriftung) – 26 px statt 24 px */
 #f10 .g6s-luecke-kopf { font-size: var(--groesse-text-min); }
 #f10 .g6s-luecke-text { font-size: 32px; }
 #f10 .g6s-nummer {
@@ -336,7 +338,8 @@ html.druckmodus #f10 .g6s-abgleich { display: none !important; }   /* im PDF ble
 #f10 .g6s-wortmarke {
   width: 30px;
   height: 30px;
-  top: -13px;
+  left: calc(100% + 4px);
+  top: -16px;
   font-size: var(--groesse-meta);
 }
 /* in den einzeiligen Pillen (Kompetenz, Persona) weniger hoch, damit die

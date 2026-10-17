@@ -230,6 +230,33 @@
   background: var(--f-diagramm-marke);
 }
 /* Werte an den Balken = Inhalt, darum Fließtextgröße (28 px) */
+/* Durchschnitt aller Befragten (Daten „schnitt“): dünner dunkler Strich im
+   Balken, mit hellem Rand – auf der Füllung und auf der leeren Spur sichtbar */
+#f04 .g2p-balken-schnitt {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background: var(--f-text);
+  box-shadow: 0 0 0 2px var(--f-karte);
+  border-radius: 2px;
+}
+/* Legende hinter der Einheit: „┃ Ø aller Befragten“ */
+#f04 .g2p-schnitt-legende {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 14px;
+  white-space: nowrap;
+}
+#f04 .g2p-schnitt-muster {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: var(--f-text);
+}
 #f04 .g2p-balken-wert {
   font-family: var(--schrift-zahl);
   font-size: var(--groesse-text-min);
