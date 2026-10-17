@@ -70,6 +70,12 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 48 | 16.10.2026 | Yannick | Dossier für Lukas mit Anweisungen, wie er die Persona-Informationen nutzt | D08, D09 | `dossier-buendel-b.md` + HTML + PDF (13 S.) für Lukas |
 | 49 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Workflow-Skript, Rohprotokoll und Nachweis committet + gepusht |
 | 50 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | gekürztes Dossier (Zwischenstand), HTML, PDF, Prüfskript committet + gepusht |
+| 51 | 16.10.2026 | Yannick | Frage: Was steht für mich als nächstes an? | – | Antwort im Chat zusammen mit 52 (Übersicht Bündel A + C2) |
+| 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | `limbic-map.md`, Folienentwurf Folie 5, Grafik SVG + PNG; Persona neu: Hedonisten statt Abenteurer |
+| 53 | 17.10.2026 | Yannick | Info: Lukas hat den Gründer per LinkedIn befragt (14 Fragen, Antwort als Sprachnachricht) | – | Antwort im Chat: Nutzung, Einwilligung, nächste Schritte |
+| 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
+| 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | in Arbeit (Workflow D11) |
+| 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -855,6 +861,106 @@ Workflows für jede größere Aufgabe.)*
 - **Ergebnis:** Commit + Push
 - **Unteragenten:** keine
 
+### 51 – 16.10.2026 – Yannick
+
+> Was steht für mich als nächstes an?
+
+- **Vorgehen Claude:** Vor der Antwort kam Prompt 52; beide zusammen beantwortet (siehe 52): Übersicht der nächsten
+  Schritte für Bündel A und C2 nach `arbeitsplan.md` und `aufgaben-im-detail.html`.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 52 – 17.10.2026 – Yannick
+
+> Weiter
+
+*(Bezug: Claudes letzte Nachricht endete mit „Als nächstes Paket wäre die Limbic Map (A3) dran, sie ist morgen an
+Elias fällig. Ich warte auf deine Freigabe.“)*
+
+- **Vorgehen Claude:**
+  - **Vorbereitung:** Vorgaben (Aufgaben A3, methoden.md §1) und die aktuellen Daten von Folie 05 in der Präsentation
+    gelesen. Dort standen die Startwerte aus Dossier 4.4.
+  - **Workflow D10** (siehe Abschnitt 2):
+    - Grundlagen: Modell mit Websuche, Signale der Persona, Signale der Marke.
+    - Synthese, danach 3 Prüfer und 1 Bearbeiter.
+  - **Ergebnis des Workflows:**
+    - Persona B 30 / D 30 / S 40 statt 20 / 35 / 45. Limbic Type **Hedonisten** (Hypothese, knapp vor Offene) statt
+      Abenteurer. Die Abenteuer-Hinweise stammten aus dem Markenauftritt (Zirkelschluss).
+    - Marke B 30 / D 20 / S 50.
+    - Fit „passt teilweise“, Lücke bei Dominanz: HOLY zeigt kaum den Schichtanlass.
+    - 3 Konsequenzen.
+  - **Prüfung durch Claude:**
+    - Ausarbeitung ganz gelesen.
+    - Die tragenden Zitate selbst geprüft: das Nymphenburg-PDF [105] (Testosteron- und Alterseffekt, „Heuristik“,
+      Typ-Stichworte, Rechtehinweis S. 7) und das Recherche-Dossier („~4h mit NewCaff“, „Routinen im Alltag sowie
+      rund um Sport und Training“, „harte Arbeit oder durchzechte Nächte“).
+    - Die Lage der Punkte mit dem Rechenweg von f05 nachgerechnet (Marco 300°/0,20; HOLY 281°/0,53).
+  - **Grafik:** `grafiken/folie-05-limbic-map.py` erzeugt SVG und PNG (eigene, vereinfachte Darstellung mit
+    Rechtevermerk). Drei Überlappungen von Beschriftungen korrigiert.
+  - **Folienentwurf Folie 5** in `folienentwuerfe.md` eingefügt.
+  - **Eigene Fehler von 16.10. korrigiert** (Befund aus D10):
+    - Sprechtext Folie 4 überzeichnete den Gründer („vor allem im Schichtdienst“ statt „z. B. im Schichtdienst“).
+    - „Spaß“ stand als überdurchschnittlich in Steckbrief und Folie 4 (38 % gegenüber 36 % ist kein Unterschied).
+    - Die Zeile Limbic Type im Steckbrief ist aktualisiert.
+  - **Herkunft:** Websuche in D10 (PDF [105], nymphenburg.de, Investorenseite [14], Abruf 17.10.2026), sonst
+    Repository-Dateien. Zuordnungen und Gewichte sind eine Heuristik des Teams, als solche gekennzeichnet.
+- **Ergebnis:** [`limbic-map.md`](../fallstudie-1-brand-persona/limbic-map.md),
+  [`folienentwuerfe.md`](../fallstudie-1-brand-persona/folienentwuerfe.md) (Folie 5),
+  [`grafiken/folie-05-limbic-map.svg`](../fallstudie-1-brand-persona/grafiken/folie-05-limbic-map.svg) + PNG + Skript;
+  `persona-steckbrief.md` (Limbic Type, Werte)
+- **Unteragenten:** D10
+- **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 53 – 17.10.2026 – Yannick
+
+> Info Lukas hat den Gründer per Linkedin angeschrieben und hat ihn 14 Fragen gestellt die hat er beantwortet per Sprachnachricht
+
+- **Vorgehen Claude:** Antwort im Chat ohne Websuche (Modellwissen und Projektregeln):
+  - Einordnung als neue Primärquelle (Selbstauskunft des Unternehmens) und wofür sie in A2, A3, B und C taugt.
+  - Hinweis auf Einwilligung nach KI-Richtlinie der HSKL, Nr. 6: Die Sprachnachricht ist personenbezogen. Vor einer
+    KI-Transkription oder einem Zitat mit Namen in der öffentlichen Präsentation ist die Zustimmung des Gründers nötig.
+  - Entwurf einer kurzen Nachricht, mit der Lukas die Zustimmung einholen kann.
+  - Vorschlag zum weiteren Vorgehen: Antworten abtippen, Abgleich mit Persona und Limbic Map.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 54 – 17.10.2026 – Yannick
+
+> Was sind die nächsten Aufgaben für mich selbst, was muss ich noch erledigen, lass erstmal die anderen Arbeitsgruppen außen vor, die haben wahrscheinlich eigene Arbeitsweisen
+
+- **Vorgehen Claude:** Aufgaben A1–A5 und C2 in `aufgaben-im-detail.html` sowie die offenen Punkte in
+  `persona-steckbrief.md`, `limbic-map.md` und `arbeitsplan.md` gelesen. Daraus eine Liste nach Termin erstellt, getrennt
+  nach „nur Yannick“ (Freigaben, Foto, Podcast, Bildgenerator, Repository-Einstellungen) und „mit Claude“.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 55 – 17.10.2026 – Yannick
+
+> weiter
+
+*(Bezug: Claudes Vorschlag „Als nächstes Paket schlage ich A1 vor, die Markenkompetenz … Sag „weiter“, dann lege ich
+los.“)*
+
+- **Vorgehen Claude:** Vorgaben (Aufgaben A1, methoden.md §0) und die Daten der Web-Folie f03 gelesen (Entwurf aus dem
+  Recherche-Dossier). Workflow D11 gestartet (Dossier-Auszug, zwei Web-Prüfungen, Synthese, drei Prüfer, Bearbeiter).
+  Der erste Lauf brach sofort ab: Alle 8 Unteragenten scheiterten am Nutzungslimit („You've hit your session limit“),
+  ohne Ergebnis.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D11
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 56 – 17.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Workflow D11 mit demselben Skript neu gestartet (zweiter Lauf).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D11
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -875,6 +981,7 @@ steht hier mit dem wörtlichen Auftrag.
 | Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
 | D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
+| D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1136,6 +1243,40 @@ steht hier mit dem wörtlichen Auftrag.
   - 25 Befunde umgesetzt.
   - Nicht umgesetzt: der Hinweis zur Quelle „32 % Generation Z“. Claude hat den Wert selbst im Report gelesen.
   - HTML und PDF neu erzeugt (13 Seiten).
+
+### D10 – 17.10.2026 – ausgelöst durch Prompt 52
+
+- **Art:** Workflow „limbic-map-a3“, acht Unteragenten in vier Phasen:
+  - Grundlagen: Modell (mit Websuche), Persona-Signale, Marken-Signale.
+  - Synthese.
+  - Prüfen: Modelltreue (mit Websuche), Belege und Logik, Nutzen und Klarheit.
+  - Überarbeiten.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-17_limbic-map-a3.js`](workflows/2026-10-17_limbic-map-a3.js)
+  und automatisch im Rohprotokoll.
+- **Vorgaben:**
+  - Prozentgewichte als Team-Heuristik kennzeichnen; Marke über Emotionsfelder statt über einen Typ verorten.
+  - Keine Uploads und keine Gruppenordner-Datei öffnen; Statista nur aus Steckbrief bzw. `persona-daten.md`.
+  - Jede Aussage mit Fundstelle, Modellwissen kennzeichnen.
+  - Nur `limbic-map.md` schreiben; keine Präsentation, kein KI-Nachweis, kein Commit.
+- **Ergebnis:**
+  - **Modell:** Das PDF der GIK/Gruppe Nymphenburg [105] wurde ganz gelesen, dazu die Seiten von nymphenburg.de zu Map
+    und Typen. Systeme, sieben Emotions- und Motivfelder, Lage der Typen (eigene Pixelmessung der Typen-Grafik).
+    Zahlen nach Alter und Geschlecht gibt es öffentlich nicht.
+  - **Persona:** Merkmale gezählt (3 / 3 / 5 Punkte für B / D / S). Zirkuläre Belege aus dem Markenauftritt wurden
+    nicht gezählt. Ergebnis: B 30 / D 30 / S 40, Hedonisten (knapp vor Offene) statt Abenteurer.
+  - **Marke:** 18 Signale aus dem Dossier ergeben B 30 / D 20 / S 50 mit den Feldern Spaß und Kreativität, Abenteuer
+    und Risiko, Harmonie und Fürsorge. Trend 2021 → 2026: Balance steigt, Dominanz sinkt.
+  - **Prüfer:** 41 Befunde (3 hoch, 19 mittel, 19 niedrig). Die hohen:
+    - die Kernaussage übersah die „~4h“-Vergleichsgrafik;
+    - die Gründeraussage war überzeichnet;
+    - die Bitte an Elias war nicht umsetzbar.
+  - **Bearbeiter:** 23 Befunde umgesetzt, 12 begründet nicht umgesetzt (meist Dateien außerhalb des Auftrags).
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Ausarbeitung, Folienentwurf und Übergabe gelesen.
+  - Zitate im PDF [105] (pdftotext) und im Dossier nachgesehen.
+  - Rechenweg der Punkte nachgerechnet.
+  - Die zwei Punkte außerhalb des Auftrags selbst umgesetzt (Steckbrief, Folie 4).
+  - Präsentation (f05, f10) nicht geändert, siehe offene Punkte in `limbic-map.md` §8.
 
 ---
 

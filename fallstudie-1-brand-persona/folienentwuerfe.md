@@ -8,7 +8,8 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). `[MARKE]` 
 | 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ – `[MARKE]` noch durch HOLY ersetzen |
 | 3 | Markenkompetenz | A | offen |
 | 4 | Brand Persona | A | Entwurf ✔ (16.10.) – Prüfung durch Yannick offen |
-| 5–11 | | | offen |
+| 5 | Limbic Map | A | Entwurf ✔ (17.10.) – Prüfung durch Yannick offen |
+| 6–11 | | | offen |
 
 ---
 
@@ -116,7 +117,7 @@ Alternativen:
 | Soziodemografie | männlich, 28 | Realschule + Ausbildung, Schichtdienst Logistik | D (Beruf: A) | VuMA 2021; Statista CI 2025; Gründer [24] |
 | Kaufverhalten | mehrmals pro Woche, vor der Schicht | Pulver online auf Vorrat, nutzt Rabatte | D | Kantar 2023; Gründer [24]; Shop [1, 48] |
 | Mediennutzung | Balken, siehe unten | | D (Kategorie) | Statista CI 2025 |
-| Psychografie | gesünder leben – aber schnell | Erfolg und Spaß wichtiger als im Ø | D (Pains/Gains: A) | Statista CI 2025; Kundenstimmen [88, 89] |
+| Psychografie | gesünder leben – aber schnell | Erfolg etwas wichtiger als im Ø | D (Pains/Gains: A) | Statista CI 2025; Kundenstimmen [88, 89] |
 
 - **Mediennutzung als Balken** (% regelmäßige Nutzung, Energy-Drink-Konsument:innen, mit Strich für den Ø aller
   Befragten): YouTube 73 (Ø 63) · Instagram 71 (Ø 58) · TikTok 58 (Ø 41)
@@ -142,7 +143,7 @@ Alternativen:
 >
 > Marco ist Fachkraft für Lagerlogistik und arbeitet im Drei-Schicht-Betrieb. Das deckt sich mit dem, was HOLY selbst
 > sagt: Laut Mitgründer Frederick Jost ist die Kundschaft meist zwischen 25 und 40, zu etwa zwei Dritteln männlich, und
-> getrunken wird HOLY vor allem im Schichtdienst – nicht beim Zocken.
+> getrunken wird HOLY in der Regel nicht beim Zocken, sondern zum Beispiel im Schichtdienst.
 >
 > Die Marktdaten für Energy Drinks zeigen dasselbe Bild: Am stärksten überrepräsentiert sind die 20- bis 29-Jährigen,
 > der häufigste Abschluss ist die Mittlere Reife, und gut 40 Prozent trinken mindestens zwei- bis dreimal pro Woche.
@@ -179,3 +180,159 @@ Alternativen:
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:30
 - [ ] Folieninhalt in der Web-Präsentation (`praesentation/index.html`, Folie f04) austauschen: dort stehen noch die
   Werte aus dem Dossier (ARD/ZDF 14–29 J.)
+
+---
+
+## Folie 5 – Limbic Map
+
+**Bündel:** A · **Zeit:** 1:00 · **Backup-Bezug:** B1 Methodik & Begründung (Heuristik der Gewichte, Zählregel, Karte als SVG), B3 Datenquellen Persona ·
+**Ausarbeitung:** [`limbic-map.md`](limbic-map.md)
+
+### Titel (Kernaussage)
+
+> **HOLY trifft Marcos Lust auf Neues, zeigt aber kaum seine Schicht**
+
+Alternativen:
+- *Passt teilweise: gleiche Neugier, doch Marcos Schicht fehlt im Auftritt*
+- *HOLY verspricht Wirkung, zeigt aber kaum den Moment, in dem Marco sie braucht*
+
+### Text auf der Folie
+
+- **Kicker** (wie in der Web-Folie): *Limbic Map nach Häusel · Was treibt Marco an?*
+- **Links:** Limbic-Map-Grafik (siehe Visualisierung)
+- **Rechts, drei Blöcke:**
+
+| Block | Inhalt | Kennzeichnung |
+|---|---|---|
+| Limbic Type der Persona | **Hedonisten** · Neugier · Unterhaltung | Hypothese (dass es knapp vor „Offene“ ist, steht in Notizen und Rückfrage 3) |
+| Gewichte (zwei gestapelte Balken) | Marco B 30 / D 30 / S 40 · HOLY B 30 / D 20 / S 50 · Kennzahl **Dominanz −10 Pp.**, in den Balken markiert | Schätzung des Teams, keine Messung |
+| Folgen für die Kommunikation | **Bildwelt:** Echte Schichtmomente · **Tonalität:** Humor aus der Schicht · **Botschaft:** Durchhalten ohne Zucker | Hypothesen für Folien 9–11; Langformen in Sprechtext und `limbic-map.md` §6 |
+
+- **Metazeile** unter den Balken: *Pp. = Prozentpunkte · Gewichte: Schätzung des Teams*
+- **Quellenzeile** (klein, unten; derselbe Wortlaut für Web-Fußzeile, SVG und PNG): *Eigene, vereinfachte Darstellung nach Häusel; Gruppe
+  Nymphenburg Consult AG (2020): Die Limbic® Types in best for planning, S. 3–5; Lage der Typen: nymphenburg.de/limbic-r-types.html
+  (Abruf 17.10.2026). Gewichte: Schätzung des Teams auf Basis von Statista Consumer Insights 02/2025 (Kategorie Energy Drinks), Podcast
+  „Digitale Vorreiter:innen“ #281 (08/2024) und Recherche-Dossier. Limbic®, die Limbic® Map und die Limbic® Types sind urheber- und
+  patentrechtlich geschützte Begriffe und Verfahren der Gruppe Nymphenburg Consult AG.*
+- **Umfang:** rund 55 Wörter ohne Quellenzeile und Kartenbeschriftung (Richtwert ca. 40, C4). Kicker und Block-Überschriften stehen im
+  HTML; weiter kürzen nur in Absprache mit Bündel C.
+
+### Visualisierung
+
+Die Folie ist die Web-Folie f05; sie baut die Karte aus den Daten. Dieselbe Karte für Backup B1 (und für PowerPoint):
+
+![Folie 5: Limbic Map mit Marco und HOLY](grafiken/folie-05-limbic-map.png)
+
+Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (PNG daneben; erzeugt mit
+`grafiken/folie-05-limbic-map.py`, gleicher Rechenweg wie f05).
+
+- **Karte:** Kreis mit drei Systemen: Stimulanz links oben (300°), Dominanz rechts oben (60°), Balance unten (180°). Am Rand die
+  Mischbereiche Abenteuer/Thrill (oben), Disziplin/Kontrolle (rechts unten), Fantasie/Genuss (links unten); Lage nach [105] S. 3. Im Ring
+  die sieben Typen in sieben gleich großen Sektoren, im Uhrzeigersinn ab oben: Abenteurer, Performer, Disziplinierte, Traditionalisten,
+  Harmoniser, Offene, Hedonisten (Typen-Grafik nymphenburg.de/limbic-r-types.html, „Quelle: b4p 2016“). [105] S. 3 zeigt nur Felder, keine
+  Typen. „Hedonisten“ markieren.
+- **Typ-Winkel** (Sektormitten; eigene Pixelmessung der Typen-Grafik, ±1°, als eigene Messung kennzeichnen): Abenteurer 0, Performer 51,
+  Disziplinierte 103, Traditionalisten 154, Harmoniser 206, Offene 257, Hedonisten 309. f05 nutzt derzeit 0/50/112/165/215/262/308.
+- **Zwei Punkte** (Rechenweg aus `praesentation/js/folien/05-limbic-map.js`, Kartenrand = Profil 67/17/17): **Marco** bei 300°, 20 % des
+  Radius (nah an der Mitte = schwach ausgeprägtes Profil). **HOLY** bei 281°, 53 % des Radius, beschriftet als „HOLY (Mittelwert)“: Der
+  Punkt fällt knapp in den Sektor der Offenen, weil sich Abenteuer (oben) und Harmonie (unten) ausgleichen; er ist kein Typ der Marke.
+  Dünne Verbindungslinie ohne Zahl (sie zeigt beide Abweichungen zugleich, Dominanz −10 und Stimulanz +10); die Kennzahl steht bei den
+  Balken.
+- **Marke als Felder:** die drei Felder des Auftritts als Bögen außerhalb des Typen-Rings leicht hinterlegen und mit den Feldnamen aus
+  [105] S. 3 beschriften: Spaß und Kreativität, Abenteuer und Risiko, Harmonie und Fürsorge. Nicht die Typnamen im Ring einfärben, sonst
+  liest man „Marke = Typ“. In f05 gibt es dafür kein Datenfeld; dort nennt der Sprechtext die Felder.
+- **Nur Backup B1:** gestrichelter Pfeil „HOLY 2021/22 → 2026“ ohne Prozentangaben, mit dem Hinweis „Hypothese, keine Daten“.
+- **Daten für f05** (`praesentation/index.html`, `<script class="daten">`; in „karte“ nur „typen“ ersetzen, Rest unverändert):
+
+```json
+"hinweis": "Gewichte: Schätzung des Teams (limbic-map.md), keine Messung; Lage der Typen nach Typen-Grafik nymphenburg.de (b4p 2016); mit der Vorlesungsfolie abgleichen",
+"persona": { "beschriftung": "Marco",   "balance": 30, "dominanz": 30, "stimulanz": 40 },
+"marke":   { "beschriftung": "[Marke]", "balance": 30, "dominanz": 20, "stimulanz": 50 },
+"limbicType": "Hedonisten",
+"typMotive": ["Neugier", "Unterhaltung"],
+"kennzahl": "luecke",
+"folgen": [
+  { "bereich": "Bildwelt",  "text": "Echte Schichtmomente" },
+  { "bereich": "Tonalität", "text": "Humor aus der Schicht" },
+  { "bereich": "Botschaft", "text": "Durchhalten ohne Zucker" }
+],
+"typen": [
+  { "name": "Abenteurer",       "winkel": 0 },
+  { "name": "Performer",        "winkel": 51 },
+  { "name": "Disziplinierte",   "winkel": 103 },
+  { "name": "Traditionalisten", "winkel": 154 },
+  { "name": "Harmoniser",       "winkel": 206 },
+  { "name": "Offene",           "winkel": 257 },
+  { "name": "Hedonisten",       "winkel": 309 }
+]
+```
+
+### Sprechtext (ca. 1 Minute, rund 115 Wörter)
+
+> Was treibt Marco an – und spricht HOLY dieselben Motive an? Die Limbic Map nach Häusel ordnet Motive drei Systemen zu: Balance,
+> Dominanz, Stimulanz. Die Prozente sind unsere Schätzung, keine Messung.
+>
+> Marco ist leicht Stimulanz-betont: Technik, Neues, Zocken als Hobby. Am ehesten gehört er zu den Hedonisten. Dazu kommt Dominanz im
+> Alltag: Er will die Schicht durchhalten.
+>
+> HOLY spricht vor allem Spaß und Kreativität an: Comic-Tiere, 31 Energy-Sorten, frecher Ton. Bei Balance passt das gute Gewissen:
+> zuckerfrei. Die Lücke liegt bei Dominanz: HOLY verspricht Wirkung, zeigt aber kaum die Schicht.
+>
+> Unser Urteil: passt teilweise. Daraus folgen echte Schichtmomente, Humor aus der Schicht statt Doppeldeutigkeit und die Botschaft
+> „Durchhalten ohne Zucker“. Wie die Zielgruppe HOLY sieht, zeigt Lukas.
+
+### Mögliche Rückfragen
+
+1. **„Wie kommt ihr auf die Prozentwerte?“**
+   In den Quellen der Gruppe Nymphenburg, die wir geprüft haben, gibt es keine Prozentgewichte für Balance, Dominanz und Stimulanz einer
+   Person; Prozente gibt es dort nur für die Verteilung der Typen in der Bevölkerung. Die Gewichte sind unsere Heuristik. Wir haben die
+   Signale gezählt – aus Daten über Energy-Drink-Konsument:innen, Gründeraussagen und Kundenstimmen; leicht = 1, mittel = 2 Punkte:
+   Stimulanz kommt auf 5, Dominanz und Balance auf je 3. Am deutlichsten weichen Videospiele (+12) und Technik (+7 Prozentpunkte) vom
+   Durchschnitt ab (Statista Consumer Insights 2025). Daraus schätzen wir 40/30/30. Weil das eine grobe Schätzung ist, nennen wir eine
+   Spanne von ±5 Punkten.
+2. **„Warum Hedonisten und nicht Abenteurer?“**
+   Für Risikofreude, Autonomie, Impulsivität oder Rebellion finden wir in den Daten kein Signal; nur Alter und Geschlecht sprechen laut
+   Modell leicht dafür, und das sind Aussagen über Gruppen. Die Abenteuer-Hinweise in unserem ersten Entwurf kamen aus HOLYs Werbung
+   (Limited Drops, „7 vs. Wild“, Humor), nicht aus Daten über die Zielgruppe. Das wäre ein Zirkelschluss gewesen.
+3. **„Warum nicht Offene?“**
+   Das ist knapp. Für die Offenen sprechen Geschmack und gutes Gewissen, aber nur über einzelne Kundenstimmen. Für die Hedonisten sprechen
+   Kategoriedaten zu Neugier und Unterhaltung. Der Beschreibungstext passt zu keinem Typ ganz: Hedonisten gelten laut Gruppe Nymphenburg
+   als „Trendsetter“, aber 85 % der Energy-Drink-Konsument:innen sind keine frühen Übernehmer. Die Auswertung der Bewertungen entscheidet.
+4. **„Eine Marke hat doch keinen Limbic Type?“**
+   Richtig. Typen beschreiben Menschen: Laut Gruppe Nymphenburg werden Befragte über das „Hauptemotionsfeld“ ihrer Persönlichkeit einem
+   Typ zugeordnet. Den Auftritt von HOLY verorten wir über die Felder, die seine Signale ansprechen: Spaß und Kreativität, Abenteuer und
+   Risiko, Harmonie und Fürsorge. Der Punkt ist nur ein Mittelwert. Er fällt zwischen die Felder, rechnerisch sogar knapp in den Sektor
+   der Offenen – deshalb zeigen wir die Felder.
+5. **„Stimulanz weicht doch genauso ab – und zeigt HOLY die Schicht wirklich nicht?“**
+   Ja, beide je 10 Punkte; bei Dominanz fehlt etwas, bei Stimulanz ist eher zu viel da. Die Zahl ist nur eine Tendenz. Getragen wird das
+   Urteil vom Anlass: In den vier belegten Bildmotiven kommt die Schicht nicht vor, in Texten nur vereinzelt und doppeldeutig, etwa
+   „Damit bleibst du die ganze Nacht wach“. HOLY selbst nennt 2026 als Anlässe Alltag, Sport und Training (Press Kit). Die Wirkung
+   bewirbt HOLY durchaus, mit „~4h“ auf jeder Produktseite, aber ohne den Moment, in dem man sie braucht.
+6. **„Dominanz fehlt – warum dann weniger Provokation?“**
+   Es fehlt nicht mehr Dominanz, sondern eine andere: Durchhalten statt Rebellion. Die Doppeldeutigkeiten sprechen Abenteuer und Risiko an;
+   dafür haben wir bei Marco keine Daten. Den Humor behalten wir, nur aus der Schicht statt aus der Doppeldeutigkeit. Ob das stimmt,
+   prüfen Lukas' Interviews.
+7. **„Warum nicht Performer? Erfolg liegt doch über dem Durchschnitt.“**
+   Dafür gibt es nur einen Datenpunkt („erfolgreich sein“ +5 Prozentpunkte), aber keine Status-Signale: Einkommen und Sparen liegen im
+   Durchschnitt.
+
+### Zu prüfen
+
+- [ ] Gewichte, Typ (Hedonisten, knapp vor Offene) und Urteil „passt teilweise“ von Yannick freigeben lassen
+- [ ] Mit der Limbic-Map-Grafik der Vorlesung abgleichen: Map-Version, Feldnamen, Lage der Typen; bis dahin Typen-Grafik nymphenburg.de
+  für die Typen und [105] S. 3 für die Felder (bei Verwendung der Originalgrafik den Vermerk „© Hans-Georg Häusel / Gruppe Nymphenburg
+  Consult AG“ übernehmen)
+- [x] Grafik `grafiken/folie-05-limbic-map.svg` + PNG für Backup B1 erstellt (17.10.)
+- [ ] Web-Präsentation f05 (`praesentation/index.html`) austauschen: Daten inkl. Typ-Winkel und `hinweis` (siehe oben), Titel (statt
+  „spricht Marcos Spaß an, kaum seinen Ehrgeiz“), Sprechernotizen aus dem Sprechtext oben (ohne „Überschneidung 90 %“, mit Überleitung zu
+  Folie 06), Fußzeile = Quellenzeile oben; Branch von Account 2 beachten
+- [ ] Account 2 bitten: `fitHinweis` („Gewichte: Hypothese (Dossier 4.4)“) und „– größte Lücke“ stehen fest im Skript
+  (`js/folien/05-limbic-map.js` Z. 507, 522–523) → als Datenfelder anlegen (Vorschlag Kennzahl-Text: „Lücke“); Markenpunkt als
+  „Mittelwert“ beschriftbar oder ausblendbar machen
+- [ ] Folie 10 (Steuerrad, `index.html` Daten, Sprechtext und Belegzeile, auf beiden Branches): „Abenteurer“ → „Hedonisten“
+- [x] (17.10.) Folie 4 angleichen: Sprechtext „oft im Schichtdienst“ statt „vor allem“; Psychografie „Erfolg etwas wichtiger als im Ø“ ohne „Spaß“;
+  ebenso `persona-steckbrief.md` (Psychografie, Limbic Type)
+- [ ] Auswertung der Bewertungen (K1, K3, K8) und Lukas' echte Interviews abwarten; Entscheidungsregel `limbic-map.md` 3.2 anwenden
+- [ ] Elias' Post-Stichprobe mit den Spalten „Anlass“ und „Wirkversprechen“ (bis So 18.10.); Schwelle für „Lücke bestätigt“ vorher festlegen
+- [ ] Botschaft 3 mit zugelassenen Angaben abgleichen (Dossier 3.7, S1)
+- [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00 (drei Klicks und die hochzählende Kennzahl einrechnen)
