@@ -1,12 +1,12 @@
 # Folienentwürfe – Fallstudie 1
 
 Pro Folie: Titel als Kernaussage · Text auf der Folie · Visualisierung · Sprechtext · mögliche Rückfragen.
-Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). `[MARKE]` wird ersetzt, sobald die Marke feststeht.
+Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOLY (gewählt am 13.10.2026).
 
 | Folie | Thema | Bündel | Status |
 |-------|-------|---------|--------|
-| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ – `[MARKE]` noch durch HOLY ersetzen |
-| 3 | Markenkompetenz | A | offen |
+| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ |
+| 3 | Markenkompetenz | A | Entwurf ✔ (17.10.) – Prüfung durch Yannick offen |
 | 4 | Brand Persona | A | Entwurf ✔ (16.10.) – Prüfung durch Yannick offen |
 | 5 | Limbic Map | A | Entwurf ✔ (17.10.) – Prüfung durch Yannick offen |
 | 6–11 | | | offen |
@@ -19,16 +19,16 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). `[MARKE]` 
 
 ### Titel (Kernaussage)
 
-> **Sechs Methoden, ein Modell: So leiten wir die Identität von [MARKE] her**
+> **Sechs Methoden, ein Modell: So leiten wir die Identität von HOLY her**
 
 Alternativen:
 - *Jede Methode füllt ein Feld des Markensteuerrads*
-- *Vom Fakt zum Gefühl: unser Weg zur Markenidentität von [MARKE]*
+- *Vom Fakt zum Gefühl: unser Weg zur Markenidentität von HOLY*
 
 ### Text auf der Folie
 
 - **Leitfrage** (eine Zeile unter dem Titel):
-  *Wofür steht [MARKE] – und passt ihr heutiger Auftritt dazu?*
+  *Wofür steht HOLY – und passt ihr heutiger Auftritt dazu?*
 - **Grafik** (füllt den Rest der Folie, siehe unten)
 - **Quellenzeile** (klein, unten links): *Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map), erstellt mit KI-Unterstützung*
 
@@ -55,7 +55,7 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
 
 ### Sprechtext (ca. 1 Minute)
 
-> Unsere Leitfrage lautet: Wofür steht [MARKE] – und passt ihr heutiger Auftritt dazu?
+> Unsere Leitfrage lautet: Wofür steht HOLY – und passt ihr heutiger Auftritt dazu?
 >
 > Um das zu beantworten, nutzen wir das Markensteuerrad nach Esch. Es beschreibt die Identität einer Marke in fünf
 > Feldern: links die harten Fakten, also Attribute und Nutzen, rechts die weichen, also Tonalität und Markenbild, und
@@ -75,7 +75,7 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
    Identität, und jede unserer Methoden lässt sich genau einem Feld zuordnen. Dadurch ist nachvollziehbar, woher jede
    Aussage im fertigen Steuerrad kommt.
 2. **„Markenidentität ist das Selbstbild – warum fragt ihr die Zielgruppe?“**
-   Wir betrachten beide Seiten: das Selbstbild aus Website, Geschäftsbericht und eigener Kommunikation und das Fremdbild
+   Wir betrachten beide Seiten: das Selbstbild aus Website, Press Kit, Gründer-Interviews und eigener Kommunikation und das Fremdbild
    aus Repertory Grid und Laddering. Wo beides auseinandergeht, setzen unsere Empfehlungen an.
 3. **„Wie belastbar sind Ergebnisse mit KI-Tools?“**
    Die KI haben wir für Recherche, Strukturierung und simulierte Befragte genutzt. Fakten haben wir an den Quellen
@@ -84,11 +84,170 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
 
 ### Zu prüfen
 
-- [ ] `[MARKE]` einsetzen, sobald die Liste von Prof. Stenger da ist
+- [x] `HOLY` durch HOLY ersetzt (17.10.)
 - [ ] Anordnung der Felder mit der Grafik aus der Vorlesung abgleichen (die Grafik folgt der Standardliteratur)
 - [ ] Farben und Schrift an den Folienmaster anpassen
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00
 - [ ] Rückfrage 3 erst final formulieren, wenn klar ist, wie viele echte Interviews es wurden
+
+---
+
+## Folie 3 – Markenkompetenz
+
+**Bündel:** A · **Zeit:** 0:45 · **Backup-Bezug:** B7 Quellenverzeichnis. Rollenbegriffe und Zahlenreihen: *geplant* als eigene Backup-Folie (z. B. B1b „Markenkompetenz: Rollen, Zahlenreihen“) oder als Verweis auf `markenkompetenz.md`; mit Elias und Account 2 klären, denn B1 enthält nur die KI-Methodik ·
+**Ausarbeitung:** [`markenkompetenz.md`](markenkompetenz.md)
+
+### Titel (Kernaussage)
+
+> **HOLY: Herausforderer mit zuckerfreien Softdrinks zum Selbermixen**
+
+Alternativen:
+- *Vom Berliner Wohnzimmer zum Softdrink-Herausforderer* (Press Kit: „in einem Berliner Wohnzimmer“ [13], eigene Prüfung 17.10.2026, nicht im Dossier)
+- *Vom Gaming Booster zur Softdrink-Marke: HOLY als Herausforderer* (✔ [22, 24, 25])
+
+In der Web-Folie f03 (Muster „[Marke]: <Rolle> mit <Kernkompetenz>“): *HOLY: Herausforderer mit Softdrinks zum Selbermixen*. `kernkompetenz` hat 26 Zeichen (Richtwert ca. 24), Umbruch prüfen.
+„Herausforderer“ ist unsere Einordnung nach Kotler: Kriterium Verhalten (Angriff), Bezugsmarkt Softdrinks (H). „Zuckerfreie Softdrinks zum Selbermixen“ ist HOLYs eigene Formulierung ✔ [13].
+**Variante B** (nur falls die Vorlesung die Rollen nach Marktanteil vergibt): *HOLY: Spezialist mit Softdrinks zum Selbermixen*, Chip „Spezialist“ gefüllt, „Herausforderer“ umrandet (= Anspruch).
+
+### Text auf der Folie
+
+- **Kicker:** *Desk Research · Wer bin ich?*
+- **Zeitleiste** (5 Einträge, Jahr + Text; Monate nur in den Notizen):
+
+| Jahr | Text | Status | Quelle |
+|---|---|:--:|---|
+| 2020 | Gründung in Berlin | ✔ | [3] |
+| 2021 | Gaming Booster, online | ✔ | [4, 22] |
+| 2022 | Iced Tea → Softdrinks | ✔ | [4, 24] |
+| 2024 | erster Supermarkt | ✔ | [6] |
+| 2026 | TV-Kampagne und Syrup | ✎ | [5, 25, 39] |
+
+  Nur in den Notizen: 2023 Series A ✔ [15], 11/2025 Umfirmierung zur HOLY Softdrinks GmbH ✎ [3].
+
+- **Drei Kennzahlen**, darüber einmal die Überschrift *Laut Unternehmen*:
+
+| Wert | Bezeichnung | Quelle (klein) |
+|---|---|---|
+| über 170 Mio. € | Umsatz 2025 | ✎ [13, 16] · 02/2026 |
+| über 2 Mio. | Kund:innen | ✔ [13] · 02/2026 |
+| über 170 | Mitarbeitende | ✎ [5, 17] · 10/2026 |
+
+  Regel für alle drei: Bei mehreren Firmenangaben gilt die niedrigste aktuelle mit „über“. In der Web-Folie bleibt „laut Unternehmen“ in jeder Kachel, solange im HTML keine Überschrift steht (Dossier 9.4).
+
+- **Marktrolle** (ohne Label): Chips *Marktführer · Herausforderer · Mitläufer · Spezialist*, nur „Herausforderer“ gefüllt, kein Zusatz-Chip. Die Rollenbegriffe folgen Kotler, „Spezialist“ entspricht dem Nischenanbieter; mit der Vorlesung abgleichen. Begründung (ein Satz): *Greift den ganzen Softdrink-Markt an*.
+  Metazeile: *Jost ✔ [24] · „Challenger-Brand“ ✔ [13] · Rolle nach Kotler, Kriterium Angriff (H)*
+- **Claim:** *„Geiler Geschmack mit gutem Gewissen“*. Metazeile: *Markenversprechen laut Website und Press Kit ✔ [5, 13]*. [5] belegt das Dossier 6.5; [13] stammt aus der eigenen Prüfung vom 17.10.2026 und wird in B7 vermerkt.
+- **Fußzeile** (klein): *Quellen: Recherche-Dossier Kap. 2 (14.10.2026), eigene Prüfung 17.10.2026, Nr. 3–6, 13, 16, 17, 22, 24, 25, 39 → Backup B7 · Kennzahlen = Selbstauskünfte · ✔ geprüft · ✎ korrigiert · H unsere Einordnung · Rolle nach Kotler, Feld nach Esch*. In der Web-Folie setzt das Skript die Nummern aus den Daten ein. Die Namen der Quellen stehen nur in B7.
+- **Textmenge:** Haupttext 58 Wörter, ohne Jahreszahlen und Zahlenwerte 47; dazu 14 Wörter Metazeilen und 21 Wörter Fußzeile. Das liegt über dem Richtwert von ~40 Wörtern, weil A1 Zeitleiste, 3 Kennzahlen, Rolle und Claim verlangt.
+- **Nicht auf die Folie:** Marktanteil (nicht belegbar, Circana-Daten gibt es nur für Energy Drinks), „profitabel“ (Jahresabschluss 2024 ungeprüft), Verkaufsstellen (6.000 / 8.500 / 10.000+ widersprechen sich), Portionen, „2,5 Mio. Kund:innen“ (andere Definition), Umfirmierung (nur Notizen).
+
+### Visualisierung
+
+Die Folie selbst ist die Web-Folie f03. Dieselben Inhalte als Grafik (für PowerPoint bzw. Backup):
+
+![Folie 3: Markenkompetenz von HOLY](grafiken/folie-03-markenkompetenz.png)
+
+Datei: [`grafiken/folie-03-markenkompetenz.svg`](grafiken/folie-03-markenkompetenz.svg) (PNG daneben; erzeugt mit
+`grafiken/folie-03-markenkompetenz.py`).
+
+- **Oben, ganze Breite:** horizontale Zeitleiste 2020–2026 mit Abständen nach Jahren (Lücken 2023 und 2025 bleiben sichtbar), 2020 als Startpunkt hervorgehoben. Die Linie wechselt ab 2024 die Farbe: bis 2023 nur online, ab 2024 auch im Handel (belegt ✔ [4, 6]). Die drei „Etappen“ des Dossiers (Gaming Booster → Softdrinks → Massenmarkt) werden nicht als Bänder eingezeichnet, weil sie eine Hypothese sind; sie stehen nur in den Notizen bzw. im Backup, gekennzeichnet.
+- **Unten links (7/12):** Überschrift „Laut Unternehmen“, darunter drei Kennzahl-Kacheln: große Zahl, darunter Bezeichnung und „Status Nummer · Stand“. Kein Diagramm: Drei Werte mit verschiedenem Bezug passen nicht auf eine Achse.
+- **Unten rechts (5/12):** vier Rollen-Chips als gleichwertige Kategorien, nur „Herausforderer“ gefüllt; darunter der Begründungssatz mit Metazeile und der Claim als Zitat.
+- **Fußzeile** mit Kurzlegende ✔ / ✎ / H.
+- **Steuerrad-Symbol** oben rechts mit hervorgehobenem Zentrum (Idee aus Folie 2).
+
+### Sprechtext (ca. 0:45, 82 Wörter)
+
+> Drei Freunde gründen HOLY 2020 in Berlin, 2021 startet die Marke als Gaming Booster, nur online. Mit dem Iced Tea zielt HOLY ab 2022 auf den ganzen Softdrink-Markt: 2024 erster Supermarkt, 2026 große TV-Kampagne und Syrup.
+>
+> Laut Unternehmen: über 170 Millionen Euro Umsatz 2025, über zwei Millionen Kund:innen. Geprüfte Bilanzzahlen liegen uns nicht vor.
+>
+> Nach Kotler ist HOLY für uns ein Herausforderer: Es greift mit eigenem Format an – zuckerfreien Softdrinks zum Selbermixen. Für wen? Das zeigt unsere Persona, ein Energy-Trinker im Schichtdienst.
+
+Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; laut lesen und stoppen. Folie 4 beginnt wie geplant mit „Das ist Marco, 28“. Mitarbeitende, Umfirmierung, „Challenger-Brand“ und Claim stehen auf der Folie oder in den Notizen. Bei Variante B lautet der Satz: „Nach Kotler ist HOLY für uns ein Spezialist mit Herausforderer-Anspruch: …“.
+
+### Mögliche Rückfragen
+
+1. **„Wie belastbar sind die 170 Millionen?“**
+   Es ist eine Selbstauskunft: Das Press Kit 02/2026 nennt „+170M Jahresumsatz (2025)“ [13], die WirtschaftsWoche schreibt „laut eigenen Angaben“ [16], Mitgründer Horsch spricht sogar von „€180m+“ [159]. Für 2025 ist noch kein Jahresabschluss offengelegt. Der letzte ist der Abschluss 2024, veröffentlicht am 31.03.2026 [3] (North Data, Abruf 17.10.2026). Unabhängig prüfen ließe sich also nur die Vorjahresangabe (laut Horsch „~€75m“ für 2024 [159]), und auch das nur, wenn die GuV Umsatzerlöse ausweist; bei verkürzter GuV fehlen sie (Modellwissen, § 276 HGB). Deshalb steht auf der Folie „über 170 Mio. €, laut Unternehmen“. [Ergebnis 2024 (Jahresergebnis, ggf. Umsatz) eintragen, sobald Yannick den Abschluss hat.]
+2. **„HOLY taucht im Marktanteil gar nicht auf – warum Herausforderer?“**
+   Wir trennen zwei Märkte. Im Energy-Drink-Handel (Deutschland, Circana MAT 08/2025, Daten aus einem Schulungsheft, das mit Red Bull entstand) fehlt HOLY in den Top 5, Red Bull hat rund 58 % des Umsatzes ✔ [26]. Nach Marktanteil wäre HOLY dort klein, also eher Spezialist (bei Kotler: Nischenanbieter). Wir ordnen aber nach dem Verhalten ein; so unterscheidet Kotler die Rollen hinter dem Marktführer (Modellwissen, mit der Vorlesung abgleichen). HOLY greift laut Jost den ganzen Softdrink-Markt an ✔ [24], das Leitbild ist „das Coca-Cola des 21. Jahrhunderts“ ✔ [14, 17, 46], dazu kommen Handel und die erste große TV-Kampagne ✔ [6, 25]. Im Energy-Segment will HOLY „dauerhaft unter den Top 3“ sein ✔ [51]. Softdrink-Marktanteile nennen wir nicht, dazu haben wir keine Daten.
+3. **„Gönrgy meldet Platz 3 – warum ist dann HOLY der Herausforderer?“**
+   Das ist eine Eigenangabe von Gönrgy auf anderer Datenbasis (NielsenIQ, ohne Handelsmarken, nach Litern) ✔ [109]. Kotlers Rollen sind keine Rangliste mit je einem Platz: Herausforderer kann jede Marke hinter dem Marktführer sein, die angreift (Modellwissen). Gönrgy kann also ebenfalls Herausforderer sein.
+4. **„Pulver-Softdrinks waren doch neu – warum nicht Pionier?“**
+   HOLY war nicht der Erste. Symrise schrieb 2021, das Produkt „bewegt sich im trendigen Markt der Gaming-Booster“ ✔ [22]. LevlUp wurde schon 2018 gegründet und machte 2020 rund 19 Mio. € Umsatz (deutsche-startups.de, #DealMonitor 30.08.2021, eigene Prüfung). Zuckerfreie Energy Drinks gab es ebenfalls ✔ [65]. „Kein Pionier“ ist unsere Einordnung (H). Zum Begriff nur vorsichtig: In der Strategielehre meint „Pionier“ meist den Zeitpunkt des Markteintritts (z. B. welt-der-bwl.de, „Folgerstrategie“). Ob die Vorlesung ihn wie `methoden.md` als Rolle führt, klären wir noch.
+5. **„Warum hat HOLY das Gaming aufgegeben?“**
+   Laut Mitgründer Jost wurde HOLY „in der Regel gar nicht beim Gaming konsumiert“. Mit dem Eistee habe man erkannt, dass man den „gesamte[n] Soft-Drink-Markt“ angreifen wolle ✔ [24] (automatisches Transkript, im Audio prüfen). Den Start als „Gaming Booster“ belegen die Symrise-Mitteilung 2021 und die archivierte Startseite 2022 ✔ [22, 23]. Die Website erzählt die Herkunft heute ohne Gaming („2020 sind wir in einer kleinen WG …“ ✔ [5]).
+6. **„Ist HOLY nun Energy Drink oder Softdrink?“**
+   Im Selbstbild ein Softdrink: spätestens seit 08/2023 „healthier soft drink“ ✔ [15], heute „zuckerfreie Softdrinks zum Selbermixen“ ✔ [13]. Energy ist eine von fünf Linien (Dossier 3.1 ✔ [1, 30, 54]). Unsere Persona (Folie 4) nutzt HOLY vor allem als Energy. Den Rahmen für das Wettbewerbsset legt die Gruppe noch fest.
+7. **„Gutes Gewissen – bei 160 mg Koffein?“**
+   Das Versprechen steht unter Druck: 160 mg pro Portion ✔ [56], eine Warnung des VKI 12/2024 ✔ [27], Berichte von KONSUMENT und Stiftung Warentest 2026 ✔ [28, 29]. Online verkauft HOLY Energy seit 08–09/2026 erst ab 18 ✔ [12]. Mehr dazu auf Folie 9–11.
+8. **„waterdrop macht das auch – warum ist Selbermixen HOLYs Kompetenz?“**
+   Die Markenkompetenz beschreibt die Soll-Identität (Esch: „Soll-Markensteuerrad“), keine Alleinstellung. Gegenüber Dosen-Energy und Cola unterscheidet das Format klar; waterdrop ist ein Format-Zwilling. Belegte Unterschiede (Dossier 5.2): Pulver und Syrup statt Brausewürfel; 160 mg ✔ [56] statt ≈ 90 mg Koffein (Microenergy); kein Abo ✔ [30, 48], waterdrop dagegen mit Abo (✎ [7, 66, 116]).
+9. **„Auf Folie 6 ist ‚selbst anrühren‘ eine Hürde – widerspricht das Folie 3?“**
+   Nein, das ist ein Befund: Kompetenz laut HOLY (Selbstbild, Folie 3), Hürde laut Befragten (Fremdbild, Folie 6). Diese Lücke greifen wir auf Folie 10/11 auf. Folie 6 zeigt derzeit Beispieldaten; nach Lukas' Auswertung am Mo 19.10. bestätigen oder streichen.
+10. **„Wie viele aktive Kund:innen hat HOLY?“**
+    Dazu gibt es keine Angabe. Das Press Kit nennt „2M+ loyale Kund:innen“ ohne Definition [13], HV Capital „>2.5M“ „since founding“ [14], die WiWo 2,5 Mio. ohne Definition [16]. Alles sind Selbstauskünfte.
+
+### Zu prüfen
+
+- [ ] Yannick: Titel, Rolle (Herausforderer, Kriterium Angriff, Bezugsmarkt Softdrinks), Kernkompetenz, Zeitleiste (5 Einträge) und Kennzahlen freigeben (`markenkompetenz.md`)
+- [ ] Rollendefinition in Kotler/Keller, *Marketing-Management* (Kapitel zum Wettbewerb), und in der Vorlesung nachlesen. Danach Variante A (so) oder B (Chips tauschen, Titel „Spezialist mit …“); „Pionier“ und das Feld „Markenkompetenz“ (Esch, inkl. „zentrale Markenassets“) abgleichen; danach `rollen` festlegen
+- [ ] Jahresabschluss 2024 (und 2023) im Unternehmensregister abrufen. In Rückfrage 1 nur Jahresergebnis 2024 und ggf. Umsatz 2024 eintragen. „Profitabel“ erst danach verwenden (ein ungeprüfter Aggregator-Auszug nennt für 2024 einen Fehlbetrag)
+- [ ] Rahmen (Energy- oder Softdrink-Marke) mit dem Wettbewerbsset beschließen (`dossier-buendel-b.md` Abschnitt 10, Punkt 1) und auf Folie 3, 4 und 6 einheitlich nennen
+- [ ] Folie 6 (Lukas): im Sprechtext auf Folie 3 zurückverweisen (Selbstbild „zum Selbermixen“ ↔ Hürde „selbst anrühren“); Rückfrage 9 nach der Auswertung am Mo 19.10. prüfen
+- [ ] Folie 10 (C2): Feld `kompetenz` → „Herausforderer“, „Softdrinks zum Selbermixen“, „Berlin“; Notiz Schritt 1 und Beleg [3] anpassen; die Spannung Kompetenz ↔ Hürde als Lücke zeigen. Zusammen mit „Abenteurer“ → „Hedonisten“ in einem Durchgang erledigen, auf beiden Branches
+- [ ] Jost-Zitate [24] im Audio prüfen (Kurswechsel mit dem Eistee, „gar nicht beim Gaming“); im TikTok-Video [6] nachsehen, ob es ein REWE-Markt ist
+- [ ] Mitarbeitende und Kund:innen auf Website und Karriereseite kurz vor dem 26.10. neu ablesen
+- [x] Grafik `grafiken/folie-03-markenkompetenz.svg` + PNG erstellt (17.10.)
+- [ ] Web-Folie f03 austauschen: Daten (unten), Titel-Ersatztext („… mit Softdrinks zum Selbermixen“), Fußzeile (fester Text unten, mit Legende), Label „Marktrolle“ streichen, ggf. Überschrift „Laut Unternehmen“ ergänzen (dann `quelle` in den Kennzahlen leeren), Notizen = Sprechtext + Belegabsatz (komplett neu, unten), Markenname als `<span data-marke></span>`. Branch von Account 2 beachten
+- [ ] Backup-Bezug mit Elias und Account 2 klären (B1b oder Verweis). In B7 vermerken, dass [13] für Claim und Herkunftszitat am 17.10.2026 selbst geprüft wurde; neue Quellen (DealMonitor 30.08.2021, ESCH-Präsentation, welt-der-bwl.de) ergänzen
+- [x] (17.10.) Beim Einfügen in `folienentwuerfe.md`: Status von Folie 3 auf „Entwurf (17.10.) – Prüfung durch Yannick offen“; in Folie 2, Rückfrage 2, „Geschäftsbericht“ durch „Press Kit, Gründer-Interviews“ ersetzen; „[MARKE]“ durch HOLY ersetzen
+- [ ] Sprechtext laut lesen und stoppen (Ziel ≤ 0:45); beim Probelauf den Pfeil „Iced Tea → Softdrinks“ (Alternative „Iced Tea: Kurs Softdrinks“) und den Umbruch des Titels prüfen
+
+### Daten für f03 (Vorschlag)
+
+`praesentation/index.html`, `<script class="daten">` in Folie f03. Wenn die Vorlesung die Liste aus `methoden.md` nutzt, bleibt `rollen` wie bisher (Pionier, Herausforderer, Spezialist, Marktführer). `rolleZusatz` ist bewusst leer.
+
+```json
+{
+  "hinweis": "Fakten aus dem Recherche-Dossier (Stand 14.10.2026) und markenkompetenz.md (Prüfung 17.10.2026); Nummern = Anhang B; Rolle = Einordnung des Teams nach Kotler, Kriterium Angriff (H); rolleZusatz bewusst leer (kein zweiter Rollen-Chip)",
+  "rolle": "Herausforderer",
+  "rolleZusatz": "",
+  "kernkompetenz": "Softdrinks zum Selbermixen",
+  "rollen": ["Marktführer", "Herausforderer", "Mitläufer", "Spezialist"],
+  "begruendung": {
+    "text": "Greift den ganzen Softdrink-Markt an",
+    "quelle": "Jost ✔ [24] · „Challenger-Brand“ ✔ [13] · Rolle nach Kotler, Kriterium Angriff (H)"
+  },
+  "proportional": true,
+  "zeitleiste": [
+    { "jahr": "2020", "text": "Gründung in Berlin",     "status": "✔", "nr": "[3]",         "detail": "GmbH-Vertrag 21.08.2020, eingetragen 09.11.2020" },
+    { "jahr": "2021", "text": "Gaming Booster, online", "status": "✔", "nr": "[4, 22]",     "detail": "Marktstart April 2021, nur eigener Onlineshop" },
+    { "jahr": "2022", "text": "Iced Tea → Softdrinks",  "status": "✔", "nr": "[4, 24]",     "detail": "Sommer 2022, zum Start koffeinfrei; Kurs auf den ganzen Softdrink-Markt" },
+    { "jahr": "2024", "text": "erster Supermarkt",      "status": "✔", "nr": "[6]",         "detail": "Frühjahr 2024 Bad Endbach (TikTok 11.05.2024: „seit 2 Wochen“); 08/2024 Spar AT [7]; ab 01/2025 Rewe und Globus, Edeka in einzelnen Märkten [8, 9]" },
+    { "jahr": "2026", "text": "TV-Kampagne und Syrup",  "status": "✎", "nr": "[5, 25, 39]", "detail": "01/2026 erste große Massenmedien-Kampagne ✔ [25]; 04/2026 Syrup zum 5. Jubiläum ✎ [5, 39]" }
+  ],
+  "kennzahlen": [
+    { "praefix": "über", "wert": 170, "dezimalen": 0, "einheit": "Mio. €", "text": "Umsatz 2025",   "quelle": "laut Unternehmen", "status": "✎", "nr": "[13, 16]", "stand": "02/2026" },
+    { "praefix": "über", "wert": 2,   "dezimalen": 0, "einheit": "Mio.",   "text": "Kund:innen",    "quelle": "laut Unternehmen", "status": "✔", "nr": "[13]",     "stand": "02/2026" },
+    { "praefix": "über", "wert": 170, "dezimalen": 0, "einheit": "",       "text": "Mitarbeitende", "quelle": "laut Unternehmen", "status": "✎", "nr": "[5, 17]",  "stand": "10/2026" }
+  ],
+  "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website und Press Kit", "status": "✔", "nr": "[5, 13]", "platzhalter": false }
+}
+```
+
+Das Skript sammelt daraus die Nummern 3–6, 13, 16, 17, 22, 24, 25, 39 (JSON geprüft).
+
+**Fußzeile (fester Text im HTML):**
+
+```html
+<p class="quelle">Quellen: Recherche-Dossier Kap. 2 (14.10.2026), eigene Prüfung 17.10.2026, Nr. <span data-g2k="quellen">3–6, 13, 16, 17, 22, 24, 25, 39</span> → Backup B7 · Kennzahlen = Selbstauskünfte · ✔ geprüft · ✎ korrigiert · H unsere Einordnung · Rolle nach Kotler, Feld nach Esch</p>
+```
+
+**Notizen, Belegabsatz (komplett neu; im HTML „HOLY“ durch `<span data-marke></span>` ersetzen):**
+
+> Belege (Recherche-Dossier, Stand 14.10.2026; „eigene Prüfung“ = selbst nachgelesen am 17.10.2026): Gründung – GmbH-Vertrag 21.08.2020, eingetragen 09.11.2020, Sitz Berlin ✔ [3]; Gründer und Geschäftsführer Jost, Horsch, Naß ✔ [2]. Marktstart April 2021 im eigenen Onlineshop als „Gaming Booster“ ✔ [4, 22]. Sommer 2022 Iced Tea, laut Jost Kurs auf den „gesamte[n] Soft-Drink-Markt“ ✔ [4, 24] (automatisches Transkript). 08/2023 Series A 10,5 Mio. € ✔ [15]. Frühjahr 2024 erster Supermarkt in Bad Endbach ✔ [6]; 08/2024 Spar Österreich ✔ [7]; ab 01/2025 Ausbau bei Rewe und Globus, Edeka nur in einzelnen Märkten belegt ✔ [8, 9]. 11/2025 Umfirmierung zur HOLY Softdrinks GmbH ✎ [3]. 01/2026 erste große Massenmedien-Kampagne „Mach's dir wie nie zuvor“ (TV, Streaming, DOOH) ✔ [25]; 04/2026 Syrup zum 5. Jubiläum ✎ [5, 39]. Kennzahlen, alles Selbstauskünfte: über 170 Mio. € Umsatz 2025 (Press Kit „+170M“, WiWo „laut eigenen Angaben“, Horsch „€180m+“) ✎ [13, 16, 159]; über 2 Mio. Kund:innen (Press Kit „2M+“) ✔ [13], HV Capital zählt „>2.5M“ seit Gründung [14]; über 170 Mitarbeitende (Karriereseite „170+“, Website „200-köpfiges Team“, beide 10/2026) ✎ [5, 17]. Die Jahresabschlüsse 2021–2024 sind offengelegt, aber nicht abgerufen; für 2025 gibt es noch keinen [3]. Einen Marktanteil zeigen wir nicht: In den Circana-Top-5 der Energy Drinks (DE, MAT 08/2025; Schulungsheft, das mit Red Bull entstand) fehlt HOLY, Red Bull hat ≈ 58 % ✔ [26]; vermutlich zählt Circana Pulver nicht zur Kategorie (H). Rolle: Selbstbild „Challenger-Brand“ ✔ [13]; Jost ✔ [24]; Leitbild „das Coca-Cola des 21. Jahrhunderts“ ✔ [14, 17, 46]; Herausforderer = unsere Einordnung nach Kotler, Kriterium Angriff, Bezugsmarkt Softdrinks (H); kein Pionier (H; Symrise 2021 [22], LevlUp seit 2018). Trending Topics [7] nur als Beleg für Spar AT, der Titel „fordert Coca-Cola, Red Bull und Co. heraus“ ist eine Zuspitzung der Redaktion. Claim: Markenversprechen ✔ [5], im Press Kit als Überschrift [13] (eigene Prüfung). Rollen nach Kotler, Feld „Markenkompetenz“ nach Esch (Standardliteratur) – mit den Vorlesungsfolien abgleichen.
 
 ---
 

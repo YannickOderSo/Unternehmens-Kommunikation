@@ -74,8 +74,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | `limbic-map.md`, Folienentwurf Folie 5, Grafik SVG + PNG; Persona neu: Hedonisten statt Abenteurer |
 | 53 | 17.10.2026 | Yannick | Info: Lukas hat den Gründer per LinkedIn befragt (14 Fragen, Antwort als Sprachnachricht) | – | Antwort im Chat: Nutzung, Einwilligung, nächste Schritte |
 | 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
-| 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | in Arbeit (Workflow D11) |
-| 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet |
+| 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | `markenkompetenz.md`, Folienentwurf Folie 3, Grafik SVG + PNG |
+| 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -949,7 +949,7 @@ los.“)*
   Recherche-Dossier). Workflow D11 gestartet (Dossier-Auszug, zwei Web-Prüfungen, Synthese, drei Prüfer, Bearbeiter).
   Der erste Lauf brach sofort ab: Alle 8 Unteragenten scheiterten am Nutzungslimit („You've hit your session limit“),
   ohne Ergebnis.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** siehe 56 (zweiter Lauf)
 - **Unteragenten:** D11
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -957,8 +957,37 @@ los.“)*
 
 > Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
 
-- **Vorgehen Claude:** Workflow D11 mit demselben Skript neu gestartet (zweiter Lauf).
-- **Ergebnis:** in Arbeit
+- **Vorgehen Claude:**
+  - **Workflow D11, zweiter Lauf** mit demselben Skript; alle 8 Unteragenten fertig (siehe Abschnitt 2).
+  - **Ergebnis:**
+    - Titel „HOLY: Herausforderer mit zuckerfreien Softdrinks zum Selbermixen“.
+    - Rolle Herausforderer nach Kotler (Kriterium Angriff, Bezugsmarkt Softdrinks; unsere Einordnung). Variante B
+      „Spezialist“, falls die Vorlesung nach Marktanteil einordnet.
+    - Kernkompetenz in HOLYs eigener Formulierung (Press Kit).
+    - Zeitleiste mit 5 Einträgen, 3 Kennzahlen als Selbstauskünfte („über 170 Mio. €“, „über 2 Mio.“,
+      „über 170“), Claim „Geiler Geschmack mit gutem Gewissen“.
+  - **Neu aus der Web-Prüfung:**
+    - Syrup-Start 19.04.2026 belegt.
+    - Die 6.000 bzw. „10.000+“ Verkaufsstellen haben verschiedene Bezüge.
+    - Für 2025 gibt es noch keinen Jahresabschluss. Den Abschluss 2024 muss Yannick selbst im
+      Unternehmensregister abrufen (Captcha bzw. JavaScript); Anleitung in `markenkompetenz.md` §5.
+    - Ein ungeprüfter Registerauszug widerspricht dem Selbstbild „profitabel“ → nicht auf die Folie.
+  - **Prüfung durch Claude:**
+    - Ausarbeitung und Folienentwurf gelesen.
+    - Quellennamen der Fußzeile an Anhang B geprüft; [3] ist North Data, nicht das Handelsregister → korrigiert.
+  - **Grafik** `grafiken/folie-03-markenkompetenz.py` → SVG + PNG; drei Darstellungsfehler korrigiert.
+  - **Folienentwurf Folie 3** eingefügt. Folie 2: Platzhalter `[MARKE]` durch HOLY ersetzt, „Geschäftsbericht“
+    durch „Press Kit, Gründer-Interviews“ ersetzt (HOLY veröffentlicht keinen).
+  - **Steckbrief:** „Edeka nur in einzelnen Märkten belegt“.
+  - **Herkunft:**
+    - Websuche und Seitenabruf in D11 (Abruf 17.10.2026, URLs in `markenkompetenz.md`).
+    - Was die Unteragenten nicht selbst öffnen konnten, ist als ungeprüft gekennzeichnet.
+    - Modellbegriffe (Esch, Kotler) sind als Modellwissen gekennzeichnet; Esch zusätzlich an einer
+      ESCH-Präsentation nachgelesen.
+- **Ergebnis:** [`markenkompetenz.md`](../fallstudie-1-brand-persona/markenkompetenz.md),
+  [`folienentwuerfe.md`](../fallstudie-1-brand-persona/folienentwuerfe.md) (Folie 3, Folie 2),
+  [`grafiken/folie-03-markenkompetenz.svg`](../fallstudie-1-brand-persona/grafiken/folie-03-markenkompetenz.svg) + PNG + Skript,
+  `persona-steckbrief.md`
 - **Unteragenten:** D11
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
@@ -982,6 +1011,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
+| D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1277,6 +1307,35 @@ steht hier mit dem wörtlichen Auftrag.
   - Rechenweg der Punkte nachgerechnet.
   - Die zwei Punkte außerhalb des Auftrags selbst umgesetzt (Steckbrief, Folie 4).
   - Präsentation (f05, f10) nicht geändert, siehe offene Punkte in `limbic-map.md` §8.
+
+### D11 – 17.10.2026 – ausgelöst durch Prompt 55 (Neustart nach 56)
+
+- **Art:** Workflow „markenkompetenz-a1“, acht Unteragenten in vier Phasen:
+  - Recherche: Dossier-Auszug, Web-Prüfung Finanzen, Web-Prüfung Vertrieb und Meilensteine.
+  - Synthese.
+  - Prüfen: Fakten (mit Websuche), Methode (mit Websuche), Konsistenz.
+  - Überarbeiten.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-17_markenkompetenz-a1.js`](workflows/2026-10-17_markenkompetenz-a1.js)
+  und automatisch im Rohprotokoll.
+- **Vorgaben:**
+  - Für die Folie nur ✔/✎ oder neu bestätigte Angaben; Umsätze als Selbstauskunft.
+  - Keine Uploads oder Gruppenordner-Datei öffnen; jede Aussage mit Fundstelle bzw. URL und Abrufdatum.
+  - Nur `markenkompetenz.md` schreiben, kein Commit.
+- **Ergebnis:**
+  - **1. Lauf:** abgebrochen, alle 8 Unteragenten am Nutzungslimit gescheitert, kein Ergebnis.
+  - **2. Lauf, Recherche:** 116 Dossier-Fakten; 22 Angaben zu Finanzen; 28 zu Vertrieb und Meilensteinen.
+  - **Jahresabschluss:** nicht abrufbar. Unternehmensregister nur mit JavaScript, Bundesanzeiger mit Captcha und
+    nur Abschluss 2021; die Captchas wurden bewusst nicht umgangen.
+  - **Synthese:** `markenkompetenz.md` mit ausgefüllter Vorlage §0 und Folienentwurf.
+  - **Prüfer:** 37 Befunde (2 hoch, 14 mittel, 21 niedrig). Die hohen:
+    - das Kriterium für die Kotler-Rolle war widersprüchlich;
+    - die Kernkompetenz „zum Selbermixen“ steht in Spannung zur Hürde „selbst anrühren“ auf Folie 6/10/11.
+  - **Bearbeiter:** 32 umgesetzt, 8 begründet nicht oder nur teilweise.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Ausarbeitung (Kopf und Abschnitt 1) und Folienentwurf ganz gelesen.
+  - Die Quellennummern der Fußzeile an Anhang B des Dossiers geprüft.
+  - Die Werte für die Grafik aus dem Folienentwurf übernommen.
+  - Präsentation (f03, f10) nicht geändert.
 
 ---
 
