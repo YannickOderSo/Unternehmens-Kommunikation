@@ -53,6 +53,9 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-27 | 16.10.2026 | Yannick (Account 2) | HOLY-Logo auf Folie 1 fehlt | A2-D02 (angehalten, erweitert, fortgesetzt) | Logo eingebaut (Nacharbeit, `869a3a3`), von der zweiten Abschlussprüfung mitgeprüft |
 | A2-28 | 16./17.10.2026 | System | Nacharbeit fertig; zweite Abschlussprüfung am Nutzungslimit gescheitert | A2-D02 | Ergebnis gesichert |
 | A2-29 | 17.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D02 (fortgesetzt) | master übernommen, Workflow mit resume fortgesetzt |
+| A2-30 | 17.10.2026 | System | Zweite Abschlussprüfung fertig; letzter Feinschliff am Nutzungslimit gescheitert; Neustarts | A2-D02 | Zwischenstand gesichert |
+| A2-31 | 17.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | – | (in A2-32 bearbeitet) |
+| A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff neu gestartet |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -444,6 +447,37 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   `master` übernommen (Dossier für Bündel B; keine Präsentationsdateien betroffen; `074530e`). Workflow
   `wf_fe26464c-97a` mit `resumeFromRunId` fortgesetzt: Nacharbeit aus dem Zwischenspeicher, neu laufen die zwei
   Abschlussprüfer und danach der letzte Feinschliff.
+- **Ergebnis:** *in Arbeit*
+- **Unteragenten:** A2-D02 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-30 – 17.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Benachrichtigung: Workflow „Nacharbeit Web-Präsentation …“ failed: Letzter Feinschliff nicht fertig – mit resume
+> fortsetzen („You've hit your session limit · resets 1:40pm (UTC)“). Danach mehrfach: „This session's worker process was restarted. …“
+
+- **Herkunft:** automatische Meldungen der Umgebung
+- **Stand:** Zweite Abschlussprüfung fertig – „Anforderungen“: 3 mittlere, 13 niedrige Befunde, kein hoher; „Inhalt &
+  Fakten“: 8 mittlere, 16 niedrige, kein hoher („Werte, Quellennummern und Faktenstatus stimmen“, Beispieldaten
+  folienübergreifend stimmig). Wichtigste mittlere Befunde: „160 mg Koffein“ gilt nur für HOLY Energy; Kaufverhalten auf
+  f04 als Daten statt Annahme markiert; f02 nennt „echte Befragte“, obwohl die Interviews noch ausstehen; Sprechtext f03
+  zu Bilanzzahlen widerspricht dem Dossier; Folie 04 weicht vom neuen Persona-Steckbrief (master) ab; Wortbudget f10/f11;
+  Referentenansicht springt beim Scrollen alle 3 s zurück.
+
+### A2-31 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Erneut versuchen
+
+- **Vorgehen Claude:** kam während des Nutzungslimits an; in A2-32 bearbeitet.
+
+### A2-32 – 17.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude (15:42 Uhr):** Zwischenstand des abgebrochenen Feinschliffs committet; versehentlich mitcommitteten
+  Testordner `_abschluss-fakten/` entfernt und in `.gitignore` aufgenommen (`944155a`); `master` übernommen (`570a085`);
+  Workflow `wf_fe26464c-97a` mit `resumeFromRunId` fortgesetzt – es läuft nur noch der letzte Feinschliff mit allen
+  40 Befunden der zweiten Prüfung (ungekürzt).
 - **Ergebnis:** *in Arbeit*
 - **Unteragenten:** A2-D02 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
