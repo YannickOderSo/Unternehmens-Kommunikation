@@ -72,6 +72,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 50 | 16.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | gekürztes Dossier (Zwischenstand), HTML, PDF, Prüfskript committet + gepusht |
 | 51 | 16.10.2026 | Yannick | Frage: Was steht für mich als nächstes an? | – | Antwort im Chat zusammen mit 52 (Übersicht Bündel A + C2) |
 | 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | `limbic-map.md`, Folienentwurf Folie 5, Grafik SVG + PNG; Persona neu: Hedonisten statt Abenteurer |
+| 53 | 17.10.2026 | Yannick | Info: Lukas hat den Gründer per LinkedIn befragt (14 Fragen, Antwort als Sprachnachricht) | – | Antwort im Chat: Nutzung, Einwilligung, nächste Schritte |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -908,6 +909,20 @@ Elias fällig. Ich warte auf deine Freigabe.“)*
 - **Unteragenten:** D10
 - **Prüfung durch die Gruppe:** ☐ offen
 
+
+### 53 – 17.10.2026 – Yannick
+
+> Info Lukas hat den Gründer per Linkedin angeschrieben und hat ihn 14 Fragen gestellt die hat er beantwortet per Sprachnachricht
+
+- **Vorgehen Claude:** Antwort im Chat ohne Websuche (Modellwissen und Projektregeln):
+  - Einordnung als neue Primärquelle (Selbstauskunft des Unternehmens) und wofür sie in A2, A3, B und C taugt.
+  - Hinweis auf Einwilligung nach KI-Richtlinie der HSKL, Nr. 6: Die Sprachnachricht ist personenbezogen. Vor einer
+    KI-Transkription oder einem Zitat mit Namen in der öffentlichen Präsentation ist die Zustimmung des Gründers nötig.
+  - Entwurf einer kurzen Nachricht, mit der Lukas die Zustimmung einholen kann.
+  - Vorschlag zum weiteren Vorgehen: Antworten abtippen, Abgleich mit Persona und Limbic Map.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
