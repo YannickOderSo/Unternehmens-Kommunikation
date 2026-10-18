@@ -79,6 +79,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
 | 58 | 17.10.2026 | Yannick | Account 2 arbeitet weiter; neue Aufgabe vorbereiten, sobald dessen Kontingent aufgefüllt ist | Ü03 | Übergabe Ü03: Fallstudie 2 vorbereiten |
 | 59 | 18.10.2026 | Yannick | Upload: 2 Sprachnachrichten des Gründers (LinkedIn) + Fragenkatalog (14 Fragen) | D12 (fortgesetzt) | Audio nicht geöffnet: Rückfrage zur Einwilligung; D12 nach Nutzungslimit fortgesetzt |
+| 60 | 18.10.2026 | Yannick | Antwort auf Rückfrage: „Ja, er hat zugestimmt“ (Einwilligung des Gründers) | – | lokale Transkription gestartet |
+| 61 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur KI-Nachweis committet; Präsentation bleibt bis Ende von D12 offen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1085,6 +1087,35 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D12 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 60 – 18.10.2026 – Yannick (Antwort auf eine Rückfrage von Claude)
+
+> Frage: „Hat der Gründer zugestimmt, dass seine Sprachnachrichten mit einem KI-Tool abgeschrieben und ausgewertet
+> werden dürfen? …“ – Antwort (Auswahl): **„Ja, er hat zugestimmt“**
+
+- **Vorgehen Claude:**
+  - **Spracherkennung:** in einer eigenen Python-Umgebung im Scratchpad installiert (faster-whisper 1.2.1, Modell
+    „medium“, läuft lokal im Container). Die Audiodaten gehen an keinen weiteren Dienst.
+  - **Audiodateien:** in einen eigenen Ordner im Scratchpad kopiert, nicht ins Repository; Länge 100 s und 210 s.
+  - **Transkription** im Hintergrund gestartet.
+  - **Ablage:** Das Transkript gehört in den Gruppenordner. Ins Repository kommt nur die Auswertung. Über ein
+    Zitat mit Namen auf den Folien entscheidet die Gruppe nach Rücksprache mit dem Gründer.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 61 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:**
+  - Nur KI-Nachweis und Rohprotokoll committet und gepusht.
+  - Die geänderten Präsentations- und Grafikdateien bleiben bewusst uncommittet: Workflow D12 bearbeitet sie gerade.
+    Ein Push würde einen halbfertigen Stand auf der öffentlichen Webseite (GitHub Pages) veröffentlichen.
+  - Commit folgt nach Abschluss und Prüfung von D12.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** keine
 ---
 
 ## 2. Delegationen an Unteragenten
