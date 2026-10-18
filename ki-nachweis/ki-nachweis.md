@@ -78,6 +78,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
 | 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
 | 58 | 17.10.2026 | Yannick | Account 2 arbeitet weiter; neue Aufgabe vorbereiten, sobald dessen Kontingent aufgefüllt ist | Ü03 | Übergabe Ü03: Fallstudie 2 vorbereiten |
+| 59 | 18.10.2026 | Yannick | Upload: 2 Sprachnachrichten des Gründers (LinkedIn) + Fragenkatalog (14 Fragen) | D12 (fortgesetzt) | Audio nicht geöffnet: Rückfrage zur Einwilligung; D12 nach Nutzungslimit fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1034,6 +1035,55 @@ los.“)*
     Account 2 soll sie prüfen.
 - **Ergebnis:** [`uebergaben/2026-10-17_account-2_fallstudie-2-vorbereitung.md`](uebergaben/2026-10-17_account-2_fallstudie-2-vorbereitung.md)
 - **Unteragenten:** keine (Übergabe Ü03 an Account 2)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 59 – 18.10.2026 – Yannick
+
+*(Systemhinweis davor, kein Prompt der Gruppe: Workflow D12 meldete „completed“. 5 von 10 Unteragenten waren am
+Nutzungslimit gescheitert: Umsetzung 3, drei Prüfer, Nacharbeit. Danach wurde der Arbeitsprozess der Sitzung neu
+gestartet.)*
+
+> Hier sind die Audio Dateien von linkedin und der fragenkatalog:
+> 1.Wie würdest du HOLY in zwei, drei Sätzen jemandem beschreiben, der die Marke nicht kennt?
+> 2. Wer ist eure Kernzielgruppe?
+> 3. Wer sind aus deiner Sicht eure wichtigsten Wettbewerber?
+>
+> Repertory Grid: Markeneigenschaften im Vergleich
+> 4. Welche zwei Marken sind sich jeweils ähnlich, worin unterscheidet sich die dritte, und was wäre das Gegenteil? (z.B Holy + Prime zuckerfrei, aber Monster zuckerhaltig)
+>
+> HOLY / Red Bull / More Nutrition
+> HOLY / Monster / Prime
+> HOLY / ESN / günstige Handelsmarke
+>
+> Welche 3–5 Eigenschaften machen HOLY am meisten aus, und welche davon sind für die Kaufentscheidung am wichtigsten?
+>
+> Laddering: Eigenschaft → Konsequenz → Wert
+> 6. Warum sind diese Eigenschaften für eure Kund:innen wichtig? Bitte frag dich bei jeder Eigenschaft ruhig mehrmals „Und warum ist das wichtig?“.
+> 7. Was haben die Kund:innen konkret im Alltag davon? (Konsequenz)
+> 8. Welches Gefühl oder welches persönliche Ziel steckt am Ende dahinter? (Wert)
+> 9. Was würde den Kund:innen fehlen, wenn es HOLY nicht gäbe?
+>
+> Laddering: Ableitung des Markennutzens
+> 10. Welches Problem löst HOLY besser als andere?
+> 11. Was ist der funktionale Nutzen von HOLY, und was der emotionale?
+> 12. Für welche Werte soll HOLY stehen?
+> 13. Wie zeigt sich das in eurem Marketing?
+> 14. Was sollen Kund:innen in einem Satz über HOLY sagen?
+
+*(Anhänge: zwei Audiodateien „VID-20261018-WA0003.mp3“ (ca. 3,4 MB) und „VID-20261018-WA0004.mp3“ (ca. 1,6 MB),
+laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf die Fragen von Lukas.)*
+
+- **Vorgehen Claude:**
+  - **Audiodateien nicht geöffnet und nicht transkribiert.** Die Sprachnachrichten sind personenbezogen (Stimme,
+    Name). Nach der KI-Richtlinie der HSKL, Nr. 6, und der Regel der Gruppe (Vorlage-KI: Interviews nur mit
+    ausdrücklicher Einwilligung per KI transkribieren) braucht es vorher die Zustimmung des Gründers. Rückfrage an
+    Yannick, ob sie vorliegt; vgl. Eintrag 53.
+  - **Technisch geprüft:** In der Sitzung gibt es keine Spracherkennung (nur ffmpeg). Ein Abschreiben ginge nur nach
+    Installation eines Spracherkennungsmodells.
+  - **Workflow D12 fortgesetzt** (resume): Die fertigen Agenten kommen aus dem Zwischenspeicher, der Rest läuft
+    neu. Die Teiländerungen der abgebrochenen Umsetzung 3 liegen im Arbeitsverzeichnis.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D12 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
