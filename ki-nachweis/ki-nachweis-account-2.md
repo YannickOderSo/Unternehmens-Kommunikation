@@ -58,6 +58,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff fertig |
 | A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
 | A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
+| A2-35 | 18.10.2026 | Yannick (Account 2) | Frage nach dem Projektstand (Account 1 hat viel geändert) | – | Statusbericht im Chat (Vergleich Branch ↔ master) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -517,6 +518,20 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   sich stimmig; inhaltlich gibt es vier Arten von Grafiken/Bildern – offizielle Logos, Platzhalter (Rätselbild,
   Persona-Bild, Schlüsselbild), Diagramme mit gekennzeichneten Beispieldaten und Modellgrafiken aus dem Modellwissen –,
   die die Gruppe noch ersetzen bzw. abgleichen muss.
+- **Ergebnis:** Antwort im Chat; keine Dateien geändert (außer diesem Nachweis)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-35 – 18.10.2026 – Yannick Heisler (Account 2)
+
+> Status mit dem Projekt der andere agent hat viele changes
+
+- **Vorgehen Claude:** `git fetch` und Vergleich des Branches `praesentation-account-2` (Stand 46cc7f0) mit `master`
+  (Commit-Log, `git diff --stat`, Einträge 55–63 in `ki-nachweis/ki-nachweis.md`, Kopf des Workflow-Skripts
+  `2026-10-17_praesentation-uebernahme.js`, Übergabe Ü03). Ergebnis: Account 1 hat den Branch vollständig nach `master`
+  zusammengeführt (794c8d3) und die Präsentation übernommen (Workflow D12, Änderungen noch nicht committet); auf `master`
+  sind seitdem nur Dateien außerhalb von `praesentation/` hinzugekommen (Markenkompetenz A1, Folienentwurf 03,
+  Gründerbefragung D13, Übergabe Ü03 für Fallstudie 2). Statusbericht im Chat; Ü03 nicht begonnen (wartet auf Freigabe).
 - **Ergebnis:** Antwort im Chat; keine Dateien geändert (außer diesem Nachweis)
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
