@@ -60,6 +60,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
 | A2-35 | 18.10.2026 | Yannick (Account 2) | Frage nach dem Projektstand (Account 1 hat viel geändert) | – | Statusbericht im Chat (Vergleich Branch ↔ master) |
 | A2-36 | 18.10.2026 | Yannick (Account 2) | „Alle Kapazitäten auf die aktuelle Präsentation erstmal“ (+ Befehl /workflow-authoring) | A2-D03 (Workflow) | in Arbeit: Prüfung auf Vortragsreife, Bericht `praesentation/VORTRAGSREIFE.md` |
+| A2-37 | 18.10.2026 | System | Container-Neustart (Workflow abgebrochen) und Stop-Hook „Änderungen nicht committet“ | A2-D03 (fortgesetzt) | Workflow mit resume fortgesetzt; Rohprotokoll committet |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -554,6 +555,19 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   `praesentation/_test/`, nicht im Repository); einzige neue Datei ist `praesentation/VORTRAGSREIFE.md`.
 - **Ergebnis:** in Arbeit (A2-D03)
 - **Unteragenten:** A2-D03 (Workflow, 19 Unteragenten geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-37 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Container neu gestartet: Hintergrundaufgabe „Account 2: Präsentation Fallstudie 1 (HOLY) auf Vortragsreife prüfen …“
+> gestoppt. – Danach Stop-Hook: „There are uncommitted changes in the repository. Please commit and push these changes to
+> the remote branch.“
+
+- **Vorgehen Claude:** Journal des Laufs `wf_6f15dd23-e45` gelesen: 2 von 8 Prüfern fertig (Aufgabe & Bewertung,
+  Storyline), 2 liefen. Workflow mit `resumeFromRunId` fortgesetzt (fertige Prüfer aus dem Zwischenspeicher, nicht neu).
+  Offene Änderung war nur `rohprotokoll.jsonl` (Hook) → committet und gepusht.
+- **Ergebnis:** A2-D03 läuft weiter
+- **Unteragenten:** keine neuen
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
