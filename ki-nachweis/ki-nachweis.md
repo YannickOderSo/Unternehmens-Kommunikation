@@ -81,6 +81,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 59 | 18.10.2026 | Yannick | Upload: 2 Sprachnachrichten des Gründers (LinkedIn) + Fragenkatalog (14 Fragen) | D12 (fortgesetzt) | Audio nicht geöffnet: Rückfrage zur Einwilligung; D12 nach Nutzungslimit fortgesetzt |
 | 60 | 18.10.2026 | Yannick | Antwort auf Rückfrage: „Ja, er hat zugestimmt“ (Einwilligung des Gründers) | – | lokale Transkription gestartet |
 | 61 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur KI-Nachweis committet; Präsentation bleibt bis Ende von D12 offen |
+| 62 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Nachweis und vorbereitetes Workflow-Skript committet; Präsentation bleibt bis Ende von D12 offen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1115,6 +1116,27 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
     Ein Push würde einen halbfertigen Stand auf der öffentlichen Webseite (GitHub Pages) veröffentlichen.
   - Commit folgt nach Abschluss und Prüfung von D12.
 - **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** keine
+
+### 62 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt, Auftrag aus 59/60):**
+  - **Transkription fertig** (Modell „medium“): Fragen 1–4 in WA0004, Fragen 5–14 in WA0003. Erkennungsfehler bei
+    Eigennamen, z. B. „Snow Bullshit“ (gemeint wohl „Zero Bullshit“, vgl. HOLY-Shop „Zero Zucker oder Bullsh*t.“
+    [1]) und „Puto, Holly, Scott First“ (= Firmenwert „Put the HOLY Squad first“ [17]).
+  - **Gegenkontrolle:** zweite Erkennung mit dem größeren Modell „large-v3“, ebenfalls lokal. Der erste Lauf hing
+    bei WA0003, vermutlich in einer Wiederholungsschleife. Abgebrochen und ohne Kontextübernahme zwischen den
+    Abschnitten neu gestartet.
+  - **Bereinigtes Transkript:** angelegt als Gruppenordner-Datei im Scratchpad (Kopf, Zuordnung zu den 14 Fragen),
+    nicht im Repository.
+  - **Workflow-Skript** für den Abgleich vorbereitet (`ki-nachweis/workflows/2026-10-18_gruender-befragung.js`,
+    noch nicht gestartet; wird als D13 eingetragen, sobald er läuft).
+  - Committet: Nachweis, Rohprotokoll, Workflow-Skript. Präsentation und Grafiken bleiben uncommittet, solange D12
+    läuft (wie 61).
+- **Ergebnis:** Commit + Push (Nachweis und Skript)
 - **Unteragenten:** keine
 ---
 
