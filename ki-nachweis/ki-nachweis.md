@@ -74,8 +74,15 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 52 | 17.10.2026 | Yannick | „Weiter“: Freigabe des nächsten Pakets A3 (Limbic Map) | D10 | `limbic-map.md`, Folienentwurf Folie 5, Grafik SVG + PNG; Persona neu: Hedonisten statt Abenteurer |
 | 53 | 17.10.2026 | Yannick | Info: Lukas hat den Gründer per LinkedIn befragt (14 Fragen, Antwort als Sprachnachricht) | – | Antwort im Chat: Nutzung, Einwilligung, nächste Schritte |
 | 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
-| 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | in Arbeit (Workflow D11) |
-| 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet |
+| 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | `markenkompetenz.md`, Folienentwurf Folie 3, Grafik SVG + PNG |
+| 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
+| 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
+| 58 | 17.10.2026 | Yannick | Account 2 arbeitet weiter; neue Aufgabe vorbereiten, sobald dessen Kontingent aufgefüllt ist | Ü03 | Übergabe Ü03: Fallstudie 2 vorbereiten |
+| 59 | 18.10.2026 | Yannick | Upload: 2 Sprachnachrichten des Gründers (LinkedIn) + Fragenkatalog (14 Fragen) | D12 (fortgesetzt) | Audio nicht geöffnet: Rückfrage zur Einwilligung; D12 nach Nutzungslimit fortgesetzt |
+| 60 | 18.10.2026 | Yannick | Antwort auf Rückfrage: „Ja, er hat zugestimmt“ (Einwilligung des Gründers) | – | lokale Transkription gestartet |
+| 61 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur KI-Nachweis committet; Präsentation bleibt bis Ende von D12 offen |
+| 62 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Nachweis und vorbereitetes Workflow-Skript committet; Präsentation bleibt bis Ende von D12 offen |
+| 63 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D13 | nur Nachweis committet; D12 und D13 laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -949,7 +956,7 @@ los.“)*
   Recherche-Dossier). Workflow D11 gestartet (Dossier-Auszug, zwei Web-Prüfungen, Synthese, drei Prüfer, Bearbeiter).
   Der erste Lauf brach sofort ab: Alle 8 Unteragenten scheiterten am Nutzungslimit („You've hit your session limit“),
   ohne Ergebnis.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** siehe 56 (zweiter Lauf)
 - **Unteragenten:** D11
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -957,10 +964,198 @@ los.“)*
 
 > Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
 
-- **Vorgehen Claude:** Workflow D11 mit demselben Skript neu gestartet (zweiter Lauf).
-- **Ergebnis:** in Arbeit
+- **Vorgehen Claude:**
+  - **Workflow D11, zweiter Lauf** mit demselben Skript; alle 8 Unteragenten fertig (siehe Abschnitt 2).
+  - **Ergebnis:**
+    - Titel „HOLY: Herausforderer mit zuckerfreien Softdrinks zum Selbermixen“.
+    - Rolle Herausforderer nach Kotler (Kriterium Angriff, Bezugsmarkt Softdrinks; unsere Einordnung). Variante B
+      „Spezialist“, falls die Vorlesung nach Marktanteil einordnet.
+    - Kernkompetenz in HOLYs eigener Formulierung (Press Kit).
+    - Zeitleiste mit 5 Einträgen, 3 Kennzahlen als Selbstauskünfte („über 170 Mio. €“, „über 2 Mio.“,
+      „über 170“), Claim „Geiler Geschmack mit gutem Gewissen“.
+  - **Neu aus der Web-Prüfung:**
+    - Syrup-Start 19.04.2026 belegt.
+    - Die 6.000 bzw. „10.000+“ Verkaufsstellen haben verschiedene Bezüge.
+    - Für 2025 gibt es noch keinen Jahresabschluss. Den Abschluss 2024 muss Yannick selbst im
+      Unternehmensregister abrufen (Captcha bzw. JavaScript); Anleitung in `markenkompetenz.md` §5.
+    - Ein ungeprüfter Registerauszug widerspricht dem Selbstbild „profitabel“ → nicht auf die Folie.
+  - **Prüfung durch Claude:**
+    - Ausarbeitung und Folienentwurf gelesen.
+    - Quellennamen der Fußzeile an Anhang B geprüft; [3] ist North Data, nicht das Handelsregister → korrigiert.
+  - **Grafik** `grafiken/folie-03-markenkompetenz.py` → SVG + PNG; drei Darstellungsfehler korrigiert.
+  - **Folienentwurf Folie 3** eingefügt. Folie 2: Platzhalter `[MARKE]` durch HOLY ersetzt, „Geschäftsbericht“
+    durch „Press Kit, Gründer-Interviews“ ersetzt (HOLY veröffentlicht keinen).
+  - **Steckbrief:** „Edeka nur in einzelnen Märkten belegt“.
+  - **Herkunft:**
+    - Websuche und Seitenabruf in D11 (Abruf 17.10.2026, URLs in `markenkompetenz.md`).
+    - Was die Unteragenten nicht selbst öffnen konnten, ist als ungeprüft gekennzeichnet.
+    - Modellbegriffe (Esch, Kotler) sind als Modellwissen gekennzeichnet; Esch zusätzlich an einer
+      ESCH-Präsentation nachgelesen.
+- **Ergebnis:** [`markenkompetenz.md`](../fallstudie-1-brand-persona/markenkompetenz.md),
+  [`folienentwuerfe.md`](../fallstudie-1-brand-persona/folienentwuerfe.md) (Folie 3, Folie 2),
+  [`grafiken/folie-03-markenkompetenz.svg`](../fallstudie-1-brand-persona/grafiken/folie-03-markenkompetenz.svg) + PNG + Skript,
+  `persona-steckbrief.md`
 - **Unteragenten:** D11
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 57 – 17.10.2026 – Yannick
+
+> Übernehme die Aufgabe vom zweiten Account mit den Präsentationsfolien, prüfe gerade die Grafiken nochmal und Füge gerade auf der ersten Folie und sonst wo die Holy logos ein und füge fehlende Platzhalter aus
+
+- **Vorgehen Claude:**
+  - **Stand von Account 2:** Branch `praesentation-account-2` gelesen. Letzter Stand 17.10.2026: „Präsentation
+    fertig“ (A2-33). Die Befunde der Live-Prüfung (Ü02) sind umgesetzt, das HOLY-Logo steht auf Folie 01. Ü01 und
+    Ü02 sind damit abgeschlossen; Account 1 übernimmt die Präsentation.
+  - **Zusammengeführt:** Branch nach `master` (Merge-Commit `794c8d3`). Konfliktfrei; das Rohprotokoll ist
+    vollständig (133 + 2 + 27 = 162 Zeilen, alle gültig).
+  - **Prüflauf** mit `werkzeuge/pruefen.mjs` vor allen Änderungen: 23 Folien, 80 Zustände, 0 Fehler, 4 Warnungen
+    (Wortbudget f03, f04, f10, f11).
+  - **Übersicht angesehen:** Die Folien 03, 05 und 10 zeigen noch Dossier-Werte statt der Ergebnisse von A1/A3.
+  - **Workflow D12 gestartet:**
+    - Bestandsaufnahme: Platzhalter, Grafiken, Logo-Konzept.
+    - Umsetzung in drei Schritten nacheinander.
+    - Prüfung: Darstellung, Inhalt, Rechte.
+    - Nacharbeit mit neuen Exporten.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D12
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 58 – 17.10.2026 – Yannick
+
+> Der 2te Account wird trotzdem weiter arbeiten an einer Task du kannst ihm eine neue geben sobald sein kontigent wieder aufgefüllt ist
+
+- **Vorgehen Claude:**
+  - **Auswahl der Aufgabe:** eine, die sich nicht mit der Präsentation von Fallstudie 1 überschneidet; an der arbeitet
+    Account 1 gerade (D12).
+  - **Ausgangslage geprüft:** README (Termine), Dossier Kap. 7 (Customer Journey, Blog). Für Fallstudie 2 gibt es
+    bisher keine Dateien und keine Aufgabenstellung des Profs im Repository.
+  - **Übergabe Ü03 geschrieben:** Fallstudie 2 vorbereiten, Arbeitspaket 1 (README, Methoden, Recherche-Dossier
+    Customer Journey mit Gegenprüfung, Arbeitsplan ohne Rollen).
+  - **Regeln für Account 2:**
+    - Arbeitsbereich nur `fallstudie-2-customer-journey/` und der eigene KI-Nachweis.
+    - Nichts in Fallstudie 1 ändern; nur auf dem eigenen Branch arbeiten.
+    - Die Annahmen zur Aufgabenstellung beim Prof klären.
+  - **Literatur in der Übergabe** (Court et al. 2009, Lemon & Verhoef 2016) stammt aus dem Modellwissen von Claude.
+    Account 2 soll sie prüfen.
+- **Ergebnis:** [`uebergaben/2026-10-17_account-2_fallstudie-2-vorbereitung.md`](uebergaben/2026-10-17_account-2_fallstudie-2-vorbereitung.md)
+- **Unteragenten:** keine (Übergabe Ü03 an Account 2)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 59 – 18.10.2026 – Yannick
+
+*(Systemhinweis davor, kein Prompt der Gruppe: Workflow D12 meldete „completed“. 5 von 10 Unteragenten waren am
+Nutzungslimit gescheitert: Umsetzung 3, drei Prüfer, Nacharbeit. Danach wurde der Arbeitsprozess der Sitzung neu
+gestartet.)*
+
+> Hier sind die Audio Dateien von linkedin und der fragenkatalog:
+> 1.Wie würdest du HOLY in zwei, drei Sätzen jemandem beschreiben, der die Marke nicht kennt?
+> 2. Wer ist eure Kernzielgruppe?
+> 3. Wer sind aus deiner Sicht eure wichtigsten Wettbewerber?
+>
+> Repertory Grid: Markeneigenschaften im Vergleich
+> 4. Welche zwei Marken sind sich jeweils ähnlich, worin unterscheidet sich die dritte, und was wäre das Gegenteil? (z.B Holy + Prime zuckerfrei, aber Monster zuckerhaltig)
+>
+> HOLY / Red Bull / More Nutrition
+> HOLY / Monster / Prime
+> HOLY / ESN / günstige Handelsmarke
+>
+> Welche 3–5 Eigenschaften machen HOLY am meisten aus, und welche davon sind für die Kaufentscheidung am wichtigsten?
+>
+> Laddering: Eigenschaft → Konsequenz → Wert
+> 6. Warum sind diese Eigenschaften für eure Kund:innen wichtig? Bitte frag dich bei jeder Eigenschaft ruhig mehrmals „Und warum ist das wichtig?“.
+> 7. Was haben die Kund:innen konkret im Alltag davon? (Konsequenz)
+> 8. Welches Gefühl oder welches persönliche Ziel steckt am Ende dahinter? (Wert)
+> 9. Was würde den Kund:innen fehlen, wenn es HOLY nicht gäbe?
+>
+> Laddering: Ableitung des Markennutzens
+> 10. Welches Problem löst HOLY besser als andere?
+> 11. Was ist der funktionale Nutzen von HOLY, und was der emotionale?
+> 12. Für welche Werte soll HOLY stehen?
+> 13. Wie zeigt sich das in eurem Marketing?
+> 14. Was sollen Kund:innen in einem Satz über HOLY sagen?
+
+*(Anhänge: zwei Audiodateien „VID-20261018-WA0003.mp3“ (ca. 3,4 MB) und „VID-20261018-WA0004.mp3“ (ca. 1,6 MB),
+laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf die Fragen von Lukas.)*
+
+- **Vorgehen Claude:**
+  - **Audiodateien nicht geöffnet und nicht transkribiert.** Die Sprachnachrichten sind personenbezogen (Stimme,
+    Name). Nach der KI-Richtlinie der HSKL, Nr. 6, und der Regel der Gruppe (Vorlage-KI: Interviews nur mit
+    ausdrücklicher Einwilligung per KI transkribieren) braucht es vorher die Zustimmung des Gründers. Rückfrage an
+    Yannick, ob sie vorliegt; vgl. Eintrag 53.
+  - **Technisch geprüft:** In der Sitzung gibt es keine Spracherkennung (nur ffmpeg). Ein Abschreiben ginge nur nach
+    Installation eines Spracherkennungsmodells.
+  - **Workflow D12 fortgesetzt** (resume): Die fertigen Agenten kommen aus dem Zwischenspeicher, der Rest läuft
+    neu. Die Teiländerungen der abgebrochenen Umsetzung 3 liegen im Arbeitsverzeichnis.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D12 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 60 – 18.10.2026 – Yannick (Antwort auf eine Rückfrage von Claude)
+
+> Frage: „Hat der Gründer zugestimmt, dass seine Sprachnachrichten mit einem KI-Tool abgeschrieben und ausgewertet
+> werden dürfen? …“ – Antwort (Auswahl): **„Ja, er hat zugestimmt“**
+
+- **Vorgehen Claude:**
+  - **Spracherkennung:** in einer eigenen Python-Umgebung im Scratchpad installiert (faster-whisper 1.2.1, Modell
+    „medium“, läuft lokal im Container). Die Audiodaten gehen an keinen weiteren Dienst.
+  - **Audiodateien:** in einen eigenen Ordner im Scratchpad kopiert, nicht ins Repository; Länge 100 s und 210 s.
+  - **Transkription** im Hintergrund gestartet.
+  - **Ablage:** Das Transkript gehört in den Gruppenordner. Ins Repository kommt nur die Auswertung. Über ein
+    Zitat mit Namen auf den Folien entscheidet die Gruppe nach Rücksprache mit dem Gründer.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 61 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:**
+  - Nur KI-Nachweis und Rohprotokoll committet und gepusht.
+  - Die geänderten Präsentations- und Grafikdateien bleiben bewusst uncommittet: Workflow D12 bearbeitet sie gerade.
+    Ein Push würde einen halbfertigen Stand auf der öffentlichen Webseite (GitHub Pages) veröffentlichen.
+  - Commit folgt nach Abschluss und Prüfung von D12.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** keine
+
+### 62 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt, Auftrag aus 59/60):**
+  - **Transkription fertig** (Modell „medium“): Fragen 1–4 in WA0004, Fragen 5–14 in WA0003. Erkennungsfehler bei
+    Eigennamen, z. B. „Snow Bullshit“ (gemeint wohl „Zero Bullshit“, vgl. HOLY-Shop „Zero Zucker oder Bullsh*t.“
+    [1]) und „Puto, Holly, Scott First“ (= Firmenwert „Put the HOLY Squad first“ [17]).
+  - **Gegenkontrolle:** zweite Erkennung mit dem größeren Modell „large-v3“, ebenfalls lokal. Der erste Lauf hing
+    bei WA0003, vermutlich in einer Wiederholungsschleife. Abgebrochen und ohne Kontextübernahme zwischen den
+    Abschnitten neu gestartet.
+  - **Bereinigtes Transkript:** angelegt als Gruppenordner-Datei im Scratchpad (Kopf, Zuordnung zu den 14 Fragen),
+    nicht im Repository.
+  - **Workflow-Skript** für den Abgleich vorbereitet (`ki-nachweis/workflows/2026-10-18_gruender-befragung.js`,
+    noch nicht gestartet; wird als D13 eingetragen, sobald er läuft).
+  - Committet: Nachweis, Rohprotokoll, Workflow-Skript. Präsentation und Grafiken bleiben uncommittet, solange D12
+    läuft (wie 61).
+- **Ergebnis:** Commit + Push (Nachweis und Skript)
+- **Unteragenten:** keine
+
+### 63 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt, Auftrag aus 59/60):**
+  - **Gegenkontrolle fertig:** Der zweite Lauf mit „large-v3“ (ohne Kontextübernahme) bestätigt die Lesarten der
+    Firmenwerte („Serve as one team“, „Challenge the status quo“, „Embrace the wild ride“ [17]) und „Iced Tea“.
+    Unsicher bleiben zwei Stellen: „No Bullshit“ oder „Zero Bullshit“ (beide Modelle erkennen „Snow Bullshit“) und
+    ein Halbsatz zum ersten Firmenwert. Die Gruppe soll beide Stellen selbst anhören.
+  - **Bereinigtes Transkript** (Kopf, Zuordnung zu den 14 Fragen, Tabelle der unsicheren Stellen) als
+    Gruppenordner-Datei an Yannick geschickt, nicht im Repository.
+  - **Workflow D13 gestartet** (Abschnitt 2). Antworten je Frage als Paraphrasen für die Auswertung vorbereitet.
+  - Committet: nur Nachweis und Rohprotokoll. Die Präsentation bleibt uncommittet, solange D12 läuft.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D13 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -979,9 +1174,12 @@ steht hier mit dem wörtlichen Auftrag.
 | D06 | 15.10.2026 | 32 | Workflow „persona-datenquellen“ (3 Recherche- + 3 Prüf-Agenten, mit Websuche) | Zugangswege und Inhalte der Datenquellen für die Persona recherchieren und gegenprüfen | 48 Quellen geprüft (18 bestätigt, 25 korrigiert, 4 nicht bestätigt, 1 verworfen) + 4 Ergänzungen | Claude: 5 Stichproben an der Quelle |
 | D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
 | Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
+| Ü03 | 17.10.2026 | 58 | Übergabe an Account 2 (Text zum Kopieren) | Fallstudie 2 vorbereiten, Arbeitspaket 1: README, Methoden, Recherche-Dossier Customer Journey, Arbeitsplan-Entwurf | *wartet auf Kontingent von Account 2* | – |
 | D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
+| D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
+| D13 | 18.10.2026 | 59, 60 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1277,6 +1475,35 @@ steht hier mit dem wörtlichen Auftrag.
   - Rechenweg der Punkte nachgerechnet.
   - Die zwei Punkte außerhalb des Auftrags selbst umgesetzt (Steckbrief, Folie 4).
   - Präsentation (f05, f10) nicht geändert, siehe offene Punkte in `limbic-map.md` §8.
+
+### D11 – 17.10.2026 – ausgelöst durch Prompt 55 (Neustart nach 56)
+
+- **Art:** Workflow „markenkompetenz-a1“, acht Unteragenten in vier Phasen:
+  - Recherche: Dossier-Auszug, Web-Prüfung Finanzen, Web-Prüfung Vertrieb und Meilensteine.
+  - Synthese.
+  - Prüfen: Fakten (mit Websuche), Methode (mit Websuche), Konsistenz.
+  - Überarbeiten.
+- **Auftrag (wörtlich):** vollständig im Skript [`workflows/2026-10-17_markenkompetenz-a1.js`](workflows/2026-10-17_markenkompetenz-a1.js)
+  und automatisch im Rohprotokoll.
+- **Vorgaben:**
+  - Für die Folie nur ✔/✎ oder neu bestätigte Angaben; Umsätze als Selbstauskunft.
+  - Keine Uploads oder Gruppenordner-Datei öffnen; jede Aussage mit Fundstelle bzw. URL und Abrufdatum.
+  - Nur `markenkompetenz.md` schreiben, kein Commit.
+- **Ergebnis:**
+  - **1. Lauf:** abgebrochen, alle 8 Unteragenten am Nutzungslimit gescheitert, kein Ergebnis.
+  - **2. Lauf, Recherche:** 116 Dossier-Fakten; 22 Angaben zu Finanzen; 28 zu Vertrieb und Meilensteinen.
+  - **Jahresabschluss:** nicht abrufbar. Unternehmensregister nur mit JavaScript, Bundesanzeiger mit Captcha und
+    nur Abschluss 2021; die Captchas wurden bewusst nicht umgangen.
+  - **Synthese:** `markenkompetenz.md` mit ausgefüllter Vorlage §0 und Folienentwurf.
+  - **Prüfer:** 37 Befunde (2 hoch, 14 mittel, 21 niedrig). Die hohen:
+    - das Kriterium für die Kotler-Rolle war widersprüchlich;
+    - die Kernkompetenz „zum Selbermixen“ steht in Spannung zur Hürde „selbst anrühren“ auf Folie 6/10/11.
+  - **Bearbeiter:** 32 umgesetzt, 8 begründet nicht oder nur teilweise.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Ausarbeitung (Kopf und Abschnitt 1) und Folienentwurf ganz gelesen.
+  - Die Quellennummern der Fußzeile an Anhang B des Dossiers geprüft.
+  - Die Werte für die Grafik aus dem Folienentwurf übernommen.
+  - Präsentation (f03, f10) nicht geändert.
 
 ---
 
