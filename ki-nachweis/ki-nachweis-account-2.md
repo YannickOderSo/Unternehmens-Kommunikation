@@ -59,6 +59,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
 | A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
 | A2-35 | 18.10.2026 | Yannick (Account 2) | Frage nach dem Projektstand (Account 1 hat viel geändert) | – | Statusbericht im Chat (Vergleich Branch ↔ master) |
+| A2-36 | 18.10.2026 | Yannick (Account 2) | „Alle Kapazitäten auf die aktuelle Präsentation erstmal“ (+ Befehl /workflow-authoring) | A2-D03 (Workflow) | in Arbeit: Prüfung auf Vortragsreife, Bericht `praesentation/VORTRAGSREIFE.md` |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -536,6 +537,25 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-36 – 18.10.2026 – Yannick Heisler (Account 2)
+
+> Alle Kapazitäten auf die aktuelle Präsentation erstmal
+
+- **Anhang/Befehl:** Der Prompt kam zusammen mit dem Befehl `/workflow-authoring` (lädt die Anleitung zum Schreiben von
+  Workflow-Skripten). Systemhinweis (kein Prompt der Gruppe): Modus „ultracode“ aktiv (gründlich, mit Workflows und
+  Gegenprüfung arbeiten).
+- **Vorgehen Claude:** Ü03 (Fallstudie 2) nicht begonnen. `master` in den Branch zusammengeführt (309ae67). Workflow-Skript
+  D12 von Account 1 gelesen, damit keine Arbeit doppelt gemacht wird: D12 ändert gerade f03, f04, f05, f10, f11, b2, b3,
+  b7, Logos, Platzhalter, Exporte (noch nicht committet). Nach der Regel „ein Arbeitspaket, dann Freigabe“ als erstes
+  Paket eine reine Prüfung auf Vortragsreife gewählt, die D12 ergänzt statt überschneidet: 8 Blickwinkel (Aufgabe &
+  Bewertungsraster, Storyline, Vortrag & Zeit, Rückfragen, Fakten außerhalb von D12, Technik im Hörsaal, Live-Elemente
+  & Referentenansicht, Visualisierung & Beamer), je Blickwinkel ein Gegenprüfer, der die Befunde zu widerlegen versucht,
+  dann Vollständigkeitsprüfung (mit Gegenprüfung) und Bericht. Die Prüfer ändern nichts (Testausgaben nur in
+  `praesentation/_test/`, nicht im Repository); einzige neue Datei ist `praesentation/VORTRAGSREIFE.md`.
+- **Ergebnis:** in Arbeit (A2-D03)
+- **Unteragenten:** A2-D03 (Workflow, 19 Unteragenten geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -670,6 +690,18 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   leicht über 40; echte Kurzinterviews und Erhebungsdaten statt Beispieldaten; optional Jahresabschluss 2024 als Beleg.
 - **Ergebnis:** fertig – Präsentation vortragsbereit bis auf die offenen Gruppenpunkte (Checkliste in `LIESMICH.md` §12).
 - **Wie Claude das Ergebnis geprüft hat:** siehe A2-33 (eigener Prüflauf, 0 Fehler; Kontaktbogen und Folie 01 angesehen).
+
+### A2-D03 – 18.10.2026 – ausgelöst durch A2-36
+
+- **Art:** Workflow „praesentation-account-2-vortragsreife“ (Workflow-Werkzeug, Lauf `wf_6f15dd23-e45`).
+- **Auftrag (wörtlich):** Skript [`workflows/2026-10-18_praesentation-account-2_vortragsreife.js`](workflows/2026-10-18_praesentation-account-2_vortragsreife.js)
+  (gemeinsamer Rahmen `GEMEINSAM` mit Rollen, Bewertungsraster, Abgrenzung zu D12 und festen Regeln: nur lesen, keine
+  erfundenen Zahlen/Quellen, Herkunft je Befund angeben – Datei, Messung, Websuche mit URL oder „Modellwissen“; acht
+  Prüfaufträge in `DIMENSIONEN`, Gegenprüfung in `gegenpruefen`, Vollständigkeits- und Berichtsauftrag wörtlich im Skript).
+- **Stufen:** Prüfen (8 Agenten) → Gegenprüfen (je 1 Agent pro Blickwinkel, Fließband ohne Wartebarriere) →
+  Vollständigkeit (1 Agent + 1 Gegenprüfer) → Bericht (1 Agent schreibt `praesentation/VORTRAGSREIFE.md`).
+- **Unteragenten und Ergebnisse:** folgt nach Abschluss.
+- **Wie Claude das Ergebnis prüft:** folgt nach Abschluss.
 
 ---
 
