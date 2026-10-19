@@ -87,6 +87,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 65 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur Nachweis committet; D12 und D13 laufen |
 | 66 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: Rohprotokoll „Unverändert committen“, Git-Historie „Nein, so lassen“ | – | Rohprotokoll unverändert committet; Historie bleibt |
 | 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | in Arbeit: Auswertung mit Namen ins Repository, Einbau in Ausarbeitungen und Folien |
+| 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1254,6 +1255,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D14
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 68 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Dateien, die Workflow D14 gerade bearbeitet,
+  bleiben uncommittet, bis D14 fertig und geprüft ist (sonst stünde ein halbfertiger Stand auf der Webseite).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D14 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1279,6 +1290,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
 | D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
+| D14 | 19.10.2026 | 67 | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
