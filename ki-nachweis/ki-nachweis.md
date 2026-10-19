@@ -86,6 +86,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | D12 abgeschlossen und committet; Auswertung der Gründerbefragung im Gruppenordner; Workflow-Skript geschwärzt |
 | 65 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur Nachweis committet; D12 und D13 laufen |
 | 66 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: Rohprotokoll „Unverändert committen“, Git-Historie „Nein, so lassen“ | – | Rohprotokoll unverändert committet; Historie bleibt |
+| 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | in Arbeit: Auswertung mit Namen ins Repository, Einbau in Ausarbeitungen und Folien |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1232,6 +1233,26 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
   Dateien bis zur Klärung mit dem Gründer, Auswertung Abschnitt 2.3) bleibt ein Vorschlag an die Gruppe.
 - **Ergebnis:** Commit + Push
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 67 – 19.10.2026 – Yannick
+
+> Wir dürfen den Gründer mit Namen in der Präsentation haben
+
+Antworten auf vier Rückfragen von Claude (Auswahl):
+
+> 1. „Welcher Gründer hat die Sprachnachrichten geschickt? …“ – **„Mathias Horsch“**
+> 2. „Wofür gilt die Freigabe? Hinweis: Die Web-Präsentation ist über GitHub Pages öffentlich, auch die
+>    Sprechernotizen.“ – **„Präsentation + Repository“** (Name und Paraphrasen bzw. kurze Zitate auf Folien, in
+>    Notizen und in den Ausarbeitungen im öffentlichen Repository)
+> 3. „Gilt die Freigabe auch für die Angabe ‚95 % der Kund:innen …‘?“ – **„Ja, mit Zusatz“** (mit „laut Gründer,
+>    Datengrundlage nicht offengelegt“ in Notizen und Backup)
+> 4. „Was soll ich als nächstes Arbeitspaket umsetzen?“ – **„Auswertung + Folien (Empfohlen)“**
+
+- **Vorgehen Claude:** in Arbeit (Auswertung mit Namen ins Repository, Workflow D14 für den Einbau in Ausarbeitungen
+  und Folien mit Prüfung). Das Transkript bleibt im Gruppenordner.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D14
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
