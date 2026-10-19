@@ -40,9 +40,13 @@ def pol(winkel, r):
     return CX + r * math.sin(a), CY - r * math.cos(a)
 
 
-def text(x, y, inhalt, groesse, farbe=TEXT, gewicht="normal", anker="middle", stil="normal"):
+def text(x, y, inhalt, groesse, farbe=TEXT, gewicht="normal", anker="middle", stil="normal", drehung=None, halo=None):
+    """drehung = (Grad, cx, cy): Text um den Punkt (cx, cy) drehen.
+    halo = Farbe: Kontur in der Hintergrundfarbe unter der Schrift (unterbricht kreuzende Linien)."""
+    dreh = f' transform="rotate({drehung[0]:.1f} {drehung[1]:.1f} {drehung[2]:.1f})"' if drehung else ""
+    rand = (f' stroke="{halo}" stroke-width="6" stroke-linejoin="round" paint-order="stroke"' if halo else "")
     add(f'<text x="{x:.1f}" y="{y:.1f}" font-family="{FONT}" font-size="{groesse}" font-weight="{gewicht}" '
-        f'font-style="{stil}" fill="{farbe}" text-anchor="{anker}">{inhalt}</text>')
+        f'font-style="{stil}" fill="{farbe}" text-anchor="{anker}"{dreh}{rand}>{inhalt}</text>')
 
 
 def ringsektor(a1, a2, r1, r2, fill, stroke="none", breite=0, extra=""):
@@ -71,6 +75,9 @@ def punkt(profil):
 
 add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">')
 add(f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>')
+# Pfeilspitze für die Entwicklung 2021/22 → 2026
+add('<defs><marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" '
+    'orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5E6A72"/></marker></defs>')
 
 # Kopf
 text(40, 52, "Limbic Map: Was treibt Marco an – und was spricht HOLY an?", 26, TEXT, "bold", "start")
@@ -83,16 +90,19 @@ for name, (winkel, linie, flaeche) in SYSTEME.items():
 for _, winkel in MISCH:
     x, y = pol(winkel, R_KARTE)
     add(f'<line x1="{CX}" y1="{CY}" x2="{x:.1f}" y2="{y:.1f}" stroke="#FFFFFF" stroke-width="2"/>')
-for name, (winkel, linie, _) in SYSTEME.items():
-    x, y = pol(winkel, 128)
-    text(x, y + 7, name, 21, linie, "bold")
 # Ring mit den sieben Typen
 for name, winkel in TYPEN:
     hervor = name == "Hedonisten"
     ringsektor(winkel - SEKTOR / 2, winkel + SEKTOR / 2, R_RING_IN, R_RING_AUS,
                "#4B3F7A" if hervor else "#F3F5F7", "#FFFFFF", 2)
-    x, y = pol(winkel - (4 if hervor else 0), (R_RING_IN + R_RING_AUS) / 2)
-    text(x, y + 5, name, 13.5, "#FFFFFF" if hervor else TEXT, "bold" if hervor else "normal")
+    x, y = pol(winkel, (R_RING_IN + R_RING_AUS) / 2)
+    if hervor:
+        # Grafikprüfung 17.10.2026: waagerecht war die weiße Schrift breiter als der schräge Sektor
+        # („H“ und „n“ lagen außerhalb) → entlang des Rings gedreht, mittig im Sektor
+        drehung = winkel - 360 if winkel > 180 else winkel
+        text(x, y + 4.5, name, 13, "#FFFFFF", "bold", drehung=(drehung, x, y))
+    else:
+        text(x, y + 5, name, 13.5, TEXT)
 
 # Mischbereiche (nach dem Ring, damit nichts abgeschnitten wird)
 for name, winkel in MISCH:
@@ -111,10 +121,23 @@ w0, r0 = punkt(MARKE_2021)
 w1, r1 = punkt(MARKE)
 x0, y0 = pol(w0, r0 * R_KARTE)
 x1, y1 = pol(w1, r1 * R_KARTE)
-add(f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" stroke="{GRAU}" stroke-width="1.6" '
-    f'stroke-dasharray="5 5"/>')
+# Gestrichelter Pfeil (Grafikprüfung 17.10.2026: Richtung war ohne Spitze nicht erkennbar); er endet vor dem
+# Markenpunkt 2026 (Radius 11 + Rand)
+laenge = math.hypot(x1 - x0, y1 - y0)
+ex, ey = x1 - (x1 - x0) * 17 / laenge, y1 - (y1 - y0) * 17 / laenge
+sx, sy = x0 + (x1 - x0) * 6 / laenge, y0 + (y1 - y0) * 6 / laenge
+add(f'<line x1="{sx:.1f}" y1="{sy:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{GRAU}" stroke-width="1.6" '
+    f'stroke-dasharray="5 4" marker-end="url(#pfeil)"/>')
 add(f'<circle cx="{x0:.1f}" cy="{y0:.1f}" r="5" fill="#FFFFFF" stroke="{GRAU}" stroke-width="1.6"/>')
-text(x0 - 8, y0 + 20, "HOLY 2021/22 (H)", 12, GRAU, anker="end")
+# Beschriftung links unterhalb des Punkts, mit Abstand zur Linie (berührte sie vorher) und zum Typen-Ring
+text(x0 - 18, y0 + 18, "HOLY 2021/22", 12, GRAU, "bold", anker="end")
+text(x0 - 18, y0 + 33, "(Hypothese)", 12, GRAU, anker="end")
+
+# Namen der Systeme erst nach dem Pfeil, mit Kontur in der Flächenfarbe: Der Pfeil kreuzt „Stimulanz“
+# und wird dort unterbrochen statt durch die Schrift zu laufen (Grafikprüfung 17.10.2026)
+for name, (winkel, linie, flaeche) in SYSTEME.items():
+    x, y = pol(winkel, 128)
+    text(x, y + 7, name, 21, linie, "bold", halo=flaeche)
 
 # Punkte
 wp, rp = punkt(PERSONA)
@@ -180,14 +203,17 @@ add(f'<rect x="{X0 + 490}" y="665" width="26" height="14" fill="#4B3F7A"/>')
 text(X0 + 524, 677, "Typ Marco", 14, TEXT, anker="start")
 
 # Quellenzeile
+# Quellenzeile: Wortlaut wie im Folienentwurf 5 („derselbe Wortlaut für Web-Fußzeile, SVG und PNG“),
+# auf drei Zeilen umbrochen; danach Hinweis zum Pfeil und KI-Kennzeichnung (Grafikprüfung 17.10.2026)
 QUELLE = [
     "Eigene, vereinfachte Darstellung nach Häusel; Gruppe Nymphenburg Consult AG (2020): Die Limbic® Types in best for planning, "
     "S. 3–5; Lage der Typen: nymphenburg.de/limbic-r-types.html (Abruf 17.10.2026).",
-    "Gewichte und Punkte: Schätzung des Teams (limbic-map.md) auf Basis von Statista Consumer Insights 02/2025 (Kategorie Energy Drinks), "
-    "Gründer-Podcast #281 (08/2024) und Recherche-Dossier.",
-    "„HOLY 2021/22“ nur zur Veranschaulichung (Hypothese, keine Daten). Limbic®, die Limbic® Map und die Limbic® Types sind urheber- und "
-    "patentrechtlich geschützte Begriffe und Verfahren der Gruppe Nymphenburg Consult AG.",
-    "Erstellt mit KI-Unterstützung (Claude Code; KI-Nachweis 52, D10).",
+    "Gewichte: Schätzung des Teams auf Basis von Statista Consumer Insights 02/2025 (Kategorie Energy Drinks), Podcast "
+    "„Digitale Vorreiter:innen“ #281 (08/2024) und Recherche-Dossier.",
+    "Limbic®, die Limbic® Map und die Limbic® Types sind urheber- und patentrechtlich geschützte Begriffe und Verfahren der "
+    "Gruppe Nymphenburg Consult AG.",
+    "Pfeil „HOLY 2021/22 → 2026“ nur zur Veranschaulichung (Hypothese, keine Daten) · Erstellt mit KI-Unterstützung "
+    "(Claude Code; KI-Nachweis 52, D10).",
 ]
 for i, zeile in enumerate(QUELLE):
     text(40, 734 + 17 * i, zeile, 12, GRAU, anker="start")

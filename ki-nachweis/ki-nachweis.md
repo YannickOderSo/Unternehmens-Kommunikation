@@ -76,7 +76,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
 | 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | `markenkompetenz.md`, Folienentwurf Folie 3, Grafik SVG + PNG |
 | 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
-| 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
+| 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | Folien 03, 05, 10 mit A1/A3 gefüllt, Logo auch auf 12, 27 Prüfbefunde eingearbeitet, Exporte neu (Abschluss 19.10.) |
 | 58 | 17.10.2026 | Yannick | Account 2 arbeitet weiter; neue Aufgabe vorbereiten, sobald dessen Kontingent aufgefüllt ist | Ü03 | Übergabe Ü03: Fallstudie 2 vorbereiten |
 | 59 | 18.10.2026 | Yannick | Upload: 2 Sprachnachrichten des Gründers (LinkedIn) + Fragenkatalog (14 Fragen) | D12 (fortgesetzt) | Audio nicht geöffnet: Rückfrage zur Einwilligung; D12 nach Nutzungslimit fortgesetzt |
 | 60 | 18.10.2026 | Yannick | Antwort auf Rückfrage: „Ja, er hat zugestimmt“ (Einwilligung des Gründers) | – | lokale Transkription gestartet |
@@ -1019,6 +1019,21 @@ los.“)*
     - Prüfung: Darstellung, Inhalt, Rechte.
     - Nacharbeit mit neuen Exporten.
 - **Ergebnis:** in Arbeit
+- **Ergebnis (Abschluss 19.10.2026, nach zwei Unterbrechungen am Nutzungslimit, siehe 59 und 64):**
+  - **Gefüllt:** Folie 03 nach A1 (Zeitleiste, Kennzahlen „laut Unternehmen“, Rolle Herausforderer, Claim),
+    Folie 05 nach A3 (Hedonisten, Gewichte, Lücke −10 Pp., Rechtevermerk), Folie 10 (Kompetenz, Persona-Typ),
+    Psychografie auf Folie 04, Backups B2, B3, B7 (Esch, Häusel), B8 ([6], [39]).
+  - **Logos:** Oval auf Folie 01 und neu auf Folie 12, Wortmarke auf 09b (im Dunkelmodus mit heller Unterlage);
+    Quelle jeweils in der Fußzeile. Rücksprache mit dem Betreuer bleibt offen.
+  - **Behoben:** u. a. falsche Angabe „mit Vorlesung abgeglichen“ auf B2, fest eingebaute Texte in der Limbic Map,
+    zu breite Tabelle auf B3, Beschriftung „HOLY“ auf Folie 05, Überlauf auf Folie 03 im Thema Keynote.
+  - **Grafiken** `folie-02/03/05`: Überlappungen und abgeschnittene Beschriftungen behoben.
+  - **Exporte neu:** PDF (22 Seiten), 23 Folienbilder (1920 × 1080), Übersicht (neues Werkzeug
+    `werkzeuge/uebersicht.mjs`). AUTOREN.md §15 und LIESMICH.md beschreiben die Änderungen und offenen Punkte.
+- **Wie Claude das Ergebnis geprüft hat:** eigener Prüflauf (23 Folien, 80 Zustände, 0 Fehler, 4 bekannte
+  Wortbudget-Warnungen), PDF-Seitenzahl, Übersicht und Folien 03, 04, 05 und 12 selbst angesehen.
+- **Für Yannick zu entscheiden:** Folie 04 zeigt „bequem und schnell“ statt „gesünder, aber schnell“ (Statista trägt
+  „gesünder“ nicht: 50 % zu Ø 53 %), Steckbrief angleichen oder zurückändern; Freigaben 03–05; Sprechtexte stoppen.
 - **Unteragenten:** D12
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1210,6 +1225,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
 | D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
+| D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
 | D13 | 18.10.2026 | 59, 60 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
@@ -1535,6 +1551,37 @@ steht hier mit dem wörtlichen Auftrag.
   - Die Quellennummern der Fußzeile an Anhang B des Dossiers geprüft.
   - Die Werte für die Grafik aus dem Folienentwurf übernommen.
   - Präsentation (f03, f10) nicht geändert.
+
+---
+
+### D12 – 17.–19.10.2026 – ausgelöst durch Prompt 57 (fortgesetzt nach 59 und 64)
+
+- **Art:** Workflow „praesentation-uebernahme“, zehn Unteragenten in vier Phasen:
+  - Bestandsaufnahme: Platzhalter-Inventar (mit Websuche im DNB-Katalog), Grafik- und Logo-Prüfung.
+  - Umsetzung nacheinander: U1 Folie 03 und 10, U2 Folie 05 und Limbic-Map-Skript, U3 Logos, übrige Platzhalter,
+    Grafik-Mängel.
+  - Prüfen: Darstellung, Inhalt, Rechte.
+  - Nacharbeit: Befunde einarbeiten, AUTOREN/LIESMICH, Exporte.
+- **Auftrag (wörtlich):** vollständig im Skript
+  [`workflows/2026-10-17_praesentation-uebernahme.js`](workflows/2026-10-17_praesentation-uebernahme.js) und
+  automatisch im Rohprotokoll.
+- **Vorgaben:** nur Präsentation und Grafiken ändern; Werte nur aus `markenkompetenz.md`, `limbic-map.md`,
+  `persona-steckbrief.md`, `persona-daten.md` und dem Dossier; Beispieldaten von Bündel B und C nicht anfassen;
+  keine Uploads oder Gruppenordner-Dateien öffnen; kein Commit.
+- **Ergebnis:**
+  - **Unterbrechungen:** 18.10. 5 Agenten und 19.10. die Nacharbeit am Nutzungslimit gescheitert, jeweils per
+    resume fortgesetzt (fertige Agenten aus dem Zwischenspeicher).
+  - **Umsetzung:** 7 + 11 + 16 Änderungen.
+  - **Prüfer:** 27 Befunde (0 hoch, 9 mittel, 18 niedrig). Die mittleren: Etikett „HOLY“ auf Folie 05 an Marcos
+    Punkt, veraltete Exporte, „gesünder“ auf Folie 04 gegen die Daten, Sprechzeit 04/05, B2 stellt KI-Prüfungen als
+    Prüfung dar, Kennzeichnung auf 04, Rechtevermerk, Regel für Social-Media-Bilder, Logo-Fußzeile auf 12.
+  - **Nacharbeit:** alle Befunde umgesetzt bis auf vier Gruppenentscheidungen (Grafiken projizieren ja/nein,
+    Bildsprache der Grafiken, Kürzung der Sprechtexte 10/11 mit Elias, Steckbrief zu „gesünder“).
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Eigener Prüflauf `pruefen.mjs --schritte --optional`: 23 Folien, 80 Zustände, 0 Fehler, keine externen
+    Anfragen, 4 Wortbudget-Warnungen (f03, f04, f10, f11).
+  - PDF: 22 Seiten. Übersicht und die Folien 03, 04, 05, 12 angesehen (Logo, Etikett, Kennzeichnungen).
+  - Workflow-Skript im Repository mit dem ausgeführten Skript verglichen: gleich.
 
 ---
 

@@ -79,6 +79,16 @@ html[data-modus="hell"] .folie:not([data-modus="dunkel"]) .titel em[data-marke] 
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
+/* Kursivkorrektur (Grafikprüfung 17.10.2026): Im Thema Editorial steht der
+   Markenname im Titel kursiv (--stil-hervor). Der Bogen des „Y“ ragt über
+   die Laufweite hinaus, lief aus dem Marker und stieß an ein folgendes „:“
+   oder „?“. Rechts etwas mehr Raum (Marker entsprechend länger). Bento und
+   Keynote setzen den Namen aufrecht – dort bleibt alles wie bisher. */
+html[data-thema="editorial"] .titel em[data-marke] { padding-right: 0.1em; }
+html[data-thema="editorial"][data-modus="hell"] .folie:not([data-modus="dunkel"]) .titel em[data-marke] {
+  padding-right: 0.18em;
+  margin-right: -0.03em;
+}
 .titel--gross { font-size: var(--groesse-titel-gross); }
 .titel--klein { font-size: var(--groesse-titel-klein); }
 

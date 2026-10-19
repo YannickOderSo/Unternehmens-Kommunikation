@@ -78,11 +78,12 @@ text(700, 48, "Desk Research", 19, "#1F2A30", "bold")
 text(700, 74, "Herkunft, Historie, Marktrolle · Folie 3", 14, "#4A555C")
 pfeil(CX, 92, CX, CY - RI - 4)
 
-# Methoden links (hard facts) und rechts (soft facts)
+# Methoden links (hard facts) und rechts (soft facts); Foliennummern wie in der Web-Präsentation
+# (Analogien 08 + 08b, Kommunikationsanalyse 09 + 09b; angepasst 17.10.2026)
 methode(40, 180, "Laddering", "Means-End-Kette bis zu den Werten", "→ Folie 7", HARD_LINE)
 methode(40, 464, "Repertory Grid", "Triadenvergleich mit Wettbewerbern", "→ Folie 6", HARD_LINE)
-methode(1060, 180, "Analogiemethoden", "Marke als Mensch und als Tier", "→ Folie 8", SOFT_LINE)
-methode(1060, 464, "Kommunikationsanalyse", "Instagram · Facebook · YouTube", "→ Folie 9", SOFT_LINE)
+methode(1060, 180, "Analogiemethoden", "Marke als Mensch und als Tier", "→ Folien 8, 8b", SOFT_LINE)
+methode(1060, 464, "Kommunikationsanalyse", "Instagram · Facebook · YouTube", "→ Folien 9, 9b", SOFT_LINE)
 
 pfeil(340, 228, 488, 228)
 pfeil(340, 512, 488, 512)

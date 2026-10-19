@@ -13,7 +13,7 @@
    --------------------------------------------------------------------------- */
 #f12 .folie-kopf {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   column-gap: var(--abstand-8);
   align-items: end;
 }
@@ -83,6 +83,36 @@
   letter-spacing: -0.01em;
   color: var(--f-text);
 }
+/* Logo (17.10.2026; Platz seit 18.10.2026): Das Oval aus marke.js → logoTitel
+   steht im Kopf rechts neben dem Fazit über HOLY, bündig mit dem rechten
+   Satzspiegel (Klammer zu Folie 01) – nicht mehr neben den Gruppennamen, wo es
+   wie ein Absender/Co-Branding wirkte. Die Bilddatei hat ringsum einen
+   durchsichtigen Rand (8,5 % der Bildhöhe) – die negativen Ränder gleichen ihn
+   aus (wie auf Folie 01). 128 px Bildhöhe = Höhe des Fazit-Blocks. */
+#f12 .folie-kopf > .g6d-logo {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: end;
+}
+/* Absender: nur noch die Gruppennamen (Logo seit 18.10.2026 im Kopf) */
+#f12 .g6d-absender {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--abstand-5);
+  width: 100%;
+}
+#f12 .g6d-absender .g6d-gruppe { flex: none; white-space: nowrap; }
+#f12 .g6d-logo {
+  --g6d-logo: 128px;
+  display: block;
+  flex: none;
+  width: auto;
+  height: var(--g6d-logo);
+  margin: calc(var(--g6d-logo) * -0.085) calc(var(--g6d-logo) * -0.085) calc(var(--g6d-logo) * -0.085) 0;
+}
+#f12 .g6d-logo[hidden] { display: none; }
 #f12 .g6d-angaben {
   margin: 0;
   font-size: var(--groesse-text-min);

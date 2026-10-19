@@ -10,7 +10,7 @@
 
    2. QUELLENKÜRZEL JE STICHWORT: Im Kartenkopf bleibt nur das häufigste
       Kürzel des Felds; ein abweichendes Kürzel steht klein direkt hinter dem
-      Stichwort (z. B. „Abenteurer LM“, „Energy: 160 mg Koffein DR“).
+      Stichwort (z. B. „Hedonisten LM“, „Energy: 160 mg Koffein DR“).
 
    3. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
       • Nummern (Lückenfarbe, Braun-Orange) an den Stichworten, die eine Lücke bilden

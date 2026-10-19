@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
 <rect width="1400" height="800" fill="#FFFFFF"/>
+<defs><marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5E6A72"/></marker></defs>
 <text x="40.0" y="52.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="26" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="start">Limbic Map: Was treibt Marco an – und was spricht HOLY an?</text>
 <text x="40.0" y="80.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">HOLY trifft Marcos Lust auf Neues, zeigt aber kaum seine Schicht · Urteil: passt teilweise</text>
 <path d="M 577.5 532.5 A 205 205 0 0 1 222.5 532.5 L 400.0 430.0 A 0.01 0.01 0 0 0 400.0 430.0 Z" fill="#DDE5EC" stroke="none" stroke-width="0"/>
@@ -8,9 +9,6 @@
 <line x1="400" y1="430" x2="400.0" y2="225.0" stroke="#FFFFFF" stroke-width="2"/>
 <line x1="400" y1="430" x2="577.5" y2="532.5" stroke="#FFFFFF" stroke-width="2"/>
 <line x1="400" y1="430" x2="222.5" y2="532.5" stroke="#FFFFFF" stroke-width="2"/>
-<text x="400.0" y="565.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="21" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle">Balance</text>
-<text x="510.9" y="373.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="21" font-weight="bold" font-style="normal" fill="#B3161D" text-anchor="middle">Dominanz</text>
-<text x="289.1" y="373.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="21" font-weight="bold" font-style="normal" fill="#4B3F7A" text-anchor="middle">Stimulanz</text>
 <path d="M 286.3 193.9 A 262 262 0 0 1 513.7 193.9 L 488.9 245.3 A 205 205 0 0 0 311.1 245.3 Z" fill="#F3F5F7" stroke="#FFFFFF" stroke-width="2"/>
 <text x="400.0" y="201.5" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#1F2A30" text-anchor="middle">Abenteurer</text>
 <path d="M 511.9 193.1 A 262 262 0 0 1 655.0 369.8 L 599.5 382.9 A 205 205 0 0 0 487.6 244.6 Z" fill="#F3F5F7" stroke="#FFFFFF" stroke-width="2"/>
@@ -24,7 +22,7 @@
 <path d="M 195.6 593.9 A 262 262 0 0 1 144.4 372.3 L 200.0 384.9 A 205 205 0 0 0 240.0 558.2 Z" fill="#F3F5F7" stroke="#FFFFFF" stroke-width="2"/>
 <text x="172.5" y="487.5" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#1F2A30" text-anchor="middle">Offene</text>
 <path d="M 145.0 369.8 A 262 262 0 0 1 288.1 193.1 L 312.4 244.6 A 205 205 0 0 0 200.5 382.9 Z" fill="#4B3F7A" stroke="#FFFFFF" stroke-width="2"/>
-<text x="208.7" y="301.1" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Hedonisten</text>
+<text x="218.5" y="287.6" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" transform="rotate(-51.0 218.5 283.1)">Hedonisten</text>
 <text x="400.0" y="263.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="italic" fill="#5E6A72" text-anchor="middle">Abenteuer/Thrill</text>
 <text x="538.6" y="515.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="italic" fill="#5E6A72" text-anchor="middle">Disziplin/Kontrolle</text>
 <text x="261.4" y="515.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="italic" fill="#5E6A72" text-anchor="middle">Fantasie/Genuss</text>
@@ -34,9 +32,13 @@
 <text x="400.0" y="129.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">Abenteuer und Risiko</text>
 <path d="M 393.6 713.9 A 284 284 0 0 1 180.2 609.8 L 192.6 599.7 A 268 268 0 0 0 394.0 697.9 Z" fill="#FFD007" stroke="none" stroke-width="0"/>
 <text x="265.9" y="710.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="end">Harmonie und Fürsorge</text>
-<line x1="337.9" y1="301.9" x2="293.5" y2="409.5" stroke="#5E6A72" stroke-width="1.6" stroke-dasharray="5 5"/>
+<line x1="335.6" y1="307.4" x2="300.0" y2="393.8" stroke="#5E6A72" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#pfeil)"/>
 <circle cx="337.9" cy="301.9" r="5" fill="#FFFFFF" stroke="#5E6A72" stroke-width="1.6"/>
-<text x="329.9" y="321.9" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="end">HOLY 2021/22 (H)</text>
+<text x="319.9" y="319.9" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#5E6A72" text-anchor="end">HOLY 2021/22</text>
+<text x="319.9" y="334.9" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="end">(Hypothese)</text>
+<text x="400.0" y="565.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="21" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle" stroke="#DDE5EC" stroke-width="6" stroke-linejoin="round" paint-order="stroke">Balance</text>
+<text x="510.9" y="373.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="21" font-weight="bold" font-style="normal" fill="#B3161D" text-anchor="middle" stroke="#F6DCD9" stroke-width="6" stroke-linejoin="round" paint-order="stroke">Dominanz</text>
+<text x="289.1" y="373.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="21" font-weight="bold" font-style="normal" fill="#4B3F7A" text-anchor="middle" stroke="#E4E0F0" stroke-width="6" stroke-linejoin="round" paint-order="stroke">Stimulanz</text>
 <line x1="364.5" y1="409.5" x2="293.5" y2="409.5" stroke="#1D1D1B" stroke-width="1.5"/>
 <circle cx="293.5" cy="409.5" r="11" fill="#FFD007" stroke="#1D1D1B" stroke-width="2.5"/>
 <text x="295.5" y="441.5" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#1F2A30" text-anchor="middle">HOLY 2026</text>
@@ -81,7 +83,7 @@
 <rect x="1250" y="665" width="26" height="14" fill="#4B3F7A"/>
 <text x="1284.0" y="677.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#1F2A30" text-anchor="start">Typ Marco</text>
 <text x="40.0" y="734.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">Eigene, vereinfachte Darstellung nach Häusel; Gruppe Nymphenburg Consult AG (2020): Die Limbic® Types in best for planning, S. 3–5; Lage der Typen: nymphenburg.de/limbic-r-types.html (Abruf 17.10.2026).</text>
-<text x="40.0" y="751.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">Gewichte und Punkte: Schätzung des Teams (limbic-map.md) auf Basis von Statista Consumer Insights 02/2025 (Kategorie Energy Drinks), Gründer-Podcast #281 (08/2024) und Recherche-Dossier.</text>
-<text x="40.0" y="768.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">„HOLY 2021/22“ nur zur Veranschaulichung (Hypothese, keine Daten). Limbic®, die Limbic® Map und die Limbic® Types sind urheber- und patentrechtlich geschützte Begriffe und Verfahren der Gruppe Nymphenburg Consult AG.</text>
-<text x="40.0" y="785.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">Erstellt mit KI-Unterstützung (Claude Code; KI-Nachweis 52, D10).</text>
+<text x="40.0" y="751.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">Gewichte: Schätzung des Teams auf Basis von Statista Consumer Insights 02/2025 (Kategorie Energy Drinks), Podcast „Digitale Vorreiter:innen“ #281 (08/2024) und Recherche-Dossier.</text>
+<text x="40.0" y="768.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">Limbic®, die Limbic® Map und die Limbic® Types sind urheber- und patentrechtlich geschützte Begriffe und Verfahren der Gruppe Nymphenburg Consult AG.</text>
+<text x="40.0" y="785.0" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5E6A72" text-anchor="start">Pfeil „HOLY 2021/22 → 2026“ nur zur Veranschaulichung (Hypothese, keine Daten) · Erstellt mit KI-Unterstützung (Claude Code; KI-Nachweis 52, D10).</text>
 </svg>

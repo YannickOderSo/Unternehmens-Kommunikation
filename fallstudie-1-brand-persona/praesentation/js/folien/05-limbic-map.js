@@ -10,7 +10,7 @@
      • innen am Rand: die sieben Limbic Types (Typ der Persona wird markiert)
      • zwei Punkte (Persona, Marke), berechnet aus den Gewichten in %;
        sie fliegen beim Klick aus der Mitte an ihren Platz
-     • Verbindungslinie und Kennzahl „größte Lücke“ (oder wahlweise
+     • Verbindungslinie und Kennzahl „Lücke“ (oder wahlweise
        „Motiv-Überschneidung“), die Lücke ist in den Gewichtsbalken markiert
      • rechts: Limbic Type, Motive und drei Folgen für die Kommunikation
    „g2l“ = Präfix nur für diese Folie (Folien-Gruppe 2, Limbic Map).
@@ -22,11 +22,12 @@
      („Dreieckskoordinaten“). 33/33/33 % liegt genau in der Mitte. Der Abstand
      von der Mitte wird mit „verstaerkung“ (Standard 2) vergrößert, damit
      Unterschiede sichtbar werden – das ist rein grafisch.
-     Größte Lücke = System mit dem größten Unterschied der Gewichte
-     (Marke − Persona, in Prozentpunkten).
+     Lücke = System mit dem größten Unterschied der Gewichte (Marke −
+     Persona, in Prozentpunkten) – oder das System, das die Daten unter
+     „lueckeSystem“ nennen (z. B. bei Gleichstand zweier Systeme).
      Motiv-Überschneidung = Summe der jeweils kleineren Gewichte (eigene
      Vereinfachung, keine Kennzahl von Häusel).
-     Die Gewichte selbst sind eine Hypothese des Teams (Dossier 4.4), keine Messung.
+     Die Gewichte selbst sind eine Schätzung des Teams (limbic-map.md), keine Messung.
 
    HINWEIS: Lage der Systeme, Mischbereiche und Typen ist nach unserem
    Kenntnisstand aus der Standardliteratur gewählt – mit der Vorlesungsfolie
@@ -88,11 +89,16 @@
     return { x: x, y: y };
   }
 
-  /* Größte Lücke: System mit dem größten Unterschied (Marke − Persona, −1…1) */
-  function groessteLuecke(persona, marke, systeme) {
+  /* Lücke: das in den Daten genannte System („lueckeSystem“) oder sonst das
+     System mit dem größten Unterschied (Marke − Persona, −1…1; bei Gleichstand
+     das erste in karte.systeme) */
+  function groessteLuecke(persona, marke, systeme, wunsch) {
     var beste = null;
+    var gewaehlt = String(wunsch || '').trim().toLowerCase();
     systeme.forEach(function (s) {
       var diff = marke[s.schluessel] - persona[s.schluessel];
+      if (gewaehlt && String(s.schluessel).toLowerCase() === gewaehlt) beste = { system: s, diff: diff, fest: true };
+      if (beste && beste.fest) return;
       if (!beste || Math.abs(diff) > Math.abs(beste.diff) + 1e-9) beste = { system: s, diff: diff };
     });
     return beste;
@@ -286,6 +292,14 @@
       u.element('span', { class: 'g2l-punkt-form', 'aria-hidden': 'true' }, null, el);
       var text = u.element('span', { class: 'g2l-punkt-text', 'data-animation': 'einblenden', 'data-verzoegerung': '650' },
         u.markeText((p.daten && p.daten.beschriftung) || p.standard), el);
+      /* optionaler Zusatz am Punkt, z. B. „(Mittelwert)“ beim Marken-Punkt –
+         seit 18.10.2026 in einer eigenen, kleineren Zeile unter dem Namen: Das
+         Etikett bleibt schmal und findet so neben dem eigenen Punkt Platz (vorher
+         wich „HOLY (Mittelwert)“ unter den Persona-Punkt aus). */
+      if (p.daten && p.daten.punktZusatz) {
+        text.classList.add('g2l-punkt-text--zusatz');
+        u.element('span', { class: 'g2l-punkt-zusatz', 'data-meta': '' }, '(' + u.markeText(String(p.daten.punktZusatz)) + ')', text);
+      }
       z.punkte.push({ el: el, text: text, anteile: a, schritt: p.schritt, schluessel: p.schluessel });
     });
 
@@ -403,6 +417,10 @@
           { dx: -a - b, dy: -h / 2 },            // links
           { dx: -b / 2, dy: a - 4 },             // unten
           { dx: -b / 2, dy: -a - h + 4 },        // oben
+          { dx: -b / 4, dy: a - 4 },             // unten, etwas nach rechts versetzt
+          { dx: -3 * b / 4, dy: a - 4 },         // unten, etwas nach links versetzt
+          { dx: -b / 4, dy: -a - h + 4 },        // oben, etwas nach rechts versetzt
+          { dx: -3 * b / 4, dy: -a - h + 4 },    // oben, etwas nach links versetzt
           { dx: a - 6, dy: a - 10 },             // rechts unten
           { dx: -a - b + 6, dy: a - 10 },        // links unten
           { dx: a - 6, dy: -a - h + 10 },        // rechts oben
@@ -417,6 +435,17 @@
           hindernisse.forEach(function (o) { strafe += ueberlappung(k, o); });
           var drueber = fernsterAbstand(k) - (innen - 6);
           if (drueber > 0) strafe += drueber * 400;
+          /* Das Etikett muss erkennbar zum EIGENEN Punkt gehören: Liegt seine Mitte
+             näher an einem anderen Punkt als am eigenen, hohe Strafe (sonst stand
+             „HOLY (Mittelwert)“ direkt unter Marcos Punkt, Prüfung 18.10.2026). */
+          var mx = (k.links + k.rechts) / 2;
+          var my = (k.oben + k.unten) / 2;
+          var eigen = Math.hypot(mx - p.x, my - p.y);
+          z.punkte.forEach(function (q) {
+            if (q === p || typeof q.x !== 'number') return;
+            var fremd = Math.hypot(mx - q.x, my - q.y);
+            if (fremd < eigen + 12) strafe += 5000 + (eigen + 12 - fremd) * 200;
+          });
           strafe += nr * 0.5;                    // bei Gleichstand: Reihenfolge der Kandidaten
           if (!beste || strafe < beste.strafe) beste = { strafe: strafe, c: c, k: k };
         });
@@ -477,6 +506,12 @@
   /* ---------------------------------------------------------------------------
      Rechte Seite: Texte, Kennzahl, Konsequenzen
      --------------------------------------------------------------------------- */
+  /* Wort hinter dem Systemnamen der Lücke (Daten „lueckeText“) */
+  function lueckeWort(d) {
+    var t = d && typeof d.lueckeText === 'string' ? d.lueckeText.trim() : '';
+    return t || 'größte Lücke';
+  }
+
   function rechteSeite(ctx, z) {
     var u = ctx.util;
     var d = ctx.daten || {};
@@ -503,8 +538,9 @@
       var zahl = fit.querySelector('.kennzahl-wert');
       var text = fit.querySelector('.g2l-fit-text');
       z.fitWert = Math.round(ueberschneidung(p.anteile, m.anteile, z.systeme) * 100);
-      luecke = groessteLuecke(p.anteile, m.anteile, z.systeme);
-      var hinweis = 'Gewichte: Hypothese (Dossier 4.4)';
+      luecke = groessteLuecke(p.anteile, m.anteile, z.systeme, d.lueckeSystem);
+      /* Metazeile und Wort hinter dem Systemnamen kommen aus den Daten */
+      var hinweis = d.fitHinweis ? u.markeText(String(d.fitHinweis)) : 'Gewichte: Hypothese des Teams';
       if (art === 'ueberschneidung') {
         zahl.setAttribute('data-ziel', String(z.fitWert));
         zahl.setAttribute('data-einheit', ' %');
@@ -520,7 +556,7 @@
         zahl.textContent = u.zahlFormat(pp, 0, { vorzeichen: true }) + ' Pp.';
         text.textContent = '';
         u.element('b', {}, luecke.system.name, text);
-        text.appendChild(document.createTextNode(' – größte Lücke'));
+        text.appendChild(document.createTextNode(' – ' + lueckeWort(d)));
         hinweis = 'Pp. = Prozentpunkte · ' + hinweis;
       } else {
         zahl.remove();
@@ -574,8 +610,12 @@
       };
       var beschreibung = 'Vereinfachte Limbic Map (Hypothese). Persona: ' + profil(p) + (d.limbicType ? ', Limbic Type ' + d.limbicType : '') + '.';
       if (m) beschreibung += ' ' + markeName + ': ' + profil(m) + '.';
-      if (luecke) beschreibung += ' Größte Lücke: ' + luecke.system.name + ' ' + u.zahlFormat(Math.round(luecke.diff * 100), 0, { vorzeichen: true }) + ' Prozentpunkte.';
-      if (z.fitWert !== undefined) beschreibung += ' Motiv-Überschneidung ' + z.fitWert + ' %.';
+      if (luecke) {
+        var wort = lueckeWort(d);
+        beschreibung += ' ' + wort.charAt(0).toUpperCase() + wort.slice(1) + ': ' + luecke.system.name + ' ' + u.zahlFormat(Math.round(luecke.diff * 100), 0, { vorzeichen: true }) + ' Prozentpunkte.';
+      }
+      /* Überschneidung nur nennen, wenn sie auch auf der Folie steht */
+      if (art === 'ueberschneidung' && z.fitWert !== undefined) beschreibung += ' Motiv-Überschneidung ' + z.fitWert + ' %.';
       z.karte.setAttribute('aria-label', beschreibung);
     }
   }

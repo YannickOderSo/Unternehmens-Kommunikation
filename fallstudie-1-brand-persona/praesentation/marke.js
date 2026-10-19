@@ -49,16 +49,20 @@ window.MARKE = {
   // Logo: offizielle HOLY-Wortmarke von de.holy.com (Seitenkopf, Datei HOLY_Logo_1.png,
   // 389 × 105 px), abgerufen 16.10.2026. Marke der HOLY Softdrinks GmbH – nur zur
   // Kennzeichnung der analysierten Marke; Quelle steht in der Fußzeile von Folie 09b
-  // und in QUELLEN.md. Gezeigt auf Folie 09b (Corporate Design).
-  // Zweite Variante (gelbes Oval) steht unten bei logoTitel (Folie 01).
+  // und in QUELLEN.md. Gezeigt auf Folie 09b (Corporate Design; im Dunkelmodus auf
+  // heller Unterlage, das Bild selbst bleibt unverändert).
+  // Zweite Variante (gelbes Oval) steht unten bei logoTitel (Folie 01 und 12).
   logo: 'bilder/holy-logo-wortmarke.png',
   // Logo für die Titelfolie (Folie 01): offizielles HOLY-Logo im gelben Oval
   // (Seitenfuß von de.holy.com, Datei HOLY_Logo_NewYellow.png, 692 × 400 px),
   // abgerufen 16.10.2026, unverändert (nur verkleinert angezeigt). Es erscheint
   // mit der Auflösung des Rätsels (Schritt 1, nicht vorher) und bleibt auf der
   // Titelfolie stehen – anstelle des gesetzten Markennamens; Screenreader lesen
-  // weiter den Namen (name oben). Quelle steht in der Fußzeile von Folie 01 und
-  // in QUELLEN.md. Leer ('') = Markenname in Schrift wie bisher.
+  // weiter den Namen (name oben). Dasselbe Logo steht seit 17.10.2026 auf Folie 12
+  // (<img data-marke-logo="titel">, Klammer Anfang–Ende), seit 18.10.2026 oben rechts
+  // neben dem Fazit über HOLY – nicht neben den Gruppennamen (wirkte wie Co-Branding).
+  // Quelle steht in den Fußzeilen von Folie 01 und 12, in B7 und in QUELLEN.md.
+  // Leer ('') = Markenname in Schrift wie bisher; Folie 12 zeigt dann nur die Gruppe.
   logoTitel: 'bilder/holy-logo-oval.png',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
   // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen

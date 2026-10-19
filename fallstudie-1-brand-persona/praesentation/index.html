@@ -143,7 +143,8 @@
      ║     Pfad in marke.js → raetselBild; danach hier data-fokus (Zoompunkt) prüfen und die
      ║     Fußzeile „Bild: …“ mit der Bildquelle anpassen. Die Pille „Platzhalterbild“ verschwindet dann.
      ║ • Titel, Gruppe, Termin, Dozent, Hochschule kommen aus marke.js (nicht hier tippen).
-     ║ • Logo (gelbes Oval) ab der Auflösung: marke.js → logoTitel; Quelle steht in der Fußzeile.
+     ║ • Logo (gelbes Oval) ab der Auflösung: marke.js → logoTitel; Quelle steht in der Fußzeile. Dasselbe Logo
+     ║     steht seit 17.10.2026 auch auf Folie 12 (Klammer Anfang–Ende); im Rätsel (Schritt 0) bewusst nicht.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -364,6 +365,8 @@
      ║     (wie B1 „teils geplant“). Nach den Interviews an die tatsächliche Durchführung anpassen;
      ║     gibt es keine echten Interviews, „+ Kurzinterviews“ streichen (nur „KI-simuliert“).
      ║ • Feldnamen, Leitfragen und Zuordnung Methode → Feld mit den Vorlesungsfolien abgleichen.
+     ║ • Fußzeile „Esch & Esch (2024)“, „Häusel (2019)“ = Ausgaben wie in B7; nutzt die Gruppe eine andere
+     ║     Ausgabe, hier und in B7 ändern.
      ║ • Sprechtext laut lesen und stoppen: Ziel ≤ 60 s bei 7 Klicks.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -380,7 +383,8 @@
   Modell – er ist unsere Ergänzung als Bezugsrahmen, keine Feldmethode (steht
   so in der Quellenzeile). Begriffe aus der Standardliteratur; bitte mit den
   Vorlesungsfolien abgleichen. Jahreszahlen zu Esch und Häusel in der
-  Quellenzeile ergänzen, sobald die Auflage feststeht (wie im Backup B7).
+  Quellenzeile seit 17.10.2026 wie im Backup B7 (neueste Ausgaben laut
+  Deutscher Nationalbibliothek); bei einer anderen Ausgabe beide Stellen ändern.
 
   ABLAUF (Klicks)
     0  Titel, Ausgangslage und Leitfrage; das Rad baut sich auf
@@ -474,12 +478,14 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: nach Esch, Persona-Rahmen nach Häusel · <b class="vorgehen-ki-legende">KI</b> = KI-gestützt, Ergebnisse geprüft (Prompts: B2) · Fakten: Dossier ✔ [4, 8, 22, 25]</p>
+    <!-- Zwei Zeilen, jede kürzer als ca. 1250 px (rechts unten blendet bei Mausbewegung die
+         Bedienleiste ein und verdeckte sonst die Belegnummern; Prüfung 18.10.2026). -->
+    <p class="quelle">Quelle: nach Esch &amp; Esch (2024), Persona-Rahmen nach Häusel (2019) · Fakten: Dossier ✔ [4, 8, 22, 25]<br><b class="vorgehen-ki-legende">KI</b> = KI-gestützt, Ergebnisse geprüft (Prompts: B2)</p>
   </footer>
 
   <aside class="notizen">
     <p><b>Ziel (60 s, ≈ 111 gesprochene Wörter):</b> Ausgangslage und Leitfrage, dann Modell und Methoden – die Folie ist zugleich die Agenda. Pro Klick nur einen Halbsatz. Einmal mit Stoppuhr proben (Ziel: höchstens 60 s).</p>
-    <p data-schritt="0"><b>Ausgangslage und Leitfrage (ca. 15 s, ≈ 31 Wörter):</b> „<span data-marke></span> ist 2021 als Gaming-Booster gestartet, nur online. Heute steht <span data-marke></span> als Softdrink im Supermarkt und wirbt im Fernsehen. Daher unsere Leitfrage: Wofür steht <span data-marke></span> – und passt der heutige Auftritt dazu?“ <i>(Auf der Folie steht die Leitfrage ohne „heutige“ – Wortbudget.)</i> <i>(Fakten: Dossier Kap. 2.1 ✔ – Marktstart April 2021 im eigenen Onlineshop als „Gaming Booster“ [4, 22]; ab 01/2025 Rewe, Edeka, Globus [8]; seit 01/2026 TV-Kampagne [25].)</i></p>
+    <p data-schritt="0"><b>Ausgangslage und Leitfrage (ca. 15 s, ≈ 31 Wörter):</b> „<span data-marke></span> ist 2021 als Gaming-Booster gestartet, nur online. Heute steht <span data-marke></span> als Softdrink im Supermarkt und wirbt im Fernsehen. Daher unsere Leitfrage: Wofür steht <span data-marke></span> – und passt der heutige Auftritt dazu?“ <i>(Auf der Folie steht die Leitfrage ohne „heutige“ – Wortbudget.)</i> <i>(Fakten: Dossier Kap. 2.1 ✔ – Marktstart April 2021 im eigenen Onlineshop als „Gaming Booster“ [4, 22]; Frühjahr 2024 erster Supermarkt ✔ [6]; ab 01/2025 Ausbau bei Rewe und Globus, Edeka nur in einzelnen Märkten belegt ✔ [8, 9]; seit 01/2026 TV-Kampagne ✔ [25]. Stand nach markenkompetenz.md, wie Folie 03.)</i></p>
     <p data-schritt="1"><b>Klicks 1–5 (zusammen ca. 25 s, ≈ 52 Wörter):</b> „Das Markensteuerrad nach Esch beschreibt die Identität – das Selbstbild der Marke. Wir füllen es Feld für Feld: Desk Research für die Kompetenz,</p>
     <p data-schritt="2">… Repertory Grid für die Attribute,</p>
     <p data-schritt="3">… Laddering für den Nutzen – diese beiden zeigen das Fremdbild der Zielgruppe (Etikett „Fremdbild“ auf den Karten),</p>
@@ -497,9 +503,26 @@
      ║ Bündel A – Yannick Heisler · Sollzeit 45 s · Feld: Markenkompetenz
      ║ Gestaltung: css/folien/03-markenkompetenz.css · Skript: js/folien/03-markenkompetenz.js
      ║
+     ║ STAND 17.10.2026: Inhalt nach Markenkompetenz A1 und Folienentwurf 3 (../markenkompetenz.md,
+     ║     ../folienentwuerfe.md „Folie 3“): Daten, Titel, Fußzeile, Sprechtext und Belege. ENTWURF –
+     ║     Yannick prüft Titel, Rolle, Kernkompetenz, Zeitleiste und Kennzahlen.
+     ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • Fakten nur aus dem Recherche-Dossier, mit Status und Quellennummer (Daten-JSON unten).
-     ║ • Zeitkritische Angaben (Dossier Kap. 9.3) vor dem 26.10. neu prüfen.
+     ║ • Rollenbegriffe mit der Vorlesung abgleichen: Die Chips (Marktführer, Herausforderer, Mitläufer,
+     ║     Spezialist) folgen Kotler (Standardliteratur), „Herausforderer“ ist unsere Einordnung (Kriterium
+     ║     Angriff, H). Vergibt die Vorlesung die Rollen nach Marktanteil → Variante B aus Folienentwurf 3:
+     ║     "rolle": "Spezialist", "rolleZusatz": "Herausforderer" (umrandet = Anspruch), Sprechtext anpassen.
+     ║     Nutzt die Vorlesung die Liste aus ../methoden.md: ["Pionier", "Herausforderer", "Spezialist", "Marktführer"].
+     ║ • Jahresabschluss 2024 (Unternehmensregister) abrufen – Ergebnis nur in die Rückfrage-Notiz unten,
+     ║     NICHT auf die Folie; „profitabel“ erst danach verwenden.
+     ║ • Kennzahlen Kund:innen und Mitarbeitende kurz vor dem 26.10. auf Website und Karriereseite neu ablesen
+     ║     (Stand in den Daten anpassen). Zeitkritische Angaben: Dossier Kap. 9.3.
+     ║ • [6] und [39] stehen seit 17.10.2026 in Backup B8 (erledigt).
+     ║ • „Nachprüfung 17.10.2026 (KI-gestützt, KI-Nachweis 55/56)“ in Fußzeile und B7: Die Belege hat der
+     ║     bearbeitende KI-Agent nachgelesen (markenkompetenz.md „W+“); die Prüfung durch die Gruppe ist offen.
+     ║     Liest Yannick die tragenden Belege ([13], [16], [159], Jost-Wortlaut [24]) selbst nach, darf es
+     ║     wieder „eigene Prüfung“ heißen.
+     ║ • Fakten nur mit Status und Quellennummer (Dossier Anhang B bzw. markenkompetenz.md).
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -515,9 +538,10 @@
     Kennzahlen und Rollen-Chips, setzt Rolle und Kernkompetenz in den Titel
     und sammelt die Quellennummern für die Fußzeile ein.
   • Alle Fakten stammen aus dem Recherche-Dossier (../recherche/holy-recherche.md,
-    Kap. 2 und Anhang B, Stand 14.10.2026). Zu jedem Eintrag stehen Faktenstatus
-    (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese) und Quellennummer in
-    den Daten. Neue Fakten nur mit Status und Nummer aus dem Dossier eintragen.
+    Kap. 2 und Anhang B, Stand 14.10.2026) und der Ausarbeitung A1
+    (../markenkompetenz.md, KI-gestützte Nachprüfung 17.10.2026). Zu jedem Eintrag stehen
+    Faktenstatus (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese) und
+    Quellennummer in den Daten. Neue Fakten nur mit Status und Nummer eintragen.
   • Der Markenname kommt aus marke.js (<em data-marke></em>) – nie eintippen.
   • Klassen mit „g2k-“ gehören nur zu dieser Folie (g2 = Folien-Gruppe 2,
     k = Kompetenz) – so überschneiden sie sich nicht mit anderen Folien.
@@ -533,7 +557,7 @@
     <!-- Titel-Muster: „[Marke]: <Rolle> mit <Kernkompetenz>“ – Rolle und
          Kernkompetenz werden aus den Daten unten eingesetzt (Felder „rolle“
          und „kernkompetenz“). Der Text hier ist nur der Ersatz ohne Skript. -->
-    <h2 class="titel"><em data-marke></em>: <span data-g2k="rolle">Herausforderer</span> mit <span data-g2k="kernkompetenz">zuckerfreien Softdrinks</span></h2>
+    <h2 class="titel"><em data-marke></em>: <span data-g2k="rolle">Herausforderer</span> mit <span data-g2k="kernkompetenz">Softdrinks zum Selbermixen</span></h2>
   </header>
 
   <div class="folie-inhalt g2k">
@@ -544,50 +568,62 @@
       <!-- Schritt 1: drei Kennzahlen (werden aus „kennzahlen“ gebaut) -->
       <div class="sp-7 g2k-kennzahlen" data-schritt="1" data-staffel="120" data-animation="hoch"></div>
 
-      <!-- Schritt 2: Marktrolle (Chips + ein Satz Begründung) und Claim -->
+      <!-- Schritt 2: Marktrolle (Chips + ein Satz Begründung) und Claim.
+           Seit 17.10.2026 ohne Label „Marktrolle“ (A1: Textmenge, die Chips sprechen für sich;
+           der Name bleibt für Screenreader im aria-label der Liste). -->
       <div class="sp-5 g2k-rolle" data-schritt="2" data-staffel="140" data-animation="hoch">
         <div class="g2k-rolle-kopf">
-          <span class="karte-kicker" data-meta>Marktrolle</span>
           <!-- Rollen als gleichwertige Chips: gewählte Rolle gefüllt, Zusatzrolle
-               umrandet (Rollen wie in ../methoden.md – mit Vorlesung abgleichen) -->
-          <ul class="g2k-rollen" data-meta aria-label="Mögliche Marktrollen"></ul>
+               umrandet (Wettbewerbsrollen nach Kotler, Standardliteratur – mit Vorlesung abgleichen) -->
+          <ul class="g2k-rollen" data-meta aria-label="Marktrolle: mögliche Rollen"></ul>
         </div>
         <p class="g2k-begruendung">
-          <span class="g2k-begruendung-text" data-g2k="begruendung">Fordert Red Bull und Coca-Cola heraus</span>
-          <span class="g2k-begruendung-quelle" data-meta data-g2k="begruendungQuelle">„fordert … heraus“ ✔ [7] · „Challenger-Brand“ ✔ [13] · Red&nbsp;Bull&nbsp;≈&nbsp;58&nbsp;% ✔ [26] · Spezialist: eigene Einordnung H</span>
+          <span class="g2k-begruendung-text" data-g2k="begruendung">Greift den ganzen Softdrink-Markt an</span>
+          <span class="g2k-begruendung-quelle" data-meta data-g2k="begruendungQuelle">Jost ✔ [24] · „Challenger-Brand“ ✔ [13] · Rolle nach Kotler, Kriterium Angriff (H)</span>
         </p>
         <blockquote class="zitat g2k-claim">
           <p class="zitat-text" data-g2k="claim">„Geiler Geschmack mit gutem Gewissen“</p>
-          <cite class="zitat-quelle" data-meta data-g2k="claimQuelle">Markenversprechen laut Website ✔ [5]</cite>
+          <cite class="zitat-quelle" data-meta data-g2k="claimQuelle">Markenversprechen laut Website und Press Kit · ✔ [5, 13]</cite>
         </blockquote>
       </div>
     </div>
   </div>
 
   <footer class="folie-fuss">
-    <!-- Die Quellennummern setzt das Skript aus den Daten ein (Feld „nr“/„quelle“). -->
-    <!-- Zweite Zeile: Bezug und Absender der Red-Bull-Zahl (Dossier 9.4: Circana-Zahlen
-         stammen aus Schulungsheften, die mit Red Bull entstanden sind – auf der Folie nennen) -->
-    <p class="quelle">Quelle: Recherche-Dossier Kap. 2, Quellen <span data-g2k="quellen">2–5, 7–9, 13–17, 22, 24–26</span> · Kennzahlen = Selbstauskünfte · Feld nach Esch<br>Red Bull ≈ 58 % = Umsatzanteil Energy Drinks DE, Circana MAT 08/2025, aus einem mit Red Bull erstellten Lehrbrief [26]</p>
+    <!-- Die Quellennummern setzt das Skript aus den Daten ein (Feld „nr“/„quelle“).
+         Text nach Folienentwurf 3; „→ Backup B8“ statt „B7“, weil in der Web-Präsentation
+         B8 die Nummern auflöst (B7 = Literatur). Zwei Zeilen, jede kürzer als ca. 1250 px
+         (rechts unten blendet bei Mausbewegung die Bedienleiste ein). Die Red-Bull-Zahl
+         (≈ 58 %, [26]) steht seit A1 nicht mehr auf der Folie, nur mit Quellenkritik in den Notizen. -->
+    <p class="quelle">Quelle: Recherche-Dossier Kap. 2 (14.10.2026), KI-Nachprüfung 17.10.2026, Nr. <span data-g2k="quellen">3–6, 13, 16, 17, 22, 24, 25, 39</span> → Backup B8<br>Kennzahlen = Selbstauskünfte · ✔ gesichert · ✎ korrigiert · H unsere Einordnung · Rolle nach Kotler, Feld nach Esch</p>
   </footer>
 
   <aside class="notizen">
-    <p data-schritt="0"><b>Wer ist <span data-marke></span>?</b> (ca. 15 s) Gegründet 2020 in Berlin von drei Freunden: Frederick Jost, Mathias Horsch, Philipp Naß. 2021 Start als Gaming Booster, nur online. Seit dem Iced Tea 2022 zielt <span data-marke></span> auf den ganzen Softdrink-Markt – 2025 Supermarkt, 2026 TV.</p>
-    <p data-schritt="1"><b>Kennzahlen</b> (ca. 10 s) Alles Selbstauskünfte: rund 170 Mio. € Umsatz 2025, über 2 Mio. Kund:innen, gut 170 Mitarbeitende. Unabhängig belegt sind diese Zahlen nicht: Die Jahresabschlüsse bis 2024 sind offengelegt, für 2025 gibt es nur Angaben des Unternehmens.</p>
-    <p data-schritt="2"><b>Marktrolle</b> (ca. 20 s) <span data-marke></span> nennt sich selbst „Challenger-Brand“ und fordert Red Bull – laut Branchendaten rund 58 % Umsatzanteil bei Energy Drinks – und Coca-Cola heraus. Zusätzlich ordnen wir es als Spezialisten für zuckerfreie Pulver ein – das ist unsere Einschätzung. Versprechen: „Geiler Geschmack mit gutem Gewissen“. Überleitung: Für wen? → Persona.</p>
-    <p>Belege (Recherche-Dossier, Stand 14.10.2026): Gründung – GmbH-Vertrag 21.08.2020, Marktstart April 2021 ✔ [3, 4]; Gründer und Geschäftsführer Jost, Horsch, Naß ✔ [2]. Zeitleiste ✔: 2021 „Gaming Booster“ [4, 22], 2022 Iced Tea und bunterer Look [4, 24], 08/2023 Series A 10,5 Mio. € [15], ab 01/2025 Rewe, Edeka, Globus [8, 9], 01/2026 erste große TV-Kampagne „Mach’s dir wie nie zuvor“ [25] (ein einzelner TV-Spot schon 09/2025 laut Drittanbieter-Liste, ~ unsicher [130]; deshalb „große“). Umsatz ≈ 170 Mio. € 2025 laut Press Kit und WiWo ✎ [13, 16] – Jahresabschlüsse 2021–2024 sind offengelegt (2023/2024 mit GuV, Abschluss 2024 veröffentlicht 31.03.2026), für 2025 nur Selbstauskünfte (Dossier 2.4, 9.1; den Abschluss 2024 im Unternehmensregister abrufen = einziger unabhängiger Umsatzbeleg); über 2 Mio. Kund:innen (Press Kit „2M+“, HV Capital „über 2,5 Mio.“) ✔ [13, 14]; Team „170+“ (Karriereseite) bzw. „200“ (Website) ✎ [5, 17]. Einen Marktanteil zeigen wir bewusst nicht: Circana zählt Pulver nicht zur Kategorie, ein Anteil von <span data-marke></span> ist nicht belegbar (Dossier 2.6, H). „Challenger-Brand“ ✔ [13]; Red Bull ≈ 58 % Umsatzanteil Energy Drinks Deutschland, Circana MAT 08/2025 ✔ [26] – Quellenkritik: Die Zahl stammt aus einem Markenlehrbrief, der mit Red Bull entstanden ist (Dossier 9.4: „Marktdaten mit Absender“), deshalb in der Fußzeile genannt; „fordert Coca-Cola, Red Bull und Co. heraus“ (Trending Topics) ✔ [7]. Für Folie 10: Die Energy-Linie hat 160 mg Koffein pro Portion (Dossier 3.1 ✔ [56]) – dort als Attribut „Energy: 160 mg Koffein“. Rolle Herausforderer + Spezialist ist unsere Einordnung (H, Dossier 2.6); kein Pionier, weil es Gaming-Booster-Pulver schon gab (H, [22, 52]). Repositionierung in drei Etappen (Gaming Booster → gesündere Softdrinks → Massenmarkt) ist eine Einordnung des Dossiers (2.8, H). Rückfrage-Hinweis: Rollen wie in methoden.md. Herausforderer, Spezialist (≈ Nischenanbieter) und Marktführer entsprechen den Wettbewerbsrollen nach Kotler, „Pionier“ beschreibt dagegen den Markteintritt (Modellwissen) – mit den Vorlesungsfolien abgleichen. Feld „Markenkompetenz“ nach Esch.</p>
+    <!-- Sprechtext aus Folienentwurf 3 (82 Wörter, ca. 37–47 s), auf die drei Schritte verteilt. -->
+    <p data-schritt="0"><b>Wer ist <span data-marke></span>?</b> (ca. 18 s) Drei Freunde gründen <span data-marke></span> 2020 in Berlin, 2021 startet die Marke als Gaming Booster, nur online. Mit dem Iced Tea zielt <span data-marke></span> ab 2022 auf den ganzen Softdrink-Markt: 2024 erster Supermarkt, 2026 große TV-Kampagne und Syrup.</p>
+    <p data-schritt="1"><b>Kennzahlen</b> (ca. 9 s) Laut Unternehmen: über 170 Millionen Euro Umsatz 2025, über zwei Millionen Kund:innen. Geprüfte Bilanzzahlen liegen uns nicht vor.</p>
+    <p data-schritt="2"><b>Marktrolle</b> (ca. 14 s) Nach Kotler ist <span data-marke></span> für uns ein Herausforderer: Es greift mit eigenem Format an – zuckerfreien Softdrinks zum Selbermixen. Für wen? Das zeigt unsere Persona, ein Energy-Trinker im Schichtdienst.</p>
+    <p>Belege (Recherche-Dossier, Stand 14.10.2026; „KI-Nachprüfung“ = am 17.10.2026 vom bearbeitenden KI-Agenten nachgelesen, in markenkompetenz.md „W+“, KI-Nachweis 55/56 – die Prüfung durch die Gruppe ist offen; ✔ = gesichert wie im Dossier, d. h. die Quelle sagt das, bei Kennzahlen: das Unternehmen sagt das; Ausarbeitung A1: ../markenkompetenz.md): Gründung – GmbH-Vertrag 21.08.2020, eingetragen 09.11.2020, Sitz Berlin ✔ [3]; Gründer und Geschäftsführer Jost, Horsch, Naß ✔ [2]. Marktstart April 2021 im eigenen Onlineshop als „Gaming Booster“ ✔ [4, 22]. Sommer 2022 Iced Tea, laut Jost Kurs auf den „gesamte[n] Soft-Drink-Markt“ ✔ [4, 24] (automatisches Transkript). 08/2023 Series A 10,5 Mio. € ✔ [15]. Frühjahr 2024 erster Supermarkt in Bad Endbach ✔ [6]; 08/2024 Spar Österreich ✔ [7]; ab 01/2025 Ausbau bei Rewe und Globus, Edeka nur in einzelnen Märkten belegt ✔ [8, 9]. 11/2025 Umfirmierung zur <span data-unternehmen>HOLY Softdrinks GmbH</span> ✎ [3]. 01/2026 erste große Massenmedien-Kampagne „Mach’s dir wie nie zuvor“ (TV, Streaming, DOOH) ✔ [25] (ein einzelner TV-Spot womöglich schon 09/2025, ~ unsicher [130]; deshalb „große“); 04/2026 Syrup zum 5. Jubiläum ✎ [5, 39]. Kennzahlen, alles Selbstauskünfte: über 170 Mio. € Umsatz 2025 (Press Kit „+170M“, WiWo „laut eigenen Angaben“, Horsch „€180m+“) ✎ [13, 16, 159]; über 2 Mio. Kund:innen (Press Kit „2M+“) ✔ [13], HV Capital zählt „&gt;2.5M“ seit Gründung [14]; über 170 Mitarbeitende (Karriereseite „170+“, Website „200-köpfiges Team“, beide 10/2026) ✎ [5, 17]. Die Jahresabschlüsse 2021–2024 sind offengelegt, aber nicht abgerufen; für 2025 gibt es noch keinen [3]. Einen Marktanteil zeigen wir nicht: In den Circana-Top-5 der Energy Drinks (DE, MAT 08/2025; Schulungsheft, das mit Red Bull entstand) fehlt <span data-marke></span>, Red Bull hat ≈ 58 % ✔ [26]; vermutlich zählt Circana Pulver nicht zur Kategorie (H). Rolle: Selbstbild „Challenger-Brand“ ✔ [13]; Jost ✔ [24]; Leitbild „das Coca-Cola des 21. Jahrhunderts“ ✔ [14, 17, 46]; Herausforderer = unsere Einordnung nach Kotler, Kriterium Angriff, Bezugsmarkt Softdrinks (H); kein Pionier (H; Symrise 2021 [22], LevlUp seit 2018). Trending Topics [7] nur als Beleg für Spar AT, der Titel „fordert Coca-Cola, Red Bull und Co. heraus“ ist eine Zuspitzung der Redaktion. Claim: Markenversprechen ✔ [5], im Press Kit als Überschrift [13] (KI-Nachprüfung). Die drei Etappen (Gaming Booster → gesündere Softdrinks → Massenmarkt) sind eine Einordnung des Dossiers (2.8, H) und deshalb nicht auf der Folie. Rollen nach Kotler, Feld „Markenkompetenz“ nach Esch (Standardliteratur) – mit den Vorlesungsfolien abgleichen.</p>
+    <p>Rückfragen (nicht vorlesen; alle zehn mit Belegen in ../folienentwuerfe.md, Folie 3): „Wie belastbar sind die 170 Millionen?“ – Selbstauskunft: Press Kit 02/2026 „+170M Jahresumsatz (2025)“ [13], WiWo „laut eigenen Angaben“ [16], Mitgründer Horsch „€180m+“ [159]. Für 2025 ist noch kein Jahresabschluss offengelegt, der letzte ist der Abschluss 2024, veröffentlicht am 31.03.2026 [3]. Unabhängig prüfen ließe sich nur die Vorjahresangabe (laut Horsch „~€75m“ für 2024 [159]), und nur, wenn die GuV Umsatzerlöse ausweist. <i>Offen: Jahresabschluss 2024 noch nicht abgerufen – Jahresergebnis (ggf. Umsatz) 2024 hier ergänzen, sobald Yannick ihn hat; nicht auf die Folie.</i> „<span data-marke></span> fehlt im Marktanteil – warum Herausforderer?“ – Nach Marktanteil im Energy-Drink-Handel wäre <span data-marke></span> klein, also eher Spezialist (bei Kotler: Nischenanbieter). Wir ordnen aber nach dem Verhalten ein; so unterscheidet Kotler die Rollen hinter dem Marktführer (Modellwissen, mit der Vorlesung abgleichen): Angriff auf den ganzen Softdrink-Markt laut Jost ✔ [24], Leitbild „das Coca-Cola des 21. Jahrhunderts“ ✔ [14, 17, 46], dazu Handel und die erste große TV-Kampagne ✔ [6, 25]. Softdrink-Marktanteile nennen wir nicht, dazu haben wir keine Daten. „Warum nicht Pionier?“ – <span data-marke></span> war nicht der Erste: Symrise schrieb 2021, das Produkt „bewegt sich im trendigen Markt der Gaming-Booster“ ✔ [22]; LevlUp gibt es seit 2018 (KI-Nachprüfung). „Kein Pionier“ ist unsere Einordnung (H). „Auf Folie 6 ist ‚selbst anrühren‘ eine Hürde – Widerspruch?“ – Nein, ein Befund: Kompetenz laut <span data-marke></span> (Selbstbild) gegen Hürde laut Befragten (Fremdbild). Folie 6 zeigt derzeit Beispieldaten; nach Lukas’ Auswertung (Mo 19.10.) bestätigen oder streichen.</p>
   </aside>
 
   <!-- DATEN – hier ändern. Hinweise (Grenzen einhalten, sonst wird es eng):
        • rolle / kernkompetenz: erscheinen im Titel „[Marke]: <rolle> mit <kernkompetenz>“.
          kernkompetenz grammatisch passend nach „mit“ (Dativ), höchstens ca. 24 Zeichen,
          damit der Titel einzeilig bleibt (bei zwei Zeilen wird die Folie automatisch
-         dichter gesetzt).
+         dichter gesetzt). Ausnahme seit 17.10.2026: „Softdrinks zum Selbermixen“
+         (26 Zeichen, HOLYs eigene Formulierung ✔ [13], A1) – der Titel ist zweizeilig,
+         so im Folienentwurf 3 vorgesehen.
        • rollen: Liste der Marktrollen als Chips; „rolle“ wird gefüllt, „rolleZusatz“
-         (optional) umrandet markiert. Seit 17.10.2026 nur die beiden gewählten
-         Rollen (Wortbudget); „Pionier“ und „Marktführer“ stehen in den Notizen
-         (Rückfrage-Hinweis). Zum Wiederherstellen: ["Pionier", "Herausforderer",
-         "Spezialist", "Marktführer"].
+         (optional) umrandet markiert, leer = kein umrandeter Chip. Seit 17.10.2026
+         (A1) die vier Wettbewerbsrollen nach Kotler, nur „Herausforderer“ gefüllt.
+         Chips sind Beschriftungen (zählen nicht zum Wortbudget). Nach dem
+         Vorlesungsabgleich festlegen; Liste aus ../methoden.md: ["Pionier",
+         "Herausforderer", "Spezialist", "Marktführer"]. Variante B (Rollen nach
+         Marktanteil): "rolle": "Spezialist", "rolleZusatz": "Herausforderer".
+       • WORTBUDGET: Im Endzustand ca. 48 Wörter (pruefen.mjs warnt ab 40). Bewusst
+         (Folienentwurf 3: A1 verlangt Zeitleiste, 3 Kennzahlen, Rolle und Claim);
+         die Folie baut sich in 3 Schritten auf. Nicht weiter füllen.
        • begruendung: EIN Satz zur Marktrolle (höchstens ca. 40 Zeichen) + Quelle (Metazeile).
        • zeitleiste: 3 bis 6 Einträge, der erste ist die Gründung (hervorgehoben).
          „jahr“ nur als JJJJ (Monate in die Notizen), „text“ höchstens ca. 22 Zeichen
@@ -603,30 +639,29 @@
        • claim.platzhalter: true = gestrichelt als Platzhalter gekennzeichnet. -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "Fakten aus dem Recherche-Dossier, Kap. 2 (Stand 14.10.2026); Nummern = Quellenverzeichnis Anhang B",
+    "hinweis": "Fakten aus dem Recherche-Dossier (Stand 14.10.2026) und markenkompetenz.md (Prüfung 17.10.2026); Nummern = Anhang B; Rolle = Einordnung des Teams nach Kotler, Kriterium Angriff (H); rolleZusatz bewusst leer (kein zweiter Rollen-Chip)",
     "rolle": "Herausforderer",
-    "rolleZusatz": "Spezialist",
-    "kernkompetenz": "zuckerfreien Softdrinks",
-    "rollen": ["Herausforderer", "Spezialist"],
+    "rolleZusatz": "",
+    "kernkompetenz": "Softdrinks zum Selbermixen",
+    "rollen": ["Marktführer", "Herausforderer", "Mitläufer", "Spezialist"],
     "begruendung": {
-      "text": "Fordert Red Bull und Coca-Cola heraus",
-      "quelle": "„fordert … heraus“ ✔ [7] · „Challenger-Brand“ ✔ [13] · Red\u00a0Bull\u00a0≈\u00a058\u00a0% ✔ [26] · Spezialist: eigene Einordnung H"
+      "text": "Greift den ganzen Softdrink-Markt an",
+      "quelle": "Jost ✔ [24] · „Challenger-Brand“ ✔ [13] · Rolle nach Kotler, Kriterium Angriff (H)"
     },
     "proportional": true,
     "zeitleiste": [
-      { "jahr": "2020", "text": "Gründung in Berlin",   "status": "✔", "nr": "[2, 3]",  "detail": "GmbH-Vertrag 21.08.2020" },
-      { "jahr": "2021", "text": "Gaming Booster",       "status": "✔", "nr": "[4, 22]", "detail": "Marktstart April 2021, nur Onlineshop" },
-      { "jahr": "2022", "text": "Iced Tea",             "status": "✔", "nr": "[4, 24]", "detail": "koffeinfreie Linie, Look „massenmarkttauglicher“" },
-      { "jahr": "2023", "text": "Series A",             "status": "✔", "nr": "[15]",    "detail": "08/2023, 10,5 Mio. €, Lead Left Lane Capital" },
-      { "jahr": "2025", "text": "Rewe, Edeka",          "status": "✔", "nr": "[8, 9]",  "detail": "ab 01/2025 Rewe, Edeka, Globus" },
-      { "jahr": "2026", "text": "große TV-Kampagne",    "status": "✔", "nr": "[25]",    "detail": "01/2026 „Mach’s dir wie nie zuvor“ (erste große TV-Kampagne)" }
+      { "jahr": "2020", "text": "Gründung in Berlin",     "status": "✔", "nr": "[3]",         "detail": "GmbH-Vertrag 21.08.2020, eingetragen 09.11.2020" },
+      { "jahr": "2021", "text": "Gaming Booster, online", "status": "✔", "nr": "[4, 22]",     "detail": "Marktstart April 2021, nur eigener Onlineshop" },
+      { "jahr": "2022", "text": "Iced Tea → Softdrinks",  "status": "✔", "nr": "[4, 24]",     "detail": "Sommer 2022, zum Start koffeinfrei; Kurs auf den ganzen Softdrink-Markt" },
+      { "jahr": "2024", "text": "erster Supermarkt",      "status": "✔", "nr": "[6]",         "detail": "Frühjahr 2024 Bad Endbach (TikTok 11.05.2024: „seit 2 Wochen“); 08/2024 Spar AT [7]; ab 01/2025 Rewe und Globus, Edeka in einzelnen Märkten [8, 9]" },
+      { "jahr": "2026", "text": "TV-Kampagne und Syrup",  "status": "✎", "nr": "[5, 25, 39]", "detail": "01/2026 erste große Massenmedien-Kampagne ✔ [25]; 04/2026 Syrup zum 5. Jubiläum ✎ [5, 39]" }
     ],
     "kennzahlen": [
-      { "praefix": "≈",    "wert": 170, "dezimalen": 0, "einheit": "Mio. €", "text": "Umsatz",        "quelle": "laut Unternehmen", "status": "✎", "nr": "[13, 16]", "stand": "2025" },
-      { "praefix": "über", "wert": 2,   "dezimalen": 0, "einheit": "Mio.",   "text": "Kund:innen",    "quelle": "laut Unternehmen", "status": "✔", "nr": "[13, 14]", "stand": "2026" },
-      { "wert": 170, "suffix": "+",     "dezimalen": 0, "einheit": "",       "text": "Mitarbeitende", "quelle": "laut Unternehmen", "status": "✎", "nr": "[17]",     "stand": "10/2026" }
+      { "praefix": "über", "wert": 170, "dezimalen": 0, "einheit": "Mio. €", "text": "Umsatz 2025",   "quelle": "laut Unternehmen", "status": "✎", "nr": "[13, 16]", "stand": "02/2026" },
+      { "praefix": "über", "wert": 2,   "dezimalen": 0, "einheit": "Mio.",   "text": "Kund:innen",    "quelle": "laut Unternehmen", "status": "✔", "nr": "[13]",     "stand": "02/2026" },
+      { "praefix": "über", "wert": 170, "dezimalen": 0, "einheit": "",       "text": "Mitarbeitende", "quelle": "laut Unternehmen", "status": "✎", "nr": "[5, 17]",  "stand": "10/2026" }
     ],
-    "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website", "status": "✔", "nr": "[5]", "platzhalter": false }
+    "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website und Press Kit", "status": "✔", "nr": "[5, 13]", "platzhalter": false }
   }
   </script>
 </section>
@@ -637,12 +672,28 @@
      ║ Gestaltung: css/folien/04-persona.css · Skript: js/folien/04-persona.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • Persona-Bild: Pfad unter „bild“ in den Daten eintragen (KI-Bild aus Prompt P6 kennzeichnen,
-     ║     z. B. „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“); leer = gezeichneter Platzhalter.
+     ║ • Persona-Bild bleibt PLATZHALTER: Yannick erzeugt das KI-Bild selbst (Prompt P6). Dann Pfad unter
+     ║     „bild“ eintragen (z. B. bilder/persona-marco.jpg) und „bildHinweis“ auf „Bild KI-generiert
+     ║     (Werkzeug, TT.MM.2026; Prompt P6)“ setzen; Werkzeug und Datum auch in die Fußzeile, Nutzung im
+     ║     KI-Nachweis eintragen, in den Notizen von B1 „noch ein Platzhalter“ streichen, in B2 Zeile P6.
+     ║     Außerdem QUELLEN.md §3 (Persona-Bild: KI-generiert, Werkzeug, Datum, Prompt P6, keine reale oder
+     ║     erkennbare Person) und §4 (Datei in bilder/) sowie B7 „Technik“ (Zeile „Persona-Bild Folie 04:
+     ║     KI-generiert, Werkzeug, Datum“) nachziehen – QUELLEN.md §3 sagt bis dahin „kein KI-Bild“.
      ║ • Inhalt seit 17.10.2026 nach Persona-Steckbrief A2 und Folienentwurf 4 (../persona-steckbrief.md,
-     ║     ../folienentwuerfe.md): Mediennutzung = Statista Consumer Insights 2025 (Kategorie Energy Drinks,
-     ║     NICHT im Recherche-Dossier, Campuslizenz – Kurzfassung ../persona-daten.md). Der Steckbrief ist
-     ║     ein ENTWURF: Yannick prüft ihn; danach Werte, Titel und Beruf hier bestätigen oder anpassen.
+     ║     ../folienentwuerfe.md): Mediennutzung und Werte = Statista Consumer Insights 2025, Häufigkeit =
+     ║     Kantar Media TGI 2023 (Kategorie Energy Drinks, NICHT im Recherche-Dossier, Campuslizenz –
+     ║     Kurzfassung ../persona-daten.md). Psychografie ohne „Spaß“ (liegt im Ø), Kaufverhalten als Daten.
+     ║     Der Steckbrief ist ein ENTWURF: Yannick prüft ihn; danach Werte, Titel und Beruf bestätigen.
+     ║ • Abweichung vom Folienentwurf 4 (Entscheidung Yannick): Soziodemografie hier kürzer
+     ║     („Schichtdienst, männlich / 25–40 Jahre“ statt „männlich, 28 / Realschule + Ausbildung …“);
+     ║     Sollzeit 80 s statt der im Entwurf geplanten 1:30 – Sprechtext laut lesen und stoppen.
+     ║ • Seit 18.10.2026 (Prüfung Inhalt), Abweichung von Steckbrief A2 §2 und Folienentwurf 4 – Yannick
+     ║     entscheidet, dann Steckbrief und Folienentwurf angleichen (oder hier zurückändern):
+     ║     – Psychografie „bequem und schnell“ (30 % zu Ø 25 %) statt „gesünder, aber schnell“: „gesund
+     ║       ernähren“ liegt mit 50 % unter dem Ø (53 %), die Daten tragen „gesünder“ nicht. Block als
+     ║       Daten (Statista CI 2025) markiert, Pain/Gain in der Quellenzeile als Annahme.
+     ║     – Fußzeile „Person und Zitat fiktiv“ (wie Folienentwurf 4); Sprechtext nennt den Beruf als Annahme.
+     ║     – Sprechtext gekürzt (Doppelungen gestrichen): ca. 147 statt 172 Wörter ≈ 77 s bei 1,9 Wörtern/s.
      ║ • Persona-Werte sind Hypothesen bzw. Kategoriedaten – alle Belege stehen in Backup B3.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -756,7 +807,7 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: Recherche-Dossier Kap. 4.1–4.3 (Nummern = Anhang B) · Mediennutzung: Statista Consumer Insights 02/2025, Energy-Drink-Konsument:innen 18–64 J., n = 1.583 – Kategorie, nicht <span data-marke></span> · Person fiktiv · Belege: B3</p>
+    <p class="quelle">Quelle: Recherche-Dossier Kap. 4.1–4.3 (Nummern = Anhang B) · Kategorie Energy Drinks, nicht <span data-marke></span>: Statista Consumer Insights 02/2025 (18–64 J., n = 1.583), Kantar Media TGI 2023 · Person und Zitat fiktiv · Belege: B3</p>
     <div class="legende g2p-legende" data-schritt="4" data-animation="einblenden" data-meta>
       <span class="legende-daten">Daten (Quelle)</span>
       <span class="legende-annahme">Annahme</span>
@@ -764,12 +815,12 @@
   </footer>
 
   <aside class="notizen">
-    <p data-schritt="0"><b>Für wen?</b> (ca. 10 s) Das ist Marco, 28 – unsere Brand Persona und der Bezugsrahmen für alle Felder des Steuerrads. Erstellt per Desk Research und KI, geprüft am Dossier.</p>
-    <p data-schritt="1"><b>Zitat</b> (ca. 10 s) Sein Satz: „Ohne Zucker durch die Nachtschicht – und es schmeckt.“ Erfunden, aber angelehnt an echte Kundenstimmen.</p>
-    <p data-schritt="2"><b>Wer und wo?</b> (ca. 20 s) Marco arbeitet im Drei-Schicht-Betrieb, in der Lagerlogistik. Laut Mitgründer Jost ist die Kundschaft meist 25 bis 40, zu zwei Dritteln männlich, oft im Schichtdienst – also kein junger Gamer. Großstadt, etwa Dortmund, Vorratskauf und Rabatte sind unsere Annahmen, abgeleitet aus <span data-marke></span>s Angebot – Kundendaten gibt es nicht.</p>
-    <p data-schritt="3"><b>Wie tickt er?</b> (ca. 25 s) Marco nutzt YouTube, Instagram und TikTok – wie Energy-Drink-Trinker insgesamt; der Strich zeigt den Schnitt aller Befragten, TikTok liegt am weitesten darüber. Kategoriedaten, nicht <span data-marke></span>. Er will wach durch die Schicht; Erfolg zählt etwas mehr als im Schnitt, Spaß und Gemeinschaft gehören dazu – auf Zucker verzichtet er, auf Geschmack nicht.</p>
-    <p data-schritt="4"><b>Was ist belegt?</b> (ca. 15 s) Flächen mit Datensymbol beruhen auf Quellen, gestrichelte Blöcke sind begründete Annahmen. Überleitung: Welche Motive treiben Marco an? → Limbic Map.</p>
-    <p>Stand: Persona-Steckbrief A2 (../persona-steckbrief.md, Entwurf 16.10.2026 – Prüfung durch Yannick offen) und Folienentwurf 4. Belege (Recherche-Dossier, Stand 14.10.2026, und Statista – Kurzfassung in ../persona-daten.md): Soziodemografie – Jost 08/2024 „zwischen 25 und 40“, „primär männlich“, etwa 2/3 zu 1/3, Schichtdienst ✔ [24]; Trending Topics: Pflege, Polizei, Feuerwehr, Lkw ✔ [7]; Beruf Lagerlogistik ist unsere Annahme (Schichtberufe laut Gründer und Presse). Kaufverhalten – Annahme, abgeleitet aus <span data-marke></span>s Angebot: Kern ist der eigene Onlineshop ✔ [4]; günstigste Portion (ab 0,80 €) nur in der 50er-Dose online ✔ [1]; Rabattstaffel Mix &amp; Match ✔ [48]; kein Abo ✔ [30, 48]; Rabatte nur durch eine Einzelstimme gestützt [89]; Vorratskauf ist im Dossier eine Hypothese (5.1); eine <span data-marke></span>-Anzeige an den Handel nennt sogar „Impuls- und Erstkäufer“ [18] – Kundendaten zum Kaufverhalten gibt es nicht. Mediennutzung – Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“, 02/2025, Online-Befragung 18–64 J., n = 1.583 (Vergleich: alle Befragten, n = 35.956), regelmäßig genutzt: YouTube 73 % (Ø 63 %), Instagram 71 % (Ø 58 %), TikTok 58 % (Ø 41 %); Twitch nur 18 % (Ø 10 %) – Randkanal. Diese Quelle steht NICHT im Recherche-Dossier (Campuslizenz der HSKL, vollständige Tabellen nur im Gruppenordner). Früher stand hier die ARD/ZDF-Medienstudie 2025 (14–29 J., Instagram 77 %, TikTok 50 %, Twitch 19 % ✔ [102]) – zu jung für Marco und ohne YouTube. Geografie – Annahme; Statista CI 2025 zeigt nur eine schwache Tendenz (63 % in Mittel-, Groß- oder Millionenstädten, Ø 60 %; 68 % zur Miete, Ø 64 %); Mintel (Kategorie): „In Städten lebende Männer …“ [98]; Dortmund ist frei gewählt (Ruhrgebiet nach Dossier 4.3). Psychografie – Werte aus Statista CI 2025 (Kategorie): „erfolgreich sein“ 27 % (Ø 22 %), „Spaß haben“ 38 % (Ø 36 %, also etwa wie im Schnitt – so auch der Steckbrief seit 17.10.2026); 50 % versuchen, sich gesund zu ernähren (Ø 53 %), 30 %: Essen muss bequem und schnell sein (Ø 25 %); Gemeinschaft, Pains und Gains sind Annahmen aus Kundenstimmen (Trustpilot, REVIEWS.io, schwache Quellen) [88, 89] – deshalb ist der Block als Annahme markiert. Zitat fiktiv, angelehnt an Kundenstimmen und den Claim „Änder nix – nur dein Drink“ [18]. Wachstums-Persona „Lena, 29“ (Pflegefachkraft, Einstieg im Supermarkt, Instagram/TikTok/Pinterest) steht im Dossier 4.3 und im Backup B3 – Richtung der Kampagne 2026. Rückfrage „Ist die Persona ein Klischee?“ → Jede Angabe ist als Daten oder Annahme gekennzeichnet; der erste Entwurf (21-jähriger Gamer) wurde verworfen, weil er der Gründeraussage widerspricht. Bild: Platzhalter – das KI-Bild wird mit Werkzeug und Datum gekennzeichnet (P6).</p>
+    <p data-schritt="0"><b>Für wen?</b> (ca. 4 s) Das ist Marco, 28 – unsere Brand Persona.</p>
+    <p data-schritt="1"><b>Zitat</b> (ca. 8 s) Sein Satz: „Ohne Zucker durch die Nachtschicht – und es schmeckt.“ Erfunden, aber angelehnt an echte Kundenstimmen.</p>
+    <p data-schritt="2"><b>Wer und wo?</b> (ca. 31 s) Marco ist Fachkraft für Lagerlogistik im Drei-Schicht-Betrieb. Laut Mitgründer Jost ist die Kundschaft meist 25 bis 40, zu etwa zwei Dritteln männlich, und getrunken wird <span data-marke></span> in der Regel nicht beim Zocken, sondern zum Beispiel im Schichtdienst. Gut 40 Prozent der Energy-Drink-Trinker trinken mindestens zwei- bis dreimal pro Woche. Beruf, Großstadt, Vorratskauf online und Rabatte sind unsere Annahmen.</p>
+    <p data-schritt="3"><b>Wie tickt er?</b> (ca. 27 s) Er ist auf YouTube, Instagram und TikTok – TikTok liegt am weitesten über dem Schnitt aller Befragten, den der Strich zeigt; Kategoriedaten, nicht <span data-marke></span>. Er will wach durch die Schicht, und es muss schnell gehen; Erfolg ist ihm etwas wichtiger als im Schnitt. Auf Zucker kann er verzichten, auf Geschmack nicht.</p>
+    <p data-schritt="4"><b>Was ist belegt?</b> (ca. 8 s) Flächen mit Datensymbol sind belegt, gestrichelte Blöcke sind Annahmen. Welche Motive dahinterstecken, zeigt die Limbic Map.</p>
+    <p>Stand: Persona-Steckbrief A2 (../persona-steckbrief.md, Entwurf 16.10.2026 – Prüfung durch Yannick offen) und Folienentwurf 4. Belege (Recherche-Dossier, Stand 14.10.2026, und Statista – Kurzfassung in ../persona-daten.md): Soziodemografie – Jost 08/2024 „zwischen 25 und 40“, „primär männlich“, etwa 2/3 zu 1/3, Schichtdienst ✔ [24]; Trending Topics: Pflege, Polizei, Feuerwehr, Lkw ✔ [7]; Beruf Lagerlogistik ist unsere Annahme (Schichtberufe laut Gründer und Presse). Kaufverhalten (seit 17.10.2026 wie Folienentwurf 4) – Häufigkeit: Kantar Media TGI 2023 (ab 15 J., n = 10.089, Kategorie, via Statista, Campuslizenz – Kurzfassung ../persona-daten.md): gut 40 % der Konsument:innen trinken mindestens zwei- bis dreimal pro Woche; Anlass: laut Gründer „in der Regel gar nicht beim Gaming“, sondern z. B. im Schichtdienst ✔ [24]. Vorratskauf online und Rabatte sind Annahmen (nur im Sprechtext), abgeleitet aus <span data-marke></span>s Angebot: Kern ist der eigene Onlineshop ✔ [4]; günstigste Portion (ab 0,80 €) nur in der 50er-Dose online ✔ [1]; Rabattstaffel Mix &amp; Match ✔ [48]; kein Abo ✔ [30, 48]; Rabatte nur durch eine Einzelstimme gestützt [89]; Vorratskauf ist im Dossier eine Hypothese (5.1); eine <span data-marke></span>-Anzeige an den Handel nennt sogar „Impuls- und Erstkäufer“ [18] – Kundendaten zum Kaufverhalten gibt es nicht. Mediennutzung – Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“, 02/2025, Online-Befragung 18–64 J., n = 1.583 (Vergleich: alle Befragten, n = 35.956), regelmäßig genutzt: YouTube 73 % (Ø 63 %), Instagram 71 % (Ø 58 %), TikTok 58 % (Ø 41 %); Twitch nur 18 % (Ø 10 %) – Randkanal. Diese Quelle steht NICHT im Recherche-Dossier (Campuslizenz der HSKL, vollständige Tabellen nur im Gruppenordner). Früher stand hier die ARD/ZDF-Medienstudie 2025 (14–29 J., Instagram 77 %, TikTok 50 %, Twitch 19 % ✔ [102]) – zu jung für Marco und ohne YouTube. Geografie – Annahme; Statista CI 2025 zeigt nur eine schwache Tendenz (63 % in Mittel-, Groß- oder Millionenstädten, Ø 60 %; 68 % zur Miete, Ø 64 %); Mintel (Kategorie): „In Städten lebende Männer …“ [98]; Dortmund ist frei gewählt (Ruhrgebiet nach Dossier 4.3). Psychografie – Werte aus Statista CI 2025 (Kategorie): „erfolgreich sein“ 27 % (Ø 22 %) → auf der Folie „Wichtiger als im Ø: Erfolg“; „Spaß haben“ 38 % (Ø 36 %, also etwa wie im Schnitt) steht deshalb seit 17.10.2026 nicht mehr auf der Folie (Steckbrief A2, Limbic Map A3); Einstellung „bequem und schnell“: 30 % sagen, Essen müsse bequem und schnell sein (Ø 25 %). Bis 17.10.2026 stand hier „gesünder, aber schnell“ (Steckbrief A2 §2) – die Daten tragen „gesünder“ nicht: 50 % versuchen, sich gesund zu ernähren, im Ø sind es 53 % (leicht darunter; so auch Limbic Map A3). „Ohne Zucker“ stützen nur Kundenstimmen [88, 89] – deshalb nur im Pain/Gain (Annahme). Pain „Müdigkeit, Zucker“ und Gain „Geschmack ohne Zucker“ sind Annahmen aus Kundenstimmen (Trustpilot, REVIEWS.io, schwache Quellen) [88, 89] und dem Schichtalltag – der Block ist seit 18.10.2026 als Daten markiert (Einstellung und Wert sind Statista-Daten), die Quellenzeile im Block nennt Pain und Gain ausdrücklich als Annahme. Die Statista-Werte sind laut Steckbrief noch stichprobenartig im Report gegenzulesen. Zitat fiktiv, angelehnt an Kundenstimmen und den Claim „Änder nix – nur dein Drink“ [18]. Wachstums-Persona „Lena, 29“ (Pflegefachkraft, Einstieg im Supermarkt, Instagram/TikTok/Pinterest) steht im Dossier 4.3 und im Backup B3 – Richtung der Kampagne 2026. Rückfrage „Ist die Persona ein Klischee?“ → Jede Angabe ist als Daten oder Annahme gekennzeichnet; der erste Entwurf (21-jähriger Gamer) wurde verworfen, weil er der Gründeraussage widerspricht. Bild: Platzhalter – Yannick erzeugt das KI-Bild selbst (Prompt P6); es wird mit Werkzeug und Datum gekennzeichnet.</p>
   </aside>
 
   <!-- DATEN – hier ändern. Hinweise (Grenzen einhalten, sonst wird es eng):
@@ -786,11 +837,23 @@
          relativ zum größten Wert). „schnitt“ (optional) = Durchschnitt aller
          Befragten derselben Studie → dunkler Strich im Balken + kleine Legende.
        • „werte“ (höchstens 3 × ca. 10 Zeichen), „pain“, „gain“: Psychografie.
+         Optional davor „zeilen“ (wie oben, z. B. Einstellung zur Kategorie) und
+         „werteLabel“ als Überschrift der Werte (Standard „Werte“).
+         Seit 17.10.2026 nach Steckbrief A2 / Folienentwurf 4: nur „Erfolg“ als
+         Wert, der über dem Ø liegt (27 % zu Ø 22 %); „Spaß haben“ liegt im Ø
+         (38 % zu 36 %) und steht deshalb nicht mehr auf der Folie.
+         Seit 18.10.2026 (Prüfung Inhalt): Zeile „bequem und schnell“ (30 % zu Ø 25 %)
+         statt „gesünder, aber schnell“ – „gesund ernähren“ liegt mit 50 % unter dem
+         Ø (53 %). Block als "daten" (Einstellung und Wert sind Statista-Daten), die
+         Quellenzeile nennt Pain und Gain als Annahme.
+       • Kaufverhalten seit 17.10.2026 wie Folienentwurf 4 als Daten (Häufigkeit:
+         Kantar TGI 2023, Kategorie; Anlass Schicht: Gründer [24]); Vorratskauf
+         und Rabatte sind Annahmen und stehen nur im Sprechtext.
        • „status“: "daten" oder "annahme"; „quelle“ = Beleg (Kurzform + Nummer im
          Quellenverzeichnis des Dossiers). Sichtbar nur bei "daten". -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "Kern-Persona aus dem Recherche-Dossier, Kap. 4.3 (Hypothese), ausgearbeitet im Persona-Steckbrief A2 (Entwurf 16.10.2026, Prüfung durch Yannick offen); Mediennutzung: Statista Consumer Insights 2025 (Kategorie, nicht im Dossier); belegte Angaben mit Quelle, Rest als Annahme gekennzeichnet",
+    "hinweis": "Kern-Persona aus dem Recherche-Dossier, Kap. 4.3 (Hypothese), ausgearbeitet im Persona-Steckbrief A2 (Entwurf 16.10.2026, Prüfung durch Yannick offen) und Folienentwurf 4 (17.10.2026); Mediennutzung und Werte: Statista Consumer Insights 2025, Häufigkeit: Kantar TGI 2023 (Kategorie, nicht im Dossier); belegte Angaben mit Quelle, Rest als Annahme gekennzeichnet",
     "titel": "Ende 20, Schichtdienst – und Energie ohne Zucker",
     "name": "Marco, 28",
     "zitat": "Ohne Zucker durch die Nachtschicht – und es schmeckt.",
@@ -803,9 +866,9 @@
       { "titel": "Soziodemografie", "icon": "person",  "status": "daten",
         "zeilen": ["Schichtdienst, männlich", "25–40 Jahre"],
         "quelle": "Gründer, Presse ✔ [7, 24]" },
-      { "titel": "Kaufverhalten",   "icon": "tasche",  "status": "annahme",
-        "zeilen": ["online auf Vorrat", "nutzt Rabatte"],
-        "quelle": "Annahme aus Shop-Angebot [1, 48] und Kundenstimmen [89]" },
+      { "titel": "Kaufverhalten",   "icon": "tasche",  "status": "daten",
+        "zeilen": ["mehrmals pro Woche", "vor der Schicht"],
+        "quelle": "Kantar 2023 · Gründer ✔ [24]" },
       { "titel": "Mediennutzung",   "icon": "video",   "status": "daten",
         "einheit": "% regelmäßig genutzt",
         "skala": 100,
@@ -815,11 +878,13 @@
           { "name": "TikTok",    "wert": 58, "schnitt": 41 }
         ],
         "quelle": "Kategorie Energy Drinks · Statista CI 2025" },
-      { "titel": "Psychografie",    "icon": "herz",    "status": "annahme",
-        "werte": ["Erfolg", "Spaß", "Gemeinschaft"],
+      { "titel": "Psychografie",    "icon": "herz",    "status": "daten",
+        "zeilen": ["bequem und schnell"],
+        "werteLabel": "Wichtiger als im Ø",
+        "werte": ["Erfolg"],
         "pain": "Müdigkeit, Zucker",
-        "gain": "Genuss ohne Reue",
-        "quelle": "Werte: Statista CI 2025 (Kategorie); Gemeinschaft, Pain, Gain: Annahme aus Kundenstimmen [88, 89]" }
+        "gain": "Geschmack ohne Zucker",
+        "quelle": "Statista CI 2025 · Pain/Gain: Annahme [88, 89]" }
     ]
   }
   </script>
@@ -831,13 +896,21 @@
      ║ Gestaltung: css/folien/05-limbic-map.css · Skript: js/folien/05-limbic-map.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • Limbic Map: Lage der Bereiche und Gewichte (Daten → „karte“) mit der Vorlesungsfolie abgleichen;
-     ║     die Gewichte sind Hypothesen (Dossier 4.4).
-     ║ • NEU 17.10.2026: ../limbic-map.md (A3) stuft Marco als „Hedonisten“ ein (B 30 / D 30 / S 40,
-     ║     Lücke Dominanz −10, neue Folgen und neuer Titel; fertiges Daten-JSON in ../folienentwuerfe.md,
-     ║     Folie 5). Diese Folie zeigt noch den Dossier-Stand „Abenteurer“. Nach Yannicks Freigabe Daten,
-     ║     Titel und Sprechtext hier übernehmen – dazu Folie 10 (Persona-Pille „Abenteurer“) und die
-     ║     Sprechtexte von Folie 10/11 („Dominanz-Lücke“, „20 Punkte“) angleichen.
+     ║ • Stand 17.10.2026: Inhalt nach Limbic Map A3 (../limbic-map.md) und Folienentwurf 5
+     ║     (../folienentwuerfe.md): Marco B 30 / D 30 / S 40 → „Hedonisten“ (Hypothese, knapp vor
+     ║     „Offene“); Auftritt B 30 / D 20 / S 50; Lücke Dominanz −10 Pp. ENTWURF – Freigabe von Gewichten,
+     ║     Typ und Urteil „passt teilweise“ durch Yannick offen. Ändert sich der Typ (Entscheidungsregel
+     ║     limbic-map.md 3.2 nach der Auswertung der Bewertungen), Folie 10 (Persona-Pille) mitändern.
+     ║ • Limbic Map: Map-Version, Feldnamen und Lage der Typen (Daten → „karte“) mit der Vorlesungsfolie
+     ║     abgleichen. Die Gewichte sind eine Schätzung des Teams, keine Messung.
+     ║ • Sprechtext aus dem Folienentwurf (ca. 115 Wörter, geplant 1:00); seit 18.10.2026 ohne die
+     ║     Eingangsfrage (steht im Kicker) ca. 106 Wörter ≈ 56 s bei 1,9 Wörtern/s (Sollzeit 55 s) – laut
+     ║     lesen und stoppen.
+     ║ • Seit 18.10.2026 (Prüfung Darstellung/Rechte), zur Freigabe:
+     ║     – Etikett „HOLY (Mittelwert)“ zweizeilig direkt an der Raute (stand vorher unter Marcos Punkt).
+     ║     – Fußzeile Zeile 2: Rechtevermerk nach [105] S. 7 gekürzt („urheber- und patentrechtlich
+     ║       geschützt“), wörtlich in B7 und in den Notizen – Abweichung vom Folienentwurf 5 („derselbe
+     ║       Wortlaut für Web-Fußzeile, SVG und PNG“), weil die volle Fassung nicht in eine Zeile passt.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -858,13 +931,15 @@
   • Zwei Punkte: Persona (Kreis) und Marke (Raute). Ihre Lage wird aus den
     Gewichten Balance/Dominanz/Stimulanz (in %) berechnet: gewichteter
     Mittelwert der drei Richtungen. Die Mitte bedeutet 33/33/33 %.
-  • Rechts: Limbic Type der Persona, die größte Lücke zwischen Persona und
-    Marke (in Prozentpunkten, direkt aus den Balken ablesbar) und drei
-    Folgen für die Kommunikation, die sich aus dieser Lücke ergeben.
-  • Die Gewichte sind die Limbic-Map-Hypothese aus dem Recherche-Dossier
-    (../recherche/holy-recherche.md, Kap. 4.4): Startwerte des Teams, KEINE
-    Messung und kein Bestandteil des Modells. Eine Marke hat laut Dossier
-    keinen Limbic Type, sondern wird über Emotionsfelder verortet.
+  • Rechts: Limbic Type der Persona, die Lücke zwischen Persona und Marke
+    (in Prozentpunkten, direkt aus den Balken ablesbar; welches System als
+    Lücke gilt, steht in den Daten unter „lueckeSystem“) und drei Folgen
+    für die Kommunikation, die sich aus dieser Lücke ergeben.
+  • Die Gewichte sind eine Schätzung des Teams aus der Limbic Map A3
+    (../limbic-map.md, Abschnitte 3.2 und 4.2; Startwerte aus dem Recherche-
+    Dossier Kap. 4.4): KEINE Messung und kein Bestandteil des Modells. Eine
+    Marke hat keinen Limbic Type; ihr Punkt ist nur der Mittelwert ihrer
+    Gewichte (deshalb „Mittelwert“ am Punkt, limbic-map.md 4.2).
 
   SO ÄNDERN SIE DIE INHALTE
   • Alles steht unten im <script type="application/json" class="daten">.
@@ -880,15 +955,16 @@
     1  Persona-Punkt fliegt aus der Mitte an seinen Platz, ihr Limbic Type
        leuchtet auf der Karte und erscheint rechts
     2  Marken-Punkt fliegt an seinen Platz, die Verbindungslinie zeigt den
-       Abstand, die größte Lücke zählt hoch und ist in den Balken markiert
+       Abstand, die Lücke zählt hoch und ist in den Balken markiert
     3  drei Folgen für die Kommunikation (gestaffelt)
 -->
 <section class="folie" id="f05" data-titel="Limbic Map" data-feld="persona" data-zeit="55" data-buendel="A">
   <header class="folie-kopf">
     <!-- Der Name in der Leitfrage kommt aus den Daten (persona.beschriftung) -->
     <p class="kicker">Limbic Map nach Häusel · Was treibt <span data-g2l="personaName">Marco</span> an?</p>
-    <!-- Titel = Kernaussage aus der größten Lücke (bei neuen Gewichten anpassen) -->
-    <h2 class="titel"><em data-marke></em> spricht Marcos Spaß an, kaum seinen Ehrgeiz</h2>
+    <!-- Titel = Kernaussage aus der Lücke (bei neuen Gewichten anpassen);
+         Wortlaut aus Folienentwurf 5 (17.10.2026) -->
+    <h2 class="titel"><em data-marke></em> trifft Marcos Lust auf Neues, zeigt aber kaum seine Schicht</h2>
   </header>
 
   <div class="folie-inhalt g2l">
@@ -905,19 +981,20 @@
         <!-- Schritt 1: Limbic Type der Persona -->
         <div class="g2l-typ" data-schritt="1" data-animation="hoch" data-verzoegerung="500">
           <span class="karte-kicker" data-meta>Limbic Type der Persona · Hypothese</span>
-          <p class="g2l-typ-name" data-g2l="limbicType">Abenteurer</p>
-          <p class="g2l-typ-motive" data-g2l="typMotive">Risikofreude · Mut · Freiheit</p>
+          <p class="g2l-typ-name" data-g2l="limbicType">Hedonisten</p>
+          <p class="g2l-typ-motive" data-g2l="typMotive">Neugier · Unterhaltung</p>
         </div>
 
-        <!-- Schritt 2: größte Lücke Persona ↔ Marke (Wert und Text rechnet das
-             Skript aus den Gewichten aus; „kennzahl“ in den Daten wählt die Art) -->
+        <!-- Schritt 2: Lücke Persona ↔ Marke (Wert und Text rechnet das Skript
+             aus den Gewichten aus; „kennzahl“, „lueckeSystem“ und „lueckeText“
+             in den Daten wählen Art, System und Wortlaut) -->
         <div class="g2l-fit" data-schritt="2" data-animation="hoch" data-verzoegerung="900">
-          <span class="kennzahl-wert kennzahl-wert--mittel g2l-fit-wert" data-animation="zaehlen" data-ziel="-20" data-einheit=" Pp." data-dauer="1100">−20 Pp.</span>
-          <span class="g2l-fit-text" data-g2l="fitText"><b>Dominanz</b> – größte Lücke</span>
+          <span class="kennzahl-wert kennzahl-wert--mittel g2l-fit-wert" data-animation="zaehlen" data-ziel="-10" data-einheit=" Pp." data-dauer="1100">−10 Pp.</span>
+          <span class="g2l-fit-text" data-g2l="fitText"><b>Dominanz</b> – Lücke</span>
           <!-- Gewichte in % als gestapelte Balken (baut das Skript) -->
           <div class="g2l-profile" data-meta aria-hidden="true"></div>
-          <!-- Erklärung der Zahlen (Metazeile) – Text setzt das Skript -->
-          <p class="g2l-fit-hinweis" data-meta data-g2l="fitHinweis">Pp. = Prozentpunkte · Gewichte: Hypothese (Dossier 4.4)</p>
+          <!-- Erklärung der Zahlen (Metazeile) – Text setzt das Skript aus „fitHinweis“ -->
+          <p class="g2l-fit-hinweis" data-meta data-g2l="fitHinweis">Pp. = Prozentpunkte · Gewichte: Schätzung des Teams</p>
         </div>
 
         <!-- Schritt 3: drei Konsequenzen (werden aus „folgen“ gebaut) -->
@@ -930,28 +1007,58 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: eigene, vereinfachte Darstellung nach Häusel · Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg</p>
+    <!-- Quellenzeile nach Folienentwurf 5, gekürzt auf zwei Zeilen (je kürzer als ca. 1250 px,
+         rechts unten blendet bei Mausbewegung die Bedienleiste ein). „Gewichte: Schätzung des
+         Teams“ steht in der Metazeile unter den Balken; die volle Quellenzeile mit der Basis der
+         Gewichte steht in den Notizen. Rechtevermerk nach [105] S. 7 (limbic-map.md Abschnitt 7)
+         statt „eingetragene Marke“ – hier aus Platzgründen gekürzt, aber mit dem Kern „urheber- und
+         patentrechtlich geschützt“ (seit 18.10.2026); wörtlich in B7, in den Notizen unten und in
+         der Grafik ../grafiken/folie-05-limbic-map. Abweichung vom Folienentwurf 5 („derselbe Wortlaut
+         für Web-Fußzeile, SVG und PNG“) – im Kasten „FOLIE 05“ zur Freigabe vermerkt. -->
+    <p class="quelle">Quelle: eigene, vereinfachte Darstellung nach Häusel [105] · Lage der Typen: nymphenburg.de (Abruf 17.10.2026)<br>Limbic®, Limbic® Map, Limbic® Types: urheber- und patentrechtlich geschützt (Gruppe Nymphenburg Consult AG)</p>
   </footer>
 
+  <!-- SPRECHTEXT: Wortlaut aus Folienentwurf 5 (ca. 115 Wörter, dort für ca. 1:00 geplant).
+       Seit 18.10.2026 ohne die Eingangsfrage „Was treibt Marco an – und spricht HOLY dieselben
+       Motive an?“ (steht sinngemäß im Kicker und Titel): ca. 106 Wörter ≈ 56 s bei 1,9 Wörtern/s
+       (Sollzeit 55 s) – laut lesen und stoppen. Ohne die Kennzahl „Überschneidung“
+       (limbic-map.md Abschnitt 5: 90 % klängen nach vollem Fit, das Urteil ist „passt teilweise“). -->
   <aside class="notizen">
-    <p data-schritt="0"><b>Wie lesen?</b> (ca. 15 s) Die Limbic Map nach Häusel ordnet Kaufmotive drei Systemen zu: Balance, Dominanz, Stimulanz. Dazwischen liegen Mischbereiche, am Rand die sieben Limbic Types.</p>
-    <p data-schritt="1"><b>Persona</b> (ca. 15 s) Marco ist vor allem auf Stimulanz und Dominanz aus – Abwechslung und Spaß, aber auch Leistung. Damit ist er ein Abenteurer.</p>
-    <p data-schritt="2"><b>Marke und Lücke</b> (ca. 15 s) <span data-marke></span> sendet vor allem Stimulanz: Sorten, Farben, Comic-Tiere, Provokation. Leistung kommt kaum vor – bei Dominanz liegt die Marke 20 Punkte unter Marco. Das ist die größte Lücke.</p>
-    <p data-schritt="3"><b>Was folgt daraus?</b> (ca. 10 s) Leistung im Schichtalltag zeigen, frech bleiben, aber erwachsen, und als Botschaft: der Schichtpartner ohne Zucker. Überleitung: Welche Eigenschaften unterscheiden <span data-marke></span>? → Repertory Grid.</p>
-    <p>Für Rückfragen: Systeme nach Häusel – Balance (Sicherheit, Harmonie, Tradition), Dominanz (Leistung, Status, Durchsetzung), Stimulanz (Neugier, Abwechslung, Spaß); Mischbereiche Abenteuer/Thrill, Disziplin/Kontrolle, Fantasie/Genuss. Abenteurer liegen zwischen Dominanz und Stimulanz (Dossier 4.4 ✎, [105]); die Motive „Risikofreude, Mut, Freiheit“ sind Modellwissen (unsicher; „Abwechslung“ gilt eher als Motiv der Hedonisten, deshalb seit 17.10.2026 nicht mehr hier) – mit der Vorlesungsfolie abgleichen, ebenso die Lage der Typen (Winkel in den Daten änderbar). Botschaft „Schichtpartner ohne Zucker“ (bis 16.10.2026 „fokussiert ohne Zucker“): bewusst ohne Leistungs- oder Konzentrationsversprechen – Leistungsaussagen nur für Energy und nur mit zugelassenen Koffein-Angaben (Dossier S1, 3.4: HOLY musste 2025 unzulässige Gesundheitsversprechen entfernen). Gewichte: Limbic-Map-Hypothese des Recherche-Dossiers (Kap. 4.4, H) – Marco B 20 / D 35 / S 45, Auftritt von <span data-marke></span> B 30 / D 15 / S 55; Startwerte des Teams, keine Messung, die Prozentanteile sind nicht Teil des Modells. Begründung laut Dossier: Stimulanz durch Sortenvielfalt, Limited Drops, Farben, Comic-Tiere, provokante Kampagne; Balance durch „gutes Gewissen“ und Squad; Dominanz nur über Energy und den Herausforderer-Gestus [1, 25]. Eine Marke hat keinen Limbic Type; man verortet sie über Emotionsfelder. Die Lücke ist die Differenz der Gewichte (15 − 35 = −20 Prozentpunkte). Die Überschneidung (Summe der jeweils kleineren Gewichte: 20 + 15 + 45 = 80 %) ist eine eigene, vereinfachte Kennzahl, keine Kennzahl von Häusel. Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg. Rückfrage „Wie kommt ihr auf die Prozentwerte?“ → Einschätzung anhand der Persona-Daten und Häusels Motivliste, von KI vorgeschlagen (Dossier) und von uns geprüft (Prompt-Log B2).</p>
+    <p data-schritt="0"><b>Wie lesen?</b> (ca. 11 s) Die Limbic Map nach Häusel ordnet Motive drei Systemen zu: Balance, Dominanz, Stimulanz. Die Prozente sind unsere Schätzung, keine Messung.</p>
+    <p data-schritt="1"><b>Persona</b> (ca. 14 s) Marco ist leicht Stimulanz-betont: Technik, Neues, Zocken als Hobby. Am ehesten gehört er zu den Hedonisten. Dazu kommt Dominanz im Alltag: Er will die Schicht durchhalten.</p>
+    <p data-schritt="2"><b>Marke und Lücke</b> (ca. 17 s) <span data-marke></span> spricht vor allem Spaß und Kreativität an: Comic-Tiere, 31 Energy-Sorten, frecher Ton. Bei Balance passt das gute Gewissen: zuckerfrei. Die Lücke liegt bei Dominanz: <span data-marke></span> verspricht Wirkung, zeigt aber kaum die Schicht.</p>
+    <p data-schritt="3"><b>Was folgt daraus?</b> (ca. 14 s) Unser Urteil: passt teilweise. Daraus folgen echte Schichtmomente, Humor aus der Schicht statt Doppeldeutigkeit und die Botschaft „Durchhalten ohne Zucker“. Wie die Zielgruppe <span data-marke></span> sieht, zeigt Lukas. (→ Folie 06 Repertory Grid)</p>
+    <p>Stand: Limbic Map A3 (../limbic-map.md, Entwurf 17.10.2026 – Prüfung durch Yannick offen) und Folienentwurf 5. Quellenzeile (voll): Eigene, vereinfachte Darstellung nach Häusel; Gruppe Nymphenburg Consult AG (2020): Die Limbic® Types in best for planning, S. 3–5 [105]; Lage der Typen: nymphenburg.de/limbic-r-types.html (Abruf 17.10.2026). Gewichte: Schätzung des Teams auf Basis von Statista Consumer Insights 02/2025 (Kategorie Energy Drinks), Podcast „Digitale Vorreiter:innen“ #281 (08/2024) [24] und Recherche-Dossier. Rechtevermerk [105] S. 7: „Limbic®, die Limbic® Map und die Limbic® Types sind urheber- und patentrechtlich geschützte Begriffe und Verfahren der Gruppe Nymphenburg Consult AG.“ Die Original-Map trägt „© Hans-Georg Häusel / Gruppe Nymphenburg Consult AG“ ([105] S. 3) – wir zeigen eine eigene, vereinfachte Darstellung.</p>
+    <p>Belege: Modell – drei Systeme Balance („Sicherheit, Stabilität“), Dominanz („Konkurrenz, Verdrängung“), Stimulanz („Exploration, Entdeckung“), Mischbereiche Abenteuer/Thrill, Disziplin/Kontrolle, Fantasie/Genuss ([105] S. 3). Typen in sieben gleich großen Sektoren, Abenteurer oben (Typen-Grafik nymphenburg.de, „Quelle: b4p 2016“); Winkel 0/51/103/154/206/257/309° = eigene Pixelmessung der Typen-Grafik (±1°). Hedonisten: „Neugier · Abwechslung · Spaß · Kreativität“ ([105] S. 5); auf der Folie nur die zwei Motive mit Kategoriedaten. Persona (Statista CI 2025, Kategorie, n = 1.583, Ø = alle Befragten): Videospiele 41 % (Ø 29 %), Technik 34 % (Ø 27 %), Innovatoren/Early Adopters 15 % (Ø 10 %), Freunde treffen 50 % (Ø 45 %), „erfolgreich sein“ 27 % (Ø 22 %), „Spaß haben“ 38 % (Ø 36 %, neutral); Anlass Schicht: Gründer, „in der Regel gar nicht beim Gaming“, sondern z. B. im Schichtdienst ✔ [24]; Marcos Beruf ist eine Annahme. Zählung des Teams: Stimulanz 5, Dominanz 3, Balance 3 Punkte → 40/30/30 (je ±5). Auftritt von <span data-marke></span>: Startwert Dossier 4.4 (B 30 / D 15 / S 55, H), wegen Abenteuer/Thrill als Mischbereich und der Wirkdauer in der Vergleichsgrafik auf 30/20/50 (je ±5) korrigiert. Signale: Comic-Tiere, 31 Energy-Sorten (Dossier 3.1 ✔ [1, 30, 54]); Du-Ton „geil“, „gönn“ (6.2 ✔ [30]); TV-Spot mit Doppeldeutigkeiten (6.6 ✔ [25]); Squad (6.1); „~4h“ in der Vergleichsgrafik auf jeder Produktseite (3.6 ✔ [73, 91]). In den vier belegten Bildmotiven (Dossier 6.4) kommt die Schicht nicht vor; Anlässe 2026 laut Press Kit: „Routinen im Alltag sowie rund um Sport und Training“ ✔ [13]. Lücke: Dominanz 20 − 30 = −10 Prozentpunkte; Stimulanz weicht mit +10 gleich stark ab – als Lücke nennen wir Dominanz, weil dort etwas fehlt (Daten: „lueckeSystem“). Die Spannen überlappen: Die Zahl ist eine Tendenz, das Urteil stützt sich auf die qualitativen Belege. Folgen = Hypothesen für Bündel C (limbic-map.md Abschnitt 6): Echte Schichtmomente, der Raptor bleibt Absender (ergänzen, nicht ersetzen); Humor aus der Schicht statt Doppeldeutigkeit (vorläufig, bis Lukas’ Tonalität und echte Interviews vorliegen); Durchhalten ohne Zucker – Koffein offen nennen (160 mg pro Portion, „ab 18“), ohne Wirkversprechen (Dossier 3.7, S1; keine Rechtsprüfung). Marken-Punkt = Mittelwert der Gewichte (etwa 281°, knapp im Sektor der Offenen), kein Typ der Marke; Marco etwa 300°, nah an der Mitte.</p>
+    <p>Rückfragen: „Wie kommt ihr auf die Prozentwerte?“ – In den geprüften Quellen der Gruppe Nymphenburg gibt es keine Prozentgewichte für die drei Systeme einer Person, nur die Verteilung der Typen in der Bevölkerung. Die Gewichte sind unsere Heuristik: Signale gezählt (leicht = 1, mittel = 2 Punkte) – Stimulanz 5, Dominanz und Balance je 3; am deutlichsten weichen Videospiele (+12) und Technik (+7 Prozentpunkte) ab; daraus 40/30/30, Spanne ±5. „Warum Hedonisten und nicht Abenteurer?“ – Für Risikofreude, Autonomie, Impulsivität oder Rebellion gibt es in den Daten kein Signal; nur Alter und Geschlecht sprechen laut Modell leicht dafür. Die Abenteuer-Hinweise im ersten Entwurf kamen aus <span data-marke></span>s Werbung (Limited Drops, „7 vs. Wild“, Humor) – ein Zirkelschluss. „Warum nicht Offene?“ – Knapp: Für die Offenen sprechen Geschmack und gutes Gewissen, aber nur über einzelne Kundenstimmen; für die Hedonisten Kategoriedaten zu Neugier und Unterhaltung. Hedonisten gelten als „Trendsetter“, aber 85 % der Energy-Drink-Konsument:innen sind keine frühen Übernehmer. Die Auswertung der Bewertungen entscheidet. „Eine Marke hat doch keinen Limbic Type?“ – Richtig, Typen beschreiben Menschen. Den Auftritt verorten wir über die Felder, die seine Signale ansprechen: Spaß und Kreativität, Abenteuer und Risiko, Harmonie und Fürsorge; der Punkt ist nur ein Mittelwert. „Stimulanz weicht doch genauso ab?“ – Ja, beide je 10 Punkte; bei Dominanz fehlt etwas, bei Stimulanz ist eher zu viel da. Getragen wird das Urteil vom Anlass: In den vier belegten Bildmotiven kommt die Schicht nicht vor, in Texten nur vereinzelt und doppeldeutig, etwa „Damit bleibst du die ganze Nacht wach“; die Wirkung bewirbt <span data-marke></span> mit „~4h“, aber ohne den Moment, in dem man sie braucht. „Dominanz fehlt – warum dann weniger Provokation?“ – Es fehlt eine andere Dominanz: Durchhalten statt Rebellion; den Humor behalten wir, nur aus der Schicht. Ob das stimmt, prüfen Lukas’ Interviews. „Warum nicht Performer?“ – Nur ein Datenpunkt („erfolgreich sein“ +5 Prozentpunkte), keine Status-Signale: Einkommen und Sparen liegen im Durchschnitt. Modellbegriffe nach Häusel / Gruppe Nymphenburg – mit der Vorlesungsfolie abgleichen (Map-Version, Feldnamen, Lage der Typen).</p>
   </aside>
 
-  <!-- DATEN – hier ändern. Hinweise:
+  <!-- DATEN – hier ändern. Stand 17.10.2026 nach Folienentwurf 5 / limbic-map.md (A3).
+       Hinweise:
        • persona / marke: Gewichte in Prozent (Summe 100; andere Summen werden
-         automatisch auf 100 umgerechnet). „beschriftung“ steht am Punkt und
-         (bei der Persona) in der Leitfrage im Kicker; „[Marke]“ wird durch den
-         Markennamen aus marke.js ersetzt.
+         automatisch auf 100 umgerechnet). „beschriftung“ steht am Punkt, in den
+         Balken und (bei der Persona) in der Leitfrage im Kicker; „[Marke]“ wird
+         durch den Markennamen aus marke.js ersetzt. „punktZusatz“ (optional)
+         steht klein in Klammern nur am Punkt – bei der Marke „Mittelwert“, weil
+         der Punkt kein Typ der Marke ist (limbic-map.md 4.2).
        • limbicType: muss genau so heißen wie ein Eintrag unter karte.typen –
          dieser Typ wird auf der Karte markiert. typMotive: 2–3 Stichworte.
-       • kennzahl: "luecke" (Standard) zeigt die größte Lücke zwischen Persona
-         und Marke in Prozentpunkten und markiert sie in den Balken;
+       • kennzahl: "luecke" (Standard) zeigt die Lücke zwischen Persona und
+         Marke in Prozentpunkten und markiert sie in den Balken;
          "ueberschneidung" zeigt die Motiv-Überschneidung (Summe der kleineren
-         Gewichte, eigene Kennzahl); "keine" blendet die Kennzahl aus.
+         Gewichte, eigene Kennzahl – laut limbic-map.md Abschnitt 5 NICHT
+         verwenden); "keine" blendet die Kennzahl aus.
+       • lueckeSystem (optional): Schlüssel des Systems, das als Lücke gilt
+         ("balance", "dominanz" oder "stimulanz"). Ohne Angabe nimmt das Skript
+         das System mit dem größten Unterschied (bei Gleichstand das erste in
+         karte.systeme). Hier "dominanz": Dominanz −10 und Stimulanz +10 sind
+         gleich groß; Lücke ist Dominanz, weil dort etwas fehlt (A3, Abschnitt 5).
+       • lueckeText: Wort hinter dem Systemnamen („Dominanz – Lücke“); ohne
+         Angabe „größte Lücke“.
+       • fitHinweis: Metazeile unter den Balken (hinter „Pp. = Prozentpunkte · “).
+       • typen: Winkel = eigene Pixelmessung der Typen-Grafik auf
+         nymphenburg.de/limbic-r-types.html („Quelle: b4p 2016“, Abruf
+         17.10.2026), Sektormitten ±1° (limbic-map.md Abschnitt 2).
        • folgen: genau drei Folgen; „bereich“ ist die kleine Überschrift,
          „text“ höchstens ca. 26 Zeichen.
        • Unter der Kennzahl stehen die Gewichte als zwei Balken (Reihenfolge
@@ -964,16 +1071,19 @@
          ANORDNUNG MIT DER VORLESUNG ABGLEICHEN. -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "Limbic-Map-Hypothese aus dem Recherche-Dossier, Kap. 4.4 (H): Startwerte des Teams, keine Messung; Anordnung der Karte mit der Vorlesungsfolie abgleichen",
-    "persona": { "beschriftung": "Marco",   "balance": 20, "dominanz": 35, "stimulanz": 45 },
-    "marke":   { "beschriftung": "[Marke]", "balance": 30, "dominanz": 15, "stimulanz": 55 },
-    "limbicType": "Abenteurer",
-    "typMotive": ["Risikofreude", "Mut", "Freiheit"],
+    "hinweis": "Gewichte: Schätzung des Teams (limbic-map.md), keine Messung; Lage der Typen nach Typen-Grafik nymphenburg.de (b4p 2016); mit der Vorlesungsfolie abgleichen",
+    "persona": { "beschriftung": "Marco",   "balance": 30, "dominanz": 30, "stimulanz": 40 },
+    "marke":   { "beschriftung": "[Marke]", "punktZusatz": "Mittelwert", "balance": 30, "dominanz": 20, "stimulanz": 50 },
+    "limbicType": "Hedonisten",
+    "typMotive": ["Neugier", "Unterhaltung"],
     "kennzahl": "luecke",
+    "lueckeSystem": "dominanz",
+    "lueckeText": "Lücke",
+    "fitHinweis": "Gewichte: Schätzung des Teams",
     "folgen": [
-      { "bereich": "Bildwelt",  "text": "Leistung im Schichtalltag" },
-      { "bereich": "Tonalität", "text": "frech, aber erwachsen" },
-      { "bereich": "Botschaft", "text": "Schichtpartner ohne Zucker" }
+      { "bereich": "Bildwelt",  "text": "Echte Schichtmomente" },
+      { "bereich": "Tonalität", "text": "Humor aus der Schicht" },
+      { "bereich": "Botschaft", "text": "Durchhalten ohne Zucker" }
     ],
     "karte": {
       "verstaerkung": 2,
@@ -989,12 +1099,12 @@
       ],
       "typen": [
         { "name": "Abenteurer",       "winkel": 0 },
-        { "name": "Performer",        "winkel": 50 },
-        { "name": "Disziplinierte",   "winkel": 112 },
-        { "name": "Traditionalisten", "winkel": 165 },
-        { "name": "Harmoniser",       "winkel": 215 },
-        { "name": "Offene",           "winkel": 262 },
-        { "name": "Hedonisten",       "winkel": 308 }
+        { "name": "Performer",        "winkel": 51 },
+        { "name": "Disziplinierte",   "winkel": 103 },
+        { "name": "Traditionalisten", "winkel": 154 },
+        { "name": "Harmoniser",       "winkel": 206 },
+        { "name": "Offene",           "winkel": 257 },
+        { "name": "Hedonisten",       "winkel": 309 }
       ]
     }
   }
@@ -1666,6 +1776,12 @@
      ║ • Follower-Zahlen (Dossier, Stand 14.10.2026) vor dem Vortrag aktualisieren; Beiträge und
      ║     Engagement-Raten selbst erheben und in den Daten "beispiel": false setzen.
      ║ • Screenshot des Schlüsselbilds (Raptor) eintragen (Rechte/Quelle beachten), dann Pille „Beispieldaten“ löschen.
+     ║     Regel seit 18.10.2026 (QUELLEN.md §4): Social-Media-Bilder von HOLY nur als diese EINE Ausnahme und
+     ║     erst nach Zustimmung des Betreuers. Dann: Quelle in die Fußzeile von 09 („Screenshot © HOLY
+     ║     Softdrinks GmbH, <Plattform> <Konto>, Beitrag vom TT.MM.JJJJ, Abruf TT.MM.2026“), in B7 die Zeile
+     ║     „Logos“ zu „Logos und Screenshot (Folie 09)“ erweitern, QUELLEN.md §3/§4 (Datei in bilder/) ergänzen.
+     ║     Ohne Zustimmung bleibt das Piktogramm; dann den Hinweis „Platzhalter – Screenshot folgt“ und die
+     ║     Checkliste in LIESMICH §12 anpassen. (Hinweis aus der Prüfung, Inhalt von Bündel C unverändert.)
      ║ • TITEL nach der Codierung festlegen: Bis dahin endet er mit „?“. Zeigt die Stichprobe den Raptor
      ║     kanalübergreifend, „?“ streichen und in den Daten schluesselbildText: "Schlüsselbild" setzen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
@@ -1890,7 +2006,11 @@
      ║ • Logo: kommt aus marke.js → logo – seit 16.10.2026 die offizielle HOLY-Wortmarke (bilder/holy-logo-wortmarke.png,
      ║     de.holy.com, Abruf 16.10.2026; Quelle steht in der Fußzeile). Mit dem Betreuer abstimmen, dass die Logos zur
      ║     Kennzeichnung der analysierten Marke genutzt werden dürfen. Mit platzhalter-logo.svg zeigt die Zeile nur die Beschreibung.
+     ║     Im Dunkelmodus liegt die Wortmarke auf einer hellen Unterlage (CSS, 17.10.2026) – sonst verschwände ihre
+     ║     schwarze Form im Hintergrund; das Logo selbst bleibt unverändert.
      ║ • Fit-Bewertung (passt / teilweise / Bruch) ist eine Hypothese der Gruppe – nach den Ergebnissen prüfen.
+     ║     Vorschlag aus der Limbic Map A3 (vorläufig, nur zur Abstimmung, nichts geändert): „✗ Markenbild ↔
+     ║     Persona: Comic und Provokation statt Schichtalltag“ (../limbic-map.md).
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!-- ===================================================================
@@ -2002,6 +2122,19 @@
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • Stichworte je Feld nach den echten Ergebnissen von Folie 03–09 aktualisieren (Daten-JSON unten),
      ║     die zwei „Lücken“ prüfen. Pille „Beispieldaten“ erst löschen, wenn 06–08 echte Daten haben.
+     ║ • Feld Markenkompetenz seit 17.10.2026 wie Folie 03 (A1, ../markenkompetenz.md Abschnitt 6):
+     ║     „Herausforderer“ · „Softdrinks zum Selbermixen“ („Berlin“ nur im Sprechtext). Ändert sich Folie 03
+     ║     (z. B. Variante B „Spezialist“ nach dem Vorlesungsabgleich), hier mitändern.
+     ║ • Feld Brand Persona seit 17.10.2026 wie Folie 05 (Limbic Map A3, ../limbic-map.md): „Hedonisten“
+     ║     statt „Abenteurer“ (Hypothese, knapp vor „Offene“; Freigabe durch Yannick offen). Wechselt der
+     ║     Typ nach der Auswertung der Bewertungen (limbic-map.md 3.2), hier mitändern. Sprechtext
+     ║     Schritt 8 und Rückfrage: Lücke beim Anlass (Schicht), nicht „Leistung im Alltag“.
+     ║ • Offen: die mögliche Lücke „Kompetenz ↔ Hürde ‚selbst anrühren‘“ (erst nach Lukas’ Auswertung
+     ║     von Folie 06).
+     ║ • Sprechtext zu lang (nachgezählt 18.10.2026): Schritt 0–8 ca. 182 Wörter ≈ 96 s bei 1,9 Wörtern/s,
+     ║     Sollzeit 75 s; Schritt 8 allein ca. 71 Wörter in „ca. 25 s“. Mit Elias (spricht) kürzen, z. B.
+     ║     den Halbsatz zu den Verbraucherschützern in Schritt 8 nur im Belegabsatz lassen; danach die
+     ║     Zeitangaben der Schritte (Summe zurzeit 77 s) angleichen und laut stoppen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -2028,7 +2161,7 @@
     RG Repertory Grid · LA Laddering · AN Analogien · KA Kommunikationsanalyse.
     Im Kartenkopf steht das häufigste Kürzel des Felds; ein abweichendes
     Kürzel setzt das Skript klein direkt hinter das Stichwort (z. B.
-    „Abenteurer LM“) – so ist jede Herkunft sichtbar.
+    „Hedonisten LM“) – so ist jede Herkunft sichtbar.
   • REGEL: Jedes Stichwort steht WORTGLEICH auf der Ergebnisfolie seiner
     Methode (Folie 3 Titel, 4 Persona, 5 Limbic Type, 6 Attribute, 7 Nutzen,
     8b „Ins Steuerrad“, 9b „Ins Steuerrad“). Wer dort etwas ändert, ändert es
@@ -2047,7 +2180,8 @@
     Fakten stammen aus dem Recherche-Dossier (../recherche/holy-recherche.md),
     Status und Quelle stehen in den Notizen.
   • Der Markenname kommt aus marke.js (<em data-marke></em>) – nie eintippen.
-  • WORTBUDGET: Im Endzustand stehen ca. 44 Wörter Folientext (pruefen.mjs
+  • WORTBUDGET: Im Endzustand stehen ca. 49 Wörter Folientext (Stand 17.10.2026,
+    mit „Softdrinks zum Selbermixen“ aus Folie 03; pruefen.mjs
     warnt ab 40; Feldnamen im Rad, Kartenköpfe und „Hard/Soft Facts“ sind
     Beschriftungen und zählen nicht). Seit 17.10.2026 höchstens 3 Stichworte
     je Feld; „Berlin“ und „viele Sorten“ stehen nur noch im Sprechtext.
@@ -2105,11 +2239,11 @@
         "felder": {
           "kompetenz": { "stichworte": [
             { "text": "Herausforderer",         "quelle": "DR" },
-            { "text": "zuckerfreie Softdrinks", "quelle": "DR" }
+            { "text": "Softdrinks zum Selbermixen", "quelle": "DR" }
           ] },
           "persona": { "stichworte": [
             { "text": "Marco, 28",     "quelle": "DR" },
-            { "text": "Abenteurer",    "quelle": "LM" }
+            { "text": "Hedonisten",    "quelle": "LM" }
           ] },
           "attribute": { "stichworte": [
             { "text": "zuckerfrei",             "quelle": "RG" },
@@ -2164,24 +2298,27 @@
     <p class="quelle">Quelle: Folien 03–09b, Dossier Kap. 1–4, 6, 8 · Energy-Koffein: Dossier 3.1 ✔ [56] · Lücken: eigene Bewertung (H)</p>
   </footer>
 
-  <!-- SPRECHTEXT: 75 s für Schritt 0–8 ≈ 160 gesprochene Wörter (Schritt 9 ist
+  <!-- SPRECHTEXT: 75 s für Schritt 0–8 ≈ 140–160 gesprochene Wörter (Schritt 9 ist
        optional und zählt nicht zur Sollzeit). Die Stichworte stehen auf der
-       Folie – nur nennen, nicht erklären. -->
+       Folie – nur nennen, nicht erklären. Nachgezählt 18.10.2026: Schritt 0–8
+       ca. 182 Wörter ≈ 96 s bei 1,9 Wörtern/s; die Zeitangaben der Schritte
+       ergeben zusammen 77 s, Schritt 8 hat ca. 71 Wörter in „ca. 25 s“.
+       Kürzen mit Elias abstimmen (Kasten „FOLIE 10“). -->
   <aside class="notizen">
     <p data-schritt="0"><b>Zusammenführen</b> (ca. 5 s) Jetzt führen wir alles im Markensteuerrad zusammen – jedes Stichwort kommt aus einer unserer Methoden.</p>
-    <p data-schritt="1"><b>Markenkompetenz</b> (ca. 6 s) Im Zentrum die Kompetenz: ein Herausforderer mit zuckerfreien Softdrinks, 2020 in Berlin gegründet.</p>
-    <p data-schritt="2"><b>Brand Persona</b> (ca. 6 s) Der Rahmen ist Marco, 28 – laut Limbic Map ein Abenteurer.</p>
+    <p data-schritt="1"><b>Markenkompetenz</b> (ca. 6 s) Im Zentrum die Kompetenz: ein Herausforderer mit Softdrinks zum Selbermixen, 2020 in Berlin gegründet.</p>
+    <p data-schritt="2"><b>Brand Persona</b> (ca. 6 s) Der Rahmen ist Marco, 28 – laut Limbic Map ein Hedonist.</p>
     <p data-schritt="3"><b>Markenattribute</b> (ca. 8 s) Aus dem Repertory Grid: zuckerfrei und Community-nah. Dazu aus dem Desk Research: 160 mg Koffein pro Portion in der Energy-Linie.</p>
     <p data-schritt="4"><b>Markennutzen</b> (ca. 6 s) Das Laddering liefert den Nutzen: Genuss ohne Zucker, gutes Gewissen, dazugehören.</p>
     <p data-schritt="5"><b>Markentonalität</b> (ca. 6 s) Die Analogien zeigen einen frechen Kumpel – Spaß und Zugehörigkeit.</p>
     <p data-schritt="6"><b>Markenbild</b> (ca. 6 s) Die Kommunikationsanalyse: Comic-Tiere, Gelb und Schwarz, knallig.</p>
     <p data-schritt="7"><b>Markenkern</b> (ca. 9 s) Verdichtet ergibt das den Markenkern: Genuss mit gutem Gewissen – unsere Zusammenfassung, kein eigenes Feld bei Esch, und deckungsgleich mit dem Versprechen „Geiler Geschmack mit gutem Gewissen“.</p>
-    <p data-schritt="8"><b>Konsistenzprüfung</b> (ca. 25 s) Passt alles zusammen? Fast – bis auf zwei Lücken. Erstens: Das gute Gewissen trifft auf 160 mg Koffein pro Portion Energy; Verbraucherschützer kritisieren den hohen Koffeingehalt und die Ansprache Jugendlicher. Zweitens: Die Comic-Bildwelt wirkt jünger als Marco und die Kundschaft von 25 bis 40 – dazu passt die Dominanz-Lücke von Folie 5: Marco will Leistung im Alltag sehen. Mit dem Bruch über die Kanäle von Folie 9b setzen hier unsere Empfehlungen an.</p>
+    <p data-schritt="8"><b>Konsistenzprüfung</b> (ca. 25 s) Passt alles zusammen? Fast – bis auf zwei Lücken. Erstens: Das gute Gewissen trifft auf 160 mg Koffein pro Portion Energy; Verbraucherschützer kritisieren den hohen Koffeingehalt und die Ansprache Jugendlicher. Zweitens: Die Comic-Bildwelt wirkt jünger als Marco und die Kundschaft von 25 bis 40 – dazu passt die Dominanz-Lücke von Folie 5: Marcos Schichtalltag kommt im Auftritt kaum vor. Mit dem Bruch über die Kanäle von Folie 9b setzen hier unsere Empfehlungen an.</p>
     <p data-schritt="9"><b>Nur mit Wortwolke: Abgleich</b> (ca. 10 s, zählt nicht zur Sollzeit) Zum Vergleich Ihre Zurufe vom Anfang: [Zahl] davon stecken auch in unserem Steuerrad, zum Beispiel [Wort]. [Was Sie genannt haben und bei uns fehlt: …] Das ist das Fremdbild hier im Raum – ein Stimmungsbild, keine repräsentative Erhebung.</p>
-    <p>Herkunft der Stichworte (Methodenkürzel, auf der Folie ausgeblendet; Zuordnung wie Folie 02 und B1): DR Desk Research · LM Limbic Map · RG Repertory Grid · LA Laddering · AN Analogien · KA Kommunikationsanalyse. Kompetenz DR; Persona „Marco, 28“ DR, „Abenteurer“ LM; Attribute RG, „Energy: 160 mg Koffein“ DR; Nutzen LA; Tonalität AN; Bild KA. Aus Platzgründen (höchstens 3 Stichworte je Feld) nur im Sprechtext: „Berlin“ (Kompetenz), „Schichtdienst“ (Folie 04), „viele Sorten“ (Attribut aus Folie 06). Die Lücken: Der Bruch aus Folie 9b liegt nicht zwischen zwei Feldern, sondern in der Umsetzung über die Kanäle – deshalb steht er nicht im Rad, sondern erst im Fazit (Folie 11: „zwei Lücken, ein Bruch“).</p>
-    <p>Bedienung: Jedes Feld und jede Karte ist klickbar und springt zur Detailfolie (Tab + Enter geht auch). Nach dem Betreten reagiert das Rad erst auf die Maus, wenn sie bewegt wird – ein versehentlicher zweiter Klick nach einem Sprung von Folie 11 springt so nicht weiter. Im Endzustand ist die Folie bewusst dicht (ca. 45 Wörter, Synthese aller Felder) – deshalb Klick für Klick aufbauen und nicht direkt ans Ende springen. Der Abgleich (Schritt 9) erscheint nur, wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true) und dort Wörter eingetippt wurden – Wörter aus der Probe vorher auf Folie 1b mit „Wolke leeren“ löschen.</p>
-    <p>Belege (Recherche-Dossier, Stand 14.10.2026): Kompetenz – Press Kit „Challenger-Brand“ ✔ [13], Einordnung als Herausforderer H (Kap. 2.6); „zuckerfreie Softdrinks zum Selbermixen“ (Selbstbeschreibung Press Kit) ✔ [13]; gegründet 2020 in Berlin ✔ [2, 3] – wie auf Folie 3 (Zeitleiste „Gründung in Berlin“). Persona „Marco, 28“ – Kern-Persona Kap. 4.3 (H), Folie 4; Kundschaft meist 25–40, viele im Schichtdienst – Kap. 1/4.1 ✔ [7, 24] (Gründeraussage, keine Kundendaten); Abenteurer – Kap. 4.4 H, Folie 5. Zuckerfrei, Sortenvielfalt, Community – Kap. 1/3.1 ✔; als Attribute Beispieldaten aus dem Repertory Grid (Folie 6). 160 mg Koffein pro Portion gilt nur für HOLY Energy – Kap. 3.1/3.3 ✔ [56]; Iced Tea, Hydration, Milkshake und Syrup sind in der Regel ohne Koffein (Kap. 3.1 ✔), deshalb „Energy:“ vor dem Stichwort. Nutzen – Laddering (Folie 7, Beispieldaten), Versprechen „Geiler Geschmack mit gutem Gewissen“ – Kap. 2.7 ✔ [5]. Tonalität – „Ins Steuerrad“ auf Folie 8b (Hypothese Kap. 6.7); Spaß – Doppeldeutigkeiten (Kap. 6.2 ✔), Zugehörigkeit – „Squad“ (Kap. 6.1 ✎). „Waschbär statt Adler“ ist das Analogie-Ergebnis (Folie 8), kein Tonalitätsinhalt – deshalb nicht im Rad. Comic-Tiere, Gelb/Schwarz – Kap. 6.3 ✔ [1, 30]; „knallig“ – Lebensmittel Zeitung: „auffälliges und knalliges Design“ ✔ [8]. Lücke 1 – Spannungsfeld S1 (Kritik von VKI, Verbraucherzentralen, Stiftung Warentest ✔ [27–29, 72]). Lücke 2 – Spannungsfeld S2/S3 (Design „für eine jüngere Zielgruppe gedacht“ ✔ [7]; Verbraucherzentrale: Marketing richte sich „offensichtlich an Kinder und Jugendliche“ ✔ [82]). Die Lücken selbst sind unsere Bewertung (H).</p>
-    <p>Rückfragen: „Ist der Markenkern die Markenkompetenz?“ – Nein. Die Kompetenz ist nach Esch das Zentrum des Rads („Wer bin ich?“: Herkunft, Rolle, Kernkompetenz). Der Markenkern ist kein eigenes Feld, sondern unsere Verdichtung aller Felder in einem Satz; deshalb steht er über dem Rad (Begriffe aus der Standardliteratur – mit den Vorlesungsfolien abgleichen). „Woher kommt der Markenkern?“ – aus der stärksten Leiter im Laddering (zuckerfrei → Genuss ohne Zucker → gutes Gewissen) und dem eigenen Versprechen der Marke. „Warum steht Koffein bei den Attributen?“ – es ist eine belegte Produkteigenschaft der Energy-Linie (Desk Research, Dossier 3.1 ✔ [56]; Quelle in der Fußzeile), auch wenn die Befragten sie im Repertory Grid kaum nennen. Die übrigen Linien sind meist koffeinfrei – deshalb „Energy:“ davor. „Was ist mit der größten Lücke aus der Limbic Map?“ – Sie steckt in Lücke 2: Die junge Comic-Bildwelt zeigt kaum Leistung im Alltag (Dominanz); Empfehlung 2 auf Folie 11 setzt dort an. „Warum fehlt ‚selbst anrühren‘?“ – Im Repertory Grid unterscheidet es stark, liegt aber weit vom Ideal: eine Hürde, kein Attribut (Folie 6). Begriffe (Markensteuerrad, Markenkern, hard/soft facts) mit den Vorlesungsfolien abgleichen.</p>
+    <p>Herkunft der Stichworte (Methodenkürzel, auf der Folie ausgeblendet; Zuordnung wie Folie 02 und B1): DR Desk Research · LM Limbic Map · RG Repertory Grid · LA Laddering · AN Analogien · KA Kommunikationsanalyse. Kompetenz DR; Persona „Marco, 28“ DR, „Hedonisten“ LM; Attribute RG, „Energy: 160 mg Koffein“ DR; Nutzen LA; Tonalität AN; Bild KA. Aus Platzgründen (höchstens 3 Stichworte je Feld) nur im Sprechtext: „Berlin“ (Kompetenz), „Schichtdienst“ (Folie 04), „viele Sorten“ (Attribut aus Folie 06). Die Lücken: Der Bruch aus Folie 9b liegt nicht zwischen zwei Feldern, sondern in der Umsetzung über die Kanäle – deshalb steht er nicht im Rad, sondern erst im Fazit (Folie 11: „zwei Lücken, ein Bruch“).</p>
+    <p>Bedienung: Jedes Feld und jede Karte ist klickbar und springt zur Detailfolie (Tab + Enter geht auch). Nach dem Betreten reagiert das Rad erst auf die Maus, wenn sie bewegt wird – ein versehentlicher zweiter Klick nach einem Sprung von Folie 11 springt so nicht weiter. Im Endzustand ist die Folie bewusst dicht (ca. 49 Wörter, Synthese aller Felder) – deshalb Klick für Klick aufbauen und nicht direkt ans Ende springen. Der Abgleich (Schritt 9) erscheint nur, wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true) und dort Wörter eingetippt wurden – Wörter aus der Probe vorher auf Folie 1b mit „Wolke leeren“ löschen.</p>
+    <p>Belege (Recherche-Dossier, Stand 14.10.2026): Kompetenz – wie Folie 3 (Markenkompetenz A1, ../markenkompetenz.md, Prüfung 17.10.2026): Herausforderer = unsere Einordnung nach Kotler, Kriterium Angriff (H; Jost ✔ [24], Selbstbild „Challenger-Brand“ ✔ [13]); „Softdrinks zum Selbermixen“ aus der Selbstbeschreibung „zuckerfreie Softdrinks zum Selbermixen“ (Press Kit) ✔ [13]; gegründet 2020 in Berlin ✔ [3] – wie auf Folie 3 (Zeitleiste „Gründung in Berlin“). Persona „Marco, 28“ – Kern-Persona Kap. 4.3 (H), Folie 4; Kundschaft meist 25–40, viele im Schichtdienst – Kap. 1/4.1 ✔ [7, 24] (Gründeraussage, keine Kundendaten); Hedonisten – Limbic Map A3 (../limbic-map.md, Hypothese, knapp vor „Offene“; bis 17.10.2026 nach Dossier 4.4 „Abenteurer“), Folie 5. Zuckerfrei, Sortenvielfalt, Community – Kap. 1/3.1 ✔; als Attribute Beispieldaten aus dem Repertory Grid (Folie 6). 160 mg Koffein pro Portion gilt nur für HOLY Energy – Kap. 3.1/3.3 ✔ [56]; Iced Tea, Hydration, Milkshake und Syrup sind in der Regel ohne Koffein (Kap. 3.1 ✔), deshalb „Energy:“ vor dem Stichwort. Nutzen – Laddering (Folie 7, Beispieldaten), Versprechen „Geiler Geschmack mit gutem Gewissen“ – Kap. 2.7 ✔ [5]. Tonalität – „Ins Steuerrad“ auf Folie 8b (Hypothese Kap. 6.7); Spaß – Doppeldeutigkeiten (Kap. 6.2 ✔), Zugehörigkeit – „Squad“ (Kap. 6.1 ✎). „Waschbär statt Adler“ ist das Analogie-Ergebnis (Folie 8), kein Tonalitätsinhalt – deshalb nicht im Rad. Comic-Tiere, Gelb/Schwarz – Kap. 6.3 ✔ [1, 30]; „knallig“ – Lebensmittel Zeitung: „auffälliges und knalliges Design“ ✔ [8]. Lücke 1 – Spannungsfeld S1 (Kritik von VKI, Verbraucherzentralen, Stiftung Warentest ✔ [27–29, 72]). Lücke 2 – Spannungsfeld S2/S3 (Design „für eine jüngere Zielgruppe gedacht“ ✔ [7]; Verbraucherzentrale: Marketing richte sich „offensichtlich an Kinder und Jugendliche“ ✔ [82]). Die Lücken selbst sind unsere Bewertung (H).</p>
+    <p>Rückfragen: „Ist der Markenkern die Markenkompetenz?“ – Nein. Die Kompetenz ist nach Esch das Zentrum des Rads („Wer bin ich?“: Herkunft, Rolle, Kernkompetenz). Der Markenkern ist kein eigenes Feld, sondern unsere Verdichtung aller Felder in einem Satz; deshalb steht er über dem Rad (Begriffe aus der Standardliteratur – mit den Vorlesungsfolien abgleichen). „Woher kommt der Markenkern?“ – aus der stärksten Leiter im Laddering (zuckerfrei → Genuss ohne Zucker → gutes Gewissen) und dem eigenen Versprechen der Marke. „Warum steht Koffein bei den Attributen?“ – es ist eine belegte Produkteigenschaft der Energy-Linie (Desk Research, Dossier 3.1 ✔ [56]; Quelle in der Fußzeile), auch wenn die Befragten sie im Repertory Grid kaum nennen. Die übrigen Linien sind meist koffeinfrei – deshalb „Energy:“ davor. „Was ist mit der Lücke aus der Limbic Map?“ – Sie steckt in Lücke 2: Die junge Comic-Bildwelt zeigt kaum den Schichtanlass (Dominanz: Durchhalten statt Rebellion, Folie 5); Empfehlung 2 auf Folie 11 setzt dort an. „Warum fehlt ‚selbst anrühren‘?“ – Im Repertory Grid unterscheidet es stark, liegt aber weit vom Ideal: eine Hürde, kein Attribut (Folie 6). Begriffe (Markensteuerrad, Markenkern, hard/soft facts) mit den Vorlesungsfolien abgleichen.</p>
   </aside>
 
   <!-- DATEN für js/folien/10-markensteuerrad.js – hier ändern:
@@ -2245,6 +2382,12 @@
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • Befunde und Empfehlungen sind Hypothesen der Gruppe → nach den echten Ergebnissen finalisieren;
      ║     kurz bleiben (Befund ≤ 5 Wörter).
+     ║ • Hinweis aus der Limbic Map A3 (nur zur Abstimmung, nichts geändert): Empfehlung 3 „Raptor …
+     ║     frecher inszenieren“ mit „Humor aus der Schicht statt Doppeldeutigkeit“ (../limbic-map.md,
+     ║     vorläufig) abgleichen – Details in den Notizen.
+     ║ • Sprechtext (Stand 18.10.2026): ca. 164 Wörter ≈ 86 s bei 1,9 Wörtern/s, Sollzeit 75 s; Schritt 2
+     ║     hat ca. 47 Wörter in „ca. 18 s“. Laut lesen und stoppen, ggf. einen der beiden Nachsätze in
+     ║     Schritt 2 („Das schließt auch …“ / „Nebenbei …“) streichen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -2417,10 +2560,10 @@
   <aside class="notizen">
     <p data-schritt="0"><b>Fazit</b> (ca. 15 s) Zurück zur Leitfrage: Wofür steht <span data-marke></span> – und passt der Auftritt dazu? Der Kern ist stark: Genuss mit gutem Gewissen, frech im Ton, getragen von der Community. Aber der Auftritt hat zwei Lücken und einen Bruch.</p>
     <p data-schritt="1"><b>Empfehlung 1 – Koffein offen zeigen</b> (ca. 18 s) Erstens: Wer ein gutes Gewissen verspricht, muss beim Koffein ehrlich sein. Also Koffein pro Portion und „18+“ gut sichtbar vorn auf die Energy-Dose und in die Posts, dazu ein kurzes Erklärvideo. So wird der Kritikpunkt zum Beweis für Glaubwürdigkeit.</p>
-    <p data-schritt="2"><b>Empfehlung 2 – Echte Kundschaft zeigen</b> (ca. 18 s) Zweitens: Die Bildwelt ist zu jung für die Kundschaft von 25 bis 40, oft im Schichtdienst. Also echte Kundschaft zeigen – Creator aus Pflege, Schichtdienst und Sport. Das schließt auch die Dominanz-Lücke von Folie 5: Leistung im Alltag. Nebenbei zeigen sie, wie einfach das Anrühren ist.</p>
+    <p data-schritt="2"><b>Empfehlung 2 – Echte Kundschaft zeigen</b> (ca. 18 s) Zweitens: Die Bildwelt ist zu jung für die Kundschaft von 25 bis 40, oft im Schichtdienst. Also echte Kundschaft zeigen – Creator aus Pflege, Schichtdienst und Sport. Das schließt auch die Dominanz-Lücke von Folie 5: echte Schichtmomente statt nur Wirkangabe. Nebenbei zeigen sie, wie einfach das Anrühren ist.</p>
     <p data-schritt="3"><b>Empfehlung 3 – Ein Dachclaim, ein Raptor</b> (ca. 20 s) Drittens, gegen den zersplitterten Auftritt: ein Dachclaim – „Die Softdrink Revolution“ –, darunter das Versprechen „Geiler Geschmack mit gutem Gewissen“. Der Raptor bleibt durchgängiges Schlüsselbild, aber erwachsener und frecher inszeniert – kein Kinder-Comic –, mit einem Profilnamen auf allen Kanälen. (ca. 4 s) Damit sind wir am Ende – vielen Dank!</p>
     <p>Bedienung: Die Verweise („Kern · Folie 10“, „Lücke 1 · Folie 10“, „Bruch · Folie 09b“) sind Knöpfe und springen zur Herleitung (Maus oder Tab + Enter) – praktisch für Rückfragen. Danach mit Ziffern + Enter (11) oder über die Übersicht (O) zurück.</p>
-    <p>Belege (Recherche-Dossier, Stand 14.10.2026): Kern = Markenkern aus Folie 10 (unsere Verdichtung, H); im Sprechtext „frech im Ton“ = Tonalität (Folie 8b, Kap. 6.7 H), „getragen von der Community“ = Attribut „Community-nah“ aus dem Repertory Grid (Folie 6, Beispieldaten), Community „HOLY Squad“ ✔ [5, 24]. Lücke 1 = Spannungsfeld S1: Versprechen „Geiler Geschmack mit gutem Gewissen“ ✔ [1, 5]; 160 mg Koffein pro Portion HOLY Energy ✔ [56, 72] (die übrigen Linien meist ohne Koffein, Kap. 3.1); Kritik von Verbraucherschützern, Bericht über Koffeinvergiftung eines Zehnjährigen ✔ [27–29]; Energy im Shop nur ab 18 ✔ [12]. Lücke 2 = S2/S3: Kundschaft meist 25–40, viele im Schichtdienst ✔ [7, 24] (Gründeraussage, keine Kundendaten); Design „für eine jüngere Zielgruppe gedacht“ ✔ [7]; Verbraucherschützer (VKI bzw. KONSUMENT [27, 28], VZ Sachsen-Anhalt [82]) sehen eine Ansprache von Kindern und Jugendlichen ✔. Bruch = S5 (auf Folie 9b „über die Kanäle: Bruch“): mindestens sechs Claims, unterschiedliche Profilnamen, Creme-Pastell-Shop neben Comic-Verpackungen ✔ [1, 20, 31, 125]. Dachclaim „Die Softdrink Revolution“ ✔ [1, 8] (Kap. 6.5). Die drei Empfehlungen folgen den Empfehlungsrichtungen im Dossier Kap. 8 (S1: Koffein und „18+“ vorn; S3: Alltagssituationen statt Gaming; S5: Claim-Hierarchie Dachclaim + Versprechen, Raptor als durchgängiges Schlüsselbild, Namen vereinheitlichen) und sind Hypothesen (H) – mit der Gruppe abstimmen. „Erklärvideo“, „Creator aus Pflege, Schicht, Sport“, „Anrühren zeigen“ und „Raptor erwachsen und frecher inszenieren“ (Brücke zu Folie 5 „frech, aber erwachsen“, zu Folie 8 und 9b: Selbstbild Adler, gelebt wird der Waschbär, und zu Lücke 2) sind unsere Konkretisierung. Empfehlung 2 schließt zugleich die Dominanz-Lücke der Limbic Map (Folie 5: Leistung im Schichtalltag).</p>
+    <p>Belege (Recherche-Dossier, Stand 14.10.2026): Kern = Markenkern aus Folie 10 (unsere Verdichtung, H); im Sprechtext „frech im Ton“ = Tonalität (Folie 8b, Kap. 6.7 H), „getragen von der Community“ = Attribut „Community-nah“ aus dem Repertory Grid (Folie 6, Beispieldaten), Community „HOLY Squad“ ✔ [5, 24]. Lücke 1 = Spannungsfeld S1: Versprechen „Geiler Geschmack mit gutem Gewissen“ ✔ [1, 5]; 160 mg Koffein pro Portion HOLY Energy ✔ [56, 72] (die übrigen Linien meist ohne Koffein, Kap. 3.1); Kritik von Verbraucherschützern, Bericht über Koffeinvergiftung eines Zehnjährigen ✔ [27–29]; Energy im Shop nur ab 18 ✔ [12]. Lücke 2 = S2/S3: Kundschaft meist 25–40, viele im Schichtdienst ✔ [7, 24] (Gründeraussage, keine Kundendaten); Design „für eine jüngere Zielgruppe gedacht“ ✔ [7]; Verbraucherschützer (VKI bzw. KONSUMENT [27, 28], VZ Sachsen-Anhalt [82]) sehen eine Ansprache von Kindern und Jugendlichen ✔. Bruch = S5 (auf Folie 9b „über die Kanäle: Bruch“): mindestens sechs Claims, unterschiedliche Profilnamen, Creme-Pastell-Shop neben Comic-Verpackungen ✔ [1, 20, 31, 125]. Dachclaim „Die Softdrink Revolution“ ✔ [1, 8] (Kap. 6.5). Die drei Empfehlungen folgen den Empfehlungsrichtungen im Dossier Kap. 8 (S1: Koffein und „18+“ vorn; S3: Alltagssituationen statt Gaming; S5: Claim-Hierarchie Dachclaim + Versprechen, Raptor als durchgängiges Schlüsselbild, Namen vereinheitlichen) und sind Hypothesen (H) – mit der Gruppe abstimmen. „Erklärvideo“, „Creator aus Pflege, Schicht, Sport“, „Anrühren zeigen“ und „Raptor erwachsen und frecher inszenieren“ (Brücke zu Folie 5 „Humor aus der Schicht“, zu Folie 8 und 9b: Selbstbild Adler, gelebt wird der Waschbär, und zu Lücke 2) sind unsere Konkretisierung. Empfehlung 2 schließt zugleich die Dominanz-Lücke der Limbic Map (Folie 5: „Echte Schichtmomente“; A3: Lücke beim Anlass Schicht – Durchhalten statt Rebellion, ../limbic-map.md Abschnitt 5). Hinweis für Bündel C (nur zur Abstimmung, nichts geändert): A3 schlägt als Tonalität „Humor aus der Schicht statt Doppeldeutigkeit“ vor (vorläufig) – „frecher inszenieren“ in Empfehlung 3 mit Elias abgleichen.</p>
     <p>Rückfragen: „Steht der Koffeingehalt nicht schon auf der Packung?“ – Gemeint ist eine gut sichtbare Angabe vorn auf der Dose und in der Kommunikation, nicht nur in den Pflichtangaben (vor dem Vortrag an einer echten Packung prüfen). „Und Gaming?“ – bleibt eine Szene unter mehreren, aber nicht mehr der Kern der Bildwelt (Dossier S3, H). „Was ist mit ‚selbst anrühren‘?“ – Im Repertory Grid unterscheidet es stark, liegt aber weit vom Ideal: eine Hürde, kein Attribut (Folie 6). Die Creator-Videos aus Empfehlung 2 zeigen das Anrühren nebenbei. „Warum nicht TikTok?“ – Die Aufgabe nennt Instagram, Facebook und YouTube; TikTok (≈ 270.000 Follower, Dossier Kap. 1 ✔ [20]) wäre die naheliegende Erweiterung. „Was kostet das?“ – Budget haben wir nicht bewertet; alle drei Empfehlungen nutzen vorhandene Kanäle. „Verstärkt der Raptor nicht die zu junge Bildwelt?“ – Nein, wenn er erwachsen gestaltet wird; für die Energy-Linie keine kindlichen Frucht-Comics (Dossier S2: Energy klar als Erwachsenen-Produkt gestalten, H). „Haben alle Produkte 160 mg Koffein?“ – Nein, nur HOLY Energy; Iced Tea, Hydration, Milkshake und Syrup sind in der Regel koffeinfrei (Dossier 3.1 ✔).</p>
   </aside>
 </section>
@@ -2433,6 +2576,11 @@
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • Gruppe, Hochschule, Datum kommen aus marke.js; Fazit-Zeile oben rechts mit Folie 10/11 abgleichen.
      ║ • Pille „Beispieldaten“ am Fazit erst löschen, wenn Folie 10 und 11 keine Beispieldaten mehr tragen.
+     ║ • Logo (gelbes Oval, seit 17.10.2026): marke.js → logoTitel, wie auf Folie 01 (Klammer Anfang–Ende).
+     ║     Seit 18.10.2026 oben rechts neben dem Fazit über HOLY, nicht mehr neben den Gruppennamen
+     ║     (wirkte dort wie Co-Branding, Prüfung Rechte). Quelle in Fußzeile Zeile 2 („Logo ©“ direkt hinter
+     ║     dem Firmennamen); Logo-Nutzung mit dem Betreuer abstimmen (wie bei 01 und 09b, Checkliste
+     ║     LIESMICH Abschnitt 12). Ohne logoTitel verschwinden Bild und Quelle.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -2448,7 +2596,14 @@
       hervor (und umgekehrt).
     • Liste „Backup“: Sprung zu den Backup-Folien B1–B8.
   Oben rechts steht unser Fazit in einer Zeile – so bleibt das Ergebnis
-  während der ganzen Fragerunde sichtbar. Der Kern-Satz kommt aus Folie 10
+  während der ganzen Fragerunde sichtbar.
+  LOGO (17.10.2026, Platz seit 18.10.2026): Oben rechts neben unserem Fazit
+  über HOLY steht das offizielle HOLY-Logo im gelben Oval (marke.js →
+  logoTitel, dieselbe Datei wie auf Folie 01, unverändert, nur verkleinert):
+  Der Vortrag beginnt und endet mit demselben Zeichen. Es kennzeichnet nur
+  die analysierte Marke – deshalb beim Fazit über die Marke und nicht neben
+  den Gruppennamen (dort wirkte es wie Co-Branding); die Zeile „keine
+  Verbindung zur …“ und die Logo-Quelle stehen in der Fußzeile. Der Kern-Satz kommt aus Folie 10
   (Daten-JSON „kern“); der Text hier im HTML ist nur der Ersatz, falls
   Folie 10 fehlt.
   Alles ist mit Maus UND Tastatur bedienbar (Tab, Enter). Nicht vorhandene
@@ -2480,6 +2635,12 @@
       <span class="g6d-fazit-kicker" data-meta>Unser Fazit <span class="beispiel">Beispieldaten</span></span>
       <span class="g6d-fazit-text"><span data-marke></span>: <span data-g6d="kern">Genuss mit gutem Gewissen</span> <span class="g6d-fazit-zusatz">– jetzt muss der Auftritt nachziehen</span></span>
     </p>
+    <!-- Logo der analysierten Marke (Klammer zu Folie 01) – seit 18.10.2026 rechts neben dem
+         Fazit über HOLY statt neben den Gruppennamen: Dort wirkte es wie ein Absender bzw.
+         Co-Branding (Prüfung Rechte). Das Bild setzt die Engine aus marke.js → logoTitel
+         (data-marke-logo="titel"); ohne Eintrag oder wenn die Datei fehlt, verschwinden Bild
+         und Logo-Quelle (js/folien/12-fragen.js). -->
+    <img class="g6d-logo" data-marke-logo="titel" decoding="async" data-animation="einblenden" data-verzoegerung="300">
   </header>
 
   <div class="folie-inhalt g6d">
@@ -2487,7 +2648,11 @@
 
       <!-- LINKS · Gruppe und Angaben, darunter die Backup-Folien -->
       <div class="g6d-links">
-        <p class="g6d-gruppe" data-gruppe="zeilen" data-animation="hoch">Yannick Heisler<br>Elias Knauber<br>Lukas Welker</p>
+        <!-- Gruppe (Absender). Das HOLY-Logo steht seit 18.10.2026 oben rechts neben dem
+             Fazit, nicht mehr hier (sonst Eindruck einer Kooperation). -->
+        <div class="g6d-absender">
+          <p class="g6d-gruppe" data-gruppe="zeilen" data-animation="hoch">Yannick Heisler<br>Elias Knauber<br>Lukas Welker</p>
+        </div>
         <p class="g6d-angaben" data-meta data-animation="hoch" data-verzoegerung="120">
           <span data-veranstaltung>Unternehmenskommunikation</span><br>
           <span data-hochschule>Hochschule Kaiserslautern</span><br>
@@ -2524,12 +2689,16 @@
     <!-- kurz halten (≤ ca. 1250 px): unten rechts liegt die Bedienleiste -->
     <!-- Zweite Zeile = Einordnung (wie auf Folie 01): Die Schlussfolie steht in
          der Fragerunde lange da. Firmenname aus marke.js → unternehmen. -->
-    <p class="quelle">Quelle: Steuerrad nach Esch, Limbic Map nach Häusel · Recherche-Dossier, Stand 14.10.2026 · Literatur: B7, Belege [n]: B8<br>Studentische Fallstudie · keine Verbindung zur <span data-unternehmen>HOLY Softdrinks GmbH</span></p>
+    <!-- Logo-Quelle (Kurzform direkt hinter dem schon genannten Firmennamen, das ©
+         bezieht sich auf ihn; die volle Form „Logo © HOLY Softdrinks GmbH, de.holy.com
+         (Abruf 16.10.2026)“ wie auf Folie 01 wäre länger als ca. 1250 px; voll in B7
+         und in den Notizen). Das Skript blendet sie aus, wenn kein Logo gezeigt wird. -->
+    <p class="quelle">Quelle: Steuerrad nach Esch, Limbic Map nach Häusel · Recherche-Dossier, Stand 14.10.2026 · Literatur: B7, Belege [n]: B8<br>Studentische Fallstudie · keine Verbindung zur <span data-unternehmen>HOLY Softdrinks GmbH</span><span class="g6d-quelle-logo"> (Logo ©, de.holy.com, Abruf 16.10.2026)</span></p>
   </footer>
 
   <aside class="notizen">
     <p><b>Dank und Fragerunde</b> (zählt nicht zur Sollzeit) Vielen Dank für Ihre Aufmerksamkeit – wir freuen uns auf Ihre Fragen.</p>
-    <p>Oben rechts bleibt unser Fazit stehen: Genuss mit gutem Gewissen – jetzt muss der Auftritt nachziehen (Kern = unsere Verdichtung, Folie 10, H; Lücken und Bruch: Folien 10, 9b, 11). Die Pille „Beispieldaten“ bleibt, solange Folie 10 und 11 auf Beispieldaten beruhen.</p>
+    <p>Oben rechts, neben unserem Fazit, steht wieder das <span data-marke></span>-Logo wie auf der Titelfolie – nur zur Kennzeichnung der analysierten Marke (© <span data-unternehmen>HOLY Softdrinks GmbH</span>, de.holy.com, Abruf 16.10.2026; Rückfrage Bildrechte → B7). Oben rechts bleibt unser Fazit stehen: Genuss mit gutem Gewissen – jetzt muss der Auftritt nachziehen (Kern = unsere Verdichtung, Folie 10, H; Lücken und Bruch: Folien 10, 9b, 11). Die Pille „Beispieldaten“ bleibt, solange Folie 10 und 11 auf Beispieldaten beruhen.</p>
     <p>Bedienung: Rückfrage zu einem Feld → Feld im Steuerrad anklicken (Rahmen = Brand Persona). Rückfrage zu einer Methode → rechts in der Liste „Methoden“; zu einem Ergebnis (Persona, Tonalität nach Aaker, Fit-Bewertung, Steuerrad, Empfehlungen) → „Ergebnisse“. Methodik, Prompt-Log, Rohdaten, Quellen → links unter „Backup“. Alles geht auch mit Tab + Enter. Zurück hierher: Ziffern 1 2 + Enter. Taste O öffnet die Übersicht aller Folien.</p>
     <p>Wahrscheinliche Rückfragen und wohin springen: Wie belastbar sind KI-Ergebnisse? → B1 Methodik und B2 Prompt-Log. Woher stammt die Persona? → Brand Persona bzw. B3. Wie wurden die Attribute ausgewählt? → Repertory Grid bzw. B4. Warum ein Waschbär? → Analogien. Ist der Markenkern die Markenkompetenz? → Markensteuerrad (Kern steht als Verdichtung über dem Rad, die Kompetenz im Zentrum). Woher kommen die zwei Lücken? → Markensteuerrad (Konsistenzprüfung) und Fazit. Woher kommt der Bruch? → Ergebnisse: Markenbild &amp; Fit, Folie 9b (Fit-Bewertung „über die Kanäle“). Literatur → B7; „Was heißt [13]?“ → B8 (Belege der Folien).</p>
   </aside>
@@ -2575,6 +2744,11 @@
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • „3 echte Kurzinterviews“ ist die geplante Zahl (wie auf Folie 06–08, B2, B4, B5). Nach den
      ║     Interviews überall dieselbe tatsächliche Zahl eintragen und die Pille „teils geplant“ löschen.
+     ║ • Persona-Bild auf Folie 04 ist noch ein Platzhalter (Notiz „noch ein Platzhalter“) – nach dem KI-Bild
+     ║     (Prompt P6) streichen.
+     ║ • Offen (Stand 18.10.2026, nur nach Freigabe): Die Folienentwürfe 3 und 5 sehen zusätzlich Backup-Inhalte
+     ║     vor (Heuristik der Limbic Map mit ../grafiken/folie-05-limbic-map, ggf. Markenkompetenz) – nicht
+     ║     eingebaut; die Grafiken sind für PowerPoint gestaltet (andere Farben/Schrift als Editorial).
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -2614,8 +2788,8 @@
     Hinweis oben sagt das an). Knopf und Taste Z gehen auch in der
     Referentenansicht – der Beamer springt mit.
   • Text in Orange (Klasse bk-ergaenzen bzw. bk7-ergaenzen auf B7) = noch
-    einzutragen (z. B. Jahr und Auflage auf B7). Nach dem Eintragen die
-    Klasse löschen.
+    einzutragen (früher Jahr und Auflage auf B7, seit 17.10.2026 eingetragen).
+    Nach dem Eintragen die Klasse löschen.
   • Der Markenname kommt aus marke.js (data-marke bzw. „[Marke]“ in den
     Daten) – nie eintippen.
 -->
@@ -2708,7 +2882,15 @@
      ║ Gestaltung: css/folien/13-backup.css · Skript: js/folien/13-backup.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • Zeilen mit „Beispiel“ nach der Durchführung durch die echten Einträge aus ki-nachweis.md ersetzen.
+     ║ • Stand 17.10.2026: Bündel A ist belegt – KI 55/56 (Markenkompetenz, Folie 03), KI 47 (Persona-
+     ║     Steckbrief, 04), KI 52 (Limbic Map, 05), dazu KI 13 (Dossier) und KI 07/A2-01 (Präsentation).
+     ║     „belegt“ = im KI-Nachweis dokumentiert; die Prüfung durch die Gruppe steht dort noch auf „offen“.
+     ║ • Zeilen mit „Beispiel“ (P7–P14: Lukas, Elias, Synthese C2) nach der Durchführung durch die echten
+     ║     Einträge aus ki-nachweis.md ersetzen ("beispiel": false). Persona-Bild (P6) als eigene Zeile
+     ║     ergänzen, sobald es erzeugt ist. Pille „teils Beispiel“ erst löschen, wenn keine Zeile mehr Beispiel ist.
+     ║ • Seit 18.10.2026 (Prüfung Inhalt): Spalte „Prüfung“ trennt KI-interne Gegenprüfung (Unteragenten) von der
+     ║     Prüfung durch die Gruppe (noch offen); Titel „– und wird geprüft“. Hat die Gruppe die Einträge im
+     ║     KI-Nachweis abgehakt, Titel wieder „dokumentiert und geprüft“ und die Spalte entsprechend ändern.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!-- ===================================================================
@@ -2718,8 +2900,11 @@
      =================================================================== -->
 <section class="folie bk" id="b2" data-titel="Backup: Prompt-Log" data-feld="leer" data-zeit="0" data-buendel="A" data-backup data-layout="backup">
   <header class="folie-kopf">
-    <p class="kicker">Backup · Prompt-Log (Auszug) <span class="beispiel">Beispieldaten</span></p>
-    <h2 class="titel">Jeder KI-Schritt ist dokumentiert und geprüft</h2>
+    <!-- Pille „teils Beispiel“ (seit 18.10.2026, wie B1 „teils geplant“): fünf Zeilen sind belegt,
+         P7–P14 noch Beispiel. Titel „– und wird geprüft“: Die Prüfung durch die Gruppe steht im
+         KI-Nachweis bei allen Einträgen noch auf „offen“; nach dem Abhaken wieder „und geprüft“. -->
+    <p class="kicker">Backup · Prompt-Log (Auszug) <span class="beispiel">teils Beispiel</span></p>
+    <h2 class="titel">Jeder KI-Schritt ist dokumentiert – und wird geprüft</h2>
   </header>
 
   <div class="folie-inhalt">
@@ -2734,18 +2919,19 @@
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: KI-Nachweis · P = Prompt (prompts.md, P0–P14) · KI = Nummer im KI-Nachweis · „Beispiel“ = geplante Nutzung, nach Durchführung ersetzen</p>
+    <p class="quelle">Quelle: KI-Nachweis (KI = Nummer, A2 = Account 2) · P = Prompt (prompts.md) · „Beispiel“ = geplant, nach Durchführung ersetzen</p>
   </footer>
 
   <aside class="notizen">
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Welche Prompts habt ihr genutzt?“ oder „Mit welchem Tool?“. <b>Kernsatz:</b> Jeder KI-Einsatz steht im Prompt-Log – mit Ziel, Tool und Folie. Vollständig und wörtlich steht alles im KI-Nachweis; hier ist ein Auszug je Methode.</p>
-    <p data-schritt="1"><b>Prüfung</b> Entscheidend ist die hervorgehobene Spalte: Zu jedem Prompt gehört eine eigene Prüfung – Quellen geöffnet, echte Interviews, von Hand nachgezählt. Belegt sind bereits das Recherche-Dossier – jeder Bereich zweimal gegengeprüft, 42 Befunde korrigiert, 32 Einzelaussagen verworfen – und der Bau dieser Präsentation.</p>
-    <p>Hinweise: Zeilen mit „belegt“ stammen aus dem KI-Nachweis (Nr. 13: Recherche-Dossier, Workflow D03; Nr. 07: Web-Präsentation, Workflow D01) und dem Dossier (Kap. 9.5). Alle Zeilen „Beispiel“ zeigen die geplante Nutzung der Prompts P1–P14 aus prompts.md – Tool, Ziel und Prüfung nach der Durchführung durch die echten Einträge ersetzen und „beispiel“: false setzen. Tool-Wahl laut prompts.md: Recherche mit Quellenangaben (Perplexity oder Chat mit Websuche), Simulation und Synthese (ChatGPT oder Claude); Version im KI-Nachweis notieren. Zeile KI 13: „korrigiert“ zählt Befunde, „verworfen“ Einzelaussagen – kein Befund wurde als Ganzes verworfen (Dossier, Anhang A). Die Foliennummern in der Spalte „Folie“ sind Knöpfe: Klick oder Tab + Enter springt zur Hauptfolie, Taste Z führt zurück hierher.</p>
+    <p data-schritt="1"><b>Prüfung</b> Entscheidend ist die hervorgehobene Spalte: Zu jedem Prompt gehört eine Prüfung – erst eine Gegenprüfung durch weitere KI-Agenten, dann unsere eigene: Quellen öffnen, echte Interviews, von Hand nachzählen. Dokumentiert sind bereits das Recherche-Dossier – jeder Bereich zweimal gegengeprüft, 42 Befunde korrigiert, 32 Einzelaussagen verworfen –, unsere drei Ausarbeitungen zu Markenkompetenz, Persona und Limbic Map und der Bau dieser Präsentation. <i>(Stand 18.10.2026: Die Prüfung durch die Gruppe ist im KI-Nachweis noch bei allen Einträgen offen – vor dem Vortrag abhaken, sonst so sagen: „Unsere eigene Prüfung läuft noch.“)</i></p>
+    <p>Hinweise: Zeilen mit „belegt“ stammen aus dem KI-Nachweis (ki-nachweis.md): Nr. 13 Recherche-Dossier (Workflow D03, Prüfzahlen aus Dossier Kap. 9.5); Nr. 55/56 Markenkompetenz A1 (Workflow D11: Dossier-Auszug, zwei Web-Prüfungen, drei prüfende KI-Agenten; tragende Belege vom bearbeitenden Agenten selbst geöffnet = „W+“, andere Web-Angaben nur übernommen = „W“ – markenkompetenz.md, Kopf und §8); Nr. 47 Persona-Steckbrief A2 (Statista-Zielgruppen-Report von der KI gelesen, Werte aus den Diagrammen abgelesen, jede Angabe als D = Daten oder A = Annahme markiert; Gegenlesen im Report noch offen); Nr. 52 Limbic Map A3 (Workflow D10, drei prüfende KI-Agenten; Zitate am Nymphenburg-PDF [105] geprüft, Lage der Punkte nachgerechnet); Nr. 07 und A2-01 Web-Präsentation (Workflows D01 bzw. A2-D01; Nachweis von Account 2: ki-nachweis-account-2.md). „belegt“ heißt dokumentiert – die Prüfung durch die Gruppe ist im Nachweis bei allen Einträgen noch offen (☐). Die Statista-Werte des Steckbriefs sind laut Steckbrief noch stichprobenartig im Report gegenzulesen. Die Zeilen „Beispiel“ zeigen die geplante Nutzung der Prompts P7–P14 aus prompts.md (Bündel B, C und Synthese) – Tool, Ziel und Prüfung nach der Durchführung durch die echten Einträge ersetzen und „beispiel“: false setzen; das Persona-Bild (P6) als eigene Zeile ergänzen. Tool-Wahl laut prompts.md: Recherche mit Quellenangaben (Perplexity oder Chat mit Websuche), Simulation und Synthese (ChatGPT oder Claude); Version im KI-Nachweis notieren. Zeile KI 13: „korrigiert“ zählt Befunde, „verworfen“ Einzelaussagen – kein Befund wurde als Ganzes verworfen (Dossier, Anhang A). Die Foliennummern in der Spalte „Folie“ sind Knöpfe: Klick oder Tab + Enter springt zur Hauptfolie, Taste Z führt zurück hierher.</p>
   </aside>
 
   <!-- DATEN – hier ändern. Hinweise:
        • zeilen: id (P-Nummer aus prompts.md oder „KI nn“ = Nummer im
-         KI-Nachweis), tool, ziel, pruefung, folie (Text), sprung (Folien-ID,
+         KI-Nachweis, „A2-nn“ = Nachweis von Account 2), tool, ziel,
+         pruefung, folie (Text), sprung (Folien-ID,
          macht die Foliennummer klickbar; leer = kein Sprung),
          beispiel: true = geplante Nutzung (Pille „Beispiel“), false = belegt.
        • Texte kurz halten (Tool ≤ 22, Ziel ≤ 22, Prüfung ≤ 50 Zeichen),
@@ -2755,19 +2941,19 @@
        • Höchstens ca. 10 Zeilen – der Rest steht im KI-Nachweis. -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "Zeilen mit beispiel: true sind BEISPIELDATEN (geplante Nutzung). Belegt: KI-Nachweis Nr. 07 und 13, Dossier Kap. 9.5.",
+    "hinweis": "Zeilen mit beispiel: true sind BEISPIELDATEN (geplante Nutzung). Belegt = im KI-Nachweis dokumentiert: Nr. 07, 13, 47, 52, 55/56 (ki-nachweis.md) und A2-01 (ki-nachweis-account-2.md), Prüfzahlen KI 13 aus Dossier Kap. 9.5. Prüfung durch die Gruppe dort noch offen.",
     "spalten": { "id": "ID", "tool": "Tool", "ziel": "Ziel", "pruefung": "Prüfung", "folie": "Folie", "stand": "Stand" },
     "zeilen": [
       { "id": "KI 13",   "tool": "Claude Code, Websuche", "ziel": "Recherche-Dossier",          "pruefung": "42 Befunde korrigiert, 32 Einzelaussagen verworfen", "folie": "03–09", "sprung": "f03", "beispiel": false },
-      { "id": "P1, P2",  "tool": "Perplexity",            "ziel": "Kompetenz, Wettbewerb",       "pruefung": "jede Quelle geöffnet, Faktenstatus vergeben",    "folie": "03",    "sprung": "f03", "beispiel": true },
-      { "id": "P3, P4",  "tool": "ChatGPT",               "ziel": "Datenbasis, Persona",         "pruefung": "jede Angabe als Daten oder Annahme markiert",    "folie": "04",    "sprung": "f04", "beispiel": true },
-      { "id": "P5",      "tool": "ChatGPT",               "ziel": "Limbic-Map-Gewichte",         "pruefung": "im Team diskutiert, mit Vorlesung abgeglichen",  "folie": "05",    "sprung": "f05", "beispiel": true },
+      { "id": "KI 55, 56", "tool": "Claude Code, Websuche", "ziel": "Markenkompetenz",           "pruefung": "KI-Gegenprüfung (3 Agenten), Kernbelege geöffnet", "folie": "03",  "sprung": "f03", "beispiel": false },
+      { "id": "KI 47",   "tool": "Claude Code",           "ziel": "Persona-Steckbrief",          "pruefung": "Werte aus Report abgelesen; Gegenlesen offen",  "folie": "04",    "sprung": "f04", "beispiel": false },
+      { "id": "KI 52",   "tool": "Claude Code, Websuche", "ziel": "Limbic Map, Gewichte",        "pruefung": "KI-Gegenprüfung (3 Agenten); PDF-Zitate geprüft",  "folie": "05",    "sprung": "f05", "beispiel": false },
       { "id": "P7, P8",  "tool": "Claude",                "ziel": "Repertory Grid",              "pruefung": "3 echte Kurzinterviews; Mittelwerte in Excel",   "folie": "06",    "sprung": "f06", "beispiel": true },
       { "id": "P9, P10", "tool": "Claude",                "ziel": "Laddering, Matrix",           "pruefung": "Implikationsmatrix von Hand nachgezählt",        "folie": "07",    "sprung": "f07", "beispiel": true },
       { "id": "P11",     "tool": "ChatGPT",               "ziel": "Analogien Mensch, Tier",      "pruefung": "mit Gruppe und 3 Interviews abgeglichen",        "folie": "08",    "sprung": "f08", "beispiel": true },
       { "id": "P12",     "tool": "ChatGPT",               "ziel": "Beiträge codieren",           "pruefung": "nur Sichtbares; Codes stichprobenartig geprüft", "folie": "09",    "sprung": "f09", "beispiel": true },
       { "id": "P13, P14","tool": "Claude",                "ziel": "Steuerrad, Review",           "pruefung": "jedes Stichwort einer Analyse zugeordnet",       "folie": "10",    "sprung": "f10", "beispiel": true },
-      { "id": "KI 07",   "tool": "Claude Code",           "ziel": "Web-Präsentation",            "pruefung": "Prüfskript: Kontrast, Schriftgröße, Überlauf",   "folie": "alle",  "sprung": "",    "beispiel": false }
+      { "id": "KI 07, A2-01", "tool": "Claude Code",      "ziel": "Web-Präsentation",            "pruefung": "Prüfskript: Kontrast, Schriftgröße, Überlauf",   "folie": "alle",  "sprung": "",    "beispiel": false }
     ]
   }
   </script>
@@ -2780,6 +2966,12 @@
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • Datenquellen der Persona aus dem Dossier (Kap. 4.1–4.5); neue Belege mit Nummer ergänzen.
+     ║ • Seit 17.10.2026 zusätzlich Kategoriedaten aus dem Persona-Steckbrief A2 (Status „extern“, nicht im
+     ║     Dossier): Kantar Media TGI 2023 (Kaufverhalten) und Statista Consumer Insights 2025 (Psychografie,
+     ║     Mediennutzung) – Werte NUR wie in ../persona-steckbrief.md bzw. ../persona-daten.md; laut Steckbrief
+     ║     noch stichprobenartig im Report gegenlesen. Steht und fällt mit der Freigabe von A2 (Yannick).
+     ║ • Spalte „Basis“: Fallzahlen für Markentrainer und Mintel fehlen (nicht im Dossier) – aus den
+     ║     Originalstudien nachtragen. Jost-Zitate: Wortlaut im Audio prüfen (Dossier 9.4).
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!-- ===================================================================
@@ -2804,12 +2996,12 @@
          ebenfalls anpassen. -->
     <div class="bk3-unten" data-staffel="120" data-animation="einblenden" data-verzoegerung="400">
       <p class="bk3-luecke"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span><b>Datenlücke:</b> <span data-marke></span> veröffentlicht keine Kundendaten – Kern sind Gründeraussagen, Kategoriedaten geben den Rahmen.</span></p>
-      <p class="bk3-luecke"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg><span><b>Persona:</b> Kern „Marco, 28“ (Folie 04) · Wachstum „Lena, 29“ – beide Hypothesen aus Dossier 4.3</span></p>
+      <p class="bk3-luecke"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg><span><b>Persona:</b> Kern „Marco, 28“ (Folie 04, Steckbrief A2) · Wachstum „Lena, 29“ – Hypothesen nach Dossier 4.3</span></p>
     </div>
   </div>
 
   <footer class="folie-fuss">
-    <p class="quelle">Quelle: Recherche-Dossier Kap. 4.1–4.5, [Nr.] = Anhang B, Abruf 13./14.10.2026 · extern = Statista Consumer Insights 02/2025, Energy-Drink-Konsument:innen (Campuslizenz, nicht im Dossier) · Stand = Jahr der Daten</p>
+    <p class="quelle">Quelle: Recherche-Dossier Kap. 4.1–4.5, [Nr.] = Anhang B, Abruf 13./14.10.2026 · extern = Statista Consumer Insights 02/2025, Kantar Media TGI 2023 (via Statista), Kategorie Energy Drinks (Campuslizenz, nicht im Dossier) · Stand = Jahr der Daten</p>
     <button type="button" class="bk-sprung" data-meta data-bk-ziel="f04"><svg class="icon" aria-hidden="true"><use href="#i-pfeil-links"/></svg><span class="bk-sprung-text">Zu Folie</span></button>
   </footer>
 
@@ -2817,7 +3009,7 @@
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Woher stammen die Angaben der Persona?“ oder „Ist die Persona ein Klischee?“. <b>Kernsatz:</b> Jede Dimension der Persona hat eine Quelle mit Datenstand; was nicht belegt ist, ist auf Folie 04 gestrichelt als Annahme markiert. Weil <span data-marke></span> keine Kundendaten veröffentlicht, tragen die Gründeraussagen den Kern; Kategoriedaten zeigen nur den Rahmen.</p>
     <p data-schritt="1"><b>Kernbelege</b> Die wichtigste Quelle sind die Gründer selbst: Laut Mitgründer Jost ist die Kundschaft meist 25 bis 40, etwa zu zwei Dritteln männlich, viele arbeiten im Schichtdienst. Das ist eine Selbstauskunft – aber die beste verfügbare, weil <span data-marke></span> keine Kundendaten veröffentlicht.</p>
     <p data-schritt="2"><b>Mit Vorsicht</b> Markiert sind Quellen, die wir nur eingeschränkt nutzen: Die Kategoriedaten im Markentrainer stammen aus einer Shopper-Studie mit Red Bull von 2020/21 – also rund fünf Jahre alt; Similarweb ist eine modellierte Schätzung und widerspricht der Gründeraussage – deshalb nur als Indiz.</p>
-    <p>Hinweise: Alle Angaben aus dem Recherche-Dossier Kap. 4.1 (Selbstauskünfte), 4.2 (Kategorie- und Umfelddaten), 4.3 (Spalte „Belegt durch“), 4.4 und 4.5; Status wie im Dossier (gesichert ✔, korrigiert ✎, unsicher ~). Spalte „Stand“ = Jahr der Daten, nicht der Veröffentlichung (Markentrainer erschien 2025, die Shopper-Studie mit Red Bull ist von 2020/21; Dossier 4.2). Stichprobengrößen stehen nicht im Dossier – vor der Präsentation aus den Originalstudien nachtragen (Spalte „Basis“). Persona-Zeile: Folie 04 zeigt die Kern-Persona „Marco, 28“ (männlich, Schichtdienst) – passend zu Jost [24] und Trending Topics [7]; die Wachstums-Persona „Lena, 29“ (Pflegefachkraft, Einstieg im Supermarkt) ist die Richtung der Kampagne 2026. Beide sind Hypothesen des Dossiers (Kap. 4.3), Namen und Berufe erfunden. Mediennutzung (seit 17.10.2026, wie Folie 04): Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“, 02/2025, Online-Befragung 18–64 J., n = 1.583 (Vergleich alle Befragten n = 35.956), regelmäßig genutzt: YouTube 73 % (Ø 63 %), Instagram 71 % (Ø 58 %), TikTok 58 % (Ø 41 %), Twitch nur 18 % (Ø 10 %) – Kategoriedaten, nicht <span data-marke></span>; NICHT im Recherche-Dossier (Campuslizenz der HSKL, Kurzfassung ../persona-daten.md), deshalb Status „extern“ und keine Nummer. Vorher stand hier die ARD/ZDF-Medienstudie 2025 [102] (14–29 J.: Instagram 77 %, TikTok 50 %) – zu jung für Marco und ohne YouTube. Offene Aufgaben (nicht auf die Folie): weitere Statista-Werte (VuMA, Kantar, AWA – Kurzfassung in ../persona-daten.md) und b4p nach Bedarf als eigene Zeilen eintragen (höchstens ca. 11 Zeilen). Jost-Zitate stammen aus einem automatischen Transkript – Wortlaut im Audio prüfen (Dossier 9.4). Taste Z führt nach dem Sprung zu Folie 04 zurück hierher.</p>
+    <p>Hinweise: Alle Angaben aus dem Recherche-Dossier Kap. 4.1 (Selbstauskünfte), 4.2 (Kategorie- und Umfelddaten), 4.3 (Spalte „Belegt durch“), 4.4 und 4.5; Status wie im Dossier (gesichert ✔, korrigiert ✎, unsicher ~). Spalte „Stand“ = Jahr der Daten, nicht der Veröffentlichung (Markentrainer erschien 2025, die Shopper-Studie mit Red Bull ist von 2020/21; Dossier 4.2). Stichprobengrößen stehen nicht im Dossier – vor der Präsentation aus den Originalstudien nachtragen (Spalte „Basis“). Persona-Zeile: Folie 04 zeigt die Kern-Persona „Marco, 28“ (männlich, Schichtdienst) – passend zu Jost [24] und Trending Topics [7]; die Wachstums-Persona „Lena, 29“ (Pflegefachkraft, Einstieg im Supermarkt) ist die Richtung der Kampagne 2026. Beide sind Hypothesen des Dossiers (Kap. 4.3), Namen und Berufe erfunden. Kategoriedaten aus dem Persona-Steckbrief A2 (seit 17.10.2026, wie Folie 04; Werte NUR wie im Steckbrief bzw. in ../persona-daten.md): Kaufverhalten – Kantar Media TGI 2023 (ab 15 J., n = 10.089, via Statista): gut 40 % der Konsument:innen trinken mindestens zwei- bis dreimal pro Woche; Psychografie – Statista Consumer Insights 2025: „erfolgreich sein“ 27 % (Ø 22 %), „Spaß haben“ 38 % (Ø 36 %, im Schnitt, deshalb nicht auf Folie 04), 50 % versuchen, sich gesund zu ernähren (Ø 53 %), 30 %: Essen muss bequem und schnell sein (Ø 25 %). Für Rückfragen zum Männeranteil (nicht in der Tabelle): VuMA 2022 (Daten 2021, ab 14 J., „mindestens mehrmals im Monat“): 67,5 % Männer; Statista CI 2025 („regelmäßig“, 18–64 J.): 54 %; laut Gründer etwa 2/3 [24] – die Quellen messen Verschiedenes (Steckbrief Abschnitt 3). Seit 17.10.2026 nicht mehr in der Tabelle (Platz für die Steckbrief-Daten): Markentrainer/YouGov 2024 „34 % der Haushalte kaufen Energy“ (✎ [65]) und Ernährungsreport 2025 (forsa) „64 % achten auf Zucker“ (✔ [99]) – beide weiter im Dossier 4.2. Mediennutzung: Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“, 02/2025, Online-Befragung 18–64 J., n = 1.583 (Vergleich alle Befragten n = 35.956), regelmäßig genutzt: YouTube 73 % (Ø 63 %), Instagram 71 % (Ø 58 %), TikTok 58 % (Ø 41 %), Twitch nur 18 % (Ø 10 %) – Kategoriedaten, nicht <span data-marke></span>; NICHT im Recherche-Dossier (Campuslizenz der HSKL, Kurzfassung ../persona-daten.md), deshalb Status „extern“ und keine Nummer. Vorher stand hier die ARD/ZDF-Medienstudie 2025 [102] (14–29 J.: Instagram 77 %, TikTok 50 %) – zu jung für Marco und ohne YouTube. Offene Aufgaben (nicht auf die Folie): Statista-Werte laut Steckbrief noch stichprobenartig im Report gegenlesen; weitere Kategoriedaten (VuMA, AWA – Kurzfassung in ../persona-daten.md) nur im Tausch gegen eine Zeile eintragen (höchstens ca. 11 Zeilen). Jost-Zitate stammen aus einem automatischen Transkript – Wortlaut im Audio prüfen (Dossier 9.4). Taste Z führt nach dem Sprung zu Folie 04 zurück hierher.</p>
   </aside>
 
   <!-- DATEN – hier ändern. Hinweise:
@@ -2833,17 +3025,17 @@
        • Höchstens ca. 11 Zeilen, Befund ≤ 34 Zeichen. -->
   <script type="application/json" class="daten">
   {
-    "hinweis": "Echte Angaben aus dem Recherche-Dossier (Kap. 4.1–4.5, Quellen Anhang B). Stichproben aus den Originalstudien ergänzen.",
+    "hinweis": "Echte Angaben aus dem Recherche-Dossier (Kap. 4.1–4.5, Quellen Anhang B) und – Status „extern“ – Kategoriedaten aus dem Persona-Steckbrief A2 (Statista CI 2025, Kantar TGI 2023, Kurzfassung ../persona-daten.md). Stichproben aus den Originalstudien ergänzen.",
     "spalten": { "dimension": "Dimension", "quelle": "Quelle", "jahr": "Stand", "basis": "Basis", "befund": "Befund (Auszug)", "status": "Status" },
     "zeilen": [
       { "dimension": "Soziodemografie", "quelle": "F. Jost (Mitgründer), Podcast", "nr": "24", "jahr": "2024", "basis": "Gründeraussage",         "befund": "meist 25–40 J., ca. ⅔ männlich",   "status": "gesichert",  "kern": true },
       { "dimension": "Soziodemografie", "quelle": "Trending Topics",               "nr": "7",  "jahr": "2024", "basis": "Presse",                 "befund": "viele Schichtberufe, z. B. Pflege", "status": "gesichert",  "kern": true },
       { "dimension": "Soziodemografie", "quelle": "Markentrainer Energy Drinks",   "nr": "65", "jahr": "2020/21", "basis": "Shopper-Studie mit Red Bull", "befund": "Kategorie: Ø 37,7 J., 60 % Männer", "status": "korrigiert", "vorsicht": true },
       { "dimension": "Geografie",       "quelle": "Mintel, Marktreport",           "nr": "98", "jahr": "2025", "basis": "nur Produktseite",       "befund": "Kategorie: Männer in Städten",      "status": "gesichert" },
-      { "dimension": "Kaufverhalten",   "quelle": "Markentrainer (YouGov)",        "nr": "65", "jahr": "2024", "basis": "YouGov-Daten",           "befund": "34 % der Haushalte kaufen Energy",  "status": "korrigiert" },
+      { "dimension": "Kaufverhalten",   "quelle": "Kantar Media TGI",              "nr": "",   "jahr": "2023", "basis": "ab 15 J., n = 10.089",   "befund": "gut 40 % ≥ 2–3× pro Woche",         "status": "extern" },
       { "dimension": "Kaufverhalten",   "quelle": "HOLY-Anzeige an den Handel",    "nr": "18", "jahr": "2025", "basis": "Firmenangabe",           "befund": "Impuls- und Erstkäufer",            "status": "gesichert" },
       { "dimension": "Mediennutzung",   "quelle": "Statista Consumer Insights",    "nr": "",   "jahr": "2025", "basis": "Online, 18–64 J., n = 1.583", "befund": "YouTube 73, Instagram 71, TikTok 58 %", "status": "extern" },
-      { "dimension": "Psychografie",    "quelle": "Ernährungsreport (forsa)",      "nr": "99", "jahr": "2025", "basis": "Befragung",              "befund": "64 % achten auf Zucker",            "status": "gesichert" },
+      { "dimension": "Psychografie",    "quelle": "Statista Consumer Insights",    "nr": "",   "jahr": "2025", "basis": "Online, 18–64 J., n = 1.583", "befund": "„erfolgreich sein“ 27 % (Ø 22 %)", "status": "extern" },
       { "dimension": "Psychografie",    "quelle": "Trustpilot, REVIEWS.io",        "nr": "88, 89", "jahr": "2026", "basis": "Bewertungen (schwach)", "befund": "Motive, Kundensprache",          "status": "gesichert" },
       { "dimension": "Limbic Map",      "quelle": "b4p: Limbic Types",             "nr": "105","jahr": "2020", "basis": "best for planning",      "befund": "Jüngere: mehr Stimulanz",           "status": "gesichert" },
       { "dimension": "nur Indiz",       "quelle": "Similarweb",                    "nr": "92", "jahr": "2026", "basis": "modellierte Web-Besuche", "befund": "63,5 % männlich, meist 18–24",     "status": "unsicher",   "vorsicht": true }
@@ -3065,6 +3257,8 @@
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • Codiertabelle = Beispieldaten → echte Beiträge eintragen (wie Folie 09).
+     ║ • Hinweis aus der Limbic Map A3 (../limbic-map.md, „Bitte an dich“; nur zur Abstimmung, nichts geändert):
+     ║     im Raster die Spalten „Anlass“ (Codebuch K1) und „Wirkversprechen“ (ja/nein) ergänzen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!-- ===================================================================
@@ -3155,7 +3349,15 @@
      ║ Gestaltung: css/folien/13-backup.css · Skript: js/folien/13-backup.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • Esch und Häusel: Jahr und Auflage der genutzten Ausgabe ergänzen (Vorlesung/Literaturliste).
+     ║ • Esch und Häusel (17.10.2026): neueste Ausgaben laut Katalog der Deutschen Nationalbibliothek
+     ║     eingetragen (Esch & Esch 2024, 10. Aufl.; Häusel 2019, Think Limbic!, 6. Aufl.). Nutzt die Gruppe
+     ║     eine andere Ausgabe (z. B. Bibliothek: Esch 2018, 9. Aufl., ohne D. Esch), Jahr, Auflage und
+     ║     Autoren hier UND in der Fußzeile von Folie 02 anpassen.
+     ║ • Kotler (Rollen auf Folie 03) fehlt noch: erst mit geprüfter Auflage aufnehmen (Bibliothek).
+     ║ • Seit 18.10.2026: „Nachprüfung 17.10.2026, KI-gestützt“ statt „Eigene Prüfung“ (die Prüfung durch die
+     ║     Gruppe ist im KI-Nachweis noch offen); Dossier-Zeile nennt die externen Kategoriedaten (Folie 04, B3),
+     ║     volle Angaben in den Notizen; Häusel-Untertitel in den Notizen korrigiert („Unbewussten“).
+     ║ • Vorlesungsunterlagen: Foliennummern ergänzen, sobald die Folien vorliegen.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!-- ===================================================================
@@ -3179,9 +3381,10 @@
         <h3 class="bk-zwischentitel" data-meta>Literatur zu den Modellen</h3>
         <ol class="bk7-literatur" data-meta data-staffel="60" data-animation="einblenden">
           <li><b>Aaker, J. L.</b> (1997): Dimensions of Brand Personality. <i>Journal of Marketing Research</i>, 34(3), 347–356.</li>
-          <li><b>Esch, F.-R.</b> (<span class="bk7-ergaenzen">Jahr, Aufl. ergänzen</span>): <i>Strategie und Technik der Markenführung.</i> München: Vahlen.</li>
+          <li><b>Esch, F.-R. &amp; Esch, D.</b> (2024): <i>Strategie und Technik der Markenführung</i> (10. Aufl.). München: Vahlen.</li>
+          <li><b>Gruppe Nymphenburg Consult AG</b> (2020): <i>Die Limbic® Types in best for planning</i> [105] · Limbic® Map/Types: nymphenburg.de (Abruf 17.10.2026).</li>
           <li><b>Gutman, J.</b> (1982): A Means-End Chain Model Based on Consumer Categorization Processes. <i>Journal of Marketing</i>, 46(2), 60–72.</li>
-          <li><b>Häusel, H.-G.</b> (<span class="bk7-ergaenzen">Jahr, Aufl. ergänzen</span>): <i>Think Limbic!</i> bzw. <i>Brain View.</i> Freiburg: Haufe.</li>
+          <li><b>Häusel, H.-G.</b> (2019): <i>Think Limbic!</i> (6. Aufl.). Freiburg: Haufe.</li>
           <li><b>Kelly, G. A.</b> (1955): <i>The Psychology of Personal Constructs.</i> New York: Norton.</li>
           <li><b>Kroeber-Riel, W.</b> (1993): <i>Bildkommunikation.</i> München: Vahlen.</li>
           <li><b>Reynolds, T. J. &amp; Gutman, J.</b> (1988): Laddering Theory, Method, Analysis, and Interpretation. <i>Journal of Advertising Research</i>, 28(1), 11–31.</li>
@@ -3194,18 +3397,19 @@
         <section class="bk7-block" data-animation="hoch" data-verzoegerung="160">
           <h3 class="bk-zwischentitel" data-meta>Daten &amp; Dokumentation</h3>
           <ul class="bk7-liste" data-meta>
-            <li><b>Recherche-Dossier <span data-marke></span></b>, Stand 13./14.10.2026 – 160 nummerierte Quellen, Faktenstatus je Aussage; die auf den Folien zitierten Nummern löst <b>B8</b> auf</li>
-            <li><b>KI-Nachweis</b> der Gruppe – alle Prompts wörtlich (<span class="bk-datei">ki-nachweis.md</span>)</li>
-            <li><b>Prompt-Bibliothek</b> P0–P14 (<span class="bk-datei">prompts.md</span>)</li>
+            <li><b>Recherche-Dossier <span data-marke></span></b> (13./14.10.2026): 160 Quellen mit Status → <b>B8</b> · extern (04, B3): Statista CI, Kantar TGI</li>
+            <li><b>KI-Nachweis</b>, alle Prompts wörtlich (<span class="bk-datei">ki-nachweis.md</span>), <b>Prompts</b> P0–P14 (<span class="bk-datei">prompts.md</span>)</li>
+            <li><b>Nachprüfung</b> 17.10.2026, KI-gestützt (Folien 03, 05): Adressen in <span class="bk-datei">markenkompetenz.md</span>, <span class="bk-datei">limbic-map.md</span></li>
           </ul>
         </section>
         <section class="bk7-block" data-animation="hoch" data-verzoegerung="260">
           <h3 class="bk-zwischentitel" data-meta>Technik dieser Präsentation</h3>
           <ul class="bk7-liste bk7-liste--klein" data-meta>
-            <li><b>Schriften:</b> Fraunces, Inter, Inter Tight, Space Grotesk, Bricolage Grotesque, Plus Jakarta Sans – SIL Open Font License 1.1 (Fontsource)</li>
+            <li><b>Schriften:</b> Fraunces, Inter, Inter Tight, Space Grotesk, Bricolage Grotesque, Plus Jakarta Sans – SIL OFL 1.1 (Fontsource)</li>
             <li><b>QR-Code:</b> qrcode-generator 2.0.4, K. Arase – MIT-Lizenz</li>
-            <li><b>Icons, Grafiken:</b> eigene Gestaltung · erstellt mit KI-Unterstützung (Claude Code, siehe KI-Nachweis)</li>
-            <li>Limbic® ist eine eingetragene Marke der Gruppe Nymphenburg.</li>
+            <li><b>Icons, Grafiken:</b> eigene Gestaltung, KI-gestützt (Claude Code)</li>
+            <li><b>Logos</b> (Folien 01, 09b, 12): © <span data-unternehmen>HOLY Softdrinks GmbH</span>, de.holy.com (Abruf 16.10.2026), unverändert, nur zur Kennzeichnung der Marke</li>
+            <li>Limbic®, die Limbic® Map und die Limbic® Types: urheber- und patentrechtlich geschützte Begriffe und Verfahren der Gruppe Nymphenburg Consult AG ([105] S. 7).</li>
           </ul>
         </section>
       </div>
@@ -3218,7 +3422,7 @@
 
   <aside class="notizen">
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage nach Literatur, Quellen oder Bildrechten. <b>Kernsatz:</b> Die Modelle stammen aus der Standardliteratur und der Vorlesung; alle Fakten über <span data-marke></span> aus unserem Recherche-Dossier mit nummerierten, geprüften Quellen. Schriften und Bibliothek sind frei lizenziert.</p>
-    <p>Hinweise: Literaturangaben aus methoden.md, einheitlich zitiert (Name, Jahr, Titel, Ort: Verlag bzw. Zeitschrift, Jahrgang(Heft), Seiten). Bei Esch und Häusel stehen in methoden.md weder Jahr noch Auflage – vor der Präsentation die tatsächlich genutzte Auflage aus dem Bibliothekskatalog eintragen (orange Markierung löschen). Vorlesungsunterlagen: Foliennummern ergänzen, sobald die Folien vorliegen. Die Zahl 160 = Einträge im Quellenverzeichnis des Dossiers (Anhang B). Schriften: Lizenztexte in schriften/, Herkunft in schriften/HERKUNFT.txt; qrcode-generator: js/vendor/LIZENZ-qrcode-generator.txt.</p>
+    <p>Hinweise: Literaturangaben aus methoden.md, einheitlich zitiert (Name, Jahr, Titel, Ort: Verlag bzw. Zeitschrift, Jahrgang(Heft), Seiten). Esch und Häusel: In methoden.md standen weder Jahr noch Auflage. Eingetragen sind die neuesten Ausgaben laut Katalog der Deutschen Nationalbibliothek (am 17.10.2026 vom bearbeitenden KI-Agenten abgerufen, nicht von der Gruppe): Esch, F.-R. &amp; Esch, D. (2024), 10., vollständig überarbeitete und erweiterte Auflage, München: Vahlen (ISBN 978-3-8006-7096-3; die 9. Auflage 2018 hat nur F.-R. Esch als Autor, ISBN 978-3-8006-5468-0); Häusel, H.-G. (2019), Think Limbic! Die Macht des Unbewussten nutzen für Management und Verkauf, 6. Auflage, Freiburg: Haufe (ISBN 978-3-648-12719-3; Untertitel am 18.10.2026 korrigiert – vorher „Unterbewussten“ – und Ausgabe gegen die Händlerangaben hugendubel.de/ebook.de geprüft, KI-gestützt am 18. und 19.10.2026: 6. Auflage, erschienen 26.08.2019, kartoniert 978-3-648-12719-3, E-Book 978-3-648-12720-9). Wer eine andere Ausgabe nutzt, ändert Jahr und Auflage hier und auf Folie 02. Beide Bücher haben wir nicht selbst eingesehen: Die Modellbegriffe stammen aus der Standardliteratur (Modellwissen), die Limbic Map auf Folie 05 stützt sich auf das Nymphenburg-PDF [105] und nymphenburg.de (Abruf 17.10.2026, Adressen in limbic-map.md). Kotler (Rollen auf Folie 03) fehlt noch – erst mit geprüfter Auflage aufnehmen. „Nachprüfung 17.10.2026, KI-gestützt“ (bis 18.10.2026 „Eigene Prüfung“): Für Folie 03 und 05 hat der bearbeitende KI-Agent Quellen über das Dossier hinaus nachgelesen (KI-Nachweis 52, 55/56; in markenkompetenz.md „W+“); die Prüfung durch die Gruppe steht im KI-Nachweis noch aus. Nachgelesen wurden u. a. das Press Kit [13] (Claim und Herkunftszitat), #DealMonitor 30.08.2021 (LevlUp, nicht im Dossier), welt-der-bwl.de („Folgerstrategie“), eine ESCH-Präsentation zum Markensteuerrad sowie [105] und nymphenburg.de; alle Adressen stehen in markenkompetenz.md bzw. limbic-map.md. Logos: offizielle Dateien von de.holy.com, unverändert (QUELLEN.md, Abschnitt 4); Nutzung mit dem Betreuer abstimmen. Vorlesungsunterlagen: Foliennummern ergänzen, sobald die Folien vorliegen. Die Zahl 160 = Einträge im Quellenverzeichnis des Dossiers (Anhang B). „extern (04, B3)“ = Kategoriedaten außerhalb des Dossiers (Campuslizenz der HSKL, Quellen in ../persona-steckbrief.md): Statista Consumer Insights, Zielgruppen-Report „Energydrink-Konsument:innen in Deutschland“, 02/2025, Online-Befragung 18–64 J., n = 1.583 (de.statista.com, Studien-ID 120400, Abruf 16.10.2026); Kantar Media TGI 2023, ab 15 J., n = 10.089, zitiert nach de.statista.com (ID 1363733, Abruf 16.10.2026). Schriften: Lizenztexte in schriften/, Herkunft in schriften/HERKUNFT.txt; qrcode-generator: js/vendor/LIZENZ-qrcode-generator.txt.</p>
   </aside>
 </section>
 
@@ -3230,13 +3434,15 @@
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
      ║ • Steht auf einer Folie eine neue Quellennummer [n], hier den Eintrag aus dem Recherche-Dossier
      ║     (Anhang B) ergänzen – kurz: Nr., Urheber: Titel – Art, Datum. Adressen stehen im Dossier.
+     ║ • Stand 17.10.2026 (nach dem Einbau von A1/A3, per Skript geprüft): [6] und [39] neu (Folie 03),
+     ║     [2], [9], [14], [15], [26] entfernt – sie stehen nur noch im Sprechtext.
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!-- ===================================================================
-     B8 · Belege der Folien (16.10.2026)
+     B8 · Belege der Folien (16.10.2026, aktualisiert 17.10.2026)
      Löst alle Quellennummern auf, die SICHTBAR auf den Folien stehen
-     (Fußzeilen, Quellzeilen, Karten – Stand 16.10.2026: Folien 02, 03, 04,
-     09, 09b und B3), damit sie auch im PDF ohne Dossier prüfbar sind.
+     (Fußzeilen, Quellzeilen, Karten – Stand 17.10.2026: Folien 02, 03, 04,
+     05, 09, 09b, 10 und B3, B7), damit sie auch im PDF ohne Dossier prüfbar sind.
      Einträge gekürzt aus ../recherche/holy-recherche.md, Anhang B
      (Reihenfolge = Nummer; Nummern im Sprechtext stehen dort ebenfalls).
      Kontrolle: Strg+F „[“ in den Fußzeilen der Folien.
@@ -3250,16 +3456,13 @@
   <div class="folie-inhalt">
     <ol class="bk8-liste" data-meta>
       <li><span class="bk8-nr">[1]</span><span class="bk8-text">HOLY: Website de.holy.com <span class="bk8-art">· Firmenquelle</span></span></li>
-      <li><span class="bk8-nr">[2]</span><span class="bk8-text">HOLY Softdrinks GmbH: Impressum <span class="bk8-art">· Firmenquelle</span></span></li>
       <li><span class="bk8-nr">[3]</span><span class="bk8-text">Northdata: Handelsregister HRB 222782 B</span></li>
       <li><span class="bk8-nr">[4]</span><span class="bk8-text">deutsche-startups.de: Interview mit M. Horsch <span class="bk8-art">· 24.10.2023</span></span></li>
       <li><span class="bk8-nr">[5]</span><span class="bk8-text">HOLY: „Die HOLY Story“ (Über uns) <span class="bk8-art">· Firmenquelle</span></span></li>
+      <li><span class="bk8-nr">[6]</span><span class="bk8-text">TikTok @holysquad.official: „HOLY im Supermarkt?!“ <span class="bk8-art">· Social Media, 11.05.2024</span></span></li>
       <li><span class="bk8-nr">[7]</span><span class="bk8-text">Trending Topics: Holy fordert Coca-Cola, Red Bull und Co. heraus <span class="bk8-art">· 21.08.2024</span></span></li>
       <li><span class="bk8-nr">[8]</span><span class="bk8-text">LZ direkt: Wie ein kontroverser Energy-Drink die Supermärkte erobert <span class="bk8-art">· 16.01.2025</span></span></li>
-      <li><span class="bk8-nr">[9]</span><span class="bk8-text">Lebensmittel Zeitung: Holy Energy drängt ins Regal <span class="bk8-art">· 10.01.2025</span></span></li>
       <li><span class="bk8-nr">[13]</span><span class="bk8-text">HOLY: Press Kit (PDF) <span class="bk8-art">· Firmenquelle, 20.02.2026</span></span></li>
-      <li><span class="bk8-nr">[14]</span><span class="bk8-text">HV Capital: Portfolio HOLY <span class="bk8-art">· Investor, 22.06.2026</span></span></li>
-      <li><span class="bk8-nr">[15]</span><span class="bk8-text">HOLY via PR Newswire: Series A, 10,5 Mio. € <span class="bk8-art">· 24.08.2023</span></span></li>
       <li><span class="bk8-nr">[16]</span><span class="bk8-text">WirtschaftsWoche: Die Ökonomie des Energydrinks <span class="bk8-art">· 30.01.2026</span></span></li>
       <li><span class="bk8-nr">[17]</span><span class="bk8-text">HOLY: Karriereseite „Work at HOLY“ <span class="bk8-art">· Firmenquelle</span></span></li>
       <li><span class="bk8-nr">[18]</span><span class="bk8-text">LZ direkt (Anzeige): HOLY-Kampagne 2026 <span class="bk8-art">· 24.11.2025</span></span></li>
@@ -3267,20 +3470,19 @@
       <li><span class="bk8-nr">[22]</span><span class="bk8-text">Symrise: Presseinformation zu Holy Energy <span class="bk8-art">· 28.09.2021</span></span></li>
       <li><span class="bk8-nr">[24]</span><span class="bk8-text">Podcast Digitale Vorreiter:innen #281 mit F. Jost <span class="bk8-art">· 26.08.2024</span></span></li>
       <li><span class="bk8-nr">[25]</span><span class="bk8-text">HORIZONT: Holy provoziert mit Schüttel-Kampagne <span class="bk8-art">· 09.01.2026</span></span></li>
-      <li><span class="bk8-nr">[26]</span><span class="bk8-text">LZ direkt: Markenlehrbrief (mit Red Bull) <span class="bk8-art">· Circana MAT 08/2025</span></span></li>
+      <li><span class="bk8-nr">[39]</span><span class="bk8-text">TikTok @holysquad.official: „Das neue HOLY Syrup …“ <span class="bk8-art">· Social Media, 12.04.2026</span></span></li>
       <li><span class="bk8-nr">[56]</span><span class="bk8-text">HOLY: Nährwerttabelle Raspberry Raptor <span class="bk8-art">· Firmenquelle</span></span></li>
       <li><span class="bk8-nr">[65]</span><span class="bk8-text">Lebensmittel Rundschau: Markentrainer Energy Drinks, 7. Aufl. <span class="bk8-art">· 2025</span></span></li>
       <li><span class="bk8-nr">[88]</span><span class="bk8-text">Trustpilot: HOLY <span class="bk8-art">· Portal, schwache Quelle</span></span></li>
       <li><span class="bk8-nr">[89]</span><span class="bk8-text">REVIEWS.io: HOLY Bewertungen <span class="bk8-art">· Portal, schwache Quelle</span></span></li>
       <li><span class="bk8-nr">[92]</span><span class="bk8-text">Similarweb: holy.com <span class="bk8-art">· Schätzung, Daten 09/2026</span></span></li>
       <li><span class="bk8-nr">[98]</span><span class="bk8-text">Mintel: Sport- und Energydrinks Report Deutschland <span class="bk8-art">· 11/2025</span></span></li>
-      <li><span class="bk8-nr">[99]</span><span class="bk8-text">BMLEH: Ernährungsreport 2025 (forsa) <span class="bk8-art">· 2025</span></span></li>
       <li><span class="bk8-nr">[105]</span><span class="bk8-text">Gruppe Nymphenburg/GIK: Limbic Types in b4p <span class="bk8-art">· 09/2020</span></span></li>
       <li><span class="bk8-nr">[122]</span><span class="bk8-text">Facebook-Seite HOLY (Reels)</span></li>
       <li><span class="bk8-nr">[123]</span><span class="bk8-text">YouTube @HOLYSquadOfficial: Kanalinfo</span></li>
       <li><span class="bk8-nr">[124]</span><span class="bk8-text">YouTube: RSS-Feed HOLY® (letzte 15 Uploads)</span></li>
       <!-- Ohne Nummer: Quelle NICHT im Recherche-Dossier (Folie 04, B3) -->
-      <li><span class="bk8-nr">extern</span><span class="bk8-text">Statista Consumer Insights <span class="bk8-art">· 02/2025, nicht im Dossier</span></span></li>
+      <li><span class="bk8-nr">extern</span><span class="bk8-text">Statista Consumer Insights, Kantar Media TGI <span class="bk8-art">· 02/2025 bzw. 2023, nicht im Dossier</span></span></li>
     </ol>
   </div>
 
@@ -3290,7 +3492,7 @@
 
   <aside class="notizen">
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Woher stammt Zahl X?“ – Nummer auf der Folie nennen und hier zeigen. <b>Kernsatz:</b> Jede Nummer auf unseren Folien verweist auf einen Eintrag im Quellenverzeichnis unseres Recherche-Dossiers; dort stehen auch Adresse, Abrufdatum und Faktenstatus.</p>
-    <p>Hinweise: Gelistet sind alle Nummern, die sichtbar auf den Folien stehen (Stand 17.10.2026, per Skript geprüft: Folien 02, 03, 04, 09, 09b, 10 (Fußzeile [56]) und B3 sowie die Quellzeile von Folie 03 „Quellen 2–5, 7–9, 13–17, 22, 24–26“). Nummern, die nur im Sprechtext stehen (z. B. [27–29], [72], [82], [102]), findet man im Dossier, Anhang B. „extern“ = Statista Consumer Insights 2025 (Folie 04, B3): nicht im Recherche-Dossier, Campuslizenz der HSKL, Kurzfassung in ../persona-daten.md. Kommt eine neue Nummer auf eine Folie, hier ergänzen. „Schwache Quelle“ = Portal, nur als Indiz (Dossier-Einstufung).</p>
+    <p>Hinweise: Gelistet sind alle Nummern, die sichtbar auf den Folien stehen (Stand 17.10.2026 nach dem Einbau von Markenkompetenz A1 und Limbic Map A3, per Skript geprüft: Folien 02, 03, 04, 05 ([105]), 09, 09b, 10 (Fußzeile [56]), B3 und B7 sowie die Fußzeile von Folie 03 „Nr. 3–6, 13, 16, 17, 22, 24, 25, 39“). Neu: [6] (erster Supermarkt, Frühjahr 2024) und [39] (Syrup, 04/2026) aus der Zeitleiste von Folie 03. Entfernt, weil sie nur noch im Sprechtext stehen: [2] Impressum, [9] Lebensmittel Zeitung 10.01.2025, [14] HV Capital, [15] Series A, [26] Markenlehrbrief mit Red Bull (Circana MAT 08/2025). Nummern, die nur im Sprechtext stehen (z. B. [2], [15], [26], [27–29], [72], [82], [102]), findet man im Dossier, Anhang B. „extern“ = Statista Consumer Insights 2025 und Kantar Media TGI 2023 (via Statista; Folie 04, B3): nicht im Recherche-Dossier, Campuslizenz der HSKL, Kurzfassung in ../persona-daten.md. Kommt eine neue Nummer auf eine Folie, hier ergänzen. „Schwache Quelle“ = Portal, nur als Indiz (Dossier-Einstufung).</p>
   </aside>
 </section>
   </main>

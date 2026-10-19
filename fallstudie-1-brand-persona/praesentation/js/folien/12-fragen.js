@@ -11,6 +11,8 @@
        Zeigen auf ein Feld im Rad hebt die passenden Methoden hervor.
      • Die Foliennummern liest das Skript aus dem Deck. Fehlt eine Folie in
        dieser Ausgabe, steht „–“ und der Eintrag ist ohne Funktion.
+   Außerdem prüft es das Logo (marke.js → logoTitel, seit 17.10.2026; seit
+   18.10.2026 im Kopf neben dem Fazit): ohne Logo keine Logo-Quelle in der Fußzeile.
    Texte und Ziele ändern: im JSON der Folie, nicht hier.
    ============================================================================= */
 (function () {
@@ -88,6 +90,25 @@
     });
   }
 
+  /* Logo im Kopf neben dem Fazit (marke.js → logoTitel, Bildpfad setzt die Engine
+     über data-marke-logo="titel"). Ohne Logo – kein Eintrag oder Datei fehlt –
+     verschwinden Bild und Logo-Quelle in der Fußzeile; das Fazit bleibt. */
+  function logoPruefen(ctx) {
+    var bild = ctx.folie.querySelector('.g6d-logo');
+    var quelle = ctx.folie.querySelector('.g6d-quelle-logo');
+    var pfad = (Deck.marke && Deck.marke.logoTitel) || '';
+    var ohneLogo = function () {
+      if (bild) bild.hidden = true;
+      if (quelle) quelle.hidden = true;
+    };
+    if (!bild || !pfad) { ohneLogo(); return; }
+    bild.addEventListener('error', function () {
+      console.warn('Folie 12: Logo „' + pfad + '“ nicht gefunden (marke.js → logoTitel) – Folie 12 bleibt ohne Logo und ohne Logo-Quelle.');
+      ohneLogo();
+    });
+    if (bild.complete && bild.getAttribute('src') && !bild.naturalWidth) ohneLogo();
+  }
+
   Deck.registriere('f12', {
     einrichten: function (ctx) {
       var u = ctx.util;
@@ -96,6 +117,7 @@
       ctx.folie._g6d = zustand;
 
       kernEinsetzen(ctx);
+      logoPruefen(ctx);
 
       /* Listen füllen: Schlüssel im JSON → Liste mit data-g6d="…" im HTML */
       ['methoden', 'ergebnisse', 'backup'].forEach(function (schluessel) {

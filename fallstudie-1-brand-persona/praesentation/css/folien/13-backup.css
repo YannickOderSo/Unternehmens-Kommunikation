@@ -71,7 +71,8 @@
 /* Dateinamen nie trennen */
 .folie.bk .bk-datei { white-space: nowrap; }
 
-/* Noch einzutragende Angaben (zurzeit nicht genutzt; B7 hat bk7-ergaenzen):
+/* Noch einzutragende Angaben (zurzeit nicht genutzt; B7 hat bk7-ergaenzen,
+   seit 17.10.2026 ebenfalls ohne Eintrag):
    orange, gestrichelt unterstrichen – vor der Präsentation ersetzen und die
    Klasse bk-ergaenzen löschen. */
 .folie.bk .bk-ergaenzen {
@@ -313,7 +314,17 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b3 tbody .bk3-jahr { font-family: var(--schrift-zahl); }
 #b3 .bk3-nr { margin-left: 10px; font-size: var(--groesse-meta); color: var(--f-text-2); }
 #b3 tbody .bk3-basis { color: var(--f-text-2); }
-#b3 .bk3-status { width: 170px; }
+#b3 .bk3-status { width: 150px; }
+/* Satzspiegel einhalten: Die einzeiligen Spalten zusammen waren breiter als der
+   Platz (Tabelle ragte 14–19 px über den rechten Rand, Prüfung 17.10.2026) –
+   deshalb Status-Spalte 150 statt 170 px und etwas weniger Innenabstand. */
+#b3 .bk3-tabelle th,
+#b3 .bk3-tabelle td { padding-left: 12px; padding-right: 12px; }
+/* Höhe: Der Block unter der Tabelle (Datenlücke + Persona) ragte 16–32 px aus dem
+   Inhaltsbereich und stieß in Keynote an die Fußzeile (Prüfung 18.10.2026).
+   Körperzeilen deshalb 2 px weniger Innenabstand oben und unten (11 Zeilen ≈ 44 px). */
+#b3 .bk3-tabelle tbody th,
+#b3 .bk3-tabelle tbody td { padding-top: 7px; padding-bottom: 7px; }
 
 /* Status mit Icon (gesichert / korrigiert / unsicher) */
 .bk-status { display: inline-flex; align-items: center; gap: 8px; font-size: var(--groesse-meta); font-weight: 650; }
@@ -343,7 +354,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b3:has(.bk-z2.schritt-an) .bk3-tabelle tr.ist-vorsicht .bk-status { color: var(--bk3-warnschrift); font-weight: 650; }
 
 /* Unter der Tabelle: Datenlücke und Persona (zwei Zeilen, unten bündig) */
-#b3 .bk3-unten { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+#b3 .bk3-unten { display: flex; flex-direction: column; gap: 4px; margin-top: auto; }
 #b3 .bk3-luecke {
   display: flex;
   align-items: center;

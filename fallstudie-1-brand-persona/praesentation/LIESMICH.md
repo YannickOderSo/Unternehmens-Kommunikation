@@ -4,16 +4,21 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 17.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
-der zweiten Abschlussprüfung überarbeitet; offizielles HOLY-Logo auf Folie 01 und 09b (Änderungen:
-`AUTOREN.md`, Abschnitte 11–13). Folie 04 zeigt seit 17.10. den **Entwurf** des Persona-Steckbriefs (A2) –
-Freigabe durch Yannick offen (Checkliste, Abschnitt 12).
+Stand: 19.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+der zweiten Abschlussprüfung überarbeitet. Seit Sa, 17.10. von Account 1 übernommen: Ergebnisse von Bündel A
+eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3) und Limbic Map A3 (Folie 05),
+dazu die passenden Stichworte auf Folie 10 und die Verweise auf 11, B2, B7 und B8; offizielles HOLY-Logo auf
+Folie 01, 09b und 12; Befunde der Prüfung (Darstellung, Inhalt, Rechte) nachgearbeitet; Exporte am 19.10.
+neu erzeugt (Änderungen: `AUTOREN.md`, Abschnitte 11–15). Die Folien 03–05 sind **Entwurf** – Freigabe durch
+Yannick offen (Checkliste, Abschnitt 12).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
 
-Fertige Ausgaben: `export/praesentation.pdf` (alle Folien inkl. Backup, Plan B),
-`export/uebersicht.png` (alle Folien auf einen Blick), `export/folien/<id>.png` (jede Folie einzeln).
+Fertige Ausgaben (Stand 19.10.2026, mit den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
+den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `export/praesentation.pdf`
+(alle Folien inkl. Backup, Plan B), `export/uebersicht.png` (alle Folien auf einen Blick),
+`export/folien/<id>.png` (jede Folie einzeln im Endzustand, 1920 × 1080).
 
 ---
 
@@ -158,8 +163,8 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 |---|---|
 | `name`, `kurz` | Markenname „HOLY“ – erscheint überall automatisch |
 | `farben.primaer`, `farben.sekundaer` | HOLY-Gelb `#FFD007` und Schwarz `#1D1D1B` (Quelle: Recherche-Dossier Kap. 6.3 ✔ [1], Werte der Website, kein offizieller Styleguide). Alle anderen Farben werden daraus berechnet, Kontraste bleiben lesbar. Leer `''` = neutrale Farben. |
-| `logo` | Logo auf Folie 09b (Zeile „Logo“): offizielle **HOLY-Wortmarke** `bilder/holy-logo-wortmarke.png` (von de.holy.com, Abruf 16.10.2026, unverändert); Quelle steht in der Fußzeile von 09b und in `QUELLEN.md`. Steht hier wieder `bilder/platzhalter-logo.svg`, zeigt 09b nur die Beschreibung der Wortmarke. |
-| `logoTitel` | Logo auf **Folie 01**: offizielles HOLY-Logo im gelben Oval `bilder/holy-logo-oval.png` (de.holy.com, Abruf 16.10.2026, unverändert, nur verkleinert). Erscheint mit der Auflösung des Rätsels und bleibt auf der Titelfolie – anstelle des Namens in Schrift (Screenreader lesen den Namen). Quelle in der Fußzeile von Folie 01. Leer `''` = Name in Schrift wie früher. |
+| `logo` | Logo auf Folie 09b (Zeile „Logo“): offizielle **HOLY-Wortmarke** `bilder/holy-logo-wortmarke.png` (von de.holy.com, Abruf 16.10.2026, unverändert); Quelle steht in der Fußzeile von 09b, in B7 und in `QUELLEN.md`. Im Dunkelmodus liegt die Wortmarke auf einer hellen Unterlage (sonst verschwände die schwarze Form), das Bild selbst bleibt unverändert. Steht hier wieder `bilder/platzhalter-logo.svg`, zeigt 09b nur die Beschreibung der Wortmarke. |
+| `logoTitel` | Logo auf **Folie 01 und 12**: offizielles HOLY-Logo im gelben Oval `bilder/holy-logo-oval.png` (de.holy.com, Abruf 16.10.2026, unverändert, nur verkleinert). Auf Folie 01 erscheint es mit der Auflösung des Rätsels (im Rätsel selbst nicht) und bleibt auf der Titelfolie – anstelle des Namens in Schrift (Screenreader lesen den Namen). Auf Folie 12 steht es oben rechts neben dem Fazit über HOLY (Klammer Anfang–Ende, seit 17.10.2026; bis 18.10. neben den Gruppennamen – das wirkte wie Co-Branding). Quelle in den Fußzeilen von Folie 01 und 12 und in B7. Leer `''` = auf 01 der Name in Schrift wie früher, auf 12 nur die Gruppe (die Logo-Quelle verschwindet mit). |
 | `raetselBild` | Bild für das Einstiegsrätsel (Folie 01). Zurzeit ein gezeichneter Platzhalter (Dose und Shaker vor Gelb, ohne Logo) – **bis Fr, 23.10. durch ein eigenes Foto ersetzen** (z. B. selbst fotografierte HOLY-Dose). Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 Zoompunkt `data-fokus` prüfen und die Bildquelle in der Fußzeile eintragen. |
 | `titel`, `gruppe`, `datum`, `dozent` … | Angaben für Titelfolie, Kopfzeilen und Schlussfolie |
 | `unternehmen` | Firma hinter der Marke („HOLY Softdrinks GmbH“, Dossier Kap. 1 ✔ [2, 3]) – für die Zeile „Studentische Fallstudie · keine Verbindung zur …“ auf Folie 01 und 12 |
@@ -229,6 +234,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
    Wer nur den gesprochenen Text braucht: die Absätze mit Zeitangabe „(ca. … s)“ lesen.
 5. **PDF neu erzeugen** (nach Änderungen): `index.html?druck` in Chrome öffnen → Strg+P → „Als PDF
    speichern“, Ränder „Keine“, „Hintergrundgrafiken“ an. Jede Folie wird eine Seite, alle Schritte sichtbar.
+   Mit Node.js geht alles auf einmal (PDF, Folienbilder, Übersicht): Befehle in `AUTOREN.md`, Abschnitt 15.
 
 ## 12. Technik-Checkliste für den Präsentationstag
 
@@ -237,44 +243,107 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [ ] **Folie 01 – Rätselbild** (A · Yannick): eigenes Foto statt des gezeichneten Platzhalters, Quelle in
       der Fußzeile, Zoompunkt `data-fokus` geprüft, mit zwei Personen getestet
 - [ ] **Folie 04 – Persona-Bild** (A · Yannick): gekennzeichnetes KI-Bild (Prompt P6) unter `"bild"`
-      eintragen, `"bildHinweis"` z. B. „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“
+      eintragen, `"bildHinweis"` z. B. „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“. Danach (Kasten
+      „FOLIE 04“): Werkzeug und Datum in die Fußzeile von 04; Nutzung im KI-Nachweis; in B2 eine Zeile P6, in
+      den Notizen von B1 „noch ein Platzhalter“ streichen; `QUELLEN.md` §3 (Persona-Bild KI-generiert,
+      Werkzeug, Datum, Prompt P6, keine reale oder erkennbare Person) und §4 (Datei in `bilder/`) sowie in B7
+      „Technik“ eine Zeile „Persona-Bild Folie 04: KI-generiert, Werkzeug, Datum“ – `QUELLEN.md` §3 sagt bis
+      dahin „kein KI-Bild“
+- [ ] **Folie 03 – Markenkompetenz freigeben** (A · Yannick): Folie 03 zeigt seit 17.10. den Entwurf aus
+      `../markenkompetenz.md` (A1) und Folienentwurf 3 (Titel, Rolle „Herausforderer“, Kernkompetenz
+      „Softdrinks zum Selbermixen“, Zeitleiste 2020–2026, Kennzahlen „über …“). Offen: Rollenbegriffe mit der
+      Vorlesung abgleichen (sonst Variante B „Spezialist“, dann Folie 10 mitändern); Kund:innen- und
+      Mitarbeiterzahl kurz vor dem 26.10. auf Website und Karriereseite neu ablesen; Jahresabschluss 2024
+      (Unternehmensregister) nur in die Rückfrage-Notiz; Überschrift „Laut Unternehmen“ über den Kennzahlen
+      ja/nein (Kasten „FOLIE 03“). Fußzeile und B7 sagen seit 18.10. „KI-Nachprüfung 17.10.2026“: Die Belege
+      hat der bearbeitende KI-Agent nachgelesen. Liest Yannick die tragenden Belege selbst nach ([13] Claim
+      und Selbstbeschreibung, [16], [159], Jost-Wortlaut [24]), darf es wieder „eigene Prüfung“ heißen
 - [ ] **Folie 04 + B3 – Persona-Steckbrief freigeben** (A · Yannick): Folie 04 zeigt seit 17.10. den Entwurf
-      aus `../persona-steckbrief.md` und Folienentwurf 4 (Titel, Großstadt, Kaufverhalten als Annahme,
-      Mediennutzung Statista Consumer Insights 2025 – nicht im Recherche-Dossier). Nach der Freigabe Werte,
-      Titel und Beruf bestätigen oder in den Daten von Folie 04 und B3 anpassen
-- [ ] **Folie 05 und 10 – Limbic Type** (A · Yannick): `../limbic-map.md` (A3, 17.10.) stuft Marco als
-      **Hedonisten** ein (Gewichte B 30 / D 30 / S 40, Lücke Dominanz −10, neue „Folgen“ und neuer Titel;
-      Daten-JSON in `../folienentwuerfe.md`, Folie 5). Die Präsentation zeigt noch den Dossier-Stand
-      „Abenteurer“ (Folie 05, Persona-Pille auf Folie 10, Sprechtexte 10/11 „Dominanz-Lücke −20“). Nach der
-      Freigabe überall angleichen
+      aus `../persona-steckbrief.md` (A2) und Folienentwurf 4 (Titel, Großstadt als Annahme, Kaufverhalten
+      „mehrmals pro Woche, vor der Schicht“ nach Kantar TGI 2023 und Gründer [24], Psychografie ohne „Spaß“,
+      Mediennutzung Statista Consumer Insights 2025 – Kategoriedaten, nicht im Recherche-Dossier). Nach der
+      Freigabe Werte, Titel und Beruf bestätigen oder in den Daten von Folie 04 und B3 anpassen; die
+      Soziodemografie ist kürzer als im Folienentwurf (ohne Beruf/Abschluss) – entscheiden. Statista-Werte
+      laut Steckbrief noch stichprobenartig im Report gegenlesen. **Seit 18.10. abweichend von A2 §2 und
+      Folienentwurf 4 (entscheiden):** Psychografie „bequem und schnell“ (30 % zu Ø 25 %) statt „gesünder,
+      aber schnell“ – „gesund ernähren“ liegt mit 50 % unter dem Ø (53 %), die Daten tragen „gesünder“
+      nicht; Block als Daten markiert (Pain/Gain als Annahme in der Quellenzeile), Fußzeile „Person und Zitat
+      fiktiv“, Beruf im Sprechtext als Annahme. Entweder Steckbrief und Folienentwurf angleichen oder hier
+      zurückändern (Kasten „FOLIE 04“)
+- [ ] **Folie 05 und 10 – Limbic Map freigeben** (A · Yannick): seit 17.10. nach `../limbic-map.md` (A3)
+      und Folienentwurf 5 eingebaut – Marco als **Hedonisten** (Gewichte B 30 / D 30 / S 40, HOLY
+      B 30 / D 20 / S 50, Lücke Dominanz −10, neue „Folgen“ und neuer Titel), ebenso die Persona-Pille auf
+      Folie 10 und die Verweise in den Sprechtexten 10/11. Seit 18.10.: Etikett „HOLY (Mittelwert)“ steht
+      zweizeilig an der Raute; Fußzeile mit gekürztem Rechtevermerk („urheber- und patentrechtlich
+      geschützt“, wörtlich in B7 und den Notizen) – Abweichung vom Folienentwurf 5 („derselbe Wortlaut“),
+      mit freigeben. Nach der Freigabe die Kennzeichnung „Entwurf“ in den Kästen „FOLIE 04/05“ streichen;
+      kippt der Typ nach der Auswertung (limbic-map.md 3.2), Folie 05, 10 und die Sprechtexte mitändern
+- [ ] **Sprechtexte 03–05 stoppen** (A · Yannick): 03 ca. 82 Wörter (Ziel ≤ 45 s), 04 seit 18.10. ca. 147
+      Wörter (≈ 77 s bei 1,9 Wörtern/s, Sollzeit 80 s; vorher 172), 05 seit 18.10. ca. 106 Wörter (≈ 56 s,
+      Sollzeit 55 s; Folienentwurf plant 1:00) – gekürzt wurden nur Doppelungen; laut lesen und stoppen
+- [ ] **Sprechtexte 10 und 11 stoppen** (Inhalt 10: Yannick, spricht Elias; 11: C · Elias): 10 ca. 182 Wörter
+      ≈ 96 s (Sollzeit 75 s, Schritt 8 allein ca. 71 Wörter), 11 ca. 164 Wörter ≈ 86 s (Sollzeit 75 s) –
+      Kürzungsvorschläge in den Kästen „FOLIE 10/11“, dann die Zeitangaben „(ca. … s)“ angleichen
+- [ ] **B2 – Prüfung durch die Gruppe** (A · Yannick): Die Einträge KI 13, 47, 52, 55/56 und 07 stehen im
+      KI-Nachweis noch auf „☐ offen“; deshalb heißt der Titel von B2 „dokumentiert – und wird geprüft“ und die
+      Spalte „Prüfung“ nennt nur die KI-Gegenprüfung. Nach dem Abhaken Titel und Spalte anpassen (Kasten „B2“)
 - [ ] **Zeitplan** (alle): 14:00-Plan der Präsentation (Abschnitt 3) bestätigen und `../arbeitsplan.md`
       angleichen (ursprünglich 14:45)
 - [ ] **Beispieldaten** durch echte Ergebnisse ersetzen (dann Pillen „Beispieldaten“ entfernen):
       06, 07, 08, 08b (inkl. Wettbewerberwerte), B4, B5 (B · Lukas) · 09, 11, B6 (C · Elias) ·
       10 (Synthese), 12 (Pille am Fazit, erst löschen, wenn 10 und 11 keine Beispieldaten mehr tragen) und
-      B2 (Prompt-Log) (A · Yannick). Folie 09b hat keine Beispielwerte, nur die Fit-Bewertung als Hypothese
+      B2 (Prompt-Log: Bündel A seit 17.10. belegt – KI 47, 52, 55/56; offen sind P7–P14 und eine Zeile P6
+      für das Persona-Bild) (A · Yannick). Folie 09b hat keine Beispielwerte, nur die Fit-Bewertung als
+      Hypothese. Für Elias (Folie 11): Empfehlung 3 „frecher inszenieren“ mit A3 abgleichen („Humor aus der
+      Schicht statt Doppeldeutigkeit“, Hinweis in den Notizen von Folie 11)
 - [ ] **Folie 08b – Fußzeile „n = 8“** (B · Lukas): an die tatsächlich Bewertenden anpassen (Dossier
       Bündel B: Aaker-Bogen nur von Menschen ausfüllen lassen, z. B. „Gruppe + 3 Befragte, n = 6“)
-- [ ] **Folie 09 – Schlüsselbild** (C · Elias): Screenshot des Raptor-Beitrags mit Datum, Nutzungsrecht
-      mit dem Betreuer klären, Quelle in die Fußzeile; **Titel** endet mit „?“, bis die Codierung den Raptor
-      kanalübergreifend zeigt – dann „?“ streichen (Kasten „FOLIE 09“)
-- [ ] **HOLY-Logos auf Folie 01 und 09b** (offizielle Dateien von de.holy.com, Quelle in den Fußzeilen):
-      kurz mit dem Betreuer abstimmen, dass die Logos zur Kennzeichnung der analysierten Marke genutzt
-      werden dürfen (A · Yannick)
+- [ ] **Folie 09 – Schlüsselbild** (C · Elias): Screenshot des Raptor-Beitrags mit Datum – laut Regel in
+      `QUELLEN.md` §4 (seit 18.10.) die einzige Ausnahme von „keine Social-Media-Bilder von HOLY“ und **nur nach
+      Zustimmung des Betreuers**; dann Quelle nach dem Muster „Screenshot © HOLY Softdrinks GmbH, Plattform
+      Konto, Beitrag vom TT.MM.JJJJ, Abruf TT.MM.2026“ in die Fußzeile, B7 „Logos und Screenshot (Folie 09)“,
+      `QUELLEN.md` §3/§4 ergänzen; ohne Zustimmung bleibt das Piktogramm (Kasten „FOLIE 09“). **Titel** endet
+      mit „?“, bis die Codierung den Raptor kanalübergreifend zeigt – dann „?“ streichen
+- [ ] **HOLY-Logos auf Folie 01, 09b und 12** (offizielle Dateien von de.holy.com, unverändert, Quelle in
+      den Fußzeilen und in B7): kurz mit dem Betreuer abstimmen, dass die Logos zur Kennzeichnung der
+      analysierten Marke genutzt werden dürfen (A · Yannick). Auf Folie 12 steht das Oval seit 18.10. oben
+      rechts beim Fazit über die Marke, nicht neben den Gruppennamen (wirkte dort wie Co-Branding). Bewusst
+      ohne Logo: Kopfzeilen, Folie 03, das Zentrum des Steuerrads und die öffentliche Startseite (Begründung
+      in `QUELLEN.md`, Abschnitt 4). Nur falls auf einem Bildschirm mit doppelter Pixeldichte (Retina-Laptop,
+      4K-Beamer) präsentiert wird: Die Wortmarke auf 09b (389 px breit) wirkt dort leicht weich – dann eine
+      Datei mit mindestens ca. 780 px Breite aus einer Firmenquelle einsetzen (Quelle wie bisher); für einen
+      1080p-Beamer ist nichts zu tun
+- [ ] **Grafiken in `../grafiken/`** (folie-02, -03, -05 als SVG/PNG; Bündel C entscheidet): Das ist die
+      Ausarbeitungs- bzw. PowerPoint-Variante (Segoe UI, Rot/Blaugrau, Text 12–17 px bei 1400 px Breite, auf
+      einer 1920er Folie ca. 16–23 px) – **nicht für die Projektion** und nicht in die Web-Präsentation
+      (auch nicht in B1). Sie sieht anders aus als „Editorial“, und in folie-05 ist die Kodierung umgekehrt
+      (Persona schwarzer Punkt, HOLY gelb; auf Folie 05: Marco brauner Kreis, HOLY schwarze Raute) – nicht
+      neben den Folien zeigen. Sollen sie doch projiziert werden: in den `.py`-Skripten Schrift auf mindestens
+      ca. 21 px (Inhalt) bzw. 16 px (Quellen) bei 1400 px Breite, Farben aus `css/tokens.css`, Persona = Kreis,
+      Marke = Raute
 - [ ] **Umfrage** (B · Lukas): im Werkzeug angelegt, `link` in `marke.js` eingetragen, QR-Code mit mehreren
       Handys aus der letzten Reihe getestet
 - [ ] **Zahl der echten Kurzinterviews** – zurzeit steht überall die geplante Zahl „3“ (Folie 06–08, B1, B2,
       B4, B5) und auf **Folie 02** in den Methodenkarten „KI + Kurzinterviews“; nach den Interviews überall
       dieselbe tatsächliche Zahl eintragen, auf B1 die Pille „teils geplant“ löschen; gibt es keine echten
       Interviews, auf Folie 02 „+ Kurzinterviews“ streichen (Kasten „FOLIE 02“) (A · Yannick, Zahl von Lukas)
-- [ ] **B7: Jahr und Auflage bei Esch und Häusel** ergänzen, orange Markierung löschen (A · Yannick)
+- [x] **B7: Jahr und Auflage bei Esch und Häusel** ergänzt (17.10.: neueste Ausgaben laut Katalog der
+      Deutschen Nationalbibliothek – Esch & Esch 2024, 10. Aufl.; Häusel 2019, *Think Limbic!*, 6. Aufl.;
+      orange Markierung gelöscht, Fußzeile Folie 02 gleich; 18./19.10.: Häusel-Untertitel „Die Macht des
+      Unbewussten …“ korrigiert, Auflage und ISBN mit hugendubel.de/ebook.de abgeglichen – KI-gestützt)
+- [ ] **B7: genutzte Ausgabe bestätigen** (A · Yannick): Arbeitet die Gruppe mit einer anderen Ausgabe
+      (z. B. Bibliothek: Esch 2018, 9. Aufl.), Jahr, Auflage und Autoren in B7 **und** in der Fußzeile von
+      Folie 02 ändern; Kotler (Rollen auf Folie 03) mit geprüfter Auflage ergänzen
 - [ ] Fachbegriffe und Modelle mit den Vorlesungsfolien abgeglichen (Steuerrad nach Esch, Limbic Map nach
       Häusel, Repertory Grid nach Kelly, Laddering nach Reynolds & Gutman, Brand Personality nach Aaker)
       (alle, je eigene Folien)
 - [ ] Generalprobe mit Referentenuhr: Ziel ≤ 15:00 (Plan 14:00), jede Person kennt ihre Folien und
       Übergaben; die Live-Umfrage auf Folie 08 mit Stoppuhr testen (Sollzeit der Folie 1:10). Gekürzt
       wurden die Folien 04, 05, 06, 09, 09b und 11 – Zeiten prüfen
-- [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias)
+- [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
+      `export/` sind am 19.10. neu erzeugt (Stand mit A1–A3 als Entwurf, Logo auf Folie 12, Beispieldaten
+      gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
+      `export/folien/` noch einmal erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**
 - [ ] Ordner kopiert, `index.html` öffnet in Chrome/Edge, Übergänge laufen flüssig
@@ -298,10 +367,12 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `marke.js` | alles, was sich mit der Marke ändert (Name, Farben, Bilder, Umfrage, Wortwolke) |
 | `css/` | `tokens.css` (Farben, Schriften, Größen), `deck.css` (Bühne, Bedienung), `komponenten.css` (Bausteine), `folien/` (je Folien-Gruppe) |
 | `js/` | `deck.js` (Steuerung, Referentenansicht, Druck), `komponenten.js` (Steuerrad, Umfrage, Wortwolke, QR, Rätsel), `folien/` (je Folien-Gruppe), `vendor/` (QR-Code-Bibliothek) |
-| `bilder/` | offizielle HOLY-Logos (Folie 01 und 09b, Quelle in `QUELLEN.md`) und Platzhalterbilder (eigene Gestaltung) – eigene Bilder hier ablegen |
+| `bilder/` | offizielle HOLY-Logos (Folie 01, 09b und 12, Quelle in `QUELLEN.md`) und Platzhalterbilder (eigene Gestaltung) – eigene Bilder hier ablegen |
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
-| `werkzeuge/pruefen.mjs` | automatische Prüfung und Screenshots (optional, braucht Node.js) |
-| `export/` | PDF, Übersicht, Einzelbilder der Folien (Stand 17.10.2026, nach der zweiten Abschlussprüfung) |
+| `werkzeuge/pruefen.mjs` | automatische Prüfung, Screenshots und PDF (optional, braucht Node.js) |
+| `werkzeuge/uebersicht.mjs` | erzeugt `export/uebersicht.png` aus den Folienbildern (Befehle: `AUTOREN.md`, Abschnitt 15) |
+| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 19.10.2026 mit A1–A3 als Entwurf; nach den Freigaben neu erzeugen (Abschnitt 11) |
+| `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |
 | `_entwuerfe/` | die drei Gestaltungsrichtungen und die Jury-Entscheidung (Dokumentation; die Musterseiten zeigen die Ersatzschrift, weil doppelte Schriftdateien entfernt wurden) |
