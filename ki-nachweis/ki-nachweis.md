@@ -83,6 +83,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 61 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur KI-Nachweis committet; Präsentation bleibt bis Ende von D12 offen |
 | 62 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Nachweis und vorbereitetes Workflow-Skript committet; Präsentation bleibt bis Ende von D12 offen |
 | 63 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D13 | nur Nachweis committet; D12 und D13 laufen |
+| 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | in Arbeit: D13 und Nacharbeit von D12 fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1156,6 +1157,20 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
   - Committet: nur Nachweis und Rohprotokoll. Die Präsentation bleibt uncommittet, solange D12 läuft.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D13 (läuft)
+
+### 64 – 19.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** Beide Workflows waren am Nutzungslimit (Reset 00:30 UTC) teilweise gescheitert:
+  - **D13:** 2 von 5 Agenten fertig (Persona/Limbic Map, Markenkompetenz/Markensteuerrad). Gescheitert:
+    Abgleich Bündel B und beide Prüfer.
+  - **D12:** 9 von 10 Agenten fertig. Gescheitert: die Nacharbeit (AUTOREN/LIESMICH, Exporte).
+- **Vorgehen Claude:** beide Workflows fortgesetzt (resume). Die fertigen Agenten kommen aus dem Zwischenspeicher,
+  nur die gescheiterten laufen neu.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D12, D13 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
