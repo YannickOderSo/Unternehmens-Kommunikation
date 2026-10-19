@@ -102,6 +102,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 80 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15-Nacharbeit nach Nutzungslimit fortgesetzt |
 | 81 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D16 | D15 fertig und committet; nur Nachweis committet, D16-Einbau läuft |
 | 82 | 19.10.2026 | Yannick | „Wie füge ich das Skript ein bin jetzt auf google sheets“ | – | Anleitung im Chat: Apps Script öffnen, Code aus GitHub (Rohfassung) einfügen, speichern, einrichten ausführen |
+| 83 | 19.10.2026 | Yannick | „Hat geklappt“ + Screenshot des Ausführungsprotokolls | – | Hinweis: Protokoll ohne „Blatt … ist bereit“ – vermutlich doGet statt einrichten ausgeführt; Kontrolle und Wiederholung erklärt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1493,6 +1494,20 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Schritte 2–4 aus `praesentation/live-abstimmung/ANLEITUNG.md` im Chat zusammengefasst und den
   direkten Link auf die Rohfassung von `apps-script.gs` auf GitHub genannt (Kopieren mit Strg+A/Strg+C), dazu die
   Kontrollen nach dem Einfügen und der erste Lauf von `einrichten`. Keine Dateien geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 83 – 19.10.2026 – Yannick
+
+> [Bild: Screenshot aus dem Apps-Script-Editor, unten das Ausführungsprotokoll mit zwei Zeilen „19:39:46 Hinweis
+> Ausführung begonnen“ und „19:39:46 Hinweis Ausführung abgeschlossen“; darüber angeschnitten Codezeile 228
+> `return ContentService.createTextOutput(json).setMimeType(Co…`] Hat geklappt
+
+- **Vorgehen Claude:** Protokoll mit dem Skript abgeglichen: `einrichten()` schreibt mit `Logger.log` die Zeile
+  „Blatt „Stimmen“ ist bereit …“ ins Protokoll; die fehlt. Wahrscheinlich war im Auswahlfeld noch die erste Funktion
+  der Datei (`doGet`) gewählt. Kontrolle (Blatt „Stimmen“ in der Tabelle?) und Wiederholung mit „einrichten“
+  erklärt; Schritt 5 (Bereitstellen) erst danach.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
