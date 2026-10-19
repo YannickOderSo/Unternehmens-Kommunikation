@@ -1,7 +1,8 @@
 # Markenkompetenz: Wer ist HOLY? (A1)
 
 **Bündel A** · Folie 03 (45 s) · Zentrum des Markensteuerrads, Grundlage für Folie 10 (Synthese C2) ·
-Stand Sa, 17.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet; Prüfung durch Yannick offen**
+Stand Mo, 19.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet, Gründerbefragung eingearbeitet (Abschnitt 9);
+Prüfung durch Yannick offen**
 
 > **So ist die Ausarbeitung zu lesen**
 > - Faktenstatus wie im Recherche-Dossier: ✔ gesichert · ✎ korrigiert · ~ unsicher · **H** Hypothese / eigene
@@ -10,6 +11,9 @@ Stand Sa, 17.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet; Prüfung d
 >   übernommen, aber nicht selbst nachgelesen. **W+** = zusätzlich vom Bearbeiter selbst nachgelesen, am Original
 >   (Abruf 17.10.2026) oder am gespeicherten Seitenabzug vom 17.10.2026. URLs stehen unter „Quellen“.
 > - **MW** = Modellwissen ohne geprüfte Quelle (nur Modellbegriffe).
+> - **GB** = Gründerbefragung: Selbstauskunft von Gründer Mathias Horsch (Befragung 10/2026, Auswertung in
+>   `gruenderbefragung.md`). Innensicht, n = 1, ohne Quellennummer. Viele Antworten wiederholen Website [1] und Press
+>   Kit [13]. GB stützt deshalb nur und gilt nie als Tatsache über die Kundschaft.
 > - **Alle Umsätze, Kund:innen- und Teamzahlen sind Selbstauskünfte.** Auf der Folie immer „laut Unternehmen,
 >   Stand …“ (Dossier 9.4). Geprüfte Bilanzzahlen liegen uns nicht vor (Abschnitt 5).
 > - **Herkunft:** erstellt mit Claude Code (KI-Nachweis 55 und 56, Delegation D11: Dossier-Auszug, zwei
@@ -17,7 +21,8 @@ Stand Sa, 17.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet; Prüfung d
 >   am 17.10.2026; was daraus übernommen wurde, steht in Abschnitt 8). Grundlage: Recherche-Dossier Kap. 1, 2,
 >   3.1–3.2, 5, 6.5, 8, 9, 10.3 und Anhang A/B, `methoden.md` §0, `aufgaben-im-detail.html` (A1), Web-Folien f02,
 >   f03, f06, f10, f11 (`praesentation/index.html`, Arbeitskopie auf `master`), `persona-steckbrief.md`,
->   `limbic-map.md`, `dossier-buendel-b.md`.
+>   `limbic-map.md`, `dossier-buendel-b.md`. Am 19.10.2026 um Vermerke aus der Gründerbefragung ergänzt (Workflow
+>   D14, KI-Nachweis 67; Übersicht in Abschnitt 9).
 > - **Kein Vorlesungsmaterial vorhanden:** Markensteuerrad nach Esch, Wettbewerbsrollen nach Kotler und
 >   Markteintritt („Pionier“) stammen aus der Standardliteratur (MW; Esch zusätzlich an einer Präsentation von
 >   ESCH. The Brand Consultants nachgelesen, W+). Bitte mit den Vorlesungsfolien abgleichen.
@@ -32,7 +37,8 @@ Stand Sa, 17.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet; Prüfung d
 
 - Rolle „Herausforderer“ ist unsere Einordnung nach Kotler (**H**). **Kriterium: Verhalten** – HOLY greift den
   ganzen Softdrink-Markt an –, nicht der Marktanteil (Abschnitt 3). Die Selbstbeschreibung „Challenger-Brand“
-  ✔ [13] stützt das, ersetzt aber nicht die Einordnung.
+  ✔ [13] stützt das, ersetzt aber nicht die Einordnung. Dasselbe Selbstbild nennt Gründer Mathias Horsch in unserer
+  Befragung (GB, Abschnitt 3).
 - Kernkompetenz „zuckerfreie Softdrinks zum Selbermixen“ ist HOLYs eigene Formulierung im Press Kit 02/2026 ✔ [13]
   (Dossier 2.7; W+, am PDF nachgelesen).
 - Für die Web-Folie f03 (Feld `kernkompetenz`, Richtwert ca. 24 Zeichen) die Kurzform **„Softdrinks zum
@@ -95,12 +101,20 @@ Kit [13] (W+)
   TikTok-Bio, 17 Produkttexte (Dossier 6.5), Startseite (W) und als Überschrift im Press Kit 02/2026 („GEILER
   GESCHMACK MIT GUTEM GEWISSEN“, W+ [13]). Auf der Folie: „✔ [5, 13]“; dass [13] für den Claim aus unserer eigenen
   Prüfung vom 17.10.2026 stammt, steht in den Notizen und in Backup B7.
+- Auch Gründer Mathias Horsch beschreibt HOLY mit dieser Formel: als bessere Alternative zu normalen Softdrinks, die
+  Geschmack und gutes Gewissen verbindet (laut Gründer Mathias Horsch, Befragung 10/2026, GB). Den Dachclaim nennt er
+  dabei nicht. Auf Folie 03 steht das seit 19.10.2026 als Zusatz in der Quellzeile des Claims („auch laut Gründer Mathias Horsch (Befragung 10/2026)“, Wunsch von Yannick). Das stützt die Entscheidung, ist aber kein unabhängiger Beleg: Es ist fast wörtlich
+  die Kurzbeschreibung der Website samt Markenversprechen ✔ [1, 5, 13].
 - Der Dachclaim „Die Softdrink Revolution“ ✔ [1] würde die Rolle „Herausforderer“ im Titel nur verdoppeln. Er hieß
   2025 noch „Energy Drink Revolution“ ✔ [1, 8] und wird uneinheitlich geschrieben („Softdrinks Revolution“, „Soft
   Drink Revolution“, W). Er steht als Dachclaim auf Folie 9b und in Empfehlung 3 auf Folie 11 (Hierarchie Dachclaim →
   Versprechen); auf Folie 03 gehört er nicht in die Claim-Zeile.
 - Spannungsfeld: Das „gute Gewissen“ steht wegen 160 mg Koffein pro Portion unter Druck (Dossier 8 S1 ✔ [27, 28, 29]).
   Das ist kein Grund gegen den Claim auf Folie 03, gehört aber auf Folie 9–11 (Rückfrage im Folienentwurf).
+  Horsch füllt das gute Gewissen mit wenig Zucker, wenig Kalorien und funktionalen Inhaltsstoffen; Koffein nennt er
+  nicht (danach war nicht gefragt; GB). Die Lücke „gutes Gewissen ↔ 160 mg Koffein“ auf Folie 10 begründen wir
+  deshalb allein mit der Außensicht (Dossier S1 ✔ [27, 28, 29]). „Funktionale Inhaltsstoffe“ übernehmen wir nicht
+  als Nutzenaussage (nur zugelassene Nutzenaussagen, Dossier 3.7).
 
 ---
 
@@ -111,11 +125,11 @@ Kit [13] (W+)
 | **Gründung / Herkunft** | GmbH-Vertrag 21.08.2020, eingetragen 09.11.2020 als „Holy Energy GmbH“, Sitz Berlin; Marktstart April 2021. Folienformel: „gegründet 2020 in Berlin, Marktstart 2021“. Drei langjährige Freunde, bei der Gründung Mitte zwanzig: Frederick Jost, Mathias Horsch, Philipp Naß; alle drei „Gründer und Geschäftsführer“ (Funktionstitel 2026 unbelegt). Jost und Horsch kamen direkt vom Studium an der TU München, Naß aus einer Marketingagentur in New York. Herkunftsgeschichte: Die Idee entstand „im Wohnzimmer“, die drei seien „genervt von dem ständigen Kompromiss zwischen Geschmack und gutem Gewissen“ gewesen. Heute schreibt HOLY: „2020 sind wir in einer kleinen WG mit einer ganz großen Idee gestartet“ und „Vom WG-Wohnzimmer in 6 Länder …“; das Press Kit: „in einem Berliner Wohnzimmer“. **Zwei Lesarten:** Die Website erzählt die Herkunft ohne Gaming (am 17.10.2026 kein Treffer für „Gaming“ auf der Story-Seite, W+); 2021/22 trat HOLY als „Gaming Booster“ auf („Wir haben früher selbst gerne gezockt“, Jost). | Dossier 2.1 ✔ [3, 4], 2.2 ✔ [2, 17, 44], ✎ [4], ✔ [4], ✔ [5, 22, 23]; Story-Seite W+ [5]; Press Kit W+ [13] |
 | **Meilensteine (3–5)** | (1) 04/2021 Marktstart HOLY Energy, nur online, als „Gaming Booster“ ✔. (2) Sommer 2022 Iced Tea: Ausrichtung auf den ganzen Softdrink-Markt ✔; spätestens 08/2023 nennt sich HOLY „healthier soft drink“ ✔. (3) 24.08.2023 Series A 10,5 Mio. € (Lead Left Lane Capital), insgesamt 12,3 Mio. € ✔. (4) 2024/25 vom Onlineshop in den Handel: Frühjahr 2024 erster Supermarkt (Bad Endbach) ✔, 08/2024 Spar AT ✔, ab 01/2025 Ausbau bei Rewe und Globus, Edeka nur in einzelnen Märkten belegt ✔. (5) 2025/26 Massenmarkt: 11/2025 Umfirmierung zur HOLY Softdrinks GmbH ✎, 01/2026 erste große Massenmedien-Kampagne ✔, 04/2026 Syrup zum 5. Jubiläum ✎ (Tagesdatum 19.04.2026 jetzt belegt, W+). Weitere: Start in Polen 2025 (W+), UK-Ltd 28.11.2025 ✔, Energy online nur ab 18 seit 08–09/2026 ✔. | Dossier 2.1 [4, 6, 7, 8, 9, 15, 22, 24, 25, 38], 2.8 [15, 24], 9.1 [8], 2.1 ✎ [3, 5, 39]; TikTok-oEmbed [6] und [39] W+; Shopdaten W+; LinkedIn W+ [31]; Dossier 2.1 ✔ [12, 42, 43] |
 | **Eigentümer / Konzern** | **Kein Konzern**, unabhängige GmbH. Gesellschafter: die Gründer und Wagniskapital-Investoren. FoodLabs (vor dem Launch), rund 18 Business Angels (ca. 700.000 €), Bitburger Ventures, heute Simon Capital (07/2022), Series A 08/2023 mit Left Lane Capital (Lead), FoodLabs, Simon Capital, V3 Ventures, OMR Ventures und Gründern von Just Spices und YFood; 03/2025 HV Capital und Felix Capital (Felix führt HOLY inzwischen im eigenen Portfolio, W). Anteile laut Presse: HV „knapp 9 %“, Felix „5 %“ [45], FoodLabs „rund 18 %“ [159] (Wortlaut W+); woher die Zahlen stammen, ist nicht belegt (~). Anteile der Gründer, Summe der Runde 2025 und Bewertung: unbekannt. Tochter: HOLY Softdrinks Ltd, London, seit 28.11.2025. | Dossier 2.3 ✔ [14, 15, 24, 32, 36, 45], 9.2 ~ [159]; deutsche-startups.de 06.08.2025 und 10.02.2026 W+; Felix Capital W; Dossier 2.1 ✔ [38] |
-| **Kennzahlen (Umsatz, Mitarbeitende, Marktanteil)** | **Umsatz (Selbstauskünfte):** „nicht nur 10 Millionen“ (2023) ✔ → ca. 60 Mio. € (Stand 11/2024) ✎ bzw. „~€75m“ für 2024 (Horsch-Rückblick, W+) → „over €150M in sales“ (08/2025, W+) ✔ → **über 170 Mio. € 2025** (Press Kit „+170M“, WiWo 170 Mio. €) ✎; Horsch: „€180m+“ (W+). Ergebnis: laut Gründer profitabel seit 01/2023 ✔ [24]; Registerwerte ungeprüft (Abschnitt 5). **Mitarbeitende:** 25 (08/2023) → über 100 (08/2025, Press Kit 02/2026) → „170+“ (LinkedIn 05/2026; Karriereseite 10/2026) bzw. „200-köpfiges Team“ (Website 10/2026) → **über 170** ✎. **Kund:innen:** über 200.000 (08/2023) → über 800.000 (11/2024) → „more than 2 million“ im „Holy Squad“ (08/2025, W+) → **über 2 Mio.** (02/2026) ✔; Bezug (aktiv oder seit Gründung) offen; „fast die Hälfte“ kauft wieder ✔. **Marktanteil: nicht belegbar.** In den Circana-Top-5 der Energy-Drink-Marken fehlt HOLY ✔; vermutlich zählt Circana Pulver nicht zur Kategorie **H**. | Dossier 2.4 ✔/✎ [5, 13, 14, 15, 16, 17, 24, 45, 47]; deutsche-startups.de [45, 159] W+; Press Kit [13] W+; WiWo [16] W+; Story-Seite [5] W+; LinkedIn [31] W+; Dossier 2.6 ✔ [26], **H** |
-| **Portfolio & Preisniveau** | Fünf Linien, laut Press Kit „60+ Geschmacksrichtungen“: Energy (seit 04/2021, 31 Sorten, 160 mg Koffein pro 500-ml-Portion), Iced Tea (Sommer 2022, 18 Sorten, zum Start koffeinfrei; heute eine Matcha-Sorte mit ca. 35 mg), Hydration (18.10.2023 ✎, 20 Sorten), Milkshake (10 Sorten, Startjahr unbekannt), Syrup (04/2026, 10 Sorten, Pod + Flasche, ohne Koffein). Keine fertig abgefüllten Getränke („Mix at Home“). **Preis:** online ab 0,80 € pro 500-ml-Portion (50er-Dose, 39,99 €) ✔; mit Mix & Match ≈ 0,64 € (eigene Rechnung) ✔; im Handel ≈ 1,00–1,33 € ✎; zum Vergleich Durchschnittserlös Energy Drinks im Handel ≈ 1,55 € je 500 ml (Circana 2024) ✔. **Lesart (H):** mittleres Preisniveau, online im Vorrat günstiger als Dosen-Energy zum Normalpreis. | Dossier 3.1 ✔ [1, 13, 30, 54, 56, 57, 61], ✎ [33]; 3.2 ✔ [1, 48, 65], ✎ [10, 11, 64], **H** |
-| **Rolle im Markt** | **Herausforderer** nach Kotler, **Kriterium Verhalten** (Angriff), **Bezugsmarkt Softdrinks** (Anspruch laut HOLY). Das Format „zum Selbermixen“ ist der Weg des Angriffs, keine zweite Wettbewerbsrolle. Nach Marktanteil wäre HOLY klein (Spezialist, bei Kotler: Nischenanbieter) → Variante B, falls die Vorlesung nach Marktanteil einordnet. Kein Pionier (Einordnung **H**), kein Marktführer. Begründung in Abschnitt 3. | Einordnung **H** (Dossier 2.6, A.1 K23); Belege ✔ [13, 22, 24, 26, 51, 65], W+ (Symrise, LevlUp); Begriffe MW |
-| **Selbstverständnis (Mission, Vision, Werte, Claim)** | **Ziel:** „Unser Ziel war klar: Softdrinks besser machen.“ ✔ (als „Mission“ zu führen ist unsere Zuordnung, **H**). **Vision:** 2023 „to become the leading healthier soft drink in Europe“ ✔; 2025/26 „das Coca-Cola des 21. Jahrhunderts“ ✔; 2026 „to become the most loved soft drink brand of the 21st century“ ✔. **Selbstbeschreibung 2026:** „HOLY entwickelt zuckerfreie Softdrinks zum Selbermixen – als Alternative zu klassischen Ready-to-Drink-Getränken“, „für unterschiedliche Routinen im Alltag, rund um Sport und Training“ ✔ (W+). **Werte (intern):** „Put the HOLY Squad first“, „Do work you're proud of“, „Serve as one team“, „Challenge the status quo“, „Embrace the wild ride“ ✔. **Claims:** Dachclaim „Die Softdrink Revolution“ ✔; Markenversprechen „Geiler Geschmack mit gutem Gewissen“ ✔; Produktversprechen „Zero Zucker oder Bullsh*t“ ✔; dazu Kampagnen- und Syrup-Claims (mindestens sechs parallel, **H**). | Dossier 2.7 ✔ [1, 5, 13, 14, 15, 17, 31, 46], 6.5 ✔ [1, 5, 18, 20, 25, 31, 129], **H**; Press Kit W+ [13] |
-| **Wettbewerbsset** für das Repertory Grid (5–6 Marken) | W1: Red Bull · W2: Monster · W3: Gönrgy · W4: waterdrop · W5: Coca-Cola Zero · (W6 optional: ESN oder LevlUp) · Idealmarke: „mein idealer Drink für jeden Tag“. **Noch nicht beschlossen:** Vorschlag aus Dossier 5.3 (**H**); laut `dossier-buendel-b.md` (Z. 395, 422) nirgends als beschlossen dokumentiert. Entscheidung und **Rahmen (Energy- oder Softdrink-Marke)** liegen bei der Gruppe bzw. Bündel B. Der Rahmen betrifft auch Folie 3: Wir ordnen die Rolle im Softdrink-Markt ein (Abschnitt 3); Folie 4 und 6 sollten denselben Rahmen nennen. | Dossier 5.3 **H**; `dossier-buendel-b.md` Z. 122–123, 422 |
+| **Kennzahlen (Umsatz, Mitarbeitende, Marktanteil)** | **Umsatz (Selbstauskünfte):** „nicht nur 10 Millionen“ (2023) ✔ → ca. 60 Mio. € (Stand 11/2024) ✎ bzw. „~€75m“ für 2024 (Horsch-Rückblick, W+) → „over €150M in sales“ (08/2025, W+) ✔ → **über 170 Mio. € 2025** (Press Kit „+170M“, WiWo 170 Mio. €) ✎; Horsch: „€180m+“ (W+). Ergebnis: laut Mitgründer Jost profitabel seit 01/2023 ✔ [24]; Registerwerte ungeprüft (Abschnitt 5). **Mitarbeitende:** 25 (08/2023) → über 100 (08/2025, Press Kit 02/2026) → „170+“ (LinkedIn 05/2026; Karriereseite 10/2026) bzw. „200-köpfiges Team“ (Website 10/2026) → **über 170** ✎. **Kund:innen:** über 200.000 (08/2023) → über 800.000 (11/2024) → „more than 2 million“ im „Holy Squad“ (08/2025, W+) → **über 2 Mio.** (02/2026) ✔; Bezug (aktiv oder seit Gründung) offen; „fast die Hälfte“ kauft wieder ✔. **Marktanteil: nicht belegbar.** In den Circana-Top-5 der Energy-Drink-Marken fehlt HOLY ✔; vermutlich zählt Circana Pulver nicht zur Kategorie **H**. | Dossier 2.4 ✔/✎ [5, 13, 14, 15, 16, 17, 24, 45, 47]; deutsche-startups.de [45, 159] W+; Press Kit [13] W+; WiWo [16] W+; Story-Seite [5] W+; LinkedIn [31] W+; Dossier 2.6 ✔ [26], **H** |
+| **Portfolio & Preisniveau** | Fünf Linien, laut Press Kit „60+ Geschmacksrichtungen“: Energy (seit 04/2021, 31 Sorten, 160 mg Koffein pro 500-ml-Portion), Iced Tea (Sommer 2022, 18 Sorten, zum Start koffeinfrei; heute eine Matcha-Sorte mit ca. 35 mg), Hydration (18.10.2023 ✎, 20 Sorten), Milkshake (10 Sorten, Startjahr unbekannt), Syrup (04/2026, 10 Sorten, Pod + Flasche, ohne Koffein). Keine fertig abgefüllten Getränke („Mix at Home“). **Preis:** online ab 0,80 € pro 500-ml-Portion (50er-Dose, 39,99 €) ✔; mit Mix & Match ≈ 0,64 € (eigene Rechnung) ✔; im Handel ≈ 1,00–1,33 € ✎; zum Vergleich Durchschnittserlös Energy Drinks im Handel ≈ 1,55 € je 500 ml (Circana 2024) ✔. **Lesart (H):** mittleres Preisniveau, online im Vorrat günstiger als Dosen-Energy zum Normalpreis. **Selbstbild laut Gründer (GB):** Horsch zählt HOLY zu den Premium-Marken (Triade mit ESN) und nennt den Preis zugleich günstiger als herkömmliche Alternativen („faire Preis-Leistung“). Kein Widerspruch zur Lesart, aber eine Spannung im Selbstbild (Hinweis für die Synthese, Abschnitt 4). | Dossier 3.1 ✔ [1, 13, 30, 54, 56, 57, 61], ✎ [33]; 3.2 ✔ [1, 48, 65], ✎ [10, 11, 64], **H**; Horsch 2026 (GB) |
+| **Rolle im Markt** | **Herausforderer** nach Kotler, **Kriterium Verhalten** (Angriff), **Bezugsmarkt Softdrinks** (Anspruch laut HOLY). Das Format „zum Selbermixen“ ist der Weg des Angriffs, keine zweite Wettbewerbsrolle. Nach Marktanteil wäre HOLY klein (Spezialist, bei Kotler: Nischenanbieter) → Variante B, falls die Vorlesung nach Marktanteil einordnet. Kein Pionier (Einordnung **H**), kein Marktführer. Begründung in Abschnitt 3. Gründer Mathias Horsch nennt die großen Softdrinkmarken als Hauptkonkurrenz und HOLY eine „Challenger-Brand“ (GB): stützt Rolle und Bezugsmarkt, bleibt aber Selbstauskunft. | Einordnung **H** (Dossier 2.6, A.1 K23); Belege ✔ [13, 22, 24, 26, 51, 65], W+ (Symrise, LevlUp); Begriffe MW; Horsch 2026 (GB, stützend) |
+| **Selbstverständnis (Mission, Vision, Werte, Claim)** | **Ziel:** „Unser Ziel war klar: Softdrinks besser machen.“ ✔ (als „Mission“ zu führen ist unsere Zuordnung, **H**). **Vision:** 2023 „to become the leading healthier soft drink in Europe“ ✔; 2025/26 „das Coca-Cola des 21. Jahrhunderts“ ✔; 2026 „to become the most loved soft drink brand of the 21st century“ ✔. Gründer Mathias Horsch nennt es den „Purpose“ von HOLY, die meistgeliebte Softdrink-Marke zu bauen (GB). Das deckt sich mit der Vision 2026 [17, 31], ist aber kein unabhängiger Beleg. Begriff „Purpose“ mit der Vorlesung abgleichen. **Selbstbeschreibung 2026:** „HOLY entwickelt zuckerfreie Softdrinks zum Selbermixen – als Alternative zu klassischen Ready-to-Drink-Getränken“, „für unterschiedliche Routinen im Alltag, rund um Sport und Training“ ✔ (W+). **Werte (intern):** „Put the HOLY Squad first“, „Do work you're proud of“, „Serve as one team“, „Challenge the status quo“, „Embrace the wild ride“ ✔. Horsch nennt sie in unserer Befragung selbst „Firmenwerte“, sinngemäß und mit kurzer Erläuterung (GB). Die Schreibweise in unserer Abschrift ist nach [17] bereinigt, also kein eigener Beleg für den Wortlaut; [17] vor dem 26.10. neu abrufen (am 17.10. nicht lesbar). **Claims:** Dachclaim „Die Softdrink Revolution“ ✔; Markenversprechen „Geiler Geschmack mit gutem Gewissen“ ✔; Produktversprechen „Zero Zucker oder Bullsh*t“ ✔; dazu Kampagnen- und Syrup-Claims (mindestens sechs parallel, **H**). | Dossier 2.7 ✔ [1, 5, 13, 14, 15, 17, 31, 46], 6.5 ✔ [1, 5, 18, 20, 25, 31, 129], **H**; Press Kit W+ [13]; Horsch 2026 (GB) |
+| **Wettbewerbsset** für das Repertory Grid (5–6 Marken) | W1: Red Bull · W2: Monster · W3: Gönrgy · W4: waterdrop · W5: Coca-Cola Zero · (W6 optional: ESN oder LevlUp) · Idealmarke: „mein idealer Drink für jeden Tag“. **Noch nicht beschlossen:** Vorschlag aus Dossier 5.3 (**H**); laut `dossier-buendel-b.md` (Z. 395, 422) nirgends als beschlossen dokumentiert. Entscheidung und **Rahmen (Energy- oder Softdrink-Marke)** liegen bei der Gruppe bzw. Bündel B. Der Rahmen betrifft auch Folie 3: Wir ordnen die Rolle im Softdrink-Markt ein (Abschnitt 3); Folie 4 und 6 sollten denselben Rahmen nennen. **Abgleich mit der Gründerbefragung (19.10.):** Horsch nennt als Hauptkonkurrenz Red Bull, Monster, Coca-Cola (nicht ausdrücklich Zero) und Lipton Eistee. Aus dem Sirup- und Pulverbereich kommt laut ihm nur ein kleiner Teil der Kundschaft (Firmendaten nicht vorgelegt, unbelegt). Gönrgy (Dose) nennt er nicht. W4 waterdrop bleibt: Der Format-Zwilling prüft bewusst, ob das Format unterscheidet (Abschnitt 4). **Set nicht mehr ändern**, denn die KI-Befragung (P7) und die echten Interviews laufen damit. Vorschlag: Rahmen „Softdrink-Marke“; die Gruppe hält ihn als ihre Entscheidung fest (offen). | Dossier 5.3 **H**; `dossier-buendel-b.md` Z. 122–123, 422; Horsch 2026 (GB) |
 
 ---
 
@@ -146,6 +160,11 @@ abgleichen):**
 - **Bezugsmarkt: Softdrinks.** So beschreibt HOLY den eigenen Markt („im europäischen Softdrink-Markt“ ✔ [13]), so
   begründet Jost den Kurswechsel ✔ [24]. Für diesen Markt haben wir **keine Marktanteile**; Circana-Daten gibt es nur
   für Energy Drinks im deutschen Handel ✔ [26]. Deshalb keine Softdrink-Anteile nennen.
+  **Spannung:** Im Selbstbild ist HOLY eine Softdrink-Marke und kein Nahrungsergänzungsmittel (so auch Horsch in
+  seiner Triade HOLY + Red Bull gegen More Nutrition, GB). Rechtlich ist die Energy-Linie aber ein
+  Nahrungsergänzungsmittel ✔ [56, 72] (Dossier S1). Das ist kein Fehler der Einordnung, sondern eine Spannung:
+  Rückfrage 6 zu Folie 3 um die rechtliche Einordnung ergänzen (geht ohne GB) und als mögliche Rückfrage zu
+  Folie 10/11 bereithalten.
 - **Rolle: Herausforderer.** Das Format „zum Selbermixen“ ist der **Weg des Angriffs** (eigenes Format statt Dose;
   nach Kotler am ehesten ein Flanken- oder Umgehungsangriff, MW), keine zweite Wettbewerbsrolle. Ein umrandeter Chip
   „Spezialist“ neben dem gefüllten „Herausforderer“ würde zwei Rollen zeigen, die sich nach Kotler eher ausschließen.
@@ -165,6 +184,11 @@ abgleichen):**
   (Softdrink-Markt); im Energy-Segment „dauerhaft unter den Top 3“ der Energydrink-Marken ✔ [51].
 - Das Verhalten passt: Ausbau im Lebensmittelhandel seit 2024/25 ✔ [6, 7, 8, 9], erste große Massenmedien-Kampagne
   2026 mit dem Ziel, Softdrink „unabhängig von Alter, Lebensstil oder Anlass“ zu sein ✔ [25].
+- Gründer Mathias Horsch nennt in unserer Befragung die großen Softdrinkmarken als Hauptkonkurrenz und HOLY eine
+  „Challenger-Brand“ (laut Gründer Mathias Horsch, Befragung 10/2026, GB). „Challenger“ meint bei ihm eine neue
+  Marke, „auch über Social Media“, also die Haltung (siehe oben, Morgan), nicht Kotlers Kriterium. Das stützt nur;
+  die Rolle bleibt unsere Einordnung (**H**). Halbsatz für Rückfrage 2 (Folienentwurf Folie 3): „Auch Mathias Horsch
+  nennt die großen Softdrinkmarken als Hauptkonkurrenz (Selbstauskunft).“
 
 **Was dagegen spricht – und warum es nach unserem Kriterium nicht entscheidet**
 - Nach Marktanteil ist HOLY klein: In den Circana-Top-5 der Energy Drinks (Deutschland, MAT 08/2025) fehlt HOLY;
@@ -194,6 +218,10 @@ abgleichen):**
   Dasselbe Abgrenzungsproblem gilt für die Rolle: Darum nennen wir den Bezugsmarkt.
 - Der Red-Bull-Anteil darf nur mit Abgrenzung stehen: „Energy Drinks DE, Circana MAT 08/2025; Daten aus einem
   Schulungsheft, das mit Red Bull entstand“ (Dossier 5.1, 9.4).
+- **„95 %“ aus der Gründerbefragung:** Horsch sagt, 95 % der Kund:innen nutzten HOLY als vollen oder teilweisen
+  Ersatz für die großen Softdrinkmarken. Eine Datengrundlage legt er nicht offen. Das ist kein Marktanteil und keine
+  Kennzahl für Folie 03 oder 10. Höchstens als Antwort auf eine Rückfrage, und nur mit dem Zusatz „laut Gründer
+  Mathias Horsch, Datengrundlage nicht offengelegt“ (`gruenderbefragung.md` 2.3, Punkt 3).
 
 ---
 
@@ -239,9 +267,24 @@ Die vier äußeren Felder (Attribute, Nutzen, Tonalität, Markenbild) müssen zu
     **Kompetenz laut HOLY, aber Hürde laut Zielgruppe** – eine Lücke zwischen Selbst- und Fremdbild, die Folie 10/11
     offen zeigen sollten. Im Sprechtext von Folie 6 auf Folie 3 zurückverweisen. Begriffe: HOLYs Wortlaut „zum
     Selbermixen“ als Zitat, „selbst anrühren“ als Polname im Grid. Endgültig erst nach Lukas' Auswertung (Mo 19.10.).
+- **Selbstbild laut Gründer (GB, 19.10.):** Mathias Horsch nennt das Selbermischen nicht als Kompetenz. Es erscheint
+  bei ihm als Teil des Attributs Geschmack (Intensität selbst bestimmen) und als emotionaler Nutzen: Individualität,
+  weil man selbst entscheidet, wie viel, wie intensiv und welche Sorte (laut Gründer Mathias Horsch, Befragung
+  10/2026, GB). Titel und Kernkompetenz bleiben; die fünf Linien belegt Dossier 3.1 ohne GB. Für die Synthese
+  merken: „zum Selbermixen“ steht im Rad als Kompetenz (DR) und gegebenenfalls als Attribut oder Nutzen (GB). Genau
+  dort liegt die mögliche Hürde. Ob Individualität (Selbstbild) und Hürde „selbst anrühren“ (Fremdbild) sich
+  widersprechen, bewerten wir erst mit Lukas' echten RG-Daten. Bis dahin geben wir „Individualität“ nicht an Lukas
+  weiter.
+- **Preis (Hinweis für die Synthese, Do 22.10.):** Im Selbstbild steht „Premium“ (Triade mit ESN) neben „günstiger
+  als herkömmliche Alternativen“, „Geld sparen“ und „faire Preis-Leistung“ (GB). Das widerspricht unserer Lesart
+  „mittleres Preisniveau, online im Vorrat günstig“ (Abschnitt 2, Dossier 3.2) nicht, ist aber eine Spannung im
+  Selbstbild. Im Rad deshalb „Premium“ und „günstig“ nicht ohne Zusatz nebeneinander. Ob „günstig pro Portion“ ins
+  Rad kommt, entscheiden nur echte RG- und LA-Daten. Den Gegenpol „günstig“ gab in der Triade schon der Elementname
+  „günstige Handelsmarke“ vor (`gruenderbefragung.md` 2.1).
 - **Tonalität und Bild (Bündel B, C):** Die Herausforderer-Rolle passt zum frechen Ton (Dossier 6.2) und zum Wert
-  „Challenge the status quo“ ✔ [17]. Ob die Comic-Bildwelt zur Rolle „Softdrink für alle“ passt, ist offen
-  (Dossier 8 S2).
+  „Challenge the status quo“ ✔ [17]. Horsch erklärt diesen Wert mit Innovation, gerade als Challenger-Brand (GB);
+  den frechen Ton nennt er nicht (danach war nicht gefragt). Der Wert stützt also die Rolle, nicht den Ton. Ob die
+  Comic-Bildwelt zur Rolle „Softdrink für alle“ passt, ist offen (Dossier 8 S2).
 
 **Bezug zur Persona „Marco, 28“** (Hedonisten, knapp vor Offene; `limbic-map.md`, `persona-steckbrief.md`):
 
@@ -366,7 +409,8 @@ in `folienentwuerfe.md`).
   „Pionier“ und Feld „Markenkompetenz“ (Esch, inkl. „zentrale Markenassets“) abgleichen; danach `rollen` festlegen
 - [ ] Jahresabschluss 2024 (und 2023) im Unternehmensregister abrufen; „profitabel“ danach neu bewerten (Abschnitt 5)
 - [ ] Wettbewerbsset W1–W5 und Rahmen (Energy- oder Softdrink-Marke) in der Gruppe beschließen und hier eintragen
-  (`dossier-buendel-b.md` Abschnitt 10, Punkt 1); den Rahmen auf Folie 3, 4 und 6 einheitlich nennen
+  (`dossier-buendel-b.md` Abschnitt 10, Punkt 1); den Rahmen auf Folie 3, 4 und 6 einheitlich nennen. Nach der
+  Gründerbefragung: Set nicht mehr ändern, Rahmen „Softdrink-Marke“ vorschlagen (Abschnitt 2, Wettbewerbsset)
 - [ ] Folie 6 (Lukas): im Sprechtext auf Folie 3 zurückverweisen (Selbstbild „zum Selbermixen“ ↔ Hürde „selbst
   anrühren“); nach der echten Auswertung (Mo 19.10.) Abschnitt 4 prüfen
 - [ ] Folie 10 (C2): Feld `kompetenz`, Notiz und Beleg anpassen (Abschnitt 6), zusammen mit „Hedonisten“
@@ -374,6 +418,13 @@ in `folienentwuerfe.md`).
   (REWE?)
 - [ ] Vor dem 26.10. neu prüfen: Mitarbeitende und Kund:innen auf Website und Karriereseite, Zuckersteuer (falls im
   Sprechtext), Follower (nur falls genutzt)
+- [ ] Yannick: Karriereseite [17] vor dem 26.10. selbst neu abrufen (am 17.10. nicht lesbar): Wortlaut der fünf
+  Firmenwerte und der Vision 2026. Die Gründerbefragung nennt die Werte nur sinngemäß; unsere Schreibweise ist nach
+  [17] bereinigt
+- [x] (19.10., D14) Folienentwurf Folie 3: Rückfrage 2 um den Halbsatz zu Horsch und Rückfrage 6 um die rechtliche
+  Einordnung der Energy-Linie ergänzt (Abschnitt 3; `folienentwuerfe.md` Folie 3 und Notizen von f03)
+- [ ] Synthese C2 (Do 22.10.): Hinweise aus der Gründerbefragung in Abschnitt 4 (Selbermischen, Preis) einbeziehen;
+  GB-Stichworte nur nach der Regel in `methoden.md` §6 ins Rad; Kürzel GB von der Gruppe bestätigen lassen
 - [ ] Web-Folie f03 austauschen (Abschnitt 6: Daten, Titel-Ersatztext, Fußzeile mit Legende, Label „Marktrolle“,
   ggf. Überschrift „Laut Unternehmen“, Notizen und Belegabsatz komplett neu; Branch von Account 2 beachten)
 - [ ] Backup-Bezug klären (mit Elias und Account 2): B1 enthält nur die KI-Methodik. Eigene Backup-Folie
@@ -452,6 +503,11 @@ Zeitpunkt (Pionier, Folger) nach gängigen Marketing-Lehrbüchern. Mit der Vorle
 
 **Persona und Limbic Map:** `persona-steckbrief.md` (Statista Consumer Insights 02/2025, n = 1.583) · `limbic-map.md`.
 
+**Gründerbefragung (GB, ohne Nummer):** Horsch, M. (2026): Antworten auf den Fragenkatalog der Gruppe, zwei
+Sprachnachrichten an L. Welker, LinkedIn, 18.10.2026. Auswertung mit Paraphrasen: `gruenderbefragung.md` (Stand
+19.10.2026). Selbstauskunft, Innensicht, n = 1; Transkript und Audio nur im Gruppenordner. Zitierweise: „Horsch 2026
+(GB)“ bzw. „laut Gründer Mathias Horsch (Befragung 10/2026)“.
+
 ---
 
 ## 8. Prüfrunde 17.10.2026: was geändert wurde
@@ -474,3 +530,23 @@ nachgelesen; externe Belege nur übernommen, wenn sie selbst geöffnet wurden (W
 - **Nicht übernommen:** die Rolle zusätzlich „Spezialist nach Marktposition“ zu nennen (wäre ein zweites Kriterium);
   „Spezialist“ als Zeile unter dem Chip (das Format steht schon im Titel); Quellen-Namen auf der Folie (nur Nummern,
   Namen in B7). Begründungen im Folienentwurf bzw. in der Rückmeldung an Yannick.
+
+---
+
+## 9. Gründerbefragung 19.10.2026: was eingearbeitet wurde
+
+Grundlage: `gruenderbefragung.md` Abschnitt 4.3 und 4.4 (Befunde K1–K12) und die Freigabe laut Yannick vom
+19.10.2026. Jeder Vermerk ist als Selbstauskunft gekennzeichnet (GB). Keine Websuche, keine neue Quelle außer GB.
+
+- **Eingearbeitet:** K1 Claim (Abschnitt 1) · K3 Rolle, Halbsatz für Rückfrage 2 (Abschnitt 2, 3) · K5 „95 %“ nur
+  als Rückfrage-Antwort mit Zusatz (Abschnitt 3) · K8 Purpose und K9 Firmenwerte (Abschnitt 2) · K11 Lücke „gutes
+  Gewissen ↔ Koffein“ nur mit Außensicht (Abschnitt 1) · K12 Softdrink-Marke ↔ Nahrungsergänzungsmittel
+  (Abschnitt 3).
+- **Für die Synthese vermerkt:** K2 und K7 Selbermischen als Attribut Geschmack und Nutzen Individualität, Bewertung
+  erst nach Lukas' echten RG-Daten (Abschnitt 4) · K6 „Premium“ ↔ „günstiger“ (Abschnitt 2, 4) · K4 Wettbewerbsset
+  und Rahmen „Softdrink-Marke“ (Abschnitt 2; Entscheidung der Gruppe).
+- **Unverändert:** Titel, Rolle, Kernkompetenz, Claim-Entscheidung, Zeitleiste, Kennzahlen, Wettbewerbsset W1–W5. Die
+  Befragung bestätigt vor allem, was Website und Press Kit schon sagen [1, 13]; sie ändert keine Entscheidung.
+- **Nicht übernommen:** „95 %“ als Kennzahl; die unsicheren Stellen aus `gruenderbefragung.md` 2.2 (weder zitiert
+  noch ausgewertet); die Zielgruppe 18–55 (Thema Persona, A2); die Triaden als RG-Daten (Bündel B,
+  `gruenderbefragung.md` 4.5).

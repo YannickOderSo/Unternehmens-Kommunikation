@@ -83,7 +83,9 @@ text(40, Y_K, "Laut Unternehmen", 17, GRAU, "bold", "start")
 for i, (wert, bez, beleg) in enumerate(KENNZAHLEN):
     x = 40 + i * 262
     add(f'<rect x="{x}" y="{Y_K + 16}" width="246" height="150" rx="12" fill="{FLAECHE}"/>')
-    text(x + 18, Y_K + 72, wert, 30, TEXT, "bold", "start")
+    # 28 px statt 30 px (Grafikprüfung 17.10.2026): „über 170 Mio. €“ endete 6 px vor dem Kachelrand und
+    # kann mit Segoe UI (PowerPoint-Import) überlaufen
+    text(x + 18, Y_K + 72, wert, 28, TEXT, "bold", "start")
     text(x + 18, Y_K + 104, bez, 17, TEXT, anker="start")
     text(x + 18, Y_K + 142, beleg, 12.5, GRAU, anker="start")
 text(40, Y_K + 196, "Alle drei Werte sind Selbstauskünfte. Geprüfte Bilanzzahlen liegen uns nicht vor;", 13.5, GRAU,
@@ -111,7 +113,7 @@ text(X_R + 20, Y_K + 205, "Markenversprechen laut Website und Press Kit ✔ [5, 
 
 # Quellenzeile
 QUELLE = [
-    "Quellen: Recherche-Dossier Kap. 2 (Stand 14.10.2026) und eigene Prüfung 17.10.2026; Nummern = Anhang B des Dossiers (Backup B7):",
+    "Quellen: Recherche-Dossier Kap. 2 (Stand 14.10.2026) und eigene Prüfung 17.10.2026; Nummern = Anhang B des Dossiers (Backup B8):",
     "[3] North Data (Registerdaten), [4] deutsche-startups.de 10/2023, [5] HOLY Story, [6] TikTok HOLY 05/2024, [13] HOLY Press Kit 02/2026,",
     "[16] WirtschaftsWoche 01/2026, [17] Karriereseite, [22] Symrise 09/2021, [24] Podcast „Digitale Vorreiter:innen“ #281, "
     "[25] HORIZONT 01/2026, [39] TikTok HOLY 04/2026.",

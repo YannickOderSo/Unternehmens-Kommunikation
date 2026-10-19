@@ -54,18 +54,18 @@ Zu jeder Folien-Gruppe gehören `css/folien/<name>.css` und `js/folien/<name>.js
 | f01b | `01b-wortwolke.html` | (optional) Live-Wortwolke „Was verbinden Sie mit [Marke]?“ | 45 | A | `leer`, `data-optional` |
 | f02 | `02-vorgehen.html` | Ausgangslage & Vorgehen (Steuerrad als interaktive Agenda) | 60 | A | `hub` |
 | f03 | `03-markenkompetenz.html` | Markenkompetenz | 45 | A | `kompetenz` |
-| f04 | `04-persona.html` | Brand Persona | 90 | A | `persona` |
-| f05 | `05-limbic-map.html` | Limbic Map | 60 | A | `persona` |
-| f06 | `06-repertory-grid.html` | Repertory Grid → Markenattribute | 90 | B | `attribute` |
+| f04 | `04-persona.html` | Brand Persona | 80 | A | `persona` |
+| f05 | `05-limbic-map.html` | Limbic Map | 55 | A | `persona` |
+| f06 | `06-repertory-grid.html` | Repertory Grid → Markenattribute | 80 | B | `attribute` |
 | f07 | `07-laddering.html` | Laddering → Markennutzen | 90 | B | `nutzen` |
 | f08 + f08b | `08-analogien` | Analogien + Live-Umfrage (70) · Markentonalität nach Aaker (50) | 70 + 50 | B | `tonalitaet` |
-| f09 + f09b | `09-kommunikationsanalyse` | Kanäle & Bildwelt (65) · Markenbild: Corporate Design & Fit (55) | 65 + 55 | C | `bild` |
-| f10 | `10-markensteuerrad.html` | Markensteuerrad (Synthese) | 75 | C | `hub` |
-| f11 | `11-fazit.html` | Fazit & Empfehlungen | 90 | C | – (`leer`) |
+| f09 + f09b | `09-kommunikationsanalyse` | Kanäle & Bildwelt (60) · Markenbild: Corporate Design & Fit (55) | 60 + 55 | C | `bild` |
+| f10 | `10-markensteuerrad.html` | Markensteuerrad (Synthese) | 75 | C (Inhalt: A, Synthese C2) | `hub` |
+| f11 | `11-fazit.html` | Fazit & Empfehlungen | 75 | C | – (`leer`) |
 | f12 | `12-fragen.html` | Danke & Fragen (Steuerrad als Sprungmenü) | 0 | alle | – (`leer`) |
-| b1–b7 | `13-backup.html` | Backup: Methodik, Prompt-Log, Datenquellen Persona, RG-Rohdaten, Laddering-Matrix, KA-Raster, Quellenverzeichnis | 0 | je nach Inhalt | passend oder `leer`, `data-backup` |
+| b1–b8 | `13-backup.html` | Backup: Methodik, Prompt-Log, Datenquellen Persona, RG-Rohdaten, Laddering-Matrix, KA-Raster, Quellenverzeichnis, Belege der Folien | 0 | je nach Inhalt | passend oder `leer`, `data-backup` |
 
-Summe Hauptfolien ohne optionale Folie: 885 s = 14:45 (15 s Puffer); optionale Folie f01b 45 s, Backup 0 s.
+Summe Hauptfolien ohne optionale Folie: 840 s = 14:00 (60 s Puffer für die Live-Momente; seit 16.10.2026, Abschnitt 12 – vorher 885 s = 14:45); optionale Folie f01b 45 s, Backup 0 s.
 Die Referentenansicht rechnet mit diesen Sollzeiten (`data-zeit`). Wer eine Sollzeit ändert, gleicht die
 Summe wieder auf höchstens 900 s ab.
 
@@ -123,7 +123,8 @@ Summe wieder auf höchstens 900 s ab.
 | `<span data-datum></span>` / `data-datum="lang"` | 26.10.2026 bzw. „Montag, 26. Oktober 2026“ |
 | `data-veranstaltung`, `data-dozent`, `data-hochschule`, `data-praesentation`, `data-fallstudie` | Angaben aus marke.js |
 | `<span data-unternehmen></span>` | Firma hinter der Marke (`marke.js → unternehmen`, Einordnungszeile auf Folie 01 und 12) |
-| `<img data-marke-logo>` | Logo-Pfad aus marke.js (`logo`, Folie 09b); das Logo der Titelfolie kommt aus `logoTitel` (setzt `js/folien/01-einstieg.js`) |
+| `<img data-marke-logo>` | Logo-Pfad aus marke.js (`logo`, Wortmarke, Folie 09b); das Logo der Titelfolie kommt aus `logoTitel` (setzt `js/folien/01-einstieg.js`) |
+| `<img data-marke-logo="titel">` | Logo-Pfad aus marke.js → `logoTitel` (gelbes Oval, z. B. Folie 12 im Kopf neben dem Fazit); ohne Eintrag bleibt das Bild ausgeblendet (`hidden`). Logo-Quelle in die Fußzeile der Folie und in B7 |
 | `<h2 class="titel" data-umfrage-frage="tier"></h2>` | Frage der Umfrage aus marke.js |
 | `data-anrede-sie="…" data-anrede-ihr="…"` | Text passend zur Anrede |
 | `<span class="beispiel">Beispieldaten</span>` | Pille; per `marke.js → beispieldatenHinweis: false` ausblendbar (erst, wenn keine erfundenen Werte mehr da sind!) |
@@ -578,3 +579,77 @@ Kopie `marke.js` ändern und `node werkzeuge/pruefen.mjs index.html --schritte` 
 | Folie 11 / 12 | Kern-Zusatz gestrichen, Kanal-Chips ein Wort, „wie genau“ kürzer; Fazit auf Folie 12 mit Pille „Beispieldaten“. |
 | Backup B1, B3, B8 (`js/folien/13-backup.js`, `css/folien/13-backup.css`) | B1 Formulierungen präzisiert; B3: Mediennutzung = Statista CI 2025 mit neuem Status `extern` (Quelle nicht im Dossier); B8: [56] und „extern“ ergänzt, [48] und [102] entfernt (nicht mehr sichtbar zitiert), [26] mit Absender. |
 
+## 14. Einbau der Bündel-A-Ergebnisse, Logos und Grafikprüfung (17./18.10.2026)
+
+Inhalte nach `../markenkompetenz.md` (A1), `../persona-steckbrief.md` (A2), `../limbic-map.md` (A3) und
+`../folienentwuerfe.md` (Folien 3–5); alle drei sind **Entwurf**, Freigabe durch Yannick offen (Kästen „FOLIE 03–05“).
+Die Beispieldaten der Bündel B und C sind unverändert.
+
+| Bereich | Änderung |
+|---|---|
+| Folie 03 (`css/folien/03-markenkompetenz.css`) | Daten, Titel, Fußzeile (Nummern 3–6, 13, 16, 17, 22, 24, 25, 39; „→ Backup B8“), Sprechtext und Belege nach A1; vier Rollen-Chips nach Kotler, kein `rolleZusatz`; Label „Marktrolle“ gestrichen; Red-Bull-Wert nur noch in den Notizen. Die Stufe `.ist-sehr-dicht` verkleinert jetzt auch Präfix und Einheit der Kennzahlen (30 px) – „über 170 Mio. €“ ragte in Keynote/Bento aus der Spalte. |
+| Folie 04 (`js/folien/04-persona.js`, CSS) | Psychografie ohne „Spaß“ (im Ø), mit Stichwort-Zeile; neue Datenfelder je Dimension: `zeilen` auch in der Psychografie und `werteLabel` (Überschrift der Werte-Chips, Standard „Werte“). Kaufverhalten als Daten (Kantar TGI 2023, Gründer [24]). |
+| Folie 05 (`js/folien/05-limbic-map.js`, CSS) | Gewichte, Typ „Hedonisten“, Folgen, Typ-Winkel und Titel nach A3. Feste Texte als Datenfelder: `fitHinweis` (Metazeile, Ersatz „Gewichte: Hypothese des Teams“), `lueckeText` (Ersatz „größte Lücke“), `lueckeSystem` (System der Lücke vorgeben, z. B. bei Gleichstand), `punktZusatz` je Punkt (z. B. „(Mittelwert)“). Gewichtsbalken jetzt maßstäblich (Segmente ohne Innenabstand). Rechtevermerk nach [105] S. 7 statt „eingetragene Marke“ (auch B7, `QUELLEN.md`). |
+| Folie 10 / 11 | Feld Markenkompetenz „Herausforderer · Softdrinks zum Selbermixen“, Persona „Hedonisten“; Sprechtexte: Dominanz-Lücke = Schichtanlass (A3), Verweise auf die neuen Folgen von Folie 05. |
+| Logos (`js/deck.js`, `js/folien/12-fragen.js`, `css/folien/12-fragen.css`) | `<img data-marke-logo="titel">` nimmt `logoTitel`. Folie 12: gelbes Oval rechts neben den Gruppennamen (128 px, Klammer zu Folie 01), Kurzquelle in Fußzeile Zeile 2; ohne Logo verschwinden Bild und Quelle (`logoPruefen`). B7 nennt die Logos. Bewusst ohne Logo: Kopfzeilen, Folie 03, Zentrum des Steuerrads, Startseite. |
+| Folie 09b (`css/folien/09-kommunikationsanalyse.css`) | Im Dunkelmodus liegt die Wortmarke auf einer hellen Unterlage (Kontrast war ca. 1,1 : 1); das Bild bleibt unverändert. |
+| Folie 09 (dieselbe CSS) | Gestrichelte Beispielwert-Rahmen enger: Motivzahlen ohne Abstand nach außen (stießen aneinander), „4,0“ bündig mit dem Satzspiegel. |
+| Titel (`css/komponenten.css`) | Kursivkorrektur im Thema Editorial: `em[data-marke]` rechts etwas mehr Raum – der Bogen des kursiven „Y“ lief aus dem Marker und stieß an „:“/„?“ (Folien 01b, 03, 06, 10, 11). |
+| Folie 02 | Fußzeile „Esch & Esch (2024)“, „Häusel (2019)“ wie B7; Beleg Handelsstart nach A1 ([6], [8, 9]). |
+| Backup B2 | Zeilen P1–P5 durch die belegten Einträge KI 55/56, 47, 52 ersetzt (`beispiel: false`), KI 07 mit A2-01; P7–P14 bleiben Beispiel. |
+| Backup B3 (`css/folien/13-backup.css`) | Kantar TGI 2023 und Statista CI 2025 (Steckbrief A2) statt Markentrainer-Haushalte und forsa; Tabelle hielt den rechten Satzspiegel nicht ein (Status-Spalte 150 px). |
+| Backup B7, B8 | B7: Esch & Esch (2024, 10. Aufl.), Häusel (2019, 6. Aufl.) laut DNB-Katalog, Nymphenburg [105] und nymphenburg.de, „Eigene Prüfung 17.10.2026“, Logos, Rechtevermerk Limbic®. B8: [6] und [39] neu, [2], [9], [14], [15], [26], [99] entfernt (nur noch im Sprechtext), „extern“ mit Kantar. |
+| `../grafiken/*.py` (SVG/PNG neu erzeugt) | folie-05: Beschriftung „Hedonisten“ entlang des Sektors, Pfeilspitze 2021/22 → 2026, Beschriftung frei von der Linie, Quellenzeile wie im Folienentwurf; folie-03: Kennzahl 28 px, Verweis B8; folie-02: Folien 8/8b und 9/9b. |
+
+## 15. Übernahme durch Account 1 (Sa, 17.10.2026)
+
+Account 2 hat die Präsentation gebaut (Branch `praesentation-account-2`, Abschnitte 10–13). Seit Sa, 17.10.2026
+führt Account 1 sie auf `master` weiter: Einbau der Bündel-A-Ergebnisse, Logos und Grafikprüfung (Abschnitt 14),
+danach eine Prüfung in drei Blickrichtungen (Darstellung, Inhalt, Rechte) und deren Nacharbeit (18./19.10.2026,
+Systemdatum). Die Beispieldaten der Bündel B und C sind unverändert; Hinweise an Lukas und Elias stehen nur in
+den Kästen und Notizen. Die Folien 03–05 bleiben **Entwurf** (Freigabe durch Yannick offen, LIESMICH Abschnitt 12).
+
+| Bereich | Änderung |
+|---|---|
+| Folie 05 (`js/folien/05-limbic-map.js`, CSS) | Etikett „HOLY (Mittelwert)“ stand unter Marcos Punkt (wirkte wie dessen Beschriftung): `punktZusatz` jetzt als eigene, kleinere Zeile (`.g2l-punkt-zusatz`, Etikett `.g2l-punkt-text--zusatz` zweizeilig); `anordnen()` hat versetzte Kandidaten oben/unten und bestraft jede Lage, deren Mitte näher an einem fremden Punkt liegt als am eigenen. Fußzeile Zeile 2: Rechtevermerk mit „urheber- und patentrechtlich geschützt“ (gekürzt, wörtlich in B7/Notizen – Abweichung vom Folienentwurf 5 im Kasten vermerkt). Sprechtext ohne die Eingangsfrage (steht im Kicker): ca. 106 Wörter ≈ 56 s. |
+| Folie 04 (Daten, Fußzeile, Notizen, Kasten) | Psychografie „bequem und schnell“ (Statista CI 2025: 30 % zu Ø 25 %) statt „gesünder, aber schnell“ (gesund ernähren 50 % zu Ø 53 % trägt „gesünder“ nicht); Block als `daten` mit Quelle „Statista CI 2025 · Pain/Gain: Annahme [88, 89]“; Fußzeile „Person und Zitat fiktiv“; Beruf im Sprechtext als Annahme genannt; Sprechtext um Doppelungen gekürzt (ca. 147 statt 172 Wörter ≈ 77 s). Abweichung von Steckbrief A2 §2 und Folienentwurf 4 im Kasten zur Entscheidung durch Yannick. Kasten: vollständige Schritte für das KI-Bild (Fußzeile, KI-Nachweis, B1, B2, `QUELLEN.md` §3/§4, B7 „Technik“). |
+| Folie 03 (Fußzeile, Notizen, Kasten, Datenkommentar) | „KI-Nachprüfung 17.10.2026“ statt „eigene Prüfung“ (nachgelesen hat der bearbeitende KI-Agent, die Prüfung durch die Gruppe ist offen); ✔ = „gesichert“ wie im Dossier. Kasten: Punkt „[6] und [39] in B8 ergänzen“ als erledigt markiert. |
+| Folie 02 (Fußzeile) | zwei Zeilen statt einer (endete bei x ≈ 1708 unter der Bedienleiste); Text unverändert. |
+| Folie 10 / 11 (Kästen, Kommentare, Notizen) | Sprechtext-Längen nachgezählt (10: ca. 182 Wörter ≈ 96 s, Zeitangaben zusammen 77 s; 11: ca. 164 Wörter ≈ 86 s), Kürzungsvorschläge nur in den Kästen (Bündel C, mit Elias abstimmen); Folie 10 „ca. 49 Wörter“ statt „ca. 45“. Kasten 11: Hinweis aus A3 zu Empfehlung 3 („Humor aus der Schicht statt Doppeldeutigkeit“), Inhalt unverändert. |
+| Folie 12 (`css/folien/12-fragen.css`, `js/folien/12-fragen.js`, Kasten, Notizen) | Oval aus dem Absender (neben den Gruppennamen, wirkte wie Co-Branding) in den Kopf rechts neben das Fazit über HOLY (dritte Spalte des Kopfrasters, 128 px, Rand der Datei ausgeglichen). Logo-Quelle mit ©: „(Logo ©, de.holy.com, Abruf 16.10.2026)“ direkt hinter dem Firmennamen. Konsolenhinweis bei fehlender Logodatei angepasst. |
+| Folie 09 (Kasten) | Regel für den geplanten Raptor-Screenshot (nur nach Zustimmung des Betreuers, Quellenmuster, Folgeschritte B7/`QUELLEN.md`); Inhalt von Bündel C unverändert. |
+| Backup B2 (Daten, Kicker, Titel, Notizen, Kasten) | Pille „teils Beispiel“ statt „Beispieldaten“ (wie B1 „teils geplant“); Titel „Jeder KI-Schritt ist dokumentiert – und wird geprüft“; Spalte „Prüfung“ trennt KI-Gegenprüfung (Unteragenten) von der Prüfung durch die Gruppe (KI 55/56: „KI-Gegenprüfung (3 Agenten), Kernbelege geöffnet“, KI 47: „Werte aus Report abgelesen; Gegenlesen offen“, KI 52: „KI-Gegenprüfung (3 Agenten); PDF-Zitate geprüft“). |
+| Backup B3 (`css/folien/13-backup.css`) | Block unter der Tabelle ragte 16–32 px in den Abstand zur Fußzeile (Keynote: Berührung): Körperzeilen 7 px statt 9 px Innenabstand, Abstand im unteren Block 4 px. Nachgemessen: Persona-Zeile endet in allen Themen bei y = 957 (Unterkante Inhalt), 24 px über der Fußzeile. |
+| Backup B7 (Liste, Notizen, Kasten) | „Nachprüfung 17.10.2026, KI-gestützt“ statt „Eigene Prüfung“; Dossier-Zeile nennt „extern (04, B3): Statista CI, Kantar TGI“ (volle Angaben in den Notizen); Häusel-Untertitel „Die Macht des Unbewussten …“ korrigiert, Auflage/ISBN mit hugendubel.de und ebook.de abgeglichen (6. Aufl., 26.08.2019, kartoniert 978-3-648-12719-3); DNB-Abruf als „vom bearbeitenden KI-Agenten“ gekennzeichnet. |
+| `QUELLEN.md` | §3: Grafiken in `../grafiken/` als Ausarbeitungs-/PowerPoint-Variante eingeordnet (nicht für die Projektion), Rechtevermerk-Fassungen (wörtlich/gekürzt), Schritte für das KI-Persona-Bild; §4: Platz des Logos auf Folie 12, Regel „keine Social-Media-Bilder von HOLY“ mit der einen Ausnahme (Raptor-Screenshot nach Zustimmung des Betreuers); §5: Kategoriedaten vollständig (Statista CI für Mediennutzung, Psychografie und Gewichte; Kantar Media TGI 2023 für die Kaufhäufigkeit; VuMA nur in Notizen B3), „Nachprüfung, KI-gestützt“, DNB/Händlerabgleich als KI-gestützt; Stand-Zeile. |
+| `LIESMICH.md` | Stand-Zeile; „Fertige Ausgaben“ mit Stand und Hinweis; Abschnitt 8 (Platz des Logos auf Folie 12); 11 (Exporte per Werkzeug); 12 (Checkliste: KI-Bild-Schritte, Freigabe 03/04/05 mit den Abweichungen, Sprechtexte 03–05 und 10/11, B2-Prüfung, Raptor-Regel, Logo/2×-Bildschirme, Grafiken, Exporte); 13 (`werkzeuge/uebersicht.mjs`, `export/`, `../grafiken/`). |
+| `AUTOREN.md` | Abschnitt 2: Sollzeiten der Tabelle auf den 14:00-Plan (840 s) und B8 aktualisiert (stand noch auf 885 s); dieser Abschnitt. |
+| `werkzeuge/uebersicht.mjs` (neu) | erzeugt `export/uebersicht.png` (Kontaktbogen, 2400 px breit, Gestaltung Editorial) aus den Folienbildern; Angaben aus `marke.js` und `index.html`. Nachbau der Übersicht von Account 2, deren Erzeugung nicht dokumentiert war (Aufbau wie bisher: Kopf, „Präsentation“ inkl. 01b, „Backup“, je 4 Kacheln, Fußnote). |
+| `export/` | am 19.10.2026 neu erzeugt (Wege unten): `praesentation.pdf` 22 Seiten (ohne 01b), `folien/<id>.png` 23 Bilder im Endzustand – jetzt 1920 × 1080 (bisher 1600 × 900), `uebersicht.png`. |
+| Gründerbefragung (19.10.2026; `../gruenderbefragung.md`, Workflow D14 und Nacharbeit nach zwei Prüfungen) | Antworten von Gründer Mathias Horsch, immer als Selbstauskunft „Horsch 2026 (GB)“. **Sichtbar nur im Backup:** B1 Spalte 03 (Punkt „Gründerbefragung“, Listenabstand 12 px), B3 „Wer sagt was über wen“ (Horsch 2023 [4], Jost 2024 [24], Horsch 2026 GB; 13 Zeilen, Innenabstand 4 px), B7 Eintrag „GB“ (Spalten 6/6, Legende „extern … , GB“, feste Leerzeichen gegen Umbrüche). **Hauptfolien 02–05 und 10:** nur Notizen und Kästen; der Zusatz unter dem Claim auf 03 („auch laut Gründer Mathias Horsch (Befragung 10/2026)“) wurde nach einem Prüferbefund entfernt und auf Wunsch von Yannick am 19.10.2026 wieder eingesetzt (Daten: claim.stand; Bestätigung, kein unabhängiger Beleg). f04: Blockquellen „Jost …“ statt „Gründer …“ (sichtbar). f05: Selbstbild nur „Spaß und Zusammengehörigkeit“ („Individualität“ erst nach Lukas’ Codierung). „95 %“ nur in den Notizen von 03 mit Zusatz. Folien 06–09b und 11: Inhalte und Daten unverändert, nur Kasten 11. `QUELLEN.md` §5 (Ausnahme GB). Danach `pruefen.mjs --schritte --optional` in Editorial, Bento, Keynote und dunkel: 0 Fehler (4 Warnungen Wortbudget wie vorher); Exporte neu erzeugt (PDF 22 Seiten, 23 Bilder 1920 × 1080, Übersicht Stand 19.10.2026). Offen: Freigabe durch Yannick, Punkte für Lukas (LIESMICH 12). |
+
+**Geprüft und bewusst nicht geändert:** Fußzeilen der Backup-Folien B2/B7 reichen etwas unter die Bedienleiste
+(nur bei Mausbewegung im unteren Rand sichtbar; Backup wird in der Fragerunde gezeigt) – wie bisher. Die Wortmarke
+auf 09b (389 px) reicht für 1080p; nur für Bildschirme mit doppelter Pixeldichte eine größere Datei einsetzen
+(LIESMICH 12). Die Grafiken in `../grafiken/` bleiben unverändert (Entscheidung der Gruppe, LIESMICH 12).
+
+### Exporte erzeugen (seit 19.10.2026)
+
+Im Ordner `praesentation/`, mit `PLAYWRIGHT_CORE` (und ggf. `CHROME_PFAD`) wie in Abschnitt 9:
+
+```bash
+# 1. PDF für Plan B – ohne die optionale Folie 01b, eine Seite je Folie (erwartet: 22)
+node werkzeuge/pruefen.mjs index.html --ausgabe _test/export-druck --ohne-bilder --druck export/praesentation.pdf
+#    bericht.json → "druck": { "seiten": 22, "erwartet": 22 }, "fehler": []
+
+# 2. Folienbilder im Endzustand (1920 × 1080, inkl. 01b) – pruefen.mjs ohne --schritte
+#    fotografiert jede Folie im letzten Schritt (Aufnahmemodus wie im Druck)
+node werkzeuge/pruefen.mjs index.html --ausgabe _test/export-folien --optional
+rm -f export/folien/*.png && cp _test/export-folien/*.png export/folien/
+
+# 3. Übersicht aus den Folienbildern (Stand = Datum in der Fußnote)
+node werkzeuge/uebersicht.mjs index.html --stand TT.MM.JJJJ
+```
+
+Danach `export/uebersicht.png` und einige Bilder in `export/folien/` ansehen. Testausgaben bleiben in `_test/`
+(nicht einchecken).

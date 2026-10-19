@@ -133,6 +133,11 @@
   border-radius: var(--radius-s);
 }
 #f09 .g5-follower.g5-beispielwert { outline-offset: 7px; }
+/* Grafikprüfung 17.10.2026: Die Rahmen der kleinen Kennzahlen lagen 5 px
+   außerhalb – links ragte der erste über den Satzspiegel (x 128). Jetzt
+   enger (2 px) und die Zahl 4 px eingerückt: Der Rahmen schließt bündig
+   mit der Spaltenkante ab. */
+#f09 .g5-wert-zahl.g5-beispielwert { outline-offset: 2px; margin-left: 4px; }
 #f09 .g5-wert-text {
   font-size: var(--groesse-meta);
   line-height: 1.25;
@@ -246,6 +251,11 @@
 }
 #f09 .hat-schluesselbild .g5-motiv-name,
 #f09 .hat-schluesselbild .g5-motiv-zahl { color: var(--f-akzent); }
+/* Grafikprüfung 17.10.2026: Mit 5 px Abstand stießen die gestrichelten
+   Rahmen der vier Motivzahlen aneinander (wirkte wie ein Gitter). Rahmen
+   direkt an der Zeilenbox, seitlich 4 px Luft – zwischen den Zeilen bleibt
+   ein sichtbarer Abstand. */
+#f09 .g5-motiv-zahl.g5-beispielwert { outline-offset: 0; padding: 0 4px; }
 
 /* Schlüsselbild (rechts): Hochformat, Beschriftung darunter */
 #f09 .g5-schluessel {
@@ -382,6 +392,17 @@
   height: 96px;
   width: auto;
   flex: none;
+}
+/* Dunkelmodus (Grafikprüfung 17.10.2026): Die Wortmarke ist ein schwarzes
+   Parallelogramm (#1D1D1B) mit weißer Schrift – auf dunklem Grund verschwand
+   die Form (Kontrast ca. 1,1 : 1). Deshalb eine helle Unterlage (heller
+   Textton des Themas), wie die helle Kopfzeile auf de.holy.com. Das Logo
+   selbst bleibt unverändert; die Gesamthöhe bleibt 96 px. */
+html[data-modus="dunkel"] #f09b .g5b-logo-bild {
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: var(--radius-s);
+  background: var(--f-text);
 }
 #f09b .g5b-logo-text {
   font-size: var(--groesse-meta);

@@ -282,6 +282,12 @@
   color: var(--f-text-2);
 }
 #f04 .g2p-werte { display: flex; flex-wrap: wrap; gap: 10px; }
+/* Überschrift und Chips in einer Reihe (Psychografie mit „zeilen“, seit 17.10.2026) */
+#f04 .g2p-werte-reihe { display: flex; flex-wrap: wrap; align-items: center; gap: 8px var(--abstand-3); }
+#f04.ist-sehr-dicht .g2p-werte-reihe .g2p-unterlabel { display: block; }
+/* Stichwort-Zeile in der Psychografie in Textgröße (fett) – wie Pain/Gain, damit der Block passt */
+#f04 .g2p-psycho .g2p-zeile--haupt { margin-top: 0; font-size: var(--groesse-text); }
+#f04 .g2p-werte-reihe + .g2p-pg { margin-top: 0; }
 #f04 .g2p-werte .chip { padding: 6px 14px; }
 #f04 .g2p-werte--klein { gap: 8px; }
 #f04 .g2p-pg {

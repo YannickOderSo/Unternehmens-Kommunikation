@@ -233,8 +233,13 @@ passt. Hier entstehen die Lücken, aus denen ihr Empfehlungen ableitet.
 ## 6. Markensteuerrad (Synthese)
 
 Je Feld 3–5 prägnante Stichworte. Hinter jedes Stichwort ein Kürzel der Quelle: **DR** Desk Research · **RG**
-Repertory Grid · **LA** Laddering · **AN** Analogien · **KA** Kommunikationsanalyse · **LM** Limbic Map.
+Repertory Grid · **LA** Laddering · **AN** Analogien · **KA** Kommunikationsanalyse · **LM** Limbic Map · **GB**
+Gründerbefragung (Selbstauskunft von Gründer Mathias Horsch, 10/2026; [`gruenderbefragung.md`](gruenderbefragung.md)).
 Prompt: **P13**
+
+**Regel für GB** (Vorschlag vom 19.10.2026, die Gruppe bestätigt): Die Gründerbefragung ist Innensicht (n = 1). Ein
+GB-Stichwort steht im Rad nur, wenn es ein Ergebnis aus DR, RG, LA, AN, KA oder LM stützt. Sonst steht es in der
+Konsistenzprüfung als Selbstbild gegen die Außensicht.
 
 | Feld | Leitfrage | Inhalt |
 |------|-----------|--------|

@@ -214,6 +214,22 @@
   color: var(--f-akzent);
 }
 #f05 .g2l-punkt--marke .g2l-punkt-text { color: var(--f-text); }
+/* Zusatz am Punkt, z. B. „(Mittelwert)“: eigene Zeile unter dem Namen, Metagröße,
+   normale Stärke, Sekundärfarbe. Das Etikett wird dadurch schmal und bleibt am
+   eigenen Punkt (seit 18.10.2026; vorher stand „HOLY (Mittelwert)“ einzeilig unter
+   Marcos Punkt). Zweizeilig: Ecken nach dem Radius-Token des Themas statt Pille. */
+#f05 .g2l-punkt-text--zusatz {
+  text-align: center;
+  border-radius: var(--radius-l);
+  padding: 4px 14px 6px;
+}
+#f05 .g2l-punkt-zusatz {
+  display: block;
+  font-size: var(--groesse-meta);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--f-text-2);
+}
 
 /* Ab Schritt 1 (Persona-Punkt sichtbar): Typ der Persona auf der Karte markieren.
    Im Druck sind alle Schritte an – dann ist die Markierung automatisch sichtbar. */
@@ -294,11 +310,13 @@
   gap: 3px;
   height: 38px;
 }
+/* Segmente maßstäblich: kein Innenabstand (er würde zu jedem Anteil gleich viel
+   Breite addieren, 17.10.2026 nachgemessen); den Abstand zum Text gibt ::before */
 #f05 .g2l-segment {
   display: flex;
   align-items: center;
   min-width: 0;
-  padding: 0 10px;
+  padding: 0;
   font-family: var(--schrift-text);
   font-size: var(--groesse-tabelle);      /* 24 px: Werte, keine reine Achsenangabe */
   font-weight: 650;
@@ -306,6 +324,7 @@
   white-space: nowrap;
   color: var(--f-text);
 }
+#f05 .g2l-segment::before { content: ""; flex: none; width: 10px; }
 #f05 .g2l-segment:first-child { border-radius: var(--radius-s) 0 0 var(--radius-s); }
 #f05 .g2l-segment:last-child { border-radius: 0 var(--radius-s) var(--radius-s) 0; }
 /* größte Lücke: in beiden Balken mit kräftigem Rahmen in Akzentfarbe markiert */

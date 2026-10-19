@@ -177,6 +177,10 @@ Wenn die Zeit knapp wird: 1, 2, 5 und 7 sind Pflicht, der Rest verbessert die Be
    | K7 | Tonalität | begeistert, sachlich, verärgert |
    | K8 | Limbic-Signal | Balance (Gesundheit, gutes Gewissen), Dominanz (Leistung, Durchhalten), Stimulanz (Neues, Sorten, Spaß) |
 
+   **Hinweis zu K3 (19.10.2026):** Vorschlag: K3 in „Geschmack (lecker)“ und „Sorten/Abwechslung“ trennen, weil
+   „Geschmack“ Genuss und Abwechslung mischt (K8 zählt „Sorten“ zur Stimulanz). Mit Lukas abstimmen und das Datum der
+   Änderung vermerken. Bis dahin gilt K3 wie oben.
+
 3. **Häufigkeiten zählen** (`ZÄHLENWENN` in Sheets). Das Ergebnis ist zum Beispiel „Anlass Arbeit/Schicht in x von 30
    Bewertungen“. Mit K8 hast du einen eigenen Beleg für die Limbic-Map-Einordnung (Folie 05).
 4. **1–2 Zitate wörtlich** und anonym übernehmen, mit Portal und Datum.

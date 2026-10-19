@@ -23,6 +23,13 @@
 #f03.ist-sehr-dicht {
   --g2k-luecke: var(--abstand-4);
 }
+/* Zweite Stufe auch in der Breite (seit 17.10.2026): „über 170 Mio. €“ ist in den
+   Themen Bento und Keynote (breitere Grotesk-Ziffern) breiter als seine Spalte.
+   Dann Präfix und Einheit kleiner (30 statt 34 px, nie unter 28 px) und engere
+   Abstände in der Zahlenzeile – die Zahl selbst bleibt 72 px. */
+#f03.ist-sehr-dicht .g2k-praefix,
+#f03.ist-sehr-dicht .g2k-einheit { font-size: var(--groesse-text); }
+#f03.ist-sehr-dicht .g2k-kennzahl-zeile { gap: 4px; }
 #f03 .g2k { gap: var(--g2k-luecke); }
 #f03 .g2k-zeitleiste { margin-top: var(--abstand-2); }
 

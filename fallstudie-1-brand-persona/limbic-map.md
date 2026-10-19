@@ -1,7 +1,7 @@
 # Limbic Map: Persona „Marco, 28“ und Auftritt von HOLY (A3)
 
-**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand 17.10.2026 (nach Nachprüfung überarbeitet) ·
-**Entwurf, Prüfung durch Yannick offen**
+**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Mo, 19.10.2026 (Abgleich mit der
+Gründerbefragung) · **Entwurf, Prüfung durch Yannick offen**
 
 > **So ist die Ausarbeitung zu lesen**
 > - **D** = Daten mit Quelle · **M** = Modellangabe mit Quelle (Häusel / Gruppe Nymphenburg) · **A** = Annahme oder
@@ -12,6 +12,12 @@
 >   die drei Systeme; Prozente gibt es dort nur für die Verteilung der Typen in der Bevölkerung (b4p 2016).
 > - Die Persona-Zahlen beschreiben **Energy-Drink-Konsument:innen in Deutschland**, nicht die Kundschaft von HOLY
 >   (wie im Steckbrief). HOLY-spezifisch sind nur Gründeraussagen und Kundenstimmen.
+> - **GB** = Gründerbefragung: Gründer Mathias Horsch hat den Fragenkatalog der Gruppe per Sprachnachricht beantwortet
+>   (Zitierweise „Horsch 2026 (GB)“, Auswertung in `gruenderbefragung.md`). Das ist eine Selbstauskunft (Innensicht,
+>   n = 1), keine Aussage über die Kundschaft. Viele Antworten wiederholen Website [1] und Press Kit [13]. Was er nicht
+>   nennt, heißt nur „nicht genannt“: Danach wurde oft nicht gefragt.
+> - **Jost [24]** = Mitgründer Frederick Jost im Podcast „Digitale Vorreiter:innen“ #281 (08/2024). Aussagen mit [24]
+>   stammen von ihm, nicht von Mathias Horsch; Horsch [4] = Interview 10/2023.
 > - **Lage im Modell:** Felder und Mischbereiche nach [105] S. 3; Lage der sieben Typen nach der Typen-Grafik auf
 >   nymphenburg.de/limbic-r-types.html („Quelle: b4p 2016“). [105] S. 3 zeigt keine Typen.
 > - **Herkunft:** erstellt mit Claude Code (KI-Nachweis 52, Delegation D10: je eine Analyse zu Modell, Persona und
@@ -19,7 +25,8 @@
 >   Einarbeitung der Befunde). Websuche in D10, Abruf 17.10.2026: das PDF [105], Seiten und Grafiken von
 >   nymphenburg.de (Limbic® Map, Limbic® Types) und der Wortlaut der Investorenseite [14]. Alles Übrige stammt aus
 >   `persona-steckbrief.md`, `persona-daten.md`, `persona-datenerhebung.md`, `methoden.md` und dem Recherche-Dossier
->   (`recherche/holy-recherche.md`).
+>   (`recherche/holy-recherche.md`). Abgleich mit der Gründerbefragung am 19.10.2026 mit Claude Code (KI-Nachweis 67,
+>   Workflow D14): ohne Websuche, Grundlage `gruenderbefragung.md` Abschnitt 4.2 (P8–P12).
 > - **Kein Vorlesungsmaterial vorhanden:** Modellbegriffe nach Häusel / Gruppe Nymphenburg. Bitte mit den
 >   Vorlesungsfolien abgleichen (Map-Version, Namen der Felder, Lage der Typen).
 
@@ -152,8 +159,8 @@ oder mit zwei Systemen zählen je zur Hälfte für beide.
 
 | Merkmal | System | Stärke | Punkte B / D / S | Status / Beleg |
 |---|---|---|:--:|---|
-| Alter 28; HOLY-Kundschaft meist 25–40 | Stimulanz und Dominanz (nehmen laut Modell mit dem Alter ab) | leicht (Aussage über Gruppen) | 0 / 0,5 / 0,5 | **D:** Gründer [24, 00:30:22]; 73 % Gen Z/Millennials (Ø 55 %). **M:** [105] S. 4: „Neugier und Risikobereitschaft sinken deutlich, Status- und Durchsetzungsstreben nehmen ab“ |
-| männlich (54 % bzw. 67,5 %; bei HOLY etwa 2/3) | Dominanz und Abenteuer (Dominanz × Stimulanz) | leicht (Aussage über Gruppen, nicht über Marco) | 0 / 0,5 / 0,5 | **D:** Statista CI 2025; VuMA 2021; Gründer [24, 00:30:26]. **M:** Testosteron „verstärkt die Dominanz- und Abenteuer-Emotionsbereiche“ [105] S. 4 |
+| Alter 28; HOLY-Kundschaft meist 25–40 | Stimulanz und Dominanz (nehmen laut Modell mit dem Alter ab) | leicht (Aussage über Gruppen) | 0 / 0,5 / 0,5 | **D:** Jost [24, 00:30:22]; 73 % Gen Z/Millennials (Ø 55 %). **M:** [105] S. 4: „Neugier und Risikobereitschaft sinken deutlich, Status- und Durchsetzungsstreben nehmen ab“ |
+| männlich (54 % bzw. 67,5 %; bei HOLY etwa 2/3) | Dominanz und Abenteuer (Dominanz × Stimulanz) | leicht (Aussage über Gruppen, nicht über Marco) | 0 / 0,5 / 0,5 | **D:** Statista CI 2025; VuMA 2021; Jost [24, 00:30:26]. **M:** Testosteron „verstärkt die Dominanz- und Abenteuer-Emotionsbereiche“ [105] S. 4 |
 | Hobby Videospiele 41 % (Ø 29 %) | Stimulanz (Submodul Spiel; Unterhaltung), im Wettkampf auch Dominanz | stark in der Kategorie; für HOLY nur leicht, weil Gaming kein Trinkanlass ist [24] | 0 / 0 / 1 | **D. M:** „Spiel“ liegt in der Gehirngrafik [105] S. 3 im Stimulanz-Feld und auf der Map 2022 neben Spaß, Humor und Neugier. Gaming ist Mainstream: Ø 38,3 Jahre, 46 % Frauen (Dossier 4.2 ✔ [101]) |
 | Hobby Technik 34 % (Ø 27 %) | Stimulanz (Neugier) | leicht | 0 / 0 / 1 | **D;** Zuordnung **A** |
 | 15 % Innovatoren/Early Adopters (Ø 10 %) | Stimulanz (Neugier) | leicht; 85 % sind keine frühen Übernehmer | 0 / 0 / 1 | **D;** Zuordnung **A** |
@@ -195,7 +202,7 @@ klären.
 | **Hedonisten** (Neugier · Abwechslung · Spaß · Kreativität; Text: „Spaß, Abwechslung und Unterhaltung“, „wahre ‚Trendsetter‘“, „sehr konsumaffin“) | Neugier (Technik +7, Early Adopters +5 Pp.); Unterhaltung (Videospiele +12, Freunde treffen +5 Pp.); **D**, Kategoriedaten | Spaß (+2 Pp., neutral); Kreativität; Abwechslung (nur Sortenlob, s. 3.1); konsumaffin | „Trendsetter“: 85 % sind keine frühen Übernehmer; „Produktqualität oder -herkunft“ spielt „kaum eine Rolle“: Marcos Kriterien Geschmack und kein Zucker (**A** aus Kundenstimmen) |
 | **Offene** (Wohlfühlen · Genuss · Offenheit · Fantasie; Text: „moderner, teils nachhaltiger Lebensstil“, „Genuss ist ihnen … wichtiger als Status“) | Genuss (Geschmack = häufigstes Lob); gutes Gewissen (zuckerfrei); **D (HOLY)**, nur Einzelstimmen | Offenheit; Fantasie; nachhaltiger Lebensstil nur als Investor-Aussage über eine Generation [14] | nichts direkt |
 | **Abenteurer** (Risikofreude · Autonomie · Impulsivität · Rebellion) | nur Gruppenaussagen des Modells zu Alter und Geschlecht ([105] S. 4) | alle vier Kernstichworte: keine Daten über die Zielgruppe | nichts direkt |
-| **Disziplinierte** (Genügsamkeit · Vernunft · Disziplin · Präzision; Text: „pflichtbewusste und (selbst-)kontrollierte Menschen“) | Durchhalten in der Schicht als Pflicht (Anlass laut Gründer [24]; Beruf **A**) | Genügsamkeit, Präzision, „Bedarfskäufer“ | Neugier-Signale (Early Adopters +5 Pp.) sprechen leicht gegen „sehr selten spontan“ |
+| **Disziplinierte** (Genügsamkeit · Vernunft · Disziplin · Präzision; Text: „pflichtbewusste und (selbst-)kontrollierte Menschen“) | Durchhalten in der Schicht als Pflicht (Anlass laut Jost [24]; Beruf **A**) | Genügsamkeit, Präzision, „Bedarfskäufer“ | Neugier-Signale (Early Adopters +5 Pp.) sprechen leicht gegen „sehr selten spontan“ |
 | **Performer** (Ehrgeiz · Erfolg · Zielstrebigkeit · Status) | Erfolg („erfolgreich sein“ +5 Pp.) | Ehrgeiz, Zielstrebigkeit (Ziel „Schichtleiter“ ist **A**) | Status: Einkommen und Sparen im Ø, keine Status-Signale |
 
 - **Limbic Type (Hypothese): Hedonisten, knapp vor Offene.** Für die Hedonisten sprechen zwei Kernmotive mit
@@ -209,8 +216,8 @@ klären.
   (Dominanz, Feld Disziplin und Kontrolle). Durchhalten ist kein Hedonisten-Stichwort, aber für den Fit entscheidend. Auf
   der Web-Folie stehen unter dem Typ nur die zwei Hedonisten-Motive; das dritte zeigen Lücke, Folgen und Sprechtext.
 - **Relevante Mischbereiche** (neben dem Stimulanz-Kern Spaß und Kreativität): **Fantasie/Genuss** (Geschmack ohne
-  Zucker, gutes Gewissen; Kundenstimmen) und **Disziplin/Kontrolle** (Durchhalten in der Schicht; Gründeraussage zum
-  Anlass, Beruf als Annahme). Beide sind HOLY-spezifisch, beide nur schwach belegt. **Abenteuer/Thrill** nur sehr
+  Zucker, gutes Gewissen; Kundenstimmen) und **Disziplin/Kontrolle** (Durchhalten in der Schicht; Anlass laut Jost
+  [24], Beruf als Annahme). Beide sind HOLY-spezifisch, beide nur schwach belegt. **Abenteuer/Thrill** nur sehr
   schwach (Alter und Geschlecht laut Modell, Gaming).
 - **Entscheidungsregel für die Auswertung der Bewertungen** (20–30 Stück, Codebuch K1, K3, K8; vorher im Team
   festlegen, **A**):
@@ -224,6 +231,12 @@ klären.
   - **Gewichte** nur innerhalb der Spannen anpassen. Rückt der Punkt dabei rechnerisch in den Abenteurer-Sektor (D 35 /
     B 25), zeigt das die Grenze der Punkt-Heuristik, keinen Typwechsel: Durchhalten gehört zu Disziplin und Kontrolle,
     nicht zu Abenteuer und Risiko.
+  - **Messung K3** (Vorschlag, mit Lukas abstimmen): Der Code „Geschmack/Sorten“ fasst Genuss (→ Offene) und
+    Abwechslung (→ Hedonisten) zusammen; K8 zählt „Sorten“ schon zur Stimulanz. Damit die Regel trennt, K3 in
+    „Geschmack (lecker)“ und „Sorten/Abwechslung“ aufteilen. Ist K3 schon codiert, neu codieren und das Datum vermerken.
+- **Gründerbefragung (19.10.2026):** Der Typ bleibt **Hedonisten (Hypothese)**. Die Aussagen von Gründer Mathias
+  Horsch entscheiden ihn nicht: Sie sind eine Selbstauskunft über die Kundschaft (Horsch 2026, GB, n = 1), keine
+  Kundenaussage. Den Typ entscheidet die Regel oben (Code K3 nach Abstimmung mit Lukas).
 
 ### 3.3 Vergleich mit dem Startwert aus Dossier 4.4
 
@@ -251,12 +264,12 @@ geprüft.
 | 31 Energy-Sorten, „60+ Geschmacksrichtungen“ über alle Linien, Limited Drops, Adventskalender | Stimulanz · Spaß und Kreativität (Neugier, Abwechslung) | hoch: Shop | 3.1 ✔ [1, 30, 54], ✔ [13]; 7.1 ✔ [5, 21, 71] |
 | Du-Ton: in 167 Produkttexten 36-mal „geil“, rund 38-mal „gönn“, keine Sie-Form; „Gefährlich geil!“ | Stimulanz (Spaß, Leichtigkeit); „gönn dir“ auch Fantasie/Genuss | hoch: Produkttexte | 6.2 ✔ [30], ✔ [1, 30] |
 | TV-Spot „Mach's dir wie nie zuvor“ (seit 01/2026) mit sexuellen Doppeldeutigkeiten; Musikvideo „Candy Shop“ mit Money Boy | Abenteuer und Risiko (Stimulanz × Dominanz); in [105] S. 3 liegt dort das Band „Sexualität männlich“ | hoch: national in TV, Streaming und DOOH (YouTube nur ≈ 21.000 Aufrufe) | 6.6 ✔ [25], ✔ [16, 129]; Lage: [105] S. 3 (Grafik) |
-| „Die Softdrink Revolution“; „Doch die Industrie macht seit Jahrzehnten keine Anstalten …“; Wert „Challenge the status quo“; „Challenger-Brands“ | Abenteuer und Risiko (Rebellion) mit Dominanz-Anteil | hoch: Dachclaim | 6.5 ✔ [1, 8]; 6.2 ✔ [5]; 2.7 ✔ [17]; 2.6 ✔ [13] |
+| „Die Softdrink Revolution“; „Doch die Industrie macht seit Jahrzehnten keine Anstalten …“; „Challenger-Brands“ (Firmenwert „Challenge the status quo“ 2.7 ✔ [17] zählt seit 19.10. nicht mehr, s. u.) | Abenteuer und Risiko (Rebellion) mit Dominanz-Anteil | hoch: Dachclaim | 6.5 ✔ [1, 8]; 6.2 ✔ [5]; 2.6 ✔ [13] |
 | Maskottchen Adler „Raptor“, Treue-Level „Raptor Egg“ bis „OG Raptor“ | Dominanz · Erfolg und Status (Aufstieg), durch den Comic-Stil abgeschwächt | mittel: Maskottchen, Treueprogramm | 6.3 ✔ [54, 71]; Ton eher „Waschbär oder Affe“ (6.7 **H**) |
 | 160 mg Koffein pro Portion; „~4h mit NewCaff“ statt „kurzer Spike“ in der „Us vs. Them“-Grafik; 2022 „Mana Buff“ | Dominanz · Leistung, als Produktangabe ohne Nutzungssituation | mittel bis hoch: Vergleichsgrafik auf jeder Produktseite | 3.1 ✔ [56]; 3.6 ✔ [73, 91] ([73] ist ein Bild vom 04.06.2026); 2.8 ✔ [22, 23] |
 | Dopamin-Versprechen 2025 entfernt; Sets „ohne Energy“ seit 04/2026 | Leistung tritt eher zurück (**A**). Grund für die Entfernung: unzulässige Gesundheitsversprechen, also ein rechtlicher Grund, kein belegter Positionswechsel | – | 3.4 ✔ [81]; 3.1 ✔ [63] |
 | Vision „das Coca-Cola des 21. Jahrhunderts“, „dauerhaft unter den Top 3“ | Dominanz · Erfolg und Status | niedrig: vor allem Investor-, Karriere- und Pressekanäle | 2.7 ✔ [14, 17, 46]; 2.6 ✔ [51] |
-| „Geiler Geschmack mit gutem Gewissen“, „Zero Zucker oder Bullsh*t“, 2023 „healthier soft drink“ | Balance (Sicherheit, kein schlechtes Gewissen) und Fantasie/Genuss; Glaubwürdigkeit unter Druck (S1) | hoch: Markenversprechen, Navigation, 17 Produkttexte | 2.7 ✔ [1], ✔ [5], ✔ [15]; 6.5 ✔ [5, 20]; 8 S1 ✔ [56, 81, 83, 84] |
+| „Geiler Geschmack mit gutem Gewissen“, „Zero Zucker oder Bullsh*t“, 2023 „healthier soft drink“ | Balance (Sicherheit, kein schlechtes Gewissen) und Fantasie/Genuss; Glaubwürdigkeit unter Druck (S1) | hoch: Markenversprechen, Navigation, 17 Produkttexte. Hoch präsent ist das gute Gewissen (Balance); das Feld Genuss bleibt schwach (s. u., 4.2) | 2.7 ✔ [1], ✔ [5], ✔ [15]; 6.5 ✔ [5, 20]; 8 S1 ✔ [56, 81, 83, 84] |
 | HOLY Squad: Discord ≈ 72.000, Facebook-Gruppe ≈ 40.000 (Selbstangabe), Tattoos „500+“, Wert „Put the HOLY Squad first“ | Balance · Harmonie und Fürsorge (Modul Bindung). **M:** Harmoniser: „Die Sozial-Submodule Fürsorge und Bindung sind bei diesem Type verhaltens-bestimmend“ [105] S. 5 | mittel: Community-Kanäle, Community-Bilder | 6.1 ✎ [21, 125], ✔ [5, 122]; 6.4 ✔ [1, 5, 73]; 2.7 ✔ [17] |
 | Kult-Ironie: „HOLYfiziert“, „BURRsday“, Beichtstuhl auf Wacken | Stimulanz (Humor) und Balance (Bindung über Insider-Sprache) | mittel | 6.2 ✔ [5, 31, 71] |
 | Kurzvideos als dritte Bildwelt (Ich-Vlogs und Challenges mit Mitarbeitenden, Gewinnspiele, „Leaks“, Popkultur wie Simpsons, GTA VI); Events, Creator; Hauptsponsor „7 vs. Wild“, „HOLY in Space“ | Stimulanz; Abenteuer und Risiko. Auf Nutzungsanlässe noch nicht geprüft (Stichprobe C1) | mittel | 6.4 ✔ [39, 124]; 6.6 ✔ [5, 31, 136], ✎ [34, 35] |
@@ -264,6 +277,17 @@ geprüft.
 | Arbeit und Nacht als Anlass in Texten: Hydration-Launch 2023 „Perfekt für Sport, harte Arbeit oder durchzechte Nächte!“; Videotitel „Damit bleibst du die ganze Nacht wach“ | Dominanz (Durchhalten), schwach: vereinzelt, teils doppeldeutig, kein Bildmotiv | niedrig | 3.4 ✔ [33]; 6.2 ✔ [25, 129] |
 | Sport-Rahmung, Hydration, Vereinseditionen 2026 | gemischt (Leistung, Disziplin, Gesundheit), schwach: Sport ist kein eigenes Bildmotiv | niedrig | 2.7 ✔ [13]; 6.6 ✔ [30]; 6.4 |
 | 2026: „unabhängig von Alter, Lebensstil oder Anlass“, „Änder nix – nur dein Drink“, „Routinen im Alltag sowie rund um Sport und Training“ | Balance und Fantasie/Genuss, als **Richtung** der Positionierung, noch nicht als Bildwelt | mittel: Kampagne Handel, Presse | 2.8 ✔ [25], ✔ [13]; 6.5 ✔ [18] |
+
+**Nachtrag 19.10.2026 (Gründerbefragung, `gruenderbefragung.md` 4.2):**
+- **„Challenge the status quo“ zählt nicht mehr als Beleg für Rebellion.** Der Wert steht auf der Karriereseite [17]
+  und ist ein interner Firmenwert, kein Signal im Auftritt. Gründer Mathias Horsch erklärt ihn als Auftrag, Innovationen
+  voranzutreiben (Horsch 2026, GB). Das Feld Abenteuer und Risiko bleibt, weil TV-Spot und Dachclaim es tragen.
+  Präsenz und Gewichte ändern sich nicht.
+- **Provokation** ist im Auftritt belegt (TV-Spot mit Doppeldeutigkeiten, 6.6 ✔ [25]). Im Selbstbild des Gründers
+  kommt sie nicht vor; danach war aber nicht gefragt (GB). Das ist keine Lücke zwischen Selbst- und Fremdbild, sondern
+  eine Hypothese für den Abgleich von Soll und Umsetzung (Tonalität, Bündel B und C).
+- **Markenversprechen:** Das gute Gewissen (Balance) ist im Auftritt hoch präsent. Schwach ist nur das Feld
+  Offenheit und Genuss (4.2). Das ist kein zweiter Abstand zwischen Identität und Bild für Folie 10/11.
 
 ### 4.2 Gewichte und Emotionsfelder
 
@@ -289,8 +313,12 @@ Mittelwert beschriftet, und die Felder der Marke sind mit ihren Feldnamen hinter
    Challenger-Gestus.
 3. **Harmonie und Fürsorge** mit Modul Bindung (Balance): HOLY Squad, Tattoos, Discord, Kult-Ironie.
 
-Daneben: **Disziplin und Kontrolle** über die Vergleichsgrafik (Zucker, Preis, Wirkdauer). Im Kommen: **Offenheit und
-Genuss** (Fantasie/Genuss) über „gutes Gewissen“, „Änder nix“ und „Routinen im Alltag“.
+Daneben: **Disziplin und Kontrolle** über die Vergleichsgrafik (Zucker, Preis, Wirkdauer).
+
+**Markenversprechen und Genuss (geklärt 19.10.2026):** Das Markenversprechen hat in 4.1 die Präsenz „hoch“. Hoch
+präsent ist das gute Gewissen (Balance): Es trägt neben dem Squad das Balance-Gewicht. Schwach ist nur das Feld
+**Offenheit und Genuss** (Fantasie/Genuss). Es ist erst im Kommen, vor allem über die Richtung 2026 („Änder nix“,
+„Routinen im Alltag“).
 
 ### 4.3 Entwicklung 2021 → 2026
 
@@ -313,6 +341,29 @@ Einordnung des Dossiers (**H**).
 | Felder | „Spaß/Genuss“ als ein Feld | getrennt | Spaß und Kreativität (Stimulanz-Kern) und Offenheit und Genuss (Balance × Stimulanz) sind laut [105] S. 3 zwei Felder. |
 
 Der Startwert liegt in den neuen Spannen und bleibt vertretbar. Die Mitte verschiebt sich um 5 Punkte.
+
+### 4.5 Abgleich: Selbstbild laut Gründerbefragung (GB)
+
+Gründer Mathias Horsch beschreibt den emotionalen Nutzen und die Werte von HOLY so (Horsch 2026, GB; Paraphrase nach
+`gruenderbefragung.md` Abschnitt 3). Das ist die Innensicht, nicht das Erleben der Kundschaft. Die Zuordnung zu Systemen
+und Feldern folgt unserer Lesung der Map (§2, **A**); bitte mit der Vorlesung abgleichen.
+
+| Selbstbild laut Gründer (GB) | Frage | System · Feld (unsere Map-Lesung, **A**) | Verhältnis zum Auftritt (4.1, 4.2) |
+|---|:--:|---|---|
+| Individualität: Sorte, Intensität und Menge selbst bestimmen | 8, 11 | Stimulanz (Individualismus) · Spaß und Kreativität | stützt den Stimulanz-Kern (Sortenvielfalt) |
+| Spaß im Alltag; Innovation, Kreativität und Spaß im Marketing | 13, 14 | Stimulanz · Spaß und Kreativität | stützt Feld 1 |
+| Zusammengehörigkeit in der Community, dem HOLY Squad | 8, 11, 14 | Balance (Modul Bindung) · Harmonie und Fürsorge | stützt Feld 3 |
+| Geschmack und gutes Gewissen verbinden, statt zwischen beiden zu wählen | 1, 9, 10 | Balance (gutes Gewissen) und Fantasie/Genuss | gleiche Formel wie das Markenversprechen [1, 5, 13], kein eigener Beleg |
+| nicht genannt: Provokation, Rebellion (danach nicht gefragt); Wirkung nicht ausdrücklich, nur „funktionale Inhaltsstoffe je nach Use Case“ (nach Koffein oder Wachbleiben nicht eigens gefragt) | – | Abenteuer und Risiko; Dominanz | kein Widerspruch; s. Nachtrag 4.1 und §5 |
+
+- **Stützt den Stimulanz-Kern** und das Feld Harmonie und Fürsorge, aber nur als Selbstbild. Ob die Kundschaft HOLY so
+  erlebt, zeigen erst die Bewertungen und Lukas' Interviews.
+- **Gewichte bleiben** bei B 30 / D 20 / S 50: Sie beschreiben den Auftritt, nicht das Selbstbild.
+- **Schwach gewichten:** Die Formel „Geschmack mit gutem Gewissen“ steht so auf der Website [1], der Squad prägt schon
+  den Auftritt (4.1). Neu ist vor allem, dass der Gründer Individualität und Zusammengehörigkeit als emotionalen Nutzen
+  nennt.
+- **„Individualität“ erst nach Lukas:** Lukas erhält sie erst nach seiner datierten Codeliste (`gruenderbefragung.md`
+  K7). Folienentwurf 5 und die Notizen von f05 nennen deshalb nur Spaß und Zusammengehörigkeit.
 
 ---
 
@@ -348,14 +399,18 @@ etwa 281° weiter außen (s. 4.2).
   als Anlässe „Routinen im Alltag sowie rund um Sport und Training“ (2.7 ✔ [13]), die Schicht nicht. Die Kurzvideos
   (6.4 ✔ [39, 124]) hat noch niemand auf Anlässe geprüft; die Stichprobe von Bündel C steht aus.
 - **Marcos Motiv ist eine Hypothese (A):** Wach und ohne Zucker durch die Schicht zu kommen, stützt sich auf die
-  Gründeraussage zum Anlass („in der Regel gar nicht beim Gaming“, sondern z. B. im Schichtdienst [24]); Marcos Beruf ist
-  eine Annahme. Wie häufig der Anlass ist, zeigt erst die Auswertung „Anlass Arbeit/Schicht in x von 30 Bewertungen“
-  (K1).
+  Aussage von Mitgründer Jost zum Anlass („in der Regel gar nicht beim Gaming“, sondern z. B. im Schichtdienst
+  [24]); Marcos Beruf ist eine Annahme. Wie häufig der Anlass ist, zeigt erst die Auswertung „Anlass Arbeit/Schicht in
+  x von 30 Bewertungen“ (K1).
 - **Gleiches System, anderes Feld:** HOLYs Dominanz ist vor allem Rebellion und Provokation (Abenteuer und Risiko);
   Leistung kommt nur als Produktangabe vor, ohne Nutzungssituation. Marcos Dominanz liegt bei Disziplin und Kontrolle
   (Durchhalten), daneben etwas Erfolg. Ob Marco die Provokation mag, ist nicht belegt.
 - **Trend (A):** Die Positionierung 2026 („unabhängig von Alter, Lebensstil oder Anlass“ [25]) zielt auf keinen
   bestimmten Anlass. Die Lücke wird eher größer.
+- **Selbstbild (GB):** Gründer Mathias Horsch nennt Wirkung, Wachbleiben oder Koffein in unserer Befragung nicht
+  ausdrücklich, nur „funktionale Inhaltsstoffe je nach Use Case“ (Horsch 2026, GB); nach Koffein oder Wachbleiben war
+  nicht eigens gefragt. Das passt zu Dominanz 20 und zu „Leistung nur als Produktangabe“, beweist die Lücke aber
+  nicht. Dass die Positionierung die Lücke verursacht, ist nur eine Vermutung (Selbstauskunft, n = 1).
 - **Grenze:** Die Spannen überlappen. Eine Lücke von 10 Punkten ist eine Tendenz, keine Messung. Das Urteil stützt sich
   deshalb auf die qualitativen Belege, nicht auf die Zahl allein.
 
@@ -365,8 +420,15 @@ etwa 281° weiter außen (s. 4.2).
 
 Alle drei sind Hypothesen für Bündel C (Folie 9–11). Sie setzen am fehlenden Anlass an und behalten, was passt.
 
+**Abgleich mit der Gründerbefragung (19.10.2026):** Die Konsequenzen bleiben. In unserer Befragung zählt Gründer
+Mathias Horsch Schichtberufe zur Zielgruppe, nennt die Schicht aber nicht als Trinkanlass und Wirkung nicht
+ausdrücklich (nach Anlass und Koffein war nicht eigens gefragt; Horsch 2026, GB). Konsequenz 1 und 3 stützen sich
+deshalb weiter auf die öffentlichen Quellen (Anlass laut Mitgründer Frederick Jost [24]; Schichtberufe [7, 14]) und
+gehen über das Selbstbild hinaus. Konsequenz 2 betrifft Soll und Umsetzung, keine Lücke zwischen Selbst- und Fremdbild
+(Nachtrag 4.1).
+
 **1. Bildwelt – „Echte Schichtmomente, Raptor bleibt Absender“** (Web-Folie: „Echte Schichtmomente“)
-Laut Gründer wird HOLY „in der Regel gar nicht beim Gaming“ getrunken, sondern z. B. im Schichtdienst [24]. Presse und
+Laut Mitgründer Jost wird HOLY „in der Regel gar nicht beim Gaming“ getrunken, sondern z. B. im Schichtdienst [24]. Presse und
 Investor nennen viele Schichtberufe (Pflege, Polizei, Feuerwehr, Lkw; Dossier 4.1 ✔ [7], ✔ [14]; Horsch ✎ [4]). In den
 belegten Bildmotiven kommt dieser Anlass nicht vor (6.4). Vorschlag: Squad-Mitglieder aus Schichtberufen in echten
 Momenten zeigen (Pause um 3 Uhr, Spind, Shaker im Pausenraum), den Raptor als Absender behalten. Gemeint ist
@@ -386,7 +448,7 @@ seine echten Interviews zeigen, wie die Provokation ankommt.
 
 **3. Botschaften – „Durchhalten ohne Zucker, Koffein offen nennen“** (Web-Folie: „Durchhalten ohne Zucker“)
 Die Botschaft verbindet Marcos zwei HOLY-spezifisch gestützten Motive: Durchhalten in der Schicht (Dominanz; Anlass laut
-Gründer [24]) und Zucker vermeiden (Balance; Einzelstimmen [88, 89]). Zusammen liegen sie im Mischbereich
+Jost [24]) und Zucker vermeiden (Balance; Einzelstimmen [88, 89]). Zusammen liegen sie im Mischbereich
 Disziplin/Kontrolle: Auf der Map 2022 stehen Pflicht und Disziplin dort, Fleiß, Hartnäckigkeit und Leistung auf der
 Dominanz-Seite, Gesundheit zwischen Balance und Disziplin/Kontrolle (**M**, eigene Lesung). Die Wirkangabe gibt es schon
 (~4 h, Vergleichsgrafik 3.6 ✔ [73, 91]); die Botschaft verbindet sie mit dem Anlass und verspricht nichts Neues. „Offen“
@@ -458,6 +520,14 @@ der Koffeinvergiftung eines Kindes (3.4 ✔ [28, 29]). Das ist eine Einschätzun
   ist ein Mischbereich, Spaß und Genuss sind getrennte Felder
 - [ ] Botschaft 3 mit zugelassenen Angaben abgleichen (Dossier 3.7, S1)
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00
+- [ ] Yannick: Abgleich mit der Gründerbefragung freigeben (19.10.: 3.2 Typ, Nachtrag 4.1, 4.2 Markenversprechen, 4.5,
+  §5 Selbstbild, §6 Abgleich)
+- [ ] Mit Lukas: Codebuch K3 in „Geschmack (lecker)“ und „Sorten/Abwechslung“ trennen, vor der Auswertung der
+  Bewertungen; ist K3 schon codiert, neu codieren und Datum vermerken (3.2)
+- [ ] Yannick: Squad-Zeile in 4.1 prüfen. Sie nennt auch den Firmenwert „Put the HOLY Squad first“ [17]; nach der
+  Regel aus dem Nachtrag 4.1 ist das ein interner Wert. Die Präsenz „mittel“ tragen ohnehin die Community-Kanäle
+- [x] (19.10., D14) Folienentwurf 5 und Notizen f05: Rückfrage 5 um den Halbsatz aus `gruenderbefragung.md` 4.2
+  (P10) ergänzt, Stand-Vermerk in f05 nachgezogen; beim Zusammenführen den Branch von Account 2 beachten
 
 ---
 
@@ -471,6 +541,11 @@ der Koffeinvergiftung eines Kindes (3.4 ✔ [28, 29]). Das ist eine Einschätzun
 - Gruppe Nymphenburg: Limbic® Types. <https://nymphenburg.de/limbic-r-types.html> (Text; Typen-Grafik
   „Limbic-types-neu-84ad417d.jpg“ mit Lage und Verteilung der Typen, „Quelle: b4p 2016“; Winkel = eigene Pixelmessung)
 - Häusel, H.-G.: *Think Limbic!* bzw. *Brain View*. Freiburg: Haufe (Literatur laut `methoden.md`, nicht eingesehen).
+
+**Gründerbefragung** (ohne Nummer, Kürzel GB)
+- Horsch, M. (2026): Antworten auf den Fragenkatalog der Gruppe, zwei Sprachnachrichten an L. Welker, LinkedIn,
+  18.10.2026. Selbstauskunft, Innensicht, n = 1; Auswertung in `gruenderbefragung.md`. Transkript und Audio nur im
+  Gruppenordner.
 
 **Persona-Daten** (Details und Stichproben: `persona-steckbrief.md`, Quellen)
 - Statista Consumer Insights 2025 (n = 1.583, 18–64 J., online) · VuMA 2022 (Daten 2021, ab 14 J.).

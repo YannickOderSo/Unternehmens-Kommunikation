@@ -76,13 +76,28 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 54 | 17.10.2026 | Yannick | Frage: nächste eigene Aufgaben (ohne die anderen Bündel) | – | Antwort im Chat: Aufgabenliste A1–A5, C2 |
 | 55 | 17.10.2026 | Yannick | „weiter“: Freigabe des Pakets A1 (Markenkompetenz, Folie 03) | D11 | `markenkompetenz.md`, Folienentwurf Folie 3, Grafik SVG + PNG |
 | 56 | 17.10.2026 | Yannick | Hinweis: Nutzungslimit erreicht und zurückgesetzt, bitte weitermachen | D11 | Workflow D11 neu gestartet und abgeschlossen (siehe 55) |
-| 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | in Arbeit: Branch zusammengeführt, Workflow D12 läuft |
+| 57 | 17.10.2026 | Yannick | Präsentation von Account 2 übernehmen, Grafiken prüfen, HOLY-Logos einfügen, Platzhalter ausfüllen | D12 | Folien 03, 05, 10 mit A1/A3 gefüllt, Logo auch auf 12, 27 Prüfbefunde eingearbeitet, Exporte neu (Abschluss 19.10.) |
 | 58 | 17.10.2026 | Yannick | Account 2 arbeitet weiter; neue Aufgabe vorbereiten, sobald dessen Kontingent aufgefüllt ist | Ü03 | Übergabe Ü03: Fallstudie 2 vorbereiten |
 | 59 | 18.10.2026 | Yannick | Upload: 2 Sprachnachrichten des Gründers (LinkedIn) + Fragenkatalog (14 Fragen) | D12 (fortgesetzt) | Audio nicht geöffnet: Rückfrage zur Einwilligung; D12 nach Nutzungslimit fortgesetzt |
 | 60 | 18.10.2026 | Yannick | Antwort auf Rückfrage: „Ja, er hat zugestimmt“ (Einwilligung des Gründers) | – | lokale Transkription gestartet |
 | 61 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur KI-Nachweis committet; Präsentation bleibt bis Ende von D12 offen |
 | 62 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Nachweis und vorbereitetes Workflow-Skript committet; Präsentation bleibt bis Ende von D12 offen |
 | 63 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D13 | nur Nachweis committet; D12 und D13 laufen |
+| 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | D12 abgeschlossen und committet; Auswertung der Gründerbefragung im Gruppenordner; Workflow-Skript geschwärzt |
+| 65 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur Nachweis committet; D12 und D13 laufen |
+| 66 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: Rohprotokoll „Unverändert committen“, Git-Historie „Nein, so lassen“ | – | Rohprotokoll unverändert committet; Historie bleibt |
+| 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | Auswertung mit Namen im Repository; Gründerbefragung in Ausarbeitungen, Notizen und Backups B1/B3/B7 eingebaut; Exporte neu |
+| 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
+| 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
+| 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
+| 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
+| 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
+| 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
+| 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
+| 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
+| 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
+| 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
+| 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1017,6 +1032,21 @@ los.“)*
     - Prüfung: Darstellung, Inhalt, Rechte.
     - Nacharbeit mit neuen Exporten.
 - **Ergebnis:** in Arbeit
+- **Ergebnis (Abschluss 19.10.2026, nach zwei Unterbrechungen am Nutzungslimit, siehe 59 und 64):**
+  - **Gefüllt:** Folie 03 nach A1 (Zeitleiste, Kennzahlen „laut Unternehmen“, Rolle Herausforderer, Claim),
+    Folie 05 nach A3 (Hedonisten, Gewichte, Lücke −10 Pp., Rechtevermerk), Folie 10 (Kompetenz, Persona-Typ),
+    Psychografie auf Folie 04, Backups B2, B3, B7 (Esch, Häusel), B8 ([6], [39]).
+  - **Logos:** Oval auf Folie 01 und neu auf Folie 12, Wortmarke auf 09b (im Dunkelmodus mit heller Unterlage);
+    Quelle jeweils in der Fußzeile. Rücksprache mit dem Betreuer bleibt offen.
+  - **Behoben:** u. a. falsche Angabe „mit Vorlesung abgeglichen“ auf B2, fest eingebaute Texte in der Limbic Map,
+    zu breite Tabelle auf B3, Beschriftung „HOLY“ auf Folie 05, Überlauf auf Folie 03 im Thema Keynote.
+  - **Grafiken** `folie-02/03/05`: Überlappungen und abgeschnittene Beschriftungen behoben.
+  - **Exporte neu:** PDF (22 Seiten), 23 Folienbilder (1920 × 1080), Übersicht (neues Werkzeug
+    `werkzeuge/uebersicht.mjs`). AUTOREN.md §15 und LIESMICH.md beschreiben die Änderungen und offenen Punkte.
+- **Wie Claude das Ergebnis geprüft hat:** eigener Prüflauf (23 Folien, 80 Zustände, 0 Fehler, 4 bekannte
+  Wortbudget-Warnungen), PDF-Seitenzahl, Übersicht und Folien 03, 04, 05 und 12 selbst angesehen.
+- **Für Yannick zu entscheiden:** Folie 04 zeigt „bequem und schnell“ statt „gesünder, aber schnell“ (Statista trägt
+  „gesünder“ nicht: 50 % zu Ø 53 %), Steckbrief angleichen oder zurückändern; Freigaben 03–05; Sprechtexte stoppen.
 - **Unteragenten:** D12
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1156,6 +1186,253 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
   - Committet: nur Nachweis und Rohprotokoll. Die Präsentation bleibt uncommittet, solange D12 läuft.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D13 (läuft)
+
+### 64 – 19.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** Beide Workflows waren am Nutzungslimit (Reset 00:30 UTC) teilweise gescheitert:
+  - **D13:** 2 von 5 Agenten fertig (Persona/Limbic Map, Markenkompetenz/Markensteuerrad). Gescheitert:
+    Abgleich Bündel B und beide Prüfer.
+  - **D12:** 9 von 10 Agenten fertig. Gescheitert: die Nacharbeit (AUTOREN/LIESMICH, Exporte).
+- **Vorgehen Claude:**
+  - Beide Workflows fortgesetzt (resume). Die fertigen Agenten kommen aus dem Zwischenspeicher, nur die
+    gescheiterten laufen neu.
+  - **D12** abgeschlossen, selbst geprüft und committet (Eintrag 57, Abschnitt 2).
+  - **D13** abgeschlossen (Abschnitt 2). Die Befunde und Prüfurteile selbst gelesen und daraus die Auswertung
+    geschrieben: Rahmen und Quellenkritik, Antworten je Frage als Paraphrase, Abgleich mit Persona, Limbic Map,
+    Markenkompetenz und Markensteuerrad, Hinweise für Lukas und Elias, Vorschläge ohne Gründerinhalte, offene Punkte.
+    Quellennummern selbst am Dossier geprüft. Ablage nur im Gruppenordner (Markdown und PDF, 10 Seiten), an Yannick
+    geschickt.
+  - **Datenschutz:** Der Prüfer „Methodik und Datenschutz“ fand einzelne Inhalte der Befragung im bereits
+    gepushten Workflow-Skript (Commit `ae75e7c`). Die Stellen sind im Repository jetzt geschwärzt; die ungeschwärzte,
+    ausgeführte Fassung liegt im Gruppenordner. In der Git-Historie stehen sie weiter. Ob die Historie bereinigt
+    wird (erfordert ein erzwungenes Überschreiben des Remote-Branches), entscheidet Yannick.
+  - **Rohprotokoll:** Der Hook hat die Abschlussmeldung von D13 als „Prompt“ protokolliert. Diese Zeile enthält
+    Zusammenfassungen der Antworten. Das Rohprotokoll darf nicht von Hand geändert werden; deshalb ist es vorerst
+    **nicht committet**, bis Yannick entscheidet.
+- **Ergebnis:** D12 fertig; Auswertung der Gründerbefragung als Entwurf im Gruppenordner; zwei Entscheidungen offen
+  (Git-Historie, Rohprotokoll)
+- **Unteragenten:** D12, D13 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 65 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Erste Ergebnisse von D13 gelesen (Persona/Limbic Map: 13 Befunde; Markenkompetenz/Markensteuerrad: 14
+    Befunde) und Yannick kurz zusammengefasst. Bündel B und die Prüfer laufen noch.
+  - Ein Befund rät, nichts aus der Befragung ins öffentliche Repository oder auf die Webseite zu stellen, solange
+    nicht geklärt ist, ob der Gründer einer anonymen Wiedergabe zustimmt. Deshalb kommt die Auswertung zunächst als
+    Gruppenordner-Datei, die Entscheidung trifft Yannick.
+  - Committet: nur Nachweis und Rohprotokoll. Die Präsentation bleibt uncommittet, solange D12 läuft.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D12, D13 (laufen)
+
+### 66 – 19.10.2026 – Yannick (Antworten auf zwei Rückfragen von Claude)
+
+> Frage 1: „Rohprotokoll: Die letzte Zeile (automatisch vom Hook geschrieben) enthält Zusammenfassungen der
+> Gründerantworten. … Wie soll ich damit umgehen?“ – Antwort (Auswahl): **„Unverändert committen“**
+>
+> Frage 2: „Git-Historie: Commit ae75e7c … enthält im Workflow-Skript einzelne Inhalte der Befragung … Soll ich
+> zusätzlich die Historie bereinigen?“ – Antwort (Auswahl): **„Nein, so lassen (Empfohlen)“**
+
+- **Vorgehen Claude:** Rohprotokoll unverändert committet und gepusht, wie entschieden. Die Git-Historie bleibt
+  unverändert (kein erzwungenes Überschreiben). Die Regel für weitere Inhalte der Befragung (nichts in öffentliche
+  Dateien bis zur Klärung mit dem Gründer, Auswertung Abschnitt 2.3) bleibt ein Vorschlag an die Gruppe.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 67 – 19.10.2026 – Yannick
+
+> Wir dürfen den Gründer mit Namen in der Präsentation haben
+
+Antworten auf vier Rückfragen von Claude (Auswahl):
+
+> 1. „Welcher Gründer hat die Sprachnachrichten geschickt? …“ – **„Mathias Horsch“**
+> 2. „Wofür gilt die Freigabe? Hinweis: Die Web-Präsentation ist über GitHub Pages öffentlich, auch die
+>    Sprechernotizen.“ – **„Präsentation + Repository“** (Name und Paraphrasen bzw. kurze Zitate auf Folien, in
+>    Notizen und in den Ausarbeitungen im öffentlichen Repository)
+> 3. „Gilt die Freigabe auch für die Angabe ‚95 % der Kund:innen …‘?“ – **„Ja, mit Zusatz“** (mit „laut Gründer,
+>    Datengrundlage nicht offengelegt“ in Notizen und Backup)
+> 4. „Was soll ich als nächstes Arbeitspaket umsetzen?“ – **„Auswertung + Folien (Empfohlen)“**
+
+- **Vorgehen Claude:**
+  - Auswertung an die Freigabe angepasst (Name, Zitierweise „Horsch 2026 (GB)“, Regeln für die Nutzung) und als
+    `fallstudie-1-brand-persona/gruenderbefragung.md` ins Repository gestellt. Transkript (mit Namen ergänzt) und
+    Audio bleiben im Gruppenordner.
+  - Workflow D14 (Abschnitt 2): Einbau in Steckbrief, Limbic Map, Markenkompetenz, `methoden.md` (Kürzel GB),
+    Folienentwürfe 2–5 und Web-Präsentation, zwei Prüfer, Nacharbeit, neue Exporte. Nach dem Nutzungslimit
+    fortgesetzt (Eintrag 69).
+  - Selbst geprüft: Prüflauf 23 Folien, 0 Fehler (4 bekannte Wortbudget-Warnungen), PDF 22 Seiten, Backups B3 und
+    B7 angesehen, keine Änderung an gesperrten Dateien (Dossier Bündel B, Recherche-Dossier, gruenderbefragung.md).
+- **Ergebnis:** Gründerbefragung eingebaut. Sichtbar auf den Backups B1, B3, B7; auf den Hauptfolien 02–05 und 10
+  nur in Notizen und Autorenkästen. Die zunächst eingebaute sichtbare Zeile auf Folie 03 hat die Nacharbeit nach
+  einem Prüferbefund wieder entfernt (Bestätigung wirkte wie ein zusätzlicher Beleg); Entscheidung bei Yannick.
+- **Unteragenten:** D14
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 68 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Dateien, die Workflow D14 gerade bearbeitet,
+  bleiben uncommittet, bis D14 fertig und geprüft ist (sonst stünde ein halbfertiger Stand auf der Webseite).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D14 (läuft)
+
+### 69 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D14 war am Nutzungslimit nach der Hälfte stehen geblieben: die vier Ausarbeitungen fertig; Präsentation,
+    beide Prüfer und Nacharbeit gescheitert (der Präsentations-Agent hatte `index.html` schon teilweise geändert).
+  - Workflow-Skript um einen Hinweis auf diese Teiländerungen ergänzt und D14 nach dem Reset fortgesetzt (resume;
+    die Ausarbeitungen kommen aus dem Zwischenspeicher).
+  - Committet: nur Nachweis, Rohprotokoll und Workflow-Skript. Die Ausarbeitungen und die Präsentation bleiben
+    uncommittet, bis D14 fertig und geprüft ist.
+- **Ergebnis:** Commit + Push (nur Nachweis und Skript)
+- **Unteragenten:** D14 (fortgesetzt)
+
+### 70 – 19.10.2026 – Yannick
+
+> 1. Ja setze es wieder ein
+> 2. Mach was am schlausten ist
+> 3. Was für eine Code liste?
+> 4. Lad das Transkript selber hoch
+> 5. Wir müssen noch auf der einen Folie den QR code einrichten und eine Abstimmung machen und überlegen wie wir das Designtechnisch live übernehmen mit der Abstimmung der Tiere
+
+- **Vorgehen Claude:**
+  - **1. Folie 03:** Zusatz „auch laut Gründer Mathias Horsch (Befragung 10/2026)“ in der Quellzeile des Claims wieder
+    eingesetzt (Daten `claim.stand`, Ersatztext, Autorenkasten); Folienentwurf 3, `markenkompetenz.md`, QUELLEN.md
+    und AUTOREN.md angepasst. Weiter als Bestätigung gekennzeichnet, nicht als Beleg.
+  - **2. Folie 04:** Titel bleibt kurz wie auf der Web-Folie (Wortbudget, eine Zeile); „Kern-Persona“ steht sichtbar in
+    der Zeile unter dem Namen („Kern-Persona · Hypothese · fiktiv“). Folienentwurf 4 angeglichen.
+  - Prüfläufe f03/f04 in Editorial, Bento und Keynote: 0 Fehler; Exporte neu (PDF 22 S., Folienbilder, Übersicht).
+  - **3. Codeliste:** im Chat erklärt (keine Datei).
+  - **4. Transkript:** In Yannicks Google Drive gab es keinen Projektordner; Ordner „Uni/Unternehmenskommunikation
+    HOLY – Gruppenordner“ angelegt (nicht geteilt) und das Transkript als Google-Dokument hochgeladen, Inhalt
+    zurückgelesen. Vorher Zeitmarken der Zuordnungstabelle an die Absatzköpfe angeglichen. Danach die Kopien in der
+    Sitzung gelöscht (Audio, Rohabschriften, Ausgabe der zweiten Spracherkennung). `gruenderbefragung.md` 2.3/6
+    aktualisiert.
+  - **5. Live-Abstimmung:** vorhandene Technik gelesen (`marke.js` Abschnitt 5, `js/komponenten.js` Baustein
+    „umfrage“, LIESMICH Abschnitt 6): QR-Code entsteht aus `umfragen.tier.link`, Ergebnisse werden bisher von Hand
+    eingetippt oder per Zählmodus gezählt. Vorschlag mit Optionen im Chat, Entscheidung bei Yannick (nächstes Paket).
+- **Ergebnis:** Punkte 1, 2, 4 erledigt; 3 beantwortet; 5 als Vorschlag zur Entscheidung
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 71 – 19.10.2026 – Yannick (Antworten auf zwei Rückfragen von Claude)
+
+> Frage 1: „Wie soll die Tier-Abstimmung auf Folie 08 live ins Folien-Design kommen? …“ – Antwort (Auswahl):
+> **„Eigene Live-Abstimmung (Empfohlen)“** (Abstimmseite im HOLY-Design, Google-Apps-Script mit Google-Tabelle in
+> Yannicks Konto, Folie 08 holt die Zahlen alle 2 s; Plan B bleibt)
+>
+> Frage 2: „Welche Tiere stehen zur Wahl? …“ – Antwort (Auswahl): **„Mit Schwan statt Delfin“** (Adler, Löwe,
+> Waschbär, Fuchs, Schwan)
+
+- **Vorgehen Claude:** Schnittstelle festgelegt (nur GET, JSONP, letzte Stimme je Gerät zählt, „runde“ trennt Probe
+  und Vortrag ohne geheimen Schlüssel) und Workflow D15 gestartet: drei Bauteile parallel (Apps Script mit
+  Anleitung, Abstimmseite, Anbindung in Folie 08), Ende-zu-Ende-Test mit lokaler Attrappe, zwei Prüfer, Nacharbeit.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D15
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 72 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Dateien, die Workflow D15 gerade baut, bleiben
+  uncommittet, bis D15 fertig und geprüft ist. Frage 3 aus Eintrag 70 („Was für eine Code liste?“) im Chat
+  beantwortet (Codeliste = Lukas' Kategorien aus seinen Interviews; erst nach deren Festlegung mit Datum werden
+  die zurückgehaltenen Punkte aus der Gründerbefragung eingebaut).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15 (läuft)
+
+### 73 – 19.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D15 war am Nutzungslimit nach 2 von 7 Agenten stehen geblieben (fertig: Apps Script mit Anleitung
+  und Prüfhilfe; Abstimmseite). Gescheitert: Anbindung in Folie 08 (mit Teiländerungen in `komponenten.js`,
+  `komponenten.css`, `marke.js`), Ende-zu-Ende-Test, beide Prüfer, Nacharbeit.
+- **Vorgehen Claude:** Workflow-Skript um einen Hinweis auf die Teiländerungen ergänzt (und den Test auf die schon
+  vorhandene Attrappe `live-abstimmung-test.mjs --server` umgestellt), D15 fortgesetzt (resume).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D15 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 74 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Dateien der Live-Abstimmung (Abstimmseite,
+  Apps Script, Anbindung in Folie 08) bleiben uncommittet, bis D15 fertig und geprüft ist. Zuvor war ein
+  Startversuch an einem Syntaxfehler im Workflow-Skript gescheitert (Backticks in einem Auftragstext); korrigiert
+  und committet (`8787453`).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15 (läuft)
+
+### 75 – 19.10.2026 – Yannick
+
+> Und füge weitestgehend alle Platzhalter Bilder ein und mache dann das Platzhalter Schild weg
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Bestandsaufnahme der Platzhalterbilder: Folie 01 Rätselbild (`bilder/platzhalter-raetsel.svg`, Pille
+    „Platzhalterbild“), Folie 04 Persona-Bild (gezeichnete Figur, Hinweis „Platzhalter – KI-Bild folgt“), Folie 09
+    Schlüsselbild (Piktogramm statt Raptor-Screenshot; Bündel C, Social-Media-Bild nur nach Zustimmung des Betreuers,
+    QUELLEN.md §4).
+  - Einbau erst nach Ende von Workflow D15, weil beide dieselben Dateien und Exporte ändern würden.
+  - **Entscheidung Claude:** Ohne Bildgenerator und ohne eigene Fotos und ohne Rechte an HOLY-Bildern werden die
+    Platzhalter auf Folie 01 und 04 durch eigene Illustrationen (SVG) ersetzt und ehrlich gekennzeichnet
+    („Illustration: eigene Gestaltung, KI-gestützt“). Ein eigenes Foto bzw. ein KI-Foto nach P6 bleibt möglich.
+    Folie 09 bleibt (Bündel C, Zustimmung des Betreuers offen).
+  - **Workflow D16** gestartet, zunächst nur die Bildphase (neue Dateien in `bilder/`); Einbau, Prüfung und
+    Exporte folgen per resume nach Ende von D15.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D16 (läuft)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 76 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Arbeitsdateien von D15 (Live-Abstimmung) und D16
+  (Illustrationen) bleiben uncommittet, bis beide fertig und geprüft sind.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15, D16 (laufen)
+
+### 77 – 19.10.2026 – Yannick
+
+> Anderer agent hat wieder kontigent, aufgaben für ihn zu dieser Präsentation?
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` gelesen: Account 2 hatte am 18.10. eine Prüfung auf
+  Vortragsreife begonnen (A2-D03, Bericht `VORTRAGSREIFE.md`), auf dem Stand vor D12 und nicht abgeschlossen; Ü03
+  (Fallstudie 2) nicht begonnen. Neue Übergabe Ü04 geschrieben: `master` übernehmen, Prüfung auf dem neuen Stand neu
+  aufsetzen (ohne Live-Abstimmung und Bilder 01/04, an denen D15/D16 arbeiten) und eine Fragerunde-Vorbereitung
+  (`fragerunde.md`) erstellen; nur neue Dateien, keine bestehenden Präsentationsdateien ändern.
+- **Ergebnis:** Übergabe `ki-nachweis/uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md`
+- **Unteragenten:** Ü04 (Account 2)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 78 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D15 und D16 laufen, ihre Dateien folgen nach der
+  Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15, D16 (laufen)
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1175,11 +1452,16 @@ steht hier mit dem wörtlichen Auftrag.
 | D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
 | Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
 | Ü03 | 17.10.2026 | 58 | Übergabe an Account 2 (Text zum Kopieren) | Fallstudie 2 vorbereiten, Arbeitspaket 1: README, Methoden, Recherche-Dossier Customer Journey, Arbeitsplan-Entwurf | *wartet auf Kontingent von Account 2* | – |
+| Ü04 | 19.10.2026 | 77 | Übergabe an Account 2 (Text zum Kopieren) | Prüfung auf Vortragsreife auf dem Stand nach D12/D14 neu aufsetzen (Bericht VORTRAGSREIFE.md), Fragerunde vorbereiten (fragerunde.md); nur neue Dateien | *übergeben* | – |
 | D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
 | D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
-| D13 | 18.10.2026 | 59, 60 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | *läuft* | – |
+| D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
+| D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
+| D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
+| D15 | 19.10.2026 | 71 | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | *läuft* | – |
+| D16 | 19.10.2026 | 75 | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | *läuft (zuerst nur die Bilder, Einbau nach D15)* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1504,6 +1786,94 @@ steht hier mit dem wörtlichen Auftrag.
   - Die Quellennummern der Fußzeile an Anhang B des Dossiers geprüft.
   - Die Werte für die Grafik aus dem Folienentwurf übernommen.
   - Präsentation (f03, f10) nicht geändert.
+
+---
+
+### D12 – 17.–19.10.2026 – ausgelöst durch Prompt 57 (fortgesetzt nach 59 und 64)
+
+- **Art:** Workflow „praesentation-uebernahme“, zehn Unteragenten in vier Phasen:
+  - Bestandsaufnahme: Platzhalter-Inventar (mit Websuche im DNB-Katalog), Grafik- und Logo-Prüfung.
+  - Umsetzung nacheinander: U1 Folie 03 und 10, U2 Folie 05 und Limbic-Map-Skript, U3 Logos, übrige Platzhalter,
+    Grafik-Mängel.
+  - Prüfen: Darstellung, Inhalt, Rechte.
+  - Nacharbeit: Befunde einarbeiten, AUTOREN/LIESMICH, Exporte.
+- **Auftrag (wörtlich):** vollständig im Skript
+  [`workflows/2026-10-17_praesentation-uebernahme.js`](workflows/2026-10-17_praesentation-uebernahme.js) und
+  automatisch im Rohprotokoll.
+- **Vorgaben:** nur Präsentation und Grafiken ändern; Werte nur aus `markenkompetenz.md`, `limbic-map.md`,
+  `persona-steckbrief.md`, `persona-daten.md` und dem Dossier; Beispieldaten von Bündel B und C nicht anfassen;
+  keine Uploads oder Gruppenordner-Dateien öffnen; kein Commit.
+- **Ergebnis:**
+  - **Unterbrechungen:** 18.10. 5 Agenten und 19.10. die Nacharbeit am Nutzungslimit gescheitert, jeweils per
+    resume fortgesetzt (fertige Agenten aus dem Zwischenspeicher).
+  - **Umsetzung:** 7 + 11 + 16 Änderungen.
+  - **Prüfer:** 27 Befunde (0 hoch, 9 mittel, 18 niedrig). Die mittleren: Etikett „HOLY“ auf Folie 05 an Marcos
+    Punkt, veraltete Exporte, „gesünder“ auf Folie 04 gegen die Daten, Sprechzeit 04/05, B2 stellt KI-Prüfungen als
+    Prüfung dar, Kennzeichnung auf 04, Rechtevermerk, Regel für Social-Media-Bilder, Logo-Fußzeile auf 12.
+  - **Nacharbeit:** alle Befunde umgesetzt bis auf vier Gruppenentscheidungen (Grafiken projizieren ja/nein,
+    Bildsprache der Grafiken, Kürzung der Sprechtexte 10/11 mit Elias, Steckbrief zu „gesünder“).
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Eigener Prüflauf `pruefen.mjs --schritte --optional`: 23 Folien, 80 Zustände, 0 Fehler, keine externen
+    Anfragen, 4 Wortbudget-Warnungen (f03, f04, f10, f11).
+  - PDF: 22 Seiten. Übersicht und die Folien 03, 04, 05, 12 angesehen (Logo, Etikett, Kennzeichnungen).
+  - Workflow-Skript im Repository mit dem ausgeführten Skript verglichen: gleich.
+
+---
+
+### D13 – 18.–19.10.2026 – ausgelöst durch Prompt 59/60 (fortgesetzt nach 64)
+
+- **Art:** Workflow „gruender-befragung“, fünf Unteragenten in zwei Phasen:
+  - Abgleich: Persona und Limbic Map; Markenkompetenz und Markensteuerrad; Bündel B (Repertory Grid, Laddering,
+    Tonalität).
+  - Prüfen (adversarial): Treue zum Transkript und zu den Repository-Dateien; Methodik und Datenschutz.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-18_gruender-befragung.js`](workflows/2026-10-18_gruender-befragung.js).
+  Stellen mit Inhalten der Befragung sind dort geschwärzt; die ungeschwärzte, ausgeführte Fassung liegt im
+  Gruppenordner.
+- **Vorgaben:** nur lesen; nur das bereinigte Transkript (Gruppenordner) und das Repository, keine Audiodateien,
+  keine Statista-Datei, keine Websuche; Paraphrasen statt langer Zitate; kein Name; Innensicht und Außensicht
+  trennen; jede Aussage mit Fundstelle.
+- **Ergebnis:**
+  - **Unterbrechung:** Der erste Lauf scheiterte bei 3 von 5 Agenten am Nutzungslimit, Fortsetzung am 19.10.
+  - **Abgleich:** 41 Befunde (Persona/Limbic Map 13, Markenkompetenz/Steuerrad 14, Bündel B 14).
+  - **Prüfer Treue:** 27 halten, 14 korrigieren (Ergänzungen zum Wortlaut, ein falsch wiedergegebener Dossier-Inhalt,
+    zu starke Urteile, Zirkelschlüsse).
+  - **Prüfer Methodik und Datenschutz:** 12 halten, 29 korrigieren, vor allem weil viele Empfehlungen Inhalte der
+    Befragung sofort in öffentliche Dateien schreiben wollten. Außerdem: Inhalte im gepushten Workflow-Skript,
+    Zeitpunkt der Übergabe an Lukas (erst nach seiner Codierung), Löschung der Kopien in der Sitzung.
+  - Die Inhalte der Befunde stehen bewusst nicht hier, sondern in der Auswertung im Gruppenordner.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Alle Befunde und Prüfurteile gelesen; die Korrekturen der Prüfer übernommen.
+  - Quellennummern und Altersangaben am Recherche-Dossier nachgeschlagen (4.1, 3.4, S1, 3.7).
+  - Die Auswertung selbst geschrieben und als PDF gerendert und angesehen.
+
+---
+
+### D14 – 19.10.2026 – ausgelöst durch Prompt 67 (fortgesetzt nach 69)
+
+- **Art:** Workflow „gruenderbefragung-einbau“, acht Unteragenten in vier Phasen: vier Ausarbeitungen parallel
+  (Persona; Limbic Map; Markenkompetenz und Methoden; Folienentwürfe), Präsentation, zwei Prüfer (Treue und
+  Kennzeichnung; Darstellung und Konsistenz), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript
+  [`workflows/2026-10-19_gruenderbefragung-einbau.js`](workflows/2026-10-19_gruenderbefragung-einbau.js).
+- **Vorgaben:** Grundlage `gruenderbefragung.md`; Kennzeichnung als Selbstauskunft „Horsch 2026 (GB)“; „95 %“ nur
+  mit Zusatz in Notizen; keine Zitate unsicherer Stellen; nicht ändern: KI-Nachweis, Dossier Bündel B,
+  Recherche-Dossier, `gruenderbefragung.md`, sichtbare Inhalte der Folien 06–09b und 11; kein Commit.
+- **Ergebnis:**
+  - **Unterbrechung:** Im ersten Lauf scheiterten Präsentation, Prüfer und Nacharbeit am Nutzungslimit; nach dem
+    Reset fortgesetzt (die Ausarbeitungen aus dem Zwischenspeicher).
+  - **Ausarbeitungen:** 71 Änderungen, u. a. „Kern-Persona (heutige Kernkundschaft)“, Tabelle „Wer sagt was über
+    wen“ (Horsch 2023 [4], Jost 2024 [24], Horsch 2026 GB), Kürzel GB in `methoden.md` §6, Hinweis zur Trennung von
+    Code K3 (mit Lukas abstimmen), Klärung „Präsenz hoch ↔ im Kommen“ in der Limbic Map.
+  - **Präsentation:** Notizen und Rückfragen f02–f05, Legende GB auf f10, Hinweise im Autorenkasten f11, sichtbare
+    Einträge in B1, B3 und B7; f04 nennt sichtbar „Jost“ statt „Gründer“, damit „männlich, 25–40“ nicht Horsch
+    zugeschrieben wird.
+  - **Prüfer:** 23 Befunde (0 hoch, 6 mittel, 17 niedrig). Die mittleren: sichtbare Zeile auf f03 wirkt wie ein
+    zusätzlicher Beleg; Quellenzeile von Folienentwurf 4 nennt GB, obwohl die Folie GB nicht nutzt; „Gründer [24]“
+    seit Horsch mehrdeutig; „Individualität“ entgegen der eigenen Sperre (erst nach Lukas' Codierung).
+  - **Nacharbeit:** 19 Punkte umgesetzt (u. a. f03-Zeile entfernt, „Jost“ statt „Gründer“, Sperre
+    „Individualität“), Exporte neu (PDF 22 S., 23 Bilder, Übersicht), AUTOREN.md §15 und LIESMICH.md ergänzt.
+- **Wie Claude das Ergebnis geprüft hat:** eigener Prüflauf (0 Fehler), PDF-Seitenzahl, Backups B3 und B7
+  angesehen, `git diff --name-only` auf gesperrte Dateien geprüft, keine Modellbezeichnungen im Diff.
 
 ---
 

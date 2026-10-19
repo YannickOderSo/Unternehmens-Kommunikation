@@ -469,7 +469,9 @@
      <span data-marke="kurz"></span>     → Kurzname
      data-gruppe, data-datum ("lang"), data-veranstaltung, data-dozent,
      data-hochschule, data-praesentation (Titel), data-fallstudie
-     <img data-marke-logo>               → Logo aus marke.js
+     <img data-marke-logo>               → Logo aus marke.js (logo, Wortmarke)
+     <img data-marke-logo="titel">       → Logo der Titelfolie aus marke.js (logoTitel,
+                                           z. B. Folie 12); ohne Eintrag wird das Bild ausgeblendet
      data-anrede-sie="…" data-anrede-ihr="…" → Text je nach Anrede
      data-umfrage-frage="tier"           → Frage der Umfrage aus marke.js
      =========================================================================== */
@@ -512,7 +514,12 @@
       });
     });
     alle('img[data-marke-logo]', wurzel).forEach(function (el) {
-      if (marke.logo) el.setAttribute('src', util.pfad(marke.logo));
+      /* data-marke-logo="titel" → zweite Logo-Variante (logoTitel, Folie 01/12);
+         fehlt sie, bleibt das Bild ausgeblendet (17.10.2026) */
+      var titel = el.getAttribute('data-marke-logo') === 'titel';
+      var pfad = titel ? (marke.logoTitel || '') : marke.logo;
+      if (pfad) el.setAttribute('src', util.pfad(pfad));
+      else if (titel) el.hidden = true;
       if (!el.getAttribute('alt')) el.setAttribute('alt', 'Logo ' + (marke.name || '[Marke]'));
     });
     /* Frage einer Umfrage aus marke.js, z. B. als Folientitel:

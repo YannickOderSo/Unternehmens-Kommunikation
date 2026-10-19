@@ -5,11 +5,17 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOL
 
 | Folie | Thema | Bündel | Status |
 |-------|-------|---------|--------|
-| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ |
-| 3 | Markenkompetenz | A | Entwurf ✔ (17.10.) – Prüfung durch Yannick offen |
-| 4 | Brand Persona | A | Entwurf ✔ (16.10.) – Prüfung durch Yannick offen |
-| 5 | Limbic Map | A | Entwurf ✔ (17.10.) – Prüfung durch Yannick offen |
+| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ (Rückfrage 2 ergänzt 19.10.) – Prüfung durch Yannick offen |
+| 3 | Markenkompetenz | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
+| 4 | Brand Persona | A | Entwurf ✔ (16.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
+| 5 | Limbic Map | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
 | 6–11 | | | offen |
+
+Stand der Folien 2–5: Mo, 19.10.2026. **GB** = Gründerbefragung: Gründer Mathias Horsch hat den Fragenkatalog der
+Gruppe per Sprachnachricht beantwortet, zitiert als „Horsch 2026 (GB)“. Das ist eine Selbstauskunft (Innensicht,
+n = 1), keine Aussage über die Kundschaft. Was er nicht nennt, heißt nur „nicht genannt“. Auswertung und Regeln:
+[`gruenderbefragung.md`](gruenderbefragung.md). Name, Paraphrasen und kurze Zitate sind freigegeben (laut Yannick,
+19.10.2026); „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht offengelegt“ und nie auf einer Hauptfolie.
 
 ---
 
@@ -75,8 +81,10 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
    Identität, und jede unserer Methoden lässt sich genau einem Feld zuordnen. Dadurch ist nachvollziehbar, woher jede
    Aussage im fertigen Steuerrad kommt.
 2. **„Markenidentität ist das Selbstbild – warum fragt ihr die Zielgruppe?“**
-   Wir betrachten beide Seiten: das Selbstbild aus Website, Press Kit, Gründer-Interviews und eigener Kommunikation und das Fremdbild
-   aus Repertory Grid und Laddering. Wo beides auseinandergeht, setzen unsere Empfehlungen an.
+   Wir betrachten beide Seiten: das Selbstbild aus Website, Press Kit, Gründer-Interviews, eigener Kommunikation und
+   einer eigenen Befragung von Gründer Mathias Horsch per Sprachnachricht (Horsch 2026, GB) und das Fremdbild
+   aus Repertory Grid und Laddering. Wo beides auseinandergeht, setzen unsere Empfehlungen an. Die Befragung ist eine
+   Selbstauskunft und wiederholt vieles aus Website und Press Kit; wir gewichten sie deshalb schwach.
 3. **„Wie belastbar sind Ergebnisse mit KI-Tools?“**
    Die KI haben wir für Recherche, Strukturierung und simulierte Befragte genutzt. Fakten haben wir an den Quellen
    geprüft, die simulierten Antworten mit 3–5 echten Kurzinterviews abgeglichen. Die Grenzen stehen im Backup, alle
@@ -89,6 +97,8 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
 - [ ] Farben und Schrift an den Folienmaster anpassen
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00
 - [ ] Rückfrage 3 erst final formulieren, wenn klar ist, wie viele echte Interviews es wurden
+- [x] (19.10.) Rückfrage 2 um die eigene Gründerbefragung ergänzt (`gruenderbefragung.md` K14); Grafik und
+  Quellenzeile unverändert
 
 ---
 
@@ -136,7 +146,7 @@ In der Web-Folie f03 (Muster „[Marke]: <Rolle> mit <Kernkompetenz>“): *HOLY:
 
 - **Marktrolle** (ohne Label): Chips *Marktführer · Herausforderer · Mitläufer · Spezialist*, nur „Herausforderer“ gefüllt, kein Zusatz-Chip. Die Rollenbegriffe folgen Kotler, „Spezialist“ entspricht dem Nischenanbieter; mit der Vorlesung abgleichen. Begründung (ein Satz): *Greift den ganzen Softdrink-Markt an*.
   Metazeile: *Jost ✔ [24] · „Challenger-Brand“ ✔ [13] · Rolle nach Kotler, Kriterium Angriff (H)*
-- **Claim:** *„Geiler Geschmack mit gutem Gewissen“*. Metazeile: *Markenversprechen laut Website und Press Kit ✔ [5, 13]*. [5] belegt das Dossier 6.5; [13] stammt aus der eigenen Prüfung vom 17.10.2026 und wird in B7 vermerkt.
+- **Claim:** *„Geiler Geschmack mit gutem Gewissen“*. Metazeile: *Markenversprechen laut Website und Press Kit ✔ [5, 13] · auch laut Gründer Mathias Horsch (Befragung 10/2026)* (Zusatz seit 19.10.2026 auf Wunsch von Yannick; Bestätigung, kein unabhängiger Beleg). [5] belegt das Dossier 6.5; [13] stammt aus der eigenen Prüfung vom 17.10.2026 und wird in B7 vermerkt.
 - **Fußzeile** (klein): *Quellen: Recherche-Dossier Kap. 2 (14.10.2026), eigene Prüfung 17.10.2026, Nr. 3–6, 13, 16, 17, 22, 24, 25, 39 → Backup B7 · Kennzahlen = Selbstauskünfte · ✔ geprüft · ✎ korrigiert · H unsere Einordnung · Rolle nach Kotler, Feld nach Esch*. In der Web-Folie setzt das Skript die Nummern aus den Daten ein. Die Namen der Quellen stehen nur in B7.
 - **Textmenge:** Haupttext 58 Wörter, ohne Jahreszahlen und Zahlenwerte 47; dazu 14 Wörter Metazeilen und 21 Wörter Fußzeile. Das liegt über dem Richtwert von ~40 Wörtern, weil A1 Zeitleiste, 3 Kennzahlen, Rolle und Claim verlangt.
 - **Nicht auf die Folie:** Marktanteil (nicht belegbar, Circana-Daten gibt es nur für Energy Drinks), „profitabel“ (Jahresabschluss 2024 ungeprüft), Verkaufsstellen (6.000 / 8.500 / 10.000+ widersprechen sich), Portionen, „2,5 Mio. Kund:innen“ (andere Definition), Umfirmierung (nur Notizen).
@@ -169,9 +179,9 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
 ### Mögliche Rückfragen
 
 1. **„Wie belastbar sind die 170 Millionen?“**
-   Es ist eine Selbstauskunft: Das Press Kit 02/2026 nennt „+170M Jahresumsatz (2025)“ [13], die WirtschaftsWoche schreibt „laut eigenen Angaben“ [16], Mitgründer Horsch spricht sogar von „€180m+“ [159]. Für 2025 ist noch kein Jahresabschluss offengelegt. Der letzte ist der Abschluss 2024, veröffentlicht am 31.03.2026 [3] (North Data, Abruf 17.10.2026). Unabhängig prüfen ließe sich also nur die Vorjahresangabe (laut Horsch „~€75m“ für 2024 [159]), und auch das nur, wenn die GuV Umsatzerlöse ausweist; bei verkürzter GuV fehlen sie (Modellwissen, § 276 HGB). Deshalb steht auf der Folie „über 170 Mio. €, laut Unternehmen“. [Ergebnis 2024 (Jahresergebnis, ggf. Umsatz) eintragen, sobald Yannick den Abschluss hat.]
+   Es ist eine Selbstauskunft: Das Press Kit 02/2026 nennt „+170M Jahresumsatz (2025)“ [13], die WirtschaftsWoche schreibt „laut eigenen Angaben“ [16], Horsch spricht sogar von „€180m+“ [159]. Für 2025 ist noch kein Jahresabschluss offengelegt. Der letzte ist der Abschluss 2024, veröffentlicht am 31.03.2026 [3] (North Data, Abruf 17.10.2026). Unabhängig prüfen ließe sich also nur die Vorjahresangabe (laut Horsch „~€75m“ für 2024 [159]), und auch das nur, wenn die GuV Umsatzerlöse ausweist; bei verkürzter GuV fehlen sie (Modellwissen, § 276 HGB). Deshalb steht auf der Folie „über 170 Mio. €, laut Unternehmen“. [Ergebnis 2024 (Jahresergebnis, ggf. Umsatz) eintragen, sobald Yannick den Abschluss hat.]
 2. **„HOLY taucht im Marktanteil gar nicht auf – warum Herausforderer?“**
-   Wir trennen zwei Märkte. Im Energy-Drink-Handel (Deutschland, Circana MAT 08/2025, Daten aus einem Schulungsheft, das mit Red Bull entstand) fehlt HOLY in den Top 5, Red Bull hat rund 58 % des Umsatzes ✔ [26]. Nach Marktanteil wäre HOLY dort klein, also eher Spezialist (bei Kotler: Nischenanbieter). Wir ordnen aber nach dem Verhalten ein; so unterscheidet Kotler die Rollen hinter dem Marktführer (Modellwissen, mit der Vorlesung abgleichen). HOLY greift laut Jost den ganzen Softdrink-Markt an ✔ [24], das Leitbild ist „das Coca-Cola des 21. Jahrhunderts“ ✔ [14, 17, 46], dazu kommen Handel und die erste große TV-Kampagne ✔ [6, 25]. Im Energy-Segment will HOLY „dauerhaft unter den Top 3“ sein ✔ [51]. Softdrink-Marktanteile nennen wir nicht, dazu haben wir keine Daten.
+   Wir trennen zwei Märkte. Im Energy-Drink-Handel (Deutschland, Circana MAT 08/2025, Daten aus einem Schulungsheft, das mit Red Bull entstand) fehlt HOLY in den Top 5, Red Bull hat rund 58 % des Umsatzes ✔ [26]. Nach Marktanteil wäre HOLY dort klein, also eher Spezialist (bei Kotler: Nischenanbieter). Wir ordnen aber nach dem Verhalten ein; so unterscheidet Kotler die Rollen hinter dem Marktführer (Modellwissen, mit der Vorlesung abgleichen). HOLY greift laut Jost den ganzen Softdrink-Markt an ✔ [24], das Leitbild ist „das Coca-Cola des 21. Jahrhunderts“ ✔ [14, 17, 46], dazu kommen Handel und die erste große TV-Kampagne ✔ [6, 25]. Auch Gründer Mathias Horsch nennt in unserer Befragung die großen Softdrinkmarken als Hauptkonkurrenz (Selbstauskunft, Horsch 2026, GB). Im Energy-Segment will HOLY „dauerhaft unter den Top 3“ sein ✔ [51]. Softdrink-Marktanteile nennen wir nicht, dazu haben wir keine Daten.
 3. **„Gönrgy meldet Platz 3 – warum ist dann HOLY der Herausforderer?“**
    Das ist eine Eigenangabe von Gönrgy auf anderer Datenbasis (NielsenIQ, ohne Handelsmarken, nach Litern) ✔ [109]. Kotlers Rollen sind keine Rangliste mit je einem Platz: Herausforderer kann jede Marke hinter dem Marktführer sein, die angreift (Modellwissen). Gönrgy kann also ebenfalls Herausforderer sein.
 4. **„Pulver-Softdrinks waren doch neu – warum nicht Pionier?“**
@@ -179,7 +189,7 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
 5. **„Warum hat HOLY das Gaming aufgegeben?“**
    Laut Mitgründer Jost wurde HOLY „in der Regel gar nicht beim Gaming konsumiert“. Mit dem Eistee habe man erkannt, dass man den „gesamte[n] Soft-Drink-Markt“ angreifen wolle ✔ [24] (automatisches Transkript, im Audio prüfen). Den Start als „Gaming Booster“ belegen die Symrise-Mitteilung 2021 und die archivierte Startseite 2022 ✔ [22, 23]. Die Website erzählt die Herkunft heute ohne Gaming („2020 sind wir in einer kleinen WG …“ ✔ [5]).
 6. **„Ist HOLY nun Energy Drink oder Softdrink?“**
-   Im Selbstbild ein Softdrink: spätestens seit 08/2023 „healthier soft drink“ ✔ [15], heute „zuckerfreie Softdrinks zum Selbermixen“ ✔ [13]. Energy ist eine von fünf Linien (Dossier 3.1 ✔ [1, 30, 54]). Unsere Persona (Folie 4) nutzt HOLY vor allem als Energy. Den Rahmen für das Wettbewerbsset legt die Gruppe noch fest.
+   Im Selbstbild ein Softdrink: spätestens seit 08/2023 „healthier soft drink“ ✔ [15], heute „zuckerfreie Softdrinks zum Selbermixen“ ✔ [13]. Auch Gründer Mathias Horsch nennt HOLY in unserer Befragung eine Softdrink-Marke wie Red Bull, More Nutrition dagegen eher Nahrungsergänzung (Selbstauskunft, Horsch 2026, GB). Rechtlich ist HOLY Energy aber ein Nahrungsergänzungsmittel; deshalb gilt die Koffein-Höchstmenge für Erfrischungsgetränke nicht ✔ [56, 72] (Dossier S1). Das ist eine Spannung, kein Fehler; wir halten sie für Folie 10/11 bereit. Energy ist eine von fünf Linien (Dossier 3.1 ✔ [1, 30, 54]). Unsere Persona (Folie 4) nutzt HOLY vor allem als Energy. Den Rahmen für das Wettbewerbsset legt die Gruppe noch fest.
 7. **„Gutes Gewissen – bei 160 mg Koffein?“**
    Das Versprechen steht unter Druck: 160 mg pro Portion ✔ [56], eine Warnung des VKI 12/2024 ✔ [27], Berichte von KONSUMENT und Stiftung Warentest 2026 ✔ [28, 29]. Online verkauft HOLY Energy seit 08–09/2026 erst ab 18 ✔ [12]. Mehr dazu auf Folie 9–11.
 8. **„waterdrop macht das auch – warum ist Selbermixen HOLYs Kompetenz?“**
@@ -188,13 +198,19 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
    Nein, das ist ein Befund: Kompetenz laut HOLY (Selbstbild, Folie 3), Hürde laut Befragten (Fremdbild, Folie 6). Diese Lücke greifen wir auf Folie 10/11 auf. Folie 6 zeigt derzeit Beispieldaten; nach Lukas' Auswertung am Mo 19.10. bestätigen oder streichen.
 10. **„Wie viele aktive Kund:innen hat HOLY?“**
     Dazu gibt es keine Angabe. Das Press Kit nennt „2M+ loyale Kund:innen“ ohne Definition [13], HV Capital „>2.5M“ „since founding“ [14], die WiWo 2,5 Mio. ohne Definition [16]. Alles sind Selbstauskünfte.
+11. **„Woher kommt die Kundschaft von HOLY – von Softdrinks oder von anderen Pulvern?“**
+    Dazu haben wir nur eine Selbstauskunft. In unserer Befragung sagt Gründer Mathias Horsch, 95 % der Kund:innen nutzen HOLY als vollen oder teilweisen Ersatz für Red Bull, Monster, Coca-Cola oder Lipton Eistee (laut Gründer, Datengrundlage nicht offengelegt). Aus dem Sirup- und Pulverbereich komme nach den Firmendaten, die er nicht vorlegt, nur ein kleiner Teil (Horsch 2026, GB). Deshalb steht die Zahl nicht auf der Folie. Sie passt zu unserem Bezugsmarkt Softdrinks, belegt ihn aber nicht.
 
 ### Zu prüfen
 
 - [ ] Yannick: Titel, Rolle (Herausforderer, Kriterium Angriff, Bezugsmarkt Softdrinks), Kernkompetenz, Zeitleiste (5 Einträge) und Kennzahlen freigeben (`markenkompetenz.md`)
 - [ ] Rollendefinition in Kotler/Keller, *Marketing-Management* (Kapitel zum Wettbewerb), und in der Vorlesung nachlesen. Danach Variante A (so) oder B (Chips tauschen, Titel „Spezialist mit …“); „Pionier“ und das Feld „Markenkompetenz“ (Esch, inkl. „zentrale Markenassets“) abgleichen; danach `rollen` festlegen
 - [ ] Jahresabschluss 2024 (und 2023) im Unternehmensregister abrufen. In Rückfrage 1 nur Jahresergebnis 2024 und ggf. Umsatz 2024 eintragen. „Profitabel“ erst danach verwenden (ein ungeprüfter Aggregator-Auszug nennt für 2024 einen Fehlbetrag)
-- [ ] Rahmen (Energy- oder Softdrink-Marke) mit dem Wettbewerbsset beschließen (`dossier-buendel-b.md` Abschnitt 10, Punkt 1) und auf Folie 3, 4 und 6 einheitlich nennen
+- [ ] Rahmen (Energy- oder Softdrink-Marke) mit dem Wettbewerbsset beschließen (`dossier-buendel-b.md` Abschnitt 10, Punkt 1) und auf Folie 3, 4 und 6 einheitlich nennen. Horsch 2026 (GB) nennt die großen Softdrinkmarken als Hauptkonkurrenz; das ist ein Hinweis, die Entscheidung trifft die Gruppe (`gruenderbefragung.md` K4)
+- [x] (19.10.) Gründerbefragung eingearbeitet (`gruenderbefragung.md` K3, K5, K12): Rückfrage 2 (Hauptkonkurrenz laut Horsch), Rückfrage 6 (Selbstbild Softdrink-Marke ↔ Energy rechtlich Nahrungsergänzungsmittel ✔ [56, 72]), neue Rückfrage 11 (Herkunft der Kundschaft). Titel, Folientext und Daten für f03 unverändert; GB steht nicht auf
+  der Folie, auch nicht in der Quellzeile des Claims (Prüfung 19.10.). Die Rückfragen 2, 6 und 11 stehen auch in den
+  Notizen von f03 (`praesentation/index.html`)
+- [ ] „95 %“ nur in Rückfrage 11 und nur mit dem Zusatz „laut Gründer, Datengrundlage nicht offengelegt“; nicht auf die Folie, nicht in die Daten für f03. Lukas fragt ggf. nach, worauf die Zahl beruht (K5)
 - [ ] Folie 6 (Lukas): im Sprechtext auf Folie 3 zurückverweisen (Selbstbild „zum Selbermixen“ ↔ Hürde „selbst anrühren“); Rückfrage 9 nach der Auswertung am Mo 19.10. prüfen
 - [ ] Folie 10 (C2): Feld `kompetenz` → „Herausforderer“, „Softdrinks zum Selbermixen“, „Berlin“; Notiz Schritt 1 und Beleg [3] anpassen; die Spannung Kompetenz ↔ Hürde als Lücke zeigen. Zusammen mit „Abenteurer“ → „Hedonisten“ in einem Durchgang erledigen, auf beiden Branches
 - [ ] Jost-Zitate [24] im Audio prüfen (Kurswechsel mit dem Eistee, „gar nicht beim Gaming“); im TikTok-Video [6] nachsehen, ob es ein REWE-Markt ist
@@ -233,7 +249,7 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
     { "praefix": "über", "wert": 2,   "dezimalen": 0, "einheit": "Mio.",   "text": "Kund:innen",    "quelle": "laut Unternehmen", "status": "✔", "nr": "[13]",     "stand": "02/2026" },
     { "praefix": "über", "wert": 170, "dezimalen": 0, "einheit": "",       "text": "Mitarbeitende", "quelle": "laut Unternehmen", "status": "✎", "nr": "[5, 17]",  "stand": "10/2026" }
   ],
-  "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website und Press Kit", "status": "✔", "nr": "[5, 13]", "platzhalter": false }
+  "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website und Press Kit", "status": "✔", "nr": "[5, 13]", "stand": "auch laut Gründer Mathias Horsch (Befragung 10/2026)", "platzhalter": false }
 }
 ```
 
@@ -253,12 +269,17 @@ Das Skript sammelt daraus die Nummern 3–6, 13, 16, 17, 22, 24, 25, 39 (JSON ge
 
 ## Folie 4 – Brand Persona
 
-**Bündel:** A · **Zeit:** 1:30 · **Backup-Bezug:** B3 Datenquellen Persona (inkl. Wachstums-Persona „Lena“) ·
-**Ausarbeitung:** [`persona-steckbrief.md`](persona-steckbrief.md)
+**Bündel:** A · **Zeit:** 1:30 · **Backup-Bezug:** B3 Datenquellen Persona (inkl. Wachstums-Persona „Lena“ und
+Tabelle „Wer sagt was über wen“) · **Ausarbeitung:** [`persona-steckbrief.md`](persona-steckbrief.md)
 
 ### Titel (Kernaussage)
 
-> **Unsere Kernzielgruppe: Ende 20, Schichtdienst – und Energie ohne Zucker**
+> **Ende 20, Schichtdienst – und Energie ohne Zucker**
+
+*Geändert am 19.10.2026:* „Kern-Persona“ statt „Kernzielgruppe“. Marco steht für die heutige Kernkundschaft; so legt
+das Dossier die Kern-Persona fest (4.3). Eine Zielgruppe beschreibt dagegen, wen eine Marke erreichen will. Der Titel
+bleibt kurz wie auf der Web-Folie (Wortbudget, eine Zeile); „Kern-Persona“ steht sichtbar in der Zeile unter dem
+Namen: „Kern-Persona · Hypothese · fiktiv“ (Entscheidung 19.10.2026, Yannick: „Mach was am schlausten ist“).
 
 Alternativen:
 - *Nicht der Teenie-Gamer: Marco, 28, trinkt HOLY im Schichtdienst*
@@ -273,8 +294,8 @@ Alternativen:
 | Block | Zeile 1 | Zeile 2 | Kennzeichnung | Quelle (klein) |
 |---|---|---|---|---|
 | Geografie | Großstadt, Mietwohnung | z. B. Dortmund | A (Tendenz Stadt und Miete: D) | Statista CI 2025; Annahme |
-| Soziodemografie | männlich, 28 | Realschule + Ausbildung, Schichtdienst Logistik | D (Beruf: A) | VuMA 2021; Statista CI 2025; Gründer [24] |
-| Kaufverhalten | mehrmals pro Woche, vor der Schicht | Pulver online auf Vorrat, nutzt Rabatte | D | Kantar 2023; Gründer [24]; Shop [1, 48] |
+| Soziodemografie | männlich, 28 | Realschule + Ausbildung, Schichtdienst Logistik | D (Beruf: A) | VuMA 2021; Statista CI 2025; Jost [24] |
+| Kaufverhalten | mehrmals pro Woche, vor der Schicht | Pulver online auf Vorrat, nutzt Rabatte | D | Kantar 2023; Jost [24]; Shop [1, 48] |
 | Mediennutzung | Balken, siehe unten | | D (Kategorie) | Statista CI 2025 |
 | Psychografie | gesünder leben – aber schnell | Erfolg etwas wichtiger als im Ø | D (Pains/Gains: A) | Statista CI 2025; Kundenstimmen [88, 89] |
 
@@ -317,23 +338,41 @@ Alternativen:
 
 1. **„Laut Statista sind fast die Hälfte Frauen – warum ein Mann?“**
    Die Quellen messen Verschiedenes: 54 % Männer bei allen, die „regelmäßig“ Energy Drinks trinken (2025), 67,5 % bei
-   denen, die mindestens mehrmals im Monat trinken (2021), bei HOLY laut Gründer etwa zwei Drittel. Männer sind überall
-   die Mehrheit. Die Frauen haben wir nicht vergessen: Unsere Wachstums-Persona Lena steht im Backup.
+   denen, die mindestens mehrmals im Monat trinken (2021), bei HOLY laut Mitgründer Jost etwa zwei Drittel [24]. Männer
+   sind überall die Mehrheit. Die Frauen haben wir nicht vergessen: Unsere Wachstums-Persona Lena steht im Backup.
+   Auch Gründer Mathias Horsch nennt Männer und Frauen als Zielgruppe (Selbstauskunft, Horsch 2026, GB). Welche
+   Gründerangabe sich auf wen bezieht, zeigt Backup B3.
 2. **„Ist das nicht ein Klischee?“**
-   Unser erster Entwurf war ein 21-jähriger Gamer. Den haben wir verworfen, weil er der Gründeraussage widerspricht.
-   Gaming ist bei Marco nur ein Hobby – das ist in der Kategorie überdurchschnittlich häufig, aber laut Gründer kein
-   Trinkanlass.
+   Unser erster Entwurf war ein 21-jähriger Gamer. Den haben wir verworfen, weil er der Aussage von Mitgründer Jost
+   widerspricht [24]. Gaming ist bei Marco nur ein Hobby – das ist in der Kategorie überdurchschnittlich häufig, aber
+   laut Jost kein Trinkanlass.
 3. **„Sind das Daten über HOLY?“**
    Nein, fast alle Zahlen beschreiben Energy-Drink-Konsument:innen allgemein. HOLY veröffentlicht keine Kundendaten;
    HOLY-spezifisch sind nur die Gründeraussagen. Deshalb haben wir mit Bewertungen und echten Interviews abgeglichen.
 4. **„Warum Schichtdienst – ist das nicht eine Randgruppe?“**
    Laut Eurostat arbeiten 17 Prozent der Männer zwischen 25 und 49 in Deutschland in Schichten (2025), und die Gründer
-   nennen Schichtberufe ausdrücklich.
+   nennen Schichtberufe ausdrücklich [4, 24]. Auch Gründer Mathias Horsch nennt in unserer Befragung Pflege, Lkw,
+   Polizei, Feuerwehr und Nachtschicht als Teil einer breiten Zielgruppe, neben Studierenden und Sportbegeisterten
+   (Selbstauskunft, Horsch 2026, GB). Als Trinkanlass nennt die Schicht Mitgründer Jost [24]; ob das stimmt, zeigen
+   Bewertungen und Lukas' Interviews.
+5. **„Warum eine Energy-Persona, wenn HOLY sich als Softdrink-Marke sieht?“**
+   Laut Mitgründer Jost (Podcast 2024) ersetzt die heutige Kundschaft vor allem Energy-Dosen [24]. HOLY sieht sich als
+   Softdrink-Marke; die Wachstums-Persona Lena ist unsere Hypothese (H) und steht deshalb im Backup. Marco steht für
+   die heutige Kernkundschaft, nicht für die ganze Zielgruppe.
 
 ### Zu prüfen
 
+- [x] (19.10.) Gründerbefragung eingearbeitet (`gruenderbefragung.md` P1, P2, P4, P7): Titel „Kern-Persona“ statt
+  „Kernzielgruppe“; Rückfrage 1 (Lena; Männer und Frauen auch laut Horsch) und 4 (Schichtberufe auch laut Horsch
+  2026); neue Rückfrage 5 (Energy-Persona). „Laut Gründer“ mit [24] heißt jetzt „Jost“, auch in der Blocktabelle
+  (wie die Blockquellen in f04). Quellenzeile der Hauptfolie ohne GB: Kein Inhalt der Folie stammt aus GB; GB steht
+  nur in den Rückfragen, in B3 und B7 (Prüfung 19.10.). Sprechtext, Blöcke und Balken unverändert
+- [ ] Titel „Unsere Kern-Persona …“ auch in f04 (`praesentation/index.html`) übernehmen; Branch von Account 2 beachten
+- [x] (19.10., D14) Backup B3: Tabelle „Wer sagt was über wen“ aus `persona-steckbrief.md` Abschnitt 3, Punkt 6
+  übernommen (Horsch 2023 [4], Jost 2024 [24], Horsch 2026 GB; `praesentation/index.html`, B3); beim Zusammenführen
+  den Branch von Account 2 beachten
 - [ ] Persona-Richtung in der Gruppe bestätigen (Kern „Marco“, Wachstum „Lena“ im Backup)
-- [ ] Gründer-Zitate im Audio gegenhören, Statista-Werte im Report gegenlesen
+- [ ] Podcast-Zitate von Jost [24] im Audio gegenhören, Statista-Werte im Report gegenlesen
 - [ ] Bild mit P6 erzeugen und kennzeichnen; Tool und Datum in die Quellenzeile
 - [ ] Rückfrage 3 erst final formulieren, wenn Bewertungen und Interviews ausgewertet sind
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:30
@@ -460,13 +499,16 @@ Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (P
 4. **„Eine Marke hat doch keinen Limbic Type?“**
    Richtig. Typen beschreiben Menschen: Laut Gruppe Nymphenburg werden Befragte über das „Hauptemotionsfeld“ ihrer Persönlichkeit einem
    Typ zugeordnet. Den Auftritt von HOLY verorten wir über die Felder, die seine Signale ansprechen: Spaß und Kreativität, Abenteuer und
-   Risiko, Harmonie und Fürsorge. Der Punkt ist nur ein Mittelwert. Er fällt zwischen die Felder, rechnerisch sogar knapp in den Sektor
+   Risiko, Harmonie und Fürsorge. Das Selbstbild stützt zwei der drei Felder: Gründer Mathias Horsch nennt Spaß und Zusammengehörigkeit
+   (Selbstauskunft, Horsch 2026, GB); Provokation nennt er nicht (danach war nicht gefragt). Der Punkt ist nur ein Mittelwert. Er fällt zwischen die Felder, rechnerisch sogar knapp in den Sektor
    der Offenen – deshalb zeigen wir die Felder.
 5. **„Stimulanz weicht doch genauso ab – und zeigt HOLY die Schicht wirklich nicht?“**
    Ja, beide je 10 Punkte; bei Dominanz fehlt etwas, bei Stimulanz ist eher zu viel da. Die Zahl ist nur eine Tendenz. Getragen wird das
    Urteil vom Anlass: In den vier belegten Bildmotiven kommt die Schicht nicht vor, in Texten nur vereinzelt und doppeldeutig, etwa
-   „Damit bleibst du die ganze Nacht wach“. HOLY selbst nennt 2026 als Anlässe Alltag, Sport und Training (Press Kit). Die Wirkung
-   bewirbt HOLY durchaus, mit „~4h“ auf jeder Produktseite, aber ohne den Moment, in dem man sie braucht.
+   „Damit bleibst du die ganze Nacht wach“. HOLY selbst nennt 2026 als Anlässe Alltag, Sport und Training (Press Kit). Auch Gründer
+   Mathias Horsch nennt Wirkung in unserer Befragung nicht ausdrücklich unter den Kaufgründen, nur „funktionale Inhaltsstoffe je nach Use
+   Case“ (Selbstauskunft, Horsch 2026, GB; nach Koffein oder Wachbleiben war nicht eigens gefragt). Die Wirkung bewirbt HOLY durchaus, mit
+   „~4h“ auf jeder Produktseite, aber ohne den Moment, in dem man sie braucht.
 6. **„Dominanz fehlt – warum dann weniger Provokation?“**
    Es fehlt nicht mehr Dominanz, sondern eine andere: Durchhalten statt Rebellion. Die Doppeldeutigkeiten sprechen Abenteuer und Risiko an;
    dafür haben wir bei Marco keine Daten. Den Humor behalten wir, nur aus der Schicht statt aus der Doppeldeutigkeit. Ob das stimmt,
@@ -478,6 +520,12 @@ Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (P
 ### Zu prüfen
 
 - [ ] Gewichte, Typ (Hedonisten, knapp vor Offene) und Urteil „passt teilweise“ von Yannick freigeben lassen
+- [x] (19.10.) Gründerbefragung eingearbeitet (`gruenderbefragung.md` P8, P10): Rückfrage 4 um das Selbstbild
+  (Spaß, Zusammengehörigkeit; „Individualität“ erst nach Lukas' datierter Codeliste, `gruenderbefragung.md` K7),
+  Rückfrage 5 um den Satz zur Wirkung. Gewichte, Typ, Folgen, Folientext und Quellenzeile unverändert
+  (`limbic-map.md` §4.5, §5)
+- [x] (19.10., D14) Notizen f05: Sätze aus Rückfrage 4 und 5 und Stand-Vermerk übernommen
+  (`praesentation/index.html`, f05); beim Zusammenführen den Branch von Account 2 beachten
 - [ ] Mit der Limbic-Map-Grafik der Vorlesung abgleichen: Map-Version, Feldnamen, Lage der Typen; bis dahin Typen-Grafik nymphenburg.de
   für die Typen und [105] S. 3 für die Felder (bei Verwendung der Originalgrafik den Vermerk „© Hans-Georg Häusel / Gruppe Nymphenburg
   Consult AG“ übernehmen)

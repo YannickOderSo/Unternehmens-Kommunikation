@@ -122,16 +122,23 @@
     }
   }
 
-  /* Inhalt: Werte als Chips, darunter Pain (−) und Gain (+) */
+  /* Inhalt: optional Stichwort-Zeilen („zeilen“, z. B. Einstellung zur Kategorie),
+     Werte als Chips (Überschrift „werteLabel“, Standard „Werte“), darunter
+     Pain (−) und Gain (+). Mit „zeilen“ stehen Überschrift und Chips in EINER
+     Reihe (spart eine Zeile; die Überschrift bleibt dann auch in der dichtesten
+     Stufe sichtbar, weil sie hier Teil der Aussage ist, z. B. „Wichtiger als im Ø“). */
   function psychoInhalt(u, dim, karte) {
     var gruppe = u.element('div', { class: 'g2p-psycho' }, null, karte);
+    var mitZeilen = Array.isArray(dim.zeilen) && dim.zeilen.length > 0;
+    if (mitZeilen) zeilenInhalt(u, dim, gruppe);
     var werte = dim.werte || [];
     if (werte.length) {
-      u.element('span', { class: 'g2p-unterlabel', 'data-meta': '' }, 'Werte', gruppe);
+      var werteOrt = mitZeilen ? u.element('div', { class: 'g2p-werte-reihe' }, null, gruppe) : gruppe;
+      u.element('span', { class: 'g2p-unterlabel', 'data-meta': '' }, dim.werteLabel || 'Werte', werteOrt);
       /* große Chips nur bei wenigen, kurzen Werten – sonst normale Chips */
       var zeichen = werte.join('').length;
       var gross = werte.length <= CHIPS.maxAnzahl && zeichen <= CHIPS.maxZeichen;
-      var chips = u.element('div', { class: 'g2p-werte' + (gross ? '' : ' g2p-werte--klein') }, null, gruppe);
+      var chips = u.element('div', { class: 'g2p-werte' + (gross ? '' : ' g2p-werte--klein') }, null, werteOrt);
       werte.forEach(function (w) {
         u.element('span', { class: 'chip chip--weich' + (gross ? ' chip--gross' : '') }, w, chips);
       });
