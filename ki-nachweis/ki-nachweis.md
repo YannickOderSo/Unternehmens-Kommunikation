@@ -96,6 +96,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
 | 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
+| 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1408,6 +1409,19 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   (Illustrationen) bleiben uncommittet, bis beide fertig und geprüft sind.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15, D16 (laufen)
+
+### 77 – 19.10.2026 – Yannick
+
+> Anderer agent hat wieder kontigent, aufgaben für ihn zu dieser Präsentation?
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` gelesen: Account 2 hatte am 18.10. eine Prüfung auf
+  Vortragsreife begonnen (A2-D03, Bericht `VORTRAGSREIFE.md`), auf dem Stand vor D12 und nicht abgeschlossen; Ü03
+  (Fallstudie 2) nicht begonnen. Neue Übergabe Ü04 geschrieben: `master` übernehmen, Prüfung auf dem neuen Stand neu
+  aufsetzen (ohne Live-Abstimmung und Bilder 01/04, an denen D15/D16 arbeiten) und eine Fragerunde-Vorbereitung
+  (`fragerunde.md`) erstellen; nur neue Dateien, keine bestehenden Präsentationsdateien ändern.
+- **Ergebnis:** Übergabe `ki-nachweis/uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md`
+- **Unteragenten:** Ü04 (Account 2)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1427,6 +1441,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D07 | 16.10.2026 | 37 | Workflow „webseite-live-pruefung“ (3 Unteragenten, Browser-Tests, teils Websuche) | Live-Webseite prüfen: Technik & Bedienung, Geräte & Darstellung, Öffentlichkeit & Inhalte | Technik fehlerfrei; 19 Befunde (1 hoch, 9 mittel, 9 niedrig) | Claude: Befund „hoch“ sofort behoben, eigene Befunde behoben, Rest an Account 2 bzw. Gruppe |
 | Ü02 | 16.10.2026 | 45 | Übergabe an Account 2 (Text zum Kopieren) | Präsentations-Befunde aus D07 umsetzen, master übernehmen, Export erneuern | *übergeben* | – |
 | Ü03 | 17.10.2026 | 58 | Übergabe an Account 2 (Text zum Kopieren) | Fallstudie 2 vorbereiten, Arbeitspaket 1: README, Methoden, Recherche-Dossier Customer Journey, Arbeitsplan-Entwurf | *wartet auf Kontingent von Account 2* | – |
+| Ü04 | 19.10.2026 | 77 | Übergabe an Account 2 (Text zum Kopieren) | Prüfung auf Vortragsreife auf dem Stand nach D12/D14 neu aufsetzen (Bericht VORTRAGSREIFE.md), Fragerunde vorbereiten (fragerunde.md); nur neue Dateien | *übergeben* | – |
 | D08 | 16.10.2026 | 48 | Workflow „dossier-buendel-b“ (8 Unteragenten, einer mit Websuche) | Dossier für Lukas schreiben: lesen, schreiben, dreifach prüfen, überarbeiten | 7.279 Wörter; 55 Befunde (2 hoch, 16 mittel, 37 niedrig), fast alle eingearbeitet | Claude: ganz gelesen, gekürzt, umformulierte Stellen an den Quellen geprüft, Nachprüfung D09 |
 | D09 | 16.10.2026 | 48 | Workflow „dossier-buendel-b-nachpruefung“ (2 Unteragenten) | gekürzte Fassung auf Faktentreue und Vollständigkeit prüfen | 26 Befunde (1 hoch, 14 mittel, 11 niedrig) | Claude: Befunde an den Quellen nachgeprüft, 25 umgesetzt |
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
