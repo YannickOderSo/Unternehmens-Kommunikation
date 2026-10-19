@@ -278,6 +278,14 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       geschützt“, wörtlich in B7 und den Notizen) – Abweichung vom Folienentwurf 5 („derselbe Wortlaut“),
       mit freigeben. Nach der Freigabe die Kennzeichnung „Entwurf“ in den Kästen „FOLIE 04/05“ streichen;
       kippt der Typ nach der Auswertung (limbic-map.md 3.2), Folie 05, 10 und die Sprechtexte mitändern
+- [ ] **Gründerbefragung freigeben** (A · Yannick; `../gruenderbefragung.md`, eingebaut am 19.10.): Horsch 2026
+      (GB) steht sichtbar nur in B1, B3 und B7, sonst in Notizen und Kästen 02–05, 10, 11. Bestätigen: kein
+      GB-Zusatz unter dem Claim auf 03 (nach der Prüfung entfernt); Blockquellen auf 04 „Jost …“ statt
+      „Gründer …“; Titel „Kern-Persona“ nur im Folienentwurf 4 (f04 ohne Präfix). Offen für **Lukas** (B):
+      Versanddatum, Zuordnung der Fragen und unklare Stellen bestätigen, ggf. nach der Grundlage der „95 %“
+      fragen; erst nach seiner datierten Codeliste „Individualität“ (K7), Rangfolge der Kaufgründe (P5) und
+      Trennung von Code K3. Offen für die **Gruppe**: Kürzel GB für Folie 10, Rahmen „Softdrink-Marke“ (K4).
+      Yannick: Transkript in den Gruppenordner legen, Karriereseite [17] neu abrufen
 - [ ] **Sprechtexte 03–05 stoppen** (A · Yannick): 03 ca. 82 Wörter (Ziel ≤ 45 s), 04 seit 18.10. ca. 147
       Wörter (≈ 77 s bei 1,9 Wörtern/s, Sollzeit 80 s; vorher 172), 05 seit 18.10. ca. 106 Wörter (≈ 56 s,
       Sollzeit 55 s; Folienentwurf plant 1:00) – gekürzt wurden nur Doppelungen; laut lesen und stoppen
@@ -341,8 +349,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Übergaben; die Live-Umfrage auf Folie 08 mit Stoppuhr testen (Sollzeit der Folie 1:10). Gekürzt
       wurden die Folien 04, 05, 06, 09, 09b und 11 – Zeiten prüfen
 - [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
-      `export/` sind am 19.10. neu erzeugt (Stand mit A1–A3 als Entwurf, Logo auf Folie 12, Beispieldaten
-      gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
+      `export/` sind am 19.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
+      Folie 12, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
       `export/folien/` noch einmal erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**

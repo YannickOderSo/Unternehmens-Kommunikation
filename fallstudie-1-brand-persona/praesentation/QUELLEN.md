@@ -4,7 +4,8 @@ Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `prae
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
 Stand: 19.10.2026 (seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
 Kategoriedaten Kantar/Statista vollständig, Rechtevermerk Limbic®, „Nachprüfung, KI-gestützt“ statt „eigene
-Prüfung“; 19.10.: Abruf des DNB-Katalogs als KI-gestützt gekennzeichnet, Grafiken in `../grafiken/` eingeordnet).
+Prüfung“; 19.10.: Abruf des DNB-Katalogs als KI-gestützt gekennzeichnet, Grafiken in `../grafiken/` eingeordnet,
+Gründerbefragung als zweite Ausnahme in Abschnitt 5).
 
 ## 1. Schriften (Ordner `schriften/`)
 
@@ -120,6 +121,15 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
   Alle über die Campuslizenz der HSKL; Quellenangaben in `../persona-steckbrief.md` (Abschnitt „Quellen“),
   Kurzfassung in `../persona-daten.md`. Sie stehen **nicht** im Recherche-Dossier und sind auf den Folien als
   Kategoriedaten („nicht HOLY“) bzw. in B3/B7/B8 als „extern“ gekennzeichnet.
+- **Ausnahme – Gründerbefragung (GB)**, seit 19.10.2026: Horsch, M. (2026): Antworten auf den Fragenkatalog der
+  Gruppe, zwei Sprachnachrichten an L. Welker, LinkedIn, 18.10.2026. Eigene Erhebung ohne Dossier-Nummer,
+  Auswertung in `../gruenderbefragung.md`. Gründer Mathias Horsch hat der Abschrift und Auswertung mit KI
+  zugestimmt; Name, Paraphrasen und kurze Zitate sind freigegeben (laut Yannick, 19.10.2026). Immer als
+  Selbstauskunft gekennzeichnet („laut Gründer Mathias Horsch (Befragung 10/2026)“ bzw. „Horsch 2026 (GB)“),
+  nie als Tatsache über die Kundschaft. Sichtbar nur im Backup: B1, B3 (Status „extern“, wie in der Legende von
+  B7) und B7. Auf den Hauptfolien steht GB nur in den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“,
+  „11“), nicht in Quellzeilen. Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
+  offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
 - **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08, 08b, 09 (Beiträge,

@@ -86,7 +86,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | D12 abgeschlossen und committet; Auswertung der Gründerbefragung im Gruppenordner; Workflow-Skript geschwärzt |
 | 65 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur Nachweis committet; D12 und D13 laufen |
 | 66 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: Rohprotokoll „Unverändert committen“, Git-Historie „Nein, so lassen“ | – | Rohprotokoll unverändert committet; Historie bleibt |
-| 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | in Arbeit: Auswertung mit Namen ins Repository, Einbau in Ausarbeitungen und Folien |
+| 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | Auswertung mit Namen im Repository; Gründerbefragung in Ausarbeitungen, Notizen und Backups B1/B3/B7 eingebaut; Exporte neu |
 | 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
 | 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
 
@@ -1251,9 +1251,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 >    Datengrundlage nicht offengelegt“ in Notizen und Backup)
 > 4. „Was soll ich als nächstes Arbeitspaket umsetzen?“ – **„Auswertung + Folien (Empfohlen)“**
 
-- **Vorgehen Claude:** in Arbeit (Auswertung mit Namen ins Repository, Workflow D14 für den Einbau in Ausarbeitungen
-  und Folien mit Prüfung). Das Transkript bleibt im Gruppenordner.
-- **Ergebnis:** in Arbeit
+- **Vorgehen Claude:**
+  - Auswertung an die Freigabe angepasst (Name, Zitierweise „Horsch 2026 (GB)“, Regeln für die Nutzung) und als
+    `fallstudie-1-brand-persona/gruenderbefragung.md` ins Repository gestellt. Transkript (mit Namen ergänzt) und
+    Audio bleiben im Gruppenordner.
+  - Workflow D14 (Abschnitt 2): Einbau in Steckbrief, Limbic Map, Markenkompetenz, `methoden.md` (Kürzel GB),
+    Folienentwürfe 2–5 und Web-Präsentation, zwei Prüfer, Nacharbeit, neue Exporte. Nach dem Nutzungslimit
+    fortgesetzt (Eintrag 69).
+  - Selbst geprüft: Prüflauf 23 Folien, 0 Fehler (4 bekannte Wortbudget-Warnungen), PDF 22 Seiten, Backups B3 und
+    B7 angesehen, keine Änderung an gesperrten Dateien (Dossier Bündel B, Recherche-Dossier, gruenderbefragung.md).
+- **Ergebnis:** Gründerbefragung eingebaut. Sichtbar auf den Backups B1, B3, B7; auf den Hauptfolien 02–05 und 10
+  nur in Notizen und Autorenkästen. Die zunächst eingebaute sichtbare Zeile auf Folie 03 hat die Nacharbeit nach
+  einem Prüferbefund wieder entfernt (Bestätigung wirkte wie ein zusätzlicher Beleg); Entscheidung bei Yannick.
 - **Unteragenten:** D14
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1306,7 +1315,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
 | D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
-| D14 | 19.10.2026 | 67 | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | *läuft* | – |
+| D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1690,6 +1699,35 @@ steht hier mit dem wörtlichen Auftrag.
   - Alle Befunde und Prüfurteile gelesen; die Korrekturen der Prüfer übernommen.
   - Quellennummern und Altersangaben am Recherche-Dossier nachgeschlagen (4.1, 3.4, S1, 3.7).
   - Die Auswertung selbst geschrieben und als PDF gerendert und angesehen.
+
+---
+
+### D14 – 19.10.2026 – ausgelöst durch Prompt 67 (fortgesetzt nach 69)
+
+- **Art:** Workflow „gruenderbefragung-einbau“, acht Unteragenten in vier Phasen: vier Ausarbeitungen parallel
+  (Persona; Limbic Map; Markenkompetenz und Methoden; Folienentwürfe), Präsentation, zwei Prüfer (Treue und
+  Kennzeichnung; Darstellung und Konsistenz), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript
+  [`workflows/2026-10-19_gruenderbefragung-einbau.js`](workflows/2026-10-19_gruenderbefragung-einbau.js).
+- **Vorgaben:** Grundlage `gruenderbefragung.md`; Kennzeichnung als Selbstauskunft „Horsch 2026 (GB)“; „95 %“ nur
+  mit Zusatz in Notizen; keine Zitate unsicherer Stellen; nicht ändern: KI-Nachweis, Dossier Bündel B,
+  Recherche-Dossier, `gruenderbefragung.md`, sichtbare Inhalte der Folien 06–09b und 11; kein Commit.
+- **Ergebnis:**
+  - **Unterbrechung:** Im ersten Lauf scheiterten Präsentation, Prüfer und Nacharbeit am Nutzungslimit; nach dem
+    Reset fortgesetzt (die Ausarbeitungen aus dem Zwischenspeicher).
+  - **Ausarbeitungen:** 71 Änderungen, u. a. „Kern-Persona (heutige Kernkundschaft)“, Tabelle „Wer sagt was über
+    wen“ (Horsch 2023 [4], Jost 2024 [24], Horsch 2026 GB), Kürzel GB in `methoden.md` §6, Hinweis zur Trennung von
+    Code K3 (mit Lukas abstimmen), Klärung „Präsenz hoch ↔ im Kommen“ in der Limbic Map.
+  - **Präsentation:** Notizen und Rückfragen f02–f05, Legende GB auf f10, Hinweise im Autorenkasten f11, sichtbare
+    Einträge in B1, B3 und B7; f04 nennt sichtbar „Jost“ statt „Gründer“, damit „männlich, 25–40“ nicht Horsch
+    zugeschrieben wird.
+  - **Prüfer:** 23 Befunde (0 hoch, 6 mittel, 17 niedrig). Die mittleren: sichtbare Zeile auf f03 wirkt wie ein
+    zusätzlicher Beleg; Quellenzeile von Folienentwurf 4 nennt GB, obwohl die Folie GB nicht nutzt; „Gründer [24]“
+    seit Horsch mehrdeutig; „Individualität“ entgegen der eigenen Sperre (erst nach Lukas' Codierung).
+  - **Nacharbeit:** 19 Punkte umgesetzt (u. a. f03-Zeile entfernt, „Jost“ statt „Gründer“, Sperre
+    „Individualität“), Exporte neu (PDF 22 S., 23 Bilder, Übersicht), AUTOREN.md §15 und LIESMICH.md ergänzt.
+- **Wie Claude das Ergebnis geprüft hat:** eigener Prüflauf (0 Fehler), PDF-Seitenzahl, Backups B3 und B7
+  angesehen, `git diff --name-only` auf gesperrte Dateien geprüft, keine Modellbezeichnungen im Diff.
 
 ---
 
