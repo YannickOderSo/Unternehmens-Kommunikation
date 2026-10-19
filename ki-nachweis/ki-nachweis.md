@@ -91,6 +91,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
 | 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
 | 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
+| 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1336,6 +1337,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D15
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 72 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Dateien, die Workflow D15 gerade baut, bleiben
+  uncommittet, bis D15 fertig und geprüft ist. Frage 3 aus Eintrag 70 („Was für eine Code liste?“) im Chat
+  beantwortet (Codeliste = Lukas' Kategorien aus seinen Interviews; erst nach deren Festlegung mit Datum werden
+  die zurückgehaltenen Punkte aus der Gründerbefragung eingebaut).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
