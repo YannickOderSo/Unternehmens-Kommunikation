@@ -1388,8 +1388,14 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     Schlüsselbild (Piktogramm statt Raptor-Screenshot; Bündel C, Social-Media-Bild nur nach Zustimmung des Betreuers,
     QUELLEN.md §4).
   - Einbau erst nach Ende von Workflow D15, weil beide dieselben Dateien und Exporte ändern würden.
+  - **Entscheidung Claude:** Ohne Bildgenerator und ohne eigene Fotos und ohne Rechte an HOLY-Bildern werden die
+    Platzhalter auf Folie 01 und 04 durch eigene Illustrationen (SVG) ersetzt und ehrlich gekennzeichnet
+    („Illustration: eigene Gestaltung, KI-gestützt“). Ein eigenes Foto bzw. ein KI-Foto nach P6 bleibt möglich.
+    Folie 09 bleibt (Bündel C, Zustimmung des Betreuers offen).
+  - **Workflow D16** gestartet, zunächst nur die Bildphase (neue Dateien in `bilder/`); Einbau, Prüfung und
+    Exporte folgen per resume nach Ende von D15.
 - **Ergebnis:** in Arbeit
-- **Unteragenten:** D16 (geplant)
+- **Unteragenten:** D16 (läuft)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
@@ -1418,6 +1424,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
 | D15 | 19.10.2026 | 71 | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | *läuft* | – |
+| D16 | 19.10.2026 | 75 | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | *läuft (zuerst nur die Bilder, Einbau nach D15)* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
