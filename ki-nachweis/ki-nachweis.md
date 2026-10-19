@@ -101,6 +101,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 79 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D16-Bilder fertig, Einbau nach D15 |
 | 80 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15-Nacharbeit nach Nutzungslimit fortgesetzt |
 | 81 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D16 | D15 fertig und committet; nur Nachweis committet, D16-Einbau läuft |
+| 82 | 19.10.2026 | Yannick | „Wie füge ich das Skript ein bin jetzt auf google sheets“ | – | Anleitung im Chat: Apps Script öffnen, Code aus GitHub (Rohfassung) einfügen, speichern, einrichten ausführen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1484,6 +1485,17 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   - Nur Nachweis und Rohprotokoll committet; die zwei Illustrationen und der Einbau folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D16 (läuft)
+
+### 82 – 19.10.2026 – Yannick
+
+> Wie füge ich das Skript ein bin jetzt auf google sheets
+
+- **Vorgehen Claude:** Schritte 2–4 aus `praesentation/live-abstimmung/ANLEITUNG.md` im Chat zusammengefasst und den
+  direkten Link auf die Rohfassung von `apps-script.gs` auf GitHub genannt (Kopieren mit Strg+A/Strg+C), dazu die
+  Kontrollen nach dem Einfügen und der erste Lauf von `einrichten`. Keine Dateien geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
