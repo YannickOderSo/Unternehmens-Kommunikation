@@ -107,6 +107,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 85 | 19.10.2026 | Yannick | Screenshot der Google-Tabelle (nur „Tabellenblatt1“, kein Blatt „Stimmen“) | – | Bestätigt: einrichten lief noch nicht; Schritt-für-Schritt-Anleitung zum Auswählen und Ausführen |
 | 86 | 19.10.2026 | Yannick | „Hab doget weggemacht und nochmal ausgeführt“ + Screenshot (Protokoll: „Blatt „Stimmen“ ist bereit“) | – | einrichten erfolgreich; Rückfrage, ob doGet aus dem Code gelöscht wurde (dann Code neu einfügen); Schritt 5 erklärt |
 | 87 | 19.10.2026 | Yannick | Web-App-Adresse (…/exec) geschickt | D17 | Web-App geprüft, Adresse in marke.js, echter Ende-zu-Ende-Test bestanden; Lasttest nicht bestanden (19 von 40) → D17: Live-Abstimmung lastfest machen |
+| 88 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1579,6 +1580,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D17 (läuft)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 88 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Dateien, die D17 gerade ändert, folgen nach der
+  Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D17 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
