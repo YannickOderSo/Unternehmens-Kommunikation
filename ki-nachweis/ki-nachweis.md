@@ -93,6 +93,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
 | 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
+| 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1363,6 +1364,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D15 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 74 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Dateien der Live-Abstimmung (Abstimmseite,
+  Apps Script, Anbindung in Folie 08) bleiben uncommittet, bis D15 fertig und geprüft ist. Zuvor war ein
+  Startversuch an einem Syntaxfehler im Workflow-Skript gescheitert (Backticks in einem Auftragstext); korrigiert
+  und committet (`8787453`).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
