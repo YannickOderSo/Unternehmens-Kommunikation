@@ -98,6 +98,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 | 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
 | 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
+| 79 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D16-Bilder fertig, Einbau nach D15 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1431,6 +1432,21 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D15 und D16 laufen, ihre Dateien folgen nach der
   Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15, D16 (laufen)
+
+### 79 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D16, Bildphase fertig: `bilder/raetsel-holy.svg` (Stillleben mit Pappdose, eigener Comic-Tukan, Shaker,
+    Drachenfrucht vor HOLY-Gelb; ohne Logo und Schrift; 13 Durchläufe mit Sichtprüfung) und
+    `bilder/persona-marco.svg` (Marco in Warnweste in der nächtlichen Lagerhalle mit Shaker). Beide selbst gerendert
+    und angesehen.
+  - D15 läuft (Ende-zu-Ende-Test, danach Prüfer und Nacharbeit). Einbau der Bilder folgt danach.
+  - Nur Nachweis und Rohprotokoll committet.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15, D16 (laufen)
 ---
