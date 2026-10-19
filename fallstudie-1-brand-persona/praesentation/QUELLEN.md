@@ -5,7 +5,8 @@ nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skrip
 Stand: 19.10.2026 (seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
 Kategoriedaten Kantar/Statista vollständig, Rechtevermerk Limbic®, „Nachprüfung, KI-gestützt“ statt „eigene
 Prüfung“; 19.10.: Abruf des DNB-Katalogs als KI-gestützt gekennzeichnet, Grafiken in `../grafiken/` eingeordnet,
-Gründerbefragung als zweite Ausnahme in Abschnitt 5).
+Gründerbefragung als zweite Ausnahme in Abschnitt 5; Rätselbild Folie 01 und Persona-Bild Folie 04 als eigene
+Illustrationen, KI-gestützt, statt Platzhalter).
 
 ## 1. Schriften (Ordner `schriften/`)
 
@@ -55,13 +56,32 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
   bzw. per Skript aus den Daten erzeugt – kein Nachbau von Markenzeichen. Das Maskottchen „Raptor“ von
   HOLY wird nur benannt (Folie 09: Adler-Piktogramm als Platzhalter), nicht abgebildet – einzige mögliche
   Ausnahme ist der Screenshot des Schlüsselbild-Beitrags auf Folie 09 (Regel in Abschnitt 4).
-- **Persona-Platzhalter auf Folie 04** (Inline-SVG in `index.html`, Stand 16.10.2026): eigene,
-  stilisierte Zeichnung „Marco in der Nachtschicht“ – Figur ohne Gesicht, Arbeitsjacke mit
-  Reflexstreifen, Shaker, Mond und Häuser. Fiktive Person, kein Foto, kein KI-Bild; gekennzeichnet
-  „Platzhalter – KI-Bild folgt“, bis die Gruppe das gekennzeichnete KI-Bild (Bild-Prompt P6 in
-  `../prompts.md`) einträgt. **Dann diesen Absatz ändern:** Persona-Bild KI-generiert (Werkzeug, Datum,
-  Prompt P6), fiktive Person, keine reale oder erkennbare Person; Datei in Abschnitt 4 eintragen und in B7
-  („Technik“) eine Zeile „Persona-Bild Folie 04: KI-generiert, Werkzeug, Datum“ ergänzen.
+- **Illustrationen auf Folie 01 und 04** (seit 19.10.2026, Dateien in Abschnitt 4): eigene Gestaltung,
+  KI-gestützt (Claude Code), 19.10.2026 – **von Claude Code als SVG-Code erzeugt** (Rätselbild per
+  Generator-Skript, Persona-Bild direkt als SVG mit Hilfsskript für die Regalgeometrie); Motivvorgaben,
+  Auswahl und Prüfung durch die Gruppe. Ohne Vorlage, ohne Fotos, ohne Bilder aus dem Netz und ohne
+  Bildgenerator. Kein Logo, kein Schriftzug und keine kopierte Verpackung von HOLY; Farben und Bildstil nur
+  nachempfunden (Dossier Kap. 6.3/6.4 ✔ [1, 5, 30, 73]).
+  - **Rätselbild Folie 01** (`raetsel-holy.svg`): Produkt-Stillleben mit nachempfundener Pappdose, auf dem
+    Etikett eine Drachenfrucht im Comic-Aufkleber-Stil mit Heiligenschein, dazu Shaker, Drachenfrucht,
+    Eiswürfel. **Bewusst kein Tier auf dem Etikett:** HOLY gibt jeder Energy-Sorte ein eigenes Comic-Tier
+    (Dossier 6.3 ✔ [30]), jedes gezeichnete Tier könnte also eine echte Sorte nachbilden. Die erste Fassung
+    (19.10.) zeigte einen Tukan; HOLY führt selbst eine Sorte mit Tukan, „Thai Lime Toucan“ (Websuche
+    19.10.2026: de.holy.com/products/thai-lime-toucan; change.org/topic/holy-de-de – nicht im Dossier).
+    Deshalb in der Nacharbeit am 19.10. ersetzt. Kennzeichnung in der Fußzeile: „Illustration: eigene
+    Gestaltung, KI-gestützt (Claude Code), 19.10.2026“.
+  - **Persona-Bild Folie 04** (`persona-marco.svg`): „Marco, 28“ vor der Nachtschicht im Lager (Warnweste,
+    Shaker ohne Aufschrift, Hochregale, Nachtfenster). **Fiktive Person** – keine reale oder erkennbare
+    Person, kein Foto, kein KI-generiertes Foto. Lager und Nachtschicht nach Steckbrief A2 §2; Warnweste,
+    Haare, Bart und Hautfarbe sind Gestaltungsentscheidungen, nicht aus dem Steckbrief. Kennzeichnung auf dem
+    Bild „Illustration: eigene Gestaltung, KI‑gestützt (Claude Code), 19.10.2026“ und in der Fußzeile
+    „Person, Bild, Zitat fiktiv (Illustration, KI-gestützt)“; B7 „Icons, Grafiken, Illustrationen“.
+  - **Später optional:** eigenes Foto oder ein KI-Bild nach Bild-Prompt P6 (`../prompts.md`; ausgefüllte
+    Vorlage in `LIESMICH.md`, Abschnitt 12). Dann hier und in Abschnitt 4 Herkunft ändern (KI-generiert:
+    Werkzeug, Datum, Prompt P6, keine reale oder erkennbare Person), Kennzeichnung auf der Folie und in B7
+    anpassen und die Nutzung im KI-Nachweis eintragen.
+- **Rückfall-Zeichnung Folie 04** (Inline-SVG in `index.html`, Stand 16.10.2026): stilisierte Figur ohne
+  Gesicht; erscheint nur, wenn in den Daten von Folie 04 kein `"bild"` steht.
 - **Grafiken in `../grafiken/`** (folie-02, -03, -05; SVG/PNG, per Python-Skript erzeugt): eigene Gestaltung
   zu den Folienentwürfen – Ausarbeitungs- bzw. PowerPoint-Variante (Segoe UI, Rot/Blaugrau), **nicht Teil der
   Web-Präsentation** und nicht für die Projektion gedacht (Schrift zu klein, andere Farben und in folie-05
@@ -78,7 +98,9 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 
 | Datei | Inhalt | Herkunft |
 |---|---|---|
-| `platzhalter-raetsel.svg` | gezeichnetes Produkt-Stillleben für das Einstiegsrätsel (Folie 01): Dose und Shaker vor gelbem Hintergrund, Früchte, Eiswürfel – **ohne Logo, Schrift oder Verpackungsdesign**; Motiv nach Dossier Kap. 6.4 ✔ [1, 5, 73], Farben Gelb `#FFD007`, Schwarz `#1D1D1B`, Creme `#F3EDE1` nach Kap. 6.3 ✔ [1] (Stand 16.10.2026) | eigene Gestaltung – **bis 23.10. durch eigenes Foto ersetzen** |
+| `raetsel-holy.svg` | **Rätselbild Folie 01** (seit 19.10.2026, `marke.js → raetselBild`, 1920 × 1080): Produkt-Stillleben – nachempfundene Pappdose mit schwarzem Etikett, darauf eine Drachenfrucht im Comic-Aufkleber-Stil mit Heiligenschein (**kein Tier** – siehe Abschnitt 3), Shaker mit pinkem Getränk, Drachenfrucht, Eiswürfel, Messlöffel vor HOLY-Gelb auf dunklem Tisch – **ohne Logo, Schrift oder kopiertes Verpackungsdesign**; Motiv nach Dossier Kap. 6.4 ✔ [1, 5, 73] und 6.3 ✔ [30] (Pappdose), Farben Gelb `#FFD007`, Schwarz `#1D1D1B` nach Kap. 6.3 ✔ [1], dazu Pink und Grün; Zoompunkt `data-fokus="60.1% 60.7%"` | Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026 – von Claude Code als SVG-Code erzeugt, kein Foto; ein eigenes Foto bleibt möglich |
+| `persona-marco.svg` | **Persona-Bild Folie 04** (seit 19.10.2026, Daten `"bild"` der Folie, 1 : 1): fiktive Person „Marco, 28“ vor der Nachtschicht im Lager – Warnweste in Markengelb, Shaker ohne Logo und Aufschrift, Hochregale, Nachtfenster mit Mond; **ohne Logo und Verpackung von HOLY** | Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026 – von Claude Code als SVG-Code erzeugt; fiktive Person, kein Foto, kein KI-generiertes Foto; ein eigenes Foto oder KI-Bild nach P6 bleibt möglich |
+| `platzhalter-raetsel.svg` | früheres gezeichnetes Rätselbild (Dose und Shaker vor Gelb, ohne Logo, Stand 16.10.2026) – zurzeit nicht eingetragen; bleibt als Rückfallwert von `js/komponenten.js` liegen (mit diesem Dateinamen zeigt Folie 01 die Pille „Platzhalterbild“) | eigene Gestaltung |
 | `holy-logo-wortmarke.png` | offizielle HOLY-Wortmarke, 389 × 105 px (Folie 09b, über `marke.js → logo`; im Dunkelmodus auf einer hellen Unterlage, das Bild selbst unverändert; Quelle in der Fußzeile von 09b und in B7) | © HOLY Softdrinks GmbH; Seitenkopf von https://de.holy.com (Datei `HOLY_Logo_1.png`), abgerufen 16.10.2026, unverändert |
 | `holy-logo-oval.png` | offizielles HOLY-Logo im gelben Oval, 692 × 400 px – **Folie 01** (Auflösung des Rätsels und Titelfolie) und **Folie 12** (seit 17.10.2026; seit 18.10.2026 oben rechts neben dem Fazit über HOLY, nicht mehr neben den Gruppennamen), jeweils über `marke.js → logoTitel`; nur verkleinert angezeigt, Quelle in den Fußzeilen von Folie 01 und 12 sowie in B7 | © HOLY Softdrinks GmbH; Seitenfuß von https://de.holy.com (Datei `HOLY_Logo_NewYellow.png`), abgerufen 16.10.2026, unverändert |
 | `platzhalter-logo.svg` | neutraler Logo-Platzhalter (früher Folie 09b; steht er wieder in `marke.js → logo`, zeigt Folie 09b kein Bild, nur die Beschreibung der Wortmarke) | eigene Gestaltung |

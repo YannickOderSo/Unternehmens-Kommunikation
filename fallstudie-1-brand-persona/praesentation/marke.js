@@ -65,12 +65,16 @@ window.MARKE = {
   // Leer ('') = Markenname in Schrift wie bisher; Folie 12 zeigt dann nur die Gruppe.
   logoTitel: 'bilder/holy-logo-oval.png',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
-  // gezeigt und dann aufgelöst. BIS 23.10. durch ein eigenes Foto ersetzen
-  // (z. B. HOLY-Dose oder -Shaker, selbst fotografiert), z. B.
-  //   raetselBild: 'bilder/raetsel-holy.jpg',   // eigenes Foto (Gruppe, Datum)
-  // Danach in index.html bei Folie 01: data-fokus (Zoompunkt) prüfen und die
-  // Bildquelle in der Fußzeile eintragen.
-  raetselBild: 'bilder/platzhalter-raetsel.svg',
+  // gezeigt und dann aufgelöst. Seit 19.10.2026 eine eigene Illustration
+  // (KI-gestützt, Claude Code, 19.10.2026), kein Foto: Pappdose mit Drachenfrucht
+  // auf dem Etikett (bewusst ohne Comic-Tier), Shaker, Drachenfrucht vor HOLY-Gelb –
+  // ohne Logo und Schrift (Dossier 6.3/6.4).
+  // Kann jederzeit durch ein eigenes Foto ersetzt werden, z. B.
+  //   raetselBild: 'bilder/raetsel-foto.jpg',   // eigenes Foto (Gruppe, Datum)
+  // Dann in index.html bei Folie 01 data-fokus (Zoompunkt) neu setzen – der Wert
+  // "60.1% 60.7%" gilt nur für die Illustration – und die Bildquelle in der Fußzeile
+  // ändern. Ein Dateiname mit „platzhalter“ zeigt die Pille „Platzhalterbild“.
+  raetselBild: 'bilder/raetsel-holy.svg',
 
   /* ---------------------------------------------------------------------------
      4. ANGABEN ZUR PRÄSENTATION

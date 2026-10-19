@@ -94,7 +94,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
 | 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
-| 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
+| 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 | Folie 01 und 04 mit eigenen Illustrationen (gekennzeichnet), Schilder weg; Folie 09 bleibt (Betreuer); Exporte neu |
 | 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 | 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
 | 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
@@ -1403,8 +1403,13 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     Folie 09 bleibt (Bündel C, Zustimmung des Betreuers offen).
   - **Workflow D16** gestartet, zunächst nur die Bildphase (neue Dateien in `bilder/`); Einbau, Prüfung und
     Exporte folgen per resume nach Ende von D15.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D16 (läuft)
+- **Ergebnis (nachgetragen nach Ende von D16):** Folie 01 zeigt `bilder/raetsel-holy.svg` (Pappdose mit
+  Drachenfrucht und Heiligenschein, Shaker, Drachenfrucht vor HOLY-Gelb), Folie 04 `bilder/persona-marco.svg` (Marco
+  in der nächtlichen Lagerhalle); beide gekennzeichnet „Illustration: eigene Gestaltung, KI-gestützt (Claude Code),
+  19.10.2026“. Pille „Platzhalterbild“ (01) und Schild „Platzhalter – KI-Bild folgt“ (04) sind weg, Exporte neu.
+  Einziger sichtbarer Platzhalter bleibt Folie 09 (Bündel C; Raptor-Screenshot nur mit Zustimmung des Betreuers).
+  Details unter D16.
+- **Unteragenten:** D16
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 76 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -1507,7 +1512,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
 | D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
-| D16 | 19.10.2026 | 75 | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | *läuft (zuerst nur die Bilder, Einbau nach D15)* | – |
+| D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1962,6 +1967,43 @@ steht hier mit dem wörtlichen Auftrag.
   33 % / 67 %, Aussagezahl) und die Screenshots angesehen, Diff auf Modellbezeichnungen und personenbezogene Daten
   durchsucht. Kleine eigene Änderung: Datenschutztext der Abstimmseite nennt jetzt, dass die Geräte-ID nur im
   Browser gespeichert wird. Nicht geprüft: echtes Google Apps Script, echte Handys, Scannen im Hörsaal.
+
+### D16 – 19.10.2026 – ausgelöst durch Prompt 75 (fortgesetzt nach 81)
+
+- **Art:** Workflow „platzhalterbilder“, sechs Unteragenten in vier Phasen: zwei Bilder parallel (Rätselbild
+  Folie 01, Persona-Bild Folie 04), Einbau, zwei Prüfer (Darstellung; Inhalt, Kennzeichnung, Rechte), Nacharbeit mit
+  Exporten. Erster Lauf nur bis zu den Bildern (`args.nurBilder`), weil D15 dieselben Dateien änderte; Einbau per
+  resume nach Ende von D15 (Bilder aus dem Zwischenspeicher).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-19_platzhalterbilder.js`](workflows/2026-10-19_platzhalterbilder.js).
+- **Vorgaben:** keine HOLY-Logos, -Schriftzüge oder -Fotos aus dem Netz, keine kopierte Verpackung; Motiv nach
+  Recherche-Dossier 6.3/6.4; Kennzeichnung „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“;
+  Folie 09 nicht ändern (Bündel C, Zustimmung des Betreuers offen); KI-Nachweis nicht ändern; kein Commit.
+- **Ergebnis:**
+  - **Bilder:** reine SVG-Dateien, von Claude Code als Vektorgrafik-Code erzeugt (Rätselbild per Generator-Skript
+    im Scratchpad, 13 Durchläufe mit Sichtprüfung; Persona-Bild direkt als SVG). Ohne Text-, Bild-, Filter- und
+    Maskenelemente (flüssiger Zoom auf Folie 01).
+  - **Einbau:** `marke.js` raetselBild, Folie 01 Zoompunkt und Fußzeile, Folie 04 Bild und Kennzeichnung auf dem
+    Bild, Fußzeile „Person, Bild, Zitat fiktiv (Illustration, KI-gestützt)“ (die längere Fassung brach auf drei
+    Zeilen um), Kästen und Notizen 01/04, B1, B2 (P6 jetzt optional), B7 („Icons, Grafiken, Illustrationen: eigene
+    Gestaltung, KI-gestützt“), `QUELLEN.md` §3/§4, `LIESMICH.md` §8/§12 (mit ausgefülltem P6-Prompt als Vorlage),
+    `AUTOREN.md` §17.
+  - **Prüfer:** 1 hoher Befund: Das Etikett der ersten Fassung zeigte einen Comic-Tukan, HOLY führt aber selbst eine
+    Energy-Sorte „Thai Lime Toucan“ (Websuche des Prüfers am 19.10.2026: de.holy.com/products/thai-lime-toucan;
+    change.org/topic/holy-de-de; nicht im Dossier). Mittlere: Formulierungen „von Hand“/„selbst gestaltet“ gingen
+    über die Konvention hinaus (die Bilder hat Claude Code erzeugt), Kennzeichnung auf Folie 04 zu knapp, Exporte
+    zeigten noch die alten Schilder. Dazu niedrige (Spiegelung, Hand, Bodenlinie, Checkliste, `../prompts.md`
+    ohne Freigabe geändert).
+  - **Nacharbeit:** Etikett ohne Tier (Drachenfrucht mit Heiligenschein), Zoompunkt `60.1% 60.7%`, alle
+    Begründungen angepasst; Urheberschaft präzisiert („von Claude Code als SVG-Code erzeugt; Motivvorgaben,
+    Auswahl und Prüfung durch die Gruppe“); volle Kennzeichnung auf dem Bild von Folie 04; Hand und Bodenlinie
+    korrigiert; Änderung an `../prompts.md` zurückgenommen; Checkliste getrennt (eingebaut [x], Freigabe [ ]);
+    Exporte neu (PDF 22 Seiten, 23 Folienbilder, Übersicht).
+- **Wie Claude das Ergebnis geprüft hat:** beide Bilder schon nach der Bildphase selbst gerendert und angesehen;
+  nach der Nacharbeit Folie 01 (Schritte 0–2) und Folie 04 (Schritt 4) neu gerendert und angesehen (0 Fehler, keine
+  externen Anfragen, nur die bekannte Wortbudget-Warnung f04); die Tukan-Quelle per Websuche selbst nachgeprüft
+  (change.org/topic/holy-de-de, Abruf 19.10.2026: „Zum zweiten BURRsday brachten wir den Thai Lime Toucan als Limited
+  Edition raus.“; die Produktseite de.holy.com antwortete beim Abruf mit 429); Diff auf Folie 09, `../*.md` und
+  Modellbezeichnungen geprüft.
 
 ---
 

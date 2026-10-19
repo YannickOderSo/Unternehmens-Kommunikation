@@ -762,3 +762,65 @@ OpenCV gelesen bei 1920 und 960 px Bildbreite in allen vier, bei 640 px in drei 
 sechs) – nur ein Ersatz für den Scan-Test. Exporte neu erzeugt (Abschnitt 15): PDF 22 Seiten ohne 01b, 23 Folienbilder,
 Übersicht Stand 19.10.2026. Offen wie bisher: echtes Google Apps Script (Weiterleitung, Kaltstart, Kontingente),
 echte Handys, Scan aus der letzten Reihe.
+
+## 17. Eigene Illustrationen statt Platzhalter: Folie 01 und 04 (19.10.2026)
+
+Auftrag Yannick: Platzhalterbilder weitestgehend ersetzen und das Platzhalter-Schild entfernen. Entscheidung: kein
+Bildgenerator und keine eigenen Fotos verfügbar, Fotos oder Bilder von HOLY aus dem Netz nicht erlaubt (Rechte,
+öffentliches Repository) – deshalb **eigene Illustrationen** als reines SVG (von Claude Code als SVG-Code erzeugt,
+teils per Skript; Motivvorgaben, Auswahl und Prüfung durch die Gruppe),
+gekennzeichnet „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“. Kein Logo, kein Schriftzug,
+keine kopierte Verpackung, keine echten Personen, keine externen Ressourcen. JS und CSS unverändert.
+
+| Bereich | Änderung |
+|---|---|
+| `bilder/raetsel-holy.svg` (neu) | Rätselbild Folie 01, 1920 × 1080, ohne Filter/Masken/Text (flüssiger Zoom auf 300 %): nachempfundene Pappdose (erste Fassung mit Comic-Tukan, in der Nacharbeit ersetzt durch eine Drachenfrucht ohne Tier – siehe unten), Shaker, Drachenfrucht, Eiswürfel vor HOLY-Gelb; Motiv nach Dossier Kap. 6.3 ✔ [1, 30] / 6.4 ✔ [1, 5, 73]. |
+| `bilder/persona-marco.svg` (neu) | Persona-Bild Folie 04, 1 : 1: fiktive Person „Marco, 28“ mit Warnweste und Shaker vor der Nachtschicht im Lager (Steckbrief A2 §2); feste Nachtfarben, in allen Themen und Modi gleich; Klassen/IDs mit Präfix `pm-`. |
+| `marke.js → raetselBild` | `bilder/raetsel-holy.svg` statt `bilder/platzhalter-raetsel.svg`; Kommentar: Illustration, eigenes Foto bleibt möglich (dann `data-fokus` neu). Die Pille „Platzhalterbild“ entfällt von selbst (Dateiname ohne „platzhalter“). `platzhalter-raetsel.svg` bleibt liegen (Rückfallwert in `js/komponenten.js`). |
+| Folie 01 (`index.html`) | `data-fokus="59.5% 59%"` statt `66% 42%` (Tukan-Gesicht; seit der Nacharbeit `60.1% 60.7%`, Etikett-Frucht; in Schritt 2 steht die Gruppe mittig in der Bildtafel); Fußzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“ (Logo-Zeile unverändert; nicht verlängern – die Zeile bricht nicht um); Kasten „FOLIE 01“, Anleitung „RÄTSELBILD“, Kommentar über der Fußzeile und Notiz „Vor dem Vortrag“ auf den neuen Stand. |
+| Folie 04 (`index.html`) | Daten `"bild": "bilder/persona-marco.svg"`, `"bildHinweis": "Illustration (KI-gestützt)"` (seit der Nacharbeit die volle Kennzeichnung, siehe unten; auch als Ersatztext im HTML, sonst blitzt „Platzhalter“ auf); `js/folien/04-persona.js` ersetzt die Inline-Zeichnung durch das Bild (die Zeichnung bleibt als Rückfall ohne `"bild"`). Fußzeile „Person, Bild, Zitat fiktiv (Illustration, KI-gestützt)“ – die längere Fassung „…; Illustration: eigene Gestaltung, KI-gestützt“ brach in allen Themen auf drei Zeilen um und drückte die Quellzeile des Psychografie-Blocks aus dem Kasten (Fehler in `pruefen.mjs`). Kasten „FOLIE 04“, Anleitung und Notizen nachgezogen. |
+| B1, B2, B7 (`index.html`) | B1: Notiz „noch ein Platzhalter“ gestrichen, Kasten angepasst. B2: Kasten und Notiz – P6 optional, Persona-Bild als eigene Illustration statt Bildgenerator (keine neue Tabellenzeile). B7: „Icons, Grafiken, Illustrationen: eigene Gestaltung, KI-gestützt (Claude Code)“ mit festem Leerzeichen in „Claude Code“ – passt in allen Themen in eine Zeile (mit „(01, 04)“ brach sie um). |
+| Folie 09 | **nicht geändert** (Bündel C): Schlüsselbild bleibt Piktogramm mit „Platzhalter – Screenshot folgt“, bis der Betreuer einem Screenshot zustimmt (`QUELLEN.md` §4). |
+| `QUELLEN.md`, `LIESMICH.md`, `../prompts.md` | QUELLEN §3 (Illustrationen 01/04, Rückfall-Zeichnung) und §4 (zwei neue Bildzeilen, `platzhalter-raetsel.svg` als Rückfall); LIESMICH Stand, Abschnitt 8 (`raetselBild`), Checkliste 12 (beide Bilder erledigt, offene Freigaben, eigenes Foto/P6 mit ausgefüllter P6-Vorlage), Ordnertabelle; prompts.md: ein Satz unter P6 (in der Nacharbeit zurückgenommen – `../prompts.md` war für diesen Auftrag nicht zur Änderung freigegeben; der Hinweis steht in LIESMICH 12 und QUELLEN §3). |
+
+**Geprüft (19.10.2026):** `pruefen.mjs index.html --schritte --optional` (Editorial hell): 23 Folien, 0 Fehler,
+4 Warnungen Wortbudget wie vorher (f03, f04, f10, f11), keine externen Anfragen. `--nur f01,f04,b1,b2,b7 --schritte`
+in Bento, Keynote und Editorial dunkel: je 0 Fehler, nur die bekannte Warnung f04 (46 Wörter, wie vorher).
+`--druck`: 22 von 22 Seiten, Seite 1 (Titelfolie mit Bildtafel) und Seite 4 (Persona) angesehen. Screenshots
+angesehen: f01 Schritt 0–2 in Editorial und Bento, Schritt 1–2 in Keynote, Schritt 0 dunkel; f04 Schritt 0–4 in
+Editorial, Schritt 4 in Bento, Keynote und dunkel; B7 in allen drei Themen. (Laufen mehrere Prüfungen gleichzeitig,
+fehlt in Schritt 1 auf dem Screenshot manchmal noch das Logo – Zeitfrage der Animation; einzeln wiederholt: Logo da.) Sichtbarer Text aller Folien (jede Folie, jeder
+Schritt; zusätzlich Druckmodus mit alt/aria-label/title) nach „Platzhalter“ durchsucht: einziger Rest Folie 09
+(„Platzhalter – Screenshot folgt“, Bündel C, bewusst). **Offen:** Exporte (`export/`) zeigen noch die alten
+Platzhalter – nach den Freigaben neu erzeugen (Abschnitt 15; erledigt in der Nacharbeit, siehe unten); Motiv und
+Darstellung durch die Gruppe freigeben; Rätsel mit zwei Personen testen; Übergang 0→1→2 auf dem Vortragsrechner
+ausprobieren.
+
+### Nacharbeit der Illustrationen nach zwei Prüfungen (19.10.2026)
+
+Zwei prüfende KI-Agenten (Darstellung; Inhalt, Kennzeichnung, Rechte) haben die Illustrationen geprüft. Eingearbeitet:
+
+| Befund | Änderung |
+|---|---|
+| **Tukan = echte HOLY-Sorte** (hoch): HOLY führt eine Energy-Sorte „Thai Lime Toucan“ in einer Pappdose mit Tukan (Websuche 19.10.2026: de.holy.com/products/thai-lime-toucan; change.org/topic/holy-de-de – nicht im Dossier) | `raetsel-holy.svg` neu erzeugt: Etikett **ohne Tier** – Drachenfrucht im Comic-Aufkleber-Stil mit Heiligenschein, Strahlen, Funkelsternen und Saftspritzern. Begründung: HOLY gibt jeder Energy-Sorte ein Comic-Tier (Dossier 6.3 ✔ [30]), jedes Tier könnte eine echte Sorte nachbilden. `data-fokus` auf `60.1% 60.7%` (Fruchtfleisch). Kasten und Anleitung „FOLIE 01“, Notiz f01 (Rückfragen „Ist das eine echte Dose?“ und „Warum kein Tier?“), `marke.js`, QUELLEN §3/§4, LIESMICH 8/12 angepasst. |
+| Urheberschaft (mittel): „von Hand“ bzw. „selbst gestaltet“ | QUELLEN §3/§4, dieser Abschnitt, Notiz f01 und die Kopfkommentare der SVGs sagen jetzt: von Claude Code als SVG-Code erzeugt (teils per Skript), Motivvorgaben, Auswahl und Prüfung durch die Gruppe. Die Kennzeichnung auf den Folien bleibt wie vorgegeben. |
+| Kennzeichnung Folie 04 (mittel) | `"bildHinweis"` und Ersatztext: „Illustration: eigene Gestaltung, KI‑gestützt (Claude Code), 19.10.2026“ mit geschütztem Bindestrich (U+2011), zweizeilig; Fußzeile bleibt kurz. |
+| Exporte (mittel) | PDF, Folienbilder und Übersicht neu erzeugt (Abschnitt 15, `--stand 19.10.2026`). |
+| Spiegelung im Tisch (niedrig) | Spiegelung des Shakers wird jetzt vor der Dose gezeichnet (liegt dahinter); beide Spiegelungen als elliptischer Verlauf ohne harte Kanten (keine Filter, keine Masken). |
+| Bläschen am Tukan-Flügel, Tukan-Gesicht (niedrig) | entfallen mit dem Tukan. |
+| Hand am Shaker, Folie 04 (niedrig) | Daumen liegt hinter dem Becher, nur die Spitze ohne Nagel schaut links hervor; Finger unterschiedlich lang, kleiner Finger kürzer und schmaler, Nägel verkürzt. |
+| Bodenlinie, Folie 04 (niedrig) | entfernt (las sich wie ein Stab in der Hand). |
+| LIESMICH-Checkliste (niedrig) | „eingebaut“ und „freigeben“ getrennt: eigene offene Punkte „Folie 01 – Motiv freigeben und Rätsel testen“ und „Folie 04 – Darstellung freigeben“ (A · Yannick); Punkt „Exporte mit den Illustrationen neu erzeugt“. |
+| Weste dem Steckbrief zugeschrieben (niedrig) | Notiz f04, Kasten „FOLIE 04“, QUELLEN §3: Lager und Nachtschicht nach Steckbrief A2 §2; Warnweste, Haare, Bart, Hautfarbe sind Gestaltung. |
+| `../prompts.md` geändert (niedrig) | Änderung zurückgenommen (Datei war nicht freigegeben). |
+| P6 im Kommentar „04-persona.html“ (niedrig) | „Prompts P3/P4; P6 optional, Bild seit 19.10.2026 eigene Illustration, KI-gestützt“. |
+
+Folie 09 bleibt unverändert (Piktogramm, „Platzhalter – Screenshot folgt“; Zustimmung des Betreuers nötig, QUELLEN §4).
+Das Generator-Skript des Rätselbilds liegt nicht im Repository; die SVG-Datei ist die bearbeitbare Quelle.
+
+**Geprüft (Nacharbeit, 19.10.2026):** `pruefen.mjs index.html --schritte --optional` (Editorial hell): 23 Folien,
+80 Screenshots, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03 48, f04 46, f10 49, f11 55), keine externen
+Anfragen. `--nur f01,f04,b1,b2,b7 --schritte` in Editorial, Bento und Keynote, je hell und dunkel: je 0 Fehler, nur
+die bekannte Warnung f04 (46). Kennzeichnung auf f04 in allen Themen zweizeilig, „KI‑gestützt“ ungetrennt.
+Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b), 23 Folienbilder (geändert: f01, f04, b7), Übersicht
+`--stand 19.10.2026`; PDF-Seiten 1 und 4 und die Übersicht angesehen – kein Platzhalter-Schild auf 01 und 04.

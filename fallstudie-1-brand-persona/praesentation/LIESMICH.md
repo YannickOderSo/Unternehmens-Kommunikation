@@ -12,7 +12,10 @@ Folie 01, 09b und 12; Befunde der Prüfung (Darstellung, Inhalt, Rechte) nachgea
 neu erzeugt (Änderungen: `AUTOREN.md`, Abschnitte 11–15). Die Folien 03–05 sind **Entwurf** – Freigabe durch
 Yannick offen (Checkliste, Abschnitt 12). Seit 19.10. ist für Folie 08 eine **eigene Live-Abstimmung** vorbereitet
 (QR-Code → Abstimmseite → Google-Tabelle → Balken live), am 19.10. nach zwei Prüfungen nachgearbeitet;
-eingerichtet wird sie in Yannicks Google-Konto (Abschnitt 6).
+eingerichtet wird sie in Yannicks Google-Konto (Abschnitt 6). Seit 19.10. sind das Rätselbild (Folie 01) und
+das Persona-Bild (Folie 04) **eigene Illustrationen** (KI-gestützt, gekennzeichnet) statt Platzhalter, nach
+der Prüfung am 19.10. nachgearbeitet (Rätselbild ohne Tier auf der Dose, volle Kennzeichnung auf Folie 04);
+die Exporte in `export/` sind damit am 19.10. neu erzeugt (Abschnitt 11).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
@@ -243,7 +246,7 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 | `farben.primaer`, `farben.sekundaer` | HOLY-Gelb `#FFD007` und Schwarz `#1D1D1B` (Quelle: Recherche-Dossier Kap. 6.3 ✔ [1], Werte der Website, kein offizieller Styleguide). Alle anderen Farben werden daraus berechnet, Kontraste bleiben lesbar. Leer `''` = neutrale Farben. |
 | `logo` | Logo auf Folie 09b (Zeile „Logo“): offizielle **HOLY-Wortmarke** `bilder/holy-logo-wortmarke.png` (von de.holy.com, Abruf 16.10.2026, unverändert); Quelle steht in der Fußzeile von 09b, in B7 und in `QUELLEN.md`. Im Dunkelmodus liegt die Wortmarke auf einer hellen Unterlage (sonst verschwände die schwarze Form), das Bild selbst bleibt unverändert. Steht hier wieder `bilder/platzhalter-logo.svg`, zeigt 09b nur die Beschreibung der Wortmarke. |
 | `logoTitel` | Logo auf **Folie 01 und 12**: offizielles HOLY-Logo im gelben Oval `bilder/holy-logo-oval.png` (de.holy.com, Abruf 16.10.2026, unverändert, nur verkleinert). Auf Folie 01 erscheint es mit der Auflösung des Rätsels (im Rätsel selbst nicht) und bleibt auf der Titelfolie – anstelle des Namens in Schrift (Screenreader lesen den Namen). Auf Folie 12 steht es oben rechts neben dem Fazit über HOLY (Klammer Anfang–Ende, seit 17.10.2026; bis 18.10. neben den Gruppennamen – das wirkte wie Co-Branding). Quelle in den Fußzeilen von Folie 01 und 12 und in B7. Leer `''` = auf 01 der Name in Schrift wie früher, auf 12 nur die Gruppe (die Logo-Quelle verschwindet mit). |
-| `raetselBild` | Bild für das Einstiegsrätsel (Folie 01). Zurzeit ein gezeichneter Platzhalter (Dose und Shaker vor Gelb, ohne Logo) – **bis Fr, 23.10. durch ein eigenes Foto ersetzen** (z. B. selbst fotografierte HOLY-Dose). Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 Zoompunkt `data-fokus` prüfen und die Bildquelle in der Fußzeile eintragen. |
+| `raetselBild` | Bild für das Einstiegsrätsel (Folie 01). Seit 19.10.2026 `bilder/raetsel-holy.svg`: **eigene Illustration**, KI-gestützt (Claude Code) – nachempfundene Pappdose mit Drachenfrucht auf dem Etikett (bewusst ohne Comic-Tier, `QUELLEN.md` §3), Shaker, Drachenfrucht vor Gelb, ohne Logo und Schrift; Zoompunkt `data-fokus="60.1% 60.7%"`. Ein **eigenes Foto** bleibt möglich: Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 `data-fokus` neu setzen und die Zeile „Illustration: …“ in der Fußzeile durch die Fotoquelle ersetzen. Enthält der Dateiname „platzhalter“, zeigt die Folie die Pille „Platzhalterbild“. |
 | `titel`, `gruppe`, `datum`, `dozent` … | Angaben für Titelfolie, Kopfzeilen und Schlussfolie |
 | `unternehmen` | Firma hinter der Marke („HOLY Softdrinks GmbH“, Dossier Kap. 1 ✔ [2, 3]) – für die Zeile „Studentische Fallstudie · keine Verbindung zur …“ auf Folie 01 und 12 |
 | `anrede` | „Sie“ (einheitlich) |
@@ -319,15 +322,42 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 
 **Bis Fr, 23.10.** (zuständig nach Bündel: A = Yannick Heisler, B = Lukas Welker, C = Elias Knauber –
 Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in `index.html` nennt Details)
-- [ ] **Folie 01 – Rätselbild** (A · Yannick): eigenes Foto statt des gezeichneten Platzhalters, Quelle in
-      der Fußzeile, Zoompunkt `data-fokus` geprüft, mit zwei Personen getestet
-- [ ] **Folie 04 – Persona-Bild** (A · Yannick): gekennzeichnetes KI-Bild (Prompt P6) unter `"bild"`
-      eintragen, `"bildHinweis"` z. B. „Bild KI-generiert (Werkzeug, Datum; Prompt P6)“. Danach (Kasten
-      „FOLIE 04“): Werkzeug und Datum in die Fußzeile von 04; Nutzung im KI-Nachweis; in B2 eine Zeile P6, in
-      den Notizen von B1 „noch ein Platzhalter“ streichen; `QUELLEN.md` §3 (Persona-Bild KI-generiert,
-      Werkzeug, Datum, Prompt P6, keine reale oder erkennbare Person) und §4 (Datei in `bilder/`) sowie in B7
-      „Technik“ eine Zeile „Persona-Bild Folie 04: KI-generiert, Werkzeug, Datum“ – `QUELLEN.md` §3 sagt bis
-      dahin „kein KI-Bild“
+- [x] **Folie 01 – Rätselbild eingebaut** (19.10.2026): eigene Illustration `bilder/raetsel-holy.svg`
+      (KI-gestützt, Claude Code; ohne Logo und Schrift) statt des Platzhalters, Zoompunkt `data-fokus="60.1% 60.7%"`,
+      Fußzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“, Pille
+      „Platzhalterbild“ weg. Nach der Prüfung (19.10.) Etikett **ohne Tier**: Drachenfrucht mit Heiligenschein
+      statt Tukan – HOLY führt selbst eine Sorte mit Tukan („Thai Lime Toucan“, Websuche 19.10.2026; `QUELLEN.md` §3)
+- [ ] **Folie 01 – Motiv freigeben und Rätsel testen** (A · Yannick): Motiv bestätigen (Drachenfrucht mit
+      Heiligenschein als Wortspiel auf „holy“, bewusst kein Tier) und das Rätsel mit zwei Personen testen, die
+      das Bild nicht kennen – errät bei 300/40 niemand etwas: `data-stufen="300/40,170/14,100/0"` (mit dem
+      neuen Etikett am 19.10. auf einer Testkopie geprüft: 0 Fehler, zeigt Umrisse von Dose und Shaker und eine
+      pinke Frucht, kein Logo).
+      **Eigenes Foto statt Illustration (optional):** Datei nach `bilder/`, `marke.js → raetselBild`,
+      `data-fokus` neu setzen (60.1 % / 60.7 % gilt nur für die Illustration), Fußzeile z. B. „Foto: eigene
+      Aufnahme · Verpackung © HOLY Softdrinks GmbH“ (nicht länger als die jetzige Zeile – sie bricht nicht
+      um), `QUELLEN.md` §4. Keine Fotos von HOLY aus dem Netz (Rechte, öffentliches Repository)
+- [x] **Folie 04 – Persona-Bild eingebaut** (19.10.2026): eigene Illustration `bilder/persona-marco.svg`
+      (KI-gestützt, Claude Code; fiktive Person, kein Foto, ohne Logo und Verpackung) unter `"bild"`,
+      `"bildHinweis"` seit der Nacharbeit vollständig „Illustration: eigene Gestaltung, KI‑gestützt (Claude
+      Code), 19.10.2026“ (zweizeilig, geschützter Bindestrich), Fußzeile „Person, Bild, Zitat fiktiv
+      (Illustration, KI-gestützt)“, B1/B2/B7 und `QUELLEN.md` §3/§4 nachgezogen
+- [ ] **Folie 04 – Darstellung freigeben** (A · Yannick): respektvoll, passend zur Persona; Warnweste, Bart,
+      Haare und Hautfarbe sind Gestaltung, nicht aus dem Steckbrief.
+      **Eigenes Foto oder KI-Bild nach P6 (optional):** Datei nach `bilder/`, `"bild"` darauf setzen,
+      `"bildHinweis"` z. B. „Bild KI-generiert (Werkzeug, TT.MM.2026; P6)“ (eine Zeile, kurz halten), Fußzeile
+      von 04 kurz halten (sonst dritte Zeile und Überlauf), in B2 eine Zeile P6, B7 „Technik“, `QUELLEN.md` §3/§4
+      (Werkzeug, Datum, Prompt P6, keine reale oder erkennbare Person) und KI-Nachweis; `persona-marco.svg` kann
+      als Rückfall liegen bleiben. Vorlage P6 (`../prompts.md`), ausgefüllt nach Steckbrief A2 §2:
+      „Fotorealistisches Porträt, natürliches Tageslicht, 28-jährige Person, männliche Fachkraft für
+      Lagerlogistik im Drei-Schicht-Betrieb, in einem Logistikzentrum in einer deutschen Großstadt kurz vor
+      Beginn der Spätschicht, steht im Gang zwischen Hochregalen mit Kartons und hält einen durchsichtigen
+      Shaker mit einem pinkfarbenen, zuckerfreien Getränk ohne Logo und ohne Aufschrift in der Hand,
+      Kleidungsstil dunkle Arbeitsjacke mit gelber Warnweste und Reflexstreifen, authentischer
+      Gesichtsausdruck, freundlich und wach, keine Stockfoto-Ästhetik, Querformat.“ Optionaler Zusatz (nicht
+      Teil der Vorlage): „Keine Logos, keine Markennamen, keine Schrift im Bild; keine reale oder erkennbare
+      Person; Person mittig, Gesicht im oberen Drittel (die Folie schneidet quadratisch zu).“ Nacht-Variante
+      (weicht von „Tageslicht“ ab): „natürliches Tageslicht“ → „Hallenbeleuchtung, durch ein Hallenfenster
+      Nachthimmel mit Mond“, „Spätschicht“ → „Nachtschicht“ (Steckbrief §2: vor Spät- und Nachtschichten)
 - [ ] **Folie 03 – Markenkompetenz freigeben** (A · Yannick): Folie 03 zeigt seit 17.10. den Entwurf aus
       `../markenkompetenz.md` (A1) und Folienentwurf 3 (Titel, Rolle „Herausforderer“, Kernkompetenz
       „Softdrinks zum Selbermixen“, Zeitleiste 2020–2026, Kennzahlen „über …“). Offen: Rollenbegriffe mit der
@@ -379,8 +409,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [ ] **Beispieldaten** durch echte Ergebnisse ersetzen (dann Pillen „Beispieldaten“ entfernen):
       06, 07, 08, 08b (inkl. Wettbewerberwerte), B4, B5 (B · Lukas) · 09, 11, B6 (C · Elias) ·
       10 (Synthese), 12 (Pille am Fazit, erst löschen, wenn 10 und 11 keine Beispieldaten mehr tragen) und
-      B2 (Prompt-Log: Bündel A seit 17.10. belegt – KI 47, 52, 55/56; offen sind P7–P14 und eine Zeile P6
-      für das Persona-Bild) (A · Yannick). Folie 09b hat keine Beispielwerte, nur die Fit-Bewertung als
+      B2 (Prompt-Log: Bündel A seit 17.10. belegt – KI 47, 52, 55/56; offen sind P7–P14; P6 ist seit 19.10.
+      optional, das Persona-Bild ist eine eigene Illustration statt Bildgenerator) (A · Yannick). Folie 09b hat keine Beispielwerte, nur die Fit-Bewertung als
       Hypothese. Für Elias (Folie 11): Empfehlung 3 „frecher inszenieren“ mit A3 abgleichen („Humor aus der
       Schicht statt Doppeldeutigkeit“, Hinweis in den Notizen von Folie 11)
 - [ ] **Folie 08b – Fußzeile „n = 8“** (B · Lukas): an die tatsächlich Bewertenden anpassen (Dossier
@@ -441,9 +471,12 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       und echten Handys, einmal auch mit abgeschaltetem WLAN am Laptop (Pille „offline“, weiter mit Plan C; diese
       Probezahlen erscheinen nach dem Umstellen der Runde nicht mehr), dazu der Lasttest (Anleitung, Schritt 7). Gekürzt
       wurden die Folien 04, 05, 06, 09, 09b und 11 – Zeiten prüfen
+- [x] **Exporte mit den Illustrationen neu erzeugt** (19.10.2026, Nacharbeit): PDF, Folienbilder und
+      Übersicht zeigen auf 01 und 04 keine Platzhalter-Schilder mehr (bewusst bleibt nur „Platzhalter –
+      Screenshot folgt“ auf Folie 09). Nach der Freigabe der Motive oder mit einem eigenen Foto erneut erzeugen
 - [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
       `export/` sind am 19.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
-      Folie 12, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
+      Folie 12, Illustrationen auf 01 und 04, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
       `export/folien/` noch einmal erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**
@@ -480,14 +513,14 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `marke.js` | alles, was sich mit der Marke ändert (Name, Farben, Bilder, Umfrage, Wortwolke) |
 | `css/` | `tokens.css` (Farben, Schriften, Größen), `deck.css` (Bühne, Bedienung), `komponenten.css` (Bausteine), `folien/` (je Folien-Gruppe) |
 | `js/` | `deck.js` (Steuerung, Referentenansicht, Druck), `komponenten.js` (Steuerrad, Umfrage, Wortwolke, QR, Rätsel), `folien/` (je Folien-Gruppe), `vendor/` (QR-Code-Bibliothek) |
-| `bilder/` | offizielle HOLY-Logos (Folie 01, 09b und 12, Quelle in `QUELLEN.md`) und Platzhalterbilder (eigene Gestaltung) – eigene Bilder hier ablegen |
+| `bilder/` | offizielle HOLY-Logos (Folie 01, 09b und 12, Quelle in `QUELLEN.md`), eigene Illustrationen (Rätselbild 01 `raetsel-holy.svg`, Persona-Bild 04 `persona-marco.svg`; KI-gestützt, seit 19.10.2026) und ältere Platzhalterbilder (eigene Gestaltung, zurzeit nicht eingetragen) – eigene Bilder hier ablegen |
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
 | `werkzeuge/pruefen.mjs` | automatische Prüfung, Screenshots und PDF (optional, braucht Node.js) |
 | `werkzeuge/uebersicht.mjs` | erzeugt `export/uebersicht.png` aus den Folienbildern (Befehle: `AUTOREN.md`, Abschnitt 15) |
 | `abstimmen.html` | Abstimmseite fürs Publikum (QR-Code auf Folie 08, läuft auf GitHub Pages); dazu `js/abstimmen.js`, `css/abstimmen.css` |
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto; `--server 8787` = lokale Web-App zum Ausprobieren; `--lasttest <URL>` = 40 Stimmen gleichzeitig an die echte Web-App (Abschnitt 6, `AUTOREN.md` 6c) |
-| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 19.10.2026 mit A1–A3 als Entwurf; nach den Freigaben neu erzeugen (Abschnitt 11) |
+| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 19.10.2026 mit A1–A3 als Entwurf und den Illustrationen auf 01/04; nach den Freigaben neu erzeugen (Abschnitt 11) |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |
