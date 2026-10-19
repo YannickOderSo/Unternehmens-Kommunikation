@@ -95,6 +95,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
 | 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
+| 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1397,6 +1398,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D16 (läuft)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 76 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet. Die Arbeitsdateien von D15 (Live-Abstimmung) und D16
+  (Illustrationen) bleiben uncommittet, bis beide fertig und geprüft sind.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15, D16 (laufen)
 ---
 
 ## 2. Delegationen an Unteragenten
