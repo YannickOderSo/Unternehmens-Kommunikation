@@ -271,13 +271,15 @@ Handys testen.
 ```
 - Daten aus `marke.js → umfragen.tier`: `frage`, `optionen` (≤ 9), `link` (QR; leer = kein QR, nur
   Zählmodus), `kurzLink`, `ergebnisLink` (Knopf „Ergebnisse öffnen“), `unsereAntwort`, `aussage`,
-  `beispielwerte`. Einzelne Werte per JSON im Baustein überschreibbar (`<script type="application/json">`).
+  `beispielwerte`, `liveQuelle`, `runde` (eigene Live-Abstimmung, unten). Einzelne Werte per JSON im Baustein
+  überschreibbar (`<script type="application/json">`).
 - Linke Spalte: QR-Code, Kurz-URL, „anonym · ohne Anmeldung“, Stimmenzähler (`data-stimmen="aus"`,
-  `data-qr="aus"`, `data-qr-groesse="380"`).
+  `data-qr="aus"`, `data-qr-groesse="380"`; Folie 08 nutzt 440 – die Adresse der Abstimmseite ergibt 45 Module).
 - Ergebnis: Pille LIVE (ruhig pulsierend), `n = …`, Pille Beispieldaten (solange Beispielwerte),
   Balken mit Prozent (aus den Stimmen berechnet) und Anzahl.
-- **Beispielwerte werden nie mit echten Stimmen gemischt:** Die erste echte Stimme (Klick, Ziffer oder
-  eine Zahl > 0 über „Werte“) setzt alle Beispielwerte auf 0; die Pille „Beispieldaten“ verschwindet.
+- **Beispielwerte werden nie mit echten Stimmen gemischt:** Die erste echte Stimme (Klick, Ziffer, eine
+  Zahl > 0 über „Werte“ oder der erste Stand der Live-Abstimmung) setzt alle Beispielwerte auf 0; die Pille
+  „Beispieldaten“ verschwindet.
   Solange Beispielwerte stehen, beginnen die Felder unter „Werte“ bei 0.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
@@ -288,9 +290,47 @@ Handys testen.
   Knopf „Werte“ = alle eintragen (z. B. aus Mentimeter/Particify; Tab = nächstes Feld, nach dem letzten
   bzw. mit erneutem Klick auf „Werte“ wird alles übernommen), „Zurücksetzen“ (zweimal innerhalb von 3 s
   klicken). Ergebnisse überstehen
-  ein Neuladen (Browser-Speicher) und erscheinen auch im Referentenfenster.
+  ein Neuladen (Browser-Speicher, gespeichert mit `runde`; mit `liveQuelle` gelten nur Werte derselben Runde)
+  und erscheinen auch im Referentenfenster.
 - Getrennt platzierbar (auch auf späteren Folien):
   `<div class="umfrage-aussage" data-umfrage="tier"></div>`, `<div class="umfrage-stimmen" data-umfrage="tier"></div>`.
+- **Eigene Live-Abstimmung** (seit 19.10.2026; Bedienung `LIESMICH.md` Abschnitt 6, Einrichtung
+  `live-abstimmung/ANLEITUNG.md`). Felder: `liveQuelle` = Web-App-URL `https://script.google.com/macros/s/<ID>/exec`
+  (leer = aus – dann verhält sich der Baustein genau wie vorher), `runde` = `[A-Za-z0-9_-]{1,40}` (`'probe'`, im
+  Vortrag `'vortrag-2026-10-26'`). Mit `liveQuelle` zeigt der QR-Code auf `link` (`abstimmen.html?u=tier`; ohne
+  `liveQuelle` gibt es für diese Adresse keinen QR-Code, ohne `kurzLink` keine Zeile darunter).
+  Schnittstelle (nur GET, JSONP per `<script>` – unabhängig von CORS; vollständig im Kopf von
+  `live-abstimmung/apps-script.gs`): Folie `?aktion=stand&umfrage=tier&runde=…&anzahl=5&callback=f` →
+  `f({"ok":true,"werte":[…],"n":…,"zeit":"<ISO>"})`; Abstimmseite `?aktion=stimme&…&option=0..4&geraet=<ID>`
+  → `f({"ok":true})`; Fehler `f({"ok":false,"fehler":"…"})`.
+  Verhalten: beim Betreten sofort, dann alle 2 s, solange die Folie aktiv ist; höchstens eine Anfrage
+  gleichzeitig – auch beim Server, denn die nächste startet erst nach Antwort oder Aufgabe der vorigen.
+  Zeitlimit weich: nach 4 s und nach 8 s ohne Antwort je ein Fehlversuch (`LIVE_ZEITLIMIT`), die Anfrage bleibt
+  offen und eine späte, gültige Antwort wird übernommen; hart nach 15 s (`LIVE_ZEITLIMIT_HART`). Skript-Tag und
+  Rückruf werden aufgeräumt. Braucht eine Antwort 2 s oder länger, folgt die nächste Abfrage sofort (Abstand =
+  Antwortzeit). Neue Werte ersetzen Beispielwerte und werden wie Handstimmen gezeichnet. Die Pille ist dann ein
+  Knopf mit Zustand (`.ist-verbinde`, `.ist-live`, `.ist-offline` – nach einer Verbindung erst beim zweiten
+  Fehlversuch in Folge –, `.ist-pausiert`). Jede Hand-Eingabe (Klick, Ziffer, „Werte“, „Zurücksetzen“) pausiert
+  die Abfrage; die Pause wird je Umfrage und Runde gespeichert (`umfrage-pause:<id>:<runde>`, übersteht F5).
+  Klick auf die Pille setzt fort bzw. gibt bei „offline“ eine hängende Anfrage auf und fragt sofort neu.
+  Gespeicherte Werte (`umfrage:<id>` = `{ werte, beispiel, runde }`) gelten mit `liveQuelle` nur in derselben
+  Runde – sonst Beispielwerte (Probestimmen erscheinen im Vortrag nie, auch offline nicht). Der QR-Code zur
+  eigenen Abstimmseite erscheint nur, wenn `liveQuelle` (auf `/exec`) und `runde` brauchbar sind
+  (`liveFehlerVon`, sonst Warnung in der Konsole). Das Referentenfenster fragt nie selbst: Werte über
+  Browser-Speicher und `Deck.kanal('umfrage')`, Pille über `Deck.kanal('umfrage-live')` (`{ id, zustand, zeit,
+  meldung }`, zurück `{ id, aktion: 'pausieren' | 'fortsetzen' | 'melden' }`); dort steht der Zustand zusätzlich
+  als Knopf `.r-live` unter der Kopfzeile „Aktuell“ (nur solange die Umfrage-Folie aktuell ist; Stil in
+  `css/komponenten.css`). Mit `?druck`/`?aufnahme` wird nie abgefragt – `pruefen.mjs` sieht auch mit
+  `liveQuelle` keine externen Anfragen.
+  Lokal ohne Google: `node werkzeuge/live-abstimmung-test.mjs --server 8787`, dann
+  `index.html?quelle=http://localhost:8787/exec#f08` (`?quelle` nur bei `file://`/`localhost`; Referentenfenster
+  dafür direkt mit `index.html?referent&quelle=…` öffnen), Abstimmseite `abstimmen.html?u=tier&quelle=http://localhost:8787/exec`.
+  Die Abstimmseite (`js/abstimmen.js`) nimmt als `liveQuelle` nur `https://script.google.com/…/exec` an (wie die
+  Folie; localhost nur über `?quelle`) und lädt `marke.js` über http(s) immer frisch (`?v=…`), damit eine neue
+  `runde` sofort gilt. Sie zeigt kein Logo (öffentliche Seite, `QUELLEN.md` §4), oben die Einordnung
+  („Studentische Fallstudie · keine Verbindung zur …“); Geräte-ID je Umfrage und Runde; Zeitlimit 30 s (länger
+  als die Sperre im Server, 10 s). Lasttest gegen die echte Web-App:
+  `node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>` (40 Stimmen gleichzeitig in eine eigene Runde).
 
 ### d) Live-Wortwolke
 ```html
@@ -653,3 +693,72 @@ node werkzeuge/uebersicht.mjs index.html --stand TT.MM.JJJJ
 
 Danach `export/uebersicht.png` und einige Bilder in `export/folien/` ansehen. Testausgaben bleiben in `_test/`
 (nicht einchecken).
+
+## 16. Eigene Live-Abstimmung für Folie 08 (19.10.2026)
+
+Entscheidung Yannick: Live-Umfrage ohne fremdes Werkzeug. Publikum → QR-Code → `abstimmen.html` → Web-App
+(Google Apps Script in Yannicks Konto) → Google-Tabelle; Folie 08 holt den Stand alle 2 s. Werte eintippen und
+Zählmodus bleiben unverändert (Rückfall). Schnittstelle und Felder: Abschnitt 6c.
+
+| Bereich | Änderung |
+|---|---|
+| `marke.js → umfragen.tier` | Tiere Adler, Löwe, Waschbär, Fuchs, Schwan (Schwan statt Delfin); neue Felder `liveQuelle` (leer = aus) und `runde` (`'probe'`); `link` = `abstimmen.html?u=tier` auf GitHub Pages, `kurzLink` leer (Adresse zu lang, der QR-Code reicht); Beispielwerte für fünf Tiere, weiter gekennzeichnet; Kommentar: Weg A eigene Abstimmung, Weg B Werkzeug, Plan C Zählmodus. |
+| Umfrage (`js/komponenten.js`, Abschnitt 3a) | Abfrage per JSONP mit Takt, Zeitlimit, ohne Überlappung; Pille als Knopf mit Zustand; Pause bei Hand-Eingabe; Abgleich mit dem Referentenfenster über `Deck.kanal`; keine Abfrage im Druck/Aufnahmemodus; Prüfung von `liveQuelle` (muss auf `/exec` enden) und `runde` mit Warnung in der Konsole. Ohne `liveQuelle` unverändert. |
+| Pille (`css/komponenten.css`) | Zustände „verbinde“, „offline“ (gestrichelt, hohler Punkt), „pausiert“ (Pausenzeichen) in Nebentextfarbe ohne Puls; „Live“ wie bisher. |
+| Neu (eigene Teile) | `abstimmen.html`, `js/abstimmen.js`, `css/abstimmen.css` (Abstimmseite); `live-abstimmung/apps-script.gs`, `live-abstimmung/ANLEITUNG.md`; `werkzeuge/live-abstimmung-test.mjs` (Prüfung des Skripts, `--server PORT` = lokale Attrappe mit dem echten Skript). |
+| `LIESMICH.md` | Abschnitt 6 neu (Weg A, B, Plan C, Pille, Rückfall), Checkliste 12 (Einrichten, Runde umstellen, Internet am Präsentationsrechner, 30 Minuten vorher, nach dem Vortrag), Abschnitte 1, 2, 8, 11, 13 ergänzt. |
+
+Geprüft am 19.10.2026: `pruefen.mjs --nur f08 --schritte` ohne und mit `liveQuelle` 0 Fehler, 0 Warnungen, keine
+externen Anfragen; Vortragsmodus ohne `liveQuelle` wie vorher (keine Anfrage, kein QR-Code, Zählmodus); mit der
+lokalen Attrappe: Stimmen bewegen die Balken, Umentscheiden, Attrappe aus → „offline“ (Werte bleiben), langsame
+Antwort (6 s) → Zeitüberschreitung (damals hart nach 4 s; die Prüfung zeigte, dass beim Server dann doch zwei
+Anfragen gleichzeitig liefen – behoben in der Nacharbeit unten), Klick/Ziffer/„Werte“/„Zurücksetzen“ → „Live
+pausiert“, Klick auf die Pille → fortgesetzt, Referentenfenster ohne eigene Anfragen und mit gleicher Pille.
+Offen: Folie 08 (Kasten und Notizen in `index.html`) beschreibt noch den alten Weg – Bündel B (LIESMICH 12).
+
+**Ende-zu-Ende-Test (19.10.2026, ohne Google):** Attrappe `live-abstimmung-test.mjs --server`; Präsentation und
+Abstimmseite unter der GitHub-Pages-Adresse (Dateien von der Festplatte, `marke.js` nur im Test mit
+`liveQuelle` `https://script.google.com/…/exec`, die Anfragen dorthin beantwortet die Attrappe). Drei Handys
+(390 × 844) öffnen die Adresse aus dem QR-Code und stimmen ab, eines entscheidet sich um → Folie 08 zeigt Zahlen,
+Prozente und Balken nach 1,3–1,9 s; Aussagezahl (Schritt 1) rechnet mit; Referentenfenster (Taste P) zeigt
+dieselben Werte; Attrappe aus → „offline“, Werte bleiben, Handy meldet „Das hat nicht geklappt“; Hand-Eingabe →
+„Live pausiert“. Dabei geändert: (1) Antwortet die Web-App in 2 s oder später, fragte die Folie nur alle 4 s – jetzt
+folgt die nächste Abfrage sofort (gemessen: 2,5 s Antwortzeit → 2,5 s Abstand). (2) `ANLEITUNG.md` und
+`live-abstimmung-test.mjs` empfahlen für den lokalen Test `liveQuelle = http://localhost…` – das nimmt die
+Abstimmseite nicht an; jetzt `?quelle=` für Folie, Referentenfenster und Abstimmseite (siehe 6c).
+
+### Nacharbeit nach zwei Prüfungen (19.10.2026)
+
+Zwei Prüfer (Funktion/Robustheit/Datenschutz und Darstellung/Bedienung) fanden 1 hohen (von beiden), 6 mittlere
+und 12 niedrige Befunde. Eingearbeitet:
+
+| Bereich | Änderung |
+|---|---|
+| Umfrage (`js/komponenten.js`, 3a) – **hoch** | Gespeicherte Werte tragen die `runde`; mit `liveQuelle` gelten sie nur in derselben Runde. Vorher zeigte Folie 08 im Vortrag bei unerreichbarer Web-App die Stimmen der Generalprobe ohne Pille „Beispieldaten“, und Plan C zählte darauf weiter. Jetzt: Beispielwerte mit Pille, die erste Handstimme setzt auf 0. Alter Speicher ohne Runde gilt mit `liveQuelle` nicht. Ohne `liveQuelle` unverändert. |
+| Zeitlimit (`js/komponenten.js`) | weich 4 s/8 s (Fehlversuch, Anfrage bleibt offen, späte Antwort zählt), hart 15 s; nächste Anfrage erst danach (auch beim Server keine Überlappung). Vorher: hart 4 s – eine Web-App mit 4,5 s Antwortzeit zeigte nie einen Stand. Klick auf „offline“ gibt eine hängende Anfrage auf. |
+| Pause, Meldungen, QR (`js/komponenten.js`) | Pause je Umfrage und Runde gespeichert (übersteht F5); Grund „Bereitstellung „Jeder“?“ bei nicht erreichbarer Web-App; QR-Code zur Abstimmseite nur ohne Fehler in `liveQuelle`/`runde` (vorher auch bei …/dev). |
+| Referentenfenster (`js/komponenten.js`, `css/komponenten.css`) | Zustand als Knopf `.r-live` in einer eigenen Zeile unter der Kopfzeile „Aktuell“ (15 px statt ca. 9 px in der verkleinerten Pille; die Kopfzeile selbst war schon voll), Klick = fortsetzen/neu versuchen; Vorschau „Als Nächstes“ wird bei jedem Zustandswechsel neu gebaut. |
+| Folie 08 (`index.html`, nur Umfrage-Baustein) | `data-qr-groesse="440"` statt 380 (45 Module, 9,8 statt 7,2 Bühnen-Pixel je Modul); Kommentar ergänzt. Sonst keine Inhalte geändert. |
+| Abstimmseite (`abstimmen.html`, `css/abstimmen.css`, `js/abstimmen.js`) | kein HOLY-Logo mehr im Kopf (Absenderposition, `QUELLEN.md` §4), stattdessen „Studentische Fallstudie · keine Verbindung zur …“ ohne Scrollen sichtbar; neutrales Tab-Symbol; Regel für niedrige Fenster (alle fünf Tiere sichtbar bei 375 × 548, 360 × 560, 390 × 664, 320 × 640) und für Handys quer (zwei Spalten); Datenschutztext nennt Google und alle gespeicherten Angaben; Geräte-ID je Umfrage und Runde (alte gemeinsame ID wird gelöscht); `liveQuelle` muss auf `/exec` enden (wie die Folie); neutraler Text bei Verbindungsfehlern, Konsolenhinweis auf „Jeder“; Hinweis „Die Abstimmung ist gerade nicht geöffnet – Sie läuft nur während der Präsentation im Hörsaal“ (stimmt auch nach dem Vortrag); Zeitlimit 30 s; Kommentar zur Ladereihenfolge berichtigt. |
+| Server (`live-abstimmung/apps-script.gs`) | `SPERRE_WARTEN_MS` 10 s statt 20 s – der Server gibt vor dem Handy auf, seine Meldung „bitte gleich noch einmal tippen“ kommt an. |
+| `werkzeuge/live-abstimmung-test.mjs` | Prüfung „Sperre kürzer als Zeitlimit des Handys“ (weiter 32 Prüfungen); neu `--lasttest <URL> [--anzahl 40]` gegen die echte Web-App. |
+| `live-abstimmung/ANLEITUNG.md` | Tests im privaten Fenster, Handy ohne Google-Anmeldung; Lasttest; Ändern auf GitHub ohne Git und Kontrolle auf dem Handy; Kontrolle der Runde auf GitHub Pages (`marke.js?v=…`); „Kontingente unkritisch“ ersetzt durch „nicht geprüft – Lasttest“; Missbrauch genauer; Fehlertabelle (+4 Zeilen); kleine Wortlaute (Zeilennummer links, Umentscheiden). |
+| `LIESMICH.md`, `QUELLEN.md` | Abschnitt 6 (Runde, F5, Referentenzeile, Plan C), Checkliste 12, Abschnitt 13; `QUELLEN.md` §4: Abstimmseite ohne Logo. |
+
+**Nicht umgesetzt (mit Grund):** kürzere Adresse der Abstimmseite über eine Weiterleitungsseite (optional; neue Datei
+außerhalb von `praesentation/` und ein zusätzlicher Sprung auf dem Handy – 440 px und der Scan-Test aus der letzten Reihe
+reichen); schnellere Schreibstelle im Server (Textformat für ganze Spalten, `appendRow`) – ob Google das Format
+übernimmt, ist ohne Google nicht prüfbar, der Lasttest bei der Generalprobe zeigt, ob es nötig ist.
+
+**Geprüft (19.10.2026, ohne Google):** `live-abstimmung-test.mjs` 32 von 32; Lasttest gegen die Attrappe bestanden;
+Ende-zu-Ende-Test wie oben (Attrappe, GitHub-Pages-Adresse, drei Handys, Referentenfenster) 32 von 32; gezielte Tests
+der Befunde 34 von 34 (u. a. Probewerte im Vortrag offline → Beispielwerte, Antwortzeit 4,5 s → Stand kommt, hängende
+Verbindung → „offline“ nach ca. 4 s, eine Anfrage bis 15 s, Pause übersteht F5, Geräte-ID je Runde, …/dev auf beiden
+Seiten abgelehnt, QR 440 px, Referentenzeile); Abstimmseite in 9 Fenstergrößen hell/dunkel (alle Tiere sichtbar, keine
+waagrechte Scrollleiste, Tippflächen ≥ 58 px); `pruefen.mjs index.html --schritte --optional`: 23 Folien, 0 Fehler,
+4 Warnungen Wortbudget wie bisher (f03, f04, f10, f11), keine externen Anfragen; `--nur f08 --schritte` mit
+`liveQuelle` (Kopie) in Editorial hell/dunkel, Bento dunkel, Keynote hell je 0 Fehler, 0 Warnungen; QR-Code per
+OpenCV gelesen bei 1920 und 960 px Bildbreite in allen vier, bei 640 px in drei von vier (vorher mit 380 px: eine von
+sechs) – nur ein Ersatz für den Scan-Test. Exporte neu erzeugt (Abschnitt 15): PDF 22 Seiten ohne 01b, 23 Folienbilder,
+Übersicht Stand 19.10.2026. Offen wie bisher: echtes Google Apps Script (Weiterleitung, Kaltstart, Kontingente),
+echte Handys, Scan aus der letzten Reihe.

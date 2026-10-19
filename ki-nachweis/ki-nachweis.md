@@ -90,7 +90,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
 | 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
 | 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
-| 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
+| 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | Live-Abstimmung für Folie 08 fertig (Abstimmseite, Apps Script mit Anleitung, Anbindung, Tests); Einrichtung durch Yannick offen |
 | 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
 | 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
@@ -1342,7 +1342,10 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Schnittstelle festgelegt (nur GET, JSONP, letzte Stimme je Gerät zählt, „runde“ trennt Probe
   und Vortrag ohne geheimen Schlüssel) und Workflow D15 gestartet: drei Bauteile parallel (Apps Script mit
   Anleitung, Abstimmseite, Anbindung in Folie 08), Ende-zu-Ende-Test mit lokaler Attrappe, zwei Prüfer, Nacharbeit.
-- **Ergebnis:** in Arbeit
+- **Ergebnis (nachgetragen nach Ende von D15):** Live-Abstimmung fertig und mit einer lokalen Attrappe getestet
+  (Details unter D15). Solange `liveQuelle` in `marke.js` leer ist, verhält sich Folie 08 wie bisher (Zählmodus,
+  kein QR-Code). Offen: Einrichtung der Web-App durch Yannick nach `praesentation/live-abstimmung/ANLEITUNG.md`,
+  Test mit echten Handys, Lasttest bei der Generalprobe, Runde vor dem Vortrag umstellen.
 - **Unteragenten:** D15
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1490,7 +1493,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
-| D15 | 19.10.2026 | 71 | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | *läuft* | – |
+| D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
 | D16 | 19.10.2026 | 75 | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | *läuft (zuerst nur die Bilder, Einbau nach D15)* | – |
 
 <!-- Vorlage für den Detaileintrag:
@@ -1904,6 +1907,48 @@ steht hier mit dem wörtlichen Auftrag.
     „Individualität“), Exporte neu (PDF 22 S., 23 Bilder, Übersicht), AUTOREN.md §15 und LIESMICH.md ergänzt.
 - **Wie Claude das Ergebnis geprüft hat:** eigener Prüflauf (0 Fehler), PDF-Seitenzahl, Backups B3 und B7
   angesehen, `git diff --name-only` auf gesperrte Dateien geprüft, keine Modellbezeichnungen im Diff.
+
+### D15 – 19.10.2026 – ausgelöst durch Prompt 71 (fortgesetzt nach 73 und 80)
+
+- **Art:** Workflow „live-abstimmung“, sieben Unteragenten in vier Phasen: drei Bauteile parallel (Server: Google
+  Apps Script mit Anleitung und Testwerkzeug; Abstimmseite fürs Handy; Anbindung an Folie 08), Ende-zu-Ende-Test, zwei
+  Prüfer (Funktion, Robustheit, Datenschutz; Darstellung und Bedienung), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-19_live-abstimmung.js`](workflows/2026-10-19_live-abstimmung.js).
+- **Vorgaben:** Schnittstelle fest (nur GET mit JSONP, `aktion=stimme` und `aktion=stand`, je Runde, Umfrage und
+  Gerät zählt nur die letzte Stimme, `runde` trennt Probe und Vortrag), kein geheimer Schlüssel, keine Namen und
+  keine IP-Adressen, keine fremden Dienste außer Google Apps Script, ohne `liveQuelle` keine externen Anfragen,
+  Plan B (Werte eintippen, Zählmodus) bleibt, Kasten und Notizen von Folie 08 (Bündel B) nicht ändern, kein Commit.
+  Wissensquelle für Apps Script, Bereitstellung und Kontingente: Modellwissen (keine Websuche), in der Anleitung
+  als ungeprüft gekennzeichnet.
+- **Unterbrechungen:** zweimal am Nutzungslimit (erst nach 2 von 7 Agenten, dann in der Nacharbeit); jeweils per
+  resume fortgesetzt. Vor der ersten Fortsetzung wurde die Attrappe im Skript auf
+  `live-abstimmung-test.mjs --server` umgestellt.
+- **Ergebnis:**
+  - **Neue Dateien** (alle unter `fallstudie-1-brand-persona/praesentation/`): `abstimmen.html`,
+    `css/abstimmen.css`, `js/abstimmen.js` (Abstimmseite im HOLY-Stil, fünf Tiere, Umentscheiden, ohne Logo, oben
+    „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“), `live-abstimmung/apps-script.gs`
+    (Web-App mit Sperre und Textformat gegen Datumsumwandlung), `live-abstimmung/ANLEITUNG.md` (Einrichtung in
+    7 Schritten, Kontrollen, Fehlerbehebung, Datenschutz, nach dem Vortrag), `werkzeuge/live-abstimmung-test.mjs`
+    (32 Prüfungen, lokale Attrappe mit dem echten Skript, Lasttest gegen die echte Web-App).
+  - **Geändert:** `js/komponenten.js` (Live-Abfrage alle 2 s, Pille Live / offline / pausiert, Zahlen im
+    Browser-Speicher nur je Runde, weiches Zeitlimit), `css/komponenten.css`, `marke.js` (Tiere mit Schwan,
+    `link`, `liveQuelle` leer, `runde: 'probe'`), `index.html` (nur QR-Größe 440 px auf Folie 08), `LIESMICH.md`
+    (Abschnitt 6, Checkliste 12, Dateien 13), `AUTOREN.md` (6c, 16), `QUELLEN.md` §4 (Abstimmseite bewusst ohne
+    Logo), Exporte.
+  - **Ende-zu-Ende-Test:** drei simulierte Handys, Umentscheiden, offline, Pause, Referentenfenster; Stimme bis
+    Anzeige 1,3–1,9 s (lokal gemessen).
+  - **Prüfer:** 2 hohe Befunde (beide gleich: im Browser gespeicherte Probestimmen wären im Vortrag bei
+    Ausfall der Web-App als echte Zahlen erschienen), dazu mittlere (u. a. hartes Zeitlimit 4 s, Anleitung für
+    Laien unvollständig, Last ungeprüft, HOLY-Logo in Absenderposition auf der öffentlichen Abstimmseite, Fuchs und
+    Schwan auf kleinen Handys erst nach Scrollen sichtbar) und niedrige.
+  - **Nacharbeit:** alle hohen und mittleren Befunde umgesetzt; nicht umgesetzt: kürzere Adresse (Weiterleitung),
+    Umbau der Server-Sperre (erst nach Lasttest), Kasten und Notizen von Folie 08 (Bündel B, Lukas).
+- **Wie Claude das Ergebnis geprüft hat:** `live-abstimmung-test.mjs` erneut (32 von 32), Prüflauf
+  `pruefen.mjs --schritte --optional` (23 Folien, 0 Fehler, 4 bekannte Wortbudget-Warnungen, 0 externe Anfragen
+  ohne `liveQuelle`), Abstimmung mit lokaler Attrappe selbst durchgespielt (drei Handys, Folie 08 zeigt 1/0/2/0/0,
+  33 % / 67 %, Aussagezahl) und die Screenshots angesehen, Diff auf Modellbezeichnungen und personenbezogene Daten
+  durchsucht. Kleine eigene Änderung: Datenschutztext der Abstimmseite nennt jetzt, dass die Geräte-ID nur im
+  Browser gespeichert wird. Nicht geprüft: echtes Google Apps Script, echte Handys, Scannen im Hörsaal.
 
 ---
 

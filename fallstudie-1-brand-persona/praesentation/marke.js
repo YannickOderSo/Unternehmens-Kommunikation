@@ -91,35 +91,65 @@ window.MARKE = {
 
   /* ---------------------------------------------------------------------------
      5. LIVE-UMFRAGEN (Baustein <div class="umfrage" data-umfrage="tier">)
-     frage          Text der Frage (für Folie und Referentenansicht)
+     Weg A (Entscheidung Yannick, 19.10.2026): EIGENE Live-Abstimmung. Das
+     Publikum scannt den QR-Code, stimmt auf abstimmen.html ab, die Stimmen
+     landen über eine Web-App (Google Apps Script) in einer Google-Tabelle,
+     Folie 08 holt den Stand alle 2 s. Einrichtung: live-abstimmung/ANLEITUNG.md,
+     Bedienung: LIESMICH.md, Abschnitt 6. Weg B (Werkzeug wie Particify oder
+     Mentimeter + Werte eintippen) und Plan C (Zählmodus) bleiben möglich.
+
+     frage          Text der Frage (für Folie, Referentenansicht, Abstimmseite)
      optionen       Antwortmöglichkeiten (höchstens 9, Ziffern 1–9 zählen)
-     link           Abstimm-Adresse (z. B. Mentimeter, Particify). Leer = kein
-                    QR-Code, nur Zählmodus für Handzeichen/Zurufe.
-     kurzLink       optionale kürzere Anzeige unter dem QR-Code
-     ergebnisLink   Ergebnisseite des Werkzeugs (Knopf „Ergebnisse öffnen“)
+     link           Abstimm-Adresse für den QR-Code. Weg A: unsere Abstimmseite
+                    (abstimmen.html auf GitHub Pages) – der QR-Code dazu erscheint
+                    nur, wenn liveQuelle gesetzt ist. Weg B: Adresse aus dem Werkzeug
+                    eintragen und liveQuelle leer lassen. Ohne QR-Code (link
+                    leer oder Abstimmseite ohne liveQuelle): Zählmodus für
+                    Handzeichen/Zurufe.
+     kurzLink       optionale kürzere Anzeige unter dem QR-Code (leer: bei unserer
+                    Abstimmseite keine Zeile – die Adresse ist zu lang, der
+                    QR-Code reicht; bei einem Werkzeug die Adresse ohne https://)
+     ergebnisLink   Ergebnisseite des Werkzeugs (Knopf „Ergebnisse öffnen“, Weg B)
+     liveQuelle     Adresse der Web-App (Weg A), beginnt mit
+                    https://script.google.com/macros/s/ und endet auf /exec.
+                    Leer = Live-Abstimmung aus (Folie wie bisher: Werte
+                    eintippen oder Zählmodus, kein QR-Code zur Abstimmseite).
+                    Muss auf GitHub UND auf dem Präsentationsrechner stehen.
+     runde          trennt Probe und Vortrag (nur A–Z a–z 0–9 _ -, höchstens 40
+                    Zeichen): 'probe' für Tests und Generalprobe, spätestens am
+                    Vortag 'vortrag-2026-10-26' – dann beginnt Folie 08 bei 0,
+                    die Probestimmen bleiben in der Tabelle, zählen aber nicht.
+                    Auch die im Browser gespeicherten Zahlen (Stimmen, Handwerte)
+                    gelten nur in ihrer Runde – Probezahlen erscheinen im Vortrag nie.
+                    Ebenfalls auf GitHub UND auf dem Präsentationsrechner ändern.
      unsereAntwort  wird im Auflösungsschritt als „Unsere Analyse“ hervorgehoben
      aussage        Satz zur großen Aussagezahl (Baustein .umfrage-aussage);
                     {prozent} und {antwort} werden automatisch ersetzt
      beispielwerte  BEISPIELDATEN zum Ausprobieren (Pille „Beispieldaten“).
-                    Vor dem Vortrag auf der Folie „Zurücksetzen“ klicken oder
-                    die Zeile löschen. Prozente rechnet die Präsentation
-                    selbst aus den Stimmen aus – nie von Hand eintragen.
+                    Sie verschwinden mit dem ersten Stand der Live-Abstimmung
+                    oder der ersten Stimme von Hand (oder „Zurücksetzen“).
+                    Prozente rechnet die Präsentation selbst aus den Stimmen
+                    aus – nie von Hand eintragen.
      --------------------------------------------------------------------------- */
   umfragen: {
     tier: {
       frage: 'Wenn [Marke] ein Tier wäre – welches?',
-      // Antwortoptionen (BEISPIEL – Gruppe legt fest). Folie 08 verlangt:
-      // „Waschbär“ (unsere Analyse) und „Adler“ (Selbstbild, Maskottchen
-      // „Raptor“) müssen dabei sein – sonst Hinweis in den Notizen von Folie 08.
-      // Reihenfolge = Reihenfolge im Werkzeug (Mentimeter/Particify) und Ziffern 1–5.
-      optionen: ['Adler', 'Löwe', 'Waschbär', 'Fuchs', 'Delfin'],
-      link: '',                                                 // z. B. 'https://…' (Mentimeter/Particify)
-      kurzLink: '',                                             // z. B. 'particify.de/p/12345678'
-      ergebnisLink: '',                                         // Ergebnisseite des Werkzeugs
+      // Antwortoptionen (festgelegt von Yannick, 19.10.2026): „Waschbär“ =
+      // unsere Analyse, „Adler“ = Selbstbild (Maskottchen „Raptor“) – beide
+      // verlangt Folie 08, sonst Hinweis in deren Notizen. Reihenfolge = Knöpfe
+      // auf der Abstimmseite, Ziffern 1–5 und Nummern 0–4 in der Tabelle
+      // (Spalte „Option“; bei Weg B: Reihenfolge im Werkzeug). Nach den ersten
+      // echten Stimmen Reihenfolge nicht mehr ändern – sonst zählen sie fürs falsche Tier.
+      optionen: ['Adler', 'Löwe', 'Waschbär', 'Fuchs', 'Schwan'],
+      link: 'https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/abstimmen.html?u=tier',
+      kurzLink: '',                                             // leer = keine Zeile unter dem QR-Code (Weg B: z. B. 'particify.de/p/12345678')
+      ergebnisLink: '',                                         // nur Weg B: Ergebnisseite des Werkzeugs
+      liveQuelle: '',                                           // Web-App-Adresse 'https://script.google.com/macros/s/…/exec' – leer = aus
+      runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-26'
       unsereAntwort: 'Waschbär',                                // Ergebnis unserer Analyse (Folie 08, Titel)
       // Satz der großen Aussagezahl; {prozent} und {antwort} werden ersetzt
       aussage: '{prozent} sehen [Marke] wie wir: als {antwort}',
-      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen) – vor dem Vortrag „Zurücksetzen“
+      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen; Adler, Löwe, Waschbär, Fuchs, Schwan)
     }
   },
 

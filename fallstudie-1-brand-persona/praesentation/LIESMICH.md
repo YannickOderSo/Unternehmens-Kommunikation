@@ -10,7 +10,9 @@ eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3
 dazu die passenden Stichworte auf Folie 10 und die Verweise auf 11, B2, B7 und B8; offizielles HOLY-Logo auf
 Folie 01, 09b und 12; Befunde der Prüfung (Darstellung, Inhalt, Rechte) nachgearbeitet; Exporte am 19.10.
 neu erzeugt (Änderungen: `AUTOREN.md`, Abschnitte 11–15). Die Folien 03–05 sind **Entwurf** – Freigabe durch
-Yannick offen (Checkliste, Abschnitt 12).
+Yannick offen (Checkliste, Abschnitt 12). Seit 19.10. ist für Folie 08 eine **eigene Live-Abstimmung** vorbereitet
+(QR-Code → Abstimmseite → Google-Tabelle → Balken live), am 19.10. nach zwei Prüfungen nachgearbeitet;
+eingerichtet wird sie in Yannicks Google-Konto (Abschnitt 6).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
@@ -31,7 +33,9 @@ den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `
 3. **F** = Vollbild (oder F11). Die Folie (1920 × 1080) passt sich jedem Bildschirm an; bei 16:10-Beamern
    entstehen oben/unten schmale Ränder, abgeschnitten wird nichts.
 
-- Läuft **ohne Internet und ohne Server** (Schriften, Bilder und Programme liegen im Ordner).
+- Läuft **ohne Internet und ohne Server** (Schriften, Bilder und Programme liegen im Ordner). Einzige Ausnahme:
+  die eigene Live-Abstimmung auf Folie 08 braucht Internet – ohne Internet zeigt die Folie „offline“, alles andere
+  läuft wie gewohnt (Abschnitt 6).
 - **F5** (Neuladen) bleibt auf derselben Folie und demselben Schritt (Adresse z. B. `index.html#f06.2`).
 - **Tablet/Handy:** quer halten (im Hochformat erscheint ein Hinweis); wischen und antippen, siehe Abschnitt 2.
 - Die Präsentation startet im Thema „Editorial“, hell, mit den HOLY-Farben (Gelb/Schwarz).
@@ -52,7 +56,7 @@ den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `
 | H oder ? | Hilfe mit allen Tasten |
 | Esc | Fenster schließen, Eingabefeld verlassen |
 | Z | nach einem Sprung aus einer Backup-Folie („Zu Folie …“) zurück ins Backup |
-| 1–5 | nur auf Folie 08, solange die Umfrage zu sehen ist: Stimme zählen (Umschalt = −1). Zum Springen von dort erst weiterklicken oder **O** nutzen; „1“ „0“ Enter erkennt die Präsentation als Folie 10 (die „1“ zählt dann nicht) |
+| 1–5 | nur auf Folie 08, solange die Umfrage zu sehen ist: Stimme zählen (Umschalt = −1). Zum Springen von dort erst weiterklicken oder **O** nutzen; „1“ „0“ Enter erkennt die Präsentation als Folie 10 (die „1“ zählt dann nicht). Mit der eigenen Live-Abstimmung pausiert eine Ziffer die Abfrage (Abschnitt 6) |
 
 - **Nach der letzten Hauptfolie (12) geht es nicht automatisch ins Backup** – Backup nur über **O**.
 - **Bedienleiste** unten rechts erscheint, wenn die Maus im **unteren Bildrand** bewegt wird (nicht bei
@@ -85,7 +89,7 @@ den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `
 | B1–B8 | Backup (Methodik, Prompt-Log, Datenquellen, Rohdaten, Matrix, Raster, Quellen, Belege der Folien) | je Bündel | – |
 
 **Summe Hauptfolien: 14:00 min** (60 s Puffer für die zwei Live-Momente: Zurufe auf Folie 01 und
-Handzeichen-Umfrage auf Folie 08). Die Sollzeiten der Folien 04, 05, 06, 09, 09b und 11 wurden dafür am
+Live-Umfrage auf Folie 08). Die Sollzeiten der Folien 04, 05, 06, 09, 09b und 11 wurden dafür am
 16.10.2026 gekürzt (Sprechtexte angepasst). Der ursprüngliche Ablaufplan sah 14:45 vor – **die Gruppe
 bestätigt den 14:00-Plan** und gleicht `../arbeitsplan.md` an (Checkliste, Abschnitt 12). Die optionale Folie 01b (+0:45, mit dem Abgleich auf Folie 10
 ca. +0:55) nur einschalten, wenn dafür auf Folie 08 die Live-Umfrage entfällt (spart ca. 0:30). In der
@@ -117,33 +121,107 @@ Gängige Clicker senden **Bild↑/Bild↓** (oder Pfeiltasten) – beides funkti
 Eingabefeld (Wortwolke, Umfragewerte) aktiv ist. Einfach in den USB-Anschluss stecken; vorher einmal
 alle Folien damit durchklicken. Taste „Schwarz“/„Blank“ am Clicker sendet meist **B** oder **.** – geht.
 
-## 6. Live-Umfrage (Folie 08) einrichten
+## 6. Live-Umfrage (Folie 08)
 
-Die Umfrage „Wenn HOLY ein Tier wäre – welches?“ läuft in einem Online-Werkzeug, die Ergebnisse trägt ein
-Teammitglied auf der Folie ein. **Das Publikum braucht Internet für das Werkzeug, die Präsentation nicht.**
+Frage: „Wenn HOLY ein Tier wäre – welches?“ mit **Adler, Löwe, Waschbär, Fuchs, Schwan**
+(`marke.js → umfragen.tier.optionen`, festgelegt von Yannick am 19.10.2026; „Waschbär“ = unsere Analyse,
+„Adler“ = Selbstbild, Maskottchen „Raptor“). Die Folie kann drei Wege – **Weg A ist der Plan**, B und C
+sind die Rückfallebenen.
 
-1. Im Werkzeug, z. B. **Particify** oder **Mentimeter**, eine Einzelauswahl-Frage anlegen – Frage und
-   Antworten **in derselben Reihenfolge** wie in `marke.js → umfragen.tier.optionen`
-   (zurzeit: Adler, Löwe, Waschbär, Fuchs, Delfin – Beispiel, „Waschbär“ und „Adler“ müssen bleiben).
-2. In `marke.js → umfragen.tier` eintragen: `link` (Abstimm-Adresse für das Publikum → daraus wird
-   automatisch der **QR-Code**), optional `kurzLink` (kurze Anzeige unter dem QR-Code) und `ergebnisLink`
+### Weg A – eigene Live-Abstimmung (Plan)
+
+Das Publikum scannt den **QR-Code** auf Folie 08 und tippt auf unserer Abstimmseite (`abstimmen.html`,
+HOLY-Design, anonym, ohne Anmeldung) ein Tier an. Die Stimme geht an eine kleine **Web-App** in Yannicks
+Google-Konto (Google Apps Script) und landet als Zeile in einer Google-Tabelle. Folie 08 holt den Stand
+**alle 2 Sekunden** und zeichnet die Balken live; die Prozente rechnet die Präsentation. Je Handy zählt nur
+die letzte Stimme (umentscheiden geht, doppelt zählen nicht). **Präsentationsrechner und Handys brauchen
+Internet** (Handys: mobile Daten genügen).
+
+**Einrichten** (einmal, ca. 10 Minuten): `live-abstimmung/ANLEITUNG.md`, Schritt für Schritt. Danach in
+`marke.js → umfragen.tier`:
+
+| Eintrag | Wert |
+|---|---|
+| `liveQuelle` | Web-App-URL aus der Anleitung: `'https://script.google.com/macros/s/…/exec'`. Leer `''` = Weg A aus (dann kein QR-Code, links „Abstimmung per Handzeichen“) |
+| `runde` | `'probe'` für Tests und Generalprobe. **Spätestens So, 25.10.:** `'vortrag-2026-10-26'` – dann beginnt Folie 08 bei 0, die Probestimmen bleiben in der Tabelle, zählen aber nicht |
+| `link` | Adresse der Abstimmseite (für den QR-Code) – steht schon drin, nicht ändern |
+
+`liveQuelle` und `runde` müssen **auf GitHub** (die Abstimmseite liest `marke.js` von GitHub Pages) **und auf
+dem Präsentationsrechner** gleich stehen. Nach dem Hochladen dauert es einige Minuten, bis GitHub Pages die
+neue Fassung zeigt – deshalb früh umstellen. Wie man ohne Git auf GitHub ändert und beides kontrolliert:
+Anleitung, Schritt 6 und „Vor dem Vortrag“. Kurzkontrolle auf dem Handy: `abstimmen.html?u=tier` auf GitHub
+Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet“).
+
+**Testen** (Generalprobe, möglichst im Hörsaal):
+1. Präsentation öffnen, Folie 08: Die Pille im Kopf der Ergebnisse zeigt nach 1–2 s **„Live“** (grün,
+   pulsierender Punkt). Die Beispielwerte verschwinden mit dem ersten Stand.
+2. QR-Code mit mehreren Handys aus der **letzten Reihe** scannen (iPhone und Android, über mobile Daten),
+   ein Tier antippen → nach wenigen Sekunden bewegt sich der Balken. Umentscheiden → der Balken wandert,
+   `n` bleibt gleich.
+3. Die Test-Adressen der Anleitung im **privaten Fenster** öffnen (sonst fällt eine falsche Freigabe nicht
+   auf) und den **Lasttest** (40 Stimmen gleichzeitig) laufen lassen – Anleitung, Schritt 7.
+4. Nach dem Umstellen auf `'vortrag-2026-10-26'`: Folie 08 zeigt `n = 0`, und `marke.js` auf GitHub Pages
+   nennt dieselbe Runde (Anleitung, „Vor dem Vortrag“ – sonst zählen die Handys weiter in „probe“).
+
+**Die Pille im Kopf der Ergebnisse** (Maus auf die Pille zeigt Runde, letzten Stand bzw. den Grund):
+
+| Pille | Bedeutung | Was tun |
+|---|---|---|
+| **LIVE** grün, Punkt pulsiert | verbunden, neuer Stand alle 2 s | nichts |
+| LIVE grau, ohne Puls | Verbindung wird aufgebaut (erste Sekunden) | kurz warten |
+| **OFFLINE** grau, gestrichelt | keine Antwort von der Web-App (Internet? `liveQuelle`?) oder Antwort langsamer als ca. 8 s. Die Werte bleiben stehen; eine späte Antwort wird noch übernommen | Klick auf die Pille = sofort neu versuchen; sonst „Rückfall“ unten |
+| **LIVE PAUSIERT** grau, Pausenzeichen | jemand hat von Hand gezählt (Klick, Ziffer, „Werte“, „Zurücksetzen“). Die Folie fragt nicht mehr – Hand und Abstimmung überschreiben sich nicht. Die Pause übersteht ein Neuladen (F5) | Klick auf die Pille = fortsetzen; der Stand der Abstimmung ersetzt dann die Handwerte – vorher Zahlen notieren |
+
+- **„Zurücksetzen“ ist bei Weg A nicht nötig** – die Runde sorgt für den Start bei 0. Wer es doch klickt,
+  pausiert die Abfrage: dann die Pille anklicken.
+- **Zahlen gehören zur Runde:** Was der Präsentationsrechner gespeichert hat (Stimmen, Handwerte), gilt nur in
+  derselben Runde. Stimmen und Handwerte der Generalprobe („probe“) erscheinen im Vortrag also nie – auch nicht,
+  wenn die Web-App dann nicht erreichbar ist. Ohne Stand zeigt Folie 08 die Beispielwerte mit Pille
+  „Beispieldaten“; die erste Handstimme setzt alles auf 0.
+- **Neuladen (F5)** beendet eine Pause **nicht** – erst der Klick auf die Pille setzt fort.
+- **Referentenfenster:** zeigt dieselben Zahlen und dieselbe Pille, fragt aber nicht selbst. Unter der
+  Kopfzeile „Aktuell“ steht der Zustand gut lesbar („Abstimmung: live“, „… offline – Klick: neu versuchen“,
+  „… pausiert – Klick: fortsetzen“); Klick darauf wirkt wie Klick auf die Pille. Wer dort von Hand zählt,
+  pausiert die Abfrage im Vortragsfenster.
+- PDF und Exportbilder zeigen mit `liveQuelle` den QR-Code; abgefragt wird dort nichts. Wer ihn nach dem
+  Vortrag scannt, liest „Die Abstimmung ist gerade nicht geöffnet“.
+- **Rückfall im Vortrag:** Ist nur der Präsentationsrechner offline, die Handys aber nicht, kommen die Stimmen
+  trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen:
+  `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5`) und trägt die Zahlen über
+  „Werte“ ein (Reihenfolge Adler, Löwe, Waschbär, Fuchs, Schwan). Geht gar nichts: Plan C.
+- **Nach dem Vortrag:** Ergebnis sichern, Web-App archivieren, `liveQuelle: ''` (Anleitung, „Nach dem Vortrag“).
+
+### Weg B – Werkzeug (Particify, Mentimeter) + Werte eintippen
+
+Nur falls Weg A nicht eingerichtet werden kann (im Vortrag selbst ist der Wechsel zu spät – dann Plan C).
+1. Im Werkzeug eine Einzelauswahl-Frage anlegen – Antworten **in derselben Reihenfolge** wie in
+   `marke.js → umfragen.tier.optionen`.
+2. In `marke.js → umfragen.tier`: `liveQuelle: ''`, `link` = Abstimm-Adresse des Werkzeugs (→ **QR-Code**),
+   optional `kurzLink` (kurze Anzeige unter dem QR-Code, z. B. `particify.de/p/12345678`) und `ergebnisLink`
    (Ergebnisseite → Knopf „Ergebnisse öffnen“). Speichern, F5.
 3. QR-Code mit mehreren Handys aus der **letzten Reihe** testen.
 4. **Vor dem Vortrag:** auf Folie 08 die Maus über die Ergebnisse bewegen → **„Zurücksetzen“ zweimal**
-   klicken – das löscht Beispielwerte **und** Probestimmen. (Sicherung: Die erste echte Stimme ersetzt
-   die Beispielwerte ohnehin automatisch; Beispiel- und Live-Stimmen werden nie gemischt. Probestimmen aus
-   der Generalprobe bleiben aber stehen, bis „Zurücksetzen“ geklickt wird.)
+   klicken – das löscht Beispielwerte **und** Probestimmen.
+5. Im Vortrag: Knopf **„Werte“** → Zahl aus dem Werkzeug tippen → **Tab** → nächste Zahl … nach der letzten
+   Zahl wird alles übernommen. Einzelwert: Doppelklick auf die Zahl.
 
-Im Vortrag die Ergebnisse auf die Folie bringen:
-- **Eintragen:** Knopf **„Werte“** → Zahl aus dem Werkzeug tippen → **Tab** → nächste Zahl … nach der
-  letzten Zahl wird alles übernommen. Einzelwert: Doppelklick auf die Zahl.
-- **Plan B – Zählmodus** (kein Internet, QR geht nicht): Tiere vorlesen, Hände zählen und eintragen,
-  oder Klick auf ein Tier = +1 (Umschalt+Klick oder Rechtsklick = −1), Ziffern 1–5 = +1. Solange die
-  Umfrage zu sehen ist, gehören Ziffern der Umfrage – zum Springen erst weiterklicken oder **O** nutzen.
+### Plan C – Zählmodus (ohne Internet)
+
+Tiere vorlesen, Hände zählen und eintragen, oder Klick auf ein Tier = +1 (Umschalt+Klick oder Rechtsklick
+= −1), Ziffern 1–5 = +1. Solange die Umfrage zu sehen ist, gehören Ziffern der Umfrage – zum Springen erst
+weiterklicken oder **O** nutzen. Mit Weg A pausiert das die Live-Abfrage (Pille „Live pausiert“) – gewollt.
+Stehen vor dem Zählen andere Zahlen als 0 auf der Folie (und keine Pille „Beispieldaten“), zuerst
+„Zurücksetzen“ zweimal klicken; Beispielwerte verschwinden mit der ersten Handstimme von selbst.
+
+**Für alle Wege**
+- Beispielwerte und echte Stimmen werden nie gemischt: Der erste Stand der Abstimmung bzw. die erste Stimme
+  von Hand ersetzt die Beispielwerte (Pille „Beispieldaten“ verschwindet).
 - Prozente rechnet die Präsentation selbst aus den Stimmen. Der nächste Klick (Schritt 1) zeigt
-  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“). Keine Stimmen? Dann steht
-  dort „Noch keine Stimmen“ (keine „0 %“) – Analyse trotzdem erzählen oder Schritt 1 überspringen.
-- Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher) und erscheinen auch im Referentenfenster.
+  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“) – bei Weg A zählt sie mit,
+  solange Stimmen kommen. Keine Stimmen? Dann steht dort „Noch keine Stimmen“ (keine „0 %“) – Analyse
+  trotzdem erzählen oder Schritt 1 überspringen.
+- Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher; mit eigener Live-Abstimmung nur in derselben
+  Runde) und erscheinen auch im Referentenfenster.
 
 ## 7. Live-Wortwolke (Folie 01b, optional)
 
@@ -169,7 +247,7 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 | `titel`, `gruppe`, `datum`, `dozent` … | Angaben für Titelfolie, Kopfzeilen und Schlussfolie |
 | `unternehmen` | Firma hinter der Marke („HOLY Softdrinks GmbH“, Dossier Kap. 1 ✔ [2, 3]) – für die Zeile „Studentische Fallstudie · keine Verbindung zur …“ auf Folie 01 und 12 |
 | `anrede` | „Sie“ (einheitlich) |
-| `umfragen.tier` | Live-Umfrage (siehe Abschnitt 6) |
+| `umfragen.tier` | Live-Umfrage: Frage, Tiere, `liveQuelle` (Web-App der eigenen Abstimmung), `runde` (`'probe'` → `'vortrag-2026-10-26'`), `link` (siehe Abschnitt 6) |
 | `wortwolken.assoziationen` | Texte der Wortwolke |
 | `optionaleFolien` | `f01b: true/false` |
 | `beispieldatenHinweis` | `true` = Pillen „Beispieldaten“ zeigen – erst auf `false`, wenn **keine** erfundenen Werte mehr auf den Folien stehen |
@@ -227,7 +305,8 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
    jedem PDF-Programm; keine Animationen, keine Live-Funktionen.
 2. **Ganzer Ordner** `praesentation/` ebenfalls auf den USB-Stick – läuft auf jedem Rechner mit Chrome/Edge
    ohne Installation und ohne Internet.
-3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6).
+3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6, Plan C). Präsentationsrechner offline, Handys
+   online: Stand-Adresse auf dem Handy öffnen und die Zahlen über „Werte“ eintragen (Abschnitt 6, Weg A, „Rückfall“).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext als Handout drucken:
    `index.html?druck&notizen` öffnen → Strg+P (Ränder „Keine“, „Hintergrundgrafiken“ an). Oben die Folie,
    darunter der vollständige Sprechtext; lange Sprechtexte laufen auf eine Folgeseite weiter (ca. 43 Seiten).
@@ -316,8 +395,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       den Fußzeilen und in B7): kurz mit dem Betreuer abstimmen, dass die Logos zur Kennzeichnung der
       analysierten Marke genutzt werden dürfen (A · Yannick). Auf Folie 12 steht das Oval seit 18.10. oben
       rechts beim Fazit über die Marke, nicht neben den Gruppennamen (wirkte dort wie Co-Branding). Bewusst
-      ohne Logo: Kopfzeilen, Folie 03, das Zentrum des Steuerrads und die öffentliche Startseite (Begründung
-      in `QUELLEN.md`, Abschnitt 4). Nur falls auf einem Bildschirm mit doppelter Pixeldichte (Retina-Laptop,
+      ohne Logo: Kopfzeilen, Folie 03, das Zentrum des Steuerrads, die öffentliche Startseite und die
+      Abstimmseite `abstimmen.html` (seit 19.10.; Begründung in `QUELLEN.md`, Abschnitt 4). Nur falls auf einem Bildschirm mit doppelter Pixeldichte (Retina-Laptop,
       4K-Beamer) präsentiert wird: Die Wortmarke auf 09b (389 px breit) wirkt dort leicht weich – dann eine
       Datei mit mindestens ca. 780 px Breite aus einer Firmenquelle einsetzen (Quelle wie bisher); für einen
       1080p-Beamer ist nichts zu tun
@@ -329,8 +408,20 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       neben den Folien zeigen. Sollen sie doch projiziert werden: in den `.py`-Skripten Schrift auf mindestens
       ca. 21 px (Inhalt) bzw. 16 px (Quellen) bei 1400 px Breite, Farben aus `css/tokens.css`, Persona = Kreis,
       Marke = Raute
-- [ ] **Umfrage** (B · Lukas): im Werkzeug angelegt, `link` in `marke.js` eingetragen, QR-Code mit mehreren
-      Handys aus der letzten Reihe getestet
+- [ ] **Live-Abstimmung einrichten** (Weg A, Abschnitt 6; A · Yannick: Google-Konto und Web-App nach
+      `live-abstimmung/ANLEITUNG.md`, Test mit Lukas): Web-App „Jeder“ bereitgestellt, Test-Adressen der Anleitung
+      **im privaten Fenster** geprüft, `liveQuelle` in `marke.js` **auf GitHub und auf dem Präsentationsrechner**
+      eingetragen (Handy: `abstimmen.html?u=tier` zeigt die Tiere), Folie 08 zeigt „Live“, QR-Code mit iPhone und
+      Android über mobile Daten aus der letzten Reihe getestet (abstimmen, umentscheiden; mindestens ein Handy
+      ohne Google-Anmeldung), **Lasttest** „BESTANDEN“ (Anleitung, Schritt 7). Klappt Weg A nicht: Weg B
+      (Werkzeug, `link`) oder nur Plan C
+- [ ] **Folie 08 – Kasten und Notizen** (B · Lukas): beschreiben noch den alten Weg („Abstimm-Link eintragen,
+      dann erscheint der QR-Code“, „Zurücksetzen zweimal“); an Weg A anpassen (QR-Code erscheint mit
+      `liveQuelle`, Pille „Live“ beobachten, bei Weg A kein „Zurücksetzen“)
+- [ ] **Runde umstellen** (A · Yannick, **spätestens So, 25.10.**, nach der Generalprobe): `runde: 'vortrag-2026-10-26'`
+      in `marke.js` auf GitHub **und** auf dem Präsentationsrechner; Kontrolle beider Stellen (Anleitung, „Vor dem
+      Vortrag“): `marke.js?v=…` auf GitHub Pages nennt die neue Runde, Folie 08 zeigt `n = 0`; die Stand-Adresse für
+      den Rückfall als Lesezeichen auf einem Handy anlegen (Abschnitt 6)
 - [ ] **Zahl der echten Kurzinterviews** – zurzeit steht überall die geplante Zahl „3“ (Folie 06–08, B1, B2,
       B4, B5) und auf **Folie 02** in den Methodenkarten „KI + Kurzinterviews“; nach den Interviews überall
       dieselbe tatsächliche Zahl eintragen, auf B1 die Pille „teils geplant“ löschen; gibt es keine echten
@@ -346,7 +437,9 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Häusel, Repertory Grid nach Kelly, Laddering nach Reynolds & Gutman, Brand Personality nach Aaker)
       (alle, je eigene Folien)
 - [ ] Generalprobe mit Referentenuhr: Ziel ≤ 15:00 (Plan 14:00), jede Person kennt ihre Folien und
-      Übergaben; die Live-Umfrage auf Folie 08 mit Stoppuhr testen (Sollzeit der Folie 1:10). Gekürzt
+      Übergaben; die Live-Umfrage auf Folie 08 mit Stoppuhr testen (Sollzeit der Folie 1:10) – mit `runde: 'probe'`
+      und echten Handys, einmal auch mit abgeschaltetem WLAN am Laptop (Pille „offline“, weiter mit Plan C; diese
+      Probezahlen erscheinen nach dem Umstellen der Runde nicht mehr), dazu der Lasttest (Anleitung, Schritt 7). Gekürzt
       wurden die Folien 04, 05, 06, 09, 09b und 11 – Zeiten prüfen
 - [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
       `export/` sind am 19.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
@@ -358,14 +451,26 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [ ] Bildschirm **erweitern**, Referentenansicht (P, Pop-ups erlaubt), Hauptfenster auf Beamer, Vollbild (F)
 - [ ] Clicker: vor, zurück, Schwarzbild
 - [ ] Mit Licht von der letzten Reihe: Lesbarkeit, Farben, QR-Code
+- [ ] Internet am Präsentationsrechner (Hörsaal-WLAN oder Handy-Hotspot); Folie 08 zeigt **„Live“**; eine Teststimme
+      aus der letzten Reihe über mobile Daten kommt auf der Folie an (danach Testzeile im Blatt „Stimmen“ löschen,
+      falls die Runde schon `vortrag-2026-10-26` ist)
 - [ ] Ton aus, Benachrichtigungen aus (Fokus-/Nicht-stören-Modus), Netzteil angeschlossen, Bildschirmsperre aus
 
 **30 Minuten vorher**
-- [ ] Umfrage im Werkzeug zurückgesetzt/geöffnet; **auf Folie 08 „Zurücksetzen“ (zweimal)** – sonst stehen
-      Probestimmen da
+- [ ] **Weg A:** Folie 08 zeigt „Live“ und `n = 0` (Runde `vortrag-2026-10-26`, Maus auf der Pille) – **nicht**
+      „Zurücksetzen“ klicken (pausiert die Abfrage; falls doch: Pille anklicken). Steht „Live pausiert“ oder
+      „offline“: Pille anklicken. Ein Handy öffnet den QR-Code und sieht die Tiere. Bleibt die Pille „offline“:
+      Internet prüfen, sonst Plan C – steht dann nicht `n = 0` (und keine Pille „Beispieldaten“), vor dem Zählen
+      „Zurücksetzen“ zweimal
+- [ ] **Nur Weg B:** Umfrage im Werkzeug zurückgesetzt/geöffnet; **auf Folie 08 „Zurücksetzen“ (zweimal)** –
+      sonst stehen Probestimmen da
 - [ ] Falls Folie 01b genutzt wird: „Wolke leeren“ (zweimal)
 - [ ] Präsentation auf Folie 01 (Pos1), Referentenuhr „Zeit zurücksetzen“
 - [ ] Handy-Hotspot als Reserve für die Umfrage, USB-Stick mit PDF griffbereit
+
+**Nach dem Vortrag** (A · Yannick, Anleitung „Nach dem Vortrag“)
+- [ ] Ergebnis von Folie 08 sichern (Foto oder Zahlen, Quelle „eigene Live-Umfrage im Hörsaal, 26.10.2026, n = …“)
+- [ ] Web-App archivieren, `liveQuelle: ''` in `marke.js`; Tabelle löschen oder Spalte „Geraet“ entfernen
 
 ## 13. Dateien
 
@@ -379,6 +484,9 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
 | `werkzeuge/pruefen.mjs` | automatische Prüfung, Screenshots und PDF (optional, braucht Node.js) |
 | `werkzeuge/uebersicht.mjs` | erzeugt `export/uebersicht.png` aus den Folienbildern (Befehle: `AUTOREN.md`, Abschnitt 15) |
+| `abstimmen.html` | Abstimmseite fürs Publikum (QR-Code auf Folie 08, läuft auf GitHub Pages); dazu `js/abstimmen.js`, `css/abstimmen.css` |
+| `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
+| `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto; `--server 8787` = lokale Web-App zum Ausprobieren; `--lasttest <URL>` = 40 Stimmen gleichzeitig an die echte Web-App (Abschnitt 6, `AUTOREN.md` 6c) |
 | `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 19.10.2026 mit A1–A3 als Entwurf; nach den Freigaben neu erzeugen (Abschnitt 11) |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |

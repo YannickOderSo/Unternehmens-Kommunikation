@@ -87,8 +87,10 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 Von HOLY sind nur die beiden **offiziellen Logos** eingebunden, unverändert und ausschließlich zur Kennzeichnung der
 analysierten Marke im Rahmen einer studentischen Fallstudie; es besteht keine Verbindung zur HOLY Softdrinks GmbH.
 Verwendet auf den Folien 01, 09b und 12 (je mit Quelle in der Fußzeile, gesammelt in B7). Bewusst **ohne** Logo:
-Kopfzeile aller Folien, Folie 03, das Zentrum des Steuerrads (dort steht nach Esch die Markenkompetenz) und die
-öffentliche Startseite der Gruppe – dort entstünde der Eindruck einer HOLY-eigenen oder beauftragten Arbeit.
+Kopfzeile aller Folien, Folie 03, das Zentrum des Steuerrads (dort steht nach Esch die Markenkompetenz), die
+öffentliche Startseite der Gruppe und die öffentliche Abstimmseite `abstimmen.html` (Live-Umfrage, seit 19.10.2026;
+oben steht dort „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“, HOLY nur in der Frage) – dort
+entstünde der Eindruck einer HOLY-eigenen oder beauftragten Arbeit.
 Die Logo-Nutzung stimmt die Gruppe mit dem Betreuer ab (LIESMICH, Abschnitt 12). Auf Folie 12 steht das Logo
 deshalb beim Fazit über die Marke und nicht neben den Gruppennamen (dort wirkte es wie ein Absender).
 

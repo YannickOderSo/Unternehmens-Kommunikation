@@ -197,6 +197,69 @@ html.ohne-beispielhinweis .beispiel { display: none !important; }
   0% { transform: scale(1); opacity: 0.8; }
   70%, 100% { transform: scale(2.6); opacity: 0; }
 }
+/* Pille der eigenen Live-Abstimmung (Umfrage mit marke.js → liveQuelle) ist ein
+   Knopf mit Zustand: ist-live = verbunden (sieht aus wie oben) · ist-verbinde =
+   Verbindung wird aufgebaut · ist-offline = keine Antwort (gestrichelt, hohler
+   Punkt) · ist-pausiert = Hand-Eingabe hat Vorrang (Pausenzeichen). Gedämpft
+   = Nebentextfarbe, ohne Puls. Ohne liveQuelle bleibt es die einfache Pille. */
+button.live {
+  margin: 0;
+  background: transparent;
+  font-style: normal;
+  cursor: pointer;
+}
+.live.ist-verbinde,
+.live.ist-offline,
+.live.ist-pausiert { color: var(--f-text-2); }
+.live.ist-verbinde .live-punkt::after,
+.live.ist-offline .live-punkt::after,
+.live.ist-pausiert .live-punkt::after { animation: none; opacity: 0; }
+.live.ist-offline { border-style: dashed; }
+.live.ist-offline .live-punkt { background: transparent; box-shadow: inset 0 0 0 2px currentColor; }
+.live.ist-pausiert .live-punkt {
+  width: 10px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, currentColor 0 3px, transparent 3px 7px, currentColor 7px);
+}
+/* Referentenfenster: derselbe Zustand als gut lesbare Zeile unter der Kopfzeile
+   „Aktuell“ (js/komponenten.js, liveStatusZeigen; Farben der Referentenansicht
+   aus css/deck.css). Klick = wie Klick auf die Pille. */
+.r-live {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  margin: -2px 14px 8px;
+  font-size: 15px;
+  font-weight: 650;
+  padding: 4px 12px;
+  border: 1px solid var(--r-linie);
+  border-radius: 999px;
+  background: var(--r-flaeche-2);
+  color: var(--r-text);
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.r-live::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--r-text-2);
+  flex: none;
+}
+.r-live[data-zustand="live"]::before { background: var(--r-gut); }
+.r-live[data-zustand="offline"],
+.r-live[data-zustand="aus"] { border-color: var(--r-schlecht); border-style: dashed; }
+.r-live[data-zustand="offline"]::before,
+.r-live[data-zustand="aus"]::before { background: var(--r-schlecht); }
+.r-live[data-zustand="pausiert"] { border-color: var(--r-warn); }
+.r-live[data-zustand="pausiert"]::before { background: var(--r-warn); border-radius: 1px; }
+.r-live:hover { background: #31333A; }
+.r-live[hidden] { display: none; }
 
 /* Chip / Tag */
 .chip {
