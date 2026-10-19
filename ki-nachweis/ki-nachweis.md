@@ -89,6 +89,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | Auswertung mit Namen im Repository; Gründerbefragung in Ausarbeitungen, Notizen und Backups B1/B3/B7 eingebaut; Exporte neu |
 | 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
 | 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
+| 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1290,6 +1291,34 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     uncommittet, bis D14 fertig und geprüft ist.
 - **Ergebnis:** Commit + Push (nur Nachweis und Skript)
 - **Unteragenten:** D14 (fortgesetzt)
+
+### 70 – 19.10.2026 – Yannick
+
+> 1. Ja setze es wieder ein
+> 2. Mach was am schlausten ist
+> 3. Was für eine Code liste?
+> 4. Lad das Transkript selber hoch
+> 5. Wir müssen noch auf der einen Folie den QR code einrichten und eine Abstimmung machen und überlegen wie wir das Designtechnisch live übernehmen mit der Abstimmung der Tiere
+
+- **Vorgehen Claude:**
+  - **1. Folie 03:** Zusatz „auch laut Gründer Mathias Horsch (Befragung 10/2026)“ in der Quellzeile des Claims wieder
+    eingesetzt (Daten `claim.stand`, Ersatztext, Autorenkasten); Folienentwurf 3, `markenkompetenz.md`, QUELLEN.md
+    und AUTOREN.md angepasst. Weiter als Bestätigung gekennzeichnet, nicht als Beleg.
+  - **2. Folie 04:** Titel bleibt kurz wie auf der Web-Folie (Wortbudget, eine Zeile); „Kern-Persona“ steht sichtbar in
+    der Zeile unter dem Namen („Kern-Persona · Hypothese · fiktiv“). Folienentwurf 4 angeglichen.
+  - Prüfläufe f03/f04 in Editorial, Bento und Keynote: 0 Fehler; Exporte neu (PDF 22 S., Folienbilder, Übersicht).
+  - **3. Codeliste:** im Chat erklärt (keine Datei).
+  - **4. Transkript:** In Yannicks Google Drive gab es keinen Projektordner; Ordner „Uni/Unternehmenskommunikation
+    HOLY – Gruppenordner“ angelegt (nicht geteilt) und das Transkript als Google-Dokument hochgeladen, Inhalt
+    zurückgelesen. Vorher Zeitmarken der Zuordnungstabelle an die Absatzköpfe angeglichen. Danach die Kopien in der
+    Sitzung gelöscht (Audio, Rohabschriften, Ausgabe der zweiten Spracherkennung). `gruenderbefragung.md` 2.3/6
+    aktualisiert.
+  - **5. Live-Abstimmung:** vorhandene Technik gelesen (`marke.js` Abschnitt 5, `js/komponenten.js` Baustein
+    „umfrage“, LIESMICH Abschnitt 6): QR-Code entsteht aus `umfragen.tier.link`, Ergebnisse werden bisher von Hand
+    eingetippt oder per Zählmodus gezählt. Vorschlag mit Optionen im Chat, Entscheidung bei Yannick (nächstes Paket).
+- **Ergebnis:** Punkte 1, 2, 4 erledigt; 3 beantwortet; 5 als Vorschlag zur Entscheidung
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten

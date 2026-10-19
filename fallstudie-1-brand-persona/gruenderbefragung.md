@@ -98,8 +98,9 @@ Hinweise für Bündel B und C · Stand Mo, 19.10.2026 · **Entwurf, Prüfung dur
    als Kennzahl auf einer Hauptfolie.
 4. **Im Markensteuerrad** steht ein GB-Stichwort nur, wenn es ein Ergebnis aus DR, RG, LA, AN, KA oder LM stützt.
    Sonst steht es in der Konsistenzprüfung als Selbstbild gegen die Außensicht.
-5. **Aufbewahrung:** Audiodateien und Transkript nur im Gruppenordner. Die Kopien in der Claude-Sitzung (Audio,
-   Rohabschriften) werden gelöscht, sobald Yannick bestätigt, dass das Transkript im Gruppenordner liegt.
+5. **Aufbewahrung:** Transkript nur im Gruppenordner (Google Drive, Ordner „Uni/Unternehmenskommunikation HOLY –
+   Gruppenordner“, am 19.10.2026 von Claude Code hochgeladen, nicht geteilt; teilen entscheidet Yannick). Die Kopien
+   in der Claude-Sitzung (Audio, Rohabschriften) sind seit 19.10.2026 gelöscht; die Original-Audiodateien hat Lukas.
 
 ---
 ## 3. Antworten je Frage (Paraphrase)
@@ -242,6 +243,6 @@ Elias stehen in 4.5 und 4.6. Der Stand der Umsetzung steht im KI-Nachweis.
 - [ ] **Lukas:** Abschnitt 4.5 erst nach der datierten Codeliste lesen.
 - [ ] **Gruppe:** Rahmen „Softdrink-Marke“ und Wettbewerbsset festhalten (K4); Kürzel GB für das Markensteuerrad
       (4.4) bestätigen.
-- [ ] **Yannick:** Transkript in den Gruppenordner legen und bestätigen; danach löscht Claude die Kopien in der
-      Sitzung (2.3 Punkt 5).
+- [x] Transkript im Gruppenordner (Google Drive), Kopien in der Sitzung gelöscht (19.10.2026). **Yannick:** Ordner mit
+      Lukas und Elias teilen, falls gewünscht.
 - [ ] **Yannick:** Karriereseite [17] vor dem 26.10. neu abrufen (K9).

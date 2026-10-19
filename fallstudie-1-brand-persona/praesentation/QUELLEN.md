@@ -126,9 +126,10 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
   Auswertung in `../gruenderbefragung.md`. Gründer Mathias Horsch hat der Abschrift und Auswertung mit KI
   zugestimmt; Name, Paraphrasen und kurze Zitate sind freigegeben (laut Yannick, 19.10.2026). Immer als
   Selbstauskunft gekennzeichnet („laut Gründer Mathias Horsch (Befragung 10/2026)“ bzw. „Horsch 2026 (GB)“),
-  nie als Tatsache über die Kundschaft. Sichtbar nur im Backup: B1, B3 (Status „extern“, wie in der Legende von
-  B7) und B7. Auf den Hauptfolien steht GB nur in den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“,
-  „11“), nicht in Quellzeilen. Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
+  nie als Tatsache über die Kundschaft. Sichtbar: auf Folie 03 als Zusatz in der Quellzeile
+  des Claims („auch laut Gründer Mathias Horsch (Befragung 10/2026)“, seit 19.10.2026 auf Wunsch von Yannick) und
+  im Backup B1, B3 (Status „extern“, wie in der Legende von B7) und B7. Sonst steht GB auf den Hauptfolien nur in
+  den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“, „11“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
   offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).

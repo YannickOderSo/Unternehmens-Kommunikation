@@ -146,7 +146,7 @@ In der Web-Folie f03 (Muster „[Marke]: <Rolle> mit <Kernkompetenz>“): *HOLY:
 
 - **Marktrolle** (ohne Label): Chips *Marktführer · Herausforderer · Mitläufer · Spezialist*, nur „Herausforderer“ gefüllt, kein Zusatz-Chip. Die Rollenbegriffe folgen Kotler, „Spezialist“ entspricht dem Nischenanbieter; mit der Vorlesung abgleichen. Begründung (ein Satz): *Greift den ganzen Softdrink-Markt an*.
   Metazeile: *Jost ✔ [24] · „Challenger-Brand“ ✔ [13] · Rolle nach Kotler, Kriterium Angriff (H)*
-- **Claim:** *„Geiler Geschmack mit gutem Gewissen“*. Metazeile: *Markenversprechen laut Website und Press Kit ✔ [5, 13]*. [5] belegt das Dossier 6.5; [13] stammt aus der eigenen Prüfung vom 17.10.2026 und wird in B7 vermerkt.
+- **Claim:** *„Geiler Geschmack mit gutem Gewissen“*. Metazeile: *Markenversprechen laut Website und Press Kit ✔ [5, 13] · auch laut Gründer Mathias Horsch (Befragung 10/2026)* (Zusatz seit 19.10.2026 auf Wunsch von Yannick; Bestätigung, kein unabhängiger Beleg). [5] belegt das Dossier 6.5; [13] stammt aus der eigenen Prüfung vom 17.10.2026 und wird in B7 vermerkt.
 - **Fußzeile** (klein): *Quellen: Recherche-Dossier Kap. 2 (14.10.2026), eigene Prüfung 17.10.2026, Nr. 3–6, 13, 16, 17, 22, 24, 25, 39 → Backup B7 · Kennzahlen = Selbstauskünfte · ✔ geprüft · ✎ korrigiert · H unsere Einordnung · Rolle nach Kotler, Feld nach Esch*. In der Web-Folie setzt das Skript die Nummern aus den Daten ein. Die Namen der Quellen stehen nur in B7.
 - **Textmenge:** Haupttext 58 Wörter, ohne Jahreszahlen und Zahlenwerte 47; dazu 14 Wörter Metazeilen und 21 Wörter Fußzeile. Das liegt über dem Richtwert von ~40 Wörtern, weil A1 Zeitleiste, 3 Kennzahlen, Rolle und Claim verlangt.
 - **Nicht auf die Folie:** Marktanteil (nicht belegbar, Circana-Daten gibt es nur für Energy Drinks), „profitabel“ (Jahresabschluss 2024 ungeprüft), Verkaufsstellen (6.000 / 8.500 / 10.000+ widersprechen sich), Portionen, „2,5 Mio. Kund:innen“ (andere Definition), Umfirmierung (nur Notizen).
@@ -249,7 +249,7 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
     { "praefix": "über", "wert": 2,   "dezimalen": 0, "einheit": "Mio.",   "text": "Kund:innen",    "quelle": "laut Unternehmen", "status": "✔", "nr": "[13]",     "stand": "02/2026" },
     { "praefix": "über", "wert": 170, "dezimalen": 0, "einheit": "",       "text": "Mitarbeitende", "quelle": "laut Unternehmen", "status": "✎", "nr": "[5, 17]",  "stand": "10/2026" }
   ],
-  "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website und Press Kit", "status": "✔", "nr": "[5, 13]", "platzhalter": false }
+  "claim": { "text": "Geiler Geschmack mit gutem Gewissen", "quelle": "Markenversprechen laut Website und Press Kit", "status": "✔", "nr": "[5, 13]", "stand": "auch laut Gründer Mathias Horsch (Befragung 10/2026)", "platzhalter": false }
 }
 ```
 
@@ -274,10 +274,12 @@ Tabelle „Wer sagt was über wen“) · **Ausarbeitung:** [`persona-steckbrief.
 
 ### Titel (Kernaussage)
 
-> **Unsere Kern-Persona: Ende 20, Schichtdienst – und Energie ohne Zucker**
+> **Ende 20, Schichtdienst – und Energie ohne Zucker**
 
 *Geändert am 19.10.2026:* „Kern-Persona“ statt „Kernzielgruppe“. Marco steht für die heutige Kernkundschaft; so legt
-das Dossier die Kern-Persona fest (4.3). Eine Zielgruppe beschreibt dagegen, wen eine Marke erreichen will.
+das Dossier die Kern-Persona fest (4.3). Eine Zielgruppe beschreibt dagegen, wen eine Marke erreichen will. Der Titel
+bleibt kurz wie auf der Web-Folie (Wortbudget, eine Zeile); „Kern-Persona“ steht sichtbar in der Zeile unter dem
+Namen: „Kern-Persona · Hypothese · fiktiv“ (Entscheidung 19.10.2026, Yannick: „Mach was am schlausten ist“).
 
 Alternativen:
 - *Nicht der Teenie-Gamer: Marco, 28, trinkt HOLY im Schichtdienst*

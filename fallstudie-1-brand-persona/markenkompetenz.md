@@ -103,7 +103,7 @@ Kit [13] (W+)
   Prüfung vom 17.10.2026 stammt, steht in den Notizen und in Backup B7.
 - Auch Gründer Mathias Horsch beschreibt HOLY mit dieser Formel: als bessere Alternative zu normalen Softdrinks, die
   Geschmack und gutes Gewissen verbindet (laut Gründer Mathias Horsch, Befragung 10/2026, GB). Den Dachclaim nennt er
-  dabei nicht. Auf Folie 03 steht das nur in den Notizen, nicht in der Quellzeile des Claims. Das stützt die Entscheidung, ist aber kein unabhängiger Beleg: Es ist fast wörtlich
+  dabei nicht. Auf Folie 03 steht das seit 19.10.2026 als Zusatz in der Quellzeile des Claims („auch laut Gründer Mathias Horsch (Befragung 10/2026)“, Wunsch von Yannick). Das stützt die Entscheidung, ist aber kein unabhängiger Beleg: Es ist fast wörtlich
   die Kurzbeschreibung der Website samt Markenversprechen ✔ [1, 5, 13].
 - Der Dachclaim „Die Softdrink Revolution“ ✔ [1] würde die Rolle „Herausforderer“ im Titel nur verdoppeln. Er hieß
   2025 noch „Energy Drink Revolution“ ✔ [1, 8] und wird uneinheitlich geschrieben („Softdrinks Revolution“, „Soft
