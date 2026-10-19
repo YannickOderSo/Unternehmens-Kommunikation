@@ -103,6 +103,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 81 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D16 | D15 fertig und committet; nur Nachweis committet, D16-Einbau läuft |
 | 82 | 19.10.2026 | Yannick | „Wie füge ich das Skript ein bin jetzt auf google sheets“ | – | Anleitung im Chat: Apps Script öffnen, Code aus GitHub (Rohfassung) einfügen, speichern, einrichten ausführen |
 | 83 | 19.10.2026 | Yannick | „Hat geklappt“ + Screenshot des Ausführungsprotokolls | – | Hinweis: Protokoll ohne „Blatt … ist bereit“ – vermutlich doGet statt einrichten ausgeführt; Kontrolle und Wiederholung erklärt |
+| 84 | 19.10.2026 | Yannick | „Wo sehe ich diesen tabellenblatt in appscripts“ | – | Erklärt: Das Blatt steht in der Google-Tabelle (Sheets-Tab), nicht im Apps-Script-Editor |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1508,6 +1509,17 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   „Blatt „Stimmen“ ist bereit …“ ins Protokoll; die fehlt. Wahrscheinlich war im Auswahlfeld noch die erste Funktion
   der Datei (`doGet`) gewählt. Kontrolle (Blatt „Stimmen“ in der Tabelle?) und Wiederholung mit „einrichten“
   erklärt; Schritt 5 (Bereitstellen) erst danach.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 84 – 19.10.2026 – Yannick
+
+> Wo sehe ich diesen tabellenblatt in appscripts
+
+- **Vorgehen Claude:** Erklärt, dass das Blatt „Stimmen“ nicht im Apps-Script-Editor, sondern in der Google-Tabelle
+  selbst erscheint (Browser-Tab mit Google Sheets, Blattreiter unten links), wie man die Tabelle wiederfindet und
+  woran man im Editor erkennt, welche Funktion ausgewählt ist.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
