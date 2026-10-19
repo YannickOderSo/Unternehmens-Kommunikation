@@ -105,6 +105,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 83 | 19.10.2026 | Yannick | „Hat geklappt“ + Screenshot des Ausführungsprotokolls | – | Hinweis: Protokoll ohne „Blatt … ist bereit“ – vermutlich doGet statt einrichten ausgeführt; Kontrolle und Wiederholung erklärt |
 | 84 | 19.10.2026 | Yannick | „Wo sehe ich diesen tabellenblatt in appscripts“ | – | Erklärt: Das Blatt steht in der Google-Tabelle (Sheets-Tab), nicht im Apps-Script-Editor |
 | 85 | 19.10.2026 | Yannick | Screenshot der Google-Tabelle (nur „Tabellenblatt1“, kein Blatt „Stimmen“) | – | Bestätigt: einrichten lief noch nicht; Schritt-für-Schritt-Anleitung zum Auswählen und Ausführen |
+| 86 | 19.10.2026 | Yannick | „Hab doget weggemacht und nochmal ausgeführt“ + Screenshot (Protokoll: „Blatt „Stimmen“ ist bereit“) | – | einrichten erfolgreich; Rückfrage, ob doGet aus dem Code gelöscht wurde (dann Code neu einfügen); Schritt 5 erklärt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1535,6 +1536,22 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   gelaufen (passt zum Protokoll aus 83). Erklärt, wie man im Apps-Script-Editor die Funktion „einrichten“ auswählt
   und ausführt, woran man den Erfolg erkennt (Protokollzeile, neuer Reiter „Stimmen“) und was zu tun ist, falls
   Apps Script nicht aus dieser Tabelle geöffnet wurde. Empfohlen, die Tabelle umzubenennen.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 86 – 19.10.2026 – Yannick
+
+> [Bild: Screenshot des Ausführungsprotokolls mit drei Zeilen: „19:44:16 Hinweis Ausführung begonnen“,
+> „19:44:21 Info Blatt „Stimmen“ ist bereit. Gespeicherte Stimmen: 0.0“, „19:44:18 Hinweis Ausführung
+> abgeschlossen“; darüber angeschnitten die Kommentarzeile 25 des Skripts mit einer Beispielantwort] Hab doget
+> weggemacht und nochmal ausgeführt
+
+- **Vorgehen Claude:** Protokoll bestätigt: `einrichten` ist gelaufen, das Blatt „Stimmen“ ist angelegt („0.0“ ist
+  nur die Zahlendarstellung von `Logger.log`). „doget weggemacht“ ist mehrdeutig: Wurde nur die Auswahl im
+  Auswahlfeld geändert, ist alles in Ordnung; wurde die Funktion `doGet` aus dem Code gelöscht, funktioniert die
+  Web-App nicht. Kontrolle (Strg+F „function doGet“) und Abhilfe (Code neu einfügen, speichern) erklärt, danach
+  Schritt 5 (Bereitstellen als Web-App).
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
