@@ -90,6 +90,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
 | 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
 | 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
+| 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1319,6 +1320,22 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Punkte 1, 2, 4 erledigt; 3 beantwortet; 5 als Vorschlag zur Entscheidung
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 71 – 19.10.2026 – Yannick (Antworten auf zwei Rückfragen von Claude)
+
+> Frage 1: „Wie soll die Tier-Abstimmung auf Folie 08 live ins Folien-Design kommen? …“ – Antwort (Auswahl):
+> **„Eigene Live-Abstimmung (Empfohlen)“** (Abstimmseite im HOLY-Design, Google-Apps-Script mit Google-Tabelle in
+> Yannicks Konto, Folie 08 holt die Zahlen alle 2 s; Plan B bleibt)
+>
+> Frage 2: „Welche Tiere stehen zur Wahl? …“ – Antwort (Auswahl): **„Mit Schwan statt Delfin“** (Adler, Löwe,
+> Waschbär, Fuchs, Schwan)
+
+- **Vorgehen Claude:** Schnittstelle festgelegt (nur GET, JSONP, letzte Stimme je Gerät zählt, „runde“ trennt Probe
+  und Vortrag ohne geheimen Schlüssel) und Workflow D15 gestartet: drei Bauteile parallel (Apps Script mit
+  Anleitung, Abstimmseite, Anbindung in Folie 08), Ende-zu-Ende-Test mit lokaler Attrappe, zwei Prüfer, Nacharbeit.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D15
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1345,6 +1362,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
+| D15 | 19.10.2026 | 71 | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
