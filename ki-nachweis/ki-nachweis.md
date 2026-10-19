@@ -83,7 +83,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 61 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur KI-Nachweis committet; Präsentation bleibt bis Ende von D12 offen |
 | 62 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | Nachweis und vorbereitetes Workflow-Skript committet; Präsentation bleibt bis Ende von D12 offen |
 | 63 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D13 | nur Nachweis committet; D12 und D13 laufen |
-| 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | in Arbeit: D13 und Nacharbeit von D12 fortgesetzt |
+| 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | D12 abgeschlossen und committet; Auswertung der Gründerbefragung im Gruppenordner; Workflow-Skript geschwärzt |
 | 65 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur Nachweis committet; D12 und D13 laufen |
 
 ### 01 – 13.10.2026 – Yannick
@@ -1182,9 +1182,24 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
   - **D13:** 2 von 5 Agenten fertig (Persona/Limbic Map, Markenkompetenz/Markensteuerrad). Gescheitert:
     Abgleich Bündel B und beide Prüfer.
   - **D12:** 9 von 10 Agenten fertig. Gescheitert: die Nacharbeit (AUTOREN/LIESMICH, Exporte).
-- **Vorgehen Claude:** beide Workflows fortgesetzt (resume). Die fertigen Agenten kommen aus dem Zwischenspeicher,
-  nur die gescheiterten laufen neu.
-- **Ergebnis:** in Arbeit
+- **Vorgehen Claude:**
+  - Beide Workflows fortgesetzt (resume). Die fertigen Agenten kommen aus dem Zwischenspeicher, nur die
+    gescheiterten laufen neu.
+  - **D12** abgeschlossen, selbst geprüft und committet (Eintrag 57, Abschnitt 2).
+  - **D13** abgeschlossen (Abschnitt 2). Die Befunde und Prüfurteile selbst gelesen und daraus die Auswertung
+    geschrieben: Rahmen und Quellenkritik, Antworten je Frage als Paraphrase, Abgleich mit Persona, Limbic Map,
+    Markenkompetenz und Markensteuerrad, Hinweise für Lukas und Elias, Vorschläge ohne Gründerinhalte, offene Punkte.
+    Quellennummern selbst am Dossier geprüft. Ablage nur im Gruppenordner (Markdown und PDF, 10 Seiten), an Yannick
+    geschickt.
+  - **Datenschutz:** Der Prüfer „Methodik und Datenschutz“ fand einzelne Inhalte der Befragung im bereits
+    gepushten Workflow-Skript (Commit `ae75e7c`). Die Stellen sind im Repository jetzt geschwärzt; die ungeschwärzte,
+    ausgeführte Fassung liegt im Gruppenordner. In der Git-Historie stehen sie weiter. Ob die Historie bereinigt
+    wird (erfordert ein erzwungenes Überschreiben des Remote-Branches), entscheidet Yannick.
+  - **Rohprotokoll:** Der Hook hat die Abschlussmeldung von D13 als „Prompt“ protokolliert. Diese Zeile enthält
+    Zusammenfassungen der Antworten. Das Rohprotokoll darf nicht von Hand geändert werden; deshalb ist es vorerst
+    **nicht committet**, bis Yannick entscheidet.
+- **Ergebnis:** D12 fertig; Auswertung der Gründerbefragung als Entwurf im Gruppenordner; zwei Entscheidungen offen
+  (Git-Historie, Rohprotokoll)
 - **Unteragenten:** D12, D13 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1226,7 +1241,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D10 | 17.10.2026 | 52 | Workflow „limbic-map-a3“ (8 Unteragenten, zwei mit Websuche) | Limbic Map: Modell klären, Persona und Marke verorten, Fit, Konsequenzen, Folienentwurf | Persona Hedonisten (statt Abenteurer), Fit „passt teilweise“; 41 Befunde (3 hoch, 19 mittel, 19 niedrig) | Claude: Zitate an PDF und Dossier geprüft, Punkte nachgerechnet, Grafik erstellt |
 | D11 | 17.10.2026 | 55, 56 | Workflow „markenkompetenz-a1“ (8 Unteragenten, vier mit Websuche) | Markenkompetenz: Dossier-Auszug, Web-Prüfung Finanzen und Vertrieb, Vorlage §0, Folienentwurf 03 | 1. Lauf: alle 8 am Nutzungslimit gescheitert; 2. Lauf: Ausarbeitung, 37 Befunde (2 hoch, 14 mittel, 21 niedrig) | Claude: gelesen, Quellennamen geprüft, Grafik erstellt |
 | D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
-| D13 | 18.10.2026 | 59, 60 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | *läuft* | – |
+| D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1582,6 +1597,34 @@ steht hier mit dem wörtlichen Auftrag.
     Anfragen, 4 Wortbudget-Warnungen (f03, f04, f10, f11).
   - PDF: 22 Seiten. Übersicht und die Folien 03, 04, 05, 12 angesehen (Logo, Etikett, Kennzeichnungen).
   - Workflow-Skript im Repository mit dem ausgeführten Skript verglichen: gleich.
+
+---
+
+### D13 – 18.–19.10.2026 – ausgelöst durch Prompt 59/60 (fortgesetzt nach 64)
+
+- **Art:** Workflow „gruender-befragung“, fünf Unteragenten in zwei Phasen:
+  - Abgleich: Persona und Limbic Map; Markenkompetenz und Markensteuerrad; Bündel B (Repertory Grid, Laddering,
+    Tonalität).
+  - Prüfen (adversarial): Treue zum Transkript und zu den Repository-Dateien; Methodik und Datenschutz.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-18_gruender-befragung.js`](workflows/2026-10-18_gruender-befragung.js).
+  Stellen mit Inhalten der Befragung sind dort geschwärzt; die ungeschwärzte, ausgeführte Fassung liegt im
+  Gruppenordner.
+- **Vorgaben:** nur lesen; nur das bereinigte Transkript (Gruppenordner) und das Repository, keine Audiodateien,
+  keine Statista-Datei, keine Websuche; Paraphrasen statt langer Zitate; kein Name; Innensicht und Außensicht
+  trennen; jede Aussage mit Fundstelle.
+- **Ergebnis:**
+  - **Unterbrechung:** Der erste Lauf scheiterte bei 3 von 5 Agenten am Nutzungslimit, Fortsetzung am 19.10.
+  - **Abgleich:** 41 Befunde (Persona/Limbic Map 13, Markenkompetenz/Steuerrad 14, Bündel B 14).
+  - **Prüfer Treue:** 27 halten, 14 korrigieren (Ergänzungen zum Wortlaut, ein falsch wiedergegebener Dossier-Inhalt,
+    zu starke Urteile, Zirkelschlüsse).
+  - **Prüfer Methodik und Datenschutz:** 12 halten, 29 korrigieren, vor allem weil viele Empfehlungen Inhalte der
+    Befragung sofort in öffentliche Dateien schreiben wollten. Außerdem: Inhalte im gepushten Workflow-Skript,
+    Zeitpunkt der Übergabe an Lukas (erst nach seiner Codierung), Löschung der Kopien in der Sitzung.
+  - Die Inhalte der Befunde stehen bewusst nicht hier, sondern in der Auswertung im Gruppenordner.
+- **Wie Claude das Ergebnis geprüft hat:**
+  - Alle Befunde und Prüfurteile gelesen; die Korrekturen der Prüfer übernommen.
+  - Quellennummern und Altersangaben am Recherche-Dossier nachgeschlagen (4.1, 3.4, S1, 3.7).
+  - Die Auswertung selbst geschrieben und als PDF gerendert und angesehen.
 
 ---
 
