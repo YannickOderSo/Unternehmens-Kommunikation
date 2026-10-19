@@ -148,7 +148,7 @@ window.MARKE = {
       link: 'https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/abstimmen.html?u=tier',
       kurzLink: '',                                             // leer = keine Zeile unter dem QR-Code (Weg B: z. B. 'particify.de/p/12345678')
       ergebnisLink: '',                                         // nur Weg B: Ergebnisseite des Werkzeugs
-      liveQuelle: '',                                           // Web-App-Adresse 'https://script.google.com/macros/s/…/exec' – leer = aus
+      liveQuelle: 'https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec', // Web-App (eingerichtet von Yannick, 19.10.2026) – leer = aus
       runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-26'
       unsereAntwort: 'Waschbär',                                // Ergebnis unserer Analyse (Folie 08, Titel)
       // Satz der großen Aussagezahl; {prozent} und {antwort} werden ersetzt
