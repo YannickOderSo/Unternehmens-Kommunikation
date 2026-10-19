@@ -108,6 +108,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 86 | 19.10.2026 | Yannick | „Hab doget weggemacht und nochmal ausgeführt“ + Screenshot (Protokoll: „Blatt „Stimmen“ ist bereit“) | – | einrichten erfolgreich; Rückfrage, ob doGet aus dem Code gelöscht wurde (dann Code neu einfügen); Schritt 5 erklärt |
 | 87 | 19.10.2026 | Yannick | Web-App-Adresse (…/exec) geschickt | D17 | Web-App geprüft, Adresse in marke.js, echter Ende-zu-Ende-Test bestanden; Lasttest nicht bestanden (19 von 40) → D17: Live-Abstimmung lastfest machen |
 | 88 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
+| 89 | 19.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D17 (neu gestartet) | D17 war am Nutzungslimit vollständig gescheitert; mit Hinweis auf Teiländerungen neu gestartet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1590,6 +1591,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D17 (läuft)
+
+### 89 – 19.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D17 war am Nutzungslimit gescheitert, bevor ein Agent fertig war (alle 7 Agenten ohne
+  Ergebnis). Zurück blieben Teiländerungen in `js/abstimmen.js` und `css/abstimmen.css`. Im Workflow-Skript einen
+  Hinweis darauf ergänzt (diff lesen, übernehmen oder verwerfen) und D17 neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D17 (neu gestartet)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
