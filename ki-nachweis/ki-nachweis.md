@@ -99,6 +99,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
 | 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 | 79 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D16-Bilder fertig, Einbau nach D15 |
+| 80 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15-Nacharbeit nach Nutzungslimit fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1449,6 +1450,19 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   - Nur Nachweis und Rohprotokoll committet.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15, D16 (laufen)
+
+### 80 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D15 war in der Nacharbeit erneut am Nutzungslimit gescheitert (6 von 7 Agenten fertig). Nach dem Reset um
+    16:10 UTC per resume fortgesetzt; nur die Nacharbeit läuft neu (Befunde der Prüfer: Browser-Speicher ohne
+    Runde, Zeitlimit 4 s, Anleitung für Laien, Last, Logo auf der Abstimmseite, kleine Handys, QR-Dichte).
+  - Nur Nachweis und Rohprotokoll committet; D15- und D16-Dateien folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15 (Nacharbeit läuft), D16 (wartet auf Einbau)
 ---
 
 ## 2. Delegationen an Unteragenten
