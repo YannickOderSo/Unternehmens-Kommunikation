@@ -84,6 +84,7 @@ log(`${ausarbeitungen.length} von 4 Ausarbeitungen, ${ausarbeitungen.reduce((n, 
 
 phase('Präsentation')
 const praesentation = await agent(`${GEMEINSAM}
+Hinweis: Ein früherer, am Nutzungslimit abgebrochener Lauf dieses Auftrags hat index.html, QUELLEN.md und css/folien/13-backup.css schon teilweise geändert (siehe git diff gegen HEAD). Prüfe diese Teiländerungen, übernimm, was stimmt, und vervollständige den Rest, ohne doppelt einzufügen.
 Auftrag PRÄSENTATION: Datei fallstudie-1-brand-persona/praesentation/index.html (dazu, nur falls nötig, css/folien/*.css der genannten Folien und QUELLEN.md). Lies zuerst praesentation/AUTOREN.md und LIESMICH.md (Aufbau: Daten in <script type="application/json" class="daten">, Notizen in <aside class="notizen">, Kästen „FOLIE xx“) und die geänderten Ausarbeitungen (Bericht unten).
 Änderungen:
 1. Notizen bzw. Rückfragen-Absätze von f02, f03, f04, f05 an die neuen Rückfragen aus folienentwuerfe.md anpassen (Gründeraussagen mit Kennzeichnung „laut Gründer Mathias Horsch (Befragung 10/2026)“). f04: falls „Kernzielgruppe“ irgendwo steht, durch „Kern-Persona“ ersetzen.

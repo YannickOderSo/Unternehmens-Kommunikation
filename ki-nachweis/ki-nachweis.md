@@ -88,6 +88,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 66 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: Rohprotokoll „Unverändert committen“, Git-Historie „Nein, so lassen“ | – | Rohprotokoll unverändert committet; Historie bleibt |
 | 67 | 19.10.2026 | Yannick | „Wir dürfen den Gründer mit Namen in der Präsentation haben“ + Antworten auf 4 Rückfragen | D14 | in Arbeit: Auswertung mit Namen ins Repository, Einbau in Ausarbeitungen und Folien |
 | 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
+| 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1265,6 +1266,21 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   bleiben uncommittet, bis D14 fertig und geprüft ist (sonst stünde ein halbfertiger Stand auf der Webseite).
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D14 (läuft)
+
+### 69 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D14 war am Nutzungslimit nach der Hälfte stehen geblieben: die vier Ausarbeitungen fertig; Präsentation,
+    beide Prüfer und Nacharbeit gescheitert (der Präsentations-Agent hatte `index.html` schon teilweise geändert).
+  - Workflow-Skript um einen Hinweis auf diese Teiländerungen ergänzt und D14 nach dem Reset fortgesetzt (resume;
+    die Ausarbeitungen kommen aus dem Zwischenspeicher).
+  - Committet: nur Nachweis, Rohprotokoll und Workflow-Skript. Die Ausarbeitungen und die Präsentation bleiben
+    uncommittet, bis D14 fertig und geprüft ist.
+- **Ergebnis:** Commit + Push (nur Nachweis und Skript)
+- **Unteragenten:** D14 (fortgesetzt)
 ---
 
 ## 2. Delegationen an Unteragenten
