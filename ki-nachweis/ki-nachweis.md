@@ -92,6 +92,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
 | 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
 | 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
+| 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1349,6 +1350,19 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   die zurückgehaltenen Punkte aus der Gründerbefragung eingebaut).
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15 (läuft)
+
+### 73 – 19.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D15 war am Nutzungslimit nach 2 von 7 Agenten stehen geblieben (fertig: Apps Script mit Anleitung
+  und Prüfhilfe; Abstimmseite). Gescheitert: Anbindung in Folie 08 (mit Teiländerungen in `komponenten.js`,
+  `komponenten.css`, `marke.js`), Ende-zu-Ende-Test, beide Prüfer, Nacharbeit.
+- **Vorgehen Claude:** Workflow-Skript um einen Hinweis auf die Teiländerungen ergänzt (und den Test auf die schon
+  vorhandene Attrappe `live-abstimmung-test.mjs --server` umgestellt), D15 fortgesetzt (resume).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D15 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
