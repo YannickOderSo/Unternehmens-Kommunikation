@@ -100,6 +100,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 | 79 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D16-Bilder fertig, Einbau nach D15 |
 | 80 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15-Nacharbeit nach Nutzungslimit fortgesetzt |
+| 81 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D16 | D15 fertig und committet; nur Nachweis committet, D16-Einbau läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1466,6 +1467,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   - Nur Nachweis und Rohprotokoll committet; D15- und D16-Dateien folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15 (Nacharbeit läuft), D16 (wartet auf Einbau)
+
+### 81 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D15 fertig, selbst geprüft und committet (`fa1e7a7`, Details unter D15).
+  - D16 per resume fortgesetzt: Die Bilder kamen aus dem Zwischenspeicher, Einbau, Prüfung und Nacharbeit laufen.
+  - Nur Nachweis und Rohprotokoll committet; die zwei Illustrationen und der Einbau folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D16 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
