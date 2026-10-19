@@ -63,6 +63,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-37 | 18.10.2026 | System | Container-Neustart (Workflow abgebrochen) und Stop-Hook „Änderungen nicht committet“ | A2-D03 (fortgesetzt) | Workflow mit resume fortgesetzt; Rohprotokoll committet |
 | A2-38 | 18./19.10.2026 | System | Workflow A2-D03 am Nutzungslimit gescheitert; Neustarts des Sitzungsprozesses | A2-D03 | nicht fortgesetzt (Ü04: neu aufsetzen) |
 | A2-39 | 19.10.2026 | Yannick (Account 2), Übergabe Ü04 von Account 1 | Vortragsreife neu prüfen (Stand nach D12–D14) und Fragerunde vorbereiten | A2-D04 (Workflow) | in Arbeit: `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` |
+| A2-40 | 19.10.2026 | System | Workflow A2-D04 am wöchentlichen Nutzungslimit gescheitert (4 von 13 Agenten fertig); Neustarts des Sitzungsprozesses | A2-D04 | Zwischenstand im Journal gesichert |
+| A2-41 | 19.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (15:27 UTC) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -620,6 +622,30 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
   zwei Berichtsagenten und eine Abnahme gegen die Anforderungen aus Ü04. Syntax des Skripts vorab geprüft.
 - **Ergebnis:** in Arbeit (A2-D04)
 - **Unteragenten:** A2-D04 (Workflow)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-40 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your weekly limit · resets
+> 3pm (UTC)“. – Danach zweimal: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal des Laufs `wf_5e16e018-ef6` gelesen: fertig sind die Prüfer Aufgabe & Bewertungsraster,
+  Storyline, Vortrag & Zeit und Fakten & Kennzeichnung; alle übrigen am Limit gescheitert. Nichts neu gestartet, bis das
+  Limit zurückgesetzt war.
+- **Ergebnis:** Zwischenstand gesichert (fertige Agenten werden beim Fortsetzen aus dem Zwischenspeicher übernommen)
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-41 – 19.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Uhrzeit geprüft (15:27 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt;
+  die vier fertigen Prüfer laufen nicht erneut. `master` bewusst nicht erneut zusammengeführt, damit alle Prüfer
+  denselben Stand (a929391) sehen.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
