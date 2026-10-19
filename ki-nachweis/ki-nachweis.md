@@ -94,6 +94,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
 | 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
+| 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1376,6 +1377,20 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   und committet (`8787453`).
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15 (läuft)
+
+### 75 – 19.10.2026 – Yannick
+
+> Und füge weitestgehend alle Platzhalter Bilder ein und mache dann das Platzhalter Schild weg
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Bestandsaufnahme der Platzhalterbilder: Folie 01 Rätselbild (`bilder/platzhalter-raetsel.svg`, Pille
+    „Platzhalterbild“), Folie 04 Persona-Bild (gezeichnete Figur, Hinweis „Platzhalter – KI-Bild folgt“), Folie 09
+    Schlüsselbild (Piktogramm statt Raptor-Screenshot; Bündel C, Social-Media-Bild nur nach Zustimmung des Betreuers,
+    QUELLEN.md §4).
+  - Einbau erst nach Ende von Workflow D15, weil beide dieselben Dateien und Exporte ändern würden.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D16 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
