@@ -109,6 +109,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 87 | 19.10.2026 | Yannick | Web-App-Adresse (…/exec) geschickt | D17 | Web-App geprüft, Adresse in marke.js, echter Ende-zu-Ende-Test bestanden; Lasttest nicht bestanden (19 von 40) → D17: Live-Abstimmung lastfest machen |
 | 88 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
 | 89 | 19.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D17 (neu gestartet) | D17 war am Nutzungslimit vollständig gescheitert; mit Hinweis auf Teiländerungen neu gestartet |
+| 90 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1603,6 +1604,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D17 (neu gestartet)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 90 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Teiländerungen an der Abstimmseite und alles,
+  was D17 ändert, folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D17 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
