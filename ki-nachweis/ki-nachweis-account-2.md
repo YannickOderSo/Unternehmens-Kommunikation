@@ -65,6 +65,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-39 | 19.10.2026 | Yannick (Account 2), Übergabe Ü04 von Account 1 | Vortragsreife neu prüfen (Stand nach D12–D14) und Fragerunde vorbereiten | A2-D04 (Workflow) | in Arbeit: `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` |
 | A2-40 | 19.10.2026 | System | Workflow A2-D04 am wöchentlichen Nutzungslimit gescheitert (4 von 13 Agenten fertig); Neustarts des Sitzungsprozesses | A2-D04 | Zwischenstand im Journal gesichert |
 | A2-41 | 19.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (15:27 UTC) |
+| A2-42 | 19.10.2026 | System | A2-D04 erneut am Nutzungslimit gescheitert (Sitzungslimit bis 16:40 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-43 | 19.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (16:42 UTC) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -644,6 +646,26 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
 - **Vorgehen Claude:** Uhrzeit geprüft (15:27 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt;
   die vier fertigen Prüfer laufen nicht erneut. `master` bewusst nicht erneut zusammengeführt, damit alle Prüfer
   denselben Stand (a929391) sehen.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-42 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your session limit · resets
+> 4:40pm (UTC)“. – Danach: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal geprüft: weiterhin 4 Prüfer fertig, keine weiteren Ergebnisse verloren.
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-43 – 19.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Uhrzeit geprüft (16:41 UTC, nach dem Zurücksetzen) und A2-D04 mit `resumeFromRunId` fortgesetzt.
 - **Ergebnis:** A2-D04 läuft weiter
 - **Unteragenten:** A2-D04 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
