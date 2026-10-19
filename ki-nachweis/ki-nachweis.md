@@ -97,6 +97,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
 | 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 | 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
+| 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1422,6 +1423,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Übergabe `ki-nachweis/uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md`
 - **Unteragenten:** Ü04 (Account 2)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 78 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D15 und D16 laufen, ihre Dateien folgen nach der
+  Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15, D16 (laufen)
 ---
 
 ## 2. Delegationen an Unteragenten
