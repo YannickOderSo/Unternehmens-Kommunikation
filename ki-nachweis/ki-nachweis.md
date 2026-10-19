@@ -85,6 +85,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 63 | 18.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D13 | nur Nachweis committet; D12 und D13 laufen |
 | 64 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D12, D13 (fortgesetzt) | D12 abgeschlossen und committet; Auswertung der Gründerbefragung im Gruppenordner; Workflow-Skript geschwärzt |
 | 65 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | – | nur Nachweis committet; D12 und D13 laufen |
+| 66 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: Rohprotokoll „Unverändert committen“, Git-Historie „Nein, so lassen“ | – | Rohprotokoll unverändert committet; Historie bleibt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1217,6 +1218,21 @@ laut Yannick die Sprachnachrichten des Gründers über LinkedIn als Antwort auf 
   - Committet: nur Nachweis und Rohprotokoll. Die Präsentation bleibt uncommittet, solange D12 läuft.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D12, D13 (laufen)
+
+### 66 – 19.10.2026 – Yannick (Antworten auf zwei Rückfragen von Claude)
+
+> Frage 1: „Rohprotokoll: Die letzte Zeile (automatisch vom Hook geschrieben) enthält Zusammenfassungen der
+> Gründerantworten. … Wie soll ich damit umgehen?“ – Antwort (Auswahl): **„Unverändert committen“**
+>
+> Frage 2: „Git-Historie: Commit ae75e7c … enthält im Workflow-Skript einzelne Inhalte der Befragung … Soll ich
+> zusätzlich die Historie bereinigen?“ – Antwort (Auswahl): **„Nein, so lassen (Empfohlen)“**
+
+- **Vorgehen Claude:** Rohprotokoll unverändert committet und gepusht, wie entschieden. Die Git-Historie bleibt
+  unverändert (kein erzwungenes Überschreiben). Die Regel für weitere Inhalte der Befragung (nichts in öffentliche
+  Dateien bis zur Klärung mit dem Gründer, Auswertung Abschnitt 2.3) bleibt ein Vorschlag an die Gruppe.
+- **Ergebnis:** Commit + Push
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
