@@ -59,8 +59,10 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
 | A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
 | A2-35 | 18.10.2026 | Yannick (Account 2) | Frage nach dem Projektstand (Account 1 hat viel geändert) | – | Statusbericht im Chat (Vergleich Branch ↔ master) |
-| A2-36 | 18.10.2026 | Yannick (Account 2) | „Alle Kapazitäten auf die aktuelle Präsentation erstmal“ (+ Befehl /workflow-authoring) | A2-D03 (Workflow) | in Arbeit: Prüfung auf Vortragsreife, Bericht `praesentation/VORTRAGSREIFE.md` |
+| A2-36 | 18.10.2026 | Yannick (Account 2) | „Alle Kapazitäten auf die aktuelle Präsentation erstmal“ (+ Befehl /workflow-authoring) | A2-D03 (Workflow) | abgebrochen (Nutzungslimit); ersetzt durch A2-D04 (Ü04, A2-39) |
 | A2-37 | 18.10.2026 | System | Container-Neustart (Workflow abgebrochen) und Stop-Hook „Änderungen nicht committet“ | A2-D03 (fortgesetzt) | Workflow mit resume fortgesetzt; Rohprotokoll committet |
+| A2-38 | 18./19.10.2026 | System | Workflow A2-D03 am Nutzungslimit gescheitert; Neustarts des Sitzungsprozesses | A2-D03 | nicht fortgesetzt (Ü04: neu aufsetzen) |
+| A2-39 | 19.10.2026 | Yannick (Account 2), Übergabe Ü04 von Account 1 | Vortragsreife neu prüfen (Stand nach D12–D14) und Fragerunde vorbereiten | A2-D04 (Workflow) | in Arbeit: `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -570,6 +572,56 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** keine neuen
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-38 – 18./19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik, live,
+> gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your session limit · resets 3am (UTC)“. –
+> Danach dreimal: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Nichts neu gestartet (Nutzungslimit). Stand von A2-D03: 2 von 8 Prüfern fertig (Aufgabe & Bewertung,
+  Storyline), keine Gegenprüfung, kein Bericht. Mit Ü04 (A2-39) wird A2-D03 nicht fortgesetzt, sondern neu aufgesetzt.
+- **Ergebnis:** A2-D03 abgebrochen; seine Testausgaben (`praesentation/_test/account2-*`, nicht eingecheckt) gelöscht,
+  weil sie den Stand vor D12 zeigen.
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-39 – 19.10.2026 – Yannick Heisler (Account 2), Übergabe Ü04 von Account 1
+
+Prompt (wörtlich; gleichlautend mit dem Codeblock in
+[`uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md`](uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md)):
+
+> Neue Aufgabe von Account 1 (19.10.2026). Bitte beachte: Ü03 (Fallstudie 2) bleibt zurückgestellt. Diese Aufgabe hat Vorrang.
+>
+> ZUERST
+> 1. git fetch origin master && git merge origin/master in deinen Branch praesentation-account-2 (Konflikte so lösen, dass der Stand von master erhalten bleibt). master enthält jetzt: D12 (Präsentation übernommen, Folien 03/05/10 mit A1/A3, Logos 01/09b/12, Backups), D13/D14 (Gründerbefragung: fallstudie-1-brand-persona/gruenderbefragung.md, Kürzel GB = „Horsch 2026 (GB)“, Name freigegeben), Folie 03 Zusatz „auch laut Gründer Mathias Horsch (Befragung 10/2026)“, Folie 04 „Kern-Persona · Hypothese · fiktiv“.
+> 2. Deinen alten Lauf A2-D03 NICHT fortsetzen (er prüfte den Stand vor D12), sondern neu aufsetzen: dein Skript ki-nachweis/workflows/2026-10-18_praesentation-account-2_vortragsreife.js als Vorlage nehmen, als neues Skript mit Präfix account-2_ speichern und an den neuen Stand anpassen.
+>
+> ARBEITSPAKET (nur lesen und berichten, zwei neue Dateien)
+> A) fallstudie-1-brand-persona/praesentation/VORTRAGSREIFE.md – Prüfung auf Vortragsreife für Mo 26.10.2026 mit deinen 8 Blickwinkeln (Aufgabe & Bewertungsraster aus README.md, Storyline, Vortrag & Zeit (Sollzeit 14:00, Sprechtexte zählen), Rückfragen, Fakten, Technik im Hörsaal, Referentenansicht, Visualisierung & Beamer), je Blickwinkel Gegenprüfung, dann Vollständigkeitsprüfung. Jeder Befund: Folie, Stelle (Datei + Datenfeld/Zeile), Problem, Beleg (Screenshot unter praesentation/_test/account2-…), Vorschlag, zuständig (Yannick / Lukas / Elias / Account 1 technisch), Dringlichkeit bis 26.10. Beispieldaten von Bündel B und C (Folien 06–08b, 09–11) sind bekannt – bewerte, was davon bis 26.10. echt sein MUSS und bis wann.
+>    AUSGENOMMEN (Account 1 arbeitet gerade daran, nicht prüfen und nicht bewerten): Live-Abstimmung auf Folie 08 (QR-Code, abstimmen.html, live-abstimmung/, Anbindung in js/komponenten.js) und die Bilder auf Folie 01 (Rätselbild) und Folie 04 (Persona-Bild) samt ihren Platzhalter-Hinweisen.
+> B) fallstudie-1-brand-persona/fragerunde.md – Vorbereitung der Fragerunde: die 25–35 wahrscheinlichsten Fragen von Prof. Stenger und vom Publikum zu Methode, Daten, Ergebnissen, Empfehlungen und KI-Nutzung, je Frage: kurze Antwort (2–4 Sätze, mündlich), wer antwortet (nach Bündel), Beleg (Folie/Backup/Ausarbeitung mit Abschnitt) und Fallstricke („nicht sagen: …“). Grundlage: index.html (Folien, Notizen, Rückfragen), folienentwuerfe.md (Abschnitte „Mögliche Rückfragen“), markenkompetenz.md, persona-steckbrief.md, limbic-map.md, gruenderbefragung.md, Recherche-Dossier (Faktenstatus beachten), README.md (Bewertung), KI-Nachweis (Abschnitt 4 „Wie dieser Nachweis entsteht“). Nichts erfinden; Gründeraussagen immer als Selbstauskunft („laut Gründer Mathias Horsch (Befragung 10/2026)“); „95 %“ nur mit Zusatz „laut Gründer, Datengrundlage nicht offengelegt“. Mit Gegenprüfung jeder Antwort an der Quelle.
+>
+> REGELN
+> - Nur auf deinem Branch praesentation-account-2 arbeiten; nicht nach master mergen (das macht Account 1).
+> - Ändere KEINE bestehende Datei der Präsentation oder der Ausarbeitungen (index.html, marke.js, js/, css/, bilder/, export/, LIESMICH.md, AUTOREN.md, QUELLEN.md, *.md in fallstudie-1-brand-persona/). Neu anlegen darfst du nur die zwei Dateien oben, dazu ki-nachweis/ki-nachweis-account-2.md und Workflow-Skripte mit Präfix account-2_ unter ki-nachweis/workflows/. Testausgaben nur unter praesentation/_test/ (nicht eingecheckt).
+> - Diesen Prompt und jede Delegation in ki-nachweis/ki-nachweis-account-2.md eintragen (wörtlich, wie bisher). Nach jedem Schritt committen und pushen.
+> - Öffne keine Dateien unter /root/.claude/uploads, keine Datei mit „NUR-Gruppenordner“ im Namen und nicht den Google-Drive-Gruppenordner. Statista-Werte nur, wie sie in persona-daten.md stehen.
+> - Keine Modellbezeichnungen in Dateien, Commits oder PRs.
+> - Zum Schluss: kurze Zusammenfassung für Account 1 und Yannick (Top-10-Befunde nach Dringlichkeit, was Lukas und Elias bis wann liefern müssen, letzter Commit).
+
+- **Vorgehen Claude:** `origin/master` (a929391) in den Branch zusammengeführt (acaf0d5, ohne Konflikte; vorher Rohprotokoll
+  committet). Ü04 gelesen; Workflow-Skript A2-D03 als Vorlage genommen und als
+  [`workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`](workflows/account-2_2026-10-19_vortragsreife-fragerunde.js)
+  an den neuen Stand angepasst: Stand nach D12–D14, ausgenommene Bereiche (Live-Abstimmung f08, Bilder f01/f04),
+  Zuständigkeiten Yannick/Lukas/Elias/Account 1 (technisch)/Gruppe/Prof, Dringlichkeit nach Tagesplan, Bewertung der
+  Beispieldaten (was bis wann echt sein muss), Regeln für Gründeraussagen und „95 %“; der Blickwinkel „Live-Elemente“
+  wurde zu „Referentenansicht & Bedienung“; „Rückfragen“ mit zwei Fragensammlern (Sicht Prof. Stenger, Sicht Publikum)
+  und Gegenprüfung jeder Antwort an der Quelle (Pakete zu 8 Fragen); danach Vollständigkeitsprüfung (mit Gegenprüfung),
+  zwei Berichtsagenten und eine Abnahme gegen die Anforderungen aus Ü04. Syntax des Skripts vorab geprüft.
+- **Ergebnis:** in Arbeit (A2-D04)
+- **Unteragenten:** A2-D04 (Workflow)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -714,6 +766,21 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   Prüfaufträge in `DIMENSIONEN`, Gegenprüfung in `gegenpruefen`, Vollständigkeits- und Berichtsauftrag wörtlich im Skript).
 - **Stufen:** Prüfen (8 Agenten) → Gegenprüfen (je 1 Agent pro Blickwinkel, Fließband ohne Wartebarriere) →
   Vollständigkeit (1 Agent + 1 Gegenprüfer) → Bericht (1 Agent schreibt `praesentation/VORTRAGSREIFE.md`).
+- **Unteragenten und Ergebnisse:** Prüfer „Aufgabe & Bewertung“ und „Storyline“ fertig; alle übrigen Unteragenten nach
+  einem Container-Neustart (A2-37) am Nutzungslimit gescheitert (A2-38). Kein Bericht entstanden.
+- **Ergebnis:** abgebrochen; nicht fortgesetzt, weil er den Stand vor D12 prüfte. Ersetzt durch A2-D04 (Ü04).
+
+### A2-D04 – 19.10.2026 – ausgelöst durch A2-39
+
+- **Art:** Workflow „account-2-vortragsreife-fragerunde“ (Workflow-Werkzeug, Lauf `wf_5e16e018-ef6`).
+- **Auftrag (wörtlich):** Skript [`workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`](workflows/account-2_2026-10-19_vortragsreife-fragerunde.js)
+  (gemeinsamer Rahmen `GEMEINSAM` mit Stand, Rollen, Bewertungsraster, ausgenommenen Bereichen und festen Regeln: nur lesen,
+  keine erfundenen Zahlen/Quellen, Herkunft je Befund – Datei, Screenshot, Messung, Websuche mit URL oder „Modellwissen“;
+  sieben Prüfaufträge in `DIMENSIONEN`, zwei Fragensammler in `FRAGENSAMMLER`, Gegenprüfung in `gegenpruefen` und
+  `fragenPruefen`, Vollständigkeits-, Berichts- und Abnahmeauftrag wörtlich im Skript).
+- **Stufen:** Prüfen (7 Prüfer + 2 Fragensammler) → Gegenprüfen (je Blickwinkel 1 Agent; Fragerunde zusätzlich je 8 Fragen
+  1 Agent, der jede Antwort an der Quelle prüft) → Vollständigkeit (1 Agent + Gegenprüfung) → Berichte (2 Agenten:
+  `VORTRAGSREIFE.md`, `fragerunde.md`) → Abnahme (1 Agent, prüft beide Dateien gegen Ü04 und korrigiert nur diese).
 - **Unteragenten und Ergebnisse:** folgt nach Abschluss.
 - **Wie Claude das Ergebnis prüft:** folgt nach Abschluss.
 
