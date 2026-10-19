@@ -104,6 +104,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 82 | 19.10.2026 | Yannick | „Wie füge ich das Skript ein bin jetzt auf google sheets“ | – | Anleitung im Chat: Apps Script öffnen, Code aus GitHub (Rohfassung) einfügen, speichern, einrichten ausführen |
 | 83 | 19.10.2026 | Yannick | „Hat geklappt“ + Screenshot des Ausführungsprotokolls | – | Hinweis: Protokoll ohne „Blatt … ist bereit“ – vermutlich doGet statt einrichten ausgeführt; Kontrolle und Wiederholung erklärt |
 | 84 | 19.10.2026 | Yannick | „Wo sehe ich diesen tabellenblatt in appscripts“ | – | Erklärt: Das Blatt steht in der Google-Tabelle (Sheets-Tab), nicht im Apps-Script-Editor |
+| 85 | 19.10.2026 | Yannick | Screenshot der Google-Tabelle (nur „Tabellenblatt1“, kein Blatt „Stimmen“) | – | Bestätigt: einrichten lief noch nicht; Schritt-für-Schritt-Anleitung zum Auswählen und Ausführen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1520,6 +1521,20 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Erklärt, dass das Blatt „Stimmen“ nicht im Apps-Script-Editor, sondern in der Google-Tabelle
   selbst erscheint (Browser-Tab mit Google Sheets, Blattreiter unten links), wie man die Tabelle wiederfindet und
   woran man im Editor erkennt, welche Funktion ausgewählt ist.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 85 – 19.10.2026 – Yannick
+
+> [Bild: Screenshot einer leeren Google-Tabelle „Unbenannte Tabelle“ („In Google Drive gespeichert“), Menüleiste mit
+> „Erweiterungen“, rechts geöffnete Seitenleiste „Tables“ mit Vorlagen, unten nur der Blattreiter „Tabellenblatt1“;
+> kein weiterer Text]
+
+- **Vorgehen Claude:** Screenshot ausgewertet: Es gibt kein Blatt „Stimmen“, `einrichten` ist also noch nicht
+  gelaufen (passt zum Protokoll aus 83). Erklärt, wie man im Apps-Script-Editor die Funktion „einrichten“ auswählt
+  und ausführt, woran man den Erfolg erkennt (Protokollzeile, neuer Reiter „Stimmen“) und was zu tun ist, falls
+  Apps Script nicht aus dieser Tabelle geöffnet wurde. Empfohlen, die Tabelle umzubenennen.
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
