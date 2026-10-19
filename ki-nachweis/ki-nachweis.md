@@ -106,6 +106,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 84 | 19.10.2026 | Yannick | „Wo sehe ich diesen tabellenblatt in appscripts“ | – | Erklärt: Das Blatt steht in der Google-Tabelle (Sheets-Tab), nicht im Apps-Script-Editor |
 | 85 | 19.10.2026 | Yannick | Screenshot der Google-Tabelle (nur „Tabellenblatt1“, kein Blatt „Stimmen“) | – | Bestätigt: einrichten lief noch nicht; Schritt-für-Schritt-Anleitung zum Auswählen und Ausführen |
 | 86 | 19.10.2026 | Yannick | „Hab doget weggemacht und nochmal ausgeführt“ + Screenshot (Protokoll: „Blatt „Stimmen“ ist bereit“) | – | einrichten erfolgreich; Rückfrage, ob doGet aus dem Code gelöscht wurde (dann Code neu einfügen); Schritt 5 erklärt |
+| 87 | 19.10.2026 | Yannick | Web-App-Adresse (…/exec) geschickt | D17 | Web-App geprüft, Adresse in marke.js, echter Ende-zu-Ende-Test bestanden; Lasttest nicht bestanden (19 von 40) → D17: Live-Abstimmung lastfest machen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1555,6 +1556,29 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 87 – 19.10.2026 – Yannick
+
+> https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Web-App geprüft (Stand-Abfrage ohne Anmeldung, JSON und JSONP): antwortet, „Zugriff: Jeder“ stimmt; Antwortzeit
+    1,4–3,0 s.
+  - Lasttest `live-abstimmung-test.mjs --lasttest` (40 Stimmen gleichzeitig in eigener Runde „lasttest-20261019-174715“):
+    **nicht bestanden** – angenommen 19 von 40, 21 abgelehnt („Gerade kommen sehr viele Stimmen auf einmal …“),
+    Antwortzeit Median 11,2 s. Ursache: Die Wartesperre beim Schreiben (rund 0,5 s je Stimme, alles nacheinander).
+    Die 19 Teststimmen stehen in Yannicks Tabelle in der Runde „lasttest-…“ und zählen weder in der Probe noch im
+    Vortrag.
+  - Adresse in `marke.js` → `umfragen.tier.liveQuelle` eingetragen (Runde 'probe'), committet und gepusht
+    (`753dcb2`).
+  - Echter Ende-zu-Ende-Test (Playwright) über GitHub Pages und die echte Web-App: Folie 08 zeigte „Live“, n = 0;
+    Handy (abstimmen.html auf Pages) stimmte für Waschbär, „Danke“ nach 2,9 s; Folie zeigte danach n = 1 (Runde
+    'probe', eine Teststimme in Yannicks Tabelle).
+  - **Workflow D17** gestartet: Server ohne Wartesperre (appendRow), automatische Wiederholung auf dem Handy,
+    Prüfwerkzeug mit eingetragener Web-App (Prüfläufe und Exporte ohne Netz), Tests, zwei Prüfer, Nacharbeit.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D17 (läuft)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1584,6 +1608,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
 | D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
 | D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
+| D17 | 19.10.2026 | 87 | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server ohne Wartesperre, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
