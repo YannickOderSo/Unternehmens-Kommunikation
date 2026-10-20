@@ -110,6 +110,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 88 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
 | 89 | 19.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D17 (neu gestartet) | D17 war am Nutzungslimit vollständig gescheitert; mit Hinweis auf Teiländerungen neu gestartet |
 | 90 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
+| 91 | 20.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D17 (fortgesetzt) | D17: 6 von 7 Agenten fertig, Nacharbeit am Limit abgebrochen; mit Hinweis auf Teiländerungen fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1614,6 +1615,20 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   was D17 ändert, folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D17 (läuft)
+
+### 91 – 20.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D17 lief nach dem Neustart (89) bis auf die Nacharbeit durch (Bauen, Ende-zu-Ende-Test, zwei Prüfer
+  fertig); die Nacharbeit brach am Nutzungslimit mitten in der Arbeit ab (Änderungen an `apps-script.gs`,
+  `live-abstimmung-test.mjs`, `js/abstimmen.js`, Sicherungen im Scratchpad).
+- **Vorgehen Claude:** Transkript der abgebrochenen Nacharbeit ausgewertet (welche Dateien sie geändert hat, wo die
+  Sicherungen liegen), im Workflow-Skript nur den Auftrag der Nacharbeit um diesen Hinweis ergänzt und D17 per resume
+  fortgesetzt (die sechs fertigen Agenten kommen aus dem Zwischenspeicher).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D17 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
