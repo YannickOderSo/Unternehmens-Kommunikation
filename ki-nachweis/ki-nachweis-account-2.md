@@ -71,6 +71,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-45 | 19.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (21:42 UTC) |
 | A2-46 | 19./20.10.2026 | System | A2-D04: 14 von 16 Agenten fertig; beide Fragensammler am Nutzungslimit gescheitert (bis 02:40 UTC) | A2-D04 | Zwischenstand gesichert |
 | A2-47 | 20.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (08:53 UTC) |
+| A2-48 | 20.10.2026 | System | A2-D04: Fragensammler fertig (zusammen 43 Fragen, 6 Prüfpakete); 4 Prüfpakete am Nutzungslimit gescheitert (bis 13:50 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-49 | 20.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (13:52 UTC) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -712,6 +714,27 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
 > Weiter
 
 - **Vorgehen Claude:** Uhrzeit geprüft (08:53 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-48 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: rueckfragen – Workflow mit resume fortsetzen“; Unteragenten
+> „gegen:fragen-paket-3“ bis „-6“: „You've hit your session limit · resets 1:50pm (UTC)“. – Danach zweimal: „This
+> session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal geprüft: beide Fragensammler, die Gegenprüfung der Rückfragen-Befunde und die Prüfpakete 1
+  und 2 (je 8 Antworten an der Quelle) fertig – 19 Agenten insgesamt; offen die Prüfpakete 3–6.
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-49 – 20.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Uhrzeit geprüft (13:51 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
 - **Ergebnis:** A2-D04 läuft weiter
 - **Unteragenten:** A2-D04 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
