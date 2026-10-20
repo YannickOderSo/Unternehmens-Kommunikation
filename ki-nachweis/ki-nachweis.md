@@ -113,6 +113,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 91 | 20.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D17 (fortgesetzt) | D17: 6 von 7 Agenten fertig, Nacharbeit am Limit abgebrochen; mit Hinweis auf Teiländerungen fortgesetzt |
 | 92 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17-Nacharbeit läuft |
 | 93 | 20.10.2026 | Yannick | „Wir sind höchstens 20 Leute …“: kein Lasttest mit 60, kein Plan-B-PDF | – | Lasttest mit 20 gegen die alte Fassung (20/20 gezählt, 6 über 15 s); Entscheidungen in ANLEITUNG, LIESMICH, AUTOREN, Testwerkzeug |
+| 94 | 20.10.2026 | Yannick | Skript-Aktualisierung zurückstellen; HOLY laut Elias eher Chamäleon → Abstimmung, Folie und Analyse ändern | – | Umfang ermittelt (Folie 08, Folie 10, Abstimmseite, Ausarbeitungen); Rückfragen zu Begründung und Tierauswahl |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1656,6 +1657,25 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     AUTOREN 6c/16, Texte im Testwerkzeug); keine zusätzliche PDF-Seite für Plan B (LIESMICH 11, AUTOREN 16).
   - Testwerkzeug danach erneut: 44 von 44.
 - **Ergebnis:** Commit + Push; Empfehlung an Yannick: Skript trotzdem aktualisieren (Wartezeit)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 94 – 20.10.2026 – Yannick
+
+> Stell das erstmal zurück wir müssen noch etwas das Design überarbeiten. Elias hat mir von seiner Ausarbeitung
+> berichtet das er holy eher als Chamäleon einordnet weshalb wir es bei sowohl der Abstimmung bei der folie und
+> unserer Analyse ändern müssen
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Aktualisierung des Apps Script zurückgestellt (die Web-App läuft weiter mit der alten Fassung; die neue
+    Abstimmseite funktioniert damit, nur langsamer bei Andrang).
+  - Umfang ermittelt: „Waschbär“ als unsere Analyse steht in Folie 08 (Titel, Szene „Unsere Analogien“, Notizen,
+    Kasten), Folie 10 (Tonalität), `marke.js` (Umfrage: Optionen, unsereAntwort), Abstimmseite (Tier-Zeichnungen),
+    `js/folien/08-analogien.js` (Zeichnungen), LIESMICH/AUTOREN/QUELLEN/ANLEITUNG sowie in den Ausarbeitungen
+    (`limbic-map.md`, Dossier Bündel B von Lukas, Recherche-Dossier Kap. 6.7 als Hypothese „Waschbär oder Affe“).
+  - Rückfragen an Yannick: Begründung von Elias (Quelle für die Einordnung), welches Tier in der Abstimmung
+    ersetzt wird, ob außer dem Chamäleon weitere Design-Änderungen anstehen.
+- **Ergebnis:** Rückfragen
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
