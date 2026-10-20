@@ -128,7 +128,7 @@
             NICHT BESTANDEN           Handys gescheitert oder n ≠ Anzahl –
                                       Exit-Code 1 (Abbruch des Tests: 2)
           Eine Messung ist nur eine Stichprobe: gegen die echte Web-App
-          mindestens zweimal und einmal mit --anzahl 60.
+          mindestens zweimal, --anzahl = Personen im Raum (bei uns ca. 20).
           Gegen die ECHTE Web-App schreibt er in die Tabelle – die Zeilen der
           Runde „lasttest-…“ dürfen danach im Blatt „Stimmen“ gelöscht werden
           (wenn gerade niemand abstimmt). Gegen die Attrappe:
@@ -1630,7 +1630,7 @@ export function serverStarten(port = 8787, einstellungen = {}) {
 
 /* =============================================================================
    5. LASTTEST (--lasttest URL)
-   Ob Google 20–60 fast gleichzeitige Stimmen annimmt (Sperre, Kontingente),
+   Ob Google viele fast gleichzeitige Stimmen annimmt (Sperre, Kontingente),
    zeigt nur ein Test mit der echten Web-App. fetch folgt der Weiterleitung
    von Google (script.google.com → script.googleusercontent.com) von selbst.
    Jedes Handy verhält sich wie js/abstimmen.js (handyRegeln oben), die
@@ -1833,7 +1833,7 @@ export async function lasttest(url, einstellungen = {}) {
   }
   console.log('\n' + text);
   if (mitFolie && folie.offline) console.log('Achtung: Die Folie hätte zwischendurch „offline“ gezeigt (' + folie.offline + '-mal, zusammen ' + sek(folie.offlineMs) + ').');
-  if (echt) console.log('Eine Messung ist eine Stichprobe: mindestens zweimal laufen lassen, einmal mit --anzahl 60.');
+  if (echt) console.log('Eine Messung ist eine Stichprobe: mindestens zweimal laufen lassen (--anzahl = Personen im Raum).');
   else console.log('Attrappe: Belastbarkeit zeigt das nur, wenn der Server mit --sperre läuft (sonst nur die Wiederholung).');
   return {
     bestanden: urteil === 'bestanden', urteil, n, ersterVersuch, wiederholt: wiederholt.length, gescheitert: g,

@@ -328,7 +328,8 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
    online: Stand-Adresse auf dem Handy öffnen und die Zahlen über „Werte“ eintragen (Abschnitt 6, Weg A, „Rückfall“).
    **Im PDF** gibt es keine Abstimmung: Folie 08 zeigt dort den Endzustand ohne QR-Code, und der Titel nennt schon
    die Auflösung („… Waschbär, kein Adler“). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C,
-   Ergebnis mündlich nennen), dann weiterblättern.
+   Ergebnis mündlich nennen), dann weiterblättern. Eine zusätzliche PDF-Seite mit Frage und QR-Code ist nicht
+   nötig (Entscheidung Yannick, 20.10.2026).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext als Handout drucken:
    `index.html?druck&notizen` öffnen → Strg+P (Ränder „Keine“, „Hintergrundgrafiken“ an). Oben die Folie,
    darunter der vollständige Sprechtext; lange Sprechtexte laufen auf eine Folgeseite weiter (ca. 43 Seiten).
@@ -469,7 +470,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       aktualisieren“ – neue Fassung einfügen (Raw-Link, Strg+F `SPEICHERN BEI ANDRANG`), **„einrichten“**
       ausführen (drei Zeilen im Protokoll), **Neue Version** bereitstellen (URL bleibt gleich), Kurzprüfung
       `<URL>?aktion=fassung` → „(Skript-Fassung 19.10.2026)“. Danach **Lasttest** (Claude oder selbst, Anleitung,
-      Schritt 7): „BESTANDEN“, mindestens zweimal, einmal mit `--anzahl 60`. Nicht während einer Abstimmung
+      Schritt 7): „BESTANDEN“, mindestens zweimal mit `--anzahl 20` (höchstens ca. 20 Personen im Raum, Yannick
+      20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, aber 6 Handys über 15 s). Nicht während einer Abstimmung
 - [ ] **Folie 08 – Kasten und Notizen** (B · Lukas): beschreiben noch den alten Weg („Abstimm-Link eintragen,
       dann erscheint der QR-Code“, „Zurücksetzen zweimal“); an Weg A anpassen (QR-Code erscheint mit
       `liveQuelle`, Pille „Live“ beobachten, bei Weg A kein „Zurücksetzen“)

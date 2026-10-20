@@ -112,6 +112,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 90 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
 | 91 | 20.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D17 (fortgesetzt) | D17: 6 von 7 Agenten fertig, Nacharbeit am Limit abgebrochen; mit Hinweis auf Teiländerungen fortgesetzt |
 | 92 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17-Nacharbeit läuft |
+| 93 | 20.10.2026 | Yannick | „Wir sind höchstens 20 Leute …“: kein Lasttest mit 60, kein Plan-B-PDF | – | Lasttest mit 20 gegen die alte Fassung (20/20 gezählt, 6 über 15 s); Entscheidungen in ANLEITUNG, LIESMICH, AUTOREN, Testwerkzeug |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1641,6 +1642,22 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D17 (Nacharbeit läuft)
 - **Nachtrag:** D17 danach fertig, selbst geprüft und committet (Details unter D17).
+
+### 93 – 20.10.2026 – Yannick
+
+> Wir sind höchstens 20 Leute denke ich brauche keinen lasttest von 60 , plan b ist denke auch unnötig
+
+- **Vorgehen Claude:**
+  - Lasttest mit 20 Handys gegen die **noch alte** Server-Fassung (neue Wiederholung auf dem Handy simuliert):
+    alle 20 gezählt, 14 im 1. Versuch, 6 nach Wiederholung, keiner gescheitert; Zeit bis „Danke“ Median 8,0 s,
+    längste 20,8 s, 6 Handys über dem Ziel von 15 s → „GEZÄHLT, ABER ZU LANGSAM“. Folie nie „offline“. 20 Zeilen
+    in der Runde „lasttest-20261020-093242“ in Yannicks Tabelle (zählen nicht).
+  - Entscheidungen eingetragen: Gruppengröße höchstens ca. 20 → Lasttest mit `--anzahl 20` (ANLEITUNG, LIESMICH 12,
+    AUTOREN 6c/16, Texte im Testwerkzeug); keine zusätzliche PDF-Seite für Plan B (LIESMICH 11, AUTOREN 16).
+  - Testwerkzeug danach erneut: 44 von 44.
+- **Ergebnis:** Commit + Push; Empfehlung an Yannick: Skript trotzdem aktualisieren (Wartezeit)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten

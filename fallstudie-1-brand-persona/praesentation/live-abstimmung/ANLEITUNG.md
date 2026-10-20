@@ -162,19 +162,22 @@ Option = Nummer des Tiers ab 0: 0 Adler · 1 Löwe · 2 Waschbär · 3 Fuchs · 
 
 Alle Teststimmen landen in der Runde **„probe“** und zählen im Vortrag nicht mit.
 
-**Lasttest** (nach jedem Aktualisieren des Skripts und bei der Generalprobe, je 1 Min.): Ob Google 20–60
-Stimmen annimmt, die fast in derselben Sekunde kommen, lässt sich ohne echten Test nicht sagen. Auf einem
+**Lasttest** (nach jedem Aktualisieren des Skripts und bei der Generalprobe, je 1 Min.): Ob Google alle
+Stimmen annimmt, die fast in derselben Sekunde kommen, lässt sich ohne echten Test nicht sagen. Im Raum sind
+**höchstens ca. 20 Personen** (Yannick, 20.10.2026) – also `--anzahl 20`; der Standard (40) gibt Reserve. Auf einem
 Rechner mit Node.js im Ordner `praesentation/`:
 
 ```bash
 node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>
-node werkzeuge/live-abstimmung-test.mjs --lasttest <URL> --anzahl 60      # voller Hörsaal
+node werkzeuge/live-abstimmung-test.mjs --lasttest <URL> --anzahl 20      # unsere Gruppe (höchstens ca. 20)
 node werkzeuge/live-abstimmung-test.mjs --lasttest <URL> --verteilt 10    # 40 Stimmen über 10 s verteilt
 ```
 
-Eine Messung ist nur eine Stichprobe: mindestens **zweimal** laufen lassen, einmal davon mit `--anzahl 60`.
+Eine Messung ist nur eine Stichprobe: mindestens **zweimal** laufen lassen (`--anzahl 20`).
+Messung 20.10.2026 mit der **alten** Fassung und 20 Handys: alle 20 gezählt, aber 6 warteten über 15 s (längste
+20,8 s) – deshalb lohnt das Aktualisieren.
 
-Das spielt 40 (bzw. 60) Handys nach, die gleichzeitig in eine eigene Runde „lasttest-…“ abstimmen (zählt weder
+Das spielt 40 (bzw. mit `--anzahl` so viele) Handys nach, die gleichzeitig in eine eigene Runde „lasttest-…“ abstimmen (zählt weder
 in „probe“ noch im Vortrag). Jedes verhält sich wie die Abstimmseite: Wird eine Stimme abgelehnt oder bleibt die
 Antwort 15 s aus, versucht es das Handy nach 1,5–4 s von selbst noch einmal – **insgesamt höchstens drei
 Versuche** (zwei automatische Wiederholungen). Dazu fragt eine „Folie“ alle 2 s den Stand ab wie Folie 08 (nur

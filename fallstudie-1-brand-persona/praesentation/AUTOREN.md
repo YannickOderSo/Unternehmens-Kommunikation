@@ -352,7 +352,7 @@ Handys testen.
   Wiederholung, nicht die Belastbarkeit – ein Handy scheitert dann zufällig mit A³) und `--sperre MS`
   (Belastbarkeit: jede Stimme hält die Sperre so lange, Warteschlange mit `SPERRE_WARTEN_MS`).
   Lasttest gegen die echte Web-App: `node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>` (40 Handys
-  gleichzeitig in eine eigene Runde; `--anzahl 60`, `--verteilt 10`, `--ohne-folie`): Handy-Regel wie
+  gleichzeitig in eine eigene Runde; `--anzahl 20` für unsere Gruppe, `--verteilt 10`, `--ohne-folie`): Handy-Regel wie
   `js/abstimmen.js`, eine mitlesende „Folie“ wie Abschnitt 3a, vorher `?aktion=fassung`; Urteil BESTANDEN (alle
   gezählt, keiner gescheitert, „Danke“ ≤ 15 s), GEZÄHLT, ABER ZU LANGSAM oder NICHT BESTANDEN.
 
@@ -855,7 +855,7 @@ Script (Lock-Referenz, Quotas, `appendRow`, `clearContent`, abgerufen 19.10.2026
   angesehen: Endzustand mit den Analogien, ohne QR-Code.
 
 **Nicht umgesetzt (mit Grund):** zusätzliche PDF-Seite „Folie 08, Schritt 0“ (Frage und QR-Code) für Plan B – braucht
-eine Änderung der Druckansicht und ergäbe 23 statt 22 Seiten; Entscheidung Yannick, bis dahin LIESMICH 11 (Frage auf
+eine Änderung der Druckansicht und ergäbe 23 statt 22 Seiten; Yannick hat am 20.10.2026 entschieden: nicht nötig, LIESMICH 11 (Frage auf
 Folie 07 stellen, Hände zählen). Folie 08 im Prüflauf zweimal fotografieren (`n = 0` und mit Balken) – stattdessen
 Hinweis in Abschnitt 9 (`--live-werte`). Prüfen der Skript-Eigenschaft in der Oberfläche als Kurzprüfung – ersetzt
 durch `?aktion=fassung` (eindeutig, ohne Oberflächenwissen). Mutanten „Abgleich ohne `Math.max`“, „nach drei belegten
@@ -866,7 +866,8 @@ unerreichbar bzw. nur bei gleicher Millisekunde desselben Handys; von Hand gepr�
 - **Yannick:** Skript aktualisieren (ANLEITUNG „Skript aktualisieren“: Code einfügen, „einrichten“, Neue Version,
   Kurzprüfung). Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
   Fassung.
-- **Danach Lasttest gegen die echte Web-App** (mindestens zweimal, einmal `--anzahl 60`). Erst er zeigt, wie lange
+- **Danach Lasttest gegen die echte Web-App** (mindestens zweimal mit `--anzahl 20`; höchstens ca. 20 Personen im
+  Raum, Yannick 20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, 6 Handys über 15 s). Erst er zeigt, wie lange
   der kurze Abschnitt unter der Sperre bei Google dauert (`tryLock`, `getProperty`, `setProperty`, `releaseLock` –
   Drittquelle justin.poehnelt.com, 16.03.2024: PropertiesService ca. 80 ms je Schreiben und Lesen; die Übergabe der
   Sperre ist nicht dokumentiert) und ob Kontingente greifen. Ist er zu langsam: nächste Stufe wäre `appendRow` ohne
