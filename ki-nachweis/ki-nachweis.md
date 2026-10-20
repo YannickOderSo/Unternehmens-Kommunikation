@@ -115,6 +115,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 93 | 20.10.2026 | Yannick | „Wir sind höchstens 20 Leute …“: kein Lasttest mit 60, kein Plan-B-PDF | – | Lasttest mit 20 gegen die alte Fassung (20/20 gezählt, 6 über 15 s); Entscheidungen in ANLEITUNG, LIESMICH, AUTOREN, Testwerkzeug |
 | 94 | 20.10.2026 | Yannick | Skript-Aktualisierung zurückstellen; HOLY laut Elias eher Chamäleon → Abstimmung, Folie und Analyse ändern | – | Umfang ermittelt (Folie 08, Folie 10, Abstimmseite, Ausarbeitungen); Rückfragen zu Begründung und Tierauswahl |
 | 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | in Arbeit: Chamäleon in Folie 08, Folie 10, Abstimmung und Ausarbeitungen |
+| 96 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18 | nur Nachweis committet; D18 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1698,6 +1699,15 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D18 (läuft)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 96 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D18 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D18 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
