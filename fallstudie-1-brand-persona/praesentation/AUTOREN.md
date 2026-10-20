@@ -320,17 +320,41 @@ Handys testen.
   Browser-Speicher und `Deck.kanal('umfrage')`, Pille über `Deck.kanal('umfrage-live')` (`{ id, zustand, zeit,
   meldung }`, zurück `{ id, aktion: 'pausieren' | 'fortsetzen' | 'melden' }`); dort steht der Zustand zusätzlich
   als Knopf `.r-live` unter der Kopfzeile „Aktuell“ (nur solange die Umfrage-Folie aktuell ist; Stil in
-  `css/komponenten.css`). Mit `?druck`/`?aufnahme` wird nie abgefragt – `pruefen.mjs` sieht auch mit
-  `liveQuelle` keine externen Anfragen.
+  `css/komponenten.css`). Mit `?druck`/`?aufnahme` wird nie abgefragt. `pruefen.mjs` lädt die Prüfseite bei
+  gesetzter `liveQuelle` ohne `?aufnahme` (Klasse „aufnahme“ per Init-Skript) und beantwortet Anfragen an die
+  `liveQuelle` (nur `aktion=stand`/`stimme`) mit einer eingebauten Attrappe – nichts geht ins Netz; Bericht
+  „liveAnfragen“. Standard: Stand mit lauter Nullen (QR-Code, Pille „Live“, `n = 0`); `--live-offline`,
+  `--live-werte 3,1,7,0,2`, `--live-aus` (Abschnitt 9). `aktion=stimme` aus der Präsentation ist ein Fehler.
   Lokal ohne Google: `node werkzeuge/live-abstimmung-test.mjs --server 8787`, dann
   `index.html?quelle=http://localhost:8787/exec#f08` (`?quelle` nur bei `file://`/`localhost`; Referentenfenster
   dafür direkt mit `index.html?referent&quelle=…` öffnen), Abstimmseite `abstimmen.html?u=tier&quelle=http://localhost:8787/exec`.
   Die Abstimmseite (`js/abstimmen.js`) nimmt als `liveQuelle` nur `https://script.google.com/…/exec` an (wie die
   Folie; localhost nur über `?quelle`) und lädt `marke.js` über http(s) immer frisch (`?v=…`), damit eine neue
   `runde` sofort gilt. Sie zeigt kein Logo (öffentliche Seite, `QUELLEN.md` §4), oben die Einordnung
-  („Studentische Fallstudie · keine Verbindung zur …“); Geräte-ID je Umfrage und Runde; Zeitlimit 30 s (länger
-  als die Sperre im Server, 10 s). Lasttest gegen die echte Web-App:
-  `node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>` (40 Stimmen gleichzeitig in eine eigene Runde).
+  („Studentische Fallstudie · keine Verbindung zur …“); Geräte-ID je Umfrage und Runde.
+  **Senden mit Wiederholung** (seit 19.10.2026, „Lastfest“ in Abschnitt 16): Zeitlimit 15 s je Versuch
+  (`ZEITLIMIT`), insgesamt bis zu 3 Versuche (`VERSUCHE`) bei Andrang (Antwort `ok:false` mit `nochmal:true` oder
+  Fehlertext beginnt mit „Gerade kommen sehr viele Stimmen“ bzw. „Serverfehler:“), bei Zeitüberschreitung und bei
+  Netz-/Ladefehlern; nicht, wenn das Handy offline ist, nie bei Eingabefehlern. Pause vor jeder Wiederholung
+  zufällig 1,5–4 s (`PAUSE_MIN`/`PAUSE_MAX`), dieselbe Geräte-ID. Hinweis „Gerade stimmen viele ab – Ihre Stimme
+  wird gesendet …“ in der Zeile unter der Frage (`.anleitung.ist-wiederholung`, behält deren Höhe), Ansage
+  einmal; erst nach dem 3. Fehlversuch die Fehlerkarte. Die anderen Tiere bleiben antippbar
+  (`.auswahl.ist-unterwegs` statt `aria-busy`). Umentscheiden beendet die alte Sendung; höchstens eine Anfrage
+  gleichzeitig. Späte `ok`-Antwort für ein anderes Tier → neueste Wahl wird still nachgesendet; für dasselbe
+  Tier → gleich „Danke“. Format `var NAME = …;` der Konstanten beibehalten – der Lasttest liest sie aus.
+  **Server** (`apps-script.gs`, Fassung `FASSUNG = '19.10.2026'`): Jede Stimme reserviert unter
+  `LockService.getScriptLock()` nur eine Zeilennummer (Skript-Eigenschaft `naechsteZeile`: lesen und erhöhen in
+  derselben Sperre, höchstens 8 s warten, `SPERRE_WARTEN_MS`) und schreibt danach ohne Sperre in ihre Zeile
+  (nur wenn leer; `{"ok":true}` erst nach `flush`; Zeit beim Eingang). `einrichten()` hält 5000 formatierte
+  Zeilen bereit und setzt den Zähler nie zurück. `?aktion=fassung` (unbekannte Aktion) nennt die Fassung.
+  **Prüfen** (`werkzeuge/live-abstimmung-test.mjs`): 44 Prüfungen; `--mutationen` (16 kaputte Kopien);
+  `--server PORT` mit `--verzoegerung MS`, `--stoerung A`, `--abbruch A`, `--gleichzeitig N` (prüfen die
+  Wiederholung, nicht die Belastbarkeit – ein Handy scheitert dann zufällig mit A³) und `--sperre MS`
+  (Belastbarkeit: jede Stimme hält die Sperre so lange, Warteschlange mit `SPERRE_WARTEN_MS`).
+  Lasttest gegen die echte Web-App: `node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>` (40 Handys
+  gleichzeitig in eine eigene Runde; `--anzahl 60`, `--verteilt 10`, `--ohne-folie`): Handy-Regel wie
+  `js/abstimmen.js`, eine mitlesende „Folie“ wie Abschnitt 3a, vorher `?aktion=fassung`; Urteil BESTANDEN (alle
+  gezählt, keiner gescheitert, „Danke“ ≤ 15 s), GEZÄHLT, ABER ZU LANGSAM oder NICHT BESTANDEN.
 
 ### d) Live-Wortwolke
 ```html
@@ -512,6 +536,9 @@ node werkzeuge/pruefen.mjs index.html --ausgabe _test/pruefung --schritte
 #    nur einzelne Folien: --nur f06,f07 · weitere Optionen: --thema bento|keynote --modus dunkel
 #    --skala 0.5 --druck _test/probe.pdf --optional --primaer FFD007 --sekundaer 1D1D1B
 #    --bewegung-reduziert --ohne-bilder
+#    Live-Abstimmung (Folie 08): --live-offline | --live-werte 3,1,7,0,2 | --live-aus
+#    Bei Änderungen an Folie 08 zusätzlich mit Balken prüfen (der Standard zeigt n = 0):
+#    node werkzeuge/pruefen.mjs index.html --nur f08 --schritte --live-werte 15,9,17,14,9
 ```
 4. Screenshots in `_test/pruefung/` ansehen (`f06_s0.png`, `f06_s1.png` …), `bericht.json` lesen:
    „fehler“ müssen leer sein; „warnungen“ (Wortbudget, Schrift < 28 px) begründen oder beheben.
@@ -525,7 +552,13 @@ Bühne, abgeschnittener bzw. aus einem Kasten ragender Text, **überlappender Te
 Fehler, < 28 px Warnung außer Metaangaben), Kontrast jedes Textes zu seinem Hintergrund, Wortbudget
 („Marken-<br>nutzen“ zählt als ein Wort), fehlende Notizen, fehlendes `data-zeit`/`data-titel`; mit
 `--schritte` die Text- und Kontrastprüfungen in **jedem** Schritt (Befunde nur in Zwischenschritten
-tragen „nur in Schritt n“); mit `--druck` zusätzlich PDF mit einer Seite je Folie.
+tragen „nur in Schritt n“); mit `--druck` zusätzlich PDF mit einer Seite je Folie. **Live-Abstimmung:**
+Zustand der Pille und `n` auf Folie 08 (Anfragen an die `liveQuelle` beantwortet die eingebaute Attrappe;
+`aktion=stimme` aus der Präsentation und jede andere externe Anfrage, auch WebSockets, sind Fehler). Der
+Browser startet zusätzlich ohne Proxy und ohne Namensauflösung (`--no-proxy-server`,
+`--host-resolver-rules`): Auch Chrome selbst baut keine Verbindungen zu Google-Diensten auf. In `bericht.json`
+stehen dazu `zusammenfassung.externeAnfragen` (muss 0 sein) und `zusammenfassung.liveAnfragen` bzw. das
+Objekt `liveAnfragen`.
 
 Ausnahmen: `data-ueberlauf-ok` an einem Element (z. B. absichtlich angeschnittenes Bild) nimmt es samt
 Inhalt von der Überlauf- und Abschneideprüfung aus, `data-ueberlappung-ok` von der Überlappungsprüfung.
@@ -694,6 +727,12 @@ node werkzeuge/uebersicht.mjs index.html --stand TT.MM.JJJJ
 Danach `export/uebersicht.png` und einige Bilder in `export/folien/` ansehen. Testausgaben bleiben in `_test/`
 (nicht einchecken).
 
+PDF und Folienbilder zeigen Folie 08 im Endzustand (Analogien) – die Umfrage und der QR-Code sind dort nicht zu
+sehen; der Live-Zustand ändert die Exporte nicht. Keiner der drei Schritte fragt die Web-App ab: Das PDF lädt
+mit `?druck` (keine Abfrage), die Folienbilder beantwortet die eingebaute Attrappe von `pruefen.mjs`,
+`uebersicht.mjs` bricht jede externe Anfrage ab und meldet `externeAnfragen`/`liveAnfragen` (erwartet 0). Beide
+Werkzeuge starten den Browser ohne Netz (Abschnitt 9).
+
 ## 16. Eigene Live-Abstimmung für Folie 08 (19.10.2026)
 
 Entscheidung Yannick: Live-Umfrage ohne fremdes Werkzeug. Publikum → QR-Code → `abstimmen.html` → Web-App
@@ -748,7 +787,8 @@ und 12 niedrige Befunde. Eingearbeitet:
 **Nicht umgesetzt (mit Grund):** kürzere Adresse der Abstimmseite über eine Weiterleitungsseite (optional; neue Datei
 außerhalb von `praesentation/` und ein zusätzlicher Sprung auf dem Handy – 440 px und der Scan-Test aus der letzten Reihe
 reichen); schnellere Schreibstelle im Server (Textformat für ganze Spalten, `appendRow`) – ob Google das Format
-übernimmt, ist ohne Google nicht prüfbar, der Lasttest bei der Generalprobe zeigt, ob es nötig ist.
+übernimmt, ist ohne Google nicht prüfbar, der Lasttest bei der Generalprobe zeigt, ob es nötig ist. (Überholt:
+Der Lasttest war nötig und nicht bestanden – neue Schreibstelle im Unterabschnitt „Lastfest“ unten.)
 
 **Geprüft (19.10.2026, ohne Google):** `live-abstimmung-test.mjs` 32 von 32; Lasttest gegen die Attrappe bestanden;
 Ende-zu-Ende-Test wie oben (Attrappe, GitHub-Pages-Adresse, drei Handys, Referentenfenster) 32 von 32; gezielte Tests
@@ -762,6 +802,85 @@ OpenCV gelesen bei 1920 und 960 px Bildbreite in allen vier, bei 640 px in drei 
 sechs) – nur ein Ersatz für den Scan-Test. Exporte neu erzeugt (Abschnitt 15): PDF 22 Seiten ohne 01b, 23 Folienbilder,
 Übersicht Stand 19.10.2026. Offen wie bisher: echtes Google Apps Script (Weiterleitung, Kaltstart, Kontingente),
 echte Handys, Scan aus der letzten Reihe.
+
+### Lastfest (19.10.2026)
+
+**Anlass:** Lasttest gegen die echte Web-App am 19.10.2026 (40 Stimmen gleichzeitig, eigene Runde
+„lasttest-…“): 19 von 40 angenommen, 21 nach rund 10 s mit „Gerade kommen sehr viele Stimmen …“ abgelehnt,
+Antwortzeit Median 11,2 s, längste 14,3 s. Ursache: Jede Stimme hielt die Sperre (`LockService.getScriptLock()`)
+für Blatt suchen, letzte Zeile, Format, Werte und `flush` – rund 0,5 s, alle nacheinander. **Ziel:** 40 fast
+gleichzeitige Stimmen werden alle gezählt, jedes Handy sieht spätestens nach ca. 15 s „Danke“, ohne selbst zu
+tippen. Schnittstelle, Zählregel, Datenschutz und Verhalten der Folie bleiben gleich. Ablauf: drei Bauteile
+(Server, Abstimmseite, Prüfwerkzeug), Ende-zu-Ende-Test, zwei Prüfungen (Nebenläufigkeit und Apps Script;
+Prüfwerkzeug, Exporte und Anleitung: zusammen 1 hoher, 8 mittlere, 11 niedrige Befunde), Nacharbeit. Quellen zu Apps
+Script (Lock-Referenz, Quotas, `appendRow`, `clearContent`, abgerufen 19.10.2026) im Kopf von `apps-script.gs`.
+
+| Bereich | Änderung |
+|---|---|
+| `live-abstimmung/apps-script.gs` (`FASSUNG = '19.10.2026'`) | **Zeile reservieren, dann ohne Sperre schreiben:** Unter der Sperre steht nur die Skript-Eigenschaft `naechsteZeile` – lesen und um 1 erhöhen in derselben Sperre (Muster der Lock-Referenz: fortlaufende Ticketnummer), höchstens 8 s warten (`SPERRE_WARTEN_MS`, vorher 10 s). Danach schreibt jede Stimme in ihre eigene Zeile, nur wenn sie leer ist (sonst Abgleich mit `getLastRow`, Zähler nie zurück, höchstens 3 Zeilen); `{"ok":true}` erst nach `flush`; Zeit beim Eingang (die neuere Wahl desselben Handys gewinnt). Seltene Wege mit Tabellenänderung (Blatt anlegen, Kopfzeile, 500 Zeilen nachschieben) unter der Sperre, `flush` vor `releaseLock`. **Warum nicht `appendRow` ohne Sperre:** Die Referenz sichert nicht zu, dass gleichzeitige Aufrufe nie dieselbe Zeile treffen. **`einrichten()`:** Kopfzeile, 5000 formatierte Reservezeilen, Formate der ganzen Spalten, Zähler hinter die letzte Zeile, aber nie zurück (Nacharbeit), Textschutz-Probe in der letzten Zeile (leeren mit `clearContent`, Nacharbeit), drei Protokollzeilen. Nacharbeit außerdem: `doGet` im Editor schreibt einen Hinweis auf `einrichten` ins Protokoll; `?aktion=fassung` (unbekannte Aktion) nennt die Fassung; Kopf: Löschen, Sortieren, Einfügen, `einrichten` und „Neue Version“ nur ohne laufende Abstimmung; Kontingente vorsichtig formuliert (30 gleichzeitige Ausführungen je Nutzer und ein unbeziffertes Limit für Starts pro Sekunde; wie beides bei „Ausführen als: Ich“ greift, ist nicht dokumentiert). |
+| `js/abstimmen.js`, `css/abstimmen.css`, `abstimmen.html` (nur Kommentar) | Senden mit automatischer Wiederholung (Abschnitt 6c): bis zu 3 Versuche, 15 s je Versuch (vorher 30 s, ein Versuch), Pause 1,5–4 s, ruhiger Hinweis statt Fehlerkarte, Umentscheiden jederzeit, höchstens eine Anfrage unterwegs, Nachzügler. Nacharbeit: späte Zusage für dieselbe Wahl → gleich „Danke“ statt weiterer Versuche; Hinweiszeile behält die Höhe der Anleitung (Tablet 768 px: vorher 23 px Sprung); Kommentare zu Kontingent und PDF berichtigt. Abgeblendete Tiere Deckkraft 0,72 (Kontrast hell 6,8 : 1, dunkel 7,8 : 1). |
+| `werkzeuge/live-abstimmung-test.mjs` | Neu geschrieben, **44 Prüfungen** (vorher 32). Attrappe mit Schreibpuffer je Ausführung, Skript-Eigenschaften, Sperre mit Besitzer und Sperr-Phasen, verschachtelten Ausführungen (2. und 3. Stimme vor jedem Dienstaufruf), `appendRow` atomar oder nicht. Regeln der Lock-Referenz: `flush` vor `releaseLock`; Eigenschaft nur unter der Sperre ändern und in derselben Sperr-Phase lesen und schreiben (Nacharbeit); Zeilen und Blätter nur unter der Sperre anfügen (Nacharbeit); Sperre am Ende frei; `''` per `setValues` zählt pessimistisch als Inhalt. Grenze des Modells im Kopf benannt. `--mutationen`: 16 kaputte Kopien (vorher 11). `--server`: `--stoerung`, `--abbruch`, `--gleichzeitig`, neu `--sperre MS` (Belastbarkeit). `--lasttest`: Handy-Regel aus `js/abstimmen.js`, `--anzahl`, `--verteilt`; Nacharbeit: Fassungsabfrage, mitlesende „Folie“ wie 3a (`--ohne-folie`), Urteil BESTANDEN / GEZÄHLT, ABER ZU LANGSAM / NICHT BESTANDEN mit Ziel 15 s (`ZIEL_MS`). |
+| `werkzeuge/pruefen.mjs`, `werkzeuge/uebersicht.mjs` | Eingebaute Attrappe der Web-App (nur `liveQuelle`, nur `stand`/`stimme`); Prüfseite mit `liveQuelle` ohne `?aufnahme` – Folie 08 wie zu Beginn des Vortrags (QR, „Live“, `n = 0`) statt Beispieldaten; `--live-offline`, `--live-werte`, `--live-aus`; Bericht `liveAnfragen`. Nacharbeit: `aktion=stimme` aus der Präsentation ist ein Fehler; WebSockets werden abgefangen und als externe Anfrage gemeldet; Browser startet ohne Proxy und ohne Namensauflösung (`--no-proxy-server`, `--host-resolver-rules`) – mit `--disable-background-networking` allein baute Chrome in jedem Lauf eigene Verbindungen zu Google-Diensten auf (clients2.google.com, accounts.google.com u. a., nie `script.google.com`). |
+| `live-abstimmung/ANLEITUNG.md` | Abschnitt „Skript aktualisieren“ (Raw-Link mit Strg+F-Kontrolle, Handgriffe für das Auswahlfeld, drei Protokollzeilen, „Neue Version“, Kurzprüfung mit `?aktion=fassung` und neuer Geräte-ID, wo das Blatt steht); Lasttest (20–60 Handys, mindestens zweimal, Ausgabe, drei Urteile); „Wichtig zu wissen“ (nur ohne laufende Abstimmung löschen/sortieren/einfügen, Lücke im Blatt, Kontingente); Fehlertabelle +7 Zeilen; „Für die Technik“ (`--sperre`, Wiederholung gegenüber Belastbarkeit). |
+| `js/komponenten.js` (nur Kommentar), `LIESMICH.md`, `AUTOREN.md` | Kommentar zu `?aufnahme` und `pruefen.mjs`. LIESMICH 6 (Andrang, Testen, PDF ohne QR-Code, Prüfwerkzeug), 11 (im PDF keine Abstimmung), 12 (Punkt „Skript aktualisieren“), 13. AUTOREN 6c, 9, 15 und dieser Abschnitt. |
+
+**Geprüft (19./20.10.2026, nur lokal – keine einzige Anfrage an die echte Web-App):**
+- `live-abstimmung-test.mjs`: 44 von 44; `--mutationen`: 16 von 16 erkannt. Gegenprobe: das alte Skript bestand
+  die neuen Prüfungen nur zu 33 von 42 (Stand Bau).
+- Lasttest gegen die Attrappe, 40 Handys (Urteil, längste Zeit bis „Danke“): ohne Störung BESTANDEN (0,1 s);
+  `--verzoegerung 800 --stoerung 0.2` BESTANDEN (5,0 s); `--abbruch 0.2` BESTANDEN (5,5 s); `--verzoegerung 1200
+  --stoerung 0.2 --abbruch 0.1 --gleichzeitig 30 --sperre 100 --verteilt 10` BESTANDEN (11,5 s). **Belastbarkeit
+  mit `--sperre`** (Haltezeit je Stimme, `--verzoegerung 800`): 200 ms → BESTANDEN (8,8 s), mit `--anzahl 60`
+  GEZÄHLT, ABER ZU LANGSAM (1 Handy, 15,1 s); 300 ms → ZU LANGSAM (2 Handys, 15,5 s); 500 ms (etwa der alte
+  Server) → ZU LANGSAM (16 Handys über 15 s, längste 26,2 s). Die „Folie“ war in keinem Lauf „offline“.
+  Folgerung: Das Ziel hält, solange eine Stimme die Sperre bei Google höchstens ca. 0,2 s hält (bei 60
+  Handys knapp). Wie lange das bei Google dauert, ist nicht gemessen.
+- Abstimmseite im Browser (Playwright, `file://`, Attrappe; Anfragen an Google blockiert und gezählt: 0): 22 von 22
+  Fällen – Erfolg im 1./2./3. Versuch (Andrang, `nochmal`, „Serverfehler:“, HTTP 503, Netz- und Ladefehler),
+  Fehlerkarte erst nach 3 Versuchen, Zeitüberschreitung, Umentscheiden in der Pause und während einer Anfrage,
+  Nachzügler, offline, Eingabefehler, Du-Form, Darstellung 390 × 664 und 375 × 548 hell/dunkel; neu: späte Zusage
+  in der Pause → „Danke“ nach 16,1 s mit 1 Anfrage, späte Zusage während Versuch 2 (Andrang) → „Danke“ ohne
+  Fehlerkarte, Tablet 768 × 1024 ohne Sprung (vorher 23 px). Ende-zu-Ende (3 Runden mit 3 Handys und Folie 08,
+  `--stoerung 0.3`): 9 von 9 „Danke“ ohne Tippen, Folie stimmt in jeder Runde, Umentscheiden in zwei Varianten,
+  Attrappe gestoppt → Fehlerkarte nach 3 Versuchen, Folie „offline“.
+- `pruefen.mjs index.html --schritte --optional`: 23 Folien, 80 Bilder, 0 Fehler, 4 Warnungen Wortbudget wie bisher
+  (f03, f04, f10, f11), `externeAnfragen` 0, `liveAnfragen` 1 (Attrappe), Folie 08 „Live“, `n = 0`; alle 80 Bilder
+  byteweise gleich mit dem Lauf vor den neuen Startoptionen. `--nur f08 --schritte` mit `--live-offline` (dunkel),
+  `--live-werte 15,9,17,14,9` und `--live-aus` (Keynote): je 0 Fehler. Gegenproben: `aktion=stimme` aus einer
+  Präsentationskopie → Fehler; WebSocket → Fehler „externe Anfrage blockiert: wss://… (WebSocket)“. Chrome-NetLog
+  (`pruefen.mjs --nur f08`, `uebersicht.mjs`): keine TCP-Verbindung, jede Namensauflösung `~NOTFOUND`.
+- Exporte nach Abschnitt 15 neu erzeugt und nach `export/` kopiert: PDF 22 Seiten (0 Fehler, `ausDruckansicht` 0),
+  23 Folienbilder, Übersicht Stand 19.10.2026 (`externeAnfragen` 0, `liveAnfragen` 0). Inhaltlich unverändert:
+  Bilder und Übersicht byteweise gleich, alle 22 PDF-Seiten pixelgleich (40 dpi). Folie 08 in PDF und Bild
+  angesehen: Endzustand mit den Analogien, ohne QR-Code.
+
+**Nicht umgesetzt (mit Grund):** zusätzliche PDF-Seite „Folie 08, Schritt 0“ (Frage und QR-Code) für Plan B – braucht
+eine Änderung der Druckansicht und ergäbe 23 statt 22 Seiten; Entscheidung Yannick, bis dahin LIESMICH 11 (Frage auf
+Folie 07 stellen, Hände zählen). Folie 08 im Prüflauf zweimal fotografieren (`n = 0` und mit Balken) – stattdessen
+Hinweis in Abschnitt 9 (`--live-werte`). Prüfen der Skript-Eigenschaft in der Oberfläche als Kurzprüfung – ersetzt
+durch `?aktion=fassung` (eindeutig, ohne Oberflächenwissen). Mutanten „Abgleich ohne `Math.max`“, „nach drei belegten
+Zeilen `{ok:true}`“ und „bei gleicher Zeit gewinnt die obere Zeile“ – im Modell verschachtelter Ausführungen
+unerreichbar bzw. nur bei gleicher Millisekunde desselben Handys; von Hand geprüft, im Kopf des Werkzeugs vermerkt.
+
+**Offen:**
+- **Yannick:** Skript aktualisieren (ANLEITUNG „Skript aktualisieren“: Code einfügen, „einrichten“, Neue Version,
+  Kurzprüfung). Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
+  Fassung.
+- **Danach Lasttest gegen die echte Web-App** (mindestens zweimal, einmal `--anzahl 60`). Erst er zeigt, wie lange
+  der kurze Abschnitt unter der Sperre bei Google dauert (`tryLock`, `getProperty`, `setProperty`, `releaseLock` –
+  Drittquelle justin.poehnelt.com, 16.03.2024: PropertiesService ca. 80 ms je Schreiben und Lesen; die Übergabe der
+  Sperre ist nicht dokumentiert) und ob Kontingente greifen. Ist er zu langsam: nächste Stufe wäre `appendRow` ohne
+  Sperre – schneller, aber ohne dokumentierte Garantie (Restrisiko stiller Verluste); erst nach der Messung entscheiden.
+- Ob das Format `@` die Umwandlung verhindert (Modellwissen): prüft die Textschutz-Probe in `einrichten()`.
+- Wie Google eine Ablehnung wegen Kontingent an ein JSONP-`<script>` ausliefert: nicht geprüft (die Abstimmseite
+  wiederholt bei Ladefehlern und Antworten ohne Rückruf).
+- Echte Handys (iPhone Safari, Android Chrome), Scan aus der letzten Reihe: Generalprobe.
+- Restrisiken: Hält Google eine Anfrage über 15 s auf und geht auch die späte Antwort verloren, kann bei jemandem,
+  der sich genau dann umentscheidet, die ältere Wahl zählen. Löschen oder Sortieren während einer Abstimmung kann
+  eine Stimme überschreiben – in Skript und Anleitung beschrieben, technisch nicht verhindert.
+- Grenze der Prüfung: Wettläufe, bei denen zwei Ausführungen gleichzeitig mittendrin sind, findet das Modell
+  verschachtelter Ausführungen nicht; die Regelprüfung (Zähler in derselben Sperr-Phase lesen und schreiben) deckt
+  den wichtigsten Fall ab.
 
 ## 17. Eigene Illustrationen statt Platzhalter: Folie 01 und 04 (19.10.2026)
 

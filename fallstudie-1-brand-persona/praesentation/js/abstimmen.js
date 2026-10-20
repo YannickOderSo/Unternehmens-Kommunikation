@@ -8,7 +8,12 @@
    • baut die Tiere als große Knöpfe (Zeichnungen wie auf Folie 08)
    • Tippen → Stimme an die Web-App senden, Bestätigung „Danke! Ihre Stimme: …“,
      „Doch anders entscheiden“ (die Web-App zählt je Handy nur die letzte Stimme)
-   • Fehler oder kein Netz → verständliche Meldung und „Nochmal versuchen“
+   • Andrang, Zeitüberschreitung, Netz- oder Ladefehler → bis zu 3 Versuche
+     automatisch, mit zufälliger Pause (1,5–4 s) und ruhigem Hinweis „Gerade
+     stimmen viele ab – Ihre Stimme wird gesendet …“; Umentscheiden ist dabei
+     möglich, gesendet wird nur die neueste Wahl (Abschnitt STIMME SENDEN)
+   • erst danach, bei Eingabefehlern sofort und ohne Netz (offline) →
+     verständliche Meldung und „Nochmal versuchen“
    • liveQuelle leer, nicht auf …/exec oder runde unbrauchbar → Hinweis „Die
      Abstimmung ist gerade nicht geöffnet“ (gilt vor und nach dem Vortrag)
 
@@ -16,6 +21,9 @@
      ?aktion=stimme&umfrage=tier&runde=<runde>&option=<0..anzahl-1>&anzahl=<n>
       &geraet=<zufällige ID>&callback=f            → f({"ok":true})
      Fehler                                        → f({"ok":false,"fehler":"…"})
+     Fehler, bei dem ein neuer Versuch lohnt       → "nochmal":true in der Antwort,
+       (automatisch wiederholen)                     oder "fehler" beginnt mit „Gerade
+                                                     kommen sehr viele Stimmen“ oder „Serverfehler:“
    JSONP per <script> funktioniert unabhängig von CORS und den Weiterleitungen
    von Google Apps Script.
 
@@ -33,11 +41,35 @@
   var MUSTER_NAME = /^[A-Za-z0-9_-]{1,40}$/;     /* umfrage, runde */
   var MUSTER_GERAET = /^[A-Za-z0-9_-]{8,64}$/;
   var MAX_OPTIONEN = 9;
-  /* ms ohne Antwort → Fehlermeldung. Länger als die Wartezeit der Sperre im
-     Server (apps-script.gs, SPERRE_WARTEN_MS = 10 s): Bei Andrang gibt der
-     Server zuerst auf und seine Meldung („bitte gleich noch einmal tippen“)
-     kommt noch an; eine gezählte Stimme wird nicht als Fehler gemeldet. */
-  var ZEITLIMIT = 30000;
+  /* ms ohne Antwort → dieser Versuch gilt als gescheitert. Zeitlimit JE
+     VERSUCH; bis 19.10.2026 waren es 30 s für den einzigen Versuch, weil der
+     Server bis zu 10 s auf seine Sperre wartete. Gemessen am 19.10.2026 über
+     GitHub Pages und Google: Stimme bis „Danke“ 2,9 s, Stand-Abfrage 1,4–3,0 s.
+     15 s lassen einem langsamen Start der Web-App oder einem vollen Mobilnetz
+     reichlich Luft und gleichen dem harten Zeitlimit der Folie
+     (js/komponenten.js, LIVE_ZEITLIMIT_HART). Kürzer wäre riskant: Eine
+     aufgegebene Anfrage läuft beim Server weiter, die Wiederholung käme als
+     zusätzliche Ausführung mitten in den Andrang. Länger hieße: Ein Handy,
+     dessen Anfrage verloren ging, wartet länger, bevor es neu sendet.
+     Voraussetzung: Der Server antwortet bei Andrang schnell – er darf nicht
+     annähernd 15 s auf eine Sperre warten (live-abstimmung/apps-script.gs).
+     Eine spät gezählte Stimme schadet nicht – die Wiederholung sendet dieselbe
+     Wahl mit derselben Geräte-ID, und je Gerät zählt nur die letzte Stimme.
+     Format „var ZEITLIMIT = <ms>;“ beibehalten: werkzeuge/live-abstimmung-test.mjs
+     liest den Wert hier aus. */
+  var ZEITLIMIT = 15000;
+  var VERSUCHE = 3;               /* Versuche je Stimme insgesamt (1 + 2 Wiederholungen) */
+  var PAUSE_MIN = 1500;           /* ms Wartezeit vor einer Wiederholung: zufällig */
+  var PAUSE_MAX = 4000;           /*    zwischen MIN und MAX – verteilt den Andrang */
+  /* Server ausgelastet → automatisch wiederholen. Erkennung (apps-script.gs):
+     Feld nochmal: true in der Fehlerantwort ODER Fehlertext beginnt mit diesem
+     Textanfang (Fassung bis 19.10.2026: „Gerade kommen sehr viele Stimmen auf
+     einmal – bitte gleich noch einmal tippen.“). Ebenso „Serverfehler: …“
+     (Ausnahme im Skript, z. B. ein Google-Dienst kurz überlastet). Andere
+     Fehler (ungültige Runde, Option …) sind Eingabefehler – keine Wiederholung. */
+  var AUSGELASTET = 'Gerade kommen sehr viele Stimmen';
+  var SERVERFEHLER = 'Serverfehler:';
+  var SPAET_HOECHSTENS = 120000;  /* ms: so lange wird auf eine verspätete Antwort gehört */
   var LANGSAM = 5000;             /* ms → „Dauert etwas länger …“ */
   var SPEICHER = 'abstimmen:';    /* Präfix im Browser-Speicher */
 
@@ -129,6 +161,7 @@
       umentscheiden: 'Sie können sich umentscheiden – es zählt nur Ihre letzte Stimme.',
       netz: 'Die Abstimmung ist gerade nicht erreichbar. Bitte in ein paar Sekunden nochmal versuchen.',
       offline: 'Ihr Handy ist gerade offline. Bitte mobiles Internet oder WLAN einschalten und nochmal versuchen.',
+      wiederholung: 'Gerade stimmen viele ab – Ihre Stimme wird gesendet …',
       geschlossen: 'Sie läuft nur während der Präsentation im Hörsaal.',
       handzeichen: 'Sie können auch per Handzeichen im Hörsaal mitmachen.'
     },
@@ -139,6 +172,7 @@
       umentscheiden: 'Du kannst dich umentscheiden – es zählt nur deine letzte Stimme.',
       netz: 'Die Abstimmung ist gerade nicht erreichbar. Bitte in ein paar Sekunden nochmal versuchen.',
       offline: 'Dein Handy ist gerade offline. Bitte mobiles Internet oder WLAN einschalten und nochmal versuchen.',
+      wiederholung: 'Gerade stimmen viele ab – deine Stimme wird gesendet …',
       geschlossen: 'Sie läuft nur während der Präsentation im Hörsaal.',
       handzeichen: 'Du kannst auch per Handzeichen im Hörsaal mitmachen.'
     }
@@ -153,7 +187,8 @@
     quelle: '',         /* Web-App-Adresse */
     runde: '',
     bisher: -1,         /* bestätigte Stimme (nach „Doch anders entscheiden“) */
-    unterwegs: false,
+    sendung: null,      /* neueste Wahl, die gerade gesendet wird (STIMME SENDEN) */
+    laufend: null,      /* Anfrage, die gerade unterwegs ist – höchstens eine */
     knoepfe: []
   };
 
@@ -318,21 +353,30 @@
   /* ---------------------------------------------------------------------------
      ANFRAGE AN DIE WEB-APP (JSONP)
      fertig(fehler, daten): fehler = { art: 'netz' | 'zeit' | 'antwort' }
+     spaet(daten): Antwort, die erst NACH dem Zeitlimit kam (fertig hatte dann
+     schon { art: 'zeit' }). Eine Anfrage lässt sich nicht zurückholen – der
+     Server kann sie noch verarbeiten. Deshalb bleibt der Rückruf nach dem
+     Zeitlimit bestehen (höchstens SPAET_HOECHSTENS), statt ins Leere zu laufen.
      --------------------------------------------------------------------------- */
   var zaehler = 0;
-  function anfrage(parameter, fertig) {
+  function leer() {}
+  function anfrage(parameter, fertig, spaet) {
     var name = 'abstimmenAntwort' + (++zaehler) + '_' + Math.random().toString(36).slice(2, 8);
     var skript = document.createElement('script');
-    var erledigt = false;
+    var stand = 'offen';           /* 'offen' → 'zu-spaet' (Zeitlimit) → 'zu' */
     var uhr = null;
-    function ende(fehler, daten) {
-      if (erledigt) return;
-      erledigt = true;
+    var spaetUhr = null;
+    function aufraeumen() {
+      stand = 'zu';
       clearTimeout(uhr);
-      /* späte Antwort (nach Zeitlimit) läuft ins Leere statt in einen Fehler */
-      window[name] = function () {};
+      clearTimeout(spaetUhr);
+      /* ein doppelter Aufruf läuft ins Leere statt in einen Fehler */
+      window[name] = leer;
       if (skript.parentNode) skript.parentNode.removeChild(skript);
-      fertig(fehler, daten);
+    }
+    function ende(fehler, daten) {
+      if (stand === 'offen') { aufraeumen(); fertig(fehler, daten); }
+      else if (stand === 'zu-spaet') { aufraeumen(); if (!fehler && spaet) spaet(daten); }
     }
     window[name] = function (daten) { ende(null, daten); };
     parameter.callback = name;
@@ -346,7 +390,12 @@
     /* Skript geladen, aber kein Rückruf (z. B. Google-Anmeldeseite statt
        Web-App, weil die Bereitstellung nicht für „Jeder“ freigegeben ist) */
     skript.onload = function () { ende({ art: 'antwort' }); };
-    uhr = setTimeout(function () { ende({ art: 'zeit' }); }, ZEITLIMIT);
+    uhr = setTimeout(function () {
+      if (stand !== 'offen') return;
+      stand = 'zu-spaet';
+      spaetUhr = setTimeout(aufraeumen, SPAET_HOECHSTENS);
+      fertig({ art: 'zeit' });
+    }, ZEITLIMIT);
     document.head.appendChild(skript);
   }
 
@@ -360,6 +409,18 @@
     setTimeout(function () { a.textContent = text; }, 60);
   }
   function meldungLeeren() { $('meldung').textContent = ''; }
+  /* Zeile unter der Frage: Anleitung, während einer Wiederholung der ruhige
+     Hinweis T.wiederholung (oben sichtbar). Der Hinweis behält die Höhe der
+     Anleitung (min-height), damit die Tiere nicht springen – z. B. auf dem
+     Tablet: Anleitung zwei Zeilen, Hinweis eine. */
+  function anleitungSetzen(text) {
+    var a = $('anleitung');
+    var hinweis = text === T.wiederholung;
+    if (hinweis && !a.classList.contains('ist-wiederholung')) a.style.minHeight = a.getBoundingClientRect().height + 'px';  /* genau, offsetHeight rundet */
+    if (!hinweis) a.style.minHeight = '';
+    if (a.textContent !== text) a.textContent = text;
+    a.classList.toggle('ist-wiederholung', hinweis);
+  }
 
   function auswahlBauen() {
     var liste = $('auswahl');
@@ -381,10 +442,11 @@
 
   function auswahlZeigen(fokusAuf) {
     meldungLeeren();
+    anleitungSetzen(T.anleitung);
     $('anleitung').hidden = false;
     var liste = $('auswahl');
     liste.hidden = false;
-    liste.removeAttribute('aria-busy');
+    liste.classList.remove('ist-unterwegs');
     zustand.knoepfe.forEach(function (k, i) {
       k.knopf.classList.remove('ist-gewaehlt', 'ist-sendet');
       k.knopf.removeAttribute('aria-disabled');
@@ -396,11 +458,17 @@
     if (typeof fokusAuf === 'number' && zustand.knoepfe[fokusAuf]) zustand.knoepfe[fokusAuf].knopf.focus();
   }
 
+  /* Während eine Stimme unterwegs ist (auch während der Wiederholungen),
+     bleiben die ANDEREN Tiere antippbar: Umentscheiden ersetzt die Wahl, die
+     gerade gesendet wird. Nur das gewählte Tier ist gesperrt (zweites Tippen
+     sendet nicht doppelt). */
   function sendetZeigen(i) {
     var liste = $('auswahl');
-    liste.setAttribute('aria-busy', 'true');
+    liste.hidden = false;
+    liste.classList.add('ist-unterwegs');
     zustand.knoepfe.forEach(function (k, j) {
-      k.knopf.setAttribute('aria-disabled', 'true');
+      if (j === i) k.knopf.setAttribute('aria-disabled', 'true');
+      else k.knopf.removeAttribute('aria-disabled');
       k.knopf.classList.toggle('ist-gewaehlt', j === i);
       k.knopf.classList.toggle('ist-sendet', j === i);
       k.knopf.classList.remove('ist-bisher');
@@ -445,6 +513,7 @@
 
   function fehlerZeigen(i, text) {
     $('auswahl').hidden = true;
+    anleitungSetzen(T.anleitung);
     var ziel = $('meldung');
     ziel.textContent = '';
     var karte = element('div', { class: 'karte karte--fehler' }, null, ziel);
@@ -483,53 +552,192 @@
   }
 
   /* ---------------------------------------------------------------------------
-     STIMME SENDEN
+     STIMME SENDEN – mit automatischer Wiederholung
+     • Bis zu VERSUCHE (3) Versuche je Wahl. Wiederholt wird bei „Server
+       ausgelastet“ (nochmal: true oder Textanfang AUSGELASTET), „Serverfehler:
+       …“, Zeitüberschreitung und Netz- bzw. Ladefehlern – nicht, wenn das Handy
+       offline ist (navigator.onLine === false), und nie bei Eingabefehlern.
+       Vor jeder Wiederholung eine zufällige Pause (PAUSE_MIN–PAUSE_MAX): Die
+       Handys, die im selben Moment abgelehnt wurden, kommen verteilt wieder.
+       Dieselbe Geräte-ID – je Gerät zählt nur die letzte Stimme, eine
+       Wiederholung zählt also nie doppelt.
+       Netz- und Ladefehler zählen mit, weil auch eine Ablehnung durch Google
+       selbst so ankommen könnte (keine JSONP-Antwort): Google nennt 30
+       gleichzeitige Ausführungen je Nutzer und ein nicht beziffertes Limit
+       für zu viele Starts pro Sekunde; bei Überschreitung bricht das Skript
+       ab (developers.google.com/apps-script/guides/services/quotas, abgerufen
+       19.10.2026). Wie beides bei einer Web-App mit „Ausführen als: Ich“
+       greift und wie die Ablehnung beim Handy ankommt, ist nicht dokumentiert
+       bzw. nicht geprüft; beim Lasttest am 19.10.2026 trat keine auf.
+     • Während der Wiederholung ruhige Zeile unter der Frage (T.wiederholung)
+       statt Fehler; erst nach dem letzten Fehlversuch die Fehlerkarte mit
+       „Nochmal versuchen“ (startet wieder mit 3 Versuchen).
+     • REIHENFOLGE: Es ist höchstens eine Anfrage gleichzeitig unterwegs
+       (zustand.laufend). Wer sich umentscheidet, beendet die alte Sendung
+       (Pause und weitere Versuche entfallen); die neue Wahl geht erst los, wenn
+       die laufende Anfrage beantwortet oder aufgegeben ist. Der Server
+       vergibt die Zeit einer Stimme bei ihrem Eingang und antwortet erst nach
+       dem Schreiben (apps-script.gs) – die neuere Wahl kommt also später an
+       und gewinnt.
+     • NACHZÜGLER: Eine nach dem Zeitlimit aufgegebene Anfrage kann der Server
+       trotzdem noch schreiben. Kam sie erst nach der neueren Wahl beim Skript
+       an (z. B. weil Google sie aufgehalten hat), zählte sie als die neuere.
+       Meldet sie sich spät mit ok (anfrage → spaet) und war es ein anderes
+       Tier als die neueste Wahl, wird die neueste Wahl still noch einmal
+       gesendet. Kommt auch die späte Antwort nie an, bleibt das unbemerkt
+       (Restrisiko, nur wer sich genau in diesen Sekunden umentscheidet).
+       Meldet sich spät ein Versuch der laufenden Sendung (dieselbe Wahl), gilt
+       die Stimme als angekommen: „Danke“ statt weiterer Versuche.
      --------------------------------------------------------------------------- */
   function stimmeSenden(i) {
-    if (zustand.unterwegs) return;
     if (!(i >= 0 && i < zustand.optionen.length)) return;
+    var s = zustand.sendung;
+    if (s && !s.still && s.option === i) return;          /* schon unterwegs */
+    sendungBeenden();
     if (navigator.onLine === false) { fehlerZeigen(i, T.offline); return; }
-    zustand.unterwegs = true;
-    $('auswahl').hidden = false;
+    /* „Nochmal versuchen“ verschwindet mit der Karte – Fokus aufs Tier */
+    var fokusWeg = $('meldung').contains(document.activeElement);
     meldungLeeren();
+    anleitungSetzen(T.anleitung);
     sendetZeigen(i);
-    var langsam = setTimeout(function () {
+    if (fokusWeg) zustand.knoepfe[i].knopf.focus();
+    s = zustand.sendung = { option: i, versuch: 0, still: false, pause: null, langsam: null, wiederholt: false, nachsenden: false, schonGezaehlt: null };
+    s.langsam = setTimeout(function () {
       var k = zustand.knoepfe[i];
-      if (zustand.unterwegs && k) k.zusatz.textContent = 'Dauert etwas länger …';
+      if (zustand.sendung === s && k) k.zusatz.textContent = 'Dauert etwas länger …';
     }, LANGSAM);
+    weiterSenden();
+  }
+
+  /* laufende Sendung beenden (Umentscheiden, Erfolg, endgültiger Fehler).
+     Eine Anfrage, die schon unterwegs ist, bleibt unterwegs; ihr Ergebnis
+     gilt dann nicht mehr, wird aber abgewartet (Reihenfolge). */
+  function sendungBeenden() {
+    var s = zustand.sendung;
+    if (!s) return;
+    clearTimeout(s.pause);
+    clearTimeout(s.langsam);
+    s.pause = null;
+    zustand.sendung = null;
+  }
+
+  /* neueste Wahl still noch einmal senden (Nachzügler, siehe oben) */
+  function stillNachsenden(i) {
+    zustand.sendung = { option: i, versuch: 0, still: true, pause: null, langsam: null, wiederholt: false, nachsenden: false, schonGezaehlt: null };
+    weiterSenden();
+  }
+
+  /* lohnt ein neuer Versuch? (Eingabefehler: nein) */
+  function nochmalSinnvoll(fehler, daten) {
+    if (fehler) return !(fehler.art === 'netz' && navigator.onLine === false);
+    if (!daten || daten.ok !== false) return true;           /* unlesbare Antwort */
+    if (daten.nochmal === true) return true;
+    var text = String(daten.fehler || '');
+    return text.indexOf(AUSGELASTET) === 0 || text.indexOf(SERVERFEHLER) === 0;
+  }
+
+  /* nächsten Versuch der aktuellen Sendung starten – sobald keine Anfrage
+     mehr unterwegs ist und keine Pause läuft */
+  function weiterSenden() {
+    var s = zustand.sendung;
+    if (!s || s.pause || zustand.laufend) return;
+    if (navigator.onLine === false) { sendungEnde(s, { art: 'netz' }); return; }
+    s.versuch++;
+    var a = zustand.laufend = { option: s.option, sendung: s };
     anfrage({
       aktion: 'stimme',
       umfrage: zustand.id,
       runde: zustand.runde,
-      option: i,
+      option: s.option,
       anzahl: zustand.optionen.length,
       geraet: geraetId()
     }, function (fehler, daten) {
-      clearTimeout(langsam);
-      zustand.unterwegs = false;
-      if (!fehler && daten && daten.ok === true) {
+      zustand.laufend = null;
+      if (zustand.sendung !== s) { weiterSenden(); return; }     /* überholt: neue Wahl senden */
+      if (!fehler && daten && daten.ok === true) { sendungEnde(s, null, daten); return; }
+      /* ein früherer Versuch dieser Sendung hat inzwischen doch gezählt (spaeteStimme) */
+      if (s.schonGezaehlt) { sendungEnde(s, null, s.schonGezaehlt); return; }
+      if (s.versuch < VERSUCHE && nochmalSinnvoll(fehler, daten)) {
+        if (!s.still) wiederholungZeigen(s);
+        s.pause = setTimeout(function () {
+          s.pause = null;
+          weiterSenden();
+        }, PAUSE_MIN + Math.random() * (PAUSE_MAX - PAUSE_MIN));
+        return;
+      }
+      sendungEnde(s, fehler, daten);
+    }, function (daten) {
+      if (daten && daten.ok === true) spaeteStimme(a, daten);
+    });
+  }
+
+  function wiederholungZeigen(s) {
+    anleitungSetzen(T.wiederholung);
+    if (!s.wiederholt) {
+      s.wiederholt = true;
+      ansagen(T.wiederholung.replace(/ …$/, '.'));
+    }
+  }
+
+  /* Ende einer Sendung: Dank oder Fehlerkarte */
+  function sendungEnde(s, fehler, daten) {
+    sendungBeenden();
+    var i = s.option;
+    if (!fehler && daten && daten.ok === true) {
+      if (!s.still) {                                        /* still: Dank steht schon */
         zustand.bisher = i;
         speichern('stimme:' + zustand.id + ':' + zustand.runde, { option: i, name: zustand.optionen[i] });
         dankZeigen(i, true);
-        return;
       }
-      var text;
-      if (!fehler && daten && daten.ok === false) {
-        text = 'Der Server meldet: ' + String(daten.fehler || 'unbekannter Fehler').slice(0, 200);
-      } else if (fehler && fehler.art === 'zeit') {
-        text = 'Der Server antwortet gerade nicht. Bitte nochmal versuchen.';
-      } else if (fehler && fehler.art === 'netz' && navigator.onLine === false) {
-        text = T.offline;
-      } else {
-        /* 'netz' bei bestehender Verbindung oder 'antwort': Häufigste Ursache ist
-           eine Web-App, die nicht für „Jeder“ bereitgestellt ist – Google liefert
-           dann eine Anmeldeseite, die der Browser als Skript ablehnt (onerror)
-           oder ohne Rückruf lädt (onload). Für das Publikum neutral bleiben. */
-        text = T.netz;
-        console.warn('abstimmen.html: Die Web-App hat nicht mit JSONP geantwortet (' + (fehler ? fehler.art : '–') + ') – ist sie für „Jeder“ bereitgestellt, nicht archiviert, und endet liveQuelle auf /exec? Sonst Internet prüfen.');
-      }
-      fehlerZeigen(i, text);
-    });
+      if (s.nachsenden) stillNachsenden(i);
+      return;
+    }
+    var text;
+    if (!fehler && daten && daten.ok === false) {
+      text = 'Der Server meldet: ' + String(daten.fehler || 'unbekannter Fehler').slice(0, 200);
+    } else if (fehler && fehler.art === 'zeit') {
+      text = 'Der Server antwortet gerade nicht. Bitte nochmal versuchen.';
+    } else if (fehler && fehler.art === 'netz' && navigator.onLine === false) {
+      text = T.offline;
+    } else {
+      /* 'netz' bei bestehender Verbindung oder 'antwort': Häufigste Ursache ist
+         eine Web-App, die nicht für „Jeder“ bereitgestellt ist – Google liefert
+         dann eine Anmeldeseite, die der Browser als Skript ablehnt (onerror)
+         oder ohne Rückruf lädt (onload). Für das Publikum neutral bleiben. */
+      text = T.netz;
+      console.warn('abstimmen.html: Die Web-App hat nicht mit JSONP geantwortet (' + (fehler ? fehler.art : '–') + ', ' + s.versuch + ' Versuche) – ist sie für „Jeder“ bereitgestellt, nicht archiviert, und endet liveQuelle auf /exec? Sonst Internet prüfen.');
+    }
+    if (s.still) {
+      console.warn('abstimmen.html: Nachsenden der neuesten Stimme fehlgeschlagen – eine ältere Stimme dieses Handys könnte zählen. (' + text + ')');
+      return;
+    }
+    fehlerZeigen(i, text);
+  }
+
+  /* Eine aufgegebene Anfrage (Zeitlimit) hat doch noch gezählt.
+     • Aus der laufenden Sendung (dieselbe Wahl): Die Stimme steht. In der
+       Pause gleich „Danke“; ist schon der nächste Versuch unterwegs, „Danke“
+       nach dessen Antwort – auch wenn er am Andrang scheitert (s.schonGezaehlt).
+       Für die Reihenfolge unschädlich: dieselbe Wahl, dieselbe Geräte-ID.
+     • War es ein anderes Tier als die neueste Wahl, könnte sie diese überholt
+       haben (siehe NACHZÜGLER oben). */
+  function spaeteStimme(a, daten) {
+    var s = zustand.sendung;
+    if (s && a.sendung === s) {
+      if (zustand.laufend && zustand.laufend.sendung === s) s.schonGezaehlt = daten;
+      else sendungEnde(s, null, daten);
+      return;
+    }
+    var neueste = s ? s.option : zustand.bisher;
+    if (neueste < 0 || neueste === a.option) return;
+    if (s) {
+      /* Ist die neueste Wahl gerade unterwegs, kam sie womöglich vor dem
+         Nachzügler an → nach ihrer Bestätigung noch einmal senden. Sonst geht
+         ihr nächster Versuch ohnehin erst jetzt los. */
+      if (zustand.laufend && zustand.laufend.sendung === s) s.nachsenden = true;
+      return;
+    }
+    stillNachsenden(neueste);
   }
 
   /* ---------------------------------------------------------------------------
@@ -570,7 +778,8 @@
     $('anleitung').textContent = T.anleitung;
 
     /* Neutraler Hinweis – stimmt vor und nach dem Vortrag (dann ist liveQuelle
-       wieder leer); auch PDF und Exportbilder können den QR-Code noch zeigen */
+       wieder leer), z. B. für Fotos der Folie oder Prüfbilder mit QR-Code.
+       PDF und Exportbilder zeigen Folie 08 im Endzustand, ohne QR-Code. */
     if (!zustand.quelle) {
       hinweisZeigen('Die Abstimmung ist gerade nicht geöffnet', T.geschlossen);
       return;

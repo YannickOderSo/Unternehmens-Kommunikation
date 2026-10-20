@@ -140,6 +140,14 @@ Google-Konto (Google Apps Script) und landet als Zeile in einer Google-Tabelle. 
 die letzte Stimme (umentscheiden geht, doppelt zählen nicht). **Präsentationsrechner und Handys brauchen
 Internet** (Handys: mobile Daten genügen).
 
+**Andrang:** Kommen viele Stimmen auf einmal, sendet das Handy selbst noch einmal – insgesamt höchstens drei
+Versuche, dazwischen der ruhige Hinweis „Gerade stimmen viele ab – Ihre Stimme wird gesendet …“. Erst danach
+erscheint „Das hat nicht geklappt“ mit „Nochmal versuchen“. Wer sich währenddessen umentscheidet, tippt einfach
+ein anderes Tier an – es zählt die neueste Wahl. Seit der Fassung vom 19.10.2026 holt sich jede Stimme beim
+Server nur kurz eine Zeilennummer und schreibt dann gleichzeitig mit den anderen (vorher nacheinander: beim
+Lasttest am 19.10. nur 19 von 40). Diese Fassung muss Yannick einmal in Google einspielen (Anleitung, „Skript
+aktualisieren“; Checkliste, Abschnitt 12).
+
 **Einrichten** (einmal, ca. 10 Minuten): `live-abstimmung/ANLEITUNG.md`, Schritt für Schritt. Danach in
 `marke.js → umfragen.tier`:
 
@@ -162,7 +170,10 @@ Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet�
    ein Tier antippen → nach wenigen Sekunden bewegt sich der Balken. Umentscheiden → der Balken wandert,
    `n` bleibt gleich.
 3. Die Test-Adressen der Anleitung im **privaten Fenster** öffnen (sonst fällt eine falsche Freigabe nicht
-   auf) und den **Lasttest** (40 Stimmen gleichzeitig) laufen lassen – Anleitung, Schritt 7.
+   auf). **Nach dem Aktualisieren des Skripts** (Anleitung, „Skript aktualisieren“) den **Lasttest** laufen
+   lassen – Anleitung, Schritt 7: 40 Handys gleichzeitig, mindestens zweimal, einmal mit 60. Er spielt die
+   automatische Wiederholung der Handys nach und lässt eine „Folie“ mitlesen. **BESTANDEN** heißt: alle
+   Stimmen gezählt, kein Handy musste selbst tippen, jedes sah „Danke“ nach höchstens 15 s.
 4. Nach dem Umstellen auf `'vortrag-2026-10-26'`: Folie 08 zeigt `n = 0`, und `marke.js` auf GitHub Pages
    nennt dieselbe Runde (Anleitung, „Vor dem Vortrag“ – sonst zählen die Handys weiter in „probe“).
 
@@ -186,8 +197,13 @@ Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet�
   Kopfzeile „Aktuell“ steht der Zustand gut lesbar („Abstimmung: live“, „… offline – Klick: neu versuchen“,
   „… pausiert – Klick: fortsetzen“); Klick darauf wirkt wie Klick auf die Pille. Wer dort von Hand zählt,
   pausiert die Abfrage im Vortragsfenster.
-- PDF und Exportbilder zeigen mit `liveQuelle` den QR-Code; abgefragt wird dort nichts. Wer ihn nach dem
-  Vortrag scannt, liest „Die Abstimmung ist gerade nicht geöffnet“.
+- **PDF und Exportbilder** zeigen Folie 08 im Endzustand (Analogien, Titel mit der Auflösung) – **ohne
+  QR-Code und ohne Umfrage**; abgefragt wird dort nichts. Im PDF (Plan B) ist die Live-Abstimmung also nicht
+  möglich (Abschnitt 11). Wer den QR-Code nach dem Vortrag scannt, liest „Die Abstimmung ist gerade nicht
+  geöffnet“.
+- **Prüfwerkzeug und Exporte** (`werkzeuge/pruefen.mjs`, `uebersicht.mjs`) fragen die Web-App nie ab: Anfragen
+  an die `liveQuelle` beantwortet eine eingebaute Attrappe, alles andere ist gesperrt. Im Prüflauf erscheint
+  Folie 08 wie zu Beginn des Vortrags (QR-Code, „Live“, `n = 0`).
 - **Rückfall im Vortrag:** Ist nur der Präsentationsrechner offline, die Handys aber nicht, kommen die Stimmen
   trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen:
   `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5`) und trägt die Zahlen über
@@ -310,6 +326,9 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
    ohne Installation und ohne Internet.
 3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6, Plan C). Präsentationsrechner offline, Handys
    online: Stand-Adresse auf dem Handy öffnen und die Zahlen über „Werte“ eintragen (Abschnitt 6, Weg A, „Rückfall“).
+   **Im PDF** gibt es keine Abstimmung: Folie 08 zeigt dort den Endzustand ohne QR-Code, und der Titel nennt schon
+   die Auflösung („… Waschbär, kein Adler“). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C,
+   Ergebnis mündlich nennen), dann weiterblättern.
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext als Handout drucken:
    `index.html?druck&notizen` öffnen → Strg+P (Ränder „Keine“, „Hintergrundgrafiken“ an). Oben die Folie,
    darunter der vollständige Sprechtext; lange Sprechtexte laufen auf eine Folgeseite weiter (ca. 43 Seiten).
@@ -445,6 +464,12 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Android über mobile Daten aus der letzten Reihe getestet (abstimmen, umentscheiden; mindestens ein Handy
       ohne Google-Anmeldung), **Lasttest** „BESTANDEN“ (Anleitung, Schritt 7). Klappt Weg A nicht: Weg B
       (Werkzeug, `link`) oder nur Plan C
+- [ ] **Live-Abstimmung: Skript aktualisieren** (A · Yannick, **sofort** – die Web-App läuft noch mit der
+      alten Fassung, Lasttest am 19.10.: nur 19 von 40): nach `live-abstimmung/ANLEITUNG.md`, Abschnitt „Skript
+      aktualisieren“ – neue Fassung einfügen (Raw-Link, Strg+F `SPEICHERN BEI ANDRANG`), **„einrichten“**
+      ausführen (drei Zeilen im Protokoll), **Neue Version** bereitstellen (URL bleibt gleich), Kurzprüfung
+      `<URL>?aktion=fassung` → „(Skript-Fassung 19.10.2026)“. Danach **Lasttest** (Claude oder selbst, Anleitung,
+      Schritt 7): „BESTANDEN“, mindestens zweimal, einmal mit `--anzahl 60`. Nicht während einer Abstimmung
 - [ ] **Folie 08 – Kasten und Notizen** (B · Lukas): beschreiben noch den alten Weg („Abstimm-Link eintragen,
       dann erscheint der QR-Code“, „Zurücksetzen zweimal“); an Weg A anpassen (QR-Code erscheint mit
       `liveQuelle`, Pille „Live“ beobachten, bei Weg A kein „Zurücksetzen“)
@@ -515,11 +540,11 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `js/` | `deck.js` (Steuerung, Referentenansicht, Druck), `komponenten.js` (Steuerrad, Umfrage, Wortwolke, QR, Rätsel), `folien/` (je Folien-Gruppe), `vendor/` (QR-Code-Bibliothek) |
 | `bilder/` | offizielle HOLY-Logos (Folie 01, 09b und 12, Quelle in `QUELLEN.md`), eigene Illustrationen (Rätselbild 01 `raetsel-holy.svg`, Persona-Bild 04 `persona-marco.svg`; KI-gestützt, seit 19.10.2026) und ältere Platzhalterbilder (eigene Gestaltung, zurzeit nicht eingetragen) – eigene Bilder hier ablegen |
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
-| `werkzeuge/pruefen.mjs` | automatische Prüfung, Screenshots und PDF (optional, braucht Node.js) |
+| `werkzeuge/pruefen.mjs` | automatische Prüfung, Screenshots und PDF (optional, braucht Node.js); fragt die Web-App nie ab (eingebaute Attrappe, `--live-offline`, `--live-werte 3,1,7,0,2`, `--live-aus`; `AUTOREN.md` 9) |
 | `werkzeuge/uebersicht.mjs` | erzeugt `export/uebersicht.png` aus den Folienbildern (Befehle: `AUTOREN.md`, Abschnitt 15) |
 | `abstimmen.html` | Abstimmseite fürs Publikum (QR-Code auf Folie 08, läuft auf GitHub Pages); dazu `js/abstimmen.js`, `css/abstimmen.css` |
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
-| `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto; `--server 8787` = lokale Web-App zum Ausprobieren; `--lasttest <URL>` = 40 Stimmen gleichzeitig an die echte Web-App (Abschnitt 6, `AUTOREN.md` 6c) |
+| `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (44 Prüfungen); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren, mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy und mitlesender „Folie“ (Abschnitt 6, `AUTOREN.md` 6c) |
 | `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 19.10.2026 mit A1–A3 als Entwurf und den Illustrationen auf 01/04; nach den Freigaben neu erzeugen (Abschnitt 11) |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |

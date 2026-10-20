@@ -3,6 +3,10 @@
 Für: Yannick · Dauer: ca. 10 Minuten · Stand: 19.10.2026
 Gebraucht wird: ein **privates Google-Konto** (Gmail), ein Laptop mit Chrome, ein Handy.
 
+> **Schon eingerichtet?** Dann nur den Abschnitt [„Skript aktualisieren (neue Fassung)“](#skript-aktualisieren-neue-fassung)
+> durcharbeiten (ca. 5 Minuten). Die Fassung vom 19.10.2026 nimmt viele gleichzeitige Stimmen deutlich schneller an.
+> Welche Fassung gerade läuft, zeigt `<URL>?aktion=fassung` (Punkt 5 dort).
+
 ## Worum es geht
 
 Auf Folie 08 fragen wir: „Wenn HOLY ein Tier wäre – welches?“ (Adler, Löwe, Waschbär, Fuchs, Schwan).
@@ -19,6 +23,8 @@ Zählmodus per Handzeichen (`../LIESMICH.md`, Abschnitt 6).
 „Geraet“ ist eine **zufällige ID**, die der Browser des Handys erzeugt – je Umfrage und Runde eine eigene,
 damit beim Umentscheiden nur die letzte Stimme zählt (Probe und Vortrag sind so nicht verknüpfbar). Keine
 Namen, keine E-Mail-Adressen, keine IP-Adressen. Das steht für das Publikum auch im Fuß der Abstimmseite.
+Außerdem merkt sich das Skript in seinen Einstellungen (Skript-Eigenschaft „naechsteZeile“) eine einzige Zahl:
+die Nummer der nächsten freien Zeile.
 
 ---
 
@@ -54,14 +60,18 @@ Tabelle.
 
 ## Schritt 4 – Einmal ausführen: Blatt anlegen, Berechtigung erteilen (2 Min.)
 
-1. In der Leiste über dem Code die Funktion **„einrichten“** auswählen (Auswahlfeld neben „Debuggen“).
-2. **Ausführen** klicken.
+1. In der Leiste über dem Code auf das **Auswahlfeld rechts neben „Debuggen“** klicken – dort steht anfangs
+   **„doGet“**. In der Liste **„einrichten“** anklicken. Im Feld steht jetzt „einrichten“.
+2. **Ausführen** klicken. (Stehen danach im Protokoll nur „Ausführung gestartet“, „Hinweis: Das war doGet …“
+   und „Ausführung abgeschlossen“, lief noch doGet: Auswahl wie in Punkt 1 ändern, noch einmal ausführen.)
 3. Es erscheint „Autorisierung erforderlich“ → **Berechtigungen prüfen** → das private Konto wählen.
 4. Falls die Warnung **„Google hat diese App nicht überprüft“** kommt: unten links **„Erweitert“** →
    **„Zu HOLY Live-Abstimmung wechseln (unsicher)“**.
 5. Im nächsten Fenster **„Zulassen“** (stehen dort Kästchen: alle anhaken, dann „Weiter“).
-6. Unten im **Ausführungsprotokoll** steht „Blatt „Stimmen“ ist bereit“. In der Tabelle gibt es jetzt
-   unten das Blatt **„Stimmen“** mit der Kopfzeile.
+6. Unten im **Ausführungsprotokoll** stehen drei Zeilen: „Blatt „Stimmen“ ist bereit …“, die Formate der Spalten
+   und „Textschutz-Probe bestanden …“ (genauer Wortlaut: Abschnitt „Skript aktualisieren“, Punkt 3). Zurück im
+   **Browser-Tab der Tabelle** (nicht im Editor) gibt es jetzt unten links den Reiter **„Stimmen“**: das Blatt
+   mit der Kopfzeile und 5000 leeren Zeilen.
 
 **Warum die Warnung?** Google zeigt sie bei jedem selbst geschriebenen Skript, das Google nicht geprüft
 hat. Diese Prüfung braucht nur, wer eine App an viele fremde Menschen verteilt. Hier sind Autor und
@@ -152,19 +162,111 @@ Option = Nummer des Tiers ab 0: 0 Adler · 1 Löwe · 2 Waschbär · 3 Fuchs · 
 
 Alle Teststimmen landen in der Runde **„probe“** und zählen im Vortrag nicht mit.
 
-**Lasttest** (bei der Generalprobe, 1 Min.): Ob Google 20–40 Stimmen annimmt, die fast in derselben
-Sekunde kommen, lässt sich ohne echten Test nicht sagen. Auf einem Rechner mit Node.js im Ordner
-`praesentation/`:
+**Lasttest** (nach jedem Aktualisieren des Skripts und bei der Generalprobe, je 1 Min.): Ob Google 20–60
+Stimmen annimmt, die fast in derselben Sekunde kommen, lässt sich ohne echten Test nicht sagen. Auf einem
+Rechner mit Node.js im Ordner `praesentation/`:
 
 ```bash
 node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>
+node werkzeuge/live-abstimmung-test.mjs --lasttest <URL> --anzahl 60      # voller Hörsaal
+node werkzeuge/live-abstimmung-test.mjs --lasttest <URL> --verteilt 10    # 40 Stimmen über 10 s verteilt
 ```
 
-Das schickt 40 Stimmen gleichzeitig in eine eigene Runde „lasttest-…“ (zählt weder in „probe“ noch im
-Vortrag) und meldet am Ende **„BESTANDEN“** oder wie viele abgelehnt wurden. Ohne Node.js: die URL an
-Claude schicken und um den Lasttest bitten. Danach dürfen die Zeilen der Runde „lasttest-…“ im Blatt
-gelöscht werden. Abgelehnte Stimmen sähe das Publikum als „Das hat nicht geklappt“ mit „Nochmal
-versuchen“; bei vielen Ablehnungen im Vortrag zur Ruhe aufrufen („bitte nacheinander“) oder Plan C.
+Eine Messung ist nur eine Stichprobe: mindestens **zweimal** laufen lassen, einmal davon mit `--anzahl 60`.
+
+Das spielt 40 (bzw. 60) Handys nach, die gleichzeitig in eine eigene Runde „lasttest-…“ abstimmen (zählt weder
+in „probe“ noch im Vortrag). Jedes verhält sich wie die Abstimmseite: Wird eine Stimme abgelehnt oder bleibt die
+Antwort 15 s aus, versucht es das Handy nach 1,5–4 s von selbst noch einmal – **insgesamt höchstens drei
+Versuche** (zwei automatische Wiederholungen). Dazu fragt eine „Folie“ alle 2 s den Stand ab wie Folie 08 (nur
+lesend). Vorher fragt der Test, welche Fassung des Skripts läuft. Die Ausgabe sieht so aus (… = gemessene Werte):
+
+```
+Skript-Fassung der Web-App: 19.10.2026
+angenommen im 1. Versuch: … · nach Wiederholung: … · endgültig gescheitert: … (von 40)
+Zeit bis „Danke“: Median … · 90 % … · längste … · über 15,0 s: …
+Fehlversuche (wiederholt oder endgültig): … (Gründe, z. B. „Gerade kommen sehr viele Stimmen …“)
+Anfragen insgesamt: … · alle Handys fertig nach …
+Folie (Stand alle 2 s wie Folie 08): … Abfragen, Antwortzeit Median … · längste … · „offline“: …
+Stand der Runde: n = …
+BESTANDEN …  oder  GEZÄHLT, ABER ZU LANGSAM …  oder  NICHT BESTANDEN …
+```
+
+- **BESTANDEN:** alle Stimmen gezählt, kein Handy musste selbst noch einmal tippen, und jedes sah „Danke“ nach
+  höchstens 15 s. „Nach Wiederholung“ ist dabei in Ordnung – das Publikum sieht dann nur kurz den Hinweis
+  „Gerade stimmen viele ab – Ihre Stimme wird gesendet …“.
+- **Zeit bis „Danke“:** So lange wartet ein Handy vom Tippen bis zur Bestätigung. Ziel: die meisten nach wenigen
+  Sekunden, keines nach mehr als 15 s.
+- **GEZÄHLT, ABER ZU LANGSAM:** alle Stimmen kamen an, aber einige Handys warteten länger als 15 s.
+- **NICHT BESTANDEN:** Handys sind endgültig gescheitert (sie sähen „Das hat nicht geklappt“ mit „Nochmal
+  versuchen“) oder es fehlen Stimmen.
+- In beiden Fällen: Ausgabe kopieren und an Claude schicken. Im Vortrag dann zur Ruhe aufrufen („bitte
+  nacheinander“) oder Plan C.
+- Steht oben „Skript-Fassung … keine Angabe“ oder „ACHTUNG“: Es läuft noch die alte Fassung – erst „Skript
+  aktualisieren“ (unten), dann den Lasttest wiederholen.
+- Zeigt die Zeile „Folie“ „offline“, hätte die Leinwand im Andrang kurz „offline“ gezeigt (die Werte bleiben
+  dabei stehen).
+
+Ohne Node.js: die URL an Claude schicken und um den Lasttest bitten. Danach dürfen die Zeilen der Runde
+„lasttest-…“ im Blatt gelöscht werden – **wenn gerade niemand abstimmt** (siehe „Wichtig zu wissen“).
+
+---
+
+## Skript aktualisieren (neue Fassung)
+
+Für: Yannick, wenn `apps-script.gs` auf GitHub neuer ist als das Skript im Apps-Script-Editor. Dauer: ca. 5 Minuten.
+Die **Web-App-URL bleibt gleich** – an `marke.js` ändert sich nichts, auch nicht auf GitHub.
+
+**Was ist neu (Fassung 19.10.2026)?** Bisher wartete jede Stimme, bis die vorige fertig geschrieben war (rund
+0,5 s je Stimme). Beim Lasttest am 19.10.2026 kamen so nur 19 von 40 gleichzeitigen Stimmen durch. Jetzt holt
+sich jede Stimme nur kurz eine eigene Zeilennummer und schreibt dann gleichzeitig mit den anderen. Warum nicht
+einfach `appendRow` ohne Wartesperre: Die Google-Dokumentation sichert nicht zu, dass gleichzeitige `appendRow`
+nie dieselbe Zeile treffen – Einzelheiten im Kopf von `apps-script.gs`.
+
+1. **Neuen Code kopieren:** Diese Adresse öffnen – es erscheint nur der Code als Text:
+   <https://raw.githubusercontent.com/YannickOderSo/Unternehmens-Kommunikation/master/fallstudie-1-brand-persona/praesentation/live-abstimmung/apps-script.gs>
+   Kontrolle: Mit **Strg+F** nach `SPEICHERN BEI ANDRANG` suchen. Kein Treffer = noch die alte Fassung: 5 Minuten
+   warten, dann **Strg+F5** (neu laden). Mit Treffer: in den Text klicken, **Strg+A** (alles markieren),
+   **Strg+C** (kopieren).
+2. **Code ersetzen:** Die Tabelle „HOLY Live-Abstimmung“ öffnen → **Erweiterungen → Apps Script**. Links auf
+   **Code.gs** klicken, dann in den Code klicken: **Strg+A**, **Entf**, **Strg+V**, **Strg+S** (speichern).
+   Kontrolle: Die erste Zeile ist `/**`, darunter steht `@OnlyCurrentDoc`.
+3. **„einrichten“ ausführen:** In der Leiste über dem Code auf das **Auswahlfeld rechts neben „Debuggen“**
+   klicken – dort steht **„doGet“**. In der Liste **„einrichten“** anklicken; im Feld steht jetzt „einrichten“.
+   Dann **Ausführen**. Fragt Google nach einer Berechtigung: wie in Schritt 4 zulassen. Unten im
+   **Ausführungsprotokoll** müssen drei Zeilen stehen (statt „(Zahl)“ stehen dort Zahlen):
+   - `Blatt „Stimmen“ ist bereit. Gespeicherte Stimmen: (Zahl). Nächste Stimme in Zeile (Zahl), (Zahl) leere Zeilen vorbereitet.`
+   - `Formate (Zeit | Runde | Umfrage | Option | Geraet): dd.mm.yyyy hh:mm:ss | @ | @ | 0 | @`
+   - `Textschutz-Probe bestanden: „2026-10-26“, „true“ und „12345678“ bleiben Text.`
+
+   Was das heißt: Das Skript hat 5000 leere Zeilen vorbereitet und die Spalten „Runde“, „Umfrage“ und
+   „Geraet“ als Text formatiert (@ = Text). Dann hat es in die letzte Zeile probeweise Werte geschrieben, die
+   Google sonst in ein Datum, einen Wahrheitswert oder eine Zahl umwandeln würde, nachgesehen und wieder
+   gelöscht. Die Zahl hinter „Nächste Stimme in Zeile“ **merken** (für Punkt 5).
+   Steht dort **„WARNUNG“** oder eine rote Fehlermeldung: Text kopieren und an Claude schicken.
+   Stehen dort nur „Ausführung gestartet“, „Hinweis: Das war doGet …“ und „Ausführung abgeschlossen“, lief noch
+   doGet: Auswahl auf „einrichten“ ändern, noch einmal **Ausführen**.
+4. **Neue Version bereitstellen:** Oben rechts **Bereitstellen → Bereitstellungen verwalten** → links ist die
+   vorhandene Bereitstellung ausgewählt → oben das **Stift-Symbol (Bearbeiten)** → bei „Version“ **Neue Version**
+   wählen → **Bereitstellen** → „Fertig“. Die URL bleibt gleich. **Nicht** „Neue Bereitstellung“ – das gäbe eine
+   neue URL. Ohne diesen Schritt läuft im Hörsaal weiter die alte Fassung.
+5. **Kurz prüfen** (im privaten Fenster, `<URL>` = Web-App-URL wie in Schritt 7):
+   - **Läuft die neue Fassung?** `<URL>?aktion=fassung` → `{"ok":false,"fehler":"Unbekannte Aktion – … (Skript-Fassung 19.10.2026)"}`.
+     Das „ok“:false ist hier richtig: Es gibt keine solche Aktion, die Antwort nennt nur die Fassung. Fehlt
+     „(Skript-Fassung 19.10.2026)“, läuft noch die alte Fassung → Punkt 4 wiederholen (einige Sekunden warten,
+     neu laden).
+   - `<URL>?aktion=stand&umfrage=tier&runde=probe&anzahl=5` → `{"ok":true,…,"n":…}` – die Zahl hinter `"n":` merken.
+   - Teststimme mit einer **neuen** Geräte-ID aus Datum und Uhrzeit, z. B. am 20.10. um 14:15:
+     `<URL>?aktion=stimme&umfrage=tier&runde=probe&option=2&anzahl=5&geraet=test-2010-1415` → `{"ok":true}`.
+     (Eine schon benutzte ID ersetzt nur ihre alte Stimme – dann steigt `"n"` nicht.)
+   - Zurück in den **Browser-Tab der Tabelle** „HOLY Live-Abstimmung“ (nicht der Editor) → unten links der Reiter
+     **„Stimmen“**. In der Zeile, die das Protokoll in Punkt 3 nannte („Nächste Stimme in Zeile …“), steht
+     jetzt `probe`, `tier`, `2`, `test-2010-1415`. Hinkommen: in Spalte A klicken und **Strg+↓** (springt zur
+     nächsten gefüllten Zelle; bei einer Lücke noch einmal).
+   - Die Stand-Adresse noch einmal laden: `"n"` ist um 1 größer.
+6. **Lasttest** laufen lassen (Schritt 7, Ende) – oder Claude darum bitten.
+
+Wichtig: Skript aktualisieren („einrichten“, „Neue Version“) **nicht während einer laufenden Abstimmung** –
+„einrichten“ fügt Zeilen an und schreibt eine Probezeile, und die alte Fassung schrieb anders als die neue.
 
 ---
 
@@ -194,15 +296,18 @@ Präsentationsrechner stehen. Früh umstellen, weil Browser alte Dateien eine We
 
 Wer nach dem Umstellen doch mit dem Handy testet: die Testzeile danach im Blatt „Stimmen“ löschen (mit
 der rechten Maustaste auf die Zeilennummer **links** klicken → „Zeile löschen“). Löschen und Sortieren
-sind erlaubt.
+sind erlaubt – aber nur, **wenn gerade niemand abstimmt**.
 
 Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): `../LIESMICH.md`, Abschnitt 6.
 
 ## Im Vortrag
 
 - Die Web-App läuft von allein, nichts muss gestartet werden. Der Präsentationsrechner braucht Internet.
-- Zeigt ein Handy eine Fehlermeldung: **einfach noch einmal tippen**. Doppelt zählt nichts – je Handy
+- Kommen viele Stimmen auf einmal, zeigen manche Handys kurz „Gerade stimmen viele ab – Ihre Stimme wird
+  gesendet …“ und senden selbst noch einmal. Nichts tun.
+- Zeigt ein Handy danach eine Fehlermeldung: **einfach noch einmal tippen**. Doppelt zählt nichts – je Handy
   gilt die letzte Stimme.
+- Im Blatt „Stimmen“ während der Abstimmung **nichts löschen, sortieren oder einfügen** (siehe unten).
 - Klappt es gar nicht: **Plan C** – Hände zählen und eintippen bzw. per Klick zählen (LIESMICH, Abschnitt 6).
   Zahlen aus der Generalprobe (Runde „probe“) zeigt Folie 08 dabei nie; stehen noch die gekennzeichneten
   Beispielwerte da, setzt die erste Handstimme alles auf 0.
@@ -223,17 +328,29 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 
 ## Wichtig zu wissen
 
-- **Skript geändert? Neue Version bereitstellen.** Bereitstellen → **Bereitstellungen verwalten** →
-  Stift (**Bearbeiten**) → bei „Version“ **Neue Version** → **Bereitstellen**. Sonst bleibt die alte Fassung
-  aktiv. Die URL bleibt dabei gleich. **Nicht** „Neue Bereitstellung“ wählen – das erzeugt eine neue URL.
-- **Nicht ändern:** den Blattnamen „Stimmen“ und die Reihenfolge der Spalten. Zeilen löschen, sortieren
-  oder filtern ist in Ordnung.
-- **Kontingente – nicht geprüft, Lasttest bei der Generalprobe (Schritt 7):** Google begrenzt, wie oft
-  und wie viele Ausführungen eines Kontos gleichzeitig laufen dürfen
-  (<https://developers.google.com/apps-script/guides/services/quotas>; die genauen Grenzen dort
-  nachlesen). Alle Ausführungen laufen als Yannick („Ausführen als: Ich“). Stimmen, die gleichzeitig
-  kommen, schreibt das Skript nacheinander; eine Stimme wartet höchstens 10 s, dann bekommt das Handy
-  „bitte gleich noch einmal tippen“. Folie 08 fragt nur alle 2 s (eine Ausführung, ohne Warten).
+- **Skript geändert? Abschnitt „Skript aktualisieren“:** Code einfügen, „einrichten“ ausführen, dann
+  Bereitstellen → **Bereitstellungen verwalten** → Stift (**Bearbeiten**) → bei „Version“ **Neue Version** →
+  **Bereitstellen**. Sonst bleibt die alte Fassung aktiv. Die URL bleibt dabei gleich. **Nicht** „Neue
+  Bereitstellung“ wählen – das erzeugt eine neue URL.
+- **Nicht ändern:** den Blattnamen „Stimmen“, die Reihenfolge der Spalten und die Skript-Eigenschaft
+  „naechsteZeile“ (Apps Script → Projekteinstellungen).
+- **Zeilen löschen, sortieren oder einfügen nur, wenn gerade niemand abstimmt** – ebenso „einrichten“ und
+  „Neue Version“. Grund: Jede Stimme reserviert zuerst ihre Zeile und schreibt erst danach. Rutscht in dieser
+  Zeit eine andere Stimme in die reservierte Zeile (Löschen oder Sortieren verschiebt Zeilen), würde sie still
+  überschrieben. Filtern verschiebt nichts und geht immer.
+- **Lücke im Blatt:** Nach dem Löschen vieler Zeilen (z. B. Lasttest) landen neue Stimmen hinter einer leeren
+  Lücke – das stört nicht. „einrichten“ schließt sie absichtlich nicht: Es setzt die Zeilennummer nie zurück,
+  denn eine doppelt vergebene Zeile wäre schlimmer als eine Lücke. Eingefügte Zeilen überschreibt das Skript
+  nicht: Es prüft, ob die Zeile leer ist, bevor es schreibt.
+- **Viele Stimmen auf einmal (Lasttest in Schritt 7):** Google nennt **30 gleichzeitige Ausführungen** je
+  Nutzer und ein nicht beziffertes Limit für zu viele Starts pro Sekunde
+  (<https://developers.google.com/apps-script/guides/services/quotas>, abgerufen 19.10.2026). Wie beides bei
+  einer Web-App mit „Ausführen als: Ich“ greift, ist nicht dokumentiert. Beim Lasttest am 19.10.2026 (40
+  Stimmen) trat keine Kontingent-Meldung auf. Würde Google eine Anfrage abbrechen, bekäme das Handy vermutlich
+  eine Fehlerseite statt einer Antwort (nicht geprüft). Jede Stimme wartet nur kurz auf ihre Zeilennummer
+  (höchstens 8 s, sonst „Gerade kommen sehr viele Stimmen …“) und schreibt dann gleichzeitig mit den anderen.
+  In allen Fällen versucht es die Abstimmseite nach einer kurzen Pause von selbst noch einmal (insgesamt
+  höchstens drei Versuche). Folie 08 fragt nur alle 2 s (eine Ausführung, ohne Warten).
 - **Missbrauch:** Wer die URL kennt, kann auch von außerhalb des Hörsaals abstimmen – URL und Runde
   stehen öffentlich in `marke.js`. Eine neue Runde (z. B. `vortrag-2026-10-26-b`, überall gleich) hilft
   gegen Probestimmen und alte offene Tabs, **nicht** gegen gezielte Manipulation: Die Abstimmseite lädt
@@ -253,11 +370,19 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 | Handy: „Die Abstimmung ist gerade nicht geöffnet“ | `liveQuelle` (oder `runde`) steht noch nicht auf GitHub, GitHub Pages ist noch nicht aktuell, oder die URL endet nicht auf `/exec` | einige Minuten warten, neu laden; `marke.js` auf GitHub prüfen (Schritt 6, Kontrolle) |
 | „Jeder“ gibt es nicht zur Auswahl | Konto einer Organisation (z. B. Hochschule) | mit privatem Gmail-Konto von vorn |
 | „Skriptfunktion nicht gefunden: doGet“ | Code nicht eingefügt oder nicht gespeichert | Schritt 3, dann neue Version bereitstellen |
-| `{"ok":false,"fehler":"Unbekannte Aktion …"}` | Adresse ohne oder mit falschem `?aktion=` | Test-Adressen genau übernehmen |
+| `{"ok":false,"fehler":"Unbekannte Aktion …"}` | Adresse ohne oder mit falschem `?aktion=` (bei `?aktion=fassung` richtig) | Test-Adressen genau übernehmen |
+| `<URL>?aktion=fassung` zeigt keine „(Skript-Fassung …)“ | alte Fassung läuft noch | „Skript aktualisieren“, Punkt 4 (Neue Version) |
+| Protokoll nur „Ausführung gestartet“, „Hinweis: Das war doGet …“, „Ausführung abgeschlossen“ | doGet statt einrichten ausgeführt | Auswahlfeld neben „Debuggen“ auf **einrichten**, Ausführen |
 | `{"ok":false,"fehler":"Serverfehler: …"}` | z. B. Skript nicht aus der Tabelle heraus angelegt | Schritte 1–2 wiederholen (Erweiterungen → Apps Script) |
 | Fehler mit „Berechtigung“ oder „permission“, obwohl „Zulassen“ geklickt wurde | Einschränkung `@OnlyCurrentDoc` | Funktion „einrichten“ noch einmal ausführen; hilft das nicht: Claude fragen |
 | URL endet auf `/dev` | Test-URL, funktioniert nur für den Autor | die Web-App-URL mit **`/exec`** nehmen |
-| Änderungen am Skript wirken nicht | alte Version noch aktiv | „Neue Version“ (siehe oben) |
+| Änderungen am Skript wirken nicht | alte Version noch aktiv | „Neue Version“ (Abschnitt „Skript aktualisieren“, Punkt 4) |
+| Protokoll von „einrichten“: „WARNUNG: Textschutz-Probe nicht bestanden“ | Google wandelt trotz Textformat um (nicht erwartet) | Protokoll an Claude schicken; Stimmen kommen trotzdem an |
+| Protokoll von „einrichten“: „Textschutz-Probe übersprungen“ | in der letzten Zeile des Blatts steht etwas | diese Zeile leeren, „einrichten“ noch einmal ausführen |
+| Lasttest: „NICHT BESTANDEN“ | zu viele Stimmen auf einmal oder Google langsam | Ausgabe an Claude schicken; im Vortrag „bitte nacheinander“ oder Plan C |
+| Lasttest: „GEZÄHLT, ABER ZU LANGSAM“ | alle Stimmen kamen an, einige Handys warteten über 15 s | Ausgabe an Claude schicken; Lasttest wiederholen (Stichprobe) |
+| Lasttest: „Skript-Fassung … keine Angabe“ oder „ACHTUNG“ | alte Fassung läuft noch | „Skript aktualisieren“, dann Lasttest wiederholen |
+| Handy zeigt „Gerade stimmen viele ab – Ihre Stimme wird gesendet …“ | Andrang; die Seite sendet selbst noch einmal | nichts tun; erst nach drei Fehlversuchen kommt „Das hat nicht geklappt“ mit „Nochmal versuchen“ |
 | Folie 08 zeigt „offline“ | kein Internet am Präsentationsrechner, `liveQuelle` falsch, Web-App archiviert oder sehr langsam (Maus auf der Pille zeigt den Grund) | Klick auf die Pille = sofort neu versuchen; bleibt es: Plan C (LIESMICH, Abschnitt 6); danach URL und Internet prüfen |
 | Probestimmen erscheinen im Vortrag | `runde` nicht umgestellt oder alte `marke.js` auf einem Gerät | `runde` auf GitHub und auf dem Präsentationsrechner prüfen („Vor dem Vortrag“, Kontrolle); notfalls Probezeilen löschen |
 | Folie 08 zeigt „Live“ und `n = 0`, Handys stimmen ab, nichts bewegt sich | Runde auf GitHub und auf dem Präsentationsrechner verschieden | beide auf `'vortrag-2026-10-26'` (Kontrolle oben) |
@@ -271,8 +396,30 @@ Im Ordner `praesentation/` (braucht nur Node.js):
 
 ```bash
 node werkzeuge/live-abstimmung-test.mjs                  # Prüfungen des Skripts (Exit-Code 0 = bestanden)
+node werkzeuge/live-abstimmung-test.mjs --mutationen     # absichtlich kaputte Kopien – jede muss auffallen
 node werkzeuge/live-abstimmung-test.mjs --server 8787    # lokale Web-App mit dem echten Skript (Strg+C beendet sie)
+node werkzeuge/live-abstimmung-test.mjs --server 8787 --verzoegerung 1500 --stoerung 0.2 --abbruch 0.1 --gleichzeitig 30
+                                                         # dasselbe mit Störungen (Wiederholung auf dem Handy testen)
+node werkzeuge/live-abstimmung-test.mjs --server 8787 --verzoegerung 800 --sperre 200
+                                                         # Belastbarkeit: jede Stimme hält die Sperre 200 ms
+node werkzeuge/live-abstimmung-test.mjs --lasttest http://localhost:8787/exec   # Lasttest gegen die lokale Web-App
 ```
+
+Störungen der lokalen Web-App (nur für Stimmen): `--stoerung 0.2` lehnt 20 % mit „Gerade kommen sehr viele
+Stimmen …“ ab, `--abbruch 0.1` liefert 10 % eine Fehlerseite (HTTP 200 oder 500) oder schließt die Verbindung
+ohne Antwort, `--gleichzeitig 30` gibt ab der 31. gleichzeitigen Anfrage eine Fehlerseite (wirkt nur mit
+`--verzoegerung` oder `--sperre`). `--stoerung` und `--abbruch` prüfen die **Wiederholung**, nicht die
+Belastbarkeit: Ein Handy scheitert dann rein zufällig mit A hoch 3 (drei Versuche) – bei 0,2 etwa 1 von 125,
+bei 0,5 jedes achte. Einzelne „NICHT BESTANDEN“ sind dabei zu erwarten. Die **Belastbarkeit** zeigt nur
+`--sperre MS`: Jede Stimme hält die Sperre so lange (bei Google: Sperre holen, Zähler lesen und schreiben,
+freigeben – nicht gemessen); wer länger als 8 s warten müsste, bekommt den Andrang-Text. Ohne `--sperre` ist
+die Sperre der lokalen Web-App nie besetzt. Die Prüfungen spielen auch gleichzeitige Stimmen nach: Eine zweite
+und dritte Stimme startet an jeder Stelle einer laufenden Stimme; zusätzlich prüft die Attrappe die Regeln der
+Google-Referenz zu Lock (z. B. Zähler in derselben Sperre lesen und schreiben).
+
+Folie 08 mit festem Stand, ganz ohne lokale Web-App: `node werkzeuge/pruefen.mjs index.html --nur f08 --schritte
+--live-werte 3,1,7,0,2` (Prüfwerkzeug, `../AUTOREN.md` Abschnitt 9). Prüfwerkzeug und Exporte fragen die echte
+Web-App nie ab.
 
 Dann `marke.js` **nicht** ändern, sondern die Adresse mit `?quelle=` übergeben und die Dateien im Browser öffnen
 (als Datei oder über localhost – auf GitHub Pages wird `?quelle=` ignoriert):

@@ -31,7 +31,9 @@
 
   ABLAUF: Tier antippen → Stimme geht an die Web-App (JSONP, nur GET) → „Danke!
   Ihre Stimme: …“ mit „Doch anders entscheiden“ (es zählt nur die letzte Stimme
-  je Handy). Ohne Netz: Meldung und „Nochmal versuchen“.
+  je Handy). Bei Andrang oder Netzproblemen sendet die Seite selbst noch
+  einmal (bis zu 3 Versuche, Hinweis „Gerade stimmen viele ab …“). Erst danach,
+  bei falschen Angaben sofort und ohne Netz: Meldung und „Nochmal versuchen“.
 
   DATENSCHUTZ: Diese Seite setzt keine Cookies, keine Anmeldung. Die Stimme geht
   über Google Apps Script in eine private Google-Tabelle der Gruppe; dort stehen

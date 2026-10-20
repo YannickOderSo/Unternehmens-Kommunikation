@@ -259,6 +259,24 @@ button { font: inherit; color: inherit; }
   line-height: 1.4;
   max-width: 34em;
 }
+/* Automatische Wiederholung (js/abstimmen.js, STIMME SENDEN): Die Zeile zeigt
+   „Gerade stimmen viele ab – Ihre Stimme wird gesendet …“ statt der Anleitung,
+   ruhig, mit einem langsam atmenden Punkt – kein Fehler, kein Rot. Der Text ist
+   kürzer als die Anleitung; damit die Tiere nicht nach oben rücken (z. B. auf
+   dem Tablet: Anleitung zwei Zeilen, Hinweis eine), behält die Zeile die Höhe
+   der Anleitung (min-height aus anleitungSetzen in js/abstimmen.js). */
+.anleitung.ist-wiederholung::before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-right: 0.45em;
+  vertical-align: 0.06em;
+  border-radius: 50%;
+  background: currentColor;
+  animation: atmen 1.6s ease-in-out infinite;
+}
+@keyframes atmen { 50% { opacity: 0.3; } }
 
 
 /* ---------------------------------------------------------------------------
@@ -357,8 +375,11 @@ button { font: inherit; color: inherit; }
   opacity: 0.55;
 }
 
-/* Während eine Stimme unterwegs ist: die anderen treten zurück */
-.auswahl[aria-busy="true"] .tier:not(.ist-gewaehlt) { opacity: 0.45; }
+/* Während eine Stimme unterwegs ist (auch während der automatischen
+   Wiederholung): die anderen treten zurück, bleiben aber antippbar
+   (Umentscheiden) – deshalb nur so weit abgeblendet, dass die Namen
+   mindestens 4,5 : 1 Kontrast behalten (gerechnet: hell 6,8 : 1, dunkel 7,8 : 1). */
+.auswahl.ist-unterwegs .tier:not(.ist-gewaehlt) { opacity: 0.72; }
 .tier[aria-disabled="true"] { cursor: default; }
 .tier.ist-gewaehlt {
   background: var(--gelb);

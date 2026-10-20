@@ -1640,6 +1640,7 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   eigener Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D17 (Nacharbeit läuft)
+- **Nachtrag:** D17 danach fertig, selbst geprüft und committet (Details unter D17).
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1669,7 +1670,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
 | D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
 | D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
-| D17 | 19.10.2026 | 87 | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server ohne Wartesperre, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | *läuft* | – |
+| D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -2161,6 +2162,51 @@ steht hier mit dem wörtlichen Auftrag.
   (change.org/topic/holy-de-de, Abruf 19.10.2026: „Zum zweiten BURRsday brachten wir den Thai Lime Toucan als Limited
   Edition raus.“; die Produktseite de.holy.com antwortete beim Abruf mit 429); Diff auf Folie 09, `../*.md` und
   Modellbezeichnungen geprüft.
+
+### D17 – 19.–20.10.2026 – ausgelöst durch Prompt 87 (neu gestartet nach 89, fortgesetzt nach 91)
+
+- **Art:** Workflow „live-abstimmung-last“, sieben Unteragenten in vier Phasen: drei Bauteile parallel (Server mit
+  Testwerkzeug und Anleitung; Abstimmseite; Prüfwerkzeug), Ende-zu-Ende-Test, zwei Prüfer (Nebenläufigkeit und
+  Apps-Script-Verhalten; Prüfwerkzeug, Exporte und Anleitung), Nacharbeit.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-19_live-abstimmung-last.js`](workflows/2026-10-19_live-abstimmung-last.js).
+- **Anlass:** Lasttest gegen Yannicks Web-App nicht bestanden (19 von 40 Stimmen, Median 11,2 s; Eintrag 87).
+- **Vorgaben:** Schnittstelle, Zählregel und Datenschutz unverändert; keine schreibenden Anfragen an die echte
+  Web-App; marke.js und Folieninhalte nicht ändern; Wissen über Apps Script mit Quelle (Websuche) oder als
+  „Modellwissen, nicht geprüft“ kennzeichnen; kein Commit.
+- **Unterbrechungen:** erster Lauf vollständig am Nutzungslimit gescheitert (Teiländerungen an der Abstimmseite),
+  zweiter Lauf bis auf die Nacharbeit fertig, Nacharbeit nach dem Reset mit Hinweis auf ihre Teiländerungen und
+  Sicherungen fortgesetzt.
+- **Ergebnis:**
+  - **Server (`live-abstimmung/apps-script.gs`):** Der Bau-Agent hat den Plan „appendRow ohne Sperre“ verworfen,
+    weil die offizielle Referenz appendRow nicht als atomar beschreibt (Websuche, Quellen im Skriptkopf). Stattdessen
+    reserviert jede Stimme unter einer sehr kurzen Sperre nur eine Zeilennummer (Skript-Eigenschaft, kein
+    Tabellenzugriff unter der Sperre) und schreibt danach ohne Sperre in ihre eigene Zeile. `einrichten()` legt 5000
+    vorformatierte Zeilen an und macht eine Textschutz-Probe. Neue Kennung `?aktion=fassung` (Skript-Fassung
+    19.10.2026), damit man prüfen kann, ob die neue Version bereitgestellt ist.
+  - **Abstimmseite (`js/abstimmen.js`, `css/abstimmen.css`, `abstimmen.html`):** bei Andrang, Zeitüberschreitung
+    oder Netzfehler automatisch insgesamt bis zu drei Versuche mit zufälliger Wartezeit (1,5–4 s), ruhiger Hinweis
+    statt Fehlermeldung; Umentscheiden während einer Wiederholung sendet nur die neueste Wahl.
+  - **Testwerkzeug (`werkzeuge/live-abstimmung-test.mjs`):** 44 Prüfungen, 16 Mutanten; Attrappe mit Störungen
+    (`--stoerung`, `--abbruch`, `--gleichzeitig`, `--sperre`); Lasttest mit Handy-Regel, Fassungsprüfung, mitlesender
+    Folie und dreistufigem Urteil (BESTANDEN / GEZÄHLT, ABER ZU LANGSAM / NICHT BESTANDEN, Ziel 15 s).
+  - **Prüfwerkzeug (`werkzeuge/pruefen.mjs`, `uebersicht.mjs`):** Anfragen an die eingetragene Web-App beantwortet
+    eine eingebaute Attrappe (Standard n = 0), nichts geht ins Netz; Optionen `--live-offline`, `--live-werte`,
+    `--live-aus`; Chrome ohne eigene Verbindungen; WebSockets und schreibende Anfragen der Präsentation gelten als
+    Fehler.
+  - **Doku:** `ANLEITUNG.md` (neuer Abschnitt „Skript aktualisieren“, Laienschritte inkl. doGet-Auswahlfeld und
+    Blatt-Reiter), `LIESMICH.md` 6/11/12/13, `AUTOREN.md` 6c/9/15/16.
+  - **Prüfer:** 1 hoher Befund (Lasttest prüfte das 15-s-Ziel nicht), 9 mittlere (u. a. Attrappe ohne Sperrenhaltezeit,
+    Kurzprüfung erkennt die alte Fassung nicht, doGet-Falle, Chrome-Eigenverbindungen, Doku veraltet, LIESMICH
+    behauptete QR-Code im PDF). Alle in der Nacharbeit umgesetzt.
+  - **Lasttest gegen die Attrappe:** 40 Handys BESTANDEN, solange eine Stimme die Sperre höchstens ca. 0,2 s hält;
+    bei 0,5 s (etwa der alte Server) „zu langsam“. Wie lange die Sperre bei Google wirklich hält, zeigt erst der
+    Lasttest gegen die echte Web-App nach dem Aktualisieren.
+  - **Offen:** Entscheidung Plan-B-PDF (Folie 08 ohne Abstimmung oder zusätzliche Seite), echte Handys, QR-Scan im
+    Hörsaal.
+- **Wie Claude das Ergebnis geprüft hat:** Testwerkzeug erneut (44 von 44), Prüflauf `pruefen.mjs --schritte
+  --optional` (23 Folien, 0 Fehler, 4 bekannte Wortbudget-Warnungen, 0 externe Anfragen, Live-Anfragen nur an die
+  eingebaute Attrappe), Diff auf Umfang (marke.js und index.html unverändert, komponenten.js nur Kommentar) und
+  Modellbezeichnungen geprüft, Schreibweg im Server selbst gelesen (Sperre nur um Zähler lesen/erhöhen).
 
 ---
 

@@ -781,8 +781,12 @@
        über Deck.kanal ('umfrage-live'; beim Betreten fragt es den Zustand ab);
        Hand-Eingaben dort pausieren das Vortragsfenster. Dort steht der Zustand
        zusätzlich gut lesbar unter der Kopfzeile „Aktuell“ (Klick wie auf die Pille).
-     • Nie im Druck und im Aufnahmemodus (?druck, ?aufnahme – Prüfwerkzeug,
-       Exportbilder): dort keine Anfrage, Pille wie ohne liveQuelle.
+     • Nie im Druck und im Aufnahmemodus (?druck, ?aufnahme – z. B. Druck-PDF,
+       werkzeuge/uebersicht.mjs): dort keine Anfrage, Pille wie ohne liveQuelle.
+       werkzeuge/pruefen.mjs lädt die Prüfseite (Prüf- und Folienbilder) mit
+       liveQuelle OHNE ?aufnahme und setzt die Klasse „aufnahme“ selbst: Dann
+       fragt Folie 08 wie im Vortrag, und die eingebaute Attrappe des Werkzeugs
+       antwortet – nichts geht ins Netz.
      • Ohne liveQuelle: nichts davon – alles wie bisher.
      Test ohne Google (nur lokal, file:// oder localhost):
        index.html?quelle=http://localhost:8787/exec#f08
