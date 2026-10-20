@@ -116,6 +116,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 94 | 20.10.2026 | Yannick | Skript-Aktualisierung zurückstellen; HOLY laut Elias eher Chamäleon → Abstimmung, Folie und Analyse ändern | – | Umfang ermittelt (Folie 08, Folie 10, Abstimmseite, Ausarbeitungen); Rückfragen zu Begründung und Tierauswahl |
 | 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | in Arbeit: Chamäleon in Folie 08, Folie 10, Abstimmung und Ausarbeitungen |
 | 96 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18 | nur Nachweis committet; D18 läuft |
+| 97 | 20.10.2026 | Yannick | Folie 01: Logo-Rätsel anpassen, momentan nicht erkennbar | – | Ursache ermittelt (Rätselbild ohne Logo, nur zwei Stufen); Rückfrage zum Ansatz; Umsetzung nach D18 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1708,6 +1709,20 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D18 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D18 (läuft)
+
+### 97 – 20.10.2026 – Yannick
+
+> Zusätzlich muss die erste folie mit dem Logo raten angepaßt werden, momentan hat meine keine Chance das Logo zu
+> erkennen
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):** Folie 01 angesehen: Schritt 0 zeigt die eigene Illustration
+  (bewusst ohne Logo und Schrift) 300 % vergrößert und 40 px unscharf, Schritt 1 löst sofort auf – es gibt keine
+  Zwischenstufe und nichts, woran man die Marke erkennen könnte. Rückfrage zum Ansatz (echtes Logo als Rätsel mit
+  mehreren Stufen oder Illustration mit Hinweisstufen). Umsetzung erst nach Ende von D18, weil beide `index.html`,
+  `marke.js` und die Doku ändern.
+- **Ergebnis:** Rückfrage
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
