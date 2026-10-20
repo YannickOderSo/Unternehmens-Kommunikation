@@ -2207,6 +2207,9 @@ steht hier mit dem wörtlichen Auftrag.
   --optional` (23 Folien, 0 Fehler, 4 bekannte Wortbudget-Warnungen, 0 externe Anfragen, Live-Anfragen nur an die
   eingebaute Attrappe), Diff auf Umfang (marke.js und index.html unverändert, komponenten.js nur Kommentar) und
   Modellbezeichnungen geprüft, Schreibweg im Server selbst gelesen (Sperre nur um Zähler lesen/erhöhen).
+  Nach dem Push: echter Ende-zu-Ende-Test über GitHub Pages mit der neuen Abstimmseite gegen die noch alte
+  Server-Fassung (Abwärtsverträglichkeit): „Danke“ nach 3,3 s, Folie zeigte die Stimme (Runde 'probe', zweite
+  Teststimme in Yannicks Tabelle). Raw-Link liefert die neue Fassung (Kennwort „SPEICHERN BEI ANDRANG“ gefunden).
 
 ---
 
