@@ -1861,7 +1861,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
 | D19 | 20.10.2026 | 98 (neu gestartet nach 100, fortgesetzt nach 102) | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | Rätselbild mit Logo (data-URI), Stufen 440/11 → 220/10 → 100/0, Kennzeichnung, Doku; 2 Prüfer (3 mittlere Befunde) umgesetzt | Claude: Stufenbilder und Folienbild f01 angesehen, Diff und Modellbezeichnungen geprüft |
 | D20 | 20.10.2026 | 100/101 | Workflow „abstimmung-zeitfenster“ (3 Unteragenten in 3 Phasen) | Stimmen zählen nur 30 Minuten: Server-Parameter minuten, Folie 08, Abstimmseite, Tests, Doku | *läuft* | – |
-| D21 | 20.10.2026 | 101 | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | *läuft* | – |
+| D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -2464,6 +2464,29 @@ steht hier mit dem wörtlichen Auftrag.
 - **Wie Claude das Ergebnis geprüft hat:** Stufenbilder f01_s0–s2 und `export/folien/f01.png` selbst angesehen
   (Logo in Stufe 0 als Oval erkennbar, nicht lesbar; Hinweis fast lesbar; Auflösung und Titelfolie mit Logo auf der
   Dose, Fußzeile zweizeilig); Diff-Umfang und Modellbezeichnungen geprüft. Offen: Test mit zwei Personen, Beamer.
+
+### D21 – 20.10.2026 – ausgelöst durch Prompt 101 (fortgesetzt nach 102)
+
+- **Art:** Workflow „abgleich-vorlesung“, neun Unteragenten in vier Phasen: Auswertung der Vorlesung in zwei Teilen
+  (S. 1–65, 66–129, Text und Bild), Abgleich in fünf Bereichen (Aufgabe und Bewertung; Brand Persona und Limbic Map;
+  Repertory Grid, Laddering, Analogien; Markensteuerrad, Positionierung, Markenkompetenz; Begriffe, Literatur,
+  Kommunikation), adversariale Gegenprüfung, Bericht.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_abgleich-vorlesung.js`](workflows/2026-10-20_abgleich-vorlesung.js).
+- **Vorgaben:** nur lesen, einzige neue Datei der Bericht; jede Aussage mit „Stenger, S. n“ bzw. Datei und Stelle;
+  kurze Zitate nur wo nötig; Modellwissen kennzeichnen; nichts erfinden.
+- **Unterbrechung:** am Nutzungslimit nach Auswertung und vier Bereichen; per resume fortgesetzt.
+- **Ergebnis:** [`fallstudie-1-brand-persona/abgleich-vorlesung.md`](../fallstudie-1-brand-persona/abgleich-vorlesung.md)
+  – 54 geprüfte Befunde (17 bei der Gegenprüfung verworfen), davon 24 „vor dem Vortrag“. Kernaussagen: Aufbau folgt
+  der Aufgabe S. 60 vollständig; Limbic-Karte, Persona-Raster und Lage der Steuerrad-Felder passen; es fehlen echte
+  Daten (Folien 06–12, B4–B6) und ein sichtbarer Bezug zur Vorlesung („Inhalte aus der Vorlesung“ 20 % der Note,
+  S. 58); Begriffe weichen ab (Mitte des Rads „Markenkern“, Wir-Form der Leitfragen, „Markeneigenschaften“,
+  „individueller/sozialer Nutzen“, S. 88–91); Literatur in anderen Ausgaben als in der Vorlesung (Esch 2018 9. Aufl.,
+  Kroeber-Riel/Esch 2018, Häusel; Redler/Ullrich fehlt); Hinweis S. 78: KI-Personas ersetzen nicht das Gespräch mit
+  echten Kunden.
+- **Wie Claude das Ergebnis geprüft hat:** Bewertungskriterien (S. 58) und Markensteuerrad (S. 88, 90) im
+  Seitentext selbst nachgelesen – Gewichtung 20 % und Feldbezeichnungen stimmen mit dem Bericht überein; Befund #1
+  um Yannicks Entscheidung („Drin lassen“, Nr. 101) ergänzt. Die inhaltliche Umsetzung der Befunde steht aus
+  (Freigabe durch Yannick).
 
 ---
 
