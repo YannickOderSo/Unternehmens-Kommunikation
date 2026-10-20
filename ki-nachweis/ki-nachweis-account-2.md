@@ -69,6 +69,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-43 | 19.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (16:42 UTC) |
 | A2-44 | 19.10.2026 | System | A2-D04 erneut am Nutzungslimit gescheitert (8 von 16 Agenten fertig; Sitzungslimit bis 21:40 UTC) | A2-D04 | Zwischenstand gesichert |
 | A2-45 | 19.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (21:42 UTC) |
+| A2-46 | 19./20.10.2026 | System | A2-D04: 14 von 16 Agenten fertig; beide Fragensammler am Nutzungslimit gescheitert (bis 02:40 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-47 | 20.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (08:53 UTC) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -690,6 +692,26 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
 > Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
 
 - **Vorgehen Claude:** Uhrzeit geprüft (21:42 UTC, nach dem Zurücksetzen) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-46 – 19./20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: rueckfragen – Workflow mit resume fortsetzen“; Unteragenten
+> „pruefen:fragen-publikum“ und „pruefen:fragen-prof“: „You've hit your session limit · resets 2:40am (UTC)“.
+
+- **Vorgehen Claude:** Stand: alle sieben Prüfer und alle sieben zugehörigen Gegenprüfungen fertig (14 von 16 Agenten);
+  offen nur die zwei Fragensammler (und danach deren Gegenprüfung, Vollständigkeit, Berichte, Abnahme).
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-47 – 20.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Uhrzeit geprüft (08:53 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
 - **Ergebnis:** A2-D04 läuft weiter
 - **Unteragenten:** A2-D04 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
