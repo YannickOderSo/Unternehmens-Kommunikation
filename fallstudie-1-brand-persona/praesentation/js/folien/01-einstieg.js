@@ -1,8 +1,9 @@
 /* =============================================================================
    js/folien/01-einstieg.js – Folien-Skript für index.html, Folie 01
    -----------------------------------------------------------------------------
-   Das Aussehen der drei Zustände regelt css/folien/01-einstieg.css allein.
-   Dieses Skript erledigt nur drei Komfort-Aufgaben:
+   Das Aussehen der Zustände (Rätsel mit Hinweisstufen, Auflösung, Titel)
+   regelt css/folien/01-einstieg.css allein. Dieses Skript erledigt nur diese
+   Komfort-Aufgaben:
 
    1. Schritte an das Rätsel koppeln: Die Auflösung (Markenname) erscheint mit
       der letzten Rätselstufe, der Titel einen Klick später. Wer in
@@ -22,6 +23,10 @@
       anstelle des Markennamens in Schrift. Der Name bleibt im HTML (für
       Screenreader als alt-Text des Bildes). Lädt das Bild nicht, steht
       wieder der Name in Schrift da (und die Konsole meldet den Pfad).
+      Die Zeile „Logo © …“ der Fußzeile bleibt auch ohne Logo-Bild stehen,
+      solange das Rätselbild selbst das Logo zeigt (Dateiname mit „logo“,
+      z. B. bilder/raetsel-holy-logo.svg, seit 20.10.2026) – sonst stünde das
+      Logo auf der Dose ohne Quelle.
    ============================================================================= */
 (function () {
   'use strict';
@@ -108,9 +113,19 @@
     }, 'Platzhalterbild', folie);
   }
 
+  /* Zeigt das Rätselbild selbst das Logo? (Dateiname enthält „logo“, z. B.
+     bilder/raetsel-holy-logo.svg – dieselbe Regel wie bei „platzhalter“) */
+  function raetselMitLogo(folie) {
+    var raetsel = folie.querySelector('.raetsel');
+    var pfad = (raetsel && raetsel.getAttribute('data-bild')) || (Deck.marke && Deck.marke.raetselBild) || '';
+    return /logo/i.test(pfad.split('/').pop());
+  }
+
   /* 5. Logo statt Markenname (marke.js → logoTitel). Das Bild bekommt den
         Markennamen als alt-Text; der Name in Schrift wird nur ausgeblendet
-        (CSS: .hat-logo). Die Zeile „Logo © …“ in der Fußzeile gilt nur mit Logo. */
+        (CSS: .hat-logo). Die Zeile „Logo © …“ in der Fußzeile gilt für dieses
+        Logo und für das Logo im Rätselbild – sie verschwindet nur, wenn
+        keines von beiden gezeigt wird. */
   function logoEinsetzen(folie) {
     var name = folie.querySelector('.einstieg-markenname');
     var quelle = folie.querySelector('.einstieg-quelle-logo');
@@ -120,11 +135,16 @@
     var ohneLogo = function () {
       if (bild) bild.remove();
       name.classList.remove('hat-logo');
-      if (quelle) quelle.hidden = true;
+      if (quelle) quelle.hidden = !raetselMitLogo(folie);
     };
     if (!pfad) { ohneLogo(); return; }
     if (!bild) {
-      bild = Deck.util.element('img', { class: 'einstieg-logo', decoding: 'async' }, null, name);
+      /* decoding 'sync' (seit 20.10.2026, vorher 'async'): Das Logo ist bis zur
+         Auflösung verborgen und wird erst beim Einblenden dekodiert. Mit 'async'
+         malte Chrome das erste Bild der Auflösung ohne Logo, solange das stark
+         vergrößerte Rätselbild die Grafik auslastete (Screenshots von pruefen.mjs
+         und Folienbilder ohne Logo). Die Datei ist klein (17 KB). */
+      bild = Deck.util.element('img', { class: 'einstieg-logo', decoding: 'sync' }, null, name);
       bild.addEventListener('error', function () {
         console.warn('Folie 01: Logo „' + pfad + '“ nicht gefunden (marke.js → logoTitel) – der Markenname steht in Schrift da.');
         ohneLogo();

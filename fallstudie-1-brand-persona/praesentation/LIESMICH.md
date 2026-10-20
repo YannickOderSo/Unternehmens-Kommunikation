@@ -19,11 +19,16 @@ die Exporte in `export/` sind damit am 19.10. neu erzeugt (Abschnitt 11). Seit D
 Analyse auf Folie 08 und in der Abstimmung das **Chamäleon** statt des Waschbärs (Einordnung Elias Knauber;
 Begründung als Vorschlag gekennzeichnet, Elias prüft – Abschnitt 6 und 12, `AUTOREN.md` Abschnitt 18); nach zwei
 Prüfungen nachgearbeitet und die Exporte am 20.10. neu erzeugt (Folie 08 mit Chamäleon).
+Seit Di, 20.10. ist das **Rätsel auf Folie 01 lösbar**: Das Rätselbild zeigt das **Original-Logo** auf einer
+erfundenen Dose (`bilder/raetsel-holy-logo.svg`, Entscheidung Yannick), Schritt 0 das Logo groß und unscharf, ein
+Hinweis, dann die Auflösung – **drei Klicks** auf Folie 01 (Abschnitt 8 und 12, `AUTOREN.md` Abschnitt „Rätsel mit
+Logo“); nach zwei Prüfungen nachgearbeitet und die Exporte am 20.10. neu erzeugt. Die Logo-Nutzung in der
+Illustration klärt Yannick noch mit dem Betreuer (Checkliste, Abschnitt 12).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
 
-Fertige Ausgaben (Stand 20.10.2026, mit dem Chamäleon auf Folie 08, den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
+Fertige Ausgaben (Stand 20.10.2026, mit dem Rätselbild mit Logo auf Folie 01, dem Chamäleon auf Folie 08, den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
 den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `export/praesentation.pdf`
 (alle Folien inkl. Backup, Plan B), `export/uebersicht.png` (alle Folien auf einen Blick),
 `export/folien/<id>.png` (jede Folie einzeln im Endzustand, 1920 × 1080).
@@ -267,8 +272,8 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 | `name`, `kurz` | Markenname „HOLY“ – erscheint überall automatisch |
 | `farben.primaer`, `farben.sekundaer` | HOLY-Gelb `#FFD007` und Schwarz `#1D1D1B` (Quelle: Recherche-Dossier Kap. 6.3 ✔ [1], Werte der Website, kein offizieller Styleguide). Alle anderen Farben werden daraus berechnet, Kontraste bleiben lesbar. Leer `''` = neutrale Farben. |
 | `logo` | Logo auf Folie 09b (Zeile „Logo“): offizielle **HOLY-Wortmarke** `bilder/holy-logo-wortmarke.png` (von de.holy.com, Abruf 16.10.2026, unverändert); Quelle steht in der Fußzeile von 09b, in B7 und in `QUELLEN.md`. Im Dunkelmodus liegt die Wortmarke auf einer hellen Unterlage (sonst verschwände die schwarze Form), das Bild selbst bleibt unverändert. Steht hier wieder `bilder/platzhalter-logo.svg`, zeigt 09b nur die Beschreibung der Wortmarke. |
-| `logoTitel` | Logo auf **Folie 01 und 12**: offizielles HOLY-Logo im gelben Oval `bilder/holy-logo-oval.png` (de.holy.com, Abruf 16.10.2026, unverändert, nur verkleinert). Auf Folie 01 erscheint es mit der Auflösung des Rätsels (im Rätsel selbst nicht) und bleibt auf der Titelfolie – anstelle des Namens in Schrift (Screenreader lesen den Namen). Auf Folie 12 steht es oben rechts neben dem Fazit über HOLY (Klammer Anfang–Ende, seit 17.10.2026; bis 18.10. neben den Gruppennamen – das wirkte wie Co-Branding). Quelle in den Fußzeilen von Folie 01 und 12 und in B7. Leer `''` = auf 01 der Name in Schrift wie früher, auf 12 nur die Gruppe (die Logo-Quelle verschwindet mit). |
-| `raetselBild` | Bild für das Einstiegsrätsel (Folie 01). Seit 19.10.2026 `bilder/raetsel-holy.svg`: **eigene Illustration**, KI-gestützt (Claude Code) – nachempfundene Pappdose mit Drachenfrucht auf dem Etikett (bewusst ohne Comic-Tier, `QUELLEN.md` §3), Shaker, Drachenfrucht vor Gelb, ohne Logo und Schrift; Zoompunkt `data-fokus="60.1% 60.7%"`. Ein **eigenes Foto** bleibt möglich: Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 `data-fokus` neu setzen und die Zeile „Illustration: …“ in der Fußzeile durch die Fotoquelle ersetzen. Enthält der Dateiname „platzhalter“, zeigt die Folie die Pille „Platzhalterbild“. |
+| `logoTitel` | Logo auf **Folie 01 und 12**: offizielles HOLY-Logo im gelben Oval `bilder/holy-logo-oval.png` (de.holy.com, Abruf 16.10.2026, unverändert, nur verkleinert). Auf Folie 01 erscheint es mit der Auflösung des Rätsels (seit 20.10.2026 Schritt 2; dieselbe Datei steht seit 20.10. auch auf der Dose im Rätselbild, siehe `raetselBild`) und bleibt auf der Titelfolie – anstelle des Namens in Schrift (Screenreader lesen den Namen). Auf Folie 12 steht es oben rechts neben dem Fazit über HOLY (Klammer Anfang–Ende, seit 17.10.2026; bis 18.10. neben den Gruppennamen – das wirkte wie Co-Branding). Quelle in den Fußzeilen von Folie 01 und 12 und in B7. Leer `''` = auf 01 der Name in Schrift wie früher, auf 12 nur die Gruppe. **Achtung:** Leer allein entfernt das Logo auf der Dose im Rätselbild nicht – die Zeile „Logo © …“ auf Folie 01 bleibt deshalb stehen, solange `raetselBild` ein Bild mit „logo“ im Dateinamen ist. Müssen die Logos ganz weg (Betreuer), `logoTitel` leeren **und** `raetselBild` auf `bilder/raetsel-holy.svg` umstellen (dann verschwindet die Zeile). |
+| `raetselBild` | Bild für das Einstiegsrätsel (Folie 01). Seit Di, 20.10.2026 `bilder/raetsel-holy-logo.svg`: **eigene Illustration**, KI-gestützt (Claude Code), mit dem **Original-Logo** groß auf der Dose (`holy-logo-oval.png` unverändert als data-URI eingebettet; Entscheidung Yannick, `QUELLEN.md` §3/§4), darunter eine kleine Drachenfrucht (ohne Comic-Tier), Shaker, Drachenfrucht vor Gelb. Die Dose ist erfunden („· Dose fiktiv“ in der Einordnungszeile der Titelfolie). Dazu in `index.html` bei Folie 01 `data-stufen="440/11,220/10,100/0"` (Logo groß und unscharf → Hinweis → Auflösung, drei Klicks, ohne Pille „Hinweis x von n“) und `data-fokus="63.5% 59.8%"` (Fixpunkt des Zooms). **Rückfall ohne Logo:** `bilder/raetsel-holy.svg` (19.10.2026) mit `data-fokus="60.1% 60.7%"` und z. B. `data-stufen="300/40,170/14,100/0"`, Fußzeile auf 19.10.2026. Ein **eigenes Foto** bleibt möglich: Datei in `bilder/` legen, Pfad eintragen, in `index.html` bei Folie 01 `data-fokus` und `data-stufen` neu setzen und die Zeile „Illustration: …“ in der Fußzeile durch die Fotoquelle ersetzen, „· Dose fiktiv“ streichen. Enthält der Dateiname „platzhalter“, zeigt die Folie die Pille „Platzhalterbild“. |
 | `titel`, `gruppe`, `datum`, `dozent` … | Angaben für Titelfolie, Kopfzeilen und Schlussfolie |
 | `unternehmen` | Firma hinter der Marke („HOLY Softdrinks GmbH“, Dossier Kap. 1 ✔ [2, 3]) – für die Zeile „Studentische Fallstudie · keine Verbindung zur …“ auf Folie 01 und 12 |
 | `anrede` | „Sie“ (einheitlich) |
@@ -353,13 +358,26 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Fußzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“, Pille
       „Platzhalterbild“ weg. Nach der Prüfung (19.10.) Etikett **ohne Tier**: Drachenfrucht mit Heiligenschein
       statt Tukan – HOLY führt selbst eine Sorte mit Tukan („Thai Lime Toucan“, Websuche 19.10.2026; `QUELLEN.md` §3)
-- [ ] **Folie 01 – Motiv freigeben und Rätsel testen** (A · Yannick): Motiv bestätigen (Drachenfrucht mit
-      Heiligenschein als Wortspiel auf „holy“, bewusst kein Tier) und das Rätsel mit zwei Personen testen, die
-      das Bild nicht kennen – errät bei 300/40 niemand etwas: `data-stufen="300/40,170/14,100/0"` (mit dem
-      neuen Etikett am 19.10. auf einer Testkopie geprüft: 0 Fehler, zeigt Umrisse von Dose und Shaker und eine
-      pinke Frucht, kein Logo).
+- [x] **Folie 01 – Rätsel mit Logo** (Di, 20.10.2026; Entscheidung Yannick: „Groß das Logo und daneben bei
+      der Auflösung dann die illustration mit logo“): Rätselbild `bilder/raetsel-holy-logo.svg` – die Illustration
+      mit dem Original-Logo groß auf der Dose (Datei `holy-logo-oval.png` unverändert eingebettet), kleine
+      Drachenfrucht darunter. `data-stufen="440/11,220/10,100/0"`, `data-fokus="63.5% 59.8%"`: **drei Klicks** –
+      Schritt 0 Logo groß und unscharf (gelbes Oval, heller Schriftzug), Klick 1 Hinweis (Schrift fast lesbar),
+      Klick 2 Auflösung (Logo groß links, daneben die Illustration mit Logo), Klick 3 Titelfolie. Fußzeile
+      „Illustration: …, 20.10.2026“; Kasten, Notizen (Moderation je Stufe) und `QUELLEN.md` §3/§4 nachgezogen.
+      Nach zwei Prüfungen (20.10.): Hinweis unschärfer (220/10 statt 220/8 – von hinten war „HOLY“ schon
+      lesbar), keine Pille „Hinweis x von n“ mehr, „· Dose fiktiv“ auf der Titelfolie, Logo-Zeile bleibt auch
+      ohne `logoTitel`. Die Fassung ohne Logo (`raetsel-holy.svg`) bleibt als Rückfall liegen
+- [ ] **Folie 01 – Rätsel mit zwei Personen testen** (A · Yannick): zwei Personen, die das Bild nicht kennen,
+      am Beamer raten lassen, **eine davon aus der letzten Reihe** (verkleinert wirkt Unschärfe schwächer).
+      Erraten sie die Marke schon in Schritt 0: erste Stufe unschärfer (`data-stufen="440/13,220/10,100/0"`);
+      lesen sie beim Hinweis „HOLY“ sofort ab: zweite Stufe unschärfer (`220/12`); erraten sie sie auch beim
+      Hinweis nicht: zweite Stufe schärfer (`220/8`). Dabei den Zoom-Übergang 0 → 1 → 2 auf dem Vortragsrechner
+      ansehen (Chrome: F12 → ⋮ → Weitere Tools → Rendering → „Frame Rendering Stats“ zeigt die Bildrate; ruckelt er sichtbar, Startstufe auf etwa
+      `380/12` senken und `data-fokus` neu rechnen, `AUTOREN.md` 6e). Motiv freigeben (Logo auf der Dose, kleine
+      Drachenfrucht, bewusst kein Tier) und den Zusatz „· Dose fiktiv“ auf der Titelfolie
       **Eigenes Foto statt Illustration (optional):** Datei nach `bilder/`, `marke.js → raetselBild`,
-      `data-fokus` neu setzen (60.1 % / 60.7 % gilt nur für die Illustration), Fußzeile z. B. „Foto: eigene
+      `data-fokus` und `data-stufen` neu setzen (die Werte gelten nur für die Illustration), Fußzeile z. B. „Foto: eigene
       Aufnahme · Verpackung © HOLY Softdrinks GmbH“ (nicht länger als die jetzige Zeile – sie bricht nicht
       um), `QUELLEN.md` §4. Keine Fotos von HOLY aus dem Netz (Rechte, öffentliches Repository)
 - [x] **Folie 04 – Persona-Bild eingebaut** (19.10.2026): eigene Illustration `bilder/persona-marco.svg`
@@ -450,7 +468,14 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       mit „?“, bis die Codierung den Raptor kanalübergreifend zeigt – dann „?“ streichen
 - [ ] **HOLY-Logos auf Folie 01, 09b und 12** (offizielle Dateien von de.holy.com, unverändert, Quelle in
       den Fußzeilen und in B7): kurz mit dem Betreuer abstimmen, dass die Logos zur Kennzeichnung der
-      analysierten Marke genutzt werden dürfen (A · Yannick). Auf Folie 12 steht das Oval seit 18.10. oben
+      analysierten Marke genutzt werden dürfen (A · Yannick) – **seit 20.10. auch das Logo auf der Dose im
+      Rätselbild von Folie 01.** Dafür konkret fragen: Dürfen wir das Original-Logo auf einer **erfundenen,
+      nachempfundenen Verpackung** zeigen, im Rätsel **vergrößert und unscharf** (Quelle erst ab der Auflösung),
+      und so auch **öffentlich** im Repository und in den Exporten (PDF und Übersicht sind auf der Startseite
+      verlinkt)? Lehnt der Betreuer das ab: `marke.js → raetselBild` auf `bilder/raetsel-holy.svg` und bei
+      Folie 01 die Rückfallwerte (Kasten „FOLIE 01“); lehnt er Logos ganz ab, zusätzlich `logoTitel` leeren –
+      **beides zusammen**, `logoTitel` allein entfernt das Logo auf der Dose nicht. Danach die Exporte neu
+      erzeugen. Auf Folie 12 steht das Oval seit 18.10. oben
       rechts beim Fazit über die Marke, nicht neben den Gruppennamen (wirkte dort wie Co-Branding). Bewusst
       ohne Logo: Kopfzeilen, Folie 03, das Zentrum des Steuerrads, die öffentliche Startseite und die
       Abstimmseite `abstimmen.html` (seit 19.10.; Begründung in `QUELLEN.md`, Abschnitt 4). Nur falls auf einem Bildschirm mit doppelter Pixeldichte (Retina-Laptop,
@@ -531,9 +556,13 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Screenshot folgt“ auf Folie 09). Nach der Freigabe der Motive oder mit einem eigenen Foto erneut erzeugen
 - [x] **Exporte mit dem Chamäleon neu erzeugt** (20.10.2026): PDF 22 Seiten, 23 Folienbilder (geändert nur
       f08), Übersicht mit Stand 20.10.2026
+- [x] **Exporte mit dem Rätsel mit Logo neu erzeugt** (Di, 20.10.2026, nach der Nacharbeit): PDF 22 Seiten
+      (Seite 1: Titelfolie mit Logo auf der Dose und „Dose fiktiv“), 23 Folienbilder, Übersicht mit Stand
+      20.10.2026. Bewusst **vor** der Antwort des Betreuers erzeugt (Logo-Klärung offen, siehe oben) – lehnt er
+      ab, nach dem Rückfall neu erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 - [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
       `export/` sind am 20.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
-      Folie 12, Illustrationen auf 01 und 04, Chamäleon auf 08, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
+      Folie 12, Illustrationen auf 01 (mit Logo auf der Dose) und 04, Chamäleon auf 08, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
       `export/folien/` noch einmal erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**
@@ -570,14 +599,14 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `marke.js` | alles, was sich mit der Marke ändert (Name, Farben, Bilder, Umfrage, Wortwolke) |
 | `css/` | `tokens.css` (Farben, Schriften, Größen), `deck.css` (Bühne, Bedienung), `komponenten.css` (Bausteine), `folien/` (je Folien-Gruppe) |
 | `js/` | `deck.js` (Steuerung, Referentenansicht, Druck), `komponenten.js` (Steuerrad, Umfrage, Wortwolke, QR, Rätsel), `folien/` (je Folien-Gruppe), `vendor/` (QR-Code-Bibliothek) |
-| `bilder/` | offizielle HOLY-Logos (Folie 01, 09b und 12, Quelle in `QUELLEN.md`), eigene Illustrationen (Rätselbild 01 `raetsel-holy.svg`, Persona-Bild 04 `persona-marco.svg`; KI-gestützt, seit 19.10.2026) und ältere Platzhalterbilder (eigene Gestaltung, zurzeit nicht eingetragen) – eigene Bilder hier ablegen |
+| `bilder/` | offizielle HOLY-Logos (Folie 01, 09b und 12, Quelle in `QUELLEN.md`), eigene Illustrationen (Rätselbild 01 `raetsel-holy-logo.svg` mit eingebettetem Original-Logo seit 20.10.2026, Rückfall ohne Logo `raetsel-holy.svg`; Persona-Bild 04 `persona-marco.svg`; KI-gestützt, seit 19.10.2026) und ältere Platzhalterbilder (eigene Gestaltung, zurzeit nicht eingetragen) – eigene Bilder hier ablegen |
 | `schriften/` | Schriftdateien (woff2) mit Lizenzen |
 | `werkzeuge/pruefen.mjs` | automatische Prüfung, Screenshots und PDF (optional, braucht Node.js); fragt die Web-App nie ab (eingebaute Attrappe, `--live-offline`, `--live-werte 3,1,7,0,2`, `--live-aus`; `AUTOREN.md` 9) |
 | `werkzeuge/uebersicht.mjs` | erzeugt `export/uebersicht.png` aus den Folienbildern (Befehle: `AUTOREN.md`, Abschnitt 15) |
 | `abstimmen.html` | Abstimmseite fürs Publikum (QR-Code auf Folie 08, läuft auf GitHub Pages); dazu `js/abstimmen.js`, `css/abstimmen.css` |
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (44 Prüfungen); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren, mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy und mitlesender „Folie“ (Abschnitt 6, `AUTOREN.md` 6c) |
-| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 20.10.2026 mit A1–A3 als Entwurf, den Illustrationen auf 01/04 und dem Chamäleon auf 08; nach den Freigaben neu erzeugen (Abschnitt 11) |
+| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 20.10.2026 mit A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04 und dem Chamäleon auf 08; nach den Freigaben neu erzeugen (Abschnitt 11) |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |

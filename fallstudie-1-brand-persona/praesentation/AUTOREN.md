@@ -388,6 +388,17 @@ Stufen = drei Klicks, Fortschritt „Hinweis x von 4“ oben rechts (`data-forts
 Auf Folie 01 erscheint mit der Auflösung das Logo aus `marke.js → logoTitel` (gelbes Oval, unverändert,
 nur verkleinert; Höhe in `css/folien/01-einstieg.css` → `--einstieg-logo-gross` / `--einstieg-logo-titel`)
 anstelle des Markennamens in Schrift; der Name bleibt als alt-Text. Ohne `logoTitel` steht der Name da.
+Folie 01 selbst (seit 20.10.2026, Abschnitt 19): Rätselbild mit Logo, `data-stufen="440/11,220/10,100/0"`,
+`data-fokus="63.5% 59.8%"`, `data-fortschritt="aus"` – drei Klicks (Hinweis, Auflösung, Titel). `data-fokus` ist der **Fixpunkt** des
+Zooms (bleibt beim Zoomen stehen), nicht unbedingt das Motiv: Soll ein Punkt L des Bildes bei Zoom Z an der
+Bühnenstelle C stehen, gilt Fixpunkt = (Z·L − C) / (Z − 1) (L und C in Bühnen-Pixeln bei Zoom 1). Die Unschärfe
+wird mitgezoomt (wirkt etwa Zoom × px); gemessen an der Schrift im Bild hängt die Lesbarkeit also nur an der
+Unschärfe-Zahl, der Zoom ändert Größe und Ausschnitt. Verkleinert (Sicht aus der letzten Reihe) wirkt Unschärfe
+schwächer – Stufen deshalb auch bei 960 × 540 und 480 × 270 beurteilen, nicht nur in Originalgröße. Ab drei Stufen
+zeigt der Baustein „Hinweis x von n“ (die Auflösung zählt als Stufe mit); auf Folie 01 ist die Pille abgeschaltet
+(`data-fortschritt="aus"`: sie lag auf dem Oval und lud zum Abwarten ein). Die Zeile „Logo © …“ der Fußzeile von
+Folie 01 zeigt `js/folien/01-einstieg.js`, solange `logoTitel` gesetzt ist **oder** der Dateiname des Rätselbilds
+„logo“ enthält.
 
 ### f) Zähler, Kennzahl, Hantel
 ```html
@@ -1040,3 +1051,107 @@ Folie 10 (A/B oben); Lukas gleicht Analogie-Befragung und Notizen ab und prüft,
 Sprechtexte 08 (Schritt 2) und 10 in der Generalprobe stoppen; Zeichnung auf Beamer und Handy ansehen;
 Skript-Aktualisierung (zurückgestellt); Runde umstellen wie geplant (LIESMICH 12). Nach Elias’ Prüfung bzw. einer
 Änderung an Folie 08 oder 10 die Exporte erneut erzeugen.
+
+## 19. Rätsel mit Logo: Folie 01 (Di, 20.10.2026)
+
+Problem (Yannick, 20.10.2026): Auf Folie 01 hatte das Publikum keine Chance, die Marke zu erraten – Schritt 0
+zeigte die Illustration ohne Logo 300 % vergrößert und 40 px unscharf (die Unschärfe wird mitgezoomt, wirkte also
+etwa 120 px: nur Farbflecken), Schritt 1 löste sofort auf. **Entscheidung Yannick (wörtlich, KI-Nachweis Nr. 98):** „Groß das
+Logo und daneben bei der Auflösung dann die illustration mit logo“. Die Regel „Illustrationen ohne Logo“ (Abschnitt 17) ist
+damit für Folie 01 aufgehoben; für Folie 04 gilt sie weiter. Die Klärung der Logo-Nutzung mit dem Betreuer ist offen.
+
+| Bereich | Änderung |
+|---|---|
+| `bilder/raetsel-holy-logo.svg` (neu, 128 KB) | Szene von `raetsel-holy.svg` (Generator-Skript vom 19.10., Etikett neu): auf dem Etikett groß und frontal das **Original-Logo** `holy-logo-oval.png` – **unverändert als base64-PNG (data-URI) eingebettet**, nur skaliert (330 × 190,8 Einheiten; Oval 299,5 × 158,3, Mitte x 1160 / y 592), über der Schattierung der Dose (nichts liegt darüber). Gelbes Leuchten und Strahlen hinter dem Oval, Funkelsterne daneben, darunter eine kleine Drachenfrucht im Aufkleber-Stil (ohne Heiligenschein, ohne Tier). Keine Filter, keine Masken, keine externen Verweise; data-URI byteweise gleich der PNG-Datei (geprüft). Warum eingebettet: Eine SVG, die als `<img>` oder CSS-Hintergrund geladen wird, lädt keine externen Dateien nach – ein Verweis auf die PNG-Datei bliebe leer. Kopfkommentar mit Herkunft, Entscheidung, Lage und Zoomwerten. Das Generator-Skript liegt nicht im Repository; die SVG-Datei ist die bearbeitbare Quelle. |
+| `bilder/raetsel-holy.svg` | unverändert – Rückfall ohne Logo (dann `data-fokus="60.1% 60.7%"`, Stufen z. B. `300/40,170/14,100/0`). |
+| `marke.js` | `raetselBild: 'bilder/raetsel-holy-logo.svg'`; Kommentar (Logo eingebettet, Zoomwerte, Rückfall, eigenes Foto); Kommentar zu `logoTitel` (Auflösung jetzt Schritt 2, dieselbe Datei auch im Rätselbild). |
+| Folie 01 (`index.html`) | `data-stufen="440/11,220/8,100/0"` (in der Nacharbeit `220/10`) statt `"300/40,100/0"`, `data-fokus="63.5% 59.8%"` statt `"60.1% 60.7%"` (Begründung unten). **Drei Klicks:** Schritt 0 Rätsel, 1 Hinweis, 2 Auflösung, 3 Titel – Auflösung und Titel rückt `js/folien/01-einstieg.js` selbst nach. Kasten „FOLIE 01“, Kommentarblock (Ablauf, RÄTSELBILD, LOGO, SO ÄNDERN), Fußzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 20.10.2026“ (zweizeilig wie bisher, gleich lang), Kommentar über der Fußzeile. Notizen: Moderation „Was sehen Sie?“ je Stufe und Auflösung (10 s + 7 s + 8 s + 20 s = 45 s, Sollzeit unverändert), `data-schritt` 0–3, Technik (drei Klicks, der vierte führt zu 02), Rückfragen („Ist das eine echte Dose?“, „Dürft ihr das Logo verwenden?“ – Klärung offen), Testhinweis. `data-alt` unverändert (verrät die Marke nicht). |
+| `css/folien/01-einstieg.css` | (in der Nacharbeit wieder entfernt – Pille ganz aus, siehe unten) Pille „Hinweis x von n“ mit der Auflösung ausblenden (`.raetsel.ist-geloest`). Sie erscheint erst ab drei Stufen (bei zwei Stufen entfernte das Skript sie) und stand sonst in der Auflösung über dem Bild und im Schlussbild angeschnitten am rechten Rand der Bildtafel (sie wandert mit dem Bild). Kopfkommentar (Zustände). |
+| `js/folien/01-einstieg.js` | Logo der Auflösung mit `decoding: 'sync'` statt `'async'`: Mit dem stark vergrößerten Rätselbild malte Chrome das erste Bild der Auflösung ohne Logo (in `pruefen.mjs` dreimal hintereinander; 400 ms später war es da) – betraf Screenshots und Folienbilder, die direkt einen Schritt zeigen. Die Datei hat 17 KB. Die übrigen Funktionen (Schritte koppeln, Bildtafel ausrichten) sind unverändert. |
+| `QUELLEN.md` | Stand; §3: Ausnahme „Rätselbild Folie 01 mit Original-Logo“ (Entscheidung Yannick 20.10.2026, Regel „ohne Logo“ für Folie 01 aufgehoben, Klärung mit dem Betreuer offen, Kennzeichnung); §4: Zeile `raetsel-holy-logo.svg`, `raetsel-holy.svg` als Rückfall, `holy-logo-oval.png` auch eingebettet, Absatz zur Logo-Nutzung. |
+| `LIESMICH.md` | Stand-Absatz, Abschnitt 8 (`logoTitel`, `raetselBild`), Checkliste 12 (erledigt: Rätsel mit Logo; offen: mit zwei Personen testen, Logo-Klärung jetzt auch für das Rätselbild, Exporte), Ordnertabelle. |
+| `AUTOREN.md` | 6e (Fixpunkt-Formel, Pille), dieser Abschnitt. |
+
+**Stufen und Fixpunkt (Begründung):** Bühne 1920 × 1080; das Motiv ragt 3 % über jeden Rand (2035,2 × 1144,8 px,
+Bild mit Faktor 1,06). Die Oval-Mitte liegt bei Zoom 1 auf der Bühne bei x 1172 / y 595, das Oval misst 317 × 168 px.
+
+- **440/11** (Schritt 0): Oval etwa 1400 × 740 px, Mitte bei x 960 / y 400 – füllt den größten Teil der Bühne über
+  der Frage (Kicker ab y ≈ 745). Unschärfe mitgezoomt ≈ 48 px: gelbes Oval und heller Schriftzug klar, die Buchstaben
+  nicht lesbar. Verglichen: 440/8 (Buchstabenformen zu deutlich), 440/10, 440/11, 440/12, 440/14 (Schriftzug nur
+  noch heller Balken, die dunklen Lücken verschwinden).
+- **220/8** (Schritt 1, Hinweis): Oval etwa 700 × 370 px, Mitte bei x 1100 / y 530; Dose, Deckel mit Löffel und
+  Shaker erkennbar, Schrift fast lesbar (≈ 18 px). Verglichen: 220/4 (klar lesbar, kein Rätsel mehr), 220/5–8.
+  **In der Nacharbeit 220/10** (von hinten war „HOLY“ bei 220/8 schon lesbar, siehe unten).
+- **100/0**: ganzes Bild (Auflösung, groß das Logo links), danach Bildtafel.
+- **Fixpunkt** = (Z · L − C) / (Z − 1) mit Z = 4,4, L = Oval-Mitte bei Zoom 1, C = Zielort: ((4,4 · 1172 − 960) / 3,4 |
+  (4,4 · 595 − 400) / 3,4) = (1234 | 652) → `63.5% 59.8%` des Motivs. In der Bildtafel (Schritt 3) rückt
+  `01-einstieg.js` den Fixpunkt waagerecht in die Tafelmitte: Oval-Mitte bei x ≈ 1441 (Tafelmitte 1504), Dose links,
+  Shaker rechts – die Gruppe steht mittig.
+
+**Geprüft (20.10.2026):** `pruefen.mjs index.html --nur f01 --schritte` in Editorial, Bento und Keynote, je hell
+und dunkel: je 0 Fehler, 0 Warnungen, 3 Schritte, 20 Wörter, keine externen Anfragen. Kontaktbögen angesehen (s0–s3
+in Editorial, Bento und Keynote hell; dunkel stichprobenweise je Thema), Bildtafel in Originalgröße: Logo auf der
+Dose klar lesbar. Erkennbarkeit: Schritt 0 Form und Farben (gelbes Oval, heller Schriftzug mit dunklen Lücken),
+Schrift nicht lesbar; Schritt 1 „HOLY“ fast lesbar; Auflösung klar. Druck (`--ohne-bilder --druck`, ganzes Deck): 22
+von 22 Seiten, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03, f04, f10, f11); PDF-Seite 1 bei 72 und 200 dpi
+angesehen – Logo in der Illustration scharf (der data-URI wirkt auch im PDF). Bildrate (grob wie in Abschnitt 17:
+headless Chromium mit Software-Rendering, 2,3 s je Übergang, zwei Läufe): Median in allen Übergängen 16,7 ms je
+Bild, 95. Perzentil 67–100 ms, längstes Bild 83–167 ms; die alte Fassung (`raetsel-holy.svg`, 300/40 → 100/0) im
+selben Lauf: Median 16,7 ms, 95. Perzentil 67–83 ms, längstes Bild 233–250 ms – nicht schlechter als vorher. Auf dem
+Vortragsrechner trotzdem ansehen. Ganzes Deck `--schritte --optional` (Editorial hell): 23 Folien, 81 Screenshots
+(einer mehr als vorher – der Hinweis), 0 Fehler, 4 Warnungen Wortbudget wie vorher, keine externen Anfragen. Ohne
+`--schritte` (so entstehen die Folienbilder des Exports, direkt im Endzustand) zeigt `f01.png` das Logo links und
+das Logo auf der Dose. Ausgaben: `_test/d19-bau-*` (zuerst `d20-*` genannt; umbenannt, weil D20 ein anderer
+Workflow ist – Zeitfenster der Abstimmung).
+
+**Bewusst nicht geändert:** Folie 08/10 und die Live-Abstimmung (dort lief am 20.10. ein anderer Umbau),
+`js/komponenten.js` und `css/komponenten.css` (Rätsel-Baustein), B7 (Zeile „Logos (Folien 01, 09b, 12) …
+unverändert“ stimmt weiter), `../prompts.md`, `ki-nachweis/`. Exporte in `export/` nicht neu erzeugt (Folie 08 war
+gleichzeitig in Arbeit) – `f01.png`, PDF-Seite 1 und die Übersicht zeigten noch das Bild ohne Logo; in der
+Nacharbeit neu erzeugt (unten).
+
+**Offen (Stand nach der Nacharbeit unten):** Rätsel mit zwei Personen testen und den Übergang auf dem
+Vortragsrechner ansehen; Logo-Nutzung (jetzt auch in der Illustration) mit dem Betreuer klären, sonst Rückfall
+`raetsel-holy.svg`; Motiv freigeben (Yannick).
+
+### Nacharbeit nach zwei Prüfungen (Di, 20.10.2026)
+
+Zwei prüfende KI-Agenten (Rätsel und Darstellung; Rechte, Kennzeichnung und Doku) haben den Bau geprüft, ohne etwas
+zu ändern. Eingearbeitet:
+
+| Befund | Änderung |
+|---|---|
+| **Hinweis zu leicht** (mittel): Bei 220/8 stand „HOLY“ verkleinert (960 × 540, 320 × 180 – Sicht aus der letzten Reihe) schon lesbar da; der Hinweis wurde faktisch zur Auflösung | `data-stufen="440/11,220/10,100/0"`. Verglichen: 220/8, 9, 10, 11, 12 in Originalgröße und verkleinert auf 960, 480 und 320 px Breite – 220/9 von hinten noch lesbar, 220/10 fast lesbar (nur mit Mühe), 220/11 kaum, 220/12 kaum noch Buchstabenformen. Gemessen an der Schrift im Bild hängt die Lesbarkeit nur an der Unschärfe-Zahl (sie wird mitgezoomt). Testanleitung (Kasten, Kommentarblock, Notizen, LIESMICH 12) um „Hinweis von hinten sofort lesbar → 220/12“ ergänzt; Test ausdrücklich am Beamer mit einer Person in der letzten Reihe. Abschnitt 6e: Stufen auch verkleinert beurteilen. |
+| **Logo-Zeile hing nur an `logoTitel`** (mittel): Wäre `logoTitel` geleert worden (Rückfall bei Ablehnung des Titel-Logos), hätte das Logo auf der Dose ohne Quelle gestanden | `js/folien/01-einstieg.js`: Die Zeile „Logo © …“ bleibt sichtbar, solange der Dateiname des Rätselbilds „logo“ enthält (neue Funktion `raetselMitLogo`, dieselbe Regel wie bei „platzhalter“) – auch wenn `logoTitel` leer ist oder die Datei fehlt. Auf einer Kopie in vier Fällen geprüft: Standard (Zeile sichtbar), `logoTitel` leer (sichtbar), `logoTitel` leer und Rückfall-Rätselbild (verborgen), Logo-Datei fehlt (sichtbar, Konsolenhinweis wie bisher). Warnung in `marke.js` (logoTitel), LIESMICH 8 und im Kasten: Logos ganz weg = `logoTitel` **und** `raetselBild` umstellen. |
+| **Rechte-Begründung passte nicht mehr** (mittel): „nur zur Kennzeichnung“, „kein nachgebautes Verpackungsdesign“, „ohne Bilder aus dem Netz“, Dose nicht als fiktiv gekennzeichnet | `QUELLEN.md` §3: Ausnahme für Folie 01 ausdrücklich auch für „Bild aus dem Netz“ (Logo-PNG), „Schriftzug“ und „Verpackung mit Markenzeichen“; Rätselbild als fiktive Dose beschrieben; Art der Nutzung offen benannt (Teil von Illustration und Rätsel, im Rätsel vergrößert, unscharf und bis zur Auflösung ohne Quelle). §4: Tabellenzeile und Absatz („als Dateien unverändert … auf Folie 01 außerdem als Teil einer Illustration“), Exporte seit 20.10. mit Logo. SVG-Kopfkommentar: Absatz „RECHTE UND EINORDNUNG“ statt „kein nachgebautes Verpackungsdesign“. Notiz-Antwort auf „Dürft ihr das Logo verwenden?“ ohne „nur zur Kennzeichnung“. LIESMICH 12: konkrete Frage an den Betreuer (Original-Logo auf erfundener Verpackung, im Rätsel unscharf, öffentlich in Repository und Exporten). **Titelfolie:** „· Dose fiktiv“ in der Einordnungszeile – in der Fußzeile ist kein Platz (mit „(Dose fiktiv)“ wäre die Bildzeile 820–858 px lang, Platz 672–712 px, und sie bricht nicht um); die Einordnung bleibt in allen Themen einzeilig (827–848 von 896–936 px, gemessen). |
+| Pille „Hinweis 1 von 3“ (niedrig): lag in Schritt 0 auf dem Oval, zählte die Auflösung als dritten Hinweis mit und lud zum Abwarten ein | `data-fortschritt="aus"` am Rätsel (nur `index.html`, Folie 01). Die CSS-Regel aus dem Bau, die die Pille mit der Auflösung ausblendete, ist wieder entfernt. Notizen ohne Verweis auf die Pille. |
+| Funkelstern in der Bildtafel halb angeschnitten (niedrig) | Stern nach links (Generator x 1650 → 1606). Dabei selbst gefunden: Im Druck (PDF; das Motiv hat dort keinen Überstand von 3 %) war ein zweiter Stern am rechten Rand halb angeschnitten (x 1690 → 1630). Beide jetzt am Bildschirm und im Druck ganz zu sehen. Die Drachenfrucht links in der Tafel bleibt angeschnitten (wie vorgeschlagen). |
+| Logo doppelt eingebettet (niedrig) | nur noch `href` (kein `xlink:href`, kein `xmlns:xlink`); Datei 106 statt 128 KB. Der data-URI ist weiter byteweise gleich `holy-logo-oval.png`. |
+| Kommentare (niedrig): alte Schrittnummern, „300 %“, nicht ausführbare Generator-Anleitung | `index.html` (Folie 01), `css/folien/01-einstieg.css`, `js/folien/01-einstieg.js`: Zustände (Rätsel, Auflösung, Titel) statt Nummern; `data-schritt` fest auf 2 und 3 (so setzt sie das Skript bei drei Stufen) mit Hinweis, dass das Skript sie setzt. SVG: „bis zu 440 %“; Logo austauschen nur noch von Hand (data-URI im Attribut `href`), das Generator-Skript liegt nicht im Repository. |
+| Testordner `d20-*` (niedrig): Verwechslung mit Workflow D20 | umbenannt in `_test/d19-bau-*`, Nacharbeit unter `_test/d19-nach-*`; LIESMICH ohne Verweis auf Testordner. Die Abschnittsnummer 19 bleibt (bis jetzt kein weiterer Abschnitt 19; beim Zusammenführen fortlaufend nummerieren). |
+| Verweis auf den KI-Nachweis (niedrig) | „KI-Nachweis Nr. 98“ in `QUELLEN.md` §3/§4, in diesem Abschnitt und im Kommentarblock von Folie 01. |
+| Exporte veraltet (niedrig) | neu erzeugt (unten). |
+| Bildrate (niedrig) | nichts geändert; erneut gemessen (unten). Auf dem Vortragsrechner prüfen (LIESMICH 12, mit Weg zur Bildratenanzeige in Chrome). |
+
+**Bewusst nicht geändert:** B7 („Logos (Folien 01, 09b, 12): … unverändert, nur zur Kennzeichnung der Marke“) – für
+Folie 01 nicht mehr ganz zutreffend, B7 lag aber außerhalb dieses Auftrags (nur Folie 01); beim Zusammenführen
+anpassen, z. B. „… unverändert; auf 01 auch in der Illustration (fiktive Dose)“. Ebenso Folie 08/10, die
+Live-Abstimmung, `js/komponenten.js`, `css/komponenten.css`, `../prompts.md` und `ki-nachweis/`.
+
+**Geprüft (Nacharbeit, 20.10.2026):** `pruefen.mjs index.html --nur f01 --schritte` in Editorial, Bento und Keynote,
+je hell und dunkel: je 0 Fehler, 0 Warnungen, 3 Schritte, 20 Wörter, keine externen Anfragen; Schlussbild aller sechs
+Läufe angesehen (Einordnung einzeilig, Fußzeile zweizeilig, beide Sterne ganz). Ganzes Deck `--schritte --optional`:
+23 Folien, 81 Screenshots, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03, f04, f10, f11). SVG: gültiges XML, ein
+data-URI gleich der PNG-Datei (17 418 Bytes), keine Filter, Masken oder externen Verweise. Bildrate (headless
+Chromium, Software-Rendering, zwei Läufe, wie oben): neu 0 → 1 Median 16,7 ms, 95. Perzentil 117 ms, längstes Bild
+150–200 ms; 1 → 2 95. Perzentil 83 ms, längstes Bild 100–117 ms; alte Fassung 0 → 1 95. Perzentil 100–133 ms,
+längstes Bild 267 ms – nicht schlechter. Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (0 Fehler), 23 Folienbilder
+(geändert nur `f01.png`, per Pixelvergleich), Übersicht `--stand 20.10.2026`; `f01.png` und PDF-Seite 1 (72 und
+200 dpi) angesehen – Logo links und auf der Dose scharf, „Dose fiktiv“, Fußzeile zweizeilig. Stufenbilder:
+`_test/d19-nach-stufen.png`, verkleinert `_test/d19-nach-stufen-verkleinert.png`.
+
+**Offen:** Rätsel mit zwei Personen am Beamer testen (eine in der letzten Reihe; Stellschrauben 440/13, 220/12,
+220/8) – verkleinert auf 320 px Breite zeigt auch Schritt 0 schon Buchstabenformen, wer HOLY kennt, kann also früh
+raten (gewollt: das Publikum soll eine Chance haben); Übergang auf dem Vortragsrechner ansehen; Logo-Nutzung mit dem
+Betreuer klären (konkrete Frage in LIESMICH 12); Motiv und „Dose fiktiv“ freigeben (Yannick); B7 beim
+Zusammenführen.

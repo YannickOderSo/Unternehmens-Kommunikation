@@ -56,25 +56,41 @@ window.MARKE = {
   // Logo für die Titelfolie (Folie 01): offizielles HOLY-Logo im gelben Oval
   // (Seitenfuß von de.holy.com, Datei HOLY_Logo_NewYellow.png, 692 × 400 px),
   // abgerufen 16.10.2026, unverändert (nur verkleinert angezeigt). Es erscheint
-  // mit der Auflösung des Rätsels (Schritt 1, nicht vorher) und bleibt auf der
+  // mit der Auflösung des Rätsels (seit 20.10.2026 Schritt 2; dieselbe Datei steht
+  // seit 20.10.2026 auch auf der Dose im Rätselbild, siehe raetselBild) und bleibt auf der
   // Titelfolie stehen – anstelle des gesetzten Markennamens; Screenreader lesen
   // weiter den Namen (name oben). Dasselbe Logo steht seit 17.10.2026 auf Folie 12
   // (<img data-marke-logo="titel">, Klammer Anfang–Ende), seit 18.10.2026 oben rechts
   // neben dem Fazit über HOLY – nicht neben den Gruppennamen (wirkte wie Co-Branding).
   // Quelle steht in den Fußzeilen von Folie 01 und 12, in B7 und in QUELLEN.md.
   // Leer ('') = Markenname in Schrift wie bisher; Folie 12 zeigt dann nur die Gruppe.
+  // ACHTUNG: Das Logo steht seit 20.10.2026 auch auf der Dose im Rätselbild (raetselBild).
+  // Leer allein entfernt es dort NICHT – die Quellzeile „Logo © …“ auf Folie 01 bleibt
+  // deshalb stehen, solange der Dateiname des Rätselbilds „logo“ enthält. Müssen die
+  // Logos ganz weg (z. B. nach Rückmeldung des Betreuers): logoTitel leeren UND
+  // raetselBild auf 'bilder/raetsel-holy.svg' (Rückfall ohne Logo) umstellen.
   logoTitel: 'bilder/holy-logo-oval.png',
   // Einstiegsrätsel (Folie 01): Das Bild wird stark vergrößert und unscharf
-  // gezeigt und dann aufgelöst. Seit 19.10.2026 eine eigene Illustration
-  // (KI-gestützt, Claude Code, 19.10.2026), kein Foto: Pappdose mit Drachenfrucht
-  // auf dem Etikett (bewusst ohne Comic-Tier), Shaker, Drachenfrucht vor HOLY-Gelb –
-  // ohne Logo und Schrift (Dossier 6.3/6.4).
-  // Kann jederzeit durch ein eigenes Foto ersetzt werden, z. B.
+  // gezeigt, dann etwas schärfer (Hinweis) und aufgelöst. Seit Di, 20.10.2026 die eigene
+  // Illustration MIT dem Original-Logo auf der Dose (Entscheidung Yannick: „Groß
+  // das Logo und daneben bei der Auflösung dann die illustration mit logo“):
+  // KI-gestützt (Claude Code), kein Foto – Pappdose mit dem gelben Oval groß auf
+  // dem Etikett, darunter eine kleine Drachenfrucht (ohne Comic-Tier), Shaker,
+  // Drachenfrucht vor HOLY-Gelb (Dossier 6.3/6.4). Das Logo ist die Datei aus
+  // logoTitel (bilder/holy-logo-oval.png), unverändert als data-URI in die SVG
+  // eingebettet – eine als Bild geladene SVG lädt keine externen Dateien nach.
+  // Die Dose ist erfunden („Dose fiktiv“ auf der Titelfolie). Quelle des Logos: Fußzeile
+  // von Folie 01 und QUELLEN.md §3/§4; Klärung mit dem Betreuer offen (LIESMICH 12).
+  // Zoomwerte stehen in index.html bei Folie 01 (data-stufen="440/11,220/10,100/0",
+  // data-fokus="63.5% 59.8%") und gelten nur für diese Datei.
+  // Rückfall ohne Logo (Fassung vom 19.10.2026, bleibt liegen):
+  //   raetselBild: 'bilder/raetsel-holy.svg',   // dann data-fokus "60.1% 60.7%", Stufen z. B. "300/40,170/14,100/0"
+  // Eigenes Foto statt der Illustration, z. B.
   //   raetselBild: 'bilder/raetsel-foto.jpg',   // eigenes Foto (Gruppe, Datum)
-  // Dann in index.html bei Folie 01 data-fokus (Zoompunkt) neu setzen – der Wert
-  // "60.1% 60.7%" gilt nur für die Illustration – und die Bildquelle in der Fußzeile
-  // ändern. Ein Dateiname mit „platzhalter“ zeigt die Pille „Platzhalterbild“.
-  raetselBild: 'bilder/raetsel-holy.svg',
+  // Dann in index.html bei Folie 01 data-fokus und data-stufen neu setzen und die
+  // Bildquelle in der Fußzeile ändern. Ein Dateiname mit „platzhalter“ zeigt die
+  // Pille „Platzhalterbild“.
+  raetselBild: 'bilder/raetsel-holy-logo.svg',
 
   /* ---------------------------------------------------------------------------
      4. ANGABEN ZUR PRÄSENTATION

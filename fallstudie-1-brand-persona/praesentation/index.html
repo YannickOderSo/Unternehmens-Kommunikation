@@ -139,15 +139,25 @@
      ║ Gestaltung: css/folien/01-einstieg.css · Skript: js/folien/01-einstieg.js
      ║
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN:
-     ║ • RÄTSELBILD (seit 19.10.2026): eigene Illustration bilder/raetsel-holy.svg (KI-gestützt, Claude Code;
-     ║     Dose mit Drachenfrucht-Etikett OHNE Tier, Shaker, ohne Logo und Schrift), Zoompunkt
-     ║     data-fokus="60.1% 60.7%", Fußzeile „Illustration: …“; keine Pille „Platzhalterbild“ mehr. Der Tukan
-     ║     der ersten Fassung ist entfernt: HOLY führt selbst eine Sorte mit Tukan („Thai Lime Toucan“,
-     ║     Websuche 19.10.2026). Gruppe bestätigt das Motiv und testet das Rätsel mit zwei Personen. Ein eigenes Foto bleibt möglich: nach bilder/ legen, in marke.js →
-     ║     raetselBild eintragen, hier data-fokus neu setzen und die Fußzeile „Illustration: …“ ersetzen.
+     ║ • RÄTSEL MIT LOGO (seit Di, 20.10.2026; Entscheidung Yannick: „Groß das Logo und daneben bei der
+     ║     Auflösung dann die illustration mit logo“): Rätselbild bilder/raetsel-holy-logo.svg = die eigene
+     ║     Illustration (KI-gestützt, Claude Code) mit dem ORIGINAL-Logo auf der Dose (bilder/holy-logo-oval.png,
+     ║     unverändert als data-URI eingebettet, nur skaliert). data-stufen="440/11,220/10,100/0",
+     ║     data-fokus="63.5% 59.8%". DREI KLICKS auf dieser Folie: Schritt 0 Logo groß und unscharf (gelbes
+     ║     Oval, heller Schriftzug) → Klick 1 Hinweis (Dose, Schrift fast lesbar) → Klick 2 Auflösung (Logo
+     ║     groß links, daneben die Illustration mit Logo) → Klick 3 Titelfolie; Klick 4 führt zu Folie 02.
+     ║     Keine Fortschrittsanzeige (data-fortschritt="aus"). Die Dose ist erfunden – deshalb „· Dose fiktiv“
+     ║     in der Einordnungszeile der Titelfolie (die Fußzeile ist dafür zu kurz).
+     ║     Offen: Rätsel mit zwei Personen am Beamer testen (eine davon in der letzten Reihe); Logo-Nutzung
+     ║     mit dem Betreuer klären (Original-Logo auf einer erfundenen Dose, im Rätsel unscharf; LIESMICH 12).
+     ║     Rückfall ohne Logo (lehnt der Betreuer ab): marke.js → raetselBild 'bilder/raetsel-holy.svg', hier
+     ║     data-fokus="60.1% 60.7%" und z. B. data-stufen="300/40,170/14,100/0", Fußzeile auf 19.10.2026,
+     ║     Notizen anpassen. Lehnt er Logos ganz ab: logoTitel UND raetselBild umstellen (nur logoTitel
+     ║     leeren reicht nicht – das Logo auf der Dose bliebe; seine Quellzeile bleibt dann stehen).
      ║ • Titel, Gruppe, Termin, Dozent, Hochschule kommen aus marke.js (nicht hier tippen).
      ║ • Logo (gelbes Oval) ab der Auflösung: marke.js → logoTitel; Quelle steht in der Fußzeile. Dasselbe Logo
-     ║     steht seit 17.10.2026 auch auf Folie 12 (Klammer Anfang–Ende); im Rätsel (Schritt 0) bewusst nicht.
+     ║     steht seit 17.10.2026 auch auf Folie 12 (Klammer Anfang–Ende) und seit 20.10.2026 auf der Dose im
+     ║     Rätselbild (eingebettet in die SVG, nicht über logoTitel).
      ║ Texte: im <section> unten · Sprechtext: <aside class="notizen"> · Daten: <script class="daten">
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <!--
@@ -155,65 +165,109 @@
   =================================================================================
   Bündel A · 45 s · kein Feld des Markensteuerrads (data-feld="leer")
 
-  Ablauf (drei Zustände, zwei Klicks) – wirkt wie der Auftakt einer Keynote:
-    Schritt 0  randloses Rätselbild, stark vergrößert und unscharf; unten die
-               Frage ans Publikum („Welche Marke steckt dahinter?“)
-    Schritt 1  das Bild wird scharf und zoomt heraus; unten erscheint groß das
-               HOLY-Logo (Auflösung; ohne logoTitel der Markenname in Schrift)
-    Schritt 2  das Bild zieht sich in die rechte Bildtafel zurück, links steht
-               die Titelfolie: Logo gleitet nach oben (und wird etwas kleiner), darunter Titel,
-               Unterzeile, Gruppe und Termin
-  Druck (PDF), Übersicht und Rücksprung zeigen Schritt 2 (= Titelfolie).
+  Ablauf (seit 20.10.2026: vier Zustände, DREI Klicks) – wie der Auftakt einer Keynote:
+    Schritt 0  Rätsel: randloses Bild, auf das Logo der Dose gezoomt (440 %)
+               und unscharf – gelbes Oval mit hellem Schriftzug, Schrift nicht
+               lesbar; unten die Frage
+    Schritt 1  Hinweis (Klick 1): weniger gezoomt (220 %) und etwas schärfer –
+               Dose und Logo, die Schrift ist fast lesbar
+    Schritt 2  Auflösung (Klick 2): Bild scharf und ganz herausgezoomt; unten
+               links groß das HOLY-Logo, daneben die Illustration mit dem Logo
+               auf der Dose (ohne logoTitel der Markenname in Schrift)
+    Schritt 3  Titelfolie (Klick 3): das Bild zieht sich in die rechte
+               Bildtafel zurück, links Logo (gleitet nach oben, wird etwas
+               kleiner), Titel, Unterzeile, Gruppe und Termin
+  Klick 4 führt zu Folie 02. Druck (PDF), Übersicht und Rücksprung zeigen
+  Schritt 3 (= Titelfolie). Die Schrittnummern von Auflösung und Titel setzt
+  js/folien/01-einstieg.js aus data-stufen (letzte Stufe = Auflösung).
   Die Bildquelle (Fußzeile) erscheint erst mit der Auflösung – sie würde das
   Rätsel sonst verraten – und steht rechts unten auf dem Bild bzw. in der
-  Bildtafel.
+  Bildtafel. Keine Fortschrittsanzeige (data-fortschritt="aus" am Rätsel):
+  Die Pille „Hinweis x von n“ des Bausteins lag in Schritt 0 auf dem Oval,
+  zählte die Auflösung als dritten Hinweis mit und kündigte mit „1 von 3“
+  weitere Hinweise an (lädt zum Abwarten statt zum Raten ein).
 
-  RÄTSELBILD (seit 19.10.2026: eigene Illustration statt Platzhalter)
-    Eingetragen ist bilder/raetsel-holy.svg – Illustration, eigene Gestaltung,
-    KI-gestützt (Claude Code), 19.10.2026; kein Foto, kein Bild aus dem Netz.
-    Motiv nach Dossier Kap. 6.3/6.4 ✔ [1, 5, 30, 73]: runde Pappdose mit
-    schwarzem Deckel, auf dem Etikett eine Drachenfrucht im Comic-Aufkleber-
-    Stil mit Heiligenschein, Shaker mit pinkem Getränk, Drachenfrucht,
-    Eiswürfel, Messlöffel – vor HOLY-Gelb auf dunklem Tisch. Kein Logo, kein
-    Schriftzug, keine kopierte Verpackung. Etikett bewusst OHNE Tier: HOLY gibt
-    jeder Energy-Sorte ein eigenes Comic-Tier (Dossier 6.3 ✔ [30]); die erste
-    Fassung zeigte einen Tukan, und den führt HOLY selbst als Sorte „Thai Lime
-    Toucan“ (Websuche 19.10.2026: de.holy.com/products/thai-lime-toucan,
-    change.org/topic/holy-de-de; nicht im Dossier). Zoompunkt:
-    data-fokus="60.1% 60.7%" (Fruchtfleisch der Etikett-Frucht; in Schritt 2
-    steht die ganze Gruppe mittig in der Bildtafel). Unter y ≈ 940 von 1080
-    liegt nichts Wichtiges (Fußzeile).
+  RÄTSELBILD (seit Di, 20.10.2026: Illustration MIT Logo)
+    Eingetragen ist bilder/raetsel-holy-logo.svg – Illustration, eigene
+    Gestaltung, KI-gestützt (Claude Code), 20.10.2026; kein Foto. Auf dem
+    Etikett der Pappdose steht groß und frontal das ORIGINAL-Logo (gelbes
+    Oval, bilder/holy-logo-oval.png, © HOLY Softdrinks GmbH, de.holy.com,
+    Abruf 16.10.2026) – unverändert als base64-PNG (data-URI) in die SVG
+    eingebettet und nur skaliert (nicht nachgezeichnet, nicht verzerrt, nicht
+    umgefärbt). Eingebettet, weil eine SVG, die als Bild geladen wird, keine
+    externen Dateien nachlädt (Browser und PDF geprüft, 20.10.2026).
+    Entscheidung Yannick (Di, 20.10.2026, KI-Nachweis Nr. 98), nachdem das
+    Publikum bei 300/40 ohne Logo keine Chance hatte: „Groß das Logo und
+    daneben bei der Auflösung dann die illustration mit logo“. Die frühere
+    Regel „Illustration ohne Logo“ ist damit für Folie 01 aufgehoben
+    (QUELLEN.md §3/§4). Ehrlich eingeordnet: Die Dose ist erfunden (nur der
+    Verpackungstyp ist nachempfunden), und das Logo ist hier Teil der
+    Illustration und des Rätsels – in Schritt 0 und 1 vergrößert, unscharf
+    und noch ohne Quelle (die Quelle verriete die Lösung), ab der Auflösung
+    mit Quelle in der Fußzeile. Das ist mehr als reine Kennzeichnung der
+    Marke; genau das klärt die Gruppe mit dem Betreuer (offen, LIESMICH 12).
+    Übriges Motiv wie bisher (Dossier Kap. 6.3/6.4 ✔ [1, 5, 30, 73]): Dose
+    mit schwarzem Deckel, Shaker mit pinkem Getränk, Drachenfrucht,
+    Eiswürfel, Messlöffel vor HOLY-Gelb; unter dem Logo eine kleine
+    Drachenfrucht im Comic-Aufkleber-Stil (Sorte). Etikett weiter OHNE Tier
+    (HOLY gibt jeder Energy-Sorte ein Comic-Tier, Dossier 6.3 ✔ [30]; den
+    Tukan der ersten Fassung führt HOLY selbst als Sorte „Thai Lime Toucan“,
+    Websuche 19.10.2026, nicht im Dossier).
+    Stufen data-stufen="440/11,220/10,100/0" (Zoom %/Unschärfe px; die
+    Unschärfe wird mitgezoomt, wirkt also etwa 48 bzw. 22 px stark –
+    gemessen an der Schriftgröße hängt die Lesbarkeit nur an der zweiten
+    Zahl, der Zoom ändert die Größe und den Ausschnitt):
+      440/11  Oval füllt etwa 1400 × 740 px der Bühne, mittig über der Frage
+      220/10  Dose mit Logo, Schrift fast lesbar – auch verkleinert auf
+              960 × 540 (etwa Sicht aus der letzten Reihe) nur mit Mühe;
+              220/8 war von hinten schon klar lesbar (Prüfung 20.10.2026)
+      100/0   ganzes Bild (Auflösung, danach Bildtafel)
+    data-fokus="63.5% 59.8%" ist der Fixpunkt des Zooms (bleibt stehen),
+    nicht die Logo-Mitte: so gerechnet, dass die Oval-Mitte in Schritt 0 bei
+    etwa x 960 / y 400 der Bühne steht (in Schritt 1 bei 1100 / 530). In der
+    Bildtafel (Schritt 3) steht der Fixpunkt waagerecht mittig, die Dose mit
+    dem Logo etwas links davon, der Shaker rechts. Unter y ≈ 940 von 1080
+    liegt nichts Wichtiges (Fußzeile). Werte und Rechnung: Kopfkommentar
+    der SVG-Datei.
+    Noch zu tun: mit zwei Personen testen, die das Bild nicht kennen – am
+    Beamer, eine davon in der letzten Reihe (verkleinert wirkt Unschärfe
+    schwächer). Erraten sie die Marke schon in Schritt 0: erste Stufe
+    unschärfer (z. B. 440/13). Lesen sie beim Hinweis „HOLY“ sofort ab:
+    zweite Stufe unschärfer (z. B. 220/12). Erraten sie sie auch beim
+    Hinweis nicht: zweite Stufe schärfer (z. B. 220/8).
+    Rückfall ohne Logo: bilder/raetsel-holy.svg (bleibt liegen) in marke.js
+    → raetselBild, data-fokus="60.1% 60.7%", Stufen z. B.
+    "300/40,170/14,100/0", Fußzeile „…, 19.10.2026“, Notizen anpassen.
+    EIGENES FOTO (optional): Datei nach bilder/ legen, in marke.js →
+    raetselBild eintragen, data-fokus auf ein typisches Detail setzen, die
+    Fußzeile ersetzen, z. B. „Foto: eigene Aufnahme · Verpackung © HOLY
+    Softdrinks GmbH“, und „· Dose fiktiv“ in der Einordnungszeile streichen. Fotos von HOLY aus dem Netz nicht verwenden (Rechte,
+    öffentliches Repository; QUELLEN.md §4).
     Die Pille „Platzhalterbild“ erscheint nur, solange der Dateiname
     „platzhalter“ enthält (js/folien/01-einstieg.js) – hier also nicht.
-    Noch zu tun: mit zwei Personen testen, die das Bild nicht kennen. Errät
-    bei 300/40 niemand etwas: Hinweisstufe ergänzen
-    (data-stufen="300/40,170/14,100/0"; am 19.10. auf einer Testkopie geprüft:
-    0 Fehler, zeigt die Umrisse von Dose und Shaker und eine pinke Frucht, kein Logo).
-    EIGENES FOTO (optional): Datei nach bilder/ legen, in marke.js →
-    raetselBild eintragen, data-fokus auf ein typisches, aber nicht
-    verräterisches Detail setzen (Tiergesicht, nicht den Schriftzug) und die
-    Fußzeile ersetzen, z. B. „Foto: eigene Aufnahme · Verpackung © HOLY
-    Softdrinks GmbH“. Fotos von HOLY aus dem Netz nicht verwenden (Rechte,
-    öffentliches Repository; QUELLEN.md §4).
 
-  LOGO (seit 16.10.2026, Wunsch der Gruppe): Mit der Auflösung (Schritt 1)
+  LOGO (seit 16.10.2026, Wunsch der Gruppe): Mit der Auflösung (Schritt 2)
   erscheint das offizielle HOLY-Logo im gelben Oval (marke.js → logoTitel,
   bilder/holy-logo-oval.png, unverändert, nur verkleinert) anstelle des
-  gesetzten Markennamens und bleibt auf der Titelfolie stehen. Im Rätsel
-  (Schritt 0) ist es nicht zu sehen. Quelle: Fußzeile („Logo © …“) und
-  QUELLEN.md. Ohne logoTitel ('') steht der Name in der Schrift des
-  Designsystems wie zuvor; die Logo-Zeile der Fußzeile verschwindet dann.
+  gesetzten Markennamens und bleibt auf der Titelfolie stehen. Seit
+  20.10.2026 steht dieselbe Datei zusätzlich auf der Dose im Rätselbild
+  (in der SVG eingebettet). Quelle: Fußzeile („Logo © …“) und QUELLEN.md.
+  Ohne logoTitel ('') steht der Name in der Schrift des Designsystems wie
+  zuvor. Die Logo-Zeile der Fußzeile bleibt trotzdem stehen, solange der
+  Dateiname des Rätselbilds „logo“ enthält (Logo auf der Dose,
+  js/folien/01-einstieg.js); mit einem Rätselbild ohne Logo verschwindet sie.
 
   SO ÄNDERN SIE DIE INHALTE
     • Rätselbild: marke.js → raetselBild (Bild in bilder/ legen; Nutzungsrechte
       klären und die Quelle unten in der Fußzeile nennen – class="quelle").
-    • Ausschnitt, auf den im Rätsel gezoomt wird UND der in der Bildtafel
-      (Schritt 2) mittig steht: data-fokus="60.1% 60.7%" (waagerecht senkrecht;
-      gilt für die Illustration, bei einem anderen Bild neu setzen).
-    • Mehr Hinweisstufen (z. B. ein Zwischenschritt „etwas schärfer“):
-      data-stufen="300/40,170/14,100/0" (Zoom in %/Unschärfe in px). Markenname
-      und Titel rücken dann automatisch einen Klick nach hinten
-      (js/folien/01-einstieg.js). Bitte die Absätze in den Notizen anpassen.
+    • Fixpunkt des Zooms UND Ausschnitt, der in der Bildtafel (Schritt 3)
+      mittig steht: data-fokus="63.5% 59.8%" (waagerecht senkrecht; gilt
+      für raetsel-holy-logo.svg, bei einem anderen Bild neu setzen).
+    • Stufen: data-stufen="440/11,220/10,100/0" (Zoom in %/Unschärfe in px;
+      letzte Stufe immer 100/0). Eine Stufe mehr oder weniger: Auflösung und
+      Titel rücken automatisch mit (js/folien/01-einstieg.js) – die
+      data-schritt-Absätze in den Notizen von Hand anpassen und die Zahl der
+      Klicks im Kasten „FOLIE 01“ und in den Notizen ändern.
     • Titel, Fallstudie, Veranstaltung, Dozent, Hochschule, Gruppe und Datum
       kommen aus marke.js – hier nichts eintippen.
     • Breite der Textspalte im Schlussbild: css/folien/01-einstieg.css →
@@ -225,18 +279,22 @@
 <section class="folie einstieg" id="f01" data-titel="Einstieg: Welche Marke steckt dahinter?" data-feld="leer" data-zeit="45" data-buendel="A" data-layout="vollbild" data-laufkopf="aus" data-modus="dunkel">
   <header class="folie-kopf einstieg-kopf">
 
-    <!-- Schritt 0: die Frage (weicht der Auflösung in Schritt 1) -->
+    <!-- Rätsel (Schritt 0 und Hinweis): die Frage – weicht der Auflösung -->
     <div class="einstieg-frage">
       <p class="kicker">Einstieg</p>
       <h2 class="titel einstieg-frage-titel">Welche Marke steckt dahinter?</h2>
       <p class="lead einstieg-frage-lead" data-anrede-sie="Ihr Tipp? Rufen Sie ihn einfach in den Raum." data-anrede-ihr="Euer Tipp? Ruft ihn einfach in den Raum.">Ihr Tipp? Rufen Sie ihn einfach in den Raum.</p>
     </div>
 
-    <!-- Schritt 1 und 2: Auflösung, dann Titelfolie. Die Titelzeile ist bis
-         Schritt 2 auf Höhe 0 zusammengeklappt – so steht der Markenname in
-         Schritt 1 unten und gleitet in Schritt 2 nach oben. -->
+    <!-- Auflösung, dann Titelfolie. Die Titelzeile ist bis zum Titel auf
+         Höhe 0 zusammengeklappt – so steht der Markenname in der Auflösung
+         unten und gleitet mit dem Titel nach oben.
+         data-schritt (hier und an Titelblock und Kopfzeile) setzt
+         js/folien/01-einstieg.js aus data-stufen: Auflösung = letzte
+         Rätselstufe, Titel einen Schritt später. Die eingetragenen Werte
+         (2 und 3, passend zu drei Stufen) gelten nur ohne Skript. -->
     <div class="einstieg-komposition">
-      <div class="einstieg-marke" data-schritt="1" data-einstieg-schritt="aufloesung" data-staffel="140" data-animation="hoch" data-verzoegerung="320">
+      <div class="einstieg-marke" data-schritt="2" data-einstieg-schritt="aufloesung" data-staffel="140" data-animation="hoch" data-verzoegerung="320">
         <p class="kicker einstieg-kicker">Auflösung</p>
         <!-- Markenname: Mit marke.js → logoTitel zeigt js/folien/01-einstieg.js hier
              das offizielle Logo (gelbes Oval) statt des Namens in Schrift. Der Name
@@ -244,7 +302,7 @@
         <p class="einstieg-markenname" data-animation="zoom" data-dauer="900"><span class="einstieg-markenname-text" data-marke></span></p>
       </div>
       <div class="einstieg-titelzeile">
-        <div class="einstieg-titelblock" data-schritt="2" data-einstieg-schritt="titel" data-staffel="110" data-animation="hoch" data-verzoegerung="420">
+        <div class="einstieg-titelblock" data-schritt="3" data-einstieg-schritt="titel" data-staffel="110" data-animation="hoch" data-verzoegerung="420">
           <h1 class="titel einstieg-titel"><span data-praesentation>Brand Persona &amp; Markenidentität</span></h1>
           <p class="lead einstieg-unterzeile"><span data-fallstudie>Fallstudie 1</span>&nbsp;· <span data-veranstaltung>Unternehmenskommunikation</span>&nbsp;· <span data-dozent>Prof. Dr. Daniel Stenger</span></p>
           <div class="angaben einstieg-angaben">
@@ -253,39 +311,49 @@
           </div>
           <!-- Einordnung (Metaangabe, zählt nicht zum Wortbudget): Wer nur das PDF
                oder eine einzelne Folie sieht, erkennt die studentische Arbeit.
-               Firmenname aus marke.js → unternehmen (Dossier Kap. 1 ✔ [2, 3]). -->
-          <p class="einstieg-einordnung" data-meta>Studentische Fallstudie · keine Verbindung zur <span data-unternehmen>HOLY Softdrinks GmbH</span></p>
+               Firmenname aus marke.js → unternehmen (Dossier Kap. 1 ✔ [2, 3]).
+               „Dose fiktiv“ (seit 20.10.2026): Die Dose in der Bildtafel trägt das
+               Original-Logo, ist aber erfunden – wer nur PDF oder Übersicht sieht,
+               soll sie nicht für ein echtes Produkt halten. Steht hier statt in der
+               Fußzeile, weil deren Zeilen nicht umbrechen und schon voll sind.
+               Passt in allen Themen in eine Zeile (gemessen 20.10.2026). -->
+          <p class="einstieg-einordnung" data-meta>Studentische Fallstudie · keine Verbindung zur <span data-unternehmen>HOLY Softdrinks GmbH</span> · Dose fiktiv</p>
         </div>
       </div>
     </div>
   </header>
 
   <div class="folie-inhalt">
-    <!-- Rätselbild: randlos (Schritt 0–1), im Schlussbild als Bildtafel rechts -->
+    <!-- Rätselbild: randlos (Rätsel, Hinweis, Auflösung), im Schlussbild (Titel)
+         als Bildtafel rechts. data-fortschritt="aus": keine Pille „Hinweis x von n“
+         (Begründung im Kommentar über der Folie) -->
     <div class="einstieg-bild">
-      <div class="raetsel" data-stufen="300/40,100/0" data-fokus="60.1% 60.7%" data-alt="Rätselbild zum Einstieg (Ausschnitt eines Markenmotivs)"></div>
+      <div class="raetsel" data-stufen="440/11,220/10,100/0" data-fokus="63.5% 59.8%" data-fortschritt="aus" data-alt="Rätselbild zum Einstieg (Ausschnitt eines Markenmotivs)"></div>
     </div>
     <!-- Kopfzeile des Schlussbilds (gleiche Linie wie die Laufkopfzeile der übrigen Folien) -->
-    <p class="einstieg-kopfzeile" data-meta data-schritt="2" data-einstieg-schritt="titel" data-animation="einblenden" data-verzoegerung="700"><span data-hochschule>Hochschule Kaiserslautern</span></p>
+    <p class="einstieg-kopfzeile" data-meta data-schritt="3" data-einstieg-schritt="titel" data-animation="einblenden" data-verzoegerung="700"><span data-hochschule>Hochschule Kaiserslautern</span></p>
   </div>
 
   <!-- Bild- und Logoquelle: erst ab der Auflösung sichtbar (sonst verraten sie
-       das Rätsel), rechts unten auf dem Bild. Die Logo-Zeile blendet das Skript
-       aus, wenn in marke.js kein logoTitel eingetragen ist. Bildzeile seit 19.10.2026
-       für die eigene Illustration – nicht verlängern (die Zeile bricht nicht um; mit
-       „· kein Originalprodukt“ lief sie über die Bühne). Mit eigenem Foto z. B.:
-       „Foto: eigene Aufnahme · Verpackung © HOLY Softdrinks GmbH“ -->
+       das Rätsel), rechts unten auf dem Bild. Seit 20.10.2026 gilt die Logo-Zeile
+       auch für das Logo auf der Dose im Rätselbild (dieselbe Datei). Das Skript
+       blendet sie nur aus, wenn weder logoTitel eingetragen ist noch der Dateiname
+       des Rätselbilds „logo“ enthält. Bildzeile für die
+       eigene Illustration (Fassung mit Logo vom 20.10.2026) – nicht verlängern (die
+       Zeile bricht nicht um; mit „· kein Originalprodukt“ lief sie über die Bühne).
+       Mit eigenem Foto z. B.: „Foto: eigene Aufnahme · Verpackung © HOLY Softdrinks GmbH“ -->
   <footer class="folie-fuss einstieg-fuss">
-    <p class="quelle"><span class="einstieg-quelle-logo">Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)</span><span class="einstieg-quelle-bild">Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026</span></p>
+    <p class="quelle"><span class="einstieg-quelle-logo">Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)</span><span class="einstieg-quelle-bild">Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 20.10.2026</span></p>
   </footer>
 
   <aside class="notizen">
     <p><b>Ziel (45 s):</b> Publikum sofort einbinden, dann Thema und Gruppe nennen. Ruhig sprechen, Pausen aushalten.</p>
-    <p data-schritt="0"><b>Frage stellen (ca. 15 s):</b> „Bevor wir anfangen – ein kurzes Rätsel: Welche Marke steckt hinter diesem Bild? Rufen Sie Ihren Tipp einfach in den Raum.“ – 5 bis 10 Sekunden warten, zwei, drei Zurufe aufgreifen („Ich höre … und …“). Erst dann klicken.</p>
-    <p data-schritt="1"><b>Auflösen (ca. 10 s):</b> Das Logo erscheint. „Es ist <span data-marke></span> – 2020 in Berlin gegründet, seit 2021 auf dem Markt.“ Wer richtig getippt hat: kurz würdigen. <i>(Fakt: Dossier Kap. 2.1 ✔ [3, 4]. Die Gaming-Herkunft erst auf Folie 02 erzählen.)</i></p>
-    <p data-schritt="2"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02. <i>Mit der optionalen Wortwolke 01b stattdessen überleiten: „Vorher noch eine Frage an Sie: Was verbinden Sie mit <span data-marke></span>?“ – nicht zweimal hintereinander zum Zurufen auffordern.</i></p>
-    <p>Technik: Weiter mit Clicker, Pfeiltaste oder Leertaste; zurück nimmt die Schritte wieder zurück. Die Bildquelle erscheint erst mit der Auflösung.</p>
-    <p><b>Vor dem Vortrag (bis Fr, 23.10.):</b> Das Rätselbild ist seit 19.10.2026 eine eigene Illustration (KI-gestützt, kein Foto, ohne Logo und Schrift): Pappdose mit Drachenfrucht auf dem Etikett, Shaker, Drachenfrucht vor <span data-marke></span>-Gelb. Rückfrage „Ist das eine echte Dose?“ – „Nein, eine Illustration, die die KI (Claude Code) nach unseren Vorgaben als Vektorgrafik gezeichnet hat; kein Foto, kein Logo, keine echte Verpackung. Farben und Bildstil sind an den Auftritt der Marke angelehnt.“ Rückfrage „Warum kein Tier auf der Dose?“ – „<span data-marke></span> gibt jeder Energy-Sorte ein eigenes Comic-Tier; jedes gezeichnete Tier hätte eine echte Sorte nachbilden können.“ (Dossier 6.3 ✔ [30]; die erste Fassung zeigte einen Tukan – den gibt es als Sorte „Thai Lime Toucan“, Websuche 19.10.2026, nicht im Dossier.) Mit zwei Personen testen, die das Bild nicht kennen: Errät bei 300/40 niemand etwas, eine Hinweisstufe ergänzen (data-stufen="300/40,170/14,100/0") und hier einen Absatz „Hinweis“ ergänzen. Eigenes Foto statt der Illustration: in marke.js → raetselBild eintragen, data-fokus neu setzen, Fußzeile ändern.</p>
+    <p data-schritt="0"><b>Frage stellen (ca. 10 s):</b> Zu sehen: ein gelbes Oval mit hellem Schriftzug, stark vergrößert und unscharf. „Bevor wir anfangen – ein kurzes Rätsel: Was sehen Sie? Welche Marke steckt dahinter? Rufen Sie Ihren Tipp einfach in den Raum.“ – 3 bis 5 Sekunden warten, Zurufe aufgreifen („Ich höre … und …“). Dann klicken (Klick 1 von 3 auf dieser Folie).</p>
+    <p data-schritt="1"><b>Hinweis (ca. 7 s):</b> Das Bild wird schärfer, die Dose ist zu sehen, die Schrift fast lesbar. „Etwas schärfer – was sehen Sie jetzt?“ – kurz warten. Kommt nichts: „Vier Buchstaben auf einem gelben Oval – auf einer Dose.“ Zurufe aufgreifen, dann klicken (Klick 2).</p>
+    <p data-schritt="2"><b>Auflösen (ca. 8 s):</b> Groß das Logo, daneben die Illustration mit dem Logo auf der Dose. „Es ist <span data-marke></span> – 2020 in Berlin gegründet, seit 2021 auf dem Markt.“ Wer richtig getippt hat: kurz würdigen. Dann klicken (Klick 3, Titel). <i>(Fakt: Dossier Kap. 2.1 ✔ [3, 4]. Die Gaming-Herkunft erst auf Folie 02 erzählen.)</i></p>
+    <p data-schritt="3"><b>Thema nennen (ca. 20 s):</b> „Wir sind <span data-gruppe></span>. In unserer Fallstudie erarbeiten wir die Brand Persona und die Markenidentität von <span data-marke></span> – mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools. Zuerst: unsere Leitfrage und unser Vorgehen.“ → weiter zu Folie 02. <i>Mit der optionalen Wortwolke 01b stattdessen überleiten: „Vorher noch eine Frage an Sie: Was verbinden Sie mit <span data-marke></span>?“ – nicht zweimal hintereinander zum Zurufen auffordern.</i></p>
+    <p>Technik: Drei Klicks auf dieser Folie (Hinweis → Auflösung → Titel), der vierte führt zu Folie 02. Weiter mit Clicker, Pfeiltaste oder Leertaste; zurück nimmt die Schritte wieder zurück. Die Folie zeigt bewusst keinen Stand („Hinweis x von n“) – das Publikum soll raten, nicht abwarten. Die Bild- und Logoquelle erscheint erst mit der Auflösung.</p>
+    <p><b>Vor dem Vortrag (bis Fr, 23.10.):</b> Das Rätselbild ist seit Di, 20.10.2026 die eigene Illustration (KI-gestützt, kein Foto) mit dem Original-Logo auf der Dose (Entscheidung Yannick; vorher ohne Logo – das Publikum hatte keine Chance): Pappdose, groß das Logo, darunter eine kleine Drachenfrucht, Shaker, Drachenfrucht vor <span data-marke></span>-Gelb. Rückfrage „Ist das eine echte Dose?“ – „Nein, eine Illustration, die die KI (Claude Code) nach unseren Vorgaben als Vektorgrafik gezeichnet hat. Nur das Logo ist das Original von der Website der Marke, unverändert eingesetzt; Dose und Etikett sind keine echte Verpackung.“ Rückfrage „Dürft ihr das Logo verwenden?“ – „Das Logo ist unverändert von der Website der Marke übernommen und in der Fußzeile mit Quelle gekennzeichnet; die Dose drumherum ist erfunden, deshalb steht auf der Titelfolie ‚Dose fiktiv‘.“ <i>Ob das so in Ordnung ist – Original-Logo auf einer erfundenen Dose, im Rätsel unscharf –, klärt die Gruppe mit dem Betreuer (offen, LIESMICH 12); vor dem Vortrag das Ergebnis hier eintragen. Lehnt er ab: Rückfall ohne Logo (Anleitung „RÄTSELBILD“).</i> Rückfrage „Warum kein Tier auf der Dose?“ – „<span data-marke></span> gibt jeder Energy-Sorte ein eigenes Comic-Tier; jedes gezeichnete Tier hätte eine echte Sorte nachbilden können.“ (Dossier 6.3 ✔ [30]; die erste Fassung zeigte einen Tukan – den gibt es als Sorte „Thai Lime Toucan“, Websuche 19.10.2026, nicht im Dossier.) Mit zwei Personen testen, die das Bild nicht kennen – am Beamer, eine davon in der letzten Reihe: Erraten sie die Marke schon in Schritt 0, die erste Stufe unschärfer machen (data-stufen="440/13,220/10,100/0"); lesen sie beim Hinweis „HOLY“ sofort ab, die zweite unschärfer (220/12); erraten sie sie auch beim Hinweis nicht, die zweite schärfer (220/8). Rückfall ohne Logo und eigenes Foto: Anleitung „RÄTSELBILD“ im Kommentar über der Folie.</p>
   </aside>
 </section>
 

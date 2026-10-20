@@ -117,7 +117,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | Chamäleon in Folie 08 (Titel, Karte, Sprechtexte, Rückfragen), Abstimmung, Zeichnungen, 08b/09b/10/11/12-Notizen, limbic-map, Doku; Feld Tonalität Folie 10: Entscheidung offen |
 | 96 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18 | nur Nachweis committet; D18 läuft |
 | 97 | 20.10.2026 | Yannick | Folie 01: Logo-Rätsel anpassen, momentan nicht erkennbar | – | Ursache ermittelt (Rätselbild ohne Logo, nur zwei Stufen); Rückfrage zum Ansatz; Umsetzung nach D18 |
-| 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Workflow-Skript D19 vorbereitet; Start nach Ende von D18 |
+| 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Folie 01: Rätsel mit großem, unscharfem Original-Logo (2 Rätselstufen), Auflösung mit Illustration mit Logo auf der Dose; Exporte neu |
 | 99 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18, D19 | nur Nachweis committet; D18 läuft, D19 wartet |
 | 100 | 20.10.2026 | Yannick | „Arbeite weiter“ + Abstimmung nach einer gewissen Zeit zurücksetzen + Folien des Profs im Ordner unterlagen/ committet | D19 (neu gestartet), D20 (geplant) | D19 nach Nutzungslimit neu gestartet; zeitliches Zurücksetzen geplant; Hinweis zu Urheberrecht/öffentlichem Repo |
 | 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
@@ -1743,7 +1743,9 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   rechts die Illustration mit Logo. Die frühere eigene Regel „Illustrationen ohne Logo“ ist damit auf Entscheidung von
   Yannick für Folie 01 aufgehoben; Kennzeichnung (© HOLY) und offene Betreuer-Klärung zu Logos bleiben. Workflow D19
   vorbereitet (Bau, zwei Prüfer, Nacharbeit); Start erst nach Ende von D18, weil beide dieselben Dateien ändern.
-- **Ergebnis:** in Arbeit (D19 nach Ende von D18 gestartet)
+- **Ergebnis (nachgetragen nach Ende von D19):** umgesetzt und geprüft (Details unter D19). Offen: Rätsel mit zwei
+  Personen testen, Übergang auf dem Vortragsrechner ansehen, Logo-Nutzung mit dem Betreuer klären, B7-Zeile zu
+  Logos anpassen.
 - **Unteragenten:** D19
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1857,7 +1859,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
 | D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
 | D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
-| D19 | 20.10.2026 | 98 | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | *läuft* | – |
+| D19 | 20.10.2026 | 98 (neu gestartet nach 100, fortgesetzt nach 102) | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | Rätselbild mit Logo (data-URI), Stufen 440/11 → 220/10 → 100/0, Kennzeichnung, Doku; 2 Prüfer (3 mittlere Befunde) umgesetzt | Claude: Stufenbilder und Folienbild f01 angesehen, Diff und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
@@ -2433,6 +2435,34 @@ steht hier mit dem wörtlichen Auftrag.
   Chamäleon-Zeichnung, Fußzeile); `live-abstimmung-test.mjs` 44/44; `git diff --name-only` auf gesperrte Dateien
   (Recherche-Dossier, Dossier Bündel B, Gründerbefragung, Apps Script unverändert) und Modellbezeichnungen geprüft.
   Inhaltliche Prüfung der Begründung durch Elias steht aus.
+
+### D19 – 20.10.2026 – ausgelöst durch Prompt 98 (neu gestartet nach 100, fortgesetzt nach 102)
+
+- **Art:** Workflow „logo-raetsel“, vier Unteragenten: Bau, zwei Prüfer (Rätsel und Darstellung; Rechte,
+  Kennzeichnung, Doku), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_logo-raetsel.js`](workflows/2026-10-20_logo-raetsel.js).
+- **Vorgaben:** Entscheidung Yannick wörtlich („Groß das Logo und daneben bei der Auflösung dann die illustration
+  mit logo“); Original-Logo `bilder/holy-logo-oval.png` unverändert (nur skaliert, als data-URI eingebettet);
+  nur Folie 01 und zugehörige Stellen; Kennzeichnung; kein Commit.
+- **Unterbrechungen:** zweimal am Nutzungslimit (erst sofort, dann vor der Nacharbeit); jeweils per resume
+  fortgesetzt, ohne Teiländerungen der abgebrochenen Agenten.
+- **Ergebnis:**
+  - **Bild:** `bilder/raetsel-holy-logo.svg` – die Illustration vom 19.10. mit dem Original-Logo groß auf dem
+    Etikett, darunter eine kleine Drachenfrucht; `raetsel-holy.svg` bleibt als Rückfall.
+  - **Rätsel:** `data-stufen="440/11,220/10,100/0"`: Schritt 0 zeigt das Logo-Oval fast bühnenfüllend und unscharf
+    (Form und Farben erkennbar, Schrift nicht lesbar), Klick 1 den Hinweis (Dose und Shaker erkennbar, „HOLY“ fast
+    lesbar – nach Prüferbefund von 220/8 auf 220/10 unschärfer gestellt, auch für die letzte Reihe), Klick 2 die
+    Auflösung, Klick 3 die Titelfolie mit der Illustration rechts. Pille „Hinweis x von n“ abgeschaltet.
+  - **Kennzeichnung und Rechte:** Fußzeile „Logo © HOLY Softdrinks GmbH …“ bleibt immer sichtbar, solange das
+    Rätselbild ein Logo enthält; Bildzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 20.10.2026“;
+    Einordnungszeile „… · Dose fiktiv“; QUELLEN §3/§4 mit Ausnahme für Folie 01 (Entscheidung Yannick, Nachweis
+    Nr. 98) und konkreter Frage an den Betreuer (LIESMICH 12).
+  - **Technik:** Titel-Logo wird synchron dekodiert (sonst fehlte es im ersten Bild der Auflösung); Bildrate des
+    Zooms gemessen, nicht schlechter als vorher (nur headless).
+  - **Exporte:** PDF 22 Seiten, 23 Folienbilder (nur f01 geändert), Übersicht 20.10.2026.
+- **Wie Claude das Ergebnis geprüft hat:** Stufenbilder f01_s0–s2 und `export/folien/f01.png` selbst angesehen
+  (Logo in Stufe 0 als Oval erkennbar, nicht lesbar; Hinweis fast lesbar; Auflösung und Titelfolie mit Logo auf der
+  Dose, Fußzeile zweizeilig); Diff-Umfang und Modellbezeichnungen geprüft. Offen: Test mit zwei Personen, Beamer.
 
 ---
 
