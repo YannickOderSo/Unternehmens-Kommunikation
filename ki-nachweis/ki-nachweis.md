@@ -1739,8 +1739,8 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   rechts die Illustration mit Logo. Die frühere eigene Regel „Illustrationen ohne Logo“ ist damit auf Entscheidung von
   Yannick für Folie 01 aufgehoben; Kennzeichnung (© HOLY) und offene Betreuer-Klärung zu Logos bleiben. Workflow D19
   vorbereitet (Bau, zwei Prüfer, Nacharbeit); Start erst nach Ende von D18, weil beide dieselben Dateien ändern.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D19 (geplant)
+- **Ergebnis:** in Arbeit (D19 nach Ende von D18 gestartet)
+- **Unteragenten:** D19
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 99 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -1782,6 +1782,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
 | D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
 | D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
+| D19 | 20.10.2026 | 98 | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
