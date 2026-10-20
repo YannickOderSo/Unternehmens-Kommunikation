@@ -122,6 +122,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 100 | 20.10.2026 | Yannick | „Arbeite weiter“ + Abstimmung nach einer gewissen Zeit zurücksetzen + Folien des Profs im Ordner unterlagen/ committet | D19 (neu gestartet), D20 (geplant) | D19 nach Nutzungslimit neu gestartet; zeitliches Zurücksetzen geplant; Hinweis zu Urheberrecht/öffentlichem Repo |
 | 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
 | 102 | 20.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D19, D21 (fortgesetzt) | D19 (Nacharbeit) und D21 (Abgleich Begriffe/Quellen, Prüfung, Bericht) nach dem Limit fortgesetzt |
+| 103 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D19, D21 | nur Nachweis committet; D19 und D21 laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1815,6 +1816,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D19, D21 (fortgesetzt), D20 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 103 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D19 (Folie 01) folgen nach
+  Nacharbeit und eigener Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D19, D21 (laufen)
 ---
 
 ## 2. Delegationen an Unteragenten
