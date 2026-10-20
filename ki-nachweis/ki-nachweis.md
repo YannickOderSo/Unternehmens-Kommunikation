@@ -119,6 +119,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 97 | 20.10.2026 | Yannick | Folie 01: Logo-Rätsel anpassen, momentan nicht erkennbar | – | Ursache ermittelt (Rätselbild ohne Logo, nur zwei Stufen); Rückfrage zum Ansatz; Umsetzung nach D18 |
 | 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Workflow-Skript D19 vorbereitet; Start nach Ende von D18 |
 | 99 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18, D19 | nur Nachweis committet; D18 läuft, D19 wartet |
+| 100 | 20.10.2026 | Yannick | „Arbeite weiter“ + Abstimmung nach einer gewissen Zeit zurücksetzen + Folien des Profs im Ordner unterlagen/ committet | D19 (neu gestartet), D20 (geplant) | D19 nach Nutzungslimit neu gestartet; zeitliches Zurücksetzen geplant; Hinweis zu Urheberrecht/öffentlichem Repo |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1751,6 +1752,28 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D18 läuft noch, D19 startet danach.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D18 (läuft), D19 (geplant)
+
+### 100 – 20.10.2026 – Yannick
+
+> Arbeite weiter + 2 Anmerkungen:
+> - Die Abstimmung sollte reseted werden nach einer gewissen Zeit damit bei der Präsentation keine alten Stimmen
+>   dastehen
+> - Ich habe mal sämtliche Folien vom Prof in den Unterlagen Ordner Committed
+
+(Vorher hat Yannick lokal `/usage` ausgeführt – Kostenübersicht der Sitzung, kein Prompt an Claude.)
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Yannicks Commit `abe1fb0` („Add files via upload“: `unterlagen/Stenger Folien.pdf`, 129 Seiten, 12,9 MB, Scan
+    vom iPhone) per Fast-Forward übernommen.
+  - D19 war sofort am Nutzungslimit gescheitert (keine Dateiänderungen); nach dem Reset neu gestartet.
+  - Zeitliches Zurücksetzen der Abstimmung als nächstes Paket (D20) geplant, nach D19, weil beide `marke.js`,
+    LIESMICH und AUTOREN ändern.
+  - Hinweis an Yannick: Das Repository und GitHub Pages sind öffentlich – die Vorlesungsfolien sind damit für alle
+    abrufbar (Urheberrecht des Dozenten); Rückfrage, ob sie entfernt bzw. nur im Gruppenordner abgelegt werden
+    sollen, und ob der Abgleich der Modellbegriffe mit den Folien das nächste Paket ist.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19 (neu gestartet)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
