@@ -117,6 +117,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | in Arbeit: Chamäleon in Folie 08, Folie 10, Abstimmung und Ausarbeitungen |
 | 96 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18 | nur Nachweis committet; D18 läuft |
 | 97 | 20.10.2026 | Yannick | Folie 01: Logo-Rätsel anpassen, momentan nicht erkennbar | – | Ursache ermittelt (Rätselbild ohne Logo, nur zwei Stufen); Rückfrage zum Ansatz; Umsetzung nach D18 |
+| 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Workflow-Skript D19 vorbereitet; Start nach Ende von D18 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1722,6 +1723,21 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   `marke.js` und die Doku ändern.
 - **Ergebnis:** Rückfrage
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 98 – 20.10.2026 – Yannick (Antwort auf eine Rückfrage von Claude)
+
+> Frage: „Wie soll das Rätsel auf Folie 01 funktionieren? …“ – Antwort (eigener Text): **„Groß das Logo und daneben
+> bei der Auflösung dann die illustration mit logo“**
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):** Umsetzung festgelegt: Die Illustration bekommt das Original-Logo
+  (`bilder/holy-logo-oval.png`, unverändert, als data-URI eingebettet) groß auf die Dose; das Rätsel zoomt in Schritt 0
+  groß und unscharf auf dieses Logo, mit mindestens einer Zwischenstufe; die Auflösung zeigt links Titel und Logo,
+  rechts die Illustration mit Logo. Die frühere eigene Regel „Illustrationen ohne Logo“ ist damit auf Entscheidung von
+  Yannick für Folie 01 aufgehoben; Kennzeichnung (© HOLY) und offene Betreuer-Klärung zu Logos bleiben. Workflow D19
+  vorbereitet (Bau, zwei Prüfer, Nacharbeit); Start erst nach Ende von D18, weil beide dieselben Dateien ändern.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
