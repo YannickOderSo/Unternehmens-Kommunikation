@@ -120,6 +120,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Workflow-Skript D19 vorbereitet; Start nach Ende von D18 |
 | 99 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18, D19 | nur Nachweis committet; D18 läuft, D19 wartet |
 | 100 | 20.10.2026 | Yannick | „Arbeite weiter“ + Abstimmung nach einer gewissen Zeit zurücksetzen + Folien des Profs im Ordner unterlagen/ committet | D19 (neu gestartet), D20 (geplant) | D19 nach Nutzungslimit neu gestartet; zeitliches Zurücksetzen geplant; Hinweis zu Urheberrecht/öffentlichem Repo |
+| 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1774,6 +1775,32 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D19 (neu gestartet)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 101 – 20.10.2026 – Yannick (Antworten auf drei Rückfragen von Claude)
+
+> Frage 1: „Das Repository und die GitHub-Pages-Seite sind öffentlich – die 129 Vorlesungsfolien von Prof. Stenger
+> kann dort jetzt jeder herunterladen (Urheberrecht des Dozenten). Was soll mit der Datei passieren?“ – Antwort
+> (Auswahl): **„Drin lassen“**
+>
+> Frage 2: „Nach welcher Zeit sollen Stimmen auf Folie 08 nicht mehr zählen (automatisches Zurücksetzen)?“ – Antwort
+> (Auswahl): **„Nach 30 Minuten (Empfohlen)“**
+>
+> Frage 3: „Soll ich nach Logo-Rätsel und Zurücksetzen als nächstes Paket alle Modellbegriffe mit den
+> Vorlesungsfolien abgleichen …?“ – Antwort (Auswahl): **„Ja, als nächstes (Empfohlen)“**
+
+- **Vorgehen Claude:**
+  - Folien bleiben im Repository (Entscheidung Yannick; Hinweis auf Öffentlichkeit gegeben).
+  - Vorlesungstext seitenweise extrahiert (`pdftotext`, 129 Seiten; Arbeitskopie im Scratchpad). Erste Sichtung:
+    Aufgabenstellung Fallstudie 1 auf S. 60 (Brand Persona mit fünf Bereichen, Limbic Map, Repertory Grid,
+    Laddering, Analogiemethoden, Zusammenführung im Markensteuerrad nach Esch), Limbic Map nach Häusel S. 69–71/93,
+    Markensteuerrad S. 87–89, Positionierung S. 92–94.
+  - **Workflow D21** (Abgleich, nur Bericht `abgleich-vorlesung.md`, keine inhaltlichen Änderungen) parallel zu D19
+    gestartet, weil er nur liest.
+  - **D20** (Stimmen zählen nur 30 Minuten) folgt nach D19, weil beide `marke.js`, LIESMICH und AUTOREN ändern; die
+    Funktion braucht die zurückgestellte Aktualisierung des Apps Script.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19 (läuft), D21 (läuft), D20 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1806,6 +1833,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
 | D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
 | D19 | 20.10.2026 | 98 | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | *läuft* | – |
+| D21 | 20.10.2026 | 101 | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
