@@ -111,6 +111,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 89 | 19.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D17 (neu gestartet) | D17 war am Nutzungslimit vollständig gescheitert; mit Hinweis auf Teiländerungen neu gestartet |
 | 90 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
 | 91 | 20.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D17 (fortgesetzt) | D17: 6 von 7 Agenten fertig, Nacharbeit am Limit abgebrochen; mit Hinweis auf Teiländerungen fortgesetzt |
+| 92 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17-Nacharbeit läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1629,6 +1630,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D17 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 92 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D17 folgen nach Nacharbeit und
+  eigener Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D17 (Nacharbeit läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
