@@ -121,6 +121,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 99 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18, D19 | nur Nachweis committet; D18 läuft, D19 wartet |
 | 100 | 20.10.2026 | Yannick | „Arbeite weiter“ + Abstimmung nach einer gewissen Zeit zurücksetzen + Folien des Profs im Ordner unterlagen/ committet | D19 (neu gestartet), D20 (geplant) | D19 nach Nutzungslimit neu gestartet; zeitliches Zurücksetzen geplant; Hinweis zu Urheberrecht/öffentlichem Repo |
 | 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
+| 102 | 20.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D19, D21 (fortgesetzt) | D19 (Nacharbeit) und D21 (Abgleich Begriffe/Quellen, Prüfung, Bericht) nach dem Limit fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1800,6 +1801,19 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     Funktion braucht die zurückgestellte Aktualisierung des Apps Script.
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D19 (läuft), D21 (läuft), D20 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 102 – 20.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Anlass:** Beide Workflows sind am Nutzungslimit stehen geblieben: D19 nach Bau und zwei Prüfern (Nacharbeit
+  fehlt), D21 nach Auswertung und vier von fünf Abgleich-Bereichen (fehlen: Begriffe/Quellen, Gegenprüfung,
+  Bericht). Die abgebrochenen Agenten hatten keine Dateien geändert (Transkripte geprüft).
+- **Vorgehen Claude:** D19 und D21 per resume fortgesetzt; fertige Agenten kommen aus dem Zwischenspeicher.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19, D21 (fortgesetzt), D20 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
