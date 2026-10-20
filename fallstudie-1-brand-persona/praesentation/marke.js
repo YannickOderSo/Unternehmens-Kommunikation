@@ -138,22 +138,28 @@ window.MARKE = {
   umfragen: {
     tier: {
       frage: 'Wenn [Marke] ein Tier wäre – welches?',
-      // Antwortoptionen (festgelegt von Yannick, 19.10.2026): „Waschbär“ =
-      // unsere Analyse, „Adler“ = Selbstbild (Maskottchen „Raptor“) – beide
-      // verlangt Folie 08, sonst Hinweis in deren Notizen. Reihenfolge = Knöpfe
-      // auf der Abstimmseite, Ziffern 1–5 und Nummern 0–4 in der Tabelle
-      // (Spalte „Option“; bei Weg B: Reihenfolge im Werkzeug). Nach den ersten
-      // echten Stimmen Reihenfolge nicht mehr ändern – sonst zählen sie fürs falsche Tier.
-      optionen: ['Adler', 'Löwe', 'Waschbär', 'Fuchs', 'Schwan'],
+      // Antwortoptionen (festgelegt von Yannick, 19.10.2026; seit 20.10.2026
+      // „Chamäleon“ statt „Waschbär“ an derselben Stelle): „Chamäleon“ =
+      // unsere Analyse (Einordnung Elias Knauber, Bündel C), „Adler“ =
+      // Selbstbild (Maskottchen „Raptor“) – beide verlangt Folie 08, sonst
+      // Hinweis in deren Notizen. Reihenfolge = Knöpfe auf der Abstimmseite,
+      // Ziffern 1–5 und Nummern 0–4 in der Tabelle (Spalte „Option“; bei Weg B:
+      // Reihenfolge im Werkzeug). Nach den ersten echten Stimmen Reihenfolge
+      // nicht mehr ändern – sonst zählen sie fürs falsche Tier.
+      // Hinweis zum Wechsel: Die Tabelle speichert nur die Nummer. Probestimmen
+      // mit Option 2 (Runde 'probe', abgegeben für den Waschbär) zählen jetzt
+      // als Chamäleon – unkritisch, die Runde wird vor dem Vortrag ohnehin
+      // auf 'vortrag-2026-10-26' umgestellt.
+      optionen: ['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan'],
       link: 'https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/abstimmen.html?u=tier',
       kurzLink: '',                                             // leer = keine Zeile unter dem QR-Code (Weg B: z. B. 'particify.de/p/12345678')
       ergebnisLink: '',                                         // nur Weg B: Ergebnisseite des Werkzeugs
       liveQuelle: 'https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec', // Web-App (eingerichtet von Yannick, 19.10.2026) – leer = aus
       runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-26'
-      unsereAntwort: 'Waschbär',                                // Ergebnis unserer Analyse (Folie 08, Titel)
+      unsereAntwort: 'Chamäleon',                               // Ergebnis unserer Analyse (Folie 08, Titel; seit 20.10.2026)
       // Satz der großen Aussagezahl; {prozent} und {antwort} werden ersetzt
       aussage: '{prozent} sehen [Marke] wie wir: als {antwort}',
-      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen; Adler, Löwe, Waschbär, Fuchs, Schwan)
+      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen; Adler, Löwe, Chamäleon, Fuchs, Schwan)
     }
   },
 

@@ -694,7 +694,7 @@ function ereignisBauen(parameter) {
    2. PRÜFUNGEN
    ============================================================================= */
 
-const OPT = ['Adler', 'Löwe', 'Waschbär', 'Fuchs', 'Schwan'];
+const OPT = ['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan'];   // wie marke.js → umfragen.tier.optionen (seit 20.10.2026 Chamäleon statt Waschbär); hier zählt nur die Anzahl
 const N = String(OPT.length);
 const KOPF = ['Zeit', 'Runde', 'Umfrage', 'Option', 'Geraet'];
 const FORMATE = ['dd.mm.yyyy hh:mm:ss', '@', '@', '0', '@'];

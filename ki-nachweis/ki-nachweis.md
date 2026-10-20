@@ -114,7 +114,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 92 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17-Nacharbeit läuft |
 | 93 | 20.10.2026 | Yannick | „Wir sind höchstens 20 Leute …“: kein Lasttest mit 60, kein Plan-B-PDF | – | Lasttest mit 20 gegen die alte Fassung (20/20 gezählt, 6 über 15 s); Entscheidungen in ANLEITUNG, LIESMICH, AUTOREN, Testwerkzeug |
 | 94 | 20.10.2026 | Yannick | Skript-Aktualisierung zurückstellen; HOLY laut Elias eher Chamäleon → Abstimmung, Folie und Analyse ändern | – | Umfang ermittelt (Folie 08, Folie 10, Abstimmseite, Ausarbeitungen); Rückfragen zu Begründung und Tierauswahl |
-| 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | in Arbeit: Chamäleon in Folie 08, Folie 10, Abstimmung und Ausarbeitungen |
+| 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | Chamäleon in Folie 08 (Titel, Karte, Sprechtexte, Rückfragen), Abstimmung, Zeichnungen, 08b/09b/10/11/12-Notizen, limbic-map, Doku; Feld Tonalität Folie 10: Entscheidung offen |
 | 96 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18 | nur Nachweis committet; D18 läuft |
 | 97 | 20.10.2026 | Yannick | Folie 01: Logo-Rätsel anpassen, momentan nicht erkennbar | – | Ursache ermittelt (Rätselbild ohne Logo, nur zwei Stufen); Rückfrage zum Ansatz; Umsetzung nach D18 |
 | 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Workflow-Skript D19 vorbereitet; Start nach Ende von D18 |
@@ -1699,8 +1699,10 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Doku) und Chamäleon-Zeichnung (Folie und Abstimmseite) parallel, zwei Prüfer (Inhalt/Belege/Kennzeichnung;
   Darstellung), Nacharbeit mit Exporten. Begründung nur mit Dossier-Belegen, gekennzeichnet als Vorschlag; Lukas'
   Dossier und das Recherche-Dossier bleiben unverändert; Live-Abstimmung technisch unverändert.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D18 (läuft)
+- **Ergebnis (nachgetragen nach Ende von D18):** umgesetzt und geprüft (Details unter D18). Offen: Elias prüft die
+  vorgeschlagene Begründung; Lukas gleicht die Analogie-Befragung ab; Entscheidung Yannick, ob das Chamäleon auch
+  ins Feld Tonalität auf Folie 10 kommt.
+- **Unteragenten:** D18
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 96 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -1779,7 +1781,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
 | D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
 | D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
-| D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | *läuft* | – |
+| D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -2319,6 +2321,41 @@ steht hier mit dem wörtlichen Auftrag.
   Nach dem Push: echter Ende-zu-Ende-Test über GitHub Pages mit der neuen Abstimmseite gegen die noch alte
   Server-Fassung (Abwärtsverträglichkeit): „Danke“ nach 3,3 s, Folie zeigte die Stimme (Runde 'probe', zweite
   Teststimme in Yannicks Tabelle). Raw-Link liefert die neue Fassung (Kennwort „SPEICHERN BEI ANDRANG“ gefunden).
+
+### D18 – 20.10.2026 – ausgelöst durch Prompt 95
+
+- **Art:** Workflow „chamaeleon“, fünf Unteragenten in drei Phasen: Inhalt und Begründung sowie Zeichnungen parallel,
+  zwei Prüfer (Inhalt, Belege, Kennzeichnung, Konsistenz; Darstellung), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_chamaeleon.js`](workflows/2026-10-20_chamaeleon.js).
+- **Vorgaben:** Einordnung von Elias Knauber (Bündel C); Begründung als Vorschlag (KI-gestützt) nur aus dem
+  Recherche-Dossier mit Kapitel und Faktenstatus, von Elias zu prüfen; Chamäleon = Hypothese (H); Dossier-Hypothese
+  6.7 („Waschbär oder Affe“) bleibt als früherer Stand; nicht ändern: Recherche-Dossier, Dossier Bündel B,
+  Gründerbefragung, KI-Nachweis, Apps Script; kein Commit.
+- **Ergebnis:**
+  - **Folie 08:** Titel „HOLY wäre ein Chamäleon, kein Adler“; Karte „Als Tier: Chamäleon“ mit drei Gründen
+    (wandelbar – 31 Energy-Sorten; vielseitig – Wacken, CSD, Simpsons; frech – „Gefährlich geil!“; Belege in der
+    Fußzeile Kap. 3.1, 4.1, 6.2, 6.3, 6.6 ✔); Sprechtexte (Schritt 2 „Warum Chamäleon?“ ca. 20 s, Sollzeit 70 s
+    gehalten); neue Rückfragen (ohne festen Kern?, viele Sorten = Wandel?, trotzdem der Raptor?, aus eurer
+    Befragung?, tarnt sich ein Chamäleon nicht?); Kasten mit Kennzeichnung und offenen Punkten.
+  - **Kernaussage der Begründung:** Das Chamäleon ersetzt den frechen Ton nicht, sondern beschreibt den Auftritt:
+    „wandelbar in Farbe, Sorte und Szene – im Ton immer frech“; der Markenkern (Folie 10) ist nicht betroffen;
+    unterschiedliche Fassungen je Kanal gelten als Schwäche (Folie 9b, Empfehlung 3), nicht als Stärke.
+  - **Weitere Folien:** Notizen bzw. Kästen auf 08b, 09b, 10 (Sprechtext Schritt 5 „wandelbar wie ein Chamäleon“),
+    11, 12; Aaker-Profil (08b) und Rad (10) inhaltlich unverändert.
+  - **Abstimmung:** `marke.js` → Optionen Adler, Löwe, Chamäleon, Fuchs, Schwan (Nummer 2 wie vorher der Waschbär),
+    `unsereAntwort` Chamäleon; Chamäleon-Zeichnung in `js/folien/08-analogien.js` und `js/abstimmen.js` (eigene
+    Gestaltung, Strichzeichnung).
+  - **Ausarbeitungen und Doku:** `limbic-map.md` (Zeile Maskottchen, Nachtrag 4.1), QUELLEN §3/§5, LIESMICH 6/11/12/13,
+    ANLEITUNG, AUTOREN §18; folienentwuerfe/markenkompetenz/persona-steckbrief geprüft, dort kein Tier.
+  - **Prüfer:** 0 hohe, 6 mittlere Befunde (u. a. Widerspruch „Kanal als Stärke und als Bruch“, unbelegtes
+    „überall Du“, Doppeldeutigkeit von „Kern“, Exporte veraltet, Feld Tonalität auf Folie 10), 12 niedrige; in der
+    Nacharbeit umgesetzt bis auf das Feld Tonalität (als Entscheidung für Yannick ausgewiesen) und kleinere
+    Gestaltungspunkte ohne Redesign.
+  - **Exporte:** PDF 22 Seiten (Seite 8 mit Chamäleon), 23 Folienbilder (nur f08 geändert), Übersicht 20.10.2026.
+- **Wie Claude das Ergebnis geprüft hat:** Folienbild `export/folien/f08.png` angesehen (Titel, Karte,
+  Chamäleon-Zeichnung, Fußzeile); `live-abstimmung-test.mjs` 44/44; `git diff --name-only` auf gesperrte Dateien
+  (Recherche-Dossier, Dossier Bündel B, Gründerbefragung, Apps Script unverändert) und Modellbezeichnungen geprüft.
+  Inhaltliche Prüfung der Begründung durch Elias steht aus.
 
 ---
 

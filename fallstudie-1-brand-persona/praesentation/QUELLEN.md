@@ -6,7 +6,7 @@ Stand: 19.10.2026 (seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel
 Kategoriedaten Kantar/Statista vollständig, Rechtevermerk Limbic®, „Nachprüfung, KI-gestützt“ statt „eigene
 Prüfung“; 19.10.: Abruf des DNB-Katalogs als KI-gestützt gekennzeichnet, Grafiken in `../grafiken/` eingeordnet,
 Gründerbefragung als zweite Ausnahme in Abschnitt 5; Rätselbild Folie 01 und Persona-Bild Folie 04 als eigene
-Illustrationen, KI-gestützt, statt Platzhalter).
+Illustrationen, KI-gestützt, statt Platzhalter; 20.10.: Analogie-Tier Chamäleon statt Waschbär, Abschnitte 3 und 5).
 
 ## 1. Schriften (Ordner `schriften/`)
 
@@ -51,7 +51,8 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 
 - **Icon-Satz** (Linien-Icons 24 × 24, Strichstärke 2; Inline-SVG-Sprite am Anfang von `index.html`):
   eigene Gestaltung, keine fremden Icon-Bibliotheken, keine Plattform-Logos.
-- **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Waschbär, Adler, Löwe, Schwan auf Folie 08,
+- **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Chamäleon, Adler, Löwe, Schwan auf Folie 08 und
+  auf der Abstimmseite – das Chamäleon seit 20.10.2026 statt des Waschbärs,
   Motiv-Piktogramme auf Folie 09/09b, Markensteuerrad, Limbic Map, Diagramme): eigene SVG-Zeichnungen
   bzw. per Skript aus den Daten erzeugt – kein Nachbau von Markenzeichen. Das Maskottchen „Raptor“ von
   HOLY wird nur benannt (Folie 09: Adler-Piktogramm als Platzhalter), nicht abgebildet – einzige mögliche
@@ -155,6 +156,14 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
   im Backup B1, B3 (Status „extern“, wie in der Legende von B7) und B7. Sonst steht GB auf den Hauptfolien nur in
   den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“, „11“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
   offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
+- **Analogie-Tier Chamäleon** (Folie 08, seit Di, 20.10.2026; vorher Waschbär nach der Hypothese im Dossier
+  Kap. 6.7): Einordnung von Elias Knauber (Bündel C), mitgeteilt von Yannick; Elias' Ausarbeitung liegt nicht im
+  Repository. Die Begründung (drei Gründe auf der Folie, Sprechtext, Gegenargumente) ist ein **Vorschlag,
+  KI-gestützt** aus dem Recherche-Dossier (Kap. 1, 2.1, 2.7, 2.8, 3.1, 6.1–6.3, 6.6, 7.1, 8 – jeweils mit
+  Quellennummer und Status in den Notizen von Folie 08) – **von Elias zu prüfen**. Ohne Websuche. Die Analogie
+  selbst ist eine Hypothese (H); die Alltagsbedeutung von „Chamäleon“ („ohne festen Kern“, Tarnung) ist
+  Sprachgebrauch aus dem Modellwissen. Auf der Folie: „Tier: eigene Einordnung (H)“ in der Fußzeile (ohne den Tiernamen, weil die Fußzeile schon
+  während der Abstimmung zu sehen ist).
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
 - **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08, 08b, 09 (Beiträge,

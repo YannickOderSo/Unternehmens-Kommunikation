@@ -283,7 +283,7 @@ Handys testen.
   Solange Beispielwerte stehen, beginnen die Felder unter „Werte“ bei 0.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
-  wir: als Waschbär“. Ohne Stimmen (n = 0) steht dort nur „Noch keine Stimmen“ (Text änderbar:
+  wir: als Chamäleon“ (bis 20.10.2026: Waschbär, Abschnitt 18). Ohne Stimmen (n = 0) steht dort nur „Noch keine Stimmen“ (Text änderbar:
   `marke.js → umfragen.tier.aussageLeer`); die Zahl zählt dann nicht auf „0 %“ hoch.
 - Bedienung im Vortrag: Klick auf Option = +1, Umschalt+Klick oder Rechtsklick = −1, Ziffern 1–9
   (Umschalt = −1, nur solange die Umfrage zu sehen ist), Doppelklick auf einen Wert = Zahl eintippen,
@@ -864,7 +864,7 @@ unerreichbar bzw. nur bei gleicher Millisekunde desselben Handys; von Hand gepr�
 
 **Offen:**
 - **Yannick:** Skript aktualisieren (ANLEITUNG „Skript aktualisieren“: Code einfügen, „einrichten“, Neue Version,
-  Kurzprüfung). Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
+  Kurzprüfung) – **am 20.10.2026 zurückgestellt** (Yannick: erst Folie 08 überarbeiten, Abschnitt 18). Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
   Fassung.
 - **Danach Lasttest gegen die echte Web-App** (mindestens zweimal mit `--anzahl 20`; höchstens ca. 20 Personen im
   Raum, Yannick 20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, 6 Handys über 15 s). Erst er zeigt, wie lange
@@ -944,3 +944,99 @@ Anfragen. `--nur f01,f04,b1,b2,b7 --schritte` in Editorial, Bento und Keynote, j
 die bekannte Warnung f04 (46). Kennzeichnung auf f04 in allen Themen zweizeilig, „KI‑gestützt“ ungetrennt.
 Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b), 23 Folienbilder (geändert: f01, f04, b7), Übersicht
 `--stand 19.10.2026`; PDF-Seiten 1 und 4 und die Übersicht angesehen – kein Platzhalter-Schild auf 01 und 04.
+
+## 18. Chamäleon statt Waschbär (Di, 20.10.2026)
+
+Entscheidung Yannick (KI-Nachweis 94/95): Elias Knauber (Bündel C) ordnet HOLY in seiner Ausarbeitung eher als
+**Chamäleon** ein. Das Tier unserer Analyse wechselt deshalb von Waschbär zu Chamäleon – auf Folie 08, in der
+Live-Abstimmung und in den Ausarbeitungen. Nur diese inhaltliche Änderung, kein weiteres Redesign. Die
+Aktualisierung des Apps Script bei Google ist zurückgestellt; die Live-Abstimmung bleibt technisch unverändert
+(`apps-script.gs`, Schnittstelle, `liveQuelle`, `runde`). Das Skript speichert nur die Nummer des Tiers.
+
+**Kennzeichnung:** Einordnung: Elias Knauber (Bündel C). Begründung: **Vorschlag, KI-gestützt** aus dem
+Recherche-Dossier – **von Elias zu prüfen** (seine Ausarbeitung liegt nicht im Repository). Die Analogie ist eine
+Hypothese (H). Die frühere Hypothese des Dossiers (Kap. 6.7: „Ton eher Waschbär oder Affe“) bleibt als
+Zwischenstand dokumentiert. Ohne Websuche; die Alltagsbedeutung von „Chamäleon“ ist Modellwissen.
+
+**Begründung in Kürze (Vorschlag; vollständig mit Quellennummern in den Notizen von Folie 08, Stand nach der
+Nacharbeit):** Das Chamäleon ersetzt den frechen Ton nicht, es beschreibt, wie er auftritt: wandelbar in Farbe,
+Sorte und Szene – im Ton immer frech. Dafür: 31 Energy-Sorten mit je eigenem Comic-Tier (Dossier 3.1 ✔, 6.3 ✔),
+Auftritte von Wacken bis CSD, Kooperationen mit Vereinen und Lizenzen – eigene Produkte mit dem 1. FC Köln und den
+Simpsons (6.6 ✔) –, Wandel vom „Gaming Booster“ zum Softdrink für alle (2.8 ✔, Etappen H), Look 2022 „bunter“
+(2.1 ✔), Limited Drops (7.1 ✔). Was bleibt: Du-Ton, „Gefährlich geil!“, „Zero Zucker oder Bullsh*t.“ (6.2 ✔);
+laut Jost massenmarkttauglicher, ohne „dieses edgy … zu verlieren“ (2.8 ✔). Ambivalent: eigene Fassungen je Markt
+und Kanal (6.1 ✔, S4 ✔) – sie zählen nicht als Stärke, sondern gehören zu S4 und S5; im Alltag heißt „Chamäleon“
+auch „ohne festen Kern“ – Anzeichen in S5 (sechs Claims, Profilnamen; Befund ✔, Deutung H). Das ist der Bruch über
+die Kanäle (Folie 09b) und der Ansatz von Empfehlung 3. Der Markenkern („Genuss mit gutem Gewissen“) ist nicht
+betroffen; das Wort „Kern“ steht deshalb nur noch für den Markenkern (nicht „frech im Kern“). Folie 08b (Profil,
+Merkmale, Titel) und das Feld Tonalität auf Folie 10 bleiben unverändert – Folie 10: Entscheidung Yannick offen
+(Nacharbeit unten).
+
+| Bereich | Änderung |
+|---|---|
+| Folie 08 (`index.html`) | Titel ab Schritt 2 „HOLY wäre ein Chamäleon, kein Adler“. Daten: `marke.tier.name` „Chamäleon“, Gründe wandelbar („31 Energy-Sorten“), vielseitig („Wacken, CSD, Simpsons“), frech („Gefährlich geil!“) – kurz wegen des Wortbudgets (39 Wörter; mit längeren Belegen waren es 47); Stichworte höchstens ca. 10 Zeichen (Spalte 176 px, „anpassungsfähig“ wäre zu breit); `hinweis` mit Kennzeichnung. Fußzeile „Tier: eigene Einordnung (H)“ – ohne Tiernamen, weil die Fußzeile schon während der Abstimmung zu sehen ist – und „Belege Kap. 3.1, 4.1, 6.2, 6.3, 6.6 ✔“. Notizen: Auflösung, „Warum Chamäleon?“, Kontrast, Bedienung, neue Rückfragen (ohne festen Kern? Tarnung? warum nicht mehr Waschbär?; nach der Nacharbeit dazu: Viele Sorten – schon Wandel? Trotzdem der Raptor? Aus eurer Befragung?), neuer Absatz „Chamäleon – Einordnung und Begründung“ (Belege, Gegenargumente, Verhältnis zu 8b/10, früherer Stand). Kasten „FOLIE 08“ und Kommentare (u. a. der falsche Verweis „Folie 10 → tonalitaet → Waschbär“: das Tier stand nie im Rad). |
+| Folie 08b | Kasten und eine Rückfrage („Wo ist das Chamäleon im Profil?“). Profil, Merkmale, Titel und Daten unverändert. |
+| Folie 09b, 11, 12 | Notizen: „gelebt wird das freche Chamäleon“ (09b), Brücke „Raptor als fester Anker“ zu Empfehlung 3 mit Kennzeichnung (11), Rückfrage „Warum ein Chamäleon?“ (12). |
+| Folie 10 | Feld Tonalität geprüft und unverändert („frecher Kumpel · Spaß · Zugehörigkeit“, wortgleich mit 8b) – **Abweichung vom Auftrag, der „Feld Tonalität“ nannte; Entscheidung Yannick offen** (Kasten „FOLIE 10“, LIESMICH 12). Sprechtext Schritt 5 „…, wandelbar wie ein Chamäleon – …“ (7 s; Schritt 0–8 jetzt ca. 186 Wörter ≈ 98 s, Zeitangaben zusammen 78 s); Belegabsatz und Kasten. |
+| `marke.js → umfragen.tier` | `optionen` `['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan']` (Chamäleon an der Stelle des Waschbärs, Nummer 2), `unsereAntwort` `'Chamäleon'`; Kommentare (Probestimmen mit Option 2 zählen jetzt als Chamäleon – die Runde wird vor dem Vortrag ohnehin umgestellt). `liveQuelle`, `runde`, `link` und Beispielwerte unverändert. |
+| `werkzeuge/live-abstimmung-test.mjs` | nur die Liste `OPT` (das Werkzeug nutzt nur ihre Länge). |
+| Zeichnung `chamaeleon` | eigener Arbeitsschritt: Strichzeichnung (Helm, Auge mit Pupille, eingerollter Schwanz, Ast; Zeichenfläche 120 × 120, gefüllt nur die Pupille) in `BILDER` von `js/folien/08-analogien.js` und – zeichengleich – `js/abstimmen.js`; `bildSchluessel('Chamäleon')` ergibt `chamaeleon`, der Waschbär bleibt als Rückgriff. `css/folien/08-analogien.css`: nur Kommentare. Eigene Gestaltung ohne Vorlage; Merkmale des Tiers aus dem Modellwissen. |
+| `../limbic-map.md` | Zeile „Maskottchen“ in 4.1, Nachtrag 20.10. in 4.1, Kopf (Stand, Herkunft) und §8. Gewichte, Typ und Fit unverändert. |
+| `../folienentwuerfe.md`, `../markenkompetenz.md`, `../persona-steckbrief.md` | geprüft: nennen kein Analogie-Tier (Folienentwürfe gibt es nur für die Folien 2–5) – unverändert. |
+| `QUELLEN.md`, `LIESMICH.md`, `live-abstimmung/ANLEITUNG.md` | QUELLEN: Stand, §3 (Piktogramme), §5 (Kennzeichnung der Begründung). LIESMICH: Stand, Abschnitt 6, 11, Checkliste 12 (neu: „Elias prüft die Begründung Chamäleon“, C · Elias; „Lukas: Analogie-Befragung/Notizen Folie 08 abgleichen“, B · Lukas; Skript-Aktualisierung zurückgestellt; Sprechtext 10; Exporte). ANLEITUNG: Beispiele (Teststimme, Nummern 0–4), Hinweis zur Nummer 2 und zur Zurückstellung. AUTOREN: 6c, Offen in 16, dieser Abschnitt. |
+
+**Bewusst nicht geändert:** `../dossier-buendel-b.md/.html` (Lukas), `../recherche/*` (Recherche-Dossier),
+`../gruenderbefragung.md`, `ki-nachweis/*`, `live-abstimmung/apps-script.gs`. Die Abschnitte 10 und 16 dieser Datei
+nennen den Waschbär als damaligen Stand (Änderungsprotokoll).
+
+**Geprüft (20.10.2026, vor der Nacharbeit):** `pruefen.mjs index.html --nur f08,f08b,f10 --schritte`: Editorial hell
+0 Fehler, 1 Warnung (f10 Wortbudget 49, wie bisher), f08 39 Wörter, keine externen Anfragen, kein Abgleich-Hinweis
+(Titel, `unsereAntwort` und `optionen` passen); mit `--live-werte 15,9,17,14,9` (nur f08): 0 Fehler, 0 Warnungen,
+Schritt 1 „27 % sehen HOLY wie wir: als Chamäleon“, Zeile „Chamäleon“ als „Unsere Analyse“ umrahmt; Bento dunkel und
+Keynote dunkel mit denselben Werten je 0 Fehler, nur die Warnung f10. `live-abstimmung-test.mjs`: 44 von 44.
+Abstimmseite lokal (`--server 8787`, `abstimmen.html?u=tier&quelle=…` über `file://`, 390 × 844): Knöpfe Adler, Löwe,
+Chamäleon, Fuchs, Schwan; Stimme „Chamäleon“ → „Danke! Ihre Stimme: Chamäleon“, Stand `[0,0,1,0,0]`; Konsole leer.
+Zwei Prüfungen (Inhalt/Belege/Kennzeichnung und Darstellung, ohne Änderungen): Belege und Status stimmen mit dem
+Dossier überein, keine verbotene Datei geändert, kein Darstellungsfehler; Befunde siehe Nacharbeit.
+
+### Nacharbeit nach zwei Prüfungen (Di, 20.10.2026)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| Begründung widerspricht sich: „Kanal“ in der Formel und Punkt (4) „je Markt und Kanal eine eigene Fassung“ unter „Dafür“, obwohl der Bruch über die Kanäle das Risiko ist (mittel) | Formel überall „wandelbar in Farbe, Sorte und Szene – im Ton immer frech“ (Kasten 08, 08b, 10, Notizen 08/08b, Belegabsatz 10, dieser Abschnitt, `../limbic-map.md`); Punkt (4) unter „Dagegen bzw. ambivalent“: zählt nicht als Stärke, gehört zu S4 und S5. |
+| Rückfrage „ohne festen Kern?“: „überall Du, ‚geil‘ …“ ohne Beleg (mittel) | Belegt und ohne „überall“: Du und „geil“ in den Shop-Texten, „Zero Zucker oder Bullsh*t.“ auf der Website (6.2 ✔ [1, 30]), englische LinkedIn-Posts enden mit „BURR“ und Adler-Emoji (6.1, 6.2 ✔ [31]). |
+| Wort „Kern“ dreifach (frech im Kern / ohne festen Kern / Markenkern) – Eigentor in der Fragerunde (mittel) | Antwort beginnt mit der Unterscheidung: „Nein. Der Markenkern steht: Genuss mit gutem Gewissen (Folie 10). Und der Ton bleibt frech … Was wechselt, ist der Auftritt.“ „frech im Kern“ ersetzt; Belegabsatz 10 ohne „ohne festen Kern“; Kasten 08: „Kern“ nur für den Markenkern. |
+| Folie 10, Feld Tonalität: Auftrag nannte das Feld, es bleibt unverändert (mittel, zwei Prüfungen) | **Nicht geändert, Yannick entscheidet** (Kasten „FOLIE 10“, LIESMICH 12): A) so lassen, Chamäleon nur im Sprechtext Schritt 5 (bei knapper Zeit die 4 Wörter streichen); B) ins Rad, z. B. „frecher Kumpel · wandelbar · Spaß“, dann zuerst 8b „Ins Steuerrad“ wortgleich ändern (Bündel B). Gründe: Das Tier stand nie im Rad (es gab dort nichts zu ersetzen); die Regel „wortgleich mit 8b“ und Lukas’ Bündel wären betroffen; Folie 10 hat schon ca. 49 Wörter; Yannicks Wunsch nennt Abstimmung, Folie und Analyse. |
+| Exporte zeigen auf Folie 08 noch den Waschbär (mittel) | Neu erzeugt nach Abschnitt 15 (Ergebnisse unten). |
+| 09b Schritt 1: Gegensatz „stolz als frech“ trägt beim Chamäleon nicht (niedrig) | „… gelebt wird das freche Chamäleon“ (+1 Wort; „wandelbar“ nicht nötig, der Gegensatz ist stolz/frech). |
+| Zitat „auffällig und knallig“ verändert (niedrig) | Wörtlich: „auffälliges und knalliges Design“ (6.3 ✔ [8]). |
+| „Editionen“ mit allen Vereinen (niedrig) | „Kooperationen 2026 mit Vereinen und Lizenzen – eigene Produkte mit dem 1. FC Köln und den Simpsons“ (Notizen 08, dieser Abschnitt, `../limbic-map.md`). |
+| Zeit Folie 08: Schritt 2 „ca. 22 s“, Summe 72 s (niedrig) | Satz gekürzt: „Gelebt wird aber ein Chamäleon: ständig neue Farben, Sorten, Szenen – im Ton immer frech.“ Schritt 2 jetzt 43 Wörter (Waschbär-Fassung 44) in „ca. 20 s“, Summe 70 s; Hinweis im Kasten (bei 1,9 Wörtern/s ≈ 23 s – stoppen). |
+| „wandelbar“ und „vielseitig“ fast gleich; Wandel auf der Folie nicht belegt (niedrig) | Folie unverändert (Wortbudget); Rückfrage „Viele Sorten – ist das schon Wandel?“ mit 2.8, 2.1, 7.1; Elias prüft die Gründe (LIESMICH 12). |
+| Keine Antwort auf „trotzdem der Raptor?“ und „aus eurer Befragung?“ (niedrig) | Zwei Rückfragen in den Notizen von 08 (Raptor als fester Absender, Empfehlung 3; Tier = unsere Einordnung H, Befragung prüft offen – Ergebnis nach P11/Interviews eintragen). |
+| Folie 11 ohne Kennzeichnung (niedrig) | Belegabsatz 11: „Chamäleon: Einordnung Elias Knauber, Begründung Vorschlag, KI-gestützt, H – Notizen Folie 8“. |
+| `../limbic-map.md` Kopf: zwei Zeilen ohne „>“ (niedrig) | „>“ ergänzt. |
+| „wandelbar“ füllt die Stichwort-Spalte fast (Lücke 21–28 px, kein Überlauf) (niedrig) | Nicht geändert: kein Redesign; ein kürzeres Wort ist eine Inhaltsfrage für Elias (LIESMICH 12). |
+| Haken der „Danke“-Karte verdeckt Fuß und Astende; Zeichnung bei 42 px eng (niedrig) | Nicht geändert: betrifft alle Tiere (auch Adler, Schwan), kein Redesign gewünscht; Chamäleon bleibt erkennbar. In der Generalprobe auf Beamer und Handy prüfen. |
+| Abstimmseite quer (844 × 390): „Danke“-Karte unten abgeschnitten (niedrig) | Nicht geändert: war mit dem Waschbär genauso, nicht durch diese Änderung verursacht. |
+
+Sprechtexte nachgezählt (ohne Überschriften, Zeitangaben und [Regie]; Teil A hatte anders gezählt):
+f08 Schritt 0–3 107 Wörter (Waschbär-Fassung 105), Zeitangaben 70 s; f09b 99 Wörter (vorher 98); f10 186 Wörter
+≈ 98 s (vorher 182), Zeitangaben 78 s.
+
+**Geprüft nach der Nacharbeit (20.10.2026):** `pruefen.mjs index.html --schritte --optional` (Editorial hell):
+23 Folien, 80 Screenshots, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03 48, f04 46, f10 49, f11 55), keine
+externen Anfragen. `--nur f08 --schritte --live-werte 3,1,7,0,2` in Editorial, Bento und Keynote, je hell und
+dunkel: je 0 Fehler, 0 Warnungen, f08 39 Wörter, Attrappe beantwortet `[3,1,7,0,2]`; Schritt 1 „54 % sehen HOLY wie
+wir: als Chamäleon“ mit umrahmter Zeile, Schritt 3 (Keynote dunkel) angesehen. `live-abstimmung-test.mjs`: 44 von 44.
+Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b; Seite 8 „HOLY wäre ein Chamäleon, kein Adler“, im
+Text kein „Waschbär“), 23 Folienbilder 1920 × 1080 – gegenüber dem Stand vorher geändert nur `f08.png`; Übersicht
+`--stand 20.10.2026` (0 externe Anfragen). `export/folien/f08.png`, `f10.png`, PDF-Seite 8 und die Übersicht
+angesehen. Ausgaben: `_test/d18n-*`, `_test/export-druck`, `_test/export-folien`.
+
+**Offen:** Elias prüft die Begründung, die Gründe auf der Karte (auch „wandelbar“ als Stichwort) und die neuen
+Rückfragen (danach „Vorschlag“ in Kasten und Notizen ersetzen); Yannick entscheidet über das Feld Tonalität auf
+Folie 10 (A/B oben); Lukas gleicht Analogie-Befragung und Notizen ab und prüft, ob das Aaker-Profil auf 08b passt;
+Sprechtexte 08 (Schritt 2) und 10 in der Generalprobe stoppen; Zeichnung auf Beamer und Handy ansehen;
+Skript-Aktualisierung (zurückgestellt); Runde umstellen wie geplant (LIESMICH 12). Nach Elias’ Prüfung bzw. einer
+Änderung an Folie 08 oder 10 die Exporte erneut erzeugen.

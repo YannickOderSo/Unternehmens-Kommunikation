@@ -4,7 +4,7 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 19.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+Stand: 20.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
 der zweiten Abschlussprüfung überarbeitet. Seit Sa, 17.10. von Account 1 übernommen: Ergebnisse von Bündel A
 eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3) und Limbic Map A3 (Folie 05),
 dazu die passenden Stichworte auf Folie 10 und die Verweise auf 11, B2, B7 und B8; offizielles HOLY-Logo auf
@@ -15,12 +15,15 @@ Yannick offen (Checkliste, Abschnitt 12). Seit 19.10. ist für Folie 08 eine **e
 eingerichtet wird sie in Yannicks Google-Konto (Abschnitt 6). Seit 19.10. sind das Rätselbild (Folie 01) und
 das Persona-Bild (Folie 04) **eigene Illustrationen** (KI-gestützt, gekennzeichnet) statt Platzhalter, nach
 der Prüfung am 19.10. nachgearbeitet (Rätselbild ohne Tier auf der Dose, volle Kennzeichnung auf Folie 04);
-die Exporte in `export/` sind damit am 19.10. neu erzeugt (Abschnitt 11).
+die Exporte in `export/` sind damit am 19.10. neu erzeugt (Abschnitt 11). Seit Di, 20.10. ist das Tier unserer
+Analyse auf Folie 08 und in der Abstimmung das **Chamäleon** statt des Waschbärs (Einordnung Elias Knauber;
+Begründung als Vorschlag gekennzeichnet, Elias prüft – Abschnitt 6 und 12, `AUTOREN.md` Abschnitt 18); nach zwei
+Prüfungen nachgearbeitet und die Exporte am 20.10. neu erzeugt (Folie 08 mit Chamäleon).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
 
-Fertige Ausgaben (Stand 19.10.2026, mit den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
+Fertige Ausgaben (Stand 20.10.2026, mit dem Chamäleon auf Folie 08, den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
 den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `export/praesentation.pdf`
 (alle Folien inkl. Backup, Plan B), `export/uebersicht.png` (alle Folien auf einen Blick),
 `export/folien/<id>.png` (jede Folie einzeln im Endzustand, 1920 × 1080).
@@ -126,9 +129,12 @@ alle Folien damit durchklicken. Taste „Schwarz“/„Blank“ am Clicker sende
 
 ## 6. Live-Umfrage (Folie 08)
 
-Frage: „Wenn HOLY ein Tier wäre – welches?“ mit **Adler, Löwe, Waschbär, Fuchs, Schwan**
-(`marke.js → umfragen.tier.optionen`, festgelegt von Yannick am 19.10.2026; „Waschbär“ = unsere Analyse,
-„Adler“ = Selbstbild, Maskottchen „Raptor“). Die Folie kann drei Wege – **Weg A ist der Plan**, B und C
+Frage: „Wenn HOLY ein Tier wäre – welches?“ mit **Adler, Löwe, Chamäleon, Fuchs, Schwan**
+(`marke.js → umfragen.tier.optionen`, festgelegt von Yannick am 19.10.2026; seit 20.10.2026 „Chamäleon“ statt
+„Waschbär“ an derselben Stelle; „Chamäleon“ = unsere Analyse – Einordnung Elias Knauber, Begründung als Vorschlag
+in den Notizen von Folie 08 –, „Adler“ = Selbstbild, Maskottchen „Raptor“). Die Tabelle speichert nur die Nummer
+des Tiers: Probestimmen mit Option 2 aus der Zeit vor dem 20.10. zählen jetzt als Chamäleon – unkritisch, die
+Runde wird vor dem Vortrag umgestellt (Abschnitt 12). Die Folie kann drei Wege – **Weg A ist der Plan**, B und C
 sind die Rückfallebenen.
 
 ### Weg A – eigene Live-Abstimmung (Plan)
@@ -207,7 +213,7 @@ Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet�
 - **Rückfall im Vortrag:** Ist nur der Präsentationsrechner offline, die Handys aber nicht, kommen die Stimmen
   trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen:
   `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5`) und trägt die Zahlen über
-  „Werte“ ein (Reihenfolge Adler, Löwe, Waschbär, Fuchs, Schwan). Geht gar nichts: Plan C.
+  „Werte“ ein (Reihenfolge Adler, Löwe, Chamäleon, Fuchs, Schwan). Geht gar nichts: Plan C.
 - **Nach dem Vortrag:** Ergebnis sichern, Web-App archivieren, `liveQuelle: ''` (Anleitung, „Nach dem Vortrag“).
 
 ### Weg B – Werkzeug (Particify, Mentimeter) + Werte eintippen
@@ -236,7 +242,7 @@ Stehen vor dem Zählen andere Zahlen als 0 auf der Folie (und keine Pille „Bei
 - Beispielwerte und echte Stimmen werden nie gemischt: Der erste Stand der Abstimmung bzw. die erste Stimme
   von Hand ersetzt die Beispielwerte (Pille „Beispieldaten“ verschwindet).
 - Prozente rechnet die Präsentation selbst aus den Stimmen. Der nächste Klick (Schritt 1) zeigt
-  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Waschbär“) – bei Weg A zählt sie mit,
+  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Chamäleon“) – bei Weg A zählt sie mit,
   solange Stimmen kommen. Keine Stimmen? Dann steht dort „Noch keine Stimmen“ (keine „0 %“) – Analyse
   trotzdem erzählen oder Schritt 1 überspringen.
 - Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher; mit eigener Live-Abstimmung nur in derselben
@@ -327,8 +333,8 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6, Plan C). Präsentationsrechner offline, Handys
    online: Stand-Adresse auf dem Handy öffnen und die Zahlen über „Werte“ eintragen (Abschnitt 6, Weg A, „Rückfall“).
    **Im PDF** gibt es keine Abstimmung: Folie 08 zeigt dort den Endzustand ohne QR-Code, und der Titel nennt schon
-   die Auflösung („… Waschbär, kein Adler“). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C,
-   Ergebnis mündlich nennen), dann weiterblättern. Eine zusätzliche PDF-Seite mit Frage und QR-Code ist nicht
+   die Auflösung („… Chamäleon, kein Adler“; Export vom 20.10.2026). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C, Ergebnis mündlich nennen),
+   dann weiterblättern. Eine zusätzliche PDF-Seite mit Frage und QR-Code ist nicht
    nötig (Entscheidung Yannick, 20.10.2026).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext als Handout drucken:
    `index.html?druck&notizen` öffnen → Strg+P (Ränder „Keine“, „Hintergrundgrafiken“ an). Oben die Folie,
@@ -418,9 +424,10 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [ ] **Sprechtexte 03–05 stoppen** (A · Yannick): 03 ca. 82 Wörter (Ziel ≤ 45 s), 04 seit 18.10. ca. 147
       Wörter (≈ 77 s bei 1,9 Wörtern/s, Sollzeit 80 s; vorher 172), 05 seit 18.10. ca. 106 Wörter (≈ 56 s,
       Sollzeit 55 s; Folienentwurf plant 1:00) – gekürzt wurden nur Doppelungen; laut lesen und stoppen
-- [ ] **Sprechtexte 10 und 11 stoppen** (Inhalt 10: Yannick, spricht Elias; 11: C · Elias): 10 ca. 182 Wörter
-      ≈ 96 s (Sollzeit 75 s, Schritt 8 allein ca. 71 Wörter), 11 ca. 164 Wörter ≈ 86 s (Sollzeit 75 s) –
-      Kürzungsvorschläge in den Kästen „FOLIE 10/11“, dann die Zeitangaben „(ca. … s)“ angleichen
+- [ ] **Sprechtexte 10 und 11 stoppen** (Inhalt 10: Yannick, spricht Elias; 11: C · Elias): 10 ca. 186 Wörter
+      ≈ 98 s (Sollzeit 75 s, Schritt 8 allein ca. 71 Wörter; seit 20.10. +4 Wörter in Schritt 5: „wandelbar wie ein
+      Chamäleon“), 11 ca. 164 Wörter ≈ 86 s (Sollzeit 75 s) – Kürzungsvorschläge in den Kästen „FOLIE 10/11“, dann
+      die Zeitangaben „(ca. … s)“ angleichen
 - [ ] **B2 – Prüfung durch die Gruppe** (A · Yannick): Die Einträge KI 13, 47, 52, 55/56 und 07 stehen im
       KI-Nachweis noch auf „☐ offen“; deshalb heißt der Titel von B2 „dokumentiert – und wird geprüft“ und die
       Spalte „Prüfung“ nennt nur die KI-Gegenprüfung. Nach dem Abhaken Titel und Spalte anpassen (Kasten „B2“)
@@ -465,16 +472,37 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Android über mobile Daten aus der letzten Reihe getestet (abstimmen, umentscheiden; mindestens ein Handy
       ohne Google-Anmeldung), **Lasttest** „BESTANDEN“ (Anleitung, Schritt 7). Klappt Weg A nicht: Weg B
       (Werkzeug, `link`) oder nur Plan C
-- [ ] **Live-Abstimmung: Skript aktualisieren** (A · Yannick, **sofort** – die Web-App läuft noch mit der
-      alten Fassung, Lasttest am 19.10.: nur 19 von 40): nach `live-abstimmung/ANLEITUNG.md`, Abschnitt „Skript
-      aktualisieren“ – neue Fassung einfügen (Raw-Link, Strg+F `SPEICHERN BEI ANDRANG`), **„einrichten“**
-      ausführen (drei Zeilen im Protokoll), **Neue Version** bereitstellen (URL bleibt gleich), Kurzprüfung
+- [ ] **Live-Abstimmung: Skript aktualisieren** (A · Yannick; **zurückgestellt** am 20.10.2026 auf Wunsch von
+      Yannick, erst nach der Überarbeitung von Folie 08 – die Web-App läuft noch mit der alten Fassung, Lasttest am
+      19.10.: nur 19 von 40; für das Chamäleon muss am Skript nichts geändert werden, es speichert nur Nummern):
+      nach `live-abstimmung/ANLEITUNG.md`, Abschnitt „Skript aktualisieren“ – neue Fassung einfügen (Raw-Link,
+      Strg+F `SPEICHERN BEI ANDRANG`), **„einrichten“** ausführen (drei Zeilen im Protokoll), **Neue Version** bereitstellen (URL bleibt gleich), Kurzprüfung
       `<URL>?aktion=fassung` → „(Skript-Fassung 19.10.2026)“. Danach **Lasttest** (Claude oder selbst, Anleitung,
       Schritt 7): „BESTANDEN“, mindestens zweimal mit `--anzahl 20` (höchstens ca. 20 Personen im Raum, Yannick
       20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, aber 6 Handys über 15 s). Nicht während einer Abstimmung
 - [ ] **Folie 08 – Kasten und Notizen** (B · Lukas): beschreiben noch den alten Weg („Abstimm-Link eintragen,
       dann erscheint der QR-Code“, „Zurücksetzen zweimal“); an Weg A anpassen (QR-Code erscheint mit
       `liveQuelle`, Pille „Live“ beobachten, bei Weg A kein „Zurücksetzen“)
+- [ ] **Folie 08 – Elias prüft die Begründung Chamäleon** (C · Elias): seit 20.10.2026 zeigt Folie 08
+      „HOLY wäre ein Chamäleon, kein Adler“ mit den Gründen wandelbar („31 Energy-Sorten“), vielseitig
+      („Wacken, CSD, Simpsons“) und frech („Gefährlich geil!“). Die Begründung ist ein
+      Vorschlag, KI-gestützt aus dem Recherche-Dossier (Notizen Folie 08, Absatz „Chamäleon – Einordnung und
+      Begründung“, mit Gegenargumenten). Prüfen: trifft das deine Einordnung? Gründe, Sprechtext „Warum
+      Chamäleon?“ (seit der Nacharbeit 20.10.: „ständig neue Farben, Sorten, Szenen – im Ton immer frech“),
+      Rückfragen (u. a. „ohne festen Kern?“, „Viele Sorten – schon Wandel?“, „trotzdem der Raptor?“, „aus eurer
+      Befragung?“) und Satz auf Folie 10 (Schritt 5, „wandelbar wie ein Chamäleon“) bestätigen oder ändern.
+      „wandelbar“ füllt die Stichwort-Spalte der Karte fast ganz – ein kürzeres Wort wäre ruhiger, ist aber
+      deine Entscheidung. Danach „Vorschlag“ in Kasten und Notizen durch „Begründung: Elias Knauber“ ersetzen
+- [ ] **Folie 10 – Chamäleon im Rad? Entscheidung** (A · Yannick, mit Elias und Lukas): Das Feld Tonalität
+      ist unverändert („frecher Kumpel · Spaß · Zugehörigkeit“, wortgleich mit 8b), das Chamäleon steht nur im
+      Sprechtext Schritt 5. A) so lassen (bei knapper Zeit die 4 Wörter in Schritt 5 streichen) oder B) ins Rad,
+      z. B. „frecher Kumpel · wandelbar · Spaß“ – dann zuerst 8b „Ins Steuerrad“ wortgleich ändern (B · Lukas);
+      Folie 10 liegt schon bei ca. 49 Wörtern (Kasten „FOLIE 10“, `AUTOREN.md` Abschnitt 18)
+- [ ] **Lukas: Analogie-Befragung/Notizen Folie 08 abgleichen** (B · Lukas): Tier unserer Analyse ist jetzt das
+      Chamäleon (vorher Waschbär nach Dossier 6.7). Mit den Antworten aus Prompt P11 und den Interviews
+      abgleichen (offen gefragt, Tiere nicht vorgeben), Sprechtext „Auflösung“ und „Kontrast“ prüfen, Aaker-Profil
+      auf 08b bleibt (Rückfrage in den Notizen von 08b); nennen die Befragten überwiegend ein anderes Tier, mit
+      Elias und Yannick klären
 - [ ] **Runde umstellen** (A · Yannick, **spätestens So, 25.10.**, nach der Generalprobe): `runde: 'vortrag-2026-10-26'`
       in `marke.js` auf GitHub **und** auf dem Präsentationsrechner; Kontrolle beider Stellen (Anleitung, „Vor dem
       Vortrag“): `marke.js?v=…` auf GitHub Pages nennt die neue Runde, Folie 08 zeigt `n = 0`; die Stand-Adresse für
@@ -501,9 +529,11 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [x] **Exporte mit den Illustrationen neu erzeugt** (19.10.2026, Nacharbeit): PDF, Folienbilder und
       Übersicht zeigen auf 01 und 04 keine Platzhalter-Schilder mehr (bewusst bleibt nur „Platzhalter –
       Screenshot folgt“ auf Folie 09). Nach der Freigabe der Motive oder mit einem eigenen Foto erneut erzeugen
+- [x] **Exporte mit dem Chamäleon neu erzeugt** (20.10.2026): PDF 22 Seiten, 23 Folienbilder (geändert nur
+      f08), Übersicht mit Stand 20.10.2026
 - [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
-      `export/` sind am 19.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
-      Folie 12, Illustrationen auf 01 und 04, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
+      `export/` sind am 20.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
+      Folie 12, Illustrationen auf 01 und 04, Chamäleon auf 08, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
       `export/folien/` noch einmal erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**
@@ -547,7 +577,7 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `abstimmen.html` | Abstimmseite fürs Publikum (QR-Code auf Folie 08, läuft auf GitHub Pages); dazu `js/abstimmen.js`, `css/abstimmen.css` |
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (44 Prüfungen); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren, mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy und mitlesender „Folie“ (Abschnitt 6, `AUTOREN.md` 6c) |
-| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 19.10.2026 mit A1–A3 als Entwurf und den Illustrationen auf 01/04; nach den Freigaben neu erzeugen (Abschnitt 11) |
+| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 20.10.2026 mit A1–A3 als Entwurf, den Illustrationen auf 01/04 und dem Chamäleon auf 08; nach den Freigaben neu erzeugen (Abschnitt 11) |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |

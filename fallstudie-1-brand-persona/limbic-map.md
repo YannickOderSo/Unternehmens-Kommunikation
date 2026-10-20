@@ -1,7 +1,7 @@
 # Limbic Map: Persona „Marco, 28“ und Auftritt von HOLY (A3)
 
-**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Mo, 19.10.2026 (Abgleich mit der
-Gründerbefragung) · **Entwurf, Prüfung durch Yannick offen**
+**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Di, 20.10.2026 (Nachtrag Chamäleon in 4.1;
+19.10.: Abgleich mit der Gründerbefragung) · **Entwurf, Prüfung durch Yannick offen**
 
 > **So ist die Ausarbeitung zu lesen**
 > - **D** = Daten mit Quelle · **M** = Modellangabe mit Quelle (Häusel / Gruppe Nymphenburg) · **A** = Annahme oder
@@ -27,6 +27,8 @@ Gründerbefragung) · **Entwurf, Prüfung durch Yannick offen**
 >   `persona-steckbrief.md`, `persona-daten.md`, `persona-datenerhebung.md`, `methoden.md` und dem Recherche-Dossier
 >   (`recherche/holy-recherche.md`). Abgleich mit der Gründerbefragung am 19.10.2026 mit Claude Code (KI-Nachweis 67,
 >   Workflow D14): ohne Websuche, Grundlage `gruenderbefragung.md` Abschnitt 4.2 (P8–P12).
+>   Nachtrag Chamäleon am 20.10.2026 mit Claude Code (KI-Nachweis 95, Workflow D18): ohne Websuche, Grundlage
+>   Recherche-Dossier; „Chamäleon“ im Alltagssinn („ohne festen Kern“, Tarnung) ist Sprachgebrauch (**MW**).
 > - **Kein Vorlesungsmaterial vorhanden:** Modellbegriffe nach Häusel / Gruppe Nymphenburg. Bitte mit den
 >   Vorlesungsfolien abgleichen (Map-Version, Namen der Felder, Lage der Typen).
 
@@ -265,7 +267,7 @@ geprüft.
 | Du-Ton: in 167 Produkttexten 36-mal „geil“, rund 38-mal „gönn“, keine Sie-Form; „Gefährlich geil!“ | Stimulanz (Spaß, Leichtigkeit); „gönn dir“ auch Fantasie/Genuss | hoch: Produkttexte | 6.2 ✔ [30], ✔ [1, 30] |
 | TV-Spot „Mach's dir wie nie zuvor“ (seit 01/2026) mit sexuellen Doppeldeutigkeiten; Musikvideo „Candy Shop“ mit Money Boy | Abenteuer und Risiko (Stimulanz × Dominanz); in [105] S. 3 liegt dort das Band „Sexualität männlich“ | hoch: national in TV, Streaming und DOOH (YouTube nur ≈ 21.000 Aufrufe) | 6.6 ✔ [25], ✔ [16, 129]; Lage: [105] S. 3 (Grafik) |
 | „Die Softdrink Revolution“; „Doch die Industrie macht seit Jahrzehnten keine Anstalten …“; „Challenger-Brands“ (Firmenwert „Challenge the status quo“ 2.7 ✔ [17] zählt seit 19.10. nicht mehr, s. u.) | Abenteuer und Risiko (Rebellion) mit Dominanz-Anteil | hoch: Dachclaim | 6.5 ✔ [1, 8]; 6.2 ✔ [5]; 2.6 ✔ [13] |
-| Maskottchen Adler „Raptor“, Treue-Level „Raptor Egg“ bis „OG Raptor“ | Dominanz · Erfolg und Status (Aufstieg), durch den Comic-Stil abgeschwächt | mittel: Maskottchen, Treueprogramm | 6.3 ✔ [54, 71]; Ton eher „Waschbär oder Affe“ (6.7 **H**) |
+| Maskottchen Adler „Raptor“, Treue-Level „Raptor Egg“ bis „OG Raptor“ | Dominanz · Erfolg und Status (Aufstieg), durch den Comic-Stil abgeschwächt | mittel: Maskottchen, Treueprogramm | 6.3 ✔ [54, 71]; gelebter Ton laut Analogie: Chamäleon – wandelbar in Farbe, Sorte und Szene, im Ton immer frech (**H**; seit 20.10.2026, Einordnung Elias Knauber, Begründung Vorschlag, s. Nachtrag 20.10.); früher „Waschbär oder Affe“ (6.7 **H**, ersetzt) |
 | 160 mg Koffein pro Portion; „~4h mit NewCaff“ statt „kurzer Spike“ in der „Us vs. Them“-Grafik; 2022 „Mana Buff“ | Dominanz · Leistung, als Produktangabe ohne Nutzungssituation | mittel bis hoch: Vergleichsgrafik auf jeder Produktseite | 3.1 ✔ [56]; 3.6 ✔ [73, 91] ([73] ist ein Bild vom 04.06.2026); 2.8 ✔ [22, 23] |
 | Dopamin-Versprechen 2025 entfernt; Sets „ohne Energy“ seit 04/2026 | Leistung tritt eher zurück (**A**). Grund für die Entfernung: unzulässige Gesundheitsversprechen, also ein rechtlicher Grund, kein belegter Positionswechsel | – | 3.4 ✔ [81]; 3.1 ✔ [63] |
 | Vision „das Coca-Cola des 21. Jahrhunderts“, „dauerhaft unter den Top 3“ | Dominanz · Erfolg und Status | niedrig: vor allem Investor-, Karriere- und Pressekanäle | 2.7 ✔ [14, 17, 46]; 2.6 ✔ [51] |
@@ -288,6 +290,27 @@ geprüft.
   eine Hypothese für den Abgleich von Soll und Umsetzung (Tonalität, Bündel B und C).
 - **Markenversprechen:** Das gute Gewissen (Balance) ist im Auftritt hoch präsent. Schwach ist nur das Feld
   Offenheit und Genuss (4.2). Das ist kein zweiter Abstand zwischen Identität und Bild für Folie 10/11.
+
+**Nachtrag Di, 20.10.2026 (Tier der Analogie, Entscheidung Yannick):**
+- **Chamäleon statt Waschbär.** Elias Knauber (Bündel C) ordnet HOLY in seiner Ausarbeitung eher als Chamäleon ein.
+  Die Ausarbeitung liegt nicht im Repository. **Begründung: Vorschlag, KI-gestützt (Claude Code, aus dem
+  Recherche-Dossier) – von Elias zu prüfen.** Die Analogie selbst ist eine Hypothese (**H**). Wortlaut auf Folie 08
+  und alle Belege: Notizen von Folie 08 in `praesentation/index.html` („Chamäleon – Einordnung und Begründung“).
+- **Dafür (Belege):** 31 Energy-Sorten, je Sorte ein Comic-Tier (3.1 ✔ [1, 30, 54]; 6.3 ✔ [30]); wechselnde Szenen
+  und Kooperationen – Wacken, CSD Berlin, DoKomi (6.6 ✔ [5, 31, 136]), Vereine und Lizenzen, u. a. Sorte „Kölle
+  Kamelle“ (1. FC Köln) und Milkshake „Donut“ (The Simpsons) (6.6 ✔ [30]); Wandel
+  vom „Gaming Booster“ zum Softdrink für alle (2.8 ✔ [15, 22–25], Etappen **H**). Was bleibt: Du-Ton und
+  „Zero Zucker oder Bullsh*t.“ (6.2 ✔ [1, 30]); laut Jost massenmarkttauglicher, ohne „dieses edgy … zu
+  verlieren“ (2.8 ✔ [24]).
+- **Ambivalent:** „Chamäleon“ heißt im Alltag auch „ohne festen Kern“. Dafür gibt es Anzeichen (S5: sechs Claims,
+  Profilnamen je Kanal, 8 ✔ [1, 20, 31, 125], Deutung **H**) – das ist der Bruch über die Kanäle (Folie 09b) und
+  stützt die Folge „Raptor bleibt Absender“ (§6, Nr. 1). Eigene Fassungen je Markt und Kanal (6.1 ✔ [31, 127,
+  128]; S4 ✔ [64, 147, 148]) zählen deshalb nicht als Stärke. Der Markenkern („Genuss mit gutem Gewissen“,
+  Folie 10) ist nicht betroffen – was wechselt, ist der Auftritt.
+- **Folgen für diese Ausarbeitung:** keine. Die Zeile „Maskottchen“ in 4.1 bleibt Dominanz · Erfolg und Status mit
+  Präsenz „mittel“; Gewichte, Typ und Fit ändern sich nicht. Das Chamäleon beschreibt, *wie* der freche Ton auftritt
+  (Stimulanz: Neugier, Abwechslung – schon in der Zeile „31 Energy-Sorten …“ erfasst), nicht einen neuen Ton.
+  Die frühere Hypothese aus Dossier 6.7 („Waschbär oder Affe“) bleibt als Zwischenstand dokumentiert.
 
 ### 4.2 Gewichte und Emotionsfelder
 
@@ -528,6 +551,9 @@ der Koffeinvergiftung eines Kindes (3.4 ✔ [28, 29]). Das ist eine Einschätzun
   Regel aus dem Nachtrag 4.1 ist das ein interner Wert. Die Präsenz „mittel“ tragen ohnehin die Community-Kanäle
 - [x] (19.10., D14) Folienentwurf 5 und Notizen f05: Rückfrage 5 um den Halbsatz aus `gruenderbefragung.md` 4.2
   (P10) ergänzt, Stand-Vermerk in f05 nachgezogen; beim Zusammenführen den Branch von Account 2 beachten
+- [x] (20.10., D18) Zeile „Maskottchen“ in 4.1: Ton laut Analogie Chamäleon statt „Waschbär oder Affe“; Nachtrag
+  20.10. in 4.1
+- [ ] Elias: Begründung Chamäleon prüfen (Nachtrag 20.10. in 4.1, Notizen Folie 08) – trifft sie seine Einordnung?
 
 ---
 

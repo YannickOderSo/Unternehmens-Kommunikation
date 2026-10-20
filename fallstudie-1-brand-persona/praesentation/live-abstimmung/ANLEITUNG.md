@@ -1,15 +1,19 @@
 # Live-Abstimmung einrichten – Schritt für Schritt
 
-Für: Yannick · Dauer: ca. 10 Minuten · Stand: 19.10.2026
+Für: Yannick · Dauer: ca. 10 Minuten · Stand: 19.10.2026 (20.10.2026: Chamäleon statt Waschbär in den Beispielen)
 Gebraucht wird: ein **privates Google-Konto** (Gmail), ein Laptop mit Chrome, ein Handy.
 
 > **Schon eingerichtet?** Dann nur den Abschnitt [„Skript aktualisieren (neue Fassung)“](#skript-aktualisieren-neue-fassung)
 > durcharbeiten (ca. 5 Minuten). Die Fassung vom 19.10.2026 nimmt viele gleichzeitige Stimmen deutlich schneller an.
-> Welche Fassung gerade läuft, zeigt `<URL>?aktion=fassung` (Punkt 5 dort).
+> Welche Fassung gerade läuft, zeigt `<URL>?aktion=fassung` (Punkt 5 dort). Am 20.10.2026 auf Wunsch von Yannick
+> zurückgestellt, bis Folie 08 überarbeitet ist (`../LIESMICH.md`, Abschnitt 12).
 
 ## Worum es geht
 
-Auf Folie 08 fragen wir: „Wenn HOLY ein Tier wäre – welches?“ (Adler, Löwe, Waschbär, Fuchs, Schwan).
+Auf Folie 08 fragen wir: „Wenn HOLY ein Tier wäre – welches?“ (Adler, Löwe, Chamäleon, Fuchs, Schwan).
+Seit 20.10.2026 steht das Chamäleon an der Stelle des Waschbärs (Nummer 2). Skript und Tabelle speichern nur die
+Nummer des Tiers – an der Web-App ändert sich dafür nichts. Probestimmen mit Nummer 2 aus der Zeit davor zählen
+jetzt als Chamäleon; im Vortrag zählen sie ohnehin nicht (eigene Runde, Abschnitt „Vor dem Vortrag“).
 
 1. Das Publikum scannt den **QR-Code** auf Folie 08 und landet auf unserer Abstimmseite (`abstimmen.html`).
 2. Ein Tipp auf ein Tier schickt die Stimme an eine kleine **Web-App** im eigenen Google-Konto (dieses
@@ -143,13 +147,13 @@ die Web-App-URL ersetzen:
 | Test | Adresse | Erwartet |
 |---|---|---|
 | Stand lesen | `<URL>?aktion=stand&umfrage=tier&runde=probe&anzahl=5` | `{"ok":true,"werte":[0,0,0,0,0],"n":0,"zeit":"…"}` |
-| Teststimme (Waschbär) | `<URL>?aktion=stimme&umfrage=tier&runde=probe&option=2&anzahl=5&geraet=test-laptop-1` | `{"ok":true}` und eine neue Zeile im Blatt „Stimmen“ |
+| Teststimme (Chamäleon) | `<URL>?aktion=stimme&umfrage=tier&runde=probe&option=2&anzahl=5&geraet=test-laptop-1` | `{"ok":true}` und eine neue Zeile im Blatt „Stimmen“ |
 | Umentscheiden (Adler) | dieselbe Adresse mit `option=0` | `{"ok":true}`; danach die Stand-Adresse (1. Zeile) neu laden: `"werte":[1,0,0,0,0]`, `"n":1` – nicht 2 |
 
 Kommt im privaten Fenster eine **Google-Anmeldung** statt `{"ok":…}`: Schritt 5, „Wer hat Zugriff“ auf
 **Jeder** stellen (Bereitstellungen verwalten → Bearbeiten → Neue Version → Bereitstellen).
 
-Option = Nummer des Tiers ab 0: 0 Adler · 1 Löwe · 2 Waschbär · 3 Fuchs · 4 Schwan.
+Option = Nummer des Tiers ab 0: 0 Adler · 1 Löwe · 2 Chamäleon · 3 Fuchs · 4 Schwan.
 
 **Mit dem Handy** (am besten über **mobile Daten**, nicht WLAN – so wie das Publikum):
 
