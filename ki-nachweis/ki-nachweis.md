@@ -114,6 +114,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 92 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17-Nacharbeit läuft |
 | 93 | 20.10.2026 | Yannick | „Wir sind höchstens 20 Leute …“: kein Lasttest mit 60, kein Plan-B-PDF | – | Lasttest mit 20 gegen die alte Fassung (20/20 gezählt, 6 über 15 s); Entscheidungen in ANLEITUNG, LIESMICH, AUTOREN, Testwerkzeug |
 | 94 | 20.10.2026 | Yannick | Skript-Aktualisierung zurückstellen; HOLY laut Elias eher Chamäleon → Abstimmung, Folie und Analyse ändern | – | Umfang ermittelt (Folie 08, Folie 10, Abstimmseite, Ausarbeitungen); Rückfragen zu Begründung und Tierauswahl |
+| 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | in Arbeit: Chamäleon in Folie 08, Folie 10, Abstimmung und Ausarbeitungen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1678,6 +1679,25 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Rückfragen
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 95 – 20.10.2026 – Yannick (Antworten auf drei Rückfragen von Claude)
+
+> Frage 1: „Wie begründet Elias das Chamäleon? …“ – Antwort (Auswahl): **„Claude schlägt vor“** (Begründung aus dem
+> Recherche-Dossier, als Vorschlag gekennzeichnet, Elias prüft)
+>
+> Frage 2: „Welche fünf Tiere sollen in der Live-Abstimmung stehen?“ – Antwort (Auswahl): **„Chamäleon statt
+> Waschbär“** (Adler, Löwe, Chamäleon, Fuchs, Schwan)
+>
+> Frage 3: „Was soll am Design außer dem Chamäleon noch überarbeitet werden?“ – Antwort (Auswahl): **„Nur das
+> Chamäleon“**
+
+- **Vorgehen Claude:** Workflow D18 gestartet: Inhalte und Begründung (Folie 08, Folie 10, marke.js, Ausarbeitungen,
+  Doku) und Chamäleon-Zeichnung (Folie und Abstimmseite) parallel, zwei Prüfer (Inhalt/Belege/Kennzeichnung;
+  Darstellung), Nacharbeit mit Exporten. Begründung nur mit Dossier-Belegen, gekennzeichnet als Vorschlag; Lukas'
+  Dossier und das Recherche-Dossier bleiben unverändert; Live-Abstimmung technisch unverändert.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D18 (läuft)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1708,6 +1728,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
 | D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
 | D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
+| D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
