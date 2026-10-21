@@ -263,3 +263,4 @@
 {"zeit": "2026-10-21T02:04:01+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "prompt", "prompt": "Weiter"}
 {"zeit": "2026-10-21T02:04:46+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "workflow", "skript": "", "skript_datei": "/home/user/Unternehmens-Kommunikation/ki-nachweis/workflows/2026-10-20_abstimmung-zeitfenster.js", "name": "", "argumente": {"datum": "Di, 20.10.2026"}}
 {"zeit": "2026-10-21T02:08:20+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "prompt", "prompt": "Was steht danach für eine task an?"}
+{"zeit": "2026-10-21T02:10:33+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "prompt", "prompt": "Entscheidungen beide ja\nAccount 2 habe ich mitgeteilt das er bei einem weekly Limit von 95% seine Tasks an dich weitergeben soll er ist gerade circa bei 75% denke er wird seine Tasks nicht fertig bekommen\n"}

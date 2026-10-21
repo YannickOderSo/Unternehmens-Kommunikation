@@ -128,6 +128,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 106 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft, D22 vorbereitet |
 | 107 | 21.10.2026 | Yannick | „Was steht danach für eine task an?“ | – | Übersicht im Chat: laufende Pakete, Aufgaben für Yannick, Termine laut Arbeitsplan, Ergebnis Account 2 zum Zusammenführen |
 | 108 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
+| 109 | 21.10.2026 | Yannick | „Entscheidungen beide ja“ + Account 2 gibt bei 95 % Wochenlimit seine Aufgaben an Account 1 ab | D22 (Auftrag ergänzt) | Chamäleon ins Feld Tonalität (Folie 10, 08b „Ins Steuerrad“), Limbic-Typ bleibt Hauptaussage – in D22 aufgenommen; Stand Account 2 geprüft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1891,6 +1892,25 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D20 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D20 (läuft)
+
+### 109 – 21.10.2026 – Yannick
+
+> Entscheidungen beide ja
+> Account 2 habe ich mitgeteilt das er bei einem weekly Limit von 95% seine Tasks an dich weitergeben soll er ist
+> gerade circa bei 75% denke er wird seine Tasks nicht fertig bekommen
+
+- **Vorgehen Claude:**
+  - Bezug: die zwei offenen Entscheidungen aus der Antwort auf 107 – (1) Chamäleon auch ins Feld Tonalität auf
+    Folie 10: ja; (2) Limbic-Typ bleibt Hauptaussage auf Folie 05: ja.
+  - Beide Entscheidungen in den Auftrag von D22 aufgenommen (Workflow-Skript ergänzt; Feld Tonalität auf 10 und
+    Zeile „Ins Steuerrad“ auf 08b wortgleich, Hinweis für Lukas im Kasten; Wortbudget Folie 10 nicht erhöhen;
+    Limbic-Typ nur als eigene Erweiterung kennzeichnen).
+  - Stand von Account 2 auf dem Branch geprüft: `VORTRAGSREIFE.md` und `fragerunde.md` als Zwischenstand gepusht,
+    Workflow A2-D04 im letzten Schritt (Abnahme). Übernahme bei Übergabe: Branch mergen, Abnahme selbst abschließen,
+    Befunde gegen den neuen Stand abgleichen.
+- **Ergebnis:** Auftrag D22 ergänzt; Antwort im Chat
+- **Unteragenten:** D20 (läuft), D22 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
