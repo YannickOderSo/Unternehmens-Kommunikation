@@ -130,6 +130,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 108 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
 | 109 | 21.10.2026 | Yannick | „Entscheidungen beide ja“ + Account 2 gibt bei 95 % Wochenlimit seine Aufgaben an Account 1 ab | D22 (Auftrag ergänzt) | Chamäleon ins Feld Tonalität (Folie 10, 08b „Ins Steuerrad“), Limbic-Typ bleibt Hauptaussage – in D22 aufgenommen; Stand Account 2 geprüft |
 | 110 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
+| 111 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D22 (neu gestartet) | D22 war am Limit gescheitert (Bau fast fertig, 28 Dateien geändert); mit Hinweis neu gestartet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1921,6 +1922,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D20 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D20 (läuft)
+
+### 111 – 21.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** Zwischen 110 und 111 ist D20 fertig geworden (selbst geprüft und committet, `1e05a36`; Schritte zum
+  Aktualisieren des Skripts an Yannick); D22 wurde gestartet und ist am Nutzungslimit gescheitert, bevor ein Agent
+  fertig war – der Bau hatte aber fast alles umgesetzt (28 Dateien), offen waren Prüfläufe und Sichtprüfung.
+- **Vorgehen Claude:** Hinweis auf die Teiländerungen ins Workflow-Skript, D22 neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D22 (neu gestartet)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
