@@ -75,6 +75,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-49 | 20.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (13:52 UTC) |
 | A2-50 | 20.10.2026 | System | A2-D04: 26 von 27 Agenten fertig (alle Prüfpakete, Vollständigkeitsprüfung); ein Prüfpaket der Vollständigkeit am Nutzungslimit gescheitert (bis 18:50 UTC) | A2-D04 | Zwischenstand gesichert |
 | A2-51 | 20.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (19:30 UTC) |
+| A2-52 | 20./21.10.2026 | System | A2-D04: 29 von 30 Agenten fertig, beide Dateien geschrieben; Abnahme am Nutzungslimit gescheitert (bis 23:50 UTC) | A2-D04 | Dateien als Zwischenstand committet (2a03430) |
+| A2-53 | 21.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Abnahme mit resume gestartet (00:05 UTC) |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -759,6 +761,28 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
 > Erneut versuchen
 
 - **Vorgehen Claude:** Uhrzeit geprüft (19:29 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-52 – 20./21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Abnahme gescheitert – Workflow mit resume fortsetzen“; Unteragent „abnahme“: „You've
+> hit your session limit · resets 11:50pm (UTC)“. – Danach: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** 29 von 30 Agenten fertig; `praesentation/VORTRAGSREIFE.md` (582 Zeilen) und `fragerunde.md`
+  (1375 Zeilen) liegen vor. Vorsorglich als Zwischenstand committet und gepusht (2a03430), vorher auf Namen von
+  KI-Modellen durchsucht (nur der Werkzeugname „Claude Code“ kommt vor, wie im übrigen KI-Nachweis).
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-53 – 21.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Uhrzeit geprüft (00:04 UTC, Limit zurückgesetzt), Zwischenstand committet, A2-D04 mit
+  `resumeFromRunId` fortgesetzt (nur noch die Abnahme).
 - **Ergebnis:** A2-D04 läuft weiter
 - **Unteragenten:** A2-D04 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
