@@ -262,3 +262,4 @@
 {"zeit": "2026-10-21T02:03:42+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "prompt", "prompt": "This session's worker process was restarted. If your previous turn was already complete, take no action and wait for the next event. Otherwise, continue from where you left off."}
 {"zeit": "2026-10-21T02:04:01+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "prompt", "prompt": "Weiter"}
 {"zeit": "2026-10-21T02:04:46+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "workflow", "skript": "", "skript_datei": "/home/user/Unternehmens-Kommunikation/ki-nachweis/workflows/2026-10-20_abstimmung-zeitfenster.js", "name": "", "argumente": {"datum": "Di, 20.10.2026"}}
+{"zeit": "2026-10-21T02:08:20+02:00", "sitzung": "002eded1-dc13-5a62-bf74-88c0d7931eff", "art": "prompt", "prompt": "Was steht danach für eine task an?"}

@@ -126,6 +126,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 104 | 20.10.2026 | Yannick | Antwort auf Rückfrage zum Vorlesungs-Abgleich: „Steuerrad-Begriffe (Folie 10)“ und „Kennzeichnung & Rückfragen“ umsetzen | D22 (geplant) | Umsetzung nach Ende von D20 |
 | 105 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D20 (neu gestartet) | D20 war am Limit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet |
 | 106 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft, D22 vorbereitet |
+| 107 | 21.10.2026 | Yannick | „Was steht danach für eine task an?“ | – | Übersicht im Chat: laufende Pakete, Aufgaben für Yannick, Termine laut Arbeitsplan, Ergebnis Account 2 zum Zusammenführen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1868,6 +1869,18 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Workflow-Skript D22 vorbereitet und committet (`60d2b58`), Start nach D20.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D20 (läuft), D22 (geplant)
+
+### 107 – 21.10.2026 – Yannick
+
+> Was steht danach für eine task an?
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` gelesen (Account 2 hat `VORTRAGSREIFE.md` und
+  `fragerunde.md` als Zwischenstand vor der Abnahme gepusht, Workflow A2-D04 läuft dort noch) und die Termine aus
+  `arbeitsplan.md` abgeglichen. Übersicht im Chat: nach D20 und D22 Zusammenführen der Ergebnisse von Account 2,
+  Aufgaben für Yannick (Skript aktualisieren, Rätsel testen, offene Entscheidungen), Termine bis zur Generalprobe.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
