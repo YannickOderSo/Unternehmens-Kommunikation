@@ -24,17 +24,19 @@ also etwa für ein Drittel eines solchen Laufs.
 
 ## Stand (wird laufend aktualisiert)
 
-**Letzte Aktualisierung:** 21.10.2026, 00:08 UTC · Wochenlimit Account 2: **71 %** (Zurücksetzung Mo 26.10.2026, 15:00 UTC)
-· Branch `praesentation-account-2`
+**Letzte Aktualisierung:** 21.10.2026, 08:05 UTC · Wochenlimit Account 2: **83 %** (Zurücksetzung Mo 26.10.2026, 15:00 UTC)
+· Branch `praesentation-account-2` (master bis ba9807d zusammengeführt)
 
 | Aufgabe | Stand |
 |---------|-------|
-| Ü04 A) `fallstudie-1-brand-persona/praesentation/VORTRAGSREIFE.md` | geschrieben (Zwischenstand 2a03430); Abnahme läuft |
-| Ü04 B) `fallstudie-1-brand-persona/fragerunde.md` | geschrieben (Zwischenstand 2a03430); Abnahme läuft |
-| Ü04 Abnahme (Workflow A2-D04, letzter Agent) | läuft |
-| Eigene Stichprobenprüfung durch Account 2, Hinweis auf überfällige Fristen (Di 20.10.) | offen |
-| Zusammenfassung für Account 1 und Yannick (Top 10, Lieferplan Lukas/Elias, letzter Commit) | offen |
-| Ü03 (Fallstudie 2) | zurückgestellt (Ü04 hat Vorrang) |
+| Ü04 A) `fallstudie-1-brand-persona/praesentation/VORTRAGSREIFE.md` | **fertig** (Abnahme durch Account 2, Nachtrag oben in der Datei) |
+| Ü04 B) `fallstudie-1-brand-persona/fragerunde.md` | **fertig** (Abnahme durch Account 2, Nachtrag oben in der Datei) |
+| Zusammenfassung für Account 1 und Yannick | im Chat von Account 2 (21.10.2026) |
+| Lücke: Analogien-Inhalt Folie 08 nicht geprüft | offen – bei der nächsten Prüfung nachholen (nach D18) |
+| Ü03 (Fallstudie 2) | zurückgestellt |
+
+Hinweis: Eine Fortsetzung des Workflows A2-D04 hat am 21.10. die Zwischenergebnisse nicht übernommen und rund elf
+Prozentpunkte des Wochenlimits verbraucht. Account 2 startet deshalb ab jetzt keine großen Workflows mehr.
 
 Geprüft wurde der Stand `master` a929391 (19.10.2026, nach D12–D14). Ausgenommen waren die Live-Abstimmung auf Folie 08
 (D15) und die Bilder auf Folie 01/04 (D16).

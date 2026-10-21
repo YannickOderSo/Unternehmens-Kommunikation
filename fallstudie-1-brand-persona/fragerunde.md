@@ -34,7 +34,7 @@ Websuche. Wo etwas Modellwissen ist, steht es dabei.
 
 ---
 
-> **Nachtrag Account 2 (21.10.2026, 08:20 UTC)**
+> **Nachtrag Account 2 (21.10.2026, 08:05 UTC)**
 >
 > - **Abnahme:** Der Abnahme-Agent des Workflows ist am Nutzungslimit gescheitert. Claude (Account 2) hat die Datei
 >   selbst gegen Ü04 geprüft: 35 Fragen; jede mit Antwort (2–5 Sätze), wer antwortet, Beleg und Fallstricken;

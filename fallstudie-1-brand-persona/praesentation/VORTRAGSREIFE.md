@@ -12,7 +12,7 @@
 | **Zeilenangaben** | beziehen sich auf `index.html` im Stand 82670cb. Nach D15/D16 verschieben sie sich – Stellen deshalb über den zitierten Text suchen. |
 | **Grundlage** | 161 Befunde aus 8 Blickwinkeln und einer Vollständigkeitsprüfung, jeder Befund gegengeprüft. Aufgenommen sind bestätigte und teilweise bestätigte Befunde, bei „teilweise“ in der korrigierten Fassung. Kein Befund wurde vollständig widerlegt (Anhang 11.2). |
 
-> **Nachtrag Account 2 (21.10.2026, 08:20 UTC)**
+> **Nachtrag Account 2 (21.10.2026, 08:05 UTC)**
 >
 > - **Fertig erst am 21.10.:** Der Workflow ist mehrmals am Nutzungslimit abgebrochen. Fristen „sofort (Di 20.10.)“ sind
 >   damit überfällig und gelten als **sofort**; der vorgeschlagene Datenschluss „Mi 21.10. abends“ ist **heute**.

@@ -62,7 +62,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-36 | 18.10.2026 | Yannick (Account 2) | „Alle Kapazitäten auf die aktuelle Präsentation erstmal“ (+ Befehl /workflow-authoring) | A2-D03 (Workflow) | abgebrochen (Nutzungslimit); ersetzt durch A2-D04 (Ü04, A2-39) |
 | A2-37 | 18.10.2026 | System | Container-Neustart (Workflow abgebrochen) und Stop-Hook „Änderungen nicht committet“ | A2-D03 (fortgesetzt) | Workflow mit resume fortgesetzt; Rohprotokoll committet |
 | A2-38 | 18./19.10.2026 | System | Workflow A2-D03 am Nutzungslimit gescheitert; Neustarts des Sitzungsprozesses | A2-D03 | nicht fortgesetzt (Ü04: neu aufsetzen) |
-| A2-39 | 19.10.2026 | Yannick (Account 2), Übergabe Ü04 von Account 1 | Vortragsreife neu prüfen (Stand nach D12–D14) und Fragerunde vorbereiten | A2-D04 (Workflow) | in Arbeit: `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` |
+| A2-39 | 19.10.2026 | Yannick (Account 2), Übergabe Ü04 von Account 1 | Vortragsreife neu prüfen (Stand nach D12–D14) und Fragerunde vorbereiten | A2-D04 (Workflow) | fertig (21.10.2026): `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` |
 | A2-40 | 19.10.2026 | System | Workflow A2-D04 am wöchentlichen Nutzungslimit gescheitert (4 von 13 Agenten fertig); Neustarts des Sitzungsprozesses | A2-D04 | Zwischenstand im Journal gesichert |
 | A2-41 | 19.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (15:27 UTC) |
 | A2-42 | 19.10.2026 | System | A2-D04 erneut am Nutzungslimit gescheitert (Sitzungslimit bis 16:40 UTC) | A2-D04 | Zwischenstand gesichert |
@@ -78,6 +78,8 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-52 | 20./21.10.2026 | System | A2-D04: 29 von 30 Agenten fertig, beide Dateien geschrieben; Abnahme am Nutzungslimit gescheitert (bis 23:50 UTC) | A2-D04 | Dateien als Zwischenstand committet (2a03430) |
 | A2-53 | 21.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Abnahme mit resume gestartet (00:05 UTC) |
 | A2-54 | 21.10.2026 | Yannick (Account 2) | Limit planen; bei 95 % Wochenlimit Aufgaben an Account 1 übergeben | – | Limitplan und laufend gepflegte Übergabedatei `uebergaben/2026-10-21_von-account-2_an-account-1.md` |
+| A2-55 | 21.10.2026 | System | Fortsetzung von A2-D04 übernahm die Zwischenergebnisse nicht; 9 Agenten liefen neu und scheiterten am Fünf-Stunden-Limit | A2-D04 | Workflow nicht mehr fortgesetzt; Wochenlimit 71 % → 82 % |
+| A2-56 | 21.10.2026 | Yannick (Account 2) | „Weiter“ | – | Abnahme selbst gemacht, Nachtrag in beiden Dateien, master zusammengeführt, Nachweis und Übergabe aktualisiert |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -803,6 +805,38 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-55 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; neun Unteragenten: „You've hit your session limit ·
+> resets 5am (UTC)“. – Danach: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Die Fortsetzung von 00:05 UTC (nur die Abnahme fehlte noch) hat die gespeicherten Ergebnisse
+  nicht übernommen (Ursache unklar) und neun bereits fertige Prüfer neu gestartet; sie scheiterten am
+  Fünf-Stunden-Limit. Beide Dateien waren davon nicht betroffen (Zwischenstand 2a03430). Auslastung danach:
+  Wochenfenster 82 % (vorher 71 %). Entscheidung: A2-D04 nicht mehr fortsetzen, die Abnahme selbst machen.
+- **Ergebnis:** keine Dateien geändert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-56 – 21.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Auslastung gelesen (08:03 UTC: Woche 83 %, fünf Stunden 10 %) – unter 85 %, aber kein neuer
+  Workflow. Abnahme selbst: Gliederung beider Dateien gegen Ü04; fragerunde.md per Skript (35 Fragen, je Antwort mit
+  2–5 Sätzen, „antwortet“, Beleg, Fallstricke; „95 %“ nur mit Zusatz; Gründeraussagen als Selbstauskunft; Statista wie
+  in persona-daten.md); Stichproben an der Quelle (430 von 840 s; 1.610 Wörter und 14:59; 52 offene Prüffelder im
+  KI-Nachweis von Account 1 bei a929391; „5 KI-Personas + 3 Kurzinterviews“ in index.html; F04 ↔
+  gruenderbefragung.md Kopf). Keine Abweichung. Gefunden: Der Analogien-Inhalt von Folie 08 wurde nicht geprüft
+  (Prüfauftrag von Account 2 missverständlich, nicht Ü04). `origin/master` geprüft: seit a929391 D17–D22 von Account 1
+  (u. a. Chamäleon statt Waschbär, Abgleich mit den Vorlesungsfolien). Nachtrag mit Fristen, Lücke und Änderungen in
+  beide Dateien; master zusammengeführt (1dd16da, ohne Konflikte); Nachweis A2-D04 vervollständigt; Übergabedatei
+  aktualisiert.
+- **Ergebnis:** `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` (Nachtrag), Übergabedatei
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -962,8 +996,34 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
 - **Stufen:** Prüfen (7 Prüfer + 2 Fragensammler) → Gegenprüfen (je Blickwinkel 1 Agent; Fragerunde zusätzlich je 8 Fragen
   1 Agent, der jede Antwort an der Quelle prüft) → Vollständigkeit (1 Agent + Gegenprüfung) → Berichte (2 Agenten:
   `VORTRAGSREIFE.md`, `fragerunde.md`) → Abnahme (1 Agent, prüft beide Dateien gegen Ü04 und korrigiert nur diese).
-- **Unteragenten und Ergebnisse:** folgt nach Abschluss.
-- **Wie Claude das Ergebnis prüft:** folgt nach Abschluss.
+- **Läufe:** gestartet 19.10.2026; acht Fortsetzungen nach Nutzungslimits (A2-40 bis A2-55); die letzte (A2-55)
+  übernahm die Zwischenergebnisse nicht und wurde nicht weitergeführt.
+- **Unteragenten und Ergebnisse** (30 Unteragenten; Urteile der Gegenprüfer: b = bestätigt, t = teilweise, w = widerlegt):
+
+  | Nr. | Unteragent (Label) | Ergebnis |
+  |-----|--------------------|----------|
+  | A2-D04.01 | pruefen:aufgabe | 21 Befunde (Abdeckung der Aufgabe, Punkteschätzung, Tabelle Beispieldaten) |
+  | A2-D04.02 | pruefen:storyline | 17 Befunde |
+  | A2-D04.03 | pruefen:zeit | 14 Befunde (Wörter per Skript gezählt, Sprecher- und Kürzungsplan) |
+  | A2-D04.04 | pruefen:fakten | 21 Befunde |
+  | A2-D04.05 | pruefen:technik | 12 Befunde |
+  | A2-D04.06 | pruefen:referentenansicht | 17 Befunde |
+  | A2-D04.07 | pruefen:gestaltung | 15 Befunde |
+  | A2-D04.08 | pruefen:fragen-prof | 25 Fragen, 18 Befunde |
+  | A2-D04.09 | pruefen:fragen-publikum | 18 Fragen, 14 Befunde |
+  | A2-D04.10–.17 | gegen:aufgabe, storyline, zeit, fakten, technik, referentenansicht, gestaltung, rueckfragen | 9 b/12 t · 1 b/16 t · 6 b/8 t · 13 b/8 t · 8 b/4 t · 14 b/3 t · 6 b/9 t · 21 b/11 t; 0 w |
+  | A2-D04.18–.23 | gegen:fragen-paket-1 … 6 | 43 Antworten an der Quelle geprüft: 42 korrigiert, 1 korrekt, 0 gestrichen |
+  | A2-D04.24 | vollstaendigkeit | 12 neue Befunde, 10 neue Fragen, Widersprüche zwischen Prüfern aufgelöst |
+  | A2-D04.25–.27 | gegen:voll, gegen:fragen-voll-1, -2 | 5 b/7 t; 10 Antworten korrigiert |
+  | A2-D04.28 | bericht:vortragsreife | `praesentation/VORTRAGSREIFE.md`: 161 Befunde (0 widerlegt) zu 105 Maßnahmen zusammengeführt |
+  | A2-D04.29 | bericht:fragerunde | `fragerunde.md`: 53 geprüfte Fragen zu 35 zusammengeführt |
+  | A2-D04.30 | abnahme | am Nutzungslimit gescheitert; durch Claude ersetzt (A2-56) |
+
+- **Ergebnis:** fertig am 21.10.2026 (Zwischenstand 2a03430, Nachtrag nach der Abnahme).
+- **Wie Claude das Ergebnis geprüft hat:** siehe A2-56 (Gliederung gegen Ü04, Skriptprüfung der Fragerunde,
+  Stichproben an der Quelle, Namen von KI-Modellen gesucht). Auffällig: Kein Befund wurde ganz widerlegt, aber 78 von
+  161 nur teilweise bestätigt und fast alle Antworten korrigiert – die Gegenprüfung hat also gewirkt, die Befunde
+  sind trotzdem vor dem Umsetzen gegen den aktuellen Stand zu prüfen (Nachtrag in beiden Dateien).
 
 ---
 
