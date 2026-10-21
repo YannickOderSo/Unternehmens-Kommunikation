@@ -96,6 +96,9 @@
     var ziel = zielFuer(feld);
     if (!ziel) { Deck.hinweis('Zu „' + (FELDER[feld] ? FELDER[feld].name : feld) + '“ gibt es noch keine Folie'); return; }
     if (quelle && quelle.closest('.sprungmenue')) Deck._menueZiel(ziel.id);
+    /* Deck.springe: auch aus dem Referentenfenster springt der Beamer mit
+       (VORTRAGSREIFE A7, 21.10.2026; vorher nur das Referentenfenster) */
+    else if (Deck.springe) Deck.springe(ziel.id, 0);
     else Deck.gehe(ziel.id, 0);
   }
 
@@ -1673,7 +1676,7 @@
     var antwort = String(konfig.unsereAntwort || '').toLowerCase();
     var i = (konfig.optionen || []).map(function (o) { return String(o).toLowerCase(); }).indexOf(antwort);
     if (i < 0 || !summe) return { prozent: 0, summe: summe, gueltig: false };
-    return { prozent: Math.round(werte[i] / summe * 100), summe: summe, gueltig: true };
+    return { prozent: Math.round(werte[i] / summe * 100), summe: summe, gueltig: true, stimmen: werte[i] || 0 };
   }
   function anzeigenAktualisieren(id, werte, konfig, beispiel, animiert) {
     umfrageAnzeigen.forEach(function (a) {
@@ -1698,15 +1701,30 @@
       if (t) satz.appendChild(document.createTextNode(t));
       if (i < teile.length - 1) el('em', { class: 'ua-antwort' }, antwort, satz);
     });
-    /* Ersatz ohne Stimmen (Klasse „ist-leer“): statt „– % sehen … wie wir“
-       steht „Noch keine Stimmen“ (CSS blendet den Satz aus, komponenten.css) */
-    el('span', { class: 'ua-leer' }, konfig.aussageLeer || 'Noch keine Stimmen', huelle);
+    /* Ersatz ohne Aussage (Klasse „ist-leer“): statt „– % sehen … wie wir“
+       steht ein Hinweis (CSS blendet den Satz aus, komponenten.css):
+       • keine Stimmen → „Noch keine Stimmen“ (marke.js → aussageLeer)
+       • nur Beispielwerte (offline, nichts gespeichert, z. B. am Hörsaal-PC)
+         → „Beispielwerte – keine Aussage“ (aussageBeispiel). Vorher stand dann
+         groß „27 % sehen … wie wir“ – eine erfundene Zahl als Ergebnis
+         (Prüfung Folie 08, 21.10.2026).
+       • Stimmen, aber keine für unsereAntwort → „Chamäleon: keine Stimme“
+         (aussageNull, {antwort} wird ersetzt) statt „0 % sehen … wie wir“. */
+    var leer = el('span', { class: 'ua-leer' }, konfig.aussageLeer || 'Noch keine Stimmen', huelle);
+    var LEER_TEXTE = {
+      leer: konfig.aussageLeer || 'Noch keine Stimmen',
+      beispiel: konfig.aussageBeispiel || 'Beispielwerte – keine Aussage',
+      null: (konfig.aussageNull || '{antwort}: keine Stimme').replace('{antwort}', antwort)
+    };
     var anzeige = {
       id: id, el: huelle,
       aktualisieren: function (werte, beispiel, animiert) {
         var a = anteilAntwort(werte, konfig);
         var alt = parseFloat(zahl.getAttribute('data-ziel')) || 0;
-        huelle.classList.toggle('ist-leer', !a.gueltig);
+        var grund = !a.gueltig ? 'leer' : beispiel ? 'beispiel' : !a.stimmen ? 'null' : '';
+        if (grund) leer.textContent = LEER_TEXTE[grund];
+        huelle.classList.toggle('ist-leer', !!grund);
+        if (grund && a.gueltig) { zahl.removeAttribute('data-ziel'); zahl.textContent = '– %'; return; }
         /* Keine Stimmen: KEIN Zielwert setzen – sonst zählt die Schritt-Animation
            („zaehlen“) beim Weiterklicken von „– %“ auf „0 %“ hoch. Ohne data-ziel
            überspringt die Engine das Zählen, „– %“ bleibt stehen. */

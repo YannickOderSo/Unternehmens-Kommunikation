@@ -132,7 +132,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 110 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
 | 111 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D22 (neu gestartet) | D22 war am Limit gescheitert (Bau fast fertig, 28 Dateien geändert); mit Hinweis neu gestartet |
 | 112 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D22 | nur Nachweis committet; D22 läuft |
-| 113 | 21.10.2026 | Yannick | „Mach erstmal weiter das Skript mache ich später“ | Ü04 (Übernahme), D23 (geplant) | Branch von Account 2 (Ü04 fertig) nach master zusammengeführt; Abgleich der Befunde mit dem aktuellen Stand geplant |
+| 113 | 21.10.2026 | Yannick | „Mach erstmal weiter das Skript mache ich später“ | Ü04 (Übernahme), D23 (geplant) | Branch von Account 2 (Ü04 fertig) nach master zusammengeführt; D23: Befunde abgeglichen, technische Punkte umgesetzt, Fragerunde aktualisiert, Folie 08 nachgeprüft |
 | 114 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 115 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D23 (fortgesetzt) | D23 war nach 5 Minuten am Limit gescheitert (keine Dateiänderungen); fortgesetzt |
 | 116 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
@@ -2050,7 +2050,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D19 | 20.10.2026 | 98 (neu gestartet nach 100, fortgesetzt nach 102) | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | Rätselbild mit Logo (data-URI), Stufen 440/11 → 220/10 → 100/0, Kennzeichnung, Doku; 2 Prüfer (3 mittlere Befunde) umgesetzt | Claude: Stufenbilder und Folienbild f01 angesehen, Diff und Modellbezeichnungen geprüft |
 | D20 | 20.–21.10.2026 | 100/101 (neu gestartet nach 105) | Workflow „abstimmung-zeitfenster“ (3 Unteragenten in 3 Phasen) | Stimmen zählen nur 30 Minuten: Server-Parameter minuten, Folie 08, Abstimmseite, Tests, Doku | Fassung 20.10.2026 mit Zeitfenster; Folie, Handy, Speicher; 53 Prüfungen, 26 Mutanten, Browser-Test zeitfenster-e2e.mjs; Prüfer: 3 mittlere Befunde umgesetzt | Claude: Tests 53/53, zeitfenster-e2e 58/0, Prüflauf f08 0 Fehler |
 | D22 | 21.10.2026 | 104/109 (neu gestartet nach 111) | Workflow „abgleich-umsetzung“ (3 Unteragenten in 3 Phasen) | Steuerrad-Begriffe nach Stenger, Chamäleon im Feld Tonalität, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen | Mitte „Markenkern“, Band „Positionierung“, Wir-Form, „Markeneigenschaften“, Tonalität mit „wandelbar“; Prüfer 1 hoher, 5 mittlere Befunde umgesetzt; Exporte neu | Claude: f10 angesehen, Diff-Umfang und Modellbezeichnungen geprüft |
-| D23 | 21.10.2026 | 113 | Workflow „vortragsreife-abgleich“ (6 Unteragenten in 4 Phasen) | Ergebnisse von Account 2 mit aktuellem Stand abgleichen, technische Punkte umsetzen, Fragerunde aktualisieren, Folie 08 nachprüfen | *läuft* | – |
+| D23 | 21.10.2026 | 113 (fortgesetzt nach 115, 117) | Workflow „vortragsreife-abgleich“ (6 Unteragenten in 4 Phasen) | Ergebnisse von Account 2 mit aktuellem Stand abgleichen, technische Punkte umsetzen, Fragerunde aktualisieren, Folie 08 nachprüfen | Nachtrag in VORTRAGSREIFE.md (Status je Befund, neue Top 10), fragerunde.md aktualisiert, technische Punkte umgesetzt, referent-test.mjs; Prüfer 1 hoher, 4 mittlere Befunde umgesetzt | Claude: Tests, Syntax, Diff-Umfang und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 
 <!-- Vorlage für den Detaileintrag:
@@ -2733,6 +2733,37 @@ steht hier mit dem wörtlichen Auftrag.
   Positionierung, Tonalität mit „wandelbar“, Feld Markeneigenschaften); verbliebene „Markenkompetenz“-Stellen sind
   Einordnungen/Historie; `git diff --name-only` gegen geschützte Dateien und Modellbezeichnungen geprüft.
   Offen: Entscheidungen Elias (Titel Folie 11) und Yannick (sichtbares „Stenger, S. 78“ auf B1, B2-Zeile).
+
+### D23 – 21.10.2026 – ausgelöst durch Prompt 113 (fortgesetzt nach 115 und 117)
+
+- **Art:** Workflow „vortragsreife-abgleich“, sechs Unteragenten in vier Phasen: Abgleich der Befunde, Aktualisierung
+  der Fragerunde und Nachprüfung Folie 08/08b parallel; Umsetzung; adversariale Prüfung; Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-21_vortragsreife-abgleich.js`](workflows/2026-10-21_vortragsreife-abgleich.js).
+- **Anlass:** Übernahme der Ergebnisse von Account 2 (Ü04), die den Stand vom 19.10. (a929391) geprüft hatten.
+- **Unterbrechungen:** zweimal am Nutzungslimit; beim zweiten Mal mit Hinweis auf die Teiländerungen der Umsetzung
+  fortgesetzt.
+- **Ergebnis:**
+  - **`VORTRAGSREIFE.md`:** Nachtrag „Stand 21.10.2026 (Account 1)“ oben: Status je Befund (erledigt / teilweise /
+    offen / überholt mit Beleg), neue Top 10, Folie-08-Befunde, neue Befunde seit 19.10.; Originalbericht darunter
+    unverändert.
+  - **`fragerunde.md`:** Antworten, Belege und Fallstricke auf den Stand gebracht (Chamäleon, Markenkern/Positionierung,
+    Wir-Form, Identität/Image, KI-Personas S. 78, Limbic-Typen, Logo-Rätsel, Live-Abstimmung), Fragen ergänzt.
+  - **Technisch umgesetzt** (ohne inhaltliche Entscheidung): Bedienung im Referentenfenster (Sprünge und Klicks
+    wirken richtig auf den Beamer, Sperre vor/nach der Fragerunde), Sprungziele in Folie 12, Darstellungsdetails
+    (CSS 04, 06, 08, 09, 10, deck.css), Handout-Sprechtextfassung, Hinweise in Notizen und Kästen, QUELLEN/LIESMICH/
+    AUTOREN; neues Testwerkzeug `werkzeuge/referent-test.mjs` (43 Prüfungen).
+  - **Ohne dokumentierte Freigabe eingebaut, zur Bestätigung durch Yannick:** Y16 (Notizen Folie 05: „direkt umgerechnet
+    etwa 45/27/27 … Lücke −7 statt −10“, Herleitung `limbic-map.md` §3.2) und Y20 (Streichung „Dortmund nur im
+    Sprechtext“ auf Folie 04); A31 (Lücken auf Folie 10 durchgezogen statt gestrichelt).
+  - **Prüfer:** 1 hoher Befund (Übungsdatei mit veralteter Bedienanweisung „zweimal Zurücksetzen“), 4 mittlere
+    (u. a. Klicks im Referentenfenster, Antworten zu KI-Befragten als Tatsache formuliert, Sprungziel auf
+    Beispieldaten) – umgesetzt.
+  - **Exporte:** PDF 22 Seiten, Folienbilder (geändert: 04, 06, 08b, 09, 10, B3, B7, B8), Übersicht 21.10.2026 –
+    Zwischenstand mit Pillen „Beispieldaten“; endgültiger Export nach der Generalprobe.
+- **Wie Claude das Ergebnis geprüft hat:** `node --check` für alle Skripte, `live-abstimmung-test.mjs` 53/53,
+  geschützte Dateien unverändert, keine Modellbezeichnungen; Nacharbeit meldet `pruefen.mjs --schritte --optional`
+  0 Fehler, `referent-test.mjs` 43/43, `zeitfenster-e2e.mjs` 58/58. Inhaltlich offen: Lieferungen von Lukas und
+  Elias, Entscheidungen Yannick (LIESMICH 12.1).
 
 ---
 

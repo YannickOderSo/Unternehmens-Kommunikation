@@ -219,7 +219,7 @@
   height: 24px;
   border-radius: var(--radius-pille);
   background: var(--f-flaeche-2);
-  overflow: hidden;
+  overflow: visible;           /* Ø-Strich ragt über den Balken (A33); Füllung hat eigene Rundung */
 }
 #f04 .g2p-balken-fuellung {
   position: absolute;
@@ -234,8 +234,8 @@
    Balken, mit hellem Rand – auf der Füllung und auf der leeren Spur sichtbar */
 #f04 .g2p-balken-schnitt {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: -4px;                   /* ragt oben und unten 4 px über den Balken: auf dem */
+  bottom: -4px;                /* dunklen Balken aus der Ferne erkennbar (A33, 21.10.2026) */
   width: 4px;
   margin-left: -2px;
   background: var(--f-text);

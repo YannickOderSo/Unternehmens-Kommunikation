@@ -316,10 +316,13 @@
   margin-inline: auto;
 }
 
-/* Schritt 2: die übrigen Gruppen treten zurück (Token --dimmen).
-   Auslöser ist das unsichtbare Element .g5-ausloeser (data-schritt="2"). */
+/* Schritt 2: die übrigen Gruppen treten zurück.
+   Auslöser ist das unsichtbare Element .g5-ausloeser (data-schritt="2").
+   Schritt 2 ist der Endzustand der Folie – deshalb seit 21.10.2026 nur 0,8
+   statt --dimmen (0,6): Die grauen Balken erreichten mit 0,6 nur 2,21 : 1
+   (VORTRAGSREIFE A5). Das globale --dimmen bleibt (steuert auch Folie 10). */
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-motiv:not(.hat-schluesselbild) {
-  opacity: var(--dimmen);
+  opacity: 0.8;
 }
 
 

@@ -543,6 +543,11 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
    Im Druck/PDF (Handout zum Nachlesen) nur leicht, damit Werte lesbar bleiben. */
 #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: var(--dimmen); }
 html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.8; }
+/* Endzustand (Karte „Ins Steuerrad“ ist da): nur noch leicht zurück (0,8),
+   damit die Werte 2,9/2,4/1,6 auf dem Beamer lesbar bleiben – mit 0,6 nur
+   2,76 : 1 (VORTRAGSREIFE A5, 21.10.2026). Das globale --dimmen bleibt
+   (steuert auch Folie 10). */
+#f08b .g4t:has(.g4t-steuerrad.schritt-an) .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.8; }
 
 
 /* ---------------------------------------------------------------------------
@@ -566,6 +571,20 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
    Felds Tonalität auf Folie 10 – gleiche Gestaltung wie „Ins Steuerrad ·
    Markenbild“ auf f09b (fett, Trenner „·“, Stichworte nicht umbrechen) */
 #f08b .g4t-uebergabe { display: flex; flex-direction: column; gap: var(--abstand-1); }
+/* Seit 21.10.2026 hervorgehoben (Prüfung Folie 08, Account 1): Die
+   Übergabezeile ist das eigentliche Ergebnis fürs Rad, war aber schwächer
+   als Emotionen und Beziehung, und „Ins Steuerrad“ las sich wie eine
+   Überschrift der ganzen Karte. Jetzt ein helles Band mit Balken in der
+   Feldfarbe Tonalität (--f-weich, wie auf Folie 10); Beschriftung und
+   Stichworte gehören sichtbar zusammen, die Blöcke darunter sind Belege. */
+#f08b .g4t-uebergabe {
+  /* Band über die ganze Kartenbreite (negativer Rand = Kartenpolster): Die
+     Stichworte behalten ihre Breite und bleiben einzeilig */
+  margin-inline: calc(-1 * var(--karte-polster));
+  padding: 8px var(--karte-polster) 8px calc(var(--karte-polster) - 6px);
+  border-left: 6px solid var(--f-weich);
+  background: var(--f-hintergrund);
+}
 #f08b .g4t-steuerrad {
   display: flex;
   flex-wrap: wrap;

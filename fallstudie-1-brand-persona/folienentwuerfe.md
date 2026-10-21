@@ -51,6 +51,8 @@ Mehr Text braucht die Folie nicht. Was die Grafik nicht zeigt, steht im Sprechte
 
 ![Folie 2: Methoden und Markensteuerrad](grafiken/folie-02-vorgehen.png)
 
+*Arbeitsentwurf der Ausarbeitung – die Darstellung im Vortrag zeigt die Web-Präsentation (`praesentation/export/folien/`); Bildsprache und Farben weichen hier ab (Vermerk 21.10.2026, VORTRAGSREIFE Y31).*
+
 Datei: [`grafiken/folie-02-vorgehen.svg`](grafiken/folie-02-vorgehen.svg) (Vorschau als PNG daneben)
 
 - **Mitte:** Markensteuerrad nach Esch. Links die *hard facts* (Eigenschaften, Nutzen) in Blaugrau, rechts die *soft facts*
@@ -180,6 +182,8 @@ Die Folie selbst ist die Web-Folie f03. Dieselben Inhalte als Grafik (für Power
 
 ![Folie 3: Markenkern von HOLY](grafiken/folie-03-markenkompetenz.png)
 
+*Arbeitsentwurf der Ausarbeitung – die Darstellung im Vortrag zeigt die Web-Präsentation (`praesentation/export/folien/`); Bildsprache und Farben weichen hier ab (Vermerk 21.10.2026, VORTRAGSREIFE Y31).*
+
 (Grafik am 21.10.2026 neu erzeugt: Kicker „MARKENKERN · WER SIND WIR?“ und Feldname in der Quellenzeile wie in der
 Vorlesung; Inhalte unverändert. Dateiname bleibt.)
 
@@ -223,7 +227,7 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
    heißt sein Beispiel „Soll-Markensteuerrad“, W+; die Vorlesung zeigt das zusammengeführte Rad als „IST-Identität –
    Erster Entwurf zur Abstimmung“, Stenger, S. 91). Abgrenzen soll die Positionierung (S. 92). Gegenüber Dosen-Energy und Cola unterscheidet das Format klar; waterdrop ist ein Format-Zwilling. Belegte Unterschiede (Dossier 5.2): Pulver und Syrup statt Brausewürfel; 160 mg ✔ [56] statt ≈ 90 mg Koffein (Microenergy); kein Abo ✔ [30, 48], waterdrop dagegen mit Abo (✎ [7, 66, 116]).
 9. **„Auf Folie 6 ist ‚selbst anrühren‘ eine Hürde – widerspricht das Folie 3?“**
-   Nein, das ist ein Befund: Markenkern laut HOLY (Selbstbild, Folie 3), Hürde laut Befragten (Fremdbild, Folie 6). Diese Lücke greifen wir auf Folie 10/11 auf. Folie 6 zeigt derzeit Beispieldaten; nach Lukas' Auswertung am Mo 19.10. bestätigen oder streichen.
+   Nein, das ist ein Befund: Markenkern laut HOLY (Selbstbild, Folie 3), Hürde laut Befragten (Fremdbild, Folie 6). Diese Lücke wollen wir auf Folie 10/11 aufgreifen (geplant; Stand 21.10.2026 steht sie dort noch nicht – die Synthese entscheidet nach Lukas' Auswertung). Folie 6 zeigt derzeit Beispieldaten; nach Lukas' Auswertung am Mo 19.10. bestätigen oder streichen.
 10. **„Wie viele aktive Kund:innen hat HOLY?“**
     Dazu gibt es keine Angabe. Das Press Kit nennt „2M+ loyale Kund:innen“ ohne Definition [13], HV Capital „>2.5M“ „since founding“ [14], die WiWo 2,5 Mio. ohne Definition [16]. Alles sind Selbstauskünfte.
 11. **„Woher kommt die Kundschaft von HOLY – von Softdrinks oder von anderen Pulvern?“**
@@ -376,7 +380,7 @@ Alternativen:
    laut Jost kein Trinkanlass.
 3. **„Sind das Daten über HOLY?“**
    Nein, fast alle Zahlen beschreiben Energy-Drink-Konsument:innen allgemein. HOLY veröffentlicht keine Kundendaten;
-   HOLY-spezifisch sind nur die Gründeraussagen. Deshalb haben wir mit Bewertungen und echten Interviews abgeglichen.
+   HOLY-spezifisch sind nur die Gründeraussagen. Deshalb gleichen wir mit Bewertungen und echten Interviews ab (geplant; Stand 21.10.2026 steht der Abgleich noch aus – erst danach in der Vergangenheitsform).
 4. **„Warum Schichtdienst – ist das nicht eine Randgruppe?“**
    Laut Eurostat arbeiten 17 Prozent der Männer zwischen 25 und 49 in Deutschland in Schichten (2025), und die Gründer
    nennen Schichtberufe ausdrücklich [4, 24]. Auch Gründer Mathias Horsch nennt in unserer Befragung Pflege, Lkw,
@@ -448,6 +452,8 @@ Alternativen:
 Die Folie ist die Web-Folie f05; sie baut die Karte aus den Daten. Dieselbe Karte für Backup B1 (und für PowerPoint):
 
 ![Folie 5: Limbic Map mit Marco und HOLY](grafiken/folie-05-limbic-map.png)
+
+*Arbeitsentwurf der Ausarbeitung – die Darstellung im Vortrag zeigt die Web-Präsentation (`praesentation/export/folien/`). Achtung, andere Kodierung: hier Persona schwarzer Kreis, Marke gelber Kreis; auf Folie 05 der Präsentation Marco brauner Kreis, HOLY schwarze Raute (Vermerk 21.10.2026, VORTRAGSREIFE Y31).*
 
 Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (PNG daneben; erzeugt mit
 `grafiken/folie-05-limbic-map.py`, gleicher Rechenweg wie f05).

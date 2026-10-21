@@ -10,7 +10,8 @@
      • geladene Schriften
      • Überlauf: sichtbare Elemente außerhalb der Bühne, abgeschnittener Text
      • Schriftgröße (Inhalt ≥ 28 px, Metaangaben ≥ 22 px)
-     • Kontrast Text/Hintergrund (WCAG AA: 4,5 : 1, Großtext 3 : 1)
+     • Kontrast Text/Hintergrund (WCAG AA: 4,5 : 1, Großtext 3 : 1), seit 21.10.2026
+       mit der Deckkraft der Vorfahren (abgeblendet: Zwischenschritt Warnung, Endzustand Fehler)
      • Wortbudget (Hauptfolie ≤ 40 sichtbare Wörter; am Zeilenende getrennte
        Wörter wie „Marken-<br>nutzen“ zählen als ein Wort)
      • mit --schritte: Überlauf, abgeschnittener Text, Schriftgröße und Kontrast
@@ -553,6 +554,16 @@ async function folieUntersuchen(id) {
       return farbe;
     };
     const kontrast = (a, b) => { const la = lum(a), lb = lum(b); return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05); };
+    /* Deckkraft des Elements und aller Vorfahren bis zur Bühne, multipliziert
+       (VORTRAGSREIFE A30, 21.10.2026): Vorher prüfte der Kontrast nur die Farbe –
+       abgeblendete Zeilen (opacity 0,6) galten als voll deckend, z. B. 2,76 : 1
+       auf 08b als „0 Fehler“. Näherung: Die Schrift wird mit dieser Deckkraft
+       über den Hintergrund gemischt. */
+    const deckkraft = (el) => {
+      let d = 1;
+      for (let e = el; e && e !== folie.parentElement; e = e.parentElement) d *= parseFloat(getComputedStyle(e).opacity);
+      return d;
+    };
 
     /* Metaangaben (dürfen 22–27 px haben) */
     const META = '.quelle, .meta, [data-meta], .kicker, .beispiel, .live, .chip:not(.chip--gross), .laufkopf, .karte-kicker, .angaben-titel, ' +
@@ -655,13 +666,15 @@ async function folieUntersuchen(id) {
       /* 4. Kontrast (Text auf Bild, SVG-Flächen und Beispiel-Platzhalter werden anders geprüft) */
       if (!istSvgText && !el.closest('.sr-label, .raetsel, .bild-platzhalter, .qr') && !(vollbild && el.closest('.folie-kopf, .folie-fuss, .laufkopf'))) {
         const vorne = rgba(s.color);
+        const d = deckkraft(el);
         if (vorne[3] > 0.05) {
           const hinten = hintergrund(el);
-          const k = kontrast(mischen(vorne, hinten), hinten);
+          const k = kontrast(mischen([vorne[0], vorne[1], vorne[2], vorne[3] * d], hinten), hinten);
           const fett = parseInt(s.fontWeight, 10) >= 700;
           const gross = groesse >= 24 || (fett && groesse >= 18.66);
           const soll = gross ? 3 : 4.5;
-          if (k < soll) ergebnis.kontrast.push({ el: pfad(el), text: textVon(el), kontrast: Math.round(k * 100) / 100, soll, px: groesse });
+          if (k < soll) ergebnis.kontrast.push({ el: pfad(el), text: textVon(el), kontrast: Math.round(k * 100) / 100, soll, px: groesse,
+            deckkraft: d < 0.999 ? Math.round(d * 100) / 100 : null });
         }
       }
     }
@@ -775,7 +788,11 @@ for (const f of folien) {
     erg.abgeschnitten.forEach((x) => einmal('a', 'abgeschnittener Text: ' + x.el + ' „' + x.text + '“ – ' + x.grund, fehler));
     erg.ueberlappung.forEach((x) => einmal('l', 'Text überlappt: ' + x.a + ' „' + x.ta + '“ ↔ ' + x.b + ' „' + x.tb + '“', fehler));
     erg.klein.forEach((x) => einmal('k', 'Schrift ' + x.px + ' px (' + (x.art === 'fehler' ? 'unter 22 px' : 'Inhaltstext unter 28 px') + '): ' + x.el + ' „' + x.text + '“', x.art === 'fehler' ? fehler : warnung));
-    erg.kontrast.forEach((x) => einmal('c', 'Kontrast ' + x.kontrast + ' : 1 (Soll ' + x.soll + ' : 1, ' + x.px + ' px): ' + x.el + ' „' + x.text + '“', fehler));
+    /* Abgeblendet (Deckkraft < 1): in Zwischenschritten gewollte Fokusführung →
+       Warnung; im Endzustand bleibt das Bild stehen → Fehler (A30) */
+    erg.kontrast.forEach((x) => einmal('c', 'Kontrast ' + x.kontrast + ' : 1 (Soll ' + x.soll + ' : 1, ' + x.px + ' px' +
+      (x.deckkraft !== null && x.deckkraft !== undefined ? ', abgeblendet auf Deckkraft ' + x.deckkraft : '') + '): ' + x.el + ' „' + x.text + '“',
+      x.deckkraft !== null && x.deckkraft !== undefined && zusatz ? warnung : fehler));
   };
   melden(u, '');
   zwischen.forEach((z) => melden(z.u, ' (nur in Schritt ' + z.n + ')'));
@@ -831,15 +848,25 @@ async function ende() {
     pruefseiteMitAufnahme: !LIVE.simulieren,
     anzeige: LIVE.anzeige
   };
+  /* Abgeblendete Zwischenschritte (A30) sind gewollte Fokusführung und kommen
+     in jedem Lauf mit --schritte vor – getrennt zählen, damit eine neue echte
+     Warnung (Wortbudget, Schriftgröße) nicht darin untergeht (Nacharbeit D23,
+     21.10.2026). */
+  const abgeblendet = bericht.warnungen.filter((w) => /abgeblendet auf Deckkraft/.test(w.text)).length;
+  const echteWarnungen = bericht.warnungen.length - abgeblendet;
   bericht.zusammenfassung = {
     folien: bericht.folien.length,
     screenshots: bericht.screenshots.length,
     fehler: bericht.fehler.length,
     warnungen: bericht.warnungen.length,
+    warnungenOhneAbgeblendet: echteWarnungen,
+    warnungenAbgeblendet: abgeblendet,
+    warnungenKurz: echteWarnungen + (abgeblendet ? ' + ' + abgeblendet + ' gewollt abgeblendet (Zwischenschritte)' : ''),
     externeAnfragen: bericht.externeAnfragen.length,
     liveAnfragen: liveAnzahl,
     ausgabe: path.relative(process.cwd(), ausgabe) || '.',
-    ergebnis: bericht.fehler.length ? 'FEHLER – bitte beheben' : (bericht.warnungen.length ? 'ok mit Warnungen' : 'ok')
+    ergebnis: bericht.fehler.length ? 'FEHLER – bitte beheben'
+      : (echteWarnungen ? 'ok mit Warnungen' : (abgeblendet ? 'ok (nur gewollt abgeblendete Zwischenschritte)' : 'ok'))
   };
   const json = JSON.stringify(bericht, null, 2);
   fs.writeFileSync(path.join(ausgabe, 'bericht.json'), json);

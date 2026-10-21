@@ -1,5 +1,377 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag Mi, 21.10.2026 (Account 1): Stand der Befunde
+
+> Dieser Nachtrag steht über dem ursprünglichen Bericht. Der Bericht ab Abschnitt 1 ist unverändert (Stand a929391,
+> 19.10.2026) und bleibt die Quelle für Problem, Beleg und Vorschlag je Befund. Der Nachtrag sagt, **was davon heute
+> noch gilt**, was Account 1 am 21.10. umgesetzt hat und was neu dazukam.
+
+| | |
+|---|---|
+| **Stand** | Mi, 21.10.2026 abends |
+| **Erstellt von** | Account 1, KI-gestützt (Workflow D23 „Vortragsreife und Fragerunde abgleichen“; Nachweis `ki-nachweis/ki-nachweis.md`, Abschnitt 2, D23) |
+| **Geprüfter Stand** | `master` aae3d35 (an der Präsentation gleich 5695b86: D15–D22 seit a929391) plus Arbeitsstand D23 (Umsetzung durch Account 1, siehe N2; noch nicht committet) |
+| **Vorgehen** | (1) Jeder Befund des Berichts gegen den aktuellen Stand geprüft (Datei, Zeile, `git log a929391..HEAD`). (2) Folie 08 samt Analogien-Inhalt und 08b nachgeprüft – im Bericht ausgenommen (Abschnitt N4). (3) Technisch umsetzbare Befunde ohne inhaltliche Entscheidung umgesetzt (N2). (4) Prüfläufe (unten). Inhalte von Lukas und Elias sind nicht umgeschrieben, nur mit Hinweisen in Kästen versehen. |
+| **Fristen** | „sofort (Di 20.10.)“ ist überfällig und heißt hier **sofort**. Datenschluss ist **heute** (Mi 21.10. abends), Synthese **Do 22.10.** |
+| **Zeilenangaben** | Bei „erledigt“ beziehen sie sich auf den Arbeitsstand D23, sonst auf 5695b86 (vor D23; danach um bis zu ≈ 100 Zeilen verschoben). Stellen deshalb über den zitierten Text suchen. |
+| **Prüfläufe (21.10.2026)** | `pruefen.mjs index.html --schritte --optional` (Editorial hell): 23 Folien, 81 Screenshots, **0 Fehler**, 41 Warnungen – 36 davon abgeblendete Zwischenschritte (seit A30 gezählt, gewollte Fokusführung), 5 Wortbudget (f03 48, f04 46, f08b 41, f10 49, f11 55); Ausgabe `_test/d23u-lauf3`. Editorial dunkel, Bento und Keynote je hell/dunkel für f06, f08, f08b, f12, B3, dazu B7 in drei Themen: 0 Fehler (`_test/d23u-n-*`, `_test/d23u-b7-*`). Folie 08 offline und mit 0 Stimmen für das Chamäleon: 0 Fehler (`_test/d23u-n-f08-offline`, `_test/d23u-n-f08-null-chamaeleon`). Zwei-Fenster-Test der Referentenansicht (Folienfenster + Referentenfenster, Chromium, file://): **37 von 37** Prüfungen bestanden (`_test/d23u-referent2/ergebnis.json`), dazu Rückfragen-Knopf auf f08 und Taste Ende aus B3 → f12 (`_test/d23u-f08-rueckfragen`). Handout gemessen: `?druck&notizen` 53 Seiten, `?druck&notizen=sprechtext` 33 Seiten (`_test/d23u-handout2`). |
+| **Nicht in diesem Schritt** | `LIESMICH.md` und `AUTOREN.md` (Nacharbeit; in N3 bis N5 als „(Nacharbeit)“ bzw. Status „erledigt\*“ vermerkt), Exporte (erst nach Datenschluss bzw. Änderungsstopp), `fragerunde.md` (eigener Schritt in D23, abgeschlossen). **Seit der Nacharbeit am Abend erledigt** – siehe N8; die Statuszeilen in N3 bis N5 sind nachgezogen. |
+
+### N1 Top 10 nach heutigem Stand (Dringlichkeit, dann Schwere)
+
+| # | ID | Frist | Problem heute | Maßnahme | zuständig |
+|---|---|---|---|---|---|
+| 1 | G1 (Top1, mit L4, E4) | sofort – Datenschluss heute abends, Beschluss Do 22.10. | ≈ 460 von 840 s laufen weiter über Beispieldaten (06, 07, 08b, 09, 10, 11 = 430 s, dazu die Analogien auf 08 ab Schritt 2 ≈ 30 s); im Repository keine Lieferung von Lukas oder Elias (seit a929391: 77 Commits, davon 76 von Claude; von der Gruppe nur der Upload der Vorlesungsfolien); Sprechtexte lesen Beispielwerte als Ergebnis vor | Stand heute einfordern; in der Synthese je Element echt oder ehrliche Minimalvariante (Abschnitt 4); bis dahin keinen Beispielwert als Ergebnis vorlesen | Gruppe; Lieferung Lukas, Elias |
+| 2 | L1 (Top2) + F08-2 | sofort (melden), Fußzeilen bis Fr 23.10. | „3 echte Kurzinterviews“, „n = 8“, „im Interview offen gefragt“ stehen auf 02, 06, 07, **08**, 08b, 12, B1, B2, B4, B5 als erledigt, sind aber nicht belegt; P11 ist laut prompts.md ein einzelner Prompt, keine „5 KI-Personas“ | Lukas meldet Zahl, Datum, Einwilligung und ob P8/P9/P11 liefen; danach überall dieselbe getrennte Angabe (KI-simuliert / echt / Gruppe), Einbau Account 1 | Lukas |
+| 3 | F08-1 (neu) | sofort; Lasttest „BESTANDEN“ spätestens Sa 24.10. | Bei Google läuft die alte Skript-Fassung: kein 30-Minuten-Fenster, nicht nachweislich lastfest (19.10.: 19 von 40 gezählt) | Fassung 20.10. einspielen (ANLEITUNG „Skript aktualisieren“), Kurzprüfung, Lasttest zweimal mit 20; Runde `vortrag-2026-10-26` bis So 25.10.; Internet im Hörsaal klären | Yannick (Google-Konto), Account 1 begleitet |
+| 4 | S1, S2 (Top3) | sofort | Mail an Prof. Stenger nicht gesendet: Rückfragen in 15 Min.?, 30 % gegen 15 %, Reflexion, KI-Vorgaben, Logos (neu: Original-Logo auf fiktiver Dose, Folie 01), Abgabeform, Hörsaaltechnik (neu: WLAN für die Live-Abstimmung) | Mail heute; Antworten datiert in arbeitsplan.md; Account 1 kann einen Entwurf liefern | Yannick |
+| 5 | G2 (Top4) | sofort (stoppen bis Do 22.10.) | Jetzt ≈ 1.632 gesprochene Wörter (+22): bei 114 W/min mit Zuschlägen und Wechseln ≈ 15:09, also schon ohne Klickpausen über 15:00 (N6); Kürzungsstufe 1 nicht umgesetzt | Jede Person stoppt ihren Teil; Stufe 1 in der Synthese beschließen; f01 und f08 mit echter Wartezeit stoppen | Gruppe |
+| 6 | F08-3 + A2 (Abgleich #38) | Do 22.10. | „HOLY wäre ein Chamäleon“ ist eigene Einordnung mit KI-gestützter Begründung, kein Ergebnis der Analogie-Methode; es trägt aber 08, 08b, 09b, 10 („wandelbar“) und Notizen 11/12 | Tierfrage der echten Befragung auszählen („x von n“); Chamäleon nur als Titel, wenn die Antworten es stützen, sonst „unsere Deutung“; Elias bestätigt die drei Gründe schriftlich | Lukas (Befragung), Elias (Begründung); Entscheidung Yannick |
+| 7 | Y6 (Top6) | Do 22.10. | Selbstbild ↔ Fremdbild weiter nicht sichtbar gegenübergestellt; Positionierung (Band) stützt sich nur auf eine Beispiel-Leiter | In der Synthese Regel B8: echte Leitern getrennt KI/echt, Lücken in f10 S8 als Selbstbild ↔ Außensicht benennen | Yannick (mit Lukas) |
+| 8 | G3 (Top5) | Do 22.10. | Abgleich mit der Vorlesung liegt vor und ist für die Begriffe umgesetzt (D22); offen sind die nicht freigegebenen Befunde #4, #11–#14, #30–#35, #38–#40 (Vorlesungsseiten in Fußzeilen und B7, Rollen, Esch/Aaker auf 08/08b) | Yannick entscheidet; danach setzt Account 1 Fußzeilen, B7 und Notizvermerke um | Yannick; Lukas/Elias für eigene Folien |
+| 9 | E3 (Top7) | Do 22.10. | Empfehlungen auf f11 ohne eigenen Beleg, Messgröße, Rangfolge, Aufwand | In der Synthese je Empfehlung festlegen; Einbau Account 1 | Elias |
+| 10 | Y7 (Top9) | Do 22.10. (nachlesen), Text Sa 24.10. | 76 Prüffelder „Prüfung durch die Gruppe“ im KI-Nachweis, keines abgehakt; Folien sagen „geprüft“ und „die Fakten prüfen wir selbst“ | Tragende Belege selbst nachlesen und abhaken, sonst Abschwächung freigeben; Baustein „Was ist von uns“ | Yannick |
+
+Aus der alten Top 10 ist **Nr. 10 (A7, Sprünge im Referentenfenster)** technisch erledigt (N2). Nr. 8 (L4, E4) ist in
+Nr. 1 aufgegangen: Beides löst nur die Lieferung echter Daten.
+
+### N2 Am 21.10. umgesetzt (Account 1, nur Technik und Kennzeichnung)
+
+- **Referentenansicht** (`js/deck.js`, `js/komponenten.js`, `js/folien/11-fazit.js`, `js/folien/12-fragen.js`,
+  `css/deck.css`): Sprünge per Klick oder Tab + Enter aus dem Referentenfenster bewegen den Beamer (A7, neue
+  Schnittstelle `Deck.springe`; seit der Nacharbeit erst ab Folie 12, N8); Schwarzbild: Blättern blendet nur ein, Esc auch im Referentenfenster, Knopf zeigt
+  „Saal einblenden“ (A8); Uhrzustand übersteht Neuladen (A9, `localStorage`, 3 h); Laptop-Fenster bis 1280 × 606
+  ohne verdeckte Knöpfe (A10); Absätze ohne `data-schritt` kleiner und grau, Knopf „Rückfragen ↓“ (A11); nur das
+  eigene Folienfenster schaltet (A12); Start-Knopf leuchtet, bis die Uhr läuft (A14); „1 3 Enter“ springt nicht
+  mehr nach Listenplatz (A24); Bedienhinweise bei verbundener Referentenansicht nur dort (A25); keine Überblendung im
+  Referentenfenster (A26); Kommentar „Mausklick und Mausrad blättern nicht“ (A21); Druckvariante
+  `?druck&notizen=sprechtext` (A18).
+- **Gestaltung** (`css/`): Endzustand f08b und f09 mit Deckkraft 0,8 statt 0,6 (A5); `forced-color-adjust: none`
+  auf der Bühne (A29); Lücken auf f10 durchgezogen (A31); f06 Legende „Ø Wettbewerb“, Hürde in Fehlerfarbe (A32);
+  f04 Ø-Strich ragt über den Balken (A33); f08b Übergabezeile „Ins Steuerrad“ als Band in der Feldfarbe Tonalität
+  (F08-9); Hinweis bei unvollständig geöffneter Präsentation (A15, `index.html` + `css/deck.css`).
+- **Prüfwerkzeug** (`werkzeuge/pruefen.mjs`): Kontrast mit der Deckkraft der Vorfahren; abgeblendet in
+  Zwischenschritten = Warnung, im Endzustand = Fehler (A30).
+- **Folie 08** (`index.html`, `js/komponenten.js`): Bedienhinweise in Kasten und Notiz auf Weg A (Live-Abstimmung,
+  „nicht Zurücksetzen“, Runde umstellen, Pille prüfen; F08-6); keine Aussagezahl bei Beispielwerten oder 0 Stimmen
+  für das Chamäleon (F08-8, F08-17); Pille „Beispieldaten“ im Kopf erst ab Schritt 2 (F08-20); Rückfragen je Frage
+  ein Absatz, Wortlaut unverändert (F08-19); Hinweise auf die offenen Inhaltsbefunde im Kasten FOLIE 08 (an Lukas,
+  Elias); Kommentare zum Ablauf von 08b berichtigt (F08-24).
+- **Notizen, Daten, Kästen** (`index.html`): f12-Bedienung und Laien-Sprungziele (A7/Top10); B3 „Selbstauskunft:
+  Zielgruppe“ (A6); B7-Zeile „extern … · GB (03, B1, B3)“ und B7-Notiz (A1); B7 Logo-Zeile „auf 01 auch in der
+  Illustration (fiktive Dose)“ (NB-10, AUTOREN §19); [9] in B8 (A19); f05 „direkt umgerechnet etwa 45/27/27“ an beiden
+  Stellen (Y16); f05 Gründerzitat nach Frage 5 und 11 getrennt (Y23); f04 „Dortmund nur im Sprechtext“ gestrichen
+  (Y20, teilweise); waterdrop-Abgrenzung in den f03-Rückfragen (Y26); „Titel prüfen“ in den Kästen f08b, f10, f11
+  (G10).
+- **Ausarbeitungen:** `QUELLEN.md` §5 VuMA und Eurostat (A20); `folienentwuerfe.md` Vermerk „Arbeitsentwurf“ bei den
+  Grafiken 02, 03, 05 (Y31) und zwei Behauptungen als „geplant“ gekennzeichnet (Y14).
+
+**Zeichen in der Spalte „Status“:** erledigt = umgesetzt und geprüft · erledigt\* = Code bzw. Folie erledigt, der
+Hinweis in `LIESMICH.md`/`AUTOREN.md` folgt in der Nacharbeit (seit der Nacharbeit am 21.10. abends kommt das nicht mehr
+vor, N8) · teilweise · offen · überholt = durch spätere Änderungen gegenstandslos.
+
+### N3 Stand der Befunde aus dem Bericht
+
+| ID | Status | Beleg | was noch zu tun ist | zuständig | Frist |
+|---|---|---|---|---|---|
+| Top1 = G1 (AUF-01, VOLL-01) | offen | Pillen „Beispieldaten“ unverändert auf f06, f07, f08 (seit D23 erst ab Schritt 2), f08b, f09, f10, f11, f12, B4–B6; 19 × `beispiel: true`; seit a929391 keine Lieferung von Lukas oder Elias im Repository | Stand heute einfordern; in der Synthese je Element echt oder ehrliche Minimalvariante beschließen; Einbau, Pillen, Exporte danach Account 1 | Gruppe (Lieferung Lukas, Elias) | sofort (Datenschluss heute abends, Beschluss Do 22.10.) |
+| Top2 = L1 (FAKT-04, FRAGE-Q-01, FRAGE-P-04, AUF-14) | offen | Fußzeilen f06 „5 KI-Personas + 3 Kurzinterviews, gemittelt“, f08 „n = 8: 5 KI-Personas (Prompt P11) + 3 echte Kurzinterviews“, f08b „Gruppe und Befragten (n = 8)“; B4, B5 „T6–T8 echt“; nur B1 S0 seit D22 „(geplant)“ | Lukas meldet Zahl, Datum, Einwilligung und ob P8/P9/P11 liefen; danach überall dieselbe getrennte Angabe; Einbau Account 1 (siehe auch F08-2) | Lukas; Yannick (f02/B1) | sofort (melden), Fußzeilen bis Fr 23.10. |
+| Top3 = S1/S2 (ZEIT-02, AUF-18, FRAGE-P-11, VOLL-03, TECH-05, REF-15) | teilweise | Vorlesungsfolien liegen seit 20.10. vor (`unterlagen/Stenger Folien.pdf`, abe1fb0) – Bitte (7) entfällt; die Vorlesung regelt Rückfragen und Reflexion nicht (abgleich-vorlesung.md #8, #9); keine Mail im KI-Nachweis | Mail heute (Punkte 1–6, dazu Logo auf fiktiver Dose, WLAN im Hörsaal); Antworten datiert in arbeitsplan.md | Yannick | sofort |
+| Top4 = G2 (ZEIT-01, STO-11) | offen | Kein gestopptes Tempo; +22 gesprochene Wörter seit a929391 (N6); Kürzungsstufe 1 nicht umgesetzt (f10 S8, f11 S2/S3 unverändert) | Jede Person stoppt ihren Teil bis Do 22.10.; Stufe 1 beschließen; danach Zeitangaben und `data-zeit` durch Account 1 | Gruppe | sofort |
+| Top5 = G3 (FRAGE-P-02, AUF-04, FAKT-12) | teilweise | abgleich-vorlesung.md (D21, 54 Befunde), D22 umgesetzt (Mitte „Markenkern“, Band „Positionierung“, Wir-Form, „Markeneigenschaften“, Limbic-Typen als Erweiterung, Hinweis S. 78); offen u. a. B7 ohne Seiten, Rollen (#31), #38, #39; 7 × „mit der Vorlesung abgleichen“ und 9 × „Vorlesungsfolie“ in index.html | Yannick entscheidet #4, #11–#14, #30–#35, #38–#40; danach Fußzeilen, B7 und Vermerke durch Account 1; bis dahin in der Fragerunde Vorlesungsseiten nennen (fragerunde.md) | Yannick; Lukas/Elias für eigene Folien | Do 22.10. |
+| Top6 = Y6 (STO-01, AUF-08, FAKT-03, FRAGE-Q-02) | teilweise | Band „Positionierung · aus der Identität“, Herkunftsregel und Rückfragen in den f10-Notizen (D22); keine sichtbare Gegenüberstellung Selbstbild ↔ Fremdbild, Leitern weiter Beispieldaten | Synthese nur aus echten Ergebnissen (Regel B8); S8 je Lücke Selbstbild/Außensicht benennen; Antwort „Ist- oder Soll-Identität?“ in f10 | Yannick (mit Lukas) | Do 22.10. |
+| Top7 = E3 (AUF-03, FRAGE-P-07, FRAGE-Q-04, FRAGE-Q-06) | offen | f11-Notizen ohne Messgröße, Rangfolge, Aufwand; Rückfrage „Was kostet das?“ unverändert | Je Empfehlung Beleg, Messgröße ohne Zielwert, Rangfolge, Aufwand (H) in der Synthese; Einbau Account 1 | Elias | Do 22.10. |
+| Top8 = L4, E4 (FAKT-01, ZEIT-07, FAKT-02, ZEIT-08) | offen | f08b S1 „Am stärksten ist Spannung [4,6]“, S3 „Daraus fünf Merkmale“; f09 S1 „Am häufigsten sind die Comic-Tiere“; B6-Kernsatz „Jeden Beitrag haben wir … codiert“; neu: f08 S3 (F08-5) | Sprechtexte nach echten Daten; bis dahin keinen Beispielwert als Ergebnis vorlesen (Notlösung: Halbsatz „Beispieldaten“) | Lukas (06–08b), Elias (09–11) | Do 22.10. |
+| Top9 = Y7 (FRAGE-P-01, FRAGE-Q-03, FAKT-05, FAKT-07) | offen | ki-nachweis.md: 76 Felder „Prüfung durch die Gruppe“ (Bericht: 52), 0 × ☑; f02 S5 „geprüft“, B1-Titel „die Fakten prüfen wir selbst“, f03-Fußzeile „KI-Nachprüfung“ | Tragende Belege nachlesen und abhaken, sonst Abschwächung freigeben (Einbau Account 1); Baustein „Was ist von uns“ | Yannick | Do 22.10. (nachlesen), Text Sa 24.10. |
+| Top10 = A7 (REF-01, FRAGE-Q-14) | erledigt | `Deck.springe` in `js/deck.js`, genutzt in `12-fragen.js`, `komponenten.js`, `11-fazit.js`; Zwei-Fenster-Test: Sprungliste, Rad-Feld, Tab + Enter, f11-Verweis bewegen den Beamer (`_test/d23u-referent2`); f12-Notiz Bedienung und Laien-Sprungziele (index.html Z. 3122–3123) | LIESMICH §2 (Sprungwege), §4 (Sicherungen) erledigt (Nacharbeit 21.10. abends); seit der Nacharbeit wirken Klick-Sprünge aus dem Referentenfenster erst ab Folie 12 (Schutz, Prüfbefund „mittel“); offen nur der Satz „keine Verbindung zur HOLY Softdrinks GmbH“ (Wortlaut Yannick); in der Generalprobe einmal aus dem Referentenfenster springen | Yannick (Wortlaut); Gruppe (Probe) | Sa 24.10. |
+| 4 – f06 (Pole, Werte, Titel, Wettbewerber, Fußzeilen) | offen | f06-Daten und Titel unverändert Beispieldaten; „Marke A“, „Wettbewerber 2–5“ in B4; Titel noch „Drei Attribute …“ | Ratings, Konstrukte, W1–W5, getrennte n liefern (überfällig seit Mo 19.10.); „Attribute“ → „Eigenschaften“ entscheiden | Lukas | sofort |
+| 4 – f07 (Leitern, Nutzen, Titel) | offen | f07-Daten Beispieldaten, Titel „HOLY steht für Genuss mit gutem Gewissen“ unverändert | Leitern P9/P10 codiert, KI/echt getrennt; Titel erst danach | Lukas | sofort (heute abends) |
+| 4 – f08b (Aaker HOLY/Wettbewerber, Merkmale) | offen | Skalen und Wettbewerberwerte Beispieldaten; Übergabezeile seit D22 (Gestaltung seit D23 als Band) | Gruppe bewertet HOLY, Red Bull, waterdrop mit einem Bogen (nur Menschen, ehrliches n); Übergabezeile bestätigen | Lukas (mit Gruppe) | sofort (heute abends) |
+| 4 – f09/f09b (KA-Werte, Motivanteile, Schlüsselbild, Fit) | offen | f09-Daten `beispiel: true`; Platzhalter-Hinweis `09-kommunikationsanalyse.js` Z. 220; Fit-Urteile unverändert | Stichprobe mit Datum, Frequenz, Engagement, Motivanteile; Fit-Belege in den Sprechtext | Elias | sofort (heute abends) |
+| 4 – f10/f11 (Felder, Lücken, Empfehlungen) | offen | f10-Felder aus Beispieldaten; Tonalität „frecher Kumpel · wandelbar · Spaß“ (Entscheidung Yannick 21.10.); Empfehlungen = Dossier-Hypothesen | In der Synthese Felder ohne echte Daten als DR (H) kennzeichnen; Empfehlungen mit eigenem Beleg | Yannick (Synthese), Elias (f11) | Do 22.10. |
+| 4 – Pillen f10, f11, f12, B4–B6 | offen | Pillen stehen; Daten fehlen | Nach Eingang echter Daten in der Reihenfolge 06–09 → 10/11 → 12 entfernen bzw. „Pilot“ setzen; Kontrolle vor dem Export | Account 1 | Sa 24.10., Kontrolle So 25.10. |
+| 4 – f02 Methodenkarten, B1, B2 | teilweise | B1 S0 seit D22 „(geplant)“, Grenze nach Stenger S. 78; f02-Karten „KI + Kurzinterviews“ unverändert; B2 P7–P14 `beispiel: true` | Nach Lukas’ Meldung tatsächliche n eintragen oder „+ Kurzinterviews“ streichen; B2 nur echte Prompts | Yannick (Zahl von Lukas) | Fr 23.10. |
+| 4 – B4, B5, B6 Rohdaten | offen | B4, B5, B6 weiter Beispieldaten | Mittelwert-Export, Codeliste, echte Codierzeilen mit Datum | Lukas (B4, B5), Elias (B6) | Sa 24.10. |
+| 4 – Auszählung „Anlass Schicht“ (K1) | offen | Keine Zählung im Repository; B6-Kasten nennt „Anlass“/„Wirkversprechen“ nur als Hinweis | 20–30 Bewertungen und die Posts nach K1 zählen; sonst Schicht als Hypothese kennzeichnen | Yannick (Bewertungen), Elias (Posts) | Do 22.10. |
+| 4.1 Lieferplan Lukas | offen | Keine Lieferung; neu seit D18/D22: Begriffe 06, Sätze in Notiz 06/07 (Interviews klingen erledigt), Übergabezeile 08b, Abgleich Chamäleon mit P11/Interviews; dazu die Folie-08-Befunde (N4) | Lieferplan um diese Punkte ergänzen und neu terminieren | Lukas (mit Yannick) | Do 22.10. |
+| 4.2 Lieferplan Elias | offen | Keine KA-Werte, keine Packungsprüfung; neu: Chamäleon-Begründung prüfen, „klare“/„starke Positionierung“, Sprechtexte 10/11 laut lesen; dazu F08-3, F08-11 | Lieferplan ergänzen; KA-Werte heute abends, Packung und Empfehlungen zur Synthese | Elias | sofort (heute abends) |
+| Y1 (AUF-17) | offen | folienentwuerfe.md „Prüfung durch Yannick offen“; Kästen f04/f05 „Entwurf“; erledigt nur: Limbic-Typ bleibt Hauptaussage (21.10.) | A1–A3 freigeben, Codierer der Bewertungen festlegen; danach streicht Account 1 „Entwurf“ | Yannick | sofort |
+| Y2 (STO-07, FRAGE-P-13) | offen | Keine K1-Auszählung, keine Schwelle; f05-Titel und Lücke 2 hängen am Schicht-Faden | Schwelle festlegen, 20–30 Bewertungen zählen, Jost-Stellen anhören | Yannick | sofort |
+| Y3 (FAKT-08, STO-08) | offen | f04 „bequem und schnell“ gegen persona-steckbrief.md und folienentwuerfe.md „gesünder leben, aber schnell“ | Entscheiden; danach gleicht Account 1 A2 und Folienentwurf 4 an | Yannick | sofort |
+| Y4 (VOLL-02) | offen | arbeitsplan.md „[ ] Gruppe in die Google-Tabelle eintragen“; abgleich #6 (S. 57) | Eintragen, mit Datum abhaken; Reihenfolge/Uhrzeit des 26.10. an Account 1 | Yannick | sofort |
+| Y5 (VOLL-05) | erledigt | D15/D16 committet, Branch zusammengeführt; technische Muss-Liste in D23 umgesetzt (A7, A8, A9, A14 im Code), LIESMICH §1/§2/§4/§11/§12 in der Nacharbeit | Exporte erst nach der Generalprobe endgültig | Account 1 | So 25.10. |
+| Y6 | teilweise | wie Top6 | wie Top6 | Yannick (mit Lukas) | Do 22.10. |
+| Y7 | offen | wie Top9 | wie Top9 | Yannick | Do 22.10. |
+| Y8 (AUF-12, STO-04) | offen | Regel-Notiz f10 ohne Ausnahme für „Energy: 160 mg Koffein“ (DR); Kasten „‚viele Sorten‘ stehen nur noch im Sprechtext“, S3 nennt nur „zuckerfrei und Community-nah“; Koffein-Zählung fehlt | Ausnahme und „viele Sorten“-Widerspruch kann Account 1 nach Freigabe berichtigen (N7); Lücke 1 nach der Auszählung | Yannick; Account 1 | Do 22.10. |
+| Y9 (ZEIT-03) | offen | f10 186 W, Zeitangaben 78 s gegen `data-zeit` 75 s; Kürzungen (a)–(c) nicht umgesetzt | Kürzungen freigeben (≈ −24 W), Chamäleon-Wörter prüfen; dann Zeitangaben (Account 1) und laut stoppen | Yannick mit Elias | Do 22.10. |
+| Y10 (STO-05) | teilweise | S8 bindet Lücke 2 an die Kundschaft 25–40; Antwort auf „Warum soll ein 28-Jähriger keine Comics mögen?“ fehlt | Nach der K1-Zählung Lücke 2 festlegen; Rückfrage-Antwort in die f10-Notizen | Yannick | Do 22.10. |
+| Y11 (STO-16) | überholt | Tonalität seit D22 „frecher Kumpel · wandelbar · Spaß“; „Zugehörigkeit“ nicht mehr im Rad, Etikett „Positionierung · aus der Identität“ | Nur kennen: Rückfrage „Warum steht Zugehörigkeit nicht mehr im Rad?“ | Yannick | – |
+| Y12 (VIS-05, VIS-08, AUF-19) | offen | Wortbudget-Warnungen 21.10.: f03 48, f04 46, f08b 41, f10 49, f11 55 | f04 Begründung oder Kürzung (Yannick), f10 nach den Daten, f08b Lukas | Yannick, Lukas | Do 22.10. |
+| Y13 (FAKT-19) | offen | gruenderbefragung.md unverändert (geschützt): §1 gegen 2.3/K5, alte Begriffe Z. 182–188 | Yannick ändert selbst oder gibt die Datei ausdrücklich frei | Yannick | Do 22.10. |
+| Y14 (FAKT-20) | erledigt | folienentwuerfe.md Rückfrage 9 (Folie 3) und Rückfrage 3 (Folie 4) als „geplant; Stand 21.10.2026 …“ gekennzeichnet | Bei der Freigabe Y1 bestätigen | Yannick | Do 22.10. |
+| Y15 (FRAGE-P-12, FAKT-11) | offen | B7 „Kotler … fehlt noch“; Chips f03 „Mitläufer“ gegen methoden.md „Pionier …“; abgleich #31 | Kotler einsehen (Auflage nicht aus Modellwissen) oder Rollen anders begründen | Yannick | Fr 23.10. |
+| Y16 (FAKT-09) | erledigt (Einbau), Freigabe Yannick offen | f05-Belege und -Rückfragen (index.html Z. 1193, 1194): „direkt umgerechnet etwa 45/27/27 … Lücke −7 statt −10“; Herleitung limbic-map.md Z. 199 | Einbau ohne dokumentierte Freigabe (Prompt 113: „Mach erstmal weiter …“) – nachträglich bestätigen (N7) | Yannick | Do 22.10. |
+| Y17 (AUF-05) | offen | Leitfrage f02 unverändert | Zuspitzung entscheiden; Einbau und Wortbudget Account 1 | Yannick | Fr 23.10. |
+| Y18 (STO-12) | offen | f03 S2 ohne Halbsatz zur Gründerbefragung | Halbsatz freigeben (≈ 4 s), Zeit prüfen | Yannick | Fr 23.10. |
+| Y19 (STO-14) | offen | f02 S7 ohne Ausblick | Satz ergänzen, anderswo kürzen | Yannick | Fr 23.10. |
+| Y20 (FRAGE-P-14, FAKT-13) | teilweise | „Dortmund nur im Sprechtext“ gestrichen (index.html Z. 1005); „vor der Schicht“ (Z. 1010) unverändert | „Anlass: Schicht“ oder als Annahme kennzeichnen – sichtbarer Text, Entscheidung Yannick (N7); danach Folienentwurf 4; die Streichung von „Dortmund nur im Sprechtext“ nachträglich bestätigen (N7) | Yannick; Account 1 | Fr 23.10. |
+| Y21 (FRAGE-P-17) | offen | f03-Rückfragen ohne Antwort auf „Ist HOLY profitabel?“ | Jahresabschluss 2024 abrufen, sonst „Profitabilität nicht geprüft“ | Yannick | Fr 23.10. |
+| Y22 (FAKT-06) | offen | persona-daten.md unverändert; Statista-Paare in Notizen f04, f05, B3 | persona-daten.md ergänzen oder Notizen kürzen; danach QUELLEN §5 | Yannick | Fr 23.10. |
+| Y23 (FAKT-18) | erledigt | f05-Rückfrage (Z. 1194): „weder unter den Kaufgründen (dort ‚funktionale Inhaltsstoffe‘) noch beim Nutzen (dort ‚… je nach Use Case‘)“, gegen gruenderbefragung.md Frage 5 und 11 geprüft | – | – | – |
+| Y24 (FRAGE-Q-08) | offen | f03 S2 ohne „Pulver“ | „… als Pulver und Sirup zum Selbermixen“ freigeben, laut stoppen | Yannick | Fr 23.10. |
+| Y25 (FRAGE-Q-10) | offen | f05 S1 „Hedonisten“ ohne Erklärung | Halbsatz „im Modell: neugierig, sucht Abwechslung“ gegen Wörter in S0 tauschen | Yannick | Fr 23.10. |
+| Y26 (FRAGE-Q-12) | erledigt | f03-Rückfragen (Z. 725) „waterdrop macht das auch …“ mit den Belegen aus Dossier 5.2 | – | – | – |
+| Y27 (VIS-04) | offen | f05 `lueckeText` „Lücke“ | „Schicht fehlt“ und Halbsatz in S2 freigeben | Yannick | Fr 23.10. |
+| Y28 (VIS-09) | offen | f05-Titel wird weiter automatisch verkleinert | Kürzeren Titel entscheiden | Yannick | Fr 23.10. |
+| Y29 (AUF-13, FRAGE-P-10) | offen | ki-nachweis.md §3 leer; B2 5 × `beispiel: true`; neu: Zeile für die KI-Nutzung beim Chamäleon fehlt (F08-18) | KI-Listen einsammeln (Fr 23.10.), übertragen; B2 ersetzen | Yannick (Listen von Lukas, Elias) | Sa 24.10. |
+| Y30 (ZEIT-14) | offen | marke.js Reihenfolge Yannick, Elias, Lukas; f01 S3 „Wir sind …“ | Entscheidung: Satz „in dieser Reihenfolge sprechen wir“ oder Reihenfolge in marke.js (wirkt auf alle Gruppenzeilen) – N7 | Yannick; Account 1 | nach Möglichkeit |
+| Y31 (VIS-15) | erledigt | folienentwuerfe.md: Vermerk „Arbeitsentwurf …“ unter den Grafiken zu Folie 2, 3 und 5 (bei 5 mit Hinweis auf die andere Kodierung) | – | – | – |
+| L1 | offen | wie Top2 | wie Top2 | Lukas | sofort |
+| L2 (FRAGE-P-05) | offen | B4 „≥ 1,5“, `abstandWettbewerbMin` 1.5, keine datierte Festlegung | Schwelle mit Datum, Robustheit mit ≥ 1 in der B4-Notiz | Lukas | sofort |
+| L3 (AUF-02, STO-02, FRAGE-P-06) | offen | f07 Titel und Leitern Beispieldaten; kein Startpunkt-Satz | Leitern getrennt KI/echt mit Implikationsmatrix; Zählung „gutes Gewissen“ x von n | Lukas | Do 22.10. |
+| L4 (FAKT-01, ZEIT-07) | offen | wie Top8 | wie Top8 | Lukas | Do 22.10. |
+| L5 (FRAGE-P-03) | offen | Tonalität aus Dossier 6.7; Chamäleon = Einordnung (abgleich #38); f09b S1 „Tonalität – passt“ | Tonalität aus Befragten (P11 getrennt); sonst „plausibel (Hypothese)“ und Zirkel benennen | Lukas, Elias | Do 22.10. |
+| L6 (AUF-21) | offen | Keine Kundenstimmen-Zählung, keine Zitate in f07 | Codierer festlegen, 20–30 Stimmen nach K1–K8, 1–2 Zitate | Lukas | Do 22.10. |
+| L7 (FRAGE-Q-13) | offen | B7 und B1 „LinkedIn, 18.10.2026“ | Versanddatum bestätigen; Angleichung B1/B7 Account 1 | Lukas | Do 22.10. |
+| L8 (FRAGE-Q-07) | offen | f08b Wettbewerberwerte Beispielwerte | Mit demselben Bogen erheben | Lukas | Fr 23.10. |
+| L9 (ZEIT-09, STO-17, REF-14) | offen | f08b S4 „Das prüft die Kommunikationsanalyse.“ ohne Elias; f09b S0 ohne Rückbezug | Übergabesatz mit Namen, Einstieg f09b zeitneutral (mit F08-9 als Tausch in S4) | Lukas, Elias | Fr 23.10. |
+| L10 (FRAGE-Q-11) | offen | „Squad“, „Beichtstuhl auf Wacken“ in f08b S4 ohne Erklärung | In S4 tauschen statt anhängen | Lukas | Fr 23.10. |
+| E1 (VIS-01) | offen | `09-kommunikationsanalyse.js` Z. 220 „Platzhalter – Screenshot folgt“; Frage nicht gestellt | Frage in die Mail S1; ohne Zustimmung bis Fr 23.10. neutrale Angabe (Account 1) | Elias; Account 1 | sofort (Anfrage), Lösung Fr 23.10. |
+| E2 (AUF-09) | offen | B6-Raster ohne Spalten „Anlass“/„Wirkversprechen“ | Zwei Spalten mit K1-Codes; Ergebnis als Satz in f09b/f10 | Elias | sofort |
+| E3 | offen | wie Top7 | wie Top7 | Elias | Do 22.10. |
+| E4 (FAKT-02, ZEIT-08) | offen | wie Top8 | Codierung heute abends; bis dahin offen formulieren | Elias | Do 22.10. |
+| E5 (AUF-11, FRAGE-P-16, FRAGE-Q-05, FRAGE-Q-09) | offen | f11 S1 „vorn auf die Energy-Dose“; Packung nicht geprüft | Packung mit Datum prüfen; „Energy-Packung: 160 mg/Portion“ | Elias | Do 22.10. |
+| E6 (STO-09, FAKT-21) | offen | „Sechs Claims“ auf f09b und f11, gesprochen „mindestens sechs“ | „Mind. sechs Claims …“ (Wortbudget prüfen) | Elias | Do 22.10. |
+| E7 (AUF-10, FRAGE-P-08, VIS-10) | offen | Formel „/ Follower“ auf f09 und B6; Werbebibliothek, Hauptformat fehlen | Werbebibliothek abrufen; Formel „bzw. Abos“ kann Account 1 nach Freigabe setzen (N7) | Elias; Account 1 | Fr 23.10. |
+| E8 (AUF-16, ZEIT-04, STO-13) | offen | f11 S2/S3 unverändert; f11 164 W bei 75 s Soll | Kürzungen und Schlusssatz nach Vorschlag | Elias | Fr 23.10. |
+| E9 (STO-10) | offen | f05 S3 ohne Ausblick; f11 S1 ohne „wie Folge 3“ | Wörter tauschen; Folge 2 nach G8 | Yannick (f05), Elias (f11) | Fr 23.10. |
+| E10 (AUF-20) | offen | f11 S3 ohne Begründung der Hierarchie | Begründungssatz und Rückfrage nach markenkompetenz.md Z. 108–111 | Elias | Fr 23.10. |
+| E11 (STO-15) | offen | f11-Rückfragen ohne Kanalbegründung | Rückfrage mit Statista CI 2025 und Reichweite YouTube | Elias | Fr 23.10. |
+| E12 (TECH-06) | teilweise | LIESMICH 12.5: Zwischenexport Sa 24.10., endgültig So 25.10. nach der Generalprobe; Exporte am 21.10. abends neu erzeugt (Nacharbeit, sichtbare Änderungen) | Export nach Datenschluss und Änderungsstopp; USB-Stick (LIESMICH 12.3) | Account 1; Elias (USB) | So 25.10. |
+| E13 (VOLL-09, FAKT-15) | teilweise | LIESMICH 12.3: Ablesen von Kennzahlen 03, [12], BR-Drs. 145/26, Preis (Nacharbeit 21.10. abends) | Ablesen So/Mo | Elias; Yannick (Kennzahlen 03) | So 25.10. |
+| A1 (FAKT-10) | erledigt | B7 sichtbar „extern: Statista CI, Kantar TGI (04, B3) · GB (03, B1, B3)“, B7-Notiz und Kasten angeglichen (index.html Z. 3820–3821, 3871, 3898) | LIESMICH §12.1 („GB sichtbar auf 03, B1, B3, B7 – bestätigen“) und AUTOREN §15 angeglichen (Nacharbeit 21.10. abends) | – | – |
+| A2 (VOLL-07) | überholt | D18: alle Waschbär-Stellen außerhalb f08 auf Chamäleon umgestellt; Grundproblem jetzt F08-3 | siehe F08-3 | Lukas, Elias | – |
+| A3 (TECH-02) | teilweise | pruefen.mjs am 21.10. abends 0 Fehler (`_test/d23u-lauf3`); Fehlerpille nicht umgesetzt (optional) | Nach dem letzten Eintragen erneut 0 Fehler; Generalprobe mit Vortragsfassung, danach Änderungsstopp | Gruppe; Account 1 | Fr 23.10. |
+| A4 (VIS-02) | offen | Keine Token-Änderung (bewusst: optional) | Nur bei schlechtem Raumtest Diagrammbeschriftungen auf 24–26 px | Account 1 (optional) | Fr 23.10. |
+| A5 (VIS-03) | erledigt | Endzustand 0,8: `08-analogien.css` (Regel mit `.g4t-steuerrad.schritt-an`), `09-kommunikationsanalyse.css`; pruefen.mjs mit Deckkraft: im Endzustand kein Kontrastfehler | Exporte neu (mit E12) | – | – |
+| A6 (FAKT-17) | erledigt | B3 `basis` „Selbstauskunft: Zielgruppe“ (Z. 3486); B3 in allen Themen 0 Fehler | – | – | – |
+| A7 | erledigt | wie Top10 | wie Top10 | wie Top10 | Sa 24.10. |
+| A8 (REF-02) | erledigt | `befehlAusfuehren`: Blättern bei Schwarzbild blendet nur ein; Esc im Referentenfenster; Knopf „Saal einblenden“ (Test 5 Prüfungen ok) | LIESMICH §2 („wieder einblenden mit B oder „.“; Blättertaste blendet nur ein“) und §4 (Nacharbeit 21.10. abends) | – | – |
+| A9 (REF-03, ZEIT-11, TECH-08) | erledigt | Uhrzustand in `localStorage` (`referent-uhr`, vergessen nach 3 h); Test „Uhr läuft nach Neuladen weiter“ | LIESMICH §4 (Uhr übersteht Neuladen, „Zeit zurücksetzen“ als letzter Handgriff Pflicht, Startuhrzeit notieren; Nacharbeit 21.10. abends) | – | – |
+| A10 (REF-04, TECH-01, ZEIT-06) | erledigt | `css/deck.css` `@media (max-height: 820px)`; Test 1366 × 660, 1280 × 720, 1280 × 606, 1440 × 900: alle Knöpfe sichtbar | LIESMICH §4 (Nacharbeit 21.10. abends); Schriftgröße am echten Laptop in der Generalprobe einstellen | Gruppe | So 25.10. |
+| A11 (REF-05) | erledigt | Nicht gesprochene Absätze 0,78 em grau, Knopf „Rückfragen ↓“/„Zum Schritt ↑“; f08-Rückfragen je Frage ein Absatz (F08-19); Tests f05, f08 | Spickzettel je Person aus fragerunde.md | Gruppe | So 25.10. |
+| A12 (REF-06) | erledigt | Kennung des Partnerfensters; Test „nur das eigene Folienfenster schaltet“, „Ref bleibt beim eigenen Fenster“ | LIESMICH §4 und 12.6 „nur ein Fenster/Tab mit index.html“ (Nacharbeit 21.10. abends) | – | – |
+| A13 (REF-07) | erledigt | LIESMICH §4 neu nach 9.4/9.5 (Aufbau in 9 Schritten, Während des Vortrags, Sicherungen; macOS-Bezeichnungen als Modellwissen); „Wenn etwas hakt“ als Notfalltabelle in §11 | Aufbau in der Generalprobe einmal nach §4 üben | Gruppe | So 25.10. |
+| A14 (ZEIT-05, REF-13) | erledigt | Start-Knopf leuchtet, bis die Uhr läuft; Planzeile „mit dem ersten Satz auf ‚Start‘ klicken“ | LIESMICH §4 und 12.6 „30 Minuten vorher“ (Nacharbeit 21.10. abends); in der Generalprobe üben | Gruppe | So 25.10. |
+| A15 (TECH-03) | erledigt | Hinweis `.nur-ohne-css` (index.html Z. 80–84); geprüft: erscheint nur, wenn `css/` fehlt | ZIP-Hinweis in LIESMICH §1 (als Modellwissen gekennzeichnet; Nacharbeit 21.10. abends) | – | – |
+| A16 (TECH-04, REF-17) | erledigt | LIESMICH §1: nur Chrome/Edge in aktueller Version, Grenze ca. 119 als Modellwissen, Prüfung unter chrome://version bzw. edge://version; Firefox/Safari ungetestet; Versionsprüfung in 12.6 („Am Präsentationsrechner“) | Version am Vortragsrechner prüfen | Elias (Technik) | So 25.10. |
+| A17 (TECH-07) | erledigt | Bildrate des Rätsel-Übergangs gemessen (AUTOREN §19); Notschalter `?bewegung=reduziert` in LIESMICH §11 (Punkt 5) und Notfalltabelle (Nacharbeit 21.10. abends) | Übergänge 01, 02 → 03, 04 → 05, 09b → 10 in der Generalprobe ansehen (LIESMICH 12.4) | Gruppe | So 25.10. |
+| A18 (ZEIT-13) | erledigt | `?druck&notizen=sprechtext` (nur Sprechabsätze): 33 Seiten; volles Handout `?druck&notizen` jetzt 53 Seiten (`_test/d23u-handout2`) | LIESMICH §11 Punkt 4: Sprechzettel 33 Seiten, volles Handout 53 Seiten (neu gemessen Nacharbeit 21.10. abends, `_test/d23n-handout`); Dank und Sprung-Bedienung auf Folie 12 stehen seit der Nacharbeit auf dem Sprechzettel | – | – |
+| A19 (FAKT-14) | erledigt | [9] Lebensmittel Zeitung 10.01.2025 in B8 (Z. 3939; Dossier Z. 1282), Kasten und Notiz B8 angepasst | – | – | – |
+| A20 (FAKT-16) | erledigt | QUELLEN.md §5: VuMA (IDs, Notizen 04 und B3), Eurostat lfsa_ewpshi (Notiz 04, Beleg im Steckbrief) | – | – | – |
+| A21 (TECH-10) | erledigt | Kommentar in `js/deck.js` („Mausklick und Mausrad blättern NICHT“) | LIESMICH §2 („Mausklick und Mausrad blättern nicht“; Nacharbeit 21.10. abends) | – | – |
+| A22 (TECH-12) | erledigt | Tabelle PDF-Seite ↔ Folie in LIESMICH §11 Punkt 1 (Export 21.10. abends: 22 Seiten, Zuordnung unverändert) | Nach jedem Export prüfen (LIESMICH 12.5) | Account 1 | So 25.10. |
+| A23 (TECH-09, REF-16) | erledigt | LIESMICH §1 (F, F11 nur Windows, nach F5 erneut F) und §2 („auf dem Beamer im Vollbild kein Esc“; Schwarzbild mit B, Übersicht mit O, Hilfe mit H) | F/F11/Esc in der Generalprobe testen (LIESMICH 12.4) | Gruppe | So 25.10. |
+| A24 (REF-08) | erledigt | Rückfall nach Listenplatz entfernt; Test „1 3“ springt nicht, Hinweis „Folie 13 gibt es nicht“ | Backup-Weg in LIESMICH §2 (Nacharbeit erledigt) | – | – |
+| A25 (REF-09) | erledigt | `bedienHinweis`: bei verbundener Referentenansicht nur dort; Test „Ende-Hinweis nicht im Haupt“ | – | – | – |
+| A26 (REF-10) | erledigt | `zustandUebernehmen` mit `sofort: true`; Test „Ref ohne Überblendung“ | – | – | – |
+| A27 (REF-11) | erledigt | LIESMICH §5 an §7 angeglichen (im Eingabefeld blättern nur Bild↑/Bild↓) | Nur falls 01b genutzt wird: Clicker auf 01b testen | Gruppe | nach Möglichkeit |
+| A28 (REF-12) | offen | Nur relevant mit f01b | Nach dem 26.10. bzw. nur bei Nutzung von 01b | Account 1 | nach Möglichkeit |
+| A29 (TECH-11) | erledigt | `.buehne { forced-color-adjust: none; }` (`css/deck.css`) | Checklistenpunkt „Kontrastdesign aus“ nicht mehr nötig | – | – |
+| A30 (VIS-11) | erledigt | `werkzeuge/pruefen.mjs`: Deckkraft der Vorfahren eingerechnet; 36 Warnungen in Zwischenschritten, 0 Fehler im Endzustand | – | – | – |
+| A31 (VIS-12) | erledigt | `10-markensteuerrad.css`: Klammer und Unterstreichung der Lücken durchgezogen | – | – | – |
+| A32 (VIS-13) | erledigt | `06-repertory-grid.js`: Legende „Ø Wettbewerb“ (ab Schritt 3); `06-repertory-grid.css`: Hürde (Linie, Chip, Pol) in `--f-fehler`; Screenshot `_test/d23u-lauf3/f06_s3.png` | – | – | – |
+| A33 (VIS-14) | erledigt | `04-persona.css`: Ø-Strich ragt 4 px über und unter den Balken | – | – | – |
+| A34 (VOLL-12) | erledigt | LIESMICH §2 (T/D auch im Referentenfenster, „T bis Editorial, D für hell“) und Notfalltabelle §11 | – | – | – |
+| G1 | offen | wie Top1; Koffein-/Jugendthema nicht als Beschluss festgehalten | Stand offenlegen, je Element entscheiden, Koffein/Jugend als Spannungsfeld beschließen | Gruppe | sofort |
+| G2 | offen | wie Top4; Kästen und LIESMICH rechnen weiter mit 1,9 W/s | Tempo stoppen; Stufe 1 fest; gemessenes Tempo eintragen (Account 1) | Gruppe | sofort |
+| G3 | teilweise | wie Top5 | wie Top5 | Yannick; Lukas/Elias | Do 22.10. |
+| G4 (AUF-06, STO-06, FRAGE-P-09) | offen | Kein Beschluss Rahmen/W1–W5; f04 ohne Brückensatz; f11-Rückfrage „Schicht-Content vs. Supermarkt“ fehlt; „Marke A“ | In der Synthese beschließen und datiert eintragen; Brückensatz und Rückfrage danach Account 1 | Gruppe; Lukas (W1–W5) | sofort |
+| G5 (AUF-07) | offen | Kein Beschluss zum Lieferformat | Lieferung als Tabelle mit den Feldern der Daten-JSON; Abnahme Elias Sa 24.10. | Gruppe | sofort |
+| G6 (VOLL-04) | offen | Keine Laptop-, Clicker-, Adapter-, Generalproben-Zuordnung | Heute festlegen; Generalprobe in Präsenz mit zweitem Bildschirm | Gruppe (Elias Technik) | sofort |
+| G7 (VOLL-06, ZEIT-12) | offen | arbeitsplan.md „ca. 5:00“ je Bündel; „14:00-Plan bestätigen“ offen | 14:00-Plan bestätigen; Angleichung danach Account 1 | Yannick; Account 1 | sofort |
+| G8 (STO-03, FRAGE-P-15) | offen | f05 „Humor aus der Schicht statt Doppeldeutigkeit“ gegen f09b „Slang, Doppeldeutigkeiten“; Tonalität jetzt auch „wandelbar“ | Eine Tonalitätslinie inkl. Chamäleon beschließen und gleich sprechen | Gruppe | Do 22.10. |
+| G9 (AUF-15) | offen | folienentwuerfe.md „6–11 … offen“; f09/f09b je eine Rückfrage | Je Folie zwei Rückfragen mit Antwort | Lukas, Elias | Fr 23.10. |
+| G10 (VIS-07) | erledigt | Kästen „Titel prüfen (seit 21.10.2026 …)“ auf f08b, f10, f11 (Z. 1964, 2501, 2799), f07 hatte ihn schon | Titelabgleich nach jedem Daten-Update durch die Zuständigen | Lukas, Elias, Yannick | laufend |
+| G11 (FRAGE-P-18, VOLL-08) | teilweise | fragerunde.md am 21.10. auf den Stand D18–D22 gebracht (eigener Schritt D23); Moderation nicht festgelegt | Moderation in der Synthese festlegen, in der Generalprobe üben | Gruppe | So 25.10. (Absprache ab Do 22.10.) |
+| G12 (VOLL-10) | offen | Reflexion 15 % (S. 59), Form/Frist nicht geregelt; KI-Nachweis §3 leer | Stichpunkte zu den sechs Fragen bis zur Generalprobe | Gruppe; Yannick (Frage S1) | So 25.10. |
+| G13 (VOLL-11) | offen | Keine Stichwortzettel; neu möglich: `?druck&notizen=sprechtext` als Vorlage | Je Schritt 3–5 Stichworte; Durchgang 2 nur mit Stichworten | Gruppe | So 25.10. |
+| G14 (ZEIT-10) | offen | f02 7, f10 8, neu f01 3 Klicks – insgesamt 62 | f01, f02, f10 je zweimal mit echtem Clicker | Gruppe | So 25.10. |
+| G15 (VIS-06) | teilweise | LIESMICH 12.4 (Generalprobe: 1024 × 768-Test, hell/dunkel im Raum) und 12.1 (Beamerformat in der Mail an Prof. Stenger) | 1024 × 768-Test in der Generalprobe | Gruppe | So 25.10. |
+| S1 | teilweise | wie Top3 | wie Top3 | Yannick | sofort |
+| S2 (TECH-05, REF-15) | offen | Keine Angaben zu Raum und Technik; neu relevant: Internet für die Live-Abstimmung | Mit S1 fragen (Rechner, Anschluss, Auflösung, Browser, USB/Pop-ups, WLAN, Probe im Raum) | Yannick; Elias (Technik) | sofort |
+| 6.7 Tagesordnung Di 20.10. | überholt | Termin vorbei, keine Beschlüsse im Repository oder KI-Nachweis | Beschlüsse (G4, L2, Y3, G7, Koffein/Jugend, Datenschluss, Moderation, Lieferformat, dazu F08-1, F08-3, NB-07) in die Synthese Do 22.10. verlegen | Gruppe (Leitung Yannick) | Do 22.10. |
+| 7.1 Zeit je Hauptfolie | überholt | Neu gerechnet in N6 (f01 ≈ 89 W, f08 105, f09b 99, f10 186) | Nach dem gestoppten Tempo ersetzen | Account 1 | nach G2 |
+| 7.2 Summen gegen 14:00 und 15:00 | überholt | Neu gerechnet in N6 (≈ 1.632 W, 62 Klicks) | wie 7.1 | Account 1 | nach G2 |
+| 7.3 Übergabesätze und Rollen | offen | Keiner der Sätze umgesetzt | In der Synthese beschließen; Einbau Account 1 | Yannick, Lukas, Elias | Do 22.10. |
+| 7.4 Kürzungsplan | offen | Stufe 1 nicht umgesetzt; f10 +4 W; neu als Stellschraube: Wartezeiten auf f01 und f08 | Stufe 1 fest, Stufe 2 bei gestoppt > 14:15 | Yannick (f10), Elias (f11), Gruppe | Do 22.10. |
+| 8 – „Sind das echte Befragte?“ | offen | wie L1; Pille am Fazit f12 | Echten Stand liefern, Antwort üben | Lukas | sofort |
+| 8 – Messbarkeit, Kosten, Priorität | offen | wie E3 | Messgröße, Aufwand (H), Rangfolge in die f11-Notizen | Elias | Do 22.10. |
+| 8 – Tonalität zirkulär | offen | wie L5, G8; dazu F08-13 | Tonalität aus Befragten; eine abgestimmte Linie | Lukas, Gruppe | Do 22.10. |
+| 8 – „Kern = HOLYs Slogan?“ | teilweise | Rückfragen f10 und f12 (D22): Markenkern = Mitte, Positionierung bewusst deckungsgleich mit dem Versprechen ✔ [5]; Fremdbild-Beleg nur Beispiel-Leiter | Mit echten Leitern belegen (Regel B8) | Yannick, Lukas | Do 22.10. |
+| 8 – Schwelle, Laddering-Startpunkte | offen | wie L2, L3 | Datierte Schwelle; Startpunkt-Satz in B5/f07 | Lukas | Do 22.10. |
+| 8 – Vorlesung, Esch, Kotler | teilweise | Vorlesungsbegriffe übernommen (D22); Kotler fehlt in B7; Esch/Häusel in anderen Ausgaben als die Vorlesung (#11, #12) | Entscheidung #11–#14, #31; Kotler einsehen | Yannick | Do 22.10. |
+| 8 – „Wer hat das geprüft?“ / „Wie viel ist von euch?“ | offen | wie Y7, Y29 | Belege abhaken, Baustein „Was ist von uns“ | Yannick | Do 22.10. |
+| 8 – Energy oder Softdrink? | offen | wie G4 | Beschluss mit Datum; Brückensatz | Gruppe | sofort |
+| 8 – Schicht-Anlass, Engagement-Raten, Koffein vorn, Gründer-Datum | offen | wie Y2/Y20, E7, E5, L7 | K1-Zählung; Formel „bzw. Abos“; Packung prüfen; Versanddatum | Yannick, Elias, Lukas | Do 22.10. |
+| 8 – waterdrop | teilweise | Abgrenzung in den Rückfragen f10 (D22) und f03 (D23, Y26); Aaker-Werte weiter nicht erhoben | Werte erheben (L8) | Lukas | Fr 23.10. |
+| 8 – Laienbegriffe (HOLY/Pulver, Hedonisten, Squad) | offen | wie Y24, Y25, L10 | Je ein Halbsatz im Sprechtext (getauscht) | Yannick, Lukas | Fr 23.10. |
+| 8 – Ergänzte Fragen V-01…V-10, „Zuerst üben“ | erledigt | fragerunde.md am 21.10. überarbeitet (Begriffe nach Vorlesung, Fragen zu Chamäleon, Positionierung S. 92, Limbic Types S. 93, Logo auf fiktiver Dose; Kopf und Nachtrag dort); in der Nacharbeit berichtigt: F29-Fallstrick („Zurücksetzen“ – bei Weg A nicht), F29 und F12 nur mit belegtem Interview- und P8/P9-Stand, F30 ohne Zahlen ohne Quelle | Üben | Gruppe | So 25.10. |
+| 9.1 Vorher klären | offen | wie S2, G6 | Bis Do 22.10. klären, dazu Internet/WLAN für die Live-Abstimmung | Yannick, Elias | Do 22.10. |
+| 9.2 Generalprobe | erledigt | 9.2 und LIESMICH §12 zu einer Liste zusammengeführt (LIESMICH 12.4 „Generalprobe“), mit Live-Umfrage, offline-Test, Rätsel-Test (12.1) und Sprung aus dem Referentenfenster | Generalprobe durchführen | Gruppe | So 25.10. |
+| 9.3 Mitnehmen | offen | Spickzettel und Stichwortzettel fehlen; Sprechzettel-Druck jetzt möglich (A18) | Druckvorlagen (Tasten, PDF-Zuordnung, Rückfragen-Spickzettel) erst nach Datenschluss und letztem Export, sonst veralten sie; Handy-Hotspot | Account 1; Gruppe | So 25.10. |
+| 9.4 Aufbau im Hörsaal | erledigt | LIESMICH §4 „Aufbau im Hörsaal“ (9 Schritte, mit „Folie 08 zeigt Live, n = 0“) | Üben (Generalprobe) | Gruppe | So 25.10. |
+| 9.5 Während des Vortrags | erledigt | LIESMICH §4 „Während des Vortrags“: „Start“ mit dem ersten Satz; nicht in die Folie im Feld „Aktuell“ klicken – Klick-Sprünge aus dem Referentenfenster wirken seit der Nacharbeit erst ab Folie 12 (vorher: Hinweis) | Üben (Generalprobe) | Gruppe | So 25.10. |
+| 9.6 Fragerunde mit Backup-Sprüngen | erledigt | Tabelle „Fragerunde: Sprungwege“ in LIESMICH §2 (Sprungliste auf 12, O, Ziffern, Z, Ende; Vorsicht Folie 08) | Auf den Spickzettel (LIESMICH 12.5) | Account 1 | So 25.10. |
+| 9.7 Notfall | erledigt | Notfalltabelle „Wenn etwas hakt“ in LIESMICH §11, mit Pillen „offline“, „Live pausiert“, „Beispieldaten“ und dem Hinweis „Klick-Sprünge hier erst ab Folie 12“ | – | – | – |
+| 9.8 Zuordnung PDF-Seite ↔ Folie | erledigt | Zuordnung in LIESMICH §11 Punkt 1; Export 21.10. abends: 22 Seiten, ohne 01b, Zuordnung unverändert | Nach jedem Export prüfen | Account 1 | So 25.10. |
+
+### N4 Befunde aus der Prüfung von Folie 08 und 08b (neu, 21.10.2026)
+
+Folie 08 war im Bericht ausgenommen. Geprüft am Stand 5695b86 mit `pruefen.mjs` (Ausgaben `_test/d23-f08-null`,
+`-werte`, `-null-chamaeleon`, `-offline`, `-dunkel`, `-referent`), gegen Dossier, prompts.md, dossier-buendel-b.md,
+abgleich-vorlesung.md und KI-Nachweis. Die Live-Abfrage beantwortet in `pruefen.mjs` eine eingebaute Attrappe, nicht
+die echte Web-App. Inhaltliche Befunde sind Hinweise an Lukas und Elias (im Kasten FOLIE 08 vermerkt), nicht umgesetzt.
+
+| ID | Befund | Status | Beleg | was noch zu tun ist | zuständig | Frist |
+|---|---|---|---|---|---|---|
+| F08-1 | Bei Google läuft die alte Skript-Fassung: kein Zeitfenster (`gueltigMinuten` wirkungslos), nicht nachweislich lastfest; Lasttest „BESTANDEN“, Kurzprüfung und Scan-Test fehlen · Schwere hoch | offen | LIESMICH.md Z. 542–556 (19.10.: 19 von 40 gezählt; 20.10.: 20/20, 6 über 15 s); `_test/d23-f08-*/bericht.json`: Antworten von der Attrappe | Fassung 20.10. einspielen („einrichten“, Neue Version), Kurzprüfung `?aktion=fassung`, Lasttest zweimal mit `--anzahl 20` bis „BESTANDEN“; Tooltip „zählt Stimmen der letzten 30 Min.“ prüfen; scheitert eine Probe: `gueltigMinuten: 0` und Plan C bereithalten | Yannick (Google-Konto); Account 1 begleitet | sofort (Lasttest spätestens Sa 24.10.) |
+| F08-2 | Fußzeile 08 „5 KI-Personas (Prompt P11) + 3 echte Kurzinterviews“, S1 „im Interview offen gefragt“ und Rückfrage „In den Interviews fragen wir offen“ tragen Unbelegtes als erledigt vor; P11 ist ein einzelner Prompt; n = 8 heißt auf 08 „5 KI + 3 Interviews“, auf 08b „Gruppe und Befragte“ · hoch | offen | `_test/d23-f08-werte/f08_s0.png`–`s3.png`, `f08b_s4.png`; prompts.md P11; dossier-buendel-b.md Z. 217, 427 | Lukas meldet den Stand; Fußzeile 08 etwa „P11: KI-gestützt · Tierfrage offen in n echten Interviews · Live-Umfrage: Stimmungsbild“; 08b die tatsächlich Bewertenden („Gruppe, n = 3, nur Menschen“); „im Interview offen gefragt“ nur, wenn es so war | Lukas | sofort (melden), Text Fr 23.10. |
+| F08-3 | Kernaussage „HOLY wäre ein Chamäleon, kein Adler“ ist eigene Einordnung (H) mit KI-gestützter, von Elias noch nicht geprüfter Begründung, kein Ergebnis der Analogie-Methode (Stenger S. 60; abgleich #38); auf der Folie steht kein Befragungsergebnis · hoch | offen | `_test/d23-f08-werte/f08_s2.png`, `f08_s3.png`; ki-nachweis.md Nr. 94/95 | Tierfrage der echten Interviews offen auszählen, P11 getrennt; „x von n nennen …“ auf Karte oder in S2; Chamäleon bleibt Titel nur, wenn die Antworten es stützen, sonst häufigstes Tier im Titel und Chamäleon als „unsere Deutung“; Elias bestätigt oder ändert die drei Gründe schriftlich | Lukas (Befragung), Elias (Begründung); Entscheidung Yannick | Do 22.10. |
+| F08-4 | „wandelbar“ geht über 08b ins Feld Tonalität auf 10; Kürzel „AN“ und f10 S5 „Die Analogien zeigen …“ geben es als Ergebnis der Methode aus · mittel | offen | f10-Daten `tonalitaet` (Quelle „AN“), f10 S5; Fußzeile 08 „Tier: eigene Einordnung (H)“; f08b-Rückfrage „kein eigenes Aaker-Merkmal“ | Solange die Befragung das Chamäleon nicht stützt: „AN (H)“ bzw. „DR (H)“, S5 „Unsere Analogie: … wandelbar wie ein Chamäleon“; stützt sie es, „AN“ belassen und die Zahl nennen | Yannick (Synthese f10); Elias (spricht) | Do 22.10. |
+| F08-5 | S3 „Red Bull wäre ein Löwe, waterdrop ein Schwan“ trägt Beispieldaten und Modellwissen (Dossier 5.2 H) als Befund vor (wie L4) · mittel | offen | `_test/d23-f08-werte/f08_s3.png` | Bis echte Daten vorliegen „unsere vorläufige Einordnung: Red Bull eher Löwe, waterdrop eher Schwan“; danach aus P11/Interviews und mit 08b abgleichen | Lukas | Do 22.10. |
+| F08-6 | Notiz „Bedienung“ und Kasten beschrieben Weg B („Zurücksetzen zweimal“, Link eintragen); eingerichtet ist Weg A, dort pausiert „Zurücksetzen“ die Live-Abfrage; LIESMICH §12 sagt das Gegenteil · hoch | erledigt | Kasten FOLIE 08 (index.html Z. 1667–1672) und Notiz „Bedienung … VOR DEM VORTRAG (Weg A …)“ (Z. 1848): Runde umstellen (GitHub und Präsentationsrechner), Pille „Live“, n = 0, Tooltip, NICHT „Zurücksetzen“, Pille anklicken bei „Live pausiert“/„offline“, Teststimme löschen, Plan C | LIESMICH: Punkt in 12.8 „Erledigt“ (nicht mehr bei Lukas); Notiz und Kasten seit der Nacharbeit mit „OHNE Zeitfenster → Yannick, Plan C“; in der Generalprobe einmal nach der Notiz einrichten | Gruppe (Probe) | So 25.10. |
+| F08-7 | Zeit: f08 109 Wörter (Zählung je Sprechabsatz; nach Regel 7.1: 105) ≈ 57 s + Abstimmung 20 s = 77 s gegen 70 s; mit realistischem Scannen (30–40 s) 87–97 s; S2 45 W für „ca. 20 s“; f08b S4 28 W für „ca. 12 s“ · mittel | offen | Wortzählung; LIESMICH Z. 209–211 (Lasttest bis 15 s); VORTRAGSREIFE 7.1 | In der Generalprobe mit echter Abstimmung (5+ Handys) stoppen; Kürzungsvorrat: S0 kürzen, in S2 „Achtung: … Kundschaft“ streichen, in S4 tauschen statt ergänzen | Lukas | Fr 23.10. (Kürzung), So 25.10. (gestoppt) |
+| F08-8 | Nur „Adler vorn“ vorbereitet; bei 0 Stimmen stand groß „0 % sehen HOLY wie wir“; Fuchs = frühere Hypothese, Löwe = Red Bull in S3; „sehen … wie wir“ schließt aus einer vorgegebenen Auswahl · mittel | teilweise | Technisch erledigt: bei Stimmen ohne eine für das Chamäleon „Chamäleon: keine Stimme“ statt „0 %“ (`js/komponenten.js`, `_test/d23u-n-f08-null-chamaeleon/f08_s1.png`) | Regie-Sätze in S1 für „Chamäleon vorn / Adler vorn / Fuchs oder Löwe vorn / Chamäleon kaum gewählt“; Wortlaut „sehen … wie wir“ → „wählen wie wir“ in marke.js nur nach Freigabe (N7) | Lukas; Account 1 (Wortlaut nach Freigabe) | Fr 23.10. |
+| F08-9 | 08b: Übergabezeile „frecher Kumpel · wandelbar · Spaß“ ist das Ergebnis fürs Rad, wird aber nicht gesprochen (S4 „Spaß, Zugehörigkeit, Stolz“), „Spaß“ doppelt; die Zeile war visuell schwächer als Emotionen und Beziehung · mittel | teilweise | Gestaltung erledigt: Band über die Kartenbreite mit Balken in der Feldfarbe Tonalität (`css/folien/08-analogien.css`, `_test/d23u-08b-*`); Text unverändert | S4 als Tausch, z. B. „Ins Rad geht: frecher Kumpel, wandelbar, Spaß – getragen von Zugehörigkeit und Stolz.“; doppeltes „Spaß“ auflösen oder begründen | Lukas | Fr 23.10. |
+| F08-10 | Mensch-Analogie „Gamer, Festivals“ (Headset) steht neben Chamäleon-Grund 3 „Gaming hinter sich gelassen“; laut Jost Konsum „in der Regel gar nicht beim Gaming“ ✔ [24] · mittel | offen | `_test/d23-f08-werte/f08_s2.png`; holy-recherche.md Z. 440 | Mensch aus den Befragungsantworten neu ableiten oder Rückfrage-Antwort ergänzen („Herkunft der Persönlichkeit … heute breiter – genau das meint das Chamäleon“) | Lukas mit Elias | Fr 23.10. |
+| F08-11 | „frech“ als dritter Chamäleon-Grund ist kein Merkmal des Tiers; übliche Assoziationen (langsam, scheu, Einzelgänger) stehen gegen „laut, Squad, Energy“; nur „Tarnung“ und „ohne festen Kern“ vorbereitet · mittel | offen | `_test/d23-f08-werte/f08_s2.png`; Notiz „Chamäleon – Einordnung“ | Elias prüft die Gründe und liefert zwei Antworten („Was ist an einem Chamäleon frech?“, „Einzelgänger und langsam?“); Karte ggf. „bleibt frech“ (Entscheidung Lukas) | Elias; Lukas | Fr 23.10. |
+| F08-12 | Fußzeile „Analogien nach Esch“, Notizvermerke „mit den Vorlesungsfolien abgleichen“, `data-titel` „Markentonalität (Aaker)“ – der Abgleich liegt vor (#41, #42, #45: Analogien nur als Aufgabe S. 60, Tonalität S. 88, kein Esch-/Aaker-Bezug) · mittel | offen | abgleich-vorlesung.md #41, #42, #45; `_test/d23-f08-referent/referent_f08b_s4.png` | Fußzeile 08 „Analogiemethoden: Aufgabe Stenger, S. 60 · Tonalität: Stenger, S. 88“; 08b „Raster ergänzend nach Aaker (1997; nicht in der Vorlesung)“; Vermerke durch Seiten ersetzen; `data-titel` „Markentonalität“ | Lukas (Inhalt); Account 1 (Eintragen) | Fr 23.10. |
+| F08-13 | Emotionen auf 08b (Spaß, Zugehörigkeit, Stolz) sind aus HOLYs eigener Kommunikation belegt, nicht aus den Analogien (Aufgabe S. 60) – verschärft den Zirkel aus L5 · mittel | offen | `_test/d23-f08-werte/f08b_s4.png`; abgleich #2, #45 | Emotionen an die Analogien binden (P11 „dominante Markenemotionen“, Interviews) oder in S4 als Tausch („Der Kumpel stiftet Zugehörigkeit …“); Kommunikationsbelege bleiben in den Notizen | Lukas | Fr 23.10. |
+| F08-14 | Gegenprüfung der 08b-Befunde aus dem Bericht: L4, L8, L9, L10 offen; A5 (Deckkraft 0,6 im Endzustand) · mittel/niedrig | teilweise | A5 erledigt (Endzustand 0,8; pruefen.mjs ohne Kontrastfehler im Endzustand, in Schritt 3 Warnung); L4, L8–L10 unverändert | L9/L10 zusammen mit F08-9 als Tausch in S4, damit S4 bei ≈ 12 s bleibt | Lukas | L4 Do 22.10., L8–L10 Fr 23.10. |
+| F08-15 | „Echte Kundschaft · laut Mitgründer“ überhöht eine Gründeraussage von 08/2024 ✔ [7, 24] · niedrig | offen | `_test/d23-f08-werte/f08_s2.png`; Hintergrund-Notiz f08 („belastbare Kundendaten veröffentlicht die Marke nicht“) | Bezeichnung „Kundschaft laut Mitgründer (2024)“ | Lukas | Fr 23.10. |
+| F08-16 | 08b hat 41 sichtbare Wörter (Warnung, kein Fehler) · niedrig | offen | `_test/d23u-lauf3/bericht.json` | Ein Wort kürzen (Stelle nach Wahl) | Lukas | Fr 23.10. |
+| F08-17 | Ohne Verbindung und ohne gespeicherten Stand zeigte Schritt 1 „27 % sehen HOLY wie wir“ – eine erfundene Zahl bei „n = 64“; S1-Platzhalter ausgerechnet „[27 %]“ · mittel | teilweise | Technisch erledigt: bei Beispielwerten „Beispielwerte – keine Aussage“ (`js/komponenten.js`, `_test/d23u-n-f08-offline/f08_s1.png`); Bedienhinweis „Pille Beispieldaten oder offline → Plan C“ in der Notiz | Platzhalter in S1 „[27 %]“ → „[x %]“ (Hinweis im Kasten an Lukas) | Lukas | Sa 24.10. |
+| F08-18 | B2 nennt für Folie 08 nur die geplante P11-Nutzung, nicht die tatsächliche KI-Nutzung (Chamäleon-Begründung, KI-Nachweis Nr. 94/95, D18); S2 verweist bei der Methodenfrage auf B2 · mittel | offen | index.html B2-Daten (Zeile P11 „… mit Gruppe und 3 Interviews abgeglichen“, `beispiel: true`) | Zeile „KI 95 (D18) · Chamäleon-Begründung aus dem Dossier · Vorschlag, von Elias geprüft am … · 08“; P11-Zeile nach dem Lauf anpassen oder löschen | Yannick (B2); Elias (Prüfvermerk) | Sa 24.10. |
+| F08-19 | „Mögliche Rückfragen“ auf 08 als ein Absatz mit ≈ 400 Wörtern; interne Änderungsvermerke liest man leicht vor · mittel | erledigt | Je Frage ein Absatz, Frage fett, Wortlaut unverändert (index.html ab Z. 1851); grau und Knopf „Rückfragen ↓“ (A11); Test `_test/d23u-f08-rueckfragen` (9 Fragen, Knopf rollt) | Datums- und Entscheidungsvermerke bleiben (Inhalt Lukas/Elias, grau abgesetzt); Spickzettel aus fragerunde.md (F16, F29, F30) | Gruppe | Sa 24.10. |
+| F08-20 | Pille „Beispieldaten“ im Kopf stand neben den echten Live-Stimmen (Schritt 0–1); zwei n auf einer Folie · niedrig | teilweise | Pille erst ab Schritt 2 (`data-schritt="2"`, index.html Z. 1794) | Fußzeile je Schritt teilen (Schritt 0–1 „Live-Umfrage im Hörsaal, Stimmungsbild“) – Text mit Lukas | Account 1 mit Lukas | Sa 24.10. |
+| F08-21 | QR-Code kodiert die lange Adresse (45 Module); kein `kurzLink` zum Eintippen; Scan-Test aus der letzten Reihe offen · niedrig | offen | `_test/d23-f08-null/f08_s0.png`; marke.js Z. 185–186 | Scan-Test mit 2–3 Handys; ist er knapp, kurze Weiterleitungsadresse anlegen und als `kurzLink` zeigen | Account 1; Scan-Test Yannick, Lukas | So 25.10. |
+| F08-22 | Plan C (Handzeichen): wer zählt und trägt über „Werte“ ein, während Lukas spricht? · niedrig | offen | S0 „[Name] zählt“ | Person festlegen (z. B. Elias), Platzhalter ersetzen, Handgriff üben | Lukas; Gruppe | So 25.10. |
+| F08-23 | Faktenstichprobe passt zum Dossier (31 Energy-Sorten, Wacken/CSD/Simpsons, „Gefährlich geil!“, Raptor, Kundschaft 25–40); die Sortenzahl ist Stand 13./14.10. · niedrig | offen | holy-recherche.md Z. 283, 1041, 635, 653, 709–711 | Am 25. oder 26.10. im Shop nachzählen; bei Abweichung anpassen oder „über 30 Energy-Sorten“ | Lukas | So 25.10. |
+| F08-24 | Kommentare zu 08b beschrieben ein älteres Verhalten (Karte „von Anfang an sichtbar“) · niedrig | erledigt | Kopfkommentar index.html (f08b Schritt 0/4) und `js/folien/08-analogien.js` Z. 21–23 an das tatsächliche Verhalten angeglichen | – | – | – |
+
+### N5 Neue Befunde seit dem geprüften Stand a929391
+
+| ID | Befund | Status | Beleg | was noch zu tun ist | zuständig | Frist |
+|---|---|---|---|---|---|---|
+| NB-01 | Folie 01 nach dem Logo-Rätsel (D19): 4 Schritte, 3 Klicks, ≈ 89 gesprochene Wörter (vorher 72/73); Zeitangaben 10 + 7 + 8 + 20 = 45 s ohne die Wartephasen; keine Regie, falls die Marke schon in Schritt 0 erraten wird | offen | Zählung nach 7.1 (N6); f01-Notizen S0–S3 | Rätsel mit zwei Personen testen; Regie „schon erraten → Hinweisstufe überspringen“; danach Zeitangaben nachziehen (Account 1) | Yannick (Wortlaut, Test); Account 1 | Fr 23.10. |
+| NB-02 | Gesamtzeit: +22 gesprochene Wörter (f01 +16, f10 +4, f08 +1, f09b +1) → ≈ 1.632; bei 114 W/min mit Zuschlägen und Wechseln ≈ 15:09 | teilweise | Neu gerechnet in N6; Wortzahlen in LIESMICH §12 noch alt | Tempo stoppen (G2); LIESMICH 12.4 nennt ≈ 1.632 Wörter und 15:09 bzw. 13:23 (Nacharbeit erledigt) | Gruppe; Account 1 | sofort |
+| NB-03 | Folie 10: Zeitangaben der Schritte ergeben 78 s gegen `data-zeit` 75 s (186 W ≈ 98 s bei 1,9 W/s); die Planzeile rechnet mit 75 s; Elias hat S1/S3/S5/S7 (D22) noch nicht laut gelesen | offen | f10-Kasten (Wortzählung); f10-Notizen | Nach den Kürzungen (Y9) Zeitangaben und `data-zeit` angleichen (Account 1); Elias liest laut | Yannick, Elias; Account 1 | Do 22.10. |
+| NB-04 | Folie 08b (D22): Übergabezeile hebt das Wortbudget auf 41; S4 nennt „Spaß, Zugehörigkeit, Stolz“, sichtbar „frecher Kumpel · wandelbar · Spaß“ | teilweise | Gestaltung erledigt (F08-9); Text offen | wie F08-9 und F08-16 | Lukas | Fr 23.10. |
+| NB-05 | Folie 11 S0 „Die Positionierung ist klar: Genuss mit gutem Gewissen, frech im Ton, getragen von der Community“ zählt Tonalität und eine Markeneigenschaft zur Positionierung; f10 zeigt als Positionierung nur „Genuss mit gutem Gewissen“ (Stenger S. 87, 92); dazu „klar“ oder „stark“ | offen | f11 S0 | S0 auf die Positionierung beschränken oder als „Positionierung plus Ton“ sprechen; „klar/stark“ entscheiden | Elias (mit Yannick) | Do 22.10. |
+| NB-06 | Notizen seit a929391 um ≈ 2.800 Wörter gewachsen (≈ 12.050 → 14.850; f08 649 → 1.557); Rückfragen standen auf f04 nach ≈ 990, f10 nach ≈ 1.020 Wörtern | teilweise | A11 umgesetzt (grau, Knopf „Rückfragen ↓“); Handout gemessen: 53 Seiten voll, 33 Seiten `?druck&notizen=sprechtext` | Spickzettel je Person; LIESMICH §11 (Nacharbeit erledigt) | Gruppe; Account 1 | Sa 24.10. |
+| NB-07 | Live-Abstimmung fehlt in Zeitplan und Hörsaal-Checkliste (Abschnitt 9): Skript-Update, Lasttest, Runde `vortrag-2026-10-26`, Internet im Hörsaal, Teststimme, Ergebnis sichern; Pauschale +30 s nicht gemessen | teilweise | LIESMICH §6/§12; F08-1; Checkliste: LIESMICH 12.1 (Skript, Runde, Scan-Test), 12.4 (Generalprobe mit Live-Umfrage), 12.6 (am Tag) | Skript und Runde (Yannick); in der Generalprobe stoppen | Yannick; Account 1 | sofort (Skript), Sa 24.10. (Checkliste) |
+| NB-08 | Widerspruch in der Bedienung von Folie 08: Kasten und Notiz verlangten „Zurücksetzen zweimal“ (Weg B), LIESMICH §12 für Weg A das Gegenteil | erledigt | wie F08-6 | – | – | – |
+| NB-09 | Analogien-Inhalt von Folie 08 war ungeprüft; das Chamäleon wirkt inzwischen in 08, 08b, 09b, 10, 11/12 (Notizen); kippt die Befragung (P11), sind fünf Folien betroffen | offen | Prüfung nachgeholt (N4); abgleich #38 | wie F08-3; bei anderem Ergebnis mit Elias und Yannick klären (LIESMICH §12) | Lukas, Elias; Yannick | Do 22.10. |
+| NB-10 | Logo-Rätsel Folie 01: Original-Logo auf einer erfundenen Dose, im Rätsel vergrößert und unscharf, öffentlich im Repository und in den Exporten; B7-Zeile „unverändert, nur zur Kennzeichnung“ traf für 01 nicht mehr zu | teilweise | B7-Zeile „… auf 01 auch in der Illustration (fiktive Dose)“ (index.html Z. 3884), B7-Notiz und Kasten ergänzt (Vorschlag AUTOREN §19) | Klärung mit dem Betreuer in der Mail S1; Motiv und „Dose fiktiv“ freigeben | Yannick | sofort |
+| NB-11 | B7 nicht auf dem Stand des Abgleichs: Fußzeile „… mit den Vorlesungsfolien abgleichen“, Vorlesung nur pauschal („Stenger, D. (2026)“, ohne Seiten), Kasten „Foliennummern ergänzen, sobald die Folien vorliegen“; weitere Vermerke „mit der Vorlesung abgleichen“ (u. a. f05-Daten) | offen | B7 (Fußzeile, Liste, Notiz); abgleich #4, #11–#14 | Yannick entscheidet #4, #11–#14; danach Fußzeile, Literaturzeile mit Seiten und Vermerke durch Account 1 | Yannick; Account 1 | Do 22.10. |
+| NB-12 | KI-Nachweis: 76 Prüffelder „Prüfung durch die Gruppe“ (Bericht: 52), keines abgehakt; abgleich-vorlesung.md und fragerunde.md tragen selbst „Prüfung durch die Gruppe offen“ | offen | `grep` in ki-nachweis.md: 76 Felder, 0 × ☑ | wie Y7, Y29 | Yannick | Do 22.10. |
+| NB-13 | Neue Personenaufgaben seit D18–D22 standen nicht in 6.1–6.3 (Yannick: Skript, Runde, Rätsel-Test, Motiv/„Dose fiktiv“, Logo-Klärung, Seitenangabe B1, Abgleich-Freigaben · Lukas: „Attribute“ → „Eigenschaften“, Sätze in Notiz 06/07, Übergabezeile 08b, Abgleich der Analogien · Elias: Chamäleon-Begründung, „klar/stark“, Sprechtexte 10/11, Rückfragen Positionierung S. 92) | offen | LIESMICH §12, AUTOREN §18/§19/§21 | In die Lieferpläne 4.1/4.2 und die Synthese-Tagesordnung übernehmen (dieser Nachtrag listet sie in N3/N4) | Yannick (Leitung) | Do 22.10. |
+| NB-14 | fragerunde.md (Stand a929391) widersprach dem Vorlesungsabgleich („Markenkompetenz“ in der Mitte, „Markenkern als Verdichtung“, Waschbär) | erledigt | fragerunde.md am 21.10. überarbeitet (eigener Schritt D23; Kopf und Nachtrag dort); Nacharbeit: F29-Fallstrick „Zurücksetzen“ berichtigt (vorher alter Weg B), F12/F29/F30 nachgeschärft | Üben (G11) | Gruppe | So 25.10. |
+| NB-15 | Begriffsreste: B2-Notiz S1 „Ausarbeitungen zu Markenkompetenz, Persona und Limbic Map“; f10-Belege „Ausarbeitung Markenkompetenz A1“ (als Dateiname zulässig); gruenderbefragung.md Z. 182–188 alte Begriffe (geschützt) | offen | index.html B2 S1, f10-Belege | B2 S1 → „Markenkern“ (gesprochen, Entscheidung Yannick, N7); Dateinamen als solche kennzeichnen; gruenderbefragung.md nur Yannick (Y13) | Yannick; Account 1 | Fr 23.10. |
+| NB-16 | arbeitsplan.md bildet den Stand nach dem Zwischenstand nicht ab (keine Beschlüsse, kein Interviewstand, keine Technikzuordnung); Tagesplan Mi 21.10. „Analogien (P11) → Tonalität an C“, obwohl das Tier ohne P11 feststeht | offen | arbeitsplan.md (seit a929391 nur die Synthese-Zeile geändert) | In der Synthese aktualisieren: Beschlüsse mit Datum, Interviewstand, Technik, Zeitplan | Yannick | Do 22.10. |
+
+### N6 Zeitplan neu gerechnet (ersetzt 7.1/7.2 bis zur Stoppuhr-Probe)
+
+Zählregel wie 7.1 (nur Absätze mit `data-schritt`, ohne Regie, Belege, Rückfragen; auf f01 nur der Text in „…“),
+eigene Zählung am Arbeitsstand D23; Basis die Werte aus 7.1 plus die Änderungen seit a929391. Zuschläge wie 7.1:
+f01 +10 s (Warten), f08 +30 s (Abstimmung, nicht gemessen). Eigene Rechnung.
+
+| Folie | spricht | Soll | Wörter 7.1 → heute | bei 130 W/min | bei 114 W/min | Bemerkung |
+|---|---|---|---|---|---|---|
+| f01 | Yannick | 45 s | 72 → **89** | 41 s + 10 = 51 s | 47 s + 10 = 57 s | 4 Schritte, 3 Klicks; mit 6–10 s Wartezeit realistisch 47–51 s bzw. 53–57 s |
+| f08 | Lukas | 70 s | 104 → 105 | 48 s + 30 = 78 s | 55 s + 30 = 85 s | mit realistischem Scannen 87–97 s (F08-7) |
+| f09b | Elias | 55 s | 98 → 99 | 46 s | 52 s | „das freche Chamäleon“ |
+| **f10** | Elias (Inhalt Yannick) | 75 s | 182 → **186** | **86 s** | **98 s** | Schritte zusammen 78 s (NB-03) |
+| übrige | – | – | unverändert | – | – | wie 7.1 |
+| **Summe** | | **840 s** | 1.610 → **≈ 1.632** | **793 s = 13:13** | **899 s = 14:59** | 50 Schritte + 12 Wechsel = **62 Klicks** |
+
+| Tempo | reine Sprechzeit mit Zuschlägen | + 2 Sprecherwechsel (5 s) | Reserve zu 14:00 | Reserve zu 15:00 | mit 62 Klickpausen (0,5–1 s) |
+|---|---|---|---|---|---|
+| 140 W/min | 12:19 | 12:29 | +1:31 | +2:31 | 13:00–13:31 |
+| 130 W/min | 13:13 | 13:23 | +0:37 | +1:37 | 13:54–14:25 |
+| 120 W/min | 14:16 | 14:26 | −0:26 | +0:34 | 14:57–15:28 |
+| 114 W/min (Planungswert 1,9 W/s) | 14:59 | **15:09** | −1:09 | **−0:09** | 15:40–16:11 |
+
+Je Sprecher (130 / 114 W/min gegen Soll): Yannick ≈ 541 W, 4:20 / 4:55 gegen 4:45 · Lukas ≈ 541 W, 4:40 / 5:15
+gegen 4:50 (mit f08-Pauschale) · Elias ≈ 550 W, 4:14 / 4:49 gegen 4:25. Mindesttempo mit Wechseln: für 15:00
+≥ 116 W/min ohne, 120–125 W/min mit Klickpausen; für 14:00 129–135 W/min mit Klickpausen. Kürzungsstufe 1 (7.4)
+spart weiter ≈ 18 s (21 s). Klickpausen, Wechsel und Abstimmung sind Annahmen – maßgeblich ist die Stoppuhr-Probe (G2).
+
+### N7 Entscheidungen für Yannick (technisch machbar, aber inhaltlich)
+
+Account 1 hat diese Punkte bewusst **nicht** umgesetzt; nach einer Freigabe dauern sie jeweils wenige Minuten.
+
+1. **Y20:** f04 Kaufverhalten „vor der Schicht“ → „Anlass: Schicht“ oder als Annahme kennzeichnen (sichtbarer Text);
+   danach Folienentwurf 4.
+2. **Y8:** f10 Regel-Notiz um die Ausnahme „Energy: 160 mg Koffein (DR, keine Ergebnisfolie)“ ergänzen und den
+   Kasten-Satz zu „viele Sorten“ an S3 angleichen.
+3. **E7:** Formel „/ Follower“ → „/ Follower bzw. Abos“ auf f09 und B6 (Folie von Elias).
+4. **Y30:** Reihenfolge der Namen – Satz „in dieser Reihenfolge sprechen wir“ in f01 oder Reihenfolge in marke.js
+   (wirkt auf alle Gruppenzeilen).
+5. **F08-8:** Aussage auf Folie 08 „{prozent} sehen HOLY wie wir“ → „… wählen wie wir“ (marke.js; Folie von Lukas).
+6. **F08-12, NB-11, G3:** Fußzeilen und B7 mit Vorlesungsseiten (Stenger S. 60, 88 …), `data-titel` 08b
+   „Markentonalität“, Vermerke „mit der Vorlesung abgleichen“ ersetzen – nach den Entscheidungen #4, #11–#14.
+7. **NB-15:** B2 S1 „Ausarbeitungen zu Markenkompetenz …“ → „Markenkern“ (gesprochen).
+8. **Top10/A7:** Wortlaut des Satzes „keine Verbindung zur HOLY Softdrinks GmbH“ für die Fragerunde.
+9. **A4 (optional):** größere Diagrammbeschriftungen nur, wenn der Raumtest es verlangt.
+10. **Zeitpunkt:** Pillen „Beispieldaten“ entfernen, Druckvorlagen (9.3) und Exporte erst nach Datenschluss bzw.
+    Änderungsstopp; LIESMICH/AUTOREN in der Nacharbeit zu D23 (erledigt, N8).
+11. **Y16, Y20 nachträglich bestätigen** (Nacharbeit): Account 1 hat am 21.10. ohne dokumentierte Freigabe f05
+    „direkt umgerechnet etwa 45/27/27 … Lücke −7 statt −10“ (Y16; Herleitung aus `limbic-map.md` §3.2) und die Streichung
+    von „Dortmund nur im Sprechtext“ auf f04 (Y20) eingebaut. Bestätigen oder zurücknehmen.
+12. **A31 bestätigen** (Nacharbeit): Die Lücken auf Folie 10 sind seit D23 durchgezogen statt gestrichelt
+    (gestrichelt heißt sonst „Annahme/Beispielwert“). Die Lücken bleiben Bewertung (H). Gestaltung auf Yannicks
+    Synthesefolie – bestätigen, sonst zurück auf gestrichelt oder nur die Ziffern-Badges.
+13. **B7 Logo-Zeile** (Nacharbeit): jetzt „(Folien 09b, 12): … unverändert, zur Kennzeichnung der Marke; auf 01 in
+    eigener Illustration (Dose fiktiv)“ – Motiv und „Dose fiktiv“ freigeben; nach der Antwort des Betreuers anpassen.
+
+### N8 Nacharbeit (Mi, 21.10.2026 abends)
+
+Nach einer Prüfung des Nachtrags (Befunde hoch/mittel/niedrig) und dem Auftrag „LIESMICH und AUTOREN nachziehen“:
+
+- **`../fragerunde.md`:** F29-Fallstrick berichtigt (hoch – riet zu „zweimal Zurücksetzen“, das bei Weg A die
+  Live-Abfrage pausiert); F12 „[Zahl] unserer Befragten sind KI-simuliert“ als Platzhalter (ob P8/P9/P11 liefen,
+  meldet Lukas); F29 „in den Interviews fragen wir offen“ nur bedingt; F30 Zahlen zur Aaker-Skala ohne Quelle
+  gestrichen; Kopf-Nachtrag ergänzt.
+- **Referentenfenster (`js/deck.js`):** Klick-Sprünge (Sprungliste, Rad-Felder, Verweise) bewegen den Beamer erst,
+  wenn Folie 12 oder eine Backup-Folie erreicht war, bis wieder Folie 01 kommt; vorher Hinweis „Klick-Sprünge hier
+  erst ab Folie 12 – sonst Ziffern + Enter oder O“ (mittel: ein versehentlicher Klick beim Fokussieren sprang im
+  Vortrag den Beamer um). 9.5 und LIESMICH §4 entsprechend.
+- **`index.html`:** f12-Notiz „Sind das echte Befragte? → B1“ (B4/B5 erst mit echter Zahl; mittel); f12 Dank als
+  `class="gesprochen"`, Bedienung als `class="sprechzettel"` (Sprechzettel-Druck hatte für 12 „kein Sprechtext“);
+  f08-Notiz und -Kasten: „OHNE Zeitfenster“ = Skript nicht aktualisiert → Yannick, Plan C; B7-Logo-Zeile ohne
+  Widerspruch „nur zur Kennzeichnung“ ↔ Illustration; Kommentar in `css/folien/10-markensteuerrad.css` (A31)
+  sachlich, Bestätigung durch Yannick (N7 Nr. 12).
+- **`QUELLEN.md` §5:** Satz „Alle über die Campuslizenz“ getrennt (Eurostat frei abrufbar, nur in Notizen).
+- **Werkzeuge:** `pruefen.mjs` zählt gewollt abgeblendete Zwischenschritte getrennt („5 + 36 gewollt abgeblendet“);
+  der Zwei-Fenster-Test liegt jetzt als **`werkzeuge/referent-test.mjs`** im Repository (43 Prüfungen, inkl. der
+  neuen Sperre).
+- **Dieser Nachtrag:** N1 Nr. 1 (Commits, Sollzeit mit 08), Y16/Y20 (Freigabe offen), N3–N5 Status nach der
+  Nacharbeit, N7 Nr. 11–13.
+- **`LIESMICH.md`:** §1 (ZIP, Browserversion, Vollbild), §2 (Schwarzbild, Esc, T/D, Ziffern/Backup, Maus,
+  Sprungwege), §4 neu (Aufbau, Während des Vortrags, Sicherungen), §5, §6 (keine Prozentzahl aus Beispielwerten),
+  §9, §11 (PDF-Zuordnung, Sprechzettel 33 / Handout 53 Seiten, `?bewegung=reduziert`, Notfalltabelle), **§12 neu je
+  Person** (Yannick, Lukas, Elias, Gruppe, Account 1, am Tag, optional, erledigt), §13. `AUTOREN.md`: Abschnitt 22.
+- **Exporte** am 21.10. abends neu (PDF 22 Seiten, 23 Folienbilder, Übersicht Stand 21.10.2026); sichtbar geändert
+  gegenüber dem Export vom Morgen: f04, f06, f08b, f09, f10, B3, B7, B8 (D23-Gestaltung, B7-Zeile).
+- **Nicht umgesetzt (begründet):** Pillen „Beispieldaten“, Inhalte von Lukas und Elias, Entscheidungen aus N7 – sie
+  brauchen Lieferung oder Freigabe. Die Überlappungsprüfung von `pruefen.mjs` vergleicht nur den Kern der Zeilen
+  (mittlere 56 %); eine Zeile, die nur wenige Pixel in die Fußnote ragt, meldet sie nicht (beim Kürzen der
+  B7-Zeile gesehen) – deshalb B7 nachgemessen: in allen Themen 10 px Abstand zur Fußnote.
+
+---
+
 ## 1. Angaben zum Bericht
 
 | | |

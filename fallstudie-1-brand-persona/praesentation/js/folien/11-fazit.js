@@ -74,7 +74,8 @@
         if (!aktuellesZiel) return;
         var schritt = zielSchritt(aktuellesZiel, knopf.getAttribute('data-ziel-schritt'));
         knopf.blur();          // Fokus nicht auf der verlassenen Folie stehen lassen
-        Deck.gehe(aktuellesZiel.id, schritt);
+        /* Deck.springe: wirkt auch im Referentenfenster auf den Beamer (wie A7) */
+        if (Deck.springe) Deck.springe(aktuellesZiel.id, schritt); else Deck.gehe(aktuellesZiel.id, schritt);
       });
     });
   }

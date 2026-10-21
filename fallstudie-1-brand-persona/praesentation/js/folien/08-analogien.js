@@ -18,8 +18,9 @@
         • baut aus den Daten das Profil der fünf Dimensionen nach Aaker
           (Balken für die Marke, Kreis-Marker für die Wettbewerber) und hängt
           die Persönlichkeitsmerkmale an ihre Dimension
-        • füllt die Ergebniskarte (Emotionen, Beziehung, Erlebnisse); der
-          Rahmen ist von Anfang an sichtbar, die Inhalte erscheinen zuletzt
+        • füllt die Ergebniskarte (Übergabezeile, Emotionen, Beziehung,
+          Erlebnisse); ihr Platz ist reserviert, die Karte erscheint samt
+          Überschriften und Inhalten erst im letzten Schritt (seit 16.10.2026)
    Inhalte ändern Sie NUR in den Daten der Folien (index.html, Folien 08/08b).
 
    Schritte entstehen über data-schritt-Attribute (im HTML bzw. hier beim

@@ -109,14 +109,16 @@
 .rg-mittel { fill: none; stroke: var(--f-text); stroke-width: 4; stroke-linecap: round; }
 .rg-abstand { fill: none; stroke: var(--f-akzent); stroke-width: 3; stroke-linecap: round; opacity: 0.75; }
 /* Konstrukt mit Hinweis (z. B. „Hürde“): Linie Idealmarke → Marke in
-   Warnfarbe, Chip in der Mitte, Pol auf der Seite der Marke ebenfalls */
-.rg-ideal-abstand { fill: none; stroke: var(--f-warnung); stroke-width: 3; stroke-linecap: round; opacity: 0.85; }
+   Fehlerfarbe, Chip in der Mitte, Pol auf der Seite der Marke ebenfalls.
+   Seit 21.10.2026 --f-fehler statt --f-warnung (VORTRAGSREIFE A32): Die
+   Warnfarbe (#7A4B00) war von der HOLY-Linie (Akzent) kaum zu unterscheiden. */
+.rg-ideal-abstand { fill: none; stroke: var(--f-fehler); stroke-width: 3; stroke-linecap: round; opacity: 0.85; }
 .rg-hinweis {
   position: absolute;
   transform: translate(-50%, -50%);
   background: var(--f-hintergrund);
-  color: var(--f-warnung);
-  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-warnung);
+  color: var(--f-fehler);
+  box-shadow: inset 0 0 0 var(--linie-fein) var(--f-fehler);
   font-weight: var(--gewicht-fett);
   font-size: 26px;              /* inhaltlich wichtig: 26 px statt 22 px (Abschlussprüfung 17.10.2026) */
 }
@@ -150,8 +152,8 @@
 .rg:has(.rg-z3.schritt-an) .ist-attribut .rg-pol.ist-markenpol { fill: var(--f-akzent); }
 .rg:has(.rg-z3.schritt-an) .rg-zeile:not(.ist-attribut) .rg-pol { fill: var(--f-text-2); }
 .rg:has(.rg-z3.schritt-an) .ist-attribut .rg-balken { fill: var(--f-akzent); }
-/* Konstrukt mit Hinweis („Hürde“): Pol auf der Seite der Marke in Warnfarbe */
-.rg:has(.rg-z3.schritt-an) .ist-hinweis .rg-pol.ist-markenpol { fill: var(--f-warnung); }
+/* Konstrukt mit Hinweis („Hürde“): Pol auf der Seite der Marke in Fehlerfarbe (A32) */
+.rg:has(.rg-z3.schritt-an) .ist-hinweis .rg-pol.ist-markenpol { fill: var(--f-fehler); }
 
 
 /* ---------------------------------------------------------------------------

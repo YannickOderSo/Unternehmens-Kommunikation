@@ -486,6 +486,16 @@
       }
       legendeTeile.push({ g: g, text: text });
     });
+    /* Strich „Ø Wettbewerb“ (Schritt 3) in der Legende – erscheint mit dem
+       Strich im Profil (seit 21.10.2026, VORTRAGSREIFE A32: fehlte oben, nur
+       rechts stand „Vorsprung vor Ø Wettbewerb“). Nur, wenn es Mittelwerte gibt. */
+    if (zeilen.some(function (r) { return r.attribut && r.mittel !== null; })) {
+      var gMittel = u.svg('g', { 'data-schritt': '3', 'data-animation': 'einblenden', 'data-verzoegerung': '200' }, legende);
+      u.svg('path', { class: 'rg-mittel', d: 'M26 ' + (MASS.legendeY - 11) + 'V' + (MASS.legendeY + 11) }, gMittel);
+      var textMittel = u.svg('text', { class: 'rg-legende-text', x: 66, y: MASS.legendeY + 8 }, gMittel);
+      textMittel.textContent = 'Ø Wettbewerb';
+      legendeTeile.push({ g: gMittel, text: textMittel });
+    }
     u.messen(buehne, function () {
       legendeTeile.forEach(function (teil) {
         teil.g.setAttribute('transform', 'translate(' + Math.round(lx) + ' 0)');

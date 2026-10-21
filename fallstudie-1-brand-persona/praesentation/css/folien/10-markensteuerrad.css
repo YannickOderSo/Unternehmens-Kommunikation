@@ -118,7 +118,13 @@ html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
 }
 
 /* Notiz „Lücke n“: sitzt mittig in der freien Fläche zwischen zwei Karten,
-   eine gestrichelte Klammer verbindet die beiden Karten */
+   eine Klammer verbindet die beiden Karten. Seit 21.10.2026 durchgezogen
+   (VORTRAGSREIFE A31), weil „gestrichelt“ auf 04, 08b, 09 und B2 für
+   „Annahme/Beispielwert“ reserviert ist und eine gestrichelte Klammer wie ein
+   Beispielwert wirkte. Die Lücken bleiben unsere Bewertung (H) – so steht es
+   in den Belegen von Folie 10; Lücke 2 hängt an Beispieldaten und der offenen
+   K1-Zählung. Gestaltung auf Yannicks Synthesefolie: bestätigt er sie nicht,
+   zurück auf „dashed“ (zwei Stellen) oder nur die Ziffern-Badges zeigen. */
 #f10 .g6s-luecke {
   position: absolute;
   display: flex;
@@ -127,14 +133,14 @@ html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
   padding: 0 0 0 30px;
   transform: translateY(-50%);
 }
-#f10 .g6s-luecke::before {            /* gestrichelte Klammer */
+#f10 .g6s-luecke::before {            /* Klammer (durchgezogen) */
   content: "";
   position: absolute;
   left: 6px;
   top: 50%;
   height: var(--g6s-luecke-hoehe, 100%);
   transform: translateY(-50%);
-  border-left: var(--linie-stark) dashed var(--g6s-luecke);
+  border-left: var(--linie-stark) solid var(--g6s-luecke);
 }
 #f10 .g6s-luecke--rechts {
   align-items: flex-end;
@@ -237,12 +243,13 @@ html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
 #f10 .sr-karte-stichworte { row-gap: 14px; }
 #f10 .sr-karte:not(.sr-pille) { gap: 12px; }
 
-/* Markiertes Stichwort: gestrichelte Unterstreichung in Lückenfarbe, sobald die Nummer
-   sichtbar ist (gleicher Schritt, auch im Druck und in der Vorschau) */
+/* Markiertes Stichwort: Unterstreichung in Lückenfarbe, sobald die Nummer
+   sichtbar ist (gleicher Schritt, auch im Druck und in der Vorschau);
+   durchgezogen seit 21.10.2026 (A31, siehe Klammer oben) */
 #f10 .sr-stichwort.g6s-markiert {
   position: relative;
   text-decoration-line: underline;
-  text-decoration-style: dashed;
+  text-decoration-style: solid;
   text-decoration-thickness: var(--linie-stark);
   text-underline-offset: 7px;
   text-decoration-color: transparent;

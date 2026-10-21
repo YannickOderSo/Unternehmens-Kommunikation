@@ -7,7 +7,9 @@
    21.10.2026 „kern“) in die Fazit-Zeile oben rechts (eine Quelle für
    Folie 10, 11 und 12; fehlt Folie 10, bleibt der Text im HTML) und koppelt
    die Listen mit dem Steuerrad (Baustein der Engine, Modus „menue“):
-     • Klick oder Tab + Enter auf einen Eintrag springt zur Folie.
+     • Klick oder Tab + Enter auf einen Eintrag springt zur Folie – seit
+       21.10.2026 über Deck.springe, also auch aus dem Referentenfenster
+       (vorher bewegte sich dort nur die Vorschau, nicht der Beamer).
      • Zeigen/Fokus auf eine Methode lässt ihr Feld im Rad leuchten,
        Zeigen auf ein Feld im Rad hebt die passenden Methoden hervor.
      • Die Foliennummern liest das Skript aus dem Deck. Fehlt eine Folie in
@@ -51,7 +53,8 @@
       var ziel = folieSuchen(knopf.getAttribute('data-ziel'));
       if (!ziel) return;
       knopf.blur();          // Fokus nicht auf der verlassenen Folie stehen lassen
-      Deck.gehe(ziel.id, 0);
+      /* Deck.springe: wirkt auch im Referentenfenster auf den Beamer (A7, 21.10.2026) */
+      if (Deck.springe) Deck.springe(ziel.id, 0); else Deck.gehe(ziel.id, 0);
     });
     return knopf;
   }

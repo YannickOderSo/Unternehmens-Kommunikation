@@ -10,6 +10,9 @@
    Schnittstelle für Folien-Skripte (ausführlich in AUTOREN.md):
      Deck.registriere('f06', { einrichten, betreten, verlassen, schritt, druck, vorschau })
      Deck.zustand()   Deck.gehe(folie, schritt)   Deck.weiter()   Deck.zurueck()
+     Deck.springe(folie, schritt) – Sprung per Klick auf der Folie; wirkt auch
+       aus dem Referentenfenster auf den Beamer (seit 21.10.2026), dort aber
+       erst in der Fragerunde (ab Folie 12 bzw. Backup)
      Deck.marke       Deck.util   Deck.folien()   Deck.feldZiel(feld)
      Ereignisse auf document: 'deck:bereit', 'deck:folie', 'deck:schritt',
        'deck:wechsel-ende' (Folienwechsel fertig; währenddessen html.wechsel-laeuft)
@@ -421,7 +424,7 @@
       sitzungSpeichern('modus', modus);
     }
     if (geaendert && optionen.melden) {
-      hinweisZeigen('Thema: ' + THEMEN_NAMEN[thema] + ' · ' + (modus === 'hell' ? 'hell' : 'dunkel'));
+      bedienHinweis('Thema: ' + THEMEN_NAMEN[thema] + ' · ' + (modus === 'hell' ? 'hell' : 'dunkel'));
     }
     if (geaendert && !optionen.still) kanalZustandSenden();
     if (geaendert) {
@@ -1323,7 +1326,7 @@
     if (aktuell.schritt < f.schritteGesamt) { schrittWechsel(aktuell.schritt + 1); return; }
     /* Auf der letzten Hauptfolie anhalten – Backup nur gezielt (Übersicht) */
     if (aktuell.index === anzahlHaupt - 1) {
-      hinweisZeigen('Ende der Präsentation · Backup-Folien: Taste O');
+      bedienHinweis('Ende der Präsentation · Backup-Folien: Taste O');
       return;
     }
     if (aktuell.index < folien.length - 1) gehe(aktuell.index + 1, 0, { richtung: 'vor' });
@@ -1356,7 +1359,7 @@
     document.dispatchEvent(new CustomEvent(art === 'folie' ? 'deck:folie' : 'deck:schritt', { detail: detail }));
     if (art === 'folie') document.dispatchEvent(new CustomEvent('deck:schritt', { detail: detail }));
     if (!optionen.still) kanalZustandSenden();
-    if (IST_REFERENT) referentAktualisieren();
+    if (IST_REFERENT) { fragerundeMerken(f); referentAktualisieren(); }
   }
 
   function adresseSetzen() {
@@ -1376,6 +1379,36 @@
   }
 
   Deck.gehe = function (ziel, schritt, optionen) { return gehe(ziel, schritt, optionen); };
+  /* Sprung, den eine Person auf der Folie auslöst (Sprungliste auf 12,
+     Steuerrad-Felder auf 02/10/12, Verweise auf 11): läuft wie Ziffern + Enter
+     über befehl() – im Referentenfenster springt so auch der Beamer mit
+     (VORTRAGSREIFE A7, 21.10.2026; Deck.gehe wirkt nur im eigenen Fenster). */
+  /* Im Referentenfenster läuft im Feld „Aktuell“ das echte Deck: Ein Klick auf
+     ein Rad-Feld oder einen Verweis – etwa beim Fokussieren des Fensters –
+     sprang mitten im Vortrag den Beamer um. Deshalb wirken Klick-Sprünge dort
+     erst in der Fragerunde: sobald Folie 12 oder eine Backup-Folie erreicht
+     war (danach auch auf anderen Folien, z. B. 10 → 06), bis wieder Folie 01
+     kommt. Ziffern + Enter, O und das Sprungmenü wirken immer (Nacharbeit
+     VORTRAGSREIFE A7, 21.10.2026). Im Folienfenster gilt keine Sperre. */
+  var klickSprungFrei = false;
+  function fragerundeMerken(f) {
+    if (f.backup || f.index >= anzahlHaupt - 1) klickSprungFrei = true;
+    else if (f.index === 0) klickSprungFrei = false;
+  }
+  Deck.springe = function (ziel, schritt) {
+    var index = folieAufloesen(ziel);
+    if (index < 0) {
+      console.warn('Deck.springe: Folie „' + ziel + '“ nicht gefunden.');
+      return false;
+    }
+    if (IST_REFERENT && folien[aktuell.index]) fragerundeMerken(folien[aktuell.index]);
+    if (IST_REFERENT && !klickSprungFrei) {
+      hinweisZeigen('Klick-Sprünge hier erst ab Folie 12 – sonst Ziffern + Enter oder O');
+      return false;
+    }
+    befehl('gehe', { folie: folien[index].id, schritt: schritt === undefined ? 0 : schritt });
+    return true;
+  };
   Deck.weiter = function () { befehl('weiter'); };
   Deck.zurueck = function () { befehl('zurueck'); };
   Deck.zustand = function () {
@@ -1434,7 +1467,14 @@
     }
     befehlAusfuehren(aktion, daten || {});
   }
+  /* Ist der Saal schwarz, blenden „weiter“ und „zurück“ nur wieder ein – auch
+     wenn sie aus dem Referentenfenster oder von der Bedienleiste kommen
+     (VORTRAGSREIFE A8, 21.10.2026: sonst schaltete die Folie unsichtbar weiter). */
   function befehlAusfuehren(aktion, daten) {
+    if ((aktion === 'weiter' || aktion === 'zurueck') && html.classList.contains('schwarz')) {
+      schwarzbild(false);
+      return;
+    }
     switch (aktion) {
       case 'weiter': weiter(); break;
       case 'zurueck': zurueck(); break;
@@ -1477,8 +1517,12 @@
     }
     if (e.ctrlKey || e.metaKey || e.altKey) return;          // Browser-Kürzel (Strg+P …) nicht stören
 
-    /* 2. Schwarzbild: jede Bedientaste blendet es nur wieder ein */
-    if (html.classList.contains('schwarz')) {
+    /* 2. Schwarzbild: jede Bedientaste blendet es nur wieder ein – im
+          Referentenfenster auch, solange der Saal schwarz ist (A8: dort
+          schalteten → und Bild↓ sonst die Folie unsichtbar weiter, Esc tat nichts) */
+    var saalSchwarz = html.classList.contains('schwarz') ||
+      (IST_REFERENT && kanal.verbunden && html.classList.contains('schwarz-im-saal'));
+    if (saalSchwarz) {
       if (['b', 'B', '.', 'Escape', 'PageDown', 'PageUp', 'ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp', ' ', 'Enter'].indexOf(taste) >= 0) {
         e.preventDefault();
         befehl('schwarz', { an: false });
@@ -1538,8 +1582,9 @@
         e.preventDefault();
         var nr = ziffernPuffer;
         ziffernZuruecksetzen();
+        /* nur echte Foliennummern – der frühere Rückfall auf den Listenplatz
+           („1 3“ → Folie 11, „2 2“ → B8) ist entfernt (VORTRAGSREIFE A24) */
         var index = folieAufloesen(nr);
-        if (index < 0) index = folieAufloesen(Number(nr) - 1);
         if (index >= 0) befehl('gehe', { folie: folien[index].id, schritt: 0 });
         else hinweisZeigen('Folie ' + nr + ' gibt es nicht');
         return;
@@ -1699,7 +1744,10 @@
        verschwindet nach 2,5 s Ruhe). Die Leiste erscheint nur, wenn die Maus
        im unteren Bereich des Fensters bewegt wird oder der Bildschirm berührt
        wird – sonst verdeckte sie bei jedem Klick 2,5 s lang das Ende der
-       Quellenzeile. Ein Mausklick (z. B. zum Weiterschalten) weckt sie nicht. */
+       Quellenzeile. Ein Mausklick weckt sie nicht. Mausklick und Mausrad
+       blättern NICHT (VORTRAGSREIFE A21) – weiter geht es mit Clicker,
+       Pfeil-/Bildtasten, Leertaste, Wischen oder den Pfeilen der Leiste; ein
+       Klick auf ein Steuerrad springt zur Folie des Felds. */
     var mausTimer = null;
     var mausWecken = function () {
       html.classList.remove('maus-ruht');
@@ -1806,7 +1854,18 @@
     clearTimeout(hinweisTimer);
     hinweisTimer = setTimeout(function () { ebenen.hinweis.classList.remove('ist-offen'); }, 2200);
   }
-  Deck.hinweis = hinweisZeigen;
+  /* Bedienhinweise („Ende der Präsentation …“, „Zurück zu B4: Taste Z“,
+     Themenwechsel) gehören nicht auf den Beamer, solange eine Referentenansicht
+     verbunden ist: Das Folienfenster schickt sie dann dorthin (VORTRAGSREIFE
+     A25, 21.10.2026). Ohne Referentenansicht erscheinen sie wie bisher hier. */
+  function referentVerbunden() {
+    return !IST_REFERENT && Date.now() - kanal.referentZuletzt < 7000;
+  }
+  function bedienHinweis(text) {
+    if (referentVerbunden()) { kanalSenden('hinweis', { text: text }); return; }
+    hinweisZeigen(text);
+  }
+  Deck.hinweis = bedienHinweis;
 
   function schwarzbild(an) {
     var neu = an === undefined ? !html.classList.contains('schwarz') : !!an;
@@ -2160,11 +2219,27 @@
      window.postMessage (funktioniert auch bei file://) + BroadcastChannel
      =========================================================================== */
   var KANAL_NAME = 'deck:' + location.pathname;
+  /* Kennung dieses Fensters im Kanal. Das Folienfenster behält sie über ein
+     Neuladen (F5) hinweg (sessionStorage gilt nur für diesen Tab) – so erkennt
+     das Referentenfenster sein Folienfenster sofort wieder (VORTRAGSREIFE A12,
+     21.10.2026). Das Referentenfenster nimmt immer eine neue Kennung: Ein mit
+     window.open geöffnetes Fenster erbt den sessionStorage seines Öffners. */
+  function kanalKennung() {
+    var neu = Math.random().toString(36).slice(2);
+    if (IST_REFERENT) return neu;
+    var alt = sitzungLaden('kanal-id');
+    if (alt && /^[a-z0-9]{4,}$/.test(alt)) return alt;
+    sitzungSpeichern('kanal-id', neu);
+    return neu;
+  }
   var kanal = {
-    id: Math.random().toString(36).slice(2),
+    id: kanalKennung(),
+    lauf: Math.random().toString(36).slice(2),   /* je Laden neu: Nachrichtennummern beginnen nach F5 wieder bei 1 */
     zaehler: 0,
     gesehen: [],
     partner: null,
+    partnerId: null,       /* Referentenfenster: Kennung „seines“ Folienfensters (A12) */
+    referentZuletzt: 0,    /* Folienfenster: letztes „hallo“ eines Referentenfensters (A25) */
     bc: null,
     verbunden: false,
     zuletzt: 0,
@@ -2188,7 +2263,10 @@
   }
 
   function kanalSenden(typ, daten) {
-    var nachricht = { deck: KANAL_NAME, von: kanal.id, nr: ++kanal.zaehler, typ: typ, daten: daten || {} };
+    var nachricht = { deck: KANAL_NAME, von: kanal.id, lauf: kanal.lauf, nr: ++kanal.zaehler, typ: typ, daten: daten || {} };
+    /* Referentenfenster: Befehle nur an das eigene Folienfenster (A12). „hallo“
+       geht an alle – so meldet sich auch ein neu geöffnetes Folienfenster. */
+    if (IST_REFERENT && kanal.partnerId && typ !== 'hallo') nachricht.an = kanal.partnerId;
     try {
       if (kanal.partner && !kanal.partner.closed) kanal.partner.postMessage(nachricht, '*');
     } catch (e) { /* Fenster weg */ }
@@ -2197,9 +2275,29 @@
     } catch (e) { /* egal */ }
   }
 
+  /* Referentenfenster: Welches Folienfenster ist „meins“? (VORTRAGSREIFE A12,
+     21.10.2026) Ist ein zweites Fenster mit der Präsentation offen (vergessener
+     Probe-Tab), schalteten sonst beide, und die Ansicht sprang zwischen ihren
+     Ständen hin und her. Regeln: Das Fenster, aus dem die Referentenansicht
+     geöffnet wurde (window.opener), gewinnt immer; sonst das erste, das seinen
+     Zustand schickt. Ein anderes wird erst übernommen, wenn das bisherige 7 s
+     lang schweigt (geschlossen oder abgestürzt, siehe referentBauen).
+     Gibt false zurück, wenn die Nachricht von einem fremden Fenster kommt. */
+  function partnerPruefen(n, quelle) {
+    if (n.typ === 'hallo') return false;          /* „hallo“ schicken nur Referentenfenster */
+    var vomOeffner = !!quelle && quelle !== window && quelle === window.opener;
+    if (vomOeffner || (n.typ === 'zustand' && (!kanal.partnerId || !kanal.verbunden))) kanal.partnerId = n.von;
+    return !kanal.partnerId || n.von === kanal.partnerId;
+  }
+
   function kanalEmpfangen(n, quelle) {
     if (!n || typeof n !== 'object' || n.deck !== KANAL_NAME || n.von === kanal.id) return;
-    var schluessel = n.von + ':' + n.nr;
+    /* an ein anderes Folienfenster gerichtet (A12) */
+    if (n.an && n.an !== kanal.id) return;
+    /* vor dem Merken prüfen: Dieselbe Nachricht kommt doppelt an (postMessage
+       und BroadcastChannel); erst die Kopie vom Öffner legt den Partner fest */
+    if (IST_REFERENT && !partnerPruefen(n, quelle)) return;
+    var schluessel = n.von + ':' + (n.lauf || '') + ':' + n.nr;
     if (kanal.gesehen.indexOf(schluessel) >= 0) return;
     kanal.gesehen.push(schluessel);
     if (kanal.gesehen.length > 200) kanal.gesehen.splice(0, 100);
@@ -2211,9 +2309,12 @@
       zustandUebernehmen(n.daten);
     } else if (n.typ === 'hallo' && !IST_REFERENT) {
       if (quelle && quelle !== window) kanal.partner = quelle;
+      kanal.referentZuletzt = Date.now();
       kanalZustandSenden(true);
     } else if (n.typ === 'befehl' && !IST_REFERENT) {
       befehlAusfuehren(n.daten.aktion, n.daten);
+    } else if (n.typ === 'hinweis' && IST_REFERENT) {
+      hinweisZeigen(String((n.daten && n.daten.text) || ''));
     } else if (kanal.empfaenger[n.typ]) {
       kanal.empfaenger[n.typ].forEach(function (fn) {
         try { fn(n.daten); } catch (e) { console.error(e); }
@@ -2248,7 +2349,9 @@
     html.classList.toggle('schwarz-im-saal', !!z.schwarz);
     if (z.folie) {
       var i = folieAufloesen(z.folie);
-      if (i >= 0 && (i !== aktuell.index || z.schritt !== aktuell.schritt)) gehe(i, z.schritt, { still: true });
+      /* sofort: ohne Überblendung – sonst blendete bei jedem Folienwechsel das
+         ganze Referentenfenster ≈ 0,6 s über, Sprechtext doppelt (A26) */
+      if (i >= 0 && (i !== aktuell.index || z.schritt !== aktuell.schritt)) gehe(i, z.schritt, { still: true, sofort: true });
     }
     referentAktualisieren();
   }
@@ -2286,17 +2389,51 @@
   function gesamtMs() {
     return uhr.gesammelt + (uhr.laeuft ? Date.now() - uhr.start : 0);
   }
+
+  /* Uhrzustand sichern (VORTRAGSREIFE A9, 21.10.2026): Ein Neuladen des
+     Referentenfensters (F5, Strg+R, eine Clicker-Taste, die F5 sendet) oder
+     Schließen und erneutes P setzte Gesamt- und Folienuhr auf 0:00. Der Stand
+     liegt jetzt im Browser-Speicher (localStorage, mit try/catch – bei
+     gesperrtem Speicher bleibt alles wie vorher) und wird beim Öffnen der
+     Referentenansicht übernommen; die Uhr läuft dabei ohne Lücke weiter.
+     Ein Stand, der länger als UHR_VERGESSEN_MS nicht geändert wurde, gilt als
+     vergessen (z. B. von der Probe am Vortag). „Zeit zurücksetzen“ löscht ihn –
+     vor dem Vortrag bleibt das Pflicht (LIESMICH §4). */
+  var UHR_SCHLUESSEL = 'referent-uhr';
+  var UHR_VERGESSEN_MS = 3 * 60 * 60 * 1000;
+  function uhrSichern() {
+    if (!IST_REFERENT) return;
+    if (!uhr.gestartet) { util.speichern(UHR_SCHLUESSEL, null); return; }
+    util.speichern(UHR_SCHLUESSEL, {
+      laeuft: uhr.laeuft, start: uhr.start, gesammelt: uhr.gesammelt,
+      folieStart: uhr.folieStart, folieId: uhr.folieId, gesichert: Date.now()
+    });
+  }
+  function uhrWiederherstellen() {
+    var s = util.laden(UHR_SCHLUESSEL, null);
+    if (!s || typeof s !== 'object' || typeof s.gesammelt !== 'number') return;
+    if (!(Date.now() - (s.gesichert || 0) < UHR_VERGESSEN_MS)) { util.speichern(UHR_SCHLUESSEL, null); return; }
+    uhr.gestartet = true;
+    uhr.laeuft = !!s.laeuft;
+    uhr.start = Number(s.start) || Date.now();
+    uhr.gesammelt = Math.max(0, s.gesammelt);
+    uhr.folieStart = Math.max(0, Number(s.folieStart) || 0);
+    uhr.folieId = s.folieId || null;
+  }
+
   function uhrStarten() {
     if (uhr.laeuft) return;
     uhr.laeuft = true;
     uhr.gestartet = true;
     uhr.start = Date.now();
+    uhrSichern();
     referentAktualisieren();
   }
   function uhrPausieren() {
     if (!uhr.laeuft) return;
     uhr.gesammelt += Date.now() - uhr.start;
     uhr.laeuft = false;
+    uhrSichern();
     referentAktualisieren();
   }
   function uhrZuruecksetzen() {
@@ -2304,6 +2441,7 @@
     uhr.gestartet = false;
     uhr.gesammelt = 0;
     uhr.folieStart = 0;
+    uhrSichern();
     referentAktualisieren();
   }
 
@@ -2323,6 +2461,7 @@
       '</section>' +
       '<section class="r-feld r-notizen" aria-label="Sprechtext">' +
       '  <div class="r-etikett"><span>Sprechtext</span><span>' +
+      '    <button type="button" class="r-knopf r-knopf--rueckfragen" data-r="rueckfragen" hidden>Rückfragen ↓</button> ' +
       '    <button type="button" class="r-knopf" data-r="kleiner" aria-label="Schrift kleiner">A−</button> ' +
       '    <button type="button" class="r-knopf" data-r="groesser" aria-label="Schrift größer">A+</button></span></div>' +
       '  <div class="r-notizen-text"></div>' +
@@ -2361,6 +2500,9 @@
 
     var schrift = util.laden('referent-schrift', 28);
     r.notizen.style.setProperty('--r-schrift', schrift + 'px');
+    r.schwarz = raster.querySelector('[data-r="schwarz"]');
+    r.rueckfragen = raster.querySelector('[data-r="rueckfragen"]');
+    uhrWiederherstellen();
 
     raster.addEventListener('click', function (e) {
       var k = e.target.closest('[data-r]');
@@ -2370,6 +2512,7 @@
       else if (a === 'startpause') { if (uhr.laeuft) uhrPausieren(); else uhrStarten(); }
       else if (a === 'zuruecksetzen') uhrZuruecksetzen();
       else if (a === 'schwarz') befehl('schwarz', { an: !html.classList.contains('schwarz-im-saal') });
+      else if (a === 'rueckfragen') rueckfragenUmschalten();
       else if (a === 'kleiner' || a === 'groesser') {
         var jetzt = parseFloat(getComputedStyle(r.notizen).getPropertyValue('--r-schrift')) || 28;
         var neu = Math.max(18, Math.min(48, jetzt + (a === 'groesser' ? 2 : -2)));
@@ -2390,6 +2533,10 @@
       }
     }, 3000);
     setInterval(uhrAnzeigen, 500);
+    r.notizen.addEventListener('scroll', function () {
+      clearTimeout(r.rueckfragenTimer);
+      r.rueckfragenTimer = setTimeout(rueckfragenBeschriften, 120);
+    });
     window.addEventListener('resize', einpassen);
     if ('ResizeObserver' in window) new ResizeObserver(einpassen).observe(r.platzAktuell);
   }
@@ -2403,9 +2550,15 @@
     r.verbindung.setAttribute('data-stand', kanal.verbunden ? 'verbunden' : 'getrennt');
     r.verbindung.textContent = kanal.verbunden ? 'mit Vortragsfenster verbunden' : 'nicht verbunden (steuert sich selbst)';
 
-    /* automatisch starten, sobald zum ersten Mal weitergeschaltet wird */
+    /* automatisch starten, sobald zum ersten Mal weitergeschaltet wird (besser:
+       mit dem ersten Satz auf „Start“ klicken – der Knopf leuchtet, A14) */
     if (letzteReferentFolie && (letzteReferentFolie !== f.id || letzterReferentSchritt !== aktuell.schritt) && !uhr.gestartet) uhrStarten();
-    if (letzteReferentFolie !== f.id) uhr.folieStart = gesamtMs();
+    /* Folienuhr: Beginn der Folie merken (uhr.folieId übersteht das Neuladen, A9) */
+    if (uhr.folieId !== f.id) {
+      uhr.folieStart = gesamtMs();
+      uhr.folieId = f.id;
+      uhrSichern();
+    }
     var folieGewechselt = letzteReferentFolie !== f.id;
     /* Nur bei echtem Folien- oder Schrittwechsel zum Absatz scrollen: Der
        Abgleich alle 3 s („hallo“ → „zustand“) ruft diese Funktion ebenfalls
@@ -2428,14 +2581,22 @@
     if (f.feld && FELD_NAMEN[f.feld]) info.push('<span class="r-pille"><b>Feld</b>' + util.escape(FELD_NAMEN[f.feld]) + '</span>');
     if (f.zeit) info.push('<span class="r-pille"><b>Soll</b>' + util.zeitFormat(f.zeit) + ' min</span>');
     info.push('<span class="r-pille"><b>Thema</b>' + THEMEN_NAMEN[html.getAttribute('data-thema')] + ' · ' + html.getAttribute('data-modus') + '</span>');
-    if (html.classList.contains('schwarz-im-saal')) info.push('<span class="r-pille" style="background:#5a1d1d"><b>Saal</b>Schwarzbild</span>');
+    var saalSchwarz = html.classList.contains('schwarz-im-saal');
+    if (saalSchwarz) info.push('<span class="r-pille" style="background:#5a1d1d"><b>Saal</b>Schwarzbild</span>');
     r.info.innerHTML = info.join('');
+    /* Knopf zeigt, ob der Saal schwarz ist (A8) */
+    if (r.schwarz) {
+      r.schwarz.classList.toggle('ist-an', saalSchwarz);
+      r.schwarz.setAttribute('aria-pressed', saalSchwarz ? 'true' : 'false');
+      r.schwarz.querySelector('span').textContent = saalSchwarz ? 'Saal einblenden' : 'Schwarzbild';
+    }
 
     /* Sprechtext */
     if (folieGewechselt) {
       var notiz = f.el.querySelector(':scope > .notizen');
       r.notizen.innerHTML = notiz && notiz.innerHTML.trim() ? notiz.innerHTML : '<p class="r-notizen-leer">Kein Sprechtext hinterlegt.</p>';
       r.notizen.scrollTop = 0;
+      rueckfragenVorbereiten();
     }
     alle('[data-schritt]', r.notizen).forEach(function (el) {
       var n = parseInt(el.getAttribute('data-schritt'), 10) || 0;
@@ -2446,6 +2607,47 @@
        Gleiten, innerhalb der Folie sanft) – nur nach einem Wechsel, siehe oben */
     if (schrittGewechselt) sprechtextZumSchritt(!folieGewechselt);
     uhrAnzeigen();
+  }
+
+  /* Rückfragen im Sprechtext finden (VORTRAGSREIFE A11, 21.10.2026): Sie
+     standen erst nach 550–1.000 Wörtern und sahen aus wie Sprechtext. Jetzt:
+     Absätze ohne data-schritt sind kleiner und grau (css/deck.css, nur wenn
+     die Folie Sprechabsätze hat; Ausnahme class="gesprochen"), und der Knopf
+     „Rückfragen ↓“ rollt zum ersten Absatz, der mit „Rückfragen“, „Mögliche
+     Rückfragen“ oder „Wahrscheinliche Rückfragen“ beginnt – ein zweiter Klick
+     zurück zum aktuellen Schritt. */
+  var RUECKFRAGEN_ANFANG = /^\s*(?:Mögliche\s+|Wahrscheinliche\s+)?Rückfragen/i;
+  function rueckfragenAbsatz() {
+    return r.notizen ? r.notizen.querySelector('.r-rueckfragen-start') : null;
+  }
+  function rueckfragenVorbereiten() {
+    var kinder = Array.prototype.slice.call(r.notizen.children);
+    r.notizen.classList.toggle('r-mit-schritten', kinder.some(function (k) { return k.hasAttribute('data-schritt'); }));
+    var treffer = kinder.filter(function (k) { return !k.hasAttribute('data-schritt') && RUECKFRAGEN_ANFANG.test(k.textContent || ''); })[0];
+    if (treffer) treffer.classList.add('r-rueckfragen-start');
+    if (r.rueckfragen) r.rueckfragen.hidden = !treffer;
+    rueckfragenBeschriften();
+  }
+  function rueckfragenSichtbar() {
+    var ziel = rueckfragenAbsatz();
+    if (!ziel) return false;
+    var oben = ziel.getBoundingClientRect().top - r.notizen.getBoundingClientRect().top;
+    return oben < r.notizen.clientHeight * 0.5;
+  }
+  function rueckfragenBeschriften() {
+    if (!r.rueckfragen || r.rueckfragen.hidden) return;
+    var dort = rueckfragenSichtbar();
+    r.rueckfragen.textContent = dort ? 'Zum Schritt ↑' : 'Rückfragen ↓';
+    r.rueckfragen.setAttribute('aria-label', dort ? 'Zurück zum Sprechtext des aktuellen Schritts' : 'Zu den möglichen Rückfragen dieser Folie rollen');
+  }
+  function rueckfragenUmschalten() {
+    var ziel = rueckfragenAbsatz();
+    if (!ziel) return;
+    if (rueckfragenSichtbar()) { sprechtextZumSchritt(true); return; }
+    var oben = r.notizen.scrollTop + ziel.getBoundingClientRect().top - r.notizen.getBoundingClientRect().top - 16;
+    try {
+      r.notizen.scrollTo({ top: Math.max(0, Math.round(oben)), behavior: bewegungReduziert() ? 'auto' : 'smooth' });
+    } catch (e) { r.notizen.scrollTop = Math.max(0, Math.round(oben)); }
   }
 
   /* „Als Nächstes“: Klon des nächsten Schritts bzw. der nächsten Folie */
@@ -2532,7 +2734,7 @@
         .reduce(function (s, g) { return s + g.zeit; }, 0);
       var istStart = uhr.folieStart / 1000;
       var diff = Math.round(istStart - sollStart);
-      var text = !uhr.gestartet ? 'Zeit startet automatisch beim ersten Weiterschalten.'
+      var text = !uhr.gestartet ? 'Zeit steht – mit dem ersten Satz auf <strong>„Start“</strong> klicken (sonst startet sie erst beim ersten Weiterschalten).'
         : (Math.abs(diff) < 10 ? '<strong>im Plan</strong>' : diff > 0 ? '<strong>' + util.zeitFormat(diff) + ' hinter Plan</strong>'
           : '<strong>' + util.zeitFormat(-diff) + ' vor Plan</strong>');
       r.plan.innerHTML = 'Plan: Folie startet bei ' + util.zeitFormat(sollStart) + ' · ' + text;
@@ -2542,6 +2744,9 @@
     var jetzt = new Date();
     r.uhrzeit.textContent = 'Uhrzeit ' + (jetzt.getHours() < 10 ? '0' : '') + jetzt.getHours() + ':' + (jetzt.getMinutes() < 10 ? '0' : '') + jetzt.getMinutes();
     r.startpause.innerHTML = uhr.laeuft ? icon('pause') + '<span>Pause</span>' : icon('start') + '<span>' + (uhr.gestartet ? 'Weiter' : 'Start') + '</span>';
+    /* Start-Knopf hervorheben, solange die Uhr noch nie lief (A14): Die
+       Rätselfrage auf Folie 01 fehlte sonst in Gesamt- und Folienuhr */
+    r.startpause.classList.toggle('r-knopf--start', !uhr.gestartet);
   }
   function zeileSetzen(zeile, ist, soll) {
     zeile.querySelector('.r-uhr-wert').textContent = util.zeitFormat(ist);
@@ -2591,6 +2796,13 @@
     einpassen();
   }
 
+  /* ?druck&notizen=sprechtext (VORTRAGSREIFE A18, 21.10.2026): nur die
+     Sprechabsätze (data-schritt, dazu class="gesprochen") – als Sprechzettel
+     für Plan B ohne Referentenansicht. Das volle Handout ?druck&notizen hat
+     mit allen Belegen und Rückfragen weit über 40 Seiten. Dazu kommen Absätze
+     mit class="sprechzettel": nicht gesprochen, aber auf dem Zettel nötig
+     (z. B. die Sprung-Bedienung für die Fragerunde auf Folie 12). */
+  var NUR_SPRECHTEXT = parameter.get('notizen') === 'sprechtext';
   function druckSeitenMitNotizen() {
     html.classList.add('druck-notizen');
     var stil = document.createElement('style');
@@ -2603,8 +2815,13 @@
       seite.appendChild(f.el);
       var notiz = util.element('div', { class: 'druck-notiz' }, null, seite);
       var quelle = f.el.querySelector(':scope > .notizen');
+      var inhalt = quelle ? quelle.innerHTML.trim() : '';
+      if (NUR_SPRECHTEXT && quelle) {
+        inhalt = alle(':scope > [data-schritt], :scope > .gesprochen, :scope > .sprechzettel', quelle)
+          .map(function (absatz) { return absatz.outerHTML; }).join('');
+      }
       notiz.innerHTML = '<h3>Sprechtext · Folie ' + util.escape(f.nummer) + ' · ' + util.escape(f.titel) + '</h3>' +
-        (quelle && quelle.innerHTML.trim() ? quelle.innerHTML : '<p><em>Kein Sprechtext hinterlegt.</em></p>');
+        (inhalt || '<p><em>Kein Sprechtext hinterlegt.</em></p>');
     });
   }
 

@@ -93,6 +93,14 @@ Summe wieder auf höchstens 900 s ab.
 </section>
 ```
 
+**Absätze in `aside.notizen`** (seit 21.10.2026, VORTRAGSREIFE A11/A18): `data-schritt="n"` = Sprechtext dieses
+Schritts (hervorgehoben, im Sprechzettel-Druck `?druck&notizen=sprechtext`); `class="gesprochen"` = gesprochen, aber
+ohne Schritt (z. B. Folie 01b, Dank auf Folie 12); `class="sprechzettel"` = nicht gesprochen, aber auf dem
+Sprechzettel nötig (Sprung-Bedienung auf Folie 12). Alle anderen Absätze (Stand, Belege, Rückfragen) zeigt das
+Referentenfenster kleiner und grau, sobald die Folie Absätze mit `data-schritt` hat. Der Knopf „Rückfragen ↓“
+springt zum ersten Absatz ohne `data-schritt`, der mit „Rückfragen“, „Mögliche Rückfragen“ oder „Wahrscheinliche
+Rückfragen“ beginnt.
+
 ### Attribute der `<section>`
 
 | Attribut | Pflicht | Bedeutung |
@@ -539,6 +547,10 @@ animierten Folienwechsels trägt `<html>` die Klasse `wechsel-laeuft`; an seinem
 - `Deck.zustand()` → `{ folie, folienIndex, schritt, schritteGesamt, anzahlFolien, anzahlHauptfolien, titel, feld, nummer, backup, thema, modus }`
 - `Deck.gehe(folie, schritt, optionen)` – Folie als ID, Index, Nummer („6“, „B2“) oder Element; Schritt
   Zahl oder `'ende'`; optionen `{ sofort: true }` (ohne Übergang)
+- `Deck.springe(folie, schritt)` – Sprung, den eine Person auf der Folie auslöst (Sprungliste, Steuerrad-Felder,
+  Verweise). Läuft wie Ziffern + Enter über das Vortragsfenster, wirkt also auch aus dem Referentenfenster auf den
+  Beamer – dort aber erst, wenn Folie 12 oder eine Backup-Folie erreicht war (bis wieder Folie 01 kommt); vorher
+  nur ein Hinweis, Rückgabe `false` (seit 21.10.2026, A7 und Nacharbeit). `Deck.gehe` wirkt nur im eigenen Fenster.
 - `Deck.weiter()`, `Deck.zurueck()` – ein Klick während eines laufenden Übergangs bzw. laufender
   Schritt-Animationen beendet diese sofort (kein Klickstau); ein neuer Folienwechsel während eines
   laufenden Übergangs erfolgt ohne Animation
@@ -589,7 +601,20 @@ node werkzeuge/pruefen.mjs index.html --ausgabe _test/pruefung --schritte
    „fehler“ müssen leer sein; „warnungen“ (Wortbudget, Schrift < 28 px) begründen oder beheben.
 5. Mindestens einmal auch dunkel und in einem anderen Thema prüfen. `_test/` ist in `.gitignore`.
 
-`pruefen.mjs` endet mit Exit-Code 0 (keine Fehler), 1 (Fehler) oder 2 (Abbruch).
+`pruefen.mjs` endet mit Exit-Code 0 (keine Fehler), 1 (Fehler) oder 2 (Abbruch). Seit 21.10.2026 zählt die
+Zusammenfassung abgeblendete Zwischenschritte getrennt (`warnungenAbgeblendet`, gewollte Fokusführung) von den
+übrigen Warnungen (`warnungenOhneAbgeblendet`; Kurzform `warnungenKurz`, z. B. „5 + 36 gewollt abgeblendet“) – neue
+Wortbudget- oder Schriftwarnungen fallen so auf.
+
+**Referentenansicht mit zwei Fenstern** (seit 21.10.2026; nach Änderungen an `js/deck.js`, `js/komponenten.js`,
+`js/folien/11-fazit.js`, `js/folien/12-fragen.js`, `css/deck.css` und vor der Generalprobe):
+
+```bash
+node werkzeuge/referent-test.mjs index.html --ausgabe _test/referent
+#    Folienfenster + Referentenfenster (file://, ohne Netz): Sprünge ab Folie 12 und Sperre davor,
+#    Schwarzbild, Uhr nach Neuladen, Start-Knopf, Rückfragen-Knopf, niedrige Fenster, zweites
+#    Folienfenster, Hinweise nur im Referentenfenster. Exit-Code 0 = alle Prüfungen bestanden.
+```
 
 Was `pruefen.mjs` prüft: Konsolen- und Seitenfehler, fehlende Dateien, externe Anfragen (blockiert),
 geladene Schriften, Farbpaare aus den Tokens (auch Text auf Steuerrad-Feldern), Elemente außerhalb der
@@ -744,7 +769,7 @@ den Kästen und Notizen. Die Folien 03–05 bleiben **Entwurf** (Freigabe durch 
 | `AUTOREN.md` | Abschnitt 2: Sollzeiten der Tabelle auf den 14:00-Plan (840 s) und B8 aktualisiert (stand noch auf 885 s); dieser Abschnitt. |
 | `werkzeuge/uebersicht.mjs` (neu) | erzeugt `export/uebersicht.png` (Kontaktbogen, 2400 px breit, Gestaltung Editorial) aus den Folienbildern; Angaben aus `marke.js` und `index.html`. Nachbau der Übersicht von Account 2, deren Erzeugung nicht dokumentiert war (Aufbau wie bisher: Kopf, „Präsentation“ inkl. 01b, „Backup“, je 4 Kacheln, Fußnote). |
 | `export/` | am 19.10.2026 neu erzeugt (Wege unten): `praesentation.pdf` 22 Seiten (ohne 01b), `folien/<id>.png` 23 Bilder im Endzustand – jetzt 1920 × 1080 (bisher 1600 × 900), `uebersicht.png`. |
-| Gründerbefragung (19.10.2026; `../gruenderbefragung.md`, Workflow D14 und Nacharbeit nach zwei Prüfungen) | Antworten von Gründer Mathias Horsch, immer als Selbstauskunft „Horsch 2026 (GB)“. **Sichtbar nur im Backup:** B1 Spalte 03 (Punkt „Gründerbefragung“, Listenabstand 12 px), B3 „Wer sagt was über wen“ (Horsch 2023 [4], Jost 2024 [24], Horsch 2026 GB; 13 Zeilen, Innenabstand 4 px), B7 Eintrag „GB“ (Spalten 6/6, Legende „extern … , GB“, feste Leerzeichen gegen Umbrüche). **Hauptfolien 02–05 und 10:** nur Notizen und Kästen; der Zusatz unter dem Claim auf 03 („auch laut Gründer Mathias Horsch (Befragung 10/2026)“) wurde nach einem Prüferbefund entfernt und auf Wunsch von Yannick am 19.10.2026 wieder eingesetzt (Daten: claim.stand; Bestätigung, kein unabhängiger Beleg). f04: Blockquellen „Jost …“ statt „Gründer …“ (sichtbar). f05: Selbstbild nur „Spaß und Zusammengehörigkeit“ („Individualität“ erst nach Lukas’ Codierung). „95 %“ nur in den Notizen von 03 mit Zusatz. Folien 06–09b und 11: Inhalte und Daten unverändert, nur Kasten 11. `QUELLEN.md` §5 (Ausnahme GB). Danach `pruefen.mjs --schritte --optional` in Editorial, Bento, Keynote und dunkel: 0 Fehler (4 Warnungen Wortbudget wie vorher); Exporte neu erzeugt (PDF 22 Seiten, 23 Bilder 1920 × 1080, Übersicht Stand 19.10.2026). Offen: Freigabe durch Yannick, Punkte für Lukas (LIESMICH 12). |
+| Gründerbefragung (19.10.2026; `../gruenderbefragung.md`, Workflow D14 und Nacharbeit nach zwei Prüfungen) | Antworten von Gründer Mathias Horsch, immer als Selbstauskunft „Horsch 2026 (GB)“. **Sichtbar im Backup** (und seit 19.10.2026 als Zusatz unter dem Claim auf 03, siehe unten; B7 seit 21.10.2026 „GB (03, B1, B3)“ – Nachtrag VORTRAGSREIFE A1): B1 Spalte 03 (Punkt „Gründerbefragung“, Listenabstand 12 px), B3 „Wer sagt was über wen“ (Horsch 2023 [4], Jost 2024 [24], Horsch 2026 GB; 13 Zeilen, Innenabstand 4 px), B7 Eintrag „GB“ (Spalten 6/6, Legende „extern … , GB“, feste Leerzeichen gegen Umbrüche). **Hauptfolien 02–05 und 10:** nur Notizen und Kästen; der Zusatz unter dem Claim auf 03 („auch laut Gründer Mathias Horsch (Befragung 10/2026)“) wurde nach einem Prüferbefund entfernt und auf Wunsch von Yannick am 19.10.2026 wieder eingesetzt (Daten: claim.stand; Bestätigung, kein unabhängiger Beleg). f04: Blockquellen „Jost …“ statt „Gründer …“ (sichtbar). f05: Selbstbild nur „Spaß und Zusammengehörigkeit“ („Individualität“ erst nach Lukas’ Codierung). „95 %“ nur in den Notizen von 03 mit Zusatz. Folien 06–09b und 11: Inhalte und Daten unverändert, nur Kasten 11. `QUELLEN.md` §5 (Ausnahme GB). Danach `pruefen.mjs --schritte --optional` in Editorial, Bento, Keynote und dunkel: 0 Fehler (4 Warnungen Wortbudget wie vorher); Exporte neu erzeugt (PDF 22 Seiten, 23 Bilder 1920 × 1080, Übersicht Stand 19.10.2026). Offen: Freigabe durch Yannick, Punkte für Lukas (LIESMICH 12). |
 
 **Geprüft und bewusst nicht geändert:** Fußzeilen der Backup-Folien B2/B7 reichen etwas unter die Bedienleiste
 (nur bei Mausbewegung im unteren Rand sichtbar; Backup wird in der Fragerunde gezeigt) – wie bisher. Die Wortmarke
@@ -1397,3 +1422,67 @@ Genuss mit gutem Gewissen“ (geschützte Datei, unverändert). Nicht freigegebe
 Folie 01b, Kicker 10), #31–#35, #39, #40, #4, #11–#14, #23–#26. #15: echte Kurzinterviews und 20–30 Bewertungen;
 ohne Interviews bis 26.10. entscheidet die Gruppe, ob „+ Kurzinterviews“ gestrichen wird. KI-Nachweis eintragen,
 dann committen und pushen (Hauptsitzung).
+
+## 22. Vortragsreife: Referentenansicht, Folie 08 und Nacharbeit (Mi, 21.10.2026)
+
+**Auftrag:** Workflow D23 „Vortragsreife und Fragerunde abgleichen“ (Account 1). Grundlage ist der Prüfbericht
+`VORTRAGSREIFE.md` von Account 2 (Stand a929391, 19.10.2026). Jeder Befund wurde gegen den Stand von heute geprüft
+(Nachtrag N1–N8 oben in `VORTRAGSREIFE.md`). Folie 08 und 08b, im Bericht ausgenommen, wurden nachgeprüft (N4).
+`../fragerunde.md` wurde auf den Stand D18–D22 gebracht. Umgesetzt sind nur **Technik und Kennzeichnung**; Inhalte von
+Lukas (06–08b) und Elias (09–11) sind nicht umgeschrieben, Hinweise stehen in den Kästen. Danach kam eine Prüfung der
+Umsetzung (14 Befunde: 1 hoch, 4 mittel, 9 niedrig) und am Abend die **Nacharbeit**: Befunde umgesetzt,
+`LIESMICH.md` und dieser Abschnitt nachgezogen, Exporte neu erzeugt.
+
+### Umsetzung (D23, tagsüber)
+
+| Bereich | Änderung (Befund im Bericht) |
+|---|---|
+| `js/deck.js` – Referentenansicht | Neue Schnittstelle **`Deck.springe(folie, schritt)`** über `befehl('gehe')`: Sprungliste (12), Steuerrad-Felder (02, 10, 12) und Verweise (11) bewegen auch aus dem Referentenfenster den Beamer (A7). Schwarzbild: Blättern blendet nur ein, Esc auch im Referentenfenster, Knopf „Saal einblenden“ (A8). Uhrzustand in `localStorage` (`referent-uhr`, 3 h) – übersteht Neuladen (A9). Partnerkennung: Nur das eigene Folienfenster schaltet (A12). Start-Knopf leuchtet, bis die Uhr läuft; Planzeile „mit dem ersten Satz auf ‚Start‘ klicken“ (A14). Kein Sprung mehr nach Listenplatz („Folie 13 gibt es nicht“, A24). Bedienhinweise bei verbundener Referentenansicht nur dort (A25). Keine Überblendung im Referentenfenster (`sofort: true`, A26). Absätze ohne `data-schritt` kleiner und grau, Knopf „Rückfragen ↓ / Zum Schritt ↑“ (A11). Druckvariante `?druck&notizen=sprechtext` (A18). Kommentar „Mausklick und Mausrad blättern nicht“ (A21). |
+| `js/komponenten.js`, `js/folien/11-fazit.js`, `js/folien/12-fragen.js` | Sprünge über `Deck.springe` (A7). Folie 08: keine Aussagezahl bei Beispielwerten („Beispielwerte – keine Aussage“) oder bei Stimmen ohne eine für das Chamäleon („Chamäleon: keine Stimme“) (F08-8, F08-17). |
+| `css/deck.css` | `.nur-ohne-css` (Hinweis, wenn nur `index.html` geöffnet ist, A15); `.buehne { forced-color-adjust: none }` (A29); graue Notizen und Rückfragen-Knopf (A11); Start- und Schwarzbild-Knopf (A8, A14); `@media (max-height: 820px)` für Laptop-Fenster bis 1280 × 606 (A10). |
+| Folien-CSS/JS | 08b und 09: Endzustand Deckkraft 0,8 statt 0,6 (A5). 08b: Übergabezeile „Ins Steuerrad“ als Band in der Feldfarbe Tonalität (F08-9). 10: Lücken (Klammer, Unterstreichung) durchgezogen statt gestrichelt (A31). 06: Legende „Ø Wettbewerb“ (`06-repertory-grid.js`), Hürde in `--f-fehler` (A32). 04: Ø-Strich ragt über den Balken (A33). Kommentar zum Ablauf von 08b (`08-analogien.js`, F08-24). |
+| `index.html` | Hinweis ohne CSS (A15); f03 waterdrop-Abgrenzung in den Rückfragen (Y26); f04 „Dortmund nur im Sprechtext“ gestrichen (Y20, teilweise); f05 „direkt umgerechnet etwa 45/27/27“ (Y16) und Gründerzitat nach Frage 5 und 11 getrennt (Y23); Folie 08: Kasten und Notiz „Bedienung“ auf Weg A (F08-6), Pille „Beispieldaten“ erst ab Schritt 2 (F08-20), Rückfragen je Frage ein Absatz (F08-19), Hinweise auf die Inhaltsbefunde im Kasten; „Titel prüfen“ in den Kästen 08b, 10, 11 (G10); f12 Bedienung und Laien-Sprungziele (A7); B3 „Selbstauskunft: Zielgruppe“ (A6); B7 Dossier-Zeile „· GB (03, B1, B3)“ und B7-Notiz (A1); [9] in B8 (A19). |
+| `werkzeuge/pruefen.mjs` | Kontrast mit der Deckkraft aller Vorfahren; abgeblendet in einem Zwischenschritt = Warnung, im Endzustand = Fehler (A30). |
+| Ausarbeitungen | `QUELLEN.md` §5 VuMA (IDs, Notizen 04 und B3) und Eurostat (A20); `../folienentwuerfe.md`: Vermerk „Arbeitsentwurf“ bei den Grafiken 02, 03, 05 (Y31), zwei Behauptungen als „geplant“ (Y14); `../fragerunde.md` überarbeitet (eigener Schritt); `VORTRAGSREIFE.md` Nachtrag N1–N7. |
+
+### Nacharbeit nach der Prüfung (Mi, 21.10.2026 abends)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| `../fragerunde.md` F29 riet „auf Folie 08 zweimal Zurücksetzen“ – bei Weg A pausiert das die Live-Abfrage (hoch) | Fallstrick berichtigt: Runde umstellen, bei Weg A **nicht** „Zurücksetzen“, bei „Live pausiert“ Pille anklicken, „Zurücksetzen“ nur bei Plan C/Weg B. `grep „Zurücksetzen“` in fragerunde.md: nur noch diese Stelle und der Kopf-Nachtrag, gleichlautend mit Notiz 08 und LIESMICH §6/§12. |
+| Seit A7 sprang ein versehentlicher Klick in die Folie im Feld „Aktuell“ mitten im Vortrag den Beamer um (mittel) | `Deck.springe` im Referentenfenster gesperrt, bis Folie 12 oder eine Backup-Folie erreicht war; danach frei (auch 10 → 06 in der Fragerunde), bis wieder Folie 01 kommt. Vorher Hinweis „Klick-Sprünge hier erst ab Folie 12 – sonst Ziffern + Enter oder O“. Ziffern, O und das Sprungmenü des Mini-Rads wirken immer; im Folienfenster keine Sperre. LIESMICH §2/§4, f12-Notiz, Abschnitt 8 (Schnittstelle). |
+| fragerunde.md F12 „Fünf unserer Befragten sind KI-simuliert“ ohne Beleg (mittel) | „[Zahl] unserer Befragten sind KI-simuliert [Prompt P8/P9 – nur sagen, wenn die Läufe stattgefunden haben]“. |
+| fragerunde.md F29 „in den Interviews fragen wir offen“ – Interviews nicht belegt (mittel) | Bedingt formuliert („[nur wenn Interviews geführt:] … haben wir offen gefragt“ / „die Befragung soll offen fragen“), dazu Fallstrick mit Verweis auf F08-2. |
+| f12-Sprungziel „Sind das echte Befragte? → B1, B4, B5“ zeigt Beispiel-Interviews als vorhanden (mittel) | „→ B1 (Grenzen, Interviews „geplant“). B4 und B5 erst nennen, wenn dort die tatsächliche Zahl steht“. |
+| Y16/Y20 „erledigt“ ohne dokumentierte Freigabe (niedrig) | VORTRAGSREIFE N3: Y16 „erledigt (Einbau), Freigabe Yannick offen“, Y20 mit Hinweis; N7 Nr. 11. |
+| N1 Nr. 1: „77 Commits von Claude“, „430 von 840 s“ (niedrig) | „77 Commits, davon 76 von Claude“; „≈ 460 von 840 s (… dazu die Analogien auf 08 ab Schritt 2 ≈ 30 s)“. |
+| Sprechzettel zeigte für Folie 12 „Kein Sprechtext hinterlegt“ (niedrig) | Dank als `class="gesprochen"`, Sprung-Bedienung als neue Klasse `class="sprechzettel"` (Abschnitt 3; `js/deck.js` nimmt beide in den Sprechzettel). Gemessen: Sprechzettel 33 Seiten, volles Handout 53 Seiten (`_test/d23n-handout/`). |
+| A31: Kommentar „die Lücken sind ein Befund“ – auf der Folie sind sie Bewertung (H); Gestaltung ohne Yannicks Freigabe (niedrig) | Kommentar in `css/folien/10-markensteuerrad.css` sachlich („gestrichelt ist für Annahme/Beispielwert reserviert … Lücken bleiben Bewertung (H)“), Bestätigung durch Yannick (LIESMICH 12.1, VORTRAGSREIFE N7 Nr. 12). Gestaltung nicht zurückgenommen. |
+| B7-Logo-Zeile „nur zur Kennzeichnung … auf 01 auch in der Illustration“ widersprüchlich (niedrig) | „(Folien 09b, 12): … unverändert, zur Kennzeichnung der Marke; auf 01 in eigener Illustration (Dose fiktiv)“ – gleiche Länge wie vorher (drei Zeilen; längere Fassungen ergaben in Bento vier Zeilen, die in die Fußnote ragten). Nachgemessen in Editorial, Bento, Keynote je hell und dunkel: unterste Zeile bei y = 1000, Fußnote ab y = 1010. Kasten B7 angepasst. |
+| QUELLEN §5 „Alle über die Campuslizenz“ schloss Eurostat ein (niedrig) | Satz getrennt: Statista CI, Kantar TGI, VuMA über die Campuslizenz; Eurostat frei abrufbar; sichtbar nur Statista CI und Kantar TGI. |
+| fragerunde.md F30 „42 Eigenschaften … 15 Facetten“ ohne Quelle (niedrig) | Zahlen gestrichen („Unter den fünf Dimensionen hat sie weitere Ebenen“). |
+| f08-Bedienung erklärte „OHNE Zeitfenster“ nicht (niedrig) | Notiz Punkt (3) und Kasten: „steht dort „OHNE Zeitfenster“, ist das Skript bei Google noch nicht aktualisiert … Yannick Bescheid geben, Plan C bereithalten“. |
+| 36 gewollte Kontrast-Warnungen verdecken echte Warnungen; Zwei-Fenster-Test nur im Scratchpad (niedrig) | `pruefen.mjs`: `warnungenAbgeblendet`, `warnungenOhneAbgeblendet`, `warnungenKurz` („5 + 36 gewollt abgeblendet“), Ergebnis „ok (nur gewollt abgeblendete Zwischenschritte)“, wenn sonst nichts ist. Neu **`werkzeuge/referent-test.mjs`** (Abschnitt 9): 43 Prüfungen, darunter die neue Sperre (vor Folie 12 und wieder nach Folie 01). |
+| Offene Doku-Punkte aus dem Nachtrag (A1, A8, A9, A12–A18, A21–A23, A27, A34, E12, E13, G15, 9.2, 9.4–9.8, F08-6) | `LIESMICH.md`: §1 (ZIP, Browserversion ≥ ca. 119 als Modellwissen, Vollbild), §2 (Schwarzbild nur mit B/„.“ einblenden, Esc auf dem Beamer meiden, T/D, Ziffern nur Hauptfolien, Maus blättert nicht, Tabelle „Fragerunde: Sprungwege“), §4 neu (Aufbau in 9 Schritten, Während des Vortrags, Anzeige, Sicherungen), §5 (Eingabefeld: nur Bild↑/Bild↓), §6 (keine Prozentzahl aus Beispielwerten, Pille ab Schritt 2), §9 (`referent-test.mjs`), §11 (PDF-Zuordnung, Sprechzettel/Handout, `?bewegung=reduziert`, Notfalltabelle mit Live-Abstimmung), **§12 neu je Person** (12.1 Yannick, 12.2 Lukas, 12.3 Elias, 12.4 Gruppe mit Synthese und Generalprobe, 12.5 Account 1, 12.6 am Tag, 12.7 optional, 12.8 erledigt; jeder Punkt einmal, Kennungen aus VORTRAGSREIFE), §13. Hier: Abschnitt 3 (Absatzklassen der Notizen), 8 (`Deck.springe`), 9 (Zusammenfassung, `referent-test.mjs`), 15 (A1-Nachtrag), dieser Abschnitt. `VORTRAGSREIFE.md`: N3–N5 Status nachgezogen, N7 Nr. 11–13, N8. |
+
+**Geprüft (Mi, 21.10.2026 abends, Endstand):** `node --check` für `js/deck.js`, `js/komponenten.js` und alle
+`js/folien/*.js`: ohne Fehler. `pruefen.mjs index.html --schritte --optional` (Editorial hell): 23 Folien,
+81 Screenshots, **0 Fehler**, Warnungen „5 + 36 gewollt abgeblendet“ (Wortbudget wie vorher: f03 48, f04 46,
+f08b 41, f10 49, f11 55), 0 externe Anfragen (`_test/d23n-final/`). `--schritte --nur b7,f08,f12` in Editorial,
+Bento, Keynote je hell und dunkel: je 0 Fehler (`_test/d23n-<thema>-<modus>/`). **`referent-test.mjs`: 43 von 43**
+(`_test/d23n-referent-final/`). `zeitfenster-e2e.mjs`: 58 von 58, 0 externe Anfragen (`_test/d23n-zeitfenster/`).
+Handout: `?druck&notizen` 53 Seiten, `?druck&notizen=sprechtext` 33 Seiten, Folie 12 mit Dank und Bedienung.
+**Exporte** nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b; Seite 1 mit „Dose fiktiv“), 23 Folienbilder
+1920 × 1080 – gegenüber dem Export vom Morgen geändert: f04, f06, f08b, f09, f10, b3, b7, b8 (Bildvergleich), sonst
+gleich; Übersicht `--stand 21.10.2026` (0 externe Anfragen). `export/folien/f08b.png` und die Übersicht angesehen.
+Nicht geändert: `marke.js`, `live-abstimmung/` (auch `apps-script.gs`), `js/abstimmen.js`, `../recherche/`,
+`../dossier-buendel-b.*`, `../gruenderbefragung.md`, `../prompts.md`, `../../ki-nachweis/`, `../../unterlagen/`.
+
+**Beobachtung:** Die Überlappungsprüfung von `pruefen.mjs` vergleicht nur den Kern der Zeilen (mittlere 56 %). Eine
+Zeile, die nur wenige Pixel in die Fußnote ragt, meldet sie nicht (beim Kürzen der B7-Zeile in Bento gesehen). Bei
+knappen Backup-Folien (B3, B7) deshalb nach Textänderungen den Abstand zur Fußnote ansehen.
+
+**Offen:** alles, was Lieferung oder Freigabe braucht – LIESMICH 12.1–12.4 (u. a. Skript-Update und Lasttest,
+Mail an Prof. Stenger, Interviewstand und Daten von Lukas, KA-Werte und Chamäleon-Prüfung von Elias, Synthese
+Do 22.10., Stoppuhr-Probe), danach Einbau, Pillen und endgültiger Export durch Account 1 (12.5). KI-Nachweis
+eintragen, dann committen und pushen (Hauptsitzung).

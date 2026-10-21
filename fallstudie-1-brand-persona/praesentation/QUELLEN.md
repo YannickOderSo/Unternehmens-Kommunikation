@@ -177,10 +177,17 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
     die Basis der Gewichte in den Notizen von Folie 05.
   - **Kantar Media TGI 2023**, ab 15 J., n = 10.089, zitiert nach de.statista.com (ID 1363733), abgerufen
     16.10.2026: **Kaufhäufigkeit** auf Folie 04 und in B3 (B8: „extern“).
-  - **VuMA 2022** (zitiert nach de.statista.com) nur in den Notizen von B3 (Männeranteil, für Rückfragen).
-  Alle über die Campuslizenz der HSKL; Quellenangaben in `../persona-steckbrief.md` (Abschnitt „Quellen“),
-  Kurzfassung in `../persona-daten.md`. Sie stehen **nicht** im Recherche-Dossier und sind auf den Folien als
-  Kategoriedaten („nicht HOLY“) bzw. in B3/B7/B8 als „extern“ gekennzeichnet.
+  - **VuMA 2022** (zitiert nach de.statista.com, IDs 557342, 557180, 557371, 557416, abgerufen 16.10.2026) nur in
+    den Notizen von Folie 04 (Rückfrage „fast die Hälfte Frauen?“) und B3 (Männeranteil, für Rückfragen).
+  - **Eurostat** (lfsa_ewpshi, Beschäftigte in Schichtarbeit nach Geschlecht und Alter, Deutschland, Daten 2025,
+    Männer 25–49 J.: 17 %) nur in den Notizen von Folie 04 (Rückfrage „Randgruppe?“); Beleg und Abruf im
+    Persona-Steckbrief A2 (`../persona-steckbrief.md`, Abschnitt „Quellen“; KI-gestützt am 15.10.2026 an der
+    Eurostat-API geprüft). Nachgetragen am 21.10.2026 (VORTRAGSREIFE A20).
+  Statista Consumer Insights, Kantar TGI und VuMA über die Campuslizenz der HSKL; Eurostat frei abrufbar (Abruf
+  siehe Persona-Steckbrief). Quellenangaben in `../persona-steckbrief.md` (Abschnitt „Quellen“), Kurzfassung in
+  `../persona-daten.md`. Keine dieser Quellen steht im Recherche-Dossier. Was auf Folien sichtbar ist (Statista CI,
+  Kantar TGI), ist dort als Kategoriedaten („nicht HOLY“) bzw. in B3/B7/B8 als „extern“ gekennzeichnet; VuMA und
+  Eurostat stehen nur in den Notizen (Satz berichtigt am 21.10.2026, Nacharbeit D23).
 - **Ausnahme – Gründerbefragung (GB)**, seit 19.10.2026: Horsch, M. (2026): Antworten auf den Fragenkatalog der
   Gruppe, zwei Sprachnachrichten an L. Welker, LinkedIn, 18.10.2026. Eigene Erhebung ohne Dossier-Nummer,
   Auswertung in `../gruenderbefragung.md`. Gründer Mathias Horsch hat der Abschrift und Auswertung mit KI
