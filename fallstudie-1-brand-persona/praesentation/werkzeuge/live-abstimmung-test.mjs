@@ -27,7 +27,17 @@
        Spalten, 5000 vorgehaltene Zeilen, Zähler – nie zurück), Textschutz-Probe
      • Zähler passt nicht zum Blatt (Zeilen eingefügt, gelöscht), Reserve
        aufgebraucht, fehlende Tabelle, leeres oder sortiertes Blatt
-     • Fassung: …/exec?aktion=fassung nennt FASSUNG aus dem Skript
+     • Fassung: …/exec?aktion=fassung nennt FASSUNG aus dem Skript (seit dem
+       Zeitfenster mindestens 20.10.2026)
+     • ZEITFENSTER (aktion=stand&minuten=…, seit 20.10.2026) mit VIRTUELLER
+       UHR (s.uhr.anhalten/vorstellen – kein Test wartet 30 Minuten): alte
+       Stimme fällt raus, jüngere zählt; Grenze genau (minuten alt zählt, 1 ms
+       älter nicht); Umentscheiden kurz vor und nach der Grenze (zuerst die
+       letzte Stimme je Gerät, dann das Fenster – eine ältere rückt nie nach);
+       ohne minuten unverändert; ungültige minuten abgelehnt; Zeilen ohne Zeit;
+       Hörsaal mit Generalprobe in derselben Runde. Gegenprobe: Das Fenster VOR
+       der Letzte-Stimme-Regel ergäbe dasselbe (gleichwertig, 150 zufällige
+       Verläufe) – deshalb ist das kein Mutant.
    Die Attrappe puffert Schreibzugriffe je Ausführung wie Apps Script (bis
    flush, bis zum eigenen Lesen oder bis zum Ende) und prüft die Regeln der
    Google-Referenz (Lock): flush vor releaseLock; Skript-Eigenschaften nur
@@ -52,8 +62,8 @@
      node werkzeuge/live-abstimmung-test.mjs --mutationen
         → MUTATIONSTEST: absichtlich kaputte Kopien des Skripts (z. B. Zeile
           per getLastRow ohne Sperre, ohne Textformat, erste statt letzte
-          Stimme). Jede muss mindestens eine Prüfung scheitern lassen.
-          Exit-Code 0 = alle erkannt.
+          Stimme, minuten ignoriert, Fenster in Sekunden). Jede muss
+          mindestens eine Prüfung scheitern lassen. Exit-Code 0 = alle erkannt.
 
      node werkzeuge/live-abstimmung-test.mjs --server 8787 [--verzoegerung 800]
           [--sperre 200] [--stoerung 0.2] [--abbruch 0.1] [--gleichzeitig 30]
@@ -66,6 +76,12 @@
             index.html?referent&quelle=http://localhost:8787/exec#f08      (Referentenfenster)
             abstimmen.html?u=tier&quelle=http://localhost:8787/exec        (Abstimmseite)
           Jeder weitere Browser bzw. jedes private Fenster zählt als eigenes Handy.
+          ZEITFENSTER testen: http://localhost:8787/uhr?vor=31 stellt die Uhr
+          der Attrappe 31 Minuten vor (nur die Uhr des Skripts – Stimmen und
+          Stand-Abfragen danach; /uhr ohne vor zeigt sie nur). Folie 08 fragt
+          mit minuten=30 und zeigt die alten Stimmen danach nicht mehr. Die
+          Abstimmseite misst mit der Uhr des Browsers (im Test z. B. die
+          Uhr von Playwright vorstellen oder 30 Minuten warten).
           --verzoegerung  künstliche Antwortzeit in ms (langsames Netz nachstellen)
           --sperre MS     BELASTBARKEIT: Jede Stimme hält die Sperre MS lang
                           (bei Google: Sperre holen, Zähler lesen und
@@ -115,10 +131,19 @@
           der Test aus js/abstimmen.js). Dazu läuft eine „Folie“ mit (ohne
           --ohne-folie): Sie fragt den Stand wie js/komponenten.js ab (eine
           Anfrage zugleich, Takt 2 s, Fehlversuch nach 4 s und 8 s, aufgeben
-          nach 15 s, „offline“ ab dem zweiten Fehlversuch in Folge) – nur
+          nach 15 s, „offline“ ab dem zweiten Fehlversuch in Folge, mit
+          minuten=<marke.js → gueltigMinuten> wie die echte Folie) – nur
           lesend. Ausgabe: angenommen im 1. Versuch / nach Wiederholung /
           endgültig gescheitert, Zeit bis „Danke“ (Median, 90 %, längste),
-          Gründe der Fehlversuche, Folie (Antwortzeiten, „offline“), Stand n.
+          Gründe der Fehlversuche, Folie (Antwortzeiten, „offline“, Antworten
+          ohne Zeitfenster), Stand n ohne und mit minuten (beide müssen alle
+          Stimmen zählen – sonst steht die Zeit in der Tabelle zu FRÜH) und
+          die GEGENPROBE: mindestens 90 s nach der letzten Stimme mit
+          minuten=1 – dann darf keine Stimme der Lasttest-Runde mehr zählen
+          (n = 0; sonst steht die Zeit zu SPÄT, und Stimmen zählten länger
+          als gueltigMinuten). Gegen die echte Web-App wartet der Test dafür
+          bis zu 90 s; gegen die Attrappe stellt er stattdessen deren Uhr
+          über /uhr?vor=2 vor.
           Urteil:
             BESTANDEN                 n = Anzahl, kein Handy gescheitert und
                                       jedes sah „Danke“ nach höchstens 15 s
@@ -127,6 +152,12 @@
                                       länger als 15 s – Exit-Code 1
             NICHT BESTANDEN           Handys gescheitert oder n ≠ Anzahl –
                                       Exit-Code 1 (Abbruch des Tests: 2)
+          Dazu, unabhängig vom Urteil, Exit-Code 1 bei „FASSUNG VERALTET“ (die
+          Web-App läuft nicht mit FASSUNG aus apps-script.gs, z. B. 20.10.2026)
+          und bei „ZEITFENSTER FEHLT/FALSCH/UNKLAR/UNGEPRÜFT“ (Antwort ohne
+          "minuten", mit minuten weniger Stimmen als ohne, Gegenprobe n ≠ 0
+          oder nicht lesbar). Dann beginnt die Urteilszeile mit „NICHT
+          BESTANDEN wegen …“, gefolgt vom Urteil der Belastbarkeit allein.
           Eine Messung ist nur eine Stichprobe: gegen die echte Web-App
           mindestens zweimal, --anzahl = Personen im Raum (bei uns ca. 20).
           Gegen die ECHTE Web-App schreibt er in die Tabelle – die Zeilen der
@@ -139,6 +170,7 @@
      const s = skriptLaden();
      s.anfrage({ aktion: 'stand', umfrage: 'tier', runde: 'probe', anzahl: 5, callback: 'f' })
        → { mime: 'JAVASCRIPT' | 'JSON', text: '…', daten: { ok: true, … } }
+     s.uhr.vorstellen(31 * 60000)   → virtuelle Uhr des Skripts 31 Minuten vor
    ============================================================================= */
 
 import fs from 'node:fs';
@@ -409,8 +441,14 @@ function umgebungBauen(optionen = {}) {
     ohneTabelle: !!optionen.ohneTabelle,
     appendRowAtomar: optionen.appendRowAtomar !== false,
     dienstFehler: null,                /* Name eines Aufrufs, der einmal scheitern soll */
-    uhr: Date.now()                    /* jede new Date() eine Millisekunde später */
+    uhr: Date.now(),                   /* jede new Date() eine Millisekunde später */
+    /* VIRTUELLE ZEIT (Zeitfenster testen, ohne 30 Minuten zu warten):
+       versatz = so viele ms ist die Uhr vorgestellt; feste = angehaltene Uhr
+       (ms) oder null = echte Zeit + versatz */
+    versatz: 0,
+    feste: null
   };
+  u.zeitJetzt = () => (u.feste !== null ? u.feste : Date.now() + u.versatz);
   u.aktuell = () => u.stapel[u.stapel.length - 1] || null;
   u.haeltSperre = () => { const a = u.aktuell(); return !!a && u.sperreInhaber === a.nr; };
 
@@ -549,12 +587,13 @@ function umgebungBauen(optionen = {}) {
     }
   };
 
-  /* new Date() ohne Angaben: echte Zeit, aber jede Millisekunde nur einmal
-     (eine spätere Stimme hat immer eine spätere Zeit – auch verschachtelt) */
+  /* new Date() ohne Angaben: echte (oder virtuelle) Zeit, aber jede
+     Millisekunde nur einmal (eine spätere Stimme hat immer eine spätere Zeit –
+     auch verschachtelt; die Uhr läuft nie zurück) */
   class UhrDatum extends Date {
     constructor(...angaben) {
       if (angaben.length) super(...angaben);
-      else super(u.uhr = Math.max(Date.now(), u.uhr + 1));
+      else super(u.uhr = Math.max(u.zeitJetzt(), u.uhr + 1));
     }
     static now() { return u.uhr; }
   }
@@ -651,6 +690,16 @@ export function skriptLaden(optionen = {}) {
     verschachtelt,
     kontext,
     umgebung: u,
+    /* virtuelle Uhr des Skripts (new Date() im Skript); sie läuft nie zurück:
+       Eine Zeit vor der zuletzt vergebenen ergibt „zuletzt + 1 ms“ */
+    uhr: {
+      /* ms vorstellen (angehalten: die feste Zeit, sonst den Versatz) */
+      vorstellen(ms) { if (u.feste !== null) u.feste += ms; else u.versatz += ms; return u.zeitJetzt(); },
+      /* anhalten – auf ms oder auf „jetzt“; Rückgabe: die feste Zeit */
+      anhalten(ms) { u.feste = ms === undefined ? Math.max(u.zeitJetzt(), u.uhr + 1) : ms; return u.feste; },
+      jetzt: () => u.zeitJetzt(),
+      versatz: () => u.versatz
+    },
     einrichten() {
       const lauf = u.ausfuehren(() => kontext.einrichten());
       u.pufferSchreiben(lauf.a);
@@ -786,6 +835,22 @@ function blattAbbild(s) {
     if (reihe.some((w) => w !== '' && w !== null)) aus.push(JSON.stringify(reihe.map((w) => (w instanceof Date ? w.getTime() : w))));
   }
   return aus;
+}
+
+/* Gegenprobe zum Zeitfenster: dieselbe Zählung, aber zu alte Zeilen werden
+   VOR der Letzte-Stimme-Regel aussortiert (statt danach). Das ist gleichwertig
+   – das Fenster enthält alle späteren Zeiten, die letzte Stimme hat die
+   späteste –, deshalb steht diese Umstellung nicht in MUTATIONEN (kein Test
+   könnte sie finden), sondern wird hier als gleichwertig geprüft. Wirft, wenn
+   die beiden Stellen im Skript fehlen. */
+export function fensterVorDerRegel(quelltext) {
+  const zeile = /(\n(\s*)const zeit = istDatum_\(z\[0\]\) \? z\[0\]\.getTime\(\) : -Infinity;\n)/;
+  const danach = /\n\s*if \(stimme\.zeit < grenze\) return;\n/;
+  assert.ok(zeile.test(quelltext) && danach.test(quelltext),
+    'Gegenprobe passt nicht zum Skript („const zeit = istDatum_(…)“ oder „if (stimme.zeit < grenze) return;“ fehlt)');
+  const umgestellt = quelltext.replace(danach, '\n').replace(zeile, '$1$2if (zeit < grenze) return;\n');
+  assert.ok(umgestellt !== quelltext && !danach.test(umgestellt), 'Gegenprobe: Umstellung hat nicht gegriffen');
+  return umgestellt;
 }
 
 /* Nach verschachtelten Stimmen: keine Stimme verloren, keine doppelt, keine
@@ -1231,6 +1296,184 @@ export function pruefungen(quelltextVorgabe) {
     assert.deepEqual(r.daten.werte, [6, 6, 16, 6, 6]);
   });
 
+  /* ---------- ZEITFENSTER (aktion=stand&minuten=…, Fassung 20.10.2026) ----------
+     Mit virtueller Uhr (s.uhr): Stimmen „vor 31 Minuten“, ohne zu warten. */
+  const MIN = 60000;
+  const fensterStand = (s, minuten, extra = {}) => stand(s, Object.assign({ minuten: String(minuten) }, extra));
+
+  pruefe('Zeitfenster: Stimmen älter als minuten zählen nicht, jüngere schon; Antwort nennt minuten; nichts wird gelöscht', () => {
+    const s = laden();
+    const t0 = s.uhr.anhalten();
+    stimme(s, 'geraet-alt1', 0);                     /* t0 */
+    s.uhr.vorstellen(20 * MIN);
+    stimme(s, 'geraet-neu1', 2);                     /* t0 + 20 Min. */
+    s.uhr.vorstellen(11 * MIN);                      /* jetzt t0 + 31 Min. */
+    const r = fensterStand(s, 30);
+    assert.deepEqual(r.daten.werte, [0, 0, 1, 0, 0], 'Stimme von vor 31 Min. zählt noch');
+    assert.equal(r.daten.n, 1);
+    assert.equal(r.daten.minuten, 30, 'Antwort ohne "minuten" – die Folie hielte das Fenster für aus');
+    assert.deepEqual(Object.keys(r.daten), ['ok', 'werte', 'n', 'zeit', 'minuten']);
+    assert.equal(Date.parse(r.daten.zeit), t0 + 31 * MIN, 'zeit der Antwort = Uhr des Servers bei der Anfrage');
+    assert.deepEqual(fensterStand(s, 60).daten.werte, [1, 0, 1, 0, 0], 'minuten=60: beide');
+    assert.equal(fensterStand(s, 10).daten.n, 0, 'minuten=10: keine');
+    s.uhr.vorstellen(30 * MIN);                      /* t0 + 61 Min. */
+    assert.equal(fensterStand(s, 30).daten.n, 0, 'nach 61 Min. zählt keine');
+    assert.equal(fensterStand(s, 30, { runde: 'vortrag-2026-10-26' }).daten.n, 0);
+    assert.equal(s.zeilen().length, 2, 'das Zeitfenster darf nichts löschen');
+    assert.deepEqual(s.umgebung.verstoesse, []);
+  });
+
+  pruefe('Zeitfenster: ohne minuten wie bisher (auch Stimmen von vor zwei Tagen), Antwort ohne Feld minuten', () => {
+    const s = laden();
+    s.uhr.anhalten();
+    stimme(s, 'geraet-aaaa', 1); stimme(s, 'geraet-bbbb', 3);
+    s.uhr.vorstellen(2 * 24 * 60 * MIN);
+    const r = stand(s);
+    assert.deepEqual(r.daten.werte, [0, 1, 0, 1, 0]);
+    assert.deepEqual(Object.keys(r.daten), ['ok', 'werte', 'n', 'zeit']);
+    assert.equal(fensterStand(s, 1440).daten.n, 0, 'minuten=1440 (ein Tag): zwei Tage alte Stimmen zählen nicht');
+  });
+
+  pruefe('Zeitfenster Grenze: genau minuten alt zählt noch, eine Millisekunde älter nicht (minuten 30 und 1)', () => {
+    for (const minuten of [30, 1]) {
+      const s = laden();
+      const t0 = s.uhr.anhalten();
+      stimme(s, 'geraet-aaaa', 4);
+      assert.equal(s.blatt()._wert(2, 1).getTime(), t0, 'Zeit der Stimme = Uhr beim Eingang');
+      s.uhr.anhalten(t0 + minuten * MIN - 1);
+      assert.equal(fensterStand(s, minuten).daten.n, 1, minuten + ' Min. minus 1 ms');
+      s.uhr.anhalten(t0 + minuten * MIN);
+      assert.deepEqual(fensterStand(s, minuten).daten.werte, [0, 0, 0, 0, 1], 'genau ' + minuten + ' Min. alt zählt noch');
+      s.uhr.anhalten(t0 + minuten * MIN + 1);
+      assert.equal(fensterStand(s, minuten).daten.n, 0, minuten + ' Min. und 1 ms alt zählt nicht');
+    }
+  });
+
+  pruefe('Zeitfenster und Umentscheiden: zuerst die letzte Stimme je Gerät, dann das Fenster – eine ältere Stimme rückt nie nach', () => {
+    const s = laden();
+    const t0 = s.uhr.anhalten();
+    stimme(s, 'geraet-aaaa', 0);                     /* t0: Adler */
+    stimme(s, 'geraet-cccc', 1);                     /* t0: anderes Handy, Löwe */
+    s.uhr.anhalten(t0 + 29 * MIN);
+    stimme(s, 'geraet-aaaa', 2);                     /* t0 + 29: umentschieden → Chamäleon */
+    assert.deepEqual(fensterStand(s, 30).daten.werte, [0, 1, 1, 0, 0], 't0 + 29: Chamäleon zählt einmal, Adler nicht mehr');
+    s.uhr.anhalten(t0 + 31 * MIN);
+    assert.deepEqual(fensterStand(s, 30).daten.werte, [0, 0, 1, 0, 0], 't0 + 31: die neue Wahl zählt, die alte nicht, das andere Handy ist abgelaufen');
+    s.uhr.anhalten(t0 + 59 * MIN + 1);
+    assert.equal(fensterStand(s, 30).daten.n, 0, 'letzte Stimme zu alt: das Gerät zählt nicht – die noch ältere rückt nicht nach');
+    /* kurz vor und kurz nach der Grenze umentscheiden */
+    const s2 = laden();
+    const u0 = s2.uhr.anhalten();
+    stimme(s2, 'geraet-bbbb', 1);                    /* u0: Löwe */
+    s2.uhr.anhalten(u0 + 30 * MIN - 1000);
+    stimme(s2, 'geraet-bbbb', 3);                    /* 1 s vor Ablauf umentschieden → Fuchs */
+    assert.deepEqual(fensterStand(s2, 30).daten.werte, [0, 0, 0, 1, 0], 'kurz vor Ablauf umentschieden: neue Wahl, n = 1');
+    s2.uhr.anhalten(u0 + 30 * MIN + 1000);
+    assert.deepEqual(fensterStand(s2, 30).daten.werte, [0, 0, 0, 1, 0], 'nach Ablauf der ersten Stimme zählt die neue weiter');
+    s2.uhr.anhalten(u0 + 60 * MIN);
+    assert.equal(fensterStand(s2, 30).daten.n, 0, 'auch die neue Wahl abgelaufen');
+    stimme(s2, 'geraet-bbbb', 3);                    /* nach Ablauf dieselbe Wahl noch einmal */
+    stimme(s2, 'geraet-bbbb', 3);                    /* doppelt gesendet */
+    assert.deepEqual(fensterStand(s2, 30).daten.werte, [0, 0, 0, 1, 0], 'nach Ablauf neu abgestimmt: zählt wieder, einmal');
+    assert.equal(stand(s2).daten.n, 1, 'ohne minuten: weiter ein Gerät');
+  });
+
+  pruefe('Zeitfenster: ungültige minuten abgelehnt wie andere Angaben (nichts gespeichert); gültig 1, 30, 0030, 1440; bei aktion=stimme ignoriert', () => {
+    const s = laden();
+    stimme(s, 'geraet-aaaa', 1);
+    const zeilenVorher = s.zeilen().length;
+    for (const m of ['', '0', '00', '-1', '1441', '9999', '10000', '30.5', '1e1', ' 30', '30 ', '0x1E', 'dreißig', 'NaN', 'Infinity', '+30', '3,0']) {
+      const r = stand(s, { minuten: m });
+      assert.equal(r.mime, 'JAVASCRIPT');
+      istFehler(r, 'minuten ' + JSON.stringify(m));
+      assert.match(r.daten.fehler, /Minuten/, 'Fehlertext nennt die Minuten: ' + r.daten.fehler);
+    }
+    for (const m of ['1', '30', '0030', '1440']) {
+      const r = stand(s, { minuten: m });
+      assert.equal(r.daten.n, 1, 'minuten ' + m);
+      assert.equal(r.daten.minuten, Number(m), 'minuten ' + m + ' als Zahl in der Antwort');
+    }
+    assert.equal(s.zeilen().length, zeilenVorher, 'Stand-Abfrage hat geschrieben');
+    assert.equal(stimme(s, 'geraet-bbbb', 2, { minuten: 'quatsch' }).daten.ok, true, 'minuten bei aktion=stimme wird ignoriert');
+    assert.equal(stimme(s, 'geraet-cccc', 3, { minuten: '5' }).daten.ok, true);
+    assert.deepEqual(stand(s).daten.werte, [0, 1, 1, 1, 0]);
+  });
+
+  pruefe('Zeitfenster: Zeilen ohne gültige Zeit (von Hand) zählen mit minuten nicht, ohne minuten wie bisher', () => {
+    const s = laden();
+    stimme(s, 'geraet-aaaa', 1);
+    const b = s.blatt();
+    b._setzen(3, ['', 'probe', 'tier', 2, 'geraet-hand1']);
+    b._setzen(4, ['gestern', 'probe', 'tier', 3, 'geraet-hand2']);
+    assert.deepEqual(stand(s).daten.werte, [0, 1, 1, 1, 0]);
+    assert.deepEqual(fensterStand(s, 30).daten.werte, [0, 1, 0, 0, 0]);
+  });
+
+  pruefe('Zeitfenster im Hörsaal: Generalprobe in derselben Runde vor 40 Min. zählt nicht, 20 Handys im Vortrag (5 davon schon in der Probe) → n = 20', () => {
+    const s = laden();
+    s.einrichten();
+    const t0 = s.uhr.anhalten();
+    const ids = Array.from({ length: 30 }, (_, i) => 'handy-' + String(i).padStart(4, '0'));
+    ids.slice(0, 10).forEach((id) => stimme(s, id, 0));            /* Probe: 10 × Adler */
+    s.uhr.anhalten(t0 + 40 * MIN);
+    ids.slice(5, 25).forEach((id, i) => stimme(s, id, i % 5));      /* Vortrag: 20 Handys */
+    s.uhr.anhalten(t0 + 41 * MIN);
+    const r = fensterStand(s, 30);
+    assert.equal(r.daten.n, 20);
+    assert.deepEqual(r.daten.werte, [4, 4, 4, 4, 4]);
+    assert.equal(stand(s).daten.n, 25, 'ohne minuten: auch die 5 Probe-Handys, die im Vortrag nicht abgestimmt haben');
+    assert.deepEqual(s.umgebung.verstoesse, []);
+  });
+
+  pruefe('Fassung: mindestens 20.10.2026 (Zeitfenster) – Lasttest und Kurzprüfung erkennen so die neue Fassung', () => {
+    const m = /const FASSUNG = '(\d\d)\.(\d\d)\.(\d{4})';/.exec(quelltext);
+    assert.ok(m, 'const FASSUNG = \'TT.MM.JJJJ\'; fehlt im Skript');
+    assert.ok(m[3] + m[2] + m[1] >= '20261020', 'FASSUNG ' + m[1] + '.' + m[2] + '.' + m[3] + ' ist älter als das Zeitfenster (20.10.2026)');
+  });
+
+  pruefe('Gegenprobe: Fenster VOR der Letzte-Stimme-Regel ergäbe dasselbe (gleichwertig, deshalb kein Mutant) – 150 zufällige Verläufe', () => {
+    const umgestellt = fensterVorDerRegel(quelltext);
+    /* Zufall mit festem Startwert (mulberry32): jeder Lauf prüft dieselben Verläufe */
+    let zufall = 20261020;
+    const wuerfel = (n) => {
+      zufall = (zufall + 0x6D2B79F5) | 0;
+      let x = Math.imul(zufall ^ (zufall >>> 15), 1 | zufall);
+      x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+      return Math.floor((((x ^ (x >>> 14)) >>> 0) / 4294967296) * n);
+    };
+    let verschieden = 0;                            /* Abfragen, in denen das Fenster Stimmen aussortiert */
+    const basis = Date.now() + 1e9;
+    for (let lauf = 0; lauf < 150; lauf++) {
+      const a = laden();
+      const b = skriptLaden({ quelltext: umgestellt });
+      const beide = (fn) => [fn(a), fn(b)];
+      let t = basis;
+      const schritte = 1 + wuerfel(12);
+      for (let k = 0; k < schritte; k++) {
+        /* Zufall vor beide(): Beide Skripte bekommen genau dieselben Stimmen */
+        t += wuerfel(4) === 0 ? 0 : wuerfel(25) * MIN + wuerfel(1000);
+        const geraet = 'geraet-' + 'abcd'[wuerfel(4)].repeat(6);
+        const wahl = wuerfel(5);
+        beide((s) => { s.uhr.anhalten(t); return stimme(s, geraet, wahl); });
+        if (wuerfel(6) === 0) {                       /* Zeile von Hand ohne Zeit */
+          const geraet = 'hand-' + 'xyz'[wuerfel(3)].repeat(6);
+          const option = wuerfel(5);
+          beide((s) => s.blatt()._setzen(s.blatt()._letzteZeile() + 1, ['', 'probe', 'tier', option, geraet]));
+        }
+      }
+      for (let q = 0; q < 4; q++) {
+        t += wuerfel(40) * MIN;
+        const minuten = String(1 + wuerfel(90));
+        const [ra, rb] = beide((s) => { s.uhr.anhalten(t); return fensterStand(s, minuten).daten; });
+        assert.deepEqual(rb.werte, ra.werte, 'Lauf ' + lauf + ', minuten ' + minuten + ': Reihenfolge macht einen Unterschied');
+        const [alle] = beide((s) => stand(s).daten.n);      /* beide: die Uhren bleiben gleich */
+        if (ra.n > 0 && ra.n < alle) verschieden++;
+      }
+    }
+    /* Die Verläufe müssen das Fenster wirklich treffen (einige, aber nicht alle Stimmen zu alt) */
+    assert.ok(verschieden >= 50, 'zu wenige aussagekräftige Abfragen: ' + verschieden);
+  });
+
   pruefe('einrichten(): legt Blatt an, mehrfach ausführbar, Protokoll mit Formaten und Textschutz-Probe, löscht nichts', () => {
     const s = laden();
     s.einrichten(); s.einrichten();
@@ -1472,7 +1715,30 @@ export const MUTATIONEN = [
   { name: 'einrichten() setzt den Zähler zurück (hinter die letzte Zeile statt nie zurück)',
     alt: 'const naechste = blattVorbereiten_(blatt, bisher);', neu: 'const naechste = blattVorbereiten_(blatt, 0);' },
   { name: 'Probe-Zeile mit setValues(\'\') statt clearContent geleert',
-    alt: '  bereich.clearContent();', neu: "  bereich.setValues([['', '', '', '', '']]);" }
+    alt: '  bereich.clearContent();', neu: "  bereich.setValues([['', '', '', '', '']]);" },
+  /* seit dem Zeitfenster (20.10.2026). Nicht dabei: „Fenster vor statt nach
+     der Letzte-Stimme-Regel“ – gleichwertig, siehe fensterVorDerRegel und die
+     Gegenprobe in den Prüfungen. */
+  { name: 'Zeitfenster: minuten ignoriert',
+    alt: 'const minuten = p.minuten === undefined ? 0 : minutenWert_(p.minuten);', neu: 'const minuten = 0;' },
+  { name: 'Zeitfenster: Grenze berechnet, aber nie angewandt',
+    alt: /\n\s*if \(stimme\.zeit < grenze\) return;\n/, neu: '\n' },
+  { name: 'Zeitfenster in Sekunden statt Minuten',
+    alt: 'jetzt.getTime() - minuten * 60000', neu: 'jetzt.getTime() - minuten * 1000' },
+  { name: 'Zeitfenster ohne die Grenze selbst (genau minuten alt zählt nicht)',
+    alt: 'if (stimme.zeit < grenze) return;', neu: 'if (stimme.zeit <= grenze) return;' },
+  { name: 'Zeitfenster gilt auch ohne minuten (fest 30 Minuten – nicht abwärtsverträglich)',
+    alt: 'p.minuten === undefined ? 0 : minutenWert_(p.minuten)', neu: 'p.minuten === undefined ? 30 : minutenWert_(p.minuten)' },
+  { name: 'ungültige minuten nicht abgelehnt',
+    alt: /\n\s*if \(p\.minuten !== undefined && !\(minutenWert_\(p\.minuten\) >= 1\)\) \{\n[^\n]*\n\s*\}/, neu: '' },
+  { name: 'Zeitfenster prüft die Zeit der ersten statt der letzten Stimme des Geräts',
+    alt: 'letzte.set(geraet, { zeit: zeit, option: Number(z[3]) });', neu: 'letzte.set(geraet, { zeit: bisher ? bisher.zeit : zeit, option: Number(z[3]) });' },
+  { name: 'Zeitfenster: Zeilen ohne Zeit (von Hand) zählen mit',
+    alt: 'if (stimme.zeit < grenze) return;', neu: 'if (stimme.zeit !== -Infinity && stimme.zeit < grenze) return;' },
+  { name: 'Zeitfenster: Antwort ohne "minuten" (Folie hielte die Fassung für alt)',
+    alt: '  if (minuten) antwort.minuten = minuten;\n', neu: '' },
+  { name: 'Fassung nicht erhöht (19.10.2026 trotz Zeitfenster)',
+    alt: "const FASSUNG = '20.10.2026';", neu: "const FASSUNG = '19.10.2026';" }
 ];
 
 export function mutationstest(quelltext = fs.readFileSync(SKRIPT_PFAD, 'utf8')) {
@@ -1547,9 +1813,30 @@ export function serverStarten(port = 8787, einstellungen = {}) {
 
   const server = http.createServer(function (req, res) {
     const url = new URL(req.url, 'http://localhost');
+    /* Nur Attrappe: virtuelle Uhr des Skripts vorstellen (Zeitfenster testen,
+       ohne 30 Minuten zu warten). GET /uhr?vor=31 → 31 Minuten vor; GET /uhr
+       → nur anzeigen. Wirkt auf neue Stimmen und jede Stand-Abfrage. */
+    if (req.method === 'GET' && url.pathname === '/uhr') {
+      const vor = url.searchParams.get('vor');
+      if (vor !== null) {
+        const minuten = Number(vor);
+        if (!Number.isFinite(minuten) || minuten < 0 || minuten > 100000) {
+          res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+          res.end('vor = Minuten (Zahl ab 0)');
+          return;
+        }
+        s.uhr.vorstellen(Math.round(minuten * 60000));
+      }
+      const antwort = { jetzt: new Date(s.uhr.jetzt()).toISOString(), vorgestelltMinuten: Math.round(s.uhr.versatz() / 600) / 100 };
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify(antwort));
+      console.log(new Date().toLocaleTimeString('de-DE') + '  Uhr der Attrappe' + (vor !== null ? ' um ' + vor + ' Min. vorgestellt' : '') +
+        ': ' + new Date(s.uhr.jetzt()).toLocaleString('de-DE') + ' (insgesamt ' + antwort.vorgestelltMinuten + ' Min. vor)');
+      return;
+    }
     if (req.method !== 'GET' || url.pathname !== '/exec') {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end('Nur GET /exec?… (wie die Web-App von Google)');
+      res.end('Nur GET /exec?… (wie die Web-App von Google) – und GET /uhr?vor=MINUTEN (Uhr der Attrappe vorstellen)');
       return;
     }
     /* wie Apps Script: bei doppelten Parametern zählt der erste */
@@ -1557,7 +1844,8 @@ export function serverStarten(port = 8787, einstellungen = {}) {
     for (const [k, v] of url.searchParams) if (!(k in parameter)) parameter[k] = v;
     const zeit = () => new Date().toLocaleTimeString('de-DE');
     const kurz = () => (parameter.aktion || '–') + '  runde=' + (parameter.runde || '–') +
-      (parameter.option !== undefined ? '  option=' + parameter.option : '');
+      (parameter.option !== undefined ? '  option=' + parameter.option : '') +
+      (parameter.minuten !== undefined ? '  minuten=' + parameter.minuten : '');
     function fehlerseite(status, grund) {
       res.writeHead(status, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
       res.end(FEHLERSEITE);
@@ -1615,7 +1903,8 @@ export function serverStarten(port = 8787, einstellungen = {}) {
     console.log('  http://localhost:' + port + '/exec   ← mit ?quelle= übergeben (marke.js nicht ändern):');
     console.log('    Folie:        index.html?quelle=http://localhost:' + port + '/exec#f08');
     console.log('    Abstimmseite: abstimmen.html?u=tier&quelle=http://localhost:' + port + '/exec');
-    console.log('  Test: http://localhost:' + port + '/exec?aktion=stand&umfrage=tier&runde=probe&anzahl=5');
+    console.log('  Test: http://localhost:' + port + '/exec?aktion=stand&umfrage=tier&runde=probe&anzahl=5&minuten=30');
+    console.log('  Zeitfenster testen: http://localhost:' + port + '/uhr?vor=31 stellt die Uhr der Attrappe 31 Minuten vor');
     if (verzoegerung) console.log('  Antwortzeit: ' + verzoegerung + ' ms');
     if (sperre) console.log('  Sperre: je Stimme ' + sperre + ' ms, Wartezeit höchstens ' + sperreWarten + ' ms (SPERRE_WARTEN_MS), sonst „' + andrang + '“');
     else console.log('  Ohne --sperre ist die Sperre nie besetzt: Ein Lasttest prüft dann die Wiederholung, nicht die Belastbarkeit.');
@@ -1641,6 +1930,26 @@ const warten = (ms) => new Promise((fertig) => setTimeout(fertig, ms));
 const sek = (ms) => (ms / 1000).toFixed(1).replace('.', ',') + ' s';
 /* Regel der Folie (js/komponenten.js: LIVE_TAKT, LIVE_ZEITLIMIT, LIVE_ZEITLIMIT_HART) */
 const FOLIE = { TAKT: 2000, ZEITLIMIT: 4000, ZEITLIMIT_HART: 15000 };
+/* Gegenprobe des Zeitfensters: so lange nach der letzten Stimme fragt der
+   Lasttest mit minuten=1 (60 s Fenster + 30 s Abstand für sehr späte
+   Wiederholungen; eine Stimme wartet beim Server höchstens 8 s auf die Sperre) */
+const GEGENPROBE_MS = 90000;
+const MARKE_JS = path.resolve(HIER, '..', 'marke.js');
+
+/* Zeitfenster der Folie: marke.js → umfragen.tier.gueltigMinuten (wie
+   js/komponenten.js: ganze Zahl 1–1440, sonst 0 = ohne). marke.js wird in
+   einer leeren Umgebung ausgeführt (nur window), nichts ins Netz. */
+export function folieMinuten() {
+  try {
+    const kontext = vm.createContext({ window: {} });
+    vm.runInContext(fs.readFileSync(MARKE_JS, 'utf8'), kontext, { filename: 'marke.js', timeout: 1000 });
+    const roh = (((kontext.window.MARKE || {}).umfragen || {}).tier || {}).gueltigMinuten;
+    const zahl = typeof roh === 'number' || typeof roh === 'string' ? Number(roh) : NaN;
+    return Math.floor(zahl) === zahl && zahl >= 1 && zahl <= 1440 ? zahl : 0;
+  } catch (f) {
+    return 0;
+  }
+}
 
 export async function lasttest(url, einstellungen = {}) {
   if (typeof einstellungen === 'number') einstellungen = { anzahl: einstellungen };
@@ -1652,6 +1961,10 @@ export async function lasttest(url, einstellungen = {}) {
   const verteiltMs = Math.max(0, Number(einstellungen.verteilt) || 0) * 1000;
   const mitFolie = einstellungen.folie !== false;
   const regeln = handyRegeln();
+  /* Zeitfenster wie Folie 08 (marke.js → gueltigMinuten): Die „Folie“ und die
+     Schlussabfrage senden minuten=…; 0 = ohne */
+  const minuten = einstellungen.minuten !== undefined ? einstellungen.minuten : folieMinuten();
+  const mitMinuten = minuten ? { minuten: String(minuten) } : {};
   const jetzt = new Date();
   const zwei = (x) => String(x).padStart(2, '0');
   const runde = 'lasttest-' + jetzt.getFullYear() + zwei(jetzt.getMonth() + 1) + zwei(jetzt.getDate()) + '-' + zwei(jetzt.getHours()) + zwei(jetzt.getMinutes()) + zwei(jetzt.getSeconds());
@@ -1718,7 +2031,7 @@ export async function lasttest(url, einstellungen = {}) {
      Antwort schon beim ersten); dauert eine Antwort 2 s oder länger, folgt die
      nächste sofort, sonst nach 2 s. Nur lesende Anfragen. */
   const folie = { abfragen: 0, zeiten: [], fehlversuche: 0, offline: 0, offlineMs: 0, offlineSeit: null,
-    zustand: 'verbinde', inFolge: 0, gruende: new Map() };
+    zustand: 'verbinde', inFolge: 0, gruende: new Map(), ohneFenster: 0 };
   let handysFertig = false;
   function folieFehlversuch(meldung) {
     folie.fehlversuche++;
@@ -1732,11 +2045,12 @@ export async function lasttest(url, einstellungen = {}) {
     while (!handysFertig) {
       const start = Date.now();
       const uhren = [1, 2].map((stufe) => setTimeout(() => folieFehlversuch('Antwort dauert länger als ' + sek(stufe * FOLIE.ZEITLIMIT)), stufe * FOLIE.ZEITLIMIT));
-      const r = await holen({ aktion: 'stand', umfrage: 'tier', runde, anzahl: '5' }, FOLIE.ZEITLIMIT_HART, false);
+      const r = await holen(Object.assign({ aktion: 'stand', umfrage: 'tier', runde, anzahl: '5' }, mitMinuten), FOLIE.ZEITLIMIT_HART, false);
       uhren.forEach(clearTimeout);
       folie.abfragen++;
       folie.zeiten.push(r.ms);
       if (r.art === 'ok' && Array.isArray(r.daten.werte) && r.daten.werte.length === 5) {
+        if (minuten && r.daten.minuten !== minuten) folie.ohneFenster++;   /* alte Fassung: kein Zeitfenster */
         folie.inFolge = 0;
         if (folie.offlineSeit) folie.offlineMs += Date.now() - folie.offlineSeit;
         folie.offlineSeit = null;
@@ -1754,7 +2068,8 @@ export async function lasttest(url, einstellungen = {}) {
   console.log('Handy-Regel wie js/abstimmen.js: ' + regeln.VERSUCHE + ' Versuche, Zeitlimit je Versuch ' + sek(regeln.ZEITLIMIT) +
     ', Pause vor einer Wiederholung ' + sek(regeln.PAUSE_MIN) + '–' + sek(regeln.PAUSE_MAX) + ' zufällig' +
     (Object.values(regeln.quelle).every((q) => q === 'js/abstimmen.js') ? '' : ' (teils Vorgabe – in js/abstimmen.js nicht gefunden)'));
-  console.log('Ziel: jedes Handy sieht „Danke“ nach höchstens ' + sek(ZIEL_MS) + (mitFolie ? '; dazu fragt eine „Folie“ den Stand ab wie Folie 08' : ''));
+  console.log('Ziel: jedes Handy sieht „Danke“ nach höchstens ' + sek(ZIEL_MS) + (mitFolie ? '; dazu fragt eine „Folie“ den Stand ab wie Folie 08' +
+    (minuten ? ' (mit minuten=' + minuten + ', marke.js → gueltigMinuten)' : '') : ''));
 
   /* Welche Fassung des Skripts läuft? (eine lesende Anfrage) */
   let lokal = null;
@@ -1762,7 +2077,8 @@ export async function lasttest(url, einstellungen = {}) {
   const fr = await holen({ aktion: 'fassung' }, 20000, false);
   const fassung = fr.art === 'antwort' ? fassungAusText(fr.daten.fehler) : null;
   if (fassung) {
-    console.log('Skript-Fassung der Web-App: ' + fassung + (lokal && lokal !== fassung ? '  ACHTUNG: apps-script.gs hier ist Fassung ' + lokal + ' – erst „Skript aktualisieren“ (ANLEITUNG.md)' : ''));
+    console.log('Skript-Fassung der Web-App: ' + fassung + (lokal && lokal !== fassung ? '  ACHTUNG: apps-script.gs hier ist Fassung ' + lokal +
+      ' – erst „Skript aktualisieren“ (ANLEITUNG.md)' + (minuten ? '; ohne sie gibt es kein Zeitfenster' : '') : ''));
   } else if (fr.art === 'antwort') {
     console.log('Skript-Fassung der Web-App: keine Angabe – es läuft eine Fassung VOR dem 19.10.2026. Erst „Skript aktualisieren“ (ANLEITUNG.md), dann diesen Test.');
   } else {
@@ -1773,7 +2089,8 @@ export async function lasttest(url, einstellungen = {}) {
   const t0 = Date.now();
   const folieLauf = mitFolie ? folieLaufen() : Promise.resolve();
   const handys = await Promise.all(Array.from({ length: anzahl }, (_, i) => handy(i)));
-  const gesamt = Date.now() - t0;
+  const handysEnde = Date.now();          /* danach keine Stimme mehr (Gegenprobe Zeitfenster) */
+  const gesamt = handysEnde - t0;
   handysFertig = true;
   await folieLauf;
 
@@ -1804,15 +2121,78 @@ export async function lasttest(url, einstellungen = {}) {
   console.log('Anfragen insgesamt: ' + anfragen + ' · alle Handys fertig nach ' + sek(gesamt));
   if (mitFolie) {
     const fz = folie.zeiten.slice().sort((a, b) => a - b);
-    console.log('Folie (Stand alle 2 s wie Folie 08): ' + folie.abfragen + (folie.abfragen === 1 ? ' Abfrage' : ' Abfragen') + ', Antwortzeit Median ' + sek(quantil(fz, 0.5)) +
+    console.log('Folie (Stand alle 2 s wie Folie 08' + (minuten ? ', minuten=' + minuten : '') + '): ' + folie.abfragen + (folie.abfragen === 1 ? ' Abfrage' : ' Abfragen') + ', Antwortzeit Median ' + sek(quantil(fz, 0.5)) +
       ' · längste ' + sek(fz[fz.length - 1]) + ' · „offline“: ' +
-      (folie.offline ? folie.offline + '-mal, zusammen ' + sek(folie.offlineMs) : 'nie'));
+      (folie.offline ? folie.offline + '-mal, zusammen ' + sek(folie.offlineMs) : 'nie') +
+      (minuten && folie.ohneFenster ? ' · ' + folie.ohneFenster + '-mal ohne Zeitfenster geantwortet (alte Skript-Fassung)' : ''));
     folie.gruende.forEach((n, g) => console.log('  ' + String(n).padStart(3) + ' ×  Folie: ' + g));
   }
 
   const stand = await holen({ aktion: 'stand', umfrage: 'tier', runde, anzahl: '5' }, 60000, false);
   const n = stand.art === 'ok' ? stand.daten.n : null;
   console.log('Stand der Runde: ' + (n === null ? 'nicht lesbar (' + grund(stand, 60000) + ')' : 'n = ' + n + ', werte ' + JSON.stringify(stand.daten.werte)) + ' (Stand-Abfrage ' + sek(stand.ms) + ')');
+
+  /* Zeitfenster: Dieselbe Abfrage wie die Folie (minuten) muss alle eben
+     abgegebenen Stimmen zählen – sonst stimmt in der echten Tabelle die Zeit
+     nicht (z. B. Zeitzone), oder die Web-App kennt minuten nicht (alte Fassung). */
+  let fensterOk = true;
+  let fensterText = '';
+  if (minuten) {
+    const sf = await holen(Object.assign({ aktion: 'stand', umfrage: 'tier', runde, anzahl: '5' }, mitMinuten), 60000, false);
+    const nf = sf.art === 'ok' ? sf.daten.n : null;
+    const angewandt = sf.art === 'ok' && sf.daten.minuten === minuten;
+    console.log('Stand wie Folie 08 (minuten=' + minuten + '): ' + (nf === null ? 'nicht lesbar (' + grund(sf, 60000) + ')'
+      : 'n = ' + nf + (angewandt ? '' : ' – OHNE Zeitfenster (Antwort ohne "minuten": alte Skript-Fassung)')));
+    if (!angewandt) {
+      fensterOk = false;
+      fensterText = 'ZEITFENSTER FEHLT: Die Web-App wendet minuten nicht an (Skript-Fassung vor dem 20.10.2026) – erst „Skript aktualisieren“ (ANLEITUNG.md).';
+    } else if (nf !== n) {
+      fensterOk = false;
+      fensterText = 'ZEITFENSTER FALSCH (Zeit zu früh): Mit minuten=' + minuten + ' zählt die Web-App ' + nf + ' statt ' + n +
+        ' eben abgegebene Stimmen – Zeit in der Tabelle prüfen (Zeitzone der Tabelle, ANLEITUNG.md „Skript aktualisieren“, Punkt 5).';
+    }
+  }
+
+  /* GEGENPROBE (Nacharbeit 21.10.2026): Steht die Zeit in der Tabelle zu SPÄT
+     (z. B. eine Stunde verschoben), zählt die Abfrage oben ebenfalls alle
+     Stimmen – sie zählten dann aber 90 statt 30 Minuten, genau das soll das
+     Zeitfenster verhindern. Deshalb: mindestens GEGENPROBE_MS nach der letzten
+     Stimme mit minuten=1 fragen. In der eigenen Lasttest-Runde darf dann keine
+     Stimme mehr zählen (n = 0). Zählen alle: Zeit zu spät. Zählen einzelne:
+     vermutlich eine sehr späte Wiederholung (unklar, wiederholen). Gegen die
+     Attrappe stellt /uhr?vor=2 deren Uhr vor, statt zu warten. */
+  if (minuten && fensterOk && typeof n === 'number' && n > 0) {
+    let vorgestellt = false;
+    if (!echt) {
+      try {
+        const a = await fetch(url.replace(/\/exec$/, '/uhr?vor=2'), { signal: AbortSignal.timeout(5000) });
+        vorgestellt = a.ok;
+      } catch (f) { /* keine Attrappe mit Uhr: warten */ }
+    }
+    const rest = GEGENPROBE_MS - (Date.now() - handysEnde);
+    if (!vorgestellt && rest > 0) {
+      console.log('Gegenprobe Zeitfenster: warte ' + sek(rest) + ' (keine neue Stimme), dann Stand mit minuten=1 …');
+      await warten(rest);
+    }
+    const s1 = await holen({ aktion: 'stand', umfrage: 'tier', runde, anzahl: '5', minuten: '1' }, 60000, false);
+    const n1 = s1.art === 'ok' && s1.daten.minuten === 1 ? s1.daten.n : null;
+    console.log('Gegenprobe (minuten=1, ' + (vorgestellt ? 'Uhr der Attrappe 2 Min. vorgestellt' : 'mindestens ' + sek(GEGENPROBE_MS) + ' nach der letzten Stimme') + '): ' +
+      (n1 === null ? 'nicht lesbar (' + (s1.art === 'ok' ? 'Antwort ohne "minuten":1' : grund(s1, 60000)) + ')' : 'n = ' + n1 + (n1 === 0 ? ' – richtig' : '')));
+    if (n1 === null) {
+      fensterOk = false;
+      fensterText = 'ZEITFENSTER UNGEPRÜFT: Die Gegenprobe mit minuten=1 war nicht lesbar – Lasttest wiederholen.';
+    } else if (n1 === n) {
+      fensterOk = false;
+      fensterText = 'ZEITFENSTER FALSCH (Zeit zu spät): Auch mit minuten=1 zählt die Web-App alle ' + n + ' Stimmen, obwohl die letzte über ' +
+        (vorgestellt ? '2 Min.' : sek(GEGENPROBE_MS)) + ' alt ist – in der Tabelle steht eine spätere Zeit als die der Stimme (z. B. Zeitzone). Stimmen zählten dann länger als ' +
+        minuten + ' Minuten. Bis zur Klärung in marke.js gueltigMinuten: 0 (ANLEITUNG.md, Fehlerbehebung).';
+    } else if (n1 > 0) {
+      fensterOk = false;
+      fensterText = 'ZEITFENSTER UNKLAR: Mit minuten=1 zählen noch ' + n1 + ' von ' + n + ' Stimmen – vermutlich kam eine Wiederholung sehr spät an. ' +
+        'Lasttest wiederholen; bleibt es: ANLEITUNG.md, Fehlerbehebung.';
+    }
+  }
+  const fassungAktuell = !lokal || fassung === lokal;
 
   /* Urteil in drei Stufen */
   const g = gescheitert.length;
@@ -1831,14 +2211,24 @@ export async function lasttest(url, einstellungen = {}) {
       (g && n === anzahl ? ' (Gezählt wurden die Stimmen trotzdem – sie kamen verspätet an.)' : '') +
       (ueberZiel ? ' Außerdem ' + hand(ueberZiel) + ' über ' + sek(ZIEL_MS) + '.' : '');
   }
+  /* Fassung oder Zeitfenster falsch: Die Zeile beginnt nicht mit „BESTANDEN“ –
+     das Urteil der Belastbarkeit folgt nur noch dahinter */
+  const gesamtFehler = [fassungAktuell ? '' : 'Fassung', fensterOk ? '' : 'Zeitfenster'].filter(Boolean).join(' und ');
+  if (gesamtFehler) text = 'NICHT BESTANDEN wegen ' + gesamtFehler + ' (Gründe in den nächsten Zeilen). Belastbarkeit allein: ' + text;
   console.log('\n' + text);
+  if (fensterText) console.log(fensterText);
+  if (!fassungAktuell) {
+    console.log('FASSUNG VERALTET: Die Web-App läuft mit ' + (fassung ? 'Fassung ' + fassung : 'einer Fassung ohne Angabe') + ', erwartet ist ' + lokal +
+      ' (apps-script.gs) – erst „Skript aktualisieren“ (ANLEITUNG.md), dann diesen Test wiederholen. Das Ergebnis oben gilt nur für die alte Fassung.');
+  }
   if (mitFolie && folie.offline) console.log('Achtung: Die Folie hätte zwischendurch „offline“ gezeigt (' + folie.offline + '-mal, zusammen ' + sek(folie.offlineMs) + ').');
   if (echt) console.log('Eine Messung ist eine Stichprobe: mindestens zweimal laufen lassen (--anzahl = Personen im Raum).');
   else console.log('Attrappe: Belastbarkeit zeigt das nur, wenn der Server mit --sperre läuft (sonst nur die Wiederholung).');
   return {
-    bestanden: urteil === 'bestanden', urteil, n, ersterVersuch, wiederholt: wiederholt.length, gescheitert: g,
-    ueberZiel, zeiten, anfragen, fassung,
-    folie: mitFolie ? { abfragen: folie.abfragen, offline: folie.offline, offlineMs: folie.offlineMs, laengste: Math.max(0, ...folie.zeiten) } : null
+    /* Exit-Code 0 nur mit der erwarteten Fassung und funktionierendem Zeitfenster */
+    bestanden: urteil === 'bestanden' && fassungAktuell && fensterOk, urteil, n, ersterVersuch, wiederholt: wiederholt.length, gescheitert: g,
+    ueberZiel, zeiten, anfragen, fassung, fassungAktuell, minuten, fensterOk,
+    folie: mitFolie ? { abfragen: folie.abfragen, offline: folie.offline, offlineMs: folie.offlineMs, laengste: Math.max(0, ...folie.zeiten), ohneFenster: folie.ohneFenster } : null
   };
 }
 

@@ -16,6 +16,19 @@
      verständliche Meldung und „Nochmal versuchen“
    • liveQuelle leer, nicht auf …/exec oder runde unbrauchbar → Hinweis „Die
      Abstimmung ist gerade nicht geöffnet“ (gilt vor und nach dem Vortrag)
+   • ZEITFENSTER (seit 20.10.2026, marke.js → umfragen[u].gueltigMinuten, z. B.
+     30): Folie 08 zählt je Handy nur die letzte Stimme der letzten 30 Minuten.
+     Die Seite merkt sich deshalb mit der Wahl die Zeit, zu der der erfolgreiche
+     Versuch losgeschickt wurde (immer etwas VOR dem Eingang beim Server – das
+     Handy hält seine Stimme also nie länger für gültig als der Server). Ist
+     sie älter als gueltigMinuten, gilt sie als abgelaufen: Beim Öffnen kommt
+     gleich die Auswahl statt „Danke“, ohne „bisherige Wahl“; steht „Danke“
+     schon da, wechselt die Seite beim Ablauf (Uhr, und beim Zurückkehren in
+     den Tab) zur Auswahl. Gemessen wird mit der Uhr des Handys als Abstand
+     zwischen Senden und jetzt – eine falsch gestellte Uhr stört nicht. Ohne
+     gueltigMinuten (0 oder leer) wie bisher. Läuft bei Google noch eine ältere
+     Skript-Fassung (ohne Zeitfenster), zählt die Stimme dort weiter; eine
+     erneute Stimme ersetzt sie nur (dieselbe Geräte-ID) – harmlos.
 
    SCHNITTSTELLE (wie live-abstimmung/ und Folie 08; nur GET, Antwort als JSONP)
      ?aktion=stimme&umfrage=tier&runde=<runde>&option=<0..anzahl-1>&anzahl=<n>
@@ -41,6 +54,7 @@
   var MUSTER_NAME = /^[A-Za-z0-9_-]{1,40}$/;     /* umfrage, runde */
   var MUSTER_GERAET = /^[A-Za-z0-9_-]{8,64}$/;
   var MAX_OPTIONEN = 9;
+  var HOECHSTENS_MINUTEN = 1440;  /* gueltigMinuten: 1 bis 1440 (wie apps-script.gs und Folie 08) */
   /* ms ohne Antwort → dieser Versuch gilt als gescheitert. Zeitlimit JE
      VERSUCH; bis 19.10.2026 waren es 30 s für den einzigen Versuch, weil der
      Server bis zu 10 s auf seine Sperre wartete. Gemessen am 19.10.2026 über
@@ -195,7 +209,9 @@
     optionen: [],
     quelle: '',         /* Web-App-Adresse */
     runde: '',
+    fenster: 0,         /* Zeitfenster in ms (gueltigMinuten), 0 = ohne */
     bisher: -1,         /* bestätigte Stimme (nach „Doch anders entscheiden“) */
+    stimmeZeit: 0,      /* Date.now() beim Losschicken der bestätigten Stimme (Zeitfenster) */
     sendung: null,      /* neueste Wahl, die gerade gesendet wird (STIMME SENDEN) */
     laufend: null,      /* Anfrage, die gerade unterwegs ist – höchstens eine */
     knoepfe: []
@@ -250,6 +266,9 @@
   }
   function speichern(schluessel, wert) {
     try { window.localStorage.setItem(SPEICHER + schluessel, JSON.stringify(wert)); } catch (e) { /* egal */ }
+  }
+  function entfernen(schluessel) {
+    try { window.localStorage.removeItem(SPEICHER + schluessel); } catch (e) { /* egal */ }
   }
 
   /* zufällige Geräte-ID (nur Zeichen A–Z a–z 0–9 _ -), je Browser, Umfrage
@@ -652,7 +671,8 @@
     if (!s || s.pause || zustand.laufend) return;
     if (navigator.onLine === false) { sendungEnde(s, { art: 'netz' }); return; }
     s.versuch++;
-    var a = zustand.laufend = { option: s.option, sendung: s };
+    /* start: Zeit des Losschickens – liegt vor dem Eingang beim Server (Zeitfenster) */
+    var a = zustand.laufend = { option: s.option, sendung: s, start: Date.now() };
     anfrage({
       aktion: 'stimme',
       umfrage: zustand.id,
@@ -663,7 +683,11 @@
     }, function (fehler, daten) {
       zustand.laufend = null;
       if (zustand.sendung !== s) { weiterSenden(); return; }     /* überholt: neue Wahl senden */
-      if (!fehler && daten && daten.ok === true) { sendungEnde(s, null, daten); return; }
+      if (!fehler && daten && daten.ok === true) {
+        s.zeit = Math.max(s.zeit || 0, a.start);
+        sendungEnde(s, null, daten);
+        return;
+      }
       /* ein früherer Versuch dieser Sendung hat inzwischen doch gezählt (spaeteStimme) */
       if (s.schonGezaehlt) { sendungEnde(s, null, s.schonGezaehlt); return; }
       if (s.versuch < VERSUCHE && nochmalSinnvoll(fehler, daten)) {
@@ -695,8 +719,16 @@
     if (!fehler && daten && daten.ok === true) {
       if (!s.still) {                                        /* still: Dank steht schon */
         zustand.bisher = i;
-        speichern('stimme:' + zustand.id + ':' + zustand.runde, { option: i, name: zustand.optionen[i] });
+        /* zeit: Losschicken des Versuchs, der gezählt hat (Zeitfenster, Kopf) */
+        zustand.stimmeZeit = s.zeit || Date.now();
+        speichern(stimmeSchluessel(), { option: i, name: zustand.optionen[i], zeit: zustand.stimmeZeit });
         dankZeigen(i, true);
+        ablaufPlanen();
+      } else if (zustand.bisher === i && s.zeit > zustand.stimmeZeit) {
+        /* still nachgesendet (dieselbe Wahl): beim Server jetzt mit späterer Zeit */
+        zustand.stimmeZeit = s.zeit;
+        speichern(stimmeSchluessel(), { option: i, name: zustand.optionen[i], zeit: s.zeit });
+        ablaufPlanen();
       }
       if (s.nachsenden) stillNachsenden(i);
       return;
@@ -733,6 +765,7 @@
   function spaeteStimme(a, daten) {
     var s = zustand.sendung;
     if (s && a.sendung === s) {
+      s.zeit = Math.max(s.zeit || 0, a.start);              /* Zeitfenster: dieser Versuch hat gezählt */
       if (zustand.laufend && zustand.laufend.sendung === s) s.schonGezaehlt = daten;
       else sendungEnde(s, null, daten);
       return;
@@ -748,6 +781,62 @@
     }
     stillNachsenden(neueste);
   }
+
+  /* ---------------------------------------------------------------------------
+     ZEITFENSTER (Kopf): abgelaufene Stimme → wieder die Auswahl
+     --------------------------------------------------------------------------- */
+  function stimmeSchluessel() { return 'stimme:' + zustand.id + ':' + zustand.runde; }
+
+  /* marke.js → gueltigMinuten: ganze Zahl 1–1440 → ms; 0, leer, fehlend → 0
+     (ohne Zeitgrenze); sonst Warnung und 0 – dieselbe Regel wie auf Folie 08 */
+  function fensterVon(konfig) {
+    var roh = konfig.gueltigMinuten;
+    if (roh === undefined || roh === null || roh === '' || roh === 0 || roh === '0') return 0;
+    var zahl = (typeof roh === 'number' || typeof roh === 'string') ? Number(roh) : NaN;
+    if (Math.floor(zahl) === zahl && zahl >= 1 && zahl <= HOECHSTENS_MINUTEN) return zahl * 60000;
+    console.warn('abstimmen.html: marke.js → umfragen.' + zustand.id + '.gueltigMinuten muss eine ganze Zahl von 1 bis ' +
+      HOECHSTENS_MINUTEN + ' sein (oder 0/leer) – die Seite rechnet ohne Zeitgrenze.');
+    return 0;
+  }
+
+  /* Zählt die gespeicherte bzw. bestätigte Stimme (Zeit des Losschickens)
+     nicht mehr? Ohne Zeitstempel (Speicher von vor dem 20.10.2026): abgelaufen. */
+  function istAbgelaufen(zeit) {
+    if (!zustand.fenster) return false;
+    return !(typeof zeit === 'number' && zeit > 0 && Date.now() - zeit <= zustand.fenster);
+  }
+
+  var ablaufUhr = null;
+  function ablaufPlanen() {
+    clearTimeout(ablaufUhr);
+    ablaufUhr = null;
+    if (!zustand.fenster || zustand.bisher < 0) return;
+    /* eine Sekunde nach dem Ablauf; Uhren im Hintergrund-Tab können später
+       laufen – dafür prüfen visibilitychange und pageshow (unten) noch einmal */
+    var rest = zustand.stimmeZeit + zustand.fenster - Date.now();
+    ablaufUhr = setTimeout(ablaufPruefen, Math.max(0, rest) + 1000);
+  }
+
+  /* Abgelaufen: Wahl vergessen und – wenn „Danke“ oder die Auswahl zu sehen
+     ist – die Auswahl ohne „bisherige Wahl“ zeigen. Eine laufende Sendung
+     (neue Wahl) oder eine Fehlerkarte bleibt stehen; ein stilles Nachsenden
+     (NACHZÜGLER) hält die Auswahl nicht auf – sonst bliebe „Danke“ stehen. */
+  function ablaufPruefen() {
+    if (!zustand.fenster || zustand.bisher < 0) return;
+    if (!istAbgelaufen(zustand.stimmeZeit)) { ablaufPlanen(); return; }
+    clearTimeout(ablaufUhr);
+    ablaufUhr = null;
+    zustand.bisher = -1;
+    zustand.stimmeZeit = 0;
+    entfernen(stimmeSchluessel());
+    if (zustand.sendung && !zustand.sendung.still) return;
+    var danke = !!$('meldung').querySelector('.karte--danke');
+    if (danke || !$('auswahl').hidden) auswahlZeigen();
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') ablaufPruefen();
+  });
+  window.addEventListener('pageshow', function () { ablaufPruefen(); });
 
   /* ---------------------------------------------------------------------------
      START
@@ -782,6 +871,7 @@
     }
     zustand.optionen = konfig.optionen.slice(0, MAX_OPTIONEN).map(function (o) { return markeText(o); });
     zustand.runde = String(konfig.runde || '').trim();
+    zustand.fenster = fensterVon(konfig);
     zustand.quelle = quelleBestimmen(konfig, parameter);
     frageSetzen(konfig.frage || 'Live-Abstimmung');
     $('anleitung').textContent = T.anleitung;
@@ -801,12 +891,17 @@
 
     document.documentElement.classList.add('ist-offen');
     auswahlBauen();
-    /* schon abgestimmt (z. B. QR-Code nochmal gescannt)? Dann gleich den Dank */
-    var frueher = laden('stimme:' + id + ':' + zustand.runde);
-    if (frueher && typeof frueher.option === 'number' && zustand.optionen[frueher.option] === frueher.name) {
+    /* schon abgestimmt (z. B. QR-Code nochmal gescannt)? Dann gleich den Dank –
+       außer die Stimme ist nach dem Zeitfenster abgelaufen (zählt nicht mehr) */
+    var frueher = laden(stimmeSchluessel());
+    var bekannt = frueher && typeof frueher.option === 'number' && zustand.optionen[frueher.option] === frueher.name;
+    if (bekannt && !istAbgelaufen(frueher.zeit)) {
       zustand.bisher = frueher.option;
+      zustand.stimmeZeit = typeof frueher.zeit === 'number' ? frueher.zeit : 0;
       dankZeigen(frueher.option, false);
+      ablaufPlanen();
     } else {
+      if (bekannt) entfernen(stimmeSchluessel());
       auswahlZeigen();
     }
   }

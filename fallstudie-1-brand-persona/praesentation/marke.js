@@ -142,6 +142,21 @@ window.MARKE = {
                     Auch die im Browser gespeicherten Zahlen (Stimmen, Handwerte)
                     gelten nur in ihrer Runde – Probezahlen erscheinen im Vortrag nie.
                     Ebenfalls auf GitHub UND auf dem Präsentationsrechner ändern.
+     gueltigMinuten Zeitfenster der Live-Abstimmung in Minuten (ganze Zahl 1–1440;
+                    Auftrag Yannick, 20.10.2026: alte Stimmen sollen im Vortrag nicht
+                    dastehen). Stimmen, die älter sind, zählen auf Folie 08 nicht
+                    mehr (je Handy zählt die letzte Stimme, solange sie so frisch
+                    ist); im Browser gespeicherte Zahlen der Folie, die älter sind,
+                    verfallen beim Laden; ein Handy, das vor längerer Zeit
+                    abgestimmt hat, sieht wieder die Tiere. 0 oder leer = ohne
+                    Zeitgrenze. Zusätzlich trennt runde weiter Probe und Vortrag.
+                    Wirkt erst, wenn bei Google die Skript-Fassung vom 20.10.2026
+                    läuft (ANLEITUNG.md, „Skript aktualisieren“) – ältere Fassungen
+                    zählen ohne Zeitgrenze. Die Stimmen bleiben in der Tabelle.
+                    Ebenfalls auf GitHub UND auf dem Präsentationsrechner ändern:
+                    Die Handys rechnen mit dem Wert auf GitHub, Folie 08 mit dem
+                    auf dem Präsentationsrechner – sind sie verschieden, zeigt ein
+                    Handy „Danke“, obwohl seine Stimme nicht mehr zählt (oder umgekehrt).
      unsereAntwort  wird im Auflösungsschritt als „Unsere Analyse“ hervorgehoben
      aussage        Satz zur großen Aussagezahl (Baustein .umfrage-aussage);
                     {prozent} und {antwort} werden automatisch ersetzt
@@ -172,6 +187,7 @@ window.MARKE = {
       ergebnisLink: '',                                         // nur Weg B: Ergebnisseite des Werkzeugs
       liveQuelle: 'https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec', // Web-App (eingerichtet von Yannick, 19.10.2026) – leer = aus
       runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-26'
+      gueltigMinuten: 30,                                       // Stimmen zählen 30 Minuten (Yannick, 20.10.2026); 0 oder leer = ohne Zeitgrenze
       unsereAntwort: 'Chamäleon',                               // Ergebnis unserer Analyse (Folie 08, Titel; seit 20.10.2026)
       // Satz der großen Aussagezahl; {prozent} und {antwort} werden ersetzt
       aussage: '{prozent} sehen [Marke] wie wir: als {antwort}',

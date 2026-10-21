@@ -1,12 +1,15 @@
 # Live-Abstimmung einrichten – Schritt für Schritt
 
-Für: Yannick · Dauer: ca. 10 Minuten · Stand: 19.10.2026 (20.10.2026: Chamäleon statt Waschbär in den Beispielen)
+Für: Yannick · Dauer: ca. 10 Minuten · Stand: 21.10.2026 (Zeitfenster: Stimmen zählen 30 Minuten, seit 20.10.;
+Kurzprüfung der Uhrzeit in beiden Richtungen, 21.10.; Chamäleon statt Waschbär in den Beispielen)
 Gebraucht wird: ein **privates Google-Konto** (Gmail), ein Laptop mit Chrome, ein Handy.
 
-> **Schon eingerichtet?** Dann nur den Abschnitt [„Skript aktualisieren (neue Fassung)“](#skript-aktualisieren-neue-fassung)
-> durcharbeiten (ca. 5 Minuten). Die Fassung vom 19.10.2026 nimmt viele gleichzeitige Stimmen deutlich schneller an.
-> Welche Fassung gerade läuft, zeigt `<URL>?aktion=fassung` (Punkt 5 dort). Am 20.10.2026 auf Wunsch von Yannick
-> zurückgestellt, bis Folie 08 überarbeitet ist (`../LIESMICH.md`, Abschnitt 12).
+> **Schon eingerichtet? Jetzt nötig:** den Abschnitt [„Skript aktualisieren (neue Fassung)“](#skript-aktualisieren-neue-fassung)
+> durcharbeiten (ca. 5 Minuten). Die **Fassung vom 20.10.2026** bringt zwei Dinge, die bei Google noch fehlen:
+> **Stimmen zählen auf Folie 08 nur 30 Minuten** (alte Stimmen stehen im Vortrag nicht mehr da) und – schon seit der
+> Fassung vom 19.10.2026 – viele gleichzeitige Stimmen werden deutlich schneller angenommen. Ohne Aktualisierung
+> gibt es **kein Zeitfenster**. Welche Fassung läuft, zeigt `<URL>?aktion=fassung` → „(Skript-Fassung 20.10.2026)“
+> (Punkt 5 dort). Die Zurückstellung vom 20.10.2026 ist damit aufgehoben (`../LIESMICH.md`, Abschnitt 12).
 
 ## Worum es geht
 
@@ -18,7 +21,9 @@ jetzt als Chamäleon; im Vortrag zählen sie ohnehin nicht (eigene Runde, Abschn
 1. Das Publikum scannt den **QR-Code** auf Folie 08 und landet auf unserer Abstimmseite (`abstimmen.html`).
 2. Ein Tipp auf ein Tier schickt die Stimme an eine kleine **Web-App** im eigenen Google-Konto (dieses
    Skript: `apps-script.gs`). Sie schreibt die Stimme als Zeile in eine Google-Tabelle.
-3. **Folie 08** fragt alle 2 Sekunden den Stand ab und zeichnet die Balken live.
+3. **Folie 08** fragt alle 2 Sekunden den Stand ab und zeichnet die Balken live. Dabei zählen nur Stimmen der
+   **letzten 30 Minuten** (Zeitfenster, `../marke.js → umfragen.tier.gueltigMinuten: 30`; Abschnitt „Wichtig zu
+   wissen“). Die Zeilen bleiben in der Tabelle.
 
 Fällt etwas aus (kein Internet, Web-App nicht erreichbar), bleibt alles wie bisher: Werte eintippen oder
 Zählmodus per Handzeichen (`../LIESMICH.md`, Abschnitt 6).
@@ -149,6 +154,7 @@ die Web-App-URL ersetzen:
 | Stand lesen | `<URL>?aktion=stand&umfrage=tier&runde=probe&anzahl=5` | `{"ok":true,"werte":[0,0,0,0,0],"n":0,"zeit":"…"}` |
 | Teststimme (Chamäleon) | `<URL>?aktion=stimme&umfrage=tier&runde=probe&option=2&anzahl=5&geraet=test-laptop-1` | `{"ok":true}` und eine neue Zeile im Blatt „Stimmen“ |
 | Umentscheiden (Adler) | dieselbe Adresse mit `option=0` | `{"ok":true}`; danach die Stand-Adresse (1. Zeile) neu laden: `"werte":[1,0,0,0,0]`, `"n":1` – nicht 2 |
+| Stand wie Folie 08 (Zeitfenster) | `<URL>?aktion=stand&umfrage=tier&runde=probe&anzahl=5&minuten=30` | `{"ok":true,"werte":[1,0,0,0,0],"n":1,"zeit":"…","minuten":30}` – fehlt `"minuten":30`, läuft eine alte Fassung („Skript aktualisieren“) |
 
 Kommt im privaten Fenster eine **Google-Anmeldung** statt `{"ok":…}`: Schritt 5, „Wer hat Zugriff“ auf
 **Jeder** stellen (Bereitstellungen verwalten → Bearbeiten → Neue Version → Bereitstellen).
@@ -188,15 +194,23 @@ Versuche** (zwei automatische Wiederholungen). Dazu fragt eine „Folie“ alle 
 lesend). Vorher fragt der Test, welche Fassung des Skripts läuft. Die Ausgabe sieht so aus (… = gemessene Werte):
 
 ```
-Skript-Fassung der Web-App: 19.10.2026
+Skript-Fassung der Web-App: 20.10.2026
 angenommen im 1. Versuch: … · nach Wiederholung: … · endgültig gescheitert: … (von 40)
 Zeit bis „Danke“: Median … · 90 % … · längste … · über 15,0 s: …
 Fehlversuche (wiederholt oder endgültig): … (Gründe, z. B. „Gerade kommen sehr viele Stimmen …“)
 Anfragen insgesamt: … · alle Handys fertig nach …
-Folie (Stand alle 2 s wie Folie 08): … Abfragen, Antwortzeit Median … · längste … · „offline“: …
+Folie (Stand alle 2 s wie Folie 08, minuten=30): … Abfragen, Antwortzeit Median … · längste … · „offline“: …
 Stand der Runde: n = …
+Stand wie Folie 08 (minuten=30): n = …
+Gegenprobe Zeitfenster: warte … (keine neue Stimme), dann Stand mit minuten=1 …
+Gegenprobe (minuten=1, mindestens 90,0 s nach der letzten Stimme): n = 0 – richtig
 BESTANDEN …  oder  GEZÄHLT, ABER ZU LANGSAM …  oder  NICHT BESTANDEN …
 ```
+
+Die **Gegenprobe** (seit 21.10.2026) wartet gegen die echte Web-App bis zu 90 Sekunden ohne neue Stimme – der
+Lasttest dauert dadurch etwas länger. So prüft er die Uhrzeit in der Tabelle in **beiden** Richtungen: Mit
+`minuten=30` müssen alle eben abgegebenen Stimmen zählen (sonst steht die Zeit zu früh), mit `minuten=1` nach
+90 Sekunden keine mehr (sonst steht sie zu spät, und Stimmen zählten länger als 30 Minuten).
 
 - **BESTANDEN:** alle Stimmen gezählt, kein Handy musste selbst noch einmal tippen, und jedes sah „Danke“ nach
   höchstens 15 s. „Nach Wiederholung“ ist dabei in Ordnung – das Publikum sieht dann nur kurz den Hinweis
@@ -208,8 +222,16 @@ BESTANDEN …  oder  GEZÄHLT, ABER ZU LANGSAM …  oder  NICHT BESTANDEN …
   versuchen“) oder es fehlen Stimmen.
 - In beiden Fällen: Ausgabe kopieren und an Claude schicken. Im Vortrag dann zur Ruhe aufrufen („bitte
   nacheinander“) oder Plan C.
-- Steht oben „Skript-Fassung … keine Angabe“ oder „ACHTUNG“: Es läuft noch die alte Fassung – erst „Skript
-  aktualisieren“ (unten), dann den Lasttest wiederholen.
+- Steht oben „Skript-Fassung … keine Angabe“ oder „ACHTUNG“ bzw. am Ende „FASSUNG VERALTET“: Es läuft noch eine
+  alte Fassung (erwartet: 20.10.2026) – erst „Skript aktualisieren“ (unten), dann den Lasttest wiederholen.
+- „ZEITFENSTER FEHLT“: Die Web-App kennt das Zeitfenster nicht (alte Fassung). „ZEITFENSTER FALSCH (Zeit zu
+  früh)“: Mit `minuten=30` zählt sie weniger als die eben abgegebenen Stimmen. „ZEITFENSTER FALSCH (Zeit zu
+  spät)“: Mit `minuten=1` zählen nach 90 Sekunden noch alle. In beiden Fällen stimmt die Uhrzeit in der Tabelle
+  nicht (Ausgabe an Claude schicken; bis zur Klärung `gueltigMinuten: 0` in `marke.js`, dann ohne Zeitgrenze).
+  „ZEITFENSTER UNKLAR“ oder „UNGEPRÜFT“: Lasttest wiederholen.
+- **Bei „FASSUNG VERALTET“ und jedem „ZEITFENSTER …“ gilt der Test als nicht bestanden** (Exit-Code 1): Die
+  Urteilszeile beginnt dann mit „NICHT BESTANDEN wegen Fassung“ bzw. „… wegen Zeitfenster“; dahinter steht nur
+  noch das Urteil der Belastbarkeit allein (z. B. „Belastbarkeit allein: BESTANDEN …“).
 - Zeigt die Zeile „Folie“ „offline“, hätte die Leinwand im Andrang kurz „offline“ gezeigt (die Werte bleiben
   dabei stehen).
 
@@ -223,17 +245,26 @@ Ohne Node.js: die URL an Claude schicken und um den Lasttest bitten. Danach dür
 Für: Yannick, wenn `apps-script.gs` auf GitHub neuer ist als das Skript im Apps-Script-Editor. Dauer: ca. 5 Minuten.
 Die **Web-App-URL bleibt gleich** – an `marke.js` ändert sich nichts, auch nicht auf GitHub.
 
-**Was ist neu (Fassung 19.10.2026)?** Bisher wartete jede Stimme, bis die vorige fertig geschrieben war (rund
-0,5 s je Stimme). Beim Lasttest am 19.10.2026 kamen so nur 19 von 40 gleichzeitigen Stimmen durch. Jetzt holt
-sich jede Stimme nur kurz eine eigene Zeilennummer und schreibt dann gleichzeitig mit den anderen. Warum nicht
-einfach `appendRow` ohne Wartesperre: Die Google-Dokumentation sichert nicht zu, dass gleichzeitige `appendRow`
-nie dieselbe Zeile treffen – Einzelheiten im Kopf von `apps-script.gs`.
+**Was ist neu (Fassung 20.10.2026)?** Bei Google läuft (Stand 20.10.2026) noch die Fassung von vor dem 19.10.2026.
+Die neue bringt zwei Dinge:
+
+- **Zeitfenster (neu am 20.10.2026, Auftrag Yannick):** Folie 08 fragt mit `minuten=30` und zählt je Handy nur die
+  letzte Stimme, wenn sie höchstens 30 Minuten alt ist (`../marke.js → umfragen.tier.gueltigMinuten`). So stehen im
+  Vortrag keine alten Stimmen da. Die alte Fassung kennt das nicht und zählt ohne Zeitgrenze – **das Zeitfenster
+  wirkt erst nach diesem Abschnitt.** Die Zeilen bleiben in der Tabelle, gelöscht wird nichts.
+- **Lastfest (seit 19.10.2026):** Bisher wartete jede Stimme, bis die vorige fertig geschrieben war (rund 0,5 s je
+  Stimme). Beim Lasttest am 19.10.2026 kamen so nur 19 von 40 gleichzeitigen Stimmen durch, am 20.10. warteten 6
+  von 20 Handys über 15 s. Jetzt holt sich jede Stimme nur kurz eine eigene Zeilennummer und schreibt dann
+  gleichzeitig mit den anderen. Warum nicht einfach `appendRow` ohne Wartesperre: Die Google-Dokumentation sichert
+  nicht zu, dass gleichzeitige `appendRow` nie dieselbe Zeile treffen – Einzelheiten im Kopf von `apps-script.gs`.
+
+Vorher müssen die Änderungen auf GitHub sein (Commit und Push) – sonst zeigt der Link in Punkt 1 die alte Fassung.
 
 1. **Neuen Code kopieren:** Diese Adresse öffnen – es erscheint nur der Code als Text:
    <https://raw.githubusercontent.com/YannickOderSo/Unternehmens-Kommunikation/master/fallstudie-1-brand-persona/praesentation/live-abstimmung/apps-script.gs>
-   Kontrolle: Mit **Strg+F** nach `SPEICHERN BEI ANDRANG` suchen. Kein Treffer = noch die alte Fassung: 5 Minuten
-   warten, dann **Strg+F5** (neu laden). Mit Treffer: in den Text klicken, **Strg+A** (alles markieren),
-   **Strg+C** (kopieren).
+   Kontrolle: Mit **Strg+F** nach `ZEITFENSTER (Fassung vom 20.10.2026)` suchen. Kein Treffer = noch eine alte
+   Fassung: 5 Minuten warten, dann **Strg+F5** (neu laden). Mit Treffer: in den Text klicken, **Strg+A** (alles
+   markieren), **Strg+C** (kopieren).
 2. **Code ersetzen:** Die Tabelle „HOLY Live-Abstimmung“ öffnen → **Erweiterungen → Apps Script**. Links auf
    **Code.gs** klicken, dann in den Code klicken: **Strg+A**, **Entf**, **Strg+V**, **Strg+S** (speichern).
    Kontrolle: Die erste Zeile ist `/**`, darunter steht `@OnlyCurrentDoc`.
@@ -255,22 +286,34 @@ nie dieselbe Zeile treffen – Einzelheiten im Kopf von `apps-script.gs`.
 4. **Neue Version bereitstellen:** Oben rechts **Bereitstellen → Bereitstellungen verwalten** → links ist die
    vorhandene Bereitstellung ausgewählt → oben das **Stift-Symbol (Bearbeiten)** → bei „Version“ **Neue Version**
    wählen → **Bereitstellen** → „Fertig“. Die URL bleibt gleich. **Nicht** „Neue Bereitstellung“ – das gäbe eine
-   neue URL. Ohne diesen Schritt läuft im Hörsaal weiter die alte Fassung.
-5. **Kurz prüfen** (im privaten Fenster, `<URL>` = Web-App-URL wie in Schritt 7):
-   - **Läuft die neue Fassung?** `<URL>?aktion=fassung` → `{"ok":false,"fehler":"Unbekannte Aktion – … (Skript-Fassung 19.10.2026)"}`.
-     Das „ok“:false ist hier richtig: Es gibt keine solche Aktion, die Antwort nennt nur die Fassung. Fehlt
-     „(Skript-Fassung 19.10.2026)“, läuft noch die alte Fassung → Punkt 4 wiederholen (einige Sekunden warten,
-     neu laden).
-   - `<URL>?aktion=stand&umfrage=tier&runde=probe&anzahl=5` → `{"ok":true,…,"n":…}` – die Zahl hinter `"n":` merken.
-   - Teststimme mit einer **neuen** Geräte-ID aus Datum und Uhrzeit, z. B. am 20.10. um 14:15:
-     `<URL>?aktion=stimme&umfrage=tier&runde=probe&option=2&anzahl=5&geraet=test-2010-1415` → `{"ok":true}`.
-     (Eine schon benutzte ID ersetzt nur ihre alte Stimme – dann steigt `"n"` nicht.)
+   neue URL. Ohne diesen Schritt läuft im Hörsaal weiter die alte Fassung – ohne Zeitfenster.
+5. **Kurz prüfen** (im privaten Fenster, `<URL>` = Web-App-URL wie in Schritt 7). Teststimme und Stand laufen in
+   einer **eigenen Runde `kurzpruefung-2010`** – dann stören weder Probestimmen noch andere Tests, und die Zahlen
+   sind genau (wer die Kurzprüfung wiederholt: neue Runde, z. B. `kurzpruefung-2010b`):
+   - **Läuft die neue Fassung?** `<URL>?aktion=fassung` → `{"ok":false,"fehler":"Unbekannte Aktion – … (Skript-Fassung 20.10.2026)"}`.
+     Das „ok“:false ist hier richtig: Es gibt keine solche Aktion, die Antwort nennt nur die Fassung. Steht dort
+     eine ältere Fassung (z. B. 19.10.2026) oder fehlt „(Skript-Fassung …)“, läuft noch die alte → Punkt 4
+     wiederholen (einige Sekunden warten, neu laden).
+   - **Zeitfenster da?** `<URL>?aktion=stand&umfrage=tier&runde=kurzpruefung-2010&anzahl=5&minuten=30` →
+     `{"ok":true,"werte":[0,0,0,0,0],"n":0,"zeit":"…","minuten":30}` – `"minuten":30` am Ende heißt: Das
+     Zeitfenster wirkt.
+   - Teststimme mit einer **neuen** Geräte-ID aus Datum und Uhrzeit, z. B. am 21.10. um 14:15:
+     `<URL>?aktion=stimme&umfrage=tier&runde=kurzpruefung-2010&option=2&anzahl=5&geraet=test-2110-1415` → `{"ok":true}`.
    - Zurück in den **Browser-Tab der Tabelle** „HOLY Live-Abstimmung“ (nicht der Editor) → unten links der Reiter
      **„Stimmen“**. In der Zeile, die das Protokoll in Punkt 3 nannte („Nächste Stimme in Zeile …“), steht
-     jetzt `probe`, `tier`, `2`, `test-2010-1415`. Hinkommen: in Spalte A klicken und **Strg+↓** (springt zur
-     nächsten gefüllten Zelle; bei einer Lücke noch einmal).
-   - Die Stand-Adresse noch einmal laden: `"n"` ist um 1 größer.
-6. **Lasttest** laufen lassen (Schritt 7, Ende) – oder Claude darum bitten.
+     jetzt `kurzpruefung-2010`, `tier`, `2`, `test-2110-1415`, in Spalte A die **Uhrzeit von eben**. Hinkommen: in
+     Spalte A klicken und **Strg+↓** (springt zur nächsten gefüllten Zelle; bei einer Lücke noch einmal).
+   - **Zeit zu früh?** Die Stand-Adresse mit `&minuten=30` noch einmal laden: `"n":1`. Bleibt es bei `"n":0`
+     (ohne `&minuten=30` aber `"n":1`), steht die Zeit in der Tabelle zu früh – frische Stimmen fielen heraus.
+   - **Zeit zu spät?** Mindestens **2 Minuten** warten, dann dieselbe Adresse mit `&minuten=1` statt
+     `&minuten=30` laden: `"n":0` – die Teststimme ist älter als 1 Minute. Steht dort `"n":1`, steht die Zeit in
+     der Tabelle zu spät – Stimmen zählten dann länger als 30 Minuten.
+   - Geht eine der beiden Proben schief: Antwort an Claude schicken und bis zur Klärung in `../marke.js`
+     `gueltigMinuten: 0` setzen – auf GitHub und auf dem Präsentationsrechner (ohne Zeitgrenze, wie bisher).
+   Die Zeile der Runde `kurzpruefung-2010` stört nicht (sie zählt weder in „probe“ noch im Vortrag); löschen ist
+   erlaubt, wenn gerade niemand abstimmt.
+6. **Lasttest** laufen lassen (Schritt 7, Ende) – oder Claude darum bitten. Er erwartet die Fassung 20.10.2026 und
+   prüft das Zeitfenster in beiden Richtungen mit (Gegenprobe, dauert dafür bis zu 90 Sekunden länger).
 
 Wichtig: Skript aktualisieren („einrichten“, „Neue Version“) **nicht während einer laufenden Abstimmung** –
 „einrichten“ fügt Zeilen an und schreibt eine Probezeile, und die alte Fassung schrieb anders als die neue.
@@ -296,14 +339,20 @@ Präsentationsrechner stehen. Früh umstellen, weil Browser alte Dateien eine We
 1. **GitHub:** <https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/marke.js?v=1>
    öffnen (die Zahl hinter `?v=` bei jedem Versuch ändern, sonst kommt eine alte Fassung), Strg+F `runde`:
    Dort muss `'vortrag-2026-10-26'` stehen. Sonst zählen die Handys weiter in „probe“ – und Folie 08 zeigt
-   „Live“ mit `n = 0`, ohne dass sich im Vortrag etwas bewegt.
+   „Live“ mit `n = 0`, ohne dass sich im Vortrag etwas bewegt. Dann Strg+F `gueltigMinuten`: Dort muss `30`
+   stehen, wie auf dem Präsentationsrechner. Sonst rechnen Handys und Folie mit verschiedenen Zeitfenstern – ein
+   Handy zeigt dann „Danke“, obwohl Folie 08 seine Stimme nicht mehr zählt (oder umgekehrt).
 2. **Präsentationsrechner:** Folie 08 zeigt „Live“ und `n = 0`; die Maus auf der Pille zeigt
-   „Runde „vortrag-2026-10-26““.
+   „Runde „vortrag-2026-10-26““ und „zählt Stimmen der letzten 30 Min.“ (steht dort „OHNE Zeitfenster“: „Skript
+   aktualisieren“ fehlt noch). Diese Werte gelten 30 Minuten; betritt man Folie 08 im Vortrag später, stehen bis
+   zur ersten Antwort der Web-App Nullen da – keine Beispieldaten.
 3. Ohne Stimme: `<URL>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5` zeigt `"n":0`.
 
 Wer nach dem Umstellen doch mit dem Handy testet: die Testzeile danach im Blatt „Stimmen“ löschen (mit
 der rechten Maustaste auf die Zeilennummer **links** klicken → „Zeile löschen“). Löschen und Sortieren
-sind erlaubt – aber nur, **wenn gerade niemand abstimmt**.
+sind erlaubt – aber nur, **wenn gerade niemand abstimmt**. Das Zeitfenster hilft hier nur teilweise: Eine
+Teststimme in der neuen Runde zählt auf Folie 08 noch 30 Minuten lang – also auch im Vortrag, wenn sie kurz
+vorher abgegeben wurde.
 
 Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): `../LIESMICH.md`, Abschnitt 6.
 
@@ -314,6 +363,12 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
   gesendet …“ und senden selbst noch einmal. Nichts tun.
 - Zeigt ein Handy danach eine Fehlermeldung: **einfach noch einmal tippen**. Doppelt zählt nichts – je Handy
   gilt die letzte Stimme.
+- **Zeitfenster:** Folie 08 zählt nur Stimmen der letzten **30 Minuten** (nach „Skript aktualisieren“). Für die
+  Abstimmung im Vortrag (rund eine Minute) ändert das nichts; es hält nur ältere Stimmen (Generalprobe in derselben
+  Runde, Tests) von der Leinwand fern. Wer vor mehr als 30 Minuten abgestimmt hat, sieht auf dem Handy wieder die
+  Tiere und kann neu abstimmen (zählt einmal).
+- Wer in der Fragerunde zu Folie 08 zurückspringt: Die Stimmen stehen noch da, solange sie jünger als 30 Minuten
+  sind.
 - Im Blatt „Stimmen“ während der Abstimmung **nichts löschen, sortieren oder einfügen** (siehe unten).
 - Klappt es gar nicht: **Plan C** – Hände zählen und eintippen bzw. per Klick zählen (LIESMICH, Abschnitt 6).
   Zahlen aus der Generalprobe (Runde „probe“) zeigt Folie 08 dabei nie; stehen noch die gekennzeichneten
@@ -321,9 +376,15 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 
 ## Nach dem Vortrag
 
-1. **Ergebnis sichern:** Folie 08 fotografieren oder die Zahlen notieren. Für die Ausarbeitung kann die
-   Tabelle heruntergeladen werden (Datei → Herunterladen). Quelle z. B. „eigene Live-Umfrage im Hörsaal,
-   26.10.2026, n = …“.
+1. **Ergebnis sichern – gleich nach dem Vortrag:** Folie 08 fotografieren oder die Zahlen notieren, dazu
+   (innerhalb von 30 Minuten) `<URL>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5&minuten=30`
+   speichern (Strg+S oder Bildschirmfoto). **Maßgeblich ist dieser Stand** – er zählt genau das, was Folie 08
+   gezeigt hat. Nach 30 Minuten zeigt Folie 08 die Stimmen nicht mehr (Zeitfenster); sie bleiben aber in der
+   Tabelle. Die Stand-Adresse **ohne** `minuten` zählt später alle Stimmen der Runde – auch Teststimmen, die vor
+   dem Vortrag in `vortrag-2026-10-26` abgegeben wurden und auf Folie 08 schon nicht mehr zählten; ihr `n` kann
+   also größer sein. Genauer: die Tabelle herunterladen (Datei → Herunterladen) und nur die Zeilen der Runde
+   `vortrag-2026-10-26` aus dem Vortragszeitraum (Spalte „Zeit“) zählen – je Geräte-ID die letzte. Quelle z. B.
+   „eigene Live-Umfrage im Hörsaal, 26.10.2026, n = …“.
 2. **Web-App abschalten:** Apps Script → **Bereitstellen → Bereitstellungen verwalten** → die Bereitstellung
    auswählen → **Archivieren**. Danach nimmt die URL nichts mehr an.
 3. In `../marke.js` `liveQuelle: ''` setzen (dann zeigt Folie 08 wieder nur den Zählmodus).
@@ -340,7 +401,18 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
   **Bereitstellen**. Sonst bleibt die alte Fassung aktiv. Die URL bleibt dabei gleich. **Nicht** „Neue
   Bereitstellung“ wählen – das erzeugt eine neue URL.
 - **Nicht ändern:** den Blattnamen „Stimmen“, die Reihenfolge der Spalten und die Skript-Eigenschaft
-  „naechsteZeile“ (Apps Script → Projekteinstellungen).
+  „naechsteZeile“ (Apps Script → Projekteinstellungen); während einer Abstimmung auch nicht die Zeitzone der
+  Tabelle (Datei → Einstellungen) – das Zeitfenster rechnet mit der Uhrzeit in Spalte „Zeit“.
+- **Zeitfenster (seit Fassung 20.10.2026):** Folie 08 fragt mit `minuten=30` (`../marke.js →
+  umfragen.tier.gueltigMinuten`). Gezählt wird je Handy die **letzte** Stimme – aber nur, wenn sie höchstens 30
+  Minuten alt ist. Wer sich kurz vor Ablauf umentscheidet, zählt mit der neuen Wahl weiter; eine ältere Stimme
+  rückt nie nach. Gelöscht wird nichts; ohne `minuten` (z. B. die Stand-Adresse aus Schritt 7) zählt alles wie
+  bisher. Auch die auf dem Präsentationsrechner gespeicherten Zahlen von Folie 08 gelten nur 30 Minuten (danach
+  beim Neuladen oder Betreten der Folie: Nullen, bis die Web-App antwortet – keine Beispielwerte), und ein Handy
+  zeigt nach 30 Minuten wieder die Tiere. Länger oder
+  kürzer: `gueltigMinuten` in `marke.js` ändern (1 bis 1440, **auf GitHub und auf dem Präsentationsrechner**);
+  `0` = ohne Zeitgrenze. Die Runde bleibt trotzdem nötig: Sie trennt Probe und Vortrag ganz. Die alte Fassung
+  ohne Zeitfenster erkennt man an der Pille von Folie 08 (Maus darauf: „OHNE Zeitfenster“).
 - **Zeilen löschen, sortieren oder einfügen nur, wenn gerade niemand abstimmt** – ebenso „einrichten“ und
   „Neue Version“. Grund: Jede Stimme reserviert zuerst ihre Zeile und schreibt erst danach. Rutscht in dieser
   Zeit eine andere Stimme in die reservierte Zeile (Löschen oder Sortieren verschiebt Zeilen), würde sie still
@@ -378,7 +450,7 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 | „Jeder“ gibt es nicht zur Auswahl | Konto einer Organisation (z. B. Hochschule) | mit privatem Gmail-Konto von vorn |
 | „Skriptfunktion nicht gefunden: doGet“ | Code nicht eingefügt oder nicht gespeichert | Schritt 3, dann neue Version bereitstellen |
 | `{"ok":false,"fehler":"Unbekannte Aktion …"}` | Adresse ohne oder mit falschem `?aktion=` (bei `?aktion=fassung` richtig) | Test-Adressen genau übernehmen |
-| `<URL>?aktion=fassung` zeigt keine „(Skript-Fassung …)“ | alte Fassung läuft noch | „Skript aktualisieren“, Punkt 4 (Neue Version) |
+| `<URL>?aktion=fassung` zeigt keine „(Skript-Fassung …)“ oder eine ältere als 20.10.2026 | alte Fassung läuft noch (ohne Zeitfenster) | „Skript aktualisieren“, Punkt 4 (Neue Version) |
 | Protokoll nur „Ausführung gestartet“, „Hinweis: Das war doGet …“, „Ausführung abgeschlossen“ | doGet statt einrichten ausgeführt | Auswahlfeld neben „Debuggen“ auf **einrichten**, Ausführen |
 | `{"ok":false,"fehler":"Serverfehler: …"}` | z. B. Skript nicht aus der Tabelle heraus angelegt | Schritte 1–2 wiederholen (Erweiterungen → Apps Script) |
 | Fehler mit „Berechtigung“ oder „permission“, obwohl „Zulassen“ geklickt wurde | Einschränkung `@OnlyCurrentDoc` | Funktion „einrichten“ noch einmal ausführen; hilft das nicht: Claude fragen |
@@ -388,11 +460,17 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 | Protokoll von „einrichten“: „Textschutz-Probe übersprungen“ | in der letzten Zeile des Blatts steht etwas | diese Zeile leeren, „einrichten“ noch einmal ausführen |
 | Lasttest: „NICHT BESTANDEN“ | zu viele Stimmen auf einmal oder Google langsam | Ausgabe an Claude schicken; im Vortrag „bitte nacheinander“ oder Plan C |
 | Lasttest: „GEZÄHLT, ABER ZU LANGSAM“ | alle Stimmen kamen an, einige Handys warteten über 15 s | Ausgabe an Claude schicken; Lasttest wiederholen (Stichprobe) |
-| Lasttest: „Skript-Fassung … keine Angabe“ oder „ACHTUNG“ | alte Fassung läuft noch | „Skript aktualisieren“, dann Lasttest wiederholen |
+| Lasttest: „Skript-Fassung … keine Angabe“, „ACHTUNG“, „FASSUNG VERALTET“ oder „ZEITFENSTER FEHLT“ | alte Fassung läuft noch | „Skript aktualisieren“, dann Lasttest wiederholen |
 | Handy zeigt „Gerade stimmen viele ab – Ihre Stimme wird gesendet …“ | Andrang; die Seite sendet selbst noch einmal | nichts tun; erst nach drei Fehlversuchen kommt „Das hat nicht geklappt“ mit „Nochmal versuchen“ |
 | Folie 08 zeigt „offline“ | kein Internet am Präsentationsrechner, `liveQuelle` falsch, Web-App archiviert oder sehr langsam (Maus auf der Pille zeigt den Grund) | Klick auf die Pille = sofort neu versuchen; bleibt es: Plan C (LIESMICH, Abschnitt 6); danach URL und Internet prüfen |
 | Probestimmen erscheinen im Vortrag | `runde` nicht umgestellt oder alte `marke.js` auf einem Gerät | `runde` auf GitHub und auf dem Präsentationsrechner prüfen („Vor dem Vortrag“, Kontrolle); notfalls Probezeilen löschen |
 | Folie 08 zeigt „Live“ und `n = 0`, Handys stimmen ab, nichts bewegt sich | Runde auf GitHub und auf dem Präsentationsrechner verschieden | beide auf `'vortrag-2026-10-26'` (Kontrolle oben) |
+| Folie 08 zeigt weniger Stimmen als früher bzw. `n = 0`, obwohl abgestimmt wurde | Die Stimmen sind älter als 30 Minuten (Zeitfenster) – gewollt | nichts; neu abstimmen lassen. Alle Stimmen der Runde: Stand-Adresse ohne `minuten` |
+| Maus auf der Pille von Folie 08: „OHNE Zeitfenster“ | bei Google läuft noch eine Fassung vor dem 20.10.2026 | „Skript aktualisieren“; Kontrolle `<URL>?aktion=fassung` → 20.10.2026 |
+| Handy zeigt wieder die Tiere statt „Danke“ | die eigene Stimme ist älter als 30 Minuten und zählt nicht mehr | einfach neu tippen (zählt einmal) |
+| Lasttest: „ZEITFENSTER FALSCH (Zeit zu früh)“ oder Kurzprüfung: `"n"` steigt nur ohne `&minuten=30` | Uhrzeit in der Tabelle steht früher als die Uhr des Skripts (z. B. Zeitzone) – frische Stimmen fallen heraus | Ausgabe an Claude schicken; bis dahin `gueltigMinuten: 0` in `marke.js` (GitHub und Präsentationsrechner; ohne Zeitgrenze, wie bisher) |
+| Lasttest: „ZEITFENSTER FALSCH (Zeit zu spät)“ oder Kurzprüfung: nach 2 Minuten mit `&minuten=1` noch `"n":1` | Uhrzeit in der Tabelle steht später als die Uhr des Skripts – Stimmen zählten länger als 30 Minuten | wie in der Zeile darüber |
+| Lasttest: „ZEITFENSTER UNKLAR“ oder „UNGEPRÜFT“ | einzelne Stimmen kamen sehr spät an, oder die Gegenprobe war nicht lesbar | Lasttest wiederholen; bleibt es: Ausgabe an Claude schicken |
 
 **Fehler nachsehen:** Im Apps-Script-Editor links auf **„Ausführungen“** (Liste mit Uhr-Symbol) – dort
 steht jeder Aufruf mit Zeit und gegebenenfalls Fehlermeldung.
@@ -411,6 +489,15 @@ node werkzeuge/live-abstimmung-test.mjs --server 8787 --verzoegerung 800 --sperr
                                                          # Belastbarkeit: jede Stimme hält die Sperre 200 ms
 node werkzeuge/live-abstimmung-test.mjs --lasttest http://localhost:8787/exec   # Lasttest gegen die lokale Web-App
 ```
+
+**Zeitfenster lokal testen, ohne 30 Minuten zu warten:** Die lokale Web-App hat eine virtuelle Uhr.
+`http://localhost:8787/uhr?vor=31` stellt sie 31 Minuten vor – Folie 08 zeigt die alten Stimmen dann nach 1–2
+Sekunden nicht mehr. Die Abstimmseite rechnet mit der Uhr des Browsers: Dort hilft im Test nur Warten (oder ein
+Testwerkzeug, das die Uhr vorstellt). Die Prüfungen (`node werkzeuge/live-abstimmung-test.mjs`) stellen die Uhr
+selbst vor: Grenze, Umentscheiden kurz vor und nach Ablauf, ungültige `minuten`, ohne `minuten` wie bisher.
+Handy und Folie im Browser prüft `node werkzeuge/zeitfenster-e2e.mjs` (braucht playwright-core; mit
+`--mutationen` auch absichtlich kaputte Kopien von `js/komponenten.js` und `js/abstimmen.js`; Einzelheiten im
+Kopf der Datei und in `../LIESMICH.md`, Abschnitt 6).
 
 Störungen der lokalen Web-App (nur für Stimmen): `--stoerung 0.2` lehnt 20 % mit „Gerade kommen sehr viele
 Stimmen …“ ab, `--abbruch 0.1` liefert 10 % eine Fehlerseite (HTTP 200 oder 500) oder schließt die Verbindung

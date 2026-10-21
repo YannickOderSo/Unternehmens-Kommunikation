@@ -1953,7 +1953,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
 | D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
 | D19 | 20.10.2026 | 98 (neu gestartet nach 100, fortgesetzt nach 102) | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | Rätselbild mit Logo (data-URI), Stufen 440/11 → 220/10 → 100/0, Kennzeichnung, Doku; 2 Prüfer (3 mittlere Befunde) umgesetzt | Claude: Stufenbilder und Folienbild f01 angesehen, Diff und Modellbezeichnungen geprüft |
-| D20 | 20.10.2026 | 100/101 | Workflow „abstimmung-zeitfenster“ (3 Unteragenten in 3 Phasen) | Stimmen zählen nur 30 Minuten: Server-Parameter minuten, Folie 08, Abstimmseite, Tests, Doku | *läuft* | – |
+| D20 | 20.–21.10.2026 | 100/101 (neu gestartet nach 105) | Workflow „abstimmung-zeitfenster“ (3 Unteragenten in 3 Phasen) | Stimmen zählen nur 30 Minuten: Server-Parameter minuten, Folie 08, Abstimmseite, Tests, Doku | Fassung 20.10.2026 mit Zeitfenster; Folie, Handy, Speicher; 53 Prüfungen, 26 Mutanten, Browser-Test zeitfenster-e2e.mjs; Prüfer: 3 mittlere Befunde umgesetzt | Claude: Tests 53/53, zeitfenster-e2e 58/0, Prüflauf f08 0 Fehler |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 
 <!-- Vorlage für den Detaileintrag:
@@ -2580,6 +2580,31 @@ steht hier mit dem wörtlichen Auftrag.
   Seitentext selbst nachgelesen – Gewichtung 20 % und Feldbezeichnungen stimmen mit dem Bericht überein; Befund #1
   um Yannicks Entscheidung („Drin lassen“, Nr. 101) ergänzt. Die inhaltliche Umsetzung der Befunde steht aus
   (Freigabe durch Yannick).
+
+### D20 – 20.–21.10.2026 – ausgelöst durch Prompt 100/101 (neu gestartet nach 105)
+
+- **Art:** Workflow „abstimmung-zeitfenster“: Bau, adversariale Prüfung, Nacharbeit.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_abstimmung-zeitfenster.js`](workflows/2026-10-20_abstimmung-zeitfenster.js).
+- **Vorgaben:** Stimmen zählen auf Folie 08 nur 30 Minuten (Entscheidung Yannick, Nr. 101); Schnittstelle
+  abwärtsverträglich; keine schreibenden Anfragen an die echte Web-App; Folieninhalte unverändert; kein Commit.
+- **Unterbrechung:** erster Lauf am Nutzungslimit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet.
+- **Ergebnis:**
+  - **Server** (`apps-script.gs`, Fassung 20.10.2026): `aktion=stand` nimmt `minuten` (1–1440); zuerst letzte Stimme je
+    Gerät, dann Zeitfenster; Antwort nennt `minuten`, wenn angewandt.
+  - **Folie 08** (`js/komponenten.js`): jede Stand-Abfrage mit `minuten=30` (`marke.js` → `gueltigMinuten: 30`);
+    gespeicherte Werte derselben Runde verfallen nach 30 Min. (danach Nullen, keine Beispieldaten); Tooltip zeigt,
+    ob die Web-App das Zeitfenster anwendet; Referentenfenster übernimmt die Werte des Vortragsfensters.
+  - **Abstimmseite** (`js/abstimmen.js`): eine abgelaufene Wahl zeigt wieder die Auswahl.
+  - **Tests:** `live-abstimmung-test.mjs` 53 Prüfungen, 26 Mutanten; Lasttest prüft Fassung und Zeitfenster in beiden
+    Richtungen (Gegenprobe mit `minuten=1`); neues Browser-Testwerkzeug `werkzeuge/zeitfenster-e2e.mjs` (10 Szenarien,
+    12 Client-Mutanten); `pruefen.mjs` meldet Stand-Abfragen ohne passendes `minuten` als Fehler.
+  - **Doku:** ANLEITUNG („Skript aktualisieren“ wieder nötig, Kurzprüfung in eigener Runde), LIESMICH 6/12/13,
+    AUTOREN 6c/16/18/20.
+  - **Prüfer:** 3 mittlere Befunde (Beispieldaten nach Ablauf, Zeitzone nur in eine Richtung geprüft, Client-Logik
+    ohne wiederholbaren Test) – umgesetzt; niedrige größtenteils umgesetzt.
+- **Wie Claude das Ergebnis geprüft hat:** `live-abstimmung-test.mjs` (53/53), `zeitfenster-e2e.mjs` (58 bestanden,
+  0 Fehler, 0 externe Anfragen), `pruefen.mjs --nur f08 --schritte` (0 Fehler), Diff auf Modellbezeichnungen.
+  Mit echtem Google noch nicht geprüft: wirkt erst nach „Skript aktualisieren“ durch Yannick; danach Lasttest.
 
 ---
 

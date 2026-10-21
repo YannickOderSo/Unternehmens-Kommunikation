@@ -55,8 +55,14 @@
    Die Prüfung schickt nie eine Anfrage an die echte Web-App. Anfragen an die
    in marke.js eingetragene liveQuelle (nur diese Adresse, nur aktion=stand und
    aktion=stimme) beantwortet eine eingebaute Attrappe – JSONP wie
-   live-abstimmung/apps-script.gs, gleiche Eingabeprüfung und Zählregel. Sie
+   live-abstimmung/apps-script.gs, gleiche Eingabeprüfung und Zählregel (das
+   Zeitfenster minuten=… wird geprüft und in der Antwort genannt, ändert aber
+   nichts am Ergebnis – die Stimmen eines Prüflaufs sind nie so alt). Sie
    zählen nicht als Fehler, stehen aber getrennt im Bericht („liveAnfragen“).
+   Zeitfenster (seit 21.10.2026): Jede Stand-Abfrage muss minuten = marke.js
+   → umfragen.<id>.gueltigMinuten tragen (wie js/komponenten.js: ganze Zahl
+   1–1440, sonst ohne minuten) – fehlt es oder weicht es ab, ist das ein
+   Fehler (sonst zählte Folie 08 im Vortrag ohne Zeitgrenze).
    Ausnahme: aktion=stimme aus der Präsentation ist ein Fehler (Folie 08 liest
    nur), wird aber beantwortet. Jede andere externe Anfrage bleibt ein Fehler,
    auch WebSockets (routeWebSocket). Zusätzlich sperrt der Browser selbst das
@@ -146,7 +152,11 @@ function liveQuellenLesen() {
     let url;
     try { url = new URL(adresse); } catch (e) { continue; }   /* unbrauchbar: die Folie fragt dann nicht (Warnung in der Konsole) */
     if (!/^https?:$/.test(url.protocol)) continue;
-    quellen.push({ id, adresse, schluessel: url.origin + url.pathname, anzahl: Array.isArray(u.optionen) ? u.optionen.length : 0 });
+    /* Zeitfenster wie js/komponenten.js (umfrageGueltigMinuten): ganze Zahl 1–1440, sonst 0 = ohne minuten */
+    const roh = u.gueltigMinuten;
+    const zahl = typeof roh === 'number' || typeof roh === 'string' ? Number(roh) : NaN;
+    const minuten = roh !== '' && Math.floor(zahl) === zahl && zahl >= 1 && zahl <= 1440 ? zahl : 0;
+    quellen.push({ id, adresse, schluessel: url.origin + url.pathname, anzahl: Array.isArray(u.optionen) ? u.optionen.length : 0, minuten });
   }
   return { quellen, hinweis: '' };
 }
@@ -157,7 +167,7 @@ const LIVE = {
   simulieren: liveMarke.quellen.length > 0 && !opt.liveAus,
   modus: !liveMarke.quellen.length ? 'ohne liveQuelle' : opt.liveAus ? 'aus' : opt.liveOffline ? 'offline' : opt.liveWerte ? 'werte' : 'null',
   stimmen: new Map(),      /* Runde|Umfrage → Map(Gerät → Option); je Gerät zählt die letzte Stimme */
-  zaehler: { stand: 0, stimme: 0, offline: 0, abgelehnt: 0, druck: 0, konsoleOffline: 0, ausPraesentation: 0, websockets: 0 },
+  zaehler: { stand: 0, stimme: 0, offline: 0, abgelehnt: 0, druck: 0, konsoleOffline: 0, ausPraesentation: 0, websockets: 0, falscheMinuten: 0 },
   anzeige: {}              /* Folie → { pille, n } nach der ersten Antwort */
 };
 if (opt.liveWerte) {
@@ -225,12 +235,17 @@ const kontext = await browser.newContext({
    Gleiche Schnittstelle, Eingabeprüfung und Zählregel wie
    live-abstimmung/apps-script.gs (Kopfkommentar „SCHNITTSTELLE“), aber ohne
    Tabelle: Stand = Grundwerte (lauter Nullen oder --live-werte) + Stimmen,
-   die in diesem Lauf über aktion=stimme kamen (je Gerät die letzte). */
+   die in diesem Lauf über aktion=stimme kamen (je Gerät die letzte).
+   Zeitfenster (minuten, Fassung 20.10.2026): wird geprüft wie beim Server
+   (ganze Zahl 1–1440, sonst Fehler) und wie dort in der Antwort genannt; am
+   Ergebnis ändert es nichts – ein Prüflauf dauert Minuten, die Stimmen eines
+   Laufs sind nie älter als das Fenster. */
 const LIVE_MUSTER = {
   name: /^[A-Za-z0-9_-]{1,40}$/,
   geraet: /^[A-Za-z0-9_-]{8,64}$/,
   callback: /^[A-Za-z_$][\w$.]{0,63}$/,
-  zahl: /^[0-9]{1,2}$/
+  zahl: /^[0-9]{1,2}$/,
+  minuten: /^[0-9]{1,4}$/
 };
 function liveAnfrageErkennen(url) {
   if (!LIVE.quellen.length) return null;
@@ -251,11 +266,14 @@ function liveBeantworten(p) {
     : { typ: 'application/json; charset=utf-8', text: JSON.stringify(antwort), antwort });
   if (p.callback !== undefined && !passt(LIVE_MUSTER.callback, p.callback)) return json({ ok: false, fehler: 'Ungültiger callback-Name.' }, null);
   const anzahl = ganz(p.anzahl);
+  const minuten = passt(LIVE_MUSTER.minuten, p.minuten) && Number(p.minuten) >= 1 && Number(p.minuten) <= 1440 ? Number(p.minuten) : NaN;
   let fehlerText = null;
   if (!passt(LIVE_MUSTER.name, p.umfrage)) fehlerText = 'Ungültige Umfrage: nur Buchstaben, Ziffern, _ und -, höchstens 40 Zeichen.';
   else if (!passt(LIVE_MUSTER.name, p.runde)) fehlerText = 'Ungültige Runde: nur Buchstaben, Ziffern, _ und -, höchstens 40 Zeichen.';
   else if (!(anzahl >= 1 && anzahl <= 9)) fehlerText = 'Ungültige Anzahl: ganze Zahl von 1 bis 9.';
-  else if (p.aktion === 'stimme') {
+  else if (p.aktion === 'stand' && p.minuten !== undefined && !(minuten >= 1)) {
+    fehlerText = 'Ungültige Minuten (Zeitfenster): ganze Zahl von 1 bis 1440 oder weglassen.';
+  } else if (p.aktion === 'stimme') {
     const option = ganz(p.option);
     if (!(option >= 0 && option < anzahl)) fehlerText = 'Ungültige Option: ganze Zahl von 0 bis ' + (anzahl - 1) + '.';
     else if (!passt(LIVE_MUSTER.geraet, p.geraet)) fehlerText = 'Ungültige Geräte-ID: 8 bis 64 Zeichen, nur Buchstaben, Ziffern, _ und -.';
@@ -272,7 +290,9 @@ function liveBeantworten(p) {
   }
   const werte = opt.liveWerte ? opt.liveWerte.slice() : new Array(anzahl).fill(0);
   (LIVE.stimmen.get(topf) || new Map()).forEach((o) => { if (o < anzahl) werte[o] += 1; });
-  return json({ ok: true, werte, n: werte.reduce((s, w) => s + w, 0), zeit: new Date().toISOString() }, p.callback);
+  const antwort = { ok: true, werte, n: werte.reduce((s, w) => s + w, 0), zeit: new Date().toISOString() };
+  if (p.minuten !== undefined) antwort.minuten = minuten;          /* wie die Fassung ab 20.10.2026 */
+  return json(antwort, p.callback);
 }
 let druckSeite = null;      /* Anfragen von dort sind verdächtig: ?druck fragt nie ab */
 function liveRoute(route, l) {
@@ -282,6 +302,19 @@ function liveRoute(route, l) {
   if (ausDruck) {
     LIVE.zaehler.druck++;
     if (LIVE.zaehler.druck === 1) warnung('Live-Abstimmung', 'Die Druckansicht (?druck) hat die liveQuelle abgefragt (aktion=' + l.aktion + ') – das sollte nie passieren (js/komponenten.js, 3a). Beantwortet von der Attrappe.');
+  }
+  /* Zeitfenster: Die Stand-Abfrage muss minuten = gueltigMinuten tragen (ohne
+     gueltigMinuten: kein minuten) – je Lauf einmal als Fehler melden */
+  if (l.aktion === 'stand') {
+    const soll = l.quelle.minuten ? String(l.quelle.minuten) : undefined;
+    if (l.p.minuten !== soll) {
+      LIVE.zaehler.falscheMinuten++;
+      if (LIVE.zaehler.falscheMinuten === 1) {
+        fehler('Live-Abstimmung', 'Stand-Abfrage ' + (l.p.minuten === undefined ? 'ohne minuten' : 'mit minuten=' + l.p.minuten) + ', erwartet ' +
+          (soll ? 'minuten=' + soll + ' (marke.js → umfragen.' + l.quelle.id + '.gueltigMinuten)' : 'ohne minuten (gueltigMinuten 0 oder leer)') +
+          ' – Folie 08 zählte sonst ' + (soll ? 'ohne Zeitgrenze' : 'mit einer Zeitgrenze, die marke.js nicht vorsieht') + ' (js/komponenten.js, 3a).');
+      }
+    }
   }
   /* --live-offline: wie ohne Internet – das Skript-Tag meldet einen Ladefehler */
   if (LIVE.modus === 'offline') {
@@ -792,6 +825,8 @@ async function ende() {
     konsoleOffline: LIVE.zaehler.konsoleOffline,   /* gewollte Ladefehler bei --live-offline, kein Fehler */
     ausDruckansicht: LIVE.zaehler.druck,
     stimmeAusPraesentation: LIVE.zaehler.ausPraesentation,   /* > 0 ist ein Fehler (Folie liest nur) */
+    zeitfenster: LIVE.quellen.map((q) => q.id + ': ' + (q.minuten ? 'minuten=' + q.minuten : 'ohne')),
+    standOhnePassendeMinuten: LIVE.zaehler.falscheMinuten,   /* > 0 ist ein Fehler */
     quelle: LIVE.quellen.map((q) => q.id + ': ' + q.adresse),
     pruefseiteMitAufnahme: !LIVE.simulieren,
     anzeige: LIVE.anzeige

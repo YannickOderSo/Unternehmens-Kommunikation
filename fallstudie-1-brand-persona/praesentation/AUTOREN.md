@@ -271,8 +271,8 @@ Handys testen.
 ```
 - Daten aus `marke.js → umfragen.tier`: `frage`, `optionen` (≤ 9), `link` (QR; leer = kein QR, nur
   Zählmodus), `kurzLink`, `ergebnisLink` (Knopf „Ergebnisse öffnen“), `unsereAntwort`, `aussage`,
-  `beispielwerte`, `liveQuelle`, `runde` (eigene Live-Abstimmung, unten). Einzelne Werte per JSON im Baustein
-  überschreibbar (`<script type="application/json">`).
+  `beispielwerte`, `liveQuelle`, `runde`, `gueltigMinuten` (eigene Live-Abstimmung, unten). Einzelne Werte per
+  JSON im Baustein überschreibbar (`<script type="application/json">`).
 - Linke Spalte: QR-Code, Kurz-URL, „anonym · ohne Anmeldung“, Stimmenzähler (`data-stimmen="aus"`,
   `data-qr="aus"`, `data-qr-groesse="380"`; Folie 08 nutzt 440 – die Adresse der Abstimmseite ergibt 45 Module).
 - Ergebnis: Pille LIVE (ruhig pulsierend), `n = …`, Pille Beispieldaten (solange Beispielwerte),
@@ -300,9 +300,29 @@ Handys testen.
   Vortrag `'vortrag-2026-10-26'`). Mit `liveQuelle` zeigt der QR-Code auf `link` (`abstimmen.html?u=tier`; ohne
   `liveQuelle` gibt es für diese Adresse keinen QR-Code, ohne `kurzLink` keine Zeile darunter).
   Schnittstelle (nur GET, JSONP per `<script>` – unabhängig von CORS; vollständig im Kopf von
-  `live-abstimmung/apps-script.gs`): Folie `?aktion=stand&umfrage=tier&runde=…&anzahl=5&callback=f` →
-  `f({"ok":true,"werte":[…],"n":…,"zeit":"<ISO>"})`; Abstimmseite `?aktion=stimme&…&option=0..4&geraet=<ID>`
+  `live-abstimmung/apps-script.gs`): Folie `?aktion=stand&umfrage=tier&runde=…&anzahl=5[&minuten=30]&callback=f` →
+  `f({"ok":true,"werte":[…],"n":…,"zeit":"<ISO>"[,"minuten":30]})`; Abstimmseite `?aktion=stimme&…&option=0..4&geraet=<ID>`
   → `f({"ok":true})`; Fehler `f({"ok":false,"fehler":"…"})`.
+  **Zeitfenster** (seit 20.10.2026, Abschnitt 20): `gueltigMinuten` = ganze Zahl 1–1440 (`30`; 0/leer = ohne,
+  ungültig → Warnung in der Konsole und ohne). Die Folie hängt `minuten=<gueltigMinuten>` an jede Stand-Abfrage; der
+  Server (ab `FASSUNG = '20.10.2026'`) bestimmt je Runde, Umfrage und Gerät zuerst die letzte Stimme und zählt sie
+  nur, wenn sie höchstens `minuten` Minuten alt ist (Grenze einschließlich; Zeilen ohne gültige Zeit zählen dann
+  nicht); ungültiges `minuten` → Fehler; ohne `minuten` wie bisher; in der Antwort `"minuten"` nur, wenn angewandt.
+  Fehlt es (alte Fassung), merkt sich die Folie `fensterAn = false`: einmal Warnung in der Konsole, Tooltip der
+  Pille „OHNE Zeitfenster …“ (auch im Referentenfenster, über `umfrage-live` → `fensterAn`); `true` → „zählt
+  Stimmen der letzten 30 Min.“, `null` (noch keine Antwort) → „Zeitfenster 30 Min. angefragt (noch keine Antwort
+  der Web-App)“. Gespeicherte Werte
+  `umfrage:<id>` = `{ werte, beispiel, runde, zeit }` verfallen mit `liveQuelle` und `gueltigMinuten` beim Laden,
+  wenn `Date.now() − zeit` größer als das Fenster ist (ohne `zeit`: verfallen) → **Nullen** (`u.beispiel = false`;
+  seit der Nacharbeit 21.10.2026, Abschnitt 20 – vorher Beispielwerte); Beispielwerte nur bei anderer Runde, ohne
+  Speicher oder wenn schon Beispielwerte gespeichert waren. `u.abgelaufen`
+  verwirft dann auch eine gespeicherte Pause (`livePauseVerwerfen`, beim Aufbau und beim Betreten). Auf `melden`
+  schickt das Vortragsfenster (wenn die Umfrage-Folie aktiv ist) zusätzlich `Deck.kanal('umfrage')` mit
+  `{ id, werte, beispiel }`; das Referentenfenster übernimmt diese Werte direkt (`umfrageUebernehmen`) statt sie
+  aus dem Speicher zu laden, wo sie verfallen sein können. Die
+  Abstimmseite speichert `stimme:<id>:<runde>` = `{ option, name, zeit }` (`zeit` = Losschicken des Versuchs, der
+  gezählt hat – vor dem Eingang beim Server); abgelaufen → Auswahl statt „Danke“ (beim Öffnen, per Zeitgeber, bei
+  `visibilitychange`/`pageshow`), ohne „bisherige Wahl“.
   Verhalten: beim Betreten sofort, dann alle 2 s, solange die Folie aktiv ist; höchstens eine Anfrage
   gleichzeitig – auch beim Server, denn die nächste startet erst nach Antwort oder Aufgabe der vorigen.
   Zeitlimit weich: nach 4 s und nach 8 s ohne Antwort je ein Fehlversuch (`LIVE_ZEITLIMIT`), die Anfrage bleibt
@@ -313,18 +333,21 @@ Handys testen.
   Fehlversuch in Folge –, `.ist-pausiert`). Jede Hand-Eingabe (Klick, Ziffer, „Werte“, „Zurücksetzen“) pausiert
   die Abfrage; die Pause wird je Umfrage und Runde gespeichert (`umfrage-pause:<id>:<runde>`, übersteht F5).
   Klick auf die Pille setzt fort bzw. gibt bei „offline“ eine hängende Anfrage auf und fragt sofort neu.
-  Gespeicherte Werte (`umfrage:<id>` = `{ werte, beispiel, runde }`) gelten mit `liveQuelle` nur in derselben
-  Runde – sonst Beispielwerte (Probestimmen erscheinen im Vortrag nie, auch offline nicht). Der QR-Code zur
+  Gespeicherte Werte (`umfrage:<id>` = `{ werte, beispiel, runde, zeit }`) gelten mit `liveQuelle` nur in derselben
+  Runde (und im Zeitfenster, oben: abgelaufen → Nullen) – sonst Beispielwerte (Probestimmen erscheinen im Vortrag nie, auch offline nicht). Der QR-Code zur
   eigenen Abstimmseite erscheint nur, wenn `liveQuelle` (auf `/exec`) und `runde` brauchbar sind
   (`liveFehlerVon`, sonst Warnung in der Konsole). Das Referentenfenster fragt nie selbst: Werte über
-  Browser-Speicher und `Deck.kanal('umfrage')`, Pille über `Deck.kanal('umfrage-live')` (`{ id, zustand, zeit,
-  meldung }`, zurück `{ id, aktion: 'pausieren' | 'fortsetzen' | 'melden' }`); dort steht der Zustand zusätzlich
+  Browser-Speicher und `Deck.kanal('umfrage')` (`{ id }`, als Antwort auf `melden` `{ id, werte, beispiel }`),
+  Pille über `Deck.kanal('umfrage-live')` (`{ id, zustand, zeit, meldung, fensterAn }`, zurück `{ id, aktion:
+  'pausieren' | 'fortsetzen' | 'melden' }`); dort steht der Zustand zusätzlich
   als Knopf `.r-live` unter der Kopfzeile „Aktuell“ (nur solange die Umfrage-Folie aktuell ist; Stil in
   `css/komponenten.css`). Mit `?druck`/`?aufnahme` wird nie abgefragt. `pruefen.mjs` lädt die Prüfseite bei
   gesetzter `liveQuelle` ohne `?aufnahme` (Klasse „aufnahme“ per Init-Skript) und beantwortet Anfragen an die
   `liveQuelle` (nur `aktion=stand`/`stimme`) mit einer eingebauten Attrappe – nichts geht ins Netz; Bericht
   „liveAnfragen“. Standard: Stand mit lauter Nullen (QR-Code, Pille „Live“, `n = 0`); `--live-offline`,
-  `--live-werte 3,1,7,0,2`, `--live-aus` (Abschnitt 9). `aktion=stimme` aus der Präsentation ist ein Fehler.
+  `--live-werte 3,1,7,0,2`, `--live-aus` (Abschnitt 9). `aktion=stimme` aus der Präsentation ist ein Fehler,
+  ebenso eine Stand-Abfrage ohne `minuten = gueltigMinuten` (seit 21.10.2026; Bericht „zeitfenster“,
+  „standOhnePassendeMinuten“).
   Lokal ohne Google: `node werkzeuge/live-abstimmung-test.mjs --server 8787`, dann
   `index.html?quelle=http://localhost:8787/exec#f08` (`?quelle` nur bei `file://`/`localhost`; Referentenfenster
   dafür direkt mit `index.html?referent&quelle=…` öffnen), Abstimmseite `abstimmen.html?u=tier&quelle=http://localhost:8787/exec`.
@@ -342,19 +365,28 @@ Handys testen.
   (`.auswahl.ist-unterwegs` statt `aria-busy`). Umentscheiden beendet die alte Sendung; höchstens eine Anfrage
   gleichzeitig. Späte `ok`-Antwort für ein anderes Tier → neueste Wahl wird still nachgesendet; für dasselbe
   Tier → gleich „Danke“. Format `var NAME = …;` der Konstanten beibehalten – der Lasttest liest sie aus.
-  **Server** (`apps-script.gs`, Fassung `FASSUNG = '19.10.2026'`): Jede Stimme reserviert unter
+  **Server** (`apps-script.gs`, Fassung `FASSUNG = '20.10.2026'` – Zeitfenster; Schreibstelle seit 19.10.2026): Jede Stimme reserviert unter
   `LockService.getScriptLock()` nur eine Zeilennummer (Skript-Eigenschaft `naechsteZeile`: lesen und erhöhen in
   derselben Sperre, höchstens 8 s warten, `SPERRE_WARTEN_MS`) und schreibt danach ohne Sperre in ihre Zeile
   (nur wenn leer; `{"ok":true}` erst nach `flush`; Zeit beim Eingang). `einrichten()` hält 5000 formatierte
   Zeilen bereit und setzt den Zähler nie zurück. `?aktion=fassung` (unbekannte Aktion) nennt die Fassung.
-  **Prüfen** (`werkzeuge/live-abstimmung-test.mjs`): 44 Prüfungen; `--mutationen` (16 kaputte Kopien);
-  `--server PORT` mit `--verzoegerung MS`, `--stoerung A`, `--abbruch A`, `--gleichzeitig N` (prüfen die
+  **Prüfen** (`werkzeuge/live-abstimmung-test.mjs`): 53 Prüfungen (davon 9 zum Zeitfenster, mit virtueller Uhr
+  `s.uhr`); `--mutationen` (26 kaputte Kopien);
+  `--server PORT` (virtuelle Uhr vorstellen: `GET /uhr?vor=MINUTEN`) mit `--verzoegerung MS`, `--stoerung A`, `--abbruch A`, `--gleichzeitig N` (prüfen die
   Wiederholung, nicht die Belastbarkeit – ein Handy scheitert dann zufällig mit A³) und `--sperre MS`
   (Belastbarkeit: jede Stimme hält die Sperre so lange, Warteschlange mit `SPERRE_WARTEN_MS`).
   Lasttest gegen die echte Web-App: `node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>` (40 Handys
   gleichzeitig in eine eigene Runde; `--anzahl 20` für unsere Gruppe, `--verteilt 10`, `--ohne-folie`): Handy-Regel wie
-  `js/abstimmen.js`, eine mitlesende „Folie“ wie Abschnitt 3a, vorher `?aktion=fassung`; Urteil BESTANDEN (alle
-  gezählt, keiner gescheitert, „Danke“ ≤ 15 s), GEZÄHLT, ABER ZU LANGSAM oder NICHT BESTANDEN.
+  `js/abstimmen.js`, eine mitlesende „Folie“ wie Abschnitt 3a (mit `minuten` aus `marke.js`), vorher `?aktion=fassung`; Urteil BESTANDEN (alle
+  gezählt, keiner gescheitert, „Danke“ ≤ 15 s), GEZÄHLT, ABER ZU LANGSAM oder NICHT BESTANDEN; Exit-Code 1 außerdem
+  bei „FASSUNG VERALTET“ (nicht die `FASSUNG` aus `apps-script.gs`) und „ZEITFENSTER FEHLT/FALSCH/UNKLAR/UNGEPRÜFT“
+  – dann beginnt die Urteilszeile mit „NICHT BESTANDEN wegen …“. Gegenprobe (seit 21.10.2026): mindestens 90 s
+  (`GEGENPROBE_MS`) nach der letzten Stimme `minuten=1` → n muss 0 sein (sonst steht die Zeit in der Tabelle zu
+  spät); gegen die Attrappe stellt `/uhr?vor=2` die Uhr vor, statt zu warten.
+  **Zeitfenster im Browser** (`werkzeuge/zeitfenster-e2e.mjs`, seit 21.10.2026): Handy und Folie Ende zu Ende mit
+  Attrappen auf localhost (echtes Skript, virtuelle Uhr) und Playwright-Uhr – 10 Szenarien (`--nur folie,handys,…`),
+  `--mutationen` mit 12 kaputten Kopien von `js/komponenten.js` und `js/abstimmen.js` (nur im Browser ersetzt).
+  Die Mutanten suchen ihre Stellen per Text – bei Änderungen an diesen Zeilen die Liste `MUTANTEN` anpassen.
 
 ### d) Live-Wortwolke
 ```html
@@ -875,7 +907,8 @@ unerreichbar bzw. nur bei gleicher Millisekunde desselben Handys; von Hand gepr�
 
 **Offen:**
 - **Yannick:** Skript aktualisieren (ANLEITUNG „Skript aktualisieren“: Code einfügen, „einrichten“, Neue Version,
-  Kurzprüfung) – **am 20.10.2026 zurückgestellt** (Yannick: erst Folie 08 überarbeiten, Abschnitt 18). Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
+  Kurzprüfung) – am 20.10.2026 zurückgestellt (Yannick: erst Folie 08 überarbeiten, Abschnitt 18); **mit dem
+  Zeitfenster (Abschnitt 20) wieder nötig, jetzt mit der Fassung 20.10.2026.** Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
   Fassung.
 - **Danach Lasttest gegen die echte Web-App** (mindestens zweimal mit `--anzahl 20`; höchstens ca. 20 Personen im
   Raum, Yannick 20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, 6 Handys über 15 s). Erst er zeigt, wie lange
@@ -961,7 +994,7 @@ Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b), 23 Folienbilder (ge�
 Entscheidung Yannick (KI-Nachweis 94/95): Elias Knauber (Bündel C) ordnet HOLY in seiner Ausarbeitung eher als
 **Chamäleon** ein. Das Tier unserer Analyse wechselt deshalb von Waschbär zu Chamäleon – auf Folie 08, in der
 Live-Abstimmung und in den Ausarbeitungen. Nur diese inhaltliche Änderung, kein weiteres Redesign. Die
-Aktualisierung des Apps Script bei Google ist zurückgestellt; die Live-Abstimmung bleibt technisch unverändert
+Aktualisierung des Apps Script bei Google ist zurückgestellt (seit Abschnitt 20 wieder nötig); die Live-Abstimmung bleibt technisch unverändert
 (`apps-script.gs`, Schnittstelle, `liveQuelle`, `runde`). Das Skript speichert nur die Nummer des Tiers.
 
 **Kennzeichnung:** Einordnung: Elias Knauber (Bündel C). Begründung: **Vorschlag, KI-gestützt** aus dem
@@ -1049,7 +1082,7 @@ angesehen. Ausgaben: `_test/d18n-*`, `_test/export-druck`, `_test/export-folien`
 Rückfragen (danach „Vorschlag“ in Kasten und Notizen ersetzen); Yannick entscheidet über das Feld Tonalität auf
 Folie 10 (A/B oben); Lukas gleicht Analogie-Befragung und Notizen ab und prüft, ob das Aaker-Profil auf 08b passt;
 Sprechtexte 08 (Schritt 2) und 10 in der Generalprobe stoppen; Zeichnung auf Beamer und Handy ansehen;
-Skript-Aktualisierung (zurückgestellt); Runde umstellen wie geplant (LIESMICH 12). Nach Elias’ Prüfung bzw. einer
+Skript-Aktualisierung (zurückgestellt; seit Abschnitt 20 wieder nötig); Runde umstellen wie geplant (LIESMICH 12). Nach Elias’ Prüfung bzw. einer
 Änderung an Folie 08 oder 10 die Exporte erneut erzeugen.
 
 ## 19. Rätsel mit Logo: Folie 01 (Di, 20.10.2026)
@@ -1155,3 +1188,123 @@ längstes Bild 267 ms – nicht schlechter. Exporte nach Abschnitt 15: PDF 22 vo
 raten (gewollt: das Publikum soll eine Chance haben); Übergang auf dem Vortragsrechner ansehen; Logo-Nutzung mit dem
 Betreuer klären (konkrete Frage in LIESMICH 12); Motiv und „Dose fiktiv“ freigeben (Yannick); B7 beim
 Zusammenführen.
+
+## 20. Zeitfenster der Live-Abstimmung: Stimmen zählen 30 Minuten (Di, 20.10.2026)
+
+Auftrag Yannick (20.10.2026, wörtlich): „Die Abstimmung sollte reseted werden nach einer gewissen Zeit damit bei der
+Präsentation keine alten Stimmen dastehen.“ **Entscheidung:** Stimmen zählen auf Folie 08 nur **30 Minuten**
+(`marke.js → umfragen.tier.gueltigMinuten: 30`). Umgesetzt als abwärtsverträgliche Erweiterung der Schnittstelle:
+Gelöscht wird nichts, die Zeilen bleiben in der Tabelle; die Runde (`'probe'` / `'vortrag-2026-10-26'`) trennt
+Probe und Vortrag weiter ganz. `liveQuelle` und `runde` sind unverändert, ebenso Folie 01, die Bilder und alle
+sichtbaren Folieninhalte. Das Zeitfenster wirkt erst, wenn bei Google die **Skript-Fassung 20.10.2026** läuft
+(ANLEITUNG, „Skript aktualisieren“) – bis dahin zählt die Web-App ohne Zeitgrenze.
+
+| Bereich | Änderung |
+|---|---|
+| `live-abstimmung/apps-script.gs` (`FASSUNG = '20.10.2026'`) | `aktion=stand` mit freiwilligem `minuten` (ganze Zahl 1–1440; `MUSTER_MINUTEN`, `HOECHSTENS_MINUTEN`, `minutenWert_`). Zählregel: je Runde, Umfrage und Gerät **zuerst die letzte Stimme**, **dann** das Fenster (`grenze = jetzt − minuten · 60 000`, Grenze eingeschlossen: genau `minuten` alt zählt, 1 ms älter nicht); Zeilen ohne gültige Zeit (von Hand) zählen mit `minuten` nicht. Antwort mit `"minuten"` nur, wenn das Fenster angewandt wurde. Ungültig (leer, 0, 1441, 30.5, „ 30“ …) → `{"ok":false,"fehler":"Ungültige Minuten (Zeitfenster): …"}`; ohne `minuten` wie bisher; bei `aktion=stimme` ignoriert. Kopfkommentar: Schnittstelle, Eingabeprüfung, neuer Abschnitt ZEITFENSTER (Regel, Begründung der Reihenfolge, Uhr und Zeitzone). Der Schreibweg der Fassung 19.10.2026 (Zeile reservieren) ist unverändert. |
+| `marke.js` | `gueltigMinuten: 30` mit Kommentar (Bedeutung, 0/leer = ohne Zeitgrenze, Runde trennt weiter, wirkt erst mit der neuen Fassung). |
+| `js/komponenten.js` (3a) | Folie 08 hängt `minuten=<gueltigMinuten>` an jede Stand-Abfrage (`umfrageGueltigMinuten`: ganze Zahl 1–1440, sonst einmal Warnung und ohne Grenze). Antwort ohne `"minuten"` → `fensterAn = false`: einmal Warnung in der Konsole, Tooltip der Pille „OHNE Zeitfenster …“ (sonst „zählt Stimmen der letzten 30 Min.“), auch im Referentenfenster (`umfrage-live` → `fensterAn`). Browser-Speicher `umfrage:<id>` mit `zeit`; mit `liveQuelle` verfallen Werte älter als `gueltigMinuten` (oder ohne `zeit`) beim Laden → Beispielwerte mit Pille, wie bei anderer Runde (in der Nacharbeit am 21.10. geändert: Nullen, unten); eine gespeicherte Pause verfällt mit ihren Handwerten (`u.abgelaufen`, `livePauseVerwerfen`). Ohne `liveQuelle` (Weg B/C) unverändert. |
+| `js/abstimmen.js`, `abstimmen.html` (Kommentar) | Die Abstimmseite speichert mit der Wahl die Zeit, zu der der Versuch losgeschickt wurde, der gezählt hat (`stimme:<id>:<runde>` = `{ option, name, zeit }`). Älter als `gueltigMinuten` (oder ohne `zeit`) → abgelaufen: beim Öffnen gleich die Auswahl statt „Danke“, ohne „bisherige Wahl“; steht „Danke“ schon da, wechselt die Seite beim Ablauf zur Auswahl (Zeitgeber, dazu `visibilitychange` und `pageshow`). Eine laufende neue Wahl oder eine Fehlerkarte bleibt stehen. In der Prüfung ergänzt: Ein stilles Nachsenden (NACHZÜGLER) hält die Auswahl nicht auf, und ein erfolgreiches stilles Nachsenden derselben Wahl schiebt `zeit` nach – sonst hätte „Danke“ in diesem Randfall stehen bleiben können. |
+| `werkzeuge/live-abstimmung-test.mjs` | Virtuelle Uhr der Attrappe (`s.uhr.anhalten/vorstellen`; kein Test wartet 30 Minuten), 9 neue Prüfungen (jetzt 53): alte Stimme fällt raus, Grenze (30 und 1 Minute, ± 1 ms), Umentscheiden kurz vor und nach Ablauf, ungültige `minuten`, ohne `minuten` unverändert, Zeilen ohne Zeit, Hörsaal mit Generalprobe in derselben Runde, Fassung ≥ 20.10.2026, Gegenprobe zur Reihenfolge (unten). 10 neue Mutanten (jetzt 26), u. a. „minuten ignoriert“, „Grenze nie angewandt“, „Sekunden statt Minuten“, „Grenze ausgeschlossen“, „Fenster auch ohne minuten“, „Zeit der ersten statt der letzten Stimme“, „Antwort ohne minuten“, „Fassung nicht erhöht“. `--server`: `GET /uhr?vor=MINUTEN` stellt die Uhr der Attrappe vor (`/uhr` zeigt sie). Lasttest: Die mitlesende „Folie“ und eine Schlussabfrage senden `minuten` aus `marke.js` (`folieMinuten`); Exit-Code 1 auch bei „FASSUNG VERALTET“ (nicht die `FASSUNG` aus `apps-script.gs`) und „ZEITFENSTER FEHLT/FALSCH“. |
+| `werkzeuge/pruefen.mjs` | Die eingebaute Attrappe prüft `minuten` wie der Server und nennt es in der Antwort; am Ergebnis ändert es nichts (die Stimmen eines Prüflaufs sind nie so alt). |
+| Doku | ANLEITUNG: Stand, Hinweis oben („jetzt nötig“), „Worum es geht“, Test-Adressen, Lasttest-Ausgabe, „Skript aktualisieren“ (zwei Gründe, Strg+F `ZEITFENSTER (Fassung vom 20.10.2026)`, Kurzprüfung → „(Skript-Fassung 20.10.2026)“, Stand mit `&minuten=30`, Teststimme mit Uhrzeit, freiwillig `&minuten=1`), „Vor dem Vortrag“ (Teststimme zählt noch 30 Minuten), „Im Vortrag“, „Nach dem Vortrag“ (gleich sichern; Stand ohne `minuten` zählt weiter), „Wichtig zu wissen“, Fehlerbehebung (vier Zeilen), lokal testen (`/uhr`). LIESMICH: Stand, Abschnitt 6 (Zeitfenster, Tabelle `gueltigMinuten`, Testen, Rückfall-Lesezeichen mit `&minuten=30`), Checkliste 12 (Skript aktualisieren wieder aktiv, Gründe Zeitfenster und Lastfestigkeit; Rückstellungsvermerk ersetzt; nach dem Vortrag gleich sichern), Tabelle 13. AUTOREN: 6c, Offen in 16, Verweise in 18, dieser Abschnitt. |
+
+**Zählregel – warum zuerst die letzte Stimme:** Die Regel heißt „die aktuelle Stimme eines Handys zählt, solange
+sie frisch ist“. Wer sich kurz vor Ablauf umentscheidet, zählt mit der neuen Wahl weiter; ist auch die letzte
+Stimme zu alt, zählt das Handy gar nicht – eine ältere Stimme desselben Handys rückt nie nach. Die umgekehrte
+Reihenfolge (erst alte Zeilen aussortieren, dann die letzte Stimme) ergibt dasselbe: Das Fenster enthält alle
+späteren Zeiten, und die letzte Stimme hat die späteste Zeit. Liegt sie im Fenster, bleibt sie auch nach dem
+Aussortieren die letzte; liegt sie davor, liegen alle Stimmen des Handys davor. Der vorgeschlagene Mutant „Fenster
+vor statt nach der Letzte-Stimme-Regel“ ist deshalb gleichwertig – kein Test kann ihn finden. Statt in der
+Mutantenliste steht er als Gegenprobe in den Prüfungen (`fensterVorDerRegel`, 150 zufällige Verläufe mit
+festem Startwert: dieselben Zahlen; mindestens 50 Abfragen, in denen das Fenster wirklich Stimmen aussortiert).
+
+**Uhr:** Der Server vergleicht die Spalte Zeit (beim Eingang `new Date()`) mit `new Date()` bei der Abfrage –
+beides seine eigene Uhr; die Uhr der Handys und des Präsentationsrechners spielt dafür keine Rolle. Das Handy misst
+nur den Abstand zwischen Losschicken und jetzt; da das Losschicken vor dem Eingang beim Server liegt, hält das
+Handy eine Stimme nie länger für gültig als der Server. Dass ein Datum in der Tabelle unverändert zurückkommt
+(Zeitzone der Tabelle), ist Modellwissen – Kurzprüfung und Lasttest prüfen es in der echten Tabelle, seit der
+Nacharbeit (21.10.) in **beiden** Richtungen: Steht die Zeit zu früh, fällt eine frische Stimme bei `&minuten=30`
+heraus („ZEITFENSTER FALSCH (Zeit zu früh)“); steht sie zu spät, zählt sie nach 2 Minuten (Kurzprüfung) bzw. 90
+Sekunden (Lasttest, Gegenprobe) bei `&minuten=1` noch („… (Zeit zu spät)“). Vorher erkannte nur der freiwillige
+Schritt mit `&minuten=1` die zweite Richtung – gerade die, in der alte Stimmen länger stehen bleiben.
+
+**Grenzen:** Gespeicherte Werte der Folie tragen die Zeit ihrer letzten Änderung, nicht die Zeit jeder Stimme –
+ohne Verbindung zeigt die Folie sie bis 30 Minuten nach der letzten Änderung, auch wenn einzelne Stimmen darin
+älter sind (genau zählt nur der Server). Mit `liveQuelle` verfallen auch Handwerte (Plan C) nach 30 Minuten –
+wer in der Fragerunde später als 30 Minuten zu Folie 08 zurückspringt, sieht dann Nullen bzw. den Stand der Web-App
+(seit der Nacharbeit; ohne `liveQuelle` bleiben die Werte). Handys und Folie lesen `gueltigMinuten` aus
+verschiedenen Kopien von `marke.js` (GitHub Pages bzw. Präsentationsrechner): Weichen sie ab (z. B. vor dem Push),
+zeigt ein Handy „Danke“, obwohl Folie 08 die Stimme nicht mehr zählt, oder umgekehrt – deshalb steht
+`gueltigMinuten` seit dem 21.10. in der Kontrolle „Vor dem Vortrag“ (ANLEITUNG) und im Kommentar in `marke.js`. Läuft bei Google noch die alte Fassung, rechnet das Handy trotzdem mit
+30 Minuten und zeigt danach wieder die Tiere, obwohl die Stimme dort weiter zählt – eine erneute Stimme ersetzt
+sie nur (dieselbe Geräte-ID), harmlos. Wird die Uhr eines Handys zwischen Abstimmen und Neuladen verstellt, stimmt
+dort der Abstand nicht; in einem Hintergrund-Tab kann der Zeitgeber später auslösen (beim Zurückkehren prüft die
+Seite neu).
+
+**Geprüft beim Bau (Mi, 21.10.2026, alles lokal – keine Anfrage an die echte Web-App; Stand vor der Nacharbeit unten):**
+`node werkzeuge/live-abstimmung-test.mjs`: 53 von 53 Prüfungen bestanden. `--mutationen`: alle 26 kaputten Kopien
+erkannt. **Ende-zu-Ende** im Browser (Chromium, Playwright; Hilfsskript außerhalb des Repositorys): Folie 08 über
+`file://` mit `?quelle=` an der Attrappe (`--server`, echtes Skript), drei Handys als eigene Browser-Kontexte mit
+vorstellbarer Browser-Uhr, Attrappen-Uhr über `/uhr?vor=`. Ergebnis 43 von 43, keine externe Anfrage: jede
+Stand-Abfrage trägt `minuten=30`; drei Stimmen, Umentscheiden (n bleibt 3); nach 20 Minuten zählen alle, Handy 3
+entscheidet sich um; nach 31 Minuten verschwinden die Stimmen von Handy 1 und 2 von der Folie, Handy 3 zählt mit der
+neuen Wahl, Handy 1 und 2 zeigen wieder die Tiere (ohne „bisherige Wahl“, Speicher geleert), Handy 3 weiter
+„Danke“; neu abstimmen zählt einmal; nach 56 und 62 Minuten fallen auch diese heraus (n = 0), der Stand ohne
+`minuten` zählt weiter alle drei Handys; Neuladen des Handys vor Ablauf → „Danke“, nach Ablauf → gleich die Tiere.
+Browser-Speicher der Folie: frisch und Web-App nicht erreichbar → gespeicherte Werte; 31 Minuten später →
+Beispielwerte mit Pille (seit der Nacharbeit: Nullen); ohne `liveQuelle` → die alten Werte bleiben. Pause: übersteht F5 wie bisher, nach 31
+Minuten verfällt sie mit den Handwerten, die Folie fragt wieder. Alte Fassung (19.10.2026, aus Git) als zweite
+Attrappe: 31 Minuten alte Stimme zählt weiter, Tooltip „OHNE Zeitfenster …“, Warnung genau einmal. Bilder:
+`_test/d20-e2e/`. `pruefen.mjs index.html --schritte --optional`: 23 Folien, 81 Screenshots, 0 Fehler, 4
+Warnungen Wortbudget wie vorher (f03, f04, f10, f11), 0 externe Anfragen, 1 Live-Anfrage (Attrappe, mit
+`minuten=30`, Pille „Live“) – `_test/d20-pruefen/`; dazu `--nur f08 --schritte --live-werte 3,1,7,0,2`: 0 Fehler,
+0 Warnungen, n = 13 (`_test/d20-pruefen-f08/`). Lasttest gegen die Attrappe (`--server 8795 --sperre 100`,
+`--lasttest … --anzahl 20`): Fassung 20.10.2026 erkannt, „Folie“ mit `minuten=30`, BESTANDEN, Stand ohne und mit
+`minuten=30` je n = 20 (`_test/d20-lasttest-attrappe.log`). Exporte nicht neu erzeugt (sichtbar ändert sich nichts).
+
+### Nacharbeit nach der Prüfung (Mi, 21.10.2026)
+
+Eine Prüfung des Baus fand drei Befunde „mittel“ und sieben „niedrig“ (keinen „hoch“). Umgesetzt:
+
+| Befund | Änderung |
+|---|---|
+| mittel: Abgelaufener Speicher derselben Runde zeigte **Beispielwerte** (z. B. n = 64, „Beispieldaten“). Die Kontrolle „30 Minuten vorher“ (LIESMICH 12) speichert n = 0 – im Vortrag ist das älter als 30 Minuten, das Publikum hätte bis zur ersten Antwort Beispieldaten gesehen (offline dauerhaft). | `js/komponenten.js` (`umfrageLaden`): abgelaufen → **Nullen** (`u.beispiel = false`); Beispielwerte nur noch ohne Speicher, bei anderer Runde oder wenn schon Beispielwerte gespeichert waren. Gilt auch für verfallene Handwerte (Plan C) und für die Aussagezahl. Abweichung von der Vorgabe („wie bei anderer Runde: Beispielwerte“) – begründet mit Yannicks Auftrag „keine alten Stimmen“: 0 ist der ehrliche Stand. Zurück ginge es mit dem Löschen des neuen `else if`-Zweigs. |
+| mittel: Lasttest und Kurzprüfung erkannten nur eine Richtung der Zeit in der Tabelle (zu früh). Zu spät (z. B. eine Stunde) hieße: Stimmen zählen 90 statt 30 Minuten – trotzdem BESTANDEN. | Lasttest: **Gegenprobe** – mindestens 90 s (`GEGENPROBE_MS`) nach der letzten Stimme `minuten=1` in der eigenen Lasttest-Runde, n muss 0 sein („ZEITFENSTER FALSCH (Zeit zu spät)“; alle zählen → sicher zu spät, einzelne → „UNKLAR“, wiederholen). Gegen die Attrappe `/uhr?vor=2` statt zu warten. ANLEITUNG „Skript aktualisieren“, Punkt 5: eigene Runde `kurzpruefung-2010`, Pflichtschritt nach 2 Minuten mit `&minuten=1` → `"n":0`, Fehlerbehebung (zwei Zeilen + UNKLAR), Checkliste 12. Kopfkommentar von `apps-script.gs` und Absatz „Uhr“ oben: „beide Richtungen“. |
+| mittel: Die Logik auf Handy und Folie hatte keine wiederholbare Prüfung im Repository (Ende-zu-Ende-Skript nur im Scratchpad). | Neu: **`werkzeuge/zeitfenster-e2e.mjs`** (10 Szenarien, Attrappen auf localhost, Playwright-Uhr, nichts geht ins Netz) mit `--mutationen` (12 kaputte Kopien der Client-Dateien, nur im Browser ersetzt). Dazu `pruefen.mjs`: Eine Stand-Abfrage ohne `minuten = gueltigMinuten` ist ein **Fehler** (Bericht „zeitfenster“, „standOhnePassendeMinuten“). Ob das Werkzeug im Repository bleibt, entscheidet Yannick. |
+| niedrig: `gueltigMinuten` kann auf GitHub und dem Präsentationsrechner verschieden sein (Handy „Danke“, Folie zählt nicht). | ANLEITUNG „Vor dem Vortrag“, Kontrolle 1: Strg+F `gueltigMinuten` → `30`; Kommentar in `marke.js` wie bei `runde` („Ebenfalls auf GitHub UND auf dem Präsentationsrechner ändern“); LIESMICH 12; Grenzen oben. |
+| niedrig: Tooltip behauptete „zählt Stimmen der letzten 30 Min.“, solange unbekannt war, ob die Web-App das kann. | Drei Fälle: `true` → „zählt …“, `false` → „OHNE Zeitfenster …“, `null` → „Zeitfenster 30 Min. angefragt (noch keine Antwort der Web-App)“. |
+| niedrig: Referentenfenster, nach mehr als 30 Minuten geöffnet, zeigte andere Zahlen als die Leinwand (pausierte Handwerte). | Auf `melden` schickt das Vortragsfenster (Umfrage-Folie aktiv) `Deck.kanal('umfrage')` mit `{ id, werte, beispiel }`; das Referentenfenster übernimmt sie (`umfrageUebernehmen`). Die Zeit im Speicher bleibt dabei unverändert (kein Verlängern). |
+| niedrig: Kurzprüfung in `runde=probe` konnte Fehlalarm geben (andere Probestimmen, ältere fallen gerade heraus). | Eigene Runde `kurzpruefung-2010` (oben). |
+| niedrig: „Nach dem Vortrag“ nannte den Stand ohne `minuten` – zählt auch ältere Teststimmen der Vortragsrunde. | ANLEITUNG und LIESMICH: maßgeblich Foto und Stand **mit** `&minuten=30` gleich nach dem Vortrag; später Tabelle herunterladen und nach Zeit filtern. |
+| niedrig: kleine Unstimmigkeiten. | (a) 6c: `umfrage-live` mit `fensterAn`; (b) LIESMICH 6: Pause übersteht F5 nur innerhalb von 30 Minuten, verfällt „beim Neuladen oder Betreten“; (c) Lasttest: Bei „FASSUNG VERALTET“ oder „ZEITFENSTER …“ beginnt die Urteilszeile mit „NICHT BESTANDEN wegen …“, ANLEITUNG erklärt es; (d) Zeile „Folie“ nennt Antworten ohne Zeitfenster. |
+
+**Nicht umgesetzt (begründet):** Die Nennungen „Claude“ in der ANLEITUNG bleiben – „Claude“ ist der Name des
+Assistenten, keine Modell- oder Versionsbezeichnung, und die Datei nutzte ihn schon vorher zehnmal; die neuen
+Meldungen im Testwerkzeug verweisen dagegen neutral auf die ANLEITUNG. Im Mutationstest der Client-Dateien fehlen
+zwei Fälle: das stille Nachsenden (NACHZÜGLER) braucht eine Antwort, die nach dem Zeitlimit des Handys doch noch
+kommt – nur im Code geprüft; „Ablauf beim Öffnen nicht geprüft“ ist gleichwertig, weil `pageshow` gleich nach dem
+Laden noch einmal prüft. Kasten und Notizen von Folie 08 in `index.html` bleiben unverändert (keine sichtbaren
+Inhalte, Auftrag ohne `index.html`).
+
+**Geprüft nach der Nacharbeit (Mi, 21.10.2026, alles lokal – keine Anfrage an die echte Web-App):**
+`node werkzeuge/live-abstimmung-test.mjs`: 53 von 53; `--mutationen`: 26 von 26 erkannt.
+`node werkzeuge/zeitfenster-e2e.mjs`: 58 von 58 Prüfungen, 0 externe Anfragen (`_test/zeitfenster-e2e/`); `--mutationen`: 12 von 12 erkannt (mehrfach
+wiederholt; ein Szenario wartet seitdem auf die erste neue Abfrage nach dem Betreten, vorher schlug ein Mutant
+gelegentlich nicht an). `pruefen.mjs index.html --schritte --optional`: 23 Folien, 81 Screenshots, 0 Fehler, 4
+Warnungen Wortbudget wie vorher (f03, f04, f10, f11), 0 externe Anfragen, 1 Live-Anfrage mit `minuten=30`, Pille
+„Live“ (`_test/d20n-pruefen/`); `--nur f08 --schritte --live-werte 3,1,7,0,2`: 0 Fehler, 0 Warnungen, n = 13;
+`--nur f08 --live-offline`: 0 Fehler, Pille „offline“. Gegenprobe zu `pruefen.mjs`: Kopie der Präsentation ohne
+`minuten` in der Abfrage → 1 Fehler („Stand-Abfrage ohne minuten, erwartet minuten=30 …“). Lasttest gegen die
+Attrappe (`--server --sperre 100`, `--anzahl 20`): Fassung 20.10.2026, BESTANDEN, Stand ohne und mit `minuten=30`
+je n = 20, Gegenprobe `minuten=1` → n = 0 (`_test/d20n-lasttest-attrappe.log`); gegen eine Attrappe mit Zeit +1 Std.
+→ „ZEITFENSTER FALSCH (Zeit zu spät)“, −1 Std. → „(Zeit zu früh)“, alte Fassung → „NICHT BESTANDEN wegen Fassung
+und Zeitfenster“, jeweils Exit-Code 1. Bilder und Protokolle: `_test/zeitfenster-e2e/`.
+
+**Offen:** Änderungen committen und pushen (Gruppe); danach **Yannick: Skript aktualisieren** (ANLEITUNG, Fassung
+20.10.2026, Kurzprüfung in der Runde `kurzpruefung-2010`: Fassung, `&minuten=30` → `"n":1`, nach 2 Minuten
+`&minuten=1` → `"n":0`) und **Lasttest** gegen die echte Web-App (mindestens zweimal `--anzahl 20`; die Urteilszeile
+beginnt mit „BESTANDEN“, nicht mit „NICHT BESTANDEN wegen …“). Erst das prüft die Zeit in der echten Tabelle. Kasten
+und Notizen von Folie 08 (`index.html`) nennen das Zeitfenster nicht – bewusst nicht geändert; beim Abgleich der
+Notizen (Checkliste 12, B · Lukas) ggf. einen Satz ergänzen. Yannick entscheidet, ob `werkzeuge/zeitfenster-e2e.mjs`
+im Repository bleibt, und bestätigt „Nullen statt Beispielwerte“ (Abweichung von der ursprünglichen Vorgabe).

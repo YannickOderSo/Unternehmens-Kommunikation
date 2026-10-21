@@ -24,6 +24,11 @@ erfundenen Dose (`bilder/raetsel-holy-logo.svg`, Entscheidung Yannick), Schritt 
 Hinweis, dann die Auflösung – **drei Klicks** auf Folie 01 (Abschnitt 8 und 12, `AUTOREN.md` Abschnitt „Rätsel mit
 Logo“); nach zwei Prüfungen nachgearbeitet und die Exporte am 20.10. neu erzeugt. Die Logo-Nutzung in der
 Illustration klärt Yannick noch mit dem Betreuer (Checkliste, Abschnitt 12).
+Seit Di, 20.10. zählen in der Live-Abstimmung nur **Stimmen der letzten 30 Minuten** (Zeitfenster, damit im Vortrag
+keine alten Stimmen dastehen; Abschnitt 6); nach einer Prüfung am 21.10. nachgearbeitet (abgelaufene Zahlen auf
+Folie 08 → Nullen statt Beispieldaten, Kurzprüfung der Uhrzeit in beiden Richtungen, neues Prüfwerkzeug
+`werkzeuge/zeitfenster-e2e.mjs`). Es wirkt erst, wenn Yannick das Skript bei Google aktualisiert hat (Checkliste,
+Abschnitt 12 – der Punkt ist damit wieder dran).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
@@ -156,8 +161,18 @@ Versuche, dazwischen der ruhige Hinweis „Gerade stimmen viele ab – Ihre Stim
 erscheint „Das hat nicht geklappt“ mit „Nochmal versuchen“. Wer sich währenddessen umentscheidet, tippt einfach
 ein anderes Tier an – es zählt die neueste Wahl. Seit der Fassung vom 19.10.2026 holt sich jede Stimme beim
 Server nur kurz eine Zeilennummer und schreibt dann gleichzeitig mit den anderen (vorher nacheinander: beim
-Lasttest am 19.10. nur 19 von 40). Diese Fassung muss Yannick einmal in Google einspielen (Anleitung, „Skript
-aktualisieren“; Checkliste, Abschnitt 12).
+Lasttest am 19.10. nur 19 von 40). Diese Fassung – inzwischen die vom **20.10.2026** mit dem Zeitfenster (unten) –
+muss Yannick einmal in Google einspielen (Anleitung, „Skript aktualisieren“; Checkliste, Abschnitt 12).
+
+**Zeitfenster (seit 20.10.2026, Auftrag Yannick: „keine alten Stimmen“ im Vortrag):** Folie 08 zählt je Handy nur
+die letzte Stimme der **letzten 30 Minuten** (`marke.js → umfragen.tier.gueltigMinuten: 30`). Ältere Stimmen
+verschwinden von der Folie, bleiben aber in der Tabelle. Auch die auf dem Präsentationsrechner gespeicherten Zahlen
+von Folie 08 gelten nur 30 Minuten (älter → beim Neuladen oder Betreten der Folie **Nullen**, bis die Web-App
+antwortet – keine Beispielwerte, seit 21.10.), und ein Handy, das vor mehr als 30 Minuten abgestimmt hat, zeigt
+wieder die Tiere. Für die Abstimmung im Vortrag selbst (rund eine Minute) ändert
+sich nichts. **Wirkt erst nach „Skript aktualisieren“** (Fassung 20.10.2026) – vorher zählt die Web-App ohne
+Zeitgrenze; Maus auf der Pille zeigt dann „OHNE Zeitfenster“, sonst „zählt Stimmen der letzten 30 Min.“. Die Runde
+bleibt trotzdem nötig (sie trennt Probe und Vortrag ganz).
 
 **Einrichten** (einmal, ca. 10 Minuten): `live-abstimmung/ANLEITUNG.md`, Schritt für Schritt. Danach in
 `marke.js → umfragen.tier`:
@@ -166,6 +181,7 @@ aktualisieren“; Checkliste, Abschnitt 12).
 |---|---|
 | `liveQuelle` | Web-App-URL aus der Anleitung: `'https://script.google.com/macros/s/…/exec'`. Leer `''` = Weg A aus (dann kein QR-Code, links „Abstimmung per Handzeichen“) |
 | `runde` | `'probe'` für Tests und Generalprobe. **Spätestens So, 25.10.:** `'vortrag-2026-10-26'` – dann beginnt Folie 08 bei 0, die Probestimmen bleiben in der Tabelle, zählen aber nicht |
+| `gueltigMinuten` | `30` (seit 20.10.2026): Stimmen zählen auf Folie 08 nur so viele Minuten. `0` = ohne Zeitgrenze (z. B. falls die Kurzprüfung der Anleitung scheitert). Ändern wie `runde`: auf GitHub **und** auf dem Präsentationsrechner |
 | `link` | Adresse der Abstimmseite (für den QR-Code) – steht schon drin, nicht ändern |
 
 `liveQuelle` und `runde` müssen **auf GitHub** (die Abstimmseite liest `marke.js` von GitHub Pages) **und auf
@@ -176,7 +192,8 @@ Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet�
 
 **Testen** (Generalprobe, möglichst im Hörsaal):
 1. Präsentation öffnen, Folie 08: Die Pille im Kopf der Ergebnisse zeigt nach 1–2 s **„Live“** (grün,
-   pulsierender Punkt). Die Beispielwerte verschwinden mit dem ersten Stand.
+   pulsierender Punkt). Die Beispielwerte verschwinden mit dem ersten Stand. Maus auf der Pille: „zählt Stimmen
+   der letzten 30 Min.“ (steht dort „OHNE Zeitfenster“, ist das Skript noch nicht aktualisiert).
 2. QR-Code mit mehreren Handys aus der **letzten Reihe** scannen (iPhone und Android, über mobile Daten),
    ein Tier antippen → nach wenigen Sekunden bewegt sich der Balken. Umentscheiden → der Balken wandert,
    `n` bleibt gleich.
@@ -188,38 +205,55 @@ Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet�
 4. Nach dem Umstellen auf `'vortrag-2026-10-26'`: Folie 08 zeigt `n = 0`, und `marke.js` auf GitHub Pages
    nennt dieselbe Runde (Anleitung, „Vor dem Vortrag“ – sonst zählen die Handys weiter in „probe“).
 
-**Die Pille im Kopf der Ergebnisse** (Maus auf die Pille zeigt Runde, letzten Stand bzw. den Grund):
+**Die Pille im Kopf der Ergebnisse** (Maus auf die Pille zeigt Runde, Zeitfenster, letzten Stand bzw. den Grund;
+zum Zeitfenster: „zählt Stimmen der letzten 30 Min.“, „OHNE Zeitfenster …“ = alte Skript-Fassung, „… angefragt
+(noch keine Antwort der Web-App)“ = noch unbekannt):
 
 | Pille | Bedeutung | Was tun |
 |---|---|---|
 | **LIVE** grün, Punkt pulsiert | verbunden, neuer Stand alle 2 s | nichts |
 | LIVE grau, ohne Puls | Verbindung wird aufgebaut (erste Sekunden) | kurz warten |
 | **OFFLINE** grau, gestrichelt | keine Antwort von der Web-App (Internet? `liveQuelle`?) oder Antwort langsamer als ca. 8 s. Die Werte bleiben stehen; eine späte Antwort wird noch übernommen | Klick auf die Pille = sofort neu versuchen; sonst „Rückfall“ unten |
-| **LIVE PAUSIERT** grau, Pausenzeichen | jemand hat von Hand gezählt (Klick, Ziffer, „Werte“, „Zurücksetzen“). Die Folie fragt nicht mehr – Hand und Abstimmung überschreiben sich nicht. Die Pause übersteht ein Neuladen (F5) | Klick auf die Pille = fortsetzen; der Stand der Abstimmung ersetzt dann die Handwerte – vorher Zahlen notieren |
+| **LIVE PAUSIERT** grau, Pausenzeichen | jemand hat von Hand gezählt (Klick, Ziffer, „Werte“, „Zurücksetzen“). Die Folie fragt nicht mehr – Hand und Abstimmung überschreiben sich nicht. Die Pause übersteht ein Neuladen (F5), solange die Handwerte jünger als 30 Minuten sind | Klick auf die Pille = fortsetzen; der Stand der Abstimmung ersetzt dann die Handwerte – vorher Zahlen notieren |
 
 - **„Zurücksetzen“ ist bei Weg A nicht nötig** – die Runde sorgt für den Start bei 0. Wer es doch klickt,
   pausiert die Abfrage: dann die Pille anklicken.
-- **Zahlen gehören zur Runde:** Was der Präsentationsrechner gespeichert hat (Stimmen, Handwerte), gilt nur in
-  derselben Runde. Stimmen und Handwerte der Generalprobe („probe“) erscheinen im Vortrag also nie – auch nicht,
-  wenn die Web-App dann nicht erreichbar ist. Ohne Stand zeigt Folie 08 die Beispielwerte mit Pille
-  „Beispieldaten“; die erste Handstimme setzt alles auf 0.
-- **Neuladen (F5)** beendet eine Pause **nicht** – erst der Klick auf die Pille setzt fort.
+- **Zahlen gehören zur Runde und verfallen nach 30 Minuten:** Was der Präsentationsrechner gespeichert hat
+  (Stimmen, Handwerte), gilt nur in derselben Runde und nur 30 Minuten (`gueltigMinuten`). Stimmen und Handwerte
+  der Generalprobe („probe“) erscheinen im Vortrag also nie – auch nicht, wenn die Web-App dann nicht erreichbar
+  ist. Ganz ohne gespeicherten Stand (oder mit dem einer anderen Runde) zeigt Folie 08 die Beispielwerte mit Pille
+  „Beispieldaten“; die erste Handstimme setzt alles auf 0. Sind die gespeicherten Zahlen derselben Runde älter als
+  30 Minuten, stehen **Nullen** da (die alten Stimmen zählen nicht mehr), bis die Web-App antwortet. Eine
+  gespeicherte Pause verfällt mit ihren Handwerten.
+- **Neuladen (F5)** beendet eine Pause **nicht** – erst der Klick auf die Pille setzt fort. Das gilt innerhalb von
+  30 Minuten (`gueltigMinuten`): Sind die Handwerte älter, verfallen sie beim Neuladen oder Betreten der Folie, die
+  Pause mit ihnen – die Folie fragt dann wieder.
 - **Referentenfenster:** zeigt dieselben Zahlen und dieselbe Pille, fragt aber nicht selbst. Unter der
   Kopfzeile „Aktuell“ steht der Zustand gut lesbar („Abstimmung: live“, „… offline – Klick: neu versuchen“,
   „… pausiert – Klick: fortsetzen“); Klick darauf wirkt wie Klick auf die Pille. Wer dort von Hand zählt,
-  pausiert die Abfrage im Vortragsfenster.
+  pausiert die Abfrage im Vortragsfenster. Beim Betreten von Folie 08 schickt ihm das Vortragsfenster die Zahlen,
+  die es gerade zeigt – so stimmen beide auch dann überein, wenn dort noch Handwerte stehen, die älter als 30
+  Minuten sind.
 - **PDF und Exportbilder** zeigen Folie 08 im Endzustand (Analogien, Titel mit der Auflösung) – **ohne
   QR-Code und ohne Umfrage**; abgefragt wird dort nichts. Im PDF (Plan B) ist die Live-Abstimmung also nicht
   möglich (Abschnitt 11). Wer den QR-Code nach dem Vortrag scannt, liest „Die Abstimmung ist gerade nicht
   geöffnet“.
 - **Prüfwerkzeug und Exporte** (`werkzeuge/pruefen.mjs`, `uebersicht.mjs`) fragen die Web-App nie ab: Anfragen
   an die `liveQuelle` beantwortet eine eingebaute Attrappe, alles andere ist gesperrt. Im Prüflauf erscheint
-  Folie 08 wie zu Beginn des Vortrags (QR-Code, „Live“, `n = 0`).
+  Folie 08 wie zu Beginn des Vortrags (QR-Code, „Live“, `n = 0`). Fehlt in einer Stand-Abfrage `minuten=30`
+  (`gueltigMinuten`), meldet `pruefen.mjs` einen Fehler. Das Zeitfenster auf Handy und Folie (Ablauf, Speicher,
+  Pause, Referentenfenster, Tooltip) prüft `werkzeuge/zeitfenster-e2e.mjs` im Browser – nur mit Attrappen auf
+  localhost, mit vorgestellten Uhren; `--mutationen` = absichtlich kaputte Kopien von `js/komponenten.js` und
+  `js/abstimmen.js`, jede muss auffallen (Abschnitt 13, `AUTOREN.md` §20).
 - **Rückfall im Vortrag:** Ist nur der Präsentationsrechner offline, die Handys aber nicht, kommen die Stimmen
-  trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen:
-  `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5`) und trägt die Zahlen über
-  „Werte“ ein (Reihenfolge Adler, Löwe, Chamäleon, Fuchs, Schwan). Geht gar nichts: Plan C.
-- **Nach dem Vortrag:** Ergebnis sichern, Web-App archivieren, `liveQuelle: ''` (Anleitung, „Nach dem Vortrag“).
+  trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen, mit
+  Zeitfenster wie Folie 08: `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5&minuten=30`)
+  und trägt die Zahlen über „Werte“ ein (Reihenfolge Adler, Löwe, Chamäleon, Fuchs, Schwan). Geht gar nichts:
+  Plan C.
+- **Nach dem Vortrag:** Ergebnis **gleich** sichern – Foto von Folie 08 und die Stand-Adresse **mit**
+  `&minuten=30` (maßgeblich: sie zählt genau, was die Folie zeigte). Nach 30 Minuten zeigt Folie 08 die Stimmen
+  nicht mehr; die Stand-Adresse ohne `&minuten=30` zählt sie weiter, aber auch ältere Teststimmen derselben Runde.
+  Dann Web-App archivieren, `liveQuelle: ''` (Anleitung, „Nach dem Vortrag“).
 
 ### Weg B – Werkzeug (Particify, Mentimeter) + Werte eintippen
 
@@ -251,7 +285,7 @@ Stehen vor dem Zählen andere Zahlen als 0 auf der Folie (und keine Pille „Bei
   solange Stimmen kommen. Keine Stimmen? Dann steht dort „Noch keine Stimmen“ (keine „0 %“) – Analyse
   trotzdem erzählen oder Schritt 1 überspringen.
 - Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher; mit eigener Live-Abstimmung nur in derselben
-  Runde) und erscheinen auch im Referentenfenster.
+  Runde und nur 30 Minuten) und erscheinen auch im Referentenfenster.
 
 ## 7. Live-Wortwolke (Folie 01b, optional)
 
@@ -497,14 +531,22 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Android über mobile Daten aus der letzten Reihe getestet (abstimmen, umentscheiden; mindestens ein Handy
       ohne Google-Anmeldung), **Lasttest** „BESTANDEN“ (Anleitung, Schritt 7). Klappt Weg A nicht: Weg B
       (Werkzeug, `link`) oder nur Plan C
-- [ ] **Live-Abstimmung: Skript aktualisieren** (A · Yannick; **zurückgestellt** am 20.10.2026 auf Wunsch von
-      Yannick, erst nach der Überarbeitung von Folie 08 – die Web-App läuft noch mit der alten Fassung, Lasttest am
-      19.10.: nur 19 von 40; für das Chamäleon muss am Skript nichts geändert werden, es speichert nur Nummern):
-      nach `live-abstimmung/ANLEITUNG.md`, Abschnitt „Skript aktualisieren“ – neue Fassung einfügen (Raw-Link,
-      Strg+F `SPEICHERN BEI ANDRANG`), **„einrichten“** ausführen (drei Zeilen im Protokoll), **Neue Version** bereitstellen (URL bleibt gleich), Kurzprüfung
-      `<URL>?aktion=fassung` → „(Skript-Fassung 19.10.2026)“. Danach **Lasttest** (Claude oder selbst, Anleitung,
-      Schritt 7): „BESTANDEN“, mindestens zweimal mit `--anzahl 20` (höchstens ca. 20 Personen im Raum, Yannick
-      20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, aber 6 Handys über 15 s). Nicht während einer Abstimmung
+- [ ] **Live-Abstimmung: Skript aktualisieren – jetzt nötig** (A · Yannick; die Zurückstellung vom 20.10.2026 ist
+      mit dem Zeitfenster aufgehoben). Zwei Gründe: (1) **Zeitfenster** – erst die Fassung vom **20.10.2026** zählt
+      auf Folie 08 nur Stimmen der letzten 30 Minuten (Auftrag Yannick, 20.10.: keine alten Stimmen im Vortrag);
+      die alte Fassung bei Google ignoriert das, dann gibt es keine Zeitgrenze. (2) **Lastfestigkeit** – die Web-App
+      läuft noch mit der Fassung von vor dem 19.10. (Lasttest 19.10.: nur 19 von 40; Messung 20.10. mit 20 Handys:
+      alle gezählt, aber 6 über 15 s). Für das Chamäleon muss am Skript nichts geändert werden, es speichert nur
+      Nummern. Vorher die Änderungen auf GitHub bringen (Commit und Push), dann nach `live-abstimmung/ANLEITUNG.md`,
+      Abschnitt „Skript aktualisieren“: neue Fassung einfügen (Raw-Link, Strg+F `ZEITFENSTER (Fassung vom
+      20.10.2026)`), **„einrichten“** ausführen (drei Zeilen im Protokoll), **Neue Version** bereitstellen (URL bleibt
+      gleich), Kurzprüfung (Anleitung, Punkt 5, in der eigenen Runde `kurzpruefung-2010`): `<URL>?aktion=fassung`
+      → „(Skript-Fassung 20.10.2026)“; Stand mit `&minuten=30` → `"minuten":30`; Teststimme → `"n":1`; nach
+      **2 Minuten** mit `&minuten=1` → `"n":0` (prüft die Uhrzeit der Tabelle in beiden Richtungen; schlägt eine
+      Probe fehl: `gueltigMinuten: 0` bis zur Klärung). Danach **Lasttest** (Claude oder selbst, Anleitung,
+      Schritt 7, mit Gegenprobe ca. 90 s länger): Die Urteilszeile beginnt mit „BESTANDEN“ (nicht „NICHT BESTANDEN
+      wegen …“), mindestens zweimal mit `--anzahl 20` (höchstens ca. 20 Personen im Raum, Yannick 20.10.2026).
+      Nicht während einer Abstimmung
 - [ ] **Folie 08 – Kasten und Notizen** (B · Lukas): beschreiben noch den alten Weg („Abstimm-Link eintragen,
       dann erscheint der QR-Code“, „Zurücksetzen zweimal“); an Weg A anpassen (QR-Code erscheint mit
       `liveQuelle`, Pille „Live“ beobachten, bei Weg A kein „Zurücksetzen“)
@@ -530,8 +572,9 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Elias und Yannick klären
 - [ ] **Runde umstellen** (A · Yannick, **spätestens So, 25.10.**, nach der Generalprobe): `runde: 'vortrag-2026-10-26'`
       in `marke.js` auf GitHub **und** auf dem Präsentationsrechner; Kontrolle beider Stellen (Anleitung, „Vor dem
-      Vortrag“): `marke.js?v=…` auf GitHub Pages nennt die neue Runde, Folie 08 zeigt `n = 0`; die Stand-Adresse für
-      den Rückfall als Lesezeichen auf einem Handy anlegen (Abschnitt 6)
+      Vortrag“): `marke.js?v=…` auf GitHub Pages nennt die neue Runde und `gueltigMinuten: 30` (wie auf dem
+      Präsentationsrechner), Folie 08 zeigt `n = 0`; die Stand-Adresse für den Rückfall als Lesezeichen auf einem
+      Handy anlegen (Abschnitt 6)
 - [ ] **Zahl der echten Kurzinterviews** – zurzeit steht überall die geplante Zahl „3“ (Folie 06–08, B1, B2,
       B4, B5) und auf **Folie 02** in den Methodenkarten „KI + Kurzinterviews“; nach den Interviews überall
       dieselbe tatsächliche Zahl eintragen, auf B1 die Pille „teils geplant“ löschen; gibt es keine echten
@@ -572,7 +615,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [ ] Mit Licht von der letzten Reihe: Lesbarkeit, Farben, QR-Code
 - [ ] Internet am Präsentationsrechner (Hörsaal-WLAN oder Handy-Hotspot); Folie 08 zeigt **„Live“**; eine Teststimme
       aus der letzten Reihe über mobile Daten kommt auf der Folie an (danach Testzeile im Blatt „Stimmen“ löschen,
-      falls die Runde schon `vortrag-2026-10-26` ist)
+      falls die Runde schon `vortrag-2026-10-26` ist – das Zeitfenster allein reicht nicht, die Teststimme zählt noch
+      30 Minuten)
 - [ ] Ton aus, Benachrichtigungen aus (Fokus-/Nicht-stören-Modus), Netzteil angeschlossen, Bildschirmsperre aus
 
 **30 Minuten vorher**
@@ -580,7 +624,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       „Zurücksetzen“ klicken (pausiert die Abfrage; falls doch: Pille anklicken). Steht „Live pausiert“ oder
       „offline“: Pille anklicken. Ein Handy öffnet den QR-Code und sieht die Tiere. Bleibt die Pille „offline“:
       Internet prüfen, sonst Plan C – steht dann nicht `n = 0` (und keine Pille „Beispieldaten“), vor dem Zählen
-      „Zurücksetzen“ zweimal
+      „Zurücksetzen“ zweimal. Maus auf der Pille: „zählt Stimmen der letzten 30 Min.“ (nicht „OHNE Zeitfenster“).
+      Diese Kontrolle ist im Vortrag älter als 30 Minuten – Folie 08 zeigt dann bis zur ersten Antwort Nullen
 - [ ] **Nur Weg B:** Umfrage im Werkzeug zurückgesetzt/geöffnet; **auf Folie 08 „Zurücksetzen“ (zweimal)** –
       sonst stehen Probestimmen da
 - [ ] Falls Folie 01b genutzt wird: „Wolke leeren“ (zweimal)
@@ -588,7 +633,10 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 - [ ] Handy-Hotspot als Reserve für die Umfrage, USB-Stick mit PDF griffbereit
 
 **Nach dem Vortrag** (A · Yannick, Anleitung „Nach dem Vortrag“)
-- [ ] Ergebnis von Folie 08 sichern (Foto oder Zahlen, Quelle „eigene Live-Umfrage im Hörsaal, 26.10.2026, n = …“)
+- [ ] Ergebnis von Folie 08 **gleich** sichern (Foto oder Zahlen und die Stand-Adresse mit `&minuten=30`, Quelle
+      „eigene Live-Umfrage im Hörsaal, 26.10.2026, n = …“) – nach 30 Minuten zeigt die Folie die Stimmen nicht mehr
+      (Zeitfenster). Die Stand-Adresse ohne `&minuten=30` zählt sie weiter, aber auch ältere Teststimmen der Runde;
+      maßgeblich ist der Stand gleich nach dem Vortrag (Anleitung, „Nach dem Vortrag“)
 - [ ] Web-App archivieren, `liveQuelle: ''` in `marke.js`; Tabelle löschen oder Spalte „Geraet“ entfernen
 
 ## 13. Dateien
@@ -605,7 +653,8 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
 | `werkzeuge/uebersicht.mjs` | erzeugt `export/uebersicht.png` aus den Folienbildern (Befehle: `AUTOREN.md`, Abschnitt 15) |
 | `abstimmen.html` | Abstimmseite fürs Publikum (QR-Code auf Folie 08, läuft auf GitHub Pages); dazu `js/abstimmen.js`, `css/abstimmen.css` |
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
-| `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (44 Prüfungen); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren, mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy und mitlesender „Folie“ (Abschnitt 6, `AUTOREN.md` 6c) |
+| `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (53 Prüfungen, auch das Zeitfenster mit vorgestellter Uhr); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren (Uhr vorstellen: `http://localhost:8787/uhr?vor=31`), mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy, mitlesender „Folie“ und Gegenprobe des Zeitfensters (Abschnitt 6, `AUTOREN.md` 6c) |
+| `werkzeuge/zeitfenster-e2e.mjs` | prüft das Zeitfenster auf Handy und Folie 08 im Browser (Chromium über playwright-core), nur mit Attrappen auf localhost und vorgestellten Uhren: Ablauf auf dem Handy, Speicher und Pause der Folie, Referentenfenster, Tooltip, alte Skript-Fassung, Lasttest-Gegenprobe; `--mutationen` = kaputte Kopien von `js/komponenten.js` und `js/abstimmen.js`; Ausgabe nach `_test/` (`AUTOREN.md` §20) |
 | `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 20.10.2026 mit A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04 und dem Chamäleon auf 08; nach den Freigaben neu erzeugen (Abschnitt 11) |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |

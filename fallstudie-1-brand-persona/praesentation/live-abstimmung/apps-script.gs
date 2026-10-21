@@ -12,6 +12,7 @@
    Was die Web-App kann – und nur das:
    • aktion=stimme  eine Stimme als neue Zeile ins Blatt „Stimmen“ schreiben
    • aktion=stand   die Stimmen einer Runde zählen und NUR die Zahlen herausgeben
+                    (auf Wunsch nur die der letzten minuten Minuten, ZEITFENSTER)
    Sie gibt keine Zeilen, keine Geräte-IDs und keine Zeiten heraus und löscht
    nichts. Dank @OnlyCurrentDoc (oben) erreicht sie nur diese eine Tabelle.
 
@@ -23,10 +24,16 @@
         → f({"ok":true});
      ?aktion=stand&umfrage=tier&runde=probe&anzahl=5&callback=f
         → f({"ok":true,"werte":[3,1,7,0,2],"n":13,"zeit":"2026-10-26T14:05:09.123Z"});
+     ?aktion=stand&umfrage=tier&runde=probe&anzahl=5&minuten=30&callback=f
+        → f({"ok":true,"werte":[2,0,5,0,1],"n":8,"zeit":"…","minuten":30});
+          (seit Fassung 20.10.2026: nur Stimmen der letzten 30 Minuten, ZEITFENSTER
+          unten; „minuten“ in der Antwort = das Fenster wurde angewandt. Ältere
+          Fassungen ignorieren minuten und antworten ohne dieses Feld.)
      Fehler
         → f({"ok":false,"fehler":"kurzer deutscher Text"});
-   Weitere Parameter (z. B. _=Zeitstempel gegen den Browser-Zwischenspeicher)
-   werden ignoriert. {"ok":true} kommt erst, wenn die Zeile geschrieben ist.
+   Weitere Parameter (z. B. _=Zeitstempel gegen den Browser-Zwischenspeicher,
+   minuten bei aktion=stimme) werden ignoriert. {"ok":true} kommt erst, wenn
+   die Zeile geschrieben ist.
    Bei Andrang: „Gerade kommen sehr viele Stimmen auf einmal – …“ (ANDRANG,
    unten). Mit diesem Text oder „Serverfehler: …“ sendet das Handy die Stimme
    von selbst noch einmal (js/abstimmen.js).
@@ -37,6 +44,9 @@
      anzahl          ganze Zahl 1 bis 9 (Zahl der Antwortmöglichkeiten)
      option          ganze Zahl, 0 ≤ option < anzahl (Nummer der Antwort ab 0,
                      Reihenfolge wie in marke.js → umfragen.tier.optionen)
+     minuten         nur aktion=stand, freiwillig: ganze Zahl 1 bis 1440 (höchstens
+                     ein Tag). Fehlt er, zählt der Stand ohne Zeitgrenze wie bisher;
+                     leer, 0 oder ungültig → Fehler wie bei den anderen Angaben.
      callback        muss /^[A-Za-z_$][\w$.]{0,63}$/ erfüllen – sonst kommt der
                      Fehler als reines JSON (ein fremder Name wird nie ausgegeben)
 
@@ -47,6 +57,36 @@
    „runde“ trennt Probe und Vortrag (marke.js → umfragen.tier.runde, z. B.
    'probe' und 'vortrag-2026-10-26'). So beginnt der Vortrag ohne Probestimmen –
    ohne geheimen Schlüssel im öffentlichen Repository.
+
+   ZEITFENSTER (Fassung vom 20.10.2026)
+   Auftrag Yannick (20.10.2026): Nach einer gewissen Zeit sollen alte Stimmen
+   nicht mehr auf Folie 08 stehen. Die Folie fragt deshalb mit minuten=30 ab
+   (marke.js → umfragen.tier.gueltigMinuten). Regel: Je Runde, Umfrage und
+   Gerät wird ZUERST die letzte Stimme bestimmt (wie oben), DANN zählt sie nur,
+   wenn ihre Zeit höchstens minuten Minuten vor der Anfrage liegt (genau
+   minuten Minuten alt zählt noch, eine Millisekunde älter nicht). Wer sich
+   kurz vor Ablauf umentscheidet, zählt mit der neuen Wahl weiter; ist auch
+   die letzte Stimme zu alt, zählt das Gerät gar nicht – eine ältere Stimme
+   desselben Geräts rückt nie nach. Die umgekehrte Reihenfolge (erst alte
+   Zeilen aussortieren, dann die letzte Stimme) ergäbe dasselbe, weil das
+   Fenster alle späteren Zeiten enthält und die letzte Stimme die späteste
+   Zeit hat; die gewählte Reihenfolge sagt die Regel direkt („die aktuelle
+   Stimme eines Geräts zählt, solange sie frisch ist“). Zeilen ohne gültige
+   Zeit (von Hand) zählen mit minuten nicht – ihr Alter ist unbekannt.
+   Verglichen wird die Spalte Zeit (beim Schreiben new Date(), als Datum aus
+   der Tabelle gelesen) mit new Date() bei der Anfrage, beides Zeitpunkte des
+   Servers – die Uhr der Handys spielt keine Rolle. Dass ein Datum beim
+   Schreiben und Lesen dieselbe Zeitzone der Tabelle nutzt und unverändert
+   zurückkommt, ist Modellwissen. Geprüft wird es in der echten Tabelle in
+   BEIDEN Richtungen: Steht die Zeit zu früh, fällt eine frische Teststimme
+   bei &minuten=30 heraus; steht sie zu spät, zählt sie nach 2 Minuten bei
+   &minuten=1 noch (dann zählten Stimmen länger als gewollt). Beides macht die
+   Kurzprüfung in ANLEITUNG.md („Skript aktualisieren“, Punkt 5) und der
+   Lasttest (werkzeuge/live-abstimmung-test.mjs, Gegenprobe).
+   Die Zeitzone der Tabelle während einer Abstimmung nicht ändern.
+   Die Zeilen bleiben im Blatt (nichts wird gelöscht), ohne minuten zählen sie
+   weiter. Ältere Fassungen ignorieren minuten: Dann gibt es kein Zeitfenster
+   – es wirkt erst nach „Skript aktualisieren“ (ANLEITUNG.md).
 
    Tabelle, Blatt „Stimmen“ (legt das Skript selbst an):
      Zeit | Runde | Umfrage | Option | Geraet
@@ -111,7 +151,7 @@
 /* Datum dieser Fassung – zeigt die Antwort auf eine unbekannte Aktion
    (z. B. …/exec?aktion=fassung). So lässt sich prüfen, ob nach „Neue Version“
    wirklich diese Fassung läuft. */
-const FASSUNG = '19.10.2026';
+const FASSUNG = '20.10.2026';
 const BLATT = 'Stimmen';
 const KOPF = ['Zeit', 'Runde', 'Umfrage', 'Option', 'Geraet'];
 /* Zahlenformate je Spalte. '@' = Text: Sonst macht Google Tabellen aus einer
@@ -133,6 +173,9 @@ const MUSTER_GERAET = /^[A-Za-z0-9_-]{8,64}$/;
 const MUSTER_CALLBACK = /^[A-Za-z_$][\w$.]{0,63}$/;
 const MUSTER_ZAHL = /^[0-9]{1,2}$/;
 const HOECHSTENS_OPTIONEN = 9;
+/* Zeitfenster der Stand-Abfrage (minuten): 1 Minute bis 1 Tag */
+const MUSTER_MINUTEN = /^[0-9]{1,4}$/;
+const HOECHSTENS_MINUTEN = 1440;
 /* So lange wartet eine Stimme höchstens auf den Zähler. Unter der Sperre wird
    nur eine Zahl gelesen und geschrieben; wie lange das bei Google dauert, ist
    nicht gemessen. Kürzer als das Zeitlimit je Versuch auf dem Handy
@@ -322,6 +365,11 @@ function standZaehlen_(p) {
 
   const anzahl = ganzeZahl_(p.anzahl);
   const werte = new Array(anzahl).fill(0);
+  /* ZEITFENSTER (Kopf): ohne minuten keine Grenze. Eine Uhrzeit für Grenze
+     und Antwort. */
+  const minuten = p.minuten === undefined ? 0 : minutenWert_(p.minuten);
+  const jetzt = new Date();
+  const grenze = minuten ? jetzt.getTime() - minuten * 60000 : -Infinity;
   const blatt = blattHolen_(false);     /* nur lesen: kein Blatt = noch keine Stimmen */
   const letzteZeile = blatt ? blatt.getLastRow() : 0;
 
@@ -343,13 +391,19 @@ function standZaehlen_(p) {
       if (!bisher || zeit >= bisher.zeit) letzte.set(geraet, { zeit: zeit, option: Number(z[3]) });
     });
     letzte.forEach(function (stimme) {
+      /* erst jetzt das Zeitfenster: Ist die LETZTE Stimme zu alt, zählt das
+         Gerät nicht (ohne minuten ist grenze -Infinity: alles zählt wie bisher) */
+      if (stimme.zeit < grenze) return;
       const o = stimme.option;
       if (Number.isInteger(o) && o >= 0 && o < anzahl) werte[o] += 1;
     });
   }
 
   const n = werte.reduce(function (summe, wert) { return summe + wert; }, 0);
-  return { ok: true, werte: werte, n: n, zeit: new Date().toISOString() };
+  const antwort = { ok: true, werte: werte, n: n, zeit: jetzt.toISOString() };
+  /* nur mit Fenster: zeigt der Folie, dass diese Fassung es angewandt hat */
+  if (minuten) antwort.minuten = minuten;
+  return antwort;
 }
 
 
@@ -365,7 +419,13 @@ function eingabenPruefen_(p, mitStimme) {
   if (!(anzahl >= 1 && anzahl <= HOECHSTENS_OPTIONEN)) {
     return 'Ungültige Anzahl: ganze Zahl von 1 bis ' + HOECHSTENS_OPTIONEN + '.';
   }
-  if (!mitStimme) return null;
+  if (!mitStimme) {
+    /* minuten ist freiwillig – wenn angegeben, muss er stimmen */
+    if (p.minuten !== undefined && !(minutenWert_(p.minuten) >= 1)) {
+      return 'Ungültige Minuten (Zeitfenster): ganze Zahl von 1 bis ' + HOECHSTENS_MINUTEN + ' oder weglassen.';
+    }
+    return null;
+  }
 
   const option = ganzeZahl_(p.option);
   if (!(option >= 0 && option < anzahl)) {
@@ -482,6 +542,12 @@ function zaehlerWert_(text) {
 /* „0“ … „99“ → Zahl; alles andere (leer, „-1“, „1.5“, „1e0“, „ 1“) → NaN */
 function ganzeZahl_(wert) {
   return passt_(MUSTER_ZAHL, wert) ? Number(wert) : NaN;
+}
+
+/* minuten: „1“ … „1440“ → Zahl; alles andere („0“, „1441“, „30.5“, „ 30“, leer) → NaN */
+function minutenWert_(wert) {
+  const zahl = passt_(MUSTER_MINUTEN, wert) ? Number(wert) : NaN;
+  return zahl >= 1 && zahl <= HOECHSTENS_MINUTEN ? zahl : NaN;
 }
 
 function istDatum_(wert) {

@@ -733,7 +733,7 @@
   /* ===========================================================================
      3. LIVE-UMFRAGE  <div class="umfrage" data-umfrage="tier" data-aufloesung="1">
      Daten aus marke.js → umfragen.tier = { frage, optionen, link, kurzLink,
-     ergebnisLink, unsereAntwort, beispielwerte, liveQuelle, runde }.
+     ergebnisLink, unsereAntwort, beispielwerte, liveQuelle, runde, gueltigMinuten }.
      Zählen: Klick = +1 · Umschalt+Klick oder Rechtsklick = −1 ·
              Ziffern 1–9 auf der Folie (Umschalt = −1) ·
              Doppelklick auf den Wert = Zahl eintippen · Knopf „Werte“ = alle eintragen.
@@ -746,12 +746,13 @@
 
 
   /* ---------------------------------------------------------------------------
-     3a. EIGENE LIVE-ABSTIMMUNG (marke.js → umfragen.tier.liveQuelle und runde)
+     3a. EIGENE LIVE-ABSTIMMUNG (marke.js → umfragen.tier.liveQuelle, runde
+         und gueltigMinuten)
      Das Publikum stimmt auf abstimmen.html ab; die Stimmen sammelt eine Web-App
      (Google Apps Script, live-abstimmung/apps-script.gs). Diese Folie fragt nur
      den Stand ab – per JSONP (<script>), das geht ohne CORS und auch von file://:
-       <liveQuelle>?aktion=stand&umfrage=tier&runde=<runde>&anzahl=<n>&callback=f
-       → f({"ok":true,"werte":[3,1,7,0,2],"n":13,"zeit":"…"})
+       <liveQuelle>?aktion=stand&umfrage=tier&runde=<runde>&anzahl=<n>[&minuten=<m>]&callback=f
+       → f({"ok":true,"werte":[3,1,7,0,2],"n":13,"zeit":"…"[,"minuten":<m>]})
        → f({"ok":false,"fehler":"…"})
      • alle 2 s, solange die Folie mit der Umfrage aktiv ist (beim Betreten sofort);
        höchstens eine Anfrage gleichzeitig – auch beim Server: Die nächste startet
@@ -774,6 +775,27 @@
        gelten sie nur in derselben Runde. Stimmen und Handwerte der Generalprobe
        ('probe') erscheinen im Vortrag also nie als Ergebnis – auch nicht, wenn
        die Web-App dann nicht erreichbar ist (dann Beispielwerte mit Pille).
+     • ZEITFENSTER (seit 20.10.2026, marke.js → gueltigMinuten, z. B. 30): Jede
+       Stand-Abfrage trägt minuten=<gueltigMinuten>; der Server zählt dann je
+       Handy die letzte Stimme nur, solange sie höchstens so alt ist. Gespeicherte
+       Werte tragen zusätzlich ihre Zeit (zeit = Date.now() beim Speichern) und
+       verfallen beim Laden (Seitenstart, Betreten der Folie, Abgleich mit dem
+       Referentenfenster), wenn sie älter sind. Dann steht NULL da, keine
+       Beispielwerte (Nacharbeit 21.10.2026): Die abgelaufenen Stimmen zählen
+       nicht mehr, 0 ist der ehrliche Stand – Beispielwerte (z. B. n = 64)
+       sähen im Vortrag bis zur ersten Antwort wie ein Ergebnis aus. Die
+       Kontrolle „30 Minuten vorher“ (LIESMICH 12) speichert n = 0; im Vortrag
+       ist das älter als 30 Minuten – auch dann also Nullen. Beispielwerte nur
+       noch bei anderer Runde oder ganz ohne Speicher. Eine gespeicherte Pause
+       verfällt mit ihren Handwerten (sie schützte nur diese). Antwortet die
+       Web-App ohne "minuten" (Skript-Fassung vor dem 20.10.2026), gibt es kein
+       Zeitfenster: Hinweis in der Konsole und im Tooltip der Pille. Ungültige
+       gueltigMinuten (nicht ganzzahlig 1–1440) → Warnung, ohne Zeitgrenze.
+       0 oder leer = ohne Grenze. Das Referentenfenster lässt gespeicherte
+       Werte ebenso verfallen; beim Betreten von Folie 08 schickt ihm das
+       Vortragsfenster aber die Werte, die es gerade zeigt (Antwort auf
+       „melden“) – so sehen Referent und Leinwand dieselben Zahlen, auch wenn
+       dort noch ältere, pausierte Handwerte stehen.
      • Der QR-Code zur eigenen Abstimmseite erscheint nur, wenn liveQuelle und
        runde brauchbar sind (sonst Warnung in der Konsole, Zählmodus).
      • Das Referentenfenster fragt NICHT selbst: Werte kommen wie bisher über
@@ -787,17 +809,19 @@
        liveQuelle OHNE ?aufnahme und setzt die Klasse „aufnahme“ selbst: Dann
        fragt Folie 08 wie im Vortrag, und die eingebaute Attrappe des Werkzeugs
        antwortet – nichts geht ins Netz.
-     • Ohne liveQuelle: nichts davon – alles wie bisher.
+     • Ohne liveQuelle: nichts davon – alles wie bisher (auch kein Zeitfenster).
      Test ohne Google (nur lokal, file:// oder localhost):
        index.html?quelle=http://localhost:8787/exec#f08
        (Server: node werkzeuge/live-abstimmung-test.mjs --server 8787;
        Referentenfenster dann direkt mit index.html?referent&quelle=… öffnen –
-       Taste P gibt ?quelle nicht weiter)
+       Taste P gibt ?quelle nicht weiter; die Uhr des Servers lässt sich mit
+       http://localhost:8787/uhr?vor=31 vorstellen – Zeitfenster testen)
      --------------------------------------------------------------------------- */
   var LIVE_TAKT = 2000;            /* ms zwischen zwei Abfragen */
   var LIVE_ZEITLIMIT = 4000;       /* ms: Antwort verspätet = Fehlversuch (nach 2 × → „offline“), Anfrage bleibt offen */
   var LIVE_ZEITLIMIT_HART = 15000; /* ms: Anfrage aufgeben, erst dann startet die nächste */
   var LIVE_MUSTER_NAME = /^[A-Za-z0-9_-]{1,40}$/;            /* umfrage, runde */
+  var LIVE_HOECHSTENS_MINUTEN = 1440;                         /* gueltigMinuten: 1 bis 1440 (wie apps-script.gs) */
   var LIVE_MUSTER_QUELLE = /^https:\/\/script\.google\.com\/\S+$/;
   var LIVE_MUSTER_LOKAL = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?\/\S*$/;
   var seitenParameter = new URLSearchParams(location.search);
@@ -841,6 +865,24 @@
     if (konfig.optionen.length > 9) return 'höchstens 9 Optionen';
     return '';
   }
+  /* Zeitfenster (marke.js → gueltigMinuten): ganze Zahl 1–1440 → Minuten;
+     0, leer oder fehlend → 0 (ohne Zeitgrenze); alles andere → Warnung
+     (einmal je Umfrage) und 0 – ein ungültiger Wert ginge sonst an den Server,
+     der die Abfrage ablehnen würde (Pille „offline“). */
+  var liveFensterGewarnt = {};
+  function umfrageGueltigMinuten(id, konfig) {
+    var roh = konfig.gueltigMinuten;
+    if (roh === undefined || roh === null || roh === '' || roh === 0 || roh === '0') return 0;
+    var zahl = (typeof roh === 'number' || typeof roh === 'string') ? Number(roh) : NaN;
+    if (Math.floor(zahl) === zahl && zahl >= 1 && zahl <= LIVE_HOECHSTENS_MINUTEN) return zahl;
+    if (!liveFensterGewarnt[id]) {
+      liveFensterGewarnt[id] = true;
+      console.warn('Umfrage „' + id + '“: marke.js → umfragen.' + id + '.gueltigMinuten muss eine ganze Zahl von 1 bis ' +
+        LIVE_HOECHSTENS_MINUTEN + ' sein (oder 0/leer) – Stimmen zählen ohne Zeitgrenze.');
+    }
+    return 0;
+  }
+
   /* Die eigene Abstimmseite nimmt Stimmen nur an, wenn liveQuelle und runde
      brauchbar sind – sonst kein QR-Code dorthin (Folie wie bisher: Zählmodus).
      Ein Werkzeug-Link (Particify, Mentimeter) gilt wie bisher immer. */
@@ -909,6 +951,8 @@
     var l = u.live = {
       quelle: quelle,
       runde: String(u.konfig.runde || '').trim(),
+      minuten: umfrageGueltigMinuten(u.id, u.konfig),   /* Zeitfenster, 0 = ohne */
+      fensterAn: null,   /* Server wendet das Zeitfenster an: true / false (alte Fassung) / null (unbekannt) */
       pille: pille,
       text: pille.lastChild,
       zustand: '',
@@ -925,8 +969,13 @@
       statusSichtbar: false
     };
     if (l.fehler) l.meldung = l.fehler;
-    /* Pause übersteht ein Neuladen (nur im Vortragsfenster, nur dieselbe Runde) */
-    else if (!LIVE_REFERENT) l.pausiert = util.laden(livePauseSchluessel(u), false) === true;
+    /* Pause übersteht ein Neuladen (nur im Vortragsfenster, nur dieselbe Runde) –
+       aber nicht, wenn die Handwerte, die sie schützt, nach dem Zeitfenster
+       verfallen sind (umfrageLaden → u.abgelaufen) */
+    else if (!LIVE_REFERENT) {
+      l.pausiert = util.laden(livePauseSchluessel(u), false) === true && !u.abgelaufen;
+      if (u.abgelaufen) util.speichern(livePauseSchluessel(u), null);
+    }
     pille.addEventListener('click', function (e) {
       e.stopPropagation();
       pille.blur();                 /* sonst löst die nächste Leertaste die Pille statt „weiter“ aus */
@@ -946,6 +995,13 @@
     var titel = LIVE_PILLE[zustand].titel;
     if (zustand === 'offline' && l.meldung) titel += ' (' + l.meldung + ')';
     titel += ' · Runde „' + l.runde + '“';
+    /* Zeitfenster: drei Fälle – angewandt (true), alte Fassung (false),
+       noch keine Antwort der Web-App (null: nicht bekannt, ob sie es kann) */
+    if (l.minuten) {
+      if (l.fensterAn === true) titel += ' · zählt Stimmen der letzten ' + l.minuten + ' Min.';
+      else if (l.fensterAn === false) titel += ' · OHNE Zeitfenster: Web-App mit Skript-Fassung vor dem 20.10.2026 (ANLEITUNG.md, „Skript aktualisieren“)';
+      else titel += ' · Zeitfenster ' + l.minuten + ' Min. angefragt (noch keine Antwort der Web-App)';
+    }
     if (l.zeit) titel += ' · letzter Stand ' + l.zeit;
     if (LIVE_REFERENT && zustand === 'verbinde') titel = 'Live-Abstimmung: Zustand kommt aus dem Vortragsfenster · Runde „' + l.runde + '“';
     l.pille.title = titel;
@@ -980,7 +1036,7 @@
   /* Vortragsfenster: Zustand zeigen und ans Referentenfenster melden */
   function liveMelden(u, zustand) {
     pilleZeigen(u, zustand);
-    Deck.kanal.senden('umfrage-live', { id: u.id, zustand: zustand, zeit: u.live.zeit, meldung: u.live.meldung });
+    Deck.kanal.senden('umfrage-live', { id: u.id, zustand: zustand, zeit: u.live.zeit, meldung: u.live.meldung, fensterAn: u.live.fensterAn });
   }
 
   function liveStarten(u) {
@@ -1031,7 +1087,9 @@
       }, stufe * LIVE_ZEITLIMIT);
     });
     l.unterwegs = true;
-    l.abbrechen = liveAnfrage(l.quelle, { aktion: 'stand', umfrage: u.id, runde: l.runde, anzahl: anzahl }, function (fehler, daten) {
+    var parameter = { aktion: 'stand', umfrage: u.id, runde: l.runde, anzahl: anzahl };
+    if (l.minuten) parameter.minuten = l.minuten;           /* Zeitfenster (gueltigMinuten) */
+    l.abbrechen = liveAnfrage(l.quelle, parameter, function (fehler, daten) {
       uhren.forEach(clearTimeout);
       l.unterwegs = false;
       l.abbrechen = null;
@@ -1063,6 +1121,17 @@
       l.fehlerInFolge = 0;
       l.meldung = '';
       l.zeit = liveUhrzeit(daten.zeit);
+      /* Hat der Server das Zeitfenster angewandt? Nur die Fassung ab 20.10.2026
+         antwortet mit "minuten"; ältere zählen ohne Zeitgrenze. */
+      if (l.minuten) {
+        var fensterAn = daten.minuten === l.minuten;
+        if (!fensterAn && l.fensterAn !== false) {
+          console.warn('Umfrage „' + u.id + '“: Die Web-App wendet das Zeitfenster (' + l.minuten + ' Min.) nicht an – ' +
+            'vermutlich läuft bei Google noch eine Skript-Fassung vor dem 20.10.2026. Stimmen zählen dann ohne Zeitgrenze ' +
+            '(live-abstimmung/ANLEITUNG.md, „Skript aktualisieren“).');
+        }
+        l.fensterAn = fensterAn;
+      }
       liveWerteUebernehmen(u, werte);
       liveMelden(u, 'live');
     });
@@ -1130,6 +1199,17 @@
     if (neu && l.unterwegs && l.abbrechen) l.abbrechen();
     if (l.takt) liveAbfragen(u);
   }
+  /* Zeitfenster: Die Handwerte, die eine Pause schützte, sind verfallen
+     (umfrageLaden → u.abgelaufen) – dann gilt auch die Pause nicht mehr, die
+     Folie fragt wieder (nur Vortragsfenster; aufgerufen vor liveStarten). */
+  function livePauseVerwerfen(u) {
+    var l = u.live;
+    if (!l || LIVE_REFERENT || l.fehler || !l.pausiert) return;
+    l.pausiert = false;
+    l.generation++;
+    util.speichern(livePauseSchluessel(u), null);
+    liveMelden(u, 'verbinde');
+  }
 
   Deck.kanal.bei('umfrage-live', function (d) {
     if (!d) return;
@@ -1140,6 +1220,7 @@
         if (!d.zustand || !LIVE_PILLE[d.zustand]) return;
         u.live.zeit = String(d.zeit || '');
         u.live.meldung = String(d.meldung || '');
+        u.live.fensterAn = d.fensterAn === true || d.fensterAn === false ? d.fensterAn : null;
         pilleZeigen(u, d.zustand);
         /* Vorschau „Als Nächstes“ mit derselben Pille */
         if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
@@ -1149,6 +1230,12 @@
         liveFortsetzen(u);
       } else if (d.aktion === 'melden' && u.live.zustand) {
         liveMelden(u, u.live.zustand);
+        /* Zeitfenster: die Werte mitschicken, die hier gerade auf der Leinwand
+           stehen – das Referentenfenster ließe gespeicherte Werte sonst nach
+           gueltigMinuten verfallen, die hier noch stehen (z. B. pausierte
+           Handwerte, seit dem Betreten nicht neu geladen). Nur, wenn die Folie
+           mit der Umfrage hier aktiv ist. */
+        if (util.istAktiv(u.huelle)) Deck.kanal.senden('umfrage', { id: u.id, werte: u.werte.slice(), beispiel: u.beispiel });
       }
     });
   });
@@ -1163,11 +1250,27 @@
        Ergebnis – auch nicht, wenn die Web-App dann nicht erreichbar ist (dann
        Beispielwerte mit Pille; die erste Handstimme löscht sie). Ohne liveQuelle
        (Weg B, Plan C) gelten sie wie bisher immer. */
-    var passend = gespeichert && Array.isArray(gespeichert.werte) &&
-      (!liveQuelleVon(u.konfig) || gespeichert.runde === umfrageRunde(u.konfig));
+    var mitLive = !!liveQuelleVon(u.konfig);
+    var gleicheRunde = !!gespeichert && Array.isArray(gespeichert.werte) &&
+      (!mitLive || gespeichert.runde === umfrageRunde(u.konfig));
+    /* Zeitfenster (nur mit liveQuelle und gueltigMinuten): Werte, die vor mehr
+       als gueltigMinuten gespeichert wurden, verfallen – sie enthalten nur
+       Stimmen, die mindestens so alt sind. Ohne Zeitstempel (älterer Speicher)
+       gelten sie als verfallen. u.abgelaufen merkt das für die Pause. */
+    var fenster = mitLive ? umfrageGueltigMinuten(u.id, u.konfig) * 60000 : 0;
+    var frisch = !fenster || (gleicheRunde && typeof gespeichert.zeit === 'number' && Date.now() - gespeichert.zeit <= fenster);
+    u.abgelaufen = gleicheRunde && !frisch;
+    var passend = gleicheRunde && frisch;
     if (passend) {
       u.werte = u.konfig.optionen.map(function (x, i) { return Math.max(0, Number(gespeichert.werte[i]) || 0); });
       u.beispiel = !!gespeichert.beispiel;
+    } else if (u.abgelaufen && !gespeichert.beispiel) {
+      /* Zeitfenster abgelaufen (dieselbe Runde): Die Stimmen bzw. Handwerte
+         zählen nicht mehr – ehrlicher Stand 0, KEINE Beispielwerte (die sähen
+         im Vortrag bis zur ersten Antwort der Web-App wie ein Ergebnis aus).
+         Die nächste Antwort ersetzt die Nullen; der Speicher bleibt, wie er ist. */
+      u.werte = new Array(anzahl).fill(0);
+      u.beispiel = false;
     } else if (Array.isArray(u.konfig.beispielwerte) && u.konfig.beispielwerte.length) {
       u.werte = u.konfig.optionen.map(function (x, i) { return Math.max(0, Number(u.konfig.beispielwerte[i]) || 0); });
       u.beispiel = true;
@@ -1177,7 +1280,8 @@
     }
   }
   function umfrageSpeichern(u) {
-    util.speichern('umfrage:' + u.id, { werte: u.werte, beispiel: u.beispiel, runde: umfrageRunde(u.konfig) });
+    /* zeit: für das Zeitfenster (umfrageLaden) */
+    util.speichern('umfrage:' + u.id, { werte: u.werte, beispiel: u.beispiel, runde: umfrageRunde(u.konfig), zeit: Date.now() });
     Deck.kanal.senden('umfrage', { id: u.id });
   }
 
@@ -1467,7 +1571,23 @@
     /* Referentenansicht: Vorschau „Als Nächstes“ mit den neuen Stimmen */
     if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
   }
-  Deck.kanal.bei('umfrage', function (d) { umfrageNeuLaden(d && d.id); });
+  /* Referentenfenster: Werte, die das Vortragsfenster gerade zeigt (Antwort auf
+     „melden“, Abschnitt 3a, ZEITFENSTER) – direkt übernehmen statt aus dem
+     Speicher laden, wo sie nach gueltigMinuten verfallen sein können */
+  function umfrageUebernehmen(d) {
+    umfragen.forEach(function (u) {
+      if (u.id !== d.id || d.werte.length !== u.konfig.optionen.length) return;
+      if (!d.werte.every(function (w) { return typeof w === 'number' && w >= 0 && Math.floor(w) === w; })) return;
+      u.werte = d.werte.slice();
+      u.beispiel = !!d.beispiel;
+      umfrageZeichnen(u, true);
+    });
+    if (Deck.vorschauAuffrischen) Deck.vorschauAuffrischen();
+  }
+  Deck.kanal.bei('umfrage', function (d) {
+    if (LIVE_REFERENT && d && Array.isArray(d.werte)) { umfrageUebernehmen(d); return; }
+    umfrageNeuLaden(d && d.id);
+  });
   window.addEventListener('storage', function (e) {
     if (e.key && e.key.indexOf(util.speicherSchluessel('umfrage:')) === 0) umfrageNeuLaden(e.key.slice(util.speicherSchluessel('umfrage:').length));
     if (e.key && e.key.indexOf(util.speicherSchluessel('wortwolke:')) === 0) wolkeNeuLaden(e.key.slice(util.speicherSchluessel('wortwolke:').length));
@@ -1480,6 +1600,7 @@
       var u = huelle._umfrage;
       if (!u) return;
       umfrageLaden(u);
+      if (u.abgelaufen) livePauseVerwerfen(u);   /* Zeitfenster: verfallene Handwerte → keine Pause mehr */
       umfrageZeichnen(u, false);
       liveStarten(u);            /* eigene Live-Abstimmung: sofort fragen, dann alle 2 s */
     },
