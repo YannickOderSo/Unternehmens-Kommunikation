@@ -132,6 +132,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 110 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
 | 111 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D22 (neu gestartet) | D22 war am Limit gescheitert (Bau fast fertig, 28 Dateien geändert); mit Hinweis neu gestartet |
 | 112 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D22 | nur Nachweis committet; D22 läuft |
+| 113 | 21.10.2026 | Yannick | „Mach erstmal weiter das Skript mache ich später“ | Ü04 (Übernahme), D23 (geplant) | Branch von Account 2 (Ü04 fertig) nach master zusammengeführt; Abgleich der Befunde mit dem aktuellen Stand geplant |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1944,6 +1945,23 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D22 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D22 (läuft)
+
+### 113 – 21.10.2026 – Yannick
+
+> Mach erstmal weiter das Skript mache ich später
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Zwischen 112 und 113: D22 fertig, selbst geprüft und committet (`05b15f4`), Ergebnis an Yannick berichtet.
+  - Aktualisierung des Apps Script bleibt bei Yannick (später).
+  - Branch `praesentation-account-2` gelesen: Account 2 hat Ü04 abgeschlossen (`VORTRAGSREIFE.md`, `fragerunde.md`,
+    Abnahme selbst gemacht, Übergabedatei `uebergaben/2026-10-21_von-account-2_an-account-1.md`). Die Befunde beziehen
+    sich auf master a929391 (19.10.) – vor D15–D22.
+  - Branch nach master zusammengeführt (nur neue Dateien von Account 2; Rohprotokoll beider Sitzungen vereinigt).
+  - Nächstes Paket D23: Befunde und Fragerunde mit dem aktuellen Stand abgleichen, noch offene technische Punkte
+    umsetzen, offene Punkte je Person auflisten.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D23 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
