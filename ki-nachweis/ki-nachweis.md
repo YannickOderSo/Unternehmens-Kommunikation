@@ -133,6 +133,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 111 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D22 (neu gestartet) | D22 war am Limit gescheitert (Bau fast fertig, 28 Dateien geändert); mit Hinweis neu gestartet |
 | 112 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D22 | nur Nachweis committet; D22 läuft |
 | 113 | 21.10.2026 | Yannick | „Mach erstmal weiter das Skript mache ich später“ | Ü04 (Übernahme), D23 (geplant) | Branch von Account 2 (Ü04 fertig) nach master zusammengeführt; Abgleich der Befunde mit dem aktuellen Stand geplant |
+| 114 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1960,8 +1961,17 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   - Nächstes Paket D23: Befunde und Fragerunde mit dem aktuellen Stand abgleichen, noch offene technische Punkte
     umsetzen, offene Punkte je Person auflisten.
 - **Ergebnis:** in Arbeit
-- **Unteragenten:** D23 (geplant)
+- **Unteragenten:** D23 (läuft; Merge `e20d623`)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 114 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D23 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D23 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
