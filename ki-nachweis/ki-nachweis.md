@@ -137,6 +137,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 115 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D23 (fortgesetzt) | D23 war nach 5 Minuten am Limit gescheitert (keine Dateiänderungen); fortgesetzt |
 | 116 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
+| 118 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2006,6 +2007,15 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Umsetzung, die fertigen Agenten bleiben im Zwischenspeicher), nach dem Reset per resume fortgesetzt.
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D23 (fortgesetzt)
+
+### 118 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D23 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D23 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
