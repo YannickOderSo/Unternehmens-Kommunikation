@@ -127,6 +127,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 105 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D20 (neu gestartet) | D20 war am Limit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet |
 | 106 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft, D22 vorbereitet |
 | 107 | 21.10.2026 | Yannick | „Was steht danach für eine task an?“ | – | Übersicht im Chat: laufende Pakete, Aufgaben für Yannick, Termine laut Arbeitsplan, Ergebnis Account 2 zum Zusammenführen |
+| 108 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1881,6 +1882,15 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Antwort im Chat
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 108 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D20 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D20 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
