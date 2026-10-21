@@ -129,6 +129,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 107 | 21.10.2026 | Yannick | „Was steht danach für eine task an?“ | – | Übersicht im Chat: laufende Pakete, Aufgaben für Yannick, Termine laut Arbeitsplan, Ergebnis Account 2 zum Zusammenführen |
 | 108 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
 | 109 | 21.10.2026 | Yannick | „Entscheidungen beide ja“ + Account 2 gibt bei 95 % Wochenlimit seine Aufgaben an Account 1 ab | D22 (Auftrag ergänzt) | Chamäleon ins Feld Tonalität (Folie 10, 08b „Ins Steuerrad“), Limbic-Typ bleibt Hauptaussage – in D22 aufgenommen; Stand Account 2 geprüft |
+| 110 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1911,6 +1912,15 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** Auftrag D22 ergänzt; Antwort im Chat
 - **Unteragenten:** D20 (läuft), D22 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 110 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D20 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D20 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
