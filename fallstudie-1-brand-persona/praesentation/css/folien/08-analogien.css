@@ -26,7 +26,7 @@
    LOKALE MASSE (hier ändern statt in den einzelnen Regeln)
    --------------------------------------------------------------------------- */
 #f08 {
-  --g4-bild: 96px;               /* Zeichnung im Kartenkopf (Waschbär, Mensch) */
+  --g4-bild: 96px;               /* Zeichnung im Kartenkopf (Chamäleon, Mensch) */
   --g4-bild-klein: 72px;         /* Zeichnung im Gegenpol (Adler, Kundschaft) */
   --g4-wb-bild: 80px;            /* Zeichnung der Wettbewerber */
   --g4-hand: 128px;              /* Hand „Abstimmung per Handzeichen“ */
@@ -150,9 +150,10 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   padding-top: var(--abstand-5);
   border-top: var(--linie-fein) solid var(--f-linie);
 }
-/* Satz zur Aussagezahl (Schritt 1): „sehen HOLY wie wir: / als Waschbär“ –
+/* Satz zur Aussagezahl (Schritt 1): „sehen HOLY wie wir: / als Chamäleon“ –
    Umbruch vor „als“ statt mitten in „wie wir“ (Breite passt zum Standardsatz
-   aus marke.js; bei anderem Satz ggf. anpassen) */
+   aus marke.js; geprüft 20.10.2026 in allen drei Themen; bei anderem Satz
+   ggf. anpassen) */
 #f08 .umfrage-aussage .ua-text {
   max-width: 10.4em;
   text-wrap: wrap;

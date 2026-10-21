@@ -2,10 +2,13 @@
 
 Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `praesentation/` – es wird
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
-Stand: 19.10.2026 (seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
+Stand: 20.10.2026 (seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
 Kategoriedaten Kantar/Statista vollständig, Rechtevermerk Limbic®, „Nachprüfung, KI-gestützt“ statt „eigene
 Prüfung“; 19.10.: Abruf des DNB-Katalogs als KI-gestützt gekennzeichnet, Grafiken in `../grafiken/` eingeordnet,
-Gründerbefragung als zweite Ausnahme in Abschnitt 5).
+Gründerbefragung als zweite Ausnahme in Abschnitt 5; Rätselbild Folie 01 und Persona-Bild Folie 04 als eigene
+Illustrationen, KI-gestützt, statt Platzhalter; 20.10.: Analogie-Tier Chamäleon statt Waschbär, Abschnitte 3 und 5;
+Rätselbild Folie 01 mit dem Original-Logo auf der Dose, `raetsel-holy-logo.svg`, Entscheidung Yannick, Abschnitte 3
+und 4 – nach zwei Prüfungen ehrlicher eingeordnet: fiktive Dose, Logo als Teil von Illustration und Rätsel).
 
 ## 1. Schriften (Ordner `schriften/`)
 
@@ -50,18 +53,61 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 
 - **Icon-Satz** (Linien-Icons 24 × 24, Strichstärke 2; Inline-SVG-Sprite am Anfang von `index.html`):
   eigene Gestaltung, keine fremden Icon-Bibliotheken, keine Plattform-Logos.
-- **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Waschbär, Adler, Löwe, Schwan auf Folie 08,
+- **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Chamäleon, Adler, Löwe, Schwan auf Folie 08 und
+  auf der Abstimmseite – das Chamäleon seit 20.10.2026 statt des Waschbärs,
   Motiv-Piktogramme auf Folie 09/09b, Markensteuerrad, Limbic Map, Diagramme): eigene SVG-Zeichnungen
   bzw. per Skript aus den Daten erzeugt – kein Nachbau von Markenzeichen. Das Maskottchen „Raptor“ von
   HOLY wird nur benannt (Folie 09: Adler-Piktogramm als Platzhalter), nicht abgebildet – einzige mögliche
   Ausnahme ist der Screenshot des Schlüsselbild-Beitrags auf Folie 09 (Regel in Abschnitt 4).
-- **Persona-Platzhalter auf Folie 04** (Inline-SVG in `index.html`, Stand 16.10.2026): eigene,
-  stilisierte Zeichnung „Marco in der Nachtschicht“ – Figur ohne Gesicht, Arbeitsjacke mit
-  Reflexstreifen, Shaker, Mond und Häuser. Fiktive Person, kein Foto, kein KI-Bild; gekennzeichnet
-  „Platzhalter – KI-Bild folgt“, bis die Gruppe das gekennzeichnete KI-Bild (Bild-Prompt P6 in
-  `../prompts.md`) einträgt. **Dann diesen Absatz ändern:** Persona-Bild KI-generiert (Werkzeug, Datum,
-  Prompt P6), fiktive Person, keine reale oder erkennbare Person; Datei in Abschnitt 4 eintragen und in B7
-  („Technik“) eine Zeile „Persona-Bild Folie 04: KI-generiert, Werkzeug, Datum“ ergänzen.
+- **Illustrationen auf Folie 01 und 04** (seit 19.10.2026, Dateien in Abschnitt 4): eigene Gestaltung,
+  KI-gestützt (Claude Code), 19.10.2026 – **von Claude Code als SVG-Code erzeugt** (Rätselbild per
+  Generator-Skript, Persona-Bild direkt als SVG mit Hilfsskript für die Regalgeometrie); Motivvorgaben,
+  Auswahl und Prüfung durch die Gruppe. Ohne Vorlage, ohne Fotos, ohne Bilder aus dem Netz und ohne
+  Bildgenerator. Kein Logo, kein Schriftzug und keine kopierte Verpackung von HOLY; Farben und Bildstil nur
+  nachempfunden (Dossier Kap. 6.3/6.4 ✔ [1, 5, 30, 73]). **Ausnahme seit Di, 20.10.2026: das Rätselbild auf
+  Folie 01** (nächster Punkt). Es enthält eine Datei aus dem Netz – das Original-Logo `holy-logo-oval.png` von
+  de.holy.com, also auch den Schriftzug von HOLY – und setzt es auf eine nachempfundene, erfundene Verpackung.
+  Für dieses eine Bild sind die Regeln „ohne Bilder aus dem Netz“, „kein Logo, kein Schriftzug“ und „Verpackung
+  nur ohne Markenzeichen nachempfinden“ aufgehoben (Entscheidung Yannick, KI-Nachweis Nr. 98). Für Folie 04 und
+  alle weiteren Illustrationen gelten sie weiter. Eine echte Verpackung ist weiterhin nicht kopiert.
+  - **Rätselbild Folie 01** (seit 20.10.2026 `raetsel-holy-logo.svg`): Produkt-Stillleben mit einer
+    **fiktiven Pappdose** (nachempfunden ist nur der Verpackungstyp – runde Pappdose mit schwarzem Deckel,
+    Dossier 6.3 ✔ [30]; Etikett, Sorte, Sticker und Gestaltung sind erfunden, kein echtes Produkt); auf dem
+    Etikett groß und frontal das **Original-Logo** von HOLY (gelbes Oval,
+    `holy-logo-oval.png`, © HOLY Softdrinks GmbH, de.holy.com, Abruf 16.10.2026), darunter eine kleine
+    Drachenfrucht im Comic-Aufkleber-Stil, dazu Shaker, Drachenfrucht, Eiswürfel. Das Logo ist **unverändert**
+    als base64-PNG (data-URI) in die SVG eingebettet und nur skaliert – nicht nachgezeichnet, nicht verzerrt,
+    nicht umgefärbt, nichts darübergelegt. Eingebettet, weil eine als Bild geladene SVG keine externen Dateien
+    nachlädt (im Browser und im Druck-PDF geprüft, 20.10.2026). **Entscheidung von Yannick Heisler (Di,
+    20.10.2026, KI-Nachweis Nr. 98)**, nachdem das Publikum beim Rätsel ohne Logo keine Chance hatte: „Groß das
+    Logo und daneben bei der Auflösung dann die illustration mit logo“. **Art der Nutzung (ehrlich eingeordnet):**
+    Die Logo-Datei ist unverändert, die Darstellung nicht nur Kennzeichnung – das Logo ist Teil der Illustration
+    und des Rätsels: in Schritt 0 und 1 von Folie 01 stark vergrößert und unscharf und noch **ohne Quelle** (sie
+    verriete die Lösung), ab der Auflösung mit Quelle in der Fußzeile. **Offen:** Klärung mit dem Betreuer
+    (LIESMICH, Abschnitt 12) – konkret: Original-Logo auf einer erfundenen Verpackung, im Rätsel unscharf,
+    öffentlich im Repository und in den Exporten. Bis zur Klärung bleibt die Fassung ohne Logo
+    (`raetsel-holy.svg`, 19.10.2026) als Rückfall liegen. **Weiter kein Tier auf dem Etikett:** HOLY
+    gibt jeder Energy-Sorte ein eigenes Comic-Tier (Dossier 6.3 ✔ [30]), jedes gezeichnete Tier könnte also
+    eine echte Sorte nachbilden; die erste Fassung (19.10.) zeigte einen Tukan, und HOLY führt selbst eine
+    Sorte mit Tukan, „Thai Lime Toucan“ (Websuche 19.10.2026: de.holy.com/products/thai-lime-toucan;
+    change.org/topic/holy-de-de – nicht im Dossier). Kennzeichnung in der Fußzeile von Folie 01 (zwei Zeilen,
+    ab der Auflösung): „Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026)“ und „Illustration: eigene
+    Gestaltung, KI-gestützt (Claude Code), 20.10.2026“; auf der Titelfolie zusätzlich „· Dose fiktiv“ in der
+    Einordnungszeile („Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH · Dose fiktiv“ – für
+    PDF und Übersicht; die Fußzeile ist dafür zu kurz). Die Logo-Zeile bleibt auch ohne `logoTitel` stehen,
+    solange das Rätselbild das Logo zeigt (`js/folien/01-einstieg.js`).
+  - **Persona-Bild Folie 04** (`persona-marco.svg`): „Marco, 28“ vor der Nachtschicht im Lager (Warnweste,
+    Shaker ohne Aufschrift, Hochregale, Nachtfenster). **Fiktive Person** – keine reale oder erkennbare
+    Person, kein Foto, kein KI-generiertes Foto. Lager und Nachtschicht nach Steckbrief A2 §2; Warnweste,
+    Haare, Bart und Hautfarbe sind Gestaltungsentscheidungen, nicht aus dem Steckbrief. Kennzeichnung auf dem
+    Bild „Illustration: eigene Gestaltung, KI‑gestützt (Claude Code), 19.10.2026“ und in der Fußzeile
+    „Person, Bild, Zitat fiktiv (Illustration, KI-gestützt)“; B7 „Icons, Grafiken, Illustrationen“.
+  - **Später optional:** eigenes Foto oder ein KI-Bild nach Bild-Prompt P6 (`../prompts.md`; ausgefüllte
+    Vorlage in `LIESMICH.md`, Abschnitt 12). Dann hier und in Abschnitt 4 Herkunft ändern (KI-generiert:
+    Werkzeug, Datum, Prompt P6, keine reale oder erkennbare Person), Kennzeichnung auf der Folie und in B7
+    anpassen und die Nutzung im KI-Nachweis eintragen.
+- **Rückfall-Zeichnung Folie 04** (Inline-SVG in `index.html`, Stand 16.10.2026): stilisierte Figur ohne
+  Gesicht; erscheint nur, wenn in den Daten von Folie 04 kein `"bild"` steht.
 - **Grafiken in `../grafiken/`** (folie-02, -03, -05; SVG/PNG, per Python-Skript erzeugt): eigene Gestaltung
   zu den Folienentwürfen – Ausarbeitungs- bzw. PowerPoint-Variante (Segoe UI, Rot/Blaugrau), **nicht Teil der
   Web-Präsentation** und nicht für die Projektion gedacht (Schrift zu klein, andere Farben und in folie-05
@@ -78,18 +124,31 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 
 | Datei | Inhalt | Herkunft |
 |---|---|---|
-| `platzhalter-raetsel.svg` | gezeichnetes Produkt-Stillleben für das Einstiegsrätsel (Folie 01): Dose und Shaker vor gelbem Hintergrund, Früchte, Eiswürfel – **ohne Logo, Schrift oder Verpackungsdesign**; Motiv nach Dossier Kap. 6.4 ✔ [1, 5, 73], Farben Gelb `#FFD007`, Schwarz `#1D1D1B`, Creme `#F3EDE1` nach Kap. 6.3 ✔ [1] (Stand 16.10.2026) | eigene Gestaltung – **bis 23.10. durch eigenes Foto ersetzen** |
+| `raetsel-holy-logo.svg` | **Rätselbild Folie 01** (seit Di, 20.10.2026, `marke.js → raetselBild`, 1920 × 1080): Szene wie `raetsel-holy.svg`, aber auf dem Etikett einer **fiktiven Dose** groß und frontal das **Original-Logo** (gelbes Oval, Datei `holy-logo-oval.png` unverändert als base64-PNG eingebettet – einmal, im Attribut `href` –, nur skaliert auf 330 × 190,8 Einheiten), darunter eine kleine Drachenfrucht im Comic-Aufkleber-Stil (kein Tier); keine weiteren Dateien, keine Filter oder Masken; Zoomwerte `data-stufen="440/11,220/10,100/0"`, `data-fokus="63.5% 59.8%"` (Kopfkommentar der Datei) | Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 20.10.2026 – von Claude Code als SVG-Code erzeugt (Generator-Skript der Fassung vom 19.10., Etikett neu; das Skript liegt nicht im Repository), kein Foto. **Logo:** © HOLY Softdrinks GmbH, de.holy.com, Abruf 16.10.2026, Datei unverändert – eingebaut auf Entscheidung von Yannick Heisler (20.10.2026, KI-Nachweis Nr. 98); als Teil der Illustration und des Rätsels genutzt (Abschnitt 3); Klärung mit dem Betreuer offen |
+| `raetsel-holy.svg` | **Rückfall ohne Logo** – bis 20.10.2026 Rätselbild Folie 01 (seit 19.10.2026, 1920 × 1080; zurzeit nicht eingetragen, Wechsel in `marke.js → raetselBild` und bei Folie 01 `data-fokus="60.1% 60.7%"`): Produkt-Stillleben – nachempfundene Pappdose mit schwarzem Etikett, darauf eine Drachenfrucht im Comic-Aufkleber-Stil mit Heiligenschein (**kein Tier** – siehe Abschnitt 3), Shaker mit pinkem Getränk, Drachenfrucht, Eiswürfel, Messlöffel vor HOLY-Gelb auf dunklem Tisch – **ohne Logo, Schrift oder kopiertes Verpackungsdesign**; Motiv nach Dossier Kap. 6.4 ✔ [1, 5, 73] und 6.3 ✔ [30] (Pappdose), Farben Gelb `#FFD007`, Schwarz `#1D1D1B` nach Kap. 6.3 ✔ [1], dazu Pink und Grün; Zoompunkt `data-fokus="60.1% 60.7%"` | Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026 – von Claude Code als SVG-Code erzeugt, kein Foto; ein eigenes Foto bleibt möglich |
+| `persona-marco.svg` | **Persona-Bild Folie 04** (seit 19.10.2026, Daten `"bild"` der Folie, 1 : 1): fiktive Person „Marco, 28“ vor der Nachtschicht im Lager – Warnweste in Markengelb, Shaker ohne Logo und Aufschrift, Hochregale, Nachtfenster mit Mond; **ohne Logo und Verpackung von HOLY** | Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026 – von Claude Code als SVG-Code erzeugt; fiktive Person, kein Foto, kein KI-generiertes Foto; ein eigenes Foto oder KI-Bild nach P6 bleibt möglich |
+| `platzhalter-raetsel.svg` | früheres gezeichnetes Rätselbild (Dose und Shaker vor Gelb, ohne Logo, Stand 16.10.2026) – zurzeit nicht eingetragen; bleibt als Rückfallwert von `js/komponenten.js` liegen (mit diesem Dateinamen zeigt Folie 01 die Pille „Platzhalterbild“) | eigene Gestaltung |
 | `holy-logo-wortmarke.png` | offizielle HOLY-Wortmarke, 389 × 105 px (Folie 09b, über `marke.js → logo`; im Dunkelmodus auf einer hellen Unterlage, das Bild selbst unverändert; Quelle in der Fußzeile von 09b und in B7) | © HOLY Softdrinks GmbH; Seitenkopf von https://de.holy.com (Datei `HOLY_Logo_1.png`), abgerufen 16.10.2026, unverändert |
-| `holy-logo-oval.png` | offizielles HOLY-Logo im gelben Oval, 692 × 400 px – **Folie 01** (Auflösung des Rätsels und Titelfolie) und **Folie 12** (seit 17.10.2026; seit 18.10.2026 oben rechts neben dem Fazit über HOLY, nicht mehr neben den Gruppennamen), jeweils über `marke.js → logoTitel`; nur verkleinert angezeigt, Quelle in den Fußzeilen von Folie 01 und 12 sowie in B7 | © HOLY Softdrinks GmbH; Seitenfuß von https://de.holy.com (Datei `HOLY_Logo_NewYellow.png`), abgerufen 16.10.2026, unverändert |
+| `holy-logo-oval.png` | offizielles HOLY-Logo im gelben Oval, 692 × 400 px – **Folie 01** (Auflösung des Rätsels und Titelfolie) und **Folie 12** (seit 17.10.2026; seit 18.10.2026 oben rechts neben dem Fazit über HOLY, nicht mehr neben den Gruppennamen), jeweils über `marke.js → logoTitel`; nur verkleinert angezeigt, Quelle in den Fußzeilen von Folie 01 und 12 sowie in B7. Seit 20.10.2026 zusätzlich unverändert in `raetsel-holy-logo.svg` eingebettet (Logo auf der Dose im Rätselbild, Folie 01) | © HOLY Softdrinks GmbH; Seitenfuß von https://de.holy.com (Datei `HOLY_Logo_NewYellow.png`), abgerufen 16.10.2026, unverändert |
 | `platzhalter-logo.svg` | neutraler Logo-Platzhalter (früher Folie 09b; steht er wieder in `marke.js → logo`, zeigt Folie 09b kein Bild, nur die Beschreibung der Wortmarke) | eigene Gestaltung |
 | `platzhalter-persona.svg`, `platzhalter-post.svg` | weitere Platzhalter (zurzeit nicht verwendet) | eigene Gestaltung |
 
-Von HOLY sind nur die beiden **offiziellen Logos** eingebunden, unverändert und ausschließlich zur Kennzeichnung der
-analysierten Marke im Rahmen einer studentischen Fallstudie; es besteht keine Verbindung zur HOLY Softdrinks GmbH.
-Verwendet auf den Folien 01, 09b und 12 (je mit Quelle in der Fußzeile, gesammelt in B7). Bewusst **ohne** Logo:
-Kopfzeile aller Folien, Folie 03, das Zentrum des Steuerrads (dort steht nach Esch die Markenkompetenz) und die
-öffentliche Startseite der Gruppe – dort entstünde der Eindruck einer HOLY-eigenen oder beauftragten Arbeit.
-Die Logo-Nutzung stimmt die Gruppe mit dem Betreuer ab (LIESMICH, Abschnitt 12). Auf Folie 12 steht das Logo
+Von HOLY sind nur die beiden **offiziellen Logos** eingebunden, als Dateien unverändert, im Rahmen einer
+studentischen Fallstudie; es besteht keine Verbindung zur HOLY Softdrinks GmbH. Auf den Folien 01 (Auflösung und
+Titel), 09b und 12 dienen sie der Kennzeichnung der analysierten Marke (je mit Quelle in der Fußzeile, gesammelt in
+B7). **Auf Folie 01 seit 20.10.2026 außerdem als Teil einer Illustration:** das Oval auf einer fiktiven Dose im
+Rätselbild (dieselbe Datei, eingebettet); im Rätsel stark vergrößert und unscharf, die Quelle erscheint erst mit der
+Auflösung (Abschnitt 3). Das geht über reine Kennzeichnung hinaus – deshalb ausdrücklich Teil der Klärung mit dem
+Betreuer (unten). Bewusst **ohne** Logo:
+Kopfzeile aller Folien, Folie 03, das Zentrum des Steuerrads (dort steht nach Esch die Markenkompetenz), die
+öffentliche Startseite der Gruppe und die öffentliche Abstimmseite `abstimmen.html` (Live-Umfrage, seit 19.10.2026;
+oben steht dort „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“, HOLY nur in der Frage) – dort
+entstünde der Eindruck einer HOLY-eigenen oder beauftragten Arbeit.
+Die Logo-Nutzung stimmt die Gruppe mit dem Betreuer ab (LIESMICH, Abschnitt 12) – seit 20.10.2026 einschließlich
+des Logos in der Illustration auf Folie 01 (Rückfall ohne Logo: `raetsel-holy.svg`; dann `marke.js → raetselBild`
+umstellen – nur `logoTitel` zu leeren entfernt das Logo auf der Dose nicht). Die Exporte (`export/`, verlinkt auf
+der öffentlichen Startseite) zeigen seit 20.10.2026 die Fassung mit Logo; lehnt der Betreuer ab, nach dem Rückfall
+neu erzeugen. Auf Folie 12 steht das Logo
 deshalb beim Fazit über die Marke und nicht neben den Gruppennamen (dort wirkte es wie ein Absender).
 
 **Keine Produktfotos oder Social-Media-Bilder von HOLY** – mit einer einzigen vorgesehenen Ausnahme (Regel seit
@@ -131,6 +190,14 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
   im Backup B1, B3 (Status „extern“, wie in der Legende von B7) und B7. Sonst steht GB auf den Hauptfolien nur in
   den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“, „11“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
   offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
+- **Analogie-Tier Chamäleon** (Folie 08, seit Di, 20.10.2026; vorher Waschbär nach der Hypothese im Dossier
+  Kap. 6.7): Einordnung von Elias Knauber (Bündel C), mitgeteilt von Yannick; Elias' Ausarbeitung liegt nicht im
+  Repository. Die Begründung (drei Gründe auf der Folie, Sprechtext, Gegenargumente) ist ein **Vorschlag,
+  KI-gestützt** aus dem Recherche-Dossier (Kap. 1, 2.1, 2.7, 2.8, 3.1, 6.1–6.3, 6.6, 7.1, 8 – jeweils mit
+  Quellennummer und Status in den Notizen von Folie 08) – **von Elias zu prüfen**. Ohne Websuche. Die Analogie
+  selbst ist eine Hypothese (H); die Alltagsbedeutung von „Chamäleon“ („ohne festen Kern“, Tarnung) ist
+  Sprachgebrauch aus dem Modellwissen. Auf der Folie: „Tier: eigene Einordnung (H)“ in der Fußzeile (ohne den Tiernamen, weil die Fußzeile schon
+  während der Abstimmung zu sehen ist).
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
 - **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08, 08b, 09 (Beiträge,

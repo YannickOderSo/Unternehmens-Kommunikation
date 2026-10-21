@@ -1,0 +1,343 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Illustration: Marco, 28, Fachkraft für Lagerlogistik, zu Beginn der Nachtschicht im Lager mit einem Shaker in der Hand">
+  <!-- persona-marco.svg – Illustration für Folie 04 „Brand Persona“ (Kern-Persona „Marco, 28“)
+       Eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026: Die KI (Claude Code) hat das Bild
+       als SVG-Code geschrieben (Regalgeometrie mit Hilfsskript berechnet); Motivvorgaben,
+       Auswahl und Prüfung: die Gruppe. Fiktive Person, keine reale oder erkennbare Person.
+       Warnweste, Haare, Bart und Hautfarbe sind Gestaltung (nicht aus dem Steckbrief). Kein Logo, kein Schriftzug, keine Verpackung von HOLY: Shaker und
+       Getränk sind frei gezeichnet (nur die Farben angelehnt an Recherche-Dossier Kap. 6.3/6.4).
+       Motiv nach ../../persona-steckbrief.md §2: Fachkraft für Lagerlogistik im Drei-Schicht-
+       Betrieb, vor der Nachtschicht; Hochregale, Hallenlicht, durch das Fenster Nacht und Mond.
+       Format 1 : 1 (Bildtafel der Folie ca. 533–560 × 539 px, object-fit: cover). Gesicht und
+       Shaker liegen in der Mitte bzw. rechts; unten links liegt die Kennzeichnung der Folie über
+       dem Bild – dort steht nur die Weste. Feste Nachtfarben (in allen Themen und Modi gleich),
+       gelber Akzent = Warnweste in Markengelb #FFD007. Keine externen Ressourcen, keine Schrift.
+       ERSETZEN (optional): eigenes Foto oder gekennzeichnetes KI-Bild nach Prompt P6
+       (../../prompts.md) nach bilder/ legen und in index.html, Folie 04, Daten „bild“ und
+       „bildHinweis“ ändern; diese Datei kann dann bleiben (Rückfall) oder gelöscht werden. -->
+  <defs>
+    <linearGradient id="pm-wand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A2640"/>
+      <stop offset="1" stop-color="#2D4268"/>
+    </linearGradient>
+    <linearGradient id="pm-himmel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E1830"/>
+      <stop offset="1" stop-color="#2B4673"/>
+    </linearGradient>
+    <radialGradient id="pm-mondschein" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#F6EBC0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#F6EBC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pm-lampe" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#FFE7B0" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#FFE7B0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pm-boden" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A3A57"/>
+      <stop offset="1" stop-color="#1A2438"/>
+    </linearGradient>
+    <linearGradient id="pm-reflex" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EEF1F5"/>
+      <stop offset="0.5" stop-color="#C9D0DA"/>
+      <stop offset="1" stop-color="#E3E7ED"/>
+    </linearGradient>
+    <linearGradient id="pm-getraenk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C92C4E"/>
+      <stop offset="0.4" stop-color="#EC5A7A"/>
+      <stop offset="1" stop-color="#B8213F"/>
+    </linearGradient>
+    <linearGradient id="pm-weste" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFD007"/>
+      <stop offset="1" stop-color="#F2BE00"/>
+    </linearGradient>
+    <linearGradient id="pm-dunst" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#121B30" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#16213A" stop-opacity="0.12"/>
+    </linearGradient>
+    <radialGradient id="pm-vignette" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0.6" stop-color="#0B1222" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0B1222" stop-opacity="0.45"/>
+    </radialGradient>
+    <clipPath id="pm-weste-links"><path d="M326 614 L405 598 C415 642 440 720 458 770 L462 1000 L186 1000 C182 880 196 780 238 720 C270 676 294 640 326 614 Z"/></clipPath>
+    <clipPath id="pm-weste-rechts"><path d="M614 614 L535 598 C525 642 500 720 482 770 L478 1000 L754 1000 C758 880 744 780 702 720 C670 676 646 640 614 614 Z"/></clipPath>
+    <style>
+      .pm-r-grund { fill: #1C2a45; }
+      .pm-r-stuetze { fill: #3F6496; }
+      .pm-r-traverse { fill: #B5652F; }
+      .pm-r-karton { fill: #9A7652; }
+      .pm-r-karton-dunkel { fill: #7E6045; }
+      .pm-r-karton-hell { fill: #B08B62; }
+      .pm-r-folie { fill: #7F93B2; }
+      .pm-r-fuge { stroke: #5E4630; stroke-width: 3; opacity: 0.6; }
+      .pm-haut { fill: #CF9F7C; }
+      .pm-haut-schatten { fill: #B4805E; }
+      .pm-haar { fill: #2A211D; }
+      .pm-jacke { fill: #1E2A3D; }
+      .pm-jacke-dunkel { fill: #141D2B; }
+      .pm-bart { fill: #2A211D; opacity: 0.62; }
+    </style>
+  </defs>
+
+  <!-- 1 HALLE: Rückwand, Fenster mit Nachthimmel und Mond, Lampen -->
+  <rect width="1000" height="1000" fill="url(#pm-wand)"/>
+  <!-- Fenster (Rückwand) -->
+  <g>
+    <rect x="590" y="96" width="350" height="300" rx="6" fill="#33496E"/>
+    <rect x="604" y="110" width="322" height="272" fill="url(#pm-himmel)"/>
+    <circle cx="830" cy="196" r="120" fill="url(#pm-mondschein)"/>
+    <circle cx="830" cy="196" r="44" fill="#F3E6B0"/>
+    <circle cx="815" cy="186" r="7" fill="#E5D49A"/>
+    <circle cx="842" cy="214" r="5" fill="#E5D49A"/>
+    <g fill="#F3E6B0">
+      <circle cx="650" cy="146" r="2.5"/><circle cx="712" cy="232" r="2"/><circle cx="900" cy="300" r="2"/>
+      <circle cx="680" cy="300" r="1.8"/><circle cx="905" cy="140" r="2.2"/>
+    </g>
+    <!-- Silhouette Gewerbegebiet mit beleuchteten Fenstern -->
+    <path d="M604 382 V330 H650 V312 H700 V340 H742 V300 H760 V286 H776 V300 H800 V336 H860 V318 H926 V382 Z" fill="#16233D"/>
+    <g fill="#F2C94C" opacity="0.85">
+      <rect x="616" y="344" width="8" height="10"/><rect x="664" y="326" width="8" height="10"/>
+      <rect x="756" y="314" width="8" height="10"/><rect x="876" y="334" width="8" height="10"/>
+      <rect x="900" y="350" width="8" height="10"/>
+    </g>
+    <!-- Sprossen -->
+    <g fill="#33496E">
+      <rect x="760" y="110" width="10" height="272"/>
+      <rect x="604" y="242" width="322" height="10"/>
+    </g>
+  </g>
+  <!-- Wanduhr (ohne Ziffern): kurz vor zehn = Beginn der Nachtschicht -->
+  <g transform="translate(548 128)">
+    <circle r="30" fill="#E9E4D8"/>
+    <circle r="30" fill="none" stroke="#141D2B" stroke-width="5"/>
+    <g stroke="#3A4558" stroke-width="3" stroke-linecap="round">
+      <path d="M0 -24 v5"/><path d="M24 0 h-5"/><path d="M0 24 v-5"/><path d="M-24 0 h5"/>
+    </g>
+    <path d="M0 0 L-17 -7" stroke="#141D2B" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M0 0 L-2.5 -23" stroke="#141D2B" stroke-width="3" stroke-linecap="round"/>
+    <circle r="3" fill="#141D2B"/>
+  </g>
+  <!-- Hallenboden -->
+  <rect x="0" y="657.6" width="1000" height="342.4" fill="url(#pm-boden)"/>
+  <!-- Mondlicht fällt vom Fenster auf den Boden -->
+  <polygon points="604,382 926,382 1000,760 520,760" fill="#9FB6DA" opacity="0.07"/>
+
+  <!-- 2 HOCHREGAL links (Perspektive zum Fluchtpunkt) -->
+  <g>
+    <polygon class="pm-r-grund" points="-60,-120 374,291.6 374,657.6 -60,1100"/>
+    <polygon class="pm-r-karton" points="-45.3,-48.1 108.7,83.3 108.7,226.3 -45.3,143.9"/>
+    <line class="pm-r-fuge" x1="-45.3" y1="47.9" x2="108.7" y2="154.8"/>
+    <polygon class="pm-r-karton-dunkel" points="131.4,132.4 215.1,197.9 215.1,283.3 131.4,238.5"/>
+    <line class="pm-r-fuge" x1="131.4" y1="185.4" x2="215.1" y2="240.6"/>
+    <polygon class="pm-r-folie" points="228,208.1 280.6,249.3 280.6,318.4 228,290.2"/>
+    <polygon class="pm-r-karton" points="289.1,237 325.2,267.8 325.2,342.3 289.1,322.9"/>
+    <line class="pm-r-fuge" x1="289.1" y1="280" x2="325.2" y2="305.1"/>
+    <polygon class="pm-r-karton-hell" points="331.2,288.9 357.5,309.4 357.5,359.6 331.2,345.5"/>
+    <line class="pm-r-fuge" x1="331.2" y1="317.2" x2="357.5" y2="334.5"/>
+    <polygon class="pm-r-folie" points="361.1,312.3 372.9,321.5 372.9,367.8 361.1,361.5"/>
+    <polygon class="pm-r-karton-dunkel" points="-45.3,211.2 108.7,276.6 108.7,408.3 -45.3,387.9"/>
+    <line class="pm-r-fuge" x1="-45.3" y1="299.6" x2="108.7" y2="342.4"/>
+    <polygon class="pm-r-karton" points="131.4,313.8 215.1,343.9 215.1,422.4 131.4,411.3"/>
+    <line class="pm-r-fuge" x1="131.4" y1="362.6" x2="215.1" y2="383.2"/>
+    <polygon class="pm-r-karton" points="228,348.6 280.6,367.5 280.6,431.1 228,424.1"/>
+    <line class="pm-r-fuge" x1="228" y1="386.3" x2="280.6" y2="399.3"/>
+    <polygon class="pm-r-karton-dunkel" points="289.1,353.1 325.2,368.4 325.2,437 289.1,432.2"/>
+    <line class="pm-r-fuge" x1="289.1" y1="392.6" x2="325.2" y2="402.7"/>
+    <polygon class="pm-r-folie" points="331.2,385.7 357.5,395.2 357.5,441.2 331.2,437.7"/>
+    <polygon class="pm-r-karton" points="361.1,396.5 372.9,400.7 372.9,443.3 361.1,441.7"/>
+    <line class="pm-r-fuge" x1="361.1" y1="419.1" x2="372.9" y2="422"/>
+    <polygon class="pm-r-karton-hell" points="-45.3,455.3 108.7,458.5 108.7,590.3 -45.3,632"/>
+    <line class="pm-r-fuge" x1="-45.3" y1="543.7" x2="108.7" y2="524.4"/>
+    <polygon class="pm-r-folie" points="131.4,486.7 215.1,483 215.1,561.5 131.4,584.1"/>
+    <polygon class="pm-r-karton-dunkel" points="228,482.5 280.6,480.2 280.6,543.7 228,558"/>
+    <line class="pm-r-fuge" x1="228" y1="520.2" x2="280.6" y2="511.9"/>
+    <polygon class="pm-r-karton" points="289.1,462.3 325.2,463.1 325.2,531.6 289.1,541.4"/>
+    <line class="pm-r-fuge" x1="289.1" y1="501.9" x2="325.2" y2="497.3"/>
+    <polygon class="pm-r-karton" points="331.2,478 357.5,476.8 357.5,522.9 331.2,530"/>
+    <line class="pm-r-fuge" x1="331.2" y1="504" x2="357.5" y2="499.8"/>
+    <polygon class="pm-r-karton-dunkel" points="361.1,476.7 372.9,476.1 372.9,518.7 361.1,521.9"/>
+    <line class="pm-r-fuge" x1="361.1" y1="499.3" x2="372.9" y2="497.4"/>
+    <polygon class="pm-r-folie" points="-45.3,725.2 108.7,659.7 108.7,859.6 -45.3,993.3"/>
+    <polygon class="pm-r-karton" points="131.4,691 215.1,647.5 215.1,767.3 131.4,839.9"/>
+    <line class="pm-r-fuge" x1="131.4" y1="765.5" x2="215.1" y2="707.4"/>
+    <polygon class="pm-r-karton-hell" points="228,640.7 280.6,613.4 280.6,710.4 228,756.1"/>
+    <line class="pm-r-fuge" x1="228" y1="698.4" x2="280.6" y2="661.9"/>
+    <polygon class="pm-r-folie" points="289.1,583.1 325.2,567.7 325.2,671.7 289.1,703.1"/>
+    <polygon class="pm-r-karton-dunkel" points="331.2,587.1 357.5,573.4 357.5,643.7 331.2,666.6"/>
+    <line class="pm-r-fuge" x1="331.2" y1="626.8" x2="357.5" y2="608.6"/>
+    <polygon class="pm-r-karton" points="361.1,571.5 372.9,565.4 372.9,630.4 361.1,640.6"/>
+    <line class="pm-r-fuge" x1="361.1" y1="606" x2="372.9" y2="597.9"/>
+    <polygon class="pm-r-traverse" points="-60,150 374,372.6 374,379.2 -60,172"/>
+    <polygon class="pm-r-traverse" points="-60,400 374,447.6 374,454.2 -60,422"/>
+    <polygon class="pm-r-traverse" points="-60,650 374,522.6 374,529.2 -60,672"/>
+    <polygon class="pm-r-stuetze" points="-60,-120 -26,-87.8 -26,1065.3 -60,1100"/>
+    <polygon class="pm-r-stuetze" points="123.4,53.9 148.5,77.8 148.5,887.4 123.4,913.1"/>
+    <polygon class="pm-r-stuetze" points="223,148.4 243.3,167.7 243.3,790.8 223,811.5"/>
+    <polygon class="pm-r-stuetze" points="285.6,207.8 302.9,224.2 302.9,730.1 285.6,747.7"/>
+    <polygon class="pm-r-stuetze" points="328.7,248.6 343.9,263 343.9,688.3 328.7,703.8"/>
+    <polygon class="pm-r-stuetze" points="360,278.3 373.7,291.3 373.7,657.9 360,671.9"/>
+    <polygon class="pm-r-stuetze" points="374,291.6 374,291.6 374,657.6 374,657.6"/>
+  </g>
+  <rect x="0" y="0" width="384" height="1000" fill="url(#pm-dunst)"/>
+
+  <!-- Hallenlampen mit Lichtkegel -->
+  <g>
+    <path d="M300 0 V64" stroke="#0F1729" stroke-width="3"/>
+    <path d="M262 92 L338 92 L322 64 L278 64 Z" fill="#0F1729"/>
+    <polygon points="262,92 338,92 470,560 120,560" fill="url(#pm-lampe)"/>
+    <ellipse cx="300" cy="93" rx="36" ry="5" fill="#FFF3D1"/>
+    <path d="M480 0 V22" stroke="#0F1729" stroke-width="2"/>
+    <path d="M458 38 L502 38 L494 22 L466 22 Z" fill="#0F1729"/>
+    <ellipse cx="480" cy="38" rx="21" ry="3" fill="#FFF3D1"/>
+  </g>
+
+  <!-- Palette mit Kartons rechts (hinter dem Arm) -->
+  <g>
+    <rect x="842" y="704" width="170" height="18" fill="#6B5440"/>
+    <rect x="852" y="722" width="22" height="14" fill="#4E3D2F"/><rect x="932" y="722" width="22" height="14" fill="#4E3D2F"/>
+    <rect x="846" y="626" width="80" height="78" fill="#8E6D4D"/>
+    <rect x="928" y="626" width="80" height="78" fill="#7C5E43"/>
+    <rect x="884" y="550" width="80" height="76" fill="#9A7652"/>
+    <path d="M846 664 H1008 M924 588 H964" stroke="#5E4630" stroke-width="3" opacity="0.6"/>
+  </g>
+
+  <!-- 3 MARCO (Figur um 8 % vergrößert, Bezugspunkt unten Mitte) -->
+  <g transform="translate(470 1000) scale(1.08) translate(-470 -1000)">
+    <!-- Hals -->
+    <path class="pm-haut" d="M434 500 L506 500 L510 604 L430 604 Z"/>
+    <path class="pm-haut-schatten" d="M434 506 C452 548 488 548 506 506 L508 566 C488 580 452 580 432 566 Z"/>
+    <!-- Oberkörper: Arbeitsjacke -->
+    <path class="pm-jacke" d="M120 1000 C120 820 150 694 236 646 C292 614 362 598 420 590 L520 590 C578 598 648 614 704 646 C790 694 820 820 820 1000 Z"/>
+    <!-- Lichtkante an der linken Schulter (Hallenlampe) -->
+    <path d="M150 820 C162 730 196 676 240 650 C290 620 350 604 404 596" fill="none" stroke="#3B5079" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <!-- kühles Mondlicht an der rechten Schulter -->
+    <path d="M560 596 C620 606 668 622 704 646 C760 682 790 744 806 820" fill="none" stroke="#4C6894" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+    <!-- Armkante links -->
+    <path d="M232 720 C214 800 206 900 210 1000" fill="none" stroke="#131B28" stroke-width="5"/>
+    <!-- T-Shirt am Hals und Jackenkragen -->
+    <path d="M418 592 C440 628 500 628 522 592 L540 602 C520 652 420 652 400 602 Z" fill="#2E3A4E"/>
+    <path class="pm-jacke-dunkel" d="M392 596 L426 548 L452 628 L420 650 Z"/>
+    <path class="pm-jacke-dunkel" d="M548 596 L514 548 L488 628 L520 650 Z"/>
+    <!-- Warnweste (Markengelb) mit Reflexstreifen -->
+    <g clip-path="url(#pm-weste-links)">
+      <rect x="150" y="580" width="330" height="420" fill="url(#pm-weste)"/>
+      <path d="M350 602 L378 596 L358 840 L330 840 Z" fill="url(#pm-reflex)"/>
+      <rect x="150" y="836" width="330" height="30" fill="url(#pm-reflex)"/>
+      <rect x="150" y="904" width="330" height="30" fill="url(#pm-reflex)"/>
+      <path d="M180 1000 C186 860 214 760 262 700 L300 720 C258 790 236 880 232 1000 Z" fill="#000000" opacity="0.06"/>
+    </g>
+    <g clip-path="url(#pm-weste-rechts)">
+      <rect x="460" y="580" width="330" height="420" fill="url(#pm-weste)"/>
+      <path d="M590 602 L562 596 L582 840 L610 840 Z" fill="url(#pm-reflex)"/>
+      <rect x="460" y="836" width="330" height="30" fill="url(#pm-reflex)"/>
+      <rect x="460" y="904" width="330" height="30" fill="url(#pm-reflex)"/>
+      <path d="M760 1000 C754 860 726 760 678 700 L640 720 C682 790 704 880 708 1000 Z" fill="#000000" opacity="0.10"/>
+    </g>
+    <!-- Reißverschluss der Jacke -->
+    <path d="M470 642 V1000" stroke="#0E1520" stroke-width="5"/>
+    <!-- Brusttasche mit Stift (linke Westenseite) -->
+    <rect x="384" y="744" width="54" height="60" rx="6" fill="#EDB900"/>
+    <path d="M384 758 H438" stroke="#D9A800" stroke-width="3"/>
+    <rect x="400" y="728" width="7" height="32" rx="3.5" fill="#1E2A3D"/>
+
+    <!-- KOPF (leicht verkleinert um den Hals) -->
+    <g transform="translate(470 560) scale(0.92) translate(-470 -560)">
+      <!-- Ohren -->
+      <ellipse class="pm-haut" cx="376" cy="414" rx="16" ry="26"/>
+      <ellipse class="pm-haut-schatten" cx="379" cy="416" rx="7" ry="14"/>
+      <ellipse class="pm-haut" cx="564" cy="414" rx="16" ry="26"/>
+      <ellipse class="pm-haut-schatten" cx="561" cy="416" rx="7" ry="14"/>
+      <!-- Gesicht: kräftiger Kiefer, Ende zwanzig -->
+      <path class="pm-haut" d="M470 270 C528 270 562 306 564 366 C566 410 560 452 546 482 C532 510 506 532 470 534 C434 532 408 510 394 482 C380 452 374 410 376 366 C378 306 412 270 470 270 Z"/>
+      <!-- Schatten rechte Gesichtshälfte (Licht von links oben) -->
+      <path class="pm-haut-schatten" d="M528 296 C554 318 564 344 564 368 C566 410 560 452 546 482 C532 510 506 532 470 534 C500 522 522 496 536 460 C548 424 548 350 528 296 Z" opacity="0.75"/>
+      <!-- kurzer, gepflegter Bart (Kinn, Kieferlinie, Oberlippe) -->
+      <path class="pm-bart" d="M384 420 C386 452 392 472 400 486 C414 512 438 532 470 534 C502 532 526 512 540 486 C548 472 554 452 556 420 L548 424 C546 450 538 468 522 478 C512 470 498 462 486 462 C478 461 474 462 470 463 C466 462 462 461 454 462 C442 462 428 470 418 478 C402 468 394 450 392 424 Z"/>
+      <!-- Haare: kurze Seiten, Deckhaar zur Seite, schmale Koteletten -->
+      <path class="pm-haar" d="M380 376 C372 316 398 262 454 252 C520 240 568 272 566 340 C566 352 564 366 560 378 L554 378 C552 354 546 338 536 328 C508 312 452 306 418 318 C402 326 392 346 388 376 Z"/>
+      <path class="pm-bart" d="M380 366 L392 368 C391 388 392 406 394 426 L384 424 C381 404 380 386 380 366 Z"/>
+      <path class="pm-bart" d="M560 366 L548 368 C549 388 548 406 546 426 L556 424 C559 404 560 386 560 366 Z"/>
+      <path class="pm-haar" d="M414 270 C446 228 534 232 560 286 C532 266 488 260 452 276 C436 282 424 288 414 292 Z"/>
+      <path d="M432 262 C462 248 500 246 530 256" fill="none" stroke="#45362E" stroke-width="5" stroke-linecap="round"/>
+      <path d="M394 302 C402 282 414 270 430 262" fill="none" stroke="#4A3B33" stroke-width="5" stroke-linecap="round"/>
+      <!-- Augenbrauen -->
+      <path class="pm-haar" d="M408 376 C418 362 440 358 456 364 L455 375 C440 371 424 374 412 384 Z"/>
+      <path class="pm-haar" d="M532 376 C522 362 500 358 484 364 L485 375 C500 371 516 374 528 384 Z"/>
+      <!-- Augen -->
+      <path d="M414 404 C422 393 442 392 451 402 C443 410 422 411 414 404 Z" fill="#F3EEE6"/>
+      <path d="M526 404 C518 393 498 392 489 402 C497 410 518 411 526 404 Z" fill="#F3EEE6"/>
+      <circle cx="433" cy="401" r="8" fill="#4A3426"/>
+      <circle cx="507" cy="401" r="8" fill="#4A3426"/>
+      <circle cx="433" cy="401" r="4" fill="#140F0C"/>
+      <circle cx="507" cy="401" r="4" fill="#140F0C"/>
+      <circle cx="436" cy="398" r="2.2" fill="#FFFFFF"/>
+      <circle cx="510" cy="398" r="2.2" fill="#FFFFFF"/>
+      <path d="M412 403 C420 390 444 389 453 401" fill="none" stroke="#2A211D" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M528 403 C520 390 496 389 487 401" fill="none" stroke="#2A211D" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M421 411 C428 414 438 414 444 411" fill="none" stroke="#B07A58" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <path d="M496 411 C502 414 512 414 519 411" fill="none" stroke="#B07A58" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <!-- Nase -->
+      <path class="pm-haut-schatten" d="M476 408 C480 426 490 438 489 449 C486 455 479 457 473 455 L475 448 C480 446 482 440 478 430 Z"/>
+      <path d="M458 444 C451 450 455 456 464 455 M482 444 C489 450 485 456 476 455" fill="none" stroke="#9C6646" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- Mund: freundliches Lächeln -->
+      <path d="M447 480 C459 488 481 488 493 480 C489 491 480 496 470 496 C460 496 451 491 447 480 Z" fill="#7A3530"/>
+      <path d="M450 481 C461 488 479 488 490 481 L488 486 C477 490 463 490 452 486 Z" fill="#FFFFFF"/>
+      <path d="M442 476 C444 479 446 480 448 480 M498 476 C496 479 494 480 492 480" fill="none" stroke="#6A2E2A" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M458 500 C464 503 476 503 482 500" fill="none" stroke="#B57B62" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Unterarm (rechts im Bild) bis zur Hand am Shaker -->
+    <clipPath id="pm-unterarm"><path d="M726 806 L794 784 C814 840 840 906 848 952 C854 990 828 1006 798 1004 C774 1002 762 986 756 962 C748 912 736 856 726 806 Z"/></clipPath>
+    <path class="pm-jacke" d="M726 806 L794 784 C814 840 840 906 848 952 C854 990 828 1006 798 1004 C774 1002 762 986 756 962 C748 912 736 856 726 806 Z"/>
+    <g clip-path="url(#pm-unterarm)">
+      <path d="M720 906 L860 878 L866 902 L726 930 Z" fill="url(#pm-reflex)"/>
+      <path d="M800 780 C830 860 846 930 846 1004 L870 1004 L870 780 Z" fill="#0F1622" opacity="0.5"/>
+    </g>
+
+    <!-- Shaker mit Hand (frei gezeichnet, ohne Logo), leicht geneigt -->
+    <g transform="rotate(-5 720 750)">
+      <!-- Daumen: liegt hinter dem Becher (Griff von hinten); nur die Spitze schaut links
+           am Becherrand hervor, ohne Nagel -->
+      <path class="pm-haut" d="M652 703 C638 699 624 703 622 713 C620 723 634 727 652 724 Z"/>
+      <path d="M624 718 C630 724 640 725 648 723" fill="none" stroke="#9C6646" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <path d="M632 590 L640 812 A40 9 0 0 0 720 812 L728 590 Z" fill="#FFFFFF" opacity="0.5"/>
+      <path d="M634 646 L640 812 A40 9 0 0 0 720 812 L726 646 A46 9 0 0 1 634 646 Z" fill="url(#pm-getraenk)"/>
+      <ellipse cx="680" cy="646" rx="46" ry="9" fill="#F28AA0"/>
+      <g fill="#FFFFFF" opacity="0.55"><circle cx="700" cy="672" r="3"/><circle cx="708" cy="700" r="2"/><circle cx="694" cy="690" r="1.6"/></g>
+      <path d="M632 590 L640 812 A40 9 0 0 0 720 812 L728 590" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.85"/>
+      <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8">
+        <path d="M646 668 h14"/><path d="M647 690 h10"/>
+      </g>
+      <path d="M648 602 L652 800" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+      <path d="M626 556 L626 592 A54 10 0 0 0 734 592 L734 556 Z" fill="#1D1D1B"/>
+      <ellipse cx="680" cy="556" rx="54" ry="10" fill="#2F2E2B"/>
+      <rect x="658" y="528" width="44" height="30" rx="7" fill="#1D1D1B"/>
+      <ellipse cx="680" cy="529" rx="22" ry="5" fill="#2F2E2B"/>
+      <!-- Hand: Handrücken rechts, vier Finger vorn um den Becher (unterschiedlich lang, kleiner
+           Finger kürzer); der Daumen greift von hinten (siehe oben) -->
+      <path class="pm-haut" d="M708 710 C738 698 776 710 786 744 C794 774 782 802 758 812 C736 818 716 808 708 792 Z"/>
+      <path class="pm-haut-schatten" d="M758 812 C782 802 794 774 786 744 C792 770 784 792 764 800 C744 808 724 806 712 798 C722 810 740 816 758 812 Z" opacity="0.7"/>
+      <g>
+        <path class="pm-haut" d="M738 718 L664 716 C650 716 648 738 662 739 L738 740 Z"/>
+        <path class="pm-haut" d="M738 741 L655 741 C640 741 638 763 653 763 L738 763 Z"/>
+        <path class="pm-haut" d="M738 764 L661 764.5 C647 764.5 645 784.5 659 784.5 L738 784.5 Z"/>
+        <path class="pm-haut" d="M734 785.5 L681 786 C669 786 667 801 679 801.5 L734 802 Z"/>
+      </g>
+      <g fill="none" stroke="#9C6646" stroke-width="2.2" stroke-linecap="round" opacity="0.75">
+        <path d="M653 740 C661 740.5 700 740.5 728 740"/>
+        <path d="M649 763.5 C657 764 700 764 728 763.5"/>
+        <path d="M666 785 C674 785.5 700 785.5 728 785"/>
+      </g>
+      <!-- Fingerspitzen (Nägel angedeutet) -->
+      <g fill="#E2B796">
+        <ellipse cx="659" cy="727.5" rx="4.5" ry="6.5"/><ellipse cx="650" cy="752" rx="4.5" ry="6.5"/>
+        <ellipse cx="656" cy="774.5" rx="4.5" ry="6"/><ellipse cx="676" cy="793.5" rx="4" ry="5"/>
+      </g>
+      <!-- Knöchel: leichte Schattenkante, wo die Finger um den Becher greifen -->
+      <path d="M722 718 C730 740 730 780 722 802" fill="none" stroke="#B4805E" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+      <!-- Ärmelbündchen -->
+      <path d="M744 798 L796 778 L808 806 L756 826 Z" fill="#141D2B"/>
+    </g>
+  </g>
+
+  <!-- 4 LICHTSTIMMUNG: leichte Vignette -->
+  <rect width="1000" height="1000" fill="url(#pm-vignette)"/>
+</svg>

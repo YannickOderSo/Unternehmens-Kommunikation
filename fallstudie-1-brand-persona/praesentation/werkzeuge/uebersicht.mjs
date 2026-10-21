@@ -25,6 +25,14 @@
    Umgebung wie bei pruefen.mjs: PLAYWRIGHT_CORE, CHROME_PFAD.
    Die Seite wird in einem temporären Ordner des Betriebssystems gebaut und
    danach gelöscht; es wird nichts aus dem Internet geladen.
+   Ohne Netz: Beide Seiten (index.html und die Übersicht) laufen in Kontexten,
+   die jede Anfrage außerhalb der eigenen Dateien abbrechen; der Browser selbst
+   startet ohne Proxy und ohne Namensauflösung (außer localhost). index.html wird
+   mit ?aufnahme geladen – dort fragt Folie 08 die Live-Abstimmung nie ab
+   (js/komponenten.js, 3a), Yannicks Web-App wird also nicht belastet. Die
+   Ausgabe zählt abgebrochene Anfragen trotzdem: „externeAnfragen“ (alle),
+   davon „liveAnfragen“ (an die liveQuelle aus marke.js); mehr als 0 →
+   Warnung auf stderr. Die Übersicht selbst hängt davon nicht ab.
    ============================================================================= */
 
 import fs from 'node:fs';
@@ -62,9 +70,26 @@ let playwright;
 try { playwright = require(process.env.PLAYWRIGHT_CORE || 'playwright-core'); }
 catch (e) { abbruch('playwright-core nicht gefunden. PLAYWRIGHT_CORE=/pfad/zu/node_modules/playwright-core setzen. (' + e.message + ')'); }
 const chromePfad = process.env.CHROME_PFAD || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
-const browser = await playwright.chromium.launch({ executablePath: chromePfad, args: ['--no-sandbox', '--allow-file-access-from-files'] });
-const kontext = await browser.newContext({ viewport: { width: 1920, height: 1080 } });
-await kontext.route('**/*', (r) => (/^(file|data|blob|about):/i.test(r.request().url()) ? r.continue() : r.abort()));
+/* Netz auf Ebene des Browsers sperren (wie pruefen.mjs, dort begründet):
+   --disable-background-networking allein hält Chrome nicht von eigenen
+   Verbindungen zu Google-Diensten ab; --no-proxy-server und
+   --host-resolver-rules (jeder Name außer localhost unbekannt) schon. */
+const NETZ_AUS = ['--disable-background-networking', '--no-proxy-server',
+  '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE localhost , EXCLUDE 127.0.0.1'];
+const browser = await playwright.chromium.launch({ executablePath: chromePfad, args: ['--no-sandbox', '--allow-file-access-from-files', ...NETZ_AUS] });
+/* Kontext ohne Netz: nur eigene Dateien; alles andere abbrechen und merken */
+const abgebrochen = [];
+async function kontextOhneNetz(viewport) {
+  const k = await browser.newContext({ viewport });
+  await k.route('**/*', (r) => {
+    const url = r.request().url();
+    if (/^(file|data|blob|about):/i.test(url)) return r.continue();
+    abgebrochen.push(url);
+    return r.abort();
+  });
+  return k;
+}
+const kontext = await kontextOhneNetz({ width: 1920, height: 1080 });
 
 /* 1. Angaben aus der Präsentation lesen (alle Folien inkl. optionaler) */
 const seite = await kontext.newPage();
@@ -88,7 +113,9 @@ const info = await seite.evaluate(() => {
     farben: { grund: farbe('--f-hintergrund'), text: farbe('--f-text'), text2: farbe('--f-text-2'),
       linie: farbe('--f-linie'), akzent: farbe('--f-akzent'), rahmen: farbe('--f-linie-stark') },
     folien: window.Deck.folien().map((f) => ({ id: f.id, nummer: f.nummer, titel: f.titel, zeit: f.zeit,
-      buendel: f.buendel, backup: f.backup, optional: f.optional }))
+      buendel: f.buendel, backup: f.backup, optional: f.optional })),
+    /* nur zum Zuordnen abgebrochener Anfragen (Ausgabe „liveAnfragen“) */
+    liveQuellen: Object.values(m.umfragen || {}).map((u) => String((u && u.liveQuelle) || '').trim()).filter(Boolean)
   };
 });
 await seite.close();
@@ -166,7 +193,7 @@ const html = `<!doctype html>
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'uebersicht-'));
 const tmpHtml = path.join(tmp, 'uebersicht.html');
 fs.writeFileSync(tmpHtml, html);
-const s2 = await browser.newPage({ viewport: { width: 2400, height: 1200 } });
+const s2 = await (await kontextOhneNetz({ width: 2400, height: 1200 })).newPage();
 await s2.goto(pathToFileURL(tmpHtml).href, { waitUntil: 'load' });
 await s2.evaluate(() => document.fonts.ready);
 await s2.evaluate(() => Promise.all([...document.images].map((i) => (i.complete ? null : new Promise((r) => { i.onload = i.onerror = r; })))));
@@ -175,5 +202,14 @@ await s2.screenshot({ path: ziel, fullPage: true });
 const groesse = await s2.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.scrollHeight]);
 await browser.close();
 fs.rmSync(tmp, { recursive: true, force: true });
+/* Abgebrochene Anfragen zuordnen: an die liveQuelle (Adresse ohne ?…) oder sonstige */
+const ohneSuche = (u) => { try { const x = new URL(u); return x.origin + x.pathname; } catch (e) { return u; } };
+const liveZiele = new Set(info.liveQuellen.map(ohneSuche));
+const liveAnfragen = abgebrochen.filter((u) => liveZiele.has(ohneSuche(u))).length;
+if (abgebrochen.length) {
+  console.error('WARNUNG: ' + abgebrochen.length + ' Anfrage(n) ins Internet abgebrochen (davon ' + liveAnfragen + ' an die Live-Abstimmung): ' +
+    [...new Set(abgebrochen.map(ohneSuche))].join(', '));
+}
 console.log(JSON.stringify({ ziel: path.relative(process.cwd(), ziel), breite: groesse[0], hoehe: groesse[1],
-  folien: info.folien.length, hauptfolien: haupt.length, backup: backup.length, sollzeitHauptfolien: zeit(summe), stand: opt.stand }));
+  folien: info.folien.length, hauptfolien: haupt.length, backup: backup.length, sollzeitHauptfolien: zeit(summe), stand: opt.stand,
+  externeAnfragen: abgebrochen.length, liveAnfragen }));

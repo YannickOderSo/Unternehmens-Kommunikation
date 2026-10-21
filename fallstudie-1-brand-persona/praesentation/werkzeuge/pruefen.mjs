@@ -18,6 +18,7 @@
        tragen den Zusatz „nur in Schritt n“)
      • überlappender Text (Zeilen zweier Elemente liegen übereinander)
      • fehlende Notizen, fehlendes data-zeit / data-titel
+     • Live-Abstimmung (Folie 08): Zustand der Pille und n (siehe unten)
    Elemente mit dem Attribut data-ueberlauf-ok (z. B. ein absichtlich über den
    Rand laufendes Bild) und ihr Inhalt sind von der Überlaufprüfung ausgenommen,
    Elemente mit data-ueberlappung-ok von der Überlappungsprüfung.
@@ -45,6 +46,40 @@
      --primaer HEX --sekundaer HEX   Markenfarben testen (z. B. FFD400 1D1D1B)
      --bewegung-reduziert   wie „Bewegung reduzieren“ im Betriebssystem
      --ohne-bilder          keine Screenshots, nur Prüfungen
+     --live-offline         Live-Abstimmung: Anfragen scheitern wie ohne Internet (Pille „offline“)
+     --live-werte 3,1,7,0,2 Live-Abstimmung: fester Stand (z. B. für Screenshots)
+     --live-aus             liveQuelle aus marke.js für diesen Lauf ausblenden
+                            (Folie wie ohne Live-Abstimmung: kein QR-Code, Zählmodus)
+
+   LIVE-ABSTIMMUNG (marke.js → umfragen.<id>.liveQuelle, Folie 08)
+   Die Prüfung schickt nie eine Anfrage an die echte Web-App. Anfragen an die
+   in marke.js eingetragene liveQuelle (nur diese Adresse, nur aktion=stand und
+   aktion=stimme) beantwortet eine eingebaute Attrappe – JSONP wie
+   live-abstimmung/apps-script.gs, gleiche Eingabeprüfung und Zählregel (das
+   Zeitfenster minuten=… wird geprüft und in der Antwort genannt, ändert aber
+   nichts am Ergebnis – die Stimmen eines Prüflaufs sind nie so alt). Sie
+   zählen nicht als Fehler, stehen aber getrennt im Bericht („liveAnfragen“).
+   Zeitfenster (seit 21.10.2026): Jede Stand-Abfrage muss minuten = marke.js
+   → umfragen.<id>.gueltigMinuten tragen (wie js/komponenten.js: ganze Zahl
+   1–1440, sonst ohne minuten) – fehlt es oder weicht es ab, ist das ein
+   Fehler (sonst zählte Folie 08 im Vortrag ohne Zeitgrenze).
+   Ausnahme: aktion=stimme aus der Präsentation ist ein Fehler (Folie 08 liest
+   nur), wird aber beantwortet. Jede andere externe Anfrage bleibt ein Fehler,
+   auch WebSockets (routeWebSocket). Zusätzlich sperrt der Browser selbst das
+   Netz (--no-proxy-server, --host-resolver-rules): Auch Chrome baut keine
+   eigenen Verbindungen zu Google-Diensten auf (geprüft 19.10.2026 mit NetLog).
+   Mit ?aufnahme fragt die Folie nie ab (js/komponenten.js, 3a) – sie zeigte
+   dann Beispieldaten, die es im Vortrag nicht gibt. Deshalb lädt die Prüfseite
+   bei gesetzter liveQuelle OHNE ?aufnahme und setzt die Klasse „aufnahme“
+   selbst (ohne Bedienleiste, wie bisher). So wird Folie 08 geprüft, wie sie
+   im Vortrag aussieht. Standard: Stand mit lauter Nullen (Beginn des Vortrags:
+   QR-Code, Pille „Live“, n = 0). Vor jedem Bild wartet die Prüfung, bis die
+   Pille nicht mehr „verbinde“ zeigt; stimmt der Zustand nicht (Standard und
+   --live-werte: „Live“, --live-offline: „offline“), ist das ein Fehler.
+   Exporte: Das PDF (--druck, ?druck) fragt nie ab. PDF und Folienbilder (ohne
+   --schritte) zeigen jede Folie im Endzustand – Folie 08 mit den Analogien,
+   die Umfrage ist dort nicht zu sehen. Der Standard (n = 0) gilt für die
+   Bilder der Schritte 0 und 1 (--schritte).
    Umgebung
      PLAYWRIGHT_CORE  Pfad zum Paket playwright-core (sonst normaler Import)
      CHROME_PFAD      Chromium/Chrome (Standard /opt/pw-browsers/chromium-1194/chrome-linux/chrome)
@@ -52,13 +87,15 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 
 /* ---------- Argumente ---------- */
 const argv = process.argv.slice(2);
 const opt = { datei: null, ausgabe: null, schritte: false, nur: null, thema: null, modus: null, druck: null,
-  skala: 1, optional: false, primaer: null, sekundaer: null, reduziert: false, ohneBilder: false };
+  skala: 1, optional: false, primaer: null, sekundaer: null, reduziert: false, ohneBilder: false,
+  liveOffline: false, liveWerte: null, liveAus: false };
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   const wert = () => { const w = argv[++i]; if (w === undefined) abbruch('Wert fehlt für ' + a); return w; };
@@ -74,6 +111,14 @@ for (let i = 0; i < argv.length; i++) {
   else if (a === '--sekundaer') opt.sekundaer = wert().replace(/^#/, '');
   else if (a === '--bewegung-reduziert') opt.reduziert = true;
   else if (a === '--ohne-bilder') opt.ohneBilder = true;
+  else if (a === '--live-offline') opt.liveOffline = true;
+  else if (a === '--live-werte') {
+    const w = wert();
+    opt.liveWerte = w.split(',').map((x) => x.trim());
+    if (!opt.liveWerte.every((x) => /^[0-9]{1,6}$/.test(x))) abbruch('--live-werte: ganze Zahlen ab 0, mit Komma getrennt (z. B. 3,1,7,0,2) – nicht „' + w + '“');
+    opt.liveWerte = opt.liveWerte.map(Number);
+  }
+  else if (a === '--live-aus') opt.liveAus = true;
   else if (a === '--hilfe' || a === '-h') { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('*/')[0]); process.exit(0); }
   else if (a.startsWith('--')) abbruch('Unbekannte Option ' + a);
   else opt.datei = a;
@@ -83,6 +128,55 @@ if (!opt.datei) abbruch('HTML-Datei fehlt. Beispiel: node werkzeuge/pruefen.mjs 
 const datei = path.resolve(opt.datei);
 if (!fs.existsSync(datei)) abbruch('Datei nicht gefunden: ' + datei);
 const ausgabe = path.resolve(opt.ausgabe || datei.replace(/\.html?$/i, '') + '-pruefung');
+if ([opt.liveOffline, !!opt.liveWerte, opt.liveAus].filter(Boolean).length > 1) {
+  abbruch('--live-offline, --live-werte und --live-aus schließen sich aus – nur eine davon angeben.');
+}
+
+/* ---------- Live-Abstimmung: liveQuelle aus marke.js lesen ----------
+   marke.js setzt nur window.MARKE = { … } – hier in einer leeren Umgebung
+   ausführen (ohne Browser, ohne Netz). */
+function liveQuellenLesen() {
+  const markePfad = path.join(path.dirname(datei), 'marke.js');
+  if (!fs.existsSync(markePfad)) return { quellen: [], hinweis: 'marke.js nicht gefunden' };
+  const umgebung = { window: {} };
+  try {
+    vm.runInNewContext(fs.readFileSync(markePfad, 'utf8'), umgebung, { filename: markePfad, timeout: 1000 });
+  } catch (e) {
+    return { quellen: [], hinweis: 'marke.js nicht lesbar (' + e.message + ')' };
+  }
+  const umfragen = (umgebung.window.MARKE && umgebung.window.MARKE.umfragen) || {};
+  const quellen = [];
+  for (const [id, u] of Object.entries(umfragen)) {
+    const adresse = String((u && u.liveQuelle) || '').trim();
+    if (!adresse) continue;
+    let url;
+    try { url = new URL(adresse); } catch (e) { continue; }   /* unbrauchbar: die Folie fragt dann nicht (Warnung in der Konsole) */
+    if (!/^https?:$/.test(url.protocol)) continue;
+    /* Zeitfenster wie js/komponenten.js (umfrageGueltigMinuten): ganze Zahl 1–1440, sonst 0 = ohne minuten */
+    const roh = u.gueltigMinuten;
+    const zahl = typeof roh === 'number' || typeof roh === 'string' ? Number(roh) : NaN;
+    const minuten = roh !== '' && Math.floor(zahl) === zahl && zahl >= 1 && zahl <= 1440 ? zahl : 0;
+    quellen.push({ id, adresse, schluessel: url.origin + url.pathname, anzahl: Array.isArray(u.optionen) ? u.optionen.length : 0, minuten });
+  }
+  return { quellen, hinweis: '' };
+}
+const liveMarke = liveQuellenLesen();
+const LIVE = {
+  quellen: liveMarke.quellen,
+  /* Prüfseite ohne ?aufnahme laden, damit Folie 08 wirklich abfragt (siehe Kopf) */
+  simulieren: liveMarke.quellen.length > 0 && !opt.liveAus,
+  modus: !liveMarke.quellen.length ? 'ohne liveQuelle' : opt.liveAus ? 'aus' : opt.liveOffline ? 'offline' : opt.liveWerte ? 'werte' : 'null',
+  stimmen: new Map(),      /* Runde|Umfrage → Map(Gerät → Option); je Gerät zählt die letzte Stimme */
+  zaehler: { stand: 0, stimme: 0, offline: 0, abgelehnt: 0, druck: 0, konsoleOffline: 0, ausPraesentation: 0, websockets: 0, falscheMinuten: 0 },
+  anzeige: {}              /* Folie → { pille, n } nach der ersten Antwort */
+};
+if (opt.liveWerte) {
+  LIVE.quellen.forEach((q) => {
+    if (q.anzahl && q.anzahl !== opt.liveWerte.length) {
+      abbruch('--live-werte: ' + opt.liveWerte.length + ' Werte, die Umfrage „' + q.id + '“ hat ' + q.anzahl + ' Optionen (marke.js).');
+    }
+  });
+}
 fs.mkdirSync(ausgabe, { recursive: true });
 
 /* ---------- Playwright laden ---------- */
@@ -100,49 +194,210 @@ const bericht = {
   datei: path.relative(process.cwd(), datei),
   zeitpunkt: new Date().toISOString(),
   einstellungen: { thema: opt.thema, modus: opt.modus, schritte: opt.schritte, skala: opt.skala, optional: opt.optional,
-    primaer: opt.primaer, sekundaer: opt.sekundaer, bewegungReduziert: opt.reduziert },
+    primaer: opt.primaer, sekundaer: opt.sekundaer, bewegungReduziert: opt.reduziert, live: LIVE.modus },
   zusammenfassung: {},
   fehler: [],          // muss behoben werden
   warnungen: [],       // sollte geprüft werden
   folien: [],
   schriften: [],
   screenshots: [],
-  externeAnfragen: [],
+  externeAnfragen: [],  // blockiert, jede ist ein Fehler
+  liveAnfragen: null,   // an die liveQuelle – beantwortet von der eingebauten Attrappe (ende())
   druck: null
 };
 const fehler = (ort, text) => bericht.fehler.push({ ort, text });
 const warnung = (ort, text) => bericht.warnungen.push({ ort, text });
+if ((opt.liveOffline || opt.liveWerte || opt.liveAus) && !LIVE.quellen.length) {
+  warnung('Live-Abstimmung', 'Option --live-… ohne Wirkung: keine liveQuelle in marke.js' + (liveMarke.hinweis ? ' (' + liveMarke.hinweis + ')' : ''));
+}
 
 /* ---------- Browser ---------- */
-const browser = await playwright.chromium.launch({ executablePath: chromePfad, args: ['--no-sandbox', '--allow-file-access-from-files'] });
+/* Netz auf Ebene des Browsers sperren. Chrome baut sonst von sich aus
+   Verbindungen zu Google-Diensten auf – an der Seite vorbei, die Sperre unten
+   (kontext.route) sieht sie nicht. --disable-background-networking allein
+   reicht nicht: Ein Mitschnitt vom 19.10.2026 zeigte trotzdem Verbindungen zu
+   clients2.google.com, accounts.google.com, www.google.com u. a. (nie
+   script.google.com, keine Inhalte der Präsentation). Erst --no-proxy-server
+   (die Proxy-Variablen der Umgebung nicht benutzen) und
+   --host-resolver-rules (jeder Name außer localhost gilt als unbekannt) ergaben
+   laut NetLog 0 Verbindungen. Die Anfragen an die liveQuelle beantwortet die
+   Attrappe trotzdem: kontext.route greift vor der Namensauflösung. */
+const NETZ_AUS = ['--disable-background-networking', '--no-proxy-server',
+  '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE localhost , EXCLUDE 127.0.0.1'];
+const browser = await playwright.chromium.launch({ executablePath: chromePfad, args: ['--no-sandbox', '--allow-file-access-from-files', ...NETZ_AUS] });
 const breite = Math.round(1920 * opt.skala);
 const hoehe = Math.round(1080 * opt.skala);
 const kontext = await browser.newContext({
   viewport: { width: breite, height: hoehe },
   reducedMotion: opt.reduziert ? 'reduce' : 'no-preference'
 });
-/* Externe Anfragen blockieren und protokollieren */
+/* ---------- Eingebaute Attrappe der Web-App ----------
+   Gleiche Schnittstelle, Eingabeprüfung und Zählregel wie
+   live-abstimmung/apps-script.gs (Kopfkommentar „SCHNITTSTELLE“), aber ohne
+   Tabelle: Stand = Grundwerte (lauter Nullen oder --live-werte) + Stimmen,
+   die in diesem Lauf über aktion=stimme kamen (je Gerät die letzte).
+   Zeitfenster (minuten, Fassung 20.10.2026): wird geprüft wie beim Server
+   (ganze Zahl 1–1440, sonst Fehler) und wie dort in der Antwort genannt; am
+   Ergebnis ändert es nichts – ein Prüflauf dauert Minuten, die Stimmen eines
+   Laufs sind nie älter als das Fenster. */
+const LIVE_MUSTER = {
+  name: /^[A-Za-z0-9_-]{1,40}$/,
+  geraet: /^[A-Za-z0-9_-]{8,64}$/,
+  callback: /^[A-Za-z_$][\w$.]{0,63}$/,
+  zahl: /^[0-9]{1,2}$/,
+  minuten: /^[0-9]{1,4}$/
+};
+function liveAnfrageErkennen(url) {
+  if (!LIVE.quellen.length) return null;
+  let u;
+  try { u = new URL(url); } catch (e) { return null; }
+  const quelle = LIVE.quellen.find((q) => q.schluessel === u.origin + u.pathname);
+  const aktion = u.searchParams.get('aktion');
+  if (!quelle || (aktion !== 'stand' && aktion !== 'stimme')) return null;
+  const p = {};
+  u.searchParams.forEach((wert, name) => { if (!(name in p)) p[name] = wert; });
+  return { quelle, aktion, p };
+}
+function liveBeantworten(p) {
+  const passt = (muster, wert) => typeof wert === 'string' && muster.test(wert);
+  const ganz = (wert) => (passt(LIVE_MUSTER.zahl, wert) ? Number(wert) : NaN);
+  const json = (antwort, callback) => (callback
+    ? { typ: 'application/javascript; charset=utf-8', text: callback + '(' + JSON.stringify(antwort) + ');', antwort }
+    : { typ: 'application/json; charset=utf-8', text: JSON.stringify(antwort), antwort });
+  if (p.callback !== undefined && !passt(LIVE_MUSTER.callback, p.callback)) return json({ ok: false, fehler: 'Ungültiger callback-Name.' }, null);
+  const anzahl = ganz(p.anzahl);
+  const minuten = passt(LIVE_MUSTER.minuten, p.minuten) && Number(p.minuten) >= 1 && Number(p.minuten) <= 1440 ? Number(p.minuten) : NaN;
+  let fehlerText = null;
+  if (!passt(LIVE_MUSTER.name, p.umfrage)) fehlerText = 'Ungültige Umfrage: nur Buchstaben, Ziffern, _ und -, höchstens 40 Zeichen.';
+  else if (!passt(LIVE_MUSTER.name, p.runde)) fehlerText = 'Ungültige Runde: nur Buchstaben, Ziffern, _ und -, höchstens 40 Zeichen.';
+  else if (!(anzahl >= 1 && anzahl <= 9)) fehlerText = 'Ungültige Anzahl: ganze Zahl von 1 bis 9.';
+  else if (p.aktion === 'stand' && p.minuten !== undefined && !(minuten >= 1)) {
+    fehlerText = 'Ungültige Minuten (Zeitfenster): ganze Zahl von 1 bis 1440 oder weglassen.';
+  } else if (p.aktion === 'stimme') {
+    const option = ganz(p.option);
+    if (!(option >= 0 && option < anzahl)) fehlerText = 'Ungültige Option: ganze Zahl von 0 bis ' + (anzahl - 1) + '.';
+    else if (!passt(LIVE_MUSTER.geraet, p.geraet)) fehlerText = 'Ungültige Geräte-ID: 8 bis 64 Zeichen, nur Buchstaben, Ziffern, _ und -.';
+  }
+  if (fehlerText) return json({ ok: false, fehler: fehlerText }, p.callback);
+  const topf = p.runde + '|' + p.umfrage;
+  if (p.aktion === 'stimme') {
+    if (!LIVE.stimmen.has(topf)) LIVE.stimmen.set(topf, new Map());
+    LIVE.stimmen.get(topf).set(p.geraet, ganz(p.option));
+    return json({ ok: true }, p.callback);
+  }
+  if (opt.liveWerte && opt.liveWerte.length !== anzahl) {
+    return json({ ok: false, fehler: 'Attrappe (pruefen.mjs): --live-werte hat ' + opt.liveWerte.length + ' Werte, angefragt sind ' + anzahl + '.' }, p.callback);
+  }
+  const werte = opt.liveWerte ? opt.liveWerte.slice() : new Array(anzahl).fill(0);
+  (LIVE.stimmen.get(topf) || new Map()).forEach((o) => { if (o < anzahl) werte[o] += 1; });
+  const antwort = { ok: true, werte, n: werte.reduce((s, w) => s + w, 0), zeit: new Date().toISOString() };
+  if (p.minuten !== undefined) antwort.minuten = minuten;          /* wie die Fassung ab 20.10.2026 */
+  return json(antwort, p.callback);
+}
+let druckSeite = null;      /* Anfragen von dort sind verdächtig: ?druck fragt nie ab */
+function liveRoute(route, l) {
+  let ausDruck = false;
+  try { ausDruck = !!druckSeite && route.request().frame().page() === druckSeite; } catch (e) { /* z. B. Worker */ }
+  LIVE.zaehler[l.aktion]++;
+  if (ausDruck) {
+    LIVE.zaehler.druck++;
+    if (LIVE.zaehler.druck === 1) warnung('Live-Abstimmung', 'Die Druckansicht (?druck) hat die liveQuelle abgefragt (aktion=' + l.aktion + ') – das sollte nie passieren (js/komponenten.js, 3a). Beantwortet von der Attrappe.');
+  }
+  /* Zeitfenster: Die Stand-Abfrage muss minuten = gueltigMinuten tragen (ohne
+     gueltigMinuten: kein minuten) – je Lauf einmal als Fehler melden */
+  if (l.aktion === 'stand') {
+    const soll = l.quelle.minuten ? String(l.quelle.minuten) : undefined;
+    if (l.p.minuten !== soll) {
+      LIVE.zaehler.falscheMinuten++;
+      if (LIVE.zaehler.falscheMinuten === 1) {
+        fehler('Live-Abstimmung', 'Stand-Abfrage ' + (l.p.minuten === undefined ? 'ohne minuten' : 'mit minuten=' + l.p.minuten) + ', erwartet ' +
+          (soll ? 'minuten=' + soll + ' (marke.js → umfragen.' + l.quelle.id + '.gueltigMinuten)' : 'ohne minuten (gueltigMinuten 0 oder leer)') +
+          ' – Folie 08 zählte sonst ' + (soll ? 'ohne Zeitgrenze' : 'mit einer Zeitgrenze, die marke.js nicht vorsieht') + ' (js/komponenten.js, 3a).');
+      }
+    }
+  }
+  /* --live-offline: wie ohne Internet – das Skript-Tag meldet einen Ladefehler */
+  if (LIVE.modus === 'offline') {
+    LIVE.zaehler.offline++;
+    return route.abort('internetdisconnected');
+  }
+  /* Folie 08 liest nur (aktion=stand). Eine Stimme aus der Präsentation
+     schriebe im Vortrag in Yannicks Tabelle → Fehler, trotzdem beantworten,
+     damit die Seite nicht hängt. */
+  if (l.aktion === 'stimme') {
+    LIVE.zaehler.ausPraesentation++;
+    fehler('Live-Abstimmung', 'Die Präsentation' + (ausDruck ? ' (Druckansicht)' : '') + ' hat aktion=stimme an die liveQuelle geschickt – Folie 08 darf nur aktion=stand abfragen.');
+  }
+  const a = liveBeantworten(l.p);
+  if (!a.antwort.ok) {
+    LIVE.zaehler.abgelehnt++;
+    fehler('Live-Abstimmung', 'Attrappe lehnt die Anfrage ab (aktion=' + l.aktion + '): ' + a.antwort.fehler);
+  }
+  return route.fulfill({ status: 200, contentType: a.typ, body: a.text, headers: { 'cache-control': 'no-store' } });
+}
+
+/* Externe Anfragen blockieren und protokollieren – außer Anfragen an die
+   liveQuelle (Attrappe, siehe Kopf) */
 await kontext.route('**/*', (route) => {
   const url = route.request().url();
   if (/^(file|data|blob|about):/i.test(url)) return route.continue();
+  const live = liveAnfrageErkennen(url);
+  if (live) return liveRoute(route, live);
   bericht.externeAnfragen.push(url);
   return route.abort();
 });
+/* WebSockets laufen an kontext.route vorbei – eigens abfangen, schließen und
+   als externe Anfrage (Fehler) melden. Die Präsentation nutzt keine. */
+await kontext.routeWebSocket(/.*/, (ws) => {
+  LIVE.zaehler.websockets++;
+  bericht.externeAnfragen.push(ws.url() + ' (WebSocket)');
+  return ws.close({ code: 1008, reason: 'pruefen.mjs: kein Netz' });
+});
 
-function adresse(extra) {
+/* Vor jedem Skript der Seite: --live-aus blendet liveQuelle aus (Setter auf
+   window.MARKE, marke.js bleibt unverändert); ohne ?aufnahme (Live-Simulation)
+   die Klasse „aufnahme“ selbst setzen – sonst setzt sie deck.js aus der Adresse. */
+await kontext.addInitScript(({ liveAus, klasse }) => {
+  if (klasse) {
+    const setzen = () => { if (!document.documentElement) return false; document.documentElement.classList.add('aufnahme'); return true; };
+    if (!setzen()) new MutationObserver((m, beobachter) => { if (setzen()) beobachter.disconnect(); }).observe(document, { childList: true });
+  }
+  if (liveAus) {
+    let marke;
+    Object.defineProperty(window, 'MARKE', {
+      configurable: true,
+      enumerable: true,
+      get: () => marke,
+      set: (wert) => {
+        if (wert && wert.umfragen) Object.values(wert.umfragen).forEach((u) => { if (u && typeof u === 'object') u.liveQuelle = ''; });
+        marke = wert;
+      }
+    });
+  }
+}, { liveAus: opt.liveAus, klasse: LIVE.simulieren });
+
+function adresse(extra, mitAufnahme = true) {
   const p = new URLSearchParams();
-  p.set('aufnahme', '');
+  if (mitAufnahme) p.set('aufnahme', '');
   if (opt.thema) p.set('thema', opt.thema);
   if (opt.modus) p.set('modus', opt.modus);
   if (opt.optional) p.set('optional', 'alle');
   if (opt.primaer) p.set('primaer', opt.primaer);
   if (opt.sekundaer) p.set('sekundaer', opt.sekundaer);
   Object.entries(extra || {}).forEach(([k, v]) => p.set(k, v));
-  return pathToFileURL(datei).href + '?' + p.toString().replace(/=(&|$)/g, '$1');
+  const suche = p.toString().replace(/=(&|$)/g, '$1');
+  return pathToFileURL(datei).href + (suche ? '?' + suche : '');
 }
 
 function seiteBeobachten(seite, ort) {
   seite.on('console', (m) => {
+    /* --live-offline: Der Ladefehler der liveQuelle ist gewollt (so meldet ihn
+       der Browser auch ohne Internet) – zählen, nicht als Fehler werten */
+    if (m.type() === 'error' && LIVE.modus === 'offline' && /^Failed to load resource: net::ERR_INTERNET_DISCONNECTED/.test(m.text()) &&
+        liveAnfrageErkennen((m.location() || {}).url || '')) {
+      LIVE.zaehler.konsoleOffline++;
+      return;
+    }
     if (m.type() === 'error') fehler(ort, 'Konsole: ' + m.text());
     else if (m.type() === 'warning') warnung(ort, 'Konsole (Warnung): ' + m.text());
   });
@@ -155,7 +410,8 @@ function seiteBeobachten(seite, ort) {
 
 const seite = await kontext.newPage();
 seiteBeobachten(seite, 'Seite');
-await seite.goto(adresse(), { waitUntil: 'load' });
+/* Mit liveQuelle (ohne --live-aus) ohne ?aufnahme – siehe Kopf „LIVE-ABSTIMMUNG“ */
+await seite.goto(adresse({}, !LIVE.simulieren), { waitUntil: 'load' });
 try {
   await seite.waitForFunction(() => window.Deck && window.Deck.istBereit, null, { timeout: 15000 });
 } catch (e) {
@@ -458,6 +714,33 @@ async function warteRahmen() {
   await seite.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
 }
 
+/* Live-Abstimmung: Nach dem Betreten fragt die Folie sofort ab. Vor Bild und
+   Prüfung warten, bis die Pille nicht mehr „verbinde“ zeigt (Antwort der
+   Attrappe oder Ladefehler), dann den Zustand mit dem Modus vergleichen. */
+const LIVE_SOLL = { null: 'live', werte: 'live', offline: 'offline' };
+async function liveAbwarten(f, ort) {
+  if (!LIVE.simulieren) return;
+  const lesen = () => seite.evaluate((id) => [...document.querySelectorAll('#' + id + ' .umfrage')].filter((u) => u.querySelector('.umfrage-live')).map((u) => {
+    const pille = u.querySelector('.umfrage-live');
+    const zustand = ['verbinde', 'live', 'offline', 'pausiert'].find((z) => pille.classList.contains('ist-' + z)) || '';
+    const n = u.querySelector('.umfrage-n');
+    return { umfrage: u.getAttribute('data-umfrage'), pille: zustand, text: pille.textContent.trim(), titel: pille.title, n: n ? n.textContent.trim() : '' };
+  }), f.id);
+  if (!(await lesen()).length) return;
+  try {
+    await seite.waitForFunction((id) => ![...document.querySelectorAll('#' + id + ' .umfrage-live')].some((p) => p.classList.contains('ist-verbinde')), f.id, { timeout: 6000 });
+  } catch (e) { /* Zustand unten melden */ }
+  for (const z of await lesen()) {
+    const schluessel = f.id + ' ' + z.umfrage;
+    if (LIVE.anzeige[schluessel]) continue;            /* je Folie einmal melden */
+    LIVE.anzeige[schluessel] = { pille: z.pille, text: z.text, n: z.n };
+    const soll = LIVE_SOLL[LIVE.modus];
+    if (soll && z.pille !== soll) {
+      fehler(ort, 'Live-Abstimmung „' + z.umfrage + '“: Pille zeigt „' + (z.pille || '?') + '“, erwartet „' + soll + '“ (Modus ' + LIVE.modus + '; ' + z.titel + ')');
+    }
+  }
+}
+
 for (const f of folien) {
   const eintrag = { id: f.id, nummer: f.nummer, titel: f.titel, schritte: f.schritte, backup: f.backup, bilder: [] };
   const ort = 'Folie ' + f.nummer + ' (' + f.id + ')';
@@ -465,6 +748,7 @@ for (const f of folien) {
   const zwischen = [];      /* Befunde der Zwischenschritte (nur mit --schritte) */
   for (const n of stufen) {
     await seite.evaluate(({ id, n }) => window.Deck.gehe(id, n, { sofort: true, still: true }), { id: f.id, n });
+    await liveAbwarten(f, ort);
     await warteRahmen();
     if (!opt.ohneBilder) {
       const name = f.id + (opt.schritte ? '_s' + n : '') + '.png';
@@ -477,6 +761,7 @@ for (const f of folien) {
   /* Prüfungen im Endzustand (alle Schritte sichtbar) */
   if (stufen[stufen.length - 1] !== f.schritte) {
     await seite.evaluate(({ id, n }) => window.Deck.gehe(id, n, { sofort: true, still: true }), { id: f.id, n: f.schritte });
+    await liveAbwarten(f, ort);
     await warteRahmen();
   }
   const u = await folieUntersuchen(f.id);
@@ -505,7 +790,7 @@ for (const f of folien) {
 if (opt.druck) {
   const pdfPfad = path.resolve(opt.druck);
   fs.mkdirSync(path.dirname(pdfPfad), { recursive: true });
-  const druckSeite = await kontext.newPage();
+  druckSeite = await kontext.newPage();
   seiteBeobachten(druckSeite, 'Druck');
   await druckSeite.goto(adresse({ druck: '' }), { waitUntil: 'load' });
   await druckSeite.waitForFunction(() => window.Deck && window.Deck.istBereit, null, { timeout: 15000 });
@@ -525,11 +810,34 @@ await ende();
 async function ende() {
   bericht.externeAnfragen = [...new Set(bericht.externeAnfragen)];
   bericht.externeAnfragen.forEach((u) => fehler('Netzwerk', 'externe Anfrage blockiert: ' + u));
+  const liveAnzahl = LIVE.zaehler.stand + LIVE.zaehler.stimme;
+  bericht.liveAnfragen = {
+    anzahl: liveAnzahl,
+    stand: LIVE.zaehler.stand,
+    stimme: LIVE.zaehler.stimme,
+    beantwortetVon: !LIVE.quellen.length ? '– (keine liveQuelle in marke.js)'
+      : LIVE.modus === 'aus' ? '– (--live-aus: liveQuelle für diesen Lauf ausgeblendet)'
+        : LIVE.modus === 'offline' ? 'niemandem: --live-offline lässt jede Anfrage scheitern (wie ohne Internet)'
+          : 'eingebaute Attrappe in pruefen.mjs (nicht ins Netz)',
+    modus: LIVE.modus,
+    werte: LIVE.modus === 'werte' ? opt.liveWerte : LIVE.modus === 'null' ? 'lauter Nullen' : null,
+    abgelehnt: LIVE.zaehler.abgelehnt,
+    konsoleOffline: LIVE.zaehler.konsoleOffline,   /* gewollte Ladefehler bei --live-offline, kein Fehler */
+    ausDruckansicht: LIVE.zaehler.druck,
+    stimmeAusPraesentation: LIVE.zaehler.ausPraesentation,   /* > 0 ist ein Fehler (Folie liest nur) */
+    zeitfenster: LIVE.quellen.map((q) => q.id + ': ' + (q.minuten ? 'minuten=' + q.minuten : 'ohne')),
+    standOhnePassendeMinuten: LIVE.zaehler.falscheMinuten,   /* > 0 ist ein Fehler */
+    quelle: LIVE.quellen.map((q) => q.id + ': ' + q.adresse),
+    pruefseiteMitAufnahme: !LIVE.simulieren,
+    anzeige: LIVE.anzeige
+  };
   bericht.zusammenfassung = {
     folien: bericht.folien.length,
     screenshots: bericht.screenshots.length,
     fehler: bericht.fehler.length,
     warnungen: bericht.warnungen.length,
+    externeAnfragen: bericht.externeAnfragen.length,
+    liveAnfragen: liveAnzahl,
     ausgabe: path.relative(process.cwd(), ausgabe) || '.',
     ergebnis: bericht.fehler.length ? 'FEHLER – bitte beheben' : (bericht.warnungen.length ? 'ok mit Warnungen' : 'ok')
   };

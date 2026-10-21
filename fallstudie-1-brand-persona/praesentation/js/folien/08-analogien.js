@@ -33,9 +33,25 @@
      STRICHZEICHNUNGEN (eigene Gestaltung, Zeichenfläche 120 × 120)
      Farbe und Strichstärke kommen aus css/folien/08-analogien.css.
      Neues Tier ergänzen: Schlüssel = Tiername klein, ä/ö/ü/ß als ae/oe/ue/ss
-     („Waschbär“ → waschbaer). Klasse „voll“ = gefüllte Fläche (Augen, Nase).
+     („Chamäleon“ → chamaeleon). Klasse „voll“ = gefüllte Fläche (Augen, Nase).
+     Jede Zeichnung auch in js/abstimmen.js (BILDER) eintragen.
      --------------------------------------------------------------------------- */
   var BILDER = {
+    /* Chamäleon (Tier unserer Analyse seit 20.10.2026): im Profil auf einem
+       schrägen Ast, Blick nach rechts. Erkennungsmerkmale: hoher Helm
+       (Kasque), großes rundes Auge mit Pupille, eingerollter Schwanz.
+       Füße ohne Zehen: Zehen am Ast wirkten bei 42–52 px wie Striche auf
+       dem Ast. Geprüft am 20.10.2026: Folie 96 px, Handy-Knopf 42/52 px,
+       „Danke“-Karte 54/66 px (dort verdeckt der Haken das Astende). */
+    chamaeleon:
+      '<path d="M29.5 70 C29 57 38 45 49.5 40.5 C55.5 38.5 60.5 36.5 64.5 36.5 C62.5 27 61.5 18.5 63 10.5 C72.5 15.5 82.5 22 91.5 28.5 C98.5 31.5 104 35 103.5 40 C101.5 47 93 53.5 82.5 55 C81 63.5 72.5 70 60.5 74 C49 78.5 37.5 78 31 75 Z"/>' +
+      '<path d="M66 37 C72 42.5 77.5 48 82.5 55"/>' +
+      '<circle cx="82.5" cy="37.5" r="9"/><circle class="voll" cx="84" cy="37" r="3.5"/>' +
+      '<path d="M102.5 40 Q95 47.5 85.5 48.5"/>' +
+      '<path d="M31 71.5 C17.5 74.5 6 85 10.5 98 C15 109.5 30 108.5 34.5 99.5 C38 91.5 32 83.5 25 86 C19 88 21 96.5 26.5 96.5"/>' +
+      '<path d="M75 65.5 L87 71 L87.5 87.5 M46.5 78 L42 90 L52.5 100.5"/>' +
+      '<path d="M30 108.5 L114 78"/>',
+    /* Waschbär (Tier unserer Analyse bis 20.10.2026; bleibt für einen Rückgriff) */
     waschbaer:
       '<path d="M60 104 C50 104 42 98 36 92 L14 78 L24 70 C21 58 22 46 27 37 L24 15 L44 26 Q60 21 76 26 L96 15 L93 37 C98 46 99 58 96 70 L106 78 L84 92 C78 98 70 104 60 104 Z"/>' +
       '<path d="M31 24 L34 33 M89 24 L86 33"/>' +
@@ -281,7 +297,7 @@
     notizen.insertBefore(p, notizen.firstChild);
   }
 
-  /* Kommt ein Tier (als Schlüssel, z. B. „waschbaer“) in einem Text vor? */
+  /* Kommt ein Tier (als Schlüssel, z. B. „chamaeleon“) in einem Text vor? */
   function nenntTier(text, schluessel) {
     return String(text || '').split(/[\s,.;:!?–—\-„“"()]+/).some(function (wort) {
       return wort && bildSchluessel(wort) === schluessel;
@@ -292,7 +308,7 @@
      1. marke.js → umfragen.tier.unsereAntwort = Tier unserer Analyse
         (das hebt die Umfrage in Schritt 1 als „Unsere Analyse“ hervor),
      2. marke.js → umfragen.tier.optionen enthält das Tier der Analyse und das
-        Tier des Selbstbilds (sonst behauptet der Titel „Waschbär, kein Adler“
+        Tier des Selbstbilds (sonst behauptet der Titel „Chamäleon, kein Adler“
         über Tiere, die gar nicht zur Wahl standen),
      3. der Titel ab Schritt 2 nennt beide Tiere. */
   function abgleich(ctx, tier) {

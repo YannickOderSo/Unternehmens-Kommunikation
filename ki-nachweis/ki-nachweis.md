@@ -90,14 +90,47 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 68 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis committet; D14 läuft |
 | 69 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D14 | nur Nachweis und Workflow-Skript committet; D14 nach Nutzungslimit fortgesetzt |
 | 70 | 19.10.2026 | Yannick | Fünf Punkte: Gründerzeile auf Folie 03 wieder einsetzen, Titel Folie 04, Frage zur Codeliste, Transkript hochladen, QR-Code und Live-Abstimmung der Tiere | – | Folie 03/04 geändert, Exporte neu; Transkript in Google Drive; Vorschlag zur Live-Abstimmung |
-| 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | in Arbeit: Live-Abstimmung für Folie 08 |
+| 71 | 19.10.2026 | Yannick | Antworten auf zwei Rückfragen: „Eigene Live-Abstimmung (Empfohlen)“, Tiere „Mit Schwan statt Delfin“ | D15 | Live-Abstimmung für Folie 08 fertig (Abstimmseite, Apps Script mit Anleitung, Anbindung, Tests); Einrichtung durch Yannick offen |
 | 72 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
 | 73 | 19.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D15 (fortgesetzt) | in Arbeit: D15 fortgesetzt |
 | 74 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15 | nur Nachweis committet; D15 läuft |
-| 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 (geplant) | in Arbeit: Bestandsaufnahme; Einbau nach Ende von D15 |
+| 75 | 19.10.2026 | Yannick | Platzhalterbilder weitestgehend ersetzen und die Platzhalter-Schilder entfernen | D16 | Folie 01 und 04 mit eigenen Illustrationen (gekennzeichnet), Schilder weg; Folie 09 bleibt (Betreuer); Exporte neu |
 | 76 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
 | 77 | 19.10.2026 | Yannick | Account 2 hat wieder Kontingent: Aufgaben zur Präsentation? | Ü04 | Übergabe Ü04: Vortragsreife neu prüfen, Fragerunde vorbereiten |
 | 78 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15 und D16 laufen |
+| 79 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D16-Bilder fertig, Einbau nach D15 |
+| 80 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D15, D16 | nur Nachweis committet; D15-Nacharbeit nach Nutzungslimit fortgesetzt |
+| 81 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D16 | D15 fertig und committet; nur Nachweis committet, D16-Einbau läuft |
+| 82 | 19.10.2026 | Yannick | „Wie füge ich das Skript ein bin jetzt auf google sheets“ | – | Anleitung im Chat: Apps Script öffnen, Code aus GitHub (Rohfassung) einfügen, speichern, einrichten ausführen |
+| 83 | 19.10.2026 | Yannick | „Hat geklappt“ + Screenshot des Ausführungsprotokolls | – | Hinweis: Protokoll ohne „Blatt … ist bereit“ – vermutlich doGet statt einrichten ausgeführt; Kontrolle und Wiederholung erklärt |
+| 84 | 19.10.2026 | Yannick | „Wo sehe ich diesen tabellenblatt in appscripts“ | – | Erklärt: Das Blatt steht in der Google-Tabelle (Sheets-Tab), nicht im Apps-Script-Editor |
+| 85 | 19.10.2026 | Yannick | Screenshot der Google-Tabelle (nur „Tabellenblatt1“, kein Blatt „Stimmen“) | – | Bestätigt: einrichten lief noch nicht; Schritt-für-Schritt-Anleitung zum Auswählen und Ausführen |
+| 86 | 19.10.2026 | Yannick | „Hab doget weggemacht und nochmal ausgeführt“ + Screenshot (Protokoll: „Blatt „Stimmen“ ist bereit“) | – | einrichten erfolgreich; Rückfrage, ob doGet aus dem Code gelöscht wurde (dann Code neu einfügen); Schritt 5 erklärt |
+| 87 | 19.10.2026 | Yannick | Web-App-Adresse (…/exec) geschickt | D17 | Web-App geprüft, Adresse in marke.js, echter Ende-zu-Ende-Test bestanden; Lasttest nicht bestanden (19 von 40) → D17: Live-Abstimmung lastfest machen |
+| 88 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
+| 89 | 19.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D17 (neu gestartet) | D17 war am Nutzungslimit vollständig gescheitert; mit Hinweis auf Teiländerungen neu gestartet |
+| 90 | 19.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17 läuft |
+| 91 | 20.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D17 (fortgesetzt) | D17: 6 von 7 Agenten fertig, Nacharbeit am Limit abgebrochen; mit Hinweis auf Teiländerungen fortgesetzt |
+| 92 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D17 | nur Nachweis committet; D17-Nacharbeit läuft |
+| 93 | 20.10.2026 | Yannick | „Wir sind höchstens 20 Leute …“: kein Lasttest mit 60, kein Plan-B-PDF | – | Lasttest mit 20 gegen die alte Fassung (20/20 gezählt, 6 über 15 s); Entscheidungen in ANLEITUNG, LIESMICH, AUTOREN, Testwerkzeug |
+| 94 | 20.10.2026 | Yannick | Skript-Aktualisierung zurückstellen; HOLY laut Elias eher Chamäleon → Abstimmung, Folie und Analyse ändern | – | Umfang ermittelt (Folie 08, Folie 10, Abstimmseite, Ausarbeitungen); Rückfragen zu Begründung und Tierauswahl |
+| 95 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Begründung „Claude schlägt vor“, Tiere „Chamäleon statt Waschbär“, Design „Nur das Chamäleon“ | D18 | Chamäleon in Folie 08 (Titel, Karte, Sprechtexte, Rückfragen), Abstimmung, Zeichnungen, 08b/09b/10/11/12-Notizen, limbic-map, Doku; Feld Tonalität Folie 10: Entscheidung offen |
+| 96 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18 | nur Nachweis committet; D18 läuft |
+| 97 | 20.10.2026 | Yannick | Folie 01: Logo-Rätsel anpassen, momentan nicht erkennbar | – | Ursache ermittelt (Rätselbild ohne Logo, nur zwei Stufen); Rückfrage zum Ansatz; Umsetzung nach D18 |
+| 98 | 20.10.2026 | Yannick | Antwort auf Rückfrage: „Groß das Logo und daneben bei der Auflösung dann die illustration mit logo“ | D19 (geplant) | Folie 01: Rätsel mit großem, unscharfem Original-Logo (2 Rätselstufen), Auflösung mit Illustration mit Logo auf der Dose; Exporte neu |
+| 99 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D18, D19 | nur Nachweis committet; D18 läuft, D19 wartet |
+| 100 | 20.10.2026 | Yannick | „Arbeite weiter“ + Abstimmung nach einer gewissen Zeit zurücksetzen + Folien des Profs im Ordner unterlagen/ committet | D19 (neu gestartet), D20 (geplant) | D19 nach Nutzungslimit neu gestartet; zeitliches Zurücksetzen geplant; Hinweis zu Urheberrecht/öffentlichem Repo |
+| 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
+| 102 | 20.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D19, D21 (fortgesetzt) | D19 (Nacharbeit) und D21 (Abgleich Begriffe/Quellen, Prüfung, Bericht) nach dem Limit fortgesetzt |
+| 103 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D19, D21 | nur Nachweis committet; D19 und D21 laufen |
+| 104 | 20.10.2026 | Yannick | Antwort auf Rückfrage zum Vorlesungs-Abgleich: „Steuerrad-Begriffe (Folie 10)“ und „Kennzeichnung & Rückfragen“ umsetzen | D22 (geplant) | Umsetzung nach Ende von D20 |
+| 105 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D20 (neu gestartet) | D20 war am Limit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet |
+| 106 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft, D22 vorbereitet |
+| 107 | 21.10.2026 | Yannick | „Was steht danach für eine task an?“ | – | Übersicht im Chat: laufende Pakete, Aufgaben für Yannick, Termine laut Arbeitsplan, Ergebnis Account 2 zum Zusammenführen |
+| 108 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
+| 109 | 21.10.2026 | Yannick | „Entscheidungen beide ja“ + Account 2 gibt bei 95 % Wochenlimit seine Aufgaben an Account 1 ab | D22 (Auftrag ergänzt) | Chamäleon ins Feld Tonalität (Folie 10, 08b „Ins Steuerrad“), Limbic-Typ bleibt Hauptaussage – in D22 aufgenommen; Stand Account 2 geprüft |
+| 110 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft |
+| 111 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D22 (neu gestartet) | D22 war am Limit gescheitert (Bau fast fertig, 28 Dateien geändert); mit Hinweis neu gestartet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1340,7 +1373,10 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Schnittstelle festgelegt (nur GET, JSONP, letzte Stimme je Gerät zählt, „runde“ trennt Probe
   und Vortrag ohne geheimen Schlüssel) und Workflow D15 gestartet: drei Bauteile parallel (Apps Script mit
   Anleitung, Abstimmseite, Anbindung in Folie 08), Ende-zu-Ende-Test mit lokaler Attrappe, zwei Prüfer, Nacharbeit.
-- **Ergebnis:** in Arbeit
+- **Ergebnis (nachgetragen nach Ende von D15):** Live-Abstimmung fertig und mit einer lokalen Attrappe getestet
+  (Details unter D15). Solange `liveQuelle` in `marke.js` leer ist, verhält sich Folie 08 wie bisher (Zählmodus,
+  kein QR-Code). Offen: Einrichtung der Web-App durch Yannick nach `praesentation/live-abstimmung/ANLEITUNG.md`,
+  Test mit echten Handys, Lasttest bei der Generalprobe, Runde vor dem Vortrag umstellen.
 - **Unteragenten:** D15
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -1397,8 +1433,13 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     Folie 09 bleibt (Bündel C, Zustimmung des Betreuers offen).
   - **Workflow D16** gestartet, zunächst nur die Bildphase (neue Dateien in `bilder/`); Einbau, Prüfung und
     Exporte folgen per resume nach Ende von D15.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D16 (läuft)
+- **Ergebnis (nachgetragen nach Ende von D16):** Folie 01 zeigt `bilder/raetsel-holy.svg` (Pappdose mit
+  Drachenfrucht und Heiligenschein, Shaker, Drachenfrucht vor HOLY-Gelb), Folie 04 `bilder/persona-marco.svg` (Marco
+  in der nächtlichen Lagerhalle); beide gekennzeichnet „Illustration: eigene Gestaltung, KI-gestützt (Claude Code),
+  19.10.2026“. Pille „Platzhalterbild“ (01) und Schild „Platzhalter – KI-Bild folgt“ (04) sind weg, Exporte neu.
+  Einziger sichtbarer Platzhalter bleibt Folie 09 (Bündel C; Raptor-Screenshot nur mit Zustimmung des Betreuers).
+  Details unter D16.
+- **Unteragenten:** D16
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 76 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -1433,6 +1474,466 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D15, D16 (laufen)
+
+### 79 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D16, Bildphase fertig: `bilder/raetsel-holy.svg` (Stillleben mit Pappdose, eigener Comic-Tukan, Shaker,
+    Drachenfrucht vor HOLY-Gelb; ohne Logo und Schrift; 13 Durchläufe mit Sichtprüfung) und
+    `bilder/persona-marco.svg` (Marco in Warnweste in der nächtlichen Lagerhalle mit Shaker). Beide selbst gerendert
+    und angesehen.
+  - D15 läuft (Ende-zu-Ende-Test, danach Prüfer und Nacharbeit). Einbau der Bilder folgt danach.
+  - Nur Nachweis und Rohprotokoll committet.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15, D16 (laufen)
+
+### 80 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D15 war in der Nacharbeit erneut am Nutzungslimit gescheitert (6 von 7 Agenten fertig). Nach dem Reset um
+    16:10 UTC per resume fortgesetzt; nur die Nacharbeit läuft neu (Befunde der Prüfer: Browser-Speicher ohne
+    Runde, Zeitlimit 4 s, Anleitung für Laien, Last, Logo auf der Abstimmseite, kleine Handys, QR-Dichte).
+  - Nur Nachweis und Rohprotokoll committet; D15- und D16-Dateien folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D15 (Nacharbeit läuft), D16 (wartet auf Einbau)
+
+### 81 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D15 fertig, selbst geprüft und committet (`fa1e7a7`, Details unter D15).
+  - D16 per resume fortgesetzt: Die Bilder kamen aus dem Zwischenspeicher, Einbau, Prüfung und Nacharbeit laufen.
+  - Nur Nachweis und Rohprotokoll committet; die zwei Illustrationen und der Einbau folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D16 (läuft)
+
+### 82 – 19.10.2026 – Yannick
+
+> Wie füge ich das Skript ein bin jetzt auf google sheets
+
+- **Vorgehen Claude:** Schritte 2–4 aus `praesentation/live-abstimmung/ANLEITUNG.md` im Chat zusammengefasst und den
+  direkten Link auf die Rohfassung von `apps-script.gs` auf GitHub genannt (Kopieren mit Strg+A/Strg+C), dazu die
+  Kontrollen nach dem Einfügen und der erste Lauf von `einrichten`. Keine Dateien geändert.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 83 – 19.10.2026 – Yannick
+
+> [Bild: Screenshot aus dem Apps-Script-Editor, unten das Ausführungsprotokoll mit zwei Zeilen „19:39:46 Hinweis
+> Ausführung begonnen“ und „19:39:46 Hinweis Ausführung abgeschlossen“; darüber angeschnitten Codezeile 228
+> `return ContentService.createTextOutput(json).setMimeType(Co…`] Hat geklappt
+
+- **Vorgehen Claude:** Protokoll mit dem Skript abgeglichen: `einrichten()` schreibt mit `Logger.log` die Zeile
+  „Blatt „Stimmen“ ist bereit …“ ins Protokoll; die fehlt. Wahrscheinlich war im Auswahlfeld noch die erste Funktion
+  der Datei (`doGet`) gewählt. Kontrolle (Blatt „Stimmen“ in der Tabelle?) und Wiederholung mit „einrichten“
+  erklärt; Schritt 5 (Bereitstellen) erst danach.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 84 – 19.10.2026 – Yannick
+
+> Wo sehe ich diesen tabellenblatt in appscripts
+
+- **Vorgehen Claude:** Erklärt, dass das Blatt „Stimmen“ nicht im Apps-Script-Editor, sondern in der Google-Tabelle
+  selbst erscheint (Browser-Tab mit Google Sheets, Blattreiter unten links), wie man die Tabelle wiederfindet und
+  woran man im Editor erkennt, welche Funktion ausgewählt ist.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 85 – 19.10.2026 – Yannick
+
+> [Bild: Screenshot einer leeren Google-Tabelle „Unbenannte Tabelle“ („In Google Drive gespeichert“), Menüleiste mit
+> „Erweiterungen“, rechts geöffnete Seitenleiste „Tables“ mit Vorlagen, unten nur der Blattreiter „Tabellenblatt1“;
+> kein weiterer Text]
+
+- **Vorgehen Claude:** Screenshot ausgewertet: Es gibt kein Blatt „Stimmen“, `einrichten` ist also noch nicht
+  gelaufen (passt zum Protokoll aus 83). Erklärt, wie man im Apps-Script-Editor die Funktion „einrichten“ auswählt
+  und ausführt, woran man den Erfolg erkennt (Protokollzeile, neuer Reiter „Stimmen“) und was zu tun ist, falls
+  Apps Script nicht aus dieser Tabelle geöffnet wurde. Empfohlen, die Tabelle umzubenennen.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 86 – 19.10.2026 – Yannick
+
+> [Bild: Screenshot des Ausführungsprotokolls mit drei Zeilen: „19:44:16 Hinweis Ausführung begonnen“,
+> „19:44:21 Info Blatt „Stimmen“ ist bereit. Gespeicherte Stimmen: 0.0“, „19:44:18 Hinweis Ausführung
+> abgeschlossen“; darüber angeschnitten die Kommentarzeile 25 des Skripts mit einer Beispielantwort] Hab doget
+> weggemacht und nochmal ausgeführt
+
+- **Vorgehen Claude:** Protokoll bestätigt: `einrichten` ist gelaufen, das Blatt „Stimmen“ ist angelegt („0.0“ ist
+  nur die Zahlendarstellung von `Logger.log`). „doget weggemacht“ ist mehrdeutig: Wurde nur die Auswahl im
+  Auswahlfeld geändert, ist alles in Ordnung; wurde die Funktion `doGet` aus dem Code gelöscht, funktioniert die
+  Web-App nicht. Kontrolle (Strg+F „function doGet“) und Abhilfe (Code neu einfügen, speichern) erklärt, danach
+  Schritt 5 (Bereitstellen als Web-App).
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 87 – 19.10.2026 – Yannick
+
+> https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Web-App geprüft (Stand-Abfrage ohne Anmeldung, JSON und JSONP): antwortet, „Zugriff: Jeder“ stimmt; Antwortzeit
+    1,4–3,0 s.
+  - Lasttest `live-abstimmung-test.mjs --lasttest` (40 Stimmen gleichzeitig in eigener Runde „lasttest-20261019-174715“):
+    **nicht bestanden** – angenommen 19 von 40, 21 abgelehnt („Gerade kommen sehr viele Stimmen auf einmal …“),
+    Antwortzeit Median 11,2 s. Ursache: Die Wartesperre beim Schreiben (rund 0,5 s je Stimme, alles nacheinander).
+    Die 19 Teststimmen stehen in Yannicks Tabelle in der Runde „lasttest-…“ und zählen weder in der Probe noch im
+    Vortrag.
+  - Adresse in `marke.js` → `umfragen.tier.liveQuelle` eingetragen (Runde 'probe'), committet und gepusht
+    (`753dcb2`).
+  - Echter Ende-zu-Ende-Test (Playwright) über GitHub Pages und die echte Web-App: Folie 08 zeigte „Live“, n = 0;
+    Handy (abstimmen.html auf Pages) stimmte für Waschbär, „Danke“ nach 2,9 s; Folie zeigte danach n = 1 (Runde
+    'probe', eine Teststimme in Yannicks Tabelle).
+  - **Workflow D17** gestartet: Server ohne Wartesperre (appendRow), automatische Wiederholung auf dem Handy,
+    Prüfwerkzeug mit eingetragener Web-App (Prüfläufe und Exporte ohne Netz), Tests, zwei Prüfer, Nacharbeit.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D17 (läuft)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 88 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Dateien, die D17 gerade ändert, folgen nach der
+  Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D17 (läuft)
+
+### 89 – 19.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D17 war am Nutzungslimit gescheitert, bevor ein Agent fertig war (alle 7 Agenten ohne
+  Ergebnis). Zurück blieben Teiländerungen in `js/abstimmen.js` und `css/abstimmen.css`. Im Workflow-Skript einen
+  Hinweis darauf ergänzt (diff lesen, übernehmen oder verwerfen) und D17 neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D17 (neu gestartet)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 90 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Teiländerungen an der Abstimmseite und alles,
+  was D17 ändert, folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D17 (läuft)
+
+### 91 – 20.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D17 lief nach dem Neustart (89) bis auf die Nacharbeit durch (Bauen, Ende-zu-Ende-Test, zwei Prüfer
+  fertig); die Nacharbeit brach am Nutzungslimit mitten in der Arbeit ab (Änderungen an `apps-script.gs`,
+  `live-abstimmung-test.mjs`, `js/abstimmen.js`, Sicherungen im Scratchpad).
+- **Vorgehen Claude:** Transkript der abgebrochenen Nacharbeit ausgewertet (welche Dateien sie geändert hat, wo die
+  Sicherungen liegen), im Workflow-Skript nur den Auftrag der Nacharbeit um diesen Hinweis ergänzt und D17 per resume
+  fortgesetzt (die sechs fertigen Agenten kommen aus dem Zwischenspeicher).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D17 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 92 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D17 folgen nach Nacharbeit und
+  eigener Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D17 (Nacharbeit läuft)
+- **Nachtrag:** D17 danach fertig, selbst geprüft und committet (Details unter D17).
+
+### 93 – 20.10.2026 – Yannick
+
+> Wir sind höchstens 20 Leute denke ich brauche keinen lasttest von 60 , plan b ist denke auch unnötig
+
+- **Vorgehen Claude:**
+  - Lasttest mit 20 Handys gegen die **noch alte** Server-Fassung (neue Wiederholung auf dem Handy simuliert):
+    alle 20 gezählt, 14 im 1. Versuch, 6 nach Wiederholung, keiner gescheitert; Zeit bis „Danke“ Median 8,0 s,
+    längste 20,8 s, 6 Handys über dem Ziel von 15 s → „GEZÄHLT, ABER ZU LANGSAM“. Folie nie „offline“. 20 Zeilen
+    in der Runde „lasttest-20261020-093242“ in Yannicks Tabelle (zählen nicht).
+  - Entscheidungen eingetragen: Gruppengröße höchstens ca. 20 → Lasttest mit `--anzahl 20` (ANLEITUNG, LIESMICH 12,
+    AUTOREN 6c/16, Texte im Testwerkzeug); keine zusätzliche PDF-Seite für Plan B (LIESMICH 11, AUTOREN 16).
+  - Testwerkzeug danach erneut: 44 von 44.
+- **Ergebnis:** Commit + Push; Empfehlung an Yannick: Skript trotzdem aktualisieren (Wartezeit)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 94 – 20.10.2026 – Yannick
+
+> Stell das erstmal zurück wir müssen noch etwas das Design überarbeiten. Elias hat mir von seiner Ausarbeitung
+> berichtet das er holy eher als Chamäleon einordnet weshalb wir es bei sowohl der Abstimmung bei der folie und
+> unserer Analyse ändern müssen
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Aktualisierung des Apps Script zurückgestellt (die Web-App läuft weiter mit der alten Fassung; die neue
+    Abstimmseite funktioniert damit, nur langsamer bei Andrang).
+  - Umfang ermittelt: „Waschbär“ als unsere Analyse steht in Folie 08 (Titel, Szene „Unsere Analogien“, Notizen,
+    Kasten), Folie 10 (Tonalität), `marke.js` (Umfrage: Optionen, unsereAntwort), Abstimmseite (Tier-Zeichnungen),
+    `js/folien/08-analogien.js` (Zeichnungen), LIESMICH/AUTOREN/QUELLEN/ANLEITUNG sowie in den Ausarbeitungen
+    (`limbic-map.md`, Dossier Bündel B von Lukas, Recherche-Dossier Kap. 6.7 als Hypothese „Waschbär oder Affe“).
+  - Rückfragen an Yannick: Begründung von Elias (Quelle für die Einordnung), welches Tier in der Abstimmung
+    ersetzt wird, ob außer dem Chamäleon weitere Design-Änderungen anstehen.
+- **Ergebnis:** Rückfragen
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 95 – 20.10.2026 – Yannick (Antworten auf drei Rückfragen von Claude)
+
+> Frage 1: „Wie begründet Elias das Chamäleon? …“ – Antwort (Auswahl): **„Claude schlägt vor“** (Begründung aus dem
+> Recherche-Dossier, als Vorschlag gekennzeichnet, Elias prüft)
+>
+> Frage 2: „Welche fünf Tiere sollen in der Live-Abstimmung stehen?“ – Antwort (Auswahl): **„Chamäleon statt
+> Waschbär“** (Adler, Löwe, Chamäleon, Fuchs, Schwan)
+>
+> Frage 3: „Was soll am Design außer dem Chamäleon noch überarbeitet werden?“ – Antwort (Auswahl): **„Nur das
+> Chamäleon“**
+
+- **Vorgehen Claude:** Workflow D18 gestartet: Inhalte und Begründung (Folie 08, Folie 10, marke.js, Ausarbeitungen,
+  Doku) und Chamäleon-Zeichnung (Folie und Abstimmseite) parallel, zwei Prüfer (Inhalt/Belege/Kennzeichnung;
+  Darstellung), Nacharbeit mit Exporten. Begründung nur mit Dossier-Belegen, gekennzeichnet als Vorschlag; Lukas'
+  Dossier und das Recherche-Dossier bleiben unverändert; Live-Abstimmung technisch unverändert.
+- **Ergebnis (nachgetragen nach Ende von D18):** umgesetzt und geprüft (Details unter D18). Offen: Elias prüft die
+  vorgeschlagene Begründung; Lukas gleicht die Analogie-Befragung ab; Entscheidung Yannick, ob das Chamäleon auch
+  ins Feld Tonalität auf Folie 10 kommt.
+- **Unteragenten:** D18
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 96 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D18 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D18 (läuft)
+
+### 97 – 20.10.2026 – Yannick
+
+> Zusätzlich muss die erste folie mit dem Logo raten angepaßt werden, momentan hat meine keine Chance das Logo zu
+> erkennen
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):** Folie 01 angesehen: Schritt 0 zeigt die eigene Illustration
+  (bewusst ohne Logo und Schrift) 300 % vergrößert und 40 px unscharf, Schritt 1 löst sofort auf – es gibt keine
+  Zwischenstufe und nichts, woran man die Marke erkennen könnte. Rückfrage zum Ansatz (echtes Logo als Rätsel mit
+  mehreren Stufen oder Illustration mit Hinweisstufen). Umsetzung erst nach Ende von D18, weil beide `index.html`,
+  `marke.js` und die Doku ändern.
+- **Ergebnis:** Rückfrage
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 98 – 20.10.2026 – Yannick (Antwort auf eine Rückfrage von Claude)
+
+> Frage: „Wie soll das Rätsel auf Folie 01 funktionieren? …“ – Antwort (eigener Text): **„Groß das Logo und daneben
+> bei der Auflösung dann die illustration mit logo“**
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):** Umsetzung festgelegt: Die Illustration bekommt das Original-Logo
+  (`bilder/holy-logo-oval.png`, unverändert, als data-URI eingebettet) groß auf die Dose; das Rätsel zoomt in Schritt 0
+  groß und unscharf auf dieses Logo, mit mindestens einer Zwischenstufe; die Auflösung zeigt links Titel und Logo,
+  rechts die Illustration mit Logo. Die frühere eigene Regel „Illustrationen ohne Logo“ ist damit auf Entscheidung von
+  Yannick für Folie 01 aufgehoben; Kennzeichnung (© HOLY) und offene Betreuer-Klärung zu Logos bleiben. Workflow D19
+  vorbereitet (Bau, zwei Prüfer, Nacharbeit); Start erst nach Ende von D18, weil beide dieselben Dateien ändern.
+- **Ergebnis (nachgetragen nach Ende von D19):** umgesetzt und geprüft (Details unter D19). Offen: Rätsel mit zwei
+  Personen testen, Übergang auf dem Vortragsrechner ansehen, Logo-Nutzung mit dem Betreuer klären, B7-Zeile zu
+  Logos anpassen.
+- **Unteragenten:** D19
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 99 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D18 läuft noch, D19 startet danach.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D18 (läuft), D19 (geplant)
+
+### 100 – 20.10.2026 – Yannick
+
+> Arbeite weiter + 2 Anmerkungen:
+> - Die Abstimmung sollte reseted werden nach einer gewissen Zeit damit bei der Präsentation keine alten Stimmen
+>   dastehen
+> - Ich habe mal sämtliche Folien vom Prof in den Unterlagen Ordner Committed
+
+(Vorher hat Yannick lokal `/usage` ausgeführt – Kostenübersicht der Sitzung, kein Prompt an Claude.)
+
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - Yannicks Commit `abe1fb0` („Add files via upload“: `unterlagen/Stenger Folien.pdf`, 129 Seiten, 12,9 MB, Scan
+    vom iPhone) per Fast-Forward übernommen.
+  - D19 war sofort am Nutzungslimit gescheitert (keine Dateiänderungen); nach dem Reset neu gestartet.
+  - Zeitliches Zurücksetzen der Abstimmung als nächstes Paket (D20) geplant, nach D19, weil beide `marke.js`,
+    LIESMICH und AUTOREN ändern.
+  - Hinweis an Yannick: Das Repository und GitHub Pages sind öffentlich – die Vorlesungsfolien sind damit für alle
+    abrufbar (Urheberrecht des Dozenten); Rückfrage, ob sie entfernt bzw. nur im Gruppenordner abgelegt werden
+    sollen, und ob der Abgleich der Modellbegriffe mit den Folien das nächste Paket ist.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19 (neu gestartet)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 101 – 20.10.2026 – Yannick (Antworten auf drei Rückfragen von Claude)
+
+> Frage 1: „Das Repository und die GitHub-Pages-Seite sind öffentlich – die 129 Vorlesungsfolien von Prof. Stenger
+> kann dort jetzt jeder herunterladen (Urheberrecht des Dozenten). Was soll mit der Datei passieren?“ – Antwort
+> (Auswahl): **„Drin lassen“**
+>
+> Frage 2: „Nach welcher Zeit sollen Stimmen auf Folie 08 nicht mehr zählen (automatisches Zurücksetzen)?“ – Antwort
+> (Auswahl): **„Nach 30 Minuten (Empfohlen)“**
+>
+> Frage 3: „Soll ich nach Logo-Rätsel und Zurücksetzen als nächstes Paket alle Modellbegriffe mit den
+> Vorlesungsfolien abgleichen …?“ – Antwort (Auswahl): **„Ja, als nächstes (Empfohlen)“**
+
+- **Vorgehen Claude:**
+  - Folien bleiben im Repository (Entscheidung Yannick; Hinweis auf Öffentlichkeit gegeben).
+  - Vorlesungstext seitenweise extrahiert (`pdftotext`, 129 Seiten; Arbeitskopie im Scratchpad). Erste Sichtung:
+    Aufgabenstellung Fallstudie 1 auf S. 60 (Brand Persona mit fünf Bereichen, Limbic Map, Repertory Grid,
+    Laddering, Analogiemethoden, Zusammenführung im Markensteuerrad nach Esch), Limbic Map nach Häusel S. 69–71/93,
+    Markensteuerrad S. 87–89, Positionierung S. 92–94.
+  - **Workflow D21** (Abgleich, nur Bericht `abgleich-vorlesung.md`, keine inhaltlichen Änderungen) parallel zu D19
+    gestartet, weil er nur liest.
+  - **D20** (Stimmen zählen nur 30 Minuten) folgt nach D19, weil beide `marke.js`, LIESMICH und AUTOREN ändern; die
+    Funktion braucht die zurückgestellte Aktualisierung des Apps Script.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19 (läuft), D21 (läuft), D20 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 102 – 20.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Anlass:** Beide Workflows sind am Nutzungslimit stehen geblieben: D19 nach Bau und zwei Prüfern (Nacharbeit
+  fehlt), D21 nach Auswertung und vier von fünf Abgleich-Bereichen (fehlen: Begriffe/Quellen, Gegenprüfung,
+  Bericht). Die abgebrochenen Agenten hatten keine Dateien geändert (Transkripte geprüft).
+- **Vorgehen Claude:** D19 und D21 per resume fortgesetzt; fertige Agenten kommen aus dem Zwischenspeicher.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D19, D21 (fortgesetzt), D20 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 103 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D19 (Folie 01) folgen nach
+  Nacharbeit und eigener Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D19, D21 (laufen)
+
+### 104 – 20.10.2026 – Yannick (Antwort auf eine Rückfrage von Claude)
+
+> Frage: „Welche Befunde aus dem Vorlesungs-Abgleich soll ich umsetzen, sobald das 30-Minuten-Fenster (D20) fertig
+> ist? (Mehrfachauswahl)“ – Antwort (Auswahl): **„Steuerrad-Begriffe (Folie 10)“**, **„Kennzeichnung & Rückfragen“**
+
+- **Vorgehen Claude:** Vorher Bericht `abgleich-vorlesung.md` (D21) in Kurzform vorgestellt. Ausgewählt sind die
+  Befunde #27–#30 (Mitte des Rads „Markenkern“, Leitfragen in Wir-Form, „Markeneigenschaften“, Identität/Image)
+  und #15, #22, #30 (Hinweis S. 78 zu KI-Personas, Limbic-Typen als eigene Erweiterung, Rückfrage-Sätze). Nicht
+  ausgewählt: Quellen/Vorlesungsbezug in Fußzeilen und Literatur; Hinweise für Lukas und Elias. Umsetzung als D22
+  nach D20, weil beide `js/komponenten.js` ändern.
+- **Ergebnis:** geplant
+- **Unteragenten:** D22 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 105 – 21.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D20 (Zeitfenster der Abstimmung) war am Nutzungslimit gescheitert, bevor ein Agent fertig war; der
+  Bau hatte Server, Folie, Abstimmseite, Testwerkzeug (53/53 Prüfungen) und Prüfwerkzeug schon geändert, die Doku
+  war in Arbeit.
+- **Vorgehen Claude:** Stand geprüft (Tests laufen), im Workflow-Skript einen Hinweis auf die Teiländerungen ergänzt
+  und D20 neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D20 (neu gestartet), D22 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 106 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Teiländerungen von D20 folgen nach Prüfung.
+  Workflow-Skript D22 vorbereitet und committet (`60d2b58`), Start nach D20.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D20 (läuft), D22 (geplant)
+
+### 107 – 21.10.2026 – Yannick
+
+> Was steht danach für eine task an?
+
+- **Vorgehen Claude:** Branch `praesentation-account-2` gelesen (Account 2 hat `VORTRAGSREIFE.md` und
+  `fragerunde.md` als Zwischenstand vor der Abnahme gepusht, Workflow A2-D04 läuft dort noch) und die Termine aus
+  `arbeitsplan.md` abgeglichen. Übersicht im Chat: nach D20 und D22 Zusammenführen der Ergebnisse von Account 2,
+  Aufgaben für Yannick (Skript aktualisieren, Rätsel testen, offene Entscheidungen), Termine bis zur Generalprobe.
+- **Ergebnis:** Antwort im Chat
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 108 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D20 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D20 (läuft)
+
+### 109 – 21.10.2026 – Yannick
+
+> Entscheidungen beide ja
+> Account 2 habe ich mitgeteilt das er bei einem weekly Limit von 95% seine Tasks an dich weitergeben soll er ist
+> gerade circa bei 75% denke er wird seine Tasks nicht fertig bekommen
+
+- **Vorgehen Claude:**
+  - Bezug: die zwei offenen Entscheidungen aus der Antwort auf 107 – (1) Chamäleon auch ins Feld Tonalität auf
+    Folie 10: ja; (2) Limbic-Typ bleibt Hauptaussage auf Folie 05: ja.
+  - Beide Entscheidungen in den Auftrag von D22 aufgenommen (Workflow-Skript ergänzt; Feld Tonalität auf 10 und
+    Zeile „Ins Steuerrad“ auf 08b wortgleich, Hinweis für Lukas im Kasten; Wortbudget Folie 10 nicht erhöhen;
+    Limbic-Typ nur als eigene Erweiterung kennzeichnen).
+  - Stand von Account 2 auf dem Branch geprüft: `VORTRAGSREIFE.md` und `fragerunde.md` als Zwischenstand gepusht,
+    Workflow A2-D04 im letzten Schritt (Abnahme). Übernahme bei Übergabe: Branch mergen, Abnahme selbst abschließen,
+    Befunde gegen den neuen Stand abgleichen.
+- **Ergebnis:** Auftrag D22 ergänzt; Antwort im Chat
+- **Unteragenten:** D20 (läuft), D22 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 110 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D20 folgen nach der Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D20 (läuft)
+
+### 111 – 21.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** Zwischen 110 und 111 ist D20 fertig geworden (selbst geprüft und committet, `1e05a36`; Schritte zum
+  Aktualisieren des Skripts an Yannick); D22 wurde gestartet und ist am Nutzungslimit gescheitert, bevor ein Agent
+  fertig war – der Bau hatte aber fast alles umgesetzt (28 Dateien), offen waren Prüfläufe und Sichtprüfung.
+- **Vorgehen Claude:** Hinweis auf die Teiländerungen ins Workflow-Skript, D22 neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D22 (neu gestartet)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -1460,8 +1961,14 @@ steht hier mit dem wörtlichen Auftrag.
 | D12 | 17.–19.10.2026 | 57, 59, 64 | Workflow „praesentation-uebernahme“ (10 Unteragenten in 4 Phasen) | Präsentation übernehmen: Bestandsaufnahme, Umsetzung in 3 Schritten, 3 Prüfer, Nacharbeit mit Exporten | 34 Änderungen; 27 Befunde (0 hoch, 9 mittel, 18 niedrig), eingearbeitet bis auf 4 Gruppenentscheidungen; Exporte neu | Claude: Prüflauf 0 Fehler, Übersicht und Folien 03–05, 12 angesehen |
 | D13 | 18.–19.10.2026 | 59, 60, 64 | Workflow „gruender-befragung“ (5 Unteragenten, ohne Websuche) | Gründer-Sprachnachrichten mit Persona, Limbic Map, Markenkompetenz, Markensteuerrad und Bündel B abgleichen; Befunde von zwei Prüfern (Treue, Methodik/Datenschutz) gegenprüfen | 41 Befunde; Prüfer: 27 bzw. 12 halten, Rest korrigiert, keiner verworfen; Auswertung im Gruppenordner | Claude: Befunde und Urteile gelesen, Quellennummern am Dossier geprüft, Korrekturen eingearbeitet |
 | D14 | 19.10.2026 | 67 (fortgesetzt nach 69) | Workflow „gruenderbefragung-einbau“ (8 Unteragenten in 4 Phasen) | Freigegebene Gründerbefragung in Ausarbeitungen von Bündel A und Web-Präsentation einbauen, prüfen, Exporte erneuern | 71 Änderungen in 6 Ausarbeitungen, 18 in der Präsentation; 23 Prüfbefunde (0 hoch, 6 mittel), eingearbeitet; Exporte neu | Claude: Prüflauf 0 Fehler, PDF 22 S., B3/B7 angesehen, gesperrte Dateien unverändert |
-| D15 | 19.10.2026 | 71 | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | *läuft* | – |
-| D16 | 19.10.2026 | 75 | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | *läuft (zuerst nur die Bilder, Einbau nach D15)* | – |
+| D15 | 19.10.2026 | 71 (fortgesetzt nach 73 und 80) | Workflow „live-abstimmung“ (7 Unteragenten in 4 Phasen) | Eigene Live-Abstimmung für Folie 08: Apps Script + Anleitung, Abstimmseite, Live-Anbindung, Test mit Attrappe, Prüfung | Abstimmseite, Apps Script, Anleitung, Testwerkzeug, Anbindung Folie 08; 2 Prüfer, 2 hohe und 8 mittlere Befunde umgesetzt | Claude: Tests erneut, Prüflauf 0 Fehler, Abstimmung mit Attrappe selbst durchgespielt |
+| D16 | 19.10.2026 | 75 (fortgesetzt nach 81) | Workflow „platzhalterbilder“ (6 Unteragenten in 4 Phasen) | Platzhalterbilder auf Folie 01 und 04 durch eigene Illustrationen ersetzen, Schilder entfernen, prüfen, Exporte | 2 Illustrationen eingebaut, Schilder weg; Prüfer: Tukan = echte HOLY-Sorte → ersetzt durch Drachenfrucht; Exporte neu | Claude: Folien 01/04 gerendert und angesehen, Tukan-Quelle per Websuche nachgeprüft |
+| D17 | 19.–20.10.2026 | 87 (neu gestartet nach 89, fortgesetzt nach 91) | Workflow „live-abstimmung-last“ (7 Unteragenten in 4 Phasen) | Live-Abstimmung lastfest: Server mit kurzer Zeilen-Reservierung, Wiederholung auf dem Handy, Prüfwerkzeug mit Live-Attrappe, Tests, Prüfung | Server, Abstimmseite, Testwerkzeug (44 Prüfungen, 16 Mutanten), Prüfwerkzeug, Anleitung; 2 Prüfer (1 hoher, 9 mittlere Befunde) umgesetzt | Claude: Tests erneut (44/44), Prüflauf 0 Fehler, 0 externe Anfragen, Schreibweg im Code gelesen |
+| D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
+| D19 | 20.10.2026 | 98 (neu gestartet nach 100, fortgesetzt nach 102) | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | Rätselbild mit Logo (data-URI), Stufen 440/11 → 220/10 → 100/0, Kennzeichnung, Doku; 2 Prüfer (3 mittlere Befunde) umgesetzt | Claude: Stufenbilder und Folienbild f01 angesehen, Diff und Modellbezeichnungen geprüft |
+| D20 | 20.–21.10.2026 | 100/101 (neu gestartet nach 105) | Workflow „abstimmung-zeitfenster“ (3 Unteragenten in 3 Phasen) | Stimmen zählen nur 30 Minuten: Server-Parameter minuten, Folie 08, Abstimmseite, Tests, Doku | Fassung 20.10.2026 mit Zeitfenster; Folie, Handy, Speicher; 53 Prüfungen, 26 Mutanten, Browser-Test zeitfenster-e2e.mjs; Prüfer: 3 mittlere Befunde umgesetzt | Claude: Tests 53/53, zeitfenster-e2e 58/0, Prüflauf f08 0 Fehler |
+| D22 | 21.10.2026 | 104/109 | Workflow „abgleich-umsetzung“ (3 Unteragenten in 3 Phasen) | Steuerrad-Begriffe nach Stenger, Chamäleon im Feld Tonalität, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen | *läuft* | – |
+| D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -1874,6 +2381,244 @@ steht hier mit dem wörtlichen Auftrag.
     „Individualität“), Exporte neu (PDF 22 S., 23 Bilder, Übersicht), AUTOREN.md §15 und LIESMICH.md ergänzt.
 - **Wie Claude das Ergebnis geprüft hat:** eigener Prüflauf (0 Fehler), PDF-Seitenzahl, Backups B3 und B7
   angesehen, `git diff --name-only` auf gesperrte Dateien geprüft, keine Modellbezeichnungen im Diff.
+
+### D15 – 19.10.2026 – ausgelöst durch Prompt 71 (fortgesetzt nach 73 und 80)
+
+- **Art:** Workflow „live-abstimmung“, sieben Unteragenten in vier Phasen: drei Bauteile parallel (Server: Google
+  Apps Script mit Anleitung und Testwerkzeug; Abstimmseite fürs Handy; Anbindung an Folie 08), Ende-zu-Ende-Test, zwei
+  Prüfer (Funktion, Robustheit, Datenschutz; Darstellung und Bedienung), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-19_live-abstimmung.js`](workflows/2026-10-19_live-abstimmung.js).
+- **Vorgaben:** Schnittstelle fest (nur GET mit JSONP, `aktion=stimme` und `aktion=stand`, je Runde, Umfrage und
+  Gerät zählt nur die letzte Stimme, `runde` trennt Probe und Vortrag), kein geheimer Schlüssel, keine Namen und
+  keine IP-Adressen, keine fremden Dienste außer Google Apps Script, ohne `liveQuelle` keine externen Anfragen,
+  Plan B (Werte eintippen, Zählmodus) bleibt, Kasten und Notizen von Folie 08 (Bündel B) nicht ändern, kein Commit.
+  Wissensquelle für Apps Script, Bereitstellung und Kontingente: Modellwissen (keine Websuche), in der Anleitung
+  als ungeprüft gekennzeichnet.
+- **Unterbrechungen:** zweimal am Nutzungslimit (erst nach 2 von 7 Agenten, dann in der Nacharbeit); jeweils per
+  resume fortgesetzt. Vor der ersten Fortsetzung wurde die Attrappe im Skript auf
+  `live-abstimmung-test.mjs --server` umgestellt.
+- **Ergebnis:**
+  - **Neue Dateien** (alle unter `fallstudie-1-brand-persona/praesentation/`): `abstimmen.html`,
+    `css/abstimmen.css`, `js/abstimmen.js` (Abstimmseite im HOLY-Stil, fünf Tiere, Umentscheiden, ohne Logo, oben
+    „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“), `live-abstimmung/apps-script.gs`
+    (Web-App mit Sperre und Textformat gegen Datumsumwandlung), `live-abstimmung/ANLEITUNG.md` (Einrichtung in
+    7 Schritten, Kontrollen, Fehlerbehebung, Datenschutz, nach dem Vortrag), `werkzeuge/live-abstimmung-test.mjs`
+    (32 Prüfungen, lokale Attrappe mit dem echten Skript, Lasttest gegen die echte Web-App).
+  - **Geändert:** `js/komponenten.js` (Live-Abfrage alle 2 s, Pille Live / offline / pausiert, Zahlen im
+    Browser-Speicher nur je Runde, weiches Zeitlimit), `css/komponenten.css`, `marke.js` (Tiere mit Schwan,
+    `link`, `liveQuelle` leer, `runde: 'probe'`), `index.html` (nur QR-Größe 440 px auf Folie 08), `LIESMICH.md`
+    (Abschnitt 6, Checkliste 12, Dateien 13), `AUTOREN.md` (6c, 16), `QUELLEN.md` §4 (Abstimmseite bewusst ohne
+    Logo), Exporte.
+  - **Ende-zu-Ende-Test:** drei simulierte Handys, Umentscheiden, offline, Pause, Referentenfenster; Stimme bis
+    Anzeige 1,3–1,9 s (lokal gemessen).
+  - **Prüfer:** 2 hohe Befunde (beide gleich: im Browser gespeicherte Probestimmen wären im Vortrag bei
+    Ausfall der Web-App als echte Zahlen erschienen), dazu mittlere (u. a. hartes Zeitlimit 4 s, Anleitung für
+    Laien unvollständig, Last ungeprüft, HOLY-Logo in Absenderposition auf der öffentlichen Abstimmseite, Fuchs und
+    Schwan auf kleinen Handys erst nach Scrollen sichtbar) und niedrige.
+  - **Nacharbeit:** alle hohen und mittleren Befunde umgesetzt; nicht umgesetzt: kürzere Adresse (Weiterleitung),
+    Umbau der Server-Sperre (erst nach Lasttest), Kasten und Notizen von Folie 08 (Bündel B, Lukas).
+- **Wie Claude das Ergebnis geprüft hat:** `live-abstimmung-test.mjs` erneut (32 von 32), Prüflauf
+  `pruefen.mjs --schritte --optional` (23 Folien, 0 Fehler, 4 bekannte Wortbudget-Warnungen, 0 externe Anfragen
+  ohne `liveQuelle`), Abstimmung mit lokaler Attrappe selbst durchgespielt (drei Handys, Folie 08 zeigt 1/0/2/0/0,
+  33 % / 67 %, Aussagezahl) und die Screenshots angesehen, Diff auf Modellbezeichnungen und personenbezogene Daten
+  durchsucht. Kleine eigene Änderung: Datenschutztext der Abstimmseite nennt jetzt, dass die Geräte-ID nur im
+  Browser gespeichert wird. Nicht geprüft: echtes Google Apps Script, echte Handys, Scannen im Hörsaal.
+
+### D16 – 19.10.2026 – ausgelöst durch Prompt 75 (fortgesetzt nach 81)
+
+- **Art:** Workflow „platzhalterbilder“, sechs Unteragenten in vier Phasen: zwei Bilder parallel (Rätselbild
+  Folie 01, Persona-Bild Folie 04), Einbau, zwei Prüfer (Darstellung; Inhalt, Kennzeichnung, Rechte), Nacharbeit mit
+  Exporten. Erster Lauf nur bis zu den Bildern (`args.nurBilder`), weil D15 dieselben Dateien änderte; Einbau per
+  resume nach Ende von D15 (Bilder aus dem Zwischenspeicher).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-19_platzhalterbilder.js`](workflows/2026-10-19_platzhalterbilder.js).
+- **Vorgaben:** keine HOLY-Logos, -Schriftzüge oder -Fotos aus dem Netz, keine kopierte Verpackung; Motiv nach
+  Recherche-Dossier 6.3/6.4; Kennzeichnung „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“;
+  Folie 09 nicht ändern (Bündel C, Zustimmung des Betreuers offen); KI-Nachweis nicht ändern; kein Commit.
+- **Ergebnis:**
+  - **Bilder:** reine SVG-Dateien, von Claude Code als Vektorgrafik-Code erzeugt (Rätselbild per Generator-Skript
+    im Scratchpad, 13 Durchläufe mit Sichtprüfung; Persona-Bild direkt als SVG). Ohne Text-, Bild-, Filter- und
+    Maskenelemente (flüssiger Zoom auf Folie 01).
+  - **Einbau:** `marke.js` raetselBild, Folie 01 Zoompunkt und Fußzeile, Folie 04 Bild und Kennzeichnung auf dem
+    Bild, Fußzeile „Person, Bild, Zitat fiktiv (Illustration, KI-gestützt)“ (die längere Fassung brach auf drei
+    Zeilen um), Kästen und Notizen 01/04, B1, B2 (P6 jetzt optional), B7 („Icons, Grafiken, Illustrationen: eigene
+    Gestaltung, KI-gestützt“), `QUELLEN.md` §3/§4, `LIESMICH.md` §8/§12 (mit ausgefülltem P6-Prompt als Vorlage),
+    `AUTOREN.md` §17.
+  - **Prüfer:** 1 hoher Befund: Das Etikett der ersten Fassung zeigte einen Comic-Tukan, HOLY führt aber selbst eine
+    Energy-Sorte „Thai Lime Toucan“ (Websuche des Prüfers am 19.10.2026: de.holy.com/products/thai-lime-toucan;
+    change.org/topic/holy-de-de; nicht im Dossier). Mittlere: Formulierungen „von Hand“/„selbst gestaltet“ gingen
+    über die Konvention hinaus (die Bilder hat Claude Code erzeugt), Kennzeichnung auf Folie 04 zu knapp, Exporte
+    zeigten noch die alten Schilder. Dazu niedrige (Spiegelung, Hand, Bodenlinie, Checkliste, `../prompts.md`
+    ohne Freigabe geändert).
+  - **Nacharbeit:** Etikett ohne Tier (Drachenfrucht mit Heiligenschein), Zoompunkt `60.1% 60.7%`, alle
+    Begründungen angepasst; Urheberschaft präzisiert („von Claude Code als SVG-Code erzeugt; Motivvorgaben,
+    Auswahl und Prüfung durch die Gruppe“); volle Kennzeichnung auf dem Bild von Folie 04; Hand und Bodenlinie
+    korrigiert; Änderung an `../prompts.md` zurückgenommen; Checkliste getrennt (eingebaut [x], Freigabe [ ]);
+    Exporte neu (PDF 22 Seiten, 23 Folienbilder, Übersicht).
+- **Wie Claude das Ergebnis geprüft hat:** beide Bilder schon nach der Bildphase selbst gerendert und angesehen;
+  nach der Nacharbeit Folie 01 (Schritte 0–2) und Folie 04 (Schritt 4) neu gerendert und angesehen (0 Fehler, keine
+  externen Anfragen, nur die bekannte Wortbudget-Warnung f04); die Tukan-Quelle per Websuche selbst nachgeprüft
+  (change.org/topic/holy-de-de, Abruf 19.10.2026: „Zum zweiten BURRsday brachten wir den Thai Lime Toucan als Limited
+  Edition raus.“; die Produktseite de.holy.com antwortete beim Abruf mit 429); Diff auf Folie 09, `../*.md` und
+  Modellbezeichnungen geprüft.
+
+### D17 – 19.–20.10.2026 – ausgelöst durch Prompt 87 (neu gestartet nach 89, fortgesetzt nach 91)
+
+- **Art:** Workflow „live-abstimmung-last“, sieben Unteragenten in vier Phasen: drei Bauteile parallel (Server mit
+  Testwerkzeug und Anleitung; Abstimmseite; Prüfwerkzeug), Ende-zu-Ende-Test, zwei Prüfer (Nebenläufigkeit und
+  Apps-Script-Verhalten; Prüfwerkzeug, Exporte und Anleitung), Nacharbeit.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-19_live-abstimmung-last.js`](workflows/2026-10-19_live-abstimmung-last.js).
+- **Anlass:** Lasttest gegen Yannicks Web-App nicht bestanden (19 von 40 Stimmen, Median 11,2 s; Eintrag 87).
+- **Vorgaben:** Schnittstelle, Zählregel und Datenschutz unverändert; keine schreibenden Anfragen an die echte
+  Web-App; marke.js und Folieninhalte nicht ändern; Wissen über Apps Script mit Quelle (Websuche) oder als
+  „Modellwissen, nicht geprüft“ kennzeichnen; kein Commit.
+- **Unterbrechungen:** erster Lauf vollständig am Nutzungslimit gescheitert (Teiländerungen an der Abstimmseite),
+  zweiter Lauf bis auf die Nacharbeit fertig, Nacharbeit nach dem Reset mit Hinweis auf ihre Teiländerungen und
+  Sicherungen fortgesetzt.
+- **Ergebnis:**
+  - **Server (`live-abstimmung/apps-script.gs`):** Der Bau-Agent hat den Plan „appendRow ohne Sperre“ verworfen,
+    weil die offizielle Referenz appendRow nicht als atomar beschreibt (Websuche, Quellen im Skriptkopf). Stattdessen
+    reserviert jede Stimme unter einer sehr kurzen Sperre nur eine Zeilennummer (Skript-Eigenschaft, kein
+    Tabellenzugriff unter der Sperre) und schreibt danach ohne Sperre in ihre eigene Zeile. `einrichten()` legt 5000
+    vorformatierte Zeilen an und macht eine Textschutz-Probe. Neue Kennung `?aktion=fassung` (Skript-Fassung
+    19.10.2026), damit man prüfen kann, ob die neue Version bereitgestellt ist.
+  - **Abstimmseite (`js/abstimmen.js`, `css/abstimmen.css`, `abstimmen.html`):** bei Andrang, Zeitüberschreitung
+    oder Netzfehler automatisch insgesamt bis zu drei Versuche mit zufälliger Wartezeit (1,5–4 s), ruhiger Hinweis
+    statt Fehlermeldung; Umentscheiden während einer Wiederholung sendet nur die neueste Wahl.
+  - **Testwerkzeug (`werkzeuge/live-abstimmung-test.mjs`):** 44 Prüfungen, 16 Mutanten; Attrappe mit Störungen
+    (`--stoerung`, `--abbruch`, `--gleichzeitig`, `--sperre`); Lasttest mit Handy-Regel, Fassungsprüfung, mitlesender
+    Folie und dreistufigem Urteil (BESTANDEN / GEZÄHLT, ABER ZU LANGSAM / NICHT BESTANDEN, Ziel 15 s).
+  - **Prüfwerkzeug (`werkzeuge/pruefen.mjs`, `uebersicht.mjs`):** Anfragen an die eingetragene Web-App beantwortet
+    eine eingebaute Attrappe (Standard n = 0), nichts geht ins Netz; Optionen `--live-offline`, `--live-werte`,
+    `--live-aus`; Chrome ohne eigene Verbindungen; WebSockets und schreibende Anfragen der Präsentation gelten als
+    Fehler.
+  - **Doku:** `ANLEITUNG.md` (neuer Abschnitt „Skript aktualisieren“, Laienschritte inkl. doGet-Auswahlfeld und
+    Blatt-Reiter), `LIESMICH.md` 6/11/12/13, `AUTOREN.md` 6c/9/15/16.
+  - **Prüfer:** 1 hoher Befund (Lasttest prüfte das 15-s-Ziel nicht), 9 mittlere (u. a. Attrappe ohne Sperrenhaltezeit,
+    Kurzprüfung erkennt die alte Fassung nicht, doGet-Falle, Chrome-Eigenverbindungen, Doku veraltet, LIESMICH
+    behauptete QR-Code im PDF). Alle in der Nacharbeit umgesetzt.
+  - **Lasttest gegen die Attrappe:** 40 Handys BESTANDEN, solange eine Stimme die Sperre höchstens ca. 0,2 s hält;
+    bei 0,5 s (etwa der alte Server) „zu langsam“. Wie lange die Sperre bei Google wirklich hält, zeigt erst der
+    Lasttest gegen die echte Web-App nach dem Aktualisieren.
+  - **Offen:** Entscheidung Plan-B-PDF (Folie 08 ohne Abstimmung oder zusätzliche Seite), echte Handys, QR-Scan im
+    Hörsaal.
+- **Wie Claude das Ergebnis geprüft hat:** Testwerkzeug erneut (44 von 44), Prüflauf `pruefen.mjs --schritte
+  --optional` (23 Folien, 0 Fehler, 4 bekannte Wortbudget-Warnungen, 0 externe Anfragen, Live-Anfragen nur an die
+  eingebaute Attrappe), Diff auf Umfang (marke.js und index.html unverändert, komponenten.js nur Kommentar) und
+  Modellbezeichnungen geprüft, Schreibweg im Server selbst gelesen (Sperre nur um Zähler lesen/erhöhen).
+  Nach dem Push: echter Ende-zu-Ende-Test über GitHub Pages mit der neuen Abstimmseite gegen die noch alte
+  Server-Fassung (Abwärtsverträglichkeit): „Danke“ nach 3,3 s, Folie zeigte die Stimme (Runde 'probe', zweite
+  Teststimme in Yannicks Tabelle). Raw-Link liefert die neue Fassung (Kennwort „SPEICHERN BEI ANDRANG“ gefunden).
+
+### D18 – 20.10.2026 – ausgelöst durch Prompt 95
+
+- **Art:** Workflow „chamaeleon“, fünf Unteragenten in drei Phasen: Inhalt und Begründung sowie Zeichnungen parallel,
+  zwei Prüfer (Inhalt, Belege, Kennzeichnung, Konsistenz; Darstellung), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_chamaeleon.js`](workflows/2026-10-20_chamaeleon.js).
+- **Vorgaben:** Einordnung von Elias Knauber (Bündel C); Begründung als Vorschlag (KI-gestützt) nur aus dem
+  Recherche-Dossier mit Kapitel und Faktenstatus, von Elias zu prüfen; Chamäleon = Hypothese (H); Dossier-Hypothese
+  6.7 („Waschbär oder Affe“) bleibt als früherer Stand; nicht ändern: Recherche-Dossier, Dossier Bündel B,
+  Gründerbefragung, KI-Nachweis, Apps Script; kein Commit.
+- **Ergebnis:**
+  - **Folie 08:** Titel „HOLY wäre ein Chamäleon, kein Adler“; Karte „Als Tier: Chamäleon“ mit drei Gründen
+    (wandelbar – 31 Energy-Sorten; vielseitig – Wacken, CSD, Simpsons; frech – „Gefährlich geil!“; Belege in der
+    Fußzeile Kap. 3.1, 4.1, 6.2, 6.3, 6.6 ✔); Sprechtexte (Schritt 2 „Warum Chamäleon?“ ca. 20 s, Sollzeit 70 s
+    gehalten); neue Rückfragen (ohne festen Kern?, viele Sorten = Wandel?, trotzdem der Raptor?, aus eurer
+    Befragung?, tarnt sich ein Chamäleon nicht?); Kasten mit Kennzeichnung und offenen Punkten.
+  - **Kernaussage der Begründung:** Das Chamäleon ersetzt den frechen Ton nicht, sondern beschreibt den Auftritt:
+    „wandelbar in Farbe, Sorte und Szene – im Ton immer frech“; der Markenkern (Folie 10) ist nicht betroffen;
+    unterschiedliche Fassungen je Kanal gelten als Schwäche (Folie 9b, Empfehlung 3), nicht als Stärke.
+  - **Weitere Folien:** Notizen bzw. Kästen auf 08b, 09b, 10 (Sprechtext Schritt 5 „wandelbar wie ein Chamäleon“),
+    11, 12; Aaker-Profil (08b) und Rad (10) inhaltlich unverändert.
+  - **Abstimmung:** `marke.js` → Optionen Adler, Löwe, Chamäleon, Fuchs, Schwan (Nummer 2 wie vorher der Waschbär),
+    `unsereAntwort` Chamäleon; Chamäleon-Zeichnung in `js/folien/08-analogien.js` und `js/abstimmen.js` (eigene
+    Gestaltung, Strichzeichnung).
+  - **Ausarbeitungen und Doku:** `limbic-map.md` (Zeile Maskottchen, Nachtrag 4.1), QUELLEN §3/§5, LIESMICH 6/11/12/13,
+    ANLEITUNG, AUTOREN §18; folienentwuerfe/markenkompetenz/persona-steckbrief geprüft, dort kein Tier.
+  - **Prüfer:** 0 hohe, 6 mittlere Befunde (u. a. Widerspruch „Kanal als Stärke und als Bruch“, unbelegtes
+    „überall Du“, Doppeldeutigkeit von „Kern“, Exporte veraltet, Feld Tonalität auf Folie 10), 12 niedrige; in der
+    Nacharbeit umgesetzt bis auf das Feld Tonalität (als Entscheidung für Yannick ausgewiesen) und kleinere
+    Gestaltungspunkte ohne Redesign.
+  - **Exporte:** PDF 22 Seiten (Seite 8 mit Chamäleon), 23 Folienbilder (nur f08 geändert), Übersicht 20.10.2026.
+- **Wie Claude das Ergebnis geprüft hat:** Folienbild `export/folien/f08.png` angesehen (Titel, Karte,
+  Chamäleon-Zeichnung, Fußzeile); `live-abstimmung-test.mjs` 44/44; `git diff --name-only` auf gesperrte Dateien
+  (Recherche-Dossier, Dossier Bündel B, Gründerbefragung, Apps Script unverändert) und Modellbezeichnungen geprüft.
+  Inhaltliche Prüfung der Begründung durch Elias steht aus.
+
+### D19 – 20.10.2026 – ausgelöst durch Prompt 98 (neu gestartet nach 100, fortgesetzt nach 102)
+
+- **Art:** Workflow „logo-raetsel“, vier Unteragenten: Bau, zwei Prüfer (Rätsel und Darstellung; Rechte,
+  Kennzeichnung, Doku), Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_logo-raetsel.js`](workflows/2026-10-20_logo-raetsel.js).
+- **Vorgaben:** Entscheidung Yannick wörtlich („Groß das Logo und daneben bei der Auflösung dann die illustration
+  mit logo“); Original-Logo `bilder/holy-logo-oval.png` unverändert (nur skaliert, als data-URI eingebettet);
+  nur Folie 01 und zugehörige Stellen; Kennzeichnung; kein Commit.
+- **Unterbrechungen:** zweimal am Nutzungslimit (erst sofort, dann vor der Nacharbeit); jeweils per resume
+  fortgesetzt, ohne Teiländerungen der abgebrochenen Agenten.
+- **Ergebnis:**
+  - **Bild:** `bilder/raetsel-holy-logo.svg` – die Illustration vom 19.10. mit dem Original-Logo groß auf dem
+    Etikett, darunter eine kleine Drachenfrucht; `raetsel-holy.svg` bleibt als Rückfall.
+  - **Rätsel:** `data-stufen="440/11,220/10,100/0"`: Schritt 0 zeigt das Logo-Oval fast bühnenfüllend und unscharf
+    (Form und Farben erkennbar, Schrift nicht lesbar), Klick 1 den Hinweis (Dose und Shaker erkennbar, „HOLY“ fast
+    lesbar – nach Prüferbefund von 220/8 auf 220/10 unschärfer gestellt, auch für die letzte Reihe), Klick 2 die
+    Auflösung, Klick 3 die Titelfolie mit der Illustration rechts. Pille „Hinweis x von n“ abgeschaltet.
+  - **Kennzeichnung und Rechte:** Fußzeile „Logo © HOLY Softdrinks GmbH …“ bleibt immer sichtbar, solange das
+    Rätselbild ein Logo enthält; Bildzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 20.10.2026“;
+    Einordnungszeile „… · Dose fiktiv“; QUELLEN §3/§4 mit Ausnahme für Folie 01 (Entscheidung Yannick, Nachweis
+    Nr. 98) und konkreter Frage an den Betreuer (LIESMICH 12).
+  - **Technik:** Titel-Logo wird synchron dekodiert (sonst fehlte es im ersten Bild der Auflösung); Bildrate des
+    Zooms gemessen, nicht schlechter als vorher (nur headless).
+  - **Exporte:** PDF 22 Seiten, 23 Folienbilder (nur f01 geändert), Übersicht 20.10.2026.
+- **Wie Claude das Ergebnis geprüft hat:** Stufenbilder f01_s0–s2 und `export/folien/f01.png` selbst angesehen
+  (Logo in Stufe 0 als Oval erkennbar, nicht lesbar; Hinweis fast lesbar; Auflösung und Titelfolie mit Logo auf der
+  Dose, Fußzeile zweizeilig); Diff-Umfang und Modellbezeichnungen geprüft. Offen: Test mit zwei Personen, Beamer.
+
+### D21 – 20.10.2026 – ausgelöst durch Prompt 101 (fortgesetzt nach 102)
+
+- **Art:** Workflow „abgleich-vorlesung“, neun Unteragenten in vier Phasen: Auswertung der Vorlesung in zwei Teilen
+  (S. 1–65, 66–129, Text und Bild), Abgleich in fünf Bereichen (Aufgabe und Bewertung; Brand Persona und Limbic Map;
+  Repertory Grid, Laddering, Analogien; Markensteuerrad, Positionierung, Markenkompetenz; Begriffe, Literatur,
+  Kommunikation), adversariale Gegenprüfung, Bericht.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_abgleich-vorlesung.js`](workflows/2026-10-20_abgleich-vorlesung.js).
+- **Vorgaben:** nur lesen, einzige neue Datei der Bericht; jede Aussage mit „Stenger, S. n“ bzw. Datei und Stelle;
+  kurze Zitate nur wo nötig; Modellwissen kennzeichnen; nichts erfinden.
+- **Unterbrechung:** am Nutzungslimit nach Auswertung und vier Bereichen; per resume fortgesetzt.
+- **Ergebnis:** [`fallstudie-1-brand-persona/abgleich-vorlesung.md`](../fallstudie-1-brand-persona/abgleich-vorlesung.md)
+  – 54 geprüfte Befunde (17 bei der Gegenprüfung verworfen), davon 24 „vor dem Vortrag“. Kernaussagen: Aufbau folgt
+  der Aufgabe S. 60 vollständig; Limbic-Karte, Persona-Raster und Lage der Steuerrad-Felder passen; es fehlen echte
+  Daten (Folien 06–12, B4–B6) und ein sichtbarer Bezug zur Vorlesung („Inhalte aus der Vorlesung“ 20 % der Note,
+  S. 58); Begriffe weichen ab (Mitte des Rads „Markenkern“, Wir-Form der Leitfragen, „Markeneigenschaften“,
+  „individueller/sozialer Nutzen“, S. 88–91); Literatur in anderen Ausgaben als in der Vorlesung (Esch 2018 9. Aufl.,
+  Kroeber-Riel/Esch 2018, Häusel; Redler/Ullrich fehlt); Hinweis S. 78: KI-Personas ersetzen nicht das Gespräch mit
+  echten Kunden.
+- **Wie Claude das Ergebnis geprüft hat:** Bewertungskriterien (S. 58) und Markensteuerrad (S. 88, 90) im
+  Seitentext selbst nachgelesen – Gewichtung 20 % und Feldbezeichnungen stimmen mit dem Bericht überein; Befund #1
+  um Yannicks Entscheidung („Drin lassen“, Nr. 101) ergänzt. Die inhaltliche Umsetzung der Befunde steht aus
+  (Freigabe durch Yannick).
+
+### D20 – 20.–21.10.2026 – ausgelöst durch Prompt 100/101 (neu gestartet nach 105)
+
+- **Art:** Workflow „abstimmung-zeitfenster“: Bau, adversariale Prüfung, Nacharbeit.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-20_abstimmung-zeitfenster.js`](workflows/2026-10-20_abstimmung-zeitfenster.js).
+- **Vorgaben:** Stimmen zählen auf Folie 08 nur 30 Minuten (Entscheidung Yannick, Nr. 101); Schnittstelle
+  abwärtsverträglich; keine schreibenden Anfragen an die echte Web-App; Folieninhalte unverändert; kein Commit.
+- **Unterbrechung:** erster Lauf am Nutzungslimit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet.
+- **Ergebnis:**
+  - **Server** (`apps-script.gs`, Fassung 20.10.2026): `aktion=stand` nimmt `minuten` (1–1440); zuerst letzte Stimme je
+    Gerät, dann Zeitfenster; Antwort nennt `minuten`, wenn angewandt.
+  - **Folie 08** (`js/komponenten.js`): jede Stand-Abfrage mit `minuten=30` (`marke.js` → `gueltigMinuten: 30`);
+    gespeicherte Werte derselben Runde verfallen nach 30 Min. (danach Nullen, keine Beispieldaten); Tooltip zeigt,
+    ob die Web-App das Zeitfenster anwendet; Referentenfenster übernimmt die Werte des Vortragsfensters.
+  - **Abstimmseite** (`js/abstimmen.js`): eine abgelaufene Wahl zeigt wieder die Auswahl.
+  - **Tests:** `live-abstimmung-test.mjs` 53 Prüfungen, 26 Mutanten; Lasttest prüft Fassung und Zeitfenster in beiden
+    Richtungen (Gegenprobe mit `minuten=1`); neues Browser-Testwerkzeug `werkzeuge/zeitfenster-e2e.mjs` (10 Szenarien,
+    12 Client-Mutanten); `pruefen.mjs` meldet Stand-Abfragen ohne passendes `minuten` als Fehler.
+  - **Doku:** ANLEITUNG („Skript aktualisieren“ wieder nötig, Kurzprüfung in eigener Runde), LIESMICH 6/12/13,
+    AUTOREN 6c/16/18/20.
+  - **Prüfer:** 3 mittlere Befunde (Beispieldaten nach Ablauf, Zeitzone nur in eine Richtung geprüft, Client-Logik
+    ohne wiederholbaren Test) – umgesetzt; niedrige größtenteils umgesetzt.
+- **Wie Claude das Ergebnis geprüft hat:** `live-abstimmung-test.mjs` (53/53), `zeitfenster-e2e.mjs` (58 bestanden,
+  0 Fehler, 0 externe Anfragen), `pruefen.mjs --nur f08 --schritte` (0 Fehler), Diff auf Modellbezeichnungen.
+  Mit echtem Google noch nicht geprüft: wirkt erst nach „Skript aktualisieren“ durch Yannick; danach Lasttest.
 
 ---
 

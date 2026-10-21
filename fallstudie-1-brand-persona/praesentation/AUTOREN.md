@@ -271,26 +271,122 @@ Handys testen.
 ```
 - Daten aus `marke.js → umfragen.tier`: `frage`, `optionen` (≤ 9), `link` (QR; leer = kein QR, nur
   Zählmodus), `kurzLink`, `ergebnisLink` (Knopf „Ergebnisse öffnen“), `unsereAntwort`, `aussage`,
-  `beispielwerte`. Einzelne Werte per JSON im Baustein überschreibbar (`<script type="application/json">`).
+  `beispielwerte`, `liveQuelle`, `runde`, `gueltigMinuten` (eigene Live-Abstimmung, unten). Einzelne Werte per
+  JSON im Baustein überschreibbar (`<script type="application/json">`).
 - Linke Spalte: QR-Code, Kurz-URL, „anonym · ohne Anmeldung“, Stimmenzähler (`data-stimmen="aus"`,
-  `data-qr="aus"`, `data-qr-groesse="380"`).
+  `data-qr="aus"`, `data-qr-groesse="380"`; Folie 08 nutzt 440 – die Adresse der Abstimmseite ergibt 45 Module).
 - Ergebnis: Pille LIVE (ruhig pulsierend), `n = …`, Pille Beispieldaten (solange Beispielwerte),
   Balken mit Prozent (aus den Stimmen berechnet) und Anzahl.
-- **Beispielwerte werden nie mit echten Stimmen gemischt:** Die erste echte Stimme (Klick, Ziffer oder
-  eine Zahl > 0 über „Werte“) setzt alle Beispielwerte auf 0; die Pille „Beispieldaten“ verschwindet.
+- **Beispielwerte werden nie mit echten Stimmen gemischt:** Die erste echte Stimme (Klick, Ziffer, eine
+  Zahl > 0 über „Werte“ oder der erste Stand der Live-Abstimmung) setzt alle Beispielwerte auf 0; die Pille
+  „Beispieldaten“ verschwindet.
   Solange Beispielwerte stehen, beginnen die Felder unter „Werte“ bei 0.
 - `data-aufloesung="n"`: in Schritt n wird die Zeile „Unsere Analyse“ umrahmt (`aus` = nie).
 - `data-aussage="n"`: in Schritt n weicht der QR-Block der großen Aussagezahl „27 % sehen HOLY wie
-  wir: als Waschbär“. Ohne Stimmen (n = 0) steht dort nur „Noch keine Stimmen“ (Text änderbar:
+  wir: als Chamäleon“ (bis 20.10.2026: Waschbär, Abschnitt 18). Ohne Stimmen (n = 0) steht dort nur „Noch keine Stimmen“ (Text änderbar:
   `marke.js → umfragen.tier.aussageLeer`); die Zahl zählt dann nicht auf „0 %“ hoch.
 - Bedienung im Vortrag: Klick auf Option = +1, Umschalt+Klick oder Rechtsklick = −1, Ziffern 1–9
   (Umschalt = −1, nur solange die Umfrage zu sehen ist), Doppelklick auf einen Wert = Zahl eintippen,
   Knopf „Werte“ = alle eintragen (z. B. aus Mentimeter/Particify; Tab = nächstes Feld, nach dem letzten
   bzw. mit erneutem Klick auf „Werte“ wird alles übernommen), „Zurücksetzen“ (zweimal innerhalb von 3 s
   klicken). Ergebnisse überstehen
-  ein Neuladen (Browser-Speicher) und erscheinen auch im Referentenfenster.
+  ein Neuladen (Browser-Speicher, gespeichert mit `runde`; mit `liveQuelle` gelten nur Werte derselben Runde)
+  und erscheinen auch im Referentenfenster.
 - Getrennt platzierbar (auch auf späteren Folien):
   `<div class="umfrage-aussage" data-umfrage="tier"></div>`, `<div class="umfrage-stimmen" data-umfrage="tier"></div>`.
+- **Eigene Live-Abstimmung** (seit 19.10.2026; Bedienung `LIESMICH.md` Abschnitt 6, Einrichtung
+  `live-abstimmung/ANLEITUNG.md`). Felder: `liveQuelle` = Web-App-URL `https://script.google.com/macros/s/<ID>/exec`
+  (leer = aus – dann verhält sich der Baustein genau wie vorher), `runde` = `[A-Za-z0-9_-]{1,40}` (`'probe'`, im
+  Vortrag `'vortrag-2026-10-26'`). Mit `liveQuelle` zeigt der QR-Code auf `link` (`abstimmen.html?u=tier`; ohne
+  `liveQuelle` gibt es für diese Adresse keinen QR-Code, ohne `kurzLink` keine Zeile darunter).
+  Schnittstelle (nur GET, JSONP per `<script>` – unabhängig von CORS; vollständig im Kopf von
+  `live-abstimmung/apps-script.gs`): Folie `?aktion=stand&umfrage=tier&runde=…&anzahl=5[&minuten=30]&callback=f` →
+  `f({"ok":true,"werte":[…],"n":…,"zeit":"<ISO>"[,"minuten":30]})`; Abstimmseite `?aktion=stimme&…&option=0..4&geraet=<ID>`
+  → `f({"ok":true})`; Fehler `f({"ok":false,"fehler":"…"})`.
+  **Zeitfenster** (seit 20.10.2026, Abschnitt 20): `gueltigMinuten` = ganze Zahl 1–1440 (`30`; 0/leer = ohne,
+  ungültig → Warnung in der Konsole und ohne). Die Folie hängt `minuten=<gueltigMinuten>` an jede Stand-Abfrage; der
+  Server (ab `FASSUNG = '20.10.2026'`) bestimmt je Runde, Umfrage und Gerät zuerst die letzte Stimme und zählt sie
+  nur, wenn sie höchstens `minuten` Minuten alt ist (Grenze einschließlich; Zeilen ohne gültige Zeit zählen dann
+  nicht); ungültiges `minuten` → Fehler; ohne `minuten` wie bisher; in der Antwort `"minuten"` nur, wenn angewandt.
+  Fehlt es (alte Fassung), merkt sich die Folie `fensterAn = false`: einmal Warnung in der Konsole, Tooltip der
+  Pille „OHNE Zeitfenster …“ (auch im Referentenfenster, über `umfrage-live` → `fensterAn`); `true` → „zählt
+  Stimmen der letzten 30 Min.“, `null` (noch keine Antwort) → „Zeitfenster 30 Min. angefragt (noch keine Antwort
+  der Web-App)“. Gespeicherte Werte
+  `umfrage:<id>` = `{ werte, beispiel, runde, zeit }` verfallen mit `liveQuelle` und `gueltigMinuten` beim Laden,
+  wenn `Date.now() − zeit` größer als das Fenster ist (ohne `zeit`: verfallen) → **Nullen** (`u.beispiel = false`;
+  seit der Nacharbeit 21.10.2026, Abschnitt 20 – vorher Beispielwerte); Beispielwerte nur bei anderer Runde, ohne
+  Speicher oder wenn schon Beispielwerte gespeichert waren. `u.abgelaufen`
+  verwirft dann auch eine gespeicherte Pause (`livePauseVerwerfen`, beim Aufbau und beim Betreten). Auf `melden`
+  schickt das Vortragsfenster (wenn die Umfrage-Folie aktiv ist) zusätzlich `Deck.kanal('umfrage')` mit
+  `{ id, werte, beispiel }`; das Referentenfenster übernimmt diese Werte direkt (`umfrageUebernehmen`) statt sie
+  aus dem Speicher zu laden, wo sie verfallen sein können. Die
+  Abstimmseite speichert `stimme:<id>:<runde>` = `{ option, name, zeit }` (`zeit` = Losschicken des Versuchs, der
+  gezählt hat – vor dem Eingang beim Server); abgelaufen → Auswahl statt „Danke“ (beim Öffnen, per Zeitgeber, bei
+  `visibilitychange`/`pageshow`), ohne „bisherige Wahl“.
+  Verhalten: beim Betreten sofort, dann alle 2 s, solange die Folie aktiv ist; höchstens eine Anfrage
+  gleichzeitig – auch beim Server, denn die nächste startet erst nach Antwort oder Aufgabe der vorigen.
+  Zeitlimit weich: nach 4 s und nach 8 s ohne Antwort je ein Fehlversuch (`LIVE_ZEITLIMIT`), die Anfrage bleibt
+  offen und eine späte, gültige Antwort wird übernommen; hart nach 15 s (`LIVE_ZEITLIMIT_HART`). Skript-Tag und
+  Rückruf werden aufgeräumt. Braucht eine Antwort 2 s oder länger, folgt die nächste Abfrage sofort (Abstand =
+  Antwortzeit). Neue Werte ersetzen Beispielwerte und werden wie Handstimmen gezeichnet. Die Pille ist dann ein
+  Knopf mit Zustand (`.ist-verbinde`, `.ist-live`, `.ist-offline` – nach einer Verbindung erst beim zweiten
+  Fehlversuch in Folge –, `.ist-pausiert`). Jede Hand-Eingabe (Klick, Ziffer, „Werte“, „Zurücksetzen“) pausiert
+  die Abfrage; die Pause wird je Umfrage und Runde gespeichert (`umfrage-pause:<id>:<runde>`, übersteht F5).
+  Klick auf die Pille setzt fort bzw. gibt bei „offline“ eine hängende Anfrage auf und fragt sofort neu.
+  Gespeicherte Werte (`umfrage:<id>` = `{ werte, beispiel, runde, zeit }`) gelten mit `liveQuelle` nur in derselben
+  Runde (und im Zeitfenster, oben: abgelaufen → Nullen) – sonst Beispielwerte (Probestimmen erscheinen im Vortrag nie, auch offline nicht). Der QR-Code zur
+  eigenen Abstimmseite erscheint nur, wenn `liveQuelle` (auf `/exec`) und `runde` brauchbar sind
+  (`liveFehlerVon`, sonst Warnung in der Konsole). Das Referentenfenster fragt nie selbst: Werte über
+  Browser-Speicher und `Deck.kanal('umfrage')` (`{ id }`, als Antwort auf `melden` `{ id, werte, beispiel }`),
+  Pille über `Deck.kanal('umfrage-live')` (`{ id, zustand, zeit, meldung, fensterAn }`, zurück `{ id, aktion:
+  'pausieren' | 'fortsetzen' | 'melden' }`); dort steht der Zustand zusätzlich
+  als Knopf `.r-live` unter der Kopfzeile „Aktuell“ (nur solange die Umfrage-Folie aktuell ist; Stil in
+  `css/komponenten.css`). Mit `?druck`/`?aufnahme` wird nie abgefragt. `pruefen.mjs` lädt die Prüfseite bei
+  gesetzter `liveQuelle` ohne `?aufnahme` (Klasse „aufnahme“ per Init-Skript) und beantwortet Anfragen an die
+  `liveQuelle` (nur `aktion=stand`/`stimme`) mit einer eingebauten Attrappe – nichts geht ins Netz; Bericht
+  „liveAnfragen“. Standard: Stand mit lauter Nullen (QR-Code, Pille „Live“, `n = 0`); `--live-offline`,
+  `--live-werte 3,1,7,0,2`, `--live-aus` (Abschnitt 9). `aktion=stimme` aus der Präsentation ist ein Fehler,
+  ebenso eine Stand-Abfrage ohne `minuten = gueltigMinuten` (seit 21.10.2026; Bericht „zeitfenster“,
+  „standOhnePassendeMinuten“).
+  Lokal ohne Google: `node werkzeuge/live-abstimmung-test.mjs --server 8787`, dann
+  `index.html?quelle=http://localhost:8787/exec#f08` (`?quelle` nur bei `file://`/`localhost`; Referentenfenster
+  dafür direkt mit `index.html?referent&quelle=…` öffnen), Abstimmseite `abstimmen.html?u=tier&quelle=http://localhost:8787/exec`.
+  Die Abstimmseite (`js/abstimmen.js`) nimmt als `liveQuelle` nur `https://script.google.com/…/exec` an (wie die
+  Folie; localhost nur über `?quelle`) und lädt `marke.js` über http(s) immer frisch (`?v=…`), damit eine neue
+  `runde` sofort gilt. Sie zeigt kein Logo (öffentliche Seite, `QUELLEN.md` §4), oben die Einordnung
+  („Studentische Fallstudie · keine Verbindung zur …“); Geräte-ID je Umfrage und Runde.
+  **Senden mit Wiederholung** (seit 19.10.2026, „Lastfest“ in Abschnitt 16): Zeitlimit 15 s je Versuch
+  (`ZEITLIMIT`), insgesamt bis zu 3 Versuche (`VERSUCHE`) bei Andrang (Antwort `ok:false` mit `nochmal:true` oder
+  Fehlertext beginnt mit „Gerade kommen sehr viele Stimmen“ bzw. „Serverfehler:“), bei Zeitüberschreitung und bei
+  Netz-/Ladefehlern; nicht, wenn das Handy offline ist, nie bei Eingabefehlern. Pause vor jeder Wiederholung
+  zufällig 1,5–4 s (`PAUSE_MIN`/`PAUSE_MAX`), dieselbe Geräte-ID. Hinweis „Gerade stimmen viele ab – Ihre Stimme
+  wird gesendet …“ in der Zeile unter der Frage (`.anleitung.ist-wiederholung`, behält deren Höhe), Ansage
+  einmal; erst nach dem 3. Fehlversuch die Fehlerkarte. Die anderen Tiere bleiben antippbar
+  (`.auswahl.ist-unterwegs` statt `aria-busy`). Umentscheiden beendet die alte Sendung; höchstens eine Anfrage
+  gleichzeitig. Späte `ok`-Antwort für ein anderes Tier → neueste Wahl wird still nachgesendet; für dasselbe
+  Tier → gleich „Danke“. Format `var NAME = …;` der Konstanten beibehalten – der Lasttest liest sie aus.
+  **Server** (`apps-script.gs`, Fassung `FASSUNG = '20.10.2026'` – Zeitfenster; Schreibstelle seit 19.10.2026): Jede Stimme reserviert unter
+  `LockService.getScriptLock()` nur eine Zeilennummer (Skript-Eigenschaft `naechsteZeile`: lesen und erhöhen in
+  derselben Sperre, höchstens 8 s warten, `SPERRE_WARTEN_MS`) und schreibt danach ohne Sperre in ihre Zeile
+  (nur wenn leer; `{"ok":true}` erst nach `flush`; Zeit beim Eingang). `einrichten()` hält 5000 formatierte
+  Zeilen bereit und setzt den Zähler nie zurück. `?aktion=fassung` (unbekannte Aktion) nennt die Fassung.
+  **Prüfen** (`werkzeuge/live-abstimmung-test.mjs`): 53 Prüfungen (davon 9 zum Zeitfenster, mit virtueller Uhr
+  `s.uhr`); `--mutationen` (26 kaputte Kopien);
+  `--server PORT` (virtuelle Uhr vorstellen: `GET /uhr?vor=MINUTEN`) mit `--verzoegerung MS`, `--stoerung A`, `--abbruch A`, `--gleichzeitig N` (prüfen die
+  Wiederholung, nicht die Belastbarkeit – ein Handy scheitert dann zufällig mit A³) und `--sperre MS`
+  (Belastbarkeit: jede Stimme hält die Sperre so lange, Warteschlange mit `SPERRE_WARTEN_MS`).
+  Lasttest gegen die echte Web-App: `node werkzeuge/live-abstimmung-test.mjs --lasttest <URL>` (40 Handys
+  gleichzeitig in eine eigene Runde; `--anzahl 20` für unsere Gruppe, `--verteilt 10`, `--ohne-folie`): Handy-Regel wie
+  `js/abstimmen.js`, eine mitlesende „Folie“ wie Abschnitt 3a (mit `minuten` aus `marke.js`), vorher `?aktion=fassung`; Urteil BESTANDEN (alle
+  gezählt, keiner gescheitert, „Danke“ ≤ 15 s), GEZÄHLT, ABER ZU LANGSAM oder NICHT BESTANDEN; Exit-Code 1 außerdem
+  bei „FASSUNG VERALTET“ (nicht die `FASSUNG` aus `apps-script.gs`) und „ZEITFENSTER FEHLT/FALSCH/UNKLAR/UNGEPRÜFT“
+  – dann beginnt die Urteilszeile mit „NICHT BESTANDEN wegen …“. Gegenprobe (seit 21.10.2026): mindestens 90 s
+  (`GEGENPROBE_MS`) nach der letzten Stimme `minuten=1` → n muss 0 sein (sonst steht die Zeit in der Tabelle zu
+  spät); gegen die Attrappe stellt `/uhr?vor=2` die Uhr vor, statt zu warten.
+  **Zeitfenster im Browser** (`werkzeuge/zeitfenster-e2e.mjs`, seit 21.10.2026): Handy und Folie Ende zu Ende mit
+  Attrappen auf localhost (echtes Skript, virtuelle Uhr) und Playwright-Uhr – 10 Szenarien (`--nur folie,handys,…`),
+  `--mutationen` mit 12 kaputten Kopien von `js/komponenten.js` und `js/abstimmen.js` (nur im Browser ersetzt).
+  Die Mutanten suchen ihre Stellen per Text – bei Änderungen an diesen Zeilen die Liste `MUTANTEN` anpassen.
 
 ### d) Live-Wortwolke
 ```html
@@ -324,6 +420,17 @@ Stufen = drei Klicks, Fortschritt „Hinweis x von 4“ oben rechts (`data-forts
 Auf Folie 01 erscheint mit der Auflösung das Logo aus `marke.js → logoTitel` (gelbes Oval, unverändert,
 nur verkleinert; Höhe in `css/folien/01-einstieg.css` → `--einstieg-logo-gross` / `--einstieg-logo-titel`)
 anstelle des Markennamens in Schrift; der Name bleibt als alt-Text. Ohne `logoTitel` steht der Name da.
+Folie 01 selbst (seit 20.10.2026, Abschnitt 19): Rätselbild mit Logo, `data-stufen="440/11,220/10,100/0"`,
+`data-fokus="63.5% 59.8%"`, `data-fortschritt="aus"` – drei Klicks (Hinweis, Auflösung, Titel). `data-fokus` ist der **Fixpunkt** des
+Zooms (bleibt beim Zoomen stehen), nicht unbedingt das Motiv: Soll ein Punkt L des Bildes bei Zoom Z an der
+Bühnenstelle C stehen, gilt Fixpunkt = (Z·L − C) / (Z − 1) (L und C in Bühnen-Pixeln bei Zoom 1). Die Unschärfe
+wird mitgezoomt (wirkt etwa Zoom × px); gemessen an der Schrift im Bild hängt die Lesbarkeit also nur an der
+Unschärfe-Zahl, der Zoom ändert Größe und Ausschnitt. Verkleinert (Sicht aus der letzten Reihe) wirkt Unschärfe
+schwächer – Stufen deshalb auch bei 960 × 540 und 480 × 270 beurteilen, nicht nur in Originalgröße. Ab drei Stufen
+zeigt der Baustein „Hinweis x von n“ (die Auflösung zählt als Stufe mit); auf Folie 01 ist die Pille abgeschaltet
+(`data-fortschritt="aus"`: sie lag auf dem Oval und lud zum Abwarten ein). Die Zeile „Logo © …“ der Fußzeile von
+Folie 01 zeigt `js/folien/01-einstieg.js`, solange `logoTitel` gesetzt ist **oder** der Dateiname des Rätselbilds
+„logo“ enthält.
 
 ### f) Zähler, Kennzahl, Hantel
 ```html
@@ -472,6 +579,9 @@ node werkzeuge/pruefen.mjs index.html --ausgabe _test/pruefung --schritte
 #    nur einzelne Folien: --nur f06,f07 · weitere Optionen: --thema bento|keynote --modus dunkel
 #    --skala 0.5 --druck _test/probe.pdf --optional --primaer FFD007 --sekundaer 1D1D1B
 #    --bewegung-reduziert --ohne-bilder
+#    Live-Abstimmung (Folie 08): --live-offline | --live-werte 3,1,7,0,2 | --live-aus
+#    Bei Änderungen an Folie 08 zusätzlich mit Balken prüfen (der Standard zeigt n = 0):
+#    node werkzeuge/pruefen.mjs index.html --nur f08 --schritte --live-werte 15,9,17,14,9
 ```
 4. Screenshots in `_test/pruefung/` ansehen (`f06_s0.png`, `f06_s1.png` …), `bericht.json` lesen:
    „fehler“ müssen leer sein; „warnungen“ (Wortbudget, Schrift < 28 px) begründen oder beheben.
@@ -485,7 +595,13 @@ Bühne, abgeschnittener bzw. aus einem Kasten ragender Text, **überlappender Te
 Fehler, < 28 px Warnung außer Metaangaben), Kontrast jedes Textes zu seinem Hintergrund, Wortbudget
 („Marken-<br>nutzen“ zählt als ein Wort), fehlende Notizen, fehlendes `data-zeit`/`data-titel`; mit
 `--schritte` die Text- und Kontrastprüfungen in **jedem** Schritt (Befunde nur in Zwischenschritten
-tragen „nur in Schritt n“); mit `--druck` zusätzlich PDF mit einer Seite je Folie.
+tragen „nur in Schritt n“); mit `--druck` zusätzlich PDF mit einer Seite je Folie. **Live-Abstimmung:**
+Zustand der Pille und `n` auf Folie 08 (Anfragen an die `liveQuelle` beantwortet die eingebaute Attrappe;
+`aktion=stimme` aus der Präsentation und jede andere externe Anfrage, auch WebSockets, sind Fehler). Der
+Browser startet zusätzlich ohne Proxy und ohne Namensauflösung (`--no-proxy-server`,
+`--host-resolver-rules`): Auch Chrome selbst baut keine Verbindungen zu Google-Diensten auf. In `bericht.json`
+stehen dazu `zusammenfassung.externeAnfragen` (muss 0 sein) und `zusammenfassung.liveAnfragen` bzw. das
+Objekt `liveAnfragen`.
 
 Ausnahmen: `data-ueberlauf-ok` an einem Element (z. B. absichtlich angeschnittenes Bild) nimmt es samt
 Inhalt von der Überlauf- und Abschneideprüfung aus, `data-ueberlappung-ok` von der Überlappungsprüfung.
@@ -653,3 +769,542 @@ node werkzeuge/uebersicht.mjs index.html --stand TT.MM.JJJJ
 
 Danach `export/uebersicht.png` und einige Bilder in `export/folien/` ansehen. Testausgaben bleiben in `_test/`
 (nicht einchecken).
+
+PDF und Folienbilder zeigen Folie 08 im Endzustand (Analogien) – die Umfrage und der QR-Code sind dort nicht zu
+sehen; der Live-Zustand ändert die Exporte nicht. Keiner der drei Schritte fragt die Web-App ab: Das PDF lädt
+mit `?druck` (keine Abfrage), die Folienbilder beantwortet die eingebaute Attrappe von `pruefen.mjs`,
+`uebersicht.mjs` bricht jede externe Anfrage ab und meldet `externeAnfragen`/`liveAnfragen` (erwartet 0). Beide
+Werkzeuge starten den Browser ohne Netz (Abschnitt 9).
+
+## 16. Eigene Live-Abstimmung für Folie 08 (19.10.2026)
+
+Entscheidung Yannick: Live-Umfrage ohne fremdes Werkzeug. Publikum → QR-Code → `abstimmen.html` → Web-App
+(Google Apps Script in Yannicks Konto) → Google-Tabelle; Folie 08 holt den Stand alle 2 s. Werte eintippen und
+Zählmodus bleiben unverändert (Rückfall). Schnittstelle und Felder: Abschnitt 6c.
+
+| Bereich | Änderung |
+|---|---|
+| `marke.js → umfragen.tier` | Tiere Adler, Löwe, Waschbär, Fuchs, Schwan (Schwan statt Delfin); neue Felder `liveQuelle` (leer = aus) und `runde` (`'probe'`); `link` = `abstimmen.html?u=tier` auf GitHub Pages, `kurzLink` leer (Adresse zu lang, der QR-Code reicht); Beispielwerte für fünf Tiere, weiter gekennzeichnet; Kommentar: Weg A eigene Abstimmung, Weg B Werkzeug, Plan C Zählmodus. |
+| Umfrage (`js/komponenten.js`, Abschnitt 3a) | Abfrage per JSONP mit Takt, Zeitlimit, ohne Überlappung; Pille als Knopf mit Zustand; Pause bei Hand-Eingabe; Abgleich mit dem Referentenfenster über `Deck.kanal`; keine Abfrage im Druck/Aufnahmemodus; Prüfung von `liveQuelle` (muss auf `/exec` enden) und `runde` mit Warnung in der Konsole. Ohne `liveQuelle` unverändert. |
+| Pille (`css/komponenten.css`) | Zustände „verbinde“, „offline“ (gestrichelt, hohler Punkt), „pausiert“ (Pausenzeichen) in Nebentextfarbe ohne Puls; „Live“ wie bisher. |
+| Neu (eigene Teile) | `abstimmen.html`, `js/abstimmen.js`, `css/abstimmen.css` (Abstimmseite); `live-abstimmung/apps-script.gs`, `live-abstimmung/ANLEITUNG.md`; `werkzeuge/live-abstimmung-test.mjs` (Prüfung des Skripts, `--server PORT` = lokale Attrappe mit dem echten Skript). |
+| `LIESMICH.md` | Abschnitt 6 neu (Weg A, B, Plan C, Pille, Rückfall), Checkliste 12 (Einrichten, Runde umstellen, Internet am Präsentationsrechner, 30 Minuten vorher, nach dem Vortrag), Abschnitte 1, 2, 8, 11, 13 ergänzt. |
+
+Geprüft am 19.10.2026: `pruefen.mjs --nur f08 --schritte` ohne und mit `liveQuelle` 0 Fehler, 0 Warnungen, keine
+externen Anfragen; Vortragsmodus ohne `liveQuelle` wie vorher (keine Anfrage, kein QR-Code, Zählmodus); mit der
+lokalen Attrappe: Stimmen bewegen die Balken, Umentscheiden, Attrappe aus → „offline“ (Werte bleiben), langsame
+Antwort (6 s) → Zeitüberschreitung (damals hart nach 4 s; die Prüfung zeigte, dass beim Server dann doch zwei
+Anfragen gleichzeitig liefen – behoben in der Nacharbeit unten), Klick/Ziffer/„Werte“/„Zurücksetzen“ → „Live
+pausiert“, Klick auf die Pille → fortgesetzt, Referentenfenster ohne eigene Anfragen und mit gleicher Pille.
+Offen: Folie 08 (Kasten und Notizen in `index.html`) beschreibt noch den alten Weg – Bündel B (LIESMICH 12).
+
+**Ende-zu-Ende-Test (19.10.2026, ohne Google):** Attrappe `live-abstimmung-test.mjs --server`; Präsentation und
+Abstimmseite unter der GitHub-Pages-Adresse (Dateien von der Festplatte, `marke.js` nur im Test mit
+`liveQuelle` `https://script.google.com/…/exec`, die Anfragen dorthin beantwortet die Attrappe). Drei Handys
+(390 × 844) öffnen die Adresse aus dem QR-Code und stimmen ab, eines entscheidet sich um → Folie 08 zeigt Zahlen,
+Prozente und Balken nach 1,3–1,9 s; Aussagezahl (Schritt 1) rechnet mit; Referentenfenster (Taste P) zeigt
+dieselben Werte; Attrappe aus → „offline“, Werte bleiben, Handy meldet „Das hat nicht geklappt“; Hand-Eingabe →
+„Live pausiert“. Dabei geändert: (1) Antwortet die Web-App in 2 s oder später, fragte die Folie nur alle 4 s – jetzt
+folgt die nächste Abfrage sofort (gemessen: 2,5 s Antwortzeit → 2,5 s Abstand). (2) `ANLEITUNG.md` und
+`live-abstimmung-test.mjs` empfahlen für den lokalen Test `liveQuelle = http://localhost…` – das nimmt die
+Abstimmseite nicht an; jetzt `?quelle=` für Folie, Referentenfenster und Abstimmseite (siehe 6c).
+
+### Nacharbeit nach zwei Prüfungen (19.10.2026)
+
+Zwei Prüfer (Funktion/Robustheit/Datenschutz und Darstellung/Bedienung) fanden 1 hohen (von beiden), 6 mittlere
+und 12 niedrige Befunde. Eingearbeitet:
+
+| Bereich | Änderung |
+|---|---|
+| Umfrage (`js/komponenten.js`, 3a) – **hoch** | Gespeicherte Werte tragen die `runde`; mit `liveQuelle` gelten sie nur in derselben Runde. Vorher zeigte Folie 08 im Vortrag bei unerreichbarer Web-App die Stimmen der Generalprobe ohne Pille „Beispieldaten“, und Plan C zählte darauf weiter. Jetzt: Beispielwerte mit Pille, die erste Handstimme setzt auf 0. Alter Speicher ohne Runde gilt mit `liveQuelle` nicht. Ohne `liveQuelle` unverändert. |
+| Zeitlimit (`js/komponenten.js`) | weich 4 s/8 s (Fehlversuch, Anfrage bleibt offen, späte Antwort zählt), hart 15 s; nächste Anfrage erst danach (auch beim Server keine Überlappung). Vorher: hart 4 s – eine Web-App mit 4,5 s Antwortzeit zeigte nie einen Stand. Klick auf „offline“ gibt eine hängende Anfrage auf. |
+| Pause, Meldungen, QR (`js/komponenten.js`) | Pause je Umfrage und Runde gespeichert (übersteht F5); Grund „Bereitstellung „Jeder“?“ bei nicht erreichbarer Web-App; QR-Code zur Abstimmseite nur ohne Fehler in `liveQuelle`/`runde` (vorher auch bei …/dev). |
+| Referentenfenster (`js/komponenten.js`, `css/komponenten.css`) | Zustand als Knopf `.r-live` in einer eigenen Zeile unter der Kopfzeile „Aktuell“ (15 px statt ca. 9 px in der verkleinerten Pille; die Kopfzeile selbst war schon voll), Klick = fortsetzen/neu versuchen; Vorschau „Als Nächstes“ wird bei jedem Zustandswechsel neu gebaut. |
+| Folie 08 (`index.html`, nur Umfrage-Baustein) | `data-qr-groesse="440"` statt 380 (45 Module, 9,8 statt 7,2 Bühnen-Pixel je Modul); Kommentar ergänzt. Sonst keine Inhalte geändert. |
+| Abstimmseite (`abstimmen.html`, `css/abstimmen.css`, `js/abstimmen.js`) | kein HOLY-Logo mehr im Kopf (Absenderposition, `QUELLEN.md` §4), stattdessen „Studentische Fallstudie · keine Verbindung zur …“ ohne Scrollen sichtbar; neutrales Tab-Symbol; Regel für niedrige Fenster (alle fünf Tiere sichtbar bei 375 × 548, 360 × 560, 390 × 664, 320 × 640) und für Handys quer (zwei Spalten); Datenschutztext nennt Google und alle gespeicherten Angaben; Geräte-ID je Umfrage und Runde (alte gemeinsame ID wird gelöscht); `liveQuelle` muss auf `/exec` enden (wie die Folie); neutraler Text bei Verbindungsfehlern, Konsolenhinweis auf „Jeder“; Hinweis „Die Abstimmung ist gerade nicht geöffnet – Sie läuft nur während der Präsentation im Hörsaal“ (stimmt auch nach dem Vortrag); Zeitlimit 30 s; Kommentar zur Ladereihenfolge berichtigt. |
+| Server (`live-abstimmung/apps-script.gs`) | `SPERRE_WARTEN_MS` 10 s statt 20 s – der Server gibt vor dem Handy auf, seine Meldung „bitte gleich noch einmal tippen“ kommt an. |
+| `werkzeuge/live-abstimmung-test.mjs` | Prüfung „Sperre kürzer als Zeitlimit des Handys“ (weiter 32 Prüfungen); neu `--lasttest <URL> [--anzahl 40]` gegen die echte Web-App. |
+| `live-abstimmung/ANLEITUNG.md` | Tests im privaten Fenster, Handy ohne Google-Anmeldung; Lasttest; Ändern auf GitHub ohne Git und Kontrolle auf dem Handy; Kontrolle der Runde auf GitHub Pages (`marke.js?v=…`); „Kontingente unkritisch“ ersetzt durch „nicht geprüft – Lasttest“; Missbrauch genauer; Fehlertabelle (+4 Zeilen); kleine Wortlaute (Zeilennummer links, Umentscheiden). |
+| `LIESMICH.md`, `QUELLEN.md` | Abschnitt 6 (Runde, F5, Referentenzeile, Plan C), Checkliste 12, Abschnitt 13; `QUELLEN.md` §4: Abstimmseite ohne Logo. |
+
+**Nicht umgesetzt (mit Grund):** kürzere Adresse der Abstimmseite über eine Weiterleitungsseite (optional; neue Datei
+außerhalb von `praesentation/` und ein zusätzlicher Sprung auf dem Handy – 440 px und der Scan-Test aus der letzten Reihe
+reichen); schnellere Schreibstelle im Server (Textformat für ganze Spalten, `appendRow`) – ob Google das Format
+übernimmt, ist ohne Google nicht prüfbar, der Lasttest bei der Generalprobe zeigt, ob es nötig ist. (Überholt:
+Der Lasttest war nötig und nicht bestanden – neue Schreibstelle im Unterabschnitt „Lastfest“ unten.)
+
+**Geprüft (19.10.2026, ohne Google):** `live-abstimmung-test.mjs` 32 von 32; Lasttest gegen die Attrappe bestanden;
+Ende-zu-Ende-Test wie oben (Attrappe, GitHub-Pages-Adresse, drei Handys, Referentenfenster) 32 von 32; gezielte Tests
+der Befunde 34 von 34 (u. a. Probewerte im Vortrag offline → Beispielwerte, Antwortzeit 4,5 s → Stand kommt, hängende
+Verbindung → „offline“ nach ca. 4 s, eine Anfrage bis 15 s, Pause übersteht F5, Geräte-ID je Runde, …/dev auf beiden
+Seiten abgelehnt, QR 440 px, Referentenzeile); Abstimmseite in 9 Fenstergrößen hell/dunkel (alle Tiere sichtbar, keine
+waagrechte Scrollleiste, Tippflächen ≥ 58 px); `pruefen.mjs index.html --schritte --optional`: 23 Folien, 0 Fehler,
+4 Warnungen Wortbudget wie bisher (f03, f04, f10, f11), keine externen Anfragen; `--nur f08 --schritte` mit
+`liveQuelle` (Kopie) in Editorial hell/dunkel, Bento dunkel, Keynote hell je 0 Fehler, 0 Warnungen; QR-Code per
+OpenCV gelesen bei 1920 und 960 px Bildbreite in allen vier, bei 640 px in drei von vier (vorher mit 380 px: eine von
+sechs) – nur ein Ersatz für den Scan-Test. Exporte neu erzeugt (Abschnitt 15): PDF 22 Seiten ohne 01b, 23 Folienbilder,
+Übersicht Stand 19.10.2026. Offen wie bisher: echtes Google Apps Script (Weiterleitung, Kaltstart, Kontingente),
+echte Handys, Scan aus der letzten Reihe.
+
+### Lastfest (19.10.2026)
+
+**Anlass:** Lasttest gegen die echte Web-App am 19.10.2026 (40 Stimmen gleichzeitig, eigene Runde
+„lasttest-…“): 19 von 40 angenommen, 21 nach rund 10 s mit „Gerade kommen sehr viele Stimmen …“ abgelehnt,
+Antwortzeit Median 11,2 s, längste 14,3 s. Ursache: Jede Stimme hielt die Sperre (`LockService.getScriptLock()`)
+für Blatt suchen, letzte Zeile, Format, Werte und `flush` – rund 0,5 s, alle nacheinander. **Ziel:** 40 fast
+gleichzeitige Stimmen werden alle gezählt, jedes Handy sieht spätestens nach ca. 15 s „Danke“, ohne selbst zu
+tippen. Schnittstelle, Zählregel, Datenschutz und Verhalten der Folie bleiben gleich. Ablauf: drei Bauteile
+(Server, Abstimmseite, Prüfwerkzeug), Ende-zu-Ende-Test, zwei Prüfungen (Nebenläufigkeit und Apps Script;
+Prüfwerkzeug, Exporte und Anleitung: zusammen 1 hoher, 8 mittlere, 11 niedrige Befunde), Nacharbeit. Quellen zu Apps
+Script (Lock-Referenz, Quotas, `appendRow`, `clearContent`, abgerufen 19.10.2026) im Kopf von `apps-script.gs`.
+
+| Bereich | Änderung |
+|---|---|
+| `live-abstimmung/apps-script.gs` (`FASSUNG = '19.10.2026'`) | **Zeile reservieren, dann ohne Sperre schreiben:** Unter der Sperre steht nur die Skript-Eigenschaft `naechsteZeile` – lesen und um 1 erhöhen in derselben Sperre (Muster der Lock-Referenz: fortlaufende Ticketnummer), höchstens 8 s warten (`SPERRE_WARTEN_MS`, vorher 10 s). Danach schreibt jede Stimme in ihre eigene Zeile, nur wenn sie leer ist (sonst Abgleich mit `getLastRow`, Zähler nie zurück, höchstens 3 Zeilen); `{"ok":true}` erst nach `flush`; Zeit beim Eingang (die neuere Wahl desselben Handys gewinnt). Seltene Wege mit Tabellenänderung (Blatt anlegen, Kopfzeile, 500 Zeilen nachschieben) unter der Sperre, `flush` vor `releaseLock`. **Warum nicht `appendRow` ohne Sperre:** Die Referenz sichert nicht zu, dass gleichzeitige Aufrufe nie dieselbe Zeile treffen. **`einrichten()`:** Kopfzeile, 5000 formatierte Reservezeilen, Formate der ganzen Spalten, Zähler hinter die letzte Zeile, aber nie zurück (Nacharbeit), Textschutz-Probe in der letzten Zeile (leeren mit `clearContent`, Nacharbeit), drei Protokollzeilen. Nacharbeit außerdem: `doGet` im Editor schreibt einen Hinweis auf `einrichten` ins Protokoll; `?aktion=fassung` (unbekannte Aktion) nennt die Fassung; Kopf: Löschen, Sortieren, Einfügen, `einrichten` und „Neue Version“ nur ohne laufende Abstimmung; Kontingente vorsichtig formuliert (30 gleichzeitige Ausführungen je Nutzer und ein unbeziffertes Limit für Starts pro Sekunde; wie beides bei „Ausführen als: Ich“ greift, ist nicht dokumentiert). |
+| `js/abstimmen.js`, `css/abstimmen.css`, `abstimmen.html` (nur Kommentar) | Senden mit automatischer Wiederholung (Abschnitt 6c): bis zu 3 Versuche, 15 s je Versuch (vorher 30 s, ein Versuch), Pause 1,5–4 s, ruhiger Hinweis statt Fehlerkarte, Umentscheiden jederzeit, höchstens eine Anfrage unterwegs, Nachzügler. Nacharbeit: späte Zusage für dieselbe Wahl → gleich „Danke“ statt weiterer Versuche; Hinweiszeile behält die Höhe der Anleitung (Tablet 768 px: vorher 23 px Sprung); Kommentare zu Kontingent und PDF berichtigt. Abgeblendete Tiere Deckkraft 0,72 (Kontrast hell 6,8 : 1, dunkel 7,8 : 1). |
+| `werkzeuge/live-abstimmung-test.mjs` | Neu geschrieben, **44 Prüfungen** (vorher 32). Attrappe mit Schreibpuffer je Ausführung, Skript-Eigenschaften, Sperre mit Besitzer und Sperr-Phasen, verschachtelten Ausführungen (2. und 3. Stimme vor jedem Dienstaufruf), `appendRow` atomar oder nicht. Regeln der Lock-Referenz: `flush` vor `releaseLock`; Eigenschaft nur unter der Sperre ändern und in derselben Sperr-Phase lesen und schreiben (Nacharbeit); Zeilen und Blätter nur unter der Sperre anfügen (Nacharbeit); Sperre am Ende frei; `''` per `setValues` zählt pessimistisch als Inhalt. Grenze des Modells im Kopf benannt. `--mutationen`: 16 kaputte Kopien (vorher 11). `--server`: `--stoerung`, `--abbruch`, `--gleichzeitig`, neu `--sperre MS` (Belastbarkeit). `--lasttest`: Handy-Regel aus `js/abstimmen.js`, `--anzahl`, `--verteilt`; Nacharbeit: Fassungsabfrage, mitlesende „Folie“ wie 3a (`--ohne-folie`), Urteil BESTANDEN / GEZÄHLT, ABER ZU LANGSAM / NICHT BESTANDEN mit Ziel 15 s (`ZIEL_MS`). |
+| `werkzeuge/pruefen.mjs`, `werkzeuge/uebersicht.mjs` | Eingebaute Attrappe der Web-App (nur `liveQuelle`, nur `stand`/`stimme`); Prüfseite mit `liveQuelle` ohne `?aufnahme` – Folie 08 wie zu Beginn des Vortrags (QR, „Live“, `n = 0`) statt Beispieldaten; `--live-offline`, `--live-werte`, `--live-aus`; Bericht `liveAnfragen`. Nacharbeit: `aktion=stimme` aus der Präsentation ist ein Fehler; WebSockets werden abgefangen und als externe Anfrage gemeldet; Browser startet ohne Proxy und ohne Namensauflösung (`--no-proxy-server`, `--host-resolver-rules`) – mit `--disable-background-networking` allein baute Chrome in jedem Lauf eigene Verbindungen zu Google-Diensten auf (clients2.google.com, accounts.google.com u. a., nie `script.google.com`). |
+| `live-abstimmung/ANLEITUNG.md` | Abschnitt „Skript aktualisieren“ (Raw-Link mit Strg+F-Kontrolle, Handgriffe für das Auswahlfeld, drei Protokollzeilen, „Neue Version“, Kurzprüfung mit `?aktion=fassung` und neuer Geräte-ID, wo das Blatt steht); Lasttest (20–60 Handys, mindestens zweimal, Ausgabe, drei Urteile); „Wichtig zu wissen“ (nur ohne laufende Abstimmung löschen/sortieren/einfügen, Lücke im Blatt, Kontingente); Fehlertabelle +7 Zeilen; „Für die Technik“ (`--sperre`, Wiederholung gegenüber Belastbarkeit). |
+| `js/komponenten.js` (nur Kommentar), `LIESMICH.md`, `AUTOREN.md` | Kommentar zu `?aufnahme` und `pruefen.mjs`. LIESMICH 6 (Andrang, Testen, PDF ohne QR-Code, Prüfwerkzeug), 11 (im PDF keine Abstimmung), 12 (Punkt „Skript aktualisieren“), 13. AUTOREN 6c, 9, 15 und dieser Abschnitt. |
+
+**Geprüft (19./20.10.2026, nur lokal – keine einzige Anfrage an die echte Web-App):**
+- `live-abstimmung-test.mjs`: 44 von 44; `--mutationen`: 16 von 16 erkannt. Gegenprobe: das alte Skript bestand
+  die neuen Prüfungen nur zu 33 von 42 (Stand Bau).
+- Lasttest gegen die Attrappe, 40 Handys (Urteil, längste Zeit bis „Danke“): ohne Störung BESTANDEN (0,1 s);
+  `--verzoegerung 800 --stoerung 0.2` BESTANDEN (5,0 s); `--abbruch 0.2` BESTANDEN (5,5 s); `--verzoegerung 1200
+  --stoerung 0.2 --abbruch 0.1 --gleichzeitig 30 --sperre 100 --verteilt 10` BESTANDEN (11,5 s). **Belastbarkeit
+  mit `--sperre`** (Haltezeit je Stimme, `--verzoegerung 800`): 200 ms → BESTANDEN (8,8 s), mit `--anzahl 60`
+  GEZÄHLT, ABER ZU LANGSAM (1 Handy, 15,1 s); 300 ms → ZU LANGSAM (2 Handys, 15,5 s); 500 ms (etwa der alte
+  Server) → ZU LANGSAM (16 Handys über 15 s, längste 26,2 s). Die „Folie“ war in keinem Lauf „offline“.
+  Folgerung: Das Ziel hält, solange eine Stimme die Sperre bei Google höchstens ca. 0,2 s hält (bei 60
+  Handys knapp). Wie lange das bei Google dauert, ist nicht gemessen.
+- Abstimmseite im Browser (Playwright, `file://`, Attrappe; Anfragen an Google blockiert und gezählt: 0): 22 von 22
+  Fällen – Erfolg im 1./2./3. Versuch (Andrang, `nochmal`, „Serverfehler:“, HTTP 503, Netz- und Ladefehler),
+  Fehlerkarte erst nach 3 Versuchen, Zeitüberschreitung, Umentscheiden in der Pause und während einer Anfrage,
+  Nachzügler, offline, Eingabefehler, Du-Form, Darstellung 390 × 664 und 375 × 548 hell/dunkel; neu: späte Zusage
+  in der Pause → „Danke“ nach 16,1 s mit 1 Anfrage, späte Zusage während Versuch 2 (Andrang) → „Danke“ ohne
+  Fehlerkarte, Tablet 768 × 1024 ohne Sprung (vorher 23 px). Ende-zu-Ende (3 Runden mit 3 Handys und Folie 08,
+  `--stoerung 0.3`): 9 von 9 „Danke“ ohne Tippen, Folie stimmt in jeder Runde, Umentscheiden in zwei Varianten,
+  Attrappe gestoppt → Fehlerkarte nach 3 Versuchen, Folie „offline“.
+- `pruefen.mjs index.html --schritte --optional`: 23 Folien, 80 Bilder, 0 Fehler, 4 Warnungen Wortbudget wie bisher
+  (f03, f04, f10, f11), `externeAnfragen` 0, `liveAnfragen` 1 (Attrappe), Folie 08 „Live“, `n = 0`; alle 80 Bilder
+  byteweise gleich mit dem Lauf vor den neuen Startoptionen. `--nur f08 --schritte` mit `--live-offline` (dunkel),
+  `--live-werte 15,9,17,14,9` und `--live-aus` (Keynote): je 0 Fehler. Gegenproben: `aktion=stimme` aus einer
+  Präsentationskopie → Fehler; WebSocket → Fehler „externe Anfrage blockiert: wss://… (WebSocket)“. Chrome-NetLog
+  (`pruefen.mjs --nur f08`, `uebersicht.mjs`): keine TCP-Verbindung, jede Namensauflösung `~NOTFOUND`.
+- Exporte nach Abschnitt 15 neu erzeugt und nach `export/` kopiert: PDF 22 Seiten (0 Fehler, `ausDruckansicht` 0),
+  23 Folienbilder, Übersicht Stand 19.10.2026 (`externeAnfragen` 0, `liveAnfragen` 0). Inhaltlich unverändert:
+  Bilder und Übersicht byteweise gleich, alle 22 PDF-Seiten pixelgleich (40 dpi). Folie 08 in PDF und Bild
+  angesehen: Endzustand mit den Analogien, ohne QR-Code.
+
+**Nicht umgesetzt (mit Grund):** zusätzliche PDF-Seite „Folie 08, Schritt 0“ (Frage und QR-Code) für Plan B – braucht
+eine Änderung der Druckansicht und ergäbe 23 statt 22 Seiten; Yannick hat am 20.10.2026 entschieden: nicht nötig, LIESMICH 11 (Frage auf
+Folie 07 stellen, Hände zählen). Folie 08 im Prüflauf zweimal fotografieren (`n = 0` und mit Balken) – stattdessen
+Hinweis in Abschnitt 9 (`--live-werte`). Prüfen der Skript-Eigenschaft in der Oberfläche als Kurzprüfung – ersetzt
+durch `?aktion=fassung` (eindeutig, ohne Oberflächenwissen). Mutanten „Abgleich ohne `Math.max`“, „nach drei belegten
+Zeilen `{ok:true}`“ und „bei gleicher Zeit gewinnt die obere Zeile“ – im Modell verschachtelter Ausführungen
+unerreichbar bzw. nur bei gleicher Millisekunde desselben Handys; von Hand geprüft, im Kopf des Werkzeugs vermerkt.
+
+**Offen:**
+- **Yannick:** Skript aktualisieren (ANLEITUNG „Skript aktualisieren“: Code einfügen, „einrichten“, Neue Version,
+  Kurzprüfung) – am 20.10.2026 zurückgestellt (Yannick: erst Folie 08 überarbeiten, Abschnitt 18); **mit dem
+  Zeitfenster (Abschnitt 20) wieder nötig, jetzt mit der Fassung 20.10.2026.** Vorher müssen die Änderungen auf GitHub sein (Commit und Push), sonst zeigt der Raw-Link die alte
+  Fassung.
+- **Danach Lasttest gegen die echte Web-App** (mindestens zweimal mit `--anzahl 20`; höchstens ca. 20 Personen im
+  Raum, Yannick 20.10.2026; Messung 20.10. mit der alten Fassung: 20 von 20 gezählt, 6 Handys über 15 s). Erst er zeigt, wie lange
+  der kurze Abschnitt unter der Sperre bei Google dauert (`tryLock`, `getProperty`, `setProperty`, `releaseLock` –
+  Drittquelle justin.poehnelt.com, 16.03.2024: PropertiesService ca. 80 ms je Schreiben und Lesen; die Übergabe der
+  Sperre ist nicht dokumentiert) und ob Kontingente greifen. Ist er zu langsam: nächste Stufe wäre `appendRow` ohne
+  Sperre – schneller, aber ohne dokumentierte Garantie (Restrisiko stiller Verluste); erst nach der Messung entscheiden.
+- Ob das Format `@` die Umwandlung verhindert (Modellwissen): prüft die Textschutz-Probe in `einrichten()`.
+- Wie Google eine Ablehnung wegen Kontingent an ein JSONP-`<script>` ausliefert: nicht geprüft (die Abstimmseite
+  wiederholt bei Ladefehlern und Antworten ohne Rückruf).
+- Echte Handys (iPhone Safari, Android Chrome), Scan aus der letzten Reihe: Generalprobe.
+- Restrisiken: Hält Google eine Anfrage über 15 s auf und geht auch die späte Antwort verloren, kann bei jemandem,
+  der sich genau dann umentscheidet, die ältere Wahl zählen. Löschen oder Sortieren während einer Abstimmung kann
+  eine Stimme überschreiben – in Skript und Anleitung beschrieben, technisch nicht verhindert.
+- Grenze der Prüfung: Wettläufe, bei denen zwei Ausführungen gleichzeitig mittendrin sind, findet das Modell
+  verschachtelter Ausführungen nicht; die Regelprüfung (Zähler in derselben Sperr-Phase lesen und schreiben) deckt
+  den wichtigsten Fall ab.
+
+## 17. Eigene Illustrationen statt Platzhalter: Folie 01 und 04 (19.10.2026)
+
+Auftrag Yannick: Platzhalterbilder weitestgehend ersetzen und das Platzhalter-Schild entfernen. Entscheidung: kein
+Bildgenerator und keine eigenen Fotos verfügbar, Fotos oder Bilder von HOLY aus dem Netz nicht erlaubt (Rechte,
+öffentliches Repository) – deshalb **eigene Illustrationen** als reines SVG (von Claude Code als SVG-Code erzeugt,
+teils per Skript; Motivvorgaben, Auswahl und Prüfung durch die Gruppe),
+gekennzeichnet „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“. Kein Logo, kein Schriftzug,
+keine kopierte Verpackung, keine echten Personen, keine externen Ressourcen. JS und CSS unverändert.
+
+| Bereich | Änderung |
+|---|---|
+| `bilder/raetsel-holy.svg` (neu) | Rätselbild Folie 01, 1920 × 1080, ohne Filter/Masken/Text (flüssiger Zoom auf 300 %): nachempfundene Pappdose (erste Fassung mit Comic-Tukan, in der Nacharbeit ersetzt durch eine Drachenfrucht ohne Tier – siehe unten), Shaker, Drachenfrucht, Eiswürfel vor HOLY-Gelb; Motiv nach Dossier Kap. 6.3 ✔ [1, 30] / 6.4 ✔ [1, 5, 73]. |
+| `bilder/persona-marco.svg` (neu) | Persona-Bild Folie 04, 1 : 1: fiktive Person „Marco, 28“ mit Warnweste und Shaker vor der Nachtschicht im Lager (Steckbrief A2 §2); feste Nachtfarben, in allen Themen und Modi gleich; Klassen/IDs mit Präfix `pm-`. |
+| `marke.js → raetselBild` | `bilder/raetsel-holy.svg` statt `bilder/platzhalter-raetsel.svg`; Kommentar: Illustration, eigenes Foto bleibt möglich (dann `data-fokus` neu). Die Pille „Platzhalterbild“ entfällt von selbst (Dateiname ohne „platzhalter“). `platzhalter-raetsel.svg` bleibt liegen (Rückfallwert in `js/komponenten.js`). |
+| Folie 01 (`index.html`) | `data-fokus="59.5% 59%"` statt `66% 42%` (Tukan-Gesicht; seit der Nacharbeit `60.1% 60.7%`, Etikett-Frucht; in Schritt 2 steht die Gruppe mittig in der Bildtafel); Fußzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026“ (Logo-Zeile unverändert; nicht verlängern – die Zeile bricht nicht um); Kasten „FOLIE 01“, Anleitung „RÄTSELBILD“, Kommentar über der Fußzeile und Notiz „Vor dem Vortrag“ auf den neuen Stand. |
+| Folie 04 (`index.html`) | Daten `"bild": "bilder/persona-marco.svg"`, `"bildHinweis": "Illustration (KI-gestützt)"` (seit der Nacharbeit die volle Kennzeichnung, siehe unten; auch als Ersatztext im HTML, sonst blitzt „Platzhalter“ auf); `js/folien/04-persona.js` ersetzt die Inline-Zeichnung durch das Bild (die Zeichnung bleibt als Rückfall ohne `"bild"`). Fußzeile „Person, Bild, Zitat fiktiv (Illustration, KI-gestützt)“ – die längere Fassung „…; Illustration: eigene Gestaltung, KI-gestützt“ brach in allen Themen auf drei Zeilen um und drückte die Quellzeile des Psychografie-Blocks aus dem Kasten (Fehler in `pruefen.mjs`). Kasten „FOLIE 04“, Anleitung und Notizen nachgezogen. |
+| B1, B2, B7 (`index.html`) | B1: Notiz „noch ein Platzhalter“ gestrichen, Kasten angepasst. B2: Kasten und Notiz – P6 optional, Persona-Bild als eigene Illustration statt Bildgenerator (keine neue Tabellenzeile). B7: „Icons, Grafiken, Illustrationen: eigene Gestaltung, KI-gestützt (Claude Code)“ mit festem Leerzeichen in „Claude Code“ – passt in allen Themen in eine Zeile (mit „(01, 04)“ brach sie um). |
+| Folie 09 | **nicht geändert** (Bündel C): Schlüsselbild bleibt Piktogramm mit „Platzhalter – Screenshot folgt“, bis der Betreuer einem Screenshot zustimmt (`QUELLEN.md` §4). |
+| `QUELLEN.md`, `LIESMICH.md`, `../prompts.md` | QUELLEN §3 (Illustrationen 01/04, Rückfall-Zeichnung) und §4 (zwei neue Bildzeilen, `platzhalter-raetsel.svg` als Rückfall); LIESMICH Stand, Abschnitt 8 (`raetselBild`), Checkliste 12 (beide Bilder erledigt, offene Freigaben, eigenes Foto/P6 mit ausgefüllter P6-Vorlage), Ordnertabelle; prompts.md: ein Satz unter P6 (in der Nacharbeit zurückgenommen – `../prompts.md` war für diesen Auftrag nicht zur Änderung freigegeben; der Hinweis steht in LIESMICH 12 und QUELLEN §3). |
+
+**Geprüft (19.10.2026):** `pruefen.mjs index.html --schritte --optional` (Editorial hell): 23 Folien, 0 Fehler,
+4 Warnungen Wortbudget wie vorher (f03, f04, f10, f11), keine externen Anfragen. `--nur f01,f04,b1,b2,b7 --schritte`
+in Bento, Keynote und Editorial dunkel: je 0 Fehler, nur die bekannte Warnung f04 (46 Wörter, wie vorher).
+`--druck`: 22 von 22 Seiten, Seite 1 (Titelfolie mit Bildtafel) und Seite 4 (Persona) angesehen. Screenshots
+angesehen: f01 Schritt 0–2 in Editorial und Bento, Schritt 1–2 in Keynote, Schritt 0 dunkel; f04 Schritt 0–4 in
+Editorial, Schritt 4 in Bento, Keynote und dunkel; B7 in allen drei Themen. (Laufen mehrere Prüfungen gleichzeitig,
+fehlt in Schritt 1 auf dem Screenshot manchmal noch das Logo – Zeitfrage der Animation; einzeln wiederholt: Logo da.) Sichtbarer Text aller Folien (jede Folie, jeder
+Schritt; zusätzlich Druckmodus mit alt/aria-label/title) nach „Platzhalter“ durchsucht: einziger Rest Folie 09
+(„Platzhalter – Screenshot folgt“, Bündel C, bewusst). **Offen:** Exporte (`export/`) zeigen noch die alten
+Platzhalter – nach den Freigaben neu erzeugen (Abschnitt 15; erledigt in der Nacharbeit, siehe unten); Motiv und
+Darstellung durch die Gruppe freigeben; Rätsel mit zwei Personen testen; Übergang 0→1→2 auf dem Vortragsrechner
+ausprobieren.
+
+### Nacharbeit der Illustrationen nach zwei Prüfungen (19.10.2026)
+
+Zwei prüfende KI-Agenten (Darstellung; Inhalt, Kennzeichnung, Rechte) haben die Illustrationen geprüft. Eingearbeitet:
+
+| Befund | Änderung |
+|---|---|
+| **Tukan = echte HOLY-Sorte** (hoch): HOLY führt eine Energy-Sorte „Thai Lime Toucan“ in einer Pappdose mit Tukan (Websuche 19.10.2026: de.holy.com/products/thai-lime-toucan; change.org/topic/holy-de-de – nicht im Dossier) | `raetsel-holy.svg` neu erzeugt: Etikett **ohne Tier** – Drachenfrucht im Comic-Aufkleber-Stil mit Heiligenschein, Strahlen, Funkelsternen und Saftspritzern. Begründung: HOLY gibt jeder Energy-Sorte ein Comic-Tier (Dossier 6.3 ✔ [30]), jedes Tier könnte eine echte Sorte nachbilden. `data-fokus` auf `60.1% 60.7%` (Fruchtfleisch). Kasten und Anleitung „FOLIE 01“, Notiz f01 (Rückfragen „Ist das eine echte Dose?“ und „Warum kein Tier?“), `marke.js`, QUELLEN §3/§4, LIESMICH 8/12 angepasst. |
+| Urheberschaft (mittel): „von Hand“ bzw. „selbst gestaltet“ | QUELLEN §3/§4, dieser Abschnitt, Notiz f01 und die Kopfkommentare der SVGs sagen jetzt: von Claude Code als SVG-Code erzeugt (teils per Skript), Motivvorgaben, Auswahl und Prüfung durch die Gruppe. Die Kennzeichnung auf den Folien bleibt wie vorgegeben. |
+| Kennzeichnung Folie 04 (mittel) | `"bildHinweis"` und Ersatztext: „Illustration: eigene Gestaltung, KI‑gestützt (Claude Code), 19.10.2026“ mit geschütztem Bindestrich (U+2011), zweizeilig; Fußzeile bleibt kurz. |
+| Exporte (mittel) | PDF, Folienbilder und Übersicht neu erzeugt (Abschnitt 15, `--stand 19.10.2026`). |
+| Spiegelung im Tisch (niedrig) | Spiegelung des Shakers wird jetzt vor der Dose gezeichnet (liegt dahinter); beide Spiegelungen als elliptischer Verlauf ohne harte Kanten (keine Filter, keine Masken). |
+| Bläschen am Tukan-Flügel, Tukan-Gesicht (niedrig) | entfallen mit dem Tukan. |
+| Hand am Shaker, Folie 04 (niedrig) | Daumen liegt hinter dem Becher, nur die Spitze ohne Nagel schaut links hervor; Finger unterschiedlich lang, kleiner Finger kürzer und schmaler, Nägel verkürzt. |
+| Bodenlinie, Folie 04 (niedrig) | entfernt (las sich wie ein Stab in der Hand). |
+| LIESMICH-Checkliste (niedrig) | „eingebaut“ und „freigeben“ getrennt: eigene offene Punkte „Folie 01 – Motiv freigeben und Rätsel testen“ und „Folie 04 – Darstellung freigeben“ (A · Yannick); Punkt „Exporte mit den Illustrationen neu erzeugt“. |
+| Weste dem Steckbrief zugeschrieben (niedrig) | Notiz f04, Kasten „FOLIE 04“, QUELLEN §3: Lager und Nachtschicht nach Steckbrief A2 §2; Warnweste, Haare, Bart, Hautfarbe sind Gestaltung. |
+| `../prompts.md` geändert (niedrig) | Änderung zurückgenommen (Datei war nicht freigegeben). |
+| P6 im Kommentar „04-persona.html“ (niedrig) | „Prompts P3/P4; P6 optional, Bild seit 19.10.2026 eigene Illustration, KI-gestützt“. |
+
+Folie 09 bleibt unverändert (Piktogramm, „Platzhalter – Screenshot folgt“; Zustimmung des Betreuers nötig, QUELLEN §4).
+Das Generator-Skript des Rätselbilds liegt nicht im Repository; die SVG-Datei ist die bearbeitbare Quelle.
+
+**Geprüft (Nacharbeit, 19.10.2026):** `pruefen.mjs index.html --schritte --optional` (Editorial hell): 23 Folien,
+80 Screenshots, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03 48, f04 46, f10 49, f11 55), keine externen
+Anfragen. `--nur f01,f04,b1,b2,b7 --schritte` in Editorial, Bento und Keynote, je hell und dunkel: je 0 Fehler, nur
+die bekannte Warnung f04 (46). Kennzeichnung auf f04 in allen Themen zweizeilig, „KI‑gestützt“ ungetrennt.
+Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b), 23 Folienbilder (geändert: f01, f04, b7), Übersicht
+`--stand 19.10.2026`; PDF-Seiten 1 und 4 und die Übersicht angesehen – kein Platzhalter-Schild auf 01 und 04.
+
+## 18. Chamäleon statt Waschbär (Di, 20.10.2026)
+
+Entscheidung Yannick (KI-Nachweis 94/95): Elias Knauber (Bündel C) ordnet HOLY in seiner Ausarbeitung eher als
+**Chamäleon** ein. Das Tier unserer Analyse wechselt deshalb von Waschbär zu Chamäleon – auf Folie 08, in der
+Live-Abstimmung und in den Ausarbeitungen. Nur diese inhaltliche Änderung, kein weiteres Redesign. Die
+Aktualisierung des Apps Script bei Google ist zurückgestellt (seit Abschnitt 20 wieder nötig); die Live-Abstimmung bleibt technisch unverändert
+(`apps-script.gs`, Schnittstelle, `liveQuelle`, `runde`). Das Skript speichert nur die Nummer des Tiers.
+
+**Kennzeichnung:** Einordnung: Elias Knauber (Bündel C). Begründung: **Vorschlag, KI-gestützt** aus dem
+Recherche-Dossier – **von Elias zu prüfen** (seine Ausarbeitung liegt nicht im Repository). Die Analogie ist eine
+Hypothese (H). Die frühere Hypothese des Dossiers (Kap. 6.7: „Ton eher Waschbär oder Affe“) bleibt als
+Zwischenstand dokumentiert. Ohne Websuche; die Alltagsbedeutung von „Chamäleon“ ist Modellwissen.
+
+**Begründung in Kürze (Vorschlag; vollständig mit Quellennummern in den Notizen von Folie 08, Stand nach der
+Nacharbeit):** Das Chamäleon ersetzt den frechen Ton nicht, es beschreibt, wie er auftritt: wandelbar in Farbe,
+Sorte und Szene – im Ton immer frech. Dafür: 31 Energy-Sorten mit je eigenem Comic-Tier (Dossier 3.1 ✔, 6.3 ✔),
+Auftritte von Wacken bis CSD, Kooperationen mit Vereinen und Lizenzen – eigene Produkte mit dem 1. FC Köln und den
+Simpsons (6.6 ✔) –, Wandel vom „Gaming Booster“ zum Softdrink für alle (2.8 ✔, Etappen H), Look 2022 „bunter“
+(2.1 ✔), Limited Drops (7.1 ✔). Was bleibt: Du-Ton, „Gefährlich geil!“, „Zero Zucker oder Bullsh*t.“ (6.2 ✔);
+laut Jost massenmarkttauglicher, ohne „dieses edgy … zu verlieren“ (2.8 ✔). Ambivalent: eigene Fassungen je Markt
+und Kanal (6.1 ✔, S4 ✔) – sie zählen nicht als Stärke, sondern gehören zu S4 und S5; im Alltag heißt „Chamäleon“
+auch „ohne festen Kern“ – Anzeichen in S5 (sechs Claims, Profilnamen; Befund ✔, Deutung H). Das ist der Bruch über
+die Kanäle (Folie 09b) und der Ansatz von Empfehlung 3. Der Markenkern („Genuss mit gutem Gewissen“) ist nicht
+betroffen; das Wort „Kern“ steht deshalb nur noch für den Markenkern (nicht „frech im Kern“). Folie 08b (Profil,
+Merkmale, Titel) und das Feld Tonalität auf Folie 10 bleiben unverändert – Folie 10: Entscheidung Yannick offen
+(Nacharbeit unten).
+
+| Bereich | Änderung |
+|---|---|
+| Folie 08 (`index.html`) | Titel ab Schritt 2 „HOLY wäre ein Chamäleon, kein Adler“. Daten: `marke.tier.name` „Chamäleon“, Gründe wandelbar („31 Energy-Sorten“), vielseitig („Wacken, CSD, Simpsons“), frech („Gefährlich geil!“) – kurz wegen des Wortbudgets (39 Wörter; mit längeren Belegen waren es 47); Stichworte höchstens ca. 10 Zeichen (Spalte 176 px, „anpassungsfähig“ wäre zu breit); `hinweis` mit Kennzeichnung. Fußzeile „Tier: eigene Einordnung (H)“ – ohne Tiernamen, weil die Fußzeile schon während der Abstimmung zu sehen ist – und „Belege Kap. 3.1, 4.1, 6.2, 6.3, 6.6 ✔“. Notizen: Auflösung, „Warum Chamäleon?“, Kontrast, Bedienung, neue Rückfragen (ohne festen Kern? Tarnung? warum nicht mehr Waschbär?; nach der Nacharbeit dazu: Viele Sorten – schon Wandel? Trotzdem der Raptor? Aus eurer Befragung?), neuer Absatz „Chamäleon – Einordnung und Begründung“ (Belege, Gegenargumente, Verhältnis zu 8b/10, früherer Stand). Kasten „FOLIE 08“ und Kommentare (u. a. der falsche Verweis „Folie 10 → tonalitaet → Waschbär“: das Tier stand nie im Rad). |
+| Folie 08b | Kasten und eine Rückfrage („Wo ist das Chamäleon im Profil?“). Profil, Merkmale, Titel und Daten unverändert. |
+| Folie 09b, 11, 12 | Notizen: „gelebt wird das freche Chamäleon“ (09b), Brücke „Raptor als fester Anker“ zu Empfehlung 3 mit Kennzeichnung (11), Rückfrage „Warum ein Chamäleon?“ (12). |
+| Folie 10 | Feld Tonalität geprüft und unverändert („frecher Kumpel · Spaß · Zugehörigkeit“, wortgleich mit 8b) – **Abweichung vom Auftrag, der „Feld Tonalität“ nannte; Entscheidung Yannick offen** (Kasten „FOLIE 10“, LIESMICH 12). Sprechtext Schritt 5 „…, wandelbar wie ein Chamäleon – …“ (7 s; Schritt 0–8 jetzt ca. 186 Wörter ≈ 98 s, Zeitangaben zusammen 78 s); Belegabsatz und Kasten. |
+| `marke.js → umfragen.tier` | `optionen` `['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan']` (Chamäleon an der Stelle des Waschbärs, Nummer 2), `unsereAntwort` `'Chamäleon'`; Kommentare (Probestimmen mit Option 2 zählen jetzt als Chamäleon – die Runde wird vor dem Vortrag ohnehin umgestellt). `liveQuelle`, `runde`, `link` und Beispielwerte unverändert. |
+| `werkzeuge/live-abstimmung-test.mjs` | nur die Liste `OPT` (das Werkzeug nutzt nur ihre Länge). |
+| Zeichnung `chamaeleon` | eigener Arbeitsschritt: Strichzeichnung (Helm, Auge mit Pupille, eingerollter Schwanz, Ast; Zeichenfläche 120 × 120, gefüllt nur die Pupille) in `BILDER` von `js/folien/08-analogien.js` und – zeichengleich – `js/abstimmen.js`; `bildSchluessel('Chamäleon')` ergibt `chamaeleon`, der Waschbär bleibt als Rückgriff. `css/folien/08-analogien.css`: nur Kommentare. Eigene Gestaltung ohne Vorlage; Merkmale des Tiers aus dem Modellwissen. |
+| `../limbic-map.md` | Zeile „Maskottchen“ in 4.1, Nachtrag 20.10. in 4.1, Kopf (Stand, Herkunft) und §8. Gewichte, Typ und Fit unverändert. |
+| `../folienentwuerfe.md`, `../markenkompetenz.md`, `../persona-steckbrief.md` | geprüft: nennen kein Analogie-Tier (Folienentwürfe gibt es nur für die Folien 2–5) – unverändert. |
+| `QUELLEN.md`, `LIESMICH.md`, `live-abstimmung/ANLEITUNG.md` | QUELLEN: Stand, §3 (Piktogramme), §5 (Kennzeichnung der Begründung). LIESMICH: Stand, Abschnitt 6, 11, Checkliste 12 (neu: „Elias prüft die Begründung Chamäleon“, C · Elias; „Lukas: Analogie-Befragung/Notizen Folie 08 abgleichen“, B · Lukas; Skript-Aktualisierung zurückgestellt; Sprechtext 10; Exporte). ANLEITUNG: Beispiele (Teststimme, Nummern 0–4), Hinweis zur Nummer 2 und zur Zurückstellung. AUTOREN: 6c, Offen in 16, dieser Abschnitt. |
+
+**Bewusst nicht geändert:** `../dossier-buendel-b.md/.html` (Lukas), `../recherche/*` (Recherche-Dossier),
+`../gruenderbefragung.md`, `ki-nachweis/*`, `live-abstimmung/apps-script.gs`. Die Abschnitte 10 und 16 dieser Datei
+nennen den Waschbär als damaligen Stand (Änderungsprotokoll).
+
+**Geprüft (20.10.2026, vor der Nacharbeit):** `pruefen.mjs index.html --nur f08,f08b,f10 --schritte`: Editorial hell
+0 Fehler, 1 Warnung (f10 Wortbudget 49, wie bisher), f08 39 Wörter, keine externen Anfragen, kein Abgleich-Hinweis
+(Titel, `unsereAntwort` und `optionen` passen); mit `--live-werte 15,9,17,14,9` (nur f08): 0 Fehler, 0 Warnungen,
+Schritt 1 „27 % sehen HOLY wie wir: als Chamäleon“, Zeile „Chamäleon“ als „Unsere Analyse“ umrahmt; Bento dunkel und
+Keynote dunkel mit denselben Werten je 0 Fehler, nur die Warnung f10. `live-abstimmung-test.mjs`: 44 von 44.
+Abstimmseite lokal (`--server 8787`, `abstimmen.html?u=tier&quelle=…` über `file://`, 390 × 844): Knöpfe Adler, Löwe,
+Chamäleon, Fuchs, Schwan; Stimme „Chamäleon“ → „Danke! Ihre Stimme: Chamäleon“, Stand `[0,0,1,0,0]`; Konsole leer.
+Zwei Prüfungen (Inhalt/Belege/Kennzeichnung und Darstellung, ohne Änderungen): Belege und Status stimmen mit dem
+Dossier überein, keine verbotene Datei geändert, kein Darstellungsfehler; Befunde siehe Nacharbeit.
+
+### Nacharbeit nach zwei Prüfungen (Di, 20.10.2026)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| Begründung widerspricht sich: „Kanal“ in der Formel und Punkt (4) „je Markt und Kanal eine eigene Fassung“ unter „Dafür“, obwohl der Bruch über die Kanäle das Risiko ist (mittel) | Formel überall „wandelbar in Farbe, Sorte und Szene – im Ton immer frech“ (Kasten 08, 08b, 10, Notizen 08/08b, Belegabsatz 10, dieser Abschnitt, `../limbic-map.md`); Punkt (4) unter „Dagegen bzw. ambivalent“: zählt nicht als Stärke, gehört zu S4 und S5. |
+| Rückfrage „ohne festen Kern?“: „überall Du, ‚geil‘ …“ ohne Beleg (mittel) | Belegt und ohne „überall“: Du und „geil“ in den Shop-Texten, „Zero Zucker oder Bullsh*t.“ auf der Website (6.2 ✔ [1, 30]), englische LinkedIn-Posts enden mit „BURR“ und Adler-Emoji (6.1, 6.2 ✔ [31]). |
+| Wort „Kern“ dreifach (frech im Kern / ohne festen Kern / Markenkern) – Eigentor in der Fragerunde (mittel) | Antwort beginnt mit der Unterscheidung: „Nein. Der Markenkern steht: Genuss mit gutem Gewissen (Folie 10). Und der Ton bleibt frech … Was wechselt, ist der Auftritt.“ „frech im Kern“ ersetzt; Belegabsatz 10 ohne „ohne festen Kern“; Kasten 08: „Kern“ nur für den Markenkern. |
+| Folie 10, Feld Tonalität: Auftrag nannte das Feld, es bleibt unverändert (mittel, zwei Prüfungen) | **Nicht geändert, Yannick entscheidet** (Kasten „FOLIE 10“, LIESMICH 12): A) so lassen, Chamäleon nur im Sprechtext Schritt 5 (bei knapper Zeit die 4 Wörter streichen); B) ins Rad, z. B. „frecher Kumpel · wandelbar · Spaß“, dann zuerst 8b „Ins Steuerrad“ wortgleich ändern (Bündel B). Gründe: Das Tier stand nie im Rad (es gab dort nichts zu ersetzen); die Regel „wortgleich mit 8b“ und Lukas’ Bündel wären betroffen; Folie 10 hat schon ca. 49 Wörter; Yannicks Wunsch nennt Abstimmung, Folie und Analyse. |
+| Exporte zeigen auf Folie 08 noch den Waschbär (mittel) | Neu erzeugt nach Abschnitt 15 (Ergebnisse unten). |
+| 09b Schritt 1: Gegensatz „stolz als frech“ trägt beim Chamäleon nicht (niedrig) | „… gelebt wird das freche Chamäleon“ (+1 Wort; „wandelbar“ nicht nötig, der Gegensatz ist stolz/frech). |
+| Zitat „auffällig und knallig“ verändert (niedrig) | Wörtlich: „auffälliges und knalliges Design“ (6.3 ✔ [8]). |
+| „Editionen“ mit allen Vereinen (niedrig) | „Kooperationen 2026 mit Vereinen und Lizenzen – eigene Produkte mit dem 1. FC Köln und den Simpsons“ (Notizen 08, dieser Abschnitt, `../limbic-map.md`). |
+| Zeit Folie 08: Schritt 2 „ca. 22 s“, Summe 72 s (niedrig) | Satz gekürzt: „Gelebt wird aber ein Chamäleon: ständig neue Farben, Sorten, Szenen – im Ton immer frech.“ Schritt 2 jetzt 43 Wörter (Waschbär-Fassung 44) in „ca. 20 s“, Summe 70 s; Hinweis im Kasten (bei 1,9 Wörtern/s ≈ 23 s – stoppen). |
+| „wandelbar“ und „vielseitig“ fast gleich; Wandel auf der Folie nicht belegt (niedrig) | Folie unverändert (Wortbudget); Rückfrage „Viele Sorten – ist das schon Wandel?“ mit 2.8, 2.1, 7.1; Elias prüft die Gründe (LIESMICH 12). |
+| Keine Antwort auf „trotzdem der Raptor?“ und „aus eurer Befragung?“ (niedrig) | Zwei Rückfragen in den Notizen von 08 (Raptor als fester Absender, Empfehlung 3; Tier = unsere Einordnung H, Befragung prüft offen – Ergebnis nach P11/Interviews eintragen). |
+| Folie 11 ohne Kennzeichnung (niedrig) | Belegabsatz 11: „Chamäleon: Einordnung Elias Knauber, Begründung Vorschlag, KI-gestützt, H – Notizen Folie 8“. |
+| `../limbic-map.md` Kopf: zwei Zeilen ohne „>“ (niedrig) | „>“ ergänzt. |
+| „wandelbar“ füllt die Stichwort-Spalte fast (Lücke 21–28 px, kein Überlauf) (niedrig) | Nicht geändert: kein Redesign; ein kürzeres Wort ist eine Inhaltsfrage für Elias (LIESMICH 12). |
+| Haken der „Danke“-Karte verdeckt Fuß und Astende; Zeichnung bei 42 px eng (niedrig) | Nicht geändert: betrifft alle Tiere (auch Adler, Schwan), kein Redesign gewünscht; Chamäleon bleibt erkennbar. In der Generalprobe auf Beamer und Handy prüfen. |
+| Abstimmseite quer (844 × 390): „Danke“-Karte unten abgeschnitten (niedrig) | Nicht geändert: war mit dem Waschbär genauso, nicht durch diese Änderung verursacht. |
+
+Sprechtexte nachgezählt (ohne Überschriften, Zeitangaben und [Regie]; Teil A hatte anders gezählt):
+f08 Schritt 0–3 107 Wörter (Waschbär-Fassung 105), Zeitangaben 70 s; f09b 99 Wörter (vorher 98); f10 186 Wörter
+≈ 98 s (vorher 182), Zeitangaben 78 s.
+
+**Geprüft nach der Nacharbeit (20.10.2026):** `pruefen.mjs index.html --schritte --optional` (Editorial hell):
+23 Folien, 80 Screenshots, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03 48, f04 46, f10 49, f11 55), keine
+externen Anfragen. `--nur f08 --schritte --live-werte 3,1,7,0,2` in Editorial, Bento und Keynote, je hell und
+dunkel: je 0 Fehler, 0 Warnungen, f08 39 Wörter, Attrappe beantwortet `[3,1,7,0,2]`; Schritt 1 „54 % sehen HOLY wie
+wir: als Chamäleon“ mit umrahmter Zeile, Schritt 3 (Keynote dunkel) angesehen. `live-abstimmung-test.mjs`: 44 von 44.
+Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b; Seite 8 „HOLY wäre ein Chamäleon, kein Adler“, im
+Text kein „Waschbär“), 23 Folienbilder 1920 × 1080 – gegenüber dem Stand vorher geändert nur `f08.png`; Übersicht
+`--stand 20.10.2026` (0 externe Anfragen). `export/folien/f08.png`, `f10.png`, PDF-Seite 8 und die Übersicht
+angesehen. Ausgaben: `_test/d18n-*`, `_test/export-druck`, `_test/export-folien`.
+
+**Offen:** Elias prüft die Begründung, die Gründe auf der Karte (auch „wandelbar“ als Stichwort) und die neuen
+Rückfragen (danach „Vorschlag“ in Kasten und Notizen ersetzen); Yannick entscheidet über das Feld Tonalität auf
+Folie 10 (A/B oben); Lukas gleicht Analogie-Befragung und Notizen ab und prüft, ob das Aaker-Profil auf 08b passt;
+Sprechtexte 08 (Schritt 2) und 10 in der Generalprobe stoppen; Zeichnung auf Beamer und Handy ansehen;
+Skript-Aktualisierung (zurückgestellt; seit Abschnitt 20 wieder nötig); Runde umstellen wie geplant (LIESMICH 12). Nach Elias’ Prüfung bzw. einer
+Änderung an Folie 08 oder 10 die Exporte erneut erzeugen.
+
+## 19. Rätsel mit Logo: Folie 01 (Di, 20.10.2026)
+
+Problem (Yannick, 20.10.2026): Auf Folie 01 hatte das Publikum keine Chance, die Marke zu erraten – Schritt 0
+zeigte die Illustration ohne Logo 300 % vergrößert und 40 px unscharf (die Unschärfe wird mitgezoomt, wirkte also
+etwa 120 px: nur Farbflecken), Schritt 1 löste sofort auf. **Entscheidung Yannick (wörtlich, KI-Nachweis Nr. 98):** „Groß das
+Logo und daneben bei der Auflösung dann die illustration mit logo“. Die Regel „Illustrationen ohne Logo“ (Abschnitt 17) ist
+damit für Folie 01 aufgehoben; für Folie 04 gilt sie weiter. Die Klärung der Logo-Nutzung mit dem Betreuer ist offen.
+
+| Bereich | Änderung |
+|---|---|
+| `bilder/raetsel-holy-logo.svg` (neu, 128 KB) | Szene von `raetsel-holy.svg` (Generator-Skript vom 19.10., Etikett neu): auf dem Etikett groß und frontal das **Original-Logo** `holy-logo-oval.png` – **unverändert als base64-PNG (data-URI) eingebettet**, nur skaliert (330 × 190,8 Einheiten; Oval 299,5 × 158,3, Mitte x 1160 / y 592), über der Schattierung der Dose (nichts liegt darüber). Gelbes Leuchten und Strahlen hinter dem Oval, Funkelsterne daneben, darunter eine kleine Drachenfrucht im Aufkleber-Stil (ohne Heiligenschein, ohne Tier). Keine Filter, keine Masken, keine externen Verweise; data-URI byteweise gleich der PNG-Datei (geprüft). Warum eingebettet: Eine SVG, die als `<img>` oder CSS-Hintergrund geladen wird, lädt keine externen Dateien nach – ein Verweis auf die PNG-Datei bliebe leer. Kopfkommentar mit Herkunft, Entscheidung, Lage und Zoomwerten. Das Generator-Skript liegt nicht im Repository; die SVG-Datei ist die bearbeitbare Quelle. |
+| `bilder/raetsel-holy.svg` | unverändert – Rückfall ohne Logo (dann `data-fokus="60.1% 60.7%"`, Stufen z. B. `300/40,170/14,100/0`). |
+| `marke.js` | `raetselBild: 'bilder/raetsel-holy-logo.svg'`; Kommentar (Logo eingebettet, Zoomwerte, Rückfall, eigenes Foto); Kommentar zu `logoTitel` (Auflösung jetzt Schritt 2, dieselbe Datei auch im Rätselbild). |
+| Folie 01 (`index.html`) | `data-stufen="440/11,220/8,100/0"` (in der Nacharbeit `220/10`) statt `"300/40,100/0"`, `data-fokus="63.5% 59.8%"` statt `"60.1% 60.7%"` (Begründung unten). **Drei Klicks:** Schritt 0 Rätsel, 1 Hinweis, 2 Auflösung, 3 Titel – Auflösung und Titel rückt `js/folien/01-einstieg.js` selbst nach. Kasten „FOLIE 01“, Kommentarblock (Ablauf, RÄTSELBILD, LOGO, SO ÄNDERN), Fußzeile „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 20.10.2026“ (zweizeilig wie bisher, gleich lang), Kommentar über der Fußzeile. Notizen: Moderation „Was sehen Sie?“ je Stufe und Auflösung (10 s + 7 s + 8 s + 20 s = 45 s, Sollzeit unverändert), `data-schritt` 0–3, Technik (drei Klicks, der vierte führt zu 02), Rückfragen („Ist das eine echte Dose?“, „Dürft ihr das Logo verwenden?“ – Klärung offen), Testhinweis. `data-alt` unverändert (verrät die Marke nicht). |
+| `css/folien/01-einstieg.css` | (in der Nacharbeit wieder entfernt – Pille ganz aus, siehe unten) Pille „Hinweis x von n“ mit der Auflösung ausblenden (`.raetsel.ist-geloest`). Sie erscheint erst ab drei Stufen (bei zwei Stufen entfernte das Skript sie) und stand sonst in der Auflösung über dem Bild und im Schlussbild angeschnitten am rechten Rand der Bildtafel (sie wandert mit dem Bild). Kopfkommentar (Zustände). |
+| `js/folien/01-einstieg.js` | Logo der Auflösung mit `decoding: 'sync'` statt `'async'`: Mit dem stark vergrößerten Rätselbild malte Chrome das erste Bild der Auflösung ohne Logo (in `pruefen.mjs` dreimal hintereinander; 400 ms später war es da) – betraf Screenshots und Folienbilder, die direkt einen Schritt zeigen. Die Datei hat 17 KB. Die übrigen Funktionen (Schritte koppeln, Bildtafel ausrichten) sind unverändert. |
+| `QUELLEN.md` | Stand; §3: Ausnahme „Rätselbild Folie 01 mit Original-Logo“ (Entscheidung Yannick 20.10.2026, Regel „ohne Logo“ für Folie 01 aufgehoben, Klärung mit dem Betreuer offen, Kennzeichnung); §4: Zeile `raetsel-holy-logo.svg`, `raetsel-holy.svg` als Rückfall, `holy-logo-oval.png` auch eingebettet, Absatz zur Logo-Nutzung. |
+| `LIESMICH.md` | Stand-Absatz, Abschnitt 8 (`logoTitel`, `raetselBild`), Checkliste 12 (erledigt: Rätsel mit Logo; offen: mit zwei Personen testen, Logo-Klärung jetzt auch für das Rätselbild, Exporte), Ordnertabelle. |
+| `AUTOREN.md` | 6e (Fixpunkt-Formel, Pille), dieser Abschnitt. |
+
+**Stufen und Fixpunkt (Begründung):** Bühne 1920 × 1080; das Motiv ragt 3 % über jeden Rand (2035,2 × 1144,8 px,
+Bild mit Faktor 1,06). Die Oval-Mitte liegt bei Zoom 1 auf der Bühne bei x 1172 / y 595, das Oval misst 317 × 168 px.
+
+- **440/11** (Schritt 0): Oval etwa 1400 × 740 px, Mitte bei x 960 / y 400 – füllt den größten Teil der Bühne über
+  der Frage (Kicker ab y ≈ 745). Unschärfe mitgezoomt ≈ 48 px: gelbes Oval und heller Schriftzug klar, die Buchstaben
+  nicht lesbar. Verglichen: 440/8 (Buchstabenformen zu deutlich), 440/10, 440/11, 440/12, 440/14 (Schriftzug nur
+  noch heller Balken, die dunklen Lücken verschwinden).
+- **220/8** (Schritt 1, Hinweis): Oval etwa 700 × 370 px, Mitte bei x 1100 / y 530; Dose, Deckel mit Löffel und
+  Shaker erkennbar, Schrift fast lesbar (≈ 18 px). Verglichen: 220/4 (klar lesbar, kein Rätsel mehr), 220/5–8.
+  **In der Nacharbeit 220/10** (von hinten war „HOLY“ bei 220/8 schon lesbar, siehe unten).
+- **100/0**: ganzes Bild (Auflösung, groß das Logo links), danach Bildtafel.
+- **Fixpunkt** = (Z · L − C) / (Z − 1) mit Z = 4,4, L = Oval-Mitte bei Zoom 1, C = Zielort: ((4,4 · 1172 − 960) / 3,4 |
+  (4,4 · 595 − 400) / 3,4) = (1234 | 652) → `63.5% 59.8%` des Motivs. In der Bildtafel (Schritt 3) rückt
+  `01-einstieg.js` den Fixpunkt waagerecht in die Tafelmitte: Oval-Mitte bei x ≈ 1441 (Tafelmitte 1504), Dose links,
+  Shaker rechts – die Gruppe steht mittig.
+
+**Geprüft (20.10.2026):** `pruefen.mjs index.html --nur f01 --schritte` in Editorial, Bento und Keynote, je hell
+und dunkel: je 0 Fehler, 0 Warnungen, 3 Schritte, 20 Wörter, keine externen Anfragen. Kontaktbögen angesehen (s0–s3
+in Editorial, Bento und Keynote hell; dunkel stichprobenweise je Thema), Bildtafel in Originalgröße: Logo auf der
+Dose klar lesbar. Erkennbarkeit: Schritt 0 Form und Farben (gelbes Oval, heller Schriftzug mit dunklen Lücken),
+Schrift nicht lesbar; Schritt 1 „HOLY“ fast lesbar; Auflösung klar. Druck (`--ohne-bilder --druck`, ganzes Deck): 22
+von 22 Seiten, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03, f04, f10, f11); PDF-Seite 1 bei 72 und 200 dpi
+angesehen – Logo in der Illustration scharf (der data-URI wirkt auch im PDF). Bildrate (grob wie in Abschnitt 17:
+headless Chromium mit Software-Rendering, 2,3 s je Übergang, zwei Läufe): Median in allen Übergängen 16,7 ms je
+Bild, 95. Perzentil 67–100 ms, längstes Bild 83–167 ms; die alte Fassung (`raetsel-holy.svg`, 300/40 → 100/0) im
+selben Lauf: Median 16,7 ms, 95. Perzentil 67–83 ms, längstes Bild 233–250 ms – nicht schlechter als vorher. Auf dem
+Vortragsrechner trotzdem ansehen. Ganzes Deck `--schritte --optional` (Editorial hell): 23 Folien, 81 Screenshots
+(einer mehr als vorher – der Hinweis), 0 Fehler, 4 Warnungen Wortbudget wie vorher, keine externen Anfragen. Ohne
+`--schritte` (so entstehen die Folienbilder des Exports, direkt im Endzustand) zeigt `f01.png` das Logo links und
+das Logo auf der Dose. Ausgaben: `_test/d19-bau-*` (zuerst `d20-*` genannt; umbenannt, weil D20 ein anderer
+Workflow ist – Zeitfenster der Abstimmung).
+
+**Bewusst nicht geändert:** Folie 08/10 und die Live-Abstimmung (dort lief am 20.10. ein anderer Umbau),
+`js/komponenten.js` und `css/komponenten.css` (Rätsel-Baustein), B7 (Zeile „Logos (Folien 01, 09b, 12) …
+unverändert“ stimmt weiter), `../prompts.md`, `ki-nachweis/`. Exporte in `export/` nicht neu erzeugt (Folie 08 war
+gleichzeitig in Arbeit) – `f01.png`, PDF-Seite 1 und die Übersicht zeigten noch das Bild ohne Logo; in der
+Nacharbeit neu erzeugt (unten).
+
+**Offen (Stand nach der Nacharbeit unten):** Rätsel mit zwei Personen testen und den Übergang auf dem
+Vortragsrechner ansehen; Logo-Nutzung (jetzt auch in der Illustration) mit dem Betreuer klären, sonst Rückfall
+`raetsel-holy.svg`; Motiv freigeben (Yannick).
+
+### Nacharbeit nach zwei Prüfungen (Di, 20.10.2026)
+
+Zwei prüfende KI-Agenten (Rätsel und Darstellung; Rechte, Kennzeichnung und Doku) haben den Bau geprüft, ohne etwas
+zu ändern. Eingearbeitet:
+
+| Befund | Änderung |
+|---|---|
+| **Hinweis zu leicht** (mittel): Bei 220/8 stand „HOLY“ verkleinert (960 × 540, 320 × 180 – Sicht aus der letzten Reihe) schon lesbar da; der Hinweis wurde faktisch zur Auflösung | `data-stufen="440/11,220/10,100/0"`. Verglichen: 220/8, 9, 10, 11, 12 in Originalgröße und verkleinert auf 960, 480 und 320 px Breite – 220/9 von hinten noch lesbar, 220/10 fast lesbar (nur mit Mühe), 220/11 kaum, 220/12 kaum noch Buchstabenformen. Gemessen an der Schrift im Bild hängt die Lesbarkeit nur an der Unschärfe-Zahl (sie wird mitgezoomt). Testanleitung (Kasten, Kommentarblock, Notizen, LIESMICH 12) um „Hinweis von hinten sofort lesbar → 220/12“ ergänzt; Test ausdrücklich am Beamer mit einer Person in der letzten Reihe. Abschnitt 6e: Stufen auch verkleinert beurteilen. |
+| **Logo-Zeile hing nur an `logoTitel`** (mittel): Wäre `logoTitel` geleert worden (Rückfall bei Ablehnung des Titel-Logos), hätte das Logo auf der Dose ohne Quelle gestanden | `js/folien/01-einstieg.js`: Die Zeile „Logo © …“ bleibt sichtbar, solange der Dateiname des Rätselbilds „logo“ enthält (neue Funktion `raetselMitLogo`, dieselbe Regel wie bei „platzhalter“) – auch wenn `logoTitel` leer ist oder die Datei fehlt. Auf einer Kopie in vier Fällen geprüft: Standard (Zeile sichtbar), `logoTitel` leer (sichtbar), `logoTitel` leer und Rückfall-Rätselbild (verborgen), Logo-Datei fehlt (sichtbar, Konsolenhinweis wie bisher). Warnung in `marke.js` (logoTitel), LIESMICH 8 und im Kasten: Logos ganz weg = `logoTitel` **und** `raetselBild` umstellen. |
+| **Rechte-Begründung passte nicht mehr** (mittel): „nur zur Kennzeichnung“, „kein nachgebautes Verpackungsdesign“, „ohne Bilder aus dem Netz“, Dose nicht als fiktiv gekennzeichnet | `QUELLEN.md` §3: Ausnahme für Folie 01 ausdrücklich auch für „Bild aus dem Netz“ (Logo-PNG), „Schriftzug“ und „Verpackung mit Markenzeichen“; Rätselbild als fiktive Dose beschrieben; Art der Nutzung offen benannt (Teil von Illustration und Rätsel, im Rätsel vergrößert, unscharf und bis zur Auflösung ohne Quelle). §4: Tabellenzeile und Absatz („als Dateien unverändert … auf Folie 01 außerdem als Teil einer Illustration“), Exporte seit 20.10. mit Logo. SVG-Kopfkommentar: Absatz „RECHTE UND EINORDNUNG“ statt „kein nachgebautes Verpackungsdesign“. Notiz-Antwort auf „Dürft ihr das Logo verwenden?“ ohne „nur zur Kennzeichnung“. LIESMICH 12: konkrete Frage an den Betreuer (Original-Logo auf erfundener Verpackung, im Rätsel unscharf, öffentlich in Repository und Exporten). **Titelfolie:** „· Dose fiktiv“ in der Einordnungszeile – in der Fußzeile ist kein Platz (mit „(Dose fiktiv)“ wäre die Bildzeile 820–858 px lang, Platz 672–712 px, und sie bricht nicht um); die Einordnung bleibt in allen Themen einzeilig (827–848 von 896–936 px, gemessen). |
+| Pille „Hinweis 1 von 3“ (niedrig): lag in Schritt 0 auf dem Oval, zählte die Auflösung als dritten Hinweis mit und lud zum Abwarten ein | `data-fortschritt="aus"` am Rätsel (nur `index.html`, Folie 01). Die CSS-Regel aus dem Bau, die die Pille mit der Auflösung ausblendete, ist wieder entfernt. Notizen ohne Verweis auf die Pille. |
+| Funkelstern in der Bildtafel halb angeschnitten (niedrig) | Stern nach links (Generator x 1650 → 1606). Dabei selbst gefunden: Im Druck (PDF; das Motiv hat dort keinen Überstand von 3 %) war ein zweiter Stern am rechten Rand halb angeschnitten (x 1690 → 1630). Beide jetzt am Bildschirm und im Druck ganz zu sehen. Die Drachenfrucht links in der Tafel bleibt angeschnitten (wie vorgeschlagen). |
+| Logo doppelt eingebettet (niedrig) | nur noch `href` (kein `xlink:href`, kein `xmlns:xlink`); Datei 106 statt 128 KB. Der data-URI ist weiter byteweise gleich `holy-logo-oval.png`. |
+| Kommentare (niedrig): alte Schrittnummern, „300 %“, nicht ausführbare Generator-Anleitung | `index.html` (Folie 01), `css/folien/01-einstieg.css`, `js/folien/01-einstieg.js`: Zustände (Rätsel, Auflösung, Titel) statt Nummern; `data-schritt` fest auf 2 und 3 (so setzt sie das Skript bei drei Stufen) mit Hinweis, dass das Skript sie setzt. SVG: „bis zu 440 %“; Logo austauschen nur noch von Hand (data-URI im Attribut `href`), das Generator-Skript liegt nicht im Repository. |
+| Testordner `d20-*` (niedrig): Verwechslung mit Workflow D20 | umbenannt in `_test/d19-bau-*`, Nacharbeit unter `_test/d19-nach-*`; LIESMICH ohne Verweis auf Testordner. Die Abschnittsnummer 19 bleibt (bis jetzt kein weiterer Abschnitt 19; beim Zusammenführen fortlaufend nummerieren). |
+| Verweis auf den KI-Nachweis (niedrig) | „KI-Nachweis Nr. 98“ in `QUELLEN.md` §3/§4, in diesem Abschnitt und im Kommentarblock von Folie 01. |
+| Exporte veraltet (niedrig) | neu erzeugt (unten). |
+| Bildrate (niedrig) | nichts geändert; erneut gemessen (unten). Auf dem Vortragsrechner prüfen (LIESMICH 12, mit Weg zur Bildratenanzeige in Chrome). |
+
+**Bewusst nicht geändert:** B7 („Logos (Folien 01, 09b, 12): … unverändert, nur zur Kennzeichnung der Marke“) – für
+Folie 01 nicht mehr ganz zutreffend, B7 lag aber außerhalb dieses Auftrags (nur Folie 01); beim Zusammenführen
+anpassen, z. B. „… unverändert; auf 01 auch in der Illustration (fiktive Dose)“. Ebenso Folie 08/10, die
+Live-Abstimmung, `js/komponenten.js`, `css/komponenten.css`, `../prompts.md` und `ki-nachweis/`.
+
+**Geprüft (Nacharbeit, 20.10.2026):** `pruefen.mjs index.html --nur f01 --schritte` in Editorial, Bento und Keynote,
+je hell und dunkel: je 0 Fehler, 0 Warnungen, 3 Schritte, 20 Wörter, keine externen Anfragen; Schlussbild aller sechs
+Läufe angesehen (Einordnung einzeilig, Fußzeile zweizeilig, beide Sterne ganz). Ganzes Deck `--schritte --optional`:
+23 Folien, 81 Screenshots, 0 Fehler, 4 Warnungen Wortbudget wie vorher (f03, f04, f10, f11). SVG: gültiges XML, ein
+data-URI gleich der PNG-Datei (17 418 Bytes), keine Filter, Masken oder externen Verweise. Bildrate (headless
+Chromium, Software-Rendering, zwei Läufe, wie oben): neu 0 → 1 Median 16,7 ms, 95. Perzentil 117 ms, längstes Bild
+150–200 ms; 1 → 2 95. Perzentil 83 ms, längstes Bild 100–117 ms; alte Fassung 0 → 1 95. Perzentil 100–133 ms,
+längstes Bild 267 ms – nicht schlechter. Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (0 Fehler), 23 Folienbilder
+(geändert nur `f01.png`, per Pixelvergleich), Übersicht `--stand 20.10.2026`; `f01.png` und PDF-Seite 1 (72 und
+200 dpi) angesehen – Logo links und auf der Dose scharf, „Dose fiktiv“, Fußzeile zweizeilig. Stufenbilder:
+`_test/d19-nach-stufen.png`, verkleinert `_test/d19-nach-stufen-verkleinert.png`.
+
+**Offen:** Rätsel mit zwei Personen am Beamer testen (eine in der letzten Reihe; Stellschrauben 440/13, 220/12,
+220/8) – verkleinert auf 320 px Breite zeigt auch Schritt 0 schon Buchstabenformen, wer HOLY kennt, kann also früh
+raten (gewollt: das Publikum soll eine Chance haben); Übergang auf dem Vortragsrechner ansehen; Logo-Nutzung mit dem
+Betreuer klären (konkrete Frage in LIESMICH 12); Motiv und „Dose fiktiv“ freigeben (Yannick); B7 beim
+Zusammenführen.
+
+## 20. Zeitfenster der Live-Abstimmung: Stimmen zählen 30 Minuten (Di, 20.10.2026)
+
+Auftrag Yannick (20.10.2026, wörtlich): „Die Abstimmung sollte reseted werden nach einer gewissen Zeit damit bei der
+Präsentation keine alten Stimmen dastehen.“ **Entscheidung:** Stimmen zählen auf Folie 08 nur **30 Minuten**
+(`marke.js → umfragen.tier.gueltigMinuten: 30`). Umgesetzt als abwärtsverträgliche Erweiterung der Schnittstelle:
+Gelöscht wird nichts, die Zeilen bleiben in der Tabelle; die Runde (`'probe'` / `'vortrag-2026-10-26'`) trennt
+Probe und Vortrag weiter ganz. `liveQuelle` und `runde` sind unverändert, ebenso Folie 01, die Bilder und alle
+sichtbaren Folieninhalte. Das Zeitfenster wirkt erst, wenn bei Google die **Skript-Fassung 20.10.2026** läuft
+(ANLEITUNG, „Skript aktualisieren“) – bis dahin zählt die Web-App ohne Zeitgrenze.
+
+| Bereich | Änderung |
+|---|---|
+| `live-abstimmung/apps-script.gs` (`FASSUNG = '20.10.2026'`) | `aktion=stand` mit freiwilligem `minuten` (ganze Zahl 1–1440; `MUSTER_MINUTEN`, `HOECHSTENS_MINUTEN`, `minutenWert_`). Zählregel: je Runde, Umfrage und Gerät **zuerst die letzte Stimme**, **dann** das Fenster (`grenze = jetzt − minuten · 60 000`, Grenze eingeschlossen: genau `minuten` alt zählt, 1 ms älter nicht); Zeilen ohne gültige Zeit (von Hand) zählen mit `minuten` nicht. Antwort mit `"minuten"` nur, wenn das Fenster angewandt wurde. Ungültig (leer, 0, 1441, 30.5, „ 30“ …) → `{"ok":false,"fehler":"Ungültige Minuten (Zeitfenster): …"}`; ohne `minuten` wie bisher; bei `aktion=stimme` ignoriert. Kopfkommentar: Schnittstelle, Eingabeprüfung, neuer Abschnitt ZEITFENSTER (Regel, Begründung der Reihenfolge, Uhr und Zeitzone). Der Schreibweg der Fassung 19.10.2026 (Zeile reservieren) ist unverändert. |
+| `marke.js` | `gueltigMinuten: 30` mit Kommentar (Bedeutung, 0/leer = ohne Zeitgrenze, Runde trennt weiter, wirkt erst mit der neuen Fassung). |
+| `js/komponenten.js` (3a) | Folie 08 hängt `minuten=<gueltigMinuten>` an jede Stand-Abfrage (`umfrageGueltigMinuten`: ganze Zahl 1–1440, sonst einmal Warnung und ohne Grenze). Antwort ohne `"minuten"` → `fensterAn = false`: einmal Warnung in der Konsole, Tooltip der Pille „OHNE Zeitfenster …“ (sonst „zählt Stimmen der letzten 30 Min.“), auch im Referentenfenster (`umfrage-live` → `fensterAn`). Browser-Speicher `umfrage:<id>` mit `zeit`; mit `liveQuelle` verfallen Werte älter als `gueltigMinuten` (oder ohne `zeit`) beim Laden → Beispielwerte mit Pille, wie bei anderer Runde (in der Nacharbeit am 21.10. geändert: Nullen, unten); eine gespeicherte Pause verfällt mit ihren Handwerten (`u.abgelaufen`, `livePauseVerwerfen`). Ohne `liveQuelle` (Weg B/C) unverändert. |
+| `js/abstimmen.js`, `abstimmen.html` (Kommentar) | Die Abstimmseite speichert mit der Wahl die Zeit, zu der der Versuch losgeschickt wurde, der gezählt hat (`stimme:<id>:<runde>` = `{ option, name, zeit }`). Älter als `gueltigMinuten` (oder ohne `zeit`) → abgelaufen: beim Öffnen gleich die Auswahl statt „Danke“, ohne „bisherige Wahl“; steht „Danke“ schon da, wechselt die Seite beim Ablauf zur Auswahl (Zeitgeber, dazu `visibilitychange` und `pageshow`). Eine laufende neue Wahl oder eine Fehlerkarte bleibt stehen. In der Prüfung ergänzt: Ein stilles Nachsenden (NACHZÜGLER) hält die Auswahl nicht auf, und ein erfolgreiches stilles Nachsenden derselben Wahl schiebt `zeit` nach – sonst hätte „Danke“ in diesem Randfall stehen bleiben können. |
+| `werkzeuge/live-abstimmung-test.mjs` | Virtuelle Uhr der Attrappe (`s.uhr.anhalten/vorstellen`; kein Test wartet 30 Minuten), 9 neue Prüfungen (jetzt 53): alte Stimme fällt raus, Grenze (30 und 1 Minute, ± 1 ms), Umentscheiden kurz vor und nach Ablauf, ungültige `minuten`, ohne `minuten` unverändert, Zeilen ohne Zeit, Hörsaal mit Generalprobe in derselben Runde, Fassung ≥ 20.10.2026, Gegenprobe zur Reihenfolge (unten). 10 neue Mutanten (jetzt 26), u. a. „minuten ignoriert“, „Grenze nie angewandt“, „Sekunden statt Minuten“, „Grenze ausgeschlossen“, „Fenster auch ohne minuten“, „Zeit der ersten statt der letzten Stimme“, „Antwort ohne minuten“, „Fassung nicht erhöht“. `--server`: `GET /uhr?vor=MINUTEN` stellt die Uhr der Attrappe vor (`/uhr` zeigt sie). Lasttest: Die mitlesende „Folie“ und eine Schlussabfrage senden `minuten` aus `marke.js` (`folieMinuten`); Exit-Code 1 auch bei „FASSUNG VERALTET“ (nicht die `FASSUNG` aus `apps-script.gs`) und „ZEITFENSTER FEHLT/FALSCH“. |
+| `werkzeuge/pruefen.mjs` | Die eingebaute Attrappe prüft `minuten` wie der Server und nennt es in der Antwort; am Ergebnis ändert es nichts (die Stimmen eines Prüflaufs sind nie so alt). |
+| Doku | ANLEITUNG: Stand, Hinweis oben („jetzt nötig“), „Worum es geht“, Test-Adressen, Lasttest-Ausgabe, „Skript aktualisieren“ (zwei Gründe, Strg+F `ZEITFENSTER (Fassung vom 20.10.2026)`, Kurzprüfung → „(Skript-Fassung 20.10.2026)“, Stand mit `&minuten=30`, Teststimme mit Uhrzeit, freiwillig `&minuten=1`), „Vor dem Vortrag“ (Teststimme zählt noch 30 Minuten), „Im Vortrag“, „Nach dem Vortrag“ (gleich sichern; Stand ohne `minuten` zählt weiter), „Wichtig zu wissen“, Fehlerbehebung (vier Zeilen), lokal testen (`/uhr`). LIESMICH: Stand, Abschnitt 6 (Zeitfenster, Tabelle `gueltigMinuten`, Testen, Rückfall-Lesezeichen mit `&minuten=30`), Checkliste 12 (Skript aktualisieren wieder aktiv, Gründe Zeitfenster und Lastfestigkeit; Rückstellungsvermerk ersetzt; nach dem Vortrag gleich sichern), Tabelle 13. AUTOREN: 6c, Offen in 16, Verweise in 18, dieser Abschnitt. |
+
+**Zählregel – warum zuerst die letzte Stimme:** Die Regel heißt „die aktuelle Stimme eines Handys zählt, solange
+sie frisch ist“. Wer sich kurz vor Ablauf umentscheidet, zählt mit der neuen Wahl weiter; ist auch die letzte
+Stimme zu alt, zählt das Handy gar nicht – eine ältere Stimme desselben Handys rückt nie nach. Die umgekehrte
+Reihenfolge (erst alte Zeilen aussortieren, dann die letzte Stimme) ergibt dasselbe: Das Fenster enthält alle
+späteren Zeiten, und die letzte Stimme hat die späteste Zeit. Liegt sie im Fenster, bleibt sie auch nach dem
+Aussortieren die letzte; liegt sie davor, liegen alle Stimmen des Handys davor. Der vorgeschlagene Mutant „Fenster
+vor statt nach der Letzte-Stimme-Regel“ ist deshalb gleichwertig – kein Test kann ihn finden. Statt in der
+Mutantenliste steht er als Gegenprobe in den Prüfungen (`fensterVorDerRegel`, 150 zufällige Verläufe mit
+festem Startwert: dieselben Zahlen; mindestens 50 Abfragen, in denen das Fenster wirklich Stimmen aussortiert).
+
+**Uhr:** Der Server vergleicht die Spalte Zeit (beim Eingang `new Date()`) mit `new Date()` bei der Abfrage –
+beides seine eigene Uhr; die Uhr der Handys und des Präsentationsrechners spielt dafür keine Rolle. Das Handy misst
+nur den Abstand zwischen Losschicken und jetzt; da das Losschicken vor dem Eingang beim Server liegt, hält das
+Handy eine Stimme nie länger für gültig als der Server. Dass ein Datum in der Tabelle unverändert zurückkommt
+(Zeitzone der Tabelle), ist Modellwissen – Kurzprüfung und Lasttest prüfen es in der echten Tabelle, seit der
+Nacharbeit (21.10.) in **beiden** Richtungen: Steht die Zeit zu früh, fällt eine frische Stimme bei `&minuten=30`
+heraus („ZEITFENSTER FALSCH (Zeit zu früh)“); steht sie zu spät, zählt sie nach 2 Minuten (Kurzprüfung) bzw. 90
+Sekunden (Lasttest, Gegenprobe) bei `&minuten=1` noch („… (Zeit zu spät)“). Vorher erkannte nur der freiwillige
+Schritt mit `&minuten=1` die zweite Richtung – gerade die, in der alte Stimmen länger stehen bleiben.
+
+**Grenzen:** Gespeicherte Werte der Folie tragen die Zeit ihrer letzten Änderung, nicht die Zeit jeder Stimme –
+ohne Verbindung zeigt die Folie sie bis 30 Minuten nach der letzten Änderung, auch wenn einzelne Stimmen darin
+älter sind (genau zählt nur der Server). Mit `liveQuelle` verfallen auch Handwerte (Plan C) nach 30 Minuten –
+wer in der Fragerunde später als 30 Minuten zu Folie 08 zurückspringt, sieht dann Nullen bzw. den Stand der Web-App
+(seit der Nacharbeit; ohne `liveQuelle` bleiben die Werte). Handys und Folie lesen `gueltigMinuten` aus
+verschiedenen Kopien von `marke.js` (GitHub Pages bzw. Präsentationsrechner): Weichen sie ab (z. B. vor dem Push),
+zeigt ein Handy „Danke“, obwohl Folie 08 die Stimme nicht mehr zählt, oder umgekehrt – deshalb steht
+`gueltigMinuten` seit dem 21.10. in der Kontrolle „Vor dem Vortrag“ (ANLEITUNG) und im Kommentar in `marke.js`. Läuft bei Google noch die alte Fassung, rechnet das Handy trotzdem mit
+30 Minuten und zeigt danach wieder die Tiere, obwohl die Stimme dort weiter zählt – eine erneute Stimme ersetzt
+sie nur (dieselbe Geräte-ID), harmlos. Wird die Uhr eines Handys zwischen Abstimmen und Neuladen verstellt, stimmt
+dort der Abstand nicht; in einem Hintergrund-Tab kann der Zeitgeber später auslösen (beim Zurückkehren prüft die
+Seite neu).
+
+**Geprüft beim Bau (Mi, 21.10.2026, alles lokal – keine Anfrage an die echte Web-App; Stand vor der Nacharbeit unten):**
+`node werkzeuge/live-abstimmung-test.mjs`: 53 von 53 Prüfungen bestanden. `--mutationen`: alle 26 kaputten Kopien
+erkannt. **Ende-zu-Ende** im Browser (Chromium, Playwright; Hilfsskript außerhalb des Repositorys): Folie 08 über
+`file://` mit `?quelle=` an der Attrappe (`--server`, echtes Skript), drei Handys als eigene Browser-Kontexte mit
+vorstellbarer Browser-Uhr, Attrappen-Uhr über `/uhr?vor=`. Ergebnis 43 von 43, keine externe Anfrage: jede
+Stand-Abfrage trägt `minuten=30`; drei Stimmen, Umentscheiden (n bleibt 3); nach 20 Minuten zählen alle, Handy 3
+entscheidet sich um; nach 31 Minuten verschwinden die Stimmen von Handy 1 und 2 von der Folie, Handy 3 zählt mit der
+neuen Wahl, Handy 1 und 2 zeigen wieder die Tiere (ohne „bisherige Wahl“, Speicher geleert), Handy 3 weiter
+„Danke“; neu abstimmen zählt einmal; nach 56 und 62 Minuten fallen auch diese heraus (n = 0), der Stand ohne
+`minuten` zählt weiter alle drei Handys; Neuladen des Handys vor Ablauf → „Danke“, nach Ablauf → gleich die Tiere.
+Browser-Speicher der Folie: frisch und Web-App nicht erreichbar → gespeicherte Werte; 31 Minuten später →
+Beispielwerte mit Pille (seit der Nacharbeit: Nullen); ohne `liveQuelle` → die alten Werte bleiben. Pause: übersteht F5 wie bisher, nach 31
+Minuten verfällt sie mit den Handwerten, die Folie fragt wieder. Alte Fassung (19.10.2026, aus Git) als zweite
+Attrappe: 31 Minuten alte Stimme zählt weiter, Tooltip „OHNE Zeitfenster …“, Warnung genau einmal. Bilder:
+`_test/d20-e2e/`. `pruefen.mjs index.html --schritte --optional`: 23 Folien, 81 Screenshots, 0 Fehler, 4
+Warnungen Wortbudget wie vorher (f03, f04, f10, f11), 0 externe Anfragen, 1 Live-Anfrage (Attrappe, mit
+`minuten=30`, Pille „Live“) – `_test/d20-pruefen/`; dazu `--nur f08 --schritte --live-werte 3,1,7,0,2`: 0 Fehler,
+0 Warnungen, n = 13 (`_test/d20-pruefen-f08/`). Lasttest gegen die Attrappe (`--server 8795 --sperre 100`,
+`--lasttest … --anzahl 20`): Fassung 20.10.2026 erkannt, „Folie“ mit `minuten=30`, BESTANDEN, Stand ohne und mit
+`minuten=30` je n = 20 (`_test/d20-lasttest-attrappe.log`). Exporte nicht neu erzeugt (sichtbar ändert sich nichts).
+
+### Nacharbeit nach der Prüfung (Mi, 21.10.2026)
+
+Eine Prüfung des Baus fand drei Befunde „mittel“ und sieben „niedrig“ (keinen „hoch“). Umgesetzt:
+
+| Befund | Änderung |
+|---|---|
+| mittel: Abgelaufener Speicher derselben Runde zeigte **Beispielwerte** (z. B. n = 64, „Beispieldaten“). Die Kontrolle „30 Minuten vorher“ (LIESMICH 12) speichert n = 0 – im Vortrag ist das älter als 30 Minuten, das Publikum hätte bis zur ersten Antwort Beispieldaten gesehen (offline dauerhaft). | `js/komponenten.js` (`umfrageLaden`): abgelaufen → **Nullen** (`u.beispiel = false`); Beispielwerte nur noch ohne Speicher, bei anderer Runde oder wenn schon Beispielwerte gespeichert waren. Gilt auch für verfallene Handwerte (Plan C) und für die Aussagezahl. Abweichung von der Vorgabe („wie bei anderer Runde: Beispielwerte“) – begründet mit Yannicks Auftrag „keine alten Stimmen“: 0 ist der ehrliche Stand. Zurück ginge es mit dem Löschen des neuen `else if`-Zweigs. |
+| mittel: Lasttest und Kurzprüfung erkannten nur eine Richtung der Zeit in der Tabelle (zu früh). Zu spät (z. B. eine Stunde) hieße: Stimmen zählen 90 statt 30 Minuten – trotzdem BESTANDEN. | Lasttest: **Gegenprobe** – mindestens 90 s (`GEGENPROBE_MS`) nach der letzten Stimme `minuten=1` in der eigenen Lasttest-Runde, n muss 0 sein („ZEITFENSTER FALSCH (Zeit zu spät)“; alle zählen → sicher zu spät, einzelne → „UNKLAR“, wiederholen). Gegen die Attrappe `/uhr?vor=2` statt zu warten. ANLEITUNG „Skript aktualisieren“, Punkt 5: eigene Runde `kurzpruefung-2010`, Pflichtschritt nach 2 Minuten mit `&minuten=1` → `"n":0`, Fehlerbehebung (zwei Zeilen + UNKLAR), Checkliste 12. Kopfkommentar von `apps-script.gs` und Absatz „Uhr“ oben: „beide Richtungen“. |
+| mittel: Die Logik auf Handy und Folie hatte keine wiederholbare Prüfung im Repository (Ende-zu-Ende-Skript nur im Scratchpad). | Neu: **`werkzeuge/zeitfenster-e2e.mjs`** (10 Szenarien, Attrappen auf localhost, Playwright-Uhr, nichts geht ins Netz) mit `--mutationen` (12 kaputte Kopien der Client-Dateien, nur im Browser ersetzt). Dazu `pruefen.mjs`: Eine Stand-Abfrage ohne `minuten = gueltigMinuten` ist ein **Fehler** (Bericht „zeitfenster“, „standOhnePassendeMinuten“). Ob das Werkzeug im Repository bleibt, entscheidet Yannick. |
+| niedrig: `gueltigMinuten` kann auf GitHub und dem Präsentationsrechner verschieden sein (Handy „Danke“, Folie zählt nicht). | ANLEITUNG „Vor dem Vortrag“, Kontrolle 1: Strg+F `gueltigMinuten` → `30`; Kommentar in `marke.js` wie bei `runde` („Ebenfalls auf GitHub UND auf dem Präsentationsrechner ändern“); LIESMICH 12; Grenzen oben. |
+| niedrig: Tooltip behauptete „zählt Stimmen der letzten 30 Min.“, solange unbekannt war, ob die Web-App das kann. | Drei Fälle: `true` → „zählt …“, `false` → „OHNE Zeitfenster …“, `null` → „Zeitfenster 30 Min. angefragt (noch keine Antwort der Web-App)“. |
+| niedrig: Referentenfenster, nach mehr als 30 Minuten geöffnet, zeigte andere Zahlen als die Leinwand (pausierte Handwerte). | Auf `melden` schickt das Vortragsfenster (Umfrage-Folie aktiv) `Deck.kanal('umfrage')` mit `{ id, werte, beispiel }`; das Referentenfenster übernimmt sie (`umfrageUebernehmen`). Die Zeit im Speicher bleibt dabei unverändert (kein Verlängern). |
+| niedrig: Kurzprüfung in `runde=probe` konnte Fehlalarm geben (andere Probestimmen, ältere fallen gerade heraus). | Eigene Runde `kurzpruefung-2010` (oben). |
+| niedrig: „Nach dem Vortrag“ nannte den Stand ohne `minuten` – zählt auch ältere Teststimmen der Vortragsrunde. | ANLEITUNG und LIESMICH: maßgeblich Foto und Stand **mit** `&minuten=30` gleich nach dem Vortrag; später Tabelle herunterladen und nach Zeit filtern. |
+| niedrig: kleine Unstimmigkeiten. | (a) 6c: `umfrage-live` mit `fensterAn`; (b) LIESMICH 6: Pause übersteht F5 nur innerhalb von 30 Minuten, verfällt „beim Neuladen oder Betreten“; (c) Lasttest: Bei „FASSUNG VERALTET“ oder „ZEITFENSTER …“ beginnt die Urteilszeile mit „NICHT BESTANDEN wegen …“, ANLEITUNG erklärt es; (d) Zeile „Folie“ nennt Antworten ohne Zeitfenster. |
+
+**Nicht umgesetzt (begründet):** Die Nennungen „Claude“ in der ANLEITUNG bleiben – „Claude“ ist der Name des
+Assistenten, keine Modell- oder Versionsbezeichnung, und die Datei nutzte ihn schon vorher zehnmal; die neuen
+Meldungen im Testwerkzeug verweisen dagegen neutral auf die ANLEITUNG. Im Mutationstest der Client-Dateien fehlen
+zwei Fälle: das stille Nachsenden (NACHZÜGLER) braucht eine Antwort, die nach dem Zeitlimit des Handys doch noch
+kommt – nur im Code geprüft; „Ablauf beim Öffnen nicht geprüft“ ist gleichwertig, weil `pageshow` gleich nach dem
+Laden noch einmal prüft. Kasten und Notizen von Folie 08 in `index.html` bleiben unverändert (keine sichtbaren
+Inhalte, Auftrag ohne `index.html`).
+
+**Geprüft nach der Nacharbeit (Mi, 21.10.2026, alles lokal – keine Anfrage an die echte Web-App):**
+`node werkzeuge/live-abstimmung-test.mjs`: 53 von 53; `--mutationen`: 26 von 26 erkannt.
+`node werkzeuge/zeitfenster-e2e.mjs`: 58 von 58 Prüfungen, 0 externe Anfragen (`_test/zeitfenster-e2e/`); `--mutationen`: 12 von 12 erkannt (mehrfach
+wiederholt; ein Szenario wartet seitdem auf die erste neue Abfrage nach dem Betreten, vorher schlug ein Mutant
+gelegentlich nicht an). `pruefen.mjs index.html --schritte --optional`: 23 Folien, 81 Screenshots, 0 Fehler, 4
+Warnungen Wortbudget wie vorher (f03, f04, f10, f11), 0 externe Anfragen, 1 Live-Anfrage mit `minuten=30`, Pille
+„Live“ (`_test/d20n-pruefen/`); `--nur f08 --schritte --live-werte 3,1,7,0,2`: 0 Fehler, 0 Warnungen, n = 13;
+`--nur f08 --live-offline`: 0 Fehler, Pille „offline“. Gegenprobe zu `pruefen.mjs`: Kopie der Präsentation ohne
+`minuten` in der Abfrage → 1 Fehler („Stand-Abfrage ohne minuten, erwartet minuten=30 …“). Lasttest gegen die
+Attrappe (`--server --sperre 100`, `--anzahl 20`): Fassung 20.10.2026, BESTANDEN, Stand ohne und mit `minuten=30`
+je n = 20, Gegenprobe `minuten=1` → n = 0 (`_test/d20n-lasttest-attrappe.log`); gegen eine Attrappe mit Zeit +1 Std.
+→ „ZEITFENSTER FALSCH (Zeit zu spät)“, −1 Std. → „(Zeit zu früh)“, alte Fassung → „NICHT BESTANDEN wegen Fassung
+und Zeitfenster“, jeweils Exit-Code 1. Bilder und Protokolle: `_test/zeitfenster-e2e/`.
+
+**Offen:** Änderungen committen und pushen (Gruppe); danach **Yannick: Skript aktualisieren** (ANLEITUNG, Fassung
+20.10.2026, Kurzprüfung in der Runde `kurzpruefung-2010`: Fassung, `&minuten=30` → `"n":1`, nach 2 Minuten
+`&minuten=1` → `"n":0`) und **Lasttest** gegen die echte Web-App (mindestens zweimal `--anzahl 20`; die Urteilszeile
+beginnt mit „BESTANDEN“, nicht mit „NICHT BESTANDEN wegen …“). Erst das prüft die Zeit in der echten Tabelle. Kasten
+und Notizen von Folie 08 (`index.html`) nennen das Zeitfenster nicht – bewusst nicht geändert; beim Abgleich der
+Notizen (Checkliste 12, B · Lukas) ggf. einen Satz ergänzen. Yannick entscheidet, ob `werkzeuge/zeitfenster-e2e.mjs`
+im Repository bleibt, und bestätigt „Nullen statt Beispielwerte“ (Abweichung von der ursprünglichen Vorgabe).

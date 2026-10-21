@@ -2,13 +2,20 @@
    css/folien/01-einstieg.css – Gestaltung nur für index.html, Folie 01
    -----------------------------------------------------------------------------
    Einstieg wie der Auftakt einer Keynote, in drei Zuständen:
-     Schritt 0  randloses, unscharfes Rätselbild, unten die Frage
-     Schritt 1  Bild scharf und herausgezoomt, unten groß das HOLY-Logo
-               (marke.js → logoTitel; ohne Logo der Markenname in Schrift)
-     Schritt 2  Bild zieht sich in die rechte Bildtafel zurück, links die
+     Rätsel     randloses, unscharfes Rätselbild, unten die Frage – so viele
+               Klicks, wie data-stufen Hinweisstufen hat (seit 20.10.2026:
+               Schritt 0 Logo groß und unscharf, Schritt 1 Hinweis schärfer;
+               ohne Pille „Hinweis x von n“, data-fortschritt="aus")
+     Auflösung  Bild scharf und herausgezoomt, unten groß das HOLY-Logo
+               (marke.js → logoTitel; ohne Logo der Markenname in Schrift);
+               seit 20.10.2026 Schritt 2
+     Titel      Bild zieht sich in die rechte Bildtafel zurück, links die
                Titelfolie (Logo gleitet nach oben und wird etwas kleiner,
-               Titel erscheint).
+               Titel erscheint); seit 20.10.2026 Schritt 3.
                So sieht die Folie auch im Druck/PDF und in der Übersicht aus.
+   Die Schrittnummern von Auflösung und Titel setzt js/folien/01-einstieg.js
+   aus data-stufen. Die Kommentare unten nennen deshalb die Zustände
+   (Rätsel, Auflösung, Titel) statt Schrittnummern.
    Die Zustände hängen nur an den Klassen, die die Engine setzt
    (.schritt-an an den Elementen mit data-schritt) – dafür ist kein Skript
    nötig. Alle Farben, Schriften und Dauern kommen aus css/tokens.css.
@@ -23,7 +30,7 @@
   /* Größe des Markennamens. Ist ein Name zu lang für die Spalte, verkleinert
      js/folien/01-einstieg.js ihn automatisch (mindestens 96 px). */
   --einstieg-marke-groesse: calc(var(--groesse-titel-gross) * 1.8);
-  /* Versatz des Bildes in Schritt 2, damit data-fokus mitten in der Tafel
+  /* Versatz des Bildes im Titelzustand, damit data-fokus mitten in der Tafel
      steht. Wird von js/folien/01-einstieg.js aus data-fokus berechnet;
      dieser Wert gilt nur ohne Skript (Bildmitte = Tafelmitte). */
   --einstieg-tafel-versatz: calc(var(--einstieg-teilung) / 2);
@@ -31,7 +38,7 @@
 
 
 /* ---------------------------------------------------------------------------
-   KOPF: Frage (Schritt 0) und Komposition (Schritt 1–2) liegen übereinander
+   KOPF: Frage (Rätsel) und Komposition (Auflösung, Titel) liegen übereinander
    in derselben Rasterzelle und sind unten bündig (unteres Drittel – dort ist
    der Verlauf des Vollbild-Layouts dunkel genug für helle Schrift).
    --------------------------------------------------------------------------- */
@@ -45,22 +52,22 @@
   min-width: 0;
 }
 
-/* Schritt 0: die Frage – groß, eine Zeile */
+/* Rätsel: die Frage – groß, eine Zeile */
 #f01 .einstieg-frage {
   max-width: 1500px;
   transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s linear 0s;
 }
 #f01 .einstieg-frage-titel { font-size: var(--groesse-titel-gross); }
 #f01 .einstieg-frage-lead { margin-top: var(--abstand-3); }
-/* … und weicht der Auflösung (Schritt 1) */
+/* … und weicht der Auflösung */
 #f01:has(.einstieg-marke.schritt-an) .einstieg-frage {
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--dauer-kurz) var(--kurve), visibility 0s linear var(--dauer-kurz);
 }
 
-/* Schritt 1–2: Markenname, darunter (ab Schritt 2) die Titelzeile.
-   Die Titelzeile ist bis Schritt 2 auf 0 zusammengeklappt (0fr) und klappt
+/* Auflösung und Titel: Markenname, darunter (ab dem Titel) die Titelzeile.
+   Die Titelzeile ist bis zum Titel auf 0 zusammengeklappt (0fr) und klappt
    dann weich auf (1fr). Weil der Kopf unten bündig ist, gleitet der
    Markenname dabei nach oben – ohne Messen, ohne Sprung. */
 #f01 .einstieg-komposition {
@@ -102,7 +109,7 @@
 /* Logo statt Markenname (marke.js → logoTitel; setzt js/folien/01-einstieg.js
    als <img class="einstieg-logo"> ein und gibt dem Absatz die Klasse .hat-logo).
    Die Bilddatei bleibt unverändert – sie wird nur verkleinert angezeigt.
-   Höhe in Schritt 1 (Auflösung) und im Titelzustand (Schritt 2) hier ändern.
+   Höhe in der Auflösung und im Titelzustand hier ändern.
    Die Datei hat ringsum einen durchsichtigen Rand von 34 von 400 px (8,5 %
    der Bildhöhe): Die negativen Ränder gleichen ihn aus, damit das Oval genau
    an der Textkante beginnt und nicht zu viel Luft über und unter sich hat. */
@@ -161,7 +168,8 @@
 
 
 /* ---------------------------------------------------------------------------
-   BILD: randlos (Schritt 0–1), im Schlussbild nur rechts als Tafel (Schritt 2).
+   BILD: randlos (Rätsel, Hinweis, Auflösung), im Schlussbild (Titel) nur
+   rechts als Tafel.
    clip-path schneidet links ab, translate rückt den Fokuspunkt des Bildes in
    die Mitte der Tafel – beides gleitet weich (--dauer-lang).
    --------------------------------------------------------------------------- */
@@ -227,7 +235,8 @@
 }
 
 /* Fußzeile (Bildquelle): gehört zum Bild, nicht zum Text – deshalb rechts
-   unten (Schritt 1 auf dem randlosen Bild, im Schlussbild in der Bildtafel).
+   unten (in der Auflösung auf dem randlosen Bild, im Schlussbild in der
+   Bildtafel).
    Sie erscheint erst mit der Auflösung: Während des Ratens würde eine echte
    Quelle („Verpackung © …“) die Lösung verraten. Die Zeile behält ihren
    Platz im Raster, damit Frage und Markenname nicht springen. */
