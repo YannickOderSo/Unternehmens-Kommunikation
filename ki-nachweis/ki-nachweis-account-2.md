@@ -58,6 +58,28 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-32 | 17.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D02 (fortgesetzt) | letzter Feinschliff fertig |
 | A2-33 | 17.10.2026 | System | Nacharbeit-Workflow abgeschlossen (4/4 Agenten) | – | Endprüfung durch Claude, Abschluss |
 | A2-34 | 17.10.2026 | Yannick (Account 2) | Frage: Sind alle Grafiken und Bilder richtig? | – | Antwort im Chat (Sichtprüfung f04, f05, f06, f09 + Prüflauf) |
+| A2-35 | 18.10.2026 | Yannick (Account 2) | Frage nach dem Projektstand (Account 1 hat viel geändert) | – | Statusbericht im Chat (Vergleich Branch ↔ master) |
+| A2-36 | 18.10.2026 | Yannick (Account 2) | „Alle Kapazitäten auf die aktuelle Präsentation erstmal“ (+ Befehl /workflow-authoring) | A2-D03 (Workflow) | abgebrochen (Nutzungslimit); ersetzt durch A2-D04 (Ü04, A2-39) |
+| A2-37 | 18.10.2026 | System | Container-Neustart (Workflow abgebrochen) und Stop-Hook „Änderungen nicht committet“ | A2-D03 (fortgesetzt) | Workflow mit resume fortgesetzt; Rohprotokoll committet |
+| A2-38 | 18./19.10.2026 | System | Workflow A2-D03 am Nutzungslimit gescheitert; Neustarts des Sitzungsprozesses | A2-D03 | nicht fortgesetzt (Ü04: neu aufsetzen) |
+| A2-39 | 19.10.2026 | Yannick (Account 2), Übergabe Ü04 von Account 1 | Vortragsreife neu prüfen (Stand nach D12–D14) und Fragerunde vorbereiten | A2-D04 (Workflow) | fertig (21.10.2026): `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` |
+| A2-40 | 19.10.2026 | System | Workflow A2-D04 am wöchentlichen Nutzungslimit gescheitert (4 von 13 Agenten fertig); Neustarts des Sitzungsprozesses | A2-D04 | Zwischenstand im Journal gesichert |
+| A2-41 | 19.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (15:27 UTC) |
+| A2-42 | 19.10.2026 | System | A2-D04 erneut am Nutzungslimit gescheitert (Sitzungslimit bis 16:40 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-43 | 19.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (16:42 UTC) |
+| A2-44 | 19.10.2026 | System | A2-D04 erneut am Nutzungslimit gescheitert (8 von 16 Agenten fertig; Sitzungslimit bis 21:40 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-45 | 19.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (21:42 UTC) |
+| A2-46 | 19./20.10.2026 | System | A2-D04: 14 von 16 Agenten fertig; beide Fragensammler am Nutzungslimit gescheitert (bis 02:40 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-47 | 20.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (08:53 UTC) |
+| A2-48 | 20.10.2026 | System | A2-D04: Fragensammler fertig (zusammen 43 Fragen, 6 Prüfpakete); 4 Prüfpakete am Nutzungslimit gescheitert (bis 13:50 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-49 | 20.10.2026 | Yannick (Account 2) | Limit zurückgesetzt – weitermachen | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (13:52 UTC) |
+| A2-50 | 20.10.2026 | System | A2-D04: 26 von 27 Agenten fertig (alle Prüfpakete, Vollständigkeitsprüfung); ein Prüfpaket der Vollständigkeit am Nutzungslimit gescheitert (bis 18:50 UTC) | A2-D04 | Zwischenstand gesichert |
+| A2-51 | 20.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (19:30 UTC) |
+| A2-52 | 20./21.10.2026 | System | A2-D04: 29 von 30 Agenten fertig, beide Dateien geschrieben; Abnahme am Nutzungslimit gescheitert (bis 23:50 UTC) | A2-D04 | Dateien als Zwischenstand committet (2a03430) |
+| A2-53 | 21.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Abnahme mit resume gestartet (00:05 UTC) |
+| A2-54 | 21.10.2026 | Yannick (Account 2) | Limit planen; bei 95 % Wochenlimit Aufgaben an Account 1 übergeben | – | Limitplan und laufend gepflegte Übergabedatei `uebergaben/2026-10-21_von-account-2_an-account-1.md` |
+| A2-55 | 21.10.2026 | System | Fortsetzung von A2-D04 übernahm die Zwischenergebnisse nicht; 9 Agenten liefen neu und scheiterten am Fünf-Stunden-Limit | A2-D04 | Workflow nicht mehr fortgesetzt; Wochenlimit 71 % → 82 % |
+| A2-56 | 21.10.2026 | Yannick (Account 2) | „Weiter“ | – | Abnahme selbst gemacht, Nachtrag in beiden Dateien, master zusammengeführt, Nachweis und Übergabe aktualisiert |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -521,6 +543,300 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### A2-35 – 18.10.2026 – Yannick Heisler (Account 2)
+
+> Status mit dem Projekt der andere agent hat viele changes
+
+- **Vorgehen Claude:** `git fetch` und Vergleich des Branches `praesentation-account-2` (Stand 46cc7f0) mit `master`
+  (Commit-Log, `git diff --stat`, Einträge 55–63 in `ki-nachweis/ki-nachweis.md`, Kopf des Workflow-Skripts
+  `2026-10-17_praesentation-uebernahme.js`, Übergabe Ü03). Ergebnis: Account 1 hat den Branch vollständig nach `master`
+  zusammengeführt (794c8d3) und die Präsentation übernommen (Workflow D12, Änderungen noch nicht committet); auf `master`
+  sind seitdem nur Dateien außerhalb von `praesentation/` hinzugekommen (Markenkompetenz A1, Folienentwurf 03,
+  Gründerbefragung D13, Übergabe Ü03 für Fallstudie 2). Statusbericht im Chat; Ü03 nicht begonnen (wartet auf Freigabe).
+- **Ergebnis:** Antwort im Chat; keine Dateien geändert (außer diesem Nachweis)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-36 – 18.10.2026 – Yannick Heisler (Account 2)
+
+> Alle Kapazitäten auf die aktuelle Präsentation erstmal
+
+- **Anhang/Befehl:** Der Prompt kam zusammen mit dem Befehl `/workflow-authoring` (lädt die Anleitung zum Schreiben von
+  Workflow-Skripten). Systemhinweis (kein Prompt der Gruppe): Modus „ultracode“ aktiv (gründlich, mit Workflows und
+  Gegenprüfung arbeiten).
+- **Vorgehen Claude:** Ü03 (Fallstudie 2) nicht begonnen. `master` in den Branch zusammengeführt (309ae67). Workflow-Skript
+  D12 von Account 1 gelesen, damit keine Arbeit doppelt gemacht wird: D12 ändert gerade f03, f04, f05, f10, f11, b2, b3,
+  b7, Logos, Platzhalter, Exporte (noch nicht committet). Nach der Regel „ein Arbeitspaket, dann Freigabe“ als erstes
+  Paket eine reine Prüfung auf Vortragsreife gewählt, die D12 ergänzt statt überschneidet: 8 Blickwinkel (Aufgabe &
+  Bewertungsraster, Storyline, Vortrag & Zeit, Rückfragen, Fakten außerhalb von D12, Technik im Hörsaal, Live-Elemente
+  & Referentenansicht, Visualisierung & Beamer), je Blickwinkel ein Gegenprüfer, der die Befunde zu widerlegen versucht,
+  dann Vollständigkeitsprüfung (mit Gegenprüfung) und Bericht. Die Prüfer ändern nichts (Testausgaben nur in
+  `praesentation/_test/`, nicht im Repository); einzige neue Datei ist `praesentation/VORTRAGSREIFE.md`.
+- **Ergebnis:** in Arbeit (A2-D03)
+- **Unteragenten:** A2-D03 (Workflow, 19 Unteragenten geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-37 – 18.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Container neu gestartet: Hintergrundaufgabe „Account 2: Präsentation Fallstudie 1 (HOLY) auf Vortragsreife prüfen …“
+> gestoppt. – Danach Stop-Hook: „There are uncommitted changes in the repository. Please commit and push these changes to
+> the remote branch.“
+
+- **Vorgehen Claude:** Journal des Laufs `wf_6f15dd23-e45` gelesen: 2 von 8 Prüfern fertig (Aufgabe & Bewertung,
+  Storyline), 2 liefen. Workflow mit `resumeFromRunId` fortgesetzt (fertige Prüfer aus dem Zwischenspeicher, nicht neu).
+  Offene Änderung war nur `rohprotokoll.jsonl` (Hook) → committet und gepusht.
+- **Ergebnis:** A2-D03 läuft weiter
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-38 – 18./19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik, live,
+> gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your session limit · resets 3am (UTC)“. –
+> Danach dreimal: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Nichts neu gestartet (Nutzungslimit). Stand von A2-D03: 2 von 8 Prüfern fertig (Aufgabe & Bewertung,
+  Storyline), keine Gegenprüfung, kein Bericht. Mit Ü04 (A2-39) wird A2-D03 nicht fortgesetzt, sondern neu aufgesetzt.
+- **Ergebnis:** A2-D03 abgebrochen; seine Testausgaben (`praesentation/_test/account2-*`, nicht eingecheckt) gelöscht,
+  weil sie den Stand vor D12 zeigen.
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-39 – 19.10.2026 – Yannick Heisler (Account 2), Übergabe Ü04 von Account 1
+
+Prompt (wörtlich; gleichlautend mit dem Codeblock in
+[`uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md`](uebergaben/2026-10-19_account-2_vortragsreife-fragerunde.md)):
+
+> Neue Aufgabe von Account 1 (19.10.2026). Bitte beachte: Ü03 (Fallstudie 2) bleibt zurückgestellt. Diese Aufgabe hat Vorrang.
+>
+> ZUERST
+> 1. git fetch origin master && git merge origin/master in deinen Branch praesentation-account-2 (Konflikte so lösen, dass der Stand von master erhalten bleibt). master enthält jetzt: D12 (Präsentation übernommen, Folien 03/05/10 mit A1/A3, Logos 01/09b/12, Backups), D13/D14 (Gründerbefragung: fallstudie-1-brand-persona/gruenderbefragung.md, Kürzel GB = „Horsch 2026 (GB)“, Name freigegeben), Folie 03 Zusatz „auch laut Gründer Mathias Horsch (Befragung 10/2026)“, Folie 04 „Kern-Persona · Hypothese · fiktiv“.
+> 2. Deinen alten Lauf A2-D03 NICHT fortsetzen (er prüfte den Stand vor D12), sondern neu aufsetzen: dein Skript ki-nachweis/workflows/2026-10-18_praesentation-account-2_vortragsreife.js als Vorlage nehmen, als neues Skript mit Präfix account-2_ speichern und an den neuen Stand anpassen.
+>
+> ARBEITSPAKET (nur lesen und berichten, zwei neue Dateien)
+> A) fallstudie-1-brand-persona/praesentation/VORTRAGSREIFE.md – Prüfung auf Vortragsreife für Mo 26.10.2026 mit deinen 8 Blickwinkeln (Aufgabe & Bewertungsraster aus README.md, Storyline, Vortrag & Zeit (Sollzeit 14:00, Sprechtexte zählen), Rückfragen, Fakten, Technik im Hörsaal, Referentenansicht, Visualisierung & Beamer), je Blickwinkel Gegenprüfung, dann Vollständigkeitsprüfung. Jeder Befund: Folie, Stelle (Datei + Datenfeld/Zeile), Problem, Beleg (Screenshot unter praesentation/_test/account2-…), Vorschlag, zuständig (Yannick / Lukas / Elias / Account 1 technisch), Dringlichkeit bis 26.10. Beispieldaten von Bündel B und C (Folien 06–08b, 09–11) sind bekannt – bewerte, was davon bis 26.10. echt sein MUSS und bis wann.
+>    AUSGENOMMEN (Account 1 arbeitet gerade daran, nicht prüfen und nicht bewerten): Live-Abstimmung auf Folie 08 (QR-Code, abstimmen.html, live-abstimmung/, Anbindung in js/komponenten.js) und die Bilder auf Folie 01 (Rätselbild) und Folie 04 (Persona-Bild) samt ihren Platzhalter-Hinweisen.
+> B) fallstudie-1-brand-persona/fragerunde.md – Vorbereitung der Fragerunde: die 25–35 wahrscheinlichsten Fragen von Prof. Stenger und vom Publikum zu Methode, Daten, Ergebnissen, Empfehlungen und KI-Nutzung, je Frage: kurze Antwort (2–4 Sätze, mündlich), wer antwortet (nach Bündel), Beleg (Folie/Backup/Ausarbeitung mit Abschnitt) und Fallstricke („nicht sagen: …“). Grundlage: index.html (Folien, Notizen, Rückfragen), folienentwuerfe.md (Abschnitte „Mögliche Rückfragen“), markenkompetenz.md, persona-steckbrief.md, limbic-map.md, gruenderbefragung.md, Recherche-Dossier (Faktenstatus beachten), README.md (Bewertung), KI-Nachweis (Abschnitt 4 „Wie dieser Nachweis entsteht“). Nichts erfinden; Gründeraussagen immer als Selbstauskunft („laut Gründer Mathias Horsch (Befragung 10/2026)“); „95 %“ nur mit Zusatz „laut Gründer, Datengrundlage nicht offengelegt“. Mit Gegenprüfung jeder Antwort an der Quelle.
+>
+> REGELN
+> - Nur auf deinem Branch praesentation-account-2 arbeiten; nicht nach master mergen (das macht Account 1).
+> - Ändere KEINE bestehende Datei der Präsentation oder der Ausarbeitungen (index.html, marke.js, js/, css/, bilder/, export/, LIESMICH.md, AUTOREN.md, QUELLEN.md, *.md in fallstudie-1-brand-persona/). Neu anlegen darfst du nur die zwei Dateien oben, dazu ki-nachweis/ki-nachweis-account-2.md und Workflow-Skripte mit Präfix account-2_ unter ki-nachweis/workflows/. Testausgaben nur unter praesentation/_test/ (nicht eingecheckt).
+> - Diesen Prompt und jede Delegation in ki-nachweis/ki-nachweis-account-2.md eintragen (wörtlich, wie bisher). Nach jedem Schritt committen und pushen.
+> - Öffne keine Dateien unter /root/.claude/uploads, keine Datei mit „NUR-Gruppenordner“ im Namen und nicht den Google-Drive-Gruppenordner. Statista-Werte nur, wie sie in persona-daten.md stehen.
+> - Keine Modellbezeichnungen in Dateien, Commits oder PRs.
+> - Zum Schluss: kurze Zusammenfassung für Account 1 und Yannick (Top-10-Befunde nach Dringlichkeit, was Lukas und Elias bis wann liefern müssen, letzter Commit).
+
+- **Vorgehen Claude:** `origin/master` (a929391) in den Branch zusammengeführt (acaf0d5, ohne Konflikte; vorher Rohprotokoll
+  committet). Ü04 gelesen; Workflow-Skript A2-D03 als Vorlage genommen und als
+  [`workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`](workflows/account-2_2026-10-19_vortragsreife-fragerunde.js)
+  an den neuen Stand angepasst: Stand nach D12–D14, ausgenommene Bereiche (Live-Abstimmung f08, Bilder f01/f04),
+  Zuständigkeiten Yannick/Lukas/Elias/Account 1 (technisch)/Gruppe/Prof, Dringlichkeit nach Tagesplan, Bewertung der
+  Beispieldaten (was bis wann echt sein muss), Regeln für Gründeraussagen und „95 %“; der Blickwinkel „Live-Elemente“
+  wurde zu „Referentenansicht & Bedienung“; „Rückfragen“ mit zwei Fragensammlern (Sicht Prof. Stenger, Sicht Publikum)
+  und Gegenprüfung jeder Antwort an der Quelle (Pakete zu 8 Fragen); danach Vollständigkeitsprüfung (mit Gegenprüfung),
+  zwei Berichtsagenten und eine Abnahme gegen die Anforderungen aus Ü04. Syntax des Skripts vorab geprüft.
+- **Ergebnis:** in Arbeit (A2-D04)
+- **Unteragenten:** A2-D04 (Workflow)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-40 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your weekly limit · resets
+> 3pm (UTC)“. – Danach zweimal: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal des Laufs `wf_5e16e018-ef6` gelesen: fertig sind die Prüfer Aufgabe & Bewertungsraster,
+  Storyline, Vortrag & Zeit und Fakten & Kennzeichnung; alle übrigen am Limit gescheitert. Nichts neu gestartet, bis das
+  Limit zurückgesetzt war.
+- **Ergebnis:** Zwischenstand gesichert (fertige Agenten werden beim Fortsetzen aus dem Zwischenspeicher übernommen)
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-41 – 19.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Uhrzeit geprüft (15:27 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt;
+  die vier fertigen Prüfer laufen nicht erneut. `master` bewusst nicht erneut zusammengeführt, damit alle Prüfer
+  denselben Stand (a929391) sehen.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-42 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your session limit · resets
+> 4:40pm (UTC)“. – Danach: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal geprüft: weiterhin 4 Prüfer fertig, keine weiteren Ergebnisse verloren.
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-43 – 19.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Uhrzeit geprüft (16:41 UTC, nach dem Zurücksetzen) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-44 – 19.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; Unteragenten: „You've hit your session limit · resets
+> 9:40pm (UTC)“. – Danach dreimal: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal geprüft: fertig sind jetzt alle sieben Prüfer (Aufgabe, Storyline, Zeit, Fakten, Technik,
+  Referentenansicht, Gestaltung) und die Gegenprüfung „Aufgabe“; offen sind die zwei Fragensammler und sechs
+  Gegenprüfungen.
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-45 – 19.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Uhrzeit geprüft (21:42 UTC, nach dem Zurücksetzen) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-46 – 19./20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: rueckfragen – Workflow mit resume fortsetzen“; Unteragenten
+> „pruefen:fragen-publikum“ und „pruefen:fragen-prof“: „You've hit your session limit · resets 2:40am (UTC)“.
+
+- **Vorgehen Claude:** Stand: alle sieben Prüfer und alle sieben zugehörigen Gegenprüfungen fertig (14 von 16 Agenten);
+  offen nur die zwei Fragensammler (und danach deren Gegenprüfung, Vollständigkeit, Berichte, Abnahme).
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-47 – 20.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Uhrzeit geprüft (08:53 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-48 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: rueckfragen – Workflow mit resume fortsetzen“; Unteragenten
+> „gegen:fragen-paket-3“ bis „-6“: „You've hit your session limit · resets 1:50pm (UTC)“. – Danach zweimal: „This
+> session's worker process was restarted.“
+
+- **Vorgehen Claude:** Journal geprüft: beide Fragensammler, die Gegenprüfung der Rückfragen-Befunde und die Prüfpakete 1
+  und 2 (je 8 Antworten an der Quelle) fertig – 19 Agenten insgesamt; offen die Prüfpakete 3–6.
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-49 – 20.10.2026 – Yannick Heisler (Account 2)
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** Uhrzeit geprüft (13:51 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-50 – 20.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Gegenprüfung Vollständigkeit gescheitert – Workflow mit resume fortsetzen“;
+> Unteragent „gegen:fragen-voll-2“: „You've hit your session limit · resets 6:50pm (UTC)“. – Danach dreimal: „This
+> session's worker process was restarted.“
+
+- **Vorgehen Claude:** Stand laut Meldung: 26 von 27 Agenten fertig (alle sechs Prüfpakete der Fragerunde, die
+  Vollständigkeitsprüfung und Teile ihrer Gegenprüfung); offen ein Prüfpaket der neuen Fragen aus der
+  Vollständigkeitsprüfung, danach Berichte und Abnahme.
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-51 – 20.10.2026 – Yannick Heisler (Account 2)
+
+> Erneut versuchen
+
+- **Vorgehen Claude:** Uhrzeit geprüft (19:29 UTC, Limit zurückgesetzt) und A2-D04 mit `resumeFromRunId` fortgesetzt.
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-52 – 20./21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Abnahme gescheitert – Workflow mit resume fortsetzen“; Unteragent „abnahme“: „You've
+> hit your session limit · resets 11:50pm (UTC)“. – Danach: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** 29 von 30 Agenten fertig; `praesentation/VORTRAGSREIFE.md` (582 Zeilen) und `fragerunde.md`
+  (1375 Zeilen) liegen vor. Vorsorglich als Zwischenstand committet und gepusht (2a03430), vorher auf Namen von
+  KI-Modellen durchsucht (nur der Werkzeugname „Claude Code“ kommt vor, wie im übrigen KI-Nachweis).
+- **Ergebnis:** Zwischenstand gesichert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-53 – 21.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Uhrzeit geprüft (00:04 UTC, Limit zurückgesetzt), Zwischenstand committet, A2-D04 mit
+  `resumeFromRunId` fortgesetzt (nur noch die Abnahme).
+- **Ergebnis:** A2-D04 läuft weiter
+- **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-54 – 21.10.2026 – Yannick Heisler (Account 2)
+
+> Ich will das du dein Limit planst solltest du bei 95% Wochen Limit ankommen will ich das du deine Tasks auf account überschreibst
+
+- **Vorgehen Claude:** Auslastung aus den Sitzungsdaten gelesen (Ereignisse „rate_limit_event“ der eigenen Sitzung über
+  das Sitzungswerkzeug): 21.10.2026, 00:06 UTC – Wochenfenster 71 %, Zurücksetzung Mo 26.10.2026, 15:00 UTC;
+  Fünf-Stunden-Fenster 18 %, Zurücksetzung 21.10.2026, 05:00 UTC. In den lokalen Protokolldateien steht die Auslastung
+  nicht (nur Fehlermeldungen beim Erreichen), deshalb liest Claude sie vor jedem Schritt und bei jeder
+  Workflow-Rückmeldung selbst ab. Limitplan mit Schwellen (85 % keine neuen Workflows, 92 % Übergabe vorbereiten,
+  95 % alles stoppen und an Account 1 übergeben) und laufend gepflegte Übergabedatei mit Stand-Tabelle und
+  Übernahme-Prompt für Account 1 angelegt.
+- **Ergebnis:** [`uebergaben/2026-10-21_von-account-2_an-account-1.md`](uebergaben/2026-10-21_von-account-2_an-account-1.md)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-55 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrundaufgabe fehlgeschlagen: „Nicht abgeschlossen: aufgabe, storyline, zeit, rueckfragen, fakten, technik,
+> referentenansicht, gestaltung – Workflow mit resume fortsetzen“; neun Unteragenten: „You've hit your session limit ·
+> resets 5am (UTC)“. – Danach: „This session's worker process was restarted.“
+
+- **Vorgehen Claude:** Die Fortsetzung von 00:05 UTC (nur die Abnahme fehlte noch) hat die gespeicherten Ergebnisse
+  nicht übernommen (Ursache unklar) und neun bereits fertige Prüfer neu gestartet; sie scheiterten am
+  Fünf-Stunden-Limit. Beide Dateien waren davon nicht betroffen (Zwischenstand 2a03430). Auslastung danach:
+  Wochenfenster 82 % (vorher 71 %). Entscheidung: A2-D04 nicht mehr fortsetzen, die Abnahme selbst machen.
+- **Ergebnis:** keine Dateien geändert
+- **Unteragenten:** keine neuen
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-56 – 21.10.2026 – Yannick Heisler (Account 2)
+
+> Weiter
+
+- **Vorgehen Claude:** Auslastung gelesen (08:03 UTC: Woche 83 %, fünf Stunden 10 %) – unter 85 %, aber kein neuer
+  Workflow. Abnahme selbst: Gliederung beider Dateien gegen Ü04; fragerunde.md per Skript (35 Fragen, je Antwort mit
+  2–5 Sätzen, „antwortet“, Beleg, Fallstricke; „95 %“ nur mit Zusatz; Gründeraussagen als Selbstauskunft; Statista wie
+  in persona-daten.md); Stichproben an der Quelle (430 von 840 s; 1.610 Wörter und 14:59; 52 offene Prüffelder im
+  KI-Nachweis von Account 1 bei a929391; „5 KI-Personas + 3 Kurzinterviews“ in index.html; F04 ↔
+  gruenderbefragung.md Kopf). Keine Abweichung. Gefunden: Der Analogien-Inhalt von Folie 08 wurde nicht geprüft
+  (Prüfauftrag von Account 2 missverständlich, nicht Ü04). `origin/master` geprüft: seit a929391 D17–D22 von Account 1
+  (u. a. Chamäleon statt Waschbär, Abgleich mit den Vorlesungsfolien). Nachtrag mit Fristen, Lücke und Änderungen in
+  beide Dateien; master zusammengeführt (1dd16da, ohne Konflikte); Nachweis A2-D04 vervollständigt; Übergabedatei
+  aktualisiert.
+- **Ergebnis:** `praesentation/VORTRAGSREIFE.md`, `fragerunde.md` (Nachtrag), Übergabedatei
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -655,6 +971,59 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
   leicht über 40; echte Kurzinterviews und Erhebungsdaten statt Beispieldaten; optional Jahresabschluss 2024 als Beleg.
 - **Ergebnis:** fertig – Präsentation vortragsbereit bis auf die offenen Gruppenpunkte (Checkliste in `LIESMICH.md` §12).
 - **Wie Claude das Ergebnis geprüft hat:** siehe A2-33 (eigener Prüflauf, 0 Fehler; Kontaktbogen und Folie 01 angesehen).
+
+### A2-D03 – 18.10.2026 – ausgelöst durch A2-36
+
+- **Art:** Workflow „praesentation-account-2-vortragsreife“ (Workflow-Werkzeug, Lauf `wf_6f15dd23-e45`).
+- **Auftrag (wörtlich):** Skript [`workflows/2026-10-18_praesentation-account-2_vortragsreife.js`](workflows/2026-10-18_praesentation-account-2_vortragsreife.js)
+  (gemeinsamer Rahmen `GEMEINSAM` mit Rollen, Bewertungsraster, Abgrenzung zu D12 und festen Regeln: nur lesen, keine
+  erfundenen Zahlen/Quellen, Herkunft je Befund angeben – Datei, Messung, Websuche mit URL oder „Modellwissen“; acht
+  Prüfaufträge in `DIMENSIONEN`, Gegenprüfung in `gegenpruefen`, Vollständigkeits- und Berichtsauftrag wörtlich im Skript).
+- **Stufen:** Prüfen (8 Agenten) → Gegenprüfen (je 1 Agent pro Blickwinkel, Fließband ohne Wartebarriere) →
+  Vollständigkeit (1 Agent + 1 Gegenprüfer) → Bericht (1 Agent schreibt `praesentation/VORTRAGSREIFE.md`).
+- **Unteragenten und Ergebnisse:** Prüfer „Aufgabe & Bewertung“ und „Storyline“ fertig; alle übrigen Unteragenten nach
+  einem Container-Neustart (A2-37) am Nutzungslimit gescheitert (A2-38). Kein Bericht entstanden.
+- **Ergebnis:** abgebrochen; nicht fortgesetzt, weil er den Stand vor D12 prüfte. Ersetzt durch A2-D04 (Ü04).
+
+### A2-D04 – 19.10.2026 – ausgelöst durch A2-39
+
+- **Art:** Workflow „account-2-vortragsreife-fragerunde“ (Workflow-Werkzeug, Lauf `wf_5e16e018-ef6`).
+- **Auftrag (wörtlich):** Skript [`workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`](workflows/account-2_2026-10-19_vortragsreife-fragerunde.js)
+  (gemeinsamer Rahmen `GEMEINSAM` mit Stand, Rollen, Bewertungsraster, ausgenommenen Bereichen und festen Regeln: nur lesen,
+  keine erfundenen Zahlen/Quellen, Herkunft je Befund – Datei, Screenshot, Messung, Websuche mit URL oder „Modellwissen“;
+  sieben Prüfaufträge in `DIMENSIONEN`, zwei Fragensammler in `FRAGENSAMMLER`, Gegenprüfung in `gegenpruefen` und
+  `fragenPruefen`, Vollständigkeits-, Berichts- und Abnahmeauftrag wörtlich im Skript).
+- **Stufen:** Prüfen (7 Prüfer + 2 Fragensammler) → Gegenprüfen (je Blickwinkel 1 Agent; Fragerunde zusätzlich je 8 Fragen
+  1 Agent, der jede Antwort an der Quelle prüft) → Vollständigkeit (1 Agent + Gegenprüfung) → Berichte (2 Agenten:
+  `VORTRAGSREIFE.md`, `fragerunde.md`) → Abnahme (1 Agent, prüft beide Dateien gegen Ü04 und korrigiert nur diese).
+- **Läufe:** gestartet 19.10.2026; acht Fortsetzungen nach Nutzungslimits (A2-40 bis A2-55); die letzte (A2-55)
+  übernahm die Zwischenergebnisse nicht und wurde nicht weitergeführt.
+- **Unteragenten und Ergebnisse** (30 Unteragenten; Urteile der Gegenprüfer: b = bestätigt, t = teilweise, w = widerlegt):
+
+  | Nr. | Unteragent (Label) | Ergebnis |
+  |-----|--------------------|----------|
+  | A2-D04.01 | pruefen:aufgabe | 21 Befunde (Abdeckung der Aufgabe, Punkteschätzung, Tabelle Beispieldaten) |
+  | A2-D04.02 | pruefen:storyline | 17 Befunde |
+  | A2-D04.03 | pruefen:zeit | 14 Befunde (Wörter per Skript gezählt, Sprecher- und Kürzungsplan) |
+  | A2-D04.04 | pruefen:fakten | 21 Befunde |
+  | A2-D04.05 | pruefen:technik | 12 Befunde |
+  | A2-D04.06 | pruefen:referentenansicht | 17 Befunde |
+  | A2-D04.07 | pruefen:gestaltung | 15 Befunde |
+  | A2-D04.08 | pruefen:fragen-prof | 25 Fragen, 18 Befunde |
+  | A2-D04.09 | pruefen:fragen-publikum | 18 Fragen, 14 Befunde |
+  | A2-D04.10–.17 | gegen:aufgabe, storyline, zeit, fakten, technik, referentenansicht, gestaltung, rueckfragen | 9 b/12 t · 1 b/16 t · 6 b/8 t · 13 b/8 t · 8 b/4 t · 14 b/3 t · 6 b/9 t · 21 b/11 t; 0 w |
+  | A2-D04.18–.23 | gegen:fragen-paket-1 … 6 | 43 Antworten an der Quelle geprüft: 42 korrigiert, 1 korrekt, 0 gestrichen |
+  | A2-D04.24 | vollstaendigkeit | 12 neue Befunde, 10 neue Fragen, Widersprüche zwischen Prüfern aufgelöst |
+  | A2-D04.25–.27 | gegen:voll, gegen:fragen-voll-1, -2 | 5 b/7 t; 10 Antworten korrigiert |
+  | A2-D04.28 | bericht:vortragsreife | `praesentation/VORTRAGSREIFE.md`: 161 Befunde (0 widerlegt) zu 105 Maßnahmen zusammengeführt |
+  | A2-D04.29 | bericht:fragerunde | `fragerunde.md`: 53 geprüfte Fragen zu 35 zusammengeführt |
+  | A2-D04.30 | abnahme | am Nutzungslimit gescheitert; durch Claude ersetzt (A2-56) |
+
+- **Ergebnis:** fertig am 21.10.2026 (Zwischenstand 2a03430, Nachtrag nach der Abnahme).
+- **Wie Claude das Ergebnis geprüft hat:** siehe A2-56 (Gliederung gegen Ü04, Skriptprüfung der Fragerunde,
+  Stichproben an der Quelle, Namen von KI-Modellen gesucht). Auffällig: Kein Befund wurde ganz widerlegt, aber 78 von
+  161 nur teilweise bestätigt und fast alle Antworten korrigiert – die Gegenprüfung hat also gewirkt, die Befunde
+  sind trotzdem vor dem Umsetzen gegen den aktuellen Stand zu prüfen (Nachtrag in beiden Dateien).
 
 ---
 
