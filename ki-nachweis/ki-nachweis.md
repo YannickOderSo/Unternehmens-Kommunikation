@@ -136,6 +136,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 114 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 115 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D23 (fortgesetzt) | D23 war nach 5 Minuten am Limit gescheitert (keine Dateiänderungen); fortgesetzt |
 | 116 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
+| 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1994,6 +1995,17 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D23 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D23 (läuft)
+
+### 117 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D23: Abgleich, Fragerunde und Folie-08-Prüfung fertig; „umsetzen“, „pruefen“,
+> „nacharbeit“: „You've hit your session limit · resets 6:50pm (UTC)“. Danach Neustart der Sitzung.
+
+- **Vorgehen Claude:** Teiländerungen der abgebrochenen Umsetzung geprüft (Komponenten, CSS, index.html, Teile von
+  pruefen.mjs/QUELLEN/folienentwuerfe; Tests und Nachtrag offen), Hinweis ins Workflow-Skript (nur Auftrag der
+  Umsetzung, die fertigen Agenten bleiben im Zwischenspeicher), nach dem Reset per resume fortgesetzt.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D23 (fortgesetzt)
 ---
 
 ## 2. Delegationen an Unteragenten
