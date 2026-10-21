@@ -125,6 +125,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 103 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D19, D21 | nur Nachweis committet; D19 und D21 laufen |
 | 104 | 20.10.2026 | Yannick | Antwort auf Rückfrage zum Vorlesungs-Abgleich: „Steuerrad-Begriffe (Folie 10)“ und „Kennzeichnung & Rückfragen“ umsetzen | D22 (geplant) | Umsetzung nach Ende von D20 |
 | 105 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D20 (neu gestartet) | D20 war am Limit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet |
+| 106 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft, D22 vorbereitet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1857,6 +1858,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D20 (neu gestartet), D22 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 106 – 21.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Teiländerungen von D20 folgen nach Prüfung.
+  Workflow-Skript D22 vorbereitet und committet (`60d2b58`), Start nach D20.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D20 (läuft), D22 (geplant)
 ---
 
 ## 2. Delegationen an Unteragenten
