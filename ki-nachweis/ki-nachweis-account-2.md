@@ -77,6 +77,7 @@ Person bei allen Einträgen: **Yannick Heisler (Account 2)**, sofern nicht ander
 | A2-51 | 20.10.2026 | Yannick (Account 2) | „Erneut versuchen“ | A2-D04 (fortgesetzt) | Workflow mit resume fortgesetzt (19:30 UTC) |
 | A2-52 | 20./21.10.2026 | System | A2-D04: 29 von 30 Agenten fertig, beide Dateien geschrieben; Abnahme am Nutzungslimit gescheitert (bis 23:50 UTC) | A2-D04 | Dateien als Zwischenstand committet (2a03430) |
 | A2-53 | 21.10.2026 | Yannick (Account 2) | „Weiter“ | A2-D04 (fortgesetzt) | Abnahme mit resume gestartet (00:05 UTC) |
+| A2-54 | 21.10.2026 | Yannick (Account 2) | Limit planen; bei 95 % Wochenlimit Aufgaben an Account 1 übergeben | – | Limitplan und laufend gepflegte Übergabedatei `uebergaben/2026-10-21_von-account-2_an-account-1.md` |
 
 ### A2-01 – 14.10.2026 – Yannick Heisler (Account 2)
 
@@ -785,6 +786,21 @@ Prompt (wörtlich; gleichlautend mit dem Codeblock in
   `resumeFromRunId` fortgesetzt (nur noch die Abnahme).
 - **Ergebnis:** A2-D04 läuft weiter
 - **Unteragenten:** A2-D04 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### A2-54 – 21.10.2026 – Yannick Heisler (Account 2)
+
+> Ich will das du dein Limit planst solltest du bei 95% Wochen Limit ankommen will ich das du deine Tasks auf account überschreibst
+
+- **Vorgehen Claude:** Auslastung aus den Sitzungsdaten gelesen (Ereignisse „rate_limit_event“ der eigenen Sitzung über
+  das Sitzungswerkzeug): 21.10.2026, 00:06 UTC – Wochenfenster 71 %, Zurücksetzung Mo 26.10.2026, 15:00 UTC;
+  Fünf-Stunden-Fenster 18 %, Zurücksetzung 21.10.2026, 05:00 UTC. In den lokalen Protokolldateien steht die Auslastung
+  nicht (nur Fehlermeldungen beim Erreichen), deshalb liest Claude sie vor jedem Schritt und bei jeder
+  Workflow-Rückmeldung selbst ab. Limitplan mit Schwellen (85 % keine neuen Workflows, 92 % Übergabe vorbereiten,
+  95 % alles stoppen und an Account 1 übergeben) und laufend gepflegte Übergabedatei mit Stand-Tabelle und
+  Übernahme-Prompt für Account 1 angelegt.
+- **Ergebnis:** [`uebergaben/2026-10-21_von-account-2_an-account-1.md`](uebergaben/2026-10-21_von-account-2_an-account-1.md)
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
