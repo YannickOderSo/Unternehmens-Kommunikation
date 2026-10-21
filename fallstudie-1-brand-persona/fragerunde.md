@@ -34,6 +34,18 @@ Websuche. Wo etwas Modellwissen ist, steht es dabei.
 
 ---
 
+> **Nachtrag Account 2 (21.10.2026, 08:20 UTC)**
+>
+> - **Abnahme:** Der Abnahme-Agent des Workflows ist am Nutzungslimit gescheitert. Claude (Account 2) hat die Datei
+>   selbst gegen Ü04 geprüft: 35 Fragen; jede mit Antwort (2–5 Sätze), wer antwortet, Beleg und Fallstricken;
+>   „95 %“ nur mit „laut Gründer, Datengrundlage nicht offengelegt“; Gründeraussagen als Selbstauskunft; Statista nur
+>   wie in persona-daten.md; Stichproben an der Quelle (F04 ↔ gruenderbefragung.md Kopf; F12 ↔ Fußzeilen f06/f07).
+>   Keine Abweichung gefunden.
+> - **Seit dem geprüften Stand (a929391) hat Account 1 weitergearbeitet:** D18 „Chamäleon statt Waschbär“ (Folie 08,
+>   Notizen 08b–12, limbic-map.md), D21 Abgleich mit den Vorlesungsfolien (`abgleich-vorlesung.md`) und D22 dessen
+>   Umsetzung. Die Antworten zu F07, F10, F24, F29 und F30 (Modelle, Vorlesung, Tonalität) vor der Generalprobe gegen
+>   den neuen Stand prüfen; Fristen „Di 20.10.“ sind überfällig.
+
 ## Spielregeln für die Fragerunde
 
 1. **Wer antwortet – nach Bündel.** Folien 01–05, B1–B3, B7, B8, Synthese und KI-Nachweis: **Yannick**. Folien

@@ -12,6 +12,25 @@
 | **Zeilenangaben** | beziehen sich auf `index.html` im Stand 82670cb. Nach D15/D16 verschieben sie sich – Stellen deshalb über den zitierten Text suchen. |
 | **Grundlage** | 161 Befunde aus 8 Blickwinkeln und einer Vollständigkeitsprüfung, jeder Befund gegengeprüft. Aufgenommen sind bestätigte und teilweise bestätigte Befunde, bei „teilweise“ in der korrigierten Fassung. Kein Befund wurde vollständig widerlegt (Anhang 11.2). |
 
+> **Nachtrag Account 2 (21.10.2026, 08:20 UTC)**
+>
+> - **Fertig erst am 21.10.:** Der Workflow ist mehrmals am Nutzungslimit abgebrochen. Fristen „sofort (Di 20.10.)“ sind
+>   damit überfällig und gelten als **sofort**; der vorgeschlagene Datenschluss „Mi 21.10. abends“ ist **heute**.
+> - **Abnahme:** Der Abnahme-Agent des Workflows ist am Nutzungslimit gescheitert. Claude (Account 2) hat die Abnahme
+>   selbst gemacht: Gliederung gegen Ü04, Pflichtfelder der Maßnahmen und Stichproben an der Quelle (430 von 840 s
+>   Sollzeit über Beispieldaten-Folien; 1.610 Wörter → 14:59 bei 114 W/min mit zwei Wechseln, Abschnitt 7.2; 52 Felder
+>   „☐ offen“ im KI-Nachweis von Account 1, Stand a929391; Fußzeile f06 „5 KI-Personas + 3 Kurzinterviews, gemittelt“).
+>   Keine Abweichung gefunden.
+> - **Lücke:** Der **Analogien-Inhalt von Folie 08** wurde nicht geprüft. Ü04 nahm nur die Live-Abstimmung aus; der
+>   Prüfauftrag von Account 2 war an dieser Stelle missverständlich formuliert. Bei der nächsten Prüfung nachholen
+>   (nach D18, siehe unten).
+> - **master hat sich seit dem geprüften Stand (a929391) geändert** (Account 1): D17/D20 Live-Abstimmung (ausgenommen);
+>   D18 „Chamäleon statt Waschbär“ (Folie 08, Notizen 08b–12, limbic-map.md – betrifft die „Waschbär“-Stellen in
+>   diesem Bericht); D19 Logo-Rätsel Folie 01 (ausgenommen); D21 Abgleich mit den Vorlesungsfolien
+>   (`fallstudie-1-brand-persona/abgleich-vorlesung.md` – betrifft G3 bzw. FRAGE-P-02, AUF-04, FAKT-12 und Top 5);
+>   D22 Umsetzung des Abgleichs (lief am 21.10. noch; Chamäleon ins Feld Tonalität, Limbic-Typ bleibt Hauptaussage).
+>   **Jeden Befund vor dem Umsetzen gegen den aktuellen Stand prüfen.**
+
 **Legende.** Schwere: **hoch** = gefährdet Note oder Vortrag · **mittel** = sichtbarer Mangel · **niedrig** = Feinschliff.
 Dringlichkeit (spätester sinnvoller Termin nach Tagesplan): **sofort** = Zwischenstand Di 20.10. · **Do 22.10.** = Synthese · **Fr 23.10.** = eigene Folien fertig · **Sa 24.10.** = Gesamtdeck · **So 25.10.** = Generalprobe · **Mo 26.10.** = Vortragstag · **nach Möglichkeit**.
 Herkunft: Datei und Zeile, Messung (Befehl) oder Screenshot. Aussagen aus Modellwissen sind als „Modellwissen“ gekennzeichnet. Modellbegriffe folgen der Standardliteratur; der Abgleich mit den Vorlesungsfolien ist Sache der Gruppe.
