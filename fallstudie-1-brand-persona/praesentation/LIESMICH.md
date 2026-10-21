@@ -4,7 +4,7 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 20.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+Stand: 21.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
 der zweiten Abschlussprüfung überarbeitet. Seit Sa, 17.10. von Account 1 übernommen: Ergebnisse von Bündel A
 eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3) und Limbic Map A3 (Folie 05),
 dazu die passenden Stichworte auf Folie 10 und die Verweise auf 11, B2, B7 und B8; offizielles HOLY-Logo auf
@@ -29,11 +29,19 @@ keine alten Stimmen dastehen; Abschnitt 6); nach einer Prüfung am 21.10. nachge
 Folie 08 → Nullen statt Beispieldaten, Kurzprüfung der Uhrzeit in beiden Richtungen, neues Prüfwerkzeug
 `werkzeuge/zeitfenster-e2e.mjs`). Es wirkt erst, wenn Yannick das Skript bei Google aktualisiert hat (Checkliste,
 Abschnitt 12 – der Punkt ist damit wieder dran).
+Seit Mi, 21.10. heißen die Begriffe des Steuerrads wie in der **Vorlesung** (Abgleich `../abgleich-vorlesung.md`,
+Befunde #15, #22, #27–#30, Freigabe Yannick): Mitte **„Markenkern“** (bis dahin „Markenkompetenz“), Feld
+**„Markeneigenschaften“** (bis dahin „Markenattribute“), Leitfragen in der Wir-Form; der Satz über dem Rad auf
+Folie 10 heißt **„Positionierung“** (bis dahin „Markenkern“). Limbic Types und Gewichte auf Folie 05 sind als eigene
+Erweiterung gekennzeichnet; B1 und die Notizen nennen die Warnung der Vorlesung zu KI-Personas (S. 78). Dazu zwei
+Entscheidungen von Yannick: Das **Chamäleon** steht im Feld Tonalität auf Folie 10 („frecher Kumpel · wandelbar ·
+Spaß“, wortgleich auf 08b), der **Limbic-Typ** bleibt die Hauptaussage auf Folie 05. Exporte am 21.10. neu erzeugt
+(`AUTOREN.md`, Abschnitt 21).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, mit Zuständigkeit und Frist).
 
-Fertige Ausgaben (Stand 20.10.2026, mit dem Rätselbild mit Logo auf Folie 01, dem Chamäleon auf Folie 08, den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
+Fertige Ausgaben (Stand 21.10.2026, mit dem Rätselbild mit Logo auf Folie 01, dem Chamäleon auf Folie 08 und im Rad auf Folie 10, den Begriffen der Vorlesung, den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
 den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `export/praesentation.pdf`
 (alle Folien inkl. Backup, Plan B), `export/uebersicht.png` (alle Folien auf einen Blick),
 `export/folien/<id>.png` (jede Folie einzeln im Endzustand, 1920 × 1080).
@@ -92,10 +100,10 @@ den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `
 | 01 | Einstieg: Welche Marke steckt dahinter? → Titel | A · Yannick | 0:45 |
 | 01b | (optional, ausgeblendet) Live-Wortwolke | A · Yannick | (0:45) |
 | 02 | Ausgangslage & Vorgehen (Steuerrad als Agenda) | A · Yannick | 1:00 |
-| 03 | Markenkompetenz | A · Yannick | 0:45 |
+| 03 | Markenkern (bis 21.10.2026: Markenkompetenz) | A · Yannick | 0:45 |
 | 04 | Brand Persona | A · Yannick | 1:20 |
 | 05 | Limbic Map | A · Yannick | 0:55 |
-| 06 | Repertory Grid → Markenattribute | B · Lukas | 1:20 |
+| 06 | Repertory Grid → Markeneigenschaften | B · Lukas | 1:20 |
 | 07 | Laddering → Markennutzen | B · Lukas | 1:30 |
 | 08 / 08b | Analogien + Live-Umfrage / Markentonalität (Aaker) | B · Lukas | 1:10 + 0:50 |
 | 09 / 09b | Kommunikationsanalyse / Markenbild | C · Elias | 1:00 + 0:55 |
@@ -321,8 +329,8 @@ Regeln: Texte in einfachen Anführungszeichen, nach jedem Eintrag ein Komma. Nac
 Konsole (F12) muss leer bleiben. Fakten über HOLY nur aus dem Recherche-Dossier (mit Quelle).
 
 **Anderer Markenname?** Ein längerer Name als „HOLY“ macht einige Titel länger: Getestet mit „TESTMARKE“
-bricht der Titel auf Folie 10 zweizeilig um, und die Beschriftung „Markenkompetenz“ im Rad wird kleiner
-(25 px). Nach einem Markenwechsel `werkzeuge/pruefen.mjs` laufen lassen (Abschnitt 9) und Titel ggf. kürzen.
+bricht der Titel auf Folie 10 zweizeilig um, und die Beschriftungen im Rad werden kleiner (gemessen am 20.10.2026
+mit der damaligen Mitte „Markenkompetenz“: 25 px; seit 21.10.2026 heißt sie „Markenkern“, zweizeilig). Nach einem Markenwechsel `werkzeuge/pruefen.mjs` laufen lassen (Abschnitt 9) und Titel ggf. kürzen.
 Der Textmarker hinter dem Markennamen im Titel wird aus der Primärfarbe immer hell berechnet.
 
 ## 9. Texte ändern (`index.html`)
@@ -333,7 +341,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 ```
 <!-- ══════════════════════════════════════════
      ║ FOLIE 06 · Repertory Grid
-     ║ Bündel B – Lukas Welker · Sollzeit 80 s · Feld: Markenattribute
+     ║ Bündel B – Lukas Welker · Sollzeit 80 s · Feld: Markeneigenschaften
      ║ VOR DEM 26.10. ÄNDERN / PRÜFEN: …
 ```
 
@@ -372,7 +380,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6, Plan C). Präsentationsrechner offline, Handys
    online: Stand-Adresse auf dem Handy öffnen und die Zahlen über „Werte“ eintragen (Abschnitt 6, Weg A, „Rückfall“).
    **Im PDF** gibt es keine Abstimmung: Folie 08 zeigt dort den Endzustand ohne QR-Code, und der Titel nennt schon
-   die Auflösung („… Chamäleon, kein Adler“; Export vom 20.10.2026). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C, Ergebnis mündlich nennen),
+   die Auflösung („… Chamäleon, kein Adler“; Export vom 21.10.2026). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C, Ergebnis mündlich nennen),
    dann weiterblättern. Eine zusätzliche PDF-Seite mit Frage und QR-Code ist nicht
    nötig (Entscheidung Yannick, 20.10.2026).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext als Handout drucken:
@@ -436,7 +444,7 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Person; Person mittig, Gesicht im oberen Drittel (die Folie schneidet quadratisch zu).“ Nacht-Variante
       (weicht von „Tageslicht“ ab): „natürliches Tageslicht“ → „Hallenbeleuchtung, durch ein Hallenfenster
       Nachthimmel mit Mond“, „Spätschicht“ → „Nachtschicht“ (Steckbrief §2: vor Spät- und Nachtschichten)
-- [ ] **Folie 03 – Markenkompetenz freigeben** (A · Yannick): Folie 03 zeigt seit 17.10. den Entwurf aus
+- [ ] **Folie 03 – Markenkern freigeben** (bis 21.10.2026 „Markenkompetenz“; A · Yannick): Folie 03 zeigt seit 17.10. den Entwurf aus
       `../markenkompetenz.md` (A1) und Folienentwurf 3 (Titel, Rolle „Herausforderer“, Kernkompetenz
       „Softdrinks zum Selbermixen“, Zeitleiste 2020–2026, Kennzahlen „über …“). Offen: Rollenbegriffe mit der
       Vorlesung abgleichen (sonst Variante B „Spezialist“, dann Folie 10 mitändern); Kund:innen- und
@@ -560,11 +568,28 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Befragung?“) und Satz auf Folie 10 (Schritt 5, „wandelbar wie ein Chamäleon“) bestätigen oder ändern.
       „wandelbar“ füllt die Stichwort-Spalte der Karte fast ganz – ein kürzeres Wort wäre ruhiger, ist aber
       deine Entscheidung. Danach „Vorschlag“ in Kasten und Notizen durch „Begründung: Elias Knauber“ ersetzen
-- [ ] **Folie 10 – Chamäleon im Rad? Entscheidung** (A · Yannick, mit Elias und Lukas): Das Feld Tonalität
-      ist unverändert („frecher Kumpel · Spaß · Zugehörigkeit“, wortgleich mit 8b), das Chamäleon steht nur im
-      Sprechtext Schritt 5. A) so lassen (bei knapper Zeit die 4 Wörter in Schritt 5 streichen) oder B) ins Rad,
-      z. B. „frecher Kumpel · wandelbar · Spaß“ – dann zuerst 8b „Ins Steuerrad“ wortgleich ändern (B · Lukas);
-      Folie 10 liegt schon bei ca. 49 Wörtern (Kasten „FOLIE 10“, `AUTOREN.md` Abschnitt 18)
+- [x] **Folie 10 – Chamäleon im Rad: entschieden** (Yannick, Mi, 21.10.2026: „Entscheidungen beide ja“, Variante B):
+      Feld Tonalität = **„frecher Kumpel · wandelbar · Spaß“** (bis dahin „frecher Kumpel · Spaß ·
+      Zugehörigkeit“); „Zugehörigkeit“ bleibt auf 08b. Auf 08b steht die Zeile „Ins Steuerrad“ wortgleich (neue
+      Übergabezeile über Emotionen, Beziehung und Erlebnisse). Sprechtext Folie 10 Schritt 5: „Die Analogien zeigen
+      einen frechen Kumpel – wandelbar wie ein Chamäleon, mit viel Spaß.“ Wortbudget Folie 10 unverändert ca. 49
+      Wörter (Kasten „FOLIE 10“, `AUTOREN.md` Abschnitte 18 und 21)
+- [x] **Folie 05 – Limbic-Typ bleibt Hauptaussage: entschieden** (Yannick, Mi, 21.10.2026): „Hedonisten“ bleibt rechts
+      groß; Typen und Gewichte sind als eigene Erweiterung gekennzeichnet (Fußzeile, Notizen – die Vorlesung zeigt
+      sie nicht, Stenger, S. 69–71, 93; Befund #22)
+- [ ] **Lukas: Begriffe auf 06 und 08b prüfen** (B · Lukas, seit 21.10.2026): Folie 06 – Kopfzeile und Ergebnis
+      heißen jetzt „Markeneigenschaften“ wie in der Vorlesung, der Titel sagt noch „Drei Attribute …“ und der
+      Sprechtext Schritt 3 „kein Attribut“, „Die drei Attribute“ – angleichen (z. B. „Drei Eigenschaften …“) oder
+      einmal „in der Literatur auch Markenattribute“ sagen; zwei Sätze in den Notizen klingen, als gäbe es die
+      Kurzinterviews schon (Kasten „FOLIE 06“). Folie 07: Sprechtext Schritt 3 „… die Positionierung ab“ laut lesen.
+      Folie 08b – neue Zeile „Ins Steuerrad: frecher Kumpel · wandelbar · Spaß“ (Übergabe an Folie 10) bestätigen;
+      „Spaß“ steht damit zweimal auf der Karte, Vorschlag für Schritt 4 im Kasten „FOLIE 08b“; die Folie hat jetzt
+      41 Wörter (Warnung, kein Fehler) – kürzen, wo du willst
+- [ ] **Elias: Folie 10 und 11 laut lesen** (C · Elias, seit 21.10.2026): Folie 10 – Mitte „Markenkern“, Band
+      „Positionierung · aus der Identität“, Sprechtext Schritt 1, 3, 5 und 7 neu (gleiche Wortzahl); Rückfragen
+      zu Markenkern/Positionierung, Abgrenzung (S. 92) und Identität/Image kennen. Folie 11 – Titel „klare
+      Positionierung, zwei Lücken, ein Bruch“, Sprechtext Schritt 0 „Die Positionierung ist klar: …“ – „klar“
+      statt deinem „stark“ nur, weil „starke Positionierung …“ in Editorial zweizeilig umbricht; du entscheidest
 - [ ] **Lukas: Analogie-Befragung/Notizen Folie 08 abgleichen** (B · Lukas): Tier unserer Analyse ist jetzt das
       Chamäleon (vorher Waschbär nach Dossier 6.7). Mit den Antworten aus Prompt P11 und den Interviews
       abgleichen (offen gefragt, Tiere nicht vorgeben), Sprechtext „Auflösung“ und „Kontrast“ prüfen, Aaker-Profil
@@ -588,7 +613,9 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       Folie 02 ändern; Kotler (Rollen auf Folie 03) mit geprüfter Auflage ergänzen
 - [ ] Fachbegriffe und Modelle mit den Vorlesungsfolien abgeglichen (Steuerrad nach Esch, Limbic Map nach
       Häusel, Repertory Grid nach Kelly, Laddering nach Reynolds & Gutman, Brand Personality nach Aaker)
-      (alle, je eigene Folien)
+      (alle, je eigene Folien) – Abgleich liegt vor (`../abgleich-vorlesung.md`); umgesetzt am 21.10.2026:
+      Steuerrad-Begriffe (#27–#29), Rückfragen Identität/Image (#30), KI-Personas (#15), Limbic Types (#22);
+      offen u. a. Literatur und Fußzeilen (#4, #11–#14, nicht freigegeben)
 - [ ] Generalprobe mit Referentenuhr: Ziel ≤ 15:00 (Plan 14:00), jede Person kennt ihre Folien und
       Übergaben; die Live-Umfrage auf Folie 08 mit Stoppuhr testen (Sollzeit der Folie 1:10) – mit `runde: 'probe'`
       und echten Handys, einmal auch mit abgeschaltetem WLAN am Laptop (Pille „offline“, weiter mit Plan C; diese
@@ -603,9 +630,13 @@ Vorschlag nach dem Arbeitsplan, die Gruppe bestätigt; Kasten „FOLIE xx“ in 
       (Seite 1: Titelfolie mit Logo auf der Dose und „Dose fiktiv“), 23 Folienbilder, Übersicht mit Stand
       20.10.2026. Bewusst **vor** der Antwort des Betreuers erzeugt (Logo-Klärung offen, siehe oben) – lehnt er
       ab, nach dem Rückfall neu erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
+- [x] **Exporte mit den Begriffen der Vorlesung neu erzeugt** (Mi, 21.10.2026): PDF 22 Seiten (ohne 01b), 23
+      Folienbilder (geändert: 02, 03, 05, 06, 08b, 10, 11, 12, B1, B2), Übersicht mit Stand 21.10.2026 – Markenkern,
+      Markeneigenschaften, Wir-Form, Positionierung, Chamäleon im Feld Tonalität (`AUTOREN.md`, Abschnitt 21)
 - [ ] `export/praesentation.pdf` neu erzeugt (Abschnitt 11) und auf USB-Stick (C · Elias) – die Dateien in
-      `export/` sind am 20.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
-      Folie 12, Illustrationen auf 01 (mit Logo auf der Dose) und 04, Chamäleon auf 08, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
+      `export/` sind am 21.10. neu erzeugt (Stand mit A1–A3 als Entwurf und Gründerbefragung, Logo auf
+      Folie 12, Illustrationen auf 01 (mit Logo auf der Dose) und 04, Chamäleon auf 08 und 10, Begriffen der
+      Vorlesung, Beispieldaten gekennzeichnet); nach den Freigaben und dem Eintragen der echten Ergebnisse PDF, `uebersicht.png` und
       `export/folien/` noch einmal erzeugen (Befehle: `AUTOREN.md`, Abschnitt 15)
 
 **Am Präsentationsrechner (vorher testen, möglichst im Hörsaal)**

@@ -549,8 +549,9 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
    7. f08b – ERGEBNISKARTE „INS STEUERRAD“
    Die Karte erscheint samt Überschriften im letzten Schritt (ein leerer
    Rahmen las sich wie „hier fehlt etwas“); die Inhalte gleiten gestaffelt
-   nach. Der Platz bleibt reserviert. Drei Blöcke: Emotionen
-   (untereinander, mit Punkt davor), Beziehung (kursiv), Erlebnisse (Fließtext).
+   nach. Der Platz bleibt reserviert. Oben die Übergabezeile (seit
+   21.10.2026), darunter drei Blöcke: Emotionen (untereinander, mit Punkt
+   davor), Beziehung (kursiv), Erlebnisse (Fließtext).
    --------------------------------------------------------------------------- */
 #f08b .g4t-ergebnis {
   display: flex;
@@ -561,6 +562,27 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
 #f08b .g4t-karte { gap: var(--abstand-4); padding: var(--karte-polster); }
 #f08b .g4t-kicker { display: inline-flex; align-items: center; gap: var(--abstand-2); }
 #f08b .g4t-kicker .icon { width: 30px; height: 30px; }
+/* Übergabezeile „Ins Steuerrad“ (seit 21.10.2026): genau die Stichworte des
+   Felds Tonalität auf Folie 10 – gleiche Gestaltung wie „Ins Steuerrad ·
+   Markenbild“ auf f09b (fett, Trenner „·“, Stichworte nicht umbrechen) */
+#f08b .g4t-uebergabe { display: flex; flex-direction: column; gap: var(--abstand-1); }
+#f08b .g4t-steuerrad {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-text-min);   /* 28 px: bleibt in allen Themen einzeilig */
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--f-text);
+}
+#f08b .g4t-steuerrad li { white-space: nowrap; }
+#f08b .g4t-steuerrad li + li::before {
+  content: "·";
+  margin: 0 var(--abstand-1);
+  color: var(--f-text-2);
+}
 #f08b .g4t-block {
   display: flex;
   flex-direction: column;

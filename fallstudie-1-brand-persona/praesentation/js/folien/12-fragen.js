@@ -3,7 +3,8 @@
    -----------------------------------------------------------------------------
    Baut die Sprunglisten „Methoden“, „Ergebnisse“ und „Backup“ aus dem JSON
    der Folie (<script class="daten"> in index.html, Folie 12), setzt den
-   Kern-Satz von Folie 10 in die Fazit-Zeile oben rechts (eine Quelle für
+   Satz der Positionierung von Folie 10 (Daten „positionierung“, bis
+   21.10.2026 „kern“) in die Fazit-Zeile oben rechts (eine Quelle für
    Folie 10, 11 und 12; fehlt Folie 10, bleibt der Text im HTML) und koppelt
    die Listen mit dem Steuerrad (Baustein der Engine, Modus „menue“):
      • Klick oder Tab + Enter auf einen Eintrag springt zur Folie.
@@ -24,7 +25,8 @@
     return treffer;
   }
 
-  /* Kern-Satz aus den Daten von Folie 10 lesen (<script class="daten"> → „kern“) */
+  /* Positionierung aus den Daten von Folie 10 lesen (<script class="daten"> →
+     „positionierung“, alter Name „kern“; data-g6d="kern" ist ein technischer Name) */
   function kernEinsetzen(ctx) {
     var platz = ctx.folie.querySelector('[data-g6d="kern"]');
     var f10 = folieSuchen('f10');
@@ -32,7 +34,8 @@
     var skript = f10.element.querySelector(':scope > script.daten');
     var daten = null;
     try { daten = skript ? JSON.parse(skript.textContent) : null; } catch (e) { daten = null; }
-    if (daten && daten.kern) platz.textContent = ctx.util.markeText(daten.kern);
+    var satz = daten && (daten.positionierung || daten.kern);
+    if (satz) platz.textContent = ctx.util.markeText(satz);
   }
 
   /* Einen Sprung-Knopf bauen: <li><button>Nummer Name</button></li> */

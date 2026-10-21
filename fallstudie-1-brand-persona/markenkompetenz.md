@@ -1,7 +1,7 @@
 # Markenkompetenz: Wer ist HOLY? (A1)
 
 **Bündel A** · Folie 03 (45 s) · Zentrum des Markensteuerrads, Grundlage für Folie 10 (Synthese C2) ·
-Stand Mo, 19.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet, Gründerbefragung eingearbeitet (Abschnitt 9);
+Stand Mo, 19.10.2026, Begriffe Mi, 21.10.2026 · **Entwurf, nach der Prüfrunde überarbeitet, Gründerbefragung eingearbeitet (Abschnitt 9);
 Prüfung durch Yannick offen**
 
 > **So ist die Ausarbeitung zu lesen**
@@ -23,9 +23,16 @@ Prüfung durch Yannick offen**
 >   f03, f06, f10, f11 (`praesentation/index.html`, Arbeitskopie auf `master`), `persona-steckbrief.md`,
 >   `limbic-map.md`, `dossier-buendel-b.md`. Am 19.10.2026 um Vermerke aus der Gründerbefragung ergänzt (Workflow
 >   D14, KI-Nachweis 67; Übersicht in Abschnitt 9).
-> - **Kein Vorlesungsmaterial vorhanden:** Markensteuerrad nach Esch, Wettbewerbsrollen nach Kotler und
->   Markteintritt („Pionier“) stammen aus der Standardliteratur (MW; Esch zusätzlich an einer Präsentation von
->   ESCH. The Brand Consultants nachgelesen, W+). Bitte mit den Vorlesungsfolien abgleichen.
+> - **Kein Vorlesungsmaterial vorhanden** (Stand bis 19.10.2026): Markensteuerrad nach Esch, Wettbewerbsrollen nach
+>   Kotler und Markteintritt („Pionier“) stammen aus der Standardliteratur (MW; Esch zusätzlich an einer Präsentation
+>   von ESCH. The Brand Consultants nachgelesen, W+).
+> - **Begriffe seit Mi, 21.10.2026 nach der Vorlesung** (Abgleich Vorlesung, Befunde #27/#28, freigegeben von Yannick;
+>   `abgleich-vorlesung.md`): Das Feld in der Mitte des Steuerrads heißt wie in der Vorlesung **„Markenkern“**
+>   (Stenger, S. 90–91), Leitfrage **„Wer sind wir?“** (S. 88). Die vier Teilaspekte in Abschnitt 4 stehen wortgleich
+>   auf S. 88. Bei Esch selbst heißt die Mitte „Markenkompetenz“ (W+, siehe Abschnitt 4) – daher Titel und Dateiname
+>   dieser Ausarbeitung (A1). Der Satz über dem Rad auf Folie 10 („Genuss mit gutem Gewissen“) heißt seitdem
+>   Positionierung (S. 87, 94), nicht mehr Markenkern. Offen: Wettbewerbsrollen nach Kotler (die Vorlesung vergibt
+>   keine Rollen, Befund #31) und das Asset „HOLY Squad“ (#35) – beide nicht freigegeben.
 
 ---
 
@@ -235,31 +242,33 @@ Warum nicht nur „zuckerfreie Softdrinks“ (wie bisher in f03 und f10)?
   des Umsatzes 2024 ✔ [65]). **Gegenüber Dosen-Energy und Cola (W1–W3, W5)** unterscheidet das Format: selbst
   gemixt, dosierbar, im Vorrat günstig. **Nicht gegenüber allen:** waterdrop (W4) ist Format-Zwilling (Würfel,
   Wasser + Konzentrat, ✎ [7, 66, 116]), ESN deckt alle HOLY-Linien ab (Sticks, Dose, Sirup, ✔ [67, 117]).
-- Die Markenkompetenz im Steuerrad beschreibt die Soll-Identität (Esch zeigt sein Beispiel als
-  „Soll-Markensteuerrad“, W+), keine Alleinstellung. Belegte Unterschiede zu waterdrop (Dossier 5.2): Pulver und
+- Der Markenkern (bei Esch: Markenkompetenz) im Steuerrad beschreibt die Soll-Identität (Esch zeigt sein Beispiel als
+  „Soll-Markensteuerrad“, W+; die Vorlesung zeigt das zusammengeführte Rad dagegen als „IST-Identität – Erster Entwurf
+  zur Abstimmung“, Stenger, S. 91), keine Alleinstellung; abgrenzen soll die Positionierung (S. 92). Belegte Unterschiede zu waterdrop (Dossier 5.2): Pulver und
   Syrup statt Brausewürfel; 160 mg Koffein pro Portion ✔ [56] statt ≈ 90 mg (Microenergy); HOLY ohne Abo
   ✔ [30, 48], waterdrop mit Abo (waterdrop-Zeile ✎ [7, 66, 116]).
 - „zuckerfreie Pulver“ (bisher im Sprechtext von f03) ist seit dem Syrup (04/2026) zu eng. „Zum Selbermixen“ deckt
   Pulver und Syrup ab (Dossier Kap. 1, Positionierung).
 
-**Feld Markenkompetenz im Steuerrad nach Esch** (W+: ESCH. The Brand Consultants, „Markentools für Markenlexikon“,
-S. 4–5; sonst MW): Das Zentrum beantwortet „Wer ist die Marke?“ mit vier Teilaspekten. So füllen wir sie:
+**Feld Markenkern im Steuerrad** (Vorlesung: Stenger, S. 88–91, seit 21.10.2026 unser Feldname; bei Esch
+„Markenkompetenz“, W+: ESCH. The Brand Consultants, „Markentools für Markenlexikon“, S. 4–5; sonst MW): Das Zentrum
+beantwortet „Wer sind wir?“ (Stenger, S. 88; bei Esch „Wer ist die Marke?“) mit vier Teilaspekten. So füllen wir sie:
 
-| Teilaspekt bei Esch (S. 4) | HOLY | Beleg |
+| Teilaspekt bei Esch (S. 4) = Stenger, S. 88 | HOLY | Beleg |
 |---|---|---|
 | „Markenhistorie und die Zeitdauer der Marke im Markt“ | Zeitleiste 2020–2026; seit 2021 am Markt | Abschnitt 1 ✔/✎ |
 | „Herkunft der Marke“ | Berlin, drei Freunde, „Wohnzimmer“/„WG“ | Dossier 2.1, 2.2 ✔; [5, 13] W+ |
 | „Rolle der Marke im Markt“ | Herausforderer (Kriterium Angriff, Bezugsmarkt Softdrinks) | Abschnitt 3, **H** |
-| „zentrale Markenassets“ | Kandidat: die Community „HOLY Squad“ (aus 5.000 Tester:innen entstanden) – erst nach dem Abgleich mit der Vorlesung eintragen | Dossier 2.1 ✔ [5, 24]; Zuordnung **H** |
+| „zentrale Markenassets“ | Kandidat: die Community „HOLY Squad“ (aus 5.000 Tester:innen entstanden) – S. 88 nennt den Teilaspekt; Eintragen in Folie 03/10 = Befund #35, am 21.10.2026 nicht freigegeben | Dossier 2.1 ✔ [5, 24]; Zuordnung **H** |
 
 Die Kernkompetenz selbst ist bei Esch kein eigener Teilaspekt, sie steckt im Kompetenz-Satz. Sein Beispiel (Asbach
 Uralt, S. 5): „Die original deutsche Premium-Spezialität … aus Rüdesheim am Rhein mit der langen Tradition seit 1892“.
 **Satz für die Synthese C2 nach diesem Muster (H):** *„Berliner Herausforderer für zuckerfreie Softdrinks zum
 Selbermixen, seit 2021 am Markt.“* Folie 03 braucht den Satz nicht, weil die Zeitleiste Herkunft und Zeit zeigt.
 
-Die vier äußeren Felder (Attribute, Nutzen, Tonalität, Markenbild) müssen zum Zentrum passen. Für die Synthese
+Die vier äußeren Felder (Markeneigenschaften, Nutzen, Tonalität, Markenbild) müssen zum Zentrum passen. Für die Synthese
 (C2, Do 22.10.) heißt das:
-- **Attribute und Nutzen (Bündel B):** prüfen, ob die Befragten „zuckerfrei“, „Geschmack/Sorten“ und „selbst mixen,
+- **Markeneigenschaften und Nutzen (Bündel B):** prüfen, ob die Befragten „zuckerfrei“, „Geschmack/Sorten“ und „selbst mixen,
   günstig pro Portion“ als Eigenschaften nennen. Zwei Fälle:
   - Das Format kommt **nicht** vor: Die Kernkompetenz ist nur Selbstbild.
   - Das Format kommt **als Hürde** vor (so in den Beispieldaten von Folie 6: „selbst anrühren“ unterscheidet am
@@ -271,7 +280,7 @@ Die vier äußeren Felder (Attribute, Nutzen, Tonalität, Markenbild) müssen zu
   bei ihm als Teil des Attributs Geschmack (Intensität selbst bestimmen) und als emotionaler Nutzen: Individualität,
   weil man selbst entscheidet, wie viel, wie intensiv und welche Sorte (laut Gründer Mathias Horsch, Befragung
   10/2026, GB). Titel und Kernkompetenz bleiben; die fünf Linien belegt Dossier 3.1 ohne GB. Für die Synthese
-  merken: „zum Selbermixen“ steht im Rad als Kompetenz (DR) und gegebenenfalls als Attribut oder Nutzen (GB). Genau
+  merken: „zum Selbermixen“ steht im Rad im Markenkern (DR; bis 21.10.2026 „Kompetenz“) und gegebenenfalls als Attribut oder Nutzen (GB). Genau
   dort liegt die mögliche Hürde. Ob Individualität (Selbstbild) und Hürde „selbst anrühren“ (Fremdbild) sich
   widersprechen, bewerten wir erst mit Lukas' echten RG-Daten. Bis dahin geben wir „Individualität“ nicht an Lukas
   weiter.
@@ -406,7 +415,8 @@ in `folienentwuerfe.md`).
   (5 Einträge) und Kennzahlen freigeben
 - [ ] Rollendefinition in Kotler/Keller, *Marketing-Management* (Kapitel zum Wettbewerb), und in der Vorlesung
   nachlesen: Herausforderer nach Verhalten oder nach Marktanteil? Danach Variante A (so) oder B (Chips tauschen);
-  „Pionier“ und Feld „Markenkompetenz“ (Esch, inkl. „zentrale Markenassets“) abgleichen; danach `rollen` festlegen
+  „Pionier“ abgleichen; danach `rollen` festlegen. Feld abgeglichen am 21.10.2026: „Markenkern“ (Stenger,
+  S. 88–91, Teilaspekte wortgleich S. 88); die Vorlesung vergibt keine Wettbewerbsrollen (Befund #31, offen)
 - [ ] Jahresabschluss 2024 (und 2023) im Unternehmensregister abrufen; „profitabel“ danach neu bewerten (Abschnitt 5)
 - [ ] Wettbewerbsset W1–W5 und Rahmen (Energy- oder Softdrink-Marke) in der Gruppe beschließen und hier eintragen
   (`dossier-buendel-b.md` Abschnitt 10, Punkt 1); den Rahmen auf Folie 3, 4 und 6 einheitlich nennen. Nach der
@@ -428,7 +438,7 @@ in `folienentwuerfe.md`).
 - [ ] Web-Folie f03 austauschen (Abschnitt 6: Daten, Titel-Ersatztext, Fußzeile mit Legende, Label „Marktrolle“,
   ggf. Überschrift „Laut Unternehmen“, Notizen und Belegabsatz komplett neu; Branch von Account 2 beachten)
 - [ ] Backup-Bezug klären (mit Elias und Account 2): B1 enthält nur die KI-Methodik. Eigene Backup-Folie
-  „Markenkompetenz: Rollen, Zahlenreihen“ (z. B. B1b) oder Verweis auf diese Datei
+  „Markenkern: Rollen, Zahlenreihen“ (z. B. B1b) oder Verweis auf diese Datei
 - [x] (17.10., Claude) Grafik `grafiken/folie-03-markenkompetenz.svg` + PNG für Backup und PowerPoint erstellen
 - [x] (17.10., Claude) Beim Einfügen in `folienentwuerfe.md`: Status von Folie 3 auf „Entwurf (17.10.) – Prüfung durch Yannick offen“;
   in Folie 2, Rückfrage 2, „Geschäftsbericht“ durch „Press Kit, Gründer-Interviews“ ersetzen (wir nutzen keinen);

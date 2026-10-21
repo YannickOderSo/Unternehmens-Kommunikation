@@ -1,7 +1,7 @@
 # Brand Persona „Marco, 28“ – Steckbrief (A2)
 
 **Bündel A** · Folie 04 · Grundlage für Folie 05 (Limbic Map) und die simulierten Befragten von Bündel B ·
-Stand Mo, 19.10.2026 · **Entwurf, Prüfung durch Yannick offen**
+Stand Mo, 19.10.2026, Hinweise aus dem Abgleich mit der Vorlesung Mi, 21.10.2026 · **Entwurf, Prüfung durch Yannick offen**
 
 > **So ist der Steckbrief zu lesen**
 > - **D** = Daten mit Quelle · **A** = Annahme mit Begründung.
@@ -19,6 +19,13 @@ Stand Mo, 19.10.2026 · **Entwurf, Prüfung durch Yannick offen**
 >   Schritt gab es keine neue Websuche. Name, Wohnort, Beruf, Alltag und Zitat sind Vorschläge von Claude, also
 >   Annahmen, und von der Gruppe zu prüfen. Am 19.10.2026 um Angaben aus der Gründerbefragung ergänzt
 >   (KI-Nachweis 67, keine Websuche).
+> - **KI und echte Kundenstimmen** (Abgleich Vorlesung, Befund #15, Mi, 21.10.2026): Die Vorlesung warnt, eine
+>   generierte Persona beschreibe Trainingsdaten, nicht die eigenen Kunden; KI beschleunige die Ausarbeitung, ersetze
+>   aber nicht das Gespräch mit echten Kunden (Stenger, S. 78). Für diesen Steckbrief heißt das: Name, Wohnort, Beruf,
+>   Alltag und Zitat sind KI-Vorschläge (Annahmen), die Zahlen Kategoriedaten, HOLY-spezifisch nur Gründeraussagen.
+>   Eigene Kundengespräche fehlen noch; die Kundensicht kommt erst mit den Bewertungen (Abschnitt 6, offene Punkte) und Lukas'
+>   Kurzinterviews. Auch die simulierten Befragten von Bündel B, die auf dieser Persona beruhen, liefern nur
+>   Hypothesen (B1 in der Präsentation, Notizen Folie 02 und 04).
 > - **Persona-Richtung:** Kern-Persona (heutige Kernkundschaft) nach Dossier 4.3, ab 18 Jahren. Die
 >   Wachstums-Persona „Lena“ steht im Backup (Abschnitt 5). Bitte in der Gruppe bestätigen.
 
@@ -59,7 +66,7 @@ will. Die Fassung für Lukas vom 16.10. trug noch „Kernzielgruppe“.
 | **Kaufverhalten** | **Anlass:** vor Spät- und Nachtschichten, ab und zu vor dem Laufen · **Frequenz:** mehrmals pro Woche · **Kanal:** HOLY online, 50er-Pulverdose auf Vorrat; im Notfall die kleinere Dose bei Rewe oder Edeka · **Preis:** rechnet in Preis pro Portion, nutzt Mix & Match und SQUAD Rewards · **Kriterien:** Geschmack, kein Zucker, Wirkung, Preis · **Markentreue:** bleibt bei HOLY, probiert neue Sorten und Limited Drops, wenn Freunde oder Creator sie empfehlen · **Infoquellen:** Bewertungen, YouTube | **D (HOLY):** Getrunken wird „in der Regel gar nicht beim Gaming“, sondern z. B. im Schichtdienst, als Ersatz für Red Bull oder Monster [24, 00:09:32–00:10:07]. Laut Press Kit ist das Pulver auch für Sport und Training gedacht [13]. **D (Kategorie):** 43,8 % trinken mindestens zwei- bis dreimal pro Woche (Kantar 2023). Laut Gründer sind die Heavy User „25 Plus“ [24, 00:33:02]. **D (Angebot):** online ab 0,80 € pro Portion, nur in der 50er-Dose [1]; Mix & Match bis −20 % [48]; seit 01/2025 bei Rewe und Globus, Edeka nur in einzelnen Märkten belegt [8, 9]; fertige Dosen gibt es nicht (Dossier 3.1). **A (Preisbewusstsein):** abgeleitet aus HOLYs Preis- und Rabattmodell (Dossier 3.2). Statista CI stützt das nur schwach: 30 % sorgen sich, ihre Rechnungen nicht zahlen zu können (Ø 25 %); beim Sparen liegen sie im Ø (52 % zu 51 %). **A (Kriterien):** aus Kundenstimmen [88, 89] (schwache Quelle). Die Kaufgründe laut Gründerbefragung vergleichen wir erst nach Lukas’ Codierung (Abschnitt 6). **D (Neues):** 42 % gehören zur frühen Mehrheit, 15 % sind Innovatoren oder Early Adopters (Ø 10 %). **D (Infoquellen):** 52 % halten Online-Bewertungen für sehr hilfreich (Ø 50 %). An Werbung erinnern sie sich am häufigsten von Videoportalen (50 %, Ø 41 %) und aus sozialen Medien (46 %, Ø 39 %). Alle Werte: Statista CI 2025. |
 | **Mediennutzung** | **Plattformen:** YouTube, Instagram, TikTok; Twitch und Discord nur am Rand · **Formate:** Videos, Podcasts, Musikstreaming · **Nutzungsdauer:** unbekannt · **Tageszeiten:** in Pausen, nach der Schicht, auch nachts · **Creator:** Formate wie „7 vs. Wild“ | **D (Kategorie):** regelmäßig genutzt werden YouTube von 73 % (Ø 63 %), Instagram von 71 % (Ø 58 %), TikTok von 58 % (Ø 41 %) und Twitch von 18 % (Ø 10 %). In den letzten 4 Wochen haben 76 % Videoinhalte genutzt (Ø 66 %), 38 % Podcasts (Ø 30 %) und 56 % digitale Musik (Ø 47 %). Alle Werte: Statista CI 2025. Der HOLY-Discord hat rund 72.000 Mitglieder [21]. **Unbekannt:** Zur Nutzungsdauer gibt es keine Quelle; dafür die ARD/ZDF-Medienstudie prüfen (`persona-datenerhebung.md`). **A:** Die Tageszeiten folgen aus dem Schichtrhythmus. HOLY war Hauptsponsor von „7 vs. Wild“, Staffel 5 [35]. |
 | **Psychografie** | **Werte:** Beziehung und Sicherheit wie alle; Erfolg etwas wichtiger, Spaß wie im Ø · **Lebensstil:** gesellig, zockt, joggt · **Ziele:** die Schicht gesund durchhalten, fit bleiben, irgendwann Schichtleiter · **Pains:** Müdigkeit beim Schichtwechsel, Zucker und Kalorien klassischer Energy Drinks, Geldsorgen · **Gains:** Geschmack ohne Zucker, günstige Portion, Abwechslung, Gemeinschaft („Squad“) · **Einstellung zur Kategorie:** will gesünder leben, aber es muss schnell gehen | **D (Werte):** Wichtig sind eine glückliche Beziehung (53 %, wie im Ø) und Sicherheit (43 %, wie im Ø). „Erfolgreich sein“ nennen 27 % (Ø 22 %), „Spaß haben“ 38 % (Ø 36 %). **D (Hobbys):** Freunde treffen 50 % (Ø 45 %), Videospiele 41 % (Ø 29 %), Technik 34 % (Ø 27 %). **D (Einstellung):** 50 % versuchen, sich gesund zu ernähren (Ø 53 %). 30 % sagen, Essen müsse bequem und schnell sein (Ø 25 %). Alle Werte: Statista CI 2025. **A (Ziele, Pains, Gains):** abgeleitet aus Kundenstimmen [88, 89], dem Schichtalltag und den Werten oben. Die vier Gains decken sich mit dem Selbstbild laut Horsch 2026 (GB); zwei davon (Abwechslung, „Squad“) stammen selbst aus dem Markenauftritt. Das zeigt, dass die Persona zur Markenidentität passt, nicht wie Kund:innen denken. Die Kundensicht ist offen (Bewertungen, Lukas’ Interviews). Gaming ist nur ein Hobby, kein Trinkanlass [24]. |
-| **Limbic Type** | Hedonisten (Hypothese, knapp vor Offene); Startwert aus Dossier 4.4 war „Abenteurer mit Hedonisten-Anteil“ | **A:** Einordnung in A3 am 17.10.2026, Details und Belege in [`limbic-map.md`](limbic-map.md) (Gewichte B 30 / D 30 / S 40, Heuristik des Teams). Für die Abenteurer-Motive (Risikofreude, Autonomie, Impulsivität, Rebellion) gibt es keine Daten; die Abenteuer-Hinweise stammten aus dem Markenauftritt (Zirkelschluss). Modellbegriffe nach Häusel, bitte mit der Vorlesung abgleichen. |
+| **Limbic Type** | Hedonisten (Hypothese, knapp vor Offene); Startwert aus Dossier 4.4 war „Abenteurer mit Hedonisten-Anteil“ | **A:** Einordnung in A3 am 17.10.2026, Details und Belege in [`limbic-map.md`](limbic-map.md) (Gewichte B 30 / D 30 / S 40, Heuristik des Teams). Für die Abenteurer-Motive (Risikofreude, Autonomie, Impulsivität, Rebellion) gibt es keine Daten; die Abenteuer-Hinweise stammten aus dem Markenauftritt (Zirkelschluss). Modellbegriffe nach Häusel, bitte mit der Vorlesung abgleichen. **Typ und Gewichte sind eine eigene Erweiterung:** Die Vorlesung zeigt keine Limbic Types und keine Prozentgewichte (Stenger, S. 69–71, 93; Abgleich Vorlesung #22, 21.10.2026). |
 
 ---
 
@@ -168,7 +175,10 @@ Selbstauskunft; Lena bleibt eine Hypothese (H).
   de.statista.com (Studien-ID 120400); Abruf 16.10.2026.
 - Eurostat (2026): Beschäftigte in Schichtarbeit nach Geschlecht und Alter (lfsa_ewpshi), Deutschland 2025, Männer
   25–49 J.; von Claude am 15.10.2026 an der Eurostat-API geprüft (KI-Nachweis, D06).
-- Gruppe Nymphenburg / Häusel: Limbic Map (Modellbegriffe nach Standardliteratur, mit der Vorlesung abgleichen).
+- Gruppe Nymphenburg / Häusel: Limbic Map (Modellbegriffe nach Standardliteratur, mit der Vorlesung abgleichen;
+  Limbic Types stehen nicht in der Vorlesung, Stenger, S. 69–71, 93).
+- Stenger, D.: Unternehmenskommunikation, Vorlesungsfolien, Hochschule Kaiserslautern, S. 78 („KI und Persona:
+  Chancen und Trugschlüsse“) – `../unterlagen/Stenger Folien.pdf`, ohne Jahr.
 
 **HOLY und Umfeld** (Nummern = Anhang B des Recherche-Dossiers)
 - [1] de.holy.com, Preise · [4] deutsche-startups.de, Interview Horsch, 10/2023 · [7] Trending Topics, 08/2024 ·

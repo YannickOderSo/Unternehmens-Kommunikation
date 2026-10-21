@@ -522,11 +522,22 @@
     });
   }
 
-  /* Ergebniskarte: Markenemotionen, Markenbeziehung, Markenerlebnisse.
-     Fehlt ein Eintrag in den Daten, entfällt sein Block. */
+  /* Ergebniskarte: Übergabezeile „Ins Steuerrad“ (seit 21.10.2026, Daten
+     „steuerrad“ = Stichworte des Felds Tonalität auf Folie 10, wortgleich),
+     darunter Markenemotionen, Markenbeziehung, Markenerlebnisse.
+     Fehlt ein Eintrag in den Daten, entfällt sein Block bzw. die Zeile. */
   function ergebnisFuellen(ctx) {
     var util = ctx.util;
     var d = ctx.daten || {};
+    var zeile = ctx.folie.querySelector('[data-g4t="steuerrad"]');
+    if (zeile) {
+      if (Array.isArray(d.steuerrad) && d.steuerrad.length) {
+        d.steuerrad.forEach(function (w) { util.element('li', null, util.markeText(w), zeile); });
+        zeile.setAttribute('aria-label', 'Ins Steuerrad, Feld Markentonalität: ' + d.steuerrad.map(util.markeText).join(', '));
+      } else {
+        zeile.remove();
+      }
+    }
     var felder = {
       emotionen: Array.isArray(d.emotionen) && d.emotionen.length,
       beziehung: !!d.beziehung,

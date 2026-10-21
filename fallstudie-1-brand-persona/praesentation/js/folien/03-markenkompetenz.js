@@ -1,5 +1,7 @@
 /* =============================================================================
-   js/folien/03-markenkompetenz.js – Skript für Folie f03 „Markenkompetenz“
+   js/folien/03-markenkompetenz.js – Skript für Folie f03 „Markenkern“
+   (Feld in der Mitte des Steuerrads; bis 21.10.2026 „Markenkompetenz“, daher der
+   Dateiname – Vorlesungsbegriff „Markenkern“: Stenger, S. 90–91)
    -----------------------------------------------------------------------------
    Baut aus den Daten der Folie (<script type="application/json" class="daten">
    in index.html, Folie 03):

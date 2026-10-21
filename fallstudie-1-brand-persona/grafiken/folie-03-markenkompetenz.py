@@ -1,6 +1,10 @@
-"""Erzeugt die Grafik für Folie 3: Markenkompetenz von HOLY (Zeitleiste, Kennzahlen, Marktrolle).
+"""Erzeugt die Grafik für Folie 3: Markenkern von HOLY (Zeitleiste, Kennzahlen, Marktrolle).
 
 Werte aus markenkompetenz.md (Stand 17.10.2026). Kennzahlen sind Selbstauskünfte des Unternehmens.
+Seit Mi, 21.10.2026 (Abgleich Vorlesung, Befunde #27/#28): Kicker „MARKENKERN · WER SIND WIR?“ statt
+„MARKENKOMPETENZ · WER BIN ICH?“ und Feldname in der Quellenzeile wie in der Vorlesung (Stenger, S. 88–91 –
+die Seitenangabe nur hier, nicht in der Quellenzeile: Fußzeilen mit Vorlesungsseiten sind nicht freigegeben,
+Befund #4); Inhalte unverändert. Aufruf: python3 folie-03-markenkompetenz.py folie-03-markenkompetenz.svg
 """
 import sys
 
@@ -38,7 +42,7 @@ add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="
 add(f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>')
 
 # Kopf
-text(40, 44, "MARKENKOMPETENZ · WER BIN ICH?", 14, ROT, "bold", "start")
+text(40, 44, "MARKENKERN · WER SIND WIR?", 14, ROT, "bold", "start")
 text(40, 84, "HOLY: Herausforderer mit zuckerfreien Softdrinks zum Selbermixen", 30, TEXT, "bold", "start")
 
 # Steuerrad-Symbol oben rechts (Zentrum hervorgehoben)
@@ -117,8 +121,8 @@ QUELLE = [
     "[3] North Data (Registerdaten), [4] deutsche-startups.de 10/2023, [5] HOLY Story, [6] TikTok HOLY 05/2024, [13] HOLY Press Kit 02/2026,",
     "[16] WirtschaftsWoche 01/2026, [17] Karriereseite, [22] Symrise 09/2021, [24] Podcast „Digitale Vorreiter:innen“ #281, "
     "[25] HORIZONT 01/2026, [39] TikTok HOLY 04/2026.",
-    "✔ geprüft · ✎ korrigiert · H unsere Einordnung · Feld „Markenkompetenz“ nach Esch, Rollen nach Kotler (mit der Vorlesung "
-    "abgleichen) · Erstellt mit KI-Unterstützung (Claude Code; KI-Nachweis 55/56, D11).",
+    "✔ geprüft · ✎ korrigiert · H unsere Einordnung · Feld „Markenkern“ wie in der Vorlesung, Rollen nach Kotler "
+    "(mit der Vorlesung abgleichen) · Erstellt mit KI-Unterstützung (Claude Code; KI-Nachweis 55/56, D11).",
 ]
 for i, zeile in enumerate(QUELLE):
     text(40, 708 + 18 * i, zeile, 12, GRAU, anker="start")

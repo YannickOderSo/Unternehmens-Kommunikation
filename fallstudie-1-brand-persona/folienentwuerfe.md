@@ -6,7 +6,7 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOL
 | Folie | Thema | Bündel | Status |
 |-------|-------|---------|--------|
 | 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ (Rückfrage 2 ergänzt 19.10.) – Prüfung durch Yannick offen |
-| 3 | Markenkompetenz | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
+| 3 | Markenkern (bis 21.10.: Markenkompetenz) | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10., Begriffe 21.10.) – Prüfung durch Yannick offen |
 | 4 | Brand Persona | A | Entwurf ✔ (16.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
 | 5 | Limbic Map | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
 | 6–11 | | | offen |
@@ -16,6 +16,13 @@ Gruppe per Sprachnachricht beantwortet, zitiert als „Horsch 2026 (GB)“. Das 
 n = 1), keine Aussage über die Kundschaft. Was er nicht nennt, heißt nur „nicht genannt“. Auswertung und Regeln:
 [`gruenderbefragung.md`](gruenderbefragung.md). Name, Paraphrasen und kurze Zitate sind freigegeben (laut Yannick,
 19.10.2026); „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht offengelegt“ und nie auf einer Hauptfolie.
+
+**Begriffe seit Mi, 21.10.2026 nach der Vorlesung** (Abgleich Vorlesung, Befunde #15, #22, #27–#30, freigegeben von
+Yannick; [`abgleich-vorlesung.md`](abgleich-vorlesung.md)): Mitte des Steuerrads „Markenkern“ (Stenger, S. 90–91; bis
+dahin „Markenkompetenz“, so bei Esch selbst), Leitfragen in der Wir-Form (S. 88–89), Feld „Markeneigenschaften“
+(S. 60, 90–91; bis dahin „Markenattribute“), Satz über dem Rad „Positionierung“ (S. 87, 94); Identität/Image nach
+S. 60 und 87; KI-simulierte Befragte nach S. 78; Limbic Types und Gewichte als eigene Erweiterung (S. 69–71, 93).
+In den Abschnitten unten nachgezogen, wo diese Begriffe vorkommen; die übrigen Inhalte sind unverändert.
 
 ---
 
@@ -46,11 +53,12 @@ Mehr Text braucht die Folie nicht. Was die Grafik nicht zeigt, steht im Sprechte
 
 Datei: [`grafiken/folie-02-vorgehen.svg`](grafiken/folie-02-vorgehen.svg) (Vorschau als PNG daneben)
 
-- **Mitte:** Markensteuerrad nach Esch. Links die *hard facts* (Attribute, Nutzen) in Blaugrau, rechts die *soft facts*
-  (Tonalität, Bild) in Rot, in der Mitte die Markenkompetenz.
+- **Mitte:** Markensteuerrad nach Esch. Links die *hard facts* (Eigenschaften, Nutzen) in Blaugrau, rechts die *soft facts*
+  (Tonalität, Bild) in Rot, in der Mitte der Markenkern (bis 21.10.2026: Markenkompetenz). Leitfragen in der Wir-Form
+  wie Stenger, S. 88 (Grafik am 21.10.2026 neu erzeugt).
 - **Außen:** die Methode, die das jeweilige Feld füllt, mit Verweis auf die Folie, auf der sie vorgestellt wird.
   Die Folie dient damit gleichzeitig als **Agenda**.
-- **Graue Pfeile:** zeigen, wie die Methoden aufeinander aufbauen (Attribute → Laddering, Tonalität → Kommunikationsanalyse).
+- **Graue Pfeile:** zeigen, wie die Methoden aufeinander aufbauen (Eigenschaften → Laddering, Tonalität → Kommunikationsanalyse).
 - **Unten:** Brand Persona + Limbic Map als Bezugsrahmen für alle Felder.
 
 **In PowerPoint einfügen:** *Einfügen → Bilder → Dieses Gerät* → SVG wählen. Danach Rechtsklick → *In Form konvertieren*:
@@ -64,12 +72,12 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
 > Unsere Leitfrage lautet: Wofür steht HOLY – und passt ihr heutiger Auftritt dazu?
 >
 > Um das zu beantworten, nutzen wir das Markensteuerrad nach Esch. Es beschreibt die Identität einer Marke in fünf
-> Feldern: links die harten Fakten, also Attribute und Nutzen, rechts die weichen, also Tonalität und Markenbild, und
-> in der Mitte die Markenkompetenz.
+> Feldern: links die harten Fakten, also Eigenschaften und Nutzen, rechts die weichen, also Tonalität und Markenbild, und
+> in der Mitte der Markenkern.
 >
-> Für jedes Feld haben wir eine eigene Methode eingesetzt: Desk Research für die Kompetenz, ein Repertory Grid für die
-> Attribute, Laddering für den Nutzen, Analogien für die Tonalität und eine Kommunikationsanalyse für das Markenbild.
-> Die Methoden bauen aufeinander auf – die Attribute aus dem Repertory Grid sind zum Beispiel die Startpunkte fürs Laddering.
+> Für jedes Feld haben wir eine eigene Methode eingesetzt: Desk Research für den Markenkern, ein Repertory Grid für die
+> Eigenschaften, Laddering für den Nutzen, Analogien für die Tonalität und eine Kommunikationsanalyse für das Markenbild.
+> Die Methoden bauen aufeinander auf – die Eigenschaften aus dem Repertory Grid sind zum Beispiel die Startpunkte fürs Laddering.
 >
 > Den Rahmen bildet unsere Brand Persona, denn eine Marke wirkt nur über ihre Zielgruppe. Am Ende führen wir alles im
 > Steuerrad zusammen und leiten daraus Empfehlungen ab.
@@ -80,15 +88,22 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
    Es ist durch die Aufgabe vorgegeben – passt aber auch gut: Es trennt rationale und emotionale Bestandteile der
    Identität, und jede unserer Methoden lässt sich genau einem Feld zuordnen. Dadurch ist nachvollziehbar, woher jede
    Aussage im fertigen Steuerrad kommt.
-2. **„Markenidentität ist das Selbstbild – warum fragt ihr die Zielgruppe?“**
-   Wir betrachten beide Seiten: das Selbstbild aus Website, Press Kit, Gründer-Interviews, eigener Kommunikation und
-   einer eigenen Befragung von Gründer Mathias Horsch per Sprachnachricht (Horsch 2026, GB) und das Fremdbild
-   aus Repertory Grid und Laddering. Wo beides auseinandergeht, setzen unsere Empfehlungen an. Die Befragung ist eine
+2. **„Das Steuerrad erfasst doch die Identität – warum fragt ihr die Zielgruppe?“** (bis 21.10.2026: „Markenidentität
+   ist das Selbstbild …“)
+   Die Aufgabe ordnet Repertory Grid, Laddering, Analogien und Kommunikationsanalyse der Markenidentität zu
+   (Stenger, S. 60). Identität ist die Innensicht – „wer und was man sein möchte“; das Markenimage ist, „was
+   wahrgenommen wird“ (S. 87). Weil Repertory Grid und Laddering die Zielgruppe fragen – bisher vor allem simuliert,
+   echte Kurzinterviews geplant –, prüfen sie zugleich, ob die Identität ankommt; das ist das Markenimage. Unsere Innensicht: Website, Press Kit,
+   Gründer-Interviews, eigene Kommunikation und eine eigene Befragung von Gründer Mathias Horsch per Sprachnachricht
+   (Horsch 2026, GB); die Außensicht: Repertory Grid und Laddering. Wo beides auseinandergeht, setzen unsere
+   Empfehlungen an. Die Befragung ist eine
    Selbstauskunft und wiederholt vieles aus Website und Press Kit; wir gewichten sie deshalb schwach.
 3. **„Wie belastbar sind Ergebnisse mit KI-Tools?“**
-   Die KI haben wir für Recherche, Strukturierung und simulierte Befragte genutzt. Fakten haben wir an den Quellen
-   geprüft, die simulierten Antworten mit 3–5 echten Kurzinterviews abgeglichen. Die Grenzen stehen im Backup, alle
-   Prompts im Prompt-Log.
+   Die KI haben wir für Recherche, Strukturierung und simulierte Befragte genutzt. Die Vorlesung sagt dazu: KI
+   beschleunigt die Ausarbeitung einer Persona, ersetzt aber nicht das Gespräch mit echten Kunden (Stenger, S. 78).
+   Die simulierten Antworten sind deshalb nur Hypothesen, die 3–5 echte Kurzinterviews prüfen sollen; solange diese
+   fehlen, ist das eine Grenze. Fakten haben wir an den Quellen geprüft. Die Grenzen stehen im Backup, alle Prompts im
+   Prompt-Log.
 
 ### Zu prüfen
 
@@ -99,12 +114,20 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
 - [ ] Rückfrage 3 erst final formulieren, wenn klar ist, wie viele echte Interviews es wurden
 - [x] (19.10.) Rückfrage 2 um die eigene Gründerbefragung ergänzt (`gruenderbefragung.md` K14); Grafik und
   Quellenzeile unverändert
+- [x] (21.10.) Begriffe nach der Vorlesung (Abgleich Vorlesung #27–#30, #15): Markenkern, Wir-Form,
+  Markeneigenschaften in Visualisierung, Sprechtext und Grafik `grafiken/folie-02-vorgehen.svg/.png` (neu erzeugt);
+  Rückfrage 2 mit Identität/Image (S. 60, 87), Rückfrage 3 mit S. 78. Quellenzeile unverändert (#4, #11, #13 offen)
 
 ---
 
-## Folie 3 – Markenkompetenz
+## Folie 3 – Markenkern (bis 21.10.2026: Markenkompetenz)
 
-**Bündel:** A · **Zeit:** 0:45 · **Backup-Bezug:** B7 Quellenverzeichnis. Rollenbegriffe und Zahlenreihen: *geplant* als eigene Backup-Folie (z. B. B1b „Markenkompetenz: Rollen, Zahlenreihen“) oder als Verweis auf `markenkompetenz.md`; mit Elias und Account 2 klären, denn B1 enthält nur die KI-Methodik ·
+> Seit Mi, 21.10.2026 (Abgleich Vorlesung, Befunde #27/#28): Das Feld heißt wie in der Vorlesung „Markenkern“
+> (Stenger, S. 90–91; „Wer sind wir?“ mit Markenhistorie, Herkunft, Rolle im Markt, zentralen Markenassets, S. 88).
+> Kicker „Desk Research · Wer sind wir?“. Inhalt unverändert; Rollen nach Kotler (#31) und Asset „HOLY Squad“
+> (#35) noch offen.
+
+**Bündel:** A · **Zeit:** 0:45 · **Backup-Bezug:** B7 Quellenverzeichnis. Rollenbegriffe und Zahlenreihen: *geplant* als eigene Backup-Folie (z. B. B1b „Markenkern: Rollen, Zahlenreihen“) oder als Verweis auf `markenkompetenz.md`; mit Elias und Account 2 klären, denn B1 enthält nur die KI-Methodik ·
 **Ausarbeitung:** [`markenkompetenz.md`](markenkompetenz.md)
 
 ### Titel (Kernaussage)
@@ -121,7 +144,7 @@ In der Web-Folie f03 (Muster „[Marke]: <Rolle> mit <Kernkompetenz>“): *HOLY:
 
 ### Text auf der Folie
 
-- **Kicker:** *Desk Research · Wer bin ich?*
+- **Kicker:** *Desk Research · Wer sind wir?* (bis 21.10.2026: *Wer bin ich?*)
 - **Zeitleiste** (5 Einträge, Jahr + Text; Monate nur in den Notizen):
 
 | Jahr | Text | Status | Quelle |
@@ -155,7 +178,10 @@ In der Web-Folie f03 (Muster „[Marke]: <Rolle> mit <Kernkompetenz>“): *HOLY:
 
 Die Folie selbst ist die Web-Folie f03. Dieselben Inhalte als Grafik (für PowerPoint bzw. Backup):
 
-![Folie 3: Markenkompetenz von HOLY](grafiken/folie-03-markenkompetenz.png)
+![Folie 3: Markenkern von HOLY](grafiken/folie-03-markenkompetenz.png)
+
+(Grafik am 21.10.2026 neu erzeugt: Kicker „MARKENKERN · WER SIND WIR?“ und Feldname in der Quellenzeile wie in der
+Vorlesung; Inhalte unverändert. Dateiname bleibt.)
 
 Datei: [`grafiken/folie-03-markenkompetenz.svg`](grafiken/folie-03-markenkompetenz.svg) (PNG daneben; erzeugt mit
 `grafiken/folie-03-markenkompetenz.py`).
@@ -193,9 +219,11 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
 7. **„Gutes Gewissen – bei 160 mg Koffein?“**
    Das Versprechen steht unter Druck: 160 mg pro Portion ✔ [56], eine Warnung des VKI 12/2024 ✔ [27], Berichte von KONSUMENT und Stiftung Warentest 2026 ✔ [28, 29]. Online verkauft HOLY Energy seit 08–09/2026 erst ab 18 ✔ [12]. Mehr dazu auf Folie 9–11.
 8. **„waterdrop macht das auch – warum ist Selbermixen HOLYs Kompetenz?“**
-   Die Markenkompetenz beschreibt die Soll-Identität (Esch: „Soll-Markensteuerrad“), keine Alleinstellung. Gegenüber Dosen-Energy und Cola unterscheidet das Format klar; waterdrop ist ein Format-Zwilling. Belegte Unterschiede (Dossier 5.2): Pulver und Syrup statt Brausewürfel; 160 mg ✔ [56] statt ≈ 90 mg Koffein (Microenergy); kein Abo ✔ [30, 48], waterdrop dagegen mit Abo (✎ [7, 66, 116]).
+   Der Markenkern (bis 21.10.2026 „Markenkompetenz“) beschreibt, wer die Marke ist, keine Alleinstellung (bei Esch
+   heißt sein Beispiel „Soll-Markensteuerrad“, W+; die Vorlesung zeigt das zusammengeführte Rad als „IST-Identität –
+   Erster Entwurf zur Abstimmung“, Stenger, S. 91). Abgrenzen soll die Positionierung (S. 92). Gegenüber Dosen-Energy und Cola unterscheidet das Format klar; waterdrop ist ein Format-Zwilling. Belegte Unterschiede (Dossier 5.2): Pulver und Syrup statt Brausewürfel; 160 mg ✔ [56] statt ≈ 90 mg Koffein (Microenergy); kein Abo ✔ [30, 48], waterdrop dagegen mit Abo (✎ [7, 66, 116]).
 9. **„Auf Folie 6 ist ‚selbst anrühren‘ eine Hürde – widerspricht das Folie 3?“**
-   Nein, das ist ein Befund: Kompetenz laut HOLY (Selbstbild, Folie 3), Hürde laut Befragten (Fremdbild, Folie 6). Diese Lücke greifen wir auf Folie 10/11 auf. Folie 6 zeigt derzeit Beispieldaten; nach Lukas' Auswertung am Mo 19.10. bestätigen oder streichen.
+   Nein, das ist ein Befund: Markenkern laut HOLY (Selbstbild, Folie 3), Hürde laut Befragten (Fremdbild, Folie 6). Diese Lücke greifen wir auf Folie 10/11 auf. Folie 6 zeigt derzeit Beispieldaten; nach Lukas' Auswertung am Mo 19.10. bestätigen oder streichen.
 10. **„Wie viele aktive Kund:innen hat HOLY?“**
     Dazu gibt es keine Angabe. Das Press Kit nennt „2M+ loyale Kund:innen“ ohne Definition [13], HV Capital „>2.5M“ „since founding“ [14], die WiWo 2,5 Mio. ohne Definition [16]. Alles sind Selbstauskünfte.
 11. **„Woher kommt die Kundschaft von HOLY – von Softdrinks oder von anderen Pulvern?“**
@@ -204,7 +232,7 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
 ### Zu prüfen
 
 - [ ] Yannick: Titel, Rolle (Herausforderer, Kriterium Angriff, Bezugsmarkt Softdrinks), Kernkompetenz, Zeitleiste (5 Einträge) und Kennzahlen freigeben (`markenkompetenz.md`)
-- [ ] Rollendefinition in Kotler/Keller, *Marketing-Management* (Kapitel zum Wettbewerb), und in der Vorlesung nachlesen. Danach Variante A (so) oder B (Chips tauschen, Titel „Spezialist mit …“); „Pionier“ und das Feld „Markenkompetenz“ (Esch, inkl. „zentrale Markenassets“) abgleichen; danach `rollen` festlegen
+- [ ] Rollendefinition in Kotler/Keller, *Marketing-Management* (Kapitel zum Wettbewerb), und in der Vorlesung nachlesen. Danach Variante A (so) oder B (Chips tauschen, Titel „Spezialist mit …“); „Pionier“ abgleichen; danach `rollen` festlegen. Feld abgeglichen am 21.10.2026: „Markenkern“ (Stenger, S. 88–91; bis dahin „Markenkompetenz“), „zentrale Markenassets“ = Befund #35, nicht freigegeben; die Vorlesung vergibt keine Wettbewerbsrollen (Befund #31, offen)
 - [ ] Jahresabschluss 2024 (und 2023) im Unternehmensregister abrufen. In Rückfrage 1 nur Jahresergebnis 2024 und ggf. Umsatz 2024 eintragen. „Profitabel“ erst danach verwenden (ein ungeprüfter Aggregator-Auszug nennt für 2024 einen Fehlbetrag)
 - [ ] Rahmen (Energy- oder Softdrink-Marke) mit dem Wettbewerbsset beschließen (`dossier-buendel-b.md` Abschnitt 10, Punkt 1) und auf Folie 3, 4 und 6 einheitlich nennen. Horsch 2026 (GB) nennt die großen Softdrinkmarken als Hauptkonkurrenz; das ist ein Hinweis, die Entscheidung trifft die Gruppe (`gruenderbefragung.md` K4)
 - [x] (19.10.) Gründerbefragung eingearbeitet (`gruenderbefragung.md` K3, K5, K12): Rückfrage 2 (Hauptkonkurrenz laut Horsch), Rückfrage 6 (Selbstbild Softdrink-Marke ↔ Energy rechtlich Nahrungsergänzungsmittel ✔ [56, 72]), neue Rückfrage 11 (Herkunft der Kundschaft). Titel, Folientext und Daten für f03 unverändert; GB steht nicht auf
@@ -402,8 +430,8 @@ Alternativen:
 
 | Block | Inhalt | Kennzeichnung |
 |---|---|---|
-| Limbic Type der Persona | **Hedonisten** · Neugier · Unterhaltung | Hypothese (dass es knapp vor „Offene“ ist, steht in Notizen und Rückfrage 3) |
-| Gewichte (zwei gestapelte Balken) | Marco B 30 / D 30 / S 40 · HOLY B 30 / D 20 / S 50 · Kennzahl **Dominanz −10 Pp.**, in den Balken markiert | Schätzung des Teams, keine Messung |
+| Limbic Type der Persona | **Hedonisten** · Neugier · Unterhaltung | Hypothese (dass es knapp vor „Offene“ ist, steht in Notizen und Rückfrage 3); eigene Erweiterung, nicht in der Vorlesung (S. 69–71, 93) |
+| Gewichte (zwei gestapelte Balken) | Marco B 30 / D 30 / S 40 · HOLY B 30 / D 20 / S 50 · Kennzahl **Dominanz −10 Pp.**, in den Balken markiert | Schätzung des Teams, keine Messung; eigene Erweiterung, nicht in der Vorlesung |
 | Folgen für die Kommunikation | **Bildwelt:** Echte Schichtmomente · **Tonalität:** Humor aus der Schicht · **Botschaft:** Durchhalten ohne Zucker | Hypothesen für Folien 9–11; Langformen in Sprechtext und `limbic-map.md` §6 |
 
 - **Metazeile** unter den Balken: *Pp. = Prozentpunkte · Gewichte: Schätzung des Teams*
@@ -516,10 +544,21 @@ Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (P
 7. **„Warum nicht Performer? Erfolg liegt doch über dem Durchschnitt.“**
    Dafür gibt es nur einen Datenpunkt („erfolgreich sein“ +5 Prozentpunkte), aber keine Status-Signale: Einkommen und Sparen liegen im
    Durchschnitt.
+8. **„In der Vorlesung gibt es keine Typen – warum nutzt ihr sie?“** (neu 21.10.2026, Abgleich Vorlesung #22)
+   Die Vorlesung verlangt, die Zielgruppe zu analysieren und die Marke im entsprechenden Limbic-Raum zu positionieren
+   (Stenger, S. 93). Das tun unsere Gewichte; die Karte selbst folgt S. 69. Limbic Types und Prozentgewichte zeigt die
+   Vorlesung nicht (S. 69–71, 93) – das ist unsere Erweiterung nach Gruppe Nymphenburg [105]. Der Typ gibt der Persona
+   einen Namen; die Lücke rechnen wir aus den Gewichten, nicht aus dem Typ.
 
 ### Zu prüfen
 
 - [ ] Gewichte, Typ (Hedonisten, knapp vor Offene) und Urteil „passt teilweise“ von Yannick freigeben lassen
+- [x] (21.10., Abgleich Vorlesung #22) Typen und Gewichte als eigene Erweiterung gekennzeichnet – die Vorlesung zeigt
+  keine Limbic Types und keine Prozentgewichte (Stenger, S. 69–71, 93). Web-Folie f05: Fußzeile Zeile 1 „Typen
+  (nymphenburg.de) und Gewichte: Erweiterung, nicht in der Vorlesung“ (kürzer, weil ≤ ca. 1250 px; weicht damit von
+  der Quellenzeile oben ab), neue Rückfrage „In der Vorlesung gibt es keine Typen – warum nutzt ihr sie?“ mit S. 93.
+  Entschieden (Yannick, 21.10.2026): Der Typ bleibt die Hauptaussage. Grafik `folie-05-limbic-map` unverändert
+  (Quellenzeile dort: Befund #12, nicht freigegeben)
 - [x] (19.10.) Gründerbefragung eingearbeitet (`gruenderbefragung.md` P8, P10): Rückfrage 4 um das Selbstbild
   (Spaß, Zusammengehörigkeit; „Individualität“ erst nach Lukas' datierter Codeliste, `gruenderbefragung.md` K7),
   Rückfrage 5 um den Satz zur Wirkung. Gewichte, Typ, Folgen, Folientext und Quellenzeile unverändert

@@ -4,15 +4,24 @@
    Das Steuerrad selbst baut die Engine (Baustein „steuerrad“, Modus
    „synthese“). Dieses Skript ergänzt:
 
-   1. MARKENKERN als Band über dem Rad (Text: „kern“ im Daten-JSON der Folie).
-      Er erscheint mit dem Schlussschritt nach dem letzten Feld. Das Zentrum
-      des Rads bleibt – wie auf Folie 2 und 12 – die Markenkompetenz.
+   1. POSITIONIERUNG als Band über dem Rad (Text: „positionierung“ im
+      Daten-JSON der Folie; der alte Schlüssel „kern“ wird noch gelesen).
+      Sie erscheint mit dem Schlussschritt nach dem letzten Feld. Das Zentrum
+      des Rads ist – wie auf Folie 2 und 12 – der Markenkern („Wer sind
+      wir?“, Stenger, S. 88–91).
+      Begriffe seit Mi, 21.10.2026 (Abgleich Vorlesung, Befund #27, Freigabe
+      Yannick): Bis dahin hieß das Band „Markenkern · Verdichtung aller
+      Felder“ und das Zentrum „Markenkompetenz“. Die Vorlesung nennt die
+      Mitte „Markenkern“; der Satz über dem Rad ist die Positionierung, die
+      aus der Markenidentität folgt (S. 87: Pfeil „Zielvorgabe“), knapp in
+      einem Satz wie bei engelbert strauss (S. 94) – HOLYs Positionierung,
+      von uns abgeleitet (Lesart im Kasten „FOLIE 10“ in index.html).
 
    2. QUELLENKÜRZEL JE STICHWORT: Im Kartenkopf bleibt nur das häufigste
       Kürzel des Felds; ein abweichendes Kürzel steht klein direkt hinter dem
       Stichwort (z. B. „Hedonisten LM“, „Energy: 160 mg Koffein DR“).
 
-   3. KONSISTENZPRÜFUNG (Schritt nach dem Markenkern):
+   3. KONSISTENZPRÜFUNG (Schritt nach der Positionierung):
       • Nummern (Lückenfarbe, Braun-Orange) an den Stichworten, die eine Lücke bilden
         (Daten: „luecken“ → „markieren“ im JSON der Folie),
       • je Lücke eine kurze Notiz in der freien Fläche zwischen den Karten
@@ -27,7 +36,7 @@
    4. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
       Nur wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true)
       und in ihrer Wortwolke Wörter stehen, gibt es einen
-      zusätzlichen Schritt: links „Unsere Analyse“ (Markenkern + wie viele Zurufe
+      zusätzlichen Schritt: links die Positionierung (Satz + wie viele Zurufe
       zu unserem Steuerrad passen), rechts die Zurufe (Treffer hervorgehoben).
       Gezählt werden Zurufe, nicht Begriffe: „Gaming“ viermal gerufen = 4.
       Im Druck/PDF bleibt stattdessen das fertige Steuerrad stehen.
@@ -45,7 +54,7 @@
 
   /* Kurznamen der Felder – für den Kopf der Lücken-Notizen („Bild ↔ Persona“) */
   var FELDNAMEN = {
-    kompetenz: 'Kompetenz', persona: 'Persona', attribute: 'Attribute',
+    kompetenz: 'Kern', persona: 'Persona', attribute: 'Eigenschaften',
     nutzen: 'Nutzen', tonalitaet: 'Tonalität', bild: 'Bild'
   };
 
@@ -88,7 +97,7 @@
     return text;
   }
 
-  /* Alle Stichworte (und den Kern) als Liste von Wortteilen – für den Abgleich */
+  /* Alle Stichworte (und die Positionierung) als Liste von Wortteilen – für den Abgleich */
   function wortteileAus(konfig, kern, weitere) {
     var texte = [kern || ''];
     Object.keys(konfig.felder || {}).forEach(function (feld) {
@@ -137,18 +146,19 @@
       var zustand = {
         rad: rad,
         konfig: radKonfig(rad),
-        kern: daten.kern || '',
+        /* Positionierung (Satz über dem Rad). „kern“ = Name bis 21.10.2026 */
+        kern: daten.positionierung || daten.kern || '',
         luecken: daten.luecken || [],
         abgleich: daten.abgleich || {}
       };
       folie._g6s = zustand;
 
-      /* Schritte: nach dem letzten Feld der Markenkern (= Schlussschritt der
-         Engine), danach die Konsistenzprüfung */
+      /* Schritte: nach dem letzten Feld die Positionierung (= Schlussschritt
+         der Engine), danach die Konsistenzprüfung */
       zustand.schrittKern = letzterRadSchritt(rad) + 1;
       zustand.schrittLuecken = zustand.schrittKern + 1;
 
-      /* ---- Markenkern-Band über dem Rad */
+      /* ---- Band „Positionierung“ über dem Rad */
       kernEinrichten(folie, zustand);
 
       /* ---- Ebene für die Lücken-Notizen: liegt deckungsgleich über dem Rad,
@@ -296,13 +306,14 @@
 
 
   /* ===========================================================================
-     MARKENKERN (Band über dem Rad)
+     POSITIONIERUNG (Band über dem Rad; CSS-Klassen g6s-kern… aus der Zeit,
+     als das Band „Markenkern“ hieß – technische Namen, nicht sichtbar)
      =========================================================================== */
   function kernEinrichten(folie, zustand) {
     var band = folie.querySelector('.g6s-kern');
     if (!band) return;
     var text = band.querySelector('[data-g6s="kern-text"]');
-    if (!zustand.kern) { band.hidden = true; return; }        // kein Kern eingetragen → kein Band
+    if (!zustand.kern) { band.hidden = true; return; }        // keine Positionierung eingetragen → kein Band
     if (text) {
       text.textContent = Deck.util.markeText(zustand.kern);
       text.setAttribute('data-schritt', String(zustand.schrittKern));
@@ -446,7 +457,7 @@
 
     /* Beschriftung „Hard Facts / Soft Facts“: Wird eine obere Karte dreizeilig,
        stößt sie an die Beschriftung. Dann rückt die Beschriftung nach oben in
-       die Zeile der Pille „Markenkompetenz“ (dort ist links und rechts frei). */
+       die Zeile der Pille „Markenkern“ (dort ist links und rechts frei). */
     var pille = hub.querySelector('.sr-karte--oben');
     ['lo', 'ro'].forEach(function (platz) {
       var karte = hub.querySelector('.sr-karte--' + platz);
@@ -483,7 +494,7 @@
 
   /* Sicherheitsnetz: Wird eine Karte höher als geplant (z. B. eine Zeile mehr
      in einem Thema mit breiterer Schrift), darf sie die Pille „Brand Persona“
-     (unten) bzw. „Markenkompetenz“ (oben) nicht berühren. Dann rückt sie um
+     (unten) bzw. „Markenkern“ (oben) nicht berühren. Dann rückt sie um
      genau so viel zur Radmitte, dass 12 px Luft bleiben. Pillen und Karten
      sind per transform zentriert: offsetLeft/offsetTop = Mittelpunkt
      (Pille) bzw. linker Rand und senkrechte Mitte (Karte). */
@@ -546,7 +557,7 @@
     zustand.wolkeId = zustand.abgleich.wortwolke ||
       (el.querySelector('.wortwolke') && el.querySelector('.wortwolke').getAttribute('data-wortwolke')) || 'assoziationen';
 
-    /* Kern aus den Daten der Folie übernehmen (eine Quelle für alle Stellen) */
+    /* Positionierung aus den Daten der Folie übernehmen (eine Quelle für alle Stellen) */
     var kernEl = el.querySelector('[data-g6s="kern"]');
     if (kernEl) kernEl.textContent = ctx.util.markeText(zustand.kern);
     zustand.teile = wortteileAus(zustand.konfig, zustand.kern, zustand.abgleich.weitereTreffer);

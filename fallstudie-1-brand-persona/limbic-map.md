@@ -1,7 +1,8 @@
 # Limbic Map: Persona „Marco, 28“ und Auftritt von HOLY (A3)
 
-**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Di, 20.10.2026 (Nachtrag Chamäleon in 4.1;
-19.10.: Abgleich mit der Gründerbefragung) · **Entwurf, Prüfung durch Yannick offen**
+**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Mi, 21.10.2026 (Kennzeichnung nach dem Abgleich
+mit der Vorlesung; 20.10.: Nachtrag Chamäleon in 4.1; 19.10.: Abgleich mit der Gründerbefragung) · **Entwurf, Prüfung
+durch Yannick offen**
 
 > **So ist die Ausarbeitung zu lesen**
 > - **D** = Daten mit Quelle · **M** = Modellangabe mit Quelle (Häusel / Gruppe Nymphenburg) · **A** = Annahme oder
@@ -29,8 +30,17 @@
 >   Workflow D14): ohne Websuche, Grundlage `gruenderbefragung.md` Abschnitt 4.2 (P8–P12).
 >   Nachtrag Chamäleon am 20.10.2026 mit Claude Code (KI-Nachweis 95, Workflow D18): ohne Websuche, Grundlage
 >   Recherche-Dossier; „Chamäleon“ im Alltagssinn („ohne festen Kern“, Tarnung) ist Sprachgebrauch (**MW**).
-> - **Kein Vorlesungsmaterial vorhanden:** Modellbegriffe nach Häusel / Gruppe Nymphenburg. Bitte mit den
->   Vorlesungsfolien abgleichen (Map-Version, Namen der Felder, Lage der Typen).
+> - **Kein Vorlesungsmaterial vorhanden** (Stand bis 19.10.2026): Modellbegriffe nach Häusel / Gruppe Nymphenburg.
+>   Bitte mit den Vorlesungsfolien abgleichen (Map-Version, Namen der Felder).
+> - **Typen und Gewichte = eigene Erweiterung** (Abgleich Vorlesung, Befund #22, Mi, 21.10.2026, freigegeben von
+>   Yannick): Die Vorlesung zeigt die Limbic Map ohne Limbic Types, ohne Prozentgewichte und ohne Typen-Ring
+>   (Stenger, S. 69–71, 93; S. 69 „Quelle: Häusel 2012, S. 53“, S. 71 und 93 „Quelle: gruppe Nymphenburg“). Sie
+>   verlangt, die Zielgruppe zu analysieren und die Marke „im entsprechenden Limbic-Raum“ zu positionieren (S. 93) –
+>   das leisten unsere Gewichte; der Typ gibt der Persona nur einen Namen. Folie 05 kennzeichnet beides seit
+>   21.10.2026 in der Fußzeile („Typen (nymphenburg.de) und Gewichte: Erweiterung, nicht in der Vorlesung“) und in
+>   einer Rückfrage. Entschieden (Yannick, 21.10.2026): Der Typ bleibt die Hauptaussage auf Folie 05. Der
+>   Kartenabgleich selbst (Felder, Mischbereiche, #23) und die Begriffe der Vorlesung (#24–#26) sind nicht
+>   freigegeben und noch offen.
 
 ---
 
@@ -305,8 +315,9 @@ geprüft.
 - **Ambivalent:** „Chamäleon“ heißt im Alltag auch „ohne festen Kern“. Dafür gibt es Anzeichen (S5: sechs Claims,
   Profilnamen je Kanal, 8 ✔ [1, 20, 31, 125], Deutung **H**) – das ist der Bruch über die Kanäle (Folie 09b) und
   stützt die Folge „Raptor bleibt Absender“ (§6, Nr. 1). Eigene Fassungen je Markt und Kanal (6.1 ✔ [31, 127,
-  128]; S4 ✔ [64, 147, 148]) zählen deshalb nicht als Stärke. Der Markenkern („Genuss mit gutem Gewissen“,
-  Folie 10) ist nicht betroffen – was wechselt, ist der Auftritt.
+  128]; S4 ✔ [64, 147, 148]) zählen deshalb nicht als Stärke. Markenkern (Mitte des Steuerrads) und Positionierung
+  („Genuss mit gutem Gewissen“, Band über dem Rad auf Folie 10; bis 21.10.2026 „Markenkern“ genannt) sind nicht
+  betroffen – was wechselt, ist der Auftritt.
 - **Folgen für diese Ausarbeitung:** keine. Die Zeile „Maskottchen“ in 4.1 bleibt Dominanz · Erfolg und Status mit
   Präsenz „mittel“; Gewichte, Typ und Fit ändern sich nicht. Das Chamäleon beschreibt, *wie* der freche Ton auftritt
   (Stimulanz: Neugier, Abwechslung – schon in der Zeile „31 Energy-Sorten …“ erfasst), nicht einen neuen Ton.
@@ -518,8 +529,11 @@ der Koffeinvergiftung eines Kindes (3.4 ✔ [28, 29]). Das ist eine Einschätzun
 ## 8. Offene Punkte
 
 - [ ] Yannick: Gewichte, Typ (Hedonisten, knapp vor Offene, statt Abenteurer) und Fit-Urteil „passt teilweise“ freigeben
-- [ ] Mit der Limbic-Map-Grafik der Vorlesung abgleichen: Map-Version, Namen der Felder, Lage der Typen; bis dahin
-  Typen-Grafik nymphenburg.de für die Typen, [105] S. 3 für die Felder
+- [ ] Mit der Limbic-Map-Grafik der Vorlesung abgleichen: Map-Version, Namen der Felder; bis dahin
+  Typen-Grafik nymphenburg.de für die Typen, [105] S. 3 für die Felder (Befund #23, nicht freigegeben)
+- [x] (21.10.2026, Abgleich Vorlesung #22) Typen und Gewichte als eigene Erweiterung gekennzeichnet (Folie 05:
+  Fußzeile, Rückfrage; `methoden.md` §1; `folienentwuerfe.md` Folie 5). Die Vorlesung zeigt keine Typen
+  (Stenger, S. 69–71, 93); Typ bleibt Hauptaussage (Entscheidung Yannick)
 - [ ] 20–30 Bewertungen nach Codebuch auswerten (K1, K3, K8; `persona-datenerhebung.md`, Fahrplan Nr. 5, Bündel A):
   Yannick, Termin noch festlegen → Entscheidungsregel in 3.2 anwenden; „deutlich“ vorher festlegen
 - [ ] Bündel C (Elias): Spalten „Anlass“ (K1-Codes) und „Wirkversprechen“ in der Post-Stichprobe, bis So 18.10. (Bitte

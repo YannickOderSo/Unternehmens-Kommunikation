@@ -1,23 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+<!-- Erzeugt mit folie-02-vorgehen.py. Begriffe seit 21.10.2026 wie in der Vorlesung (Stenger, S. 88-91): Markenkern, Leitfragen in der Wir-Form, Markeneigenschaften. -->
 <rect width="1400" height="800" fill="#FFFFFF"/>
 <path d="M700,370 L450,370 A250,250 0 0 1 700,120 Z" fill="#DDE5EC" stroke="#FFFFFF" stroke-width="8"/>
 <path d="M700,370 L700,120 A250,250 0 0 1 950,370 Z" fill="#F6DCD9" stroke="#FFFFFF" stroke-width="8"/>
 <path d="M700,370 L950,370 A250,250 0 0 1 700,620 Z" fill="#F6DCD9" stroke="#FFFFFF" stroke-width="8"/>
 <path d="M700,370 L700,620 A250,250 0 0 1 450,370 Z" fill="#DDE5EC" stroke="#FFFFFF" stroke-width="8"/>
 <text x="588" y="236" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle">Markennutzen</text>
-<text x="588" y="260" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Was biete ich an?</text>
+<text x="588" y="260" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Was bieten wir?</text>
 <text x="812" y="236" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#8E1B1B" text-anchor="middle">Markentonalität</text>
-<text x="812" y="260" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#9A3B36" text-anchor="middle">Wie bin ich?</text>
+<text x="812" y="260" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#9A3B36" text-anchor="middle">Wie sind wir?</text>
 <text x="812" y="488" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#8E1B1B" text-anchor="middle">Markenbild</text>
-<text x="812" y="514" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#9A3B36" text-anchor="middle">Wie trete ich auf?</text>
-<text x="590" y="488" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle">Markenattribute</text>
+<text x="812" y="514" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#9A3B36" text-anchor="middle">Wie treten wir auf?</text>
+<text x="592" y="488" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#2F4553" text-anchor="middle">Markeneigenschaften</text>
 <text x="590" y="514" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Über welche</text>
 <text x="590" y="534" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">Eigenschaften</text>
-<text x="590" y="554" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">verfüge ich?</text>
+<text x="590" y="554" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#4A5D6B" text-anchor="middle">verfügen wir?</text>
 <circle cx="700" cy="370" r="92" fill="#B3161D" stroke="#FFFFFF" stroke-width="8"/>
 <text x="700" y="362" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Marken-</text>
-<text x="700" y="385" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">kompetenz</text>
-<text x="700" y="410" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Wer bin ich?</text>
+<text x="700" y="385" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">kern</text>
+<text x="700" y="410" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Wer sind wir?</text>
 <text x="505" y="612" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#5B7080" text-anchor="middle">HARD FACTS · rational</text>
 <text x="895" y="612" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#B3161D" text-anchor="middle">SOFT FACTS · emotional</text>
 <rect x="560" y="18" width="280" height="74" rx="10" fill="#FFFFFF" stroke="#B3161D" stroke-width="2"/>
@@ -51,8 +52,8 @@
 <polygon points="912,512 923.0,506.5 923.0,517.5" fill="#44525C"/>
 <line x1="190" y1="464" x2="190.0" y2="289.0" stroke="#6B7780" stroke-width="2"/>
 <polygon points="190,278 195.5,289.0 184.5,289.0" fill="#6B7780"/>
-<text x="205" y="364" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="start">Attribute sind die</text>
-<text x="205" y="383" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="start">Startpunkte</text>
+<text x="205" y="364" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="start">Eigenschaften sind</text>
+<text x="205" y="383" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="start">die Startpunkte</text>
 <line x1="1210" y1="276" x2="1210.0" y2="451.0" stroke="#6B7780" stroke-width="2"/>
 <polygon points="1210,462 1204.5,451.0 1215.5,451.0" fill="#6B7780"/>
 <text x="1195" y="364" font-family="Segoe UI, Calibri, Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" font-style="italic" fill="#6B7780" text-anchor="end">Tonalität ist der</text>

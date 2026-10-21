@@ -225,6 +225,6 @@ html.druckmodus #f12 .g6d-hinweis { display: none; }
   align-items: center;
 }
 /* Feldbeschriftungen etwas nach außen rücken: „Folie 06“ usw. stoßen sonst
-   bei dieser Radgröße an den Kreis der Markenkompetenz */
+   bei dieser Radgröße an den Kreis des Markenkerns (Zentrum) */
 #f12 .sr-label--hart { margin-left: -16px; }
 #f12 .sr-label--weich { margin-left: 16px; }

@@ -123,7 +123,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
 | 102 | 20.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D19, D21 (fortgesetzt) | D19 (Nacharbeit) und D21 (Abgleich Begriffe/Quellen, Prüfung, Bericht) nach dem Limit fortgesetzt |
 | 103 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D19, D21 | nur Nachweis committet; D19 und D21 laufen |
-| 104 | 20.10.2026 | Yannick | Antwort auf Rückfrage zum Vorlesungs-Abgleich: „Steuerrad-Begriffe (Folie 10)“ und „Kennzeichnung & Rückfragen“ umsetzen | D22 (geplant) | Umsetzung nach Ende von D20 |
+| 104 | 20.10.2026 | Yannick | Antwort auf Rückfrage zum Vorlesungs-Abgleich: „Steuerrad-Begriffe (Folie 10)“ und „Kennzeichnung & Rückfragen“ umsetzen | D22 | Steuerrad-Begriffe nach Stenger, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen umgesetzt; Exporte neu |
 | 105 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D20 (neu gestartet) | D20 war am Limit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet |
 | 106 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D20 | nur Nachweis committet; D20 läuft, D22 vorbereitet |
 | 107 | 21.10.2026 | Yannick | „Was steht danach für eine task an?“ | – | Übersicht im Chat: laufende Pakete, Aufgaben für Yannick, Termine laut Arbeitsplan, Ergebnis Account 2 zum Zusammenführen |
@@ -1977,7 +1977,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D18 | 20.10.2026 | 95 | Workflow „chamaeleon“ (5 Unteragenten in 3 Phasen) | Analyse-Tier Waschbär → Chamäleon: Folie 08/10, Abstimmung, Zeichnungen, Ausarbeitungen, Doku, Prüfung, Exporte | Chamäleon überall als Analyse-Tier, Begründung als Vorschlag gekennzeichnet; 2 Prüfer (0 hoch, 6 mittel) umgesetzt; Feld Tonalität offen | Claude: Folienbild f08 angesehen, Tests 44/44, Diff-Umfang und Modellbezeichnungen geprüft |
 | D19 | 20.10.2026 | 98 (neu gestartet nach 100, fortgesetzt nach 102) | Workflow „logo-raetsel“ (4 Unteragenten in 3 Phasen) | Folie 01: Rätsel mit großem, stufenweise schärferem Logo; Illustration mit Original-Logo auf der Dose; Prüfung, Exporte | Rätselbild mit Logo (data-URI), Stufen 440/11 → 220/10 → 100/0, Kennzeichnung, Doku; 2 Prüfer (3 mittlere Befunde) umgesetzt | Claude: Stufenbilder und Folienbild f01 angesehen, Diff und Modellbezeichnungen geprüft |
 | D20 | 20.–21.10.2026 | 100/101 (neu gestartet nach 105) | Workflow „abstimmung-zeitfenster“ (3 Unteragenten in 3 Phasen) | Stimmen zählen nur 30 Minuten: Server-Parameter minuten, Folie 08, Abstimmseite, Tests, Doku | Fassung 20.10.2026 mit Zeitfenster; Folie, Handy, Speicher; 53 Prüfungen, 26 Mutanten, Browser-Test zeitfenster-e2e.mjs; Prüfer: 3 mittlere Befunde umgesetzt | Claude: Tests 53/53, zeitfenster-e2e 58/0, Prüflauf f08 0 Fehler |
-| D22 | 21.10.2026 | 104/109 | Workflow „abgleich-umsetzung“ (3 Unteragenten in 3 Phasen) | Steuerrad-Begriffe nach Stenger, Chamäleon im Feld Tonalität, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen | *läuft* | – |
+| D22 | 21.10.2026 | 104/109 (neu gestartet nach 111) | Workflow „abgleich-umsetzung“ (3 Unteragenten in 3 Phasen) | Steuerrad-Begriffe nach Stenger, Chamäleon im Feld Tonalität, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen | Mitte „Markenkern“, Band „Positionierung“, Wir-Form, „Markeneigenschaften“, Tonalität mit „wandelbar“; Prüfer 1 hoher, 5 mittlere Befunde umgesetzt; Exporte neu | Claude: f10 angesehen, Diff-Umfang und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 
 <!-- Vorlage für den Detaileintrag:
@@ -2629,6 +2629,37 @@ steht hier mit dem wörtlichen Auftrag.
 - **Wie Claude das Ergebnis geprüft hat:** `live-abstimmung-test.mjs` (53/53), `zeitfenster-e2e.mjs` (58 bestanden,
   0 Fehler, 0 externe Anfragen), `pruefen.mjs --nur f08 --schritte` (0 Fehler), Diff auf Modellbezeichnungen.
   Mit echtem Google noch nicht geprüft: wirkt erst nach „Skript aktualisieren“ durch Yannick; danach Lasttest.
+
+### D22 – 21.10.2026 – ausgelöst durch Prompt 104/109 (neu gestartet nach 111)
+
+- **Art:** Workflow „abgleich-umsetzung“: Bau, adversariale Prüfung, Nacharbeit mit Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-21_abgleich-umsetzung.js`](workflows/2026-10-21_abgleich-umsetzung.js).
+- **Vorgaben:** Befunde #15, #22, #27–#30 aus `abgleich-vorlesung.md`; Entscheidungen Yannick (Chamäleon ins Feld
+  Tonalität, Limbic-Typ bleibt Hauptaussage); Begriffe an den sichtbaren Vorlesungsfolien prüfen; Inhalte von Lukas
+  und Elias nur bei Feldnamen des Rads anpassen, sonst Hinweis im Kasten; geschützte Dateien unverändert; kein Commit.
+- **Unterbrechung:** erster Lauf am Nutzungslimit gescheitert (Bau fast fertig); mit Hinweis neu gestartet.
+- **Ergebnis:**
+  - **Steuerrad (Folien 02, 03, 10, 12; `js/komponenten.js`, `js/deck.js`):** Mitte „Markenkern“ (Stenger, S. 90–91;
+    Notiz: bei Esch auch „Markenkompetenz“, MW), Leitfragen in Wir-Form (S. 88–89), Feld „Markeneigenschaften“
+    (S. 60, 90–91). Das bisherige Band „Markenkern“ mit „Genuss mit gutem Gewissen“ heißt jetzt „Positionierung ·
+    aus der Identität“ (S. 87: Identität → Zielvorgabe → Positionierung; S. 94: Positionierung als Kurzsatz).
+  - **Folie 10:** Feld Tonalität „frecher Kumpel · wandelbar · Spaß“ (Entscheidung Yannick), 08b „Ins Steuerrad“
+    wortgleich; Sprechtexte mit gleicher Wortzahl; neue Rückfragen (Markenkern vs. Positionierung, Identität/Image).
+  - **Folie 11:** Titel „klare Positionierung, zwei Lücken, ein Bruch“ (statt „starker Kern“) – Wortwahl als offene
+    Entscheidung für Elias vermerkt.
+  - **Kennzeichnung:** Folie 05 Fußzeile „Typen … und Gewichte: Erweiterung, nicht in der Vorlesung“ und Rückfrage
+    (S. 93); B1 Grenze „Simulierte Befragte … ersetzen kein Kundengespräch (Stenger, S. 78)“, Notizen 02/04/B1 ehrlich
+    zu den noch fehlenden echten Interviews.
+  - **Ausarbeitungen:** methoden.md, README (FS1), folienentwuerfe.md, markenkompetenz.md, limbic-map.md,
+    persona-steckbrief.md, QUELLEN.md; Grafiken Folie 02/03 neu; Hinweise für Lukas (06, 07, 08b) und Elias (11).
+  - **Prüfer:** 1 hoher Befund (Entscheidung Chamäleon nicht überall als entschieden markiert), 5 mittlere
+    (u. a. Einordnung „Genuss mit gutem Gewissen“, Ungenauigkeiten im Rückfragesatz zu S. 60, zu starke Aussage über
+    KI-Nutzung, Exporte veraltet) – umgesetzt.
+  - **Exporte:** PDF 22 Seiten, 23 Folienbilder, Übersicht 21.10.2026.
+- **Wie Claude das Ergebnis geprüft hat:** `export/folien/f10.png` angesehen (Markenkern in der Mitte, Band
+  Positionierung, Tonalität mit „wandelbar“, Feld Markeneigenschaften); verbliebene „Markenkompetenz“-Stellen sind
+  Einordnungen/Historie; `git diff --name-only` gegen geschützte Dateien und Modellbezeichnungen geprüft.
+  Offen: Entscheidungen Elias (Titel Folie 11) und Yannick (sichtbares „Stenger, S. 78“ auf B1, B2-Zeile).
 
 ---
 

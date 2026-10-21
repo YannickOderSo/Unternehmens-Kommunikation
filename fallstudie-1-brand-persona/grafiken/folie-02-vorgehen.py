@@ -1,4 +1,10 @@
-"""Erzeugt die Grafik für Folie 2: Methoden → Felder des Markensteuerrads."""
+"""Erzeugt die Grafik für Folie 2: Methoden → Felder des Markensteuerrads.
+
+Aufruf: python3 folie-02-vorgehen.py folie-02-vorgehen.svg (PNG danach per Chromium-Screenshot, 1400 × 800).
+Seit Mi, 21.10.2026 (Abgleich Vorlesung, Befunde #27–#29): Feldnamen und Leitfragen wie in der Vorlesung
+(Stenger, S. 88–91) – Mitte „Markenkern“ statt „Markenkompetenz“, Leitfragen in der Wir-Form,
+„Markeneigenschaften“ statt „Markenattribute“; Pfeiltext „Eigenschaften sind die Startpunkte“.
+"""
 import sys
 
 W, H = 1400, 800
@@ -41,6 +47,8 @@ def methode(x, y, titel, unterzeile, folie, linie):
 
 
 add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">')
+add('<!-- Erzeugt mit folie-02-vorgehen.py. Begriffe seit 21.10.2026 wie in der Vorlesung (Stenger, S. 88-91): '
+    'Markenkern, Leitfragen in der Wir-Form, Markeneigenschaften. -->')
 add(f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>')
 
 # Markensteuerrad: vier Quadranten + Zentrum
@@ -54,20 +62,20 @@ for pfad, farbe in quadranten:
     add(f'<path d="{pfad}" fill="{farbe}" stroke="#FFFFFF" stroke-width="8"/>')
 
 text(588, 236, "Markennutzen", 19, HARD_TITLE, "bold")
-text(588, 260, "Was biete ich an?", 15, HARD_TEXT)
+text(588, 260, "Was bieten wir?", 15, HARD_TEXT)
 text(812, 236, "Markentonalität", 19, SOFT_TITLE, "bold")
-text(812, 260, "Wie bin ich?", 15, SOFT_TEXT)
+text(812, 260, "Wie sind wir?", 15, SOFT_TEXT)
 text(812, 488, "Markenbild", 19, SOFT_TITLE, "bold")
-text(812, 514, "Wie trete ich auf?", 15, SOFT_TEXT)
-text(590, 488, "Markenattribute", 19, HARD_TITLE, "bold")
+text(812, 514, "Wie treten wir auf?", 15, SOFT_TEXT)
+text(592, 488, "Markeneigenschaften", 19, HARD_TITLE, "bold")
 text(590, 514, "Über welche", 15, HARD_TEXT)
 text(590, 534, "Eigenschaften", 15, HARD_TEXT)
-text(590, 554, "verfüge ich?", 15, HARD_TEXT)
+text(590, 554, "verfügen wir?", 15, HARD_TEXT)
 
 add(f'<circle cx="{CX}" cy="{CY}" r="{RI}" fill="{KERN}" stroke="#FFFFFF" stroke-width="8"/>')
 text(CX, CY - 8, "Marken-", 19, "#FFFFFF", "bold")
-text(CX, CY + 15, "kompetenz", 19, "#FFFFFF", "bold")
-text(CX, CY + 40, "Wer bin ich?", 14, "#FFFFFF")
+text(CX, CY + 15, "kern", 19, "#FFFFFF", "bold")
+text(CX, CY + 40, "Wer sind wir?", 14, "#FFFFFF")
 
 text(505, 612, "HARD FACTS · rational", 14, HARD_LINE, "bold")
 text(895, 612, "SOFT FACTS · emotional", 14, SOFT_LINE, "bold")
@@ -92,8 +100,8 @@ pfeil(1060, 512, 912, 512)
 
 # Verkettung der Methoden
 pfeil(190, 464, 190, 278, GRAU, 2)
-text(205, 364, "Attribute sind die", 14, GRAU, anker="start", stil="italic")
-text(205, 383, "Startpunkte", 14, GRAU, anker="start", stil="italic")
+text(205, 364, "Eigenschaften sind", 14, GRAU, anker="start", stil="italic")
+text(205, 383, "die Startpunkte", 14, GRAU, anker="start", stil="italic")
 pfeil(1210, 276, 1210, 462, GRAU, 2)
 text(1195, 364, "Tonalität ist der", 14, GRAU, anker="end", stil="italic")
 text(1195, 383, "Prüfmaßstab", 14, GRAU, anker="end", stil="italic")
@@ -106,6 +114,8 @@ add(f'<text x="700" y="699" font-family="{FONT}" font-size="18" fill="#1F2A30" t
     'die Zielgruppe ist der Bezugsrahmen für alle Felder · Folien 4–5</text>')
 
 # Quellenzeile
+# Quellenzeile wie bis 20.10.2026: keine Seitenangaben der Vorlesung in Fußzeilen (Befund #4 nicht freigegeben);
+# der Beleg für die Feldnamen steht im Kopfkommentar und in folienentwuerfe.md
 text(40, 772, "Eigene Darstellung nach Esch (Markensteuerrad) und Häusel (Limbic Map), erstellt mit KI-Unterstützung",
      13, GRAU, anker="start")
 text(1360, 772, "Methoden: Desk Research + KI-Tools · Prompts im Backup", 13, GRAU, anker="end")

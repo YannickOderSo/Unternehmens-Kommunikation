@@ -139,7 +139,7 @@
 #f02 .sr-pille .vorgehen-ki { align-self: center; }
 
 /* ---------- Kernfrage ----------
-   „Wer bin ich?“ steht nicht im gelben Zentrum (stieß dort an den Kernring),
+   „Wer sind wir?“ (bis 21.10.2026 „Wer bin ich?“) steht nicht im gelben Zentrum (stieß dort an den Kernring),
    sondern vorn in der Pille „Desk Research“ (setzt js/folien/02-vorgehen.js). */
 #f02 .sr-label--kern .sr-label-frage { display: none; }
 #f02 .sr-pille .vorgehen-kernfrage {
@@ -180,7 +180,7 @@
 #f02 .steuerrad:has(.sr-logik-text.schritt-an) .sr-karte:not(.sr-pille) .sr-karte-text { display: none; }
 
 /* Schritt 6 „Verkettung“: Die gestrichelten Pfeile und ihre Texte sind das
-   Neue – sie stehen in Akzentfarbe, die Markenkompetenz (Zentrum, Desk
+   Neue – sie stehen in Akzentfarbe, der Markenkern (Zentrum, Desk
    Research) tritt zurück. Leitfragen und Methodenbeschreibungen bleiben aus
    (die Beschreibung unter „Laddering“ läge sonst auf dem Pfeiltext). */
 #f02 .steuerrad.vorgehen-kette .sr-label-frage,

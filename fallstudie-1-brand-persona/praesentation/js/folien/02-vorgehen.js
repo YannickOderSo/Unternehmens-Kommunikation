@@ -7,9 +7,10 @@
    den Ablauf an die Erzählung der Folie an:
 
    1. Verkettung als eigener Schritt (= Schlussschritt des Bausteins):
-      Die gestrichelten Pfeile „Attribute als Startpunkte“ und „Tonalität als
-      Prüfmaßstab“ erscheinen erst nach allen Methoden. In diesem Schritt
-      stehen die Pfeile in Akzentfarbe, die Markenkompetenz tritt zurück.
+      Die gestrichelten Pfeile „Eigenschaften als Startpunkte“ und „Tonalität
+      als Prüfmaßstab“ erscheinen erst nach allen Methoden. In diesem Schritt
+      stehen die Pfeile in Akzentfarbe, der Markenkern (Zentrum; bis 21.10.2026
+      „Markenkompetenz“) tritt zurück.
    2. Persona-Rahmen als letzter Schritt: Die Pille „Brand Persona + Limbic
       Map“ erscheint sofort (mit ihrer Kurzbeschreibung), danach zeichnet sich
       der Ring. Der Ring besteht aus zwei Bögen, die hinter den beiden Pillen
@@ -46,7 +47,12 @@
   /* Der Ring endet so viele px innerhalb der Pillenkante (läuft unter den Rand) */
   var RING_UNTER_RAND = 2;
   /* Methodenkarten mit dem Etikett „Fremdbild“ (Sicht der Zielgruppe, laut
-     Aufgabe: Repertory Grid und Laddering). Leer [] = kein Etikett. */
+     Aufgabe: Repertory Grid und Laddering). Leer [] = kein Etikett.
+     Vorlesungsbegriff dafür: Markenimage („was wahrgenommen wird“, Stenger,
+     S. 87); die Aufgabe ordnet Repertory Grid, Laddering, Analogien und
+     Kommunikationsanalyse der Markenidentität zu (S. 60).
+     Das Etikett umzubenennen ist Befund #30 „wenn Zeit“ – am 21.10.2026 nicht
+     freigegeben; die Rückfrage-Antwort steht in den Notizen von Folie 02. */
   var SICHT_FREMDBILD = ['attribute', 'nutzen'];
 
   function huelleVon(wurzel) {
@@ -83,8 +89,9 @@
         kopf.insertBefore(zeile, verweis || null);
         if (verweis) zeile.appendChild(verweis);
         /* Etikett „Fremdbild“: Repertory Grid und Laddering fragen die
-           Zielgruppe (Image = Fremdbild); das Steuerrad selbst beschreibt die
-           Identität (= Selbstbild). Felder in SICHT_FREMDBILD (oben). */
+           Zielgruppe (Markenimage, Stenger, S. 87); das Steuerrad selbst
+           beschreibt die Markenidentität (Innensicht). Felder in
+           SICHT_FREMDBILD (oben). */
         if (SICHT_FREMDBILD.indexOf(karte.getAttribute('data-paar')) >= 0) {
           util.element('span', { class: 'vorgehen-sicht', 'data-meta': '' }, 'Fremdbild', zeile);
         }
@@ -187,7 +194,8 @@
   }
 
 
-  /* Leitfrage der Markenkompetenz („Wer bin ich?“): Im gelben Zentrum stieß
+  /* Leitfrage des Markenkerns („Wer sind wir?“, Stenger, S. 88; bis 21.10.2026
+     „Markenkompetenz“ / „Wer bin ich?“): Im gelben Zentrum stieß
      sie an den Kernring (Abschlussprüfung 16.10.2026). Sie steht deshalb vorn
      in der Pille „Desk Research“ und erscheint mit deren Beschreibung in
      Schritt 1 – wie bei den anderen Methoden die Leitfrage an der Karte. Das
@@ -253,7 +261,7 @@
 
   /* Schritt „Verkettung“ (läuft nach dem Baustein, der für diesen Schritt
      keinen Fokus setzt): Klasse .vorgehen-kette – das Aussehen (Pfeile in
-     Akzentfarbe, Markenkompetenz tritt zurück) regelt css/folien/02-vorgehen.css */
+     Akzentfarbe, Markenkern tritt zurück) regelt css/folien/02-vorgehen.css */
   function ketteZeigen(huelle, an) {
     if (!huelle) return;
     huelle.classList.toggle('vorgehen-kette', an);

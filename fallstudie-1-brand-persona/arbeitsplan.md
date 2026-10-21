@@ -59,7 +59,7 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | **Mo 19.10.** | Folienentwürfe Markenkompetenz + Persona | Auswertung in Sheets → **Attribute an alle** | **Folienmaster an alle** | |
 | **Di 20.10.** | Backup-Struktur, KI-Nachweis nachpflegen | Laddering (P9), HVM (P10) | Entwurf Kommunikationsanalyse | **Zwischenstand, 45 Min.:** Persona, Attribute, erste Befunde zum Markenbild |
 | **Mi 21.10.** | Folien 2–5 im Master | Analogien (P11) → **Tonalität an C** | Fit-Bewertung Markenbild ↔ Tonalität / Persona | |
-| **Do 22.10.** | Entwurf Markensteuerrad (P13) vorbereiten, Synthese leiten | | Folie 10 übernehmen und einüben | **Synthese, 2 Std.:** Markensteuerrad, Markenkern, Empfehlungen |
+| **Do 22.10.** | Entwurf Markensteuerrad (P13) vorbereiten, Synthese leiten | | Folie 10 übernehmen und einüben | **Synthese, 2 Std.:** Markensteuerrad, Positionierung (Satz über dem Rad; bis 21.10. „Markenkern“ – so heißt seither die Mitte, Stenger, S. 90–91), Empfehlungen |
 | **Fr 23.10.** | Folien 1–5 final | Folien 6–8 final | Folien 9–11 final | |
 | **Sa 24.10.** | Backup + KI-Listen in den KI-Nachweis übertragen (Nachträge bis So 25.10.) | Rohdaten ins Backup | Gesamtdeck zusammenführen, kritische Prüfung (P14) | |
 | **So 25.10.** | | | | **Generalprobe, 1 Std.:** zweimal mit Stoppuhr, Rückfragen üben |

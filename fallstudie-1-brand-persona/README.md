@@ -27,29 +27,38 @@ Logik sichtbar macht, ist das der größte Hebel für *Anwendung von Konzepten* 
 
 | Arbeitspaket | Methode | Ergebnis | Feld im Markensteuerrad |
 |--------------|---------|----------|-------------------------|
-| Desk Research zur Marke | Sekundärquellen, KI-gestützte Recherche | Herkunft, Historie, Marktrolle | **Markenkompetenz** – *Wer bin ich?* (Zentrum) |
-| Repertory Grid | Triadenvergleich mit Wettbewerbern | relevante, differenzierende Eigenschaften | **Markenattribute** – *Über welche Eigenschaften verfüge ich?* |
-| Laddering | Means-End-Kette | sachlich-funktionaler und psychosozialer Nutzen | **Markennutzen** – *Was biete ich an?* |
-| Analogien | Marke als Mensch / Tier | Persönlichkeit, Beziehung, Emotionen | **Markentonalität** – *Wie bin ich?* |
-| Kommunikationsanalyse | Content-Analyse IG / FB / YT | Corporate Design, Schlüsselbilder, Bildwelt | **Markenbild** – *Wie trete ich auf?* |
+| Desk Research zur Marke | Sekundärquellen, KI-gestützte Recherche | Herkunft, Historie, Marktrolle | **Markenkern** – *Wer sind wir?* (Zentrum) |
+| Repertory Grid | Triadenvergleich mit Wettbewerbern | relevante, differenzierende Eigenschaften | **Markeneigenschaften** – *Über welche Eigenschaften verfügen wir?* |
+| Laddering | Means-End-Kette | sachlich-funktionaler und psychosozialer Nutzen | **Markennutzen** – *Was bieten wir?* |
+| Analogien | Marke als Mensch / Tier | Persönlichkeit, Beziehung, Emotionen | **Markentonalität** – *Wie sind wir?* |
+| Kommunikationsanalyse | Content-Analyse IG / FB / YT | Corporate Design, Schlüsselbilder, Bildwelt | **Markenbild** – *Wie treten wir auf?* |
 | Brand Persona + Limbic Map | Desk Research, KI, Limbic Map | Wen spricht die Marke an, welche Motive? | Bezugsrahmen für alle Felder |
 
-Linke Hälfte = *hard facts* (Attribute, Nutzen), rechte Hälfte = *soft facts* (Tonalität, Bild).
+Linke Hälfte = *hard facts* (Eigenschaften, Nutzen), rechte Hälfte = *soft facts* (Tonalität, Bild).
+
+Feldnamen und Leitfragen seit Mi, 21.10.2026 wie in der Vorlesung (Stenger, S. 88–91; Abgleich Vorlesung, Befunde
+#27–#29, [`abgleich-vorlesung.md`](abgleich-vorlesung.md)): Mitte „Markenkern“ (bis dahin „Markenkompetenz“, so bei
+Esch selbst), Wir-Form, „Markeneigenschaften“ (bis dahin „Markenattribute“). „Hard/soft facts“ steht nicht in der
+Vorlesung (Befund #32, offen).
 
 **Verkettung der Methoden** (so wird die Ableitung nachvollziehbar):
 
 ```
 Persona ──► liefert die (simulierten) Befragten für Repertory Grid, Laddering und Analogien
-Repertory Grid ──► 3–5 Markenattribute ──► sind die Startpunkte fürs Laddering
+Repertory Grid ──► 3–5 Markeneigenschaften ──► sind die Startpunkte fürs Laddering
 Laddering ──► Markennutzen
 Analogien ──► Markentonalität ──► Soll-Maßstab für die Kommunikationsanalyse
 Kommunikationsanalyse ──► Markenbild (Ist) + Lücken zwischen Identität und Auftritt
-Alles ──► Markensteuerrad ──► Empfehlungen
+Alles ──► Markensteuerrad ──► Positionierung (Satz über dem Rad, Stenger, S. 87, 94) ──► Empfehlungen
 ```
 
-**Identität vs. Image:** Markenidentität ist das *Selbstbild* der Marke, Repertory Grid und Laddering messen
-das *Fremdbild* der Zielgruppe. Diesen Unterschied kurz benennen und beide Sichten gegenüberstellen
-(Selbstdarstellung auf Website / im Geschäftsbericht vs. Wahrnehmung der Persona). Das zeigt Problemverständnis.
+**Identität vs. Image** (Begriffe der Vorlesung seit 21.10.2026, Befund #30): Markenidentität ist die Innensicht –
+„wer und was man sein möchte“; das Markenimage ist, „was wahrgenommen wird“ (Stenger, S. 87; bei uns bisher auch
+*Selbstbild* / *Fremdbild*). Die Aufgabe ordnet Repertory Grid, Laddering, Analogien und Kommunikationsanalyse der
+Markenidentität zu (S. 60); weil Repertory Grid und Laddering die Zielgruppe fragen – bisher vor allem simuliert, echte
+Kurzinterviews geplant –, prüfen sie zugleich, ob die Identität ankommt; das ist das Markenimage. Diesen
+Unterschied kurz benennen und beide Sichten gegenüberstellen (Selbstdarstellung auf Website / im Geschäftsbericht vs.
+Wahrnehmung der Persona). Das zeigt Problemverständnis.
 
 ## Folienplan (15 Minuten)
 
@@ -57,10 +66,10 @@ das *Fremdbild* der Zielgruppe. Diesen Unterschied kurz benennen und beide Sicht
 |---|-------|------------|------|---------|
 | 1 | Titel | Marke, Gruppe, Datum | 0:15 | A |
 | 2 | Ausgangslage & Vorgehen | Fragestellung; Übersichtsgrafik: Methoden → Felder des Markensteuerrads | 1:00 | A |
-| 3 | Markenkompetenz | Wer ist die Marke? Herkunft, Meilensteine (Timeline), Marktrolle | 1:00 | A |
+| 3 | Markenkern (bis 21.10.2026: Markenkompetenz) | Wer sind wir? Herkunft, Meilensteine (Timeline), Marktrolle | 1:00 | A |
 | 4 | Brand Persona | Steckbrief mit Bild: Geografie, Soziodemografie, Kaufverhalten, Mediennutzung, Psychografie | 1:45 | A |
-| 5 | Limbic Map | Persona und Marke auf der Map, Limbic Type, Folgen für die Kommunikation | 1:00 | A |
-| 6 | Repertory Grid | Vorgehen in einem Satz, Polaritätenprofil (Marke vs. Wettbewerb vs. Ideal) → Markenattribute | 2:00 | B |
+| 5 | Limbic Map | Persona und Marke auf der Map, Limbic Type (eigene Erweiterung, nicht in der Vorlesung), Folgen für die Kommunikation | 1:00 | A |
+| 6 | Repertory Grid | Vorgehen in einem Satz, Polaritätenprofil (Marke vs. Wettbewerb vs. Ideal) → Markeneigenschaften | 2:00 | B |
 | 7 | Laddering | Hierarchical Value Map → Markennutzen (funktional / psychosozial) | 1:45 | B |
 | 8 | Analogien | Marke als Mensch und Tier → Persönlichkeit, Emotionen → Markentonalität | 1:15 | B |
 | 9 | Kommunikationsanalyse | Kanäle im Überblick, Corporate Design, Schlüsselbilder, Bildwelt; Fit zur Tonalität | 2:15 | C |
@@ -87,11 +96,13 @@ Alle KI-Prompts (an Claude Code, an Unteragenten und in anderen Tools) werden im
 
 **Problemverständnis & Fokussierung (15 %)**
 - [ ] Fragestellung auf Folie 2 in einem Satz formuliert
-- [ ] Unterschied Identität (Selbstbild) vs. Image (Fremdbild) benannt
+- [ ] Unterschied Markenidentität (Innensicht) vs. Markenimage (Wahrnehmung) benannt (Stenger, S. 60, 87)
 - [ ] Nur das gezeigt, was ins Markensteuerrad einfließt; Rest ins Backup
 
 **Anwendung von Konzepten & Modellen (20 %)**
-- [ ] Begriffe und Felder exakt wie in der Vorlesung (Esch, Limbic Map, Repertory Grid, Laddering)
+- [ ] Begriffe und Felder exakt wie in der Vorlesung (Esch, Limbic Map, Repertory Grid, Laddering) – Steuerrad
+      am 21.10.2026 angeglichen (Markenkern, Wir-Form, Markeneigenschaften, Positionierung; Befunde #27–#29),
+      Limbic Types als eigene Erweiterung gekennzeichnet (#22); Rest siehe `abgleich-vorlesung.md`
 - [ ] Jede Methode kurz erklärt: was sie misst, wie ihr sie durchgeführt habt
 - [ ] Zuordnung Methode → Feld des Markensteuerrads sichtbar
 

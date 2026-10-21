@@ -3,7 +3,8 @@
    -----------------------------------------------------------------------------
    Das Steuerrad gestaltet der Baustein (css/komponenten.css). Hier stehen nur
    die Ergänzungen dieser Folie:
-     • Markenkern als Band über dem Rad (mit gestricheltem Platzhalter)
+     • Positionierung als Band über dem Rad (Platz unsichtbar reserviert;
+       Klassen g6s-kern… aus der Zeit, als das Band „Markenkern“ hieß)
      • Quellenkürzel direkt hinter einzelnen Stichworten
      • Konsistenzprüfung: Nummern (Lückenfarbe) an Stichworten + Notizen „Lücke 1/2“
      • optionaler Abgleich mit der Wortwolke (letzter Schritt)
@@ -15,10 +16,11 @@
 #f10 { --g6s-luecke: var(--f-warnung); }
 
 /* ---------------------------------------------------------------------------
-   0. MARKENKERN – eigenes Band über dem Rad
-   Das Zentrum des Rads ist (wie auf Folie 2 und 12) die Markenkompetenz.
-   Der Markenkern ist unsere Verdichtung aller Felder und steht deshalb
-   außerhalb des Rads. Das ganze Band (Überschrift, Akzentstrich, Satz)
+   0. POSITIONIERUNG – eigenes Band über dem Rad
+   Das Zentrum des Rads ist (wie auf Folie 2 und 12 und in der Vorlesung,
+   Stenger, S. 90–91) der Markenkern. Die Positionierung folgt aus der
+   Identität (S. 87: Pfeil „Zielvorgabe“) und steht deshalb außerhalb des Rads.
+   Bis 21.10.2026 hieß das Zentrum „Markenkompetenz“ und das Band „Markenkern“. Das ganze Band (Überschrift, Akzentstrich, Satz)
    erscheint erst in seinem Schritt; bis dahin bleibt der Platz frei, aber
    unsichtbar reserviert (das Rad misst den Rest der Fläche aus – kein
    Layoutsprung). Bis 16.10.2026 stand dort vorher ein gestrichelter Leerkasten –
@@ -49,7 +51,7 @@
 #f10 .g6s-kern-zusatz { color: var(--f-text-2); }
 #f10 .g6s-kern-platz,
 #f10 .g6s-kern-text { grid-column: 2; grid-row: 1; }
-/* Platzhalter: hält nur die Höhe des Kern-Satzes frei (unsichtbar) */
+/* Platzhalter: hält nur die Höhe des Satzes (Positionierung) frei (unsichtbar) */
 #f10 .g6s-kern-platz {
   justify-self: start;
   width: min(100%, 520px);
@@ -57,7 +59,7 @@
   visibility: hidden;
 }
 html.druckmodus #f10 .g6s-kern-platz { display: none; }
-/* Band erst mit dem Kern-Satz zeigen (Schritt „Markenkern“) */
+/* Band erst mit dem Satz zeigen (Schritt „Positionierung“) */
 #f10 .g6s-kern { transition: opacity var(--dauer-mittel) var(--kurve), visibility 0s; }
 #f10 .g6s-kern:not(:has(> .g6s-kern-text.schritt-an)) {
   opacity: 0;
@@ -267,7 +269,7 @@ html.druckmodus #f10 .g6s-kern { opacity: 1; visibility: visible; }
 }
 #f10 .g6s-abgleich[hidden] { display: none; }
 /* Während des Abgleichs tritt das Rad ganz zurück (sonst lugen die Pillen
-   „Markenkompetenz“ und „Brand Persona“ oben und unten unter der Fläche hervor) */
+   „Markenkern“ und „Brand Persona“ oben und unten unter der Fläche hervor) */
 #f10 .g6s-rad { transition: opacity var(--dauer-mittel) var(--kurve); }
 #f10 .g6s:has(> .g6s-abgleich.schritt-an:not([hidden])) > .g6s-rad { opacity: 0; }
 html.druckmodus #f10 .g6s > .g6s-rad { opacity: 1 !important; }

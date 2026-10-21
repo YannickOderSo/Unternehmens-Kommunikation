@@ -2,9 +2,11 @@
    js/folien/11-fazit.js – Folie f11 · Fazit & Empfehlungen
    -----------------------------------------------------------------------------
    Die Folie ist reines HTML (Texte dort ändern). Dieses Skript
-     • setzt den Kern-Satz aus Folie 10 ein (Daten-JSON „kern“ von f10 –
+     • setzt den Satz der Positionierung aus Folie 10 ein (Daten-JSON
+       „positionierung“ von f10, bis 21.10.2026 „kern“ – wird noch gelesen;
        eine Quelle für beide Folien; fehlt Folie 10, bleibt der Text im HTML),
-     • und macht die Verweis-Pillen („Kern · Folie 10“, „Lücke 1 · Folie 10“)
+     • und macht die Verweis-Pillen („Positionierung · Folie 10“,
+       „Lücke 1 · Folie 10“)
        lebendig:
      • die Foliennummer wird aus dem Deck gelesen (stimmt also auch, wenn sich
        die Reihenfolge ändert),
@@ -35,7 +37,9 @@
     return isNaN(n) ? 'ende' : n;
   }
 
-  /* Kern-Satz aus den Daten von Folie 10 lesen (<script class="daten"> → „kern“) */
+  /* Positionierung aus den Daten von Folie 10 lesen (<script class="daten"> →
+     „positionierung“, alter Name „kern“). Platzhalter data-g6f="kern" ist ein
+     technischer Name aus der Zeit, als der Satz „Markenkern“ hieß. */
   function kernEinsetzen(ctx) {
     var platz = ctx.folie.querySelector('[data-g6f="kern"]');
     var f10 = zielSuchen('f10');
@@ -43,7 +47,8 @@
     var skript = f10.element.querySelector(':scope > script.daten');
     var daten = null;
     try { daten = skript ? JSON.parse(skript.textContent) : null; } catch (e) { daten = null; }
-    if (daten && daten.kern) platz.textContent = ctx.util.markeText(daten.kern);
+    var satz = daten && (daten.positionierung || daten.kern);
+    if (satz) platz.textContent = ctx.util.markeText(satz);
   }
 
   function verweiseEinrichten(ctx) {

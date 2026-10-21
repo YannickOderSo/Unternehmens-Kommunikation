@@ -140,7 +140,8 @@ B7). **Auf Folie 01 seit 20.10.2026 außerdem als Teil einer Illustration:** das
 Rätselbild (dieselbe Datei, eingebettet); im Rätsel stark vergrößert und unscharf, die Quelle erscheint erst mit der
 Auflösung (Abschnitt 3). Das geht über reine Kennzeichnung hinaus – deshalb ausdrücklich Teil der Klärung mit dem
 Betreuer (unten). Bewusst **ohne** Logo:
-Kopfzeile aller Folien, Folie 03, das Zentrum des Steuerrads (dort steht nach Esch die Markenkompetenz), die
+Kopfzeile aller Folien, Folie 03, das Zentrum des Steuerrads (dort steht der Markenkern – so heißt die Mitte in der
+Vorlesung, Stenger, S. 90–91; bei Esch selbst auch „Markenkompetenz“; Begriff angeglichen am 21.10.2026), die
 öffentliche Startseite der Gruppe und die öffentliche Abstimmseite `abstimmen.html` (Live-Umfrage, seit 19.10.2026;
 oben steht dort „Studentische Fallstudie · keine Verbindung zur HOLY Softdrinks GmbH“, HOLY nur in der Frage) – dort
 entstünde der Eindruck einer HOLY-eigenen oder beauftragten Arbeit.
@@ -217,6 +218,15 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
   und ebook.de abgeglichen: 6. Aufl., erschienen 26.08.2019, kartoniert). Die Bücher selbst
   wurden nicht eingesehen; nutzt die Gruppe eine andere Ausgabe, dort anpassen. Kotler (Rollen auf Folie 03)
   fehlt noch in B7 (Auflage ungeprüft).
+  **Abgleich mit der Vorlesung, Stand Mi, 21.10.2026** (`../abgleich-vorlesung.md`, freigegeben von Yannick):
+  Die Begriffe des Steuerrads folgen jetzt den Vorlesungsfolien (Stenger, S. 60, 87–94) – Mitte „Markenkern“
+  (bis dahin „Markenkompetenz“, so bei Esch selbst; #27), Leitfragen in der Wir-Form (#28), Feld
+  „Markeneigenschaften“ (bis dahin „Markenattribute“; #29); der Satz über dem Rad auf Folie 10 heißt
+  „Positionierung“ (S. 87, 94; bis dahin „Markenkern“). Limbic Types und Prozentgewichte (Folie 05) stehen nicht in
+  der Vorlesung und sind als eigene Erweiterung gekennzeichnet (#22). Repertory Grid, Laddering und
+  Analogien nennt die Vorlesung nur als Aufgabe (S. 60), Aaker und Kotlers Wettbewerbsrollen gar nicht;
+  Schlüsselbilder stehen auf S. 60 und 97 ohne Urheber, Kroeber-Riel/Esch (2018) in der Literaturliste (S. 3).
+  Literaturangaben sind noch nicht auf die Vorlesungsausgaben umgestellt (#11–#14, nicht freigegeben).
 - **HOLY** ist eine Marke der HOLY Softdrinks GmbH; sie wird hier nur im Rahmen der Lehrveranstaltung
   analysiert. Erwähnte Wettbewerber (z. B. Red Bull, waterdrop) gehören ihren jeweiligen Inhabern.
 

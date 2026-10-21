@@ -53,10 +53,10 @@ Zu jeder Folien-Gruppe gehören `css/folien/<name>.css` und `js/folien/<name>.js
 | f01 | `01-einstieg.html` | Einstieg: Welche Marke steckt dahinter? + Titel | 45 | A | – (`leer`) |
 | f01b | `01b-wortwolke.html` | (optional) Live-Wortwolke „Was verbinden Sie mit [Marke]?“ | 45 | A | `leer`, `data-optional` |
 | f02 | `02-vorgehen.html` | Ausgangslage & Vorgehen (Steuerrad als interaktive Agenda) | 60 | A | `hub` |
-| f03 | `03-markenkompetenz.html` | Markenkompetenz | 45 | A | `kompetenz` |
+| f03 | `03-markenkompetenz.html` | Markenkern (bis 21.10.2026: Markenkompetenz; Dateiname bleibt) | 45 | A | `kompetenz` |
 | f04 | `04-persona.html` | Brand Persona | 80 | A | `persona` |
 | f05 | `05-limbic-map.html` | Limbic Map | 55 | A | `persona` |
-| f06 | `06-repertory-grid.html` | Repertory Grid → Markenattribute | 80 | B | `attribute` |
+| f06 | `06-repertory-grid.html` | Repertory Grid → Markeneigenschaften (bis 21.10.2026: Markenattribute) | 80 | B | `attribute` |
 | f07 | `07-laddering.html` | Laddering → Markennutzen | 90 | B | `nutzen` |
 | f08 + f08b | `08-analogien` | Analogien + Live-Umfrage (70) · Markentonalität nach Aaker (50) | 70 + 50 | B | `tonalitaet` |
 | f09 + f09b | `09-kommunikationsanalyse` | Kanäle & Bildwelt (60) · Markenbild: Corporate Design & Fit (55) | 60 + 55 | C | `bild` |
@@ -203,10 +203,12 @@ graue Scheibe über den neuen Titel). Wechselt hell ↔ dunkel (z. B. Folie 01 �
 
 ## 6. Bausteine (Beispiele: die Folien in `index.html`)
 
-### a) Markensteuerrad `.steuerrad` (Felder und Leitfragen nach Esch – mit Vorlesung abgleichen)
+### a) Markensteuerrad `.steuerrad` (Felder nach Esch, Namen und Leitfragen wie in der Vorlesung, Stenger, S. 88–91)
 
-Felder: `kompetenz` (Zentrum), `nutzen` (oben links), `attribute` (unten links), `tonalitaet`
-(oben rechts), `bild` (unten rechts), Rahmen `persona`. Links hard facts (`--f-hart*`), rechts soft
+Felder: `kompetenz` (Zentrum, Name „Markenkern“), `nutzen` (oben links), `attribute` (unten links, Name
+„Markeneigenschaften“), `tonalitaet` (oben rechts), `bild` (unten rechts), Rahmen `persona`. Die Schlüssel sind
+technische Namen; Feldnamen und Leitfragen (Wir-Form) stehen seit 21.10.2026 wie in der Vorlesung in `FELDER`
+(`js/komponenten.js`) – Abschnitt 21. Links hard facts (`--f-hart*`), rechts soft
 facts (`--f-weich*`), Kern `--f-kern`. Felder, Methoden und Rahmen sind klickbar (Maus, Tab + Enter)
 und springen zur ersten Hauptfolie mit dem passenden `data-feld`.
 
@@ -221,7 +223,7 @@ und springen zur ersten Hauptfolie mit dem passenden `data-feld`.
 - `data-leitfragen="schrittweise"` (Standard: Leitfrage nur beim gezeigten Feld; passt sie nicht ins
   Feld, steht sie automatisch unter der Methodenkarte) | `an` | `aus`.
 - `data-beschreibungen="schrittweise"` (Standard) | `an` | `aus` – Methodenbeschreibung.
-- `data-logik="aus"` (gestrichelte Logikpfeile „Attribute sind die Startpunkte“, „Tonalität ist der
+- `data-logik="aus"` (gestrichelte Logikpfeile „Eigenschaften sind die Startpunkte“, „Tonalität ist der
   Prüfmaßstab“), `data-seiten="aus"` (Hard/Soft-Facts-Beschriftung; `data-seiten="kurz"` = nur
   „Hard Facts“/„Soft Facts“ ohne „rational“/„emotional“, so auf Folie 10), `data-breite`/`data-hoehe`
   (feste Größe), `data-kartenbreite`, `data-morph="aus"`.
@@ -230,7 +232,7 @@ und springen zur ersten Hauptfolie mit dem passenden `data-feld`.
 <div class="steuerrad" data-modus="hub" data-aufbau="schritte">
   <script type="application/json">{
     "methoden": [ { "feld": "kompetenz", "name": "Desk Research", "text": "Herkunft, Historie, Marktrolle" }, … ],
-    "logik": [ { "von": "attribute", "nach": "nutzen", "text": "Attribute sind die Startpunkte" } ],
+    "logik": [ { "von": "attribute", "nach": "nutzen", "text": "Eigenschaften sind die Startpunkte" } ],
     "reihenfolge": ["kompetenz", "persona", "attribute", "nutzen", "tonalitaet", "bild"]
   }</script>
 </div>
@@ -1014,14 +1016,17 @@ auch „ohne festen Kern“ – Anzeichen in S5 (sechs Claims, Profilnamen; Befu
 die Kanäle (Folie 09b) und der Ansatz von Empfehlung 3. Der Markenkern („Genuss mit gutem Gewissen“) ist nicht
 betroffen; das Wort „Kern“ steht deshalb nur noch für den Markenkern (nicht „frech im Kern“). Folie 08b (Profil,
 Merkmale, Titel) und das Feld Tonalität auf Folie 10 bleiben unverändert – Folie 10: Entscheidung Yannick offen
-(Nacharbeit unten).
+(Nacharbeit unten). **Nachtrag 21.10.2026:** Seit dem Abgleich mit der Vorlesung heißt die Mitte des Rads
+„Markenkern“ (Herausforderer mit Softdrinks zum Selbermixen) und „Genuss mit gutem Gewissen“ heißt Positionierung
+(Band über dem Rad) – beide bleiben vom Chamäleon unberührt. **Entschieden (Yannick, 21.10.2026):** Das Chamäleon
+steht als „wandelbar“ im Feld Tonalität („frecher Kumpel · wandelbar · Spaß“), wortgleich auf 08b (Abschnitt 21).
 
 | Bereich | Änderung |
 |---|---|
 | Folie 08 (`index.html`) | Titel ab Schritt 2 „HOLY wäre ein Chamäleon, kein Adler“. Daten: `marke.tier.name` „Chamäleon“, Gründe wandelbar („31 Energy-Sorten“), vielseitig („Wacken, CSD, Simpsons“), frech („Gefährlich geil!“) – kurz wegen des Wortbudgets (39 Wörter; mit längeren Belegen waren es 47); Stichworte höchstens ca. 10 Zeichen (Spalte 176 px, „anpassungsfähig“ wäre zu breit); `hinweis` mit Kennzeichnung. Fußzeile „Tier: eigene Einordnung (H)“ – ohne Tiernamen, weil die Fußzeile schon während der Abstimmung zu sehen ist – und „Belege Kap. 3.1, 4.1, 6.2, 6.3, 6.6 ✔“. Notizen: Auflösung, „Warum Chamäleon?“, Kontrast, Bedienung, neue Rückfragen (ohne festen Kern? Tarnung? warum nicht mehr Waschbär?; nach der Nacharbeit dazu: Viele Sorten – schon Wandel? Trotzdem der Raptor? Aus eurer Befragung?), neuer Absatz „Chamäleon – Einordnung und Begründung“ (Belege, Gegenargumente, Verhältnis zu 8b/10, früherer Stand). Kasten „FOLIE 08“ und Kommentare (u. a. der falsche Verweis „Folie 10 → tonalitaet → Waschbär“: das Tier stand nie im Rad). |
 | Folie 08b | Kasten und eine Rückfrage („Wo ist das Chamäleon im Profil?“). Profil, Merkmale, Titel und Daten unverändert. |
 | Folie 09b, 11, 12 | Notizen: „gelebt wird das freche Chamäleon“ (09b), Brücke „Raptor als fester Anker“ zu Empfehlung 3 mit Kennzeichnung (11), Rückfrage „Warum ein Chamäleon?“ (12). |
-| Folie 10 | Feld Tonalität geprüft und unverändert („frecher Kumpel · Spaß · Zugehörigkeit“, wortgleich mit 8b) – **Abweichung vom Auftrag, der „Feld Tonalität“ nannte; Entscheidung Yannick offen** (Kasten „FOLIE 10“, LIESMICH 12). Sprechtext Schritt 5 „…, wandelbar wie ein Chamäleon – …“ (7 s; Schritt 0–8 jetzt ca. 186 Wörter ≈ 98 s, Zeitangaben zusammen 78 s); Belegabsatz und Kasten. |
+| Folie 10 | Feld Tonalität geprüft und unverändert („frecher Kumpel · Spaß · Zugehörigkeit“, wortgleich mit 8b) – **Abweichung vom Auftrag, der „Feld Tonalität“ nannte; Entscheidung Yannick offen** (Kasten „FOLIE 10“, LIESMICH 12). **Entschieden (Yannick, 21.10.2026): Variante B – „frecher Kumpel · wandelbar · Spaß“, Abschnitt 21.** Sprechtext Schritt 5 „…, wandelbar wie ein Chamäleon – …“ (7 s; Schritt 0–8 jetzt ca. 186 Wörter ≈ 98 s, Zeitangaben zusammen 78 s); Belegabsatz und Kasten. |
 | `marke.js → umfragen.tier` | `optionen` `['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan']` (Chamäleon an der Stelle des Waschbärs, Nummer 2), `unsereAntwort` `'Chamäleon'`; Kommentare (Probestimmen mit Option 2 zählen jetzt als Chamäleon – die Runde wird vor dem Vortrag ohnehin umgestellt). `liveQuelle`, `runde`, `link` und Beispielwerte unverändert. |
 | `werkzeuge/live-abstimmung-test.mjs` | nur die Liste `OPT` (das Werkzeug nutzt nur ihre Länge). |
 | Zeichnung `chamaeleon` | eigener Arbeitsschritt: Strichzeichnung (Helm, Auge mit Pupille, eingerollter Schwanz, Ast; Zeichenfläche 120 × 120, gefüllt nur die Pupille) in `BILDER` von `js/folien/08-analogien.js` und – zeichengleich – `js/abstimmen.js`; `bildSchluessel('Chamäleon')` ergibt `chamaeleon`, der Waschbär bleibt als Rückgriff. `css/folien/08-analogien.css`: nur Kommentare. Eigene Gestaltung ohne Vorlage; Merkmale des Tiers aus dem Modellwissen. |
@@ -1049,8 +1054,8 @@ Dossier überein, keine verbotene Datei geändert, kein Darstellungsfehler; Befu
 |---|---|
 | Begründung widerspricht sich: „Kanal“ in der Formel und Punkt (4) „je Markt und Kanal eine eigene Fassung“ unter „Dafür“, obwohl der Bruch über die Kanäle das Risiko ist (mittel) | Formel überall „wandelbar in Farbe, Sorte und Szene – im Ton immer frech“ (Kasten 08, 08b, 10, Notizen 08/08b, Belegabsatz 10, dieser Abschnitt, `../limbic-map.md`); Punkt (4) unter „Dagegen bzw. ambivalent“: zählt nicht als Stärke, gehört zu S4 und S5. |
 | Rückfrage „ohne festen Kern?“: „überall Du, ‚geil‘ …“ ohne Beleg (mittel) | Belegt und ohne „überall“: Du und „geil“ in den Shop-Texten, „Zero Zucker oder Bullsh*t.“ auf der Website (6.2 ✔ [1, 30]), englische LinkedIn-Posts enden mit „BURR“ und Adler-Emoji (6.1, 6.2 ✔ [31]). |
-| Wort „Kern“ dreifach (frech im Kern / ohne festen Kern / Markenkern) – Eigentor in der Fragerunde (mittel) | Antwort beginnt mit der Unterscheidung: „Nein. Der Markenkern steht: Genuss mit gutem Gewissen (Folie 10). Und der Ton bleibt frech … Was wechselt, ist der Auftritt.“ „frech im Kern“ ersetzt; Belegabsatz 10 ohne „ohne festen Kern“; Kasten 08: „Kern“ nur für den Markenkern. |
-| Folie 10, Feld Tonalität: Auftrag nannte das Feld, es bleibt unverändert (mittel, zwei Prüfungen) | **Nicht geändert, Yannick entscheidet** (Kasten „FOLIE 10“, LIESMICH 12): A) so lassen, Chamäleon nur im Sprechtext Schritt 5 (bei knapper Zeit die 4 Wörter streichen); B) ins Rad, z. B. „frecher Kumpel · wandelbar · Spaß“, dann zuerst 8b „Ins Steuerrad“ wortgleich ändern (Bündel B). Gründe: Das Tier stand nie im Rad (es gab dort nichts zu ersetzen); die Regel „wortgleich mit 8b“ und Lukas’ Bündel wären betroffen; Folie 10 hat schon ca. 49 Wörter; Yannicks Wunsch nennt Abstimmung, Folie und Analyse. |
+| Wort „Kern“ dreifach (frech im Kern / ohne festen Kern / Markenkern) – Eigentor in der Fragerunde (mittel) | Antwort beginnt mit der Unterscheidung: „Nein. Der Markenkern steht: Genuss mit gutem Gewissen (Folie 10). Und der Ton bleibt frech … Was wechselt, ist der Auftritt.“ (Seit 21.10.2026: „Nein. Markenkern und Positionierung stehen (Folie 10): in der Mitte des Steuerrads der Herausforderer mit Softdrinks zum Selbermixen, darüber die Positionierung ‚Genuss mit gutem Gewissen‘ …“ – Abschnitt 21.) „frech im Kern“ ersetzt; Belegabsatz 10 ohne „ohne festen Kern“; Kasten 08: „Kern“ nur für den Markenkern. |
+| Folie 10, Feld Tonalität: Auftrag nannte das Feld, es bleibt unverändert (mittel, zwei Prüfungen) | **Nicht geändert, Yannick entscheidet** (Kasten „FOLIE 10“, LIESMICH 12) – **entschieden am 21.10.2026: B, umgesetzt in Abschnitt 21**: A) so lassen, Chamäleon nur im Sprechtext Schritt 5 (bei knapper Zeit die 4 Wörter streichen); B) ins Rad, z. B. „frecher Kumpel · wandelbar · Spaß“, dann zuerst 8b „Ins Steuerrad“ wortgleich ändern (Bündel B). Gründe: Das Tier stand nie im Rad (es gab dort nichts zu ersetzen); die Regel „wortgleich mit 8b“ und Lukas’ Bündel wären betroffen; Folie 10 hat schon ca. 49 Wörter; Yannicks Wunsch nennt Abstimmung, Folie und Analyse. |
 | Exporte zeigen auf Folie 08 noch den Waschbär (mittel) | Neu erzeugt nach Abschnitt 15 (Ergebnisse unten). |
 | 09b Schritt 1: Gegensatz „stolz als frech“ trägt beim Chamäleon nicht (niedrig) | „… gelebt wird das freche Chamäleon“ (+1 Wort; „wandelbar“ nicht nötig, der Gegensatz ist stolz/frech). |
 | Zitat „auffällig und knallig“ verändert (niedrig) | Wörtlich: „auffälliges und knalliges Design“ (6.3 ✔ [8]). |
@@ -1080,7 +1085,7 @@ angesehen. Ausgaben: `_test/d18n-*`, `_test/export-druck`, `_test/export-folien`
 
 **Offen:** Elias prüft die Begründung, die Gründe auf der Karte (auch „wandelbar“ als Stichwort) und die neuen
 Rückfragen (danach „Vorschlag“ in Kasten und Notizen ersetzen); Yannick entscheidet über das Feld Tonalität auf
-Folie 10 (A/B oben); Lukas gleicht Analogie-Befragung und Notizen ab und prüft, ob das Aaker-Profil auf 08b passt;
+Folie 10 (A/B oben; **entschieden 21.10.2026: B**, Abschnitt 21); Lukas gleicht Analogie-Befragung und Notizen ab und prüft, ob das Aaker-Profil auf 08b passt;
 Sprechtexte 08 (Schritt 2) und 10 in der Generalprobe stoppen; Zeichnung auf Beamer und Handy ansehen;
 Skript-Aktualisierung (zurückgestellt; seit Abschnitt 20 wieder nötig); Runde umstellen wie geplant (LIESMICH 12). Nach Elias’ Prüfung bzw. einer
 Änderung an Folie 08 oder 10 die Exporte erneut erzeugen.
@@ -1308,3 +1313,87 @@ beginnt mit „BESTANDEN“, nicht mit „NICHT BESTANDEN wegen …“). Erst da
 und Notizen von Folie 08 (`index.html`) nennen das Zeitfenster nicht – bewusst nicht geändert; beim Abgleich der
 Notizen (Checkliste 12, B · Lukas) ggf. einen Satz ergänzen. Yannick entscheidet, ob `werkzeuge/zeitfenster-e2e.mjs`
 im Repository bleibt, und bestätigt „Nullen statt Beispielwerte“ (Abweichung von der ursprünglichen Vorgabe).
+
+## 21. Begriffe wie in der Vorlesung: Markenkern, Positionierung, Markeneigenschaften (Mi, 21.10.2026)
+
+**Auftrag (Freigabe Yannick, Mi, 21.10.2026):** Befunde aus `../abgleich-vorlesung.md` umsetzen – „Steuerrad-Begriffe“
+(#27 Mitte des Rads „Markenkern“ wie Stenger, S. 90–91, das bisherige Band bekommt einen Vorlesungsbegriff; #28
+Leitfragen in der Wir-Form, S. 88–89; #29 „Markeneigenschaften“ statt „Markenattribute“, S. 60, 90–91; #30 nur die
+Rückfrage-Sätze zu Identität/Image, S. 60, 87) und „Kennzeichnung & Rückfragen“ (#15 KI-Personas ersetzen nicht das
+Gespräch mit echten Kunden, S. 78; #22 Limbic Types und Gewichte als eigene Erweiterung, S. 69–71, 93). Dazu zwei
+Entscheidungen („Entscheidungen beide ja“): (1) Das **Chamäleon** kommt ins Feld Tonalität auf Folie 10, die Zeile
+„Ins Steuerrad“ auf 08b wortgleich; (2) der **Limbic-Typ** bleibt Hauptaussage auf Folie 05. **Nicht freigegeben:**
+Literatur auf Vorlesungsausgaben (#11–#14), Fußzeilen „Stenger, S. n“ (#4), B7; Inhalte von Lukas (06–08b) und Elias
+(09–11) – dort nur Feldbegriffe angeglichen, sonst Hinweise im Kasten. Alle Vorlesungsbelege an den Folienbildern
+geprüft, nicht an der unsichtbaren Textebene der PDF.
+
+**Begriffsentscheidung für das Band über dem Rad:** „Positionierung · aus der Identität“ (bis dahin „Markenkern ·
+Verdichtung aller Felder“, gleiche Wortzahl). S. 87 zeigt Markenidentität → Pfeil „Zielvorgabe“ → **Positionierung**
+→ Umsetzung in Maßnahmen → Markenimage; S. 94 zeigt eine Positionierung als Satz und als Kurzsatz („Wir machen Helden
+des Handwerks.“) – „Genuss mit gutem Gewissen“ ist so ein Kurzsatz. „Kurzformel“ und „Positionierungssatz“ stehen auf
+keiner Vorlesungsfolie. **Lesart** (nach der Prüfung festgelegt, damit 10, 11 und 12 dasselbe sagen): Es ist HOLYs
+Positionierung, wie sie aus der von uns erfassten Identität folgt (unsere Ableitung, H) und wie sie sich mit HOLYs
+Versprechen „Geiler Geschmack mit gutem Gewissen“ deckt ✔ [5] – keine Positionierung, die wir vorschlagen. Folie 11
+bewertet sie („klare Positionierung“), die Lücken und der Bruch liegen in Identität und Umsetzung; Folie 12: „jetzt
+muss der Auftritt nachziehen“. „Zielvorgabe“ ist auf S. 87 die Pfeilbeschriftung und steht deshalb nicht im Band.
+Bei Esch selbst heißt die Mitte auch „Markenkompetenz“ (Modellwissen) – so steht es in den Notizen.
+
+| Bereich | Änderung |
+|---|---|
+| `js/komponenten.js`, `js/deck.js` | FELDER: Mitte „Markenkern“ (Zeilen „Marken-/kern“), Feld „Markeneigenschaften“ (Zeilen „Marken-/eigenschaften“), Leitfragen in der Wir-Form; Pfeiltext „Eigenschaften sind die Startpunkte“; Schrift im Zentrum nach der längsten Zeile; Kopfzeile und Sprungmenü. Abschnitt 3a (Live-Abstimmung) unberührt. |
+| Folie 02 | Pfeiltext „Eigenschaften als Startpunkte“; Sprechtext Klick 1, 2, 6 (gleiche Wortzahl); Rückfragen Identität/Image (S. 60, 87) und KI-Befragte (S. 78); Kasten. Etikett „Fremdbild“ bleibt (#30 nicht freigegeben). |
+| Folie 03 | `data-titel` „Markenkern“, Kicker „Desk Research · Wer sind wir?“, Belege, Rückfrage, Kasten. Titel, Daten, Sprechtext unverändert. |
+| Folie 04 | Notiz „KI und echte Kundenstimmen“ (vgl. S. 78; Name, Beruf, Wohnort = plausible Details als Annahme). |
+| Folie 05 | Fußzeile „Typen (nymphenburg.de) und Gewichte: Erweiterung, nicht in der Vorlesung“, Text für Bildschirmleser, Rückfrage „In der Vorlesung gibt es keine Typen …“ (S. 93), Kasten: ENTSCHIEDEN, Typ bleibt Hauptaussage. |
+| Folie 06, 07 (Lukas) | 06: `ergebnisTitel` „Markeneigenschaften“, Feldname im Sprechtext Schritt 3, Rückfallwert und Bildschirmlesertext in `js/folien/06-repertory-grid.js`. 07: Sprechtext Schritt 3 „… die Positionierung ab“. Hinweise in den Kästen (Titel „Drei Attribute …“, Sätze zu den Interviews). |
+| Folie 08, 08b (Lukas) | 08: Notiz „Markenkern (Mitte …) und Positionierung (Band …)“. 08b: neue Übergabezeile „Ins Steuerrad: frecher Kumpel · wandelbar · Spaß“ (Daten `steuerrad`, `js/folien/08-analogien.js`, `css/folien/08-analogien.css`; Beschriftung als `data-meta`); Rückfrage „kein eigenes Aaker-Merkmal“; Kasten für Lukas. |
+| Folie 10 | Mitte „Markenkern“; Band „Positionierung · aus der Identität“; Daten `positionierung` (alter Schlüssel `kern` wird noch gelesen); Feld Tonalität **„frecher Kumpel · wandelbar · Spaß“** (bis dahin „… · Spaß · Zugehörigkeit“; Wortbudget unverändert 49); Sprechtext Schritt 1, 3, 5, 7 (gleiche Wortzahl, Schritt 0–8 weiter ca. 186 Wörter); Herkunft, Belege, Rückfragen (Markenkern/Positionierung, Abgrenzung nach S. 92, Identität/Image); Abgleich „… trifft unsere Identität“, Kicker „Positionierung · aus der Identität“; Kasten mit Begründung, Lesart und ENTSCHIEDEN. |
+| Folie 11 (Elias) | Titel „klare Positionierung, zwei Lücken, ein Bruch“ (bis dahin „starker Kern …“), Knopf „Positionierung · Folie 10“, Sprechtext Schritt 0, Belege, Kasten (Wahl „klar“/„stark“ bei Elias). |
+| Folie 12, B1, B2, B4 | 12: Notizen und Rückfragen (Markenkern, Positionierung, Identität/Image, Limbic Types, KI-Befragte). B1: Grenze „Simulierte Befragte spiegeln Trainingsdaten, ersetzen kein Kundengespräch (vgl. Stenger, S. 78)“, Sprechtext Schritt 0 „sollen … kommen (geplant)“, Notizen mit Zuordnung zu S. 78. B2: Spalte „Ziel“ der Zeile KI 55, 56 „Markenkern“. B4: Kasten. |
+| JS/CSS-Kommentare | `js/folien/02, 03, 06, 08, 10, 11, 12`, `css/folien/02, 06, 08, 10, 12`. |
+| Ausarbeitungen | `../methoden.md` (Begriffskasten, §0, §1, §2/§3, §6 mit Positionierung und Abgrenzung nach S. 92), `../README.md`, `../folienentwuerfe.md`, `../markenkompetenz.md` (Dateiname bleibt), `../limbic-map.md`, `../persona-steckbrief.md`; Planungsdokumente nur in den Synthese-Zeilen. Grafiken `../grafiken/folie-02-vorgehen` und `folie-03-markenkompetenz` (SVG, PNG) neu erzeugt. |
+| Doku | `QUELLEN.md` §5 (Abgleich mit der Vorlesung), `LIESMICH.md` (Einleitung, Ablauftabelle, Abschnitt 8, 9, Checkliste 12), dieser Abschnitt, Nachträge in Abschnitt 18, Tabelle in Abschnitt 2 und 6a; `../abgleich-vorlesung.md` (Vermerke bei #15, #22, #27–#30, Aufgabenliste). |
+
+### Nacharbeit nach der Prüfung (Mi, 21.10.2026)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| LIESMICH 12 und Abschnitt 18 standen noch auf „Entscheidung Yannick offen“, aktuelle Tabellen nannten alte Feldnamen (hoch) | LIESMICH 12: beide Entscheidungen abgehakt, neue Punkte für Lukas und Elias; Ablauftabelle, Abschnitt 8 und 9; hier Abschnitt 2, 6a und Nachträge in 18 (historische Logzeilen mit Datum bleiben). |
+| Positionierung widersprüchlich eingeordnet („unsere Zielvorgabe“ auf 10, „klare Positionierung“ als Befund auf 11), keine Antwort auf die Abgrenzung (S. 92) (mittel) | Lesart festgelegt (oben); Band „Positionierung · aus der Identität“; Sprechtext 10 Schritt 7 „Daraus folgt die Positionierung: … – die Zielvorgabe aus der Identität, kein Feld im Rad, deckungsgleich …“ (26 Wörter wie vorher); Rückfragen 10 und 12 und Belege 11 nachgezogen; neue Rückfrage „Wodurch grenzt sich die Positionierung ab?“ (S. 92: Format gegenüber Dosen-Energy und Cola, Repertory Grid – Beispieldaten –, waterdrop als Format-Zwilling mit belegten Unterschieden; „zuckerfrei“ allein grenzt kaum ab); `../methoden.md` §6, Kommentare in JS/CSS. Titel 11: „starke Positionierung“ (Elias’ Wertung) bricht in Editorial zweizeilig um – deshalb „klare“, Entscheidung bei Elias (Kasten 11, LIESMICH 12). |
+| Rückfrage #30: „alle Methoden“ und „weil wir Kund:innen fragen“ ungenau (mittel) | An allen fünf Stellen (Notizen 02 und 10, `../folienentwuerfe.md`, `../README.md`, Kommentar `js/folien/02-vorgehen.js`): „Die Aufgabe ordnet Repertory Grid, Laddering, Analogien und Kommunikationsanalyse der Markenidentität zu (S. 60). Weil Repertory Grid und Laddering die Zielgruppe fragen – bisher vor allem simuliert, echte Kurzinterviews geplant –, prüfen sie zugleich, ob die Identität ankommt …“ |
+| B1 Schritt 0 sagte im Präsens, echte Interviews kämen dazu; Notizen 06 klingen, als gäbe es sie schon (mittel) | B1: „dazu sollen wenige echte Kurzinterviews zum Abgleich kommen (geplant, Spalte 02)“. Kasten 06 und 07 nennen die zwei bzw. einen Satz für Lukas (Notizen sind seine Texte). |
+| Folie 04: „KI nutzen wir nur für die Hilfen, die S. 78 nennt“ zu stark (mittel) | „vor allem“, dazu Recherche (nur mit Quelle) und der Satz zu den plausiblen Details (S. 78). |
+| Exporte veraltet (mittel) | Neu erzeugt (unten). |
+| 08b: Beziehung für das Wortbudget gekürzt – Eingriff in Lukas’ Analyse; Rückfrage „kein eigenes Merkmal“ widerspricht „ins Steuerrad als wandelbar“ (niedrig) | „Kumpel und Anführer des „Squad““ zurück; f08b hat damit 41 Wörter (neue Warnung, kein Fehler). Rückfrage „kein eigenes Aaker-Merkmal“. Kasten 08b: doppeltes „Spaß“, Vorschlag für Schritt 4, Wortbudget. |
+| Folie 10 Schritt 9 „Markenimage hier im Raum“ – #30 nur für Rückfragen freigegeben (niedrig) | Zurück auf „Fremdbild hier im Raum“. |
+| „Soll-Identität“ an S. 87 gebunden, obwohl S. 91 „IST-Identität“ zeigt (niedrig) | `../folienentwuerfe.md` (Rückfrage 8 zu Folie 3) und `../markenkompetenz.md`: Esch-Quelle („Soll-Markensteuerrad“, W+), dazu S. 91 „IST-Identität – Erster Entwurf zur Abstimmung“; Abgrenzung ist Sache der Positionierung (S. 92). |
+| Folie 05: Rückfrage sagt „Karte folgt der Vorlesung“ und „Karte noch abgleichen“ (niedrig) | „… die Anordnung der Karte ist laut Abgleich deckungsgleich mit Stenger, S. 69 (#23); die Vermerke dazu … sind noch nicht geschlossen.“ |
+| B1: Seitenangabe sichtbar, liest sich wie ein Zitat (niedrig) | „(vgl. Stenger, S. 78)“ – so im Vorschlag zu #15, freigegeben „in B1-Grenzen aufgreifen“; Klammer mit `&nbsp;` zusammengehalten (Bento: vierte Zeile statt „78)“ allein). Soll die Seitenangabe nur in die Notizen, die Klammer löschen (Kasten B1). |
+| Folie 06 zeigt „Markeneigenschaften“ und „Attribute“ nebeneinander (niedrig) | Nicht geändert (Lukas’ Titel); Kasten 06 und LIESMICH 12 nennen den Vorschlag „Drei Eigenschaften …“. |
+| Notiz 08 „Markenkern und Positionierung („Genuss …“)“ mehrdeutig (niedrig) | „Markenkern (Mitte des Rads: Herausforderer mit Softdrinks zum Selbermixen) und Positionierung („Genuss mit gutem Gewissen“, Band über dem Rad, Folie 10) …“ |
+
+**Geprüft (Mi, 21.10.2026, nach der Nacharbeit):** `node --check` für `js/komponenten.js`, `js/deck.js` und alle
+`js/folien/*.js`: ohne Fehler; alle Daten-JSONs in `index.html` lesbar. `pruefen.mjs index.html --schritte
+--optional` (Editorial hell): 23 Folien, 81 Screenshots, **0 Fehler**, 5 Warnungen Wortbudget (f03 48, f04 46,
+f08b 41, f10 49, f11 55 – neu nur f08b, durch die Übergabezeile), 0 externe Anfragen (`_test/d22nach-voll/`).
+`--schritte --nur f02,f03,f04,f05,f06,f07,f08,f08b,f10,f11,f12,b1,b2` in Editorial, Bento und Keynote, je hell und
+dunkel: je 0 Fehler, dieselben 5 Warnungen (`_test/d22nach-<thema>-<modus>/`). Angesehen: Rad auf 02 und 10
+(„Marken-/kern“, „Marken-/eigenschaften“, Band einzeilig, Feld Tonalität „frecher Kumpel · wandelbar / Spaß“),
+f11 (Titel „klare Positionierung …“ einzeilig in Editorial, Bento und Keynote; „starke …“ brach in Editorial um), f08b in Keynote (Karte über der Fußzeile, Beziehung zweizeilig),
+B1 in Editorial, Bento und Keynote (Grenze 1 drei bzw. in Bento vier Zeilen, nichts abgeschnitten). Exporte nach
+Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b; im Text kein „Markenkompetenz“, „Markenattribute“, „starker Kern“,
+„Wer bin ich“), 23 Folienbilder 1920 × 1080 – geändert gegenüber 20.10.: f02, f03, f05, f06, f08b, f10, f11, f12,
+b1, b2; Übersicht `--stand 21.10.2026` (0 externe Anfragen). `export/folien/f02.png`, `f10.png`, `f11.png`,
+PDF-Seite 12 und die Übersicht angesehen. Unverändert: `live-abstimmung/`, `js/abstimmen.js`, `marke.js`,
+Abschnitt 3a in `js/komponenten.js`, `../recherche/`, `../dossier-buendel-b.*`, `../gruenderbefragung.md`,
+`../prompts.md`, `../../ki-nachweis/`, `../../unterlagen/`.
+
+**Offen:** Lukas – Titel 06 und „Attribut(e)“ im Sprechtext 06, zwei Sätze in Notiz 06 und einer in Notiz 07
+(Interviews geplant), Übergabezeile 08b bestätigen, Sprechtext 08b Schritt 4 (Kästen 06–08b, LIESMICH 12). Elias –
+Sprechtext 10 Schritt 1, 3, 5, 7 und 11 Schritt 0 laut lesen, „klare“ oder „starke Positionierung“ entscheiden,
+Rückfragen zu Positionierung und Abgrenzung kennen. Yannick – Seitenangabe auf B1 sichtbar lassen oder nur in die
+Notizen. `../gruenderbefragung.md` Z. 182–188 nennt noch „Markenkompetenz“, „Markenattribute“ und „Markenkern:
+Genuss mit gutem Gewissen“ (geschützte Datei, unverändert). Nicht freigegeben und offen: #30 (Etikett „Fremdbild“,
+Folie 01b, Kicker 10), #31–#35, #39, #40, #4, #11–#14, #23–#26. #15: echte Kurzinterviews und 20–30 Bewertungen;
+ohne Interviews bis 26.10. entscheidet die Gruppe, ob „+ Kurzinterviews“ gestrichen wird. KI-Nachweis eintragen,
+dann committen und pushen (Hauptsitzung).

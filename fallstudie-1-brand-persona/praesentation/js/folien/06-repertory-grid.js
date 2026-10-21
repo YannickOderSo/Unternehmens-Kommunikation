@@ -9,7 +9,8 @@
        nacheinander zeichnen
      • rechts die Triade (Schritt 0–2): Frage an die Befragten, drei Karten,
        in Schritt 1 rücken zwei zusammen und eine ab, darüber das Konstrukt
-     • rechts das Ergebnis (Schritt 3): Markenattribute auf Höhe ihrer Zeilen,
+     • rechts das Ergebnis (Schritt 3): Markeneigenschaften (bis 21.10.2026
+       „Markenattribute“) auf Höhe ihrer Zeilen,
        mit Vorsprung vor dem Wettbewerb und den drei Auswahlkriterien
      • Schritt 3 im Profil: Konstrukte mit "hinweis" (z. B. „Hürde“) bekommen
        eine Linie von der Idealmarke bis zur Marke (= Abstand zum Ideal) und
@@ -519,7 +520,7 @@
     }).join(', ');
     buehne.setAttribute('aria-label', 'Repertory Grid, Beispieldaten. Polaritätenprofil auf einer Skala von ' + min + ' bis ' + max +
       ' mit ' + N + ' Konstrukten für ' + reihenDef[2].name + ', ' + reihenDef[1].name + ' und ' + reihenDef[0].name +
-      '. Markenattribute: ' + attrText + '.' + hinweisChips.map(function (h) {
+      '. Markeneigenschaften: ' + attrText + '.' + hinweisChips.map(function (h) {
         return ' ' + h.r.hinweis + ': ' + (h.r.markeRechts ? h.r.rechts : h.r.links) + ' (weit von der Idealmarke entfernt).';
       }).join(''));
 
@@ -612,12 +613,12 @@
     z.triade = block;
   }
 
-  /* Ergebnis: Markenattribute auf Höhe ihrer Zeilen + Auswahlkriterien.
+  /* Ergebnis: Markeneigenschaften auf Höhe ihrer Zeilen + Auswahlkriterien.
      Keine Nummern vor den Attributen – sie sähen wie eine Rangfolge aus. */
   function ergebnisBauen(z, seite, d, u, g) {
     var box = u.element('div', { class: 'rg-ergebnis', 'data-schritt': '3', 'data-staffel': '110', 'data-animation': 'links' }, null, seite);
     var kopf = u.element('div', { class: 'rg-ergebnis-kopf', style: 'top:0' }, null, box);
-    u.element('span', { class: 'karte-kicker rg-ergebnis-titel' }, u.markeText(d.ergebnisTitel || 'Markenattribute'), kopf);
+    u.element('span', { class: 'karte-kicker rg-ergebnis-titel' }, u.markeText(d.ergebnisTitel || 'Markeneigenschaften'), kopf);
     if (d.ergebnisErklaerung) {
       var erkl = u.element('span', { class: 'rg-ergebnis-erklaerung', 'data-meta': '' }, null, kopf);
       /* kleines Zeichen wie im Profil: Strich = Ø Wettbewerb, Linie = Abstand */

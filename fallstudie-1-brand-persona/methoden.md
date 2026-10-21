@@ -3,11 +3,21 @@
 Pro Methode: Ziel · Vorgehen · Vorlage zum Ausfüllen · Hinweis für die Folie.
 Die passenden Prompts stehen in [`prompts.md`](prompts.md) (Verweis jeweils als **P-Nummer**).
 
+> **Begriffe seit Mi, 21.10.2026 nach der Vorlesung** (Abgleich Vorlesung, Befunde #22, #27–#29, freigegeben von
+> Yannick; Bericht [`abgleich-vorlesung.md`](abgleich-vorlesung.md)): Die Mitte des Markensteuerrads heißt
+> **Markenkern** (Stenger, S. 90–91; bei Esch selbst auch „Markenkompetenz“), die Leitfragen stehen in der
+> **Wir-Form** (S. 88–89), das Feld unten links heißt **Markeneigenschaften** (S. 60, 90–91; in der Literatur auch
+> „Markenattribute“). Der Satz über dem Rad (Folie 10) heißt **Positionierung** (S. 87, 94). Limbic Types und
+> Prozentgewichte sind eine **eigene Erweiterung** – die Vorlesung zeigt sie nicht (S. 69–71, 93).
+
 ---
 
-## 0. Markenkompetenz (Desk Research)
+## 0. Markenkern (Desk Research)
 
-**Ziel:** Zentrum des Markensteuerrads – *Wer bin ich?* Herkunft, Historie, Rolle im Markt, Kernkompetenz.
+**Ziel:** Zentrum des Markensteuerrads – *Wer sind wir?* Markenhistorie und Zeitdauer der Marke im Markt, Herkunft,
+Rolle der Marke im Markt, zentrale Markenassets (Stenger, S. 88; Feldname „Markenkern“ S. 90–91). Bis 21.10.2026
+hieß das Feld hier „Markenkompetenz“ (*Wer bin ich?* … Kernkompetenz) – so nennt Esch selbst die Mitte (Modellwissen);
+die Ausarbeitung A1 heißt deshalb weiter [`markenkompetenz.md`](markenkompetenz.md).
 
 **Quellen:** Unternehmenswebsite (Über uns, Presse), Geschäfts- und Nachhaltigkeitsbericht, Pressemitteilungen,
 Fachpresse (z. B. Horizont, W&V, Lebensmittel Zeitung, je nach Branche), Statista, Wikipedia nur als Einstieg.
@@ -72,6 +82,12 @@ Mischbereiche: **Abenteuer/Thrill** (Dominanz × Stimulanz), **Disziplin/Kontrol
 
 Limbic Types: Traditionalisten · Harmoniser · Offene · Hedonisten · Abenteurer · Performer · Disziplinierte
 
+> **Eigene Erweiterung** (Abgleich Vorlesung, Befund #22, Mi, 21.10.2026): Limbic Types, Prozentgewichte und den
+> Typen-Ring zeigt die Vorlesung nicht (Stenger, S. 69–71, 93); sie stammen von der Gruppe Nymphenburg [105] bzw.
+> sind unsere Schätzung. Die Vorlesung verlangt, Zielgruppe und Marke im Limbic-Raum zu verorten (S. 93) – das
+> leisten die Gewichte; der Typ benennt nur die Persona. Auf Folie 05 so gekennzeichnet (Fußzeile, Notizen);
+> der Typ bleibt dort die Hauptaussage (Entscheidung Yannick, 21.10.2026).
+
 **Vorgehen:** Persona gewichten (Balance / Dominanz / Stimulanz, Summe 100 %), Limbic Type bestimmen, **zusätzlich die
 Marke** auf der Map verorten und den Fit prüfen. Daraus 3 Konsequenzen für Bildwelt, Tonalität und Botschaften ableiten.
 
@@ -84,7 +100,7 @@ Marke** auf der Map verorten und den Fit prüfen. Daraus 3 Konsequenzen für Bil
 
 ---
 
-## 2. Repertory Grid → Markenattribute
+## 2. Repertory Grid → Markeneigenschaften (Markenattribute)
 
 **Ziel:** Herausfinden, mit welchen Eigenschaften die Zielgruppe Marken der Kategorie unterscheidet – und wo die
 eigene Marke relevant und differenzierend ist. Grundlage: Kelly (1955), Theorie der persönlichen Konstrukte.
@@ -111,19 +127,22 @@ eigene Marke relevant und differenzierend ist. Grundlage: Kelly (1955), Theorie 
    - Relevanz = Häufigkeit der Nennung
    - Differenzierung = |M − Ø W1–W5|
    - Ideal-Nähe = |M − I| (klein = gut)
-5. **Markenattribute** = Konstrukte mit hoher Relevanz, großer Differenzierung und geringer Ideal-Distanz (3–5 Stück).
+5. **Markeneigenschaften** (in der Literatur „Markenattribute“; Feldname wie Stenger, S. 60, 90–91, seit 21.10.2026)
+   = Konstrukte mit hoher Relevanz, großer Differenzierung und geringer Ideal-Distanz (3–5 Stück).
 
-| Konstrukt (Pol 1 – Pol 7) | Nennungen | Ø M | Ø W | Ø I | Differenzierung | Ideal-Distanz | Attribut? |
+| Konstrukt (Pol 1 – Pol 7) | Nennungen | Ø M | Ø W | Ø I | Differenzierung | Ideal-Distanz | Markeneigenschaft? |
 |---------------------------|-----------|-----|-----|-----|-----------------|---------------|-----------|
 | | | | | | | | |
 
-**Folie:** Polaritätenprofil (Linien für M, stärksten Wettbewerber, Ideal) – die ausgewählten Attribute farbig markieren.
+**Folie:** Polaritätenprofil (Linien für M, stärksten Wettbewerber, Ideal) – die ausgewählten Markeneigenschaften farbig
+markieren.
 
 ---
 
 ## 3. Laddering → Markennutzen
 
-**Ziel:** Von den Markenattributen über die Konsequenzen bis zu den persönlichen Werten der Zielgruppe gelangen
+**Ziel:** Von den Markeneigenschaften (in der Means-End-Kette „Attribute“) über die Konsequenzen bis zu den persönlichen
+Werten der Zielgruppe gelangen
 (Means-End-Chain, Gutman 1982; Reynolds & Gutman 1988).
 
 ```
@@ -132,7 +151,7 @@ Attribut  →  funktionale Konsequenz  →  psychosoziale Konsequenz  →  Wert
 ```
 
 **Vorgehen**
-1. Startpunkte = die 3–5 Attribute aus dem Repertory Grid.
+1. Startpunkte = die 3–5 Markeneigenschaften aus dem Repertory Grid.
 2. Pro Attribut wiederholt *„Warum ist dir das wichtig?“* fragen, bis ein Wert erreicht ist (**P9**).
    3–5 simulierte Befragte, wenn möglich zusätzlich 2–3 echte.
 3. Leitern codieren, Implikationsmatrix erstellen (wie oft führt A direkt zu B), Cut-off wählen (z. B. ≥ 2).
@@ -232,6 +251,10 @@ passt. Hier entstehen die Lücken, aus denen ihr Empfehlungen ableitet.
 
 ## 6. Markensteuerrad (Synthese)
 
+Feldnamen und Leitfragen seit Mi, 21.10.2026 wie in der Vorlesung (Stenger, S. 88–91; Abgleich Vorlesung, Befunde
+#27–#29): Mitte „Markenkern“ (bis dahin „Markenkompetenz“), Wir-Form, „Markeneigenschaften“ (bis dahin
+„Markenattribute“).
+
 Je Feld 3–5 prägnante Stichworte. Hinter jedes Stichwort ein Kürzel der Quelle: **DR** Desk Research · **RG**
 Repertory Grid · **LA** Laddering · **AN** Analogien · **KA** Kommunikationsanalyse · **LM** Limbic Map · **GB**
 Gründerbefragung (Selbstauskunft von Gründer Mathias Horsch, 10/2026; [`gruenderbefragung.md`](gruenderbefragung.md)).
@@ -243,15 +266,24 @@ Konsistenzprüfung als Selbstbild gegen die Außensicht.
 
 | Feld | Leitfrage | Inhalt |
 |------|-----------|--------|
-| **Markenkompetenz** (Zentrum) | Wer bin ich? | |
-| **Markenattribute** | Über welche Eigenschaften verfüge ich? | |
-| **Markennutzen** | Was biete ich an? | |
-| **Markentonalität** | Wie bin ich? | |
-| **Markenbild** | Wie trete ich auf? | |
+| **Markenkern** (Zentrum) | Wer sind wir? (Markenhistorie, Herkunft, Rolle im Markt, zentrale Markenassets) | |
+| **Markeneigenschaften** | Über welche Eigenschaften verfügen wir? (Angebote, Unternehmen) | |
+| **Markennutzen** | Was bieten wir? (individueller und sozialer Nutzen) | |
+| **Markentonalität** | Wie sind wir? (Persönlichkeitsmerkmale, Markenerlebnisse, Markenbeziehungen) | |
+| **Markenbild** | Wie treten wir auf? (alle wahrnehmbaren Eindrücke) | |
 
-**Markenkern in einem Satz:** _…_
+Stichpunkte in Klammern: wie Stenger, S. 88.
 
-**Konsistenzprüfung:** Passen Attribute ↔ Nutzen ↔ Tonalität ↔ Bild zusammen? Widersprüche sind kein Fehler, sondern
+**Positionierung in einem Satz** (steht über dem Rad, kein Feld des Rads; bis 21.10.2026 hier „Markenkern in einem
+Satz“): _…_ – Die Vorlesung zeigt die Positionierung als Schritt, der aus der Markenidentität folgt
+(Markenidentität → Pfeil „Zielvorgabe“ → Positionierung → Umsetzung in Maßnahmen → Markenimage, S. 87), und als Satz
+bzw. Kurzsatz (S. 94: „Wir machen Helden des Handwerks.“). Ziel: Die Marke ist für die Zielgruppe attraktiv,
+gegenüber konkurrierenden Marken abgegrenzt und wird ihnen vorgezogen (S. 92) – deshalb die Abgrenzung kurz begründen.
+Gemeint ist die Positionierung der Marke, wie sie aus der erfassten Identität folgt, nicht unser Vorschlag.
+Bei HOLY (Stand 21.10.2026, Hypothese): „Genuss mit gutem Gewissen“ (deckungsgleich mit HOLYs Versprechen
+„Geiler Geschmack mit gutem Gewissen“).
+
+**Konsistenzprüfung:** Passen Markeneigenschaften ↔ Nutzen ↔ Tonalität ↔ Bild zusammen? Widersprüche sind kein Fehler, sondern
 der Ausgangspunkt für die Empfehlungen.
 
 **Empfehlungen (2–3):** Was genau, auf welchem Kanal, warum (mit Verweis auf die Analyse).

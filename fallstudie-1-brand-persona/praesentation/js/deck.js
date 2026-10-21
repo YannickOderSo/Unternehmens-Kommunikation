@@ -96,10 +96,13 @@
   var THEMEN_NAMEN = { editorial: 'Editorial', bento: 'Bento', keynote: 'Keynote' };
   var MODI = ['hell', 'dunkel'];
 
-  /* Felder des Markensteuerrads (Namen nach Esch) */
+  /* Felder des Markensteuerrads (nach Esch, Namen wie in der Vorlesung –
+     Stenger, S. 60, 90–91; seit Mi, 21.10.2026, Abgleich Vorlesung #27/#29:
+     „Markenkern“ statt „Markenkompetenz“, „Markeneigenschaften“ statt
+     „Markenattribute“). Gleiche Namen wie FELDER in js/komponenten.js. */
   var FELD_NAMEN = {
-    kompetenz: 'Markenkompetenz',
-    attribute: 'Markenattribute',
+    kompetenz: 'Markenkern',
+    attribute: 'Markeneigenschaften',
     nutzen: 'Markennutzen',
     tonalitaet: 'Markentonalität',
     bild: 'Markenbild',

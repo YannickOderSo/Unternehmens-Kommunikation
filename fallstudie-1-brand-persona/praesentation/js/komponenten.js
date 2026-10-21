@@ -12,8 +12,10 @@
      .raetsel     Bild-Rätsel: stark vergrößert und unscharf, wird schrittweise klar
      .hantel      Mini-Hantel: Punkt Marke ↔ Punkt Wettbewerber auf einer Skala
 
-   Modellbegriffe (Markensteuerrad, Leitfragen) nach Esch, Strategie und
-   Technik der Markenführung – bitte mit den Vorlesungsfolien abgleichen.
+   Modellbegriffe (Markensteuerrad, Feldnamen, Leitfragen) nach Esch, Strategie
+   und Technik der Markenführung, in den Begriffen der Vorlesung (Stenger,
+   S. 88–91; Abgleich Vorlesung, Befunde #27–#29, Mi, 21.10.2026): Mitte
+   „Markenkern“, Leitfragen in der Wir-Form, Feld „Markeneigenschaften“.
    ============================================================================= */
 (function () {
   'use strict';
@@ -43,18 +45,30 @@
   /* ===========================================================================
      1. MARKENSTEUERRAD
      ---------------------------------------------------------------------------
-     Felder (nach Esch):  kompetenz (Zentrum) · nutzen (oben links) ·
-     attribute (unten links) · tonalitaet (oben rechts) · bild (unten rechts)
+     Felder (nach Esch, Namen wie in der Vorlesung):  kompetenz = Markenkern
+     (Zentrum) · nutzen (oben links) · attribute = Markeneigenschaften (unten
+     links) · tonalitaet (oben rechts) · bild (unten rechts)
      + Rahmen „persona“ (Brand Persona / Limbic Map als Bezugsrahmen).
-     Linke Hälfte = hard facts (rational), rechte Hälfte = soft facts (emotional).
+     Die Schlüssel (kompetenz, attribute …) sind technische Namen und bleiben,
+     weil data-feld auf allen Folien sie nutzt; sichtbar sind nur „name“,
+     „zeilen“ und „frage“.
+     Seit Mi, 21.10.2026 (Abgleich Vorlesung, Befunde #27–#29, Freigabe Yannick):
+       • Mitte „Markenkern“ wie Stenger, S. 90–91 (bis dahin „Markenkompetenz“ –
+         so heißt die Mitte bei Esch selbst, Modellwissen; auf S. 88–91 steht das
+         Wort nur in der unsichtbaren Textebene der PDF),
+       • Leitfragen in der Wir-Form wie S. 88–89 (bis dahin Ich-Form),
+       • Feld „Markeneigenschaften“ wie S. 60 und 90–91 (bis dahin
+         „Markenattribute“; in der Literatur auch so genannt).
+     Linke Hälfte = hard facts (rational), rechte Hälfte = soft facts (emotional)
+     – diese Beschriftung steht nicht in der Vorlesung (Befund #32, offen).
      Klick auf ein Feld springt zur ersten Folie mit passendem data-feld.
      =========================================================================== */
   var FELDER = {
-    kompetenz:  { name: 'Markenkompetenz', zeilen: ['Marken-', 'kompetenz'], frage: 'Wer bin ich?', seite: 'kern' },
-    nutzen:     { name: 'Markennutzen', zeilen: ['Marken-', 'nutzen'], frage: 'Was biete ich an?', seite: 'hart', sx: -1, sy: -1 },
-    attribute:  { name: 'Markenattribute', zeilen: ['Marken-', 'attribute'], frage: 'Über welche Eigenschaften verfüge ich?', seite: 'hart', sx: -1, sy: 1 },
-    tonalitaet: { name: 'Markentonalität', zeilen: ['Marken-', 'tonalität'], frage: 'Wie bin ich?', seite: 'weich', sx: 1, sy: -1 },
-    bild:       { name: 'Markenbild', zeilen: ['Marken-', 'bild'], frage: 'Wie trete ich auf?', seite: 'weich', sx: 1, sy: 1 },
+    kompetenz:  { name: 'Markenkern', zeilen: ['Marken-', 'kern'], frage: 'Wer sind wir?', seite: 'kern' },
+    nutzen:     { name: 'Markennutzen', zeilen: ['Marken-', 'nutzen'], frage: 'Was bieten wir?', seite: 'hart', sx: -1, sy: -1 },
+    attribute:  { name: 'Markeneigenschaften', zeilen: ['Marken-', 'eigenschaften'], frage: 'Über welche Eigenschaften verfügen wir?', seite: 'hart', sx: -1, sy: 1 },
+    tonalitaet: { name: 'Markentonalität', zeilen: ['Marken-', 'tonalität'], frage: 'Wie sind wir?', seite: 'weich', sx: 1, sy: -1 },
+    bild:       { name: 'Markenbild', zeilen: ['Marken-', 'bild'], frage: 'Wie treten wir auf?', seite: 'weich', sx: 1, sy: 1 },
     persona:    { name: 'Brand Persona', frage: 'Bezugsrahmen', seite: 'rahmen' }
   };
   var VIERTEL = ['nutzen', 'tonalitaet', 'bild', 'attribute'];
@@ -70,7 +84,7 @@
   ];
   /* Logikpfeile zwischen Methoden (gestrichelt) */
   var STANDARD_LOGIK = [
-    { von: 'attribute', nach: 'nutzen', text: 'Attribute sind die Startpunkte' },
+    { von: 'attribute', nach: 'nutzen', text: 'Eigenschaften sind die Startpunkte' },
     { von: 'tonalitaet', nach: 'bild', text: 'Tonalität ist der Prüfmaßstab' }
   ];
   /* Position der Karten im Hub-/Synthese-Layout */
@@ -212,7 +226,9 @@
       var aussenX = halbBreite - (optionen.randabstand || 30);
       var verfuegbar = Math.max(120, aussenX - innenX);
       /* einzeilig, wenn der längste Name mit mindestens 30 px passt –
-         sonst zweizeilig („Marken-“ / „attribute“), dann bis 36 px */
+         sonst zweizeilig („Marken-“ / „eigenschaften“), dann bis 36 px.
+         „eigenschaften“ (seit 21.10.2026) ist die längste Zeile und bestimmt
+         die gemeinsame Schriftgröße aller vier Feldnamen. */
       var breitester = Math.max.apply(null, VIERTEL.map(function (feld) { return textBreite(FELDER[feld].name, 32, 'display'); }));
       var groesse = Math.floor(32 * (verfuegbar - 4) / (breitester || 1));
       var zweizeilig = groesse < 30;
@@ -245,7 +261,10 @@
       kl.style.width = rund(m.rk * 1.9) + 'px';
       var kn = el('span', { class: 'sr-label-name' }, null, kl);
       kn.innerHTML = FELDER.kompetenz.zeilen.map(util.escape).join('<br>');
-      kl.style.setProperty('--sr-kern-groesse', Math.max(m.rk >= 80 ? 28 : 22, Math.min(30, Math.floor(30 * (m.rk * 1.75) / (textBreite('kompetenz', 30, 'display') || 1)))) + 'px');
+      /* Schrift im Zentrum: längste Zeile des Namens (seit 21.10.2026 „Marken-“ /
+         „kern“; bis dahin war „kompetenz“ fest eingetragen) */
+      var kernZeile = Math.max.apply(null, FELDER.kompetenz.zeilen.map(function (z) { return textBreite(z, 30, 'display'); }));
+      kl.style.setProperty('--sr-kern-groesse', Math.max(m.rk >= 80 ? 28 : 22, Math.min(30, Math.floor(30 * (m.rk * 1.75) / (kernZeile || 1)))) + 'px');
       zusatzBeschriftung(kl, 'kompetenz', optionen.beschriftung);
       teile.felder.kompetenz.label = kl;
       if (optionen.beschriftung === 'frage') teile.leitfragenPassen = leitfragenPassen(rad, m, d);
@@ -402,7 +421,7 @@
     huelle._hub = { B: B, H: H, modus: modus };
 
     /* Radgröße: so groß wie die Höhe erlaubt (oben und unten bleibt Platz für
-       die Pillen „Markenkompetenz“ und „Brand Persona“) und die Breite neben
+       die Pillen „Markenkern“ und „Brand Persona“) und die Breite neben
        den Karten zulässt */
     var pilleH = 64;
     var ringMax = H / 2 - pilleH / 2 + 2;          /* Pillen sitzen mittig auf dem Ring */
@@ -595,7 +614,10 @@
       util.mindestSchritte(huelle, start + stufen.length - 1 + schlussSchritt);
     }
 
-    /* Synthese: Markenkern im Zentrum */
+    /* Synthese: optionaler Text im Zentrum (JSON „kern“ im Baustein) – über
+       dem Text steht klein „Markenkern“. Folie 10 nutzt das nicht: Dort stehen
+       die Stichworte des Markenkerns in der Pille oben und die Positionierung
+       im Band über dem Rad (Daten der Folie, js/folien/10-markensteuerrad.js). */
     if (synthese && konfig.kern) {
       var kernLabel = teile.felder.kompetenz.label;
       if (kernLabel) {
