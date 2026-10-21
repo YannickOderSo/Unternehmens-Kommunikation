@@ -134,6 +134,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 112 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D22 | nur Nachweis committet; D22 läuft |
 | 113 | 21.10.2026 | Yannick | „Mach erstmal weiter das Skript mache ich später“ | Ü04 (Übernahme), D23 (geplant) | Branch von Account 2 (Ü04 fertig) nach master zusammengeführt; Abgleich der Befunde mit dem aktuellen Stand geplant |
 | 114 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
+| 115 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D23 (fortgesetzt) | D23 war nach 5 Minuten am Limit gescheitert (keine Dateiänderungen); fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1972,6 +1973,17 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D23 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D23 (läuft)
+
+### 115 – 21.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D23 war kurz nach dem Start am Nutzungslimit gescheitert (alle sechs Agenten ohne Ergebnis, keine
+  Dateiänderungen).
+- **Vorgehen Claude:** D23 nach dem Reset per resume neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D23 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
