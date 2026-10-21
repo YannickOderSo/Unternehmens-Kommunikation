@@ -123,6 +123,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 101 | 20.10.2026 | Yannick | Antworten auf drei Rückfragen: Prof-Folien „Drin lassen“, Zurücksetzen „Nach 30 Minuten“, Abgleich „Ja, als nächstes“ | D20 (geplant), D21 | Abgleich mit den Vorlesungsfolien (D21, nur Bericht) parallel zu D19 gestartet; Zurücksetzen nach 30 Min. (D20) nach D19 |
 | 102 | 20.10.2026 | Yannick | „Ich habe mein Nutzungslimit erreicht … Bitte mache dort weiter, wo du aufgehört hast.“ | D19, D21 (fortgesetzt) | D19 (Nacharbeit) und D21 (Abgleich Begriffe/Quellen, Prüfung, Bericht) nach dem Limit fortgesetzt |
 | 103 | 20.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D19, D21 | nur Nachweis committet; D19 und D21 laufen |
+| 104 | 20.10.2026 | Yannick | Antwort auf Rückfrage zum Vorlesungs-Abgleich: „Steuerrad-Begriffe (Folie 10)“ und „Kennzeichnung & Rückfragen“ umsetzen | D22 (geplant) | Umsetzung nach Ende von D20 |
+| 105 | 21.10.2026 | Yannick | „Weiter“ (nach Nutzungslimit) | D20 (neu gestartet) | D20 war am Limit gescheitert (Bau weit fortgeschritten); mit Hinweis neu gestartet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -1828,6 +1830,33 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Nacharbeit und eigener Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D19, D21 (laufen)
+
+### 104 – 20.10.2026 – Yannick (Antwort auf eine Rückfrage von Claude)
+
+> Frage: „Welche Befunde aus dem Vorlesungs-Abgleich soll ich umsetzen, sobald das 30-Minuten-Fenster (D20) fertig
+> ist? (Mehrfachauswahl)“ – Antwort (Auswahl): **„Steuerrad-Begriffe (Folie 10)“**, **„Kennzeichnung & Rückfragen“**
+
+- **Vorgehen Claude:** Vorher Bericht `abgleich-vorlesung.md` (D21) in Kurzform vorgestellt. Ausgewählt sind die
+  Befunde #27–#30 (Mitte des Rads „Markenkern“, Leitfragen in Wir-Form, „Markeneigenschaften“, Identität/Image)
+  und #15, #22, #30 (Hinweis S. 78 zu KI-Personas, Limbic-Typen als eigene Erweiterung, Rückfrage-Sätze). Nicht
+  ausgewählt: Quellen/Vorlesungsbezug in Fußzeilen und Literatur; Hinweise für Lukas und Elias. Umsetzung als D22
+  nach D20, weil beide `js/komponenten.js` ändern.
+- **Ergebnis:** geplant
+- **Unteragenten:** D22 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 105 – 21.10.2026 – Yannick
+
+> Weiter
+
+- **Anlass:** D20 (Zeitfenster der Abstimmung) war am Nutzungslimit gescheitert, bevor ein Agent fertig war; der
+  Bau hatte Server, Folie, Abstimmseite, Testwerkzeug (53/53 Prüfungen) und Prüfwerkzeug schon geändert, die Doku
+  war in Arbeit.
+- **Vorgehen Claude:** Stand geprüft (Tests laufen), im Workflow-Skript einen Hinweis auf die Teiländerungen ergänzt
+  und D20 neu gestartet.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D20 (neu gestartet), D22 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
