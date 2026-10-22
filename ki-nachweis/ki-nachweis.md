@@ -139,7 +139,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
 | 118 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | in Arbeit |
-| 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 (geplant) | in Arbeit |
+| 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2067,7 +2067,7 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     „KI-simuliert“ (keine echte Befragung, Grenzen der Methode).
   - Einbau in die Folien 06, 07, 08, 08b, 10, B4, B5 erst, wenn D24 fertig ist (eigener Schritt).
 - **Ergebnis:** in Arbeit
-- **Unteragenten:** D25 (geplant)
+- **Unteragenten:** D25 (läuft parallel zu D24; schreibt nur in `fallstudie-1-brand-persona/buendel-b/`)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
@@ -2106,6 +2106,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D23 | 21.10.2026 | 113 (fortgesetzt nach 115, 117) | Workflow „vortragsreife-abgleich“ (6 Unteragenten in 4 Phasen) | Ergebnisse von Account 2 mit aktuellem Stand abgleichen, technische Punkte umsetzen, Fragerunde aktualisieren, Folie 08 nachprüfen | Nachtrag in VORTRAGSREIFE.md (Status je Befund, neue Top 10), fragerunde.md aktualisiert, technische Punkte umgesetzt, referent-test.mjs; Prüfer 1 hoher, 4 mittlere Befunde umgesetzt | Claude: Tests, Syntax, Diff-Umfang und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 | D24 | 22.10.2026 | 119 | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | läuft | – |
+| D25 | 22.10.2026 | 120 | Workflow „buendel-b-simulation“ (ca. 43 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -2833,6 +2834,31 @@ steht hier mit dem wörtlichen Auftrag.
   Rollen statt Beispielwerten, fünf Bildwelten ohne Anteile, Schlüsselbild-Kandidat „Produkt in der Hand“; Markenbild
   auf 09b/10 „Streetwear-Look · Gelb & Schwarz · knallig“; Empfehlung 3 „Ein Absender, ein Schlüsselbild“; B6 mit
   Elias' Tabelle 1.
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
+
+### D25 – 22.10.2026 – ausgelöst durch Prompt 120
+
+- **Art:** Workflow „buendel-b-simulation“ in sieben Phasen: (1) Interviews – je simulierte Person T1–T8 ein eigener
+  Unteragent ohne Dateizugriff (Triaden nach P7, offene Tier-/Menschfrage, Gefühle, Erlebnis, Aaker-Bogen mit 15
+  Facetten für HOLY, Red Bull, waterdrop), dazu eine Kontrollgruppe (dieselben Profile ohne Persona-Block, nur
+  Triaden) und P11 einmal als „KI-gestützt (Tool)“; (2) Codierung der Konstrukte; (3) P8-Bewertungen je Person,
+  parallel Auswertung Analogien/Aaker, dann Repertory-Grid-Auswertung per Python-Skript nach vorher festgelegter
+  Auswahlregel; (4) P9-Laddering je Person ab den Attributen, Codierung, Implikationsmatrix und HVM per Skript;
+  (5) Synthese (Ausarbeitungen, Protokoll, Folienvorschlag); (6) drei adversariale Prüfer (Methodik/Kennzeichnung,
+  unabhängiges Nachrechnen, Plausibilität/Verzerrung); (7) Nacharbeit.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-22_buendel-b-simulation.js`](workflows/2026-10-22_buendel-b-simulation.js)
+  (P0, Persona-Block und Befragten-Block wörtlich aus `prompts.md` bzw. `dossier-buendel-b.md`; P7/P8/P9/P11 als
+  dokumentierte Abwandlungen für je eine Person).
+- **Abweichungen vom Dossier Bündel B (Begründung):** 8 statt 5 simulierte Personen (T6–T8 nach den Auswahlkriterien
+  für die nicht geführten Interviews ergänzt; Geschlechterverteilung 5 : 3 wie die Kategorie); jede Person in einem
+  eigenen Agenten statt alle in einem Chat (unabhängigere Antworten); Kontrollgruppe ohne Persona-Block (zeigt die
+  Vorprägung, Dossier §2 „Achtung“); Aaker-Bogen von simulierten statt menschlichen Bewertenden (es gibt keine);
+  keine echten Interviews und keine Kundenstimmen (Namen in Bewertungen dürften nicht ungefiltert in KI-Tools,
+  HSKL-Richtlinie Nr. 6). Rechnen nur per Skript; Auswahlregel vor dem Rechnen festgelegt (Relevanz ≥ 3 Befragte,
+  Differenzierung ≥ 1,0, Ideal-Distanz ≤ 1,0).
+- **Kennzeichnung:** Alle Ergebnisse sind „KI-simuliert“ und Hypothesen (Stenger, S. 78: KI ersetzt nicht das
+  Gespräch mit echten Kund:innen).
 - **Ergebnis:** läuft
 - **Wie Claude das Ergebnis geprüft hat:** folgt
 
