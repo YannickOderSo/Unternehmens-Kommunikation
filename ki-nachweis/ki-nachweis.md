@@ -144,6 +144,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 122 | 22.10.2026 | System | Workflow-Meldungen: D24 und D25 am Nutzungslimit gescheitert, danach Neustart der Sitzung | D24, D25 (fortgesetzt) | Teilstand geprüft, Hinweis ins Skript D24, beide fortgesetzt |
 | 123 | 22.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
 | 124 | 22.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
+| 125 | 22.10.2026 | System | Workflow-Meldungen: D24 (Nacharbeit, Abschluss) und D25 (ab Codierung) erneut am Nutzungslimit gescheitert | D24, D25 (fortgesetzt) | Hinweis in D24-Nacharbeit/Abschluss, beide fortgesetzt |
+| 126 | 22.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2119,6 +2121,28 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   Änderungen folgen nach Abschluss und Prüfung. Zwischendurch die simulierten Interviews T1–T4 gelesen (Stichprobe).
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D24, D25 (laufen)
+
+### 125 – 22.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldungen: D24 – Bau (beide Agenten) und alle drei Prüfer fertig; „nacharbeit:folien“,
+> „nacharbeit:doku“, „abschluss“: „You've hit your session limit · resets 7pm (UTC)“. D25 – alle 8 Interviews, alle
+> 8 Kontrollinterviews und P11 fertig; Codierung, P8, Auswertungen, P9, Synthese, Prüfer, Nacharbeit: dieselbe
+> Meldung. Danach Neustart der Sitzung.
+
+- **Vorgehen Claude:** In D24 vor den Aufträgen Nacharbeit (Folien, Doku) und Abschluss einen Hinweis auf mögliche
+  Teiländerungen ergänzt (die fertigen Agenten bleiben im Zwischenspeicher); D25 unverändert. Rohdaten D25:
+  `buendel-b/rohdaten/interviews/T1–T8.json`, `kontrolle/T1–T8.json`, `p11-ki.md` vorhanden.
+- **Ergebnis:** beide fortgesetzt (Eintrag 126).
+
+### 126 – 22.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D24 und D25 per resume fortgesetzt.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D24, D25 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
