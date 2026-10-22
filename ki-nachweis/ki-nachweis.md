@@ -141,6 +141,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | in Arbeit |
 | 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 | in Arbeit |
 | 121 | 22.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
+| 122 | 22.10.2026 | System | Workflow-Meldungen: D24 und D25 am Nutzungslimit gescheitert, danach Neustart der Sitzung | D24, D25 (fortgesetzt) | Teilstand geprüft, Hinweis ins Skript D24, beide fortgesetzt |
+| 123 | 22.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2080,6 +2082,32 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   D25 (`buendel-b/`) folgen nach deren Abschluss und Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D24, D25 (laufen)
+
+### 122 – 22.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldungen der Workflows: D24 – „bau:ausarbeitung“ fertig; „bau:folien“, die drei Prüfer, beide
+> Nacharbeiten und „abschluss“: „You've hit your session limit · resets 2pm (UTC)“. D25 – Interviews T1–T4 und P11
+> fertig; alle übrigen 29 Agenten: dieselbe Meldung. Danach mehrfacher Neustart der Sitzung.
+
+- **Vorgehen Claude:** Teilstand geprüft: D24 hatte Folien 08, 09, 09b, 10, 11 schon weitgehend umgebaut (index.html,
+  JS/CSS 08, 09, 13-backup), Folie 12/B6–B8 und Querverweise waren in Arbeit; Ausarbeitungen fertig. D25: Rohdaten
+  T1–T4 und P11 vorhanden; T5/T6 als Datei vorhanden, aber ohne Rückgabe an den Workflow (werden neu erhoben und
+  überschrieben). Im Skript D24 nur der Auftrag „bau:folien“ um einen Hinweis auf den Teilstand ergänzt (dazu eine
+  Korrektur: Die Vorgabe zitierte „Nur das Chamäleon“ falsch als Entscheidung über den Titel – laut Eintrag 95 war
+  das die Antwort auf „Was soll am Design außer dem Chamäleon noch überarbeitet werden?“; die Entscheidung für das
+  Chamäleon in Abstimmung, Folie und Analyse steht in 94/95). D25 unverändert.
+- **Ergebnis:** beide Workflows nach dem Reset per resume fortgesetzt (Eintrag 123).
+
+### 123 – 22.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D24 (mit Hinweis im Auftrag „bau:folien“) und D25 per resume fortgesetzt; fertige Agenten
+  kommen aus dem Zwischenspeicher.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D24, D25 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
