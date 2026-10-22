@@ -139,6 +139,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
 | 118 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | in Arbeit |
+| 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 (geplant) | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2050,6 +2051,23 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     Vorlagen in `methoden.md`, Prüfung, Nacharbeit, Exporte.
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D24
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 120 – 22.10.2026 – Yannick
+
+> Info von Lukas kommen keine weiteren Materialen wenn du etwas KI Simulieren musst für ein richtiges Ergebnis dann mach das
+
+- **Anlass:** Bündel B (Lukas Welker: Repertory Grid, Laddering, Analogie-Befragung, Aaker-Profil; Folien 06, 07,
+  08b, B4, B5) trägt bisher nur Beispieldaten der Folienvorlage; echte Interviews und Lukas' Auswertung kommen nicht.
+- **Vorgehen Claude (Stand zu diesem Zeitpunkt):**
+  - D24 (Einbau Elias) läuft weiter; eine zweite, parallele Änderung an `index.html` würde mit D24 kollidieren.
+  - Deshalb zuerst nur die Erhebung: KI-simulierte Befragung nach den vorhandenen Prompts und Leitfäden (Bündel B),
+    jede simulierte Person als eigener, unabhängiger Unteragent; Rohdaten, Rechenwege (Skript statt KI-Rechnung) und
+    Auswertung als Dateien; adversariale Prüfung von Methode, Rechnung und Verzerrungen. Kennzeichnung überall als
+    „KI-simuliert“ (keine echte Befragung, Grenzen der Methode).
+  - Einbau in die Folien 06, 07, 08, 08b, 10, B4, B5 erst, wenn D24 fertig ist (eigener Schritt).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D25 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
