@@ -138,6 +138,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 116 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
 | 118 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
+| 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2016,6 +2017,40 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D23 folgen nach der Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D23 (läuft)
+
+### 119 – 22.10.2026 – Yannick
+
+> Elias hat sein Material hochgeladen das kann jetzt als content eingesetzt werden
+
+- **Anhänge:** zwei PDF-Dateien von Elias Knauber (Bündel C):
+  - „HOLY_Kommunikationsanalyse_Markenbild.pdf“ (12 Seiten): Kommunikationsanalyse zum Markenbild von HOLY –
+    Instagram, Facebook, TikTok und YouTube im Vergleich; Datengrundlage eigene Bildschirmaufnahmen vom 20. und
+    21.10.2026; Kapitel Vorgehen, Kanäle (Tabelle 1 Profilmerkmale), Corporate Design, Slogan und Claims,
+    Schlüsselbilder und Bildwelten, Analyse nach Plattformen, Tonalität, Fazit, Quellen; vier Abbildungen mit
+    Bildschirmaufnahmen der HOLY-Profile und -Beiträge (zum Teil mit Personen).
+  - „HOLY_Analogien_Mensch_und_Tier.pdf“ (2 Seiten, Stand 16.10.2026): HOLY als Mensch (Impro-Comedian, Tabelle
+    Charakterzug/Beleg/Tonalität), als Tier 1 (Papagei) und Tier 2 (Chamäleon), Zuordnungstabelle Tonalität ↔
+    Analogie, Quellen.
+- **Vorgehen Claude:**
+  - Beide PDFs selbst vollständig gelesen (alle Seiten als Bild).
+  - Für die Unteragenten Kopien und Textfassungen (pdftotext) im Scratchpad abgelegt; die Unteragenten lesen nur
+    diese, nicht den Upload-Ordner. Die PDFs kommen NICHT ins öffentliche Repository: Die Kommunikationsanalyse
+    enthält Bildschirmaufnahmen von HOLY-Beiträgen mit erkennbaren Personen (Bildrechte, Datenschutz; Folie 09:
+    Social-Media-Bilder nur nach Zustimmung des Betreuers). Übernommen werden Text, Zahlen und Befunde mit
+    Quellenangabe „Ausarbeitung Elias Knauber“.
+  - Geprüft: kein Statista-Material; keine Daten privater Personen nötig (Namen von Mitarbeitenden aus Beiträgen
+    werden nicht übernommen). Einige Belege der Analogien stehen nicht im Recherche-Dossier (z. B.
+    Nutella-Werbeparodie, Stellenanzeigen) – sie gelten als Elias' eigene Recherche mit seiner Quellenangabe.
+  - Abweichungen vom bisherigen Folienstand festgestellt: Elias nennt als Tiere Papagei UND Chamäleon, als Mensch
+    einen Impro-Comedian (bisher „Start-up-Gründer“, Dossier-Hypothese); er sieht kein festes Schlüsselbild
+    (Kandidat „Produkt in der Hand“, bisher Raptor); er analysiert zusätzlich TikTok; Engagement-Raten über eine
+    Stichprobe und Motivanteile liefert er nicht (nur Einzelbeiträge) – dort entfallen die Beispielwerte, statt
+    neue Zahlen zu rechnen.
+  - Einbau als Workflow D24 (Ultracode): Folien 08, 09, 09b, 10, 11, B6 (und Querverweise), Ausarbeitungen nach den
+    Vorlagen in `methoden.md`, Prüfung, Nacharbeit, Exporte.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D24
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
