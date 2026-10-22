@@ -1,0 +1,122 @@
+export const meta = {
+  name: 'elias-material',
+  description: 'Material von Elias (Kommunikationsanalyse, Analogien) als Inhalt einbauen: Folien 08, 09, 09b, 10, 11, B6–B8, Ausarbeitungen, Prüfung, Nacharbeit, Exporte',
+  phases: [
+    { title: 'Bauen', detail: 'Folien (index.html, JS, CSS) und Ausarbeitungen parallel' },
+    { title: 'Prüfen', detail: 'Treue zum Material, Darstellung/Technik, Konsistenz/Rechte' },
+    { title: 'Nacharbeit', detail: 'Befunde Folien und Doku parallel' },
+    { title: 'Abschluss', detail: 'alle Tests, Exporte, Bilder für Yannick' },
+  ],
+}
+
+const S = '/tmp/claude-0/-home-user-Unternehmens-Kommunikation/002eded1-dc13-5a62-bf74-88c0d7931eff/scratchpad/elias'
+
+const GEMEINSAM = `
+Kontext: Studentische Gruppenarbeit (Fallstudie 1 Brand Persona, Marke HOLY, Vortrag Mo 26.10.2026; Gruppe Yannick Heisler, Elias Knauber, Lukas Welker). Web-Präsentation in /home/user/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation (index.html mit Kästen „FOLIE xx“, Kommentarblöcken, Notizen <aside class="notizen">, Daten <script class="daten">; js/folien/*.js, css/folien/*.css; Prüfwerkzeug: PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core node werkzeuge/pruefen.mjs index.html --ausgabe _test/<x> --schritte [--optional] [--nur f09] [--thema bento|keynote] [--modus dunkel]; Exporte nach AUTOREN.md §15). Ausarbeitungen liegen eine Ebene höher (../methoden.md mit Vorlagen Abschnitt 4 „Analogiemethoden → Markentonalität“ und 5 „Kommunikationsanalyse → Markenbild“, ../folienentwuerfe.md, ../recherche/holy-recherche.md = Recherche-Dossier mit Faktenstatus ✔/✎/H).
+
+NEUES MATERIAL (Yannick, ${args.datum}: „Elias hat sein Material hochgeladen das kann jetzt als content eingesetzt werden“): zwei Ausarbeitungen von Elias Knauber (Bündel C). Lies sie VOLLSTÄNDIG als Text: ${S}/kommunikationsanalyse.txt (12 Seiten, „Kommunikationsanalyse zum Markenbild von HOLY – Instagram, Facebook, TikTok und YouTube im Vergleich“, eigene Bildschirmaufnahmen 20./21.10.2026) und ${S}/analogien.txt („HOLY – Analogien: Mensch und Tier“, Stand 16.10.2026). Für Tabellen/Abbildungen darfst du die Kopien ${S}/kommunikationsanalyse.pdf und ${S}/analogien.pdf seitenweise ansehen (Read mit pages). Andere Dateien unter /root/.claude/uploads NICHT öffnen.
+
+KERNPUNKTE (aus dem Material, vom Hauptagenten gelesen – am Text selbst prüfen):
+- Analogien: Mensch = Impro-Comedian (Auftreten laut, überdreht, spontan, nie planlos; Umgang lebt vom Publikum, bleibt ansprechbar; Humor über Mächtige und sich selbst; Rollenwechsel – jede Rolle, im Kern derselbe; Markenemotionen Lachen/Unterhaltung, Überraschung, Zugehörigkeit). Tier 1 = Papagei (gesellig, kommunikativ, frech, bunt, humorvoll; Beleg „HOLY Squad®“, bunte Verpackungen mit Tieren). Tier 2 = Chamäleon (wandelbar, experimentierfreudig, anpassungsfähig, aufmerksam, kreativ; Belege fünf Produktlinien, laufend neue Sorten wie Hydration mit Kokosnuss oder Ananas, eigene Claims je Land; Gegenargument Tarnung/Einzelgänger → Farbwechsel dient vor allem der Kommunikation mit Artgenossen). Zuordnungstabelle Tonalität ↔ Analogie.
+- Kommunikationsanalyse: vier Kanäle (TikTok zusätzlich zu den Pflichtkanälen). Instagram „HOLY Squad®“ 383 Tsd. Follower, 1.184 Beiträge – Schaufenster und Verkaufskanal; Facebook-Seite „HOLY“ 126.651 Follower (21.10.), 88 % Empfehlungen, Gruppe „HOLY Squad“ ≈ 40.000 Mitglieder (Desk Research „Our Story“ 16.10.) – Zweitverwertung, Anzeigen, Auslandsmärkte; TikTok „HOLY Softdrinks“ 272.170 Follower, 2 Mio. Likes – Reichweiten- und Community-Motor; YouTube „HOLY®“ 20.700 Abos, 360 Videos – Archiv und Zweitverwertung. Keine Insights-Daten; Interaktion nur an Einzelbeiträgen (Instagram ≈ 0,4–0,6 % Likes je Follower, Facebook ≤ 0,3 %). Corporate Design: Wortmarke „HOLY“ in Versalien, extrafett, stark nach rechts geneigt, meist schwarz auf Gelb; Profilbild „Holy Squad“-Schriftzug in drei Farben (violett IG/FB, hellblau/gelb TikTok, pastellrosa YouTube) – keine feste Logofarbe; Figurensystem (Adler als Maskottchen auf Shaker, Pixelfigur, Kostüm; Wassertropfen, Kawaii-Früchte, Tierfiguren). Farben: Signalgelb faktisch Leitfarbe, Schwarz als Kontrast, hochgesättigte Sortenpalette; Prinzip volle Sättigung, harte Kontraste. Typografie: extrafette Grotesk, kein strenges Regelwerk. Schachbrett als Streetwear-Code; Drops, Datumsteaser, Merch. Claims: nur „Die Softdrink Revolution“ auf allen vier Kanälen; „Geiler Geschmack mit gutem Gewissen“ auf Instagram und TikTok; im Handel „Änder nix. Nur dein Drink.“; viele Kampagnen-/Merch-Sprüche – keine zweite Kernbotschaft. Schlüsselbilder: KEIN einzelnes Schlüsselbild über Jahre; Motivgruppe, am häufigsten „Produkt in der Hand“, dazu Fülle, Farbfläche mit Ausruf, Menschenmenge. Fünf Bildwelten: Produkt-Pop (überwiegt im Instagram-Raster), Szene und Event, Alltag und Insider, geliehene Bildwelten (Lizenzen/Kooperationen; Simpsons verdrängen zeitweise die eigenen Figuren), Ironie und Retro. Tonalität: duzt überall, Jugend-/Umgangssprache, Denglisch, Emojis, Gemeinschaft und Dringlichkeit; überall „frech, schnell und nah an der Zielgruppe“; TikTok am lockersten, YouTube Shorts am provokantesten. Fazit: „wie ein Streetwear-Label: jung, laut, mit viel Humor“; Stärken Wiedererkennung (gesättigte Farben, fette Typografie, Produkt in der Hand) und Arbeitsteilung der Kanäle; Schwächen: uneinheitlicher Absender (mehrere Namen, drei Profilbildfarben), fehlendes Schlüsselbild, keine zweite Kernbotschaft, beliebige Bildwelten, YouTube unterentwickelt, Facebook Zweitverwertung, provokante Shorts-Titel passen nicht zum „guten Gewissen“. Empfehlungen: ein Anzeigename und eine Profilbildfarbe auf allen Kanälen (leicht); Produkt in der Hand als Schlüsselbild bewusster und einheitlicher einsetzen.
+
+VORGABEN FÜR DEN EINBAU (Vorschlag des Hauptagenten; Yannick und Elias geben danach frei – Abweichungen nur mit Begründung im Bericht):
+1. Folie 08 (Analogien; Bündel B, Inhalt jetzt von Elias): Titel „… wäre ein Chamäleon, kein Adler“ und Live-Umfrage (marke.js, Optionen, unsereAntwort Chamäleon) BLEIBEN unverändert (frühere Entscheidung Yannick „Nur das Chamäleon“; der Adler ist laut Elias das Maskottchen). Tier-Karte Chamäleon mit Elias' Gründen und Belegen statt der KI-gestützten Dossier-Belege: wandelbar – „fünf Produktlinien“, kreativ (bzw. experimentierfreudig) – „laufend neue Sorten“, anpassungsfähig – „eigene Claims je Land“ (Stichwortspalte ist schmal: erst Elias' Wort versuchen, sonst kleinstmögliche Anpassung, im Bericht begründen). Papagei SICHTBAR als Elias' zweites Tier (kompakt, z. B. eigene gestrichelte Zeile „Zweites Tier · Papagei: gesellig, bunt“ in der Tier-Karte neben der Zeile Selbstbild/Maskottchen Adler; ggf. eigene einfache Strichzeichnung im Stil der vorhandenen, kein Pfotenabdruck). Mensch-Karte: „Impro-Comedian“ statt „Start-up-Gründer“ (Bild passend, nicht „gamer“), drei Profilzeilen aus Elias' Tabelle (z. B. Auftreten, Humor, Umgang); Zeile „Echte Kundschaft“ entfällt, wenn der Platz für den Papagei gebraucht wird. Wortbudget: höchstens ca. 41 Wörter (pruefen.mjs warnt ab 41). Pille „Beispieldaten“ ab Schritt 2 entfernen (Analogien sind jetzt Elias' Analyse); Kontrast Wettbewerber bleibt „(Beispiel)“. Fußzeile: Analogien = Ausarbeitung E. Knauber (Stand 16.10.2026, Belege aus HOLY-Website und -Kanälen) statt „Analogie-Befragung n = 8 … Beispieldaten“; sie darf das Chamäleon NICHT nennen (steht schon während der Abstimmung). Notizen: Schritt 2 („Warum Chamäleon?“, ca. 20 s) nach Elias neu (Chamäleon, Papagei, Comedian, Adler = Maskottchen); Absatz „Chamäleon – Einordnung und Begründung“: „Vorschlag, KI-gestützt – von Elias zu prüfen“ ersetzen durch „Begründung: Elias Knauber (Ausarbeitung Analogien, 16.10.2026)“, die früheren Dossier-Belege als Ergänzung (KI-gestützt, Dossier) kennzeichnen, Zuordnungstabelle kurz; Rückfragen anpassen (Tarnung/Einzelgänger mit Elias' Gegenargument und dem Papagei als Gemeinschaftstier; „Ist der Gründer Ende 20 eure Persona?“ → Comedian; „Raptor soll bleiben?“ → Adler bleibt Maskottchen, fester Absender über einen Namen und eine Profilfarbe, Empfehlung 3). Daten-„hinweis“ und Kasten aktualisieren. Folie 08b (Lukas' Aaker-Profil): sichtbar NICHTS ändern; im Kasten und in den Notizen nur ein Hinweis, dass Elias' Zuordnungstabelle vorliegt und Lukas sein Profil damit abgleicht.
+2. Folie 09: Kicker „Kommunikationsanalyse · Instagram, Facebook, TikTok, YouTube“ ohne Pille „Beispieldaten“ (alle gezeigten Werte sind dann echt). Neuer Titel als Kernaussage nach Elias, einzeilig wenn möglich, z. B. „Jeder Kanal hat seine Rolle – ein Schlüsselbild fehlt“. Zone 1: VIER Kanal-Spalten in Elias' Reihenfolge (Instagram, Facebook, TikTok, YouTube) mit Profilname, Follower/Abos mit Reichweitenbalken und der Rolle im Kanalmix (kurz: Schaufenster & Verkauf · Zweitverwertung & Anzeigen · Reichweite & Community · Archiv & Zweitverwertung). Beiträge pro Woche, Ø Engagement-Rate und Formel entfallen (keine vergleichbaren Daten; Hinweis „Follower als Indiz, keine Insights“ o. ä.). Instagram ehrlich gerundet („383 Tsd.“ bzw. Anzeige ohne Scheingenauigkeit). Schritt 1: Elias' fünf Bildwelten OHNE erfundene Anteile/Zahlen (Liste oder Chips mit Kurzbeschreibung; Gewichtung nur, wo Elias sie nennt). Schritt 2: „Schlüsselbild?“ → kein festes Schlüsselbild, Kandidat „Produkt in der Hand“ (Piktogramm, KEIN Screenshot; der Raptor ist Maskottchen, nicht mehr Schlüsselbild-Kandidat). Fußzeile: eigene Bildschirmaufnahmen 20./21.10.2026 (Kommunikationsanalyse E. Knauber) · Facebook-Gruppe: Desk Research 16.10.2026 · Schlüsselbild nach Kroeber-Riel (1993). Notizen (Schritt 0 ca. 20 s, 1 ca. 15 s, 2 ca. 25 s) nach Elias neu; Hintergrund mit Interaktion der Einzelbeiträge (ausdrücklich: keine Stichprobe), älterem Dossier-Stand 14.10. und den Rückfragen „Warum TikTok?“, „Wo sind Engagement-Raten?“, „Ist der Raptor kein Schlüsselbild?“. JS/CSS (js/folien/09-kommunikationsanalyse.js, css/folien/09-kommunikationsanalyse.css) so erweitern, dass 4 Spalten, Rolle und Bildwelten ohne Anteil sauber laufen; Datenkommentar und Kasten/Kommentarblock aktualisieren.
+3. Folie 09b: Titel bleibt („… trifft den Ton, wirkt aber zersplittert“ – passt zu Elias' Fazit). Datenblatt nach Elias: Logo „Wortmarke · extrafette, kursive Versalien“ (ggf. Profilbild in drei Farben ergänzen), Claims (Dachclaim „Die Softdrink Revolution“ = einziger Claim auf allen vier Kanälen; Versprechen; weitere ehrlich nach Elias, ohne erfundene Zahl), Schriften aus dem Dossier (Web) bleiben, Farben: Gelb/Schwarz bleiben (HEX aus dem Dossier; Elias bestätigt Gelb als Leitfarbe) – KEINE HEX-Werte erfinden; Bildwelt-Zeile nach Elias (Streetwear-Look, Produkt in der Hand, → Folie 09). Fit: Tonalität passt („überall frech, schnell, nah dran“), Persona teilweise (Stimulanz passt, Auftritt zu jung), Kanäle Bruch „Vier Namen, drei Profilfarben, kein Schlüsselbild.“ (höchstens ca. 8 Wörter je Begründung). „Ins Steuerrad · Markenbild“: „Streetwear-Look“, „Gelb & Schwarz“, „knallig“. Fußzeile um Elias' Analyse ergänzen; Notizen neu.
+4. Folie 10 (Synthese Yannick, spricht Elias): NUR Feld Markenbild wortgleich mit 09b („Streetwear-Look“, „Gelb & Schwarz“, „knallig“), Lücke 2 „Bildwelt zu jung“ markiert jetzt „Streetwear-Look“ ↔ „Marco, 28“; Sprechtext Schritt 6 und 8 (gleiche Wortzahl), Belege, Kasten. Feld Tonalität („frecher Kumpel · wandelbar · Spaß“) passt zu Elias und bleibt. Pille „Beispieldaten“ bleibt (06–08b haben noch Beispieldaten von Lukas).
+5. Folie 11 (Elias): Zeile 3 nach Elias: Befund „Uneinheitlicher Absender“ (Verweis Bruch · Folie 09b), Empfehlung „Ein Absender, ein Schlüsselbild“, Wie „Ein Name, eine Profilfarbe, Produkt in der Hand“ (kürzen, wenn es nicht passt), Kanal-Chips passend (z. B. „überall“). Empfehlungen 1 und 2 unverändert (nicht Teil von Elias' Material). Sprechtext Schritt 3 (ca. 20 s) und Rückfragen (Raptor?) nach Elias, Belege, Kasten.
+6. Folie 12, B6, B7, B8 und alle Notizen/Kästen: Querverweise nachziehen (Raptor als Schlüsselbild, „Comic-Tiere“ als Markenbild-Stichwort, „Start-up-Gründer“, „Sechs Claims parallel“, Beispieldaten-Hinweise zu 09/B6, „31 Energy-Sorten“ als Chamäleon-Beleg). B6: Beispiel-Codiertabelle ersetzen durch Elias' Tabelle 1 (Zeilen = vier Kanäle; Spalten z. B. Kanal, Anzeigename, Kennzahlen, Profilbild, Schwerpunkt, Rolle; Zellen kurz), Titel als Kernaussage, Infokästen (Datengrundlage, Kennzahlen als Indizien, Ergebnis → Folie 09), Pille weg, Schritt 1 sinnvoll anpassen; Notizen ehrlich: einzelne Beiträge wurden NICHT nach Raster P12 codiert, Elias hat Profilköpfe und neueste Inhalte qualitativ analysiert. B7/B8: Elias' Ausarbeitungen als Quelle ergänzen, wo Platz ist (Kästen nennen Platzgrenzen).
+
+FESTE REGELN:
+- Nur Fakten aus Elias' Material (mit Quelle „Ausarbeitung Elias Knauber“ bzw. „E. Knauber“), aus dem Dossier (mit Faktenstatus) oder als Modellwissen gekennzeichnet. KEINE neuen Zahlen rechnen oder schätzen (Berechnungen macht die Gruppe in Sheets); nur Elias' eigene Werte übernehmen.
+- Elias' Befunde nicht verfälschen; wo das Material dem bisherigen Folienstand oder dem Dossier widerspricht (z. B. TikTok „junge Kernzielgruppe“ ↔ Kundschaft 25–40 laut Mitgründer), nicht still auflösen, sondern in Notizen/Kasten als offene Frage an Elias bzw. Yannick nennen.
+- Keine Bilder aus Elias' PDFs übernehmen (Bildschirmaufnahmen mit Personen; Social-Media-Bilder von HOLY nur nach Zustimmung des Betreuers). Die PDFs NICHT ins Repository kopieren. Keine Namen privater Personen (Mitarbeitende, Nutzer); Kooperationspartner nur, wenn nötig.
+- Kein Statista-Material. Keine Modellbezeichnungen (Namen von KI-Modellen) in Dateien. Deutsch, Stil und Kommentar-Dichte der Dateien beibehalten; Änderungen in Kästen mit Datum ${args.datum} vermerken.
+- Folie 01, 02–07, marke.js, Live-Abstimmung (abstimmen.html, js/abstimmen.js, live-abstimmung/, js/komponenten.js Abschnitt 3a) nicht ändern. Lukas' Inhalte (06, 07, 08b sichtbar) nicht ändern.
+- Kein git commit; ki-nachweis/ nicht ändern. Testausgaben nur unter praesentation/_test/, Hilfsskripte im Scratchpad.
+`
+
+const BERICHT = {
+  type: 'object',
+  properties: {
+    dateien: { type: 'array', items: { type: 'object', properties: { datei: { type: 'string' }, was: { type: 'string' } }, required: ['datei', 'was'] } },
+    abweichungen: { type: 'array', items: { type: 'string' }, description: 'wo und warum von den Vorgaben abgewichen' },
+    offene_fragen: { type: 'array', items: { type: 'string' }, description: 'Widersprüche/Entscheidungen für Elias, Yannick, Lukas' },
+    getestet: { type: 'string' },
+  },
+  required: ['dateien', 'abweichungen', 'offene_fragen', 'getestet'],
+}
+
+phase('Bauen')
+const bau = (await parallel([
+  () => agent(GEMEINSAM + `
+Auftrag BAUEN – FOLIEN: Setze die Vorgaben 1–6 in index.html und den zugehörigen JS-/CSS-Dateien um (NICHT ../*.md und QUELLEN.md – das macht ein paralleler Agent). Lies vorher die Kästen und Kommentarblöcke der Folien 08–11, B6–B8 sowie js/folien/08-analogien.js, 09-kommunikationsanalyse.js, 11-fazit.js, 13-backup.js. Iterativ prüfen: pruefen.mjs --nur f08,f09,f09b,f10,f11,f12,b6,b7,b8 --schritte (bzw. so, wie das Werkzeug mehrere Folien annimmt) in editorial, bento, keynote und dunkel; Screenshots der Schritte SELBST ansehen (Überlauf, Umbrüche, Lesbarkeit, Wortbudget, Konsolenwarnungen). Am Ende pruefen.mjs index.html --schritte --optional: 0 Fehler.`, { label: 'bau:folien', phase: 'Bauen', schema: BERICHT }),
+  () => agent(GEMEINSAM + `
+Auftrag BAUEN – AUSARBEITUNGEN (NICHT index.html/JS/CSS – das macht ein paralleler Agent; nimm für Titel und Stichworte die Vorgaben 1–6):
+- Neu: ../kommunikationsanalyse.md nach der Vorlage ../methoden.md Abschnitt 5 und ../analogien.md nach Abschnitt 4 – ausgefüllt mit Elias' Inhalten (verdichtet, gegliedert, Tabellen mit seinen Zahlen und Quellen/Abrufdaten), Kopf: Inhalt Elias Knauber, übertragen KI-gestützt (Claude Code) am ${args.datum} aus seinen PDFs; Originale im Gruppenordner, nicht im Repository (Bildschirmaufnahmen mit Personen). Je Datei: „Was auf die Folien geht“ (mit Folienbezug), „Abweichungen zum bisherigen Stand“, „Offene Fragen“ (an Elias/Yannick/Lukas). In analogien.md das Verhältnis zur Befragung von Lukas (Prompt P11, Interviews – Stand offen) und zum Aaker-Profil auf 08b klären.
+- ../folienentwuerfe.md: Einträge zu Folie 08, 09, 09b, 10 (nur Markenbild/Lücke 2), 11 (Zeile 3), B6 auf den neuen Stand (Titel als Kernaussage, 3–5 Stichpunkte, Visualisierung, Quellen).
+- praesentation/QUELLEN.md: Elias' Ausarbeitungen als Quellen (Kürzel/Abschnitt wie dort üblich), Hinweis, dass keine Bilder daraus übernommen wurden.
+- Wenn ../README.md (Fallstudie 1) Ausarbeitungen auflistet: die zwei neuen Dateien ergänzen.
+Prüfe jede Zahl gegen ${S}/*.txt.`, { label: 'bau:ausarbeitung', phase: 'Bauen', schema: BERICHT }),
+])).filter(Boolean)
+
+const BEFUNDE = {
+  type: 'object',
+  properties: {
+    pruefer: { type: 'string' },
+    befunde: { type: 'array', items: { type: 'object', properties: { schwere: { type: 'string', enum: ['hoch', 'mittel', 'niedrig'] }, datei: { type: 'string' }, stelle: { type: 'string' }, problem: { type: 'string' }, beleg: { type: 'string' }, vorschlag: { type: 'string' } }, required: ['schwere', 'datei', 'stelle', 'problem', 'beleg', 'vorschlag'] } },
+  },
+  required: ['pruefer', 'befunde'],
+}
+const PRUEFER = [
+  { key: 'treue', prompt: `Prüfer TREUE ZUM MATERIAL UND FAKTEN (adversarial, nichts ändern): Gehe jede geänderte Aussage auf den Folien 08–11, 12, B6–B8 (sichtbar, Notizen, Daten) und in ../kommunikationsanalyse.md, ../analogien.md, ../folienentwuerfe.md, QUELLEN.md durch und prüfe sie Satz für Satz gegen ${S}/kommunikationsanalyse.txt und ${S}/analogien.txt bzw. das Dossier: falsche oder gerundete Zahlen, falsche Zuordnung (z. B. Eigenschaft dem falschen Tier/Kanal zugeschrieben), Befunde verfälscht oder zugespitzt, Elias' Einschränkungen weggelassen (Indizien, keine Insights, Einzelbeiträge), neue Zahlen gerechnet, fehlende Quelle/Faktenstatus, Modellwissen nicht gekennzeichnet. Fehlt etwas Wichtiges aus Elias' Material, das auf die Folien oder in die Notizen gehört? Sind Widersprüche zu Dossier/früherem Stand offen benannt statt still aufgelöst?` },
+  { key: 'darstellung', prompt: `Prüfer DARSTELLUNG UND TECHNIK (adversarial, nichts ändern außer Testausgaben unter _test/): pruefen.mjs index.html --schritte --optional in editorial, bento, keynote und dunkel; zusätzlich Druck-PDF (--druck _test/<x>/p.pdf) Seiten 08–11 und B6. Sieh dir die Schritt-Screenshots von f08 (Schritt 2 und 3), f09 (0–2), f09b (Ende), f10 (Ende), f11 (Ende), b6 SELBST an, auch verkleinert auf 960 × 540 (Beamer letzte Reihe): Überlauf, Abschneiden, unschöne Umbrüche, zu kleine Schrift, leere Flächen, Balken ohne Sinn, Reste alter Elemente (Formel, „x von 50“, gestrichelte Beispielrahmen), Wortbudget (Warnungen), Konsolenwarnungen, Abweichungen 09b ↔ 10. Sind JS-Änderungen robust (fehlende Felder, 3 statt 4 Kanäle, alte Datenform)? Live-Abstimmung von f08 unverändert lauffähig (node werkzeuge/live-abstimmung-test.mjs)?` },
+  { key: 'konsistenz', prompt: `Prüfer KONSISTENZ, RECHTE, DOKU (adversarial, nichts ändern): Volltextsuche in index.html, ../*.md, praesentation/*.md, ../fragerunde.md nach veralteten Aussagen: Raptor als Schlüsselbild(-Kandidat), „Comic-Tiere“ als Markenbild-Stichwort, „Start-up-Gründer“/„Gründer Ende 20“ als Analogie, „Sechs Claims parallel“ als Befund, „31 Energy-Sorten“ als Chamäleon-Beleg, „Vorschlag, KI-gestützt – von Elias zu prüfen“, Beispieldaten-Hinweise zu 09/B6, „drei Pflichtkanäle“, „n = 8 … Beispieldaten“ bei den Analogien – was ist noch falsch, was ist als früherer Stand korrekt gekennzeichnet? Wortgleichheit 09b ↔ 10 (Markenbild) und 08b ↔ 10 (Tonalität). Rechte/Datenschutz: keine Bilder aus Elias' PDFs, PDFs nicht im Repo (git status), keine Namen privater Personen, kein Statista, keine Modellbezeichnungen. git diff --stat: nur erlaubte Dateien (Folie 01–07, marke.js, Live-Abstimmung unverändert). Liste, was in LIESMICH.md (§1, §12.1–12.3), AUTOREN.md (neuer Abschnitt) und ../fragerunde.md nachgezogen werden muss.` },
+]
+
+phase('Prüfen')
+const pruefungen = (await parallel(PRUEFER.map(p => () =>
+  agent(GEMEINSAM + '\n' + p.prompt + '\nBerichte des Baus:\n' + JSON.stringify(bau, null, 1),
+    { label: 'pruefen:' + p.key, phase: 'Prüfen', schema: BEFUNDE })))).filter(Boolean)
+
+const NACH = {
+  type: 'object',
+  properties: {
+    umgesetzt: { type: 'array', items: { type: 'string' } },
+    nicht_umgesetzt: { type: 'array', items: { type: 'string' }, description: 'mit Begründung' },
+    tests: { type: 'string' },
+  },
+  required: ['umgesetzt', 'nicht_umgesetzt', 'tests'],
+}
+phase('Nacharbeit')
+const nacharbeit = (await parallel([
+  () => agent(GEMEINSAM + `
+Auftrag NACHARBEIT – FOLIEN: Setze alle Befunde „hoch“ und „mittel“ um, die index.html, js/ oder css/ betreffen, „niedrig“ wo sinnvoll; Rest begründen. Nur index.html, js/, css/ ändern (Markdown macht ein paralleler Agent). Danach pruefen.mjs --nur der betroffenen Folien in allen Themen und dunkel, Screenshots ansehen.
+Berichte:
+` + JSON.stringify({ bau, pruefungen }, null, 1), { label: 'nacharbeit:folien', phase: 'Nacharbeit', schema: NACH }),
+  () => agent(GEMEINSAM + `
+Auftrag NACHARBEIT – DOKU: Setze alle Befunde um, die Markdown-Dateien betreffen (../kommunikationsanalyse.md, ../analogien.md, ../folienentwuerfe.md, QUELLEN.md, ../fragerunde.md, ../README.md). Dazu: LIESMICH.md (§1 Stand; §12.3 Elias: „Kommunikationsanalyse liefern“ und „Chamäleon-Begründung prüfen“ als geliefert am ${args.datum} mit Rest offen – was fehlt, z. B. Codier-Sheet/K1-Codes; „Raptor-Screenshot“ als überholt; neu: Einbau prüfen und freigeben (Titel 09, Stichworte 09b/10, Empfehlung 3, Papagei, Mensch-Karte, Sprechtexte laut lesen); §12.1/Yannick: Freigabe Markenbild-Stichworte und Lücke 2 in der Synthese; §12.2 Lukas: Analogien jetzt von Elias, Abgleich Aaker-Profil mit Elias' Zuordnungstabelle, Stand seiner Befragung), AUTOREN.md (neuer Abschnitt mit Datum: was geändert wurde und warum, Änderungstabelle wie in den früheren Abschnitten), ../fragerunde.md (betroffene Fragen/Antworten zu 08–11 auf den neuen Stand, alte Antworten nicht stehen lassen). Folien-Dateien (index.html, js, css) NICHT ändern – das macht ein paralleler Agent.
+Berichte:
+` + JSON.stringify({ bau, pruefungen }, null, 1), { label: 'nacharbeit:doku', phase: 'Nacharbeit', schema: NACH }),
+])).filter(Boolean)
+
+phase('Abschluss')
+const abschluss = await agent(GEMEINSAM + `
+Auftrag ABSCHLUSS: (1) Volltextsuche wie beim Konsistenz-Prüfer – verbliebene Reste beheben (kleine Korrekturen in jeder erlaubten Datei). (2) Alle Tests: pruefen.mjs index.html --schritte --optional in editorial, bento, keynote, dunkel (0 Fehler; Warnungen auflisten), node werkzeuge/live-abstimmung-test.mjs, node werkzeuge/referent-test.mjs (falls vorhanden und ohne Netz lauffähig). (3) Exporte nach AUTOREN.md §15 neu erzeugen und nach export/ kopieren (PDF 22 Seiten ohne 01b, 23 Folienbilder, Übersicht mit --stand ${args.datum}). (4) Für Yannick: absolute Pfade der Folienbilder f08, f09, f09b, f10, f11, b6 aus export/folien; Liste der Entscheidungen für Yannick, Elias und Lukas (kurz, je ein Satz). Kein Commit.
+Berichte:
+` + JSON.stringify({ bau, pruefungen, nacharbeit }, null, 1), { label: 'abschluss', phase: 'Abschluss', schema: {
+  type: 'object',
+  properties: {
+    korrekturen: { type: 'array', items: { type: 'string' } },
+    tests: { type: 'string' },
+    exporte: { type: 'string' },
+    bilder: { type: 'array', items: { type: 'string' } },
+    fuer_yannick: { type: 'array', items: { type: 'string' } },
+    fuer_elias: { type: 'array', items: { type: 'string' } },
+    fuer_lukas: { type: 'array', items: { type: 'string' } },
+  },
+  required: ['korrekturen', 'tests', 'exporte', 'bilder', 'fuer_yannick', 'fuer_elias', 'fuer_lukas'],
+} })
+
+return { bau, pruefungen, nacharbeit, abschluss }

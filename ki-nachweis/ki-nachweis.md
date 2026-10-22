@@ -2087,6 +2087,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D22 | 21.10.2026 | 104/109 (neu gestartet nach 111) | Workflow „abgleich-umsetzung“ (3 Unteragenten in 3 Phasen) | Steuerrad-Begriffe nach Stenger, Chamäleon im Feld Tonalität, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen | Mitte „Markenkern“, Band „Positionierung“, Wir-Form, „Markeneigenschaften“, Tonalität mit „wandelbar“; Prüfer 1 hoher, 5 mittlere Befunde umgesetzt; Exporte neu | Claude: f10 angesehen, Diff-Umfang und Modellbezeichnungen geprüft |
 | D23 | 21.10.2026 | 113 (fortgesetzt nach 115, 117) | Workflow „vortragsreife-abgleich“ (6 Unteragenten in 4 Phasen) | Ergebnisse von Account 2 mit aktuellem Stand abgleichen, technische Punkte umsetzen, Fragerunde aktualisieren, Folie 08 nachprüfen | Nachtrag in VORTRAGSREIFE.md (Status je Befund, neue Top 10), fragerunde.md aktualisiert, technische Punkte umgesetzt, referent-test.mjs; Prüfer 1 hoher, 4 mittlere Befunde umgesetzt | Claude: Tests, Syntax, Diff-Umfang und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
+| D24 | 22.10.2026 | 119 | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -2799,6 +2800,23 @@ steht hier mit dem wörtlichen Auftrag.
   geschützte Dateien unverändert, keine Modellbezeichnungen; Nacharbeit meldet `pruefen.mjs --schritte --optional`
   0 Fehler, `referent-test.mjs` 43/43, `zeitfenster-e2e.mjs` 58/58. Inhaltlich offen: Lieferungen von Lukas und
   Elias, Entscheidungen Yannick (LIESMICH 12.1).
+
+### D24 – 22.10.2026 – ausgelöst durch Prompt 119
+
+- **Art:** Workflow „elias-material“, acht Unteragenten in vier Phasen: Bau der Folien (index.html, JS, CSS) und der
+  Ausarbeitungen parallel; drei adversariale Prüfer (Treue zum Material und Fakten, Darstellung und Technik,
+  Konsistenz, Rechte und Doku); Nacharbeit Folien und Doku parallel; Abschluss mit allen Tests und Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-22_elias-material.js`](workflows/2026-10-22_elias-material.js)
+  (gemeinsamer Kontext mit den Kernpunkten aus Elias' Material, Vorgaben 1–6 für den Einbau, feste Regeln; je Agent
+  ein eigener Auftrag). Die Unteragenten lesen Elias' Material nur als Kopie/Textfassung im Scratchpad und sollen
+  jede Aussage mit Quelle („Ausarbeitung Elias Knauber“, Dossier mit Faktenstatus oder Modellwissen) belegen.
+- **Vorgaben des Hauptagenten (zur Freigabe durch Yannick und Elias):** Titel und Live-Umfrage von Folie 08 bleiben
+  (Chamäleon), Gründe und Belege nach Elias, Papagei sichtbar, Mensch = Impro-Comedian; Folie 09 mit vier Kanälen und
+  Rollen statt Beispielwerten, fünf Bildwelten ohne Anteile, Schlüsselbild-Kandidat „Produkt in der Hand“; Markenbild
+  auf 09b/10 „Streetwear-Look · Gelb & Schwarz · knallig“; Empfehlung 3 „Ein Absender, ein Schlüsselbild“; B6 mit
+  Elias' Tabelle 1.
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
 
 ---
 
