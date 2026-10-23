@@ -155,6 +155,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 133 | 23.10.2026 | Yannick | „Weiter“ | D25 (fortgesetzt) | fortgesetzt |
 | 134 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D25 | nur Nachweis committet; D25 läuft |
 | 135 | 23.10.2026 | Yannick | Antworten auf vier Rückfragen zum Einbau der Simulation (06/07/08b ehrlich; Rad = Selbstbild, Simulation als Abgleich; Papagei „wie Elias es wollte“; Anrühren nur im Sprechtext) | D26 | in Arbeit |
+| 136 | 23.10.2026 | System | Workflow-Meldung: D26 sofort am Nutzungslimit gescheitert (alle 10 Agenten), danach Neustart der Sitzung | D26 (fortgesetzt) | keine Dateiänderungen; fortgesetzt |
+| 137 | 23.10.2026 | Yannick | „Versuch es noch einmal“ | D26 (fortgesetzt) | fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2262,6 +2264,22 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Folie 10 als Selbstbild mit Abgleich, Querverweise 02, 05, 12, B1, B2, B4, B5, B7, B8, Doku, Prüfung, Exporte).
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D26
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 136 – 23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D26: alle zehn Agenten „You've hit your session limit · resets 2:10pm (UTC)“
+> (nach etwa 9 Sekunden). Danach Neustart der Sitzung.
+
+- **Vorgehen Claude:** geprüft – keine Dateiänderungen außer dem Rohprotokoll; Skript unverändert.
+
+### 137 – 23.10.2026 – Yannick
+
+> Versuch es noch einmal
+
+- **Vorgehen Claude:** D26 per resume neu gestartet (Limit seit 14:10 UTC zurückgesetzt).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D26 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
