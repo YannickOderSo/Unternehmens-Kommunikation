@@ -147,6 +147,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 125 | 22.10.2026 | System | Workflow-Meldungen: D24 (Nacharbeit, Abschluss) und D25 (ab Codierung) erneut am Nutzungslimit gescheitert | D24, D25 (fortgesetzt) | Hinweis in D24-Nacharbeit/Abschluss, beide fortgesetzt |
 | 126 | 22.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
 | 127 | 22.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
+| 128 | 22./23.10.2026 | System | Workflow-Meldungen: D24 nur „abschluss“, D25 ab Repertory-Grid-Auswertung erneut am Nutzungslimit gescheitert | D24, D25 (fortgesetzt) | beide fortgesetzt |
+| 129 | 23.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2155,6 +2157,27 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   waren für D24 gesperrt und kommen in den nächsten Schritt).
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D24, D25 (laufen)
+
+### 128 – 22./23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldungen: D24 – Nacharbeit Folien und Doku fertig, nur „abschluss“ (Tests, Exporte): „You've hit your
+> session limit · resets 12am (UTC)“. D25 – Codierung der Konstrukte, alle acht P8-Bewertungen und die Auswertung
+> Analogien/Aaker fertig; Repertory-Grid-Auswertung, P9, Laddering-Auswertung, Synthese, Prüfer, Nacharbeit: dieselbe
+> Meldung. Danach Neustart der Sitzung.
+
+- **Vorgehen Claude:** Stand geprüft (D25: `rohdaten/bewertungen/T1–T8.json`, Codierung und Auswertung
+  Analogien/Aaker vorhanden; noch keine Dateien der Repertory-Grid-Auswertung). Beide Skripte unverändert.
+- **Ergebnis:** beide fortgesetzt (Eintrag 129).
+
+### 129 – 23.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D24 (nur noch Abschluss) und D25 (ab Repertory-Grid-Auswertung) per resume fortgesetzt.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D24, D25 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
