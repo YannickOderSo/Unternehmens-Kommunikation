@@ -1,0 +1,193 @@
+{
+  "befragte": "T3",
+  "vorstellung": "T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt abends viel am PC, trinkt Monster aus der Dose und kennt HOLY nur aus YouTube-Videos.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Fast jeden Tag eigentlich. Meistens eine Dose, wenn ich abends lang zocke, auch mal zwei.",
+    "alltag": "Ich studiere. Nebenbei mal ein Minijob, aber Schichtdienst oder Büro hab ich nicht.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "Dose, gibt's kalt an jeder Tanke",
+      "pol_einzeln": "Pulver, muss man online bestellen",
+      "wortlaut": "Red Bull und Monster sind halt die Dosen, die du an jeder Tanke kaltgestellt kriegst. HOLY ist so ein Pulver, das bestellst du online, das kenn ich eigentlich nur von YouTube."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "wird dir von YouTubern und Streamern angedreht",
+      "pol_einzeln": "einfach gut, ohne Hype drumrum",
+      "wortlaut": "HOLY und Gönrgy sind beides so Sachen, die dir YouTuber und Streamer andrehen, Gönrgy ist ja von Monte. Mein idealer Drink braucht keinen Hype, der muss einfach schmecken und kalt sein."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T3 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "waterdrop? Nie gehört, keine Ahnung, was das ist."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, eher für Leute, die aufpassen",
+      "pol_einzeln": "volle Zuckerladung, knallt aber und schmeckt",
+      "wortlaut": "HOLY und Cola Zero haben beide keinen Zucker, das ist eher was für Leute, die aufpassen. Monster ist halt die volle Zuckerladung, aber dafür knallt's und schmeckt richtig."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "grund": "T3 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Das dritte kenn ich nicht, da kann ich nichts zu sagen."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T3 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Wieder dieses waterdrop, sagt mir nichts."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W3"],
+      "einzeln": "W5",
+      "pol_paar": "macht wach, für Lernen oder Zocken",
+      "pol_einzeln": "trinkt man einfach so zum Essen",
+      "wortlaut": "Red Bull und Gönrgy trinkst du, wenn du wach bleiben willst, beim Lernen oder Zocken. Cola Zero trink ich einfach so zum Essen, die macht nicht wirklich wach."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "Dose auf und fertig, gibt's überall",
+      "pol_einzeln": "erst anrühren und Shaker spülen, Aufwand",
+      "wortlaut": "Cola Zero und mein idealer Drink: Dose auf, fertig, gibt's überall. Bei HOLY musst du erst anrühren und danach den Shaker spülen, da hab ich ehrlich keinen Bock drauf."
+    }
+  ],
+  "tier": {
+    "tier": "Papagei",
+    "gruende": [
+      "Bunt. Die Packungen und die ganzen Sorten sind alle so knallig.",
+      "Laut. Man sieht's ständig auf YouTube, gefühlt jeder zweite Creator hält das in die Kamera.",
+      "Plappert nach, was gerade Trend ist: gesund, ohne Zucker und so."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "So ein junger Typ, der was mit Social Media macht, immer gut drauf, aber man merkt, dass er dir was verkaufen will.",
+    "alter": "Mitte 20",
+    "beruf": "Fitness-Influencer oder hat so ein eigenes Start-up",
+    "stil": "Oversized Hoodie, cleane weiße Sneaker, Cap, alles farblich abgestimmt",
+    "auf_der_party": "Kennt jeden, macht dauernd Storys, bringt seinen eigenen Shaker mit und erzählt allen, dass er keinen Zucker mehr trinkt.",
+    "beziehung_zu_kunden": "Total kumpelhaft, sagt Bro zu allen. Aber am Ende kommt immer ein Rabattcode.",
+    "gruende": [
+      "Weil die Marke so jung wirkt, als käme sie von Leuten in meinem Alter.",
+      "Weil die Werbung immer locker und lustig gemacht ist, nie so steif.",
+      "Weil's überall Rabattcodes gibt, genau wie bei Influencern."
+    ]
+  },
+  "gefuehle": [
+    "Neugier",
+    "Skepsis",
+    "ein bisschen genervt (von der vielen Werbung)"
+  ],
+  "erlebnis": "Mir fällt ein Let's Play ein, wo der YouTuber mitten im Video das Pulver anrührt und den Code durchsagt. Und einmal hab ich bei einem Kumpel einen probiert, der hatte so einen Shaker. Sorte weiß ich nicht mehr, irgendwas mit Beere. War okay, bisschen künstlich.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 2,
+        "gesund": 3,
+        "fröhlich": 4,
+        "gewagt": 3,
+        "temperamentvoll": 3,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 2,
+        "intelligent": 3,
+        "erfolgreich": 4,
+        "vornehm": 1,
+        "charmant": 3,
+        "naturverbunden": 2,
+        "robust": 2
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 1,
+        "fröhlich": 4,
+        "gewagt": 5,
+        "temperamentvoll": 5,
+        "fantasievoll": 4,
+        "zeitgemäß": 4,
+        "zuverlässig": 5,
+        "intelligent": 3,
+        "erfolgreich": 5,
+        "vornehm": 3,
+        "charmant": 3,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": false,
+      "werte": {
+        "bodenständig": null,
+        "ehrlich": null,
+        "gesund": null,
+        "fröhlich": null,
+        "gewagt": null,
+        "temperamentvoll": null,
+        "fantasievoll": null,
+        "zeitgemäß": null,
+        "zuverlässig": null,
+        "intelligent": null,
+        "erfolgreich": null,
+        "vornehm": null,
+        "charmant": null,
+        "naturverbunden": null,
+        "robust": null
+      }
+    }
+  ],
+  "holy_gekauft": "Nein, selbst noch nie gekauft. Einmal beim Kumpel probiert. Ist mir zu umständlich, und ich weiß nicht, ob das am Ende wirklich billiger ist als Monster."
+}

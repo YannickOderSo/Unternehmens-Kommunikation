@@ -1,0 +1,98 @@
+{
+  "befragte": "T1 (KI-simuliert, fiktiv): Mann, 28, Schichtdienst Logistik, Vieltrinker, HOLY-Kunde – Kontrollgruppe ohne Persona-Block",
+  "vorstellung": "T1, 28, Lagerist im Wechselschichtdienst bei einem Logistiker, trinkt jeden Arbeitstag Energy und mischt sich seit einer Weile meistens HOLY in die große Flasche.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Jeden Arbeitstag, eigentlich jede Schicht. Meistens die große Flasche HOLY, die ich mir vorher anrühre, und wenn ich das vergessen hab, hol ich mir halt 'ne Dose an der Tanke.",
+    "alltag": "Schichtdienst im Lager, Logistik. Früh, Spät und ab und zu Nacht im Wechsel. Kein Büro, studiert hab ich nicht.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "fertig aus der Dose, kriegst du an jeder Tanke – aber voll Zucker",
+      "pol_einzeln": "Pulver zum Selbermischen, ohne Zucker, musst du vorher bestellen und dran denken",
+      "wortlaut": "Red Bull und Monster holst du dir fertig an der Tanke, Dose auf und fertig, aber da ist halt voll der Zucker drin. HOLY ist Pulver, das musst du selber anrühren, dafür ohne Zucker – aber du musst vorher dran denken, sonst stehst du in der Pause ohne da."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W3",
+      "pol_paar": "einmal in die große Flasche, reicht für die ganze Schicht",
+      "pol_einzeln": "einzelne Dose, kaufst du mal wegen Monte, ist schnell leer",
+      "wortlaut": "HOLY und mein Idealer, das mach ich mir morgens in die große Flasche und das reicht für die ganze Schicht. Gönrgy ist halt so 'ne Dose, die kaufst du mal, weil Monte die macht – zack ist die weg und du brauchst die nächste."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W1", "I"],
+      "einzeln": "W4",
+      "pol_paar": "macht richtig wach, merkst du sofort",
+      "pol_einzeln": "nur Geschmack fürs Wasser, kein Kick",
+      "wortlaut": "Red Bull und mein Idealer machen dich richtig wach, das merkst du gleich. waterdrop ist doch nur Geschmack fürs Wasser, ist ja nett, aber in der Nachtschicht um drei bringt mir das gar nichts."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, kannst du mehr von trinken ohne schlechtes Gewissen",
+      "pol_einzeln": "Zuckerbombe – erst bist du voll da, dann hängst du durch",
+      "wortlaut": "Bei HOLY und Cola Zero ist kein Zucker drin, da kannst du auch mal mehr trinken ohne schlechtes Gewissen. Monster ist für mich die grüne Dose, 'ne Zuckerbombe – erst bist du voll da und später hängst du durch. Die weißen haben wohl keinen Zucker, aber ich denk bei Monster an die grüne."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": false,
+      "paar": ["W2", "W3"],
+      "einzeln": "W4",
+      "pol_paar": "richtige Energy-Dose mit Koffein, zum Arbeiten",
+      "pol_einzeln": "Wellness-Zeug fürs Wasser, eher was für Büroleute",
+      "wortlaut": "Monster und Gönrgy sind richtige Energy-Dosen, da ist Koffein drin, das trinkst du zum Arbeiten. waterdrop ist eher so Wellness, für Leute, die im Büro sitzen und mehr Wasser trinken wollen – ist nicht so meine Welt."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W4"],
+      "einzeln": "I",
+      "pol_paar": "kennst du aus der Insta-Werbung, kommt ins Wasser, bestellst du online",
+      "pol_einzeln": "gibt's überall, auch im Automaten auf Arbeit – kein Bestellen, kein Mischen",
+      "wortlaut": "HOLY und waterdrop kennst du beide aus der Werbung auf Insta, beides kippst du ins Wasser und bestellst online. Mein Idealer wär was, das ich an jeder Tanke und im Automaten auf Arbeit krieg, ohne Bestellen und ohne Mischen – das nervt bei HOLY schon manchmal."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "kennt jeder, gibt's schon ewig an jeder Ecke",
+      "pol_einzeln": "neues Streamer-Ding, Hype für die Jüngeren",
+      "wortlaut": "Red Bull und Cola Zero kennt jeder, die gibt's schon ewig und an jeder Ecke. Gönrgy ist neu, das ist so ein Streamer-Ding, das kaufen eher die Jüngeren wegen dem Hype."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W5",
+      "pol_paar": "verschiedene Sorten zum Abwechseln, ohne Blubber, kannst du literweise trinken",
+      "pol_einzeln": "schmeckt immer gleich nach Cola, Kohlensäure macht voll, eher was zum Essen",
+      "wortlaut": "Bei HOLY und meinem Idealen kann ich die Sorte wechseln, mal was Fruchtiges, mal was anderes, und weil ich's mit Leitungswasser mache, ist kein Blubber drin – das kann ich literweise wegtrinken. Cola Zero schmeckt halt immer nach Cola und mit der Kohlensäure bist du nach zwei Gläsern voll, das trink ich eher zum Essen."
+    }
+  ]
+}

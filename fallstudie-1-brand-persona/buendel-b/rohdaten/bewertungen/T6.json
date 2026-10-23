@@ -1,0 +1,18 @@
+{
+  "befragte": "T6",
+  "bewertungen": [
+    {"konstrukt": "K01", "M": 7, "W1": 1, "W2": 2, "W3": 4, "W4": 7, "W5": 7, "I": 7},
+    {"konstrukt": "K02", "M": 6, "W1": 1, "W2": 1, "W3": 4, "W4": 6, "W5": 1, "I": 3},
+    {"konstrukt": "K03", "M": 7, "W1": 1, "W2": 1, "W3": 1, "W4": 6, "W5": 1, "I": 5},
+    {"konstrukt": "K04", "M": 3, "W1": 1, "W2": 1, "W3": 2, "W4": 7, "W5": 6, "I": 4},
+    {"konstrukt": "K05", "M": 5, "W1": 2, "W2": 3, "W3": 7, "W4": 4, "W5": 1, "I": 2},
+    {"konstrukt": "K06", "M": 5, "W1": 1, "W2": 1, "W3": 6, "W4": 5, "W5": 1, "I": 4},
+    {"konstrukt": "K07", "M": 5, "W1": 3, "W2": 1, "W3": 1, "W4": 7, "W5": 6, "I": 6},
+    {"konstrukt": "K08", "M": 5, "W1": 5, "W2": 3, "W3": 4, "W4": 7, "W5": 2, "I": 3},
+    {"konstrukt": "K09", "M": 7, "W1": 1, "W2": 2, "W3": 2, "W4": 6, "W5": 5, "I": 7},
+    {"konstrukt": "K10", "M": 5, "W1": 6, "W2": 7, "W3": 6, "W4": 2, "W5": 6, "I": 1},
+    {"konstrukt": "K11", "M": 6, "W1": 7, "W2": 7, "W3": 6, "W4": 1, "W5": 6, "I": 6},
+    {"konstrukt": "K12", "M": 4, "W1": 2, "W2": 2, "W3": 6, "W4": 5, "W5": 2, "I": 2}
+  ],
+  "kommentar": "Bei Gönrgy musste ich raten, weil ich's nie getrunken hab – vor allem beim Zucker und beim Geschmack. Und bei HOLY war der Preis schwer, weil ich immer mit Rabatt bestelle und nie ausrechne, was ein Glas eigentlich kostet."
+}

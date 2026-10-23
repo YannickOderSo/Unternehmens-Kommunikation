@@ -1,0 +1,101 @@
+befragte;marke;dimension;wert;facetten_bewertet;facetten_null;quelle
+T1;HOLY;Aufrichtigkeit;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;HOLY;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;HOLY;Kompetenz;4,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;HOLY;Kultiviertheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;HOLY;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;Red Bull;Aufrichtigkeit;2,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;Red Bull;Spannung;4,25;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;Red Bull;Kompetenz;4,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;Red Bull;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;Red Bull;Robustheit;3,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;waterdrop;Aufrichtigkeit;3,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;waterdrop;Spannung;2,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;waterdrop;Kompetenz;3,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;waterdrop;Kultiviertheit;3,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T1;waterdrop;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;HOLY;Aufrichtigkeit;3,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;HOLY;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;HOLY;Kompetenz;3,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;HOLY;Kultiviertheit;3,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;HOLY;Robustheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;Red Bull;Aufrichtigkeit;2,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;Red Bull;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;Red Bull;Kompetenz;4,33;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;Red Bull;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;waterdrop;Aufrichtigkeit;3,25;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;waterdrop;Spannung;2,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;waterdrop;Kompetenz;3,00;1;2;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;waterdrop;Kultiviertheit;3,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T2;waterdrop;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;HOLY;Aufrichtigkeit;2,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;HOLY;Spannung;3,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;HOLY;Kompetenz;3,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;HOLY;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;HOLY;Robustheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;Red Bull;Aufrichtigkeit;2,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;Red Bull;Spannung;4,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;Red Bull;Kompetenz;4,33;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;Red Bull;Kultiviertheit;3,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T3;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;HOLY;Aufrichtigkeit;3,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;HOLY;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;HOLY;Kompetenz;2,67;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;HOLY;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;HOLY;Robustheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;Red Bull;Aufrichtigkeit;2,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;Red Bull;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;Red Bull;Kompetenz;3,67;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;Red Bull;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;waterdrop;Aufrichtigkeit;3,25;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;waterdrop;Spannung;2,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;waterdrop;Kompetenz;3,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;waterdrop;Kultiviertheit;3,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T4;waterdrop;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;HOLY;Aufrichtigkeit;2,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;HOLY;Spannung;3,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;HOLY;Kompetenz;2,33;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;HOLY;Kultiviertheit;1,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;HOLY;Robustheit;1,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;Red Bull;Aufrichtigkeit;2,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;Red Bull;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;Red Bull;Kompetenz;4,33;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;Red Bull;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T5;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;HOLY;Aufrichtigkeit;3,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;HOLY;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;HOLY;Kompetenz;3,67;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;HOLY;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;HOLY;Robustheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;Red Bull;Aufrichtigkeit;2,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;Red Bull;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;Red Bull;Kompetenz;4,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;Red Bull;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;waterdrop;Aufrichtigkeit;3,25;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;waterdrop;Spannung;2,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;waterdrop;Kompetenz;3,00;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;waterdrop;Kultiviertheit;3,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T6;waterdrop;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;HOLY;Aufrichtigkeit;3,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;HOLY;Spannung;3,75;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;HOLY;Kompetenz;2,67;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;HOLY;Kultiviertheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;HOLY;Robustheit;1,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;Red Bull;Aufrichtigkeit;2,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;Red Bull;Spannung;4,25;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;Red Bull;Kompetenz;4,33;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;Red Bull;Kultiviertheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T7;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;HOLY;Aufrichtigkeit;3,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;HOLY;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;HOLY;Kompetenz;2,67;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;HOLY;Kultiviertheit;2,00;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;HOLY;Robustheit;1,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;Red Bull;Aufrichtigkeit;2,50;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;Red Bull;Spannung;4,00;4;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;Red Bull;Kompetenz;4,67;3;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;Red Bull;Kultiviertheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+T8;Red Bull;Robustheit;2,50;2;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25

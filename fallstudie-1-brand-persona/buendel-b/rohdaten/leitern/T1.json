@@ -1,0 +1,59 @@
+{
+  "befragte": "T1 (KI-simuliert): Mann, 28, Drei-Schicht-Betrieb in einem Logistiklager, trinkt fast täglich Energy, seit ein paar Monaten von Monster-Dosen auf HOLY-Pulver umgestiegen, bestellt die große Dose online auf Vorrat.",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "Interviewer: Fangen wir mit „ohne Zucker“ an. Ist dir das beim Kauf wichtig?\nT1 (KI-simuliert): Ja, auf jeden Fall. Das war eigentlich der Hauptgrund, warum ich von Monster weg bin.\nInterviewer: Warum ist dir das wichtig?\nT1 (KI-simuliert): Mit den normalen Monster hatte ich immer so nen Absturz. Erst voll drauf, und so gegen drei, vier Uhr nachts war ich dann komplett platt. Schlimmer als vorher. Mit HOLY hab ich das nicht so, das hält eher gleichmäßig. Und weniger Bauch hab ich auch, seit ich nicht mehr jeden Tag ne Zuckerdose trink. Aber das ist eher Bonus.\nInterviewer: Warum ist dir wichtig, dass du nachts nicht so abstürzt?\nT1 (KI-simuliert): Ich fahr nachts Stapler. Wenn ich da durchhänge, wird's gefährlich. Da hast du Paletten über dir, Kollegen laufen rum. Und ich bin dann auch langsamer, das sieht man am Ende von der Schicht.\nInterviewer: Warum ist dir wichtig, konzentriert und schnell zu bleiben?\nT1 (KI-simuliert): Weil ich nicht der sein will, wegen dem was schiefgeht. Im Team muss man sich aufeinander verlassen können. Wenn einer hängt, müssen die anderen das auffangen. Der will ich nicht sein.\nInterviewer: Und warum ist dir wichtig, dass sich die anderen auf dich verlassen können?\nT1 (KI-simuliert): Hm. Ist halt so ein Ding von mir. Wenn ich was mach, dann richtig. Ich will nach der Schicht heimgehen und sagen können: Hab meinen Job gut gemacht. Da kann ich mir dann auch selber in die Augen gucken.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Zuckerabsturz mitten in der Nachtschicht, die Wachheit hält gleichmäßiger"
+        },
+        {
+          "ebene": "funktional",
+          "text": "bleibt beim Staplerfahren konzentriert und schnell, arbeitet sicher"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "ist nicht der Schwachpunkt im Team, die Kollegen können sich auf ihn verlassen"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Selbstachtung und Pflichtbewusstsein: den eigenen Job gut gemacht haben"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": true,
+      "dialog": "Interviewer: Zweite Eigenschaft: HOLY sagt, das ist „für jeden Tag“ gemacht. Ist dir das beim Kauf wichtig?\nT1 (KI-simuliert): Ja, schon. Ich trink ja fast jeden Tag was vor der Schicht. Da passt das.\nInterviewer: Warum ist dir das wichtig?\nT1 (KI-simuliert): Weil ich dann nicht jedes Mal überlegen muss, ob das jetzt zu viel ist. Ich mach mir mein Glas und fertig. Ob das wirklich jeden Tag so gesund ist, weiß ich ehrlich gesagt nicht. Aber gefühlt passt das eher als jeden Tag ne große Monster.\nInterviewer: Warum ist dir wichtig, nicht jedes Mal darüber nachdenken zu müssen?\nT1 (KI-simuliert): Bei Monster hatte ich irgendwann echt schlechtes Gewissen. Meine Freundin hat auch ständig was gesagt, so „das ist doch nicht gesund, was du da jeden Tag reinkippst“. Das nervt halt. Jetzt sagt sie nix mehr.\nInterviewer: Und warum ist dir wichtig, dass du kein schlechtes Gewissen hast und es keine Diskussion gibt?\nT1 (KI-simuliert): Der Schichtdienst ist eh schon Stress genug. Jede Woche andere Zeiten, Schlaf ist eh durcheinander. Da will ich wenigstens bei so kleinen Sachen meine Ruhe. Das Glas vor der Schicht ist so mein festes Ding. Egal ob früh oder nachts. Die Dose steht im Schrank, ich muss nicht erst zur Tanke.\nInterviewer: Warum ist dir so ein festes Ding wichtig?\nT1 (KI-simuliert): Weil sonst alles irgendwie durcheinander ist. Wenn wenigstens ein paar Sachen gleich bleiben, hab ich das Gefühl, ich hab mein Leben im Griff. Und nicht die Schicht hat mich im Griff.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "für jeden Tag (für den täglichen Konsum gedacht)"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kann es fast täglich trinken, ohne jedes Mal über die Menge nachzudenken"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "kein schlechtes Gewissen mehr, keine Diskussionen mit der Freundin"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "festes Ritual vor jeder Schicht, ein Stück Ruhe im ständig wechselnden Schichtplan"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Kontrolle über das eigene Leben und innere Ruhe (Selbstbestimmung)"
+        }
+      ]
+    }
+  ]
+}

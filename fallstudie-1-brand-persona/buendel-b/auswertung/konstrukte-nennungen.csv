@@ -1,0 +1,16 @@
+id;links;rechts;nennungen_haupt;befragte_haupt;holy_rechts_haupt;holy_links_haupt;nennungen_kontrolle;befragte_kontrolle;holy_rechts_kontrolle;holy_links_kontrolle;nebenaspekte_haupt;nebenaspekte_kontrolle;neben_holy_rechts_haupt;neben_holy_links_haupt;im_persona_block;ausrichtung;quelle
+K01;Zuckerbombe;ohne Zucker;4;4;4;0;5;5;5;0;6;7;6;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K02;gibt's überall;online bestellen;5;5;5;0;5;5;5;0;13;8;12;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K03;aufmachen, fertig;selbst anrühren;9;7;9;0;8;7;8;0;4;5;4;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K04;knallt, macht wach;weniger Kick;5;4;1;1;5;4;1;0;8;3;4;0;ja;"Gleichstand 1:1; Nebenaspekte haupt HOLY rechts 4:0";KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K05;einfach, ohne Hype;Influencer-Zeug;4;4;4;0;4;4;4;0;9;12;4;2;Grenzfall;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K06;kennt jeder;neu, Ausprobieren;6;6;2;0;8;7;3;0;1;1;1;0;nein;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K07;laut, für Zocker;ruhig, ganz normal;3;3;1;0;2;2;0;0;3;2;2;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K08;günstig;eher teuer;1;1;1;0;1;1;1;0;3;5;2;1;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K09;Kick für Notfälle;für jeden Tag;5;4;2;0;4;3;1;0;2;3;2;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K10;schmeckt natürlich;schmeckt künstlich;2;2;2;0;2;2;2;0;1;1;0;0;nein;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K11;zu wässrig;schmeckt nach was;1;1;1;0;1;1;1;0;1;2;0;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+K12;weiß, was ich zahle;keine Ahnung vom Preis;1;1;1;0;0;0;0;0;0;1;0;0;ja;HOLY rechts häufiger;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+X01;schnell leer;reicht ganze Schicht;0;0;0;0;1;1;1;0;0;0;0;0;nein;nur Kontrollgruppe (geht nicht in P8);KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+X02;schmeckt immer gleich;Sorten zum Abwechseln;0;0;0;0;1;1;1;0;0;0;0;0;nein;nur Kontrollgruppe (geht nicht in P8);KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+X03;normales Getränk;Fitness-Ding;0;0;0;0;2;2;2;0;3;2;3;0;ja;nur Kontrollgruppe (geht nicht in P8);KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25

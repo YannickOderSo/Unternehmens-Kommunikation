@@ -1,0 +1,43 @@
+{
+  "befragte": "T2 (KI-simuliert, fiktiv): Frau, 29, Pflegefachkraft im Krankenhaus im Schichtdienst (Früh, Spät, Nacht), trinkt etwa einmal pro Woche einen Energy Drink, hat HOLY im Supermarkt entdeckt und einmal probiert.",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "[KI-simuliertes Laddering-Interview, fiktive Person T2]\n\nInterviewer: Die erste Eigenschaft von HOLY ist „ohne Zucker“. Ist dir das beim Kauf wichtig?\nT2: Ja, schon. Das war auch der Grund, warum ich's überhaupt mitgenommen hab. Und es war dann auch nicht so pappsüß.\n\nInterviewer: Warum ist dir wichtig, dass kein Zucker drin ist?\nT2: Weil ich von dem Zuckerzeug so einen Absturz krieg. Erst bin ich total aufgedreht und 'ne Weile später häng ich komplett durch. Im Nachtdienst passiert das genau dann, wenn's eh am schlimmsten ist, so gegen Morgen. Und ehrlich gesagt, ich seh auf Station genug Leute mit Diabetes, da muss ich mir das nicht selber reinkippen.\n\nInterviewer: Warum ist dir wichtig, dass du nicht durchhängst?\nT2: Weil ich die ganze Nacht gleichmäßig wach bleiben muss. Ich richte Medikamente, die Klingel geht ständig, manchmal ist 'n Notfall. Da kann ich nicht im Tief sein und erst mal fünf Minuten zu mir kommen.\n\nInterviewer: Und warum ist dir wichtig, da wach und konzentriert zu sein?\nT2: Weil ich keine Fehler machen will. Wenn ich bei den Medis was verwechsle, das ist nicht wie im Büro, wo man halt 'ne Mail falsch rausschickt. Und nachts sind wir eh dünn besetzt, meine Kollegin muss sich auf mich verlassen können.\n\nInterviewer: Warum ist dir wichtig, dass man sich auf dich verlassen kann?\nT2: Weil die Leute da liegen und sich nicht selber helfen können. Die sind auf uns angewiesen. Ich will am Ende von der Schicht nach Hause gehen und wissen, ich hab meinen Job ordentlich gemacht und allen ging's gut.\n\nInterviewer: Und warum ist dir das wichtig?\nT2: Hm. Das ist einfach so. Verantwortung halt. Deswegen hab ich den Beruf ja gemacht. Wenn ich das nicht mehr ernst nehm, kann ich aufhören.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker (schmeckt nicht so pappsüß)"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Zuckerhoch und kein Absturz danach"
+        },
+        {
+          "ebene": "funktional",
+          "text": "bleibt im Nachtdienst gleichmäßig wach, kein Tief gegen Morgen"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "arbeitet konzentriert und macht keine Fehler (z. B. beim Medikamente-Richten)"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "Kolleginnen und Patienten können sich auf sie verlassen; Gefühl, den Job ordentlich gemacht zu haben"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Verantwortung für Menschen, die auf sie angewiesen sind (Fürsorge)"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": false,
+      "begruendung_wenn_nicht": "T2 trinkt Energy nur gezielt (etwa einmal pro Woche vor Nachtdiensten oder wenn Spät- auf Frühdienst folgt), sonst Kaffee oder Wasser. Täglicher Konsum ist für sie eher ein Warnsignal (wie bei Kollegen beobachtet, die ohne nicht mehr in die Gänge kommen). „Für jeden Tag“ ist für sie deshalb kein Kaufgrund, sondern wirkt eher irritierend; beim Kauf zählen für sie Geschmack und Wirkung.",
+      "dialog": "[KI-simuliertes Laddering-Interview, fiktive Person T2]\n\nInterviewer: Die zweite Eigenschaft: HOLY sagt, es ist „für jeden Tag“ gedacht. Ist dir das beim Kauf wichtig?\nT2: Nee, eigentlich nicht. Ich will ja gar nicht jeden Tag so was trinken.\n\nInterviewer: Kannst du kurz sagen, warum nicht?\nT2: Ich trink das nur, wenn's sein muss. Vor 'nem Nachtdienst oder wenn nach Spät gleich wieder Früh kommt. Sonst Kaffee oder Wasser. Wenn ich jeden Tag Energy brauch, dann läuft was falsch. Hab ich bei Kollegen gesehen, die kommen ohne gar nicht mehr in die Gänge. Ehrlich gesagt klingt „für jeden Tag“ für mich eher komisch, nicht wie was Gutes.\n\nInterviewer: Spielt das beim Kauf dann überhaupt eine Rolle?\nT2: Nö. Da guck ich, ob's schmeckt und ob's wach macht. Und im Nachtdienst greif ich dann eh zum Red Bull, da weiß ich halt, dass es wirkt.",
+      "stufen": []
+    }
+  ]
+}

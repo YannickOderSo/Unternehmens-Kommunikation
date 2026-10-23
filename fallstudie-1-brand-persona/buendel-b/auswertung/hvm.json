@@ -1,0 +1,1215 @@
+{
+  "kennzeichnung": "KI-simuliert (Tool): 8 fiktive Befragte T1–T8, jede Person in einem eigenen Agenten-Lauf; keine echten Befragten, keine Aussagen über Signifikanz oder Repräsentativität. Hypothesen, keine Daten (Stenger, S. 78; dossier-buendel-b.md §7).",
+  "stand": "Codierung und Auswertung vom 23.10.2026",
+  "cutoff": 2,
+  "cutoff_regel": "Verbindung in mindestens 2 Leitern (direkte Verbindungen, je Leiter einmal); festgelegt vor dem Rechnen",
+  "startpunkte": [
+    "ohne Zucker",
+    "für jeden Tag"
+  ],
+  "zahl_leitern": 10,
+  "zahl_leitern_je_startpunkt": {
+    "ohne Zucker": 8,
+    "für jeden Tag": 2
+  },
+  "zahl_abbrueche_je_startpunkt": {
+    "ohne Zucker": 0,
+    "für jeden Tag": 6
+  },
+  "abbrueche_je_startpunkt": {
+    "ohne Zucker": [],
+    "für jeden Tag": [
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T7",
+      "T8"
+    ]
+  },
+  "abbruchgruende_befragte": {
+    "ohne Zucker": {},
+    "für jeden Tag": {
+      "Anrühren umständlich": [
+        "T3",
+        "T4",
+        "T5",
+        "T7",
+        "T8"
+      ],
+      "nur bei Bedarf": [
+        "T2",
+        "T4",
+        "T7",
+        "T8"
+      ],
+      "klingt nach Werbung": [
+        "T3",
+        "T4",
+        "T5"
+      ],
+      "täglich bedenklich": [
+        "T2",
+        "T7",
+        "T8"
+      ],
+      "trinkt eh täglich": [
+        "T3",
+        "T5"
+      ]
+    }
+  },
+  "leitern_uebersicht": [
+    {
+      "leiter": "T1 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 5,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Selbstachtung"
+      ]
+    },
+    {
+      "leiter": "T1 · für jeden Tag",
+      "wichtig": true,
+      "stufen": 5,
+      "codefolge": [
+        "für jeden Tag",
+        "ohne Bedenken trinken",
+        "kein schlechtes Gewissen",
+        "feste Routine",
+        "Selbstbestimmung"
+      ]
+    },
+    {
+      "leiter": "T2 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ]
+    },
+    {
+      "leiter": "T2 · für jeden Tag",
+      "wichtig": false,
+      "stufen": 0,
+      "codefolge": []
+    },
+    {
+      "leiter": "T3 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "gern gesehen sein",
+        "Freundschaft"
+      ]
+    },
+    {
+      "leiter": "T3 · für jeden Tag",
+      "wichtig": false,
+      "stufen": 0,
+      "codefolge": []
+    },
+    {
+      "leiter": "T4 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zucker nebenbei",
+        "kein Zuckerabsturz",
+        "sich wohlfühlen",
+        "Kontrolle behalten",
+        "Gesundheit"
+      ]
+    },
+    {
+      "leiter": "T4 · für jeden Tag",
+      "wichtig": false,
+      "stufen": 0,
+      "codefolge": []
+    },
+    {
+      "leiter": "T5 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zucker nebenbei",
+        "kein Zuckerabsturz",
+        "Führerschein behalten",
+        "Job sichern",
+        "Sicherheit"
+      ]
+    },
+    {
+      "leiter": "T5 · für jeden Tag",
+      "wichtig": false,
+      "stufen": 0,
+      "codefolge": []
+    },
+    {
+      "leiter": "T6 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "volle Leistung",
+        "andere mitziehen",
+        "glaubwürdig sein",
+        "sich treu bleiben"
+      ]
+    },
+    {
+      "leiter": "T6 · für jeden Tag",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "für jeden Tag",
+        "ohne Bedenken trinken",
+        "feste Routine",
+        "Halt im Alltag",
+        "Kontrolle behalten",
+        "Selbstbestimmung"
+      ]
+    },
+    {
+      "leiter": "T7 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 6,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung",
+        "Selbstachtung"
+      ]
+    },
+    {
+      "leiter": "T7 · für jeden Tag",
+      "wichtig": false,
+      "stufen": 0,
+      "codefolge": []
+    },
+    {
+      "leiter": "T8 · ohne Zucker",
+      "wichtig": true,
+      "stufen": 7,
+      "codefolge": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Job sichern",
+        "Selbstbestimmung",
+        "Selbstachtung"
+      ]
+    },
+    {
+      "leiter": "T8 · für jeden Tag",
+      "wichtig": false,
+      "stufen": 0,
+      "codefolge": []
+    }
+  ],
+  "knoten": [
+    {
+      "id": "A1",
+      "code": "ohne Zucker",
+      "ebene": "Attribut",
+      "nennungen_leitern": 8,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T4 · ohne Zucker",
+        "T5 · ohne Zucker",
+        "T6 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "id": "A2",
+      "code": "für jeden Tag",
+      "ebene": "Attribut",
+      "nennungen_leitern": 2,
+      "leitern": [
+        "T1 · für jeden Tag",
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "id": "F1",
+      "code": "kein Zuckerabsturz",
+      "ebene": "funktional",
+      "nennungen_leitern": 8,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T4 · ohne Zucker",
+        "T5 · ohne Zucker",
+        "T6 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "id": "F2",
+      "code": "konzentriert, keine Fehler",
+      "ebene": "funktional",
+      "nennungen_leitern": 5,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "id": "F3",
+      "code": "kein Zucker nebenbei",
+      "ebene": "funktional",
+      "nennungen_leitern": 2,
+      "leitern": [
+        "T4 · ohne Zucker",
+        "T5 · ohne Zucker"
+      ]
+    },
+    {
+      "id": "F4",
+      "code": "ohne Bedenken trinken",
+      "ebene": "funktional",
+      "nennungen_leitern": 2,
+      "leitern": [
+        "T1 · für jeden Tag",
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "id": "P1",
+      "code": "verlässlich sein",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 5,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "id": "V1",
+      "code": "Verantwortung",
+      "ebene": "Wert",
+      "nennungen_leitern": 2,
+      "leitern": [
+        "T2 · ohne Zucker",
+        "T7 · ohne Zucker"
+      ]
+    }
+  ],
+  "kanten": [
+    {
+      "von": "ohne Zucker",
+      "nach": "kein Zuckerabsturz",
+      "anzahl": 6,
+      "knapp_am_cutoff": false,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T6 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "kein Zuckerabsturz",
+      "nach": "konzentriert, keine Fehler",
+      "anzahl": 5,
+      "knapp_am_cutoff": false,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "konzentriert, keine Fehler",
+      "nach": "verlässlich sein",
+      "anzahl": 5,
+      "knapp_am_cutoff": false,
+      "leitern": [
+        "T1 · ohne Zucker",
+        "T2 · ohne Zucker",
+        "T3 · ohne Zucker",
+        "T7 · ohne Zucker",
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "für jeden Tag",
+      "nach": "ohne Bedenken trinken",
+      "anzahl": 2,
+      "knapp_am_cutoff": true,
+      "leitern": [
+        "T1 · für jeden Tag",
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "ohne Zucker",
+      "nach": "kein Zucker nebenbei",
+      "anzahl": 2,
+      "knapp_am_cutoff": true,
+      "leitern": [
+        "T4 · ohne Zucker",
+        "T5 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "kein Zucker nebenbei",
+      "nach": "kein Zuckerabsturz",
+      "anzahl": 2,
+      "knapp_am_cutoff": true,
+      "leitern": [
+        "T4 · ohne Zucker",
+        "T5 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "verlässlich sein",
+      "nach": "Verantwortung",
+      "anzahl": 2,
+      "knapp_am_cutoff": true,
+      "leitern": [
+        "T2 · ohne Zucker",
+        "T7 · ohne Zucker"
+      ]
+    }
+  ],
+  "alle_codes": [
+    {
+      "code": "ohne Zucker",
+      "ebene": "Attribut",
+      "nennungen_leitern": 8,
+      "in_hvm": true
+    },
+    {
+      "code": "für jeden Tag",
+      "ebene": "Attribut",
+      "nennungen_leitern": 2,
+      "in_hvm": true
+    },
+    {
+      "code": "kein Zuckerabsturz",
+      "ebene": "funktional",
+      "nennungen_leitern": 8,
+      "in_hvm": true
+    },
+    {
+      "code": "konzentriert, keine Fehler",
+      "ebene": "funktional",
+      "nennungen_leitern": 5,
+      "in_hvm": true
+    },
+    {
+      "code": "feste Routine",
+      "ebene": "funktional",
+      "nennungen_leitern": 2,
+      "in_hvm": false
+    },
+    {
+      "code": "kein Zucker nebenbei",
+      "ebene": "funktional",
+      "nennungen_leitern": 2,
+      "in_hvm": true
+    },
+    {
+      "code": "ohne Bedenken trinken",
+      "ebene": "funktional",
+      "nennungen_leitern": 2,
+      "in_hvm": true
+    },
+    {
+      "code": "volle Leistung",
+      "ebene": "funktional",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "verlässlich sein",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 5,
+      "in_hvm": true
+    },
+    {
+      "code": "Job sichern",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 2,
+      "in_hvm": false
+    },
+    {
+      "code": "Kontrolle behalten",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 2,
+      "in_hvm": false
+    },
+    {
+      "code": "andere mitziehen",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "Führerschein behalten",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "gern gesehen sein",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "glaubwürdig sein",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "Halt im Alltag",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "kein schlechtes Gewissen",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "sich wohlfühlen",
+      "ebene": "psychosozial",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "Selbstachtung",
+      "ebene": "Wert",
+      "nennungen_leitern": 3,
+      "in_hvm": false
+    },
+    {
+      "code": "Selbstbestimmung",
+      "ebene": "Wert",
+      "nennungen_leitern": 3,
+      "in_hvm": false
+    },
+    {
+      "code": "Verantwortung",
+      "ebene": "Wert",
+      "nennungen_leitern": 2,
+      "in_hvm": true
+    },
+    {
+      "code": "Freundschaft",
+      "ebene": "Wert",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "Gesundheit",
+      "ebene": "Wert",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "sich treu bleiben",
+      "ebene": "Wert",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    },
+    {
+      "code": "Sicherheit",
+      "ebene": "Wert",
+      "nennungen_leitern": 1,
+      "in_hvm": false
+    }
+  ],
+  "kanten_unter_cutoff": [
+    {
+      "von": "feste Routine",
+      "nach": "Halt im Alltag",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "feste Routine",
+      "nach": "Selbstbestimmung",
+      "anzahl": 1,
+      "leitern": [
+        "T1 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "kein Zuckerabsturz",
+      "nach": "Führerschein behalten",
+      "anzahl": 1,
+      "leitern": [
+        "T5 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "kein Zuckerabsturz",
+      "nach": "sich wohlfühlen",
+      "anzahl": 1,
+      "leitern": [
+        "T4 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "kein Zuckerabsturz",
+      "nach": "volle Leistung",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "ohne Bedenken trinken",
+      "nach": "feste Routine",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "ohne Bedenken trinken",
+      "nach": "kein schlechtes Gewissen",
+      "anzahl": 1,
+      "leitern": [
+        "T1 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "volle Leistung",
+      "nach": "andere mitziehen",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "andere mitziehen",
+      "nach": "glaubwürdig sein",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "Führerschein behalten",
+      "nach": "Job sichern",
+      "anzahl": 1,
+      "leitern": [
+        "T5 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "gern gesehen sein",
+      "nach": "Freundschaft",
+      "anzahl": 1,
+      "leitern": [
+        "T3 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "glaubwürdig sein",
+      "nach": "sich treu bleiben",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "Halt im Alltag",
+      "nach": "Kontrolle behalten",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "Job sichern",
+      "nach": "Selbstbestimmung",
+      "anzahl": 1,
+      "leitern": [
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "Job sichern",
+      "nach": "Sicherheit",
+      "anzahl": 1,
+      "leitern": [
+        "T5 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "kein schlechtes Gewissen",
+      "nach": "feste Routine",
+      "anzahl": 1,
+      "leitern": [
+        "T1 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "Kontrolle behalten",
+      "nach": "Gesundheit",
+      "anzahl": 1,
+      "leitern": [
+        "T4 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "Kontrolle behalten",
+      "nach": "Selbstbestimmung",
+      "anzahl": 1,
+      "leitern": [
+        "T6 · für jeden Tag"
+      ]
+    },
+    {
+      "von": "sich wohlfühlen",
+      "nach": "Kontrolle behalten",
+      "anzahl": 1,
+      "leitern": [
+        "T4 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "verlässlich sein",
+      "nach": "gern gesehen sein",
+      "anzahl": 1,
+      "leitern": [
+        "T3 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "verlässlich sein",
+      "nach": "Job sichern",
+      "anzahl": 1,
+      "leitern": [
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "verlässlich sein",
+      "nach": "Selbstachtung",
+      "anzahl": 1,
+      "leitern": [
+        "T1 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "Selbstbestimmung",
+      "nach": "Selbstachtung",
+      "anzahl": 1,
+      "leitern": [
+        "T8 · ohne Zucker"
+      ]
+    },
+    {
+      "von": "Verantwortung",
+      "nach": "Selbstachtung",
+      "anzahl": 1,
+      "leitern": [
+        "T7 · ohne Zucker"
+      ]
+    }
+  ],
+  "pfade": [
+    {
+      "pfad": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "kantenzahlen": [
+        6,
+        5,
+        5,
+        2
+      ],
+      "engpass": 2,
+      "summe": 18,
+      "endet_bei_wert": true,
+      "einzelleitern_vollstaendig": [
+        "T2 · ohne Zucker",
+        "T7 · ohne Zucker"
+      ]
+    },
+    {
+      "pfad": [
+        "ohne Zucker",
+        "kein Zucker nebenbei",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "kantenzahlen": [
+        2,
+        2,
+        5,
+        5,
+        2
+      ],
+      "engpass": 2,
+      "summe": 16,
+      "endet_bei_wert": true,
+      "einzelleitern_vollstaendig": []
+    },
+    {
+      "pfad": [
+        "für jeden Tag",
+        "ohne Bedenken trinken"
+      ],
+      "kantenzahlen": [
+        2
+      ],
+      "engpass": 2,
+      "summe": 2,
+      "endet_bei_wert": false,
+      "einzelleitern_vollstaendig": [
+        "T1 · für jeden Tag",
+        "T6 · für jeden Tag"
+      ]
+    }
+  ],
+  "staerkste_leiter": {
+    "pfad": [
+      "ohne Zucker",
+      "kein Zuckerabsturz",
+      "konzentriert, keine Fehler",
+      "verlässlich sein",
+      "Verantwortung"
+    ],
+    "kantenzahlen": [
+      6,
+      5,
+      5,
+      2
+    ],
+    "engpass": 2,
+    "summe": 18,
+    "endet_bei_wert": true,
+    "einzelleitern_vollstaendig": [
+      "T2 · ohne Zucker",
+      "T7 · ohne Zucker"
+    ]
+  },
+  "nebenaspekte_befragte": {
+    "Verantwortung": [
+      "T1",
+      "T2",
+      "T5"
+    ],
+    "auch bei anderen": [
+      "T5",
+      "T7"
+    ],
+    "Gewicht halten": [
+      "T4",
+      "T5"
+    ],
+    "kein Ärger": [
+      "T1",
+      "T3"
+    ],
+    "Halt im Alltag": [
+      "T1"
+    ],
+    "konzentriert, keine Fehler": [
+      "T5"
+    ],
+    "Kopf frei": [
+      "T6"
+    ],
+    "Können zeigen": [
+      "T8"
+    ],
+    "nicht so süß": [
+      "T2"
+    ],
+    "Selbstbestimmung": [
+      "T4"
+    ]
+  },
+  "abgleich_befragte": {
+    "auch bei anderen": [
+      "T3",
+      "T4",
+      "T5",
+      "T7",
+      "T8"
+    ],
+    "Gewicht halten": [
+      "T1",
+      "T4",
+      "T5",
+      "T8"
+    ],
+    "Gesundheit": [
+      "T2",
+      "T4",
+      "T5"
+    ],
+    "unsicher, ob gesund": [
+      "T1",
+      "T4",
+      "T6"
+    ],
+    "kein schlechtes Gewissen": [
+      "T1"
+    ],
+    "Können zeigen": [
+      "T8"
+    ],
+    "nicht so süß": [
+      "T2"
+    ],
+    "schmeckt schlechter": [
+      "T8"
+    ]
+  },
+  "robustheit": [
+    {
+      "variante": "T1 · für jeden Tag, Stufe 4: „feste Routine“ → „Halt im Alltag“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "T1 · für jeden Tag, Stufe 5: „Selbstbestimmung“ → „Kontrolle behalten“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "T2 · ohne Zucker, Stufe 3: „kein Zuckerabsturz“ → „gleichmäßig wach“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [
+        {
+          "von": "kein Zuckerabsturz",
+          "nach": "konzentriert, keine Fehler",
+          "vorher": 5,
+          "nachher": 4
+        }
+      ],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": false
+    },
+    {
+      "variante": "T4 · ohne Zucker, Stufe 3: „kein Zuckerabsturz“ → „Gewicht halten“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [
+        {
+          "von": "kein Zucker nebenbei",
+          "nach": "kein Zuckerabsturz",
+          "anzahl_vorher": 2
+        }
+      ],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": false
+    },
+    {
+      "variante": "T4 · ohne Zucker, Stufe 5: „Kontrolle behalten“ → „bewusst ernähren“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "T4 · ohne Zucker, Stufe 6: „Gesundheit“ → „Selbstbestimmung“",
+      "hvm_kanten_dazu": [
+        {
+          "von": "Kontrolle behalten",
+          "nach": "Selbstbestimmung",
+          "anzahl": 2
+        }
+      ],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": false
+    },
+    {
+      "variante": "T5 · ohne Zucker, Stufe 4: „Führerschein behalten“ → „konzentriert, keine Fehler“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [
+        {
+          "von": "kein Zuckerabsturz",
+          "nach": "konzentriert, keine Fehler",
+          "vorher": 5,
+          "nachher": 6
+        }
+      ],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": false
+    },
+    {
+      "variante": "T5 · ohne Zucker, Stufe 6: „Sicherheit“ → „Verantwortung“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "T6 · ohne Zucker, Stufe 3: „volle Leistung“ → „konzentriert, keine Fehler“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [
+        {
+          "von": "kein Zuckerabsturz",
+          "nach": "konzentriert, keine Fehler",
+          "vorher": 5,
+          "nachher": 6
+        }
+      ],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": false
+    },
+    {
+      "variante": "T6 · ohne Zucker, Stufe 6: „sich treu bleiben“ → „Selbstachtung“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "T6 · für jeden Tag, Stufe 5: „Kontrolle behalten“ → „Kopf frei“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "T8 · ohne Zucker, Stufe 6: „Selbstbestimmung“ → „Unabhängigkeit“",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [],
+      "hvm_kanten_anzahl_geaendert": [],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": true
+    },
+    {
+      "variante": "alle Alternativen zugleich",
+      "hvm_kanten_dazu": [],
+      "hvm_kanten_weg": [
+        {
+          "von": "kein Zucker nebenbei",
+          "nach": "kein Zuckerabsturz",
+          "anzahl_vorher": 2
+        }
+      ],
+      "hvm_kanten_anzahl_geaendert": [
+        {
+          "von": "kein Zuckerabsturz",
+          "nach": "konzentriert, keine Fehler",
+          "vorher": 5,
+          "nachher": 6
+        }
+      ],
+      "staerkste_leiter": [
+        "ohne Zucker",
+        "kein Zuckerabsturz",
+        "konzentriert, keine Fehler",
+        "verlässlich sein",
+        "Verantwortung"
+      ],
+      "staerkste_leiter_gleich": true,
+      "hvm_unveraendert": false
+    }
+  ],
+  "stimmigkeit_ohne_zucker": {
+    "startpunkt": "ohne Zucker",
+    "befragte": 8,
+    "pruefrage_bejaht": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8"
+    ],
+    "eingeschraenkt": [
+      "T3",
+      "T7",
+      "T8"
+    ],
+    "ideal_k01_hoechstens_4": [
+      "T3",
+      "T5",
+      "T7",
+      "T8"
+    ],
+    "beleg_gespraech1": [
+      "T3",
+      "T5",
+      "T7",
+      "T8"
+    ],
+    "spannung": [
+      "T3",
+      "T5",
+      "T7",
+      "T8"
+    ]
+  },
+  "zuschreibung_an_holy_erste_frage": {
+    "ohne Zucker": [
+      "T4",
+      "T8"
+    ],
+    "für jeden Tag": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8"
+    ]
+  },
+  "hinweise": [
+    "Ebene: T1 · für jeden Tag, Stufe 4: Simulation „psychosozial“, Code „feste Routine“ steht im Codebuch als „funktional“.",
+    "Ebene: T2 · ohne Zucker, Stufe 4: Simulation „psychosozial“, Code „konzentriert, keine Fehler“ steht im Codebuch als „funktional“.",
+    "Rückschritt der Ebene: T1 · für jeden Tag: „kein schlechtes Gewissen“ (psychosozial) → „feste Routine“ (funktional).",
+    "R6: T2 · ohne Zucker: 6 Stufen, nach dem Zusammenfassen gleicher Folgecodes 5 Knoten."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "befragte": "T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt abends viel am PC, trinkt fast jeden Tag Monster aus der Dose, kennt HOLY nur aus YouTube-Videos, selbst nie gekauft (einmal beim Kumpel probiert).",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "[KI-simuliertes Laddering-Interview, fiktive Person T3]\nInterviewer: Fangen wir mit der ersten Eigenschaft an: HOLY ist ohne Zucker. Ist dir das beim Kauf wichtig?\nT3: Schon irgendwie, ja. Bei Monster nehm ich inzwischen meistens die weiße Dose, die ohne Zucker. Nicht immer, aber meistens. Dass HOLY keinen Zucker hat, find ich okay. Aber das hat Monster ja auch, deswegen wechsel ich jetzt nicht extra.\nInterviewer: Warum ist dir das wichtig, dass ein Drink keinen Zucker hat?\nT3: Weil ich mit dem normalen Zeug so einen Absturz hab. Erst bin ich voll da, und irgendwann später bin ich komplett platt. Und wenn ich jeden Tag eine, zwei Dosen trink, ist das halt auch echt viel Zucker. Ich sitz eh den ganzen Tag, tagsüber Uni am Laptop, abends am PC.\nInterviewer: Warum ist es dir wichtig, dass du keinen Absturz hast?\nT3: Weil ich abends meistens mit meinen Jungs Ranked spiel. Das geht oft bis spät in die Nacht. Wenn ich da mittendrin einknick, mach ich dumme Fehler. Ich reagier zu spät, ich pass nicht auf.\nInterviewer: Und warum ist es dir wichtig, dass du da keine Fehler machst?\nT3: Weil dann das ganze Team verliert. Und dann kommt im Discord direkt so ein 'Was machst du da?'. Ich will nicht der sein, wegen dem wir verlieren.\nInterviewer: Warum ist dir das wichtig, nicht derjenige zu sein?\nT3: Keine Ahnung... die Jungs sind halt meine Leute. Die meisten kenn ich seit der Schule. Jetzt wohnen alle woanders, wir sehen uns eigentlich nur noch online. Wenn ich da nur mitgeschleppt werd, fühlt sich das mies an. Ich will, dass die gern mit mir spielen.\nInterviewer: Und warum ist dir das wichtig?\nT3: Weil das meine Freunde sind. Ohne die säß ich abends allein in meiner Bude. Die gehören einfach dazu, zu meinem Leben. Das will ich nicht verlieren.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Zucker-Absturz: bleibt über lange Zockabende wach und bei der Sache"
+        },
+        {
+          "ebene": "funktional",
+          "text": "macht beim Ranked-Spielen weniger Fehler, reagiert schneller"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "ist nicht derjenige, wegen dem das Team verliert; kein Ärger oder Spott im Discord"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "die Freunde spielen gern mit ihm, er wird nicht nur mitgeschleppt"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Freundschaft und Zugehörigkeit (Verbundenheit mit den Freunden aus der Schulzeit)"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": false,
+      "dialog": "[KI-simuliertes Laddering-Interview, fiktive Person T3]\nInterviewer: Zweite Eigenschaft: HOLY sagt, das Getränk ist für jeden Tag gedacht. Ist dir das beim Kauf wichtig?\nT3: Nö, eigentlich nicht. Ich trink ja eh fast jeden Tag was. Ob irgendwo steht, dass das für jeden Tag ist, ist mir ehrlich gesagt egal.\nInterviewer: Spielt es für dich überhaupt eine Rolle, ob ein Drink für den täglichen Gebrauch gemacht ist?\nT3: Nicht wirklich. Ich hab bei Monster nie drüber nachgedacht, ob das für jeden Tag ist. Ich nehm's halt einfach. Klingt für mich nach Werbung. Der YouTuber sagt das, weil er dafür bezahlt wird.\nInterviewer: Was ist dir dann beim Kauf wichtig?\nT3: Dass ich's schnell kriege, im Supermarkt oder an der Tanke. Dass es kalt ist, Dose auf, fertig. Und dass es schmeckt. HOLY hab ich bei uns noch nie im Regal gesehen, kann aber auch sein, dass ich nicht drauf geachtet hab. Pulver anrühren, Shaker ausspülen, das ist mir zu viel Aufwand.\nInterviewer: Also ist 'für jeden Tag' für dich kein Grund, HOLY zu kaufen?\nT3: Nee. Wenn überhaupt, würd ich's wegen dem Preis nehmen, falls es am Ende wirklich billiger ist. Weiß ich aber nicht. 'Für jeden Tag' ist für mich nur ein Spruch.",
+      "begruendung_wenn_nicht": "T3 trinkt ohnehin fast täglich Energy aus der Dose, ohne dass ihm der Zusatz „für jeden Tag“ etwas bedeutet. Er hält den Satz für einen Werbespruch aus bezahlten YouTube-Videos. Beim Kauf zählen für ihn: schnell verfügbar (Supermarkt, Tankstelle), kalt aus der Dose, Geschmack und eventuell der Preis. Pulver anrühren findet er umständlich. Deshalb keine Leiter.",
+      "stufen": []
+    }
+  ]
+}

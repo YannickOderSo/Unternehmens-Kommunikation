@@ -1,0 +1,11 @@
+variante;nennungen_befragte_geaendert;relevanz_aendert_sich_bei;k_codes_in_kontrolle;quelle
+haupt T2 Tr. 1: K06 → K01;K01 haupt 4 (4) → 5 (5) · K06 haupt 6 (6) → 5 (5);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+haupt T3 Tr. 1: K02 → K03;K02 haupt 5 (5) → 4 (4) · K03 haupt 9 (7) → 10 (7);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+haupt T8 Tr. 1: K02 → K03;K02 haupt 5 (5) → 4 (4) · K03 haupt 9 (7) → 10 (7);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+haupt T2 Tr. 6: K08 → K05;K05 haupt 4 (4) → 5 (5) · K08 haupt 1 (1) → 0 (0);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+haupt T1 Tr. 2: K09 → K05;K05 haupt 4 (4) → 5 (5) · K09 haupt 5 (4) → 4 (3);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+haupt T6 Tr. 2: K09 → K05;K05 haupt 4 (4) → 5 (5) · K09 haupt 5 (4) → 4 (4);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+kontrolle T4 Tr. 1: K01 → K03;K01 kontrolle 5 (5) → 4 (4) · K03 kontrolle 8 (7) → 9 (8);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+kontrolle T8 Tr. 1: X03 → K03;K03 kontrolle 8 (7) → 9 (7) · X03 kontrolle 2 (2) → 1 (1);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+alle Grenzfälle der Haupt- und Kontrollgruppe zugleich;K01 haupt 4 (4) → 5 (5) · K02 haupt 5 (5) → 3 (3) · K03 haupt 9 (7) → 11 (7) · K05 haupt 4 (4) → 7 (7) · K06 haupt 6 (6) → 5 (5) · K08 haupt 1 (1) → 0 (0) · K09 haupt 5 (4) → 3 (3) · K01 kontrolle 5 (5) → 4 (4) · K03 kontrolle 8 (7) → 10 (8) · X03 kontrolle 2 (2) → 1 (1);keiner;11 von 12;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+Erstlauf: alle Grenzfälle des Erstlaufs mit dem alternativen Code;anderer Code als im ausgewerteten Lauf: 3 von 13;–;–;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25

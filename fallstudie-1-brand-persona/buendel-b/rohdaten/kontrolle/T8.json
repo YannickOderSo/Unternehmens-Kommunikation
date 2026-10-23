@@ -1,0 +1,100 @@
+{
+  "befragte": "T8 (KI-simuliert, fiktiv; Kontrollgruppe ohne Persona-Block): Mann, 25, Auszubildender zum Kfz-Mechatroniker, trinkt gelegentlich Energy (meist Monster), kennt HOLY nur aus TikTok-Videos, hat es nie gekauft.",
+  "vorstellung": "Ich bin T8, 25, mach grad meine Ausbildung zum Kfz-Mechatroniker, trink ab und zu nen Energy, meistens Monster, und HOLY kenn ich nur von TikTok, gekauft hab ich das noch nie.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "So zwei-, dreimal die Woche, kommt drauf an. Wenn ich früh raus muss oder Berufsschule ist, eher öfter. Meistens ne Monster, manchmal Red Bull, wenn's nix anderes gibt.",
+    "alltag": "Weder noch. Ich bin in der Ausbildung, also Werkstatt, morgens um sieben geht's los, und dazwischen immer mal Berufsschule im Block. Schichtdienst ist das nicht, aber Büro auch nicht.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M (HOLY) – W1 (Red Bull) – W2 (Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "richtige Energys aus der Dose, holst du dir an jeder Tanke",
+      "pol_einzeln": "Pulver zum Anrühren, was die auf TikTok in den Shaker kippen, eher so Gym-Zeug",
+      "wortlaut": "Red Bull und Monster, das sind halt richtige Energys, die holst du dir an der Tanke und fertig. HOLY ist so Pulver, was die auf TikTok in nen Shaker kippen, das ist eher was für die Gym-Bros."
+    },
+    {
+      "nr": 2,
+      "elemente": "M (HOLY) – W3 (Gönrgy) – I (mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "Influencer-Marke, da zahlst du den Namen mit",
+      "pol_einzeln": "einfach was Normales, das schmeckt und wach macht, egal wer dahintersteht",
+      "wortlaut": "HOLY und Gönrgy, das ist beides so Influencer-Kram, da kaufst du eigentlich den Namen mit. Mein idealer Drink wär einfach was Normales, das schmeckt und wach macht, ohne dass mir da einer von der Packung entgegengrinst."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1 (Red Bull) – W4 (waterdrop) – I (mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T8 kennt waterdrop nicht und kann die Marke deshalb nicht vergleichen.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Waterdrop? Sagt mir echt gar nix. Ist das Wasser oder was? Da kann ich nix zu sagen."
+    },
+    {
+      "nr": 4,
+      "elemente": "M (HOLY) – W5 (Coca-Cola Zero) – W2 (Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, schmeckt für mich bisschen nach Süßstoff",
+      "pol_einzeln": "richtig Zucker drin, nicht gesund, aber schmeckt halt",
+      "wortlaut": "HOLY und Cola Zero sind beide so ohne Zucker, glaub ich jedenfalls, und das schmeckt für mich immer bisschen künstlich. Monster hat halt richtig Zucker drin, weiß ich, ist nicht gesund, aber schmeckt halt."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2 (Monster) – W3 (Gönrgy) – W4 (waterdrop)",
+      "uebersprungen": true,
+      "grund": "T8 kennt waterdrop nicht; ohne die dritte Marke ist kein Vergleich möglich.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Wie gesagt, Waterdrop kenn ich nicht. Da müsst ich raten."
+    },
+    {
+      "nr": 6,
+      "elemente": "M (HOLY) – W4 (waterdrop) – I (mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T8 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Schon wieder Waterdrop, nee, keine Ahnung, was das ist."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1 (Red Bull) – W3 (Gönrgy) – W5 (Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "große Marken, die kennt jeder, gibt's schon ewig",
+      "pol_einzeln": "neu, ist halt das Ding von MontanaBlack, eher was für die Jüngeren, die den gucken",
+      "wortlaut": "Red Bull und Cola, das kennt jeder, die gibt's, seit ich denken kann. Gönrgy ist halt MontanaBlack sein Ding, das kaufen eher so Sechzehnjährige, die den gucken."
+    },
+    {
+      "nr": 8,
+      "elemente": "M (HOLY) – W5 (Coca-Cola Zero) – I (mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "kalt aus dem Kühlschrank, aufmachen, fertig",
+      "pol_einzeln": "erst bestellen und anrühren, zu viel Aufwand für mich",
+      "wortlaut": "Cola Zero und mein idealer Drink, das ist beides so: aus dem Kühlschrank, aufmachen, trinken. HOLY musst du erst online bestellen und dann anrühren, das mach ich doch nicht in der Werkstatt mit dreckigen Händen."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "befragte": "T5 (KI-simuliert, fiktiv; Kontrollgruppe ohne Persona-Block): Mann, 39, Lkw-Fahrer, trinkt täglich Red Bull, preisbewusst, skeptisch gegenüber Pulver",
+  "vorstellung": "T5 (KI-simuliert), 39, fährt Lkw im Fernverkehr: „Ich trink jeden Tag meine Red Bull, guck aufs Geld, und von Pulverzeug halt ich nix.“",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Jeden Tag. Morgens eine Red Bull, und wenn die Tour lang geht oder ich nachts fahr, auch mal zwei.",
+    "alltag": "Weder noch. Ich fahr Lkw. Mal früh los, mal spät, mal die Nacht durch. Feste Schichten gibt's bei uns nicht, wie die Tour halt ist.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "Coca-Cola Zero",
+      "Gönrgy",
+      "HOLY"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "fertig in der Dose, kriegst du an jeder Tanke",
+      "pol_einzeln": "Pulver zum Anrühren, Gefummel mit Shaker",
+      "wortlaut": "Red Bull und Monster, die machst du auf und trinkst, die kriegst du an jeder Tanke. Das HOLY ist doch das Pulver, was der junge Kollege immer im Shaker anrührt – da hab ich im Lkw echt keinen Nerv für."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "Internet-Zeug, wo Streamer und Influencer Werbung machen, für die Jungen",
+      "pol_einzeln": "einfach, macht wach, kostet nicht viel, ohne Werbe-Theater",
+      "wortlaut": "HOLY und dieses Gönrgy, das ist beides so Internet-Zeug, da machen Streamer und so Leute Werbung für, das ist was für die Jungen. Mein Drink soll mich einfach wach halten und nicht viel kosten, da brauch ich keinen, der mir das in die Kamera hält."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "W4 (waterdrop) ist T5 unbekannt.",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Waterdrop? Nie gehört. Was soll das sein? Da kann ich nix zu sagen."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["W5", "W2"],
+      "einzeln": "M",
+      "pol_paar": "kennt man seit Jahren, da weißt du, was du kriegst",
+      "pol_einzeln": "neu, kenn ich nur vom Kollegen, keine Ahnung, was drin ist",
+      "wortlaut": "Cola Zero und Monster, die kenn ich seit Jahren, die stehen überall im Kühlschrank, da weißt du, was du kriegst. Das HOLY kenn ich nur vom Kollegen, keine Ahnung, was in dem Pulver alles drin ist."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "grund": "W4 (waterdrop) ist T5 unbekannt.",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Monster und Gönrgy ja, aber das Dritte kenn ich nicht. Da sag ich lieber nix."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "W4 (waterdrop) ist T5 unbekannt.",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Das waterdrop kenn ich nicht. Lass mal, das bringt nix."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W3"],
+      "einzeln": "W5",
+      "pol_paar": "richtiger Wachmacher, merkst du nachts auf der Autobahn",
+      "pol_einzeln": "normale Cola zum Essen, hält nicht richtig wach",
+      "wortlaut": "Red Bull und Gönrgy, das sind richtige Wachmacher, das merkst du nachts auf der Autobahn – Gönrgy hab ich einmal an der Tanke mitgenommen, wirkt auch. Cola Zero ist halt Cola, die trink ich zum Essen, aber wach hält die mich nicht."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "kriegst du an jeder Raststätte, kostet nicht die Welt, kein Aufwand",
+      "pol_einzeln": "nie im Laden gesehen, Preis weiß ich nicht, Wasser und Shaker mitschleppen",
+      "wortlaut": "Cola Zero kriegst du an jeder Raststätte, kostet nicht die Welt, so muss das sein. Bei HOLY weiß ich nicht mal, was das kostet, im Laden hab ich's nie gesehen – musst du wohl bestellen und dann noch Wasser und Shaker mitschleppen."
+    }
+  ]
+}

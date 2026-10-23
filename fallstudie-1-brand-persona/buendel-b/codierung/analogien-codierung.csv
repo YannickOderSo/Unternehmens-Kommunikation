@@ -1,0 +1,334 @@
+befragte;teil;originaltext;code
+T1;tier;Fuchs;TIER_FUCHS
+T1;tier_grund;Frech, die Werbung ist immer so mit nem Augenzwinkern.;TG_FRECH_HUMOR
+T1;tier_grund;die Werbung ist immer so mit nem Augenzwinkern;Q_WERBUNG_SOCIAL
+T1;tier_grund;Schlau, die haben einfach Pulver gemacht statt Dosen, da muss man erst mal drauf kommen.;TG_SCHLAU
+T1;tier_grund;Kleiner als die Großen wie Red Bull, aber flink und klaut denen trotzdem Kunden weg, mich zum Beispiel.;TG_KLEIN_FLINK
+T1;mensch_kurz;Ein Typ;GESCHL_M
+T1;mensch_kurz;sportlich;EIG_SPORTLICH
+T1;mensch_kurz;gute Laune;EIG_GUT_GELAUNT
+T1;mensch_kurz;jeden duzt;B_DUZT
+T1;mensch_alter;so 27, 28;ALTER_ENDE20
+T1;mensch_alter;ungefähr wie ich;B_WIE_ICH
+T1;mensch_beruf;hat so ein eigenes Startup;BERUF_GRUENDER
+T1;mensch_beruf;macht Fitness-Content;BERUF_FITNESS
+T1;mensch_beruf;macht Fitness-Content;BERUF_SOCIAL
+T1;mensch_stil;Hoodie, Jogginghose, saubere Sneaker, Cap;STIL_SPORTLICH
+T1;mensch_stil;alles ein bisschen bunt, aber nicht drüber;STIL_BUNT
+T1;mensch_party;Der, der alle kennt;EIG_GESELLIG
+T1;mensch_party;Witze macht;EIG_WITZIG
+T1;mensch_party;ist laut;EIG_LAUT
+T1;mensch_party;aber stürzt nicht ab;EIG_MASSVOLL
+T1;mensch_party;am nächsten Morgen geht er trotzdem joggen;EIG_SPORTLICH
+T1;mensch_beziehung;Wie ein Kumpel;B_KUMPEL
+T1;mensch_beziehung;schreibt dich locker an;B_SCHREIBT_AN
+T1;mensch_beziehung;schreibt dich locker an;EIG_LOCKER
+T1;mensch_beziehung;du gehörst zu seinem Squad;B_GEMEINSCHAFT
+T1;mensch_beziehung;man merkt schon, dass er dir auch was verkaufen will, mit Rabatt, wenn du mehr nimmst;B_VERKAUFSABSICHT
+T1;mensch_grund;Die Werbung ist locker und lustig;EIG_LOCKER
+T1;mensch_grund;Die Werbung ist locker und lustig;EIG_WITZIG
+T1;mensch_grund;Die Werbung ist locker und lustig;Q_WERBUNG_SOCIAL
+T1;mensch_grund;so wie jemand in meinem Alter redet;B_WIE_ICH
+T1;mensch_grund;Die duzen dich;B_DUZT
+T1;mensch_grund;nennen das Squad;B_GEMEINSCHAFT
+T1;mensch_grund;das fühlt sich an wie unter Kumpels;B_KUMPEL
+T1;mensch_grund;Achten auf Gesundheit;EIG_GESUNDHEITSBEWUSST
+T1;mensch_grund;sind aber keine Spaßbremse;EIG_WITZIG
+T1;gefuehl;wach;GEF_AKTIVIERT
+T1;gefuehl;kein schlechtes Gewissen;GEF_GUTES_GEWISSEN
+T1;gefuehl;Vorfreude, wenn das Paket vor der Tür steht;GEF_VORFREUDE
+T1;erlebnis;Meine erste Nachtschicht, nachdem ich von Monster umgestiegen bin.;ERL_ARBEIT
+T1;erlebnis;Um zwei, drei Uhr kam nicht dieses Loch, wo du nur noch durchhängst.;ERL_WIRKUNG_POS
+T1;erlebnis;ein Kollege hat gefragt, was ich da im Shaker hab, jetzt bestellen wir manchmal zusammen;ERL_UMFELD
+T1;erlebnis;Das Pulver hat ein paarmal geklumpt, da musst du ordentlich schütteln.;ERL_HANDHABUNG_KRITISCH
+T1;kauf;Ja, regelmäßig.;KAUF_REGELMAESSIG
+T2;tier;Papagei;TIER_PAPAGEI
+T2;tier_grund;Total bunt, die Verpackung fällt im Regal sofort auf.;TG_BUNT
+T2;tier_grund;die Verpackung fällt im Regal sofort auf;Q_AUFMACHUNG
+T2;tier_grund;Quatscht viel, man sieht es ständig auf Instagram und bei irgendwelchen Influencern.;TG_LAUT_PRAESENT
+T2;tier_grund;man sieht es ständig auf Instagram und bei irgendwelchen Influencern;Q_WERBUNG_SOCIAL
+T2;tier_grund;Ist lustig und sympathisch;TG_LUSTIG
+T2;tier_grund;kann aber auf Dauer auch ein bisschen nerven;TG_NERVT
+T2;mensch_kurz;Eine junge, sportliche Frau;GESCHL_W
+T2;mensch_kurz;Eine junge, sportliche Frau;EIG_JUNG
+T2;mensch_kurz;Eine junge, sportliche Frau;EIG_SPORTLICH
+T2;mensch_kurz;die immer gut drauf ist;EIG_GUT_GELAUNT
+T2;mensch_kurz;mit allen gleich per du ist;B_DUZT
+T2;mensch_alter;So Mitte zwanzig.;ALTER_MITTE20
+T2;mensch_beruf;Irgendwas mit Social Media, vielleicht Fitness-Influencerin oder Trainerin im Studio.;BERUF_SOCIAL
+T2;mensch_beruf;Irgendwas mit Social Media, vielleicht Fitness-Influencerin oder Trainerin im Studio.;BERUF_FITNESS
+T2;mensch_stil;Leggings, Oversize-Hoodie, Cap;STIL_SPORTLICH
+T2;mensch_stil;alles farblich abgestimmt, immer frisch aussehend;STIL_GESTYLT
+T2;mensch_party;Macht Stimmung, ist bei jedem mal kurz;EIG_GESELLIG
+T2;mensch_party;macht Selfies mit allen;EIG_SELBSTDARSTELLUNG
+T2;mensch_party;Trinkt eher keinen Alkohol;EIG_MASSVOLL
+T2;mensch_party;ist trotzdem bis zum Schluss wach;EIG_ENERGIEGELADEN
+T2;mensch_beziehung;Duzt alle;B_DUZT
+T2;mensch_beziehung;tut so, als wär man Teil ihrer Clique;B_GEMEINSCHAFT
+T2;mensch_beziehung;tut so, als wär man Teil ihrer Clique;B_INSZENIERT
+T2;mensch_beziehung;Ist nett;B_NETT
+T2;mensch_beziehung;man merkt schon, dass sie einem auch was verkaufen will;B_VERKAUFSABSICHT
+T2;mensch_grund;Die Werbung ist jung und bunt;EIG_JUNG
+T2;mensch_grund;Die Werbung ist jung und bunt;STIL_BUNT
+T2;mensch_grund;so wie die Leute, die das auf Instagram zeigen;Q_WERBUNG_SOCIAL
+T2;mensch_grund;Die Marke gibt sich gesund und sportlich.;EIG_GESUNDHEITSBEWUSST
+T2;mensch_grund;Die Marke gibt sich gesund und sportlich.;EIG_SPORTLICH
+T2;mensch_grund;Man wird angesprochen wie eine Freundin und nicht wie eine Kundin.;B_KUMPEL
+T2;gefuehl;Neugier;GEF_NEUGIER
+T2;gefuehl;Leichtigkeit, kein schlechtes Gewissen wegen Zucker;GEF_GUTES_GEWISSEN
+T2;gefuehl;ein bisschen Skepsis, ob es wirklich gesünder ist und den Preis wert;GEF_SKEPSIS
+T2;erlebnis;Ich kam nach einer Frühschicht total kaputt in den Supermarkt;ERL_ARBEIT
+T2;erlebnis;da stand so ein bunter Aufsteller, und ich dachte: Was ist das denn?;ERL_HANDEL
+T2;erlebnis;dann vor dem nächsten Spätdienst mit meiner Kollegin probiert;ERL_ERSTKONTAKT
+T2;erlebnis;dann vor dem nächsten Spätdienst mit meiner Kollegin probiert;ERL_UMFELD
+T2;erlebnis;Die kannte das schon von Instagram.;ERL_SOCIAL
+T2;kauf;Ja, einmal, so zum Probieren;KAUF_EINMAL
+T3;tier;Papagei;TIER_PAPAGEI
+T3;tier_grund;Bunt. Die Packungen und die ganzen Sorten sind alle so knallig.;TG_BUNT
+T3;tier_grund;Die Packungen und die ganzen Sorten sind alle so knallig.;Q_AUFMACHUNG
+T3;tier_grund;Laut. Man sieht's ständig auf YouTube, gefühlt jeder zweite Creator hält das in die Kamera.;TG_LAUT_PRAESENT
+T3;tier_grund;Man sieht's ständig auf YouTube, gefühlt jeder zweite Creator hält das in die Kamera.;Q_WERBUNG_SOCIAL
+T3;tier_grund;Plappert nach, was gerade Trend ist: gesund, ohne Zucker und so.;TG_NACHPLAPPERN
+T3;mensch_kurz;So ein junger Typ;GESCHL_M
+T3;mensch_kurz;So ein junger Typ;EIG_JUNG
+T3;mensch_kurz;immer gut drauf;EIG_GUT_GELAUNT
+T3;mensch_kurz;man merkt, dass er dir was verkaufen will;B_VERKAUFSABSICHT
+T3;mensch_alter;Mitte 20;ALTER_MITTE20
+T3;mensch_beruf;Fitness-Influencer;BERUF_FITNESS
+T3;mensch_beruf;Fitness-Influencer;BERUF_SOCIAL
+T3;mensch_beruf;hat so ein eigenes Start-up;BERUF_GRUENDER
+T3;mensch_stil;Oversized Hoodie, cleane weiße Sneaker, Cap;STIL_SPORTLICH
+T3;mensch_stil;alles farblich abgestimmt;STIL_GESTYLT
+T3;mensch_party;Kennt jeden;EIG_GESELLIG
+T3;mensch_party;macht dauernd Storys;EIG_SELBSTDARSTELLUNG
+T3;mensch_party;erzählt allen, dass er keinen Zucker mehr trinkt;EIG_MITTEILSAM
+T3;mensch_party;dass er keinen Zucker mehr trinkt;EIG_GESUNDHEITSBEWUSST
+T3;mensch_beziehung;Total kumpelhaft;B_KUMPEL
+T3;mensch_beziehung;sagt Bro zu allen;B_DUZT
+T3;mensch_beziehung;Aber am Ende kommt immer ein Rabattcode.;B_VERKAUFSABSICHT
+T3;mensch_grund;Weil die Marke so jung wirkt;EIG_JUNG
+T3;mensch_grund;als käme sie von Leuten in meinem Alter;B_WIE_ICH
+T3;mensch_grund;Weil die Werbung immer locker und lustig gemacht ist, nie so steif.;EIG_LOCKER
+T3;mensch_grund;Weil die Werbung immer locker und lustig gemacht ist, nie so steif.;EIG_WITZIG
+T3;mensch_grund;Weil die Werbung immer locker und lustig gemacht ist, nie so steif.;Q_WERBUNG_SOCIAL
+T3;mensch_grund;Weil's überall Rabattcodes gibt, genau wie bei Influencern.;B_VERKAUFSABSICHT
+T3;mensch_grund;genau wie bei Influencern;Q_WERBUNG_SOCIAL
+T3;gefuehl;Neugier;GEF_NEUGIER
+T3;gefuehl;Skepsis;GEF_SKEPSIS
+T3;gefuehl;ein bisschen genervt (von der vielen Werbung);GEF_GENERVT
+T3;erlebnis;Mir fällt ein Let's Play ein, wo der YouTuber mitten im Video das Pulver anrührt und den Code durchsagt.;ERL_SOCIAL
+T3;erlebnis;einmal hab ich bei einem Kumpel einen probiert;ERL_ERSTKONTAKT
+T3;erlebnis;einmal hab ich bei einem Kumpel einen probiert;ERL_UMFELD
+T3;erlebnis;War okay, bisschen künstlich.;ERL_GESCHMACK_KRITISCH
+T3;kauf;Nein, selbst noch nie gekauft.;KAUF_NIE
+T4;tier;Papagei;TIER_PAPAGEI
+T4;tier_grund;Bunt: Die Dosen und Bilder sind total knallig.;TG_BUNT
+T4;tier_grund;Die Dosen und Bilder sind total knallig.;Q_AUFMACHUNG
+T4;tier_grund;Laut: Die Werbung ist auf Instagram überall, da kommt man nicht dran vorbei.;TG_LAUT_PRAESENT
+T4;tier_grund;Die Werbung ist auf Instagram überall, da kommt man nicht dran vorbei.;Q_WERBUNG_SOCIAL
+T4;tier_grund;Ein bisschen exotisch: Das ist nicht das, was ich so im normalen Supermarkt bewusst sehe.;TG_EXOTISCH
+T4;mensch_kurz;Eine junge, sportliche Frau;GESCHL_W
+T4;mensch_kurz;Eine junge, sportliche Frau;EIG_JUNG
+T4;mensch_kurz;Eine junge, sportliche Frau;EIG_SPORTLICH
+T4;mensch_kurz;immer gut drauf;EIG_GUT_GELAUNT
+T4;mensch_kurz;die gern zeigt, was sie gerade Neues ausprobiert;EIG_SELBSTDARSTELLUNG
+T4;mensch_kurz;was sie gerade Neues ausprobiert;EIG_TRENDIG
+T4;mensch_alter;So Ende zwanzig, vielleicht Anfang dreißig.;ALTER_ENDE20
+T4;mensch_beruf;Irgendwas mit Social Media oder Fitnesstrainerin, vielleicht auch Influencerin.;BERUF_SOCIAL
+T4;mensch_beruf;Irgendwas mit Social Media oder Fitnesstrainerin, vielleicht auch Influencerin.;BERUF_FITNESS
+T4;mensch_stil;Sportlich: Leggings, Sneaker, Trinkflasche immer dabei;STIL_SPORTLICH
+T4;mensch_stil;alles ein bisschen bunt;STIL_BUNT
+T4;mensch_party;Die erzählt allen, was sie gerade Neues entdeckt hat;EIG_MITTEILSAM
+T4;mensch_party;Die erzählt allen, was sie gerade Neues entdeckt hat;EIG_TRENDIG
+T4;mensch_party;macht gleich ein Selfie;EIG_SELBSTDARSTELLUNG
+T4;mensch_party;trinkt keinen Alkohol, sondern was Selbstgemischtes;EIG_MASSVOLL
+T4;mensch_beziehung;Duzt alle;B_DUZT
+T4;mensch_beziehung;tut so, als wär man befreundet;B_KUMPEL
+T4;mensch_beziehung;tut so, als wär man befreundet;B_INSZENIERT
+T4;mensch_beziehung;Ganz nett;B_NETT
+T4;mensch_beziehung;man merkt schon, dass sie einem was verkaufen will;B_VERKAUFSABSICHT
+T4;mensch_grund;Wegen der Werbung: Da sieht man immer junge, sportliche Leute.;Q_WERBUNG_SOCIAL
+T4;mensch_grund;Wegen der Werbung: Da sieht man immer junge, sportliche Leute.;EIG_JUNG
+T4;mensch_grund;Wegen der Werbung: Da sieht man immer junge, sportliche Leute.;EIG_SPORTLICH
+T4;mensch_grund;Weil das so locker und witzig rüberkommt;EIG_LOCKER
+T4;mensch_grund;Weil das so locker und witzig rüberkommt;EIG_WITZIG
+T4;mensch_grund;aber manchmal auch ein bisschen zu viel ist;EIG_ANSTRENGEND
+T4;mensch_grund;Weil man das Gefühl kriegt, man gehört zu so einem Club, wenn man das kauft.;B_GEMEINSCHAFT
+T4;gefuehl;neugierig;GEF_NEUGIER
+T4;gefuehl;skeptisch;GEF_SKEPSIS
+T4;gefuehl;frisch, so ein Sommergefühl wegen der bunten Farben;GEF_FRISCHE
+T4;erlebnis;Meine Kollegin hat mir im Büro mal einen Schluck aus ihrem Shaker gegeben;ERL_UMFELD
+T4;erlebnis;Meine Kollegin hat mir im Büro mal einen Schluck aus ihrem Shaker gegeben;ERL_ERSTKONTAKT
+T4;erlebnis;Meine Kollegin hat mir im Büro mal einen Schluck aus ihrem Shaker gegeben;ERL_ARBEIT
+T4;erlebnis;War okay, für ohne Zucker ziemlich süß.;ERL_GESCHMACK_NEUTRAL
+T4;erlebnis;Und sonst denk ich an die Werbung auf Instagram, die hört gar nicht mehr auf.;ERL_SOCIAL
+T4;kauf;Nein.;KAUF_NIE
+T5;tier;Papagei;TIER_PAPAGEI
+T5;tier_grund;Bunt – die Dosen und die Farben vom Pulver sehen aus wie Papageienfedern.;TG_BUNT
+T5;tier_grund;die Dosen und die Farben vom Pulver;Q_AUFMACHUNG
+T5;tier_grund;Macht viel Lärm – im Internet und auf dem Handy siehst du das ständig, aber in echt seh ich's fast nie.;TG_LAUT_PRAESENT
+T5;tier_grund;im Internet und auf dem Handy siehst du das ständig;Q_WERBUNG_SOCIAL
+T5;tier_grund;Ist eher was Exotisches für Leute, die so was mögen – nicht für jemanden wie mich.;TG_EXOTISCH
+T5;tier_grund;nicht für jemanden wie mich;B_DISTANZ
+T5;mensch_kurz;Ein junger Fitness-Typ;GESCHL_M
+T5;mensch_kurz;Ein junger Fitness-Typ;EIG_JUNG
+T5;mensch_kurz;Ein junger Fitness-Typ;EIG_SPORTLICH
+T5;mensch_kurz;der immer gut drauf ist;EIG_GUT_GELAUNT
+T5;mensch_kurz;ständig am Handy hängt;EIG_SELBSTDARSTELLUNG
+T5;mensch_kurz;dir was verkaufen will;B_VERKAUFSABSICHT
+T5;mensch_alter;Mitte 20;ALTER_MITTE20
+T5;mensch_beruf;Fitnesstrainer oder irgendwas mit Social Media, so Influencer;BERUF_FITNESS
+T5;mensch_beruf;Fitnesstrainer oder irgendwas mit Social Media, so Influencer;BERUF_SOCIAL
+T5;mensch_stil;Jogginghose, Cap, bunte Sneaker, Shaker in der Hand;STIL_SPORTLICH
+T5;mensch_stil;bunte Sneaker;STIL_BUNT
+T5;mensch_party;Erzählt jedem von seinem Training und seinen Shakes;EIG_MITTEILSAM
+T5;mensch_party;Erzählt jedem von seinem Training und seinen Shakes;EIG_SPORTLICH
+T5;mensch_party;macht Fotos;EIG_SELBSTDARSTELLUNG
+T5;mensch_party;ist laut und gut gelaunt;EIG_LAUT
+T5;mensch_party;ist laut und gut gelaunt;EIG_GUT_GELAUNT
+T5;mensch_party;aber nach 'ner Stunde auch ein bisschen anstrengend;EIG_ANSTRENGEND
+T5;mensch_beziehung;Kumpelhaft;B_KUMPEL
+T5;mensch_beziehung;duzt dich sofort;B_DUZT
+T5;mensch_beziehung;Rabattcode hier, Rabattcode da – am Ende will er dir halt was verkaufen.;B_VERKAUFSABSICHT
+T5;mensch_grund;Die Werbung kommt übers Handy, über Insta – das ist für junge Leute gemacht.;Q_WERBUNG_SOCIAL
+T5;mensch_grund;Die Werbung kommt übers Handy, über Insta – das ist für junge Leute gemacht.;EIG_JUNG
+T5;mensch_grund;Die Farben und die Aufmachung erinnern mich ans Fitnessstudio.;Q_AUFMACHUNG
+T5;mensch_grund;Die Farben und die Aufmachung erinnern mich ans Fitnessstudio.;EIG_SPORTLICH
+T5;mensch_grund;Der Kollege, der das bei uns trinkt, ist genau so einer: Mitte 20, geht pumpen, immer mit Shaker.;Q_UMFELD
+T5;gefuehl;Misstrauen – Pulver, was ist da wirklich drin?;GEF_SKEPSIS
+T5;gefuehl;ein bisschen Neugier;GEF_NEUGIER
+T5;gefuehl;Gleichgültigkeit – eigentlich ist es mir egal;GEF_GLEICHGUELTIG
+T5;erlebnis;Auf dem Hof bei der Spedition, früh um fünf;ERL_ARBEIT
+T5;erlebnis;Ein junger Kollege rührt sich das Zeug im Shaker an, so rosa. Er hat mir einen Schluck angeboten.;ERL_UMFELD
+T5;erlebnis;Er hat mir einen Schluck angeboten.;ERL_ERSTKONTAKT
+T5;erlebnis;Schmeckte süß, irgendwie nach Kaugummi, aber dünner als Red Bull.;ERL_GESCHMACK_KRITISCH
+T5;erlebnis;Hab gesagt: Lass mal, ich bleib bei meiner Dose.;ERL_ABLEHNUNG
+T5;kauf;Nein. Nur mal einen Schluck beim Kollegen probiert.;KAUF_NIE
+T6;tier;Delfin;TIER_DELFIN
+T6;tier_grund;Verspielt und lustig, so wie die Posts auf Instagram.;TG_LUSTIG
+T6;tier_grund;so wie die Posts auf Instagram;Q_WERBUNG_SOCIAL
+T6;tier_grund;Sportlich und immer in Bewegung, passt zu Training.;TG_SPORTLICH
+T6;tier_grund;Immer in der Gruppe unterwegs – so wie dieses Squad-Ding, das die ständig machen.;TG_GEMEINSCHAFT
+T6;mensch_kurz;Jemand Mitte zwanzig;GESCHL_OFFEN
+T6;mensch_kurz;sehr sportlich;EIG_SPORTLICH
+T6;mensch_kurz;immer gut gelaunt;EIG_GUT_GELAUNT
+T6;mensch_kurz;manchmal ein bisschen zu laut;EIG_LAUT
+T6;mensch_kurz;manchmal ein bisschen zu laut;EIG_ANSTRENGEND
+T6;mensch_alter;so 25, 26;ALTER_MITTE20
+T6;mensch_beruf;Gründer von irgendeinem Start-up;BERUF_GRUENDER
+T6;mensch_beruf;Content Creator mit Fitness-Bezug;BERUF_SOCIAL
+T6;mensch_beruf;Content Creator mit Fitness-Bezug;BERUF_FITNESS
+T6;mensch_stil;sportlich-lässig, bunte Sneaker, Oversize-Hoodie;STIL_SPORTLICH
+T6;mensch_stil;bunte Sneaker;STIL_BUNT
+T6;mensch_stil;gestylt, aber nicht schick;STIL_GESTYLT
+T6;mensch_party;Ist überall dabei;EIG_GESELLIG
+T6;mensch_party;macht Witze;EIG_WITZIG
+T6;mensch_party;holt alle auf die Tanzfläche;EIG_GESELLIG
+T6;mensch_party;trinkt selbst aber eher keinen Alkohol, sondern was Zuckerfreies;EIG_MASSVOLL
+T6;mensch_party;sondern was Zuckerfreies;EIG_GESUNDHEITSBEWUSST
+T6;mensch_beziehung;Wie ein Kumpel;B_KUMPEL
+T6;mensch_beziehung;antwortet auf Kommentare und schreibt zurück;B_SCHREIBT_AN
+T6;mensch_beziehung;will dir aber auch ständig was verkaufen, mit Rabattcodes und so;B_VERKAUFSABSICHT
+T6;mensch_grund;Die Instagram-Posts sind witzig und locker;Q_WERBUNG_SOCIAL
+T6;mensch_grund;Die Instagram-Posts sind witzig und locker;EIG_WITZIG
+T6;mensch_grund;Die Instagram-Posts sind witzig und locker;EIG_LOCKER
+T6;mensch_grund;so redet man mit Freunden;B_KUMPEL
+T6;mensch_grund;Alles ist bunt und jung, nichts Spießiges.;STIL_BUNT
+T6;mensch_grund;Alles ist bunt und jung, nichts Spießiges.;EIG_JUNG
+T6;mensch_grund;nichts Spießiges;EIG_UNSPIESSIG
+T6;mensch_grund;Es gibt dauernd Codes und neue Sorten, da merkt man schon, dass die verkaufen wollen.;B_VERKAUFSABSICHT
+T6;mensch_grund;Es gibt dauernd Codes und neue Sorten;EIG_TRENDIG
+T6;gefuehl;gute Laune;GEF_GUTE_LAUNE
+T6;gefuehl;motiviert, so kurz vor dem Training;GEF_AKTIVIERT
+T6;gefuehl;dazugehören, so ein Community-Gefühl;GEF_ZUGEHOERIGKEIT
+T6;erlebnis;Mein erstes Paket.;ERL_PAKET
+T6;erlebnis;Mein erstes Paket.;ERL_ERSTKONTAKT
+T6;erlebnis;Eine Freundin aus dem Studium hat mir ihren Code gegeben;ERL_UMFELD
+T6;erlebnis;Hab direkt im Studio vor meinem Kurs einen angerührt;ERL_SPORT
+T6;erlebnis;war echt überrascht, dass das schmeckt;ERL_GESCHMACK_POS
+T6;erlebnis;Eine Sorte fand ich aber eklig, die hab ich verschenkt.;ERL_GESCHMACK_KRITISCH
+T6;kauf;Ja, seit ungefähr einem Jahr.;KAUF_REGELMAESSIG
+T7;tier;Pfau;TIER_PFAU
+T7;tier_grund;Alles knallbunt, die Dosen und die Werbung schreien dich an.;TG_BUNT
+T7;tier_grund;die Dosen und die Werbung schreien dich an;TG_LAUT_PRAESENT
+T7;tier_grund;die Dosen und die Werbung;Q_AUFMACHUNG
+T7;tier_grund;Will gesehen werden;TG_GELTUNG
+T7;tier_grund;ist ständig im Internet und auf Insta unterwegs;TG_LAUT_PRAESENT
+T7;tier_grund;ist ständig im Internet und auf Insta unterwegs;Q_WERBUNG_SOCIAL
+T7;tier_grund;Sieht gut aus, aber bei mir im Alltag hat's nicht viel gebracht.;TG_SCHEIN
+T7;mensch_kurz;Ein lockerer junger Typ;GESCHL_M
+T7;mensch_kurz;Ein lockerer junger Typ;EIG_LOCKER
+T7;mensch_kurz;Ein lockerer junger Typ;EIG_JUNG
+T7;mensch_kurz;aus der Fitness- und Social-Media-Ecke;EIG_SPORTLICH
+T7;mensch_kurz;der jeden duzt;B_DUZT
+T7;mensch_kurz;immer gut drauf ist;EIG_GUT_GELAUNT
+T7;mensch_kurz;mit dem ich aber nicht viel gemeinsam habe;B_DISTANZ
+T7;mensch_alter;Mitte zwanzig;ALTER_MITTE20
+T7;mensch_beruf;Irgendwas mit Social Media, vielleicht Fitnesstrainer im Studio, der nebenbei Videos macht;BERUF_SOCIAL
+T7;mensch_beruf;Irgendwas mit Social Media, vielleicht Fitnesstrainer im Studio, der nebenbei Videos macht;BERUF_FITNESS
+T7;mensch_stil;Teure Jogginghose, Cap, frische Sneaker;STIL_SPORTLICH
+T7;mensch_stil;alles farblich abgestimmt;STIL_GESTYLT
+T7;mensch_party;Laut;EIG_LAUT
+T7;mensch_party;kennt jeden;EIG_GESELLIG
+T7;mensch_party;macht Witze;EIG_WITZIG
+T7;mensch_party;dauernd Stories fürs Handy;EIG_SELBSTDARSTELLUNG
+T7;mensch_party;Am Anfang lustig;EIG_WITZIG
+T7;mensch_party;nach zwei Stunden nervt's ein bisschen;EIG_ANSTRENGEND
+T7;mensch_beziehung;Tut so, als wär er dein Kumpel;B_KUMPEL
+T7;mensch_beziehung;Tut so, als wär er dein Kumpel;B_INSZENIERT
+T7;mensch_beziehung;duzt dich;B_DUZT
+T7;mensch_beziehung;schreibt locker;B_SCHREIBT_AN
+T7;mensch_beziehung;schreibt locker;EIG_LOCKER
+T7;mensch_beziehung;aber am Ende will er dir halt was verkaufen;B_VERKAUFSABSICHT
+T7;mensch_grund;Die Werbung, die ich gesehen hab, ist sehr jung und Insta-mäßig.;Q_WERBUNG_SOCIAL
+T7;mensch_grund;Die Werbung, die ich gesehen hab, ist sehr jung und Insta-mäßig.;EIG_JUNG
+T7;mensch_grund;Die reden so locker und witzig, wie unter Kumpels.;EIG_LOCKER
+T7;mensch_grund;Die reden so locker und witzig, wie unter Kumpels.;EIG_WITZIG
+T7;mensch_grund;Die reden so locker und witzig, wie unter Kumpels.;B_KUMPEL
+T7;mensch_grund;Ist halt ein Online-Ding, das man im Internet bestellt, nicht im Laden.;Q_ONLINE_VERTRIEB
+T7;gefuehl;neugierig (beim ersten Probieren);GEF_NEUGIER
+T7;gefuehl;ein bisschen enttäuscht;GEF_ENTTAEUSCHT
+T7;gefuehl;eher egal;GEF_GLEICHGUELTIG
+T7;erlebnis;Nachtdienst auf der Wache, so gegen drei Uhr.;ERL_ARBEIT
+T7;erlebnis;Als wir zurück waren, stand das Zeug warm und abgestanden da.;ERL_HANDHABUNG_KRITISCH
+T7;erlebnis;Da hab ich gedacht: Für meinen Job ist das nichts, die Dose aus dem Automaten ist einfach praktischer.;ERL_ABLEHNUNG
+T7;kauf;Ja, einmal.;KAUF_EINMAL
+T8;tier;Papagei;TIER_PAPAGEI
+T8;tier_grund;Knallbunt, die Farben in den Videos fallen sofort auf.;TG_BUNT
+T8;tier_grund;die Farben in den Videos fallen sofort auf;Q_WERBUNG_SOCIAL
+T8;tier_grund;Laut und redet viel, das ist überall auf TikTok, man kommt nicht dran vorbei.;TG_LAUT_PRAESENT
+T8;tier_grund;das ist überall auf TikTok, man kommt nicht dran vorbei;Q_WERBUNG_SOCIAL
+T8;tier_grund;Plappert nach: Die ganzen Influencer sagen alle ungefähr dasselbe darüber.;TG_NACHPLAPPERN
+T8;mensch_kurz;Ein lockerer Typ;GESCHL_M
+T8;mensch_kurz;Ein lockerer Typ;EIG_LOCKER
+T8;mensch_kurz;der alles filmt;EIG_SELBSTDARSTELLUNG
+T8;mensch_kurz;jedem was empfiehlt;EIG_MITTEILSAM
+T8;mensch_alter;so 26, 27;ALTER_MITTE20
+T8;mensch_beruf;Fitness-Influencer;BERUF_FITNESS
+T8;mensch_beruf;Fitness-Influencer;BERUF_SOCIAL
+T8;mensch_beruf;so ein Start-up-Typ mit eigener Firma;BERUF_GRUENDER
+T8;mensch_stil;Oversized Hoodie, Cap, weiße Sneaker;STIL_SPORTLICH
+T8;mensch_stil;immer gestylt, bisschen zu gewollt;STIL_GESTYLT
+T8;mensch_party;erzählt jedem von seiner Morgenroutine;EIG_MITTEILSAM
+T8;mensch_party;filmt alles für die Story;EIG_SELBSTDARSTELLUNG
+T8;mensch_party;Ist am Anfang lustig;EIG_WITZIG
+T8;mensch_party;nach 'ner Stunde nervt's;EIG_ANSTRENGEND
+T8;mensch_beziehung;Wie so ein Kumpel;B_KUMPEL
+T8;mensch_beziehung;der dir schreibt 'Bro, musst du probieren';B_SCHREIBT_AN
+T8;mensch_beziehung;der dir schreibt 'Bro, musst du probieren';B_DUZT
+T8;mensch_beziehung;Schon nett;B_NETT
+T8;mensch_beziehung;man merkt, er will halt auch was verkaufen;B_VERKAUFSABSICHT
+T8;mensch_grund;Die Videos sind alle so locker und jung, mit Sprüchen.;Q_WERBUNG_SOCIAL
+T8;mensch_grund;Die Videos sind alle so locker und jung, mit Sprüchen.;EIG_LOCKER
+T8;mensch_grund;Die Videos sind alle so locker und jung, mit Sprüchen.;EIG_JUNG
+T8;mensch_grund;Die Videos sind alle so locker und jung, mit Sprüchen.;EIG_WITZIG
+T8;mensch_grund;Das ist so ein zuckerfreies Gesund-und-Fitness-Ding.;EIG_GESUNDHEITSBEWUSST
+T8;mensch_grund;Das ist so ein zuckerfreies Gesund-und-Fitness-Ding.;EIG_SPORTLICH
+T8;mensch_grund;Gibt's anscheinend nur online, wie die ganzen Influencer-Produkte.;Q_ONLINE_VERTRIEB
+T8;gefuehl;neugierig;GEF_NEUGIER
+T8;gefuehl;skeptisch;GEF_SKEPSIS
+T8;gefuehl;leicht genervt;GEF_GENERVT
+T8;erlebnis;Da war mal so ein TikTok, wo einer das Pulver in den Shaker kippt, so richtig Gym-Bro-mäßig.;ERL_SOCIAL
+T8;erlebnis;Hab kurz überlegt zu bestellen, dann gesehen, dass man so 'ne Dose mit Pulver kaufen muss, und hab's gelassen.;ERL_ABLEHNUNG
+T8;erlebnis;Ein Kollege aus der Werkstatt meinte mal, das schmeckt wie Brausepulver.;ERL_UMFELD
+T8;kauf;Nee, noch nie.;KAUF_NIE

@@ -1,0 +1,16 @@
+kaufstatus;dimension;mittel;n;befragte;quelle
+kauft regelmäßig;Aufrichtigkeit;3,88;2;T1, T6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+kauft regelmäßig;Spannung;4,00;2;T1, T6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+kauft regelmäßig;Kompetenz;3,83;2;T1, T6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+kauft regelmäßig;Kultiviertheit;2,25;2;T1, T6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+kauft regelmäßig;Robustheit;2,25;2;T1, T6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;Aufrichtigkeit;3,25;2;T2, T7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;Spannung;3,88;2;T2, T7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;Kompetenz;2,83;2;T2, T7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;Kultiviertheit;2,75;2;T2, T7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;Robustheit;1,75;2;T2, T7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;Aufrichtigkeit;2,81;4;T3, T4, T5, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;Spannung;3,88;4;T3, T4, T5, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;Kompetenz;2,67;4;T3, T4, T5, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;Kultiviertheit;1,88;4;T3, T4, T5, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;Robustheit;1,75;4;T3, T4, T5, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25

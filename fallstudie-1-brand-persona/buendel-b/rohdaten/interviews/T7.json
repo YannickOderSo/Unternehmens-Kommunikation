@@ -1,0 +1,193 @@
+{
+  "befragte": "T7",
+  "vorstellung": "T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Schichtdienst, trinkt mehrmals pro Woche Monster oder Red Bull aus der Dose, hat HOLY einmal probiert und nicht nachgekauft.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Drei-, viermal die Woche, kommt auf den Dienstplan an. Vor Nachtdiensten eigentlich immer.",
+    "alltag": "Schichtdienst im Rettungsdienst. Zwölf-Stunden-Dienste, Tag und Nacht im Wechsel.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "fertige Dose, kalt an der Tanke, aufmachen und fertig",
+      "pol_einzeln": "Pulver, muss man erst anrühren, mit Shaker und Wasser, Aufwand",
+      "wortlaut": "Red Bull und Monster holst du dir an der Tanke, kalt, aufmachen, fertig. HOLY musst du erst anrühren, mit Shaker und Wasser – dafür hab ich im Dienst keine Zeit."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "Internet-Marken von irgendwelchen Streamern oder YouTubern, viel Show",
+      "pol_einzeln": "einfach da, wenn ich ihn brauche, ohne das ganze Tamtam",
+      "wortlaut": "HOLY und Gönrgy sind beide so Internet-Marken, da steckt irgendein Streamer oder YouTuber dahinter, viel Show. Mein idealer Drink ist einfach da, wenn ich ihn brauch, ohne Tamtam."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T7 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Waterdrop? Sagt mir nichts, nie gehört."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, aber auch ein bisschen lasch, weniger Kick",
+      "pol_einzeln": "knallt richtig, du merkst schnell was, auch wenn's nicht gesund ist",
+      "wortlaut": "HOLY und Cola Zero, beides ohne Zucker, aber halt auch ein bisschen lasch. Monster knallt richtig, da merkst du nach zehn Minuten was – auch wenn's nicht gesund ist."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "grund": "T7 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Das Dritte kenn ich nicht, da kann ich nichts zu sagen."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T7 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Wieder das Waterdrop – keine Ahnung, was das ist."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "gibt's ewig, kennt jeder, du weißt, was du kriegst",
+      "pol_einzeln": "neu im Regal, weiß nicht mal genau, was da drin ist",
+      "wortlaut": "Red Bull und Cola, die gibt's ewig, die kennt jeder, da weißt du, was du kriegst. Gönrgy steht halt neu im Regal, ich weiß nicht mal genau, was da drin ist."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "Geschmack, den man kennt, schmeckt einfach",
+      "pol_einzeln": "schmeckt künstlich, wie aufgelöstes Brausepulver",
+      "wortlaut": "Cola Zero und mein idealer Drink – Geschmack, den man kennt, schmeckt einfach. HOLY schmeckt für mich so künstlich, wie Brausepulver in Wasser."
+    }
+  ],
+  "tier": {
+    "tier": "Pfau",
+    "gruende": [
+      "Alles knallbunt, die Dosen und die Werbung schreien dich an.",
+      "Will gesehen werden, ist ständig im Internet und auf Insta unterwegs.",
+      "Sieht gut aus, aber bei mir im Alltag hat's nicht viel gebracht."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Ein lockerer junger Typ aus der Fitness- und Social-Media-Ecke, der jeden duzt und immer gut drauf ist, mit dem ich aber nicht viel gemeinsam habe.",
+    "alter": "Mitte zwanzig",
+    "beruf": "Irgendwas mit Social Media, vielleicht Fitnesstrainer im Studio, der nebenbei Videos macht",
+    "stil": "Teure Jogginghose, Cap, frische Sneaker, alles farblich abgestimmt",
+    "auf_der_party": "Laut, kennt jeden, macht Witze und dauernd Stories fürs Handy. Am Anfang lustig, nach zwei Stunden nervt's ein bisschen.",
+    "beziehung_zu_kunden": "Tut so, als wär er dein Kumpel, duzt dich, schreibt locker – aber am Ende will er dir halt was verkaufen.",
+    "gruende": [
+      "Die Werbung, die ich gesehen hab, ist sehr jung und Insta-mäßig.",
+      "Die reden so locker und witzig, wie unter Kumpels.",
+      "Ist halt ein Online-Ding, das man im Internet bestellt, nicht im Laden."
+    ]
+  },
+  "gefuehle": [
+    "neugierig (beim ersten Probieren)",
+    "ein bisschen enttäuscht",
+    "eher egal"
+  ],
+  "erlebnis": "Nachtdienst auf der Wache, so gegen drei Uhr. Ich hab mir in der Küche einen Becher HOLY angerührt, dann kam ein Einsatz. Als wir zurück waren, stand das Zeug warm und abgestanden da. Da hab ich gedacht: Für meinen Job ist das nichts, die Dose aus dem Automaten ist einfach praktischer.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 3,
+        "gesund": 3,
+        "fröhlich": 4,
+        "gewagt": 3,
+        "temperamentvoll": 3,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 2,
+        "intelligent": 3,
+        "erfolgreich": 3,
+        "vornehm": 2,
+        "charmant": 3,
+        "naturverbunden": 2,
+        "robust": 1
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 5,
+        "fantasievoll": 3,
+        "zeitgemäß": 4,
+        "zuverlässig": 5,
+        "intelligent": 3,
+        "erfolgreich": 5,
+        "vornehm": 3,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": false,
+      "werte": {
+        "bodenständig": null,
+        "ehrlich": null,
+        "gesund": null,
+        "fröhlich": null,
+        "gewagt": null,
+        "temperamentvoll": null,
+        "fantasievoll": null,
+        "zeitgemäß": null,
+        "zuverlässig": null,
+        "intelligent": null,
+        "erfolgreich": null,
+        "vornehm": null,
+        "charmant": null,
+        "naturverbunden": null,
+        "robust": null
+      }
+    }
+  ],
+  "holy_gekauft": "Ja, einmal. Ein Kollege auf der Wache hatte das, da hab ich online so ein kleines Probierset bestellt. Die Hälfte hab ich getrunken, der Rest liegt noch im Spind. Nachbestellt hab ich nicht – an der Tanke krieg ich mein Monster sofort und kalt."
+}

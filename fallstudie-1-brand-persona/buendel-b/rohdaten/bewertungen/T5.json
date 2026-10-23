@@ -1,0 +1,18 @@
+{
+  "befragte": "T5 (fiktiv, KI-simuliert): Mann, 39, Lkw-Fahrer, trinkt täglich Red Bull, preisbewusst, skeptisch gegenüber Pulver",
+  "bewertungen": [
+    { "konstrukt": "K01", "M": 7, "W1": 2, "W2": 1, "W3": 5, "W4": null, "W5": 7, "I": 4 },
+    { "konstrukt": "K02", "M": 7, "W1": 1, "W2": 1, "W3": 4, "W4": null, "W5": 1, "I": 1 },
+    { "konstrukt": "K03", "M": 7, "W1": 1, "W2": 1, "W3": 1, "W4": null, "W5": 1, "I": 1 },
+    { "konstrukt": "K04", "M": 5, "W1": 2, "W2": 1, "W3": 2, "W4": null, "W5": 6, "I": 1 },
+    { "konstrukt": "K05", "M": 7, "W1": 2, "W2": 3, "W3": 7, "W4": null, "W5": 1, "I": 1 },
+    { "konstrukt": "K06", "M": 6, "W1": 1, "W2": 1, "W3": 5, "W4": null, "W5": 1, "I": 1 },
+    { "konstrukt": "K07", "M": 2, "W1": 5, "W2": 2, "W3": 2, "W4": null, "W5": 7, "I": 7 },
+    { "konstrukt": "K08", "M": 5, "W1": 4, "W2": 3, "W3": 4, "W4": null, "W5": 3, "I": 1 },
+    { "konstrukt": "K09", "M": 5, "W1": 7, "W2": 3, "W3": 4, "W4": null, "W5": 6, "I": 7 },
+    { "konstrukt": "K10", "M": 6, "W1": 5, "W2": 5, "W3": 5, "W4": null, "W5": 5, "I": 3 },
+    { "konstrukt": "K11", "M": 3, "W1": 6, "W2": 7, "W3": 5, "W4": null, "W5": 5, "I": 6 },
+    { "konstrukt": "K12", "M": 7, "W1": 1, "W2": 2, "W3": 4, "W4": null, "W5": 1, "I": 1 }
+  ],
+  "kommentar": "Bei HOLY hab ich nur mal einen Schluck beim Kollegen probiert, Geschmack und Preis sind also eher geschätzt, und bei Gönrgy weiß ich nicht genau, was drin ist und was es kostet. Waterdrop kenn ich nicht, das hab ich leer gelassen."
+}

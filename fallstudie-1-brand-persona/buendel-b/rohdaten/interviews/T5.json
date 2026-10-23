@@ -1,0 +1,193 @@
+{
+  "befragte": "T5",
+  "vorstellung": "T5 (fiktiv, KI-simuliert): Mann, 39, Lkw-Fahrer bei einer Spedition, oft ab vier Uhr früh unterwegs, trinkt jeden Tag Red Bull, achtet aufs Geld und hält nichts von Pulver-Drinks.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Jeden Tag. Meistens zwei Dosen Red Bull, auf langen Touren auch mal drei. Ich kauf die palettenweise, wenn sie im Angebot sind.",
+    "alltag": "Weder Büro noch Studium. Ich fahr Lkw. Feste Schichten hab ich nicht, ich fang oft nachts um drei oder vier an und bin dann zehn, zwölf Stunden unterwegs. Also eher Schicht als Büro.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "Coca-Cola Zero",
+      "Gönrgy",
+      "HOLY"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "Dose, kriegst du an jeder Raststätte, aufmachen und fertig",
+      "pol_einzeln": "Pulver, musst du bestellen und erst anrühren",
+      "wortlaut": "Red Bull und Monster, das ist 'ne Dose, kriegst du an jeder Raststätte, aufmachen, fertig. HOLY ist Pulver, das musst du bestellen und anrühren – dafür hab ich im Lkw keinen Nerv."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "so Internet-Zeug für die Jungen, gekauft, weil's ein Youtuber macht",
+      "pol_einzeln": "einfach: schmeckt, macht wach, liegt an jeder Tanke, kostet nicht die Welt",
+      "wortlaut": "HOLY und dieses Gönrgy sind beide so Internet-Zeug, das kaufen die Jungen, weil's irgendein Youtuber oder Insta-Typ macht. Mein idealer Drink ist einfach: schmeckt, macht wach, liegt an jeder Tanke und kostet nicht die Welt."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T5 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Waterdrop? Nie gehört. Keine Ahnung, was das sein soll."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, so die Gesund-Schiene",
+      "pol_einzeln": "riesen Dose, Zucker ohne Ende, haut richtig rein",
+      "wortlaut": "HOLY und Cola Zero sind beide ohne Zucker, das ist so die Gesund-Schiene. Monster ist das Gegenteil: riesen Dose, Zucker ohne Ende, das haut richtig rein."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "grund": "T5 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Das Letzte kenn ich nicht, da kann ich nix zu sagen."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T5 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Schon wieder das Waterdrop – sagt mir nix, lass mal weg."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W3"],
+      "einzeln": "W5",
+      "pol_paar": "richtiger Energy, da ist Koffein drin, damit kommst du nachts über die Autobahn",
+      "pol_einzeln": "Cola zum Essen, macht nicht wirklich wach",
+      "wortlaut": "Red Bull und Gönrgy sind richtige Energy, da ist Koffein drin, damit kommst du nachts über die Autobahn. Cola Zero trink ich zum Essen, wach macht die mich nicht wirklich."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "Preis steht am Regal, da weiß ich, was ich zahle",
+      "pol_einzeln": "online bestellen, große Dosen, Rabattcodes – keine Ahnung, was es am Ende kostet",
+      "wortlaut": "Bei Cola Zero und bei meinem idealen Drink steht der Preis am Regal, da weiß ich, was ich zahle. HOLY musst du online in so großen Dosen bestellen, mit Rabattcodes und so – keine Ahnung, was das am Ende pro Getränk kostet."
+    }
+  ],
+  "tier": {
+    "tier": "Papagei",
+    "gruende": [
+      "Bunt – die Dosen und die Farben vom Pulver sehen aus wie Papageienfedern.",
+      "Macht viel Lärm – im Internet und auf dem Handy siehst du das ständig, aber in echt seh ich's fast nie.",
+      "Ist eher was Exotisches für Leute, die so was mögen – nicht für jemanden wie mich."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Ein junger Fitness-Typ, der immer gut drauf ist, ständig am Handy hängt und dir was verkaufen will.",
+    "alter": "Mitte 20",
+    "beruf": "Fitnesstrainer oder irgendwas mit Social Media, so Influencer",
+    "stil": "Jogginghose, Cap, bunte Sneaker, Shaker in der Hand, Handy immer dabei",
+    "auf_der_party": "Erzählt jedem von seinem Training und seinen Shakes, macht Fotos, ist laut und gut gelaunt – aber nach 'ner Stunde auch ein bisschen anstrengend.",
+    "beziehung_zu_kunden": "Kumpelhaft, duzt dich sofort, Rabattcode hier, Rabattcode da – am Ende will er dir halt was verkaufen.",
+    "gruende": [
+      "Die Werbung kommt übers Handy, über Insta – das ist für junge Leute gemacht.",
+      "Die Farben und die Aufmachung erinnern mich ans Fitnessstudio.",
+      "Der Kollege, der das bei uns trinkt, ist genau so einer: Mitte 20, geht pumpen, immer mit Shaker."
+    ]
+  },
+  "gefuehle": [
+    "Misstrauen – Pulver, was ist da wirklich drin?",
+    "ein bisschen Neugier",
+    "Gleichgültigkeit – eigentlich ist es mir egal"
+  ],
+  "erlebnis": "Auf dem Hof bei der Spedition, früh um fünf: Ein junger Kollege rührt sich das Zeug im Shaker an, so rosa. Er hat mir einen Schluck angeboten. Schmeckte süß, irgendwie nach Kaugummi, aber dünner als Red Bull. Hab gesagt: Lass mal, ich bleib bei meiner Dose.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 1,
+        "ehrlich": 2,
+        "gesund": 3,
+        "fröhlich": 4,
+        "gewagt": 3,
+        "temperamentvoll": 3,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 2,
+        "intelligent": 2,
+        "erfolgreich": 3,
+        "vornehm": 1,
+        "charmant": 2,
+        "naturverbunden": 2,
+        "robust": 1
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 4,
+        "fantasievoll": 3,
+        "zeitgemäß": 4,
+        "zuverlässig": 5,
+        "intelligent": 3,
+        "erfolgreich": 5,
+        "vornehm": 2,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": false,
+      "werte": {
+        "bodenständig": null,
+        "ehrlich": null,
+        "gesund": null,
+        "fröhlich": null,
+        "gewagt": null,
+        "temperamentvoll": null,
+        "fantasievoll": null,
+        "zeitgemäß": null,
+        "zuverlässig": null,
+        "intelligent": null,
+        "erfolgreich": null,
+        "vornehm": null,
+        "charmant": null,
+        "naturverbunden": null,
+        "robust": null
+      }
+    }
+  ],
+  "holy_gekauft": "Nein. Nur mal einen Schluck beim Kollegen probiert. Kaufen würd ich's nicht – ich will im Lkw nicht mit Pulver und Shaker rumfummeln, und ob das am Ende wirklich billiger ist als meine Dose, weiß ich nicht."
+}

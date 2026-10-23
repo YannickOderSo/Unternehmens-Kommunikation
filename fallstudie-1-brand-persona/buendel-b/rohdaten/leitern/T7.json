@@ -1,0 +1,43 @@
+{
+  "befragte": "T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Schichtdienst, trinkt mehrmals pro Woche Monster oder Red Bull aus der Dose, hat HOLY einmal probiert und nicht nachgekauft.",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "Interviewer: Wenn du dir einen Energy kaufst: Ist dir wichtig, dass er ohne Zucker ist?\nT7: So halb. Ich nehm meistens das weiße Monster, das ohne Zucker. Vor Nachtdiensten eigentlich immer das. Das HOLY war ja auch ohne Zucker, glaub ich. Hat mich deswegen aber nicht zum Nachkaufen gebracht.\nInterviewer: Warum ist dir das wichtig, vor Nachtdiensten ohne Zucker?\nT7: Mit dem normalen hab ich nachts so gegen drei, vier nen Hänger. Erst bist du voll da, dann sackst du richtig ab. Ohne Zucker ist das nicht so krass. Bild ich mir zumindest ein.\nInterviewer: Warum ist dir wichtig, dass du nachts keinen Hänger hast?\nT7: Weil um vier der Melder genauso geht wie mittags. Dann sitzt du zwei Minuten später im Auto und musst wissen, was du tust. Wenn ich durchhänge, bin ich langsamer. Ich les Sachen zweimal. Im blödesten Fall vertu ich mich bei nem Medikament.\nInterviewer: Warum ist dir das wichtig, da nicht langsamer zu sein?\nT7: Weil da einer liegt, der sich drauf verlässt, dass wir wissen, was wir tun. Und mein Kollege verlässt sich auch auf mich. Ich will nicht derjenige sein, wegen dem was schiefgeht.\nInterviewer: Und warum ist dir das wichtig, nicht derjenige zu sein?\nT7: Weil das halt der Job ist. Ich hab mir den ausgesucht. Wenn ich das mache, dann richtig. Sonst kann ich's auch lassen.\nInterviewer: Warum ist dir wichtig, es richtig zu machen?\nT7: Puh. Weil ich nach so ner Nacht morgens noch in den Spiegel gucken will. Klingt kitschig, ist aber so.\nInterviewer: Warum ist dir das wichtig?\nT7: Da gibt's kein Warum mehr. Das ist einfach so.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker (vor Nachtdiensten greift T7 zur zuckerfreien Dose)"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Leistungsabfall („Hänger“) gegen drei, vier Uhr nachts"
+        },
+        {
+          "ebene": "funktional",
+          "text": "im Einsatz schnell und konzentriert bleiben, keine Fehler (z. B. bei Medikamenten)"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "Patient und Kollege können sich auf ihn verlassen – nicht derjenige sein, wegen dem etwas schiefgeht"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Verantwortungsbewusstsein: den selbst gewählten Job richtig machen"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Selbstachtung („morgens noch in den Spiegel gucken“)"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": false,
+      "dialog": "Interviewer: Nächster Punkt: HOLY sagt von sich, das ist was für jeden Tag. Ist dir das beim Kauf wichtig?\nT7: Nee. Ehrlich nicht.\nInterviewer: Kannst du kurz sagen, warum nicht?\nT7: Ich trink Energy nicht, weil ich das jeden Tag will. Ich trink das, weil ich Nachtdienst hab. Das ist für mich Werkzeug, kein Hobby. An freien Tagen gibt's Kaffee oder Wasser.\nT7: Und wenn mir einer sagt „trink das jeden Tag“, denk ich eher: muss ja nicht sein. Wir fahren oft genug zu Leuten mit Herzrasen, die den ganzen Tag Energy wegziehen.\nT7: Und praktisch: Das Zeug aus dem Probierset musste man ja erst anrühren. Ich brauch was, das ich an der Tanke kalt aus dem Kühlschrank nehm und gut ist.",
+      "begruendung_wenn_nicht": "Für T7 ist Energy ein Werkzeug für Nachtdienste, kein tägliches Getränk; an freien Tagen trinkt er Kaffee oder Wasser. Das Versprechen „für jeden Tag“ spricht ihn nicht an, eher im Gegenteil: Aus dem Berufsalltag ist er skeptisch gegenüber täglichem Energy-Konsum. Beim Kauf zählt für ihn, dass das Getränk sofort und kalt an der Tankstelle verfügbar ist, nicht, dass es alltagstauglich sein soll.",
+      "stufen": []
+    }
+  ]
+}

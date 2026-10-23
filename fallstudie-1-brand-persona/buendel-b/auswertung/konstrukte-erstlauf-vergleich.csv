@@ -1,0 +1,14 @@
+befragte;triade;code_erstlauf;code_ausgewertet;gleicher_code;paar_erstlauf;paar_ausgewertet;gleiches_paar;quelle
+T5;1;K03;K03;ja;W1+W2;W1+W2;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T5;2;K05;K05;ja;M+W3;M+W3;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T5;4;K01;K01;ja;M+W5;M+W5;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T5;7;K06;K04;nein;W1+W5;W1+W3;nein;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T5;8;K08;K12;nein;W5+I;W5+I;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;1;K03;K03;ja;W1+W2;W1+W2;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;2;K09;K09;ja;M+I;M+I;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;3;K09;K09;ja;W4+I;W4+I;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;4;K01;K02;nein;M+W5;W5+W2;nein;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;5;K07;K07;ja;W2+W3;W2+W3;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;6;K04;K11;nein;M+I;M+I;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;7;K06;K06;ja;W1+W5;W1+W5;ja;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25
+T6;8;sonstige;K10;nein;M+I;M+W5;nein;KI-simuliert (Tool), codiert KI-gestützt – Bündel B, Workflow D25

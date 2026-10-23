@@ -1,0 +1,10 @@
+kaufstatus;befragte;gefuehl_obergruppe;nennungen;quelle
+kauft regelmäßig;T1, T6;ablehnend-distanziert;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+kauft regelmäßig;T1, T6;neugierig-abwartend;0;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+kauft regelmäßig;T1, T6;positiv;6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;T2, T7;ablehnend-distanziert;3;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;T2, T7;neugierig-abwartend;2;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+einmal gekauft;T2, T7;positiv;1;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;T3, T4, T5, T8;ablehnend-distanziert;7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;T3, T4, T5, T8;neugierig-abwartend;4;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+nie gekauft;T3, T4, T5, T8;positiv;1;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25

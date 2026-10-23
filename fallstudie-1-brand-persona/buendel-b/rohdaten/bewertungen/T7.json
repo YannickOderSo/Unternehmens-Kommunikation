@@ -1,0 +1,18 @@
+{
+  "befragte": "T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Schichtdienst, trinkt mehrmals pro Woche Monster oder Red Bull aus der Dose, hat HOLY einmal probiert und nicht nachgekauft.",
+  "bewertungen": [
+    {"konstrukt": "K01", "M": 7, "W1": 2, "W2": 1, "W3": 4, "W4": null, "W5": 7, "I": 4},
+    {"konstrukt": "K02", "M": 7, "W1": 1, "W2": 1, "W3": 3, "W4": null, "W5": 1, "I": 1},
+    {"konstrukt": "K03", "M": 7, "W1": 1, "W2": 1, "W3": 1, "W4": null, "W5": 1, "I": 1},
+    {"konstrukt": "K04", "M": 6, "W1": 2, "W2": 1, "W3": 4, "W4": null, "W5": 7, "I": 2},
+    {"konstrukt": "K05", "M": 7, "W1": 2, "W2": 2, "W3": 7, "W4": null, "W5": 1, "I": 1},
+    {"konstrukt": "K06", "M": 6, "W1": 1, "W2": 1, "W3": 7, "W4": null, "W5": 1, "I": 2},
+    {"konstrukt": "K07", "M": 2, "W1": 5, "W2": 3, "W3": 2, "W4": null, "W5": 7, "I": 7},
+    {"konstrukt": "K08", "M": 6, "W1": 5, "W2": 4, "W3": 4, "W4": null, "W5": 2, "I": 2},
+    {"konstrukt": "K09", "M": 5, "W1": 2, "W2": 2, "W3": 4, "W4": null, "W5": 7, "I": 5},
+    {"konstrukt": "K10", "M": 7, "W1": 5, "W2": 5, "W3": 4, "W4": null, "W5": 3, "I": 2},
+    {"konstrukt": "K11", "M": 2, "W1": 6, "W2": 7, "W3": 4, "W4": null, "W5": 6, "I": 6},
+    {"konstrukt": "K12", "M": 6, "W1": 1, "W2": 1, "W3": 6, "W4": null, "W5": 1, "I": 1}
+  ],
+  "kommentar": "Bei Gönrgy musste ich oft raten, das hab ich nie getrunken, nur im Regal gesehen, deshalb meistens die Mitte. Bei HOLY weiß ich nicht, was eine Portion kostet, ich hab ja nur einmal so ein Probierset bestellt. Waterdrop kenn ich nicht, das hab ich leer gelassen."
+}

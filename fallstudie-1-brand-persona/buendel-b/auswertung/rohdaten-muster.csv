@@ -1,0 +1,13 @@
+begriff;suchmuster;interviews_personen;interviews_wer;kontrolle_personen;kontrolle_wer;bewertungen_personen;bewertungen_wer;leitern_personen;leitern_wer;quelle
+Tanke;Tanke;8/8;T1, T2, T3, T4, T5, T6, T7, T8;8/8;T1, T2, T3, T4, T5, T6, T7, T8;;;4/8;T1, T3, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Sneaker;Sneaker;7/8;T1, T3, T4, T5, T6, T7, T8;;;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Cap;\bCaps?\b;6/8;T1, T2, T3, T5, T7, T8;;;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Hoodie;Hoodie;5/8;T1, T2, T3, T6, T8;;;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Beziehung zu den Kund:innen: „verkaufen“;verkaufen  (nur Feld mensch.beziehung_zu_kunden);7/8;T1, T2, T4, T5, T6, T7, T8;;;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Beziehung zu den Kund:innen: „verkaufen“ oder „Rabatt“;verkaufen|Rabatt  (nur Feld mensch.beziehung_zu_kunden);8/8;T1, T2, T3, T4, T5, T6, T7, T8;;;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Jungs / Kerle (Trinkende als junge Männer);Jungs|Kerl;3/8;T2, T4, T6;1/8;T2;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+zocken / Zocker / Gaming;[Zz]ock|Gaming|Gamer;3/8;T2, T3, T6;3/8;T2, T3, T6;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Gym / Fitness;Gym|Fitness;8/8;T1, T2, T3, T4, T5, T6, T7, T8;4/8;T4, T6, T7, T8;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+„nicht der … sein, wegen/bei dem …“;nicht der\w* (\w+ )?sein( will)?, (wegen|bei) dem;;;;;;;4/8;T1, T3, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Oma / Opa;\bOma\b|\bOpa\b;2/8;T1, T8;0/8;;;;;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+Absturz / Loch / Crash / Hänger;Absturz|\bLoch\b|Crash|Hänger;2/8;T1, T2;;;;;7/8;T1, T2, T3, T5, T6, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25

@@ -1,0 +1,65 @@
+befragte;attribut;stufe_nr;art;ausschnitt;code;begruendung
+T1;ohne Zucker;5;Nebenaspekt;Pflichtbewusstsein;Verantwortung;"zweiter Wert der Stufe; Hauptcode = zuerst genannter Wert (R4)"
+T1;für jeden Tag;3;Nebenaspekt;keine Diskussionen mit der Freundin;kein Ärger;"Frage greift beide Aspekte auf; Hauptcode = zuerst genannter (R3)"
+T1;für jeden Tag;4;Nebenaspekt;ein Stück Ruhe im ständig wechselnden Schichtplan;Halt im Alltag;Folgefrage greift das „feste Ding“ auf (R3)
+T2;ohne Zucker;1;Nebenaspekt;schmeckt nicht so pappsüß;nicht so süß;"Zusatz in Klammern; Stufe 1 trägt immer den Startpunkt (R1)"
+T2;ohne Zucker;5;Nebenaspekt;Gefühl, den Job ordentlich gemacht zu haben;Verantwortung;Folgefrage greift „verlassen“ auf (R3)
+T3;ohne Zucker;4;Nebenaspekt;kein Ärger oder Spott im Discord;kein Ärger;Folgefrage greift „nicht derjenige“ auf (R3)
+T4;ohne Zucker;3;Nebenaspekt;nichts, was man irgendwann auf der Waage sieht;Gewicht halten;"Frage greift beide Aspekte auf; Hauptcode = zuerst genannter (R3)"
+T4;ohne Zucker;6;Nebenaspekt;Unabhängigkeit: lange fit bleiben und machen können, was man will;Selbstbestimmung;zweiter Wert der Stufe (R4)
+T5;ohne Zucker;1;Nebenaspekt;die zuckerfreie Dose hat das auch;auch bei anderen;Zusatz in Klammern (R1)
+T5;ohne Zucker;3;Nebenaspekt;Bauch/Gewicht bleibt im Rahmen;Gewicht halten;Folgefrage greift das „Loch“ auf (R3)
+T5;ohne Zucker;4;Nebenaspekt;am Steuer wach und sicher bleiben;konzentriert, keine Fehler;Folgefrage greift den Arzttermin auf (R3)
+T5;ohne Zucker;5;Nebenaspekt;die Familie versorgen können;Verantwortung;"Frage greift beide Aspekte auf; Hauptcode = zuerst genannter (R3)"
+T5;ohne Zucker;6;Nebenaspekt;Verantwortung für die Familie;Verantwortung;zweiter Wert der Stufe (R4)
+T6;für jeden Tag;5;Nebenaspekt;Kopf frei haben;Kopf frei;Folgefrage greift „Leben im Griff“ auf (R3)
+T7;ohne Zucker;1;Nebenaspekt;vor Nachtdiensten greift T7 zur zuckerfreien Dose;auch bei anderen;Zusatz in Klammern (R1)
+T8;ohne Zucker;5;Nebenaspekt;zeigen, dass er etwas kann;Können zeigen;"Frage greift beide Aspekte auf; Hauptcode = zuerst genannter (R3)"
+T1;für jeden Tag;4;Alternative;ein Stück Ruhe im ständig wechselnden Schichtplan;Halt im Alltag;"Rohdaten ordnen die Stufe als psychosozial ein; der zweite Aspekt entspricht T6, Stufe 4"
+T1;für jeden Tag;5;Alternative;Kontrolle über das eigene Leben;Kontrolle behalten;"zuerst genannter Aspekt; im Dialog: „ich hab mein Leben im Griff“ (wie T6, Stufe 5)"
+T2;ohne Zucker;3;Alternative;bleibt im Nachtdienst gleichmäßig wach, kein Tief gegen Morgen;gleichmäßig wach;"die Simulation trennt Stufe 2 und 3; als eigener Code entsteht kein Zusammenfassen"
+T4;ohne Zucker;3;Alternative;nichts, was man irgendwann auf der Waage sieht;Gewicht halten;die Folgefrage greift Durchhängen und Waage gleich auf
+T4;ohne Zucker;5;Alternative;selbst in der Hand zu haben, was man zu sich nimmt;bewusst ernähren;Kontrolle über die Ernährung statt über den Alltag (anderer Gegenstand als bei T6)
+T4;ohne Zucker;6;Alternative;Unabhängigkeit: lange fit bleiben und machen können, was man will;Selbstbestimmung;im Dialog ist „machen können, was ich will“ die letzte Antwort, Gesundheit die vorletzte
+T5;ohne Zucker;4;Alternative;am Steuer wach und sicher bleiben;konzentriert, keine Fehler;Regel „zuerst genannt“ statt „Folgefrage“ (R3)
+T5;ohne Zucker;6;Alternative;Verantwortung für die Familie;Verantwortung;im Dialog zuerst: „Weil die sich auf mich verlassen sollen.“
+T6;ohne Zucker;3;Alternative;volle Leistung im eigenen Training und in den Kursen;konzentriert, keine Fehler;breiter gefasst: Leistungsfähigkeit bei der Tätigkeit
+T6;ohne Zucker;6;Alternative;sich selbst treu bleiben;Selbstachtung;im Dialog: „Sonst fühl ich mich wie ’ne Heuchlerin“ (Nähe zu „in den Spiegel gucken“)
+T6;für jeden Tag;5;Alternative;Kopf frei haben;Kopf frei;Regel „zuerst genannt“ statt „Folgefrage“ (R3)
+T8;ohne Zucker;6;Alternative;Unabhängigkeit: auf eigenen Beinen stehen;Unabhängigkeit;enger gefasst: finanzielle Unabhängigkeit statt Selbstbestimmung
+T2;für jeden Tag;–;Abbruchgrund;Ich trink das nur, wenn's sein muss.;nur bei Bedarf;
+T2;für jeden Tag;–;Abbruchgrund;Wenn ich jeden Tag Energy brauch, dann läuft was falsch.;täglich bedenklich;
+T3;für jeden Tag;–;Abbruchgrund;Ich trink ja eh fast jeden Tag was.;trinkt eh täglich;
+T3;für jeden Tag;–;Abbruchgrund;Klingt für mich nach Werbung.;klingt nach Werbung;
+T3;für jeden Tag;–;Abbruchgrund;Pulver anrühren, Shaker ausspülen, das ist mir zu viel Aufwand.;Anrühren umständlich;
+T4;für jeden Tag;–;Abbruchgrund;Das ist bei mir eher so ein Notfall-Ding;nur bei Bedarf;
+T4;für jeden Tag;–;Abbruchgrund;Wenn mir jemand sagt, trink das jeden Tag, werd ich eher misstrauisch. Das klingt nach Werbung.;klingt nach Werbung;
+T4;für jeden Tag;–;Abbruchgrund;Das wär mir im Büro zu umständlich.;Anrühren umständlich;
+T5;für jeden Tag;–;Abbruchgrund;Ich trink eh jeden Tag.;trinkt eh täglich;
+T5;für jeden Tag;–;Abbruchgrund;Klingt für mich nach Werbung.;klingt nach Werbung;
+T5;für jeden Tag;–;Abbruchgrund;Jeden Tag Pulver anrühren, im Lkw, an der Rampe, und dann den Shaker spülen?;Anrühren umständlich;
+T7;für jeden Tag;–;Abbruchgrund;Das ist für mich Werkzeug, kein Hobby.;nur bei Bedarf;
+T7;für jeden Tag;–;Abbruchgrund;Wir fahren oft genug zu Leuten mit Herzrasen, die den ganzen Tag Energy wegziehen.;täglich bedenklich;
+T7;für jeden Tag;–;Abbruchgrund;Das Zeug aus dem Probierset musste man ja erst anrühren.;Anrühren umständlich;
+T8;für jeden Tag;–;Abbruchgrund;Energy ist für mich was für zwischendurch, wenn ich 'nen Kick brauch.;nur bei Bedarf;
+T8;für jeden Tag;–;Abbruchgrund;Jeden Tag so was – weiß nicht, klingt komisch.;täglich bedenklich;
+T8;für jeden Tag;–;Abbruchgrund;Aber ich stell mich doch in der Werkstatt nicht hin und schüttel einen Shaker.;Anrühren umständlich;
+T2;ohne Zucker;–;Abgleich;Und es war dann auch nicht so pappsüß.;nicht so süß;Folie 07 „Genuss ohne Zucker“: nächster Anklang
+T8;ohne Zucker;–;Abgleich;Schmeckt halt nicht ganz so gut.;schmeckt schlechter;Gegenstimme: die zuckerfreie Dose der Konkurrenz schmeckt schlechter
+T1;für jeden Tag;–;Abgleich;Bei Monster hatte ich irgendwann echt schlechtes Gewissen.;kein schlechtes Gewissen;Folie 07 „gutes Gewissen“: beim Startpunkt „für jeden Tag“, nicht bei „ohne Zucker“
+T2;ohne Zucker;–;Abgleich;ich seh auf Station genug Leute mit Diabetes;Gesundheit;"Nebenbemerkung; die Leiter läuft über den Nachtdienst weiter"
+T4;ohne Zucker;–;Abgleich;Meine Mutter hat Diabetes, das will ich nicht auch kriegen.;Gesundheit;in der Leiter von T4 als Wert codiert
+T5;ohne Zucker;–;Abgleich;Wenn da Blutzucker oder Blutdruck nicht passt, wird's eng.;Gesundheit;Gesundheit als Bedingung für den Führerschein
+T1;ohne Zucker;–;Abgleich;Und weniger Bauch hab ich auch, seit ich nicht mehr jeden Tag ne Zuckerdose trink. Aber das ist eher Bonus.;Gewicht halten;ausdrücklich Nebensache
+T4;ohne Zucker;–;Abgleich;Und irgendwann sieht man's auch auf der Waage.;Gewicht halten;
+T5;ohne Zucker;–;Abgleich;Der Bauch wird hinterm Steuer nicht kleiner.;Gewicht halten;
+T8;ohne Zucker;–;Abgleich;Also, dass man vom Zucker 'ne Plauze kriegt, ist auch so ein Ding, aber ehrlich gesagt eher Nebensache.;Gewicht halten;ausdrücklich Nebensache
+T1;für jeden Tag;–;Abgleich;Ob das wirklich jeden Tag so gesund ist, weiß ich ehrlich gesagt nicht.;unsicher, ob gesund;
+T4;ohne Zucker;–;Abgleich;Süßstoff halt, denk ich. Ist auch nicht super, aber besser als Zucker.;unsicher, ob gesund;
+T6;ohne Zucker;–;Abgleich;Ob der Süßstoff jetzt so super ist, weiß ich ehrlich gesagt nicht genau.;unsicher, ob gesund;
+T3;ohne Zucker;–;Abgleich;Aber das hat Monster ja auch, deswegen wechsel ich jetzt nicht extra.;auch bei anderen;
+T4;ohne Zucker;–;Abgleich;Bei meiner Cola Zero weiß ich halt: Da ist keiner drin.;auch bei anderen;
+T5;ohne Zucker;–;Abgleich;Aber das hab ich bei meiner Dose genauso.;auch bei anderen;
+T7;ohne Zucker;–;Abgleich;Ich nehm meistens das weiße Monster, das ohne Zucker.;auch bei anderen;
+T8;ohne Zucker;–;Abgleich;ich guck jetzt schon mal, ob's eins ohne Zucker gibt. Das weiße zum Beispiel.;auch bei anderen;
+T8;ohne Zucker;–;Abgleich;Und halt zeigen, dass ich was draufhab;Können zeigen;Anhang 2 B2 „Leistung zeigen, Anerkennung“: nächster Anklang

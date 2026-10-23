@@ -1,0 +1,191 @@
+{
+  "befragte": "T1",
+  "vorstellung": "T1 (KI-simuliert): Mann, 28, arbeitet im Drei-Schicht-Betrieb in einem Logistiklager, trinkt fast täglich Energy und ist seit ein paar Monaten von Monster-Dosen auf HOLY-Pulver umgestiegen.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Eigentlich fast jeden Tag, so fünf-, sechsmal die Woche. Vor Spät- und Nachtschicht sowieso immer, bei Frühschicht manchmal nur Kaffee.",
+    "alltag": "Schichtdienst im Lager. Früh, Spät, Nacht im Wechsel, jede Woche was anderes.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "Dose von der Tanke, voll mit Zucker",
+      "pol_einzeln": "Pulver, das man selbst anrührt, ohne Zucker",
+      "wortlaut": "Red Bull und Monster, das ist halt die Dose, die du dir an der Tanke holst, und da ist Zucker ohne Ende drin. HOLY rührst du dir selber an und da ist kein Zucker drin, das ist komplett was anderes."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W3",
+      "pol_paar": "kann ich jeden Tag trinken, ohne schlechtes Gewissen",
+      "pol_einzeln": "Hype-Ding von nem Streamer, eher für die Jüngeren",
+      "wortlaut": "HOLY und so mein Ideal, das kannst du halt jeden Tag trinken, ohne dass du dir Gedanken machst. Gönrgy ist Monte, das kaufen eher die Jüngeren, weil sie den feiern, hab ich einmal probiert, war mir zu süß."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W1", "I"],
+      "einzeln": "W4",
+      "pol_paar": "gibt dir richtig nen Kick, macht wach",
+      "pol_einzeln": "nur Wasser mit Geschmack, macht nicht wach",
+      "wortlaut": "Red Bull und mein Ideal, die müssen mich wach machen, dafür trink ich das. waterdrop sind diese Würfel, die du ins Wasser schmeißt, das ist eher was für Leute im Büro, die mehr trinken sollen, wach wirst du davon nicht."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["W5", "W2"],
+      "einzeln": "M",
+      "pol_paar": "kriegst du an jeder Ecke, spontan",
+      "pol_einzeln": "musst du vorher online bestellen und selber mischen",
+      "wortlaut": "Cola Zero und Monster kriegst du überall, Kiosk, Automat bei uns in der Pause, egal. HOLY musst du planen, online bestellen, Shaker mitnehmen, wenn die Dose leer ist, hast du Pech."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": false,
+      "paar": ["W2", "W3"],
+      "einzeln": "W4",
+      "pol_paar": "knallt, macht wach, laut und bunt aufgemacht",
+      "pol_einzeln": "ruhig, so Wellness, damit Wasser nach was schmeckt",
+      "wortlaut": "Monster und Gönrgy, das ist beides so laut, große Dose, knallt rein. waterdrop ist eher so ruhig und Wellness, das steht bei uns bei meiner Freundin im Regal, nicht bei mir im Spind."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W4"],
+      "einzeln": "I",
+      "pol_paar": "musst du selbst anmischen, so Online-Startup-Ding",
+      "pol_einzeln": "einfach aufmachen und trinken, ohne Gemische",
+      "wortlaut": "HOLY und waterdrop sind beide so Startup-Sachen, die du online bestellst und dann selber anmischst. Mein Ideal wäre ehrlich gesagt einfach aufmachen und trinken, ohne das ganze Shaker-Gedöns um halb zehn abends."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "gibt's schon ewig, kennt jeder",
+      "pol_einzeln": "neues Influencer-Ding, mal gucken, ob das bleibt",
+      "wortlaut": "Red Bull und Cola, die gibt's schon, seit ich denken kann, die kennt jeder Opa. Gönrgy ist neu, da steht halt ein Streamer dahinter, mal schauen, ob's das in fünf Jahren noch gibt."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W5",
+      "pol_paar": "bringt mich wach durch die Nachtschicht, ohne dass ich mich danach schlecht fühle",
+      "pol_einzeln": "ist halt Cola, schmeckt zum Essen, macht aber nicht richtig wach",
+      "wortlaut": "HOLY ist schon nah dran an dem, was ich will: wach durch die Nacht und danach kein Absturz. Cola Zero trink ich zur Pizza, aber um drei Uhr nachts bringt die mir nix."
+    }
+  ],
+  "tier": {
+    "tier": "Fuchs",
+    "gruende": [
+      "Frech, die Werbung ist immer so mit nem Augenzwinkern.",
+      "Schlau, die haben einfach Pulver gemacht statt Dosen, da muss man erst mal drauf kommen.",
+      "Kleiner als die Großen wie Red Bull, aber flink und klaut denen trotzdem Kunden weg, mich zum Beispiel."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Ein Typ Ende zwanzig, sportlich, gute Laune, der so ein eigenes kleines Ding aufgezogen hat und jeden duzt.",
+    "alter": "so 27, 28, also ungefähr wie ich",
+    "beruf": "hat so ein eigenes Startup oder macht Fitness-Content, irgendwas Selbstständiges",
+    "stil": "Hoodie, Jogginghose, saubere Sneaker, Cap, alles ein bisschen bunt, aber nicht drüber",
+    "auf_der_party": "Der, der alle kennt und Witze macht, ist laut, aber stürzt nicht ab. Und am nächsten Morgen geht er trotzdem joggen.",
+    "beziehung_zu_kunden": "Wie ein Kumpel, schreibt dich locker an, du gehörst zu seinem Squad. Aber man merkt schon, dass er dir auch was verkaufen will, mit Rabatt, wenn du mehr nimmst.",
+    "gruende": [
+      "Die Werbung ist locker und lustig, so wie jemand in meinem Alter redet.",
+      "Die duzen dich und nennen das Squad, das fühlt sich an wie unter Kumpels.",
+      "Achten auf Gesundheit, sind aber keine Spaßbremse."
+    ]
+  },
+  "gefuehle": [
+    "wach",
+    "kein schlechtes Gewissen",
+    "Vorfreude, wenn das Paket vor der Tür steht"
+  ],
+  "erlebnis": "Meine erste Nachtschicht, nachdem ich von Monster umgestiegen bin. Um zwei, drei Uhr kam nicht dieses Loch, wo du nur noch durchhängst. Und ein Kollege hat gefragt, was ich da im Shaker hab, jetzt bestellen wir manchmal zusammen, weil's dann billiger wird. Was mich am Anfang genervt hat: Das Pulver hat ein paarmal geklumpt, da musst du ordentlich schütteln.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 4,
+        "gesund": 4,
+        "fröhlich": 5,
+        "gewagt": 3,
+        "temperamentvoll": 4,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 4,
+        "intelligent": 4,
+        "erfolgreich": 4,
+        "vornehm": 1,
+        "charmant": 4,
+        "naturverbunden": 2,
+        "robust": 3
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 2,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 5,
+        "fantasievoll": 4,
+        "zeitgemäß": 3,
+        "zuverlässig": 4,
+        "intelligent": 3,
+        "erfolgreich": 5,
+        "vornehm": 2,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 5
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 3,
+        "gesund": 4,
+        "fröhlich": 3,
+        "gewagt": 2,
+        "temperamentvoll": 2,
+        "fantasievoll": 3,
+        "zeitgemäß": 4,
+        "zuverlässig": 3,
+        "intelligent": 3,
+        "erfolgreich": 3,
+        "vornehm": 4,
+        "charmant": 3,
+        "naturverbunden": 4,
+        "robust": 1
+      }
+    }
+  ],
+  "holy_gekauft": "Ja, regelmäßig. Ich bestell immer die große Dose online auf Vorrat, meistens zwei Sorten auf einmal, weil's dann günstiger wird. Pro Glas rechnet sich das für mich besser als die Dose an der Tanke."
+}

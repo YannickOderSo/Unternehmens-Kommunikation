@@ -1,0 +1,18 @@
+{
+  "befragte": "T2 (KI-simuliert, fiktiv): Frau, 29, Pflegefachkraft im Schichtdienst, trinkt etwa 1× pro Woche Energy, hat HOLY im Supermarkt entdeckt.",
+  "bewertungen": [
+    {"konstrukt": "K01", "M": 6, "W1": 1, "W2": 1, "W3": null, "W4": 6, "W5": 7, "I": 6},
+    {"konstrukt": "K02", "M": 5, "W1": 1, "W2": 1, "W3": null, "W4": 6, "W5": 1, "I": 1},
+    {"konstrukt": "K03", "M": 3, "W1": 1, "W2": 1, "W3": null, "W4": 7, "W5": 1, "I": 1},
+    {"konstrukt": "K04", "M": 5, "W1": 1, "W2": 2, "W3": null, "W4": 7, "W5": 6, "I": 5},
+    {"konstrukt": "K05", "M": 6, "W1": 2, "W2": 3, "W3": null, "W4": 7, "W5": 1, "I": 1},
+    {"konstrukt": "K06", "M": 6, "W1": 1, "W2": 1, "W3": null, "W4": 5, "W5": 1, "I": 2},
+    {"konstrukt": "K07", "M": 6, "W1": 3, "W2": 1, "W3": null, "W4": 6, "W5": 7, "I": 7},
+    {"konstrukt": "K08", "M": 6, "W1": 5, "W2": 4, "W3": null, "W4": 7, "W5": 2, "I": 1},
+    {"konstrukt": "K09", "M": 4, "W1": 1, "W2": 2, "W3": null, "W4": 6, "W5": 6, "I": 7},
+    {"konstrukt": "K10", "M": 3, "W1": 6, "W2": 6, "W3": null, "W4": 4, "W5": 5, "I": 2},
+    {"konstrukt": "K11", "M": 4, "W1": 7, "W2": 7, "W3": null, "W4": 2, "W5": 6, "I": 5},
+    {"konstrukt": "K12", "M": 6, "W1": 2, "W2": 4, "W3": null, "W4": 7, "W5": 1, "I": 1}
+  ],
+  "kommentar": "Bei HOLY musste ich viel raten, ich hab das ja nur einmal getrunken, und waterdrop kenn ich nur von Instagram, nie probiert, also beim Geschmack hab ich da einfach geschätzt. Gönrgy kenn ich nicht, da hab ich nichts eingetragen."
+}

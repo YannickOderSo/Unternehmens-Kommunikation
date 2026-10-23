@@ -1,0 +1,119 @@
+gruppe;befragte;triade;hauptcode;nebencode;beleg;holy_seite
+haupt;T1;1;K03;K01;voll mit Zucker ↔ ohne Zucker;rechts
+haupt;T1;1;K03;K02;Dose von der Tanke;rechts
+haupt;T1;2;K09;K05;Hype-Ding von nem Streamer;links
+haupt;T1;2;K09;sonstige;Zielgruppe: eher für die Jüngeren;–
+haupt;T1;3;K04;K11;nur Wasser mit Geschmack;–
+haupt;T1;4;K02;K03;selber mischen;rechts
+haupt;T1;5;K07;K04;knallt, macht wach;–
+haupt;T1;6;K03;K02;so Online-Startup-Ding;rechts
+haupt;T1;7;K06;K05;neues Influencer-Ding;–
+haupt;T1;8;K04;K09;ohne dass ich mich danach schlecht fühle;rechts
+haupt;T2;1;K06;K01;Zuckerbomben ↔ gesünder;rechts
+haupt;T2;1;K06;X03;eher so Fitness-Ecke;rechts
+haupt;T2;3;K09;K04;pusht richtig;–
+haupt;T2;6;K08;K05;Instagram-Marken, schön gemacht ↔ ohne Schnickschnack;rechts
+haupt;T3;1;K02;K03;Dose ↔ Pulver;rechts
+haupt;T3;4;K01;K04;knallt aber;rechts
+haupt;T3;4;K01;sonstige;Geschmack ohne Gegenpol: schmeckt (Einzelmarke);–
+haupt;T3;7;K04;K07;für Lernen oder Zocken;–
+haupt;T3;8;K03;K02;gibt's überall;rechts
+haupt;T4;1;K03;K01;ordentlich Zucker ↔ ohne Zucker;rechts
+haupt;T4;1;K03;K02;Dose von der Tanke;rechts
+haupt;T4;1;K03;X03;eher so ein Fitness-Ding;rechts
+haupt;T4;3;K09;K10;süß und künstlich;–
+haupt;T4;4;K01;K09;ohne schlechtes Gewissen;rechts
+haupt;T4;4;K01;K07;eher was für junge Typen;rechts
+haupt;T4;6;K03;K08;ziemlich teuer ↔ nicht so teuer;rechts
+haupt;T4;6;K03;K05;Instagram-Trendzeug;rechts
+haupt;T4;8;K06;K02;gibt's überall;rechts
+haupt;T5;1;K03;K02;an jeder Raststätte ↔ bestellen;rechts
+haupt;T5;2;K05;K02;liegt an jeder Tanke;rechts
+haupt;T5;2;K05;K08;kostet nicht die Welt;rechts
+haupt;T5;2;K05;K04;macht wach;rechts
+haupt;T5;2;K05;sonstige;Zielgruppe: für die Jungen;–
+haupt;T5;4;K01;K04;haut richtig rein;rechts
+haupt;T5;8;K12;K02;Preis steht am Regal ↔ online bestellen;rechts
+haupt;T6;1;K03;K01;richtig viel Zucker ↔ ohne Zucker;rechts
+haupt;T6;1;K03;K02;holt man sich an der Tanke;rechts
+haupt;T6;1;K03;sonstige;Dosierung: so stark wie ich will;–
+haupt;T6;2;K09;K05;Fan-Ding von einem Streamer;links
+haupt;T6;2;K09;K07;eher für Jungs, die zocken;rechts
+haupt;T6;3;K09;K04;süßer Kick;–
+haupt;T6;4;K02;K06;kennt einfach jeder;rechts
+haupt;T6;4;K02;K05;findet man über Instagram;rechts
+haupt;T6;5;K07;K04;Energy pur;–
+haupt;T6;6;K11;K08;ganz schön teuer;links
+haupt;T6;7;K06;K02;gibt's schon ewig und überall;–
+haupt;T6;7;K06;K05;hängt komplett an einer Person;–
+haupt;T6;8;K10;K01;kein Zucker;rechts
+haupt;T7;1;K03;K02;kalt an der Tanke;rechts
+haupt;T7;2;K05;K02;einfach da, wenn ich ihn brauche;rechts
+haupt;T7;4;K04;K01;ohne Zucker ↔ auch wenn's nicht gesund ist;rechts
+haupt;T8;1;K02;K03;Dose ↔ Pulver zum Anrühren;rechts
+haupt;T8;1;K02;K05;sieht man nur auf TikTok;rechts
+haupt;T8;2;K05;K03;einfach Dose, schmeckt, fertig;rechts
+haupt;T8;4;K01;K04;aber knallt;rechts
+haupt;T8;4;K01;X03;für Leute, die auf Fitness oder Diät achten;rechts
+haupt;T8;7;K06;K05;von einem Streamer;–
+haupt;T8;7;K06;sonstige;Zielgruppe: eher was für die Jüngeren;–
+haupt;T8;8;K03;K02;erst bestellen;rechts
+kontrolle;T1;1;K03;K01;voll Zucker ↔ ohne Zucker;rechts
+kontrolle;T1;1;K03;K02;an jeder Tanke ↔ vorher bestellen und dran denken;rechts
+kontrolle;T1;2;X01;K05;kaufst du mal wegen [Streamer];links
+kontrolle;T1;3;K04;K11;nur Geschmack fürs Wasser;–
+kontrolle;T1;4;K01;K09;ohne schlechtes Gewissen ↔ dann hängst du durch;rechts
+kontrolle;T1;5;K04;K07;Wellness-Zeug;–
+kontrolle;T1;5;K04;sonstige;Zielgruppe: zum Arbeiten ↔ für Büroleute;–
+kontrolle;T1;6;K02;K03;kommt ins Wasser ↔ kein Mischen;rechts
+kontrolle;T1;6;K02;K05;aus der Insta-Werbung;rechts
+kontrolle;T1;7;K06;K05;Streamer-Ding;–
+kontrolle;T1;7;K06;sonstige;Zielgruppe: Hype für die Jüngeren;–
+kontrolle;T1;8;X02;sonstige;Kohlensäure: ohne Blubber ↔ Kohlensäure macht voll;–
+kontrolle;T2;1;K03;K01;voll Zucker ↔ auf gesund gemacht;rechts
+kontrolle;T2;1;K03;K02;die man überall kriegt;rechts
+kontrolle;T2;3;K09;K01;ohne Zucker ↔ Zuckerbombe;–
+kontrolle;T2;3;K09;K04;nur zum Wachbleiben;–
+kontrolle;T2;4;K01;K09;ohne schlechtes Gewissen;rechts
+kontrolle;T2;4;K01;K07;eher was für Jungs, die zocken;rechts
+kontrolle;T2;6;K03;K08;eher teuer ↔ nicht so teuer;rechts
+kontrolle;T2;6;K03;K05;sieht aus wie Instagram-Werbung;rechts
+kontrolle;T3;3;K04;K11;nur Wasser mit bisschen Geschmack;–
+kontrolle;T3;4;K01;sonstige;Geschmack ohne Gegenpol: schmeckt halt (Einzelmarke);–
+kontrolle;T3;7;K06;K02;überall zu kriegen;–
+kontrolle;T3;7;K06;K05;Hype um einen Streamer;–
+kontrolle;T3;8;K06;K05;kenn ich nur aus Werbung;rechts
+kontrolle;T4;1;K01;K03;Dose ↔ Pulver zum Anrühren;rechts
+kontrolle;T4;1;K01;K06;klassische ↔ modern;rechts
+kontrolle;T4;1;K01;K02;Tankstellen-Zeug;rechts
+kontrolle;T4;3;K09;K01;ohne Zucker ↔ Zuckerbombe;–
+kontrolle;T4;4;K02;K03;aufmachen und trinken ↔ anrühren;rechts
+kontrolle;T4;6;K08;K05;hippe Instagram-Marke, schick gemacht ↔ ohne Schnickschnack;rechts
+kontrolle;T5;1;K03;K02;an jeder Tanke;rechts
+kontrolle;T5;2;K05;K08;kostet nicht viel;rechts
+kontrolle;T5;2;K05;K04;macht wach;rechts
+kontrolle;T5;2;K05;sonstige;Zielgruppe: für die Jungen;–
+kontrolle;T5;8;K02;K12;Preis weiß ich nicht;rechts
+kontrolle;T5;8;K02;K08;kostet nicht die Welt;rechts
+kontrolle;T5;8;K02;K03;kein Aufwand ↔ Wasser und Shaker mitschleppen;rechts
+kontrolle;T6;1;K03;K01;viel Zucker ↔ ohne Zucker;rechts
+kontrolle;T6;1;K03;K09;für Party oder lange Nächte ↔ auch vorm Training okay;rechts
+kontrolle;T6;2;K09;K05;kauft man wegen dem Typen dahinter;links
+kontrolle;T6;3;K09;K04;Notfall-Kick;–
+kontrolle;T6;6;K11;K08;dafür teuer;links
+kontrolle;T6;6;K11;X03;bringt mir was vorm Training;rechts
+kontrolle;T6;7;K06;K05;gerade ein Hype;–
+kontrolle;T6;8;K10;K01;süß ohne Zucker;rechts
+kontrolle;T7;1;K03;K02;kriegst du überall, auch nachts an der Tanke;rechts
+kontrolle;T7;1;K03;X03;eher was für Fitness-Leute mit Shaker;rechts
+kontrolle;T7;4;K04;K01;ohne Zucker ↔ viel Zucker;rechts
+kontrolle;T7;7;K06;K05;neues Ding von dem Streamer;–
+kontrolle;T7;7;K06;sonstige;Zielgruppe: eher für die Jüngeren;–
+kontrolle;T8;1;X03;K03;aus der Dose ↔ Pulver zum Anrühren;rechts
+kontrolle;T8;1;X03;K02;holst du dir an jeder Tanke;rechts
+kontrolle;T8;1;X03;K05;was die auf TikTok in den Shaker kippen;rechts
+kontrolle;T8;2;K05;K08;da zahlst du den Namen mit;rechts
+kontrolle;T8;4;K01;K10;schmeckt bisschen nach Süßstoff;rechts
+kontrolle;T8;7;K06;K05;das Ding von [Streamer];–
+kontrolle;T8;7;K06;sonstige;Zielgruppe: eher was für die Jüngeren;–
+kontrolle;T8;8;K03;K02;erst bestellen;rechts

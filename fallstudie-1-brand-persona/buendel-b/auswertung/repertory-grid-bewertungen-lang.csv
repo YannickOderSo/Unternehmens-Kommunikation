@@ -1,0 +1,673 @@
+befragte;konstrukt;links;rechts;element;marke;wert;quelle
+T1;K01;Zuckerbombe;ohne Zucker;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;W3;Gönrgy;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;W1;Red Bull;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;W4;waterdrop;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T1;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;W1;Red Bull;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;W4;waterdrop;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T2;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;W2;Monster;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T3;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;W1;Red Bull;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;W4;waterdrop;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T4;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;W1;Red Bull;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;W5;Coca-Cola Zero;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T5;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;W4;waterdrop;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;W1;Red Bull;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;W4;waterdrop;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T6;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;W3;Gönrgy;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;W2;Monster;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;M;HOLY;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T7;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K01;Zuckerbombe;ohne Zucker;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K02;gibt's überall;online bestellen;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K03;aufmachen, fertig;selbst anrühren;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;W3;Gönrgy;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;W5;Coca-Cola Zero;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K04;knallt, macht wach;weniger Kick;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;W3;Gönrgy;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K05;einfach, ohne Hype;Influencer-Zeug;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;W1;Red Bull;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K06;kennt jeder;neu, Ausprobieren;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;W1;Red Bull;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;W3;Gönrgy;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K07;laut, für Zocker;ruhig, ganz normal;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;M;HOLY;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;W1;Red Bull;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;W2;Monster;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;W3;Gönrgy;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;W5;Coca-Cola Zero;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K08;günstig;eher teuer;I;mein idealer Drink für jeden Tag;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;W2;Monster;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;W3;Gönrgy;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;W5;Coca-Cola Zero;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K09;Kick für Notfälle;für jeden Tag;I;mein idealer Drink für jeden Tag;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;M;HOLY;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;W2;Monster;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;W5;Coca-Cola Zero;4;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K10;schmeckt natürlich;schmeckt künstlich;I;mein idealer Drink für jeden Tag;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;M;HOLY;3;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;W1;Red Bull;6;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;W2;Monster;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;W5;Coca-Cola Zero;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K11;zu wässrig;schmeckt nach was;I;mein idealer Drink für jeden Tag;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;M;HOLY;7;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;W1;Red Bull;2;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;W2;Monster;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;W3;Gönrgy;5;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;W4;waterdrop;;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;W5;Coca-Cola Zero;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+T8;K12;weiß, was ich zahle;keine Ahnung vom Preis;I;mein idealer Drink für jeden Tag;1;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25

@@ -139,7 +139,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
 | 118 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | eingebaut (08, 09, 09b, 10, 11, B6–B8, Ausarbeitungen), Exporte neu; Freigabe offen |
-| 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 | in Arbeit |
+| 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 | KI-simulierte Befragung ausgewertet (`buendel-b/`), Folienvorschlag; Einbau nach Entscheidung Yannick |
 | 121 | 22.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
 | 122 | 22.10.2026 | System | Workflow-Meldungen: D24 und D25 am Nutzungslimit gescheitert, danach Neustart der Sitzung | D24, D25 (fortgesetzt) | Teilstand geprüft, Hinweis ins Skript D24, beide fortgesetzt |
 | 123 | 22.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
@@ -2081,8 +2081,9 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     Auswertung als Dateien; adversariale Prüfung von Methode, Rechnung und Verzerrungen. Kennzeichnung überall als
     „KI-simuliert“ (keine echte Befragung, Grenzen der Methode).
   - Einbau in die Folien 06, 07, 08, 08b, 10, B4, B5 erst, wenn D24 fertig ist (eigener Schritt).
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D25 (läuft parallel zu D24; schreibt nur in `fallstudie-1-brand-persona/buendel-b/`)
+- **Ergebnis (nachgetragen am 23.10.2026 nach Ende von D25):** KI-simulierte Befragung durchgeführt und ausgewertet
+  (Details unter D25); Folien noch unverändert, Einbau nach Entscheidung durch Yannick.
+- **Unteragenten:** D25 (lief parallel zu D24; schrieb nur in `fallstudie-1-brand-persona/buendel-b/`)
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ### 121 – 22.10.2026 – Systemhinweis (kein Prompt der Gruppe)
@@ -2270,7 +2271,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D23 | 21.10.2026 | 113 (fortgesetzt nach 115, 117) | Workflow „vortragsreife-abgleich“ (6 Unteragenten in 4 Phasen) | Ergebnisse von Account 2 mit aktuellem Stand abgleichen, technische Punkte umsetzen, Fragerunde aktualisieren, Folie 08 nachprüfen | Nachtrag in VORTRAGSREIFE.md (Status je Befund, neue Top 10), fragerunde.md aktualisiert, technische Punkte umgesetzt, referent-test.mjs; Prüfer 1 hoher, 4 mittlere Befunde umgesetzt | Claude: Tests, Syntax, Diff-Umfang und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 | D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
-| D25 | 22.10.2026 | 120 | Workflow „buendel-b-simulation“ (ca. 43 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | läuft | – |
+| D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3048,8 +3049,30 @@ steht hier mit dem wörtlichen Auftrag.
   Differenzierung ≥ 1,0, Ideal-Distanz ≤ 1,0).
 - **Kennzeichnung:** Alle Ergebnisse sind „KI-simuliert“ und Hypothesen (Stenger, S. 78: KI ersetzt nicht das
   Gespräch mit echten Kund:innen).
-- **Ergebnis:** läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Unterbrechungen:** viermal am Nutzungslimit (Einträge 122, 125, 128, 132); fortgesetzt per resume, einmal mit
+  Hinweis auf Teilergebnisse im Auftrag „Konstrukte codieren“.
+- **Ergebnis (alle Ergebnisse KI-simuliert, Hypothesen, `fallstudie-1-brand-persona/buendel-b/`):**
+  - **Repertory Grid:** 12 Konstrukte; nach der vor dem Rechnen festgelegten Regel **kein Attribut**; vier Hürden
+    (selbst anrühren, online bestellen, neu/Ausprobieren, Influencer-Zeug); bei „ohne Zucker“ Coca-Cola Zero 6,88 vor
+    HOLY 6,75 (Ideal 5,13); stärkster Wettbewerber Coca-Cola Zero. Kontrollgruppe ohne Persona-Block: 11 von 12
+    Konstrukten ebenfalls.
+  - **Laddering:** Startpunkte „ohne Zucker“, „für jeden Tag“ (kein Attribut, Rückfall); stärkste Leiter ohne Zucker →
+    kein Zuckerabsturz → konzentriert, keine Fehler → verlässlich sein; „für jeden Tag“ 6 von 8 unwichtig.
+  - **Analogien/Aaker:** offene Tierfrage Papagei 5/8, Chamäleon und Adler 0/8; Mensch: Fitness-/Social-Media-Person,
+    Kumpel, der verkaufen will (8/8); Aaker HOLY Spannung 3,91 (Red Bull 4,13), Aufrichtigkeit 3,19 (Red Bull 2,34).
+  - **Dateien:** Rohdaten (32 JSON), Codebücher und Zuordnungen, 5 Python-Skripte mit Ausgaben, Ausarbeitungen
+    `repertory-grid.md`, `laddering.md`, `analogien-befragung.md`, `simulation-protokoll.md`, `folienvorschlag.md`
+    (Entscheidungen E1–E18), `README.md`.
+  - **Prüfer:** Nachrechnen – Zahlen stimmen (keine hohen Befunde); Methodik – sorgfältig, Regel und Prompts nachweislich
+    vor der ersten Antwort festgelegt, Unabhängigkeit belegt, Folie 10 noch nicht folienreif; Plausibilität – Antworten
+    alltagsnah, aber Schablonen und Modellbild von HOLY; drei hohe Befunde (Laddering widerspricht bei 4 von 8 dem
+    eigenen Ideal; „online bestellen“ widerspricht dem Dossier – HOLY seit 2024/25 im Handel; Nutzen „kein
+    Zuckerabsturz“ ist Kategorie und klingt nach Gesundheitsversprechen) – in Ausarbeitungen und Folienvorschlag als
+    Vorbehalt eingearbeitet, Rohdaten unverändert.
+- **Wie Claude das Ergebnis geprüft hat:** alle fünf Skripte selbst erneut ausgeführt (fehlerfrei, `pruefe_synthese.py`
+  „keine Fehler“); keine Namen von KI-Modellen in `buendel-b/` (Kennzeichnungszeile in `p11-ki.md` war in der
+  Nacharbeit schon bereinigt); Prüferurteile und Endbericht gelesen. Folien noch nicht geändert – Einbau erst nach den
+  Entscheidungen von Yannick (Folienvorschlag §9).
 
 ---
 

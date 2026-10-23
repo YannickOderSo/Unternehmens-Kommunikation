@@ -1,0 +1,191 @@
+{
+  "befragte": "T6",
+  "vorstellung": "T6 (KI-simuliert, fiktiv): Frau, 24, Sportstudentin und Fitnesstrainerin in Teilzeit, trinkt fast täglich etwas Zuckerfreies, bestellt HOLY seit etwa einem Jahr online und folgt der Marke auf Instagram.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Fast jeden Tag was Zuckerfreies, meistens HOLY vor dem Training. Klassischen Energy aus der Dose eher selten, vielleicht ein-, zweimal im Monat, wenn ich unterwegs bin.",
+    "alltag": "Ich studiere Sport und arbeite nebenbei in Teilzeit als Trainerin im Fitnessstudio. Also keine richtigen Schichten, aber die Zeiten wechseln ständig, mal früh, mal abends Kurse.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "klassische Dose mit richtig viel Zucker, holt man sich an der Tanke",
+      "pol_einzeln": "Pulver zum Selbstanrühren, ohne Zucker, so stark wie ich will",
+      "wortlaut": "Red Bull und Monster sind halt die klassischen Dosen mit richtig viel Zucker, das holt man sich an der Tanke. HOLY rühr ich mir selbst an, da ist kein Zucker drin und ich kann's so stark machen, wie ich will."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W3",
+      "pol_paar": "passt in meinen Alltag, kann ich jeden Tag vorm Training trinken",
+      "pol_einzeln": "Fan-Ding von einem Streamer, eher für Jungs, die zocken",
+      "wortlaut": "HOLY und mein idealer Drink, das passt beides in meinen Alltag, das kann ich auch jeden Tag vorm Training trinken. Gönrgy ist für mich eher so ein Fan-Ding von dem Streamer, das kaufen die Jungs, die zocken – hab's nie probiert."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I",
+      "uebersprungen": false,
+      "paar": ["W4", "I"],
+      "einzeln": "W1",
+      "pol_paar": "leicht, was für den Durst über den Tag, fühlt sich gesund an",
+      "pol_einzeln": "süßer Kick für die Party oder die Klausurnacht",
+      "wortlaut": "waterdrop und mein Ideal sind eher leicht, so was für den Durst über den Tag, fühlt sich gesund an. Red Bull ist so ein süßer Kick, das trinkt man vor der Party oder in der Klausurnacht."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2",
+      "uebersprungen": false,
+      "paar": ["W5", "W2"],
+      "einzeln": "M",
+      "pol_paar": "steht überall im Kühlregal an jeder Kasse, kennt einfach jeder",
+      "pol_einzeln": "gibt's eher online, findet man über Instagram",
+      "wortlaut": "Cola Zero und Monster stehen überall im Kühlregal, an jeder Kasse, die kennt einfach jeder. HOLY gibt's ja eher online, das hab ich nur über Insta gefunden."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4",
+      "uebersprungen": false,
+      "paar": ["W2", "W3"],
+      "einzeln": "W4",
+      "pol_paar": "laut, schwarze Dosen, Gaming, Energy pur",
+      "pol_einzeln": "total ruhig, eher Wellness, Glasflasche, Yoga",
+      "wortlaut": "Monster und Gönrgy sind beide so laut, schwarze Dosen, Gaming, Energy pur. waterdrop ist total ruhig, das ist eher so Wellness, Glasflasche, Yoga."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W4",
+      "pol_paar": "schmeckt nach was, je nach Tag Energy oder was für den Durst",
+      "pol_einzeln": "zu wässrig, bisschen Geschmack im Wasser und dafür ganz schön teuer",
+      "wortlaut": "HOLY und mein idealer Drink schmecken nach was und ich kann je nach Tag Energy oder was für den Durst nehmen. waterdrop ist mir zu wässrig, so ein bisschen Geschmack im Wasser, und dafür ganz schön teuer, find ich."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "riesige alte Marken, gibt's schon ewig und überall",
+      "pol_einzeln": "neu, hängt komplett an einer Person",
+      "wortlaut": "Red Bull und Cola sind riesige alte Marken, die gibt's schon ewig und überall. Gönrgy ist neu und hängt halt komplett an einer Person – wenn der weg ist, ist die Marke wahrscheinlich auch weg."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "I",
+      "pol_paar": "kein Zucker, aber halt Süßstoff drin",
+      "pol_einzeln": "ohne Süßstoff, natürlicher, und schmeckt trotzdem",
+      "wortlaut": "Ehrlich gesagt sind HOLY und Cola Zero sich da ähnlich: kein Zucker, aber halt Süßstoff drin, glaub ich. Mein idealer Drink wäre was, das ohne Süßstoff auskommt und trotzdem schmeckt – gibt's halt kaum."
+    }
+  ],
+  "tier": {
+    "tier": "Delfin",
+    "gruende": [
+      "Verspielt und lustig, so wie die Posts auf Instagram.",
+      "Sportlich und immer in Bewegung, passt zu Training.",
+      "Immer in der Gruppe unterwegs – so wie dieses Squad-Ding, das die ständig machen."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Jemand Mitte zwanzig, sehr sportlich, immer gut gelaunt, manchmal ein bisschen zu laut.",
+    "alter": "so 25, 26",
+    "beruf": "Gründer von irgendeinem Start-up oder Content Creator mit Fitness-Bezug",
+    "stil": "sportlich-lässig, bunte Sneaker, Oversize-Hoodie, gestylt, aber nicht schick",
+    "auf_der_party": "Ist überall dabei, macht Witze, holt alle auf die Tanzfläche, trinkt selbst aber eher keinen Alkohol, sondern was Zuckerfreies.",
+    "beziehung_zu_kunden": "Wie ein Kumpel, antwortet auf Kommentare und schreibt zurück – will dir aber auch ständig was verkaufen, mit Rabattcodes und so.",
+    "gruende": [
+      "Die Instagram-Posts sind witzig und locker, so redet man mit Freunden.",
+      "Alles ist bunt und jung, nichts Spießiges.",
+      "Es gibt dauernd Codes und neue Sorten, da merkt man schon, dass die verkaufen wollen."
+    ]
+  },
+  "gefuehle": [
+    "gute Laune",
+    "motiviert, so kurz vor dem Training",
+    "dazugehören, so ein Community-Gefühl"
+  ],
+  "erlebnis": "Mein erstes Paket. Eine Freundin aus dem Studium hat mir ihren Code gegeben, dann kam das Paket mit Shaker und ein paar Probiersorten. Hab direkt im Studio vor meinem Kurs einen angerührt und war echt überrascht, dass das schmeckt. Eine Sorte fand ich aber eklig, die hab ich verschenkt.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 4,
+        "fröhlich": 5,
+        "gewagt": 3,
+        "temperamentvoll": 4,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 4,
+        "intelligent": 3,
+        "erfolgreich": 4,
+        "vornehm": 1,
+        "charmant": 3,
+        "naturverbunden": 2,
+        "robust": 2
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 2,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 5,
+        "fantasievoll": 3,
+        "zeitgemäß": 3,
+        "zuverlässig": 4,
+        "intelligent": 3,
+        "erfolgreich": 5,
+        "vornehm": 2,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 4,
+        "gesund": 4,
+        "fröhlich": 2,
+        "gewagt": 1,
+        "temperamentvoll": 1,
+        "fantasievoll": 2,
+        "zeitgemäß": 4,
+        "zuverlässig": 3,
+        "intelligent": 3,
+        "erfolgreich": 3,
+        "vornehm": 4,
+        "charmant": 3,
+        "naturverbunden": 4,
+        "robust": 1
+      }
+    }
+  ],
+  "holy_gekauft": "Ja, seit ungefähr einem Jahr. Ich bestell online, meistens wenn's gerade Rabatt gibt, und mische die Sorten: Energy für vor dem Training, Hydration eher im Sommer."
+}

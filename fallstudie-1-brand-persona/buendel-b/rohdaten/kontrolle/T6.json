@@ -1,0 +1,98 @@
+{
+  "befragte": "T6 (KI-simuliert, fiktiv): Frau, 24, Fitnesstrainerin in Teilzeit und Sportstudentin, trinkt fast täglich etwas Zuckerfreies, seit etwa einem Jahr HOLY-Kundin, bestellt online, folgt HOLY auf Instagram. Kontrollgruppe (ohne Persona-Block).",
+  "vorstellung": "Ich bin T6, 24, studier Sport, geb nebenbei Kurse im Studio und trink fast jeden Tag was ohne Zucker, HOLY bestell ich seit ungefähr einem Jahr online.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Klassische Energy Drinks aus der Dose eher selten, vielleicht mal vor einem langen Tag. HOLY trink ich aber fast jeden Tag, kommt drauf an, ob du das als Energy Drink zählst.",
+    "alltag": "Ich studier, Sport halt, und geb nebenbei Kurse im Fitnessstudio. Kein Büro und kein richtiger Schichtdienst, aber manchmal Kurse um sechs Uhr früh.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "klassische Dose mit viel Zucker, eher für Party oder lange Nächte",
+      "pol_einzeln": "Pulver zum selber Anrühren, ohne Zucker, auch vorm Training okay",
+      "wortlaut": "Red Bull und Monster sind für mich so die klassischen Dosen, da ist halt voll viel Zucker drin, das trinkt man nachts auf ner Party. HOLY ist Pulver, das rühr ich mir selber mit Wasser an, ohne Zucker, das trink ich auch vorm Training."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W3",
+      "pol_paar": "kann ich jeden Tag trinken, ohne schlechtes Gewissen",
+      "pol_einzeln": "kauft man wegen dem Typen dahinter, nicht wegen dem Getränk",
+      "wortlaut": "HOLY ist eigentlich schon ziemlich nah an dem, was ich jeden Tag trinken würde, ohne schlechtes Gewissen. Gönrgy ist halt das Ding von dem Streamer, das kaufen die Leute wegen ihm, ob da Zucker drin ist, weiß ich gar nicht."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W4", "I"],
+      "einzeln": "W1",
+      "pol_paar": "leicht, hilft mir einfach mehr Wasser zu trinken",
+      "pol_einzeln": "Notfall-Kick, danach fühl ich mich eher schlechter",
+      "wortlaut": "waterdrop und mein idealer Drink sorgen beide einfach dafür, dass ich mehr Wasser trinke, ganz leicht, nichts Krasses. Red Bull ist so der Notfall-Kick, wenn gar nichts mehr geht, aber danach fühl ich mich eher schlechter."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["W5", "W2"],
+      "einzeln": "M",
+      "pol_paar": "gibt's überall, kann ich spontan kaufen",
+      "pol_einzeln": "muss ich online bestellen und vorher dran denken",
+      "wortlaut": "Cola Zero und Monster kriegst du echt an jeder Tanke und in jedem Supermarkt, da musst du nicht nachdenken. HOLY muss ich online bestellen, und wenn ich's vergess, steh ich ohne da."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": false,
+      "paar": ["W2", "W3"],
+      "einzeln": "W4",
+      "pol_paar": "Zocker-Getränk, laut und aufgedreht",
+      "pol_einzeln": "clean und Wellness, fast ein bisschen zu brav",
+      "wortlaut": "Monster und Gönrgy sind für mich so Zocker-Getränke, laut, schwarze Dosen, voll aufgedreht. waterdrop ist das komplette Gegenteil, so clean und Wellness, fast ein bisschen zu brav."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W4",
+      "pol_paar": "schmeckt richtig nach was und bringt mir was vorm Training",
+      "pol_einzeln": "nur ein bisschen Geschmack im Wasser, dafür teuer",
+      "wortlaut": "HOLY und mein idealer Drink schmecken richtig nach was und geben mir auch was vorm Training. Bei waterdrop hab ich das Gefühl, das ist mehr so ein bisschen Geschmack im Wasser, und dafür ganz schön teuer, wobei mein idealer Drink ehrlich gesagt auch günstiger wär als HOLY."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "gibt's schon ewig, kennt jeder",
+      "pol_einzeln": "gerade ein Hype, weiß nicht, ob das bleibt",
+      "wortlaut": "Red Bull und Cola Zero gibt's schon ewig, die kennt jeder, Werbung überall. Gönrgy ist eher so ein Hype gerade, keine Ahnung, ob's das in ein paar Jahren noch gibt."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "I",
+      "pol_paar": "süß ohne Zucker, aber halt mit Süßstoff",
+      "pol_einzeln": "ganz natürlich, ohne Süßstoff und trotzdem lecker",
+      "wortlaut": "HOLY und Cola Zero sind beide süß ohne Zucker, da ist dann halt Süßstoff drin, glaub ich jedenfalls. Mein idealer Drink wäre ganz natürlich, ohne so Zeug, und würde trotzdem schmecken, aber sowas gibt's irgendwie nicht."
+    }
+  ]
+}

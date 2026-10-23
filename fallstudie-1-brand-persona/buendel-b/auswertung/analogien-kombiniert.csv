@@ -1,0 +1,9 @@
+zielcode;bezeichnung;befragte_n_zielcode;verwandte_codes;befragte_n_kombiniert;befragte_kombiniert;quelle
+EIG_LAUT;laut;4;TG_LAUT_PRAESENT;8;T1, T2, T3, T4, T5, T6, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+STIL_BUNT;bunt;5;TG_BUNT;8;T1, T2, T3, T4, T5, T6, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+EIG_SPORTLICH;sportlich;7;TG_SPORTLICH;7;T1, T2, T4, T5, T6, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+EIG_WITZIG;witzig, Spaß;6;TG_FRECH_HUMOR + TG_LUSTIG;7;T1, T2, T3, T4, T6, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+EIG_ANSTRENGEND;auf Dauer anstrengend;5;TG_NERVT;6;T2, T4, T5, T6, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+EIG_SELBSTDARSTELLUNG;Selbstdarstellung, dauernd online;6;TG_GELTUNG;6;T2, T3, T4, T5, T7, T8;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+B_GEMEINSCHAFT;Gemeinschaft (Squad, Clique, Club);3;TG_GEMEINSCHAFT;4;T1, T2, T4, T6;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+B_DISTANZ;nicht meine Welt;2;TG_EXOTISCH;3;T4, T5, T7;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25

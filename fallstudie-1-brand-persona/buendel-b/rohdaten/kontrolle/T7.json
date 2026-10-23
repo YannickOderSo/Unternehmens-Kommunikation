@@ -1,0 +1,100 @@
+{
+  "befragte": "T7",
+  "vorstellung": "T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Schichtdienst, trinkt mehrmals pro Woche Monster oder Red Bull aus der Dose, hat HOLY einmal probiert und nicht nachgekauft.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "So drei-, viermal die Woche. Vor allem bei Nachtdiensten, da manchmal auch zwei hintereinander, wenn's richtig rund geht.",
+    "alltag": "Schichtdienst im Rettungsdienst. Früh, Spät, Nacht, alles dabei, oft auch am Wochenende.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "Dose, kriegst du überall, auch nachts an der Tanke, aufmachen und los",
+      "pol_einzeln": "Pulver, musst du erst anrühren, eher was für Fitness-Leute mit Shaker",
+      "wortlaut": "Red Bull und Monster holst du dir um drei Uhr nachts an der Tanke, machst auf und fertig. HOLY musst du erst in Wasser rühren, das hab ich im Dienst einfach nicht, da ist das eher so ein Fitnessstudio-Ding."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "Hype aus dem Internet, wird von Influencern gepusht",
+      "pol_einzeln": "einfach was, das wirkt, ohne Show und ohne Gesicht drauf",
+      "wortlaut": "HOLY und das Gönrgy, das ist beides so Instagram- und Streamer-Zeug, da wird viel Wind drum gemacht. Mein idealer Drink bräuchte das nicht, der soll einfach wach machen und gut ist."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "waterdrop? Nie gehört, keine Ahnung, was das sein soll.",
+      "grund": "W4 (waterdrop) ist T7 unbekannt."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, eher so light, da fehlt mir der Kick",
+      "pol_einzeln": "knallt richtig, viel Zucker, danach bist du wach",
+      "wortlaut": "HOLY und Cola Zero sind beide so ohne Zucker, glaub ich, so die Light-Variante. Monster ist halt die volle Ladung, ungesund, weiß ich, aber danach bist du wach."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Das Dritte kenn ich nicht, da kann ich nix zu sagen.",
+      "grund": "W4 (waterdrop) ist T7 unbekannt."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "waterdrop schon wieder, sagt mir nichts, sorry.",
+      "grund": "W4 (waterdrop) ist T7 unbekannt."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "gibt's schon ewig, kennt jeder, weißt, was du kriegst",
+      "pol_einzeln": "neues Ding von dem Streamer, eher für die Jüngeren",
+      "wortlaut": "Red Bull und Cola Zero, das sind die Klassiker, die stehen überall und schmecken immer gleich. Gönrgy ist das Zeug von dem Streamer, das kaufen eher die Kids, ich hab's nur im Regal gesehen."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "schmeckt mir, kalt aus dem Kühlschrank, schmeckt immer gleich",
+      "pol_einzeln": "Geschmack komisch künstlich, wie Brausepulver von früher",
+      "wortlaut": "Cola Zero kann ich immer trinken, und so muss mein Alltagsdrink auch sein, kalt und schmeckt einfach. HOLY war für mich so Brausepulver-Geschmack, irgendwie künstlich, deshalb hab ich's nicht nochmal gekauft."
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "befragte": "T6",
+  "vorstellung": "T6 (KI-simuliert, fiktiv): Frau, 24, Sportstudentin und Fitnesstrainerin in Teilzeit, trinkt fast täglich etwas Zuckerfreies, seit etwa einem Jahr HOLY-Kundin (bestellt online), folgt HOLY auf Instagram.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Irgendwas Zuckerfreies trink ich fast jeden Tag. Richtig Energy so drei-, viermal die Woche, meistens HOLY vorm Training oder vor der Uni.",
+    "alltag": "Ich studier Sport und geb nebenbei Kurse im Fitnessstudio, Teilzeit. Also kein Büro, kein Schichtdienst. Manchmal hab ich Frühkurse um sechs.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "typische Dose von der Tanke, viel Zucker drin",
+      "pol_einzeln": "Pulver, das man sich selber anrührt, ohne Zucker",
+      "wortlaut": "Red Bull und Monster sind halt die typischen Dosen von der Tanke, da ist voll Zucker drin oder Süßstoff in den Zero-Dingern. HOLY rührst du dir selber im Shaker an, das ist was ganz anderes."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W3",
+      "pol_paar": "passt zu meinem Alltag mit Sport",
+      "pol_einzeln": "Fanartikel von einem Streamer, eher für Gamer-Jungs",
+      "wortlaut": "HOLY ist schon ziemlich nah an dem, was ich jeden Tag trinken will, das passt zum Training. Gönrgy ist für mich so ein Fanartikel von dem Streamer, Montanablack glaub ich, das kaufen eher 15-jährige Jungs."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W4", "I"],
+      "einzeln": "W1",
+      "pol_paar": "was für über den Tag, damit man mehr Wasser trinkt",
+      "pol_einzeln": "Partydrink mit Zucker, nur ausnahmsweise",
+      "wortlaut": "waterdrop ist so was, wo man einfach mehr Wasser trinkt, das ist eigentlich schon gut für jeden Tag. Red Bull trink ich höchstens mal am Wochenende als Wodka-Bull, jeden Tag würde ich das nicht."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "kein Zucker, da hab ich kein schlechtes Gewissen",
+      "pol_einzeln": "Riesendose, laut und krass, eher ein Männer-Ding",
+      "wortlaut": "HOLY und Cola Zero haben beide keinen Zucker, da hab ich kein schlechtes Gewissen. Monster ist diese Riesendose mit den Krallen, gut, es gibt auch Ultra, aber trotzdem eher so ein Männer-Ding, laut und krass."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": false,
+      "paar": ["W2", "W3"],
+      "einzeln": "W4",
+      "pol_paar": "Energy-Dose für Jungs, die zocken",
+      "pol_einzeln": "Würfel fürs Wasser, eher ruhig und gesund, so Yoga-mäßig",
+      "wortlaut": "Monster und Gönrgy sind beide so Energy für Jungs, die zocken. waterdrop ist total anders, das sind diese Würfel fürs Wasser, eher so ruhig, Yoga, Gesundheit."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W4",
+      "pol_paar": "macht mich wach und schmeckt richtig nach was",
+      "pol_einzeln": "nur ein bisschen Geschmack im Wasser, kein Kick",
+      "wortlaut": "Mein idealer Drink muss mich wach machen und nach was schmecken, das kann HOLY. waterdrop ist schön für zwischendurch, aber das ist halt nur ein bisschen Geschmack im Wasser, da passiert nix."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "kennt jeder, gibt's überall seit Ewigkeiten",
+      "pol_einzeln": "Hype wegen einem Streamer, keine Ahnung, ob's das in ein paar Jahren noch gibt",
+      "wortlaut": "Red Bull und Cola gibt's an jeder Ecke, die kennt sogar meine Oma. Gönrgy ist halt wegen Montana bekannt, ob's das in ein paar Jahren noch gibt, weiß ich nicht."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "I"],
+      "einzeln": "W5",
+      "pol_paar": "hat was Gutes drin, Vitamine und so",
+      "pol_einzeln": "einfach Cola ohne Zucker, schmeckt, aber ist nicht gesund",
+      "wortlaut": "Bei HOLY sind ja noch Vitamine und so drin, das ist für mich schon näher an meinem Ideal. Cola Zero trink ich auch mal, aber das ist halt Cola, da bilde ich mir nicht ein, dass das gesund ist."
+    }
+  ],
+  "tier": {
+    "tier": "Delfin",
+    "gruende": [
+      "Sportlich und schnell, aber nicht aggressiv wie ein Hai. Red Bull oder Monster wären eher so Raubtiere.",
+      "Verspielt und lustig, so wie die Posts auf Instagram.",
+      "Hat was mit Wasser zu tun, HOLY hat ja auch die Hydration-Sachen, nicht nur Energy."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Eine junge Frau, die irgendwas mit Social Media und Sport macht, witzig und motiviert, aber nicht verbissen.",
+    "alter": "so 26, 27",
+    "beruf": "irgendwas mit Social Media, vielleicht Fitness-Influencerin oder Marketing bei einem Start-up",
+    "stil": "Sportleggings, Oversize-Hoodie, bunte Sneaker, Cap, sieht aber trotzdem gepflegt aus",
+    "auf_der_party": "Steht in der Küche, macht Witze und zieht Leute mit rein, tanzt auch, geht aber nicht völlig ab und ist um eins weg, weil sie am nächsten Morgen Training hat.",
+    "beziehung_zu_kunden": "Wie eine gute Freundin, die zurückschreibt und dir mal einen Rabattcode schickt. Manchmal aber auch die Freundin, die dir ständig was verkaufen will.",
+    "gruende": [
+      "Auf Instagram wirkt das, als ob jemand in meinem Alter postet, jung und witzig.",
+      "Es geht um Sport und gesünder leben, aber ohne erhobenen Zeigefinger.",
+      "Ständig neue Sorten und Aktionen mit Codes, das ist so ein bisschen wie bei einer Influencerin, manchmal etwas viel."
+    ]
+  },
+  "gefuehle": [
+    "motiviert, so Bock aufs Training",
+    "gute Laune, wegen den Farben und den Sprüchen",
+    "Vorfreude, wenn das Paket kommt"
+  ],
+  "erlebnis": "Im Winter vor einem Kurs um sechs, draußen noch stockdunkel, ich rühr mir im Studio HOLY im Shaker an, irgendeine Sorte mit Beeren, und dann geht's. Und einmal hab ich einer Teilnehmerin was zum Probieren gegeben, die fand's viel zu süß, darüber haben wir dann im ganzen Kurs gelacht.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 3,
+        "fröhlich": 5,
+        "gewagt": 3,
+        "temperamentvoll": 4,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 4,
+        "intelligent": 3,
+        "erfolgreich": 4,
+        "vornehm": 1,
+        "charmant": 4,
+        "naturverbunden": 2,
+        "robust": 2
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 2,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 5,
+        "fantasievoll": 3,
+        "zeitgemäß": 3,
+        "zuverlässig": 4,
+        "intelligent": 3,
+        "erfolgreich": 5,
+        "vornehm": 2,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 4,
+        "gesund": 4,
+        "fröhlich": 3,
+        "gewagt": 2,
+        "temperamentvoll": 2,
+        "fantasievoll": 3,
+        "zeitgemäß": 4,
+        "zuverlässig": 3,
+        "intelligent": 4,
+        "erfolgreich": 3,
+        "vornehm": 4,
+        "charmant": 3,
+        "naturverbunden": 4,
+        "robust": 1
+      }
+    }
+  ],
+  "holy_gekauft": "Ja, seit ungefähr einem Jahr, immer online. Meistens die große Dose Energy und im Sommer ab und zu Hydration. Ist nicht ganz billig, aber mit den Rabattcodes geht's."
+}

@@ -1,0 +1,43 @@
+{
+  "befragte": "T5 (fiktiv, KI-simuliert): Mann, 39, Lkw-Fahrer bei einer Spedition, trinkt täglich Red Bull, preisbewusst, skeptisch gegenüber Pulver-Drinks.",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "Interviewer: Fangen wir mit „ohne Zucker“ an. Ist dir das beim Kauf wichtig?\nT5: Inzwischen ja. Früher hab ich die normale Dose genommen. Seit ein, zwei Jahren nehm ich meistens die zuckerfreie. Wenn die im Angebot ist. Bei HOLY ist ja auch kein Zucker drin, soweit ich weiß. Aber das hab ich bei meiner Dose genauso.\nInterviewer: Warum ist dir das wichtig?\nT5: Weil ich zwei, drei Dosen am Tag trink. Mit Zucker läppert sich das. Und ich sitz den ganzen Tag. Bewegung ist da nicht viel.\nInterviewer: Warum ist dir wichtig, dass sich das nicht läppert?\nT5: Der Bauch wird hinterm Steuer nicht kleiner. Und nach der normalen Dose hatte ich oft so ein Loch, so ne Stunde später. Da wirst du richtig müde. Mit der zuckerfreien ist das weniger, find ich.\nInterviewer: Warum ist dir wichtig, dass du nicht in so ein Loch fällst?\nT5: Weil ich einen voll beladenen Sattelzug fahr. Wenn ich da wegnick, war's das. Und wir müssen ja immer wieder zum Arzt wegen dem Führerschein. Wenn da Blutzucker oder Blutdruck nicht passt, wird's eng.\nInterviewer: Warum ist dir das wichtig, dass das beim Arzt passt?\nT5: Ohne Lappen kein Job. Ich hab Frau und zwei Kinder, die Miete zahlt sich nicht von allein. Und was anderes als Fahren hab ich nicht gelernt.\nInterviewer: Und warum ist dir das wichtig?\nT5: Weil die sich auf mich verlassen sollen. Und weil ich abends heil nach Hause kommen will. Das ist am Ende das Einzige, was zählt.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker (für T5 kein Alleinstellungsmerkmal: die zuckerfreie Dose hat das auch)"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Zucker, obwohl er zwei bis drei Dosen am Tag im Sitzen trinkt"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Müdigkeitsloch nach der Dose, Bauch/Gewicht bleibt im Rahmen"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "am Steuer wach und sicher bleiben; beim Arzttermin für den Führerschein nichts befürchten müssen"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "Job behalten und die Familie versorgen können"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Sicherheit und Verantwortung für die Familie (verlässlich sein, abends heil heimkommen)"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": false,
+      "begruendung_wenn_nicht": "Für T5 ist „für jeden Tag“ kein Kaufkriterium: Er trinkt ohnehin jeden Tag Energy, hält den Spruch für eine Werbefloskel und entscheidet nach Preis/Angebot und einfacher Handhabung im Lkw. Alltagstauglich ist für ihn die Dose, nicht ein Pulver, das er anrühren und dessen Shaker er spülen muss.",
+      "dialog": "Interviewer: Zweite Eigenschaft: HOLY sagt, es ist „für jeden Tag“. Ist dir das beim Kauf wichtig?\nT5: Nee. Ich trink eh jeden Tag. Das muss mir keiner draufschreiben. Klingt für mich nach Werbung.\nInterviewer: Achtest du beim Kauf also gar nicht darauf?\nT5: Nein. Beim Kauf zählt: Was kostet's, ist es im Angebot, und kann ich's im Führerhaus einfach aufmachen. Fertig.\nInterviewer: Was würde „für jeden Tag“ denn für dich bedeuten?\nT5: Dass es nicht nervt. Jeden Tag Pulver anrühren, im Lkw, an der Rampe, und dann den Shaker spülen? Das ist für mich gerade nicht für jeden Tag. Für jeden Tag ist bei mir die Dose.",
+      "stufen": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "befragte": "T8 (KI-simuliert, fiktiv): Mann, 25, Azubi zum Kfz-Mechatroniker im dritten Lehrjahr, trinkt ab und zu Energy (meist Monster), kennt HOLY nur aus TikTok-Videos und hat es nie gekauft.",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "[KI-simuliertes Laddering-Interview, fiktiv]\nInterviewer: HOLY wirbt damit, dass es ohne Zucker ist. Ist dir das wichtig, wenn du dir einen Energy kaufst?\nT8: Hm. Früher null. Inzwischen so halb – eher ja. Ich greif immer noch oft zum grünen Monster, aber ich guck jetzt schon mal, ob's eins ohne Zucker gibt. Das weiße zum Beispiel. Schmeckt halt nicht ganz so gut.\nInterviewer: Warum ist dir das wichtig, dass keiner drin ist?\nT8: Weil ich nach dem grünen voll den Absturz hab. Erst bist du richtig wach, und zwei Stunden später hängst du da wie ein nasser Sack.\nInterviewer: Und warum ist dir wichtig, dass du keinen Absturz hast?\nT8: Weil ich bis Feierabend fit sein muss. Du liegst unterm Auto, machst Bremsen, Räder und so. Wenn du da müde wirst, machst du Fehler. Drehmoment vergessen, irgendwas nicht richtig festgezogen. Das darf nicht passieren.\nInterviewer: Warum ist es dir wichtig, keine Fehler zu machen?\nT8: Weil der Meister sich auf mich verlassen muss. Wenn ein Kunde mit losen Radmuttern vom Hof fährt, das geht gar nicht. Und ich will nicht der Azubi sein, bei dem man alles zweimal nachgucken muss.\nInterviewer: Warum ist dir das wichtig, dass er sich auf dich verlassen kann?\nT8: Ich bin im dritten Lehrjahr. Ich will übernommen werden. Und halt zeigen, dass ich was draufhab und nicht nur Reifen wechsle.\nInterviewer: Und warum ist dir das wichtig – übernommen werden, zeigen, dass du's kannst?\nT8: Weil ich auf eigenen Beinen stehen will. Eigenes Geld, irgendwann eigene Wohnung, nicht immer bei den Eltern fragen. Und ich will einfach stolz sein auf das, was ich mach. Das ist mir schon wichtig.\nInterviewer: Danke. Noch was zum Zucker?\nT8: Ne. Also, dass man vom Zucker 'ne Plauze kriegt, ist auch so ein Ding, aber ehrlich gesagt eher Nebensache. Hauptsache, ich häng nachmittags nicht durch.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein Zucker-Absturz ein, zwei Stunden nach dem Trinken"
+        },
+        {
+          "ebene": "funktional",
+          "text": "bis Feierabend wach und konzentriert in der Werkstatt arbeiten, keine Fehler (z. B. Radmuttern, Bremsen)"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "der Meister kann sich auf ihn verlassen; nicht der Azubi sein, den man kontrollieren muss"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "nach der Ausbildung übernommen werden und zeigen, dass er etwas kann"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Unabhängigkeit: auf eigenen Beinen stehen (eigenes Geld, eigene Wohnung)"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Selbstachtung: stolz auf die eigene Arbeit sein"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": false,
+      "begruendung_wenn_nicht": "T8 trinkt Energy nur ein-, zweimal pro Woche als Kick an langen Tagen, nicht als tägliches Getränk. Jeden Tag Energy zu trinken findet er eher abschreckend (Beispiel: ein Kumpel, der ohne seine zwei Dosen täglich nicht mehr klarkommt). Für den Alltag reichen ihm Wasser und Kaffee aus der Werkstatt; ein Getränk, das man erst anrühren muss, passt für ihn nicht in den Werkstattalltag.",
+      "dialog": "[KI-simuliertes Laddering-Interview, fiktiv]\nInterviewer: HOLY sagt auch, es ist für jeden Tag gedacht. Ist dir das beim Kauf wichtig?\nT8: Nee, eigentlich nicht. Ich trink ja nicht jeden Tag Energy. Ein-, zweimal die Woche, wenn's lang wird oder ich nach der Berufsschule noch was vorhab.\nInterviewer: Also spielt das für dich keine Rolle?\nT8: Eher im Gegenteil. Energy ist für mich was für zwischendurch, wenn ich 'nen Kick brauch. Jeden Tag so was – weiß nicht, klingt komisch. Ich hab 'nen Kumpel, der hat jeden Tag zwei Dosen, ohne die läuft bei dem nix. So will ich nicht werden.\nInterviewer: Und was trinkst du dann jeden Tag?\nT8: Wasser. Und Kaffee aus der Maschine in der Werkstatt, der ist umsonst. Und ich glaub, HOLY ist eher so Pulver, oder? Weiß nicht genau. Aber ich stell mich doch in der Werkstatt nicht hin und schüttel einen Shaker. Wenn, dann nehm ich mir 'ne kalte Dose an der Tanke mit.",
+      "stufen": []
+    }
+  ]
+}

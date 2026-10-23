@@ -1,0 +1,43 @@
+{
+  "befragte": "T4: Frau, 35, Vollzeit im Büro, trinkt selten Energy, greift lieber zur Cola Zero und achtet auf Zucker (fiktiv, KI-simuliert)",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "Interviewer: HOLY wirbt damit, dass kein Zucker drin ist. Wäre dir das wichtig, wenn du so ein Getränk kaufst?\nT4: Ja, total. Das ist eigentlich das Erste, worauf ich gucke. Wenn da Zucker drin ist, lass ich's stehen. Egal was es ist.\nInterviewer: Warum ist dir das wichtig?\nT4: Weil ich nicht so viel Zucker trinken will. Bei Getränken ist das so heimlich. Man trinkt eine Flasche und merkt gar nicht, wie viel da drin ist. Bei meiner Cola Zero weiß ich halt: Da ist keiner drin. Bei HOLY weiß ich nicht genau, womit das dann süß ist. Süßstoff halt, denk ich. Ist auch nicht super, aber besser als Zucker.\nInterviewer: Warum ist es dir wichtig, nicht nebenbei Zucker zu trinken?\nT4: Ich sitz den ganzen Tag am Schreibtisch. Wenn ich dann noch was Süßes trinke, merk ich das. Erst bin ich kurz wach, und um drei häng ich total durch. Und irgendwann sieht man's auch auf der Waage.\nInterviewer: Und warum ist dir wichtig, nicht durchzuhängen und das nicht auf der Waage zu sehen?\nT4: Ich will mich einfach wohlfühlen. In meinem Körper, meine ich. Nicht nach der Arbeit platt aufs Sofa fallen. Und ich hab gern das Gefühl, dass ich selbst in der Hand hab, was ich in mich reinkippe.\nInterviewer: Warum ist dir das wichtig, es selbst in der Hand zu haben?\nT4: Na ja, weil ich gesund bleiben will. Mit 35 fängt man an, darüber nachzudenken. Meine Mutter hat Diabetes, das will ich nicht auch kriegen.\nInterviewer: Und warum ist dir wichtig, gesund zu bleiben?\nT4: Ist doch klar, oder? Damit ich noch lange fit bin und machen kann, was ich will. Ohne dass mir mein Körper irgendwann reinredet.",
+      "stufen": [
+        {
+          "ebene": "Attribut",
+          "text": "ohne Zucker"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein versteckter Zucker im Getränk, den man nebenbei mittrinkt (wie bei Cola Zero)"
+        },
+        {
+          "ebene": "funktional",
+          "text": "kein kurzes Hoch und dann Durchhängen am Nachmittag beim Sitzen im Büro; nichts, was man irgendwann auf der Waage sieht"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "sich im eigenen Körper wohlfühlen, nach der Arbeit nicht platt sein"
+        },
+        {
+          "ebene": "psychosozial",
+          "text": "Gefühl, selbst in der Hand zu haben, was man zu sich nimmt"
+        },
+        {
+          "ebene": "Wert",
+          "text": "Gesundheit und Unabhängigkeit: lange fit bleiben und machen können, was man will, ohne dass der Körper „reinredet“"
+        }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": false,
+      "dialog": "Interviewer: Die zweite Eigenschaft: HOLY sagt, das ist ein Getränk für jeden Tag. Ist dir das beim Kauf wichtig?\nT4: Ehrlich gesagt nein. Ich will ja gar nicht jeden Tag einen Energy trinken. Das ist bei mir eher so ein Notfall-Ding, wenn ich abends noch lange Auto fahren muss.\nInterviewer: Und wenn man es nicht als Energy sieht, sondern einfach als Getränk für den Alltag?\nT4: Dann vergleich ich's mit meiner Cola Zero. Und die krieg ich überall, im Automaten, beim Bäcker, im Supermarkt. Bei der Kollegin war das so ein Pulver zum Anrühren, glaub ich. Das wär mir im Büro zu umständlich.\nInterviewer: Spielt „für jeden Tag“ also keine Rolle für dich?\nT4: Nee. Wenn mir jemand sagt, trink das jeden Tag, werd ich eher misstrauisch. Das klingt nach Werbung. Für jeden Tag hab ich Wasser und meine Cola Zero, das reicht mir.",
+      "stufen": [],
+      "begruendung_wenn_nicht": "Keine Leiter: T4 trinkt Energy nur selten (ein-, zweimal im Monat, vor langen Autofahrten) und will das bewusst nicht täglich. Für den Alltag hat sie Wasser und Cola Zero, die überall erhältlich ist. „Für jeden Tag“ wirkt auf sie eher werblich und macht sie misstrauisch; das Anrühren (sie meint, es sei ein Pulver, ist sich aber nicht sicher) wäre ihr im Büro zu umständlich."
+    }
+  ]
+}

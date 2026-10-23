@@ -1,0 +1,100 @@
+{
+  "befragte": "T4",
+  "vorstellung": "T4 (KI-simuliert, fiktiv): Frau, 35, Bürojob, trinkt kaum Energy Drinks, greift lieber zu Cola Zero und achtet darauf, wenig Zucker zu trinken.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Ganz selten. Vielleicht zwei-, dreimal im Jahr, wenn ich nachts noch lange Auto fahren muss oder total übermüdet bin. Sonst trinke ich eher Cola Zero oder Kaffee.",
+    "alltag": "Ich arbeite im Büro, Vollzeit, viel am Rechner und in Meetings.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "Coca-Cola Zero",
+      "waterdrop",
+      "HOLY"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY – Red Bull – Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "klassische Dose mit viel Zucker, so Tankstellen-Zeug",
+      "pol_einzeln": "Pulver zum Anrühren, tut so, als wär's gesund und modern",
+      "wortlaut": "Red Bull und Monster sind für mich eigentlich das Gleiche: süße Dose, die man an der Tanke kauft, wenn man die Nacht durchmachen will. HOLY ist dieses Pulver, das man bei Instagram sieht – das tut eher so, als wär's was Gesundes."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY – Gönrgy – mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T4 kennt Gönrgy nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Gönrgy? Nie gehört, keine Ahnung, was das sein soll. Da kann ich nichts zu sagen."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull – waterdrop – mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W4", "I"],
+      "einzeln": "W1",
+      "pol_paar": "ohne Zucker, kann man den ganzen Tag nebenbei trinken",
+      "pol_einzeln": "Zuckerbombe, nur für den Notfall zum Wachbleiben",
+      "wortlaut": "Waterdrop und mein idealer Drink sind eher so Wasser mit ein bisschen Geschmack, das kann ich den ganzen Tag am Schreibtisch trinken. Red Bull ist für mich eine Zuckerbombe – das trink ich höchstens, wenn ich nachts noch Auto fahren muss."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY – Coca-Cola Zero – Monster)",
+      "uebersprungen": false,
+      "paar": ["W5", "W2"],
+      "einzeln": "M",
+      "pol_paar": "gibt's überall gekühlt, aufmachen und trinken",
+      "pol_einzeln": "muss man erst bestellen und anrühren, umständlich",
+      "wortlaut": "Cola Zero und Monster krieg ich an jeder Kasse, kalt aus dem Kühlschrank, fertig. Bei HOLY muss man ja, glaub ich, erst online so eine Dose Pulver bestellen und dann anrühren – das wär mir zu umständlich."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster – Gönrgy – waterdrop)",
+      "uebersprungen": true,
+      "grund": "T4 kennt Gönrgy nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Monster und waterdrop kenn ich, aber das andere sagt mir wieder gar nichts. Da müsste ich raten."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY – waterdrop – mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W4"],
+      "einzeln": "I",
+      "pol_paar": "hippe Instagram-Marke, schick gemacht, eher teuer",
+      "pol_einzeln": "einfach, ohne Schnickschnack, bezahlbar",
+      "wortlaut": "HOLY und waterdrop sind so Instagram-Marken, alles schön bunt und durchgestylt, und man zahlt bestimmt ordentlich für das Design. Mein idealer Drink wär einfach was Unkompliziertes, das nicht so viel kostet und das ich nicht erst zusammenmischen muss."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull – Gönrgy – Coca-Cola Zero)",
+      "uebersprungen": true,
+      "grund": "T4 kennt Gönrgy nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Red Bull und Cola Zero klar, aber Gönrgy hab ich noch nie gesehen, weder im Laden noch sonst wo."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY – Coca-Cola Zero – mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "ganz normales Getränk für zwischendurch, da denk ich nicht drüber nach",
+      "pol_einzeln": "so ein Leistungs- und Fitness-Ding, das verspricht, dass man besser funktioniert",
+      "wortlaut": "Cola Zero und mein idealer Drink sind einfach was zum Trinken am Schreibtisch, da mach ich mir keine Gedanken. HOLY kommt mir vor wie so ein Ding, wo dir jemand erzählt, dass du damit fokussierter und produktiver bist – das nehm ich denen nicht so ganz ab."
+    }
+  ]
+}

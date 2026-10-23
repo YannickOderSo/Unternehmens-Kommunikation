@@ -1,0 +1,193 @@
+{
+  "befragte": "T8",
+  "vorstellung": "T8 (KI-simuliert, fiktiv): Mann, 25, Azubi zum Kfz-Mechatroniker im dritten Lehrjahr, trinkt ab und zu Energy (meist Monster), kennt HOLY nur aus TikTok-Videos und hat es nie gekauft.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "So ein-, zweimal die Woche vielleicht. Wenn's in der Werkstatt lang geht oder nach Berufsschule, wenn ich noch was vorhab. Meistens Monster, das grüne.",
+    "alltag": "Weder noch. Ich mach Ausbildung zum Kfz-Mechatroniker, bin in der Werkstatt, normale Frühschicht, kein Wechselschicht. Plus Berufsschule.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "normale Dose, kriegst du an jeder Tanke",
+      "pol_einzeln": "Pulver zum Anrühren, sieht man nur auf TikTok",
+      "wortlaut": "Red Bull und Monster, das sind halt die normalen Dosen, die kriegst du an jeder Tanke. HOLY ist so Pulver, das musst du anrühren, das hab ich nur auf TikTok gesehen, nie im Laden."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "Influencer-Zeug, wird auf Social Media gepusht",
+      "pol_einzeln": "einfach Dose, schmeckt, fertig, ohne Hype",
+      "wortlaut": "HOLY und Gönrgy, das ist beides so Influencer-Zeug, wird halt auf Insta und TikTok gepusht. Mein idealer Drink, der muss einfach schmecken, kalt sein und nicht zu teuer, egal wer da Werbung für macht."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T8 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Waterdrop? Sagt mir nix, keine Ahnung, was das ist."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, so für Leute, die auf Fitness oder Diät achten",
+      "pol_einzeln": "richtig süß, Zuckerbombe, aber knallt",
+      "wortlaut": "HOLY und Cola Zero sind beide ohne Zucker, so für Leute, die auf Fitness achten. Monster ist halt richtig süß, eine Zuckerbombe, aber dafür knallt's auch."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "grund": "T8 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Das Dritte kenn ich ja nicht, da kann ich nix zu sagen."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T8 kennt waterdrop nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": "Wieder das Waterdrop, kenn ich nicht. Lass mal weg."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "große alte Marke, kennt jeder, gibt's ewig",
+      "pol_einzeln": "von einem Streamer, eher was für die Jüngeren",
+      "wortlaut": "Red Bull und Cola, die gibt's ewig, die kennt sogar meine Oma. Gönrgy ist von Monte, das trinken eher die Kids, die den auf Twitch gucken."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "kalt aus dem Kühlschrank, aufmachen, fertig",
+      "pol_einzeln": "erst bestellen und anrühren, umständlich",
+      "wortlaut": "Cola Zero und mein idealer Drink: kalt aus dem Kühlschrank, aufmachen, fertig. Bei HOLY musst du erst bestellen und dann mit Shaker anrühren, da hab ich in der Werkstatt echt keinen Bock drauf."
+    }
+  ],
+  "tier": {
+    "tier": "Papagei",
+    "gruende": [
+      "Knallbunt, die Farben in den Videos fallen sofort auf.",
+      "Laut und redet viel, das ist überall auf TikTok, man kommt nicht dran vorbei.",
+      "Plappert nach: Die ganzen Influencer sagen alle ungefähr dasselbe darüber."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Ein lockerer Typ Mitte zwanzig, so Fitness-Influencer oder Start-up-Gründer, der alles filmt und jedem was empfiehlt.",
+    "alter": "so 26, 27",
+    "beruf": "Fitness-Influencer oder so ein Start-up-Typ mit eigener Firma",
+    "stil": "Oversized Hoodie, Cap, weiße Sneaker, immer gestylt, bisschen zu gewollt",
+    "auf_der_party": "Steht in der Küche, erzählt jedem von seiner Morgenroutine und filmt alles für die Story. Ist am Anfang lustig, nach 'ner Stunde nervt's.",
+    "beziehung_zu_kunden": "Wie so ein Kumpel, der dir schreibt 'Bro, musst du probieren'. Schon nett, aber man merkt, er will halt auch was verkaufen.",
+    "gruende": [
+      "Die Videos sind alle so locker und jung, mit Sprüchen.",
+      "Das ist so ein zuckerfreies Gesund-und-Fitness-Ding.",
+      "Gibt's anscheinend nur online, wie die ganzen Influencer-Produkte."
+    ]
+  },
+  "gefuehle": [
+    "neugierig",
+    "skeptisch",
+    "leicht genervt"
+  ],
+  "erlebnis": "Da war mal so ein TikTok, wo einer das Pulver in den Shaker kippt, so richtig Gym-Bro-mäßig. Hab kurz überlegt zu bestellen, dann gesehen, dass man so 'ne Dose mit Pulver kaufen muss, und hab's gelassen. Ein Kollege aus der Werkstatt meinte mal, das schmeckt wie Brausepulver. Weiß nicht, ob das stimmt.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 3,
+        "gesund": 3,
+        "fröhlich": 4,
+        "gewagt": 3,
+        "temperamentvoll": 4,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 2,
+        "intelligent": 3,
+        "erfolgreich": 3,
+        "vornehm": 1,
+        "charmant": 3,
+        "naturverbunden": 2,
+        "robust": 1
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 4,
+        "fantasievoll": 3,
+        "zeitgemäß": 4,
+        "zuverlässig": 5,
+        "intelligent": 4,
+        "erfolgreich": 5,
+        "vornehm": 3,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": false,
+      "werte": {
+        "bodenständig": null,
+        "ehrlich": null,
+        "gesund": null,
+        "fröhlich": null,
+        "gewagt": null,
+        "temperamentvoll": null,
+        "fantasievoll": null,
+        "zeitgemäß": null,
+        "zuverlässig": null,
+        "intelligent": null,
+        "erfolgreich": null,
+        "vornehm": null,
+        "charmant": null,
+        "naturverbunden": null,
+        "robust": null
+      }
+    }
+  ],
+  "holy_gekauft": "Nee, noch nie. Kenn's nur aus TikTok. Wenn's mal im Laden kalt in der Dose stehen würde, würd ich's vielleicht probieren."
+}

@@ -1,0 +1,193 @@
+{
+  "befragte": "T4 (fiktiv, KI-simuliert)",
+  "vorstellung": "T4: Frau, 35, Vollzeit im Büro, trinkt selten Energy, greift lieber zur Cola Zero und achtet auf Zucker (fiktiv, KI-simuliert).",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Selten. Vielleicht ein-, zweimal im Monat, wenn überhaupt. Eher, wenn ich abends noch lange Auto fahren muss.",
+    "alltag": "Büro. Ich arbeite Vollzeit, ganz normal von acht bis fünf.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "die typische Dose von der Tanke, da ist ordentlich Zucker drin",
+      "pol_einzeln": "Pulver zum Selberanrühren, ohne Zucker, eher so ein Fitness-Ding",
+      "wortlaut": "Red Bull und Monster sind halt die Dosen, die man an der Tanke kauft, und da ist ja richtig Zucker drin. HOLY ist eher so Pulver, das rührt man sich selbst an, wirkt mehr wie was aus dem Fitnessstudio."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": true,
+      "grund": "T4 kennt Gönrgy (W3) nicht: „Gönrgy sagt mir gar nichts, nie gehört.“",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": ""
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W4", "I"],
+      "einzeln": "W1",
+      "pol_paar": "schmeckt nach was, ohne dass man sich hinterher schlecht fühlt",
+      "pol_einzeln": "süß und künstlich, eher was für den Notfall",
+      "wortlaut": "Mein idealer Drink wär so wie waterdrop: Wasser, das ein bisschen nach was schmeckt, und fertig. Red Bull ist mir viel zu süß, das trink ich nur, wenn ich nachts noch fahren muss."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, kann man ohne schlechtes Gewissen trinken",
+      "pol_einzeln": "riesige Dose, Zuckerbombe, eher was für junge Typen",
+      "wortlaut": "Cola Zero und HOLY haben beide keinen Zucker, bei HOLY glaub ich jedenfalls. Monster ist so eine riesige Dose voller Zucker, das seh ich eher bei jungen Kerlen an der Tanke."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": true,
+      "grund": "T4 kennt Gönrgy (W3) nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": ""
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W4"],
+      "einzeln": "I",
+      "pol_paar": "Instagram-Trendzeug zum Reinkippen ins Wasser, ziemlich teuer",
+      "pol_einzeln": "steht einfach im Kühlschrank, kein Aufwand, nicht so teuer",
+      "wortlaut": "HOLY und waterdrop sind beide so Sachen, die man ins Wasser kippt und die einem auf Instagram dauernd angezeigt werden. Mein idealer Drink muss einfach im Kühlschrank stehen, ohne Shaker und ohne dass ich extra was bestellen muss."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": true,
+      "grund": "T4 kennt Gönrgy (W3) nicht.",
+      "paar": [],
+      "einzeln": "",
+      "pol_paar": "",
+      "pol_einzeln": "",
+      "wortlaut": ""
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "kenn ich, gibt's überall, schmeckt immer gleich",
+      "pol_einzeln": "weiß nicht genau, was drin ist, fühlt sich nach Ausprobieren an",
+      "wortlaut": "Cola Zero ist eigentlich schon fast mein idealer Drink: gibt's überall und ich weiß, was ich kriege. Bei HOLY weiß ich gar nicht so genau, was da alles drin ist, das wär mir ein bisschen zu viel Experiment."
+    }
+  ],
+  "tier": {
+    "tier": "Papagei",
+    "gruende": [
+      "Bunt: Die Dosen und Bilder sind total knallig.",
+      "Laut: Die Werbung ist auf Instagram überall, da kommt man nicht dran vorbei.",
+      "Ein bisschen exotisch: Das ist nicht das, was ich so im normalen Supermarkt bewusst sehe."
+    ]
+  },
+  "mensch": {
+    "kurzbeschreibung": "Eine junge, sportliche Frau, immer gut drauf, die gern zeigt, was sie gerade Neues ausprobiert.",
+    "alter": "So Ende zwanzig, vielleicht Anfang dreißig.",
+    "beruf": "Irgendwas mit Social Media oder Fitnesstrainerin, vielleicht auch Influencerin.",
+    "stil": "Sportlich: Leggings, Sneaker, Trinkflasche immer dabei, alles ein bisschen bunt.",
+    "auf_der_party": "Die erzählt allen, was sie gerade Neues entdeckt hat, macht gleich ein Selfie und trinkt keinen Alkohol, sondern was Selbstgemischtes.",
+    "beziehung_zu_kunden": "Duzt alle und tut so, als wär man befreundet. Ganz nett, aber man merkt schon, dass sie einem was verkaufen will.",
+    "gruende": [
+      "Wegen der Werbung: Da sieht man immer junge, sportliche Leute.",
+      "Weil das so locker und witzig rüberkommt, aber manchmal auch ein bisschen zu viel ist.",
+      "Weil man das Gefühl kriegt, man gehört zu so einem Club, wenn man das kauft."
+    ]
+  },
+  "gefuehle": [
+    "neugierig",
+    "skeptisch",
+    "frisch, so ein Sommergefühl wegen der bunten Farben"
+  ],
+  "erlebnis": "Meine Kollegin hat mir im Büro mal einen Schluck aus ihrem Shaker gegeben, irgendwas mit Beeren, glaub ich. War okay, für ohne Zucker ziemlich süß. Und sonst denk ich an die Werbung auf Instagram, die hört gar nicht mehr auf.",
+  "aaker": [
+    {
+      "marke": "HOLY",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 3,
+        "gesund": 3,
+        "fröhlich": 4,
+        "gewagt": 3,
+        "temperamentvoll": 4,
+        "fantasievoll": 4,
+        "zeitgemäß": 5,
+        "zuverlässig": 2,
+        "intelligent": 3,
+        "erfolgreich": 3,
+        "vornehm": 1,
+        "charmant": 3,
+        "naturverbunden": 2,
+        "robust": 2
+      }
+    },
+    {
+      "marke": "Red Bull",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 2,
+        "ehrlich": 2,
+        "gesund": 1,
+        "fröhlich": 3,
+        "gewagt": 5,
+        "temperamentvoll": 5,
+        "fantasievoll": 3,
+        "zeitgemäß": 3,
+        "zuverlässig": 4,
+        "intelligent": 2,
+        "erfolgreich": 5,
+        "vornehm": 2,
+        "charmant": 2,
+        "naturverbunden": 1,
+        "robust": 4
+      }
+    },
+    {
+      "marke": "waterdrop",
+      "bekannt": true,
+      "werte": {
+        "bodenständig": 3,
+        "ehrlich": 3,
+        "gesund": 4,
+        "fröhlich": 3,
+        "gewagt": 2,
+        "temperamentvoll": 2,
+        "fantasievoll": 3,
+        "zeitgemäß": 4,
+        "zuverlässig": 3,
+        "intelligent": 3,
+        "erfolgreich": 3,
+        "vornehm": 3,
+        "charmant": 3,
+        "naturverbunden": 4,
+        "robust": 1
+      }
+    }
+  ],
+  "holy_gekauft": "Nein. Einmal bei der Kollegin probiert, aber selbst gekauft hab ich's nicht. Ich bleib eher bei meiner Cola Zero."
+}

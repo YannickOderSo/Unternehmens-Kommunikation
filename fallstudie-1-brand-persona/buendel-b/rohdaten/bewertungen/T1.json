@@ -1,0 +1,18 @@
+{
+  "befragte": "T1 (KI-simuliert): Mann, 28, Schichtdienst Logistik, Vieltrinker, HOLY-Kunde",
+  "bewertungen": [
+    {"konstrukt": "K01", "M": 7, "W1": 2, "W2": 1, "W3": 3, "W4": 6, "W5": 6, "I": 7},
+    {"konstrukt": "K02", "M": 7, "W1": 1, "W2": 1, "W3": 3, "W4": 6, "W5": 1, "I": 2},
+    {"konstrukt": "K03", "M": 7, "W1": 1, "W2": 1, "W3": 1, "W4": 6, "W5": 1, "I": 2},
+    {"konstrukt": "K04", "M": 3, "W1": 2, "W2": 1, "W3": 2, "W4": 7, "W5": 6, "I": 1},
+    {"konstrukt": "K05", "M": 4, "W1": 2, "W2": 2, "W3": 7, "W4": 4, "W5": 1, "I": 1},
+    {"konstrukt": "K06", "M": 5, "W1": 1, "W2": 2, "W3": 6, "W4": 5, "W5": 1, "I": 3},
+    {"konstrukt": "K07", "M": 3, "W1": 4, "W2": 2, "W3": 1, "W4": 7, "W5": 7, "I": 6},
+    {"konstrukt": "K08", "M": 3, "W1": 6, "W2": 4, "W3": 4, "W4": 6, "W5": 2, "I": 2},
+    {"konstrukt": "K09", "M": 7, "W1": 3, "W2": 3, "W3": 3, "W4": 6, "W5": 5, "I": 7},
+    {"konstrukt": "K10", "M": 3, "W1": 6, "W2": 6, "W3": 7, "W4": 3, "W5": 6, "I": 2},
+    {"konstrukt": "K11", "M": 5, "W1": 7, "W2": 7, "W3": 7, "W4": 2, "W5": 6, "I": 6},
+    {"konstrukt": "K12", "M": 2, "W1": 2, "W2": 1, "W3": 5, "W4": 7, "W5": 2, "I": 1}
+  ],
+  "kommentar": "Bei Gönrgy und waterdrop musste ich raten, Gönrgy hatte ich nur einmal und waterdrop nie selbst gekauft, also weiß ich da weder genau, was drin ist, noch was das kostet. Bei HOLY und 'laut, für Zocker' war ich unsicher: Auf Insta ist das voll Gaming, aber ich trink das auf Arbeit im Lager, deshalb eher in der Mitte."
+}

@@ -1,0 +1,49 @@
+datei;feld;wert_anfang;ki_simuliert_im_feld;quelle
+rohdaten/interviews/T1.json;befragte;T1;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T1.json;vorstellung;T1 (KI-simuliert): Mann, 28, arbeitet im Drei-Schicht-Betrie;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T2.json;befragte;T2;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T2.json;vorstellung;T2 (KI-simuliert, fiktiv): Frau, 29, Pflegefachkraft im Kran;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T3.json;befragte;T3;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T3.json;vorstellung;T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt abends v;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T4.json;befragte;T4 (fiktiv, KI-simuliert);ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T4.json;vorstellung;T4: Frau, 35, Vollzeit im Büro, trinkt selten Energy, greift;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T5.json;befragte;T5;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T5.json;vorstellung;T5 (fiktiv, KI-simuliert): Mann, 39, Lkw-Fahrer bei einer Sp;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T6.json;befragte;T6;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T6.json;vorstellung;T6 (KI-simuliert, fiktiv): Frau, 24, Sportstudentin und Fitn;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T7.json;befragte;T7;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T7.json;vorstellung;T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Sc;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T8.json;befragte;T8;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/interviews/T8.json;vorstellung;T8 (KI-simuliert, fiktiv): Mann, 25, Azubi zum Kfz-Mechatron;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T1.json;befragte;T1 (KI-simuliert, fiktiv): Mann, 28, Schichtdienst Logistik,;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T1.json;vorstellung;T1, 28, Lagerist im Wechselschichtdienst bei einem Logistike;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T2.json;befragte;T2;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T2.json;vorstellung;T2 (KI-simuliert, fiktiv): Frau, 29, Pflegefachkraft im Kran;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T3.json;befragte;T3;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T3.json;vorstellung;T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt fast jed;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T4.json;befragte;T4;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T4.json;vorstellung;T4 (KI-simuliert, fiktiv): Frau, 35, Bürojob, trinkt kaum En;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T5.json;befragte;"T5 (KI-simuliert, fiktiv; Kontrollgruppe ohne Persona-Block)";ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T5.json;vorstellung;T5 (KI-simuliert), 39, fährt Lkw im Fernverkehr: „Ich trink ;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T6.json;befragte;T6 (KI-simuliert, fiktiv): Frau, 24, Fitnesstrainerin in Tei;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T6.json;vorstellung;Ich bin T6, 24, studier Sport, geb nebenbei Kurse im Studio ;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T7.json;befragte;T7;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T7.json;vorstellung;T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Sc;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T8.json;befragte;"T8 (KI-simuliert, fiktiv; Kontrollgruppe ohne Persona-Block)";ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/kontrolle/T8.json;vorstellung;Ich bin T8, 25, mach grad meine Ausbildung zum Kfz-Mechatron;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T1.json;befragte;T1 (KI-simuliert): Mann, 28, Schichtdienst Logistik, Vieltri;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T2.json;befragte;T2 (KI-simuliert, fiktiv): Frau, 29, Pflegefachkraft im Schi;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T3.json;befragte;T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt viel, tr;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T4.json;befragte;T4: Frau, 35, Bürojob, trinkt selten Energy, eher Cola Zero,;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T5.json;befragte;T5 (fiktiv, KI-simuliert): Mann, 39, Lkw-Fahrer, trinkt tägl;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T6.json;befragte;T6;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T7.json;befragte;T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Sc;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/bewertungen/T8.json;befragte;T8;nein;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T1.json;befragte;T1 (KI-simuliert): Mann, 28, Drei-Schicht-Betrieb in einem L;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T2.json;befragte;T2 (KI-simuliert, fiktiv): Frau, 29, Pflegefachkraft im Kran;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T3.json;befragte;T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt abends v;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T4.json;befragte;T4: Frau, 35, Vollzeit im Büro, trinkt selten Energy, greift;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T5.json;befragte;T5 (fiktiv, KI-simuliert): Mann, 39, Lkw-Fahrer bei einer Sp;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T6.json;befragte;T6 (KI-simuliert, fiktiv): Frau, 24, Sportstudentin und Fitn;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T7.json;befragte;T7 (KI-simuliert, fiktiv): Mann, 33, Rettungssanitäter im Sc;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25
+rohdaten/leitern/T8.json;befragte;T8 (KI-simuliert, fiktiv): Mann, 25, Azubi zum Kfz-Mechatron;ja;KI-simuliert (Tool) – 8 fiktive Befragte, Bündel B, Workflow D25

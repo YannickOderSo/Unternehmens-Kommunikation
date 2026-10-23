@@ -1,0 +1,98 @@
+{
+  "befragte": "T3",
+  "vorstellung": "T3 (KI-simuliert, fiktiv): Mann, 22, Student, zockt fast jeden Abend am PC, trinkt meistens Monster aus der Dose und kennt HOLY nur aus YouTube-Videos.",
+  "auswahlfragen": {
+    "haeufigkeit_energy": "Eigentlich fast jeden Tag. Abends beim Zocken eine Dose, manchmal auch zwei. In der Klausurenphase eher mehr.",
+    "alltag": "Ich studiere. Kein Schichtdienst, kein Büro. Nebenbei sitz ich halt viel am PC.",
+    "bekannte_marken": [
+      "Red Bull",
+      "Monster",
+      "HOLY",
+      "Gönrgy",
+      "waterdrop",
+      "Coca-Cola Zero"
+    ]
+  },
+  "triaden": [
+    {
+      "nr": 1,
+      "elemente": "M–W1–W2 (HOLY, Red Bull, Monster)",
+      "uebersprungen": false,
+      "paar": ["W1", "W2"],
+      "einzeln": "M",
+      "pol_paar": "fertige Dose: kaufen, aufmachen, trinken",
+      "pol_einzeln": "Pulver, das man erst anrühren muss",
+      "wortlaut": "Red Bull und Monster holst du dir einfach im Laden, Dose auf und fertig. HOLY ist doch so Pulver, da musst du erst mit dem Shaker rumrühren, da hab ich beim Zocken echt keinen Bock drauf."
+    },
+    {
+      "nr": 2,
+      "elemente": "M–W3–I (HOLY, Gönrgy, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W3"],
+      "einzeln": "I",
+      "pol_paar": "wird von YouTubern und Streamern gepusht",
+      "pol_einzeln": "einfach gut, egal wer Werbung dafür macht",
+      "wortlaut": "HOLY und Gönrgy, das kommt beides von YouTubern, die dir nen Rabattcode reindrücken. Mein idealer Drink muss einfach schmecken und wach machen, mir egal, welcher Streamer den in die Kamera hält."
+    },
+    {
+      "nr": 3,
+      "elemente": "W1–W4–I (Red Bull, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W1", "I"],
+      "einzeln": "W4",
+      "pol_paar": "macht richtig wach",
+      "pol_einzeln": "nur Wasser mit bisschen Geschmack",
+      "wortlaut": "Red Bull und mein idealer Drink, die sollen mich wach machen, wenn ich nachts noch ne Runde spiele. waterdrop ist doch eher Wasser mit bisschen Geschmack drin, das bringt mir abends nix."
+    },
+    {
+      "nr": 4,
+      "elemente": "M–W5–W2 (HOLY, Coca-Cola Zero, Monster)",
+      "uebersprungen": false,
+      "paar": ["M", "W5"],
+      "einzeln": "W2",
+      "pol_paar": "ohne Zucker, eher für Leute, die aufpassen",
+      "pol_einzeln": "Zuckerbombe, aber schmeckt halt",
+      "wortlaut": "HOLY und Cola Zero sind beide ohne Zucker, das ist so für Leute, die auf ihren Körper achten. Monster ist halt ne Zuckerbombe, weiß ich ja auch, aber schmeckt einfach am besten."
+    },
+    {
+      "nr": 5,
+      "elemente": "W2–W3–W4 (Monster, Gönrgy, waterdrop)",
+      "uebersprungen": false,
+      "paar": ["W2", "W3"],
+      "einzeln": "W4",
+      "pol_paar": "Zocker-Dosen, laut und bunt",
+      "pol_einzeln": "eher was für Leute im Büro, die auf gesund machen",
+      "wortlaut": "Monster und Gönrgy, das ist so Zocker-Zeug, bunte Dosen, steht bei jedem neben der Tastatur. waterdrop stell ich mir eher bei jemandem im Büro vor, der mehr Wasser trinken will und auf gesund macht."
+    },
+    {
+      "nr": 6,
+      "elemente": "M–W4–I (HOLY, waterdrop, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["M", "W4"],
+      "einzeln": "I",
+      "pol_paar": "bestellt man eher online, so Abo-Kram",
+      "pol_einzeln": "einfach im Supermarkt oder an der Tanke mitnehmen",
+      "wortlaut": "HOLY und waterdrop bestellt man glaub ich eher online, mit Abo und Paket und so. Mein idealer Drink steht einfach im Kühlregal, auch nachts an der Tanke, und ich nehm ihn mit."
+    },
+    {
+      "nr": 7,
+      "elemente": "W1–W3–W5 (Red Bull, Gönrgy, Coca-Cola Zero)",
+      "uebersprungen": false,
+      "paar": ["W1", "W5"],
+      "einzeln": "W3",
+      "pol_paar": "gibt's schon ewig, kennt jeder, überall zu kriegen",
+      "pol_einzeln": "neu, Hype um einen Streamer, mal schauen, ob's bleibt",
+      "wortlaut": "Red Bull und Cola Zero gibt's gefühlt schon immer, die kriegst du überall. Gönrgy ist halt das Ding von MontanaBlack, gerade gehypt, aber keine Ahnung, ob das in ein paar Jahren noch einer kauft."
+    },
+    {
+      "nr": 8,
+      "elemente": "M–W5–I (HOLY, Coca-Cola Zero, mein idealer Drink für jeden Tag)",
+      "uebersprungen": false,
+      "paar": ["W5", "I"],
+      "einzeln": "M",
+      "pol_paar": "kenn ich, weiß, was ich krieg",
+      "pol_einzeln": "kenn ich nur aus Werbung, nie probiert",
+      "wortlaut": "Bei Cola Zero und meinem idealen Drink weiß ich einfach, was ich krieg, da muss ich nicht nachdenken. HOLY kenn ich nur aus YouTube-Werbung, nie selber getrunken, keine Ahnung, wie das wirklich schmeckt."
+    }
+  ]
+}

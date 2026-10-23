@@ -1,0 +1,31 @@
+{
+  "befragte": "T6 (KI-simuliert, fiktiv): Frau, 24, Sportstudentin und Fitnesstrainerin in Teilzeit, trinkt fast täglich etwas Zuckerfreies, bestellt HOLY seit etwa einem Jahr online und folgt der Marke auf Instagram.",
+  "leitern": [
+    {
+      "attribut": "ohne Zucker",
+      "wichtig": true,
+      "dialog": "Interviewer: Ist dir beim Kauf wichtig, dass HOLY ohne Zucker ist?\nT6: Ja, total. Das ist eigentlich der Hauptgrund, warum ich's kaufe. Was mit Zucker hol ich mir fast nie.\nInterviewer: Warum ist dir das wichtig?\nT6: Weil ich keinen Zuckercrash will. Wenn ich vorm Training was Süßes trinke, bin ich nach 'ner halben Stunde platt. Und ich trink das ja fast jeden Tag, da läppert sich das sonst. Ob der Süßstoff jetzt so super ist, weiß ich ehrlich gesagt nicht genau. Aber besser als Zucker auf jeden Fall.\nInterviewer: Warum ist dir wichtig, keinen Crash zu haben?\nT6: Weil ich im Training und in meinen Kursen voll da sein muss. Ich steh vorne und muss die Leute mitziehen. Wenn ich schlapp bin, merken die das sofort.\nInterviewer: Warum ist dir wichtig, die Leute mitzuziehen?\nT6: Das ist halt mein Job. Und ich will glaubwürdig sein. Ich kann den Leuten nicht sagen, achtet auf eure Ernährung, und selber Zuckerzeug trinken. Das passt nicht.\nInterviewer: Warum ist dir wichtig, glaubwürdig zu sein?\nT6: Weil ich das ja selber so lebe. Ich will das machen, was ich sage. Sonst fühl ich mich wie 'ne Heuchlerin. Ich will mir selber treu bleiben, mehr ist es eigentlich nicht.",
+      "stufen": [
+        { "ebene": "Attribut", "text": "ohne Zucker" },
+        { "ebene": "funktional", "text": "kein Zuckercrash, die Energie hält vor dem Training an" },
+        { "ebene": "funktional", "text": "volle Leistung im eigenen Training und in den Kursen" },
+        { "ebene": "psychosozial", "text": "die Kursteilnehmenden mitziehen können" },
+        { "ebene": "psychosozial", "text": "glaubwürdig als Trainerin und Vorbild sein (Gesagtes und Getanes passen zusammen)" },
+        { "ebene": "Wert", "text": "sich selbst treu bleiben / im Einklang mit den eigenen Überzeugungen leben (Integrität)" }
+      ]
+    },
+    {
+      "attribut": "für jeden Tag",
+      "wichtig": true,
+      "dialog": "Interviewer: HOLY sagt ja, das ist was für jeden Tag. Ist dir das beim Kauf wichtig?\nT6: Hm. Als Spruch jetzt nicht so. Aber dass ich's echt jeden Tag trinken kann, ohne dass mir das komisch vorkommt, das schon. Bei Red Bull würd ich das nicht jeden Tag machen.\nInterviewer: Warum ist dir das wichtig?\nT6: Weil ich nicht jedes Mal überlegen will, ob das jetzt okay ist. Ich mach mir das Pulver in meine Flasche, schütteln, fertig. Das gehört einfach dazu. An Ruhetagen lass ich's manchmal weg, aber sonst ist das gesetzt.\nInterviewer: Warum ist dir wichtig, dass es einfach dazugehört?\nT6: Mein Alltag ist eh total durcheinander. Mal Uni um acht, mal Kurs um neun abends. Da brauch ich ein paar Sachen, die immer gleich sind. Das gibt mir so 'ne Struktur.\nInterviewer: Warum ist dir diese Struktur wichtig?\nT6: Weil ich mich dann nicht verzettel. Wenn die kleinen Sachen laufen, hab ich den Kopf frei für das, was wirklich zählt. Dann hab ich das Gefühl, ich hab mein Leben im Griff.\nInterviewer: Warum ist dir wichtig, dein Leben im Griff zu haben?\nT6: Weil ich selber bestimmen will, wie mein Tag läuft. Nicht der Stress oder der Stundenplan. Ich will das selbst in der Hand haben.",
+      "stufen": [
+        { "ebene": "Attribut", "text": "für jeden Tag (täglich trinkbar)" },
+        { "ebene": "funktional", "text": "täglich trinken ohne Bedenken oder Abwägen" },
+        { "ebene": "funktional", "text": "schnell und immer gleich zubereitet, fester Teil der Trainingsroutine" },
+        { "ebene": "psychosozial", "text": "Struktur und Halt in einem wechselhaften Alltag" },
+        { "ebene": "psychosozial", "text": "Kopf frei haben, Gefühl, das eigene Leben im Griff zu haben" },
+        { "ebene": "Wert", "text": "Selbstbestimmung" }
+      ]
+    }
+  ]
+}

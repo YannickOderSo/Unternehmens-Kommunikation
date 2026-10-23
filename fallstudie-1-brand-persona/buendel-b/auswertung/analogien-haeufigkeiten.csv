@@ -1,0 +1,84 @@
+kategorie;code;bezeichnung;obergruppe;nennungen;befragte_n;befragte;aaker_dimension;im_persona_block;quelle
+Tier;TIER_PAPAGEI;Papagei;bunter Vogel;5;5;T2, T3, T4, T5, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tier;TIER_DELFIN;Delfin;–;1;1;T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tier;TIER_FUCHS;Fuchs;–;1;1;T1;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tier;TIER_PFAU;Pfau;bunter Vogel;1;1;T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_LAUT_PRAESENT;laut, überall präsent;Präsenz;7;6;T2, T3, T4, T5, T7, T8;Spannung (unsicher);Grenzfall (YouTube, Instagram, TikTok stehen nur als Mediennutzung von Marco im Block);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_BUNT;bunt, knallig;Aufmachung;6;6;T2, T3, T4, T5, T7, T8;Spannung (unsicher);nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_EXOTISCH;exotisch, nicht für mich;Distanz;2;2;T4, T5;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_LUSTIG;lustig, verspielt;Humor;2;2;T2, T6;Spannung (unsicher);ja („mag den Humor … der Marke“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_NACHPLAPPERN;plappert nach;kritisch;2;2;T3, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_FRECH_HUMOR;frech, mit Augenzwinkern;Humor;1;1;T1;Spannung (unsicher);ja („mag den Humor … der Marke“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_GELTUNG;will gesehen werden;kritisch;1;1;T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_GEMEINSCHAFT;in der Gruppe, Squad;–;1;1;T6;–;ja („Squad“-Gefühl);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_KLEIN_FLINK;klein, flink, Herausforderer;–;1;1;T1;Spannung (unsicher);nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_NERVT;nervt auf Dauer;kritisch;1;1;T2;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_SCHEIN;sieht gut aus, bringt wenig;kritisch;1;1;T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_SCHLAU;schlau, clevere Idee;–;1;1;T1;Kompetenz;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Tiergrund;TG_SPORTLICH;sportlich, in Bewegung;–;1;1;T6;–;ja („geht joggen“, Hobby von Marco);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Geschlecht;GESCHL_M;männlich;–;5;5;T1, T3, T5, T7, T8;–;Grenzfall (Marco ist ein Mann);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Geschlecht;GESCHL_W;weiblich;–;2;2;T2, T4;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Geschlecht;GESCHL_OFFEN;offen;–;1;1;T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Alter;ALTER_MITTE20;Mitte 20;–;6;6;T2, T3, T5, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Alter;ALTER_ENDE20;Ende 20;–;2;2;T1, T4;–;Grenzfall (Marco ist 28);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beruf;BERUF_FITNESS;Fitness (Trainer:in, Fitness-Content);–;8;8;T1, T2, T3, T4, T5, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beruf;BERUF_SOCIAL;Social Media, Influencer:in, Content;–;8;8;T1, T2, T3, T4, T5, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beruf;BERUF_GRUENDER;Start-up-Gründer:in, selbstständig;–;4;4;T1, T3, T6, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Stil;STIL_SPORTLICH;sportlich-lässige Kleidung;–;8;8;T1, T2, T3, T4, T5, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Stil;STIL_BUNT;bunt;–;6;5;T1, T2, T4, T5, T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Stil;STIL_GESTYLT;gestylt, abgestimmt;–;5;5;T2, T3, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_JUNG;jung;positiv;12;7;T2, T3, T4, T5, T6, T7, T8;Spannung;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_SPORTLICH;sportlich;positiv;12;7;T1, T2, T4, T5, T6, T7, T8;–;ja („geht joggen“, Hobby von Marco);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_GUT_GELAUNT;gut gelaunt;positiv;8;7;T1, T2, T3, T4, T5, T6, T7;Aufrichtigkeit;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_WITZIG;witzig, Spaß;positiv;12;6;T1, T3, T4, T6, T7, T8;Spannung (unsicher);ja („mag den Humor … der Marke“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_LOCKER;locker;positiv;10;6;T1, T3, T4, T6, T7, T8;Spannung (unsicher);nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_SELBSTDARSTELLUNG;Selbstdarstellung, dauernd online;ambivalent;9;6;T2, T3, T4, T5, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_GESELLIG;gesellig;positiv;6;5;T1, T2, T3, T6, T7;Aufrichtigkeit (unsicher);nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_ANSTRENGEND;auf Dauer anstrengend;kritisch;5;5;T4, T5, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_GESUNDHEITSBEWUSST;gesundheitsbewusst;positiv;5;5;T1, T2, T3, T6, T8;Aufrichtigkeit;ja („will gesünder leben“, „ohne Zucker“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_MITTEILSAM;erzählt und empfiehlt allen;ambivalent;5;4;T3, T4, T5, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_LAUT;laut;neutral;4;4;T1, T5, T6, T7;Spannung (unsicher);nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_MASSVOLL;maßvoll;positiv;4;4;T1, T2, T4, T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_TRENDIG;probiert Neues;positiv;3;2;T4, T6;Spannung;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_ENERGIEGELADEN;energiegeladen;positiv;1;1;T2;Spannung;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Eigenschaft;EIG_UNSPIESSIG;nicht spießig;positiv;1;1;T6;Spannung (unsicher);nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_VERKAUFSABSICHT;will verkaufen (Rabattcodes);Vorbehalt;12;8;T1, T2, T3, T4, T5, T6, T7, T8;–;Grenzfall („Mix-&-Match-Rabatt“ steht im Block als Kaufverhalten von Marco);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_KUMPEL;Kumpel, Freund:in;Nähe;11;8;T1, T2, T3, T4, T5, T6, T7, T8;–;Grenzfall („Squad“ steht im Block, „Kumpel“ nicht);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_DUZT;duzt, „Bro“;Nähe;10;7;T1, T2, T3, T4, T5, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_SCHREIBT_AN;schreibt an, antwortet;Nähe;4;4;T1, T6, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_GEMEINSCHAFT;Gemeinschaft (Squad, Clique, Club);Nähe;4;3;T1, T2, T4;–;ja („Squad“-Gefühl);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_INSZENIERT;Nähe wirkt gespielt;Vorbehalt;3;3;T2, T4, T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_NETT;nett;Nähe;3;3;T2, T4, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_WIE_ICH;wie ich, mein Alter;Nähe;3;2;T1, T3;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Beziehung;B_DISTANZ;nicht meine Welt;Vorbehalt;2;2;T5, T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Quelle;Q_WERBUNG_SOCIAL;Werbung, Social Media;–;18;8;T1, T2, T3, T4, T5, T6, T7, T8;–;Grenzfall (YouTube, Instagram, TikTok nur als Mediennutzung von Marco);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Quelle;Q_AUFMACHUNG;Verpackung, Farben;–;6;5;T2, T3, T4, T5, T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Quelle;Q_ONLINE_VERTRIEB;nur online erhältlich;–;2;2;T7, T8;–;ja („bestellt er online“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Quelle;Q_UMFELD;Kolleg:in, Freund:in;–;1;1;T5;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_NEUGIER;Neugier;neugierig-abwartend;6;6;T2, T3, T4, T5, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_SKEPSIS;Skepsis, Misstrauen;ablehnend-distanziert;5;5;T2, T3, T4, T5, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_AKTIVIERT;wach, motiviert;positiv;2;2;T1, T6;–;ja („will wach durch die Schicht kommen“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_GENERVT;genervt;ablehnend-distanziert;2;2;T3, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_GLEICHGUELTIG;Gleichgültigkeit;ablehnend-distanziert;2;2;T5, T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_GUTES_GEWISSEN;Leichtigkeit, kein schlechtes Gewissen;positiv;2;2;T1, T2;–;Grenzfall („ohne Zucker“, „will gesünder leben“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_ENTTAEUSCHT;Enttäuschung;ablehnend-distanziert;1;1;T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_FRISCHE;Frische, Sommergefühl;positiv;1;1;T4;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_GUTE_LAUNE;gute Laune;positiv;1;1;T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_VORFREUDE;Vorfreude;positiv;1;1;T1;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Gefühl;GEF_ZUGEHOERIGKEIT;Zugehörigkeit;positiv;1;1;T6;–;ja („Squad“-Gefühl);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_UMFELD;über Kolleg:in oder Freund:in;Zugang;7;7;T1, T2, T3, T4, T5, T6, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_ARBEIT;Moment bei der Arbeit oder Schicht;Kontext;5;5;T1, T2, T4, T5, T7;–;Grenzfall (Schicht steht im Block und in den Profilen T1, T2, T5, T7);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_ERSTKONTAKT;erstes Probieren;Zugang;5;5;T2, T3, T4, T5, T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_SOCIAL;Video, Werbung, Instagram;Kontext;4;4;T2, T3, T4, T8;–;Grenzfall (Mediennutzung von Marco);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_ABLEHNUNG;entscheidet sich dagegen;Bewertung kritisch;3;3;T5, T7, T8;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_GESCHMACK_KRITISCH;Geschmack kritisch;Bewertung kritisch;3;3;T3, T5, T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_HANDHABUNG_KRITISCH;Handhabung kritisch;Bewertung kritisch;2;2;T1, T7;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_GESCHMACK_NEUTRAL;Geschmack „okay“;Bewertung neutral;1;1;T4;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_GESCHMACK_POS;Geschmack positiv;Bewertung positiv;1;1;T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_HANDEL;im Laden entdeckt;Kontext;1;1;T2;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_PAKET;Paket, Lieferung;Kontext;1;1;T6;–;Grenzfall (Online-Bestellung von Marco);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_SPORT;Moment beim Sport;Kontext;1;1;T6;–;nein;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Erlebnis;ERL_WIRKUNG_POS;Wirkung positiv;Bewertung positiv;1;1;T1;–;ja („will wach durch die Schicht kommen“);KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Kauf;KAUF_NIE;nie gekauft;–;4;4;T3, T4, T5, T8;–;–;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Kauf;KAUF_EINMAL;einmal gekauft;–;2;2;T2, T7;–;–;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
+Kauf;KAUF_REGELMAESSIG;kauft regelmäßig;–;2;2;T1, T6;–;–;KI-simuliert (Tool) – 8 fiktive Befragte, codiert KI-gestützt, Bündel B, Workflow D25
