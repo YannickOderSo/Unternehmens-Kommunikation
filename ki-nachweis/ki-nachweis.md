@@ -2301,6 +2301,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 | D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
 | D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
+| D26 | 23.10.2026 | 135 | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3102,6 +3103,18 @@ steht hier mit dem wörtlichen Auftrag.
   „keine Fehler“); keine Namen von KI-Modellen in `buendel-b/` (Kennzeichnungszeile in `p11-ki.md` war in der
   Nacharbeit schon bereinigt); Prüferurteile und Endbericht gelesen. Folien noch nicht geändert – Einbau erst nach den
   Entscheidungen von Yannick (Folienvorschlag §9).
+
+### D26 – 23.10.2026 – ausgelöst durch Prompt 135
+
+- **Art:** Workflow „buendel-b-einbau“ in fünf Phasen: Bau Folie 08/08b mit Live-Abstimmung und Bau Folien 06/07/B4/B5
+  parallel; Synthese Folie 10 (Selbstbild, Abgleich-Schritt) mit 02, 05, 11, 12, B1, B2, B7, B8 und parallel die Doku;
+  drei adversariale Prüfer (Treue zu Daten und Entscheidungen, Darstellung/Technik/Abstimmung, Konsistenz/Kennzeichnung);
+  Nacharbeit Folien und Doku parallel; Abschluss mit allen Tests und Exporten.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-23_buendel-b-einbau.js`](workflows/2026-10-23_buendel-b-einbau.js)
+  (gemeinsamer Kontext mit den fünf Entscheidungen Yannicks aus Eintrag 135 und deren Auslegung, feste Regeln; je
+  Agent ein eigener Auftrag). Quellen der Agenten: `buendel-b/` (D25), Elias' Ausarbeitungen, Dossier.
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
 
 ---
 
