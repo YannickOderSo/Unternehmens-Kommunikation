@@ -157,6 +157,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 135 | 23.10.2026 | Yannick | Antworten auf vier Rückfragen zum Einbau der Simulation (06/07/08b ehrlich; Rad = Selbstbild, Simulation als Abgleich; Papagei „wie Elias es wollte“; Anrühren nur im Sprechtext) | D26 | in Arbeit |
 | 136 | 23.10.2026 | System | Workflow-Meldung: D26 sofort am Nutzungslimit gescheitert (alle 10 Agenten), danach Neustart der Sitzung | D26 (fortgesetzt) | keine Dateiänderungen; fortgesetzt |
 | 137 | 23.10.2026 | Yannick | „Versuch es noch einmal“ | D26 (fortgesetzt) | fortgesetzt |
+| 138 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2281,6 +2282,15 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D26 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 138 – 23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D26 folgen nach Abschluss und Prüfung.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D26 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
