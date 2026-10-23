@@ -154,6 +154,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 132 | 23.10.2026 | System | Workflow-Meldung: D25 – Prüfer und Nacharbeit am Nutzungslimit gescheitert, danach Neustart der Sitzung | D25 (fortgesetzt) | fortgesetzt |
 | 133 | 23.10.2026 | Yannick | „Weiter“ | D25 (fortgesetzt) | fortgesetzt |
 | 134 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D25 | nur Nachweis committet; D25 läuft |
+| 135 | 23.10.2026 | Yannick | Antworten auf vier Rückfragen zum Einbau der Simulation (06/07/08b ehrlich; Rad = Selbstbild, Simulation als Abgleich; Papagei „wie Elias es wollte“; Anrühren nur im Sprechtext) | D26 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2234,6 +2235,34 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   nach Abschluss und eigener Prüfung. Zwischendurch README und Entscheidungsvorlage von D25 gelesen.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D25 (läuft)
+
+### 135 – 23.10.2026 – Yannick (Antworten auf vier Rückfragen von Claude)
+
+Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simulation berichtet und vier Fragen gestellt.
+
+> Frage 1: „Folien 06, 07 und 08b (Lukas' Teil): Wie sollen die KI-simulierten Ergebnisse auf die Folien?“ – Antwort
+> (Auswahl): **„Ehrlich einbauen (Empfohlen)“**
+>
+> Frage 2: „Folie 10 (Markensteuerrad, deine Synthese): Was kommt in die Felder Markeneigenschaften, Nutzen und
+> Tonalität?“ – Antwort (Auswahl): **„Rad = Selbstbild, Simulation als Abgleich“**
+>
+> Frage 3: „Folie 08 und Live-Abstimmung: Elias nennt den Papagei als Tier 1, die simulierten Befragten nennen ihn 5
+> von 8 Mal, das Chamäleon nie. Was soll gelten?“ – Antwort (eigene Eingabe): **„So wie Elias das am
+> wahrscheinlichsten wollte mit seinen Notizen“**
+>
+> Frage 4: „Die stärkste Hürde der Simulation ist „selbst anrühren“, und sie steht quer zu unserem Markenkern
+> „Softdrinks zum Selbermixen“. Wie damit umgehen?“ – Antwort (Auswahl): **„Nur im Sprechtext (Empfohlen)“**
+
+- **Auslegung von Frage 3 durch Claude:** Elias' Ausarbeitung beginnt mit „Als Mensch ist HOLY ein Impro-Comedian,
+  als Tier ein Papagei und ein Chamäleon. Die drei Analogien ergänzen sich“ (Papagei = Tier 1, Chamäleon = Tier 2).
+  Deshalb: Papagei und Chamäleon gleichwertig als unsere Analyse (Titel, Karten, Auflösung der Abstimmung), Papagei
+  ersetzt in der Live-Abstimmung den Fuchs (gleiche Position; das Google-Skript speichert nur die Nummer, keine
+  Änderung dort nötig). Leicht rückgängig zu machen, falls Elias es anders meint.
+- **Vorgehen Claude:** Workflow D26 (Einbau Bündel B nach den Entscheidungen, Folie 08 und Abstimmung nach Elias,
+  Folie 10 als Selbstbild mit Abgleich, Querverweise 02, 05, 12, B1, B2, B4, B5, B7, B8, Doku, Prüfung, Exporte).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D26
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
