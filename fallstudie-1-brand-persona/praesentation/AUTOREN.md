@@ -1018,6 +1018,11 @@ Exporte nach Abschnitt 15: PDF 22 von 22 Seiten (ohne 01b), 23 Folienbilder (ge�
 
 ## 18. Chamäleon statt Waschbär (Di, 20.10.2026)
 
+> **Nachtrag 22.10.2026:** Die Begründung stammt seit Do, 22.10.2026 aus Elias Knaubers eigener Ausarbeitung
+> „Analogien“ (Abschnitt 23, `../analogien.md`). Die unten beschriebene KI-gestützte Begründung (31 Energy-Sorten,
+> „Wacken, CSD, Simpsons“, „Gefährlich geil!“, „im Ton immer frech“) und die Brücke „Raptor als fester Anker“ zu
+> Empfehlung 3 sind überholt; sie stehen nur noch als gekennzeichnete Ergänzung in den Notizen von Folie 08.
+
 Entscheidung Yannick (KI-Nachweis 94/95): Elias Knauber (Bündel C) ordnet HOLY in seiner Ausarbeitung eher als
 **Chamäleon** ein. Das Tier unserer Analyse wechselt deshalb von Waschbär zu Chamäleon – auf Folie 08, in der
 Live-Abstimmung und in den Ausarbeitungen. Nur diese inhaltliche Änderung, kein weiteres Redesign. Die
@@ -1486,3 +1491,161 @@ knappen Backup-Folien (B3, B7) deshalb nach Textänderungen den Abstand zur Fuß
 Mail an Prof. Stenger, Interviewstand und Daten von Lukas, KA-Werte und Chamäleon-Prüfung von Elias, Synthese
 Do 22.10., Stoppuhr-Probe), danach Einbau, Pillen und endgültiger Export durch Account 1 (12.5). KI-Nachweis
 eintragen, dann committen und pushen (Hauptsitzung).
+
+## 23. Material von Elias Knauber: Analogien und Kommunikationsanalyse (Do, 22.10.2026)
+
+**Auftrag:** Yannick, KI-Nachweis 119 („Elias hat sein Material hochgeladen das kann jetzt als content eingesetzt
+werden“). Workflow D24 (Account 1, Skript `ki-nachweis/workflows/2026-10-22_elias-material.js`): Bau der
+Ausarbeitungen und der Folien nach Vorgaben des Hauptagenten, drei Prüfungen (Treue zum Material und Fakten;
+Darstellung und Technik; Konsistenz, Rechte, Doku), danach parallel eine Nacharbeit der Folien und eine Nacharbeit der
+Doku. Der Lauf ist mehrfach am Nutzungslimit abgebrochen und fortgesetzt worden (KI-Nachweis 122–127); jeder
+Neustart hat zuerst den Stand per `git diff` geprüft.
+
+**Grundlage:** zwei PDFs von Elias Knauber (Bündel C), nur im Gruppenordner, **nicht** im Repository und nicht in
+den Exporten: „Kommunikationsanalyse zum Markenbild von HOLY – Instagram, Facebook, TikTok und YouTube im Vergleich“
+(12 S., eigene Bildschirmaufnahmen vom 20. und 21.10.2026, Desk Research vom 16.10.2026) und „HOLY – Analogien:
+Mensch und Tier“ (2 S., Stand 16.10.2026). Übertragen nach `../kommunikationsanalyse.md` und `../analogien.md`.
+
+**Warum:** Elias' Ausarbeitungen ersetzen auf Folie 08 und 09 die Beispieldaten und die KI-gestützte
+Chamäleon-Begründung (Abschnitt 18). Daraus folgen ein neues Stichwort im Feld Markenbild (Folie 09b und 10), eine
+neue Markierung von Lücke 2 und eine neue Empfehlung 3 (Folie 11).
+
+**Regeln des Einbaus:** Fakten nur aus Elias' Material (auf den Folien „Ausarbeitung E. Knauber“ bzw.
+„Kommunikationsanalyse E. Knauber“, im Steuerrad Kürzel **AN** und **KA**), aus dem Recherche-Dossier mit
+Faktenstatus oder als Modellwissen gekennzeichnet. Keine Zahl neu gerechnet oder geschätzt – nur Elias' eigene Werte.
+Keine Bilder aus den PDFs (Bildschirmaufnahmen mit Personen; Social-Media-Bilder von HOLY nur nach Zustimmung des
+Betreuers), keine Namen privater Personen, Kooperationspartner nur, wo nötig. Widersprüche zum Dossier oder zum
+bisherigen Stand nicht still aufgelöst, sondern als offene Frage in Kasten, Notizen und Ausarbeitung (`../analogien.md`
+§10, `../kommunikationsanalyse.md` §13). **Gesperrt:** Folie 01–07 (auch 02 und 05), `marke.js`, die Live-Abstimmung
+(`abstimmen.html`, `js/abstimmen.js`, `live-abstimmung/`, `js/komponenten.js` Abschnitt 3a), die sichtbaren Inhalte
+von Lukas (06, 07, 08b), `../../ki-nachweis/`.
+
+### Bau (D24, „bau:folien“ und „bau:ausarbeitung“)
+
+| Bereich | Änderung |
+|---|---|
+| Folie 08 (`index.html`) | Titel und Live-Umfrage **unverändert** („HOLY wäre ein Chamäleon, kein Adler“; `marke.js`). Tier-Karte nach Elias: wandelbar – „fünf Produktlinien“, kreativ – „laufend neue Sorten“, anpassungsfähig – „eigene Claims je Land“ (Eigenschaften und Belege von Elias, die Paare je Zeile hat die Übertragung gebildet). Eine gestrichelte Zeile mit zwei Einträgen: „Maskottchen · Adler“ und der **Papagei** („gesellig, bunt“, eigene Zeichnung; bei Elias „Tier 1“, nicht in der Abstimmung). Mensch-Karte **„Impro-Comedian“** (Zeichnung `comedian` statt `gamer`) mit drei Profilzeilen aus Elias' Tabelle (Auftreten, Umgang, Humor); die Zeile „Echte Kundschaft“ entfällt (Wortbudget, steht in den Notizen). Pille „Beispieldaten“ entfernt, Kontrast Wettbewerber bleibt „(Beispiel)“. Fußzeile „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 (Belege aus HOLY-Website, -Kanälen, TV-Spot 2026) – Hypothesen (H)“, **ohne** Tiernamen (sie steht schon während der Abstimmung). Notizen: Schritt 2 „Warum Chamäleon?“ neu (ca. 20 s), Absatz „Chamäleon – Einordnung und Begründung“ mit „Begründung: Elias Knauber“ und den früheren Dossier-Belegen als gekennzeichnete Ergänzung, Zuordnungstabelle kurz; Rückfragen neu bzw. angepasst („Kommt das Chamäleon aus eurer Befragung?“, Tarnung/Einzelgänger, Adler, „Was ist an einem Chamäleon frech?“, „Warum zwei Tiere?“, „Ist der Comedian eure Persona?“). Wortbudget 40 (Warnung ab 41). |
+| Folie 08b | Sichtbar nichts. Kasten und Notizen: Hinweis, dass Elias' Zuordnungstabelle vorliegt und Lukas sein Profil damit abgleicht (`../analogien.md` §7.2). |
+| Folie 09 | Kicker „Kommunikationsanalyse · Instagram, Facebook, TikTok, YouTube“ ohne Pille. Titel als Kernaussage „Vier Kanäle, vier Rollen – kein … Schlüsselbild“ (Wortlaut: Nacharbeit unten). Vier Spalten in Elias' Reihenfolge: Profilname, Follower bzw. Abos mit Reichweitenbalken (Instagram „383 Tsd.“ wie auf der Plattform), eine Zusatzkennzahl (1.184 Beiträge · Gruppe ≈ 40.000 Mitglieder · 2 Mio. Likes · 360 Videos) und die Rolle (Schaufenster & Verkauf · Zweitverwertung & Anzeigen · Reichweite & Community · Archiv & Zweitverwertung). Beiträge pro Woche, Ø Engagement-Rate und Formel entfallen (keine vergleichbaren Daten), darunter ein Satz „Follower … als Indiz …, Insights-Daten lagen nicht vor“. Schritt 1: fünf Bildwelten als Liste **ohne Anteile**. Schritt 2: Kandidat „Produkt in der Hand“ als eigenes Piktogramm (kein Screenshot, der Raptor ist Maskottchen). Fußzeile: eigene Bildschirmaufnahmen 20./21.10.2026 · Facebook-Gruppe Desk Research 16.10.2026 · Schlüsselbild nach Kroeber-Riel (1993). Notizen neu (Schritt 0 ca. 20 s, 1 ca. 15 s, 2 ca. 25 s; Hintergrund mit Interaktionswerten als Indiz und dem älteren Dossier-Stand vom 14.10.; Rückfragen „Warum TikTok?“, „Wo sind die Engagement-Raten?“, „Ist der Raptor kein Schlüsselbild?“, „Warum hat Instagram kein genaues Komma?“). Wortbudget 37. |
+| Folie 09b | Titel bleibt („… trifft den Ton, wirkt aber zersplittert“). Datenblatt: Logo „Wortmarke · extrafette, kursive Versalien“ mit Zusatz „Profilbild in drei Farben“; Claims: Dachclaim „Die Softdrink Revolution“ (einziger Claim auf allen vier Kanälen), Versprechen, Badge „+ viele weitere“ **ohne Zahl** (bis 22.10. „+4 weitere“ nach Dossier 6.5 H); Schriften und HEX aus dem Dossier unverändert (Elias nennt keine); Bildwelt „Streetwear-Look, Produkt in der Hand“ mit Piktogrammen `produkt-hand` und `schachbrett`, „→ Folie 09“. Fit: Tonalität **passt** („Überall frech, schnell, nah dran.“), Persona **teilweise** („Stimulanz passt, Auftritt zu jung.“ – Folie 10 und 11 sagen „Bildwelt zu jung“, offen), Kanäle **Bruch** (Wortlaut siehe Nacharbeit). „Ins Steuerrad · Markenbild“: **Streetwear-Look · Gelb & Schwarz · knallig** (bis 22.10. „Comic-Tiere“). Fußzeile um Elias' Analyse ergänzt, Notizen neu. Wortbudget 37. |
+| Folie 10 | **Nur** Feld Markenbild (wortgleich mit 09b) und Lücke 2 „Bildwelt zu jung“, die jetzt „Streetwear-Look“ ↔ „Marco, 28“ markiert; Sprechtext Schritt 6 und 8 mit gleicher Wortzahl; Belege, Kasten. Feld Tonalität („frecher Kumpel · wandelbar · Spaß“) bleibt, Pille „Beispieldaten“ bleibt (06, 07, 08b). |
+| Folie 11 | Zeile 3 nach Elias: Befund „Uneinheitlicher Absender“ (Knopf „Bruch · Folie 09b“) → Empfehlung „Ein Absender, ein Schlüsselbild“ – „Ein Name, eine Profilfarbe, Produkt in der Hand“, Chip „überall“ (bis 22.10. „Sechs Claims parallel“ → „Ein Dachclaim, ein Raptor“, Chips „überall“ + „Shop“). Empfehlung 1 und 2 unverändert. Sprechtext Schritt 3 (ca. 20 s), Rückfragen (Raptor, TikTok, welcher Name und welche Farbe), Belege, Kasten. Wortbudget 57 (Warnung wie vorher). |
+| Folie 12, B1, B7, B8 | Notizen und Kästen: Querverweise nachgezogen (Raptor als Schlüsselbild, „Comic-Tiere“, „Start-up-Gründer“, „Sechs Claims parallel“, Beispieldaten-Hinweise zu 09 und B6, „31 Energy-Sorten“ als Chamäleon-Beleg). B1: „Folie 06, 07, 08b“ statt „06–08“ (sichtbar nichts). B7: Eintrag „Knauber“ mit beiden Ausarbeitungen; B8: Status „eigen“. |
+| B6 | Elias' Tabelle 1, gekürzt (Zeilen = vier Kanäle; Spalten Kanal, Anzeigename, Kennzahlen, Profilbild, Inhaltlicher Schwerpunkt, Rolle im Kanalmix) statt der Beispiel-Codiertabelle; Titel als Kernaussage; drei Infokästen (Datengrundlage, Kennzahlen als Indizien, Ergebnis → Folie 09); Pille entfernt; Schritt 1 markiert Anzeigename und Profilbild. Notizen ehrlich: Einzelne Beiträge wurden **nicht** nach Raster P12 codiert. Navigationsname „KA-Raster“ (Folie 12) und `data-titel` „Backup: Raster Kommunikationsanalyse“ bleiben vorerst (LIESMICH 12.1). |
+| `js/folien/08-analogien.js` | Zeichnungen `papagei` und `comedian` (eigene Gestaltung; der Papagei nur auf der Folie, deshalb nicht in `js/abstimmen.js`). Weiteres Tier als zweiter Gegenpol in **einer** gestrichelten Zeile (CSS `.g4-gegenpole`); optionale dritte Zeile `zusatz`; die Kundschaft nur, wenn sie in den Daten steht. Datenschlüssel: beim Bau `zweitesTier`, seit der Nacharbeit `weiteresTier` (der alte Schlüssel wird weiter gelesen). |
+| `css/folien/08-analogien.css` | Stichwortspalte `minmax(176px, max-content)` mit Subgrid (vorher fest 176 px – „anpassungsfähig“ passt so ungekürzt); `.g4-gegenpole` (zwei Spalten, gemeinsame gestrichelte Linie); `.g4-gegenpol-zusatz`. |
+| `js/folien/09-kommunikationsanalyse.js` | f09: so viele Kanal-Spalten wie in den Daten (`.g5-kanaele--viele` ab vier), `follower.tausend` („383 Tsd.“), `zusatz`, `rolle`; Bildwelt ohne `anteil` als Liste (`beschreibung`, `gewichtung`); Feld `schluesselbild` (Kandidat mit `symbol` `produkt-hand` bzw. `schachbrett`, `hinweis`). f09b: `logo.zusatz`, `claims.weitere` als Text, `bildwelt.symbole`. Die alte Datenform (Balken mit Anteilen, Raptor-Platzhalter) läuft weiter. |
+| `css/folien/09-kommunikationsanalyse.css` | vier Spalten (`--g5-spalten`), Zusatzkennzahl, Rolle, Liste der Bildwelten, Kandidat-Feld; Kommentare zur alten Form. |
+| `js/folien/13-backup.js`, `css/folien/13-backup.css` | B6: `spalten[].markieren` (Klasse `.bk6-markiert`, hervorgehoben in Schritt 1) und `beschriftung` (Screenreader); feste Spaltenbreiten, Umbruch erlaubt. |
+| Ausarbeitungen (neu) | `../analogien.md` (Vorlage `methoden.md` §4) und `../kommunikationsanalyse.md` (Vorlage §5): je Herkunft und Lesehilfe (EK, CC, Dossier-Status), ausgefüllte Vorlage, Dossier-Abgleich, „Was auf die Folien geht“, Abweichungen zum bisherigen Stand, offene Fragen, Quellen. |
+| `../folienentwuerfe.md`, `QUELLEN.md` | Entwürfe zu Folie 8, 9, 9b, 10 (nur Markenbild und Lücke 2), 11 (nur Zeile 3) und B6 mit Statustabelle. QUELLEN §3 (Zeichnungen Papagei, Comedian, „Produkt in der Hand“, Schachbrett), §4 (keine Bilder aus Elias' PDFs; Raptor-Screenshot entfällt), §5 (neue Ausnahme „Ausarbeitungen von Elias Knauber“, Absatz Beispieldaten). |
+
+**Abweichungen von den Vorgaben (begründet im Bau):** „kreativ“ statt „experimentierfreudig“ auf der Tier-Karte
+(beides Elias' Wörter); Maskottchen-Zeile nur „Maskottchen · Adler“ (Wortbudget, „Raptor“ in den Notizen);
+Humor-Zeile „selbstironisch, frech“ (Elias' Spalte Tonalität) statt „über Mächtige und sich selbst“; Pille auf 08
+ganz entfernt statt erst ab Schritt 2; Titel 09 kürzer als die Vorgabe („Jeder Kanal hat seine Rolle – ein
+Schlüsselbild fehlt“), einzeilig in allen Themen; zusätzlich je Spalte eine Kennzahl aus Tabelle 1; Logo-Zusatz
+auf 09b ohne den Namen „Holy Squad“; die Farbgruppe „Shop-Flächen“ (Dossier) bleibt als offene Frage; Folie 11
+„Ein Name, eine Profilfarbe, Produkt in der Hand“ mit 8 Wörtern (Richtwert 7), einzeilig. Exporte beim Bau nicht
+neu erzeugt (erst beim Abschluss, unten).
+
+**Geprüft (Bau, 22.10.2026):** `node --check` für `08-analogien.js`, `09-kommunikationsanalyse.js`, `13-backup.js`
+ohne Fehler. `pruefen.mjs --schritte --nur f08,f08b,f09,f09b,f10,f11,f12,b1,b6,b7,b8` in Editorial, Bento, Keynote und
+dunkel: je 0 Fehler (Warnungen nur für abgeblendete Zwischenschritte und das Wortbudget 08b 41, 10 49, 11 57).
+Abschlusslauf `--schritte --optional`: 0 Fehler, 40 Warnungen, 0 externe Anfragen. Per Skript: Folie 01–07, `marke.js`,
+Abstimmseite, `komponenten.js` und `deck.js` unverändert; 08b nur in den Notizen geändert; jede sichtbare Quellennummer
+in B8; keine KI-Modellnamen, keine neuen Bilddateien, keine Namen privater Personen.
+
+### Prüfung (drei Prüfer, 22.10.2026)
+
+Treue zum Material und Fakten: 14 Befunde (4 mittel, 10 niedrig) – u. a. Papagei auf der Folie als „Zweites Tier“,
+obwohl er bei Elias „Tier 1“ ist; Titel 09 „kein Schlüsselbild“ schärfer als Elias („kein festes“); Datengrundlage der
+Interaktionswerte in den Notizen zu eng beschrieben; Elias' Kritik am Versprechen und die Fyl-Anzeige fehlten in den
+Notizen. Darstellung und Technik: 14 Befunde (4 mittel, 9 niedrig, 1 nur zur Information) – u. a. „383“ ohne
+sichtbares „Tsd.“, Gewichtungen der Bildwelten nur in Metagröße, Kandidat-Feld in der Bildsprache „Platzhalter“,
+Leerraum in der Mensch-Karte, Robustheit von `kanaeleBauen`. Konsistenz, Rechte, Doku: 14 Befunde (2 hoch, 4 mittel,
+8 niedrig) – `../fragerunde.md` und Folie 02 widersprachen den neuen Folien, LIESMICH und AUTOREN fehlten, Folie 05
+nennt noch „Raptor bleibt Absender“. Die Befunde zu Markdown-Dateien setzt die Doku-Nacharbeit um, die zu
+`index.html`, JS und CSS die Folien-Nacharbeit; was gesperrte Folien betrifft (02, 05), steht als Entscheidung bei
+Yannick (LIESMICH 12.1).
+
+### Nacharbeit Doku (22.10.2026, abends)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| `../fragerunde.md` widersprach den neuen Folien (hoch) | Nachtrag „Stand Do, 22.10.2026“ im Kopf; **neu gefasst** (alte Antworten gestrichen): F16 (Elias' Begründung, Papagei, Comedian), F17 (qualitativ, keine Stichprobe, keine Engagement-Raten), F30 (Zirkel bei derselben Person), F31 („Ist der Raptor kein Schlüsselbild?“ – Maskottchen, Kandidat Produkt in der Hand, S. 97), F32 (Streetwear-Look ↔ Marco, 28), F33 (uneinheitlicher Absender statt „sechs Claims“), F34 („Warum TikTok?“). **Nachgezogen:** F09, F12, F13, F15, F21–F24, F27 (Fyl), F29, Spielregeln 1 und 8, Übersicht und Verteilung, Aufgabenliste (erledigt bzw. gegenstandslos markiert, neue Zeilen), Übung, Reserve. **Neu:** F36 (Comedian, zwei Tiere, Papagei nicht in der Umfrage), F37 (KI in Analogien und Kommunikationsanalyse?), F38 (Woher 0,4–0,6 %?) – am Ende von „mittel“, damit die Nummern gleich bleiben. |
+| LIESMICH auf dem Stand 21.10. (mittel) | Kopf: Stand 22.10., Absatz „Seit Do, 22.10.“, Warnung „Exporte zeigen 08–11 und B6 noch alt“; §6 (Chamäleon-Begründung von Elias, Papagei nicht in der Abstimmung, Adler = Maskottchen); §12 Nachtrag; 12.1 neu „Neu seit 22.10.“ (Freigabe Markenbild und Lücke 2, ein Wort für die Persona-Lücke, Vorgaben 08/09/09b/11/B6, Folie 02 und 05, B2 P11/P12, Navigation B6, Exporte, getrennter Commit von `../buendel-b/`), Raptor-Screenshot, Post-Zählung und Formel als überholt; 12.2 (Analogien jetzt von Elias, Abgleich Aaker-Profil mit Elias' Zuordnungstabelle, Stand der Befragung: kein Material von Lukas, KI-Simulation D25), 12.3 („Kommunikationsanalyse liefern“ und „Chamäleon-Begründung prüfen“ als geliefert mit Rest; neu „Einbau prüfen und freigeben“ und „Offene Fragen beantworten“; Raptor-Screenshot, „Sechs Claims“, Claim-Hierarchie, Codierzeilen B6 überholt), 12.4, 12.5, 12.8, §13. |
+| Kein Abschnitt in AUTOREN (mittel) | dieser Abschnitt; Nachtrag am Anfang von Abschnitt 18. |
+| Papagei als „zweites Tier“ in QUELLEN, Ausarbeitungen und Folienentwurf (mittel) | „anderes Tier – bei Elias ‚Tier 1‘“ in `QUELLEN.md` §3 und §5, `../analogien.md` §1 und §5, `../folienentwuerfe.md` Folie 8. |
+| „HOLY hat keins“ (Schlüsselbild) und Rückfrage 3 zu Folie 9 schrieben Elias Aussagen zu, die er nicht macht (mittel, niedrig) | `../folienentwuerfe.md` Folie 9: Sprechtext „Ein festes Schlüsselbild hat HOLY nicht – eine Gruppe von Motiven übernimmt die Aufgabe“; Rückfrage 3 mit Elias' Wortlaut und „Unsere Folgerung (H)“; Schritt 1 mit der TikTok-Gewichtung (Abb. 3). |
+| Elias' Kritik am Versprechen, „Haltung und Tempo“ und die Fyl-Anzeige fehlten (mittel) | `../folienentwuerfe.md` Folie 10 (Rückfrage Abgrenzung) und Folie 11 (Lücke 1, Konjunktiv „müsste … bewusster und einheitlicher“); `../fragerunde.md` F15, F27. In `../kommunikationsanalyse.md` standen sie schon (§5, §7, §10). |
+| Zuordnung Eigenschaft–Beleg als „nach Elias“ ausgegeben (niedrig) | `../analogien.md` §10 Frage 7 und `QUELLEN.md` §5: Paare je Zeile von der Übertragung gebildet, von Elias zu bestätigen. |
+| Begründung „kreativ, weil die Spalte schmal ist“ stimmt nicht mehr (niedrig) | `../analogien.md` §10 Frage 7: Wortwahl, nicht Platz („experimentierfreudig“ passt seit der wachsenden Spalte). |
+| Zitat „Maskottchen der gesamten Marke“ ohne „so etwas wie“ (niedrig) | Wortlaut vollständig in `../analogien.md` §1, `../kommunikationsanalyse.md` §4, `../folienentwuerfe.md` Folie 9, `../fragerunde.md` F16, F31. |
+| Logo „kein Widerspruch“ in `../kommunikationsanalyse.md` §4 (niedrig) | „Beide Fassungen kommen vor“, neue offene Frage 8 an Elias (Yannick-Fragen jetzt 9–11; Verweis in `../folienentwuerfe.md` angepasst). |
+| „Am 26.10. neu ablesen“ gegen den Kasten FOLIE 09 (niedrig) | `../kommunikationsanalyse.md` §3.1: „neu ablesen **oder** Stand 20./21.10. in der Fußzeile – Entscheidung Elias“, wie in `../folienentwuerfe.md` und LIESMICH 12.3. |
+| Dossier-Hypothese „kein durchgängiger Slogan“ (6.5 H) gegen Elias' Dachclaim auf allen Kanälen (niedrig) | `../kommunikationsanalyse.md` §12 Nr. 7: Status H ausdrücklich, Elias' jüngere Aufnahme gilt für die Folien. |
+| README FS1 „IG / FB / YT“, „B6 Raster Kommunikationsanalyse“ (niedrig) | `../README.md`: Tabelle mit TikTok und eigenen Bildschirmaufnahmen, Absatz „Stand 22.10.2026“ zu Elias' Ausarbeitungen, B6 als „Profilmerkmale der Kanäle“ (Navigationsname im Deck vorerst unverändert). |
+| VORTRAGSREIFE und `../abgleich-vorlesung.md` #48 mit erledigten Punkten (niedrig) | je ein Nachtrag mit Status „erledigt bzw. gegenstandslos seit 22.10.2026“. |
+| Folie 05 und `../limbic-map.md` („Raptor bleibt Absender“) (mittel) | nicht geändert (Folie 05 gesperrt, Freigabe Yannick): offener Punkt in LIESMICH 12.1, `../folienentwuerfe.md` Folie 5 („Zu prüfen“) und `../fragerunde.md` (Aufgabenliste). |
+| Folie 02 (Methodenkarten) und B2 (P11/P12) (hoch bzw. niedrig) | nicht geändert (gesperrt bzw. Folien-Datei): offene Punkte in LIESMICH 12.1 und `../fragerunde.md` F37. |
+| `../buendel-b/` ungetrackt (niedrig) | nicht angefasst; LIESMICH 12.1: getrennt committen. |
+
+**Geprüft (Doku-Nacharbeit):** Jede neue Zahl in den geänderten Markdown-Dateien per Skript gegen Elias' Texte,
+das Dossier und die bestehenden Dateien abgeglichen (keine neue Rechnung); Spaltenzahl aller geänderten Tabellen,
+relative Links und Verweise auf Abschnittsnummern geprüft; Volltextsuche nach Namen privater Personen, KI-Modellnamen
+und neuem Statista-Material ohne Treffer; die Beschreibungen des Folienstands gegen `index.html` beim Abschluss
+abgeglichen (unten). `index.html`, JS und CSS hat diese Nacharbeit nicht geändert; `../../ki-nachweis/` unverändert.
+
+### Nacharbeit Folien (22.10.2026, abends; paralleler Agent – hier nach den Kästen in `index.html` zusammengefasst)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| Papagei als „Zweites Tier“ beschriftet – bei Elias „Tier 1“ (mittel) | Beschriftung „Weiteres Tier · Papagei“, Datenschlüssel `weiteresTier` (`08-analogien.js` liest `zweitesTier` weiter); Kommentare und Kasten. |
+| Titel 09 und Fit-Zeile 09b „kein Schlüsselbild“ schärfer als Elias (mittel) | „Vier Kanäle, vier Rollen – kein festes Schlüsselbild“ (einzeilig in allen Themen); 09b „Vier Namen, drei Profilfarben, kein festes Schlüsselbild.“ mit festen Leerzeichen (kein einzelnes „Schlüsselbild.“ in Zeile 2); Sprechtext 09 Schritt 2 „Ein festes hat HOLY nicht – eine Gruppe von Motiven übernimmt das“. |
+| „383“ wirkte ohne sichtbares „Tsd.“ wie der kleinste Kanal (mittel) | „383 Tsd.“ in der großen Zahl (`.g5-tausend`), „Tsd.“ als Einheit gekennzeichnet. |
+| Gewichtung der Bildwelten nur in 22-px-Metagröße und nur für Instagram (mittel, niedrig) | rechte Spalte „vor allem auf“ in Textgröße mit Kanal-Icon (Daten `schwerpunkt`, `schwerpunktKopf`): Produkt-Pop und geliehene Welten Instagram, Szene & Event TikTok (Elias, Kap. 5.2 und Abb. 3); Sprechtext Schritt 1 nennt TikTok. |
+| Kandidat-Feld in der Bildsprache „Platzhalter/Beispielwert“ (mittel) | durchgezogener Rahmen ohne Schraffur, Chip „Kandidat“ als Status. |
+| Datengrundlage der Interaktionswerte in den Notizen 09 und B6 zu eng (mittel) | Notizen nach Grundlage getrennt: vier Einzelbeiträge · Facebook-Suchansicht · Aufrufe aus den Profilen; Rückfrage „Wo sind die Engagement-Raten?“ entsprechend. |
+| Elias' Kritik am Versprechen, „Haltung und Tempo“ und die Fyl-Anzeige fehlten in den Notizen (mittel) | Notizen 09b (dazu Dossier 6.5 H ↔ Dachclaim auf allen Kanälen), 10 (Rückfrage „Wodurch grenzt sich die Positionierung ab?“ mit Fyl) und 11 (Belege Lücke 1). |
+| Mensch-Karte: Merkmalsspalte fest, vierte Zeile überlappte; Leerraum (mittel) | Merkmalsspalte wächst wie die Tier-Spalte (`minmax(176px, max-content)`, Subgrid); Leerraum bleibt bis zur Freigabe, Vorschlag vierte Zeile „Rollen – schlüpft in jede Rolle“ (Folie dann ca. 44 Wörter) im Kasten. |
+| Auftreten ohne Elias' „aber nie planlos“ (niedrig) | „überdreht, nie planlos“ (gleiche Wortzahl). |
+| Sprechtext 08 Schritt 1 und Rückfrage „im Interview offen gefragt“ (niedrig) | Schritt 1 „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation.“; Rückfrage mit Elias' Ableitung, der Interview-Satz nur noch als Regie, falls Bündel B Interviews führt. |
+| Notizen 08: „Das zählen wir nicht als Stärke“ gegen Elias' „anpassungsfähig – eigene Claims je Land“; Kasten in der Gegenwart (mittel, niedrig) | Absatz „Dagegen bzw. ambivalent“ neutral (Elias' Wertung ↔ frühere KI-gestützte Einordnung, offen); veraltete Spiegelstriche im Kasten als „Stand bis 22.10.2026“ gekennzeichnet; Zuordnung Eigenschaft–Beleg als Vorschlag des KI-Agenten vermerkt; Begründung „kreativ“ als Wortwahl (nicht „zu breit“). |
+| f11 Sprechtext „muss es nur bewusst und einheitlich“ (niedrig) | „müsste es nur bewusster und einheitlicher einsetzen“ (Elias' Wortlaut, gleiche Wortzahl). |
+| Zitat „Maskottchen der gesamten Marke“ ohne „so etwas wie“ (niedrig) | vollständig in Daten-„hinweis“ und Notizen 08, 09, 11. |
+| Gemeinsame gestrichelte Zeile 08 vertikal versetzt (niedrig) | `.g4-gegenpole` oben bündig. |
+| Gleiches Icon für TikTok und YouTube (niedrig) | TikTok `gruppe`, YouTube `video`. |
+| Robustheit `kanaeleBauen` (niedrig) | fehlt ein Follower-Wert: „–“ ohne Balken statt „0“; mehr als vier Kanäle: Warnung in der Konsole; Klasse `.g5-kanaele--viele` per Umschalter. |
+| B6-Titel „Dieselben Kernbotschaften …“ von der Tabelle nicht belegt; alte Codiertabelle passt nicht mehr (niedrig) | Titel „Vier Namen, drei Profilfarben, vier Rollen“; Kommentar in `13-backup.css`/`13-backup.js`, was ein Rückgriff auf die alte Tabelle bräuchte. Navigationsnamen „KA-Raster“ und `data-titel` bleiben bis zur Freigabe. |
+| Kasten 12 „08, 09, 09b und B6 ohne Beispieldaten“ ungenau; Kasten 10 „06–08“ (niedrig) | „08 bis auf die Wettbewerber-Tiere, 09 und B6 ohne Beispieldaten; 09b ohne Beispielwerte“; Kasten 10 „06, 07 und 08b“, Daten-„hinweis“ Lücke 2 auch nach Elias. |
+| Neu ablesen der Follower: Kasten 09 widersprach der Ausarbeitung (niedrig) | Kasten: „vor dem 26.10. neu ablesen ODER Stand in der Fußzeile lassen – Entscheidung Elias“. |
+| Folie 02, 05, B2 (gesperrt bzw. außerhalb der Vorgaben) | nicht geändert; Hinweise in den Kästen 08, 09, 11 und LIESMICH 12.1. |
+
+**Bewusst nicht geändert:** Folie 01–07 (auch 02 mit den Methodenkarten und 05 mit „Raptor bleibt Absender“),
+`marke.js` (Umfrage ohne Papagei), Live-Abstimmung, `js/komponenten.js`, `js/deck.js`, Lukas' sichtbare Inhalte
+(06, 07, 08b), `../recherche/*`, `../limbic-map.md` (Abgleich mit Elias erst nach Yannicks Freigabe),
+`../dossier-buendel-b.*`, `../gruenderbefragung.md`, `../prompts.md`, `../../ki-nachweis/`, `../buendel-b/` (D25),
+`export/` (beim Abschluss am 22.10. neu erzeugt, unten).
+
+**Geprüft (Abschluss der Doku-Nacharbeit, 22.10.2026, nach der Folien-Nacharbeit):** Die Beschreibungen des
+Folienstands in `../analogien.md` §8, `../kommunikationsanalyse.md` §11, `../folienentwuerfe.md` (8, 9, 9b, 11, B6),
+`../fragerunde.md`, `LIESMICH.md` und diesem Abschnitt gegen `index.html` abgeglichen (Titel, Daten von f08, f09,
+f09b, B6, Sprechtexte 08, 09, 09b, 11). `pruefen.mjs index.html --schritte --nur f08,f09,f09b,f10,f11,b6`
+(Editorial hell): **0 Fehler**, 19 Warnungen – 17 abgeblendete Zwischenschritte (09b, 10) und das Wortbudget von
+10 (49) und 11 (57) wie vorher; 0 externe Anfragen (`_test/doku-abgleich/`).
+
+**Offen:** Freigabe durch Yannick und Elias (LIESMICH 12.1, 12.3), Elias' offene Fragen (`../analogien.md` §10,
+`../kommunikationsanalyse.md` §13), ein Wort für die Persona-Lücke (09b „Auftritt zu jung“ ↔ 10/11 „Bildwelt zu
+jung“), Folie 02, 05 und B2 (Yannick), Abgleich mit Bündel B (D25), danach Exporte erneut (12.5). KI-Nachweis
+eintragen, dann committen und pushen (Hauptsitzung) – `../buendel-b/` getrennt.
+
+### Abschluss (22.10.2026; nach dem Nutzungslimit fortgesetzt, Systemdatum 23.10.)
+
+| Schritt | Ergebnis |
+|---|---|
+| Volltextsuche wie der Konsistenz-Prüfer (Raptor, Comic-Tiere, Start-up-Gründer, Sechs Claims, 31 Energy-Sorten, „zweites Tier“, Beispieldaten, Codierung, Engagement, „06–08“), in `index.html` je Folienabschnitt, in JS/CSS und in den Markdown-Dateien; dazu der sichtbare Text aller Folien im Endzustand | Treffer außerhalb von Folie 01–07 sind als früherer Stand gekennzeichnet oder offene Entscheidungen. Nachgezogen: Kasten B1 (zwei Punkte „06–08“ → „06, 07, 08b“), Datenkommentar B2 (dasselbe), CSS-Kommentar 09 (Akzentbalken der alten Balkenform), Kästen 08 und 09 (Hinweis auf `export/`). Sichtbar nichts geändert. |
+| `pruefen.mjs index.html --schritte --optional` | Editorial 0 Fehler / 40 Warnungen, Bento 0 / 32, Keynote 0 / 35, dunkel 0 / 17; je 5 Wortbudget-Warnungen (03: 48, 04: 46, 08b: 41, 10: 49, 11: 57), der Rest abgeblendete Zwischenschritte (Deckkraft 0,6) auf 02, 06, 08b, 09b, 10; 0 externe Anfragen (`_test/ab-<thema>/`). |
+| `live-abstimmung-test.mjs`, `referent-test.mjs` | 53 von 53 bzw. 43 von 43 bestanden (`_test/ab-live.log`, `_test/ab-referent/`). |
+| Exporte (Abschnitt 15) | **neu erzeugt mit Elias' Material** (Freigabe Yannick/Elias offen): `praesentation.pdf` 22 Seiten (ohne 01b, Zuordnung PDF-Seite ↔ Folie unverändert, LIESMICH 11), `folien/<id>.png` 23 Bilder 1920 × 1080, `uebersicht.png` mit Stand 22.10.2026; je 0 Fehler, 0 externe Anfragen. Sichtbar anders als am 21.10.: 08, 09, 09b, 10, 11, B6, B7, B8. Folie 02 zeigt die Methodenkarten („KI + Kurzinterviews“, „KI hilft codieren“) nur in Zwischenschritten – im Export nicht zu sehen, im Vortrag schon (gesperrt, Yannick). |
+

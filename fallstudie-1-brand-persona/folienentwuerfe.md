@@ -9,7 +9,18 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOL
 | 3 | Markenkern (bis 21.10.: Markenkompetenz) | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10., Begriffe 21.10.) – Prüfung durch Yannick offen |
 | 4 | Brand Persona | A | Entwurf ✔ (16.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
 | 5 | Limbic Map | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
-| 6–11 | | | offen |
+| 6–7 | Repertory Grid, Laddering | B | offen |
+| 8 | Analogien & Live-Umfrage | B (Inhalt Elias, C) | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias und Yannick offen, Abgleich Lukas offen |
+| 9, 9b | Kommunikationsanalyse | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias und Yannick offen |
+| 10 | Markensteuerrad | C (Inhalt A) | nur Feld Markenbild und Lücke 2 (22.10.); Rest offen |
+| 11 | Fazit & Empfehlungen | C | nur Zeile 3 / Empfehlung 3 (22.10.); Rest offen |
+| B6 | Backup: Kanäle (Tabelle 1) | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias offen |
+
+**Seit Do, 22.10.2026:** Einträge zu Folie 8, 9, 9b, 10 (Markenbild, Lücke 2), 11 (Zeile 3) und B6 nach den
+Ausarbeitungen von Elias Knauber (Bündel C) – [`analogien.md`](analogien.md) und
+[`kommunikationsanalyse.md`](kommunikationsanalyse.md), übertragen KI-gestützt (Claude Code, KI-Nachweis 119, Workflow
+D24). Es sind Vorgaben des Hauptagenten zur Freigabe durch Yannick und Elias; der Einbau in die Web-Präsentation lief
+parallel. Maßgeblich ist jeweils die Web-Folie in `praesentation/index.html`.
 
 Stand der Folien 2–5: Mo, 19.10.2026. **GB** = Gründerbefragung: Gründer Mathias Horsch hat den Fragenkatalog der
 Gruppe per Sprachnachricht beantwortet, zitiert als „Horsch 2026 (GB)“. Das ist eine Selbstauskunft (Innensicht,
@@ -586,5 +597,405 @@ Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (P
   ebenso `persona-steckbrief.md` (Psychografie, Limbic Type)
 - [ ] Auswertung der Bewertungen (K1, K3, K8) und Lukas' echte Interviews abwarten; Entscheidungsregel `limbic-map.md` 3.2 anwenden
 - [ ] Elias' Post-Stichprobe mit den Spalten „Anlass“ und „Wirkversprechen“ (bis So 18.10.); Schwelle für „Lücke bestätigt“ vorher festlegen
+  – *Stand 22.10.2026:* Elias hat keine Stichprobe codiert, sondern Profile und neueste Inhalte qualitativ analysiert
+  ([`kommunikationsanalyse.md`](kommunikationsanalyse.md) §2); die Spalten „Anlass“ und „Wirkversprechen“ gibt es
+  nicht. Ob die Lücke beim Anlass Schicht ohne Stichprobe als Hypothese stehen bleibt, entscheidet Yannick.
+- [ ] (neu 22.10.2026, Entscheidung Yannick – Folie 05 ist bisher nicht nachgezogen) Sprechtext „Comic-Tiere,
+  31 Energy-Sorten, frecher Ton“ und die Folge „der Raptor bleibt Absender“ (Notizen f05, `limbic-map.md` §6) mit
+  Elias' Kommunikationsanalyse abgleichen: Feld Markenbild jetzt „Streetwear-Look“, Adler laut Elias „so etwas wie das
+  Maskottchen“, Empfehlung 3 „Ein Absender, ein Schlüsselbild“ (ein Name, eine Profilfarbe). „Comic-Tiere“ kann als
+  Stimulanz-Signal bleiben (dort kein Markenbild-Stichwort); „Raptor bleibt Absender“ passt nicht mehr.
 - [ ] Botschaft 3 mit zugelassenen Angaben abgleichen (Dossier 3.7, S1)
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00 (drei Klicks und die hochzählende Kennzahl einrechnen)
+
+---
+
+## Folie 8 – Analogien & Live-Umfrage
+
+> **Neu am Do, 22.10.2026** nach Elias Knaubers Ausarbeitung „HOLY – Analogien: Mensch und Tier“ (Stand 16.10.2026;
+> KI-Nachweis 119, Workflow D24). Vorgaben des Hauptagenten, zur Freigabe durch Yannick und Elias. Hier steht der Stand
+> der Web-Folie f08 beim Abgleich nach der Nacharbeit am 22.10.2026 (abends); maßgeblich ist die Folie selbst (Kasten
+> „FOLIE 08“).
+
+**Bündel:** B (präsentiert Lukas), Inhalt Elias Knauber (C) · **Zeit:** 1:10 inkl. Abstimmung · **Backup-Bezug:** B2
+Prompt-Log (P11 – Stand offen) · **Ausarbeitung:** [`analogien.md`](analogien.md)
+
+### Titel (Kernaussage)
+
+> **HOLY wäre ein Chamäleon, kein Adler** (ab Schritt 2; in Schritt 0–1 steht die Frage „Wenn HOLY ein Tier wäre –
+> welches?“)
+
+Unverändert seit 20.10.2026: Das Chamäleon hat Yannick nach Elias' Einordnung festgelegt (KI-Nachweis 94/95). Dass
+der Titel **nur** das Chamäleon nennt, obwohl Elias den Papagei als „Tier 1“ führt, ist ein Vorschlag zur Freigabe
+(„Nur das Chamäleon“ in Eintrag 95 betraf das Design, Korrektur in Eintrag 122). Alternative, falls Elias beide Tiere
+im Titel will (`analogien.md` §10, Frage 1): *HOLY wäre Chamäleon und Papagei – kein Adler*.
+
+### Text auf der Folie
+
+- **Tier-Karte Chamäleon:** wandelbar – fünf Produktlinien · kreativ – laufend neue Sorten · anpassungsfähig – eigene
+  Claims je Land (Elias' Wörter; die Paare je Zeile hat die Übertragung gebildet – von Elias zu bestätigen. „kreativ“
+  statt „experimentierfreudig“ ist Wortwahl: auch „experimentierfreudig“ passt seit der wachsenden Stichwortspalte)
+- **Gestrichelte Zusatzzeile:** Maskottchen · Adler | Weiteres Tier · Papagei – gesellig, bunt (beim Einbau „Zweites
+  Tier“ – bei Elias ist der Papagei aber „Tier 1“; seit der Nacharbeit neutral)
+- **Mensch-Karte Impro-Comedian:** Auftreten – überdreht, nie planlos · Umgang – lebt vom Publikum · Humor –
+  selbstironisch, frech (Elias: „laut, überdreht, spontan, aber nie planlos“; unten bleibt Leerraum – eine vierte
+  Zeile „Rollen – schlüpft in jede Rolle“ wäre möglich, Folie dann ca. 44 Wörter, Freigabe Yannick/Elias)
+- **Kontrast** (Schritt 3, klein, „(Beispiel)“): Red Bull – Löwe · waterdrop – Schwan (Dossier 5.2 **H**, Tiere
+  Beispieldaten)
+- **Fußzeile:** *Quelle: Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 (Belege aus HOLY-Website, -Kanälen,
+  TV-Spot 2026) – Hypothesen (H) · … · Maskottchen: Dossier Kap. 6.3 ✔ · Wettbewerber: Kap. 5.2 H, Tiere Beispiel ·
+  Umfrage: Stimmungsbild* – ohne Tiernamen (steht schon während der Abstimmung auf der Folie)
+- Keine Pille „Beispieldaten“ mehr; Endzustand 40 Wörter (`werkzeuge/pruefen.mjs` warnt ab 41). Die Zeile „Echte
+  Kundschaft · laut Mitgründer“ entfällt aus Platzgründen und steht in den Notizen.
+
+### Visualisierung
+
+- Schritt 0–1: Live-Umfrage wie bisher (QR-Code, Balken, Auflösung „Unsere Analyse“).
+- Ab Schritt 2: zwei Karten nebeneinander mit eigenen Strichzeichnungen – Chamäleon (Tier) und Mensch am Mikrofon
+  (Comedian). Unten in der Tier-Karte eine gestrichelte Zeile mit kleinem Adler und kleinem Papagei, oben bündig.
+  Keine Fotos, keine Bilder aus Elias' PDF.
+- Schritt 3: Kontrastzeile klein und zurückgenommen.
+
+### Sprechtext (Kernpunkte; Wortlaut in den Notizen von f08)
+
+- **Schritt 1 (ca. 10 s):** Auflösung – „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation.“ (seit der
+  Nacharbeit; vorher „… im Interview offen gefragt“, Interviews sind nicht belegt)
+- **Schritt 2 „Warum Chamäleon?“ (ca. 20 s):** Das Maskottchen ist ein Adler; im Auftritt zeigt sich ein Chamäleon –
+  fünf Produktlinien, laufend neue Sorten, eigene Claims je Land. Dazu ein Papagei: bunt, laut, gesellig, die
+  „Squad“. Als Mensch ein Impro-Comedian.
+- **Schritt 3:** Kontrast. Das Chamäleon nicht „frech“ nennen – „frech“ tragen in Elias' Zuordnung Comedian und
+  Papagei.
+
+### Mögliche Rückfragen
+
+1. **„Kommt das Chamäleon aus eurer Befragung?“** – Nein, aus Elias' Ausarbeitung (Analogie, also Hypothese). Die
+   Analogie-Befragung von Bündel B (P11, Interviews) ist offen; ihr Ergebnis kommt hierher (`analogien.md` §7).
+2. **„Tarnt sich ein Chamäleon nicht? Ist es nicht ein Einzelgänger?“** – Elias' Gegenargument: Chamäleons wechseln
+   die Farbe vor allem, um mit Artgenossen zu kommunizieren (seine Aussage, ohne Quelle). Für die Gemeinschaft steht
+   Elias' anderes Tier, der Papagei („HOLY Squad®“; bei ihm „Tier 1“). Und der Auftritt ist alles andere als getarnt: „auffälliges und
+   knalliges Design“ (Lebensmittel Zeitung, Dossier 6.3 ✔ [8]).
+3. **„Und der Adler?“** – Er bleibt das Maskottchen (Elias: Shaker-Kopf, Pixelfigur, Kostüm; Dossier 6.3 ✔ [54, 71]
+   „Raptor“). Den Wechsel soll ein fester Absender zusammenhalten: ein Name, eine Profilfarbe (Empfehlung 3, Folie 11).
+4. **„Ist der Comedian eure Persona?“** – Nein, die Analogie beschreibt die Marke als Person. Die Kundschaft ist laut
+   Mitgründer meist 25–40 (Dossier Kap. 1/4.1 ✔ [7, 24]).
+
+### Quellen
+
+Ausarbeitung E. Knauber „Analogien“ (16.10.2026; Elias' Quellen: HOLY-Website, Stellenanzeigen, Instagram, Facebook,
+X, TV-Spot 2026, abgerufen 16.10.2026) · Dossier 6.3 ✔ [54, 71], 5.2 **H** · KI-Nachweis 94/95, 119.
+
+### Zu prüfen
+
+- [ ] Elias: drei Gründe, Papagei-Zeile, Mensch-Profil und Titel mit nur einem Tier freigeben (`analogien.md` §10,
+  Fragen 1–7)
+- [ ] Bündel B (Lukas bzw. die KI-simulierte Befragung D25, seit 22.10.2026): Ergebnis von P11 und der Tierfrage,
+  echt und KI-simuliert getrennt; Aaker-Abgleich (`analogien.md` §7)
+- [ ] Yannick: Vorgaben freigeben; Papagei in der Live-Umfrage ja/nein (`marke.js` bleibt bis dahin unverändert)
+- [ ] Sprechtext Schritt 2 in der Generalprobe stoppen (Ziel ca. 20 s)
+
+---
+
+## Folie 9 – Kommunikationsanalyse: Kanäle & Bildwelt
+
+> **Neu am Do, 22.10.2026** nach Elias Knaubers Kommunikationsanalyse (eigene Bildschirmaufnahmen vom 20. und
+> 21.10.2026; KI-Nachweis 119, Workflow D24). Vorgaben des Hauptagenten, zur Freigabe durch Yannick und Elias;
+> maßgeblich ist die Web-Folie f09. Alle gezeigten Werte sind Elias' Werte – keine Beispieldaten mehr.
+
+**Bündel:** C · **Zeit:** 1:00 · **Backup-Bezug:** B6 Kanäle (Tabelle 1) · **Ausarbeitung:**
+[`kommunikationsanalyse.md`](kommunikationsanalyse.md)
+
+### Titel (Kernaussage)
+
+> **Vier Kanäle, vier Rollen – kein festes Schlüsselbild** (Stand der Web-Folie f09 nach der Nacharbeit am
+> 22.10.2026; beim Einbau ohne „festes“ – das spitzte Elias' Befund zu: „ein festes Schlüsselbild fehlt“)
+
+Alternativen:
+- *Jeder Kanal hat seine Rolle – ein festes Schlüsselbild fehlt* (Vorgabe des Hauptagenten, mit Elias' „festes“)
+- *HOLY verteilt die Rollen gut, ein festes Schlüsselbild fehlt*
+
+Kicker: *Kommunikationsanalyse · Instagram, Facebook, TikTok, YouTube* (ohne Pille „Beispieldaten“).
+
+### Text auf der Folie
+
+- **Vier Kanal-Spalten** in Elias' Reihenfolge, je Profilname, Follower bzw. Abos mit Reichweitenbalken, eine
+  Zusatzkennzahl und die Rolle:
+
+| Kanal | Profilname | Follower / Abos | Zusatz | Rolle im Kanalmix |
+|---|---|---|---|---|
+| Instagram | „HOLY Squad®“ | 383 Tsd. Follower („383 Tsd.“ in der großen Zahl) | 1.184 Beiträge | Schaufenster & Verkauf |
+| Facebook | „HOLY“ | 126.651 Follower | Gruppe: ≈ 40.000 Mitglieder | Zweitverwertung & Anzeigen |
+| TikTok | „HOLY Softdrinks“ | 272.170 Follower | 2 Mio. Likes | Reichweite & Community |
+| YouTube | „HOLY®“ | 20.700 Abos | 360 Videos | Archiv & Zweitverwertung |
+
+  Darunter klein: *Follower und Abos als Indiz für Reichweite – Insights-Daten lagen nicht vor*. Beiträge pro Woche,
+  Ø Engagement-Rate und die Formel entfallen (keine vergleichbaren Daten).
+- **Schritt 1 – „Fünf Bildwelten, je Kanal unterschiedlich stark“** (ohne Anteile; rechts die Spalte *vor allem auf*,
+  nur wo Elias einen Kanal nennt): Produkt-Pop – freigestellte Produkte vor Vollfarbflächen · *Instagram* · Szene &
+  Event – Gamescom, Festivals, Wacken, Motorsport – überall Gast · *TikTok* · Alltag & Insider – Team, Büro,
+  Einblicke in die Produktion · Geliehene Welten – Lizenzen, Kooperationen – Simpsons verdrängen zeitweise eigene
+  Figuren · *Instagram* · Ironie & Retro – Werbeparodien, Meme-Formate
+- **Schritt 2 – „Schlüsselbild?“:** kein festes Schlüsselbild; Kandidat *Produkt in der Hand* (Chip „Kandidat“) –
+  „kommt überall vor, aber nicht einheitlich“
+- **Fußzeile:** *Quelle: Kommunikationsanalyse E. Knauber, eigene Bildschirmaufnahmen 20./21.10.2026 ·
+  Facebook-Gruppe: Desk Research 16.10.2026 (HOLY „Our Story“) · Schlüsselbild nach Kroeber-Riel (1993)*
+
+### Visualisierung
+
+- **Zone 1:** vier gleich breite Spalten mit neutralen Linien-Icons (keine Plattform-Logos); die Zahl zählt hoch, der
+  Reichweitenbalken misst sich am größten Kanal (Instagram), darunter die Rolle in einer Zeile.
+- **Schritt 1:** fünf gleich große Listenzeilen mit Kurzbeschreibung – **keine Balken**, weil es keine Anteile
+  gibt; rechts in Textgröße mit Kanal-Icon, wo die Bildwelt laut Elias vor allem vorkommt (Produkt-Pop und
+  geliehene Welten Instagram, Szene & Event TikTok – Kap. 5.2 und Abb. 3). Beim Einbau stand nur die
+  Instagram-Gewichtung, klein in der Metazeile.
+- **Schritt 2:** rechts ein eigenes Piktogramm „Produkt in der Hand“ (Mensch mit Shaker) mit **durchgezogenem**
+  Rahmen (gestrichelt und schraffiert heißt im Deck „Platzhalter/Beispielwert“), die Bildwelten treten zurück.
+  **Kein Screenshot** (Rechte, Personen; `praesentation/QUELLEN.md` §4).
+- Icons neutral und je Kanal verschieden (TikTok „gruppe“, YouTube „video“).
+
+### Sprechtext (Kernpunkte; Wortlaut in den Notizen von f09)
+
+- **Schritt 0 (ca. 17 s):** Vier Kanäle, jeder mit eigener Rolle: Instagram verkauft, TikTok holt Reichweite,
+  Facebook verwertet und wirbt, YouTube archiviert. TikTok ist dabei, obwohl die Aufgabe drei Kanäle nennt – mit über
+  272.000 Followern ist es der zweitgrößte. Die Zahlen sind nur Indizien.
+- **Schritt 1 (ca. 16 s):** fünf Bildwelten; auf Instagram überwiegt Produkt-Pop, auf TikTok stehen Menschen und
+  Events im Mittelpunkt (Elias, Abb. 3: „personen- und eventgetriebene Videowelt“); zeitweise verdrängen die
+  Simpsons-Grafiken auf Instagram die eigenen Figuren.
+- **Schritt 2 (ca. 27 s):** Ein Schlüsselbild ist ein wiederkehrendes Motiv, das die Positionierung über Medien und
+  Zeit gleich bündelt. Ein festes Schlüsselbild hat HOLY nicht – eine Gruppe von Motiven übernimmt die Aufgabe. Am
+  häufigsten ist das Produkt in der Hand – unser Kandidat, und Ansatz für Empfehlung 3. (Nicht verkürzen zu „HOLY hat
+  kein Schlüsselbild“: Elias schreibt „kein einzelnes“ bzw. „kein festes“, Kap. 5.1 und 8.)
+
+### Mögliche Rückfragen
+
+1. **„Warum TikTok? Die Aufgabe nennt drei Kanäle.“** – Elias hat TikTok zusätzlich aufgenommen: über 272.000
+   Follower, Rolle als Reichweiten- und Community-Motor. Seine Begründung „junge Kernzielgruppe“ ist offen
+   (`kommunikationsanalyse.md` §13, Frage 1) – bis dahin nur mit der Reichweite begründen.
+2. **„Wo sind die Engagement-Raten?“** – Ohne Insights und ohne Stichprobe nach `methoden.md` §5 rechnen wir keine.
+   Elias hat Interaktionen nur an Einzelbeiträgen notiert (vier Beiträge auf Instagram und TikTok, dazu die
+   Facebook-Beiträge in der Suchansicht): Auf Instagram reagieren rund 0,4–0,6 Prozent der Follower, auf Facebook
+   selbst bei den stärksten Beiträgen rund 0,3 Prozent (Elias' Werte, keine Stichprobe).
+3. **„Ist der Raptor kein Schlüsselbild?“** – Laut Elias ist der Adler „so etwas wie das Maskottchen der gesamten
+   Marke“ (Shaker-Kopf, Pixelfigur, Kostüm); ein einzelnes, über Medien und Zeit gleiches Schlüsselbild findet er
+   nicht. Als Schlüsselbild-Kandidaten prüft er den Adler nicht. Unsere Folgerung (H, nicht Elias' Befund): Die
+   Raptor-Hypothese des Dossiers (6.4) tragen wir nicht weiter. Mit der Vorlesung: Ein Maskottchen ist zunächst ein
+   Präsenzsignal (stützt die Bekanntheit), ein Schlüsselbild stützt das Image (Stenger, S. 97).
+
+### Quellen
+
+Kommunikationsanalyse E. Knauber (Bildschirmaufnahmen 20./21.10.2026; Desk Research 16.10.2026, HOLY „Our Story“) ·
+zum Vergleich Dossier 6.1 ✔ [19, 20, 122–124] (Stand 14.10.2026) · Kroeber-Riel (1993) – nicht in der Vorlesung
+(`abgleich-vorlesung.md` #14).
+
+### Zu prüfen
+
+- [ ] Elias: Kurzformen der Rollen, Bildwelt-Beschreibungen und Schlüsselbild-Satz freigeben
+- [ ] Elias: Zielgruppen-Begründung für TikTok klären (`kommunikationsanalyse.md` §13, Frage 1)
+- [ ] Follower kurz vor dem 26.10. neu ablesen oder Stand 20./21.10.2026 in der Fußzeile lassen
+- [ ] Kroeber-Riel (1993) gegen die Literaturliste der Vorlesung abgleichen (#14)
+
+---
+
+## Folie 9b – Markenbild: Corporate Design & Fit
+
+> **Neu am Do, 22.10.2026** nach Elias Knaubers Kommunikationsanalyse (KI-Nachweis 119, Workflow D24). Vorgaben des
+> Hauptagenten, zur Freigabe; maßgeblich ist die Web-Folie f09b.
+
+**Bündel:** C · **Zeit:** 0:55 · **Backup-Bezug:** B6, B7 · **Ausarbeitung:**
+[`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitte 4–6, 9
+
+### Titel (Kernaussage)
+
+> **HOLY trifft den Ton, wirkt aber zersplittert** (unverändert – passt zu Elias' Fazit)
+
+### Text auf der Folie
+
+- **Datenblatt (links):**
+
+| Zeile | Inhalt (Stand der Web-Folie f09b beim Abgleich am 22.10.2026) | Quelle |
+|---|---|---|
+| Logo | Wortmarke · extrafette, kursive Versalien; Zusatz: Profilbild in drei Farben (gemeint: Schriftzug „Holy Squad“ – violett, hellblau, pastellrosa) | EK Kap. 3.1; Dossier 6.3 ✔ [1]; Bild `holy-logo-wortmarke.png` |
+| Claims & Schrift | „Die Softdrink Revolution“ (Dachclaim, auf allen vier Kanälen); „Geiler Geschmack mit gutem Gewissen“ (Versprechen, Instagram und TikTok); „+ viele weitere“ – ehrlich ohne Zahl, im Tooltip Handels-Claim „Änder nix. Nur dein Drink.“ und Kampagnen- und Merch-Sprüche; Schriften (Web) ObviouslyNarrow Black / PP Agrandir als Ersatzschriften* | EK Kap. 4; Dossier 6.5 ✔, 6.3 ✔ [1] |
+| Farben | Logo & Akzent: Gelb `#FFD007`, Schwarz `#1D1D1B` (Dossier 6.3 ✔ [1]; laut Elias ist Gelb faktisch die Leitfarbe); Shop-Flächen Creme, Türkis, Hellblau (Dossier) bleiben vorerst – keine HEX-Werte für Elias' Sortenpalette erfinden | EK Kap. 3.2; Dossier |
+| Bildwelt | Piktogramme „Produkt in der Hand“ und Schachbrett; Text „Streetwear-Look, Produkt in der Hand“, Verweis „→ Folie 09“ (Schachbrett und Drops nur in den Notizen) | EK Kap. 3.4, 5, 8 |
+
+- **Fit (rechts, Schritte 1–3; Begründung je höchstens ca. 8 Wörter):**
+  1. zur Tonalität – **passt**: *Überall frech, schnell, nah dran.*
+  2. zur Persona – **teilweise**: *Stimulanz passt, Auftritt zu jung.* (Folie 10 und 11 sagen bei Lücke 2 „Bildwelt
+     zu jung“ – bei der Freigabe ein Wort für alle drei Folien wählen)
+  3. über die Kanäle – **Bruch**: *Vier Namen, drei Profilfarben, kein festes Schlüsselbild.* (seit der Nacharbeit
+     mit „festes“ und festen Leerzeichen; Folie 38 Wörter)
+- **Ins Steuerrad · Markenbild (Schritt 4):** Streetwear-Look · Gelb & Schwarz · knallig
+- **Fußzeile:** *Quelle: Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026) · Kommunikationsanalyse
+  E. Knauber (Bildschirmaufnahmen 20./21.10.2026) · Dossier Kap. 6.3 ✔ [1] (Web-CSS, kein Styleguide), 6.5 ✔, Kap. 1
+  ✔ [7, 24] · „knallig“: LZ ✔ [8] · Bewertung: eigene (H) · …*
+
+### Visualisierung
+
+Aufbau wie bisher: links das Datenblatt, rechts die Fit-Karte; zu jeder Fit-Zeile leuchten links die Belege auf
+(Tonalität → Claims, Bildwelt; Persona → Bildwelt, Akzentfarben; Kanäle → Logo mit Profilbild-Zusatz, Bildwelt).
+Die ✗-Zeile ist die Brücke zu Folie 11.
+
+### Sprechtext (Kernpunkte; Wortlaut in den Notizen von f09b)
+
+- **Schritt 0:** Fette, kursive Wortmarke; Gelb als Leitfarbe, Schwarz als Kontrast, in den Kanälen volle Sättigung
+  – nur der Shop ist ruhiger. Als Profilbild steht nicht die Wortmarke, sondern „Holy Squad“ in drei Farben (nur in
+  den Notizen).
+- **Schritt 1:** Tonalität passt – überall frech, schnell und nah an der Zielgruppe (Elias).
+- **Schritt 2:** Persona teilweise – die Stimulanz passt, aber der Streetwear-Auftritt ist jung und laut, die
+  Kundschaft laut Mitgründer meist 25–40.
+- **Schritt 3:** Bruch – vier Anzeigenamen, drei Profilbildfarben, kein festes Schlüsselbild.
+- **Schritt 4:** Ins Steuerrad: Streetwear-Look, Gelb und Schwarz, knallig.
+
+### Mögliche Rückfragen
+
+1. **„Waren es nicht sechs Claims?“** – Das war die Hypothese des Dossiers (6.5 **H**). Elias' Befund: ein Dachclaim
+   auf allen vier Kanälen, dazu ein Versprechen, ein Handels-Claim und viele Kampagnensprüche – neben der
+   „Softdrink Revolution“ setzt sich keine zweite Kernbotschaft fest.
+2. **„Warum Streetwear?“** – Drops, Datumsteaser, Merch, Schachbrettmuster und der Name „Squad“: HOLY inszeniert sich
+   nach dem Vorbild von Streetwear-Labels (Elias, Kap. 3.4 und 8).
+3. **„Bestätigt ihr euch nicht selbst?“** – Teilweise: Analogien und Kommunikationsanalyse stammen von derselben
+   Person und beruhen beide auf HOLYs eigener Kommunikation. „Passt“ ist eine Stimmigkeitsprüfung, keine unabhängige
+   Bestätigung (H).
+
+### Quellen
+
+Kommunikationsanalyse E. Knauber · Dossier 6.3 ✔ [1, 8], 6.5 ✔, Kap. 1/4.1 ✔ [7, 24] · Logo © HOLY Softdrinks GmbH,
+de.holy.com (Abruf 16.10.2026).
+
+### Zu prüfen
+
+- [ ] Elias und Yannick: Fit-Begründungen und „Streetwear-Look“ freigeben; ein Wort für die Persona-Lücke auf 9b,
+  10 und 11 („Auftritt zu jung“ oder „Bildwelt zu jung“)
+- [ ] Gruppe: Shop-Flächen (Pastell, Dossier 6.3) neben Gelb/Schwarz behalten? Elias untersucht nur Social Media
+  (`kommunikationsanalyse.md` §13, Frage 10)
+
+---
+
+## Folie 10 – Markensteuerrad (nur Feld Markenbild und Lücke 2)
+
+> **Geändert am Do, 22.10.2026** nach Elias' Kommunikationsanalyse – nur diese Teile; der übrige Entwurf von Folie 10
+> (Synthese Yannick, präsentiert Elias) steht noch aus. Die Pille „Beispieldaten“ bleibt, weil 06–08b noch
+> Beispieldaten von Lukas tragen.
+
+**Bündel:** C (Inhalt A) · **Ausarbeitung:** [`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitt 11
+
+- **Feld Markenbild:** *Streetwear-Look · Gelb & Schwarz · knallig* (alle KA) – wortgleich mit „Ins Steuerrad ·
+  Markenbild“ auf 9b; bisher „Comic-Tiere · Gelb & Schwarz · knallig“.
+- **Lücke 2 „Bildwelt zu jung“:** markiert jetzt *Streetwear-Look* ↔ *Marco, 28* (bisher „Comic-Tiere“ ↔ „Marco, 28“).
+  Bewertung der Gruppe (H): Elias beschreibt den Auftritt als „jung, laut“, die Kundschaft ist laut Mitgründer meist
+  25–40 (Dossier Kap. 1/4.1 ✔ [7, 24]).
+- **Feld Tonalität:** *frecher Kumpel · wandelbar · Spaß* bleibt – passt zu Elias' Analogien (`analogien.md` §1).
+- **Sprechtext Schritt 6:** „Die Kommunikationsanalyse: Streetwear-Look, Gelb und Schwarz, knallig.“ (gleiche
+  Wortzahl wie bisher). **Schritt 8:** „Zweitens: Der Streetwear-Look wirkt jünger als Marco und die Kundschaft von
+  25 bis 40 …“ statt „Die Comic-Bildwelt wirkt jünger …“ (gleiche Wortzahl; so in den Notizen von f10).
+- **Belege:** Streetwear-Label und Gelb als Leitfarbe – Kommunikationsanalyse E. Knauber; „knallig“ – Lebensmittel
+  Zeitung ✔ [8], gestützt durch Elias' Prinzip „volle Sättigung, harte Kontraste“. Die Lücken bleiben Bewertung der
+  Gruppe (H) – Lücke 1 und 2 auf Basis des Dossiers (Kap. 8, S1–S3), Lücke 2 seit 22.10.2026 zusätzlich mit dem
+  Stichwort aus Elias' Kommunikationsanalyse.
+- **Rückfrage „Wodurch grenzt sich die Positionierung ab?“ (Ergänzung 22.10.2026):** Elias hat in der Facebook-Suche
+  (21.10.2026) eine Anzeige des Wettbewerbers Fyl für ein Sirup-Starterset gesehen – mit „Spare Geld & Zucker!“, laut
+  Elias „einem Versprechen, das dem von HOLY sehr nahekommt“ (Kap. 6.2). Format und Versprechen allein grenzen also
+  kaum ab; ehrlich sagen und auf die Verbindung aus Format, Sortenvielfalt und Ton verweisen (unsere Einordnung, H).
+  Außerdem vermittelt HOLY die „Softdrink Revolution“ laut Elias „über Haltung und Tempo, kaum über Argumente zum
+  Produkt“ (Kap. 8).
+
+### Zu prüfen
+
+- [ ] Yannick (C2): „Streetwear-Look“ im Rad und die neue Markierung von Lücke 2 freigeben
+- [ ] Yannick: Ein Wort für die Persona-Lücke auf 9b, 10 und 11 („Bildwelt zu jung“ oder „Auftritt zu jung“)
+
+---
+
+## Folie 11 – Fazit & Empfehlungen (nur Zeile 3)
+
+> **Geändert am Do, 22.10.2026** nach Elias' Kommunikationsanalyse – nur Zeile 3. Empfehlungen 1 und 2 bleiben
+> unverändert (nicht Teil von Elias' Material); der übrige Entwurf von Folie 11 steht noch aus.
+
+**Bündel:** C · **Ausarbeitung:** [`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitte 10–11
+
+- **Befund (Knopf „Bruch · Folie 09b“):** *Uneinheitlicher Absender* (bisher „Sechs Claims parallel“)
+- **Empfehlung 3:** *Ein Absender, ein Schlüsselbild* (bisher „Ein Dachclaim, ein Raptor“)
+- **Wie:** *Ein Name, eine Profilfarbe, Produkt in der Hand* (so auf der Web-Folie f11, Stand 22.10.2026; Kurzform
+  bei Platzmangel: „Ein Name, eine Farbe, Produkt in der Hand“)
+- **Kanal-Chips:** nur *überall* (der Chip „Shop“ entfällt – Elias' Empfehlung betrifft die Social-Media-Kanäle)
+- **Sprechtext Schritt 3 (ca. 20 s), Kernpunkte:** gegen den uneinheitlichen Absender ein Anzeigename und eine
+  Profilbildfarbe auf allen Kanälen – das kostet wenig (Elias); dazu ein Schlüsselbild: das Produkt in der Hand, das
+  heute schon überall vorkommt, bewusster und einheitlicher einsetzen. Der Adler bleibt Maskottchen.
+- **Rückfragen:** „Und der Raptor?“ – bleibt Maskottchen; als Schlüsselbild schlägt Elias das häufigste wiederkehrende
+  Motiv vor, das Produkt in der Hand. „Warum nicht TikTok?“ ist überholt: TikTok ist auf Folie 09 analysiert.
+- **Belege:** Kommunikationsanalyse E. Knauber, Kap. 8 (Schwächen, Empfehlungen).
+- **Zu Lücke 1 (Ergänzung 22.10.2026, nur Notizen):** Elias kritisiert das Versprechen selbst: „Worauf sich das gute
+  Gewissen stützt, lässt er allerdings offen“ (Kap. 4); dazu passen die provokanten Shorts-Titel „schlecht“ zum
+  „guten Gewissen“ (Kap. 6.4, 8). Beides stützt Lücke 1 und Empfehlung 1 von der Seite der Kommunikation.
+- **Sprechtext-Wortlaut:** wie Elias im Konjunktiv und Komparativ – „müsste es nur bewusster und einheitlicher
+  einsetzen“ (Kap. 8; so in den Notizen von f11 seit der Nacharbeit am 22.10.2026), nicht „muss es bewusst und
+  einheitlich einsetzen“ (das klänge, als setze HOLY das Motiv bisher gar nicht bewusst ein).
+
+### Zu prüfen
+
+- [ ] Elias: Empfehlung 3 und den Wie-Satz freigeben (Elias nennt beides als eigene Empfehlungen)
+- [ ] Prüfen, ob der Wie-Satz in einer Zeile passt; sonst die Kurzform
+
+---
+
+## Backup B6 – Profilmerkmale der Kanäle (bis 22.10.2026: Raster Kommunikationsanalyse)
+
+> **Neu am Do, 22.10.2026:** Statt der Beispiel-Codiertabelle (Raster P12) zeigt B6 Elias' Tabelle 1, gekürzt. Elias
+> hat **keine** einzelnen Beiträge nach Raster P12 codiert, sondern Profilköpfe und neueste Inhalte qualitativ
+> analysiert (`kommunikationsanalyse.md` Abschnitt 2). Hier der Stand der Web-Folie B6 beim Abgleich am 22.10.2026;
+> maßgeblich ist die Folie selbst.
+
+**Bündel:** C · **Ausarbeitung:** [`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitt 3.1
+
+### Titel (Kernaussage)
+
+> **Vier Namen, drei Profilfarben, vier Rollen** (seit der Nacharbeit am 22.10.2026)
+
+Beim Einbau stand *Dieselben Kernbotschaften, vier Namen, vier Rollen* – nach Elias: „HOLY tritt auf allen vier
+Plattformen mit denselben Kernbotschaften auf, gewichtet die Kanäle aber unterschiedlich“ (Kap. 2). Die
+Kernbotschaften belegt die sichtbare Tabelle aber nicht (Spalte „Bio / Claim“ nur in den Notizen); der neue Titel
+bezieht sich auf die sichtbaren Spalten. Alternative: *Klare Rollen, aber vier Namen und drei Profilfarben*. Kicker: *Backup ·
+Kommunikationsanalyse · Profilmerkmale der Kanäle* (ohne Pille „Beispieldaten“).
+
+### Text auf der Folie
+
+- **Tabelle** (Zeilen = vier Kanäle, Zellen gekürzt aus Elias' Tabelle 1):
+
+| Kanal | Anzeigename | Kennzahlen | Profilbild | Inhaltlicher Schwerpunkt | Rolle im Kanalmix |
+|---|---|---|---|---|---|
+| Instagram | „HOLY Squad®“ | 383 Tsd. Follower, 1.184 Beiträge | „Holy Squad“ auf Violett | Launches, Rabattaktionen, Handel, Lizenzkampagnen, Events | Schaufenster und Verkaufskanal |
+| Facebook | „HOLY“ + Länderseiten | 126.651 Follower, 88 % Empfehlungen; Gruppe 40.000* | wie Instagram | wie Instagram und TikTok, Anzeigen, Länderseiten | Zweitverwertung, Anzeigen, Auslandsmärkte |
+| TikTok | „HOLY Softdrinks“ | 272.170 Follower, 2 Mio. Likes | Gelb auf Hellblau, Comic-Sterne | Challenges, Umfragen, Gewinnspiele, Eventserien | Reichweiten- und Community-Motor |
+| YouTube | „HOLY®“ | 20.700 Abonnenten, 360 Videos | auf Pastellrosa | ältere Spots, Musikvideos; Shorts wie TikTok | Archiv und Zweitverwertung |
+
+  \* Desk Research 16.10.2026 (HOLY „Our Story“)
+- **Drei Infokästen:** *Datengrundlage* – Profilköpfe und neueste Inhalte, Bildschirmaufnahmen 20./21.10.2026 ·
+  *Kennzahlen als Indizien* – Follower, Likes, Aufrufe; keine Insights, keine Engagement-Raten · *Ergebnis → Folie
+  09* – vier Rollen; kein festes Schlüsselbild, Kandidat: Produkt in der Hand
+- **Schritt 1:** Die Spalten „Anzeigename“ und „Profilbild“ werden markiert – vier Namen, drei Profilbildfarben, die
+  Brücke zum Bruch auf 9b und zu Empfehlung 3.
+- **Fußzeile:** *Quelle: Kommunikationsanalyse E. Knauber, Tabelle 1 (eigene Bildschirmaufnahmen 20./21.10.2026),
+  gekürzt · * Gruppe: Desk Research 16.10.2026 (HOLY „Our Story“) · Vorlage: methoden.md Abschn. 5*
+
+### Visualisierung
+
+Tabelle über die ganze Breite, darunter die drei Infokästen; in Schritt 1 sind zwei Spalten hervorgehoben;
+Sprungknopf „Zu Folie“ (09) wie bisher.
+
+### Notizen (Kernpunkte)
+
+Wann zeigen: Rückfrage „Wie habt ihr die Kanäle ausgewertet?“ oder „Wo sind Engagement-Raten?“. Ehrlich sagen: Wir
+haben keine Stichprobe nach Raster P12 codiert und keine Engagement-Raten gerechnet; Elias hat Profilköpfe und neueste
+Inhalte qualitativ ausgewertet und Interaktionen nur an Einzelbeiträgen notiert (vier Beiträge mit allen
+Interaktionszahlen, dazu Facebook-Reaktionen aus der Suchansicht). Schritt 1: vier Namen, drei
+Profilbildfarben – der Bruch auf 9b, Ansatz von Empfehlung 3.
+
+### Quellen
+
+Kommunikationsanalyse E. Knauber, Tabelle 1 und Kap. 1–2 · Vorlage `methoden.md` §5.
+
+### Zu prüfen
+
+- [ ] Elias: gekürzte Zellen freigeben
+- [ ] Gruppe: Falls noch Zeit ist, Engagement-Raten nach `methoden.md` §5 in Sheets rechnen – dann B6 ergänzen, sonst
+  bleibt die ehrliche Angabe „keine Engagement-Raten“

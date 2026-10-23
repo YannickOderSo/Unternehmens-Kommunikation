@@ -2,14 +2,20 @@
    css/folien/09-kommunikationsanalyse.css – Gestaltung nur für f09 und f09b
    -----------------------------------------------------------------------------
    f09  „Kanäle & Bildwelt“ (Bühne 1920 × 1080)
-        oben   drei Kanal-Spalten im Zeitungsstil (Linie oben): Kanalname,
-               Profilname, Follower (große Zahl), Reichweitenbalken, darunter
-               Beiträge pro Woche und Ø Engagement-Rate
-        Mitte  Formel der Engagement-Rate + Legende „Beispielwert“
-        unten  Bildwelt: je Motivgruppe ein waagerechter Balken mit Zahl
-               (Comic-Tiere in Akzentfarbe); in Schritt 2 erscheint rechts
-               EIN Schlüsselbild, die übrigen Gruppen treten zurück (gleiche
-               Wirkung wie data-dimmen der Engine)
+        oben   Kanal-Spalten im Zeitungsstil (Linie oben; seit 22.10.2026
+               vier: Instagram, Facebook, TikTok, YouTube): Kanalname,
+               Profilname, Follower (große Zahl), Reichweitenbalken,
+               Zusatzkennzahl und Rolle im Kanalmix (Beiträge pro Woche und
+               Ø Engagement-Rate nur, wenn Daten da sind – zurzeit nicht)
+        Mitte  Erläuterung (seit 22.10.2026 „Follower als Indiz, keine
+               Insights“; vorher Formel der Engagement-Rate + Legende)
+        unten  Bildwelt: seit 22.10.2026 eine Liste der fünf Bildwelten nach
+               Elias Knauber (Name · Kurzbeschreibung · seit der Nacharbeit
+               22.10.2026 rechts der Kanal, auf dem sie vor allem vorkommt –
+               nur wo Elias das nennt; ohne Zahlen); in Schritt 2 erscheint
+               rechts EIN Schlüsselbild-Feld (Kandidat „Produkt in der Hand“,
+               Piktogramm, durchgezogener Rahmen). Die alte Form (Balken je
+               Motivgruppe mit Zahl) bleibt im CSS für Daten mit „anteil“.
    f09b „Corporate Design & Fit“
         links  (7 Spalten) Datenblatt: Logo · Claims & Schrift · Farben ·
                Bildwelt
@@ -42,9 +48,12 @@
    --------------------------------------------------------------------------- */
 #f09 .g5-kanaele {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Spaltenzahl setzt das Skript (--g5-spalten, Zahl der Kanäle in den Daten) */
+  grid-template-columns: repeat(var(--g5-spalten, 3), minmax(0, 1fr));
   gap: var(--abstand-6);
 }
+/* vier und mehr Spalten (seit 22.10.2026): etwas engere Rinne */
+#f09 .g5-kanaele--viele { gap: var(--abstand-5); }
 #f09 .g5-kanal {
   display: flex;
   flex-direction: column;
@@ -74,13 +83,24 @@
   white-space: nowrap;
 }
 
-/* Follower: große Zahl + Bezeichnung auf einer Grundlinie */
+/* Follower: große Zahl + Bezeichnung auf einer Grundlinie. Bei vier Spalten
+   (seit 22.10.2026) darf die Bezeichnung unter die Zahl rutschen, statt
+   überzulaufen; die Zahl wird etwas kleiner (64 statt 72 px). */
 #f09 .g5-reichweite {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 14px;
+  gap: 0 14px;
   margin-top: 6px;
 }
+#f09 .g5-kanaele--viele .g5-follower { font-size: 64px; }
+/* „Tsd.“ direkt hinter der Zahl, gleiche Größe (Nacharbeit 22.10.2026; vorher
+   klein in der Bezeichnung): der normale Abstand der Zeile (14 px) wäre zu
+   weit, deshalb rückt die Einheit an die Zahl heran (Wortabstand). */
+#f09 .g5-tausend { margin-left: -4px; }
+/* Fehlt der Wert in den Daten, steht „–“ (Nacharbeit 22.10.2026) */
+#f09 .g5-follower--fehlt { color: var(--f-text-2); }
+#f09 .g5-einheit { white-space: nowrap; }
 #f09 .g5-einheit {
   font-size: var(--groesse-text-min);
   color: var(--f-text-2);
@@ -100,6 +120,27 @@
 }
 #f09 .g5-balken--beispiel {
   background: repeating-linear-gradient(90deg, var(--f-text-2) 0 10px, transparent 10px 16px);
+}
+
+/* Zusatzkennzahl unter dem Balken (seit 22.10.2026, z. B. „1.184 Beiträge“) */
+#f09 .g5-zusatz {
+  margin: 0;
+  font-size: var(--groesse-meta);
+  line-height: 1.25;
+  color: var(--f-text-2);
+}
+/* Rolle im Kanalmix (seit 22.10.2026): Aussage der Spalte, Titelschrift,
+   abgesetzt durch eine feine Linie; darf zweizeilig sein */
+#f09 .g5-rolle {
+  margin: 4px 0 0;
+  padding-top: 10px;
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-text);
+  font-weight: var(--gewicht-display);
+  line-height: 1.15;
+  text-wrap: balance;
+  color: var(--f-text);
 }
 
 /* Zwei kleinere Kennzahlen */
@@ -144,7 +185,8 @@
   color: var(--f-text-2);
 }
 
-/* Formel und Legende unter den Spalten */
+/* Erläuterung unter den Spalten (seit 22.10.2026 ein Satz; vorher Formel
+   und Legende „Beispielwert“) */
 #f09 .g5-erlaeuterung {
   display: flex;
   align-items: center;
@@ -157,13 +199,88 @@
   color: var(--f-text-2);
 }
 
+/* Bildwelten als Liste (seit 22.10.2026, Form A im Skript): je Zeile Name
+   (Textgröße, fett) · Kurzbeschreibung (Metaangabe) · ggf. Gewichtung in
+   Akzentfarbe (ältere Form) bzw. seit der Nacharbeit 22.10.2026 rechts der
+   Schwerpunkt-Kanal in Textgröße (Regeln unten). Feine Linien zwischen den
+   Zeilen, keine Balken und Zahlen. */
+#f09 .g5-welten-liste {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#f09 .g5-welt {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--abstand-4);
+  padding: 4px 0;
+}
+#f09 .g5-welt + .g5-welt { border-top: var(--linie-fein) solid color-mix(in oklab, var(--f-linie) 70%, transparent); }
+#f09 .g5-welt-name {
+  font-size: var(--groesse-text-min);
+  font-weight: var(--gewicht-fett);
+  line-height: 1.2;
+  color: var(--f-text);
+}
+#f09 .g5-welt-text {
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+#f09 .g5-welt-gewicht {
+  font-weight: 650;
+  color: var(--f-akzent);
+}
+#f09 .g5-welt-beschreibung + .g5-welt-gewicht::before {
+  content: "·";
+  margin: 0 10px;
+  font-weight: 400;
+  color: var(--f-text-2);
+}
+/* Schwerpunkt-Kanal (Nacharbeit 22.10.2026): dritte Spalte in Textgröße
+   (28 px, Akzentfarbe) mit dem Icon des Kanals – vorher stand die Gewichtung
+   nur in der 22-px-Metazeile und war am Beamer kaum lesbar. Der Kopf der
+   Liste bekommt rechts die Spaltenüberschrift („vor allem auf“). */
+#f09 {
+  --g5-kanal-spalte: 210px;     /* Breite der Schwerpunkt-Spalte („Instagram“ + Icon) */
+}
+#f09 .g5-welten-liste.mit-schwerpunkt .g5-welt {
+  grid-template-columns: 300px minmax(0, 1fr) var(--g5-kanal-spalte);
+}
+#f09 .g5-welten-kopf {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--g5-kanal-spalte);
+  gap: var(--abstand-4);
+}
+#f09 .g5-welt-kanal {
+  white-space: nowrap;
+  font-size: var(--groesse-text-min);
+  font-weight: var(--gewicht-fett);
+  line-height: 1.2;
+  color: var(--f-akzent);
+}
+#f09 .g5-welt-kanal .icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  vertical-align: -5px;
+}
+
 
 /* ---------------------------------------------------------------------------
-   3. f09 – BILDWELT (Balken je Motivgruppe + ein Schlüsselbild)
-   links  Überschrift „Hauptmotiv in 50 codierten Beiträgen“, darunter je
-          Motivgruppe eine Zeile: Name · Balken · Zahl. Die Gruppe mit dem
-          Schlüsselbild (Comic-Tiere) trägt die Akzentfarbe.
-   rechts genau ein Schlüsselbild (Hochformat), erscheint in Schritt 2
+   3. f09 – BILDWELT (Rahmen + Schlüsselbild-Feld; Liste: Regeln oben)
+   links  seit 22.10.2026 die Liste der fünf Bildwelten (.g5-welten, Regeln
+          direkt über diesem Abschnitt). Alte Form, nur bei Daten mit
+          „anteil“ (Stand bis 22.10.2026): Überschrift „Hauptmotiv in 50
+          codierten Beiträgen“, je Motivgruppe Name · Balken · Zahl; die
+          Gruppe mit dem Schlüsselbild trug die Akzentfarbe.
+   rechts genau ein Schlüsselbild-Feld (Hochformat), erscheint in Schritt 2 –
+          seit 22.10.2026 Kandidat „Produkt in der Hand“ als Piktogramm
    --------------------------------------------------------------------------- */
 #f09 .g5-bildwelt {
   flex: 1;
@@ -233,7 +350,8 @@
   height: 100%;
   border-radius: 0 var(--radius-s) var(--radius-s) 0;
   /* zurückhaltendes Grau (Kontrast zum Hintergrund ≥ 3 : 1), damit der
-     Akzentbalken der Comic-Tiere heraussticht */
+     Akzentbalken der Gruppe mit dem Schlüsselbild heraussticht (alte
+     Balkenform mit „anteil“; bis 22.10.2026 waren das die Comic-Tiere) */
   background: color-mix(in oklab, var(--f-text-2) 75%, var(--f-hintergrund));
 }
 #f09 .hat-schluesselbild .g5-motiv-balken { background: var(--f-akzent); }
@@ -279,6 +397,17 @@
   gap: var(--abstand-3);
 }
 #f09 .g5-schluessel-bild::after { content: none; }
+/* Grundform der Kandidat-Fläche (seit der Nacharbeit 22.10.2026 eigene Klasse
+   statt .bild-platzhalter – gleiche Anordnung, aber kein Platzhalter-Look) */
+#f09 .g5-schluessel-feld {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+  overflow: hidden;
+  border: var(--linie-fein) solid var(--f-akzent);
+  color: var(--f-text-2);
+}
 #f09 .g5-schluessel-bild > * { position: relative; }
 #f09 .g5-schluessel-bild > img { position: absolute; }
 /* Beispielbild (nachgestellt/KI): gestrichelt */
@@ -316,12 +445,34 @@
   margin-inline: auto;
 }
 
+/* Schlüsselbild-Kandidat (seit 22.10.2026, d.schluesselbild): Piktogramm statt
+   Screenshot. Seit der Nacharbeit 22.10.2026 durchgezogener Rahmen auf ruhiger
+   Akzentfläche OHNE Schraffur – gestrichelt + schraffiert heißt im Deck
+   „Platzhalter/Beispielwert, nicht erhoben“ (Legende 08b), der Kandidat ist
+   aber Elias' Befund. Dass es KEIN festes Schlüsselbild gibt, sagt der Chip
+   „Kandidat“ (bis zur Nacharbeit: Rahmen gestrichelt, Schraffur). */
+#f09 .g5-schluessel--kandidat .g5-schluessel-bild {
+  border-style: solid;
+  background: var(--f-akzent-flaeche);
+  padding-top: 64px;            /* Platz für den Chip „Kandidat“ oben – sonst verdeckt er das Piktogramm */
+  gap: var(--abstand-2);
+}
+#f09 .g5-schluessel--kandidat .g5-symbol { width: 104px; height: 104px; }
+#f09 .g5-schluessel--kandidat .g5-schluessel-hinweis { color: var(--f-text); }
+
 /* Schritt 2: die übrigen Gruppen treten zurück.
    Auslöser ist das unsichtbare Element .g5-ausloeser (data-schritt="2").
    Schritt 2 ist der Endzustand der Folie – deshalb seit 21.10.2026 nur 0,8
    statt --dimmen (0,6): Die grauen Balken erreichten mit 0,6 nur 2,21 : 1
    (VORTRAGSREIFE A5). Das globale --dimmen bleibt (steuert auch Folie 10). */
 #f09 .g5-bildwelt:has(.g5-ausloeser.schritt-an) .g5-motiv:not(.hat-schluesselbild) {
+  opacity: 0.8;
+}
+/* Liste der Bildwelten (seit 22.10.2026): Nur wenn eine Bildwelt den
+   Schlüsselbild-Kandidaten trägt, treten die übrigen zurück. Der Kandidat
+   „Produkt in der Hand“ gehört zu keiner einzelnen Bildwelt – dann bleibt
+   die Liste in Schritt 2 unverändert. */
+#f09 .g5-bildwelt:has(.g5-welt.hat-schluesselbild):has(.g5-ausloeser.schritt-an) .g5-welt:not(.hat-schluesselbild) {
   opacity: 0.8;
 }
 
@@ -412,6 +563,9 @@ html[data-modus="dunkel"] #f09b .g5b-logo-bild {
   line-height: 1.35;
   color: var(--f-text-2);
 }
+/* zwei Zeilen (seit 22.10.2026): Beschreibung der Wortmarke + Profilbild */
+#f09b .g5b-logo-zeile { display: block; }
+#f09b .g5b-logo-zusatz { margin-top: 4px; }
 /* ohne Logo-Bild (nur Platzhalter in marke.js): Beschreibung ist der Inhalt */
 #f09b .g5b-logo--ohne-bild .g5b-logo-text {
   font-size: var(--groesse-text-min);
@@ -661,7 +815,10 @@ html.druckmodus #f09b .g5b-zeile::before { opacity: 0 !important; }
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 14px var(--abstand-4) 16px;
+  /* seitlich 14 statt 24 px, Trenner 6 statt 12 px, Schrift 28 statt 30 px (seit
+     22.10.2026): „Streetwear-Look · Gelb & Schwarz · knallig“ ist länger als „Comic-Tiere
+     · …“ und soll in allen Themen einzeilig bleiben (geprüft: Bento ist am engsten) */
+  padding: 14px 14px 16px;
   border-radius: var(--radius-m);
   background: var(--f-weich-flaeche);
 }
@@ -678,7 +835,7 @@ html.druckmodus #f09b .g5b-zeile::before { opacity: 0 !important; }
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: var(--groesse-text);
+  font-size: var(--groesse-text-min);   /* 28 px seit 22.10.2026 (vorher 30 px), siehe oben */
   font-weight: 600;
   line-height: 1.25;
   color: var(--f-text);
@@ -686,6 +843,6 @@ html.druckmodus #f09b .g5b-zeile::before { opacity: 0 !important; }
 #f09b .g5b-steuerrad-liste li { white-space: nowrap; }
 #f09b .g5b-steuerrad-liste li + li::before {
   content: "·";
-  margin: 0 12px;
+  margin: 0 6px;
   color: var(--f-text-2);
 }

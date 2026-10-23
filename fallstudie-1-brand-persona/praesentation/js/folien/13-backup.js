@@ -7,7 +7,7 @@
      B3  Datenquellen Persona → Tabelle, nach Persona-Dimension gruppiert
      B4  Repertory Grid       → Mittelwerte + berechnete Kennwerte + Attribut ja/nein
      B5  Laddering            → Leitern, Codierung, Implikationsmatrix, stärkste Leiter
-     B6  Kommunikationsanalyse→ Codiertabelle
+     B6  Kommunikationsanalyse→ Tabelle der Kanäle (seit 22.10.2026; vorher Codiertabelle)
    Außerdem auf allen Backup-Folien: Knopf „Zu Folie …“ (data-bk-ziel) springt
    zur passenden Hauptfolie (Endzustand) – mit Maus, Tab + Enter oder Leertaste.
    Rückweg: Nach dem Sprung führt Taste Z zurück zur Backup-Folie (in den
@@ -549,18 +549,28 @@
 
 
   /* ---------------------------------------------------------------------------
-     B6 · Codiertabelle der Kommunikationsanalyse
+     B6 · Tabelle der Kommunikationsanalyse
+     Seit 22.10.2026 Elias Knaubers Tabelle 1 (Profilmerkmale der vier Kanäle,
+     Zeilen = Kanäle); bis dahin eine Beispiel-Codiertabelle (Zeilen = Beiträge).
+     Spalten mit "markieren": true werden in Schritt 1 hervorgehoben (CSS
+     .bk6-markiert); Zeilen mit "schluesselbild": true wie bisher (.ist-schluesselbild).
+     Die Beschriftung für Screenreader kommt aus d.beschriftung.
+     Die alte Form (Codiertabelle mit 8 Beitragszeilen) baut diese Funktion
+     weiter, sie passt aber mit den Infokästen und festen Spaltenbreiten nicht
+     mehr auf die Folie (Prüfung 22.10.2026) – Hinweise in css/folien/13-backup.css,
+     Abschnitt 7.
      --------------------------------------------------------------------------- */
   function rasterBauen(ctx) {
     var d = ctx.daten, ziel = platz(ctx.folie, 'raster');
     if (!d || !ziel || !d.zeilen || !d.spalten) return;
-    var t = neueTabelle('bk6-tabelle', 'Codiertabelle der Kommunikationsanalyse (Auszug)');
-    kopf(t, d.spalten.map(function (s) { return [s.titel, 'bk6-' + s.schluessel]; }));
+    var t = neueTabelle('bk6-tabelle', d.beschriftung || 'Codiertabelle der Kommunikationsanalyse (Auszug)');
+    var klasse = function (s) { return 'bk6-' + s.schluessel + (s.markieren ? ' bk6-markiert' : ''); };
+    kopf(t, d.spalten.map(function (s) { return [s.titel, klasse(s)]; }));
     var tb = koerper(t);
     d.zeilen.forEach(function (z) {
       var tr = u.element('tr', { class: z.schluesselbild ? 'ist-schluesselbild' : '' }, null, tb);
       d.spalten.forEach(function (s, i) {
-        var c = zelle(tr, i ? 'td' : 'th', 'bk6-' + s.schluessel, z[s.schluessel] === undefined ? '–' : z[s.schluessel]);
+        var c = zelle(tr, i ? 'td' : 'th', klasse(s), z[s.schluessel] === undefined ? '–' : z[s.schluessel]);
         if (!i) c.setAttribute('scope', 'row');
       });
     });

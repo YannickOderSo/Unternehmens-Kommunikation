@@ -5,9 +5,10 @@
         • setzt die Frage der Umfrage (marke.js → umfragen.tier.frage) als Titel
         • ohne Abstimm-Link (nur Zählmodus): zeigt links „Abstimmung per
           Handzeichen“ statt des QR-Codes
-        • baut aus den Daten der Folie die Karten „Als Tier“ (mit Selbstbild)
-          und „Als Mensch“ (mit tatsächlicher Kundschaft) sowie die
-          Kontrastzeile mit zwei Wettbewerbern
+        • baut aus den Daten der Folie die Karten „Als Tier“ (mit Selbstbild
+          und – seit 22.10.2026 – einem weiteren Tier nebeneinander) und „Als
+          Mensch“ (Kundschaft nur, wenn eingetragen) sowie die Kontrastzeile
+          mit zwei Wettbewerbern
         • prüft, ob Tier, Selbstbild und Titel der Folie zu marke.js →
           umfragen.tier (unsereAntwort, optionen) passen und ob die Karten
           überlaufen (dann enger setzen); bleibt ein Problem, steht ein Hinweis
@@ -52,6 +53,18 @@
       '<path d="M31 71.5 C17.5 74.5 6 85 10.5 98 C15 109.5 30 108.5 34.5 99.5 C38 91.5 32 83.5 25 86 C19 88 21 96.5 26.5 96.5"/>' +
       '<path d="M75 65.5 L87 71 L87.5 87.5 M46.5 78 L42 90 L52.5 100.5"/>' +
       '<path d="M30 108.5 L114 78"/>',
+    /* Papagei (seit 22.10.2026: Elias Knaubers anderes Tier in seiner
+       Ausarbeitung „Analogien“ – bei ihm „Tier 1“, das Chamäleon „Tier 2“):
+       auf einem Ast, Blick nach rechts. Erkennungsmerkmale:
+       großer Hakenschnabel, Augenring, langer Schwanz. Nur auf der Folie –
+       keine Umfrage-Option, deshalb NICHT in js/abstimmen.js (Live-Abstimmung
+       bleibt unverändert). Geprüft am 22.10.2026 bei 96, 72 und 56 px. */
+    papagei:
+      '<path d="M54 46 C51 29 61 16 76 16 C86 16 92 21 94 28 C104 27 109 40 101 52 C99 45 95 42 91 43 C92 59 88 72 79 82 L72 115 C67 117 62 116 59 112 L63 84 C51 77 50 60 54 46 Z"/>' +
+      '<circle cx="80" cy="29" r="6.5"/><circle class="voll" cx="80.5" cy="29" r="2.8"/>' +
+      '<path d="M94 28 C93 34 92 39 91 43"/>' +
+      '<path d="M62 50 C57 64 60 77 70 86"/>' +
+      '<path d="M26 96 L112 87"/><path d="M72 83 L71 92 M80 81 L80 90"/>',
     /* Waschbär (Tier unserer Analyse bis 20.10.2026; bleibt für einen Rückgriff) */
     waschbaer:
       '<path d="M60 104 C50 104 42 98 36 92 L14 78 L24 70 C21 58 22 46 27 37 L24 15 L44 26 Q60 21 76 26 L96 15 L93 37 C98 46 99 58 96 70 L106 78 L84 92 C78 98 70 104 60 104 Z"/>' +
@@ -118,7 +131,13 @@
       '<circle class="voll" cx="93" cy="47" r="3.4"/>',
     mensch:
       '<circle cx="60" cy="40" r="20"/><path d="M22 108 C22 82 40 70 60 70 C80 70 98 82 98 108"/>',
-    /* Mensch mit Headset (Gamer) */
+    /* Impro-Comedian (seit 22.10.2026, Analogie „Mensch“ nach Elias Knauber):
+       Mensch vor einem Mikrofon am Ständer – das Zeichen der Bühne */
+    comedian:
+      '<circle cx="50" cy="40" r="19"/><path d="M14 108 C14 84 30 72 50 72 C64 72 75 78 81 88"/>' +
+      '<rect x="78" y="30" width="12" height="20" rx="6" transform="rotate(28 84 40)"/>' +
+      '<path d="M80 50 L96 110 M84 110 H108"/>',
+    /* Mensch mit Headset (Gamer; Analogie „Mensch“ bis 22.10.2026) */
     gamer:
       '<circle cx="60" cy="42" r="20"/><path d="M22 108 C22 82 40 70 60 70 C80 70 98 82 98 108"/>' +
       '<path d="M35 42 C35 24 46 15 60 15 C74 15 85 24 85 42"/>' +
@@ -211,7 +230,13 @@
   }
 
   /* Karte „Als Tier“: Zeichnung, Tiername, drei Gründe (Eigenschaft + Beleg),
-     darunter das Selbstbild der Marke (z. B. Maskottchen).
+     darunter das Selbstbild der Marke (z. B. Maskottchen) und – seit
+     22.10.2026 – ein weiteres Tier („weiteresTier“, Elias Knauber: Papagei;
+     bis zur Nacharbeit am 22.10.2026 hieß der Schlüssel „zweitesTier“ und
+     wird weiter gelesen). Die Standard-Beschriftung ist neutral („Weiteres
+     Tier“): Bei Elias ist der Papagei „Tier 1“, das Chamäleon „Tier 2“.
+     Stehen beide in den Daten, teilen sie sich EINE gestrichelte Zeile
+     (nebeneinander), damit die Karte nicht höher wird.
      Tiere ohne eigene Zeichnung bekommen einen Pfotenabdruck. */
   function tierKarte(ctx, karte, tier) {
     var util = ctx.util;
@@ -227,22 +252,35 @@
       util.element('dd', null, util.markeText(g.beleg || ''), zeile);
     });
 
-    gegenpol(ctx, karte, tier.selbstbild, 'Selbstbild');
+    var weiteres = tier.weiteresTier || tier.zweitesTier;
+    var pole = [[tier.selbstbild, 'Selbstbild'], [weiteres, 'Weiteres Tier']].filter(function (p) {
+      return p[0] && (p[0].text || p[0].name);
+    });
+    if (!pole.length) return;
+    karte.classList.add('hat-gegenpol');
+    /* zwei Einträge: gemeinsame Zeile (CSS .g4-gegenpole, zwei Spalten) */
+    var ziel = pole.length > 1 ? util.element('div', { class: 'g4-gegenpole' }, null, karte) : karte;
+    pole.forEach(function (p) { gegenpol(ctx, ziel, p[0], p[1]); });
   }
 
-  /* Gegenpol unten in einer Karte: ein belegter Fakt, der der Analogie
-     gegenübersteht (Tier: Selbstbild/Maskottchen, Mensch: tatsächliche
-     Kundschaft). Daten: { "bezeichnung": "…", "text": "…", "bild": "…" } */
-  function gegenpol(ctx, karte, eintrag, standardBezeichnung) {
+  /* Gegenpol unten in einer Karte: ein belegter Fakt bzw. eine weitere
+     Analogie neben der Hauptaussage (Tier: Selbstbild/Maskottchen und
+     weiteres Tier, Mensch: tatsächliche Kundschaft).
+     Daten: { "bezeichnung": "…", "text": "…", "zusatz": "…", "bild": "…" }
+     „zusatz“ (optional) = dritte Zeile in Textgröße, z. B. Eigenschaften.
+     eltern = Karte oder die gemeinsame Zeile .g4-gegenpole. */
+  function gegenpol(ctx, eltern, eintrag, standardBezeichnung) {
     var util = ctx.util;
     var text = eintrag && (eintrag.text || eintrag.name);
     if (!text) return;
+    var karte = eltern.closest('.g4-karte') || eltern;
     karte.classList.add('hat-gegenpol');
-    var reihe = util.element('div', { class: 'g4-gegenpol' }, null, karte);
+    var reihe = util.element('div', { class: 'g4-gegenpol' }, null, eltern);
     if (!bild(util, bildFuer(text, eintrag.bild), 'g4-gegenpol-bild', reihe)) reihe.classList.add('ohne-bild');
     var block = util.element('div', { class: 'g4-gegenpol-text' }, null, reihe);
     util.element('span', { class: 'g4-gegenpol-label', 'data-meta': '' }, eintrag.bezeichnung || standardBezeichnung, block);
     util.element('span', { class: 'g4-gegenpol-inhalt' }, util.markeText(text), block);
+    if (eintrag.zusatz) util.element('span', { class: 'g4-gegenpol-zusatz' }, util.markeText(eintrag.zusatz), block);
   }
 
   /* Karte „Als Mensch“: Zeichnung, Kurzbeschreibung, Kurzprofil (Merkmal → Wert).

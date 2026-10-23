@@ -1,5 +1,34 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag Do, 22.10.2026 (Account 1): Elias' Material eingebaut
+
+> Kurzer Nachtrag über dem Nachtrag vom 21.10. Seit Do, 22.10.2026 stehen Elias Knaubers Ausarbeitungen (Analogien,
+> Stand 16.10.2026; Kommunikationsanalyse mit eigenen Bildschirmaufnahmen vom 20./21.10.2026) auf den Folien 08, 09,
+> 09b, 10 (Feld Markenbild, Lücke 2), 11 (Zeile 3) und B6 (Workflow D24, KI-Nachweis 119; `AUTOREN.md` Abschnitt 23;
+> Ausarbeitungen `../analogien.md`, `../kommunikationsanalyse.md`). Die Freigabe durch Yannick und Elias ist offen.
+> Die Tabelle sagt nur, welche Befunde dadurch **erledigt oder gegenstandslos** sind; alles andere gilt wie im
+> Nachtrag vom 21.10.
+
+| ID | Stand seit 22.10.2026 |
+|---|---|
+| G1 (Top 1) | teilweise: Folie 08 (Analogien) und 09 tragen keine Beispieldaten mehr; 06, 07, 08b, 10, 11 weiter (Pille auf 10 bleibt). |
+| E1 | gegenstandslos: kein Raptor-Screenshot mehr; Kandidat „Produkt in der Hand“ als eigenes Piktogramm (`QUELLEN.md` §4). |
+| E2 | offen, aber anders: Elias hat nicht codiert – B6 zeigt seine Tabelle 1, Spalten „Anlass“ und „Wirkversprechen“ gibt es nicht (LIESMICH 12.3: nachliefern oder als Grenze nennen). |
+| E4 | erledigt (geliefert), qualitativ: keine Stichprobe, keine Engagement-Raten, keine Motivanteile – auf 09 ersatzlos entfernt. |
+| E6, E10 | gegenstandslos: „Sechs Claims“ und Claim-Hierarchie entfallen; Elias: Dachclaim auf allen vier Kanälen, Befund „Uneinheitlicher Absender“, Empfehlung 3 „Ein Absender, ein Schlüsselbild“. |
+| E7 | teilweise: Formel entfällt (09, B6); Meta-Werbebibliothek weiter offen (Elias, `../kommunikationsanalyse.md` §13 Frage 5). |
+| E11 | gegenstandslos: TikTok ist auf 09 analysiert; Rückfrage „Warum TikTok?“ (Zielgruppen-Begründung offen). |
+| E13 | ergänzt: Follower auf 09 vor dem 26.10. neu ablesen oder Stand 20./21.10. in der Fußzeile lassen (Elias). |
+| L5, F08-13 | teilweise: Tonalität und Emotionen kommen jetzt aus Elias' Analogien (die Aufgabe verlangt das, S. 60); der Zirkel liegt jetzt bei derselben Person (Analogien und Kommunikationsanalyse von Elias) – benennen (`../fragerunde.md` F30). |
+| F08-2 | teilweise: Fußzeile 08 nennt Elias' Ausarbeitung statt „n = 8 …“; Sätze zu Interviews in Notizen 08 prüfen (LIESMICH 12.2). |
+| F08-3 (#38) | teilweise: Begründung jetzt von Elias (Analyse der Kommunikation, H); Abgleich mit der Befragung von Bündel B offen. |
+| F08-10 | erledigt: Mensch-Analogie Impro-Comedian statt „Gamer“. |
+| F08-11 | erledigt: „frech“ ist kein Chamäleon-Grund mehr; Rückfragen zu Tarnung und Einzelgänger mit Elias' Gegenargument. |
+| F08-15 | gegenstandslos: Zeile „Echte Kundschaft“ entfällt (Kundschaft in den Notizen). |
+| F08-18 | gegenstandslos in der alten Form (Begründung nicht mehr KI-gestützt); neu: P11/P12 in B2 nach Elias' Antwort zur KI-Nutzung klären. |
+| F08-23 | gegenstandslos auf der Folie: „31 Energy-Sorten“ steht nur noch in der gekennzeichneten Ergänzung der Notizen. |
+| Neu | Folie 02 (Methodenkarten „KI + Kurzinterviews“, „KI hilft codieren“) und Folie 05 (Notizen „Raptor bleibt Absender“) passen nicht mehr – beide waren gesperrt, Entscheidung Yannick (LIESMICH 12.1). Exporte beim Abschluss am 22.10. mit Elias' Material neu erzeugt (Freigabe offen; E12 bleibt: nach Datenschluss und Generalprobe erneut). |
+
 ## Nachtrag Mi, 21.10.2026 (Account 1): Stand der Befunde
 
 > Dieser Nachtrag steht über dem ursprünglichen Bericht. Der Bericht ab Abschnitt 1 ist unverändert (Stand a929391,

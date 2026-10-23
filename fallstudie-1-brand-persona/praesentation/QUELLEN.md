@@ -2,7 +2,9 @@
 
 Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `praesentation/` – es wird
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
-Stand: 20.10.2026 (seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
+Stand: 22.10.2026 (22.10.: Ausarbeitungen von Elias Knauber – Kommunikationsanalyse und Analogien – als Quelle,
+Abschnitt 5; keine Bilder daraus übernommen; Screenshot-Ausnahme für den Raptor auf Folie 09 entfällt, eigene
+Zeichnungen Papagei, Comedian und „Produkt in der Hand“, Abschnitte 3 und 4; seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
 Kategoriedaten Kantar/Statista vollständig, Rechtevermerk Limbic®, „Nachprüfung, KI-gestützt“ statt „eigene
 Prüfung“; 19.10.: Abruf des DNB-Katalogs als KI-gestützt gekennzeichnet, Grafiken in `../grafiken/` eingeordnet,
 Gründerbefragung als zweite Ausnahme in Abschnitt 5; Rätselbild Folie 01 und Persona-Bild Folie 04 als eigene
@@ -54,11 +56,14 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
 - **Icon-Satz** (Linien-Icons 24 × 24, Strichstärke 2; Inline-SVG-Sprite am Anfang von `index.html`):
   eigene Gestaltung, keine fremden Icon-Bibliotheken, keine Plattform-Logos.
 - **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Chamäleon, Adler, Löwe, Schwan auf Folie 08 und
-  auf der Abstimmseite – das Chamäleon seit 20.10.2026 statt des Waschbärs,
-  Motiv-Piktogramme auf Folie 09/09b, Markensteuerrad, Limbic Map, Diagramme): eigene SVG-Zeichnungen
-  bzw. per Skript aus den Daten erzeugt – kein Nachbau von Markenzeichen. Das Maskottchen „Raptor“ von
-  HOLY wird nur benannt (Folie 09: Adler-Piktogramm als Platzhalter), nicht abgebildet – einzige mögliche
-  Ausnahme ist der Screenshot des Schlüsselbild-Beitrags auf Folie 09 (Regel in Abschnitt 4).
+  auf der Abstimmseite – das Chamäleon seit 20.10.2026 statt des Waschbärs –, seit 22.10.2026 auf Folie 08
+  zusätzlich Papagei (Elias Knaubers anderes Tier – bei ihm „Tier 1“ –, nur auf der Folie, nicht in der Abstimmung) und ein Mensch am
+  Mikrofon (Impro-Comedian), Motiv-Piktogramme auf Folie 09/09b – seit 22.10.2026 u. a. „Produkt in der Hand“ als
+  Schlüsselbild-Kandidat und ein Schachbrett (Streetwear-Code nach Elias) –, Markensteuerrad, Limbic Map, Diagramme): eigene SVG-Zeichnungen bzw. per Skript aus
+  den Daten erzeugt – kein Nachbau von Markenzeichen, keine Vorlage aus Elias' Bildschirmaufnahmen. Das Maskottchen
+  von HOLY (Adler, im Dossier „Raptor“) wird nur benannt und mit einer allgemeinen Adler-Zeichnung angedeutet
+  (Folie 08), nicht nachgebildet. Die bis 21.10.2026 vorgesehene Ausnahme – ein Screenshot des Raptor-Beitrags als
+  Schlüsselbild auf Folie 09 – entfällt (Abschnitt 4).
 - **Illustrationen auf Folie 01 und 04** (seit 19.10.2026, Dateien in Abschnitt 4): eigene Gestaltung,
   KI-gestützt (Claude Code), 19.10.2026 – **von Claude Code als SVG-Code erzeugt** (Rätselbild per
   Generator-Skript, Persona-Bild direkt als SVG mit Hilfsskript für die Regalgeometrie); Motivvorgaben,
@@ -152,18 +157,25 @@ der öffentlichen Startseite) zeigen seit 20.10.2026 die Fassung mit Logo; lehnt
 neu erzeugen. Auf Folie 12 steht das Logo
 deshalb beim Fazit über die Marke und nicht neben den Gruppennamen (dort wirkte es wie ein Absender).
 
-**Keine Produktfotos oder Social-Media-Bilder von HOLY** – mit einer einzigen vorgesehenen Ausnahme (Regel seit
-18.10.2026): ein Screenshot des Schlüsselbild-Beitrags (Raptor) auf Folie 09 als Gegenstand der Analyse, und
-**nur nach Zustimmung des Betreuers**. Dann Quelle in der Fußzeile von Folie 09 nach dem Muster
-„Screenshot © HOLY Softdrinks GmbH, <Plattform> <Konto>, Beitrag vom TT.MM.JJJJ, Abruf TT.MM.2026“, die Datei
-in dieser Tabelle und in B7 („Logos und Screenshot“) eintragen. Ohne Zustimmung bleibt das Piktogramm auf
-Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
+**Keine Produktfotos oder Social-Media-Bilder von HOLY.** Die vom 18. bis 21.10.2026 vorgesehene einzige Ausnahme –
+ein Screenshot des Schlüsselbild-Beitrags (Raptor) auf Folie 09, nur nach Zustimmung des Betreuers – **entfällt seit
+Do, 22.10.2026**: Laut Elias Knaubers Kommunikationsanalyse hat HOLY kein festes Schlüsselbild, der Adler ist das
+Maskottchen; Folie 09 zeigt für den Kandidaten „Produkt in der Hand“ ein eigenes Piktogramm.
+**Aus Elias' Ausarbeitungen ist kein Bild übernommen.** Seine Kommunikationsanalyse enthält Bildschirmaufnahmen von
+Profilköpfen, Beiträgen und der Facebook-Suche (Abbildungen 1–4, zum Teil mit erkennbaren Personen); beide PDFs
+liegen nur im Gruppenordner, nicht im Repository und nicht in den Exporten. Übernommen sind nur Text, Zahlen und
+Befunde mit Quellenangabe (Abschnitt 5). Soll später doch ein Screenshot auf eine Folie (z. B. ein Beitrag mit
+Produkt in der Hand), gilt weiter: **nur nach Zustimmung des Betreuers**, möglichst ohne erkennbare Personen, Quelle
+in der Fußzeile nach dem Muster „Screenshot © HOLY Softdrinks GmbH, <Plattform> <Konto>, Beitrag vom TT.MM.JJJJ,
+Abruf TT.MM.2026“, die Datei in dieser Tabelle und in B7 („Logos und Screenshot“) eintragen. Eigene Bilder nur mit
+geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
 
 ## 5. Inhalte und Fakten
 
-- **Fakten über HOLY** (Zahlen, Historie, Produkte, Zielgruppe, Kanäle, Farben, Claims): ausschließlich aus
-  dem Recherche-Dossier `../recherche/holy-recherche.md` (Stand 13./14.10.2026), jeweils mit Quellennummer
-  [n] und Faktenstatus (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese). Das vollständige
+- **Fakten über HOLY** (Zahlen, Historie, Produkte, Zielgruppe, Kanäle, Farben, Claims): aus dem
+  Recherche-Dossier `../recherche/holy-recherche.md` (Stand 13./14.10.2026), jeweils mit Quellennummer
+  [n] und Faktenstatus (✔ gesichert, ✎ korrigiert, ~ unsicher, H Hypothese) – Ausnahmen unten
+  (Kategoriedaten, Gründerbefragung, seit 22.10.2026 die Ausarbeitungen von Elias Knauber). Das vollständige
   Quellenverzeichnis steht im Dossier (Anhang B); Backup-Folie **B8** löst alle Nummern auf, die sichtbar
   auf den Folien stehen (Kurzangaben aus Anhang B), B7 nennt Literatur und Technik. Für die Folien 03 und 05
   hat der bearbeitende KI-Agent am 17.10.2026 Quellen zusätzlich nachgelesen (auf den Folien und in B7
@@ -198,19 +210,48 @@ Folie 09. Eigene Bilder nur mit geklärten Rechten verwenden und die Quelle in d
   im Backup B1, B3 (Status „extern“, wie in der Legende von B7) und B7. Sonst steht GB auf den Hauptfolien nur in
   den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“, „11“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
   offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
+- **Ausnahme – Ausarbeitungen von Elias Knauber** (Bündel C), seit Do, 22.10.2026: eigene Erhebungen der Gruppe
+  ohne Dossier-Nummer.
+  - **Kommunikationsanalyse:** Knauber, E. (2026): *Kommunikationsanalyse zum Markenbild von HOLY – Instagram,
+    Facebook, TikTok und YouTube im Vergleich.* Ausarbeitung, 12 S. Datengrundlage: eigene Bildschirmaufnahmen vom
+    20.10.2026 (Profile Instagram holysquad.official, TikTok @holysquad.official, YouTube @HOLYSquadOfficial) und
+    vom 21.10.2026 (Facebook-Suche nach „HOLY“; Followerzahl der Seite direkt abgelesen), vier Einzelbeiträge
+    (Instagram 23.06. und 20.10.2026, TikTok 27.06. und 17.10.2026), Desk Research vom 16.10.2026 (HOLY „Our
+    Story“, Angabe zur Facebook-Gruppe). Auf den Folien kurz „Kommunikationsanalyse E. Knauber“ bzw. „eigene
+    Bildschirmaufnahmen 20./21.10.2026“, im Steuerrad Kürzel **KA**. Verwendet auf Folie 09, 09b, 10 (Feld
+    Markenbild, Lücke 2), 11 (Empfehlung 3), B6, als Eintrag in B7 und in den Notizen (u. a. Folie 08: Adler als
+    Maskottchen, uneinheitlicher Absender).
+  - **Analogien:** Knauber, E. (2026): *HOLY – Analogien: Mensch und Tier.* Ausarbeitung, Stand 16.10.2026, 2 S.
+    Elias' Quellen: HOLY-Website (de.holy.com, inkl. „Unsere Story“ und Produktseiten), HOLY-Stellenanzeigen,
+    Instagram @holysquad.official und @holysquad.fr, Facebook-Seite holysquad.official, X @Holysquad_uk, HOLY
+    TV-Spot 2026; abgerufen am 16.10.2026. Auf den Folien kurz „Ausarbeitung E. Knauber“, im Steuerrad Kürzel
+    **AN**. Verwendet auf Folie 08 (Tier, Mensch, Fußzeile, Notizen) und als Hinweis auf 08b.
+  Übertragen KI-gestützt (Claude Code) am 22.10.2026 (KI-Nachweis 119, Workflow D24) nach
+  `../kommunikationsanalyse.md` und `../analogien.md`; dort ist bei jedem Punkt vermerkt, was zusätzlich im Dossier
+  steht (mit Status) und was nur Elias belegt. Zahlen sind Elias' Werte (abgelesen bzw. von ihm selbst gerechnet),
+  nicht nachgerechnet; Follower, Likes und Aufrufe gelten als Indizien (keine Insights). Belege außerhalb des
+  Dossiers (z. B. Nutella-Werbeparodie, Stellenanzeigen, Claims je Land) sind Elias' eigene Recherche und nicht
+  gegengeprüft. **Keine Bilder übernommen** (Abschnitt 4), keine Namen privater Personen; die PDFs liegen im
+  Gruppenordner, nicht im Repository.
 - **Analogie-Tier Chamäleon** (Folie 08, seit Di, 20.10.2026; vorher Waschbär nach der Hypothese im Dossier
-  Kap. 6.7): Einordnung von Elias Knauber (Bündel C), mitgeteilt von Yannick; Elias' Ausarbeitung liegt nicht im
-  Repository. Die Begründung (drei Gründe auf der Folie, Sprechtext, Gegenargumente) ist ein **Vorschlag,
-  KI-gestützt** aus dem Recherche-Dossier (Kap. 1, 2.1, 2.7, 2.8, 3.1, 6.1–6.3, 6.6, 7.1, 8 – jeweils mit
-  Quellennummer und Status in den Notizen von Folie 08) – **von Elias zu prüfen**. Ohne Websuche. Die Analogie
-  selbst ist eine Hypothese (H); die Alltagsbedeutung von „Chamäleon“ („ohne festen Kern“, Tarnung) ist
-  Sprachgebrauch aus dem Modellwissen. Auf der Folie: „Tier: eigene Einordnung (H)“ in der Fußzeile (ohne den Tiernamen, weil die Fußzeile schon
-  während der Abstimmung zu sehen ist).
+  Kap. 6.7): Einordnung und – seit Do, 22.10.2026 – Begründung von Elias Knauber (Ausarbeitung Analogien, Stand
+  16.10.2026, vorheriger Punkt): wandelbar, kreativ, anpassungsfähig mit seinen Belegen (Eigenschaften und Belege von
+  Elias, die Paarung je Zeile hat die Übertragung gebildet – von Elias zu bestätigen); dazu sein anderes Tier, der
+  Papagei (bei ihm „Tier 1“), und als Mensch ein Impro-Comedian. Die Analogie bleibt eine Hypothese (H). Vom 20. bis 22.10.2026
+  stand auf der Folie ein **Vorschlag, KI-gestützt** aus dem Recherche-Dossier (Kap. 1, 2.1, 2.7, 2.8, 3.1,
+  6.1–6.3, 6.6, 7.1, 8); diese Dossier-Belege stehen seither nur noch als gekennzeichnete Ergänzung in den Notizen
+  von Folie 08. Ohne Websuche. Die Alltagsbedeutung von „Chamäleon“ („ohne festen Kern“, Tarnung) ist
+  Sprachgebrauch aus dem Modellwissen; Elias' Gegenargument zur Tarnung (Farbwechsel zur Kommunikation mit
+  Artgenossen) steht bei ihm ohne Quelle. Die Fußzeile von Folie 08 nennt die Ausarbeitung, aber nicht den
+  Tiernamen, weil sie schon während der Abstimmung zu sehen ist.
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
-- **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08, 08b, 09 (Beiträge,
-  Engagement, Motivanteile und Zahl der codierten Beiträge – die Follower-Zahlen sind belegt), 10, 11, 12
-  (Fazit, beruht auf 10/11) sowie B4–B6; B1 trägt „teils geplant“ (Kurzinterviews stehen aus), B2 „teils
+- **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08b, 10, 11, 12
+  (Fazit, beruht auf 10/11) sowie B4 und B5; auf Folie 08 nur noch die Tiere der Wettbewerber im Kontrast
+  („(Beispiel)“, ohne Pille). **Seit Do, 22.10.2026 ohne Beispieldaten:** Folie 08 (Tier und Mensch nach Elias
+  Knauber), Folie 09 (vier Kanäle mit Elias' Werten; Beiträge pro Woche, Engagement-Raten, Motivanteile und die
+  Zahl der codierten Beiträge waren Beispielwerte und entfallen ersatzlos) und B6 (Elias' Tabelle 1 statt der
+  Beispiel-Codiertabelle). B1 trägt „teils geplant“ (Kurzinterviews stehen aus), B2 „teils
   Beispiel“ (Bündel A belegt, P7–P14 noch Beispiel). Folie 09b
   enthält keine Beispielwerte: Fakten belegt, die Fit-Bewertung ist als Hypothese gekennzeichnet. Alles
   bleibt Beispiel, bis die Gruppe eigene Erhebungen einträgt.
@@ -243,5 +284,5 @@ Diese Präsentation wurde **mit KI-Unterstützung erstellt: Claude Code (Anthrop
 Folienaufbau, Diagramme, Sprechtext-Entwürfe, Prüfwerkzeug und diese Dokumentation. Die Gestaltung wurde in
 drei Richtungen entworfen und per Jury-Bewertung ausgewählt (`_entwuerfe/JURY.md`). Alle Prompts,
 Unteragenten und Prüfschritte sind im KI-Nachweis der Gruppe dokumentiert (`../../ki-nachweis/`). Inhalte
-über HOLY stammen aus dem geprüften Recherche-Dossier, nicht aus dem Modellwissen; Beispieldaten sind
-gekennzeichnet. Die Gruppe prüft und verantwortet alle Inhalte vor dem Vortrag.
+über HOLY stammen aus dem geprüften Recherche-Dossier und aus eigenen Erhebungen der Gruppe (Gründerbefragung,
+seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen; Beispieldaten sind gekennzeichnet. Die Gruppe prüft und verantwortet alle Inhalte vor dem Vortrag.

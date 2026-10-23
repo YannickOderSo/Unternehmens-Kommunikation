@@ -31,7 +31,7 @@ Logik sichtbar macht, ist das der größte Hebel für *Anwendung von Konzepten* 
 | Repertory Grid | Triadenvergleich mit Wettbewerbern | relevante, differenzierende Eigenschaften | **Markeneigenschaften** – *Über welche Eigenschaften verfügen wir?* |
 | Laddering | Means-End-Kette | sachlich-funktionaler und psychosozialer Nutzen | **Markennutzen** – *Was bieten wir?* |
 | Analogien | Marke als Mensch / Tier | Persönlichkeit, Beziehung, Emotionen | **Markentonalität** – *Wie sind wir?* |
-| Kommunikationsanalyse | Content-Analyse IG / FB / YT | Corporate Design, Schlüsselbilder, Bildwelt | **Markenbild** – *Wie treten wir auf?* |
+| Kommunikationsanalyse | Analyse der Profile und Inhalte IG / FB / TikTok / YT (eigene Bildschirmaufnahmen; TikTok zusätzlich, seit 22.10.2026) | Corporate Design, Schlüsselbilder, Bildwelt | **Markenbild** – *Wie treten wir auf?* |
 | Brand Persona + Limbic Map | Desk Research, KI, Limbic Map | Wen spricht die Marke an, welche Motive? | Bezugsrahmen für alle Felder |
 
 Linke Hälfte = *hard facts* (Eigenschaften, Nutzen), rechte Hälfte = *soft facts* (Tonalität, Bild).
@@ -51,6 +51,11 @@ Analogien ──► Markentonalität ──► Soll-Maßstab für die Kommunikat
 Kommunikationsanalyse ──► Markenbild (Ist) + Lücken zwischen Identität und Auftritt
 Alles ──► Markensteuerrad ──► Positionierung (Satz über dem Rad, Stenger, S. 87, 94) ──► Empfehlungen
 ```
+
+**Stand Do, 22.10.2026:** Analogien und Kommunikationsanalyse stammen aus Elias Knaubers eigenen Ausarbeitungen, nicht
+aus Befragten: [`analogien.md`](analogien.md) (Impro-Comedian, Papagei, Chamäleon) und
+[`kommunikationsanalyse.md`](kommunikationsanalyse.md) (vier Kanäle, eigene Bildschirmaufnahmen vom 20./21.10.2026).
+Beide sind KI-gestützt aus seinen PDFs übertragen; die Freigabe durch Elias und Yannick ist offen.
 
 **Identität vs. Image** (Begriffe der Vorlesung seit 21.10.2026, Befund #30): Markenidentität ist die Innensicht –
 „wer und was man sein möchte“; das Markenimage ist, „was wahrgenommen wird“ (Stenger, S. 87; bei uns bisher auch
@@ -82,7 +87,8 @@ Falls Rückfragen in die 15 Minuten fallen: Folien 3 und 8 kürzen.
 Ausformulierte Entwürfe je Folie (Titel, Text, Grafik, Sprechtext, Rückfragen): [`folienentwuerfe.md`](folienentwuerfe.md)
 
 **Backup** (nach der Abschlussfolie): B1 Methodik & Begründung · B2 Prompt-Log · B3 Datenquellen Persona ·
-B4 Repertory-Grid-Rohdaten · B5 Laddering-Leitern & Implikationsmatrix · B6 Raster Kommunikationsanalyse · B7 Quellenverzeichnis
+B4 Repertory-Grid-Rohdaten · B5 Laddering-Leitern & Implikationsmatrix · B6 Profilmerkmale der Kanäle (seit 22.10.2026
+Elias' Tabelle 1; im Deck noch als „Raster Kommunikationsanalyse“ bzw. „KA-Raster“ verlinkt) · B7 Quellenverzeichnis
 
 ## Arbeitsplan
 

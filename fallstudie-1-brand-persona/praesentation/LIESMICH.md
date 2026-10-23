@@ -4,7 +4,7 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 21.10.2026 – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+Stand: 22.10.2026 (Material von Elias Knauber eingebaut, Freigabe offen – siehe unten) – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
 der zweiten Abschlussprüfung überarbeitet. Seit Sa, 17.10. von Account 1 übernommen: Ergebnisse von Bündel A
 eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3) und Limbic Map A3 (Folie 05),
 dazu die passenden Stichworte auf Folie 10 und die Verweise auf 11, B2, B7 und B8; offizielles HOLY-Logo auf
@@ -17,7 +17,8 @@ das Persona-Bild (Folie 04) **eigene Illustrationen** (KI-gestützt, gekennzeich
 der Prüfung am 19.10. nachgearbeitet (Rätselbild ohne Tier auf der Dose, volle Kennzeichnung auf Folie 04);
 die Exporte in `export/` sind damit am 19.10. neu erzeugt (Abschnitt 11). Seit Di, 20.10. ist das Tier unserer
 Analyse auf Folie 08 und in der Abstimmung das **Chamäleon** statt des Waschbärs (Einordnung Elias Knauber;
-Begründung als Vorschlag gekennzeichnet, Elias prüft – Abschnitt 6 und 12, `AUTOREN.md` Abschnitt 18); nach zwei
+Begründung bis 22.10. als Vorschlag gekennzeichnet, seit 22.10. von Elias selbst – Abschnitt 6 und 12,
+`AUTOREN.md` Abschnitte 18 und 23); nach zwei
 Prüfungen nachgearbeitet und die Exporte am 20.10. neu erzeugt (Folie 08 mit Chamäleon).
 Seit Di, 20.10. ist das **Rätsel auf Folie 01 lösbar**: Das Rätselbild zeigt das **Original-Logo** auf einer
 erfundenen Dose (`bilder/raetsel-holy-logo.svg`, Entscheidung Yannick), Schritt 0 das Logo groß und unscharf, ein
@@ -42,13 +43,26 @@ Seit Mi, 21.10. abends (Nacharbeit zum Prüfbericht `VORTRAGSREIFE.md`, Nachtrag
 aber erst ab Folie 12, damit ein versehentlicher Klick nichts umspringt –, Schwarzbild und Uhr sind robuster, ein
 Knopf führt zu den Rückfragen (Abschnitt 2 und 4). Folie 08 zeigt keine Prozentzahl aus Beispielwerten mehr, die
 Bedienhinweise dort beschreiben Weg A. Es gibt einen **Sprechzettel-Druck** und eine Notfalltabelle (Abschnitt 11).
-Die **Checkliste ist nach Personen geordnet** (Abschnitt 12). Exporte am 21.10. abends neu erzeugt.
+Die **Checkliste ist nach Personen geordnet** (Abschnitt 12). Exporte am 21.10. abends und am 22.10. (mit Elias' Material) neu erzeugt.
+**Seit Do, 22.10.** stehen die Ausarbeitungen von **Elias Knauber** (Bündel C) auf den Folien (`AUTOREN.md`,
+Abschnitt 23; Ausarbeitungen `../analogien.md` und `../kommunikationsanalyse.md`, KI-gestützt aus seinen PDFs
+übertragen): **Folie 08** mit seiner Chamäleon-Begründung (fünf Produktlinien, laufend neue Sorten, eigene Claims je
+Land), seinem anderen Tier, dem **Papagei** (klein in der Karte, nicht in der Abstimmung), und dem
+**Impro-Comedian** als Mensch; **08b** nur ein Hinweis in Kasten und Notizen (Lukas gleicht ab); **Folie 09** mit
+**vier Kanälen** (Instagram, Facebook, TikTok, YouTube; eigene Bildschirmaufnahmen vom 20./21.10.), ihren Rollen,
+fünf Bildwelten ohne Anteile und dem Schlüsselbild-Kandidaten **„Produkt in der Hand“** (kein Raptor, kein
+Screenshot); **09b** und **Folie 10** mit dem Markenbild „Streetwear-Look · Gelb & Schwarz · knallig“; **Folie 11**
+Zeile 3 „Uneinheitlicher Absender“ → „Ein Absender, ein Schlüsselbild“; **B6** mit Elias' Tabelle 1 statt der
+Beispiel-Codiertabelle; Querverweise in 12, B1, B7, B8. Folie 08, 09 und B6 tragen keine Pille „Beispieldaten“ mehr.
+**Freigabe durch Yannick und Elias offen** (Abschnitt 12.1 und 12.3); Folie 02 und 05 sind noch nicht nachgezogen
+(gesperrt, Entscheidung Yannick).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, je Person mit Frist).
 
-Fertige Ausgaben (Stand 21.10.2026 abends, mit dem Rätselbild mit Logo auf Folie 01, dem Chamäleon auf Folie 08 und im Rad auf Folie 10, den Begriffen der Vorlesung, den Änderungen der Nacharbeit, den Entwürfen 03–05 und den gekennzeichneten Beispieldaten – nach
-den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11): `export/praesentation.pdf`
+Fertige Ausgaben (Stand 22.10.2026, neu erzeugt beim Abschluss des Einbaus von Elias' Material: Rätselbild mit Logo auf Folie 01, Chamäleon, Papagei und Impro-Comedian auf Folie 08, vier Kanäle auf 09, „Streetwear-Look“ auf 09b und im Rad auf Folie 10, Empfehlung 3 „Ein Absender, ein Schlüsselbild“ auf 11, Elias' Tabelle 1 auf B6, die Entwürfe 03–05 und die gekennzeichneten Beispieldaten – nach
+den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11). **Achtung: Die Freigabe von Elias' Material
+durch Yannick und Elias ist offen** (Abschnitt 12.1 und 12.3) – bis dahin nur in der Gruppe weitergeben: `export/praesentation.pdf`
 (alle Folien inkl. Backup, Plan B), `export/uebersicht.png` (alle Folien auf einen Blick),
 `export/folien/<id>.png` (jede Folie einzeln im Endzustand, 1920 × 1080).
 
@@ -219,8 +233,9 @@ Referentenfenster (Abschnitt 4). Taste „Schwarz“/„Blank“ am Clicker send
 
 Frage: „Wenn HOLY ein Tier wäre – welches?“ mit **Adler, Löwe, Chamäleon, Fuchs, Schwan**
 (`marke.js → umfragen.tier.optionen`, festgelegt von Yannick am 19.10.2026; seit 20.10.2026 „Chamäleon“ statt
-„Waschbär“ an derselben Stelle; „Chamäleon“ = unsere Analyse – Einordnung Elias Knauber, Begründung als Vorschlag
-in den Notizen von Folie 08 –, „Adler“ = Selbstbild, Maskottchen „Raptor“). Die Tabelle speichert nur die Nummer
+„Waschbär“ an derselben Stelle; „Chamäleon“ = unsere Analyse – Einordnung und seit 22.10.2026 auch Begründung von
+Elias Knauber (`../analogien.md`); sein anderes Tier, der Papagei, steht nur klein auf der Folie, nicht in der
+Abstimmung –, „Adler“ = Maskottchen, im Dossier „Raptor“; „Selbstbild“ ist die Deutung des Dossiers). Die Tabelle speichert nur die Nummer
 des Tiers: Probestimmen mit Option 2 aus der Zeit vor dem 20.10. zählen jetzt als Chamäleon – unkritisch, die
 Runde wird vor dem Vortrag umgestellt (Abschnitt 12). Die Folie kann drei Wege – **Weg A ist der Plan**, B und C
 sind die Rückfallebenen.
@@ -448,7 +463,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 1. **PDF:** `export/praesentation.pdf` (22 Seiten: alle Hauptfolien im Endzustand + Backup B1–B8, ohne die
    ausgeblendete Folie 01b) auf einen **USB-Stick** und zusätzlich per Mail/Cloud bereithalten. Öffnet in
    jedem PDF-Programm; keine Animationen, keine Live-Funktionen. **Ab 08b weichen PDF-Seite und Foliennummer ab** –
-   im PDF führt „10“ auf Folie 09. Zuordnung (Export 21.10.2026, nach jedem Export prüfen; auf den Spickzettel):
+   im PDF führt „10“ auf Folie 09. Zuordnung (Export 22.10.2026, geprüft per `pdftotext`; nach jedem Export prüfen; auf den Spickzettel):
 
    | PDF-Seite | 1–8 | 9 | 10 | 11 | 12 | 13 | 14 | 15–22 |
    |---|---|---|---|---|---|---|---|---|
@@ -504,6 +519,12 @@ steht in Klammern. **Termine:** Datenschluss **heute, Mi 21.10. abends** · Synt
 Vortrag **Mo 26.10.** Was am Di 20.10. fällig war, ist überfällig und steht als **sofort**. Inhalte von Lukas und
 Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 
+**Nachtrag Do, 22.10.2026:** Elias' Ausarbeitungen (Analogien, Kommunikationsanalyse) sind eingebaut (`AUTOREN.md`
+23). Punkte, die damit erledigt oder überholt sind, sind unten ~~durchgestrichen~~ und mit „22.10.“ markiert; neue
+Punkte stehen unter „Neu seit 22.10.“ bei Yannick, Lukas und Elias. Von Lukas kommt laut KI-Nachweis 120 kein
+weiteres Material; Bündel B wird seit 22.10. KI-simuliert erhoben (Workflow D25, `../buendel-b/`, Einbau in einem
+eigenen Schritt).
+
 ### 12.1 Yannick Heisler (Bündel A, Synthese Folie 10, KI-Nachweis, Live-Abstimmung)
 
 **Sofort**
@@ -512,14 +533,14 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       Dokumentation, Eigenständigkeitserklärung). Abgabeform. **Logos:** Dürfen wir das Original-Logo auf einer
       **erfundenen, nachempfundenen Dose** zeigen (Folie 01, im Rätsel vergrößert und unscharf, Quelle erst ab der
       Auflösung), dazu die Logos auf 09b und 12 – und das **öffentlich** im Repository und in den Exporten (PDF und
-      Übersicht sind auf der Startseite verlinkt)? Für Elias: Raptor-Screenshot auf Folie 09 (Abschnitt 12.3).
+      Übersicht sind auf der Startseite verlinkt)? ~~Für Elias: Raptor-Screenshot auf Folie 09~~ (überholt 22.10.:
+      Folie 09 zeigt ein eigenes Piktogramm „Produkt in der Hand“, kein Screenshot geplant).
       **Hörsaal:** Rechner (eigener Laptop oder Hochschul-PC), Anschluss, Auflösung und Seitenverhältnis des
       Beamers, Browser und Version, USB-Sticks und Pop-ups erlaubt, **WLAN für die Live-Abstimmung**, Zugang für
       eine Technikprobe. Antworten mit Datum in `../arbeitsplan.md`. Lehnt der Betreuer das Logo auf der Dose ab:
       `marke.js → raetselBild` auf `bilder/raetsel-holy.svg` und bei Folie 01 die Rückfallwerte (Kasten „FOLIE
       01“); lehnt er Logos ganz ab, zusätzlich `logoTitel` leeren – **beides zusammen**, `logoTitel` allein
-      entfernt das Logo auf der Dose nicht. Danach Exporte neu (Account 1). Antwortet er bis Fr 23.10. nicht zum
-      Screenshot, bleibt auf 09 das Piktogramm
+      entfernt das Logo auf der Dose nicht. Danach Exporte neu (Account 1)
 - [ ] **Live-Abstimmung: Skript bei Google aktualisieren** (F08-1). Zwei Gründe: Erst die Fassung vom
       **20.10.2026** zählt auf Folie 08 nur Stimmen der letzten 30 Minuten (sonst gibt es keine Zeitgrenze), und
       bei Google läuft noch die Fassung von vor dem 19.10. (Lasttest 19.10.: nur 19 von 40 gezählt; 20.10. mit 20
@@ -565,8 +586,9 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       Z. 182–188 („Markenkompetenz“, „Markenattribute“, „Markenkern: Genuss …“) selbst angleichen oder die Datei
       ausdrücklich freigeben. Transkript in den Gruppenordner legen, Karriereseite [17] neu abrufen
 - [ ] **K1-Auszählung „Anlass Schicht“** (Y2): Schwelle für „deutlich“ festlegen, 20–30 Bewertungen zählen,
-      Jost-Stellen im Audio anhören; Codierer der Bewertungen festlegen (mit Lukas, L6). Elias zählt die Posts
-      (Abschnitt 12.3). Ergebnis in die Rückfragen 04/05 und in Lücke 2 auf Folie 10 (Y10)
+      Jost-Stellen im Audio anhören; Codierer der Bewertungen festlegen (mit Lukas, L6). ~~Elias zählt die Posts~~
+      (überholt 22.10.: Elias hat qualitativ analysiert, keine Posts nach Anlass gezählt – die Auszählung stützt sich
+      nur auf Bewertungen). Ergebnis in die Rückfragen 04/05 und in Lücke 2 auf Folie 10 (Y10)
 - [ ] **Synthese Folie 10** (mit Elias, der sie vorträgt): Felder ohne echte Daten als DR (H) kennzeichnen;
       Selbstbild ↔ Außensicht je Lücke in Schritt 8 benennen (Regel B8, Y6); Kürzungen (a)–(c) aus dem Kasten
       „FOLIE 10“ freigeben (≈ −24 Wörter, Y9) – danach setzt Account 1 Zeitangaben und `data-zeit` (NB-03);
@@ -580,7 +602,8 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       und 07 abhaken, dann Titel „… und wird geprüft“ und Spalte „Prüfung“ anpassen (Kasten „B2“)
 - [ ] **Entscheidungen** (Wortlaut; Einbau dann Account 1, je wenige Minuten – VORTRAGSREIFE N7):
       f04 „vor der Schicht“ → „Anlass: Schicht“ oder Annahme (Y20); f10 Regel-Notiz mit Ausnahme „Energy: 160 mg
-      Koffein“ und Kasten zu „viele Sorten“ (Y8); Formel „/ Follower bzw. Abos“ auf 09 und B6 (E7, mit Elias);
+      Koffein“ und Kasten zu „viele Sorten“ (Y8); ~~Formel „/ Follower bzw. Abos“ auf 09 und B6~~ (überholt 22.10.:
+      keine Formel mehr auf 09 und B6);
       Reihenfolge der Namen (Y30); Folie 08 „sehen … wie wir“ → „wählen wie wir“ (F08-8, mit Lukas); B2 Schritt 1
       „Markenkompetenz“ → „Markenkern“ (NB-15); Satz „keine Verbindung zur HOLY Softdrinks GmbH“ für die
       Fragerunde (Top10); Seitenangabe auf B1 „(vgl. Stenger, S. 78)“ sichtbar lassen oder nur in die Notizen;
@@ -588,6 +611,35 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       (Ausgaben Esch 2018, Kroeber-Riel/Esch – in B7 und Fußzeile 02), #30 (Etikett „Fremdbild“), #31–#35, #38–#40
       (G3, NB-11; Fußzeilen von 08/08b bei Lukas, 12.2); dazu nachträglich bestätigen, was Account 1 am 21.10. schon eingebaut hat: f05 „direkt
       umgerechnet etwa 45/27/27“ (Y16) und f04 ohne „Dortmund nur im Sprechtext“ (Y20)
+
+**Neu seit Do, 22.10. (Elias' Material – Freigabe und Folgen; bis Fr, 23.10.)**
+- [ ] **Synthese: Feld Markenbild und Lücke 2 freigeben** (C2): Feld Markenbild auf Folie 10 jetzt „Streetwear-Look ·
+      Gelb & Schwarz · knallig“ (wortgleich mit „Ins Steuerrad“ auf 09b; bis 22.10. „Comic-Tiere“), Lücke 2 „Bildwelt
+      zu jung“ markiert „Streetwear-Look“ ↔ „Marco, 28“. Trägt „Streetwear“ das Urteil „zu jung“? Elias sagt „jung,
+      laut“, den Vergleich mit der Persona zieht erst die Gruppe (H). Dazu **ein Wort für die Persona-Lücke** auf
+      09b, 10 und 11 („Bildwelt zu jung“ oder „Auftritt zu jung“ – Kasten „FOLIE 09b“). Sprechtext Schritt 6 und 8
+      von Folie 10 mit Elias laut lesen
+- [ ] **Vorgaben 08, 09, 09b, 11, B6 freigeben** (mit Elias, Abschnitt 12.3; Einzelheiten in `../analogien.md` §8 und
+      `../kommunikationsanalyse.md` §11): Titel von Folie 08 nur mit dem Chamäleon – das ist ein Vorschlag, keine
+      frühere Entscheidung (KI-Nachweis 95/122); Titel von Folie 09; Empfehlung 3 „Ein Absender, ein Schlüsselbild“
+      (Elias' Empfehlungen ersetzen „Ein Dachclaim, ein Raptor“); auf 09b die Shop-Farben aus dem Dossier (Creme,
+      Türkis, Hellblau) behalten oder streichen – Elias analysiert nur Social Media
+- [ ] **Folie 02 und 05 nachziehen – oder bewusst lassen** (beide waren für den Einbau gesperrt): Folie 02,
+      Methodenkarten „Mensch und Tier: KI + Kurzinterviews“ und „Instagram, Facebook, YouTube – KI hilft codieren“
+      passen nicht mehr zu 08 und 09 (Vorschlag: „Mensch und Tier: eigene Analyse“, „Instagram, Facebook, TikTok,
+      YouTube – Bildschirmaufnahmen“; Sprechtext Schritt 5 „KI-Tools helfen überall“ prüfen). Folie 05, Notizen:
+      „der Raptor bleibt Absender“ widerspricht Empfehlung 3 (Adler nur Maskottchen); „Comic-Tiere, 31
+      Energy-Sorten“ im Sprechtext kann als Stimulanz-Signal bleiben. Im selben Schritt `../limbic-map.md` §4.1 und
+      §6 und `../folienentwuerfe.md` Folie 5 angleichen (Einbau Account 1)
+- [ ] **B2 – P11/P12** nach Elias' Antwort zur KI-Nutzung (oben bei den KI-Listen; Kasten „B2“)
+- [ ] **Navigation B6:** Folie 12 nennt B6 weiter „KA-Raster“ und B6 heißt im Deck „Backup: Raster
+      Kommunikationsanalyse“, obwohl B6 jetzt die Profilmerkmale der Kanäle zeigt – umbenennen (z. B. „KA-Profile“)
+      oder so lassen
+- [ ] **Exporte nach der Freigabe** erneut erzeugen lassen, falls sich etwas ändert (Account 1, 12.5) – `export/`
+      zeigt seit dem Abschluss am 22.10. Elias' Material im Stand vor der Freigabe (siehe oben)
+- [ ] **Commit:** den Einbau von Elias' Material (Folien, CSS/JS 08, 09, 13-backup, Ausarbeitungen, Doku) getrennt
+      vom Ordner `../buendel-b/` der KI-simulierten Befragung (D25) committen, damit sich die beiden Nachweise nicht
+      vermischen
 
 **Bis Fr, 23.10.**
 - [ ] **Sprechtexte 01–05 laut lesen und stoppen:** 01 ≈ 89 Wörter in 4 Schritten (Soll 45 s, mit Wartezeiten
@@ -611,8 +663,10 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 
 **Bis Sa, 24.10.**
 - [ ] **KI-Listen** von Lukas und Elias einsammeln (Abgabe Fr 23.10.), in `../../ki-nachweis/ki-nachweis.md`
-      Abschnitt 3 übertragen; B2 nur mit echten Prompts (P7–P14 ersetzen oder löschen; Y29). Zeile für die
-      KI-gestützte Chamäleon-Begründung ergänzen („KI 95 (D18) … Vorschlag, von Elias geprüft am …“; F08-18)
+      Abschnitt 3 übertragen; B2 nur mit echten Prompts (P7–P14 ersetzen oder löschen; Y29). ~~Zeile für die
+      KI-gestützte Chamäleon-Begründung ergänzen~~ (überholt 22.10.: die Begründung stammt jetzt von Elias). Dafür
+      P11 („Analogien Mensch, Tier“) und P12 („Beiträge codieren“) klären: Hat Elias KI genutzt? Wenn nein, als
+      „nicht genutzt“ kennzeichnen oder streichen (Kasten „B2“; `../fragerunde.md` F37)
 
 **Bis So, 25.10.**
 - [ ] **Runde umstellen** (spätestens So 25.10., nach der Generalprobe): `runde: 'vortrag-2026-10-26'` in
@@ -634,24 +688,32 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 **Sofort (Datenschluss heute abends)**
 - [ ] **Stand melden** (L1, F08-2): Zahl, Datum und Einwilligung der echten Kurzinterviews; ob P8, P9 und P11
       gelaufen sind. Danach steht überall dieselbe getrennte Angabe (KI-simuliert / echt / Gruppe) – in den
-      Fußzeilen 06, 07, 08, 08b, in B1, B2, B4, B5 und auf 02 (Einbau Account 1, Zahl auf 02/B1 mit Yannick). Heute
-      steht überall die geplante Zahl „3“, auf 08 „5 KI-Personas (Prompt P11) + 3 echte Kurzinterviews“ – P11 ist
-      ein einzelner Prompt, keine fünf Personas
+      Fußzeilen 06, 07, 08b, in B1, B2, B4, B5 und auf 02 (Einbau Account 1, Zahl auf 02/B1 mit Yannick). Heute
+      steht überall die geplante Zahl „3“. ~~Auf 08 „5 KI-Personas (Prompt P11) + 3 echte Kurzinterviews“~~ (überholt
+      22.10.: Die Fußzeile von 08 nennt jetzt Elias' Ausarbeitung, kein n). *Stand 22.10.:* Laut Yannick (KI-Nachweis
+      120) kommt von Lukas kein weiteres Material; die Befragung von Bündel B wird KI-simuliert erhoben (D25)
 - [ ] **Daten liefern** (Abschnitt 4.1 des Berichts, Lieferformat: Tabelle mit den Feldern der Daten-JSON):
       Repertory Grid (Ratings, Konstrukte, W1–W5, getrennte n), Schwelle ≥ 1 oder ≥ 1,5 mit Datum (L2), Leitern
       P9/P10 codiert, KI und echt getrennt (L3), Aaker-Bogen für HOLY, Red Bull und waterdrop – nur Menschen,
       ehrliches n (L8)
 
 **Bis Do, 22.10. (Synthese)**
-- [ ] **Tierfrage der Befragung auszählen** (F08-3): offen gestellt, „x von n“, P11 getrennt. Das Chamäleon bleibt
-      Titel von 08 nur, wenn die Antworten es stützen – sonst steht das häufigste Tier im Titel und das Chamäleon
-      als „unsere Deutung“. Nennen die Befragten überwiegend ein anderes Tier, mit Elias und Yannick klären
-      (betrifft 08, 08b, 09b, 10 und Notizen 11/12)
+- [ ] **Tierfrage der Befragung auszählen** (F08-3): offen gestellt, „x von n“, P11 bzw. KI-simuliert getrennt.
+      *Neu seit 22.10.:* Die Analogien auf 08 stammen jetzt aus Elias' Ausarbeitung (Chamäleon, Papagei,
+      Impro-Comedian; `../analogien.md`) – sie sind die Analyse, die Befragung wird ihr gegenübergestellt (Notizen 08
+      oder Backup). Nennen die Antworten überwiegend ein anderes Tier, mit Elias und Yannick klären, was die Folie zeigt
+      (`../analogien.md` §7.1; betrifft 08, 08b, 09b, 10 und Notizen 11/12)
+- [ ] **Neu seit 22.10.: Aaker-Profil 08b mit Elias' Zuordnungstabelle abgleichen** (`../analogien.md` §6 und
+      §7.2): Die fünf Merkmale (frech, rebellisch, verspielt, nahbar, selbstironisch) finden sich in Elias' Begriffen
+      wieder; Elias ergänzt „wandelbar“. Entscheiden: Emotionen „Stolz“ (08b) oder „Überraschung“ (Elias – Lachen und
+      Unterhaltung, Überraschung, Zugehörigkeit), Beziehung mit oder ohne „Anführer“ (bei Elias nicht vorhanden).
+      Sichtbar ist auf 08b noch nichts geändert (Kasten „FOLIE 08b“)
 - [ ] **Sprechtexte 06–08b nach echten Daten** (L4): bis dahin keinen Beispielwert als Ergebnis vorlesen
       (Notlösung: Halbsatz „Beispieldaten“); auf 08 Schritt 3 vorläufig „unsere vorläufige Einordnung: Red Bull
       eher Löwe, waterdrop eher Schwan“ (F08-5)
 - [ ] **Tonalität aus Befragten** (L5, F08-13): Emotionen an die Analogien binden (P11 „dominante
-      Markenemotionen“, Interviews), sonst Zirkel benennen; Kundenstimmen 20–30 nach K1–K8 codieren, 1–2 Zitate mit
+      Markenemotionen“, Interviews), sonst Zirkel benennen – seit 22.10. leitet Elias die Emotionen aus seinen
+      Analogien ab (Comedian), das deckt die Aufgabe (Stenger, S. 60); Kundenstimmen 20–30 nach K1–K8 codieren, 1–2 Zitate mit
       Portal und Datum (L6); Laddering: Startpunkt-Satz, Zählung „gutes Gewissen“ x von n (L3)
 - [ ] **Gründerbefragung** (`../gruenderbefragung.md`): Versanddatum (B1/B7 nennen „LinkedIn, 18.10.2026“; L7),
       Zuordnung der Fragen und unklare Stellen bestätigen, ggf. nach der Datengrundlage der Gründerangabe „95 %“ fragen (laut Gründer, Datengrundlage nicht offengelegt); datierte
@@ -662,12 +724,14 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       „Markeneigenschaften“ angleichen (z. B. „Drei Eigenschaften …“) oder einmal „in der Literatur auch
       Markenattribute“ sagen; zwei Sätze in Notiz 06 und einer in Notiz 07 klingen, als gäbe es die Interviews
       schon (Kästen „FOLIE 06/07“); f07 Schritt 3 „… die Positionierung ab“ laut lesen
-- [ ] **Folie 08** (Kasten „FOLIE 08“): Fußzeile nach dem tatsächlichen Stand, etwa „P11: KI-gestützt · Tierfrage
-      offen in n echten Interviews · Live-Umfrage: Stimmungsbild“ (F08-2); „im Interview offen gefragt“ nur, wenn
-      es so war; Regie-Sätze in Schritt 1 für „Chamäleon vorn / Adler vorn / Fuchs oder Löwe vorn / Chamäleon kaum
-      gewählt“ (F08-8); Platzhalter „[27 %]“ → „[x %]“ (F08-17); Mensch-Analogie „Gamer“ neben „Gaming hinter
-      sich gelassen“ – neu ableiten oder Rückfrage-Antwort (F08-10, mit Elias); „Echte Kundschaft · laut
-      Mitgründer“ → „Kundschaft laut Mitgründer (2024)“ (F08-15); festlegen, wer bei Plan C zählt, und „[Name]“ in
+- [ ] **Folie 08** (Kasten „FOLIE 08“): ~~Fußzeile nach dem tatsächlichen Stand~~ (erledigt 22.10.: nennt Elias'
+      Ausarbeitung, ohne Tiernamen); ~~„im Interview offen gefragt“ im Sprechtext~~ (erledigt 22.10.: Schritt 1 „Hier
+      vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“; die Rückfrage nennt Interviews nur noch als Regie,
+      falls Bündel B sie führt); Leerraum in der Mensch-Karte lassen oder vierte Zeile „Rollen“ (mit Elias, Kasten); Regie-Sätze in Schritt 1 für „Chamäleon vorn / Adler vorn / Fuchs oder
+      Löwe vorn / Chamäleon kaum gewählt“ (F08-8); Platzhalter „[27 %]“ → „[x %]“ (F08-17); ~~Mensch-Analogie „Gamer“~~
+      (erledigt 22.10.: Impro-Comedian nach Elias); ~~„Echte Kundschaft · laut Mitgründer“~~ (entfällt 22.10.: Zeile
+      gestrichen, Kundschaft steht in den Notizen); Schritt 2 „Warum Chamäleon?“ (Papagei, Comedian, Adler =
+      Maskottchen) laut lesen und stoppen (ca. 20 s); festlegen, wer bei Plan C zählt, und „[Name]“ in
       Schritt 0 ersetzen (F08-22, mit der Gruppe); Fußzeile „Analogien nach Esch“ nach dem Vorlesungsabgleich
       (S. 60, 88; F08-12 – Einbau Account 1)
 - [ ] **Folie 08b:** Schritt 4 als Tausch, damit er bei ≈ 12 s bleibt – die Übergabezeile „frecher Kumpel ·
@@ -682,28 +746,52 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 - [ ] **B4 und B5 mit echten Rohdaten** (Mittelwert-Export, Codeliste); KI-Liste an Yannick (Abgabe Fr 23.10.)
 
 **So, 25. oder Mo, 26.10.**
-- [ ] Energy-Sorten im Shop nachzählen (Folie 08: „31 Energy-Sorten“, Stand 13./14.10.); weicht die Zahl ab,
-      Karte und Notiz anpassen oder „über 30 Energy-Sorten“ (F08-23)
+- [ ] ~~Energy-Sorten im Shop nachzählen (Folie 08: „31 Energy-Sorten“)~~ (überholt 22.10.: steht nicht mehr auf
+      der Karte, nur noch in der gekennzeichneten Dossier-Ergänzung der Notizen von 08 und in `../fragerunde.md` F21 –
+      optional nachzählen, F08-23)
 
 ### 12.3 Elias Knauber (Bündel C, Folien 09–11, B6; trägt Folie 10 vor; Technik)
 
 **Sofort (Datenschluss heute abends)**
-- [ ] **Kommunikationsanalyse liefern** (E4): Stichprobe mit Datum, Frequenz, Engagement, Motivanteile; im
-      Codier-Sheet zwei Spalten „Anlass“ und „Wirkversprechen“ mit K1-Codes (E2) – damit zählt Elias auch die Posts
-      zum Anlass „Schicht“ (zu Yannicks K1-Auszählung)
+- [x] **Kommunikationsanalyse liefern** (E4) – **geliefert am Do, 22.10.2026:** Ausarbeitung „Kommunikationsanalyse
+      zum Markenbild von HOLY – Instagram, Facebook, TikTok und YouTube im Vergleich“ (eigene Bildschirmaufnahmen vom
+      20./21.10.), übertragen nach `../kommunikationsanalyse.md`, eingebaut auf 09, 09b, 10 (Markenbild, Lücke 2), 11
+      (Zeile 3), B6. **Rest offen:** Es gibt keine Stichprobe und kein Codier-Sheet – also keine Frequenz, keine
+      Engagement-Raten, keine Motivanteile (auf 09 ersatzlos entfernt) und keine Spalten „Anlass“ und
+      „Wirkversprechen“ mit K1-Codes (E2). Entscheiden: nachliefern oder als Grenze stehen lassen (dann zählt Yannicks
+      K1-Auszählung nur Bewertungen, 12.1)
+- [ ] **Neu seit 22.10.: Einbau prüfen und freigeben** (mit Yannick, 12.1): **Titel 09** (Web-Folie: „Vier Kanäle,
+      vier Rollen – kein festes Schlüsselbild“), **Stichworte 09b/10** („Streetwear-Look ·
+      Gelb & Schwarz · knallig“, Fit-Begründungen auf 09b), **Empfehlung 3** („Ein Absender, ein Schlüsselbild“ – „Ein
+      Name, eine Profilfarbe, Produkt in der Hand“), **Papagei** (klein in der Karte von 08; Titel nur mit dem
+      Chamäleon, obwohl der Papagei bei dir „Tier 1“ ist), **Mensch-Karte** (Impro-Comedian mit drei Profilzeilen;
+      „kreativ“ oder „experimentierfreudig“ auf der Tier-Karte; die Paare Eigenschaft–Beleg hat die Übertragung
+      gebildet), Kurzformen der Rollen und Bildwelten auf 09, B6-Zellen. **Sprechtexte laut lesen und stoppen:** 09
+      (Soll 60 s), 09b (Soll 55 s – laut Kasten knapp darüber), 11 Schritt 3 (Soll ca. 20 s); dazu 10 Schritt 6 und 8
+      mit Yannick. Maßgeblich sind die Kästen „FOLIE 08“ bis „FOLIE 11“ und `../folienentwuerfe.md`
+- [ ] **Neu seit 22.10.: Offene Fragen beantworten** (`../analogien.md` §10, `../kommunikationsanalyse.md` §13):
+      „junge Kernzielgruppe“ auf TikTok gegen die Kundschaft 25–40 laut Mitgründer (bis dahin nur Reichweite nennen);
+      eigene Claims je Land – als Stärke des Chamäleons und zugleich „uneinheitlicher Absender“? Welche Claims, mit
+      Fundstelle; Quelle zum Farbwechsel des Chamäleons; Fundstellen für Belege außerhalb des Dossiers (Nutella-Parodie,
+      „Hohepriester“, Coca-Cola in Stellenanzeigen, Hydration mit Kokosnuss oder Ananas, Hoodie „Drink Soft Go Hard“);
+      Rechenweg der Prozentwerte (0,6 / 0,4 / 0,3 / 3 %); Engagement-Raten, Meta-Werbebibliothek und akustische
+      Elemente bewusst weggelassen?; „Produkt in der Hand“ über Medien und Zeit gleich?; Logo „meist schwarz auf Gelb“;
+      „fair, sympathisch“ gegen die provokanten Shorts-Titel; **KI-Nutzung** bei den Ausarbeitungen (für B2 und die
+      Fragerunde, F37)
 
 **Bis Do, 22.10. (Synthese)**
-- [ ] **Chamäleon-Begründung prüfen** (F08-3, F08-11): Folie 08 zeigt seit 20.10. „HOLY wäre ein Chamäleon, kein
-      Adler“ mit den Gründen wandelbar („31 Energy-Sorten“), vielseitig („Wacken, CSD, Simpsons“) und frech
-      („Gefährlich geil!“). Die Begründung ist ein KI-gestützter Vorschlag aus dem Recherche-Dossier (Notizen
-      Folie 08, Absatz „Chamäleon – Einordnung“, mit Gegenargumenten). Prüfen: Trifft das deine Einordnung? Gründe,
-      Sprechtext „Warum Chamäleon?“, Rückfragen und Satz auf Folie 10 (Schritt 5, „wandelbar wie ein Chamäleon“)
-      bestätigen oder ändern; zwei Antworten ergänzen („Was ist an einem Chamäleon frech?“, „Chamäleons sind
-      Einzelgänger und langsam?“). Danach „Vorschlag“ in Kasten und Notizen durch „Begründung: Elias Knauber“
-      ersetzen. „wandelbar“ füllt die Stichwort-Spalte der Karte fast ganz – ein kürzeres Wort wäre ruhiger
+- [x] **Chamäleon-Begründung prüfen** (F08-3, F08-11) – **geliefert am Do, 22.10.2026:** Elias' Ausarbeitung „HOLY –
+      Analogien: Mensch und Tier“ (Stand 16.10.) begründet das Chamäleon selbst (wandelbar, experimentierfreudig,
+      anpassungsfähig, aufmerksam, kreativ; Belege fünf Produktlinien, laufend neue Sorten, eigene Claims je Land) und
+      nennt zusätzlich den Papagei und den Impro-Comedian; „Vorschlag, KI-gestützt“ ist in Kasten und Notizen durch
+      „Begründung: Elias Knauber“ ersetzt, die früheren Dossier-Belege stehen nur noch als gekennzeichnete Ergänzung.
+      Die Antworten „Was ist an einem Chamäleon frech?“ und „Tarnung/Einzelgänger“ stehen in den Notizen. **Rest
+      offen:** Freigabe des Einbaus (Punkt oben) und die Fragen in `../analogien.md` §10
 - [ ] **Empfehlungen auf Folie 11** (E3): je Empfehlung eigener Beleg, Messgröße ohne Zielwert, Rangfolge,
-      Aufwand (H); Empfehlung 3 „frecher inszenieren“ mit A3 abgleichen („Humor aus der Schicht statt
-      Doppeldeutigkeit“); aktuelle Energy-Packung mit Datum prüfen, Wortlaut „Energy-Packung: 160 mg/Portion“ (E5)
+      Aufwand (H); ~~Empfehlung 3 „frecher inszenieren“ mit A3 abgleichen~~ (überholt 22.10.: Empfehlung 3 ist jetzt
+      Elias' „Ein Absender, ein Schlüsselbild“; den Abgleich mit A3 „Humor aus der Schicht statt Doppeldeutigkeit“
+      betrifft nur noch die Tonalitätslinie, 12.4); aktuelle Energy-Packung mit Datum prüfen, Wortlaut
+      „Energy-Packung: 160 mg/Portion“ (E5)
 - [ ] **Folie 11 Schritt 0** (NB-05): „Die Positionierung ist klar: Genuss mit gutem Gewissen, frech im Ton,
       getragen von der Community“ zählt Ton und Community zur Positionierung – auf die Positionierung beschränken
       oder als „Positionierung plus Ton“ sprechen; Titel „klare“ oder „starke Positionierung“ entscheiden („starke
@@ -713,20 +801,21 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 
 **Bis Fr, 23.10.**
 - [ ] **Folie 10 und 11 laut lesen und stoppen:** 10 ca. 186 Wörter ≈ 98 s (Soll 75 s; Schritt 1, 3, 5, 7 neu seit
-      21.10., gleiche Wortzahl), 11 ca. 164 Wörter ≈ 86 s (Soll 75 s). Kürzungen und Schlusssatz nach den Kästen
+      21.10., gleiche Wortzahl; Schritt 6 und 8 seit 22.10. mit „Streetwear-Look“, gleiche Wortzahl), 11 ca. 164
+      Wörter ≈ 86 s (Soll 75 s; Schritt 3 seit 22.10. nach deiner Empfehlung). Kürzungen und Schlusssatz nach den Kästen
       „FOLIE 10/11“ (E8; Folie 10 mit Yannick); Rückfragen zu Markenkern/Positionierung, Abgrenzung (Stenger,
       S. 92) und Identität/Image kennen
-- [ ] **Folie 09 – Schlüsselbild** (E1): Screenshot des Raptor-Beitrags mit Datum – laut `QUELLEN.md` §4 die
-      einzige Ausnahme von „keine Social-Media-Bilder von HOLY“ und **nur nach Zustimmung des Betreuers** (Frage in
-      Yannicks Mail); dann Quelle „Screenshot © HOLY Softdrinks GmbH, Plattform Konto, Beitrag vom TT.MM.JJJJ,
-      Abruf TT.MM.2026“ in die Fußzeile, B7 „Logos und Screenshot (Folie 09)“, `QUELLEN.md` §3/§4. Ohne Zustimmung
-      bleibt das Piktogramm; den Hinweis „Platzhalter – Screenshot folgt“ ersetzt Account 1 dann durch eine
-      neutrale Angabe. **Titel** endet mit „?“, bis die Codierung den Raptor kanalübergreifend zeigt
-- [ ] **Folie 09/09b/11 – Wortlaut** (Kasten): Meta-Werbebibliothek abrufen und Hauptformat bestimmen (E7);
-      „Sechs Claims“ → „Mind. sechs Claims …“ (E6, Wortbudget prüfen); Begründung der Claim-Hierarchie und Rückfrage
-      „Warum nicht das Versprechen als Dachclaim?“ (E10); Kanalbegründung als Rückfrage (Statista CI 2025,
-      Reichweite YouTube; E11); Fit auf 09b „plausibel (Hypothese)“, solange die Tonalität nicht aus Befragten kommt
-      (L5); Tonalitätslinie wie in der Synthese beschlossen (G8)
+- [x] ~~**Folie 09 – Schlüsselbild** (E1): Screenshot des Raptor-Beitrags; Titel mit „?“~~ – **überholt am
+      22.10.2026:** Laut Elias hat HOLY kein festes Schlüsselbild, der Adler ist „so etwas wie das Maskottchen“;
+      Kandidat ist das Produkt in der Hand, als eigenes Piktogramm (kein Screenshot, `QUELLEN.md` §4). Ein Screenshot
+      bliebe nur nach Zustimmung des Betreuers möglich
+- [ ] **Folie 09/09b/11 – Wortlaut** (Kasten): Meta-Werbebibliothek abrufen und Hauptformat bestimmen (E7) – oder
+      offen als nicht erhoben nennen; ~~„Sechs Claims“ → „Mind. sechs Claims …“ (E6)~~ und ~~Claim-Hierarchie (E10)~~
+      (überholt 22.10.: Dachclaim laut Elias auf allen vier Kanälen, Befund „Uneinheitlicher Absender“); Rückfrage
+      „Warum nicht das Versprechen als Dachclaim?“ steht in `../fragerunde.md` F33; ~~Kanalbegründung (E11)~~ (TikTok
+      ist jetzt analysiert, F34); Fit auf 09b: „passt“ ist eine Stimmigkeitsprüfung innerhalb der Identität
+      (Analogien und Kommunikationsanalyse von dir, `../analogien.md` §7.1) – so auf Nachfrage sagen (L5, F30);
+      Tonalitätslinie wie in der Synthese beschlossen (G8)
 - [ ] **Je Folie zwei Rückfragen mit Antwort** (G9; für Folie 10 liefert Yannick zwei)
 - [ ] **Grafiken in `../grafiken/`** (folie-02, -03, -05; Bündel C entscheidet): Ausarbeitungs- bzw.
       PowerPoint-Variante (Segoe UI, Rot/Blaugrau, Text 12–17 px bei 1400 px Breite) – **nicht für die Projektion**
@@ -735,12 +824,15 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       Farben aus `css/tokens.css`, Persona = Kreis, Marke = Raute
 
 **Bis Sa, 24.10.**
-- [ ] **B6 mit echten Codierzeilen** (Datum); KI-Liste an Yannick (Abgabe Fr 23.10.); Gesamtdeck abnehmen und
+- [ ] ~~**B6 mit echten Codierzeilen**~~ (überholt 22.10.: B6 zeigt deine Tabelle 1, Profilmerkmale der vier Kanäle –
+      gekürzte Zellen freigeben); KI-Liste an Yannick (Abgabe Fr 23.10.); Gesamtdeck abnehmen und
       kritisch prüfen (Tagesplan, P14) – Lieferungen von Lukas und Elias als Tabelle (G5)
 
 **So, 25. oder Mo, 26.10.**
 - [ ] **Kurz vor dem Vortrag neu ablesen** (E13): Kennzahlen auf Folie 03 (Kund:innen auf der Website,
-      Mitarbeitende auf der Karriereseite – mit Yannick), [12], Stand der Zuckersteuer (BR-Drs. 145/26), Preis
+      Mitarbeitende auf der Karriereseite – mit Yannick), [12], Stand der Zuckersteuer (BR-Drs. 145/26), Preis; dazu
+      die Follower auf Folie 09 – **oder** bewusst beim Stand 20./21.10.2026 in der Fußzeile bleiben (deine
+      Entscheidung, `../kommunikationsanalyse.md` §3.1)
 - [ ] **USB-Stick:** entpackter Ordner `praesentation/` mit `export/praesentation.pdf` (endgültiger Export So 25.10.
       nach der Generalprobe, Abschnitt 12.5); PDF zusätzlich per Mail/Cloud und auf dem Handy
 
@@ -748,7 +840,8 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 
 - [ ] **Synthese Do, 22.10.** (Leitung Yannick, 2 Std.): je Element **echt oder ehrliche Minimalvariante**
       beschließen (G1); Rahmen „Softdrink-Marke“ oder Energy, Wettbewerber W1–W5 (G4, K4); Lieferformat (G5);
-      **eine Tonalitätslinie** inkl. Chamäleon für 05, 09b, 11 (G8); Koffein und Jugend als Spannungsfeld;
+      **eine Tonalitätslinie** inkl. Chamäleon für 05, 09b, 11 (G8; seit 22.10. mit Elias' Zuordnung Tonalität ↔
+      Analogie, `../analogien.md` §6); Koffein und Jugend als Spannungsfeld;
       Moderation der Fragerunde (G11); Übergabesätze (Bericht 7.3); Kürzungsstufe 1 (7.4); den **14:00-Plan**
       (Abschnitt 3) bestätigen und `../arbeitsplan.md` angleichen (G7; ursprünglich 14:45); Kürzel GB für Folie
       10. Beschlüsse mit Datum in `../arbeitsplan.md`
@@ -756,7 +849,7 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
       (Planungswert 1,9 W/s) mit Wechseln ≈ 15:09, bei 130 W/min ≈ 13:23 (VORTRAGSREIFE N6). Jede Person stoppt
       ihren Teil; danach setzt Account 1 das gemessene Tempo und die Zeitangaben ein
 - [ ] **Vorbereiten für die Fragerunde:** `../fragerunde.md` üben (Platzhalter „[ … ]“ vorher füllen; Prüfung der
-      Datei durch die Gruppe offen); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
+      Datei durch die Gruppe offen; Stand 22.10.: F16, F17, F30–F34 nach Elias' Material neu gefasst, F36–F38 neu); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
       Schritt; Vorlage `index.html?druck&notizen=sprechtext`, G13); Reflexion: Stichpunkte zu den sechs Fragen bis
       zur Generalprobe (G12)
 - [ ] **Generalprobe So, 25.10.** (1 Std., in Präsenz, mit genau dem Vortragslaptop, zweitem Bildschirm und
@@ -784,14 +877,17 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 
 - [ ] **Lieferungen einbauen** (Daten-JSON, Fußzeilen, n-Angaben), danach Pillen „Beispieldaten“ in der
       Reihenfolge 06–09 → 10/11 → 12 (Pille am Fazit erst, wenn 10 und 11 keine Beispieldaten mehr tragen) → B4–B6
-      entfernen bzw. „Pilot“; `marke.js → beispieldatenHinweis` erst auf `false`, wenn **keine** erfundenen Werte
+      entfernen bzw. „Pilot“ (erledigt 22.10. für 08, 09 und B6 – Elias' Material; offen 06, 07, 08b, 10–12, B4, B5;
+      die KI-simulierte Befragung D25 für Bündel B in einem eigenen Schritt); `marke.js → beispieldatenHinweis` erst auf `false`, wenn **keine** erfundenen Werte
       mehr auf den Folien stehen (bis Sa 24.10.)
 - [ ] **Nach den Freigaben:** „Entwurf“ in den Kästen 03–05 und in `../folienentwuerfe.md` streichen; die
       Entscheidungen aus 12.1 einbauen; Zeitangaben und `data-zeit` nach der Stoppuhr; Fußzeilen und B7 mit
       Vorlesungsseiten; f04/Folienentwurf 4 nach Y3/Y20
 - [ ] **Nach jedem Einbau:** `werkzeuge/pruefen.mjs index.html --schritte --optional` mit 0 Fehlern und
       `werkzeuge/referent-test.mjs` ohne Fehler (`AUTOREN.md` 9)
-- [ ] **Exporte** (E12): Zwischenexport Sa 24.10. nach dem Einbau, **endgültig So 25.10. nach der Generalprobe**
+- [ ] **Exporte** (E12): `export/` am 22.10. (Abschluss) mit Elias' Material neu erzeugt (PDF 22 Seiten, 23 Bilder,
+      Übersicht Stand 22.10.2026) – nach der Freigabe und jedem weiteren Einbau neu erzeugen; Zwischenexport Sa 24.10.
+      nach dem Einbau, **endgültig So 25.10. nach der Generalprobe**
       (Änderungsstopp) – PDF 22 Seiten, keine Pille „Beispieldaten“ (auch B4–B6), Stand-Datum, Zuordnung PDF-Seite
       ↔ Folie in Abschnitt 11 prüfen (Befehle: `AUTOREN.md` 15)
 - [ ] **Druckvorlagen nach Datenschluss:** Tastenkürzel, Zuordnung PDF-Seite ↔ Folie, Rückfragen-Spickzettel je
@@ -878,9 +974,16 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 - [x] **Referentenansicht** (21.10.2026, Account 1): Sprünge per Klick bewegen den Beamer (ab Folie 12),
       Schwarzbild, Uhr übersteht Neuladen, Start-Knopf, Rückfragen-Knopf, niedrige Fenster, nur das eigene
       Folienfenster (Abschnitt 4, `AUTOREN.md` 22)
+- [x] **Elias' Material eingebaut** (Do, 22.10.2026, Account 1, Workflow D24; `AUTOREN.md` 23): Folie 08 (Chamäleon
+      mit Elias' Begründung, Papagei, Impro-Comedian, Fußzeile ohne Beispieldaten), 08b (nur Hinweis), 09 (vier
+      Kanäle, Rollen, fünf Bildwelten, Kandidat „Produkt in der Hand“), 09b, 10 (Feld Markenbild, Lücke 2), 11 (Zeile
+      3), 12, B1, B6 (Tabelle 1), B7, B8; neu `../analogien.md`, `../kommunikationsanalyse.md`; nachgezogen
+      `../folienentwuerfe.md`, `../fragerunde.md`, `QUELLEN.md`, `../README.md`. Freigabe durch Yannick und Elias offen
+      (12.1, 12.3)
 - [x] **Exporte** neu erzeugt am 19.10. (Illustrationen), 20.10. (Chamäleon; Rätsel mit Logo), 21.10. (Begriffe der
       Vorlesung) und **21.10. abends** (Nacharbeit; sichtbar geändert gegenüber dem Morgen: 04, 06, 08b, 09, 10, B3, B7, B8 –
-      `AUTOREN.md` 22). Nach Datenschluss und Generalprobe erneut (12.5)
+      `AUTOREN.md` 22) und **22.10.** (Abschluss des Einbaus von Elias' Material: 08, 09, 09b, 10, 11, B6, B7, B8 sichtbar
+      geändert – `AUTOREN.md` 23; Freigabe offen). Nach Datenschluss und Generalprobe erneut (12.5)
 
 ## 13. Dateien
 
@@ -899,7 +1002,8 @@ Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (53 Prüfungen, auch das Zeitfenster mit vorgestellter Uhr); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren (Uhr vorstellen: `http://localhost:8787/uhr?vor=31`), mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy, mitlesender „Folie“ und Gegenprobe des Zeitfensters (Abschnitt 6, `AUTOREN.md` 6c) |
 | `werkzeuge/zeitfenster-e2e.mjs` | prüft das Zeitfenster auf Handy und Folie 08 im Browser (Chromium über playwright-core), nur mit Attrappen auf localhost und vorgestellten Uhren: Ablauf auf dem Handy, Speicher und Pause der Folie, Referentenfenster, Tooltip, alte Skript-Fassung, Lasttest-Gegenprobe; `--mutationen` = kaputte Kopien von `js/komponenten.js` und `js/abstimmen.js`; Ausgabe nach `_test/` (`AUTOREN.md` §20) |
-| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 21.10.2026 abends mit A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, dem Chamäleon auf 08 und 10 und den gekennzeichneten Beispieldaten; nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
+| `export/` | PDF (22 Seiten, ohne 01b), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 22.10.2026 mit A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, Elias' Material auf 08–11 und B6 (Freigabe offen) und den gekennzeichneten Beispieldaten; nach der Freigabe, nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
+| `../analogien.md`, `../kommunikationsanalyse.md` | (außerhalb dieses Ordners) Elias Knaubers Ausarbeitungen, KI-gestützt aus seinen PDFs übertragen (seit 22.10.2026; Grundlage von 08, 09, 09b, 10, 11, B6); die PDFs liegen nur im Gruppenordner |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |

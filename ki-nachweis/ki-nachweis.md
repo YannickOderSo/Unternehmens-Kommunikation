@@ -138,7 +138,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 116 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
 | 117 | 21.10.2026 | System | Workflow-Meldung: D23 Umsetzung, Prüfung, Nacharbeit am Nutzungslimit gescheitert (nach Sitzungsneustart) | D23 (fortgesetzt) | mit Hinweis auf Teiländerungen fortgesetzt |
 | 118 | 21.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D23 | nur Nachweis committet; D23 läuft |
-| 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | in Arbeit |
+| 119 | 22.10.2026 | Yannick | Material von Elias (2 PDFs: Kommunikationsanalyse, Analogien) als Inhalt einsetzen | D24 | eingebaut (08, 09, 09b, 10, 11, B6–B8, Ausarbeitungen), Exporte neu; Freigabe offen |
 | 120 | 22.10.2026 | Yannick | Lukas liefert kein weiteres Material; wo nötig KI-Simulation für ein richtiges Ergebnis | D25 | in Arbeit |
 | 121 | 22.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
 | 122 | 22.10.2026 | System | Workflow-Meldungen: D24 und D25 am Nutzungslimit gescheitert, danach Neustart der Sitzung | D24, D25 (fortgesetzt) | Teilstand geprüft, Hinweis ins Skript D24, beide fortgesetzt |
@@ -2059,7 +2059,8 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
     neue Zahlen zu rechnen.
   - Einbau als Workflow D24 (Ultracode): Folien 08, 09, 09b, 10, 11, B6 (und Querverweise), Ausarbeitungen nach den
     Vorlagen in `methoden.md`, Prüfung, Nacharbeit, Exporte.
-- **Ergebnis:** in Arbeit
+- **Ergebnis (nachgetragen am 23.10.2026 nach Ende von D24):** Elias' Material eingebaut und geprüft (Details unter
+  D24); Freigabe durch Yannick und Elias offen.
 - **Unteragenten:** D24
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -2225,7 +2226,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D22 | 21.10.2026 | 104/109 (neu gestartet nach 111) | Workflow „abgleich-umsetzung“ (3 Unteragenten in 3 Phasen) | Steuerrad-Begriffe nach Stenger, Chamäleon im Feld Tonalität, Kennzeichnung Limbic-Typen, Hinweis S. 78, Rückfragen | Mitte „Markenkern“, Band „Positionierung“, Wir-Form, „Markeneigenschaften“, Tonalität mit „wandelbar“; Prüfer 1 hoher, 5 mittlere Befunde umgesetzt; Exporte neu | Claude: f10 angesehen, Diff-Umfang und Modellbezeichnungen geprüft |
 | D23 | 21.10.2026 | 113 (fortgesetzt nach 115, 117) | Workflow „vortragsreife-abgleich“ (6 Unteragenten in 4 Phasen) | Ergebnisse von Account 2 mit aktuellem Stand abgleichen, technische Punkte umsetzen, Fragerunde aktualisieren, Folie 08 nachprüfen | Nachtrag in VORTRAGSREIFE.md (Status je Befund, neue Top 10), fragerunde.md aktualisiert, technische Punkte umgesetzt, referent-test.mjs; Prüfer 1 hoher, 4 mittlere Befunde umgesetzt | Claude: Tests, Syntax, Diff-Umfang und Modellbezeichnungen geprüft |
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
-| D24 | 22.10.2026 | 119 | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | läuft | – |
+| D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
 | D25 | 22.10.2026 | 120 | Workflow „buendel-b-simulation“ (ca. 43 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
@@ -2954,8 +2955,33 @@ steht hier mit dem wörtlichen Auftrag.
   Rollen statt Beispielwerten, fünf Bildwelten ohne Anteile, Schlüsselbild-Kandidat „Produkt in der Hand“; Markenbild
   auf 09b/10 „Streetwear-Look · Gelb & Schwarz · knallig“; Empfehlung 3 „Ein Absender, ein Schlüsselbild“; B6 mit
   Elias' Tabelle 1.
-- **Ergebnis:** läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Unterbrechungen:** dreimal am Nutzungslimit (Einträge 122, 125, 128); fortgesetzt mit Hinweisen auf Teiländerungen
+  nur in den betroffenen Aufträgen (Bau Folien, Nacharbeit, Abschluss), die fertigen Agenten blieben im Zwischenspeicher.
+- **Ergebnis:**
+  - **Folie 08:** Chamäleon-Karte mit Elias' Gründen (wandelbar – fünf Produktlinien, kreativ – laufend neue Sorten,
+    anpassungsfähig – eigene Claims je Land), darunter „Maskottchen · Adler“ und „Weiteres Tier · Papagei (gesellig,
+    bunt)“ mit eigener Zeichnung; Mensch-Karte „Impro-Comedian“ (Auftreten, Umgang, Humor); Pille „Beispieldaten“
+    entfernt; Fußzeile mit Elias' Ausarbeitung; Notizen und Rückfragen nach Elias; Titel und Live-Umfrage unverändert.
+  - **Folie 09:** „Vier Kanäle, vier Rollen – kein festes Schlüsselbild“; vier Spalten mit Elias' Zahlen und Rollen,
+    fünf Bildwelten ohne Anteile, Kandidat „Produkt in der Hand“ (Piktogramm, kein Screenshot).
+  - **Folie 09b:** Datenblatt und Fit nach Elias; „Ins Steuerrad · Markenbild“: Streetwear-Look · Gelb & Schwarz · knallig.
+  - **Folie 10:** Feld Markenbild wortgleich, Lücke 2 „Bildwelt zu jung“ an „Streetwear-Look“ ↔ „Marco, 28“.
+  - **Folie 11:** Zeile 3 „Uneinheitlicher Absender“ → „Ein Absender, ein Schlüsselbild“ (ein Name, eine Profilfarbe,
+    Produkt in der Hand).
+  - **B6:** Elias' Tabelle 1 (Profilmerkmale der vier Kanäle); B7/B8 mit seinen Ausarbeitungen als Quelle.
+  - **Ausarbeitungen:** `analogien.md`, `kommunikationsanalyse.md` (Vorlagen §4/§5, Inhalt Elias, ohne Bilder);
+    `folienentwuerfe.md`, `QUELLEN.md`, `fragerunde.md`, `LIESMICH.md`, `AUTOREN.md` §23, `VORTRAGSREIFE.md`, `README.md`,
+    `abgleich-vorlesung.md` nachgezogen.
+  - **Prüfer:** u. a. hoch: Fragerunde widersprach den neuen Folien (nachgezogen); Folie 02 (Methodenkarten) und Folie 05
+    (Notizen „Raptor bleibt Absender“) widersprechen – waren für D24 gesperrt, kommen in den Einbau von Bündel B.
+    Mittel: Papagei bei Elias „Tier 1“ (Beschriftung jetzt „Weiteres Tier“), „kein festes Schlüsselbild“, Darstellung
+    „383 Tsd.“, Notizen 09b/10 – umgesetzt.
+  - **Tests:** `pruefen.mjs --schritte --optional` in Editorial, Bento, Keynote, dunkel: 0 Fehler; live-abstimmung-test
+    53/53; referent-test 43/43. Exporte 22.10.2026: PDF 22 Seiten, 23 Folienbilder, Übersicht.
+- **Wie Claude das Ergebnis geprüft hat:** Folienbilder f08, f09, f09b, f10, f11, b6 selbst angesehen (Inhalt gegen
+  Elias' PDFs, keine Überläufe); `node --check` der drei geänderten Skripte; Diff ohne Namen von KI-Modellen, ohne
+  Namen privater Personen aus Elias' Material; Elias' PDFs nicht im Repository. Offen: Freigabe Yannick/Elias
+  (Titel 08 mit Papagei, „Streetwear-Look“, Empfehlung 3), Folie 02/05.
 
 ### D25 – 22.10.2026 – ausgelöst durch Prompt 120
 

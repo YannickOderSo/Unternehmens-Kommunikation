@@ -7,7 +7,11 @@
         Analogien: zwei Karten „Als Tier“ / „Als Mensch“ (Farbe der „soft
         facts“ wie im Steuerrad) – je Kopf mit Zeichnung, Kicker und Name,
         darunter eine Liste mit Haarlinien; unten je ein belegter Gegenpol
-        (Tier: Selbstbild/Maskottchen, Mensch: tatsächliche Kundschaft). Darunter die Kontrastzeile mit
+        (Tier: Selbstbild/Maskottchen, Mensch: tatsächliche Kundschaft). Seit
+        22.10.2026 hat die Tier-Karte zwei Einträge nebeneinander in EINER
+        gestrichelten Zeile (Maskottchen Adler + weiteres Tier Papagei nach
+        Elias Knauber, bei ihm „Tier 1“); die Mensch-Karte zeigt die
+        Kundschaft nur noch, wenn sie in den Daten steht. Darunter die Kontrastzeile mit
         zwei Wettbewerbern in gedeckter Schrift.
    f08b „Markentonalität“
         links (8 Spalten) Profil nach Aaker: je Dimension Name + Merkmale,
@@ -237,6 +241,24 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   line-height: 1.3;
   color: var(--f-text);
 }
+/* Tier (seit 22.10.2026): Die Spalte der Eigenschaften richtet sich nach dem
+   längsten Wort, mindestens 176 px – Elias Knaubers „anpassungsfähig“ passt
+   so ungekürzt (vorher fest 176 px, deshalb stand dort „vielseitig“).
+   Subgrid: alle drei Zeilen teilen dieselbe Spaltenbreite.
+   Mensch (seit der Nacharbeit 22.10.2026): dieselbe Regel für die Merkmale –
+   vorher fest 176 px, eine vierte Zeile „Rollenwechsel“ überlappte ihren
+   Wert (Prüfung 22.10.2026). Die Zeilenhöhe bleibt gleich (--g4-zeile-hoehe),
+   die Haarlinien beider Karten liegen weiter auf einer Höhe. */
+#f08 .g4-liste--gruende,
+#f08 .g4-liste--profil {
+  display: grid;
+  grid-template-columns: minmax(176px, max-content) minmax(0, 1fr);
+}
+#f08 .g4-liste--gruende > .g4-zeile,
+#f08 .g4-liste--profil > .g4-zeile {
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
 /* Tier: Eigenschaft in der Titelschrift, Farbe der „soft facts“ */
 #f08 .g4-stichwort {
   font-family: var(--schrift-display);
@@ -293,6 +315,36 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   line-height: 1.2;
   color: var(--f-text);
 }
+/* dritte Zeile (Daten „zusatz“, z. B. „gesellig, bunt“ beim Papagei) */
+#f08 .g4-gegenpol-zusatz {
+  font-size: var(--groesse-text-min);
+  line-height: 1.25;
+  color: var(--f-text);
+}
+/* Zwei Gegenpole in EINER gestrichelten Zeile (seit 22.10.2026, Tier-Karte:
+   Maskottchen + weiteres Tier). Die Zeile trägt Rand und Abstand; die beiden
+   Einträge darin sind schlichte Spalten. Oben bündig (Nacharbeit 22.10.2026;
+   vorher mittig): So stehen „Maskottchen“ und „Weiteres Tier“ und darunter
+   „Adler“ und „Papagei“ auf einer Höhe, auch wenn nur der Papagei eine
+   dritte Zeile („zusatz“) hat. */
+#f08 .g4-gegenpole {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--abstand-5);
+  align-items: start;
+  margin-top: auto;
+  padding-top: var(--abstand-2);
+  border-top: var(--linie-fein) dashed color-mix(in oklab, var(--f-text-2) 55%, transparent);
+}
+#f08 .g4-gegenpole > .g4-gegenpol {
+  grid-template-columns: var(--g4-bild-klein) minmax(0, 1fr);
+  align-items: start;           /* Beschriftungen beider Einträge auf einer Höhe */
+  column-gap: var(--abstand-3);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+#f08 .g4-paar.ist-eng .g4-gegenpole { padding-top: var(--abstand-1); }
 
 
 /* ---------------------------------------------------------------------------

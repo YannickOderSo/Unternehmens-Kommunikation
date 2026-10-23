@@ -566,8 +566,31 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 
 
 /* ---------------------------------------------------------------------------
-   7. B6 · CODIERTABELLE KOMMUNIKATIONSANALYSE
+   7. B6 · TABELLE KOMMUNIKATIONSANALYSE
+   Seit 22.10.2026 Elias Knaubers Tabelle 1: vier Zeilen (Kanäle), sechs
+   Spalten mit längeren Zellen – deshalb hier Umbruch erlaubt (sonst gilt im
+   Backup „einzeilig“) und feste Spaltenbreiten (Summe ≈ Satzspiegel 1664 px).
+   Schritt 1 hebt die Spalten Anzeigename und Profilbild hervor (.bk6-markiert).
+   Die Regeln für die alte Codiertabelle (Nr., Format, Aufruf, Schlüsselbild-
+   Zeilen) bleiben stehen, reichen für einen Rückgriff aber NICHT allein
+   (Prüfung 22.10.2026, Nacharbeit): Mit den festen Spaltenbreiten unten und
+   den statischen Infokästen im HTML läuft die alte Form (8 Beitragszeilen)
+   über die Bühne, Zellen stoßen aneinander. Für einen Rückgriff deshalb
+   table-layout: fixed und die Breiten (bk6-kanal … bk6-rolle) entfernen,
+   die Infokästen kürzen oder streichen und pruefen.mjs laufen lassen.
    --------------------------------------------------------------------------- */
+#b6 .bk6-tabelle { table-layout: fixed; width: 100%; }
+#b6 .bk6-tabelle th,
+#b6 .bk6-tabelle td { white-space: normal; text-wrap: pretty; vertical-align: top; }
+#b6 .bk6-tabelle thead th { vertical-align: bottom; }
+#b6 .bk6-tabelle .bk6-kanal { width: 150px; }
+#b6 .bk6-tabelle .bk6-name { width: 270px; }
+#b6 .bk6-tabelle .bk6-kennzahlen { width: 330px; }
+#b6 .bk6-tabelle .bk6-profilbild { width: 250px; }
+#b6 .bk6-tabelle .bk6-rolle { width: 290px; }
+#b6 tbody .bk6-rolle { font-weight: 600; }
+#b6:has(.bk-z1.schritt-an) .bk6-tabelle tbody .bk6-markiert { background: var(--f-akzent-flaeche); color: var(--f-text); }
+#b6:has(.bk-z1.schritt-an) .bk6-tabelle thead .bk6-markiert { color: var(--f-akzent); box-shadow: inset 0 -4px 0 var(--f-akzent); }
 #b6 .bk6-tabelle tbody th,
 #b6 .bk6-tabelle tbody td { padding-top: 12px; padding-bottom: 12px; }
 #b6 tbody .bk6-nr { font-family: var(--schrift-zahl); font-variant-numeric: lining-nums tabular-nums; }
