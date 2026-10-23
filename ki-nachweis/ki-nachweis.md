@@ -151,6 +151,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 129 | 23.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
 | 130 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
 | 131 | 23.10.2026 | System | Automatischer Hinweis: nicht versionierte Dateien (`buendel-b/`) | D25 | nur Nachweis committet; D25 läuft |
+| 132 | 23.10.2026 | System | Workflow-Meldung: D25 – Prüfer und Nacharbeit am Nutzungslimit gescheitert, danach Neustart der Sitzung | D25 (fortgesetzt) | fortgesetzt |
+| 133 | 23.10.2026 | Yannick | „Weiter“ | D25 (fortgesetzt) | fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2202,6 +2204,24 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
   nach Abschluss und Prüfung. Nur Nachweis und Rohprotokoll committet.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D25 (läuft)
+
+### 132 – 23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D25: Repertory-Grid-Auswertung, alle P9-Interviews, Laddering-Auswertung und
+> Synthese fertig; die drei Prüfer und die Nacharbeit: „You've hit your session limit · resets 5am (UTC)“. Danach
+> Neustart der Sitzung.
+
+- **Vorgehen Claude:** Stand geprüft (Ausarbeitungen, Protokoll und Folienvorschlag in `buendel-b/` vorhanden);
+  Skript unverändert, Fortsetzung per resume (Eintrag 133).
+
+### 133 – 23.10.2026 – Yannick
+
+> Weiter
+
+- **Vorgehen Claude:** D25 per resume fortgesetzt (nur noch die drei Prüfer und die Nacharbeit).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D25 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
