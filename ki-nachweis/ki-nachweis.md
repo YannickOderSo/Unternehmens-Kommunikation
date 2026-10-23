@@ -158,6 +158,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 136 | 23.10.2026 | System | Workflow-Meldung: D26 sofort am Nutzungslimit gescheitert (alle 10 Agenten), danach Neustart der Sitzung | D26 (fortgesetzt) | keine Dateiänderungen; fortgesetzt |
 | 137 | 23.10.2026 | Yannick | „Versuch es noch einmal“ | D26 (fortgesetzt) | fortgesetzt |
 | 138 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
+| 139 | 23.10.2026 | System | Workflow-Meldung: D26 – beide Bau-Agenten fertig, Synthese und alles danach am Nutzungslimit gescheitert; Neustart der Sitzung | D26 (fortgesetzt) | fortgesetzt |
+| 140 | 23.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D26 (fortgesetzt) | fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2291,6 +2293,27 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; die Änderungen von D26 folgen nach Abschluss und Prüfung.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D26 (läuft)
+
+### 139 – 23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D26: „bau:08-abstimmung“ und „bau:06-07-b4-b5“ fertig; „synthese:folien“,
+> „synthese:doku“, die drei Prüfer, beide Nacharbeiten und „abschluss“: „You've hit your session limit · resets 8:10pm
+> (UTC)“. Danach Neustart der Sitzung.
+
+- **Vorgehen Claude:** Teilstand geprüft: Änderungen nur in den Abschnitten 06–08b und B4/B5 von index.html sowie in den
+  Dateien der beiden Bau-Agenten (JS/CSS 06, 07, 08, 13-backup, marke.js, komponenten.js, abstimmen.js, Tests,
+  ANLEITUNG); die Synthese hatte noch nichts geändert (Folie 10, 02, B1 usw. und alle Markdown-Dateien unverändert).
+  Skript unverändert, Fortsetzung per resume.
+
+### 140 – 23.10.2026 – Yannick
+
+> Ich habe mein Nutzungslimit erreicht, während du gearbeitet hast, aber es wurde inzwischen zurückgesetzt. Bitte
+> mache dort weiter, wo du aufgehört hast.
+
+- **Vorgehen Claude:** D26 per resume fortgesetzt (ab Synthese).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D26 (fortgesetzt)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
