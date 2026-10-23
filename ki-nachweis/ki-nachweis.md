@@ -149,6 +149,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 127 | 22.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
 | 128 | 22./23.10.2026 | System | Workflow-Meldungen: D24 nur „abschluss“, D25 ab Repertory-Grid-Auswertung erneut am Nutzungslimit gescheitert | D24, D25 (fortgesetzt) | beide fortgesetzt |
 | 129 | 23.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D24, D25 (fortgesetzt) | fortgesetzt |
+| 130 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D24, D25 | nur Nachweis committet; D24 und D25 laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2178,6 +2179,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D24, D25 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 130 – 23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D24 (Abschluss) und D25 (ab Repertory-Grid-Auswertung)
+  laufen. Zwischendurch die Konstrukt-Codierung von D25 angesehen (Stichprobe, nichts geändert).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D24, D25 (laufen)
 ---
 
 ## 2. Delegationen an Unteragenten
