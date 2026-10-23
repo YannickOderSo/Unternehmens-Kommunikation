@@ -153,6 +153,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 131 | 23.10.2026 | System | Automatischer Hinweis: nicht versionierte Dateien (`buendel-b/`) | D25 | nur Nachweis committet; D25 läuft |
 | 132 | 23.10.2026 | System | Workflow-Meldung: D25 – Prüfer und Nacharbeit am Nutzungslimit gescheitert, danach Neustart der Sitzung | D25 (fortgesetzt) | fortgesetzt |
 | 133 | 23.10.2026 | Yannick | „Weiter“ | D25 (fortgesetzt) | fortgesetzt |
+| 134 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D25 | nur Nachweis committet; D25 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2222,6 +2223,16 @@ Antworten auf vier Rückfragen von Claude (Auswahl):
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D25 (fortgesetzt)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 134 – 23.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; `buendel-b/` (D25, Prüfung und Nacharbeit laufen) folgt
+  nach Abschluss und eigener Prüfung. Zwischendurch README und Entscheidungsvorlage von D25 gelesen.
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D25 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
