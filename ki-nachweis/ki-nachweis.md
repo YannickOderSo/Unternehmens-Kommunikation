@@ -168,6 +168,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 146 | 24.10.2026 | System | Workflow-Meldung: D26 – Synthese und Prüfer „Treue“ fertig; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Nutzungslimit gescheitert | D26 | Rest ohne weitere Unteragenten von Claude selbst |
 | 147 | 24.10.2026 | Yannick | „Weiter“ + Bitte um Zeitschätzung („der Dienstag rückt näher“) | D26 (Rest selbst) | Befunde eingearbeitet, Tests grün, Exporte 24.10., Commit; Zeitschätzung berichtet |
 | 148 | 24.10.2026 | Yannick | Frage: Wo wird das Gründer-Interview in der Präsentation genannt? | – | Übersicht aus index.html (sichtbar/Notizen) |
+| 149 | 24.10.2026 | Yannick | Lukas wünscht, dass das Gründer-Interview viel präsenter eingebaut ist | – | Rückfrage zu Umfang und Ort |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2408,6 +2409,17 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   getrennt nach sichtbarem Folientext, Daten (sichtbare Tabellen) und Sprechernotizen; Fundstellen gelesen.
 - **Ergebnis:** Antwort mit Übersicht je Folie (sichtbar: 03, B1, B3, B7; nur Notizen: 02, 04, 05, 07, 10, 11); keine
   Dateiänderung.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 149 – 24.10.2026 – Yannick
+
+> Lukas hat den Wunsch das das Gründer Interview viel präsenter eingebaut ist
+
+- **Vorgehen Claude:** `gruenderbefragung.md` (Antworten je Frage, Nutzungsregeln 2.3) gelesen; Rückfrage an Yannick
+  zu Umfang (eigene Folie, Zitate auf bestehenden Folien, Abgleich auf Folie 10) und Zeitbudget, weil eine eigene
+  Folie den 15-Minuten-Plan verlängert.
+- **Ergebnis:** Rückfrage
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
