@@ -173,6 +173,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 151 | 24.10.2026 | System | Workflow-Meldung: D27 fertig (Bau + 2 Prüfer, 19 Befunde) | D27 | Nacharbeit durch Claude |
 | 152 | 24.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft: Änderungen auf der Platte erhalten |
 | 153 | 24.10.2026 | Yannick | „Weiter“ | D27 (Nacharbeit), D28 | in Arbeit |
+| 154 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; D28 und Tests laufen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2475,6 +2476,15 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D28 (geplant)
 - **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 154 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: „There are uncommitted changes in the repository. Please commit and push these changes to the
+> remote branch.“
+
+- **Vorgehen Claude:** Nur KI-Nachweis und Rohprotokoll committet. Die Folienänderungen bleiben uncommittet, bis die
+  Nachprüfung D28 und die Tests fertig sind (GitHub Pages veröffentlicht `master` sofort).
 
 ---
 
