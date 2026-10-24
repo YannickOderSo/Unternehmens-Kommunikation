@@ -170,6 +170,9 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 148 | 24.10.2026 | Yannick | Frage: Wo wird das Gründer-Interview in der Präsentation genannt? | – | Übersicht aus index.html (sichtbar/Notizen) |
 | 149 | 24.10.2026 | Yannick | Lukas wünscht, dass das Gründer-Interview viel präsenter eingebaut ist | – | Rückfrage zu Umfang und Ort |
 | 150 | 24.10.2026 | Yannick | Antworten: eigene Gründer-Folie + Folie 10; Gründer als Innensicht gegen das KI-simulierte Fremdbild | D27 | in Arbeit |
+| 151 | 24.10.2026 | System | Workflow-Meldung: D27 fertig (Bau + 2 Prüfer, 19 Befunde) | D27 | Nacharbeit durch Claude |
+| 152 | 24.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft: Änderungen auf der Platte erhalten |
+| 153 | 24.10.2026 | Yannick | „Weiter“ | D27 (Nacharbeit), D28 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2439,6 +2442,40 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D27
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 151 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D27 „gruender-folie“: abgeschlossen, 3 von 3 Unteragenten fertig (Bau, Prüfer
+> „Treue und Regeln“, Prüfer „Darstellung und Technik“), 0 Fehler.
+
+- **Vorgehen Claude:** Bericht und Befunde aus dem Journal gelesen (Bau: Folie 05b, Folie 10, Kürzung 01/02, Doku;
+  Prüfer Treue: 3 mittlere, 8 niedrige Befunde; Prüfer Technik: 1 mittlerer, 7 niedrige Befunde) und mit der
+  Nacharbeit begonnen (siehe 153).
+
+### 152 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> „This session's worker process was restarted. If your previous turn was already complete, take no action and wait
+> for the next event. Otherwise, continue from where you left off.“ (zweimal)
+
+- **Vorgehen Claude:** Arbeitsstand geprüft (`git status`): die begonnene Nacharbeit an index.html, 05b-gruender.css
+  und 10-markensteuerrad.js war erhalten.
+
+### 153 – 24.10.2026 – Yannick
+
+> Weiter
+
+- **Anhänge:** keine. Mit dem Prompt lud das System die Anleitung zum Schreiben von Workflows (Einstellung
+  „Ultracode“: substanzielle Aufgaben mit Workflow und adversarialer Prüfung).
+- **Vorgehen Claude:** Nacharbeit zu D27 fortgesetzt – Befunde beider Prüfer selbst eingearbeitet (Folie 01:
+  Ratezeit 3–5 s und Hinweis „gelbes Oval“ zurück; Folie 02: Selbstbild/Fremdbild im Sprechtext wieder getrennt,
+  Methodenkarte wieder „Herkunft, Historie, Marktrolle“; Folie 05b: emotionaler Nutzen als „seine Sicht“, Paraphrasen
+  näher an der Quelle, Datum „10/2026“, Rückfrage Selbermischen ↔ Hürde, Überlauf behoben, Etikett „Steckbrief“;
+  Folie 10: Zeile 2 „wie Website & Gründer“ als Knopf zur Folie 05b, Notizen; deck.js, Pillen, Übersicht, Doku);
+  danach Nachprüfung durch Unteragenten (D28), Tests, Exporte.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D28 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -2478,7 +2515,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
 | D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
 | D26 | 23.–24.10.2026 | 135 (fortgesetzt nach 136, 139, 142; Rest durch Claude nach 146/147) | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen; 5 davon gelaufen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | Folien 02, 06, 07, 08, 08b, 10 (Selbstbild + Abgleich), B1, B2, B4, B5 u. a.; Abstimmung mit Papagei und zwei Antworten; Doku; Prüfer „Treue“ (1 hoch, 5 mittel) – eingearbeitet von Claude; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Limit gescheitert und von Claude selbst erledigt | Claude: alle Tests selbst ausgeführt, Folien 02, 06, 07, 08, 08b, 10 angesehen, Exporte |
-| D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | läuft | – |
+| D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
