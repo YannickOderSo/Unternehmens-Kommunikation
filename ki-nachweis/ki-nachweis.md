@@ -165,6 +165,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 143 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
 | 144 | 24.10.2026 | Yannick | „Weiter“ | D26 | D26 läuft bereits (Synthese) – keine neue Aktion nötig |
 | 145 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
+| 146 | 24.10.2026 | System | Workflow-Meldung: D26 – Synthese und Prüfer „Treue“ fertig; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Nutzungslimit gescheitert | D26 | Rest ohne weitere Unteragenten von Claude selbst |
+| 147 | 24.10.2026 | Yannick | „Weiter“ + Bitte um Zeitschätzung („der Dienstag rückt näher“) | D26 (Rest selbst) | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2368,6 +2370,26 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D26 läuft.
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D26 (läuft)
+
+### 146 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D26: Bau (2), Synthese Folien und Doku sowie Prüfer „Treue zu Daten und
+> Entscheidungen“ fertig; Prüfer Technik und Konsistenz, beide Nacharbeiten und „abschluss“: „You've hit your session
+> limit · resets 6:50am (UTC)“.
+
+- **Vorgehen Claude:** siehe Eintrag 147.
+
+### 147 – 24.10.2026 – Yannick
+
+> Weiter (kalkuliere wie lange du noch brauchst der Dienstag rückt näher)
+
+- **Vorgehen Claude:** Weil das Nutzungslimit die Workflows immer wieder nach etwa 30 Minuten stoppt, erledigt Claude
+  den Rest von D26 ohne weitere Unteragenten selbst: Befunde des Treue-Prüfers (1 hoch, 5 mittel, ausgewählte
+  niedrige) gezielt einarbeiten, die technischen Prüfungen und die Konsistenzsuche selbst ausführen (pruefen.mjs in
+  allen Themen, Abstimmungstests, Volltextsuche), Exporte erzeugen, committen. Zeitschätzung an Yannick.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** keine neuen (D26 abgeschlossen durch Claude)
+- **Prüfung durch die Gruppe:** ☐ offen
 ---
 
 ## 2. Delegationen an Unteragenten
