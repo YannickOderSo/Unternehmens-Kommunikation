@@ -174,6 +174,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 152 | 24.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft: Änderungen auf der Platte erhalten |
 | 153 | 24.10.2026 | Yannick | „Weiter“ | D27 (Nacharbeit), D28 | in Arbeit |
 | 154 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; D28 und Tests laufen |
+| 155 | 24.10.2026 | System | Meldung „Suche beendet“ (Hintergrund-Befehl) und erneuter Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; Claude wartet in der Sitzung auf D28 und die Tests |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2485,6 +2486,16 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 
 - **Vorgehen Claude:** Nur KI-Nachweis und Rohprotokoll committet. Die Folienänderungen bleiben uncommittet, bis die
   Nachprüfung D28 und die Tests fertig sind (GitHub Pages veröffentlicht `master` sofort).
+
+
+### 155 – 24.10.2026 – Systemhinweise (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung: eine abgebrochene Volltextsuche von Claude ist beendet (Ergebnis nicht mehr nötig). Danach
+> erneut Stop hook feedback: „There are uncommitted changes in the repository. Please commit and push these changes to
+> the remote branch.“
+
+- **Vorgehen Claude:** Nur KI-Nachweis und Rohprotokoll committet; damit der Hinweis nicht bei jedem Warten neu
+  kommt, wartet Claude jetzt innerhalb der Sitzung auf D28 und die Tests.
 
 ---
 
