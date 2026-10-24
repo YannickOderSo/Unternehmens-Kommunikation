@@ -178,6 +178,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 156 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nach Teilergebnis der Tests) | D28 | Zwischenstand der Nacharbeit committet (D28-Prüfer nur lesend, Tests in 3 Themen 0 Fehler) |
 | 157 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nur Rohprotokoll) | D28 | Rohprotokoll committet; Claude wartet in der Sitzung |
 | 158 | 24.10.2026 | System | Workflow-Meldung: D28 fertig (3 Prüfer: Inhalt, Technik, Vollständigkeit) | D28 | Befunde von Claude eingearbeitet, Tests grün, Exporte neu |
+| 159 | 24.10.2026 | Yannick | „Dienstag ist der vortrag“ (Antwort auf Rückfrage zum Vortragstag) | D29 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2540,6 +2541,22 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Vorgehen Claude:** Befunde gelesen (Journal), gegen den Code und die Quellen geprüft und selbst eingearbeitet
   (Tabelle „Nachprüfung D28“ in `praesentation/AUTOREN.md` §25); ein Befund nicht übernommen (Wortsumme Folie 10 –
   das Zählskript bestätigt 146 Wörter). Danach alle Tests und die Exporte (siehe 153).
+
+
+### 159 – 24.10.2026 – Yannick
+
+> Dienstag ist der vortrag
+
+- **Anhänge:** keine. Antwort auf Claudes Rückfrage, ob der Vortrag Mo 26.10. oder Dienstag ist.
+- **Vorgehen Claude:** Vortragstag auf **Di, 27.10.2026** umstellen: `marke.js` (`datum`, Titelfolie), Übersichten
+  (README, Startseite, Aufgabenseiten), Ablauf- und Checklisten (LIESMICH, AUTOREN, VORTRAGSREIFE, Anleitung
+  Live-Abstimmung, arbeitsplan, fragerunde, Ausarbeitungen), geplanter Rundenname `vortrag-2026-10-27` (die Runde
+  selbst bleibt bis zur Umstellung `probe`). Datierte Aufzeichnungen (KI-Nachweis, Workflow-Skripte, Recherche-Dossier
+  vom 13./14.10., Testdaten) bleiben unverändert. Hinweis an Yannick: Die Vorlesungsfolien (Stenger, S. 57) nennen
+  „am 26.10.“ – in `abgleich-vorlesung.md` vermerkt. Danach Prüfung durch einen Unteragenten (D29), Tests, Exporte.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D29 (geplant)
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
