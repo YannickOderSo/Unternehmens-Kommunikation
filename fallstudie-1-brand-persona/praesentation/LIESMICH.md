@@ -86,9 +86,9 @@ Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, je Person mit Frist).
 
-Fertige Ausgaben (**Dateien in `export/` vom 24.10.2026, 09:33 – mit dem Einbau vom 23.10., aber noch ohne Folie 05b
-und ohne die Kürzung von 01/02**; nach dem Einbau vom 24.10. neu erzeugen: PDF 23 Seiten, 24 Folienbilder, `AUTOREN.md`
-§15 und 25; Beschreibung des älteren Stands vom 22.10.:
+Fertige Ausgaben (**Dateien in `export/` vom 24.10.2026, ca. 19:07 – mit Folie 05b, Folie 10 mit Gründer-Knopf und
+der Kürzung von 01/02 nach den Prüfungen D27/D28: PDF 23 Seiten, 24 Folienbilder, Übersicht Stand 24.10.2026**;
+endgültig nach der Generalprobe neu erzeugen, `AUTOREN.md` §15 und 25; Beschreibung des älteren Stands vom 22.10.:
 erzeugt beim Abschluss des Einbaus von Elias' Material: Rätselbild mit Logo auf Folie 01, Chamäleon, Papagei und Impro-Comedian auf Folie 08, vier Kanäle auf 09, „Streetwear-Look“ auf 09b und im Rad auf Folie 10, Empfehlung 3 „Ein Absender, ein Schlüsselbild“ auf 11, Elias' Tabelle 1 auf B6, die Entwürfe 03–05 und die gekennzeichneten Beispieldaten – nach
 den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11). **Achtung: Die Freigabe von Elias' Material
 durch Yannick und Elias ist offen** (Abschnitt 12.1 und 12.3) – bis dahin nur in der Gruppe weitergeben: `export/praesentation.pdf`
@@ -135,7 +135,7 @@ durch Yannick und Elias ist offen** (Abschnitt 12.1 und 12.3) – bis dahin nur 
 | H oder ? | Hilfe mit allen Tasten |
 | Esc | Fenster schließen, Eingabefeld verlassen; im Referentenfenster blendet Esc auch den Saal ein. **Auf dem Beamer im Vollbild kein Esc** – der Browser beendet damit das Vollbild (Modellwissen); Übersicht mit O, Hilfe mit H, Schwarzbild mit B schließen |
 | Z | nach einem Sprung aus einer Backup-Folie („Zu Folie …“) zurück ins Backup |
-| 1–5 | nur auf Folie 08, solange die Umfrage zu sehen ist: Stimme zählen (Umschalt = −1). Zum Springen von dort erst weiterklicken oder **O** nutzen; „1“ „0“ Enter erkennt die Präsentation als Folie 10 (die „1“ zählt dann nicht). Mit der eigenen Live-Abstimmung pausiert eine Ziffer die Abfrage (Abschnitt 6) |
+| 1–5 | nur auf Folie 08, solange die Umfrage zu sehen ist: Stimme zählen (Umschalt = −1). Zum Springen von dort erst weiterklicken oder **O** nutzen; „1“ „0“ Enter erkennt die Präsentation als Folie 10, seit 24.10.2026 auch „5“ „b“ Enter als Folie 05b (die Ziffer zählt dann nicht; „b“ klein oder mit Umschalttaste). Mit der eigenen Live-Abstimmung pausiert eine Ziffer die Abfrage (Abschnitt 6) |
 
 - **Nach der letzten Hauptfolie (12) geht es nicht automatisch ins Backup** – Backup nur über **O** oder die
   Sprungliste auf Folie 12.
@@ -178,9 +178,9 @@ die Antworten in `../fragerunde.md`.
 | 04 | Brand Persona | A · Yannick | 1:20 |
 | 05 | Limbic Map | A · Yannick | 0:55 |
 | 05b | Gründerbefragung: Innensicht – der Gründer über HOLY (Selbstauskunft, seit 24.10.2026) | B · Lukas (hat die Befragung geführt; Auswertung A) | 0:35 |
-| 06 | Repertory Grid → Markeneigenschaften | B · Lukas | 1:20 |
-| 07 | Laddering → Markennutzen | B · Lukas | 1:30 |
-| 08 / 08b | Analogien + Live-Umfrage / Markentonalität (Aaker) | B · Lukas | 1:10 + 0:50 |
+| 06 | Repertory Grid → Markeneigenschaften | B · offen (12.4; Lukas liefert kein Material mehr) | 1:20 |
+| 07 | Laddering → Markennutzen | B · offen (12.4) | 1:30 |
+| 08 / 08b | Analogien + Live-Umfrage / Markentonalität (Aaker) | B · offen (12.4) | 1:10 + 0:50 |
 | 09 / 09b | Kommunikationsanalyse / Markenbild | C · Elias | 1:00 + 0:55 |
 | 10 | Markensteuerrad (Synthese) | Inhalt Yannick, spricht Elias | 1:15 |
 | 11 | Fazit & Empfehlungen | C · Elias | 1:15 |
@@ -190,7 +190,11 @@ die Antworten in `../fragerunde.md`.
 **Summe Hauptfolien: 14:05 min** (55 s Puffer bis 15:00 für die zwei Live-Momente: Zurufe auf Folie 01 und
 Live-Umfrage auf Folie 08). Seit Sa, 24.10.2026: +0:35 für die neue Folie 05b, dafür Folie 01 −0:15 und 02 −0:15
 (Sprechtexte gekürzt, Zustimmung Yannick); gesprochen, nachgezählt per Skript (1,9 Wörter/s, nur Sprechtext ohne
-Regie, mit dem Dank auf Folie 12): ca. 1.606 Wörter ≈ 14:05 (vorher ca. 1.622 ≈ 14:14) – ohne Wartezeiten und Abstimmung. Bis 24.10.2026: 14:00
+Regie, mit dem Dank auf Folie 12): ca. 1.614 Wörter ≈ 14:09 (nach den Prüfungen D27/D28: 01 50, 02 87, 05b 64,
+10 146 Wörter; vorher ca. 1.622 ≈ 14:14) – ohne Ratezeit auf 01, Klicks und Abstimmung. **Risiko:** Folie 01 mit
+Zurufen eher 0:35, Folie 02 mit sieben Klicks eher 0:50 – zusammen ≈ 14:19, also über der Kürzungsschwelle 14:15
+(12.5); in der Generalprobe stoppen. Erster Kürzungskandidat ist Folie 11 (gesprochen ≈ 88 s bei Soll 75 s).
+Bis 24.10.2026: 14:00
 min, 60 s Puffer. Die Sollzeiten der Folien 04, 05, 06, 09, 09b und 11 wurden dafür am
 16.10.2026 gekürzt (Sprechtexte angepasst). Der ursprüngliche Ablaufplan sah 14:45 vor – **die Gruppe
 bestätigt den 14:05-Plan** (bis 24.10.2026: 14:00) und gleicht `../arbeitsplan.md` an (Checkliste, Abschnitt 12). Die optionale Folie 01b (+0:45, mit dem Abgleich auf Folie 10
@@ -522,8 +526,8 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
    nötig (Entscheidung Yannick, 20.10.2026).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext drucken. **Sprechzettel** (seit
    21.10.2026): `index.html?druck&notizen=sprechtext` – oben die Folie, darunter nur die gesprochenen Absätze, auf
-   Folie 12 dazu Dank und Sprung-Bedienung (33 Seiten, gemessen 21.10.2026 – vor Folie 05b, nicht neu gezählt). **Volles Handout** mit Stand, Belegen
-   und Rückfragen: `index.html?druck&notizen` (53 Seiten, gemessen 21.10.2026). Jeweils Strg+P (Ränder „Keine“, „Hintergrundgrafiken“
+   Folie 12 dazu Dank und Sprung-Bedienung (35 Seiten, gemessen 24.10.2026 mit 05b; 05b auf Seite 9). **Volles Handout** mit Stand, Belegen
+   und Rückfragen: `index.html?druck&notizen` (73 Seiten, gemessen 24.10.2026). Jeweils Strg+P (Ränder „Keine“, „Hintergrundgrafiken“
    an); lange Texte laufen auf eine Folgeseite weiter.
 5. **Übergänge ruckeln** (schwacher Rechner): `index.html?bewegung=reduziert` öffnen – Folienwechsel ohne
    Überblendung und Zoom; **P** übernimmt den Schalter ins Referentenfenster.
@@ -585,12 +589,17 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 - [ ] **Folie 05b freigeben** (Kasten „FOLIE 05b“, `AUTOREN.md` 25): Titel „Laut Gründer verbindet HOLY Geschmack mit
       gutem Gewissen“, Auswahl und Wortlaut (Paraphrasen, kurze Zitate „mit Abstand“, „meistgeliebte Softdrink-Brand“;
       ohne „95 %“, ohne die unsicheren Stellen aus `../gruenderbefragung.md` 2.2), Kennzeichnung „Innensicht ·
-      Selbstauskunft (n = 1)“, Fußzeile; Platz zwischen 05 und 06, Nummer „05b“
-- [ ] **Folie 01 und 02 gekürzt** (Sprechtexte, Sollzeit 30 und 45 s): laut lesen und stoppen – gestrichen sind nur
-      Moderation des Rätsels und Wiederholungen (Zählung in den Kommentaren über den Notizen); Methodenkarte Desk
-      Research „Herkunft, Marktrolle + Gründerbefragung“, Klick 1 „Desk Research und Gründerbefragung für den Markenkern“
-- [ ] **Folie 10, Schritt 9:** Spaltenkopf „Selbstbild · Auftritt & Gründer“, Zeile 2 „Positionierung · Website &
-      Gründer“, Sprechtext „– nicht gutes Gewissen wie beim Gründer“ (+3 Wörter, mit Elias). Eine fünfte Zeile
+      Selbstauskunft (n = 1)“, Karte „Emotional · seine Sicht“, Fußzeile mit „10/2026“; Platz zwischen 05 und 06,
+      Nummer „05b“
+- [ ] **Folie 01 und 02 gekürzt** (Sollzeit 30 und 45 s): laut lesen und stoppen. 01: Moderation des Rätsels
+      gekürzt, Ratezeit 3–5 s und Hinweis „gelbes Oval“ bleiben (50 Wörter ≈ 26 s + Ratezeit). 02: Klick 1 „… das
+      Selbstbild. Feld für Feld: Desk Research für den Markenkern – dazu die Gründerbefragung als Innensicht“, Klick 3
+      „beide KI-simuliert: ein Fremdbild zum Abgleich“, „KI hilft überall …“ gestrichen (87 Wörter ≈ 46 s, sieben
+      Klicks). Methodenkarte Desk Research unverändert „Herkunft, Historie, Marktrolle“ (Zählung in den Kommentaren
+      über den Notizen; Stand nach den Prüfungen D27/D28)
+- [ ] **Folie 10, Schritt 9:** Spaltenkopf „Selbstbild · Auftritt & Gründer“, Zeile 2 „Positionierung · wie Gründer“
+      (Knopf „· Folie 05b →“; „Genuss mit gutem Gewissen“ ist unsere Verdichtung), Sprechtext „– nicht gutes Gewissen
+      wie beim Gründer“ (+3 Wörter, mit Elias). Eine fünfte Zeile
       „Geschmack ‚mit Abstand‘ ↔ …“ ist bewusst nicht eingebaut (Daten zu dünn, höchstens 4 Zeilen – Kasten „FOLIE 10“)
 
 **Neu seit Fr, 23.10. (Einbau der KI-simulierten Befragung – prüfen und freigeben; bis Sa, 24.10.)**
@@ -787,7 +796,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       Die Stand-Adresse ohne `&minuten=30` zählt sie weiter, aber auch ältere Teststimmen der Runde
 - [ ] Web-App archivieren, `liveQuelle: ''` in `marke.js`; Tabelle löschen oder Spalte „Geraet“ entfernen
 
-### 12.2 Lukas Welker (Bündel B, Folien 06–08b, B4, B5)
+### 12.2 Lukas Welker (Bündel B: spricht Folie 05b; Folien 06–08b, B4, B5 – Sprecher offen)
 
 > **Stand Fr, 23.10.2026:** Lukas liefert kein Material mehr (KI-Nachweis 120). Seine Punkte unten sind **erledigt**
 > durch die KI-simulierte Befragung D25 und ihren Einbau am 23.10. (Daten, Titel, Sprechtexte, Rückfragen, Fußzeilen,
@@ -800,15 +809,18 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 > (Punkte unten).
 
 **Neu seit Sa, 24.10. (Folie 05b – bis zur Generalprobe So, 25.10.)**
-- [ ] **Folie 05b sprechen** (Sollzeit 35 s, drei Klicks): Sprechtext in den Notizen laut lesen und stoppen
-      (61 Wörter ≈ 32 s); Übergang von Yannick („Wie HOLY von außen wirkt, zeigt eine KI-simulierte Befragung.“ →
+- [ ] **Folie 05b sprechen** (Sollzeit 35 s; zwei Klicks auf der Folie, der dritte führt zu 06): Sprechtext in den
+      Notizen laut lesen und stoppen (64 Wörter ≈ 34 s); Übergang von Yannick („Wie HOLY von außen wirkt, zeigt eine KI-simulierte Befragung.“ →
       „Vorher die Innensicht …“) und zu Folie 06 („… jetzt die Außensicht, KI-simuliert.“) in der Generalprobe üben.
       Immer „laut ihm“ / „nennt er“ – nie „die Kund:innen kaufen wegen …“ (`../gruenderbefragung.md` 2.3)
 - [ ] **Rückfragen zu 05b lernen** (Notizen 05b, `../fragerunde.md` F05, F06, F40): „Ist das nicht nur Werbung?“, „Wie
       wurde befragt?“, „Und die 95 %?“ (nur „laut Gründer, Datengrundlage nicht offengelegt“), „Kaufen die Leute HOLY
-      wirklich wegen des Geschmacks?“
+      wirklich wegen des Geschmacks?“, „Selbermischen ist für ihn Individualität – eure Simulation sieht darin eine
+      Hürde?“ (F39), „Warum nennt er kein Koffein?“, „Warum steht der Gründer nicht im Steuerrad?“
 - [ ] **Inhalt prüfen:** Stimmen Auswahl und Paraphrasen auf 05b mit dem, was der Gründer gesagt hat (Zuordnung der
       Fragen, `../gruenderbefragung.md` §6)? Das Transkript liegt im Gruppenordner – Abweichungen an Yannick
+- [ ] **Versanddatum der Sprachnachrichten bestätigen** → dann in der Fußzeile von 05b und im GB-Eintrag von B7
+      eintragen (bis dahin „10/2026“; 18.10.2026 ist nur das Dateidatum, KI-Nachweis 53 meldet sie schon am 17.10.)
 
 
 **Sofort (Datenschluss heute abends)**
@@ -844,7 +856,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       Markenemotionen“, Interviews), sonst Zirkel benennen – seit 22.10. leitet Elias die Emotionen aus seinen
       Analogien ab (Comedian), das deckt die Aufgabe (Stenger, S. 60); Kundenstimmen 20–30 nach K1–K8 codieren, 1–2 Zitate mit
       Portal und Datum (L6); Laddering: Startpunkt-Satz, Zählung „gutes Gewissen“ x von n (L3)
-- [ ] **Gründerbefragung** (`../gruenderbefragung.md`): Versanddatum (B1/B7 nennen „LinkedIn, 18.10.2026“; L7),
+- [ ] **Gründerbefragung** (`../gruenderbefragung.md`): Versanddatum (Notizen 03, B1, B7: „Dateien vom 18.10.2026“; Fußzeile 05b und B7-Eintrag seit 24.10.2026 „10/2026“; L7),
       Zuordnung der Fragen und unklare Stellen bestätigen, ggf. nach der Datengrundlage der Gründerangabe „95 %“ fragen (laut Gründer, Datengrundlage nicht offengelegt); datierte
       Codeliste – erst danach „Individualität“ (K7), Rangfolge der Kaufgründe (P5) und Trennung von Code K3
 
@@ -1008,7 +1020,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       Aufbau nach Abschnitt 4 (Referentenfenster maximieren, F, A− bis der längste Sprechabsatz ganz sichtbar ist) ·
       **zweimal mit Stoppuhr** (Ziel ≤ 15:00, Plan 14:05 seit 24.10.; Kürzungsschwelle 14:15) ·
       „Start“ mit dem ersten Satz üben, Übergaben mit Clicker-Wechsel; Folie 01, 02 und 10 je zweimal mit echtem
-      Clicker (62 Klicks insgesamt, G14) ·
+      Clicker (67 Klicks bis Folie 12: 53 Schritte + 14 Folienwechsel, gezählt 24.10.2026 per Deck.zustand(); vor 05b 62
+      laut G14) ·
       **Live-Umfrage** mit `runde: 'probe'` und echten Handys stoppen (Sollzeit 1:10), einmal mit abgeschaltetem
       WLAN am Laptop (Pille „offline“ → Plan C; die Probezahlen erscheinen nach dem Umstellen der Runde nicht mehr) ·
       Vollbild F/F11 und Esc testen (Esc beendet das Vollbild), Schwarzbild mit B ·
@@ -1039,7 +1052,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       nach dem Einbau, **endgültig So 25.10. nach der Generalprobe**
       (Änderungsstopp) – PDF **23 Seiten** (seit 24.10. mit 05b; bis dahin 22), 24 Folienbilder (inkl. 01b), keine
       Pille „Beispieldaten“ (auch B4–B6), Stand-Datum, Zuordnung PDF-Seite ↔ Folie in Abschnitt 11 prüfen (Befehle:
-      `AUTOREN.md` 15). Stand 24.10.: `export/` von 09:33 ohne 05b – nach dem Einbau von 05b neu erzeugen
+      `AUTOREN.md` 15). Stand 24.10., ca. 19:07: `export/` neu erzeugt mit 05b (PDF 23 Seiten, Seite 6 = 05b; 24 Bilder;
+      Übersicht Stand 24.10.2026) – endgültig nach der Generalprobe
 - [ ] **Druckvorlagen nach Datenschluss:** Tastenkürzel, Zuordnung PDF-Seite ↔ Folie, Rückfragen-Spickzettel je
       Person (sonst veralten sie)
 - [ ] Nach dem Scan-Test ggf. kurze Adresse als `kurzLink` (F08-21); Fußzeile von 08 je Schritt teilen (Schritt
@@ -1128,7 +1142,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       `AUTOREN.md` 25): neue Folie zwischen 05 und 06 (spricht Lukas, 35 s), Gründer im Abgleich auf Folie 10,
       Sprungliste 12, Querverweise 02, 05 (Regie), B1, B2, B7; Folie 01 und 02 gekürzt (Summe 14:05). Geprüft:
       `pruefen.mjs --schritte --optional` in Editorial, Bento, Keynote, je hell und dunkel 0 Fehler, `referent-test.mjs`
-      43/43, Druckprobe 23 Seiten. Freigabe durch Yannick und Lukas offen (12.1, 12.2); Exporte neu erzeugen (12.5)
+      43/43, Druckprobe 23 Seiten. Freigabe durch Yannick und Lukas offen (12.1, 12.2); Exporte am 24.10. nach der
+      Nachprüfung D28 neu erzeugt (12.5)
 - [x] **KI-simulierte Befragung eingebaut** (Fr, 23.10.2026, Account 1, Workflow D26; `AUTOREN.md` 24): 06, 07, 08b,
       B4, B5 mit Pille „KI-simuliert“ und Fremdbild; Folie 08 und Abstimmung mit Papagei und Chamäleon (Papagei statt
       Fuchs, Tests angepasst: 53/53, 58 Prüfungen ohne Fehler, 43/43); Folie 10 Rad = Selbstbild mit Abgleich, 11, 12
@@ -1162,7 +1177,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (53 Prüfungen, auch das Zeitfenster mit vorgestellter Uhr); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren (Uhr vorstellen: `http://localhost:8787/uhr?vor=31`), mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy, mitlesender „Folie“ und Gegenprobe des Zeitfensters (Abschnitt 6, `AUTOREN.md` 6c) |
 | `werkzeuge/zeitfenster-e2e.mjs` | prüft das Zeitfenster auf Handy und Folie 08 im Browser (Chromium über playwright-core), nur mit Attrappen auf localhost und vorgestellten Uhren: Ablauf auf dem Handy, Speicher und Pause der Folie, Referentenfenster, Tooltip, alte Skript-Fassung, Lasttest-Gegenprobe; `--mutationen` = kaputte Kopien von `js/komponenten.js` und `js/abstimmen.js`; Ausgabe nach `_test/` (`AUTOREN.md` §20) |
-| `export/` | PDF (seit 24.10.2026 23 Seiten mit 05b, ohne 01b; vorher 22), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b) – Stand 22.10.2026 mit A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, Elias' Material auf 08–11 und B6 (Freigabe offen) und den gekennzeichneten Beispieldaten; nach der Freigabe, nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
+| `export/` | PDF (seit 24.10.2026 23 Seiten mit 05b, ohne 01b; vorher 22), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b; 24 Bilder) – Stand 24.10.2026 (ca. 19:07) mit 05b und A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, Elias' Material auf 08–11 und B6 (Freigabe offen) und den gekennzeichneten Beispieldaten; nach der Freigabe, nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
 | `../analogien.md`, `../kommunikationsanalyse.md` | (außerhalb dieses Ordners) Elias Knaubers Ausarbeitungen, KI-gestützt aus seinen PDFs übertragen (seit 22.10.2026; Grundlage von 08, 09, 09b, 10, 11, B6); die PDFs liegen nur im Gruppenordner |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |

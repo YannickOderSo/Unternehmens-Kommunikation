@@ -30,9 +30,9 @@ Aufgabe: [`Fallstudie-1_Aufgaben-im-Detail.pdf`](Fallstudie-1_Aufgaben-im-Detail
 
 | Bündel | Arbeitspakete | Querschnittsaufgabe | Spricht | Aufwand | Übernimmt |
 |--------|---------------|---------------------|---------|---------|-----------|
-| **A · Daten & Dokumentation** | Markenkompetenz & Wettbewerber, Brand Persona, Limbic Map | Backup & KI-Nachweis | Folien 1–5 · ca. 5:00 | ca. 13–15 Std. | **Yannick Heisler** (+ Markensteuerrad-Synthese) |
-| **B · Befragung & Auswertung** | Repertory Grid, Laddering, Analogien | 3–5 echte Kurzinterviews organisieren | Folien 6–8 · ca. 5:00 | ca. 12–14 Std. | **Lukas Welker** (liefert seit 22.10. kein Material; Ersatz: KI-simulierte Befragung D25, siehe oben) |
-| **C · Auftritt, Design & Synthese** | Kommunikationsanalyse, Markensteuerrad (Leitung), Empfehlungen | Folienmaster & Gesamtdeck | Folien 9–11 · ca. 5:00 | ca. 12–13 Std. | **Elias Knauber** (präsentiert auch Folie 10) |
+| **A · Daten & Dokumentation** | Markenkompetenz & Wettbewerber, Brand Persona, Limbic Map | Backup & KI-Nachweis | Folien 1–5 · ca. 5:00 (Plan 24.10.: 4:15) | ca. 13–15 Std. | **Yannick Heisler** (+ Markensteuerrad-Synthese) |
+| **B · Befragung & Auswertung** | Repertory Grid, Laddering, Analogien | 3–5 echte Kurzinterviews organisieren | Folien 6–8 · ca. 5:00 (Plan 24.10.: 5b 0:35 spricht Lukas + 6–8b 4:50, Sprecher offen) | ca. 12–14 Std. | **Lukas Welker** (liefert seit 22.10. kein Material; Ersatz: KI-simulierte Befragung D25, siehe oben) |
+| **C · Auftritt, Design & Synthese** | Kommunikationsanalyse, Markensteuerrad (Leitung), Empfehlungen | Folienmaster & Gesamtdeck | Folien 9–11 · ca. 5:00 (Plan 24.10.: 9–11 mit 9b 4:25) | ca. 12–13 Std. | **Elias Knauber** (präsentiert auch Folie 10) |
 
 Dazu kommen für jede Person ca. 2 Std. eigene Folien und Sprechtext sowie ca. 4 Std. gemeinsame Termine.
 

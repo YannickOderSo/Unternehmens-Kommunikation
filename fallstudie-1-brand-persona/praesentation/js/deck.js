@@ -1516,6 +1516,10 @@
       else return;
     }
     if (e.ctrlKey || e.metaKey || e.altKey) return;          // Browser-Kürzel (Strg+P …) nicht stören
+    /* Reine Umschalt-/Modifikatortasten (seit 24.10.2026, Prüfung D28): Sie liefen
+       sonst durch die ganze Logik und verwarfen eine angefangene Foliennummer –
+       „5 B Enter“ mit Umschalt+B sprang nicht, B schaltete das Schwarzbild ein. */
+    if (['Shift', 'CapsLock', 'Control', 'Alt', 'AltGraph', 'Meta'].indexOf(taste) >= 0) return;
 
     /* 2. Schwarzbild: jede Bedientaste blendet es nur wieder ein – im
           Referentenfenster auch, solange der Saal schwarz ist (A8: dort
@@ -2120,7 +2124,7 @@
       '<p class="hilfe-fuss">Präsentations-Clicker (Bild↑/Bild↓) funktionieren immer, auch wenn ein Eingabefeld aktiv ist. ' +
       'In Eingabefeldern (Wortwolke, Umfragewerte) gelten alle anderen Tasten als Texteingabe. ' +
       'Solange eine Umfrage zu sehen ist (Folie 08), zählen die Ziffern 1–5 Stimmen (Umschalt = minus) – zum Springen von dort ' +
-      'erst weiterklicken oder O nutzen (nur „1“ „0“ Enter erkennt die Präsentation als Foliennummer). Mini-Steuerrad oben rechts = Sprungmenü. ' +
+      'erst weiterklicken oder O nutzen (nur „1“ „0“ Enter und „5“ „b“ Enter erkennt die Präsentation als Foliennummer). Mini-Steuerrad oben rechts = Sprungmenü. ' +
       'Nach einem Sprung aus dem Backup führt Z zurück zur Backup-Folie. ' +
       'Touch: nach links wischen = weiter, nach rechts = zurück; Antippen zeigt die Bedienleiste. ' +
       'Bedienleiste unten rechts (Maus im unteren Bildrand bewegen): Farbwähler testen Markenfarben nur in diesem Tab – dauerhaft in marke.js.</p>';

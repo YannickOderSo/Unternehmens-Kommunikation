@@ -137,6 +137,7 @@ Rückfragen“ beginnt.
 | `<h2 class="titel" data-umfrage-frage="tier"></h2>` | Frage der Umfrage aus marke.js |
 | `data-anrede-sie="…" data-anrede-ihr="…"` | Text passend zur Anrede |
 | `<span class="beispiel">Beispieldaten</span>` | Pille; per `marke.js → beispieldatenHinweis: false` ausblendbar (erst, wenn keine erfundenen Werte mehr da sind!) |
+| `<span class="beispiel kennzeichnung">KI-simuliert</span>` | Pflicht-Kennzeichnung in derselben Pillen-Optik („KI-simuliert“ auf 06, 07, 08b, 10, B4, B5; „Innensicht · Selbstauskunft (n = 1)“ auf 05b) – bleibt auch bei `beispieldatenHinweis: false` stehen (seit 24.10.2026, Abschnitt 25) |
 
 Pfade: `src="bilder/…"` in Folien relativ zum Ordner `praesentation/` schreiben (dort liegt `index.html`). In `data-*`-Attributen (z. B. `data-bild`) ebenfalls relativ
 zu `praesentation/`; die Engine löst sie selbst auf.
@@ -1752,11 +1753,11 @@ durch den Agenten; `../../ki-nachweis/` unverändert; Exporte erzeugt die Haupts
 
 | Folie | vorher Wörter ≈ s (Soll) | nachher Wörter ≈ s (Soll) |
 |---|---|---|
-| 01 | 88 ≈ 46 s + Wartezeit (45) | 46 ≈ 24 s + ca. 6 s Wartezeit (30) |
-| 02 | 124 ≈ 65 s (60) | 86 ≈ 45 s (45) |
-| 05b | – | 61 ≈ 32 s + Klicks (35) |
+| 01 | 88 ≈ 46 s + Wartezeit (45) | 46 ≈ 24 s + ca. 6 s Wartezeit (30); nach der Prüfung 50 ≈ 26 s + 3–5 s Ratezeit |
+| 02 | 124 ≈ 65 s (60) | 86 ≈ 45 s (45); nach der Prüfung 87 ≈ 46 s, sieben Klicks |
+| 05b | – | 61 ≈ 32 s + Klicks (35); nach der Prüfung 64 ≈ 34 s + zwei Klicks |
 | 10 | 143 ≈ 75 s (75) | 146 ≈ 77 s (75) |
-| alle Hauptfolien | 1.622 Wörter ≈ 14:14 · Soll 840 s = 14:00 | 1.606 Wörter ≈ 14:05 · Soll 845 s = 14:05 |
+| alle Hauptfolien | 1.622 Wörter ≈ 14:14 · Soll 840 s = 14:00 | 1.606 Wörter ≈ 14:05 · Soll 845 s = 14:05; nach der Prüfung 1.614 Wörter ≈ 14:09 (mit Zurufen auf 01 und Klicks auf 02 eher ≈ 14:19, LIESMICH 3) |
 
 Die Summen schließen den Dank auf Folie 12 (15 Wörter) ein, nicht aber Wartezeiten auf 01 und die Abstimmung auf 08.
 Übrige Folien unverändert (03 82, 04 147, 05 108, 06 149, 07 165, 08 115, 08b 99, 09 113, 09b 106, 11 168 Wörter).
@@ -1774,7 +1775,7 @@ wie vorher und gewollt abgeblendete Zwischenschritte. `referent-test.mjs` 43 von
 
 **Offen:** Freigabe durch Yannick (Folie 05b, Kürzung 01/02, Schritt 9 auf Folie 10) und Lukas (Sprechtext 05b laut
 lesen und stoppen, Inhalt mit dem Transkript abgleichen; LIESMICH 12.1, 12.2). **Exporte** (Abschnitt 15) neu erzeugen –
-`export/` (24.10.2026, 09:33) enthält 05b noch nicht. `../arbeitsplan.md` (Ablaufplan, wer spricht) nennt 05b noch nicht.
+`export/` (24.10.2026, 09:33) enthält 05b noch nicht. `../arbeitsplan.md` (Ablaufplan, wer spricht) nennt 05b seit der Nacharbeit.
 KI-Nachweis eintragen, dann committen und pushen (Hauptsitzung).
 
 ### Nacharbeit nach der Prüfung (Sa, 24.10.2026; zwei Prüfer im Workflow D27, umgesetzt von Claude, KI-Nachweis 153)
@@ -1791,7 +1792,7 @@ KI-Nachweis eintragen, dann committen und pushen (Hauptsitzung).
 | Folie 05b: Selbermischen = Individualität ↔ Hürde „selbst anrühren“ nicht verbunden (niedrig) | Neue Rückfrage auf 05b mit K03 (7 von 8, 9 Nennungen, Kontrollgruppe 7 von 8, Differenzierung 4,45, Ideal-Distanz 4,88), Verweis auf `../fragerunde.md` F39; Beleg auf Folie 10 bei „Stärkste Hürde“. |
 | Folie 10: Beschriftung machte die Herkunft stärker, als die Quellen tragen (niedrig) | Zeile 2 `"wo": "Positionierung · wie Gründer"` („Genuss mit gutem Gewissen“ = unsere Verdichtung; „wie Website & Gründer“ brach mit dem Knopf zweizeilig um); Notizen: Zeilen 3 und 4 links = Elias' Deutung (H). |
 | Folie 10: Gründer nicht anklickbar (niedrig, Verbesserung) | Neues optionales Datenfeld `"folieSelbst": "f05b"` – `js/folien/10-markensteuerrad.js` baut die linke Beschriftung dann wie rechts als Knopf „· Folie 05b →“ (gemeinsame Funktion `verweisKnopf`). Geprüft: Klick springt auf 05b (Endzustand), `aria-label` „… – zur Folie 05b (Gründerbefragung: Innensicht)“, keine Konsolenmeldung. |
-| Folie 10: Belege einseitig, Absatzkopf „ca. 19 s“ (niedrig) | Belege: gutes Gewissen in der Simulation 2 von 8 als Gefühl (T1, T2, Grenzfall), ein Leiter-Knoten (T1); Geschmack kritisch 3, positiv 1, „okay“ 1; Absatzkopf „ca. 21 s“. |
+| Folie 10: Belege einseitig, Absatzkopf „ca. 19 s“ (niedrig) | Belege: gutes Gewissen in der Simulation 2 von 8 als Gefühl (T1, T2; das Thema steht im Persona-Text – Spalte „im Persona-Block: Grenzfall“, nicht als Grenzfall codiert), ein Leiter-Knoten (T1); Geschmack kritisch 3, positiv 1, „okay“ 1; Absatzkopf „ca. 21 s“. |
 | Folie 01: Ratezeit verkürzt, Hinweis „gelbes Oval“ gestrichen (niedrig) | „3 bis 5 Sekunden warten“ und „Vier Buchstaben auf einem gelben Oval – auf einer Dose.“ wieder da; 50 Wörter ≈ 26 s + Ratezeit ≈ 30 s; Ziel-Absatz und Kasten berichtigt (mit Zurufen eher 35 s – Generalprobe). |
 | `../fragerunde.md` F05: veralteter Beleg, Rangfolge ohne Vorbehalt, GB-Regel verkürzt (niedrig) | Beleg ersetzt (Notizen Folie 10: Horsch stützt vier Stichworte), „nach Firmendaten, die er nicht vorlegt“, Regel „DR, AN, KA oder LM“ (auch in den 05b-Belegen); F40 „unsere Verdichtung dessen, was Website und Gründer sagen“. |
 | `js/deck.js`: „5 b Enter“ auf Folie 08 zählte eine Stimme und schaltete das Schwarzbild ein (niedrig) | Folgt „b“ binnen 1,5 s auf eine vorläufig gezählte Ziffer und gibt es die Folie „<Ziffer>b“, wird die Stimme zurückgenommen und „5b“ in den Puffer gelegt (wie bei „1 0“). Geprüft: 5 b Enter → 05b, gespeicherter Stand wie vorher; 3 b Enter (keine Folie 3b) → Stimme + Schwarzbild wie bisher; 8 b, 1 0 unverändert. |
@@ -1799,3 +1800,24 @@ KI-Nachweis eintragen, dann committen und pushen (Hauptsitzung).
 | B7-Notizen, Laienfrage Folie 12, LIESMICH (Klicks, Seitenzahlen, export-Stand) (niedrig) | B7-Notizen und Laienfrage („→ Folie 5b“) nachgezogen; LIESMICH-Zahlen nach dem Export (Abschnitt 15) neu gezählt. |
 | `werkzeuge/uebersicht.mjs`: Fußnote „Folien 03–05“ (niedrig) | „Folien 03–05b: Entwurf, Freigabe offen“. |
 | `../arbeitsplan.md` nannte 05b nicht | Hinweis und Aufgabe für Lukas ergänzt. |
+
+### Nachprüfung D28 (Sa, 24.10.2026; drei Prüfer, nur lesend; umgesetzt von Claude)
+
+Die D27-Nacharbeit war in `index.html` richtig, in den Begleitdateien teils nicht nachgezogen. Umgesetzt:
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| `js/deck.js`: reiner Druck auf die Umschalttaste verwarf die angefangene Nummer – „5 B Enter“ (großes B) sprang nicht, B schaltete das Schwarzbild ein (mittel; älter, betraf auch 08b/09b) | Modifikatortasten (Shift, CapsLock, Control, Alt, AltGraph, Meta) werden gleich nach der Strg/Alt-Prüfung ignoriert. Geprüft (`tasten.cjs`): „5 Shift+B Enter“ und „8 Shift+B Enter“ springen, auch Referent ↔ Publikum; Umschalt+Ziffer auf 08 (−1) unverändert. Hilfe (H) und LIESMICH 2 nennen „5 b Enter“ auf Folie 08. |
+| `../folienentwuerfe.md` Folie 5b und 2 auf dem verworfenen Stand (mittel) | Folie 5b: Etikett, Karte „Emotional · seine Sicht“ mit Zuschreibung, Metazeile, Quellzeile 10/2026, Sprechtext (64 Wörter, zwei Klicks), Rückfragen 5–7; Folie 2: Eintrag mit dem Wortlaut nach der Prüfung, Methodenkarte unverändert. |
+| LIESMICH 12.1/12.2 beschrieben verworfene Texte; §3 Zeitbilanz veraltet (mittel/niedrig) | 12.1 (01/02, 05b, Folie 10) und 12.2 (Überschrift, 64 Wörter, zwei Klicks, alle Rückfragen, Versanddatum → Fußzeile 05b und B7) nachgezogen; §3: 1.614 Wörter ≈ 14:09, Risiko ≈ 14:19 (Zurufe 01, Klicks 02), Kürzungskandidat Folie 11; 06–08b „B · offen“. |
+| Datum 18.10.2026 in Notizen 03, B1, B7, QUELLEN, fragerunde F06 (niedrig) | überall „Dateien vom 18.10.2026; Versanddatum bestätigt Lukas“ bzw. „10/2026“. |
+| Folie 05b: Verweis „Folien 06–08b“ zählte Folie 08 (Analogien = Selbstbild) zur Außensicht (niedrig) | „Folien 06, 07, 08b“ (Folie, Kasten, Kommentar, B1-Notiz, Folienentwurf). |
+| „als Grenzfall codiert“ las die CSV falsch (niedrig) | „Grenzfall“ steht in der Spalte „im Persona-Block“: Thema im Persona-Text angelegt, womöglich davon angestoßen – Notizen 10, Kasten 10, hier, Folienentwurf. |
+| `../gruenderbefragung.md` 2.3 Punkt 4 noch mit RG/LA; Kopf ohne Nachtrag (niedrig) | „DR, AN, KA oder LM (seit 23.10.2026; bis 22.10.2026 auch RG und LA)“; Kopfzeile mit Nachtrag 24.10. |
+| 05b: „meist“ fehlte (Frage 9/10); Rückfrage „Warum nicht im Steuerrad?“ unvollständig (niedrig) | „Sonst müsse man meist …“; Rückfrage „Warum steht der Gründer nicht im Steuerrad?“ mit Positionierung, Nutzen und „Community-nah“ als gestützte Stichworte. |
+| Folie 10: verdeckte Rad-Karten im Abgleich weiter Tab-Stopps (niedrig) | `10-markensteuerrad.js`: Rad `inert`, solange der Abgleich steht (nicht im Druck). Geprüft: Tab ab Schritt 9 → RG-Knopf, 05b-Knopf, LA, 08b, 08; zurück auf 8 wieder frei. |
+| Folie 10: Tippfehler in `folie`/`folieSelbst` fiel nicht auf (niedrig) | Konsolenmeldung „Ziel … gibt es nicht“ (Prüfung gegen das DOM). |
+| Rückweg von 05b zum Abgleich (niedrig) | Notizen Folie 10: „1 1 Enter, dann ←“ (1 0 Enter landet in Schritt 0). |
+| 05b: „Softdrinks“/„Einwilligung“ allein in der letzten Zeile (niedrig) | `text-wrap: pretty` für Steckbrief-Werte und Metazeile. |
+| Klickzahl, Seitenzahlen, export-Stand in LIESMICH; Folie 12 Sprechzettel ohne Innensicht; fragerunde F40 nicht in der Übung; Bausteintabelle ohne `.kennzeichnung`; README FS1 Folienplan; arbeitsplan Zeiten; VORTRAGSREIFE ohne Nachtrag (niedrig) | 67 Klicks (gezählt), Seiten nach dem Export (Abschnitt 15); Sprechzettel-Absatz Folie 12; F40 in der Übungsreihenfolge, Themenzählung; Bausteintabelle oben; Hinweis unter dem Folienplan; Plan-Zeiten 4:15 / 0:35 + 4:50 / 4:25; Nachtrag 24.10. |
+| Folie 10: Wortsumme „um eins zu hoch“ (niedrig) | **Nicht übernommen:** Das Zählskript ergibt 12 + 11 + 9 + 13 + 8 + 8 + 7 + 7 + 32 + 39 = 146 Wörter; die Angabe stimmt. |

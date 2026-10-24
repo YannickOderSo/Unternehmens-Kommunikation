@@ -1,5 +1,16 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag Sa, 24.10.2026 (Account 1): Folie 05b „Gründerbefragung: Innensicht“
+
+> Auf Lukas Welkers Wunsch hat die Gründerbefragung eine eigene Folie **05b** zwischen 05 und 06 (Lukas spricht sie,
+> 0:35; Workflows D27 und D28, `AUTOREN.md` Abschnitt 25). Dafür sind die Sprechtexte von 01 (0:30) und 02 (0:45)
+> gekürzt. **Sollzeit jetzt 845 s = 14:05**; gesprochen ca. 1.614 Wörter ≈ 14:09, mit Zurufen auf 01 und den sieben
+> Klicks auf 02 eher ≈ 14:19 – über der Kürzungsschwelle 14:15 (LIESMICH 3; erster Kürzungskandidat Folie 11).
+> **Klicks bis Folie 12: 67** (53 Schritte + 14 Folienwechsel, gezählt per `Deck.zustand()`); damit sind **G14**
+> („insgesamt 62“) und **N6** (840 s) überholt. Folie 10 hat im Abgleich-Schritt einen Knopf zur Innensicht (05b);
+> „5 b Enter“ springt auch von Folie 08 aus (die Ziffer zählt dann keine Stimme), großes B mit Umschalttaste geht
+> jetzt überall. Freigabe durch Yannick und Lukas offen (LIESMICH 12.1, 12.2).
+
 ## Nachtrag Fr, 23.10.2026 (Account 1): KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon
 
 > Kurzer Nachtrag über den Nachträgen vom 22. und 21.10. Lukas Welker liefert kein Material mehr; seit Fr, 23.10.2026

@@ -172,11 +172,12 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 150 | 24.10.2026 | Yannick | Antworten: eigene Gründer-Folie + Folie 10; Gründer als Innensicht gegen das KI-simulierte Fremdbild | D27 | in Arbeit |
 | 151 | 24.10.2026 | System | Workflow-Meldung: D27 fertig (Bau + 2 Prüfer, 19 Befunde) | D27 | Nacharbeit durch Claude |
 | 152 | 24.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft: Änderungen auf der Platte erhalten |
-| 153 | 24.10.2026 | Yannick | „Weiter“ | D27 (Nacharbeit), D28 | in Arbeit |
+| 153 | 24.10.2026 | Yannick | „Weiter“ | D27 (Nacharbeit), D28 | Nacharbeit D27 und D28 eingearbeitet; alle Tests grün; Exporte 24.10. (PDF 23 Seiten) |
 | 154 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; D28 und Tests laufen |
 | 155 | 24.10.2026 | System | Meldung „Suche beendet“ (Hintergrund-Befehl) und erneuter Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; Claude wartet in der Sitzung auf D28 und die Tests |
 | 156 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nach Teilergebnis der Tests) | D28 | Zwischenstand der Nacharbeit committet (D28-Prüfer nur lesend, Tests in 3 Themen 0 Fehler) |
 | 157 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nur Rohprotokoll) | D28 | Rohprotokoll committet; Claude wartet in der Sitzung |
+| 158 | 24.10.2026 | System | Workflow-Meldung: D28 fertig (3 Prüfer: Inhalt, Technik, Vollständigkeit) | D28 | Befunde von Claude eingearbeitet, Tests grün, Exporte neu |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2474,10 +2475,23 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Ratezeit 3–5 s und Hinweis „gelbes Oval“ zurück; Folie 02: Selbstbild/Fremdbild im Sprechtext wieder getrennt,
   Methodenkarte wieder „Herkunft, Historie, Marktrolle“; Folie 05b: emotionaler Nutzen als „seine Sicht“, Paraphrasen
   näher an der Quelle, Datum „10/2026“, Rückfrage Selbermischen ↔ Hürde, Überlauf behoben, Etikett „Steckbrief“;
-  Folie 10: Zeile 2 „wie Website & Gründer“ als Knopf zur Folie 05b, Notizen; deck.js, Pillen, Übersicht, Doku);
-  danach Nachprüfung durch Unteragenten (D28), Tests, Exporte.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D28 (geplant)
+  Folie 10: Zeile 2 „Positionierung · wie Gründer“ als Knopf zur Folie 05b – „wie Website & Gründer“ brach
+  zweizeilig um –, Notizen; deck.js, Pillen, Übersicht, Doku);
+  danach Nachprüfung durch Unteragenten (D28), deren Befunde ebenfalls selbst eingearbeitet (Eintrag 158), Tests,
+  Exporte.
+- **Ergebnis:** Folie 05b, Folie 10 (Knopf zur Innensicht, Rad im Abgleich nicht mehr per Tab erreichbar), Folie
+  01/02 (Sprechtexte nach der Prüfung), Tastatur („5 b Enter“ auf Folie 08, großes B mit Umschalttaste), Pflicht-Pillen
+  `.kennzeichnung`, Doku. Tests: `pruefen.mjs --schritte --optional` in Editorial, Bento, Keynote, dunkel je 0 Fehler
+  (Warnungen nur Wortbudget 03, 04, 06, 08b, 11 wie vorher), `referent-test.mjs` 43/43, `live-abstimmung-test.mjs`
+  53/53 (Mutationen 26/26), `zeitfenster-e2e.mjs` 58/58, `pruefe_synthese.py` ohne Fehler. Exporte 24.10.2026: PDF 23
+  Seiten (Seite 6 = 05b), 24 Folienbilder, Übersicht (Soll 14:05). Gesprochen ca. 1.614 Wörter ≈ 14:09.
+- **Erstellte/geänderte Dateien:** `fallstudie-1-brand-persona/praesentation/index.html`, `css/folien/05b-gruender.css`,
+  `css/komponenten.css`, `js/deck.js`, `js/folien/10-markensteuerrad.js`, `marke.js`, `werkzeuge/uebersicht.mjs`,
+  `AUTOREN.md`, `LIESMICH.md`, `QUELLEN.md`, `VORTRAGSREIFE.md`, `export/` (PDF, `folien/*.png` inkl. neu
+  `f05b.png`, `uebersicht.png`); `fallstudie-1-brand-persona/folienentwuerfe.md`, `fragerunde.md`,
+  `gruenderbefragung.md`, `arbeitsplan.md`, `README.md`; `ki-nachweis/ki-nachweis.md`,
+  `ki-nachweis/workflows/2026-10-24_gruender-folie-nachpruefung.js`.
+- **Unteragenten:** D28
 - **Prüfung durch die Gruppe:** ☐ offen
 
 
@@ -2518,6 +2532,15 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Vorgehen Claude:** Rohprotokoll und Nachweis committet; Claude wartet jetzt innerhalb der Sitzung auf die
   restlichen Tests und D28.
 
+
+### 158 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D28 „gruender-folie-nachpruefung“: abgeschlossen, 3 von 3 Prüfern fertig, 0 Fehler.
+
+- **Vorgehen Claude:** Befunde gelesen (Journal), gegen den Code und die Quellen geprüft und selbst eingearbeitet
+  (Tabelle „Nachprüfung D28“ in `praesentation/AUTOREN.md` §25); ein Befund nicht übernommen (Wortsumme Folie 10 –
+  das Zählskript bestätigt 146 Wörter). Danach alle Tests und die Exporte (siehe 153).
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -2557,8 +2580,8 @@ steht hier mit dem wörtlichen Auftrag.
 | D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
 | D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
 | D26 | 23.–24.10.2026 | 135 (fortgesetzt nach 136, 139, 142; Rest durch Claude nach 146/147) | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen; 5 davon gelaufen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | Folien 02, 06, 07, 08, 08b, 10 (Selbstbild + Abgleich), B1, B2, B4, B5 u. a.; Abstimmung mit Papagei und zwei Antworten; Doku; Prüfer „Treue“ (1 hoch, 5 mittel) – eingearbeitet von Claude; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Limit gescheitert und von Claude selbst erledigt | Claude: alle Tests selbst ausgeführt, Folien 02, 06, 07, 08, 08b, 10 angesehen, Exporte |
-| D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
-| D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | läuft | – |
+| D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ (gebaut als 05b „Gründerbefragung: Innensicht“) vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
+| D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | index.html inhaltlich korrekt; 1 mittlerer Technikbefund (Umschalttaste), Begleitdateien teils veraltet (Folienentwürfe, LIESMICH, Datum in Notizen, Zeitbilanz), ca. 25 niedrige Befunde | Claude: Befunde an Code, CSV und Quellen geprüft, eingearbeitet (einer verworfen), Tests und Tastenproben erneut |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3408,8 +3431,9 @@ steht hier mit dem wörtlichen Auftrag.
   niedrige. Prüfer „Darstellung und Technik“: 1 mittlerer Befund (rechte Spalte von 05b läuft unten über) und 7 niedrige
   (u. a. „5 b Enter“ auf Folie 08, Pflicht-Pille am Beispieldaten-Schalter, Seitenzahlen, Fußnote der Übersicht).
 - **Wie Claude das Ergebnis geprüft hat:** Journal gelesen; Zahlen der Befunde an `buendel-b/auswertung/*.csv` und
-  `hvm.md` nachgeprüft (K03, K10, Geschmack, gutes Gewissen), Datum an KI-Nachweis 53; alle Befunde selbst eingearbeitet
-  (Eintrag 153, Tabelle in `praesentation/AUTOREN.md` §25 „Nacharbeit“); Überlauf nachgemessen, „5 b Enter“ und der
+  `hvm.md` nachgeprüft (K03, K10, Geschmack, gutes Gewissen), Datum an KI-Nachweis 53; Befunde selbst eingearbeitet
+  (Eintrag 153, Tabelle in `praesentation/AUTOREN.md` §25 „Nacharbeit“) – zunächst vor allem in index.html, CSS und JS;
+  die Begleitdateien (Folienentwürfe 2 und 5b, LIESMICH 12.1/12.2/§3, Datum in den Notizen) erst nach D28; Überlauf nachgemessen, „5 b Enter“ und der
   neue Knopf auf Folie 10 im Browser getestet, Folien 05b und 10 in allen Themen angesehen. Danach Nachprüfung D28.
 
 ### D28 – 24.10.2026 – ausgelöst durch Prompt 153
@@ -3419,8 +3443,16 @@ steht hier mit dem wörtlichen Auftrag.
   jedem Befund einen Beleg (Datei und Zeile, Messwert oder Quelle) angeben.
 - **Auftrag (wörtlich):** im Skript
   [`workflows/2026-10-24_gruender-folie-nachpruefung.js`](workflows/2026-10-24_gruender-folie-nachpruefung.js).
-- **Ergebnis:** läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Ergebnis:** Prüfer Inhalt: harte Regeln eingehalten, kein „95 %“ und keine verbotenen Zitate sichtbar, alle Zahlen
+  stimmen mit den CSV-Dateien; von 11 alten Befunden 6 behoben, 5 nur in index.html (Begleitdateien veraltet). Prüfer
+  Technik: Überlauf, Pillen, Knopf auf Folie 10 in Ordnung; neuer mittlerer Befund – reiner Druck auf die Umschalttaste
+  verwarf die angefangene Foliennummer („5 B Enter“ sprang nicht); dazu Tab-Stopps auf verdeckten Rad-Karten, fehlende
+  Prüfung der Ziel-IDs, Hilfetext, Seitenzahlen. Prüfer Vollständigkeit: Folienentwürfe 2/5b, LIESMICH 12.1/12.2/§3/§11,
+  Klickzahl (gemessen 67), Datum in Notizen, VORTRAGSREIFE, README, arbeitsplan, Korrekturen am KI-Nachweis.
+- **Wie Claude das Ergebnis geprüft hat:** Befunde einzeln am Code bzw. an den Quellen nachvollzogen; Klickzahl selbst
+  gezählt (53 Schritte + 14 Folienwechsel = 67), Wortsumme Folie 10 mit dem Zählskript (146 – Befund verworfen);
+  Umschalttasten-Fehler mit dem Probeskript des Prüfers vor und nach der Korrektur getestet; Tab-Reihenfolge auf
+  Folie 10 getestet; danach alle Tests, Exporte, Folienbilder 05b, 02 und 10 angesehen.
 
 ---
 

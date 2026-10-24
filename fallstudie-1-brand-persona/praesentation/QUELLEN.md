@@ -205,7 +205,7 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
   Kantar TGI), ist dort als Kategoriedaten („nicht HOLY“) bzw. in B3/B7/B8 als „extern“ gekennzeichnet; VuMA und
   Eurostat stehen nur in den Notizen (Satz berichtigt am 21.10.2026, Nacharbeit D23).
 - **Ausnahme – Gründerbefragung (GB)**, seit 19.10.2026: Horsch, M. (2026): Antworten auf den Fragenkatalog der
-  Gruppe, zwei Sprachnachrichten an L. Welker, LinkedIn, 18.10.2026. Eigene Erhebung ohne Dossier-Nummer,
+  Gruppe, zwei Sprachnachrichten an L. Welker, LinkedIn, 10/2026 (Dateien vom 18.10.2026; Versanddatum bestätigt Lukas). Eigene Erhebung ohne Dossier-Nummer,
   Auswertung in `../gruenderbefragung.md`. Gründer Mathias Horsch hat der Abschrift und Auswertung mit KI
   zugestimmt; Name, Paraphrasen und kurze Zitate sind freigegeben (laut Yannick, 19.10.2026). Immer als
   Selbstauskunft gekennzeichnet („laut Gründer Mathias Horsch (Befragung 10/2026)“ bzw. „Horsch 2026 (GB)“),

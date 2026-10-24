@@ -179,7 +179,15 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
   Startpunkte fürs Laddering, die Tonalität ist Prüfmaßstab.“ · „Den Rahmen bildet die Brand Persona: Marken wirken
   über ihre Zielgruppe.“ Methodenkarte Desk Research „Herkunft, Marktrolle + Gründerbefragung“ (bis dahin „Herkunft,
   Historie, Marktrolle“). Der Sprechtext oben ist der frühere Entwurf (ca. 1 Minute)
-- [ ] (24.10.) Yannick: gekürzten Sprechtext laut lesen und stoppen (Ziel ≤ 0:45)
+- [x] (24.10., nach der Prüfung D27 – der obige Wortlaut ist die verworfene erste Kürzung) Klick 1–5 jetzt: „Das
+  Markensteuerrad nach Esch zeigt die Identität, das Selbstbild. Feld für Feld: Desk Research für den Markenkern –
+  dazu die Gründerbefragung als Innensicht, … Repertory Grid für die Eigenschaften, … Laddering für den Nutzen – beide
+  KI-simuliert: ein Fremdbild zum Abgleich, … Analogien für die Tonalität … und Kommunikationsanalyse fürs
+  Markenbild.“ („KI hilft überall …“ gestrichen, das sagt die Fußzeile); 87 gesprochene Wörter ≈ 46 s, sieben Klicks.
+  Die erste Kürzung ließ das Rad (Selbstbild) aus den Fremdbild-Methoden gefüllt klingen. Methodenkarte Desk Research
+  bleibt **„Herkunft, Historie, Marktrolle“** – die Gründerbefragung ist eine Primärerhebung, keine Sekundärrecherche,
+  und steht auf Folie 2 nur im Sprechtext
+- [ ] (24.10.) Yannick: gekürzten Sprechtext laut lesen und stoppen (Ziel ≤ 0:45; mit sieben Klicks eher 0:50)
 - [x] (21.10.) Begriffe nach der Vorlesung (Abgleich Vorlesung #27–#30, #15): Markenkern, Wir-Form,
   Markeneigenschaften in Visualisierung, Sprechtext und Grafik `grafiken/folie-02-vorgehen.svg/.png` (neu erzeugt);
   Rückfrage 2 mit Identität/Image (S. 60, 87), Rückfrage 3 mit S. 78. Quellenzeile unverändert (#4, #11, #13 offen)
@@ -680,11 +688,12 @@ Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (P
 > Yannick „Eigene Folie + Folie 10 (Empfohlen)“ und „Ja, als Innensicht vs. Außensicht (Empfohlen)“; gebaut KI-gestützt
 > (Workflow D27) als Web-Folie f05b. Maßgeblich ist die Folie in `praesentation/index.html` (Kasten „FOLIE 05b“).
 > Quelle **nur** [`gruenderbefragung.md`](gruenderbefragung.md) (Abschnitt 1, 2.1–2.3, 3, 4); das Transkript im
-> Gruppenordner wurde nicht geöffnet. Prüfung durch Yannick und Lukas offen.
+> Gruppenordner wurde nicht geöffnet. Prüfung durch Yannick und Lukas offen. Stand nach den Prüfungen D27 und D28
+> (24.10.2026): Zuschreibung beim emotionalen Nutzen, Datum 10/2026, Rückfragen ergänzt.
 
 **Bündel:** B spricht (Lukas Welker, hat die Befragung geführt), Auswertung A (Yannick) · **Zeit:** 0:35 ·
 **Platz:** zwischen Folie 5 (Limbic Map) und 6 (Repertory Grid) – erst die Innensicht, dann die KI-simulierte
-Außensicht (6–8b), Abgleich auf Folie 10 · **Backup-Bezug:** B1 (Methodik), B7 (Quelle GB)
+Außensicht (6, 7, 8b), Abgleich auf Folie 10 · **Backup-Bezug:** B1 (Methodik), B7 (Quelle GB)
 
 ### Titel (Kernaussage)
 
@@ -697,18 +706,22 @@ Selbstauskunft (Regel 2.3).
 ### Text auf der Folie (39 sichtbare Wörter)
 
 - **Kicker:** Gründerbefragung · Mathias Horsch · Pille **„Innensicht · Selbstauskunft (n = 1)“**
+- **Etikett über dem Steckbrief:** Steckbrief · laut Gründer (Metaangabe)
 - **Steckbrief (Schritt 0):** Anspruch – *bessere Alternative zu normalen Softdrinks* (Frage 1) · Zielgruppe –
   *18–55 Jahre, Männer und Frauen* (Frage 2) · Wettbewerb – *die großen Softdrinkmarken* (Frage 3, **ohne „95 %“**)
 - **Kaufgründe · seine Rangfolge (Schritt 1, Frage 5):** 1 *Geschmack* – „mit Abstand“ · 2 *wenig Zucker und Kalorien*
   · 3 *Preis*; Metazeile *Rangfolge laut Gründer nach Firmendaten – nicht vorgelegt*. Kaufgrund 2 ohne den Wortlaut
   des Gründers (unsichere Stelle, 2.2) und ohne „funktionale Inhaltsstoffe“ (keine Nutzenaussage, 4.3 K11)
-- **Emotionaler Nutzen (Schritt 2, Frage 8/11):** *Individualität (Selbermischen) · Zusammengehörigkeit (HOLY Squad)*
+- **Emotional · seine Sicht (Schritt 2, Frage 8/11 – stellvertretend für die Kund:innen beantwortet, also das Bild des
+  Unternehmens von seiner Kundschaft, keine Kundenaussage, `gruenderbefragung.md` 2.1):** *Individualität
+  (Selbermischen) · Zusammengehörigkeit (HOLY Squad)*
 - **Ziel (Schritt 2, Frage 14):** „meistgeliebte Softdrink-Brand“
-- **Verweis (Schritt 2):** → *Außensicht (KI-simuliert): Folien 06–08b · Abgleich Folie 10*
-- **Metazeile links unten:** Fragenkatalog mit 14 Fragen, Antwort in zwei Sprachnachrichten – keine Rückfragen
+- **Verweis (Schritt 2):** → *Außensicht (KI-simuliert): Folien 06, 07, 08b · Abgleich Folie 10* (Folie 8 zeigt Elias'
+  Analogien = Selbstbild und die Saal-Umfrage; die KI-simulierte Tierfrage steht dort nur im Sprechtext)
+- **Metazeile links unten:** Fragenkatalog mit 14 Fragen, Antwort in zwei Sprachnachrichten; keine Rückfragen
   möglich, KI-Abschrift mit Einwilligung
-- **Quellenzeile:** *Quelle: Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker, 18.10.2026 –
-  Selbstauskunft (Horsch 2026, GB)*
+- **Quellenzeile:** *Quelle: Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker, 10/2026 –
+  Selbstauskunft (Horsch 2026, GB)* (18.10.2026 ist nur das Dateidatum; genaues Datum nach Lukas' Bestätigung)
 
 ### Visualisierung
 
@@ -718,16 +731,16 @@ Abstand; darunter zwei Karten (emotionaler Nutzen, Ziel) und der Verweis auf die
 Folie 6. Kein Foto des Gründers, kein Logo. Kopfzeile „Selbstbild“ statt Mini-Rad (die Folie gehört zu keinem Feld –
 sie zeigt das Selbstbild über alle Felder).
 
-### Sprechtext (ca. 0:35, Lukas; 61 Wörter ≈ 32 s + drei Klicks)
+### Sprechtext (ca. 0:35, Lukas; 64 Wörter ≈ 34 s; zwei Klicks auf der Folie, der dritte führt zu Folie 6)
 
-> [Schritt 0] Vorher die Innensicht: Gründer Mathias Horsch hat mir unsere Fragen per Sprachnachricht beantwortet.
-> Für ihn ist HOLY die bessere Alternative zu normalen Softdrinks.
+> [Schritt 0] Vorher die Innensicht: Gründer Mathias Horsch hat unsere Fragen per Sprachnachricht beantwortet.
+> Für ihn ist HOLY eine bessere Alternative zu normalen Softdrinks.
 >
 > [Schritt 1] Als Kaufgründe nennt er zuerst den Geschmack – „mit Abstand“ –, dann wenig Zucker und Kalorien, dann
 > den Preis.
 >
-> [Schritt 2] Emotional: Individualität durchs Selbermischen und Zusammengehörigkeit im HOLY Squad. Sein Ziel: die
-> meistgeliebte Softdrink-Marke. Das ist Selbstauskunft – jetzt die Außensicht, KI-simuliert.
+> [Schritt 2] Emotional sieht er bei seinen Kund:innen Individualität durchs Selbermischen und Zusammengehörigkeit im
+> HOLY Squad. Sein Ziel: die meistgeliebte Softdrink-Marke. Alles Selbstauskunft – jetzt die Außensicht, KI-simuliert.
 
 Anschluss: Folie 5 endet mit „Wie HOLY von außen wirkt, zeigt eine KI-simulierte Befragung.“, Folie 6 beginnt mit
 „Was unterscheidet HOLY vom Wettbewerb?“. Immer „laut ihm“ / „nennt er“ – nie „die Kund:innen kaufen wegen …“.
@@ -736,7 +749,8 @@ Anschluss: Folie 5 endet mit „Wie HOLY von außen wirkt, zeigt eine KI-simulie
 
 1. **„Ist das nicht nur Werbung?“** – Zum Teil, und das sagen wir offen: Innensicht, Selbstauskunft, n = 1; vieles
    deckt sich mit Website und Press Kit ✔ [1, 5, 13]. Neu sind die Rangfolge der Kaufgründe, der Wettbewerb aus
-   Firmensicht und die emotionale Deutung (`gruenderbefragung.md` 2.1). Deshalb steht die Folie als Selbstbild vor der
+   Firmensicht (vor allem die großen Softdrinkmarken – Sirup- und Pulveranbieter spielen laut ihm kaum eine Rolle) und
+   die emotionale Deutung (`gruenderbefragung.md` 2.1). Deshalb steht die Folie als Selbstbild vor der
    Außensicht; Folie 10 gleicht beides ab.
 2. **„Wie wurde befragt?“** – Fragenkatalog mit 14 Fragen, von Lukas über LinkedIn geschickt; Antwort in zwei
    Sprachnachrichten (1:40 und 3:30 Minuten), keine Rückfragen möglich – kein Interview, kein Laddering, kein
@@ -746,7 +760,18 @@ Anschluss: Folie 5 endet mit „Wie HOLY von außen wirkt, zeigt eine KI-simulie
 4. **„Kaufen die Leute HOLY wirklich wegen des Geschmacks?“** – Das sagt der Gründer nach Firmendaten, die er nicht
    vorlegt. Die KI-simulierte Befragung prüft es nicht: „schmeckt natürlich – schmeckt künstlich“ nennen 2 von 8
    (Relevanz nicht erfüllt), HOLY 4,88 zu Ø 4,89 (`buendel-b/auswertung/repertory-grid-ergebnis.csv`, K10); drei von
-   acht schildern den Geschmack kritisch (`analogien-haeufigkeiten.csv`) – Hypothesen, keine Kundenstimmen.
+   acht schildern den Geschmack kritisch, eine positiv, eine „okay“ (`analogien-haeufigkeiten.csv`: T3, T5, T6 · T6 ·
+   T4) – Hypothesen, keine Kundenstimmen.
+5. **„Selbermischen ist für ihn Individualität – eure Simulation sieht darin eine Hürde?“** – Ja, der deutlichste
+   Unterschied zwischen Innen- und Außensicht: „aufmachen, fertig – selbst anrühren“ nennen 7 von 8 simulierten
+   Personen (9 Nennungen; Kontrollgruppe ohne Persona-Text ebenfalls 7 von 8), Differenzierung 4,45, aber weit vom
+   Ideal (Abstand 4,88) – eine Hürde (`repertory-grid-ergebnis.csv`, K03; Folie 6). Für den Gründer ist dasselbe
+   Merkmal Individualität (Frage 8/11, Selbstauskunft). KI-simuliert, Hypothese – das müssten echte Interviews zeigen
+   (`gruenderbefragung.md` 4.3 K7; `fragerunde.md` F39).
+6. **„Warum nennt er kein Koffein?“** – Danach war nicht gefragt; „nicht genannt“ heißt nicht „abgelehnt“ (2.1).
+7. **„Warum steht der Gründer nicht im Steuerrad?“** – Er steht dort als stützende Quelle: Positionierung, Nutzen
+   („Genuss ohne Zucker“, „gutes Gewissen“, „dazugehören“) und „Community-nah“ – aber kein Stichwort allein aus der
+   Befragung; n = 1 reicht dafür nicht (2.3 Punkt 4). Auf Folie 10 steht er im Abgleich auf der Seite des Selbstbilds.
 
 ### Quellen
 
@@ -1457,7 +1482,7 @@ steht nicht im Rad, sondern im neuen Schritt „Abgleich“. Damit weicht die Fo
   tragen sie nur schwach (K10: 2 von 8, HOLY 4,88 zu Ø 4,89), steht als Rückfrage auf 5b und 10
 - [x] (24.10., nach der Prüfung D27) Zeile 2 heißt „Positionierung · wie Gründer“ („Genuss mit gutem
   Gewissen“ ist unsere Verdichtung) und ist ein Knopf „· Folie 05b →“ zur Innensicht (Datenfeld `folieSelbst`);
-  Notizen: Zeilen 3 und 4 links = Elias' Deutung (H), gutes Gewissen in der Simulation 2 von 8 (Grenzfall),
+  Notizen: Zeilen 3 und 4 links = Elias' Deutung (H), gutes Gewissen in der Simulation 2 von 8 (T1, T2; im Persona-Text angelegt, womöglich davon angestoßen),
   Selbermischen = Individualität laut Gründer ↔ Hürde „selbst anrühren“; Absatzkopf Schritt 9 „ca. 21 s“
 - [ ] (24.10.) Yannick und Elias: Spaltenkopf und Zeile 2 freigeben; Elias spricht den Halbsatz „wie beim Gründer“
 

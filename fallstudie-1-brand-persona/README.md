@@ -109,6 +109,10 @@ Problemverständnis.
 | 11 | Fazit & Empfehlungen | 3 Kernerkenntnisse, 2–3 konkrete Handlungsempfehlungen | 1:15 | C |
 | | | | **15:00** | je ca. 5:00 |
 
+Ursprünglicher Plan vom 13.10.2026. **Maßgeblich ist der Zeitplan in `praesentation/LIESMICH.md` §3:** seit
+24.10.2026 15 Hauptfolien inklusive 5b „Gründerbefragung: Innensicht“ (Selbstauskunft des Gründers, n = 1, 0:35,
+spricht Lukas), 8b und 9b; Summe 14:05.
+
 Falls Rückfragen in die 15 Minuten fallen: Folien 3 und 8 kürzen.
 
 Ausformulierte Entwürfe je Folie (Titel, Text, Grafik, Sprechtext, Rückfragen): [`folienentwuerfe.md`](folienentwuerfe.md)

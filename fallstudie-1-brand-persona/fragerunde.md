@@ -319,7 +319,7 @@ Folien. Spalte „bisher“ = Nummer im Stand vom 19.10.2026.
 
 Verteilung (Stand 24.10.2026): Yannick führt 19, Elias 13, die Person, die 06–08b vorträgt, 5 (offen, weil Lukas
 kein Material mehr liefert), Lukas 3 (F05, F06, F40 – er spricht Folie 05b) Fragen; bis 23.10.2026 Yannick 20, Lukas 1. Themen: Methode 6, Daten 4, Ergebnisse 10, Empfehlungen
-3, KI-Nutzung 3, Modelle 5, Marke & Gründer 6, Präsentation 2 (Logo, Abstimmung). F36–F38 sind am 22.10.2026 neu, F39
+3, KI-Nutzung 3, Modelle 5, Marke & Gründer 6 (mit F40: 7), Präsentation 2 (Logo, Abstimmung). F36–F38 sind am 22.10.2026 neu, F39
 am 23.10.2026, F40 am 24.10.2026 (Thema Marke & Gründer, damit 7); sie stehen am Ende des Abschnitts „mittel“, damit die übrigen Nummern gleich bleiben. Reserve (bisher
 F27 und weitere): Abschnitt am Ende.
 
@@ -519,7 +519,7 @@ Sprachnachrichten überhaupt mit KI-Tools auswerten?“**
   > abschreiben und auswerten und seinen Namen, Paraphrasen und kurze Zitate verwenden; das Transkript liegt nur in
   > unserem Gruppenordner, nicht im öffentlichen Repository. Mit HOLY als Firma arbeiten wir nicht zusammen: Die Marke
   > stand auf der Liste von Prof. Stenger, und auf Folie 1 und 12 steht „keine Verbindung zur HOLY Softdrinks GmbH“.
-- **Beleg:** Folie 05b (seit 24.10.2026: Metazeile „Fragenkatalog mit 14 Fragen, Antwort in zwei Sprachnachrichten –
+- **Beleg:** Folie 05b (seit 24.10.2026: Metazeile „Fragenkatalog mit 14 Fragen, Antwort in zwei Sprachnachrichten;
   keine Rückfragen möglich, KI-Abschrift mit Einwilligung“, Rückfrage „Wie wurde befragt?“ in den Notizen); KI-Nachweis Nr. 53 (17.10.2026, Kontakt), 59, 60 (Einwilligung zur KI-Abschrift; Spracherkennung „läuft
   lokal im Container“), 67 (Freigabe „Präsentation + Repository“); `gruenderbefragung.md` Kopf („Quelle“,
   „Freigabe“, „Herkunft“) und §2.3 Nr. 5 „Aufbewahrung“; B1 Spalte 03 (Z. 3249) und Notizen (Z. 3264); B7 GB-Eintrag;
@@ -527,9 +527,9 @@ Sprachnachrichten überhaupt mit KI-Tools auswerten?“**
   für den KI-Nachweis“ (Z. 89–90, KI-Richtlinie der HSKL, Nr. 6); `dossier-buendel-b.md` §5 „Einwilligung und
   Datenschutz“ (Z. 304–320).
 - **Fallstricke:**
-  - Kein genaues Datum nennen, bevor Lukas es bestätigt hat: KI-Nachweis 53 vom 17.10. gegen „18.10.2026“ in
-    B1-Notiz, B7 und Notiz 03 (Dateidatum der Audios; „Versanddatum bestätigt Lukas“). Bis dahin „Mitte Oktober“
-    (FRAGE-Q-13).
+  - Kein genaues Datum nennen, bevor Lukas es bestätigt hat: KI-Nachweis 53 vom 17.10. gegen das Dateidatum
+    „18.10.2026“ in den Notizen 03, B1 und B7 („Dateien vom 18.10.2026; Versanddatum bestätigt Lukas“); Fußzeile 05b
+    und B7-Eintrag nennen seit 24.10.2026 „10/2026“. Bis dahin „Mitte Oktober“ (FRAGE-Q-13).
   - Nicht sagen: „Gespräch“, „Interview“, „HOLY hat unsere Präsentation gesehen oder freigegeben“ (nicht belegt).
     Die HOLY-Logos nicht als Erlaubnis von HOLY darstellen (siehe F24).
   - Nicht „ausdrücklich zugestimmt“ sagen: Zustimmung und Freigabe sind im Repository nur als Angabe von Yannick
@@ -1950,12 +1950,13 @@ nicht zur Sollzeit der Folien; ob Rückfragen zu den 15 Minuten zählen, sagt di
 Frage an Prof. Stenger (`arbeitsplan.md`, Offene Punkte; #8).
 
 1. **Vorher:** alle Platzhalter [ … ] mit dem echten Stand füllen (Synthese Do 22.10., Folien final Fr 23.10.) und den
-   Status „belastbar“ hier nachtragen. Seit 23.10.2026: Wer trägt 06–08b vor (Lukas liefert kein Material)?
+   Status „belastbar“ hier nachtragen. Seit 23.10.2026: Wer trägt 06–08b vor (Lukas liefert kein Material)? Seit 24.10.2026 spricht Lukas Folie 05b.
 2. **Rollen festlegen:** wer moderiert; in der Probe spielt eine Person Prof. Stenger, eine das Publikum (VOLL-08).
 3. **Reihenfolge:** zuerst die wahrscheinlichen, noch nicht voll belastbaren Fragen (höchstens 15): F02, F03, F07,
    F10, F12, F13, F14, F15, F16, F17, F18, F20, F21, F22, F23 (F12–F16 und F18 seit 23.10.2026 neu gefasst:
    KI-simulierte Befragung, Rad = Selbstbild). Danach so viele weitere wie die Zeit erlaubt, zuerst F24 und F29
-   (Logo, Abstimmung mit Papagei), dann F30–F34, F36–F38 und F39 („selbst anrühren“, neu am 23.10.2026).
+   (Logo, Abstimmung mit Papagei), dann F30–F34, F36–F38, F39 („selbst anrühren“, neu am 23.10.2026) und F40
+   (Geschmack „mit Abstand“, Folie 05b, neu am 24.10.2026).
 4. **Stoppuhr:** höchstens etwa 30 s je Antwort; Kern in einem Satz, höchstens eine Ergänzung (FRAGE-P-18).
 5. **Springen üben** – am Vortragslaptop mit zweitem Bildschirm und Clicker (VOLL-04): **O** → Backup-Folie →
    `1` `2` `Enter` zurück; auf Folie 12 die Liste „Methoden / Ergebnisse / Backup“; **Z** nach einem Sprung aus dem

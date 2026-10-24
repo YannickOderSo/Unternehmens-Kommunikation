@@ -278,6 +278,7 @@
       platzieren(zustand);
       vergleichVerweise(zustand);
       abgleichPruefen(ctx, zustand);
+      radVerdecken(ctx, zustand, ctx.schritt);
       if (!ctx.druckmodus) ruheStarten(zustand);
     },
 
@@ -300,6 +301,7 @@
     schritt: function (ctx, n) {
       var zustand = ctx.folie._g6s;
       if (!zustand) return;
+      radVerdecken(ctx, zustand, n);
       if (n !== zustand.schrittLuecken && n !== zustand.schrittLuecken - 1) return;
       clearTimeout(zustand.messTimer);
       var sofort = document.documentElement.classList.contains('testmodus') || ctx.bewegungReduziert || ctx.druckmodus;
@@ -677,6 +679,16 @@
     return knopf;
   }
 
+  /* Ab dem Abgleich-Schritt verdeckt die Abgleich-Fläche Band und Rad: Die
+     Rad-Karten sind dann unsichtbar, waren aber weiter Tab-Stopps und für
+     Bildschirmleser lesbar (Prüfung D28, 24.10.2026) → inert, solange der
+     Abgleich steht. Im Druck bleibt das Rad stehen (Abgleich ausgeblendet). */
+  function radVerdecken(ctx, zustand, n) {
+    var verdeckt = !ctx.druckmodus && zustand.schrittVergleich > 0 && n >= zustand.schrittVergleich;
+    if (verdeckt) zustand.rad.setAttribute('inert', '');
+    else zustand.rad.removeAttribute('inert');
+  }
+
   /* Folie im Deck suchen (ausgeblendete optionale Folien fehlen dort) */
   function folieImDeck(id) {
     var treffer = null;
@@ -771,6 +783,14 @@
           }
         }
       }
+      /* Ziel-IDs der Knöpfe vorhanden? Ein Tippfehler machte den Knopf sonst still
+         zu einem toten Knopf (Prüfung D28). Gegen das DOM, nicht Deck.folien() –
+         ausgeblendete optionale Folien und pruefen.mjs --nur bleiben so ruhig. */
+      ['folie', 'folieSelbst'].forEach(function (feld) {
+        if (p[feld] && !document.getElementById(p[feld])) {
+          meldungen.push(zeile + 'Ziel „' + p[feld] + '“ („' + feld + '“) gibt es nicht – Folien-ID prüfen.');
+        }
+      });
       if (p.folie) {
         var dort = folienText(p.folie);
         var beleg = Deck.util.markeText(p.beleg || p.fremdbild);

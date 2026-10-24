@@ -82,6 +82,11 @@
   color: var(--f-text);
 }
 
+/* Keine einzelnen Wörter in der letzten Zeile („Softdrinks“, „Einwilligung“ –
+   Prüfung D28); Chromium kennt text-wrap: pretty, andere Browser ignorieren es */
+#f05b .gb-wert,
+#f05b .gb-art span { text-wrap: pretty; }
+
 /* Art der Befragung (Metazeile unten links) */
 #f05b .gb-art {
   display: flex;

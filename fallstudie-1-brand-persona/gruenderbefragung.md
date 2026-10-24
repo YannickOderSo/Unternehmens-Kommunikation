@@ -1,7 +1,7 @@
 # Gründerbefragung HOLY: Auswertung (Innensicht)
 
 **Bündel A** (Yannick) · Grundlage für Persona, Limbic Map, Markenkompetenz und die Synthese im Markensteuerrad (C2),
-Hinweise für Bündel B und C · Stand Mo, 19.10.2026 · **Entwurf, Prüfung durch Yannick und Lukas offen**
+Hinweise für Bündel B und C · Stand Mo, 19.10.2026, Nachtrag Sa, 24.10.2026 (Folie 05b, §5; Regel 2.3 Punkt 4) · **Entwurf, Prüfung durch Yannick und Lukas offen**
 
 > **So ist die Auswertung zu lesen**
 > - **Quelle:** Mathias Horsch (Mitgründer und Geschäftsführer der HOLY Softdrinks GmbH ✔ [2]) hat den
@@ -97,7 +97,8 @@ Hinweise für Bündel B und C · Stand Mo, 19.10.2026 · **Entwurf, Prüfung dur
    den unsicheren Stellen aus 2.2).
 3. **„95 %“** nur mit dem Zusatz „laut Gründer, Datengrundlage nicht offengelegt“, in Notizen oder Backup, nicht
    als Kennzahl auf einer Hauptfolie.
-4. **Im Markensteuerrad** steht ein GB-Stichwort nur, wenn es ein Ergebnis aus DR, RG, LA, AN, KA oder LM stützt.
+4. **Im Markensteuerrad** steht ein GB-Stichwort nur, wenn es ein Ergebnis aus DR, AN, KA oder LM stützt (seit
+   23.10.2026, Rad = Selbstbild, `methoden.md` §6; bis 22.10.2026 auch RG und LA).
    Sonst steht es in der Konsistenzprüfung als Selbstbild gegen die Außensicht.
 5. **Aufbewahrung:** Transkript nur im Gruppenordner (Google Drive, Ordner „Uni/Unternehmenskommunikation HOLY –
    Gruppenordner“, am 19.10.2026 von Claude Code hochgeladen, nicht geteilt; teilen entscheidet Yannick). Die Kopien
@@ -250,7 +251,8 @@ Außensicht (Empfohlen)“; Workflow D27, Einbau KI-gestützt; Prüfung durch Ya
   Titel „Laut Gründer …“, Fußzeile „Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker,
   10/2026 – Selbstauskunft (Horsch 2026, GB)“ (bis zur Prüfung D27 „18.10.2026“). Nach der Prüfung D27 außerdem:
   emotionaler Nutzen als „seine Sicht“ gekennzeichnet (Frage 8/11 beantwortet er stellvertretend für die Kund:innen,
-  2.1), „eine bessere Alternative“ statt „die“, Wettbewerb „vor allem die großen Softdrinkmarken“, kein Zitat „wenn wir
+  2.1), „eine bessere Alternative“ statt „die“, Wettbewerb in der Rückfrage „vor allem die großen Softdrinkmarken – Sirup- und Pulveranbieter spielen laut ihm kaum
+  eine Rolle“ (auf der Folie unverändert „die großen Softdrinkmarken“), kein Zitat „wenn wir
   in die Daten gucken“ (Wortlaut in 2.1 und 3 verschieden), Rückfrage Selbermischen ↔ Hürde (4.3 K7). Paraphrasen; wörtlich nur die Schlüsselbegriffe aus Abschnitt 3.
   Nicht verwendet: die unsicheren Stellen aus 2.2 (Kaufgrund 2 ohne den Wortlaut des Gründers), „funktionale
   Inhaltsstoffe“ als Nutzenaussage (K11). „95 %“ nur in den Notizen als Rückfrage mit „laut Gründer, Datengrundlage
