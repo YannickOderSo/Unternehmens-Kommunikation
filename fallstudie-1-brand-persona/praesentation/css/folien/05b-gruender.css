@@ -1,0 +1,219 @@
+/* =============================================================================
+   css/folien/05b-gruender.css – Gestaltung nur für f05b (seit Sa, 24.10.2026)
+   -----------------------------------------------------------------------------
+   f05b „Gründerbefragung: Innensicht“ – der Gründer über HOLY (Bühne 1920 × 1080).
+   Wunsch Lukas Welker („viel präsenter“), Entscheidung Yannick „Eigene Folie +
+   Folie 10“; Inhalt nur aus ../gruenderbefragung.md (Kasten „FOLIE 05b“).
+        links  (5 Spalten) Steckbrief im Zeitungsstil wie auf 09b: Anspruch ·
+               Zielgruppe · Wettbewerb (Etikett über dem Wert, Linien
+               dazwischen); unten die Art der Befragung als Metazeile
+        rechts (7 Spalten) oben die Kaufgründe in seiner Rangfolge (Platz 1
+               groß, „mit Abstand“ als Pille, danach bewusst Abstand),
+               darunter zwei Karten (emotionaler Nutzen, Ziel) und der
+               Verweis auf die Außensicht (KI-simuliert) wie die
+               Übergabezeile auf Folie 06
+   Kein Skript: Schritte über data-schritt im HTML. Alle Regeln beginnen mit
+   #f05b, nur Variablen aus tokens.css. „gb“ = Gründerbefragung (verhindert
+   Namensgleichheit mit anderen Folien).
+   ============================================================================= */
+
+
+/* ---------------------------------------------------------------------------
+   1. GRUNDGERÜST
+   --------------------------------------------------------------------------- */
+#f05b .gb {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+  row-gap: 0;
+}
+#f05b .gb-links,
+#f05b .gb-rechts {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+/* Die Kennzeichnung „(n = 1)“ in der Pille nicht in Versalien („N = 1“) */
+#f05b .gb-n { text-transform: none; letter-spacing: 0.04em; }
+
+
+/* ---------------------------------------------------------------------------
+   2. STECKBRIEF (links) – Linie oben wie die Datenblätter auf 09b
+   --------------------------------------------------------------------------- */
+#f05b .gb-steckbrief {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin: 0;
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+}
+/* Die drei Zeilen teilen sich die Höhe der Spalte (wie die Zeilen des
+   Datenblatts auf 09b) – kein leerer Block über der Metazeile */
+#f05b .gb-zeile {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  min-height: 0;
+  padding: 16px 0 18px;
+  border-bottom: var(--linie-fein) solid var(--f-linie);
+}
+#f05b .gb-etikett,
+#f05b .gb-kopf {
+  margin: 0;
+  font-family: var(--schrift-kicker);
+  font-size: var(--groesse-meta);
+  font-weight: var(--kicker-gewicht);
+  letter-spacing: var(--kicker-laufweite);
+  text-transform: var(--kicker-versalien);
+  line-height: 1.2;
+  color: var(--f-text-2);
+}
+#f05b .gb-wert {
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-display);
+  font-variation-settings: "opsz" 40, var(--achsen-ruhig);
+  line-height: 1.15;
+  color: var(--f-text);
+}
+
+/* Art der Befragung (Metazeile unten links) */
+#f05b .gb-art {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--abstand-2);
+  margin: 0;
+  padding-top: var(--abstand-4);
+  font-size: var(--groesse-meta);
+  line-height: 1.35;
+  color: var(--f-text-2);
+}
+#f05b .gb-art .icon {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin-top: -2px;
+  color: var(--f-akzent);
+}
+
+
+/* ---------------------------------------------------------------------------
+   3. KAUFGRÜNDE IN SEINER RANGFOLGE (rechts oben)
+   --------------------------------------------------------------------------- */
+#f05b .gb-kauf {
+  display: flex;
+  flex-direction: column;
+}
+/* Etiketten über Steckbrief (links) und Rangliste (rechts) gleich – so liegen beide starken Linien auf
+   einer Höhe (Prüfung D27, 24.10.2026) */
+#f05b .gb-links > .gb-kopf,
+#f05b .gb-kauf .gb-kopf { color: var(--f-akzent); padding-bottom: var(--abstand-2); }
+#f05b .gb-rang {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--linie-stark) solid var(--f-linie-stark);
+}
+#f05b .gb-platz {
+  display: grid;
+  grid-template-columns: 64px auto minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--abstand-4);
+  padding: 12px 0 14px;
+  border-bottom: var(--linie-fein) solid var(--f-linie);
+}
+#f05b .gb-nr {
+  font-family: var(--schrift-zahl);
+  font-size: var(--groesse-untertitel);
+  font-weight: var(--gewicht-zahl);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--f-text-2);
+}
+#f05b .gb-grund {
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--f-text);
+}
+/* Platz 1: groß in der Titelschrift, Nummer in Akzentfarbe. Der Abstand nach
+   unten steht für „mit Abstand“ (Wortlaut des Gründers, Pille rechts) – seit
+   der Prüfung D27 knapper (vorher 26 px + abstand-3), weil die rechte Spalte
+   sonst unten aus der Inhaltsfläche lief und der Verweis die Quellzeile fast
+   berührte. */
+#f05b .gb-platz--1 {
+  padding: 14px 0 18px;
+  margin-bottom: var(--abstand-2);
+}
+#f05b .gb-platz--1 .gb-nr {
+  font-size: var(--groesse-titel-gross);
+  color: var(--f-akzent);
+}
+#f05b .gb-platz--1 .gb-grund {
+  font-family: var(--schrift-display);
+  font-size: var(--groesse-titel);
+  font-weight: var(--gewicht-display);
+  font-variation-settings: "opsz" 72, var(--achsen-ruhig);
+  line-height: 1;
+}
+#f05b .gb-platz--1 .gb-nr { line-height: 0.8; }
+/* Pille „mit Abstand“ direkt hinter „Geschmack“ (gehört zum Wort) */
+#f05b .gb-platz .chip { align-self: center; justify-self: start; }
+#f05b .gb-hinweis {
+  margin: var(--abstand-2) 0 0;
+  font-size: var(--groesse-meta);
+  line-height: 1.3;
+  color: var(--f-text-2);
+}
+
+
+/* ---------------------------------------------------------------------------
+   4. EMOTIONALER NUTZEN, ZIEL, VERWEIS (rechts unten)
+   --------------------------------------------------------------------------- */
+#f05b .gb-unten {
+  display: flex;
+  flex-direction: column;
+  gap: var(--abstand-4);
+  margin-top: auto;            /* unten bündig */
+  padding-top: var(--abstand-3);   /* bis zur Prüfung D27 abstand-5 – Überlauf, s. o. */
+}
+#f05b .gb-karten {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--abstand-4);
+}
+#f05b .gb-karte { gap: 8px; padding: 18px 22px 20px; }
+#f05b .gb-karte .karte-text {
+  font-size: var(--groesse-text-min);
+  line-height: 1.25;
+  color: var(--f-text);
+}
+#f05b .gb-karte .gb-zeilen { display: flex; flex-direction: column; gap: 2px; }
+/* „Softdrink-Brand“ nicht am Bindestrich trennen (Zeilenumbruch nach „meistgeliebte“) */
+#f05b .gb-ganz { white-space: nowrap; }
+
+/* Verweis auf die Außensicht – wie die Übergabezeile auf Folie 06 */
+#f05b .gb-verweis {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-2);
+  margin: 0;
+  padding-top: var(--abstand-3);
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-tabelle);
+  line-height: 1.25;
+  color: var(--f-text);
+}
+#f05b .gb-verweis b { font-weight: var(--gewicht-fett); }
+#f05b .gb-verweis .icon {
+  flex: none;
+  width: var(--groesse-tabelle);
+  height: var(--groesse-tabelle);
+  color: var(--f-akzent);
+  stroke-width: 2.6;
+}

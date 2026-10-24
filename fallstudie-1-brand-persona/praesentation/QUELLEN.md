@@ -2,7 +2,8 @@
 
 Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `praesentation/` – es wird
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
-Stand: 23.10.2026 (23.10.: KI-simulierte Befragung Bündel B als Quelle der Folien 06, 07, 08b, B4, B5, Abschnitt 5;
+Stand: 24.10.2026 (24.10.: Gründerbefragung mit eigener Folie 05b und im Abgleich auf Folie 10, Abschnitt 5;
+23.10.: KI-simulierte Befragung Bündel B als Quelle der Folien 06, 07, 08b, B4, B5, Abschnitt 5;
 Papagei auch in der Abstimmung und auf der Abstimmseite, Abschnitt 3; 22.10.: Ausarbeitungen von Elias Knauber – Kommunikationsanalyse und Analogien – als Quelle,
 Abschnitt 5; keine Bilder daraus übernommen; Screenshot-Ausnahme für den Raptor auf Folie 09 entfällt, eigene
 Zeichnungen Papagei, Comedian und „Produkt in der Hand“, Abschnitte 3 und 4; seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
@@ -210,8 +211,17 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
   Selbstauskunft gekennzeichnet („laut Gründer Mathias Horsch (Befragung 10/2026)“ bzw. „Horsch 2026 (GB)“),
   nie als Tatsache über die Kundschaft. Sichtbar: auf Folie 03 als Zusatz in der Quellzeile
   des Claims („auch laut Gründer Mathias Horsch (Befragung 10/2026)“, seit 19.10.2026 auf Wunsch von Yannick) und
-  im Backup B1, B3 (Status „extern“, wie in der Legende von B7) und B7. Sonst steht GB auf den Hauptfolien nur in
-  den Notizen und in den Kommentarkästen („FOLIE 02“–„05“, „10“, „11“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
+  im Backup B1, B3 (Status „extern“, wie in der Legende von B7) und B7. **Seit Sa, 24.10.2026** (Wunsch Lukas,
+  Entscheidung Yannick, `AUTOREN.md` 25) zusätzlich auf der eigenen **Folie 05b „Gründerbefragung: Innensicht“**
+  (Paraphrasen und kurze Schlüsselbegriffe aus `../gruenderbefragung.md` Abschnitt 3, Pille „Innensicht ·
+  Selbstauskunft (n = 1)“, Fußzeile „Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker,
+  10/2026 – Selbstauskunft (Horsch 2026, GB)“; Datum „10/2026“, weil 18.10. nur das Dateidatum ist und das
+  Versanddatum noch Lukas bestätigt), im Abgleich auf **Folie 10** (Spalte „Selbstbild · Auftritt & Gründer“,
+  Zeile „Positionierung · wie Gründer“ als Knopf zu 05b) und in B7 („GB (03, 05b, 10, B1, B3)“). Auf
+  **Folie 02** nur im Sprechtext („dazu die Gründerbefragung als Innensicht“); die Methodenkarte Desk Research bleibt
+  „Herkunft, Historie, Marktrolle“ (Prüfung D27: eine eigene Befragung ist Primärerhebung, keine Sekundärrecherche).
+  Sonst steht GB auf den Hauptfolien nur in den Notizen und in den Kommentarkästen („FOLIE 02“–„05b“, „10“, „11“,
+  „12“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
   offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
 - **Ausnahme – Ausarbeitungen von Elias Knauber** (Bündel C), seit Do, 22.10.2026: eigene Erhebungen der Gruppe
   ohne Dossier-Nummer.

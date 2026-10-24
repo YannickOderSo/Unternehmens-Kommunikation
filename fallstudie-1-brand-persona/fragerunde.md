@@ -1,7 +1,7 @@
 # Fragerunde – Vorbereitung (Fallstudie 1, HOLY)
 
-**Stand:** Fr, 23.10.2026 (Account 1, Nachtrag 23.10. unten: KI-simulierte Befragung, Rad = Selbstbild, Papagei und
-Chamäleon) · erstellt 19.10.2026 · Präsentation Mo 26.10.2026 · Generalprobe So 25.10.2026
+**Stand:** Sa, 24.10.2026 (Account 1, Nachtrag 24.10. unten: Gründerbefragung als eigene Folie 05b, F05/F06
+nachgezogen, F40 neu; Nachtrag 23.10.: KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon) · erstellt 19.10.2026 · Präsentation Mo 26.10.2026 · Generalprobe So 25.10.2026
 
 **Erstellt von:** Account 2 (Claude Code), KI-gestützt. Workflow „account-2-vortragsreife-fragerunde“ (Skript
 `ki-nachweis/workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`, Delegation A2-D04, ausgelöst durch Prompt
@@ -15,6 +15,9 @@ Elias' Material als Inhalt einsetzen). Geändert sind die Antworten zu den Folie
 **Erneut überarbeitet von:** Account 1 (Claude Code), KI-gestützt, am 23.10.2026 im Workflow D26 (Auftrag „Synthese
 Doku“, ausgelöst durch KI-Nachweis 135: Entscheidungen Yannick zum Einbau der KI-simulierten Befragung). Nachweis:
 `ki-nachweis/ki-nachweis.md`, Abschnitt 2, D26.
+**Erneut überarbeitet von:** Account 1, KI-gestützt, am 24.10.2026 im Workflow D27 (Auftrag „Bauen“:
+neue Folie 05b „Gründerbefragung: Innensicht“, ausgelöst durch Lukas' Wunsch, das Gründer-Interview präsenter
+einzubauen, und Yannicks Entscheidungen). Geändert: F05, F06 (Folie 05b), neu F40. Nachweis: `ki-nachweis/ki-nachweis.md`.
 
 **Geprüft:** Zwei Fragensammler (Blick von Prof. Stenger, Blick des Publikums) und eine Vollständigkeitsprüfung
 haben am 19.10. 53 Fragen gesammelt; jede Antwort hat ein Prüf-Agent an der Quelle gegengeprüft. Am 21.10. hat
@@ -27,6 +30,22 @@ sich Antworten stützen, an der Vorlesungs-PDF gegengelesen (Liste im Nachtrag).
 Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellwissen ist, steht es dabei.
 
 ---
+
+> **Nachtrag Account 1 – Stand Sa, 24.10.2026: Gründerbefragung als eigene Folie 05b**
+>
+> Grundlage: Lukas' Wunsch, das Gründer-Interview „viel präsenter“ einzubauen, und Yannicks Entscheidungen „Eigene
+> Folie + Folie 10 (Empfohlen)“ und „Ja, als Innensicht vs. Außensicht (Empfohlen)“ (Workflow D27). Neu ist **Folie
+> 05b „Gründerbefragung: Innensicht“** zwischen 05 und 06 (Lukas spricht sie); auf **Folie 10** trägt der Gründer im
+> Abgleich die Seite des Selbstbilds mit (Spalte „Selbstbild · Auftritt & Gründer“, Zeile „Positionierung · wie
+> Gründer“); Folie 12 nennt 05b in der Sprungliste („Innensicht (Gründer)“). Geändert: **F05** (Frage nennt 5b, Lukas
+> antwortet, Antwort mit Kaufgründen und Rolle auf 5b/10; gestrichen: „zurzeit steht keines darin“ – seit 23.10.2026
+> stützt GB Stichworte im Rad, siehe Notizen Folie 10), **F06** (Beleg 05b). Neu: **F40** (Geschmack „mit Abstand“).
+> Die Zeilennummern „Z. …“ in älteren Belegen haben sich durch die neue Folie verschoben – mit Strg+F den Kasten suchen.
+> Nach der Prüfung D27 (24.10.2026): Zeile 2 auf Folie 10 heißt „Positionierung · wie Gründer“ und springt
+> per Klick zu 05b; „Genuss mit gutem Gewissen“ ist unsere Verdichtung (F40 entsprechend). F05 mit „nach Firmendaten,
+> die er nicht vorlegt“ und der vollständigen GB-Regel (DR, AN, KA oder LM), veralteter Beleg „Zurzeit steht kein
+> Stichwort mit GB im Rad“ ersetzt. Neue Rückfrage auf 05b: Selbermischen = Individualität laut Gründer ↔ Hürde
+> „selbst anrühren“ in der Simulation (passt zu F39).
 
 > **Nachtrag Account 1 – Stand Fr, 23.10.2026: KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon**
 >
@@ -261,8 +280,8 @@ Folien. Spalte „bisher“ = Nummer im Stand vom 19.10.2026.
 | F02 | Warum gerade HOLY? | Marke & Gründer | Yannick | 01, 03 | F02 |
 | F03 | Was ist aus der Vorlesung – entspricht euer Steuerrad ihr, gehört die Persona dazu? | Modelle | Yannick | 02, 10, 05, B7 | F07 + neu |
 | F04 | Identität ist Innensicht – warum Befragungen der Zielgruppe? | Modelle | Yannick | 02, 10 | F06 |
-| F05 | Was hat der Gründer gesagt – und was ist das wert? | Marke & Gründer | Yannick, ergänzt Lukas | 03, B1, B3, B7 | F03 |
-| F06 | Wie seid ihr an den Gründer gekommen – und durftet ihr seine Antworten mit KI auswerten? | Marke & Gründer | Lukas, ergänzt Yannick | 01/12, B1, B7 | F04 + F34 |
+| F05 | Was hat der Gründer gesagt – und was ist das wert? (seit 24.10. mit Folie 05b) | Marke & Gründer | Lukas (spricht 05b), ergänzt Yannick | 05b, 03, 10, B1, B3, B7 | F03 |
+| F06 | Wie seid ihr an den Gründer gekommen – und durftet ihr seine Antworten mit KI auswerten? | Marke & Gründer | Lukas, ergänzt Yannick | 05b, 01/12, B1, B7 | F04 + F34 |
 | F07 | Stimmen die 170 Mio. €, woher stammen die Zahlen, wer hat geprüft? | Daten | Yannick | 03, B8, B7 | F05 |
 | F08 | Gibt es Marco wirklich, sind die Zahlen über HOLY, warum ein Mann? | Daten | Yannick | 04, B3 | F08 |
 | F09 | Kaufen nicht vor allem Gamer und Jugendliche HOLY? | Ergebnisse | Yannick | 04, B3 | F09 |
@@ -296,11 +315,12 @@ Folien. Spalte „bisher“ = Nummer im Stand vom 19.10.2026.
 | F37 | Habt ihr für Analogien und Kommunikationsanalyse KI genutzt? | KI-Nutzung | Elias, ergänzt Yannick | B2, B1, 08, 09 | neu 22.10. |
 | F38 | Woher kommen 0,4 bis 0,6 Prozent – ist das eine Engagement-Rate? | Daten | Elias | 09, B6 | neu 22.10. |
 | F39 | „Selbst anrühren“ ist eine Hürde, „Selbermixen“ der Markenkern – Widerspruch, und warum keine Lücke? | Ergebnisse | Yannick, ergänzt wer 06 vorträgt | 06, 10, 03 | neu 23.10. (bisher Reserve V-01) |
+| F40 | Der Gründer sagt „Geschmack mit Abstand“ – kaufen die Leute HOLY wirklich wegen des Geschmacks, und was sagt eure Befragung? | Marke & Gründer | Lukas (spricht 05b), ergänzt Yannick | 05b, 10, 06, B4 | neu 24.10. |
 
-Verteilung (Stand 23.10.2026): Yannick führt 20, Elias 13, die Person, die 06–08b vorträgt, 5 (offen, weil Lukas
-kein Material mehr liefert), Lukas 1 (Gründerkontakt) Fragen. Themen: Methode 6, Daten 4, Ergebnisse 10, Empfehlungen
+Verteilung (Stand 24.10.2026): Yannick führt 19, Elias 13, die Person, die 06–08b vorträgt, 5 (offen, weil Lukas
+kein Material mehr liefert), Lukas 3 (F05, F06, F40 – er spricht Folie 05b) Fragen; bis 23.10.2026 Yannick 20, Lukas 1. Themen: Methode 6, Daten 4, Ergebnisse 10, Empfehlungen
 3, KI-Nutzung 3, Modelle 5, Marke & Gründer 6, Präsentation 2 (Logo, Abstimmung). F36–F38 sind am 22.10.2026 neu, F39
-am 23.10.2026; sie stehen am Ende des Abschnitts „mittel“, damit die übrigen Nummern gleich bleiben. Reserve (bisher
+am 23.10.2026, F40 am 24.10.2026 (Thema Marke & Gründer, damit 7); sie stehen am Ende des Abschnitts „mittel“, damit die übrigen Nummern gleich bleiben. Reserve (bisher
 F27 und weitere): Abschnitt am Ende.
 
 ---
@@ -438,22 +458,32 @@ das nicht das Image?“**
 
 #### F05 – Was hat der Gründer gesagt?
 
-**„Auf Folie 3 steht ‚laut Gründer Mathias Horsch‘ – was hat er euch gesagt? Und was ist das wert? Ein Gründer, der
-per Sprachnachricht über seine eigene Marke spricht, sagt doch nur, was auf der Website steht.“**
+**„Auf Folie 5b (und auf Folie 3) steht ‚laut Gründer Mathias Horsch‘ – was hat er euch gesagt? Und was ist das wert?
+Ein Gründer, der per Sprachnachricht über seine eigene Marke spricht, sagt doch nur, was auf der Website steht.“**
+(seit 24.10.2026 hat die Gründerbefragung eine eigene Folie 05b „Innensicht“; bis dahin fragte die Frage nur nach
+Folie 3)
 
 - **Wer fragt wahrscheinlich:** Publikum (hoch), Prof. Stenger (mittel) · aus Q-05 und P-24
-- **Wer antwortet:** Yannick (A), ergänzt von Lukas (B; an ihn gingen die Sprachnachrichten)
+- **Wer antwortet:** Lukas (B; an ihn gingen die Sprachnachrichten, er spricht Folie 05b), ergänzt von Yannick (A,
+  Auswertung) – bis 24.10.2026 Yannick, ergänzt Lukas
 - **Antwort:**
   > Gründer Mathias Horsch hat unseren Fragenkatalog mit 14 Fragen in zwei Sprachnachrichten beantwortet. Laut Gründer
-  > Mathias Horsch (Befragung 10/2026) ist HOLY eine bessere Alternative zu normalen Softdrinks, „geiler Geschmack mit
-  > gutem Gewissen“, die Zielgruppe ist breit – 18 bis 55, Männer und Frauen –, und als Hauptkonkurrenz nennt er die
-  > großen Softdrinkmarken. Das ist eine Selbstauskunft, Innensicht mit n = 1, und vieles wiederholt Website und Press
-  > Kit. Deshalb steht ein Gründer-Stichwort in unserem Steuerrad nur, wenn es ein Ergebnis unserer eigenen Methoden
-  > stützt – zurzeit steht keines darin. [Den letzten Satz nur so sagen, wenn die Gruppe die Regel für GB bestätigt
-  > hat.]
-- **Beleg:** Folie 03 Claim (Daten Z. 774: „auch laut Gründer Mathias Horsch“) und Belege (Z. 716); B1 Spalte 03
+  > Mathias Horsch (Befragung 10/2026) ist HOLY eine bessere Alternative zu normalen Softdrinks, die Geschmack mit gutem
+  > Gewissen verbindet; die Zielgruppe ist breit – 18 bis 55, Männer und Frauen –, als Hauptkonkurrenz nennt er die
+  > großen Softdrinkmarken, als Kaufgründe zuerst den Geschmack, „mit Abstand“, dann wenig Zucker und Kalorien, dann
+  > den Preis – nach Firmendaten, die er nicht vorlegt. Das ist eine Selbstauskunft, Innensicht mit n = 1, und vieles wiederholt Website und Press Kit – neu sind
+  > die Rangfolge der Kaufgründe, der Wettbewerb aus Firmensicht und die emotionale Deutung (Individualität durchs
+  > Selbermischen, Zusammengehörigkeit im Squad). Deshalb zeigen wir sie auf Folie 5b als Innensicht vor der
+  > KI-simulierten Außensicht und gleichen auf Folie 10 ab; ins Steuerrad kommt ein Gründer-Stichwort nur stützend,
+  > wenn Desk Research, Analogien, Kommunikationsanalyse oder Limbic Map dasselbe zeigen. [Den letzten Halbsatz nur so
+  > sagen, wenn die Gruppe
+  > die Regel für GB bestätigt hat.]
+- **Beleg:** Folie 05b (seit 24.10.2026: Titel „Laut Gründer verbindet HOLY Geschmack mit gutem Gewissen“, Steckbrief,
+  Kaufgründe in seiner Rangfolge, Notizen mit Belegen je Zeile und Rückfragen); Folie 10 Schritt 9 (Spalte „Selbstbild ·
+  Auftritt & Gründer“, Zeile „Positionierung · wie Gründer“ als Knopf zur Folie 05b); Folie 03 Claim (Daten Z. 774: „auch laut Gründer Mathias Horsch“) und Belege (Z. 716); B1 Spalte 03
   (Z. 3249) und Notizen (Z. 3264); B3 Zeile „M. Horsch, Befragung (GB)“ (Daten Z. 3431); B7 GB-Eintrag (Horsch 2026
-  (GB)); Folie 10 Notiz „Herkunft der Stichworte“ (Z. 2642: „Zurzeit steht kein Stichwort mit GB im Rad“);
+  (GB)); Folie 10 Notiz „Herkunft der Stichworte“ (Regel GB; Horsch stützt „Genuss ohne Zucker“, „gutes Gewissen“,
+  „dazugehören“ und „Community-nah“, kein Stichwort nur mit GB);
   `gruenderbefragung.md` Kopf (14 Fragen, zwei Sprachnachrichten an Lukas, Freigabe), §1 Punkte 1–3, §2.1
   („Geringer Eigenwert vieler Bestätigungen“, „Neu sind vor allem …“, keine Rückfragen), §2.2 (unsichere Stellen),
   §2.3 (Regeln), §3 Fragen 1–3; `methoden.md` §6 „Regel für GB“ (Z. 263); Stenger S. 87 (Identität = intern, #36).
@@ -466,7 +496,10 @@ per Sprachnachricht über seine eigene Marke spricht, sagt doch nur, was auf der
     abgelehnt“, 2.1).
   - Die Antworten nicht als Repertory Grid oder Laddering zählen (andere Elemente, keine Nachfragen, Beispiel im
     Fragebogen vorgegeben, 2.1).
-  - Die Rangfolge der Kaufgründe stützt sich laut ihm auf Firmendaten, die er nicht vorlegt – nur so erwähnen.
+  - Die Rangfolge der Kaufgründe stützt sich laut ihm auf Firmendaten, die er nicht vorlegt – nur so erwähnen (so
+    steht es auch als Metazeile auf Folie 5b).
+  - Den Zeilenverweis „Z. …“ in den Belegen nicht wörtlich nehmen: Seit dem Einbau von 05b (24.10.2026) haben sich die
+    Zeilennummern in `index.html` verschoben – mit Strg+F „FOLIE 05b“ bzw. „FOLIE 03“ suchen.
   - Keine Stelle mit unsicherem Wortlaut zitieren (2.2).
   - Die Regel für GB ist ein Vorschlag vom 19.10.2026 (`methoden.md` §6) – erst nach Bestätigung durch die Gruppe als
     beschlossen darstellen.
@@ -486,7 +519,8 @@ Sprachnachrichten überhaupt mit KI-Tools auswerten?“**
   > abschreiben und auswerten und seinen Namen, Paraphrasen und kurze Zitate verwenden; das Transkript liegt nur in
   > unserem Gruppenordner, nicht im öffentlichen Repository. Mit HOLY als Firma arbeiten wir nicht zusammen: Die Marke
   > stand auf der Liste von Prof. Stenger, und auf Folie 1 und 12 steht „keine Verbindung zur HOLY Softdrinks GmbH“.
-- **Beleg:** KI-Nachweis Nr. 53 (17.10.2026, Kontakt), 59, 60 (Einwilligung zur KI-Abschrift; Spracherkennung „läuft
+- **Beleg:** Folie 05b (seit 24.10.2026: Metazeile „Fragenkatalog mit 14 Fragen, Antwort in zwei Sprachnachrichten –
+  keine Rückfragen möglich, KI-Abschrift mit Einwilligung“, Rückfrage „Wie wurde befragt?“ in den Notizen); KI-Nachweis Nr. 53 (17.10.2026, Kontakt), 59, 60 (Einwilligung zur KI-Abschrift; Spracherkennung „läuft
   lokal im Container“), 67 (Freigabe „Präsentation + Repository“); `gruenderbefragung.md` Kopf („Quelle“,
   „Freigabe“, „Herkunft“) und §2.3 Nr. 5 „Aufbewahrung“; B1 Spalte 03 (Z. 3249) und Notizen (Z. 3264); B7 GB-Eintrag;
   Folie 01 (Z. 320) und Folie 12 (Fußzeile Z. 3061); README.md (Repository) Markenliste; `arbeitsplan.md` „Regeln
@@ -1834,6 +1868,37 @@ Ist das kein Widerspruch – und warum fehlt das dann im Steuerrad und bei den L
     selbst bestimmen (Selbstbild, Selbstauskunft, n = 1). Die Spannung „Individualität durch Selbermischen ↔ Hürde
     ‚selbst anrühren‘“ steht dort schon als Hypothese (`gruenderbefragung.md` §1 Nr. 5, K7).
 - **Belastbar:** ja – die Spannung ist benannt und die Entscheidung begründet; die Hürde selbst ist KI-simuliert.
+
+#### F40 – Geschmack „mit Abstand“: Sagt das nur der Gründer?
+
+**„Auf Folie 5b sagt der Gründer, Geschmack sei ‚mit Abstand‘ der wichtigste Kaufgrund. Kaufen die Leute HOLY
+wirklich wegen des Geschmacks – und warum steht das dann nicht auf Folie 10?“**
+
+- **Wer fragt wahrscheinlich:** Prof. Stenger (mittel), Publikum (mittel) · neu (24.10.2026, Folie 05b; Rückfrage
+  „Kaufen die Leute HOLY wirklich wegen des Geschmacks?“ in den Notizen von 05b)
+- **Wer antwortet:** Lukas (spricht 05b), ergänzt von Yannick (Synthese, Folie 10)
+- **Antwort:**
+  > Das sagt der Gründer – nach Firmendaten, die er nicht vorlegt. Es ist eine Selbstauskunft, keine Aussage über die
+  > Kundschaft. Unsere KI-simulierte Befragung prüft es nicht: Im Repertory Grid nennen nur zwei von acht simulierten
+  > Personen ein Geschmacks-Konstrukt, und dort liegt HOLY beim Durchschnitt der Wettbewerber; im Laddering war Geschmack
+  > kein Startpunkt. Für eine eigene Zeile im Abgleich auf Folie 10 ist das zu dünn – deshalb steht dort die
+  > Positionierung „Genuss mit gutem Gewissen“, unsere Verdichtung dessen, was Website und Gründer sagen („geiler
+  > Geschmack mit gutem Gewissen“). Ob der Geschmack wirklich
+  > trägt, müssten echte Kundenstimmen zeigen.
+- **Beleg:** `gruenderbefragung.md` §3 Frage 5 (Rangfolge nach eigenen, nicht vorgelegten Daten; „mit Abstand“) und
+  §2.1 („Unbelegt“); `buendel-b/auswertung/repertory-grid-ergebnis.csv`, K10 „schmeckt natürlich – schmeckt künstlich“:
+  2 Nennungen von 2 Personen (Relevanz nicht erfüllt), HOLY 4,88, Ø W1–W5 4,89, Differenzierung 0,02; K11 „zu wässrig –
+  schmeckt nach was“: 1 Nennung; `analogien-haeufigkeiten.csv`, „Geschmack kritisch“ 3 von 8 (T3, T5, T6), „Geschmack
+  positiv“ 1 von 8 (T6), „okay“ 1 von 8 (T4); Folie 07/10 Notizen („Genuss ließ sich nicht prüfen, Geschmack war kein Startpunkt“); Kasten
+  „FOLIE 10“ (Seit 24.10.2026: keine fünfte Zeile).
+- **Fallstricke:**
+  - Nicht sagen: „Die Kund:innen kaufen HOLY wegen des Geschmacks“ – immer „laut Gründer“.
+  - Nicht sagen: „Die Befragten finden HOLY geschmacklich schlecht“ – alles KI-simuliert, Hypothesen, n = 8.
+  - „95 %“ gehört nicht zu dieser Frage (Wettbewerb, F05/F25) und nur mit „laut Gründer, Datengrundlage nicht
+    offengelegt“.
+  - Kaufgrund 2 nicht mit dem Wortlaut des Gründers zitieren (unsichere Stelle, `gruenderbefragung.md` 2.2) – „wenig
+    Zucker und Kalorien“.
+- **Belastbar:** ja – als Gegenüberstellung Selbstauskunft ↔ KI-simulierte Hypothese.
 
 ---
 

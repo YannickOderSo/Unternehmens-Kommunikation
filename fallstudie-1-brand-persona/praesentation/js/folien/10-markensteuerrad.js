@@ -630,9 +630,16 @@
       var urteil = URTEILE[p.urteil] ? p.urteil : 'abweichung';
       var li = u.element('li', { class: 'g6s-paar g6s-paar--' + urteil }, null, liste);
 
-      /* links: Selbstbild (Beschriftung = Feld bzw. „wo“, darunter das Stichwort) */
+      /* links: Selbstbild (Beschriftung = Feld bzw. „wo“, darunter das Stichwort).
+         Mit „folieSelbst“ (seit 24.10.2026, Gründerbefragung → f05b) wird die
+         Beschriftung wie rechts zum Knopf mit „· Folie nn →“. */
       var selbst = u.element('div', { class: 'g6s-paar-seite g6s-paar-seite--selbst' }, null, li);
-      u.element('span', { class: 'g6s-paar-wo', 'data-meta': '' }, u.markeText(p.wo || FELDNAMEN_LANG[p.aus] || ''), selbst);
+      var woText = u.markeText(p.wo || FELDNAMEN_LANG[p.aus] || '');
+      if (p.folieSelbst) {
+        verweisKnopf(u, selbst, woText, p.folieSelbst);
+      } else {
+        u.element('span', { class: 'g6s-paar-wo', 'data-meta': '' }, woText, selbst);
+      }
       u.element('span', { class: 'g6s-paar-text' }, u.markeText(p.selbstbild), selbst);
 
       /* Mitte: Zeichen (Bedeutung für Bildschirmleser und als Tooltip) */
@@ -641,27 +648,33 @@
 
       /* rechts: Fremdbild (Beschriftung = Methode + Foliennummer als Knopf) */
       var fremd = u.element('div', { class: 'g6s-paar-seite g6s-paar-seite--fremd' }, null, li);
-      var quelle = u.element(p.folie ? 'button' : 'span', { class: 'g6s-paar-wo g6s-paar-quelle', 'data-meta': '' }, null, fremd);
-      u.element('span', { class: 'g6s-paar-methode' }, u.markeText(p.methode || ''), quelle);
-      u.element('span', { class: 'g6s-paar-folie' }, '', quelle);
+      verweisKnopf(u, fremd, u.markeText(p.methode || ''), p.folie);
       u.element('span', { class: 'g6s-paar-text' }, u.markeText(p.fremdbild), fremd);
-      if (p.folie) {
-        quelle.setAttribute('type', 'button');
-        quelle.setAttribute('data-ziel', p.folie);
-        /* Klick (oder Tab + Enter) springt zur Folie mit dem Fremdbild, auf
-           ihren letzten Schritt – wie die Verweise auf Folie 11 */
-        quelle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var ziel = folieImDeck(p.folie);
-          if (!ziel) return;
-          quelle.blur();
-          if (Deck.springe) Deck.springe(ziel.id, 'ende'); else Deck.gehe(ziel.id, 'ende');
-        });
-      }
     });
     el.hidden = false;
     el.setAttribute('data-schritt', String(zustand.schrittVergleich));
     vergleichVerweise(zustand);
+  }
+
+  /* Beschriftung mit Foliennummer als Knopf (rechts: Methode → Folie mit dem
+     Fremdbild; links mit „folieSelbst“: Herkunft → Folie mit dem Selbstbild).
+     Ohne Zielfolie nur ein <span>. Klick (oder Tab + Enter) springt zur Folie,
+     auf ihren letzten Schritt – wie die Verweise auf Folie 11. */
+  function verweisKnopf(u, eltern, text, zielId) {
+    var knopf = u.element(zielId ? 'button' : 'span', { class: 'g6s-paar-wo g6s-paar-quelle', 'data-meta': '' }, null, eltern);
+    u.element('span', { class: 'g6s-paar-methode' }, text, knopf);
+    u.element('span', { class: 'g6s-paar-folie' }, '', knopf);
+    if (!zielId) return knopf;
+    knopf.setAttribute('type', 'button');
+    knopf.setAttribute('data-ziel', zielId);
+    knopf.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var ziel = folieImDeck(zielId);
+      if (!ziel) return;
+      knopf.blur();
+      if (Deck.springe) Deck.springe(ziel.id, 'ende'); else Deck.gehe(ziel.id, 'ende');
+    });
+    return knopf;
   }
 
   /* Folie im Deck suchen (ausgeblendete optionale Folien fehlen dort) */

@@ -22,6 +22,11 @@ Aufgabe: [`Fallstudie-1_Aufgaben-im-Detail.pdf`](Fallstudie-1_Aufgaben-im-Detail
 > D26): Pille „KI-simuliert“, Ergebnisse als **Fremdbild**, das Steuerrad auf Folie 10 zeigt das **Selbstbild**
 > (Abgleich dort). Die Analogien auf Folie 08 stammen von Elias (seit 22.10.2026). **Offen:** Wer trägt die Folien
 > 06–08b vor, und wer beantwortet die Rückfragen dazu? (Gruppe, vor der Generalprobe)
+>
+> **Seit Sa, 24.10.2026:** neue **Folie 05b „Gründerbefragung: Innensicht“** zwischen 05 und 06 (Wunsch Lukas,
+> Entscheidung Yannick, Workflow D27): Lukas spricht sie zu Beginn von Bündel B (ca. 35 s), danach folgt die
+> KI-simulierte Außensicht 06–08b. Dafür sind die Sprechtexte von Folie 01 und 02 gekürzt (Sollzeit jetzt 14:05;
+> `praesentation/LIESMICH.md` 3).
 
 | Bündel | Arbeitspakete | Querschnittsaufgabe | Spricht | Aufwand | Übernimmt |
 |--------|---------------|---------------------|---------|---------|-----------|
@@ -107,6 +112,8 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - [x] (23.10.) Bündel B ohne Lukas: KI-simulierte Befragung D25 eingebaut (Folien 06, 07, 08b, B4, B5); Steuerrad =
   Selbstbild, Befragungen = Fremdbild-Abgleich (Entscheidung Yannick, `methoden.md` §6)
 - [ ] Vortrag der Folien 06–08b und Rückfragen dazu verteilen (Lukas liefert kein Material mehr)
+- [ ] (24.10.) Lukas: Folie 05b „Gründerbefragung: Innensicht“ sprechen (ca. 35 s), Inhalt mit dem Transkript
+  abgleichen, Versanddatum der Sprachnachrichten bestätigen (`gruenderbefragung.md` §6)
 - [ ] Persona-Richtung bestätigen: Kern-Persona „Marco, 28“, Wachstums-Persona „Lena, 29“ im Backup (Entwurf:
   [`persona-steckbrief.md`](persona-steckbrief.md), 16.10.)
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion

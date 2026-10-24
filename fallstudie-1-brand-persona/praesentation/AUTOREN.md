@@ -50,12 +50,13 @@ Zu jeder Folien-Gruppe gehören `css/folien/<name>.css` und `js/folien/<name>.js
 
 | ID | CSS/JS-Name | Inhalt | data-zeit | Bündel | data-feld |
 |---|---|---|---|---|---|
-| f01 | `01-einstieg.html` | Einstieg: Welche Marke steckt dahinter? + Titel | 45 | A | – (`leer`) |
+| f01 | `01-einstieg.html` | Einstieg: Welche Marke steckt dahinter? + Titel | 30 (bis 24.10.2026: 45) | A | – (`leer`) |
 | f01b | `01b-wortwolke.html` | (optional) Live-Wortwolke „Was verbinden Sie mit [Marke]?“ | 45 | A | `leer`, `data-optional` |
-| f02 | `02-vorgehen.html` | Ausgangslage & Vorgehen (Steuerrad als interaktive Agenda) | 60 | A | `hub` |
+| f02 | `02-vorgehen.html` | Ausgangslage & Vorgehen (Steuerrad als interaktive Agenda) | 45 (bis 24.10.2026: 60) | A | `hub` |
 | f03 | `03-markenkompetenz.html` | Markenkern (bis 21.10.2026: Markenkompetenz; Dateiname bleibt) | 45 | A | `kompetenz` |
 | f04 | `04-persona.html` | Brand Persona | 80 | A | `persona` |
 | f05 | `05-limbic-map.html` | Limbic Map | 55 | A | `persona` |
+| f05b | `05b-gruender` (nur CSS) | Gründerbefragung: Innensicht – der Gründer über HOLY (seit 24.10.2026, Abschnitt 25) | 35 | B (spricht Lukas; Auswertung A) | – (`leer`, `data-rubrik="Selbstbild"`) |
 | f06 | `06-repertory-grid.html` | Repertory Grid → Markeneigenschaften (bis 21.10.2026: Markenattribute) | 80 | B | `attribute` |
 | f07 | `07-laddering.html` | Laddering → Markennutzen | 90 | B | `nutzen` |
 | f08 + f08b | `08-analogien` | Analogien + Live-Umfrage (70) · Markentonalität nach Aaker (50) | 70 + 50 | B | `tonalitaet` |
@@ -65,7 +66,7 @@ Zu jeder Folien-Gruppe gehören `css/folien/<name>.css` und `js/folien/<name>.js
 | f12 | `12-fragen.html` | Danke & Fragen (Steuerrad als Sprungmenü) | 0 | alle | – (`leer`) |
 | b1–b8 | `13-backup.html` | Backup: Methodik, Prompt-Log, Datenquellen Persona, RG-Rohdaten, Laddering-Matrix, KA-Raster, Quellenverzeichnis, Belege der Folien | 0 | je nach Inhalt | passend oder `leer`, `data-backup` |
 
-Summe Hauptfolien ohne optionale Folie: 840 s = 14:00 (60 s Puffer für die Live-Momente; seit 16.10.2026, Abschnitt 12 – vorher 885 s = 14:45); optionale Folie f01b 45 s, Backup 0 s.
+Summe Hauptfolien ohne optionale Folie: 845 s = 14:05 (55 s Puffer bis 15:00 für die Live-Momente; seit 24.10.2026 mit f05b, dafür f01 und f02 gekürzt, Abschnitt 25 – vom 16.10. bis 24.10.2026 840 s = 14:00, Abschnitt 12; davor 885 s = 14:45); optionale Folie f01b 45 s, Backup 0 s.
 Die Referentenansicht rechnet mit diesen Sollzeiten (`data-zeit`). Wer eine Sollzeit ändert, gleicht die
 Summe wieder auf höchstens 900 s ab.
 
@@ -106,7 +107,7 @@ Rückfragen“ beginnt.
 | Attribut | Pflicht | Bedeutung |
 |---|---|---|
 | `class="folie"` | ja | sonst ignoriert |
-| `id` | ja | `f01`…`f12`, `f01b`, `b1`…`b7` – bestimmt die angezeigte Nummer (f06 → „06“, b3 → „B3“) und die Adresse `#f06` |
+| `id` | ja | `f01`…`f12`, `f01b`, `f05b`, `f08b`, `f09b`, `b1`…`b8` – bestimmt die angezeigte Nummer (f06 → „06“, f05b → „05b“, b3 → „B3“) und die Adresse `#f06`; Sprung per Tastatur „5 b Enter“ |
 | `data-titel` | ja | kurzer Name für Übersicht, Referentenansicht, Sprungmenü |
 | `data-zeit` | ja | Sollzeit in Sekunden (Referentenuhr, Summe) |
 | `data-buendel` | ja | `A`, `B`, `C` oder `alle` |
@@ -781,11 +782,12 @@ auf 09b (389 px) reicht für 1080p; nur für Bildschirme mit doppelter Pixeldich
 Im Ordner `praesentation/`, mit `PLAYWRIGHT_CORE` (und ggf. `CHROME_PFAD`) wie in Abschnitt 9:
 
 ```bash
-# 1. PDF für Plan B – ohne die optionale Folie 01b, eine Seite je Folie (erwartet: 22)
+# 1. PDF für Plan B – ohne die optionale Folie 01b, eine Seite je Folie (erwartet: 23 seit 24.10.2026 mit f05b;
+#    vorher 22 – pruefen.mjs rechnet die Erwartung selbst aus Deck.folien(), keine feste Zahl im Werkzeug)
 node werkzeuge/pruefen.mjs index.html --ausgabe _test/export-druck --ohne-bilder --druck export/praesentation.pdf
-#    bericht.json → "druck": { "seiten": 22, "erwartet": 22 }, "fehler": []
+#    bericht.json → "druck": { "seiten": 23, "erwartet": 23 }, "fehler": []
 
-# 2. Folienbilder im Endzustand (1920 × 1080, inkl. 01b) – pruefen.mjs ohne --schritte
+# 2. Folienbilder im Endzustand (1920 × 1080, inkl. 01b; seit 24.10.2026 24 Bilder) – pruefen.mjs ohne --schritte
 #    fotografiert jede Folie im letzten Schritt (Aufnahmemodus wie im Druck)
 node werkzeuge/pruefen.mjs index.html --ausgabe _test/export-folien --optional
 rm -f export/folien/*.png && cp _test/export-folien/*.png export/folien/
@@ -1716,3 +1718,84 @@ Vortrag `marke.js` und `js/abstimmen.js` auf GitHub**, sonst zeigen die Handys d
 („Folie 6 zeigt derzeit Beispieldaten“) nachziehen. **Exporte** (Abschnitt 15) erst nach Abschluss aller
 D26-Bauaufträge neu erzeugen – `export/` zeigt noch den Stand vom 22.10. KI-Nachweis eintragen, dann committen und
 pushen (Hauptsitzung).
+
+
+## 25. Gründerbefragung als eigene Folie 05b, Gründer im Abgleich auf Folie 10 (Sa, 24.10.2026)
+
+**Auftrag:** Lukas Welker wünscht, dass das Gründer-Interview „viel präsenter“ eingebaut ist. Entscheidungen Yannick
+(wörtlich): „Eigene Folie + Folie 10 (Empfohlen)“ und „Ja, als Innensicht vs. Außensicht (Empfohlen)“; dazu Zustimmung,
+die Sprechtexte von Folie 01 und 02 zu kürzen, damit der Vortrag bei ca. 15 Minuten bleibt. Workflow D27 (Account 1),
+Bau durch einen KI-Agenten; Prüfung durch Yannick und Lukas: ☐ offen.
+
+**Regeln des Einbaus:** Gründeraussagen nur aus `../gruenderbefragung.md` (Abschnitt 1, 2.1–2.3, 3, 4); das Transkript im
+Gruppenordner wurde nicht geöffnet. Nach 2.3: jede Aussage als Selbstauskunft („Laut Gründer …“, „Horsch 2026, GB“),
+nie als Tatsache über die Kundschaft; Paraphrase vor Zitat, wörtlich nur kurze Schlüsselbegriffe der Auswertung
+(„mit Abstand“, „meistgeliebte Softdrink-Brand“); die unsicheren Stellen aus 2.2 nicht verwendet; „95 %“ nur in den
+Notizen (Rückfrage) mit „laut Gründer, Datengrundlage nicht offengelegt“. Kein Foto des Gründers, kein weiteres Logo.
+Das KI-simulierte Fremdbild nur aus `../buendel-b/auswertung/*.csv`. Keine Namen von KI-Modellen in Dateien. Kein Commit
+durch den Agenten; `../../ki-nachweis/` unverändert; Exporte erzeugt die Hauptsitzung.
+
+### Bau (D27)
+
+| Bereich | Änderung |
+|---|---|
+| Folie 05b (neu; `index.html`, `css/folien/05b-gruender.css`) | ID `f05b` → Nummer „05b“ (`js/deck.js` liest Ziffern + Buchstaben aus der ID, wie 01b/08b/09b), Sprung „5 b Enter“; zwischen 05 und 06, damit Lukas' Teil mit der Innensicht beginnt und die KI-simulierte Außensicht (06–08b) folgt. `data-feld="leer"` + `data-rubrik="Selbstbild"`: kein Mini-Rad und kein Sprungziel eines Rad-Felds (mit `persona` hieße der Rahmen auf 02/10/12 „Folien 04–05b“, mit `hub` stünde die Folie im Sprungmenü neben dem Steuerrad). `data-buendel="B"` (Bündel des Sprechers, wie Folie 10), `data-zeit="35"`. Kicker „Gründerbefragung · Mathias Horsch“ mit Pille „Innensicht · Selbstauskunft (n = 1)“; Titel „Laut Gründer verbindet HOLY Geschmack mit gutem Gewissen“ (Frage 1, 9/10). Links (Schritt 0) Steckbrief: Anspruch „bessere Alternative zu normalen Softdrinks“, Zielgruppe „18–55 Jahre, Männer und Frauen“, Wettbewerb „die großen Softdrinkmarken“ (ohne „95 %“), Metazeile zur Art der Befragung. Rechts (Schritt 1) „Kaufgründe · seine Rangfolge“: 1 Geschmack „mit Abstand“, 2 wenig Zucker und Kalorien (ohne den unsicheren Wortlaut und ohne „funktionale Inhaltsstoffe“, 4.3 K11), 3 Preis; Metazeile „nach Firmendaten – nicht vorgelegt“. Rechts unten (Schritt 2) Karten „Emotionaler Nutzen“ (Individualität durchs Selbermischen, Zusammengehörigkeit im HOLY Squad) und „Ziel“ („meistgeliebte Softdrink-Brand“), Verweis „→ Außensicht (KI-simuliert): Folien 06–08b · Abgleich Folie 10“. Fußzeile „Quelle: Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker, 18.10.2026 – Selbstauskunft (Horsch 2026, GB)“. Wortbudget 39. Sprechtext für Lukas 23 · 17 · 21 = 61 Wörter ≈ 32 s (+ drei Klicks ≈ 35 s); Notizen mit Stand, Belegen je Zeile und Rückfragen („Ist das nicht nur Werbung?“, „Wie wurde befragt?“, „Und die 95 %?“, „Kaufen die Leute HOLY wirklich wegen des Geschmacks?“ mit K10 aus `repertory-grid-ergebnis.csv`, „Warum kein Koffein?“, „Warum nicht im Steuerrad?“). Kasten „FOLIE 05b“ und Anleitung über der Folie. Kein Skript. |
+| Folie 10 (nur Schritt 9) | Spaltenkopf „Selbstbild · Auftritt & Gründer“ (bis dahin „· Identität, unsere Analyse“; „Identität, Auftritt & Gründer“ brach in Editorial zweizeilig um); Zeile 2 Daten `"wo": "Positionierung · Website & Gründer"`; Sprechtext Schritt 9 „– nicht gutes Gewissen wie beim Gründer“ (+3 Wörter: 39 Wörter ≈ 21 s, Folie 146 Wörter ≈ 77 s, Soll 75 s unverändert); Fußzeile „Folien 03–05b“; Notizen (Abgleich Zeile 2 mit GB, Rückfrage Positionierung), Kasten. **Keine fünfte Zeile** „Geschmack ‚mit Abstand‘ ↔ …“: Die Daten tragen sie nur schwach („schmeckt natürlich – künstlich“ 2 von 8, Relevanz nicht erfüllt, HOLY 4,88 zu Ø 4,89, K10; Geschmack war kein Startpunkt im Laddering), und der Abgleich hat höchstens 4 Zeilen – steht als Rückfrage auf 05b und 10. Rad, Lücken, Titel, Urteile unverändert. |
+| Folie 01 (Sprechtext, `data-zeit`, Kasten) | 45 → 30 s. Nur Moderation des Rätsels und Wiederholungen gekürzt: Schritt 0 „Ein kurzes Rätsel zum Start: Welche Marke steckt dahinter? Rufen Sie einfach rein.“, Schritt 1 „Etwas schärfer – und jetzt?“, Schritt 2 „Es ist HOLY.“ (Gründung und Marktstart erzählen 02 und die Zeitleiste auf 03), Schritt 3 ohne „mit dem Markensteuerrad nach Esch, mit Desk Research und KI-Tools“ (sagt 02). Gezählt nur der Wortlaut in „…“: 88 → 46 Wörter (≈ 24 s + ca. 6 s Wartezeit). |
+| Folie 02 (Sprechtext, `data-zeit`, Methodenkarte, Rückfrage, Kasten) | 60 → 45 s, Sprechtext 124 → 86 Wörter ≈ 45 s (nur Wiederholungen und Füllwörter; die Leitfrage lautet jetzt wie auf der Folie, ohne „heutige“). Klick 1 „Desk Research und Gründerbefragung für den Markenkern“; Methodenkarte Desk Research „Herkunft, Marktrolle + Gründerbefragung“ (bis dahin „Herkunft, Historie, Marktrolle“); Rückfrage „Das Steuerrad erfasst doch die Identität …“ mit Verweis auf 5b. |
+| Folie 05 | nur die Regie-Klammer am Ende von Schritt 3 („→ Folie 05b …“) und ein Punkt im Kasten; Sprechtext unverändert (Lukas übernimmt mit „Vorher die Innensicht“). |
+| Folie 12 | Sprungliste „Ergebnisse“ + „Innensicht (Gründer)“ → 05b (ohne Feld), Notizen (Sprungziel für Rückfragen zum Gründer), Kasten. Übersicht (O), Referentenansicht und Druck nehmen 05b ohne Änderung auf. |
+| B1, B2, B7 | B1: Notizen (Hinweise, Rolle im Steuerrad) und Kasten – Spalte 03 unverändert. B2: Notizen (Gründerbefragung, KI-Nachweis 59–67, nicht in der Tabelle mit 10 Zeilen) und Kasten. B7: Dossier-Zeile „GB (03, 05b, 10, B1, B3)“ (gleiche Zeilenzahl in allen Themen), Kasten; GB-Eintrag unverändert. |
+| Doku | `LIESMICH.md` (Stand, Tasten, Abschnitt 3 Zeitplan 14:05, 11 PDF 23 Seiten mit neuer Zuordnung, 12 Nachtrag und Punkte für Yannick und Lukas, 12.5, 12.8, 13), dieser Abschnitt, Abschnitt 2 und 3 (Tabelle, Summe, IDs), 15 (erwartete Exportzahlen), `QUELLEN.md` §5, `../folienentwuerfe.md` (Status, neuer Eintrag Folie 5b, Folie 2 und 10), `../fragerunde.md` (F05, F06 nachgezogen, F40 neu), `../gruenderbefragung.md` §5. |
+
+### Sprechzeit (gezählt per Skript wie `../buendel-b/auswertung/pruefe_synthese.py`, 1,9 Wörter/s; Folie 01/02 nur der Wortlaut in „…“; Folie 10 ohne den optionalen Schritt 10)
+
+| Folie | vorher Wörter ≈ s (Soll) | nachher Wörter ≈ s (Soll) |
+|---|---|---|
+| 01 | 88 ≈ 46 s + Wartezeit (45) | 46 ≈ 24 s + ca. 6 s Wartezeit (30) |
+| 02 | 124 ≈ 65 s (60) | 86 ≈ 45 s (45) |
+| 05b | – | 61 ≈ 32 s + Klicks (35) |
+| 10 | 143 ≈ 75 s (75) | 146 ≈ 77 s (75) |
+| alle Hauptfolien | 1.622 Wörter ≈ 14:14 · Soll 840 s = 14:00 | 1.606 Wörter ≈ 14:05 · Soll 845 s = 14:05 |
+
+Die Summen schließen den Dank auf Folie 12 (15 Wörter) ein, nicht aber Wartezeiten auf 01 und die Abstimmung auf 08.
+Übrige Folien unverändert (03 82, 04 147, 05 108, 06 149, 07 165, 08 115, 08b 99, 09 113, 09b 106, 11 168 Wörter).
+
+**Geprüft (24.10.2026; Ausgaben unter `_test/d27-*`):** `pruefen.mjs --nur f05b,f10,f02,f12 --schritte` (und f01, f05,
+f06, B1, B2, B7) in Editorial, Bento, Keynote und dunkel: 0 Fehler, auf 05b keine Warnung. Screenshots selbst
+angesehen (Lesbarkeit, Überlauf, Wortbudget, Kennzeichnung): 05b alle Schritte (Editorial) und Endzustand in Bento,
+Keynote, Editorial dunkel und Keynote dunkel; 10 Schritt 9 in Editorial, Bento, Keynote und dunkel (Spaltenkopf
+zuerst zweizeilig – gekürzt, siehe oben); 12 (Editorial, Bento); 02 Schritt 1 (Editorial, Keynote); B7 (Bento,
+unverändert gegenüber D26); Druckseite 6. Gesamtlauf `pruefen.mjs index.html --schritte --optional` in Editorial,
+Bento, Keynote, je hell und dunkel: 24 Folien, 0 Fehler, 0 externe Anfragen, keine Konsolenmeldung (auch die
+Abgleich-Prüfungen von 06, 07, 08, 08b und 10); Warnungen nur Wortbudget 03 (48), 04 (46), 06 (60), 08b (41), 11 (57)
+wie vorher und gewollt abgeblendete Zwischenschritte. `referent-test.mjs` 43 von 43. Druckprobe
+(`--ohne-bilder --druck`): 23 von 23 Seiten, Seite 6 = Folie 05b (per `pdftotext` geprüft, Zuordnung in LIESMICH 11).
+
+**Offen:** Freigabe durch Yannick (Folie 05b, Kürzung 01/02, Schritt 9 auf Folie 10) und Lukas (Sprechtext 05b laut
+lesen und stoppen, Inhalt mit dem Transkript abgleichen; LIESMICH 12.1, 12.2). **Exporte** (Abschnitt 15) neu erzeugen –
+`export/` (24.10.2026, 09:33) enthält 05b noch nicht. `../arbeitsplan.md` (Ablaufplan, wer spricht) nennt 05b noch nicht.
+KI-Nachweis eintragen, dann committen und pushen (Hauptsitzung).
+
+### Nacharbeit nach der Prüfung (Sa, 24.10.2026; zwei Prüfer im Workflow D27, umgesetzt von Claude, KI-Nachweis 153)
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| Folie 02: Kürzung verschob den Sinn – das Rad (Selbstbild) klang aus Fremdbild-Methoden gefüllt (mittel) | Klick 1 „… das Selbstbild. Feld für Feld: Desk Research für den Markenkern – dazu die Gründerbefragung als Innensicht,“; Klick 3 „beide KI-simuliert: ein Fremdbild zum Abgleich,“; Ausgleich: „KI hilft überall – geprüft, Prompts im Backup“ gestrichen (sagt die Fußzeile). 87 Wörter ≈ 46 s (Soll 45, sieben Klicks – Generalprobe). Kommentar und Kasten berichtigt („nur Füllwörter“ stimmte nicht). |
+| Folie 02: Gründerbefragung unter „Desk Research“ ist methodisch falsch (Primärerhebung) (mittel) | Methodenkarte wieder „Herkunft, Historie, Marktrolle“; GB auf 02 nur im Sprechtext. B7-Notizen, QUELLEN §5, `../gruenderbefragung.md` §5 nachgezogen. |
+| Folie 05b: emotionaler Nutzen (Frage 8/11) ohne Zuschreibung (mittel) | Karte „Emotional · seine Sicht“ („Emotionaler Nutzen · seine Sicht“ brach in Editorial um und ließ die rechte Spalte überlaufen); Sprechtext „Emotional sieht er bei seinen Kund:innen …“, „Alles Selbstauskunft“; Belege zu Frage 8/11 und 9/10: stellvertretend beantwortet, Bild des Unternehmens von seiner Kundschaft. 22 · 17 · 25 = 64 Wörter ≈ 34 s. |
+| Folie 05b: rechte Spalte lief 10 px aus der Inhaltsfläche, Verweis 14 px über der Quellzeile (mittel) | `05b-gruender.css`: Platz 1 `padding-bottom` 26 → 18 px, `margin-bottom` abstand-3 → abstand-2; `.gb-unten` `padding-top` abstand-5 → abstand-3. Nachgemessen (1920 × 1080): `.gb-rechts` scrollHeight = clientHeight in Editorial, Bento, Keynote und `?druck`; Verweis endet bei y = 986, Quellzeile beginnt bei 1010. |
+| Folie 05b: Linien links/rechts auf verschiedener Höhe, Gedankenstrich am Zeilenanfang (niedrig) | Etikett „Steckbrief · laut Gründer“ über dem Steckbrief (gleiche Klasse wie rechts, Metaangabe); Metazeile mit Semikolon statt Gedankenstrich. |
+| Folie 05b: Paraphrasen zugespitzt, unsicherer Wortlaut zitiert (niedrig) | „eine bessere Alternative“ (wie Frage 1); Rückfrage „vor allem die großen Softdrinkmarken – Sirup- und Pulveranbieter spielen laut ihm kaum eine Rolle“; „wenn wir in die Daten gucken“ nicht mehr zitiert. |
+| Folie 05b/B7: Datum 18.10.2026 nur Dateidatum (niedrig) | Fußzeile und B7 „10/2026“ (KI-Nachweis 53 meldet die Antworten schon am 17.10.); genaues Datum nach Lukas' Bestätigung. |
+| Folie 05b: Selbermischen = Individualität ↔ Hürde „selbst anrühren“ nicht verbunden (niedrig) | Neue Rückfrage auf 05b mit K03 (7 von 8, 9 Nennungen, Kontrollgruppe 7 von 8, Differenzierung 4,45, Ideal-Distanz 4,88), Verweis auf `../fragerunde.md` F39; Beleg auf Folie 10 bei „Stärkste Hürde“. |
+| Folie 10: Beschriftung machte die Herkunft stärker, als die Quellen tragen (niedrig) | Zeile 2 `"wo": "Positionierung · wie Gründer"` („Genuss mit gutem Gewissen“ = unsere Verdichtung; „wie Website & Gründer“ brach mit dem Knopf zweizeilig um); Notizen: Zeilen 3 und 4 links = Elias' Deutung (H). |
+| Folie 10: Gründer nicht anklickbar (niedrig, Verbesserung) | Neues optionales Datenfeld `"folieSelbst": "f05b"` – `js/folien/10-markensteuerrad.js` baut die linke Beschriftung dann wie rechts als Knopf „· Folie 05b →“ (gemeinsame Funktion `verweisKnopf`). Geprüft: Klick springt auf 05b (Endzustand), `aria-label` „… – zur Folie 05b (Gründerbefragung: Innensicht)“, keine Konsolenmeldung. |
+| Folie 10: Belege einseitig, Absatzkopf „ca. 19 s“ (niedrig) | Belege: gutes Gewissen in der Simulation 2 von 8 als Gefühl (T1, T2, Grenzfall), ein Leiter-Knoten (T1); Geschmack kritisch 3, positiv 1, „okay“ 1; Absatzkopf „ca. 21 s“. |
+| Folie 01: Ratezeit verkürzt, Hinweis „gelbes Oval“ gestrichen (niedrig) | „3 bis 5 Sekunden warten“ und „Vier Buchstaben auf einem gelben Oval – auf einer Dose.“ wieder da; 50 Wörter ≈ 26 s + Ratezeit ≈ 30 s; Ziel-Absatz und Kasten berichtigt (mit Zurufen eher 35 s – Generalprobe). |
+| `../fragerunde.md` F05: veralteter Beleg, Rangfolge ohne Vorbehalt, GB-Regel verkürzt (niedrig) | Beleg ersetzt (Notizen Folie 10: Horsch stützt vier Stichworte), „nach Firmendaten, die er nicht vorlegt“, Regel „DR, AN, KA oder LM“ (auch in den 05b-Belegen); F40 „unsere Verdichtung dessen, was Website und Gründer sagen“. |
+| `js/deck.js`: „5 b Enter“ auf Folie 08 zählte eine Stimme und schaltete das Schwarzbild ein (niedrig) | Folgt „b“ binnen 1,5 s auf eine vorläufig gezählte Ziffer und gibt es die Folie „<Ziffer>b“, wird die Stimme zurückgenommen und „5b“ in den Puffer gelegt (wie bei „1 0“). Geprüft: 5 b Enter → 05b, gespeicherter Stand wie vorher; 3 b Enter (keine Folie 3b) → Stimme + Schwarzbild wie bisher; 8 b, 1 0 unverändert. |
+| Pflicht-Kennzeichnung hing am Schalter `beispieldatenHinweis` (niedrig) | Pillen „KI-simuliert“ (06, 07, 08b, 10, B4, B5) und „Innensicht · Selbstauskunft (n = 1)“ (05b) tragen zusätzlich `.kennzeichnung`; `css/komponenten.css` blendet bei `false` nur noch `.beispiel:not(.kennzeichnung)` aus; Kommentar in `marke.js`. |
+| B7-Notizen, Laienfrage Folie 12, LIESMICH (Klicks, Seitenzahlen, export-Stand) (niedrig) | B7-Notizen und Laienfrage („→ Folie 5b“) nachgezogen; LIESMICH-Zahlen nach dem Export (Abschnitt 15) neu gezählt. |
+| `werkzeuge/uebersicht.mjs`: Fußnote „Folien 03–05“ (niedrig) | „Folien 03–05b: Entwurf, Freigabe offen“. |
+| `../arbeitsplan.md` nannte 05b nicht | Hinweis und Aufgabe für Lukas ergänzt. |

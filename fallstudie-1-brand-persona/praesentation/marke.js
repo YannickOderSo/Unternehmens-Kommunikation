@@ -233,7 +233,10 @@ window.MARKE = {
   /* ---------------------------------------------------------------------------
      8. DARSTELLUNG
      beispieldatenHinweis  true = Pillen „Beispieldaten“ anzeigen (Pflicht,
-                           solange erfundene Werte auf Folien stehen!)
+                           solange erfundene Werte auf Folien stehen!).
+                           false blendet NICHT die Pflicht-Kennzeichnungen aus
+                           („KI-simuliert“, „Innensicht · Selbstauskunft“ –
+                           Klasse .kennzeichnung, seit 24.10.2026)
      standardThema         'editorial' (Standard), 'bento' oder 'keynote'
      standardModus         'hell' (Standard, für helle Hörsäle) oder 'dunkel'
      Während der Präsentation: Taste T wechselt das Thema, D hell/dunkel.

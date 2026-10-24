@@ -187,7 +187,7 @@ const html = `<!doctype html>
   <h2>Backup (nur über die Übersicht, Taste O)</h2>
   <div class="raster">${backup.map(kachel).join('')}
   </div>
-  <footer>Folie 01b ist optional und standardmäßig ausgeblendet (marke.js → optionaleFolien). Beispieldaten sind gekennzeichnet; Folien 03–05: Entwurf, Freigabe offen. Stand ${esc(opt.stand)} · erzeugt aus index.html (werkzeuge/uebersicht.mjs)</footer>
+  <footer>Folie 01b ist optional und standardmäßig ausgeblendet (marke.js → optionaleFolien). Beispieldaten sind gekennzeichnet; Folien 03–05b: Entwurf, Freigabe offen. Stand ${esc(opt.stand)} · erzeugt aus index.html (werkzeuge/uebersicht.mjs)</footer>
 </body></html>`;
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'uebersicht-'));

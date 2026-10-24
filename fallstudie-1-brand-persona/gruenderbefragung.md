@@ -8,7 +8,8 @@ Hinweise für Bündel B und C · Stand Mo, 19.10.2026 · **Entwurf, Prüfung dur
 >   Fragenkatalog der Gruppe (14 Fragen, Wortlaut im KI-Nachweis, Eintrag 59) mit zwei Sprachnachrichten an Lukas
 >   Welker beantwortet (LinkedIn, Dateien vom 18.10.2026; Versanddatum bestätigt Lukas). Zitierweise:
 >   **„Horsch 2026 (GB)“**; im Quellenverzeichnis: Horsch, M. (2026): Antworten auf den Fragenkatalog der Gruppe,
->   zwei Sprachnachrichten an L. Welker, LinkedIn, 18.10.2026.
+>   zwei Sprachnachrichten an L. Welker, LinkedIn, 10/2026 (seit 24.10.2026 statt „18.10.2026“: das ist nur das
+>   Dateidatum, KI-Nachweis 53 meldet die Antworten schon am 17.10.2026 – genaues Datum nach Lukas' Bestätigung).
 > - **Freigabe:** Horsch hat der Abschrift und Auswertung mit KI zugestimmt. Name, Paraphrasen und kurze Zitate
 >   dürfen in der Präsentation und im öffentlichen Repository stehen, die Angabe „95 %“ nur mit dem Zusatz „laut
 >   Gründer, Datengrundlage nicht offengelegt“ (laut Yannick, 19.10.2026, KI-Nachweis 67). Das vollständige
@@ -235,6 +236,38 @@ Was in Ausarbeitungen und Präsentation übernommen wird, setzt Workflow D14 um 
 Abschnitt 4 mit „jetzt“, die Bündel A betreffen, dazu Quellenangabe für Horsch 2026 in Backup B7 und das Kürzel GB.
 Die Folien 06–09b und 11 (Bündel B und C) und `dossier-buendel-b.md` bleiben unverändert; Hinweise an Lukas und
 Elias stehen in 4.5 und 4.6. Der Stand der Umsetzung steht im KI-Nachweis.
+
+**Nachtrag Sa, 24.10.2026 – eigene Folie 05b „Gründerbefragung: Innensicht“** (Wunsch Lukas Welker, die Befragung
+„viel präsenter“ einzubauen; Entscheidungen Yannick „Eigene Folie + Folie 10 (Empfohlen)“ und „Ja, als Innensicht vs.
+Außensicht (Empfohlen)“; Workflow D27, Einbau KI-gestützt; Prüfung durch Yannick und Lukas offen):
+
+- **Folie 05b** (zwischen Limbic Map und Repertory Grid, spricht Lukas, 35 s): Titel „Laut Gründer verbindet HOLY
+  Geschmack mit gutem Gewissen“ (Frage 1, 9/10); Steckbrief Anspruch (Frage 1), Zielgruppe „18–55 Jahre, Männer und
+  Frauen“ (Frage 2), Wettbewerb „die großen Softdrinkmarken“ (Frage 3); Kaufgründe in seiner Rangfolge – Geschmack „mit
+  Abstand“, wenig Zucker und Kalorien, Preis – mit dem Vermerk „nach Firmendaten – nicht vorgelegt“ (Frage 5);
+  emotionaler Nutzen Individualität (Selbermischen) und Zusammengehörigkeit (HOLY Squad) (Frage 8/11); Ziel
+  „meistgeliebte Softdrink-Brand“ (Frage 14). Kennzeichnung nach 2.3: Pille „Innensicht · Selbstauskunft (n = 1)“,
+  Titel „Laut Gründer …“, Fußzeile „Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker,
+  10/2026 – Selbstauskunft (Horsch 2026, GB)“ (bis zur Prüfung D27 „18.10.2026“). Nach der Prüfung D27 außerdem:
+  emotionaler Nutzen als „seine Sicht“ gekennzeichnet (Frage 8/11 beantwortet er stellvertretend für die Kund:innen,
+  2.1), „eine bessere Alternative“ statt „die“, Wettbewerb „vor allem die großen Softdrinkmarken“, kein Zitat „wenn wir
+  in die Daten gucken“ (Wortlaut in 2.1 und 3 verschieden), Rückfrage Selbermischen ↔ Hürde (4.3 K7). Paraphrasen; wörtlich nur die Schlüsselbegriffe aus Abschnitt 3.
+  Nicht verwendet: die unsicheren Stellen aus 2.2 (Kaufgrund 2 ohne den Wortlaut des Gründers), „funktionale
+  Inhaltsstoffe“ als Nutzenaussage (K11). „95 %“ nur in den Notizen als Rückfrage mit „laut Gründer, Datengrundlage
+  nicht offengelegt“ (2.3 Punkt 3). Das Transkript wurde dafür nicht geöffnet – Grundlage ist diese Auswertung.
+- **Folie 10, Abgleich Selbstbild ↔ Fremdbild:** Spalte „Selbstbild · Auftritt & Gründer“, Zeile 2 „Positionierung ·
+  wie Gründer“ (Knopf → Folie 05b; „Genuss mit gutem Gewissen“ ist unsere Verdichtung, die sich mit Frage 1
+  deckt; Genuss mit gutem Gewissen ↔ KI-simuliert: ohne Zucker → verlässlich sein). Damit steht GB wie in
+  2.3 Punkt 4 vorgesehen in der Konsistenzprüfung als Selbstbild gegen die (simulierte) Außensicht. Eine eigene Zeile
+  „Geschmack ‚mit Abstand‘“ gibt es nicht: Die simulierten Daten tragen den Gegenpol nur schwach (K10 „schmeckt
+  natürlich – künstlich“: 2 von 8, HOLY 4,88 zu Ø 4,89) – als Rückfrage auf 05b und 10, `fragerunde.md` F40.
+- **Weitere Stellen:** Folie 02 (nur Sprechtext Klick 1 „dazu die Gründerbefragung als Innensicht“; die Methodenkarte
+  Desk Research bleibt „Herkunft, Historie, Marktrolle“ – Prüfung D27),
+  Folie 12 (Sprungliste „Innensicht (Gründer)“), B1, B2 (Notizen), B7 („GB (03, 05b, 10, B1, B3)“); Doku in
+  `praesentation/AUTOREN.md` §25, `praesentation/LIESMICH.md`, `folienentwuerfe.md` (Folie 5b), `fragerunde.md`
+  (F05, F06, F40), `praesentation/QUELLEN.md` §5. Für die Zeit sind die Sprechtexte von Folie 01 und 02 gekürzt.
+- **Offen (Lukas):** Paraphrasen auf 05b mit dem Transkript abgleichen (Zuordnung der Fragen, §6), Versanddatum
+  bestätigen, Sprechtext laut lesen und stoppen.
 
 ## 6. Offene Punkte
 

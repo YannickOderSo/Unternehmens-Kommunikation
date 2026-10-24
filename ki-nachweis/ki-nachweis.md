@@ -175,6 +175,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 153 | 24.10.2026 | Yannick | „Weiter“ | D27 (Nacharbeit), D28 | in Arbeit |
 | 154 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; D28 und Tests laufen |
 | 155 | 24.10.2026 | System | Meldung „Suche beendet“ (Hintergrund-Befehl) und erneuter Hinweis: Änderungen nicht committet | D28 | nur Nachweis committet; Claude wartet in der Sitzung auf D28 und die Tests |
+| 156 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nach Teilergebnis der Tests) | D28 | Zwischenstand der Nacharbeit committet (D28-Prüfer nur lesend, Tests in 3 Themen 0 Fehler) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2496,6 +2497,16 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 
 - **Vorgehen Claude:** Nur KI-Nachweis und Rohprotokoll committet; damit der Hinweis nicht bei jedem Warten neu
   kommt, wartet Claude jetzt innerhalb der Sitzung auf D28 und die Tests.
+
+
+### 156 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: „There are uncommitted changes in the repository. Please commit and push these changes to the
+> remote branch.“ (nach den Meldungen der Testläufe: Editorial, Bento und Keynote je 0 Fehler)
+
+- **Vorgehen Claude:** Zwischenstand der Nacharbeit zu D27 committet und gepusht – die Prüfer von D28 ändern keine
+  Dateien, die Gesamtprüfung in drei Themen war fehlerfrei. Exporte, Befunde aus D28 und restliche Tests folgen in
+  einem weiteren Commit.
 
 ---
 

@@ -5,19 +5,27 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOL
 
 | Folie | Thema | Bündel | Status |
 |-------|-------|---------|--------|
-| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ (Rückfrage 2 ergänzt 19.10.; Methodenkarten und Rückfragen 2/3 nach der KI-Simulation 23.10.) – Prüfung durch Yannick offen |
+| 2 | Ausgangslage & Vorgehen | A | Entwurf ✔ (Rückfrage 2 ergänzt 19.10.; Methodenkarten und Rückfragen 2/3 nach der KI-Simulation 23.10.; 24.10. Sprechtext gekürzt, 0:45, Gründerbefragung in Klick 1) – Prüfung durch Yannick offen |
 | 3 | Markenkern (bis 21.10.: Markenkompetenz) | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10., Begriffe 21.10.) – Prüfung durch Yannick offen |
 | 4 | Brand Persona | A | Entwurf ✔ (16.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
 | 5 | Limbic Map | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
+| 5b | Gründerbefragung: Innensicht (der Gründer über HOLY) | B spricht (Lukas), Auswertung A | Entwurf ✔ (24.10., Wunsch Lukas, Entscheidung Yannick; Web-Folie f05b) – Prüfung durch Yannick und Lukas offen |
 | 6–7 | Repertory Grid, Laddering | B | Entwurf ✔ (23.10., KI-simulierte Befragung D25, Fremdbild) – Prüfung durch Yannick offen; Lukas liefert kein Material mehr |
 | 8 | Analogien & Live-Umfrage | B (Inhalt Elias, C) | Entwurf ✔ (22.10. nach Elias' Ausarbeitung; 23.10. Papagei und Chamäleon gleichwertig) – Prüfung durch Elias und Yannick offen |
 | 8b | Markentonalität (Aaker) | B | Entwurf ✔ (23.10., KI-simulierte Befragung D25, Fremdbild) – Prüfung durch Yannick offen |
 | 9, 9b | Kommunikationsanalyse | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias und Yannick offen |
-| 10 | Markensteuerrad | C (Inhalt A) | Entwurf ✔ (23.10.: Rad = Selbstbild, Abgleich mit dem KI-simulierten Fremdbild; parallel eingebaut, D26) – Prüfung durch Yannick und Elias offen |
+| 10 | Markensteuerrad | C (Inhalt A) | Entwurf ✔ (23.10.: Rad = Selbstbild, Abgleich mit dem KI-simulierten Fremdbild; parallel eingebaut, D26; 24.10. Gründer im Abgleich) – Prüfung durch Yannick und Elias offen |
 | 11 | Fazit & Empfehlungen | C | nur Zeile 3 / Empfehlung 3 (22.10.); 23.10. Pille und Notizen nachgezogen (Titel unverändert); Rest offen |
 | 12 | Danke & Fragen | alle | Vorgabe ✔ (23.10., Fazit und Sprungliste nach der KI-Simulation) – parallel eingebaut (D26), Prüfung durch Yannick offen |
 | B4, B5 | Backup: Repertory Grid, Laddering | B | Entwurf ✔ (23.10., KI-simulierte Befragung D25) – Prüfung durch Yannick offen |
 | B6 | Backup: Kanäle (Tabelle 1) | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias offen |
+
+**Seit Sa, 24.10.2026 (Wunsch Lukas Welker, Entscheidungen Yannick „Eigene Folie + Folie 10 (Empfohlen)“ und „Ja,
+als Innensicht vs. Außensicht (Empfohlen)“; Workflow D27):** Die Gründerbefragung hat eine eigene **Folie 5b
+„Gründerbefragung: Innensicht“** zwischen Folie 5 und 6 (Eintrag unten) – Lukas spricht sie als Innensicht vor der
+KI-simulierten Außensicht; auf Folie 10 trägt der Gründer im Abgleich die Seite des Selbstbilds mit. Dafür sind die
+Sprechtexte von Folie 1 (0:30) und 2 (0:45) gekürzt (Zustimmung Yannick). Quelle nur
+[`gruenderbefragung.md`](gruenderbefragung.md), Regeln 2.3. Maßgeblich ist die Web-Folie in `praesentation/index.html`.
 
 **Seit Fr, 23.10.2026 (Entscheidungen Yannick, KI-Nachweis 135, Workflow D26):** Lukas Welker (Bündel B) liefert kein
 Material mehr. Statt seiner Beispieldaten zeigen 06, 07, 08b, B4 und B5 eine **KI-simulierte Befragung** (Workflow
@@ -58,7 +66,7 @@ In den Abschnitten unten nachgezogen, wo diese Begriffe vorkommen; die übrigen 
 
 ## Folie 2 – Ausgangslage & Vorgehen
 
-**Bündel:** A · **Zeit:** 1:00 · **Backup-Bezug:** B1 Methodik & Begründung, B2 Prompt-Log
+**Bündel:** A · **Zeit:** 0:45 (seit 24.10.2026; bis dahin 1:00) · **Backup-Bezug:** B1 Methodik & Begründung, B2 Prompt-Log
 
 ### Titel (Kernaussage)
 
@@ -161,6 +169,17 @@ das Feld hervorheben, um das es gerade geht. Auf Folie 10 erscheint es dann gro�
   „Jede Methode gehört zu einem Feld des Markensteuerrads“ – lassen oder ändern
 - [x] (19.10.) Rückfrage 2 um die eigene Gründerbefragung ergänzt (`gruenderbefragung.md` K14); Grafik und
   Quellenzeile unverändert
+- [x] (24.10., Workflow D27; Zustimmung Yannick) Web-Folie f02 auf **0:45** gekürzt, damit die neue Folie 5b in die
+  15 Minuten passt – nur Wiederholungen und Füllwörter (124 → 86 gesprochene Wörter ≈ 45 s). Wortlaut auf der
+  Web-Folie: „HOLY startete 2021 als Gaming-Booster, nur online. Heute: Softdrink im Supermarkt, mit TV-Werbung.
+  Leitfrage: Wofür steht HOLY – und passt der Auftritt dazu?“ · „Das Markensteuerrad nach Esch zeigt die Identität,
+  das Selbstbild: Desk Research und Gründerbefragung für den Markenkern, … Repertory Grid für die Eigenschaften,
+  … Laddering für den Nutzen – beide KI-simuliert: das Fremdbild, … Analogien für die Tonalität … und
+  Kommunikationsanalyse fürs Markenbild. KI hilft überall – geprüft, Prompts im Backup.“ · „Eigenschaften sind
+  Startpunkte fürs Laddering, die Tonalität ist Prüfmaßstab.“ · „Den Rahmen bildet die Brand Persona: Marken wirken
+  über ihre Zielgruppe.“ Methodenkarte Desk Research „Herkunft, Marktrolle + Gründerbefragung“ (bis dahin „Herkunft,
+  Historie, Marktrolle“). Der Sprechtext oben ist der frühere Entwurf (ca. 1 Minute)
+- [ ] (24.10.) Yannick: gekürzten Sprechtext laut lesen und stoppen (Ziel ≤ 0:45)
 - [x] (21.10.) Begriffe nach der Vorlesung (Abgleich Vorlesung #27–#30, #15): Markenkern, Wir-Form,
   Markeneigenschaften in Visualisierung, Sprechtext und Grafik `grafiken/folie-02-vorgehen.svg/.png` (neu erzeugt);
   Rückfrage 2 mit Identität/Image (S. 60, 87), Rückfrage 3 mit S. 78. Quellenzeile unverändert (#4, #11, #13 offen)
@@ -652,6 +671,95 @@ Datei: [`grafiken/folie-05-limbic-map.svg`](grafiken/folie-05-limbic-map.svg) (P
   Notizen von f05 – den Sprechtext oben danach angleichen.
 - [ ] Botschaft 3 mit zugelassenen Angaben abgleichen (Dossier 3.7, S1)
 - [ ] Sprechtext laut lesen und stoppen: Ziel ≤ 1:00 (drei Klicks und die hochzählende Kennzahl einrechnen)
+
+---
+
+## Folie 5b – Gründerbefragung: Der Gründer über HOLY (Innensicht)
+
+> **Neu am Sa, 24.10.2026** – Wunsch Lukas Welker (das Gründer-Interview „viel präsenter“ einbauen), Entscheidungen
+> Yannick „Eigene Folie + Folie 10 (Empfohlen)“ und „Ja, als Innensicht vs. Außensicht (Empfohlen)“; gebaut KI-gestützt
+> (Workflow D27) als Web-Folie f05b. Maßgeblich ist die Folie in `praesentation/index.html` (Kasten „FOLIE 05b“).
+> Quelle **nur** [`gruenderbefragung.md`](gruenderbefragung.md) (Abschnitt 1, 2.1–2.3, 3, 4); das Transkript im
+> Gruppenordner wurde nicht geöffnet. Prüfung durch Yannick und Lukas offen.
+
+**Bündel:** B spricht (Lukas Welker, hat die Befragung geführt), Auswertung A (Yannick) · **Zeit:** 0:35 ·
+**Platz:** zwischen Folie 5 (Limbic Map) und 6 (Repertory Grid) – erst die Innensicht, dann die KI-simulierte
+Außensicht (6–8b), Abgleich auf Folie 10 · **Backup-Bezug:** B1 (Methodik), B7 (Quelle GB)
+
+### Titel (Kernaussage)
+
+> **Laut Gründer verbindet HOLY Geschmack mit gutem Gewissen**
+
+Paraphrase von Frage 1 (eine bessere Alternative zu normalen Softdrinks, die „geilen Geschmack mit gutem Gewissen“
+verbindet) und Frage 9/10 (Mittelweg zwischen Geschmack und gutem Gewissen). „Laut Gründer“ kennzeichnet die
+Selbstauskunft (Regel 2.3).
+
+### Text auf der Folie (39 sichtbare Wörter)
+
+- **Kicker:** Gründerbefragung · Mathias Horsch · Pille **„Innensicht · Selbstauskunft (n = 1)“**
+- **Steckbrief (Schritt 0):** Anspruch – *bessere Alternative zu normalen Softdrinks* (Frage 1) · Zielgruppe –
+  *18–55 Jahre, Männer und Frauen* (Frage 2) · Wettbewerb – *die großen Softdrinkmarken* (Frage 3, **ohne „95 %“**)
+- **Kaufgründe · seine Rangfolge (Schritt 1, Frage 5):** 1 *Geschmack* – „mit Abstand“ · 2 *wenig Zucker und Kalorien*
+  · 3 *Preis*; Metazeile *Rangfolge laut Gründer nach Firmendaten – nicht vorgelegt*. Kaufgrund 2 ohne den Wortlaut
+  des Gründers (unsichere Stelle, 2.2) und ohne „funktionale Inhaltsstoffe“ (keine Nutzenaussage, 4.3 K11)
+- **Emotionaler Nutzen (Schritt 2, Frage 8/11):** *Individualität (Selbermischen) · Zusammengehörigkeit (HOLY Squad)*
+- **Ziel (Schritt 2, Frage 14):** „meistgeliebte Softdrink-Brand“
+- **Verweis (Schritt 2):** → *Außensicht (KI-simuliert): Folien 06–08b · Abgleich Folie 10*
+- **Metazeile links unten:** Fragenkatalog mit 14 Fragen, Antwort in zwei Sprachnachrichten – keine Rückfragen
+  möglich, KI-Abschrift mit Einwilligung
+- **Quellenzeile:** *Quelle: Horsch, M. (2026): Gründerbefragung, zwei Sprachnachrichten an L. Welker, 18.10.2026 –
+  Selbstauskunft (Horsch 2026, GB)*
+
+### Visualisierung
+
+Editorial-Stil wie 09b: links ein Steckbrief im Zeitungsstil (Etikett über dem Wert, Linien dazwischen), rechts die
+Kaufgründe als Rangliste – Platz 1 „Geschmack“ groß in der Titelschrift mit der Pille „mit Abstand“, danach bewusst
+Abstand; darunter zwei Karten (emotionaler Nutzen, Ziel) und der Verweis auf die Außensicht wie die Übergabezeile auf
+Folie 6. Kein Foto des Gründers, kein Logo. Kopfzeile „Selbstbild“ statt Mini-Rad (die Folie gehört zu keinem Feld –
+sie zeigt das Selbstbild über alle Felder).
+
+### Sprechtext (ca. 0:35, Lukas; 61 Wörter ≈ 32 s + drei Klicks)
+
+> [Schritt 0] Vorher die Innensicht: Gründer Mathias Horsch hat mir unsere Fragen per Sprachnachricht beantwortet.
+> Für ihn ist HOLY die bessere Alternative zu normalen Softdrinks.
+>
+> [Schritt 1] Als Kaufgründe nennt er zuerst den Geschmack – „mit Abstand“ –, dann wenig Zucker und Kalorien, dann
+> den Preis.
+>
+> [Schritt 2] Emotional: Individualität durchs Selbermischen und Zusammengehörigkeit im HOLY Squad. Sein Ziel: die
+> meistgeliebte Softdrink-Marke. Das ist Selbstauskunft – jetzt die Außensicht, KI-simuliert.
+
+Anschluss: Folie 5 endet mit „Wie HOLY von außen wirkt, zeigt eine KI-simulierte Befragung.“, Folie 6 beginnt mit
+„Was unterscheidet HOLY vom Wettbewerb?“. Immer „laut ihm“ / „nennt er“ – nie „die Kund:innen kaufen wegen …“.
+
+### Mögliche Rückfragen
+
+1. **„Ist das nicht nur Werbung?“** – Zum Teil, und das sagen wir offen: Innensicht, Selbstauskunft, n = 1; vieles
+   deckt sich mit Website und Press Kit ✔ [1, 5, 13]. Neu sind die Rangfolge der Kaufgründe, der Wettbewerb aus
+   Firmensicht und die emotionale Deutung (`gruenderbefragung.md` 2.1). Deshalb steht die Folie als Selbstbild vor der
+   Außensicht; Folie 10 gleicht beides ab.
+2. **„Wie wurde befragt?“** – Fragenkatalog mit 14 Fragen, von Lukas über LinkedIn geschickt; Antwort in zwei
+   Sprachnachrichten (1:40 und 3:30 Minuten), keine Rückfragen möglich – kein Interview, kein Laddering, kein
+   Repertory Grid. KI-gestützte Abschrift mit Einwilligung; Transkript und Audio nur im Gruppenordner.
+3. **„Und die 95 %?“** – Laut Gründer nutzen 95 % der Kund:innen HOLY als vollen oder teilweisen Ersatz für Red Bull,
+   Monster, Coca-Cola, Lipton Eistee und Co. – laut Gründer, Datengrundlage nicht offengelegt. Deshalb auf keiner Folie.
+4. **„Kaufen die Leute HOLY wirklich wegen des Geschmacks?“** – Das sagt der Gründer nach Firmendaten, die er nicht
+   vorlegt. Die KI-simulierte Befragung prüft es nicht: „schmeckt natürlich – schmeckt künstlich“ nennen 2 von 8
+   (Relevanz nicht erfüllt), HOLY 4,88 zu Ø 4,89 (`buendel-b/auswertung/repertory-grid-ergebnis.csv`, K10); drei von
+   acht schildern den Geschmack kritisch (`analogien-haeufigkeiten.csv`) – Hypothesen, keine Kundenstimmen.
+
+### Quellen
+
+`gruenderbefragung.md` Abschnitt 3 (Fragen 1, 2, 3, 5, 8, 9/10, 11, 14), 2.1–2.3, 4.3 (K11) und 4.4; Website und
+Press Kit über das Recherche-Dossier ✔ [1, 5, 13], Vision ✔ [17, 31]; KI-simulierte Befragung nur für die Rückfrage
+(Bündel B, Workflow D25). Quellenangabe in B7 („GB: Horsch, M. (2026) …“).
+
+### Zu prüfen
+
+- [ ] Yannick: Folie freigeben (Titel, Auswahl, Kennzeichnung, Platz und Nummer 5b, Fußzeile)
+- [ ] Lukas: Sprechtext laut lesen und stoppen (Ziel ≤ 0:35); Paraphrasen mit dem Transkript abgleichen (Zuordnung
+  der Fragen, `gruenderbefragung.md` §6); Versanddatum bestätigen
+- [ ] Gruppe: Kürzel GB und Regel 2.3 Punkt 4 bestätigen (`gruenderbefragung.md` §6)
 
 ---
 
@@ -1341,6 +1449,17 @@ steht nicht im Rad, sondern im neuen Schritt „Abgleich“. Damit weicht die Fo
   mehr), Feld Nutzen (was trägt eine Selbstbild-Quelle?), Abgleich-Paare, Pille, Sprechtext gezählt und gestoppt
   (Soll 75 s); danach `pruefen.mjs`: keine Warnungen „Abgleich mit Folie 10“ mehr aus 06, 07, 08, 08b
 - [ ] (23.10.) Dieser Eintrag: nach dem Einbau den endgültigen Wortlaut aus `praesentation/index.html` übernehmen
+- [x] (24.10., Workflow D27; Entscheidung Yannick „Eigene Folie + Folie 10“) **Gründer im Abgleich:** Spaltenkopf
+  „Selbstbild · Auftritt & Gründer“ (bis dahin „Selbstbild · Identität, unsere Analyse“), Zeile 2 beschriftet
+  „Positionierung · Website & Gründer“ (Genuss mit gutem Gewissen ≠ ohne Zucker → verlässlich sein), Sprechtext
+  Schritt 9 „Ohne Zucker heißt dort verlässlich sein – nicht gutes Gewissen wie beim Gründer.“ (+3 Wörter; Folie 146
+  Wörter ≈ 77 s), Fußzeile „Folien 03–05b“. Keine fünfte Zeile „Geschmack ‚mit Abstand‘ ↔ …“ – die simulierten Daten
+  tragen sie nur schwach (K10: 2 von 8, HOLY 4,88 zu Ø 4,89), steht als Rückfrage auf 5b und 10
+- [x] (24.10., nach der Prüfung D27) Zeile 2 heißt „Positionierung · wie Gründer“ („Genuss mit gutem
+  Gewissen“ ist unsere Verdichtung) und ist ein Knopf „· Folie 05b →“ zur Innensicht (Datenfeld `folieSelbst`);
+  Notizen: Zeilen 3 und 4 links = Elias' Deutung (H), gutes Gewissen in der Simulation 2 von 8 (Grenzfall),
+  Selbermischen = Individualität laut Gründer ↔ Hürde „selbst anrühren“; Absatzkopf Schritt 9 „ca. 21 s“
+- [ ] (24.10.) Yannick und Elias: Spaltenkopf und Zeile 2 freigeben; Elias spricht den Halbsatz „wie beim Gründer“
 
 ---
 
@@ -1409,6 +1528,8 @@ steht nicht im Rad, sondern im neuen Schritt „Abgleich“. Damit weicht die Fo
 - [x] (23.10.) Nach dem Einbau: Fazit, Pille und Sprungliste mit Folie 10 und 11 abgeglichen (Fazit-Satz unverändert,
   Pille weg, „Fremdbild (Aaker)“)
 - [ ] Yannick: „(Aaker)“ in der Sprungliste und im Titel von 08b kürzen oder lassen (`fragerunde.md`, Liste am Ende)
+- [x] (24.10., Workflow D27) Liste „Ergebnisse“ um „Innensicht (Gründer)“ → Folie 5b ergänzt (sechs Einträge, ohne
+  Feld); Notizen: Sprungziel für Rückfragen zum Gründer
 
 ---
 

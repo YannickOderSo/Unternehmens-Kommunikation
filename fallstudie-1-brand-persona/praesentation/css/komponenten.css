@@ -156,7 +156,11 @@ html[data-thema="editorial"][data-modus="hell"] .folie:not([data-modus="dunkel"]
   background: currentColor;
   flex: none;
 }
-html.ohne-beispielhinweis .beispiel { display: none !important; }
+/* marke.js → beispieldatenHinweis: false blendet nur echte Beispieldaten-Pillen aus.
+   Pflicht-Kennzeichnungen in derselben Optik („KI-simuliert“ auf 06–08b, 10, B4,
+   B5; „Innensicht · Selbstauskunft (n = 1)“ auf 05b) tragen zusätzlich die Klasse
+   .kennzeichnung und bleiben stehen (Prüfung D27, 24.10.2026). */
+html.ohne-beispielhinweis .beispiel:not(.kennzeichnung) { display: none !important; }
 .beispiel[hidden] { display: none; }
 
 /* „Live“-Pille mit ruhig pulsierendem Punkt */

@@ -1571,6 +1571,18 @@
       e.preventDefault();
       return;
     }
+    /* Dasselbe für „b“ (seit 24.10.2026, Folie 05b): Auf Folie 08 zählt „5“ eine
+       Stimme; folgt sofort „b“ und gibt es die Folie „5b“, war die „5“ der Anfang
+       der Nummer → Stimme zurücknehmen, „5b“ in den Puffer (sonst schaltete „b“
+       das Schwarzbild ein). Ohne passende Folie bleibt es bei Stimme + Schwarzbild. */
+    if ((taste === 'b' || taste === 'B') && !ziffernPuffer && vorlaeufig &&
+        Date.now() - vorlaeufig.zeit < 1500 && folieAufloesen(vorlaeufig.ziffer + 'b') >= 0) {
+      try { vorlaeufig.rueckgaengig(); } catch (fehler) { console.error(fehler); }
+      ziffernPuffer = vorlaeufig.ziffer + 'b';
+      ziffernAnzeigen();
+      e.preventDefault();
+      return;
+    }
     if (ziffernPuffer && (taste === 'b' || taste === 'B') && /^[0-9]+$/.test(ziffernPuffer)) {
       ziffernPuffer += 'b';
       ziffernAnzeigen();
