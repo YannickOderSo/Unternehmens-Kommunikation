@@ -169,6 +169,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 147 | 24.10.2026 | Yannick | „Weiter“ + Bitte um Zeitschätzung („der Dienstag rückt näher“) | D26 (Rest selbst) | Befunde eingearbeitet, Tests grün, Exporte 24.10., Commit; Zeitschätzung berichtet |
 | 148 | 24.10.2026 | Yannick | Frage: Wo wird das Gründer-Interview in der Präsentation genannt? | – | Übersicht aus index.html (sichtbar/Notizen) |
 | 149 | 24.10.2026 | Yannick | Lukas wünscht, dass das Gründer-Interview viel präsenter eingebaut ist | – | Rückfrage zu Umfang und Ort |
+| 150 | 24.10.2026 | Yannick | Antworten: eigene Gründer-Folie + Folie 10; Gründer als Innensicht gegen das KI-simulierte Fremdbild | D27 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2421,6 +2422,22 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Folie den 15-Minuten-Plan verlängert.
 - **Ergebnis:** Rückfrage
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 150 – 24.10.2026 – Yannick (Antworten auf zwei Rückfragen von Claude)
+
+> Frage 1: „Wie präsent soll das Gründer-Interview (Horsch 2026) werden? …“ – Antwort (Auswahl): **„Eigene Folie +
+> Folie 10 (Empfohlen)“** (neue Folie „Der Gründer über HOLY“ zu Beginn von Lukas' Teil, ca. 35 s, Lukas spricht;
+> auf Folie 10 im Abgleich „Selbstbild · Website & Gründer“; dafür Sprechtexte auf 01/02 kürzen)
+>
+> Frage 2: „Darf der Gründer dabei direkt dem KI-simulierten Fremdbild gegenübergestellt werden …?“ – Antwort
+> (Auswahl): **„Ja, als Innensicht vs. Außensicht (Empfohlen)“**
+
+- **Vorgehen Claude:** Workflow D27 (Bau der Gründer-Folie und Anpassung Folie 10 samt Einbindung ins Deck, Doku und
+  Zeitplan; adversariale Prüfung gegen `gruenderbefragung.md` und die Nutzungsregeln; Nacharbeit, Tests und Exporte
+  durch Claude).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D27
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
