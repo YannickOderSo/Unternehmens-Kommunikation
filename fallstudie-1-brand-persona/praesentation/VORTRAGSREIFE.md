@@ -1,5 +1,13 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag Sa, 24.10.2026 (Account 1): Vortragstag Di, 27.10.2026
+
+> Laut Yannick (24.10.2026) ist der Vortrag am **Di, 27.10.2026** statt Mo, 26.10. (die Vorlesungsfolien, Stenger
+> S. 57, nennen „am 26.10.“ – bitte abgleichen). Termine „26.10.“ bzw. „Mo 26.10.“ in diesem Bericht meinen den
+> Vortragstag, jetzt Di 27.10.; Mo 26.10. ist Puffer. Die Frist „bis So 25.10.“ für die Runde der Live-Abstimmung gilt
+> jetzt bis Mo 26.10. (nach der Generalprobe); der Rundenname heißt `vortrag-2026-10-27`. Follower und Kennzahlen am
+> Morgen des 27.10. ablesen. Umstellung: `AUTOREN.md` Abschnitt 26.
+
 ## Nachtrag Sa, 24.10.2026 (Account 1): Folie 05b „Gründerbefragung: Innensicht“
 
 > Auf Lukas Welkers Wunsch hat die Gründerbefragung eine eigene Folie **05b** zwischen 05 und 06 (Lukas spricht sie,

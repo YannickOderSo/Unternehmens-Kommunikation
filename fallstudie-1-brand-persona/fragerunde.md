@@ -1,7 +1,7 @@
 # Fragerunde – Vorbereitung (Fallstudie 1, HOLY)
 
 **Stand:** Sa, 24.10.2026 (Account 1, Nachtrag 24.10. unten: Gründerbefragung als eigene Folie 05b, F05/F06
-nachgezogen, F40 neu; Nachtrag 23.10.: KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon) · erstellt 19.10.2026 · Präsentation Mo 26.10.2026 · Generalprobe So 25.10.2026
+nachgezogen, F40 neu; Nachtrag 23.10.: KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon) · erstellt 19.10.2026 · Präsentation Di 27.10.2026 (bis 24.10. geplant: Mo 26.10.) · Generalprobe So 25.10.2026
 
 **Erstellt von:** Account 2 (Claude Code), KI-gestützt. Workflow „account-2-vortragsreife-fragerunde“ (Skript
 `ki-nachweis/workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`, Delegation A2-D04, ausgelöst durch Prompt
@@ -231,7 +231,7 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
 4. **Statista-Werte nur so, wie sie in `persona-daten.md` stehen** – sie beschreiben die Kategorie Energy Drinks,
    nicht HOLY-Kund:innen. „Technik 34 % / +7“ und „85 % keine frühen Übernehmer“ stehen dort nicht (auch wenn die
    Notizen von Folie 05 sie noch nennen, Z. 1185–1186) und werden nicht gesagt.
-5. **Beispieldaten und KI-Simulation offen als solche benennen.** Was am 26.10. noch „Beispieldaten“ trägt, nie als
+5. **Beispieldaten und KI-Simulation offen als solche benennen.** Was am 27.10. noch „Beispieldaten“ trägt, nie als
    Ergebnis vorlesen. Die Befragung auf 06, 07, 08b, B4, B5 ist **KI-simuliert** (Pille): nie „die Befragten sagen“ ohne
    „KI-simuliert“, „8 von 8“ heißt „ein gemeinsames Bild des Modells“, keine Signifikanz, keine Repräsentativität.
 6. **Faktenstatus richtig erklären:** ✔ heißt „von den KI-Prüfungen des Dossiers bestätigt“, nicht „von uns
@@ -952,7 +952,7 @@ sich jedem an?“**
   - Keinen Branchen-Richtwert aus dem Gedächtnis nennen – im Material gibt es keine Quelle dafür.
   - Die Facebook-Gruppe (≈ 40.000 Mitglieder, laut HOLY „Our Story“, Desk Research 16.10.2026) nicht zu den
     Seiten-Followern zählen.
-  - Follower mit Stand nennen (20./21.10.2026); vor dem 26.10. neu ablesen oder den Stand in der Fußzeile lassen –
+  - Follower mit Stand nennen (20./21.10.2026); vor dem 27.10. neu ablesen oder den Stand in der Fußzeile lassen –
     Entscheidung Elias. Instagram zeigt nur „383 Tsd.“ – nicht „383.000“ als genaue Zahl ausgeben.
   - Ob für die Analyse KI genutzt wurde: siehe F37.
 - **Belastbar:** ja für das Vorgehen (qualitativ, mit Datum belegt) · Kennzahlen je Kanal: **NEIN** – nicht erhoben.
@@ -1454,8 +1454,8 @@ Ergebnis?“**
   - Die Prozentzahl nicht als Beleg für Papagei oder Chamäleon verwenden (Fußzeile „Stimmungsbild“; siehe F16). Seit
     23.10.2026 zählt die große Zahl beide Tiere zusammen („x % sehen HOLY wie wir: als Papagei oder Chamäleon“). Löwe
     und Schwan stehen zur Wahl, weil sie im Kontrast für Red Bull und waterdrop stehen – auch das sind Beispieldaten.
-  - Vor dem Vortrag die Runde auf `vortrag-2026-10-26` stellen (auf GitHub und auf dem Präsentationsrechner;
-    `marke.js` Z. 189; LIESMICH §6) – dann beginnt Folie 08 bei `n = 0`. Bei Weg A **nicht** „Zurücksetzen“ klicken:
+  - Vor dem Vortrag die Runde auf `vortrag-2026-10-27` stellen (auf GitHub und auf dem Präsentationsrechner;
+    `marke.js` → `umfragen.tier.runde`; LIESMICH §6) – dann beginnt Folie 08 bei `n = 0`. Bei Weg A **nicht** „Zurücksetzen“ klicken:
     Das pausiert die Live-Abfrage, die Stimmen der Handys erscheinen dann nicht (Pille „Live pausiert“ – anklicken, um
     fortzusetzen). „Zurücksetzen“ nur bei Plan C oder Weg B (Notiz „Bedienung“ von Folie 08, LIESMICH §6 und §12;
     berichtigt in der Nacharbeit am 21.10.2026 – vorher stand hier der alte Weg B).
@@ -1918,7 +1918,7 @@ Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen�
 | F14 | ~~Schwelle festlegen, Titel „Drei Attribute …“~~ – **erledigt 23.10.2026:** Regel vor dem Rechnen festgelegt (22.10.2026: ≥ 3 von 8, ≥ 1,0, ≤ 1,0), Titel „HOLY hebt sich ab – aber vor allem durch Hürden“. Offen: Freigabe durch Yannick. | Yannick | Fr 23.10. | FRAGE-P-05; #29; `buendel-b/folienvorschlag.md` E1 |
 | F16, F36 | ~~Titel nur mit Chamäleon, Papagei klein~~ – **entschieden 23.10.2026** (Yannick): Papagei und Chamäleon gleichwertig in Titel, Karte und Umfrage (Papagei statt Fuchs). Offen: Elias bestätigt die Auslegung, die Belege je Zeile und die Kürzung auf zwei Zeilen je Tier; Elias beantwortet `analogien.md` §10 (Claims je Land mit Fundstelle, Quelle zum Farbwechsel, „fair“ gegen provokante Shorts). Der Abgleich mit der KI-simulierten Befragung steht in `analogien.md` §7.3. | Elias, Yannick | Generalprobe So 25.10. | Kasten FOLIE 08; `analogien.md` §10; #3, #38 |
 | F30 | ~~Lukas gleicht das Aaker-Profil ab~~ – **erledigt 23.10.2026:** 08b zeigt das KI-simulierte Fremdbild (Aaker-Bogen von acht simulierten Personen; Gegenüberstellung `analogien.md` §7.2). Offen: Freigabe des zweizeiligen Titels von 08b (E7) und „(Aaker)“ im Titel von 08b und auf Folie 12 kürzen. Den Zirkel (Analogien und Kommunikationsanalyse von derselben Person) in der Generalprobe einmal laut beantworten. | Yannick, Elias | Fr 23.10. | FRAGE-P-03, FRAGE-Q-07; #42; `analogien.md` §7 |
-| F29 | Skript der Live-Abstimmung bei Google aktualisieren (Fassung 20.10.2026), Kurzprüfung und Lasttest; Runde auf `vortrag-2026-10-26` (GitHub und Präsentationsrechner); Probe mit mehreren Handys; festlegen, wer bei Handzeichen zählt. | Yannick | Skript sofort, Runde spätestens So 25.10. | LIESMICH §6 und §12; `live-abstimmung/ANLEITUNG.md` |
+| F29 | Skript der Live-Abstimmung bei Google aktualisieren (Fassung 20.10.2026), Kurzprüfung und Lasttest; Runde auf `vortrag-2026-10-27` (GitHub und Präsentationsrechner); Probe mit mehreren Handys; festlegen, wer bei Handzeichen zählt. | Yannick | Skript sofort; Runde nach der Generalprobe So 25.10., spätestens Mo 26.10. | LIESMICH §6 und §12; `live-abstimmung/ANLEITUNG.md` |
 | F24 | Logo-Nutzung mit dem Betreuer klären (Original-Logo auf erfundener Dose, im Rätsel unscharf, öffentlich; Logos auf 09b und 12); bei Ablehnung Rückfall ohne Logo und Exporte neu. Ergebnis in die Notiz von Folie 01 und hier eintragen. | Yannick | vor Fr 23.10. (Folien final) | LIESMICH §12; `QUELLEN.md` §3 |
 | F03, F26, F31 | Fußzeilen der Hauptfolien mit Vorlesungsseiten (#4); Esch (2018), 9. Aufl. statt Esch & Esch (2024) in B7 und Fußzeile 02 (#11); Kotler mit selbst geprüfter Ausgabe in B7 aufnehmen oder „nach Kotler“ streichen (#31); Kroeber-Riel/Esch (2018) in B7 und Fußzeile 09 (#14); „hard/soft facts“ belegen oder weglassen (#32). | Yannick, Elias (Fußzeile 09) (Einbau: Account 1) | Fr 23.10. | FRAGE-P-02, FRAGE-P-12; #4, #11, #14, #31, #32 |
 | F04 | Seit 23.10.2026 entschieden: Rad = Selbstbild, Befragungen = Fremdbild-Abgleich (`methoden.md` §6); die Folien sagen „Selbstbild“ und „Fremdbild (KI-simuliert)“ mit Stenger S. 60, 87 in den Notizen. Offen: ob das Etikett „Fremdbild“ auf Folie 02 zusätzlich „Markenimage“ heißen soll (#30). | Yannick | Fr 23.10. | #30; KI-Nachweis 135 |
@@ -1926,7 +1926,7 @@ Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen�
 | F39 | „Selbst anrühren“ nur im Sprechtext (06, 10) und als Rückfrage – keine dritte Lücke (Entscheidung Yannick 23.10.2026). Offen: Satz in der Generalprobe einmal laut sagen. | Yannick | Generalprobe So 25.10. | KI-Nachweis 135 |
 | F21, F22 | Je Empfehlung eine Messgröße aus den eigenen Methoden; Priorität der Empfehlungen mit Begründung; qualitative Einordnung des Aufwands (ohne Zahlen, als H) in die Notizen von Folie 11 (Gliederung Ziel – Wirkung – Kosten nach S. 127 möglich). | Elias (Gruppenentscheidung) | Synthese Do 22.10. | FRAGE-P-07, FRAGE-Q-06, FRAGE-Q-04; #51 |
 | F20, F21 | Aktuelle HOLY-Energy-Packung prüfen (Vorder- und Rückseite, mit Datum); Ergebnis mit [27] in die Notiz von Folie 11; zeigt die Packung Koffein schon vorn, Empfehlung 1 auf Posts und Creator-Videos zuspitzen. | Elias | Fr 23.10. | FRAGE-P-16, FRAGE-Q-05 |
-| F17, F38 | ~~Stichprobe erheben, P12, Formel~~ – **gegenstandslos seit 22.10.2026:** Elias hat qualitativ analysiert, Engagement-Raten und Formel sind von Folie 09 entfernt. Offen: Elias nennt den Rechenweg seiner Prozentwerte (`kommunikationsanalyse.md` §13, Frage 2) und ob Engagement-Raten und Meta-Werbebibliothek bewusst weggelassen wurden (Fragen 3, 5); Follower vor dem 26.10. neu ablesen oder Stand 20./21.10. in der Fußzeile lassen. | Elias | Fr 23.10. | FRAGE-P-08; #2 |
+| F17, F38 | ~~Stichprobe erheben, P12, Formel~~ – **gegenstandslos seit 22.10.2026:** Elias hat qualitativ analysiert, Engagement-Raten und Formel sind von Folie 09 entfernt. Offen: Elias nennt den Rechenweg seiner Prozentwerte (`kommunikationsanalyse.md` §13, Frage 2) und ob Engagement-Raten und Meta-Werbebibliothek bewusst weggelassen wurden (Fragen 3, 5); Follower vor dem 27.10. neu ablesen oder Stand 20./21.10. in der Fußzeile lassen. | Elias | Fr 23.10. | FRAGE-P-08; #2 |
 | F31, F32, F33 | ~~Stichprobe zum Raptor, „soll durchgängiges Schlüsselbild werden“~~ – **gegenstandslos seit 22.10.2026** (Elias: kein festes Schlüsselbild, Kandidat Produkt in der Hand; Empfehlung 3 „Ein Absender, ein Schlüsselbild“). Offen: Notiz 09 Präsenzsignal/Schlüsselbild mit S. 97 statt „Modellwissen“; Bruch mit „integrierte Kommunikation (S. 96–97)“ benennen; ein Wort für die Persona-Lücke auf 09b, 10, 11 („Bildwelt zu jung“ oder „Auftritt zu jung“); Freigabe „Streetwear-Look“ und Lücke 2 (Yannick); Elias' Frage 4 („Produkt in der Hand“ über Medien und Zeit gleich?). Gemeinsamen Wortlaut „Humor aus der Schicht statt Doppeldeutigkeit“ (Folie 05) mit Elias' Tonalität abstimmen. | Elias, Yannick | Fr 23.10. | FRAGE-P-15; #47, #48; `kommunikationsanalyse.md` §13 |
 | F34 | Elias klärt „junge Kernzielgruppe“ (TikTok) gegen die Kundschaft 25–40 laut Mitgründer – bis dahin nur Reichweite nennen. | Elias, Yannick | Fr 23.10. | `kommunikationsanalyse.md` §13, Frage 1 |
 | F37, F23 | Elias sagt, ob und wofür er bei seinen Ausarbeitungen KI genutzt hat; danach P12 in B2 als „nicht genutzt“ kennzeichnen oder streichen. Folie 02 (Methodenkarten) und B2 (P7–P11 als echte Läufe D25) werden seit 23.10.2026 nachgezogen (Entscheidung 5 Yannick, Einbau parallel) – Wortlaut prüfen. | Elias; Yannick | Fr 23.10. | Kasten B2; KI-Nachweis 119, 135 |

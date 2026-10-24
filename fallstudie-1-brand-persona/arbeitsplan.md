@@ -1,7 +1,7 @@
 # Arbeitsplan – Fallstudie 1: Brand Persona & Markenidentität
 
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
-**Präsentation:** Mo, 26.10.2026 · 15 Minuten + Backup
+**Präsentation:** Di, 27.10.2026 (laut Yannick, 24.10.2026; bis dahin geplant Mo, 26.10.) · 15 Minuten + Backup
 **Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026
 
 **Für die Gruppe als PDF:** [`Fallstudie-1_Aufgaben-und-Aufteilung.pdf`](Fallstudie-1_Aufgaben-und-Aufteilung.pdf)
@@ -77,7 +77,8 @@ Wer zu spät liefert, blockiert die anderen. Diese Termine sind fix.
 | **Fr 23.10.** | Folien 1–5 final | Folien 6–8 final | Folien 9–11 final | |
 | **Sa 24.10.** | Backup + KI-Listen in den KI-Nachweis übertragen (Nachträge bis So 25.10.) | Rohdaten ins Backup | Gesamtdeck zusammenführen, kritische Prüfung (P14) | |
 | **So 25.10.** | | | | **Generalprobe, 1 Std.:** zweimal mit Stoppuhr, Rückfragen üben |
-| **Mo 26.10.** | | | | **Präsentation** |
+| **Mo 26.10.** | | | | Puffer (seit 24.10.2026); Runde der Live-Abstimmung spätestens heute umstellen |
+| **Di 27.10.** | | | | **Präsentation** |
 
 Am Wochenende ist die Tageseinteilung flexibel – entscheidend sind die Übergabetermine oben.
 

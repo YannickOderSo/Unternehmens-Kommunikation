@@ -112,8 +112,8 @@ die Community, Facebook und YouTube die Dachmarke). „Zusammen ergeben sie alle
 **Vergleich mit dem Dossier (Stand 14.10.2026, 6.1 ✔):** Instagram ≈ 383.000 Follower, 1.176 Beiträge [19];
 Facebook-Seite ≈ 126.000 Follower, Gruppe ≈ 40.000 (Selbstangabe) [5, 122]; TikTok ≈ 270.400 Follower, 2,0 Mio.
 Likes, 465 Videos [20]; YouTube 20.500 Abos, 357 Videos [123, 124]. Auf den Folien gelten seit 22.10.2026 Elias'
-Werte (Instagram wie in seiner Tabelle „383 Tsd.“). Vor dem 26.10. neu ablesen **oder** den Stand 20./21.10.2026 in
-der Fußzeile lassen – Entscheidung Elias (das Dossier 6.1 empfiehlt, am 26.10. neu abzulesen; der Kasten „FOLIE 09“
+Werte (Instagram wie in seiner Tabelle „383 Tsd.“). Vor dem 27.10. (Vortrag, seit 24.10.2026) neu ablesen **oder** den Stand 20./21.10.2026 in
+der Fußzeile lassen – Entscheidung Elias (das Dossier 6.1 empfiehlt, am Vortragstag neu abzulesen – damals geplant 26.10., jetzt 27.10.; der Kasten „FOLIE 09“
 hält es bei genanntem Abrufdatum für nicht nötig).
 
 ### 3.2 Vorlage `methoden.md` §5 – Kanal-Tabelle

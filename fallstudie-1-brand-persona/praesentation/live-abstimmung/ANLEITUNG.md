@@ -327,11 +327,11 @@ Wichtig: Skript aktualisieren („einrichten“, „Neue Version“) **nicht wä
 
 ## Vor dem Vortrag: Runde umstellen
 
-Die Generalprobe läuft mit `runde: 'probe'`. Danach – **spätestens am Vortag** (So, 25.10.) – in
+Die Generalprobe läuft mit `runde: 'probe'`. Danach – **spätestens am Vortag** (Mo, 26.10.; Generalprobe So, 25.10.; Vortrag Di, 27.10.) – in
 `../marke.js` umstellen:
 
 ```js
-runde: 'vortrag-2026-10-26',
+runde: 'vortrag-2026-10-27',
 ```
 
 Damit startet Folie 08 im Vortrag bei null; die Probestimmen bleiben in der Tabelle, zählen aber nicht.
@@ -343,15 +343,15 @@ Präsentationsrechner stehen. Früh umstellen, weil Browser alte Dateien eine We
 **Kontrolle – beide Stellen:**
 1. **GitHub:** <https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/marke.js?v=1>
    öffnen (die Zahl hinter `?v=` bei jedem Versuch ändern, sonst kommt eine alte Fassung), Strg+F `runde`:
-   Dort muss `'vortrag-2026-10-26'` stehen. Sonst zählen die Handys weiter in „probe“ – und Folie 08 zeigt
+   Dort muss `'vortrag-2026-10-27'` stehen. Sonst zählen die Handys weiter in „probe“ – und Folie 08 zeigt
    „Live“ mit `n = 0`, ohne dass sich im Vortrag etwas bewegt. Dann Strg+F `gueltigMinuten`: Dort muss `30`
    stehen, wie auf dem Präsentationsrechner. Sonst rechnen Handys und Folie mit verschiedenen Zeitfenstern – ein
    Handy zeigt dann „Danke“, obwohl Folie 08 seine Stimme nicht mehr zählt (oder umgekehrt).
 2. **Präsentationsrechner:** Folie 08 zeigt „Live“ und `n = 0`; die Maus auf der Pille zeigt
-   „Runde „vortrag-2026-10-26““ und „zählt Stimmen der letzten 30 Min.“ (steht dort „OHNE Zeitfenster“: „Skript
+   „Runde „vortrag-2026-10-27““ und „zählt Stimmen der letzten 30 Min.“ (steht dort „OHNE Zeitfenster“: „Skript
    aktualisieren“ fehlt noch). Diese Werte gelten 30 Minuten; betritt man Folie 08 im Vortrag später, stehen bis
    zur ersten Antwort der Web-App Nullen da – keine Beispieldaten.
-3. Ohne Stimme: `<URL>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5` zeigt `"n":0`.
+3. Ohne Stimme: `<URL>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-27&anzahl=5` zeigt `"n":0`.
 
 Wer nach dem Umstellen doch mit dem Handy testet: die Testzeile danach im Blatt „Stimmen“ löschen (mit
 der rechten Maustaste auf die Zeilennummer **links** klicken → „Zeile löschen“). Löschen und Sortieren
@@ -382,14 +382,14 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 ## Nach dem Vortrag
 
 1. **Ergebnis sichern – gleich nach dem Vortrag:** Folie 08 fotografieren oder die Zahlen notieren, dazu
-   (innerhalb von 30 Minuten) `<URL>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5&minuten=30`
+   (innerhalb von 30 Minuten) `<URL>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-27&anzahl=5&minuten=30`
    speichern (Strg+S oder Bildschirmfoto). **Maßgeblich ist dieser Stand** – er zählt genau das, was Folie 08
    gezeigt hat. Nach 30 Minuten zeigt Folie 08 die Stimmen nicht mehr (Zeitfenster); sie bleiben aber in der
    Tabelle. Die Stand-Adresse **ohne** `minuten` zählt später alle Stimmen der Runde – auch Teststimmen, die vor
-   dem Vortrag in `vortrag-2026-10-26` abgegeben wurden und auf Folie 08 schon nicht mehr zählten; ihr `n` kann
+   dem Vortrag in `vortrag-2026-10-27` abgegeben wurden und auf Folie 08 schon nicht mehr zählten; ihr `n` kann
    also größer sein. Genauer: die Tabelle herunterladen (Datei → Herunterladen) und nur die Zeilen der Runde
-   `vortrag-2026-10-26` aus dem Vortragszeitraum (Spalte „Zeit“) zählen – je Geräte-ID die letzte. Quelle z. B.
-   „eigene Live-Umfrage im Hörsaal, 26.10.2026, n = …“.
+   `vortrag-2026-10-27` aus dem Vortragszeitraum (Spalte „Zeit“) zählen – je Geräte-ID die letzte. Quelle z. B.
+   „eigene Live-Umfrage im Hörsaal, 27.10.2026, n = …“.
 2. **Web-App abschalten:** Apps Script → **Bereitstellen → Bereitstellungen verwalten** → die Bereitstellung
    auswählen → **Archivieren**. Danach nimmt die URL nichts mehr an.
 3. In `../marke.js` `liveQuelle: ''` setzen (dann zeigt Folie 08 wieder nur den Zählmodus).
@@ -436,7 +436,7 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
   In allen Fällen versucht es die Abstimmseite nach einer kurzen Pause von selbst noch einmal (insgesamt
   höchstens drei Versuche). Folie 08 fragt nur alle 2 s (eine Ausführung, ohne Warten).
 - **Missbrauch:** Wer die URL kennt, kann auch von außerhalb des Hörsaals abstimmen – URL und Runde
-  stehen öffentlich in `marke.js`. Eine neue Runde (z. B. `vortrag-2026-10-26-b`, überall gleich) hilft
+  stehen öffentlich in `marke.js`. Eine neue Runde (z. B. `vortrag-2026-10-27-b`, überall gleich) hilft
   gegen Probestimmen und alte offene Tabs, **nicht** gegen gezielte Manipulation: Die Abstimmseite lädt
   die neue Runde ja selbst. Dagegen hilft im Vortrag nur Plan C (Handzeichen, LIESMICH Abschnitt 6) oder
   das Archivieren der Bereitstellung. Danach Spam-Zeilen im Blatt löschen – jede Zeile verlangsamt jede
@@ -469,7 +469,7 @@ Bedienung der Folie im Vortrag (Pille „Live“, Werte eintippen, Zählmodus): 
 | Handy zeigt „Gerade stimmen viele ab – Ihre Stimme wird gesendet …“ | Andrang; die Seite sendet selbst noch einmal | nichts tun; erst nach drei Fehlversuchen kommt „Das hat nicht geklappt“ mit „Nochmal versuchen“ |
 | Folie 08 zeigt „offline“ | kein Internet am Präsentationsrechner, `liveQuelle` falsch, Web-App archiviert oder sehr langsam (Maus auf der Pille zeigt den Grund) | Klick auf die Pille = sofort neu versuchen; bleibt es: Plan C (LIESMICH, Abschnitt 6); danach URL und Internet prüfen |
 | Probestimmen erscheinen im Vortrag | `runde` nicht umgestellt oder alte `marke.js` auf einem Gerät | `runde` auf GitHub und auf dem Präsentationsrechner prüfen („Vor dem Vortrag“, Kontrolle); notfalls Probezeilen löschen |
-| Folie 08 zeigt „Live“ und `n = 0`, Handys stimmen ab, nichts bewegt sich | Runde auf GitHub und auf dem Präsentationsrechner verschieden | beide auf `'vortrag-2026-10-26'` (Kontrolle oben) |
+| Folie 08 zeigt „Live“ und `n = 0`, Handys stimmen ab, nichts bewegt sich | Runde auf GitHub und auf dem Präsentationsrechner verschieden | beide auf `'vortrag-2026-10-27'` (Kontrolle oben) |
 | Folie 08 zeigt weniger Stimmen als früher bzw. `n = 0`, obwohl abgestimmt wurde | Die Stimmen sind älter als 30 Minuten (Zeitfenster) – gewollt | nichts; neu abstimmen lassen. Alle Stimmen der Runde: Stand-Adresse ohne `minuten` |
 | Maus auf der Pille von Folie 08: „OHNE Zeitfenster“ | bei Google läuft noch eine Fassung vor dem 20.10.2026 | „Skript aktualisieren“; Kontrolle `<URL>?aktion=fassung` → 20.10.2026 |
 | Handy zeigt wieder die Tiere statt „Danke“ | die eigene Stimme ist älter als 30 Minuten und zählt nicht mehr | einfach neu tippen (zählt einmal) |

@@ -318,7 +318,7 @@ Nach den Sprechraten im Projekt (1,75–2,2 Wörter/s) dauert das 37–47 s; lau
 - [ ] Folie 6 (Lukas): im Sprechtext auf Folie 3 zurückverweisen (Selbstbild „zum Selbermixen“ ↔ Hürde „selbst anrühren“); Rückfrage 9 nach der Auswertung am Mo 19.10. prüfen
 - [ ] Folie 10 (C2): Feld `kompetenz` → „Herausforderer“, „Softdrinks zum Selbermixen“, „Berlin“; Notiz Schritt 1 und Beleg [3] anpassen; die Spannung Kompetenz ↔ Hürde als Lücke zeigen. Zusammen mit „Abenteurer“ → „Hedonisten“ in einem Durchgang erledigen, auf beiden Branches
 - [ ] Jost-Zitate [24] im Audio prüfen (Kurswechsel mit dem Eistee, „gar nicht beim Gaming“); im TikTok-Video [6] nachsehen, ob es ein REWE-Markt ist
-- [ ] Mitarbeitende und Kund:innen auf Website und Karriereseite kurz vor dem 26.10. neu ablesen
+- [ ] Mitarbeitende und Kund:innen auf Website und Karriereseite kurz vor dem 27.10. neu ablesen
 - [x] Grafik `grafiken/folie-03-markenkompetenz.svg` + PNG erstellt (17.10.)
 - [ ] Web-Folie f03 austauschen: Daten (unten), Titel-Ersatztext („… mit Softdrinks zum Selbermixen“), Fußzeile (fester Text unten, mit Legende), Label „Marktrolle“ streichen, ggf. Überschrift „Laut Unternehmen“ ergänzen (dann `quelle` in den Kennzahlen leeren), Notizen = Sprechtext + Belegabsatz (komplett neu, unten), Markenname als `<span data-marke></span>`. Branch von Account 2 beachten
 - [ ] Backup-Bezug mit Elias und Account 2 klären (B1b oder Verweis). In B7 vermerken, dass [13] für Claim und Herkunftszitat am 17.10.2026 selbst geprüft wurde; neue Quellen (DealMonitor 30.08.2021, ESCH-Präsentation, welt-der-bwl.de) ergänzen
@@ -1263,7 +1263,7 @@ zum Vergleich Dossier 6.1 ✔ [19, 20, 122–124] (Stand 14.10.2026) · Kroeber-
 
 - [ ] Elias: Kurzformen der Rollen, Bildwelt-Beschreibungen und Schlüsselbild-Satz freigeben
 - [ ] Elias: Zielgruppen-Begründung für TikTok klären (`kommunikationsanalyse.md` §13, Frage 1)
-- [ ] Follower kurz vor dem 26.10. neu ablesen oder Stand 20./21.10.2026 in der Fußzeile lassen
+- [ ] Follower kurz vor dem 27.10. neu ablesen oder Stand 20./21.10.2026 in der Fußzeile lassen
 - [ ] Kroeber-Riel (1993) gegen die Literaturliste der Vorlesung abgleichen (#14)
 
 ---

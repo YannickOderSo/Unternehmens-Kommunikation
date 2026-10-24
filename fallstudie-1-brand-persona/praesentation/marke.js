@@ -105,7 +105,7 @@ window.MARKE = {
   // Dossier Kap. 1, Impressum und Handelsregister ✔ [2, 3].
   unternehmen: 'HOLY Softdrinks GmbH',
   gruppe: ['Yannick Heisler', 'Elias Knauber', 'Lukas Welker'],
-  datum: '2026-10-26',            // Jahr-Monat-Tag
+  datum: '2026-10-27',            // Jahr-Monat-Tag (Vortrag Di, 27.10.2026 laut Yannick, 24.10.2026; bis dahin 2026-10-26)
   dauerMinuten: 15,               // Sollzeit für die Uhr in der Referentenansicht
   anrede: 'Sie',                  // 'Sie' oder 'ihr' – einheitlich für alle Folien festlegen
 
@@ -137,7 +137,7 @@ window.MARKE = {
                     Muss auf GitHub UND auf dem Präsentationsrechner stehen.
      runde          trennt Probe und Vortrag (nur A–Z a–z 0–9 _ -, höchstens 40
                     Zeichen): 'probe' für Tests und Generalprobe, spätestens am
-                    Vortag 'vortrag-2026-10-26' – dann beginnt Folie 08 bei 0,
+                    Vortag 'vortrag-2026-10-27' – dann beginnt Folie 08 bei 0,
                     die Probestimmen bleiben in der Tabelle, zählen aber nicht.
                     Auch die im Browser gespeicherten Zahlen (Stimmen, Handwerte)
                     gelten nur in ihrer Runde – Probezahlen erscheinen im Vortrag nie.
@@ -189,13 +189,13 @@ window.MARKE = {
       // Skript bei Google bleibt unverändert). Probestimmen der Runde 'probe'
       // mit Option 2 (abgegeben für den Waschbär) zählen jetzt als Chamäleon,
       // mit Option 3 (abgegeben für den Fuchs) als Papagei – unkritisch, die
-      // Runde wird vor dem Vortrag ohnehin auf 'vortrag-2026-10-26' umgestellt.
+      // Runde wird vor dem Vortrag ohnehin auf 'vortrag-2026-10-27' umgestellt.
       optionen: ['Adler', 'Löwe', 'Chamäleon', 'Papagei', 'Schwan'],
       link: 'https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/abstimmen.html?u=tier',
       kurzLink: '',                                             // leer = keine Zeile unter dem QR-Code (Weg B: z. B. 'particify.de/p/12345678')
       ergebnisLink: '',                                         // nur Weg B: Ergebnisseite des Werkzeugs
       liveQuelle: 'https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec', // Web-App (eingerichtet von Yannick, 19.10.2026) – leer = aus
-      runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-26'
+      runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-27'
       gueltigMinuten: 30,                                       // Stimmen zählen 30 Minuten (Yannick, 20.10.2026); 0 oder leer = ohne Zeitgrenze
       // Ergebnis unserer Analyse (Folie 08, Titel): seit Fr, 23.10.2026 beide Tiere
       // nach Elias Knauber (Papagei = sein Tier 1, Chamäleon = Tier 2), gleichwertig

@@ -2,7 +2,7 @@
 
 Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **HOLY**) im Modul
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
-Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
+Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Di, 27.10.2026**, 15 Minuten (laut Yannick, 24.10.2026; bis dahin geplant Mo, 26.10. – die Vorlesungsfolien, Stenger S. 57, nennen „am 26.10.“).
 
 Stand: 24.10.2026 (neue Folie 05b „Gründerbefragung: Innensicht“, Folie 01 und 02 gekürzt – siehe unten; 23.10.:
 KI-simulierte Befragung für Bündel B eingebaut, Rad = Selbstbild, Papagei und Chamäleon; 22.10.: Material von Elias Knauber eingebaut, Freigabe offen) – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
@@ -315,7 +315,7 @@ bleibt trotzdem nötig (sie trennt Probe und Vortrag ganz).
 | Eintrag | Wert |
 |---|---|
 | `liveQuelle` | Web-App-URL aus der Anleitung: `'https://script.google.com/macros/s/…/exec'`. Leer `''` = Weg A aus (dann kein QR-Code, links „Abstimmung per Handzeichen“) |
-| `runde` | `'probe'` für Tests und Generalprobe. **Spätestens So, 25.10.:** `'vortrag-2026-10-26'` – dann beginnt Folie 08 bei 0, die Probestimmen bleiben in der Tabelle, zählen aber nicht |
+| `runde` | `'probe'` für Tests und Generalprobe. **Nach der Generalprobe (So, 25.10.), spätestens am Vortag Mo, 26.10.:** `'vortrag-2026-10-27'` – dann beginnt Folie 08 bei 0, die Probestimmen bleiben in der Tabelle, zählen aber nicht |
 | `gueltigMinuten` | `30` (seit 20.10.2026): Stimmen zählen auf Folie 08 nur so viele Minuten. `0` = ohne Zeitgrenze (z. B. falls die Kurzprüfung der Anleitung scheitert). Ändern wie `runde`: auf GitHub **und** auf dem Präsentationsrechner |
 | `link` | Adresse der Abstimmseite (für den QR-Code) – steht schon drin, nicht ändern |
 
@@ -337,7 +337,7 @@ Pages zeigt die fünf Tiere (nicht „Die Abstimmung ist gerade nicht geöffnet�
    lassen – Anleitung, Schritt 7: 40 Handys gleichzeitig, mindestens zweimal, einmal mit 60 (für den Hörsaal mit höchstens ca. 20 Personen reicht zweimal `--anzahl 20`, Yannick 20.10.2026; Checkliste 12.1). Er spielt die
    automatische Wiederholung der Handys nach und lässt eine „Folie“ mitlesen. **BESTANDEN** heißt: alle
    Stimmen gezählt, kein Handy musste selbst tippen, jedes sah „Danke“ nach höchstens 15 s.
-4. Nach dem Umstellen auf `'vortrag-2026-10-26'`: Folie 08 zeigt `n = 0`, und `marke.js` auf GitHub Pages
+4. Nach dem Umstellen auf `'vortrag-2026-10-27'`: Folie 08 zeigt `n = 0`, und `marke.js` auf GitHub Pages
    nennt dieselbe Runde (Anleitung, „Vor dem Vortrag“ – sonst zählen die Handys weiter in „probe“).
 
 **Die Pille im Kopf der Ergebnisse** (Maus auf die Pille zeigt Runde, Zeitfenster, letzten Stand bzw. den Grund;
@@ -382,7 +382,7 @@ zum Zeitfenster: „zählt Stimmen der letzten 30 Min.“, „OHNE Zeitfenster �
   `js/abstimmen.js`, jede muss auffallen (Abschnitt 13, `AUTOREN.md` §20).
 - **Rückfall im Vortrag:** Ist nur der Präsentationsrechner offline, die Handys aber nicht, kommen die Stimmen
   trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen, mit
-  Zeitfenster wie Folie 08: `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5&minuten=30`)
+  Zeitfenster wie Folie 08: `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-27&anzahl=5&minuten=30`)
   und trägt die Zahlen über „Werte“ ein (Reihenfolge Adler, Löwe, Chamäleon, Papagei, Schwan). Geht gar nichts:
   Plan C.
 - **Nach dem Vortrag:** Ergebnis **gleich** sichern – Foto von Folie 08 und die Stand-Adresse **mit**
@@ -449,7 +449,7 @@ Alles, was sich mit der Marke ändert, steht in **`marke.js`** (mit Editor öffn
 | `titel`, `gruppe`, `datum`, `dozent` … | Angaben für Titelfolie, Kopfzeilen und Schlussfolie |
 | `unternehmen` | Firma hinter der Marke („HOLY Softdrinks GmbH“, Dossier Kap. 1 ✔ [2, 3]) – für die Zeile „Studentische Fallstudie · keine Verbindung zur …“ auf Folie 01 und 12 |
 | `anrede` | „Sie“ (einheitlich) |
-| `umfragen.tier` | Live-Umfrage: Frage, Tiere, `liveQuelle` (Web-App der eigenen Abstimmung), `runde` (`'probe'` → `'vortrag-2026-10-26'`), `link` (siehe Abschnitt 6) |
+| `umfragen.tier` | Live-Umfrage: Frage, Tiere, `liveQuelle` (Web-App der eigenen Abstimmung), `runde` (`'probe'` → `'vortrag-2026-10-27'`), `link` (siehe Abschnitt 6) |
 | `wortwolken.assoziationen` | Texte der Wortwolke |
 | `optionaleFolien` | `f01b: true/false` |
 | `beispieldatenHinweis` | `true` = Pillen „Beispieldaten“ zeigen – erst auf `false`, wenn **keine** erfundenen Werte mehr auf den Folien stehen |
@@ -472,7 +472,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 <!-- ══════════════════════════════════════════
      ║ FOLIE 06 · Repertory Grid
      ║ Bündel B – Lukas Welker · Sollzeit 80 s · Feld: Markeneigenschaften
-     ║ VOR DEM 26.10. ÄNDERN / PRÜFEN: …
+     ║ VOR DEM 27.10. ÄNDERN / PRÜFEN: …
 ```
 
 - Mit **Strg+F** „FOLIE 06“ suchen. Darunter: ausführliche Anleitung der Folie, dann die Folie.
@@ -563,7 +563,7 @@ Nachtrag N1–N7 – die Kennungen in Klammern verweisen dorthin –, die Käste
 `../arbeitsplan.md`). Jeder offene Punkt steht **einmal**, bei der Person, die ihn erledigen muss; wer zuarbeitet,
 steht in Klammern. **Termine:** Datenschluss **heute, Mi 21.10. abends** · Synthese **Do 22.10.** · Folien final
 **Fr 23.10.** · Backup, KI-Listen, Zwischenexport **Sa 24.10.** · Generalprobe und endgültiger Export **So 25.10.** ·
-Vortrag **Mo 26.10.** Was am Di 20.10. fällig war, ist überfällig und steht als **sofort**. Inhalte von Lukas und
+Puffer **Mo 26.10.** · Vortrag **Di 27.10.** (seit 24.10.2026; bis dahin Mo 26.10.). Was am Di 20.10. fällig war, ist überfällig und steht als **sofort**. Inhalte von Lukas und
 Elias baut Account 1 erst nach ihrer Lieferung ein (Abschnitt 12.5).
 
 **Nachtrag Do, 22.10.2026:** Elias' Ausarbeitungen (Analogien, Kommunikationsanalyse) sind eingebaut (`AUTOREN.md`
@@ -667,7 +667,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 - [ ] **Datenschluss einfordern und Synthese vorbereiten:** Stand von Lukas und Elias heute abends einholen
       (G1); Tagesordnung für Do 22.10. (Abschnitt 12.4, erster Punkt)
 - [ ] **Gruppe in die Google-Tabelle eintragen** (Link auf Stenger, S. 57; Y4), mit Datum in `../arbeitsplan.md`
-      abhaken; Reihenfolge und Uhrzeit am 26.10. an Account 1
+      abhaken; Reihenfolge und Uhrzeit am 27.10. an Account 1
 
 **Bis Do, 22.10. (Synthese)**
 - [ ] **Folie 03 – Markenkern freigeben** (Y1): Entwurf aus `../markenkompetenz.md` (A1) und Folienentwurf 3
@@ -781,8 +781,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       P11 („Analogien Mensch, Tier“) und P12 („Beiträge codieren“) klären: Hat Elias KI genutzt? Wenn nein, als
       „nicht genutzt“ kennzeichnen oder streichen (Kasten „B2“; `../fragerunde.md` F37)
 
-**Bis So, 25.10.**
-- [ ] **Runde umstellen** (spätestens So 25.10., nach der Generalprobe): `runde: 'vortrag-2026-10-26'` in
+**Bis So, 25.10. bzw. Mo, 26.10. (Runde)**
+- [ ] **Runde umstellen** (nach der Generalprobe So 25.10., spätestens am Vortag Mo 26.10.): `runde: 'vortrag-2026-10-27'` in
       `marke.js` auf GitHub **und** auf dem Präsentationsrechner. Kontrolle beider Stellen (Anleitung, „Vor dem
       Vortrag“): `marke.js?v=…` auf GitHub Pages nennt die neue Runde und `gueltigMinuten: 30`, Folie 08 zeigt
       `n = 0`; die Stand-Adresse für den Rückfall als Lesezeichen auf einem Handy anlegen (Abschnitt 6)
@@ -792,7 +792,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 
 **Nach dem Vortrag** (Anleitung, „Nach dem Vortrag“)
 - [ ] Ergebnis von Folie 08 **gleich** sichern (Foto oder Zahlen und die Stand-Adresse mit `&minuten=30`, Quelle
-      „eigene Live-Umfrage im Hörsaal, 26.10.2026, n = …“) – nach 30 Minuten zeigt die Folie die Stimmen nicht mehr.
+      „eigene Live-Umfrage im Hörsaal, 27.10.2026, n = …“) – nach 30 Minuten zeigt die Folie die Stimmen nicht mehr.
       Die Stand-Adresse ohne `&minuten=30` zählt sie weiter, aber auch ältere Teststimmen der Runde
 - [ ] Web-App archivieren, `liveQuelle: ''` in `marke.js`; Tabelle löschen oder Spalte „Geraet“ entfernen
 
@@ -890,7 +890,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 - [x] ~~**B4 und B5 mit echten Rohdaten**~~ – **erledigt 23.10.** mit den KI-simulierten Daten (E15: fertige Werte aus
       der CSV); offen nur: KI-Liste an Yannick (Abgabe Fr 23.10.)
 
-**So, 25. oder Mo, 26.10.**
+**So, 25., Mo, 26. oder Di, 27.10. (vor dem Vortrag)**
 - [ ] ~~Energy-Sorten im Shop nachzählen (Folie 08: „31 Energy-Sorten“)~~ (überholt 22.10.: steht nicht mehr auf
       der Karte, nur noch in der gekennzeichneten Dossier-Ergänzung der Notizen von 08 und in `../fragerunde.md` F21 –
       optional nachzählen, F08-23)
@@ -985,7 +985,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       gekürzte Zellen freigeben); KI-Liste an Yannick (Abgabe Fr 23.10.); Gesamtdeck abnehmen und
       kritisch prüfen (Tagesplan, P14) – Lieferungen von Lukas und Elias als Tabelle (G5)
 
-**So, 25. oder Mo, 26.10.**
+**So, 25., Mo, 26. oder Di, 27.10. (vor dem Vortrag)**
 - [ ] **Kurz vor dem Vortrag neu ablesen** (E13): Kennzahlen auf Folie 03 (Kund:innen auf der Website,
       Mitarbeitende auf der Karriereseite – mit Yannick), [12], Stand der Zuckersteuer (BR-Drs. 145/26), Preis; dazu
       die Follower auf Folie 09 – **oder** bewusst beim Stand 20./21.10.2026 in der Fußzeile bleiben (deine
@@ -1071,13 +1071,13 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 - [ ] Mit Licht von der letzten Reihe: Lesbarkeit, Farben, QR-Code
 - [ ] Internet am Präsentationsrechner (Hörsaal-WLAN oder Handy-Hotspot); Folie 08 zeigt **„Live“**; eine
       Teststimme aus der letzten Reihe über mobile Daten kommt auf der Folie an (danach Testzeile im Blatt
-      „Stimmen“ löschen, falls die Runde schon `vortrag-2026-10-26` ist – das Zeitfenster allein reicht nicht, die
+      „Stimmen“ löschen, falls die Runde schon `vortrag-2026-10-27` ist – das Zeitfenster allein reicht nicht, die
       Teststimme zählt noch 30 Minuten)
 - [ ] Ton aus, Benachrichtigungen aus (Fokus-/Nicht-stören-Modus), Updates und Energiesparen aus, Netzteil
       angeschlossen, Bildschirmsperre aus
 
 **30 Minuten vorher**
-- [ ] **Weg A:** Folie 08 zeigt „Live“ und `n = 0` (Runde `vortrag-2026-10-26`) – **nicht** „Zurücksetzen“ klicken
+- [ ] **Weg A:** Folie 08 zeigt „Live“ und `n = 0` (Runde `vortrag-2026-10-27`) – **nicht** „Zurücksetzen“ klicken
       (pausiert die Abfrage; falls doch: Pille anklicken). Steht „Live pausiert“ oder „offline“: Pille anklicken.
       Maus auf der Pille: „zählt Stimmen der letzten 30 Min.“ (steht „OHNE Zeitfenster“: Skript nicht aktualisiert –
       Yannick, Plan C bereithalten). Ein Handy öffnet den QR-Code und sieht die Tiere. Bleibt die Pille „offline“:

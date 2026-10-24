@@ -55,7 +55,7 @@
    Eingang der Anfrage): Umentscheiden ersetzt die alte Stimme, ein zweiter
    Klick zählt nicht doppelt.
    „runde“ trennt Probe und Vortrag (marke.js → umfragen.tier.runde, z. B.
-   'probe' und 'vortrag-2026-10-26'). So beginnt der Vortrag ohne Probestimmen –
+   'probe' und 'vortrag-2026-10-27'). So beginnt der Vortrag ohne Probestimmen –
    ohne geheimen Schlüssel im öffentlichen Repository.
 
    ZEITFENSTER (Fassung vom 20.10.2026)

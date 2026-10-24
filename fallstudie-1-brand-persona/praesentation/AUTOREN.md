@@ -10,7 +10,7 @@ JS-Datei je Folien-Gruppe.
 einzige Quelle für Folieninhalte. Den früheren Bauschritt (`folien/*.html` + `werkzeuge/zusammenbauen.py`)
 gibt es nicht mehr. Ändern = `index.html` bearbeiten, speichern, im Browser **F5**.
 Vor jeder Folie steht ein Kommentarkasten `FOLIE xx` (in `index.html` mit Strg+F „FOLIE 06“ suchen):
-Bündel, Sollzeit, zugehörige CSS-/JS-Datei und was vor dem 26.10. noch zu ändern ist. Darunter folgt die
+Bündel, Sollzeit, zugehörige CSS-/JS-Datei und was vor dem 27.10. noch zu ändern ist. Darunter folgt die
 ausführliche Anleitung der Folie, dann die Folie selbst.
 
 **Beispiele:** Die bisherige Demo-Datei ist entfernt; die echten Folien zeigen jeden Baustein in Benutzung
@@ -129,7 +129,7 @@ Rückfragen“ beginnt.
 | `<span data-marke></span>` / `<em data-marke></em>` | Markenname („HOLY“); `<em data-marke>` im Titel: auf hellen Folien schwarz mit gelbem Textmarker (`--f-kern`), auf dunklen in der Akzentfarbe (`css/komponenten.css`) |
 | `<span data-marke="kurz"></span>` | Kurzname |
 | `<span data-gruppe></span>` / `data-gruppe="zeilen"` | Namen mit „·“ bzw. untereinander |
-| `<span data-datum></span>` / `data-datum="lang"` | 26.10.2026 bzw. „Montag, 26. Oktober 2026“ |
+| `<span data-datum></span>` / `data-datum="lang"` | 27.10.2026 bzw. „Dienstag, 27. Oktober 2026“ (aus `marke.js` → `datum`, Wochentag automatisch) |
 | `data-veranstaltung`, `data-dozent`, `data-hochschule`, `data-praesentation`, `data-fallstudie` | Angaben aus marke.js |
 | `<span data-unternehmen></span>` | Firma hinter der Marke (`marke.js → unternehmen`, Einordnungszeile auf Folie 01 und 12) |
 | `<img data-marke-logo>` | Logo-Pfad aus marke.js (`logo`, Wortmarke, Folie 09b); das Logo der Titelfolie kommt aus `logoTitel` (setzt `js/folien/01-einstieg.js`) |
@@ -309,7 +309,7 @@ Handys testen.
 - **Eigene Live-Abstimmung** (seit 19.10.2026; Bedienung `LIESMICH.md` Abschnitt 6, Einrichtung
   `live-abstimmung/ANLEITUNG.md`). Felder: `liveQuelle` = Web-App-URL `https://script.google.com/macros/s/<ID>/exec`
   (leer = aus – dann verhält sich der Baustein genau wie vorher), `runde` = `[A-Za-z0-9_-]{1,40}` (`'probe'`, im
-  Vortrag `'vortrag-2026-10-26'`). Mit `liveQuelle` zeigt der QR-Code auf `link` (`abstimmen.html?u=tier`; ohne
+  Vortrag `'vortrag-2026-10-27'`). Mit `liveQuelle` zeigt der QR-Code auf `link` (`abstimmen.html?u=tier`; ohne
   `liveQuelle` gibt es für diese Adresse keinen QR-Code, ohne `kurzLink` keine Zeile darunter).
   Schnittstelle (nur GET, JSONP per `<script>` – unabhängig von CORS; vollständig im Kopf von
   `live-abstimmung/apps-script.gs`): Folie `?aktion=stand&umfrage=tier&runde=…&anzahl=5[&minuten=30]&callback=f` →
@@ -1232,7 +1232,7 @@ Zusammenführen.
 Auftrag Yannick (20.10.2026, wörtlich): „Die Abstimmung sollte reseted werden nach einer gewissen Zeit damit bei der
 Präsentation keine alten Stimmen dastehen.“ **Entscheidung:** Stimmen zählen auf Folie 08 nur **30 Minuten**
 (`marke.js → umfragen.tier.gueltigMinuten: 30`). Umgesetzt als abwärtsverträgliche Erweiterung der Schnittstelle:
-Gelöscht wird nichts, die Zeilen bleiben in der Tabelle; die Runde (`'probe'` / `'vortrag-2026-10-26'`) trennt
+Gelöscht wird nichts, die Zeilen bleiben in der Tabelle; die Runde (`'probe'` / `'vortrag-2026-10-27'`) trennt
 Probe und Vortrag weiter ganz. `liveQuelle` und `runde` sind unverändert, ebenso Folie 01, die Bilder und alle
 sichtbaren Folieninhalte. Das Zeitfenster wirkt erst, wenn bei Google die **Skript-Fassung 20.10.2026** läuft
 (ANLEITUNG, „Skript aktualisieren“) – bis dahin zählt die Web-App ohne Zeitgrenze.
@@ -1821,3 +1821,27 @@ Die D27-Nacharbeit war in `index.html` richtig, in den Begleitdateien teils nich
 | 05b: „Softdrinks“/„Einwilligung“ allein in der letzten Zeile (niedrig) | `text-wrap: pretty` für Steckbrief-Werte und Metazeile. |
 | Klickzahl, Seitenzahlen, export-Stand in LIESMICH; Folie 12 Sprechzettel ohne Innensicht; fragerunde F40 nicht in der Übung; Bausteintabelle ohne `.kennzeichnung`; README FS1 Folienplan; arbeitsplan Zeiten; VORTRAGSREIFE ohne Nachtrag (niedrig) | 67 Klicks (gezählt), Seiten nach dem Export (Abschnitt 15); Sprechzettel-Absatz Folie 12; F40 in der Übungsreihenfolge, Themenzählung; Bausteintabelle oben; Hinweis unter dem Folienplan; Plan-Zeiten 4:15 / 0:35 + 4:50 / 4:25; Nachtrag 24.10. |
 | Folie 10: Wortsumme „um eins zu hoch“ (niedrig) | **Nicht übernommen:** Das Zählskript ergibt 12 + 11 + 9 + 13 + 8 + 8 + 7 + 7 + 32 + 39 = 146 Wörter; die Angabe stimmt. |
+
+## 26. Vortragstag Di, 27.10.2026 (Sa, 24.10.2026)
+
+Laut Yannick (KI-Nachweis 159) ist der Vortrag am **Dienstag, 27.10.2026** (bis dahin geplant Mo, 26.10.; die
+Vorlesungsfolien, Stenger S. 57, nennen „am 26.10.“ – in `../abgleich-vorlesung.md` vermerkt). Umgestellt:
+
+| Bereich | Änderung |
+|---|---|
+| `marke.js` | `datum: '2026-10-27'` – Titelfolie zeigt „Dienstag, 27. Oktober 2026“ (Wochentag aus `js/deck.js`); Kommentare nennen den künftigen Rundennamen `'vortrag-2026-10-27'`. **`runde` bleibt `'probe'`** bis zur Umstellung nach der Generalprobe (spätestens Mo, 26.10.). |
+| `index.html` | Kästen „VOR DEM 27.10. ÄNDERN / PRÜFEN“, Kopfkommentar, Folie 08 (Rundenname in Kasten und Notizen), 03/09 (Ablesen vor dem 27.10.). |
+| Live-Abstimmung | `live-abstimmung/ANLEITUNG.md` (Rundenname, „spätestens am Vortag Mo, 26.10.“, Quellenzeile 27.10.2026), `abstimmen.html` und `apps-script.gs` (nur Kommentare). Testdaten „2026-10-26“ in `live-abstimmung-test.mjs` und die Textschutz-Probe im Skript bleiben (beliebige Werte). |
+| Doku | `LIESMICH.md` (Kopf, Abschnitt 6, Termine in 12, „Puffer Mo 26.10.“), Abschnitt 2 hier (Platzhalter `data-datum`), `VORTRAGSREIFE.md` (Nachtrag), `../arbeitsplan.md`, `../README.md`, `../../README.md`, Startseite `../../index.html`, `../aufgaben-im-detail.html`, `../aufgabenuebersicht.html`, `../fragerunde.md`, `../folienentwuerfe.md`, `../gruenderbefragung.md`, `../kommunikationsanalyse.md`, `../markenkompetenz.md`, `../abgleich-vorlesung.md` (Vermerk). |
+| Unverändert (datierte Aufzeichnungen) | KI-Nachweis und Workflow-Skripte, Recherche-Dossier (13./14.10.), `../dossier-buendel-b.*`, `../buendel-b/folienvorschlag.md`, `_entwuerfe/`, ältere Tabellen in diesem Dokument und der Hauptteil von `VORTRAGSREIFE.md`. |
+
+Danach Prüfung durch einen Unteragenten (D29, nur lesend; 0 hoch, 3 mittel, 7 niedrig), umgesetzt: Folienbilder
+`export/folien/*.png` und `export/uebersicht.png` neu (zeigten noch den alten Termin), die beiden Aufgaben-PDFs
+`../Fallstudie-1_Aufgaben-im-Detail.pdf` und `../Fallstudie-1_Aufgaben-und-Aufteilung.pdf` aus den HTML-Seiten neu
+gedruckt (A4, Kopfzeile „Vortragstermin aktualisiert 24.10.2026“; 8 bzw. 6 Seiten), Frist der Runde in
+`../fragerunde.md` F29 und LIESMICH 12 („spätestens Mo 26.10.“), eigener Nachtrag in `VORTRAGSREIFE.md`,
+`../abgleich-vorlesung.md` (Status Termin ◐, Befund #15 erledigt), `../aufgaben-im-detail.html` (am Vortragstag bei der
+eigenen Live-Abstimmung nicht „Zurücksetzen“). Geprüft: `pruefen.mjs --schritte --optional` in Editorial, Bento,
+Keynote, dunkel je 0 Fehler; `referent-test.mjs` 43/43; `live-abstimmung-test.mjs` 53/53; `zeitfenster-e2e.mjs` 58/58;
+`pruefe_synthese.py` ohne Fehler; PDF 23 Seiten, Seite 1 und 15 „Dienstag, 27. Oktober 2026“; f01.png angesehen.
+

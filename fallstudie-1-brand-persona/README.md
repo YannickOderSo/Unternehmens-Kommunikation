@@ -1,6 +1,6 @@
 # Fallstudie 1: Brand Persona & Markenidentität
 
-**Präsentation:** Mo, 26.10.2026 · 15 Minuten + Backup
+**Präsentation:** Di, 27.10.2026 (laut Yannick, 24.10.2026; bis dahin geplant Mo, 26.10. – Stenger S. 57 nennt „am 26.10.“) · 15 Minuten + Backup
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026
 

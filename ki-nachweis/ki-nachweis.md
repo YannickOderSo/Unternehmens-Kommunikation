@@ -178,7 +178,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 156 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nach Teilergebnis der Tests) | D28 | Zwischenstand der Nacharbeit committet (D28-Prüfer nur lesend, Tests in 3 Themen 0 Fehler) |
 | 157 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet (nur Rohprotokoll) | D28 | Rohprotokoll committet; Claude wartet in der Sitzung |
 | 158 | 24.10.2026 | System | Workflow-Meldung: D28 fertig (3 Prüfer: Inhalt, Technik, Vollständigkeit) | D28 | Befunde von Claude eingearbeitet, Tests grün, Exporte neu |
-| 159 | 24.10.2026 | Yannick | „Dienstag ist der vortrag“ (Antwort auf Rückfrage zum Vortragstag) | D29 | in Arbeit |
+| 159 | 24.10.2026 | Yannick | „Dienstag ist der vortrag“ (Antwort auf Rückfrage zum Vortragstag) | D29 | Vortragstag Di 27.10.2026 überall umgestellt; Tests grün; Exporte und Aufgaben-PDFs neu |
+| 160 | 24.10.2026 | System | Workflow-Meldung: D29 fertig (1 Prüfer, 10 Befunde) | D29 | Befunde von Claude eingearbeitet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2554,9 +2555,27 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   selbst bleibt bis zur Umstellung `probe`). Datierte Aufzeichnungen (KI-Nachweis, Workflow-Skripte, Recherche-Dossier
   vom 13./14.10., Testdaten) bleiben unverändert. Hinweis an Yannick: Die Vorlesungsfolien (Stenger, S. 57) nennen
   „am 26.10.“ – in `abgleich-vorlesung.md` vermerkt. Danach Prüfung durch einen Unteragenten (D29), Tests, Exporte.
-- **Ergebnis:** in Arbeit
-- **Unteragenten:** D29 (geplant)
+- **Ergebnis:** Titelfolie „Dienstag, 27. Oktober 2026“; Mo 26.10. als Puffer; Runde der Live-Abstimmung künftig
+  `vortrag-2026-10-27` (Wert in `marke.js` weiter `probe`). Tests: `pruefen.mjs` in vier Varianten je 0 Fehler,
+  `referent-test.mjs` 43/43, `live-abstimmung-test.mjs` 53/53, `zeitfenster-e2e.mjs` 58/58, `pruefe_synthese.py` ohne
+  Fehler. Exporte (PDF 23 Seiten, Folienbilder, Übersicht) und die beiden Aufgaben-PDFs neu erzeugt.
+- **Erstellte/geänderte Dateien:** `README.md`, `index.html` (Startseite); `fallstudie-1-brand-persona/README.md`,
+  `arbeitsplan.md`, `aufgaben-im-detail.html`, `aufgabenuebersicht.html`, `Fallstudie-1_Aufgaben-im-Detail.pdf`,
+  `Fallstudie-1_Aufgaben-und-Aufteilung.pdf`, `fragerunde.md`, `folienentwuerfe.md`, `gruenderbefragung.md`,
+  `kommunikationsanalyse.md`, `markenkompetenz.md`, `abgleich-vorlesung.md`; `praesentation/marke.js`, `index.html`,
+  `abstimmen.html`, `live-abstimmung/ANLEITUNG.md`, `live-abstimmung/apps-script.gs` (Kommentar), `LIESMICH.md`,
+  `AUTOREN.md` (§26), `VORTRAGSREIFE.md` (Nachtrag), `export/`; `ki-nachweis/ki-nachweis.md`,
+  `ki-nachweis/workflows/2026-10-24_vortragstag-pruefung.js`.
+- **Unteragenten:** D29
 - **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 160 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D29 „vortragstag-pruefung“: abgeschlossen, 1 von 1 Prüfer fertig.
+
+- **Vorgehen Claude:** 10 Befunde (0 hoch, 3 mittel, 7 niedrig) gelesen, an den Dateien nachvollzogen und eingearbeitet
+  (siehe 159 und `praesentation/AUTOREN.md` §26).
 
 ---
 
@@ -2599,6 +2618,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D26 | 23.–24.10.2026 | 135 (fortgesetzt nach 136, 139, 142; Rest durch Claude nach 146/147) | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen; 5 davon gelaufen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | Folien 02, 06, 07, 08, 08b, 10 (Selbstbild + Abgleich), B1, B2, B4, B5 u. a.; Abstimmung mit Papagei und zwei Antworten; Doku; Prüfer „Treue“ (1 hoch, 5 mittel) – eingearbeitet von Claude; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Limit gescheitert und von Claude selbst erledigt | Claude: alle Tests selbst ausgeführt, Folien 02, 06, 07, 08, 08b, 10 angesehen, Exporte |
 | D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ (gebaut als 05b „Gründerbefragung: Innensicht“) vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
 | D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | index.html inhaltlich korrekt; 1 mittlerer Technikbefund (Umschalttaste), Begleitdateien teils veraltet (Folienentwürfe, LIESMICH, Datum in Notizen, Zeitbilanz), ca. 25 niedrige Befunde | Claude: Befunde an Code, CSV und Quellen geprüft, eingearbeitet (einer verworfen), Tests und Tastenproben erneut |
+| D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3470,6 +3490,22 @@ steht hier mit dem wörtlichen Auftrag.
   gezählt (53 Schritte + 14 Folienwechsel = 67), Wortsumme Folie 10 mit dem Zählskript (146 – Befund verworfen);
   Umschalttasten-Fehler mit dem Probeskript des Prüfers vor und nach der Korrektur getestet; Tab-Reihenfolge auf
   Folie 10 getestet; danach alle Tests, Exporte, Folienbilder 05b, 02 und 10 angesehen.
+
+
+### D29 – 24.10.2026 – ausgelöst durch Prompt 159
+
+- **Art:** Workflow „vortragstag-pruefung“: ein adversarialer Prüfer, nur lesend; soll jede verbliebene Angabe des alten
+  Termins finden und zwischen aktueller Angabe und zulässiger historischer Angabe unterscheiden, mit Beleg je Befund.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-24_vortragstag-pruefung.js`](workflows/2026-10-24_vortragstag-pruefung.js).
+- **Ergebnis:** `runde` in `marke.js` unverändert `probe`, `datum` 2026-10-27; Rundenname überall `vortrag-2026-10-27`;
+  Wochentag-Datum-Paare und HTML-Tabellen in Ordnung. 10 Befunde: Folienbilder `export/folien/f01.png`, `f12.png` und
+  Übersicht zeigten noch Montag; die beiden Aufgaben-PDFs (Stand 14.10.) nannten Montag; F29 in `fragerunde.md` mit
+  alter Frist; dazu Überschrift und Satzende in LIESMICH, Nachtrag in VORTRAGSREIFE schwer zu finden, Status in
+  `abgleich-vorlesung.md`, „Umfrage zurücksetzen“ auf der Aufgabenseite, falscher Zeilenverweis in `fragerunde.md`.
+  Hinweis ohne Befund: Termine von Fallstudie 2 und 3 (Mo 09.11., Mo 16.11.) ggf. ebenfalls nachfragen.
+- **Wie Claude das Ergebnis geprüft hat:** jeden Befund an der Datei nachvollzogen; nach der Umsetzung Folienbild f01
+  angesehen, PDF-Seiten 1 und 15 sowie die Aufgaben-PDFs per `pdftotext` auf „26.10“/„27.10“ geprüft, Seite 1 und 6
+  der Aufteilung als Bild angesehen.
 
 ---
 

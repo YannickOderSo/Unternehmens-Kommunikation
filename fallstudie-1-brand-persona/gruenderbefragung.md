@@ -170,7 +170,7 @@ freigegeben) · **nach Lukas** = erst nach Lukas' Codierung bzw. echten Daten ·
 | K6 | „Premium“ (Triade 3) gegen „günstiger als Alternativen“, „Geld sparen“, „faire Preis-Leistung“. | Kein Widerspruch zur Lesart „mittleres Preisniveau, günstig pro Portion online“ (Dossier 3.2), aber eine Spannung im Selbstbild. Im Rad „Premium“ und „günstig“ nicht ohne Zusatz nebeneinander. Nur echte RG- und LA-Daten entscheiden, ob „günstig pro Portion“ ins Rad kommt. | Synthese 22.10. |
 | K7 | Selbermischen als Individualität (Selbstbild) gegen „selbst anrühren“ als mögliche Hürde (Fremdbild, noch Beispieldaten). | Erst nach Lukas' echten RG-Daten: Bestätigt sich die Hürde, auf Folie 10/11 „Selbstbild: Individualität durch Selbermischen ↔ Fremdbild: Hürde ‚selbst anrühren‘“. Individualität nicht vorher an Lukas geben. | nach Lukas |
 | K8 | Purpose „meistgeliebte Softdrink-Marke“ deckt sich mit der Vision 2026 [17, 31]. | Vision bleibt; Vermerk „von Gründer Mathias Horsch als Purpose genannt (GB)“. Begriff „Purpose“ mit der Vorlesung abgleichen. | jetzt |
-| K9 | Die fünf Firmenwerte nennt er sinngemäß mit Erläuterung; die Schreibweise in der Abschrift ist nach [17] bereinigt (kein unabhängiger Beleg für den Wortlaut). | [17] vor dem 26.10. selbst neu abrufen (war am 17.10. nicht lesbar). | jetzt |
+| K9 | Die fünf Firmenwerte nennt er sinngemäß mit Erläuterung; die Schreibweise in der Abschrift ist nach [17] bereinigt (kein unabhängiger Beleg für den Wortlaut). | [17] vor dem 27.10. selbst neu abrufen (war am 17.10. nicht lesbar). | jetzt |
 | K11 | „Gutes Gewissen“ füllt er mit Zucker, Kalorien und Inhaltsstoffen; Koffein nennt er nicht (nicht gefragt). | Lücke 1 auf Folie 10 („gutes Gewissen ↔ 160 mg Koffein“) bleibt und lässt sich allein mit der Außensicht begründen (Dossier S1 [27, 28, 29]). „Funktionale Inhaltsstoffe“ nicht als Nutzenaussage übernehmen (nur zugelassene Nutzenaussagen, Dossier 3.7). | jetzt (ohne GB) |
 | K12 | Selbstbild „Softdrink-Marke, kein Nahrungsergänzungsmittel“ (Triade 1). Rechtlich ist die Energy-Linie ein Nahrungsergänzungsmittel ✔ [56, 72] (Dossier S1). | Spannung, kein Fehler. Rückfrage 6 zu Folie 03 um die rechtliche Einordnung ergänzen (ohne GB möglich), als mögliche Rückfrage zu Folie 10/11 bereithalten. | jetzt (ohne GB) |
 | K14 | Folie 02, Rückfrage 2: Quellen des Selbstbilds. | „eine eigene Befragung von Gründer Mathias Horsch per Sprachnachricht“ ergänzen; Grafik von Folie 02 nicht ändern. | jetzt |
@@ -280,4 +280,4 @@ Außensicht (Empfohlen)“; Workflow D27, Einbau KI-gestützt; Prüfung durch Ya
       (4.4) bestätigen.
 - [x] Transkript im Gruppenordner (Google Drive), Kopien in der Sitzung gelöscht (19.10.2026). **Yannick:** Ordner mit
       Lukas und Elias teilen, falls gewünscht.
-- [ ] **Yannick:** Karriereseite [17] vor dem 26.10. neu abrufen (K9).
+- [ ] **Yannick:** Karriereseite [17] vor dem 27.10. neu abrufen (K9).
