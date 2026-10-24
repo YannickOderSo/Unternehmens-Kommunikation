@@ -162,6 +162,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 140 | 23.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D26 (fortgesetzt) | fortgesetzt |
 | 141 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
 | 142 | 23./24.10.2026 | System | Workflow-Meldung: D26 – Synthese (Folien, Doku) und alles danach erneut am Nutzungslimit gescheitert; mehrfacher Neustart der Sitzung | D26 (fortgesetzt) | Hinweis in beide Synthese-Aufträge, fortgesetzt |
+| 143 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2337,6 +2338,15 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   eingefügt (die fertigen Bau-Agenten bleiben im Zwischenspeicher). Nach dem Reset (01:10 UTC) per resume fortgesetzt
   – entsprechend Yannicks letzter Anweisung (Eintrag 140: „Bitte mache dort weiter, wo du aufgehört hast“).
 - **Unteragenten:** D26 (fortgesetzt)
+
+### 143 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please
+> commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Nur Nachweis und Rohprotokoll committet; D26 läuft (Synthese, Prüfung, Nacharbeit, Abschluss).
+- **Ergebnis:** Commit + Push (nur Nachweis)
+- **Unteragenten:** D26 (läuft)
 ---
 
 ## 2. Delegationen an Unteragenten
