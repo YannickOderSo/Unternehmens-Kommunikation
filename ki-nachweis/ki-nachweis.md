@@ -180,6 +180,10 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 158 | 24.10.2026 | System | Workflow-Meldung: D28 fertig (3 Prüfer: Inhalt, Technik, Vollständigkeit) | D28 | Befunde von Claude eingearbeitet, Tests grün, Exporte neu |
 | 159 | 24.10.2026 | Yannick | „Dienstag ist der vortrag“ (Antwort auf Rückfrage zum Vortragstag) | D29 | Vortragstag Di 27.10.2026 überall umgestellt; Tests grün; Exporte und Aufgaben-PDFs neu |
 | 160 | 24.10.2026 | System | Workflow-Meldung: D29 fertig (1 Prüfer, 10 Befunde) | D29 | Befunde von Claude eingearbeitet |
+| 161 | 24.10.2026 | Yannick | Skript mit ausgeschriebenen Informationen zu jeder Folie, damit jeder zu jeder Folie Fachmann ist | D30 | in Arbeit |
+| 162 | 24.10.2026 | System | Workflow-Meldung: D30 – alle 9 Unteragenten sofort am Nutzungslimit gescheitert („resets 11:10pm (UTC)“) | D30 | nach dem Reset fortgesetzt |
+| 163 | 24./25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
+| 164 | 24./25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2577,6 +2581,50 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Vorgehen Claude:** 10 Befunde (0 hoch, 3 mittel, 7 niedrig) gelesen, an den Dateien nachvollzogen und eingearbeitet
   (siehe 159 und `praesentation/AUTOREN.md` §26).
 
+
+### 161 – 24.10.2026 – Yannick
+
+> Schreibe ein Skript und zu jeder Folie und ausgeschriebene Informationen damit jeder zu jeder folie Fachmann ist
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Workflow D30: sieben Unteragenten schreiben je einen Teil eines Vortragsskripts (Grundlagen und
+  Glossar; Folien 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12 und Backup B1–B8) nach einer festen Vorlage – je Folie
+  Kernaussage, was zu sehen ist, Sprechtext wörtlich aus den Notizen der Web-Präsentation, Hintergrundwissen zu Modell
+  und Methode, Zahlen mit Quelle und Faktenstatus, Rückfragen mit Antworten, Fallstricke, Übergang und Bedienung. Nur
+  Inhalte aus den Dateien im Repository (Quellen angeben; Modellwissen kennzeichnen). Danach zwei adversariale Prüfer
+  (Treue zu Quellen und Regeln; Vollständigkeit und Übereinstimmung mit den Folien). Claude setzt das Skript zusammen,
+  arbeitet die Befunde ein und legt es als `fallstudie-1-brand-persona/vortragsskript.md` (dazu PDF zum Ausdrucken) ab.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D30
+- **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 162 – 24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D30 „vortragsskript“: 0 von 9 Unteragenten fertig; alle: „You've hit your session
+> limit · resets 11:10pm (UTC)“.
+
+- **Vorgehen Claude:** siehe 164.
+
+### 163 – 24./25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> „This session's worker process was restarted. If your previous turn was already complete, take no action and wait
+> for the next event. Otherwise, continue from where you left off.“ (zweimal)
+
+- **Vorgehen Claude:** Stand geprüft: Repository unverändert bis auf den Nachweis; noch keine Teile des Skripts
+  geschrieben.
+
+### 164 – 24./25.10.2026 – Yannick
+
+> Weiter
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Workflow D30 mit unverändertem Skript erneut gestartet (Fortsetzung), danach Zusammenbau,
+  Einarbeitung der Prüferbefunde, Ablage und Commit.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D30
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -2619,6 +2667,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ (gebaut als 05b „Gründerbefragung: Innensicht“) vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
 | D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | index.html inhaltlich korrekt; 1 mittlerer Technikbefund (Umschalttaste), Begleitdateien teils veraltet (Folienentwürfe, LIESMICH, Datum in Notizen, Zeitbilanz), ca. 25 niedrige Befunde | Claude: Befunde an Code, CSV und Quellen geprüft, eingearbeitet (einer verworfen), Tests und Tastenproben erneut |
 | D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
+| D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 1. Lauf: alle am Nutzungslimit gescheitert; 2. Lauf: läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3506,6 +3555,16 @@ steht hier mit dem wörtlichen Auftrag.
 - **Wie Claude das Ergebnis geprüft hat:** jeden Befund an der Datei nachvollzogen; nach der Umsetzung Folienbild f01
   angesehen, PDF-Seiten 1 und 15 sowie die Aufgaben-PDFs per `pdftotext` auf „26.10“/„27.10“ geprüft, Seite 1 und 6
   der Aufteilung als Bild angesehen.
+
+
+### D30 – 24./25.10.2026 – ausgelöst durch Prompt 161 (fortgesetzt nach 164)
+
+- **Art:** Workflow „vortragsskript“: sieben Autoren parallel (je ein Teil nach fester Vorlage, nur Inhalte aus den
+  Dateien im Repository mit Quelle und Faktenstatus), danach zwei adversariale Prüfer parallel (Quellentreue und
+  Regeln; Vollständigkeit, Verständlichkeit und Übereinstimmung mit den Folien).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-24_vortragsskript.js`](workflows/2026-10-24_vortragsskript.js).
+- **Ergebnis:** 1. Lauf: alle 9 Unteragenten sofort am Nutzungslimit gescheitert; 2. Lauf: läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
 
 ---
 
