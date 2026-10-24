@@ -313,6 +313,31 @@
 .rg-kriterium-erklaerung { font-size: var(--groesse-meta); color: var(--f-text-2); }
 .rg-kriterien.ist-eng { gap: var(--abstand-1); }
 
+/* Übergabezeile (seit 23.10.2026, Daten "uebergabe", z. B. „Abgleich
+   Folie 10“): Die Folie zeigt das KI-simulierte Fremdbild; der Pfeil führt
+   zum Abgleich mit dem Selbstbild im Steuerrad. Metaangabe wie die
+   Kriterien-Überschrift, aber in Textfarbe und mit Trennlinie darüber. */
+.rg-uebergabe {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-2);
+  margin: 0;
+  margin-left: var(--abstand-4);
+  padding-top: var(--abstand-3);
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-tabelle);
+  font-weight: var(--gewicht-fett);
+  line-height: 1.25;
+  color: var(--f-text);
+}
+.rg-uebergabe .icon {
+  flex: none;
+  width: var(--groesse-tabelle);
+  height: var(--groesse-tabelle);
+  color: var(--f-akzent);
+  stroke-width: 2.6;
+}
+
 
 /* ---------------------------------------------------------------------------
    6. BEWEGUNG REDUZIEREN: Karten springen ohne Weg an ihren Platz

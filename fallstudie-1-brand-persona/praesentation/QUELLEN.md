@@ -2,7 +2,8 @@
 
 Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `praesentation/` – es wird
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
-Stand: 22.10.2026 (22.10.: Ausarbeitungen von Elias Knauber – Kommunikationsanalyse und Analogien – als Quelle,
+Stand: 23.10.2026 (23.10.: KI-simulierte Befragung Bündel B als Quelle der Folien 06, 07, 08b, B4, B5, Abschnitt 5;
+Papagei auch in der Abstimmung und auf der Abstimmseite, Abschnitt 3; 22.10.: Ausarbeitungen von Elias Knauber – Kommunikationsanalyse und Analogien – als Quelle,
 Abschnitt 5; keine Bilder daraus übernommen; Screenshot-Ausnahme für den Raptor auf Folie 09 entfällt, eigene
 Zeichnungen Papagei, Comedian und „Produkt in der Hand“, Abschnitte 3 und 4; seit 18.10.: Logo auf Folie 12 neben das Fazit verlegt, Regel für Social-Media-Bilder,
 Kategoriedaten Kantar/Statista vollständig, Rechtevermerk Limbic®, „Nachprüfung, KI-gestützt“ statt „eigene
@@ -57,7 +58,9 @@ Beides wird nicht mitgeliefert und ist für den Vortrag nicht nötig.
   eigene Gestaltung, keine fremden Icon-Bibliotheken, keine Plattform-Logos.
 - **Zeichnungen auf den Folien** (z. B. Tier-Piktogramme Chamäleon, Adler, Löwe, Schwan auf Folie 08 und
   auf der Abstimmseite – das Chamäleon seit 20.10.2026 statt des Waschbärs –, seit 22.10.2026 auf Folie 08
-  zusätzlich Papagei (Elias Knaubers anderes Tier – bei ihm „Tier 1“ –, nur auf der Folie, nicht in der Abstimmung) und ein Mensch am
+  zusätzlich Papagei (Elias Knaubers anderes Tier – bei ihm „Tier 1“; seit 23.10.2026 gleichwertig mit dem Chamäleon
+  auch in der Abstimmung und auf der Abstimmseite `abstimmen.html` statt des Fuchses, dieselbe Zeichnung in
+  `js/folien/08-analogien.js` und `js/abstimmen.js`) und ein Mensch am
   Mikrofon (Impro-Comedian), Motiv-Piktogramme auf Folie 09/09b – seit 22.10.2026 u. a. „Produkt in der Hand“ als
   Schlüsselbild-Kandidat und ein Schachbrett (Streetwear-Code nach Elias) –, Markensteuerrad, Limbic Map, Diagramme): eigene SVG-Zeichnungen bzw. per Skript aus
   den Daten erzeugt – kein Nachbau von Markenzeichen, keine Vorlage aus Elias' Bildschirmaufnahmen. Das Maskottchen
@@ -225,7 +228,9 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
     Elias' Quellen: HOLY-Website (de.holy.com, inkl. „Unsere Story“ und Produktseiten), HOLY-Stellenanzeigen,
     Instagram @holysquad.official und @holysquad.fr, Facebook-Seite holysquad.official, X @Holysquad_uk, HOLY
     TV-Spot 2026; abgerufen am 16.10.2026. Auf den Folien kurz „Ausarbeitung E. Knauber“, im Steuerrad Kürzel
-    **AN**. Verwendet auf Folie 08 (Tier, Mensch, Fußzeile, Notizen) und als Hinweis auf 08b.
+    **AN**. Verwendet auf Folie 08 (Tiere, Mensch, Fußzeile, Notizen), seit 23.10.2026 im Feld Tonalität auf Folie 10
+    („frech · gesellig · wandelbar“, je ein Wort aus Elias' drei Analogien) und in den Notizen von 08b (Selbstbild
+    gegen das KI-simulierte Fremdbild).
   Übertragen KI-gestützt (Claude Code) am 22.10.2026 (KI-Nachweis 119, Workflow D24) nach
   `../kommunikationsanalyse.md` und `../analogien.md`; dort ist bei jedem Punkt vermerkt, was zusätzlich im Dossier
   steht (mit Status) und was nur Elias belegt. Zahlen sind Elias' Werte (abgelesen bzw. von ihm selbst gerechnet),
@@ -233,11 +238,24 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
   Dossiers (z. B. Nutella-Werbeparodie, Stellenanzeigen, Claims je Land) sind Elias' eigene Recherche und nicht
   gegengeprüft. **Keine Bilder übernommen** (Abschnitt 4), keine Namen privater Personen; die PDFs liegen im
   Gruppenordner, nicht im Repository.
-- **Analogie-Tier Chamäleon** (Folie 08, seit Di, 20.10.2026; vorher Waschbär nach der Hypothese im Dossier
-  Kap. 6.7): Einordnung und – seit Do, 22.10.2026 – Begründung von Elias Knauber (Ausarbeitung Analogien, Stand
-  16.10.2026, vorheriger Punkt): wandelbar, kreativ, anpassungsfähig mit seinen Belegen (Eigenschaften und Belege von
-  Elias, die Paarung je Zeile hat die Übertragung gebildet – von Elias zu bestätigen); dazu sein anderes Tier, der
-  Papagei (bei ihm „Tier 1“), und als Mensch ein Impro-Comedian. Die Analogie bleibt eine Hypothese (H). Vom 20. bis 22.10.2026
+- **KI-simulierte Befragung Bündel B** (seit Fr, 23.10.2026 auf den Folien; Workflow D25, 22./23.10.2026, im Auftrag
+  von Yannick Heisler, KI-Nachweis 120; Einbau Workflow D26, KI-Nachweis 135): acht **fiktive, KI-simulierte
+  Befragte** T1–T8 (je ein eigener KI-Agent ohne Dateizugriff) und eine Kontrollgruppe ohne Persona-Text; Codierung
+  KI-gestützt, Mittelwerte, Implikationsmatrix und Aaker-Werte **per Python-Skript**. **Keine echten Interviews, keine
+  Kundenstimmen, keine Signifikanz, keine Repräsentativität** – Hypothesen (Stenger, S. 78). Ablage, Prompts wörtlich,
+  Rohantworten, Codierung und Skripte: `../buendel-b/` (Überblick `README.md`, Grenzen dort); Zahlen auf den Folien
+  nur aus `../buendel-b/auswertung/*.csv` bzw. `hvm.json`. Auf den Folien Pille **„KI-simuliert“** und Fußzeile „KI-simulierte
+  Befragung, n = 8 (T1–T8), keine echten Interviews“. Verwendet auf Folie 06 (Repertory Grid), 07 (Laddering), 08b
+  (Aaker-Bogen, Analogie-Fragen), B4, B5, im Sprechtext und in den Notizen von Folie 08 (Tierfrage offen gestellt:
+  Papagei 5 von 8) und im Abgleich Selbstbild ↔ Fremdbild auf Folie 10. **Nicht im Steuerrad** (Entscheidung Yannick
+  23.10.2026: Rad = Selbstbild). Wettbewerbsset und Idealmarke sind Vorschläge des Dossiers, nicht von der Gruppe
+  beschlossen.
+- **Analogie-Tiere Papagei und Chamäleon** (Folie 08; Chamäleon seit Di, 20.10.2026, vorher Waschbär nach der
+  Hypothese im Dossier Kap. 6.7; seit Fr, 23.10.2026 **beide gleichwertig**, Entscheidung Yannick nach Elias' Notizen,
+  KI-Nachweis 135): Einordnung und – seit Do, 22.10.2026 – Begründung von Elias Knauber (Ausarbeitung Analogien, Stand
+  16.10.2026): Papagei – gesellig, bunt; Chamäleon – wandelbar, kreativ (dazu in den Notizen anpassungsfähig); je mit
+  seinen Belegen (Eigenschaften und Belege von Elias, die Paarung je Zeile hat die Übertragung gebildet – von Elias zu
+  bestätigen); als Mensch ein Impro-Comedian. Die Analogie bleibt eine Hypothese (H). Vom 20. bis 22.10.2026
   stand auf der Folie ein **Vorschlag, KI-gestützt** aus dem Recherche-Dossier (Kap. 1, 2.1, 2.7, 2.8, 3.1,
   6.1–6.3, 6.6, 7.1, 8); diese Dossier-Belege stehen seither nur noch als gekennzeichnete Ergänzung in den Notizen
   von Folie 08. Ohne Websuche. Die Alltagsbedeutung von „Chamäleon“ („ohne festen Kern“, Tarnung) ist
@@ -246,13 +264,17 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
   Tiernamen, weil sie schon während der Abstimmung zu sehen ist.
 - **Markenfarben** Gelb `#FFD007` und Schwarz `#1D1D1B`: Dossier Kap. 6.3 ✔ [1] (Werte aus dem CSS der
   Website de.holy.com, kein offizieller Styleguide).
-- **Beispieldaten** (Pille „Beispieldaten“) stehen auf den Folien 06, 07, 08b, 10, 11, 12
-  (Fazit, beruht auf 10/11) sowie B4 und B5; auf Folie 08 nur noch die Tiere der Wettbewerber im Kontrast
-  („(Beispiel)“, ohne Pille). **Seit Do, 22.10.2026 ohne Beispieldaten:** Folie 08 (Tier und Mensch nach Elias
+- **Beispieldaten** (Pille „Beispieldaten“): **Seit Fr, 23.10.2026** tragen 06, 07, 08b, B4 und B5 statt
+  „Beispieldaten“ die Pille **„KI-simuliert“** (vorheriger Punkt). Folie 10, 11, 12, B1 und B2 zieht am 23.10.2026 ein
+  paralleler Synthese-Schritt nach – maßgeblich sind die Kästen in `index.html`. Beim Abgleich dieser Datei trug
+  Folie 10 die Pille **„teils KI-simuliert“** (das Rad zeigt das Selbstbild aus Quellen, KI-simuliert ist nur der
+  Abgleich), Folie 11 und 12 keine Pille mehr; B1 („teils geplant“) und B2 („teils Beispiel“) waren noch nicht
+  nachgezogen (Stand bis 22.10.2026: Pille „Beispieldaten“ auf 10, 11, 12). Auf Folie 08 sind nur die Tiere
+  der Wettbewerber im Kontrast Beispiel („(Beispiel)“, ohne Pille). **Seit Do, 22.10.2026 ohne Beispieldaten:** Folie 08 (Tier und Mensch nach Elias
   Knauber), Folie 09 (vier Kanäle mit Elias' Werten; Beiträge pro Woche, Engagement-Raten, Motivanteile und die
   Zahl der codierten Beiträge waren Beispielwerte und entfallen ersatzlos) und B6 (Elias' Tabelle 1 statt der
-  Beispiel-Codiertabelle). B1 trägt „teils geplant“ (Kurzinterviews stehen aus), B2 „teils
-  Beispiel“ (Bündel A belegt, P7–P14 noch Beispiel). Folie 09b
+  Beispiel-Codiertabelle). B1 trug bis 22.10.2026 „teils geplant“ (Kurzinterviews – es gab keine), B2 „teils
+  Beispiel“ (Bündel A belegt, P7–P14 Beispiel; seit 23.10.2026 P7–P11 echte Läufe D25 – Einbau parallel). Folie 09b
   enthält keine Beispielwerte: Fakten belegt, die Fit-Bewertung ist als Hypothese gekennzeichnet. Alles
   bleibt Beispiel, bis die Gruppe eigene Erhebungen einträgt.
 - **Modelle und Fachbegriffe** (Markensteuerrad nach Esch, Limbic Map nach Häusel, Repertory Grid nach
@@ -285,4 +307,7 @@ Folienaufbau, Diagramme, Sprechtext-Entwürfe, Prüfwerkzeug und diese Dokumenta
 drei Richtungen entworfen und per Jury-Bewertung ausgewählt (`_entwuerfe/JURY.md`). Alle Prompts,
 Unteragenten und Prüfschritte sind im KI-Nachweis der Gruppe dokumentiert (`../../ki-nachweis/`). Inhalte
 über HOLY stammen aus dem geprüften Recherche-Dossier und aus eigenen Erhebungen der Gruppe (Gründerbefragung,
-seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen; Beispieldaten sind gekennzeichnet. Die Gruppe prüft und verantwortet alle Inhalte vor dem Vortrag.
+seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen; Beispieldaten sind gekennzeichnet. Die
+Befragung auf 06, 07, 08b, B4, B5 ist seit 23.10.2026 eine **KI-simulierte** Befragung (acht fiktive Befragte,
+Workflow D25) – gekennzeichnet mit „KI-simuliert“; sie gibt Hypothesen wieder, keine Kundenstimmen, und steht nicht im
+Steuerrad. Die Gruppe prüft und verantwortet alle Inhalte vor dem Vortrag.

@@ -141,11 +141,17 @@
   padding: var(--abstand-1) var(--abstand-4);
 }
 .lad-knoten--kern.ist-eng { padding-left: var(--abstand-2); padding-right: var(--abstand-2); }
+/* vom Skript gesetzt, wenn eine ganze Ebene sonst nicht zweizeilig passt
+   (seit 23.10.2026: vier Knoten in „funktional“, Editorial) – noch etwas
+   schmaler als .ist-eng, damit kein Knoten dreizeilig wird */
+.lad-knoten.ist-eng-ebene,
+.lad-knoten.ist-eng.ist-eng-ebene { padding-left: var(--abstand-1); padding-right: var(--abstand-1); }
 
 /* Verbindungen in gedecktem Grau (leichter als die Knotenbeschriftung,
    Kontrast zum Hintergrund weiterhin ≥ 3 : 1).
-   Die tragende Leiter ("kern": true in den Daten, z. B. zuckerfrei →
-   Genuss ohne Zucker → gutes Gewissen → Gesundheit) färbt sich im letzten
+   Die tragende Leiter ("kern": true in den Daten, seit 23.10.2026 ohne
+   Zucker → kein Zuckerabsturz → konzentriert, keine Fehler → verlässlich
+   sein → Verantwortung; KI-simuliert) färbt sich im letzten
    Schritt (Markennutzen) in der Akzentfarbe – sie belegt den Titel. */
 .lad-kante {
   fill: none;
@@ -154,6 +160,17 @@
   transition: stroke var(--dauer-mittel) var(--kurve);
 }
 .lad:has(.lad-z4.schritt-an) .lad-kante--kern { stroke: var(--f-akzent); }
+
+/* Verbindung innerhalb einer Ebene (seit 23.10.2026, z. B. „kein
+   Zuckerabsturz → konzentriert, keine Fehler“): flacher Bogen unter den
+   Knoten, Pfeilspitze am Ziel – gleiche Farbe wie die Linie, auf der
+   tragenden Leiter im letzten Schritt ebenfalls in der Akzentfarbe. */
+.lad-spitze {
+  fill: color-mix(in oklab, var(--f-text-2) 65%, var(--f-hintergrund));
+  stroke: none;
+  transition: fill var(--dauer-mittel) var(--kurve);
+}
+.lad:has(.lad-z4.schritt-an) .lad-spitze--kern { fill: var(--f-akzent); }
 
 
 /* ---------------------------------------------------------------------------
@@ -213,6 +230,19 @@
   font-size: var(--groesse-text);
   font-weight: var(--gewicht-display);
   line-height: 1.2;
+  color: var(--f-text);
+}
+
+/* Übergabezeile unter den Nutzen-Kästen (seit 23.10.2026, Daten
+   "uebergabe"): Die Nutzen sind KI-simuliertes Fremdbild und gehen in den
+   Abgleich auf Folie 10 – nicht ins Steuerrad. Metaangabe mit Trennlinie. */
+.lad-uebergabe {
+  margin: 0;
+  padding-top: var(--abstand-2);
+  border-top: var(--linie-fein) solid var(--f-linie);
+  font-size: var(--groesse-tabelle);
+  font-weight: var(--gewicht-fett);
+  line-height: 1.25;
   color: var(--f-text);
 }
 

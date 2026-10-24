@@ -301,8 +301,11 @@ def main():
             if bisher:
                 soll_bisher = {NAMEN_10[f]: bisher[f] for f in FELDER_10}
                 if angabe_bisher != soll_bisher or int(zeile.group(2)) != sum(bisher.values()):
-                    fehler.append(f"Folie 10: Wortbudget bisher angegeben {angabe_bisher} / {zeile.group(2)}, gezählt "
-                                  f"{soll_bisher} / {sum(bisher.values())}")
+                    # Seit dem Einbau (23.10.2026) zeigt index.html den neuen Stand; „bisher“ bezieht sich auf den
+                    # Stand bis 22.10.2026 und lässt sich dort nicht mehr nachzählen – deshalb nur ein Hinweis
+                    # (Nacharbeit 24.10.2026, Prüfer „Treue“ in D26).
+                    hinweise.append(f"Folie 10: Wortbudget bisher angegeben {angabe_bisher} / {zeile.group(2)}, gezählt "
+                                    f"{soll_bisher} / {sum(bisher.values())} (erwartet nach dem Einbau)")
         # Wortgleichheit der Simulations-Stichworte mit 07 und 08b
         texte_07 = set()
         if "f07" in daten:

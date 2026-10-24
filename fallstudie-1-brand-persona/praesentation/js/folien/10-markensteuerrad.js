@@ -33,7 +33,18 @@
       Steht ein Stichwort aus „markieren“ nicht (genau so) im Rad, meldet das
       Skript das in der Konsole (pruefen.mjs zeigt es dann an).
 
-   4. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
+   4. ABGLEICH SELBSTBILD ↔ FREMDBILD (seit Fr, 23.10.2026; Schritt nach der
+      Konsistenzprüfung). Entscheidung Yannick „Rad = Selbstbild, Simulation
+      als Abgleich“: Das Rad zeigt die Identität (Selbstbild), die
+      KI-simulierte Befragung (Folien 06, 07, 08, 08b) das Fremdbild (Image;
+      Stenger, S. 60, 87). Eine Fläche legt sich über das Rad (wie der
+      Wortwolken-Abgleich): je Zeile links ein Stichwort des Selbstbilds,
+      in der Mitte ein Zeichen (≠ weicht ab, ≈ teils, = stimmt überein),
+      rechts das simulierte Fremdbild mit Methode und Foliennummer (Knopf:
+      springt zur Folie). Daten: „vergleich“ im Daten-JSON der Folie. Im
+      Druck/PDF bleibt das Rad stehen (eine Seite je Folie).
+
+   5. OPTIONALER ABGLEICH MIT DER WORTWOLKE (letzter Schritt):
       Nur wenn Folie 1b gezeigt wird (marke.js → optionaleFolien.f01b: true)
       und in ihrer Wortwolke Wörter stehen, gibt es einen
       zusätzlichen Schritt: links die Positionierung (Satz + wie viele Zurufe
@@ -41,11 +52,25 @@
       Gezählt werden Zurufe, nicht Begriffe: „Gaming“ viermal gerufen = 4.
       Im Druck/PDF bleibt stattdessen das fertige Steuerrad stehen.
 
-   5. RUHE NACH DEM BETRETEN: Steht der Mauszeiger nach einem Sprung (z. B.
+   6. RUHE NACH DEM BETRETEN: Steht der Mauszeiger nach einem Sprung (z. B.
       über die Verweise auf Folie 11) zufällig über einer Karte, würde das Rad
       sofort alles andere abdunkeln, und ein zweiter Klick spränge ungewollt
       weiter. Deshalb reagiert das Rad erst auf die Maus, wenn sie sich
       wirklich bewegt (mehr als 10 px). Tastatur (Tab + Enter) geht sofort.
+
+   7. PRÜFUNG (seit Fr, 23.10.2026; nur Konsole – pruefen.mjs zeigt es als
+      Warnung, die Folie ändert sich nicht):
+      • Jedes Stichwort im Rad hat eine Selbstbild-Quelle (DR, LM, AN, KA,
+        GB). RG, LA oder Kürzel mit „-KI“ gehören zum KI-simulierten
+        Fremdbild – in den Abgleich, nicht ins Rad.
+      • Jede Zeile des Abgleichs: Das Selbstbild-Stichwort steht wortgleich
+        im Rad (Feld unter „aus“), in der Positionierung oder auf der Folie
+        unter „aus“; das Fremdbild (oder das Wort unter „beleg“) steht
+        wortgleich auf seiner Folie („folie“).
+      Die übrigen Wortgleich-Prüfungen stehen bei den Ergebnisfolien selbst:
+      Tonalität ↔ Analogien auf Folie 08 (js/folien/08-analogien.js),
+      Markenbild ↔ „Ins Steuerrad“ auf 09b (09-kommunikationsanalyse.js),
+      und 06, 07, 08b prüfen, dass ihr Fremdbild hier im Abgleich steht.
 
    Texte ändern: im HTML (index.html, Folie 10), nicht hier.
    ============================================================================= */
@@ -56,6 +81,26 @@
   var FELDNAMEN = {
     kompetenz: 'Kern', persona: 'Persona', attribute: 'Eigenschaften',
     nutzen: 'Nutzen', tonalitaet: 'Tonalität', bild: 'Bild'
+  };
+
+  /* Lange Feldnamen – Beschriftung „aus“ im Abgleich Selbstbild ↔ Fremdbild,
+     wenn die Daten keine eigene Beschriftung („wo“) mitbringen */
+  var FELDNAMEN_LANG = {
+    kompetenz: 'Markenkern', persona: 'Brand Persona', attribute: 'Markeneigenschaften',
+    nutzen: 'Markennutzen', tonalitaet: 'Markentonalität', bild: 'Markenbild',
+    positionierung: 'Positionierung'
+  };
+
+  /* Quellen des Selbstbilds (seit 23.10.2026 die einzigen im Rad): Desk
+     Research, Limbic Map, Elias' Analogien und Kommunikationsanalyse,
+     Gründerbefragung (nur stützend, methoden.md §6) */
+  var SELBSTBILD_QUELLEN = ['DR', 'LM', 'AN', 'KA', 'GB'];
+
+  /* Zeichen im Abgleich: Schlüssel = „urteil“ in den Daten */
+  var URTEILE = {
+    abweichung: { zeichen: '≠', text: 'weicht ab' },
+    teils:      { zeichen: '≈', text: 'teils' },
+    gleich:     { zeichen: '=', text: 'stimmt überein' }
   };
 
   /* Füllwörter, die beim Abgleich mit der Wortwolke NICHT als Treffer zählen
@@ -149,14 +194,20 @@
         /* Positionierung (Satz über dem Rad). „kern“ = Name bis 21.10.2026 */
         kern: daten.positionierung || daten.kern || '',
         luecken: daten.luecken || [],
-        abgleich: daten.abgleich || {}
+        abgleich: daten.abgleich || {},
+        /* Abgleich Selbstbild ↔ Fremdbild (seit 23.10.2026) */
+        paare: ((daten.vergleich || {}).paare || []).filter(function (p) { return p && p.selbstbild && p.fremdbild; })
       };
       folie._g6s = zustand;
 
       /* Schritte: nach dem letzten Feld die Positionierung (= Schlussschritt
-         der Engine), danach die Konsistenzprüfung */
+         der Engine), danach die Konsistenzprüfung, dann (falls Daten da sind)
+         der Abgleich Selbstbild ↔ Fremdbild; der Wortwolken-Abgleich folgt
+         als letzter Schritt nach schrittLetzter */
       zustand.schrittKern = letzterRadSchritt(rad) + 1;
       zustand.schrittLuecken = zustand.schrittKern + 1;
+      zustand.schrittVergleich = zustand.paare.length ? zustand.schrittLuecken + 1 : 0;
+      zustand.schrittLetzter = zustand.schrittVergleich || zustand.schrittLuecken;
 
       /* ---- Band „Positionierung“ über dem Rad */
       kernEinrichten(folie, zustand);
@@ -209,14 +260,23 @@
         document.fonts.ready.then(function () { u.messen(rad, function () { platzieren(zustand); }); });
       }
 
+      /* ---- Abgleich Selbstbild ↔ Fremdbild (vor dem Wortwolken-Abgleich) */
+      vergleichEinrichten(ctx, zustand);
+
       /* ---- Optionaler Abgleich mit der Wortwolke */
       abgleichEinrichten(ctx, zustand);
+
+      /* ---- Prüfung Selbstbild/Fremdbild (Konsole), wenn alle Folien
+              aufgebaut sind (Folie 08 setzt ihre Analogien per Skript) */
+      if (Deck.bereit && Deck.bereit.then) Deck.bereit.then(function () { selbstbildPruefen(zustand); });
+      else selbstbildPruefen(zustand);
     },
 
     betreten: function (ctx) {
       var zustand = ctx.folie._g6s;
       if (!zustand) return;
       platzieren(zustand);
+      vergleichVerweise(zustand);
       abgleichPruefen(ctx, zustand);
       if (!ctx.druckmodus) ruheStarten(zustand);
     },
@@ -547,6 +607,172 @@
 
 
   /* ===========================================================================
+     ABGLEICH SELBSTBILD ↔ FREMDBILD (seit Fr, 23.10.2026; Kopfkommentar,
+     Punkt 4). Das HTML bringt die Fläche mit Kicker, Spaltenköpfen und
+     Legende mit (.g6s-vergleich); die Zeilen baut dieses Skript aus dem
+     Daten-JSON „vergleich“ → „paare“ (Felder siehe Kommentar über den Daten
+     in index.html). Fehlen die Daten, bleibt die Fläche verborgen und die
+     Folie hat einen Schritt weniger.
+     =========================================================================== */
+  function vergleichEinrichten(ctx, zustand) {
+    var el = ctx.folie.querySelector('.g6s-vergleich');
+    if (!el) return;
+    zustand.vergleichEl = el;
+    var liste = el.querySelector('[data-g6s="vergleich"]');
+    if (!zustand.paare.length || !liste) {
+      el.hidden = true;
+      el.removeAttribute('data-schritt');
+      return;
+    }
+    var u = ctx.util;
+    liste.textContent = '';
+    zustand.paare.forEach(function (p) {
+      var urteil = URTEILE[p.urteil] ? p.urteil : 'abweichung';
+      var li = u.element('li', { class: 'g6s-paar g6s-paar--' + urteil }, null, liste);
+
+      /* links: Selbstbild (Beschriftung = Feld bzw. „wo“, darunter das Stichwort) */
+      var selbst = u.element('div', { class: 'g6s-paar-seite g6s-paar-seite--selbst' }, null, li);
+      u.element('span', { class: 'g6s-paar-wo', 'data-meta': '' }, u.markeText(p.wo || FELDNAMEN_LANG[p.aus] || ''), selbst);
+      u.element('span', { class: 'g6s-paar-text' }, u.markeText(p.selbstbild), selbst);
+
+      /* Mitte: Zeichen (Bedeutung für Bildschirmleser und als Tooltip) */
+      var zeichen = u.element('span', { class: 'g6s-paar-urteil', role: 'img', 'aria-label': URTEILE[urteil].text, title: URTEILE[urteil].text }, null, li);
+      u.element('span', { 'aria-hidden': 'true' }, URTEILE[urteil].zeichen, zeichen);
+
+      /* rechts: Fremdbild (Beschriftung = Methode + Foliennummer als Knopf) */
+      var fremd = u.element('div', { class: 'g6s-paar-seite g6s-paar-seite--fremd' }, null, li);
+      var quelle = u.element(p.folie ? 'button' : 'span', { class: 'g6s-paar-wo g6s-paar-quelle', 'data-meta': '' }, null, fremd);
+      u.element('span', { class: 'g6s-paar-methode' }, u.markeText(p.methode || ''), quelle);
+      u.element('span', { class: 'g6s-paar-folie' }, '', quelle);
+      u.element('span', { class: 'g6s-paar-text' }, u.markeText(p.fremdbild), fremd);
+      if (p.folie) {
+        quelle.setAttribute('type', 'button');
+        quelle.setAttribute('data-ziel', p.folie);
+        /* Klick (oder Tab + Enter) springt zur Folie mit dem Fremdbild, auf
+           ihren letzten Schritt – wie die Verweise auf Folie 11 */
+        quelle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var ziel = folieImDeck(p.folie);
+          if (!ziel) return;
+          quelle.blur();
+          if (Deck.springe) Deck.springe(ziel.id, 'ende'); else Deck.gehe(ziel.id, 'ende');
+        });
+      }
+    });
+    el.hidden = false;
+    el.setAttribute('data-schritt', String(zustand.schrittVergleich));
+    vergleichVerweise(zustand);
+  }
+
+  /* Folie im Deck suchen (ausgeblendete optionale Folien fehlen dort) */
+  function folieImDeck(id) {
+    var treffer = null;
+    Deck.folien().forEach(function (f) { if (f.id === id) treffer = f; });
+    return treffer;
+  }
+
+  /* Foliennummer in die Knöpfe schreiben (aus dem Deck – stimmt auch, wenn
+     sich die Reihenfolge ändert). Fehlt die Zielfolie (z. B. Prüfung nur mit
+     dieser Folie), bleibt nur die Methode stehen und der Knopf ist ohne Funktion. */
+  function vergleichVerweise(zustand) {
+    var el = zustand.vergleichEl;
+    if (!el || el.hidden) return;
+    Array.prototype.forEach.call(el.querySelectorAll('.g6s-paar-quelle[data-ziel]'), function (knopf) {
+      var ziel = folieImDeck(knopf.getAttribute('data-ziel'));
+      var nr = knopf.querySelector('.g6s-paar-folie');
+      var methode = knopf.querySelector('.g6s-paar-methode');
+      if (nr) nr.textContent = ziel ? ' · Folie ' + ziel.nummer + ' →' : '';
+      if (ziel) {
+        knopf.removeAttribute('aria-disabled');
+        knopf.setAttribute('title', 'Zur Folie ' + ziel.nummer);
+        knopf.setAttribute('aria-label', (methode && methode.textContent ? methode.textContent + ' – ' : '') +
+          'zur Folie ' + ziel.nummer + ' (' + ziel.titel + ')');
+      } else {
+        knopf.setAttribute('aria-disabled', 'true');
+        knopf.removeAttribute('title');
+        knopf.removeAttribute('aria-label');
+      }
+    });
+  }
+
+
+  /* ===========================================================================
+     PRÜFUNG SELBSTBILD / FREMDBILD (Kopfkommentar, Punkt 7) – nur Konsole
+     =========================================================================== */
+  /* Wortgleich enthalten? Groß-/Kleinschreibung und Satzzeichen egal, aber nur
+     ganze Wörter (wie in 06-, 07- und 08-analogien.js) */
+  function wortgleichIn(text, wort) {
+    var norm = function (s) { return ' ' + String(s || '').toLowerCase().replace(/[^0-9a-zäöüß]+/g, ' ').trim() + ' '; };
+    var w = norm(wort);
+    return w.trim() !== '' && norm(text).indexOf(w) >= 0;
+  }
+  /* Text einer Folie ohne Notizen, Textknoten mit Leerzeichen verbunden;
+     Daten-JSON zählt mit (dort stehen z. B. die Analogien von Folie 08) */
+  function folienText(id) {
+    var folie = document.getElementById(id);
+    if (!folie) return null;
+    var teile = [];
+    Array.prototype.forEach.call(folie.children, function (c) {
+      if (c.matches('.notizen')) return;
+      var gang = document.createTreeWalker(c, NodeFilter.SHOW_TEXT);
+      while (gang.nextNode()) teile.push(gang.currentNode.nodeValue);
+    });
+    return teile.join(' ');
+  }
+
+  function selbstbildPruefen(zustand) {
+    var meldungen = [];
+    var felder = zustand.konfig.felder || {};
+
+    /* 1. Nur Selbstbild-Quellen im Rad */
+    Object.keys(felder).forEach(function (feld) {
+      stichworteVon(zustand.konfig, feld).forEach(function (w) {
+        if (w.quelle && SELBSTBILD_QUELLEN.indexOf(w.quelle) < 0) {
+          meldungen.push('Stichwort „' + w.text + '“ (Feld „' + feld + '“) hat die Quelle „' + w.quelle +
+            '“ – das Rad zeigt seit 23.10.2026 das Selbstbild (' + SELBSTBILD_QUELLEN.join(', ') +
+            '); Ergebnisse der KI-simulierten Befragung gehören in den Abgleich (Daten „vergleich“).');
+        }
+      });
+    });
+
+    /* 2. Zeilen des Abgleichs: Selbstbild und Fremdbild wortgleich an ihrer Herkunft */
+    zustand.paare.forEach(function (p, i) {
+      var zeile = 'Abgleich, Zeile ' + (i + 1) + ': ';
+      var selbst = Deck.util.markeText(p.selbstbild);
+      if (p.aus === 'positionierung') {
+        if (!wortgleichIn(zustand.kern, selbst)) {
+          meldungen.push(zeile + '„' + selbst + '“ ist nicht die Positionierung („' + zustand.kern + '“) – unter „selbstbild“ wortgleich eintragen.');
+        }
+      } else if (felder[p.aus]) {
+        var imFeld = stichworteVon(zustand.konfig, p.aus).some(function (w) { return wortgleichIn(Deck.util.markeText(w.text), selbst); });
+        if (!imFeld) {
+          meldungen.push(zeile + '„' + selbst + '“ steht nicht im Feld „' + p.aus + '“ des Rads – Stichwort im Rad oder im Abgleich angleichen.');
+        }
+      } else if (p.aus) {
+        var text = folienText(p.aus);
+        if (text !== null) {
+          /* „Papagei & Chamäleon“ → jedes Wort einzeln auf der Folie suchen */
+          var fehlen = selbst.split(/\s*(?:&|·|,|\bund\b)\s*/).filter(function (t) { return t && !wortgleichIn(text, t); });
+          if (fehlen.length) {
+            meldungen.push(zeile + '„' + fehlen.join('“, „') + '“ steht nicht wortgleich auf Folie ' + p.aus + ' (Selbstbild).');
+          }
+        }
+      }
+      if (p.folie) {
+        var dort = folienText(p.folie);
+        var beleg = Deck.util.markeText(p.beleg || p.fremdbild);
+        if (dort !== null && !wortgleichIn(dort, beleg)) {
+          meldungen.push(zeile + '„' + beleg + '“ steht nicht wortgleich auf Folie ' + p.folie +
+            ' – Fremdbild dort und hier angleichen (oder unter „beleg“ das Wort von dort eintragen).');
+        }
+      }
+    });
+
+    meldungen.forEach(function (m) { console.warn('f10: ' + m); });
+  }
+
+
+  /* ===========================================================================
      OPTIONALER ABGLEICH MIT DER WORTWOLKE
      =========================================================================== */
   function abgleichEinrichten(ctx, zustand) {
@@ -595,7 +821,9 @@
     if (!el) return;
     var woerter = wolkeImDeck(zustand.wolkeId) ? gespeicherteWoerter(ctx, zustand) : [];
     var an = woerter.length > 0;
-    var schritt = String(zustand.schrittLuecken + 1);
+    /* nach der Konsistenzprüfung bzw. (seit 23.10.2026) nach dem Abgleich
+       Selbstbild ↔ Fremdbild – immer der letzte Schritt */
+    var schritt = String(zustand.schrittLetzter + 1);
     var vorher = el.getAttribute('data-schritt');
     if (an) {
       /* Zurufe zählen, nicht Begriffe: Ein Wort, das viermal gerufen wurde,

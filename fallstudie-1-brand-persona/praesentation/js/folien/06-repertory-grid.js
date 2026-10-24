@@ -17,6 +17,11 @@
        in der Mitte einen kleinen Chip mit dem Hinweis
      • Schritt 0–1: kleine Überschrift über dem leeren Profil („Polaritäten-
        profil · Skala 1–7“), die in Schritt 2 der Legende Platz macht
+     • Seit 23.10.2026 (KI-simulierte Befragung, kein Konstrukt erfüllt alle
+       drei Kriterien): Gibt es keine Markeneigenschaft, rücken die
+       Auswahlkriterien direkt unter den Kopf der rechten Spalte; darunter
+       optional die Übergabezeile "uebergabe" (Pfeil + Text, z. B. „Abgleich
+       Folie 10“). Der Bildschirmlesertext sagt dann „keine Markeneigenschaft“.
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
 
    RECHENWEG (zum Erklären bei Rückfragen) – wie methoden.md, Abschnitt 2
@@ -69,7 +74,7 @@
     linienDauer: 1100,       // ms – so lange zeichnet sich eine Linie
     linienStart: [450, 1500, 2550], // ms – Start Ideal, Wettbewerber, [Marke]
     zeilenStaffel: 60,       // ms – Versatz der Zeilen in Schritt 2
-    karteBreite: 136,        // Breite einer Triaden-Karte
+    karteBreite: 150,        // Breite einer Triaden-Karte (seit 23.10.2026 150 statt 136: „Monster“ brach in Bento sonst als „Monst-er“ um)
     karteWeg: 18,            // so weit rücken die Karten höchstens (Jury: Wege ≤ 18 px)
     karteLueckeMin: 14       // kleinste Lücke zwischen den zusammengerückten Karten
   };
@@ -528,9 +533,11 @@
     var attrText = zeilen.filter(function (r) { return r.attribut; }).map(function (r) {
       return r.attributName + ' (Vorsprung vor ' + bezugText + ' ' + u.zahlFormat(r.vorsprung, dezimalen) + ')';
     }).join(', ');
-    buehne.setAttribute('aria-label', 'Repertory Grid, Beispieldaten. Polaritätenprofil auf einer Skala von ' + min + ' bis ' + max +
+    /* seit 23.10.2026 „KI-simuliert“ statt „Beispieldaten“; ohne Attribute
+       „keine Markeneigenschaft“ statt einer leeren Aufzählung */
+    buehne.setAttribute('aria-label', 'Repertory Grid, KI-simuliert. Polaritätenprofil auf einer Skala von ' + min + ' bis ' + max +
       ' mit ' + N + ' Konstrukten für ' + reihenDef[2].name + ', ' + reihenDef[1].name + ' und ' + reihenDef[0].name +
-      '. Markeneigenschaften: ' + attrText + '.' + hinweisChips.map(function (h) {
+      '. ' + (attrText ? 'Markeneigenschaften: ' + attrText : 'Keine Markeneigenschaft erfüllt alle drei Kriterien') + '.' + hinweisChips.map(function (h) {
         return ' ' + h.r.hinweis + ': ' + (h.r.markeRechts ? h.r.rechts : h.r.links) + ' (weit von der Idealmarke entfernt).';
       }).join(''));
 
@@ -673,23 +680,47 @@
       });
     });
 
-    /* Auswahlkriterien unter der letzten Attribut-Zeile */
+    /* Auswahlkriterien unter der letzten Attribut-Zeile. Ohne Attribut (seit
+       23.10.2026 mit den KI-simulierten Daten der Fall) direkt unter dem Kopf –
+       die Lage setzt dann die Messung unten (Kopfhöhe + Abstand). */
     var kriterien = Array.isArray(d.kriterien) ? d.kriterien.slice(0, 3) : [];
+    var liste = null;
     if (kriterien.length) {
-      var oben = Math.round(g.y(Math.max(0, letzte)) + g.zeileH / 2 + 28);
-      var platz = g.unten - oben;
-      var liste = u.element('div', { class: 'rg-kriterien' + (platz < 150 ? ' ist-eng' : ''), style: 'top:' + oben + 'px' }, null, box);
+      var oben = letzte >= 0 ? Math.round(g.y(letzte) + g.zeileH / 2 + 28) : 0;
+      var platz = letzte >= 0 ? g.unten - oben : g.unten;
+      liste = u.element('div', { class: 'rg-kriterien' + (platz < 150 ? ' ist-eng' : ''), style: 'top:' + oben + 'px' }, null, box);
       if (d.kriterienTitel) u.element('span', { class: 'karte-kicker rg-kriterien-titel', 'data-meta': '' }, u.markeText(d.kriterienTitel), liste);
       kriterien.forEach(function (k) {
         var p = u.element('p', { class: 'rg-kriterium' }, null, liste);
-        p.innerHTML = u.icon('haken');
+        /* Ohne Markeneigenschaft (letzte < 0) kein Haken – er läse sich wie „erfüllt“ (Nacharbeit 24.10.2026). */
+        p.innerHTML = u.icon(letzte >= 0 ? 'haken' : 'lupe');
         u.element('span', { class: 'rg-kriterium-text' }, u.markeText(k.text || ''), p);
         if (k.erklaerung) u.element('span', { class: 'rg-kriterium-erklaerung', 'data-meta': '' }, u.markeText(k.erklaerung), p);
       });
-      u.messen(seite, function () {
-        if (liste.offsetTop + liste.offsetHeight > g.unten + 40) console.warn('[f06] Auswahlkriterien ragen unter das Profil – weniger Attribute oder kürzere Kriterien.');
-      });
     }
+
+    /* Übergabezeile (seit 23.10.2026, Daten "uebergabe"): Pfeil + Text unter
+       den Kriterien, z. B. „Abgleich Folie 10“ – die Folie liefert das
+       KI-simulierte Fremdbild für den Abgleich mit dem Selbstbild im Rad. */
+    var uebergabe = null;
+    if (typeof d.uebergabe === 'string' && d.uebergabe.trim()) {
+      uebergabe = u.element('p', { class: 'rg-uebergabe', 'data-meta': '', style: 'top:0' }, null, box);
+      uebergabe.innerHTML = u.icon('pfeil-rechts');
+      u.element('span', null, u.markeText(d.uebergabe.trim()), uebergabe);
+    }
+
+    u.messen(seite, function () {
+      var luecke = 36;
+      if (liste && letzte < 0) liste.style.top = Math.round(kopf.offsetTop + kopf.offsetHeight + luecke) + 'px';
+      if (uebergabe) {
+        var nach = liste || kopf;
+        uebergabe.style.top = Math.round(nach.offsetTop + nach.offsetHeight + luecke) + 'px';
+      }
+      var letztes = uebergabe || liste;
+      if (letztes && letztes.offsetTop + letztes.offsetHeight > g.unten + 40) {
+        console.warn('[f06] Rechte Spalte (Kriterien bzw. Übergabezeile) ragt unter das Profil – weniger Attribute oder kürzere Texte.');
+      }
+    });
   }
 
 
@@ -715,6 +746,46 @@
 
 
   /* ---------------------------------------------------------------------------
+     Abgleich mit Folie 10 (seit 23.10.2026, Entscheidung Yannick „Rad =
+     Selbstbild, Simulation als Abgleich“) – meldet nur in der Konsole
+     (pruefen.mjs zeigt es im Bericht), ändert nichts an der Folie:
+       1. Das Feld Markeneigenschaften im Steuerrad trägt kein Stichwort mit
+          der Quelle „RG“ – diese Folie liefert das KI-simulierte Fremdbild
+          und keine Markeneigenschaft; das Rad zeigt das Selbstbild.
+       2. Die Wörter aus "fremdbild" (Daten, optional) stehen wortgleich auf
+          Folie 10 (Abgleich Selbstbild ↔ Fremdbild).
+     --------------------------------------------------------------------------- */
+  function wortgleich(text, wort) {
+    var norm = function (s) { return ' ' + String(s || '').toLowerCase().replace(/[^0-9a-zäöüß]+/g, ' ').trim() + ' '; };
+    var w = norm(wort);
+    return w.trim() !== '' && norm(text).indexOf(w) >= 0;
+  }
+  function abgleichFolie10(d, u) {
+    var f10 = document.getElementById('f10');
+    if (!f10) return;
+    var skript = f10.querySelector('.steuerrad > script[type="application/json"]');
+    try {
+      var feld = skript ? (JSON.parse(skript.textContent).felder || {}).attribute : null;
+      var rg = feld && Array.isArray(feld.stichworte) ? feld.stichworte.filter(function (s) { return s && s.quelle === 'RG'; }) : [];
+      if (rg.length) {
+        console.warn('[f06] Abgleich mit Folie 10: Im Feld Markeneigenschaften stehen „' + rg.map(function (s) { return s.text; }).join('“, „') +
+          '“ mit Quelle RG (Repertory Grid). Seit 23.10.2026 liefert Folie 06 keine Markeneigenschaft (KI-simuliertes Fremdbild); das Rad zeigt das Selbstbild – Quelle DR/KA o. Ä. eintragen oder streichen.');
+      }
+    } catch (e) { /* JSON von Folie 10 nicht lesbar – meldet Folie 10 selbst */ }
+    var woerter = Array.isArray(d.fremdbild) ? d.fremdbild : [];
+    if (!woerter.length) return;
+    var teile = [];
+    var gang = document.createTreeWalker(f10, NodeFilter.SHOW_TEXT);
+    while (gang.nextNode()) if (!gang.currentNode.parentNode.closest('.notizen')) teile.push(gang.currentNode.nodeValue);
+    var text = teile.join(' ');
+    var fehlen = woerter.map(function (w) { return u.markeText(String(w)); }).filter(function (w) { return !wortgleich(text, w); });
+    if (fehlen.length) {
+      console.warn('[f06] Abgleich mit Folie 10: „' + fehlen.join('“, „') + '“ (Fremdbild dieser Folie, Daten "fremdbild") steht auf Folie 10 nicht wortgleich – der Abgleich Selbstbild ↔ Fremdbild dort soll es aufgreifen.');
+    }
+  }
+
+
+  /* ---------------------------------------------------------------------------
      Anmeldung bei der Engine
      --------------------------------------------------------------------------- */
   var zustand = null;
@@ -736,6 +807,7 @@
     einrichten: function (ctx) {
       letzterCtx = ctx;
       zustand = aufbauen(ctx);
+      if (ctx.daten) abgleichFolie10(ctx.daten, ctx.util);
     },
     betreten: function (ctx) {
       letzterCtx = ctx;

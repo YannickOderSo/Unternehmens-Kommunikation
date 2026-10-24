@@ -52,8 +52,16 @@
      S. 87); die Aufgabe ordnet Repertory Grid, Laddering, Analogien und
      Kommunikationsanalyse der Markenidentität zu (S. 60).
      Das Etikett umzubenennen ist Befund #30 „wenn Zeit“ – am 21.10.2026 nicht
-     freigegeben; die Rückfrage-Antwort steht in den Notizen von Folie 02. */
+     freigegeben; die Rückfrage-Antwort steht in den Notizen von Folie 02.
+     Seit Fr, 23.10.2026 (Entscheidung Yannick „Rad = Selbstbild, Simulation
+     als Abgleich“): Repertory Grid und Laddering beruhen auf KI-simulierten
+     Befragten (keine echten Interviews). Ihr Fremdbild steht nicht im
+     Steuerrad von Folie 10, sondern im Abgleich Selbstbild ↔ Fremdbild dort –
+     das Etikett bleibt, der Tooltip sagt es (title). Die Analogien tragen
+     kein Etikett: Elias' Analogien sind Selbstbild (Folie 08), nur der
+     Aaker-Bogen auf 08b ist KI-simuliertes Fremdbild (Kurzbeschreibung). */
   var SICHT_FREMDBILD = ['attribute', 'nutzen'];
+  var SICHT_FREMDBILD_TITEL = 'Fremdbild (KI-simuliert) – Abgleich mit dem Selbstbild auf Folie 10';
 
   function huelleVon(wurzel) {
     return wurzel.querySelector('.steuerrad.sr-modus-hub');
@@ -93,7 +101,7 @@
            beschreibt die Markenidentität (Innensicht). Felder in
            SICHT_FREMDBILD (oben). */
         if (SICHT_FREMDBILD.indexOf(karte.getAttribute('data-paar')) >= 0) {
-          util.element('span', { class: 'vorgehen-sicht', 'data-meta': '' }, 'Fremdbild', zeile);
+          util.element('span', { class: 'vorgehen-sicht', 'data-meta': '', title: SICHT_FREMDBILD_TITEL }, 'Fremdbild', zeile);
         }
       }
       var label = karte.getAttribute('aria-label');

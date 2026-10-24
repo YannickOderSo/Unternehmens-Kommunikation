@@ -759,6 +759,8 @@
      3. LIVE-UMFRAGE  <div class="umfrage" data-umfrage="tier" data-aufloesung="1">
      Daten aus marke.js → umfragen.tier = { frage, optionen, link, kurzLink,
      ergebnisLink, unsereAntwort, beispielwerte, liveQuelle, runde, gueltigMinuten }.
+     unsereAntwort: Text oder (seit Fr, 23.10.2026) Liste – mehrere Antworten
+     werden gleichwertig umrahmt, die Aussagezahl zählt sie zusammen (3b).
      Zählen: Klick = +1 · Umschalt+Klick oder Rechtsklick = −1 ·
              Ziffern 1–9 auf der Folie (Umschalt = −1) ·
              Doppelklick auf den Wert = Zahl eintippen · Knopf „Werte“ = alle eintragen.
@@ -1267,6 +1269,25 @@
 
   /* Runde, zu der gespeicherte Werte gehören (marke.js → umfragen.<id>.runde) */
   function umfrageRunde(konfig) { return String(konfig.runde || '').trim(); }
+
+  /* „Unsere Antwort“ (marke.js → umfragen.<id>.unsereAntwort) als Liste.
+     Seit Fr, 23.10.2026 (Entscheidung Yannick, Folie 08: Papagei UND
+     Chamäleon) darf dort ein Text ODER eine Liste stehen:
+       unsereAntwort: 'Chamäleon'                  (eine Antwort, wie bisher)
+       unsereAntwort: ['Papagei', 'Chamäleon']     (mehrere, gleichwertig)
+     Jede Antwort wird in der Auflösung umrahmt („Unsere Analyse“), die
+     Aussagezahl zählt ihre Stimmen zusammen. Leere Einträge zählen nicht. */
+  function umfrageAntworten(konfig) {
+    var a = konfig && konfig.unsereAntwort;
+    return (Array.isArray(a) ? a : [a]).map(function (x) { return String(x === undefined || x === null ? '' : x).trim(); })
+      .filter(function (x) { return x; });
+  }
+  /* Antworten als Satzteil: „Papagei oder Chamäleon“ (drei: „A, B oder C“) */
+  function umfrageAntwortText(konfig) {
+    var liste = umfrageAntworten(konfig).map(function (x) { return util.markeText(x); });
+    if (liste.length < 2) return liste[0] || '';
+    return liste.slice(0, -1).join(', ') + ' oder ' + liste[liste.length - 1];
+  }
   function umfrageLaden(u) {
     var gespeichert = util.laden('umfrage:' + u.id, null);
     var anzahl = u.konfig.optionen.length;
@@ -1402,11 +1423,12 @@
     });
 
     var liste = el('ol', { class: 'umfrage-liste', 'aria-label': util.markeText(konfig.frage || 'Ergebnisse der Umfrage') }, null, rechts);
-    var antwort = String(konfig.unsereAntwort || '').toLowerCase();
+    /* unsereAntwort: Text oder Liste (seit 23.10.2026) – jede Antwort wird umrahmt */
+    var antworten = umfrageAntworten(konfig).map(function (x) { return x.toLowerCase(); });
     var aufloesung = huelle.getAttribute('data-aufloesung');
     konfig.optionen.forEach(function (name, i) {
       var zeile = el('li', { class: 'umfrage-zeile', 'data-option': i }, null, liste);
-      var istAnalyse = antwort && String(name).toLowerCase() === antwort;
+      var istAnalyse = antworten.indexOf(String(name).trim().toLowerCase()) >= 0;
       if (istAnalyse) {
         zeile.classList.add('ist-analyse');
         if (aufloesung !== 'aus' && aufloesung !== '0') {
@@ -1657,7 +1679,10 @@
      <div class="umfrage-aussage" data-umfrage="tier" data-schritt="1"></div>
         → große Zahl „27 %“ + Satz aus marke.js (umfragen.tier.aussage), z. B.
           „sehen HOLY wie wir: als Eule“. Prozent = Anteil von unsereAntwort,
-          immer aus den Stimmen berechnet (nie von Hand).
+          immer aus den Stimmen berechnet (nie von Hand). Seit Fr, 23.10.2026
+          darf unsereAntwort eine Liste sein (Folie 08: Papagei und
+          Chamäleon): Dann zählt die Zahl die Stimmen ALLER Antworten
+          zusammen, {antwort} wird „Papagei oder Chamäleon“.
      <div class="umfrage-stimmen" data-umfrage="tier"></div>
         → hochzählende Zahl der Stimmen („64 Stimmen“)
      Beide dürfen auf derselben oder einer späteren Folie stehen.
@@ -1671,12 +1696,22 @@
     umfrageLaden(u);
     return { werte: u.werte, beispiel: u.beispiel };
   }
+  /* Anteil unserer Antwort(en) an allen Stimmen. Mehrere Antworten (Liste,
+     seit 23.10.2026): Stimmen zusammengezählt – „x % sehen HOLY wie wir: als
+     Papagei oder Chamäleon“. Gerundet wird erst die Summe (nicht je Tier),
+     sonst wiche die Zahl um bis zu 1 Prozentpunkt von der Summe ab.
+     Gültig, sobald mindestens eine Antwort unter den Optionen steht. */
   function anteilAntwort(werte, konfig) {
     var summe = werte.reduce(function (a, b) { return a + b; }, 0);
-    var antwort = String(konfig.unsereAntwort || '').toLowerCase();
-    var i = (konfig.optionen || []).map(function (o) { return String(o).toLowerCase(); }).indexOf(antwort);
-    if (i < 0 || !summe) return { prozent: 0, summe: summe, gueltig: false };
-    return { prozent: Math.round(werte[i] / summe * 100), summe: summe, gueltig: true, stimmen: werte[i] || 0 };
+    var optionen = (konfig.optionen || []).map(function (o) { return String(o).trim().toLowerCase(); });
+    var stellen = [];
+    umfrageAntworten(konfig).forEach(function (a) {
+      var i = optionen.indexOf(a.toLowerCase());
+      if (i >= 0 && stellen.indexOf(i) < 0) stellen.push(i);
+    });
+    if (!stellen.length || !summe) return { prozent: 0, summe: summe, gueltig: false };
+    var stimmen = stellen.reduce(function (s, i) { return s + (Number(werte[i]) || 0); }, 0);
+    return { prozent: Math.round(stimmen / summe * 100), summe: summe, gueltig: true, stimmen: stimmen };
   }
   function anzeigenAktualisieren(id, werte, konfig, beispiel, animiert) {
     umfrageAnzeigen.forEach(function (a) {
@@ -1691,7 +1726,8 @@
     var id = huelle.getAttribute('data-umfrage');
     var konfig = umfrageKonfig(id, huelle);
     var vorlage = util.markeText(konfig.aussage || '{prozent} sehen [Marke] wie wir: als {antwort}');
-    var antwort = konfig.unsereAntwort || '…';
+    /* Text oder Liste (seit 23.10.2026): „Papagei oder Chamäleon“ */
+    var antwort = umfrageAntwortText(konfig) || '…';
     huelle.innerHTML = '';
     var zahl = el('span', { class: 'ua-zahl zahl', 'data-animation': 'zaehlen', 'data-ziel': '0', 'data-einheit': ' %' }, '0 %', huelle);
     var satz = el('span', { class: 'ua-text' }, null, huelle);
@@ -1709,7 +1745,9 @@
          groß „27 % sehen … wie wir“ – eine erfundene Zahl als Ergebnis
          (Prüfung Folie 08, 21.10.2026).
        • Stimmen, aber keine für unsereAntwort → „Chamäleon: keine Stimme“
-         (aussageNull, {antwort} wird ersetzt) statt „0 % sehen … wie wir“. */
+         (aussageNull, {antwort} wird ersetzt) statt „0 % sehen … wie wir“;
+         mit zwei Antworten (seit 23.10.2026) „Papagei oder Chamäleon: keine
+         Stimme“ – erst, wenn KEINE der Antworten eine Stimme hat. */
     var leer = el('span', { class: 'ua-leer' }, konfig.aussageLeer || 'Noch keine Stimmen', huelle);
     var LEER_TEXTE = {
       leer: konfig.aussageLeer || 'Noch keine Stimmen',

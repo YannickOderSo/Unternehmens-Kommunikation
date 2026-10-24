@@ -1,5 +1,35 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag Fr, 23.10.2026 (Account 1): KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon
+
+> Kurzer Nachtrag über den Nachträgen vom 22. und 21.10. Lukas Welker liefert kein Material mehr; seit Fr, 23.10.2026
+> zeigen die Folien 06, 07, 08b, B4 und B5 eine **KI-simulierte Befragung** (Workflow D25: acht fiktive Befragte,
+> keine echten Interviews; `../buendel-b/`) mit Pille „KI-simuliert“. Nach den Entscheidungen Yannicks (KI-Nachweis
+> 135, Workflow D26; `AUTOREN.md` Abschnitt 24) zeigt das Rad auf Folie 10 das **Selbstbild**, die Befragung steht als
+> **Fremdbild** im Abgleich; Folie 08 und die Abstimmung nennen **Papagei und Chamäleon** (Papagei statt Fuchs).
+> Folie 10, 11, 12 und die Querverweise (02, 05 Notizen, B1, B2, B7, B8) baut ein Synthese-Schritt parallel zu diesem
+> Nachtrag (beim Abgleich eingebaut: 10, 02, 11, 12; noch in Arbeit: Notizen 05, B1, B2, B7, B8). Die Tabelle sagt
+> nur, welche Befunde dadurch **erledigt, gegenstandslos oder neu** sind; Prüfung durch die Gruppe offen.
+
+| ID | Stand seit 23.10.2026 |
+|---|---|
+| G1 (Top 1) | weitgehend: 06, 07, 08b, B4, B5 tragen keine Beispieldaten mehr, sondern gekennzeichnete KI-simulierte Daten; Folie 10 „teils KI-simuliert“ (Rad = Selbstbild), 11 und 12 ohne Pille (paralleler Einbau, prüfen); B1 und B2 nach dem Einbau prüfen. Beispiel bleiben nur die Wettbewerber-Tiere auf 08. |
+| L1, F08-2 | erledigt anders: Es gibt keine echten Kurzinterviews; Fußzeilen 06, 07, 08b, B4, B5 „KI-simulierte Befragung, n = 8 (T1–T8), keine echten Interviews“, B1 ohne „teils geplant“ (parallel). |
+| L2 | erledigt: Auswahlregel vor dem Rechnen festgelegt (22.10.2026: ≥ 3 von 8, ≥ 1,0, ≤ 1,0); Ergebnis kein Attribut, Titel 06 nach dem Ergebnis. |
+| L3, L4, L8 | erledigt mit KI-simulierten Daten (Leitern codiert und per Skript gezählt; Sprechtexte 06–08b nach den Daten; Aaker-Bogen von acht simulierten Personen – nicht von Menschen, so gekennzeichnet). |
+| L5, F08-13 | erledigt: Tonalität im Rad aus Elias' Analogien (Selbstbild, „frech · gesellig · wandelbar“); 08b zeigt das KI-simulierte Fremdbild; der Abgleich steht auf Folie 10. |
+| F08-3 (#38) | erledigt: Tierfrage KI-simuliert offen gestellt – Papagei 5 von 8, Chamäleon 0; im Sprechtext 08 Schritt 2 und als Abgleich auf Folie 10; Folie 08 zeigt Elias' Analyse (beide Tiere). |
+| F08-4 | erledigt anders: Das Rad zeigt ausdrücklich das Selbstbild; „wandelbar“ (mit „frech“, „gesellig“) kommt direkt von Folie 08 (Elias' Analogien, AN), nicht mehr über 08b; die Simulation (Chamäleon 0 von 8) steht im Abgleich. |
+| F08-8 | neu zu prüfen: Regie-Sätze in Schritt 1 für zwei Tiere („Papagei oder Chamäleon vorn“); die Aussagezahl zählt beide zusammen. |
+| Y6 (Regel B8) | angewandt: Positionierung = Selbstbild (Versprechen ✔ [5], GB); das simulierte Laddering stützt sie nicht – Abgleich auf Folie 10. |
+| NEU-1 | Sprechzeit: 08 ≈ 60 s Text + Abstimmung (Zeitangaben 76 s gegen 70 s), 08b ≈ 52 s (Soll 50 s), 06 ≈ 78 s, 07 ≈ 87 s; Folie 10 mit neuem Abgleich-Schritt laut Kasten 146 Wörter ≈ 77 s (Soll 75 s; vorher ≈ 98 s) – in der Generalprobe stoppen. |
+| NEU-2 | Wortbudget: 06 = 60 Wörter (Warnung, acht Konstrukte bewusst), 08b = 41 (wie vorher); Titel 08b zweizeilig (Freigabe). |
+| NEU-3 | Abstimmung: vor dem Vortrag `marke.js` und `js/abstimmen.js` auf GitHub, sonst zeigen die Handys noch den Fuchs (Google-Skript unverändert). |
+| NEU-4 | Vortrag 06–08b: Wer spricht und antwortet, ist offen (Lukas liefert kein Material) – LIESMICH 12.4. |
+| NEU-5 | Exporte: `export/` zeigt noch den Stand vom 22.10.; nach Abschluss aller D26-Bauaufträge neu erzeugen. |
+| NEU-6 | Folie 10, Abgleich: Zeile 4 „≈ teils“ statt „Übereinstimmung“ (nur der Papagei trifft), Zeile 1 „knapp vorn“ statt „gleichauf“ (Cola Zero 6,88 zu 6,75) – Entscheidung Yannick (Kasten „FOLIE 10“). |
+| NEU-7 | Folie 02: Titel „Jede Methode füllt ein Feld des Markensteuerrads“ stimmte seit „Rad = Selbstbild“ nur im Sinn der Aufgabe – **geändert am 24.10.2026** in „Jede Methode gehört zu einem Feld des Steuerrads“ (Yannick kann zurückändern; Kasten „FOLIE 02“). |
+
 ## Nachtrag Do, 22.10.2026 (Account 1): Elias' Material eingebaut
 
 > Kurzer Nachtrag über dem Nachtrag vom 21.10. Seit Do, 22.10.2026 stehen Elias Knaubers Ausarbeitungen (Analogien,

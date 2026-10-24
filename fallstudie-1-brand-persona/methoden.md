@@ -9,6 +9,11 @@ Die passenden Prompts stehen in [`prompts.md`](prompts.md) (Verweis jeweils als 
 > **Wir-Form** (S. 88–89), das Feld unten links heißt **Markeneigenschaften** (S. 60, 90–91; in der Literatur auch
 > „Markenattribute“). Der Satz über dem Rad (Folie 10) heißt **Positionierung** (S. 87, 94). Limbic Types und
 > Prozentgewichte sind eine **eigene Erweiterung** – die Vorlesung zeigt sie nicht (S. 69–71, 93).
+>
+> **Seit Fr, 23.10.2026:** Entscheidung der Gruppe „Rad = Selbstbild, Befragungen als Fremdbild-Abgleich“ – siehe
+> Abschnitt 6. Die Vorlagen der Abschnitte 2–4 sind für HOLY mit einer KI-simulierten Befragung ausgefüllt (keine
+> echten Interviews): [`buendel-b/repertory-grid.md`](buendel-b/repertory-grid.md),
+> [`buendel-b/laddering.md`](buendel-b/laddering.md), [`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md).
 
 ---
 
@@ -255,14 +260,31 @@ Feldnamen und Leitfragen seit Mi, 21.10.2026 wie in der Vorlesung (Stenger, S. 8
 #27–#29): Mitte „Markenkern“ (bis dahin „Markenkompetenz“), Wir-Form, „Markeneigenschaften“ (bis dahin
 „Markenattribute“).
 
+> **Entscheidung der Gruppe vom Fr, 23.10.2026 (Yannick Heisler; KI-Nachweis 135, Workflow D26): Rad = Selbstbild,
+> Befragungen als Fremdbild-Abgleich.** Das Steuerrad zeigt die Markenidentität als **Selbstbild** – nur Stichworte aus
+> Quellen über die eigenen Aussagen und den eigenen Auftritt der Marke: **DR** (Desk Research/Recherche-Dossier, mit
+> Faktenstatus ✔), **GB** (Gründerbefragung, Selbstauskunft), **AN** (Analogien aus der eigenen Kommunikation der
+> Marke, bei HOLY Elias Knaubers Ausarbeitung) und **KA** (Kommunikationsanalyse), für die Persona dazu **LM**.
+> Repertory Grid, Laddering und Aaker-Bogen fragen die Zielgruppe; sie zeigen ein **Fremdbild** (Image) und stehen
+> **nicht im Rad**, sondern in einem eigenen Schritt nach der Konsistenzprüfung: **„Abgleich: Selbstbild ↔ Fremdbild“**
+> (3–4 Paare, je Paar Zeichen für Übereinstimmung oder Abweichung). Begriffe nach der Vorlesung: Identität = „wer und
+> was man sein möchte“, Image = „was wahrgenommen wird“ (Stenger, S. 60, 87). Anlass: Bei HOLY gibt es keine echten
+> Interviews; die Befragung ist **KI-simuliert** (Workflow D25, [`buendel-b/`](buendel-b/README.md)) – Hypothesen, die
+> nicht als Identität ins Rad gehören. Damit gilt für die Kürzel **RG** und **LA**: Sie bezeichnen Ergebnisse für den
+> Abgleich, nicht mehr Stichworte im Rad. Bis 22.10.2026 sah diese Vorlage vor, dass jede Methode ihr Feld im Rad füllt
+> (Repertory Grid → Markeneigenschaften, Laddering → Markennutzen); die Zuordnung Methode → Feld in den Abschnitten
+> 2 und 3 und für die Befragungsteile von Abschnitt 4 (P11, Aaker-Bogen) bleibt als Frage, die die Methode
+> beantwortet, das Ergebnis geht aber in den Abgleich. Analogien aus der eigenen Kommunikation (AN) stehen im Rad.
+
 Je Feld 3–5 prägnante Stichworte. Hinter jedes Stichwort ein Kürzel der Quelle: **DR** Desk Research · **RG**
 Repertory Grid · **LA** Laddering · **AN** Analogien · **KA** Kommunikationsanalyse · **LM** Limbic Map · **GB**
 Gründerbefragung (Selbstauskunft von Gründer Mathias Horsch, 10/2026; [`gruenderbefragung.md`](gruenderbefragung.md)).
+Seit 23.10.2026 stehen im Rad nur DR, GB, AN, KA und LM (Entscheidung oben); RG und LA nur im Abgleich.
 Prompt: **P13**
 
 **Regel für GB** (Vorschlag vom 19.10.2026, die Gruppe bestätigt): Die Gründerbefragung ist Innensicht (n = 1). Ein
-GB-Stichwort steht im Rad nur, wenn es ein Ergebnis aus DR, RG, LA, AN, KA oder LM stützt. Sonst steht es in der
-Konsistenzprüfung als Selbstbild gegen die Außensicht.
+GB-Stichwort steht im Rad nur, wenn es ein Ergebnis aus DR, AN, KA oder LM stützt (bis 22.10.2026 auch RG oder LA).
+Sonst steht es in der Konsistenzprüfung als Selbstbild.
 
 | Feld | Leitfrage | Inhalt |
 |------|-----------|--------|
@@ -281,10 +303,19 @@ bzw. Kurzsatz (S. 94: „Wir machen Helden des Handwerks.“). Ziel: Die Marke i
 gegenüber konkurrierenden Marken abgegrenzt und wird ihnen vorgezogen (S. 92) – deshalb die Abgrenzung kurz begründen.
 Gemeint ist die Positionierung der Marke, wie sie aus der erfassten Identität folgt, nicht unser Vorschlag.
 Bei HOLY (Stand 21.10.2026, Hypothese): „Genuss mit gutem Gewissen“ (deckungsgleich mit HOLYs Versprechen
-„Geiler Geschmack mit gutem Gewissen“).
+„Geiler Geschmack mit gutem Gewissen“). Seit 23.10.2026 ausdrücklich als Selbstbild (Versprechen ✔ [5], GB); das
+KI-simulierte Laddering stützt sie nicht (stärkste Leiter: verlässlich sein) – das steht im Abgleich.
 
 **Konsistenzprüfung:** Passen Markeneigenschaften ↔ Nutzen ↔ Tonalität ↔ Bild zusammen? Widersprüche sind kein Fehler, sondern
 der Ausgangspunkt für die Empfehlungen.
+
+**Abgleich: Selbstbild ↔ Fremdbild** (seit 23.10.2026, Entscheidung oben): 3–4 Paare aus den Befragungsfolien, je
+Paar höchstens etwa sechs Wörter, gekennzeichnet als Übereinstimmung oder Abweichung. Bei HOLY (Fremdbild
+KI-simuliert; Stand der Web-Folie f10 am 23.10.2026, Freigabe offen): zuckerfrei ≠ Cola Zero knapp vorn (Repertory
+Grid) · Genuss mit gutem Gewissen ≠ kein Absturz → verlässlich sein (Laddering) · frech ≠ witziger Kumpel, der
+verkaufen will (Aaker/Analogien) · Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie (offene Tierfrage; nur beim
+Papagei treffen sich beide). Maßgeblich: Folie 10 in `praesentation/index.html`. Abweichungen sind Hypothesen für
+echte Interviews, keine Befunde.
 
 **Empfehlungen (2–3):** Was genau, auf welchem Kanal, warum (mit Verweis auf die Analyse).
 

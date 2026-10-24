@@ -3,7 +3,10 @@
 **Bündel B** (Analogien laut Arbeitsplan bei Lukas Welker) · **Inhalt: Elias Knauber (Bündel C)** · Folie 08 (70 s),
 Hinweis auf 08b, Feld Tonalität auf Folie 10 · Stand der Ausarbeitung von Elias: 16.10.2026 · übertragen
 KI-gestützt (Claude Code) am Do, 22.10.2026 aus seinem PDF (Original im Gruppenordner, nicht im Repository) ·
-**Entwurf, Prüfung durch Elias und Yannick offen; Abgleich mit Lukas offen**
+**Entwurf, Prüfung durch Elias und Yannick offen** · **Nachtrag Fr, 23.10.2026** (KI-Nachweis 135, Workflow D26):
+Papagei und Chamäleon gleichwertig auf Folie 08 und in der Live-Abstimmung (Entscheidung Yannick), Feld Tonalität
+„frech · gesellig · wandelbar“, Abgleich mit der KI-simulierten Befragung (Abschnitte 1, 7, 8, 10). Lukas liefert kein
+Material mehr; statt seiner Befragung gibt es eine KI-simulierte ([`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md)).
 
 > **So ist die Ausarbeitung zu lesen**
 > - **EK** = Ausarbeitung von Elias Knauber: „HOLY – Analogien: Mensch und Tier“, Fallstudie 1 · Markenidentität ·
@@ -38,21 +41,23 @@ KI-gestützt (Claude Code) am Do, 22.10.2026 aus seinem PDF (Original im Gruppen
 > Der Comedian steht für Humor und Frechheit, der Papagei für Auftreten und Gemeinschaft, das Chamäleon für
 > Wandelbarkeit.“ (EK, S. 1)
 
-- **Folie 08** bleibt beim Chamäleon: Titel ab Schritt 2 „HOLY wäre ein Chamäleon, kein Adler“ und die Live-Umfrage
-  (`marke.js`, Optionen Adler, Löwe, Chamäleon, Fuchs, Schwan; unsere Antwort Chamäleon) sind unverändert. Grundlage:
-  Yannicks Entscheidung vom 20.10.2026, nach Elias' Einordnung das Chamäleon in Abstimmung, Folie und Analyse zu setzen
-  (KI-Nachweis 94/95). Dass der Titel **nur** das Chamäleon nennt und nicht auch den Papagei, ist ein Vorschlag zur
-  Freigabe, keine Entscheidung Yannicks („Nur das Chamäleon“ in Eintrag 95 war die Antwort auf die Frage, was am Design
-  sonst noch zu überarbeiten sei; Korrektur in Eintrag 122). Neu ist, dass Gründe, Belege und Mensch jetzt aus Elias' Ausarbeitung stammen; der **Papagei**
-  – bei Elias „Tier 1“, also nicht sein zweites, sondern sein erstes Tier – steht sichtbar, aber klein auf der Karte
-  (Abschnitt 8; Rangfolge: offene Frage 1).
+- **Folie 08 seit Fr, 23.10.2026: Papagei und Chamäleon gleichwertig.** Entscheidung Yannick: „So wie Elias das am
+  wahrscheinlichsten wollte mit seinen Notizen“ (KI-Nachweis 135) – nach dem Zitat oben also beide Tiere als unsere
+  Analyse. Titel ab Schritt 2 „HOLY wäre Papagei und Chamäleon, kein Adler“; die Tier-Karte zeigt beide nebeneinander
+  (Abschnitt 8). In der Live-Umfrage (`marke.js`) ersetzt der **Papagei den Fuchs** an derselben Stelle (Optionen
+  Adler, Löwe, Chamäleon, Papagei, Schwan); unsere Antwort sind beide Tiere, die Aussagezahl zählt sie zusammen.
+  Bis 22.10.2026 nannten Titel und Umfrage nur das Chamäleon (Yannicks Entscheidung vom 20.10.2026 nach Elias'
+  Einordnung, KI-Nachweis 94/95); der Papagei – bei Elias „Tier 1“ – stand klein in der Karte.
 - **Der Adler** kommt in Elias' Analogien nicht vor. In seiner Kommunikationsanalyse ist er „so etwas wie das
   Maskottchen der gesamten Marke“ (Shaker-Kopf am Handelsdisplay, Pixelfigur im Treueprogramm, Kostüm in YouTube
   Shorts; EK Kommunikationsanalyse Kap. 3.1; [`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitt 4).
   Dossier 6.3: Maskottchen Comic-Adler „Raptor“ ✔ [54, 71].
-- **Ins Steuerrad (Feld Tonalität, Folie 10):** „frecher Kumpel · wandelbar · Spaß“ bleibt. Es passt zu Elias'
-  Zuordnung: „Frech & direkt“ (Comedian, Papagei), „Wandelbar & experimentierfreudig“ (Comedian, Chamäleon), Emotion
-  „Lachen und Unterhaltung“ (Zuordnung CC, H).
+- **Ins Steuerrad (Feld Tonalität, Folie 10) seit 23.10.2026: „frech · gesellig · wandelbar“** – je ein Wort aus Elias'
+  drei Analogien, wie im Zitat oben: Comedian (Humor und Frechheit → frech), Papagei (Auftreten und Gemeinschaft →
+  gesellig), Chamäleon (Wandelbarkeit → wandelbar). Die drei Wörter stehen wortgleich auf den Karten von Folie 08.
+  Grundlage: Entscheidung Yannick „Rad = Selbstbild, Simulation als Abgleich“ – Elias' Analogien beschreiben HOLY aus
+  der eigenen Kommunikation, also das Selbstbild, und gehören ins Rad; die KI-simulierte Befragung zeigt das Fremdbild
+  und steht im Abgleich (Abschnitt 7.3). Bis 22.10.2026: „frecher Kumpel · wandelbar · Spaß“.
 
 ---
 
@@ -150,9 +155,10 @@ Zugehörigkeit („Ich war dabei“).
 
 ---
 
-## 7. Verhältnis zu Lukas' Befragung (P11, Interviews) und zum Aaker-Profil (Folie 08b)
+## 7. Verhältnis zur Befragung von Bündel B (seit 23.10.2026 KI-simuliert) und zum Aaker-Profil (Folie 08b)
 
-*(Abschnitt CC – Einordnung bei der Übertragung, von Elias, Lukas und Yannick zu prüfen)*
+*(Abschnitt CC – Einordnung bei der Übertragung, von Elias und Yannick zu prüfen; bis 22.10.2026 „Verhältnis zu
+Lukas' Befragung (P11, Interviews)“ – Lukas liefert kein Material mehr)*
 
 ### 7.1 Was Elias' Analogien sind – und was nicht
 
@@ -162,20 +168,20 @@ Zugehörigkeit („Ich war dabei“).
 - **Keine Befragung und kein KI-Ergebnis:** Elias nennt weder Befragte noch Prompt P11. Schritt 3 (zwei Wettbewerber)
   und Schritt 4 (KI-Ergebnis P11 mit der Gruppe und 3–5 Personen vergleichen) fehlen – das ist Lukas' Teil (Bündel B,
   [`dossier-buendel-b.md`](dossier-buendel-b.md) B3: erst ohne KI, dann P11, Tierfrage offen in den Interviews).
-- **Stand Bündel B (22.10.2026):** Echte Kurzinterviews sind im Repository nicht belegt
-  (`praesentation/VORTRAGSREIFE.md`, L1, F08-2, F08-3: offen). Laut KI-Nachweis 120 liefert Lukas kein weiteres
-  Material; seit dem 22.10.2026 erzeugt der Workflow D25 eine **KI-simulierte** Befragung für Bündel B (u. a. ein
-  P11-Lauf, gekennzeichnet als KI-gestützt, und simulierte Befragte; Ablage `buendel-b/`). Beim Abschluss dieser
-  Übertragung (22.10.2026, nachmittags) lagen dort nur Rohdaten vor (simulierte Interviews, P11-Lauf), noch keine
-  Codierung oder Auswertung; sie sind hier **nicht** berücksichtigt und nicht gelesen. Folie 08 zeigt deshalb ab jetzt
-  Elias' Analyse statt der Beispieldaten; ihre Fußzeile nennt seine Ausarbeitung statt „n = 8: 5 KI-Personas (Prompt
-  P11) + 3 echte Kurzinterviews – Beispieldaten“.
-- **Wenn Ergebnisse aus Bündel B vorliegen** (D25 oder echte Interviews): Tier- und Menschenbilder getrennt nach echt
-  und KI-simuliert auszählen („x von n“) und Elias' Analyse gegenüberstellen (Notizen oder Backup). Nennen die
-  Antworten überwiegend ein anderes Tier, klären Elias und Yannick (und Lukas, falls erreichbar), was die Folie zeigt
-  ([`abgleich-vorlesung.md`](abgleich-vorlesung.md) #38: Folie 08 soll zeigen, was die Analogiemethode ergeben hat;
-  die Live-Umfrage ist nur ein Stimmungsbild). KI-simulierte Antworten bleiben Hypothesen (Stenger, S. 78) und
-  ersetzen Elias' Analyse nicht ungeprüft.
+  Schritt 4 ist seit 23.10.2026 mit der KI-simulierten Befragung abgedeckt (P11-Lauf und acht simulierte Personen
+  statt echter; 7.3), Schritt 3 weiter nicht.
+- **Stand Bündel B (23.10.2026):** Echte Kurzinterviews gibt es nicht. Laut KI-Nachweis 120 liefert Lukas kein
+  weiteres Material; der Workflow D25 hat stattdessen eine **KI-simulierte** Befragung durchgeführt und ausgewertet
+  (acht fiktive Befragte T1–T8, je ein eigener Agent, Kontrollgruppe, Codierung KI-gestützt, Rechnung per Skript;
+  dazu ein P11-Lauf, KI-gestützt ohne Befragte): [`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md).
+  Bei der ersten Übertragung (22.10.2026, nachmittags) lagen dort nur Rohdaten vor; der Abgleich steht jetzt in 7.3.
+  Folie 08 zeigt weiter Elias' Analyse; ihre Fußzeile nennt seine Ausarbeitung (seit 22.10.2026, ohne Tiernamen).
+- **Wie die Ergebnisse gegenübergestellt werden** (Entscheidung Yannick 23.10.2026 „Rad = Selbstbild, Simulation als
+  Abgleich“): Elias' Analogien sind das **Selbstbild** (abgeleitet aus HOLYs eigener Kommunikation) und stehen auf
+  Folie 08 und im Feld Tonalität. Die KI-simulierten Antworten sind ein **Fremdbild** – Hypothesen (Stenger, S. 78), die
+  Elias' Analyse nicht ersetzen. Sie stehen im Sprechtext von Folie 08 (Schritt 2), auf Folie 08b (Aaker, „Fremdbild
+  (KI-simuliert)“) und im Abgleich Selbstbild ↔ Fremdbild auf Folie 10. Die Folie zeigt also, was die Analogiemethode
+  ergeben hat ([`abgleich-vorlesung.md`](abgleich-vorlesung.md) #38); die Live-Umfrage bleibt ein Stimmungsbild.
 - **Zirkel-Hinweis:** Analogien (Folie 08) und Kommunikationsanalyse (Folie 09/09b) stammen von derselben Person und
   stützen sich beide auf HOLYs eigene Kommunikation. Das Urteil „Tonalität – passt“ auf 09b ist deshalb eine
   Stimmigkeitsprüfung innerhalb der Identität, keine unabhängige Bestätigung (H; vgl. VORTRAGSREIFE L5). Die Aufgabe
@@ -184,48 +190,68 @@ Zugehörigkeit („Ich war dabei“).
 
 ### 7.2 Abgleich mit dem Aaker-Profil auf Folie 08b
 
-Elias gibt **keine Aaker-Werte** und ordnet seine Begriffe keinen Aaker-Dimensionen zu. Auf 08b ändert sich sichtbar
-nichts (Lukas' Inhalt, Skalenwerte weiter Beispieldaten). Zum Abgleich durch Lukas:
+Elias gibt **keine Aaker-Werte** und ordnet seine Begriffe keinen Aaker-Dimensionen zu. Seit 23.10.2026 zeigt 08b das
+**KI-simulierte Fremdbild** (Aaker-Bogen und offene Analogie-Fragen der Simulation; bis 22.10.2026 Beispieldaten mit den
+Merkmalen frech, rebellisch, verspielt, nahbar, selbstironisch). Gegenüberstellung (x von 8 = verschiedene simulierte
+Personen, `buendel-b/auswertung/analogien-haeufigkeiten.csv`):
 
-| Elias' Tonalitätsbegriff (Abschnitt 6) | Merkmal auf 08b (Lukas, Beispieldaten) | Aaker-Dimension laut 08b |
+| Elias' Tonalitätsbegriff (Abschnitt 6, Selbstbild) | KI-simuliertes Fremdbild (08b) | Abgleich (CC, H) |
 |---|---|---|
-| Frech & direkt | frech | Spannung |
-| Rebellisch & selbstbewusst | rebellisch | Spannung |
-| Bunt & verspielt | verspielt | Spannung |
-| Gesellig & community-nah | nahbar | Aufrichtigkeit |
-| Humorvoll & selbstironisch | selbstironisch | Aufrichtigkeit |
-| Wandelbar & experimentierfreudig | – (kein Aaker-Merkmal; im Steuerrad als „wandelbar“) | – |
+| Frech & direkt | frech 1 von 8 (nur als Tiergrund „frech, mit Augenzwinkern“); Merkmal **witzig** 6 von 8 | Abweichung: frech kaum, witzig ja |
+| Humorvoll & selbstironisch | witzig 6 von 8, gut gelaunt 7 von 8 | Übereinstimmung beim Humor |
+| Gesellig & community-nah | **gesellig** 5 von 8; Beziehung **Kumpel** 8 von 8 | Übereinstimmung |
+| Bunt & verspielt | Tiergrund „bunt, knallig“ 6 von 8 | Übereinstimmung (beim Papagei) |
+| Rebellisch & selbstbewusst | – | nicht genannt |
+| Wandelbar & experimentierfreudig | – (Chamäleon 0 von 8) | Abweichung |
 
-(Zuordnung der Zeilen: CC, H.) Ergebnis: Alle fünf Merkmale von 08b finden sich in Elias' Begriffen wieder; Elias
-ergänzt „wandelbar“, das seit 21.10.2026 schon im Feld Tonalität steht.
+- **Emotionen:** 08b nennt jetzt Neugier (6 von 8) und Skepsis (5 von 8) – Gefühle der simulierten Nicht-Kund:innen,
+  keine Markenemotionen im Sinne der Identität. Elias' Emotionen (Lachen und Unterhaltung, Überraschung,
+  Zugehörigkeit) gehören zum Selbstbild; ein Abgleich Emotion gegen Emotion ist deshalb nur eingeschränkt sinnvoll.
+- **Beziehung:** 08b „Kumpel, der verkaufen will“ (Kumpel 8 von 8, Verkaufsabsicht 8 von 8 – fast wortgleich in allen
+  acht Agenten, die Frage legt Verkauf nahe); Elias: gesellig, lebt vom Publikum, für alle ansprechbar. Die
+  Verkaufsabsicht kommt bei Elias nicht vor – eine Abweichung, die Folie 10 im Abgleich zeigt („frech ↔ witziger
+  Kumpel, der verkaufen will“).
 
-- **Emotionen:** 08b nennt Spaß, Zugehörigkeit, Stolz; Elias Lachen und Unterhaltung, Überraschung, Zugehörigkeit.
-  Gleich ist Zugehörigkeit, „Spaß“ entspricht ungefähr „Lachen und Unterhaltung“ (Deutung CC); „Stolz“ (08b) und
-  „Überraschung“ (EK) unterscheiden sich. Elias leitet seine Emotionen aus der Analogie ab (Comedian) – das verlangt die
-  Aufgabe (Stenger, S. 60) und behebt den Befund VORTRAGSREIFE F08-13 (Emotionen auf 08b nur aus HOLYs
-  Kommunikation belegt), falls Lukas sie übernimmt.
-- **Beziehung:** 08b „Kumpel und Anführer des ‚Squad‘“; Elias: gesellig, lebt vom Publikum, für alle ansprechbar.
-  „Anführer“ kommt bei Elias nicht vor.
+### 7.3 Abgleich mit der KI-simulierten Tierfrage (seit 23.10.2026)
+
+Die Simulation hat die Tierfrage **offen** gestellt (nichts vorgeschlagen). Ergebnis (KI-simuliert, x von 8;
+`buendel-b/auswertung/analogien-haeufigkeiten.csv`, Ausarbeitung `buendel-b/analogien-befragung.md`):
+
+| Analogie | Elias (Selbstbild) | KI-simulierte Befragte (Fremdbild) |
+|---|---|---|
+| Tier | Papagei (Tier 1), Chamäleon (Tier 2) | **Papagei 5 von 8** (T2, T3, T4, T5, T8), Fuchs, Delfin, Pfau je 1 von 8; **Chamäleon 0, Adler 0** |
+| Gründe | Papagei: bunt, laut, lebt im Schwarm; Chamäleon: wandelbar | bunt, knallig 6 von 8; laut, überall präsent 6 von 8; „plappert nach“ 2 von 8 (Elias' eigener Einwand) |
+| Mensch | Impro-Comedian | Fitness- und Social-Media-Person (je 8 von 8), meist Mitte 20 (6 von 8) – kein Comedian |
+| Beziehung | lebt vom Publikum, ansprechbar | Kumpel 8 von 8, der verkaufen will 8 von 8 |
+
+- **Gestützt** werden Elias' Papagei (beim Tier treffen sich Selbst- und Fremdbild) und der Humor (witzig 6 von 8),
+  **nicht** Chamäleon und Comedian. P11 (KI-gestützt, keine Befragten) nennt einen Otter.
+- „8 von 8“ heißt hier: ein gemeinsames Bild des Modells, keine starke Zustimmung (Stenger, S. 78: Widersprüche
+  verschwinden). Keine Signifikanz, keine Repräsentativität, keine echten Interviews.
+- **Wo es steht:** Sprechtext Folie 08, Schritt 2 („Unsere KI-simulierten Befragten nennen offen meist den Papagei,
+  fünf von acht, das Chamäleon nie – Abgleich auf Folie 10“), Rückfragen und Hintergrund in den Notizen von 08; im
+  Abgleich auf Folie 10 als Paar „Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie“ (≈ teils: Übereinstimmung nur beim Papagei). Auf der Folie
+  selbst steht es bewusst nicht: Folie 08 zeigt Elias' Analyse.
 
 ---
 
 ## 8. Was auf die Folien geht
 
 Vorgaben des Hauptagenten (KI-Nachweis 119, Workflow D24), zur Freigabe durch Yannick und Elias; der Einbau in
-`praesentation/index.html` lief parallel zu dieser Übertragung. Stand der Web-Folie beim Abgleich nach der
-Nacharbeit am 22.10.2026 (abends) – maßgeblich ist die Folie selbst (Kasten „FOLIE 08“).
+`praesentation/index.html` lief parallel zu dieser Übertragung. Stand der Web-Folie nach dem Umbau am Fr, 23.10.2026
+(Entscheidungen Yannick, KI-Nachweis 135, Workflow D26) – maßgeblich ist die Folie selbst (Kasten „FOLIE 08“).
 
 | Folie | Was | Quelle |
 |---|---|---|
-| **08** Titel | bleibt: Frage „Wenn HOLY ein Tier wäre – welches?“, ab Schritt 2 „HOLY wäre ein Chamäleon, kein Adler“ (nur ein Tier im Titel: Vorschlag zur Freigabe, offene Frage 1) | Chamäleon: Entscheidung Yannick 20.10.2026 (KI-Nachweis 94/95); EK |
-| **08** Tier-Karte | Chamäleon mit drei Gründen nach Elias: **wandelbar** – „fünf Produktlinien“ · **kreativ** – „laufend neue Sorten“ · **anpassungsfähig** – „eigene Claims je Land“. Eigenschaften und Belege sind Elias' Wörter; die **Paare je Zeile** hat die Übertragung gebildet (CC, von Elias zu bestätigen, Frage 7). „kreativ“ statt „experimentierfreudig“ ist eine Wortwahl nach der Vorgabe, kein Platzproblem: Seit die Stichwortspalte mit dem längsten Wort wächst, passen „anpassungsfähig“ und auch „experimentierfreudig“ (Prüfung 22.10.2026) | EK, Abschnitt 5 |
-| **08** Zusatzzeile | eine gestrichelte Zeile mit zwei Einträgen, oben bündig: „Maskottchen · Adler“ (der Name „Raptor“ nur in den Notizen) und **„Weiteres Tier · Papagei – gesellig, bunt“** (eigene Strichzeichnung, nur auf der Folie, nicht in der Abstimmung). Beim Einbau stand dort „Zweites Tier“ – das kehrte Elias' Reihenfolge um (Papagei „Tier 1“); seit der Nacharbeit vom 22.10.2026 neutral „Weiteres Tier“ (Datenschlüssel `weiteresTier`) | Dossier 6.3 ✔ [54, 71]; EK Kommunikationsanalyse 3.1; EK, Abschnitt 4 |
-| **08** Mensch-Karte | „Impro-Comedian“ (Zeichnung: Mensch am Mikrofon) statt „Start-up-Gründer“; Profil aus Elias' Tabelle: Auftreten **„überdreht, nie planlos“** (seit der Nacharbeit; beim Einbau „laut, überdreht, spontan“ – ohne Elias' Einschränkung „aber nie planlos“), Umgang „lebt vom Publikum“, Humor „selbstironisch, frech“ (Spalte Tonalität). Die Zeile „Echte Kundschaft“ entfällt (Wortbudget); die Kundschaft steht in den Notizen. Unten in der Karte bleibt Leerraum – eine vierte Zeile („Rollen – schlüpft in jede Rolle“) wäre möglich, kostet aber das Wortbudget (Freigabe Yannick/Elias) | EK, Abschnitt 3 |
+| **08** Titel | Frage „Wenn HOLY ein Tier wäre – welches?“, ab Schritt 2 **„HOLY wäre Papagei und Chamäleon, kein Adler“** (seit 23.10.2026, in allen Themen einzeilig; 20.–22.10.2026 „HOLY wäre ein Chamäleon, kein Adler“) | Entscheidung Yannick 23.10.2026 (KI-Nachweis 135); EK, Abschnitt 1 |
+| **08** Tier-Karte | seit 23.10.2026 **zwei Tiere gleichwertig** nebeneinander (zwei Drittel der Breite), je zwei Zeilen Eigenschaft – Beleg, die erste ist das Wort fürs Steuerrad: **Papagei** – gesellig: Account „HOLY Squad®“ · bunt: Tier-Illustrationen; **Chamäleon** – wandelbar: fünf Produktlinien · kreativ: laufend neue Sorten; darunter gestrichelt „Maskottchen · Adler“ (der Name „Raptor“ nur in den Notizen). Eigenschaften und Belege sind Elias' Wörter; die **Paare je Zeile** hat die Übertragung gebildet (CC, von Elias zu bestätigen, Frage 7). Elias' dritter Chamäleon-Beleg „anpassungsfähig – eigene Claims je Land“ steht wegen des Wortbudgets nur noch in den Notizen (bis 22.10.2026 auf der Karte, der Papagei damals klein als „Weiteres Tier · Papagei – gesellig, bunt“) | EK, Abschnitte 4 und 5; Dossier 6.3 ✔ [54, 71] |
+| **08** Mensch-Karte | „Impro-Comedian“ (Zeichnung: Mensch am Mikrofon; ein Drittel der Breite) statt „Start-up-Gründer“; Profil aus Elias' Tabelle, seit 23.10.2026 mit Humor zuerst: Humor „selbstironisch, frech“ (Spalte Tonalität; „frech“ = Wort fürs Steuerrad), Auftreten **„überdreht, nie planlos“** (Elias: „laut, überdreht, spontan, aber nie planlos“), Umgang „lebt vom Publikum“. Die Zeile „Echte Kundschaft“ entfällt (Wortbudget); die Kundschaft steht in den Notizen | EK, Abschnitt 3 |
+| **08** Live-Umfrage | seit 23.10.2026 Optionen Adler, Löwe, Chamäleon, **Papagei** (an der Stelle des Fuchses), Schwan; unsere Antwort Papagei **und** Chamäleon (beide Zeilen umrahmt, die Aussagezahl zählt beide zusammen) | Entscheidung Yannick 23.10.2026 |
 | **08** Wortbudget, Pille | 40 Wörter (`werkzeuge/pruefen.mjs` warnt ab 41); Pille „Beispieldaten“ ganz entfernt (die Live-Stimmen in Schritt 0–1 waren nie Beispieldaten, die Analogien sind Elias' Analyse); Kontrast Wettbewerber bleibt „(Beispiel)“ | – |
 | **08** Fußzeile | „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 (Belege aus HOLY-Website, -Kanälen, TV-Spot 2026) – Hypothesen (H)“ statt „eigene Analogie-Befragung, n = 8 … – Beispieldaten“ – **ohne** den Tiernamen, weil die Fußzeile schon während der Abstimmung zu sehen ist | EK |
-| **08** Notizen | Schritt 1 seit der Nacharbeit „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“ statt „… im Interview offen gefragt“ (Interviews nicht belegt). Schritt 2 „Warum Chamäleon?“ (ca. 20 s) neu nach Elias: Chamäleon, Papagei, Comedian, Adler = Maskottchen. Absatz „Chamäleon – Einordnung und Begründung“: „Begründung: Elias Knauber (Ausarbeitung Analogien, 16.10.2026)“; die früheren Dossier-Belege (31 Energy-Sorten, Wacken/CSD/Simpsons, „Gefährlich geil!“) nur noch als Ergänzung „KI-gestützt, Dossier“; Zuordnungstabelle kurz. Rückfragen: Tarnung/Einzelgänger mit Elias' Gegenargument und dem Papagei als Gemeinschaftstier; „Ist der Comedian eure Persona?“ (statt „Gründer Ende 20“); „Raptor soll bleiben?“ → Adler bleibt Maskottchen, fester Absender wird ein Name und eine Profilfarbe (Empfehlung 3) | EK; Dossier mit Status |
-| **08b** | sichtbar nichts; im Kasten und in den Notizen nur der Hinweis, dass Elias' Zuordnungstabelle vorliegt und Lukas sein Profil damit abgleicht (Abschnitt 7.2) | – |
-| **10** Feld Tonalität | „frecher Kumpel · wandelbar · Spaß“ bleibt (Abschnitt 1) | AN |
+| **08** Notizen | Schritt 1 seit der Nacharbeit „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“ statt „… im Interview offen gefragt“ (Interviews nicht belegt). Schritt 2 seit 23.10.2026 „Warum Papagei und Chamäleon?“ (ca. 26 s): Adler = Maskottchen, Papagei, Chamäleon, Comedian, dazu der Befund der KI-simulierten Befragung (Papagei 5 von 8, Chamäleon nie – Abgleich auf Folie 10); Schritt 3 „frech, gesellig, wandelbar – das geht ins Steuerrad“; neue Rückfragen „Warum steht jetzt der Papagei in der Umfrage – und wo ist der Fuchs?“, „Kommen Papagei und Chamäleon aus eurer Befragung?“. Bis 22.10.2026: Schritt 2 „Warum Chamäleon?“ (ca. 20 s). Absatz „Chamäleon – Einordnung und Begründung“: „Begründung: Elias Knauber (Ausarbeitung Analogien, 16.10.2026)“; die früheren Dossier-Belege (31 Energy-Sorten, Wacken/CSD/Simpsons, „Gefährlich geil!“) nur noch als Ergänzung „KI-gestützt, Dossier“; Zuordnungstabelle kurz. Rückfragen: Tarnung/Einzelgänger mit Elias' Gegenargument und dem Papagei als Gemeinschaftstier; „Ist der Comedian eure Persona?“ (statt „Gründer Ende 20“); „Raptor soll bleiben?“ → Adler bleibt Maskottchen, fester Absender wird ein Name und eine Profilfarbe (Empfehlung 3) | EK; Dossier mit Status |
+| **08b** | seit 23.10.2026 das **KI-simulierte Fremdbild** (Titel „HOLY wirkt wie ein witziger Kumpel – der verkaufen will“, Pille „KI-simuliert“, Ergebnisbereich „Fremdbild (KI-simuliert) → Abgleich mit dem Selbstbild: Folie 10“); Elias' Zuordnungstabelle gehört zum Selbstbild (Notizen von 08), der Vergleich steht in Abschnitt 7.2 | KI-simulierte Befragung D25 |
+| **10** Feld Tonalität | seit 23.10.2026 **„frech · gesellig · wandelbar“** (Abschnitt 1); bis 22.10.2026 „frecher Kumpel · wandelbar · Spaß“. Dazu der Abgleich Selbstbild ↔ Fremdbild, u. a. „Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie“ (Schritt 9, parallel eingebaut, D26) | AN |
 | **09b** Fit „zur Tonalität – passt“ | Elias' Begriffe als Maßstab („überall frech, schnell, nah dran“, [`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitt 8) | EK |
 
 Folienentwurf: [`folienentwuerfe.md`](folienentwuerfe.md), Folie 8.
@@ -239,7 +265,8 @@ Folienentwurf: [`folienentwuerfe.md`](folienentwuerfe.md), Folie 8.
    Widerspruch „Gamer“ gegen das Wegrücken vom Gaming (VORTRAGSREIFE, Prüfung Folie 08).
 2. **Tiere:** bisher nur das Chamäleon als „Einordnung Elias Knauber“, mündlich weitergegeben, Begründung als
    „Vorschlag, KI-gestützt“ aus dem Dossier (KI-Nachweis 94/95). Elias' Ausarbeitung nennt **zwei** Tiere und führt den
-   **Papagei als „Tier 1“**, das Chamäleon als „Tier 2“. Die Folie titelt weiter mit dem Chamäleon (offene Frage 1).
+   **Papagei als „Tier 1“**, das Chamäleon als „Tier 2“. Seit 23.10.2026 nennt die Folie beide gleichwertig
+   (Entscheidung Yannick; bis dahin titelte sie nur mit dem Chamäleon).
 3. **Gründe und Belege des Chamäleons:** bisher wandelbar – „31 Energy-Sorten“, vielseitig – „Wacken, CSD, Simpsons“,
    frech – „Gefährlich geil!“ (Dossier 3.1, 6.6, 6.2 ✔). Jetzt Elias' Eigenschaften und Belege (Abschnitt 5). **„Frech“
    ist bei Elias kein Chamäleon-Merkmal** – es tragen Comedian und Papagei. Sätze wie „wandelbar in Farbe, Sorte und
@@ -253,10 +280,13 @@ Folienentwurf: [`folienentwuerfe.md`](folienentwuerfe.md), Folie 8.
    Antworten widersprechen sich nicht.
 6. **Adler:** bisher Gegenpol „Selbstbild · Maskottchen“ nach Dossier 6.7 (**H**: „Selbstbild: Adler (‚Raptor‘) –
    Stärke, Überblick“). Elias' Analogien erwähnen den Adler nicht; die Deutung „Selbstbild“ bleibt die des Dossiers.
-7. **Emotionen und Beziehung** auf 08b (Lukas, Beispieldaten) weichen teilweise ab (Abschnitt 7.2).
+7. **Emotionen und Beziehung** auf 08b weichen ab; seit 23.10.2026 zeigt 08b das KI-simulierte Fremdbild statt
+   Beispieldaten (Abschnitt 7.2).
 8. **Datenbasis in der Fußzeile:** bisher „n = 8 … Beispieldaten“ (unbelegt, VORTRAGSREIFE F08-2); jetzt Elias'
    Ausarbeitung.
 9. **Wettbewerber:** keine von Elias; der Kontrast bleibt Beispiel (Dossier 5.2 **H**).
+10. **Feld Tonalität** (23.10.2026): „frech · gesellig · wandelbar“ statt „frecher Kumpel · wandelbar · Spaß“ – je
+    ein Wort aus Elias' drei Analogien (Abschnitt 1).
 
 ---
 
@@ -264,9 +294,10 @@ Folienentwurf: [`folienentwuerfe.md`](folienentwuerfe.md), Folie 8.
 
 **An Elias**
 
-1. **Rangfolge der Tiere:** Du führst den Papagei als „Tier 1“. Die Folie titelt „HOLY wäre ein Chamäleon, kein Adler“
-   und zeigt den Papagei nur als Zusatzzeile. Einverstanden – oder soll der Titel beide Tiere nennen bzw. der
-   Papagei vorn stehen? (Die Live-Umfrage hat keinen Papagei; `marke.js` bleibt bis zur Entscheidung unverändert.)
+1. ~~**Rangfolge der Tiere**~~ – *entschieden am 23.10.2026 (Yannick, „So wie Elias das am wahrscheinlichsten wollte
+   mit seinen Notizen“):* Papagei und Chamäleon gleichwertig in Titel („HOLY wäre Papagei und Chamäleon, kein
+   Adler“), Karte und Live-Umfrage (Papagei statt Fuchs). **Bitte bestätigen**, dass das deine Absicht trifft – sonst
+   ist es leicht rückgängig zu machen (KI-Nachweis 135).
 2. **„Eigene Claims je Land“** als Stärke (anpassungsfähig) – wie verträgt sich das mit dem Bruch „uneinheitlicher
    Absender“ auf 09b und Empfehlung 3 („ein Absender“)? Welche Claims laufen in Frankreich und Großbritannien
    (Fundstelle mit Datum für B7)?
@@ -279,30 +310,34 @@ Folienentwurf: [`folienentwuerfe.md`](folienentwuerfe.md), Folie 8.
 5. **Belege außerhalb des Dossiers** (Nutella-Werbeparodie, „Hohepriester“, Coca-Cola in Stellenanzeigen, Hydration
    mit Kokosnuss oder Ananas, Claims je Land): bitte je eine Fundstelle mit Abrufdatum für B7.
 6. **Wettbewerber-Analogien** (Red Bull, waterdrop): Hast du welche? Sonst bleibt der Kontrast „(Beispiel)“.
-7. **Stichworte auf der Karte:** „kreativ“ oder „experimentierfreudig“? Beides sind deine Wörter; seit die
-   Stichwortspalte mit dem längsten Wort wächst, passt auch „experimentierfreudig“ ohne Überlauf (Prüflauf
-   22.10.2026) – es ist also eine Frage der Wortwahl, nicht des Platzes. **Zuordnung:** Du nennst fünf Eigenschaften
-   und drei Belege in getrennten Aufzählungen; die Paare auf der Karte (wandelbar – fünf Produktlinien, kreativ –
-   laufend neue Sorten, anpassungsfähig – eigene Claims je Land) hat erst die Übertragung gebildet (CC) – bestätigen
-   oder ändern. Auf der Mensch-Karte: „Humor: selbstironisch, frech“ (deine Spalte Tonalität) statt „über Mächtige
-   und sich selbst“? Auftreten seit der Nacharbeit „überdreht, nie planlos“ (statt „laut, überdreht, spontan“ – dein
-   Zusatz „aber nie planlos“ fehlte) – einverstanden? Und soll eine vierte Zeile („Rollen – schlüpft in jede Rolle“)
-   den Leerraum der Mensch-Karte füllen (kostet Wortbudget)?
+7. **Stichworte auf der Karte** (Stand 23.10.2026): je Tier zwei Zeilen – Papagei: gesellig – Account „HOLY Squad®“,
+   bunt – Tier-Illustrationen; Chamäleon: wandelbar – fünf Produktlinien, kreativ – laufend neue Sorten. Du nennst
+   Eigenschaften und Belege in getrennten Aufzählungen; die Paare hat die Übertragung gebildet (CC) – bestätigen oder
+   ändern. Einverstanden, dass „anpassungsfähig – eigene Claims je Land“ (Wortbudget, umstritten wegen S4/S5) nur
+   noch in den Notizen steht? „kreativ“ oder „experimentierfreudig“ (beides deine Wörter)? Auf der Mensch-Karte
+   seit 23.10.2026 Humor zuerst („selbstironisch, frech“ – „frech“ ist das Wort fürs Steuerrad), Auftreten
+   „überdreht, nie planlos“ – einverstanden? Eine vierte Zeile („Rollen – schlüpft in jede Rolle“) passt mit der
+   schmaleren Mensch-Karte nicht mehr ins Wortbudget. Und: Trifft das Feld Tonalität auf Folie 10 seit 23.10.2026,
+   „frech · gesellig · wandelbar“ (je ein Wort aus deinen drei Analogien), deine Zuordnung (Abschnitt 6)?
 
-**An Lukas bzw. Bündel B (laut KI-Nachweis 120 ohne weiteres Material von Lukas; KI-Simulation D25 läuft)**
+**Bündel B (laut KI-Nachweis 120 ohne weiteres Material von Lukas) – beantwortet durch die KI-simulierte Befragung
+D25 (23.10.2026)**
 
-8. Ergebnis der Tierfrage (P11 und Befragte, x von n, echt und KI-simuliert getrennt): Passt es zu Chamäleon, Papagei
-   und Comedian?
-9. Aaker-Profil 08b mit Abschnitt 7.2 abgleichen: Merkmale passen; Emotionen („Stolz“ oder „Überraschung“?) und
-   Beziehung („Anführer“?) entscheiden.
+8. ~~Ergebnis der Tierfrage~~ – *beantwortet (KI-simuliert, offen gefragt, keine echten Interviews):* Papagei 5 von 8,
+   Fuchs, Delfin, Pfau je 1 von 8, Chamäleon und Adler 0 von 8; als Mensch Fitness- und Social-Media-Person (8 von 8),
+   kein Comedian; P11 (KI-gestützt): Otter. Es stützt also deinen Papagei, nicht Chamäleon und Comedian (Abschnitt
+   7.3). Auf Folie 08 steht es nur im Sprechtext und in den Notizen, im Abgleich auf Folie 10 als Paar.
+9. ~~Aaker-Profil 08b abgleichen~~ – *erledigt:* 08b zeigt seit 23.10.2026 das KI-simulierte Fremdbild (Merkmale gut
+   gelaunt, jung, witzig, locker, gesellig; Emotionen Neugier, Skepsis; Beziehung „Kumpel, der verkaufen will“) –
+   Gegenüberstellung mit deinen Begriffen in Abschnitt 7.2. Kein Angleichen: Selbst- und Fremdbild stehen
+   gekennzeichnet nebeneinander.
 
 **An Yannick**
 
-10. Freigabe der Vorgaben für Folie 08 (Abschnitt 8) – insbesondere Papagei als Zusatzzeile statt im Titel.
-11. Andere Ausarbeitungen tragen noch den alten Stand: [`limbic-map.md`](limbic-map.md) 4.1 (Nachtrag Chamäleon mit
-    Dossier-Belegen; Bitte an Elias, die Begründung zu prüfen) und §6 „Raptor bleibt Absender“;
-    [`folienentwuerfe.md`](folienentwuerfe.md) Folie 5, Sprechtext „Comic-Tiere, 31 Energy-Sorten“. Folie 05 bleibt laut
-    Vorgabe unverändert – nachziehen oder so lassen?
+10. Freigabe der Vorgaben für Folie 08 (Abschnitt 8) – seit 23.10.2026 mit beiden Tieren gleichwertig.
+11. Andere Ausarbeitungen: [`limbic-map.md`](limbic-map.md) 4.1 und §6 („Raptor bleibt Absender“) und
+    [`folienentwuerfe.md`](folienentwuerfe.md) Folie 5 werden am 23.10.2026 nach Entscheidung 5 (Querverweise
+    nachziehen) angeglichen; die Notizen von Folie 05 zieht der Workflow D26 nach (Folie selbst unverändert).
 
 ---
 
@@ -318,6 +353,9 @@ Folienentwurf: [`folienentwuerfe.md`](folienentwuerfe.md), Folie 8.
   6.1–6.3, 6.5–6.7; Quellennummern = Anhang B.
 - Vorlage [`methoden.md`](methoden.md) Abschnitt 4; Plan Bündel B [`dossier-buendel-b.md`](dossier-buendel-b.md) B3;
   Prompt P11 in [`prompts.md`](prompts.md).
+- KI-simulierte Befragung Bündel B (Workflow D25, 22./23.10.2026; acht fiktive Befragte, keine echten Interviews):
+  [`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md), Zahlen aus
+  `buendel-b/auswertung/analogien-haeufigkeiten.csv` (Abschnitte 7.2, 7.3).
 - Stenger, D.: Vorlesungsfolien Unternehmenskommunikation, S. 60, 88 (nach [`abgleich-vorlesung.md`](abgleich-vorlesung.md)).
 - Aaker, J. L. (1997): Dimensions of Brand Personality. *Journal of Marketing Research*, 34(3), 347–356 (nur 08b,
   Ergänzung aus der Literatur).

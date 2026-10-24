@@ -154,7 +154,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 132 | 23.10.2026 | System | Workflow-Meldung: D25 – Prüfer und Nacharbeit am Nutzungslimit gescheitert, danach Neustart der Sitzung | D25 (fortgesetzt) | fortgesetzt |
 | 133 | 23.10.2026 | Yannick | „Weiter“ | D25 (fortgesetzt) | fortgesetzt |
 | 134 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D25 | nur Nachweis committet; D25 läuft |
-| 135 | 23.10.2026 | Yannick | Antworten auf vier Rückfragen zum Einbau der Simulation (06/07/08b ehrlich; Rad = Selbstbild, Simulation als Abgleich; Papagei „wie Elias es wollte“; Anrühren nur im Sprechtext) | D26 | in Arbeit |
+| 135 | 23.10.2026 | Yannick | Antworten auf vier Rückfragen zum Einbau der Simulation (06/07/08b ehrlich; Rad = Selbstbild, Simulation als Abgleich; Papagei „wie Elias es wollte“; Anrühren nur im Sprechtext) | D26 | umgesetzt (24.10.2026), Exporte neu; Freigabe offen |
 | 136 | 23.10.2026 | System | Workflow-Meldung: D26 sofort am Nutzungslimit gescheitert (alle 10 Agenten), danach Neustart der Sitzung | D26 (fortgesetzt) | keine Dateiänderungen; fortgesetzt |
 | 137 | 23.10.2026 | Yannick | „Versuch es noch einmal“ | D26 (fortgesetzt) | fortgesetzt |
 | 138 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
@@ -166,7 +166,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 144 | 24.10.2026 | Yannick | „Weiter“ | D26 | D26 läuft bereits (Synthese) – keine neue Aktion nötig |
 | 145 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
 | 146 | 24.10.2026 | System | Workflow-Meldung: D26 – Synthese und Prüfer „Treue“ fertig; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Nutzungslimit gescheitert | D26 | Rest ohne weitere Unteragenten von Claude selbst |
-| 147 | 24.10.2026 | Yannick | „Weiter“ + Bitte um Zeitschätzung („der Dienstag rückt näher“) | D26 (Rest selbst) | in Arbeit |
+| 147 | 24.10.2026 | Yannick | „Weiter“ + Bitte um Zeitschätzung („der Dienstag rückt näher“) | D26 (Rest selbst) | Befunde eingearbeitet, Tests grün, Exporte 24.10., Commit; Zeitschätzung berichtet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2387,7 +2387,15 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   den Rest von D26 ohne weitere Unteragenten selbst: Befunde des Treue-Prüfers (1 hoch, 5 mittel, ausgewählte
   niedrige) gezielt einarbeiten, die technischen Prüfungen und die Konsistenzsuche selbst ausführen (pruefen.mjs in
   allen Themen, Abstimmungstests, Volltextsuche), Exporte erzeugen, committen. Zeitschätzung an Yannick.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** Befunde des Treue-Prüfers eingearbeitet (Folie 10: Abgleich-Paare „zuckerfrei ≈ ja – aber Cola Zero
+  gleichauf“, „ohne Zucker → verlässlich sein“, Sprechtext Schritt 9 genauer und kürzer, Vorbehalt „kein Zuckerabsturz“
+  in den Notizen; Folie 02: Titel „Jede Methode gehört zu einem Feld des Steuerrads“, Klick 1; Folie 03: Rückfrage;
+  Folie 08: Basis 40 % bei zwei Tieren; Kasten 08b; B1: Codierung ohne Zweitcodierung; Folie 06: kein Haken ohne
+  Markeneigenschaft; `pruefe_synthese.py`: erwarteter Hinweis statt Fehler). Prüfungen: `pruefen.mjs --schritte
+  --optional` in Editorial, Bento, Keynote, dunkel je 0 Fehler (Warnungen: Kontrast abgeblendeter Zwischenschritte,
+  Wortbudget f03, f04, f08b, f10 im Abgleich-Schritt, f11), keine externen Anfragen; live-abstimmung-test 53/53,
+  Mutationen 26/26, zeitfenster-e2e 58/0, referent-test 43/43. Exporte 24.10.2026: PDF 22 Seiten, 23 Folienbilder,
+  Übersicht. Sprechzeit der Hauptfolien nachgezählt ≈ 15 Minuten (Soll laut Folien 14:00 plus Abstimmung).
 - **Unteragenten:** keine neuen (D26 abgeschlossen durch Claude)
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
@@ -2428,7 +2436,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D21 | 20.10.2026 | 101 (fortgesetzt nach 102) | Workflow „abgleich-vorlesung“ (9 Unteragenten in 4 Phasen) | Vorlesungsfolien auswerten, Fallstudie 1 dagegen abgleichen, Befunde gegenprüfen, Bericht abgleich-vorlesung.md | Bericht mit 54 geprüften Befunden (17 verworfen), 24 vor dem Vortrag; Aufgaben je Person, Glossar | Claude: Seiten 58, 88, 90 im Original nachgelesen; Entscheidung #1 nachgetragen |
 | D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
 | D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
-| D26 | 23.10.2026 | 135 | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | läuft | – |
+| D26 | 23.–24.10.2026 | 135 (fortgesetzt nach 136, 139, 142; Rest durch Claude nach 146/147) | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen; 5 davon gelaufen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | Folien 02, 06, 07, 08, 08b, 10 (Selbstbild + Abgleich), B1, B2, B4, B5 u. a.; Abstimmung mit Papagei und zwei Antworten; Doku; Prüfer „Treue“ (1 hoch, 5 mittel) – eingearbeitet von Claude; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Limit gescheitert und von Claude selbst erledigt | Claude: alle Tests selbst ausgeführt, Folien 02, 06, 07, 08, 08b, 10 angesehen, Exporte |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3240,8 +3248,29 @@ steht hier mit dem wörtlichen Auftrag.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-23_buendel-b-einbau.js`](workflows/2026-10-23_buendel-b-einbau.js)
   (gemeinsamer Kontext mit den fünf Entscheidungen Yannicks aus Eintrag 135 und deren Auslegung, feste Regeln; je
   Agent ein eigener Auftrag). Quellen der Agenten: `buendel-b/` (D25), Elias' Ausarbeitungen, Dossier.
-- **Ergebnis:** läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Unterbrechungen:** dreimal am Nutzungslimit (Einträge 136, 139, 142, 146). Nach dem dritten Abbruch hat Claude den
+  Rest (Prüfung Technik/Konsistenz, Nacharbeit, Abschluss) ohne weitere Unteragenten selbst erledigt (Eintrag 147).
+- **Ergebnis:**
+  - **Folien 06, 07, 08b, B4, B5:** KI-simulierte Ergebnisse mit Pille „KI-simuliert“, Titeln nach den Daten („HOLY hebt
+    sich ab – aber vor allem durch Hürden“, „Ohne Zucker → kein Absturz → verlässlich sein“, „HOLY wirkt wie ein witziger
+    Kumpel – der verkaufen will“), Fußzeilen „n = 8, keine echten Interviews“, Ergebnisbereiche als Fremdbild → Abgleich
+    Folie 10; Skriptänderungen 07-laddering.js und 13-backup.js.
+  - **Folie 08 und Live-Abstimmung:** „HOLY wäre Papagei und Chamäleon, kein Adler“, beide Tiere gleichwertig mit Elias'
+    Gründen, Impro-Comedian; Abstimmung: Papagei statt Fuchs (Position 3), Auflösung mit beiden Tieren (Code in
+    komponenten.js abwärtsverträglich), Papagei-Zeichnung auf der Handy-Seite; Tests angepasst.
+  - **Folie 10:** Rad = Selbstbild (Eigenschaften zuckerfrei · Community-nah · Energy: 160 mg Koffein; Nutzen Genuss ohne
+    Zucker · gutes Gewissen · dazugehören; Tonalität frech · gesellig · wandelbar; Bild und Positionierung unverändert),
+    zwei Lücken unverändert, neuer Schritt 9 „Abgleich Selbstbild ↔ Fremdbild (KI-simuliert)“ mit vier Paaren.
+  - **Querverweise:** Folie 02 (Methodenkarten „Fremdbild“, Titel), 05 (Notizen), 11, 12, B1, B2 (P7–P11 als echte
+    Läufe), B7, B8; Doku: folienentwuerfe, fragerunde, methoden §6, analogien, limbic-map, arbeitsplan, README,
+    QUELLEN, LIESMICH, AUTOREN, VORTRAGSREIFE, ANLEITUNG.
+  - **Prüfer „Treue“:** 1 hoher Befund (Sprechtext „statt Genuss zählt Verlässlichkeit“ – Genuss war nicht geprüft),
+    5 mittlere (Paar „zuckerfrei“, „Nur beim Papagei“, Vorbehalt „kein Zuckerabsturz“, Folie 02 Titel/Sprechtext,
+    Folie 03 Rückfrage) – von Claude eingearbeitet (Eintrag 147).
+- **Wie Claude das Ergebnis geprüft hat:** `pruefen.mjs --schritte --optional` in allen vier Varianten (0 Fehler, keine
+  externen Anfragen), live-abstimmung-test 53/53 und Mutationen 26/26, zeitfenster-e2e 58/0, referent-test 43/43,
+  `pruefe_synthese.py` ohne Fehler; Folien 02, 06, 07, 08, 08b und 10 (Rad und Abgleich-Schritt) selbst angesehen;
+  keine Namen von KI-Modellen im Diff; Exporte 24.10.2026 (PDF 22 Seiten, 23 Bilder, Übersicht).
 
 ---
 

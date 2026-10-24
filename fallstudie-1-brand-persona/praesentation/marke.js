@@ -157,9 +157,13 @@ window.MARKE = {
                     Die Handys rechnen mit dem Wert auf GitHub, Folie 08 mit dem
                     auf dem Präsentationsrechner – sind sie verschieden, zeigt ein
                     Handy „Danke“, obwohl seine Stimme nicht mehr zählt (oder umgekehrt).
-     unsereAntwort  wird im Auflösungsschritt als „Unsere Analyse“ hervorgehoben
+     unsereAntwort  wird im Auflösungsschritt als „Unsere Analyse“ hervorgehoben;
+                    ein Text ('Chamäleon') oder – seit Fr, 23.10.2026 – eine Liste
+                    (['Papagei', 'Chamäleon']): dann werden alle umrahmt, und die
+                    Aussagezahl zählt ihre Stimmen zusammen
      aussage        Satz zur großen Aussagezahl (Baustein .umfrage-aussage);
-                    {prozent} und {antwort} werden automatisch ersetzt
+                    {prozent} und {antwort} werden automatisch ersetzt (bei einer
+                    Liste wird {antwort} zu „Papagei oder Chamäleon“)
      beispielwerte  BEISPIELDATEN zum Ausprobieren (Pille „Beispieldaten“).
                     Sie verschwinden mit dem ersten Stand der Live-Abstimmung
                     oder der ersten Stimme von Hand (oder „Zurücksetzen“).
@@ -170,28 +174,37 @@ window.MARKE = {
     tier: {
       frage: 'Wenn [Marke] ein Tier wäre – welches?',
       // Antwortoptionen (festgelegt von Yannick, 19.10.2026; seit 20.10.2026
-      // „Chamäleon“ statt „Waschbär“ an derselben Stelle): „Chamäleon“ =
-      // unsere Analyse (Einordnung Elias Knauber, Bündel C), „Adler“ =
-      // Selbstbild (Maskottchen „Raptor“) – beide verlangt Folie 08, sonst
-      // Hinweis in deren Notizen. Reihenfolge = Knöpfe auf der Abstimmseite,
-      // Ziffern 1–5 und Nummern 0–4 in der Tabelle (Spalte „Option“; bei Weg B:
-      // Reihenfolge im Werkzeug). Nach den ersten echten Stimmen Reihenfolge
-      // nicht mehr ändern – sonst zählen sie fürs falsche Tier.
-      // Hinweis zum Wechsel: Die Tabelle speichert nur die Nummer. Probestimmen
-      // mit Option 2 (Runde 'probe', abgegeben für den Waschbär) zählen jetzt
-      // als Chamäleon – unkritisch, die Runde wird vor dem Vortrag ohnehin
-      // auf 'vortrag-2026-10-26' umgestellt.
-      optionen: ['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan'],
+      // „Chamäleon“ statt „Waschbär“ an derselben Stelle; seit Fr, 23.10.2026
+      // „Papagei“ statt „Fuchs“ an derselben Stelle – Entscheidung Yannick
+      // „So wie Elias das am wahrscheinlichsten wollte mit seinen Notizen“,
+      // KI-Nachweis 135): „Papagei“ und „Chamäleon“ = unsere Analyse,
+      // gleichwertig (Elias Knauber: „als Tier ein Papagei und ein Chamäleon“,
+      // bei ihm Tier 1 und Tier 2), „Adler“ = Selbstbild (Maskottchen „Raptor“)
+      // – alle drei verlangt Folie 08, sonst Hinweis in deren Notizen.
+      // Reihenfolge = Knöpfe auf der Abstimmseite, Ziffern 1–5 und Nummern 0–4
+      // in der Tabelle (Spalte „Option“; bei Weg B: Reihenfolge im Werkzeug).
+      // Nach den ersten echten Stimmen Reihenfolge nicht mehr ändern – sonst
+      // zählen sie fürs falsche Tier.
+      // Hinweis zu den Wechseln: Die Tabelle speichert nur die Nummer (das
+      // Skript bei Google bleibt unverändert). Probestimmen der Runde 'probe'
+      // mit Option 2 (abgegeben für den Waschbär) zählen jetzt als Chamäleon,
+      // mit Option 3 (abgegeben für den Fuchs) als Papagei – unkritisch, die
+      // Runde wird vor dem Vortrag ohnehin auf 'vortrag-2026-10-26' umgestellt.
+      optionen: ['Adler', 'Löwe', 'Chamäleon', 'Papagei', 'Schwan'],
       link: 'https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/abstimmen.html?u=tier',
       kurzLink: '',                                             // leer = keine Zeile unter dem QR-Code (Weg B: z. B. 'particify.de/p/12345678')
       ergebnisLink: '',                                         // nur Weg B: Ergebnisseite des Werkzeugs
       liveQuelle: 'https://script.google.com/macros/s/AKfycbwnr4wXtKVNg9rlUtVv1u0xBAIf98oJdLkMvbmb7elTK7KR3fz1TnU5rqzYSQdISpuxxw/exec', // Web-App (eingerichtet von Yannick, 19.10.2026) – leer = aus
       runde: 'probe',                                           // 'probe' → vor dem Vortrag 'vortrag-2026-10-26'
       gueltigMinuten: 30,                                       // Stimmen zählen 30 Minuten (Yannick, 20.10.2026); 0 oder leer = ohne Zeitgrenze
-      unsereAntwort: 'Chamäleon',                               // Ergebnis unserer Analyse (Folie 08, Titel; seit 20.10.2026)
+      // Ergebnis unserer Analyse (Folie 08, Titel): seit Fr, 23.10.2026 beide Tiere
+      // nach Elias Knauber (Papagei = sein Tier 1, Chamäleon = Tier 2), gleichwertig
+      // umrahmt; die Aussagezahl zählt beide zusammen. Bis 22.10.2026: 'Chamäleon'.
+      unsereAntwort: ['Papagei', 'Chamäleon'],
       // Satz der großen Aussagezahl; {prozent} und {antwort} werden ersetzt
+      // ({antwort} = „Papagei oder Chamäleon“)
       aussage: '{prozent} sehen [Marke] wie wir: als {antwort}',
-      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen; Adler, Löwe, Chamäleon, Fuchs, Schwan)
+      beispielwerte: [15, 9, 17, 14, 9]                         // BEISPIELDATEN (64 Stimmen; Adler, Löwe, Chamäleon, Papagei, Schwan – Zahlen unverändert seit 19.10.2026)
     }
   },
 

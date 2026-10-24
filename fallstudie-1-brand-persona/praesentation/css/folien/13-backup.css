@@ -375,9 +375,12 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 /* ---------------------------------------------------------------------------
    5. B4 · REPERTORY GRID (Mittelwerte + Auswertung)
    --------------------------------------------------------------------------- */
-#b4 .bk4-tabelle { font-size: 26px; }
+/* seit 23.10.2026 zwölf Konstrukte (KI-simulierte Befragung) statt sechs:
+   24 px (Backup-Maß) und enge Zeilen, damit Tabelle und Legende passen
+   (bis dahin 26 px und 14 px Innenabstand) */
+#b4 .bk4-tabelle { font-size: var(--groesse-tabelle); }
 #b4 .bk4-tabelle tbody th,
-#b4 .bk4-tabelle tbody td { padding-top: 14px; padding-bottom: 14px; }
+#b4 .bk4-tabelle tbody td { padding-top: 3px; padding-bottom: 3px; }
 #b4 .bk4-tabelle thead th { font-size: var(--groesse-meta); }
 #b4 .bk4-gruppenkopf th {
   padding-bottom: 6px;
@@ -403,7 +406,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b4 .bk4-pille {
   display: inline-flex;
   align-items: center;
-  padding: 4px 14px;
+  padding: 2px 14px;
   border-radius: var(--radius-pille);
   font-family: var(--schrift-text);
   font-size: var(--groesse-meta);
@@ -415,6 +418,9 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 }
 #b4 .bk4-pille--attribut { background: var(--f-akzent); color: var(--f-auf-akzent); }
 #b4 .bk4-pille--hinweis { border: var(--linie-fein) dashed var(--f-warnung); color: var(--f-warnung); }
+/* „Startpunkt“ (seit 23.10.2026: ohne Zucker, für jeden Tag – Startpunkte fürs
+   Laddering, keine Markeneigenschaft und keine Hürde): neutral statt Warnfarbe */
+#b4 .bk4-pille--startpunkt { border-color: var(--f-linie-stark); color: var(--f-text); }
 #b4 .bk4-pille--nein { color: var(--f-text-2); }
 #b4:has(.bk-z1.schritt-an) .bk4-pille { opacity: 1; }
 
@@ -465,6 +471,21 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b5 .bk5-links > .bk-zwischentitel { margin-top: var(--abstand-4); }
 #b5 .bk-tabelle th,
 #b5 .bk-tabelle td { padding-top: 6px; padding-bottom: 6px; }
+/* seit 23.10.2026 (KI-simulierte Leitern mit fünf bis sechs Gliedern):
+   Ketten und Original-Formulierungen dürfen umbrechen, 22 px wie die
+   übrigen Metaangaben im Backup, engere Zeilen */
+#b5 .bk5-leitern,
+#b5 .bk5-codes { font-size: var(--groesse-meta); line-height: 1.2; }
+#b5 .bk5-leitern td,
+#b5 .bk5-leitern tbody th,
+#b5 .bk5-codes td { padding-top: 2px; padding-bottom: 2px; }
+#b5 .bk5-leitern thead th,
+#b5 .bk5-codes thead th { padding-top: 2px; padding-bottom: 6px; }
+#b5 .bk5-links > .bk-zwischentitel { margin-top: var(--abstand-2); }
+#b5 .bk5-leitern td.bk5-kette,
+#b5 .bk5-codes td.bk5-original { white-space: normal; }
+#b5 .bk5-leitern tbody th.bk5-person { vertical-align: top; }
+#b5 .bk5-kette .bk5-glied { white-space: nowrap; }
 
 /* Kopf der Leitern: Überschrift links, Legende (hohler/voller Punkt) rechts */
 #b5 .bk5-kopf { display: flex; align-items: baseline; justify-content: space-between; gap: var(--abstand-4); }
@@ -504,7 +525,9 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b5 .bk5-code { color: var(--f-akzent); font-weight: var(--gewicht-fett); }
 #b5 .bk5-original { color: var(--f-text-2); }
 
-/* Implikationsmatrix: drei Blöcke (Ebene → nächste Ebene) */
+/* Implikationsmatrix: je ein Block Ebene → nächste Ebene, seit 23.10.2026
+   dazu ein Block für Verbindungen innerhalb einer Ebene (.bk5-block--innen);
+   leere Zeilen/Spalten entfallen mit "matrixKompakt" (höchstens 3 Spalten) */
 #b5 .bk5-matrix { width: auto; table-layout: fixed; }
 #b5 .bk5-matrix tbody tr:nth-child(even) > * { background: transparent; }  /* kein Zebra in der Matrix */
 #b5 .bk5-matrix th,
@@ -523,7 +546,7 @@ html.maus-ruht .bk-sprung:not(:focus-visible) { border-color: transparent; }
 #b5 .bk5-ecke { width: 240px; text-align: left; }
 #b5 .bk5-ecke > span { display: block; font-family: var(--schrift-kicker); letter-spacing: 0.04em; text-transform: var(--kicker-versalien); }
 #b5 .bk5-ziel { width: 158px; text-align: center; }
-#b5 .bk5-von { font-size: var(--groesse-meta); font-weight: 600; padding-left: 14px; }
+#b5 .bk5-von { font-size: var(--groesse-meta); font-weight: 600; padding-left: 14px; white-space: normal; }
 #b5 .bk5-wert {
   text-align: center;
   font-family: var(--schrift-zahl);

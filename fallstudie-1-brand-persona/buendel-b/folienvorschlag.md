@@ -1,5 +1,40 @@
 # Folienvorschlag Bündel B – was sich auf den Folien ändern soll (Entscheidungsvorlage)
 
+> **UMGESETZT am Fr, 23.10.2026** (Entscheidungen Yannick vom 23.10.2026, KI-Nachweis 135; Einbau im Workflow D26 in
+> `praesentation/index.html`). Diese Datei ist ab hier die **Vorlage**; maßgeblich sind die Web-Folien (Kästen „FOLIE
+> 06“, „FOLIE 07“, „FOLIE 08“, „FOLIE 08b“, „FOLIE 10“, „B1“, „B4“, „B5“) und
+> [`../folienentwuerfe.md`](../folienentwuerfe.md). Die Entscheidungen im Wortlaut (Antworten auf vier Rückfragen):
+> (1) Folien 06, 07, 08b: **„Ehrlich einbauen“** – umgesetzt nach §1, §2, §4, §7, §8 mit E1–E8 und E14–E16 wie
+> empfohlen; (2) Folie 10: **„Rad = Selbstbild, Simulation als Abgleich“**; (3) Folie 08 und Live-Abstimmung: **„So
+> wie Elias das am wahrscheinlichsten wollte mit seinen Notizen“**; (4) „selbst anrühren“: **„Nur im Sprechtext“**
+> (E13 Variante a).
+>
+> **Abweichungen von diesem Vorschlag:**
+> - **Folie 10 (§5, E9, E10, E17; E11 wie empfohlen, E12 nach dem Einbau dort prüfen):** Die Stichworte der Simulation gehen **nicht** ins Rad (keine Kürzel LA-KI,
+>   AN-KI). Das Rad zeigt die Identität als Selbstbild (Quellen DR, GB, AN, KA); Tonalität „frech · gesellig ·
+>   wandelbar“ aus Elias' drei Analogien. Die Simulation steht in einem neuen Schritt „Abgleich: Selbstbild ↔
+>   Fremdbild (KI-simuliert)“ nach der Konsistenzprüfung (Paare z. B. zuckerfrei ↔ Cola Zero gleichauf; Genuss mit
+>   gutem Gewissen ↔ verlässlich, kein Zuckerabsturz; frech ↔ witziger Kumpel, der verkaufen will; Papagei &
+>   Chamäleon ↔ Papagei 5 von 8; umgesetzt als „zuckerfrei ≠ Cola Zero knapp vorn“, „Genuss mit gutem Gewissen ≠ kein
+>   Absturz → verlässlich sein“, „frech ≠ witziger Kumpel, der verkaufen will“, „Papagei & Chamäleon ≈ Papagei 5 von 8,
+>   Chamäleon nie“). Lücken 1 und 2 und die Titel von 10 und 11 bleiben. Der Einbau von Folie 10 lief
+>   parallel zu diesem Vermerk – Wortlaut dort.
+> - **Folien 06, 07, 08b:** Die Ergebnisbereiche heißen „Fremdbild (KI-simuliert)“ und führen zum Abgleich auf Folie
+>   10 statt „Markeneigenschaften“ bzw. „Ins Steuerrad“; Sprechtexte entsprechend umgestellt (06: „selbst anrühren“
+>   als stärkste Hürde quer zum Markenkern, Verweis auf Folie 10; 07 Schritt 4 „Markennutzen als Fremdbild“; 08b
+>   Schritt 0 und 4). Auf 08b steht im Fremdbild nur „witziger Kumpel“ (ohne „gut gelaunt“, Wortbudget), Erlebnisse
+>   gekürzt auf „mit anderen, oft bei der Arbeit“, Fußzeile ohne „‚wandelbar‘: Ausarbeitung E. Knauber“.
+> - **Folie 08 (§3, E5, E6):** Statt nur der Notizen: Papagei und Chamäleon **gleichwertig** als unsere Analyse
+>   (Elias: „als Tier ein Papagei und ein Chamäleon“) – Titel „HOLY wäre Papagei und Chamäleon, kein Adler“, beide
+>   Tiere auf der Karte, in der Live-Abstimmung ersetzt der **Papagei den Fuchs** (E6: ja); Auflösung umrahmt beide.
+>   Der Befund der Simulation (Papagei 5 von 8, Chamäleon nie) steht im Sprechtext Schritt 2 (E5 Variante A, neu
+>   formuliert) und in den Notizen; Fußzeile unverändert.
+> - **Folie 07 (E4):** Der Bogen innerhalb einer Ebene läuft **unter** den Knoten (über den Knoten kreuzte er eine
+>   Linie). **B4 (E15):** Variante a umgesetzt; Fußzeile ohne Skriptnamen.
+> - **B1 (§6, E14) und die Querverweise in §10** (Folie 02, 05 Notizen, 12, B2, B7, B8; Entscheidung 5 Yannick):
+>   Einbau lief parallel zu diesem Vermerk – Wortlaut in `praesentation/index.html`.
+> - Weitere Einzelheiten: `praesentation/AUTOREN.md`, Abschnitt zum 23.10.2026.
+
 > **KI-simuliert.** Alle Ergebnisse stammen aus einer KI-simulierten Befragung: 8 fiktive Befragte T1–T8, je Person
 > ein eigener Agent, dazu eine Kontrollgruppe ohne Persona-Block (Workflow D25, im Auftrag von Yannick Heisler,
 > 22.10.2026; KI-Nachweis 120). Es gab **keine echten Interviews und keine Kundenstimmen**. Die Ergebnisse sind

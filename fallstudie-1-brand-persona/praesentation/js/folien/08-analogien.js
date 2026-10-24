@@ -5,23 +5,35 @@
         • setzt die Frage der Umfrage (marke.js → umfragen.tier.frage) als Titel
         • ohne Abstimm-Link (nur Zählmodus): zeigt links „Abstimmung per
           Handzeichen“ statt des QR-Codes
-        • baut aus den Daten der Folie die Karten „Als Tier“ (mit Selbstbild
-          und – seit 22.10.2026 – einem weiteren Tier nebeneinander) und „Als
-          Mensch“ (Kundschaft nur, wenn eingetragen) sowie die Kontrastzeile
-          mit zwei Wettbewerbern
-        • prüft, ob Tier, Selbstbild und Titel der Folie zu marke.js →
-          umfragen.tier (unsereAntwort, optionen) passen und ob die Karten
-          überlaufen (dann enger setzen); bleibt ein Problem, steht ein Hinweis
-          in den Notizen (Referentenansicht) und eine Warnung in der Konsole
+        • baut aus den Daten der Folie die Karten „Als Tier“ und „Als Mensch“
+          (Kundschaft nur, wenn eingetragen) sowie die Kontrastzeile mit zwei
+          Wettbewerbern. Seit Fr, 23.10.2026 (Entscheidung Yannick, Folie 08
+          „So wie Elias das am wahrscheinlichsten wollte“) zeigt die Tier-Karte
+          ZWEI Tiere gleichwertig nebeneinander (Daten „tiere“: Papagei und
+          Chamäleon, je mit Gründen), darunter das Selbstbild (Maskottchen
+          Adler); die Mensch-Karte (Impro-Comedian) steht rechts daneben. Die
+          alte Form (ein Tier „tier“ mit Selbstbild und „weiteresTier“ in
+          einer gestrichelten Zeile, 22.10.2026) wird weiter gelesen.
+        • prüft, ob Tiere, Selbstbild und Titel der Folie zu marke.js →
+          umfragen.tier (unsereAntwort – Text oder Liste –, optionen) passen,
+          ob die Stichworte des Felds Tonalität auf Folie 10 wortgleich auf
+          dieser Folie stehen (seit 23.10.2026: Rad = Selbstbild, Elias'
+          Analogien) und ob die Karten überlaufen (dann enger setzen); bleibt
+          ein Problem, steht ein Hinweis in den Notizen (Referentenansicht)
+          und eine Warnung in der Konsole
         • (Werteingabe, Tab, „Werte“, „Zurücksetzen“ und die Ziffern 1–9
           regelt seit dem 16.10.2026 der Umfrage-Baustein in js/komponenten.js)
-   f08b „Markentonalität (Aaker)“
+   f08b „Markentonalität (Aaker)“ – seit Fr, 23.10.2026 KI-simuliert (Fremdbild)
         • baut aus den Daten das Profil der fünf Dimensionen nach Aaker
           (Balken für die Marke, Kreis-Marker für die Wettbewerber) und hängt
           die Persönlichkeitsmerkmale an ihre Dimension
-        • füllt die Ergebniskarte (Übergabezeile, Emotionen, Beziehung,
-          Erlebnisse); ihr Platz ist reserviert, die Karte erscheint samt
-          Überschriften und Inhalten erst im letzten Schritt (seit 16.10.2026)
+        • füllt die Ergebniskarte (Zeile „Fremdbild“ bzw. bis 22.10.2026
+          „Ins Steuerrad“, Emotionen, Beziehung, Erlebnisse); ihr Platz ist
+          reserviert, die Karte erscheint samt Überschriften und Inhalten erst
+          im letzten Schritt (seit 16.10.2026)
+        • prüft (seit 23.10.2026), ob das erste Stichwort des Fremdbilds im
+          Titel und auf Folie 10 (Abgleich Selbstbild ↔ Fremdbild) steht –
+          sonst Hinweis in den Notizen und Warnung in der Konsole
    Inhalte ändern Sie NUR in den Daten der Folien (index.html, Folien 08/08b).
 
    Schritte entstehen über data-schritt-Attribute (im HTML bzw. hier beim
@@ -56,9 +68,10 @@
     /* Papagei (seit 22.10.2026: Elias Knaubers anderes Tier in seiner
        Ausarbeitung „Analogien“ – bei ihm „Tier 1“, das Chamäleon „Tier 2“):
        auf einem Ast, Blick nach rechts. Erkennungsmerkmale:
-       großer Hakenschnabel, Augenring, langer Schwanz. Nur auf der Folie –
-       keine Umfrage-Option, deshalb NICHT in js/abstimmen.js (Live-Abstimmung
-       bleibt unverändert). Geprüft am 22.10.2026 bei 96, 72 und 56 px. */
+       großer Hakenschnabel, Augenring, langer Schwanz. Geprüft am 22.10.2026
+       bei 96, 72 und 56 px. Seit Fr, 23.10.2026 gleichwertig mit dem
+       Chamäleon auf der Folie und Option der Live-Abstimmung (an der Stelle
+       des Fuchses) – deshalb jetzt auch in js/abstimmen.js (BILDER). */
     papagei:
       '<path d="M54 46 C51 29 61 16 76 16 C86 16 92 21 94 28 C104 27 109 40 101 52 C99 45 95 42 91 43 C92 59 88 72 79 82 L72 115 C67 117 62 116 59 112 L63 84 C51 77 50 60 54 46 Z"/>' +
       '<circle cx="80" cy="29" r="6.5"/><circle class="voll" cx="80.5" cy="29" r="2.8"/>' +
@@ -229,7 +242,9 @@
     util.element('p', { class: 'g4-name' }, util.markeText(name || '…'), titel);
   }
 
-  /* Karte „Als Tier“: Zeichnung, Tiername, drei Gründe (Eigenschaft + Beleg),
+  /* ALTE FORM (Daten „tier“, bis 22.10.2026 – weiter lesbar; seit 23.10.2026
+     baut tiereKarte unten die Karte aus „tiere“):
+     Karte „Als Tier“: Zeichnung, Tiername, drei Gründe (Eigenschaft + Beleg),
      darunter das Selbstbild der Marke (z. B. Maskottchen) und – seit
      22.10.2026 – ein weiteres Tier („weiteresTier“, Elias Knauber: Papagei;
      bis zur Nacharbeit am 22.10.2026 hieß der Schlüssel „zweitesTier“ und
@@ -239,18 +254,9 @@
      (nebeneinander), damit die Karte nicht höher wird.
      Tiere ohne eigene Zeichnung bekommen einen Pfotenabdruck. */
   function tierKarte(ctx, karte, tier) {
-    var util = ctx.util;
-    var name = tier.name || umfrageKonfig(ctx).unsereAntwort || '…';
+    var name = tier.name || antwortenAus(umfrageKonfig(ctx))[0] || '…';
     kartenKopf(ctx, karte, bildFuer(name, tier.bild, 'pfote'), 'Als Tier', name);
-
-    var liste = util.element('dl', { class: 'g4-liste g4-liste--gruende' }, null, karte);
-    (tier.gruende || []).slice(0, 3).forEach(function (grund) {
-      /* erlaubt: { "stichwort": "frech", "beleg": "…" } oder ein einfacher Text */
-      var g = typeof grund === 'string' ? { stichwort: grund, beleg: '' } : (grund || {});
-      var zeile = util.element('div', { class: 'g4-zeile' }, null, liste);
-      util.element('dt', { class: 'g4-stichwort' }, util.markeText(g.stichwort || ''), zeile);
-      util.element('dd', null, util.markeText(g.beleg || ''), zeile);
-    });
+    gruendeListe(ctx, karte, tier.gruende);
 
     var weiteres = tier.weiteresTier || tier.zweitesTier;
     var pole = [[tier.selbstbild, 'Selbstbild'], [weiteres, 'Weiteres Tier']].filter(function (p) {
@@ -259,8 +265,65 @@
     if (!pole.length) return;
     karte.classList.add('hat-gegenpol');
     /* zwei Einträge: gemeinsame Zeile (CSS .g4-gegenpole, zwei Spalten) */
-    var ziel = pole.length > 1 ? util.element('div', { class: 'g4-gegenpole' }, null, karte) : karte;
+    var ziel = pole.length > 1 ? ctx.util.element('div', { class: 'g4-gegenpole' }, null, karte) : karte;
     pole.forEach(function (p) { gegenpol(ctx, ziel, p[0], p[1]); });
+  }
+
+  /* Liste der Gründe: Eigenschaft (Titelschrift) + Beleg, höchstens drei.
+     erlaubt: { "stichwort": "wandelbar", "beleg": "…" } oder ein einfacher Text */
+  function gruendeListe(ctx, eltern, gruende) {
+    var util = ctx.util;
+    var liste = util.element('dl', { class: 'g4-liste g4-liste--gruende' }, null, eltern);
+    (gruende || []).slice(0, 3).forEach(function (grund) {
+      var g = typeof grund === 'string' ? { stichwort: grund, beleg: '' } : (grund || {});
+      var zeile = util.element('div', { class: 'g4-zeile' }, null, liste);
+      util.element('dt', { class: 'g4-stichwort' }, util.markeText(g.stichwort || ''), zeile);
+      util.element('dd', null, util.markeText(g.beleg || ''), zeile);
+    });
+    return liste;
+  }
+
+  /* Karte „Als Tier“ mit MEHREREN Tieren (seit Fr, 23.10.2026, Daten
+     „tiere“): Elias Knaubers zwei Tiere stehen gleichwertig nebeneinander –
+     je Spalte Zeichnung, Kicker „Als Tier“, Name und Gründe (Eigenschaft +
+     Beleg). Darunter, über die ganze Kartenbreite, das Selbstbild der Marke
+     (Maskottchen Adler) als gestrichelt abgesetzter Gegenpol. Die Klasse
+     „g4-paar--tiere“ am Kartenpaar gibt der Tier-Karte zwei Drittel der
+     Breite (CSS). Mit nur einem Eintrag in „tiere“ sieht die Karte aus wie
+     früher (eine Spalte). */
+  function tiereKarte(ctx, karte, tiere, selbstbild) {
+    var util = ctx.util;
+    var spalten = util.element('div', { class: 'g4-tiere' }, null, karte);
+    tiere.forEach(function (tier) {
+      var spalte = util.element('div', { class: 'g4-tier' }, null, spalten);
+      var name = tier.name || '…';
+      kartenKopf(ctx, spalte, bildFuer(name, tier.bild, 'pfote'), tier.kicker || 'Als Tier', name);
+      gruendeListe(ctx, spalte, tier.gruende);
+    });
+    if (tiere.length > 1) {
+      karte.classList.add('g4-karte--tiere');
+      var paar = karte.closest('.g4-paar');
+      if (paar) paar.classList.add('g4-paar--tiere');
+    }
+    if (selbstbild && (selbstbild.text || selbstbild.name)) gegenpol(ctx, karte, selbstbild, 'Selbstbild');
+  }
+
+  /* Tiere aus den Daten: neue Form „tiere“ (Liste) oder alte Form „tier“
+     (ein Tier; das weitere Tier steht dann nur klein im Gegenpol) */
+  function tiereAus(m) {
+    if (Array.isArray(m.tiere) && m.tiere.length) return m.tiere.filter(function (t) { return t && t.name; });
+    return m.tier && m.tier.name ? [m.tier] : [];
+  }
+  function selbstbildAus(m) {
+    return m.selbstbild || (m.tier && m.tier.selbstbild) || null;
+  }
+
+  /* unsereAntwort aus marke.js als Liste (Text oder – seit 23.10.2026 –
+     Liste, wie im Umfrage-Baustein, js/komponenten.js) */
+  function antwortenAus(konfig) {
+    var a = konfig && konfig.unsereAntwort;
+    return (Array.isArray(a) ? a : [a]).map(function (x) { return String(x === undefined || x === null ? '' : x).trim(); })
+      .filter(function (x) { return x; });
   }
 
   /* Gegenpol unten in einer Karte: ein belegter Fakt bzw. eine weitere
@@ -327,7 +390,8 @@
     var alt = notizen && notizen.querySelector(':scope > .g4-hinweis[data-art="' + art + '"]');
     if (alt) alt.remove();
     if (!text) return;
-    console.warn('f08: ' + titel + ' – ' + text);
+    /* Kennung der Folie (f08 bzw. seit 23.10.2026 auch f08b) vor der Meldung */
+    console.warn((ctx.folie.id || 'f08') + ': ' + titel + ' – ' + text);
     if (!notizen) return;
     var p = ctx.util.element('p', { class: 'g4-hinweis g4-abgleich', 'data-art': art });
     /* „ACHTUNG“ in Versalien, damit der Hinweis in der Probe auffällt */
@@ -344,30 +408,38 @@
   }
 
   /* Abgleich zwischen Folie und marke.js. Geprüft wird:
-     1. marke.js → umfragen.tier.unsereAntwort = Tier unserer Analyse
-        (das hebt die Umfrage in Schritt 1 als „Unsere Analyse“ hervor),
-     2. marke.js → umfragen.tier.optionen enthält das Tier der Analyse und das
-        Tier des Selbstbilds (sonst behauptet der Titel „Chamäleon, kein Adler“
+     1. marke.js → umfragen.tier.unsereAntwort = Tier(e) unserer Analyse
+        (das hebt die Umfrage in Schritt 1 als „Unsere Analyse“ hervor).
+        Seit Fr, 23.10.2026 dürfen es mehrere sein (Liste, Papagei und
+        Chamäleon): Dann müssen genau die Tiere der Karte dort stehen –
+        Reihenfolge egal.
+     2. marke.js → umfragen.tier.optionen enthält jedes Tier der Analyse und
+        das Tier des Selbstbilds (sonst behauptet der Titel „…, kein Adler“
         über Tiere, die gar nicht zur Wahl standen),
-     3. der Titel ab Schritt 2 nennt beide Tiere. */
-  function abgleich(ctx, tier) {
+     3. der Titel ab Schritt 2 nennt alle diese Tiere. */
+  function abgleich(ctx, tiere, selbst) {
     var konfig = umfrageKonfig(ctx);
-    var tierName = tier.name || '';
-    var tierSchl = bildSchluessel(tierName);
-    var selbst = tier.selbstbild || null;
+    var namen = tiere.map(function (t) { return t.name; });
+    var schluessel = namen.map(bildSchluessel);
     /* Tier des Selbstbilds: über die Zeichnung („bild“: "adler") bzw. das erste Wort */
     var selbstSchl = selbst ? bildSchluessel(selbst.bild || String(selbst.text || '').split(/\s+/)[0]) : '';
     var selbstName = selbst ? (String(selbst.text || '').split(/\s+/)[0] || selbstSchl) : '';
     var probleme = [];
 
-    if (tierSchl && konfig.unsereAntwort && bildSchluessel(konfig.unsereAntwort) !== tierSchl) {
-      probleme.push('Die Umfrage löst „' + konfig.unsereAntwort + '“ als unsere Analyse auf ' +
-        '(marke.js → umfragen.tier.unsereAntwort), die Folie zeigt „' + tierName + '“.');
+    var antworten = antwortenAus(konfig);
+    var antwortSchl = antworten.map(bildSchluessel);
+    var gleich = antwortSchl.length === schluessel.length &&
+      schluessel.every(function (s) { return antwortSchl.indexOf(s) >= 0; });
+    if (schluessel.length && antworten.length && !gleich) {
+      probleme.push('Die Umfrage löst „' + antworten.join('“ und „') + '“ als unsere Analyse auf ' +
+        '(marke.js → umfragen.tier.unsereAntwort), die Folie zeigt „' + namen.join('“ und „') + '“.');
     }
     var optionen = (Array.isArray(konfig.optionen) ? konfig.optionen : []).map(bildSchluessel);
     var fehlen = [];
-    if (tierSchl && optionen.length && optionen.indexOf(tierSchl) < 0) fehlen.push(tierName);
-    if (selbstSchl && optionen.length && optionen.indexOf(selbstSchl) < 0) fehlen.push(selbstName);
+    if (optionen.length) {
+      schluessel.forEach(function (s, i) { if (s && optionen.indexOf(s) < 0) fehlen.push(namen[i]); });
+      if (selbstSchl && optionen.indexOf(selbstSchl) < 0) fehlen.push(selbstName);
+    }
     if (fehlen.length) {
       probleme.push('Die Umfrage bietet „' + fehlen.join('“ und „') + '“ nicht an ' +
         '(marke.js → umfragen.tier.optionen: ' + konfig.optionen.join(', ') + ').');
@@ -375,14 +447,78 @@
     var titel = ctx.folie.querySelector('.g4-titel-antwort');
     var titelText = titel ? titel.textContent : '';
     var imTitelFehlt = [];
-    if (titel && tierSchl && !nenntTier(titelText, tierSchl)) imTitelFehlt.push(tierName);
-    if (titel && selbstSchl && !nenntTier(titelText, selbstSchl)) imTitelFehlt.push(selbstName);
+    if (titel) {
+      schluessel.forEach(function (s, i) { if (s && !nenntTier(titelText, s)) imTitelFehlt.push(namen[i]); });
+      if (selbstSchl && !nenntTier(titelText, selbstSchl)) imTitelFehlt.push(selbstName);
+    }
     if (imTitelFehlt.length) {
       probleme.push('Der Titel ab Schritt 2 („' + titelText.trim() + '“) nennt „' + imTitelFehlt.join('“ und „') +
         '“ nicht (Titel in index.html, Folien 08/08b anpassen).');
     }
     notizHinweis(ctx, 'abgleich', 'Bitte abgleichen', probleme.length
       ? probleme.join(' ') + ' Alles auf dieselben Tiere setzen (Notizen „VOR DEM VORTRAG“).'
+      : '');
+  }
+
+  /* ---------------------------------------------------------------------------
+     ABGLEICH MIT FOLIE 10 (seit Fr, 23.10.2026, Entscheidung Yannick „Rad =
+     Selbstbild, Simulation als Abgleich“): Das Feld Markentonalität im
+     Steuerrad von Folie 10 trägt Elias' Analogien („frech · gesellig ·
+     wandelbar“) – diese Wörter müssen wortgleich auf Folie 08 stehen.
+     Folie 08b zeigt dagegen das KI-simulierte Fremdbild; sein erstes
+     Stichwort muss im Abgleich auf Folie 10 vorkommen. Bis 22.10.2026 galt:
+     Zeile „Ins Steuerrad“ auf 08b = Feld Tonalität (nur als Kommentar, ohne
+     Prüfung im Skript).
+     Gelesen wird Folie 10 so, wie sie in index.html steht: Text ohne
+     Notizen und Kommentare, dazu die Daten-JSON (dort stehen Stichworte und
+     Abgleich). Fehlt Folie 10, wird nichts geprüft.
+     --------------------------------------------------------------------------- */
+  /* Wortgleich enthalten? Groß-/Kleinschreibung und Satzzeichen egal,
+     aber nur ganze Wörter („frech“ passt nicht in „frecher“). */
+  function enthaeltWortgleich(text, wort) {
+    var norm = function (s) {
+      return ' ' + String(s || '').toLowerCase().replace(/[^0-9a-zäöüß]+/g, ' ').trim() + ' ';
+    };
+    var w = norm(wort);
+    return w.trim() !== '' && norm(text).indexOf(w) >= 0;
+  }
+  /* Text eines Elements, Textknoten mit Leerzeichen verbunden (textContent
+     klebte „wandelbar“ und „fünf Produktlinien“ aus zwei Zellen zu
+     „wandelbarfünf …“ zusammen). Kommentare zählen nicht, <script>-Daten schon. */
+  function textMitLuecken(el) {
+    var teile = [];
+    var gang = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (gang.nextNode()) teile.push(gang.currentNode.nodeValue);
+    return teile.join(' ');
+  }
+  /* Text einer Folie ohne Notizen */
+  function folienText(id) {
+    var folie = document.getElementById(id);
+    if (!folie) return null;
+    return Array.prototype.filter.call(folie.children, function (c) { return !c.matches('.notizen'); })
+      .map(textMitLuecken).join(' ');
+  }
+  /* Stichworte eines Felds im Steuerrad von Folie 10 (JSON im Baustein) */
+  function radStichworte(feld) {
+    var rad = document.querySelector('#f10 .steuerrad');
+    var skript = rad && rad.querySelector(':scope > script[type="application/json"]');
+    if (!skript) return null;
+    try {
+      var f = (JSON.parse(skript.textContent).felder || {})[feld];
+      return f && Array.isArray(f.stichworte) ? f.stichworte.map(function (s) { return typeof s === 'string' ? s : s.text; }) : null;
+    } catch (e) { return null; }
+  }
+  /* f08: Stichworte des Felds Tonalität (Folie 10) stehen auf dieser Folie */
+  function tonalitaetAbgleich(ctx) {
+    var woerter = radStichworte('tonalitaet');
+    if (!woerter) return;
+    var szene = ctx.folie.querySelector('.g4-szene--analogien');
+    var text = szene ? textMitLuecken(szene) : '';
+    var fehlen = woerter.filter(function (w) { return w && !enthaeltWortgleich(text, w); });
+    notizHinweis(ctx, 'tonalitaet', 'Abgleich mit Folie 10', fehlen.length
+      ? 'Das Feld Markentonalität auf Folie 10 nennt „' + fehlen.join('“, „') + '“ – auf dieser Folie (Analogien ' +
+        'ab Schritt 2) steht das nicht wortgleich. Seit 23.10.2026 trägt das Rad Elias\' Analogien (Selbstbild): ' +
+        'Karten hier oder Feld Tonalität auf Folie 10 angleichen.'
       : '');
   }
 
@@ -413,16 +549,22 @@
     einrichten: function (ctx) {
       var d = ctx.daten || {};
       var m = d.marke || {};
-      var tierDaten = m.tier || {};
+      /* seit 23.10.2026: „tiere“ (Liste, gleichwertig) – sonst alte Form „tier“ */
+      var tiere = tiereAus(m);
+      var selbstbild = selbstbildAus(m);
       frageSetzen(ctx);
       handzeichen(ctx);
       var tier = ctx.folie.querySelector('[data-g4="tier"]');
       var mensch = ctx.folie.querySelector('[data-g4="mensch"]');
       var wb = ctx.folie.querySelector('[data-g4="wettbewerber"]');
-      if (tier) tierKarte(ctx, tier, tierDaten);
+      if (tier) {
+        if (Array.isArray(m.tiere) && m.tiere.length) tiereKarte(ctx, tier, tiere, selbstbild);
+        else tierKarte(ctx, tier, m.tier || {});
+      }
       if (mensch) menschKarte(ctx, mensch, m.mensch);
       if (wb) wettbewerberListe(ctx, wb, d.wettbewerber);
-      abgleich(ctx, tierDaten);
+      abgleich(ctx, tiere, selbstbild);
+      tonalitaetAbgleich(ctx);
       passform(ctx);
       /* nach einem Themenwechsel (andere Schrift, andere Abstände) neu prüfen */
       document.addEventListener('deck:groesse', function () { passform(ctx); });
@@ -466,7 +608,8 @@
     /* Schritte: 1 Marke · 2 Wettbewerber · 3 Merkmale · 4 Ergebnis.
        Ohne Wettbewerberwerte rücken Merkmale und Ergebnis einen Schritt vor. */
     var schrittMerkmale = mitWettbewerb ? 3 : 2;
-    /* Die Karte „Ins Steuerrad“ erscheint erst im letzten Schritt – mit ihren
+    /* Die Ergebniskarte (seit 23.10.2026 „Fremdbild“, bis dahin „Ins
+       Steuerrad“) erscheint erst im letzten Schritt – mit ihren
        Überschriften und Inhalten (vorher stand der leere Rahmen da und las sich
        wie „hier fehlt etwas“, Abschlussprüfung 16.10.2026). Der Platz bleibt
        reserviert; die Inhalte gleiten gestaffelt nach. */
@@ -474,10 +617,12 @@
       el.setAttribute('data-schritt', String(schrittMerkmale + 1));
     });
 
-    /* Beschreibung für Screenreader */
+    /* Beschreibung für Screenreader. Kennzeichnung aus den Daten
+       („kennzeichnung“, seit 23.10.2026 „KI-simuliert“); ohne Angabe wie
+       bisher „Beispieldaten“. */
     ziel.setAttribute('role', 'group');
     ziel.setAttribute('aria-label', 'Markenpersönlichkeit nach Aaker, Skala ' + skala[0] + ' bis ' + skala[1] +
-      ' (Beispieldaten): ' + dimensionen.map(function (dim) {
+      ' (' + (d.kennzeichnung || 'Beispieldaten') + '): ' + dimensionen.map(function (dim) {
         var teile = [markeName + ' ' + util.zahlFormat(dim.marke, 1)];
         (dim.wettbewerber || []).forEach(function (w, i) {
           if (wettbewerber[i]) teile.push(wettbewerber[i].name + ' ' + util.zahlFormat(w, 1));
@@ -490,6 +635,10 @@
     var legMarke = util.element('span', { class: 'g4t-leg', 'data-schritt': '1' }, null, legende);
     util.element('span', { class: 'g4t-leg-punkt', 'aria-hidden': 'true' }, null, legMarke);
     util.element('span', null, markeName, legMarke);
+    /* eigener Hinweis am Ende der Legende (Daten „legendeHinweis“, seit
+       23.10.2026, z. B. „KI-simuliert: n = 8, waterdrop n = 4“) – erscheint
+       mit den Wettbewerbern (Schritt 2), ohne Wettbewerber mit der Marke */
+    var legHinweis = d.legendeHinweis ? String(d.legendeHinweis) : '';
     /* Wettbewerber mit "beispiel": true (Standard, solange nichts erhoben ist):
        gestrichelter Marker wie alle Beispielwerte + Hinweis in der Legende */
     var istBeispielWb = function (w) { return !w || w.beispiel !== false; };
@@ -502,6 +651,9 @@
       if (wettbewerber.some(istBeispielWb)) {
         util.element('span', { class: 'g4t-leg g4t-leg-hinweis', 'data-schritt': '2' }, 'gestrichelt: Beispielwert, nicht erhoben', legende);
       }
+    }
+    if (legHinweis) {
+      util.element('span', { class: 'g4t-leg g4t-leg-hinweis', 'data-schritt': mitWettbewerb ? '2' : '1' }, util.markeText(legHinweis), legende);
     }
 
     var diagramm = util.element('div', { class: 'g4t-diagramm' }, null, ziel);
@@ -534,9 +686,20 @@
         var werte = Array.isArray(dim.wettbewerber) ? dim.wettbewerber : [];
         /* liegen zwei Marker fast gleichauf, rücken sie leicht über/unter die Linie */
         var eng = werte.length > 1 && Math.abs(lage(werte[0], skala) - lage(werte[1], skala)) < 4;
+        /* liegt ein Marker fast auf dem Punkt der Marke, verdeckt der Punkt seinen
+           Buchstaben (seit 23.10.2026 mit den KI-simulierten Werten: waterdrop =
+           HOLY bei Aufrichtigkeit 3,19 und Kompetenz 3,0, Red Bull 2,25 neben
+           HOLY 2,19 bei Kultiviertheit) – dann weicht der Marker nach UNTEN aus
+           (oben stehen die Merkmal-Chips der Zeile; Prüfung 23.10.2026: nach
+           oben überdeckte „W“ den Chip „gesellig“); liegt auch der zweite dort,
+           weicht er nach oben aus. Der Wert bleibt an seiner Stelle auf der Skala. */
+        var amPunkt = werte.map(function (w) {
+          return w !== null && w !== undefined && Math.abs(lage(w, skala) - x) < 4;
+        });
         werte.forEach(function (w, i) {
           if (w === null || w === undefined || !wettbewerber[i]) return;
           var versatz = eng ? (i === 0 ? ' g4t-wb-marker--oben' : ' g4t-wb-marker--unten') : '';
+          if (amPunkt[i]) versatz = (i === 1 && amPunkt[0]) ? ' g4t-wb-marker--weit-oben' : ' g4t-wb-marker--weit-unten';
           util.element('span', {
             class: 'g4t-wb-marker' + versatz + (istBeispielWb(wettbewerber[i]) ? ' g4t-wb-marker--beispiel' : ''), 'data-meta': '', 'aria-hidden': 'true',
             'data-schritt': '2', 'data-animation': 'feder', 'data-verzoegerung': String(i * 120),
@@ -561,20 +724,29 @@
     });
   }
 
-  /* Ergebniskarte: Übergabezeile „Ins Steuerrad“ (seit 21.10.2026, Daten
-     „steuerrad“ = Stichworte des Felds Tonalität auf Folie 10, wortgleich),
+  /* Ergebniskarte: oben die Zeile „Fremdbild (KI-simuliert) → Abgleich
+     Folie 10“ (seit Fr, 23.10.2026, Daten „fremdbild“; Entscheidung Yannick:
+     Das Rad zeigt das Selbstbild, die Simulation dient dem Abgleich) bzw.
+     bis 22.10.2026 die Übergabezeile „Ins Steuerrad“ (Daten „steuerrad“ =
+     Stichworte des Felds Tonalität auf Folie 10, wird weiter gelesen),
      darunter Markenemotionen, Markenbeziehung, Markenerlebnisse.
      Fehlt ein Eintrag in den Daten, entfällt sein Block bzw. die Zeile. */
   function ergebnisFuellen(ctx) {
     var util = ctx.util;
     var d = ctx.daten || {};
-    var zeile = ctx.folie.querySelector('[data-g4t="steuerrad"]');
+    var zeile = ctx.folie.querySelector('[data-g4t="fremdbild"], [data-g4t="steuerrad"]');
+    var istFremdbild = Array.isArray(d.fremdbild) && d.fremdbild.length > 0;
+    var woerter = istFremdbild ? d.fremdbild : d.steuerrad;
     if (zeile) {
-      if (Array.isArray(d.steuerrad) && d.steuerrad.length) {
-        d.steuerrad.forEach(function (w) { util.element('li', null, util.markeText(w), zeile); });
-        zeile.setAttribute('aria-label', 'Ins Steuerrad, Feld Markentonalität: ' + d.steuerrad.map(util.markeText).join(', '));
+      if (Array.isArray(woerter) && woerter.length) {
+        woerter.forEach(function (w) { util.element('li', null, util.markeText(w), zeile); });
+        zeile.setAttribute('aria-label', (istFremdbild
+          ? 'Fremdbild, KI-simuliert, Abgleich auf Folie 10: '
+          : 'Ins Steuerrad, Feld Markentonalität: ') + woerter.map(util.markeText).join(', '));
       } else {
-        zeile.remove();
+        /* ohne Stichworte entfällt die ganze Kopfzeile (Beschriftung + Liste) */
+        var kopf = zeile.closest('.g4t-uebergabe');
+        (kopf || zeile).remove();
       }
     }
     var felder = {
@@ -594,10 +766,33 @@
     });
   }
 
+  /* f08b ↔ Titel und Folie 10 (seit Fr, 23.10.2026): Das erste Stichwort
+     des Fremdbilds (Leitwort, z. B. „witziger Kumpel“) muss im Titel dieser
+     Folie stehen und im Abgleich Selbstbild ↔ Fremdbild auf Folie 10 – sonst
+     stimmen Kernaussage, Ergebnis und Abgleich nicht mehr überein (Titel
+     prüfen nach jedem Daten-Update, VORTRAGSREIFE G10). Die übrigen
+     Stichworte (z. B. „gut gelaunt“) braucht Folie 10 nicht. */
+  function fremdbildAbgleich(ctx) {
+    var d = ctx.daten || {};
+    if (!Array.isArray(d.fremdbild) || !d.fremdbild.length) { notizHinweis(ctx, 'fremdbild', '', ''); return; }
+    var leitwort = ctx.util.markeText(String(d.fremdbild[0] || ''));
+    var titel = ctx.folie.querySelector('.folie-kopf .titel');
+    var probleme = [];
+    if (titel && !enthaeltWortgleich(textMitLuecken(titel), leitwort)) {
+      probleme.push('Der Titel („' + titel.textContent.trim() + '“) nennt das Fremdbild „' + leitwort + '“ nicht (Titel oder Daten „fremdbild“ anpassen).');
+    }
+    var text10 = folienText('f10');
+    if (text10 !== null && !enthaeltWortgleich(text10, leitwort)) {
+      probleme.push('Auf Folie 10 steht „' + leitwort + '“ nicht – der Abgleich Selbstbild ↔ Fremdbild dort soll das Fremdbild dieser Folie wortgleich aufgreifen.');
+    }
+    notizHinweis(ctx, 'fremdbild', 'Abgleich mit Folie 10', probleme.join(' '));
+  }
+
   Deck.registriere('f08b', {
     einrichten: function (ctx) {
       profilBauen(ctx);
       ergebnisFuellen(ctx);
+      fremdbildAbgleich(ctx);
     }
   });
 })();

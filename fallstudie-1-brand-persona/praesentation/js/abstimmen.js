@@ -104,6 +104,16 @@
       '<path d="M31 71.5 C17.5 74.5 6 85 10.5 98 C15 109.5 30 108.5 34.5 99.5 C38 91.5 32 83.5 25 86 C19 88 21 96.5 26.5 96.5"/>' +
       '<path d="M75 65.5 L87 71 L87.5 87.5 M46.5 78 L42 90 L52.5 100.5"/>' +
       '<path d="M30 108.5 L114 78"/>',
+    /* Papagei (seit Fr, 23.10.2026 Option der Abstimmung an der Stelle des
+       Fuchses – Elias Knaubers Tier 1, gleichwertig mit dem Chamäleon):
+       Hakenschnabel, Augenring, langer Schwanz, Ast. Wortgleich mit
+       js/folien/08-analogien.js (dort seit 22.10.2026). */
+    papagei:
+      '<path d="M54 46 C51 29 61 16 76 16 C86 16 92 21 94 28 C104 27 109 40 101 52 C99 45 95 42 91 43 C92 59 88 72 79 82 L72 115 C67 117 62 116 59 112 L63 84 C51 77 50 60 54 46 Z"/>' +
+      '<circle cx="80" cy="29" r="6.5"/><circle class="voll" cx="80.5" cy="29" r="2.8"/>' +
+      '<path d="M94 28 C93 34 92 39 91 43"/>' +
+      '<path d="M62 50 C57 64 60 77 70 86"/>' +
+      '<path d="M26 96 L112 87"/><path d="M72 83 L71 92 M80 81 L80 90"/>',
     waschbaer:
       '<path d="M60 104 C50 104 42 98 36 92 L14 78 L24 70 C21 58 22 46 27 37 L24 15 L44 26 Q60 21 76 26 L96 15 L93 37 C98 46 99 58 96 70 L106 78 L84 92 C78 98 70 104 60 104 Z"/>' +
       '<path d="M31 24 L34 33 M89 24 L86 33"/>' +

@@ -4,7 +4,8 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Mo, 26.10.2026**, 15 Minuten.
 
-Stand: 22.10.2026 (Material von Elias Knauber eingebaut, Freigabe offen – siehe unten) – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
+Stand: 23.10.2026 (KI-simulierte Befragung für Bündel B eingebaut, Rad = Selbstbild, Papagei und Chamäleon – siehe
+unten; 22.10.: Material von Elias Knauber eingebaut, Freigabe offen) – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
 der zweiten Abschlussprüfung überarbeitet. Seit Sa, 17.10. von Account 1 übernommen: Ergebnisse von Bündel A
 eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3) und Limbic Map A3 (Folie 05),
 dazu die passenden Stichworte auf Folie 10 und die Verweise auf 11, B2, B7 und B8; offizielles HOLY-Logo auf
@@ -54,13 +55,29 @@ fünf Bildwelten ohne Anteile und dem Schlüsselbild-Kandidaten **„Produkt in 
 Screenshot); **09b** und **Folie 10** mit dem Markenbild „Streetwear-Look · Gelb & Schwarz · knallig“; **Folie 11**
 Zeile 3 „Uneinheitlicher Absender“ → „Ein Absender, ein Schlüsselbild“; **B6** mit Elias' Tabelle 1 statt der
 Beispiel-Codiertabelle; Querverweise in 12, B1, B7, B8. Folie 08, 09 und B6 tragen keine Pille „Beispieldaten“ mehr.
-**Freigabe durch Yannick und Elias offen** (Abschnitt 12.1 und 12.3); Folie 02 und 05 sind noch nicht nachgezogen
-(gesperrt, Entscheidung Yannick).
+**Freigabe durch Yannick und Elias offen** (Abschnitt 12.1 und 12.3); Folie 02 und 05 waren bis 22.10. nicht
+nachgezogen (gesperrt, Entscheidung Yannick).
+**Seit Fr, 23.10.** (Entscheidungen Yannick, KI-Nachweis 135, Workflow D26; `AUTOREN.md`, Abschnitt 24): Lukas
+liefert kein Material mehr. **Folie 06, 07, 08b, B4 und B5** zeigen statt Beispieldaten eine **KI-simulierte
+Befragung** (Workflow D25: acht fiktive Befragte T1–T8, keine echten Interviews; `../buendel-b/`) – Pille
+**„KI-simuliert“**, Titel nach den Daten („… hebt sich ab – aber vor allem durch Hürden“, „Ohne Zucker → kein Absturz
+→ verlässlich sein“, „… wirkt wie ein witziger Kumpel – der verkaufen will“), Ergebnisse als **Fremdbild** mit
+Verweis auf Folie 10. **Folie 10** zeigt im Rad das **Selbstbild** (nur HOLYs eigene Aussagen und Auftritt; Tonalität
+„frech · gesellig · wandelbar“ aus Elias' drei Analogien) und einen neuen Schritt „Abgleich: Selbstbild ↔ Fremdbild
+(KI-simuliert)“. **Folie 08:** Papagei und Chamäleon gleichwertig („… wäre Papagei und Chamäleon, kein Adler“), in
+der Abstimmung ersetzt der **Papagei den Fuchs** (Abschnitt 6). „Selbst anrühren“ (stärkste Hürde) steht nur im
+Sprechtext von 06 und 10. Die Querverweise auf 02, 05 (Notizen), 11, 12, B1, B2, B7, B8 werden nachgezogen. Folie 10
+und die Querverweise baut ein eigener Synthese-Schritt **parallel zu dieser Doku** (beim Abgleich am 23.10.: Folie 10
+mit Abgleich-Schritt, 02, 11 und 12 eingebaut; Notizen 05, B1, B2, B7, B8 noch in Arbeit) – maßgeblich ist der
+Kasten der jeweiligen Folie. **Prüfung durch Yannick und Elias offen** (Abschnitt 12); Exporte nach Abschluss aller
+Bauaufträge neu erzeugen (Abschnitt 11).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, je Person mit Frist).
 
-Fertige Ausgaben (Stand 22.10.2026, neu erzeugt beim Abschluss des Einbaus von Elias' Material: Rätselbild mit Logo auf Folie 01, Chamäleon, Papagei und Impro-Comedian auf Folie 08, vier Kanäle auf 09, „Streetwear-Look“ auf 09b und im Rad auf Folie 10, Empfehlung 3 „Ein Absender, ein Schlüsselbild“ auf 11, Elias' Tabelle 1 auf B6, die Entwürfe 03–05 und die gekennzeichneten Beispieldaten – nach
+Fertige Ausgaben (**noch Stand 22.10.2026** – der Einbau vom 23.10. mit KI-simulierter Befragung, Rad = Selbstbild und
+Papagei ist darin noch nicht enthalten; neu erzeugen nach Abschluss aller D26-Bauaufträge, `AUTOREN.md` §15 und 24;
+erzeugt beim Abschluss des Einbaus von Elias' Material: Rätselbild mit Logo auf Folie 01, Chamäleon, Papagei und Impro-Comedian auf Folie 08, vier Kanäle auf 09, „Streetwear-Look“ auf 09b und im Rad auf Folie 10, Empfehlung 3 „Ein Absender, ein Schlüsselbild“ auf 11, Elias' Tabelle 1 auf B6, die Entwürfe 03–05 und die gekennzeichneten Beispieldaten – nach
 den Freigaben und dem Eintragen echter Ergebnisse neu erzeugen, Abschnitt 11). **Achtung: Die Freigabe von Elias' Material
 durch Yannick und Elias ist offen** (Abschnitt 12.1 und 12.3) – bis dahin nur in der Gruppe weitergeben: `export/praesentation.pdf`
 (alle Folien inkl. Backup, Plan B), `export/uebersicht.png` (alle Folien auf einen Blick),
@@ -231,13 +248,18 @@ Referentenfenster (Abschnitt 4). Taste „Schwarz“/„Blank“ am Clicker send
 
 ## 6. Live-Umfrage (Folie 08)
 
-Frage: „Wenn HOLY ein Tier wäre – welches?“ mit **Adler, Löwe, Chamäleon, Fuchs, Schwan**
+Frage: „Wenn HOLY ein Tier wäre – welches?“ mit **Adler, Löwe, Chamäleon, Papagei, Schwan**
 (`marke.js → umfragen.tier.optionen`, festgelegt von Yannick am 19.10.2026; seit 20.10.2026 „Chamäleon“ statt
-„Waschbär“ an derselben Stelle; „Chamäleon“ = unsere Analyse – Einordnung und seit 22.10.2026 auch Begründung von
-Elias Knauber (`../analogien.md`); sein anderes Tier, der Papagei, steht nur klein auf der Folie, nicht in der
-Abstimmung –, „Adler“ = Maskottchen, im Dossier „Raptor“; „Selbstbild“ ist die Deutung des Dossiers). Die Tabelle speichert nur die Nummer
-des Tiers: Probestimmen mit Option 2 aus der Zeit vor dem 20.10. zählen jetzt als Chamäleon – unkritisch, die
-Runde wird vor dem Vortrag umgestellt (Abschnitt 12). Die Folie kann drei Wege – **Weg A ist der Plan**, B und C
+„Waschbär“ an derselben Stelle; **seit Fr, 23.10.2026 „Papagei“ statt „Fuchs“** an derselben Stelle, Option Nummer 3 –
+Entscheidung Yannick „So wie Elias das am wahrscheinlichsten wollte mit seinen Notizen“). **Unsere Analyse sind
+Papagei und Chamäleon** (`unsereAntwort: ['Papagei', 'Chamäleon']`; Elias Knauber: „als Tier ein Papagei und ein
+Chamäleon“, `../analogien.md`); „Adler“ = Maskottchen, im Dossier „Raptor“. Die Auflösung in Schritt 1 umrahmt
+**beide** Zeilen, die große Zahl zählt beide zusammen („x % sehen HOLY wie wir: als Papagei oder Chamäleon“).
+Runde, Live-Quelle und Zeitfenster sind unverändert. Die Tabelle speichert nur die Nummer des Tiers: Probestimmen mit
+Option 3 zählen seit 23.10. als Papagei, solche mit Option 2 aus der Zeit vor dem 20.10. als Chamäleon – unkritisch,
+die Runde wird vor dem Vortrag umgestellt (Abschnitt 12). Am Google-Skript ist nichts zu ändern; damit die Handys den
+Papagei zeigen, müssen **`marke.js` und `js/abstimmen.js` vor dem Vortrag auf GitHub** stehen
+(`live-abstimmung/ANLEITUNG.md`, Stand 23.10.2026). Die Folie kann drei Wege – **Weg A ist der Plan**, B und C
 sind die Rückfallebenen.
 
 ### Weg A – eigene Live-Abstimmung (Plan)
@@ -341,7 +363,7 @@ zum Zeitfenster: „zählt Stimmen der letzten 30 Min.“, „OHNE Zeitfenster �
 - **Rückfall im Vortrag:** Ist nur der Präsentationsrechner offline, die Handys aber nicht, kommen die Stimmen
   trotzdem an: Ein Teammitglied öffnet auf dem Handy die Stand-Adresse (vorher als Lesezeichen anlegen, mit
   Zeitfenster wie Folie 08: `<liveQuelle>?aktion=stand&umfrage=tier&runde=vortrag-2026-10-26&anzahl=5&minuten=30`)
-  und trägt die Zahlen über „Werte“ ein (Reihenfolge Adler, Löwe, Chamäleon, Fuchs, Schwan). Geht gar nichts:
+  und trägt die Zahlen über „Werte“ ein (Reihenfolge Adler, Löwe, Chamäleon, Papagei, Schwan). Geht gar nichts:
   Plan C.
 - **Nach dem Vortrag:** Ergebnis **gleich** sichern – Foto von Folie 08 und die Stand-Adresse **mit**
   `&minuten=30` (maßgeblich: sie zählt genau, was die Folie zeigte). Nach 30 Minuten zeigt Folie 08 die Stimmen
@@ -374,11 +396,12 @@ Stehen vor dem Zählen andere Zahlen als 0 auf der Folie (und keine Pille „Bei
 - Beispielwerte und echte Stimmen werden nie gemischt: Der erste Stand der Abstimmung bzw. die erste Stimme
   von Hand ersetzt die Beispielwerte (Pille „Beispieldaten“ verschwindet).
 - Prozente rechnet die Präsentation selbst aus den Stimmen. Der nächste Klick (Schritt 1) zeigt
-  „Unsere Analyse“ und die große Zahl („x % sehen HOLY wie wir: als Chamäleon“) – bei Weg A zählt sie mit,
+  „Unsere Analyse“ (seit 23.10.2026 beide Zeilen, Papagei und Chamäleon) und die große Zahl („x % sehen HOLY wie
+  wir: als Papagei oder Chamäleon“ – Summe beider Tiere) – bei Weg A zählt sie mit,
   solange Stimmen kommen. Keine Stimmen? Dann steht dort „Noch keine Stimmen“ (keine „0 %“). Seit 21.10.2026
   ebenfalls ohne Prozentzahl: bei Beispielwerten (Pille „Beispieldaten“, z. B. offline) „Beispielwerte – keine
-  Aussage“, bei Stimmen ohne eine für das Chamäleon „Chamäleon: keine Stimme“. Analyse trotzdem erzählen oder
-  Schritt 1 überspringen. Die Pille „Beispieldaten“ im Kopf der Folie erscheint erst ab Schritt 2 (Analogien).
+  Aussage“, bei Stimmen ohne eine für unsere Tiere „Papagei oder Chamäleon: keine Stimme“. Analyse trotzdem erzählen
+  oder Schritt 1 überspringen. (Im Kopf der Folie steht seit 22.10.2026 keine Pille „Beispieldaten“ mehr.)
 - Ergebnisse bleiben beim Neuladen erhalten (Browser-Speicher; mit eigener Live-Abstimmung nur in derselben
   Runde und nur 30 Minuten) und erscheinen auch im Referentenfenster.
 
@@ -474,7 +497,7 @@ nicht mit Word). Vor jeder Folie steht ein Kasten:
 3. **Umfrage ohne Internet:** Handzeichen und Zählmodus (Abschnitt 6, Plan C). Präsentationsrechner offline, Handys
    online: Stand-Adresse auf dem Handy öffnen und die Zahlen über „Werte“ eintragen (Abschnitt 6, Weg A, „Rückfall“).
    **Im PDF** gibt es keine Abstimmung: Folie 08 zeigt dort den Endzustand ohne QR-Code, und der Titel nennt schon
-   die Auflösung („… Chamäleon, kein Adler“). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C,
+   die Auflösung („… Papagei und Chamäleon, kein Adler“). Die Frage deshalb noch auf Folie 07 stellen, Hände zählen (Plan C,
    Ergebnis mündlich nennen), dann weiterblättern. Eine zusätzliche PDF-Seite mit Frage und QR-Code ist nicht
    nötig (Entscheidung Yannick, 20.10.2026).
 4. **Kein zweiter Bildschirm:** ohne Referentenansicht präsentieren; Sprechtext drucken. **Sprechzettel** (seit
@@ -525,7 +548,49 @@ Punkte stehen unter „Neu seit 22.10.“ bei Yannick, Lukas und Elias. Von Luka
 weiteres Material; Bündel B wird seit 22.10. KI-simuliert erhoben (Workflow D25, `../buendel-b/`, Einbau in einem
 eigenen Schritt).
 
+**Nachtrag Fr, 23.10.2026:** Die KI-simulierte Befragung ist eingebaut (06, 07, 08b, B4, B5), Folie 10 zeigt das
+Selbstbild mit einem Abgleich-Schritt, auf Folie 08 und in der Abstimmung stehen Papagei und Chamäleon (Papagei statt
+Fuchs), die Querverweise (02, 05, 11, 12, B1, B2, B7, B8) werden parallel nachgezogen (`AUTOREN.md` 24; Folie 10
+und Querverweise im Synthese-Schritt von D26 – Stand im Kasten der Folie). Die Punkte von Lukas (12.2) sind damit **erledigt oder entfallen** – sie stehen dort
+durchgestrichen mit „23.10.“. Neue Prüfpunkte stehen unter „Neu seit 23.10.“ bei Yannick (12.1) und Elias (12.3);
+offen ist, wer die Folien 06–08b vorträgt (12.4).
+
 ### 12.1 Yannick Heisler (Bündel A, Synthese Folie 10, KI-Nachweis, Live-Abstimmung)
+
+**Neu seit Fr, 23.10. (Einbau der KI-simulierten Befragung – prüfen und freigeben; bis Sa, 24.10.)**
+- [ ] **Folie 06, 07, 08b, B4, B5 freigeben** (Entscheidung 1 „Ehrlich einbauen“): Titel nach den Daten, Pille
+      „KI-simuliert“, Fußzeilen „KI-simulierte Befragung, n = 8 (T1–T8), keine echten Interviews“, Sprechtexte (06 ≈ 78 s,
+      07 ≈ 87 s, 08b ≈ 52 s gegen 50 s Soll) und Rückfragen („Warum KI-simulierte Befragte?“ mit S. 60/78) einmal laut
+      lesen. Bekannte Abweichungen von `../buendel-b/folienvorschlag.md` (Kopfvermerk dort): Wortbudget 06 = 60 Wörter
+      (Warnung, acht Konstrukte), 08b-Titel zweizeilig (E7), im Fremdbild von 08b nur „witziger Kumpel“, Erlebnisse
+      gekürzt, B4-Fußzeile ohne Skriptnamen; in Bento die Knoten auf 07 eng gesetzt
+- [ ] **Folie 10 prüfen** (Entscheidung 2 „Rad = Selbstbild, Simulation als Abgleich“; parallel gebaut): jede Quelle im
+      Rad ist Selbstbild (DR, GB, AN, KA, LM – keine RG oder LA); Feld Nutzen nur mit Stichworten, die eine
+      Selbstbild-Quelle trägt; Tonalität „frech · gesellig · wandelbar“ wortgleich auf 08; Abgleich-Schritt mit 3–4
+      Paaren (Abweichung/Übereinstimmung); Lücken und Titel 10/11 unverändert; Sprechtext gezählt und mit Elias
+      gestoppt (Soll 75 s; war schon vorher ≈ 98 s, laut Kasten jetzt 146 Wörter ≈ 77 s). Danach
+      `werkzeuge/pruefen.mjs`: die Warnungen „Abgleich mit Folie 10“ aus 06, 07, 08 und 08b sollen verschwunden sein
+      (sie prüfen „Cola Zero“, „verlässlich“, „witziger Kumpel“ und die Tonalitätswörter). **Entscheiden** (Kasten
+      „FOLIE 10“): Zeile 4 steht als „≈ teils“ („Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie“) statt
+      „Übereinstimmung“, Zeile 1 sagt „Cola Zero knapp vorn“ statt „gleichauf“ (6,88 zu 6,75); mögliche weitere Zeile
+      „gesellig = gesellig 5 von 8“ (Folie 8b)
+- [ ] **Folie 08 und Abstimmung freigeben** (Entscheidung 3): beide Tiere gleichwertig, Papagei statt Fuchs. **Vor dem
+      Vortrag `marke.js` und `js/abstimmen.js` auf GitHub bringen** (Commit und Push), sonst zeigen die Handys noch den
+      Fuchs; am Google-Skript nichts ändern. Kontrolle: Abstimmseite auf dem Handy zeigt den Papagei mit Zeichnung;
+      Probe mit `werkzeuge/pruefen.mjs index.html --nur f08 --schritte --live-werte 3,1,7,2,2` (Aussage zählt
+      Papagei und Chamäleon zusammen)
+- [ ] **Querverweise prüfen** (Entscheidung 5; parallel gebaut): Folie 02 (Methodenkarten „Triaden: KI-simuliert,
+      keine Interviews“, „Vier Kanäle, eigene Bildschirmaufnahmen“, Sprechtext Klick 3; **Titel** seit 24.10.2026 „Jede
+      Methode gehört zu einem Feld des Steuerrads“ – zurück auf „… füllt ein Feld …“? Kasten „FOLIE 02“), Notizen 05 (Raptor, Comic-Tiere),
+      Folie 11 (Pille weg, Rückfrage „Ist die Positionierung wirklich klar …?“), Folie 12 (Fazit, Pille weg,
+      „Fremdbild (Aaker)“ in der Sprungliste), B1 (keine Interviews, „teils geplant“ weg, Absatz
+      „Reproduzierte Klischees“), B2 (P7–P11 echte Läufe D25), B7/B8 (Quellen). Notizen von Folie 03 („Folie 6 zeigt
+      derzeit Beispieldaten …“) gehörten nicht zum Auftrag – nachziehen lassen
+- [ ] **Vortrag 06–08b verteilen** (mit der Gruppe, 12.4): Lukas liefert kein Material mehr – wer trägt vor, wer
+      beantwortet die Rückfragen (`../fragerunde.md` F12–F16, F36, F39)?
+- [ ] **Exporte neu erzeugen lassen**, wenn alle D26-Bauaufträge fertig und geprüft sind (Account 1, 12.5;
+      `AUTOREN.md` §15) – `export/` zeigt noch den Stand vom 22.10.
+- [ ] **Commit** des Einbaus (Folien, JS/CSS, `marke.js`, Tests, Doku) – der Workflow committet nicht selbst
 
 **Sofort**
 - [ ] **Mail an Prof. Stenger** (S1, S2): Zählen Rückfragen zu den 15 Minuten? Folie 58 nennt 30 % für die
@@ -553,7 +618,7 @@ eigenen Schritt).
       `gueltigMinuten: 0` bis zur Klärung. Danach **Lasttest** (Claude oder selbst, Anleitung, Schritt 7, mit
       Gegenprobe ca. 90 s länger) mindestens zweimal mit `--anzahl 20` (höchstens ca. 20 Personen im Raum): Die
       Urteilszeile beginnt mit „BESTANDEN“. Test-Adressen der Anleitung im privaten Fenster. Nicht während einer
-      Abstimmung. Für das Chamäleon muss am Skript nichts geändert werden (es speichert nur Nummern)
+      Abstimmung. Für Chamäleon und Papagei muss am Skript nichts geändert werden (es speichert nur Nummern)
 - [ ] **Datenschluss einfordern und Synthese vorbereiten:** Stand von Lukas und Elias heute abends einholen
       (G1); Tagesordnung für Do 22.10. (Abschnitt 12.4, erster Punkt)
 - [ ] **Gruppe in die Google-Tabelle eintragen** (Link auf Stenger, S. 57; Y4), mit Datum in `../arbeitsplan.md`
@@ -592,7 +657,8 @@ eigenen Schritt).
 - [ ] **Synthese Folie 10** (mit Elias, der sie vorträgt): Felder ohne echte Daten als DR (H) kennzeichnen;
       Selbstbild ↔ Außensicht je Lücke in Schritt 8 benennen (Regel B8, Y6); Kürzungen (a)–(c) aus dem Kasten
       „FOLIE 10“ freigeben (≈ −24 Wörter, Y9) – danach setzt Account 1 Zeitangaben und `data-zeit` (NB-03);
-      stützt die Befragung das Chamäleon nicht, Kürzel „AN (H)“ und Schritt 5 „Unsere Analogie: …“ (F08-4);
+      ~~stützt die Befragung das Chamäleon nicht, Kürzel „AN (H)“ und Schritt 5 „Unsere Analogie: …“ (F08-4)~~
+      (überholt 23.10.: Rad = Selbstbild, die Simulation steht im Abgleich – siehe „Neu seit 23.10.“);
       durchgezogene Lücken bestätigen oder zurück auf gestrichelt (A31, Kommentar in `10-markensteuerrad.css`)
 - [ ] **Belege selbst prüfen** (Y7, NB-12): Im KI-Nachweis sind 76 Felder „Prüfung durch die Gruppe“ offen. Die
       tragenden Belege selbst nachlesen und abhaken – auf Folie 03 [13] (Claim und Selbstbeschreibung), [16],
@@ -620,11 +686,12 @@ eigenen Schritt).
       09b, 10 und 11 („Bildwelt zu jung“ oder „Auftritt zu jung“ – Kasten „FOLIE 09b“). Sprechtext Schritt 6 und 8
       von Folie 10 mit Elias laut lesen
 - [ ] **Vorgaben 08, 09, 09b, 11, B6 freigeben** (mit Elias, Abschnitt 12.3; Einzelheiten in `../analogien.md` §8 und
-      `../kommunikationsanalyse.md` §11): Titel von Folie 08 nur mit dem Chamäleon – das ist ein Vorschlag, keine
-      frühere Entscheidung (KI-Nachweis 95/122); Titel von Folie 09; Empfehlung 3 „Ein Absender, ein Schlüsselbild“
+      `../kommunikationsanalyse.md` §11): ~~Titel von Folie 08 nur mit dem Chamäleon~~ (überholt 23.10.: beide Tiere,
+      Entscheidung Yannick); Titel von Folie 09; Empfehlung 3 „Ein Absender, ein Schlüsselbild“
       (Elias' Empfehlungen ersetzen „Ein Dachclaim, ein Raptor“); auf 09b die Shop-Farben aus dem Dossier (Creme,
       Türkis, Hellblau) behalten oder streichen – Elias analysiert nur Social Media
-- [ ] **Folie 02 und 05 nachziehen – oder bewusst lassen** (beide waren für den Einbau gesperrt): Folie 02,
+- [x] ~~**Folie 02 und 05 nachziehen – oder bewusst lassen**~~ – **entschieden 23.10.:** nachziehen (Entscheidung 5
+      Yannick; Einbau parallel, Prüfpunkt oben unter „Neu seit 23.10.“). Bisheriger Text: (beide waren für den Einbau gesperrt): Folie 02,
       Methodenkarten „Mensch und Tier: KI + Kurzinterviews“ und „Instagram, Facebook, YouTube – KI hilft codieren“
       passen nicht mehr zu 08 und 09 (Vorschlag: „Mensch und Tier: eigene Analyse“, „Instagram, Facebook, TikTok,
       YouTube – Bildschirmaufnahmen“; Sprechtext Schritt 5 „KI-Tools helfen überall“ prüfen). Folie 05, Notizen:
@@ -657,7 +724,8 @@ eigenen Schritt).
       „Frame Rendering Stats“); ruckelt er, Startstufe auf etwa `380/12` senken und `data-fokus` neu rechnen
       (`AUTOREN.md` 6e). Motiv freigeben (Logo auf der Dose, kleine Drachenfrucht, bewusst kein Tier) und den
       Zusatz „· Dose fiktiv“ auf der Titelfolie
-- [ ] **Zahl der echten Kurzinterviews** (von Lukas, Abschnitt 12.2) auf Folie 02 (Methodenkarten „KI +
+- [x] ~~**Zahl der echten Kurzinterviews**~~ – **entfällt 23.10.:** es gibt keine; Folie 02 und B1 werden auf
+      „KI-simuliert, keine Interviews“ gezogen (Entscheidung 5). Bisheriger Text: (von Lukas, Abschnitt 12.2) auf Folie 02 (Methodenkarten „KI +
       Kurzinterviews“), B1 und B2 eintragen bzw. eintragen lassen; auf B1 die Pille „teils geplant“ löschen. Gibt es
       keine echten Interviews: auf Folie 02 „+ Kurzinterviews“ streichen (Gruppenentscheidung, Kasten „FOLIE 02“)
 
@@ -685,33 +753,43 @@ eigenen Schritt).
 
 ### 12.2 Lukas Welker (Bündel B, Folien 06–08b, B4, B5)
 
+> **Stand Fr, 23.10.2026:** Lukas liefert kein Material mehr (KI-Nachweis 120). Seine Punkte unten sind **erledigt**
+> durch die KI-simulierte Befragung D25 und ihren Einbau am 23.10. (Daten, Titel, Sprechtexte, Rückfragen, Fußzeilen,
+> B4, B5, Tierfrage, Aaker-Abgleich) oder **entfallen** (echte Kurzinterviews, Einwilligungen der Interviewten, echte
+> Rohdaten). Offen bleiben nur: Versanddatum der Gründer-Sprachnachrichten bestätigen (Punkt „Gründerbefragung“),
+> seine KI-Liste (Abgabe Fr 23.10.) und – falls er vorträgt – Sprechtexte 06–08b laut lesen (12.4). Wer diese Folien
+> sonst vorträgt, legt die Gruppe fest.
+
 **Sofort (Datenschluss heute abends)**
-- [ ] **Stand melden** (L1, F08-2): Zahl, Datum und Einwilligung der echten Kurzinterviews; ob P8, P9 und P11
+- [x] ~~**Stand melden** (L1, F08-2)~~ – **entfällt 23.10.** (keine echten Interviews; überall „KI-simuliert, n = 8“): Zahl, Datum und Einwilligung der echten Kurzinterviews; ob P8, P9 und P11
       gelaufen sind. Danach steht überall dieselbe getrennte Angabe (KI-simuliert / echt / Gruppe) – in den
       Fußzeilen 06, 07, 08b, in B1, B2, B4, B5 und auf 02 (Einbau Account 1, Zahl auf 02/B1 mit Yannick). Heute
       steht überall die geplante Zahl „3“. ~~Auf 08 „5 KI-Personas (Prompt P11) + 3 echte Kurzinterviews“~~ (überholt
       22.10.: Die Fußzeile von 08 nennt jetzt Elias' Ausarbeitung, kein n). *Stand 22.10.:* Laut Yannick (KI-Nachweis
       120) kommt von Lukas kein weiteres Material; die Befragung von Bündel B wird KI-simuliert erhoben (D25)
-- [ ] **Daten liefern** (Abschnitt 4.1 des Berichts, Lieferformat: Tabelle mit den Feldern der Daten-JSON):
+- [x] ~~**Daten liefern**~~ – **erledigt 23.10.** durch die KI-simulierte Befragung D25 (`../buendel-b/`): (Abschnitt 4.1 des Berichts, Lieferformat: Tabelle mit den Feldern der Daten-JSON):
       Repertory Grid (Ratings, Konstrukte, W1–W5, getrennte n), Schwelle ≥ 1 oder ≥ 1,5 mit Datum (L2), Leitern
       P9/P10 codiert, KI und echt getrennt (L3), Aaker-Bogen für HOLY, Red Bull und waterdrop – nur Menschen,
       ehrliches n (L8)
 
 **Bis Do, 22.10. (Synthese)**
-- [ ] **Tierfrage der Befragung auszählen** (F08-3): offen gestellt, „x von n“, P11 bzw. KI-simuliert getrennt.
+- [x] ~~**Tierfrage der Befragung auszählen**~~ – **erledigt 23.10.** (KI-simuliert, offen gefragt: Papagei 5 von 8,
+      Chamäleon 0; `../analogien.md` §7.3) (F08-3): offen gestellt, „x von n“, P11 bzw. KI-simuliert getrennt.
       *Neu seit 22.10.:* Die Analogien auf 08 stammen jetzt aus Elias' Ausarbeitung (Chamäleon, Papagei,
       Impro-Comedian; `../analogien.md`) – sie sind die Analyse, die Befragung wird ihr gegenübergestellt (Notizen 08
       oder Backup). Nennen die Antworten überwiegend ein anderes Tier, mit Elias und Yannick klären, was die Folie zeigt
       (`../analogien.md` §7.1; betrifft 08, 08b, 09b, 10 und Notizen 11/12)
-- [ ] **Neu seit 22.10.: Aaker-Profil 08b mit Elias' Zuordnungstabelle abgleichen** (`../analogien.md` §6 und
+- [x] ~~**Neu seit 22.10.: Aaker-Profil 08b mit Elias' Zuordnungstabelle abgleichen**~~ – **erledigt 23.10.** (08b =
+      KI-simuliertes Fremdbild, Gegenüberstellung `../analogien.md` §7.2) (`../analogien.md` §6 und
       §7.2): Die fünf Merkmale (frech, rebellisch, verspielt, nahbar, selbstironisch) finden sich in Elias' Begriffen
       wieder; Elias ergänzt „wandelbar“. Entscheiden: Emotionen „Stolz“ (08b) oder „Überraschung“ (Elias – Lachen und
       Unterhaltung, Überraschung, Zugehörigkeit), Beziehung mit oder ohne „Anführer“ (bei Elias nicht vorhanden).
       Sichtbar ist auf 08b noch nichts geändert (Kasten „FOLIE 08b“)
-- [ ] **Sprechtexte 06–08b nach echten Daten** (L4): bis dahin keinen Beispielwert als Ergebnis vorlesen
+- [x] ~~**Sprechtexte 06–08b nach echten Daten**~~ – **erledigt 23.10.** (nach den KI-simulierten Daten) (L4): bis dahin keinen Beispielwert als Ergebnis vorlesen
       (Notlösung: Halbsatz „Beispieldaten“); auf 08 Schritt 3 vorläufig „unsere vorläufige Einordnung: Red Bull
       eher Löwe, waterdrop eher Schwan“ (F08-5)
-- [ ] **Tonalität aus Befragten** (L5, F08-13): Emotionen an die Analogien binden (P11 „dominante
+- [x] ~~**Tonalität aus Befragten**~~ – **erledigt bzw. entfallen 23.10.** (Tonalität im Rad aus Elias' Analogien,
+      Fremdbild auf 08b KI-simuliert; Kundenstimmen nicht codiert) (L5, F08-13): Emotionen an die Analogien binden (P11 „dominante
       Markenemotionen“, Interviews), sonst Zirkel benennen – seit 22.10. leitet Elias die Emotionen aus seinen
       Analogien ab (Comedian), das deckt die Aufgabe (Stenger, S. 60); Kundenstimmen 20–30 nach K1–K8 codieren, 1–2 Zitate mit
       Portal und Datum (L6); Laddering: Startpunkt-Satz, Zählung „gutes Gewissen“ x von n (L3)
@@ -720,11 +798,14 @@ eigenen Schritt).
       Codeliste – erst danach „Individualität“ (K7), Rangfolge der Kaufgründe (P5) und Trennung von Code K3
 
 **Bis Fr, 23.10.**
-- [ ] **Folie 06/07 – Begriffe und Notizen:** Titel „Drei Attribute …“ und „Attribut(e)“ in Schritt 3 an
+- [x] ~~**Folie 06/07 – Begriffe und Notizen**~~ – **erledigt 23.10.** (neue Titel, Notizen ohne Interviews): Titel „Drei Attribute …“ und „Attribut(e)“ in Schritt 3 an
       „Markeneigenschaften“ angleichen (z. B. „Drei Eigenschaften …“) oder einmal „in der Literatur auch
       Markenattribute“ sagen; zwei Sätze in Notiz 06 und einer in Notiz 07 klingen, als gäbe es die Interviews
       schon (Kästen „FOLIE 06/07“); f07 Schritt 3 „… die Positionierung ab“ laut lesen
-- [ ] **Folie 08** (Kasten „FOLIE 08“): ~~Fußzeile nach dem tatsächlichen Stand~~ (erledigt 22.10.: nennt Elias'
+- [ ] **Folie 08** (Kasten „FOLIE 08“; seit 23.10. für die Person, die 08 vorträgt – Lukas liefert nichts mehr):
+      *Stand 23.10.:* Titel, Karte und Umfrage mit Papagei und Chamäleon; Schritt 2 heißt „Warum Papagei und
+      Chamäleon?“ (ca. 26 s, mit dem KI-simulierten Befund); Regie-Sätze in Schritt 1 jetzt für zwei Tiere
+      („Papagei oder Chamäleon vorn / Adler vorn / Löwe vorn / beide kaum gewählt“). Bisheriger Text: ~~Fußzeile nach dem tatsächlichen Stand~~ (erledigt 22.10.: nennt Elias'
       Ausarbeitung, ohne Tiernamen); ~~„im Interview offen gefragt“ im Sprechtext~~ (erledigt 22.10.: Schritt 1 „Hier
       vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“; die Rückfrage nennt Interviews nur noch als Regie,
       falls Bündel B sie führt); Leerraum in der Mensch-Karte lassen oder vierte Zeile „Rollen“ (mit Elias, Kasten); Regie-Sätze in Schritt 1 für „Chamäleon vorn / Adler vorn / Fuchs oder
@@ -734,16 +815,17 @@ eigenen Schritt).
       Maskottchen) laut lesen und stoppen (ca. 20 s); festlegen, wer bei Plan C zählt, und „[Name]“ in
       Schritt 0 ersetzen (F08-22, mit der Gruppe); Fußzeile „Analogien nach Esch“ nach dem Vorlesungsabgleich
       (S. 60, 88; F08-12 – Einbau Account 1)
-- [ ] **Folie 08b:** Schritt 4 als Tausch, damit er bei ≈ 12 s bleibt – die Übergabezeile „frecher Kumpel ·
+- [x] ~~**Folie 08b**~~ – **erledigt bzw. überholt 23.10.** (08b KI-simuliert, Fremdbild statt „Ins Steuerrad“, 41 Wörter wie vorher): Schritt 4 als Tausch, damit er bei ≈ 12 s bleibt – die Übergabezeile „frecher Kumpel ·
       wandelbar · Spaß“ sprechen (Vorschlag im Kasten), das doppelte „Spaß“ auflösen oder begründen, Übergabe mit
       Namen („Das prüft Elias …“), „Squad“ und „Beichtstuhl auf Wacken“ erklären (F08-9, L9, L10); Fußzeile
       „n = 8“ auf die tatsächlich Bewertenden (z. B. „Gruppe, n = 3, nur Menschen“); ein Wort kürzen (41 sichtbare
       Wörter, F08-16)
-- [ ] **Je Folie zwei Rückfragen mit Antwort** (G9); Sprechtexte 06–08b stoppen, Folie 08 mit echter Abstimmung
+- [ ] **Je Folie zwei Rückfragen mit Antwort** (G9) – **Rückfragen erledigt 23.10.** (in den Notizen); offen: Sprechtexte 06–08b stoppen (wer vorträgt), Folie 08 mit echter Abstimmung
       (5+ Handys; Kürzungsvorrat im Kasten, F08-7)
 
 **Bis Sa, 24.10.**
-- [ ] **B4 und B5 mit echten Rohdaten** (Mittelwert-Export, Codeliste); KI-Liste an Yannick (Abgabe Fr 23.10.)
+- [x] ~~**B4 und B5 mit echten Rohdaten**~~ – **erledigt 23.10.** mit den KI-simulierten Daten (E15: fertige Werte aus
+      der CSV); offen nur: KI-Liste an Yannick (Abgabe Fr 23.10.)
 
 **So, 25. oder Mo, 26.10.**
 - [ ] ~~Energy-Sorten im Shop nachzählen (Folie 08: „31 Energy-Sorten“)~~ (überholt 22.10.: steht nicht mehr auf
@@ -751,6 +833,18 @@ eigenen Schritt).
       optional nachzählen, F08-23)
 
 ### 12.3 Elias Knauber (Bündel C, Folien 09–11, B6; trägt Folie 10 vor; Technik)
+
+**Neu seit Fr, 23.10. (bis Sa, 24.10.)**
+- [ ] **Folie 08 bestätigen** (`../analogien.md` §10, Fragen 1 und 7): Trifft „Papagei und Chamäleon gleichwertig“
+      (Titel, Karte, Umfrage mit Papagei statt Fuchs) deine Notizen? Belege je Zeile (Papagei: Account „HOLY Squad®“,
+      Tier-Illustrationen; Chamäleon: fünf Produktlinien, laufend neue Sorten), Kürzung auf zwei Zeilen je Tier
+      („anpassungsfähig – eigene Claims je Land“ nur noch in den Notizen), Humor zuerst beim Comedian
+- [ ] **Folie 10 einüben** (du trägst vor): Rad = Selbstbild mit Tonalität „frech · gesellig · wandelbar“ (je ein Wort
+      aus deinen drei Analogien), neuer Schritt „Abgleich: Selbstbild ↔ Fremdbild (KI-simuliert)“, „selbst anrühren“
+      nur im Sprechtext; Sprechtext mit Yannick laut lesen und stoppen (Soll 75 s). Rückfragen: „Warum steht die
+      Befragung nicht im Rad?“, „Warum fehlt ‚selbst anrühren‘?“ (`../fragerunde.md` F04, F39)
+- [ ] **Folie 08b kennen** (Überleitung von 08, Abgleich auf 10): KI-simuliertes Fremdbild „witziger Kumpel – der
+      verkaufen will“, „frech“ nennt nur eine simulierte Person
 
 **Sofort (Datenschluss heute abends)**
 - [x] **Kommunikationsanalyse liefern** (E4) – **geliefert am Do, 22.10.2026:** Ausarbeitung „Kommunikationsanalyse
@@ -838,6 +932,9 @@ eigenen Schritt).
 
 ### 12.4 Gruppe (alle)
 
+- [ ] **Neu seit 23.10.: Vortrag der Folien 06–08b verteilen** – Lukas liefert kein Material mehr. Wer trägt 06, 07,
+      08 und 08b vor und beantwortet die Rückfragen dazu (`../fragerunde.md` F12–F16, F29, F36, F39)? Beschluss mit
+      Datum in `../arbeitsplan.md`; danach die Spalte „wer antwortet“ in `../fragerunde.md` füllen
 - [ ] **Synthese Do, 22.10.** (Leitung Yannick, 2 Std.): je Element **echt oder ehrliche Minimalvariante**
       beschließen (G1); Rahmen „Softdrink-Marke“ oder Energy, Wettbewerber W1–W5 (G4, K4); Lieferformat (G5);
       **eine Tonalitätslinie** inkl. Chamäleon für 05, 09b, 11 (G8; seit 22.10. mit Elias' Zuordnung Tonalität ↔
@@ -849,7 +946,8 @@ eigenen Schritt).
       (Planungswert 1,9 W/s) mit Wechseln ≈ 15:09, bei 130 W/min ≈ 13:23 (VORTRAGSREIFE N6). Jede Person stoppt
       ihren Teil; danach setzt Account 1 das gemessene Tempo und die Zeitangaben ein
 - [ ] **Vorbereiten für die Fragerunde:** `../fragerunde.md` üben (Platzhalter „[ … ]“ vorher füllen; Prüfung der
-      Datei durch die Gruppe offen; Stand 22.10.: F16, F17, F30–F34 nach Elias' Material neu gefasst, F36–F38 neu); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
+      Datei durch die Gruppe offen; Stand 22.10.: F16, F17, F30–F34 nach Elias' Material neu gefasst, F36–F38 neu;
+      Stand 23.10.: F04, F12–F16, F18, F29, F30, F35, F36 nach der KI-simulierten Befragung neu gefasst, F39 neu); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
       Schritt; Vorlage `index.html?druck&notizen=sprechtext`, G13); Reflexion: Stichpunkte zu den sechs Fragen bis
       zur Generalprobe (G12)
 - [ ] **Generalprobe So, 25.10.** (1 Std., in Präsenz, mit genau dem Vortragslaptop, zweitem Bildschirm und
@@ -877,8 +975,8 @@ eigenen Schritt).
 
 - [ ] **Lieferungen einbauen** (Daten-JSON, Fußzeilen, n-Angaben), danach Pillen „Beispieldaten“ in der
       Reihenfolge 06–09 → 10/11 → 12 (Pille am Fazit erst, wenn 10 und 11 keine Beispieldaten mehr tragen) → B4–B6
-      entfernen bzw. „Pilot“ (erledigt 22.10. für 08, 09 und B6 – Elias' Material; offen 06, 07, 08b, 10–12, B4, B5;
-      die KI-simulierte Befragung D25 für Bündel B in einem eigenen Schritt); `marke.js → beispieldatenHinweis` erst auf `false`, wenn **keine** erfundenen Werte
+      entfernen bzw. „Pilot“ (erledigt 22.10. für 08, 09 und B6 – Elias' Material; erledigt 23.10. für 06, 07, 08b, B4,
+      B5 – Pille „KI-simuliert“ statt „Beispieldaten“; 10–12 parallel nachgezogen, Stand im Kasten der Folie); `marke.js → beispieldatenHinweis` erst auf `false`, wenn **keine** erfundenen Werte
       mehr auf den Folien stehen (bis Sa 24.10.)
 - [ ] **Nach den Freigaben:** „Entwurf“ in den Kästen 03–05 und in `../folienentwuerfe.md` streichen; die
       Entscheidungen aus 12.1 einbauen; Zeitangaben und `data-zeit` nach der Stoppuhr; Fußzeilen und B7 mit
@@ -974,6 +1072,11 @@ eigenen Schritt).
 - [x] **Referentenansicht** (21.10.2026, Account 1): Sprünge per Klick bewegen den Beamer (ab Folie 12),
       Schwarzbild, Uhr übersteht Neuladen, Start-Knopf, Rückfragen-Knopf, niedrige Fenster, nur das eigene
       Folienfenster (Abschnitt 4, `AUTOREN.md` 22)
+- [x] **KI-simulierte Befragung eingebaut** (Fr, 23.10.2026, Account 1, Workflow D26; `AUTOREN.md` 24): 06, 07, 08b,
+      B4, B5 mit Pille „KI-simuliert“ und Fremdbild; Folie 08 und Abstimmung mit Papagei und Chamäleon (Papagei statt
+      Fuchs, Tests angepasst: 53/53, 58 Prüfungen ohne Fehler, 43/43); Folie 10 Rad = Selbstbild mit Abgleich, 11, 12
+      und Querverweise im parallelen Synthese-Schritt (Stand im Kasten der Folie); Doku nachgezogen (`../folienentwuerfe.md`, `../fragerunde.md`, `../methoden.md` §6,
+      `../analogien.md`, `../limbic-map.md`, `../arbeitsplan.md`, `../README.md`, QUELLEN). Prüfung durch die Gruppe offen
 - [x] **Elias' Material eingebaut** (Do, 22.10.2026, Account 1, Workflow D24; `AUTOREN.md` 23): Folie 08 (Chamäleon
       mit Elias' Begründung, Papagei, Impro-Comedian, Fußzeile ohne Beispieldaten), 08b (nur Hinweis), 09 (vier
       Kanäle, Rollen, fünf Bildwelten, Kandidat „Produkt in der Hand“), 09b, 10 (Feld Markenbild, Lücke 2), 11 (Zeile

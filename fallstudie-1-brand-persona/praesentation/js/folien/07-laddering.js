@@ -15,6 +15,18 @@
        den Knoten). In Schritt 4 färbt sich nur das Stück der Sprosse
        zwischen dem letzten Knoten und dem rechten Holm – daran schließt der
        Pfeil zum Nutzen-Kasten an.
+     • Seit 23.10.2026 (KI-simulierte Leitern, Entscheidung E4 in
+       ../buendel-b/folienvorschlag.md): Verbindungen INNERHALB einer Ebene
+       (z. B. „kein Zuckerabsturz → konzentriert, keine Fehler“ in
+       „funktional“) werden als flacher Bogen unter den Knoten gezeichnet,
+       mit Pfeilspitze am Ziel (die Richtung ist hier nicht „nach oben“).
+       Ist eine Ebene zu voll für zweizeilige Knoten, rückt das Skript sie
+       enger (schmaler Innenabstand, halbe Lücke) – siehe neuVerteilen.
+       Bis dahin fielen sie ohne Meldung weg. Verbindungen nach UNTEN oder
+       mit unbekannter id meldet die Konsole.
+     • Optional "uebergabe": Zeile unter den Nutzen-Kästen (Schritt 4), z. B.
+       „Fremdbild (KI-simuliert) → Abgleich Folie 10“; "einheit": Wort für
+       die Zahl im Tooltip der Verbindungen (Standard „Nennungen“).
    Inhalte ändern Sie NUR in den Daten der Folie – nicht hier.
 
    EINPASSEN DER KNOTEN (Probleme meldet die Konsole als Warnung –
@@ -54,6 +66,9 @@
     linieMin: 3,             // Linienstärke bei „cutoff“ Nennungen
     linieMax: 12,            // Linienstärke bei den meisten Nennungen
     andockAbstand: 22,       // Abstand der Andockpunkte mehrerer Linien an einem Knoten
+    bogenHub: 0.3,           // Bogen innerhalb einer Ebene: so tief (Anteil einer Ebene) unter den Knoten …
+    bogenHubMax: 56,         // … aber höchstens so viele Pixel
+    spitzeLaenge: 14,        // Pfeilspitze am Ende eines Bogens (Länge in px)
     kantenStart: 200,        // ms – Verbindungen beginnen nach …
     kantenStaffel: 110,      // ms – Versatz zwischen Verbindungen
     knotenStart: 650,        // ms – Knoten erscheinen nach …
@@ -223,50 +238,101 @@
       });
     });
 
-    /* ---------- Verbindungen (nur ab Cut-off) ---------- */
+    /* ---------- Verbindungen (nur ab Cut-off) ----------
+       Nach oben (Ziel auf höherer Ebene) oder – seit 23.10.2026 – innerhalb
+       einer Ebene ("innen"). Verbindungen nach unten bzw. mit unbekannter id
+       werden nicht gezeichnet, aber gemeldet (früher fielen sie still weg). */
     var cutoff = zahl(d.cutoff, 1);
+    var einheit = u.markeText(d.einheit || 'Nennungen');
     var kanten = (d.verbindungen || []).filter(function (v) {
       var a = knotenNachId[v.von], b = knotenNachId[v.nach];
-      return a && b && b.ebene > a.ebene && zahl(v.anzahl, 0) >= cutoff;
+      if (zahl(v.anzahl, 0) < cutoff) return false;
+      if (!a || !b) {
+        console.warn('[f07] Verbindung „' + v.von + ' → ' + v.nach + '“: Knoten-id fehlt in „knoten“ – wird nicht gezeichnet.');
+        return false;
+      }
+      if (b.ebene < a.ebene) {
+        console.warn('[f07] Verbindung „' + a.el.textContent + ' → ' + b.el.textContent + '“ führt nach unten – wird nicht gezeichnet (Ebenen prüfen).');
+        return false;
+      }
+      return true;
     }).map(function (v) {
-      return { von: knotenNachId[v.von], nach: knotenNachId[v.nach], anzahl: zahl(v.anzahl, 0), roh: v };
+      var a = knotenNachId[v.von], b = knotenNachId[v.nach];
+      return { von: a, nach: b, anzahl: zahl(v.anzahl, 0), roh: v, innen: a.ebene === b.ebene };
     });
     var maxAnzahl = Math.max.apply(null, kanten.map(function (k) { return k.anzahl; }).concat([cutoff + 1]));
     var staerke = function (n) {
       return Math.round((MASS.linieMin + (MASS.linieMax - MASS.linieMin) * (n - cutoff) / Math.max(1, maxAnzahl - cutoff)) * 10) / 10;
     };
 
-    /* Andockpunkte: mehrere Linien an einem Knoten nebeneinander, nach Richtung sortiert */
-    kanten.forEach(function (k) { k.von.raus.push(k); k.nach.rein.push(k); });
+    /* Andockpunkte: mehrere Linien an einem Knoten nebeneinander, sortiert
+       nach der Lage des anderen Endes. Oben docken an: Linien nach oben
+       (Start); unten: Linien von unten (Ziel) und beide Enden eines Bogens
+       innerhalb der Ebene. Der Bogen läuft UNTER den Knoten: Oben würde er
+       die Linie kreuzen, die vom Ziel weiter nach oben führt (Sichtprüfung
+       23.10.2026: „kein Zuckerabsturz → konzentriert, keine Fehler →
+       verlässlich sein“ bildete oben eine Schlinge). */
+    kanten.forEach(function (k) {
+      (k.innen ? k.von.rein : k.von.raus).push({ k: k, feld: 'ax', anderer: k.nach });
+      k.nach.rein.push({ k: k, feld: 'bx', anderer: k.von });
+    });
     Object.keys(knotenNachId).forEach(function (id) {
       var kn = knotenNachId[id];
-      verteilen(kn.raus.sort(function (a, b) { return a.nach.x - b.nach.x; }), kn, 'ax');
-      verteilen(kn.rein.sort(function (a, b) { return a.von.x - b.von.x; }), kn, 'bx');
+      verteilen(kn.raus.sort(function (a, b) { return a.anderer.x - b.anderer.x; }), kn);
+      verteilen(kn.rein.sort(function (a, b) { return a.anderer.x - b.anderer.x; }), kn);
     });
-    function verteilen(liste, kn, feld) {
+    function verteilen(liste, kn) {
       var n = liste.length;
       var abstand = Math.min(MASS.andockAbstand, (kn.w - 24) / Math.max(1, n));
-      liste.forEach(function (k, i) { k[feld] = Math.round(kn.x + (i - (n - 1) / 2) * abstand); });
+      liste.forEach(function (eintrag, i) { eintrag.k[eintrag.feld] = Math.round(kn.x + (i - (n - 1) / 2) * abstand); });
     }
 
-    /* Zeichnen: Linie beginnt unten (Quelle) und läuft nach oben (Ziel) */
+    /* Zeichnen: Linie beginnt unten (Quelle) und läuft nach oben (Ziel).
+       Bögen innerhalb einer Ebene zeichnen sich nach den Linien, die in
+       diese Ebene hineinführen (gleicher Schritt). */
     var reihenfolge = ebenen.map(function () { return 0; });
-    kanten.sort(function (a, b) { return a.nach.ebene - b.nach.ebene || a.von.x - b.von.x; });
+    kanten.sort(function (a, b) { return a.nach.ebene - b.nach.ebene || (a.innen ? 1 : 0) - (b.innen ? 1 : 0) || a.von.x - b.von.x; });
     kanten.forEach(function (k) {
-      var ay = Math.round(k.von.y - k.von.h / 2);
-      var by = Math.round(k.nach.y + k.nach.h / 2);
-      var mitte = (ay - by) / 2;
-      var pfad = 'M' + k.ax + ' ' + ay + 'C' + k.ax + ' ' + Math.round(ay - mitte) + ' ' + k.bx + ' ' + Math.round(by + mitte) + ' ' + k.bx + ' ' + by;
       var e = k.nach.ebene;
+      var w = staerke(k.anzahl);
+      var verz = MASS.kantenStart + reihenfolge[e]++ * MASS.kantenStaffel;
+      var pfad, spitze = null;
+      if (k.innen) {
+        /* flacher Bogen von Unterkante zu Unterkante; endet kurz unter dem
+           Ziel, dort sitzt die Pfeilspitze (zeigt nach oben in den Knoten –
+           gelesen wird die Leiter weiter von unten nach oben) */
+        var ay0 = Math.round(k.von.y + k.von.h / 2);
+        var by0 = Math.round(k.nach.y + k.nach.h / 2);
+        var hub = Math.min(MASS.bogenHubMax, Math.round(ebeneH * MASS.bogenHub));
+        var lang = MASS.spitzeLaenge + Math.round(w / 2);
+        var ende = by0 + lang;
+        var tief = Math.max(ay0, ende) + hub;
+        pfad = 'M' + k.ax + ' ' + ay0 + 'C' + k.ax + ' ' + tief + ' ' + k.bx + ' ' + tief + ' ' + k.bx + ' ' + ende;
+        var halb = Math.max(9, Math.round(w * 0.8 + 4));
+        spitze = 'M' + (k.bx - halb) + ' ' + (ende + 1) + 'L' + (k.bx + halb) + ' ' + (ende + 1) + 'L' + k.bx + ' ' + (by0 + 2) + 'Z';
+      } else {
+        var ay = Math.round(k.von.y - k.von.h / 2);
+        var by = Math.round(k.nach.y + k.nach.h / 2);
+        var mitte = (ay - by) / 2;
+        pfad = 'M' + k.ax + ' ' + ay + 'C' + k.ax + ' ' + Math.round(ay - mitte) + ' ' + k.bx + ' ' + Math.round(by + mitte) + ' ' + k.bx + ' ' + by;
+      }
       /* "kern": true in den Daten = tragende Leiter (Titel der Folie);
          sie färbt sich im letzten Schritt in der Akzentfarbe (CSS) */
       var p = u.svg('path', {
-        class: 'lad-kante' + (k.roh.kern ? ' lad-kante--kern' : ''), d: pfad, 'stroke-width': staerke(k.anzahl),
+        class: 'lad-kante' + (k.innen ? ' lad-kante--innen' : '') + (k.roh.kern ? ' lad-kante--kern' : ''), d: pfad, 'stroke-width': w,
         'data-schritt': String(e), 'data-animation': 'zeichnen', 'data-dauer': '850',
-        'data-verzoegerung': String(MASS.kantenStart + reihenfolge[e]++ * MASS.kantenStaffel)
+        'data-verzoegerung': String(verz)
       }, ebeneKanten);
-      u.svg('title', { 'data-meta': '' }, p).textContent =
-        k.von.el.textContent + ' → ' + k.nach.el.textContent + ': ' + u.zahlFormat(k.anzahl, 0) + ' Nennungen';
+      var titel = k.von.el.textContent + ' → ' + k.nach.el.textContent + ': ' + u.zahlFormat(k.anzahl, 0) + ' ' + einheit +
+        (k.innen ? ' (innerhalb der Ebene)' : '');
+      u.svg('title', { 'data-meta': '' }, p).textContent = titel;
+      if (spitze) {
+        var s = u.svg('path', {
+          class: 'lad-spitze' + (k.roh.kern ? ' lad-spitze--kern' : ''), d: spitze,
+          'data-schritt': String(e), 'data-animation': 'einblenden', 'data-verzoegerung': String(verz + 700)
+        }, ebeneKanten);
+        u.svg('title', { 'data-meta': '' }, s).textContent = titel;
+      }
     });
 
     /* ---------- Rechte Spalte ---------- */
@@ -332,9 +398,26 @@
       labels[e].classList.add('ist-nutzen');
     });
 
+    /* Schritt 4: Übergabezeile unter dem untersten Nutzen-Kasten (seit
+       23.10.2026, Daten "uebergabe") – die Nutzen sind KI-simuliertes
+       Fremdbild und gehen in den Abgleich auf Folie 10, nicht ins Rad.
+       Die Lage setzt die Messung unten (Unterkante des Kastens + Abstand). */
+    var uebergabe = null;
+    if (typeof d.uebergabe === 'string' && d.uebergabe.trim()) {
+      uebergabe = u.element('p', {
+        class: 'lad-uebergabe', 'data-meta': '', style: 'top:' + sprosseY(0) + 'px',
+        'data-schritt': String(E), 'data-animation': 'einblenden', 'data-verzoegerung': String(250 + nutzen.length * 160)
+      }, u.markeText(d.uebergabe.trim()), seite);
+    }
+
     /* Nutzen-Titel einzeilig halten (24 → 22 px), sonst umbrechen lassen;
        danach prüfen, ob sich Bausteine der rechten Spalte überdecken */
     u.messen(seite, function () {
+      if (uebergabe) {
+        var kaesten = Array.prototype.slice.call(seite.querySelectorAll('.lad-nutzen'));
+        var unterkante = kaesten.reduce(function (m, el) { return Math.max(m, el.offsetTop + el.offsetHeight / 2); }, -Infinity);
+        if (isFinite(unterkante)) uebergabe.style.top = Math.round(unterkante + 24 + uebergabe.offsetHeight / 2) + 'px';
+      }
       Array.prototype.forEach.call(seite.querySelectorAll('.lad-nutzen-titel'), function (titel) {
         titel.style.whiteSpace = 'nowrap';
         var groesse = parseFloat(getComputedStyle(titel).fontSize) || 24;
@@ -357,11 +440,12 @@
     });
 
     /* Beschreibung für Screenreader */
-    var text = 'Hierarchical Value Map als Leiter (Beispieldaten). ' + ebenen.map(function (e, k) {
+    var text = 'Hierarchical Value Map als Leiter (KI-simuliert). ' + ebenen.map(function (e, k) {
       return e.name + ': ' + proEbene[k].map(function (kn) { return u.markeText(kn.text); }).join(', ');
     }).join('. ') + '. Stärkste Verbindungen: ' + kanten.slice().sort(function (a, b) { return b.anzahl - a.anzahl; }).slice(0, 3).map(function (k) {
       return k.von.el.textContent + ' → ' + k.nach.el.textContent + ' (' + k.anzahl + ')';
-    }).join(', ') + '. ' + nutzen.map(function (n) { return u.markeText(n.titel) + ': ' + u.markeText(n.text); }).join('. ') + '.';
+    }).join(', ') + '. ' + nutzen.map(function (n) { return u.markeText(n.titel) + ': ' + u.markeText(n.text); }).join('. ') + '.' +
+      (uebergabe ? ' ' + uebergabe.textContent + '.' : '');
     buehne.setAttribute('aria-label', text);
 
     Deck.platzhalterFuellen(buehne);
@@ -404,8 +488,11 @@
      enger, dann die Schrift kleiner. Hat der Knoten zu viele Zeilen, wird
      die Schrift ebenfalls verkleinert (z. B. Werte mit 30 px). Nie unter
      MASS.schriftMin (28 px). */
-  function einpassen(el, breite) {
-    el.classList.remove('ist-eng');
+  function einpassen(el, breite, engKlasse) {
+    el.classList.remove('ist-eng', 'ist-eng-ebene');
+    /* ganze Ebene eng gesetzt (neuVerteilen, seit 23.10.2026): Klasse
+       „ist-eng“ oder – noch schmaler – „ist-eng-ebene“, siehe CSS */
+    if (engKlasse) el.classList.add(engKlasse);
     el.style.fontSize = '';
     el.style.maxWidth = Math.floor(breite) + 'px';
     if (zuBreit(el)) el.classList.add('ist-eng');
@@ -485,22 +572,47 @@
   function neuVerteilen(liste, W, links, maxHoehe) {
     var luecke = MASS.knotenLuecke;
     var platz = W - (liste.length - 1) * luecke;
-    liste.forEach(function (k) {
-      var el = k.el;
-      el.classList.remove('ist-eng');
-      el.style.fontSize = '';
-      el.style.maxWidth = 'none';
-      var einzeilig = Math.min(el.offsetWidth, W);
-      k.breiten = { 1: einzeilig };
-      k.breiten[2] = kleinsteBreite(el, 2, einzeilig);
-      k.breiten[3] = kleinsteBreite(el, 3, einzeilig);
-      el.style.maxWidth = 'min-content';            // schmalste Breite = längstes Wort
-      k.minB = Math.min(einzeilig, el.offsetWidth);
-      el.style.maxWidth = einzeilig + 'px';
-      var cs = getComputedStyle(el);
-      k.hoehe3 = 3 * (parseFloat(cs.lineHeight) || 32) + (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
-      k.b = einzeilig;
-    });
+    var engKlasse = null;
+    var vermessen = function () {
+      liste.forEach(function (k) {
+        var el = k.el;
+        el.classList.remove('ist-eng', 'ist-eng-ebene');
+        if (engKlasse) el.classList.add(engKlasse);
+        el.style.fontSize = '';
+        el.style.maxWidth = 'none';
+        var einzeilig = Math.min(el.offsetWidth, W);
+        k.breiten = { 1: einzeilig };
+        k.breiten[2] = kleinsteBreite(el, 2, einzeilig);
+        k.breiten[3] = kleinsteBreite(el, 3, einzeilig);
+        el.style.maxWidth = 'min-content';            // schmalste Breite = längstes Wort
+        k.minB = Math.min(einzeilig, el.offsetWidth);
+        el.style.maxWidth = einzeilig + 'px';
+        var cs = getComputedStyle(el);
+        k.hoehe3 = 3 * (parseFloat(cs.lineHeight) || 32) + (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+        k.b = einzeilig;
+      });
+    };
+    vermessen();
+    /* Reicht der Platz nicht einmal, wenn alle Knoten zweizeilig sind
+       (seit 23.10.2026: vier Knoten mit 18–26 Zeichen in „funktional“),
+       wird die Ebene stufenweise enger gesetzt – lieber eng als dreizeilig:
+         1. halbe Lücke zwischen den Knoten, halber Rand zu den Holmen
+         2. zusätzlich schmaler Innenabstand (.ist-eng)
+         3. noch schmaler (.ist-eng-ebene)
+       Es gilt die erste Stufe, bei der alle zweizeilig passen (sonst die
+       letzte; die Prüfung danach warnt). */
+    var zweizeilig = function () { return liste.reduce(function (s, k) { return s + Math.min(k.b, k.breiten[2]); }, 0); };
+    if (zweizeilig() > platz) {
+      luecke = Math.round(MASS.knotenLuecke / 2);
+      links -= MASS.knotenRand / 2;
+      W += MASS.knotenRand;
+      platz = W - (liste.length - 1) * luecke;
+      [null, 'ist-eng', 'ist-eng-ebene'].some(function (klasse) {
+        engKlasse = klasse;
+        vermessen();
+        return zweizeilig() <= platz;
+      });
+    }
     var summe = function () { return liste.reduce(function (s, k) { return s + k.b; }, 0); };
     [2, 3].forEach(function (z) {
       while (summe() > platz) {
@@ -533,9 +645,49 @@
     liste.forEach(function (k) {
       k.x = Math.round(cursor + k.b / 2);
       k.el.style.left = k.x + 'px';
-      einpassen(k.el, k.b + 1);
+      einpassen(k.el, k.b + 1, engKlasse);
       cursor += k.b + luecke + frei / liste.length;
     });
+  }
+
+
+  /* ---------------------------------------------------------------------------
+     Abgleich mit Folie 10 (seit 23.10.2026, Entscheidung Yannick „Rad =
+     Selbstbild, Simulation als Abgleich“) – meldet nur in der Konsole
+     (pruefen.mjs zeigt es im Bericht), ändert nichts an der Folie:
+       1. Das Feld Markennutzen im Steuerrad trägt kein Stichwort mit der
+          Quelle „LA“ – diese Folie zeigt das KI-simulierte Fremdbild; das
+          Rad zeigt das Selbstbild.
+       2. Die Wörter aus "fremdbild" (Daten, optional) stehen wortgleich auf
+          Folie 10 (Abgleich Selbstbild ↔ Fremdbild).
+     --------------------------------------------------------------------------- */
+  function wortgleich(text, wort) {
+    var norm = function (s) { return ' ' + String(s || '').toLowerCase().replace(/[^0-9a-zäöüß]+/g, ' ').trim() + ' '; };
+    var w = norm(wort);
+    return w.trim() !== '' && norm(text).indexOf(w) >= 0;
+  }
+  function abgleichFolie10(d, u) {
+    var f10 = document.getElementById('f10');
+    if (!f10) return;
+    var skript = f10.querySelector('.steuerrad > script[type="application/json"]');
+    try {
+      var feld = skript ? (JSON.parse(skript.textContent).felder || {}).nutzen : null;
+      var la = feld && Array.isArray(feld.stichworte) ? feld.stichworte.filter(function (s) { return s && s.quelle === 'LA'; }) : [];
+      if (la.length) {
+        console.warn('[f07] Abgleich mit Folie 10: Im Feld Markennutzen stehen „' + la.map(function (s) { return s.text; }).join('“, „') +
+          '“ mit Quelle LA (Laddering). Seit 23.10.2026 zeigt Folie 07 das KI-simulierte Fremdbild (Nutzen dort: „Kein Zuckerabsturz, keine Fehler“, „Verlässlich sein“); das Rad zeigt das Selbstbild – Quelle aus dem Selbstbild eintragen oder streichen.');
+      }
+    } catch (e) { /* JSON von Folie 10 nicht lesbar – meldet Folie 10 selbst */ }
+    var woerter = Array.isArray(d.fremdbild) ? d.fremdbild : [];
+    if (!woerter.length) return;
+    var teile = [];
+    var gang = document.createTreeWalker(f10, NodeFilter.SHOW_TEXT);
+    while (gang.nextNode()) if (!gang.currentNode.parentNode.closest('.notizen')) teile.push(gang.currentNode.nodeValue);
+    var text = teile.join(' ');
+    var fehlen = woerter.map(function (w) { return u.markeText(String(w)); }).filter(function (w) { return !wortgleich(text, w); });
+    if (fehlen.length) {
+      console.warn('[f07] Abgleich mit Folie 10: „' + fehlen.join('“, „') + '“ (Fremdbild dieser Folie, Daten "fremdbild") steht auf Folie 10 nicht wortgleich – der Abgleich Selbstbild ↔ Fremdbild dort soll es aufgreifen.');
+    }
   }
 
 
@@ -561,6 +713,7 @@
     einrichten: function (ctx) {
       letzterCtx = ctx;
       zustand = aufbauen(ctx);
+      if (ctx.daten) abgleichFolie10(ctx.daten, ctx.util);
     },
     betreten: function (ctx) {
       letzterCtx = ctx;

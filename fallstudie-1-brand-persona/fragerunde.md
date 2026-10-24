@@ -1,7 +1,7 @@
 # Fragerunde – Vorbereitung (Fallstudie 1, HOLY)
 
-**Stand:** Do, 22.10.2026 (Account 1, Nachtrag 22.10. unten: Material von Elias Knauber) · erstellt 19.10.2026 ·
-Präsentation Mo 26.10.2026 · Generalprobe So 25.10.2026
+**Stand:** Fr, 23.10.2026 (Account 1, Nachtrag 23.10. unten: KI-simulierte Befragung, Rad = Selbstbild, Papagei und
+Chamäleon) · erstellt 19.10.2026 · Präsentation Mo 26.10.2026 · Generalprobe So 25.10.2026
 
 **Erstellt von:** Account 2 (Claude Code), KI-gestützt. Workflow „account-2-vortragsreife-fragerunde“ (Skript
 `ki-nachweis/workflows/account-2_2026-10-19_vortragsreife-fragerunde.js`, Delegation A2-D04, ausgelöst durch Prompt
@@ -12,6 +12,9 @@ A2-39 nach Übergabe Ü04 von Account 1). Nachweis: `ki-nachweis/ki-nachweis-acc
 **Erneut überarbeitet von:** Account 1 (Claude Code), KI-gestützt, am 22.10.2026 im Workflow D24 (Skript
 `ki-nachweis/workflows/2026-10-22_elias-material.js`, Auftrag „Nacharbeit – Doku“, ausgelöst durch KI-Nachweis 119:
 Elias' Material als Inhalt einsetzen). Geändert sind die Antworten zu den Folien 08–11 (Nachtrag 22.10.2026).
+**Erneut überarbeitet von:** Account 1 (Claude Code), KI-gestützt, am 23.10.2026 im Workflow D26 (Auftrag „Synthese
+Doku“, ausgelöst durch KI-Nachweis 135: Entscheidungen Yannick zum Einbau der KI-simulierten Befragung). Nachweis:
+`ki-nachweis/ki-nachweis.md`, Abschnitt 2, D26.
 
 **Geprüft:** Zwei Fragensammler (Blick von Prof. Stenger, Blick des Publikums) und eine Vollständigkeitsprüfung
 haben am 19.10. 53 Fragen gesammelt; jede Antwort hat ein Prüf-Agent an der Quelle gegengeprüft. Am 21.10. hat
@@ -24,6 +27,45 @@ sich Antworten stützen, an der Vorlesungs-PDF gegengelesen (Liste im Nachtrag).
 Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellwissen ist, steht es dabei.
 
 ---
+
+> **Nachtrag Account 1 – Stand Fr, 23.10.2026: KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon**
+>
+> Grundlage: die Entscheidungen Yannicks vom 23.10.2026 (KI-Nachweis 135) und ihr Einbau in `praesentation/index.html`
+> (Workflow D26): (1) Folien 06, 07, 08b, B4, B5 „ehrlich“ mit der **KI-simulierten Befragung** (Workflow D25, acht
+> fiktive Befragte T1–T8, keine echten Interviews; [`buendel-b/`](buendel-b/README.md)) – Pille „KI-simuliert“, Titel
+> nach den Daten, Ergebnisse als **Fremdbild**; (2) Folie 10: **Rad = Selbstbild**, die Simulation steht im neuen Schritt
+> „Abgleich: Selbstbild ↔ Fremdbild (KI-simuliert)“; (3) Folie 08 und Live-Abstimmung: **Papagei und Chamäleon
+> gleichwertig**, der Papagei ersetzt den Fuchs; (4) „selbst anrühren“ nur im Sprechtext und als Rückfrage; (5)
+> Querverweise (02, 05 Notizen, 12, B1, B2, B7, B8). Folie 10, 11, 12 und die Querverweise wurden bzw. werden
+> parallel zu diesem Nachtrag gebaut (Synthese-Schritt von D26) – Antworten, die sich darauf stützen, nennen „Einbau
+> parallel“; vor der Generalprobe am Wortlaut der Folien prüfen (beim Abgleich am 23.10.2026 standen Folie 10 mit dem
+> Abgleich-Schritt, 02, 11 und 12 schon auf der Folie; Notizen 05, B1, B2, B7 und B8 noch nicht). Lukas Welker liefert kein Material mehr: Wo bisher „Lukas (B)“ antwortete, steht jetzt „wer 06–08b
+> vorträgt“ – das legt die Gruppe fest.
+>
+> **Neu gefasst (alte Antworten gestrichen, nicht nur ergänzt)**
+>
+> - **F04 – Identität oder Image?** Jetzt mit der sichtbaren Trennung: Rad = Selbstbild, Befragungen = Fremdbild im
+>   Abgleich. Gestrichen: „bisher vor allem simuliert“, „Repertory Grid und Laddering zeigen noch Beispieldaten“.
+> - **F12 – Echte Befragte oder KI?** Ehrlich: keine echten Interviews, KI-simulierte Befragung mit acht Personen,
+>   Kontrollgruppe, Rechnung per Skript. Gestrichen: alle Platzhalter zu echten Kurzinterviews und „Beispieldaten“.
+> - **F13 – Zirkelschluss?** Mit den sichtbaren Grenzen der Simulation (fast wortgleiche Antworten, Klischees, 4 von 8
+>   widersprechen sich) und der Folge: nicht im Rad. Gestrichen: „zählt nur, wenn echte Befragte es auch nennen“.
+> - **F14 – Markeneigenschaften und „zuckerfrei“** (bisher „Drei Markeneigenschaften …“): kein Konstrukt erfüllt die
+>   vorab festgelegte Regel; „zuckerfrei“ steht als Selbstbild (Desk Research) im Rad, Cola Zero liegt bei „ohne
+>   Zucker“ knapp vorn (6,88 zu 6,75; Abgleich auf Folie 10 „zuckerfrei ≠ Cola Zero knapp vorn“).
+> - **F15 – Nur Werbung nachgezeichnet?** Positionierung = Selbstbild; das simulierte Laddering stützt sie nicht
+>   (verlässlich sein). Gestrichen: „Entscheidend ist, ob echte Befragte ‚gutes Gewissen‘ nennen“.
+> - **F16 – Warum Papagei und Chamäleon?** (bisher „Warum ein Chamäleon?“) beide Tiere gleichwertig, Abgleich mit der
+>   Simulation (Papagei 5 von 8, Chamäleon nie).
+> - **F18** (Positionierung als Selbstbild, nicht mehr „aus der stärksten Leiter“), **F29** (Papagei statt Fuchs in der
+>   Umfrage, keine Interviews), **F30** (Tonalität „frech · gesellig · wandelbar“, 08b KI-simuliert), **F35** (Grenzen
+>   ohne echte Interviews), **F36** (Papagei in der Umfrage; bisher „… nicht in der Umfrage“).
+> - **Nachgezogen:** F19 (Markierung von Lücke 1 nach dem Einbau prüfen), F20, F22, F23, F25, F27, F28, F37,
+>   Spielregeln 1, 5 und 8, Übersicht, Aufgabenliste, Übung und Reserve.
+> - **Neu:** **F39 – „Selbst anrühren“: Hürde gegen Markenkern?** (bisher Reserve V-01; „mittel“, am Ende des
+>   Abschnitts, damit die übrigen Nummern gleich bleiben).
+> - **Herkunft:** Zahlen nur aus `buendel-b/auswertung/*.csv` und den Notizen der gebauten Folien (nicht neu
+>   gerechnet); keine Websuche.
 
 > **Nachtrag Account 1 – Stand Do, 22.10.2026: Material von Elias Knauber**
 >
@@ -146,16 +188,18 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
   Prüfausgaben und nicht eingecheckt.
 - **[ … ]** = Platzhalter oder Regiehinweis: vor dem Vortrag mit dem echten Stand füllen, nicht vorlesen.
 - **Belastbar:** „ja“ = heute vertretbar; **TEILWEISE** / **NEIN** = vor dem Vortrag klären (Liste am Ende).
-- **Hinweis für Lukas:** Gründeraussagen zum Selbermischen und Abschnitt 4.5 von `gruenderbefragung.md` erst lesen,
-  wenn deine Konstrukte und Leitern codiert sind und die Codeliste mit Datum feststeht (`gruenderbefragung.md` Kopf
-  und K7). Diese Datei nennt deren Inhalt deshalb nicht.
+- ~~**Hinweis für Lukas:** Gründeraussagen zum Selbermischen … erst lesen, wenn deine Konstrukte und Leitern codiert
+  sind~~ – gegenstandslos seit 23.10.2026: Lukas liefert kein Material, Bündel B ist KI-simuliert erhoben und codiert
+  (`buendel-b/codierung/`); F39 nennt die Gründeraussage zum Selbermischen deshalb jetzt.
 
 ## Spielregeln für die Fragerunde
 
 1. **Wer antwortet – nach Bündel.** Folien 01–05, B1–B3, B7, B8, Synthese und KI-Nachweis: **Yannick**. Folien
-   06–08b, B4, B5 und der Gründerkontakt: **Lukas**. Folien 09–11, B6: **Elias**; Folie 10 trägt Elias vor, die
-   Herleitung ergänzt Yannick. Die Analogien auf Folie 08 (Chamäleon, Papagei, Impro-Comedian) stammen seit 22.10.2026
-   aus Elias' Ausarbeitung – Lukas trägt vor und antwortet, Elias ergänzt die Begründung. Erst beantwortet die zuständige Person den Kern in einem Satz, dann ergänzt höchstens eine weitere
+   06–08b, B4, B5: Bündel B – **Lukas liefert seit 22.10.2026 kein Material mehr; wer diese Folien vorträgt und die
+   Rückfragen dazu beantwortet, legt die Gruppe fest** (die KI-simulierte Befragung hat Yannick beauftragt; er ergänzt
+   zur Methode). Gründerkontakt: Lukas. Folien 09–11, B6: **Elias**; Folie 10 trägt Elias vor, die Herleitung
+   ergänzt Yannick. Die Analogien auf Folie 08 (Papagei, Chamäleon, Impro-Comedian) stammen aus Elias' Ausarbeitung –
+   Elias ergänzt die Begründung. Erst beantwortet die zuständige Person den Kern in einem Satz, dann ergänzt höchstens eine weitere
    Person – nicht drei Antworten auf eine Frage (FRAGE-P-18). Richtwert: höchstens etwa 30 s je Antwort. Wer
    moderiert (Frage aufnehmen, weitergeben, Folie anspringen), entscheidet die Gruppe in der Generalprobe (VOLL-08;
    laut LIESMICH Folie 12: „alle“).
@@ -168,8 +212,9 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
 4. **Statista-Werte nur so, wie sie in `persona-daten.md` stehen** – sie beschreiben die Kategorie Energy Drinks,
    nicht HOLY-Kund:innen. „Technik 34 % / +7“ und „85 % keine frühen Übernehmer“ stehen dort nicht (auch wenn die
    Notizen von Folie 05 sie noch nennen, Z. 1185–1186) und werden nicht gesagt.
-5. **Beispieldaten offen als solche benennen.** Was am 26.10. noch „Beispieldaten“ trägt, nie als Ergebnis vorlesen;
-   besser vorher durch echte Werte ersetzen (Liste am Ende).
+5. **Beispieldaten und KI-Simulation offen als solche benennen.** Was am 26.10. noch „Beispieldaten“ trägt, nie als
+   Ergebnis vorlesen. Die Befragung auf 06, 07, 08b, B4, B5 ist **KI-simuliert** (Pille): nie „die Befragten sagen“ ohne
+   „KI-simuliert“, „8 von 8“ heißt „ein gemeinsames Bild des Modells“, keine Signifikanz, keine Repräsentativität.
 6. **Faktenstatus richtig erklären:** ✔ heißt „von den KI-Prüfungen des Dossiers bestätigt“, nicht „von uns
    geprüft“ – solange die Prüfung durch die Gruppe offen ist. H heißt „unsere Einordnung / Hypothese“.
    Unternehmenszahlen sind „laut Unternehmen“. Jost-Zitate stammen aus einem automatischen Transkript: sinngemäß
@@ -182,8 +227,9 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
    für den Markenkern (nicht „frech im Kern“). Persona = „typischer Kunde aus der Zielgruppe“ (S. 76).
 8. **Ergänzungen als solche benennen:** Limbic Types und Gewichte (S. 69–71, 93 zeigen sie nicht), Aakers Skala,
    Wettbewerbsrollen nach Kotler, „hard/soft facts“, die Abläufe von Repertory Grid und Laddering (die Vorlesung gibt
-   die Methoden nur als Aufgabe vor, S. 60). Chamäleon, Papagei und Comedian sind Elias' Analogien (H), keine Antwort
-   der Befragten.
+   die Methoden nur als Aufgabe vor, S. 60). Papagei, Chamäleon und Comedian sind Elias' Analogien (H), keine Antwort
+   der Befragten. Die Trennung „Rad = Selbstbild, Befragungen = Fremdbild-Abgleich“ ist eine Entscheidung der Gruppe
+   (23.10.2026, `methoden.md` §6), gestützt auf S. 60 und 87.
 9. **Wortwahl:** Marco ist die **Kern-Persona (heutige Kernkundschaft)**, nicht die „Kernzielgruppe“
    (`persona-steckbrief.md` Z. 29, 53). Nie „repräsentativ“, „signifikant“, „gemessen“, „validiert“.
 10. **Bei Unsicherheit ehrlich sagen:** „Das haben wir nicht erhoben“, „Das ist unsere Einschätzung“, „Das prüfen wir
@@ -222,38 +268,40 @@ Folien. Spalte „bisher“ = Nummer im Stand vom 19.10.2026.
 | F09 | Kaufen nicht vor allem Gamer und Jugendliche HOLY? | Ergebnisse | Yannick | 04, B3 | F09 |
 | F10 | Was heißt „Hedonisten“ – und warum ist Marco einer? | Modelle | Yannick | 05 | F10 |
 | F11 | Limbic Types und Prozente stehen nicht in der Vorlesung – woher kommen sie? | Modelle | Yannick | 05 | F11 + neu |
-| F12 | Habt ihr echte Leute befragt – n = 8, davon fünf KI-Personas? | Methode | Lukas | 06, B1, B4, B5 | F12 |
-| F13 | KI ersetzt kein Kundengespräch (S. 78) – ist die KI-Befragung nicht ein Zirkelschluss? | KI-Nutzung | Lukas, ergänzt Yannick | B1 | F13 |
-| F14 | Wie kommt ihr auf drei Markeneigenschaften – und warum „zuckerfrei“? | Methode | Lukas | 06, B4 | F14 |
-| F15 | Ist „Genuss mit gutem Gewissen“ nicht einfach HOLYs Werbung? | Ergebnisse | Lukas, ergänzt Elias | 07, 10, B5 | F15 |
-| F16 | Warum ein Chamäleon – kommt das aus eurer Befragung? (neu gefasst 22.10.) | Ergebnisse | Lukas, ergänzt Elias | 08, 08b, 10 | neu |
+| F12 | Habt ihr echte Leute befragt – oder sind die Zahlen ausgedacht? (neu gefasst 23.10.: KI-simuliert) | Methode | Bündel B (wer 06–08b vorträgt), ergänzt Yannick | 06, B1, B4, B5 | F12 |
+| F13 | KI ersetzt kein Kundengespräch (S. 78) – ist die KI-Befragung nicht ein Zirkelschluss? (neu gefasst 23.10.) | KI-Nutzung | Yannick | B1 | F13 |
+| F14 | Wie kommt ihr zu euren Markeneigenschaften – und warum „zuckerfrei“ im Rad? (neu gefasst 23.10.) | Methode | Bündel B (wer 06–08b vorträgt), ergänzt Yannick | 06, B4, 10 | F14 |
+| F15 | Ist „Genuss mit gutem Gewissen“ nicht einfach HOLYs Werbung? (neu gefasst 23.10.) | Ergebnisse | Yannick, ergänzt Elias | 07, 10, B5 | F15 |
+| F16 | Warum Papagei und Chamäleon – kommt das aus eurer Befragung? (neu gefasst 22. und 23.10.) | Ergebnisse | wer 08 vorträgt, ergänzt Elias | 08, 08b, 10 | neu |
 | F17 | Wie habt ihr die Kanäle ausgewertet – und wo sind die Engagement-Raten? (neu gefasst 22.10.) | Methode | Elias | 09, B6 | F16 |
 | F18 | Antwort auf die Leitfrage – ist „Genuss mit gutem Gewissen“ euer Markenkern? | Ergebnisse | Elias, ergänzt Yannick | 10, 11, 03 | F17 |
 | F19 | Lücke 1: Ist Koffein gegen „gutes Gewissen“ überhaupt ein Widerspruch? | Ergebnisse | Elias, ergänzt Yannick | 10, 11, B8 | F18 |
-| F20 | Sind 160 mg viel, ist HOLY gesund, steht das nicht auf der Packung? | Empfehlungen | Elias, ergänzt Lukas | 11, 10 (07) | F19 |
+| F20 | Sind 160 mg viel, ist HOLY gesund, steht das nicht auf der Packung? | Empfehlungen | Elias | 11, 10 (07) | F19 |
 | F21 | Was würdet ihr zuerst raten – und was kostet das? | Empfehlungen | Elias | 11 | F20 |
 | F22 | Woran merkt HOLY, dass eure Empfehlungen wirken? | Empfehlungen | Elias | 11, B6 | F21 |
 | F23 | Alles mit KI gemacht – was ist eure Leistung, wie nachvollziehbar? | KI-Nutzung | Yannick | B1, B2, 02 | F22 |
 | F24 | Ist das eine echte Dose – dürft ihr das Logo verwenden? | Präsentation | Yannick | 01, 09b, 12, B7 | neu |
-| F25 | Energy Drink oder Softdrink – ersetzt HOLY wirklich Cola und Red Bull? | Marke & Gründer | Yannick, ergänzt Lukas | 03, 04, 06, B4 | F23 |
+| F25 | Energy Drink oder Softdrink – ersetzt HOLY wirklich Cola und Red Bull? | Marke & Gründer | Yannick | 03, 04, 06, B4 | F23 |
 | F26 | Warum „Herausforderer“ – und aus welcher Quelle? | Marke & Gründer | Yannick | 03, B7 | F24 |
-| F27 | Was unterscheidet HOLY von waterdrop oder Red Bull – wodurch grenzt sich die Positionierung ab? | Marke & Gründer | Yannick, ergänzt Lukas | 03, 06, 08b, 10 | F25 |
+| F27 | Was unterscheidet HOLY von waterdrop oder Red Bull – wodurch grenzt sich die Positionierung ab? | Marke & Gründer | Yannick | 03, 06, 08b, 10 | F25 |
 | F28 | Schichtdienst – mehr als eine Podcast-Aussage? | Daten | Yannick | 04, 05, B3 | F26 |
-| F29 | Was passiert mit meiner Stimme – und lenken die vorgegebenen Tiere nicht? | Präsentation | Lukas, ergänzt Yannick | 08 | neu |
-| F30 | Ist „passt zur Tonalität“ vorprogrammiert – und ist das eine Messung nach Aaker? (neu gefasst 22.10.) | Methode | Lukas, ergänzt Elias | 08, 08b, 09b, B7 | F28 + F29 |
+| F29 | Was passiert mit meiner Stimme – und lenken die vorgegebenen Tiere nicht? | Präsentation | wer 08 vorträgt, ergänzt Yannick | 08 | neu |
+| F30 | Ist „passt zur Tonalität“ vorprogrammiert – und ist das eine Messung nach Aaker? (neu gefasst 22. und 23.10.) | Methode | Elias, ergänzt wer 08b vorträgt | 08, 08b, 09b, 10, B7 | F28 + F29 |
 | F31 | Ist der Raptor kein Schlüsselbild – und was ist dann euer Schlüsselbild? (neu gefasst 22.10.) | Modelle | Elias | 09, 11, B6, B7 | F30 |
 | F32 | Warum „Bildwelt zu jung“, wenn HOLY damit 170 Mio. € umsetzt? (neu gefasst 22.10.) | Ergebnisse | Elias, ergänzt Yannick | 09b, 10, 11 | F31 |
 | F33 | Mehrere Namen und Kampagnen sind normal – warum ein „Bruch“? (neu gefasst 22.10.) | Ergebnisse | Elias (Folie 03: Yannick) | 09b, 11 | F32 |
 | F34 | Warum TikTok – die Aufgabe nennt doch Instagram, Facebook und YouTube? (neu gefasst 22.10.) | Methode | Elias, ergänzt Yannick | 09, B6, 04 | F33 |
-| F35 | Wo seht ihr selbst die größten Schwächen, was würdet ihr anders machen? | Methode | Lukas, ergänzt Yannick und Elias | B1, 04 | F35 |
-| F36 | Warum ein Comedian und zwei Tiere – und warum steht der Papagei nicht in der Umfrage? | Ergebnisse | Lukas, ergänzt Elias | 08 | neu 22.10. |
+| F35 | Wo seht ihr selbst die größten Schwächen, was würdet ihr anders machen? | Methode | Yannick, ergänzt Elias (und Lukas) | B1, 04 | F35 |
+| F36 | Warum ein Comedian und zwei Tiere – und warum steht jetzt der Papagei in der Umfrage? (neu gefasst 23.10.) | Ergebnisse | wer 08 vorträgt, ergänzt Elias | 08 | neu 22.10. |
 | F37 | Habt ihr für Analogien und Kommunikationsanalyse KI genutzt? | KI-Nutzung | Elias, ergänzt Yannick | B2, B1, 08, 09 | neu 22.10. |
 | F38 | Woher kommen 0,4 bis 0,6 Prozent – ist das eine Engagement-Rate? | Daten | Elias | 09, B6 | neu 22.10. |
+| F39 | „Selbst anrühren“ ist eine Hürde, „Selbermixen“ der Markenkern – Widerspruch, und warum keine Lücke? | Ergebnisse | Yannick, ergänzt wer 06 vorträgt | 06, 10, 03 | neu 23.10. (bisher Reserve V-01) |
 
-Verteilung: Yannick führt 16, Lukas 10, Elias 12 Fragen. Themen: Methode 6, Daten 4, Ergebnisse 9, Empfehlungen 3,
-KI-Nutzung 3, Modelle 5, Marke & Gründer 6, Präsentation 2 (Logo, Abstimmung). F36–F38 sind am 22.10.2026 neu und
-stehen am Ende des Abschnitts „mittel“, damit die übrigen Nummern gleich bleiben. Reserve (bisher F27 und weitere):
-Abschnitt am Ende.
+Verteilung (Stand 23.10.2026): Yannick führt 20, Elias 13, die Person, die 06–08b vorträgt, 5 (offen, weil Lukas
+kein Material mehr liefert), Lukas 1 (Gründerkontakt) Fragen. Themen: Methode 6, Daten 4, Ergebnisse 10, Empfehlungen
+3, KI-Nutzung 3, Modelle 5, Marke & Gründer 6, Präsentation 2 (Logo, Abstimmung). F36–F38 sind am 22.10.2026 neu, F39
+am 23.10.2026; sie stehen am Ende des Abschnitts „mittel“, damit die übrigen Nummern gleich bleiben. Reserve (bisher
+F27 und weitere): Abschnitt am Ende.
 
 ---
 
@@ -350,8 +398,8 @@ die Brand Persona überhaupt dazu?“**
   - Die Brand Persona nicht als sechstes Feld bezeichnen – auf S. 88 hat das Rad keine Persona (#37).
   - Kotler: Die Vorlesung vergibt keine Wettbewerbsrollen (#31) – siehe F26.
   - Nachfrage „In der Vorlesung heißt es individueller und sozialer Nutzen“ (S. 88): Das stimmt; die Begriffe auf
-    Folie 07 („sachlich-funktional“, „psychosozial“) stammen aus der Laddering-Literatur – Angleichung offen (#39,
-    Lukas).
+    Folie 07 („sachlich-funktional“, „psychosozial“) stammen aus der Laddering-Literatur – Angleichung offen (#39;
+    seit 23.10.2026 zeigt Folie 07 das KI-simulierte Fremdbild, nicht das Feld im Rad).
   - Nachfrage zum Ablauf der Methoden: „Die Vorlesung gibt die Methoden als Aufgabe vor (S. 60), nicht ihren
     Ablauf; den haben wir aus der Originalliteratur“ (#41).
 - **Belastbar:** **TEILWEISE** – Begriffe angeglichen; Fußzeilen mit Vorlesungsseiten, Esch-Ausgabe und Kotler offen.
@@ -363,31 +411,30 @@ das nicht das Image?“**
 
 - **Wer fragt wahrscheinlich:** Prof. Stenger (hoch) · aus P-15
 - **Wer antwortet:** Yannick (A)
-- **Antwort:**
-  > Ihre Aufgabe ordnet Repertory Grid, Laddering, Analogien und Kommunikationsanalyse selbst der Markenidentität zu
-  > (S. 60). Identität ist die Innensicht, „wer und was man sein möchte“, das Image ist, „was wahrgenommen wird“
-  > (S. 87) – weil Repertory Grid und Laddering die Zielgruppe fragen, bisher vor allem simuliert, prüfen sie
-  > zugleich, ob die Identität ankommt; auf Folie 2 tragen sie deshalb das Etikett „Fremdbild“. Die Innensicht nehmen
-  > wir aus Website, Press Kit, Gründer-Interviews und einer eigenen Befragung von Gründer Mathias Horsch, die wir als
-  > Selbstauskunft schwach gewichten. Wo Identität und Image auseinandergehen, setzen unsere Empfehlungen an.
-- **Beleg:** Stenger S. 60, 87 (an der PDF gegengelesen; `abgleich-vorlesung.md` #30); Folie 02 Etikett „Fremdbild“
-  (`praesentation/js/folien/02-vorgehen.js` Z. 49, 91–96), Sprechtext Schritt 1 und 3 (Z. 586, 588), Rückfrage „Das
-  Steuerrad erfasst doch die Identität – warum fragt ihr die Zielgruppe?“ (Z. 593); Folie 10 gleiche Rückfrage
-  (Z. 2645); `folienentwuerfe.md` Folie 2 (Z. 94); README.md der Fallstudie „Identität vs. Image“.
+- **Antwort** (neu gefasst am 23.10.2026 nach Entscheidung Yannick „Rad = Selbstbild, Simulation als Abgleich“):
+  > Genau deshalb trennen wir beides. Identität ist die Innensicht, „wer und was man sein möchte“, das Image ist, „was
+  > wahrgenommen wird“ (S. 87). Das Steuerrad zeigt die Identität – nur Stichworte aus HOLYs eigenen Aussagen und
+  > Auftritt: Desk Research, die Befragung von Gründer Mathias Horsch, Elias' Analogien und Kommunikationsanalyse.
+  > Repertory Grid, Laddering und Aaker-Bogen fragen die Zielgruppe – bei uns KI-simuliert, echte Interviews gab es
+  > nicht. Sie zeigen ein Fremdbild, und das gleichen wir auf Folie 10 mit dem Rad ab, statt es hineinzumischen. Die
+  > Aufgabe ordnet die Methoden der Identität zu (S. 60); die Abweichungen im Abgleich sind der Ansatz unserer
+  > Empfehlungen.
+- **Beleg:** Stenger S. 60, 87 (an der PDF gegengelesen; `abgleich-vorlesung.md` #30); `methoden.md` §6 (Entscheidung
+  der Gruppe 23.10.2026); Notizen von Folie 06, 07, 08b („Einordnung“, Rückfrage „Warum KI-simulierte Befragte?“);
+  Folie 10, Schritt „Abgleich: Selbstbild ↔ Fremdbild (KI-simuliert)“ (Einbau 23.10.2026, parallel zu dieser
+  Fassung – Wortlaut dort); `folienentwuerfe.md` Folie 2, Rückfrage 2; README.md der Fallstudie „Identität vs. Image“.
 - **Fallstricke:**
-  - „Selbstbild/Fremdbild“ und „Soll-Identität“ sind keine Vorlesungsbegriffe (#30): zuerst Identität und Image
-    sagen. Das Etikett „Fremdbild“ und der Sprechtext von Folie 02 („das Selbstbild der Marke“, Z. 586) sind noch
-    nicht umgestellt (nicht freigegeben).
+  - Zuerst Identität und Image sagen, „Selbstbild/Fremdbild“ als Erklärung danach (#30). Die Folien 06, 07, 08b und 10
+    verwenden seit 23.10.2026 „Fremdbild (KI-simuliert)“ und „Selbstbild“ sichtbar – mit Stenger S. 60, 87 in den
+    Notizen.
   - Nachfrage „Ist euer Rad Soll- oder Ist-Identität?“: Die Vorlesung zeigt das zusammengeführte Rad als
     „IST-Identität – Erster Entwurf zur Abstimmung“ (S. 91); „Soll-Identität“ nur mit Esch-Quelle (Modellwissen,
     `markenkompetenz.md` §4).
-  - „bisher vor allem simuliert“ nicht weglassen (Notiz 02 Z. 593).
-  - Nicht sagen: „Unser Steuerrad zeigt nur die Identität.“ Nicht behaupten, die Befragten hätten die Lücken
-    bestätigt: Die Lücken auf Folie 10/11 stützen sich auf Außensicht (Verbraucherschützer, Presse) und die Persona;
-    Repertory Grid und Laddering zeigen noch Beispieldaten.
+  - Nie „die Befragten sagen“ ohne „KI-simuliert“. Das Fremdbild ist eine Hypothese, kein Image im Sinne einer
+    Messung (keine Signifikanz, keine Repräsentativität; S. 78).
   - Die Gründerbefragung nicht als Image oder Kundenaussage ausgeben – sie gehört zur Innensicht (n = 1; S. 87,
     #36).
-- **Belastbar:** ja (Begriffe belegt); die Befunde selbst hängen an Beispieldaten.
+- **Belastbar:** ja (Begriffe belegt, Trennung sichtbar); das Fremdbild selbst ist KI-simuliert.
 
 #### F05 – Was hat der Gründer gesagt?
 
@@ -457,8 +504,8 @@ Sprachnachrichten überhaupt mit KI-Tools auswerten?“**
     Zuordnung und Auswertung mit Claude Code (mit Zustimmung). Keine Rechtsprüfung, kein „DSGVO-konform“.
   - Ablage der Audios vorher klären: Kopf von `gruenderbefragung.md` „Audiodateien bleiben im Gruppenordner“, §2.3
     „Original-Audiodateien hat Lukas“ (Kopien in der KI-Sitzung gelöscht). Keine Audiodatei anbieten.
-  - Kurzinterviews: die Regel nach der KI-Richtlinie der HSKL, Nr. 6 (Einwilligung vorher, Notizen ohne Namen) nur
-    nennen, wenn die Interviews so geführt wurden; die Checkliste in `dossier-buendel-b.md` (Z. 445) ist offen.
+  - Kurzinterviews gab es nicht (Stand 23.10.2026); die Befragung auf 06–08b ist KI-simuliert mit fiktiven Profilen –
+    personenbezogene Daten echter Befragter sind also nicht in KI-Tools geflossen.
   - Ob der Prof besondere KI-Vorgaben hat, ist offen – die Vorlesung regelt nur Prompt-Dokumentation und Begründung im
     Backup (S. 60; `arbeitsplan.md` Offene Punkte; #7). Nicht „mit dem Prof abgestimmt“ sagen.
 - **Belastbar:** **TEILWEISE** – Versanddatum und Ablage der Audios klären.
@@ -529,8 +576,8 @@ Daten über HOLY-Kund:innen? Und warum ein Mann, wenn fast die Hälfte Frauen si
   - Name, Wohnort, Beruf, Alltag und Zitat sind KI-Vorschläge auf Basis der Daten (Notiz Z. 954) – genau die
     „plausibel klingenden Details“, vor denen S. 78 warnt; deshalb als Annahme gekennzeichnet. Nicht verschweigen,
     wenn er nachfragt.
-  - Nachfrage „Habt ihr mit echten Kund:innen gesprochen?“: ehrlich „noch nicht“ bzw. [Zahl] Kurzinterviews (Notiz
-    Z. 954); die Auswertung von 20–30 Bewertungen steht aus.
+  - Nachfrage „Habt ihr mit echten Kund:innen gesprochen?“: ehrlich „nein“ – echte Kurzinterviews kamen nicht
+    zustande, die Befragung auf 06–08b ist KI-simuliert (F12); die Auswertung von 20–30 Bewertungen steht aus.
   - Nachfrage „Warum Marco und nicht Lena?“: Die Vorlesung nennt für die Auswahl u. a. die „Glaubwürdigkeit der
     eigenen Marke“ und fragt, welche Segmente man bewusst nicht bearbeitet (S. 82) – Marco ist die heutige
     Kernkundschaft, bewusst nicht der Schüler-Gamer (#21; Steckbrief „Nicht: kein Schüler-Gamer“).
@@ -660,224 +707,182 @@ Abenteurer, und die Offenen liegen bei euch knapp dahinter.“**
 
 #### F12 – Echte Befragte oder KI?
 
-**„Habt ihr echte Leute befragt – oder sind die Zahlen ausgedacht? Auf Folie 6 steht n = 8, davon fünf KI-Personas,
-und überall ‚Beispieldaten‘. Warum mittelt ihr KI-Antworten mit echten?“**
+**„Habt ihr echte Leute befragt – oder sind die Zahlen ausgedacht? Auf Folie 6 steht ‚KI-simuliert‘, n = 8.“**
 
-- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch), Publikum (hoch) · aus P-01 und Q-02
-- **Wer antwortet:** Lukas (B)
+- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch), Publikum (hoch) · aus P-01 und Q-02 · **neu gefasst 23.10.2026**
+  (KI-simulierte Befragung D25 eingebaut; die alte Antwort mit Platzhaltern für echte Kurzinterviews ist gestrichen)
+- **Wer antwortet:** wer die Folien 06–08b vorträgt (Bündel B; Lukas liefert kein Material mehr – Gruppe legt fest),
+  ergänzt von Yannick (hat die Simulation beauftragt)
 - **Antwort:**
-  > [Zahl] unserer Befragten sind KI-simuliert [Prompt P8/P9 – nur sagen, wenn die Läufe stattgefunden haben; Stand
-  > von Lukas], echte Kurzinterviews haben wir [tatsächliche Zahl] geführt; geplant waren drei bis fünf. Simuliert haben wir, weil eine repräsentative Befragung im Zeitrahmen nicht machbar war – die
-  > simulierten Antworten sind für uns Hypothesen, keine Daten, und wir zählen KI und echt getrennt [nur so sagen, wenn
-  > umgesetzt; die Aufteilung steht dann in der Fußzeile und in Backup B4]. Repräsentativ ist das nicht; es zeigt
-  > Richtungen, und wo KI und echte Befragte auseinandergehen, sagen wir das offen.
-  >
-  > [Nur falls am 26.10. doch noch Beispieldaten auf den Folien stehen, ehrlich: „Was mit ‚Beispieldaten‘ markiert
-  > ist, sind im Moment Beispielwerte, keine Ergebnisse.“ Das ist dann ein Mangel, keine Antwort.]
-- **Beleg:** Pillen „Beispieldaten“ auf f06, f07, f08b, f10–f12 und B4, B5 (seit 22.10.2026 nicht mehr auf f08, f09
-  und B6: dort stehen Elias' Analogien und seine Kommunikationsanalyse; nur die Wettbewerber-Tiere auf f08 sind noch
-  „(Beispiel)“); Folie 06 Fußzeile „5 KI-Personas + 3 Kurzinterviews,
-  gemittelt“ (Z. 1367) und Hinweise mit Rückfrage „Wie genau sind die Werte?“ (Z. 1375); Fußzeilen 07 (Z. 1545), 08b
-  (Z. 1967), B4 (Z. 3480), B5 (Z. 3572) – die Fußzeile von 08 nennt seit 22.10.2026 kein n mehr, sondern Elias'
-  Ausarbeitung; B1 Pille „teils geplant“ (Z. 3186), Spalte 01 „Befragte
-  simulieren – repräsentative Befragung zeitlich nicht machbar“ (Z. 3200), Spalte 02 „Simulation mit 3 echten
-  Kurzinterviews abgleichen“ (Z. 3218), Notizen (Z. 3261, 3264: „‚3‘ ist die geplante Zahl“);
-  `dossier-buendel-b.md` §5 Vergleichstabelle (Z. 324), §7 „Simulierte Befragte sind keine Daten“ (Z. 362), §10
-  Punkte 5 und 12; `methoden.md` §2; `abgleich-vorlesung.md` #2, #15; FRAGE-Q-01, FRAGE-P-04.
+  > Nein, echte Interviews gab es nicht – das steht auf jeder dieser Folien: Pille „KI-simuliert“, Fußzeile „keine
+  > echten Interviews“. Geplant waren echte Kurzinterviews, sie kamen nicht zustande. Die Aufgabe verlangt KI-Tools als
+  > Methode (S. 60), die Vorlesung warnt aber: KI ersetzt nicht das Gespräch mit echten Kunden (S. 78). Deshalb haben wir
+  > so streng wie möglich simuliert: acht Profile, jede Person ein eigener Agent ohne Dateizugriff, eine Kontrollgruppe
+  > ohne Persona-Text, die Auswahlregel vorher festgelegt, gerechnet per Skript. Ausgedacht sind die Zahlen also nicht,
+  > aber sie stammen von simulierten Personen – Hypothesen, nicht repräsentativ. Deshalb stehen sie nicht im
+  > Steuerrad, sondern im Abgleich mit unserem Selbstbild auf Folie 10.
+- **Beleg:** Folien 06, 07, 08b, B4, B5: Pille „KI-simuliert“, Fußzeilen „KI-simulierte Befragung, n = 8 (T1–T8),
+  keine echten Interviews“, Rückfrage „Warum KI-simulierte Befragte?“ in den Notizen (S. 60, 78);
+  [`buendel-b/README.md`](buendel-b/README.md) (Was, warum, wer; Grenzen), `buendel-b/simulation-protokoll.md` (Prompts
+  wörtlich, Regeln mit Zeitpunkt); KI-Nachweis 120 („wenn du etwas KI Simulieren musst für ein richtiges Ergebnis dann
+  mach das“) und 135, Delegation D25; Backup B1 (Grenzen; Einbau 23.10.2026 parallel – keine echten Interviews,
+  Pille „teils geplant“ entfällt).
 - **Fallstricke:**
-  - Nicht „8 Befragte“ sagen ohne „davon 5 KI-simuliert“; KI-Personas nie „Befragte“ nennen ohne „KI-simuliert“.
-    Nicht „wir haben acht Personen befragt“, solange die Interviews nicht dokumentiert sind.
-  - Nicht „drei Interviews“ sagen, wenn weniger geführt wurden – laut B1-Notiz ist „3“ nur die geplante Zahl; ebenso
-    „+ Kurzinterviews“ auf Folie 02 und in den Fußzeilen (Planung). Ohne Interviews dort streichen – Entscheidung der
-    Gruppe (#15).
-  - „Gemittelt“ nicht als Stärke darstellen; nicht „repräsentativ“ oder „signifikant“.
-  - Stammen die Skalenwerte nur von den fünf simulierten Befragten (Vorschlag `dossier-buendel-b.md` §10 Punkt 12),
-    nicht sagen, die Mittelwerte kämen aus KI und echten Interviews – so steht es noch in der Notiz 06 (Z. 1375).
-    Den Notizsatz „Ergebnisse mit drei echten Kurzinterviews geprüft“ nur verwenden, wenn die Interviews geführt und
-    getrennt ausgewertet sind (Hinweis im Kasten 06).
-  - Stehen am 26.10. noch „Beispieldaten“ oder „teils geplant“ auf den Folien, ist das ein Mangel: vorher überall
-    dieselbe tatsächliche Zahl eintragen. Die Beispielwerte (9 Nennungen, 6,6, +2/+3) nicht als Ergebnis nennen.
-  - Die Gründerantworten nicht als Interviewdaten ausgeben – sie fließen nicht in Repertory Grid oder Laddering ein.
-- **Belastbar:** **NEIN** (Stand 21.10.) – im Repository steht nirgends, wie viele echte Interviews es gab; belastbar
-  erst mit der tatsächlichen Zahl und getrennter Auswertung.
+  - Nie „die Befragten sagen“ ohne „KI-simuliert“; nie „wir haben acht Personen befragt“.
+  - „8 von 8“ heißt: ein gemeinsames Bild des Modells, keine starke Zustimmung (S. 78: Widersprüche verschwinden).
+  - Die Kontrollgruppe belegt weder Unabhängigkeit noch Realitätsnähe – sie zeigt nur, dass der Persona-Text die
+    Konstrukte nicht allein erzeugt (11 der 12 Konstrukte auch ohne ihn). Eine zweite Ziehung derselben Profile
+    änderte 5 von 13 Triaden – Zahlen sind Richtungen.
+  - Nicht „repräsentativ“, „signifikant“, „gemessen“, „validiert“.
+  - Die Live-Abstimmung auf Folie 08 ist echt (Publikum im Raum), aber nur ein Stimmungsbild; die Gründerantworten
+    sind Selbstauskunft, keine Befragungsdaten.
+- **Belastbar:** ja – die Antwort ist ehrlich und belegt; die Ergebnisse selbst bleiben Hypothesen.
 
 #### F13 – KI ersetzt kein Kundengespräch: Zirkelschluss?
 
 **„Ihr habt Befragte mit KI simuliert. In meiner Vorlesung steht: KI ersetzt nicht das Gespräch mit echten Kunden.
 Gibt euch die KI nicht einfach zurück, was ihr hineingebt – ist das nicht ein Zirkelschluss?“**
 
-- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch) · aus P-02, ergänzt nach `abgleich-vorlesung.md` #15
-- **Wer antwortet:** Lukas (B), ergänzt von Yannick (A, B1)
+- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch) · aus P-02, ergänzt nach `abgleich-vorlesung.md` #15 · **neu
+  gefasst 23.10.2026**
+- **Wer antwortet:** Yannick (A, B1), ergänzt von der Person, die 06–08b vorträgt
 - **Antwort:**
-  > Ja, das Risiko sehen wir, und genau davor warnt Ihre Folie 78: Eine generierte Persona beschreibt
-  > Trainingsdaten, nicht die eigenen Kunden, und plausible Details ersetzen keine Empirie. Deshalb sind die
-  > simulierten Antworten für uns nur Hypothesen für Interviews – das nennt S. 78 als sinnvolle Hilfe; dass wir daraus
-  > simulierte Befragte machen, ist unsere eigene Übertragung, und so steht es in Backup B1. Unser Persona-Block
-  > enthielt zum Beispiel „ohne Zucker“, was die KI dazu sagt, kann also aus dem Block stammen – als Ergebnis zählen
-  > wir es nur, wenn echte Befragte oder Kundenbewertungen es auch nennen [nur sagen, wenn so ausgewertet]. Solange die
-  > echten Kurzinterviews fehlen, ist das eine Grenze unserer Folien 6, 7 und 8b, und das sagen wir offen.
+  > Zum Teil ja, und genau davor warnt Ihre Folie 78: Eine generierte Persona beschreibt Trainingsdaten, nicht die
+  > eigenen Kunden; Stereotype wirken objektiv, Widersprüche verschwinden. Wir sehen das in unseren Daten: Fast
+  > wortgleiche Antworten in allen acht Agenten, Klischees bei Berufen und Geschlecht, und im Laddering nennen alle
+  > acht „ohne Zucker“ wichtig, vier davon gegen ihre eigenen früheren Antworten. Eine Kontrollgruppe ohne
+  > Persona-Text zeigt nur, dass der Text die Konstrukte nicht allein erzeugt. Deshalb ziehen wir die Konsequenz: Die
+  > Simulation steht nicht im Steuerrad, sondern nur als Fremdbild im Abgleich auf Folie 10 – als Hypothesen für echte
+  > Interviews.
 - **Beleg:** Stenger S. 78 „KI und Persona: Chancen und Trugschlüsse“ (an der PDF gegengelesen;
-  `abgleich-vorlesung.md` #15); B1 Grenze „Simulierte Befragte spiegeln Trainingsdaten, ersetzen kein
-  Kundengespräch (vgl. Stenger, S. 78)“ (Z. 3241) und Notizen (Z. 3262–3263: Zuordnung unserer KI-Nutzung zu S. 78,
-  „Diese Übertragung der Persona auf simulierte Befragte ist unsere eigene, S. 78 nennt sie nicht“); Folie 02
-  Rückfrage „Wie belastbar sind KI-Ergebnisse?“ (Z. 593); Folie 04 Notiz (Z. 954); Folie 12 Notiz (Z. 3068);
-  `dossier-buendel-b.md` §2 „Achtung, der Persona-Block prägt die Antworten vor“ (Z. 98–106), §5 Spalte „im
-  Persona-Block angelegt?“ (Z. 324), §7 (Z. 362), Anhang 2; `prompts.md` Teil C „Limitationen“;
-  `persona-steckbrief.md` Kopf (Z. 17–27).
+  `abgleich-vorlesung.md` #15); [`buendel-b/README.md`](buendel-b/README.md), Abschnitt „Grenzen“ (Kontrollgruppe,
+  zweite Ziehung, Widersprüche im Laddering, reproduzierte Klischees); `buendel-b/laddering.md` §2 (4 von 8
+  widersprechen sich); `buendel-b/auswertung/rohdaten-muster.csv` („verkaufen“ in 7 von 8 Antworten auf die
+  Beziehungsfrage); `methoden.md` §6 (Entscheidung 23.10.2026); B1 mit Absatz „Reproduzierte Klischees“ (Einbau
+  parallel, `buendel-b/folienvorschlag.md` §6).
 - **Fallstricke:**
-  - Nicht sagen: „Die KI-Personas haben bestätigt …“ oder „validiert“.
-  - Nicht behaupten, die Vorlesung erlaube oder empfehle simulierte Befragte – S. 78 nennt „erste Hypothesen für
-    Interviews formulieren“, nicht die Simulation (B1-Notiz).
-  - Die fünf Profile nicht als unabhängige Beobachtungen ausgeben: Sie entstehen in einer Antwort desselben Tools
-    (`dossier-buendel-b.md` §7).
-  - Den Satz zum Persona-Block nur so sagen, wenn der volle Block verwendet wurde (Standard laut §2); bei der
-    gekürzten Variante die Beispiele anpassen. Die Regel „zählt nur, wenn auch echt“ nur nennen, wenn sie angewandt
-    wurde.
-  - Beim Zeigen von B1 die Grenze „Sprachmodelle erfinden Fakten – nichts ungeprüft übernommen“ (Z. 3243) nicht
-    vorlesen, solange die eigene Prüfung der Gruppe offen ist (siehe F23).
-  - Verlangt er den Prompt: Der Wortlaut von P7–P12 steht in `prompts.md` und `dossier-buendel-b.md` Anhang 1; der
-    Nachweis der tatsächlichen Nutzung (Tool, Datum, Verlauf) fehlt noch im KI-Nachweis, Abschnitt 3 (FRAGE-P-10).
-- **Belastbar:** **TEILWEISE** – hängt daran, ob die echten Interviews stattfinden und die Regel „zählt nur, wenn
-  auch echt“ angewandt wird.
+  - Nicht sagen: „Die simulierten Personen haben bestätigt …“ oder „validiert“.
+  - Nicht behaupten, die Vorlesung empfehle simulierte Befragte – S. 78 nennt „erste Hypothesen für Interviews
+    formulieren“, nicht die Simulation.
+  - Die acht Agenten nicht als unabhängige Beobachtungen ausgeben: technisch getrennt, inhaltlich dasselbe Modell.
+  - Verlangt er den Prompt: alle Prompts wörtlich in `buendel-b/simulation-protokoll.md`; im Prompt-Log B2 die
+    Zeilen P7–P11 (seit 23.10.2026 echte Läufe D25 statt Beispielzeilen – Einbau parallel).
+- **Belastbar:** ja – die Grenze ist benannt und hat eine sichtbare Folge (nur Abgleich, nicht im Rad).
 
-#### F14 – Drei Markeneigenschaften und „zuckerfrei“
+#### F14 – Markeneigenschaften und „zuckerfrei“
 
-**„Wie kommt ihr auf genau drei Markeneigenschaften – auf der Folie steht ‚Attribute‘? Und warum soll ‚zuckerfrei‘
-HOLY abheben, wenn Gönrgy oder Coca-Cola Zero auch zuckerfrei sind?“**
+**„Wie kommt ihr zu euren Markeneigenschaften? Auf Folie 6 erfüllt keine die Kriterien – und warum steht ‚zuckerfrei‘
+dann trotzdem im Steuerrad, wenn Coca-Cola Zero auch zuckerfrei ist?“**
 
-- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch) · aus P-03
-- **Wer antwortet:** Lukas (B)
+- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch) · aus P-03 · **neu gefasst 23.10.2026**
+- **Wer antwortet:** wer Folie 06 vorträgt, ergänzt von Yannick (Synthese Folie 10)
 - **Antwort:**
-  > Eine Markeneigenschaft – so heißt das Feld in Ihrer Vorlesung, in der Literatur auch Markenattribut – muss bei uns
-  > drei Kriterien erfüllen: Sie wird oft genannt, HOLY weicht deutlich vom Durchschnitt der fünf Wettbewerber ab, und
-  > HOLY liegt nah an der Idealmarke; die Schwellen stehen in Backup B4 [tatsächliche Schwellen und Zahl der
-  > Eigenschaften nennen]. Gemessen wird, wie die Befragten die ganze Marke sehen, nicht eine einzelne Variante. Weil
-  > wir gegen den Durchschnitt aller Wettbewerber rechnen und Gönrgy im Set zuckerfrei ist, drückt das den Vorsprung
-  > bei „zuckerfrei“ [echten Vorsprung nennen; ist er klein, offen sagen, dass „zuckerfrei“ allein HOLY kaum abhebt].
-- **Beleg:** Folie 06 Titel „Drei Attribute heben HOLY vom Wettbewerb ab“ (Z. 1347), Sprechtext Schritt 3
-  „Markeneigenschaften erfüllen drei Bedingungen“ (Z. 1374), Hinweise mit Kriterien und Rückfrage „Zuckerfrei gibt es
-  doch auch bei anderen“ (Z. 1375); B4 Daten „schwellen“ (Z. 3518: Abstand ≥ 1,5) und Notizen (Z. 3485–3487);
-  `methoden.md` §2 (3–5 Eigenschaften); `dossier-buendel-b.md` §10 Punkt 8 (≥ 1 gegen ≥ 1,5) und B1 Schritt 5 (Regel
-  vorher festlegen); Dossier 5.2 (Gönrgy zuckerfrei ✔ [109, 115]), 5.3 Set-Vorschlag (H), 3.6 (HOLY vergleicht sich
-  nur mit gezuckerten Standardprodukten, H); Stenger S. 60, 88, 90–91 („Markeneigenschaften“; #29).
+  > Eine Markeneigenschaft muss bei uns drei Kriterien erfüllen, die wir vor dem Rechnen festgelegt haben: von
+  > mindestens drei der acht genannt, mindestens einen Skalenpunkt vom Durchschnitt der fünf Wettbewerber entfernt und
+  > höchstens einen Punkt vom Ideal. Das schafft in unserer KI-simulierten Befragung kein Konstrukt – HOLY hebt sich vor
+  > allem durch Hürden ab, am stärksten „selbst anrühren“. Bei „ohne Zucker“ liegt Coca-Cola Zero mit 6,88 sogar knapp
+  > vor HOLY mit 6,75. Im Steuerrad steht „zuckerfrei“ trotzdem, weil das Rad unser Selbstbild zeigt: HOLY **ist**
+  > zuckerfrei und stellt das selbst in den Mittelpunkt (Desk Research). Dass die simulierten Befragten darin keinen
+  > Unterschied zu Cola Zero sehen, zeigt der Abgleich auf Folie 10 als Abweichung.
+- **Beleg:** Folie 06 Titel „HOLY hebt sich ab – aber vor allem durch Hürden“, Ergebnisbereich „Fremdbild
+  (KI-simuliert)“, Notizen (Auswahlregel 22.10.2026; Rückfrage „Zuckerfrei gibt es doch auch bei anderen“); B4 Titel
+  „Kein Konstrukt erfüllt alle drei Kriterien“; `buendel-b/auswertung/repertory-grid-ergebnis.csv` (6,75; 6,88;
+  Ideal 5,13; Differenzierung 2,67); `buendel-b/repertory-grid.md`; Dossier 2.7/3.1 ✔ [1, 13] (zuckerfrei);
+  Folie 10 Feld Markeneigenschaften mit Quelle DR und Abgleich „zuckerfrei ≠ Cola Zero knapp vorn“ (Schritt 9);
+  Stenger S. 60, 88, 90–91 („Markeneigenschaften“; #29).
 - **Fallstricke:**
-  - Titel und Sprechtext von Folie 06 sagen noch „Attribute“ (#29, offen, Lukas) – den Begriff kurz einordnen,
-    nicht verteidigen.
-  - Die drei Kriterien sind unsere Festlegung; zur Auswahl sagt die Vorlesung nichts. Eine Anlehnung an die Ziele der
-    Positionierung (S. 92: attraktiv, abgegrenzt, vorgezogen) wäre eine eigene Übertragung (#43, nicht umgesetzt) –
-    nur so nennen.
-  - Persönlichkeitsartige Konstrukte wie „seriös – frech“ gehören nach S. 88 eher zur Tonalität (#44) – nicht als
-    Markeneigenschaft verteidigen.
-  - Nicht sagen: „HOLY ist die einzige zuckerfreie Marke.“ Dass Coca-Cola Zero zuckerfrei ist, steht nicht im
-    Dossier (laut Notiz 06 Modellwissen) – nur nach Prüfung nennen.
-  - Den Notizsatz „Darum ist der Vorsprung bei zuckerfrei der kleinste der drei“ (Z. 1375) nur sagen, wenn die echten
-    Daten das zeigen – heute beruht er auf Beispieldaten (+2 gegenüber +3).
-  - Schwellen nicht als vorab festgelegt ausgeben, wenn sie erst nach den Daten gewählt wurden; B4 nennt ≥ 1,5
-    Skalenpunkte, die Aufgaben ≥ 1 – nur die tatsächlich notierte Regel nennen (FRAGE-P-05).
-  - Ist „zuckerfrei“ nach der echten Auswertung keine Markeneigenschaft, Antwort und Folientitel anpassen.
-- **Belastbar:** **TEILWEISE** – Schwelle nicht datiert festgelegt, Werte sind noch Beispieldaten.
+  - Die drei Kriterien sind unsere Festlegung; zur Auswahl sagt die Vorlesung nichts.
+  - Nicht sagen: „HOLY ist die einzige zuckerfreie Marke.“
+  - „Ohne Zucker“ und „für jeden Tag“ sind Startpunkte fürs Laddering, keine Markeneigenschaften; „für jeden Tag“ ist
+    der Name unserer Idealmarke (schwacher Startpunkt).
+  - Die Regel wurde nicht nach dem Rechnen angepasst (vor der ersten simulierten Antwort festgelegt); offen sagen,
+    dass die Umsetzung der Rückfallregel (zuerst Konstrukte mit erfüllter Relevanz) erst bei vorliegenden Daten, aber
+    vor dem ersten Rechenlauf festgelegt wurde (Notizen B4).
+  - „Online bestellen“ ist ein Eindruck der Simulation: HOLY steht seit 2024/2025 im Supermarkt (Dossier 2.5 ✔ [6, 8,
+    9]).
+- **Belastbar:** ja für das Vorgehen; die Werte sind KI-simuliert.
 
 #### F15 – Nur HOLYs Werbung nachgezeichnet?
 
-**„‚Genuss mit gutem Gewissen‘ ist fast wörtlich HOLYs eigenes Versprechen. Habt ihr mit dem Laddering nicht einfach
-die Werbung nachgezeichnet – was habt ihr da eigentlich analysiert?“**
+**„‚Genuss mit gutem Gewissen‘ ist fast wörtlich HOLYs eigenes Versprechen. Habt ihr nicht einfach die Werbung
+nachgezeichnet – was habt ihr da eigentlich analysiert?“**
 
-- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch), Publikum (mittel) · aus P-05 und Q-12
-- **Wer antwortet:** Lukas (B, Laddering), ergänzt von Elias (C, Konsistenzprüfung auf Folie 10)
+- **Wer fragt wahrscheinlich:** Prof. Stenger (hoch), Publikum (mittel) · aus P-05 und Q-12 · **neu gefasst 23.10.2026**
+- **Wer antwortet:** Yannick (Synthese), ergänzt von Elias (Konsistenzprüfung auf Folie 10)
 - **Antwort:**
-  > Der Einwand ist berechtigt, und genau das prüfen wir: Die Kette zum guten Gewissen steht schon als Hypothese in
-  > unserem Dossier, HOLY verspricht selbst „Geiler Geschmack mit gutem Gewissen“, und laut Gründer Mathias Horsch
-  > (Befragung 10/2026) ist das auch sein Selbstbild – das zeigt zunächst nur eine einheitliche Botschaft.
-  > Entscheidend ist, ob echte Befragte „gutes Gewissen“ von sich aus nennen; die KI-Leitern zählen wir dafür nicht,
-  > weil unser Persona-Block „ohne Zucker“ schon enthält [Ergebnis nennen: wie viele echte Befragte, getrennt von der
-  > KI]. Unsere eigentliche Analyse steckt in der Konsistenzprüfung auf Folie 10: Wo passt der Auftritt nicht zur
-  > Identität – Koffein gegen gutes Gewissen, eine Bildwelt, die jünger wirkt als die Kundschaft, und ein
-  > uneinheitlicher Absender über die Kanäle. Und selbst die Kommunikation lässt offen, worauf sich das gute Gewissen
-  > stützt – so steht es in Elias' Kommunikationsanalyse.
-- **Beleg:** Folie 07 Kicker „Beispieldaten“, Titel (Z. 1526), Sprechtext Schritt 3 „aus ihr leiten wir später die
-  Positionierung ab“ (Z. 1552) und Schritt 4 „Das deckt sich mit dem eigenen Versprechen der Marke“ (Z. 1553),
-  Hinweise (Z. 1554); Dossier 3.7 (Kette „zuckerfrei → … → gönnen ohne schlechtes Gewissen“, H), 2.7 ✔ [5] und 6.5
-  ✔ [5, 20] (Markenversprechen); `dossier-buendel-b.md` §1 Persona-Block „ohne Zucker, aber mit Geschmack“, §2
-  (Z. 98–100); `gruenderbefragung.md` §1 Nr. 1, §3 Frage 1; Folie 10 Sprechtext Schritt 7–8 (Z. 2639–2640) und
-  „Herkunft der Stichworte“ (Z. 2642: „als Selbst- und Fremdbild gilt sie erst, wenn das Laddering dasselbe zeigt“);
-  Folie 11 Titel (Z. 2804) und Befunde (Z. 2841, 2866, 2891); FRAGE-Q-02.
+  > Bei der Positionierung ja – mit Absicht: Das Steuerrad zeigt die Identität, also das Selbstbild, und dazu gehört
+  > HOLYs eigenes Versprechen „Geiler Geschmack mit gutem Gewissen“; laut Gründer Mathias Horsch (Befragung 10/2026) ist
+  > das auch sein Selbstbild. Analysiert haben wir, ob das trägt. Erstens die Konsistenzprüfung: Das gute Gewissen trifft
+  > auf 160 mg Koffein pro Portion, die Bildwelt wirkt jünger als die Kundschaft, der Absender ist über die Kanäle
+  > uneinheitlich. Zweitens der Abgleich mit dem KI-simulierten Fremdbild: Im Laddering führt „ohne Zucker“ nicht zu
+  > Genuss, sondern über „kein Zuckerabsturz“ zu „verlässlich sein“ – Geschmack war allerdings kein Startpunkt. Diese
+  > Abweichung zeigt Folie 10.
+- **Beleg:** Folie 07 Titel „Ohne Zucker → kein Absturz → verlässlich sein“, Sprechtext Schritt 4 („Das ist simuliertes
+  Fremdbild … HOLY selbst verspricht ‚Geiler Geschmack mit gutem Gewissen‘“), Rückfrage „Wo bleibt ‚Genuss mit gutem
+  Gewissen‘?“; `buendel-b/auswertung/hvm.json` (stärkste Leiter 6 · 5 · 5 · 2 Leitern); Dossier 2.7 ✔ [5] und 6.5 ✔
+  (Markenversprechen); `gruenderbefragung.md` §1 Nr. 1; Folie 10: Positionierung, Lücken, Abgleich „Genuss mit gutem
+  Gewissen ≠ kein Absturz → verlässlich sein“ (Schritt 9); Folie 11 Titel und Befunde; Elias'
+  Kommunikationsanalyse Kap. 4 („Worauf sich das gute Gewissen stützt, lässt er allerdings offen“).
 - **Fallstricke:**
-  - Nicht sagen: „Die Befragten bestätigen den Claim“ oder „Das Laddering bestätigt die Positionierung“, solange
-    Folie 07 Beispieldaten zeigt. KI-Leitern nicht als Beleg zählen.
+  - Nicht sagen: „Das Laddering bestätigt die Positionierung.“ Es stützt sie nicht – und es ist KI-simuliert.
+  - Nicht sagen: „Die Kunden wollen Verlässlichkeit.“ „Verlässlich sein“ spiegelt vor allem die Berufsprofile der
+    simulierten Personen (Schicht, Werkstatt), 4 von 8 widersprechen sich.
   - „Genuss mit gutem Gewissen“ ist die **Positionierung** (Band über dem Rad), nicht der Markenkern (siehe F18).
-  - Die Gründerbefragung nicht als Image nutzen: Das ist Selbstbild (Innensicht, n = 1) und fast wörtlich die
-    Website.
-  - Den Folientitel „HOLY steht für Genuss mit gutem Gewissen“ und den Sprechtextsatz „Das deckt sich mit dem eigenen
-    Versprechen der Marke“ erst nach der echten Auswertung so stehen lassen. Übereinstimmung nicht als „Beleg für die
-    Stärke der Marke“ überhöhen.
-  - Lücken und Bruch sind unsere Bewertung (H, Fußzeile f10), die Belege dafür sind gesichert (Dossier 8 S1–S3) bzw.
-    stammen seit 22.10.2026 aus Elias' Kommunikationsanalyse (Bruch: vier Anzeigenamen, drei Profilbildfarben, kein
-    festes Schlüsselbild). Der Bruch liegt nicht im Rad, sondern in der Umsetzung über die Kanäle (Folie 9b).
-  - Nicht mehr „sechs Claims“ sagen: Laut Elias steht der Dachclaim auf allen vier Kanälen, das Problem ist der
-    Absender (siehe F33). Elias' Satz zum Versprechen: „Worauf sich das gute Gewissen stützt, lässt er allerdings
-    offen“ (Kommunikationsanalyse, Kap. 4).
-- **Belastbar:** **TEILWEISE** – hängt an echten Leitern (Regel B8).
+  - Die Gründerbefragung nicht als Image nutzen: Selbstbild (Innensicht, n = 1).
+  - Lücken und Bruch sind unsere Bewertung (H); der Bruch liegt in der Umsetzung über die Kanäle (Folie 9b). Nicht
+    mehr „sechs Claims“ sagen (siehe F33).
+- **Belastbar:** ja – Selbstbild und simuliertes Fremdbild sind getrennt und gekennzeichnet.
 
-#### F16 – Warum ein Chamäleon?
+#### F16 – Warum Papagei und Chamäleon?
 
-**„Warum ein Chamäleon – kommt das aus eurer Befragung? Und heißt ‚Chamäleon‘ nicht: ohne festen Kern, passt sich
-jedem an?“**
+**„Warum Papagei und Chamäleon – kommt das aus eurer Befragung? Und heißt ‚Chamäleon‘ nicht: ohne festen Kern, passt
+sich jedem an?“**
 
 - **Wer fragt wahrscheinlich:** Prof. Stenger (hoch), Publikum (mittel) · neu (21.10.2026; Rückfragen in den
-  Notizen von Folie 08, `abgleich-vorlesung.md` #38) · **neu gefasst 22.10.2026** nach Elias' Ausarbeitung
-- **Wer antwortet:** Lukas (B, trägt Folie 08 vor), ergänzt von Elias (C) – die Analogien stammen von ihm
+  Notizen von Folie 08, `abgleich-vorlesung.md` #38) · neu gefasst 22.10.2026 nach Elias' Ausarbeitung · **erneut
+  neu gefasst 23.10.2026**: beide Tiere gleichwertig (Entscheidung Yannick), Abgleich mit der KI-simulierten Befragung
+- **Wer antwortet:** wer Folie 08 vorträgt, ergänzt von Elias (C) – die Analogien stammen von ihm
 - **Antwort:**
-  > Nein, das Chamäleon stammt aus Elias' Ausarbeitung „Analogien: Mensch und Tier“ – eine Analogie, also eine
-  > Hypothese, belegt mit HOLYs eigener Kommunikation [falls Bündel B bis dahin ausgewertet hat: Ergebnis der
-  > Tierfrage nennen, KI-simuliert und echt getrennt]. Das Chamäleon steht für Wandelbarkeit: fünf Produktlinien von
-  > Energy bis zur Syrup Bottle, laufend neue Sorten, eigene Claims je Land. Den frechen Ton tragen bei Elias zwei
-  > andere Analogien – der Impro-Comedian und der Papagei, der für Auftreten und Gemeinschaft steht. „Ohne festen
-  > Kern“ heißt es nicht: Markenkern und Positionierung bleiben (Folie 10); die Kehrseite, einen uneinheitlichen
-  > Absender, zeigen wir als Bruch auf Folie 9b.
-- **Beleg:** Folie 08 Titel „… wäre ein Chamäleon, kein Adler“, Tier-Karte (Daten `marke.tier.gruende`: wandelbar –
-  fünf Produktlinien, kreativ – laufend neue Sorten, anpassungsfähig – eigene Claims je Land; dazu die gestrichelte
-  Zeile mit Maskottchen Adler und Papagei), Fußzeile „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 … –
-  Hypothesen (H)“, Notizen Schritt 2 „Warum Chamäleon?“, Rückfragen „Kommt das Chamäleon aus eurer Befragung?“, „Ein
-  Chamäleon – heißt das nicht: ohne festen Kern?“, „Tarnt sich ein Chamäleon nicht? Und ist es nicht ein
-  Einzelgänger?“, „Was ist an einem Chamäleon frech?“, „Warum zwei Tiere?“, Absatz „Chamäleon – Einordnung und
-  Begründung“; [`analogien.md`](analogien.md) §1, §4–§6, §10; Elias' Quellen: HOLY-Website, Stellenanzeigen,
-  Instagram, Facebook, X, TV-Spot 2026 (abgerufen 16.10.2026); Dossier Kap. 1 (fünf Linien ✔ [1, 5]), 6.1 (Accounts
-  für Frankreich und Großbritannien ✔ [127, 128]), 6.3 ✔ [8]; Folie 10 Feld Tonalität „frecher Kumpel · wandelbar ·
-  Spaß“; Stenger S. 60 („Analogiemethoden (Marke wäre Mensch/ Tier)“, Markenemotionen „herleiten“).
+  > Beide Tiere stammen aus Elias' Ausarbeitung „Analogien: Mensch und Tier“: „Als Mensch ist HOLY ein Impro-Comedian,
+  > als Tier ein Papagei und ein Chamäleon.“ Das sind Analogien, also Hypothesen, belegt mit HOLYs eigener
+  > Kommunikation – unser Selbstbild. Der Papagei steht für Auftreten und Gemeinschaft: gesellig, der Account heißt
+  > „HOLY Squad®“, bunte Verpackungen mit Tier-Illustrationen. Das Chamäleon steht für Wandelbarkeit: fünf
+  > Produktlinien, laufend neue Sorten. In unserer KI-simulierten Befragung haben wir offen gefragt: Fünf von acht
+  > nannten einen Papagei, niemand ein Chamäleon. Beim Papagei treffen sich Selbst- und Fremdbild, beim Chamäleon
+  > nicht – das zeigt der Abgleich auf Folie 10. „Ohne festen Kern“ heißt es nicht: Markenkern und Positionierung
+  > bleiben; die Kehrseite, einen uneinheitlichen Absender, zeigen wir als Bruch auf Folie 9b.
+- **Beleg:** Folie 08 Titel „HOLY wäre Papagei und Chamäleon, kein Adler“, Tier-Karte (Daten `marke.tiere`: Papagei –
+  gesellig: Account „[Marke] Squad®“, bunt: Tier-Illustrationen; Chamäleon – wandelbar: fünf Produktlinien, kreativ:
+  laufend neue Sorten; Maskottchen Adler), Fußzeile „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 … –
+  Hypothesen (H)“, Notizen Schritt 2 „Warum Papagei und Chamäleon?“, Rückfragen „Kommen Papagei und Chamäleon aus
+  eurer Befragung?“, „Ein Chamäleon – heißt das nicht: ohne festen Kern?“, „Tarnt sich ein Chamäleon nicht?“, „Warum
+  zwei Tiere?“; [`analogien.md`](analogien.md) §1, §4–§7.3, §10; `buendel-b/auswertung/analogien-haeufigkeiten.csv`
+  (Papagei 5 von 8, Chamäleon 0, Adler 0); Dossier Kap. 1 (fünf Linien ✔ [1, 5]), 6.1 ✔ [19] („HOLY Squad®“), 6.3 ✔
+  [8, 30]; Folie 10 Feld Tonalität „frech · gesellig · wandelbar“ und Abgleich „Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie“
+  (Einbau parallel); Stenger S. 60 („Analogiemethoden (Marke wäre Mensch/ Tier)“).
 - **Fallstricke:**
-  - Die Begründung ist seit 22.10.2026 Elias' eigene (Stand 16.10.2026); die Folienfassung ist noch nicht von Elias und
-    Yannick freigegeben (`analogien.md` §10). Die früheren KI-gestützten Belege aus dem Dossier (31 Energy-Sorten,
-    „Wacken, CSD, Simpsons“, „Gefährlich geil!“) nicht mehr als Begründung nennen – höchstens als gekennzeichnete
-    Ergänzung (Notizen 08).
-  - Das Chamäleon nicht „frech“ nennen: In Elias' Zuordnung tragen Comedian und Papagei „frech“, das Chamäleon trägt
-    „wandelbar“ und „bunt“.
-  - Die Paare auf der Karte (Eigenschaft – Beleg) hat die Übertragung gebildet; Elias nennt fünf Eigenschaften und
-    drei Belege getrennt. Nicht sagen: „Elias ordnet die Sorten der Kreativität zu.“
-  - „Eigene Claims je Land“: Elias wertet sie als Anpassungsfähigkeit; die frühere KI-gestützte Einordnung sah darin
-    die Kehrseite (Dossier S4/S5). Welche Claims in Frankreich und Großbritannien laufen, steht nur bei Elias (das
-    Dossier belegt die Accounts, nicht die Claims) – Fundstelle offen. Fragt jemand, wie das zu „ein Absender“
-    (Empfehlung 3) passt: Sorten, Szenen und Sprache dürfen wechseln, Name und Profilfarbe nicht – unsere Lesart (H),
-    vorher mit Elias abstimmen.
-  - Nicht sagen: „Die Befragten sehen HOLY als Chamäleon.“ Die Live-Prozentzahl ist ein Stimmungsbild (F29); die
-    Analogie-Befragung von Bündel B (P11, Interviews; seit 22.10.2026 auch eine KI-simulierte Befragung) ist nicht
-    ausgewertet.
-  - Fragt der Prof, warum das Ergebnis vor einer Befragung feststeht (S. 60 verlangt, die Tonalität aus Analogien
-    herzuleiten): Elias hat die Analogien aus HOLYs eigener Kommunikation hergeleitet – eine Analyse der Identität,
-    keine Befragung. Nennen Befragte später überwiegend ein anderes Tier, zeigt die Folie das (Kasten 08; #38).
-  - Tarnung und Einzelgänger: Elias' Gegenargument (Chamäleons wechseln die Farbe vor allem, um mit Artgenossen zu
-    kommunizieren) steht bei ihm ohne Quelle – als seine Deutung nennen, nicht als zoologischen Fakt. Dazu der Papagei
-    als Gemeinschaftstier und das „auffällige und knallige Design“ (Lebensmittel Zeitung ✔ [8]).
-  - „Und der Adler?“ – laut Elias „so etwas wie das Maskottchen der gesamten Marke“ (Kommunikationsanalyse, Kap. 3.1),
-    im Dossier „Raptor“ (6.3 ✔ [54, 71]); kein Analogie-Tier von Elias. „Selbstbild“ ist die Deutung des Dossiers
-    (6.7 H), nicht seine. Mehr in F31.
-  - Das Wort „Kern“ nur für den Markenkern – nicht „frech im Kern“ (Kasten 08).
-  - „Warum nicht mehr der Waschbär?“ – frühere Hypothese aus Dossier 6.7 (H: frech, clever, verspielt); „frech“ und
-    „verspielt“ bleiben als Merkmale auf Folie 08b.
-  - Löwe (Red Bull) und Schwan (waterdrop) sind Beispieldaten; Elias vergleicht keine Wettbewerber, deren
-    Persönlichkeit ist laut Dossier 5.2 Modellwissen (H).
-  - Comedian, Papagei und die Frage, warum der Papagei nicht in der Umfrage steht: siehe F36.
-- **Belastbar:** **TEILWEISE** – Elias' Begründung liegt vor; Freigabe der Folienfassung und Abgleich mit Bündel B
-  stehen aus.
+  - Nicht sagen: „Die Befragten sehen HOLY als Papagei.“ Immer „KI-simuliert“ und „fünf von acht“; das ist ein
+    gemeinsames Bild des Modells, keine Messung. Die Live-Prozentzahl ist ein Stimmungsbild (F29).
+  - Das Chamäleon nicht „frech“ nennen: „frech“ trägt der Comedian (und der Papagei), das Chamäleon „wandelbar“.
+  - Die Paare auf der Karte (Eigenschaft – Beleg) hat die Übertragung gebildet; Elias nennt Eigenschaften und Belege
+    getrennt – von Elias zu bestätigen (`analogien.md` §10, Frage 7).
+  - „Eigene Claims je Land“: Elias' dritter Chamäleon-Beleg steht seit 23.10.2026 nur noch in den Notizen
+    (Wortbudget, umstritten wegen S4/S5). Fragt jemand, wie das zu „ein Absender“ passt: Sorten, Szenen und Sprache
+    dürfen wechseln, Name und Profilfarbe nicht (unsere Lesart, H).
+  - Fragt der Prof, warum die Befragung das Chamäleon nicht stützt: Elias' Analogien beschreiben den Auftritt von
+    innen (Identität), die simulierten Befragten den Eindruck von außen; wir haben nichts angeglichen (#38).
+  - Tarnung und Einzelgänger: Elias' Gegenargument (Farbwechsel zur Kommunikation) steht bei ihm ohne Quelle – als
+    seine Deutung nennen. Dazu der Papagei als Gemeinschaftstier und das „auffällige und knallige Design“ (Lebensmittel
+    Zeitung ✔ [8]).
+  - „Und der Adler?“ – laut Elias „so etwas wie das Maskottchen der gesamten Marke“, im Dossier „Raptor“ (6.3 ✔ [54,
+    71]); kein Analogie-Tier. Mehr in F31.
+  - „Warum nicht mehr der Waschbär?“ – frühere Hypothese aus Dossier 6.7 (H). „Frech“ trägt jetzt der Comedian; auf
+    08b nennt „frech“ nur eine simulierte Person.
+  - Löwe (Red Bull) und Schwan (waterdrop) sind Beispieldaten; nach Wettbewerbern hat weder Elias noch die Simulation
+    gefragt.
+  - Comedian, zwei Tiere und Papagei in der Umfrage: siehe F36.
+- **Belastbar:** ja für die Herkunft (Elias) und den Abgleich (KI-simuliert, gekennzeichnet); Freigabe durch Elias
+  offen (Belege je Zeile, beide Tiere im Titel).
 
 #### F17 – Wie habt ihr die Kanäle ausgewertet – und wo sind die Engagement-Raten?
 
@@ -930,8 +935,11 @@ doch nur HOLYs Werbeversprechen?“**
   > und einen Bruch. Der Markenkern ist wie in Ihrer Vorlesung die Mitte des Rads, „Wer sind wir?“ mit Historie,
   > Herkunft, Rolle und Assets: bei uns 2020 in Berlin gegründet, Herausforderer mit Softdrinks zum Selbermixen
   > (S. 88–91). „Genuss mit gutem Gewissen“ ist die Positionierung, die aus der Identität folgt – kurz wie „Wir machen
-  > Helden des Handwerks“ auf Ihrer Folie 94 (S. 87, 94). Dass sie sich mit HOLYs Versprechen „Geiler Geschmack mit
-  > gutem Gewissen“ deckt, werten wir erst als Ergebnis, wenn die stärkste Leiter der echten Befragten dasselbe zeigt.
+  > Helden des Handwerks“ auf Ihrer Folie 94 (S. 87, 94) – und sie deckt sich mit HOLYs Versprechen „Geiler Geschmack
+  > mit gutem Gewissen“. Das ist Selbstbild. Unser KI-simuliertes Fremdbild stützt sie nicht: Dort führt „ohne Zucker“
+  > zu „verlässlich sein“, nicht zu Genuss – diese Abweichung zeigt der Abgleich auf Folie 10.
+  > *(neu gefasst 23.10.2026; bis 22.10.: „… werten wir erst als Ergebnis, wenn die stärkste Leiter der echten
+  > Befragten dasselbe zeigt“ – echte Befragte gibt es nicht)*
 - **Beleg:** Folie 10 Band „Positionierung · aus der Identität“ (Z. 2541–2550), Daten „positionierung“ (Z. 2674),
   Sprechtext Schritt 1 und 7 (Z. 2633, 2639), „Herkunft der Stichworte“ (Z. 2642), Belege (Z. 2644), Rückfragen
   „Ist ‚Genuss mit gutem Gewissen‘ euer Markenkern?“, „Woher kommt die Positionierung?“, „Wodurch grenzt sich die
@@ -949,19 +957,23 @@ doch nur HOLYs Werbeversprechen?“**
   - Die Positionierung ist von uns abgeleitet (H) und deckt sich mit dem Versprechen ✔ [5] – nicht als offizielle
     Positionierung von HOLY ausgeben. Einen ausformulierten Positionierungssatz nach S. 94 („Wir unterstützen …, so
     dass …“) gibt es nicht (#34, nicht freigegeben) – keinen erfinden.
-  - Nicht sagen: „Die Kundschaft bestätigt die Positionierung“, solange das Laddering Beispieldaten zeigt.
+  - Nicht sagen: „Die Kundschaft bestätigt die Positionierung.“ Das KI-simulierte Laddering stützt sie nicht; echte
+    Kundenstimmen haben wir nicht.
   - Das Asset „HOLY Squad“ nicht als festgelegten Teil des Markenkerns nennen (#35, nicht freigegeben); die Rückfrage
     auf Folie 10 nennt nur „zentrale Markenassets“.
   - Claim und Versprechen auseinanderhalten: Der Dachclaim ist „Die Softdrink Revolution“, „Geiler Geschmack mit gutem
     Gewissen“ das Markenversprechen; die Vorlesung sagt „Slogan“ (S. 60, 95), „Claim“ kommt dort nicht vor (#52).
   - Die Gründeraussage nur als Selbstbild nennen („laut Gründer Mathias Horsch (Befragung 10/2026)“), nicht als
-    unabhängigen Beleg; zurzeit steht kein GB-Stichwort im Rad (Z. 2642).
-  - Nachfragen: „Woher kommt die Positionierung?“ – aus der stärksten Leiter (zuckerfrei → Genuss ohne Zucker →
-    gutes Gewissen) und HOLYs Versprechen (Z. 2645); „Wodurch grenzt sie sich ab?“ – siehe F27.
+    unabhängigen Beleg. Seit 23.10.2026 zeigt das Rad das Selbstbild (Quellen DR, GB, AN, KA); welche Stichworte sich
+    auf GB stützen, steht in den Notizen von Folie 10 (Einbau parallel).
+  - Nachfragen: „Woher kommt die Positionierung?“ – aus HOLYs Versprechen ✔ [5] und der Gründerbefragung (GB), also
+    dem Selbstbild; **nicht** mehr „aus der stärksten Leiter“ (bis 22.10.2026 Beispieldaten „zuckerfrei → Genuss ohne
+    Zucker → gutes Gewissen“; das KI-simulierte Laddering zeigt „verlässlich sein“). „Wodurch grenzt sie sich ab?“ –
+    siehe F27.
   - Kern-Satz zwischen Elias und Yannick vorher abstimmen; Elias liest Sprechtext 10 und 11 laut (#27 offen;
     FRAGE-P-18).
-- **Belastbar:** **TEILWEISE** – Begriffe nach der Vorlesung belegt; die Positionierung gilt als Identität und Image
-  erst mit echter Leiter.
+- **Belastbar:** ja für die Begriffe und die Herkunft (Selbstbild); dass das Image sie teilt, ist nicht belegt – das
+  KI-simulierte Fremdbild weicht ab.
 
 #### F19 – Lücke 1: Koffein gegen gutes Gewissen
 
@@ -978,7 +990,8 @@ Zucker, nicht wenig Koffein.“**
   > überdosiert werden. Wer gutes Gewissen verspricht, wird an dieser Kritik gemessen – das ist unsere Bewertung für
   > die Energy-Linie, keine Rechtsprüfung.
 - **Beleg:** Folie 10 Sprechtext Schritt 8 (Z. 2640), Belege (Z. 2644), Daten Lücke 1 (Z. 2676–2684: „Koffein vs.
-  gutes Gewissen“, markiert „gutes Gewissen“ und „Energy: 160 mg Koffein“); Folie 11 Zeile 1 (Z. 2841) und Belege
+  gutes Gewissen“, markiert „gutes Gewissen“ und „Energy: 160 mg Koffein“ – Stand vor dem Umbau am 23.10.2026; Lücke
+  und Text bleiben, die Markierung nach dem Einbau prüfen); Folie 11 Zeile 1 (Z. 2841) und Belege
   (Z. 2925); Dossier 3.3 ✔ [55, 56] (160 mg), 3.4 ✔ [27] (VKI 12/2024), ✔ [28, 29] (KONSUMENT, Stiftung Warentest
   2026), ✔ [72] (VZ Niedersachsen 03/2026), ✔ [12] (Shop ab 18), S1 (H); `gruenderbefragung.md` 2.1 („Nicht genannt
   heißt nicht abgelehnt“) und 4.3 K11.
@@ -991,6 +1004,8 @@ Zucker, nicht wenig Koffein.“**
     VKI-Kritik von 12/2024 nicht als heutigen Stand der Packung ausgeben.
   - Die Vergiftung nicht ausschmücken und HOLY keine Schuld zuweisen. Einzelheiten (4–7 Beutel „Apple Alligator“,
     Dossier 3.4 ✔ [28, 29]) nur auf Nachfrage nennen.
+  - KI-simuliert (nur auf Nachfrage, nie als Kundenstimme): 3 von 8 simulierten Personen nennen tägliches Trinken
+    „bedenklich“ (Abbruchgründe im Laddering, `buendel-b/laddering.md`).
   - Nachfrage „Wo steht so eine Konsistenzprüfung in der Vorlesung?“: als eigener Schritt nirgends. Begründen lässt
     sie sich mit den Pfeilen im Rad (S. 88: Eigenschaften „stützt“ Nutzen) – die Eigenschaft „160 mg Koffein“ stützt
     den Nutzen „gutes Gewissen“ nicht. Das ist unsere Lesart (#33, nicht auf der Folie).
@@ -1002,7 +1017,7 @@ Zucker, nicht wenig Koffein.“**
 sowieso auf der Packung?“**
 
 - **Wer fragt wahrscheinlich:** Publikum (hoch bzw. mittel) · aus Q-09 und Q-15 (Packung auch in P-14)
-- **Wer antwortet:** Elias (C), ergänzt von Lukas (B, nur bei der Nachfrage zu „Gesundheit“ auf Folie 07)
+- **Wer antwortet:** Elias (C), ergänzt von der Person, die Folie 07 vorträgt (nur bei der Nachfrage zu „Gesundheit“)
 - **Antwort:**
   > Eine Portion HOLY Energy hat 160 mg Koffein, so viel wie zwei 250-ml-Dosen Red Bull; weil Energy rechtlich ein
   > Nahrungsergänzungsmittel ist, gilt die Koffein-Höchstmenge für Erfrischungsgetränke nicht. Ob HOLY gesund ist,
@@ -1030,8 +1045,9 @@ sowieso auf der Packung?“**
     (Dossier 3.3 ✔ [78, 79]).
   - HOLYs Werbeaussagen (Gewichtsverlust, Diabetiker, Dossier 3.4) nicht ohne Kontext zitieren; deren rechtliche
     Bewertung ist H.
-  - Nachfrage zu „Gesundheit“ auf Folie 07 (Lukas): Das ist ein Wert der Befragten – derzeit Beispieldaten – und keine
-    Gesundheitsaussage über das Produkt.
+  - Nachfrage zu „Gesundheit“ oder „kein Zuckerabsturz“ auf Folie 07: Sichtweisen der KI-simulierten Personen
+    („Gesundheit“ nur bei T4), keine Produktaussagen; HOLY hat unzulässige Gesundheitsversprechen 2025 entfernt
+    (Dossier 3.4 ✔ [81]) – deshalb steht „kein Zuckerabsturz“ nicht im Steuerrad (Stand 23.10.2026).
   - Nachfrage, ob 160 mg „viel“ sind: Laut VKI überschreiten sie bei Kindern unter 53 kg die EFSA-Einzeldosis
     (Dossier 3.4 ✔ [27]); eine eigene Bewertung für Erwachsene haben wir nicht.
 - **Belastbar:** **TEILWEISE** – die aktuelle Packung ist ungeprüft.
@@ -1088,8 +1104,8 @@ das alles, lohnt sich das?“**
 - **Wer antwortet:** Elias (C)
 - **Antwort:**
   > Messgrößen haben wir noch nicht festgelegt [nach der Synthese die festgelegten Größen nennen]; naheliegend wären
-  > Größen aus unseren eigenen Methoden. Für Empfehlung 1: ob Befragte in einer Wiederholung des Laddering „gutes
-  > Gewissen“ von sich aus nennen; für Empfehlung 2: der Anteil der Beiträge mit Alltags- oder Schichtanlass – dafür
+  > Größen aus unseren eigenen Methoden. Für Empfehlung 1: ob echte Befragte in einem Laddering „gutes Gewissen“ von
+  > sich aus nennen – unser KI-simuliertes Laddering zeigt es nicht; für Empfehlung 2: der Anteil der Beiträge mit Alltags- oder Schichtanlass – dafür
   > müssten wir erst eine Auswahl von Beiträgen auszählen, die es bisher nicht gibt. Für Empfehlung 3 lässt es sich am
   > leichtesten prüfen: ob alle Kanäle denselben Anzeigenamen und dieselbe Profilbildfarbe tragen – heute sind es vier
   > Namen und drei Farben – und ob das Produkt in der Hand in neuen Beiträgen bewusst und gleich inszeniert ist.
@@ -1106,7 +1122,8 @@ das alles, lohnt sich das?“**
   - Nicht so tun, als sei eine Erfolgsmessung schon geplant.
   - Für Empfehlung 2 gibt es keinen Ausgangswert: B6 zeigt seit 22.10.2026 die Profilmerkmale der Kanäle, kein
     Raster mit codierten Beiträgen und keine Spalte „Anlass“; Engagement-Raten gibt es nicht (F17).
-  - Auch das Laddering zeigt noch Beispieldaten; deshalb nicht sagen, Befragte nennen „gutes Gewissen“ „weiterhin“.
+  - Das Laddering ist KI-simuliert und zeigt „verlässlich sein“, nicht „gutes Gewissen“ (Stand 23.10.2026); deshalb
+    nicht sagen, Befragte nennen „gutes Gewissen“ „weiterhin“.
   - Nicht mehr „mindestens sechs Claims“ als Ausgangswert nennen – laut Elias steht der Dachclaim auf allen vier
     Kanälen; die Zahl war eine Hypothese des Dossiers (6.5 H, Stand 14.10.2026).
 - **Belastbar:** **NEIN** – Messgrößen sind nicht festgelegt (für Empfehlung 3 gibt es immerhin einen Ausgangsstand).
@@ -1127,7 +1144,8 @@ KI-Schritt nachvollziehen?“**
   > Aufteilung, Persona-Richtung, Begriffe nach der Vorlesung, Limbic-Typ als Hauptaussage], der Kontakt zum Gründer,
   > die Statista-Daten über die Campuslizenz und Elias' eigene Ausarbeitungen – Analogien und eine
   > Kommunikationsanalyse mit eigenen Bildschirmaufnahmen [ob Elias dafür KI genutzt hat, vorher klären, siehe F37;
-  > echte Interviews und Rechnungen in Sheets nur nennen, wenn durchgeführt]. Das Dossier haben weitere KI-Agenten gegengeprüft, 42 von 155 Befunden mussten
+  > dazu eine KI-simulierte Befragung mit acht fiktiven Personen, gerechnet per Skript – echte Interviews gab es
+  > nicht]. Das Dossier haben weitere KI-Agenten gegengeprüft, 42 von 155 Befunden mussten
   > korrigiert werden [Stand der eigenen Prüfung ehrlich nennen, zurzeit: „Unsere eigene Prüfung der Belege läuft
   > noch.“].
 - **Beleg:** Stenger S. 60 (an der PDF gegengelesen); Folie 02 (KI-Kennzeichen je Methodenkarte; Fußzeile „KI =
@@ -1152,7 +1170,8 @@ KI-Schritt nachvollziehen?“**
   - „Jeder Prompt“ gilt für Claude Code; andere Tools stehen erst nach dem Übertrag der persönlichen Listen in
     Abschnitt 3 (derzeit leer) – nicht als vollständig ausgeben.
   - Freigaben, die noch „Prüfung durch Yannick offen“ tragen (z. B. Marktrolle), nicht als entschieden darstellen.
-    Echte Interviews nicht als erledigt nennen, solange Folie 06, 07 und 08b Beispieldaten zeigen. Eine
+    Echte Interviews gibt es nicht; Folie 06, 07 und 08b zeigen seit 23.10.2026 eine KI-simulierte Befragung (D25) –
+    die Simulation, Codierung und Synthese machten KI-Agenten, Regeln und Entscheidungen Yannick. Eine
     Social-Media-Stichprobe gibt es nicht: Elias hat Profile und neueste Inhalte qualitativ analysiert (F17).
   - Den Bau der Präsentation dokumentiert auch ein zweiter Nachweis (`ki-nachweis-account-2.md`) – bei Nachfrage
     beide Dateien nennen.
@@ -1210,15 +1229,15 @@ KI-Schritt nachvollziehen?“**
 trinkt Energy, und im Repertory Grid steht nur ‚Marke A‘. Ersetzt HOLY wirklich Cola und Red Bull?“**
 
 - **Wer fragt wahrscheinlich:** Prof. Stenger (mittel), Publikum (mittel) · aus P-18 und Q-14
-- **Wer antwortet:** Yannick (A), ergänzt von Lukas (B, Wettbewerbsset)
+- **Wer antwortet:** Yannick (A)
 - **Antwort:**
   > Beides, aber bewusst getrennt: Im Selbstbild ist HOLY eine Softdrink-Marke („zuckerfreie Softdrinks zum
   > Selbermixen“), rechtlich ist HOLY Energy aber ein Nahrungsergänzungsmittel – eine Spannung, kein Fehler. Unsere
   > Persona steht für die heutige Kernkundschaft, und die ersetzt laut Mitgründer Jost (Podcast 2024) vor allem
   > Energy-Dosen wie Red Bull oder Monster; deshalb mischt das vorgeschlagene Wettbewerbsset Energy-Marken, einen
-  > Format-Zwilling und eine Softdrink-Referenz: Red Bull, Monster, Gönrgy, waterdrop und Coca-Cola Zero [nur so sagen,
-  > wenn das Set so beschlossen und erhoben wurde; sonst: „Folie 6 zeigt noch Beispieldaten, das Set ist ein Vorschlag
-  > aus unserem Dossier“]. [Nur auf die Frage nach dem Ersatz:] Laut Gründer Mathias Horsch (Befragung 10/2026) nutzen
+  > Format-Zwilling und eine Softdrink-Referenz: Red Bull, Monster, Gönrgy, waterdrop und Coca-Cola Zero – so in der
+  > KI-simulierten Befragung auf Folie 6 verwendet; beschlossen hat die Gruppe das Set nicht, es ist ein Vorschlag aus
+  > unserem Dossier. [Nur auf die Frage nach dem Ersatz:] Laut Gründer Mathias Horsch (Befragung 10/2026) nutzen
   > 95 % der Kund:innen HOLY als vollen oder teilweisen Ersatz für Red Bull, Monster, Coca-Cola oder Lipton Eistee –
   > laut Gründer, Datengrundlage nicht offengelegt. Unabhängige Daten haben wir nicht: In den Circana-Top-5 der Energy
   > Drinks fehlt HOLY, vermutlich weil Pulver dort nicht mitgezählt wird.
@@ -1292,7 +1311,7 @@ Quelle stammen die Rollen? In meiner Vorlesung kommen sie so nicht vor.“**
 
 - **Wer fragt wahrscheinlich:** Publikum (mittel), Prof. Stenger (mittel, Abgrenzung nach S. 92) · aus Q-13,
   ergänzt nach `abgleich-vorlesung.md` #34
-- **Wer antwortet:** Yannick (A), ergänzt von Lukas (B, Folie 06 und 08b)
+- **Wer antwortet:** Yannick (A), ergänzt von der Person, die 06 und 08b vorträgt
 - **Antwort:**
   > Red Bull ist trinkfertig aus der Dose und laut Circana mit rund 58 % des Umsatzes Marktführer im deutschen
   > Energy-Drink-Handel (Stand 08/2025); HOLY ist Pulver und Sirup zum Selbermixen, mit 160 mg Koffein pro Portion
@@ -1300,8 +1319,9 @@ Quelle stammen die Rollen? In meiner Vorlesung kommen sie so nicht vor.“**
   > Würfel, mit rund 90 mg Koffein beim Microenergy und mit Abo, das HOLY nicht hat. Abgrenzen soll laut Ihrer
   > Vorlesung die Positionierung (S. 92): Gegenüber Dosen-Energy und Cola tut das vor allem das Format; „zuckerfrei“
   > allein grenzt ehrlich gesagt kaum ab, abgrenzend ist nach unserer Einordnung die Verbindung aus Format,
-  > Sortenvielfalt und frechem Ton. Wie Befragte die Marken sehen, sollen Folie 6 und 8b zeigen – für Red Bull und
-  > waterdrop stehen dort bisher nur Beispielwerte.
+  > Sortenvielfalt und frechem Ton. In unserer KI-simulierten Befragung liegt bei „ohne Zucker“ Coca-Cola Zero sogar
+  > knapp vor HOLY, und im Aaker-Bogen hebt sich HOLY von Red Bull nur durch Aufrichtigkeit ab – Hypothesen, keine
+  > Kundenstimmen.
 - **Beleg:** Folie 10 Rückfrage „Wodurch grenzt sich die Positionierung ab?“ (Z. 2645); Stenger S. 92 (an der PDF
   gegengelesen); `markenkompetenz.md` §4 (Z. 235–251); Dossier 5.1 (Red Bull ≈ 58 %, Circana MAT 08/2025 ✔ [26];
   Quellenkritik), 5.2 (Red Bull 80 mg ✔ [26, 27, 68]; waterdrop Brausewürfel, ≈ 90 mg, Abo ✎ [7, 66, 116]), 5.3
@@ -1311,8 +1331,9 @@ Quelle stammen die Rollen? In meiner Vorlesung kommen sie so nicht vor.“**
   FRAGE-Q-12.
 - **Fallstricke:**
   - Nicht sagen, Aaker- oder Grid-Werte für Red Bull oder waterdrop seien Ergebnisse.
-  - Die Abgrenzung durch „Format, Sortenvielfalt und frechen Ton“ ist unsere Einordnung (H); die Repertory-Grid-Werte
-    dazu sind Beispieldaten.
+  - Die Abgrenzung durch „Format, Sortenvielfalt und frechen Ton“ ist unsere Einordnung (H); die Repertory-Grid- und
+    Aaker-Werte sind KI-simuliert (Coca-Cola Zero 6,88 gegen HOLY 6,75 bei „ohne Zucker“; Aufrichtigkeit 3,19 gegen
+    Red Bull 2,34). Werte für Gönrgy und waterdrop nicht als Markenbild der Wettbewerber zitieren (Notizen B4).
   - Nicht sagen: „HOLY ist viel günstiger als waterdrop“ – 0,80 € gelten nur für die 50er-Dose online, waterdrop
     liegt bei ≈ 0,83 €, im Handel kostet HOLY ≈ 1,00–1,33 € ✎.
   - Den Red-Bull-Anteil nur mit Quelle und Abgrenzung nennen (Circana MAT 08/2025; Schulungsheft, das mit Red Bull
@@ -1326,7 +1347,8 @@ Quelle stammen die Rollen? In meiner Vorlesung kommen sie so nicht vor.“**
     Ehrlich einräumen, dann auf die Verbindung aus Format, Sortenvielfalt und Ton verweisen (H). Über Fyl nichts
     sagen, was nicht in Elias' Analyse steht. Dazu Elias' Fazit: Die „Softdrink Revolution“ vermittelt HOLY „über
     Haltung und Tempo, kaum über Argumente zum Produkt“ (Kap. 8).
-- **Belastbar:** **TEILWEISE** – die Sicht der Befragten auf Red Bull und waterdrop ist nicht erhoben.
+- **Belastbar:** **TEILWEISE** – die Sicht echter Befragter auf Red Bull und waterdrop ist nicht erhoben (nur
+  KI-simuliert).
 
 #### F28 – Schichtdienst: mehr als eine Podcast-Aussage?
 
@@ -1340,8 +1362,9 @@ Quelle stammen die Rollen? In meiner Vorlesung kommen sie so nicht vor.“**
   > Kundschaft gehören, sagen mehrere Quellen – Mathias Horsch 2023 im Interview, ein Bericht von Trending Topics 2024
   > und laut Gründer Mathias Horsch (Befragung 10/2026) auch die Zielgruppe, dort aber nicht als Trinkanlass. Eine
   > Randgruppe ist das nicht: Laut Eurostat arbeiten 17 Prozent der Männer zwischen 25 und 49 in Deutschland in
-  > Schichten. Marcos Beruf ist eine Annahme; ob der Anlass trägt, zeigen erst Kundenbewertungen und Lukas’
-  > Interviews [Ergebnis nennen, sobald es vorliegt].
+  > Schichten. Marcos Beruf ist eine Annahme; ob der Anlass trägt, könnten erst Kundenbewertungen und echte
+  > Interviews zeigen – die haben wir nicht. [Die KI-simulierte Befragung nennt Schicht und Arbeit oft, aber vier der
+  > acht Profile arbeiten selbst im Schicht- oder Fahrdienst – kein Beleg.]
 - **Beleg:** Folie 04 Sprechtext Schritt 2 (Z. 950), Belege (Z. 953), Rückfrage „Warum Schichtdienst – ist das nicht
   eine Randgruppe?“ (Z. 955), Daten „vor der Schicht“ (Z. 1002); Dossier 4.1 (Horsch 2023 ✎ [4]; Jost ✔ [24];
   Trending Topics ✔ [7]; HV Capital ✔ [14]), 9.4 (Jost-Zitat aus einem automatischen Transkript);
@@ -1366,7 +1389,7 @@ Ergebnis?“**
 
 - **Wer fragt wahrscheinlich:** Publikum (mittel), Prof. Stenger (mittel, Methode) · neu (21.10.2026; Folie 08,
   `abstimmen.html`)
-- **Wer antwortet:** Lukas (B, Folie 08); zu Daten und Technik ergänzt Yannick (A) – die Abstimmung läuft über eine
+- **Wer antwortet:** wer Folie 08 vorträgt; zu Daten und Technik ergänzt Yannick (A) – die Abstimmung läuft über eine
   Web-App in seinem Google-Konto
 - **Antwort:**
   > Die Abstimmung ist anonym und ohne Anmeldung: Gespeichert werden nur Tier, Uhrzeit, Abstimmungsrunde und eine
@@ -1374,16 +1397,17 @@ Ergebnis?“**
   > der Gruppe; so steht es auch unten auf der Abstimmseite. Auf der Folie zählen nur Stimmen der letzten 30 Minuten,
   > damit keine Probestimmen dastehen. Und ja, die Tiere geben wir hier vor, damit es schnell geht – deshalb ist das
   > Ergebnis nur ein Stimmungsbild im Raum, keine Herleitung. Unsere eigenen Analogien hat Elias ohne Vorgabe aus HOLYs
-  > Kommunikation abgeleitet [nur wenn Interviews geführt, zusätzlich: „in den Interviews haben wir offen gefragt, weil
-  > Vorgaben das Ergebnis lenken“].
+  > Kommunikation abgeleitet, und in unserer KI-simulierten Befragung haben wir die Tierfrage offen gestellt – dort
+  > nannten fünf von acht einen Papagei. *(seit 23.10.2026; vorher als Platzhalter für Interviews, die es nicht gab)*
 - **Beleg:** `praesentation/abstimmen.html` Fuß (Z. 99–100: „anonym · ohne Anmeldung · diese Seite setzt keine
   Cookies“; „Tier, Uhrzeit, Abstimmungsrunde und eine zufällige Geräte-ID (nur in diesem Browser gespeichert, damit
   jedes Handy nur einmal zählt) – kein Name, keine IP-Adresse“) und Kopfkommentar „DATENSCHUTZ“ (Z. 40–45);
   `live-abstimmung/ANLEITUNG.md` „Was gespeichert wird“ (Z. 31–36) und „Datenschutz“ (Z. 439–441); `LIESMICH.md` §6
   Weg A und Zeitfenster (Z. 158–188); `marke.js` umfragen.tier (Z. 184–191: optionen, runde, gueltigMinuten 30,
   unsereAntwort); Folie 08 Fußzeile „Umfrage: Stimmungsbild“ (Z. 1802), Sprechtext Schritt 0–1 (Z. 1808–1809),
-  Bedienung (Z. 1813), Rückfrage „Sie haben die Tiere doch vorgegeben?“ (Z. 1814: „In den Interviews fragen wir
-  offen, weil Vorgaben das Ergebnis lenken“); Dossier 6.7 (Antworten nicht vorgeben).
+  Bedienung, Rückfrage „Sie haben die Tiere doch vorgegeben?“ (seit 23.10.2026: „In unserer KI-simulierten Befragung
+  haben wir offen gefragt, ohne Vorgaben“); `buendel-b/analogien-befragung.md` (Tierfrage offen); Dossier 6.7
+  (Antworten nicht vorgeben).
 - **Fallstricke:**
   - Das 30-Minuten-Fenster wirkt erst, wenn Yannick das Skript bei Google aktualisiert hat (Fassung 20.10.2026;
     LIESMICH Z. 181 und Checkliste Z. 542) – bis dahin diesen Satz weglassen. Kontrolle: Maus auf der Pille zeigt
@@ -1393,77 +1417,76 @@ Ergebnis?“**
     (LIESMICH Z. 177). Google und GitHub sehen beim Aufruf technisch die Verbindung (ANLEITUNG Z. 439–441). Kein
     „DSGVO-konform“ – geprüft hat das niemand.
   - „Anonym“ heißt hier: ohne Namen, ohne Anmeldung, keine IP-Adresse in der Tabelle – nicht „technisch spurlos“.
-  - Die Prozentzahl nicht als Beleg für das Chamäleon verwenden (Fußzeile „Stimmungsbild“; siehe F16). Löwe und
-    Schwan stehen zur Wahl, weil sie im Kontrast für Red Bull und waterdrop stehen – auch das sind Beispieldaten.
+  - Die Prozentzahl nicht als Beleg für Papagei oder Chamäleon verwenden (Fußzeile „Stimmungsbild“; siehe F16). Seit
+    23.10.2026 zählt die große Zahl beide Tiere zusammen („x % sehen HOLY wie wir: als Papagei oder Chamäleon“). Löwe
+    und Schwan stehen zur Wahl, weil sie im Kontrast für Red Bull und waterdrop stehen – auch das sind Beispieldaten.
   - Vor dem Vortrag die Runde auf `vortrag-2026-10-26` stellen (auf GitHub und auf dem Präsentationsrechner;
     `marke.js` Z. 189; LIESMICH §6) – dann beginnt Folie 08 bei `n = 0`. Bei Weg A **nicht** „Zurücksetzen“ klicken:
     Das pausiert die Live-Abfrage, die Stimmen der Handys erscheinen dann nicht (Pille „Live pausiert“ – anklicken, um
     fortzusetzen). „Zurücksetzen“ nur bei Plan C oder Weg B (Notiz „Bedienung“ von Folie 08, LIESMICH §6 und §12;
     berichtigt in der Nacharbeit am 21.10.2026 – vorher stand hier der alte Weg B).
-  - „In den Interviews fragen wir offen“ (Rückfrage Z. 1814) nur sagen, wenn die Interviews stattgefunden haben – sie
-    sind im Repository nicht belegt (VORTRAGSREIFE N4, F08-2). Seit der Nacharbeit vom 22.10.2026 sagt der
-    Sprechtext von Schritt 1 „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“, und die Rückfrage in den
-    Notizen nennt Interviews nur noch als Regieanweisung, falls Bündel B sie führt.
-  - (neu 22.10.2026) Der Papagei – bei Elias „Tier 1“ – steht nicht zur Wahl; die Optionen in `marke.js` sind
-    unverändert (Adler, Löwe, Chamäleon, Fuchs, Schwan). Warum: siehe F36.
+  - Nie „in den Interviews fragen wir offen“ – echte Interviews gab es nicht; offen gefragt hat die KI-simulierte
+    Befragung. Der Sprechtext von Schritt 1 sagt „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“.
+  - (neu 23.10.2026) Der **Papagei** steht seit 23.10.2026 zur Wahl – an der Stelle des Fuchses (Optionen in `marke.js`:
+    Adler, Löwe, Chamäleon, Papagei, Schwan; Entscheidung Yannick). Ein buntes, bekanntes Tier kann Stimmen anziehen,
+    und er ist die häufigste Antwort der simulierten Befragten – offen sagen (siehe F36). Damit die Handys den Papagei
+    zeigen, müssen `marke.js` und `js/abstimmen.js` vor dem Vortrag auf GitHub stehen; das Google-Skript speichert nur
+    die Nummer und bleibt unverändert.
   - Fällt das Netz aus: Handzeichen (LIESMICH §6) – vorher festlegen, wer zählt (Sprechtext Z. 1808 „[Name] zählt“).
   - Umentscheiden geht: Je Handy zählt die letzte Stimme.
 - **Belastbar:** **TEILWEISE** – das Skript-Update bei Google steht aus; danach ja.
 
 #### F30 – Tonalität: vorprogrammiert, und Messung nach Aaker?
 
-**„Eure Tonalität ‚frecher Kumpel‘ leitet ihr aus HOLYs eigener Kommunikation ab, und auf Folie 9b ‚passt‘ der Auftritt
-dazu – ist das nicht vorprogrammiert? Und ist das auf Folie 8b eine Messung nach Aaker – wer hat die Werte vergeben?“**
+**„Eure Tonalität ‚frech · gesellig · wandelbar‘ leitet ihr aus HOLYs eigener Kommunikation ab, und auf Folie 9b
+‚passt‘ der Auftritt dazu – ist das nicht vorprogrammiert? Und ist das auf Folie 8b eine Messung nach Aaker – wer hat die
+Werte vergeben?“**
 
-- **Wer fragt wahrscheinlich:** Prof. Stenger (mittel) · aus P-06 und P-07 · **neu gefasst 22.10.2026** (Analogien
-  und Kommunikationsanalyse von Elias)
-- **Wer antwortet:** Lukas (B, Folie 8b), ergänzt von Elias (C, Analogien und Fit-Bewertung auf 9b)
+- **Wer fragt wahrscheinlich:** Prof. Stenger (mittel) · aus P-06 und P-07 · neu gefasst 22.10.2026 (Analogien und
+  Kommunikationsanalyse von Elias) · **erneut neu gefasst 23.10.2026** (Feld Tonalität, 08b KI-simuliert)
+- **Wer antwortet:** Elias (C, Analogien und Fit-Bewertung auf 9b), ergänzt von der Person, die 08b vorträgt
 - **Antwort:**
   > Teilweise ja, und das sagen wir offen: Die Analogien auf Folie 8 und die Kommunikationsanalyse auf Folie 9 und 9b
-  > hat Elias erarbeitet, beide aus HOLYs eigener Kommunikation. „Passt“ auf 9b ist deshalb eine Stimmigkeitsprüfung
-  > innerhalb der Identität, keine unabhängige Bestätigung – Ihre Aufgabe ordnet beide Methoden der Markenidentität zu
-  > (S. 60). Ob die Kundschaft HOLY auch so sieht, kann nur eine Befragung zeigen [Ergebnis von Bündel B nennen,
-  > KI-simuliert und echt getrennt]. Aakers Skala auf Folie 8b nutzen wir nur vereinfacht als ergänzendes Raster: Unter
-  > den fünf Dimensionen hat sie weitere Ebenen, wir schätzen direkt je Dimension; in Ihrer Vorlesung ist die Tonalität
-  > „Wie sind wir?“ mit Persönlichkeitsmerkmalen, Markenerlebnissen und Markenbeziehungen (S. 88). Die Werte auf 8b sind
-  > noch Beispieldaten [tatsächliche Bewertende nennen, z. B. „die Gruppe und drei Befragte, nur Menschen“].
-- **Beleg:** Folie 08 Fußzeile („Analogien: Ausarbeitung E. Knauber … – Hypothesen (H)“); Folie 08b Titel, Fußzeile
-  „Einschätzung von Gruppe und Befragten (n = 8) – Beispieldaten, vereinfacht je Dimension … Aaker (1997) · Dossier
-  Kap. 6.7 H“, Notizen (Rückfrage „Ist das eine Messung nach Aaker?“; seit 22.10.2026 Hinweis auf Elias'
-  Zuordnungstabelle); Folie 09b Kicker „Fit des Markenbilds · Hypothese“, Fußzeile „Bewertung: eigene (H)“, Fit-Zeile
-  „zur Tonalität – passt: Überall frech, schnell, nah dran.“, Sprechtext Schritt 1 („Zum frechen Kumpel passt das …“);
-  [`analogien.md`](analogien.md) §6 (Zuordnung Tonalität ↔ Analogie), §7.1 (Zirkel-Hinweis), §7.2 (Abgleich mit 8b);
-  [`kommunikationsanalyse.md`](kommunikationsanalyse.md) §8 (Elias: „Trotzdem klingt HOLY überall gleich: frech,
-  schnell und nah an der Zielgruppe“), §9; Dossier 6.7 (Persönlichkeit H); `dossier-buendel-b.md` B3;
-  `gruenderbefragung.md` 2.1 und 4.4; Stenger S. 60, 88, 90–91 (`abgleich-vorlesung.md` #42, #45); B7 Aaker (1997);
-  VORTRAGSREIFE L5; FRAGE-P-03, FRAGE-Q-07.
+  > hat Elias erarbeitet, beide aus HOLYs eigener Kommunikation. Das ist Absicht – das Steuerrad zeigt die Identität,
+  > also das Selbstbild, und dazu gehören „frech, gesellig, wandelbar“ aus seinen drei Analogien. „Passt“ auf 9b ist
+  > deshalb eine Stimmigkeitsprüfung innerhalb der Identität, keine unabhängige Bestätigung. Die Außensicht zeigt Folie
+  > 8b: Dort haben acht KI-simulierte Personen den Aaker-Bogen ausgefüllt – echte Befragte gab es nicht. Sie sehen einen
+  > witzigen Kumpel, der verkaufen will; „frech“ nennt nur eine. Diese Abweichung zeigt der Abgleich auf Folie 10.
+  > Aakers Skala nutzen wir vereinfacht: ein Wort je Facette statt der 42 Items; in Ihrer Vorlesung ist die Tonalität
+  > „Wie sind wir?“ mit Persönlichkeitsmerkmalen, Markenerlebnissen und Markenbeziehungen (S. 88).
+- **Beleg:** Folie 08 Titel und Karten (Wörter fürs Steuerrad: Comedian „frech“, Papagei „gesellig“, Chamäleon
+  „wandelbar“), Fußzeile („Analogien: Ausarbeitung E. Knauber … – Hypothesen (H)“); Folie 08b Pille „KI-simuliert“,
+  Titel „HOLY wirkt wie ein witziger Kumpel – der verkaufen will“, Fußzeile „KI-simulierte Befragung, n = 8 (T1–T8;
+  waterdrop n = 4), Aaker-Bogen mit 15 Facetten … – keine echten Interviews“, Notizen (Rückfragen „Warum haben
+  KI-simulierte Personen den Aaker-Bogen ausgefüllt?“, „Ist das eine Messung nach Aaker?“, „Wo sind ‚frech‘ und das
+  Chamäleon?“); `buendel-b/auswertung/aaker-folie-08b.csv`, `analogien-haeufigkeiten.csv`; Folie 09b Kicker „Fit des
+  Markenbilds · Hypothese“, Fit-Zeile „zur Tonalität – passt“; Folie 10 Feld Tonalität und Abgleich „frech ↔ witziger
+  Kumpel, der verkaufen will“ (Einbau parallel); [`analogien.md`](analogien.md) §6, §7.1 (Zirkel-Hinweis), §7.2
+  (Selbstbild ↔ Fremdbild); [`kommunikationsanalyse.md`](kommunikationsanalyse.md) §8; Stenger S. 60, 88, 90–91
+  (`abgleich-vorlesung.md` #42, #45); B7 Aaker (1997); VORTRAGSREIFE L5.
 - **Fallstricke:**
-  - Nicht sagen: „Die Zielgruppe empfindet HOLY als frech“ oder „gemessen nach Aaker“.
+  - Nicht sagen: „Die Zielgruppe empfindet HOLY als frech“ oder „gemessen nach Aaker“. Auch nicht: „Die Befragten sehen
+    einen witzigen Kumpel“ ohne „KI-simuliert“.
   - Den Zirkel nicht kleinreden: Elias selbst schreibt, seine Befunde zur Tonalität „lassen sich direkt mit der
     Markenpersönlichkeit aus der Analogie-Aufgabe abgleichen“ – beides kommt von ihm und aus derselben Quelle.
   - Den 09b-Sprechtext „Zum frechen Kumpel passt das“ nicht als Befund über die Kundschaft vortragen; auf Nachfrage
     „stimmig innerhalb der Identität (Hypothese)“ sagen (FRAGE-P-03).
-  - Elias' Zuordnung deckt alle fünf Merkmale von 8b ab (frech, rebellisch, verspielt, nahbar, selbstironisch – die
-    Zuordnung der Zeilen ist eine Deutung bei der Übertragung, `analogien.md` §7.2). Bei den Emotionen weichen 8b
-    (Spaß, Zugehörigkeit, Stolz) und Elias (Lachen und Unterhaltung, Überraschung, Zugehörigkeit) ab – Lukas gleicht
-    das ab. „Stolz“ nicht Elias zuschreiben.
-  - „Wandelbar“ im Feld Tonalität (Folie 10, Zeile „Ins Steuerrad“ auf 08b) ist das Chamäleon – Elias' Analogie (H),
-    nicht aus einer Befragung (F16).
-  - Aaker steht nicht in der Vorlesung (#42): als Ergänzung aus der Literatur bezeichnen. Die Vorlesungsbeispiele
-    zeigen die Tonalität als kurze Stichworte ohne Skala (S. 90–91, z. B. „Locker, frech“).
-  - Die deutschen Übertragungen (Hieronimus 2003, Mäder 2005) nicht zitieren – laut Notiz Modellwissen und ungeprüft.
-  - Die Werte für Red Bull und waterdrop sind nicht erhoben – nicht als Ergebnis nennen.
-  - Widerspruch klären, bevor jemand „nur Menschen“ sagt: Die 08b-Notiz spricht von der „Einschätzung der Gruppe und
-    der Befragten aus Prompt P11“, das Dossier Bündel B (B3 Schritt 5) hält die Aaker-Zuordnung aus P11 getrennt. Sind
-    P11-Werte eingeflossen, das offen sagen.
+  - „Kumpel, der verkaufen will“ steht in allen acht Agenten fast wortgleich, und die Beziehungsfrage legt Verkauf
+    nahe – ein gemeinsames Bild des Modells. Keine Facette streut über mehr als 2 Skalenpunkte; kleine Differenzen
+    nicht deuten (Spannung HOLY 3,91 gegen Red Bull 4,13).
+  - Emotionen auf 08b (Neugier, Skepsis) sind Gefühle der simulierten Nicht-Kund:innen, keine Markenemotionen der
+    Identität; Elias' Emotionen (Lachen und Unterhaltung, Überraschung, Zugehörigkeit) gehören zum Selbstbild.
+  - Aaker steht nicht in der Vorlesung (#42): als Ergänzung aus der Literatur bezeichnen. Die deutschen Übertragungen
+    (Hieronimus 2003, Mäder 2005) nicht zitieren – Modellwissen, ungeprüft.
+  - Werte für waterdrop beruhen auf n = 4; Aussagen über Red Bull und waterdrop sind Modellwissen der simulierten
+    Personen, kein Markenbild der Wettbewerber.
   - Wird nach einem Gegenbeispiel gefragt: Elias selbst nennt die provokanten Titel einiger YouTube Shorts unpassend
     zum „guten Gewissen“ (Kommunikationsanalyse, Kap. 6.4) – ob dazu die Tonalität „fair, sympathisch“ in seinem
     Comedian-Profil passt, ist eine offene Frage an ihn (`analogien.md` §10, Frage 4).
-  - Zum Vergleich das Selbstbild: Laut Gründer Mathias Horsch (Befragung 10/2026) ist HOLY kundennah, spaßorientiert
-    und innovativ; „frech“ nannte er nicht, danach war aber nicht gefragt – nicht als Lücke zwischen Identität und
-    Image deuten (2.1).
-- **Belastbar:** **TEILWEISE** – die Tonalität ist jetzt Elias' begründete Analyse (H); eine unabhängige Sicht der
-  Kundschaft und die Aaker-Bewertenden fehlen.
+  - Zum Vergleich das Selbstbild laut Gründer Mathias Horsch (Befragung 10/2026): kundennah, spaßorientiert und
+    innovativ; „frech“ nannte er nicht, danach war aber nicht gefragt (2.1).
+- **Belastbar:** ja für die Trennung (Selbstbild im Rad, KI-simuliertes Fremdbild auf 8b, Abgleich auf 10); eine
+  Sicht echter Kund:innen fehlt.
 
 #### F31 – Ist der Raptor kein Schlüsselbild?
 
@@ -1657,61 +1680,71 @@ Auftritt. Woher wisst ihr, dass das ein Problem ist? Mir gefällt der Look.“**
 **„Wo seht ihr selbst die größten Schwächen eurer Analyse, und was würdet ihr beim nächsten Mal anders machen?“**
 
 - **Wer fragt wahrscheinlich:** Prof. Stenger (mittel) · aus V-07
-- **Wer antwortet:** Lukas (B), ergänzt von Yannick und Elias mit je einem Satz
+- **Wer antwortet:** Yannick (A), ergänzt von Elias und – falls er vorträgt – Lukas mit je einem Satz
 - **Antwort:**
-  > Unsere Grenzen stehen in Backup B1: Simulierte Befragte spiegeln Trainingsdaten und ersetzen kein Kundengespräch –
-  > davor warnt auch Ihre Vorlesung (S. 78) –, die Stichprobe ist klein und nicht repräsentativ, und die
-  > Gründerbefragung ist eine Selbstauskunft mit n = 1. Dazu beschreiben die Persona-Zahlen Energy-Drink-Konsument:innen
+  > Unsere Grenzen stehen in Backup B1: Echte Interviews kamen nicht zustande – Repertory Grid, Laddering und
+  > Aaker-Bogen beruhen auf acht KI-simulierten Personen. Die spiegeln Trainingsdaten und ersetzen kein
+  > Kundengespräch – davor warnt Ihre Vorlesung (S. 78) –, sie reproduzieren Klischees und glätten Widersprüche; deshalb
+  > stehen sie nur als Fremdbild im Abgleich, nicht im Steuerrad. Die Gründerbefragung ist eine Selbstauskunft mit
+  > n = 1. Dazu beschreiben die Persona-Zahlen Energy-Drink-Konsument:innen
   > allgemein, nicht HOLY-Kund:innen, weil HOLY keine Kundendaten veröffentlicht. [Je Person ein Satz, was sie beim
   > nächsten Mal anders macht – aus eigener Erfahrung, nicht vorformuliert.]
-- **Beleg:** B1 Spalte 03 „Grenzen“ (Z. 3241–3249), Notizen (Z. 3261–3264: „Solange die echten Kurzinterviews fehlen,
-  beruhen die Folien 06–08b auf simulierten Befragten“); Stenger S. 78; Folie 04 Fußzeile „Kategorie Energy Drinks,
+- **Beleg:** B1 Spalte 03 „Grenzen“ und Notizen (seit 23.10.2026 „Keine echten Interviews: alle 8 Befragten
+  KI-simuliert, nicht repräsentativ“, Absatz „Reproduzierte Klischees“ – Einbau parallel, Vorlage
+  `buendel-b/folienvorschlag.md` §6); [`buendel-b/README.md`](buendel-b/README.md), Abschnitt „Grenzen“; Stenger S. 78; Folie 04 Fußzeile „Kategorie Energy Drinks,
   nicht HOLY“ (Z. 940); `persona-daten.md` Kopf; Dossier 4.1 „Lücke: HOLY veröffentlicht keine Kundendaten“;
   `gruenderbefragung.md` 2.1 (keine Rückfragen möglich); `../reflexion-vorlage.md` Frage 5.
 - **Fallstricke:**
   - Nicht sagen: „nichts ungeprüft übernommen“, solange die Prüfung durch die Gruppe offen ist. Genau diese Zeile
     steht sichtbar in B1 (Z. 3243) – beim Zeigen von B1 nicht vorlesen (FRAGE-P-01).
-  - Die Zahl der echten Interviews nur nennen, wenn sie stattgefunden haben: Laut B1-Notizen ist „3“ nur die geplante
-    Zahl.
+  - Es gab keine echten Interviews – keine Zahl nennen, die nach Interviews klingt. Was wir anders machen würden, liegt
+    nahe: früh echte Kurzinterviews führen und die simulierten Hypothesen daran prüfen.
   - Keine Schuld an Teammitglieder verteilen. Die Antwort sollte zur eigenen Einzelreflexion passen (VOLL-10).
   - Nicht „repräsentativ“ oder „signifikant“ sagen.
 - **Belastbar:** **TEILWEISE** – der persönliche Satz je Person fehlt noch.
 
-#### F36 – Comedian, zwei Tiere, Papagei nicht in der Umfrage
+#### F36 – Comedian, zwei Tiere, Papagei in der Umfrage
 
-**„Warum ein Comedian – und warum zwei Tiere? Und wenn der Papagei dazugehört, warum konnten wir ihn nicht wählen?“**
+**„Warum ein Comedian – und warum zwei Tiere? Und warum steht jetzt der Papagei in der Umfrage – wo ist der Fuchs?“**
 
 - **Wer fragt wahrscheinlich:** Publikum (mittel), Prof. Stenger (mittel) · neu (22.10.2026; Folie 08 nach Elias'
-  Ausarbeitung, Rückfrage „Warum zwei Tiere?“ in den Notizen)
-- **Wer antwortet:** Lukas (B, Folie 08), ergänzt von Elias (C) – die Analogien stammen von ihm
+  Ausarbeitung) · **neu gefasst 23.10.2026** (beide Tiere gleichwertig, Papagei statt Fuchs in der Umfrage; die alte
+  Antwort „In der Umfrage steht nur ein Tier …“ ist gestrichen)
+- **Wer antwortet:** wer Folie 08 vorträgt, ergänzt von Elias (C) – die Analogien stammen von ihm
 - **Antwort:**
-  > Elias' Ausarbeitung nennt drei Analogien, die sich ergänzen: Der Comedian steht für Humor und Frechheit, der
-  > Papagei für Auftreten und Gemeinschaft, das Chamäleon für Wandelbarkeit. Der Impro-Comedian steht ohne Drehbuch auf
-  > der Bühne, macht aus Zurufen eine Szene, nimmt die Großen aufs Korn und lacht über sich selbst – laut, überdreht,
-  > aber nie planlos. In der Umfrage steht nur ein Tier, damit sich das Ergebnis im Raum auflösen lässt; das Chamäleon,
-  > weil es die Wandelbarkeit trägt, die die anderen beiden nicht tragen. Den Papagei zeigen wir klein auf der Karte.
-- **Beleg:** Folie 08 Mensch-Karte („Impro-Comedian“ mit drei Profilzeilen aus Elias' Tabelle, z. B. Auftreten
-  „überdreht, nie planlos“), gestrichelte Zeile in der Tier-Karte („Weiteres Tier · Papagei – gesellig, bunt“), Notizen Schritt 2 und Rückfragen „Warum zwei Tiere?“, „Was ist an einem
-  Chamäleon frech?“, „Ist der Comedian eure Persona?“; `marke.js` umfragen.tier (Optionen Adler, Löwe, Chamäleon,
-  Fuchs, Schwan; unsere Antwort Chamäleon); [`analogien.md`](analogien.md) §1, §3 (Comedian), §4 (Papagei), §6
-  (Zuordnung), §10 Frage 1; Elias, S. 1 („Die drei Analogien ergänzen sich …“); KI-Nachweis 94/95 und 122.
+  > Elias' Ausarbeitung nennt drei Analogien, die sich ergänzen: „Als Mensch ist HOLY ein Impro-Comedian, als Tier ein
+  > Papagei und ein Chamäleon.“ Der Comedian steht für Humor und Frechheit, der Papagei für Auftreten und Gemeinschaft,
+  > das Chamäleon für Wandelbarkeit – daraus kommt das Feld Tonalität im Steuerrad: frech, gesellig, wandelbar. Deshalb
+  > stehen beide Tiere gleichwertig im Titel und in der Umfrage; der Papagei hat dort den Platz des Fuchses übernommen,
+  > und die große Zahl zählt Papagei und Chamäleon zusammen. Offen gesagt: Der Papagei ist auch die häufigste Antwort
+  > unserer KI-simulierten Befragten, und ein buntes, bekanntes Tier kann Stimmen anziehen – die Umfrage ist ein
+  > Stimmungsbild, keine Messung.
+- **Beleg:** Folie 08 Titel „HOLY wäre Papagei und Chamäleon, kein Adler“, Tier-Karte (beide Tiere gleichwertig),
+  Mensch-Karte („Impro-Comedian“: Humor „selbstironisch, frech“, Auftreten „überdreht, nie planlos“, Umgang „lebt vom
+  Publikum“), Notizen Schritt 2–3, Bedienung und Rückfragen „Warum zwei Tiere?“, „Warum steht jetzt der Papagei in der
+  Umfrage – und wo ist der Fuchs?“, „Was ist an einem Chamäleon frech?“, „Ist der Comedian eure Persona?“; `marke.js`
+  umfragen.tier (Optionen Adler, Löwe, Chamäleon, Papagei, Schwan; `unsereAntwort: ['Papagei', 'Chamäleon']`);
+  [`analogien.md`](analogien.md) §1, §3 (Comedian), §4 (Papagei), §6 (Zuordnung), §7.3; Elias, S. 1; KI-Nachweis 135
+  (Entscheidung Yannick „So wie Elias das am wahrscheinlichsten wollte mit seinen Notizen“).
 - **Fallstricke:**
   - Der Papagei ist bei Elias „Tier 1“, das Chamäleon „Tier 2“ – den Papagei nicht „Elias' zweites Tier“ nennen.
-  - Dass Titel und Umfrage nur das Chamäleon zeigen, ist ein Vorschlag zur Freigabe durch Yannick und Elias, keine
-    Entscheidung (die Antwort „Nur das Chamäleon“ in KI-Nachweis 95 betraf das Design; Korrektur in Eintrag 122). Die
-    Optionen der Umfrage standen schon am 19./20.10.2026 fest, bevor Elias' Ausarbeitung eingebaut war – auf Nachfrage
-    ehrlich so sagen.
-  - Elias' eigener Einwand gegen den Papagei: Papageien plappern nach, das kann unoriginell wirken. Sein
-    Gegenargument: HOLY greift Trends auf, macht aber eigene Parodien daraus.
+  - Die Gleichwertigkeit ist Yannicks Auslegung von Elias' Notizen (KI-Nachweis 135) – Elias bestätigt sie noch
+    (`analogien.md` §10, Frage 1). Bis 22.10.2026 nannten Titel und Umfrage nur das Chamäleon.
+  - Probestimmen der Runde „probe“ mit Option 3 zählen seit 23.10.2026 als Papagei – vor dem Vortrag wird die Runde
+    ohnehin umgestellt (`live-abstimmung/ANLEITUNG.md`).
+  - Elias' eigener Einwand gegen den Papagei: Papageien plappern nach, das kann unoriginell wirken (zwei der
+    KI-simulierten Personen nennen genau das). Sein Gegenargument: HOLY greift Trends auf, macht aber eigene
+    Parodien daraus.
   - Der Comedian ist nicht die Persona (F16): Die Persona ist der typische Kunde (Stenger, S. 76), die Analogie die
-    Marke als Person.
-  - Markenemotionen nach Elias: Lachen und Unterhaltung, Überraschung, Zugehörigkeit – ausgelöst vom Comedian. Folie
-    8b nennt Spaß, Zugehörigkeit, Stolz (Lukas, Beispieldaten); der Abgleich ist offen (`analogien.md` §7.2).
+    Marke als Person. Die KI-simulierten Befragten sehen als Mensch eine Fitness- und Social-Media-Person (8 von 8),
+    keinen Comedian – Abweichung, kein Widerspruch zu Elias' Analyse (Selbstbild ↔ Fremdbild).
+  - Markenemotionen nach Elias: Lachen und Unterhaltung, Überraschung, Zugehörigkeit (Selbstbild). Folie 8b nennt
+    seit 23.10.2026 Neugier und Skepsis – Gefühle der simulierten Nicht-Kund:innen (`analogien.md` §7.2).
   - Elias' Belege nennen zum Teil Personen (ein Community-Manager mit Namen, eine Musik-Kooperation mit einem Rapper)
     – keine Namen nennen.
   - „Was er nie tun würde – fair, sympathisch“ aus Elias' Comedian-Profil steht neben den provokanten Shorts-Titeln,
     die Elias selbst kritisiert (offen, `analogien.md` §10 Frage 4) – nicht als Beleg für „fair“ ausbauen.
-- **Belastbar:** **TEILWEISE** – Inhalt belegt; Titel und Umfrage mit nur einem Tier sind noch nicht freigegeben.
+- **Belastbar:** ja für die Herkunft; Freigabe durch Elias offen.
 
 #### F37 – KI in Analogien und Kommunikationsanalyse?
 
@@ -1730,12 +1763,13 @@ Auftritt. Woher wisst ihr, dass das ein Problem ist? Mir gefällt der Look.“**
   B2 (Daten: P11 „Analogien Mensch, Tier“, P12 „Beiträge codieren“); Folie 02 Methodenkarten; `prompts.md` P11, P12;
   F23.
 - **Fallstricke:**
-  - B2 führt P11 und P12 noch als Beispielzeilen. P12 („Beiträge codieren“) ist nicht genutzt worden – es gibt keine
-    Codierung (F17). Ob P11 lief, gehört zu Bündel B (Lukas; seit 22.10.2026 eine KI-simulierte Befragung). Bis
-    Yannick B2 nachzieht, B2 nicht als Beleg für Folie 08 oder 09 zeigen.
-  - Folie 02 nennt bei den Analogien noch „KI + Kurzinterviews“ und bei der Kommunikationsanalyse „KI hilft codieren“
-    – das passt nicht mehr zu Folie 08 und 09 (offen, Entscheidung Yannick; Folie 02 war für den Einbau gesperrt).
-    Nicht vorlesen.
+  - B2: Seit 23.10.2026 stehen P7–P11 als echte Läufe der KI-simulierten Befragung D25 im Prompt-Log (P11 einmal
+    KI-gestützt, ohne Befragte; Ergebnis „Otter“) – Einbau parallel, Wortlaut in B2 prüfen. P12 („Beiträge
+    codieren“) ist nicht genutzt worden – es gibt keine Codierung (F17). Elias' eigene KI-Nutzung ist damit nicht
+    geklärt.
+  - Folie 02: Die Methodenkarten werden seit 23.10.2026 nachgezogen (Entscheidung 5 Yannick; Befragungen
+    „KI-simuliert, keine Interviews“, Kommunikationsanalyse „vier Kanäle, Bildschirmaufnahmen“) – vor dem Vortrag den
+    Wortlaut auf der Folie prüfen.
   - Nicht behaupten, die Analysen seien „ganz ohne KI“ entstanden, bevor Elias das bestätigt hat.
   - Abschnitt 3 des KI-Nachweises (andere Tools) ist leer – nutzt Elias andere Tools, gehört das dort hinein.
 - **Belastbar:** **NEIN** – bis Elias seine KI-Nutzung nennt.
@@ -1769,39 +1803,73 @@ gerechnet?“**
     kennzeichnen; was in den Kommentaren steht, zeigt die Aufnahme nicht.
 - **Belastbar:** **TEILWEISE** – Werte belegt, Rechenweg offen.
 
+#### F39 – „Selbst anrühren“: Hürde gegen Markenkern?
+
+**„Auf Folie 6 ist ‚selbst anrühren‘ die stärkste Hürde, auf Folie 3 ist ‚Softdrinks zum Selbermixen‘ der Markenkern.
+Ist das kein Widerspruch – und warum fehlt das dann im Steuerrad und bei den Lücken?“**
+
+- **Wer fragt wahrscheinlich:** Prof. Stenger (mittel), Publikum (mittel) · neu (23.10.2026; bisher Reserve V-01;
+  Entscheidung Yannick „Nur im Sprechtext“, Rückfrage „Warum fehlt ‚selbst anrühren‘?“ in den Notizen von 06 und 10)
+- **Wer antwortet:** Yannick (Synthese), ergänzt von der Person, die Folie 06 vorträgt
+- **Antwort:**
+  > Ja, das ist eine echte Spannung, und wir nennen sie im Vortrag auf Folie 6 und 10. Im KI-simulierten Repertory Grid
+  > ist „selbst anrühren“ das häufigste Konstrukt mit der größten Differenzierung, aber das Ideal liegt bei
+  > „aufmachen, fertig“ – eine Hürde, keine Markeneigenschaft. HOLY selbst stellt das Selbermixen in den Mittelpunkt;
+  > das ist der Markenkern im Selbstbild. Ins Steuerrad gehört die Hürde nicht, weil das Rad das Selbstbild zeigt, und
+  > eine dritte Lücke machen wir nicht daraus, weil sie nur auf simulierten Befragten beruht – ob echte Kund:innen das
+  > Anrühren als Hürde sehen, müssten Interviews zeigen.
+- **Beleg:** Folie 06 Sprechtext Schritt 3 („die stärkste ist ausgerechnet ‚selbst anrühren‘, quer zum Markenkern
+  ‚Softdrinks zum Selbermixen‘“) und Rückfrage „Warum fehlt ‚selbst anrühren‘?“; `buendel-b/auswertung/
+  repertory-grid-ergebnis.csv` (9 Nennungen von 7 Personen, Differenzierung 4,45, Ideal 1,63); Kontrollgruppe ohne
+  Persona-Text: 8 Nennungen (`buendel-b/repertory-grid.md`); Laddering: „für jeden Tag“ war sechs von acht nicht
+  wichtig, vor allem weil Anrühren umständlich ist (5 von 8, Abbruchgründe); Folie 03 Titel (Markenkern); Folie 10
+  Sprechtext und Rückfrage (Einbau parallel); KI-Nachweis 135 (Entscheidung „Nur im Sprechtext“).
+- **Fallstricke:**
+  - Nicht sagen: „Die Kund:innen finden Selbermixen umständlich.“ Immer „KI-simuliert“.
+  - Nicht sagen, die Hürde werde als eigene Lücke auf Folie 10/11 aufgegriffen – Titel und Lücken bleiben
+    („zwei Lücken“).
+  - Auch die Kontrollgruppe nennt es – das zeigt nur, dass es nicht allein aus dem Persona-Text kommt; die Profile und
+    das Modellwissen kennen das Pulver ebenso.
+  - Laut Gründer Mathias Horsch (Befragung 10/2026) steht das Selbermischen für Individualität – Sorte und Intensität
+    selbst bestimmen (Selbstbild, Selbstauskunft, n = 1). Die Spannung „Individualität durch Selbermischen ↔ Hürde
+    ‚selbst anrühren‘“ steht dort schon als Hypothese (`gruenderbefragung.md` §1 Nr. 5, K7).
+- **Belastbar:** ja – die Spannung ist benannt und die Entscheidung begründet; die Hürde selbst ist KI-simuliert.
+
 ---
 
 ## Fragen ohne belastbare Antwort – bis zur Generalprobe klären
 
-Ohne belastbare Antwort sind heute **F12** (echte Befragte), **F22** (Messgrößen), **F37** (KI-Nutzung bei Elias'
-Ausarbeitungen), bei **F17** der Teil Kennzahlen je Kanal und bei **F21** der Teil Kosten/Nutzen (Stand 22.10.2026;
-**F30** ist seit Elias' Analogien „teilweise“). Die übrigen Punkte machen „teilweise“
+Ohne belastbare Antwort sind heute **F22** (Messgrößen), **F37** (KI-Nutzung bei Elias' Ausarbeitungen), bei **F17**
+der Teil Kennzahlen je Kanal und bei **F21** der Teil Kosten/Nutzen (Stand 23.10.2026; **F12**, **F13**, **F14**,
+**F15**, **F18** und **F30** sind seit dem Einbau der KI-simulierten Befragung und der Entscheidung „Rad = Selbstbild,
+Simulation als Abgleich“ belastbar beantwortbar – ehrlich: keine echten Interviews). Die übrigen Punkte machen „teilweise“
 belastbare Antworten fest. Termine nach dem Tagesplan in `arbeitsplan.md` (Synthese Do 22.10., Folien final
 Fr 23.10., Generalprobe So 25.10.); Fristen, die am Di 20.10. lagen, sind überfällig und stehen als „sofort“.
 Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen“) und `abgleich-vorlesung.md` (#n).
 
 | Frage | Was fehlt / was die Gruppe klären sollte | Wer | Bis | Grundlage |
 |---|---|---|---|---|
-| F12, F13, F14, F30 | Zahl echter Kurzinterviews (mit Datum und Einwilligung) melden; ob P8, P9 und P11 gelaufen sind; KI-simuliert und echt getrennt auswerten; tatsächliche Aufteilung in die Fußzeilen von f06, f07, f08b, B4, B5 und in B1/B2 (f08 nennt seit 22.10.2026 Elias' Ausarbeitung, kein n). Gibt es keine Interviews: überall „nur KI-simuliert (n = 5)“, „+ Kurzinterviews“ auf Folie 02 streichen und das offen sagen. | Lukas (Einbau: Account 1) | Meldung sofort (war Di 20.10.), echte Werte Fr 23.10. | FRAGE-Q-01, FRAGE-P-04, VOLL-01; #2, #15 |
-| F14 | Schwelle für die Differenzierung (≥ 1 oder ≥ 1,5 Skalenpunkte) mit Datum festlegen und in B4 vermerken; Titel von Folie 06 („Drei Attribute …“) und „Attribut(e)“ im Sprechtext an „Markeneigenschaften“ angleichen oder einmal „in der Literatur auch Markenattribute“ sagen. | Lukas | Schwelle sofort (war Di 20.10.), Titel Fr 23.10. | FRAGE-P-05; #29 |
-| F16, F36 | ~~Elias prüft die Chamäleon-Begründung~~ – **erledigt 22.10.2026:** Elias' Ausarbeitung liegt vor und ist eingebaut. Neu: Elias und Yannick geben Folie 08 frei (Titel nur mit Chamäleon, Papagei klein, Mensch-Karte, Paare Eigenschaft–Beleg, „kreativ“ oder „experimentierfreudig“); Elias beantwortet `analogien.md` §10 (Rangfolge der Tiere, Claims je Land mit Fundstelle, Quelle zum Farbwechsel, „fair“ gegen provokante Shorts). Lukas gleicht die Analogie-Befragung von Bündel B ab (P11, Interviews bzw. KI-Simulation D25). | Elias, Yannick; Lukas | Fr 23.10. | Kasten FOLIE 08; `analogien.md` §10; #3, #38 |
-| F30 | Tonalität kommt seit 22.10.2026 aus Elias' Analogien (H). Offen: Lukas gleicht das Aaker-Profil auf 08b mit Elias' Zuordnungstabelle ab (Emotionen „Stolz“ oder „Überraschung“, Beziehung „Anführer“; `analogien.md` §7.2); klären, wer die Aaker-Werte vergeben hat (nur Menschen oder auch P11); Werte für Red Bull und waterdrop erheben oder löschen; „(Aaker)“ im Titel von 08b und auf Folie 12 kürzen. Den Zirkel (Analogien und Kommunikationsanalyse von derselben Person) in der Generalprobe einmal laut beantworten. | Lukas, dann Elias | Fr 23.10. | FRAGE-P-03, FRAGE-Q-07; #42; `analogien.md` §7 |
+| F12, F13, F14, F30 | ~~Zahl echter Kurzinterviews melden, KI und echt getrennt auswerten~~ – **erledigt 23.10.2026:** Es gibt keine echten Interviews; Folien 06, 07, 08b, B4, B5 zeigen die KI-simulierte Befragung D25 (Pille, Fußzeilen „keine echten Interviews“). Offen: Wer trägt 06–08b vor und beantwortet die Rückfragen (Lukas liefert kein Material)? Die Rückfrage „Warum KI-simulierte Befragte?“ (S. 60, 78) in der Generalprobe einmal laut beantworten; B1, B2 und Folie 02 nach dem parallelen Einbau gegenlesen. | Gruppe; Yannick | Generalprobe So 25.10. | FRAGE-Q-01, FRAGE-P-04, VOLL-01; #2, #15; KI-Nachweis 135 |
+| F14 | ~~Schwelle festlegen, Titel „Drei Attribute …“~~ – **erledigt 23.10.2026:** Regel vor dem Rechnen festgelegt (22.10.2026: ≥ 3 von 8, ≥ 1,0, ≤ 1,0), Titel „HOLY hebt sich ab – aber vor allem durch Hürden“. Offen: Freigabe durch Yannick. | Yannick | Fr 23.10. | FRAGE-P-05; #29; `buendel-b/folienvorschlag.md` E1 |
+| F16, F36 | ~~Titel nur mit Chamäleon, Papagei klein~~ – **entschieden 23.10.2026** (Yannick): Papagei und Chamäleon gleichwertig in Titel, Karte und Umfrage (Papagei statt Fuchs). Offen: Elias bestätigt die Auslegung, die Belege je Zeile und die Kürzung auf zwei Zeilen je Tier; Elias beantwortet `analogien.md` §10 (Claims je Land mit Fundstelle, Quelle zum Farbwechsel, „fair“ gegen provokante Shorts). Der Abgleich mit der KI-simulierten Befragung steht in `analogien.md` §7.3. | Elias, Yannick | Generalprobe So 25.10. | Kasten FOLIE 08; `analogien.md` §10; #3, #38 |
+| F30 | ~~Lukas gleicht das Aaker-Profil ab~~ – **erledigt 23.10.2026:** 08b zeigt das KI-simulierte Fremdbild (Aaker-Bogen von acht simulierten Personen; Gegenüberstellung `analogien.md` §7.2). Offen: Freigabe des zweizeiligen Titels von 08b (E7) und „(Aaker)“ im Titel von 08b und auf Folie 12 kürzen. Den Zirkel (Analogien und Kommunikationsanalyse von derselben Person) in der Generalprobe einmal laut beantworten. | Yannick, Elias | Fr 23.10. | FRAGE-P-03, FRAGE-Q-07; #42; `analogien.md` §7 |
 | F29 | Skript der Live-Abstimmung bei Google aktualisieren (Fassung 20.10.2026), Kurzprüfung und Lasttest; Runde auf `vortrag-2026-10-26` (GitHub und Präsentationsrechner); Probe mit mehreren Handys; festlegen, wer bei Handzeichen zählt. | Yannick | Skript sofort, Runde spätestens So 25.10. | LIESMICH §6 und §12; `live-abstimmung/ANLEITUNG.md` |
 | F24 | Logo-Nutzung mit dem Betreuer klären (Original-Logo auf erfundener Dose, im Rätsel unscharf, öffentlich; Logos auf 09b und 12); bei Ablehnung Rückfall ohne Logo und Exporte neu. Ergebnis in die Notiz von Folie 01 und hier eintragen. | Yannick | vor Fr 23.10. (Folien final) | LIESMICH §12; `QUELLEN.md` §3 |
 | F03, F26, F31 | Fußzeilen der Hauptfolien mit Vorlesungsseiten (#4); Esch (2018), 9. Aufl. statt Esch & Esch (2024) in B7 und Fußzeile 02 (#11); Kotler mit selbst geprüfter Ausgabe in B7 aufnehmen oder „nach Kotler“ streichen (#31); Kroeber-Riel/Esch (2018) in B7 und Fußzeile 09 (#14); „hard/soft facts“ belegen oder weglassen (#32). | Yannick, Elias (Fußzeile 09) (Einbau: Account 1) | Fr 23.10. | FRAGE-P-02, FRAGE-P-12; #4, #11, #14, #31, #32 |
-| F04 | Entscheiden, ob das Etikett „Fremdbild“ auf Folie 02 und der Sprechtext 02/10 auf „Markenimage“ umgestellt werden (nicht freigegeben). | Yannick | Fr 23.10. | #30 |
-| F15, F18 | Regel B8 anwenden: Die Positionierung gilt als Identität und Image nur, wenn echte Befragte „gutes Gewissen“ von sich aus nennen; sonst als Selbstbild kennzeichnen. Kern- und Positionierungssatz zwischen Elias und Yannick abstimmen; Elias liest Sprechtext 10 und 11 laut und entscheidet „klare“ oder „starke“ Positionierung im Titel von Folie 11. | Yannick, Elias | Synthese Do 22.10. | FRAGE-Q-02, FRAGE-P-18; #27, #40 |
+| F04 | Seit 23.10.2026 entschieden: Rad = Selbstbild, Befragungen = Fremdbild-Abgleich (`methoden.md` §6); die Folien sagen „Selbstbild“ und „Fremdbild (KI-simuliert)“ mit Stenger S. 60, 87 in den Notizen. Offen: ob das Etikett „Fremdbild“ auf Folie 02 zusätzlich „Markenimage“ heißen soll (#30). | Yannick | Fr 23.10. | #30; KI-Nachweis 135 |
+| F15, F18 | Regel B8 angewandt (23.10.2026): Die Positionierung ist Selbstbild (Versprechen ✔ [5], GB); das KI-simulierte Laddering stützt sie nicht – Abgleich auf Folie 10. Offen: Kern- und Positionierungssatz zwischen Elias und Yannick abstimmen; Elias liest Sprechtext 10 (mit dem neuen Abgleich-Schritt, Soll 75 s) und 11 laut und entscheidet „klare“ oder „starke“ Positionierung im Titel von Folie 11. | Yannick, Elias | Generalprobe So 25.10. | FRAGE-Q-02, FRAGE-P-18; #27, #40 |
+| F39 | „Selbst anrühren“ nur im Sprechtext (06, 10) und als Rückfrage – keine dritte Lücke (Entscheidung Yannick 23.10.2026). Offen: Satz in der Generalprobe einmal laut sagen. | Yannick | Generalprobe So 25.10. | KI-Nachweis 135 |
 | F21, F22 | Je Empfehlung eine Messgröße aus den eigenen Methoden; Priorität der Empfehlungen mit Begründung; qualitative Einordnung des Aufwands (ohne Zahlen, als H) in die Notizen von Folie 11 (Gliederung Ziel – Wirkung – Kosten nach S. 127 möglich). | Elias (Gruppenentscheidung) | Synthese Do 22.10. | FRAGE-P-07, FRAGE-Q-06, FRAGE-Q-04; #51 |
 | F20, F21 | Aktuelle HOLY-Energy-Packung prüfen (Vorder- und Rückseite, mit Datum); Ergebnis mit [27] in die Notiz von Folie 11; zeigt die Packung Koffein schon vorn, Empfehlung 1 auf Posts und Creator-Videos zuspitzen. | Elias | Fr 23.10. | FRAGE-P-16, FRAGE-Q-05 |
 | F17, F38 | ~~Stichprobe erheben, P12, Formel~~ – **gegenstandslos seit 22.10.2026:** Elias hat qualitativ analysiert, Engagement-Raten und Formel sind von Folie 09 entfernt. Offen: Elias nennt den Rechenweg seiner Prozentwerte (`kommunikationsanalyse.md` §13, Frage 2) und ob Engagement-Raten und Meta-Werbebibliothek bewusst weggelassen wurden (Fragen 3, 5); Follower vor dem 26.10. neu ablesen oder Stand 20./21.10. in der Fußzeile lassen. | Elias | Fr 23.10. | FRAGE-P-08; #2 |
 | F31, F32, F33 | ~~Stichprobe zum Raptor, „soll durchgängiges Schlüsselbild werden“~~ – **gegenstandslos seit 22.10.2026** (Elias: kein festes Schlüsselbild, Kandidat Produkt in der Hand; Empfehlung 3 „Ein Absender, ein Schlüsselbild“). Offen: Notiz 09 Präsenzsignal/Schlüsselbild mit S. 97 statt „Modellwissen“; Bruch mit „integrierte Kommunikation (S. 96–97)“ benennen; ein Wort für die Persona-Lücke auf 09b, 10, 11 („Bildwelt zu jung“ oder „Auftritt zu jung“); Freigabe „Streetwear-Look“ und Lücke 2 (Yannick); Elias' Frage 4 („Produkt in der Hand“ über Medien und Zeit gleich?). Gemeinsamen Wortlaut „Humor aus der Schicht statt Doppeldeutigkeit“ (Folie 05) mit Elias' Tonalität abstimmen. | Elias, Yannick | Fr 23.10. | FRAGE-P-15; #47, #48; `kommunikationsanalyse.md` §13 |
 | F34 | Elias klärt „junge Kernzielgruppe“ (TikTok) gegen die Kundschaft 25–40 laut Mitgründer – bis dahin nur Reichweite nennen. | Elias, Yannick | Fr 23.10. | `kommunikationsanalyse.md` §13, Frage 1 |
-| F37, F23 | Elias sagt, ob und wofür er bei seinen Ausarbeitungen KI genutzt hat; danach B2 (P11/P12 eintragen, als „nicht genutzt“ kennzeichnen oder streichen) und Folie 02 (Methodenkarten „KI + Kurzinterviews“, „KI hilft codieren“) nachziehen – beide Folien waren für den Einbau gesperrt. | Elias; Entscheidung Yannick | Fr 23.10. | Kasten B2; KI-Nachweis 119 |
-| F31 (Folie 05) | Notizen von Folie 05 und `limbic-map.md` §6 nennen „der Raptor bleibt Absender“ und als Signale „Comic-Tiere, 31 Energy-Sorten“ – mit Elias' Befund abgleichen (Folie 05 war für den Einbau gesperrt). | Yannick | Fr 23.10. | `folienentwuerfe.md` Folie 5, Zu prüfen |
+| F37, F23 | Elias sagt, ob und wofür er bei seinen Ausarbeitungen KI genutzt hat; danach P12 in B2 als „nicht genutzt“ kennzeichnen oder streichen. Folie 02 (Methodenkarten) und B2 (P7–P11 als echte Läufe D25) werden seit 23.10.2026 nachgezogen (Entscheidung 5 Yannick, Einbau parallel) – Wortlaut prüfen. | Elias; Yannick | Fr 23.10. | Kasten B2; KI-Nachweis 119, 135 |
+| F31 (Folie 05) | ~~„Raptor bleibt Absender“ abgleichen~~ – **23.10.2026:** `limbic-map.md` (Kopf, §1, 4.1, §6) nachgezogen; die Notizen von Folie 05 zieht der Workflow D26 parallel nach (Entscheidung 5). „Comic-Tiere, 31 Energy-Sorten“ bleiben als Stimulanz-Signale. Offen: Wortlaut der Notizen 05 prüfen. | Yannick | Fr 23.10. | `folienentwuerfe.md` Folie 5, Zu prüfen |
 | F07, F13, F23, F35 | Tragende Belege selbst öffnen und im KI-Nachweis abhaken – sonst B1-Titel, B1-Grenze „nichts ungeprüft übernommen“ und Fußzeile 02 „Ergebnisse geprüft“ umformulieren; Abschnitt 3 des KI-Nachweises aus den persönlichen KI-Listen füllen (Lukas und Elias geben ab). | Yannick (Einbau: Account 1) | Sa 24.10. (Listen Fr 23.10.) | FRAGE-P-01, FRAGE-Q-03, FRAGE-P-10; #3, #5 |
 | F10, F11, F28 | Die Jost-Stellen an den Zeitmarken im Audio anhören; 20–30 Kundenbewertungen auswerten (Anlass Schicht; Hedonisten oder Offene); in den Notizen 05 „Technik +7“ und „85 % keine frühen Übernehmer“ streichen (stehen nicht in `persona-daten.md`). | Yannick | Do 22.10. | FRAGE-P-13; Spielregel 4 |
-| F25 | Rahmen (Softdrink-Anspruch, Energy-Kernkundschaft) und Wettbewerbsset W1–W5 als Gruppenbeschluss mit Datum festhalten. | Gruppe (alle) | sofort (war Di 20.10.) | FRAGE-P-09 |
-| F06 | Versanddatum der Sprachnachrichten (17. oder 18.10.) bestätigen; Ablage der Audiodateien einheitlich festhalten; Einwilligungen der Interviewten. | Lukas | Do 22.10. | FRAGE-Q-13; Gegenprüfung zu V-04 |
+| F25 | Rahmen (Softdrink-Anspruch, Energy-Kernkundschaft) und Wettbewerbsset W1–W5 als Gruppenbeschluss mit Datum festhalten – die KI-simulierte Befragung hat das vorgeschlagene Set benutzt, beschlossen ist es nicht (`buendel-b/README.md`, Grenzen). | Gruppe (alle) | sofort (war Di 20.10.) | FRAGE-P-09 |
+| F06 | Versanddatum der Sprachnachrichten (17. oder 18.10.) bestätigen; Ablage der Audiodateien einheitlich festhalten; Einwilligung des Gründers. | Lukas (hat den Gründer kontaktiert), sonst Yannick | sofort | FRAGE-Q-13; Gegenprüfung zu V-04 |
 | F06, F23 | Bei Prof. Stenger nachfragen, ob besondere KI-Vorgaben gelten (Tools, Form der Dokumentation, Eigenständigkeitserklärung) – die Vorlesung regelt nur Prompts und Begründung im Backup (S. 60). | Yannick (Mail) | sofort | FRAGE-P-11; #7 |
 | F05 | Regel für GB (Vorschlag vom 19.10.2026, `methoden.md` §6) bestätigen oder ändern. | Gruppe (alle) | Synthese Do 22.10. | Gegenprüfung zu P-24; #36 |
 | F07 | Nachfrage „Ist HOLY profitabel?“: Jahresabschluss 2024 abrufen – gelingt das nicht, offen „Profitabilität nicht geprüft“. | Yannick | Fr 23.10. | FRAGE-P-17 |
@@ -1817,12 +1885,12 @@ nicht zur Sollzeit der Folien; ob Rückfragen zu den 15 Minuten zählen, sagt di
 Frage an Prof. Stenger (`arbeitsplan.md`, Offene Punkte; #8).
 
 1. **Vorher:** alle Platzhalter [ … ] mit dem echten Stand füllen (Synthese Do 22.10., Folien final Fr 23.10.) und den
-   Status „belastbar“ hier nachtragen.
+   Status „belastbar“ hier nachtragen. Seit 23.10.2026: Wer trägt 06–08b vor (Lukas liefert kein Material)?
 2. **Rollen festlegen:** wer moderiert; in der Probe spielt eine Person Prof. Stenger, eine das Publikum (VOLL-08).
 3. **Reihenfolge:** zuerst die wahrscheinlichen, noch nicht voll belastbaren Fragen (höchstens 15): F02, F03, F07,
-   F10, F12, F13, F14, F15, F16, F17, F18, F20, F21, F22, F23. Danach so viele weitere wie die Zeit erlaubt, zuerst
-   F24 und F29 (neu: Logo, Abstimmung), dann F30–F34 und F36–F38 (neu gefasst bzw. neu am 22.10.2026: Elias'
-   Material).
+   F10, F12, F13, F14, F15, F16, F17, F18, F20, F21, F22, F23 (F12–F16 und F18 seit 23.10.2026 neu gefasst:
+   KI-simulierte Befragung, Rad = Selbstbild). Danach so viele weitere wie die Zeit erlaubt, zuerst F24 und F29
+   (Logo, Abstimmung mit Papagei), dann F30–F34, F36–F38 und F39 („selbst anrühren“, neu am 23.10.2026).
 4. **Stoppuhr:** höchstens etwa 30 s je Antwort; Kern in einem Satz, höchstens eine Ergänzung (FRAGE-P-18).
 5. **Springen üben** – am Vortragslaptop mit zweitem Bildschirm und Clicker (VOLL-04): **O** → Backup-Folie →
    `1` `2` `Enter` zurück; auf Folie 12 die Liste „Methoden / Ergebnisse / Backup“; **Z** nach einem Sprung aus dem
@@ -1831,26 +1899,24 @@ Frage an Prof. Stenger (`arbeitsplan.md`, Offene Punkte; #8).
    offengelegt“, „KI-simuliert“, „laut Unternehmen“, „unsere Einordnung / Hypothese“, „Das haben wir nicht erhoben“,
    „Unsere eigene Prüfung läuft noch“ (nur solange das stimmt); neu: „Markenkern ist die Mitte, der Satz darüber die
    Positionierung“, „Identität ist die Innensicht, das Image, was wahrgenommen wird (S. 87)“, „Typen und Gewichte
-   sind unsere Erweiterung“, „Das Chamäleon ist Elias' Analogie, also eine Hypothese“, „ein Stimmungsbild im Raum“,
-   „kein festes Schlüsselbild – Kandidat ist das Produkt in der Hand“, „Follower sind Indizien, keine Insights“.
-7. **Abgestimmte Stellen gemeinsam sagen:** Positionierungssatz und Leitfrage (F18), Chamäleon-Begründung und Papagei
-   (F16, F36; Elias und Lukas), Priorität der Empfehlungen (F21), Wettbewerbsset (F25), Schlüsselbild und Adler als
+   sind unsere Erweiterung“, „Papagei und Chamäleon sind Elias' Analogien, also Hypothesen“, „ein Stimmungsbild im
+   Raum“, „kein festes Schlüsselbild – Kandidat ist das Produkt in der Hand“, „Follower sind Indizien, keine
+   Insights“; seit 23.10.2026: „KI-simuliert, keine echten Interviews“, „das Rad zeigt unser Selbstbild, die
+   Simulation das Fremdbild – den Abgleich zeigt Folie 10“, „Hypothesen, die echte Interviews prüfen müssten“.
+7. **Abgestimmte Stellen gemeinsam sagen:** Positionierungssatz und Leitfrage (F18), Papagei und Chamäleon
+   (F16, F36; Elias und wer 08 vorträgt), Selbstbild ↔ Fremdbild (F04, F12, F13; Yannick), „selbst anrühren“ (F39), Priorität der Empfehlungen (F21), Wettbewerbsset (F25), Schlüsselbild und Adler als
    Maskottchen (F31), „frech“ gegen „Humor aus der Schicht“ (F30–F32), Zielgruppe auf TikTok (F34) – damit nicht drei
    Personen drei Antworten geben.
 
 **Reserve (geprüft, nicht ausgearbeitet; geringere Wahrscheinlichkeit) – vorbereitete Antworten stehen an der Quelle:**
 
-- „Kann eine KI-Persona überhaupt Werte haben – und mit welchem Attribut habt ihr die echten Interviews begonnen, wenn
-  die Attribute erst am 19.10. feststanden?“ (P-04; Lukas; bisher F27) → Leitern der KI-Personas sind Hypothesen
-  (Notiz 07, Z. 1554; B5 Z. 3572–3580); echte Interviews starten bei zwei eigenen Konstrukten der Person
-  (`dossier-buendel-b.md` §5, Z. 289 und „Warum das Laddering hier bei den eigenen Konstrukten startet“), in die Value
-  Map nur bei passendem Startpunkt und mindestens zwei Nennungen (§3 B2 Schritt 4). Nicht sagen „Nach Reynolds &
-  Gutman beginnt man immer …“ (Modellwissen); die Abweichung ist in B5 noch nicht begründet (FRAGE-P-06). „Gesundheit“
-  ist ein Wert der Befragten, keine Produktaussage.
-- „Auf Folie 6 ist ‚selbst anrühren‘ eine Hürde, auf Folie 3 ist ‚Softdrinks zum Selbermixen‘ der Markenkern –
-  Widerspruch?“ (V-01; Lukas, ergänzt Yannick) → Rückfragen in den Notizen 03 (Z. 717), 10 (Z. 2645, „Warum fehlt
-  ‚selbst anrühren‘?“) und 11 (Z. 2926): Markenkern laut HOLY = Selbstbild, Hürde laut Befragten (Beispieldaten). Nicht
-  sagen, die Lücke werde auf Folie 10/11 als eigene Lücke aufgegriffen.
+- „Kann eine KI-simulierte Person überhaupt Werte haben – und womit begann das Laddering?“ (P-04; bisher F27, neu
+  gefasst 23.10.2026) → Leitern der KI-simulierten Personen sind Hypothesen; sie starten bei „ohne Zucker“ und „für
+  jeden Tag“ – Startpunkte aus dem Repertory Grid, keine Markeneigenschaften (Notizen 07, B5; `buendel-b/laddering.md`).
+  „Verlässlich sein“ spiegelt vor allem die Berufsprofile, „Gesundheit“ (nur T4) ist ein Wert der simulierten Person,
+  keine Produktaussage. Nicht sagen „Nach Reynolds & Gutman beginnt man immer …“ (Modellwissen).
+- ~~„Auf Folie 6 ist ‚selbst anrühren‘ eine Hürde, auf Folie 3 ist ‚Softdrinks zum Selbermixen‘ der Markenkern –
+  Widerspruch?“ (V-01)~~ → seit 23.10.2026 ausgearbeitet als **F39**.
 - „Folie 5 will ‚Humor aus der Schicht statt Doppeldeutigkeit‘, auf 9b ‚passt‘ die Tonalität – was gilt?“ (V-02;
   Yannick, ergänzt Elias) → Sprechtext 05 Schritt 3 (Z. 1183), Hinweis in den Belegen von Folie 11 (Z. 2925);
   Wortlaut in der Synthese abstimmen.
@@ -1869,12 +1935,15 @@ Frage an Prof. Stenger (`arbeitsplan.md`, Offene Punkte; #8).
   keine Lizenz, keine Rechtsprüfung.
 - „Ist das Persona-Bild ein KI-Bild?“ (Yannick) → Notiz 04 (Z. 953): KI-gestützt gezeichnete Illustration, kein Foto,
   keine echte Person, gekennzeichnet auf dem Bild und in der Fußzeile (siehe auch F24).
-- „Warum steht Koffein bei den Markeneigenschaften, wenn die Befragten es kaum nennen?“ (Elias, ergänzt Yannick) →
-  Rückfrage in den Notizen 10 (Z. 2645): belegte Produkteigenschaft der Energy-Linie aus dem Desk Research
-  (Dossier 3.1 ✔ [56]), deshalb „Energy:“ davor.
+- „Warum steht Koffein bei den Markeneigenschaften, wenn die KI-simulierten Befragten es kaum nennen?“ (Elias,
+  ergänzt Yannick) → Rückfrage in den Notizen 10: belegte Produkteigenschaft der Energy-Linie aus dem Desk Research
+  (Dossier 3.1 ✔ [56]), deshalb „Energy:“ davor; das Rad zeigt das Selbstbild (seit 23.10.2026). Simuliert wirkt
+  HOLY sogar eher schwächer („weniger Kick“) – eine Hypothese, kein Befund.
 - „Wo steht ‚hard facts / soft facts‘ in der Vorlesung?“ (Yannick) → nirgends (S. 88–91; #32). Ehrlich: Modellwissen
   nach Esch, nicht eingesehen; die Vorlesung beschreibt das Feld oben rechts als „Emotionen und Gefühle“ (S. 88).
-- „Warum heißen die Nutzen auf Folie 7 nicht individuell und sozial wie in der Vorlesung?“ (Lukas) → S. 88 nennt
-  „individueller Nutzen“ und „sozialer Nutzen“; Folie 07 nutzt die Ebenen der Laddering-Literatur (Reynolds & Gutman,
-  Modellwissen). Zuordnung im Rad: Genuss ohne Zucker und gutes Gewissen eher individuell, dazugehören sozial – unsere
-  Lesart (#39, offen).
+- „Warum heißen die Nutzen auf Folie 7 nicht individuell und sozial wie in der Vorlesung?“ (wer 07 vorträgt) → S. 88
+  nennt „individueller Nutzen“ und „sozialer Nutzen“; Folie 07 nutzt die Ebenen der Laddering-Literatur (Reynolds &
+  Gutman, Modellwissen). Im Rad (Selbstbild, seit 23.10.2026): „Genuss ohne Zucker“ und „gutes Gewissen“ aus HOLYs
+  Versprechen (DR ✔ [5]) – eher individuell –, „dazugehören“ aus Elias' Kommunikationsanalyse („Squad“ als
+  Erkennungszeichen einer Gruppe, KA) – sozial; die Gründerbefragung (GB) stützt alle drei (Notizen von Folie 10).
+  Unsere Lesart (#39, offen).

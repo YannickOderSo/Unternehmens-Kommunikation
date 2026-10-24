@@ -1,8 +1,25 @@
 # Limbic Map: Persona „Marco, 28“ und Auftritt von HOLY (A3)
 
-**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Mi, 21.10.2026 (Kennzeichnung nach dem Abgleich
-mit der Vorlesung; 20.10.: Nachtrag Chamäleon in 4.1; 19.10.: Abgleich mit der Gründerbefragung) · **Entwurf, Prüfung
-durch Yannick offen**
+**Bündel A** · Folie 05 (60 s) · Übergabe an Bündel C (Elias) · Stand Fr, 23.10.2026 (Raptor- und Tier-Stellen nach
+Elias' Ausarbeitungen und der Entscheidung Yannick vom 23.10.2026 nachgezogen, Workflow D26; 21.10.: Kennzeichnung nach
+dem Abgleich mit der Vorlesung; 20.10.: Nachtrag Chamäleon in 4.1; 19.10.: Abgleich mit der Gründerbefragung) ·
+**Entwurf, Prüfung durch Yannick offen**
+
+> **Nachtrag Fr, 23.10.2026 (Entscheidung 5 Yannick: Querverweise nachziehen; KI-Nachweis 135):** Gewichte, Typ, Fit
+> und die Folie 05 selbst bleiben unverändert. Geändert sind nur Stellen, die nicht mehr zum Stand passen: (1) „der
+> Raptor bleibt Absender“ (§1, §6 Nr. 1) – laut Elias' Kommunikationsanalyse ist der Adler „so etwas wie das
+> Maskottchen“, den festen Absender regelt Empfehlung 3 auf Folie 11 („Ein Absender, ein Schlüsselbild“: ein Name,
+> eine Profilfarbe); (2) das Tier der Analogie (4.1): seit 23.10.2026 Papagei und Chamäleon gleichwertig nach Elias'
+> Ausarbeitung ([`analogien.md`](analogien.md)); (3) „bis Lukas' Tonalität und echte Interviews da sind“ (§1, §6 Nr. 2)
+> – Lukas liefert kein Material mehr; die Tonalität im Steuerrad ist „frech · gesellig · wandelbar“ (Elias, Selbstbild),
+> die KI-simulierte Befragung zeigt als Fremdbild einen „witzigen Kumpel, der verkaufen will“, „frech“ nennt dort nur
+> eine von acht simulierten Personen ([`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md)).
+> „Comic-Tiere“ und „31 Energy-Sorten“ bleiben als Stimulanz-Signale (4.1) – sie sind belegte Merkmale des Auftritts
+> (Dossier 3.1, 6.3 ✔), kein Stichwort im Feld Markenbild. Elias beschreibt dieselben Signale als Tier-Illustrationen
+> (Papagei: „bunt“) und als fünf Produktlinien mit laufend neuen Sorten (Chamäleon: „wandelbar“, „kreativ“); das Feld
+> Markenbild auf Folie 10 heißt seit 22.10.2026 „Streetwear-Look · Gelb & Schwarz · knallig“
+> ([`kommunikationsanalyse.md`](kommunikationsanalyse.md)). Die Notizen von Folie 05 zieht der Workflow D26 parallel
+> nach – welche Wörter der Sprechtext dort nutzt, steht nach dem Einbau in den Notizen von f05.
 
 > **So ist die Ausarbeitung zu lesen**
 > - **D** = Daten mit Quelle · **M** = Modellangabe mit Quelle (Häusel / Gruppe Nymphenburg) · **A** = Annahme oder
@@ -59,10 +76,12 @@ durch Yannick offen**
 >    Für Folie 09 als Fit-Punkt (vorläufig, bis deine Stichprobe da ist): ✗ Markenbild ↔ Persona: Comic und
 >    Provokation statt Schichtalltag.
 > 4. **Drei Konsequenzen** für Folie 11 (Hypothesen):
->    - Bildwelt „Echte Schichtmomente, Raptor bleibt Absender“: ergänzen, nicht ersetzen. Die Schicht ist ein
->      Leitmotiv unter mehreren Alltagsmomenten (Dossier S3).
->    - Tonalität „Humor aus der Schicht statt Doppeldeutigkeit“: vorläufig, bis Lukas' Tonalität (Mi 21.10.) und
->      seine echten Interviews da sind.
+>    - Bildwelt „Echte Schichtmomente“: ergänzen, nicht ersetzen. Die Schicht ist ein Leitmotiv unter mehreren
+>      Alltagsmomenten (Dossier S3). *(Bis 23.10.2026 mit dem Zusatz „Raptor bleibt Absender“ – überholt: Der Adler
+>      ist laut Elias das Maskottchen, den Absender regelt Empfehlung 3, „Ein Absender, ein Schlüsselbild“.)*
+>    - Tonalität „Humor aus der Schicht statt Doppeldeutigkeit“: vorläufig. *(Stand 23.10.2026: Lukas liefert kein
+>      Material; Tonalität im Rad „frech · gesellig · wandelbar“ nach Elias, das KI-simulierte Fremdbild auf 08b sagt
+>      „witziger Kumpel, der verkaufen will“ – wie die Provokation bei echten Kund:innen ankommt, bleibt offen.)*
 >    - Botschaft „Durchhalten ohne Zucker, Koffein offen nennen“: ohne Wirkversprechen formulieren (Dossier 3.7, S1).
 >      „Koffein offen nennen“ heißt: 160 mg pro Portion und „ab 18“ sichtbar machen (Empfehlung aus S1). Rechtlich
 >      nicht geprüft.
@@ -77,7 +96,9 @@ durch Yannick offen**
 >    beim Einüben nicht mehr „Abenteurer“ sagen.
 >
 > Die Gewichte können sich nach der Auswertung der Bewertungen und Lukas' Interviews (bis So 18.10.) um etwa ±5
-> verschieben. Modellbegriffe gleichen wir noch mit der Vorlesung ab.
+> verschieben. Modellbegriffe gleichen wir noch mit der Vorlesung ab. *(Stand 23.10.2026: Lukas' Interviews gibt es
+> nicht – nur noch die Auswertung der Bewertungen kann die Gewichte verschieben; die KI-simulierte Befragung hat die
+> Zusatzfragen nicht gestellt.)*
 
 **Bitte an Lukas (Vorschlag für den Gruppenchat; ob es passt, entscheidet er):**
 
@@ -277,7 +298,7 @@ geprüft.
 | Du-Ton: in 167 Produkttexten 36-mal „geil“, rund 38-mal „gönn“, keine Sie-Form; „Gefährlich geil!“ | Stimulanz (Spaß, Leichtigkeit); „gönn dir“ auch Fantasie/Genuss | hoch: Produkttexte | 6.2 ✔ [30], ✔ [1, 30] |
 | TV-Spot „Mach's dir wie nie zuvor“ (seit 01/2026) mit sexuellen Doppeldeutigkeiten; Musikvideo „Candy Shop“ mit Money Boy | Abenteuer und Risiko (Stimulanz × Dominanz); in [105] S. 3 liegt dort das Band „Sexualität männlich“ | hoch: national in TV, Streaming und DOOH (YouTube nur ≈ 21.000 Aufrufe) | 6.6 ✔ [25], ✔ [16, 129]; Lage: [105] S. 3 (Grafik) |
 | „Die Softdrink Revolution“; „Doch die Industrie macht seit Jahrzehnten keine Anstalten …“; „Challenger-Brands“ (Firmenwert „Challenge the status quo“ 2.7 ✔ [17] zählt seit 19.10. nicht mehr, s. u.) | Abenteuer und Risiko (Rebellion) mit Dominanz-Anteil | hoch: Dachclaim | 6.5 ✔ [1, 8]; 6.2 ✔ [5]; 2.6 ✔ [13] |
-| Maskottchen Adler „Raptor“, Treue-Level „Raptor Egg“ bis „OG Raptor“ | Dominanz · Erfolg und Status (Aufstieg), durch den Comic-Stil abgeschwächt | mittel: Maskottchen, Treueprogramm | 6.3 ✔ [54, 71]; gelebter Ton laut Analogie: Chamäleon – wandelbar in Farbe, Sorte und Szene, im Ton immer frech (**H**; seit 20.10.2026, Einordnung Elias Knauber, Begründung Vorschlag, s. Nachtrag 20.10.); früher „Waschbär oder Affe“ (6.7 **H**, ersetzt) |
+| Maskottchen Adler „Raptor“, Treue-Level „Raptor Egg“ bis „OG Raptor“ | Dominanz · Erfolg und Status (Aufstieg), durch den Comic-Stil abgeschwächt | mittel: Maskottchen, Treueprogramm | 6.3 ✔ [54, 71]; laut Elias' Kommunikationsanalyse „so etwas wie das Maskottchen“ (Shaker-Kopf, Pixelfigur, Kostüm), kein fester Absender; gelebter Ton laut Analogie (Elias, **H**): seit 23.10.2026 Papagei und Chamäleon gleichwertig, dazu der Impro-Comedian (`analogien.md`; 20.–22.10.2026 nur das Chamäleon, s. Nachtrag 20.10.); früher „Waschbär oder Affe“ (6.7 **H**, ersetzt) |
 | 160 mg Koffein pro Portion; „~4h mit NewCaff“ statt „kurzer Spike“ in der „Us vs. Them“-Grafik; 2022 „Mana Buff“ | Dominanz · Leistung, als Produktangabe ohne Nutzungssituation | mittel bis hoch: Vergleichsgrafik auf jeder Produktseite | 3.1 ✔ [56]; 3.6 ✔ [73, 91] ([73] ist ein Bild vom 04.06.2026); 2.8 ✔ [22, 23] |
 | Dopamin-Versprechen 2025 entfernt; Sets „ohne Energy“ seit 04/2026 | Leistung tritt eher zurück (**A**). Grund für die Entfernung: unzulässige Gesundheitsversprechen, also ein rechtlicher Grund, kein belegter Positionswechsel | – | 3.4 ✔ [81]; 3.1 ✔ [63] |
 | Vision „das Coca-Cola des 21. Jahrhunderts“, „dauerhaft unter den Top 3“ | Dominanz · Erfolg und Status | niedrig: vor allem Investor-, Karriere- und Pressekanäle | 2.7 ✔ [14, 17, 46]; 2.6 ✔ [51] |
@@ -301,7 +322,9 @@ geprüft.
 - **Markenversprechen:** Das gute Gewissen (Balance) ist im Auftritt hoch präsent. Schwach ist nur das Feld
   Offenheit und Genuss (4.2). Das ist kein zweiter Abstand zwischen Identität und Bild für Folie 10/11.
 
-**Nachtrag Di, 20.10.2026 (Tier der Analogie, Entscheidung Yannick):**
+**Nachtrag Di, 20.10.2026 (Tier der Analogie, Entscheidung Yannick):** *(Stand 23.10.2026: Die Begründung stammt seit
+22.10.2026 von Elias selbst; seit 23.10.2026 sind Papagei und Chamäleon gleichwertig das Ergebnis der Analogie –
+[`analogien.md`](analogien.md). Der Nachtrag unten ist der Stand vom 20.10.2026.)*
 - **Chamäleon statt Waschbär.** Elias Knauber (Bündel C) ordnet HOLY in seiner Ausarbeitung eher als Chamäleon ein.
   Die Ausarbeitung liegt nicht im Repository. **Begründung: Vorschlag, KI-gestützt (Claude Code, aus dem
   Recherche-Dossier) – von Elias zu prüfen.** Die Analogie selbst ist eine Hypothese (**H**). Wortlaut auf Folie 08
@@ -314,7 +337,8 @@ geprüft.
   verlieren“ (2.8 ✔ [24]).
 - **Ambivalent:** „Chamäleon“ heißt im Alltag auch „ohne festen Kern“. Dafür gibt es Anzeichen (S5: sechs Claims,
   Profilnamen je Kanal, 8 ✔ [1, 20, 31, 125], Deutung **H**) – das ist der Bruch über die Kanäle (Folie 09b) und
-  stützt die Folge „Raptor bleibt Absender“ (§6, Nr. 1). Eigene Fassungen je Markt und Kanal (6.1 ✔ [31, 127,
+  stützte die frühere Folge „Raptor bleibt Absender“ (§6, Nr. 1; seit 23.10.2026 überholt – den festen Absender
+  regelt Empfehlung 3 „Ein Absender, ein Schlüsselbild“, der Adler bleibt Maskottchen). Eigene Fassungen je Markt und Kanal (6.1 ✔ [31, 127,
   128]; S4 ✔ [64, 147, 148]) zählen deshalb nicht als Stärke. Markenkern (Mitte des Steuerrads) und Positionierung
   („Genuss mit gutem Gewissen“, Band über dem Rad auf Folie 10; bis 21.10.2026 „Markenkern“ genannt) sind nicht
   betroffen – was wechselt, ist der Auftritt.
@@ -391,7 +415,8 @@ und Feldern folgt unserer Lesung der Map (§2, **A**); bitte mit der Vorlesung a
 | nicht genannt: Provokation, Rebellion (danach nicht gefragt); Wirkung nicht ausdrücklich, nur „funktionale Inhaltsstoffe je nach Use Case“ (nach Koffein oder Wachbleiben nicht eigens gefragt) | – | Abenteuer und Risiko; Dominanz | kein Widerspruch; s. Nachtrag 4.1 und §5 |
 
 - **Stützt den Stimulanz-Kern** und das Feld Harmonie und Fürsorge, aber nur als Selbstbild. Ob die Kundschaft HOLY so
-  erlebt, zeigen erst die Bewertungen und Lukas' Interviews.
+  erlebt, zeigen erst die Bewertungen und Lukas' Interviews. *(Stand 23.10.2026: echte Interviews gibt es nicht; die
+  KI-simulierte Befragung zeigt nur ein Fremdbild als Hypothese – `buendel-b/README.md`.)*
 - **Gewichte bleiben** bei B 30 / D 20 / S 50: Sie beschreiben den Auftritt, nicht das Selbstbild.
 - **Schwach gewichten:** Die Formel „Geschmack mit gutem Gewissen“ steht so auf der Website [1], der Squad prägt schon
   den Auftritt (4.1). Neu ist vor allem, dass der Gründer Individualität und Zusammengehörigkeit als emotionalen Nutzen
@@ -461,11 +486,15 @@ deshalb weiter auf die öffentlichen Quellen (Anlass laut Mitgründer Frederick 
 gehen über das Selbstbild hinaus. Konsequenz 2 betrifft Soll und Umsetzung, keine Lücke zwischen Selbst- und Fremdbild
 (Nachtrag 4.1).
 
-**1. Bildwelt – „Echte Schichtmomente, Raptor bleibt Absender“** (Web-Folie: „Echte Schichtmomente“)
+**1. Bildwelt – „Echte Schichtmomente“** (Web-Folie: „Echte Schichtmomente“; bis 23.10.2026 hier „…, Raptor bleibt
+Absender“)
 Laut Mitgründer Jost wird HOLY „in der Regel gar nicht beim Gaming“ getrunken, sondern z. B. im Schichtdienst [24]. Presse und
 Investor nennen viele Schichtberufe (Pflege, Polizei, Feuerwehr, Lkw; Dossier 4.1 ✔ [7], ✔ [14]; Horsch ✎ [4]). In den
 belegten Bildmotiven kommt dieser Anlass nicht vor (6.4). Vorschlag: Squad-Mitglieder aus Schichtberufen in echten
-Momenten zeigen (Pause um 3 Uhr, Spind, Shaker im Pausenraum), den Raptor als Absender behalten. Gemeint ist
+Momenten zeigen (Pause um 3 Uhr, Spind, Shaker im Pausenraum). *(Bis 23.10.2026 stand hier „den Raptor als Absender
+behalten“ – überholt: Laut Elias' Kommunikationsanalyse ist der Adler „so etwas wie das Maskottchen“; den festen
+Absender regelt Empfehlung 3 auf Folie 11, „Ein Absender, ein Schlüsselbild“ – ein Name, eine Profilfarbe, als
+Schlüsselbild das Produkt in der Hand.)* Gemeint ist
 **ergänzen, nicht ersetzen**: Die Comic-Welt trifft Marcos Stimulanz (§5). Die Schicht ist ein Leitmotiv unter mehreren
 Alltagsmomenten (Nachtschicht, Büro, Sport, Zuhause; Dossier 8 S3, **H**); das passt auch zur Positionierung 2026 [25].
 Erwachsene Alltagsmomente könnten zudem die Kritik abschwächen, die Aufmachung richte sich an Kinder und Jugendliche
@@ -477,8 +506,12 @@ gehört laut Tonalitäts-Hypothese schon zum Markenton (6.7 **H**), die Konseque
 sexuellen Doppeldeutigkeiten (TV-Spot, 6.6 ✔ [25]) bedienen dagegen das Feld Abenteuer und Risiko, für das es bei Marco
 keine Daten gibt; Stimulanz ist ohnehin übererfüllt (+10). **Warum weniger Provokation, wenn Dominanz fehlt?** Es fehlt
 nicht mehr Dominanz, sondern eine andere: Durchhalten statt Rebellion. Witze aus dem Schichtalltag verbinden Spaß mit
-dem Anlass. Vorläufig, bis Lukas' Tonalität (Mi 21.10.; Hypothese „frech-provokant, selbstironisch“, 6.7 **H**) und
-seine echten Interviews zeigen, wie die Provokation ankommt.
+dem Anlass. Vorläufig – bis 23.10.2026 hieß es „bis Lukas' Tonalität (Mi 21.10.; Hypothese ‚frech-provokant,
+selbstironisch‘, 6.7 **H**) und seine echten Interviews zeigen, wie die Provokation ankommt“. *Stand 23.10.2026:* Lukas
+liefert kein Material, echte Interviews gibt es nicht. Die Tonalität im Steuerrad ist „frech · gesellig · wandelbar“
+(Elias' Analogien, Selbstbild); die KI-simulierte Befragung sieht einen „witzigen Kumpel, der verkaufen will“, „frech“
+nennt nur eine von acht simulierten Personen (Fremdbild, Hypothese; `buendel-b/analogien-befragung.md`). Wie die
+Provokation bei echten Kund:innen ankommt, bleibt offen.
 
 **3. Botschaften – „Durchhalten ohne Zucker, Koffein offen nennen“** (Web-Folie: „Durchhalten ohne Zucker“)
 Die Botschaft verbindet Marcos zwei HOLY-spezifisch gestützten Motive: Durchhalten in der Schicht (Dominanz; Anlass laut
@@ -539,7 +572,9 @@ der Koffeinvergiftung eines Kindes (3.4 ✔ [28, 29]). Das ist eine Einschätzun
 - [ ] Bündel C (Elias): Spalten „Anlass“ (K1-Codes) und „Wirkversprechen“ in der Post-Stichprobe, bis So 18.10. (Bitte
   in §1). Schwelle für „Lücke bestätigt“ vor dem Auszählen festlegen; Vorschlag (**A**): Der Anteil Arbeit/Schicht in
   den Posts ist weniger als halb so groß wie in den Bewertungen. Danach die Markengewichte prüfen
-- [ ] Lukas: Bitte um zwei Zusatzfragen in den echten Interviews (Text in §1); er entscheidet
+- [ ] ~~Lukas: Bitte um zwei Zusatzfragen in den echten Interviews (Text in §1); er entscheidet~~ – entfällt
+  (23.10.2026): Lukas liefert kein Material, echte Interviews gibt es nicht; die KI-simulierte Befragung (D25) hat
+  diese Zusatzfragen nicht gestellt
 - [x] Grafik `grafiken/folie-05-limbic-map.svg` + PNG für Backup B1 erstellt (17.10.; Skript
   `grafiken/folie-05-limbic-map.py`); die Folie selbst ist die Web-Folie f05
 - [ ] Web-Präsentation f05 (`praesentation/index.html`): Daten (Gewichte, Typ, Motive, Folgen, Typ-Winkel, `hinweis`),
@@ -567,7 +602,10 @@ der Koffeinvergiftung eines Kindes (3.4 ✔ [28, 29]). Das ist eine Einschätzun
   (P10) ergänzt, Stand-Vermerk in f05 nachgezogen; beim Zusammenführen den Branch von Account 2 beachten
 - [x] (20.10., D18) Zeile „Maskottchen“ in 4.1: Ton laut Analogie Chamäleon statt „Waschbär oder Affe“; Nachtrag
   20.10. in 4.1
-- [ ] Elias: Begründung Chamäleon prüfen (Nachtrag 20.10. in 4.1, Notizen Folie 08) – trifft sie seine Einordnung?
+- [x] ~~Elias: Begründung Chamäleon prüfen (Nachtrag 20.10. in 4.1, Notizen Folie 08)~~ – überholt: seit 22.10.2026
+  begründet Elias selbst (`analogien.md`); seit 23.10.2026 Papagei und Chamäleon gleichwertig
+- [x] (23.10., D26) Raptor- und Tier-Stellen nachgezogen (Kopf, §1, 4.1, §6 Nr. 1–2); Notizen von Folie 05 zieht
+  der Workflow D26 parallel nach (Entscheidung 5 Yannick)
 
 ---
 

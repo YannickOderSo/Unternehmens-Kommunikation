@@ -316,14 +316,14 @@ const SZENARIEN = {
     await abstimmen(H[1].p, 2, 'Chamäleon');
     await abstimmen(H[2].p, 2, 'Chamäleon');
     await folieErwarten(folie, [1, 0, 2, 0, 0], 'drei Stimmen');
-    await abstimmen(H[0].p, 3, 'Fuchs');
-    await folieErwarten(folie, [0, 0, 2, 1, 0], 'Handy 1 entscheidet sich um (Adler → Fuchs), n bleibt 3');
+    await abstimmen(H[0].p, 3, 'Papagei');          /* Option 3: seit 23.10.2026 Papagei (bis 22.10.2026 Fuchs) */
+    await folieErwarten(folie, [0, 0, 2, 1, 0], 'Handy 1 entscheidet sich um (Adler → Papagei), n bleibt 3');
     await bild(folie, 'handys-1-t0.png');
 
     log('  T+20');
     await vor(20);
     await folieErwarten(folie, [0, 0, 2, 1, 0], 'nach 20 Min.: alle drei zählen noch');
-    await handyErwarten(H[0].p, 'Fuchs', 'Handy 1 nach 20 Min.');
+    await handyErwarten(H[0].p, 'Papagei', 'Handy 1 nach 20 Min.');
     await abstimmen(H[2].p, 4, 'Schwan');
     await folieErwarten(folie, [0, 0, 1, 1, 1], 'Handy 3 entscheidet sich bei T+20 um (Chamäleon → Schwan)');
 

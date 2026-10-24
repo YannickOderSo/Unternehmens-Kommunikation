@@ -157,7 +157,9 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 /* Satz zur Aussagezahl (Schritt 1): „sehen HOLY wie wir: / als Chamäleon“ –
    Umbruch vor „als“ statt mitten in „wie wir“ (Breite passt zum Standardsatz
    aus marke.js; geprüft 20.10.2026 in allen drei Themen; bei anderem Satz
-   ggf. anpassen) */
+   ggf. anpassen). Seit Fr, 23.10.2026 mit zwei Tieren drei Zeilen: „sehen
+   HOLY wie wir: / als Papagei oder / Chamäleon“ (geprüft 23.10.2026 in
+   Editorial, Bento und Keynote, hell und dunkel). */
 #f08 .umfrage-aussage .ua-text {
   max-width: 10.4em;
   text-wrap: wrap;
@@ -345,6 +347,68 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
   border-top: 0;
 }
 #f08 .g4-paar.ist-eng .g4-gegenpole { padding-top: var(--abstand-1); }
+
+
+/* ---------------------------------------------------------------------------
+   4b. f08 – ZWEI TIERE GLEICHWERTIG (seit Fr, 23.10.2026)
+   Entscheidung Yannick „So wie Elias das am wahrscheinlichsten wollte“:
+   Papagei und Chamäleon stehen gleichwertig nebeneinander in der Tier-Karte
+   (Daten „tiere“, js/folien/08-analogien.js → tiereKarte), darunter über die
+   ganze Kartenbreite das Selbstbild (Maskottchen Adler). Die Tier-Karte
+   bekommt zwei Drittel der Breite, der Impro-Comedian ein Drittel – so sind
+   die drei Analogien (zwei Tiere, ein Mensch) gleich breit, und ihre Köpfe
+   und Haarlinien liegen auf einer Höhe.
+   Namen kleiner als bei zwei Karten (56 px): In einem Drittel der Bühne
+   passt „Impro-Comedian“ neben der Zeichnung nur in --g4-name-drei (44 px,
+   geprüft in allen drei Themen). Die Spalte der Eigenschaften richtet
+   sich je Tier nach dem längsten Wort (ohne Mindestbreite), damit die
+   Belege möglichst einzeilig bleiben.
+   --------------------------------------------------------------------------- */
+#f08 .g4-paar--tiere {
+  --g4-bild: 84px;
+  --g4-name-drei: 44px;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+#f08 .g4-paar--tiere.ist-eng { --g4-bild: 64px; }
+#f08 .g4-paar--tiere .g4-name { font-size: var(--g4-name-drei); }
+#f08 .g4-paar--tiere .g4-karte-kopf { column-gap: var(--abstand-4); }
+/* zwei Spalten in der Tier-Karte; zwischen ihnen eine feine senkrechte Linie */
+#f08 .g4-tiere {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: calc(2 * var(--karte-polster));
+  min-height: 0;
+}
+#f08 .g4-tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+#f08 .g4-tier + .g4-tier::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: var(--abstand-2);    /* endet über der gestrichelten Zeile, auch ohne freien Platz (Bento) */
+  left: calc(-1 * var(--karte-polster) - var(--linie-fein) / 2);
+  width: var(--linie-fein);
+  background: color-mix(in oklab, var(--f-weich) 24%, transparent);
+}
+/* Zeilen gestapelt – in allen drei Analogien gleich: oben die Eigenschaft
+   (Tier, Titelschrift) bzw. das Merkmal (Mensch, Metaangabe), darunter der
+   Beleg bzw. Wert. Nebeneinander brachen im Drittel der Bühne die Belege
+   um (Bento: „Account „HOLY / Squad®““, „laufend neue / Sorten“; Prüfung
+   23.10.2026). */
+#f08 .g4-paar--tiere .g4-liste--gruende,
+#f08 .g4-paar--tiere .g4-liste--profil { grid-template-columns: minmax(0, 1fr); }
+#f08 .g4-paar--tiere .g4-liste > .g4-zeile {
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 2px;
+}
+/* Selbstbild unter beiden Tieren: Abstand zur letzten Haarlinie */
+#f08 .g4-karte--tiere.hat-gegenpol .g4-tiere { margin-bottom: var(--abstand-3); }
+#f08 .g4-paar--tiere.ist-eng .g4-karte--tiere.hat-gegenpol .g4-tiere { margin-bottom: var(--abstand-1); }
+#f08 .g4-karte--tiere > .g4-gegenpol { grid-template-columns: var(--g4-bild) minmax(0, 1fr); }
 
 
 /* ---------------------------------------------------------------------------
@@ -547,6 +611,11 @@ html.druckmodus #f08 .g4-szene--umfrage { display: none; }
 /* fast gleichauf: Marker rücken leicht über bzw. unter die Linie */
 #f08b .g4t-wb-marker--oben { margin-top: calc(var(--g4t-marker) / -2 - var(--abstand-2)); }
 #f08b .g4t-wb-marker--unten { margin-top: calc(var(--g4t-marker) / -2 + var(--abstand-2)); }
+/* fast auf dem Punkt der Marke (seit 23.10.2026, Skript): Marker weicht so
+   weit aus, dass der Punkt samt Ring seinen Buchstaben nicht verdeckt –
+   zuerst nach unten (oben stehen die Merkmal-Chips) */
+#f08b .g4t-wb-marker--weit-oben { margin-top: calc(var(--g4t-marker) / -2 - 26px); }
+#f08b .g4t-wb-marker--weit-unten { margin-top: calc(var(--g4t-marker) / -2 + 26px); }
 /* Wettbewerber noch nicht erhoben ("beispiel": true): gestrichelter Rand –
    wie alle Beispielwerte der Präsentation */
 #f08b .g4t-wb-marker--beispiel { border-style: dashed; }
@@ -599,7 +668,7 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
    damit die Werte 2,9/2,4/1,6 auf dem Beamer lesbar bleiben – mit 0,6 nur
    2,76 : 1 (VORTRAGSREIFE A5, 21.10.2026). Das globale --dimmen bleibt
    (steuert auch Folie 10). */
-#f08b .g4t:has(.g4t-steuerrad.schritt-an) .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.8; }
+#f08b .g4t:has(.g4t-steuerrad.schritt-an, .g4t-fremdbild.schritt-an) .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.hat-merkmale) { opacity: 0.8; }
 
 
 /* ---------------------------------------------------------------------------
@@ -637,7 +706,8 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
   border-left: 6px solid var(--f-weich);
   background: var(--f-hintergrund);
 }
-#f08b .g4t-steuerrad {
+#f08b .g4t-steuerrad,
+#f08b .g4t-fremdbild {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -648,10 +718,23 @@ html.druckmodus #f08b .g4t-profil:has(.g4t-merkmale.schritt-an) .g4t-zeile:not(.
   line-height: 1.25;
   color: var(--f-text);
 }
-#f08b .g4t-steuerrad li { white-space: nowrap; }
-#f08b .g4t-steuerrad li + li::before {
+#f08b .g4t-steuerrad li,
+#f08b .g4t-fremdbild li { white-space: nowrap; }
+#f08b .g4t-steuerrad li + li::before,
+#f08b .g4t-fremdbild li + li::before {
   content: "·";
   margin: 0 var(--abstand-1);
+  color: var(--f-text-2);
+}
+/* Seit Fr, 23.10.2026: Die Zeile zeigt das KI-simulierte FREMDBILD (Daten
+   „fremdbild“, Klasse .g4t-fremdbild) und geht nicht ins Steuerrad, sondern
+   in den Abgleich auf Folie 10 (Entscheidung Yannick „Rad = Selbstbild,
+   Simulation als Abgleich“). Darunter der Verweis „→ Abgleich mit dem
+   Selbstbild: Folie 10“ als Metaangabe. .g4t-steuerrad bleibt für die alte
+   Form (Daten „steuerrad“) stehen. */
+#f08b .g4t-verweis {
+  font-size: var(--groesse-meta);
+  line-height: 1.25;
   color: var(--f-text-2);
 }
 #f08b .g4t-block {

@@ -52,18 +52,45 @@ Kommunikationsanalyse ──► Markenbild (Ist) + Lücken zwischen Identität u
 Alles ──► Markensteuerrad ──► Positionierung (Satz über dem Rad, Stenger, S. 87, 94) ──► Empfehlungen
 ```
 
+**Seit Fr, 23.10.2026 – so ist es umgesetzt** (Entscheidung Yannick „Rad = Selbstbild, Simulation als Abgleich“,
+KI-Nachweis 135, Workflow D26; [`methoden.md`](methoden.md) §6): Das **Steuerrad zeigt das Selbstbild** – nur
+Stichworte aus HOLYs eigenen Aussagen und Auftritt (Desk Research, Gründerbefragung, Elias' Analogien und
+Kommunikationsanalyse). Repertory Grid, Laddering und Aaker-Bogen liefen als **KI-simulierte Befragung** (acht
+fiktive Befragte, keine echten Interviews; [`buendel-b/`](buendel-b/README.md)); sie zeigen ein **Fremdbild** und
+stehen im Abgleich „Selbstbild ↔ Fremdbild“ auf Folie 10, nicht im Rad. Nach der vorab festgelegten Regel erfüllt kein
+Konstrukt alle Kriterien einer Markeneigenschaft – „ohne Zucker“ und „für jeden Tag“ sind deshalb nur Startpunkte fürs
+Laddering.
+
+```
+Desk Research, Gründerbefragung, Analogien (Elias), Kommunikationsanalyse ──► Markensteuerrad = Selbstbild
+Repertory Grid ──► Startpunkte ──► Laddering ┐
+Aaker-Bogen, Tierfrage (KI-simuliert) ───────┴──► Fremdbild ──► Abgleich mit dem Rad (Folie 10)
+Rad + Konsistenzprüfung + Abgleich ──► Positionierung ──► Empfehlungen
+```
+
 **Stand Do, 22.10.2026:** Analogien und Kommunikationsanalyse stammen aus Elias Knaubers eigenen Ausarbeitungen, nicht
 aus Befragten: [`analogien.md`](analogien.md) (Impro-Comedian, Papagei, Chamäleon) und
 [`kommunikationsanalyse.md`](kommunikationsanalyse.md) (vier Kanäle, eigene Bildschirmaufnahmen vom 20./21.10.2026).
-Beide sind KI-gestützt aus seinen PDFs übertragen; die Freigabe durch Elias und Yannick ist offen.
+Beide sind KI-gestützt aus seinen PDFs übertragen; die Freigabe durch Elias und Yannick ist offen. Seit 23.10.2026
+stehen auf Folie 08 Papagei und Chamäleon gleichwertig (auch in der Live-Abstimmung, Papagei statt Fuchs).
+
+**Stand Fr, 23.10.2026 – Bündel B:** Lukas Welker liefert kein Material mehr. Repertory Grid, Laddering und
+Analogie-Befragung mit Aaker-Bogen sind als **KI-simulierte Befragung** durchgeführt (Workflow D25: acht fiktive
+Befragte T1–T8, je ein eigener Agent, Kontrollgruppe, Rechnung per Skript) – keine echten Interviews, keine
+Kundenstimmen, Ergebnisse sind Hypothesen. Ausarbeitungen (ausgefüllte Vorlagen aus `methoden.md`):
+[`buendel-b/repertory-grid.md`](buendel-b/repertory-grid.md), [`buendel-b/laddering.md`](buendel-b/laddering.md),
+[`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md); Überblick
+[`buendel-b/README.md`](buendel-b/README.md), Entscheidungsvorlage für die Folien
+[`buendel-b/folienvorschlag.md`](buendel-b/folienvorschlag.md). Eingebaut am 23.10.2026 (Folien 06, 07, 08b, B4, B5).
 
 **Identität vs. Image** (Begriffe der Vorlesung seit 21.10.2026, Befund #30): Markenidentität ist die Innensicht –
-„wer und was man sein möchte“; das Markenimage ist, „was wahrgenommen wird“ (Stenger, S. 87; bei uns bisher auch
+„wer und was man sein möchte“; das Markenimage ist, „was wahrgenommen wird“ (Stenger, S. 87; bei uns auch
 *Selbstbild* / *Fremdbild*). Die Aufgabe ordnet Repertory Grid, Laddering, Analogien und Kommunikationsanalyse der
-Markenidentität zu (S. 60); weil Repertory Grid und Laddering die Zielgruppe fragen – bisher vor allem simuliert, echte
-Kurzinterviews geplant –, prüfen sie zugleich, ob die Identität ankommt; das ist das Markenimage. Diesen
-Unterschied kurz benennen und beide Sichten gegenüberstellen (Selbstdarstellung auf Website / im Geschäftsbericht vs.
-Wahrnehmung der Persona). Das zeigt Problemverständnis.
+Markenidentität zu (S. 60). Repertory Grid und Laddering fragen aber die Zielgruppe – bei uns KI-simuliert – und zeigen
+damit ein Fremdbild. Seit 23.10.2026 trennen wir das sichtbar: Das Steuerrad zeigt das Selbstbild, die Befragungen
+stehen im Abgleich auf Folie 10 (Entscheidung Yannick; `methoden.md` §6). Diesen Unterschied kurz benennen und beide
+Sichten gegenüberstellen (Selbstdarstellung auf Website und Kanälen vs. simulierte Wahrnehmung). Das zeigt
+Problemverständnis.
 
 ## Folienplan (15 Minuten)
 
@@ -115,7 +142,8 @@ Alle KI-Prompts (an Claude Code, an Unteragenten und in anderen Tools) werden im
 **Analyse & Argumentation (20 %)**
 - [ ] Jede Aussage im Markensteuerrad lässt sich auf eine Analyse zurückführen
 - [ ] Daten und Annahmen sind getrennt gekennzeichnet
-- [ ] KI-Ergebnisse geprüft (Quellen, echte Interviews) und Grenzen benannt
+- [ ] KI-Ergebnisse geprüft (Quellen) und Grenzen benannt – echte Interviews gibt es nicht; die KI-simulierte
+      Befragung ist überall als „KI-simuliert“ gekennzeichnet (Stand 23.10.2026)
 
 **Qualität der Lösung / Empfehlung (15 %)**
 - [ ] Markensteuerrad ist in sich stimmig (keine widersprüchlichen Felder)

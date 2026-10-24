@@ -1,7 +1,8 @@
 # Live-Abstimmung einrichten – Schritt für Schritt
 
-Für: Yannick · Dauer: ca. 10 Minuten · Stand: 21.10.2026 (Zeitfenster: Stimmen zählen 30 Minuten, seit 20.10.;
-Kurzprüfung der Uhrzeit in beiden Richtungen, 21.10.; Chamäleon statt Waschbär in den Beispielen)
+Für: Yannick · Dauer: ca. 10 Minuten · Stand: 23.10.2026 (Zeitfenster: Stimmen zählen 30 Minuten, seit 20.10.;
+Kurzprüfung der Uhrzeit in beiden Richtungen, 21.10.; Chamäleon statt Waschbär in den Beispielen; Papagei statt Fuchs,
+23.10.)
 Gebraucht wird: ein **privates Google-Konto** (Gmail), ein Laptop mit Chrome, ein Handy.
 
 > **Schon eingerichtet? Jetzt nötig:** den Abschnitt [„Skript aktualisieren (neue Fassung)“](#skript-aktualisieren-neue-fassung)
@@ -13,10 +14,14 @@ Gebraucht wird: ein **privates Google-Konto** (Gmail), ein Laptop mit Chrome, ei
 
 ## Worum es geht
 
-Auf Folie 08 fragen wir: „Wenn HOLY ein Tier wäre – welches?“ (Adler, Löwe, Chamäleon, Fuchs, Schwan).
-Seit 20.10.2026 steht das Chamäleon an der Stelle des Waschbärs (Nummer 2). Skript und Tabelle speichern nur die
-Nummer des Tiers – an der Web-App ändert sich dafür nichts. Probestimmen mit Nummer 2 aus der Zeit davor zählen
-jetzt als Chamäleon; im Vortrag zählen sie ohnehin nicht (eigene Runde, Abschnitt „Vor dem Vortrag“).
+Auf Folie 08 fragen wir: „Wenn HOLY ein Tier wäre – welches?“ (Adler, Löwe, Chamäleon, Papagei, Schwan).
+Seit 20.10.2026 steht das Chamäleon an der Stelle des Waschbärs (Nummer 2), seit 23.10.2026 der Papagei an der
+Stelle des Fuchses (Nummer 3; Entscheidung Yannick: Papagei und Chamäleon gleichwertig als unsere Analyse, nach
+Elias Knauber). Skript und Tabelle speichern nur die Nummer des Tiers – an der Web-App ändert sich dafür nichts,
+sie muss auch nicht neu bereitgestellt werden (die Namen kommen aus `marke.js` auf GitHub). Probestimmen mit
+Nummer 2 bzw. 3 aus der Zeit davor zählen jetzt als Chamäleon bzw. Papagei; im Vortrag zählen sie ohnehin nicht
+(eigene Runde, Abschnitt „Vor dem Vortrag“). Damit die Handys den Papagei sehen, muss die neue `marke.js` (und
+`js/abstimmen.js` mit der Papagei-Zeichnung) auf GitHub stehen.
 
 1. Das Publikum scannt den **QR-Code** auf Folie 08 und landet auf unserer Abstimmseite (`abstimmen.html`).
 2. Ein Tipp auf ein Tier schickt die Stimme an eine kleine **Web-App** im eigenen Google-Konto (dieses
@@ -159,7 +164,7 @@ die Web-App-URL ersetzen:
 Kommt im privaten Fenster eine **Google-Anmeldung** statt `{"ok":…}`: Schritt 5, „Wer hat Zugriff“ auf
 **Jeder** stellen (Bereitstellungen verwalten → Bearbeiten → Neue Version → Bereitstellen).
 
-Option = Nummer des Tiers ab 0: 0 Adler · 1 Löwe · 2 Chamäleon · 3 Fuchs · 4 Schwan.
+Option = Nummer des Tiers ab 0: 0 Adler · 1 Löwe · 2 Chamäleon · 3 Papagei · 4 Schwan (bis 22.10.2026: 3 Fuchs).
 
 **Mit dem Handy** (am besten über **mobile Daten**, nicht WLAN – so wie das Publikum):
 

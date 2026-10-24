@@ -743,7 +743,7 @@ function ereignisBauen(parameter) {
    2. PRÜFUNGEN
    ============================================================================= */
 
-const OPT = ['Adler', 'Löwe', 'Chamäleon', 'Fuchs', 'Schwan'];   // wie marke.js → umfragen.tier.optionen (seit 20.10.2026 Chamäleon statt Waschbär); hier zählt nur die Anzahl
+const OPT = ['Adler', 'Löwe', 'Chamäleon', 'Papagei', 'Schwan'];   // wie marke.js → umfragen.tier.optionen (seit 20.10.2026 Chamäleon statt Waschbär, seit 23.10.2026 Papagei statt Fuchs); hier zählt nur die Anzahl
 const N = String(OPT.length);
 const KOPF = ['Zeit', 'Runde', 'Umfrage', 'Option', 'Geraet'];
 const FORMATE = ['dd.mm.yyyy hh:mm:ss', '@', '@', '0', '@'];
@@ -1366,7 +1366,7 @@ export function pruefungen(quelltextVorgabe) {
     const u0 = s2.uhr.anhalten();
     stimme(s2, 'geraet-bbbb', 1);                    /* u0: Löwe */
     s2.uhr.anhalten(u0 + 30 * MIN - 1000);
-    stimme(s2, 'geraet-bbbb', 3);                    /* 1 s vor Ablauf umentschieden → Fuchs */
+    stimme(s2, 'geraet-bbbb', 3);                    /* 1 s vor Ablauf umentschieden → Papagei (bis 22.10.2026 Fuchs) */
     assert.deepEqual(fensterStand(s2, 30).daten.werte, [0, 0, 0, 1, 0], 'kurz vor Ablauf umentschieden: neue Wahl, n = 1');
     s2.uhr.anhalten(u0 + 30 * MIN + 1000);
     assert.deepEqual(fensterStand(s2, 30).daten.werte, [0, 0, 0, 1, 0], 'nach Ablauf der ersten Stimme zählt die neue weiter');

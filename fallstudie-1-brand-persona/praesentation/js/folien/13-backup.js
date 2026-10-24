@@ -292,6 +292,16 @@
      Folie 06) und |M − I| (Ideal-Distanz) und prüft die drei Kriterien.
      Attribut = alle drei erfüllt. Funktioniert mit 1 bis beliebig vielen
      Wettbewerbern.
+     Seit 23.10.2026 (KI-simulierte Befragung, Entscheidung E15 in
+     ../buendel-b/folienvorschlag.md, Variante a): Bringt ein Konstrukt die
+     fertigen Felder "differenzierung" und "idealDistanz" mit (Werte aus
+     repertory-grid-ergebnis.csv), zeigt die Tabelle DIESE Werte mit zwei
+     Stellen und vergleicht sie ungerundet mit den Schwellen. Grund: Die
+     Mittel im JSON sind schon gerundet; eine Rechnung daraus und das Runden
+     vor dem Vergleich ließen K09 (0,98) und K08 (0,97) als „1,0“ und
+     „erfüllt“ erscheinen. Ohne die Felder rechnet das Skript wie bisher.
+     Hinweis-Pillen bekommen eine Klasse nach ihrem Text (z. B.
+     bk4-pille--startpunkt), damit „Startpunkt“ anders aussieht als „Hürde“.
      --------------------------------------------------------------------------- */
   function gridBauen(ctx) {
     var d = ctx.daten, f = ctx.folie, ziel = platz(f, 'grid');
@@ -346,10 +356,14 @@
         if (w[e.kuerzel] !== undefined) { summe += Number(w[e.kuerzel]); anzahl++; }
       });
       var schnitt = anzahl ? summe / anzahl : NaN;
-      var abstand = Math.abs(m - schnitt);
-      var idealDistanz = Math.abs(m - i);
-      /* gerundet vergleichen – so, wie die Werte auf der Folie stehen */
-      var r = function (x) { return Math.round(x * 10) / 10; };
+      /* fertige Kennwerte aus der CSV (seit 23.10.2026) – sonst selbst rechnen */
+      var fertig = typeof k.differenzierung === 'number' && typeof k.idealDistanz === 'number';
+      var abstand = fertig ? k.differenzierung : Math.abs(m - schnitt);
+      var idealDistanz = fertig ? k.idealDistanz : Math.abs(m - i);
+      var stellen = fertig ? 2 : 1;
+      /* ohne fertige Werte gerundet vergleichen – so, wie die Werte auf der
+         Folie stehen; mit fertigen Werten ungerundet (wie die Auswahlregel) */
+      var r = function (x) { return fertig ? x : Math.round(x * 10) / 10; };
       var okN = k.nennungen >= nMin;
       var okAbstand = r(abstand) >= abstandMin;
       var okIdeal = r(idealDistanz) <= idealMax;
@@ -367,11 +381,15 @@
         var kl = 'bk4-el zahl' + (e.rolle === 'marke' ? ' bk4-el--marke' : '') + (e.rolle === 'ideal' ? ' bk4-el--ideal' : '');
         zelle(tr, 'td', kl, w[e.kuerzel] === undefined ? '–' : zahl(w[e.kuerzel]));
       });
-      zelle(tr, 'td', 'bk4-wert bk4-wert--erst zahl' + (okAbstand ? '' : ' ist-verfehlt'), zahl(abstand));
-      zelle(tr, 'td', 'bk4-wert zahl' + (okIdeal ? '' : ' ist-verfehlt'), zahl(idealDistanz));
+      zelle(tr, 'td', 'bk4-wert bk4-wert--erst zahl' + (okAbstand ? '' : ' ist-verfehlt'), zahl(abstand, stellen));
+      zelle(tr, 'td', 'bk4-wert zahl' + (okIdeal ? '' : ' ist-verfehlt'), zahl(idealDistanz, stellen));
       var erg = zelle(tr, 'td', 'bk4-ergebnis', null);
       if (istAttribut) u.element('span', { class: 'bk4-pille bk4-pille--attribut' }, 'Attribut', erg);
-      else if (k.hinweis) u.element('span', { class: 'bk4-pille bk4-pille--hinweis' }, text(k.hinweis), erg);
+      else if (k.hinweis) {
+        /* Klasse nach dem Text, z. B. „Startpunkt“ → bk4-pille--startpunkt */
+        var art = String(k.hinweis).toLowerCase().replace(/[^a-zäöüß]+/g, '-').replace(/^-|-$/g, '');
+        u.element('span', { class: 'bk4-pille bk4-pille--hinweis bk4-pille--' + art }, text(k.hinweis), erg);
+      }
       else u.element('span', { class: 'bk4-pille bk4-pille--nein' }, '–', erg);
     });
     ziel.appendChild(t);
@@ -415,6 +433,18 @@
 
   /* ---------------------------------------------------------------------------
      B5 · Laddering: Leitern, Codierung, Implikationsmatrix, stärkste Leiter
+     Seit 23.10.2026 (KI-simulierte Leitern, Entscheidung E4 in
+     ../buendel-b/folienvorschlag.md):
+       • Verbindungen INNERHALB einer Ebene (z. B. „kein Zuckerabsturz →
+         konzentriert, keine Fehler“) bekommen in der Matrix einen eigenen
+         Block („funktional → funktional“); bis dahin fehlten sie.
+       • Die stärkste Leiter muss nicht mehr genau ein Glied je Ebene haben:
+         Sie beginnt bei einem Attribut und endet bei einem Wert, dazwischen
+         beliebig viele Glieder (ohne Kreis). Bis dahin fand das Skript nur
+         Ketten mit genau vier Gliedern – bei fünf keine.
+       • Markiert wird jede Leiter, die die stärkste Kette AM STÜCK enthält
+         (auch mit weiteren Gliedern danach, z. B. T7 … → Selbstachtung).
+       • "einheit" (optional) = Wort in der Cut-off-Zeile, z. B. „Leitern“.
      --------------------------------------------------------------------------- */
   function ladderingBauen(ctx) {
     var d = ctx.daten, f = ctx.folie;
@@ -431,20 +461,20 @@
     var anzahl = {};
     d.verbindungen.forEach(function (v) { anzahl[v.von + '>' + v.nach] = Number(v.anzahl) || 0; });
 
-    /* Stärkste Leiter: Kette über alle Ebenen, deren schwächste Verbindung am
-       häufigsten genannt wurde (bei Gleichstand zählt die Summe). */
+    /* Stärkste Leiter: Kette vom Attribut bis zu einem Wert, deren
+       schwächste Verbindung am häufigsten vorkommt (bei Gleichstand zählt
+       die Summe). Knoten, die schon in der Kette sind, werden übersprungen. */
     var staerkste = null;
+    var oberste = ebenenReihe.length - 1;
     function suchen(kette, minimum, summe) {
       var letzter = kette[kette.length - 1];
-      var weiter = d.verbindungen.filter(function (v) { return v.von === letzter && v.anzahl >= cutoff; });
-      if (!weiter.length) {
-        if (kette.length === ebenenReihe.length &&
-            (!staerkste || minimum > staerkste.minimum || (minimum === staerkste.minimum && summe > staerkste.summe))) {
-          staerkste = { kette: kette.slice(), minimum: minimum, summe: summe };
-        }
-        return;
+      if (ebeneIndex(letzter) === oberste && kette.length > 1 &&
+          (!staerkste || minimum > staerkste.minimum || (minimum === staerkste.minimum && summe > staerkste.summe))) {
+        staerkste = { kette: kette.slice(), minimum: minimum, summe: summe };
       }
-      weiter.forEach(function (v) {
+      d.verbindungen.filter(function (v) {
+        return v.von === letzter && v.anzahl >= cutoff && kette.indexOf(v.nach) < 0 && ebeneIndex(v.nach) >= ebeneIndex(letzter);
+      }).forEach(function (v) {
         suchen(kette.concat(v.nach), Math.min(minimum, v.anzahl), summe + v.anzahl);
       });
     }
@@ -454,9 +484,16 @@
     if (staerkste) {
       for (var s = 0; s < staerkste.kette.length - 1; s++) staerksteKanten[staerkste.kette[s] + '>' + staerkste.kette[s + 1]] = true;
     }
+    /* enthält die Leiter die stärkste Kette am Stück? */
     var gleicheKette = function (kette) {
-      return staerkste && kette.length === staerkste.kette.length &&
-        kette.every(function (id, i) { return id === staerkste.kette[i]; });
+      if (!staerkste) return false;
+      var n = staerkste.kette.length;
+      for (var a = 0; a + n <= kette.length; a++) {
+        var passt = true;
+        for (var b = 0; b < n; b++) if (kette[a + b] !== staerkste.kette[b]) { passt = false; break; }
+        if (passt) return true;
+      }
+      return false;
     };
 
     /* --- Leitern (Auszug) --- */
@@ -484,7 +521,12 @@
         }, null, p);
         var kz = zelle(tr, 'td', 'bk5-kette', null);
         l.kette.forEach(function (id, i) {
-          if (i) u.element('span', { class: 'bk5-pfeil', 'aria-hidden': 'true' }, '→', kz);
+          if (i) {
+            u.element('span', { class: 'bk5-pfeil', 'aria-hidden': 'true' }, '→', kz);
+            /* Umbruchstelle nach dem Pfeil (seit 23.10.2026: Leitern mit fünf
+               bis sechs Gliedern passen nicht in eine Zeile) – ohne Breite */
+            kz.appendChild(document.createTextNode('​'));
+          }
           var e = ebeneIndex(id);
           u.element('span', { class: 'bk5-glied bk5-glied--' + (e < 0 ? 'x' : e) }, knoten[id] ? text(knoten[id].text) : id, kz);
         });
@@ -506,23 +548,25 @@
       zc.appendChild(tc);
     }
 
-    /* --- Implikationsmatrix: je Ebenenpaar ein Block (Zeilen = von, Spalten = nach) --- */
+    /* --- Implikationsmatrix: je Ebenenpaar ein Block (Zeilen = von, Spalten = nach) ---
+       Reihenfolge: (Ebene e innerhalb, falls es solche Verbindungen gibt),
+       dann e → e+1. Der Block „innerhalb“ zeigt nur Knoten, die dort
+       Verbindungen haben (Zeilen = Quellen, Spalten = Ziele). */
     var zm = platz(f, 'matrix');
     if (zm) {
-      var tm = neueTabelle('bk5-matrix', 'Implikationsmatrix: Zahl der direkten Verbindungen zwischen benachbarten Ebenen');
-      for (var e = 0; e < ebenenReihe.length - 1; e++) {
-        var von = d.knoten.filter(function (k) { return k.ebene === ebenenReihe[e]; });
-        var nach = d.knoten.filter(function (k) { return k.ebene === ebenenReihe[e + 1]; });
-        var block = u.element('tbody', { class: 'bk5-block', 'data-animation': 'einblenden', 'data-verzoegerung': String(120 * e) }, null, tm);
+      var tm = neueTabelle('bk5-matrix', 'Implikationsmatrix: Zahl der direkten Verbindungen zwischen benachbarten Ebenen und innerhalb einer Ebene');
+      var blockNr = 0;
+      var blockBauen = function (e, e2, von, nach) {
+        var block = u.element('tbody', { class: 'bk5-block' + (e === e2 ? ' bk5-block--innen' : ''), 'data-animation': 'einblenden', 'data-verzoegerung': String(120 * blockNr++) }, null, tm);
         /* Kopfzeile des Blocks: Ebene links oben, Ziel-Knoten als Spalten */
         var kz2 = u.element('tr', { class: 'bk5-blockkopf' }, null, block);
         /* Ecke: „von → nach“ in Kurzform (Daten: ebenen[].kurz), voller Name für Screenreader */
         var ecke = zelle(kz2, 'th', 'bk5-ecke', null);
         ecke.setAttribute('scope', 'col');
-        ecke.setAttribute('aria-label', d.ebenen[e].name + ' zu ' + d.ebenen[e + 1].name);
+        ecke.setAttribute('aria-label', e === e2 ? d.ebenen[e].name + ' innerhalb der Ebene' : d.ebenen[e].name + ' zu ' + d.ebenen[e2].name);
         u.element('span', { class: 'bk5-ecke-von bk5-glied--' + e }, (d.ebenen[e].kurz || d.ebenen[e].name) + ' →', ecke);
         nach.forEach(function (k) {
-          var th = zelle(kz2, 'th', 'bk5-ziel bk5-glied--' + (e + 1), k.text);
+          var th = zelle(kz2, 'th', 'bk5-ziel bk5-glied--' + e2, k.text);
           th.setAttribute('scope', 'col');
         });
         von.forEach(function (k) {
@@ -540,11 +584,39 @@
             if (!n) c.setAttribute('aria-label', 'keine Verbindung');
           });
         });
+      };
+      /* "matrixKompakt": true (seit 23.10.2026, B5 mit KI-simulierten Daten):
+         Zeilen und Spalten eines Blocks ohne jede Verbindung entfallen –
+         sonst passt die Matrix mit vier funktionalen Knoten nicht auf die
+         Folie. Steht in den Notizen; fehlende Paare bleiben 0. */
+      var kompakt = !!d.matrixKompakt;
+      var mitVerbindung = function (von, nach, seite) {
+        if (!kompakt) return seite === 'von' ? von : nach;
+        return (seite === 'von' ? von : nach).filter(function (k) {
+          return (seite === 'von' ? nach : von).some(function (z) {
+            return seite === 'von' ? anzahl[k.id + '>' + z.id] : anzahl[z.id + '>' + k.id];
+          });
+        });
+      };
+      for (var e = 0; e < ebenenReihe.length; e++) {
+        var aufEbene = d.knoten.filter(function (k) { return k.ebene === ebenenReihe[e]; });
+        var innen = d.verbindungen.filter(function (v) { return ebeneIndex(v.von) === e && ebeneIndex(v.nach) === e; });
+        if (innen.length) {
+          var quellen = aufEbene.filter(function (k) { return innen.some(function (v) { return v.von === k.id; }); });
+          var ziele = aufEbene.filter(function (k) { return innen.some(function (v) { return v.nach === k.id; }); });
+          blockBauen(e, e, quellen, ziele);
+        }
+        if (e < ebenenReihe.length - 1) {
+          var naechste = d.knoten.filter(function (k) { return k.ebene === ebenenReihe[e + 1]; });
+          var zeilen = mitVerbindung(aufEbene, naechste, 'von');
+          var spalten = mitVerbindung(aufEbene, naechste, 'nach');
+          if (zeilen.length && spalten.length) blockBauen(e, e + 1, zeilen, spalten);
+        }
       }
       zm.appendChild(tm);
     }
     var co = platz(f, 'cutoff');
-    if (co) co.textContent = 'ab ' + cutoff + ' Nennungen → in die HVM (Folie 07)';
+    if (co) co.textContent = 'ab ' + cutoff + ' ' + text(d.einheit || 'Nennungen') + ' → in die HVM (Folie 07)';
   }
 
 

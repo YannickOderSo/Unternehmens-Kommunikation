@@ -1649,3 +1649,70 @@ eintragen, dann committen und pushen (Hauptsitzung) – `../buendel-b/` getrennt
 | `live-abstimmung-test.mjs`, `referent-test.mjs` | 53 von 53 bzw. 43 von 43 bestanden (`_test/ab-live.log`, `_test/ab-referent/`). |
 | Exporte (Abschnitt 15) | **neu erzeugt mit Elias' Material** (Freigabe Yannick/Elias offen): `praesentation.pdf` 22 Seiten (ohne 01b, Zuordnung PDF-Seite ↔ Folie unverändert, LIESMICH 11), `folien/<id>.png` 23 Bilder 1920 × 1080, `uebersicht.png` mit Stand 22.10.2026; je 0 Fehler, 0 externe Anfragen. Sichtbar anders als am 21.10.: 08, 09, 09b, 10, 11, B6, B7, B8. Folie 02 zeigt die Methodenkarten („KI + Kurzinterviews“, „KI hilft codieren“) nur in Zwischenschritten – im Export nicht zu sehen, im Vortrag schon (gesperrt, Yannick). |
 
+
+## 24. KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon (Fr, 23.10.2026)
+
+**Auftrag:** Yannick, KI-Nachweis 135 – Antworten auf vier Rückfragen, nachdem Lukas Welker (Bündel B) kein Material
+mehr liefert und Workflow D25 eine **KI-simulierte Befragung** erstellt hat (`../buendel-b/`: acht fiktive Befragte
+T1–T8, je ein eigener Agent, Kontrollgruppe, Codierung KI-gestützt, Rechnung per Skript; keine echten Interviews).
+Wörtlich: (1) Folien 06, 07, 08b: „Ehrlich einbauen“; (2) Folie 10: „Rad = Selbstbild, Simulation als Abgleich“;
+(3) Folie 08 und Live-Abstimmung: „So wie Elias das am wahrscheinlichsten wollte mit seinen Notizen“; (4) „selbst
+anrühren“: „Nur im Sprechtext“. Dazu (5) Querverweise nachziehen (bis 22.10. gesperrt). Workflow D26 (Account 1):
+zwei Bau-Agenten (Folie 08 und Abstimmung; 06, 07, B4, B5), ein Synthese-Agent für Folie 10, 11, 12, 02, 05 (Notizen),
+B1, B2, B7, B8 und ein Doku-Agent, danach Prüfung und Nacharbeit. Der Lauf ist mehrfach am Nutzungslimit abgebrochen
+und fortgesetzt worden (KI-Nachweis 136–142); laut Hinweis in den Aufträgen prüft ein neu gestarteter Agent zuerst
+den Stand per `git diff` und übernimmt, was schon umgesetzt ist, statt es doppelt einzufügen.
+
+**Regeln des Einbaus:** Zahlen nur aus `../buendel-b/auswertung/*.csv` (bzw. `hvm.json`) und Elias' Material bzw. dem
+Dossier – nichts neu gerechnet oder geschätzt. Überall „KI-simuliert“, nie „Befragte sagen“ ohne Zusatz, keine
+Signifikanz, keine Repräsentativität. Folie 01, 03, 04, 09, 09b sichtbar unverändert, Folie 05 nur Notizen. Keine
+Namen von KI-Modellen in Dateien. `index.html` wurde von mehreren Agenten **parallel** bearbeitet – jeder nur in
+seinen Folienabschnitten und nur mit dem Edit-Werkzeug (kein Neuschreiben der Datei). `marke.js`: nur `optionen` und
+`unsereAntwort` der Umfrage; `runde`, `liveQuelle`, `gueltigMinuten` unverändert. Das Google-Skript speichert nur die
+Nummer – dort nichts geändert. Kein Commit durch die Agenten; `../../ki-nachweis/` und `../buendel-b/rohdaten/`
+unverändert. Vorlage: `../buendel-b/folienvorschlag.md` (Kopfvermerk „umgesetzt am 23.10.2026“ mit den
+Abweichungen).
+
+### Bau (D26)
+
+| Bereich | Änderung |
+|---|---|
+| Folie 06 (`index.html`) | Pille „KI-simuliert“, Titel „HOLY hebt sich ab – aber vor allem durch Hürden“ (E1), acht Konstrukte mit erfüllter Relevanz, stärkster Wettbewerber Coca-Cola Zero, Triade 4 (HOLY, Coca-Cola Zero ↔ Monster). Ergebnisbereich „Fremdbild (KI-simuliert)“ mit „keine Markeneigenschaft – kein Konstrukt erfüllt alle drei Kriterien“ und Übergabezeile „Abgleich Folie 10“ (Daten `ergebnisTitel`, `uebergabe`, `fremdbild` [„Cola Zero“]). Chips „Hürde“ bei vier Konstrukten, Startpunkte ohne Chip (E2, E16). Fußzeile „KI-simulierte Befragung, n = 8 (T1–T8), keine echten Interviews · Mittelwerte per Skript · nach Kelly (1955)“. Sprechtext 149 Wörter ≈ 78 s (Soll 80 s) mit „selbst anrühren“ als stärkster Hürde quer zum Markenkern und Verweis auf Folie 10; Rückfragen u. a. „Warum KI-simulierte Befragte?“ (Stenger, S. 60, 78), „Warum fehlt ‚selbst anrühren‘?“. Wortbudget 60 (Warnung, bewusst). |
+| Folie 07 | Pille, Titel „Ohne Zucker → kein Absturz → verlässlich sein“ (E3), HVM aus `hvm.json` (stärkste Leiter 6 · 5 · 5 · 2), Nutzen-Kästen mit „Fremdbild (KI-simuliert) → Abgleich Folie 10“ (`uebergabe`, `fremdbild` [„verlässlich“], `einheit` „Leitern“). Fußzeile „KI-simulierte Laddering-Interviews, n = 8 (T1–T8), 10 Leitern, keine echten Interviews …“. Sprechtext 165 Wörter ≈ 87 s (Soll 90 s); Schritt 4 „Markennutzen als Fremdbild“. |
+| `js/folien/06-repertory-grid.js`, `07-laddering.js` und CSS | 06: Übergabezeile, Bildschirmleser „KI-simuliert“, Triaden-Karten 150 px (Bento brach „Monster“ um), Konsolenprüfung „Abgleich mit Folie 10“ (Stichworte mit Quelle RG im Rad, fehlende `fremdbild`-Wörter auf 10). 07 (E4): Verbindungen innerhalb einer Ebene als flacher Bogen **unter** den Knoten mit Pfeilspitze; volle Ebenen stufenweise enger; unbekannte Verbindungen meldet die Konsole; Felder `einheit`, `uebergabe`; Prüfung wie 06 für Quelle LA. |
+| B4, B5 (`index.html`, `js/folien/13-backup.js`, CSS) | B4: Titel „Kein Konstrukt erfüllt alle drei Kriterien“, zwölf Konstrukte; E15 Variante a – die fertigen Werte `differenzierung` und `idealDistanz` aus der CSV mit zwei Stellen, ungerundet verglichen (ohne sie rechnet das Skript wie bisher); Pille „Startpunkt“ neutral; Fußzeile ohne Skriptnamen. B5: Titel nach §8, Legende „alle KI-simuliert“, eigener Matrix-Block für Verbindungen innerhalb einer Ebene, stärkste Leiter mit beliebig vielen Gliedern (markiert T2, T7), `matrixKompakt`, Cut-off „ab 2 Leitern“. |
+| Folie 08 (`index.html`) | Titel ab Schritt 2 „HOLY wäre Papagei und Chamäleon, kein Adler“ (einzeilig in allen Themen). Neue Daten `marke.tiere`: Papagei (gesellig – Account „[Marke] Squad®“, bunt – Tier-Illustrationen), Chamäleon (wandelbar – fünf Produktlinien, kreativ – laufend neue Sorten), `selbstbild` Adler; Comedian mit Humor zuerst („selbstironisch, frech“). Sprechtext 114 Wörter ≈ 60 s (Zeitangaben 76 s gegen 70 s Soll; Kürzungsvorrat im Kommentar) – nur Schritt 2 nennt den KI-simulierten Befund (Papagei 5 von 8, Chamäleon nie); neue Rückfragen (Papagei statt Fuchs, zwei Tiere); Hintergrund mit Abgleich. Fußzeile unverändert. |
+| Folie 08b | Pille „KI-simuliert“, Titel „HOLY wirkt wie ein witziger Kumpel – der verkaufen will“ (E7, zweizeilig), Daten aus `aaker-folie-08b.csv` und `analogien-haeufigkeiten.csv`; neue Felder `kennzeichnung`, `legendeHinweis`, `fremdbild` statt `steuerrad`. Ergebnisbereich „Fremdbild (KI-simuliert)“ mit „→ Abgleich mit dem Selbstbild: Folie 10“ (Symbol „Vergleich“). Fußzeile „KI-simulierte Befragung, n = 8 (T1–T8; waterdrop n = 4) …“. Sprechtext 99 Wörter ≈ 52 s. Wortbudget 41 (wie vorher). |
+| `js/folien/08-analogien.js`, CSS | f08: `tiereKarte` (mehrere Tiere gleichwertig, Selbstbild darunter); `abgleich()` prüft mehrere Tiere (`unsereAntwort` als Text oder Liste, Reihenfolge egal); neu `tonalitaetAbgleich` (Wörter im Feld Tonalität auf Folie 10 müssen auf 08 stehen). f08b: Fremdbild-Zeile, `fremdbildAbgleich` (Leitwort im Titel von 08b und auf Folie 10); Wettbewerber-Marker, die fast auf dem HOLY-Punkt liegen, rücken unter oder über die Linie. Die alten Datenformen (`tier`, `weiteresTier`, `steuerrad`) werden weiter gelesen. CSS: Tier-Karte zwei Drittel, Comedian ein Drittel. |
+| Live-Abstimmung | `marke.js`: `optionen` Adler, Löwe, Chamäleon, **Papagei**, Schwan (Papagei an der Stelle des Fuchses, Nummer 3), `unsereAntwort: ['Papagei', 'Chamäleon']`. `js/komponenten.js` (Baustein `umfrage`): `unsereAntwort` als Text **oder** Liste, jede Antwort umrahmt und als „Unsere Analyse“ markiert, die Aussagezahl zählt alle Antworten zusammen und rundet erst die Summe („x % … als Papagei oder Chamäleon“; Nullfall „Papagei oder Chamäleon: keine Stimme“). `js/abstimmen.js`: Papagei-Zeichnung in `BILDER`. Tests `werkzeuge/live-abstimmung-test.mjs` (Optionen) und `zeitfenster-e2e.mjs` (Handys stimmen für den Papagei) angepasst; `live-abstimmung/ANLEITUNG.md` Stand 23.10.2026. |
+| Folie 10 | **Parallel gebaut** (Synthese-Schritt; Stand beim Abgleich der Doku am 23.10.2026, Prüfung durch den Synthese-Schritt und die Gruppe offen): Rad = Selbstbild – Markeneigenschaften „zuckerfrei“ DR, „Community-nah“ KA, „Energy: 160 mg Koffein“ DR; Nutzen „Genuss ohne Zucker“, „gutes Gewissen“ DR, „dazugehören“ KA (GB stützt); Tonalität „frech · gesellig · wandelbar“ AN; keine Quelle RG oder LA mehr. Neuer Schritt 9 „Abgleich · Selbstbild ↔ Fremdbild“ (Daten `vergleich`, Methodenknöpfe zu 06, 07, 08b, 08): „zuckerfrei ≠ Cola Zero knapp vorn“, „Genuss mit gutem Gewissen ≠ kein Absturz → verlässlich sein“, „frech ≠ witziger Kumpel, der verkaufen will“, „Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie“; der Wortwolken-Abgleich ist jetzt Schritt 10. Pille „teils KI-simuliert“, Fußzeile zweizeilig (Selbstbild / Abgleich). Lücken und Titel unverändert. Sprechtext 146 Wörter ≈ 77 s (Soll 75 s; vorher ≈ 186 Wörter ≈ 98 s), davon Abgleich 40 Wörter; „selbst anrühren“ nur dort und in der Rückfrage. Wortlaut und offene Entscheidungen („≈ teils“ statt „=“, „knapp vorn“ statt „gleichauf“) im Kasten „FOLIE 10“. |
+| Folie 11, 12, 02, 05 (Notizen), B1, B2, B7, B8 | **Parallel gebaut** (Synthese-Schritt, Entscheidung 5). Beim Abgleich der Doku eingebaut: **02** – Methodenkarten „Triaden: KI-simuliert, keine Interviews“, „Means-End-Chain: KI-simuliert, keine Interviews“, „Mensch, Tier: Selbstbild · Aaker: KI-simuliert“, „Vier Kanäle, eigene Bildschirmaufnahmen“, Sprechtext Klick 3 und Rückfragen (Titel offen); **11** – Pille „Beispieldaten“ gelöscht, Belege und Rückfragen (Titel, Befunde, Empfehlungen unverändert); **12** – Pille gelöscht, Sprungliste „Fremdbild (Aaker)“, Notizen mit Sprungzielen. Noch in Arbeit: Notizen **05** („Raptor bleibt Absender“, „Comic-Tiere, 31 Energy-Sorten“ → aktueller Stand), **B1** (ohne „teils geplant“, keine Interviews), **B2** (P7–P11 als echte Läufe D25), **B7/B8** (Quellen). Einzelheiten in den Kästen. |
+| Doku (Doku-Agent) | `../folienentwuerfe.md` (Status; Folie 2, neue Einträge 6, 7, 8b, 12, B4, B5; Folie 8 und 10 neu gefasst), `../fragerunde.md` (Nachtrag 23.10.; F04, F12–F16, F18, F29, F30, F35, F36 neu gefasst, F39 neu), `../methoden.md` §6 (Entscheidung der Gruppe „Rad = Selbstbild, Befragungen als Fremdbild-Abgleich“), `../analogien.md` (§1, §7.2, neu §7.3, §8, §10), `../limbic-map.md` (Raptor- und Tier-Stellen), `../arbeitsplan.md` (Bündel B), `../README.md`, `../buendel-b/folienvorschlag.md` (Kopfvermerk), QUELLEN §3 und §5, LIESMICH (Stand, §6, §12), dieser Abschnitt, VORTRAGSREIFE (Nachtrag). Nach dem Neustart am Wortlaut der gebauten Folien 02, 06–08b, 10, 11, 12, B4, B5 abgeglichen (Folie 2, 5, 11, 12 in `../folienentwuerfe.md` nachgetragen) und alle Zahlen gegen `../buendel-b/auswertung/*.csv` geprüft. |
+
+**Abweichungen von der Vorlage (`folienvorschlag.md`):** Folie 10 übernimmt die Simulation **nicht** ins Rad (E9,
+E10, E17 entfallen; Entscheidung 2); 06/07/08b-Ergebnisbereiche heißen „Fremdbild (KI-simuliert)“ statt
+„Markeneigenschaften“/„Ins Steuerrad“; Folie 08 zeigt beide Tiere gleichwertig und der Papagei steht in der
+Abstimmung (statt nur Notizen, E5/E6); 08b-Fremdbild nur „witziger Kumpel“, Erlebnisse gekürzt, Fußzeile ohne
+„‚wandelbar‘: Ausarbeitung E. Knauber“; 07-Bogen unter statt über den Knoten; B4-Fußzeile ohne Skriptnamen; 06 mit
+60 Wörtern. Zusätzlich, nicht beauftragt: Konsolenprüfungen „Abgleich mit Folie 10“ in 06, 07, 08, 08b; Marker auf
+08b, die vom HOLY-Punkt verdeckt wurden, rücken unter oder über die Linie.
+
+**Geprüft (Bau, 23.10.2026; Ausgaben unter `_test/d26a-*`, `_test/d26b-*`):** `live-abstimmung-test.mjs` 53 von 53,
+mit `--mutationen` 26 von 26 kaputten Kopien erkannt; `zeitfenster-e2e.mjs` 58 Prüfungen ohne Fehler, keine externen
+Anfragen, `--mutationen` 12 von 12; `referent-test.mjs` 43 von 43. `pruefen.mjs --nur f06,f07,f08,f08b,b4,b5
+--schritte` in Editorial, Bento, Keynote, je hell und dunkel, dazu `--live-werte 3,1,7,2,2` (Aussage 60 % = (7+2)/15,
+beide Zeilen umrahmt), `--live-werte 3,1,0,0,2` („Papagei oder Chamäleon: keine Stimme“), `--live-offline`,
+`--druck`: überall 0 Fehler. Gesamtlauf über alle 23 Folien (`--optional --schritte`): 0 Fehler. Verbleibende
+Warnungen: gewollt abgeblendete Zwischenschritte, Wortbudget 06 (60) und 08b (41) sowie die Hinweise „Abgleich mit
+Folie 10“, solange Folie 10 im Bau war. Handy-Seite mit lokaler Attrappe (390 × 844, hell und dunkel): Papagei in
+Liste und „Danke“-Karte, Stimme kam als Option 3 an. Daten per Skript gegen `repertory-grid-ergebnis.csv`, `hvm.json`,
+`aaker-folie-08b.csv`, `aaker-facetten.csv`, `analogien-haeufigkeiten.csv` und `rohdaten-muster.csv` abgeglichen:
+0 Abweichungen; `pruefe_synthese.py` ohne Fehler. Sprechtexte per Skript gezählt (1,9 Wörter/s, [Regie] zählt nicht).
+
+**Offen:** Prüfläufe des Synthese-Schritts für Folie 10, 11, 12 und die Querverweise (nicht Teil der Zeilen oben);
+Prüfung durch Yannick und Elias (LIESMICH 12.1, 12.3) – besonders Folie 10 (parallel gebaut), Elias'
+Bestätigung zu Folie 08 (`../analogien.md` §10), zweizeiliger Titel 08b, wer 06–08b vorträgt (12.4). **Vor dem
+Vortrag `marke.js` und `js/abstimmen.js` auf GitHub**, sonst zeigen die Handys den Fuchs. Notizen von Folie 03
+(„Folie 6 zeigt derzeit Beispieldaten“) nachziehen. **Exporte** (Abschnitt 15) erst nach Abschluss aller
+D26-Bauaufträge neu erzeugen – `export/` zeigt noch den Stand vom 22.10. KI-Nachweis eintragen, dann committen und
+pushen (Hauptsitzung).

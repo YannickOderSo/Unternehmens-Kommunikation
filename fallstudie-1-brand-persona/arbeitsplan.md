@@ -14,10 +14,19 @@ Die Synthese im Markensteuerrad (Aufgabe C2) bereitet Yannick vor und leitet sie
 Elias. Einzelne Pakete können getauscht werden, solange die Übergabetermine gelten. Schritt-für-Schritt-Anleitung je
 Aufgabe: [`Fallstudie-1_Aufgaben-im-Detail.pdf`](Fallstudie-1_Aufgaben-im-Detail.pdf)
 
+> **Stand Bündel B – Fr, 23.10.2026:** Von Lukas Welker kommt **kein Material** mehr (Info Yannick, 22.10.2026,
+> KI-Nachweis 120); echte Kurzinterviews gibt es nicht. Stattdessen hat Claude Code im Auftrag von Yannick eine
+> **KI-simulierte Befragung** durchgeführt (Workflow D25: acht fiktive Befragte T1–T8, je ein eigener Agent,
+> Kontrollgruppe, Codierung KI-gestützt, Rechnung per Skript; Ordner [`buendel-b/`](buendel-b/README.md)). Am
+> 23.10.2026 nach Yannicks Entscheidungen in die Folien 06, 07, 08b, B4 und B5 eingebaut (KI-Nachweis 135, Workflow
+> D26): Pille „KI-simuliert“, Ergebnisse als **Fremdbild**, das Steuerrad auf Folie 10 zeigt das **Selbstbild**
+> (Abgleich dort). Die Analogien auf Folie 08 stammen von Elias (seit 22.10.2026). **Offen:** Wer trägt die Folien
+> 06–08b vor, und wer beantwortet die Rückfragen dazu? (Gruppe, vor der Generalprobe)
+
 | Bündel | Arbeitspakete | Querschnittsaufgabe | Spricht | Aufwand | Übernimmt |
 |--------|---------------|---------------------|---------|---------|-----------|
 | **A · Daten & Dokumentation** | Markenkompetenz & Wettbewerber, Brand Persona, Limbic Map | Backup & KI-Nachweis | Folien 1–5 · ca. 5:00 | ca. 13–15 Std. | **Yannick Heisler** (+ Markensteuerrad-Synthese) |
-| **B · Befragung & Auswertung** | Repertory Grid, Laddering, Analogien | 3–5 echte Kurzinterviews organisieren | Folien 6–8 · ca. 5:00 | ca. 12–14 Std. | **Lukas Welker** |
+| **B · Befragung & Auswertung** | Repertory Grid, Laddering, Analogien | 3–5 echte Kurzinterviews organisieren | Folien 6–8 · ca. 5:00 | ca. 12–14 Std. | **Lukas Welker** (liefert seit 22.10. kein Material; Ersatz: KI-simulierte Befragung D25, siehe oben) |
 | **C · Auftritt, Design & Synthese** | Kommunikationsanalyse, Markensteuerrad (Leitung), Empfehlungen | Folienmaster & Gesamtdeck | Folien 9–11 · ca. 5:00 | ca. 12–13 Std. | **Elias Knauber** (präsentiert auch Folie 10) |
 
 Dazu kommen für jede Person ca. 2 Std. eigene Folien und Sprechtext sowie ca. 4 Std. gemeinsame Termine.
@@ -95,6 +104,9 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - [x] Marke gewählt: HOLY (13.10.2026) – Recherche-Dossier für das Kickoff in [`recherche/`](recherche/)
 - [ ] Gruppe in die Google-Tabelle eintragen
 - [x] Bündel verteilt (14.10.): A + Markensteuerrad-Synthese Yannick, B Lukas, C Elias
+- [x] (23.10.) Bündel B ohne Lukas: KI-simulierte Befragung D25 eingebaut (Folien 06, 07, 08b, B4, B5); Steuerrad =
+  Selbstbild, Befragungen = Fremdbild-Abgleich (Entscheidung Yannick, `methoden.md` §6)
+- [ ] Vortrag der Folien 06–08b und Rückfragen dazu verteilen (Lukas liefert kein Material mehr)
 - [ ] Persona-Richtung bestätigen: Kern-Persona „Marco, 28“, Wachstums-Persona „Lena, 29“ im Backup (Entwurf:
   [`persona-steckbrief.md`](persona-steckbrief.md), 16.10.)
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
