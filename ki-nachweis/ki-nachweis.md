@@ -2516,6 +2516,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
 | D26 | 23.–24.10.2026 | 135 (fortgesetzt nach 136, 139, 142; Rest durch Claude nach 146/147) | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen; 5 davon gelaufen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | Folien 02, 06, 07, 08, 08b, 10 (Selbstbild + Abgleich), B1, B2, B4, B5 u. a.; Abstimmung mit Papagei und zwei Antworten; Doku; Prüfer „Treue“ (1 hoch, 5 mittel) – eingearbeitet von Claude; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Limit gescheitert und von Claude selbst erledigt | Claude: alle Tests selbst ausgeführt, Folien 02, 06, 07, 08, 08b, 10 angesehen, Exporte |
 | D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
+| D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3359,6 +3360,23 @@ steht hier mit dem wörtlichen Auftrag.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-24_gruender-folie.js`](workflows/2026-10-24_gruender-folie.js).
   Einzige Quelle der Gründeraussagen: `gruenderbefragung.md` (Transkript bleibt im Gruppenordner); Regeln 2.3 (Kennzeichnung
   als Selbstauskunft, keine unsicheren Zitate, „95 %“ nur in Notizen mit Zusatz).
+- **Ergebnis:** Bau fertig (Folie 05b, Folie 10 Schritt 9, Kürzung 01/02 auf Soll 845 s = 14:05, Einbindung in
+  Sprungliste/Übersicht/Druck, Doku). Prüfer „Treue und Regeln“: harte Regeln eingehalten, 3 mittlere Befunde (Folie 02
+  Kürzung verschiebt den Sinn; Gründerbefragung unter „Desk Research“; emotionaler Nutzen ohne Zuschreibung) und 8
+  niedrige. Prüfer „Darstellung und Technik“: 1 mittlerer Befund (rechte Spalte von 05b läuft unten über) und 7 niedrige
+  (u. a. „5 b Enter“ auf Folie 08, Pflicht-Pille am Beispieldaten-Schalter, Seitenzahlen, Fußnote der Übersicht).
+- **Wie Claude das Ergebnis geprüft hat:** Journal gelesen; Zahlen der Befunde an `buendel-b/auswertung/*.csv` und
+  `hvm.md` nachgeprüft (K03, K10, Geschmack, gutes Gewissen), Datum an KI-Nachweis 53; alle Befunde selbst eingearbeitet
+  (Eintrag 153, Tabelle in `praesentation/AUTOREN.md` §25 „Nacharbeit“); Überlauf nachgemessen, „5 b Enter“ und der
+  neue Knopf auf Folie 10 im Browser getestet, Folien 05b und 10 in allen Themen angesehen. Danach Nachprüfung D28.
+
+### D28 – 24.10.2026 – ausgelöst durch Prompt 153
+
+- **Art:** Workflow „gruender-folie-nachpruefung“: drei unabhängige, adversariale Prüfer parallel, nur lesend
+  (Inhalt und Regeln; Darstellung und Technik; Vollständigkeit und Konsistenz über alle Dateien). Jeder Prüfer soll zu
+  jedem Befund einen Beleg (Datei und Zeile, Messwert oder Quelle) angeben.
+- **Auftrag (wörtlich):** im Skript
+  [`workflows/2026-10-24_gruender-folie-nachpruefung.js`](workflows/2026-10-24_gruender-folie-nachpruefung.js).
 - **Ergebnis:** läuft
 - **Wie Claude das Ergebnis geprüft hat:** folgt
 
