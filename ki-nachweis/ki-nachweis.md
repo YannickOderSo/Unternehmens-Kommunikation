@@ -161,6 +161,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 139 | 23.10.2026 | System | Workflow-Meldung: D26 – beide Bau-Agenten fertig, Synthese und alles danach am Nutzungslimit gescheitert; Neustart der Sitzung | D26 (fortgesetzt) | fortgesetzt |
 | 140 | 23.10.2026 | Yannick | „Nutzungslimit zurückgesetzt – bitte weitermachen“ | D26 (fortgesetzt) | fortgesetzt |
 | 141 | 23.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
+| 142 | 23./24.10.2026 | System | Workflow-Meldung: D26 – Synthese (Folien, Doku) und alles danach erneut am Nutzungslimit gescheitert; mehrfacher Neustart der Sitzung | D26 (fortgesetzt) | Hinweis in beide Synthese-Aufträge, fortgesetzt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2325,6 +2326,17 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Zwischendurch die fertigen Folien 06, 07, 08, 08b gerendert und angesehen (nur Testausgabe unter `_test/`).
 - **Ergebnis:** Commit + Push (nur Nachweis)
 - **Unteragenten:** D26 (läuft)
+
+### 142 – 23./24.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D26: „synthese:folien“, „synthese:doku“, die drei Prüfer, beide Nacharbeiten und
+> „abschluss“: „You've hit your session limit · resets 1:10am (UTC)“. Danach mehrfacher Neustart der Sitzung.
+
+- **Vorgehen Claude:** Teilstand geprüft: Die Synthese hatte schon viel geändert (Folie 10 mit JS/CSS, 02-vorgehen.js,
+  13-backup.js; alle Markdown-Dateien der Doku). In beide Synthese-Aufträge einen Hinweis auf den Teilstand
+  eingefügt (die fertigen Bau-Agenten bleiben im Zwischenspeicher). Nach dem Reset (01:10 UTC) per resume fortgesetzt
+  – entsprechend Yannicks letzter Anweisung (Eintrag 140: „Bitte mache dort weiter, wo du aufgehört hast“).
+- **Unteragenten:** D26 (fortgesetzt)
 ---
 
 ## 2. Delegationen an Unteragenten
