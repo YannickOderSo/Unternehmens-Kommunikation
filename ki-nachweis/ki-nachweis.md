@@ -2478,6 +2478,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D24 | 22.–23.10.2026 | 119 (fortgesetzt nach 122, 125, 128) | Workflow „elias-material“ (8 Unteragenten in 4 Phasen) | Material von Elias (Kommunikationsanalyse, Analogien) in Folien 08–11, B6–B8 und Ausarbeitungen einbauen; Prüfung, Nacharbeit, Exporte | Folien 08, 09, 09b, 10 (Markenbild), 11 (Zeile 3), B6–B8; `analogien.md`, `kommunikationsanalyse.md`; Doku, Fragerunde; 3 Prüfer (1 hoher Befund + Folie 02/05 offen), Nacharbeit; Exporte 22.10. | Claude: Folienbilder 08–11, B6 angesehen, Syntax, Modellnamen, Personennamen, PDFs geprüft |
 | D25 | 22.–23.10.2026 | 120 (fortgesetzt nach 122, 125, 128, 132) | Workflow „buendel-b-simulation“ (42 Unteragenten in 7 Phasen; 8 simulierte Befragte je eigener Agent, Kontrollgruppe) | Bündel B ohne Lukas: KI-simulierte Befragung für Repertory Grid, Laddering, Analogien/Aaker; Codierung, Rechnung per Skript, Prüfung, Folienvorschlag | 0 Attribute nach Regel, 4 Hürden; Leiter ohne Zucker → kein Zuckerabsturz → konzentriert → verlässlich; Papagei 5/8, Chamäleon 0/8; Aaker Spannung 3,91 (Red Bull 4,13); Entscheidungsvorlage E1–E18 | Claude: alle 5 Skripte erneut ausgeführt (fehlerfrei), Modellnamen geprüft, Prüferurteile gelesen |
 | D26 | 23.–24.10.2026 | 135 (fortgesetzt nach 136, 139, 142; Rest durch Claude nach 146/147) | Workflow „buendel-b-einbau“ (10 Unteragenten in 5 Phasen; 5 davon gelaufen) | Simulation und Entscheidungen einbauen: 06/07/08b ehrlich, Folie 08 und Abstimmung nach Elias (Papagei + Chamäleon), Folie 10 als Selbstbild mit Abgleich, Querverweise 02/05/11/12/B1/B2/B4/B5/B7/B8, Doku, Prüfung, Exporte | Folien 02, 06, 07, 08, 08b, 10 (Selbstbild + Abgleich), B1, B2, B4, B5 u. a.; Abstimmung mit Papagei und zwei Antworten; Doku; Prüfer „Treue“ (1 hoch, 5 mittel) – eingearbeitet von Claude; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Limit gescheitert und von Claude selbst erledigt | Claude: alle Tests selbst ausgeführt, Folien 02, 06, 07, 08, 08b, 10 angesehen, Exporte |
+| D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3312,6 +3313,17 @@ steht hier mit dem wörtlichen Auftrag.
   externen Anfragen), live-abstimmung-test 53/53 und Mutationen 26/26, zeitfenster-e2e 58/0, referent-test 43/43,
   `pruefe_synthese.py` ohne Fehler; Folien 02, 06, 07, 08, 08b und 10 (Rad und Abgleich-Schritt) selbst angesehen;
   keine Namen von KI-Modellen im Diff; Exporte 24.10.2026 (PDF 22 Seiten, 23 Bilder, Übersicht).
+
+### D27 – 24.10.2026 – ausgelöst durch Prompt 150
+
+- **Art:** Workflow „gruender-folie“: ein Bau-Agent (neue Folie, Folie 10, Einbindung, Sprechzeit, Doku), danach zwei
+  adversariale Prüfer parallel (Treue zu den Gründeraussagen und den Nutzungsregeln; Darstellung und Technik).
+  Nacharbeit, Exporte und Commit macht Claude selbst (wegen der Nutzungslimits).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-24_gruender-folie.js`](workflows/2026-10-24_gruender-folie.js).
+  Einzige Quelle der Gründeraussagen: `gruenderbefragung.md` (Transkript bleibt im Gruppenordner); Regeln 2.3 (Kennzeichnung
+  als Selbstauskunft, keine unsicheren Zitate, „95 %“ nur in Notizen mit Zusatz).
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
 
 ---
 
