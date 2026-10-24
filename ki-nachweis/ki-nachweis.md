@@ -167,6 +167,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 145 | 24.10.2026 | System | Automatischer Hinweis: Änderungen nicht committet | D26 | nur Nachweis committet; D26 läuft |
 | 146 | 24.10.2026 | System | Workflow-Meldung: D26 – Synthese und Prüfer „Treue“ fertig; Prüfer Technik/Konsistenz, Nacharbeit, Abschluss am Nutzungslimit gescheitert | D26 | Rest ohne weitere Unteragenten von Claude selbst |
 | 147 | 24.10.2026 | Yannick | „Weiter“ + Bitte um Zeitschätzung („der Dienstag rückt näher“) | D26 (Rest selbst) | Befunde eingearbeitet, Tests grün, Exporte 24.10., Commit; Zeitschätzung berichtet |
+| 148 | 24.10.2026 | Yannick | Frage: Wo wird das Gründer-Interview in der Präsentation genannt? | – | Übersicht aus index.html (sichtbar/Notizen) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2397,6 +2398,17 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Mutationen 26/26, zeitfenster-e2e 58/0, referent-test 43/43. Exporte 24.10.2026: PDF 22 Seiten, 23 Folienbilder,
   Übersicht. Sprechzeit der Hauptfolien nachgezählt ≈ 15 Minuten (Soll laut Folien 14:00 plus Abstimmung).
 - **Unteragenten:** keine neuen (D26 abgeschlossen durch Claude)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 148 – 24.10.2026 – Yannick
+
+> Inwiefern wurde das Gründer Interview in der Präsentation genannt?
+
+- **Vorgehen Claude:** `index.html` per Skript nach „Horsch“, „Gründerbefragung“ und dem Kürzel „GB“ durchsucht,
+  getrennt nach sichtbarem Folientext, Daten (sichtbare Tabellen) und Sprechernotizen; Fundstellen gelesen.
+- **Ergebnis:** Antwort mit Übersicht je Folie (sichtbar: 03, B1, B3, B7; nur Notizen: 02, 04, 05, 07, 10, 11); keine
+  Dateiänderung.
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 ---
 
