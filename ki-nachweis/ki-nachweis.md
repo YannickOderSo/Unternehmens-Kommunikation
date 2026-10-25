@@ -190,7 +190,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 168 | 25.10.2026 | System | Workflow-Meldung: D30 fertig (7 Teile, 2 Prüfer, 28 Befunde) | D30 | Befunde von Claude eingearbeitet |
 | 169 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung | – | Stand geprüft |
 | 170 | 25.10.2026 | Yannick | „Weiter“ (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | erledigt: Befunde eingearbeitet, Skript abgelegt |
-| 171 | 25.10.2026 | Yannick | Kompaktes Skript mit Redetext für jede Folie | D31 | in Arbeit |
+| 171 | 25.10.2026 | Yannick | Kompaktes Skript mit Redetext für jede Folie | D31 | erledigt: `redeskript.md` + PDF (14 Seiten), 23 Prüferbefunde eingearbeitet |
+| 172 | 25.10.2026 | System | Workflow-Meldung: D31 fertig (3 Prüfer, 3 Widerleger, 26 Befunde, 23 bestätigt) | D31 | Befunde von Claude eingearbeitet |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2705,9 +2706,23 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Vortrag); Backup-Folien nur mit ihrem Kernsatz. Danach Workflow D31: unabhängige Prüfer (Wortlaut gegen `index.html`,
   Regeln und Stolperstellen, Praxistauglichkeit und Zeit) mit adversarialer Gegenprüfung ihrer Befunde. Ablage als
   `fallstudie-1-brand-persona/redeskript.md` und PDF.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** Kompaktes Redeskript (14 Seiten): Seite 1 „Ablauf auf einen Blick“ (Folie, Sprecher:in, Sollzeit, Ende
+  bei, Klicks, Wörter, gesprochene Zeit), Zeitlage und Kürzungsvorrat; je Folie der Redetext wörtlich aus
+  `index.html`, nach Klicks gegliedert, mit Regie, Platzhaltern, Übergaben, Warnhinweisen (⚠) und Kürzungsstellen (✂);
+  Backup B1–B8 mit „Wann zeigen“, Kernsatz und ⚠. Keine Websuche, nur Repository-Inhalte.
+- **Dateien:** `fallstudie-1-brand-persona/redeskript.md` (neu), `fallstudie-1-brand-persona/Fallstudie-1_Redeskript.pdf`
+  (neu), `ki-nachweis/workflows/2026-10-25_redeskript-pruefung.js` (neu), `ki-nachweis/workflows/2026-10-25_redeskript-generator.py`
+  (neu, Generator des Redeskripts), `fallstudie-1-brand-persona/vortragsskript.md` und `Fallstudie-1_Vortragsskript.pdf`
+  (Sprechtext von B7 korrigiert, siehe D31), `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** D31
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 172 – 25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D31 „redeskript-pruefung“: fertig, 6 Unteragenten; „26 Befunde, davon 23
+> bestätigt“.
+
+- **Vorgehen Claude:** Befunde gelesen, an den Quellen nachgeprüft und eingearbeitet (siehe D31).
 
 ---
 
@@ -2752,7 +2767,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | index.html inhaltlich korrekt; 1 mittlerer Technikbefund (Umschalttaste), Begleitdateien teils veraltet (Folienentwürfe, LIESMICH, Datum in Notizen, Zeitbilanz), ca. 25 niedrige Befunde | Claude: Befunde an Code, CSV und Quellen geprüft, eingearbeitet (einer verworfen), Tests und Tastenproben erneut |
 | D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
 | D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 3 Läufe (zweimal am Nutzungslimit); 7 Teile, 28 Befunde (0 hoch, 10 mittel, 18 niedrig), alle bearbeitet | Befunde an den Quelldateien nachgeprüft, eingearbeitet, PDF angesehen |
-| D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | läuft | – |
+| D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | 26 Befunde (3 hoch, 16 mittel, 7 niedrig), 23 bestätigt, alle 23 eingearbeitet | Widerleger-Urteile gelesen, Kürzungsvorrat und Anzeigetexte an `index.html`/`komponenten.js` nachgeprüft, PDF angesehen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3671,8 +3686,22 @@ steht hier mit dem wörtlichen Auftrag.
   `index.html`; Inhalt, Projektregeln und Stolperstellen; Praxistauglichkeit auf der Bühne und Zeit), danach je Prüfer
   ein Widerleger, der jeden Befund an den Quellen nachprüft. Nur lesen, Fundstellen angeben.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-25_redeskript-pruefung.js`](workflows/2026-10-25_redeskript-pruefung.js).
-- **Ergebnis:** läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Ergebnis:** 26 Befunde (3 hoch, 16 mittel, 7 niedrig); die Widerleger bestätigten 23, verwarfen 3 (I2 „frecher
+  Kumpel“ – ⚠ deckt das schon ab, Änderung in `index.html` ist Entscheidung der Gruppe; I9 „2024/2025 im Supermarkt“ –
+  kein Widerspruch; P5 Sammelkasten für offene Festlegungen – Gestaltungsfrage). Wichtigste bestätigte Befunde:
+  Folie 08 – Ablauf der Live-Umfrage unklar (QR-Code ist der Normalfall, Plan C nur bei Pille „offline“/„Beispieldaten“,
+  Herkunft von [x %]); „Löwe/Schwan“ sind Beispieldaten; „Puffer 0:55“ ist schon für Ratezeit und Abstimmung verplant,
+  Folie 11 ist ≈ 12 s zu lang; Legende behandelte gesprochene Zweige und Platzhalter als „nicht sprechen“; Generatorfehler
+  bei B7 (verschachtelte `<section>`), derselbe Fehler auch im Vortragsskript (D30); fehlende ⚠ zu Folien 02, 04, 05,
+  07, 08b, 10, 11 und B1–B3, B5, B7, B8.
+- **Wie Claude das Ergebnis geprüft hat:** Alle Urteile mit Begründung gelesen; wo der Widerleger eine bessere Korrektur
+  nannte (W3, R3, P1, P2, P3, P6), diese übernommen. Kürzungsvorrat an den Kommentaren in `index.html` (Folien 08, 08b,
+  10, 11) und die Anzeigetexte der Umfrage an `js/komponenten.js` nachgelesen, Zeitangaben an LIESMICH §3. Generator
+  korrigiert und neu gebaut; B7 im Vortragsskript mit dem richtigen Sprechtext aus `index.html` neu erzeugt. PDF-Seiten 1
+  und 8 angesehen, Seitenumbrüche per Textauszug geprüft (kein Block über eine Seitengrenze bei den Hauptfolien).
+  Volltextsuche auf Modellnamen und „95 %“. Nicht umgesetzt (Entscheidung der Gruppe, als Hinweis an Yannick):
+  Änderungen in `index.html` – [Name] auf Folie 08 eintragen, „Zum frechen Kumpel“ auf 09b, „Löwe/Schwan als Beispiel“
+  auf 08, ca.-Angaben auf Folie 11.
 
 ---
 

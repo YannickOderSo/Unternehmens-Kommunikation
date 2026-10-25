@@ -4653,7 +4653,7 @@ Vorlesungsfolien abgleichen“.
 
 #### Sprechtext (wörtlich aus den Notizen)
 
-*In `index.html` hat diese Folie keine Notizen mit Sprechtext. Frei sprechen nach dem Kernsatz unter „Hintergrund“.*
+> **[Schritt 0]** *[Wann zeigen?]* Rückfrage nach Literatur, Quellen oder Bildrechten. **Kernsatz:** Die Modelle stammen aus der Standardliteratur und der Vorlesung; die Fakten über HOLY aus unserem Recherche-Dossier mit nummerierten, geprüften Quellen und aus eigenen Erhebungen – Gründerbefragung und Elias' Kommunikationsanalyse mit Bildschirmaufnahmen. Die Befragung zu Repertory Grid, Laddering und Aaker ist KI-simuliert – keine echten Interviews, nur Hypothesen. Schriften und Bibliothek sind frei lizenziert.
 
 #### Hintergrund – damit du Fachmann bist
 
