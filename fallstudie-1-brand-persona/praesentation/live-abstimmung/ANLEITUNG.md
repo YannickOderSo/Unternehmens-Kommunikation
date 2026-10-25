@@ -5,12 +5,12 @@ Kurzprüfung der Uhrzeit in beiden Richtungen, 21.10.; Chamäleon statt Waschbä
 23.10.)
 Gebraucht wird: ein **privates Google-Konto** (Gmail), ein Laptop mit Chrome, ein Handy.
 
-> **Schon eingerichtet? Jetzt nötig:** den Abschnitt [„Skript aktualisieren (neue Fassung)“](#skript-aktualisieren-neue-fassung)
-> durcharbeiten (ca. 5 Minuten). Die **Fassung vom 20.10.2026** bringt zwei Dinge, die bei Google noch fehlen:
-> **Stimmen zählen auf Folie 08 nur 30 Minuten** (alte Stimmen stehen im Vortrag nicht mehr da) und – schon seit der
-> Fassung vom 19.10.2026 – viele gleichzeitige Stimmen werden deutlich schneller angenommen. Ohne Aktualisierung
-> gibt es **kein Zeitfenster**. Welche Fassung läuft, zeigt `<URL>?aktion=fassung` → „(Skript-Fassung 20.10.2026)“
-> (Punkt 5 dort). Die Zurückstellung vom 20.10.2026 ist damit aufgehoben (`../LIESMICH.md`, Abschnitt 12).
+> **Erledigt am So, 25.10.2026 (ca. 22 Uhr):** Yannick hat die **Fassung vom 20.10.2026** bei Google eingespielt
+> („Skript aktualisieren“, unten). Geprüft von Claude: `<URL>?aktion=fassung` → „(Skript-Fassung 20.10.2026)“; Stand
+> mit `minuten=30` → `"minuten":30` (zwei ältere Probestimmen zählen damit nicht mehr); zweimal Lasttest mit 20 Handys (Runden „lasttest-20261025-210108“ und „…-210251“): je 20 von 20 im ersten Versuch, „Danke“ nach höchstens 5,5 bzw. 5,0 s (Median 3,2 bzw. 2,9 s), Folie nie „offline“, Gegenprobe Zeitfenster richtig – BESTANDEN.
+> Damit gilt: **Stimmen zählen auf Folie 08 nur 30 Minuten**, und viele gleichzeitige Stimmen werden schnell
+> angenommen. Offen bleibt nur die Runde (Abschnitt „Vor dem Vortrag“). Den Abschnitt „Skript aktualisieren“ braucht
+> man erst wieder, wenn `apps-script.gs` auf GitHub neuer ist als bei Google.
 
 ## Worum es geht
 

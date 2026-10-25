@@ -133,7 +133,7 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
 >
 > Grundlage: `master` mit `praesentation/index.html` aus Commit 05b15f4 (D22, 21.10.2026). Seit dem von Account 2
 > geprüften Stand a929391 (19.10.) hat Account 1 geändert: Live-Abstimmung auf Folie 08 (eigene Abstimmseite, Google
-> Apps Script, Stimmen zählen 30 Minuten; Skript-Update bei Google steht aus), Illustrationen auf Folie 01 und 04,
+> Apps Script, Stimmen zählen 30 Minuten; Skript-Update bei Google seit 25.10.2026 erledigt), Illustrationen auf Folie 01 und 04,
 > Logo-Rätsel auf Folie 01, Chamäleon statt Waschbär (Folie 08, 08b, 10), Abgleich mit der Vorlesung
 > (`abgleich-vorlesung.md`) und dessen Umsetzung (Markenkern, Positionierung, Wir-Form, Markeneigenschaften,
 > Kennzeichnung der Limbic Types, Hinweis Stenger S. 78).
@@ -1443,9 +1443,9 @@ Ergebnis?“**
   haben wir offen gefragt, ohne Vorgaben“); `buendel-b/analogien-befragung.md` (Tierfrage offen); Dossier 6.7
   (Antworten nicht vorgeben).
 - **Fallstricke:**
-  - Das 30-Minuten-Fenster wirkt erst, wenn Yannick das Skript bei Google aktualisiert hat (Fassung 20.10.2026;
-    LIESMICH Z. 181 und Checkliste Z. 542) – bis dahin diesen Satz weglassen. Kontrolle: Maus auf der Pille zeigt
-    „zählt Stimmen der letzten 30 Min.“, nicht „OHNE Zeitfenster“.
+  - Das 30-Minuten-Fenster wirkt seit So, 25.10.2026 (Fassung 20.10.2026 bei Google eingespielt, Lasttest zweimal mit
+    20 Handys bestanden; LIESMICH Abschnitt 6 und 12). Kontrolle vor dem Vortrag: Maus auf der Pille zeigt „zählt
+    Stimmen der letzten 30 Min.“, nicht „OHNE Zeitfenster“ – sonst diesen Satz weglassen.
   - Nicht sagen: „Es wird nichts gespeichert“ oder „keine Daten“: Die Geräte-ID liegt im Browser-Speicher des Handys,
     die Stimme als Zeile in der Tabelle; ältere Stimmen bleiben dort, sie zählen nur auf der Folie nicht mehr
     (LIESMICH Z. 177). Google und GitHub sehen beim Aufruf technisch die Verbindung (ANLEITUNG Z. 439–441). Kein
@@ -1468,7 +1468,7 @@ Ergebnis?“**
     die Nummer und bleibt unverändert.
   - Fällt das Netz aus: Handzeichen (LIESMICH §6) – vorher festlegen, wer zählt (Sprechtext Z. 1808 „[Name] zählt“).
   - Umentscheiden geht: Je Handy zählt die letzte Stimme.
-- **Belastbar:** **TEILWEISE** – das Skript-Update bei Google steht aus; danach ja.
+- **Belastbar:** **JA** – seit dem Skript-Update am 25.10.2026 (vor dem Vortrag die Pille kontrollieren).
 
 #### F30 – Tonalität: vorprogrammiert, und Messung nach Aaker?
 
@@ -1918,7 +1918,7 @@ Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen�
 | F14 | ~~Schwelle festlegen, Titel „Drei Attribute …“~~ – **erledigt 23.10.2026:** Regel vor dem Rechnen festgelegt (22.10.2026: ≥ 3 von 8, ≥ 1,0, ≤ 1,0), Titel „HOLY hebt sich ab – aber vor allem durch Hürden“. Offen: Freigabe durch Yannick. | Yannick | Fr 23.10. | FRAGE-P-05; #29; `buendel-b/folienvorschlag.md` E1 |
 | F16, F36 | ~~Titel nur mit Chamäleon, Papagei klein~~ – **entschieden 23.10.2026** (Yannick): Papagei und Chamäleon gleichwertig in Titel, Karte und Umfrage (Papagei statt Fuchs). Offen: Elias bestätigt die Auslegung, die Belege je Zeile und die Kürzung auf zwei Zeilen je Tier; Elias beantwortet `analogien.md` §10 (Claims je Land mit Fundstelle, Quelle zum Farbwechsel, „fair“ gegen provokante Shorts). Der Abgleich mit der KI-simulierten Befragung steht in `analogien.md` §7.3. | Elias, Yannick | Generalprobe So 25.10. | Kasten FOLIE 08; `analogien.md` §10; #3, #38 |
 | F30 | ~~Lukas gleicht das Aaker-Profil ab~~ – **erledigt 23.10.2026:** 08b zeigt das KI-simulierte Fremdbild (Aaker-Bogen von acht simulierten Personen; Gegenüberstellung `analogien.md` §7.2). Offen: Freigabe des zweizeiligen Titels von 08b (E7) und „(Aaker)“ im Titel von 08b und auf Folie 12 kürzen. Den Zirkel (Analogien und Kommunikationsanalyse von derselben Person) in der Generalprobe einmal laut beantworten. | Yannick, Elias | Fr 23.10. | FRAGE-P-03, FRAGE-Q-07; #42; `analogien.md` §7 |
-| F29 | Skript der Live-Abstimmung bei Google aktualisieren (Fassung 20.10.2026), Kurzprüfung und Lasttest; Runde auf `vortrag-2026-10-27` (GitHub und Präsentationsrechner); Probe mit mehreren Handys; festlegen, wer bei Handzeichen zählt. | Yannick | Skript sofort; Runde nach der Generalprobe So 25.10., spätestens Mo 26.10. | LIESMICH §6 und §12; `live-abstimmung/ANLEITUNG.md` |
+| F29 | Skript der Live-Abstimmung bei Google aktualisieren (Fassung 20.10.2026), Kurzprüfung und Lasttest; Runde auf `vortrag-2026-10-27` (GitHub und Präsentationsrechner); Probe mit mehreren Handys; festlegen, wer bei Handzeichen zählt. | Yannick | Skript erledigt So 25.10. (Lasttest zweimal bestanden); Runde nach der Generalprobe So 25.10., spätestens Mo 26.10. | LIESMICH §6 und §12; `live-abstimmung/ANLEITUNG.md` |
 | F24 | Logo-Nutzung mit dem Betreuer klären (Original-Logo auf erfundener Dose, im Rätsel unscharf, öffentlich; Logos auf 09b und 12); bei Ablehnung Rückfall ohne Logo und Exporte neu. Ergebnis in die Notiz von Folie 01 und hier eintragen. | Yannick | vor Fr 23.10. (Folien final) | LIESMICH §12; `QUELLEN.md` §3 |
 | F03, F26, F31 | Fußzeilen der Hauptfolien mit Vorlesungsseiten (#4); Esch (2018), 9. Aufl. statt Esch & Esch (2024) in B7 und Fußzeile 02 (#11); Kotler mit selbst geprüfter Ausgabe in B7 aufnehmen oder „nach Kotler“ streichen (#31); Kroeber-Riel/Esch (2018) in B7 und Fußzeile 09 (#14); „hard/soft facts“ belegen oder weglassen (#32). | Yannick, Elias (Fußzeile 09) (Einbau: Account 1) | Fr 23.10. | FRAGE-P-02, FRAGE-P-12; #4, #11, #14, #31, #32 |
 | F04 | Seit 23.10.2026 entschieden: Rad = Selbstbild, Befragungen = Fremdbild-Abgleich (`methoden.md` §6); die Folien sagen „Selbstbild“ und „Fremdbild (KI-simuliert)“ mit Stenger S. 60, 87 in den Notizen. Offen: ob das Etikett „Fremdbild“ auf Folie 02 zusätzlich „Markenimage“ heißen soll (#30). | Yannick | Fr 23.10. | #30; KI-Nachweis 135 |

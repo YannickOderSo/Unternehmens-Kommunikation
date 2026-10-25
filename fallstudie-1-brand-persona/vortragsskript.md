@@ -2540,7 +2540,8 @@ Notizen (23.10.2026); Elias' Bestätigung steht aus.
 - **„Was passiert mit meiner Stimme – ist das anonym?“** (F29) – Anonym und ohne Anmeldung: Gespeichert werden nur
   Tier, Uhrzeit, Abstimmungsrunde und eine zufällige Geräte-ID, damit jedes Handy nur einmal zählt – kein Name, keine
   IP-Adresse, in einer privaten Tabelle der Gruppe; so steht es auch unten auf der Abstimmseite. Den Satz „auf der Folie
-  zählen nur Stimmen der letzten 30 Minuten“ nur sagen, wenn das Skript bei Google aktualisiert ist (siehe Bedienung).
+  zählen nur Stimmen der letzten 30 Minuten“ darf man sagen: Das Skript bei Google ist seit 25.10.2026 aktualisiert
+  (vorher an der Pille kontrollieren, siehe Bedienung).
 
 - **„Viele Sorten – ist das schon Wandel?“** (Notizen) – Nicht allein. Elias nennt fünf Produktlinien von Energy über
   Iced Tea, Hydration und Milkshake bis zur Syrup Bottle, laufend neue Sorten wie Hydration mit Kokosnuss oder Ananas
@@ -2630,8 +2631,8 @@ senden selbst noch einmal (höchstens drei Versuche) – nichts tun. Erst danach
    spätestens Mo, 26.10., **auf GitHub und am Präsentationsrechner** gleich. Dann beginnt Folie 08 bei n = 0;
    Probestimmen bleiben in der Tabelle, zählen aber nicht. (Beim Lesen der Datei am 25.10.2026 stand noch `'probe'`.)
 3. `marke.js` und `js/abstimmen.js` müssen auf GitHub stehen, sonst zeigen die Handys den Papagei nicht.
-4. **Zeitfenster:** Die Folie zählt nur Stimmen der letzten 30 Minuten – aber erst, wenn Yannick das Skript bei Google
-   aktualisiert hat (Fassung 20.10.2026; in der Checkliste LIESMICH 12.1 noch offen). Kontrolle: Maus auf die Pille –
+4. **Zeitfenster:** Die Folie zählt nur Stimmen der letzten 30 Minuten – seit Yannick das Skript bei Google am
+   25.10.2026 aktualisiert hat (Fassung 20.10.2026; Lasttest zweimal mit 20 Handys bestanden). Kontrolle: Maus auf die Pille –
    dort muss „zählt Stimmen der letzten 30 Min.“ stehen; steht „OHNE Zeitfenster“, ist das Skript alt → Yannick
    Bescheid geben, Plan C bereithalten.
 5. **Weg B** (Particify oder Mentimeter, Werte eintippen) nur, falls Weg A gar nicht eingerichtet werden kann – im

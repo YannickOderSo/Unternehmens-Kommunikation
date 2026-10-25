@@ -1845,3 +1845,14 @@ eigenen Live-Abstimmung nicht „Zurücksetzen“). Geprüft: `pruefen.mjs --sch
 Keynote, dunkel je 0 Fehler; `referent-test.mjs` 43/43; `live-abstimmung-test.mjs` 53/53; `zeitfenster-e2e.mjs` 58/58;
 `pruefe_synthese.py` ohne Fehler; PDF 23 Seiten, Seite 1 und 15 „Dienstag, 27. Oktober 2026“; f01.png angesehen.
 
+
+## 27. Skript der Live-Abstimmung bei Google aktualisiert (So, 25.10.2026)
+
+Yannick hat die Fassung 20.10.2026 von `live-abstimmung/apps-script.gs` nach `live-abstimmung/ANLEITUNG.md`
+(„Skript aktualisieren“) bei Google eingespielt (KI-Nachweis 173–174). Claude hat nur lesend geprüft
+(`?aktion=fassung` → „(Skript-Fassung 20.10.2026)“; Stand mit `minuten=30` → `"minuten":30`) und den Lasttest
+zweimal mit `--anzahl 20` laufen lassen (eigene Runden `lasttest-20261025-210108` und `…-210251`): je 20 von 20 im
+ersten Versuch, „Danke“ nach höchstens 5,5 bzw. 5,0 s, Folie nie „offline“, Gegenprobe Zeitfenster richtig –
+BESTANDEN. Nachgezogen: Hinweis oben in der ANLEITUNG, LIESMICH (Abschnitt 1, 6 und Checkliste 12), `VORTRAGSREIFE.md`
+(Nachtrag), `../fragerunde.md` (Kopf, F29, Aufgabentabelle), `../vortragsskript.md` und PDF (Folie 08). Keine
+Änderung am Code. Offen: Runde `vortrag-2026-10-27` (spätestens Mo, 26.10.), Internet im Hörsaal.

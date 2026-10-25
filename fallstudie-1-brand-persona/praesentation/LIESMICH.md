@@ -29,8 +29,8 @@ Illustration klärt Yannick noch mit dem Betreuer (Checkliste, Abschnitt 12).
 Seit Di, 20.10. zählen in der Live-Abstimmung nur **Stimmen der letzten 30 Minuten** (Zeitfenster, damit im Vortrag
 keine alten Stimmen dastehen; Abschnitt 6); nach einer Prüfung am 21.10. nachgearbeitet (abgelaufene Zahlen auf
 Folie 08 → Nullen statt Beispieldaten, Kurzprüfung der Uhrzeit in beiden Richtungen, neues Prüfwerkzeug
-`werkzeuge/zeitfenster-e2e.mjs`). Es wirkt erst, wenn Yannick das Skript bei Google aktualisiert hat (Checkliste,
-Abschnitt 12 – der Punkt ist damit wieder dran).
+`werkzeuge/zeitfenster-e2e.mjs`). Es wirkt seit So, 25.10.2026: Yannick hat das Skript bei Google aktualisiert,
+der Lasttest ist zweimal mit 20 Handys bestanden (Checkliste, Abschnitt 12).
 Seit Mi, 21.10. heißen die Begriffe des Steuerrads wie in der **Vorlesung** (Abgleich `../abgleich-vorlesung.md`,
 Befunde #15, #22, #27–#30, Freigabe Yannick): Mitte **„Markenkern“** (bis dahin „Markenkompetenz“), Feld
 **„Markeneigenschaften“** (bis dahin „Markenattribute“), Leitfragen in der Wir-Form; der Satz über dem Rad auf
@@ -297,7 +297,7 @@ erscheint „Das hat nicht geklappt“ mit „Nochmal versuchen“. Wer sich wä
 ein anderes Tier an – es zählt die neueste Wahl. Seit der Fassung vom 19.10.2026 holt sich jede Stimme beim
 Server nur kurz eine Zeilennummer und schreibt dann gleichzeitig mit den anderen (vorher nacheinander: beim
 Lasttest am 19.10. nur 19 von 40). Diese Fassung – inzwischen die vom **20.10.2026** mit dem Zeitfenster (unten) –
-muss Yannick einmal in Google einspielen (Anleitung, „Skript aktualisieren“; Checkliste, Abschnitt 12).
+hat Yannick am So, 25.10.2026 in Google eingespielt (Anleitung, „Skript aktualisieren“; Checkliste, Abschnitt 12).
 
 **Zeitfenster (seit 20.10.2026, Auftrag Yannick: „keine alten Stimmen“ im Vortrag):** Folie 08 zählt je Handy nur
 die letzte Stimme der **letzten 30 Minuten** (`marke.js → umfragen.tier.gueltigMinuten: 30`). Ältere Stimmen
@@ -305,8 +305,9 @@ verschwinden von der Folie, bleiben aber in der Tabelle. Auch die auf dem Präse
 von Folie 08 gelten nur 30 Minuten (älter → beim Neuladen oder Betreten der Folie **Nullen**, bis die Web-App
 antwortet – keine Beispielwerte, seit 21.10.), und ein Handy, das vor mehr als 30 Minuten abgestimmt hat, zeigt
 wieder die Tiere. Für die Abstimmung im Vortrag selbst (rund eine Minute) ändert
-sich nichts. **Wirkt erst nach „Skript aktualisieren“** (Fassung 20.10.2026) – vorher zählt die Web-App ohne
-Zeitgrenze; Maus auf der Pille zeigt dann „OHNE Zeitfenster“, sonst „zählt Stimmen der letzten 30 Min.“. Die Runde
+sich nichts. **Wirkt seit So, 25.10.2026** (Fassung 20.10.2026 bei Google eingespielt); mit einer alten Fassung
+zählte die Web-App ohne Zeitgrenze – Maus auf der Pille zeigt dann „OHNE Zeitfenster“, sonst „zählt Stimmen der
+letzten 30 Min.“. Die Runde
 bleibt trotzdem nötig (sie trennt Probe und Vortrag ganz).
 
 **Einrichten** (einmal, ca. 10 Minuten): `live-abstimmung/ANLEITUNG.md`, Schritt für Schritt. Danach in
@@ -651,7 +652,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       `marke.js → raetselBild` auf `bilder/raetsel-holy.svg` und bei Folie 01 die Rückfallwerte (Kasten „FOLIE
       01“); lehnt er Logos ganz ab, zusätzlich `logoTitel` leeren – **beides zusammen**, `logoTitel` allein
       entfernt das Logo auf der Dose nicht. Danach Exporte neu (Account 1)
-- [ ] **Live-Abstimmung: Skript bei Google aktualisieren** (F08-1). Zwei Gründe: Erst die Fassung vom
+- [x] **Live-Abstimmung: Skript bei Google aktualisieren** (F08-1). **Erledigt So, 25.10.2026:** Fassung
+      20.10.2026 läuft (geprüft mit `?aktion=fassung` und `minuten=30`); zweimal Lasttest mit 20 Handys (Runden „lasttest-20261025-210108“ und „…-210251“): je 20 von 20 im ersten Versuch, „Danke“ nach höchstens 5,5 bzw. 5,0 s (Median 3,2 bzw. 2,9 s), Folie nie „offline“, Gegenprobe Zeitfenster richtig – BESTANDEN. Zwei Gründe: Erst die Fassung vom
       **20.10.2026** zählt auf Folie 08 nur Stimmen der letzten 30 Minuten (sonst gibt es keine Zeitgrenze), und
       bei Google läuft noch die Fassung von vor dem 19.10. (Lasttest 19.10.: nur 19 von 40 gezählt; 20.10. mit 20
       Handys alle gezählt, aber 6 über 15 s). Vorher die Änderungen auf GitHub bringen (Commit und Push), dann nach

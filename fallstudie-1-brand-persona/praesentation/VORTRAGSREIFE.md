@@ -1,5 +1,12 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag So, 25.10.2026 (Account 1): Skript der Live-Abstimmung aktualisiert (F08-1)
+
+Befund **F08-1** (Top 10, Nr. 3) ist erledigt: Yannick hat am So, 25.10.2026 die Fassung 20.10.2026 bei Google
+eingespielt. Geprüft: `?aktion=fassung` → „(Skript-Fassung 20.10.2026)“, Stand mit `minuten=30` → Zeitfenster wirkt;
+zweimal Lasttest mit 20 Handys (Runden „lasttest-20261025-210108“ und „…-210251“): je 20 von 20 im ersten Versuch, „Danke“ nach höchstens 5,5 bzw. 5,0 s (Median 3,2 bzw. 2,9 s), Folie nie „offline“, Gegenprobe Zeitfenster richtig – BESTANDEN. Offen bleiben die Runde `vortrag-2026-10-27` (spätestens Mo, 26.10.) und das Internet im Hörsaal
+(KI-Nachweis 174).
+
 ## Nachtrag Sa, 24.10.2026 (Account 1): Vortragstag Di, 27.10.2026
 
 > Laut Yannick (24.10.2026) ist der Vortrag am **Di, 27.10.2026** statt Mo, 26.10. (die Vorlesungsfolien, Stenger

@@ -193,6 +193,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 171 | 25.10.2026 | Yannick | Kompaktes Skript mit Redetext für jede Folie | D31 | erledigt: `redeskript.md` + PDF (14 Seiten), 23 Prüferbefunde eingearbeitet |
 | 172 | 25.10.2026 | System | Workflow-Meldung: D31 fertig (3 Prüfer, 3 Widerleger, 26 Befunde, 23 bestätigt) | D31 | Befunde von Claude eingearbeitet |
 | 173 | 25.10.2026 | Yannick | Frage: Was ist zu tun, um das Abstimmungsskript jetzt zu verbessern? | – | beantwortet: Anleitung „Skript aktualisieren“, aktuelle Fassung bei Google geprüft |
+| 174 | 25.10.2026 | Yannick | „fertig“ (Skript bei Google aktualisiert) | – | erledigt: Fassung geprüft, Lasttest 2× mit 20 bestanden, Doku nachgezogen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2736,6 +2737,23 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   `"minuten":30`, also ohne Zeitfenster). Auf GitHub liegt die Fassung 20.10.2026. Yannick die Schritte genannt
   (Code kopieren, ersetzen, „einrichten“ ausführen, neue Version bereitstellen, Kurzprüfung, Lasttest mit 20).
 - **Ergebnis:** Anleitung im Chat; keine Dateien außer diesem Nachweis geändert.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 174 – 25.10.2026 – Yannick
+
+> fertig
+
+- **Anhänge:** keine. Gemeint: Yannick hat das Skript der Live-Abstimmung bei Google aktualisiert (Schritte aus 173).
+- **Vorgehen Claude:** Nur lesend bei der Web-App geprüft: `?aktion=fassung` → „(Skript-Fassung 20.10.2026)“, Stand der
+  Runde „probe“ mit `minuten=30` → `"minuten":30`, `n = 0` (ohne `minuten` `n = 2` – das Zeitfenster wirkt). Danach
+  den Lasttest zweimal mit `--anzahl 20` (`werkzeuge/live-abstimmung-test.mjs --lasttest <URL> --anzahl 20`; eigene
+  Runden `lasttest-20261025-210108` und `lasttest-20261025-210251`, zählen weder in „probe“ noch im Vortrag): je 20
+  von 20 im ersten Versuch, „Danke“ nach höchstens 5,5 bzw. 5,0 s (Median 3,2 bzw. 2,9 s), Folie nie „offline“,
+  Gegenprobe Zeitfenster (`minuten=1` nach 90 s → `n = 0`) richtig – BESTANDEN. Stand in der Doku nachgezogen.
+- **Dateien:** `praesentation/live-abstimmung/ANLEITUNG.md`, `praesentation/LIESMICH.md`, `praesentation/VORTRAGSREIFE.md`,
+  `praesentation/AUTOREN.md` (§27), `fragerunde.md`, `vortragsskript.md` und `Fallstudie-1_Vortragsskript.pdf`
+  (alle unter `fallstudie-1-brand-persona/`), `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
