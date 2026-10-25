@@ -73,11 +73,13 @@ const TEILE = [
 ]
 
 phase('Schreiben')
-const geschrieben = await parallel(TEILE.map((t) => () => agent(`${KONTEXT}\n\n${t.auftrag}`, {
+// Fortsetzung 25.10.2026: Teil 5 (Folien 09-10) liegt bereits vollstaendig vor und wird nicht neu geschrieben
+const SCHREIBEN = TEILE.filter((t) => t.key !== 'teil-5')
+const geschrieben = await parallel(SCHREIBEN.map((t) => () => agent(`${KONTEXT}\n\n${t.auftrag}`, {
   label: t.label, phase: 'Schreiben',
   schema: { type: 'object', properties: { datei: { type: 'string' }, woerter: { type: 'number' }, offene_punkte: { type: 'array', items: { type: 'string' } } }, required: ['datei', 'woerter', 'offene_punkte'] },
 })))
-log(`Geschrieben: ${geschrieben.filter(Boolean).length} von ${TEILE.length} Teilen`)
+log(`Geschrieben: ${geschrieben.filter(Boolean).length} von ${SCHREIBEN.length} Teilen (Teil 5 aus dem ersten Lauf)`)
 
 const DATEIEN = TEILE.map((t) => `${SP}/${t.key}.md`).join('\n')
 const PRUEF_SCHEMA = {

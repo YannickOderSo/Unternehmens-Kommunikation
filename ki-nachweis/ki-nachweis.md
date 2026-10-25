@@ -180,13 +180,16 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 158 | 24.10.2026 | System | Workflow-Meldung: D28 fertig (3 Prüfer: Inhalt, Technik, Vollständigkeit) | D28 | Befunde von Claude eingearbeitet, Tests grün, Exporte neu |
 | 159 | 24.10.2026 | Yannick | „Dienstag ist der vortrag“ (Antwort auf Rückfrage zum Vortragstag) | D29 | Vortragstag Di 27.10.2026 überall umgestellt; Tests grün; Exporte und Aufgaben-PDFs neu |
 | 160 | 24.10.2026 | System | Workflow-Meldung: D29 fertig (1 Prüfer, 10 Befunde) | D29 | Befunde von Claude eingearbeitet |
-| 161 | 24.10.2026 | Yannick | Skript mit ausgeschriebenen Informationen zu jeder Folie, damit jeder zu jeder Folie Fachmann ist | D30 | in Arbeit |
+| 161 | 24.10.2026 | Yannick | Skript mit ausgeschriebenen Informationen zu jeder Folie, damit jeder zu jeder Folie Fachmann ist | D30 | erledigt: `vortragsskript.md` + PDF (102 Seiten), 28 Prüferbefunde eingearbeitet |
 | 162 | 24.10.2026 | System | Workflow-Meldung: D30 – alle 9 Unteragenten sofort am Nutzungslimit gescheitert („resets 11:10pm (UTC)“) | D30 | nach dem Reset fortgesetzt |
 | 163 | 24./25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
-| 164 | 24./25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | in Arbeit |
+| 164 | 24./25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | erledigt (siehe 161) |
 | 165 | 25.10.2026 | System | Workflow-Meldung: D30 – 4 von 7 Autoren fertig (Grundlagen, 01–03, 04–05b, 06–07); 08–08b, 09–10, 11/12/Backup und beide Prüfer am Nutzungslimit gescheitert („resets 4:30am (UTC)“) | D30 | Teil 09–10 lag trotzdem vollständig vor; Rest fortgesetzt |
 | 166 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
-| 167 | 25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | in Arbeit |
+| 167 | 25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | erledigt (siehe 161) |
+| 168 | 25.10.2026 | System | Workflow-Meldung: D30 fertig (7 Teile, 2 Prüfer, 28 Befunde) | D30 | Befunde von Claude eingearbeitet |
+| 169 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung | – | Stand geprüft |
+| 170 | 25.10.2026 | Yannick | „Weiter“ (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | erledigt: Befunde eingearbeitet, Skript abgelegt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2597,7 +2600,14 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Inhalte aus den Dateien im Repository (Quellen angeben; Modellwissen kennzeichnen). Danach zwei adversariale Prüfer
   (Treue zu Quellen und Regeln; Vollständigkeit und Übereinstimmung mit den Folien). Claude setzt das Skript zusammen,
   arbeitet die Befunde ein und legt es als `fallstudie-1-brand-persona/vortragsskript.md` (dazu PDF zum Ausdrucken) ab.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** Vortragsskript mit Grundlagen (Kennzeichnungen, Glossar, Ablauf, Regeln für die Fragerunde, die zehn
+  wahrscheinlichsten Fragen, Bedienung) und je Folie (01–12 mit 01b, 05b, 08b, 09b sowie Backup B1–B8) denselben acht
+  Abschnitten. Ca. 61.200 Wörter, als PDF 102 Seiten. Stand 25.10.2026, als Entwurf gekennzeichnet. Alle Inhalte
+  stammen aus dem Repository mit Quelle; Modellwissen ist als „Standardliteratur/Modellwissen – mit den
+  Vorlesungsfolien abgleichen“ gekennzeichnet. Keine neuen Websuchen.
+- **Dateien:** `fallstudie-1-brand-persona/vortragsskript.md` (neu), `fallstudie-1-brand-persona/Fallstudie-1_Vortragsskript.pdf`
+  (neu), `ki-nachweis/workflows/2026-10-24_vortragsskript.js` (neu, ab 167 ohne Neuschreiben von Teil 5),
+  `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** D30
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -2624,7 +2634,7 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Anhänge:** keine.
 - **Vorgehen Claude:** Workflow D30 mit unverändertem Skript erneut gestartet (Fortsetzung), danach Zusammenbau,
   Einarbeitung der Prüferbefunde, Ablage und Commit.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** siehe 161.
 - **Unteragenten:** D30
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -2651,8 +2661,36 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Anhänge:** keine.
 - **Vorgehen Claude:** D30 fortgesetzt: fertige Autoren aus dem Zwischenspeicher, Teil 5 nicht neu schreiben lassen
   (Skript entsprechend angepasst), Autoren für 08–08b und 11/12/Backup und beide Prüfer neu.
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** siehe 161.
 - **Unteragenten:** D30
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 168 – 25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D30 „vortragsskript“: fertig; 7 Teile geschrieben (Teil 5 aus dem vorigen Lauf),
+> beide Prüfer haben Befunde geliefert.
+
+- **Vorgehen Claude:** Befunde gesammelt und ab 170 eingearbeitet (siehe D30).
+
+### 169 – 25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> „This session's worker process was restarted. If your previous turn was already complete, take no action and wait
+> for the next event. Otherwise, continue from where you left off.“
+
+- **Vorgehen Claude:** Stand geprüft: Teile und Befunde liegen im Scratchpad; Teile 0, 1 und 3 waren schon überarbeitet.
+
+### 170 – 25.10.2026 – Yannick
+
+> Weiter
+
+- **Anhänge:** keine. Davor hat Yannick den lokalen Befehl `/usage` aufgerufen (Anzeige des Nutzungsstands, kein Prompt
+  an Claude).
+- **Vorgehen Claude:** Restliche Prüferbefunde selbst eingearbeitet (Teile 4–6, Umbau der Backup-Folien B1–B8 auf die
+  Vorlage mit Sprechtext aus `index.html`, Zahlen-Tabellen aus den CSV-Dateien und Fallstricken), Skript zusammengebaut,
+  als Markdown und PDF abgelegt, auf Modellnamen, „95 %“ und gesperrte Zitate geprüft, einzelne PDF-Seiten angesehen.
+- **Ergebnis:** siehe 161.
+- **Dateien:** siehe 161.
+- **Unteragenten:** keine neuen (Befunde aus D30).
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
@@ -2697,7 +2735,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D27 | 24.10.2026 | 150 | Workflow „gruender-folie“ (3 Unteragenten in 2 Phasen) | Gründerbefragung präsenter: eigene Folie „Der Gründer über HOLY“ (gebaut als 05b „Gründerbefragung: Innensicht“) vor Folie 06, Gründer im Abgleich auf Folie 10, Zeitplan, Doku; Prüfung Treue/Regeln und Darstellung/Technik | Folie 05b, Folie 10 (Spaltenkopf, Zeile 2), Kürzung 01/02 (845 s = 14:05), Doku; Prüfer Treue 3 mittel/8 niedrig, Technik 1 mittel/7 niedrig – Nacharbeit durch Claude (153) | Claude: Journal gelesen, Befunde an Quellen (CSV, gruenderbefragung.md, KI-Nachweis 53) nachgeprüft |
 | D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | index.html inhaltlich korrekt; 1 mittlerer Technikbefund (Umschalttaste), Begleitdateien teils veraltet (Folienentwürfe, LIESMICH, Datum in Notizen, Zeitbilanz), ca. 25 niedrige Befunde | Claude: Befunde an Code, CSV und Quellen geprüft, eingearbeitet (einer verworfen), Tests und Tastenproben erneut |
 | D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
-| D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 1. Lauf: alle am Nutzungslimit gescheitert; 2. Lauf: läuft | – |
+| D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 3 Läufe (zweimal am Nutzungslimit); 7 Teile, 28 Befunde (0 hoch, 10 mittel, 18 niedrig), alle bearbeitet | Befunde an den Quelldateien nachgeprüft, eingearbeitet, PDF angesehen |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3593,8 +3631,22 @@ steht hier mit dem wörtlichen Auftrag.
   Dateien im Repository mit Quelle und Faktenstatus), danach zwei adversariale Prüfer parallel (Quellentreue und
   Regeln; Vollständigkeit, Verständlichkeit und Übereinstimmung mit den Folien).
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-24_vortragsskript.js`](workflows/2026-10-24_vortragsskript.js).
-- **Ergebnis:** 1. Lauf: alle 9 Unteragenten sofort am Nutzungslimit gescheitert; 2. Lauf: läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Ergebnis:** 1. Lauf: alle 9 Unteragenten sofort am Nutzungslimit gescheitert. 2. Lauf: 4 Autoren fertig, Teil 5
+  (Folien 09–10) trotz Fehlermeldung vollständig. 3. Lauf (Fortsetzung, Teil 5 übersprungen): restliche Autoren und
+  beide Prüfer fertig. Die Prüfer meldeten zusammen 28 Befunde (0 hoch, 10 mittel, 18 niedrig; teils doppelt), z. B.
+  „knapp vor“ statt „gleichauf“ bei Cola Zero (Teil 0, B4), veralteter Handelsstand „REWE/Edeka“ (Teil 3, B4), F19
+  beginnt mit dem falschen Kernsatz „Im Selbstbild ja“, „HOLY ist zuckerfrei“ ohne Milkshake-Ausnahme, falsche Lesart
+  des Codes „auch bei anderen“ (Folie 10), Backup B1–B8 nicht nach Vorlage, F35 und die Rückfragen zu Folie 08
+  (Notizen, F30, F37) nicht ausformuliert, Plan B ohne Hinweis auf den fehlenden Abgleich von Folie 10 im PDF.
+- **Wie Claude das Ergebnis geprüft hat:** Jeden Befund an der genannten Quelle nachgelesen (`index.html`-Notizen,
+  `fragerunde.md`, Dossier, `hvm.md`, `repertory-grid-ergebnis.csv`, `analogien-haeufigkeiten.csv`,
+  `persona-daten.md`, `kommunikationsanalyse.md`) und eingearbeitet; Sprechtexte der Backup-Folien per Skript aus
+  `index.html` übernommen, Regie-Köpfe an den Wortlaut von `index.html` angeglichen. Teilweise umgesetzt: Der
+  Hintergrund zu Folie 10 ist nur um Wiederholungen gekürzt (Verweise auf Folien 02, 06, 07, 08b) und mit ca. 2.500
+  Wörtern weiter länger als vorgesehen – gewollt, weil Folie 10 die Synthese ist. Volltextsuche auf Modellnamen,
+  „95 %“ (nur mit „laut Gründer, Datengrundlage nicht offengelegt“) und gesperrte Gründerzitate; Titelseite und
+  B4-Seite des PDFs angesehen. Hinweise an die Gruppe im Skript: Notizen von B4 („knapp vor“), f06 („REWE/Edeka“),
+  f10 („gewohnte Marke“) und 09b („frecher Kumpel“) in `index.html` angleichen; Freigabe von Folie 11, Zeile 3 klären.
 
 ---
 
