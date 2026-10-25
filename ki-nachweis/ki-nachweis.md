@@ -190,6 +190,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 168 | 25.10.2026 | System | Workflow-Meldung: D30 fertig (7 Teile, 2 Prüfer, 28 Befunde) | D30 | Befunde von Claude eingearbeitet |
 | 169 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung | – | Stand geprüft |
 | 170 | 25.10.2026 | Yannick | „Weiter“ (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | erledigt: Befunde eingearbeitet, Skript abgelegt |
+| 171 | 25.10.2026 | Yannick | Kompaktes Skript mit Redetext für jede Folie | D31 | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2693,6 +2694,21 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Unteragenten:** keine neuen (Befunde aus D30).
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 171 – 25.10.2026 – Yannick
+
+> Mach noch ein kompaktes Skript mit redete Text für jede folie
+
+- **Anhänge:** keine. Mit dem Prompt wurde die Anleitung „workflow-authoring“ geladen (Systemvorgang, weil Ultracode an
+  ist; kein eigener Prompt).
+- **Vorgehen Claude:** Redetext je Folie per Skript aus den Notizen der Web-Präsentation übernehmen (`index.html`,
+  Absätze `data-schritt` und `gesprochen`), nur das Gesprochene plus knappe Regie (Klick, Übergabe, Sollzeit, Uhrzeit im
+  Vortrag); Backup-Folien nur mit ihrem Kernsatz. Danach Workflow D31: unabhängige Prüfer (Wortlaut gegen `index.html`,
+  Regeln und Stolperstellen, Praxistauglichkeit und Zeit) mit adversarialer Gegenprüfung ihrer Befunde. Ablage als
+  `fallstudie-1-brand-persona/redeskript.md` und PDF.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D31
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -2736,6 +2752,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D28 | 24.10.2026 | 153 | Workflow „gruender-folie-nachpruefung“ (3 Unteragenten, 1 Phase, nur lesend) | Nacharbeit zu D27 adversarial nachprüfen: Inhalt/Regeln, Darstellung/Technik, Vollständigkeit/Konsistenz | index.html inhaltlich korrekt; 1 mittlerer Technikbefund (Umschalttaste), Begleitdateien teils veraltet (Folienentwürfe, LIESMICH, Datum in Notizen, Zeitbilanz), ca. 25 niedrige Befunde | Claude: Befunde an Code, CSV und Quellen geprüft, eingearbeitet (einer verworfen), Tests und Tastenproben erneut |
 | D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
 | D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 3 Läufe (zweimal am Nutzungslimit); 7 Teile, 28 Befunde (0 hoch, 10 mittel, 18 niedrig), alle bearbeitet | Befunde an den Quelldateien nachgeprüft, eingearbeitet, PDF angesehen |
+| D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3647,6 +3664,15 @@ steht hier mit dem wörtlichen Auftrag.
   „95 %“ (nur mit „laut Gründer, Datengrundlage nicht offengelegt“) und gesperrte Gründerzitate; Titelseite und
   B4-Seite des PDFs angesehen. Hinweise an die Gruppe im Skript: Notizen von B4 („knapp vor“), f06 („REWE/Edeka“),
   f10 („gewohnte Marke“) und 09b („frecher Kumpel“) in `index.html` angleichen; Freigabe von Folie 11, Zeile 3 klären.
+
+### D31 – 25.10.2026 – ausgelöst durch Prompt 171
+
+- **Art:** Workflow „redeskript-pruefung“: drei Prüfer parallel mit je eigenem Auftrag (Wortlaut und Klicks gegen
+  `index.html`; Inhalt, Projektregeln und Stolperstellen; Praxistauglichkeit auf der Bühne und Zeit), danach je Prüfer
+  ein Widerleger, der jeden Befund an den Quellen nachprüft. Nur lesen, Fundstellen angeben.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-25_redeskript-pruefung.js`](workflows/2026-10-25_redeskript-pruefung.js).
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
 
 ---
 
