@@ -194,6 +194,9 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 172 | 25.10.2026 | System | Workflow-Meldung: D31 fertig (3 Prüfer, 3 Widerleger, 26 Befunde, 23 bestätigt) | D31 | Befunde von Claude eingearbeitet |
 | 173 | 25.10.2026 | Yannick | Frage: Was ist zu tun, um das Abstimmungsskript jetzt zu verbessern? | – | beantwortet: Anleitung „Skript aktualisieren“, aktuelle Fassung bei Google geprüft |
 | 174 | 25.10.2026 | Yannick | „fertig“ (Skript bei Google aktualisiert) | – | erledigt: Fassung geprüft, Lasttest 2× mit 20 bestanden, Doku nachgezogen |
+| 175 | 25.10.2026 | Yannick | Prompt-Sammlung von Elias (PDF); Lukas hat keine KI genutzt | – | in Arbeit |
+| 176 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
+| 177 | 25.10.2026 | Yannick | „Versuch es noch einmal“ | – | in Arbeit (siehe 175) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2757,6 +2760,38 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 175 – 25.10.2026 – Yannick
+
+> @"/root/.claude/uploads/002eded1-dc13-5a62-bf74-88c0d7931eff/213acdf4-Prompt-Sammlung_HOLY.pdf" Die Prompt sammlung von
+> Elias, Lukas hat keine KI genutzt
+
+- **Anhänge:** PDF „Prompt-Sammlung – Unternehmenskommunikation (HOLY)“ von Elias Knauber (3 Seiten, nur Text, keine
+  Bilder, Stand 25.10.2026) mit drei Prompts: (1) Kommunikationsanalyse der Social-Media-Auftritte, (2) Tutor-Leitfaden
+  zur Fallstudie 1, (3) „HOLY als Mensch: Varianten ‚Der Verwandlungskünstler‘“. Das Tool ist darin nicht genannt.
+- **Vorgehen Claude:** PDF gelesen (Claude selbst, kein Unteragent). Die drei Prompts wörtlich in Abschnitt 3.1
+  übernehmen (E-EK-01 bis E-EK-03), Lukas' Angabe vermerken. Alle Stellen suchen, an denen Elias' KI-Nutzung noch als
+  „offen“ steht (Fragerunde F37/F23, Ausarbeitungen, Prompt-Log B2, Notizen, Vortrags- und Redeskript) und angleichen.
+  Das PDF selbst nicht ins Repository (Regel für Elias' PDFs; der Wortlaut steht im Nachweis).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D32
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 176 – 25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> „This session's worker process was restarted. If your previous turn was already complete, take no action and wait
+> for the next event. Otherwise, continue from where you left off.“ (zweimal)
+
+- **Vorgehen Claude:** Stand geprüft: noch nichts geschrieben, das Repository unverändert bis auf das Rohprotokoll.
+
+### 177 – 25.10.2026 – Yannick
+
+> Versuch es noch einmal
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Arbeit an 175 von vorn aufgenommen.
+- **Ergebnis:** siehe 175.
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -2801,6 +2836,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
 | D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 3 Läufe (zweimal am Nutzungslimit); 7 Teile, 28 Befunde (0 hoch, 10 mittel, 18 niedrig), alle bearbeitet | Befunde an den Quelldateien nachgeprüft, eingearbeitet, PDF angesehen |
 | D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | 26 Befunde (3 hoch, 16 mittel, 7 niedrig), 23 bestätigt, alle 23 eingearbeitet | Widerleger-Urteile gelesen, Kürzungsvorrat und Anzeigetexte an `index.html`/`komponenten.js` nachgeprüft, PDF angesehen |
+| D32 | 25.10.2026 | 175 (nach 177 neu begonnen) | Workflow „elias-ki-einarbeiten“ (6 Unteragenten in 2 Phasen) | Elias' Prompt-Sammlung einarbeiten: 4 Umsetzer (Fragerunde; Ausarbeitungen, prompts, QUELLEN, LIESMICH, Folienentwürfe; Präsentation; Skripte), 2 Prüfer (Faktentreue/Konsistenz; Technik) | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3736,6 +3772,16 @@ steht hier mit dem wörtlichen Auftrag.
   Änderungen in `index.html` – [Name] auf Folie 08 eintragen, „Zum frechen Kumpel“ auf 09b, „Löwe/Schwan als Beispiel“
   auf 08, ca.-Angaben auf Folie 11.
 
+### D32 – 25.10.2026 – ausgelöst durch Prompt 175 (nach 177 neu begonnen)
+
+- **Art:** Workflow „elias-ki-einarbeiten“: vier Unteragenten ändern parallel getrennte Dateigruppen nach einem
+  Faktenblatt von Claude, danach zwei Prüfer (Faktentreue und Konsistenz; Technik der Präsentation mit Testläufen).
+  Die Unteragenten lesen das PDF nicht (es liegt unter den Uploads); die Fakten daraus stehen im Faktenblatt.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-25_elias-ki-einarbeiten.js`](workflows/2026-10-25_elias-ki-einarbeiten.js),
+  Faktenblatt [`workflows/2026-10-25_elias-ki-faktenblatt.md`](workflows/2026-10-25_elias-ki-faktenblatt.md).
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
+
 ---
 
 ## 3. KI-Nutzung außerhalb von Claude Code
@@ -3753,7 +3799,10 @@ Nr. 4/2025) und Handreichung „Eigenständigkeitserklärung für Prüfungen“ 
 
 | ID | FS | Datum | Person | Tool & Version | Ziel | Prompt (Kurzform / Link) | Ergebnis (1 Satz) | Prüfung / Anpassung | Verwendet in |
 |----|----|-------|--------|----------------|------|--------------------------|-------------------|---------------------|--------------|
-| E-__-01 | 1 | | | | | | | | |
+| E-EK-01 | 1 | vor 25.10.2026 (nach den Aufnahmen vom 20.10.) | Elias Knauber | nicht angegeben | Kommunikationsanalyse der Social-Media-Auftritte (Aufgabe 2) | Analyse von Instagram, TikTok, YouTube aus eigenen Bildschirmaufnahmen (3.1) | Analyse als Word-Datei mit Vergleichstabelle und Abbildungen (laut Sammlung) | nicht angegeben – bei Elias nachfragen | `kommunikationsanalyse.md`; Folien 09, 09b, 10, 11, B6 |
+| E-EK-02 | 1 | vor 25.10.2026 | Elias Knauber | nicht angegeben | Aufgaben verstehen, Lösungsweg | Tutor-Leitfaden zur Fallstudie 1 aus Vorlesungsfolien und Aufgaben-Screenshot (3.1) | Leitfaden als PDF (ca. 4–5 Seiten) mit Checkliste und Quellenliste (laut Sammlung) | nicht angegeben – bei Elias nachfragen | Vorgehen bei Analogien und Kommunikationsanalyse (keine Folie direkt) |
+| E-EK-03 | 1 | vor 25.10.2026 | Elias Knauber | nicht angegeben | Mensch-Analogie (Markentonalität) | Varianten „Der Verwandlungskünstler“ schärfen und zwei weitere entwerfen (3.1) | geschärfter Vorschlag, zwei Varianten, Empfehlung (laut Sammlung); Elias wählt selbst | nicht angegeben – bei Elias nachfragen | `analogien.md` (Mensch: Impro-Comedian); Folien 08, 10 (Tonalität) |
+| – | 1 | – | Lukas Welker | – | – | keine KI genutzt (laut Yannick, 25.10.2026, KI-Nachweis 175) | – | – | – |
 
 **Spalte „Prüfung / Anpassung“** ist die wichtigste: Was wurde kontrolliert (Quelle geöffnet, mit echtem Interview
 verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
@@ -3764,7 +3813,116 @@ Detailblöcke aus den persönlichen Listen, unverändert übernommen (Überschri
 
 **Fallstudie 1**
 
-_noch keine Einträge_
+Übertragen von Claude am So, 25.10.2026 (KI-Nachweis 175) aus Elias Knaubers „Prompt-Sammlung – Unternehmenskommunikation
+(HOLY)“ (PDF, 3 Seiten, Stand 25.10.2026, an Yannick; liegt nicht im Repository). Die Prompts stehen wörtlich; nur die
+Zeilenumbrüche des PDFs sind geglättet. Laut Sammlung sind „die Annahmen in eckigen Klammern … Teil der Prompts“. Tool,
+Version, Datum der Nutzung und die Prüfung der Ergebnisse nennt die Sammlung nicht – bei Elias nachfragen. Lukas Welker
+hat laut Yannick keine KI genutzt.
+
+#### E-EK-01 – vor 25.10.2026 – Elias
+
+**Kommunikationsanalyse der Social-Media-Auftritte (Aufgabe 2)** · **Tool:** nicht angegeben · **Anhänge:**
+Bildschirmaufnahmen der Profile auf Instagram, TikTok und YouTube (Stand 20.10.2026), vier Screenshots einzelner
+Beiträge · **personenbezogene Daten entfernt:** nicht angegeben (die Aufnahmen zeigen zum Teil erkennbare Personen,
+`kommunikationsanalyse.md`; KI-Richtlinie der HSKL Nr. 6 – bei Elias nachfragen) · **Ergebnis laut Sammlung:** Analyse
+als Word-Datei mit Vergleichstabelle und Abbildungen
+
+> Analysiere die offiziellen Social-Media-Auftritte der Marke HOLY auf Instagram, TikTok und YouTube für meine
+> Kursarbeit im Fach Unternehmenskommunikation (Aufgabe 2, Markenidentität). Grundlage sind meine angehängten
+> Bildschirmaufnahmen der drei Profile (Stand 20.10.2026) und vier Screenshots einzelner Beiträge.
+>
+> Die Aufgabe lautet: „Führen Sie eine Kommunikationsanalyse zum Markenbild (insbesondere Instagram/Facebook, YouTube)
+> durch und beschreiben Sie Corporate Design, ggf. Schlüsselbilder, Bildwelten, Logo, Slogan, etc.“ [Annahme: TikTok
+> ersetzt Facebook, weil der Kanal für die junge Zielgruppe relevanter ist.]
+>
+> Bearbeite die Kriterien in dieser Reihenfolge:
+> 1. Corporate Design: Logo, Markenname, Farben, Typografie, wiederkehrende Gestaltungselemente, Maskottchen.
+> 2. Slogan und Claims.
+> 3. Schlüsselbilder und Bildwelten.
+> 4. Je Plattform: Inhalte, Formate, Rolle im Kanalmix, sichtbare Kennzahlen, Tonalität.
+> 5. Fazit: Welches Markenbild entsteht, wo ist der Auftritt konsistent, wo nicht?
+>
+> Begründe jede Aussage mit konkreten Beobachtungen aus dem Material (Beitragstitel, Zahlen, Bildbeispiele) und
+> erkläre, wie sie auf das Markenbild wirkt. Trenne klar zwischen dem, was sichtbar ist, und deiner Interpretation. Wo
+> Daten fehlen (z. B. Reichweiten-Insights), sag das offen.
+>
+> Schreib in sachlichem, wissenschaftlichem Deutsch als Fließtext mit nummerierten Überschriften. Ergänze eine
+> Vergleichstabelle der drei Kanäle und einige Abbildungen aus dem Material. Liefere das Ergebnis als Word-Datei, die
+> ich in meine Kursarbeit übernehmen kann. [Annahme: Word-Format]
+
+- **Prüfung / Anpassung:** nicht angegeben. **Hinweis Claude:** Facebook kommt im Prompt nicht vor; die übertragene
+  Ausarbeitung (12 Seiten) enthält Facebook (Bildschirmaufnahme der Facebook-Suche vom 21.10.2026) – wie dieser Teil
+  entstand, ist nicht angegeben.
+- **Verwendet in:** `fallstudie-1-brand-persona/kommunikationsanalyse.md`; Folien 09, 09b, 10 (Feld Markenbild, Lücke 2),
+  11 (Empfehlung 3), B6.
+
+#### E-EK-02 – vor 25.10.2026 – Elias
+
+**Tutor-Leitfaden zur Fallstudie 1 „Brand Persona & Markenidentität“** · **Tool:** nicht angegeben · **Anhänge:**
+Vorlesungsfolien „Unternehmenskommunikation 2026 Teil 1“ (PDF), Screenshot der beiden Teilaufgaben · **Ergebnis laut
+Sammlung:** Leitfaden als PDF (ca. 4–5 Seiten) mit Checkliste und Quellenliste
+
+> Du unterstützt mich als Tutor im Fach Unternehmenskommunikation. Wir bearbeiten in der Gruppe die Fallstudie 1
+> „Brand Persona & Markenidentität“ für die Marke HOLY (HOLY Energy, Berlin) und präsentieren am 26.10.
+>
+> &lt;material&gt;
+> - Vorlesungsfolien „Unternehmenskommunikation 2026 Teil 1“ (PDF), vor allem Folie 60 (Aufgabenstellung), Folie 58
+>   (Bewertungskriterien) und Folien 88–99 (Markensteuerrad, integrierte Kommunikation)
+> - Screenshot mit zwei Teilaufgaben:
+>   1. Markenidentität: Leiten anhand von Analogiemethoden (Marke wäre Mensch/Tier) relevante emotionale
+>      Markencharakteristika/Markenemotionen im Sinne der Markentonalität her.
+>   2. Markenidentität: Führen Sie eine Kommunikationsanalyse zum Markenbild (insbesondere Instagram/Facebook,
+>      YouTube) durch und beschreiben Sie Corporate Design, ggf. Schlüsselbilder, Bildwelten, Logo, Slogan etc.
+>
+> &lt;/material&gt;
+>
+> Ich will die beiden Aufgaben zuerst verstehen und einen klaren Lösungsweg haben. Die eigentliche Ausarbeitung mache
+> ich danach selbst.
+>
+> Erstelle einen kompakten Leitfaden als PDF [Annahme: ca. 4–5 Seiten]. Erkläre darin für jede der beiden
+> Teilaufgaben:
+> 1. was genau gefordert ist und wo das Ergebnis im Markensteuerrad nach Esch landet, mit Bezug auf die passenden
+>    Folien,
+> 2. welche Begriffe und Modelle aus der Vorlesung ich anwenden muss,
+> 3. wie ich Schritt für Schritt vorgehe (Erhebung, Auswertung, Darstellung in der Präsentation),
+> 4. erste konkrete Ansatzpunkte für HOLY aus einer kurzen Web-Recherche (Website, Social-Media-Kanäle, Claims,
+>    Design). Kennzeichne sie klar als Hypothesen, die ich prüfen muss, nicht als fertige Lösung,
+> 5. typische Fehler, die ich vermeiden sollte.
+>
+> Schließe mit einem Abschnitt, der zeigt, wie beide Aufgaben zusammenhängen. Füge außerdem eine Checkliste und eine
+> Quellenliste an. Richte den Leitfaden an den Bewertungskriterien der Fallstudie aus. Wenn Informationen unsicher
+> sind oder sich nicht recherchieren lassen (z. B. aktuelle Followerzahlen), sag das offen, statt zu raten.
+
+- **Prüfung / Anpassung:** nicht angegeben.
+- **Verwendet in:** Vorgehen bei Analogien und Kommunikationsanalyse; keine Folie direkt.
+
+#### E-EK-03 – vor 25.10.2026 – Elias
+
+**HOLY als Mensch: Varianten „Der Verwandlungskünstler“** · **Tool:** nicht angegeben · **Voraussetzung laut
+Sammlung:** „Die Dateien mit den bisherigen Infos (Vorschlag „Der Verwandlungskünstler“, Tier-Analogien Papagei und
+Chamäleon) müssen im Chat vorhanden sein; in einem neuen Chat mit anhängen“ · **Ergebnis laut Sammlung:** geschärfter
+Vorschlag und zwei weitere Varianten, jeweils mit Charakterporträt, ausgelösten Emotionen, Tonalitätsbegriffen und
+Beleg, plus Empfehlung
+
+> Wir bleiben bei Fallstudie 1 (HOLY, Teilaufgabe „Analogiemethoden → Markentonalität“), Tiere: Papagei und Chamäleon.
+>
+> Arbeite für „HOLY als Mensch“ die Richtung „Der Verwandlungskünstler“ weiter aus. Schärfe den bisherigen Vorschlag so,
+> dass er nicht beliebig wirkt, und entwirf zwei weitere Varianten in dieser Richtung.
+>
+> Jede Variante soll die Aufgabe erfüllen: Sie macht über den Charakter emotionale Markeneigenschaften und
+> Markenemotionen im Sinne der Markentonalität sichtbar, nicht Soziodemografie oder Kaufverhalten wie bei der Persona.
+> Nenne pro Variante kurz:
+> - das Charakterporträt (Auftreten, Umgang mit anderen, Humor, was ihn aufregt, was er nie tun würde),
+> - die Emotionen, die er bei anderen auslöst,
+> - welche Tonalitätsbegriffe er abdeckt und welche fehlen,
+> - einen Beleg aus HOLYs Kommunikation.
+>
+> Empfiehl zum Schluss eine Variante mit Begründung. Ich wähle danach aus, was ich weiter ausarbeiten möchte.
+
+- **Prüfung / Anpassung:** nicht angegeben. **Hinweis Claude:** In Elias' Ausarbeitung „Analogien: Mensch und Tier“
+  (Stand 16.10.2026) steht als Mensch der Impro-Comedian; wie er aus den Varianten entstand, ist nicht angegeben. Die
+  Tier-Analogien lagen dem Tool laut Sammlung als Vorinformation vor.
+- **Verwendet in:** `fallstudie-1-brand-persona/analogien.md`; Folie 08, Feld Tonalität auf Folie 10.
 
 ---
 
