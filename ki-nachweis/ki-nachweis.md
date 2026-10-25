@@ -184,6 +184,9 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 162 | 24.10.2026 | System | Workflow-Meldung: D30 – alle 9 Unteragenten sofort am Nutzungslimit gescheitert („resets 11:10pm (UTC)“) | D30 | nach dem Reset fortgesetzt |
 | 163 | 24./25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
 | 164 | 24./25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | in Arbeit |
+| 165 | 25.10.2026 | System | Workflow-Meldung: D30 – 4 von 7 Autoren fertig (Grundlagen, 01–03, 04–05b, 06–07); 08–08b, 09–10, 11/12/Backup und beide Prüfer am Nutzungslimit gescheitert („resets 4:30am (UTC)“) | D30 | Teil 09–10 lag trotzdem vollständig vor; Rest fortgesetzt |
+| 166 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
+| 167 | 25.10.2026 | Yannick | „Weiter“ | D30 (fortgesetzt) | in Arbeit |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2621,6 +2624,33 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Anhänge:** keine.
 - **Vorgehen Claude:** Workflow D30 mit unverändertem Skript erneut gestartet (Fortsetzung), danach Zusammenbau,
   Einarbeitung der Prüferbefunde, Ablage und Commit.
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D30
+- **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 165 – 25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D30: 4 von 9 Unteragenten fertig (Teile Grundlagen, 01–03, 04–05b, 06–07); die
+> Autoren für 08–08b, 09–10 und 11/12/Backup sowie beide Prüfer: „You've hit your session limit · resets 4:30am (UTC)“.
+
+- **Vorgehen Claude:** siehe 167.
+
+### 166 – 25.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> „This session's worker process was restarted. If your previous turn was already complete, take no action and wait
+> for the next event. Otherwise, continue from where you left off.“ (zweimal)
+
+- **Vorgehen Claude:** Stand geprüft: Teile 0, 1, 2, 3 und 5 liegen im Scratchpad; Teil 5 (Folien 09–10) ist vollständig,
+  obwohl der Autor am Limit als gescheitert gemeldet wurde.
+
+### 167 – 25.10.2026 – Yannick
+
+> Weiter
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** D30 fortgesetzt: fertige Autoren aus dem Zwischenspeicher, Teil 5 nicht neu schreiben lassen
+  (Skript entsprechend angepasst), Autoren für 08–08b und 11/12/Backup und beide Prüfer neu.
 - **Ergebnis:** in Arbeit
 - **Unteragenten:** D30
 - **Prüfung durch die Gruppe:** ☐ offen
