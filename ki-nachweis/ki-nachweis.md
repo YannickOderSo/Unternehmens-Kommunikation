@@ -192,6 +192,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 170 | 25.10.2026 | Yannick | „Weiter“ (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | erledigt: Befunde eingearbeitet, Skript abgelegt |
 | 171 | 25.10.2026 | Yannick | Kompaktes Skript mit Redetext für jede Folie | D31 | erledigt: `redeskript.md` + PDF (14 Seiten), 23 Prüferbefunde eingearbeitet |
 | 172 | 25.10.2026 | System | Workflow-Meldung: D31 fertig (3 Prüfer, 3 Widerleger, 26 Befunde, 23 bestätigt) | D31 | Befunde von Claude eingearbeitet |
+| 173 | 25.10.2026 | Yannick | Frage: Was ist zu tun, um das Abstimmungsskript jetzt zu verbessern? | – | beantwortet: Anleitung „Skript aktualisieren“, aktuelle Fassung bei Google geprüft |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2723,6 +2724,20 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 > bestätigt“.
 
 - **Vorgehen Claude:** Befunde gelesen, an den Quellen nachgeprüft und eingearbeitet (siehe D31).
+
+### 173 – 25.10.2026 – Yannick
+
+> Würde gerade gerne das Abstimmungsskript jetzt verbessern was muss ich machen?
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** `live-abstimmung/ANLEITUNG.md` (Abschnitt „Skript aktualisieren (neue Fassung)“) und
+  `apps-script.gs` gelesen. Nur lesend bei der echten Web-App nachgefragt (`aktion=fassung` und `aktion=stand` mit
+  `minuten=30`, keine Stimme): Bei Google läuft noch die alte Fassung (Antwort ohne „(Skript-Fassung …)“ und ohne
+  `"minuten":30`, also ohne Zeitfenster). Auf GitHub liegt die Fassung 20.10.2026. Yannick die Schritte genannt
+  (Code kopieren, ersetzen, „einrichten“ ausführen, neue Version bereitstellen, Kurzprüfung, Lasttest mit 20).
+- **Ergebnis:** Anleitung im Chat; keine Dateien außer diesem Nachweis geändert.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
