@@ -200,6 +200,9 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 178 | 25./26.10.2026 | System | Workflow-Meldung: D32 – 4 Umsetzer fertig, beide Prüfer am Nutzungslimit gescheitert („resets 4:50am (UTC)“) | D32 | Prüfer per Fortsetzung neu gestartet |
 | 179 | 26.10.2026 | Yannick | „Weiter“ | D32 (fortgesetzt) | erledigt (siehe 175) |
 | 180 | 26.10.2026 | System | Stop-Hook: uncommittete Änderungen (Rohprotokoll, angepasstes Workflow-Skript D32) | – | committet und gepusht |
+| 181 | 26.10.2026 | Yannick | „Reflexionsbogen noch ausfüllen“ | D33 | in Arbeit |
+| 182 | 26.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
+| 183 | 26.10.2026 | Yannick | „Weiter“ | D33 | in Arbeit (siehe 181) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2831,6 +2834,36 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Vergleichsstand vor D32 umgestellt, weil die Änderungen der Umsetzer schon committet waren). Beides committet und
   gepusht; die Prüfer von D32 laufen noch.
 
+### 181 – 26.10.2026 – Yannick
+
+> Reflexionsbogen noch ausfüllen
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Vorlage `reflexion-vorlage.md` (offizielle Fragen von Prof. Stenger, höchstens 500 Wörter je
+  Fallstudie, jede Person schreibt ihre eigene) gelesen. Nur Yannicks Reflexion zu Fallstudie 1 als **Entwurf**
+  ausfüllen – aus seinen dokumentierten Aufgaben und Entscheidungen (KI-Nachweis, Ausarbeitungen); keine Reflexion für
+  Elias oder Lukas. Persönliche Eindrücke, die nur Yannick kennt, als zu prüfen kennzeichnen; KI-Hinweis unter die
+  Reflexion (Vorgabe der Vorlage). Danach unabhängige Prüfung (Workflow D33).
+- **Ergebnis:** in Arbeit
+- **Unteragenten:** D33
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 182 – 26.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> „This session's worker process was restarted. If your previous turn was already complete, take no action and wait
+> for the next event. Otherwise, continue from where you left off.“ (zweimal)
+
+- **Vorgehen Claude:** Stand geprüft: noch nichts geschrieben (nur Vorlage und README gelesen).
+
+### 183 – 26.10.2026 – Yannick
+
+> Weiter
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Arbeit an 181 fortgesetzt.
+- **Ergebnis:** siehe 181.
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -2876,6 +2909,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 3 Läufe (zweimal am Nutzungslimit); 7 Teile, 28 Befunde (0 hoch, 10 mittel, 18 niedrig), alle bearbeitet | Befunde an den Quelldateien nachgeprüft, eingearbeitet, PDF angesehen |
 | D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | 26 Befunde (3 hoch, 16 mittel, 7 niedrig), 23 bestätigt, alle 23 eingearbeitet | Widerleger-Urteile gelesen, Kürzungsvorrat und Anzeigetexte an `index.html`/`komponenten.js` nachgeprüft, PDF angesehen |
 | D32 | 25./26.10.2026 | 175 (nach 177 neu begonnen, nach 179 fortgesetzt) | Workflow „elias-ki-einarbeiten“ (6 Unteragenten in 2 Phasen) | Elias' Prompt-Sammlung einarbeiten: 4 Umsetzer (Fragerunde; Ausarbeitungen, prompts, QUELLEN, LIESMICH, Folienentwürfe; Präsentation; Skripte), 2 Prüfer (Faktentreue/Konsistenz; Technik) | 138 Änderungen der Umsetzer; Prüfer: 11 Befunde (0 hoch, 3 mittel, 8 niedrig), alle umgesetzt | Diff und Befunde selbst gelesen, Nacharbeit, Skripte und Exporte neu, Tests |
+| D33 | 26.10.2026 | 181 | Workflow „reflexion-pruefung“ (2 Unteragenten) | Reflexionsentwurf Yannick prüfen: Faktentreue an den Quellen; Bewertungskriterien und Vorgaben der Vorlage | läuft | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3834,6 +3868,15 @@ steht hier mit dem wörtlichen Auftrag.
   durchsucht; `export/` neu (Folienbilder: nur b2, b6, b8, f08, f09, f09b geändert; PDF 23 Seiten, Fußzeilen mit
   „KI-gestützt“ und „E-EK“ im Text geprüft; Übersicht Stand 26.10.2026). Danach `pruefen.mjs` (0 Fehler),
   `referent-test.mjs` 43/43, `live-abstimmung-test.mjs` 53/53, `pruefe_synthese.py` ohne Fehler.
+
+### D33 – 26.10.2026 – ausgelöst durch Prompt 181
+
+- **Art:** Workflow „reflexion-pruefung“: zwei Prüfer parallel, nur lesend – (1) jede Tatsachenaussage des Entwurfs an
+  den Quellen im Repository, faire Darstellung der Teammitglieder; (2) Bewertungskriterien der Vorlage (Tiefe, kritische
+  Selbstbewertung, Lerntransfer), Wortlimit, KI-Hinweis, Floskeln.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-26_reflexion-pruefung.js`](workflows/2026-10-26_reflexion-pruefung.js).
+- **Ergebnis:** läuft
+- **Wie Claude das Ergebnis geprüft hat:** folgt
 
 ---
 
