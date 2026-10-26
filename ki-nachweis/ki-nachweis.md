@@ -219,6 +219,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 196 | 26.10.2026 | Yannick | Abgaberegeln von Prof. Stenger | – | Antwort im Chat aus den Unterlagen (Folien 57–60, Reflexionsvorlage) |
 | 197 | 26.10.2026 | Yannick | Zusammenfassung der KI-Nachweise als PDF für Prof. Stenger; Prompts zur Selbstreflexion und „zu automatisiert“ klingende Prompts streichen | – | PDF mit allen Prompts der Gruppe; automatische Systemmeldungen ausgelassen und im PDF vermerkt; Prompts zur Reflexion nicht gestrichen |
 | 198 | 26.10.2026 | Yannick | Alle Einträge nach 186 streichen (Arbeit an der Fallstudie beendet) | – | nicht gestrichen; Alternative im Chat |
+| 199 | 26.10.2026 | Yannick | Zustimmung: Zusammenfassung sichtbar auf die Fallstudie begrenzen | – | PDF neu: Einträge 01 bis 180, Delegationen ohne D33/D34, Abgrenzung mit Link im Kopf |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3156,6 +3157,27 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   weiter, deshalb dieser Eintrag.
 - **Ergebnis:** Antwort im Chat; keine Änderung an Nachweis oder PDF außer diesem Eintrag.
 - **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 199 – 26.10.2026 – Yannick
+
+> ja mach das so
+
+- **Anhänge:** keine. Antwort auf das Angebot aus Eintrag 198.
+- **Vorgehen Claude:** Generator der Zusammenfassung um eine sichtbare Abgrenzung erweitert (Parameter „bis Nr.“).
+  Die Zusammenfassung endet bei Eintrag 180, dem letzten Eintrag der Fallstudienarbeit (D32, Einarbeitung von Elias'
+  KI-Nutzung); ab 181 beginnen die Einzelreflexionen (181, 183, 184, 187 bis 195, 197 bis 199) und Organisatorisches
+  (186 Token-Kosten, 196 Abgaberegeln). Delegationen, die erst ein späterer Prompt ausgelöst hat (D33, D34), fehlen
+  ebenfalls. Im Kopf des PDFs steht ein hervorgehobener Absatz „Abgrenzung“: Umfang der Zusammenfassung, dass ab
+  Eintrag 181 die Einzelreflexionen und Organisatorisches folgen, dazu D33 und D34, mit Link zum vollständigen
+  KI-Nachweis. Tabelle 3 (KI-Nutzung außerhalb) unverändert. Der KI-Nachweis selbst bleibt vollständig.
+- **Ergebnis:** `KI-Nachweis_Zusammenfassung_FS1.pdf` neu, 9 Seiten A4 quer: 102 Prompts zur Fallstudie (Einträge 01 bis
+  180), 78 ausgelassene Systemmeldungen mit Nummern, 36 Delegationen bzw. Übergaben (ohne D33, D34), 4 Zeilen KI-Nutzung
+  außerhalb. Prüfung per Skript: alle 102 Prompt-Nummern bis 180 im PDF, keine Zeile ab 181, D33 und D34 nicht als
+  Tabellenzeile, Abgrenzungsabsatz mit Link vorhanden; Sichtprüfung Seite 1.
+- **Dateien:** `ki-nachweis/KI-Nachweis_Zusammenfassung_FS1.pdf`, `ki-nachweis/workflows/2026-10-26_ki-nachweis-zusammenfassung.py`,
+  `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 

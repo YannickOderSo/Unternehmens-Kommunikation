@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Zusammenfassung des KI-Nachweises als druckfertiges HTML (danach mit Chromium als PDF drucken).
 
-Aufruf: 2026-10-26_ki-nachweis-zusammenfassung.py <ki-nachweis.md> <ausgabe.html> <stand TT.MM.JJJJ>
+Aufruf: 2026-10-26_ki-nachweis-zusammenfassung.py <ki-nachweis.md> <ausgabe.html> <stand TT.MM.JJJJ> [<bis Nr.>]
+Mit <bis Nr.> endet die Zusammenfassung sichtbar beim Eintrag mit dieser Nummer (Fallstudienarbeit); Delegationen,
+die erst ein späterer Prompt ausgelöst hat, fehlen ebenfalls. Beides steht als Abgrenzung mit Link im Kopf des PDFs.
 Übernimmt die drei Übersichtstabellen des Nachweises unverändert: Prompts an Claude Code (Abschnitt 1),
 Delegationen an Unteragenten (Abschnitt 2), KI-Nutzung außerhalb von Claude Code (Abschnitt 3).
 Ausgelassen werden nur automatische Systemmeldungen (Spalte „Von“ = „System“ oder „Systemhinweis …“), weil sie
@@ -10,6 +12,7 @@ keine Prompts der Gruppe sind; ihre Anzahl und Nummern stehen im Kopf des PDFs.
 import html, re, sys
 
 md, out, stand = sys.argv[1:4]
+bis = int(sys.argv[4]) if len(sys.argv) > 4 else None
 s = open(md, encoding='utf-8').read()
 REPO = 'https://github.com/yannickoderso/unternehmens-kommunikation/blob/master/ki-nachweis/ki-nachweis.md'
 
@@ -34,6 +37,21 @@ def inline(t):
 k1, t1 = tabelle('| Nr. | Datum | Von |')
 k2, t2 = tabelle('| Nr. | Datum | Ausgelöst durch Prompt |')
 k3, t3 = tabelle('| ID | FS | Datum | Person |')
+
+alle_t1, alle_t2 = len(t1), len(t2)
+if bis is not None:
+    ende = next(i for i, z in enumerate(t1) if z[0].isdigit() and int(z[0]) == bis)
+    t1 = t1[:ende + 1]
+    erster = lambda z: int(re.match(r'\D*(\d+)', z[2]).group(1)) if re.match(r'\D*(\d+)', z[2]) else 0
+    spaeter_d = [z[0] for z in t2 if erster(z) > bis]
+    t2 = [z for z in t2 if erster(z) <= bis]
+    abgrenzung = (f'<p class="abgrenzung"><b>Abgrenzung:</b> Diese Zusammenfassung umfasst die Arbeit an der Fallstudie '
+                  f'(Einträge {t1[0][0]} bis {bis}{", Delegationen ohne " + " und ".join(spaeter_d) if spaeter_d else ""}). '
+                  f'Ab Eintrag {bis + 1} betreffen die Einträge die Einzelreflexionen und Organisatorisches'
+                  f'{", dazu die Delegationen " + " und ".join(spaeter_d) if spaeter_d else ""}; sie stehen vollständig im '
+                  f'KI-Nachweis: {REPO}</p>')
+else:
+    abgrenzung = ''
 
 ist_system = lambda z: z[2] == 'System' or z[2].startswith('Systemhinweis')
 system = [z for z in t1 if ist_system(z)]
@@ -77,6 +95,7 @@ tbody tr:nth-child(even) td {{ background: #f3f4f5; }}
 tr {{ break-inside: avoid; }}
 code {{ font: 7.4pt "DejaVu Sans Mono", monospace; }}
 .hinweis {{ font-size: 7.8pt; color: #444; }}
+.abgrenzung {{ border-left: 1mm solid #5f6b73; padding: 1mm 2mm; background: #f3f4f5; }}
 </style></head>
 <body>
 <h1>KI-Nachweis Fallstudie 1: Zusammenfassung</h1>
@@ -86,13 +105,14 @@ code {{ font: 7.4pt "DejaVu Sans Mono", monospace; }}
 <dt>Modul</dt><dd>Unternehmenskommunikation, Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern</dd>
 <dt>Tool</dt><dd>Claude Code (Anthropic), eine Cloud-Sitzung von Yannick Heisler im Repository der Gruppe; dazu KI-Nutzung außerhalb (Abschnitt 3)</dd>
 <dt>Zeitraum</dt><dd>{inline(datum[0])} bis {inline(datum[-1])} · Stand {inline(stand)}</dd>
-<dt>Umfang</dt><dd>{len(prompts)} Prompts der Gruppe an Claude Code (davon {fuer_lukas} im Auftrag von Lukas Welker) · {len(t2)} Delegationen an Unteragenten bzw. Übergaben · {len(t3)} Zeilen KI-Nutzung außerhalb von Claude Code</dd>
+<dt>Umfang</dt><dd>{len(prompts)} Prompts der Gruppe an Claude Code{f" (davon {fuer_lukas} im Auftrag von Lukas Welker)" if fuer_lukas else ""}{" zur Fallstudie" if bis is not None else ""} · {len(t2)} Delegationen an Unteragenten bzw. Übergaben · {len(t3)} Zeilen KI-Nutzung außerhalb von Claude Code</dd>
 <dt>Vollständig</dt><dd>Alle Prompts wörtlich, Vorgehen, Dateien und Aufträge an Unteragenten: {REPO} · Rohdaten: ki-nachweis/rohprotokoll.jsonl</dd>
 </dl>
 <p class="hinweis">Die Tabellen sind unverändert aus dem KI-Nachweis übernommen. Nicht aufgeführt sind {len(system)} automatische
 Systemmeldungen der Sitzung (Hinweise auf nicht committete Dateien, Meldungen fertiger oder abgebrochener Workflows,
 Neustarts, Nutzungslimits); sie sind keine Prompts der Gruppe und stehen vollständig im KI-Nachweis
 (Nr. {system_nr}{f" sowie {system_ohne_nr} ohne Nummer" if system_ohne_nr else ""}).</p>
+{abgrenzung}
 
 <h2>1. Prompts an Claude Code</h2>
 {html_tabelle(k1, prompts, [4, 7, 8, 39, 9, 33])}
