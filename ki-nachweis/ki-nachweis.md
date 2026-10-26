@@ -212,7 +212,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 190 | 26.10.2026 | Yannick | Reflexion noch einfacher, keine Folien zitieren, letzte Antwort überarbeiten | – | Fassung 5 (493 Wörter), PDF neu |
 | 191 | 26.10.2026 | Yannick | Teamantwort: Lukas nicht belasten | – | Frage 6 neu (491 Wörter), PDF neu |
 | 192 | 26.10.2026 | Yannick | Reflexion für Lukas verfassen (Lukas überlässt alle Entscheidungen) | – | keine Reflexion ohne Lukas' Antworten; Fragenliste für Lukas im Chat |
-| 193 | 26.10.2026 | Yannick (für Lukas) | Lukas bittet: Fragen für ihn beantworten, Unbekanntes realistisch annehmen | D34 | *läuft:* Entwurf geschrieben, Prüfung D34 |
+| 193 | 26.10.2026 | Yannick (für Lukas) | Lukas bittet: Fragen für ihn beantworten, Unbekanntes realistisch annehmen | D34 | Entwurf + PDF (460 Wörter, 1 Seite) an Yannick; Annahmen markiert; nicht im Repository |
 | – | 26.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | committet und gepusht |
 
 ### 01 – 13.10.2026 – Yannick
@@ -3049,7 +3049,13 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Gedankenstriche, keine Folienzitate (wie bei Yannicks Fassung 5). Satz zur KI-Nutzung laut Gruppenvorlage im
   Entwurf; ob er bleibt, entscheidet Lukas. Entwurf und PDF liegen **nicht** im öffentlichen Repository
   (personenbezogen, Abgabe einzeln). Prüfung durch Workflow D34 (zwei Prüfer).
-- **Ergebnis:** *läuft*
+- **Ergebnis:** Entwurf nach D34 überarbeitet (alle 23 Befunde umgesetzt, siehe D34): 460 Wörter, keine
+  Gedankenstriche, keine Folienzitate, keine gemeinsame Fünf-Wort-Folge mit Yannicks Reflexion (per Skript geprüft).
+  Inhalt: Frage 1 Gründerantworten klingen wie die Website; Frage 2 Repertory Grid und Laddering im Fragenkatalog an
+  den Gründer und ihre Grenzen; Frage 3 wie viel Platz die Gründerbefragung bekommt; Frage 4 Fragen formulieren;
+  Frage 5 Gründerkontakt gut, von Lukas keine Interviews und keine Auswertung; Frage 6 Abstimmung (belegt durch
+  Lukas' Ansage vom 15.10., KI-Nachweis 32). Satz zur KI-Nutzung im PDF. Markdown und PDF
+  (`Selbstreflexion_FS1_Welker.pdf`, 1 Seite) an Yannick übergeben, **nicht** im Repository.
 - **Dateien:** `ki-nachweis/ki-nachweis.md` (dieser Eintrag, D34, Abschnitt 3 Zeile Lukas),
   `ki-nachweis/workflows/2026-10-26_reflexion-lukas-pruefung.js`.
 - **Unteragenten:** D34
@@ -3104,7 +3110,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | 26 Befunde (3 hoch, 16 mittel, 7 niedrig), 23 bestätigt, alle 23 eingearbeitet | Widerleger-Urteile gelesen, Kürzungsvorrat und Anzeigetexte an `index.html`/`komponenten.js` nachgeprüft, PDF angesehen |
 | D32 | 25./26.10.2026 | 175 (nach 177 neu begonnen, nach 179 fortgesetzt) | Workflow „elias-ki-einarbeiten“ (6 Unteragenten in 2 Phasen) | Elias' Prompt-Sammlung einarbeiten: 4 Umsetzer (Fragerunde; Ausarbeitungen, prompts, QUELLEN, LIESMICH, Folienentwürfe; Präsentation; Skripte), 2 Prüfer (Faktentreue/Konsistenz; Technik) | 138 Änderungen der Umsetzer; Prüfer: 11 Befunde (0 hoch, 3 mittel, 8 niedrig), alle umgesetzt | Diff und Befunde selbst gelesen, Nacharbeit, Skripte und Exporte neu, Tests |
 | D33 | 26.10.2026 | 181 | Workflow „reflexion-pruefung“ (2 Unteragenten) | Reflexionsentwurf Yannick prüfen: Faktentreue an den Quellen; Bewertungskriterien und Vorgaben der Vorlage | 16 Befunde (3 hoch, 6 mittel, 7 niedrig), alle eingearbeitet | neue Fakten an den Quellen nachgeprüft, Wortzahl gezählt |
-| D34 | 26.10.2026 | 193 | Workflow „reflexion-lukas-pruefung“ (2 Unteragenten) | Reflexionsentwurf für Lukas prüfen: Faktentreue an den Quellen; Fairness, Sprache, Plausibilität der Annahmen | *läuft* | – |
+| D34 | 26.10.2026 | 193 | Workflow „reflexion-lukas-pruefung“ (2 Unteragenten) | Reflexionsentwurf für Lukas prüfen: Faktentreue an den Quellen; Fairness, Sprache, Plausibilität der Annahmen | 23 Befunde (5 hoch, 9 mittel, 9 niedrig), alle umgesetzt | neue Fakten an den Quellen nachgelesen (KI-Nachweis 32, 53, 59; `gruenderbefragung.md` §2.1), Wortzahl und Überschneidung per Skript |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -4091,8 +4097,23 @@ steht hier mit dem wörtlichen Auftrag.
   KI-Nachweis und Folie 05b, Regeln zum Gründer; (2) Fairness, Sprache, Plausibilität der Annahmen, Ähnlichkeit mit
   Yannicks Reflexion, Kriterien der Vorlage, Wortzahl.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-26_reflexion-lukas-pruefung.js`](workflows/2026-10-26_reflexion-lukas-pruefung.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** Prüfer Fakten 12 Befunde (1 hoch: Frage 5 verkürzte den Ausfall auf „Interviews ausgefallen“, belegt
+  ist „kein Material“ aus Bündel B; 5 mittel: Begründung der KI-Simulation in Frage 2 falsch, Aufgabenzeile
+  unvollständig, „sonst keine Innensicht“ übertrieben, „einzige echte Stimme aus dem Unternehmen“ zu weit, KI-Satz
+  unvollständig und fälschlich als freiwillig bezeichnet; 6 niedrig: eigene Folie hat Yannick entschieden, Vortrag nur
+  geplant, „Präsentation gebaut“, Prüfliste unvollständig, „Fair bleiben“ widersprach dem Entwurf, Beleg KI-Nachweis 53
+  fehlte). Prüfer Fairness und Sprache 11 Befunde (4 hoch: Frage 3 nannte unbelegte Gründe für die fehlenden Interviews,
+  Fragen 1, 4 und 6 zu nah an Yannicks Reflexion; 4 mittel: „wie komme ich an Leute ran“ widerspricht dem
+  Gründerkontakt, Frage 2 übersah, dass Repertory Grid und Laddering im Fragenkatalog standen, dreifache Selbstkritik,
+  Frage 5 übertrieben; 3 niedrig: Aufgabenzeile, Doppelpunkt-Formeln, KI-Satz).
+- **Wie Claude das Ergebnis geprüft hat:** Neue Fakten vor dem Einbau an der Quelle nachgelesen: Fragenkatalog mit
+  „Repertory Grid“ (Frage 4, drei Markenvergleiche mit Beispiel) und „Laddering“ (Fragen 6 bis 8) in KI-Nachweis 59;
+  Paarung aus dem Beispiel übernommen, Fragen 5 und 6 zusammen beantwortet, keine Rückfragen
+  (`gruenderbefragung.md` §2.1); „Lukas arbeitet erstmal alleine … seine Arbeit kriegst du dann wenn er fertig ist“
+  (KI-Nachweis 32); Lukas hat den Gründer per LinkedIn angeschrieben (KI-Nachweis 53). Vorschläge der Prüfer für die
+  Fragen 1 bis 6 weitgehend übernommen, „ich trage sie vor“ gestrichen (Vortrag noch offen), „Folie“ vermieden. Danach
+  per Skript: 460 Wörter, 0 Gedankenstriche, 0 Folienzitate, eine gemeinsame Fünf-Wort-Folge mit Yannicks Text
+  gefunden und umformuliert; PDF 1 Seite, alle Antworten vollständig, Sichtprüfung.
 
 ---
 
