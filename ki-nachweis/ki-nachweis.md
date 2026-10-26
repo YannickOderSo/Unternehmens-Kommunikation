@@ -221,6 +221,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 198 | 26.10.2026 | Yannick | Alle Einträge nach 186 streichen (Arbeit an der Fallstudie beendet) | – | nicht gestrichen; Alternative im Chat |
 | 199 | 26.10.2026 | Yannick | Zustimmung: Zusammenfassung sichtbar auf die Fallstudie begrenzen | – | PDF neu: Einträge 01 bis 180, Delegationen ohne D33/D34, Abgrenzung mit Link im Kopf |
 | 200 | 26.10.2026 | Yannick | Kurze Abgabe-E-Mail an Prof. Stenger mit Link zur Präsentation; Reflexion und KI-Nachweis im Anhang | – | E-Mail-Entwurf im Chat |
+| 201 | 26./27.10.2026 | Yannick | Frage: Ist für morgen alles bereit? | – | Prüfung: Technik bereit; offen: Runde umstellen, Sprecher 06–08b, Lukas 05b, QR/Internet im Hörsaal |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3192,6 +3193,21 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   E-Mail-Entwurf im Chat geschrieben (Betreff, Anrede, Link, Anhänge: Selbstreflexion Yannick als PDF,
   `KI-Nachweis_Zusammenfassung_FS1.pdf`). Keine E-Mail versendet.
 - **Ergebnis:** E-Mail-Entwurf im Chat.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 201 – 26./27.10.2026 – Yannick
+
+> So ist dann für morgen alles ready?
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Bereitschaft geprüft, nur lesend: Live-Seite gegen das Repository (`index.html`, `marke.js`
+  gleich), `runde` in `marke.js` (noch `'probe'`), Tests offline (`live-abstimmung-test.mjs` 53/53,
+  `referent-test.mjs` 43/43), Web-App der Abstimmung nur lesend abgefragt (`aktion=fassung`: Skript-Fassung
+  20.10.2026; `aktion=stand` für Runde `vortrag-2026-10-27` mit `minuten=30`: 0 Stimmen, Zeitfenster aktiv). Offene
+  Punkte aus `fallstudie-1-brand-persona/arbeitsplan.md` und `praesentation/LIESMICH.md` (Checkliste) gesichtet.
+- **Ergebnis:** Antwort im Chat (bereit / vor dem Vortrag noch zu tun).
 - **Dateien:** `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
