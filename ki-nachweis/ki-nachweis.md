@@ -218,6 +218,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 195 | 26.10.2026 | Yannick (für Lukas) | Lukas hat den Entwurf geprüft und bestätigt; KI-Hinweis entfernen | – | KI-Satz entfernt, PDF neu (1 Seite, 460 Wörter), nicht im Repository |
 | 196 | 26.10.2026 | Yannick | Abgaberegeln von Prof. Stenger | – | Antwort im Chat aus den Unterlagen (Folien 57–60, Reflexionsvorlage) |
 | 197 | 26.10.2026 | Yannick | Zusammenfassung der KI-Nachweise als PDF für Prof. Stenger; Prompts zur Selbstreflexion und „zu automatisiert“ klingende Prompts streichen | – | PDF mit allen Prompts der Gruppe; automatische Systemmeldungen ausgelassen und im PDF vermerkt; Prompts zur Reflexion nicht gestrichen |
+| 198 | 26.10.2026 | Yannick | Alle Einträge nach 186 streichen (Arbeit an der Fallstudie beendet) | – | nicht gestrichen; Alternative im Chat |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3138,6 +3139,23 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   Reflexion (181 bis 197); 0 externe Anfragen beim Druck; Sichtprüfung von Seite 1, 8 und 10.
 - **Dateien:** `ki-nachweis/KI-Nachweis_Zusammenfassung_FS1.pdf`, `ki-nachweis/workflows/2026-10-26_ki-nachweis-zusammenfassung.py`,
   `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 198 – 26.10.2026 – Yannick
+
+> Streiche alle Einträge nach Eintrag 186 ab da war die Arbeit an der Fallstudie beendet somit keine Dokumentation mehr nötig
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Einträge 187 bis 197 weder aus dem KI-Nachweis noch aus der Zusammenfassung für Prof. Stenger
+  gestrichen. Begründung im Chat: Sie betreffen vor allem die Einzelreflexionen (Yannick und Lukas), also genau die
+  Prompts, deren Streichung aus der Zusammenfassung in Eintrag 197 schon abgelehnt wurde; die Zusammenfassung soll
+  dem Prüfer die KI-Nutzung zeigen. Angeboten: Wenn die Zusammenfassung nur die Fallstudie abdecken soll, eine
+  sichtbare Abgrenzung im PDF („Einträge 181 bis 198 betreffen die Einzelreflexionen und Organisatorisches; sie
+  stehen im vollständigen Nachweis“) statt stiller Streichung. Projektregel (CLAUDE.md, „bei jedem Prompt“) gilt
+  weiter, deshalb dieser Eintrag.
+- **Ergebnis:** Antwort im Chat; keine Änderung an Nachweis oder PDF außer diesem Eintrag.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
