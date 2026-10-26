@@ -207,6 +207,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 185 | 26.10.2026 | System | Workflow-Meldung: D33 fertig (2 Prüfer, 26 Befunde) | D33 | Befunde von Claude geprüft und eingearbeitet |
 | 186 | 26.10.2026 | Yannick | Gesamte Token-Kosten in Tokenzahl (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | beantwortet: Summe aus den Sitzungsprotokollen |
 | 187 | 26.10.2026 | Yannick | Antworten auf vier der neun Reflexionsfragen (Überraschung, schwierigste Entscheidung, eigene Prüfung, Lerntransfer) | – | Reflexion Fassung 3 |
+| 188 | 26.10.2026 | Yannick | PDF der Selbstreflexion | – | Abgabe-PDF im Layout der Vorlage, 1 Seite, nicht im Repository |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2924,6 +2925,26 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   eindeutig: „die Simulation ersetzt kein Kundengespräch“. Bestätigte und noch zu prüfende Stellen in der Prüfliste
   getrennt.
 - **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 188 – 26.10.2026 – Yannick
+
+> Mache mir für die Selbstreflexion eine pdf
+
+- **Anhänge:** keine. Mit dem Prompt wurde die Anleitung „workflow-authoring“ geladen (Systemvorgang, weil Ultracode an
+  ist; kein Inhalt der Gruppe).
+- **Vorgehen Claude:** Layout der offiziellen Vorlage (Unterlage Prof. Stenger, Seite 2: Tabelle „Reflektionsfrage |
+  Erläuterung“, „max. 500 Wörter pro Fallstudie“) nachgebaut, ohne Hochschullogo. Generator liest
+  `reflexion-yannick-heisler.md` und übernimmt nur die Abgabeteile: Name, Fallstudie, Aufgaben, sechs Fragen mit
+  Antworten, KI-Hinweis. Entwurfskasten, Prüfliste und der Hinweis „← nur stehen lassen …“ bleiben draußen. Druck als
+  A4-PDF mit Chromium ohne Netz (0 externe Anfragen), Schriften eingebettet. Prüfung: eine Seite; alle sechs
+  Antworten per Textvergleich vollständig im PDF; 477 Wörter; Sichtprüfung der Seite. Keine Unteragenten (mechanische
+  Umwandlung, selbst geprüft).
+- **Ergebnis:** `Selbstreflexion_FS1_Heisler.pdf` (1 Seite, Stand 26.10.2026), an Yannick übergeben. Liegt bewusst
+  **nicht** im Repository (Abgabe einzeln). Inhalt = Fassung 3; die in der Prüfliste offenen Stellen sind darin noch
+  unverändert. Ändert Yannick den Text, wird das PDF mit dem Generator neu erzeugt.
+- **Dateien:** `ki-nachweis/workflows/2026-10-26_reflexion-pdf.py` (Generator), `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
