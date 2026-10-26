@@ -205,6 +205,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 183 | 26.10.2026 | Yannick | „Weiter“ | D33 | in Arbeit (siehe 181) |
 | 184 | 26.10.2026 | Yannick | Zwei Fragen: Reflexion für die Gruppe oder einzeln? Stellst du mir Fragen zum Beantworten? | – | beantwortet: einzeln; Fragenkatalog für Yannick gestellt |
 | 185 | 26.10.2026 | System | Workflow-Meldung: D33 fertig (2 Prüfer, 26 Befunde) | D33 | Befunde von Claude geprüft und eingearbeitet |
+| 186 | 26.10.2026 | Yannick | Gesamte Token-Kosten in Tokenzahl (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | beantwortet: Summe aus den Sitzungsprotokollen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2888,6 +2889,21 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 > Hintergrund-Meldung des Workflows D33 „reflexion-pruefung“: fertig, 2 von 2 Unteragenten.
 
 - **Vorgehen Claude:** Befunde gelesen, neue Fakten an den Quellen nachgeprüft und eingearbeitet (siehe D33).
+
+### 186 – 26.10.2026 – Yannick
+
+> Was sind somit die gesamt Token kosten? In Token zahl
+
+- **Anhänge:** keine. Davor hat Yannick den lokalen Befehl `/usage` aufgerufen (Anzeige: letzte 24 h 761 Anfragen,
+  letzte 7 Tage 8.395 Anfragen, je eine Sitzung; Anteil Workflow-Unteragenten 56 % bzw. 79 %) – kein Prompt an Claude.
+- **Vorgehen Claude:** `/usage` nennt nur Anfragen, keine Tokens. Deshalb die Angaben „usage“ aller Antworten in den
+  lokalen Sitzungsprotokollen dieser Sitzung (Hauptsitzung und alle Unteragenten, 13.–26.10.2026) per Skript addiert,
+  doppelte Zeilen derselben Antwort nur einmal gezählt. Ergebnis: rund 3,86 Mrd. Tokens, davon rund 3,76 Mrd. aus dem
+  Zwischenspeicher gelesen; ohne Zwischenspeicher-Lesen rund 108 Mio.; Ausgabe rund 8,05 Mio.; Unteragenten rund 81 %.
+  Keine Umrechnung in Euro (Abo; Preise nicht geprüft).
+- **Ergebnis:** Antwort im Chat; keine Dateien außer diesem Nachweis geändert.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
