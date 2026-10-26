@@ -216,6 +216,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | – | 26.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | committet und gepusht |
 | 194 | 26.10.2026 | Yannick | KI-Nutzung aus Lukas' Reflexion streichen | – | nicht gestrichen; Begründung und Alternative im Chat |
 | 195 | 26.10.2026 | Yannick (für Lukas) | Lukas hat den Entwurf geprüft und bestätigt; KI-Hinweis entfernen | – | KI-Satz entfernt, PDF neu (1 Seite, 460 Wörter), nicht im Repository |
+| 196 | 26.10.2026 | Yannick | Abgaberegeln von Prof. Stenger | – | Antwort im Chat aus den Unterlagen (Folien 57–60, Reflexionsvorlage) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3093,6 +3094,25 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   Zeile zu Lukas in Abschnitt 3 bleiben. PDF neu; Prüfung per Skript: 0 „KI-Nutzung“, 0 „Claude“, 0 Gedankenstriche,
   alle Antworten vollständig, 1 Seite; Sichtprüfung. Keine Unteragenten.
 - **Ergebnis:** `Selbstreflexion_FS1_Welker.pdf` ohne KI-Satz an Yannick übergeben; nicht im Repository.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 196 – 26.10.2026 – Yannick
+
+> So wie waren die Abgaberegeln gewesen von Stenger?
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Antwort im Chat nur aus den Unterlagen im Repository, keine Websuche: Vorlesungsfolien von
+  Prof. Stenger (`unterlagen/Stenger Folien.pdf`, Textauszug Seiten 57 bis 60), Reflexionsvorlage
+  (`unterlagen/Vorlesung_Unternehmenskommunikation_2026_UnternehmenReflektion.pdf`, Seite 2), `README.md`,
+  `reflexion-vorlage.md`, `fallstudie-1-brand-persona/arbeitsplan.md`. Ergebnis: Gruppen zu 3 oder 4, je Fallstudie
+  15 Minuten Präsentation, Aufgabe Fallstudie 1 mit „Dokumentieren Sie Ihre Prompts und begründen Sie Ihr Vorgehen
+  (Backup)“, Bewertung (70/30, Reflexion 15 %), Reflexion nach Vorlage mit höchstens 500 Wörtern pro Fallstudie.
+  **Nicht** in den Unterlagen: Abgabetermin, Abgabeweg und Format der Reflexion, eine Pflicht zum KI-Satz unter der
+  Reflexion (die steht nur in der eigenen Gruppenvorlage). Klarstellung im Chat: In Einträgen 189, 193 und 194 hatte
+  Claude den KI-Satz als Vorgabe „eurer Vorlage“ bezeichnet; gemeint war die Gruppenvorlage, nicht Prof. Stenger.
+- **Ergebnis:** Antwort im Chat.
 - **Dateien:** `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
