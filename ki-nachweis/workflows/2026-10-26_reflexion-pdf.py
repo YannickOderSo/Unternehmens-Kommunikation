@@ -2,8 +2,8 @@
 """Selbstreflexion (Markdown im Repo) als Abgabe-HTML im Layout der Vorlage von Prof. Stenger bauen.
 
 Aufruf: bauen.py <reflexion.md> <ausgabe.html> <stand TT.MM.JJJJ>
-Übernimmt nur Abgabeteile: Kopfzeile (Name, Fallstudie, Aufgaben), die sechs Fragen mit Antworten und den
-KI-Hinweis. Entwurfskasten, Prüfliste und der Hinweis „← nur stehen lassen …“ bleiben draußen.
+Übernimmt nur Abgabeteile: Kopfzeile (Name, Fallstudie, Aufgaben), die sechs Fragen mit Antworten und, falls
+vorhanden, den KI-Hinweis. Entwurfskasten, Prüfliste und der Hinweis „← nur stehen lassen …“ bleiben draußen.
 """
 import html, re, sys
 
@@ -37,14 +37,15 @@ def e(t):
     return t.replace(' – ', '&nbsp;– ').replace('S. ', 'S.&nbsp;').replace('Folie ', 'Folie&nbsp;')
 
 
+ki_html = f'<p class="ki">{e(ki)}</p>\n' if ki else ''
 tabelle = '\n'.join(f'<tr><th scope="row">{e(f)}</th><td>{e(a)}</td></tr>' for f, a in zeilen)
 
 seite = f'''<!doctype html>
 <html lang="de"><head><meta charset="utf-8">
-<title>Selbstreflexion Fallstudie 1 – {e(name)}</title>
+<title>Selbstreflexion Fallstudie 1, {e(name)}</title>
 <style>
 @page {{ size: A4; margin: 13mm 15mm 14mm 15mm;
-  @bottom-center {{ content: "Unternehmenskommunikation – Prof. Dr. Daniel Stenger · Selbstreflexion {e(name)}";
+  @bottom-center {{ content: "Unternehmenskommunikation, Prof. Dr. Daniel Stenger · Selbstreflexion {e(name)}";
     font: 8.5pt Carlito, Calibri, sans-serif; color: #555; }} }}
 * {{ box-sizing: border-box; }}
 html {{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
@@ -66,7 +67,7 @@ tr {{ break-inside: avoid; }}
 .stand {{ margin: 1.5mm 0 0; font-size: 9pt; color: #555; }}
 </style></head>
 <body>
-<h1>Selbstreflektion – Fallstudie {e(fallstudie.split(' ')[0])}</h1>
+<h1>Selbstreflektion Fallstudie {e(fallstudie.split(':')[0].split(' ')[0])}</h1>
 <div class="linie"></div>
 <dl>
 <dt>Name</dt><dd>{e(name)}</dd>
@@ -81,8 +82,7 @@ tr {{ break-inside: avoid; }}
 </tbody>
 </table>
 <div class="fuss"><span class="grenze">max. 500 Wörter pro Fallstudie</span><span>Umfang der Erläuterungen: {woerter} Wörter</span></div>
-<p class="ki">{e(ki)}</p>
-<p class="stand">Stand: {e(stand)}</p>
+{ki_html}<p class="stand">Stand: {e(stand)}</p>
 </body></html>
 '''
 open(out, 'w', encoding='utf-8').write(seite)

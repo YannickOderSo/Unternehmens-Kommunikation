@@ -208,6 +208,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 186 | 26.10.2026 | Yannick | Gesamte Token-Kosten in Tokenzahl (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | beantwortet: Summe aus den Sitzungsprotokollen |
 | 187 | 26.10.2026 | Yannick | Antworten auf vier der neun Reflexionsfragen (Überraschung, schwierigste Entscheidung, eigene Prüfung, Lerntransfer) | – | Reflexion Fassung 3 |
 | 188 | 26.10.2026 | Yannick | PDF der Selbstreflexion | – | Abgabe-PDF im Layout der Vorlage, 1 Seite, nicht im Repository |
+| 189 | 26.10.2026 | Yannick | Reflexion: eigene Aufgaben, studentische Sprache, ohne Gedankenstriche, ohne KI-Hinweis | – | Fassung 4 (491 Wörter), PDF neu |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2945,6 +2946,31 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   **nicht** im Repository (Abgabe einzeln). Inhalt = Fassung 3; die in der Prüfliste offenen Stellen sind darin noch
   unverändert. Ändert Yannick den Text, wird das PDF mit dem Generator neu erzeugt.
 - **Dateien:** `ki-nachweis/workflows/2026-10-26_reflexion-pdf.py` (Generator), `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 189 – 26.10.2026 – Yannick
+
+> Folgende Sachen bist du verbessern:
+> Meine Aufgaben waren im Team, Design der Präsentation, Koordinierung und Recherche der Grundinformation und dem Recherche Dossier.
+> Schreibe es mehr in Studentischer Sprache und ohne Oxford Dash und entferne den KI hinweis auf dem Blatt und in der Dokumentation hier
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Aufgabenzeile im Kopf durch Yannicks Angabe ersetzt; Frage 6 („Mein Teil war …“) daran
+  angeglichen; wo Aufgaben jetzt nicht mehr bei Yannick stehen (Persona, Synthese), „wir“ statt „ich“. Alle sechs
+  Antworten in einfacherer, persönlicherer Sprache neu formuliert, Inhalt und Zahlen unverändert; ohne Gedankenstriche
+  (auch „20 bis 30“, „06 bis 08b“ statt Bis-Strich; Titel, Kopf und Fußzeile des PDFs ebenso). Auf 491 Wörter gekürzt
+  (erste Fassung hatte 541); dabei entfallen: „eine ist fast ein Echo der Persona“, „nach Codebuch“, „dort steht die
+  Prüfung überall auf offen“. Den Satz „KI-Nutzung: …“ unter der Tabelle aus der Reflexion (Markdown) und damit aus dem
+  PDF entfernt; Generator so geändert, dass er ohne diesen Satz kein leeres Feld druckt. Prüfung: per Skript 0
+  Gedankenstriche und 0 „KI-Nutzung“ im PDF-Text, alle sechs Antworten vollständig im PDF, 1 Seite, Sichtprüfung.
+  Keine Unteragenten.
+- **Hinweis an Yannick (im Chat gegeben):** Die Gruppenvorlage `ki-nachweis/vorlage-ki-nutzung.md` (Abschnitt
+  „Einzelreflexion“) sieht bei KI-Nutzung einen Satz unter der Reflexion vor; ob er ihn weglässt, entscheidet Yannick.
+  Die Einträge 181, 187, 188 und 189 in diesem KI-Nachweis bleiben (Pflicht laut Projektregeln).
+- **Ergebnis:** Reflexion Fassung 4, PDF neu (1 Seite, an Yannick übergeben, nicht im Repository).
+- **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/workflows/2026-10-26_reflexion-pdf.py`,
+  `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
