@@ -209,6 +209,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 187 | 26.10.2026 | Yannick | Antworten auf vier der neun Reflexionsfragen (Überraschung, schwierigste Entscheidung, eigene Prüfung, Lerntransfer) | – | Reflexion Fassung 3 |
 | 188 | 26.10.2026 | Yannick | PDF der Selbstreflexion | – | Abgabe-PDF im Layout der Vorlage, 1 Seite, nicht im Repository |
 | 189 | 26.10.2026 | Yannick | Reflexion: eigene Aufgaben, studentische Sprache, ohne Gedankenstriche, ohne KI-Hinweis | – | Fassung 4 (491 Wörter), PDF neu |
+| 190 | 26.10.2026 | Yannick | Reflexion noch einfacher, keine Folien zitieren, letzte Antwort überarbeiten | – | Fassung 5 (493 Wörter), PDF neu |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2971,6 +2972,25 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Ergebnis:** Reflexion Fassung 4, PDF neu (1 Seite, an Yannick übergeben, nicht im Repository).
 - **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/workflows/2026-10-26_reflexion-pdf.py`,
   `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 190 – 26.10.2026 – Yannick
+
+> Manche Texte klingen immer noch zu Wissenschaftlich für einen Studenten halt die Sprache etwas simpler und zitiere keine Folien. Gerade die unterste Antwort muss bearbeitet werden
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Alle sechs Antworten einfacher formuliert, Fachbegriffe ersetzt (z. B. „Fremdbild/Selbstbild“
+  → „Sicht der Kunden“/„unser eigenes Bild von HOLY“, „Hypothese“ → „muss man prüfen“/„nicht sicher“, „Esch und
+  Häusel“ → „die Fachbücher zu den Modellen“, „Analogien“ → „Tier- und Mensch-Vergleiche“). Keine Folien- oder
+  Seitenzitate mehr („Vorlesung, S. 78“ und „Folien 06 bis 08b“ entfernt). Zahlen vereinfacht: „vier von acht“ →
+  „die Hälfte“; Dossier-Zahlen (42 von 155, 32) durch „einiges korrigiert oder rausgeworfen“ ersetzt. Frage 6 neu:
+  Aufteilung und Übergabetermine, wer was gemacht hat, eigene Selbstkritik ohne Namen („aus einem Teil keine
+  Ergebnisse“), Vortragsverteilung früher klären. Erst 519 Wörter, auf 493 gekürzt. Prüfliste in der Markdown-Datei
+  angepasst. PDF neu erzeugt; Prüfung per Skript: 0 Gedankenstriche, 0 „KI-Nutzung“, 0 Seiten- oder Folienzitate,
+  alle sechs Antworten vollständig, 1 Seite; Sichtprüfung. Keine Unteragenten.
+- **Ergebnis:** Reflexion Fassung 5, PDF an Yannick übergeben (nicht im Repository).
+- **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
