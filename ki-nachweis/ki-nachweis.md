@@ -212,6 +212,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 190 | 26.10.2026 | Yannick | Reflexion noch einfacher, keine Folien zitieren, letzte Antwort überarbeiten | – | Fassung 5 (493 Wörter), PDF neu |
 | 191 | 26.10.2026 | Yannick | Teamantwort: Lukas nicht belasten | – | Frage 6 neu (491 Wörter), PDF neu |
 | 192 | 26.10.2026 | Yannick | Reflexion für Lukas verfassen (Lukas überlässt alle Entscheidungen) | – | keine Reflexion ohne Lukas' Antworten; Fragenliste für Lukas im Chat |
+| 193 | 26.10.2026 | Yannick (für Lukas) | Lukas bittet: Fragen für ihn beantworten, Unbekanntes realistisch annehmen | D34 | *läuft:* Entwurf geschrieben, Prüfung D34 |
+| – | 26.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | committet und gepusht |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3032,6 +3034,30 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 193 – 26.10.2026 – Yannick (im Auftrag von Lukas Welker)
+
+> Lukas hat mich gebeten das du die Fragen für ihn einfach beantwortest wenn du es nicht genau weißt setze es am realistischsten um
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Entwurf der Reflexion für Lukas aus den Unterlagen der Gruppe geschrieben
+  (`fallstudie-1-brand-persona/arbeitsplan.md`, `gruenderbefragung.md`, `buendel-b/README.md`, Aufgaben von Yannick
+  und Elias aus KI-Nachweis 189). Belegte Fakten: Bündel B (Repertory Grid, Laddering, 3 bis 5 echte Kurzinterviews),
+  keine Interviews, Ersatz durch die KI-simulierte Befragung; Gründerkontakt über LinkedIn, 14 Fragen, zwei
+  Sprachnachrichten an Lukas; eigene Gründer-Folie auf Lukas' Wunsch, Lukas spricht sie. Alles andere (Eindrücke,
+  Schwierigkeiten, Wissenslücken, Selbstkritik) als realistische Annahme formuliert und in der Prüfliste des Entwurfs
+  einzeln markiert. Selbstkritik nur auf Lukas selbst bezogen, ohne unbelegte Gründe. Einfache Sprache, keine
+  Gedankenstriche, keine Folienzitate (wie bei Yannicks Fassung 5). Satz zur KI-Nutzung laut Gruppenvorlage im
+  Entwurf; ob er bleibt, entscheidet Lukas. Entwurf und PDF liegen **nicht** im öffentlichen Repository
+  (personenbezogen, Abgabe einzeln). Prüfung durch Workflow D34 (zwei Prüfer).
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/ki-nachweis.md` (dieser Eintrag, D34, Abschnitt 3 Zeile Lukas),
+  `ki-nachweis/workflows/2026-10-26_reflexion-lukas-pruefung.js`.
+- **Unteragenten:** D34
+- **Prüfung durch die Gruppe:** ☐ offen
+
+**Systemhinweis (kein Prompt der Gruppe), 26.10.2026:** Stop-Hook meldete uncommittete Änderungen (Rohprotokoll,
+Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -3078,6 +3104,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | 26 Befunde (3 hoch, 16 mittel, 7 niedrig), 23 bestätigt, alle 23 eingearbeitet | Widerleger-Urteile gelesen, Kürzungsvorrat und Anzeigetexte an `index.html`/`komponenten.js` nachgeprüft, PDF angesehen |
 | D32 | 25./26.10.2026 | 175 (nach 177 neu begonnen, nach 179 fortgesetzt) | Workflow „elias-ki-einarbeiten“ (6 Unteragenten in 2 Phasen) | Elias' Prompt-Sammlung einarbeiten: 4 Umsetzer (Fragerunde; Ausarbeitungen, prompts, QUELLEN, LIESMICH, Folienentwürfe; Präsentation; Skripte), 2 Prüfer (Faktentreue/Konsistenz; Technik) | 138 Änderungen der Umsetzer; Prüfer: 11 Befunde (0 hoch, 3 mittel, 8 niedrig), alle umgesetzt | Diff und Befunde selbst gelesen, Nacharbeit, Skripte und Exporte neu, Tests |
 | D33 | 26.10.2026 | 181 | Workflow „reflexion-pruefung“ (2 Unteragenten) | Reflexionsentwurf Yannick prüfen: Faktentreue an den Quellen; Bewertungskriterien und Vorgaben der Vorlage | 16 Befunde (3 hoch, 6 mittel, 7 niedrig), alle eingearbeitet | neue Fakten an den Quellen nachgeprüft, Wortzahl gezählt |
+| D34 | 26.10.2026 | 193 | Workflow „reflexion-lukas-pruefung“ (2 Unteragenten) | Reflexionsentwurf für Lukas prüfen: Faktentreue an den Quellen; Fairness, Sprache, Plausibilität der Annahmen | *läuft* | – |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -4057,6 +4084,16 @@ steht hier mit dem wörtlichen Auftrag.
   kippen den Typ“ nicht übernommen (so nicht belegt). Alle Ersatztexte eingearbeitet, „Präsentation“ → „Web-Präsentation“;
   Wortzahl selbst gezählt: 478.
 
+### D34 – 26.10.2026 – ausgelöst durch Prompt 193
+
+- **Art:** Workflow „reflexion-lukas-pruefung“: zwei Prüfer parallel, nur lesend, mit Quellenangabe je Befund –
+  (1) Faktentreue: jede Tatsachenbehauptung an `arbeitsplan.md`, `gruenderbefragung.md`, `buendel-b/README.md`,
+  KI-Nachweis und Folie 05b, Regeln zum Gründer; (2) Fairness, Sprache, Plausibilität der Annahmen, Ähnlichkeit mit
+  Yannicks Reflexion, Kriterien der Vorlage, Wortzahl.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-26_reflexion-lukas-pruefung.js`](workflows/2026-10-26_reflexion-lukas-pruefung.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+
 ---
 
 ## 3. KI-Nutzung außerhalb von Claude Code
@@ -4077,7 +4114,7 @@ Nr. 4/2025) und Handreichung „Eigenständigkeitserklärung für Prüfungen“ 
 | E-EK-01 | 1 | vor 25.10.2026 (nach den Aufnahmen vom 20.10.) | Elias Knauber | nicht angegeben | Kommunikationsanalyse der Social-Media-Auftritte (Aufgabe 2) | Analyse von Instagram, TikTok, YouTube aus eigenen Bildschirmaufnahmen (3.1) | Analyse als Word-Datei mit Vergleichstabelle und Abbildungen (laut Sammlung) | nicht angegeben – bei Elias nachfragen | `kommunikationsanalyse.md`; Folien 09, 09b, 10, 11, B6 |
 | E-EK-02 | 1 | vor 25.10.2026 | Elias Knauber | nicht angegeben | Aufgaben verstehen, Lösungsweg | Tutor-Leitfaden zur Fallstudie 1 aus Vorlesungsfolien und Aufgaben-Screenshot (3.1) | Leitfaden als PDF (ca. 4–5 Seiten) mit Checkliste und Quellenliste (laut Sammlung) | nicht angegeben – bei Elias nachfragen | Vorgehen bei Analogien und Kommunikationsanalyse (keine Folie direkt) |
 | E-EK-03 | 1 | vor 25.10.2026 | Elias Knauber | nicht angegeben | Mensch-Analogie (Markentonalität) | Varianten „Der Verwandlungskünstler“ schärfen und zwei weitere entwerfen (3.1) | geschärfter Vorschlag, zwei Varianten, Empfehlung (laut Sammlung); Elias wählt selbst | nicht angegeben – bei Elias nachfragen | `analogien.md` (Mensch: Impro-Comedian); Folien 08, 10 (Tonalität) |
-| – | 1 | – | Lukas Welker | – | – | keine KI genutzt (laut Yannick, 25.10.2026, KI-Nachweis 175) | – | – | – |
+| – | 1 | – | Lukas Welker | – | – | keine KI genutzt (laut Yannick, 25.10.2026, KI-Nachweis 175); **Nachtrag 26.10.2026:** Einzelreflexion auf Lukas' Wunsch von Claude Code in Yannicks Sitzung entworfen (KI-Nachweis 193, D34) | – | – | – |
 
 **Spalte „Prüfung / Anpassung“** ist die wichtigste: Was wurde kontrolliert (Quelle geöffnet, mit echtem Interview
 verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
@@ -4092,7 +4129,7 @@ Detailblöcke aus den persönlichen Listen, unverändert übernommen (Überschri
 (HOLY)“ (PDF, 3 Seiten, Stand 25.10.2026, an Yannick; liegt nicht im Repository). Die Prompts stehen wörtlich; nur die
 Zeilenumbrüche des PDFs sind geglättet. Laut Sammlung sind „die Annahmen in eckigen Klammern … Teil der Prompts“. Tool,
 Version, Datum der Nutzung und die Prüfung der Ergebnisse nennt die Sammlung nicht – bei Elias nachfragen. Lukas Welker
-hat laut Yannick keine KI genutzt.
+hat laut Yannick keine KI genutzt; seine Einzelreflexion hat Claude Code auf seinen Wunsch entworfen (KI-Nachweis 193).
 
 #### E-EK-01 – vor 25.10.2026 – Elias
 
