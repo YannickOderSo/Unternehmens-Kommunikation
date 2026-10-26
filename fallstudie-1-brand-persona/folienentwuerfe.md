@@ -11,14 +11,28 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOL
 | 5 | Limbic Map | A | Entwurf ✔ (17.10., Gründerbefragung eingearbeitet 19.10.) – Prüfung durch Yannick offen |
 | 5b | Gründerbefragung: Innensicht (der Gründer über HOLY) | B spricht (Lukas), Auswertung A | Entwurf ✔ (24.10., Wunsch Lukas, Entscheidung Yannick; Web-Folie f05b) – Prüfung durch Yannick und Lukas offen |
 | 6–7 | Repertory Grid, Laddering | B | Entwurf ✔ (23.10., KI-simulierte Befragung D25, Fremdbild) – Prüfung durch Yannick offen; Lukas liefert kein Material mehr |
-| 8 | Analogien & Live-Umfrage | B (Inhalt Elias, C) | Entwurf ✔ (22.10. nach Elias' Ausarbeitung; 23.10. Papagei und Chamäleon gleichwertig) – Prüfung durch Elias und Yannick offen |
+| 8 | Analogien & Live-Umfrage | B (Inhalt Elias, C) | Entwurf ✔ (22.10. nach Elias' Ausarbeitung; 23.10. Papagei und Chamäleon gleichwertig; 25.10. Fußzeile „KI-gestützt“) – Prüfung durch Elias und Yannick offen |
 | 8b | Markentonalität (Aaker) | B | Entwurf ✔ (23.10., KI-simulierte Befragung D25, Fremdbild) – Prüfung durch Yannick offen |
-| 9, 9b | Kommunikationsanalyse | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias und Yannick offen |
+| 9, 9b | Kommunikationsanalyse | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung; 25.10. Fußzeilen „KI-gestützt“) – Prüfung durch Elias und Yannick offen |
 | 10 | Markensteuerrad | C (Inhalt A) | Entwurf ✔ (23.10.: Rad = Selbstbild, Abgleich mit dem KI-simulierten Fremdbild; parallel eingebaut, D26; 24.10. Gründer im Abgleich) – Prüfung durch Yannick und Elias offen |
 | 11 | Fazit & Empfehlungen | C | nur Zeile 3 / Empfehlung 3 (22.10.); 23.10. Pille und Notizen nachgezogen (Titel unverändert); Rest offen |
 | 12 | Danke & Fragen | alle | Vorgabe ✔ (23.10., Fazit und Sprungliste nach der KI-Simulation) – parallel eingebaut (D26), Prüfung durch Yannick offen |
 | B4, B5 | Backup: Repertory Grid, Laddering | B | Entwurf ✔ (23.10., KI-simulierte Befragung D25) – Prüfung durch Yannick offen |
-| B6 | Backup: Kanäle (Tabelle 1) | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung) – Prüfung durch Elias offen |
+| B6 | Backup: Kanäle (Tabelle 1) | C | Entwurf ✔ (22.10., nach Elias' Ausarbeitung; 25.10. Fußzeile „KI-gestützt“) – Prüfung durch Elias offen |
+
+**Seit So, 25.10.2026 (Prompt-Sammlung von Elias Knauber, KI-Nachweis 175, Abschnitt 3; Workflow D32):** Elias'
+Ausarbeitungen sind **KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03)** – Kommunikationsanalyse
+E-EK-01, Mensch-Analogie E-EK-03, Leitfaden zum Verständnis der Aufgaben E-EK-02. Die Daten (Bildschirmaufnahmen
+20./21.10.2026) sind seine eigenen; wie weit er die Ergebnisse überarbeitet und geprüft hat, ist nicht angegeben. Die
+Fußzeilen von Folie 8, 9, 9b und B6 tragen deshalb „KI-gestützt“ (sonst unverändert). Im Prompt-Log **B2** ersetzt
+diese Zeile die Beispielzeile P12 („Beiträge codieren“), die nie genutzt wurde (k. A. = keine Angabe):
+
+```json
+{ "id": "E-EK-01–03", "tool": "KI-Tool (k. A.)", "ziel": "Analyse, Analogien", "pruefung": "eigene Aufnahmen; Prüfung nicht angegeben", "folie": "08, 09", "sprung": "f09", "beispiel": false }
+```
+
+Die Pille „teils Beispiel“ auf B2 bleibt, weil P13 und P14 Beispiel bleiben. Lukas Welker hat keine KI genutzt (laut
+Yannick, 25.10.2026).
 
 **Seit Sa, 24.10.2026 (Wunsch Lukas Welker, Entscheidungen Yannick „Eigene Folie + Folie 10 (Empfohlen)“ und „Ja,
 als Innensicht vs. Außensicht (Empfohlen)“; Workflow D27):** Die Gründerbefragung hat eine eigene **Folie 5b
@@ -1008,12 +1022,13 @@ der Karte.
   Markentonalität auf Folie 10 („frech · gesellig · wandelbar“; das Skript prüft das)
 - **Kontrast** (Schritt 3, klein, „(Beispiel)“): Red Bull – Löwe · waterdrop – Schwan (Dossier 5.2 **H**, Tiere
   Beispieldaten)
-- **Fußzeile:** *Quelle: Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 (Belege aus HOLY-Website, -Kanälen,
-  TV-Spot 2026) – Hypothesen (H) · … · Maskottchen: Dossier Kap. 6.3 ✔ · Wettbewerber: Kap. 5.2 H, Tiere Beispiel ·
-  Umfrage: Stimmungsbild* – ohne Tiernamen (steht schon während der Abstimmung auf der Folie)
+- **Fußzeile:** *Quelle: Analogien: Ausarbeitung E. Knauber, KI-gestützt, Stand 16.10.2026 (Belege aus HOLY-Website,
+  -Kanälen, TV-Spot 2026) – Hypothesen (H) · … · Maskottchen: Dossier Kap. 6.3 ✔ · Wettbewerber: Kap. 5.2 H, Tiere
+  Beispiel · Umfrage: Stimmungsbild* – ohne Tiernamen (steht schon während der Abstimmung auf der Folie)
 - Keine Pille „Beispieldaten“; Endzustand 40 Wörter (`werkzeuge/pruefen.mjs` warnt ab 41). Die Zeile „Echte
   Kundschaft · laut Mitgründer“ entfällt aus Platzgründen und steht in den Notizen. Die Fußzeile ist seit dem
-  22.10.2026 unverändert; sie nennt auch die KI-simulierte Befragung nicht (Empfehlung folienvorschlag §3).
+  22.10.2026 unverändert bis auf „KI-gestützt“ (seit So, 25.10.2026, Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-03);
+  sie nennt auch die KI-simulierte Befragung nicht (Empfehlung folienvorschlag §3).
 
 ### Live-Abstimmung (Schritt 0–1)
 
@@ -1077,7 +1092,7 @@ der Karte.
 ### Quellen
 
 Ausarbeitung E. Knauber „Analogien“ (16.10.2026; Elias' Quellen: HOLY-Website, Stellenanzeigen, Instagram, Facebook,
-X, TV-Spot 2026, abgerufen 16.10.2026) · Dossier 6.3 ✔ [54, 71], 5.2 **H** · KI-simulierte Befragung D25,
+X, TV-Spot 2026, abgerufen 16.10.2026; KI-gestützt – Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) · Dossier 6.3 ✔ [54, 71], 5.2 **H** · KI-simulierte Befragung D25,
 `buendel-b/auswertung/analogien-haeufigkeiten.csv` (nur Notizen und Sprechtext) · KI-Nachweis 94/95, 119, 135.
 
 ### Zu prüfen
@@ -1209,8 +1224,9 @@ Kicker: *Kommunikationsanalyse · Instagram, Facebook, TikTok, YouTube* (ohne Pi
   Figuren · *Instagram* · Ironie & Retro – Werbeparodien, Meme-Formate
 - **Schritt 2 – „Schlüsselbild?“:** kein festes Schlüsselbild; Kandidat *Produkt in der Hand* (Chip „Kandidat“) –
   „kommt überall vor, aber nicht einheitlich“
-- **Fußzeile:** *Quelle: Kommunikationsanalyse E. Knauber, eigene Bildschirmaufnahmen 20./21.10.2026 ·
-  Facebook-Gruppe: Desk Research 16.10.2026 (HOLY „Our Story“) · Schlüsselbild nach Kroeber-Riel (1993)*
+- **Fußzeile:** *Quelle: Kommunikationsanalyse E. Knauber (KI-gestützt), eigene Bildschirmaufnahmen 20./21.10.2026 ·
+  Facebook-Gruppe: Desk Research 16.10.2026 (HOLY „Our Story“) · Schlüsselbild nach Kroeber-Riel (1993)* („KI-gestützt“
+  seit So, 25.10.2026, Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01)
 
 ### Visualisierung
 
@@ -1255,8 +1271,8 @@ Kicker: *Kommunikationsanalyse · Instagram, Facebook, TikTok, YouTube* (ohne Pi
 
 ### Quellen
 
-Kommunikationsanalyse E. Knauber (Bildschirmaufnahmen 20./21.10.2026; Desk Research 16.10.2026, HOLY „Our Story“) ·
-zum Vergleich Dossier 6.1 ✔ [19, 20, 122–124] (Stand 14.10.2026) · Kroeber-Riel (1993) – nicht in der Vorlesung
+Kommunikationsanalyse E. Knauber (Bildschirmaufnahmen 20./21.10.2026; Desk Research 16.10.2026, HOLY „Our Story“;
+KI-gestützt – Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) · zum Vergleich Dossier 6.1 ✔ [19, 20, 122–124] (Stand 14.10.2026) · Kroeber-Riel (1993) – nicht in der Vorlesung
 (`abgleich-vorlesung.md` #14).
 
 ### Zu prüfen
@@ -1299,8 +1315,8 @@ zum Vergleich Dossier 6.1 ✔ [19, 20, 122–124] (Stand 14.10.2026) · Kroeber-
      mit „festes“ und festen Leerzeichen; Folie 38 Wörter)
 - **Ins Steuerrad · Markenbild (Schritt 4):** Streetwear-Look · Gelb & Schwarz · knallig
 - **Fußzeile:** *Quelle: Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026) · Kommunikationsanalyse
-  E. Knauber (Bildschirmaufnahmen 20./21.10.2026) · Dossier Kap. 6.3 ✔ [1] (Web-CSS, kein Styleguide), 6.5 ✔, Kap. 1
-  ✔ [7, 24] · „knallig“: LZ ✔ [8] · Bewertung: eigene (H) · …*
+  E. Knauber (KI-gestützt; Bildschirmaufnahmen 20./21.10.2026) · Dossier Kap. 6.3 ✔ [1] (Web-CSS, kein Styleguide),
+  6.5 ✔, Kap. 1 ✔ [7, 24] · „knallig“: LZ ✔ [8] · Bewertung: eigene (H) · …* („KI-gestützt“ seit So, 25.10.2026)
 
 ### Visualisierung
 
@@ -1327,13 +1343,13 @@ Die ✗-Zeile ist die Brücke zu Folie 11.
 2. **„Warum Streetwear?“** – Drops, Datumsteaser, Merch, Schachbrettmuster und der Name „Squad“: HOLY inszeniert sich
    nach dem Vorbild von Streetwear-Labels (Elias, Kap. 3.4 und 8).
 3. **„Bestätigt ihr euch nicht selbst?“** – Teilweise: Analogien und Kommunikationsanalyse stammen von derselben
-   Person und beruhen beide auf HOLYs eigener Kommunikation. „Passt“ ist eine Stimmigkeitsprüfung, keine unabhängige
+   Person, sind beide KI-gestützt und beruhen beide auf HOLYs eigener Kommunikation. „Passt“ ist eine Stimmigkeitsprüfung, keine unabhängige
    Bestätigung (H).
 
 ### Quellen
 
-Kommunikationsanalyse E. Knauber · Dossier 6.3 ✔ [1, 8], 6.5 ✔, Kap. 1/4.1 ✔ [7, 24] · Logo © HOLY Softdrinks GmbH,
-de.holy.com (Abruf 16.10.2026).
+Kommunikationsanalyse E. Knauber (KI-gestützt – Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) · Dossier
+6.3 ✔ [1, 8], 6.5 ✔, Kap. 1/4.1 ✔ [7, 24] · Logo © HOLY Softdrinks GmbH, de.holy.com (Abruf 16.10.2026).
 
 ### Zu prüfen
 
@@ -1666,8 +1682,9 @@ Kommunikationsanalyse · Profilmerkmale der Kanäle* (ohne Pille „Beispieldate
   09* – vier Rollen; kein festes Schlüsselbild, Kandidat: Produkt in der Hand
 - **Schritt 1:** Die Spalten „Anzeigename“ und „Profilbild“ werden markiert – vier Namen, drei Profilbildfarben, die
   Brücke zum Bruch auf 9b und zu Empfehlung 3.
-- **Fußzeile:** *Quelle: Kommunikationsanalyse E. Knauber, Tabelle 1 (eigene Bildschirmaufnahmen 20./21.10.2026),
-  gekürzt · * Gruppe: Desk Research 16.10.2026 (HOLY „Our Story“) · Vorlage: methoden.md Abschn. 5*
+- **Fußzeile:** *Quelle: Kommunikationsanalyse E. Knauber (KI-gestützt), Tabelle 1 (eigene Bildschirmaufnahmen
+  20./21.10.2026), gekürzt · * Gruppe: Desk Research 16.10.2026 (HOLY „Our Story“) · Vorlage: methoden.md Abschn. 5*
+  („KI-gestützt“ seit So, 25.10.2026)
 
 ### Visualisierung
 
@@ -1684,7 +1701,8 @@ Profilbildfarben – der Bruch auf 9b, Ansatz von Empfehlung 3.
 
 ### Quellen
 
-Kommunikationsanalyse E. Knauber, Tabelle 1 und Kap. 1–2 · Vorlage `methoden.md` §5.
+Kommunikationsanalyse E. Knauber, Tabelle 1 und Kap. 1–2 (KI-gestützt – Prompt-Sammlung E. Knauber, KI-Nachweis
+E-EK-01 bis 03) · Vorlage `methoden.md` §5.
 
 ### Zu prüfen
 

@@ -4,7 +4,8 @@ Präsentation zur Fallstudie 1 „Brand Persona & Markenidentität“ (Marke **H
 Unternehmenskommunikation bei Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern.
 Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker · Vortrag: **Di, 27.10.2026**, 15 Minuten (laut Yannick, 24.10.2026; bis dahin geplant Mo, 26.10. – die Vorlesungsfolien, Stenger S. 57, nennen „am 26.10.“).
 
-Stand: 24.10.2026 (neue Folie 05b „Gründerbefragung: Innensicht“, Folie 01 und 02 gekürzt – siehe unten; 23.10.:
+Stand: 25.10.2026 (Elias' Ausarbeitungen laut seiner Prompt-Sammlung KI-gestützt, Lukas ohne KI – siehe unten und
+Abschnitt 12; 24.10.: neue Folie 05b „Gründerbefragung: Innensicht“, Folie 01 und 02 gekürzt; 23.10.:
 KI-simulierte Befragung für Bündel B eingebaut, Rad = Selbstbild, Papagei und Chamäleon; 22.10.: Material von Elias Knauber eingebaut, Freigabe offen) – alle Folien zusammengeführt, geprüft, nach der Abschlussprüfung, der Live-Prüfung und
 der zweiten Abschlussprüfung überarbeitet. Seit Sa, 17.10. von Account 1 übernommen: Ergebnisse von Bündel A
 eingebaut – Markenkompetenz A1 (Folie 03), Persona-Steckbrief A2 (Folie 04, B3) und Limbic Map A3 (Folie 05),
@@ -82,6 +83,13 @@ Zeile „Positionierung · wie Gründer“ – ein Knopf, der zu 05b springt –
 (45 → 30 s) und 02 (60 → 45 s)** gekürzt (Zustimmung Yannick); Summe der Hauptfolien jetzt **14:05** (Abschnitt 3).
 Folie 12 nennt 05b in der Sprungliste („Innensicht (Gründer)“), anspringen mit `5` `B` `Enter`; das PDF hat jetzt 23
 Seiten (Abschnitt 11). **Prüfung durch Yannick und Lukas offen** (Abschnitt 12.1, 12.2).
+**Seit So, 25.10.** (Prompt-Sammlung von Elias, KI-Nachweis 175, Abschnitt 3; Workflow D32): Elias' Ausarbeitungen
+sind **KI-gestützt** (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) – Kommunikationsanalyse E-EK-01,
+Mensch-Analogie E-EK-03, Leitfaden zum Verständnis der Aufgaben E-EK-02. Die Daten (Bildschirmaufnahmen vom
+20./21.10.) sind seine eigenen; Tool und Prüfung nennt er nicht. Die Fußzeilen von 08, 09, 09b und B6 tragen
+„KI-gestützt“, B2 zeigt statt der Beispielzeile P12 (nie genutzt) die Zeile „E-EK-01–03“; Antwort auf die Rückfrage
+F37 in `../fragerunde.md`. **Lukas hat keine KI genutzt** (laut Yannick, 25.10.2026). Offen sind nur Restfragen an
+Elias (Tool, Prüfung, Facebook-Teil, Personen in den hochgeladenen Aufnahmen – Abschnitt 12.3).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
 „Beispieldaten“). Was die Gruppe bis zum Vortrag ersetzen muss, steht in `index.html` in einem Kasten vor
 jeder Folie (Strg+F „FOLIE 06“) und unten in der Checkliste (Abschnitt 12, je Person mit Frist).
@@ -584,6 +592,11 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 `AUTOREN.md` 25). **Lukas spricht 05b** (er hat die Befragung geführt) – neue Punkte bei Lukas (12.2) und Yannick
 (12.1, Freigabe); Folie 01 und 02 sind gekürzt (Sollzeit 30 und 45 s), Folie 10 zeigt den Gründer im Abgleich.
 
+**Nachtrag So, 25.10.2026:** Elias hat seine Prompt-Sammlung geliefert (KI-Nachweis 175, Abschnitt 3: E-EK-01 bis
+E-EK-03), Lukas hat keine KI genutzt (laut Yannick). Die Punkte „KI-Listen“ und „B2 – P11/P12“ (12.1) sowie die
+KI-Liste bei Lukas (12.2) sind damit erledigt; bei Elias (12.3) bleiben Restfragen: Tool, Prüfung, Facebook-Teil,
+Personen in den hochgeladenen Aufnahmen.
+
 ### 12.1 Yannick Heisler (Bündel A, Synthese Folie 10, KI-Nachweis, Live-Abstimmung)
 
 **Neu seit Sa, 24.10. (Folie 05b „Gründerbefragung: Innensicht“ – prüfen und freigeben; bis So, 25.10.)**
@@ -630,7 +643,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       Methode gehört zu einem Feld des Steuerrads“ – zurück auf „… füllt ein Feld …“? Kasten „FOLIE 02“), Notizen 05 (Raptor, Comic-Tiere),
       Folie 11 (Pille weg, Rückfrage „Ist die Positionierung wirklich klar …?“), Folie 12 (Fazit, Pille weg,
       „Fremdbild (Aaker)“ in der Sprungliste), B1 (keine Interviews, „teils geplant“ weg, Absatz
-      „Reproduzierte Klischees“), B2 (P7–P11 echte Läufe D25), B7/B8 (Quellen). Notizen von Folie 03 („Folie 6 zeigt
+      „Reproduzierte Klischees“), B2 (P7–P11 echte Läufe D25; seit 25.10. Zeile „E-EK-01–03“ statt P12), B7/B8 (Quellen). Notizen von Folie 03 („Folie 6 zeigt
       derzeit Beispieldaten …“) gehörten nicht zum Auftrag – nachziehen lassen
 - [ ] **Vortrag 06–08b verteilen** (mit der Gruppe, 12.4): Lukas liefert kein Material mehr – wer trägt vor, wer
       beantwortet die Rückfragen (`../fragerunde.md` F12–F16, F36, F39)?
@@ -745,7 +758,10 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       „der Raptor bleibt Absender“ widerspricht Empfehlung 3 (Adler nur Maskottchen); „Comic-Tiere, 31
       Energy-Sorten“ im Sprechtext kann als Stimulanz-Signal bleiben. Im selben Schritt `../limbic-map.md` §4.1 und
       §6 und `../folienentwuerfe.md` Folie 5 angleichen (Einbau Account 1)
-- [ ] **B2 – P11/P12** nach Elias' Antwort zur KI-Nutzung (oben bei den KI-Listen; Kasten „B2“)
+- [x] ~~**B2 – P11/P12** nach Elias' Antwort zur KI-Nutzung (oben bei den KI-Listen; Kasten „B2“)~~ – **erledigt
+      So, 25.10.2026:** Elias' Prompt-Sammlung liegt vor (KI-Nachweis 175, E-EK-01 bis 03). B2 zeigt statt der
+      Beispielzeile P12 (nie genutzt) die Zeile „E-EK-01–03“ (KI-Tool k. A., Prüfung nicht angegeben; Einbau Workflow
+      D32, Kasten „B2“); P11 lief nur in der KI-Simulation D25. Pille „teils Beispiel“ bleibt (P13, P14)
 - [ ] **Navigation B6:** Folie 12 nennt B6 weiter „KA-Raster“ und B6 heißt im Deck „Backup: Raster
       Kommunikationsanalyse“, obwohl B6 jetzt die Profilmerkmale der Kanäle zeigt – umbenennen (z. B. „KA-Profile“)
       oder so lassen
@@ -777,11 +793,13 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       keine echten Interviews: auf Folie 02 „+ Kurzinterviews“ streichen (Gruppenentscheidung, Kasten „FOLIE 02“)
 
 **Bis Sa, 24.10.**
-- [ ] **KI-Listen** von Lukas und Elias einsammeln (Abgabe Fr 23.10.), in `../../ki-nachweis/ki-nachweis.md`
-      Abschnitt 3 übertragen; B2 nur mit echten Prompts (P7–P14 ersetzen oder löschen; Y29). ~~Zeile für die
-      KI-gestützte Chamäleon-Begründung ergänzen~~ (überholt 22.10.: die Begründung stammt jetzt von Elias). Dafür
-      P11 („Analogien Mensch, Tier“) und P12 („Beiträge codieren“) klären: Hat Elias KI genutzt? Wenn nein, als
-      „nicht genutzt“ kennzeichnen oder streichen (Kasten „B2“; `../fragerunde.md` F37)
+- [x] **KI-Listen** von Lukas und Elias einsammeln (Abgabe Fr 23.10.), in `../../ki-nachweis/ki-nachweis.md`
+      Abschnitt 3 übertragen – **erledigt So, 25.10.2026** (KI-Nachweis 175): Elias' Prompt-Sammlung als E-EK-01 bis
+      E-EK-03 übertragen; Lukas hat keine KI genutzt (laut Yannick). ~~Zeile für die KI-gestützte
+      Chamäleon-Begründung ergänzen~~ (überholt 22.10.: die Begründung stammt jetzt von Elias). ~~P11 und P12 klären:
+      Hat Elias KI genutzt?~~ (geklärt 25.10.: ja, mit eigenen Prompts E-EK-01 bis 03, nicht mit P11 oder P12; P12 nie
+      genutzt; `../fragerunde.md` F37). **Rest offen:** B2 nur mit echten Prompts – P13, P14 sind weiter Beispiel
+      (ersetzen oder löschen; Y29); Elias' Restfragen stehen in 12.3
 
 **Bis So, 25.10. bzw. Mo, 26.10. (Runde)**
 - [ ] **Runde umstellen** (nach der Generalprobe So 25.10., spätestens am Vortag Mo 26.10.): `runde: 'vortrag-2026-10-27'` in
@@ -804,7 +822,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 > durch die KI-simulierte Befragung D25 und ihren Einbau am 23.10. (Daten, Titel, Sprechtexte, Rückfragen, Fußzeilen,
 > B4, B5, Tierfrage, Aaker-Abgleich) oder **entfallen** (echte Kurzinterviews, Einwilligungen der Interviewten, echte
 > Rohdaten). Offen bleiben nur: Versanddatum der Gründer-Sprachnachrichten bestätigen (Punkt „Gründerbefragung“),
-> seine KI-Liste (Abgabe Fr 23.10.) und – falls er vorträgt – Sprechtexte 06–08b laut lesen (12.4). Wer diese Folien
+> ~~seine KI-Liste (Abgabe Fr 23.10.)~~ (entfällt seit So, 25.10.2026: Lukas hat keine KI genutzt, laut Yannick) und
+> – falls er vorträgt – Sprechtexte 06–08b laut lesen (12.4). Wer diese Folien
 > sonst vorträgt, legt die Gruppe fest.
 >
 > **Seit Sa, 24.10.2026:** Auf Lukas' Wunsch hat das Gründer-Interview eine eigene Folie **05b** – **Lukas spricht sie**
@@ -890,7 +909,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 
 **Bis Sa, 24.10.**
 - [x] ~~**B4 und B5 mit echten Rohdaten**~~ – **erledigt 23.10.** mit den KI-simulierten Daten (E15: fertige Werte aus
-      der CSV); offen nur: KI-Liste an Yannick (Abgabe Fr 23.10.)
+      der CSV); ~~offen nur: KI-Liste an Yannick (Abgabe Fr 23.10.)~~ (entfällt seit So, 25.10.2026: keine KI
+      genutzt, laut Yannick)
 
 **So, 25., Mo, 26. oder Di, 27.10. (vor dem Vortrag)**
 - [ ] ~~Energy-Sorten im Shop nachzählen (Folie 08: „31 Energy-Sorten“)~~ (überholt 22.10.: steht nicht mehr auf
@@ -898,6 +918,15 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       optional nachzählen, F08-23)
 
 ### 12.3 Elias Knauber (Bündel C, Folien 09–11, B6; trägt Folie 10 vor; Technik)
+
+**Neu seit So, 25.10. (deine Prompt-Sammlung – Restfragen; bis zum Vortrag Di, 27.10.)**
+- [ ] **KI-Nutzung: Restfragen beantworten** (`../kommunikationsanalyse.md` §13, Fragen 12–15; `../analogien.md` §10,
+      Fragen 12–13; KI-Nachweis 175, E-EK-01 bis 03): welches Tool in welcher Version; wie du die Ergebnisse geprüft
+      und geändert hast; wie der Facebook-Teil entstand (Facebook kommt in deinem Prompt E-EK-01 nicht vor); ob die
+      Bildschirmaufnahmen mit erkennbaren Personen so ins KI-Tool hochgeladen wurden (KI-Richtlinie der HSKL, Nr. 6:
+      keine personenbezogenen Daten ohne Einwilligung, `../../ki-nachweis/vorlage-ki-nutzung.md`) – auf Nachfrage
+      ehrlich antworten. Antwort auf F37 kennen (`../fragerunde.md`): „Ja. Elias hat ein KI-Tool genutzt …“ –
+      belastbar nur teilweise, bis du Tool und Prüfung nennst
 
 **Neu seit Fr, 23.10. (bis Sa, 24.10.)**
 - [ ] **Folie 08 bestätigen** (`../analogien.md` §10, Fragen 1 und 7): Trifft „Papagei und Chamäleon gleichwertig“
@@ -935,8 +964,9 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       „Hohepriester“, Coca-Cola in Stellenanzeigen, Hydration mit Kokosnuss oder Ananas, Hoodie „Drink Soft Go Hard“);
       Rechenweg der Prozentwerte (0,6 / 0,4 / 0,3 / 3 %); Engagement-Raten, Meta-Werbebibliothek und akustische
       Elemente bewusst weggelassen?; „Produkt in der Hand“ über Medien und Zeit gleich?; Logo „meist schwarz auf Gelb“;
-      „fair, sympathisch“ gegen die provokanten Shorts-Titel; **KI-Nutzung** bei den Ausarbeitungen (für B2 und die
-      Fragerunde, F37)
+      „fair, sympathisch“ gegen die provokanten Shorts-Titel; ~~**KI-Nutzung** bei den Ausarbeitungen (für B2 und die
+      Fragerunde, F37)~~ (beantwortet So, 25.10.2026 mit deiner Prompt-Sammlung, E-EK-01 bis 03 – Restfragen oben
+      unter „Neu seit So, 25.10.“)
 
 **Bis Do, 22.10. (Synthese)**
 - [x] **Chamäleon-Begründung prüfen** (F08-3, F08-11) – **geliefert am Do, 22.10.2026:** Elias' Ausarbeitung „HOLY –
@@ -984,7 +1014,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 
 **Bis Sa, 24.10.**
 - [ ] ~~**B6 mit echten Codierzeilen**~~ (überholt 22.10.: B6 zeigt deine Tabelle 1, Profilmerkmale der vier Kanäle –
-      gekürzte Zellen freigeben); KI-Liste an Yannick (Abgabe Fr 23.10.); Gesamtdeck abnehmen und
+      gekürzte Zellen freigeben); ~~KI-Liste an Yannick (Abgabe Fr 23.10.)~~ (erledigt So, 25.10.2026: Prompt-Sammlung,
+      KI-Nachweis 175); Gesamtdeck abnehmen und
       kritisch prüfen (Tagesplan, P14) – Lieferungen von Lukas und Elias als Tabelle (G5)
 
 **So, 25., Mo, 26. oder Di, 27.10. (vor dem Vortrag)**
@@ -1012,7 +1043,8 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
       ihren Teil; danach setzt Account 1 das gemessene Tempo und die Zeitangaben ein
 - [ ] **Vorbereiten für die Fragerunde:** `../fragerunde.md` üben (Platzhalter „[ … ]“ vorher füllen; Prüfung der
       Datei durch die Gruppe offen; Stand 22.10.: F16, F17, F30–F34 nach Elias' Material neu gefasst, F36–F38 neu;
-      Stand 23.10.: F04, F12–F16, F18, F29, F30, F35, F36 nach der KI-simulierten Befragung neu gefasst, F39 neu); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
+      Stand 23.10.: F04, F12–F16, F18, F29, F30, F35, F36 nach der KI-simulierten Befragung neu gefasst, F39 neu;
+      Stand 25.10.: F37 nach Elias' Prompt-Sammlung); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
       Schritt; Vorlage `index.html?druck&notizen=sprechtext`, G13); Reflexion: Stichpunkte zu den sechs Fragen bis
       zur Generalprobe (G12)
 - [ ] **Generalprobe So, 25.10.** (1 Std., in Präsenz, mit genau dem Vortragslaptop, zweitem Bildschirm und
@@ -1180,7 +1212,7 @@ offen ist, wer die Folien 06–08b vorträgt (12.4).
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (53 Prüfungen, auch das Zeitfenster mit vorgestellter Uhr); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren (Uhr vorstellen: `http://localhost:8787/uhr?vor=31`), mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy, mitlesender „Folie“ und Gegenprobe des Zeitfensters (Abschnitt 6, `AUTOREN.md` 6c) |
 | `werkzeuge/zeitfenster-e2e.mjs` | prüft das Zeitfenster auf Handy und Folie 08 im Browser (Chromium über playwright-core), nur mit Attrappen auf localhost und vorgestellten Uhren: Ablauf auf dem Handy, Speicher und Pause der Folie, Referentenfenster, Tooltip, alte Skript-Fassung, Lasttest-Gegenprobe; `--mutationen` = kaputte Kopien von `js/komponenten.js` und `js/abstimmen.js`; Ausgabe nach `_test/` (`AUTOREN.md` §20) |
 | `export/` | PDF (seit 24.10.2026 23 Seiten mit 05b, ohne 01b; vorher 22), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b; 24 Bilder) – Stand 24.10.2026 (ca. 19:07) mit 05b und A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, Elias' Material auf 08–11 und B6 (Freigabe offen) und den gekennzeichneten Beispieldaten; nach der Freigabe, nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
-| `../analogien.md`, `../kommunikationsanalyse.md` | (außerhalb dieses Ordners) Elias Knaubers Ausarbeitungen, KI-gestützt aus seinen PDFs übertragen (seit 22.10.2026; Grundlage von 08, 09, 09b, 10, 11, B6); die PDFs liegen nur im Gruppenordner |
+| `../analogien.md`, `../kommunikationsanalyse.md` | (außerhalb dieses Ordners) Elias Knaubers Ausarbeitungen – selbst KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) –, mit Claude Code aus seinen PDFs übertragen (seit 22.10.2026; Grundlage von 08, 09, 09b, 10, 11, B6); die PDFs liegen nur im Gruppenordner |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
 | `QUELLEN.md` | Schriften, Bibliotheken, Icons, Bilder mit Lizenz und Herkunft; Hinweis zur KI-Unterstützung |

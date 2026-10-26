@@ -194,6 +194,11 @@ Leite anschließend für [MARKE] ab:
 
 Ergebnis mit den Antworten der Gruppe und von 3–5 befragten Personen vergleichen und Unterschiede im Backup festhalten.
 
+**Genutzt (Stand So, 25.10.2026):** nur ein Lauf in der KI-simulierten Befragung von Bündel B (Workflow D25,
+[`buendel-b/rohdaten/p11-ki.md`](buendel-b/rohdaten/p11-ki.md)). Elias Knaubers Analogien sind laut seiner
+Prompt-Sammlung KI-gestützt, aber **nicht** mit P11: Seine tatsächlichen Prompts stehen im KI-Nachweis, Abschnitt 3
+(E-EK-01 bis E-EK-03; für die Mensch-Analogie E-EK-03), nicht als P-Nummer.
+
 ### P12 – Kommunikationsanalyse (mit Screenshots)
 
 ```text
@@ -208,6 +213,12 @@ Fasse danach zusammen:
 3. Passung zu dieser Markentonalität: [TONALITÄT AUS P11]
 Beschreibe nur, was auf den Screenshots zu sehen ist.
 ```
+
+**Nicht genutzt (Stand So, 25.10.2026):** Einzelne Beiträge wurden nie nach diesem Raster codiert (Fragerunde F17,
+[`kommunikationsanalyse.md`](kommunikationsanalyse.md) Abschnitt 2). Elias Knaubers tatsächliche KI-Nutzung für die
+Kommunikationsanalyse steht laut seiner Prompt-Sammlung im KI-Nachweis, Abschnitt 3 (E-EK-01 bis E-EK-03; für die
+Kommunikationsanalyse E-EK-01) – eigene Prompts, keine P-Nummer. In B2 ersetzt deshalb die Zeile „E-EK-01–03“ die
+frühere Beispielzeile P12.
 
 ### P13 – Synthese im Markensteuerrad
 
@@ -250,6 +261,10 @@ aus anderen Tools (ChatGPT, Perplexity, Bildgeneratoren …). Wer einen Prompt a
 mit P-Nummer (Feld „Prompt-Vorlage“) in die persönliche KI-Liste nach
 [`ki-nachweis/vorlage-ki-nutzung.md`](../ki-nachweis/vorlage-ki-nutzung.md) ein; Yannick überträgt die Listen in
 Abschnitt 3.
+
+**Stand So, 25.10.2026:** Elias Knaubers Prompt-Sammlung ist in Abschnitt 3 übertragen (KI-Nachweis 175, E-EK-01 bis
+E-EK-03) – eigene Prompts, ohne P-Nummer. Lukas hat keine KI genutzt (laut Yannick,
+25.10.2026).
 
 ---
 

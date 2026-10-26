@@ -7,24 +7,39 @@ KI-gestützt (Claude Code) am Do, 22.10.2026 aus seinem PDF (Original im Gruppen
 Papagei und Chamäleon gleichwertig auf Folie 08 und in der Live-Abstimmung (Entscheidung Yannick), Feld Tonalität
 „frech · gesellig · wandelbar“, Abgleich mit der KI-simulierten Befragung (Abschnitte 1, 7, 8, 10). Lukas liefert kein
 Material mehr; statt seiner Befragung gibt es eine KI-simulierte ([`buendel-b/analogien-befragung.md`](buendel-b/analogien-befragung.md)).
+**Nachtrag So, 25.10.2026** (KI-Nachweis 175, Abschnitt 3; Workflow D32): Laut seiner Prompt-Sammlung hat Elias die
+Ausarbeitung **KI-gestützt** erstellt – Varianten der Mensch-Analogie (E-EK-03), dazu ein Leitfaden, um die Aufgabe zu
+verstehen (E-EK-02); Tool, Version, Datum und Prüfung nennt er nicht (Abschnitt „So ist die Ausarbeitung zu lesen“,
+offene Fragen 12–13).
 
 > **So ist die Ausarbeitung zu lesen**
 > - **EK** = Ausarbeitung von Elias Knauber: „HOLY – Analogien: Mensch und Tier“, Fallstudie 1 · Markenidentität ·
->   Feld „Markentonalität – Wie sind wir?“, Stand 16.10.2026, zwei Seiten. Inhalte, Wertungen und Belege stammen von
->   ihm; hier sind sie nach der Vorlage in [`methoden.md`](methoden.md) Abschnitt 4 gegliedert und verdichtet. Direkte
->   Zitate stehen in „…“. Elias' Quellen (wörtlich): „HOLY-Website (de.holy.com, inkl. ‚Unsere Story‘ und
+>   Feld „Markentonalität – Wie sind wir?“, Stand 16.10.2026, zwei Seiten. Elias' Ausarbeitung, laut seiner
+>   Prompt-Sammlung KI-gestützt erstellt (E-EK-03); wie weit er die Ergebnisse überarbeitet und geprüft hat, ist nicht
+>   angegeben. Hier sind Inhalte, Wertungen und Belege nach der Vorlage in [`methoden.md`](methoden.md) Abschnitt 4
+>   gegliedert und verdichtet. Direkte Zitate stehen in „…“. Elias' Quellen (wörtlich): „HOLY-Website (de.holy.com, inkl. ‚Unsere Story‘ und
 >   Produktseiten), HOLY-Stellenanzeigen, Instagram @holysquad.official und @holysquad.fr, Facebook-Seite
 >   holysquad.official, X @Holysquad_uk, HOLY TV-Spot 2026; abgerufen am 16.10.2026.“
 > - **Dossier-Abgleich:** Steht derselbe Fakt im Recherche-Dossier ([`recherche/holy-recherche.md`](recherche/holy-recherche.md)),
 >   ist sein Faktenstatus angegeben (✔ gesichert, ✎ korrigiert, **H** Hypothese; Nummern = Anhang B). Belege, die nicht
 >   im Dossier stehen (z. B. Nutella-Werbeparodie, „Hohepriester“, Coca-Cola in Stellenanzeigen, neue
->   Hydration-Sorten, Claims je Land), sind Elias' eigene Recherche mit seiner Quellenangabe. Sie wurden für diese
->   Übertragung **nicht** gegengeprüft.
+>   Hydration-Sorten, Claims je Land), stehen nur in Elias' Ausarbeitung, mit seiner Quellenangabe. Sie wurden für
+>   diese Übertragung **nicht** gegengeprüft.
+> - **KI-Nutzung (seit So, 25.10.2026, Prompt-Sammlung E. Knauber, KI-Nachweis 175, Abschnitt 3):** Mit **E-EK-03**
+>   sollte ein KI-Tool für „HOLY als Mensch“ den bisherigen Vorschlag „Der Verwandlungskünstler“ schärfen, zwei weitere
+>   Varianten entwerfen (je Charakterporträt, ausgelöste Emotionen, abgedeckte und fehlende Tonalitätsbegriffe, Beleg
+>   aus HOLYs Kommunikation) und eine empfehlen – „Ich wähle danach aus, was ich weiter ausarbeiten möchte.“ Die
+>   Tier-Analogien Papagei und Chamäleon lagen dem Tool nur als Vorinformation vor, zusammen mit dem Vorschlag „Der
+>   Verwandlungskünstler“. In der Ausarbeitung steht als Mensch der **Impro-Comedian** – wie er aus diesen Varianten
+>   entstand, ist nicht angegeben (offene Frage 13). **E-EK-02:** Leitfaden aus den Vorlesungsfolien und einem
+>   Screenshot der Aufgaben, um sie zu verstehen („Die eigentliche Ausarbeitung mache ich danach selbst.“). Tool, Version, Datum und
+>   Prüfung der Ergebnisse: nicht angegeben (offene Frage 12).
 > - **H** = Hypothese bzw. Deutung. Analogien sind ein projektives Verfahren: Das Ergebnis ist eine begründete Deutung,
 >   keine Messung. **MW** = Modellwissen ohne geprüfte Quelle.
 > - **CC** = Ergänzung von Claude Code bei der Übertragung (Abgleich, Zuordnungen, Folienbezug, offene Fragen) – nicht
 >   von Elias.
-> - **Herkunft:** Inhalt Elias Knauber; übertragen KI-gestützt (Claude Code) am 22.10.2026 aus seinem PDF
+> - **Herkunft:** Inhalt Elias Knauber, KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03);
+>   übertragen KI-gestützt (Claude Code) am 22.10.2026 aus seinem PDF
 >   (KI-Nachweis 119, Workflow D24). Ohne Websuche. Das Original liegt im Gruppenordner, nicht im Repository – wie bei
 >   seiner Kommunikationsanalyse, die Bildschirmaufnahmen mit Personen enthält. Namen von Kooperationspartnern sind hier
 >   weggelassen, wo sie nicht nötig sind.
@@ -165,7 +180,9 @@ Lukas' Befragung (P11, Interviews)“ – Lukas liefert kein Material mehr)*
 - **Eine Analyse eines Gruppenmitglieds**, abgeleitet aus HOLYs eigener Kommunikation (Website, Stellenanzeigen,
   Kanäle, TV-Spot), Stand 16.10.2026. Sie deckt die Schritte 1, 2 und 5 der Vorlage ab (Mensch, Tier mit Gründen,
   Persönlichkeitsmerkmale und Emotionen).
-- **Keine Befragung und kein KI-Ergebnis:** Elias nennt weder Befragte noch Prompt P11. Schritt 3 (zwei Wettbewerber)
+- **Keine Befragung und kein KI-Ergebnis:** Elias nennt weder Befragte noch Prompt P11 (*seit So, 25.10.2026:* „kein
+  KI-Ergebnis“ gilt nur für P11 – laut seiner Prompt-Sammlung ist die Ausarbeitung KI-gestützt, die Mensch-Analogie
+  mit einem eigenen Prompt, E-EK-03). Schritt 3 (zwei Wettbewerber)
   und Schritt 4 (KI-Ergebnis P11 mit der Gruppe und 3–5 Personen vergleichen) fehlen – das ist Lukas' Teil (Bündel B,
   [`dossier-buendel-b.md`](dossier-buendel-b.md) B3: erst ohne KI, dann P11, Tierfrage offen in den Interviews).
   Schritt 4 ist seit 23.10.2026 mit der KI-simulierten Befragung abgedeckt (P11-Lauf und acht simulierte Personen
@@ -183,7 +200,8 @@ Lukas' Befragung (P11, Interviews)“ – Lukas liefert kein Material mehr)*
   (KI-simuliert)“) und im Abgleich Selbstbild ↔ Fremdbild auf Folie 10. Die Folie zeigt also, was die Analogiemethode
   ergeben hat ([`abgleich-vorlesung.md`](abgleich-vorlesung.md) #38); die Live-Umfrage bleibt ein Stimmungsbild.
 - **Zirkel-Hinweis:** Analogien (Folie 08) und Kommunikationsanalyse (Folie 09/09b) stammen von derselben Person und
-  stützen sich beide auf HOLYs eigene Kommunikation. Das Urteil „Tonalität – passt“ auf 09b ist deshalb eine
+  stützen sich beide auf HOLYs eigene Kommunikation; seit So, 25.10.2026 ist bekannt, dass beide KI-gestützt sind
+  (E-EK-03, E-EK-01) – der Zirkel wird dadurch nicht kleiner. Das Urteil „Tonalität – passt“ auf 09b ist deshalb eine
   Stimmigkeitsprüfung innerhalb der Identität, keine unabhängige Bestätigung (H; vgl. VORTRAGSREIFE L5). Die Aufgabe
   ordnet beide Methoden der Markenidentität zu (Stenger, S. 60) – insofern ist das methodisch zulässig, sollte aber auf
   Nachfrage so benannt werden.
@@ -248,7 +266,7 @@ Vorgaben des Hauptagenten (KI-Nachweis 119, Workflow D24), zur Freigabe durch Ya
 | **08** Mensch-Karte | „Impro-Comedian“ (Zeichnung: Mensch am Mikrofon; ein Drittel der Breite) statt „Start-up-Gründer“; Profil aus Elias' Tabelle, seit 23.10.2026 mit Humor zuerst: Humor „selbstironisch, frech“ (Spalte Tonalität; „frech“ = Wort fürs Steuerrad), Auftreten **„überdreht, nie planlos“** (Elias: „laut, überdreht, spontan, aber nie planlos“), Umgang „lebt vom Publikum“. Die Zeile „Echte Kundschaft“ entfällt (Wortbudget); die Kundschaft steht in den Notizen | EK, Abschnitt 3 |
 | **08** Live-Umfrage | seit 23.10.2026 Optionen Adler, Löwe, Chamäleon, **Papagei** (an der Stelle des Fuchses), Schwan; unsere Antwort Papagei **und** Chamäleon (beide Zeilen umrahmt, die Aussagezahl zählt beide zusammen) | Entscheidung Yannick 23.10.2026 |
 | **08** Wortbudget, Pille | 40 Wörter (`werkzeuge/pruefen.mjs` warnt ab 41); Pille „Beispieldaten“ ganz entfernt (die Live-Stimmen in Schritt 0–1 waren nie Beispieldaten, die Analogien sind Elias' Analyse); Kontrast Wettbewerber bleibt „(Beispiel)“ | – |
-| **08** Fußzeile | „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 (Belege aus HOLY-Website, -Kanälen, TV-Spot 2026) – Hypothesen (H)“ statt „eigene Analogie-Befragung, n = 8 … – Beispieldaten“ – **ohne** den Tiernamen, weil die Fußzeile schon während der Abstimmung zu sehen ist | EK |
+| **08** Fußzeile | „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 (Belege aus HOLY-Website, -Kanälen, TV-Spot 2026) – Hypothesen (H)“ statt „eigene Analogie-Befragung, n = 8 … – Beispieldaten“ – **ohne** den Tiernamen, weil die Fußzeile schon während der Abstimmung zu sehen ist. Seit So, 25.10.2026 mit „KI-gestützt“: „Analogien: Ausarbeitung E. Knauber, KI-gestützt, Stand 16.10.2026 (…)“ (Workflow D32) | EK |
 | **08** Notizen | Schritt 1 seit der Nacharbeit „Hier vorgegeben – abgeleitet aus HOLYs eigener Kommunikation“ statt „… im Interview offen gefragt“ (Interviews nicht belegt). Schritt 2 seit 23.10.2026 „Warum Papagei und Chamäleon?“ (ca. 26 s): Adler = Maskottchen, Papagei, Chamäleon, Comedian, dazu der Befund der KI-simulierten Befragung (Papagei 5 von 8, Chamäleon nie – Abgleich auf Folie 10); Schritt 3 „frech, gesellig, wandelbar – das geht ins Steuerrad“; neue Rückfragen „Warum steht jetzt der Papagei in der Umfrage – und wo ist der Fuchs?“, „Kommen Papagei und Chamäleon aus eurer Befragung?“. Bis 22.10.2026: Schritt 2 „Warum Chamäleon?“ (ca. 20 s). Absatz „Chamäleon – Einordnung und Begründung“: „Begründung: Elias Knauber (Ausarbeitung Analogien, 16.10.2026)“; die früheren Dossier-Belege (31 Energy-Sorten, Wacken/CSD/Simpsons, „Gefährlich geil!“) nur noch als Ergänzung „KI-gestützt, Dossier“; Zuordnungstabelle kurz. Rückfragen: Tarnung/Einzelgänger mit Elias' Gegenargument und dem Papagei als Gemeinschaftstier; „Ist der Comedian eure Persona?“ (statt „Gründer Ende 20“); „Raptor soll bleiben?“ → Adler bleibt Maskottchen, fester Absender wird ein Name und eine Profilfarbe (Empfehlung 3) | EK; Dossier mit Status |
 | **08b** | seit 23.10.2026 das **KI-simulierte Fremdbild** (Titel „HOLY wirkt wie ein witziger Kumpel – der verkaufen will“, Pille „KI-simuliert“, Ergebnisbereich „Fremdbild (KI-simuliert) → Abgleich mit dem Selbstbild: Folie 10“); Elias' Zuordnungstabelle gehört zum Selbstbild (Notizen von 08), der Vergleich steht in Abschnitt 7.2 | KI-simulierte Befragung D25 |
 | **10** Feld Tonalität | seit 23.10.2026 **„frech · gesellig · wandelbar“** (Abschnitt 1); bis 22.10.2026 „frecher Kumpel · wandelbar · Spaß“. Dazu der Abgleich Selbstbild ↔ Fremdbild, u. a. „Papagei & Chamäleon ≈ Papagei 5 von 8, Chamäleon nie“ (Schritt 9, parallel eingebaut, D26) | AN |
@@ -339,6 +357,16 @@ D25 (23.10.2026)**
     [`folienentwuerfe.md`](folienentwuerfe.md) Folie 5 werden am 23.10.2026 nach Entscheidung 5 (Querverweise
     nachziehen) angeglichen; die Notizen von Folie 05 zieht der Workflow D26 nach (Folie selbst unverändert).
 
+**An Elias – KI-Nutzung (seit So, 25.10.2026; Prompt-Sammlung, KI-Nachweis 175, Abschnitt 3)**
+
+12. **Tool und Prüfung:** Welches KI-Tool in welcher Version hast du für E-EK-02 und E-EK-03 genutzt, und wie hast du
+    die Ergebnisse geprüft und geändert? Die Sammlung nennt beides nicht. Dieselbe Frage gilt für die
+    Kommunikationsanalyse ([`kommunikationsanalyse.md`](kommunikationsanalyse.md) §13, Fragen 12–15) – einmal
+    beantworten.
+13. **Vom „Verwandlungskünstler“ zum Impro-Comedian:** E-EK-03 bat um eine geschärfte Fassung und zwei weitere
+    Varianten; deine Ausarbeitung (Stand 16.10.2026) nennt den Impro-Comedian. Wie ist er entstanden? Bis zur Antwort
+    weder sagen, er sei eine der KI-Varianten, noch, er sei ohne KI entstanden.
+
 ---
 
 ## Quellen
@@ -349,6 +377,9 @@ D25 (23.10.2026)**
   Facebook-Seite holysquad.official, X @Holysquad_uk, HOLY TV-Spot 2026; abgerufen am 16.10.2026.
 - Knauber, E. (2026): *Kommunikationsanalyse zum Markenbild von HOLY* (Adler als Maskottchen) – siehe
   [`kommunikationsanalyse.md`](kommunikationsanalyse.md).
+- Knauber, E. (2026): *Prompt-Sammlung – Unternehmenskommunikation (HOLY).* PDF, 3 S., Stand 25.10.2026 (an Yannick,
+  nicht im Repository); übertragen in [`../ki-nachweis/ki-nachweis.md`](../ki-nachweis/ki-nachweis.md), Eintrag 175,
+  Abschnitt 3 (E-EK-02, E-EK-03).
 - Recherche-Dossier [`recherche/holy-recherche.md`](recherche/holy-recherche.md) (Stand 13./14.10.2026), Kap. 1, 5.2,
   6.1–6.3, 6.5–6.7; Quellennummern = Anhang B.
 - Vorlage [`methoden.md`](methoden.md) Abschnitt 4; Plan Bündel B [`dossier-buendel-b.md`](dossier-buendel-b.md) B3;

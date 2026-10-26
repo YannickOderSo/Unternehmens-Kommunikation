@@ -3,16 +3,23 @@
 **Bündel C** · Folien 09 und 09b (120 s), Backup B6; Grundlage für Folie 10 (Feld Markenbild, Lücke 2) und Folie 11
 (Empfehlung 3) · Datengrundlage: eigene Bildschirmaufnahmen von Elias vom 20. und 21.10.2026 · übertragen
 KI-gestützt (Claude Code) am Do, 22.10.2026 aus seinem PDF (Original im Gruppenordner, nicht im Repository –
-Bildschirmaufnahmen mit Personen) · **Entwurf, Prüfung durch Elias und Yannick offen**
+Bildschirmaufnahmen mit Personen) · **Entwurf, Prüfung durch Elias und Yannick offen** · **Nachtrag So, 25.10.2026**
+(KI-Nachweis 175, Abschnitt 3; Workflow D32): Laut seiner Prompt-Sammlung hat Elias die Analyse **KI-gestützt**
+erstellt (E-EK-01; dazu ein Leitfaden, um die Aufgabe zu verstehen, E-EK-02); Facebook kommt in seinem Prompt nicht
+vor; Tool, Version, Datum und Prüfung nennt er nicht (Abschnitt „So ist die Ausarbeitung zu lesen“, offene Fragen
+12–15).
 
 > **So ist die Ausarbeitung zu lesen**
 > - **EK** = Ausarbeitung von Elias Knauber: „Kommunikationsanalyse zum Markenbild von HOLY – Instagram, Facebook,
 >   TikTok und YouTube im Vergleich“, Aufgabe 2: Markenidentität, 12 Seiten, Datengrundlage eigene
->   Bildschirmaufnahmen vom 20. und 21.10.2026. Befunde, Wertungen und Zahlen stammen von ihm; hier sind sie nach der
->   Vorlage in [`methoden.md`](methoden.md) Abschnitt 5 gegliedert und verdichtet. Direkte Zitate stehen in „…“,
+>   Bildschirmaufnahmen vom 20. und 21.10.2026. Elias' Ausarbeitung, laut seiner Prompt-Sammlung KI-gestützt erstellt
+>   (E-EK-01); wie weit er die Ergebnisse überarbeitet und geprüft hat, ist nicht angegeben. Die **Daten** – die
+>   Bildschirmaufnahmen – sind seine eigenen. Hier sind Befunde, Wertungen und Zahlen nach der Vorlage in
+>   [`methoden.md`](methoden.md) Abschnitt 5 gegliedert und verdichtet. Direkte Zitate stehen in „…“,
 >   Kapitelangaben (EK Kap. n) verweisen auf sein Original.
-> - **Zahlen:** nur Elias' eigene Werte – abgelesen oder von ihm selbst gerechnet (z. B. „rund 0,6 Prozent der
->   Follower“). Bei der Übertragung wurde nichts neu gerechnet oder geschätzt. Follower, Likes und Aufrufe sind
+> - **Zahlen:** nur Werte aus Elias' Ausarbeitung – aus seinen Aufnahmen abgelesen oder dort gerechnet (z. B. „rund
+>   0,6 Prozent der Follower“; wer gerechnet hat, Elias oder das KI-Tool, ist nicht angegeben – offene Fragen 2 und
+>   13). Bei der Übertragung wurde nichts neu gerechnet oder geschätzt. Follower, Likes und Aufrufe sind
 >   **Indizien**: Daten aus den Plattform-Insights lagen nicht vor; was über Wirkung gesagt wird, ist laut Elias
 >   „begründete Interpretation und kein Messergebnis“ (EK Kap. 1).
 > - **Dossier-Abgleich:** Wo das Recherche-Dossier ([`recherche/holy-recherche.md`](recherche/holy-recherche.md), Stand
@@ -21,12 +28,25 @@ Bildschirmaufnahmen mit Personen) · **Entwurf, Prüfung durch Elias und Yannick
 > - **CC** = Ergänzung von Claude Code bei der Übertragung (Abgleich, Einordnung, Folienbezug, offene Fragen) – nicht
 >   von Elias. **H** = Hypothese/Deutung, **MW** = Modellwissen ohne geprüfte Quelle.
 > - **Keine Bilder übernommen:** Elias' Abbildungen 1–4 (Bildschirmaufnahmen von Profilköpfen, Beiträgen und der
->   Facebook-Suche, zum Teil mit erkennbaren Personen) stehen nicht im Repository und nicht auf den Folien.
+>   Facebook-Suche, zum Teil mit erkennbaren Personen) stehen nicht im Repository und nicht auf den Folien (ob die
+>   Aufnahmen mit Personen so ins KI-Tool hochgeladen wurden, ist offen – Frage 15).
 >   Social-Media-Bilder von HOLY nur nach Zustimmung des Betreuers (`praesentation/QUELLEN.md` §4). Namen privater
 >   Personen (Mitarbeitende, Nutzer, Figuren aus Clip-Titeln) sind weggelassen; Kooperationspartner nur, wo nötig.
-> - **Herkunft:** Inhalt Elias Knauber; übertragen KI-gestützt (Claude Code) am 22.10.2026 aus seinem PDF
->   (KI-Nachweis 119, Workflow D24). Ohne Websuche. Das Original liegt im Gruppenordner, nicht im Repository
->   (Bildschirmaufnahmen mit Personen).
+> - **KI-Nutzung (seit So, 25.10.2026, Prompt-Sammlung E. Knauber, KI-Nachweis 175, Abschnitt 3):** Mit **E-EK-01**
+>   hat Elias ein KI-Tool beauftragt, „die offiziellen Social-Media-Auftritte der Marke HOLY auf Instagram, TikTok und
+>   YouTube“ zu analysieren. Anhänge: seine Bildschirmaufnahmen der drei Profile (Stand 20.10.2026) und vier
+>   Screenshots einzelner Beiträge. Gewünscht war eine „Analyse als Word-Datei mit Vergleichstabelle und Abbildungen“,
+>   die er „in meine Kursarbeit übernehmen kann“; Kriterien: Corporate Design, Slogan und Claims, Schlüsselbilder und
+>   Bildwelten, je Plattform Inhalte, Formate, Rolle im Kanalmix, sichtbare Kennzahlen, Tonalität, Fazit. Vorgaben:
+>   jede Aussage mit Beobachtungen aus dem Material begründen, „klar zwischen dem, was sichtbar ist, und deiner
+>   Interpretation“ trennen, fehlende Daten offen sagen. **Facebook kommt im Prompt nicht vor** – dort steht die
+>   Annahme „TikTok ersetzt Facebook“; die Ausarbeitung enthält Facebook (Aufnahme der Facebook-Suche vom
+>   21.10.2026). Wie der Facebook-Teil entstand, ist nicht angegeben (offene Frage 14). **E-EK-02:** Leitfaden aus den
+>   Vorlesungsfolien und einem Screenshot der Aufgaben, um sie zu verstehen („Die eigentliche Ausarbeitung mache ich
+>   danach selbst.“). Tool, Version, Datum und Prüfung der Ergebnisse: nicht angegeben (offene Fragen 12, 13).
+> - **Herkunft:** Inhalt Elias Knauber, KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03);
+>   übertragen KI-gestützt (Claude Code) am 22.10.2026 aus seinem PDF (KI-Nachweis 119, Workflow D24). Ohne
+>   Websuche. Das Original liegt im Gruppenordner, nicht im Repository (Bildschirmaufnahmen mit Personen).
 > - **Vorlesung:** Aufgabe „Kommunikationsanalyse zum Markenbild (Instagram/Facebook, YouTube): Corporate Design, ggf.
 >   Schlüsselbilder, Bildwelten, Logo, Slogan“ (Stenger, S. 60); integrierte Kommunikation S. 96–97 (Einordnung in
 >   Abschnitt 9). Schlüsselbilder stehen auf S. 60 und 97 ohne Urheber; „nach Kroeber-Riel (1993)“ ist Literatur
@@ -298,7 +318,7 @@ Dossier 6.2 belegt einen davon ✔ [129].)
 
 | Fit-Bewertung | Passt | Bruch / Lücke | Urteil auf Folie 09b |
 |---|---|---|---|
-| **Markenbild ↔ Markentonalität** | „frech, schnell und nah an der Zielgruppe“ auf allen Kanälen (EK Kap. 7) entspricht Elias' Analogien: frech & direkt, humorvoll & selbstironisch, gesellig & community-nah, bunt & verspielt, wandelbar | provokante Shorts-Titel gegen das „gute Gewissen“ (EK Kap. 6.4, 8) | **passt** – Hinweis: Analogien und Kommunikationsanalyse stammen von derselben Person und beruhen beide auf HOLYs eigener Kommunikation; das Urteil ist eine Stimmigkeitsprüfung, keine unabhängige Bestätigung (H, CC) |
+| **Markenbild ↔ Markentonalität** | „frech, schnell und nah an der Zielgruppe“ auf allen Kanälen (EK Kap. 7) entspricht Elias' Analogien: frech & direkt, humorvoll & selbstironisch, gesellig & community-nah, bunt & verspielt, wandelbar | provokante Shorts-Titel gegen das „gute Gewissen“ (EK Kap. 6.4, 8) | **passt** – Hinweis: Analogien und Kommunikationsanalyse stammen von derselben Person, sind beide KI-gestützt (E-EK-03, E-EK-01; bekannt seit 25.10.2026) und beruhen beide auf HOLYs eigener Kommunikation; das Urteil ist eine Stimmigkeitsprüfung, keine unabhängige Bestätigung (H, CC) |
 | **Markenbild ↔ Persona / Limbic Type** | Elias bewertet das nicht ausdrücklich. Gruppe (H): Spaß, Neues, Humor sprechen Stimulanz an – das passt zu Marco (Hedonisten, [`limbic-map.md`](limbic-map.md)) | „jung, laut“, Jugendszenen und Jugendsprache (EK) gegen Marco, 28, und eine Kundschaft von meist 25–40 laut Mitgründer (Dossier Kap. 1/4.1 ✔ [7, 24]); Schicht- oder Arbeitsalltag der Kundschaft nennt Elias nicht (Alltag und Insider zeigt das HOLY-Team) – gezielt geprüft hat er das nicht | **teilweise** (H, Gruppe) |
 | **Konsistenz über die Kanäle** | ein Dachclaim überall; Wiedererkennung durch gesättigte Farben, fette Typografie, Produkt in der Hand; klare Arbeitsteilung (EK Kap. 8) | vier Anzeigenamen, drei Profilbildfarben, kein festes Schlüsselbild, keine zweite Kernbotschaft; Bildwelten „von Wacken bis SpongeBob“ können beliebig wirken; YouTube unterentwickelt, Facebook vor allem Zweitverwertung (EK Kap. 8) | **Bruch** – Begründung auf der Folie: „Vier Namen, drei Profilfarben, kein festes Schlüsselbild.“ |
 
@@ -340,7 +360,7 @@ Web-Folie in `praesentation/index.html`; Entwürfe in [`folienentwuerfe.md`](fol
 | **09** Kanäle | vier Spalten in Elias' Reihenfolge: Profilname, Follower/Abos mit Reichweitenbalken, eine Zusatzkennzahl (1.184 Beiträge · Gruppe ≈ 40.000 Mitglieder · 2 Mio. Likes · 360 Videos), Rolle (Schaufenster & Verkauf · Zweitverwertung & Anzeigen · Reichweite & Community · Archiv & Zweitverwertung); Instagram „383 Tsd.“ (seit der Nacharbeit „Tsd.“ in der großen Zahl); Satz „Follower und Abos als Indiz für Reichweite – Insights-Daten lagen nicht vor“. Beiträge pro Woche, Ø Engagement-Rate und Formel entfallen | Tabelle 1 (Abschnitt 3.1) |
 | **09** Schritt 1 | fünf Bildwelten mit Kurzbeschreibung, **ohne Anteile**; rechts die Spalte „vor allem auf“ nur, wo Elias einen Kanal nennt: Produkt-Pop und geliehene Welten Instagram, Szene & Event TikTok (seit der Nacharbeit; beim Einbau nur „überwiegt im Instagram-Raster“) | Abschnitt 6.2 (Abb. 3) |
 | **09** Schritt 2 | „Schlüsselbild?“ → kein festes Schlüsselbild, Kandidat „Produkt in der Hand“ (Piktogramm mit durchgezogenem Rahmen, kein Screenshot); der Raptor ist Maskottchen, kein Kandidat mehr | Abschnitt 6.1 |
-| **09** Fußzeile | eigene Bildschirmaufnahmen 20./21.10.2026 (Kommunikationsanalyse E. Knauber) · Facebook-Gruppe: Desk Research 16.10.2026 · Schlüsselbild nach Kroeber-Riel (1993) | EK Quellen |
+| **09** Fußzeile | eigene Bildschirmaufnahmen 20./21.10.2026 (Kommunikationsanalyse E. Knauber) · Facebook-Gruppe: Desk Research 16.10.2026 · Schlüsselbild nach Kroeber-Riel (1993); seit So, 25.10.2026 mit „KI-gestützt“: „Kommunikationsanalyse E. Knauber (KI-gestützt), eigene Bildschirmaufnahmen 20./21.10.2026 · …“ | EK Quellen |
 | **09** Notizen | Interaktion nach Grundlage getrennt – vier Einzelbeiträge, Facebook-Suchansicht, Aufrufe aus den Profilen (ausdrücklich keine Stichprobe) –, älterer Dossier-Stand 14.10. zum Vergleich; Rückfragen „Warum TikTok?“, „Wo sind Engagement-Raten?“, „Ist der Raptor kein Schlüsselbild?“ | Abschnitt 2, 3 |
 | **09b** Datenblatt | Logo „Wortmarke · extrafette, kursive Versalien“ (ggf. Profilbild in drei Farben); Claims: Dachclaim „Die Softdrink Revolution“ als einziger Claim auf allen vier Kanälen, Versprechen, weitere ehrlich ohne erfundene Zahl; Schriften aus dem Dossier (Web); Farben Gelb/Schwarz mit Dossier-HEX (Elias bestätigt Gelb als Leitfarbe); Bildwelt-Zeile „Streetwear-Look, Produkt in der Hand → Folie 09“ | Abschnitte 4–6; Dossier 6.3 ✔ [1] |
 | **09b** Fit | Tonalität passt („überall frech, schnell, nah dran“) · Persona teilweise (Stimulanz passt, Auftritt zu jung – Lücke 2 auf 10 und 11 heißt „Bildwelt zu jung“, ein Wort wählen) · Kanäle Bruch „Vier Namen, drei Profilfarben, kein festes Schlüsselbild.“ | Abschnitt 9 |
@@ -351,6 +371,11 @@ Web-Folie in `praesentation/index.html`; Entwürfe in [`folienentwuerfe.md`](fol
 
 **Nicht auf die Folien (nur Notizen bzw. Rückfragen):** Interaktionswerte einzelner Beiträge, Aufrufzahlen,
 Fan-Gruppe, Wettbewerber-Anzeige, Facebook-Anzeige mit Preisanker, Wortlaut der provokanten Shorts-Titel.
+
+**Seit So, 25.10.2026 (Workflow D32):** Die Fußzeilen nennen die Ausarbeitung mit dem Zusatz „KI-gestützt“ – 09 wie
+oben, 09b „… · Kommunikationsanalyse E. Knauber (KI-gestützt; Bildschirmaufnahmen 20./21.10.2026) · …“, B6 „Quelle:
+Kommunikationsanalyse E. Knauber (KI-gestützt), Tabelle 1 (eigene Bildschirmaufnahmen …“. Sonst bleiben sie
+unverändert.
 
 ---
 
@@ -426,6 +451,22 @@ Fan-Gruppe, Wettbewerber-Anzeige, Facebook-Anzeige mit Preisanker, Wortlaut der 
     „Comic-Tiere“; Folie 05 bleibt laut Vorgabe unverändert); Dossier 6.4/S5 (Hypothese Raptor) bleibt als Stand
     14.10.2026 stehen.
 
+**An Elias – KI-Nutzung (seit So, 25.10.2026; Prompt-Sammlung, KI-Nachweis 175, Abschnitt 3)**
+
+12. **Tool und Version:** Welches KI-Tool in welcher Version hast du für E-EK-01 und E-EK-02 genutzt? Die Sammlung
+    nennt es nicht (gilt auch für die Analogien, [`analogien.md`](analogien.md) §10, Frage 12).
+13. **Prüfung:** Wie hast du das Ergebnis von E-EK-01 geprüft und geändert – was hast du übernommen, was selbst
+    geschrieben oder gerechnet (z. B. die Prozentwerte, Frage 2)?
+14. **Facebook-Teil:** Dein Prompt nennt nur Instagram, TikTok und YouTube („TikTok ersetzt Facebook“); die
+    Ausarbeitung enthält Facebook (Aufnahme der Facebook-Suche vom 21.10.2026). Wie ist dieser Teil entstanden?
+15. **Personen in den hochgeladenen Aufnahmen:** Hast du die Bildschirmaufnahmen mit erkennbaren Personen so ins
+    KI-Tool hochgeladen? Das berührt die KI-Richtlinie der HSKL, Nr. 6 (keine personenbezogenen Daten ohne
+    Einwilligung; [`../ki-nachweis/vorlage-ki-nutzung.md`](../ki-nachweis/vorlage-ki-nutzung.md)) – auf Nachfrage
+    ehrlich antworten.
+
+Bis zu den Antworten gilt für die Rückfrage F37 ([`fragerunde.md`](fragerunde.md)): „Ja. Elias hat ein KI-Tool
+genutzt …“ – belastbar nur **teilweise**; Tool und Prüfung nennt Elias.
+
 ---
 
 ## Quellen
@@ -439,9 +480,13 @@ Fan-Gruppe, Wettbewerber-Anzeige, Facebook-Anzeige mit Preisanker, Wortlaut der 
   der Seite abgelesen.“ Einzelbeiträge: Instagram 23.06.2026 und 20.10.2026, TikTok 27.06.2026 und 17.10.2026.
   Desk Research vom 16.10.2026: HOLY „Our Story“ (https://de.holy.com/pages/our-story).
 - Knauber, E. (2026): *HOLY – Analogien: Mensch und Tier*, Stand 16.10.2026 – siehe [`analogien.md`](analogien.md).
+- Knauber, E. (2026): *Prompt-Sammlung – Unternehmenskommunikation (HOLY).* PDF, 3 S., Stand 25.10.2026 (an Yannick,
+  nicht im Repository); übertragen in [`../ki-nachweis/ki-nachweis.md`](../ki-nachweis/ki-nachweis.md), Eintrag 175,
+  Abschnitt 3 (E-EK-01, E-EK-02).
 - Recherche-Dossier [`recherche/holy-recherche.md`](recherche/holy-recherche.md) (Stand 13./14.10.2026), Kap. 1,
   2.8, 4.1, 6.1–6.5, 8 (S5); Quellennummern = Anhang B.
-- Vorlage [`methoden.md`](methoden.md) Abschnitt 5; Prompt P12 in [`prompts.md`](prompts.md) (nicht genutzt).
+- Vorlage [`methoden.md`](methoden.md) Abschnitt 5; Prompt P12 in [`prompts.md`](prompts.md) (nicht genutzt – Elias'
+  tatsächliche Prompts: KI-Nachweis E-EK-01, E-EK-02).
 - Stenger, D.: Vorlesungsfolien Unternehmenskommunikation, S. 60, 96–97 (nach
   [`abgleich-vorlesung.md`](abgleich-vorlesung.md) #14, #47).
 - Kroeber-Riel, W. (1993): *Bildkommunikation*. München: Vahlen (Begriff Schlüsselbild; nicht in der Vorlesung –

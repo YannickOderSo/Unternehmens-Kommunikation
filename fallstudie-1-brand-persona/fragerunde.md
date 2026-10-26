@@ -1,6 +1,7 @@
 # Fragerunde – Vorbereitung (Fallstudie 1, HOLY)
 
-**Stand:** Sa, 24.10.2026 (Account 1, Nachtrag 24.10. unten: Gründerbefragung als eigene Folie 05b, F05/F06
+**Stand:** So, 25.10.2026 (Account 1, Nachtrag 25.10. unten: Elias' KI-Nutzung belegt, F37 neu gefasst, Lukas ohne
+KI; Nachtrag 24.10.: Gründerbefragung als eigene Folie 05b, F05/F06
 nachgezogen, F40 neu; Nachtrag 23.10.: KI-simulierte Befragung, Rad = Selbstbild, Papagei und Chamäleon) · erstellt 19.10.2026 · Präsentation Di 27.10.2026 (bis 24.10. geplant: Mo 26.10.) · Generalprobe So 25.10.2026
 
 **Erstellt von:** Account 2 (Claude Code), KI-gestützt. Workflow „account-2-vortragsreife-fragerunde“ (Skript
@@ -18,6 +19,10 @@ Doku“, ausgelöst durch KI-Nachweis 135: Entscheidungen Yannick zum Einbau der
 **Erneut überarbeitet von:** Account 1, KI-gestützt, am 24.10.2026 im Workflow D27 (Auftrag „Bauen“:
 neue Folie 05b „Gründerbefragung: Innensicht“, ausgelöst durch Lukas' Wunsch, das Gründer-Interview präsenter
 einzubauen, und Yannicks Entscheidungen). Geändert: F05, F06 (Folie 05b), neu F40. Nachweis: `ki-nachweis/ki-nachweis.md`.
+**Erneut überarbeitet von:** Account 1, KI-gestützt, am 25.10.2026 im Workflow D32 („elias-ki-einarbeiten“, Skript
+`ki-nachweis/workflows/2026-10-25_elias-ki-einarbeiten.js`, ausgelöst durch KI-Nachweis 175: Elias' Prompt-Sammlung,
+Lukas ohne KI). Geändert: F37 neu gefasst; nachgezogen F06, F16, F17, F23, F30, F36, F38, Listen am Ende. Nachweis:
+`ki-nachweis/ki-nachweis.md`, Abschnitt 2, D32.
 
 **Geprüft:** Zwei Fragensammler (Blick von Prof. Stenger, Blick des Publikums) und eine Vollständigkeitsprüfung
 haben am 19.10. 53 Fragen gesammelt; jede Antwort hat ein Prüf-Agent an der Quelle gegengeprüft. Am 21.10. hat
@@ -30,6 +35,30 @@ sich Antworten stützen, an der Vorlesungs-PDF gegengelesen (Liste im Nachtrag).
 Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellwissen ist, steht es dabei.
 
 ---
+
+> **Nachtrag Account 1 – Stand So, 25.10.2026: KI-Nutzung von Elias belegt, Lukas ohne KI**
+>
+> Grundlage: Elias Knaubers „Prompt-Sammlung – Unternehmenskommunikation (HOLY)“ (PDF, 3 Seiten, Stand 25.10.2026, an
+> Yannick; liegt nicht im Repository) und Yannicks Mitteilung vom 25.10.2026 „Lukas hat keine KI genutzt“ – übertragen
+> in `ki-nachweis/ki-nachweis.md`, Eintrag 175 und Abschnitt 3 (E-EK-01 bis E-EK-03; Lukas: keine), Workflow D32.
+> Elias hat für seine Ausarbeitungen ein KI-Tool genutzt: **E-EK-01** Kommunikationsanalyse aus seinen eigenen
+> Bildschirmaufnahmen (Instagram, TikTok, YouTube – Facebook kommt im Prompt nicht vor), **E-EK-02** Tutor-Leitfaden, um
+> die Aufgaben zu verstehen, **E-EK-03** Varianten der Mensch-Analogie („Der Verwandlungskünstler“). Tool, Version, Datum
+> und Prüfung nennt die Sammlung nicht. P12 („Beiträge codieren“) wurde nie genutzt.
+>
+> - **Neu gefasst:** **F37 – KI in Analogien und Kommunikationsanalyse?** Antwort „Ja …“ nach der Prompt-Sammlung,
+>   Belastbar **TEILWEISE** (Tool und Prüfung nennt Elias). Gestrichen: Platzhalter „[Elias sagt selbst, ob …]“, „Elias'
+>   eigene KI-Nutzung ist damit nicht geklärt“, Belastbar NEIN.
+> - **Nachgezogen:** F16 und F36 („die Analogien stammen von ihm“ → aus seiner KI-gestützten Ausarbeitung; Tiere nicht
+>   von der KI, Comedian keine KI-Variante), F17 (Auswertung KI-gestützt; Fallstrick statt „Ob für die Analyse KI
+>   genutzt wurde: siehe F37“), F23 (Klärungs-Platzhalter gestrichen, der Satz zur KI-simulierten Befragung steht jetzt
+>   außerhalb der eckigen Klammer; Abschnitt 3 nicht mehr leer), F30 (Zirkel: beide Ausarbeitungen KI-gestützt), F38
+>   (statt „Prozentwerte sind Elias' eigene“), F06 (Lukas ohne KI), Fußzeilen-Zitate 08 und 09 mit „KI-gestützt“ (Einbau
+>   parallel), Liste „Ohne belastbare Antwort“, Aufgabenliste, Übung.
+> - **Weiter offen (Elias fragen):** welches Tool und welche Version; wie er die Ergebnisse geprüft und geändert hat; wie
+>   der Facebook-Teil entstand; ob Bildschirmaufnahmen mit erkennbaren Personen so ins KI-Tool hochgeladen wurden (KI-Richtlinie
+>   der HSKL, Nr. 6; `ki-nachweis/vorlage-ki-nutzung.md`).
+> - Die älteren Nachträge unten bleiben, wie sie sind; wo sie Elias' KI-Nutzung „offen“ nennen, gilt seit 25.10.2026 F37.
 
 > **Nachtrag Account 1 – Stand Sa, 24.10.2026: Gründerbefragung als eigene Folie 05b**
 >
@@ -126,7 +155,7 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
 >   „mittel“, am Ende des Abschnitts, damit die übrigen Nummern gleich bleiben).
 > - **Offen und vor dem Vortrag zu klären** (Liste am Ende): Freigabe des Einbaus durch Yannick und Elias; Elias'
 >   offene Fragen (`analogien.md` §10, `kommunikationsanalyse.md` §13), besonders „junge Kernzielgruppe“ auf TikTok
->   gegen Kundschaft 25–40; ob Elias KI genutzt hat (B2: P11/P12); Folie 02 (Methodenkarten) und Folie 05 (Notizen
+>   gegen Kundschaft 25–40; ob Elias KI genutzt hat (B2: P11/P12; seit So, 25.10.2026 belegt: ja, siehe F37); Folie 02 (Methodenkarten) und Folie 05 (Notizen
 >   „Raptor bleibt Absender“) nach Elias' Befund – beide für den Einbau gesperrt, Entscheidung Yannick.
 
 > **Nachtrag Account 1 – Stand Mi, 21.10.2026**
@@ -177,7 +206,8 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
 > - **Nacharbeit nach der Prüfung (Mi, 21.10.2026 abends):** F29 – Fallstrick zur Bedienung berichtigt (bei Weg A
 >   **nicht** „Zurücksetzen“, sonst pausiert die Live-Abfrage; wie Notiz 08 und LIESMICH §6/§12), Satz „in den
 >   Interviews fragen wir offen“ nur noch bedingt (Interviews nicht belegt, VORTRAGSREIFE F08-2). F12 – Zahl der
->   KI-simulierten Befragten als Platzhalter (ob P8/P9/P11 liefen, meldet Lukas). F30 – Zahlen zum Aufbau der
+>   KI-simulierten Befragten als Platzhalter (ob P8/P9/P11 liefen, meldet Lukas; seit So, 25.10.2026: Lukas hat keine KI
+>   genutzt, laut Yannick). F30 – Zahlen zum Aufbau der
 >   Aaker-Skala gestrichen (ohne Quelle im Repository).
 
 > **Nachtrag Account 2 (21.10.2026, 08:05 UTC)**
@@ -312,7 +342,7 @@ Folien. Spalte „bisher“ = Nummer im Stand vom 19.10.2026.
 | F34 | Warum TikTok – die Aufgabe nennt doch Instagram, Facebook und YouTube? (neu gefasst 22.10.) | Methode | Elias, ergänzt Yannick | 09, B6, 04 | F33 |
 | F35 | Wo seht ihr selbst die größten Schwächen, was würdet ihr anders machen? | Methode | Yannick, ergänzt Elias (und Lukas) | B1, 04 | F35 |
 | F36 | Warum ein Comedian und zwei Tiere – und warum steht jetzt der Papagei in der Umfrage? (neu gefasst 23.10.) | Ergebnisse | wer 08 vorträgt, ergänzt Elias | 08 | neu 22.10. |
-| F37 | Habt ihr für Analogien und Kommunikationsanalyse KI genutzt? | KI-Nutzung | Elias, ergänzt Yannick | B2, B1, 08, 09 | neu 22.10. |
+| F37 | Habt ihr für Analogien und Kommunikationsanalyse KI genutzt? (neu gefasst 25.10.: ja, KI-gestützt) | KI-Nutzung | Elias, ergänzt Yannick | B2, B1, 08, 09 | neu 22.10. |
 | F38 | Woher kommen 0,4 bis 0,6 Prozent – ist das eine Engagement-Rate? | Daten | Elias | 09, B6 | neu 22.10. |
 | F39 | „Selbst anrühren“ ist eine Hürde, „Selbermixen“ der Markenkern – Widerspruch, und warum keine Lücke? | Ergebnisse | Yannick, ergänzt wer 06 vorträgt | 06, 10, 03 | neu 23.10. (bisher Reserve V-01) |
 | F40 | Der Gründer sagt „Geschmack mit Abstand“ – kaufen die Leute HOLY wirklich wegen des Geschmacks, und was sagt eure Befragung? | Marke & Gründer | Lukas (spricht 05b), ergänzt Yannick | 05b, 10, 06, B4 | neu 24.10. |
@@ -542,6 +572,9 @@ Sprachnachrichten überhaupt mit KI-Tools auswerten?“**
     personenbezogene Daten echter Befragter sind also nicht in KI-Tools geflossen.
   - Ob der Prof besondere KI-Vorgaben hat, ist offen – die Vorlesung regelt nur Prompt-Dokumentation und Begründung im
     Backup (S. 60; `arbeitsplan.md` Offene Punkte; #7). Nicht „mit dem Prof abgestimmt“ sagen.
+  - Fragt jemand Lukas nach seiner eigenen KI-Nutzung: Lukas hat keine KI genutzt (laut Yannick, 25.10.2026; KI-Nachweis
+    175, Abschnitt 3). Abschrift und Auswertung der Sprachnachrichten liefen über Yannicks Prompts an Claude Code
+    (KI-Nachweis 59, 60).
 - **Belastbar:** **TEILWEISE** – Versanddatum und Ablage der Audios klären.
 
 #### F07 – Stimmen die 170 Millionen, und wer hat geprüft?
@@ -875,7 +908,8 @@ sich jedem an?“**
 - **Wer fragt wahrscheinlich:** Prof. Stenger (hoch), Publikum (mittel) · neu (21.10.2026; Rückfragen in den
   Notizen von Folie 08, `abgleich-vorlesung.md` #38) · neu gefasst 22.10.2026 nach Elias' Ausarbeitung · **erneut
   neu gefasst 23.10.2026**: beide Tiere gleichwertig (Entscheidung Yannick), Abgleich mit der KI-simulierten Befragung
-- **Wer antwortet:** wer Folie 08 vorträgt, ergänzt von Elias (C) – die Analogien stammen von ihm
+- **Wer antwortet:** wer Folie 08 vorträgt, ergänzt von Elias (C) – die Analogien stammen aus seiner Ausarbeitung
+  (laut seiner Prompt-Sammlung KI-gestützt, F37)
 - **Antwort:**
   > Beide Tiere stammen aus Elias' Ausarbeitung „Analogien: Mensch und Tier“: „Als Mensch ist HOLY ein Impro-Comedian,
   > als Tier ein Papagei und ein Chamäleon.“ Das sind Analogien, also Hypothesen, belegt mit HOLYs eigener
@@ -887,8 +921,9 @@ sich jedem an?“**
   > bleiben; die Kehrseite, einen uneinheitlichen Absender, zeigen wir als Bruch auf Folie 9b.
 - **Beleg:** Folie 08 Titel „HOLY wäre Papagei und Chamäleon, kein Adler“, Tier-Karte (Daten `marke.tiere`: Papagei –
   gesellig: Account „[Marke] Squad®“, bunt: Tier-Illustrationen; Chamäleon – wandelbar: fünf Produktlinien, kreativ:
-  laufend neue Sorten; Maskottchen Adler), Fußzeile „Analogien: Ausarbeitung E. Knauber, Stand 16.10.2026 … –
-  Hypothesen (H)“, Notizen Schritt 2 „Warum Papagei und Chamäleon?“, Rückfragen „Kommen Papagei und Chamäleon aus
+  laufend neue Sorten; Maskottchen Adler), Fußzeile „Analogien: Ausarbeitung E. Knauber, KI-gestützt, Stand 16.10.2026
+  … – Hypothesen (H)“ („KI-gestützt“ seit 25.10.2026, Einbau parallel), Notizen Schritt 2 „Warum Papagei und
+  Chamäleon?“, Rückfragen „Kommen Papagei und Chamäleon aus
   eurer Befragung?“, „Ein Chamäleon – heißt das nicht: ohne festen Kern?“, „Tarnt sich ein Chamäleon nicht?“, „Warum
   zwei Tiere?“; [`analogien.md`](analogien.md) §1, §4–§7.3, §10; `buendel-b/auswertung/analogien-haeufigkeiten.csv`
   (Papagei 5 von 8, Chamäleon 0, Adler 0); Dossier Kap. 1 (fünf Linien ✔ [1, 5]), 6.1 ✔ [19] („HOLY Squad®“), 6.3 ✔
@@ -915,6 +950,8 @@ sich jedem an?“**
   - Löwe (Red Bull) und Schwan (waterdrop) sind Beispieldaten; nach Wettbewerbern hat weder Elias noch die Simulation
     gefragt.
   - Comedian, zwei Tiere und Papagei in der Umfrage: siehe F36.
+  - Nicht sagen, Papagei und Chamäleon habe die KI vorgeschlagen: Sie lagen Elias' KI-Tool nur als Vorinformation vor;
+    KI-gestützt waren Varianten der Mensch-Analogie (E-EK-03, seit 25.10.2026 belegt, F37).
 - **Belastbar:** ja für die Herkunft (Elias) und den Abgleich (KI-simuliert, gekennzeichnet); Freigabe durch Elias
   offen (Belege je Zeile, beide Tiere im Titel).
 
@@ -929,14 +966,16 @@ sich jedem an?“**
   > Ich habe die offiziellen Profile auf Instagram, TikTok und YouTube am 20. Oktober und die Facebook-Suche am
   > 21. Oktober per Bildschirmaufnahme gesichert – jeweils den Profilkopf und die neuesten Inhalte – und nach den
   > Elementen Ihrer Aufgabe ausgewertet: Corporate Design, Slogan und Claims, Schlüsselbilder und Bildwelten, dazu
-  > Tonalität und Rolle der Kanäle (S. 60). Das ist eine qualitative Analyse, keine Stichprobe: Einzelne Beiträge sind
+  > Tonalität und Rolle der Kanäle (S. 60). Die Auswertung der Aufnahmen von Instagram, TikTok und YouTube ist
+  > KI-gestützt – das steht im KI-Nachweis. Das ist eine qualitative Analyse, keine Stichprobe: Einzelne Beiträge sind
   > nicht nach einem Raster codiert, und Engagement-Raten rechnen wir nicht, weil uns keine Insights-Daten vorliegen.
   > Follower, Likes und Aufrufe sind für uns nur Indizien; Interaktionen habe ich an vier Einzelbeiträgen notiert, dazu
   > Reaktionen einzelner Facebook-Beiträge aus der Suchansicht.
 - **Beleg:** Folie 09 Zeile unter den Kanälen („Follower und Abos als Indiz für Reichweite – Insights-Daten lagen
   nicht vor“), Fußzeile
-  „Kommunikationsanalyse E. Knauber, eigene Bildschirmaufnahmen 20./21.10.2026“, Notizen „Hintergrund und Quellen“
-  und Rückfrage „Wo sind die Engagement-Raten?“; B6 (Elias' Tabelle 1, Infokästen „Datengrundlage“ und „Kennzahlen als
+  „Kommunikationsanalyse E. Knauber (KI-gestützt), eigene Bildschirmaufnahmen 20./21.10.2026“ („KI-gestützt“ seit
+  25.10.2026, Einbau parallel), Notizen „Hintergrund und Quellen“ und Rückfrage „Wo sind die Engagement-Raten?“;
+  KI-Nachweis 175 und Abschnitt 3, E-EK-01; B6 (Elias' Tabelle 1, Infokästen „Datengrundlage“ und „Kennzahlen als
   Indizien“, Notizen: keine Codierung nach Raster P12); [`kommunikationsanalyse.md`](kommunikationsanalyse.md) §2
   (Vorgehen, Abweichung von der Vorlage) und §3.3 (Einzelbeiträge, Facebook-Suchansicht, Aufrufe); `methoden.md` §5;
   Stenger S. 60 („insbesondere Instagram/ Facebook, YouTube“).
@@ -954,7 +993,9 @@ sich jedem an?“**
     Seiten-Followern zählen.
   - Follower mit Stand nennen (20./21.10.2026); vor dem 27.10. neu ablesen oder den Stand in der Fußzeile lassen –
     Entscheidung Elias. Instagram zeigt nur „383 Tsd.“ – nicht „383.000“ als genaue Zahl ausgeben.
-  - Ob für die Analyse KI genutzt wurde: siehe F37.
+  - KI-Nutzung (seit 25.10.2026 belegt): Die Analyse ist KI-gestützt (E-EK-01, F37) – die Aufnahmen sind Elias'
+    eigene, Tool und Prüfung nennt er selbst. Facebook kommt im Prompt nicht vor; wie der Facebook-Teil entstand, ist
+    offen – nicht raten. Nicht „ganz ohne KI“ und nicht „die KI hat nur formuliert“ sagen.
 - **Belastbar:** ja für das Vorgehen (qualitativ, mit Datum belegt) · Kennzahlen je Kanal: **NEIN** – nicht erhoben.
 
 #### F18 – Antwort auf die Leitfrage: Markenkern oder Positionierung?
@@ -1173,47 +1214,54 @@ KI-Schritt nachvollziehen?“**
   > Ja, offen – Ihre Aufgabe nennt Desk Research und KI-Tools ausdrücklich als Methoden (S. 60): vor allem Claude Code
   > für das Recherche-Dossier, unsere Ausarbeitungen und den Bau dieser Web-Präsentation. Jeder Prompt an Claude Code
   > und jede Delegation an Unteragenten steht mit Datum im KI-Nachweis, die Aufträge der Workflows im Wortlaut, und
-  > einen Auszug zeigt Backup B2 [andere Tools nur nennen, wenn sie aus den persönlichen Listen in Abschnitt 3
-  > übertragen sind]. Unsere Leistung sind die Entscheidungen [nur nennen, was entschieden ist, z. B. Marke,
+  > einen Auszug zeigt Backup B2. Elias hat für seine Ausarbeitungen zusätzlich ein KI-Tool genutzt, seine
+  > Prompt-Sammlung steht ebenfalls im KI-Nachweis; Lukas hat keine KI genutzt [weitere Tools nur nennen, wenn sie in
+  > Abschnitt 3 stehen]. Unsere Leistung sind die Entscheidungen [nur nennen, was entschieden ist, z. B. Marke,
   > Aufteilung, Persona-Richtung, Begriffe nach der Vorlesung, Limbic-Typ als Hauptaussage], der Kontakt zum Gründer,
-  > die Statista-Daten über die Campuslizenz und Elias' eigene Ausarbeitungen – Analogien und eine
-  > Kommunikationsanalyse mit eigenen Bildschirmaufnahmen [ob Elias dafür KI genutzt hat, vorher klären, siehe F37;
-  > dazu eine KI-simulierte Befragung mit acht fiktiven Personen, gerechnet per Skript – echte Interviews gab es
-  > nicht]. Das Dossier haben weitere KI-Agenten gegengeprüft, 42 von 155 Befunden mussten
+  > die Statista-Daten über die Campuslizenz und Elias' eigene Bildschirmaufnahmen; seine Ausarbeitungen – Analogien
+  > und Kommunikationsanalyse – sind KI-gestützt, die Auswahl hat er getroffen [wie er die Ergebnisse geprüft hat,
+  > sagt Elias selbst, siehe F37]. Dazu kommt eine KI-simulierte Befragung mit acht fiktiven Personen, gerechnet per
+  > Skript – echte Interviews gab es nicht. Das Dossier haben weitere KI-Agenten gegengeprüft, 42 von 155 Befunden mussten
   > korrigiert werden [Stand der eigenen Prüfung ehrlich nennen, zurzeit: „Unsere eigene Prüfung der Belege läuft
   > noch.“].
 - **Beleg:** Stenger S. 60 (an der PDF gegengelesen); Folie 02 (KI-Kennzeichen je Methodenkarte; Fußzeile „KI =
   KI-gestützt, Ergebnisse geprüft“, Z. 580); B1 (Titel Z. 3187, Zahlen 155/42/32 Z. 3227 ff., Notizen Z. 3261–3264);
   B2 (Titel „Jeder KI-Schritt ist dokumentiert – und wird geprüft“ Z. 3300, Notizen Z. 3319–3321); B7 „Technik“;
   Dossier 9.5 (KI-Unteragenten, jeder Bereich zweimal geprüft); `ki-nachweis/ki-nachweis.md` Abschnitt 4 „Wie dieser
-  Nachweis entsteht“, Abschnitt 3 („_noch keine Einträge_“), Abschnitt 1 (kein Prüffeld abgehakt, Stand 21.10.),
-  Einträge 10/13 (Marke), 29 (Bündel), 43/44 (Statista-Dateien), 53 (Kontakt Lukas), 64 (Workflow-Skript der
-  Gründerbefragung im Repository geschwärzt), 104 und 109 (Entscheidungen Yannick zu Begriffen, Chamäleon, Limbic-Typ);
+  Nachweis entsteht“, Abschnitt 3 (bis 24.10. „_noch keine Einträge_“; seit 25.10.2026 E-EK-01 bis 03 aus Elias'
+  Prompt-Sammlung, Lukas: keine KI), Abschnitt 1 (kein Prüffeld abgehakt, Stand 21.10.), Einträge 10/13 (Marke),
+  29 (Bündel), 43/44 (Statista-Dateien), 53 (Kontakt Lukas), 64 (Workflow-Skript der Gründerbefragung im Repository
+  geschwärzt), 104 und 109 (Entscheidungen Yannick zu Begriffen, Chamäleon, Limbic-Typ),
+  175 (Elias' Prompt-Sammlung, Lukas ohne KI);
   `ki-nachweis/ki-nachweis-account-2.md`; `arbeitsplan.md` „Regeln für den KI-Nachweis“; FRAGE-P-01, FRAGE-Q-03,
   FRAGE-P-11.
 - **Fallstricke:**
   - Nicht sagen: „KI nur für Tempo“ oder „nur zur Recherche“ – sie hat Dossier, Ausarbeitungen und Präsentation
-    erstellt, dazu bis 22.10.2026 die Begründung des Chamäleons (Vorschlag; seither Elias' eigene), Name und Beruf der
-    Persona (Vorschläge), die Illustrationen und die Übertragung von Elias' PDFs in `analogien.md`,
-    `kommunikationsanalyse.md` und auf die Folien (KI-Nachweis 119, D24). Keinen Prozentanteil „von uns“ nennen (nicht erhoben). Nicht „die Präsentation haben wir selbst
+    erstellt, dazu bis 22.10.2026 die Begründung des Chamäleons (Vorschlag; seither die aus Elias' Ausarbeitung), Name
+    und Beruf der Persona (Vorschläge), die Illustrationen und die Übertragung von Elias' PDFs in `analogien.md`,
+    `kommunikationsanalyse.md` und auf die Folien (KI-Nachweis 119, D24); Elias' Ausarbeitungen selbst sind laut seiner
+    Prompt-Sammlung KI-gestützt (seit 25.10.2026 belegt, E-EK-01 bis 03, F37). Keinen Prozentanteil „von uns“ nennen (nicht erhoben). Nicht „die Präsentation haben wir selbst
     programmiert“. KI nicht als Faktenquelle darstellen.
   - Nicht behaupten, die Einträge seien von der Gruppe geprüft: Stand 21.10. ist in `ki-nachweis.md` und
     `ki-nachweis-account-2.md` kein Prüffeld abgehakt. Solange das so ist, B1-Titel „die Fakten prüfen wir selbst“,
     die B1-Grenze „nichts ungeprüft übernommen“ (Z. 3243) und die Fußzeile 02 „Ergebnisse geprüft“ (#5) nicht
     wörtlich vertreten – „gegengeprüft“ heißt beim Dossier: von KI-Agenten.
-  - „Jeder Prompt“ gilt für Claude Code; andere Tools stehen erst nach dem Übertrag der persönlichen Listen in
-    Abschnitt 3 (derzeit leer) – nicht als vollständig ausgeben.
+  - „Jeder Prompt“ gilt für Claude Code; andere Tools stehen in Abschnitt 3 – seit 25.10.2026 Elias' Prompt-Sammlung
+    (E-EK-01 bis 03; Tool, Version, Datum und Prüfung nennt sie nicht), Lukas hat keine KI genutzt (laut Yannick,
+    25.10.2026). Für Elias' Prompts also kein Tool und kein Datum nennen.
   - Freigaben, die noch „Prüfung durch Yannick offen“ tragen (z. B. Marktrolle), nicht als entschieden darstellen.
     Echte Interviews gibt es nicht; Folie 06, 07 und 08b zeigen seit 23.10.2026 eine KI-simulierte Befragung (D25) –
     die Simulation, Codierung und Synthese machten KI-Agenten, Regeln und Entscheidungen Yannick. Eine
-    Social-Media-Stichprobe gibt es nicht: Elias hat Profile und neueste Inhalte qualitativ analysiert (F17).
+    Social-Media-Stichprobe gibt es nicht: Elias hat Profile und neueste Inhalte qualitativ analysiert, KI-gestützt
+    (F17, F37).
   - Den Bau der Präsentation dokumentiert auch ein zweiter Nachweis (`ki-nachweis-account-2.md`) – bei Nachfrage
     beide Dateien nennen.
   - Ein Workflow-Skript (Gründerbefragung) ist im Repository aus Datenschutzgründen teilweise geschwärzt
     (KI-Nachweis 64) – also nicht „alles öffentlich im Wortlaut“ sagen.
   - Ob Prof. Stenger besondere KI-Vorgaben macht, ist nicht geklärt; die Vorlesung verlangt nur, die Prompts zu
     dokumentieren und das Vorgehen im Backup zu begründen (S. 60). Nicht „mit dem Prof abgestimmt“ sagen.
-- **Belastbar:** **TEILWEISE** – Prüfung durch die Gruppe und Abschnitt 3 des KI-Nachweises sind offen.
+- **Belastbar:** **TEILWEISE** – Prüfung durch die Gruppe offen; Abschnitt 3 des KI-Nachweises seit 25.10.2026 gefüllt
+  (Elias E-EK-01 bis 03, Lukas keine KI), Tool und Prüfung bei Elias offen (F37).
 
 ### Wahrscheinlichkeit mittel
 
@@ -1481,7 +1529,7 @@ Werte vergeben?“**
 - **Wer antwortet:** Elias (C, Analogien und Fit-Bewertung auf 9b), ergänzt von der Person, die 08b vorträgt
 - **Antwort:**
   > Teilweise ja, und das sagen wir offen: Die Analogien auf Folie 8 und die Kommunikationsanalyse auf Folie 9 und 9b
-  > hat Elias erarbeitet, beide aus HOLYs eigener Kommunikation. Das ist Absicht – das Steuerrad zeigt die Identität,
+  > hat Elias erarbeitet, beide KI-gestützt und beide aus HOLYs eigener Kommunikation. Das ist Absicht – das Steuerrad zeigt die Identität,
   > also das Selbstbild, und dazu gehören „frech, gesellig, wandelbar“ aus seinen drei Analogien. „Passt“ auf 9b ist
   > deshalb eine Stimmigkeitsprüfung innerhalb der Identität, keine unabhängige Bestätigung. Die Außensicht zeigt Folie
   > 8b: Dort haben acht KI-simulierte Personen den Aaker-Bogen ausgefüllt – echte Befragte gab es nicht. Sie sehen einen
@@ -1489,7 +1537,8 @@ Werte vergeben?“**
   > Aakers Skala nutzen wir vereinfacht: ein Wort je Facette statt der 42 Items; in Ihrer Vorlesung ist die Tonalität
   > „Wie sind wir?“ mit Persönlichkeitsmerkmalen, Markenerlebnissen und Markenbeziehungen (S. 88).
 - **Beleg:** Folie 08 Titel und Karten (Wörter fürs Steuerrad: Comedian „frech“, Papagei „gesellig“, Chamäleon
-  „wandelbar“), Fußzeile („Analogien: Ausarbeitung E. Knauber … – Hypothesen (H)“); Folie 08b Pille „KI-simuliert“,
+  „wandelbar“), Fußzeile („Analogien: Ausarbeitung E. Knauber, KI-gestützt, … – Hypothesen (H)“; „KI-gestützt“ seit
+  25.10.2026, Einbau parallel); KI-Nachweis 175 und Abschnitt 3, E-EK-01 und E-EK-03; Folie 08b Pille „KI-simuliert“,
   Titel „HOLY wirkt wie ein witziger Kumpel – der verkaufen will“, Fußzeile „KI-simulierte Befragung, n = 8 (T1–T8;
   waterdrop n = 4), Aaker-Bogen mit 15 Facetten … – keine echten Interviews“, Notizen (Rückfragen „Warum haben
   KI-simulierte Personen den Aaker-Bogen ausgefüllt?“, „Ist das eine Messung nach Aaker?“, „Wo sind ‚frech‘ und das
@@ -1502,7 +1551,8 @@ Werte vergeben?“**
   - Nicht sagen: „Die Zielgruppe empfindet HOLY als frech“ oder „gemessen nach Aaker“. Auch nicht: „Die Befragten sehen
     einen witzigen Kumpel“ ohne „KI-simuliert“.
   - Den Zirkel nicht kleinreden: Elias selbst schreibt, seine Befunde zur Tonalität „lassen sich direkt mit der
-    Markenpersönlichkeit aus der Analogie-Aufgabe abgleichen“ – beides kommt von ihm und aus derselben Quelle.
+    Markenpersönlichkeit aus der Analogie-Aufgabe abgleichen“ – beides kommt von ihm und aus derselben Quelle. Dass
+    beide Ausarbeitungen KI-gestützt sind (seit 25.10.2026 belegt, F37), macht den Zirkel nicht kleiner.
   - Den 09b-Sprechtext „Zum frechen Kumpel passt das“ nicht als Befund über die Kundschaft vortragen; auf Nachfrage
     „stimmig innerhalb der Identität (Hypothese)“ sagen (FRAGE-P-03).
   - „Kumpel, der verkaufen will“ steht in allen acht Agenten fast wortgleich, und die Beziehungsfrage legt Verkauf
@@ -1744,7 +1794,8 @@ Auftritt. Woher wisst ihr, dass das ein Problem ist? Mir gefällt der Look.“**
 - **Wer fragt wahrscheinlich:** Publikum (mittel), Prof. Stenger (mittel) · neu (22.10.2026; Folie 08 nach Elias'
   Ausarbeitung) · **neu gefasst 23.10.2026** (beide Tiere gleichwertig, Papagei statt Fuchs in der Umfrage; die alte
   Antwort „In der Umfrage steht nur ein Tier …“ ist gestrichen)
-- **Wer antwortet:** wer Folie 08 vorträgt, ergänzt von Elias (C) – die Analogien stammen von ihm
+- **Wer antwortet:** wer Folie 08 vorträgt, ergänzt von Elias (C) – die Analogien stammen aus seiner Ausarbeitung
+  (laut seiner Prompt-Sammlung KI-gestützt, F37)
 - **Antwort:**
   > Elias' Ausarbeitung nennt drei Analogien, die sich ergänzen: „Als Mensch ist HOLY ein Impro-Comedian, als Tier ein
   > Papagei und ein Chamäleon.“ Der Comedian steht für Humor und Frechheit, der Papagei für Auftreten und Gemeinschaft,
@@ -1772,6 +1823,9 @@ Auftritt. Woher wisst ihr, dass das ein Problem ist? Mir gefällt der Look.“**
   - Der Comedian ist nicht die Persona (F16): Die Persona ist der typische Kunde (Stenger, S. 76), die Analogie die
     Marke als Person. Die KI-simulierten Befragten sehen als Mensch eine Fitness- und Social-Media-Person (8 von 8),
     keinen Comedian – Abweichung, kein Widerspruch zu Elias' Analyse (Selbstbild ↔ Fremdbild).
+  - Den Impro-Comedian nicht als KI-Vorschlag ausgeben: Elias ließ ein KI-Tool den Vorschlag „Der Verwandlungskünstler“
+    schärfen und zwei weitere Varianten entwerfen (E-EK-03, seit 25.10.2026 belegt); wie daraus der Comedian seiner
+    Ausarbeitung (Stand 16.10.2026) wurde, ist nicht angegeben (F37).
   - Markenemotionen nach Elias: Lachen und Unterhaltung, Überraschung, Zugehörigkeit (Selbstbild). Folie 8b nennt
     seit 23.10.2026 Neugier und Skepsis – Gefühle der simulierten Nicht-Kund:innen (`analogien.md` §7.2).
   - Elias' Belege nennen zum Teil Personen (ein Community-Manager mit Namen, eine Musik-Kooperation mit einem Rapper)
@@ -1784,29 +1838,57 @@ Auftritt. Woher wisst ihr, dass das ein Problem ist? Mir gefällt der Look.“**
 
 **„Habt ihr für die Analogien und die Kommunikationsanalyse KI genutzt – und wofür genau?“**
 
-- **Wer fragt wahrscheinlich:** Prof. Stenger (mittel) · neu (22.10.2026; Folie 02 Methodenkarten, B2 Prompt-Log)
+- **Wer fragt wahrscheinlich:** Prof. Stenger (mittel) · neu (22.10.2026; Folie 02 Methodenkarten, B2 Prompt-Log) ·
+  **neu gefasst 25.10.2026** nach Elias' Prompt-Sammlung (KI-Nachweis 175; die alte Antwort mit dem Platzhalter
+  „[Elias sagt selbst, ob …]“ ist gestrichen)
 - **Wer antwortet:** Elias (C), ergänzt von Yannick (A, KI-Nachweis)
 - **Antwort:**
-  > [Elias sagt selbst, ob und wofür er bei seinen beiden Ausarbeitungen KI genutzt hat – bis dahin nicht raten.] Fest
-  > steht: Die Bildschirmaufnahmen sind Elias' eigene, vom 20. und 21. Oktober, und seine Ausarbeitungen liegen als PDF
-  > vor. KI-gestützt war die Übertragung in unsere Dateien und auf die Folien – mit Claude Code, dokumentiert im
-  > KI-Nachweis: Gliederung nach unserer Vorlage, Abgleich mit dem Dossier, Kürzung für die Folien. Zahlen hat dabei
-  > niemand neu gerechnet.
-- **Beleg:** `ki-nachweis/ki-nachweis.md` Eintrag 119 und Abschnitt 2, D24; Kopf von [`analogien.md`](analogien.md)
-  und [`kommunikationsanalyse.md`](kommunikationsanalyse.md) („übertragen KI-gestützt (Claude Code) am 22.10.2026“);
-  B2 (Daten: P11 „Analogien Mensch, Tier“, P12 „Beiträge codieren“); Folie 02 Methodenkarten; `prompts.md` P11, P12;
-  F23.
+  > Ja. Elias hat ein KI-Tool genutzt, das belegt seine Prompt-Sammlung im KI-Nachweis: für einen Leitfaden, um die
+  > Aufgaben zu verstehen, für die Auswertung seiner eigenen Bildschirmaufnahmen zur Kommunikationsanalyse und für
+  > Varianten der Mensch-Analogie. Die Daten – die Bildschirmaufnahmen vom 20. und 21. Oktober – sind seine eigenen; die
+  > Auswahl hat er getroffen. Die Übertragung in unsere Dateien und auf die Folien lief mit Claude Code, ebenfalls im
+  > KI-Nachweis. [Welches Tool und wie er die Ergebnisse geprüft hat, sagt Elias selbst.]
+- **Beleg:** `ki-nachweis/ki-nachweis.md` Eintrag 175 und Abschnitt 3 (Tabelle und 3.1): **E-EK-01**
+  Kommunikationsanalyse der Social-Media-Auftritte (Instagram, TikTok, YouTube; Anhänge: eigene Bildschirmaufnahmen der
+  drei Profile, Stand 20.10.2026, und vier Screenshots einzelner Beiträge), **E-EK-02** Tutor-Leitfaden zur Fallstudie
+  1 (aus Vorlesungsfolien und Aufgaben-Screenshot), **E-EK-03** „HOLY als Mensch: Varianten ‚Der
+  Verwandlungskünstler‘“; Tool und Version, Datum und Prüfung jeweils „nicht angegeben“; Lukas: keine KI. Kurzform für
+  Belege: „KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03)“. Übertragung: Eintrag 119 und
+  Abschnitt 2, D24; Kopf von [`analogien.md`](analogien.md) und [`kommunikationsanalyse.md`](kommunikationsanalyse.md)
+  („übertragen KI-gestützt (Claude Code) am 22.10.2026“). Fußzeilen 08 („Analogien: Ausarbeitung E. Knauber,
+  KI-gestützt, Stand 16.10.2026 …“) und 09 („Kommunikationsanalyse E. Knauber (KI-gestützt), eigene
+  Bildschirmaufnahmen 20./21.10.2026 …“) und B2 (Zeile „E-EK-01–03“, Tool „KI-Tool (k. A.)“, statt der Beispielzeile
+  P12) – seit 25.10.2026, Einbau parallel; Folie 02 Methodenkarten; `prompts.md` P11, P12; F23.
 - **Fallstricke:**
-  - B2: Seit 23.10.2026 stehen P7–P11 als echte Läufe der KI-simulierten Befragung D25 im Prompt-Log (P11 einmal
-    KI-gestützt, ohne Befragte; Ergebnis „Otter“) – Einbau parallel, Wortlaut in B2 prüfen. P12 („Beiträge
-    codieren“) ist nicht genutzt worden – es gibt keine Codierung (F17). Elias' eigene KI-Nutzung ist damit nicht
-    geklärt.
+  - Nicht behaupten: „ganz ohne KI“ oder „die KI hat nur formuliert“. Die Kommunikationsanalyse (E-EK-01) und die
+    Varianten der Mensch-Analogie (E-EK-03) sind KI-gestützt; wie weit Elias die Ergebnisse überarbeitet und geprüft
+    hat, ist nicht angegeben.
+  - Kein bestimmtes Tool vermuten oder nennen und kein Datum der Prompts – die Sammlung nennt weder Tool noch Version
+    noch Datum (E-EK-01 entstand nach den Aufnahmen vom 20.10.2026).
+  - Nicht sagen, Papagei und Chamäleon stammen von der KI: Die Tier-Analogien lagen dem Tool nur als Vorinformation vor
+    (E-EK-03). Auch nicht sagen, der Impro-Comedian sei eine der KI-Varianten – wie er aus den Varianten entstand, ist
+    nicht angegeben.
+  - Facebook kommt im Prompt E-EK-01 nicht vor (dort die Annahme „TikTok ersetzt Facebook“), die übertragene
+    Ausarbeitung enthält aber Facebook (Bildschirmaufnahme der Facebook-Suche vom 21.10.2026). Wie der Facebook-Teil
+    entstand, ist offen – nicht raten.
+  - Fragt der Prof nach Datenschutz, ehrlich antworten: Ob Bildschirmaufnahmen mit erkennbaren Personen so ins KI-Tool
+    hochgeladen wurden, ist offen; das berührt die KI-Richtlinie der HSKL, Nr. 6 (keine personenbezogenen Daten ohne
+    Einwilligung; `ki-nachweis/vorlage-ki-nutzung.md`). Nicht „keine personenbezogenen Daten“ behaupten.
+  - Fragt er „wofür genau?“: In E-EK-01 hat Elias die Kriterien vorgegeben (Corporate Design; Slogan und Claims;
+    Schlüsselbilder und Bildwelten; je Plattform Inhalte, Formate, Rolle im Kanalmix, sichtbare Kennzahlen, Tonalität;
+    Fazit) und verlangt, Sichtbares und Interpretation zu trennen und fehlende Daten offen zu sagen. Der Leitfaden
+    (E-EK-02) sollte laut Prompt nur die Aufgaben erklären („Die eigentliche Ausarbeitung mache ich danach selbst.“) –
+    das nicht als Beleg ausgeben, dass die Ausarbeitungen ohne KI entstanden.
+  - B2: P12 („Beiträge codieren“) wurde nie genutzt – es gibt keine Codierung einzelner Beiträge (F17); Elias'
+    tatsächliche KI-Nutzung sind E-EK-01 bis 03. Seit 23.10.2026 stehen P7–P11 als echte Läufe der KI-simulierten
+    Befragung D25 im Prompt-Log (P11 einmal KI-gestützt, ohne Befragte; Ergebnis „Otter“) – Wortlaut in B2 prüfen; die
+    Pille „teils Beispiel“ bleibt, weil P13 und P14 Beispiel bleiben.
   - Folie 02: Die Methodenkarten werden seit 23.10.2026 nachgezogen (Entscheidung 5 Yannick; Befragungen
     „KI-simuliert, keine Interviews“, Kommunikationsanalyse „vier Kanäle, Bildschirmaufnahmen“) – vor dem Vortrag den
     Wortlaut auf der Folie prüfen.
-  - Nicht behaupten, die Analysen seien „ganz ohne KI“ entstanden, bevor Elias das bestätigt hat.
-  - Abschnitt 3 des KI-Nachweises (andere Tools) ist leer – nutzt Elias andere Tools, gehört das dort hinein.
-- **Belastbar:** **NEIN** – bis Elias seine KI-Nutzung nennt.
+  - Lukas hat keine KI genutzt (laut Yannick, 25.10.2026); die KI-simulierte Befragung auf 06–08b hat Yannick
+    beauftragt (F12).
+- **Belastbar:** **TEILWEISE** – Tool und Prüfung nennt Elias.
 
 #### F38 – Woher kommen 0,4 bis 0,6 Prozent?
 
@@ -1827,8 +1909,10 @@ gerechnet?“**
   Folie 09 Notizen „Hintergrund und Quellen“ und Rückfrage „Wo sind die Engagement-Raten?“; B6 Infokasten „Kennzahlen
   als Indizien“.
 - **Fallstricke:**
-  - Die Prozentwerte sind Elias' eigene; wir haben nichts nachgerechnet. Keinen Rechenweg erfinden, solange Elias ihn
-    nicht genannt hat (`kommunikationsanalyse.md` §13, Frage 2).
+  - Die Prozentwerte stehen in Elias' Ausarbeitung – laut seiner Prompt-Sammlung KI-gestützt erstellt (E-EK-01, seit
+    25.10.2026 belegt, F37); wie weit er die Ergebnisse geprüft hat, ist nicht angegeben. Wir haben nichts
+    nachgerechnet. Keinen Rechenweg erfinden, solange Elias ihn nicht genannt hat (`kommunikationsanalyse.md` §13,
+    Frage 2).
   - Die Werte stehen nicht auf den Folien, nur in Notizen und Ausarbeitung – nicht als Ergebnis der Folie 09 ausgeben.
   - Nicht verallgemeinern („Instagram hat 0,5 % Engagement“): Es sind zwei Beiträge auf Instagram, zwei auf TikTok und
     die Facebook-Beiträge aus der Suchansicht – keine Stichprobe.
@@ -1904,10 +1988,12 @@ wirklich wegen des Geschmacks – und warum steht das dann nicht auf Folie 10?�
 
 ## Fragen ohne belastbare Antwort – bis zur Generalprobe klären
 
-Ohne belastbare Antwort sind heute **F22** (Messgrößen), **F37** (KI-Nutzung bei Elias' Ausarbeitungen), bei **F17**
+Ohne belastbare Antwort sind heute **F22** (Messgrößen), bei **F17**
 der Teil Kennzahlen je Kanal und bei **F21** der Teil Kosten/Nutzen (Stand 23.10.2026; **F12**, **F13**, **F14**,
 **F15**, **F18** und **F30** sind seit dem Einbau der KI-simulierten Befragung und der Entscheidung „Rad = Selbstbild,
-Simulation als Abgleich“ belastbar beantwortbar – ehrlich: keine echten Interviews). Die übrigen Punkte machen „teilweise“
+Simulation als Abgleich“ belastbar beantwortbar – ehrlich: keine echten Interviews). **F37** (KI-Nutzung bei Elias'
+Ausarbeitungen) ist seit So, 25.10.2026 teilweise belastbar: Elias' Prompt-Sammlung belegt die KI-Nutzung (E-EK-01
+bis 03), Tool und Prüfung nennt er selbst. Die übrigen Punkte machen „teilweise“
 belastbare Antworten fest. Termine nach dem Tagesplan in `arbeitsplan.md` (Synthese Do 22.10., Folien final
 Fr 23.10., Generalprobe So 25.10.); Fristen, die am Di 20.10. lagen, sind überfällig und stehen als „sofort“.
 Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen“) und `abgleich-vorlesung.md` (#n).
@@ -1917,7 +2003,7 @@ Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen�
 | F12, F13, F14, F30 | ~~Zahl echter Kurzinterviews melden, KI und echt getrennt auswerten~~ – **erledigt 23.10.2026:** Es gibt keine echten Interviews; Folien 06, 07, 08b, B4, B5 zeigen die KI-simulierte Befragung D25 (Pille, Fußzeilen „keine echten Interviews“). Offen: Wer trägt 06–08b vor und beantwortet die Rückfragen (Lukas liefert kein Material)? Die Rückfrage „Warum KI-simulierte Befragte?“ (S. 60, 78) in der Generalprobe einmal laut beantworten; B1, B2 und Folie 02 nach dem parallelen Einbau gegenlesen. | Gruppe; Yannick | Generalprobe So 25.10. | FRAGE-Q-01, FRAGE-P-04, VOLL-01; #2, #15; KI-Nachweis 135 |
 | F14 | ~~Schwelle festlegen, Titel „Drei Attribute …“~~ – **erledigt 23.10.2026:** Regel vor dem Rechnen festgelegt (22.10.2026: ≥ 3 von 8, ≥ 1,0, ≤ 1,0), Titel „HOLY hebt sich ab – aber vor allem durch Hürden“. Offen: Freigabe durch Yannick. | Yannick | Fr 23.10. | FRAGE-P-05; #29; `buendel-b/folienvorschlag.md` E1 |
 | F16, F36 | ~~Titel nur mit Chamäleon, Papagei klein~~ – **entschieden 23.10.2026** (Yannick): Papagei und Chamäleon gleichwertig in Titel, Karte und Umfrage (Papagei statt Fuchs). Offen: Elias bestätigt die Auslegung, die Belege je Zeile und die Kürzung auf zwei Zeilen je Tier; Elias beantwortet `analogien.md` §10 (Claims je Land mit Fundstelle, Quelle zum Farbwechsel, „fair“ gegen provokante Shorts). Der Abgleich mit der KI-simulierten Befragung steht in `analogien.md` §7.3. | Elias, Yannick | Generalprobe So 25.10. | Kasten FOLIE 08; `analogien.md` §10; #3, #38 |
-| F30 | ~~Lukas gleicht das Aaker-Profil ab~~ – **erledigt 23.10.2026:** 08b zeigt das KI-simulierte Fremdbild (Aaker-Bogen von acht simulierten Personen; Gegenüberstellung `analogien.md` §7.2). Offen: Freigabe des zweizeiligen Titels von 08b (E7) und „(Aaker)“ im Titel von 08b und auf Folie 12 kürzen. Den Zirkel (Analogien und Kommunikationsanalyse von derselben Person) in der Generalprobe einmal laut beantworten. | Yannick, Elias | Fr 23.10. | FRAGE-P-03, FRAGE-Q-07; #42; `analogien.md` §7 |
+| F30 | ~~Lukas gleicht das Aaker-Profil ab~~ – **erledigt 23.10.2026:** 08b zeigt das KI-simulierte Fremdbild (Aaker-Bogen von acht simulierten Personen; Gegenüberstellung `analogien.md` §7.2). Offen: Freigabe des zweizeiligen Titels von 08b (E7) und „(Aaker)“ im Titel von 08b und auf Folie 12 kürzen. Den Zirkel (Analogien und Kommunikationsanalyse von derselben Person; seit 25.10.2026 belegt: beide KI-gestützt, F37) in der Generalprobe einmal laut beantworten. | Yannick, Elias | Fr 23.10. | FRAGE-P-03, FRAGE-Q-07; #42; `analogien.md` §7 |
 | F29 | Skript der Live-Abstimmung bei Google aktualisieren (Fassung 20.10.2026), Kurzprüfung und Lasttest; Runde auf `vortrag-2026-10-27` (GitHub und Präsentationsrechner); Probe mit mehreren Handys; festlegen, wer bei Handzeichen zählt. | Yannick | Skript erledigt So 25.10. (Lasttest zweimal bestanden); Runde nach der Generalprobe So 25.10., spätestens Mo 26.10. | LIESMICH §6 und §12; `live-abstimmung/ANLEITUNG.md` |
 | F24 | Logo-Nutzung mit dem Betreuer klären (Original-Logo auf erfundener Dose, im Rätsel unscharf, öffentlich; Logos auf 09b und 12); bei Ablehnung Rückfall ohne Logo und Exporte neu. Ergebnis in die Notiz von Folie 01 und hier eintragen. | Yannick | vor Fr 23.10. (Folien final) | LIESMICH §12; `QUELLEN.md` §3 |
 | F03, F26, F31 | Fußzeilen der Hauptfolien mit Vorlesungsseiten (#4); Esch (2018), 9. Aufl. statt Esch & Esch (2024) in B7 und Fußzeile 02 (#11); Kotler mit selbst geprüfter Ausgabe in B7 aufnehmen oder „nach Kotler“ streichen (#31); Kroeber-Riel/Esch (2018) in B7 und Fußzeile 09 (#14); „hard/soft facts“ belegen oder weglassen (#32). | Yannick, Elias (Fußzeile 09) (Einbau: Account 1) | Fr 23.10. | FRAGE-P-02, FRAGE-P-12; #4, #11, #14, #31, #32 |
@@ -1929,9 +2015,9 @@ Kennungen = Befunde der Prüfung auf Vortragsreife (Blickwinkel „Rückfragen�
 | F17, F38 | ~~Stichprobe erheben, P12, Formel~~ – **gegenstandslos seit 22.10.2026:** Elias hat qualitativ analysiert, Engagement-Raten und Formel sind von Folie 09 entfernt. Offen: Elias nennt den Rechenweg seiner Prozentwerte (`kommunikationsanalyse.md` §13, Frage 2) und ob Engagement-Raten und Meta-Werbebibliothek bewusst weggelassen wurden (Fragen 3, 5); Follower vor dem 27.10. neu ablesen oder Stand 20./21.10. in der Fußzeile lassen. | Elias | Fr 23.10. | FRAGE-P-08; #2 |
 | F31, F32, F33 | ~~Stichprobe zum Raptor, „soll durchgängiges Schlüsselbild werden“~~ – **gegenstandslos seit 22.10.2026** (Elias: kein festes Schlüsselbild, Kandidat Produkt in der Hand; Empfehlung 3 „Ein Absender, ein Schlüsselbild“). Offen: Notiz 09 Präsenzsignal/Schlüsselbild mit S. 97 statt „Modellwissen“; Bruch mit „integrierte Kommunikation (S. 96–97)“ benennen; ein Wort für die Persona-Lücke auf 09b, 10, 11 („Bildwelt zu jung“ oder „Auftritt zu jung“); Freigabe „Streetwear-Look“ und Lücke 2 (Yannick); Elias' Frage 4 („Produkt in der Hand“ über Medien und Zeit gleich?). Gemeinsamen Wortlaut „Humor aus der Schicht statt Doppeldeutigkeit“ (Folie 05) mit Elias' Tonalität abstimmen. | Elias, Yannick | Fr 23.10. | FRAGE-P-15; #47, #48; `kommunikationsanalyse.md` §13 |
 | F34 | Elias klärt „junge Kernzielgruppe“ (TikTok) gegen die Kundschaft 25–40 laut Mitgründer – bis dahin nur Reichweite nennen. | Elias, Yannick | Fr 23.10. | `kommunikationsanalyse.md` §13, Frage 1 |
-| F37, F23 | Elias sagt, ob und wofür er bei seinen Ausarbeitungen KI genutzt hat; danach P12 in B2 als „nicht genutzt“ kennzeichnen oder streichen. Folie 02 (Methodenkarten) und B2 (P7–P11 als echte Läufe D25) werden seit 23.10.2026 nachgezogen (Entscheidung 5 Yannick, Einbau parallel) – Wortlaut prüfen. | Elias; Yannick | Fr 23.10. | Kasten B2; KI-Nachweis 119, 135 |
+| F37, F23 | ~~Elias sagt, ob und wofür er bei seinen Ausarbeitungen KI genutzt hat; danach P12 in B2 als „nicht genutzt“ kennzeichnen oder streichen.~~ – **erledigt 25.10.2026:** Elias' Prompt-Sammlung belegt die KI-Nutzung (E-EK-01 bis 03, KI-Nachweis 175 und Abschnitt 3); in B2 ersetzt die Zeile „E-EK-01–03“ (KI-Tool k. A.) die Beispielzeile P12 (Einbau parallel – Wortlaut prüfen); Lukas hat keine KI genutzt (laut Yannick, 25.10.2026). Offen (Elias fragen): welches Tool und welche Version; wie er die Ergebnisse geprüft und geändert hat; wie der Facebook-Teil entstand (Facebook fehlt im Prompt E-EK-01); ob Bildschirmaufnahmen mit erkennbaren Personen so ins KI-Tool hochgeladen wurden (KI-Richtlinie der HSKL, Nr. 6). Folie 02 (Methodenkarten) und B2 (P7–P11 als echte Läufe D25) werden seit 23.10.2026 nachgezogen (Entscheidung 5 Yannick, Einbau parallel) – Wortlaut prüfen. | Elias; Yannick | Fr 23.10. (erledigt 25.10.); Rest vor dem Vortrag Di 27.10. | Kasten B2; KI-Nachweis 119, 135, 175 |
 | F31 (Folie 05) | ~~„Raptor bleibt Absender“ abgleichen~~ – **23.10.2026:** `limbic-map.md` (Kopf, §1, 4.1, §6) nachgezogen; die Notizen von Folie 05 zieht der Workflow D26 parallel nach (Entscheidung 5). „Comic-Tiere, 31 Energy-Sorten“ bleiben als Stimulanz-Signale. Offen: Wortlaut der Notizen 05 prüfen. | Yannick | Fr 23.10. | `folienentwuerfe.md` Folie 5, Zu prüfen |
-| F07, F13, F23, F35 | Tragende Belege selbst öffnen und im KI-Nachweis abhaken – sonst B1-Titel, B1-Grenze „nichts ungeprüft übernommen“ und Fußzeile 02 „Ergebnisse geprüft“ umformulieren; Abschnitt 3 des KI-Nachweises aus den persönlichen KI-Listen füllen (Lukas und Elias geben ab). | Yannick (Einbau: Account 1) | Sa 24.10. (Listen Fr 23.10.) | FRAGE-P-01, FRAGE-Q-03, FRAGE-P-10; #3, #5 |
+| F07, F13, F23, F35 | Tragende Belege selbst öffnen und im KI-Nachweis abhaken – sonst B1-Titel, B1-Grenze „nichts ungeprüft übernommen“ und Fußzeile 02 „Ergebnisse geprüft“ umformulieren; Abschnitt 3 des KI-Nachweises aus den persönlichen KI-Listen füllen (Lukas und Elias geben ab) – seit 25.10.2026: Elias' Prompt-Sammlung übertragen (E-EK-01 bis 03, KI-Nachweis 175), Lukas: keine KI (laut Yannick, 25.10.2026). | Yannick (Einbau: Account 1) | Sa 24.10. (Listen Fr 23.10.) | FRAGE-P-01, FRAGE-Q-03, FRAGE-P-10; #3, #5 |
 | F10, F11, F28 | Die Jost-Stellen an den Zeitmarken im Audio anhören; 20–30 Kundenbewertungen auswerten (Anlass Schicht; Hedonisten oder Offene); in den Notizen 05 „Technik +7“ und „85 % keine frühen Übernehmer“ streichen (stehen nicht in `persona-daten.md`). | Yannick | Do 22.10. | FRAGE-P-13; Spielregel 4 |
 | F25 | Rahmen (Softdrink-Anspruch, Energy-Kernkundschaft) und Wettbewerbsset W1–W5 als Gruppenbeschluss mit Datum festhalten – die KI-simulierte Befragung hat das vorgeschlagene Set benutzt, beschlossen ist es nicht (`buendel-b/README.md`, Grenzen). | Gruppe (alle) | sofort (war Di 20.10.) | FRAGE-P-09 |
 | F06 | Versanddatum der Sprachnachrichten (17. oder 18.10.) bestätigen; Ablage der Audiodateien einheitlich festhalten; Einwilligung des Gründers. | Lukas (hat den Gründer kontaktiert), sonst Yannick | sofort | FRAGE-Q-13; Gegenprüfung zu V-04 |
@@ -1968,10 +2054,13 @@ Frage an Prof. Stenger (`arbeitsplan.md`, Offene Punkte; #8).
    sind unsere Erweiterung“, „Papagei und Chamäleon sind Elias' Analogien, also Hypothesen“, „ein Stimmungsbild im
    Raum“, „kein festes Schlüsselbild – Kandidat ist das Produkt in der Hand“, „Follower sind Indizien, keine
    Insights“; seit 23.10.2026: „KI-simuliert, keine echten Interviews“, „das Rad zeigt unser Selbstbild, die
-   Simulation das Fremdbild – den Abgleich zeigt Folie 10“, „Hypothesen, die echte Interviews prüfen müssten“.
+   Simulation das Fremdbild – den Abgleich zeigt Folie 10“, „Hypothesen, die echte Interviews prüfen müssten“; seit
+   25.10.2026: „Elias hat ein KI-Tool genutzt, das steht im KI-Nachweis – die Bildschirmaufnahmen sind seine eigenen“
+   (F37).
 7. **Abgestimmte Stellen gemeinsam sagen:** Positionierungssatz und Leitfrage (F18), Papagei und Chamäleon
    (F16, F36; Elias und wer 08 vorträgt), Selbstbild ↔ Fremdbild (F04, F12, F13; Yannick), „selbst anrühren“ (F39), Priorität der Empfehlungen (F21), Wettbewerbsset (F25), Schlüsselbild und Adler als
-   Maskottchen (F31), „frech“ gegen „Humor aus der Schicht“ (F30–F32), Zielgruppe auf TikTok (F34) – damit nicht drei
+   Maskottchen (F31), „frech“ gegen „Humor aus der Schicht“ (F30–F32), Zielgruppe auf TikTok (F34), KI-Nutzung bei
+   Elias' Ausarbeitungen (F37; Elias, ergänzt Yannick) – damit nicht drei
    Personen drei Antworten geben.
 
 **Reserve (geprüft, nicht ausgearbeitet; geringere Wahrscheinlichkeit) – vorbereitete Antworten stehen an der Quelle:**

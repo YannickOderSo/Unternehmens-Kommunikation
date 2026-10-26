@@ -197,6 +197,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 175 | 25.10.2026 | Yannick | Prompt-Sammlung von Elias (PDF); Lukas hat keine KI genutzt | – | in Arbeit |
 | 176 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
 | 177 | 25.10.2026 | Yannick | „Versuch es noch einmal“ | – | in Arbeit (siehe 175) |
+| 178 | 25./26.10.2026 | System | Workflow-Meldung: D32 – 4 Umsetzer fertig, beide Prüfer am Nutzungslimit gescheitert („resets 4:50am (UTC)“) | D32 | Prüfer per Fortsetzung neu gestartet |
+| 179 | 26.10.2026 | Yannick | „Weiter“ | D32 (fortgesetzt) | in Arbeit (siehe 175) |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2789,6 +2791,23 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 
 - **Anhänge:** keine.
 - **Vorgehen Claude:** Arbeit an 175 von vorn aufgenommen.
+- **Ergebnis:** siehe 175.
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 178 – 25./26.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Hintergrund-Meldung des Workflows D32 „elias-ki-einarbeiten“: 4 von 6 Unteragenten fertig (Fragerunde, Doku,
+> Folien, Skripte); „pruefen:fakten“ und „pruefen:technik“: „You've hit your session limit · resets 4:50am (UTC)“.
+
+- **Vorgehen Claude:** siehe 179.
+
+### 179 – 26.10.2026 – Yannick
+
+> Weiter
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Ergebnisse der vier Umsetzer gelesen, Zwischenstand committet, D32 fortgesetzt (Umsetzer aus dem
+  Zwischenspeicher, die beiden Prüfer neu), danach Befunde einarbeiten, Skripte und Exporte neu bauen.
 - **Ergebnis:** siehe 175.
 - **Prüfung durch die Gruppe:** ☐ offen
 

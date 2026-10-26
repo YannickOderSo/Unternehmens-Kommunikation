@@ -2,7 +2,8 @@
 
 Alles, was die Web-Präsentation (`index.html`) verwendet, liegt im Ordner `praesentation/` – es wird
 nichts aus dem Internet nachgeladen (keine CDNs, keine externen Schriften, Skripte oder Bilder).
-Stand: 24.10.2026 (24.10.: Gründerbefragung mit eigener Folie 05b und im Abgleich auf Folie 10, Abschnitt 5;
+Stand: 25.10.2026 (25.10.: Ausarbeitungen von Elias Knauber laut seiner Prompt-Sammlung KI-gestützt – KI-Nachweis
+E-EK-01 bis 03 –, Lukas Welker ohne KI, Abschnitte 5 und 6; 24.10.: Gründerbefragung mit eigener Folie 05b und im Abgleich auf Folie 10, Abschnitt 5;
 23.10.: KI-simulierte Befragung Bündel B als Quelle der Folien 06, 07, 08b, B4, B5, Abschnitt 5;
 Papagei auch in der Abstimmung und auf der Abstimmseite, Abschnitt 3; 22.10.: Ausarbeitungen von Elias Knauber – Kommunikationsanalyse und Analogien – als Quelle,
 Abschnitt 5; keine Bilder daraus übernommen; Screenshot-Ausnahme für den Raptor auf Folie 09 entfällt, eigene
@@ -224,29 +225,35 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
   „12“). Die Angabe „95 %“ nur mit dem Zusatz „laut Gründer, Datengrundlage nicht
   offengelegt“ und nur in den Notizen. Transkript und Audio liegen nur im Gruppenordner, nicht im Repository.
 - **Ausnahme – Ausarbeitungen von Elias Knauber** (Bündel C), seit Do, 22.10.2026: eigene Erhebungen der Gruppe
-  ohne Dossier-Nummer.
+  ohne Dossier-Nummer, **KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03)** – seit So, 25.10.2026
+  bekannt: Kommunikationsanalyse mit E-EK-01, Mensch-Analogie mit E-EK-03, dazu ein Leitfaden zum Verständnis der
+  Aufgaben (E-EK-02). Die Daten (Bildschirmaufnahmen 20./21.10.2026) sind Elias' eigene; wie weit er die Ergebnisse
+  überarbeitet und geprüft hat und welches Tool er nutzte, ist nicht angegeben (Fragen in
+  `../kommunikationsanalyse.md` §13 und `../analogien.md` §10).
   - **Kommunikationsanalyse:** Knauber, E. (2026): *Kommunikationsanalyse zum Markenbild von HOLY – Instagram,
     Facebook, TikTok und YouTube im Vergleich.* Ausarbeitung, 12 S. Datengrundlage: eigene Bildschirmaufnahmen vom
     20.10.2026 (Profile Instagram holysquad.official, TikTok @holysquad.official, YouTube @HOLYSquadOfficial) und
     vom 21.10.2026 (Facebook-Suche nach „HOLY“; Followerzahl der Seite direkt abgelesen), vier Einzelbeiträge
     (Instagram 23.06. und 20.10.2026, TikTok 27.06. und 17.10.2026), Desk Research vom 16.10.2026 (HOLY „Our
-    Story“, Angabe zur Facebook-Gruppe). Auf den Folien kurz „Kommunikationsanalyse E. Knauber“ bzw. „eigene
-    Bildschirmaufnahmen 20./21.10.2026“, im Steuerrad Kürzel **KA**. Verwendet auf Folie 09, 09b, 10 (Feld
+    Story“, Angabe zur Facebook-Gruppe). KI-gestützt (E-EK-01; Facebook kommt in diesem Prompt nicht vor). Auf den
+    Folien kurz „Kommunikationsanalyse E. Knauber“ bzw. „eigene Bildschirmaufnahmen 20./21.10.2026“, seit So,
+    25.10.2026 in den Fußzeilen von 09, 09b und B6 mit „KI-gestützt“; im Steuerrad Kürzel **KA**. Verwendet auf Folie 09, 09b, 10 (Feld
     Markenbild, Lücke 2), 11 (Empfehlung 3), B6, als Eintrag in B7 und in den Notizen (u. a. Folie 08: Adler als
     Maskottchen, uneinheitlicher Absender).
   - **Analogien:** Knauber, E. (2026): *HOLY – Analogien: Mensch und Tier.* Ausarbeitung, Stand 16.10.2026, 2 S.
     Elias' Quellen: HOLY-Website (de.holy.com, inkl. „Unsere Story“ und Produktseiten), HOLY-Stellenanzeigen,
     Instagram @holysquad.official und @holysquad.fr, Facebook-Seite holysquad.official, X @Holysquad_uk, HOLY
-    TV-Spot 2026; abgerufen am 16.10.2026. Auf den Folien kurz „Ausarbeitung E. Knauber“, im Steuerrad Kürzel
-    **AN**. Verwendet auf Folie 08 (Tiere, Mensch, Fußzeile, Notizen), seit 23.10.2026 im Feld Tonalität auf Folie 10
+    TV-Spot 2026; abgerufen am 16.10.2026. KI-gestützt (Mensch-Analogie: E-EK-03; Papagei und Chamäleon lagen dem
+    Tool nur als Vorinformation vor). Auf den Folien kurz „Ausarbeitung E. Knauber“, seit So, 25.10.2026 in der
+    Fußzeile von 08 „Ausarbeitung E. Knauber, KI-gestützt“; im Steuerrad Kürzel **AN**. Verwendet auf Folie 08 (Tiere, Mensch, Fußzeile, Notizen), seit 23.10.2026 im Feld Tonalität auf Folie 10
     („frech · gesellig · wandelbar“, je ein Wort aus Elias' drei Analogien) und in den Notizen von 08b (Selbstbild
     gegen das KI-simulierte Fremdbild).
   Übertragen KI-gestützt (Claude Code) am 22.10.2026 (KI-Nachweis 119, Workflow D24) nach
   `../kommunikationsanalyse.md` und `../analogien.md`; dort ist bei jedem Punkt vermerkt, was zusätzlich im Dossier
-  steht (mit Status) und was nur Elias belegt. Zahlen sind Elias' Werte (abgelesen bzw. von ihm selbst gerechnet),
-  nicht nachgerechnet; Follower, Likes und Aufrufe gelten als Indizien (keine Insights). Belege außerhalb des
-  Dossiers (z. B. Nutella-Werbeparodie, Stellenanzeigen, Claims je Land) sind Elias' eigene Recherche und nicht
-  gegengeprüft. **Keine Bilder übernommen** (Abschnitt 4), keine Namen privater Personen; die PDFs liegen im
+  steht (mit Status) und was nur Elias belegt. Zahlen sind die Werte aus Elias' Ausarbeitung (aus seinen Aufnahmen
+  abgelesen bzw. dort gerechnet – ob von ihm oder vom KI-Tool, ist nicht angegeben), nicht nachgerechnet; Follower,
+  Likes und Aufrufe gelten als Indizien (keine Insights). Belege außerhalb des Dossiers (z. B. Nutella-Werbeparodie,
+  Stellenanzeigen, Claims je Land) stehen nur in Elias' Ausarbeitung und sind nicht gegengeprüft. **Keine Bilder übernommen** (Abschnitt 4), keine Namen privater Personen; die PDFs liegen im
   Gruppenordner, nicht im Repository.
 - **KI-simulierte Befragung Bündel B** (seit Fr, 23.10.2026 auf den Folien; Workflow D25, 22./23.10.2026, im Auftrag
   von Yannick Heisler, KI-Nachweis 120; Einbau Workflow D26, KI-Nachweis 135): acht **fiktive, KI-simulierte
@@ -263,7 +270,8 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
 - **Analogie-Tiere Papagei und Chamäleon** (Folie 08; Chamäleon seit Di, 20.10.2026, vorher Waschbär nach der
   Hypothese im Dossier Kap. 6.7; seit Fr, 23.10.2026 **beide gleichwertig**, Entscheidung Yannick nach Elias' Notizen,
   KI-Nachweis 135): Einordnung und – seit Do, 22.10.2026 – Begründung von Elias Knauber (Ausarbeitung Analogien, Stand
-  16.10.2026): Papagei – gesellig, bunt; Chamäleon – wandelbar, kreativ (dazu in den Notizen anpassungsfähig); je mit
+  16.10.2026; KI-gestützt laut Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03 – die Tiere lagen dem Tool nur
+  als Vorinformation vor): Papagei – gesellig, bunt; Chamäleon – wandelbar, kreativ (dazu in den Notizen anpassungsfähig); je mit
   seinen Belegen (Eigenschaften und Belege von Elias, die Paarung je Zeile hat die Übertragung gebildet – von Elias zu
   bestätigen); als Mensch ein Impro-Comedian. Die Analogie bleibt eine Hypothese (H). Vom 20. bis 22.10.2026
   stand auf der Folie ein **Vorschlag, KI-gestützt** aus dem Recherche-Dossier (Kap. 1, 2.1, 2.7, 2.8, 3.1,
@@ -284,7 +292,9 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
   Knauber), Folie 09 (vier Kanäle mit Elias' Werten; Beiträge pro Woche, Engagement-Raten, Motivanteile und die
   Zahl der codierten Beiträge waren Beispielwerte und entfallen ersatzlos) und B6 (Elias' Tabelle 1 statt der
   Beispiel-Codiertabelle). B1 trug bis 22.10.2026 „teils geplant“ (Kurzinterviews – es gab keine), B2 „teils
-  Beispiel“ (Bündel A belegt, P7–P14 Beispiel; seit 23.10.2026 P7–P11 echte Läufe D25 – Einbau parallel). Folie 09b
+  Beispiel“ (Bündel A belegt, P7–P14 Beispiel; seit 23.10.2026 P7–P11 echte Läufe D25 – Einbau parallel; seit So,
+  25.10.2026 statt der Beispielzeile P12 die Zeile „E-EK-01–03“ – Elias' KI-Nutzung laut Prompt-Sammlung; P13, P14
+  bleiben Beispiel, die Pille „teils Beispiel“ bleibt). Folie 09b
   enthält keine Beispielwerte: Fakten belegt, die Fit-Bewertung ist als Hypothese gekennzeichnet. Alles
   bleibt Beispiel, bis die Gruppe eigene Erhebungen einträgt.
 - **Modelle und Fachbegriffe** (Markensteuerrad nach Esch, Limbic Map nach Häusel, Repertory Grid nach
@@ -317,7 +327,10 @@ Folienaufbau, Diagramme, Sprechtext-Entwürfe, Prüfwerkzeug und diese Dokumenta
 drei Richtungen entworfen und per Jury-Bewertung ausgewählt (`_entwuerfe/JURY.md`). Alle Prompts,
 Unteragenten und Prüfschritte sind im KI-Nachweis der Gruppe dokumentiert (`../../ki-nachweis/`). Inhalte
 über HOLY stammen aus dem geprüften Recherche-Dossier und aus eigenen Erhebungen der Gruppe (Gründerbefragung,
-seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen; Beispieldaten sind gekennzeichnet. Die
+seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen; Beispieldaten sind gekennzeichnet.
+Elias' Ausarbeitungen sind selbst **KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03)** – mit
+einem KI-Tool, das er nicht nennt; wie weit er die Ergebnisse überarbeitet und geprüft hat, ist nicht angegeben
+(seit So, 25.10.2026, Abschnitt 5). Lukas hat keine KI genutzt (laut Yannick, 25.10.2026). Die
 Befragung auf 06, 07, 08b, B4, B5 ist seit 23.10.2026 eine **KI-simulierte** Befragung (acht fiktive Befragte,
 Workflow D25) – gekennzeichnet mit „KI-simuliert“; sie gibt Hypothesen wieder, keine Kundenstimmen, und steht nicht im
 Steuerrad. Die Gruppe prüft und verantwortet alle Inhalte vor dem Vortrag.
