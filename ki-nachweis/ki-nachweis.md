@@ -215,6 +215,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 193 | 26.10.2026 | Yannick (für Lukas) | Lukas bittet: Fragen für ihn beantworten, Unbekanntes realistisch annehmen | D34 | Entwurf + PDF (460 Wörter, 1 Seite) an Yannick; Annahmen markiert; nicht im Repository |
 | – | 26.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | committet und gepusht |
 | 194 | 26.10.2026 | Yannick | KI-Nutzung aus Lukas' Reflexion streichen | – | nicht gestrichen; Begründung und Alternative im Chat |
+| 195 | 26.10.2026 | Yannick (für Lukas) | Lukas hat den Entwurf geprüft und bestätigt; KI-Hinweis entfernen | – | KI-Satz entfernt, PDF neu (1 Seite, 460 Wörter), nicht im Repository |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3080,6 +3081,22 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 195 – 26.10.2026 – Yannick (im Auftrag von Lukas Welker)
+
+> Lukas hat sich die Sachen angeschaut und stimmt an das sie so übereinstimmen wie du sie geschrieben hast, jetzt entferne den Hinweis
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Laut Yannick hat Lukas den Entwurf gelesen und bestätigt, dass die Annahmen seinen Erfahrungen
+  entsprechen; damit entfällt der Grund aus Eintrag 194. Satz „KI-Nutzung: …“ aus Lukas' Reflexion und damit aus dem
+  PDF entfernt (wie bei Yannicks Reflexion, Eintrag 189). Entwurfskasten und Prüfliste vermerken die Bestätigung
+  (laut Yannick, 26.10.2026). Hinweis im Chat: Die Gruppenvorlage sieht den Satz vor; die Einträge 193 bis 195 und die
+  Zeile zu Lukas in Abschnitt 3 bleiben. PDF neu; Prüfung per Skript: 0 „KI-Nutzung“, 0 „Claude“, 0 Gedankenstriche,
+  alle Antworten vollständig, 1 Seite; Sichtprüfung. Keine Unteragenten.
+- **Ergebnis:** `Selbstreflexion_FS1_Welker.pdf` ohne KI-Satz an Yannick übergeben; nicht im Repository.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -4151,7 +4168,7 @@ Nr. 4/2025) und Handreichung „Eigenständigkeitserklärung für Prüfungen“ 
 | E-EK-01 | 1 | vor 25.10.2026 (nach den Aufnahmen vom 20.10.) | Elias Knauber | nicht angegeben | Kommunikationsanalyse der Social-Media-Auftritte (Aufgabe 2) | Analyse von Instagram, TikTok, YouTube aus eigenen Bildschirmaufnahmen (3.1) | Analyse als Word-Datei mit Vergleichstabelle und Abbildungen (laut Sammlung) | nicht angegeben – bei Elias nachfragen | `kommunikationsanalyse.md`; Folien 09, 09b, 10, 11, B6 |
 | E-EK-02 | 1 | vor 25.10.2026 | Elias Knauber | nicht angegeben | Aufgaben verstehen, Lösungsweg | Tutor-Leitfaden zur Fallstudie 1 aus Vorlesungsfolien und Aufgaben-Screenshot (3.1) | Leitfaden als PDF (ca. 4–5 Seiten) mit Checkliste und Quellenliste (laut Sammlung) | nicht angegeben – bei Elias nachfragen | Vorgehen bei Analogien und Kommunikationsanalyse (keine Folie direkt) |
 | E-EK-03 | 1 | vor 25.10.2026 | Elias Knauber | nicht angegeben | Mensch-Analogie (Markentonalität) | Varianten „Der Verwandlungskünstler“ schärfen und zwei weitere entwerfen (3.1) | geschärfter Vorschlag, zwei Varianten, Empfehlung (laut Sammlung); Elias wählt selbst | nicht angegeben – bei Elias nachfragen | `analogien.md` (Mensch: Impro-Comedian); Folien 08, 10 (Tonalität) |
-| – | 1 | – | Lukas Welker | – | – | keine KI genutzt (laut Yannick, 25.10.2026, KI-Nachweis 175); **Nachtrag 26.10.2026:** Einzelreflexion auf Lukas' Wunsch von Claude Code in Yannicks Sitzung entworfen (KI-Nachweis 193, D34) | – | – | – |
+| – | 1 | – | Lukas Welker | – | – | keine KI genutzt (laut Yannick, 25.10.2026, KI-Nachweis 175); **Nachtrag 26.10.2026:** Einzelreflexion auf Lukas' Wunsch von Claude Code in Yannicks Sitzung entworfen (KI-Nachweis 193, D34), von Lukas als zutreffend bestätigt (laut Yannick, KI-Nachweis 195) | – | – | – |
 
 **Spalte „Prüfung / Anpassung“** ist die wichtigste: Was wurde kontrolliert (Quelle geöffnet, mit echtem Interview
 verglichen, nachgerechnet), was wurde verworfen oder geändert und warum?
