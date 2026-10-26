@@ -206,6 +206,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 184 | 26.10.2026 | Yannick | Zwei Fragen: Reflexion für die Gruppe oder einzeln? Stellst du mir Fragen zum Beantworten? | – | beantwortet: einzeln; Fragenkatalog für Yannick gestellt |
 | 185 | 26.10.2026 | System | Workflow-Meldung: D33 fertig (2 Prüfer, 26 Befunde) | D33 | Befunde von Claude geprüft und eingearbeitet |
 | 186 | 26.10.2026 | Yannick | Gesamte Token-Kosten in Tokenzahl (davor lokaler Befehl `/usage`, kein Prompt an Claude) | – | beantwortet: Summe aus den Sitzungsprotokollen |
+| 187 | 26.10.2026 | Yannick | Antworten auf vier der neun Reflexionsfragen (Überraschung, schwierigste Entscheidung, eigene Prüfung, Lerntransfer) | – | Reflexion Fassung 3 |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2902,6 +2903,27 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Zwischenspeicher gelesen; ohne Zwischenspeicher-Lesen rund 108 Mio.; Ausgabe rund 8,05 Mio.; Unteragenten rund 81 %.
   Keine Umrechnung in Euro (Abo; Preise nicht geprüft).
 - **Ergebnis:** Antwort im Chat; keine Dateien außer diesem Nachweis geändert.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 187 – 26.10.2026 – Yannick
+
+> * Mich hat überrascht wie es doch möglich ist selbst Gründer von größeren Unternehmern zu erreichen durchs einfache Fragen
+> * Welches Tier wir für Holy nehmen
+> * Bin im Recherche Dossier durch die Ergebnisse gegangen und hab dann Stichprobenartig die Quellen nachgeschaut
+> * Gerade das Laddering für Zukünftige Verkaufsgespräche bei Kunden um den Kunden einen Wert zu vermitteln
+
+- **Anhänge:** keine. Antworten auf die Fragen 1, 3, 7 und 5 aus Eintrag 184.
+- **Vorgehen Claude:** Fakten zu den Antworten im Repository nachgesehen (Tier: Waschbär im Dossier → Chamäleon am
+  20.10., KI-Nachweis 94/95 → Papagei und Chamäleon gleichwertig am 23.10., KI-Nachweis 135; Simulation Papagei 5 von 8,
+  Chamäleon nie; Gründerkontakt über Lukas' Anfrage auf LinkedIn, `gruenderbefragung.md`). Reflexion zu Fassung 3
+  umgeschrieben: Frage 1 (Überraschung Gründer), Frage 3 (Tier), Frage 4 (Lerntransfer Laddering im Verkaufsgespräch),
+  Frage 5 (eigene Stichproben im Dossier, nicht dokumentiert); KI-Simulation und S. 78 nach Frage 2 verschoben. Keine
+  Unteragenten (kleine Änderung, Fakten selbst geprüft).
+- **Ergebnis:** Fassung 3, 477 Wörter in den sechs Antworten (per Skript gezählt, Grenze 500); Satz zu S. 78
+  eindeutig: „die Simulation ersetzt kein Kundengespräch“. Bestätigte und noch zu prüfende Stellen in der Prüfliste
+  getrennt.
+- **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
