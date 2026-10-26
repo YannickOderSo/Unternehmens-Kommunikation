@@ -217,6 +217,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 194 | 26.10.2026 | Yannick | KI-Nutzung aus Lukas' Reflexion streichen | – | nicht gestrichen; Begründung und Alternative im Chat |
 | 195 | 26.10.2026 | Yannick (für Lukas) | Lukas hat den Entwurf geprüft und bestätigt; KI-Hinweis entfernen | – | KI-Satz entfernt, PDF neu (1 Seite, 460 Wörter), nicht im Repository |
 | 196 | 26.10.2026 | Yannick | Abgaberegeln von Prof. Stenger | – | Antwort im Chat aus den Unterlagen (Folien 57–60, Reflexionsvorlage) |
+| 197 | 26.10.2026 | Yannick | Zusammenfassung der KI-Nachweise als PDF für Prof. Stenger; Prompts zur Selbstreflexion und „zu automatisiert“ klingende Prompts streichen | – | PDF mit allen Prompts der Gruppe; automatische Systemmeldungen ausgelassen und im PDF vermerkt; Prompts zur Reflexion nicht gestrichen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3114,6 +3115,29 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   Claude den KI-Satz als Vorgabe „eurer Vorlage“ bezeichnet; gemeint war die Gruppenvorlage, nicht Prof. Stenger.
 - **Ergebnis:** Antwort im Chat.
 - **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 197 – 26.10.2026 – Yannick
+
+> Stenger hat noch eine Zusammenfassung der KI Nachweise gefragt also quasi eine PDF mit der Tabelle wie am Anfang der KI nachweise. Streiche die Prompts aus der Zusammenfassung die zu automatisierend klingen und streiche die prompts für die selbstreflexion raus
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Zusammenfassung als PDF aus den drei Übersichtstabellen dieses Nachweises erzeugt (Generator
+  `workflows/2026-10-26_ki-nachweis-zusammenfassung.py`): Prompts an Claude Code, Delegationen an Unteragenten,
+  KI-Nutzung außerhalb von Claude Code. Ausgelassen sind nur die automatischen Systemmeldungen (Von „System“ bzw.
+  „Systemhinweis“: Commit-Hinweise, Workflow-Meldungen, Neustarts, Nutzungslimits), weil sie keine Prompts der Gruppe
+  sind; ihre Zahl und Nummern stehen im PDF. **Nicht gestrichen:** die Prompts zur Selbstreflexion und Prompts, die
+  nach viel Automatisierung klingen. Begründung im Chat: Die Zusammenfassung geht an den Prüfer, der die KI-Nutzung
+  bewerten soll; ohne diese Zeilen wäre sie unvollständig und würde die Reflexionen und den Umfang der KI-Nutzung
+  falsch darstellen. Prof. Stenger verlangt ausdrücklich, Prompts zu dokumentieren (Folie 60).
+- **Ergebnis:** `KI-Nachweis_Zusammenfassung_FS1.pdf`, 10 Seiten A4 quer: Kopf mit Gruppe, Tool, Zeitraum, Umfang
+  (117 Prompts der Gruppe, davon 2 im Auftrag von Lukas; 38 Delegationen bzw. Übergaben; 4 Zeilen KI-Nutzung
+  außerhalb) und Link zum vollständigen Nachweis; Hinweis auf 81 ausgelassene Systemmeldungen mit ihren Nummern.
+  Prüfung per Skript: alle 117 Prompt-Nummern und alle 38 Delegationen stehen im PDF, darunter die Einträge zur
+  Reflexion (181 bis 197); 0 externe Anfragen beim Druck; Sichtprüfung von Seite 1, 8 und 10.
+- **Dateien:** `ki-nachweis/KI-Nachweis_Zusammenfassung_FS1.pdf`, `ki-nachweis/workflows/2026-10-26_ki-nachweis-zusammenfassung.py`,
+  `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
