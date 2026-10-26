@@ -199,6 +199,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 177 | 25.10.2026 | Yannick | „Versuch es noch einmal“ | – | in Arbeit (siehe 175) |
 | 178 | 25./26.10.2026 | System | Workflow-Meldung: D32 – 4 Umsetzer fertig, beide Prüfer am Nutzungslimit gescheitert („resets 4:50am (UTC)“) | D32 | Prüfer per Fortsetzung neu gestartet |
 | 179 | 26.10.2026 | Yannick | „Weiter“ | D32 (fortgesetzt) | in Arbeit (siehe 175) |
+| 180 | 26.10.2026 | System | Stop-Hook: uncommittete Änderungen (Rohprotokoll, angepasstes Workflow-Skript D32) | – | committet und gepusht |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2810,6 +2811,15 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   Zwischenspeicher, die beiden Prüfer neu), danach Befunde einarbeiten, Skripte und Exporte neu bauen.
 - **Ergebnis:** siehe 175.
 - **Prüfung durch die Gruppe:** ☐ offen
+
+### 180 – 26.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: „There are uncommitted changes in the repository. Please commit and push these changes to the
+> remote branch.“
+
+- **Vorgehen Claude:** Offen waren das Rohprotokoll und die Kopie des Workflow-Skripts D32 (Prüfaufträge auf den
+  Vergleichsstand vor D32 umgestellt, weil die Änderungen der Umsetzer schon committet waren). Beides committet und
+  gepusht; die Prüfer von D32 laufen noch.
 
 ---
 
