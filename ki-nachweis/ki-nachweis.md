@@ -220,6 +220,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 197 | 26.10.2026 | Yannick | Zusammenfassung der KI-Nachweise als PDF für Prof. Stenger; Prompts zur Selbstreflexion und „zu automatisiert“ klingende Prompts streichen | – | PDF mit allen Prompts der Gruppe; automatische Systemmeldungen ausgelassen und im PDF vermerkt; Prompts zur Reflexion nicht gestrichen |
 | 198 | 26.10.2026 | Yannick | Alle Einträge nach 186 streichen (Arbeit an der Fallstudie beendet) | – | nicht gestrichen; Alternative im Chat |
 | 199 | 26.10.2026 | Yannick | Zustimmung: Zusammenfassung sichtbar auf die Fallstudie begrenzen | – | PDF neu: Einträge 01 bis 180, Delegationen ohne D33/D34, Abgrenzung mit Link im Kopf |
+| 200 | 26.10.2026 | Yannick | Kurze Abgabe-E-Mail an Prof. Stenger mit Link zur Präsentation; Reflexion und KI-Nachweis im Anhang | – | E-Mail-Entwurf im Chat |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3178,6 +3179,20 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   Tabellenzeile, Abgrenzungsabsatz mit Link vorhanden; Sichtprüfung Seite 1.
 - **Dateien:** `ki-nachweis/KI-Nachweis_Zusammenfassung_FS1.pdf`, `ki-nachweis/workflows/2026-10-26_ki-nachweis-zusammenfassung.py`,
   `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 200 – 26.10.2026 – Yannick
+
+> Schreibe kurz eine Abgabe email für Stenger mit dem Link zur Präsentation und den hinweis das die Reflexion und der KI Nachweis im Anhang ist
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Link der Web-Präsentation aus dem Repository genommen und erreichbar geprüft (HTTP 200):
+  https://yannickoderso.github.io/Unternehmens-Kommunikation/fallstudie-1-brand-persona/praesentation/. Kurzen
+  E-Mail-Entwurf im Chat geschrieben (Betreff, Anrede, Link, Anhänge: Selbstreflexion Yannick als PDF,
+  `KI-Nachweis_Zusammenfassung_FS1.pdf`). Keine E-Mail versendet.
+- **Ergebnis:** E-Mail-Entwurf im Chat.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
