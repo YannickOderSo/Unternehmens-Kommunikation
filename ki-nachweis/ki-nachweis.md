@@ -214,6 +214,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 192 | 26.10.2026 | Yannick | Reflexion für Lukas verfassen (Lukas überlässt alle Entscheidungen) | – | keine Reflexion ohne Lukas' Antworten; Fragenliste für Lukas im Chat |
 | 193 | 26.10.2026 | Yannick (für Lukas) | Lukas bittet: Fragen für ihn beantworten, Unbekanntes realistisch annehmen | D34 | Entwurf + PDF (460 Wörter, 1 Seite) an Yannick; Annahmen markiert; nicht im Repository |
 | – | 26.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | committet und gepusht |
+| 194 | 26.10.2026 | Yannick | KI-Nutzung aus Lukas' Reflexion streichen | – | nicht gestrichen; Begründung und Alternative im Chat |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3063,6 +3064,21 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 
 **Systemhinweis (kein Prompt der Gruppe), 26.10.2026:** Stop-Hook meldete uncommittete Änderungen (Rohprotokoll,
 Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
+
+### 194 – 26.10.2026 – Yannick
+
+> Streiche die KI nutzung aus seiner Reflexion
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Den Satz zur KI-Nutzung in Lukas' Reflexion **nicht** gestrichen. Begründung im Chat: Der
+  ganze Text stammt von Claude, Lukas' Eindrücke sind bisher Annahmen; ohne den Satz würde die Einzelreflexion als
+  Lukas' eigene Arbeit abgegeben, obwohl `reflexion-vorlage.md` (Abschnitt „KI-Nutzung“) und
+  `ki-nachweis/vorlage-ki-nutzung.md` („Einzelreflexion“) den Satz verlangen. Angeboten: Lukas' Korrekturen
+  einarbeiten und danach einen kürzeren, dann zutreffenden Satz verwenden. Die Datei und das PDF sind unverändert.
+- **Ergebnis:** Antwort im Chat; keine Dateiänderung an der Reflexion.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
