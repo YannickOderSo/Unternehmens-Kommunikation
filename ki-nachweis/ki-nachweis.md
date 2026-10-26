@@ -210,6 +210,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 188 | 26.10.2026 | Yannick | PDF der Selbstreflexion | – | Abgabe-PDF im Layout der Vorlage, 1 Seite, nicht im Repository |
 | 189 | 26.10.2026 | Yannick | Reflexion: eigene Aufgaben, studentische Sprache, ohne Gedankenstriche, ohne KI-Hinweis | – | Fassung 4 (491 Wörter), PDF neu |
 | 190 | 26.10.2026 | Yannick | Reflexion noch einfacher, keine Folien zitieren, letzte Antwort überarbeiten | – | Fassung 5 (493 Wörter), PDF neu |
+| 191 | 26.10.2026 | Yannick | Teamantwort: Lukas nicht belasten | – | Frage 6 neu (491 Wörter), PDF neu |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2990,6 +2991,23 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   angepasst. PDF neu erzeugt; Prüfung per Skript: 0 Gedankenstriche, 0 „KI-Nutzung“, 0 Seiten- oder Folienzitate,
   alle sechs Antworten vollständig, 1 Seite; Sichtprüfung. Keine Unteragenten.
 - **Ergebnis:** Reflexion Fassung 5, PDF an Yannick übergeben (nicht im Repository).
+- **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 191 – 26.10.2026 – Yannick
+
+> Bitte nicht Lukas in die Pfanne hauen mit dem letzten Kommentar
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Frage 6 der Reflexion neu formuliert. Der Satz „Als aus einem Teil keine Ergebnisse kamen, habe
+  ich die Lücke allein mit einer KI-Befragung gefüllt …“ ist entfallen, weil er auf Lukas' Teil zurückfällt. Neu:
+  Lukas' Gründerkontakt als „echtes Highlight“; die Selbstkritik bezieht sich nur auf Yannick („Ich habe vieles allein
+  gemacht, statt öfter mit dem Team zu reden und Aufgaben gemeinsam zu verteilen“); „Auch wer was vorträgt, hätten wir
+  früher klären sollen“ bleibt. Prüfliste „Teamteil fair halten“ angepasst. 491 Wörter. PDF neu; Prüfung per Skript:
+  0 Gedankenstriche, 0 „KI-Nutzung“, 0 Folien, 0 „Lücke“/„keine Ergebnisse“, alle Antworten vollständig, 1 Seite;
+  Sichtprüfung. Keine Unteragenten.
+- **Ergebnis:** Reflexion Fassung 5 mit neuer Frage 6, PDF an Yannick übergeben (nicht im Repository).
 - **Dateien:** `fallstudie-1-brand-persona/reflexion-yannick-heisler.md`, `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
