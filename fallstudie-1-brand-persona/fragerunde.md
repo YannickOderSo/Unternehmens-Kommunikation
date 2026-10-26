@@ -50,7 +50,8 @@ Vorlesungs-PDF `unterlagen/Stenger Folien.pdf`. Keine Websuche. Wo etwas Modellw
 >   Belastbar **TEILWEISE** (Tool und Prüfung nennt Elias). Gestrichen: Platzhalter „[Elias sagt selbst, ob …]“, „Elias'
 >   eigene KI-Nutzung ist damit nicht geklärt“, Belastbar NEIN.
 > - **Nachgezogen:** F16 und F36 („die Analogien stammen von ihm“ → aus seiner KI-gestützten Ausarbeitung; Tiere nicht
->   von der KI, Comedian keine KI-Variante), F17 (Auswertung KI-gestützt; Fallstrick statt „Ob für die Analyse KI
+>   als KI-Ergebnis ausgeben – sie lagen dem Tool nur als Vorinformation vor –, Comedian nicht als KI-Variante ausgeben
+>   – seine Entstehung ist nicht angegeben), F17 (Auswertung KI-gestützt; Fallstrick statt „Ob für die Analyse KI
 >   genutzt wurde: siehe F37“), F23 (Klärungs-Platzhalter gestrichen, der Satz zur KI-simulierten Befragung steht jetzt
 >   außerhalb der eckigen Klammer; Abschnitt 3 nicht mehr leer), F30 (Zirkel: beide Ausarbeitungen KI-gestützt), F38
 >   (statt „Prozentwerte sind Elias' eigene“), F06 (Lukas ohne KI), Fußzeilen-Zitate 08 und 09 mit „KI-gestützt“ (Einbau
@@ -574,7 +575,7 @@ Sprachnachrichten überhaupt mit KI-Tools auswerten?“**
     Backup (S. 60; `arbeitsplan.md` Offene Punkte; #7). Nicht „mit dem Prof abgestimmt“ sagen.
   - Fragt jemand Lukas nach seiner eigenen KI-Nutzung: Lukas hat keine KI genutzt (laut Yannick, 25.10.2026; KI-Nachweis
     175, Abschnitt 3). Abschrift und Auswertung der Sprachnachrichten liefen über Yannicks Prompts an Claude Code
-    (KI-Nachweis 59, 60).
+    (KI-Nachweis 59–67).
 - **Belastbar:** **TEILWEISE** – Versanddatum und Ablage der Audios klären.
 
 #### F07 – Stimmen die 170 Millionen, und wer hat geprüft?
@@ -966,8 +967,8 @@ sich jedem an?“**
   > Ich habe die offiziellen Profile auf Instagram, TikTok und YouTube am 20. Oktober und die Facebook-Suche am
   > 21. Oktober per Bildschirmaufnahme gesichert – jeweils den Profilkopf und die neuesten Inhalte – und nach den
   > Elementen Ihrer Aufgabe ausgewertet: Corporate Design, Slogan und Claims, Schlüsselbilder und Bildwelten, dazu
-  > Tonalität und Rolle der Kanäle (S. 60). Die Auswertung der Aufnahmen von Instagram, TikTok und YouTube ist
-  > KI-gestützt – das steht im KI-Nachweis. Das ist eine qualitative Analyse, keine Stichprobe: Einzelne Beiträge sind
+  > Tonalität und Rolle der Kanäle (S. 60). Die Auswertung ist KI-gestützt – das steht im
+  > KI-Nachweis [wie der Facebook-Teil entstand, sagt Elias selbst]. Das ist eine qualitative Analyse, keine Stichprobe: Einzelne Beiträge sind
   > nicht nach einem Raster codiert, und Engagement-Raten rechnen wir nicht, weil uns keine Insights-Daten vorliegen.
   > Follower, Likes und Aufrufe sind für uns nur Indizien; Interaktionen habe ich an vier Einzelbeiträgen notiert, dazu
   > Reaktionen einzelner Facebook-Beiträge aus der Suchansicht.

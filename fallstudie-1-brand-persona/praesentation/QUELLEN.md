@@ -237,7 +237,8 @@ geklärten Rechten verwenden und die Quelle in der Fußzeile der Folie nennen.
     (Instagram 23.06. und 20.10.2026, TikTok 27.06. und 17.10.2026), Desk Research vom 16.10.2026 (HOLY „Our
     Story“, Angabe zur Facebook-Gruppe). KI-gestützt (E-EK-01; Facebook kommt in diesem Prompt nicht vor). Auf den
     Folien kurz „Kommunikationsanalyse E. Knauber“ bzw. „eigene Bildschirmaufnahmen 20./21.10.2026“, seit So,
-    25.10.2026 in den Fußzeilen von 09, 09b und B6 mit „KI-gestützt“; im Steuerrad Kürzel **KA**. Verwendet auf Folie 09, 09b, 10 (Feld
+    25.10.2026 in den Fußzeilen von 09, 09b und B6 und in der Zeile „eigen“ auf B8 mit „KI-gestützt“ (B7 aus Platzgründen
+    ohne); im Steuerrad Kürzel **KA**. Verwendet auf Folie 09, 09b, 10 (Feld
     Markenbild, Lücke 2), 11 (Empfehlung 3), B6, als Eintrag in B7 und in den Notizen (u. a. Folie 08: Adler als
     Maskottchen, uneinheitlicher Absender).
   - **Analogien:** Knauber, E. (2026): *HOLY – Analogien: Mensch und Tier.* Ausarbeitung, Stand 16.10.2026, 2 S.
@@ -327,7 +328,9 @@ Folienaufbau, Diagramme, Sprechtext-Entwürfe, Prüfwerkzeug und diese Dokumenta
 drei Richtungen entworfen und per Jury-Bewertung ausgewählt (`_entwuerfe/JURY.md`). Alle Prompts,
 Unteragenten und Prüfschritte sind im KI-Nachweis der Gruppe dokumentiert (`../../ki-nachweis/`). Inhalte
 über HOLY stammen aus dem geprüften Recherche-Dossier und aus eigenen Erhebungen der Gruppe (Gründerbefragung,
-seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen; Beispieldaten sind gekennzeichnet.
+seit 22.10.2026 Elias Knaubers Ausarbeitungen), nicht aus dem Modellwissen von Claude Code; ob das von Elias genutzte
+KI-Tool Modellwissen beigetragen hat, ist nicht angegeben (Belege außerhalb des Dossiers nicht gegengeprüft).
+Beispieldaten sind gekennzeichnet.
 Elias' Ausarbeitungen sind selbst **KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03)** – mit
 einem KI-Tool, das er nicht nennt; wie weit er die Ergebnisse überarbeitet und geprüft hat, ist nicht angegeben
 (seit So, 25.10.2026, Abschnitt 5). Lukas hat keine KI genutzt (laut Yannick, 25.10.2026). Die

@@ -1,5 +1,14 @@
 # Prüfbericht Vortragsreife – Fallstudie 1 (HOLY)
 
+## Nachtrag Mo, 26.10.2026 (Account 1): KI-Nutzung von Elias belegt (Y29, F08-18)
+
+Elias' Prompt-Sammlung (KI-Nachweis 175, Abschnitt 3: E-EK-01 bis 03) belegt: Kommunikationsanalyse und Mensch-Analogie
+sind KI-gestützt, Lukas hat keine KI genutzt. Damit ist **Y29** (KI-Listen, Abschnitt 3 leer) zum großen Teil erledigt
+und **F08-18** (B2 zeigt nur geplante P11/P12) erledigt: B2 führt statt P12 die Zeile „E-EK-01–03“, die Fußzeilen von
+08, 09, 09b, B6 und die Zeile „eigen“ auf B8 tragen „KI-gestützt“, F37 ist beantwortet (Workflow D32; Exporte neu,
+PDF 23 Seiten). Offen bei Elias: Tool und Version, Prüfung der Ergebnisse, Entstehung des Facebook-Teils, Personen in
+den hochgeladenen Aufnahmen (KI-Richtlinie der HSKL, Nr. 6).
+
 ## Nachtrag So, 25.10.2026 (Account 1): Skript der Live-Abstimmung aktualisiert (F08-1)
 
 Befund **F08-1** (Top 10, Nr. 3) ist erledigt: Yannick hat am So, 25.10.2026 die Fassung 20.10.2026 bei Google

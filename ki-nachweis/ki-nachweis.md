@@ -194,11 +194,11 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 172 | 25.10.2026 | System | Workflow-Meldung: D31 fertig (3 Prüfer, 3 Widerleger, 26 Befunde, 23 bestätigt) | D31 | Befunde von Claude eingearbeitet |
 | 173 | 25.10.2026 | Yannick | Frage: Was ist zu tun, um das Abstimmungsskript jetzt zu verbessern? | – | beantwortet: Anleitung „Skript aktualisieren“, aktuelle Fassung bei Google geprüft |
 | 174 | 25.10.2026 | Yannick | „fertig“ (Skript bei Google aktualisiert) | – | erledigt: Fassung geprüft, Lasttest 2× mit 20 bestanden, Doku nachgezogen |
-| 175 | 25.10.2026 | Yannick | Prompt-Sammlung von Elias (PDF); Lukas hat keine KI genutzt | – | in Arbeit |
+| 175 | 25.10.2026 | Yannick | Prompt-Sammlung von Elias (PDF); Lukas hat keine KI genutzt | D32 | erledigt: Abschnitt 3 gefüllt, F37 beantwortet, Folien/Doku/Skripte/Exporte nachgezogen |
 | 176 | 25.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
-| 177 | 25.10.2026 | Yannick | „Versuch es noch einmal“ | – | in Arbeit (siehe 175) |
+| 177 | 25.10.2026 | Yannick | „Versuch es noch einmal“ | D32 | erledigt (siehe 175) |
 | 178 | 25./26.10.2026 | System | Workflow-Meldung: D32 – 4 Umsetzer fertig, beide Prüfer am Nutzungslimit gescheitert („resets 4:50am (UTC)“) | D32 | Prüfer per Fortsetzung neu gestartet |
-| 179 | 26.10.2026 | Yannick | „Weiter“ | D32 (fortgesetzt) | in Arbeit (siehe 175) |
+| 179 | 26.10.2026 | Yannick | „Weiter“ | D32 (fortgesetzt) | erledigt (siehe 175) |
 | 180 | 26.10.2026 | System | Stop-Hook: uncommittete Änderungen (Rohprotokoll, angepasstes Workflow-Skript D32) | – | committet und gepusht |
 
 ### 01 – 13.10.2026 – Yannick
@@ -2775,7 +2775,17 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
   übernehmen (E-EK-01 bis E-EK-03), Lukas' Angabe vermerken. Alle Stellen suchen, an denen Elias' KI-Nutzung noch als
   „offen“ steht (Fragerunde F37/F23, Ausarbeitungen, Prompt-Log B2, Notizen, Vortrags- und Redeskript) und angleichen.
   Das PDF selbst nicht ins Repository (Regel für Elias' PDFs; der Wortlaut steht im Nachweis).
-- **Ergebnis:** in Arbeit
+- **Ergebnis:** Elias' KI-Nutzung ist belegt und überall gleich beschrieben: Ausarbeitungen „KI-gestützt (Prompt-Sammlung
+  E. Knauber, KI-Nachweis E-EK-01 bis 03)“; Lukas ohne KI. Fragerunde F37 beantwortet (belastbar TEILWEISE – Tool und
+  Prüfung nennt Elias). Präsentation: Fußzeilen 08, 09, 09b, B6 und B8-Zeile „eigen“ mit „KI-gestützt“, B2-Zeile
+  „E-EK-01–03“ statt P12 (Fußzeile „E-EK = E. Knauber“), Rückfrage F37 in den Notizen von 08/09; Sprechtexte
+  unverändert. Offen bei Elias: Tool und Version, Prüfung, Facebook-Teil, Personen in den hochgeladenen Aufnahmen
+  (KI-Richtlinie der HSKL, Nr. 6).
+- **Dateien:** `ki-nachweis/ki-nachweis.md` (Abschnitt 3, 175–180, D32), `ki-nachweis/workflows/2026-10-25_elias-ki-einarbeiten.js`
+  und `…_elias-ki-faktenblatt.md` (neu), `…_redeskript-generator.py`; unter `fallstudie-1-brand-persona/`: `fragerunde.md`,
+  `analogien.md`, `kommunikationsanalyse.md`, `prompts.md`, `folienentwuerfe.md`, `vortragsskript.md` und PDF,
+  `redeskript.md` und PDF, `praesentation/index.html`, `LIESMICH.md`, `QUELLEN.md`, `VORTRAGSREIFE.md`, `AUTOREN.md` (§28),
+  `export/` (praesentation.pdf, uebersicht.png, folien/b2, b6, b8, f08, f09, f09b).
 - **Unteragenten:** D32
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -2865,7 +2875,7 @@ steht hier mit dem wörtlichen Auftrag.
 | D29 | 24.10.2026 | 159 | Workflow „vortragstag-pruefung“ (1 Unteragent, nur lesend) | Umstellung des Vortragstags auf Di 27.10.2026 adversarial prüfen: übersehene Stellen, Widersprüche, Rundenname | 10 Befunde (0 hoch, 3 mittel: Folienbilder noch alt, Aufgaben-PDFs alt, Frist F29; 7 niedrig); Rundenname überall einheitlich, Wochentage stimmen, HTML gültig | Claude: Befunde nachvollzogen, alle umgesetzt; Bilder und PDFs per pdftotext/Ansicht geprüft |
 | D30 | 24./25.10.2026 | 161 (fortgesetzt nach 164) | Workflow „vortragsskript“ (9 Unteragenten in 2 Phasen) | Vortragsskript mit Hintergrundwissen zu jeder Folie: 7 Autoren (Grundlagen; 01–03; 04–05b; 06–07; 08–08b; 09–10; 11, 12, Backup), 2 Prüfer (Quellentreue/Regeln; Vollständigkeit/Folientreue) | 3 Läufe (zweimal am Nutzungslimit); 7 Teile, 28 Befunde (0 hoch, 10 mittel, 18 niedrig), alle bearbeitet | Befunde an den Quelldateien nachgeprüft, eingearbeitet, PDF angesehen |
 | D31 | 25.10.2026 | 171 | Workflow „redeskript-pruefung“ (6 Unteragenten in 2 Phasen) | Kompaktes Redeskript prüfen: 3 Prüfer (Wortlaut und Klicks; Inhalt, Regeln, Stolperstellen; Praxis und Zeit), je 1 Widerleger | 26 Befunde (3 hoch, 16 mittel, 7 niedrig), 23 bestätigt, alle 23 eingearbeitet | Widerleger-Urteile gelesen, Kürzungsvorrat und Anzeigetexte an `index.html`/`komponenten.js` nachgeprüft, PDF angesehen |
-| D32 | 25.10.2026 | 175 (nach 177 neu begonnen) | Workflow „elias-ki-einarbeiten“ (6 Unteragenten in 2 Phasen) | Elias' Prompt-Sammlung einarbeiten: 4 Umsetzer (Fragerunde; Ausarbeitungen, prompts, QUELLEN, LIESMICH, Folienentwürfe; Präsentation; Skripte), 2 Prüfer (Faktentreue/Konsistenz; Technik) | läuft | – |
+| D32 | 25./26.10.2026 | 175 (nach 177 neu begonnen, nach 179 fortgesetzt) | Workflow „elias-ki-einarbeiten“ (6 Unteragenten in 2 Phasen) | Elias' Prompt-Sammlung einarbeiten: 4 Umsetzer (Fragerunde; Ausarbeitungen, prompts, QUELLEN, LIESMICH, Folienentwürfe; Präsentation; Skripte), 2 Prüfer (Faktentreue/Konsistenz; Technik) | 138 Änderungen der Umsetzer; Prüfer: 11 Befunde (0 hoch, 3 mittel, 8 niedrig), alle umgesetzt | Diff und Befunde selbst gelesen, Nacharbeit, Skripte und Exporte neu, Tests |
 
 <!-- Vorlage für den Detaileintrag:
 ### D01 – TT.MM.JJJJ – ausgelöst durch Prompt NN
@@ -3808,8 +3818,22 @@ steht hier mit dem wörtlichen Auftrag.
   Die Unteragenten lesen das PDF nicht (es liegt unter den Uploads); die Fakten daraus stehen im Faktenblatt.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-25_elias-ki-einarbeiten.js`](workflows/2026-10-25_elias-ki-einarbeiten.js),
   Faktenblatt [`workflows/2026-10-25_elias-ki-faktenblatt.md`](workflows/2026-10-25_elias-ki-faktenblatt.md).
-- **Ergebnis:** läuft
-- **Wie Claude das Ergebnis geprüft hat:** folgt
+- **Ergebnis:** 1. Lauf: die vier Umsetzer fertig (Fragerunde 19, Doku 49, Folien 18, Skripte 52 Änderungen; Folien:
+  `pruefen.mjs` in allen Themen 0 Fehler, `referent-test.mjs` 43/43), beide Prüfer am Nutzungslimit gescheitert.
+  2. Lauf (Fortsetzung, Prüfaufträge auf den Vergleichsstand c8852a8 umgestellt): Prüfer Technik ohne echten Befund
+  (alle JSON-Blöcke gültig, 85 von 85 Sprechtexten unverändert, 0 Fehler in Editorial, Bento, Keynote, dunkel, Druck
+  23/23, 43/43, 53/53) und ein Hinweis (B2-Fußzeile erklärt „E-EK“ nicht); Prüfer Fakten 10 Befunde (3 mittel: Skripte
+  und Exporte im Repository noch alt; B2 – Infokasten und Schritt 1 versprechen Tool und Prüfung, die für E-EK fehlen;
+  7 niedrig: B8 in Skript und Doku, zu starke Kurzformel „Comedian keine KI-Variante“, F17 grenzt KI-Stützung auf drei
+  Kanäle ein, QUELLEN „nicht aus dem Modellwissen“, B1-Notiz „Codieren der Kommunikation“, Beleg „59, 60“ statt
+  „59–67“, Kastenzeilen zu lang).
+- **Wie Claude das Ergebnis geprüft hat:** Ergebnisse der Umsetzer und den Diff von `index.html` selbst gelesen; alle 11
+  Befunde der Prüfer umgesetzt (B2-Fußzeile „E-EK = E. Knauber“ nach Probe des Prüfers; Hinweis in den B2-Notizen und
+  im Vortragsskript; Wortlaute in fragerunde, QUELLEN, LIESMICH, folienentwuerfe, B1-Notiz, Kastenzeilen umbrochen).
+  Vortrags- und Redeskript neu gebaut (104 bzw. 14 Seiten) und auf Reste („belastbar NEIN“, „P12–P14“, „ist leer“)
+  durchsucht; `export/` neu (Folienbilder: nur b2, b6, b8, f08, f09, f09b geändert; PDF 23 Seiten, Fußzeilen mit
+  „KI-gestützt“ und „E-EK“ im Text geprüft; Übersicht Stand 26.10.2026). Danach `pruefen.mjs` (0 Fehler),
+  `referent-test.mjs` 43/43, `live-abstimmung-test.mjs` 53/53, `pruefe_synthese.py` ohne Fehler.
 
 ---
 

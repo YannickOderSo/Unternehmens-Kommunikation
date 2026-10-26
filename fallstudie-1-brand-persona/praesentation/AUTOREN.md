@@ -1856,3 +1856,21 @@ ersten Versuch, „Danke“ nach höchstens 5,5 bzw. 5,0 s, Folie nie „offline
 BESTANDEN. Nachgezogen: Hinweis oben in der ANLEITUNG, LIESMICH (Abschnitt 1, 6 und Checkliste 12), `VORTRAGSREIFE.md`
 (Nachtrag), `../fragerunde.md` (Kopf, F29, Aufgabentabelle), `../vortragsskript.md` und PDF (Folie 08). Keine
 Änderung am Code. Offen: Runde `vortrag-2026-10-27` (spätestens Mo, 26.10.), Internet im Hörsaal.
+
+## 28. KI-Nutzung von Elias belegt, Lukas ohne KI (So/Mo, 25./26.10.2026)
+
+Grundlage: Elias Knaubers Prompt-Sammlung (PDF, Stand 25.10.2026, nicht im Repository) und Yannicks Mitteilung „Lukas
+hat keine KI genutzt“ (KI-Nachweis 175; Wortlaut der Prompts in `../../ki-nachweis/ki-nachweis.md`, Abschnitt 3,
+E-EK-01 bis 03). Eingearbeitet im Workflow D32 (vier Umsetzer nach einem Faktenblatt, zwei Prüfer; Nacharbeit durch
+Claude):
+
+| Bereich | Änderung |
+|---|---|
+| `index.html` | Fußzeilen f08, f09, f09b, b6 und B8-Zeile „eigen“ mit „KI-gestützt“ (B7 aus Platzgründen ohne); B2: Zeile P12 (Beispiel, nie genutzt) ersetzt durch „E-EK-01–03 · KI-Tool (k. A.) · Analyse, Analogien · eigene Aufnahmen; Prüfung nicht angegeben“, Fußzeile „E-EK = E. Knauber“, Notiz: Infokasten und Schritt 1 gelten für diese Zeile nicht; Rückfrage F37 in den Notizen von 08 und 09; Kästen und Notizen „ob Elias KI genutzt hat, ist offen“ nachgezogen; B1-Notiz („Codieren der simulierten Antworten“). Sprechtexte unverändert (85 von 85). |
+| Doku | `../fragerunde.md` (F37 neu, F16, F17, F23, F30, F36, F06, Nachtrag 25.10.), `../analogien.md`, `../kommunikationsanalyse.md` (Kopf, Lesehilfe, offene Fragen), `../prompts.md` (P12 nicht genutzt), `QUELLEN.md`, `LIESMICH.md`, `../folienentwuerfe.md`, `VORTRAGSREIFE.md` (Nachtrag) |
+| Skripte und Exporte | `../vortragsskript.md` und PDF (104 Seiten), `../redeskript.md` und PDF (14 Seiten) neu gebaut; `export/` neu (PDF 23 Seiten, 24 Bilder, Übersicht 26.10.2026) |
+
+Geprüft: `pruefen.mjs` in Editorial, Bento, Keynote, dunkel je 0 Fehler (nur bekannte Wortbudget-Warnungen auf 03, 04,
+06, 08b, 11), Druck 23 von 23 Seiten; `referent-test.mjs` 43/43; `live-abstimmung-test.mjs` 53/53 (offline);
+`pruefe_synthese.py` ohne Fehler. Offen bei Elias: Tool, Prüfung, Facebook-Teil, Personen in den hochgeladenen
+Aufnahmen (HSKL-KI-Richtlinie Nr. 6).

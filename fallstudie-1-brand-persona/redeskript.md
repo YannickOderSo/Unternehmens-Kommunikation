@@ -1,8 +1,8 @@
 # Redeskript – Fallstudie 1: Brand Persona & Markenidentität (HOLY)
 
-**Kompakt: nur der Redetext je Folie, mit Klicks.** Vortrag Di, 27.10.2026 · 15 Minuten · Stand 25.10.2026\
-Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker · **Entwurf, KI-gestützt erstellt** (KI-Nachweis 171, Workflow
-D31) · Prüfung durch die Gruppe offen
+**Kompakt: nur der Redetext je Folie, mit Klicks.** Vortrag Di, 27.10.2026 · 15 Minuten · Stand 26.10.2026\
+Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker · **Entwurf, KI-gestützt erstellt** (KI-Nachweis 171 und 175,
+Workflow D31 und D32) · Prüfung durch die Gruppe offen
 
 > Der Redetext ist wörtlich aus den Notizen der Web-Präsentation übernommen (`praesentation/index.html`); maßgeblich
 > bleibt die Präsentation. *Kursiv in eckigen Klammern* = Regie; ist sie als Bedingung formuliert („Mit Link:“, „Ohne
@@ -357,7 +357,7 @@ Erreichbar über Folie 12 → Liste „Backup“ (oder **O** → Rubrik „Backu
   ⚠ Titel „die Fakten prüfen wir selbst“ und „nichts ungeprüft übernommen“ nicht wörtlich vertreten – „Unsere eigene Prüfung läuft noch.“ Die Aufzählung ist nicht abschließend: KI hat auch Dossier, Ausarbeitungen, die Präsentation, Name, Beruf und Zitat der Persona sowie die Illustrationen erstellt (F23) – nie „nur Tempo“ sagen.
 - **B2 · Jeder KI-Schritt ist dokumentiert – und wird geprüft** – *Rückfrage „Welche Prompts habt ihr genutzt?“ oder „Mit welchem Tool?“.*  
   Jeder KI-Einsatz steht im Prompt-Log – mit Ziel, Tool und Folie. Vollständig und wörtlich steht alles im KI-Nachweis; hier ist ein Auszug je Methode.  
-  ⚠ „Vollständig“ gilt nur für Prompts an Claude Code: Abschnitt 3 (andere Tools) ist leer, ein Workflow-Skript ist geschwärzt; P12–P14 sind Beispielzeilen (Pille „teils Beispiel“). „Belegt“ heißt dokumentiert, nicht von der Gruppe geprüft.
+  ⚠ „Vollständig“ gilt nur für Prompts an Claude Code: Abschnitt 3 (andere Tools) enthält nur Elias' Prompt-Sammlung, ein Workflow-Skript ist geschwärzt; P13, P14 sind Beispielzeilen (Pille „teils Beispiel“). Elias' KI-Nutzung ist belegt (Zeile „E-EK-01–03“, KI-Nachweis E-EK-01 bis 03) – Tool und Prüfung nennt er selbst, kein Tool raten; Lukas: keine KI. „Belegt“ heißt dokumentiert, nicht von der Gruppe geprüft.
 - **B3 · Gründeraussagen und Studien tragen unsere Persona** – *Rückfrage „Woher stammen die Angaben der Persona?“ oder „Ist die Persona ein Klischee?“.*  
   Jede Dimension der Persona hat eine Quelle mit Datenstand; was nicht belegt ist, ist auf Folie 04 gestrichelt als Annahme markiert. Weil HOLY keine Kundendaten veröffentlicht, tragen die Gründeraussagen den Kern; Kategoriedaten zeigen nur den Rahmen.  
   ⚠ Ausnahme: Pain/Gain sind Annahmen im Datenblock. Gründeraussagen immer „laut Mitgründer Jost“ bzw. „laut Gründer Horsch“ (Selbstauskunft); „95 %“ nie von sich aus nennen; Statista/Kantar beschreiben die Kategorie, nicht HOLY-Kund:innen.

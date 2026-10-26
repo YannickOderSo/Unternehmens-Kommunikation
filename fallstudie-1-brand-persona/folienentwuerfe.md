@@ -24,7 +24,8 @@ Die Gruppe überträgt die Entwürfe in den Folienmaster (Bündel C). Marke: HOL
 Ausarbeitungen sind **KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03)** – Kommunikationsanalyse
 E-EK-01, Mensch-Analogie E-EK-03, Leitfaden zum Verständnis der Aufgaben E-EK-02. Die Daten (Bildschirmaufnahmen
 20./21.10.2026) sind seine eigenen; wie weit er die Ergebnisse überarbeitet und geprüft hat, ist nicht angegeben. Die
-Fußzeilen von Folie 8, 9, 9b und B6 tragen deshalb „KI-gestützt“ (sonst unverändert). Im Prompt-Log **B2** ersetzt
+Fußzeilen von Folie 8, 9, 9b und B6 und die Zeile „eigen“ auf B8 tragen deshalb „KI-gestützt“ (sonst unverändert; B7 aus
+Platzgründen ohne). Die Fußzeile von B2 erklärt die Kennung: „E-EK = E. Knauber“. Im Prompt-Log **B2** ersetzt
 diese Zeile die Beispielzeile P12 („Beiträge codieren“), die nie genutzt wurde (k. A. = keine Angabe):
 
 ```json

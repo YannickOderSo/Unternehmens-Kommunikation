@@ -86,8 +86,10 @@ Seiten (Abschnitt 11). **Prüfung durch Yannick und Lukas offen** (Abschnitt 12.
 **Seit So, 25.10.** (Prompt-Sammlung von Elias, KI-Nachweis 175, Abschnitt 3; Workflow D32): Elias' Ausarbeitungen
 sind **KI-gestützt** (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) – Kommunikationsanalyse E-EK-01,
 Mensch-Analogie E-EK-03, Leitfaden zum Verständnis der Aufgaben E-EK-02. Die Daten (Bildschirmaufnahmen vom
-20./21.10.) sind seine eigenen; Tool und Prüfung nennt er nicht. Die Fußzeilen von 08, 09, 09b und B6 tragen
-„KI-gestützt“, B2 zeigt statt der Beispielzeile P12 (nie genutzt) die Zeile „E-EK-01–03“; Antwort auf die Rückfrage
+20./21.10.) sind seine eigenen; Tool und Prüfung nennt er nicht. Die Fußzeilen von 08, 09, 09b und B6 und auf B8 die
+Zeile „eigen“ tragen „KI-gestützt“ (B7 aus Platzgründen nicht), B2 zeigt statt der Beispielzeile P12 (nie genutzt) die
+Zeile „E-EK-01–03“ (Fußzeile: „E-EK = E. Knauber“; Tool, Datum und Prüfung nennt die Sammlung nicht – Hinweis in den
+Notizen von B2); Antwort auf die Rückfrage
 F37 in `../fragerunde.md`. **Lukas hat keine KI genutzt** (laut Yannick, 25.10.2026). Offen sind nur Restfragen an
 Elias (Tool, Prüfung, Facebook-Teil, Personen in den hochgeladenen Aufnahmen – Abschnitt 12.3).
 Auf vielen Folien stehen noch **Beispieldaten** (orange Pille
@@ -1087,7 +1089,9 @@ Personen in den hochgeladenen Aufnahmen.
       (Änderungsstopp) – PDF **23 Seiten** (seit 24.10. mit 05b; bis dahin 22), 24 Folienbilder (inkl. 01b), keine
       Pille „Beispieldaten“ (auch B4–B6), Stand-Datum, Zuordnung PDF-Seite ↔ Folie in Abschnitt 11 prüfen (Befehle:
       `AUTOREN.md` 15). Stand 24.10., ca. 19:07: `export/` neu erzeugt mit 05b (PDF 23 Seiten, Seite 6 = 05b; 24 Bilder;
-      Übersicht Stand 24.10.2026) – endgültig nach der Generalprobe
+      Übersicht Stand 24.10.2026) – endgültig nach der Generalprobe. **Mo, 26.10.2026:** neu erzeugt nach D32 („KI-gestützt“
+      in den Fußzeilen 08, 09, 09b, B6 und auf B8, B2-Zeile E-EK-01–03; PDF 23 Seiten, 24 Bilder, Übersicht Stand
+      26.10.2026; geändert nur b2, b6, b8, f08, f09, f09b)
 - [ ] **Druckvorlagen nach Datenschluss:** Tastenkürzel, Zuordnung PDF-Seite ↔ Folie, Rückfragen-Spickzettel je
       Person (sonst veralten sie)
 - [ ] Nach dem Scan-Test ggf. kurze Adresse als `kurzLink` (F08-21); Fußzeile von 08 je Schritt teilen (Schritt
@@ -1211,7 +1215,7 @@ Personen in den hochgeladenen Aufnahmen.
 | `live-abstimmung/` | Web-App der Live-Abstimmung (`apps-script.gs`, Google Apps Script) und `ANLEITUNG.md` zum Einrichten |
 | `werkzeuge/live-abstimmung-test.mjs` | prüft `apps-script.gs` ohne Google-Konto (53 Prüfungen, auch das Zeitfenster mit vorgestellter Uhr); `--mutationen` = absichtlich kaputte Kopien, jede muss auffallen; `--server 8787` = lokale Web-App zum Ausprobieren (Uhr vorstellen: `http://localhost:8787/uhr?vor=31`), mit Störungen `--stoerung`, `--abbruch`, `--gleichzeitig` und Belastung `--sperre`; `--lasttest <URL>` = 40 Handys gleichzeitig (`--anzahl 60`, `--verteilt 10`) mit Wiederholung wie auf dem Handy, mitlesender „Folie“ und Gegenprobe des Zeitfensters (Abschnitt 6, `AUTOREN.md` 6c) |
 | `werkzeuge/zeitfenster-e2e.mjs` | prüft das Zeitfenster auf Handy und Folie 08 im Browser (Chromium über playwright-core), nur mit Attrappen auf localhost und vorgestellten Uhren: Ablauf auf dem Handy, Speicher und Pause der Folie, Referentenfenster, Tooltip, alte Skript-Fassung, Lasttest-Gegenprobe; `--mutationen` = kaputte Kopien von `js/komponenten.js` und `js/abstimmen.js`; Ausgabe nach `_test/` (`AUTOREN.md` §20) |
-| `export/` | PDF (seit 24.10.2026 23 Seiten mit 05b, ohne 01b; vorher 22), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b; 24 Bilder) – Stand 24.10.2026 (ca. 19:07) mit 05b und A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, Elias' Material auf 08–11 und B6 (Freigabe offen) und den gekennzeichneten Beispieldaten; nach der Freigabe, nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
+| `export/` | PDF (seit 24.10.2026 23 Seiten mit 05b, ohne 01b; vorher 22), Übersicht, Einzelbilder der Folien im Endzustand (1920 × 1080, inkl. 01b; 24 Bilder) – Stand 26.10.2026 (nach D32: „KI-gestützt“ und B2-Zeile E-EK-01–03; davor 24.10.2026, ca. 19:07) mit 05b und A1–A3 als Entwurf, den Illustrationen auf 01 (mit Logo auf der Dose) und 04, Elias' Material auf 08–11 und B6 (Freigabe offen) und den gekennzeichneten Beispieldaten; nach der Freigabe, nach Datenschluss und Generalprobe neu erzeugen (Abschnitt 12.5) |
 | `../analogien.md`, `../kommunikationsanalyse.md` | (außerhalb dieses Ordners) Elias Knaubers Ausarbeitungen – selbst KI-gestützt (Prompt-Sammlung E. Knauber, KI-Nachweis E-EK-01 bis 03) –, mit Claude Code aus seinen PDFs übertragen (seit 22.10.2026; Grundlage von 08, 09, 09b, 10, 11, B6); die PDFs liegen nur im Gruppenordner |
 | `../grafiken/` | (außerhalb dieses Ordners) Grafiken zu den Folienentwürfen 2, 3, 5 – Ausarbeitungs-/PowerPoint-Variante, nicht für die Projektion (Checkliste, Abschnitt 12) |
 | `AUTOREN.md` | technische Schnittstelle für Änderungen an Folien und Bausteinen |
