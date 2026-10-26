@@ -203,6 +203,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 181 | 26.10.2026 | Yannick | „Reflexionsbogen noch ausfüllen“ | D33 | in Arbeit |
 | 182 | 26.10.2026 | System | Neustart des Arbeitsprozesses der Sitzung (zweimal gemeldet) | – | Stand geprüft |
 | 183 | 26.10.2026 | Yannick | „Weiter“ | D33 | in Arbeit (siehe 181) |
+| 184 | 26.10.2026 | Yannick | Zwei Fragen: Reflexion für die Gruppe oder einzeln? Stellst du mir Fragen zum Beantworten? | – | beantwortet: einzeln; Fragenkatalog für Yannick gestellt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -2862,6 +2863,20 @@ Vorher (Claude, nach Prüfung und Commit von D25 `ac3573e`): Ergebnis der Simula
 - **Anhänge:** keine.
 - **Vorgehen Claude:** Arbeit an 181 fortgesetzt.
 - **Ergebnis:** siehe 181.
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 184 – 26.10.2026 – Yannick
+
+> Zwei Fragen:
+> 1. Ist das für die gruppe oder einzeln
+> 2. Stellst du mir Fragen zum beantworten?
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** (1) Beantwortet aus `reflexion-vorlage.md` und `README.md`: einzeln, je Person höchstens 500 Wörter,
+  15 % der Note. (2) Neun kurze Fragen zu Yannicks eigenen Erfahrungen gestellt (je Frage der Vorlage), damit die
+  Reflexion seine Erfahrungen wiedergibt; danach den Entwurf mit seinen Antworten und den Befunden aus D33 neu fassen.
+- **Ergebnis:** Antwort im Chat; keine Dateien außer diesem Nachweis geändert.
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
