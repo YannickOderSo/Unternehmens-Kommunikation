@@ -647,8 +647,8 @@ Personen in den hochgeladenen Aufnahmen.
       „Fremdbild (Aaker)“ in der Sprungliste), B1 (keine Interviews, „teils geplant“ weg, Absatz
       „Reproduzierte Klischees“), B2 (P7–P11 echte Läufe D25; seit 25.10. Zeile „E-EK-01–03“ statt P12), B7/B8 (Quellen). Notizen von Folie 03 („Folie 6 zeigt
       derzeit Beispieldaten …“) gehörten nicht zum Auftrag – nachziehen lassen
-- [ ] **Vortrag 06–08b verteilen** (mit der Gruppe, 12.4): Lukas liefert kein Material mehr – wer trägt vor, wer
-      beantwortet die Rückfragen (`../fragerunde.md` F12–F16, F36, F39)?
+- [x] **Vortrag 06–08b verteilen** (mit der Gruppe, 12.4): Lukas liefert kein Material mehr – wer trägt vor, wer
+      beantwortet die Rückfragen (`../fragerunde.md` F12–F16, F36, F39)? **Erledigt laut Yannick (27.10.2026, KI-Nachweis 202).**
 - [ ] **Exporte neu erzeugen lassen**, wenn alle D26-Bauaufträge fertig und geprüft sind (Account 1, 12.5;
       `AUTOREN.md` §15) – `export/` zeigt noch den Stand vom 22.10.
 - [ ] **Commit** des Einbaus (Folien, JS/CSS, `marke.js`, Tests, Doku) – der Workflow committet nicht selbst
@@ -804,13 +804,13 @@ Personen in den hochgeladenen Aufnahmen.
       (ersetzen oder löschen; Y29); Elias' Restfragen stehen in 12.3
 
 **Bis So, 25.10. bzw. Mo, 26.10. (Runde)**
-- [ ] **Runde umstellen** (nach der Generalprobe So 25.10., spätestens am Vortag Mo 26.10.): `runde: 'vortrag-2026-10-27'` in
+- [x] **Runde umstellen** (nach der Generalprobe So 25.10., spätestens am Vortag Mo 26.10.): `runde: 'vortrag-2026-10-27'` in
       `marke.js` auf GitHub **und** auf dem Präsentationsrechner. Kontrolle beider Stellen (Anleitung, „Vor dem
       Vortrag“): `marke.js?v=…` auf GitHub Pages nennt die neue Runde und `gueltigMinuten: 30`, Folie 08 zeigt
-      `n = 0`; die Stand-Adresse für den Rückfall als Lesezeichen auf einem Handy anlegen (Abschnitt 6)
-- [ ] **QR-Code scannen** (mit Lukas): iPhone und Android über mobile Daten aus der letzten Reihe, mindestens ein
+      `n = 0`; die Stand-Adresse für den Rückfall als Lesezeichen auf einem Handy anlegen (Abschnitt 6) **Erledigt 27.10.2026:** `runde: 'vortrag-2026-10-27'` in `marke.js`, gepusht (KI-Nachweis 202).
+- [x] **QR-Code scannen** (mit Lukas): iPhone und Android über mobile Daten aus der letzten Reihe, mindestens ein
       Handy ohne Google-Anmeldung – abstimmen, umentscheiden. Ist es knapp: Account 1 legt eine kurze Adresse als
-      `kurzLink` an (F08-21)
+      `kurzLink` an (F08-21) **Erledigt laut Yannick (27.10.2026, KI-Nachweis 202).**
 
 **Nach dem Vortrag** (Anleitung, „Nach dem Vortrag“)
 - [ ] Ergebnis von Folie 08 **gleich** sichern (Foto oder Zahlen und die Stand-Adresse mit `&minuten=30`, Quelle
@@ -1025,8 +1025,8 @@ Personen in den hochgeladenen Aufnahmen.
       Mitarbeitende auf der Karriereseite – mit Yannick), [12], Stand der Zuckersteuer (BR-Drs. 145/26), Preis; dazu
       die Follower auf Folie 09 – **oder** bewusst beim Stand 20./21.10.2026 in der Fußzeile bleiben (deine
       Entscheidung, `../kommunikationsanalyse.md` §3.1)
-- [ ] **USB-Stick:** entpackter Ordner `praesentation/` mit `export/praesentation.pdf` (endgültiger Export So 25.10.
-      nach der Generalprobe, Abschnitt 12.5); PDF zusätzlich per Mail/Cloud und auf dem Handy
+- [x] **USB-Stick:** entpackter Ordner `praesentation/` mit `export/praesentation.pdf` (endgültiger Export So 25.10.
+      nach der Generalprobe, Abschnitt 12.5); PDF zusätzlich per Mail/Cloud und auf dem Handy **Erledigt laut Yannick (27.10.2026, KI-Nachweis 202).**
 
 ### 12.4 Gruppe (alle)
 
@@ -1049,7 +1049,7 @@ Personen in den hochgeladenen Aufnahmen.
       Stand 25.10.: F37 nach Elias' Prompt-Sammlung); je Person Rückfragen-Spickzettel und Stichwortzettel (3–5 Stichworte je
       Schritt; Vorlage `index.html?druck&notizen=sprechtext`, G13); Reflexion: Stichpunkte zu den sechs Fragen bis
       zur Generalprobe (G12)
-- [ ] **Generalprobe So, 25.10.** (1 Std., in Präsenz, mit genau dem Vortragslaptop, zweitem Bildschirm und
+- [x] **Generalprobe So, 25.10.** (1 Std., in Präsenz, mit genau dem Vortragslaptop, zweitem Bildschirm und
       Clicker):
       Fassung vom USB-Stick (Ordner entpackt), Konsole (F12) leer, alle Folien einmal durchklicken (Pos1 → Ende:
       keine leere Folie, kein „[Marke]“) ·
@@ -1066,7 +1066,7 @@ Personen in den hochgeladenen Aufnahmen.
       im Raum entscheiden (Standard Editorial hell) ·
       einmal aus dem Referentenfenster springen (ab Folie 12: Sprungliste, Rad-Feld) ·
       Fragerunde mit Moderation üben, höchstens 15 Fragen zuerst ·
-      danach **Änderungsstopp**; endgültiger Export durch Account 1 (Abschnitt 12.5)
+      danach **Änderungsstopp**; endgültiger Export durch Account 1 (Abschnitt 12.5) **Erledigt laut Yannick (27.10.2026, KI-Nachweis 202).**
 - [ ] **Mitnehmen:** Laptop mit Netzteil, Adapter (HDMI, USB-C → HDMI), Clicker mit Ersatzbatterie, USB-Stick
       (Elias), Handy-Hotspot als Reserve für die Umfrage; ausgedruckt: Tastenkürzel (Abschnitt 2), Zuordnung
       PDF-Seite ↔ Folie (Abschnitt 11), Stichwort- und Rückfragen-Zettel

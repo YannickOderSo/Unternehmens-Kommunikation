@@ -1874,3 +1874,13 @@ Geprüft: `pruefen.mjs` in Editorial, Bento, Keynote, dunkel je 0 Fehler (nur be
 06, 08b, 11), Druck 23 von 23 Seiten; `referent-test.mjs` 43/43; `live-abstimmung-test.mjs` 53/53 (offline);
 `pruefe_synthese.py` ohne Fehler. Offen bei Elias: Tool, Prüfung, Facebook-Teil, Personen in den hochgeladenen
 Aufnahmen (HSKL-KI-Richtlinie Nr. 6).
+
+## 29. Runde der Live-Abstimmung umgestellt (Di, 27.10.2026)
+
+Auf Yannicks Wort: `marke.js`, `umfragen.tier.runde` von `'probe'` auf `'vortrag-2026-10-27'` (KI-Nachweis 202).
+Folie 08 beginnt damit bei 0; die Probestimmen bleiben in der Tabelle, zählen aber nicht. Geprüft:
+`live-abstimmung-test.mjs` 53/53 (offline), `referent-test.mjs` 43/43, `pruefen.mjs --nur f08` 0 Fehler; die Web-App
+liefert für die neue Runde mit `minuten=30` `"n":0` (nur lesend). Nach dem Push `marke.js?v=…` auf GitHub Pages
+kontrolliert (siehe KI-Nachweis 202). Auf dem Präsentationsrechner die Seite neu laden (bzw. den Ordner neu holen)
+und auf Folie 08 an der Pille „Runde „vortrag-2026-10-27““ kontrollieren. Keine weitere Änderung am Code; Exporte
+unverändert (die Runde ist dort nicht sichtbar).

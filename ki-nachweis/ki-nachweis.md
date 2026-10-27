@@ -222,6 +222,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 199 | 26.10.2026 | Yannick | Zustimmung: Zusammenfassung sichtbar auf die Fallstudie begrenzen | – | PDF neu: Einträge 01 bis 180, Delegationen ohne D33/D34, Abgrenzung mit Link im Kopf |
 | 200 | 26.10.2026 | Yannick | Kurze Abgabe-E-Mail an Prof. Stenger mit Link zur Präsentation; Reflexion und KI-Nachweis im Anhang | – | E-Mail-Entwurf im Chat |
 | 201 | 26./27.10.2026 | Yannick | Frage: Ist für morgen alles bereit? | – | Prüfung: Technik bereit; offen: Runde umstellen, Sprecher 06–08b, Lukas 05b, QR/Internet im Hörsaal |
+| 202 | 27.10.2026 | Yannick | Runde umstellen; übrige Punkte erledigt | – | `runde: 'vortrag-2026-10-27'`, Tests bestanden, gepusht; Checklisten abgehakt |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3209,6 +3210,23 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   Punkte aus `fallstudie-1-brand-persona/arbeitsplan.md` und `praesentation/LIESMICH.md` (Checkliste) gesichtet.
 - **Ergebnis:** Antwort im Chat (bereit / vor dem Vortrag noch zu tun).
 - **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 202 – 27.10.2026 – Yannick
+
+> 1. Kannst du machen und den Rest der Punkte sind alle abgehakt
+
+- **Anhänge:** keine. Antwort auf die Liste aus Eintrag 201.
+- **Vorgehen Claude:** In `fallstudie-1-brand-persona/praesentation/marke.js` `runde: 'probe'` →
+  `'vortrag-2026-10-27'` (Kommentar mit Datum). Tests: `live-abstimmung-test.mjs` 53/53, `referent-test.mjs` 43/43,
+  `pruefen.mjs --nur f08 --schritte` 0 Fehler, 0 Warnungen. Checklisten nach Yannicks Angabe abgehakt (mit Vermerk
+  „laut Yannick“): `LIESMICH.md` (Runde umstellen, QR-Code scannen, USB-Stick, Generalprobe, Vortrag 06–08b verteilen),
+  `arbeitsplan.md` (Vortrag 06–08b verteilt; Lukas 05b: Sprechen geübt, Abgleich mit Transkript und Versanddatum nicht
+  gemeldet). `AUTOREN.md` §29. Nach dem Push `marke.js` auf GitHub Pages kontrolliert (Ergebnis unten).
+- **Ergebnis:** siehe unten.
+- **Dateien:** `fallstudie-1-brand-persona/praesentation/marke.js`, `praesentation/LIESMICH.md`, `praesentation/AUTOREN.md`,
+  `fallstudie-1-brand-persona/arbeitsplan.md`, `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 

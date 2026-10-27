@@ -112,9 +112,10 @@ Prompt-Nummern (P1–P14) beziehen sich auf [`prompts.md`](prompts.md), Vorlagen
 - [x] Bündel verteilt (14.10.): A + Markensteuerrad-Synthese Yannick, B Lukas, C Elias
 - [x] (23.10.) Bündel B ohne Lukas: KI-simulierte Befragung D25 eingebaut (Folien 06, 07, 08b, B4, B5); Steuerrad =
   Selbstbild, Befragungen = Fremdbild-Abgleich (Entscheidung Yannick, `methoden.md` §6)
-- [ ] Vortrag der Folien 06–08b und Rückfragen dazu verteilen (Lukas liefert kein Material mehr)
-- [ ] (24.10.) Lukas: Folie 05b „Gründerbefragung: Innensicht“ sprechen (ca. 35 s), Inhalt mit dem Transkript
-  abgleichen, Versanddatum der Sprachnachrichten bestätigen (`gruenderbefragung.md` §6)
+- [x] Vortrag der Folien 06–08b und Rückfragen dazu verteilen (Lukas liefert kein Material mehr) **Erledigt laut Yannick (27.10.2026, KI-Nachweis 202).**
+- [x] (24.10.) Lukas: Folie 05b „Gründerbefragung: Innensicht“ sprechen (ca. 35 s), Inhalt mit dem Transkript
+  abgleichen, Versanddatum der Sprachnachrichten bestätigen (`gruenderbefragung.md` §6) **Sprechen laut Yannick
+  geübt (27.10.2026, KI-Nachweis 202); Abgleich mit dem Transkript und Versanddatum nicht gemeldet.**
 - [ ] Persona-Richtung bestätigen: Kern-Persona „Marco, 28“, Wachstums-Persona „Lena, 29“ im Backup (Entwurf:
   [`persona-steckbrief.md`](persona-steckbrief.md), 16.10.)
 - [ ] Bei Prof. Stenger klären: Abgabetermin und Form der Einzelreflexion
