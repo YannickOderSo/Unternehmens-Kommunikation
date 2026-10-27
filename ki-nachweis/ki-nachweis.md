@@ -225,6 +225,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 202 | 27.10.2026 | Yannick | Runde umstellen; übrige Punkte erledigt | – | `runde: 'vortrag-2026-10-27'`, Tests bestanden, gepusht; Checklisten abgehakt |
 | 203 | 27.10.2026 | Yannick | Titelfolie: „sponsored by“ und Logo von simpleact.de (Anhang: Bildschirmfoto Folie 01) | – | Logo auf Folie 01 unter „Termin“, Tests in drei Themen, Exporte neu |
 | 204 | 27.10.2026 | Yannick | Live ist das HOLY-Logo verschoben (Anhang: Bildschirmfoto Folie 01 live) | – | Ursache: alte CSS im Browser-Speicher; Sponsor in eine Zeile, Bildgröße im HTML; Tests, Exporte |
+| 205 | 27.10.2026 | Yannick | Feedback und Bewertung von Prof. Stenger zu Fallstudie 1 (Anhang: Bildschirmfoto des Bewertungsbogens) | – | Auswertung und Lehren für Fallstudie 2 im Chat |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3271,6 +3272,22 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
 - **Dateien:** `praesentation/index.html`, `praesentation/css/folien/01-einstieg.css`, `praesentation/export/folien/f01.png`,
   `praesentation/export/praesentation.pdf`, `praesentation/export/uebersicht.png`, `praesentation/AUTOREN.md`,
   `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 205 – 27.10.2026 – Yannick
+
+> Das ist das Feedback was wir erhalten haben und Bewertung
+
+- **Anhänge:** ein Bildschirmfoto des Bewertungsbogens von Prof. Stenger (Fallstudie 1: Punkte je Kriterium,
+  Kommentare zu Fallstudienbearbeitung und Präsentation; darunter ein Bogen zur individuellen Reflexion). Die Punkte
+  stehen bewusst nicht in diesem öffentlichen Nachweis.
+- **Vorgehen Claude:** Kommentare gelesen und im Chat zusammengefasst; Lehren für Fallstudie 2 abgeleitet; Frage des
+  Prüfers zu den Wettbewerbern (Monster, Coca-Cola) mit der Quelle im Repository beantwortet
+  (`fallstudie-1-brand-persona/gruenderbefragung.md` §1 Punkt 3: Nennung durch den Gründer, Selbstauskunft). Keine
+  Dateien außer diesem Nachweis geändert.
+- **Ergebnis:** Antwort im Chat.
+- **Dateien:** `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
