@@ -5,7 +5,7 @@ Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiser
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Unternehmen:** **HOLY** (https://de.holy.com) – von der Gruppe ausgewählt am 13.10.2026
 
-**KI-Nachweis** (alle Prompts und Delegationen an Unteragenten): [`ki-nachweis/ki-nachweis.md`](ki-nachweis/ki-nachweis.md)
+**KI-Nachweis** (alle Prompts und Delegationen an Unteragenten): Fallstudie 1 [`ki-nachweis/ki-nachweis.md`](ki-nachweis/ki-nachweis.md) · Fallstudie 2 [`ki-nachweis/ki-nachweis-fallstudie-2.md`](ki-nachweis/ki-nachweis-fallstudie-2.md)
 
 ## Termine
 
