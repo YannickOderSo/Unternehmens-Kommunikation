@@ -1884,3 +1884,14 @@ liefert für die neue Runde mit `minuten=30` `"n":0` (nur lesend). Nach dem Push
 kontrolliert (siehe KI-Nachweis 202). Auf dem Präsentationsrechner die Seite neu laden (bzw. den Ordner neu holen)
 und auf Folie 08 an der Pille „Runde „vortrag-2026-10-27““ kontrollieren. Keine weitere Änderung am Code; Exporte
 unverändert (die Runde ist dort nicht sichtbar).
+
+## 30. Titelfolie: „Sponsored by“ SimpleAct (Di, 27.10.2026)
+
+Wunsch Yannick (KI-Nachweis 203): Auf Folie 01 steht unter „Termin“ eine zweite Überschrift „Sponsored by“ (wie
+„Termin“, `data-meta`, zählt nicht zum Wortbudget) und darunter das Logo von SimpleAct (`bilder/simpleact-logo.png`,
+Quelle in `QUELLEN.md`). `index.html` (f01, Block `.einstieg-angaben`), `css/folien/01-einstieg.css`
+(`.einstieg-sponsor-titel`, `.einstieg-sponsor`: 76 px hoch, runde Ecken, `align-self: flex-start`, damit die
+Flex-Spalte das Logo nicht verzerrt). Sprechtext unverändert. Geprüft: `pruefen.mjs --nur f01 --schritte` in Editorial,
+Bento, Keynote je 0 Fehler, 0 Warnungen, Bildschirmfotos angesehen. Exporte neu: `export/folien/f01.png`,
+`export/praesentation.pdf` (23 Seiten, nur die bekannten Wortbudget-Hinweise 03, 04, 06, 08b, 11),
+`export/uebersicht.png` (Stand 27.10.2026).

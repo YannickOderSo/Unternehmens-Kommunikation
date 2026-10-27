@@ -155,6 +155,16 @@
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   margin-top: var(--abstand-6);
 }
+/* Sponsor unter dem Termin (seit 27.10.2026): Überschrift wie „Termin“, darunter
+   das Logo auf seinem hellen Grund mit runden Ecken */
+#f01 .einstieg-sponsor-titel { margin-top: var(--abstand-3); }
+#f01 .einstieg-sponsor {
+  display: block;
+  align-self: flex-start;   /* sonst streckt die Flex-Spalte das Logo auf ihre Breite */
+  width: auto;
+  height: 76px;
+  border-radius: 12px;
+}
 /* Einordnung „Studentische Fallstudie · keine Verbindung zur …“ (Metaangabe):
    klein und gedeckt unter den Angaben, durch eine feine Linie abgesetzt */
 #f01 .einstieg-einordnung {

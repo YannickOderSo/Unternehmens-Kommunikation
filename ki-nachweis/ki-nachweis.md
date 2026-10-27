@@ -223,6 +223,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 200 | 26.10.2026 | Yannick | Kurze Abgabe-E-Mail an Prof. Stenger mit Link zur Präsentation; Reflexion und KI-Nachweis im Anhang | – | E-Mail-Entwurf im Chat |
 | 201 | 26./27.10.2026 | Yannick | Frage: Ist für morgen alles bereit? | – | Prüfung: Technik bereit; offen: Runde umstellen, Sprecher 06–08b, Lukas 05b, QR/Internet im Hörsaal |
 | 202 | 27.10.2026 | Yannick | Runde umstellen; übrige Punkte erledigt | – | `runde: 'vortrag-2026-10-27'`, Tests bestanden, gepusht; Checklisten abgehakt |
+| 203 | 27.10.2026 | Yannick | Titelfolie: „sponsored by“ und Logo von simpleact.de (Anhang: Bildschirmfoto Folie 01) | – | Logo auf Folie 01 unter „Termin“, Tests in drei Themen, Exporte neu |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3224,9 +3225,31 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   „laut Yannick“): `LIESMICH.md` (Runde umstellen, QR-Code scannen, USB-Stick, Generalprobe, Vortrag 06–08b verteilen),
   `arbeitsplan.md` (Vortrag 06–08b verteilt; Lukas 05b: Sprechen geübt, Abgleich mit Transkript und Versanddatum nicht
   gemeldet). `AUTOREN.md` §29. Nach dem Push `marke.js` auf GitHub Pages kontrolliert (Ergebnis unten).
-- **Ergebnis:** siehe unten.
+- **Ergebnis:** Runde umgestellt und gepusht (Commit 44c9377). Die Kontrolle von `marke.js` auf GitHub Pages hat Yannick
+  abgebrochen (nächster Prompt); sie ist nicht erfolgt.
 - **Dateien:** `fallstudie-1-brand-persona/praesentation/marke.js`, `praesentation/LIESMICH.md`, `praesentation/AUTOREN.md`,
   `fallstudie-1-brand-persona/arbeitsplan.md`, `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 203 – 27.10.2026 – Yannick
+
+> Würde final noch eine Sache umsetzen kannst du auf diese Folie noch das Logo von:  https://simpleact.de/ drauf machen und schreiben "sponsored by" und dann das Logo
+
+- **Anhänge:** ein Bildschirmfoto der Titelfolie (Folie 01: HOLY-Logo, Titel, Gruppe, Termin, Bildtafel mit Dose).
+  Vorher hat Yannick die Kontrolle von GitHub Pages aus Eintrag 202 abgebrochen.
+- **Vorgehen Claude:** Startseite von https://simpleact.de abgerufen (Websuche nicht nötig); Logo dort ist die Datei
+  `/image/simpleact-round.jpg` (1024 × 1024, Bildmarke über dem Schriftzug „SimpleAct“). Bildmarke und Schriftzug
+  ausgeschnitten und nebeneinander gesetzt wie im Kopf der Website, Hintergrund beibehalten →
+  `praesentation/bilder/simpleact-logo.png` (424 × 168). Auf Folie 01 unter „Termin“: Überschrift „Sponsored by“ im
+  Stil von „Termin“ und das Logo (76 px hoch, runde Ecken). Erster Versuch zeigte das Logo verzerrt (Flex-Spalte
+  streckte es), behoben mit `align-self: flex-start`. Geprüft: `pruefen.mjs --nur f01 --schritte` in Editorial, Bento,
+  Keynote je 0 Fehler, 0 Warnungen, Bildschirmfotos angesehen. Exporte neu (Folienbild f01, PDF 23 Seiten,
+  Übersicht). Doku: `QUELLEN.md` (Bildquelle), `AUTOREN.md` §30. Keine Unteragenten.
+- **Ergebnis:** Folie 01 mit „Sponsored by“ und SimpleAct-Logo; gepusht.
+- **Dateien:** `praesentation/index.html`, `praesentation/css/folien/01-einstieg.css`, `praesentation/bilder/simpleact-logo.png`,
+  `praesentation/export/folien/f01.png`, `praesentation/export/praesentation.pdf`, `praesentation/export/uebersicht.png`,
+  `praesentation/QUELLEN.md`, `praesentation/AUTOREN.md`, `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
