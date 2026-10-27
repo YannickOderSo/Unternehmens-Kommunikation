@@ -224,6 +224,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 201 | 26./27.10.2026 | Yannick | Frage: Ist für morgen alles bereit? | – | Prüfung: Technik bereit; offen: Runde umstellen, Sprecher 06–08b, Lukas 05b, QR/Internet im Hörsaal |
 | 202 | 27.10.2026 | Yannick | Runde umstellen; übrige Punkte erledigt | – | `runde: 'vortrag-2026-10-27'`, Tests bestanden, gepusht; Checklisten abgehakt |
 | 203 | 27.10.2026 | Yannick | Titelfolie: „sponsored by“ und Logo von simpleact.de (Anhang: Bildschirmfoto Folie 01) | – | Logo auf Folie 01 unter „Termin“, Tests in drei Themen, Exporte neu |
+| 204 | 27.10.2026 | Yannick | Live ist das HOLY-Logo verschoben (Anhang: Bildschirmfoto Folie 01 live) | – | Ursache: alte CSS im Browser-Speicher; Sponsor in eine Zeile, Bildgröße im HTML; Tests, Exporte |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3250,6 +3251,26 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
 - **Dateien:** `praesentation/index.html`, `praesentation/css/folien/01-einstieg.css`, `praesentation/bilder/simpleact-logo.png`,
   `praesentation/export/folien/f01.png`, `praesentation/export/praesentation.pdf`, `praesentation/export/uebersicht.png`,
   `praesentation/QUELLEN.md`, `praesentation/AUTOREN.md`, `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 204 – 27.10.2026 – Yannick
+
+> Auf dem Live ist das Holy Logo verschoben
+
+- **Anhänge:** ein Bildschirmfoto der Live-Folie 01: HOLY-Logo ragt über die obere Linie, SimpleAct-Logo groß über die
+  ganze Spaltenbreite, ohne runde Ecken.
+- **Vorgehen Claude:** Live-Dateien mit dem Repository verglichen (alle gleich; `01-einstieg.css` mit `max-age=600`)
+  → Ursache: Der Browser hatte die neue `index.html`, aber noch die alte CSS ohne Sponsor-Regeln; das Logo erschien
+  in voller Größe, die höhere Spalte schob HOLY-Logo und Titel nach oben. Behoben: „Sponsored by“ und Logo in einer
+  Zeile (Logo 60 px), Spalte damit kaum höher als „Gruppe“; `width`/`height` am Bild auf die Anzeigegröße. Mit der
+  alten CSS simuliert (Viewport 1913 × 1017 wie im Bildschirmfoto): Logo 142 × 57 px, HOLY-Logo an seinem Platz.
+  `pruefen.mjs --nur f01 --schritte` in drei Themen je 0 Fehler, 0 Warnungen, Bildschirmfotos angesehen. Exporte neu.
+  `AUTOREN.md` §30 Nachtrag. Keine Unteragenten.
+- **Ergebnis:** gepusht; auf dem Präsentationsrechner einmal hart neu laden (Strg+Umschalt+R).
+- **Dateien:** `praesentation/index.html`, `praesentation/css/folien/01-einstieg.css`, `praesentation/export/folien/f01.png`,
+  `praesentation/export/praesentation.pdf`, `praesentation/export/uebersicht.png`, `praesentation/AUTOREN.md`,
+  `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 

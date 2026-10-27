@@ -1895,3 +1895,11 @@ Flex-Spalte das Logo nicht verzerrt). Sprechtext unverändert. Geprüft: `pruefe
 Bento, Keynote je 0 Fehler, 0 Warnungen, Bildschirmfotos angesehen. Exporte neu: `export/folien/f01.png`,
 `export/praesentation.pdf` (23 Seiten, nur die bekannten Wortbudget-Hinweise 03, 04, 06, 08b, 11),
 `export/uebersicht.png` (Stand 27.10.2026).
+
+**Nachtrag (Di, 27.10.2026, KI-Nachweis 204):** Live war das HOLY-Logo nach oben verschoben und das SimpleAct-Logo
+riesig – der Browser hatte die neue `index.html`, aber noch die alte `01-einstieg.css` im Speicher (GitHub Pages:
+`max-age=600`). Behoben: „Sponsored by“ und Logo stehen jetzt in **einer Zeile** (`.einstieg-sponsor-zeile`, Logo
+60 px hoch), damit die Spalte „Termin“ kaum höher wird als „Gruppe“ und HOLY-Logo und Titel an ihrem Platz bleiben;
+`width="151" height="60"` am Bild, damit es auch mit alter CSS die richtige Größe hat (mit der alten CSS simuliert:
+Logo 142 × 57 px, HOLY-Logo an seinem Platz). Geprüft: `pruefen.mjs --nur f01 --schritte` in Editorial, Bento,
+Keynote je 0 Fehler, 0 Warnungen; Exporte neu (f01, PDF 23 Seiten, Übersicht).
