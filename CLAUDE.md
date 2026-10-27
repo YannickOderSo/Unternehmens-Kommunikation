@@ -29,7 +29,11 @@ Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deu
 ## Pflicht: KI-Nachweis führen
 
 > **Pause seit 27.10.2026 (Entscheidung Yannick):** Fallstudie 1 ist abgeschlossen; der Nachweis endet mit Eintrag 206.
-> Neue Einträge erst wieder ab Beginn von Fallstudie 2, dann wieder bei jedem Prompt wie unten beschrieben.
+> Neue Einträge erst wieder ab Beginn von Fallstudie 2, dann wieder bei jedem Prompt wie unten beschrieben –
+> aber in einer **neuen Datei** `ki-nachweis/ki-nachweis-fallstudie-2.md` (gleicher Aufbau, Nummern ab 01, Delegationen
+> ab D01; `ki-nachweis.md` bleibt der abgeschlossene Nachweis für Fallstudie 1). Die IDs in Abschnitt 3 (`E-EK-…` usw.)
+> zählen je Person weiter. Beim Start von Fallstudie 2 klären, ob das Rohprotokoll ebenfalls in eine neue Datei soll
+> (Hook in `.claude/settings.json`).
 
 Die Gruppe muss jede KI-Nutzung belegen. Bei **jedem** Prompt in diesem Repository:
 
