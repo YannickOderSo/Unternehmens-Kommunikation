@@ -226,6 +226,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 203 | 27.10.2026 | Yannick | Titelfolie: „sponsored by“ und Logo von simpleact.de (Anhang: Bildschirmfoto Folie 01) | – | Logo auf Folie 01 unter „Termin“, Tests in drei Themen, Exporte neu |
 | 204 | 27.10.2026 | Yannick | Live ist das HOLY-Logo verschoben (Anhang: Bildschirmfoto Folie 01 live) | – | Ursache: alte CSS im Browser-Speicher; Sponsor in eine Zeile, Bildgröße im HTML; Tests, Exporte |
 | 205 | 27.10.2026 | Yannick | Feedback und Bewertung von Prof. Stenger zu Fallstudie 1 (Anhang: Bildschirmfoto des Bewertungsbogens) | – | Auswertung und Lehren für Fallstudie 2 im Chat |
+| 206 | 27.10.2026 | Yannick | Dokumentation pausieren bis Beginn Fallstudie 2 | – | Pause vermerkt (hier und in `CLAUDE.md`); Fallstudie 1 abgeschlossen |
 
 ### 01 – 13.10.2026 – Yannick
 
@@ -3288,6 +3289,19 @@ Workflow-Kopie) während D34 lief; mit Eintrag 193 committet und gepusht.
   Dateien außer diesem Nachweis geändert.
 - **Ergebnis:** Antwort im Chat.
 - **Dateien:** `ki-nachweis/ki-nachweis.md`.
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 206 – 27.10.2026 – Yannick
+
+> Du musst eh hier cutten mit der Dokumentation die Dokumentation startet erst wieder mit beginn der 2ten Fallstudie
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Fallstudie 1 ist abgeschlossen (Vortrag und Bewertung am 27.10.2026). Pause des Nachweises in
+  `CLAUDE.md` vermerkt; dieser Eintrag schließt Abschnitt 1 für Fallstudie 1. Neue Einträge ab Beginn von Fallstudie 2.
+  Das Rohprotokoll (`rohprotokoll.jsonl`) schreibt der Hook weiter automatisch mit.
+- **Ergebnis:** Pause vermerkt.
+- **Dateien:** `CLAUDE.md`, `ki-nachweis/ki-nachweis.md`.
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 

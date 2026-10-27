@@ -28,6 +28,9 @@ Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker. Sprache aller Dateien: Deu
 
 ## Pflicht: KI-Nachweis führen
 
+> **Pause seit 27.10.2026 (Entscheidung Yannick):** Fallstudie 1 ist abgeschlossen; der Nachweis endet mit Eintrag 206.
+> Neue Einträge erst wieder ab Beginn von Fallstudie 2, dann wieder bei jedem Prompt wie unten beschrieben.
+
 Die Gruppe muss jede KI-Nutzung belegen. Bei **jedem** Prompt in diesem Repository:
 
 1. In `ki-nachweis/ki-nachweis.md`, Abschnitt 1, einen Eintrag ergänzen (Übersichtstabelle + Detailabschnitt):
