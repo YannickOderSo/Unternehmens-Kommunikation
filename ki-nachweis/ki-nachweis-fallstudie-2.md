@@ -31,6 +31,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 04 | 30.10.2026 | Yannick | Fallstudie 2 anfangen: Deep Research und Gestaltungsplan nach den neu festgelegten Regeln | D02 (Workflow) | läuft |
 | 05 | 30.10.2026 | Yannick | Erlaubnis, in dieses Repository zu pushen | – | Schreibzugriff eingerichtet; Nachweis begonnen |
 | 06 | 30.10.2026 | Yannick | „Versuch es noch einmal“: abgebrochene Schritte nach dem Nutzungslimit erneut starten | D03 (Workflow) | läuft |
+| 07 | 30.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | Zwischenstand committet und gepusht |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -119,6 +120,18 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   zwei offenen Schritte gestartet; das fertige Prüfergebnis zum Dossier bekommt er als Datei.
 - **Dateien:** `ki-nachweis/workflows/2026-10-30_fs2-schlusspruefung-rest.js`
 - **Unteragenten:** D03
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 07 – 30.10.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Zwischenstand committet und gepusht, während D03 noch läuft: Dossier (Korrekturen der
+  Schlussprüfung teilweise eingearbeitet, Anhang A.9 noch Platzhalter), Gestaltungsplan vor seiner Schlussprüfung,
+  drei Musterfolien, neue `fallstudie-2-customer-journey/README.md`, Ordner-Link in `README.md`. Der Endstand folgt
+  nach D03.
+- **Dateien:** `fallstudie-2-customer-journey/` (neu), `README.md`, `ki-nachweis/ki-nachweis-fallstudie-2.md`
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---

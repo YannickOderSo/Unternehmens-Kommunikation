@@ -1,0 +1,325 @@
+<!doctype html>
+<!-- Kopie der Musterfolie (Richtung „Der Journey-Pfad“) für den Gestaltungsplan FS2, 30.10.2026. Schriftpfade relativ zum Repository: Bricolage aus fallstudie-1-brand-persona/praesentation/schriften/. Libre Franklin liegt noch nicht im Repository; geladen wird ../../praesentation/schriften/ (entsteht beim Bau, Meilenstein M5); bis dahin fällt der Text auf „Segoe UI“/Arial zurück. Verbindlich ist das PNG. -->
+
+<html lang="de" data-modus="hell">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Journey-Map Musterfolie</title>
+<!--
+  Musterfolie 05 „Customer-Journey-Map“ – Gestaltungsrichtung „Der Journey-Pfad“
+  Entwurf für Fallstudie 2 (HOLY), Stand 30.10.2026. Bühne 1920 × 1080.
+  Leitmotiv: EIN Pfad in HOLY-Gelb mit schwarzer Kontur (wie das gelbe Oval mit
+  schwarzem Rand des Logos, Dossier Kap. 6.3) – im Dunkelmodus Gelb ohne Kontur.
+  Bilder sind PLATZHALTER (getönte Flächen mit Beschriftung): keine fremden Bilder,
+  kein Logo, kein Verpackungsdesign. Inhalte sind Hypothesen (Dossier Kap. 7.1/7.2).
+  Raster: 12 Spalten à 109,33 px, Rinne 32 px, Rand 128 px (wie „Der rote Faden“).
+  Tasten: ← → Schritte (0–3), D hell/dunkel. ?schritt=0 startet im Schritt 0.
+-->
+<style>
+/* ---------- Schriften (OFL, lokal) ---------- */
+@font-face {
+  font-family: "Bricolage Pfad";
+  src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/bricolage-grotesque-latin-standard-normal.woff2") format("woff2");
+  font-weight: 200 800; font-stretch: 75% 100%; font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bricolage Pfad";
+  src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/bricolage-grotesque-latin-ext-standard-normal.woff2") format("woff2");
+  font-weight: 200 800; font-stretch: 75% 100%; font-style: normal;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Franklin Pfad";
+  src: url("../../praesentation/schriften/libre-franklin-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Franklin Pfad";
+  src: url("../../praesentation/schriften/libre-franklin-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ---------- Farben (Kontraste: werkzeug kontrast.py, WCAG 2.x) ----------
+   hell:   Schwarz auf Creme 14,5 · Nebentext #5C5547 6,3 · Mittel #857C6B 3,5 (nur Grafik)
+           Nebel #CBC2B0 1,5 (nur Haarlinien ohne Information) · Schwarz auf Gelb 11,5
+           Schwarz auf Türkis 9,4 · auf Hellblau 11,1
+   dunkel: Creme auf Schwarz 14,5 · Nebentext #B9B0A0 7,9 · Mittel #857C6B 4,1 · Gelb 11,5 */
+:root, [data-modus="hell"] {
+  --papier: #F3EDE1;      /* HOLY-Creme (Web) */
+  --schrift: #1D1D1B;     /* HOLY-Schwarz */
+  --schrift-2: #5C5547;   /* warmes Schiefer: Nebentext, Quelle */
+  --mittel: #857C6B;      /* sekundäre Grafik */
+  --nebel: #CBC2B0;       /* Haarlinien, Raster */
+  --gelb: #FFD007;        /* HOLY-Gelb: der Pfad, die EINE Schlüsselaussage */
+  --pfad-kontur: #1D1D1B; /* Kontur des Pfads auf hellem Grund */
+  --knoten-grund: #1D1D1B;
+  --knoten-zahl: #FFD007;
+  --tuerkis: #8ECDC1;     /* HOLY-Web: Platzhalter „eigenes Foto“ */
+  --hellblau: #A4D9F6;    /* HOLY-Web: Platzhalter „Screenshot“ */
+  --auf-flaeche: #1D1D1B;
+  --marker-text: #1D1D1B;
+  --marker-grund: #FFD007;
+}
+[data-modus="dunkel"] {
+  --papier: #1D1D1B;
+  --schrift: #F3EDE1;
+  --schrift-2: #B9B0A0;
+  --mittel: #857C6B;
+  --nebel: #45413A;
+  --pfad-kontur: #1D1D1B;   /* unsichtbar auf Schwarz – Gelb trägt allein (11,5 : 1) */
+  --knoten-grund: #FFD007;
+  --knoten-zahl: #1D1D1B;
+  --marker-text: #FFD007;   /* Schlüsselaussage als gelbe Schrift */
+  --marker-grund: transparent;
+}
+
+/* ---------- Bühne ---------- */
+html, body { margin: 0; background: #0E0E0D; }
+.folie {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--papier); color: var(--schrift);
+  font-family: "Franklin Pfad", "Segoe UI", Arial, sans-serif;
+  font-kerning: normal; -webkit-font-smoothing: antialiased;
+}
+.abs { position: absolute; }
+
+/* Laufleiste: die fünf Schritte des Touchpoint-Managementprozesses (Stenger S. 111)
+   als Pfad im Kleinen; aktueller Schritt = Pfadstück Gelb mit Kontur */
+.lauf { position: absolute; left: 128px; top: 52px; width: 1560px; display: grid;
+  grid-template-columns: repeat(5, 1fr); column-gap: 8px; }
+.lauf-name { font-size: 22px; line-height: 1.2; color: var(--schrift-2); white-space: nowrap; }
+.lauf-name b { font-weight: 600; }
+.lauf-teil { margin-top: 12px; height: 14px; display: flex; align-items: center; }
+.lauf-teil::before { content: ""; display: block; width: 100%; height: 2px; background: var(--nebel); }
+.lauf-teil.erledigt::before { background: var(--schrift-2); }
+.lauf-teil.aktuell::before { height: 10px; background: var(--gelb); box-shadow: 0 0 0 2px var(--pfad-kontur); border-radius: 5px; }
+.lauf-zelle.aktuell .lauf-name { color: var(--schrift); font-weight: 600; }
+.nummer { position: absolute; right: 128px; top: 46px; font-family: "Bricolage Pfad"; font-size: 34px;
+  font-weight: 700; font-stretch: 85%; font-variant-numeric: tabular-nums; }
+
+/* Titel = Kernaussage als Satz */
+.titel { position: absolute; left: 128px; top: 138px; margin: 0; max-width: 1400px;
+  font-family: "Bricolage Pfad"; font-weight: 750; font-stretch: 82%; font-size: 84px;
+  line-height: 1.0; letter-spacing: -0.012em; }
+.bezeichner { position: absolute; left: 128px; top: 240px; font-size: 24px; line-height: 1.25; color: var(--schrift-2); }
+
+/* Legende rechts in der Bezeichnerzeile */
+.legende { position: absolute; right: 128px; top: 240px; display: flex; align-items: center; gap: 14px;
+  font-size: 22px; color: var(--schrift-2); }
+.legende svg { display: block; }
+.legende .eintrag { display: flex; align-items: center; gap: 10px; }
+.legende .eintrag + .eintrag { margin-left: 18px; }
+
+/* Phasenköpfe */
+.phase { position: absolute; top: 296px; width: 250.67px; }
+.phase-name { font-size: 29px; font-weight: 600; line-height: 1.15; white-space: nowrap; }
+.phase-a { font-size: 22px; color: var(--schrift-2); margin-top: 4px; }
+.regel { position: absolute; left: 128px; width: 1664px; height: 2px; background: var(--schrift); }
+.trenner-v { position: absolute; width: 2px; background: var(--nebel); }
+.zeilenlinie { position: absolute; left: 128px; width: 1664px; height: 2px; background: var(--nebel); }
+.zeilenlinie.gruppe { background: var(--mittel); }
+
+/* Zeilen (Touchpoints nach Paid/Owned/Earned, Stenger S. 112/117) */
+.zeile { position: absolute; left: 128px; width: 250px; }
+.zeile-gruppe { font-size: 22px; color: var(--schrift-2); line-height: 1; margin-bottom: 6px; }
+.zeile-name { font-size: 28px; line-height: 1.1; white-space: nowrap; }
+
+/* Bildkacheln = Platzhalter für eigene Fotos und Screenshots */
+.kachel { position: absolute; width: 200px; height: 112px; box-sizing: border-box; z-index: 2;
+  color: var(--auf-flaeche); font-size: 22px; line-height: 1.15; padding: 12px 14px; }
+.kachel.foto { background:
+  repeating-linear-gradient(135deg, rgba(29,29,27,.07) 0 2px, transparent 2px 14px), var(--tuerkis); }
+.kachel.screen { background: var(--hellblau); padding-top: 30px; }
+.kachel.screen::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 18px;
+  background: rgba(29,29,27,.16); }
+.kachel.screen::after { content: ""; position: absolute; left: 10px; top: 6px; width: 6px; height: 6px; border-radius: 50%;
+  background: #1D1D1B; box-shadow: 11px 0 0 #1D1D1B, 22px 0 0 #1D1D1B; opacity: .55; }
+.kachel .art { display: block; font-weight: 600; }
+.kachel.leer { background: var(--papier); border: 3px dashed var(--schrift); color: var(--schrift);
+  display: flex; flex-direction: column; justify-content: center; padding: 10px 16px; }
+.kachel.leer .gross { font-size: 28px; font-weight: 600; line-height: 1.1; }
+.kachel.leer .klein { font-size: 22px; color: var(--schrift-2); margin-top: 4px; }
+.tp { position: absolute; z-index: 2; font-size: 28px; font-weight: 600; line-height: 1.1; white-space: nowrap; }
+
+/* Momente der Wahrheit (Stenger S. 109/110) */
+.knoten { position: absolute; z-index: 4; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%;
+  background: var(--knoten-grund); color: var(--knoten-zahl); display: grid; place-items: center;
+  font-family: "Bricolage Pfad"; font-weight: 800; font-size: 32px; line-height: 1; font-stretch: 85%; }
+.moment { position: absolute; z-index: 3; background: var(--papier); padding: 6px 12px; }
+.moment .satz { font-family: "Bricolage Pfad"; font-weight: 700; font-stretch: 86%; font-size: 36px; white-space: nowrap; line-height: 1.08; }
+.moment .beleg { font-size: 26px; max-width: 560px; line-height: 1.2; color: var(--schrift-2); margin-top: 8px; }
+.marker { color: var(--marker-text);
+  background: linear-gradient(transparent 52%, var(--marker-grund) 52%, var(--marker-grund) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 4px; margin: 0 -4px; }
+
+.quelle { position: absolute; left: 128px; bottom: 44px; font-size: 22px; line-height: 1.3; color: var(--schrift-2); }
+
+/* Pfad (SVG über die ganze Bühne, hinter den Kacheln) */
+svg.pfad { position: absolute; left: 0; top: 0; z-index: 1; overflow: visible; pointer-events: none; }
+.pfad .kontur { fill: none; stroke: var(--pfad-kontur); stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; }
+.pfad .gelb { fill: none; stroke: var(--gelb); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+[data-modus="dunkel"] .pfad .kontur { stroke-width: 14; }
+
+/* Aufbau in Schritten */
+[data-s] { transition: opacity 360ms cubic-bezier(.2,.7,.2,1); }
+.pfad [data-s] { transition: stroke-dashoffset 900ms cubic-bezier(.4,0,.2,1), opacity 200ms; }
+.verdeckt { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { [data-s], .pfad [data-s] { transition: none !important; } }
+</style>
+</head>
+<body>
+<section class="folie" id="f05" data-titel="Customer-Journey-Map" data-zeit="120">
+
+  <!-- Laufleiste -->
+  <div class="lauf" aria-label="Touchpoint-Managementprozess nach Esch et al. 2016 (Stenger S. 111)">
+    <div class="lauf-zelle"><div class="lauf-name">1 Transparenz</div><div class="lauf-teil erledigt"></div></div>
+    <div class="lauf-zelle aktuell"><div class="lauf-name">2 Kundenperspektive</div><div class="lauf-teil aktuell"></div></div>
+    <div class="lauf-zelle"><div class="lauf-name">3 Erlebnis entwickeln</div><div class="lauf-teil"></div></div>
+    <div class="lauf-zelle"><div class="lauf-name">4 Erlebnis verbessern</div><div class="lauf-teil"></div></div>
+    <div class="lauf-zelle"><div class="lauf-name">5 Mittel einsetzen</div><div class="lauf-teil"></div></div>
+  </div>
+  <div class="nummer">05</div>
+
+  <h1 class="titel">Marcos Weg zu HOLY hat zwei Lücken</h1>
+  <div class="bezeichner">Persona Marco, nachgegangen im Selbstversuch: online und im Supermarkt</div>
+  <div class="legende" aria-hidden="true">
+    <span class="eintrag"><svg width="56" height="22" viewBox="0 0 56 22"><path class="lg-k" d="M11 11 H45" stroke-width="22" stroke-linecap="round"/><path class="lg-g" d="M11 11 H45" stroke-width="14" stroke-linecap="round"/></svg>Weg</span>
+    <span class="eintrag"><span style="display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--knoten-grund);color:var(--knoten-zahl);font:800 22px/1 'Bricolage Pfad'">1</span>Moment der Wahrheit</span>
+  </div>
+
+  <div id="karte"></div>
+
+  <div class="quelle">Phasen und 5 As: Stenger S. 108–110 · Befunde: Dossier Kap. 7.1–7.2, Brüche als Hypothese · Bilder: eigene Fotos und Screenshots (Platzhalter)</div>
+</section>
+
+<script>
+/* ---------- Daten der Karte ---------- */
+const RAND = 128, SP = 109.333, RINNE = 32;
+const sx = n => RAND + (n - 1) * (SP + RINNE);          // linke Kante von Spalte n
+const PHASE_X = k => sx(3 + (k - 1) * 2);                 // Phase k belegt 2 Spalten ab Spalte 3
+const PHASE_B = 2 * SP + RINNE;                           // 250,67 px
+const KOPF_Y = 296, REGEL_Y = 378, Z0 = 452, ZH = 88;     // Zeilenmitte r = Z0 + (r-1)·ZH
+const zy = r => Z0 + (r - 1) * ZH;
+const KW = 200, KH = 112;
+
+const phasen = [
+  ['Inspiration', 'Aware'], ['Recherche', 'Appeal'], ['Entscheidung', 'Assure'], ['Kauf', 'Act'], ['Bindung', 'Advocate']
+];
+const zeilen = [
+  { name: 'Creator & Spots', gruppe: 'Paid' },
+  { name: 'Regal & Display' },
+  { name: 'Website & Shop', gruppe: 'Owned' },
+  { name: 'Paket & Dose' },
+  { name: 'Community' },
+  { name: 'Suche & Tests', gruppe: 'Earned' }
+];
+/* Kacheln: Phase, Zeile, Art, Platzhaltertext, Touchpoint, Aufbauschritt */
+const kacheln = [
+  { id: 'k1', p: 1, r: 1, art: 'screen', t1: 'Screenshot', t2: 'Creator-Video · Freigabe offen', tp: 'Creator-Code', s: 0 },
+  { id: 'k2', p: 2, r: 6, art: 'screen', t1: 'Screenshot', t2: 'eigene Suche „Holy Energy“', tp: 'Google-Suche', s: 1 },
+  { id: 'kl', p: 2, r: 3, art: 'leer', s: 1 },
+  { id: 'k3', p: 3, r: 3, art: 'screen', t1: 'Screenshot', t2: 'Starter Set · Freigabe offen', tp: 'Starter Set', s: 2 },
+  { id: 'k4', p: 4, r: 2, art: 'foto', t1: 'Foto', t2: 'Selbstversuch Supermarkt', tp: 'Regal', s: 2 },
+  { id: 'k5', p: 4, r: 4, art: 'foto', t1: 'Foto', t2: 'Selbstversuch Unboxing', tp: 'Unboxing', s: 2 },
+  { id: 'k6', p: 5, r: 5, art: 'screen', t1: 'Screenshot', t2: 'Rewards-Anmeldung', tp: 'Squad Rewards', s: 3 }
+];
+const mitte = id => { const k = kacheln.find(x => x.id === id); return [PHASE_X(k.p) + PHASE_B / 2, zy(k.r)]; };
+
+/* ---------- Aufbau ---------- */
+const karte = document.getElementById('karte');
+const el = (tag, cls, css, html, s) => { const e = document.createElement(tag); if (cls) e.className = cls;
+  Object.assign(e.style, css || {}); if (html != null) e.innerHTML = html; if (s != null) e.dataset.s = s; karte.appendChild(e); return e; };
+
+phasen.forEach(([n, a], i) => el('div', 'phase', { left: PHASE_X(i + 1) + 'px' }, `<div class="phase-name">${n}</div><div class="phase-a">${a}</div>`));
+el('div', 'regel', { top: REGEL_Y + 'px' });
+const unten = zy(6) + ZH / 2;
+for (let k = 1; k < 5; k++) el('div', 'trenner-v', { left: (PHASE_X(k + 1) - RINNE / 2 - 1) + 'px', top: REGEL_Y + 2 + 'px', height: (unten - REGEL_Y - 2) + 'px' });
+zeilen.forEach((z, i) => {
+  if (i > 0) el('div', 'zeilenlinie' + (z.gruppe ? ' gruppe' : ''), { top: (zy(i + 1) - ZH / 2 - 1) + 'px' });
+  const e = el('div', 'zeile', {}, (z.gruppe ? `<div class="zeile-gruppe">${z.gruppe}</div>` : '') + `<div class="zeile-name">${z.name}</div>`);
+  e.style.top = (zy(i + 1) - (z.gruppe ? 30 : 15)) + 'px';
+});
+el('div', 'zeilenlinie', { top: (unten - 1) + 'px' });
+
+kacheln.forEach(k => {
+  const x = PHASE_X(k.p) + (PHASE_B - KW) / 2, y = zy(k.r) - KH / 2;
+  if (k.art === 'leer') {
+    el('div', 'kachel leer', { left: x + 'px', top: y + 'px' }, '<span class="gross">Blog fehlt</span>', k.s);
+    return;
+  }
+  el('div', 'kachel ' + k.art, { left: x + 'px', top: y + 'px' }, `<span class="art">${k.t1}</span>${k.t2}`, k.s);
+  el('div', 'tp', { left: x + 'px', top: (y + KH + 8) + 'px' }, k.tp, k.s);
+});
+
+/* Pfad: Linienplan-Stil – waagerecht in der Zeile, senkrecht in der Rinne, Ecken mit Radius */
+const NS = 'http://www.w3.org/2000/svg';
+const svg = document.createElementNS(NS, 'svg');
+svg.setAttribute('class', 'pfad'); svg.setAttribute('width', 1920); svg.setAttribute('height', 1080);
+document.querySelector('.folie').appendChild(svg);
+const RAD = 34;
+/* Polylinie aus waagerechten/senkrechten Stücken → SVG-Pfad mit gerundeten Ecken */
+const linie = pts => {
+  let d = `M ${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 1; i < pts.length - 1; i++) {
+    const [ax, ay] = pts[i - 1], [bx, by] = pts[i], [cx, cy] = pts[i + 1];
+    const l1 = Math.hypot(bx - ax, by - ay), l2 = Math.hypot(cx - bx, cy - by), r = Math.min(RAD, l1 / 2, l2 / 2);
+    const p1 = [bx - (bx - ax) / l1 * r, by - (by - ay) / l1 * r], p2 = [bx + (cx - bx) / l2 * r, by + (cy - by) / l2 * r];
+    d += ` L ${p1[0]} ${p1[1]} Q ${bx} ${by} ${p2[0]} ${p2[1]}`;
+  }
+  const z = pts[pts.length - 1]; return d + ` L ${z[0]} ${z[1]}`;
+};
+const [x1, y1] = mitte('k1'), [x2, y2] = mitte('k2'), [x3, y3] = mitte('k3'), [x4, y4] = mitte('k4'), [x5, y5] = mitte('k5'), [x6, y6] = mitte('k6');
+const rinne = k => PHASE_X(k) - RINNE / 2;               /* Mitte der Rinne vor Phase k */
+const g2 = rinne(2), g3 = rinne(3), g4 = rinne(4), g5 = rinne(5);
+const stuecke = [
+  { s: 1, d: linie([[x1, y1], [g2, y1], [g2, y2], [x2, y2]]) },
+  { s: 2, d: linie([[x2, y2], [g3, y2], [g3, y3], [x3, y3]]) },
+  { s: 2, d: linie([[x3, y3], [g4, y3], [g4, y4], [x4, y4]]) },
+  { s: 2, d: linie([[x3, y3], [g4, y3], [g4, y5], [x5, y5]]) },
+  /* Bruch: vom Regal offenes Ende mit zwei Resten */
+  { s: 3, d: `M ${x4} ${y4} L ${g5} ${y4}` },
+  { s: 3, d: `M ${g5 + 20} ${y4} L ${g5 + 32} ${y4}` },
+  { s: 3, d: `M ${g5 + 48} ${y4} L ${g5 + 50} ${y4}` },
+  /* online: weiter in den Squad und über den Rand hinaus */
+  { s: 3, d: linie([[x5, y5], [g5, y5], [g5, y6], [1950, y6]]) }
+];
+['kontur', 'gelb'].forEach(cls => stuecke.forEach(st => {
+  const p = document.createElementNS(NS, 'path'); p.setAttribute('d', st.d); p.setAttribute('class', cls); p.dataset.s = st.s; svg.appendChild(p);
+}));
+
+/* Momente der Wahrheit */
+const knoten = (zahl, x, y, s) => el('div', 'knoten', { left: x + 'px', top: y + 'px' }, String(zahl), s);
+knoten(1, g3, y2, 1);
+el('div', 'moment', { left: (PHASE_X(3) + 12) + 'px', top: (y2 - 26) + 'px' },
+  '<div class="satz"><span class="marker">Die Deutung übernehmen Dritte</span></div><div class="beleg">Warnungen stehen in der Suche weit oben</div>', 1);
+knoten(2, g5 + 86, y4, 3);
+el('div', 'moment', { left: (PHASE_X(4) + 13) + 'px', top: (REGEL_Y + 12) + 'px', width: '520px' },
+  '<div class="satz">Vom Regal kein Weg in den Squad</div><div class="beleg">kein Store-Locator, Cashback mit IBAN</div>', 3);
+
+/* Schritte */
+let schritt = 3;
+const q = new URLSearchParams(location.search).get('schritt'); if (q != null) schritt = Math.max(0, Math.min(3, +q));
+const zeige = () => {
+  document.querySelectorAll('[data-s]').forEach(e => {
+    const an = +e.dataset.s <= schritt;
+    if (e.tagName === 'path') {
+      const L = e.getTotalLength(); e.style.strokeDasharray = L + 1; e.style.strokeDashoffset = an ? 0 : L + 1;
+    } else e.classList.toggle('verdeckt', !an);
+  });
+};
+zeige();
+addEventListener('keydown', ev => {
+  if (ev.key === 'ArrowRight' || ev.key === ' ') { schritt = Math.min(3, schritt + 1); zeige(); }
+  if (ev.key === 'ArrowLeft') { schritt = Math.max(0, schritt - 1); zeige(); }
+  if (ev.key === 'd' || ev.key === 'D') { const h = document.documentElement; h.dataset.modus = h.dataset.modus === 'dunkel' ? 'hell' : 'dunkel'; }
+});
+/* Legende einfärben */
+document.querySelectorAll('.lg-k').forEach(p => { p.style.stroke = 'var(--pfad-kontur)'; p.style.fill = 'none'; });
+document.querySelectorAll('.lg-g').forEach(p => { p.style.stroke = 'var(--gelb)'; p.style.fill = 'none'; });
+</script>
+</body>
+</html>

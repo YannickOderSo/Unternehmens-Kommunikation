@@ -12,7 +12,7 @@ Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiser
 | # | Fallstudie | Präsentation | Ordner |
 |---|------------|--------------|--------|
 | 1 | Brand Persona & Markenidentität | Di, 27.10.2026 (bis 24.10. geplant: Mo, 26.10.) | [`fallstudie-1-brand-persona/`](fallstudie-1-brand-persona/) · [Arbeitsplan](fallstudie-1-brand-persona/arbeitsplan.md) |
-| 2 | Customer Journey & Blog-Beitrag | Mo, 09.11.2026 | – |
+| 2 | Customer Journey & Blog-Beitrag | Mo, 09.11.2026 | [`fallstudie-2-customer-journey/`](fallstudie-2-customer-journey/) · [Gestaltungsplan](fallstudie-2-customer-journey/gestaltungsplan.md) |
 | 3 | Instagram-Post & Eye-Tracking | Mo, 16.11.2026 | – |
 
 - Gruppen zu 3 oder 4 Personen

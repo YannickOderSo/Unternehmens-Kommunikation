@@ -1,0 +1,316 @@
+<!doctype html>
+<!-- Kopie der Musterfolie (Richtung „Die Reise von Marco“) für den Gestaltungsplan FS2, 30.10.2026. Schriftpfade relativ zum Repository (fallstudie-1-brand-persona/praesentation/schriften/). Verbindlich ist das PNG. -->
+
+<html lang="de" data-modus="dunkel" data-schritt="4">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Musterfolie Journey-Map</title>
+<!--
+  Musterfolie „Die Reise von Marco – Fotostrecke“ · Fallstudie 2 (Customer Journey & Blog-Beitrag)
+  Entwurf vom 30.10.2026. Eigenständige Datei, Bühne 1920 × 1080.
+  Inhalte sind Platzhalter bzw. Hypothesen (Dossier Kap. 7.1/7.2); Fotos und Screenshots sind Platzhalterflächen.
+  Tasten: → / ← Schritt vor/zurück (0–4) · D hell/dunkel. Adresse: journey.html?modus=hell#2
+  Schriften: SIL Open Font License 1.1, lokal aus dem FS1-Ordner schriften/ (HERKUNFT.txt dort).
+-->
+<style>
+@font-face { font-family: "Bricolage Reise"; src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/bricolage-grotesque-latin-standard-normal.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Bricolage Reise"; src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/bricolage-grotesque-latin-ext-standard-normal.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Inter Reise"; src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/inter-latin-opsz-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter Reise"; src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/inter-latin-ext-opsz-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Fraunces Reise"; src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/fraunces-latin-full-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Fraunces Reise"; src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/fraunces-latin-ext-full-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* ---------------------------------------------------------------------------
+   FARBEN (Kontraste per WCAG-Formel berechnet, Skript fs2-arbeit/reise/kontrast.py)
+   Nacht = Bühne für Fotos und Geschichte · Papier = Analyse · Gelb nie als
+   Linie oder Schrift auf Creme (1,26 : 1), nur als Fläche unter Schwarz.
+   --------------------------------------------------------------------------- */
+:root {
+  --holy-gelb: #FFD007;      /* HOLY-Gelb, unverändert (Dossier 6.3 ✔ [1]) */
+  --holy-schwarz: #1D1D1B;   /* HOLY-Schwarz */
+  --holy-creme: #F3EDE1;     /* HOLY-Creme */
+  --schrift-titel: "Bricolage Reise", "Arial Narrow", sans-serif;
+  --schrift-text: "Inter Reise", "Segoe UI", Arial, sans-serif;
+  --schrift-stimme: "Fraunces Reise", Georgia, serif;   /* nur Marcos Stimme */
+}
+html[data-modus="dunkel"] {
+  --grund: #1D1D1B;          /* Schwarz */
+  --schrift: #F3EDE1;        /* Creme 14,48 : 1 */
+  --schrift-2: #B5AE9F;      /* Nebentext 7,65 : 1 */
+  --mittel: #8C877C;         /* Grafik zweiter Rang 4,72 : 1 */
+  --haar: #46443F;           /* nur Deko-Linien 1,74 : 1 */
+  --platz: #34332F;          /* Platzhalterfläche; Nebentext darauf 5,73 : 1 */
+  --route: #FFD007;          /* Gelb auf Schwarz 11,48 : 1 */
+  --route-kern: transparent;
+  --station-innen: #1D1D1B;
+  --akzent-text: #FFD007;    /* die EINE Schlüsselaussage */
+  --akzent-grund: transparent;
+}
+html[data-modus="hell"] {
+  --grund: #F3EDE1;          /* Creme */
+  --schrift: #1D1D1B;        /* Schwarz 14,48 : 1 */
+  --schrift-2: #5C564C;      /* Nebentext 6,23 : 1 */
+  --mittel: #8A8377;         /* Grafik zweiter Rang 3,22 : 1 */
+  --haar: #D2C9B8;           /* nur Deko */
+  --platz: #DDD4C3;          /* Platzhalterfläche; Nebentext darauf 4,94 : 1 */
+  --route: #FFD007;          /* gelbes Band = Fläche … */
+  --route-kern: #1D1D1B;     /* … die Information trägt der schwarze Kern (14,48 : 1) */
+  --station-innen: #F3EDE1;
+  --akzent-text: #1D1D1B;    /* Schwarz auf Gelb-Marker 11,48 : 1 */
+  --akzent-grund: #FFD007;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--grund); }
+body { color: var(--schrift); font-family: var(--schrift-text); font-size: 30px; line-height: 1.3;
+       font-feature-settings: "kern" 1; -webkit-font-smoothing: antialiased; }
+.buehne { position: relative; width: 1920px; height: 1080px; background: var(--grund); }
+.abs { position: absolute; }
+
+/* ---------- Kopf: Laufleiste = Prozess nach Stenger S. 111 als Route ---------- */
+.kopf-marke { left: 96px; top: 52px; font-size: 22px; font-weight: 600; color: var(--schrift-2); letter-spacing: 0; }
+.kopf-marke b { color: var(--schrift); font-weight: 700; }
+.lauf { left: 780px; top: 46px; width: 960px; height: 60px; }
+.lauf-name { position: absolute; top: 0; font-size: 22px; line-height: 1.2; color: var(--schrift-2); white-space: nowrap; transform: translateX(-50%); }
+.lauf-name.ist-aktuell { color: var(--schrift); font-weight: 650; }
+.nummer { right: 96px; top: 44px; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 700; font-size: 40px; line-height: 1; }
+
+/* ---------- Titel = Kernaussage ---------- */
+.titel { left: 96px; top: 118px; width: 1500px; font-family: var(--schrift-titel); font-stretch: 75%;
+         font-weight: 800; font-size: 92px; line-height: 1; letter-spacing: -0.005em; }
+.titel .schluessel { color: var(--akzent-text); background: linear-gradient(to bottom, transparent 14%, var(--akzent-grund) 14%, var(--akzent-grund) 86%, transparent 86%);
+         padding: 0 0.06em; margin: 0 -0.06em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.herleitung { left: 96px; top: 228px; font-size: 24px; color: var(--schrift-2); }
+.herleitung b { color: var(--schrift); font-weight: 600; }
+
+/* ---------- Phasen (Stenger S. 108) mit 5 As (S. 109) ---------- */
+.phase { top: 282px; width: 268px; border-top: 2px solid var(--haar); padding-top: 14px; }
+.phase-name { font-family: var(--schrift-titel); font-stretch: 85%; font-weight: 700; font-size: 34px; line-height: 1.05; }
+.phase-name .nr { color: var(--schrift-2); font-weight: 600; margin-right: 10px; }
+.phase-as { font-size: 22px; color: var(--schrift-2); margin-top: 6px; }
+
+/* ---------- Bänder Digital / Offline (Stenger S. 116) ---------- */
+.band { left: 96px; width: 250px; }
+.band-name { font-family: var(--schrift-titel); font-stretch: 85%; font-weight: 700; font-size: 34px; line-height: 1.05; }
+.band-kanaele { font-size: 22px; color: var(--schrift-2); margin-top: 6px; line-height: 1.3; }
+.erzaehler { left: 96px; top: 630px; width: 250px; }
+.erzaehler .wer { font-family: var(--schrift-stimme); font-style: italic; font-weight: 500;
+                  font-variation-settings: "opsz" 36, "WONK" 0, "SOFT" 0; font-size: 32px; line-height: 1.05; }
+.erzaehler .info { font-size: 22px; color: var(--schrift-2); margin-top: 4px; }
+
+/* ---------- Fotokacheln (Platzhalter) ---------- */
+.kachel { width: 268px; }
+.foto { position: relative; width: 268px; height: 160px; background: var(--platz); overflow: hidden;
+        display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px 26px; }
+/* Suchermarken in den Ecken = „hier kommt ein echtes Foto“ */
+.foto::before, .foto::after { content: ""; position: absolute; width: 20px; height: 20px; border-color: var(--schrift-2); border-style: solid; opacity: 0.9; }
+.foto::before { left: 10px; top: 10px; border-width: 2px 0 0 2px; }
+.foto::after { right: 10px; bottom: 10px; border-width: 0 2px 2px 0; }
+.foto span { font-size: 22px; line-height: 1.25; color: var(--schrift-2); }
+.beschriftung .was { font-size: 26px; font-weight: 600; line-height: 1.15; }
+.beschriftung .wo { font-size: 22px; color: var(--schrift-2); margin-top: 4px; line-height: 1.2; }
+.kachel.digital .beschriftung { height: 72px; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 12px; }
+.kachel.offline .beschriftung { margin-top: 12px; }
+
+/* ---------- Brüche: Marco erzählt, wir belegen ---------- */
+.bruch { width: 268px; }
+.bruch-kopf { display: flex; align-items: center; gap: 14px; }
+.bruch-marke { font-size: 22px; color: var(--schrift-2); line-height: 1.2; }
+.bruch .titelzeile { font-size: 26px; font-weight: 650; line-height: 1.15; margin-top: 4px; }
+.zitat { font-family: var(--schrift-stimme); font-style: italic; font-weight: 450;
+         font-variation-settings: "opsz" 30, "WONK" 0, "SOFT" 0; font-size: 30px; line-height: 1.18; margin-top: 14px; }
+.zitat-wer { font-size: 22px; color: var(--schrift-2); margin-top: 6px; }
+.beleg { font-size: 22px; color: var(--schrift-2); margin-top: 12px; line-height: 1.3; }
+.scheibe { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--holy-gelb);
+           color: var(--holy-schwarz); display: grid; place-items: center;
+           font-family: var(--schrift-titel); font-stretch: 85%; font-weight: 800; font-size: 30px; line-height: 1; }
+html[data-modus="hell"] .scheibe { box-shadow: 0 0 0 3px var(--holy-schwarz); }
+.scheibe.auf-route { position: absolute; transform: translate(-50%, -50%); z-index: 3; }
+
+.fuss { left: 96px; top: 1018px; width: 1728px; font-size: 22px; color: var(--schrift-2); }
+
+/* ---------- Route (SVG) ---------- */
+svg.route { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 0; overflow: visible; }
+.kachel, .bruch, .bedarf, .phase, .band, .erzaehler { z-index: 1; }
+.r-band { fill: none; stroke: var(--route); stroke-linecap: butt; stroke-linejoin: round; }
+.r-kern { fill: none; stroke: var(--route-kern); stroke-linecap: butt; stroke-linejoin: round; }
+.r-band.ende, .r-kern.ende { stroke-linecap: round; }
+html[data-modus="hell"] .r-band { stroke-width: 20px; }
+html[data-modus="hell"] .r-kern { stroke-width: 5px; }
+.r-fehlt { fill: none; stroke: var(--mittel); stroke-width: 7; stroke-dasharray: 1 15; stroke-linecap: round; }
+.r-stamm { fill: none; stroke: var(--route); stroke-width: 6; }
+html[data-modus="hell"] .r-stamm { stroke: var(--holy-schwarz); stroke-width: 4; }
+.station { fill: var(--station-innen); stroke: var(--route); stroke-width: 6; }
+html[data-modus="hell"] .station { stroke: var(--holy-schwarz); stroke-width: 4; }
+.ziel-ring { fill: none; stroke: var(--route); stroke-width: 5; }
+html[data-modus="hell"] .ziel-ring { stroke: var(--holy-schwarz); stroke-width: 4; }
+.lauf-linie { stroke: var(--haar); stroke-width: 2; }
+.lauf-linie.erledigt { stroke: var(--schrift-2); }
+.lauf-punkt { fill: var(--grund); stroke: var(--schrift-2); stroke-width: 3; }
+.lauf-punkt.ist-aktuell { fill: var(--holy-gelb); stroke: var(--holy-gelb); }
+html[data-modus="hell"] .lauf-punkt.ist-aktuell { stroke: var(--holy-schwarz); }
+.weg-name { font-family: var(--schrift-text); font-size: 22px; fill: var(--schrift-2); }
+
+/* ---------- Schrittweiser Aufbau (4 Klicks) ---------- */
+[data-s] { transition: opacity 420ms cubic-bezier(0.22, 0.61, 0.36, 1); }
+html[data-schritt="0"] [data-s="1"], html[data-schritt="0"] [data-s="2"], html[data-schritt="0"] [data-s="3"], html[data-schritt="0"] [data-s="4"],
+html[data-schritt="1"] [data-s="2"], html[data-schritt="1"] [data-s="3"], html[data-schritt="1"] [data-s="4"],
+html[data-schritt="2"] [data-s="3"], html[data-schritt="2"] [data-s="4"],
+html[data-schritt="3"] [data-s="4"] { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { [data-s] { transition: none; } }
+</style>
+</head>
+<body>
+<main class="buehne" aria-label="Customer-Journey-Map: Marcos Weg zu HOLY in fünf Phasen">
+
+  <!-- Kopf -->
+  <div class="abs kopf-marke"><b>HOLY</b> · Customer Journey</div>
+  <div class="abs lauf" aria-label="Vorgehen nach Stenger S. 111, Schritt 2 von 5">
+    <svg width="960" height="60" style="position:absolute;left:0;top:0;overflow:visible" aria-hidden="true">
+      <line class="lauf-linie erledigt" x1="70" y1="44" x2="270" y2="44"/>
+      <line class="lauf-linie" x1="270" y1="44" x2="890" y2="44"/>
+      <circle class="lauf-punkt" cx="70" cy="44" r="7"/>
+      <circle class="lauf-punkt ist-aktuell" cx="270" cy="44" r="10"/>
+      <circle class="lauf-punkt" cx="480" cy="44" r="7"/>
+      <circle class="lauf-punkt" cx="690" cy="44" r="7"/>
+      <circle class="lauf-punkt" cx="890" cy="44" r="7"/>
+    </svg>
+    <span class="lauf-name" style="left:70px">Transparenz</span>
+    <span class="lauf-name ist-aktuell" style="left:270px">Kundensicht</span>
+    <span class="lauf-name" style="left:480px">Entwickeln</span>
+    <span class="lauf-name" style="left:690px">Verbessern</span>
+    <span class="lauf-name" style="left:890px">Mittel einsetzen</span>
+  </div>
+  <div class="abs nummer">04</div>
+
+  <!-- Titel und Herleitung -->
+  <h1 class="abs titel"><span class="schluessel">Zweimal</span> verliert HOLY Marco unterwegs</h1>
+  <p class="abs herleitung"><b>So kommen wir darauf:</b> Selbstversuch online und im Supermarkt, jede Station fotografiert (geplant 31.10.–04.11.2026)</p>
+
+  <!-- Phasen -->
+  <div class="abs phase" style="left:388px"><div class="phase-name"><span class="nr">1</span>Inspiration</div><div class="phase-as">Aware</div></div>
+  <div class="abs phase" style="left:680px"><div class="phase-name"><span class="nr">2</span>Recherche</div><div class="phase-as">Appeal</div></div>
+  <div class="abs phase" style="left:972px"><div class="phase-name"><span class="nr">3</span>Entscheidung</div><div class="phase-as">Assure</div></div>
+  <div class="abs phase" style="left:1264px"><div class="phase-name"><span class="nr">4</span>Kauf</div><div class="phase-as">Act</div></div>
+  <div class="abs phase" style="left:1556px"><div class="phase-name"><span class="nr">5</span>Bindung</div><div class="phase-as">Advocate</div></div>
+
+  <!-- Bänder -->
+  <div class="abs band" style="top:470px"><div class="band-name">Digital</div><div class="band-kanaele">Suche, Shop, Community</div></div>
+  <div class="abs erzaehler"><div class="wer">Marcos Weg</div><div class="info">Persona, fiktiv</div></div>
+  <div class="abs band" style="top:742px"><div class="band-name">Offline</div><div class="band-kanaele">Kollegen, Supermarkt</div></div>
+
+  <!-- Route -->
+  <svg class="route" viewBox="0 0 1920 1080" aria-hidden="true">
+    <!-- Hauptweg bis zur Gabelung (Schritt 1 und 2) -->
+    <path data-s="1" class="r-band" stroke-width="12" d="M 380 656 H 960"/>
+    <path data-s="2" class="r-band" stroke-width="12" d="M 960 656 H 1398"/>
+    <!-- Webshop-Weg bis in den Squad (Schritt 3) -->
+    <path data-s="3" class="r-band" stroke-width="12" d="M 1398 656 H 1690"/>
+    <!-- Supermarkt-Weg: gabelt nach Phase 3, bricht vor Phase 5 ab -->
+    <path data-s="2" class="r-band ende" stroke-width="12" d="M 1150 656 C 1190 656 1196 698 1236 698 H 1500"/>
+    <!-- fehlende Verbindung Regal → Squad -->
+    <path data-s="3" class="r-fehlt" d="M 1590 698 C 1640 698 1650 656 1690 656"/>
+
+    <!-- Kern für den hellen Modus -->
+    <g class="kern">
+      <path data-s="1" class="r-kern" stroke-width="4" d="M 380 656 H 960"/>
+      <path data-s="2" class="r-kern" stroke-width="4" d="M 960 656 H 1398"/>
+      <path data-s="3" class="r-kern" stroke-width="4" d="M 1398 656 H 1690"/>
+      <path data-s="2" class="r-kern ende" stroke-width="4" d="M 1150 656 C 1190 656 1196 698 1236 698 H 1500"/>
+    </g>
+
+    <!-- Stämme zu den Kacheln -->
+    <line data-s="1" class="r-stamm" x1="522" y1="656" x2="522" y2="716"/>
+    <line data-s="1" class="r-stamm" x1="814" y1="656" x2="814" y2="636"/>
+    <line data-s="2" class="r-stamm" x1="1106" y1="656" x2="1106" y2="636"/>
+    <line data-s="2" class="r-stamm" x1="1398" y1="656" x2="1398" y2="636"/>
+    <line data-s="2" class="r-stamm" x1="1398" y1="698" x2="1398" y2="716"/>
+    <line data-s="3" class="r-stamm" x1="1690" y1="656" x2="1690" y2="636"/>
+
+    <!-- Start, Stationen, Ziel -->
+    <circle class="station" cx="380" cy="656" r="11"/>
+    <circle data-s="1" class="station" cx="522" cy="656" r="11"/>
+    <circle data-s="2" class="station" cx="1106" cy="656" r="11"/>
+    <circle data-s="2" class="station" cx="1398" cy="656" r="11"/>
+    <circle data-s="2" class="station" cx="1398" cy="698" r="11"/>
+    <circle data-s="3" class="station" cx="1690" cy="656" r="11"/>
+    <circle data-s="3" class="ziel-ring" cx="1690" cy="656" r="22"/>
+
+  </svg>
+
+  <!-- Bruch-Scheiben auf der Route -->
+  <div data-s="1" class="scheibe auf-route" style="left:814px;top:656px" aria-label="Bruch 1">1</div>
+  <div data-s="3" class="scheibe auf-route" style="left:1545px;top:698px" aria-label="Bruch 2">2</div>
+
+  <!-- Bedürfnis am Start (Problemerkennung, Stenger S. 108) – Marcos Stimme -->
+  <div data-s="1" class="abs bedarf" style="left:388px;top:478px;width:268px">
+    <p class="bruch-marke">Bedürfnis</p>
+    <p class="zitat" style="margin-top:6px">„Ohne Zucker durch die Nachtschicht.“</p>
+  </div>
+
+  <!-- Kacheln: digital (Beschriftung oben, Foto unten an der Route) -->
+  <div data-s="1" class="abs kachel digital" style="left:680px;top:392px">
+    <div class="beschriftung"><div class="was">Koffein gegoogelt</div><div class="wo">Earned · Suchmaschine</div></div>
+    <div class="foto"><span>Screenshot: eigene Suche</span></div>
+  </div>
+  <div data-s="2" class="abs kachel digital" style="left:972px;top:392px">
+    <div class="beschriftung"><div class="was">Bewertungen gelesen</div><div class="wo">Earned · Bewertungsportal</div></div>
+    <div class="foto"><span>Screenshot: Bewertungen, ohne Namen</span></div>
+  </div>
+  <div data-s="2" class="abs kachel digital" style="left:1264px;top:392px">
+    <div class="beschriftung"><div class="was">Probierbox bestellt</div><div class="wo">Owned · Webshop</div></div>
+    <div class="foto"><span>Foto: Selbstversuch Unboxing</span></div>
+  </div>
+  <div data-s="3" class="abs kachel digital" style="left:1556px;top:392px">
+    <div class="beschriftung"><div class="was">Im Squad angemeldet</div><div class="wo">Owned · Rewards</div></div>
+    <div class="foto"><span>Screenshot: Selbstversuch Anmeldung</span></div>
+  </div>
+
+  <!-- Kacheln: offline (Foto oben an der Route, Beschriftung unten) -->
+  <div data-s="1" class="abs kachel offline" style="left:388px;top:716px">
+    <div class="foto"><span>Foto: Selbstversuch Pausenraum</span></div>
+    <div class="beschriftung"><div class="was">Shaker beim Kollegen</div><div class="wo">Earned · Pausenraum</div></div>
+  </div>
+  <div data-s="2" class="abs kachel offline" style="left:1264px;top:716px">
+    <div class="foto"><span>Foto: Selbstversuch Supermarkt</span></div>
+    <div class="beschriftung"><div class="was">Dose aus dem Regal</div><div class="wo">Handel · Supermarkt</div></div>
+  </div>
+
+  <!-- Brüche -->
+  <div data-s="4" class="abs bruch" style="left:680px;top:722px;width:540px">
+    <p class="bruch-marke">Bruch 1 · Appeal</p>
+    <p class="titelzeile">Die Recherche gehört Dritten</p>
+    <p class="zitat">„Erst mal googeln, ob das Zeug okay ist.“</p>
+    <p class="zitat-wer">Marco (fiktiv)</p>
+    <p class="beleg">Oben stehen Warnungen Dritter, einen HOLY-Blog gibt es nicht.</p>
+  </div>
+  <div data-s="4" class="abs bruch" style="left:1556px;top:722px">
+    <p class="bruch-marke">Bruch 2 · Advocate</p>
+    <p class="titelzeile">Vom Regal kein Weg in den Squad</p>
+    <p class="zitat">„Gekauft. Und wie komm ich jetzt in den Squad?“</p>
+    <p class="zitat-wer">Marco (fiktiv)</p>
+  </div>
+
+  <p class="abs fuss">Bruch = verlorener Moment der Wahrheit (Stenger S. 109) · Phasen S. 108, Pfad wie S. 116 · Platzhalter für eigene Fotos · Belege: Dossier 7.2</p>
+</main>
+<script>
+(function () {
+  var html = document.documentElement;
+  var q = new URLSearchParams(location.search);
+  if (q.get('modus') === 'hell') html.dataset.modus = 'hell';
+  var h = parseInt(location.hash.slice(1), 10);
+  if (!isNaN(h)) html.dataset.schritt = String(Math.max(0, Math.min(4, h)));
+  document.addEventListener('keydown', function (e) {
+    var s = parseInt(html.dataset.schritt, 10);
+    if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].indexOf(e.key) >= 0) s = Math.min(4, s + 1);
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].indexOf(e.key) >= 0) s = Math.max(0, s - 1);
+    else if (e.key === 'd' || e.key === 'D') { html.dataset.modus = html.dataset.modus === 'hell' ? 'dunkel' : 'hell'; return; }
+    else return;
+    html.dataset.schritt = String(s);
+    history.replaceState(null, '', '#' + s);
+  });
+})();
+</script>
+</body>
+</html>
