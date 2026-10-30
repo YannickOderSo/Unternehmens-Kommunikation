@@ -30,6 +30,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 03 | 27.10.2026 | Yannick | „ja“: Vorbereitung als Beginn von Fallstudie 2 dokumentieren | – | diese Datei angelegt; `CLAUDE.md`, `README.md` angepasst |
 | 04 | 30.10.2026 | Yannick | Fallstudie 2 anfangen: Deep Research und Gestaltungsplan nach den neu festgelegten Regeln | D02 (Workflow) | läuft |
 | 05 | 30.10.2026 | Yannick | Erlaubnis, in dieses Repository zu pushen | – | Schreibzugriff eingerichtet; Nachweis begonnen |
+| 06 | 30.10.2026 | Yannick | „Versuch es noch einmal“: abgebrochene Schritte nach dem Nutzungslimit erneut starten | D03 (Workflow) | läuft |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -103,6 +104,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 06 – 30.10.2026 – Yannick
+
+> Versuch es noch einmal
+
+- **Anhänge:** keine. Gesendet, während Claude den Abbruch von D02 auswertete: Die Fortsetzung von D02 war bis auf
+  zwei Schritte fertig; diese zwei (Einarbeitung der Schlussprüfung ins Dossier, Schlussprüfung des Gestaltungsplans)
+  waren am Nutzungslimit gescheitert.
+- **Vorgehen Claude:** Zuerst die Fortsetzung von D02 wieder aufgenommen. Sie startete aber schon fertige Schritte
+  (Jury, Schlussprüfung des Dossiers) neu, statt sie aus dem Zwischenspeicher zu übernehmen, und hätte den fertigen
+  Gestaltungsplan überschreiben können; deshalb nach etwa einer Minute gestoppt (keine Datei geändert, per Vergleich
+  mit einer Sicherung geprüft). Festgestellt, dass der abgebrochene Korrektur-Agent das Dossier schon zu großen Teilen
+  korrigiert hatte (41 Änderungen), Anhang A.9 aber noch Platzhalter war. Dann einen schlanken Workflow D03 nur für die
+  zwei offenen Schritte gestartet; das fertige Prüfergebnis zum Dossier bekommt er als Datei.
+- **Dateien:** `ki-nachweis/workflows/2026-10-30_fs2-schlusspruefung-rest.js`
+- **Unteragenten:** D03
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -114,6 +132,7 @@ Auftrag (im Workflow-Skript).
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 27.10.2026 | 01 | Workflow „fs2-kritik-umsetzen“ (4 Unteragenten, einer mit Websuche) | Vorschläge, wie die Kritik an Fallstudie 1 in Fallstudie 2 umgesetzt wird: Bilder, Inhalt/Modelle, Zeit/Vortrag, „weniger nüchtern“ | 43 Vorschläge (Inhalt 10, Bilder 13, Zeit 9, Gestaltung 11) mit Quellen, offene Fragen an Prof. Stenger | Claude: drei Kernbefunde im Repository nachgeprüft |
 | D02 | 30.10.2026 | 04 | Workflow „fs2-recherche-gestaltung“ (27 Unteragenten, mit Websuche) | Recherche in 8 Bereichen mit je einer Gegenprüfung; 3 Gestaltungsrichtungen mit Musterfolie; 2 Jurys; Dossier und Gestaltungsplan; Schlussprüfung | läuft | – |
+| D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | läuft | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -140,6 +159,15 @@ Auftrag (im Workflow-Skript).
   (Bewertung nach Stenger, Machbarkeit bis 09.11.); danach Dossier und Gestaltungsplan, je mit Schlussprüfung und
   Einarbeitung. Alle Agenten mit Stengers Kommentaren im Wortlaut, den Regeln R1–R5 und der Pflicht zur Quellenangabe.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-10-30_fs2-recherche-gestaltung.js`](workflows/2026-10-30_fs2-recherche-gestaltung.js).
+- **Ergebnis:** *(läuft)*
+- **Wie Claude das Ergebnis geprüft hat:** *(folgt)*
+
+### D03 – 30.10.2026 – ausgelöst durch Prompt 06
+
+- **Art:** Workflow „fs2-schlusspruefung-rest“ mit 3 Unteragenten: (1) Korrekturen der Schlussprüfung ins Dossier
+  fertig einarbeiten, Anhang A.9 ausfüllen, Zählung und Quellennummern per Skript prüfen; (2) parallel Schlussprüfung
+  des Gestaltungsplans (nur lesend); (3) danach Einarbeitung dieser Befunde in den Gestaltungsplan.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-30_fs2-schlusspruefung-rest.js`](workflows/2026-10-30_fs2-schlusspruefung-rest.js).
 - **Ergebnis:** *(läuft)*
 - **Wie Claude das Ergebnis geprüft hat:** *(folgt)*
 
