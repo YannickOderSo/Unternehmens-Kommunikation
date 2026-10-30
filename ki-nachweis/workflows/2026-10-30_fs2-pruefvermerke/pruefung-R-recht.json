@@ -1,0 +1,471 @@
+{
+ "pruefungen": [
+  {
+   "id": "R01",
+   "status": "✔",
+   "geprueft_an": "HCVO konsolidiert 13.12.2014 über Cellar http://publications.europa.eu/resource/celex/02006R1924-20141213 (= https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R1924-20141213), Art. 1 Abs. 2; EuGH C-19/15 über http://publications.europa.eu/resource/celex/62015CJ0019, Rn. 29–32 und Tenor; Vorlesung Stenger S. 112, 117, 118 (stenger-mit-seite.txt, seite-118.png); abgerufen 30.10.2026",
+   "begruendung": "Art. 1 Abs. 2 ist wörtlich bestätigt. Rn. 29 ist wörtlich bestätigt („Mitteilungen in Form einer Lebensmittelwerbung …, die der unmittelbaren oder mittelbaren Förderung des Absatzes dieser Lebensmittel dienen“). Der Tenor (Geltung auch bei Mitteilungen nur an medizinische Fachkreise) und die Parteien (Verband Sozialer Wettbewerb e. V. gegen Innova Vital GmbH) stimmen ebenfalls. Dass die HCVO auf den Blog anzuwenden ist, bleibt richtig als H gekennzeichnet. Der Vorlesungsbezug ist ungenau: Stenger zeigt auf S. 117/118 „Content Marketing (Videos, Blogs, Bilder)“ in der Zeile Earned/Social Media unter Problemerkennung/Inspiration, auf S. 112 stehen „Blogs“ bei Earned Media. Die Einordnung „Owned, Recherche-Phase“ hat die Gruppe selbst getroffen und muss sie begründen (siehe R95). Keine Rechtsberatung."
+  },
+  {
+   "id": "R02",
+   "status": "✔",
+   "geprueft_an": "HCVO Art. 2 Abs. 2 Nr. 1, 4, 5 (http://publications.europa.eu/resource/celex/02006R1924-20141213), abgerufen 30.10.2026",
+   "begruendung": "Nr. 1 ist wörtlich bestätigt: „einschließlich Darstellungen durch Bilder, grafische Elemente oder Symbole in jeder Form“. Nr. 5 ist bestätigt (Zusammenhang „auch nur mittelbar“). Dass Icons eine Angabe sein können, ist eine plausible H und als solche gekennzeichnet."
+  },
+  {
+   "id": "R03",
+   "status": "✔",
+   "geprueft_an": "HCVO Art. 10 Abs. 1 und 3; https://de.holy.com/pages/listicle (per curl abgerufen 30.10.2026, Punkt 4)",
+   "begruendung": "Art. 10 Abs. 1 und 3 sind wörtlich bestätigt. Der Listicle-Satz ist am 30.10.2026 live: „Antioxidantien, Vitamine und Elektrolyte stärken dein Wohlbefinden mit jedem Schluck.“ Die Bewertung als unspezifischer Verweis ohne beigefügte Listenangabe ist korrekt als H gekennzeichnet. Keine Rechtsberatung."
+  },
+  {
+   "id": "R04",
+   "status": "✔",
+   "geprueft_an": "HCVO Art. 12 Buchst. a–c, Art. 13 Abs. 1 Buchst. c; https://de.holy.com/pages/listicle (Punkt 2), abgerufen 30.10.2026",
+   "begruendung": "Der Wortlaut von Art. 12 und Art. 13 Abs. 1 Buchst. c (schlank machende oder gewichtskontrollierende Eigenschaften, Sättigung) ist bestätigt. Der Satz „Viele unserer Kunden berichten sogar von spürbarem Gewichtsverlust.“ steht am 30.10.2026 unverändert auf der Seite."
+  },
+  {
+   "id": "R05",
+   "status": "✎",
+   "geprueft_an": "HCVO Art. 3 Satz 2 Buchst. a–e; https://www.gesetze-im-internet.de/nemv/__4.html (abgerufen 30.10.2026)",
+   "begruendung": "Art. 3 ist korrekt wiedergegeben. § 4 Abs. 4 NemV verbietet aber nur das, was Art. 3 Buchst. d regelt (ausgewogene Ernährung liefere nicht genug Nährstoffe), und nicht „dasselbe“ wie Art. 3 insgesamt. Die Formulierung ist deshalb präzisiert.",
+   "korrigierte_aussage": "Nach Art. 3 Satz 2 HCVO dürfen Angaben (a) nicht falsch, mehrdeutig oder irreführend sein, (b) keine Zweifel an Sicherheit oder ernährungsphysiologischer Eignung anderer Lebensmittel wecken, (c) nicht zum übermäßigen Verzehr ermutigen oder ihn wohlwollend darstellen, (d) nicht nahelegen, eine ausgewogene und abwechslungsreiche Ernährung liefere generell nicht die erforderlichen Nährstoffmengen, und (e) nicht auf Veränderungen bei Körperfunktionen Bezug nehmen, die Ängste auslösen oder ausnutzen könnten. Für Nahrungsergänzungsmittel wiederholt § 4 Abs. 4 NemV nur das Verbot aus Buchst. d. Es gilt ausdrücklich auch für Aufmachung und Werbung."
+  },
+  {
+   "id": "R06",
+   "status": "✔",
+   "geprueft_an": "HCVO Art. 5 Abs. 3 und Anhang (ZUCKERFREI, ENERGIEARM, ENERGIEFREI); Nährwerttabelle https://de.holy.com/cdn/shop/files/NE-0001_2.png (Bild angesehen); https://www.lebensmittelklarheit.de/informationen/das-steckt-hinter-werbeaussagen-zu-zucker (Stand 11.7.2023); abgerufen 30.10.2026",
+   "begruendung": "Art. 5 Abs. 3 ist wörtlich bestätigt. Die Schwellen stimmen: zuckerfrei höchstens 0,5 g/100 ml, energiearm höchstens 20 kcal/100 ml, energiefrei höchstens 4 kcal/100 ml, jeweils inkl. „dieselbe Bedeutung“. Die Tabelle nennt pro 500 ml (7 g) 18,7 kcal und 0,5 g Zucker, pro 100 ml 3,7 kcal und 0,1 g. Die Subsumtion (H) ist schlüssig. Die Zahlen gelten nur für Raspberry Raptor."
+  },
+  {
+   "id": "R07",
+   "status": "H",
+   "geprueft_an": "https://de.holy.com/search/suggest.json?q=milkshake&resources[type]=product; Vergleichsgrafik https://cdn.shopify.com/s/files/1/0473/2885/4173/files/us_20vs_20them_20milkshake_20de_luo7k2.webp?v=1791893055 (Bild angesehen); HCVO Art. 5 Abs. 3 und Anhang ENERGIEARM; abgerufen 30.10.2026",
+   "begruendung": "Die Fakten sind bestätigt. Die Shoptexte variieren leicht: Vanille „Kaum Kalorien & dafür voller Vitamine“, Banane „kaum Kalorien & voller Vitamine“, Erdbeere und Karamell „kaum Kalorien, aber dafür voller Vitamine“, jeweils „Einfach mit 300ml Milch mixen & genießen!“. Die Grafik nennt „15 g* pro 300 ml“ und „150 kcal* pro 300 ml“ mit „*Bei Zubereitung mit 1,5 % Milch“, also 50 kcal/100 ml. Das Starter-Set nennt „300ml Milch deiner Wahl“, der Brennwert hängt also von der Milch ab. Die Einschätzung bleibt eine Hypothese. Zu „voller Vitamine“ siehe R97. Keine Rechtsberatung."
+  },
+  {
+   "id": "R08",
+   "status": "✎",
+   "geprueft_an": "Nährwerttabelle https://de.holy.com/cdn/shop/files/NE-0001_2.png; LMIV Anhang XIII Teil A Nr. 2 (http://publications.europa.eu/resource/celex/02011R1169-20180101); VO 432/2012 Anhang und Erwägungsgrund 9 (http://publications.europa.eu/resource/celex/32012R0432); https://www.lebensmittelklarheit.de/news/gericht-verbietet-uebertriebene-werbung-fuer-focus-kapseln (Stand 15.10.2026); abgerufen 30.10.2026",
+   "begruendung": "Die Etikettwerte sind bestätigt (C 102 %, D3 102 %, B2 107 %, Niacin 101 %, B5 102 %, B6 100 %, B12 100 % pro 500 ml; pro 100 ml rund 20 %). Der 7,5-%-Wert ist wörtlich bestätigt, ebenso die Müdigkeits-Angaben für B12, B6, Niacin, Riboflavin, Pantothensäure und Vitamin C mit der Bedingung „Quelle“. Zu streng ist der Satz „zulässig ist nur der Wortlaut der Liste“: Nach Erwägungsgrund 9 der VO 432/2012 sind gleichbedeutende Formulierungen möglich, sie unterliegen aber denselben Bedingungen. Neu ist die Grenze aus KG Berlin 2026 (R91).",
+   "korrigierte_aussage": "Raspberry Raptor enthält laut Nährwerttabelle pro Portion (7 g auf 500 ml) Vitamin C, D3, B2, Niacin, B5, B6 und B12 mit je 100–107 % des Nährstoffbezugswerts, also rund 20 % pro 100 ml zubereitet. Als signifikante Menge (Voraussetzung für „Quelle“) gelten bei Getränken in der Regel 7,5 % je 100 ml (LMIV Anhang XIII Teil A Nr. 2). Die VO (EU) Nr. 432/2012 lässt u. a. „Vitamin B12 trägt zur Verringerung von Müdigkeit und Ermüdung bei“ zu, ebenso für B6, Niacin, Riboflavin, Pantothensäure und Vitamin C. Bedingung ist jeweils, dass das Lebensmittel mindestens „Quelle“ des Vitamins ist. Am sichersten ist der Listenwortlaut. Gleichbedeutende Umformulierungen sind nach Erwägungsgrund 9 möglich, unterliegen aber denselben Bedingungen. Die Angabe muss beim jeweiligen Vitamin bleiben. Sie darf nicht auf „Fokus“, „Konzentration“ oder auf das Gesamtprodukt ausgedehnt werden (KG Berlin, 25.08.2026, 5 U 90/23, nicht rechtskräftig, laut Lebensmittelklarheit). Jede solche Angabe löst die Pflichtinformationen nach Art. 10 Abs. 2 HCVO aus. Einschätzung (H): Die Bedingungen sind bei Raspberry Raptor erfüllt. Keine Rechtsberatung."
+  },
+  {
+   "id": "R09",
+   "status": "✔",
+   "geprueft_an": "HCVO Art. 10 Abs. 2 Buchst. a–d (http://publications.europa.eu/resource/celex/02006R1924-20141213), abgerufen 30.10.2026",
+   "begruendung": "Die vier Pflichtinformationen sind wörtlich bestätigt. Sie gelten für Kennzeichnung bzw. Aufmachung und für die Lebensmittelwerbung."
+  },
+  {
+   "id": "R10",
+   "status": "✎",
+   "geprueft_an": "VO 432/2012 Originaltext (Textsuche „offein“: 0 Treffer) und Erwägungsgrund 11 (http://publications.europa.eu/resource/celex/32012R0432); HCVO Art. 28 Abs. 5/6; https://www.nutraingredients.com/Article/2016/07/07/MEPs-block-4-caffeine-claims/; https://www.foodstandards.gov.scot/business-guidance/running-a-food-business/publications/business-guidance-for-food-supplements-containing-caffeine/section-5-0 (Date published 27 June 2025); https://www.lebensmittelklarheit.de/fragen-antworten/warum-darf-mit-gesundheitsbezogenen-angaben-fuer-passionsblume-geworben-werden (Stand 30.3.2023); https://www.lebensmittelklarheit.de/produktmeldungen/zutaten-nicht-laenger-mit-vollmundigen-gesundheitsversprechen-beworben; https://de.holy.com/collections/holy-energy/products/raspberry-raptor; abgerufen 30.10.2026",
+   "begruendung": "Der Kern ist bestätigt. Ein Fehler: Laut NutraIngredients galt die Vorgabe von 75 mg pro Portion nur für die Angaben zu Aufmerksamkeit und Konzentration (Warnhinweis: nicht mehr als 300 mg pro Tag), nicht für die zwei Ausdauer-Angaben. Der Satz „Fokus der Königskobra“ gehört zur Sorte Citrus Cobra im Sortenkarussell der Raptor-Seite. Weitere Sätze dort: „Lizard-Fokus“, „Löwen-Fokus“. Die Unsicherheit zu „on hold“ lässt sich eingrenzen: Erwägungsgrund 11 der VO 432/2012 erlaubt die Weiterverwendung nach Art. 28 Abs. 5/6. Lebensmittelklarheit (2023, zu Botanicals) schreibt, solche Angaben dürfen in Deutschland verwendet werden, wenn die allgemeinen HCVO-Regeln eingehalten sind. Im Zweifel trägt das Unternehmen die Beweislast. Ob die Koffein-Angaben im EU-Register heute noch als „on hold“ geführt werden, ist nicht geprüft (Register nicht abgerufen). Hinweis: Die Lebensmittelklarheit-Seite „Pro Delight“ trägt selbst den Vermerk „veraltet“ (siehe R13).",
+   "korrigierte_aussage": "Die VO (EU) Nr. 432/2012 enthält keine Angabe zu Koffein. Das Europäische Parlament legte am 07.07.2016 im Plenum ein Veto gegen vier geplante Koffein-Angaben ein: Ausdauerleistung, Ausdauerkapazität, Aufmerksamkeit und Konzentration. Nur für Aufmerksamkeit und Konzentration sah der Entwurf 75 mg Koffein pro Portion vor. Food Standards Scotland (27.06.2025): Im GB- und im EU-Register gibt es keine zugelassene Koffein-Angabe. „On hold claims“ dürfen aber bis zu einer Entscheidung weiter verwendet werden. Rechtsgrundlage dafür sind Art. 28 Abs. 5/6 HCVO und Erwägungsgrund 11 der VO 432/2012. Lebensmittelklarheit (2023, zu Botanicals): Solche Angaben dürfen verwendet werden, wenn die allgemeinen HCVO-Regeln eingehalten sind; im Zweifel muss das Unternehmen die Wirkung belegen. Ob die Koffein-Angaben noch als „on hold“ gelten, ist offen (~). HOLY nennt in der Nährwerttabelle einen „Nootropics Complex“. Im Sortenkarussell stehen Sätze wie „Hol dir den Fokus der Königskobra!“ (Citrus Cobra). Ende 2024 warb HOLY laut Lebensmittelklarheit mit „Boost your Focus“. Empfehlung (H): Im Blog keine Fokus-, Konzentrations- oder Wachheitsaussagen, auch nicht als Name oder Überschrift (KG Berlin 2026, R91). Keine Rechtsberatung."
+  },
+  {
+   "id": "R11",
+   "status": "✔",
+   "geprueft_an": "https://www.lebensmittelklarheit.de/produktmeldungen/zutaten-nicht-laenger-mit-vollmundigen-gesundheitsversprechen-beworben (Stand 13.3.2025), abgerufen 30.10.2026",
+   "begruendung": "Alles ist wörtlich bestätigt: die drei Zitate, „nur abgelehnte Claims“ für L-Tyrosin und L-Theanin, die abgelehnte Grüntee-Antioxidans-Angabe, Ginseng „bisher keine Bewertung“, Erschöpfung „krankheitsbezogen“, dazu Vitamin D/Haarausfall und Inulin/Blutzucker sowie die Stellungnahme der Holy Energy GmbH („umgehend“). Ergänzung: Damals warb HOLY laut Meldung auch mit „Boost your Focus – mit unserem gesünderen Energy Drink!“. Herkunftsorte der Beschwerdeführenden nicht übernehmen."
+  },
+  {
+   "id": "R12",
+   "status": "✔",
+   "geprueft_an": "LMIV Art. 7 Abs. 1 Buchst. b/c, Abs. 3, Abs. 4 Buchst. a (http://publications.europa.eu/resource/celex/02011R1169-20180101); UWG Anhang Nr. 17 (https://www.gesetze-im-internet.de/uwg_2004/BJNR141400004.html), abgerufen 30.10.2026",
+   "begruendung": "Der Wortlaut ist bestätigt. Anhang Nr. 17 lautet: „die unwahre Angabe, eine Ware … könne Krankheiten, Funktionsstörungen oder Missbildungen heilen“."
+  },
+  {
+   "id": "R13",
+   "status": "✎",
+   "geprueft_an": "https://de.holy.com/pages/listicle (Punkt 6); https://www.lebensmittelklarheit.de/produktmeldungen/pro-delight-protein-eis-beispiel-sorten-himbeere-und-schokolade-cookie (Stand 18.7.2018); VO 432/2012 Anhang, Eintrag Zuckerersatzstoffe; abgerufen 30.10.2026",
+   "begruendung": "Listicle-Text, VZ-Zitat, Abmahnung (25.11.2016) und Unterlassungserklärung (09.01.2017) sind bestätigt. Zwei Lücken. Erstens trägt die Lebensmittelklarheit-Seite selbst den Hinweis, der Text sei „entweder veraltet oder entspricht nicht mehr den Kriterien von Lebensmittelklarheit“. Zweitens bezog sich die Unterlassungserklärung auf alle kritisierten Punkte, nicht nur auf „für Diabetiker geeignet“. Außerdem verlangt die zugelassene Angabe den Namen des Zuckerersatzstoffs.",
+   "korrigierte_aussage": "Die HOLY-Werbeseite schreibt am 30.10.2026 weiterhin „6. Auch für Diabetiker geeignet … zuckerfreie Drinks, die perfekt sind für Diabetiker“. Die Verbraucherzentrale stuft „für Diabetiker geeignet“ als gesundheitsbezogene Angabe ein, die zugelassen sein müsste. Diätetische Diabetiker-Lebensmittel sind abgeschafft. Die Quelle ist die Lebensmittelklarheit-Meldung „Pro Delight“ (Stand 18.07.2018). Lebensmittelklarheit kennzeichnet sie selbst als möglicherweise veraltet. Sie gibt eine Verbraucherschutz-Auffassung wieder, kein Urteil. Der Anbieter gab nach einer Abmahnung des vzbv am 09.01.2017 eine Unterlassungserklärung für alle kritisierten Punkte ab. Zugelassen ist nur: „Der Verzehr von Lebensmitteln/Getränken, die anstelle von Zucker <Name des Zuckerersatzstoffs> enthalten, bewirkt, dass der Blutzuckerspiegel nach ihrem Verzehr weniger stark ansteigt als beim Verzehr von zuckerhaltigen Lebensmitteln/Getränken.“ Bedingung: Der Zuckergehalt ist mindestens um den Anteil nach „REDUZIERTER [NÄHRSTOFF]-ANTEIL“ (30 %) gesenkt. Die Angabe löst Art. 10 Abs. 2 HCVO aus. Keine Rechtsberatung."
+  },
+  {
+   "id": "R14",
+   "status": "✔",
+   "geprueft_an": "LMIV Anhang III Nr. 2.1; Etikett https://de.holy.com/cdn/shop/files/Ingredients_New_DE_raptor_1.png (Bild angesehen); https://www.lebensmittelklarheit.de/informationen/erlaubt-werbung-ohne-zuckerzusatz-aber-trotzdem-gesuesst (Stand 21.4.2026); https://www.efsa.europa.eu/en/node/19722 (Published date 30 April 2025, DOI 10.2903/j.efsa.2025.9317); https://www.who.int/news/item/15-05-2023-who-advises-not-to-use-non-sugar-sweeteners-for-weight-control-in-newly-released-guideline; abgerufen 30.10.2026",
+   "begruendung": "Alles ist an der Quelle bestätigt: „mit Süßungsmittel(n)“ in Verbindung mit der Bezeichnung, auf dem Etikett „Nahrungsergänzungsmittel mit Süßungsmitteln“ und „Süßungsmittel (Acesulfam K, Sucralose)“. Lebensmittelklarheit nennt „ohne Zuckerzusatz“ erlaubt, empfiehlt aber „gesüßt mit …“. Laut EFSA ersetzt der ADI von 15 mg/kg KG den Wert 9 aus dem Jahr 2000, „no safety concern“. Die WHO-Empfehlung ist „conditional“ und gilt nicht für Menschen mit bestehendem Diabetes."
+  },
+  {
+   "id": "R15",
+   "status": "✎",
+   "geprueft_an": "LMIV Anhang III Nr. 4.1 und 4.2 (http://publications.europa.eu/resource/celex/02011R1169-20180101); Etikett https://de.holy.com/cdn/shop/files/Ingredients_New_DE_raptor_1.png und Nährwerttabelle NE-0001_2.png; https://www.gov.uk/government/news/childrens-health-further-protected-with-energy-drinks-ban; https://www.lewissilkin.com/insights/2026/07/17/government-confirms-ban-on-sale-of-energy-drinks-to-under-16s-in-england-102nch3; https://www.test.de/Energy-Drink-Pulver-von-Holy-Zu-viel-Koffein-fuer-Kids-6296344-0/ (03.06.2026); abgerufen 30.10.2026",
+   "begruendung": "Die Wortlaute von Nr. 4.1/4.2 und das Etikettzitat sind bestätigt. Drei Ungenauigkeiten. (1) Nr. 4.2 gilt dem Wortlaut nach für „Andere Lebensmittel als Getränke“. Dass HOLY „deshalb“ der Nahrungsergänzungsmittel-Fassung folgt, ist keine geklärte Rechtsfolge. Es bleibt offen, ob ein als Nahrungsergänzungsmittel vermarktetes Getränkepulver unter Nr. 4.1 (getrocknetes Getränk) fällt. (2) Auf dem Etikettbild steht die Bezeichnung „Nahrungsergänzungsmittel mit Süßungsmitteln …“ im selben Feld wie der Hinweis. Ein Verstoß gegen „selbes Sichtfeld wie die Bezeichnung“ lässt sich daraus nicht ableiten. Belegt ist nur die Kritik, der Hinweis stehe „im Kleingedruckten auf der Rückseite“ (VKI 2024; Stiftung Warentest 03.06.2026). (3) Dass England auch rekonstituierte Produkte erfasst, steht bei der Kanzlei Lewis Silkin, nicht in der Regierungsmeldung.",
+   "korrigierte_aussage": "LMIV Anhang III Nr. 4.1 verlangt bei Getränken (außer Kaffee oder Tee mit diesem Begriff in der Bezeichnung) mit mehr als 150 mg/l Koffein den Hinweis „Erhöhter Koffeingehalt. Für Kinder und schwangere oder stillende Frauen nicht empfohlen“ im selben Sichtfeld wie die Bezeichnung, gefolgt vom Gehalt in mg/100 ml. Das gilt ausdrücklich auch für konzentrierte oder getrocknete Getränke nach der Rekonstituierung. Nr. 4.2 gilt für „andere Lebensmittel als Getränke“ mit zu physiologischen Zwecken zugesetztem Koffein: „Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen“. Bei Nahrungsergänzungsmitteln wird der Gehalt pro empfohlener Tagesmenge angegeben. Das Etikett von Raspberry Raptor nutzt die Fassung aus Nr. 4.2 („160 mg pro täglicher Verzehrmenge“). Zubereitet liegt das Getränk bei 32 mg/100 ml = 320 mg/l und damit über der Schwelle aus Nr. 4.1. Ob für das als Nahrungsergänzungsmittel vermarktete Pulver Nr. 4.1 oder 4.2 gilt, ist nicht geklärt (H). Die Bezeichnung steht auf dem Etikettbild im selben Feld wie der Hinweis. Stiftung Warentest kritisiert die Platzierung im Kleingedruckten auf der Rückseite des Beutels (03.06.2026). England: Die Regierung nennt mehr als 150 mg/l (GOV.UK, 16.07.2026). Dass auch Produkte nach Rekonstitution erfasst sind, schreibt die Kanzlei Lewis Silkin (17.07.2026). Keine Rechtsberatung."
+  },
+  {
+   "id": "R16",
+   "status": "✔",
+   "geprueft_an": "https://www.gesetze-im-internet.de/frsaftv_2004/BJNR101600004.html (§ 4, § 5 Abs. 1, Anlage 8 Teile A/B; Stand: zuletzt geändert durch V v. 25.11.2025); https://www.verbraucherzentrale-niedersachsen.de/themen/ernaehrung-lebensmittel/energy-drinks-im-check-ueberdosierung-von-koffein-bei-kindern-jugendlichen-moeglich (Stand 26. März 2026); BfR 037/2026 S. 7; abgerufen 30.10.2026",
+   "begruendung": "Bestätigt sind § 5 Abs. 1 mit Anlage 8 Teil A (Koffein 320 mg/l) und Teil B (Taurin 4.000, Inosit 200, Glucuronolacton 2.400 mg/l). Die VZ-Zitate stimmen wörtlich („gilt keine gesetzlich geregelte Höchstmenge, da sie … als Nahrungsergänzungsmittel angeboten werden“, „kann leicht überdosiert werden“). Kleine Präzisierung zur „Abweichung“: Das BfR nennt § 4 Abs. 2 für die Definition von Energydrinks, die ist dort richtig verortet. Die 320 mg/l stehen im selben Satz, gehören aber zu § 5 Abs. 1/Anlage 8. Ein echter Widerspruch ist das nicht."
+  },
+  {
+   "id": "R17",
+   "status": "✔",
+   "geprueft_an": "https://www.efsa.europa.eu/de/topics/topic/caffeine (Abschnitte 4 und 5; verlinkt auf https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2015.4102), abgerufen 30.10.2026",
+   "begruendung": "Alle Werte stimmen wörtlich: 200 mg (ca. 3 mg/kg KG) als Einzeldosis, 100 mg (ca. 1,4 mg/kg) mit möglicher Wirkung auf den Schlaf, 400 mg/Tag (ca. 5,7 mg/kg) „ausgenommen Schwangere“, 200 mg/Tag „für den Fötus unbedenklich“, Kinder und Jugendliche 3 mg/kg KG/Tag. Tabelle: Espresso 60 ml 80 mg, Filterkaffee 200 ml 90 mg, Cola 355 ml 40 mg, Energiegetränk 250 ml 80 mg. Den DOI verlinkt die EFSA-Seite selbst."
+  },
+  {
+   "id": "R18",
+   "status": "✔",
+   "geprueft_an": "https://www.bfr.bund.de/assets/01_Ver%C3%B6ffentlichungen/Stellungnahmen_deutsch/energydrinks-bfr-aktualisiert-bewertung-der-gesundheitlichen-risiken-fuer-kinder-und-jugendliche-bei-akutem-und-chronischem-verzehr.pdf (S. 1–3, Kap. 2.6, Kap. 4), abgerufen 30.10.2026",
+   "begruendung": "Bestätigt sind Nummer, Datum, DOI und „Aktualisierte Stellungnahme 018/2019“. Ebenso stimmen 200 mg, die schwache Datenlage bei Kindern, 3 mg/kg und „bis zu 4 Liter an einem Tag“, dazu „Produzenten können auf ihren Produkten auf die möglichen unerwünschten Wirkungen … hinweisen“. Die BfR schlägt Bildungsprogramme vor, bei denen „insbesondere soziale Medien eingesetzt werden“ könnten. Nuance: Die akuten Symptome (Herzklopfen/-rasen, Kurzatmigkeit, Übelkeit, Angst, Nervosität) traten „bei einigen Erwachsenen“ auf."
+  },
+  {
+   "id": "R19",
+   "status": "✔",
+   "geprueft_an": "Etikett https://de.holy.com/cdn/shop/files/Ingredients_New_DE_raptor_1.png und Nährwerttabelle NE-0001_2.png (Grünteeextrakt 350 mg, EGCG 36,7 mg); VO 2022/2340 Art. 1 Nr. 1 (http://publications.europa.eu/resource/celex/32022R2340); https://www.gesetze-im-internet.de/nemv/__4.html; abgerufen 30.10.2026",
+   "begruendung": "Alle Etikettsätze sind wörtlich bestätigt, dazu „Eine Tagesdosis von 800mg EGCG sollte nicht überschritten werden.“. Die drei „Sollte nicht …“-Sätze sind die Pflichtwarnhinweise aus der Spalte „Zusätzliche Anforderungen“. Ausnahme: wässrige Extrakte, die nach Rekonstitution traditionellen Aufgüssen gleichen. Die Pflichtangaben nach § 4 Abs. 2 Nr. 2–4 NemV stimmen, Nr. 5 (außerhalb der Reichweite kleiner Kinder lagern) kommt hinzu. Zur Kombi-Warnung: Laut Help-Center gibt es bei Iced Tea u. a. „Classic Green Tea“. Matcha bzw. Grüntee als „Erzeugnis mit grünem Tee“ ist plausibel (H)."
+  },
+  {
+   "id": "R20",
+   "status": "✎",
+   "geprueft_an": "https://www.bundesrat.de/SharedDocs/beratungsvorgaenge/2026/0101-0200/0145-26.html; https://dserver.bundestag.de/brd/2026/0145-26.pdf (Altersgrenze 16); https://dserver.bundestag.de/btd/21/045/2104591.pdf; https://de.holy.com/pages/agb (§ 4: ab 18); https://de.holy.com/policies/terms-of-service (Stand Oktober 2025, §4: ab 16); https://help.de.weareholy.com/de-DE/ab-wie-viel-jahren-darf-man-holy-energy-holy-iced-tea-und-holy-hydration-trinken-320326; https://www.test.de/Energy-Drink-Pulver-von-Holy-Zu-viel-Koffein-fuer-Kids-6296344-0/; abgerufen 30.10.2026",
+   "begruendung": "Bestätigt: keine gesetzliche Altersgrenze (Stiftung Warentest: „gesetzlich nicht geregelt“). Bundesrats-Vorgang nur mit „27.03.26, 1063. Sitzung - TOP 58: Ausschusszuweisung“, AV federführend, Drucksache mit Altersgrenze 16. BT-Drs. 21/4591 vom 06.03.2026 empfiehlt die Ablehnung, der Ausschuss heißt korrekt „Ausschuss für Landwirtschaft, Ernährung und Heimat“. Neu und widersprüchlich: Auf de.holy.com stehen zwei AGB-Fassungen, /pages/agb mit „ab 18“ und /policies/terms-of-service (Stand Oktober 2025) mit „ab 16“. Die Plenarentscheidung des Bundestags ist nicht geprüft.",
+   "korrigierte_aussage": "In Deutschland gibt es am 30.10.2026 keine gesetzliche Altersgrenze für den Verkauf von Energy Drinks. Die Bundesrats-Initiative Schleswig-Holsteins (Drs. 145/26 vom 17.03.2026, Altersgrenze 16 und Zuckerreduktion) ist weiterhin nur mit „27.03.26, 1063. Sitzung – TOP 58: Ausschusszuweisung“ verzeichnet (federführend AV). Im Bundestag empfahl der Ausschuss für Landwirtschaft, Ernährung und Heimat am 06.03.2026 (BT-Drs. 21/4591), den Antrag 21/4285 für eine Altersgrenze abzulehnen; die Plenarentscheidung ist nicht geprüft. HOLYs Altersangaben sind uneinheitlich: AGB unter /pages/agb „ab 18“, AGB unter /policies/terms-of-service (Stand Oktober 2025) „ab 16“, Help-Center „empfehlen … ab 18“, Etikett „nicht … Kindern unter 18 Jahren“ (Pflichtwarnhinweis Grüntee-Extrakt, R19). Keine dieser Angaben ist ein gesetzliches Verkaufsverbot."
+  },
+  {
+   "id": "R21",
+   "status": "✎",
+   "geprueft_an": "https://www.gov.uk/government/news/childrens-health-further-protected-with-energy-drinks-ban (Published 16 July 2026); https://technical-regulation-information-system.ec.europa.eu/de/notification/26754 (Nachrichtenliste: „Acknowledgement of receipt of the adopted text 16-01-2026“); Entwurf DE https://technical-regulation-information-system.ec.europa.eu/de/notification/26754/text/D/DE; endgültiger Text https://technical-regulation-information-system.ec.europa.eu/de/notification/26754/text/F/DA (Lovdata-Auszug FOR-2025-08-20-1676); abgerufen 30.10.2026",
+   "begruendung": "Die Angaben zu England sind wörtlich bestätigt (150 mg/l, außer Tee und Kaffee, Läden, Automaten und online, bis 2.500 £, Food Safety Act 1990, „subject to Parliamentary approval“, ab April 2027). Norwegen ist veraltet beschrieben: Die Regelung ist kein Entwurf mehr. Sie wurde am 20.08.2025 als Forskrift FOR-2025-08-20-1676 erlassen und gilt seit 01.01.2026 (§ 9). Inhalt wie im Entwurf: § 2 nimmt Nahrungsergänzungsmittel aus, § 3 nennt mehr als 15 mg/100 ml trinkfertig, einschließlich Pulver oder Tabletten. Ob die englische Verordnung schon im Parlament liegt, ist weiterhin nicht geprüft.",
+   "korrigierte_aussage": "Im Ausland gibt es Altersgrenzen. England (GOV.UK, 16.07.2026): Ab April 2027 soll der Verkauf an unter 16-Jährige verboten sein, für Getränke außer Tee und Kaffee mit mehr als 150 mg Koffein pro Liter. Das gilt in Läden, an Automaten und online, mit Bußgeldern bis 2.500 £, per Verordnung nach dem Food Safety Act 1990, „subject to Parliamentary approval“. Norwegen: Seit 01.01.2026 gilt die Forskrift FOR-2025-08-20-1676 (2025 als TRIS 2025/9005/NO notifiziert, angenommener Text am 16.01.2026 bei der EU-Kommission eingegangen). Sie verbietet den Verkauf an unter 16-Jährige für alkoholfreie Getränke mit mehr als 15 mg Koffein/100 ml trinkfertig, ausdrücklich einschließlich Pulver oder Tabletten zum Auflösen. Produkte, die unter die Vorschriften für Nahrungsergänzungsmittel fallen, sind ausgenommen (§ 2, § 3). Zu Polen siehe R96."
+  },
+  {
+   "id": "R22",
+   "status": "✔",
+   "geprueft_an": "https://www.verbraucherzentrale.nrw/wissen/lebensmittel/gesund-ernaehren/vegetarische-und-vegane-lebensmittel-erkennen-worauf-muss-ich-achten-68457 (Stand 06. März 2026); LMIV Art. 36 Abs. 2 und 3 Buchst. b; https://www.watson.de/leben/supermarkt/436326803-vegan-fail-von-holy-caterpillar-pulver-enthaelt-laktose-rueckgabe-moeglich (27.01.2026); Etikett Ingredients_New_DE_raptor_1.png und Nährwerttabelle NE-0001_2.png; abgerufen 30.10.2026",
+   "begruendung": "Bestätigt: VZ NRW („rechtlich nicht verbindlich definiert“, Leitsätze „keine Gesetze“ als Auslegungshilfe), Art. 36 Abs. 2/3 Buchst. b, die HOLY-Mitteilung („alle anderen Sorten sind davon nicht betroffen“) mit Rückgabe oder Umtausch, auf dem Etikett „Vegan & 100% Made in Germany“, in der Nährwerttabelle „Spuren von … Milch (inkl. Laktose)“. Kleinigkeiten: Die Etikettbilder fehlen in der Quellenliste. Bei watson ist nur das Datum 27.01.2026 sichtbar. Die Sorte heißt dort „Cotton Candy Caterpillar“. Den von watson zitierten Reddit-Nutzernamen nicht übernehmen."
+  },
+  {
+   "id": "R23",
+   "status": "✔",
+   "geprueft_an": "RL (EU) 2024/825 Art. 4 Abs. 1 (http://publications.europa.eu/resource/celex/32024L0825); https://www.recht.bund.de/eli/bund/bgbl-1/2026/43 mit PDF (Art. 2: Inkrafttreten 27.09.2026, Art. 1 Nr. 2 Buchst. c schon 19.06.2026); https://www.recht.bund.de/eli/bund/bgbl-1/2026/322 mit PDF (Art. 5, 6, 7); UWG aktuelle Fassung https://www.gesetze-im-internet.de/uwg_2004/BJNR141400004.html (§ 2 Abs. 2, § 5 Abs. 2 Nr. 1, § 5 Abs. 3 Nr. 4, § 15b, Anhang Nr. 2a, 4a–4c); abgerufen 30.10.2026",
+   "begruendung": "Alles ist an den Primärtexten bestätigt: Umsetzung bis 27.03.2026, Anwendung ab 27.09.2026, BGBl. 2026 I Nr. 43 (ausgefertigt 12.02.2026, verkündet 19.02.2026). Die Definitionen und die schwarze Liste stimmen wörtlich. § 15b ist durch Art. 5 G v. 22.10.2026 „mit Wirkung vom 27. September 2026“ eingefügt und wird durch Art. 6 am 27.09.2028 gestrichen. Präzisierung: § 15b betrifft nur die Durchsetzung von Ansprüchen nach § 8 Abs. 1 für vor dem 27.09.2026 in Verkehr gebrachte Waren. Für neue Blogaussagen ist das kein Freibrief (H). Keine Rechtsberatung."
+  },
+  {
+   "id": "R24",
+   "status": "H",
+   "geprueft_an": "https://de.holy.com/ (meta description per curl, 30.10.2026); https://de.holy.com/collections/syrup-launch (FAQ „Wie nachhaltig ist das System?“); FS1-Dossier 3.4 (fallstudie-1-brand-persona/recherche/holy-recherche.md, Z. 368–370); UWG § 2 Abs. 2 Nr. 1, Anhang Nr. 4a/4b",
+   "begruendung": "Die Meta-Beschreibung ist wörtlich bestätigt: „Pulverbasierte Energy Drinks HOLY Energy® & Eistee HOLY Iced Tea® | 0 Zucker ✓ nachhaltig verpackt ✓ gutes Gewissen ✓ geiler Geschmack!“. Die Pod-Angabe ist bestätigt, bezieht sich aber auf Stufe 3 (1 Pod ≈ 2,5 l ≈ fünf 0,5-l-PET-Flaschen à zusammen 75 g, Pod 6 g). Die Syrup-FAQ enthält weitere Umweltaussagen („Viel besser als Flaschen aus dem Supermarkt“, „gut recyclebar“, siehe R99). „More than 90%“ stammt aus dem FS1-Dossier ([15], PM 2023) und wurde hier nicht erneut geprüft. Die rechtliche Einordnung bleibt H. Hinzu kommt § 15b UWG für vor dem 27.09.2026 in Verkehr gebrachte Waren (nur verhältnismäßige Durchsetzung). Keine Rechtsberatung."
+  },
+  {
+   "id": "R25",
+   "status": "✔",
+   "geprueft_an": "UWG § 5a Abs. 4 und Anhang Nr. 11 (https://www.gesetze-im-internet.de/uwg_2004/BJNR141400004.html); https://www.gesetze-im-internet.de/ddg/__6.html; MStV § 22 Abs. 1 (https://www.die-medienanstalten.de/fileadmin/user_upload/Rechtsgrundlagen/Gesetze_Staatsvertraege/Medienstaatsvertrag_MStV.pdf, Fassung 7. MÄStV, „in Kraft seit 1. Dezember 2025“); abgerufen 30.10.2026",
+   "begruendung": "Alle drei Normen sind wörtlich bestätigt, einschließlich der vermuteten Gegenleistung (§ 5a Abs. 4 Satz 3) und § 6 Abs. 1 Nr. 1–4 DDG. § 22 Abs. 1 Satz 1 MStV lautet: „Werbung muss als solche klar erkennbar und vom übrigen Inhalt der Angebote eindeutig getrennt sein.“"
+  },
+  {
+   "id": "R26",
+   "status": "~",
+   "geprueft_an": "https://www.ma-hsh.de/files/ma-hsh/Aufgaben/Leitfaden_Medienanstalten_Werbekennzeichnung_Online-Medien%281%29.pdf (Stand Juni 2021); https://www.die-medienanstalten.de/service/merkblaetter-und-leitfaeden/leitfaden-werbekennzeichnung-bei-online-medien/ (aktuelle Fassung, PDF-Link nicht abrufbar); Newsletter der Medienanstalten Juli 2023 (https://www.die-medienanstalten.de/fileadmin/user_upload/die_medienanstalten/Newsletter/Newsletter_der_medienanstalten_Juli_2023.pdf); BLM „Obacht“ 10/2025 (https://www.blm.de/files/pdf2/251016_blm_obacht_ausgabe05-v251017.pdf); WebSearch 30.10.2026",
+   "begruendung": "In der Fassung Juni 2021 ist alles wörtlich bestätigt: Kennzeichnung „oberhalb oder unmittelbar unterhalb der Überschrift“, „bezahlte Werbepartnerschaft“, nicht ausreichend sind „Infomercial“, „Advertorial“, „AZ“, „ad“, „sponsored by“ und „PR sample“, dazu die Regeln zu Rabattcodes, Affiliate-Sternchen, Teaser und „Kanäle bekannter Firmen/Marken, Online-Shops“. Diese Fassung ist aber überholt: Sie stützt sich auf das TMG. Die Medienanstalten melden 2023 eine Aktualisierung, und die heutige Fassung beruht laut Medienanstalten und BLM (10/2025) auf MStV und DDG. Ob der Wortlaut zu Blogs gleich geblieben ist, ließ sich nicht prüfen. Hinweis: Der Leitfaden nennt „bezahlte Werbepartnerschaft“, nicht „bezahlte Partnerschaft mit HOLY“ (so in R26/R31)."
+  },
+  {
+   "id": "R27",
+   "status": "✎",
+   "geprueft_an": "UWG § 5b Abs. 3, Anhang Nr. 23b und 23c (https://www.gesetze-im-internet.de/uwg_2004/BJNR141400004.html), abgerufen 30.10.2026",
+   "begruendung": "§ 5b Abs. 3 und Nr. 23b sind bestätigt. Nr. 23c ist ungenau wiedergegeben: Verboten ist die Übermittlung oder Beauftragung gefälschter Bewertungen sowie die falsche Darstellung von Bewertungen in sozialen Medien. Echte, bloß „beauftragte“ (angeregte) Bewertungen fallen nicht per se darunter.",
+   "korrigierte_aussage": "Wer Kundenbewertungen zugänglich macht, muss angeben, ob und wie er sicherstellt, dass sie von Verbraucherinnen und Verbrauchern stammen, die die Ware tatsächlich genutzt oder erworben haben. Diese Information gilt als wesentlich (§ 5b Abs. 3 UWG). Stets unzulässig sind die Echtheitsbehauptung ohne angemessene und verhältnismäßige Prüfung (Anhang Nr. 23b) sowie die Übermittlung oder Beauftragung gefälschter Bewertungen oder Empfehlungen und deren falsche Darstellung in sozialen Medien zur Verkaufsförderung (Nr. 23c). Kundenstimmen mit Gesundheitsinhalt bleiben gesundheitsbezogene Angaben (R02, R04; H). Keine Rechtsberatung."
+  },
+  {
+   "id": "R28",
+   "status": "✔",
+   "geprueft_an": "UWG Anhang Nr. 28; https://konsument.at/holyenergy-koffein26 (20.3.2026); https://www.test.de/Energy-Drink-Pulver-von-Holy-Zu-viel-Koffein-fuer-Kids-6296344-0/ (03.06.2026); FS1-Dossier 3.4; abgerufen 30.10.2026",
+   "begruendung": "Nr. 28 ist wörtlich bestätigt. Die Berichte sind bestätigt: Apfel-Motiv und „ohne Zucker“, Kinder hielten das Getränk für gesund, 4–7 Beutel „Apple Alligator“. Präzisierung: Der Vergiftungsfall ereignete sich in Österreich. KONSUMENT berichtete am 20.03.2026, Stiftung Warentest übernahm den Bericht."
+  },
+  {
+   "id": "R29",
+   "status": "✔",
+   "geprueft_an": "HCVO Art. 9 Abs. 1/2; UWG § 6 Abs. 2 Nr. 2 und 5; https://de.holy.com/pages/listicle (Punkt 2), abgerufen 30.10.2026",
+   "begruendung": "Normtext und Listicle sind bestätigt: „bis zu 250kcal pro 500ml“ gegen „nur knapp 20 Kalorien“, ohne Mengenbezug auf HOLY-Seite. Dass der Vergleich unzulässig ist, bleibt richtig ungeprüft (H)."
+  },
+  {
+   "id": "R30",
+   "status": "✔",
+   "geprueft_an": "https://www.gesetze-im-internet.de/urhg/__60a.html, abgerufen 30.10.2026",
+   "begruendung": "Abs. 1 Nr. 1–3 und Abs. 2 sind wörtlich bestätigt (15 %, nicht kommerziell, Abbildungen vollständig, Dritte nur zur Präsentation an der Bildungseinrichtung). Die Anwendung auf das öffentliche Repository ist richtig als H gekennzeichnet. Markenrecht bleibt ungeprüft. Keine Rechtsberatung."
+  },
+  {
+   "id": "R31",
+   "status": "✎",
+   "geprueft_an": "Abgleich mit den geprüften Quellen zu R06, R08, R09, R13–R20, R24, R26 (siehe dort) sowie https://de.holy.com/collections/syrup-launch und https://www.lebensmittelklarheit.de/news/gericht-verbietet-uebertriebene-werbung-fuer-focus-kapseln; abgerufen 30.10.2026",
+   "begruendung": "Die Synthese ist überwiegend stimmig. Korrekturen: (6) Eine Vitamin-Angabe braucht alle vier Pflichtinformationen nach Art. 10 Abs. 2 (a–d), nicht nur den Ernährungshinweis. Sie darf nicht in Richtung „Fokus“ gedeutet werden (R91). (8) Die zugelassene Blutzucker-Angabe nennt den Zuckerersatzstoff namentlich und löst ebenfalls Art. 10 Abs. 2 aus. (10) Die Pod-Angabe gilt für Stufe 3 (ca. 2,5 l) und ist HOLYs eigene Umweltaussage, die belegt sein muss. (11) Laut Leitfaden heißt es „bezahlte Werbepartnerschaft“. (1)/(7)/(9): Die Zahlen gelten nur für Raspberry Raptor. Ergänzt: Grundpreis (R98). Herkunft ist eine Synthese (H) und kein reines Modellwissen.",
+   "korrigierte_aussage": "DO-Liste für den Blogbeitrag (Gesamtbeurteilung H, keine Rechtsberatung; Zahlen nur für Raspberry Raptor geprüft). (1) „Eine Portion HOLY Energy Raspberry Raptor (7 g auf 500 ml Wasser) enthält laut Etikett 160 mg Koffein, also 32 mg pro 100 ml.“ (2) „Die EFSA hält für gesunde Erwachsene bis zu 200 mg Koffein auf einmal und bis zu 400 mg über den Tag verteilt für unbedenklich, aus allen Quellen zusammen. Kaffee, Tee und Cola zählen mit. Für Schwangere gelten 200 mg pro Tag.“ (3) „Eine Portion pro Tag, so steht es auch auf dem Etikett.“ (4) „Nicht für Kinder und Jugendliche unter 18, Schwangere und Stillende. Nicht auf nüchternen Magen und nicht am selben Tag wie andere Produkte mit grünem Tee.“ (5) „Eine gesetzliche Altersgrenze gibt es in Deutschland bisher nicht (Stand 30.10.2026). HOLY Energy ist trotzdem für Erwachsene gedacht.“ (6) Nur zugelassene Angaben, dem Vitamin zugeordnet und mit allen Pflichtinformationen nach Art. 10 Abs. 2 HCVO: „Vitamin B12 trägt zur Verringerung von Müdigkeit und Ermüdung bei.“ Dazu Hinweis auf abwechslungsreiche, ausgewogene Ernährung und gesunde Lebensweise, Verzehrmenge (1 Portion pro Tag), Personengruppen (Punkt 4) und Warnhinweis (Tagesmenge nicht überschreiten). Nicht zu „Fokus“ oder „Konzentration“ umdeuten. (7) „Zuckerfrei: 0,1 g Zucker pro 100 ml zubereitet; gesüßt mit Sucralose und Acesulfam K.“ (8) Blutzucker nur, falls überhaupt, nah am Listenwortlaut mit Namen der Süßungsmittel: „Der Verzehr von Getränken, die anstelle von Zucker Sucralose und Acesulfam K enthalten, bewirkt, dass der Blutzuckerspiegel nach ihrem Verzehr weniger stark ansteigt als beim Verzehr zuckerhaltiger Getränke.“ Mit Pflichtinformationen, ohne Bezug auf Diabetes. (9) „18,7 kcal pro 500 ml zubereitet; zum Vergleich: [Kategorie, 500 ml, Quelle].“ (10) Umwelt konkret und begrenzt: „Ein Syrup-Pod (6 g Kunststoff) ergibt auf Stufe 3 rund 2,5 Liter, so viel wie fünf 0,5-Liter-PET-Flaschen, die zusammen 75 g wiegen (Herstellerangabe, [Link zum Rechenweg]).“ Kein „nachhaltig“ als Oberbegriff. (11) Kooperationen über der Überschrift mit „Werbung“ oder „bezahlte Werbepartnerschaft“, neben dem Rabattcode „Werbung“, Affiliate-Link mit * und Erklärung. (12) Kundenstimmen anonym, sinngemäß, mit Quelle und Stand, ohne Gesundheitsinhalt. (13) Kennzeichnung des Mock-ups: „Studentischer Entwurf im Modul Unternehmenskommunikation, HSKL; kein Beitrag der HOLY Softdrinks GmbH. Keine Ernährungs- oder Rechtsberatung.“ (14) Preise nur mit Grundpreis (PAngV § 4, R98)."
+  },
+  {
+   "id": "R32",
+   "status": "✎",
+   "geprueft_an": "Abgleich mit den geprüften Quellen zu R03–R05, R07, R10–R14, R19–R30; VO 432/2012 Anhang (Vitamin-D-Einträge, http://publications.europa.eu/resource/celex/32012R0432); Leitfaden der Medienanstalten Juni 2021; https://help.de.weareholy.com/de-DE/ab-wie-viel-jahren-darf-man-holy-energy-holy-iced-tea-und-holy-hydration-trinken-320326; abgerufen 30.10.2026",
+   "begruendung": "Die Liste ist im Kern stimmig. Korrekturen: (5) ist für Vitamin D zu pauschal. Es gibt zugelassene Angaben, z. B. „Vitamin D trägt zu einer normalen Funktion des Immunsystems bei“. Beanstandet war Vitamin D in Verbindung mit Haarausfall. (4) „stärkt das Immunsystem“ bleibt ein Don’t, weil es über „trägt zu einer normalen Funktion … bei“ hinausgeht. (17) „#partner“ steht nicht im Leitfaden, das ist eine eigene Ableitung (H). Ergänzt werden Fokus-Namen (R91/R92) und Iced-Tea-Botanicals (R94). Herkunft ist eine Synthese (H).",
+   "korrigierte_aussage": "DON'T-Liste für den Blogbeitrag (Gesamtbeurteilung H, keine Rechtsberatung). (1) „steigert Konzentration/Fokus/Aufmerksamkeit“, „Nootropics“, „Brain-Boost“, „Boost your Focus“, „Fokus der Königskobra“, auch als Name oder Überschrift (R10, R91, R92). (2) „hilft beim Abnehmen“, „Kunden berichten von spürbarem Gewichtsverlust“, „–3 kg in 4 Wochen“ (R04). (3) „für Diabetiker geeignet/perfekt für Diabetiker“, „gut für den Blutzucker“ (R13). (4) „gesund“, „stärkt dein Wohlbefinden“, „stärkt das Immunsystem“, „beruhigt“, „gegen Erschöpfung“ (R03, R11, R12). Zulässig wären nur Listenangaben im Wortlaut mit Pflichtinformationen. (5) Wirkversprechen zu L-Tyrosin, L-Theanin, Grüntee, Ginseng und Inulin; Vitamin D nur mit zugelassenen Angaben, nie „gegen Haarausfall“ (R11). (6) „Gönn dir zwei, drei am Tag“, „drei Shaker für die Nachtschicht“ (R05, R19). (7) „Ohne HOLY fehlen dir Vitamine“, „ohne Energy geht nix“ (R05). (8) „Cola ist Gift“, „Monster macht krank“ (R05, R29). (9) „Unsere Ärztin empfiehlt …“ (R04). (10) Milkshake „zuckerfrei“ oder „kaum Kalorien“ (R07). (11) „natürlich gesüßt“, „ohne Süßstoff“, „Süßstoff hilft beim Abnehmen“ (R14). (12) „alle HOLY-Sorten sind vegan“ (R22). (13) „nachhaltig“, „umweltfreundlich“, „nachhaltig verpackt“, „klimaneutral“, „90 % weniger Müll“ oder „viel besser als Flaschen“ ohne Spezifizierung im selben Medium und ohne Beleg; „bis 2030 plastikfrei“ ohne Umsetzungsplan (R23, R24, R99). (14) „erst ab 18 erlaubt“ (falsche Rechtsbehauptung, R20). (15) Kinder ansprechen oder Kinder-Settings zeigen (R28). (16) Kombitipps mit Matcha- oder Grüntee-Produkten am selben Tag (R19). (17) „ad“, „AZ“, „Advertorial“, „sponsored by“ oder „PR sample“ als Kennzeichnung (Leitfaden 2021). „#partner“ allein ist dort nicht behandelt, im Zweifel meiden (H) (R26). (18) Erfundene oder gekaufte Bewertungen, Namen aus Bewertungen, KI-simulierte Stimmen ohne Kennzeichnung (R27, Gruppenregeln). (19) Fremde HOLY-Produktfotos oder Social-Media-Screenshots im öffentlichen Repository ohne Freigabe (R30, Gruppenregeln). (20) Iced-Tea-Pflanzenextrakte als „beruhigend“ bewerben oder „für Kinder, Schwangere und Stillende geeignet“ schreiben; Ashwagandha-Sorten nicht als Kindergetränk zeigen (R94)."
+  }
+ ],
+ "zusatzbefunde": [
+  {
+   "id": "R90",
+   "aussage": "HOLY nennt am 30.10.2026 zwei verschiedene Altersgrenzen in seinen AGB. Unter de.holy.com/pages/agb steht in § 4 Jugendschutz: „Unsere Energy-Produkte (mit Koffein) werden nur an Personen ab 18 Jahren verkauft.“ Unter de.holy.com/policies/terms-of-service („Stand: Oktober 2025“) steht in §4 Jugendschutz: „… nur an Personen ab 16 Jahren verkauft.“ Das Help-Center empfiehlt HOLY Energy „ab einem Alter von 18 Jahren“.",
+   "phase": "Kauf",
+   "belegstelle": "/pages/agb § 4 „ab 18 Jahren“; /policies/terms-of-service §4 (1) „ab 16 Jahren“, Kopf „(Stand: Oktober 2025)“; Help-Center „Wir empfehlen HOLY Energy® ab einem Alter von 18 Jahren“",
+   "quellen": [
+    {
+     "titel": "HOLY – AGB (Privatkunden)",
+     "url": "https://de.holy.com/pages/agb",
+     "art": "Firmenquelle",
+     "datum": "abgerufen 30.10.2026"
+    },
+    {
+     "titel": "HOLY – AGB B2C (policies/terms-of-service)",
+     "url": "https://de.holy.com/policies/terms-of-service",
+     "art": "Firmenquelle",
+     "datum": "Stand Oktober 2025, abgerufen 30.10.2026"
+    },
+    {
+     "titel": "HOLY Help-Center: Ab wie viel Jahren darf man HOLY Energy®, HOLY Iced Tea® und HOLY Hydration® trinken?",
+     "url": "https://help.de.weareholy.com/de-DE/ab-wie-viel-jahren-darf-man-holy-energy-holy-iced-tea-und-holy-hydration-trinken-320326",
+     "art": "Firmenquelle",
+     "datum": "„aktualisiert vor 2 Monaten“, abgerufen 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Bruch „Altersgrenzen“ in der Kauf-Phase (FS1 7.2 Nr. 2), jetzt mit Beleg auf HOLYs eigener Website. Im Blog nicht „laut AGB ab 18“ schreiben, ohne den Widerspruch zu kennen. Frage an pr@holy.com (Regel R1). Korrigiert R20.",
+   "einordnung": "Owned; Selbstauskunft HOLY; welche Fassung gilt, ist offen (die terms-of-service-Seite sagt „Maßgeblich ist die jeweils bei Abschluss des Vertrags gültige Fassung“)"
+  },
+  {
+   "id": "R91",
+   "aussage": "Das Kammergericht Berlin hat am 25.08.2026 (Az. 5 U 90/23, nicht rechtskräftig) der Whitewall GmbH Werbeaussagen für „Focus-Kapseln“ verboten, darunter gesteigerte Konzentration, geistige Leistungsfähigkeit und mentale Belastbarkeit. Schon die Bezeichnung „FOCUS Kapseln“ werde wegen der Seitengestaltung als gesundheitsbezogen verstanden. Die zugelassenen Angaben zu Vitamin B5 („zur normalen geistigen Leistung“) und B12 („zur normalen psychischen Funktion“) deckten die Versprechen nicht. Unzulässig sei es auch, die Wirkung dem Gesamtprodukt bzw. einer „Power-Formel“ statt den einzelnen Bestandteilen zuzuschreiben. Das berichtet Lebensmittelklarheit am 15.10.2026.",
+   "phase": "Recherche",
+   "belegstelle": "Lebensmittelklarheit: „Bereits die Bezeichnung „FOCUS Kapseln“ werde … so verstanden, dass die Einnahme der Kapseln die Konzentrations- und Leistungsfähigkeit fördert“; „Quelle: Urteil des KG Berlin vom 25.08.2026, Az. 5 U 90/23“; „Das Urteil ist nicht rechtskräftig.“",
+   "quellen": [
+    {
+     "titel": "Lebensmittelklarheit: Gericht verbietet übertriebene Werbung für „Focus-Kapseln“",
+     "url": "https://www.lebensmittelklarheit.de/news/gericht-verbietet-uebertriebene-werbung-fuer-focus-kapseln",
+     "art": "Verbraucherschutz (Portal der Verbraucherzentralen)",
+     "datum": "Stand 15.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Stärkste aktuelle Herleitung für das Don’t „Fokus“ (R10, R32 Nr. 1): HOLY nutzt „Fokus der Königskobra“, „Lizard-Fokus“, „Löwen-Fokus“ und „Nootropics Complex“. Auch Vitamin-Angaben (R08) dürfen nicht zu „Fokus“ umgedeutet werden. Gut als Beleg auf einer Folie „Leitplanken“ (Stenger: „Wie kommt ihr auf …?“).",
+   "einordnung": "Rechtsprechung 2. Instanz, nicht rechtskräftig; Urteilstext nicht selbst gelesen, nur der Bericht; keine Rechtsberatung"
+  },
+  {
+   "id": "R92",
+   "aussage": "Nach Art. 1 Abs. 3 HCVO dürfen Handelsmarken, Markennamen oder Phantasiebezeichnungen, die als nährwert- oder gesundheitsbezogene Angabe aufgefasst werden können, nur verwendet werden, wenn ihnen eine HCVO-konforme Angabe beigefügt ist. Die Übergangsfrist für vor 2005 bestehende Marken (Art. 28 Abs. 2) endete am 19.01.2022. Einschätzung (H): Bezeichnungen wie „Nootropics Complex“ oder Sortensätze mit „Fokus“ sind deshalb wie Angaben zu behandeln.",
+   "phase": "übergreifend",
+   "belegstelle": "HCVO Art. 1 Abs. 3; Art. 28 Abs. 2 „bis zum 19. Januar 2022“",
+   "quellen": [
+    {
+     "titel": "Verordnung (EG) Nr. 1924/2006, konsolidierte Fassung 13.12.2014",
+     "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R1924-20141213",
+     "art": "Gesetz/Behörde",
+     "datum": "konsolidiert 13.12.2014"
+    },
+    {
+     "titel": "HOLY – Nährwerttabelle Raspberry Raptor („HOLY Energy – Nootropics Complex“)",
+     "url": "https://de.holy.com/cdn/shop/files/NE-0001_2.png",
+     "art": "Firmenquelle",
+     "datum": "abgerufen 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Blog-Mock-up: keine Rubriken oder Überschriften wie „Nootropics-Check“ oder „Fokus-Booster“. Im Mock-up besser „Inhaltsstoffe“ statt „Nootropics Complex“ schreiben.",
+   "einordnung": "Rechtsgrundlage HCVO; Normtext ✔, Anwendung auf HOLY-Bezeichnungen H; keine Rechtsberatung"
+  },
+  {
+   "id": "R93",
+   "aussage": "Nach Erwägungsgrund 9 der VO (EU) Nr. 432/2012 unterliegt eine Angabe, deren Wortlaut aus Verbrauchersicht gleichbedeutend mit einer zugelassenen Angabe ist, denselben Verwendungsbedingungen. Umformulierungen sind also möglich, aber nicht freier. Nach Erwägungsgrund 11 dürfen noch nicht abschließend bewertete Angaben („on hold“) nach Art. 28 Abs. 5/6 HCVO weiter verwendet werden. Lebensmittelklarheit (Stand 30.03.2023) schreibt zu Botanicals: Unternehmen dürfen solche Angaben verwenden, wenn sie die Grundregeln der HCVO einhalten. Im Zweifel müssen sie wissenschaftlich belegen, dass die Stoffe in der vorhandenen Menge wirken.",
+   "phase": "Recherche",
+   "belegstelle": "VO 432/2012 Erwägungsgründe (9) und (11); Lebensmittelklarheit: „Lebensmittelunternehmen dürfen die Produkte mit den beantragten Claims bewerben, wenn sie die grundsätzlichen Bestimmungen der Health-Claims-Verordnung einhalten. Im Zweifelsfall müssen sie wissenschaftliche Nachweise liefern …“",
+   "quellen": [
+    {
+     "titel": "Verordnung (EU) Nr. 432/2012, Erwägungsgründe 9 und 11",
+     "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432",
+     "art": "Gesetz/Behörde",
+     "datum": "16.05.2012"
+    },
+    {
+     "titel": "Lebensmittelklarheit: Warum darf mit gesundheitsbezogenen Angaben für Passionsblume geworben werden?",
+     "url": "https://www.lebensmittelklarheit.de/fragen-antworten/warum-darf-mit-gesundheitsbezogenen-angaben-fuer-passionsblume-geworben-werden",
+     "art": "Verbraucherschutz (Portal der Verbraucherzentralen)",
+     "datum": "Stand 30.03.2023"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Grenzt die Unsicherheit in R10 ein. Für den Blog bleibt die Empfehlung: keine on-hold-Angaben, weil HOLY dafür beweispflichtig wäre und die Gruppe das nicht prüfen kann. Zugelassene Vitamin-Angaben am besten im Listenwortlaut verwenden (R08, R31).",
+   "einordnung": "Rechtsgrundlage HCVO/432/2012; Verbraucherschutz-Auffassung zu Botanicals; ob die Koffein-Angaben im EU-Register als „on hold“ geführt werden, ist nicht geprüft; keine Rechtsberatung"
+  },
+  {
+   "id": "R94",
+   "aussage": "Laut HOLY-Help-Center enthält HOLY Iced Tea „derzeit in den meisten Geschmacksrichtungen Ashwagandha“. Die neuesten Sorten (Classic Hibiscus Tea, Classic Black Tea, Classic Green Tea, Strawberry x Hibiscus) enthalten demnach kein Ashwagandha mehr, sondern Ylang-Ylang, Passionsblume und Zitronenmelisse, „drei Pflanzen, die für ihre beruhigenden Eigenschaften geschätzt werden und für alle geeignet sind, einschließlich Kinder, Schwangere und stillende Frauen“. Das BfR empfiehlt Kindern, Schwangeren, Stillenden und Personen mit Lebererkrankung, keine Ashwagandha-Präparate einzunehmen. Es rät auch der übrigen Bevölkerung zur Zurückhaltung (Mitteilung 039/2024 vom 10.09.2024).",
+   "phase": "Entscheidung",
+   "belegstelle": "Help-Center (Iced-Tea-Absatz und „Dank eures wertvollen Feedbacks …“); BfR 039/2024 S. 1: „empfiehlt … insbesondere Kindern, Schwangeren und Stillenden sowie Personen mit einer bestehenden oder früheren Erkrankung der Leber keine Ashwagandha-Präparate einzunehmen“",
+   "quellen": [
+    {
+     "titel": "HOLY Help-Center: Ab wie viel Jahren darf man HOLY Energy®, HOLY Iced Tea® und HOLY Hydration® trinken?",
+     "url": "https://help.de.weareholy.com/de-DE/ab-wie-viel-jahren-darf-man-holy-energy-holy-iced-tea-und-holy-hydration-trinken-320326",
+     "art": "Firmenquelle",
+     "datum": "abgerufen 30.10.2026"
+    },
+    {
+     "titel": "BfR-Mitteilung 039/2024: Ashwagandha: Schlafbeeren-Präparate mit möglichen Gesundheitsrisiken",
+     "url": "https://mobil.bfr.bund.de/cm/343/ashwagandha-schlafbeeren-praeparate-mit-moeglichen-gesundheitsrisiken.pdf",
+     "art": "Gesetz/Behörde",
+     "datum": "10.09.2024"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Leitplanke für einen Blog über die ganze Produktwelt (z. B. „Welcher HOLY passt zu deinem Tag?“): keine „beruhigend“-Aussagen zu Pflanzenextrakten und kein „für Kinder, Schwangere und Stillende geeignet“. Ashwagandha-Sorten nicht als Familien- oder Kindergetränk zeigen. Iced-Tea-Sorten mit grünem Tee berühren die Kombi-Warnung aus R19. Möglicher Bruch: Help-Center gegen BfR.",
+   "einordnung": "Fakten ✔ (Selbstauskunft HOLY, Behördenmitteilung); rechtliche Bewertung der Aussage „beruhigende Eigenschaften … für alle geeignet“ H (on-hold-Botanicals, R93); Iced-Tea-Etiketten nicht geprüft; keine Rechtsberatung"
+  },
+  {
+   "id": "R95",
+   "aussage": "In der Vorlesung stehen „Blogs“ auf S. 112 in der Spalte Earned Media (neben Mundpropaganda, Social-Media-Likes, YouTube-Fan-Videos, Foren). Owned Media sind dort u. a. Webseite, Microsite, Fan-Community und Social-Media-Auftritt. Auf S. 117/118 steht „Content Marketing (Videos, Blogs, Bilder)“ in der Zeile Earned/Social Media unter Problemerkennung/Inspiration und „Content Marketing“ noch einmal unter Bindung. Beispiel ist der Blog „Whole Story“ von Whole Foods. Ein Blog auf de.holy.com wäre nach S. 112 eher Owned (Webseite/Microsite). Die Zuordnung zur Recherche-Phase in den R-Befunden ist eine eigene Entscheidung und folgt nicht aus Stenger.",
+   "phase": "Problemerkennung/Inspiration",
+   "belegstelle": "Stenger S. 112 (Tabelle Paid/Owned/Earned, „Content (z.B. YouTube Fan Videos), Blogs, Foren, etc.“ unter Earned); S. 117/118 Zeile „Earned – Social Media: Content Marketing (Videos, Blogs, Bilder)“ unter Problemerkennung/Inspiration; S. 118 „Wholefoods – Blog „Whole Story““",
+   "quellen": [
+    {
+     "titel": "Stenger, Unternehmenskommunikation, Touchpoint-Kategorisierung Paid/Owned/Earned",
+     "url": "Stenger S. 112",
+     "art": "Vorlesung",
+     "datum": "o. D."
+    },
+    {
+     "titel": "Stenger, Unternehmenskommunikation, Customer Touchpoints Aktivitäten",
+     "url": "Stenger S. 117/118",
+     "art": "Vorlesung",
+     "datum": "o. D."
+    }
+   ],
+   "herkunft": "Vorlesung",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Die Herleitung muss auf der Folie sichtbar sein (R4, Stenger: „Wie kommt ihr auf …?“). Den HOLY-Blog als Owned begründen, mit Earned-Verlängerung über Creator und Teilen. Phase begründet wählen (Stenger: Inspiration; Gruppe: Recherche für „Koffein-Check“). Die Abweichung offen benennen, statt sie Stenger zuzuschreiben.",
+   "einordnung": "Paid/Owned/Earned nach Stenger (in Anlehnung an Esch et al. 2016, S. 335 ff., laut Folie); Literaturstelle selbst nicht geprüft"
+  },
+  {
+   "id": "R96",
+   "aussage": "Polen verbietet seit 2024 den Verkauf von Energy Drinks an unter 18-Jährige (Stiftung Warentest, 03.06.2026). Die Begründung des Grünen-Antrags im Bundestag nennt Lettland, Polen und Rumänien als EU-Staaten mit Verkaufsverbot an Minderjährige (wiedergegeben in BT-Drs. 21/4591). Den polnischen Gesetzestext, die Schwelle und ob Pulver erfasst sind, habe ich nicht an der Primärquelle geprüft. Englischsprachige Sekundärquellen nennen mehr als 150 mg/l Koffein oder Taurin und den 01.01.2024.",
+   "phase": "Kauf",
+   "belegstelle": "test.de: „In Polen dürfen Energy Drinks dagegen seit 2024 nicht mehr an unter 18-Jährige verkauft werden.“; BT-Drs. 21/4591 S. 1: „In mehreren EU-Mitgliedstaaten, z. B. Lettland, Polen oder Rumänien, sei der Verkauf von Energydrinks an Minderjährige verboten.“",
+   "quellen": [
+    {
+     "titel": "Stiftung Warentest: Energy-Drink-Pulver von Holy – Getränkepulver hat zu viel Koffein für Kids",
+     "url": "https://www.test.de/Energy-Drink-Pulver-von-Holy-Zu-viel-Koffein-fuer-Kids-6296344-0/",
+     "art": "Verbraucherschutz/Presse",
+     "datum": "03.06.2026"
+    },
+    {
+     "titel": "Deutscher Bundestag Drucksache 21/4591 (Beschlussempfehlung zum Antrag 21/4285)",
+     "url": "https://dserver.bundestag.de/btd/21/045/2104591.pdf",
+     "art": "Gesetz/Behörde",
+     "datum": "06.03.2026"
+    },
+    {
+     "titel": "Notes from Poland: Poland bans sale of energy drinks to under-18s (Suchtreffer, nicht geöffnet)",
+     "url": "https://notesfrompoland.com/2023/08/24/poland-bans-sale-of-energy-drinks-to-under-18s/",
+     "art": "Suchergebnis",
+     "datum": "24.08.2023"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "~",
+   "relevanz_fs2": "Ergänzt R21 für die Leitplanken-Folie: Mehrere Länder haben Altersgrenzen, Deutschland nicht. Das stützt die Empfehlung, freiwillig und einheitlich „18+“ zu kommunizieren (FS1 S2).",
+   "einordnung": "Ausländisches Recht; Sekundärquellen; Primärtext nicht geprüft"
+  },
+  {
+   "id": "R97",
+   "aussage": "Die Angabe, ein Lebensmittel habe einen hohen Vitamingehalt, und jede Angabe mit voraussichtlich derselben Bedeutung ist nur zulässig, wenn das Produkt mindestens das Doppelte des Werts für „Vitaminquelle“ enthält (HCVO Anhang). Bei Getränken sind das in der Regel 2 × 7,5 % = 15 % des Nährstoffbezugswerts je 100 ml. Einschätzung (H): „voller Vitamine“ (Milkshake-Shoptexte) und „reich an Vitaminen“ (laut KONSUMENT Selbstdarstellung von Apple Alligator) haben voraussichtlich dieselbe Bedeutung. Raspberry Raptor liegt bei rund 20 % je 100 ml zubereitet und erfüllt das. Die Vitaminwerte der Milkshakes sind nicht geprüft.",
+   "phase": "Recherche",
+   "belegstelle": "HCVO Anhang „HOHER [NAME DES VITAMINS/DER VITAMINE] …-GEHALT“: „mindestens das Doppelte des unter „…-Quelle“ genannten Werts“; LMIV Anhang XIII Teil A Nr. 2; Shoptexte „voller Vitamine“; KONSUMENT 20.3.2026 „reich an Vitaminen“",
+   "quellen": [
+    {
+     "titel": "Verordnung (EG) Nr. 1924/2006, Anhang",
+     "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R1924-20141213",
+     "art": "Gesetz/Behörde",
+     "datum": "konsolidiert 13.12.2014"
+    },
+    {
+     "titel": "HOLY Shop-Suche „milkshake“",
+     "url": "https://de.holy.com/search/suggest.json?q=milkshake&resources[type]=product",
+     "art": "Firmenquelle",
+     "datum": "abgerufen 30.10.2026"
+    },
+    {
+     "titel": "KONSUMENT: Holy Energy Getränkepulver – Achtung! Hohe Koffeinmenge!",
+     "url": "https://konsument.at/holyenergy-koffein26",
+     "art": "Verbraucherschutz/Presse",
+     "datum": "20.03.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "H",
+   "relevanz_fs2": "Do im Blog: „reich an Vitaminen“ nur für geprüfte Sorten und mit Zahl pro 100 ml. Beim Milkshake nur, wenn das Etikett die Werte nach Zubereitung belegt. Passt zu R07 und zur Regel „keine Zahlen ohne Quelle“.",
+   "einordnung": "Normtext ✔; Gleichbedeutung und Subsumtion H; keine Rechtsberatung"
+  },
+  {
+   "id": "R98",
+   "aussage": "Wer als Anbieter von Waren, die nach Gewicht oder Volumen angeboten werden, gegenüber Verbrauchern unter Angabe von Preisen wirbt, muss neben dem Gesamtpreis den Grundpreis „unmissverständlich, klar erkennbar und gut lesbar“ angeben (§ 4 Abs. 1 PAngV). Ausgenommen sind Waren mit weniger als 10 g oder 10 ml Nenngewicht (§ 4 Abs. 3 Nr. 1), was einen einzelnen 7-g-Beutel betreffen kann (H). Das Etikett von Raspberry Raptor nennt „Eine Dose enthält 350 Gramm Pulver – 11,43€ / 100g“.",
+   "phase": "Entscheidung",
+   "belegstelle": "§ 4 Abs. 1 und Abs. 3 Nr. 1 PAngV; Etikett Raspberry Raptor (Fußzeile)",
+   "quellen": [
+    {
+     "titel": "Preisangabenverordnung § 4",
+     "url": "https://www.gesetze-im-internet.de/pangv_2022/__4.html",
+     "art": "Gesetz/Behörde",
+     "datum": "abgerufen 30.10.2026"
+    },
+    {
+     "titel": "HOLY – Etikett Inhaltsstoffe Raspberry Raptor (Bild)",
+     "url": "https://de.holy.com/cdn/shop/files/Ingredients_New_DE_raptor_1.png",
+     "art": "Firmenquelle",
+     "datum": "abgerufen 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Falls der Blog in der Entscheidungsphase mit „Preis pro Portion“ oder Dosenpreisen argumentiert (offene Frage im Dossier), gehört der Grundpreis dazu. Schließt die Lücke „Preisangabenverordnung nicht vertieft“.",
+   "einordnung": "Rechtsgrundlage PAngV; Anwendung auf Blog H; keine Rechtsberatung"
+  },
+  {
+   "id": "R99",
+   "aussage": "Die FAQ der HOLY-Syrup-Kollektion enthält am 30.10.2026 mehrere Umweltaussagen: „Wie nachhaltig ist das System? Kurze Antwort: Viel besser als Flaschen aus dem Supermarkt.“, dazu der Vergleich „Ein Pod ergibt ca. 2,5L HOLY auf Stufe 3 – so viel wie fünf 0,5 L PET Flaschen … Die 5 leeren PET Flaschen wiegen 75 g, ein Pod gerade mal 6 g“ und „Die Pods bestehen komplett aus einem einzigen Kunststoff (PP) und sind dadurch gut recyclebar“. Einschätzung (H): Das sind Umweltaussagen (§ 2 Abs. 2 Nr. 5 UWG). Die Recyclingfähigkeit ist ausdrücklich Irreführungsgegenstand (§ 5 Abs. 2 Nr. 1). Der Vergleich gilt nur für Stufe 3.",
+   "phase": "Entscheidung",
+   "belegstelle": "Syrup-FAQ „Wie nachhaltig ist das System?“ und „Wie entsorge ich die Syrup Pods?“; UWG § 2 Abs. 2 Nr. 5, § 5 Abs. 2 Nr. 1, Anhang Nr. 4a/4b",
+   "quellen": [
+    {
+     "titel": "HOLY Syrup – Kollektion inkl. FAQ",
+     "url": "https://de.holy.com/collections/syrup-launch",
+     "art": "Firmenquelle",
+     "datum": "abgerufen 30.10.2026"
+    },
+    {
+     "titel": "UWG (aktuelle Fassung)",
+     "url": "https://www.gesetze-im-internet.de/uwg_2004/BJNR141400004.html",
+     "art": "Gesetz/Behörde",
+     "datum": "abgerufen 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "H",
+   "relevanz_fs2": "Präzisiert R31 Nr. 10 (Stufe 3 nennen) und R24. „Viel besser als Flaschen“ ist als Pauschalvergleich für den Blog ungeeignet. Möglicher Befund „Anspruch gegen Auftritt“ in der Journey-Analyse.",
+   "einordnung": "Owned; Selbstauskunft HOLY; rechtliche Einordnung H, keine Rechtsberatung"
+  }
+ ],
+ "hinweise": [
+  "Alle rechtlichen Einordnungen sind Einschätzungen von Studierenden bzw. eines Prüfagenten und keine Rechtsberatung. So in Blog, Folie und Backup kennzeichnen.",
+  "Methode (Abruf 30.10.2026): Die Primärquellen habe ich direkt geöffnet. EU-Texte über den Cellar (http://publications.europa.eu/resource/celex/…, mit Accept application/xhtml+xml und Accept-Language deu), dazu gesetze-im-internet.de, recht.bund.de (BGBl.-PDFs), HOLY-Seiten und -Etikettbilder, Lebensmittelklarheit, Verbraucherzentralen, EFSA, BfR-PDFs, GOV.UK, Lewis Silkin, TRIS samt Entwurf und Lovdata-Auszug, Bundesrat und Bundestag. Den TRIS-Status habe ich zusätzlich per WebFetch geprüft. Für den Medienanstalten-Leitfaden, Polen und Ashwagandha nutzte ich das Suchwerkzeug, das US-lastig ist. Suchergebnisse sind standortabhängig.",
+  "Wichtigste Korrekturen: R21 – Norwegens Verbot ist seit 01.01.2026 in Kraft und kein Entwurf mehr. R20/R90 – Die HOLY-AGB nennen auf zwei Seiten 18 bzw. 16 Jahre. R10 – 75 mg pro Portion galten nur für die Angaben zu Aufmerksamkeit und Konzentration. R15 – Nr. 4.2 LMIV gilt dem Wortlaut nach für „andere Lebensmittel als Getränke“, ein Verstoß gegen „selbes Sichtfeld“ ist nicht belegt. R08/R31 – gleichbedeutender Wortlaut ist möglich, aber kein Ausdehnen auf „Fokus“ (KG Berlin 2026). R32 – zu Vitamin D gibt es zugelassene Angaben. R26/R31 – laut Leitfaden heißt es „bezahlte Werbepartnerschaft“.",
+  "Quellentypen vereinheitlichen: Lebensmittelklarheit und die Verbraucherzentralen sind Verbraucherorganisationen, keine Behörden (im Befund als „Gesetz/Behörde“ geführt). Lewis Silkin ist eine Kanzlei, keine Presse. Herkunft von R31/R32 ist eine Synthese aus geprüften Quellen (H), nicht „Modellwissen“.",
+  "Vorlesung (R95): Stenger ordnet Blogs auf S. 112 Earned Media zu und zeigt Content Marketing auf S. 117/118 unter Problemerkennung/Inspiration. Die Einordnung des HOLY-Blogs als „Owned, Recherche“ muss die Gruppe auf der Folie selbst begründen. S. 107–129 enthalten keine Rechtsinhalte (Textsuche geprüft).",
+  "Lebensmittelklarheit kennzeichnet die Meldung „Pro Delight“ (2018), auf die sich R10 und R13 stützen, selbst als möglicherweise veraltet. Für die Folie besser die HOLY-Meldung (13.03.2025) und den KG-Bericht (15.10.2026) nutzen.",
+  "Personenbezogene Daten: watson zitiert einen Reddit-Nutzernamen, Lebensmittelklarheit nennt Herkunftsorte der Beschwerdeführenden, das HOLY-Listicle nennt einen Mitarbeiter-Vornamen als Autor. Nichts davon übernehmen. In den Befunden selbst stehen keine personenbezogenen Daten.",
+  "Lücken, die ich nicht prüfen konnte: EU-Register der Health Claims (ob die Koffein-Angaben heute noch „on hold“ sind), die aktuelle DDG-Fassung des Medienanstalten-Leitfadens (PDF-Link nicht abrufbar), die Plenarentscheidung des Bundestags zu Antrag 21/4285 (DIP nur mit JavaScript), den polnischen Gesetzestext, den KG-Urteilstext (nur Bericht), neuere konsolidierte Fassungen von LMIV und VO 432/2012 (der Cellar lieferte die Fassungen 2018 bzw. 2012), die Etiketten von Iced Tea, Hydration, Syrup und Milkshake sowie den Beleg für „more than 90%“ (nur FS1).",
+  "Für die Herleitung auf der Folie eignet sich eine Kette echter, datierter Belege. Lebensmittelklarheit 03/2025 (HOLY entfernt Claims), Listicle live am 30.10.2026 (Gewichtsverlust, Diabetes, Wohlbefinden), KG Berlin 08/2026 („Focus“), UWG/EmpCo seit 27.09.2026 („nachhaltig verpackt“ in der Meta-Beschreibung), dazu England und Norwegen gegenüber Deutschland ohne Altersgrenze. Daraus folgen die Do/Don’t-Liste und der Infokasten „Gut zu wissen“ im Blog-Mock-up."
+ ]
+}

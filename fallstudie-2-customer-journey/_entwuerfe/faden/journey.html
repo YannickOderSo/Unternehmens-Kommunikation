@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Kopie der Musterfolie (Richtung „Der Journey-Pfad“) für den Gestaltungsplan FS2, 30.10.2026. Schriftpfade relativ zum Repository: Bricolage aus fallstudie-1-brand-persona/praesentation/schriften/. Libre Franklin liegt noch nicht im Repository; geladen wird ../../praesentation/schriften/ (entsteht beim Bau, Meilenstein M5); bis dahin fällt der Text auf „Segoe UI“/Arial zurück. Verbindlich ist das PNG. -->
+<!-- Kopie der Musterfolie (Richtung „Der Journey-Pfad“) für den Gestaltungsplan FS2, 30.10.2026. Schriftpfade relativ zum Repository: Bricolage aus fallstudie-1-brand-persona/praesentation/schriften/. Libre Franklin liegt noch nicht im Repository; geladen wird ../../praesentation/schriften/ (entsteht beim Bau, Meilenstein M5); bis dahin fällt der Text auf „Segoe UI“/Arial zurück. Verbindlich ist das PNG. Korrektur nach der Schlussprüfung (30.10.2026): Der Online-Weg lief bis x = 1950 über den Bühnenrand; er endet jetzt an der Satzspiegelkante (x = 1792) mit Pfeilspitze und der Notiz „Bindung geht weiter“, das PNG ist neu gerendert. -->
 
 <html lang="de" data-modus="hell">
 <head>
@@ -162,6 +162,9 @@ html, body { margin: 0; background: #0E0E0D; }
 svg.pfad { position: absolute; left: 0; top: 0; z-index: 1; overflow: visible; pointer-events: none; }
 .pfad .kontur { fill: none; stroke: var(--pfad-kontur); stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; }
 .pfad .gelb { fill: none; stroke: var(--gelb); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.pfad .spitze-k { fill: var(--pfad-kontur); stroke: var(--pfad-kontur); stroke-width: 8; stroke-linejoin: round; }
+.pfad .spitze-g { fill: var(--gelb); }
+.notiz { position: absolute; z-index: 3; font-size: 24px; line-height: 1.2; color: var(--schrift-2); white-space: nowrap; }
 [data-modus="dunkel"] .pfad .kontur { stroke-width: 14; }
 
 /* Aufbau in Schritten */
@@ -275,6 +278,7 @@ const linie = pts => {
 const [x1, y1] = mitte('k1'), [x2, y2] = mitte('k2'), [x3, y3] = mitte('k3'), [x4, y4] = mitte('k4'), [x5, y5] = mitte('k5'), [x6, y6] = mitte('k6');
 const rinne = k => PHASE_X(k) - RINNE / 2;               /* Mitte der Rinne vor Phase k */
 const g2 = rinne(2), g3 = rinne(3), g4 = rinne(4), g5 = rinne(5);
+const ENDE = RAND + 12 * SP + 11 * RINNE - 4, SPITZE = 22;   /* rechte Satzspiegelkante 1792, minus 4 px für die Kontur */
 const stuecke = [
   { s: 1, d: linie([[x1, y1], [g2, y1], [g2, y2], [x2, y2]]) },
   { s: 2, d: linie([[x2, y2], [g3, y2], [g3, y3], [x3, y3]]) },
@@ -284,12 +288,20 @@ const stuecke = [
   { s: 3, d: `M ${x4} ${y4} L ${g5} ${y4}` },
   { s: 3, d: `M ${g5 + 20} ${y4} L ${g5 + 32} ${y4}` },
   { s: 3, d: `M ${g5 + 48} ${y4} L ${g5 + 50} ${y4}` },
-  /* online: weiter in den Squad und über den Rand hinaus */
-  { s: 3, d: linie([[x5, y5], [g5, y5], [g5, y6], [1950, y6]]) }
+  /* online: weiter in den Squad; endet an der Satzspiegelkante (nicht im Rand, kein Anschnitt) mit Pfeilspitze */
+  { s: 3, d: linie([[x5, y5], [g5, y5], [g5, y6], [ENDE - SPITZE, y6]]) }
 ];
 ['kontur', 'gelb'].forEach(cls => stuecke.forEach(st => {
   const p = document.createElementNS(NS, 'path'); p.setAttribute('d', st.d); p.setAttribute('class', cls); p.dataset.s = st.s; svg.appendChild(p);
 }));
+
+/* Pfeilspitze am Ende des Online-Wegs: „Bindung geht weiter“ (Polygon statt path, damit sie im Aufbau ein- und ausblendet) */
+['spitze-k', 'spitze-g'].forEach(cls => {
+  const p = document.createElementNS(NS, 'polygon');
+  p.setAttribute('points', `${ENDE - SPITZE},${y6 - 17} ${ENDE},${y6} ${ENDE - SPITZE},${y6 + 17}`);
+  p.setAttribute('class', cls); p.dataset.s = 3; svg.appendChild(p);
+});
+el('div', 'notiz', { left: (PHASE_X(5) + (PHASE_B - KW) / 2) + 'px', top: (y6 - KH / 2 - 40) + 'px' }, 'Bindung geht weiter', 3);
 
 /* Momente der Wahrheit */
 const knoten = (zahl, x, y, s) => el('div', 'knoten', { left: x + 'px', top: y + 'px' }, String(zahl), s);

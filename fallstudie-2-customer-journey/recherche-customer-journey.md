@@ -16,8 +16,8 @@ in Klammern): Modelle und Vorlesung (L), Persona und Mediennutzung (P), Touchpoi
 Suche und Content-Lücken (S), Blog-Benchmark (M), rechtliche Leitplanken (R) sowie Bilder, Rechte und Corporate
 Design (G). Jeden Bereich hat danach ein weiterer Unteragent unabhängig an den Quellen gegengeprüft. Die Prüfer haben
 dabei auch eigene Befunde ergänzt (IDs ab 90; für sie gab es nur diese eine Prüfung). Anschließend hat ein weiterer
-Unteragent das fertige Dossier geprüft (Schlussprüfung, 30.10.2026); seine Korrekturen sind eingearbeitet und in
-Anhang A.9 einzeln aufgeführt. Der Lauf wurde durch ein Nutzungslimit unterbrochen und fortgesetzt. Für fünf
+Unteragent das fertige Dossier geprüft (Schlussprüfung, 30.10.2026). Seine Korrekturen sind eingearbeitet, soweit sie
+sich an den Quellen bestätigt haben; Anhang A.9 führt jede Änderung und die nicht übernommenen Punkte auf. Der Lauf wurde durch ein Nutzungslimit unterbrochen und fortgesetzt. Für fünf
 Bereiche lagen Recherche und Gegenprüfung schon zusammengeführt vor. Für R, P und G wurden sie beim Schreiben dieses
 Dossiers zusammengeführt: Der Status kommt aus der Gegenprüfung, bei ✎ steht deren korrigierte Fassung im Text.
 Jeder Befund dieser drei Bereiche wurde geprüft; keiner gilt deshalb als „nicht gegengeprüft“. Für R, P und G stammen
@@ -89,7 +89,7 @@ Mediennutzung, Limbic-Passung, Herleitungen und Visualisierung (Bewertungsbogen 
 | Problemerkennung/Inspiration · AWARE | Creator-Programm ✔ T02 [1, 2], D1 [90, 131]; TV, Streaming, DOOH seit 01/2026 ✎ T01 D1 [25, 130]; eigene Kanäle (TikTok 274.062 Follower, YouTube 20.700 Abos am 30.10.2026) ✎ T09 [3], D1 [20, 123] | Lineares Fernsehen erreicht 14- bis 29-Jährige nur noch zu 44 % pro Woche, Social Media zu 91 % ✎ P14 [4], D1 §7.1 · ✔ P11 [4, 5]. Für Marco zählen Kanäle auf Abruf (**H**, 3.3). |
 | Recherche · APPEAL | Website mit Vergleichsgrafiken ✔ T12 [6, 7], Help-Center mit 86 Artikeln ✔ T13 [8], D1 [141, 147], Dateien für KI-Assistenten ✔ T15 [9, 10], D1 [12, 142] | Einen Blog gibt es nicht ✔ L39 D1 [126]. Koffein, Alter und Tagesportion stehen nur auf Etikettbildern ✎ S31 [2, 11] · ✔ S92 [12, 13, 14]. Gesucht wird nach Koffein, Gesundheit, Kindern und Süßstoff ✔ S04 [15] · ✔ S05 [2, 16] · ✔ S06 [17]. |
 | Entscheidung · ASSURE | Bewertungen (Trustpilot 4,7 bei 17.046; REVIEWS.io 4,59 bei 65.645) ✔ T17 D1 [54, 88, 89]; Probier-Boxen und „1 Portion“ für 1,99 € ✔ T20 [2], D1 [1, 143]; Garantie ✎ T18 D1 [12, 54] | HOLY rahmt den Preis selbst über Rabatte ✔ B09 [18, 19], D1 [30]; eine Kundenstimme bestätigt das ✔ B10 [20, 21, 22]. Dass die Kundschaft den Preis allgemein so wahrnimmt, ist **H**. Die Garantie-Regel in AGB § 12 widerspricht sich selbst ✎ T18 D1 [12, 54]. |
-| Kauf · ACT | Onlineshop mit Mix & Match ✔ T22 D1 [48, 54]; Amazon mit HOLY als Händler ✔ T97 [23, 24]; Handel | Kein Store-Locator ✎ T28 [25, 26]. Auf den Shop-Seiten ist der Footer-Link „Cashback-Aktion“ der einzige Hinweis auf den Handel, die KI-Dateien nennen ihn gar nicht ✔ T95 [9], D1 [1, 148]; sonst nennen nur die Story-Seite („10.000+ Supermärkte“), ein Help-Center-Artikel („Testphase“) und Shorts den Supermarkt, ohne Kette oder Filiale ✔ B02 D1 [5, 147] (Shorts: Bruch 1). Das Cashback hat hohe Hürden ✔ B03 D1 [64, 148]. |
+| Kauf · ACT | Onlineshop mit Mix & Match ✔ T22 D1 [48, 54]; Amazon mit HOLY als Händler ✔ T97 [23, 24]; Handel | Kein Store-Locator ✎ T28 [25, 26]. Auf den Shop-Seiten ist der Footer-Link „Cashback-Aktion“ der einzige Hinweis auf den Handel, die KI-Dateien nennen den Handel gar nicht ✔ T95 [9], D1 [1, 148]; sonst nennen nur die Story-Seite („10.000+ Supermärkte“), ein Help-Center-Artikel („Testphase“) und Shorts den Supermarkt, ohne Kette oder Filiale ✔ B02 D1 [5, 147] · ✔ T90 (Quellen bei Bruch 1). Das Cashback hat hohe Hürden ✔ B03 D1 [64, 148]. |
 | Bindung · ADVOCATE | SQUAD Rewards ✔ T32 D1 [12, 71]; Discord mit 72.065 Mitgliedern ✔ T35 [27], D1 [5, 21]; Newsletter ✔ T34 D1 [1, 71] | Kein Abo ✔ T30 [2]. Die Kritik in Bewertungen ballt sich nach dem Kauf: Süße, Shaker und Syrup-Bottle **H** B25 Vorl. S. 108, eigene Auswertung · ~ unsicher B24 [20] · ✔ B27 [20], D1 [61] (Grund für ~ bei B24: Codierung einer Person). |
 
 **Die fünf wichtigsten Brüche** (Details in 5.1)
@@ -109,7 +109,7 @@ Mediennutzung, Limbic-Passung, Herleitungen und Visualisierung (Bewertungsbogen 
 
 **Stärkste Blog-Chance (H).** Ein datierter Beitrag „Koffein-Check: Wie viel HOLY Energy ist okay?“ **H** S33 [42], D1 §7.3. Er
 bündelt die Koffein- und Gesundheitsfragen aus der Google-Autovervollständigung ✔ S04 [15]; dass dies der größte
-Frage-Cluster ist, ist **H**, denn die Vorschläge zeigen kein Suchvolumen (Methode in Kap. 6). Er stützt sich auf Etikett und EFSA ✔ S92 [12, 13, 14] · ✔ R17 [43] und schließt
+Frage-Cluster ist, ist **H**, denn die Vorschläge zeigen kein Suchvolumen ✎ S03 (Quellen und Methode in Kap. 6). Er stützt sich auf Etikett und EFSA ✔ S92 [12, 13, 14] · ✔ R17 [43] und schließt
 Bruch 3. Wettbewerber besetzen das Thema bereits mit eigenen Ratgebern ✔ S93 [44, 45, 46] · ✔ M05 [44] · ✔ M11 [47]. Die Nachtschicht passt als
 Abschnitt für Marco **H** S34 [48], `persona-steckbrief.md`. Der Beitrag muss strenge Leitplanken einhalten: keine Fokus-, Wachheits- oder
 Gesundheitsversprechen ✎ R10 [36, 37, 49, 50, 51], D1 [54, 81] · ✎ R32 [37], Synthese aus R03–R30 · ✔ R91 [52]. Ausarbeitung in Kapitel 8.
@@ -168,10 +168,10 @@ Paid/Owned/Earned; Lemon/Verhoef nennen sie „partner-owned“ ~ unsicher L25 [
 |---|---|---|---|
 | Bruhn 2016, S. 236 (S. 107) | wahrscheinlich Relationship Marketing, 5. Aufl., Vahlen; alternativ Kundenorientierung, dtv | ~ unsicher L02 [56, 57] – Werk nicht eindeutig | „Bruhn 2016, S. 236, zit. n. Stenger, S. 107“ |
 | Kroeber-Riel/Gröppel-Klein 2013, S. 374 (S. 108) | Konsumentenverhalten, 10. Aufl., Vahlen; S. 374 liegt bei der Produktbeurteilung, Kaufentscheidungsarten ab S. 458 | ✔ L04 [58] | „zit. n. Stenger, S. 108“ |
-| Kortum 2017, S. 34 ff. (S. 108) | Kortum, C.: „Determinanten des Konsumentenverhaltens im Kaufprozess“, in: Hierl, L. (Hrsg.): Mobile Payment, Wiesbaden: Springer Gabler 2017, S. 31–47, DOI 10.1007/978-3-658-14118-9_2 (Kapiteltitel und Seiten laut Crossref, in der Schlussprüfung geprüft) | ✎ L06 [59] | „Kortum 2017, S. 34 ff., zit. n. Stenger, S. 108“ |
+| Kortum 2017, S. 34 ff. (S. 108) | Kortum, C.: „Determinanten des Konsumentenverhaltens im Kaufprozess“, in: Hierl, L. (Hrsg.): Mobile Payment, Wiesbaden: Springer Fachmedien 2017, S. 31–47, DOI 10.1007/978-3-658-14118-9_2 (Autor, Kapiteltitel, Verlag und Seiten laut Crossref zu dieser DOI, Herausgeber laut Crossref zum Buch, DOI 10.1007/978-3-658-14118-9; in der Schlussprüfung abgerufen) | ✎ L06 [59] | „Kortum 2017, S. 34 ff., zit. n. Stenger, S. 108“ |
 | Kotler et al. 2017, S. 80 ff. (S. 109) | Marketing 4.0, Campus; dort heißt das dritte A „ask“, Stenger schreibt ASSURE; Kap. 9 behandelt Content Marketing | ✔ L08 [60, 61] · ✔ L90 [60] | auf Folien ASSURE, Abweichung im Backup |
 | Kreutzer 2018, S. 97 ff. (S. 109) | keinem geprüften Titel sicher zuzuordnen | ~ unsicher L09 [62, 63] – keine passende Stelle gefunden | nur „zit. n. Stenger, S. 109“ |
-| Esch et al. 2016, S. 340 (S. 109/110), S. 333 (S. 111), S. 335 ff. (S. 112) | Esch, F.-R./Klein, J./Schmitt, M./Knörle, C.: „Strategie und Steuerung des Customer Touchpoint Management“, in: Esch, F.-R./Langner, T./Bruhn, M. (Hrsg.): Handbuch Controlling der Kommunikation, 2. Aufl., Wiesbaden: Springer Gabler 2016, S. 329–350 | ✔ L10 [64, 65] | vollständig im Backup (Autoren und Seiten laut Tilburg, Herausgeber laut DNB) |
+| Esch et al. 2016, S. 340 (S. 109/110), S. 333 (S. 111), S. 335 ff. (S. 112) | Esch, F.-R./Klein, J./Schmitt, M./Knörle, C.: „Strategie und Steuerung des Customer Touchpoint Management“, in: Esch, F.-R./Langner, T./Bruhn, M. (Hrsg.): Handbuch Controlling der Kommunikation, 2. Aufl., Wiesbaden: Springer Gabler 2016, S. 329–350, DOI 10.1007/978-3-8349-3857-2_15 | ✔ L10 [64, 65] | vollständig im Backup; Autoren und Seiten laut Tilburg, Herausgeber laut DNB und Crossref. Crossref nennt Knörle vor Schmitt: Reihenfolge an der Kapitel-Titelseite prüfen |
 
 **Ergänzende Literatur (nur Backup und Rückfragen):** Court et al. 2009, Consumer Decision Journey ✔ L24 [66, 67] · ✔ L94 [66];
 Lemon/Verhoef 2016 ~ unsicher L25 [55] (Grund für ~: Volltext gesperrt, DOI 10.1509/jm.15.0420 zitieren); Lecinski 2011, ZMOT
@@ -521,8 +521,9 @@ Codierung der Stichprobe nicht).
 > Google-Autovervollständigung (hl=de, gl=de, ohne Anmeldung), eine deutsche DuckDuckGo-Stichprobe (Bing-basierter
 > Index), das Websuche-Werkzeug (US-Index) und selbst geöffnete Primärquellen ✎ S01 [104, 146, 147]. Keine dieser Listen zeigt das
 > Google-Ranking in Deutschland. Die Autovervollständigung zeigt weder Suchvolumen noch eine Rangfolge der Häufigkeit
-> ✎ S03 [148, 149]. Ein SERP-Selbstversuch der Gruppe (privates Fenster, zwei Geräte, Datum, Standort, Screenshots ins Backup)
-> bleibt nötig.
+> ✎ S03 [148, 149]. Jede Anfrage liefert höchstens zehn Vorschläge ✔ (Schlussprüfung, vier Abfragen am 30.10.2026) [148];
+> wie breit ein Cluster wirkt, hängt also auch davon ab, wie viele Anfragen gestellt wurden (**H**). Ein SERP-Selbstversuch
+> der Gruppe (privates Fenster, zwei Geräte, Datum, Standort, Screenshots ins Backup) bleibt nötig.
 
 ## 6.1 Was Suchende fragen
 
@@ -1214,14 +1215,14 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | L07 | 5 As mit Zielfragen und Momente der Wahrheit (S. 109/110) | ✎ | Folieninhalt bestätigt; „Rangfolge je Phase“ als Lesart (H) gekennzeichnet, die Folie nennt keine feste Anzahl · Quellen: Vorl. S. 109–110 |
 | L08 | Kotler et al. 2017 (Marketing 4.0): fünf As, drittes A heißt dort „ask“ | ✔ | Laut Inhaltsverzeichnis: Kap. 5 ab S. 75, „von vier As zu fünf As“ S. 76, „Zusammenfassung: aware, appeal, ask, act, advocate“ S. 90, Kap. 6 S. 91, „Die Einführung von PAR und BAR“ S. 93. Das Original von Wiley (2016) steht als eigener DNB-Datensatz im Katalog. · Quellen: [60, 61] |
 | L09 | „Kreutzer 2018, S. 97 ff.“ keinem Titel sicher zuzuordnen | ~ | Inhaltsverzeichnisse mehrerer Titel geprüft, keine passende Stelle; nur „zit. n. Stenger, S. 109“ verwenden · Quellen: [62, 63] |
-| L10 | Esch et al. 2016: Kapitel im Handbuch Controlling der Kommunikation, S. 329–350 | ✔ | Tilburg nennt Titel, S. 329–350, ISBN 9783834934413, Reihe Springer Reference Wirtschaft und den Abstract „Customer Touchpoint Management-Prozess in fünf Modulen … bis hin zur Berechnung der Marketing Spend Effectiveness“. Laut DNB: 2., vollst. überarb. u. erw. Aufl., xv + 788 S., Hrsg. Esch/Langner/Bruhn. · Quellen: [64, 65] |
+| L10 | Esch et al. 2016: Kapitel im Handbuch Controlling der Kommunikation, S. 329–350 | ✔ | Tilburg nennt Titel, S. 329–350, ISBN 9783834934413, Reihe Springer Reference Wirtschaft und den Abstract „Customer Touchpoint Management-Prozess in fünf Modulen … bis hin zur Berechnung der Marketing Spend Effectiveness“. Laut DNB: 2., vollst. überarb. u. erw. Aufl., xv + 788 S., Hrsg. Esch/Langner/Bruhn. Schlussprüfung: Crossref (DOI 10.1007/978-3-8349-3857-2_15) nennt die Autoren in der Reihenfolge Esch, Klein, Knörle, Schmitt. · Quellen: [64, 65] |
 | L11 | Customer-Touchpoint-Managementprozess in fünf Schritten (S. 111) | ✔ | Fünf Schritte, Leitfragen, „Kundenerlebnis“ mit Wiederkauf/Loyalität, Cross-Selling und Weiterempfehlung sowie die Quelle stimmen. · Quellen: Vorl. S. 111 |
 | L12 | Touchpoint-Analyse und Kategorien Paid/Owned/Earned (S. 112) | ✔ | Vorgehensweise, Kategorien und Beispiele stimmen. Die Pfeile laufen von Paid zu Owned, in einem großen Bogen von Paid zu Earned und zwischen Owned und Earned in beide Richtungen. Unter den Kategorien stehen die Zielgruppen „Kunden/Nicht-Kunden“, „Kunden“ und „Fans“. „Erreicht“ ist eine sinngemäße Umschreibung. · Quellen: Vorl. S. 112 |
 | L13 | Vorlesung ordnet Social Media und Blogs an verschiedenen Stellen verschieden ein | ✔ | Die beschriebenen Abweichungen stimmen. S. 113 bestätigt sie zusätzlich: „SOCIAL MEDIA @“ und „YOUTUBE @“ stehen unter Earned, während S. 112 den „Social-Media Auftritt (z.B. YouTube-Channel)“ zu Owned zählt. · Quellen: Vorl. S. 112, 113, 117, 121 |
 | L14 | Intersport-Liste: 22 Paid, 32 Owned, 12 Earned, „@“ an Online-Kontaktpunkten (S. 113) | ✎ | Zählung 22/32/12 bestätigt; die Bedeutung des „@“ hat keine Legende und ist Deutung · Quellen: Vorl. S. 113 |
 | L15 | Fallbeispiel Herren-Armbanduhr: Bildpfad über Kanäle und Phasen (S. 116) | ✔ | Raster, Kanalzeilen, Stationen und „(Quelle: Eigene Darstellung)“ stimmen. Lage auf der Folie: Instagram zwischen den Zeilen Internet und App, die Facebook-Anzeige in der Zeile Social, Lieferung/Unboxing an der Grenze von Kauf und Bindung, der Gutschein oben in der Bindung. · Quellen: Vorl. S. 116 |
 | L16 | Aktivitätenmatrix (S. 117) und Blog „Whole Story“ als Content-Marketing-Beispiel (S. 118) | ✎ | Phasenspannen am Seitenbild korrigiert (Affiliate bis Entscheidung, SEM bis Kauf); Whole-Foods-Weiterleitung bestätigt · Quellen: [53], Vorl. S. 117–118 |
-| L17 | S. 121 ohne Quelle; Paid/Owned/Earned von Forrester 2009 verbreitet, nicht erfunden | ✎ | Folieninhalt bestätigt; Corcoran/Forrester 2009 haben die Begriffe definiert und verbreitet, nicht erfunden; Blogbeitrag nicht abrufbar · Quellen: [54], Vorl. S. 121 |
+| L17 | S. 121 ohne Quelle; Paid/Owned/Earned von Forrester 2009 verbreitet, nicht erfunden | ✎ | Folieninhalt bestätigt; Corcoran/Forrester 2009 haben die Begriffe definiert und verbreitet, nicht erfunden; Blogbeitrag nicht abrufbar; Schlussprüfung: Die URL leitet am 30.10.2026 auf eine allgemeine Forrester-Seite (/b2b-marketing/) um, die Literaturangabe gilt deshalb als ungeprüft · Quellen: [54], Vorl. S. 121 |
 | L18 | Mediendaten der Vorlesung von 2017–2020; ARD/ZDF-Medienstudie 2026 liegt vor | ✔ | S. 122–125 tragen das Logo bzw. den Vermerk „ARD/ZDF-Massenkommunikation 2020“. S. 126 zeigt „Tab. 9 … 2017 bis 2019“ mit der Quelle „ARD/ZDF-Onlinestudien 2017-2019“. Die Basispräsentation hat 63 Seiten, wurde am 25.09.2026 erstellt, hat den Erhebungszeitraum 27.01.–19.04.2026 und n = 2.462 (71,00 Mio.). · Quellen: [4], Vorl. S. 122–126, `persona-datenerhebung.md` |
 | L19 | Übung S. 128/129: Top 2 Touchpoints je Phase, je 2 Aktivitäten (Persona Kathrin) | ✔ | Aufgabe, Produktangaben, Persona (35, verheiratet, 2 Kinder, Angestellte, HH-Einkommen 4.000 Euro, Saarbrücken, „Working Mom“), Mediennutzung, Einkaufsverhalten und die leere Matrix mit den Zeilen Search/Partner, Media-Werbung, Webseite, Filiale, Webshop, Email und Social Media stimmen. · Quellen: Vorl. S. 128–129 |
 | L20 | Herausforderungen, Bildkommunikation und UGC als Rahmen (S. 12–14, 43–56) | ✔ | Alle Folieninhalte stimmen. S. 56 zeigt den Kanal „Best Job in the World 17, Queensland, Australia“ mit Bewerbervideos (UGC), den aerie-Beitrag („Share your unretouched swim photos & we’ll donate $1 … for every post“) und #goprolife. Achtung: S. 14 und S. 56 zeigen Handles bzw. Vornamen von Privatpersonen. · Quellen: Vorl. S. 12–14, 43, 47, 54, 56 |
@@ -1282,7 +1283,7 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | P20 | agents.md: Rollen bis zum Kauf-Agenten, keine Altersgrenze | ✔ | wörtlich bestätigt; agents.md verlinkt die AGB, nennt das Alter aber nicht · Quellen: D1 [142], D1 §7.1, §7.2 |
 | P21 | Social Commerce: 48 % der 16- bis 29-Jährigen kaufen über soziale Netzwerke (Bitkom) | ✎ | Werte bestätigt; Datum über Seitenmetadaten geklärt (08.01.2026); kleine Teilgruppe (328 Social-Media-Einkäufer) · Quellen: [89, 90] |
 | P22 | Kauf nach Creator-Beitrag 16 % (20–29) bzw. 23 % (30–39); TikTok Shop | ✎ | S. 37 bestätigt; S. 38 stammt aus anderer Erhebung (ECC 2025); „Getränke & Snacks“ nur Rang 5 · Quellen: [86] |
-| P23 | Online-Bewertungen vor dem Kauf (Bitkom 2020): 66 % bei 16–29 | ✎ | Werte bestätigt; Basis Online-Käufer, Erhebungsjahr 2020. Bitkom schreibt „für … 55 Prozent … die wichtigste Informationsquelle“; gefragt wurde aber „Wie informieren Sie sich vor dem Kauf eines Online-Produktes?“ mit mehreren Nennungen (weitere Quellen 47 % und 39 %), die 55 % sind also die meistgenannte Quelle (Wortlaut in der Schlussprüfung nachgelesen) · Quellen: [92], `persona-steckbrief.md` |
+| P23 | Online-Bewertungen vor dem Kauf (Bitkom 2020): 66 % bei 16–29 | ✎ | Werte bestätigt; Basis Online-Käufer, Erhebungsjahr 2020. Bitkom schreibt „Für mehr als jeden zweiten Online-Shopper (55 Prozent) sind Kundenbewertungen vor dem Kauf die wichtigste Informationsquelle“; gefragt wurde „Wie informieren Sie sich vor dem Kauf eines Online-Produktes?“, weitere Quellen nennen 47 % und 39 %. Zusammen sind das über 100 %, mehrere Nennungen waren also möglich; „wichtigste“ heißt hier wohl die meistgenannte Quelle (H; Wortlaut in der Schlussprüfung nachgelesen) · Quellen: [92], `persona-steckbrief.md` |
 | P24 | Lebensmittel online 2025: 2,7 % Anteil, +11,5 % | ✔ | Werte bestätigt; FMCG 4,9 % (PM) bzw. 5,0 % (Bericht) · Quellen: [86, 88] |
 | P25 | Mobile Journey: Smartphone 61 % der Onlineumsätze, 95 % Tagesreichweite (14–29) | ✔ | Werte bestätigt; Wochenstunden sind Selbsteinschätzungen · Quellen: [4, 86, 87] |
 | P26 | LÖG NRW: Läden dürfen werktags ohne zeitliche Grenze öffnen | ✔ | Normtext bestätigt, keine neuere Änderung gefunden; keine Rechtsberatung · Quellen: [93] |
@@ -1377,12 +1378,12 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | B07 | Websuche: Warnungen Dritter überwiegen (US-Index) | ✎ | Kernaussage reproduzierbar, Daten und Quellenarten korrigiert; Platzierung für Nutzer in Deutschland ungeprüft · Quellen: [107, 135], D1 [27, 29, 149] |
 | B08 | agents.md: „Prefer first-party HOLY sources“ | ✔ | Das Zitat steht wörtlich in Zeile 32. Altersgrenze, Handel und Verkaufsstellen kommen weder in agents.md noch in der verlinkten llms-full.txt vor. · Quellen: D1 [142] |
 | B09 | Help-Center rahmt den Preis über Rabatte | ✔ | Die Zitate und Preise stimmen: starter-set-deluxe 59.99 bei compare_at 89.99, raspberry-raptor mit 50 Portionen 39,99 €, 10 Portionen 12,49 € und 1 Portion 1,99 €. 39,99/50 ergibt 0,80 € je Portion, passend zum Help-Center. · Quellen: [18, 19], D1 [30] |
-| B10 | Kundenstimme „Mit Promo-code gerade akzeptabel …“ an der Quelle gefunden | ✔ | Die Bewertung ist gefunden: 13.10.2026, 3 Sterne, Shop-Tag de-in, Text wörtlich „Geschmacklich große Auswahl. Preis pro Portion aber viel zu teuer. · Quellen: [20, 21, 22] |
+| B10 | Kundenstimme „Mit Promo-code gerade akzeptabel …“ an der Quelle gefunden | ✔ | Die Bewertung ist gefunden: 13.10.2026, 3 Sterne, Shop-Tag de-in, Text wörtlich „Geschmacklich große Auswahl. Preis pro Portion aber viel zu teuer. Mit Promo-code gerade akzeptabel, ohne hätte ich niemals bestellt.“ Die Amazon-Aspekte (Preis negativ 21 bzw. 6, Geschmack positiv 107) stehen so in der gespeicherten Seite, selbst abrufen ließen sie sich nicht. Auf der Folie als automatische Amazon-Auswertung kennzeichnen. · Quellen: [20, 21, 22] |
 | B11 | Kein Abo (Produktdateien geprüft) | ✔ | Alle 225 Produktdateien habe ich selbst geladen und ausgewertet: selling_plan_groups ist überall leer und requires_selling_plan überall false. Im Startseiten-HTML kommt „subscription“ nur im Shopify-Standardcode vor. Die Einschränkung bleibt: Es sind nur veröffentlichte Produkte geprüft. · Quellen: [2] |
 | B12 | Versandkosten: Banner und Versandrichtlinie widersprechen sich | ✔ | Banner und Help-Artikel nennen 4,99 € und versandkostenfrei ab 49 € für DE, AT, FR und BE. Die Richtlinie nennt diese Werte nur für DE und AT, für das „EU-Ausland … in der Regel 7,99 €“ und ab 69 € versandkostenfrei. Ergänzungen: Der Help-Artikel trägt „Aktualisiert vor 9 Tagen“, der Widerspruch blieb also trotz Überarbeitung. · Quellen: [39], D1 [53, 150] |
 | B13 | Freunde werben: zwei Mindestbestellwerte | ✔ | 14 € und 9 € stehen wörtlich da, der 9-€-Artikel ist „vor einem Monat“ aktualisiert. Es gibt eine zweite kleine Inkonsistenz: Der 14-€-Artikel (vor 9 Monaten) verspricht pauschal 900 Punkte, der Vorteile-Artikel 900 in Level 1 und 2 und 1.800 in Level 3 und 4. Stenger S. 109 („höchsten Empfehlungswert“, ADVOCATE) ist bestätigt. · Quellen: [40, 41], D1 [151] |
 | B14 | Trustpilot am 30.10.2026: 4,7, 17.046 Bewertungen | ✔ | Bestätigt sind: 17.046 Bewertungen, angezeigter Wert 4,7 bei Sternegrafik „4.5 von 5“, Verteilung 83/9/3/2/3 %, 99 % beantwortete negative Bewertungen, meist innerhalb von 48 Std., Hinweis auf zusammengeführte Profile, 20 von 20 mit „Bewertung ohne vorherige Einladung“. Bei meinem Abruf standen 3.493 Bewertungen in den letzten 12 Monaten, der Wert läuft also rollierend weiter. · Quellen: [142] |
-| B15 | REVIEWS.io: 588 deutsche Bewertungen in drei Wochen, fast alle aus Online-Bestellungen | ✔ | Exakt reproduziert: total_reviews 65645, average 4.59; 1.000 Bewertungen vom 07.10. bis 29.10.2026, ohne Überschneidung zwischen den Seiten; Verteilung 755/143/57/23/22. Der deutsche Shop (Tag de-in) hat 588 Bewertungen: 465/80/26/12/5, also 79,1/13,6/4,4/2,0/0,9 %. 587 davon sind verified_buyer, alle 588 haben eine DE-Bestellnummer. · Quellen: [20], D1 [89] |
+| B15 | REVIEWS.io: 588 deutsche unter den 1.000 neuesten Bewertungen (07.–29.10.2026), alle mit Bestellnummer | ✔ | Exakt reproduziert: total_reviews 65645, average 4.59; 1.000 Bewertungen vom 07.10. bis 29.10.2026, ohne Überschneidung zwischen den Seiten; Verteilung 755/143/57/23/22. Der deutsche Shop (Tag de-in) hat 588 Bewertungen: 465/80/26/12/5, also 79,1/13,6/4,4/2,0/0,9 %. 587 davon sind verified_buyer, alle 588 haben eine DE-Bestellnummer. · Quellen: [20], D1 [89] |
 | B16 | REVIEWS.io-„Metrics“ widersprechen HOLYs eigenen Angaben | ✔ | Alle Angaben sind wörtlich gesehen. Dazu steht im Block „Accurate And Undamaged Orders Greater than 94%“. Der Profiltext „Über HOLY“ nennt nur Energy, Iced Tea und Hydration, also weder Milkshake noch Syrup. · Quellen: [110], D1 [53, 89, 150] |
 | B17 | Amazon-Suche: HOLY nur als Anzeige; Bewertungen je Listing | ~ | nur ein Listing selbst abgerufen; übrige Werte an gespeicherten Seiten des Erstrechercheurs abgeglichen · Quellen: [32, 143] |
 | B18 | Amazon-Zusammenfassungen: Geschmack positiv, Preis negativ | ~ | Aspekte wörtlich mit gespeicherten Seiten abgeglichen; kein unabhängiger Abruf (Captcha) · Quellen: [22] |
@@ -1393,7 +1394,7 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | B23 | Stichprobe D REVIEWS.io (50 neueste DE): Geschmack, Syrup, „mehr Wasser trinken“ | ~ | Verteilung exakt bestätigt; Stichwortzählung weicht leicht ab („mehr Wasser“ 5 statt 6); Codierung einer Person · Quellen: [20] |
 | B24 | Stichprobe E REVIEWS.io (43 kritische DE): Süße als wichtigster Pain Point | ~ | Umfang und Antwortquote exakt bestätigt; Süße 13 statt 14, Preis 6 statt 7; Codierung einer Person · Quellen: [20] |
 | B25 | Phasenprofil der Kritik: Ballung nach dem Kauf (n = 103) | **H** | Die Summen gehen auf: 37 + 22 + 6 + 5 = 70, 15 + 11 + 3 = 29, 15 + 3 + 2 + 1 + 1 = 22, 14 + 1 = 15, 3 + 4 = 7, und n = 40 + 20 + 43 = 103. Methodisch wichtig ist ein Selektionseffekt: Bewertungsportale erfassen fast nur Erfahrungen nach dem Kauf. · Quellen: Vorl. S. 108, eigene Auswertung |
-| B26 | Häufung negativer Trustpilot-Bewertungen im Juni/Juli 2026 | ✔ | Seite 2 reicht vom 12.07. bis 08.06.2026, Seite 1 vom 18.10. bis 21.07.2026 (zwei ältere Bewertungen stehen dort, weil sie aktualisiert wurden). Die Antworten sind gefunden: 26.06. „wurde die Aktion angepasst, sodass ihr hier 2 unterschiedliche Mystery Goodies erhalten werdet“, in vier Bewertungen fast wortgleich. 11.07. · Quellen: [139] |
+| B26 | Häufung negativer Trustpilot-Bewertungen im Juni/Juli 2026 | ✔ | Seite 2 reicht vom 12.07. bis 08.06.2026, Seite 1 vom 18.10. bis 21.07.2026 (zwei ältere Bewertungen stehen dort, weil sie aktualisiert wurden). Die Antworten sind gefunden: 26.06. „wurde die Aktion angepasst, sodass ihr hier 2 unterschiedliche Mystery Goodies erhalten werdet“, in vier Bewertungen fast wortgleich. 11.07. „behelfen wir uns manchmal mit Textbausteinen bei Fragen zu Versandzeiten“. 21.08. „Verpackungsmaterial war ausgegangen“. · Quellen: [139] |
 | B27 | Syrup-Bottle als neue Quelle für Pain Points | ✔ | Beide FAQ-Zitate stehen wörtlich da („Unterwegs den Deckel sehr fest zudrehen …“, „ein bekanntes Phänomen, vor allem wenn die Bottle über Nacht geschlossen stand“). Die Stichwortzählung lässt sich exakt nachstellen: 81 von 588, davon 10 mit 1–3 Sternen, mit „Sirup“ als Stichwort. · Quellen: [20], D1 [61] |
 | B28 | Help-Center greift Pain Points auf; Dosierlöffel nachrangig | ✔ | Die Kategorien enthalten 9 + 7 + 6 + 11 + 25 + 7 Artikel, dazu Syrup Bottle mit 7 + 14. Das ergibt 86 Artikel in 7 Kategorien. Alle genannten Titel sind gefunden, auch der Dosierlöffel, der „nach unten rutschen“ kann. Der Artikel „Meine Dose schmeckt anders …“ trägt „Aktualisiert vor 9 Tagen“, Wortlaut wie angegeben. · Quellen: [145], D1 [141] |
 | B29 | Zufriedenheitsgarantie: Bedingungen und Verweise in Antworten | ✎ | Bedingungen bestätigt; 46 statt 48 Antworttexte; AGB § 12 in sich widersprüchlich · Quellen: [20, 136, 137] |
@@ -1453,7 +1454,7 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | S30 | llms.txt/llms-full.txt: handelsorientiert, ohne Alter und mg | ✎ | Zitate bestätigt; Sitemap-Angabe korrigiert · Quellen: [9, 129], D1 [142] |
 | S31 | Koffein, Alter, Tagesportion nur in Etikettbildern | ✎ | Fakten stehen auf 244 Etikettbildern; „Energy mit NewCaff“ ist Navigationstext, nicht Seiteninhalt · Quellen: [2, 11] |
 | S32 | Iced Tea: Ashwagandha, neue Sorten „für alle geeignet“ | ✔ | Alle Zitate sind wörtlich bestätigt. Der Satz „können auch von Kindern getrunken werden“ steht im Koffein-Artikel. Ergänzung: Das Help-Center widerspricht sich selbst. · Quellen: [171], D1 [60] |
-| S33 | Content-Lücke 1: Koffein-Check | **H** | Als Hypothese tragfähig, aber nachschärfen. (1) HOLYs Help-Center rankt in der deutschen Stichprobe bereits auf Platz 1. Ein Beitrag bringt also vor allem Kontext (EFSA, Kaffee-Vergleich, Timing), nicht bloße Präsenz. · Quellen: [42], D1 §7.3 |
+| S33 | Content-Lücke 1: Koffein-Check | **H** | Als Hypothese tragfähig, aber nachschärfen. (1) HOLYs Help-Center rankt in der deutschen Stichprobe bereits auf Platz 1. Ein Beitrag bringt also vor allem Kontext (EFSA, Kaffee-Vergleich, Timing), nicht bloße Präsenz. (2) Vom Etikett gehören zusätzlich in den Beitrag: „nicht … wenn am selben Tag andere Erzeugnisse mit grünem Tee“, „nicht auf nüchternen Magen“, EGCG-Hinweis, Piperin 2 mg. (3) Ein Wettbewerber-Vorbild gibt es: waterdrop mit einem Koffein-Ratgeber (siehe M05). Der gespeicherte Prüfvermerk endet danach. · Quellen: [42], D1 §7.3 |
 | S34 | Content-Lücke 2: Nachtschicht-Beitrag | **H** | Die Persona-Zitate und DGUV-Belege sind bestätigt. Ergänzend: Das HOLY-Etikett sagt „Sollte nicht auf nüchternen Magen verzehrt werden“, das passt direkt zum Nachtschicht-Thema. An der DGUV-Schrift hat die Berufsgenossenschaft Handel und Warenlogistik mitgearbeitet, die zur Branche der Persona passt (S97). · Quellen: [48], `persona-steckbrief.md` |
 | S35 | Content-Lücke 3: Eltern-Beitrag „Welche Linie für wen?“ | **H** | Die Hypothese ist schlüssig. Zusätzliches Risiko: Das Help-Center ist schon in sich widersprüchlich (Iced Tea für Kinder „nur in Maßen“ vs. „können auch von Kindern getrunken werden“). Ein Eltern-Beitrag müsste das erst intern klären. · Quellen: D1 §8 S2 |
 | S36 | Content-Lücke 4: „Wo gibt’s HOLY?“ | **H** | Die Hypothese wird gestützt, und zwar stärker als im Befund. Es gibt einen eigenen Vorschlags-Cluster „wo gibt es holy im supermarkt / zu kaufen / im einzelhandel …“ und „holy energy kaufen in der nähe / supermarkt / edeka / rewe“ (S90). In der deutschen Stichprobe erscheinen Amazon-Markenstore und Müller als Händler. · Quellen: Vorl. S. 113 |
@@ -1504,8 +1505,8 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | M26 | SNOCKS: Vergleichsartikel mit benannten Wettbewerbern | ✔ | Sechs Blogs mit 66 URLs, davon „Wissenswertes“ mit 28: 2019 5, 2020 15, 2026 8 (14.07. bis 29.09.2026). · Quellen: [204] |
 | M27 | GOT BAG: Beitrag zur EmpCo-Richtlinie | ✔ | Bestätigt: 13 Beiträge, der neueste vom 09.10.2026 (Mangroven-Interview), 2026 vier Beiträge. · Quellen: [205, 206] |
 | M28 | air up: Primärseiten gesperrt (HTTP 429) | ~ | Sperre reproduziert; nur eine Shop-FAQ-Seite gefunden, kein Magazin · Quellen: [207, 208] |
-| M29 | Blog in der Vorlesung: Owned (S. 121) oder Earned (S. 112, 117) | ✔ | S. 121: Owned „Corporate web site, campaign microsite, blog, brand community, Facebook fan page, mobile, etc.“, Earned „… Vine, Blogs, forums, review sites“. S. 112: Earned „Mundpropaganda, Social-Media Likes & Comments, Content (z.B. · Quellen: Vorl. S. 121, 112, 117–118 |
-| M30 | Taktung: 8 von 14 Marken veröffentlichen 2026 | ✎ | Einzelzahlen bestätigt; „ruhend eher die Regel“ widerlegt: 8 von 14 Marken veröffentlichen 2026 · Quellen: eigene Auswertung |
+| M29 | Blog in der Vorlesung: Owned (S. 121) oder Earned (S. 112, 117) | ✔ | S. 121: Owned „Corporate web site, campaign microsite, blog, brand community, Facebook fan page, mobile, etc.“, Earned „… Vine, Blogs, forums, review sites“. S. 112: Earned „Mundpropaganda, Social-Media Likes & Comments, Content (z.B. YouTube Fan Videos), Blogs, Foren“ (Fans), Owned „Broschüren, Stores, Webseite, Microsite, Fan-Community, Social-Media-Auftritt …“ (ohne den Begriff Blog). S. 117/118: „Content Marketing (Videos, Blogs, Bilder)“ in der Zeile Earned/Social Media. · Quellen: Vorl. S. 121, 112, 117–118 |
+| M30 | Taktung: 8 von 14 Marken veröffentlichen 2026 | ✎ | Einzelzahlen bestätigt; „ruhend eher die Regel“ widerlegt: 8 von 14 Marken veröffentlichen 2026 (ohne air up; 3Bears mit nur einem Rezept 2026 als „kaum etwas“ nicht mitgezählt) · Quellen: eigene Auswertung |
 | M31 | Was einen Marken-Blogbeitrag gut macht (Checkliste) | **H** | Die elf Merkmale sind aus den Einzelbefunden ableitbar und stimmen mit dem überein, was ich an den Quellen gesehen habe. Es bleibt eine Synthese, also H. Einschränkung zu (11) aus Modellwissen, nicht geprüft: Google zeigt FAQ-Rich-Results seit 2023 nur noch für wenige autoritative Websites. · Quellen: [173, 178, 189] |
 | M32 | HOLY-Ton: „frech im Rahmen, nüchtern im Kern“ | **H** | Die Verweise auf das FS1-Dossier stimmen: Kap. 6.2 (du, „geil“ 36-mal, „gönn“ etwa 38-mal, keine Sie-Form, Doppeldeutigkeit als Stilmittel), 6.4 (Vergleichstabelle), 6.5 („Wasser rein, Softdrink raus“) und 8 S1 (160 mg). · Quellen: D1 §6.2, D1 §7.3 |
 | M33 | SEO-Elemente im Set; HOLY-Blog ohne Meta-Beschreibung | ✔ | Meta-Descriptions mit ►, ✓ und ▶︎/✔️ sind bestätigt. JSON-LD BlogPosting haben waterdrop, koawach, 3Bears, GOT BAG und More. ESN hat Article mit FAQPage, everdrop nur FAQPage. Bei Rocka (beide Beiträge) und SNOCKS gibt es kein Artikel-Markup. · Quellen: [44, 105, 173, 174] |
@@ -1589,7 +1590,7 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | G18 | Press Kit ohne Nutzungsbedingungen; pr@holy.com | ✔ | Press Kit S. 5 und Impressum bestätigt; kein Pressebereich auf de.holy.com (404) · Quellen: D1 [2, 13] |
 | G19 | AGB § 14: keine Nutzungsrechte, TDM-Vorbehalt | ✔ | § 14 AGB wörtlich bestätigt; kein maschinenlesbarer Vorbehalt; Rechtslage umstritten (G90) · Quellen: [261, 262], D1 [12] |
 | G20 | § 60a und § 63 UrhG: Hörsaal voraussichtlich gedeckt | ✔ | § 60a und § 63 wörtlich bestätigt; Quelle muss „deutlich“ angegeben werden (G93) · Quellen: [234, 252] |
-| G21 | Hörsaal oder öffentliches Repository | ✎ | § 60a Abs. 1 Nr. 3 erlaubt Präsentation von Lernergebnissen für Dritte; Repository-Frage offen statt verneint · Quellen: [253, 254, 255], `praesentation/LIESMICH.md` |
+| G21 | Hörsaal oder öffentliches Repository | ✎ | § 60a Abs. 1 Nr. 3 erlaubt Präsentation von Lernergebnissen für Dritte; Repository-Frage offen statt verneint; Schlussprüfung: Wortlaut „an der Bildungseinrichtung“ ergänzt, Einschätzung an R30 angeglichen (für ein dauerhaft öffentliches Repository spricht der Wortlaut eher dagegen, H) · Quellen: [253, 254, 255], `praesentation/LIESMICH.md` |
 | G22 | Sponsorlogo auf der FS1-Titelfolie und § 60a | **H** | Bremer Definition stellt auf den Zweck der Lehre ab, Risiko eher gering; bleibt H · Quellen: [253], `praesentation/QUELLEN.md` |
 | G23 | § 51 UrhG: Bildzitat nur mit Belegfunktion | ✔ | Normtext und Leitfaden bestätigt; Anwendung auf Screenshots ist H · Quellen: [255, 260] |
 | G24 | Eigene Produktfotos: Lichtbild und Verpackungswerk | **H** | Normzitate bestätigt; Werkschutz der Illustration nicht gerichtlich geprüft · Quellen: [256, 257, 258, 259] |
@@ -1610,18 +1611,119 @@ Prüfhinweis angepasst hat, steht das in A.9.
 
 ## A.9 Korrekturen aus der Schlussprüfung
 
-Die Schlussprüfung des fertigen Dossiers steht noch aus. Ihre Korrekturen werden hier mit Stelle, vorher, nachher und
-Beleg nachgetragen.
+Die Schlussprüfung (30.10.2026) hat ein weiterer Unteragent unabhängig von Recherche und Gegenprüfung durchgeführt:
+32 Stichproben an den Quellen, eine Skriptprüfung von Zählung, Zitaten und Quellenverzeichnis und 23 Befunde, davon
+3 „muss“ und 20 „sollte“. Eingearbeitet wurde am 30.10.2026 in zwei Durchgängen. Der erste wurde durch ein
+Nutzungslimit unterbrochen (Nr. 1–43); der zweite hat ihn geprüft, an einzelnen Stellen nachgebessert (im Feld Beleg
+vermerkt) und den Rest ergänzt (Nr. 44–66). Übernommen wurde nur, was sich an der Quelle bestätigt hat. Kein Status in
+Anhang A hat sich geändert, die Zählung im Kopf gilt weiter. **SP n** = Befund n der Schlussprüfung. Statt Zeilennummern
+stehen Kapitel und Element, weil sich die Zeilen beim Einarbeiten verschoben haben.
+
+| Nr. | Stelle | vorher | nachher | Beleg |
+|---|---|---|---|---|
+| 1 | Kopfkommentar | endet mit „… liegen als Arbeitsdateien außerhalb des Repositorys.“ | Satz ergänzt: „Die Korrekturen der Schlussprüfung vom 30.10.2026 sind danach von Hand eingearbeitet und in Anhang A.9 aufgeführt.“ | Ablauf der Einarbeitung |
+| 2 | Kopf, Stand | „Schlussprüfung: folgt, Ergebnisse in Anhang A.9“ | „Schlussprüfung: 30.10.2026, Korrekturen eingearbeitet (Anhang A.9)“ | Ablauf der Einarbeitung |
+| 3 | Kopf, Entstehung | „Anschließend folgt eine Schlussprüfung des fertigen Dossiers.“ | „Anschließend hat ein weiterer Unteragent das fertige Dossier geprüft (Schlussprüfung, 30.10.2026). Seine Korrekturen sind eingearbeitet, soweit sie sich an den Quellen bestätigt haben; Anhang A.9 führt jede Änderung und die nicht übernommenen Punkte auf.“ | Ablauf; zweiter Durchgang: Einschränkung „soweit … bestätigt“ ergänzt, weil nicht jeder Befund übernommen wurde |
+| 4 | Kopf, Entstehung (R, P, G) | – | „Für R, P und G stammen Status und Prüfhinweise aus dem Auftrag der Fortsetzung, nicht aus einer Prüfdatei (die Befunddateien dieser drei Bereiche enthalten nur Statusvorschläge).“ | SP 23 |
+| 5 | Kopf, Zitierweise „D1 [n]“ | „… Anhang B), am 30.10.2026 erneut abgerufen“ | „… Anhang B; Abrufdaten wie dort), am 30.10.2026 erneut geprüft, sofern der Befund das nennt“ | SP 15; B.2 zeigt die Abrufdaten aus FS1 |
+| 6 | Kap. 1, Tabelle, Entscheidung | „Der Preis wird über Rabatte wahrgenommen“ (B09, B10) | „HOLY rahmt den Preis selbst über Rabatte (B09); eine Kundenstimme bestätigt das (B10). Dass die Kundschaft den Preis allgemein so wahrnimmt, ist H.“ | SP 5; Kurzfassung B09 „HOLY rahmt den Preis selbst über Rabatte“; B10 ist eine einzelne Bewertung |
+| 7 | Kap. 1, Tabelle, Kauf | „Keinen Store-Locator; der einzige Web-Hinweis auf den Handel ist der Footer-Link zum Cashback“ (T28, T95) | „Kein Store-Locator (T28). Auf den Shop-Seiten ist der Footer-Link „Cashback-Aktion“ der einzige Hinweis auf den Handel, die KI-Dateien nennen den Handel gar nicht (T95); sonst nennen nur die Story-Seite („10.000+ Supermärkte“), ein Help-Center-Artikel („Testphase“) und Shorts den Supermarkt, ohne Kette oder Filiale (B02, T90).“ | SP 4; B02, T90, Prüfhinweis T28; zweiter Durchgang: „ihn“ durch „den Handel“ ersetzt und den Verweis „(Shorts: Bruch 1)“ durch „✔ T90 (Quellen bei Bruch 1)“ ersetzt |
+| 8 | Kap. 1, Bruch 3 | Titel „Recherche gehört nicht HOLY.“; „Es gibt keinen eigenen Erklär-Content.“ | Titel „Recherche: HOLY antwortet knapp, verstreut und oft nur als Bild.“; „Redaktionellen Erklär-Content (Blog) gibt es nicht; die Antworten stehen verstreut im Help-Center auf der alten Domain, kritische Treffer Dritter direkt daneben“; S27 als Beleg ergänzt | SP 2 (muss); S10, S27, 6.4, Prüfhinweis S38 („Die Gesamtdeutung ist zu stark.“) |
+| 9 | Kap. 1, Bruch 4 | „Die Startseite wirbt mit „nachhaltig verpackt““ | „Die Meta-Beschreibung der Startseite (Text im Suchtreffer) wirbt mit „nachhaltig verpackt““ | SP 8; Prüfhinweis R24 („Meta-Beschreibung wörtlich bestätigt“) |
+| 10 | Kap. 1, Stärkste Blog-Chance | „beantwortet den größten Frage-Cluster der Suche“ (S04) | „bündelt die Koffein- und Gesundheitsfragen aus der Google-Autovervollständigung (S04); dass dies der größte Frage-Cluster ist, ist H, denn die Vorschläge zeigen kein Suchvolumen (S03)“ | SP 1 (muss); Prüfhinweis S03 (weder Volumen noch Rangfolge ablesbar); zweiter Durchgang: S03 als Beleg ergänzt (Quellen in Kap. 6, damit die Quellen in der Reihenfolge der ersten Nennung nummeriert bleiben) |
+| 11 | 2.1, Zeile Bewertung, Beleg | „selbst nachgelesen, Vorl. S. 58, 59 (Ergänzung aus dem Repository)“ | „✔ (Schlussprüfung, Seitenbilder) Vorl. S. 58, 59“ | SP 22; Vorl. S. 58 (15/20/20/15 %, Präsentation 30 %) und S. 59 (Reflexion 15 %), im zweiten Durchgang am Volltext nachgesehen |
+| 12 | 2.3, Kortum 2017 | „Kapitel in Hierl (Hrsg.): Mobile Payment, Springer Gabler 2017, S. 31–47“ | „Kortum, C.: „Determinanten des Konsumentenverhaltens im Kaufprozess“, in: Hierl, L. (Hrsg.): Mobile Payment, Wiesbaden: Springer Fachmedien 2017, S. 31–47“ mit Herkunftsvermerk | SP 20; Crossref zur DOI 10.1007/978-3-658-14118-9_2 (Autor Carsten Kortum, Titel, S. 31–47, Springer Fachmedien Wiesbaden) und zum Buch (Hrsg. Ludwig Hierl), abgerufen 30.10.2026; zweiter Durchgang: Verlag wie bei Crossref, Herkunft genauer |
+| 13 | 2.3, Esch et al. 2016 | „S. 333, 335 ff., 340 (S. 111/112)“; Werk ohne Autoren und Herausgeber; „Autorenreihenfolge an der Kapitel-Titelseite prüfen“ | „S. 340 (S. 109/110), S. 333 (S. 111), S. 335 ff. (S. 112)“; vollständige Angabe mit Autoren, Herausgebern, Ort und DOI 10.1007/978-3-8349-3857-2_15; Vermerk, dass Crossref Knörle vor Schmitt nennt | SP 20; Quellenzeilen Vorl. S. 109, 110, 111, 112; Tilburg [64], DNB [65]; Crossref zum Kapitel (Esch, Klein, Knörle, Schmitt) und zum Buch (Hrsg. Esch, Langner, Bruhn), abgerufen 30.10.2026; zweiter Durchgang: Prüfvermerk zur Reihenfolge wieder aufgenommen |
+| 14 | 2.3, Ergänzende Literatur | „Forrester 2009 zu Paid/Owned/Earned“ (L17) | „Forrester (Corcoran) 2009 zu Paid/Owned/Earned – Literaturangabe ungeprüft (der Blogbeitrag leitet auf eine andere Seite um; Datum 16.12.2009 nur aus der URL), nur im Backup“ | SP 11; eigener Abruf 30.10.2026: Weiterleitung (HTTP 301) auf /b2b-marketing/ |
+| 15 | 2.4, Tabelle, Bindung | „post-purchase, Loyalty Loop“ | „post-purchase (aktive und passive Loyalisten, L94; „Loyalty Loop“ im Original nicht geprüft)“ | SP 10; Prüfhinweis L24 (Begriff fehlt im Nachdruck) |
+| 16 | 3.5, nach der Tabelle | – | Hinweis: Die Tabelle ist eine Vorstufe; die Auswahl für die Übung steht mit Herleitung in Kap. 9, die Abweichungen bei Entscheidung und Bindung sind dort begründet | SP 16 |
+| 17 | 4.1, Zeile App | „Keine HOLY-App (auch nicht im App Store)“; T37 [125, 126] | „Keine HOLY-App (weder bei Google Play noch im App Store)“; T37 [125, 126, 127] | SP 13; Prüfhinweis B34 (Google Play geprüft); [125] neu belegt (Nr. 60) |
+| 18 | 5.1 Bruch 1 und Kap. 9, Kauf | „Wer im Handel kauft, landet nicht automatisch im Squad (D1 §7.2)“ bzw. „… H P33 [4], D1 §7.1, §7.2“ | „… H D1 §7.2“; in Kap. 9 zusätzlich „das Cashback läuft über einen Dienstleister“ (B03) | SP 7, SP 22; P33 ist die Top-2-Hypothese zur Bindung, [4] stützt die Aussage nicht; B03 nennt die Abwicklung über die acardo group AG |
+| 19 | 5.2, Recherche, negativer Moment | „kein eigener Erklär-Content“ | „kein redaktioneller Erklär-Content, nur knappe Help-Center-Antworten“ | SP 2; S27 |
+| 20 | 5.3, REVIEWS.io | „588 deutsche Bewertungen vom 07.–29.10.2026; 587 davon tragen eine Online-Bestellnummer“ | „Unter den 1.000 neuesten Bewertungen (07.–29.10.2026, Abruf der Gegenprüfung am 30.10.) sind 588 aus dem deutschen Shop; alle tragen eine Bestellnummer, 587 sind als „verified buyer“ markiert“ | SP 3 (muss); Prüfhinweis B15 („587 davon sind verified_buyer, alle 588 haben eine DE-Bestellnummer“) |
+| 21 | 6.3, Für KI-Assistenten | „HOLY verweist Agenten also auf eigene Wissensseiten, hat zu Koffein aber keine (H)“ | „… auf eigene Quellen, hat zu Koffein aber keine redaktionelle Seite, nur einen knappen Help-Center-Artikel auf der alten Domain (H)“; S27 [33] ergänzt | SP 18; [33] nennt 160 mg je Portion und „ab 18 Jahren“ |
+| 22 | 6.4, Tabelle, Lücke 1 | „größter Frage-Cluster“ | „breiter Vorschlags-Cluster in der Autovervollständigung (Suchvolumen unbekannt)“ | SP 1 (muss) |
+| 23 | 7.1, Taktung | „8 von 14 geprüften Marken veröffentlichen 2026 …“ | „8 von 14 geprüften Marken (ohne air up; 3Bears mit nur einem Rezept 2026 nicht mitgezählt) veröffentlichen 2026 …“ | SP 17; gespeicherter Prüfvermerk M30 (3Bears „kaum etwas“) |
+| 24 | 8.2 A, Beleg der Lücke | „größter Frage-Cluster“ (S04) | „breiter Vorschlags-Cluster zu Koffein und Gesundheit (S04), Suchvolumen unbekannt (S03)“ | SP 1 (muss) |
+| 25 | 8.3, Do 1 | Zitat ohne Beleg | Beleg S92 [12, 13, 14] und Rechenweg „32 mg/100 ml gerechnet: 160 mg auf 500 ml“ | SP 22; Etikett [12]: 160 mg je Portion, 7 g auf 500 ml |
+| 26 | 8.4, Begründung Nr. 1 | „Die Lücke ist belegt und der Frage-Cluster der größte“ (S04, S33) | „Die Lücke ist belegt: Koffein- und Gesundheitsfragen sind in der Autovervollständigung breit vertreten (S04, S33). Dass der Koffein-Cluster der größte ist, ist H (keine Volumendaten, S03); auf der Folie mit dem SERP- bzw. Volumen-Selbstversuch belegen (12.4).“ | SP 1 (muss) |
+| 27 | Kap. 9, Herleitung Recherche | „Die häufigsten Fragen betreffen Koffein, Gesundheit und Kinder“ | „Unter den Suchvorschlägen fallen Koffein, Gesundheit und Kinder auf (S04, S05); wie oft danach gesucht wird, zeigen sie nicht (S03)“ | SP 1 (muss) |
+| 28 | Kap. 9, Herleitung Entscheidung | „66 % der 16- bis 29-Jährigen“ | „66 % der 16- bis 29-jährigen Online-Shopper“ | SP 19; [92], im zweiten Durchgang nachgelesen |
+| 29 | Kap. 9, Herleitung Entscheidung | – | Begründung der Abweichung von 3.5: Empfehlungen kann HOLY kaum steuern, das Probierangebot mit Garantie ist ein Owned-Touchpoint (H) | SP 16 |
+| 30 | Kap. 9, Herleitung Kauf | „der Zählerstand deutet auf geringe Nutzung, wenn er live läuft“ (B04) | „der Zähler steht bei 190.916 von 192.000 (B04); das deutet auf geringe Nutzung, falls er live läuft (H)“ | SP 6; gespeicherter Prüfvermerk B04 („Die Deutung … bleibt H.“) |
+| 31 | Kap. 9, Herleitung Bindung | – | Begründung der Abweichung von 3.5: Service nach dem Kauf auf Platz 1, weil sich die Kritik nach dem Kauf ballt; Limited Drops als Empfehlungsanlass nicht belegt (H) | SP 16; B25, B20 |
+| 32 | 10.6, Tabelle, fremde Abbildungen | „§ 60a Abs. 1 Nr. 3 erlaubt auch die Präsentation von Lernergebnissen für Dritte; ob … dauerhaft öffentliches Repository darunter fällt, ist offen (H)“ | Wortlaut „für Dritte, soweit dies der Präsentation des Unterrichts, von Unterrichts- oder Lernergebnissen an der Bildungseinrichtung dient“; „Für ein dauerhaft öffentliches Repository spricht der Wortlaut eher dagegen; bis zur Freigabe nicht veröffentlichen (H, keine Rechtsberatung)“; R30 [234] ergänzt | SP 9; [234], Wortlaut im zweiten Durchgang bestätigt |
+| 33 | 10.6, Quellenangabe | „Nach § 63 UrhG „deutlich“, Urheber und Fundstelle „ohne Mühe“ erkennbar.“ | „§ 63 UrhG verlangt, die Quelle „deutlich“ anzugeben. Laut Leitfaden der Uni Bremen soll sie so stehen, dass Urheber und Fundstelle „ohne Mühe“ zu erkennen sind; …“ | SP 9; [252], [253]: „ohne Mühe zu erkennen“ steht im Bremer Leitfaden, nicht im Gesetz (im zweiten Durchgang bestätigt) |
+| 34 | 12.4, SERP-Selbstversuch | nur Suchanfragen in Google | ergänzt: das Suchinteresse im eigenen Browser vergleichen (z. B. Google Trends), als Beleg für die Größe des Koffein-Clusters | SP 1 |
+| 35 | Anhang A, Vorbemerkung | – | „Die Status sind die der Gegenprüfung. Die Schlussprüfung hat keinen Status geändert; wo sie eine Kurzfassung oder einen Prüfhinweis angepasst hat, steht das in A.9.“ | Ablauf; Skriptprüfung: Status unverändert |
+| 36 | A.1 L05 | „Drei Einschränkungen: (1) … das Dossier (7.2 Nr. 4) zeigt eher, dass der Preis über Rabatte wahrgenommen wird.“ (bricht nach (1) ab) | „Einschränkungen: (1) … das FS1-Dossier (D1 §7.2 Nr. 4) rahmt den Preis eher über Rabatte; … (2) Der Begriff „Loyalty Loop“ steht nicht im genehmigten Nachdruck von Court et al. (siehe L24). Der gespeicherte Prüfvermerk endet danach.“ | SP 21, SP 5; gespeicherter Prüfvermerk L05 (bricht bei (2) ab); L24 |
+| 37 | A.1 L37 | endet nach Feinheit (1) | Feinheit (2) zu L95 aus dem gespeicherten Prüfvermerk ergänzt | SP 21; gespeicherter Prüfvermerk L37 |
+| 38 | A.2 P23 | „55 % = meistgenannte Quelle, nicht „für 55 % die wichtigste““ | Bitkom-Wortlaut vollständig zitiert, Frage und weitere Werte (47 %, 39 %) genannt; Deutung „meistgenannte Quelle“ als H | SP 19; [92]; zweiter Durchgang: Wortlaut vervollständigt, Deutung als H markiert |
+| 39 | A.3 T37 | Prüfhinweis ohne Vermerk; Quellen [125, 126] | Vermerk „Die Apple-ID-Quelle ist durch die Google-Play-Suche [125] und die iTunes-Suche [127] ersetzt.“; Quellen [125, 126, 127] | SP 13 |
+| 40 | A.3 T95, Kurzfassung | „Footer-Link „Cashback-Aktion“ als einziger Web-Hinweis auf den Handel“ | „… als einziger Hinweis auf den Handel auf den Shop-Seiten (nicht im ganzen Web, vgl. B02, T90)“ | SP 4 |
+| 41 | Verweise auf [28] | T30 [28] in Kap. 1 (Bindung), 4.1, Kap. 9 (Bindung), Kap. 11 (J08), A.3 T30 | T30 [2] | SP 14; [2] und [28] sind dieselbe Abfrage products.json?limit=250 (225 Produkte) |
+| 42 | Verweise auf [134] | B07 [134, 135] in 5.1 (Bruch 3), 6.2, Kap. 11, A.4 B07 | B07 [107, 135] | SP 14; gleiche Artikel-ID, die canonical-Adresse ist die von [107] |
+| 43 | Verweise auf [231] | R23 [38, 230, 231, 232] in 8.3 (Do 10, Don't 13), Kap. 11, A.7 R23 | R23 [38, 210, 230, 232] | SP 14; beide Einträge sind BGBl. 2026 I Nr. 43 |
+| 44 | Kap. 6, Methodenkasten | – | „Jede Anfrage liefert höchstens zehn Vorschläge …; wie breit ein Cluster wirkt, hängt also auch davon ab, wie viele Anfragen gestellt wurden (H).“ | SP 1; eigene Abfragen am 30.10.2026 über [148] („holy“, „holy energy“, „holy energy koffein“: je 10 Vorschläge, „holy energy ab“: 7) |
+| 45 | A.1 L10 | – | Vermerk: Crossref nennt die Autoren in der Reihenfolge Esch, Klein, Knörle, Schmitt | SP 20; Crossref zu DOI 10.1007/978-3-8349-3857-2_15, abgerufen 30.10.2026 |
+| 46 | A.1 L17 | „… Blogbeitrag nicht abrufbar“ | ergänzt: Die URL leitet auf eine allgemeine Forrester-Seite um, Literaturangabe ungeprüft | SP 11 |
+| 47 | A.4 B10 | Zitat endet offen („… viel zu teuer.“) | Zitat geschlossen; Sätze zu den Amazon-Aspekten und zur Kennzeichnung aus dem gespeicherten Prüfvermerk | SP 21; gespeicherter Prüfvermerk B10 |
+| 48 | A.4 B15, Kurzfassung | „588 deutsche Bewertungen in drei Wochen, fast alle aus Online-Bestellungen“ | „588 deutsche unter den 1.000 neuesten Bewertungen (07.–29.10.2026), alle mit Bestellnummer“ | SP 3; Prüfhinweis B15 |
+| 49 | A.4 B26 | endet mit „11.07.“ | HOLY-Antworten vom 11.07. und 21.08. aus dem gespeicherten Prüfvermerk ergänzt | SP 21; gespeicherter Prüfvermerk B26 |
+| 50 | A.5 S33 | endet nach Punkt (1) | Punkt (2) Etikett-Hinweise und Punkt (3) Vorbild waterdrop (M05) aus dem gespeicherten Prüfvermerk; Vermerk, dass er danach endet | SP 21; gespeicherter Prüfvermerk S33; M05 |
+| 51 | A.6 M29 | endet mit „Content (z.B.“ | Zitat zu S. 112 vollständig, Owned-Liste, Zeile Earned auf S. 117/118 | SP 21; Vorl. S. 112, 117, 118 (Volltext) |
+| 52 | A.6 M30 | „8 von 14 Marken veröffentlichen 2026“ | ergänzt: „(ohne air up; 3Bears mit nur einem Rezept 2026 als „kaum etwas“ nicht mitgezählt)“ | SP 17 |
+| 53 | A.8 G21 | „Repository-Frage offen statt verneint“ | ergänzt: Wortlaut „an der Bildungseinrichtung“, Einschätzung an R30 angeglichen (H) | SP 9 |
+| 54 | B.1, Vorbemerkung | – | Satz zu den stillgelegten Nummern [28], [134] und [231] | SP 14 |
+| 55 | B.1 [2] | ohne Vermerk | Vermerk „alle 225 Produkte auf einer Seite; schließt die frühere Dublette [28] ein“ | SP 14; T30 |
+| 56 | B.1 [28] | „HOLY DE – products.json (Seiten 1–3) … page=1“ | „entfällt (Schlussprüfung): Dublette von [2] …“ | SP 14 |
+| 57 | B.1 [54] | „Suchergebnis; 16.12.2009“ | „Blogbeitrag, Literaturangabe ungeprüft (die URL leitet … um); 16.12.2009 nur laut URL“ | SP 11; eigener Abruf 30.10.2026 |
+| 58 | B.1 [89] | „laut Seite 08.01.2025“ | „08.01.2026 (Seitenmetadaten article:published_time; der Seitentext nennt „Berlin, 08. Januar 2025“, was zur Befragung nicht passt)“ | SP 12; Seite [89]: article:published_time 2026-01-08, Methodik KW 40–41 2025 |
+| 59 | B.1 [107] | ohne Vermerk | Vermerk: Datum laut Seitenmetadaten; zweiter Pfad mit derselben Artikel-ID (frühere Dublette [134]) | SP 14; Seitenmetadaten: veröffentlicht 13.08.2025 |
+| 60 | B.1 [125] | „Websuche „HOLY Softdrinks App iOS Android“ … apps.apple.com/app/id1361340956“ | „Google Play – Suche „holy energy“ (Apps, hl=de, gl=DE) … 30 Treffer, keine App der HOLY Softdrinks GmbH“ | SP 13; Prüfhinweis T37 („taugt nicht als Quelle“), B34; eigener Abruf 30.10.2026 (der Treffer „Holy Hörspiel App“ stammt von der Holysoft GmbH) |
+| 61 | B.1 [134] | GIGA-Artikel unter zweitem Pfad, „10.03.2025 / 13.08.2025“ | „entfällt (Schlussprüfung): Dublette von [107] …“ | SP 14 |
+| 62 | B.1 [210] | Datum „19.02.2026“ | „Gesetz vom 12.02.2026, ausgegeben 19.02.2026, in Kraft 27.09.2026 (Art. 1 Nr. 2 Buchst. c schon am 19.06.2026); setzt die Richtlinie (EU) 2024/825 um“; ELI-Adresse ergänzt | SP 14; Gesetzestext [210] (Ausfertigung, Ausgabevermerk, Inkrafttreten, Fußnote 1) |
+| 63 | B.1 [231] | BGBl. 2026 I Nr. 43 unter der ELI-Adresse | „entfällt (Schlussprüfung): Dublette von [210] …“ | SP 14 |
+| 64 | B.2, Vorbemerkung | „Die folgenden D1-Quellen wurden für FS2 am 30.10.2026 erneut abgerufen bzw. geprüft.“ | „Titel, Art und Abrufdaten wie in D1, Anhang B. Am 30.10.2026 erneut geprüft wurde eine D1-Quelle, sofern der jeweilige Befund das nennt; D1 [7], [14] und [24] … nicht erneut abgerufen.“ | SP 15 |
+| 65 | B.2, neue Einträge | – | D1 [7], D1 [14] und D1 [24] mit dem Vermerk „für FS2 nicht erneut abgerufen“ | SP 15; FS1-Dossier, Anhang B |
+| 66 | A.9 | Platzhalter („Die Schlussprüfung des fertigen Dossiers steht noch aus.“) | diese Tabelle und die Liste unten | Auftrag der Einarbeitung |
+
+**Nicht oder anders übernommen**
+
+- **SP 23, teilweise:** Eine Befunddatei für R, P und G mit endgültigem Status und Prüfvermerk sowie der Link im
+  KI-Nachweis (D02) fehlen weiter. Die Einarbeitung durfte nur dieses Dossier ändern; der Satz im Kopf (Nr. 4) ist
+  ergänzt. Offene Aufgabe für den KI-Nachweis.
+- **SP 20, teilweise:** Den Vermerk „Autorenreihenfolge prüfen“ bei Esch et al. nicht gestrichen, weil Crossref eine
+  andere Reihenfolge nennt als Tilburg (Nr. 13, 45). Den vorgeschlagenen Vornamen „H.“ für Kortum nicht übernommen,
+  Crossref nennt Carsten Kortum.
+- **SP 13, anders:** [125] nicht gestrichen, sondern mit der geprüften Google-Play-Suche neu belegt (Nr. 60); so bleibt
+  die Nummerierung stabil und T37 hat für beide Stores eine Quelle.
+- **SP 14, anders:** Die Dubletten sind nicht durch Umnummerieren entfernt, sondern als „entfällt“ stillgelegt; alle
+  Verweise zeigen auf die verbleibende Quelle (Nr. 41–43, 54–63). Umnummerieren hätte fast alle folgenden Nummern
+  verschoben und mögliche Verweise außerhalb des Dossiers ungültig gemacht.
+- **SP 19, teilweise:** Den Satz „ob dahinter eine Mehrfachauswahl steht, ist offen“ nicht übernommen. Die
+  Pressemitteilung nennt für dieselbe Frage 55 %, 47 % und 39 %, zusammen über 100 %; mehrere Nennungen waren also
+  möglich (Nr. 38).
+- **SP 3, teilweise:** Die Zahlen aus dem Nachmittagsabruf der Schlussprüfung (597 deutsche Bewertungen, 596 „verified
+  buyer“) nicht übernommen. Das Fenster der 1.000 neuesten Bewertungen verschiebt sich mit jeder neuen Bewertung; das
+  Dossier bleibt beim dokumentierten Abruf der Gegenprüfung und nennt ihn (Nr. 20). Beide Abrufe stützen dieselbe
+  Aussage.
+- **SP 16, Alternative:** 3.5 nicht an Kap. 9 angeglichen; 3.5 ist als Vorstufe gekennzeichnet, Kap. 9 begründet die
+  Abweichung (Nr. 16, 29, 31).
+- **SP 1, offen:** Ein Beleg für die Größe des Koffein-Clusters fehlt weiter. Google Trends war automatisiert nicht
+  abrufbar (12.1); den SERP- bzw. Volumen-Selbstversuch muss die Gruppe selbst machen (12.4, Nr. 34).
+- **SP 9, Hinweis:** Die Angleichung von G21 an R30 ist eine Einschätzung von Studierenden mit KI-gestützter Recherche,
+  keine Rechtsberatung.
 
 # Anhang B – Quellenverzeichnis
 
 ## B.1 Neue Quellen (FS2)
 
-Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). Alle Webquellen wurden am 30.10.2026 abgerufen. Firmen-, Händler- und Plattformquellen sind Selbstauskünfte; Suchergebnisse und SEO-Seiten sind Analysegegenstand, keine Faktenquelle.
+Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). Seit der Schlussprüfung sind [28], [134] und [231] als Dubletten stillgelegt; die Einträge bleiben mit Vermerk stehen, damit sich keine anderen Nummern verschieben. Alle Webquellen wurden am 30.10.2026 abgerufen. Firmen-, Händler- und Plattformquellen sind Selbstauskünfte; Suchergebnisse und SEO-Seiten sind Analysegegenstand, keine Faktenquelle.
 
 [1] HOLY Help-Center: Allgemeine Infos. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://help.de.weareholy.com/de-DE/articles/allgemeine-infos-91402>
 
-[2] HOLY DE – products.json. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://de.holy.com/products.json?limit=250>
+[2] HOLY DE – products.json (alle 225 Produkte auf einer Seite; schließt die frühere Dublette [28] ein). Firmenquelle; o. D.; abgerufen 30.10.2026. <https://de.holy.com/products.json?limit=250>
 
 [3] YouTube @HOLYSquadOfficial – Shorts. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://www.youtube.com/@HOLYSquadOfficial/shorts>
 
@@ -1673,7 +1775,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [27] HOLY – Werde Teil des Squads. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://de.holy.com/pages/werde-teil-des-squads>
 
-[28] HOLY DE – products.json (Seiten 1–3). Firmenquelle; o. D.; abgerufen 30.10.2026. <https://de.holy.com/products.json?limit=250&page=1>
+[28] entfällt (Schlussprüfung): Dublette von [2], dieselbe Abfrage products.json?limit=250, Seite 1; die Verweise stehen jetzt bei [2].
 
 [29] YouTube-Short „Absoluter Fiebertraum - Spongebob’s Wocheneinkauf“. Firmenquelle; 12.07.2026; abgerufen 30.10.2026. <https://www.youtube.com/shorts/-8UTMfOCg2k>
 
@@ -1725,7 +1827,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [53] Whole Foods Market: Weiterleitung der Adresse /blog/whole-story. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://www.wholefoodsmarket.com/blog/whole-story>
 
-[54] Forrester (Corcoran, S.): Defining Earned, Owned And Paid Media. Suchergebnis; 16.12.2009; abgerufen 30.10.2026. <https://www.forrester.com/blogs/09-12-16-defining_earned_owned_and_paid_media/>
+[54] Forrester (Corcoran, S.): Defining Earned, Owned And Paid Media. Blogbeitrag, Literaturangabe ungeprüft (die URL leitet am 30.10.2026 auf https://www.forrester.com/b2b-marketing/ um, der Beitrag ist nicht abrufbar); 16.12.2009 nur laut URL; abgerufen 30.10.2026. <https://www.forrester.com/blogs/09-12-16-defining_earned_owned_and_paid_media/>
 
 [55] Lemon, K. N./Verhoef, P. C. (2016): Understanding Customer Experience Throughout the Customer Journey, Journal of Marketing 80(6), S. 69–96. Studie; 11/2016; abgerufen 30.10.2026. <https://doi.org/10.1509/jm.15.0420>
 
@@ -1795,7 +1897,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [88] HDE-Pressemitteilung: HDE-Online-Monitor 2026. Presse; 03.06.2026; abgerufen 30.10.2026. <https://einzelhandel.de/images/presse/Pressekonferenz/2026/onlinemonitor26/PM_HDE-OnlineMonitor.pdf>
 
-[89] Bitkom: 3 von 10 kaufen über soziale Netzwerke ein. Presse; laut Seite 08.01.2025; Befragung laut Methodik KW 40–41 2025; abgerufen 30.10.2026. <https://www.bitkom.org/Presse/Presseinformation/3-von-10-kaufen-ueber-soziale-Netzwerke>
+[89] Bitkom: 3 von 10 kaufen über soziale Netzwerke ein. Presse; 08.01.2026 (Seitenmetadaten article:published_time; der Seitentext nennt „Berlin, 08. Januar 2025“, was zur Befragung nicht passt); Befragung laut Methodik KW 40–41 2025; abgerufen 30.10.2026. <https://www.bitkom.org/Presse/Presseinformation/3-von-10-kaufen-ueber-soziale-Netzwerke>
 
 [90] HORIZONT: Bitkom-Studie: Wie Social Commerce den Handel verändert (nur Anriss, Bezahlschranke). Presse; 09.01.2026; abgerufen 30.10.2026. <https://www.horizont.net/medien/nachrichten/bitkom-studie-wie-social-commerce-den-handel-veraendert-232669>
 
@@ -1831,7 +1933,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [106] HOLY DE – sitemap_blogs_1.xml. Firmenquelle; lastmod 02.12.2020; abgerufen 30.10.2026. <https://de.holy.com/sitemap_blogs_1.xml>
 
-[107] GIGA: Ist Holy Energy gefährlich? Das sagen Verbraucherschützer. Presse; 13.08.2025; abgerufen 30.10.2026. <https://www.giga.de/tech/experten-schlagen-alarm-warum-schon-eine-portion-holy-energy-zu-viel-sein-kann--01JNZT778PAG2F7SFP53R0E5ZM>
+[107] GIGA: Ist Holy Energy gefährlich? Das sagen Verbraucherschützer. Presse; 13.08.2025 (Seitenmetadaten); abgerufen 30.10.2026; derselbe Artikel ist auch unter einem zweiten Pfad mit derselben Artikel-ID 01JNZT778PAG2F7SFP53R0E5ZM erreichbar (frühere Dublette [134]). <https://www.giga.de/tech/experten-schlagen-alarm-warum-schon-eine-portion-holy-energy-zu-viel-sein-kann--01JNZT778PAG2F7SFP53R0E5ZM>
 
 [108] eat-vegan.de: Ist Holy Energy vegan? (Und ist es wirklich gesund?). SEO-/Ratgeberseite (Analysegegenstand); 01.06.2026, geänd. 08.08.2026; abgerufen 30.10.2026. <https://www.eat-vegan.de/blog/ist-holy-energy-vegan-der-ehrliche-check-zu-inhaltsstoffen-gesundheit>
 
@@ -1867,7 +1969,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [124] Help Center: HOLY Rewards & Account. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://help.de.weareholy.com/de-DE/articles/holy-rewards-&-account-91397>
 
-[125] Websuche „HOLY Softdrinks App iOS Android“. Suchergebnis; o. D.; abgerufen 30.10.2026. <https://apps.apple.com/app/id1361340956>
+[125] Google Play – Suche „holy energy“ (Apps, hl=de, gl=DE). Suchergebnis; o. D.; abgerufen 30.10.2026 (30 Treffer, keine App der HOLY Softdrinks GmbH; der Treffer „Holy Hörspiel App“ stammt von der Holysoft GmbH). Ersetzt seit der Schlussprüfung die frühere Angabe mit einer fremden Apple-ID. <https://play.google.com/store/search?q=holy%20energy&c=apps&hl=de&gl=DE>
 
 [126] HOLY – /pages/dein-perfekter-holy. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://de.holy.com/pages/dein-perfekter-holy>
 
@@ -1885,7 +1987,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [133] HOLY Help-Center: Was verwendet ihr als Zuckerersatz? Firmenquelle; zuletzt aktualisiert 03.02.2026; abgerufen 30.10.2026. <https://help.de.weareholy.com/de-DE/was-verwendet-ihr-als-zuckerersatz-320324>
 
-[134] giga.de: Ist Holy Energy gefährlich? Das sagen Verbraucherschützer. Presse; 10.03.2025 / 13.08.2025; abgerufen 30.10.2026. <https://www.giga.de/tech/ist-holy-energy-gefaehrlich-das-sagen-verbraucherschuetzer--01JNZT778PAG2F7SFP53R0E5ZM>
+[134] entfällt (Schlussprüfung): Dublette von [107], derselbe GIGA-Artikel unter einem zweiten Pfad (gleiche Artikel-ID); die Verweise stehen jetzt bei [107].
 
 [135] Expert Zoom: HOLY Energy – 160 mg Koffein im Check. SEO-Seite (schwache Quelle); 19.04.2026; abgerufen 30.10.2026. <https://expert-zoom.com/de/nachrichten/holy-energy-drink-gesundheit-risiken-koffein>
 
@@ -2037,7 +2139,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [209] UWG § 6 Vergleichende Werbung. Gesetz/Behörde; o. D.; abgerufen 30.10.2026. <https://www.gesetze-im-internet.de/uwg_2004/__6.html>
 
-[210] Drittes Gesetz zur Änderung des Gesetzes gegen den unlauteren Wettbewerb, BGBl. 2026 I Nr. 43. Gesetz/Behörde; 19.02.2026; abgerufen 30.10.2026. <https://www.recht.bund.de/bgbl/1/2026/43/VO.html>
+[210] Drittes Gesetz zur Änderung des Gesetzes gegen den unlauteren Wettbewerb, BGBl. 2026 I Nr. 43. Gesetz/Behörde; Gesetz vom 12.02.2026, ausgegeben 19.02.2026, in Kraft 27.09.2026 (Art. 1 Nr. 2 Buchst. c schon am 19.06.2026); setzt die Richtlinie (EU) 2024/825 um; abgerufen 30.10.2026. <https://www.recht.bund.de/bgbl/1/2026/43/VO.html> · ELI: <https://www.recht.bund.de/eli/bund/bgbl-1/2026/43>
 
 [211] UWG Anhang (zu § 3 Absatz 3). Gesetz/Behörde; o. D.; abgerufen 30.10.2026. <https://www.gesetze-im-internet.de/uwg_2004/anhang.html>
 
@@ -2079,7 +2181,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 [230] Richtlinie (EU) 2024/825 (Stärkung der Verbraucher für den ökologischen Wandel). Gesetz/Behörde; 28.02.2024 (ABl. 06.03.2024); abgerufen 30.10.2026. <https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024L0825>
 
-[231] Drittes Gesetz zur Änderung des Gesetzes gegen den unlauteren Wettbewerb, BGBl. 2026 I Nr. 43. Gesetz/Behörde; 12.02.2026 (verkündet 19.02.2026); abgerufen 30.10.2026. <https://www.recht.bund.de/eli/bund/bgbl-1/2026/43>
+[231] entfällt (Schlussprüfung): Dublette von [210], dasselbe BGBl. 2026 I Nr. 43 unter der ELI-Adresse; die Verweise stehen jetzt bei [210].
 
 [232] Gesetz zur Modernisierung des Designrechts und zur Änderung des UWG, BGBl. 2026 I Nr. 322. Gesetz/Behörde; 22.10.2026 (verkündet 27.10.2026); abgerufen 30.10.2026. <https://www.recht.bund.de/eli/bund/bgbl-1/2026/322>
 
@@ -2169,7 +2271,7 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). All
 
 ## B.2 Quellen aus dem FS1-Dossier (D1)
 
-D1 = `fallstudie-1-brand-persona/recherche/holy-recherche.md` (Stand 14.10.2026). Die folgenden D1-Quellen wurden für FS2 am 30.10.2026 erneut abgerufen bzw. geprüft. Titel und Art wie in D1, Anhang B. „D1 §x“ verweist auf einen Abschnitt des FS1-Dossiers selbst.
+D1 = `fallstudie-1-brand-persona/recherche/holy-recherche.md` (Stand 14.10.2026). Titel, Art und Abrufdaten wie in D1, Anhang B. Am 30.10.2026 erneut geprüft wurde eine D1-Quelle, sofern der jeweilige Befund das nennt; D1 [7], [14] und [24] stehen nur im Prüfhinweis zu P09 und wurden für FS2 nicht erneut abgerufen. „D1 §x“ verweist auf einen Abschnitt des FS1-Dossiers selbst.
 
 D1 [1] HOLY – Die Softdrink Revolution (Startseite, Navigation, Preise, Footer, CSS). Firmenquelle HOLY; abgerufen 13./14.10.2026. <https://de.holy.com/>
 
@@ -2177,13 +2279,19 @@ D1 [2] Impressum HOLY Softdrinks GmbH. Firmenquelle HOLY; abgerufen 13./14.10.20
 
 D1 [5] Die HOLY Story – Die Softdrink Revolution (Über uns, Zeitleiste, Squad-Galerie; die alte Adresse /pages/about-us leitet am 14.10.2026 hierher weiter). Firmenquelle HOLY; abgerufen 13./14.10.2026. <https://de.holy.com/pages/our-story>
 
+D1 [7] Trending Topics (J. Steinschaden): Holy – Drink-Startup fordert Coca-Cola, Red Bull und Co. im Supermarkt heraus. Presse; 21.08.2024; für FS2 nicht erneut abgerufen. <https://www.trendingtopics.eu/holy-drink-startup-fordert-lokalmatador-waterdrop-im-supermarkt-heraus/>
+
 D1 [12] AGB der HOLY Softdrinks GmbH (§ 4 Jugendschutz, § 12 Garantie/Vertriebskanäle). Firmenquelle HOLY; abgerufen 14.10.2026. <https://de.holy.com/pages/agb>
 
 D1 [13] HOLY Press Kit – Company & Product Overview for Media & Trade Partners (PDF). Firmenquelle HOLY; PDF erstellt 20.02.2026, abgerufen 14.10.2026. <https://pub-mediabox-storage.rxweb-prd.com/exhibitor/document/exh-6e8f5981-9a38-4f40-9910-be5dcabf2795/4e7a6473-3b9f-42da-aed5-a1d80cef9e40.pdf>
 
+D1 [14] HV Capital – Portfolio: HOLY („Leading the Soft Drink Revolution“, Investorenseite). Investor (Selbstauskunft); veröffentlicht 22.06.2026, abgerufen 13./14.10.2026; für FS2 nicht erneut abgerufen. <https://hvcapital.com/portfolio/holy>
+
 D1 [20] TikTok @holysquad.official („HOLY Softdrinks“) – Profil. Social Media; abgerufen 14.10.2026. <https://www.tiktok.com/@holysquad.official>
 
 D1 [21] Discord-Invite-API: Server „HOLY“ (Mitgliederzahl). Social Media; abgerufen 14.10.2026. <https://discord.com/api/v9/invites/holyenergy?with_counts=true>
+
+D1 [24] Digitale Vorreiter:innen #281 – Erfolg durch Innovation: Wie Holy den Softdrink-Markt revolutionieren will (mit Frederick Jost), automatisches Transkript. Interview/Podcast; aufgenommen 21.08.2024, veröffentlicht 26.08.2024; für FS2 nicht erneut abgerufen. <https://digitalevorreiter.podigee.io/281-erfolg-durch-innovation-wie-holy-den-softdrink-markt-revolutionieren-will-mit-grunder-frederick-jost>
 
 D1 [25] HORIZONT (H. Birkner): „Mach's dir wie nie zuvor“ – Softdrink-Marke Holy provoziert mit doppeldeutiger Schüttel-Kampagne. Presse; 09.01.2026. <https://www.horizont.net/marketing/nachrichten/pulver-softdrinks-holy-provoziert-mit-doppeldeutiger-schuettel-kampagne-232676>
 
