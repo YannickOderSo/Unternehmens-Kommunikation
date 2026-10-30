@@ -28,6 +28,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 01 | 27.10.2026 | Yannick | Überlegen, wie die Kritik von Prof. Stenger in Fallstudie 2 umgesetzt wird (z. B. mehr Bilder) | D01 (Workflow) | 43 Vorschläge aus 4 Blickwinkeln, zu einem Plan verdichtet (Chat) |
 | 02 | 27.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Rohprotokoll) | – | committet und gepusht |
 | 03 | 27.10.2026 | Yannick | „ja“: Vorbereitung als Beginn von Fallstudie 2 dokumentieren | – | diese Datei angelegt; `CLAUDE.md`, `README.md` angepasst |
+| 04 | 30.10.2026 | Yannick | Fallstudie 2 anfangen: Deep Research und Gestaltungsplan nach den neu festgelegten Regeln | D02 (Workflow) | läuft |
+| 05 | 30.10.2026 | Yannick | Erlaubnis, in dieses Repository zu pushen | – | Schreibzugriff eingerichtet; Nachweis begonnen |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -70,6 +72,37 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 04 – 30.10.2026 – Yannick
+
+> Es muss Fallstudie 2 angefangen werden mache schon mal ein deep research dazu und einen Plan für Design nach den neu festgelegten Regeln. Du hast ja die Auswertung von der ersten Fallstudie im github oder?
+
+- **Anhänge:** keine.
+- **Sitzung:** neue Cloud-Sitzung https://claude.ai/code/session_01QaxnpigZhpAt4W2MG1X86c, gestartet im Repository
+  `Marketing`; dieses Repository war zuerst nur lesend eingebunden. Die Hooks aus `.claude/settings.json` greifen in
+  dieser Sitzung nicht, deshalb fehlen Prompt 04 und 05 im `rohprotokoll.jsonl`; der Wortlaut steht hier.
+- **Vorgehen Claude:** Auswertung von Fallstudie 1 gesucht und gefunden: Bewertung von Prof. Stenger
+  (`ki-nachweis.md`, Eintrag 205; Kommentare im Wortlaut im Workflow-Skript von D01) und der Plan aus Eintrag 01.
+  Als „neu festgelegte Regeln“ verwendet: der Plan aus Eintrag 01 (R1 Klären, R2 echtes Material, R3 Gestaltung,
+  R4 Inhalt nach Stengers Touchpoint-Prozess, R5 Zeit) und die bestehenden Gruppenregeln; zusätzlich, nur als
+  Vorschlag, die Gestaltungsprinzipien der Neugestaltung „Der rote Faden“ vom 29.10.2026 (Repository
+  `Management-im-KMU`, Branch `claude/adoring-carson-l7t75l`). Vorlesungsfolien (`unterlagen/Stenger Folien.pdf`,
+  S. 56–60 und 107–129) als Text und Seitenbilder aufbereitet. Workflow D02 gestartet.
+- **Ergebnis:** *(läuft)*
+- **Dateien:** `ki-nachweis/workflows/2026-10-30_fs2-recherche-gestaltung.js` (Ergebnisdateien folgen)
+- **Unteragenten:** D02
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 05 – 30.10.2026 – Yannick
+
+> Du darfst ins Unternehmens-Kommunikation Repo pushen
+
+- **Anhänge:** keine. Antwort auf Claudes Hinweis, dass der Schreibzugriff fehlte.
+- **Vorgehen Claude:** Repository mit Schreibzugriff an die Sitzung angehängt und neu geklont; Einträge 04, 05 und
+  D02 angelegt, Workflow-Skript abgelegt, committet und gepusht.
+- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`, `ki-nachweis/workflows/2026-10-30_fs2-recherche-gestaltung.js`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -80,6 +113,7 @@ Auftrag (im Workflow-Skript).
 | Nr. | Datum | Ausgelöst durch Prompt | Agent-Typ | Auftrag (kurz) | Ergebnis | Geprüft durch |
 |-----|-------|------------------------|-----------|----------------|----------|---------------|
 | D01 | 27.10.2026 | 01 | Workflow „fs2-kritik-umsetzen“ (4 Unteragenten, einer mit Websuche) | Vorschläge, wie die Kritik an Fallstudie 1 in Fallstudie 2 umgesetzt wird: Bilder, Inhalt/Modelle, Zeit/Vortrag, „weniger nüchtern“ | 43 Vorschläge (Inhalt 10, Bilder 13, Zeit 9, Gestaltung 11) mit Quellen, offene Fragen an Prof. Stenger | Claude: drei Kernbefunde im Repository nachgeprüft |
+| D02 | 30.10.2026 | 04 | Workflow „fs2-recherche-gestaltung“ (27 Unteragenten, mit Websuche) | Recherche in 8 Bereichen mit je einer Gegenprüfung; 3 Gestaltungsrichtungen mit Musterfolie; 2 Jurys; Dossier und Gestaltungsplan; Schlussprüfung | läuft | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -96,6 +130,18 @@ Auftrag (im Workflow-Skript).
   das Fehlen echter Bilder; `css/tokens.css` begrenzt Helligkeit und Buntheit der Markenfarbe (Gelb wird zu Ocker);
   `LIESMICH.md` nennt 67 Klicks bis Folie 12. Doppelte Vorschläge (Freigaben, Selbstversuch, Blog-Mock-up) im Plan
   zusammengeführt.
+
+### D02 – 30.10.2026 – ausgelöst durch Prompt 04
+
+- **Art:** Workflow „fs2-recherche-gestaltung“ mit 27 Unteragenten: 8 Recherche-Agenten mit Websuche (Touchpoints,
+  Brüche und Kundenstimmen, Suche und Content-Lücken, Benchmark-Blogs, rechtliche Leitplanken, Modelle und Literatur,
+  Persona und Mediennutzung, Bilder/Rechte/Corporate Design), je Bereich ein unabhängiger Prüfer an den Quellen
+  (Status ✔/✎/~/✗/H); parallel 3 Gestaltungsrichtungen mit je einer Musterfolie (Journey-Map) und 2 Jurys
+  (Bewertung nach Stenger, Machbarkeit bis 09.11.); danach Dossier und Gestaltungsplan, je mit Schlussprüfung und
+  Einarbeitung. Alle Agenten mit Stengers Kommentaren im Wortlaut, den Regeln R1–R5 und der Pflicht zur Quellenangabe.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-10-30_fs2-recherche-gestaltung.js`](workflows/2026-10-30_fs2-recherche-gestaltung.js).
+- **Ergebnis:** *(läuft)*
+- **Wie Claude das Ergebnis geprüft hat:** *(folgt)*
 
 ---
 
