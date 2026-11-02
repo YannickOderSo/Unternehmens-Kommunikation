@@ -28,6 +28,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 01 | 27.10.2026 | Yannick | Überlegen, wie die Kritik von Prof. Stenger in Fallstudie 2 umgesetzt wird (z. B. mehr Bilder) | D01 (Workflow) | 43 Vorschläge aus 4 Blickwinkeln, zu einem Plan verdichtet (Chat) |
 | 02 | 27.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Rohprotokoll) | – | committet und gepusht |
 | 03 | 27.10.2026 | Yannick | „ja“: Vorbereitung als Beginn von Fallstudie 2 dokumentieren | – | diese Datei angelegt; `CLAUDE.md`, `README.md` angepasst |
+| 04 | 02.11.2026 | Yannick | Videobotschaft des HOLY-Gründers für die nächste Präsentation (Anhang: Video) | – | nur technische Daten gelesen; Inhalt nicht ausgewertet, Einwilligung offen; nicht im Repository |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -67,6 +68,22 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** Nachweis für Fallstudie 2 läuft.
 - **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`, `ki-nachweis/workflows/2026-10-27_fs2-kritik-umsetzen.js`,
   `CLAUDE.md`, `README.md`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 04 – 02.11.2026 – Yannick
+
+> Vom holy Gründer eine videobotschaft für unsere nächste Präsentation
+
+- **Anhänge:** ein Video `VID-20261102-WA0011.mp4` (laut Yannick Videobotschaft des HOLY-Gründers Mathias Horsch;
+  16,1 s, Hochformat 576 × 1024, H.264/AAC, 3,5 MB).
+- **Vorgehen Claude:** Nur die technischen Daten mit `ffprobe` gelesen. Das Video **nicht** angesehen, nicht
+  transkribiert und nicht ins Repository übernommen: Gesicht und Stimme sind personenbezogene Daten; die
+  Einwilligung des Gründers aus Fallstudie 1 galt der Abschrift und Auswertung seiner Sprachnachrichten
+  (`fallstudie-1-brand-persona/gruenderbefragung.md`, Kopf „Freigabe“), nicht diesem Video (HSKL-KI-Richtlinie Nr. 6).
+  Im Chat: Fragen zur Einwilligung (Vortrag, öffentliche Web-Präsentation, Untertitel per KI) und Vorschlag zum Einbau.
+- **Ergebnis:** Antwort im Chat; keine Datei außer diesem Nachweis.
+- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
