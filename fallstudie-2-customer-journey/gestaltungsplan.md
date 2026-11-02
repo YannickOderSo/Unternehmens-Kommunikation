@@ -48,7 +48,7 @@ verteilt:** Dieser Plan ordnet keiner Person Aufgaben zu; wer was übernimmt, le
 3. Aus der Reise übernehmen wir die Herleitungszeile „So kommen wir darauf: …“, Bildunterschriften als Protokoll, das
    Moodboard mit Datencodierung, die Legende zum Moment der Wahrheit (S. 109), den HOLY heute verliert (eigene
    Deutung), die erneute Anfrage an den Gründer und den Zeitwächter mit Kürzungsplan.
-4. Neun Hauptfolien, 22 Klicks und 11:40 Sollzeit plus 0:50 Reserve ergeben genau 12:30; die Journey-Map zeigt
+4. Neun Hauptfolien, 23 Klicks und 11:55 Sollzeit plus 0:35 Reserve ergeben genau 12:30 (seit 02.11. mit der Videobotschaft des Gründers am Schluss); die Journey-Map zeigt
    Marcos Weg mit zwei Lücken (beim Nachlesen antwortet HOLY nur knapp und verstreut, vom Regal führt kein Weg in den
    Squad), und der Blog-Beitrag „Koffein-Check“ und eine QR-Brücke schließen sie.
 5. Jede Bildkachel hat einen Rückfall als eigene Grafik, Fakten stehen nur mit Dossier-Status auf den Folien, und
@@ -69,7 +69,7 @@ Eintrag 01).
 | **R2 Echtes Material statt KI** | Selbstversuch online und im Handel, jede Station fotografiert, Protokoll mit Datum, Ort, Kanal (Backup B1); eigene Produktfotos; 5 offene Kurzinterviews (mindestens 3), anonym, mit Einwilligung; 20–30 Bewertungen plus kritische, von zwei Personen nach K1–K11 codiert (Dossier 12.4, **H** B36). Keine KI-Bilder, keine KI-simulierte Befragung | Persona Marco bleibt die fiktive Kern-Persona aus FS1 und ist so gekennzeichnet. Ihre KI-gestützte Illustration erscheint nur in B7. Die Bewertungs-Stichproben im Dossier (A–E) stammen von einem Recherche-Agenten (~ B20–B24) und erscheinen höchstens im Backup, bis die eigene Codierung vorliegt |
 | **R3 Gestaltung:** HOLY-Farben, ein Bild je Folie, Journey-Map mit Bildern wie S. 116, Moodboard, Blog als Mock-up, weniger Fußnoten | Gelb #FFD007, Schwarz #1D1D1B, Creme #F3EDE1 unverdünnt, **kein Ocker** (Ursache in FS1: Deckelung in `tokens.css`, ✔ G13). Je Hauptfolie ein großes eigenes Bild; Journey-Map mit sechs Bildkacheln (Folie 05); Moodboard (03); Blog-Mock-up (07). Je Folie **eine** Quellzeile (22 px), alle Einzelbelege in B8 | Journey-Map und Moodboard sind Bildwände mit mehreren Bildern: gewollt, so zeigt es Stenger auf S. 116 (✔ L15). Gelb nie als Schrift oder Linie auf Creme (1,26 : 1, ✔ G12). #1D1D1B ist HOLYs Logo- und Druck-Schwarz, im Web steht #000000 (✔ G07, ✎ G06); wir bleiben bei #1D1D1B wie in R3 festgelegt (Entscheidung 13.1 Nr. 4) |
 | **R4 Inhalt nach S. 111 und Übung S. 128/129, Herleitungen sichtbar** | Laufleiste mit den fünf Schritten von S. 111 auf jeder Inhaltsfolie: 03 = Schritt 1, 04/05 = Schritt 2, 06 = Schritt 3, 07 = Schritte 3/4, 08 = Schritte 4/5. Folie 06 setzt die Übung im Raster von S. 129 um. Herleitungen: Zeile „So kommen wir darauf: …“ unter jedem Titel, Belegzeile an jedem Moment der Wahrheit, Kriterienzeile auf 06, Workshop-Foto | Der Blog sitzt in der Recherche-Phase. Stenger zeigt Content Marketing unter Inspiration und Recherche in der Earned-Zeile (✔ R95); unsere Wahl wird auf Folie 07 offen benannt. Die Zeilen der Journey-Map (05) sind gegenüber S. 129 verdichtet; die Zuordnung steht in 6.3 und B8 |
-| **R5 Zeit:** ≤ 9 Hauptfolien, ≤ 25 Klicks, 12:30 Soll, Zeitwächter, zwei Generalproben, Änderungsstopp, Position neben der Leinwand | 9 Hauptfolien · 22 Klicks (Schritte + Folienwechsel, Zählweise wie FS1) · Soll 11:40 + 0:50 Reserve = 12:30 · Referentenuhr der FS1-Engine plus eine Person als Zeitwächter · Leseprobe Di 03.11., Generalproben Fr 06.11. und So 08.11. · Änderungsstopp So 08.11., 20:00 · sprechende Person links neben der Leinwand, Pfad läuft von links nach rechts | keine |
+| **R5 Zeit:** ≤ 9 Hauptfolien, ≤ 25 Klicks, 12:30 Soll, Zeitwächter, zwei Generalproben, Änderungsstopp, Position neben der Leinwand | 9 Hauptfolien · 23 Klicks (Schritte + Folienwechsel, Zählweise wie FS1) · Soll 11:55 + 0:35 Reserve = 12:30 · Referentenuhr der FS1-Engine plus eine Person als Zeitwächter · Leseprobe Di 03.11., Generalproben Fr 06.11. und So 08.11. · Änderungsstopp So 08.11., 20:00 · sprechende Person links neben der Leinwand, Pfad läuft von links nach rechts | keine |
 
 ### 1.2 Bestehende Gruppenregeln
 
@@ -127,7 +127,7 @@ Kommentare im Wortlaut aus der FS1-Bewertung; „[...]“ wie im Bewertungsbogen
 | 14 | Lösung | „und im Ergebnis in der Identität Farben/ Formen/ Produktabbildungen zeigen.“ | Farbproben mit Hex-Wert und Status, Formproben (Kontur, Kreis, Schachbrett), eigene Produktfotos; gelbe Bühnen 01, 07, 09 | 01, 03, 07 |
 | 15 | Vermittlung (9/10) | „Guter interaktiver Einstieg, freier Vortrag.“ | Einstieg ohne Technik mit echter Dose; geringes Wortbudget stützt freies Sprechen | 01 |
 | 16 | Vermittlung | „Position im Raum nicht optimal. Bessere Mimik und Interaktion mit der Folie möglich wenn neben den Folien positioniert.“ | Sprechende Person links neben der Leinwand; Pfad läuft von links nach rechts; nummerierte Knoten als Zeigeziele; keine Interaktion braucht die Tastatur | 05, 06, alle |
-| 17 | Vermittlung | „Zeitmanagement schlecht 25 min statt 15.“ | 9 Folien, 22 Klicks, 11:40 + 0:50 Reserve; Kontrollpunkte, Kürzungsplan, Leseprobe, zwei Generalproben mit Stoppuhr, Änderungsstopp (Abschnitt 10) | alle |
+| 17 | Vermittlung | „Zeitmanagement schlecht 25 min statt 15.“ | 9 Folien, 23 Klicks, 11:55 + 0:35 Reserve; Kontrollpunkte, Kürzungsplan, Leseprobe, zwei Generalproben mit Stoppuhr, Änderungsstopp (Abschnitt 10) | alle |
 | 18 | Visualisierung (9/10) | „Folien strukturiert und ansprechend gestaltet.“ | Beibehalten: festes Raster, Laufleiste, Satz-Titel | alle |
 | 19 | Visualisierung | „Aber oft sehr nüchtern, da KI gestützt umgesetzt.“ | Echte eigene Fotos statt KI-Illustrationen; HOLY-Gelb unverdünnt als Fläche; keine Vorlagenmerkmale aus FS1 (Karten, Pillen, Icons, Kicker, Mini-Steuerrad); sichtbare Arbeitsspuren: Workshop-Foto, Handskizze, von Hand eingekreiste Treffer, Bildunterschrift als Protokoll | alle |
 
@@ -306,6 +306,7 @@ GitHub Pages sofort öffentlich ist, kommen nur Rückfälle und Freigegebenes (1
 | b17 | Persona-Illustration Marco (FS1) | nur B7 | Illustration, KI-gestützt (FS1) | eigene Gestaltung laut FS1 `QUELLEN.md` §4; Kennzeichnung mit Werkzeug und Datum wie dort (1.2) | – | – |
 | b18 | Farb- und Formproben (Hex-Werte, Kontur, Kreis, Schachbrett) | 03 | eigene Grafik | eigen; Werte aus Dossier 10.1 mit Status | – | beim Bau |
 | b19 | Leere Blog-Seite /blogs/news („noch keine Beiträge“, ✔ M01, ✔ L39) | 03, B4 | eigener Screenshot | HOLY-Seite: Bildzitat mit Belegfunktion (**H** G32), Quellzeile wie 3.6; Seitenkopf mit HOLY-Logo abschneiden (3.7) | **Textgrafik** „/blogs/news · 0 Beiträge“ mit Abrufdatum | Screenshot Fr 30.10. mit Datum; Textgrafik beim Bau |
+| v01 | **Videobotschaft des Gründers** Mathias Horsch (16,1 s, Hochformat 576 × 1024, mit Ton; erhalten 02.11.2026) | 09 (Klick 1) | Video des Gründers, Selbstauskunft | Zustimmung des Gründers: Video und Stimme dürfen in die Präsentation (laut Yannick, 02.11.2026, KI-Nachweis FS2 Nr. 09). **Nicht** angefragt: Veröffentlichung im Repository bzw. auf GitHub Pages und KI-Transkription → Datei nur in `praesentation/intern/` und im Gruppenordner, keine automatischen Untertitel | öffentliche Fassung: Handyrahmen mit Text „Videobotschaft des Gründers – nur im Vortrag“; im Vortrag, falls das Video nicht läuft: derselbe Rahmen, ein Satz Überleitung | Datei in `intern/` ablegen mit M5; Ton im Beamer-Test (11.4) |
 
 **Regeln für alle Fotos:** nur Hände, keine Gesichter, keine Dritten; jedes Motiv quer und hoch aufnehmen; Datum,
 Uhrzeit und Ort notieren (wird zur Bildunterschrift und zum Protokoll in B1); Fotos von Plakaten oder DOOH nur nach
@@ -323,7 +324,7 @@ die Gruppe selbst ein (nur in der internen Fassung, nicht im Repository, siehe A
 ### 5.1 Hauptfolien
 
 Klicks = Aufbauschritte + Weiterschalten (Zählweise FS1: 67 = 53 Schritte + 14 Folienwechsel, `VORTRAGSREIFE.md` Z. 33);
-auf Folie 09 nur der Klick zu „Fragen?“. Wortziel = sichtbare Wörter ohne `data-meta`.
+auf Folie 09 der Schritt zum Gründer-Video und der Klick zu „Fragen?“. Wortziel = sichtbare Wörter ohne `data-meta`.
 
 | Nr. | Titel als Kernaussage | Stichpunkte | Visualisierung | Bild | Modell + Vorlesungsseite | Befund-IDs (Dossier) | Klicks | Soll |
 |---|---|---|---|---|---|---|--:|--:|
@@ -335,11 +336,11 @@ auf Folie 09 nur der Klick zu „Fragen?“. Wortziel = sichtbare Wörter ohne `
 | **06** | **Zuerst schließen wir die Lücke beim Nachlesen, dann die am Regal** | · Raster wie S. 129: Zeilen Search/Partner · Media-Werbung · Webseite · Handel/POS (statt Filiale) · Webshop · E-Mail · Social Media; Spalten fünf Phasen · Kriterienzeile: je Phase die Zielfrage der 5 As (S. 109) plus Mediennutzung aus 04 · Je Phase Top 2 als Knoten auf dem gelben Soll-Pfad, je Touchpoint 2 Aktivitäten als Balken (2–3 Wörter, wie S. 117), 20 insgesamt (5.2) · Marker auf Priorität 1 „Koffein-Check“, Priorität 2 „QR-Brücke“ · Workshop-Foto „so ist es entstanden“ | Raster mit Haarlinien, schwarze Knoten, durchgehender gelber Pfad ohne Lücke. Schritt 1: Phasen 1–3; Schritt 2: Phasen 4–5 und Marker. Workshop-Foto als schmaler Anschnitt oben rechts (Spalten 10–12) | b12 | Übung „Top 2 Touchpoints pro Phase, jeweils 2 Aktivitäten“ (S. 128/129); Aktivitäten je Touchpoint und Phase (S. 117); Ziele je Phase (S. 109); Schritt 3 (S. 111) | ✔ L19 · ✎ L07 · ✔ P02 · **H** L36 · ✎ L16 · ✔ L13 · ✔ R95 · Dossier Kap. 9 (**H**) | 3 | 110 s |
 | **07** (gelbe Bühne) | **Ein eigener Koffein-Check gibt Kontext statt Kurzantworten** | · Smartphone-Mock-up „Koffein-Check: Wie viel HOLY Energy ist okay?“ · Klick 1: Anmerkungen (1) beantwortet Fragen, die die Google-Autovervollständigung vorschlägt: Koffein, Alter, Tagesmenge (2) nur Etikett- und EFSA-Zahlen, keine Fokus- oder Gesundheitsversprechen · Klick 2: Rahmen fährt zum Schluss, Anmerkung (3) „Im Markt gekauft? So kommst du in den Squad“ (Brücke zu Lücke 2); Marker „eigener Kontext dort, wo heute Kurzantworten und Kritik Dritter stehen“ · Kennzeichnung wie 7.3 (studentischer Entwurf, Text KI-gestützt, kein Beitrag der HOLY Softdrinks GmbH) · Herleitung: Suchvorschläge → Lücke → Beitrag (wie groß der Koffein-Cluster ist, belegt erst der Volumen-Selbstversuch, B1) | Abschnitt 7 | b13, b14 | Content Marketing, Blog „Whole Story“ (S. 117/118); Owned (S. 112, 121); APPEAL/ASSURE (S. 109); Schritte 3/4 (S. 111) | ✔ S04 · ✎ S03 · ✔ S27 · **H** S33 · ✔ S92 · ✔ R16 · ✔ R17 · ✎ R10 · ✔ R91 · ✔ M90 · **H** M31 · **H** M32 · ✎ L16 · ✔ M29 · ✔ R95 · ✔ R90 | 3 | 100 s |
 | **08** | **Ein QR-Code am Regal schließt die zweite Lücke – gemessen an Squad-Anmeldungen** | · Drei Maßnahmen als Knoten auf dem Pfad: 1 Koffein-Check (Lücke 1) · 2 QR-Brücke auf Handelspackung und Display → Händlersuche, Rewards, Cashback in einem Schritt (Lücke 2) · 3 Koffein, Alter, Tagesportion auf den Produktseiten als Text statt nur im Etikettbild (Lücke 1) · Aufwand und Wirkung je Maßnahme als Strichskala (eigene Einschätzung, H) · Klick 1: Messung nach Schritt 5: Klicks aus der Suche, Lesetiefe · Squad-Anmeldungen über QR · Wiederkauf, Cross-Selling, Weiterempfehlung · falls vorhanden: Innensicht des Gründers als gekennzeichnete Zeile (n = 1) | Spalten 1–8 drei Knoten auf waagerechtem Pfad, darunter je zwei Strichskalen; Spalten 9–12 Handskizze im Anschnitt; Marker auf „QR-Brücke“ | b15 | Schritte 4 und 5 mit Effizienzkontrolle; Kundenerlebnis: Wiederkauf/Loyalität, Cross-Selling, Weiterempfehlung (S. 111); Kontrolle (S. 120); Zielsystem (S. 101, 104, 127) | ✔ L11 · ✔ L22 · ✔ B03 · ✎ T28 · ✔ T95 · ✎ S31 · ✎ S30 · Dossier 8.5 und Kap. 9 (**H**) | 2 | 75 s |
-| **09** (gelbe Bühne) | **Mit zwei Brücken wird aus Marcos Weg ein geschlossener Pfad** | · Schwarzer Pfad auf Gelb von Rand zu Rand, darauf die Bildleiste der Selbstversuch-Fotos; Knoten 1 und 2 geschlossen · Drei Sätze Fazit: Kontext statt Kurzantworten beim Nachlesen · Brücke vom Regal in den Squad · messen nach Schritt 5 · Rückgriff auf den Trichter vom Anfang („Viele haben HOLY gesehen, weniger nachgelesen …“) · Klick: „Fragen?“ und Sprungliste B1–B9; QR zum Blog nur, wenn die Seite freigegeben ist | Laufleiste schließt sich zum Pfad (wie f18 in „Der rote Faden“); der Pfad läuft hier als einzige Ausnahme bis an beide Bühnenränder (3.5) | b16 | „Das Zusammenspiel aller Touchpoints prägt das Markenerlebnis“ (S. 107); Kundenerlebnis als Ziel des Prozesses (S. 111: Schritte 1–5 führen zum „Kundenerlebnis“) | ✔ L01 · ✔ L11 | 1 | 50 s |
-| **Summe** | | | | | | | **22** | **700 s = 11:40** |
+| **09** (gelbe Bühne) | **Mit zwei Brücken wird aus Marcos Weg ein geschlossener Pfad** | · Schwarzer Pfad auf Gelb von Rand zu Rand, darauf die Bildleiste der Selbstversuch-Fotos; Knoten 1 und 2 geschlossen · Drei Sätze Fazit: Kontext statt Kurzantworten beim Nachlesen · Brücke vom Regal in den Squad · messen nach Schritt 5 · Rückgriff auf den Trichter vom Anfang („Viele haben HOLY gesehen, weniger nachgelesen …“) · **Klick 1 (Schluss, seit 02.11.): Videobotschaft des Gründers** (16 s, Ton) im Handyrahmen auf der gelben Bühne, angekündigt mit einem Satz; Fazit dafür knapper (v01, 9.5) · Klick 2: „Fragen?“ und Sprungliste B1–B9; QR zum Blog nur, wenn die Seite freigegeben ist | Laufleiste schließt sich zum Pfad (wie f18 in „Der rote Faden“); der Pfad läuft hier als einzige Ausnahme bis an beide Bühnenränder (3.5) | b16 · v01 | „Das Zusammenspiel aller Touchpoints prägt das Markenerlebnis“ (S. 107); Kundenerlebnis als Ziel des Prozesses (S. 111: Schritte 1–5 führen zum „Kundenerlebnis“) | ✔ L01 · ✔ L11 | 2 | 65 s |
+| **Summe** | | | | | | | **23** | **715 s = 11:55** |
 
-**Nachgerechnet (Skript 14.4):** Klicks 2 + 2 + 3 + 2 + 4 + 3 + 3 + 2 + 1 = **22 ≤ 25** (3 Reserve). Sollzeit
-50 + 45 + 75 + 75 + 120 + 110 + 100 + 75 + 50 = **700 s = 11:40**; dazu **0:50 Reserve** für die Handzeichen (01) und
+**Nachgerechnet (Skript 14.4; angepasst 02.11. für das Gründer-Video):** Klicks 2 + 2 + 3 + 2 + 4 + 3 + 3 + 2 + 2 =
+**23 ≤ 25** (2 Reserve). Sollzeit 50 + 45 + 75 + 75 + 120 + 110 + 100 + 75 + 65 = **715 s = 11:55**; dazu **0:35 Reserve** (vorher 0:50) für die Handzeichen (01) und
 Rückgriffe = **12:30**. Bis 15:00 bleiben 2:30 Puffer (ob Fragen in die 15 Minuten fallen, klärt 13.2 Nr. 8).
 
 **Wortziele:** 01, 02, 03, 04, 07, 08, 09 je ≤ 40 Wörter; 05 rund 100 und 06 rund 80–90 als bewusste Ausnahmen (je
@@ -652,6 +653,25 @@ Sprungliste B1–B9 auf Folie 09 (wie FS1, Folie 12). Wahrscheinliche Rückfrage
 Blog in der Recherche?“ → 07/B8 · „Warum diese Wettbewerber?“ → B6 · „Passt die Persona?“ → B7 · „Dürft ihr die Bilder
 zeigen?“ → B8 · „Was ist KI?“ → B9.
 
+### 9.5 Videobotschaft des Gründers (Folie 09, Schluss)
+
+Seit 02.11.2026: Mathias Horsch hat der Gruppe eine Videobotschaft für diese Präsentation geschickt (16,1 s,
+Hochformat) und zugestimmt, dass Video und Stimme in der Präsentation laufen (laut Yannick, KI-Nachweis FS2 Nr. 09).
+Sie kommt **am Schluss**, als Klick 1 auf Folie 09 nach dem knappen Fazit und vor „Fragen?“:
+
+- **Ansage**, ein Satz von der sprechenden Person (links neben der Leinwand, 9.2): z. B. „Zum Schluss hat der Gründer
+  von HOLY selbst das Wort.“ Danach nichts darüber sprechen, das Video läuft mit Ton.
+- **Darstellung:** Handyrahmen mittig auf der gelben Bühne, darunter in einer Zeile „Videobotschaft Mathias Horsch,
+  Mitgründer HOLY · 02.11.2026 · gezeigt mit seiner Zustimmung“. Was er sagt, ist Selbstauskunft (wie die
+  Gründerbefragung in FS1); auf der Folie keine Zitate oder Zahlen aus dem Video ohne Kennzeichnung „laut Gründer“.
+- **Zeit:** 16 s Video + 5 s Ansage; Folie 09 von 50 auf 65 s, Reserve von 0:50 auf 0:35 (10.1). Das Video wird nicht
+  gekürzt.
+- **Ablage:** nur `praesentation/intern/gruender-video.mp4` (per `.gitignore` ausgeschlossen) und Gruppenordner; nicht
+  ins öffentliche Repository und nicht auf GitHub Pages, solange dafür keine Zustimmung vorliegt. Keine KI-Transkription
+  ohne seine Zustimmung (HSKL-KI-Richtlinie Nr. 6).
+- **Technik und Rückfall:** 11.2 (Video-Schritt), Ton im Beamer-Test (11.4); läuft das Video nicht, bleibt der Rahmen
+  mit dem Satz „Videobotschaft des Gründers – nur im Vortrag“ stehen, und die sprechende Person leitet zu „Fragen?“ über.
+
 ---
 
 ## 10 Zeitkonzept und Generalproben
@@ -660,10 +680,10 @@ zeigen?“ → B8 · „Was ist KI?“ → B9.
 
 | Folie | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | Summe |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| Soll (s) | 50 | 45 | 75 | 75 | 120 | 110 | 100 | 75 | 50 | **700 = 11:40** |
-| kumuliert | 0:50 | 1:35 | 2:50 | 4:05 | 6:05 | 7:55 | 9:35 | 10:50 | 11:40 | + 0:50 Reserve = **12:30** |
-| Klicks | 2 | 2 | 3 | 2 | 4 | 3 | 3 | 2 | 1 | **22** |
-| Sprechtext bei 1,9 W/s (Planwert) | 95 | 86 | 142 | 142 | 228 | 209 | 190 | 142 | 95 | rund 1.330 Wörter |
+| Soll (s) | 50 | 45 | 75 | 75 | 120 | 110 | 100 | 75 | 65 | **715 = 11:55** |
+| kumuliert | 0:50 | 1:35 | 2:50 | 4:05 | 6:05 | 7:55 | 9:35 | 10:50 | 11:55 | + 0:35 Reserve = **12:30** |
+| Klicks | 2 | 2 | 3 | 2 | 4 | 3 | 3 | 2 | 2 | **23** |
+| Sprechtext bei 1,9 W/s (Planwert) | 95 | 86 | 142 | 142 | 228 | 209 | 190 | 142 | 93 (+ 16 s Video) | rund 1.330 Wörter |
 
 **Achtung:** 1,9 Wörter/s ist ein Planwert aus FS1, kein Messwert („das Tempo hat niemand gemessen“,
 `VORTRAGSREIFE.md` Z. 522). FS1 war mit 14:05 geplant und dauerte 25 Minuten. Deshalb wird das Tempo bis **Di 03.11.**
@@ -679,7 +699,7 @@ per Leseprobe mit Stoppuhr gemessen und die Wortzahlen danach angepasst.
 
 Kürzungsplan (in beiden Generalproben geprobt): (1) 04: O-Töne nur zeigen, nicht vorlesen, −20 s · (2) 06:
 Aktivitäten nur zeigen, nur die zwei Marker erklären, −30 s · (3) 08: nur Maßnahme 2 ausführlich, −20 s · (4) 03:
-Farbproben nur zeigen, −10 s. Zusammen −80 s. Die Klickzahl ändert sich dadurch nicht.
+Farbproben nur zeigen, −10 s. Zusammen −80 s. Das Gründer-Video (16 s) wird nicht gekürzt; bei Zeitnot auf 09 nur ein Fazit-Satz. Die Klickzahl ändert sich dadurch nicht.
 
 Referentenuhr der FS1-Engine unverändert: Gesamtuhr, Planzeile („im Plan“, „0:20 hinter Plan“), Folienuhr ab 85 % der
 Sollzeit gelb, darüber rot (FS1 `LIESMICH.md` §4). Sollzeiten als `data-zeit` je Folie. Auf dem Beamer keine Uhr.
@@ -722,6 +742,7 @@ der FS1-Ordner bleibt unverändert.
 | Bildkachel mit `data-status` | `frei` · `offen` · `rueckfall`; für den öffentlichen Export ein Schalter, der alle Kacheln ohne Freigabe auf `rueckfall` setzt. Der Schalter ändert nur die Anzeige: nicht freigegebene Bilder liegen gar nicht im Repository, sondern in `praesentation/intern/` oder im Gruppenordner; die interne Fassung lädt sie von dort, fehlt der Ordner, zeigt jede Kachel ihren Rückfall |
 | `schriften/` | Libre Franklin (latin, latin-ext) aus dem Recap-Ordner mit `LIZENZ-libre-franklin-OFL.txt` und Eintrag in `HERKUNFT.txt` |
 | `blog.html` und `blog-lang.png` | eigene Blog-Seite (gleiche Tokens, am Handy lesbar) und ihr langes Bild für Folie 07; bis zur Freigabe nur in `praesentation/intern/` (nicht im Repository, 7.4, 13.1 Nr. 9); die öffentliche Fassung zeigt auf 07 den Rückfall aus 7.4 |
+| Video-Schritt auf 09 (v01) | `<video>` mit `playsinline`, Quelle `intern/gruender-video.mp4` (relativ, nur in der internen Fassung vorhanden), startet beim Schritt mit Ton (der Klick zählt als Nutzergeste, Autoplay-Sperre greift nicht), danach Standbild auf dem letzten Bild; fehlt die Datei (öffentliche Fassung, Export), zeigt der Rahmen den Rückfall aus dem Bildplan. Nicht vorladen (`preload="none"` erst beim Schritt davor auf `auto`) |
 | `.gitignore` (im Wurzelordner des Repositorys) | schließt `fallstudie-2-customer-journey/praesentation/intern/` und `fallstudie-2-customer-journey/praesentation/_test/` aus; spätestens mit M5 anlegen, vor dem ersten echten Foto im Präsentationsordner |
 
 Keine Folie bekommt ein eigenes `data-modus`: Ein `data-modus` an der Folie hat Vorrang vor dem Dokument
@@ -755,6 +776,7 @@ So früh wie möglich im Vortragsraum (Zugang in der Mail an Prof. Stenger erfra
 - Aus der letzten Reihe: Meta 22 px und Inhalt 28 px lesbar, Fotos auf der Journey-Map erkennbar.
 - Technik: Bildschirme erweitern, Referentenansicht verbunden, Clicker (Bild↑/Bild↓, Schwarzbild), Schriften offline
   geladen, Adapter.
+- **Ton** für das Gründer-Video (v01): Laptop-Ton über HDMI oder Hörsaal-Lautsprecher, Lautstärke aus der letzten Reihe; Rückfall: Laptop-Lautsprecher mit Mikrofon davor oder der Satz zur Überleitung.
 - Dunkelmodus (D) nur als Ausnahme für einen sehr dunklen Raum.
 
 ### 11.5 Notfall-PDF und Exporte
@@ -847,6 +869,7 @@ Aus Dossier 2.5 und 12.2, ergänzt um Fragen aus diesem Plan:
   Repository (Dossier 12.3).
 - Gibt es einen Store-Finder oder Handelsdaten je Kette? Welche AGB-Fassung gilt beim Alter (18 oder 16)?
 - Gründer: Warum hat der Blog keine Beiträge (Blog-Seite seit 2020, ✔ B06), gibt es Pläne? Wie sollen Handelskunden in den Squad kommen?
+- **Antwort des Gründers (02.11.2026):** Videobotschaft für die Präsentation (16 s, Bildplan v01), Zustimmung für Video und Stimme in der Präsentation (laut Yannick). Inhalt noch nicht ausgewertet: keine KI-Transkription ohne seine Zustimmung; wer das Video kennt, trägt den Kernsatz für die Überleitung auf 09 ein (als Selbstauskunft, „laut Gründer“).
 
 ---
 

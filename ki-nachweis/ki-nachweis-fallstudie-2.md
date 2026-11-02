@@ -33,6 +33,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 06 | 30.10.2026 | Yannick | „Versuch es noch einmal“: abgebrochene Schritte nach dem Nutzungslimit erneut starten | D03 (Workflow) | Schlussprüfungen abgeschlossen, Korrekturen in Dossier und Plan eingearbeitet |
 | 07 | 30.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | Zwischenstand committet und gepusht |
 | 08 | 02.11.2026 | Yannick | Videobotschaft des HOLY-Gründers für die nächste Präsentation (Anhang: Video) | – | nur technische Daten gelesen; Inhalt nicht ausgewertet, Einwilligung offen; nicht im Repository |
+| 09 | 02.11.2026 | Yannick | Gründer hat zugestimmt (Video und Stimme in der Präsentation); Platz am Ende | – | Gestaltungsplan: Video als Schlussschritt auf Folie 09 (9.5), Zeit und Klicks angepasst; `.gitignore`; Video nur lokal |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -168,6 +169,25 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   zusammengeführt, dieser Eintrag deshalb als 08 (lokal zuerst als 04 angelegt).
 - **Ergebnis:** Antwort im Chat; keine Datei außer diesem Nachweis.
 - **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 09 – 02.11.2026 – Yannick
+
+> Er hat zugestimmt wir dürfen es einbauen in die Präsentation Video und stimme plan ist am ende
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Zustimmung des Gründers (laut Yannick) für Video und Stimme in der Präsentation vermerkt; nicht
+  umfasst sind Veröffentlichung (Repository, GitHub Pages) und KI-Transkription – deshalb Video weiter **nicht**
+  angesehen oder transkribiert. Weil der Gestaltungsplan höchstens 9 Hauptfolien erlaubt (R5), läuft das Video nicht
+  als eigene Folie, sondern als Klick 1 auf der Schlussfolie 09 vor „Fragen?“. `gestaltungsplan.md` angepasst:
+  Folienplan (09: 2 Klicks, 65 s), Summen (23 Klicks, 11:55 + 0:35 Reserve = 12:30) in Kurzfassung, R5, Antworttabelle,
+  10.1 und Kürzungsplan; Bildplan v01; neuer Abschnitt 9.5; Technik 11.2 (Video-Schritt, Rückfall); Beamer-Test 11.4
+  (Ton); 13.3 (Antwort des Gründers). `.gitignore` angelegt (wie im Plan 11.2 vorgesehen) für
+  `fallstudie-2-customer-journey/praesentation/intern/` und `…/_test/`; Video dorthin kopiert
+  (`intern/gruender-video.mp4`, per `git check-ignore` geprüft: nicht im Repository).
+- **Ergebnis:** Plan für das Gründer-Video am Schluss steht; Video liegt nur lokal in dieser Sitzung und beim Team.
+- **Dateien:** `fallstudie-2-customer-journey/gestaltungsplan.md`, `.gitignore`, `ki-nachweis/ki-nachweis-fallstudie-2.md`
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
