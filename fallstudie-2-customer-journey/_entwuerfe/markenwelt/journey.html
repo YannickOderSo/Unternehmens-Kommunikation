@@ -1,0 +1,321 @@
+<!doctype html>
+<!-- Kopie der Musterfolie (Richtung „HOLY-Markenwelt“) für den Gestaltungsplan FS2, 30.10.2026. Schriftpfade relativ zum Repository (fallstudie-1-brand-persona/praesentation/schriften/). Verbindlich ist das PNG. -->
+
+<html lang="de" data-modus="hell">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<meta name="robots" content="noindex, nofollow">
+<title>Journey-Map Markenwelt</title>
+<!--
+  Musterfolie „HOLY-Markenwelt – laut und markennah“ · Fallstudie 2 · Folie 04 Customer-Journey-Map
+  Entwurf vom 30.10.2026 · Bühne 1920 × 1080 · alle Inhalte sind Platzhalter/Hypothesen
+  Bildsprache nach Stenger S. 116 (Bilder je Touchpoint, Pfad über die Phasen)
+  Keine Logos, kein Maskottchen, kein Verpackungsdesign, keine fremden Bilder:
+  alle Bildflächen sind beschriftete Platzhalter.
+  Schriften: Bricolage Grotesque und Plus Jakarta Sans (SIL OFL 1.1, lokal aus FS1/schriften)
+  Aufbau in Klicks: ?schritt=0…3 oder Pfeiltasten (0 Raster · 1 Pfad online · 2 Pfad Handel · 3 Brüche)
+-->
+<style>
+@font-face {
+  font-family: "Bricolage MW";
+  src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/bricolage-grotesque-latin-standard-normal.woff2") format("woff2");
+  font-weight: 200 800; font-stretch: 75% 100%; font-style: normal; font-display: block;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bricolage MW";
+  src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/bricolage-grotesque-latin-ext-standard-normal.woff2") format("woff2");
+  font-weight: 200 800; font-stretch: 75% 100%; font-style: normal; font-display: block;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Jakarta MW";
+  src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/plus-jakarta-sans-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: block;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Jakarta MW";
+  src: url("../../../fallstudie-1-brand-persona/praesentation/schriften/plus-jakarta-sans-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: block;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ---------------------------------------------------------------------------
+   TOKENS (Kontraste per WCAG-Formel, Skript fs2-arbeit/mw-skripte/kontrast.py)
+   hell:   Schwarz auf Creme 14,5 · Kiesel auf Creme 6,2 · Mittel auf Creme 4,0 (nur Grafik)
+           Schwarz auf Gelb 11,5 · Schwarz auf Hellblau 11,1 · Schwarz auf Türkis 9,4 · Schwarz auf Sand 11,0
+           Gelb auf Creme 1,26 → Gelb ist hier NIE Schrift und nie alleiniger Träger einer Form
+           (Sticker und Laufleiste immer mit 3–4 px schwarzer Kontur, 14,5 : 1)
+   dunkel: Creme auf Schwarz 14,5 · Gelb auf Schwarz 11,5 · Kiesel hell auf Schwarz 7,5 · Mittel auf Schwarz 3,6
+   --------------------------------------------------------------------------- */
+:root {
+  --gelb: #FFD007;        /* HOLY-Gelb (Dossier 6.3 ✔ [1]) – Leitmotiv „Die Schräge“ + EINE Schlüsselaussage */
+  --schwarz: #1D1D1B;     /* HOLY-Schwarz (Dossier 6.3 ✔ [1]) – Schrift, Pfad, Konturen, Phasenband */
+  --creme: #F3EDE1;       /* HOLY-Creme (Dossier 6.3 ✔ [1]) – Papier */
+  --kiesel: #5C564B;      /* Nebentext, Quelle (6,2 : 1 auf Creme) */
+  --kiesel-hell: #B4AC9C; /* Nebentext auf Schwarz (7,5 : 1) */
+  --mittel: #7A7365;      /* Grafik sekundär (4,0 : 1 auf Creme, 3,6 : 1 auf Schwarz) */
+  --sand: #D9D0BF;        /* Haarlinien, Foto-Platzhalter (nur Fläche, nie Information) */
+  --hellblau: #A4D9F6;    /* HOLY-Web-Hellblau (Dossier 6.3 ✔ [1]) – Platzhalter „Screenshot“ */
+  --tuerkis: #8ECDC1;     /* HOLY-Web-Türkis (Dossier 6.3 ✔ [1]) – Platzhalter „eigene Grafik“ */
+
+  --display: "Bricolage MW", "Arial Narrow", sans-serif;
+  --text: "Jakarta MW", "Segoe UI", Arial, sans-serif;
+  --schraeg: -14deg;      /* die EINE Schräge: Laufleiste, Phasenband, Sticker */
+  --kontur: 4px;
+  --schatten: 8px 8px 0 var(--schwarz);   /* harter Comic-Versatz, kein Weichzeichner */
+  --rand-x: 128px;
+}
+html[data-modus="dunkel"] {
+  --papier: var(--schwarz); --tinte: var(--creme); --neben: var(--kiesel-hell);
+}
+html, body { margin: 0; background: #0E0E0D; }
+body { width: 1920px; height: 1080px; overflow: hidden; }
+
+.folie {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--creme); color: var(--schwarz);
+  font-family: var(--text); font-size: 30px; line-height: 1.3;
+  font-feature-settings: "kern" 1;
+}
+.display {
+  font-family: var(--display);
+  font-weight: 800; font-stretch: 75%;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+}
+
+/* ---------- Laufleiste: die fünf Schritte des Touchpoint-Managementprozesses (Stenger S. 111) */
+.laufleiste {
+  position: absolute; left: var(--rand-x); top: 52px; width: 1560px; height: 44px;
+  display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 14px;
+}
+.lauf-teil {
+  position: relative; display: flex; align-items: center; padding-left: 26px;
+  font-size: 22px; font-weight: 600; color: var(--kiesel); white-space: nowrap;
+}
+.lauf-teil::before {           /* Parallelogramm hinter dem Text */
+  content: ""; position: absolute; inset: 0; transform: skewX(var(--schraeg));
+  border: 2px solid var(--sand); z-index: 0;
+}
+.lauf-teil > span { position: relative; z-index: 1; }
+.lauf-teil b { font-family: var(--display); font-weight: 800; font-stretch: 75%;
+  font-variation-settings: "wdth" 75, "opsz" 96; font-size: 26px; margin-right: 10px; }
+.lauf-teil.ist-erledigt::before { border-color: var(--schwarz); }
+.lauf-teil.ist-erledigt { color: var(--schwarz); }
+.lauf-teil.ist-aktuell::before { background: var(--gelb); border: 3px solid var(--schwarz); }
+.lauf-teil.ist-aktuell { color: var(--schwarz); font-weight: 700; }
+.foliennr {
+  position: absolute; right: var(--rand-x); top: 46px; font-size: 48px; line-height: 1;
+}
+
+/* ---------- Titel: Satz als Kernaussage, 2 Zeilen, Spalten 1–8 */
+.titel {
+  position: absolute; left: var(--rand-x); top: 136px; width: 1120px; margin: 0;
+  font-size: 84px; line-height: 0.98; letter-spacing: -0.005em;
+}
+.titel .zeile { display: block; }
+
+/* Persona-Notiz, Spalten 9–12 */
+.persona {
+  position: absolute; left: 1290px; top: 148px; width: 502px; box-sizing: border-box;
+  border-left: var(--kontur) solid var(--schwarz); padding-left: 28px;
+}
+.persona .klein { font-size: 22px; color: var(--kiesel); font-weight: 500; }
+.persona .name { font-size: 44px; line-height: 1.05; margin: 4px 0 6px; }
+.persona .text { font-size: 26px; line-height: 1.25; font-weight: 500; }
+
+/* ---------- Journey-Map */
+.map { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+
+/* Legende links oben (über den Zeilenbeschriftungen) */
+.legende { position: absolute; left: var(--rand-x); top: 336px; width: 170px; font-size: 22px; line-height: 1.2; color: var(--kiesel); font-weight: 600; }
+.legende div { display: flex; align-items: center; gap: 10px; height: 34px; }
+.legende svg { flex: none; }
+
+/* Phasenband: fünf schwarze Parallelogramme (Stenger S. 108 + „5 As“ S. 109) */
+.phase {
+  position: absolute; top: 336px; height: 72px; width: 284px; box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center; padding-left: 30px;
+  color: var(--creme);
+}
+.phase::before { content: ""; position: absolute; inset: 0; background: var(--schwarz); transform: skewX(var(--schraeg)); }
+.phase > * { position: relative; }
+.phase .p-name { font-size: 34px; line-height: 1; }
+.phase .p-as { font-size: 22px; line-height: 1.1; color: var(--kiesel-hell); font-weight: 700; letter-spacing: 0.06em; margin-top: 3px; }
+
+/* Zeilen Paid / Owned / Earned (Stenger S. 112, 117, 129) */
+.zeile-label { position: absolute; left: var(--rand-x); width: 170px; }
+.zeile-label .z-name { font-size: 42px; line-height: 1; }
+.zeile-label .z-sub { font-size: 22px; color: var(--kiesel); font-weight: 600; margin-top: 2px; }
+.trenner { position: absolute; left: var(--rand-x); width: 1664px; height: 2px; background: var(--sand); }
+
+/* Pfad (SVG über der ganzen Bühne, unter den Kacheln) */
+svg.pfad { position: absolute; left: 0; top: 0; overflow: visible; }
+
+/* Bildkacheln = Touchpoints mit Bild (Platzhalter) */
+.kachel {
+  position: absolute; width: 256px; height: 150px; box-sizing: border-box;
+  border: var(--kontur) solid var(--schwarz); box-shadow: var(--schatten);
+  background: var(--sand); display: flex; flex-direction: column;
+}
+.kachel .k-kopf {
+  background: var(--schwarz); color: var(--creme); font-size: 22px; font-weight: 700;
+  line-height: 1; padding: 6px 10px 7px; white-space: nowrap;
+}
+.kachel .k-platz {
+  flex: 1; display: flex; align-items: center; padding: 4px 12px 6px;
+  font-size: 22px; line-height: 1.12; font-weight: 600; color: var(--schwarz);
+  background-image: repeating-linear-gradient(-45deg, rgba(29,29,27,0.07) 0 2px, transparent 2px 12px);
+}
+.kachel.foto { background-color: var(--sand); }
+.kachel.screenshot { background-color: var(--hellblau); }
+.kachel.grafik { background-color: var(--tuerkis); }
+.kachel .k-art { display: block; font-size: 22px; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 2px; }
+
+/* Sticker = Bruch, ein Moment der Wahrheit, der kippt – die EINE Schlüsselaussage der Folie */
+.sticker {
+  position: absolute; padding: 10px 22px 12px 26px; color: var(--schwarz);
+  transform: rotate(-3deg);
+}
+.sticker::before {
+  content: ""; position: absolute; inset: 0; background: var(--gelb);
+  border: var(--kontur) solid var(--schwarz); box-shadow: 6px 6px 0 var(--schwarz);
+  transform: skewX(var(--schraeg));
+}
+.sticker > * { position: relative; }
+.sticker .s-kopf { font-size: 22px; letter-spacing: 0.08em; line-height: 1; }
+.sticker .s-text { font-size: 30px; line-height: 1.05; font-weight: 800; margin-top: 4px; white-space: nowrap; }
+.striche { position: absolute; overflow: visible; }
+
+.notiz { position: absolute; font-size: 22px; line-height: 1.2; color: var(--kiesel); font-weight: 600; font-style: normal; }
+
+/* Fuß: eine Quellenzeile, ein Hinweis */
+.quelle { position: absolute; left: var(--rand-x); bottom: 40px; font-size: 22px; color: var(--kiesel); font-weight: 500; }
+.hinweis { position: absolute; right: var(--rand-x); bottom: 40px; font-size: 22px; color: var(--kiesel); font-weight: 500; }
+
+/* Aufbau in Klicks */
+[data-ab] { transition: opacity 0.35s ease; }
+.folie[data-schritt="0"] [data-ab="1"], .folie[data-schritt="0"] [data-ab="2"], .folie[data-schritt="0"] [data-ab="3"],
+.folie[data-schritt="1"] [data-ab="2"], .folie[data-schritt="1"] [data-ab="3"],
+.folie[data-schritt="2"] [data-ab="3"] { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { [data-ab] { transition: none; } }
+</style>
+</head>
+<body>
+<section class="folie" id="f04" data-schritt="3" data-zeit="120" aria-label="Folie 04: Customer-Journey-Map">
+
+  <!-- Laufleiste: Schritt 2 „Kundenperspektive verstehen“ = Customer Journey Mapping (Stenger S. 111) -->
+  <nav class="laufleiste" aria-label="Touchpoint-Managementprozess">
+    <div class="lauf-teil ist-erledigt"><span><b>1</b>Transparenz</span></div>
+    <div class="lauf-teil ist-aktuell"><span><b>2</b>Kundenperspektive</span></div>
+    <div class="lauf-teil"><span><b>3</b>Erlebnis entwickeln</span></div>
+    <div class="lauf-teil"><span><b>4</b>Erlebnis verbessern</span></div>
+    <div class="lauf-teil"><span><b>5</b>Mittel einsetzen</span></div>
+  </nav>
+  <div class="foliennr display">04</div>
+
+  <h1 class="titel display"><span class="zeile">Marcos Journey reißt zweimal:</span><span class="zeile">bei Google und nach dem Regal</span></h1>
+
+  <div class="persona">
+    <div class="klein">Kern-Persona aus Fallstudie 1</div>
+    <div class="name display">Marco, 28</div>
+    <div class="text">Lagerlogistik im Schichtdienst, Dortmund</div>
+  </div>
+
+  <div class="map">
+    <div class="legende">
+      <div><svg width="44" height="12" aria-hidden="true"><line x1="2" y1="6" x2="42" y2="6" stroke="#1D1D1B" stroke-width="8" stroke-linecap="round"/></svg>online</div>
+      <div><svg width="44" height="12" aria-hidden="true"><line x1="2" y1="6" x2="42" y2="6" stroke="#1D1D1B" stroke-width="6" stroke-dasharray="10 8"/></svg>im Handel</div>
+    </div>
+
+    <!-- Phasenband: x = 318 + i · 296 -->
+    <div class="phase" style="left:318px"><div class="p-name display">Inspiration</div><div class="p-as">AWARE</div></div>
+    <div class="phase" style="left:614px"><div class="p-name display">Recherche</div><div class="p-as">APPEAL</div></div>
+    <div class="phase" style="left:910px"><div class="p-name display">Entscheidung</div><div class="p-as">ASSURE</div></div>
+    <div class="phase" style="left:1206px"><div class="p-name display">Kauf</div><div class="p-as">ACT</div></div>
+    <div class="phase" style="left:1502px"><div class="p-name display">Bindung</div><div class="p-as">ADVOCATE</div></div>
+
+    <!-- Zeilen: Paid 420–598 · Owned 600–778 · Earned 780–958 -->
+    <div class="trenner" style="top:420px"></div>
+    <div class="trenner" style="top:599px"></div>
+    <div class="trenner" style="top:779px"></div>
+    <div class="trenner" style="top:959px"></div>
+    <div class="zeile-label" style="top:476px"><div class="z-name display">Paid</div><div class="z-sub">bezahlt</div></div>
+    <div class="zeile-label" style="top:656px"><div class="z-name display">Owned</div><div class="z-sub">eigen</div></div>
+    <div class="zeile-label" style="top:836px"><div class="z-name display">Earned</div><div class="z-sub">verdient</div></div>
+
+    <!-- Pfad: Mittelpunkte der Kacheln · Inspiration (460,509) · Recherche (756,869) · Entscheidung (1052,869) · Kauf (1348,689) · Bindung (1644,689) -->
+    <svg class="pfad" width="1920" height="1080" viewBox="0 0 1920 1080" aria-hidden="true">
+      <g data-ab="1">
+        <path d="M460 509 C 610 509, 600 869, 756 869 L 1052 869 C 1210 869, 1190 689, 1348 689 L 1644 689"
+              fill="none" stroke="#1D1D1B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <g data-ab="2">
+        <path d="M460 509 L 1348 509 L 1490 509" fill="none" stroke="#1D1D1B" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="butt"/>
+        <!-- Sackgasse: hier endet die Journey im Handel (Querbalken) -->
+        <line x1="1498" y1="485" x2="1498" y2="533" stroke="#1D1D1B" stroke-width="9" stroke-linecap="square"/>
+      </g>
+    </svg>
+
+    <!-- Kacheln 256 × 150; links = Mitte − 128, oben = Mitte − 75 -->
+    <div class="kachel screenshot" style="left:332px; top:434px" data-ab="0">
+      <div class="k-kopf">Creator-Video</div>
+      <div class="k-platz"><span><span class="k-art">SCREENSHOT</span>fremd, nur mit Freigabe</span></div>
+    </div>
+    <div class="kachel screenshot" style="left:628px; top:794px" data-ab="1">
+      <div class="k-kopf">Google-Suche</div>
+      <div class="k-platz"><span><span class="k-art">SCREENSHOT</span>eigen, Treffer zu „holy energy“</span></div>
+    </div>
+    <div class="kachel grafik" style="left:924px; top:794px" data-ab="1">
+      <div class="k-kopf">Bewertungen</div>
+      <div class="k-platz"><span><span class="k-art">GRAFIK</span>eigen, Stimmen codiert</span></div>
+    </div>
+    <div class="kachel screenshot" style="left:1220px; top:614px" data-ab="1">
+      <div class="k-kopf">Webshop</div>
+      <div class="k-platz"><span><span class="k-art">SCREENSHOT</span>eigen, Checkout im Selbstversuch</span></div>
+    </div>
+    <div class="kachel foto" style="left:1516px; top:614px" data-ab="1">
+      <div class="k-kopf">Paket &amp; Unboxing</div>
+      <div class="k-platz"><span><span class="k-art">FOTO</span>eigen, Selbstversuch Unboxing</span></div>
+    </div>
+    <div class="kachel foto" style="left:1220px; top:434px" data-ab="2">
+      <div class="k-kopf">Supermarktregal</div>
+      <div class="k-platz"><span><span class="k-art">FOTO</span>eigen, Selbstversuch im Handel</span></div>
+    </div>
+
+    <!-- Herleitung am Pfad (Stenger S. 108: „Immer alle Phasen?“) -->
+    <div class="notiz" style="left:668px; top:466px" data-ab="2">Handel: Recherche übersprungen</div>
+
+    <!-- Brüche = Momente der Wahrheit, die kippen (Hypothesen, Dossier 7.2 Nr. 1 und 3) -->
+    <div class="sticker" style="left:700px; top:688px" data-ab="3">
+      <div class="s-kopf display">BRUCH 1</div>
+      <div class="s-text">Deutung gehört Dritten</div>
+    </div>
+    <div class="sticker" style="left:1534px; top:446px" data-ab="3">
+      <div class="s-kopf display">BRUCH 2</div>
+      <div class="s-text">Kein Weg<br>in den Squad</div>
+    </div>
+    <svg class="striche" style="left:1512px; top:412px" width="60" height="40" data-ab="3" aria-hidden="true">
+      <path d="M8 34 L0 18 M22 26 L18 6 M36 24 L40 4" stroke="#1D1D1B" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="quelle">Phasen, 5 As: Stenger S. 108–110, 116 · Touchpoints: Dossier 7.1 · Brüche: Hypothese</div>
+  <div class="hinweis">Studentische Fallstudie, keine Verbindung zu HOLY</div>
+</section>
+<script>
+(function () {
+  var f = document.getElementById('f04');
+  var q = new URLSearchParams(location.search).get('schritt');
+  if (q !== null) f.dataset.schritt = q;
+  document.addEventListener('keydown', function (e) {
+    var s = +f.dataset.schritt;
+    if (e.key === 'ArrowRight' || e.key === ' ') f.dataset.schritt = Math.min(3, s + 1);
+    if (e.key === 'ArrowLeft') f.dataset.schritt = Math.max(0, s - 1);
+  });
+})();
+</script>
+</body>
+</html>

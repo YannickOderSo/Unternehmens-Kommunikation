@@ -1,0 +1,339 @@
+{
+ "pruefungen": [
+  {
+   "id": "G01",
+   "status": "✔",
+   "geprueft_an": "https://de.holy.com/ (HTML mit Inline-CSS, per curl abgerufen 30.10.2026, Theme t/3495); https://de.holy.com/cdn/shop/t/3495/assets/index.css?v=117652345954053929581793197183",
+   "begruendung": "Selbst ausgelesen: „--heading-text-transform: uppercase“, „--heading-font-family: ObviouslyNarrow“, „--heading-font-weight: 900“ (überschreibt ein vorher gesetztes 600), „--text-font-family: PP Agrandir“, „--font-family-3: \"ExtraChunkPlease\"“. @font-face: ObviouslyNarrow-Black (900), PPAgrandir Regular 400 / Medium 600 / Bold 700 / Heavy 800 / Black 900, ExtraChunkPlease-Regular 400. Epilogue (heading) und Instrument Sans (body) werden als Shopify-Standard vorgeladen und per Variable überschrieben. Einschränkung: index.css definiert display-xs/s/m/l/xl-font-3. Im Startseiten-HTML fand ich aber kein Element mit diesen Klassen. Ob die dritte Schrift am 30.10.2026 auf der Startseite sichtbar ist, ist damit nicht belegt."
+  },
+  {
+   "id": "G02",
+   "status": "✔",
+   "geprueft_an": "ObviouslyNarrow-Black.woff2 von https://de.holy.com/cdn/shop/t/3495/assets/ (Name-Tabelle selbst mit fontTools gelesen); https://ohnotype.co/license (leitet auf https://ohnotype.co/info/licenses/desktop um); https://ohnotype.co/info/licenses/demo (Abruf 30.10.2026)",
+   "begruendung": "Name-Tabelle bestätigt: „(c) Copyright OH no Type Company, LLC. 2019. All rights reserved.“, Lizenz-URL http://ohnotype.co/license. Die Desktop-Lizenz, Abschnitt 6 „Limitations to Use“ d): „USE AS WEBFONTS, STORING, CACHING, SERVING OR OTHERWISE PROVIDING ACCESS TO THE FONT SOFTWARE TO THIRD PARTIES VIA THE INTERNET …“ nur mit Sonderlizenz. Demo-Lizenz wörtlich: „Use in student work is permitted.“ Sie beginnt aber mit „Demo fonts may be used for testing and experimenting purposes only“ und sagt „Any professional or consumer facing projects require the purchase of a standard license“. Zu Websites äußert sie sich nicht ausdrücklich. Die Fakten stimmen. Die Folgerung (keine Einbindung im öffentlichen Repository) ist eine plausible Deutung (H) und keine Rechtsberatung."
+  },
+  {
+   "id": "G03",
+   "status": "✎",
+   "geprueft_an": "PPAgrandir-Regular.woff2 (Name-Tabelle selbst gelesen); https://pangrampangram.com/products/agrandir; https://pangrampangram.com/pages/faq; https://pangrampangram.com/pages/eula (Abruf 30.10.2026)",
+   "begruendung": "Bestätigt: „Copyright © 2018 by Alexander Slobzheninov“, Produktseite „Free to try – Licenses start at $40“, FAQ „The Web license is needed for any website, microsite and subdomain where the font is embedded.“ Die Belegstelle ist aber verkürzt. Laut FAQ heißt es vollständig: „All of our fonts are free to try for personal use as long as it is not used in a commercial project … You can use them in your portfolio (PDF, print or web!) and school project for examples.“ Die Testversion ist also ausdrücklich auch für Schulprojekte und Web-Portfolios erlaubt. Die Begründung „braucht Web-Lizenz“ trägt daher nicht allein. Das eigentliche Hindernis steht in EULA 3.7 „Prohibited Uses“: „(ii) Uploading or downloading the Fonts on the internet or making it available publicly in any other way, which include uploading the Font to a public internet file …“. Genau das wäre die Schriftdatei in einem öffentlichen Repository.",
+   "korrigierte_aussage": "PP Agrandir ist eine kommerzielle Schrift (© 2018 Alexander Slobzheninov, Vertrieb Pangram Pangram, Lizenzen ab 40 $). Die kostenlose Testversion („Free to try“, nur ausgewählte Schnitte) erlaubt laut FAQ die persönliche, nicht kommerzielle Nutzung, ausdrücklich auch „portfolio (PDF, print or web!) and school project“. Nach EULA Nr. 3.7 (ii) ist es aber verboten, Schriftdateien hochzuladen oder öffentlich verfügbar zu machen. Ob die EULA auch für Testdateien gilt, steht dort nicht ausdrücklich. Die Datei von de.holy.com ist HOLYs Lizenzkopie und darf ohnehin nicht übernommen werden. Ergebnis (H, keine Rechtsberatung): nicht in das öffentliche Repository bzw. auf GitHub Pages stellen, sondern eine OFL-Ersatzschrift nehmen (G05)."
+  },
+  {
+   "id": "G04",
+   "status": "✎",
+   "geprueft_an": "ExtraChunkPlease-Regular.woff2 (Name-Tabelle selbst gelesen); https://whatfontis.com/NMY_Extra-Chunk-Please.font; https://weandthecolor.com/?p=201749 (datePublished 11.04.2025); https://creativemarket.com/Supfonts/291276611-Extra-Chunk-Please-Ultra-Bold-Sans (über WebFetch, curl/Font Bundles: HTTP 403), Abruf 30.10.2026",
+   "begruendung": "Bestätigt: In der Name-Tabelle stehen nur der Gestaltername (ID 0 und 9) sowie „Version 1.000;Glyphs 3.3.1 (3343)“, keine Lizenz-URL. whatfontis führt sie als „Publisher MyFonts.com, License $ Commercial“. Widerlegt ist der Teil „kein offizieller Anbieter gefunden“: Laut weandthecolor.com stammt die Schrift von der Foundry Supfonts und wird über Font Bundles und Creative Market verkauft. Creative Market (Shop „Supfonts“) bietet laut WebFetch-Auszug eine Desktop-Lizenz für 19 $ und eine Webfont-Lizenz für 19 $ an („Created: Apr 01, 2025“). Die Preise habe ich nur über diesen Auszug gelesen, nicht selbst im Browser.",
+   "korrigierte_aussage": "„Extra Chunk Please“ ist eine kommerzielle Schrift der Foundry Supfonts. Sie wird u. a. auf Creative Market (Desktop- und Webfont-Lizenz je 19 $, erstellt 01.04.2025; Abruf 30.10.2026) und auf Font Bundles verkauft. Die Datei auf de.holy.com enthält keine Lizenz-URL. Die Gruppe darf sie nicht verwenden; im Moodboard höchstens beschreiben."
+  },
+  {
+   "id": "G05",
+   "status": "✔",
+   "geprueft_an": "https://raw.githubusercontent.com/google/fonts/main/ofl/{archivo,epilogue,anton,instrumentsans,bricolagegrotesque}/METADATA.pb (Abruf 30.10.2026); fallstudie-1-brand-persona/praesentation/schriften/HERKUNFT.txt Z. 36–42; bricolage-grotesque-latin-ext-standard-normal.woff2 (Achsen mit fontTools gelesen)",
+   "begruendung": "Alle fünf Schriften stehen unter „license: \"OFL\"“. Archivo hat wdth 62–125 und wght 100–900, Anton keine Achsen (ein Schnitt), Epilogue wght 100–900, Instrument Sans wdth 75–100 und wght 400–700. Bei Bricolage Grotesque stimmen METADATA und Repository-Datei überein: opsz 12–96, wdth 75–100, wght 200–800, Copyright „The Bricolage Grotesque Project Authors“, Lizenz-URL https://scripts.sil.org/OFL. Laut HERKUNFT.txt liegt sie für das Thema „Bento“ im Repository. Dass Epilogue und Instrument Sans HOLYs Theme-Standards sind, ist bestätigt (siehe G01). Ob die Schriften ähnlich wirken, bleibt H."
+  },
+  {
+   "id": "G06",
+   "status": "✎",
+   "geprueft_an": "https://de.holy.com/ (Inline-CSS); https://de.holy.com/cdn/shop/t/3495/assets/theme.css?v=59410839597954721461792419910; index.css und custom.css (Theme t/3495), Abruf 30.10.2026; eigene Zählung per Python",
+   "begruendung": "Wörtlich bestätigt: „/* HOLY CTA yellow: HOLY UI Kit Buttons, Type=Primary fill (node 406:254) */ --ds-cta-yellow: #FFD007“, „--btn-primary-bg-color: #ffd009“, „--ds-text-primary: #000000“, „--ds-text-secondary: #737373“, „--background: 252, 248, 240“, „--btn-secondary-bg-color: #fcb4d9“. #F3EDE1 steht 11-mal in theme.css (Menü-Schublade, Mega-Menü, Kollektionsbereich, Kontaktformular, Bewertungen). Zu korrigieren sind drei Punkte. (1) „Häufigste Hintergrundfarbe“ gilt nur für das Startseiten-HTML: dort 73-mal, davon 69 in Inline-Styles der Warenkorb-Buttons auf den Produktkarten. In theme.css und index.css ist #fff weit häufiger (106-mal). Gelb ist die Aktions- bzw. Buttonfarbe, keine Flächenfarbe. (2) Die Neutralpalette reicht von --ds-neutral-100 #FFF8F2 bis -900 #B5A494, nicht nur bis #F3E0CE. (3) Es fehlt die großflächige Footer-Farbe Violett rgb(178, 71, 255) (siehe G91). #C0ADE7 fand ich in theme.css 18-mal statt 17-mal; das ist unerheblich.",
+   "korrigierte_aussage": "Webfarben (Theme t/3495, Abruf 30.10.2026): #FFD007 heißt im CSS „HOLY CTA yellow“ (HOLY UI Kit, Primärbutton). Es ist die Aktionsfarbe der Buttons: im Startseiten-HTML 73 Hintergrundangaben, fast alle von Warenkorb-Buttons der Produktkarten, dazu der Checkout-Button. Als Fläche dient es nicht, über alle CSS-Dateien ist Weiß häufiger. Die Variable des Primärbuttons ist #FFD009. Text #000000, Nebentext #737373. Seitenhintergrund #FCF8F0 (rgb 252, 248, 240). #F3EDE1 steht 11-mal in theme.css (Menüs, Kollektionsbereich, Formulare). Neutralpalette #FFF8F2 bis #B5A494 (--ds-neutral-100 bis -900). Akzente: Lila #C0ADE7 (u. a. Kopf des Mini-Warenkorbs), Pink #FCB4D9 (Sekundärbutton), je Sorte eigene Produktkarten-Hintergründe (z. B. #FFEA23 Energy-Box). Hellblau #A4D9F6 und Mint #B3DBC4 stehen nur als rgb-Tripel der Theme-Buttons. Großflächig ist der Footer in Violett #B247FF mit schwarzer Schrift."
+  },
+  {
+   "id": "G07",
+   "status": "✔",
+   "geprueft_an": "fallstudie-1-brand-persona/praesentation/bilder/holy-logo-oval.png und holy-logo-wortmarke.png (Pixel selbst gezählt); HOLY-CSS (start.html, theme.css, index.css, custom.css, Abruf 30.10.2026); Press Kit S. 2 (selbst gerendert)",
+   "begruendung": "Gezählt (deckende Pixel): Oval #FFED28 65.103, #1D1D1B 47.670, #FFFFFF 41.555; Wortmarke #1D1D1B 12.559. Die kleinen Abweichungen kommen von der Alphaschwelle. „1d1d1b“ und „29, 29, 27“ ergeben in allen vier CSS-Quellen 0 Treffer. Im Press Kit kommt #1D1D1B vor (S. 2: 19.522 px, Randstreifen). Das Dossier (holy-recherche.md Z. 654) führte #1D1D1B noch unter „Farben (Web)“ ✔. Diese Zuordnung ist heute überholt."
+  },
+  {
+   "id": "G08",
+   "status": "✔",
+   "geprueft_an": "https://pub-mediabox-storage.rxweb-prd.com/exhibitor/document/exh-6e8f5981-9a38-4f40-9910-be5dcabf2795/4e7a6473-3b9f-42da-aed5-a1d80cef9e40.pdf (Abruf 30.10.2026; pdfinfo, pdffonts, pdftoppm 72 dpi, S. 2 und S. 5 angesehen)",
+   "begruendung": "pdfinfo: Titel „HOLY Press Kit“, CreationDate 20.02.2026, 5 Seiten, 1440 × 810 pt. pdffonts zeigt nur PPAgrandir (Regular, Medium, Bold, Heavy, Black). S. 2 selbst gezählt: #F3EDE1 793.296 px, #000000 43.538, #1D1D1B 19.522, #C0ADE7 16.019. Der Randstreifen besteht aus #1D1D1B und #C0ADE7 (Schachbrett). S. 5 „Medien-Assets“ zeigt vier Produktfotos vor gelben Fliesen, Türkis, Blau und Rosa (gefliest) mit Dose, Shaker und Tütchen. Hinweis: Die Datei liegt auf einer Messe-Ausstellerplattform, nicht auf holy.com (siehe G95)."
+  },
+  {
+   "id": "G09",
+   "status": "✔",
+   "geprueft_an": "https://de.holy.com/cdn/shop/files/NE-0001_d593ecbd-0754-4e2b-a9ad-a1cdcfa8e136_1200x.png (angesehen); https://de.holy.com/ (Attribute data-product-bg-color den Produktkarten zugeordnet); https://de.holy.com/products.json (Energy-Sortiment), Abruf 30.10.2026",
+   "begruendung": "Das Render zeigt eine Dose mit schwarzem Deckel, einen Comic-Raubvogel mit dicken schwarzen Konturen, Blitze und den weißen HOLY-Schriftzug mit schwarzer Kontur in Orange, Gelb und Pink. „Pappdose“ belegen HOLYs eigene alt-Texte („Pappdose und Shaker mit Adler-Logo …“). Die Produktkarten habe ich selbst zugeordnet: Raspberry Raptor #F08EB8, Apple Alligator #DCE168, Einzelsorten-Box Energy #FFEA23, Hydration Starter Set #65BDE6, Milkshake Starter Set #FBABD4. Einschränkung zu „jede Sorte ein Comic-Tier“: Fast alle Energy-Sorten tragen einen Tiernamen. Es gibt aber Sondereditionen wie „Kölle Kamelle“ (1. FC Köln), deren Motiv ich nicht geprüft habe. Die Farbwerte sind Web-Hintergründe und keine Druckfarben."
+  },
+  {
+   "id": "G10",
+   "status": "✎",
+   "geprueft_an": "https://de.holy.com/ (Inline-CSS), theme.css, index.css, custom.css (t/3495), eigene Zählung; Hero-Bild https://de.holy.com/cdn/shop/files/DT-HP-HB-Halloween26.webp (angesehen); Press Kit S. 2 und S. 5, Abruf 30.10.2026",
+   "begruendung": "Wörtlich bestätigt: „#mini-cart .checkout-button { border-radius: 99px !important; background: #ffd007 !important; color: #000 !important; … text-transform: uppercase; }“. Eigene Zählung: border-radius 99px 35-mal, „border:1px solid #000“ 21-mal, „border:3px solid #000“ 5-mal. Falsch ist „häufigster Radius“: border-radius 50 % (Kreise) kommt 50-mal vor, 0 ebenfalls 35-mal. Das Schachbrett steht im Hero-Bild auf Deckel und Mantel der Kirsch-Dose (rosa/schwarz), im Press Kit als Randstreifen und auf S. 5 zusätzlich auf einer Dose (blau/schwarz).",
+   "korrigierte_aussage": "Formen im Web-Auftritt: Die Pillenform (border-radius: 99px, 35-mal) ist der häufigste feste px-Radius, etwa beim gelben Checkout-Button mit Versalien. Insgesamt am häufigsten sind Kreise (50 %, 50-mal). Dazu kommen schwarze Konturen von 1 px (rund 20-mal) und 3 px (5-mal) sowie Radien von 4 bis 20 px. Überschriften stehen in Versalien. Das Schachbrett ist ein wiederkehrendes Motiv: Randstreifen Lila/Schwarz im Press Kit, eine Dose mit blau-schwarzem Schachbrett auf Press-Kit-S. 5 und die Kirsch-Dose (rosa/schwarz) im Halloween-Hero-Bild 2026."
+  },
+  {
+   "id": "G11",
+   "status": "✔",
+   "geprueft_an": "https://de.holy.com/ (Bilddateien, alt-Texte, Text); Hero https://de.holy.com/cdn/shop/files/DT-HP-HB-Halloween26.webp (angesehen), Abruf 30.10.2026",
+   "begruendung": "Bestätigt sind die Dateien DT-HP-HB-Halloween26.webp, Halloween26_CassisCrow_Tub/Box und Halloween26-Nav.webp mit alt „Unheimlich geil!“ (3-mal). Das Hero-Bild zeigt einen violetten Verlauf, Shaker und Dosen mit Krähe, Fledermaus und Kirschen mit Gesichtern und von rechts eine Hand, die eine Dose greift. Die alt-Texte zu Erdbeere mit Krone, Würfel-Emoji, Blume mit lachendem Herz, Brombeere mit Gesicht, „Drei Männer …“ und „Frau hält vier bunte Pappboxen …“ sind vorhanden, der Satz „Community mit Millionen Squad Membern“ ebenfalls. Kleinigkeiten: „Syrup 2.0“ steht nur im Dateinamen (DT-HP-HB-Syrup2.0.webp), der sichtbare Text lautet „Syrup – Turn up the Taste – Syrup Starter Set NEU“. Außer den genannten Personen zeigt ein weiteres Motiv eine Hand („… neben einem blauen Shaker mit einer Hand …“). Dass Community-Fotos fehlen, deckt sich mit den alt-Texten. Die Startseite wechselt mit den Kampagnen, der Stand gilt für den 30.10.2026."
+  },
+  {
+   "id": "G12",
+   "status": "✔",
+   "geprueft_an": "Eigene Berechnung nach WCAG 2.1 (relative Luminanz) mit den selbst geprüften Hex-Werten aus G06–G08",
+   "begruendung": "Alle Werte nachgerechnet und identisch: #FFD007/#F3EDE1 1,26; #FFD007/#FCF8F0 1,39; Weiß/#FFD007 1,47; Schwarz/#FFD007 14,28; #1D1D1B/#FFD007 11,48; #C0ADE7/#1D1D1B 8,34; #1D1D1B/#F3EDE1 14,48; #737373/#F3EDE1 4,07. Ergänzend: #737373 auf dem heutigen Webhintergrund #FCF8F0 erreicht 4,48 und liegt damit knapp unter 4,5. Schwarz auf Lila #C0ADE7 erreicht 10,37. Gelb versagt auch als Großtext (WCAG 3 : 1, laut pruefen.mjs ebenfalls geprüft)."
+  },
+  {
+   "id": "G13",
+   "status": "✔",
+   "geprueft_an": "fallstudie-1-brand-persona/praesentation/css/tokens.css Z. 26–37, 645–680, 695; marke.js Z. 40–41",
+   "begruendung": "Bestätigt: Z. 649 (und 695) „--f-akzent: oklch(from var(--marke-primaer) min(l, 0.46) min(c, 0.16) h);“ und Kopfkommentar Z. 32–33 „Markenfarbe, aber höchstens 46 % hell → dunkel genug für Text“. In marke.js steht „primaer: '#FFD007'“ und „sekundaer: '#1D1D1B'“. Präzisierung: Die Deckelung gilt für den hellen Modus. Im dunklen Modus hebt Z. 669 die Helligkeit auf mindestens 0,8 und begrenzt die Buntheit auf 0,13. Die Flächentöne sind in beiden Modi stark entsättigt (Buntheit höchstens 0,028–0,035). Ein volles #FFD007 entsteht in keinem Modus. Der Lösungsvorschlag (eigenes Flächen-Token) bleibt H."
+  },
+  {
+   "id": "G14",
+   "status": "H",
+   "geprueft_an": "(Lesekopie eines anderen Repositorys) (Kopf, Abschnitt 2a); werkzeuge/pruefen.mjs Z. 13–16, 442, 799",
+   "begruendung": "Die Zitate stimmen: „eine Karminlinie durch die ganze Präsentation …“, „Magazin-Disziplin … keine Kästen, keine Pillen, keine Versalien“, „hell Tinte 15,4 · … Karmin 5,6“. Nachgerechnet ergibt #C0132D auf #F2F3EF 5,59. pruefen.mjs: „Wortbudget (Hauptfolie ≤ 40 sichtbare Wörter …)“, „Kontrast … (WCAG AA: 4,5 : 1, Großtext 3 : 1)“. Der Konflikt mit HOLYs Pillen und Versalien ist belegt (G10). Der Leitmotiv-Vorschlag ist eine Deutung."
+  },
+  {
+   "id": "G15",
+   "status": "✔",
+   "geprueft_an": "Stenger S. 116 (seite-116.png angesehen; Text stenger-mit-seite.txt); Farben selbst gemessen",
+   "begruendung": "Bestätigt: oben fünf Phasen als Pfeilfelder, links die Zeilen Offline (Filiale, Brief, Paket) und Digital (Internet, App, Social, Webshop) mit Icons. Die Touchpoints sind Bildkarten mit Reitern (Instagram, Google Suche, Facebook-Ad, Webshop, Lieferung/Unboxing, Gutschein), verbunden durch eine geschwungene Linie. Im Google-Screenshot sind rote Rahmen, auf der Anzeige steht ein rotes „10 €“, die Quelle lautet „(Quelle: Eigene Darstellung)“. Gemessen: Phasenpfeile #DC7D7D, Reiter und Linie #526B90, Digital-Balken #E2001A, Offline-Balken #5C6971. Das Seitenbild hat nur 800 × 450 px, die Werte sind daher Näherungen."
+  },
+  {
+   "id": "G16",
+   "status": "✔",
+   "geprueft_an": "Stenger S. 108, 112, 113, 117, 118, 121, 129 (Seitenbilder 108, 112, 113, 117, 118, 121 angesehen; S. 129 im Text)",
+   "begruendung": "S. 108: Icons Glühbirne, Lupe, Klemmbrett mit Haken, Geldschein, Hände mit Herz, Quelle „Kroeber-Riel, Gröppel-Klein 2013, S. 374; Kortum 2017, S. 34 ff.“. S. 117: Matrix Paid/Owned/Earned mit Icons und grauen Maßnahmenbalken. S. 118: Whole-Foods-Screenshot mit Unterzeile „Wholefoods – Blog „Whole Story““. S. 129: dieselbe Matrix leer mit „ACTION: Identifizieren Sie die Top 2 Touchpoints …“. S. 112: Kreise mit Personen-Piktogrammen, Quelle „Eigene Darstellung in Anlehnung an Esch et al. 2016, S. 335ff.“. S. 121: Säulen mit Kreisen und Piktogrammen, ohne Quellenzeile auf der Folie."
+  },
+  {
+   "id": "G17",
+   "status": "H",
+   "geprueft_an": "Stenger S. 113, 116, 118 (Seitenbilder angesehen); fallstudie-1-brand-persona/praesentation/QUELLEN.md §4",
+   "begruendung": "Die Fakten stimmen: S. 113 zeigt das INTERSPORT-Logo und „(Quelle: Intersport, Internes Dokument)“, S. 116 echte Screenshots unter „Eigene Darstellung“, S. 118 einen Whole-Foods-Screenshot. Dass „Bildsprache wie S. 116“ Screenshots echter HOLY-Touchpoints bedeutet und das mit der Gruppenregel kollidiert, ist eine zutreffende Folgerung (Deutung). Was ein Dozent in seiner Vorlesung zeigt, erlaubt der Gruppe rechtlich nichts. Die Frage gehört in die Mail (R1)."
+  },
+  {
+   "id": "G18",
+   "status": "✔",
+   "geprueft_an": "Press Kit PDF (S. 5 selbst angesehen und Text extrahiert); https://de.holy.com/pages/impressum; https://de.holy.com/pages/{press,presse,press-kit,media,newsroom} (alle HTTP 404); https://www.weareholy.com/ (HTTP 301 → https://de.holy.com/), Abruf 30.10.2026",
+   "begruendung": "S. 5 wörtlich: „Medien-Assets – Für Presseanfragen, Interviews oder Bildmaterial kontaktieren Sie bitte:“, darunter eine namentlich genannte Person „Sr. PR & Comms Manager“ mit persönlicher holy.com-Adresse. Der Name wird hier bewusst nicht übernommen (personenbezogen, siehe G95). Im PDF finden sich keine Nutzungsbedingungen, kein ©-Hinweis und keine Download-Links. Impressum: „Kontakt E-Mail: hello@holy.com PR & Presse: pr@holy.com“. Die Weiterleitung kann standortabhängig sein."
+  },
+  {
+   "id": "G19",
+   "status": "✔",
+   "geprueft_an": "https://de.holy.com/pages/agb (§ 14, Abruf 30.10.2026); https://de.holy.com/robots.txt; https://de.holy.com/.well-known/tdmrep.json (HTTP 404); https://www.gesetze-im-internet.de/urhg/__44b.html",
+   "begruendung": "§ 14 AGB stimmt wörtlich, u. a. „– soweit nicht gesetzlich zwingend vorgesehen ist – keine Nutzungsrechte eingeräumt“ und „Insbesondere die Nutzung zum Zweck des Text- und Data Mining ist nicht gestattet, wir behalten uns diese Nutzung ausdrücklich vor.“ robots.txt enthält keine Regeln für KI- oder TDM-Crawler, tdmrep.json gibt 404, im HTML steht kein tdm-reservation-Tag. § 44b Abs. 3 S. 2 stimmt wörtlich. Ergänzung: Ob ein Vorbehalt in natürlicher Sprache „maschinenlesbar“ ist, ist in der Rechtsprechung umstritten (siehe G90). Die Empfehlung zur Zurückhaltung ist deshalb richtig. Keine Rechtsberatung."
+  },
+  {
+   "id": "G20",
+   "status": "✔",
+   "geprueft_an": "https://www.gesetze-im-internet.de/urhg/__60a.html; https://www.gesetze-im-internet.de/urhg/__63.html (Abruf 30.10.2026)",
+   "begruendung": "§ 60a Abs. 1 Nr. 1–3, Abs. 2 (Abbildungen vollständig) und Abs. 4 (Hochschulen) stimmen wörtlich. § 63 Abs. 2 S. 2 lautet: „In den Fällen der öffentlichen Wiedergabe nach den §§ 46, 48, 51, 60a bis 60d … sowie bei digitalen sonstigen Nutzungen gemäß § 60a ist die Quelle einschließlich des Namens des Urhebers stets anzugeben, es sei denn, dass dies nicht möglich ist.“ Wichtig für R3: Die Quelle muss „deutlich“ angegeben werden, siehe G93 zur Platzierung im Backup. Die Einordnung „Vortrag im Hörsaal voraussichtlich gedeckt“ ist Deutung, keine Rechtsberatung."
+  },
+  {
+   "id": "G21",
+   "status": "✎",
+   "geprueft_an": "https://www.uni-bremen.de/urheberrecht/wissensplattform/5-sonderfall-unterricht-und-lehre; https://www.uni-bremen.de/urheberrecht/leitfragen/6-einstellen-in-das-internet/antwort-online-material-fuer-dritte; Uni-Saarland-Leitfaden (PDF, CreationDate 11.03.2021); LIESMICH.md Z. 657–663; git ls-files im FS1-Repository; https://github.com/YannickOderSo/unternehmens-kommunikation (HTTP 200 ohne Anmeldung), Abruf 30.10.2026",
+   "begruendung": "Die Zitate stimmen: Saarland S. 1 „Wichtig ist, dass die Präsentation nicht der Öffentlichkeit zur Verfügung gestellt werden darf. Die Veröffentlichung auf einer Homepage etwa kann teuer werden.“ Bremen: „Die Online-Bereitstellung von Materialien darf nur für Lehrende und Teilnehmer desselben Kurses …“ samt Zugangskontrolle. Die Antwortseite „Online-Material für Dritte“, die der Befund selbst zitiert, sagt aber auch: § 60a Abs. 1 Nr. 3 erlaubt Bildungseinrichtungen, für Dritte „online öffentlich zugänglich zu machen“. Voraussetzungen: Das Werk wurde im Unterricht verwendet, der Zweck ist nicht kommerziell. Beispiele: Tag der offenen Tür, externe Wettbewerbe, „auch auf ihrer Internetseite Einblicke in ihren Unterricht zu bieten“. Das pauschale „nicht über § 60a gedeckt“ ist daher zu stark. Der Saarland-Leitfaden stammt von einer einzelnen Professur und ist keine Leitlinie der ganzen Hochschule. Der Repository-Befund stimmt: holy-logo-oval.png, holy-logo-wortmarke.png und raetsel-holy-logo.svg sind eingecheckt, der Klärungspunkt in LIESMICH 12.1 ist offen („[ ]“).",
+   "korrigierte_aussage": "Hörsaal oder öffentliches Repository (keine Rechtsberatung): Im Hörsaal deckt § 60a Abs. 1 Nr. 1 die Nutzung voraussichtlich. Online sehen Leitfäden für Teilnehmende Zugangskontrollen vor (Uni Bremen). Ein Leitfaden der Uni Saarland (Professur, 2021) rät, Präsentationen nicht öffentlich zu stellen. § 60a Abs. 1 Nr. 3 erlaubt aber auch die öffentliche Zugänglichmachung für Dritte, soweit sie der Präsentation von Lernergebnissen an der Bildungseinrichtung dient. Die Uni Bremen nennt dafür auch die Internetseite der Einrichtung, sofern das Werk im Unterricht verwendet wurde und nicht kommerziell genutzt wird. Ob ein dauerhaft öffentliches, privat geführtes GitHub-Repository bzw. GitHub Pages darunter fällt, ist offen (H). Der sichere Weg: Die öffentliche Fassung enthält nur eigene oder freigegebene Bilder, oder Prof. Stenger klärt die Frage. Im öffentlichen FS1-Repository liegen bereits holy-logo-oval.png, holy-logo-wortmarke.png und raetsel-holy-logo.svg. Die geplante Klärung (LIESMICH 12.1) ist offen."
+  },
+  {
+   "id": "G22",
+   "status": "H",
+   "geprueft_an": "fallstudie-1-brand-persona/praesentation/QUELLEN.md Z. 143; index.html Z. 326–331; https://www.uni-bremen.de/urheberrecht/wissensplattform/5-sonderfall-unterricht-und-lehre (Abschnitt 4)",
+   "begruendung": "Der Repository-Befund stimmt: Folie 01 zeigt „Sponsored by“ mit dem SimpleAct-Logo (seit 27.10.2026). Die Bremer Definition wörtlich: „Ein kommerzieller Zweck liegt vor, wenn die Lehre auf Gewinnerzielung ausgerichtet ist. Dies ist z.B. der Fall bei entgeltpflichtigen Zertifikatskursen …“. Nach dieser Definition kommt es auf den Zweck der Lehrveranstaltung an, nicht auf ein Logo auf einer Studierendenfolie. Das Risiko für § 60a scheint damit eher gering. Die Deutung bleibt aber H. Unabhängig davon ist ein Sponsorhinweis eine Frage an den Betreuer. Keine Rechtsberatung."
+  },
+  {
+   "id": "G23",
+   "status": "✔",
+   "geprueft_an": "https://www.gesetze-im-internet.de/urhg/__51.html; Uni-Saarland-Leitfaden (PDF) Z. 75–82",
+   "begruendung": "§ 51 S. 1 und S. 3 stimmen wörtlich (Abbildung ist von der Zitierbefugnis umfasst). Saarland: „Nutzungen jenseits des Zitatzwecks, z. B. ausschließlich zur Illustration, weil es nett aussieht, sind ausdrücklich nicht erlaubt.“ und „Zitatzweck muss gegeben sein“. Die Anwendung auf Screenshots mit Bruch-Beleg ist eine Deutung (H). Rechtsprechung zur Belegfunktion habe ich nicht geprüft. Keine Rechtsberatung."
+  },
+  {
+   "id": "G24",
+   "status": "H",
+   "geprueft_an": "https://www.gesetze-im-internet.de/urhg/__72.html, /__2.html, /__57.html; https://www.gesetze-im-internet.de/markeng/__14.html; HOLY-alt-Texte „Pappdose“ (de.holy.com)",
+   "begruendung": "Die Normzitate stimmen wörtlich: § 72 Abs. 2, § 2 Abs. 1 Nr. 4, § 57 („unwesentliches Beiwerk neben dem eigentlichen Gegenstand“) und § 14 Abs. 2 MarkenG („im geschäftlichen Verkehr“). Dass die Comic-Illustrationen der Verpackung Werke sind, ist plausibel, aber nicht gerichtlich geprüft. Insgesamt eine Deutung, keine Rechtsberatung."
+  },
+  {
+   "id": "G25",
+   "status": "✔",
+   "geprueft_an": "https://www.gesetze-im-internet.de/kunsturhg/__22.html; https://www.gesetze-im-internet.de/kunsturhg/__23.html",
+   "begruendung": "§ 22 S. 1 und § 23 Abs. 1 Nr. 2 sowie Abs. 2 stimmen wörtlich. Die Aussagen zu Hausrecht und Schwärzen sind korrekt als Modellwissen bzw. ungeprüft gekennzeichnet. Ergänzend: Das Teamfoto auf Press-Kit-S. 2 zeigt viele erkennbare Personen (siehe G95). Keine Rechtsberatung."
+  },
+  {
+   "id": "G26",
+   "status": "H",
+   "geprueft_an": "https://www.gesetze-im-internet.de/urhg/__59.html",
+   "begruendung": "Der Wortlaut von § 59 Abs. 1 ist bestätigt („bleibend an öffentlichen Wegen, Straßen oder Plätzen“). Die Anwendung auf Innenräume und befristete Plakate bzw. DOOH ist eine plausible Deutung. Rechtsprechung zu „bleibend“ habe ich nicht geprüft. Keine Rechtsberatung."
+  },
+  {
+   "id": "G27",
+   "status": "✔",
+   "geprueft_an": "https://unsplash.com/license und https://unsplash.com/terms (curl: HTTP 401, daher über WebFetch gelesen, Abruf 30.10.2026)",
+   "begruendung": "Lizenz: „irrevocable, nonexclusive, worldwide copyright license“, kommerziell nutzbar, ohne Erlaubnis und ohne Namensnennung. Verboten sind u. a. „Images cannot be sold without significant modification“. Terms Abschnitt 5: „Note that the Unsplash License does not include the right to use: Trademarks, logos, or brands …; People’s images if they are recognizable …; Works of art or authorship that appear in Images“. Ein Datum steht nicht dabei. Ergänzung: Bilder mit dem Kennzeichen Unsplash+ fallen nicht unter die freie Lizenz (siehe G94)."
+  },
+  {
+   "id": "G28",
+   "status": "✔",
+   "geprueft_an": "https://www.pexels.com/license/ (curl: HTTP 403, daher über WebFetch gelesen, Abruf 30.10.2026)",
+   "begruendung": "Bestätigt: „Attribution is not required.“, „You can modify the photos and videos from Pexels.“, „Identifiable people may not appear in a bad light or in a way that is offensive.“, „Don't imply endorsement of your product by people or brands on the imagery.“, außerdem das Verbot des Verkaufs unveränderter Kopien und der Weitergabe an Stockportale. Ein Datum steht nicht dabei, nur „© 2026 Pexels“."
+  },
+  {
+   "id": "G29",
+   "status": "✔",
+   "geprueft_an": "https://artificialintelligenceact.eu/article/50/, /article/113/, /article/111/ (Abruf 30.10.2026); EUR-Lex (https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32024R1689 und /eli/reg/2024/1689/oj/deu) auch bei mir HTTP 202 ohne Inhalt",
+   "begruendung": "Der Wortlaut auf dem Spiegel ist bestätigt: Art. 50 Abs. 2 (Anbieter, maschinenlesbare Kennzeichnung), Abs. 4 UAbs. 1 (Deployers bei Deep Fakes, Erleichterung bei „evidently artistic, creative, satirical, fictional“ Werken), Art. 3(60) Deep Fake („resembles existing persons, objects, places, entities or events and would falsely appear … to be authentic“), Art. 3(4) („except where the AI system is used in the course of a personal non-professional activity“), Art. 113 „It shall apply from 2 August 2026.“, für Art. 50 laut Spiegel „Comes into force 2 August 2026“. Der Primärtext auf EUR-Lex war nicht abrufbar. Es fehlt Art. 50 Abs. 4 UAbs. 2 zu KI-Text (siehe G92). Keine Rechtsberatung."
+  },
+  {
+   "id": "G30",
+   "status": "~",
+   "geprueft_an": "https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published (datePublished 24.07.2026); https://artificialintelligenceact.eu/article/111/ und /article/113/; EUR-Lex https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng (WebFetch: leer)",
+   "begruendung": "Cuatrecasas wörtlich: „On July 24, the Official Journal … published Regulation (EU) 2026/1744 … of 8 July 2026 amending Regulations (EU) 2024/1689 …“, Übergangsfrist bis „December 2, 2026“ für Art. 50(2). Unabhängig davon zeigt der Spiegel einen neuen Art. 111-Absatz: „… placed on the market before 2 August 2026 shall take the necessary steps in order to comply with Article 50 (2) by 2 December 2026“. Für Art. 113 zeigt er geänderte Daten (2.12.2027 bzw. 2.8.2028). Zwei Sekundärquellen stimmen überein, das Amtsblatt selbst konnte ich aber nicht öffnen. Deshalb bleibt der Status ~. Hinweise auf eine Verschiebung von Art. 50 Abs. 4 fand ich in beiden Quellen nicht."
+  },
+  {
+   "id": "G31",
+   "status": "H",
+   "geprueft_an": "https://artificialintelligenceact.eu/article/50/ (Art. 3(60) im Tooltip); fallstudie-1-brand-persona/prompts.md Z. 113; ki-nachweis/ki-nachweis-fallstudie-2.md",
+   "begruendung": "Die Deutung ist schlüssig, das Zitat der FS1-Bewertung stimmt mit dem Auftrag überein. Eine Quelle ist schief zugeordnet: Die Regel „Bild KI-generiert (Tool)“ steht nicht in ki-nachweis-fallstudie-2.md (dort kein Treffer zu „KI-generiert“), sondern in fallstudie-1-brand-persona/prompts.md Z. 113 („Auf der Folie kennzeichnen: „Bild KI-generiert ([Tool])““) und in methoden.md Z. 55. Ob ein Studienprojekt eine „personal non-professional activity“ ist, bleibt offen. Keine Rechtsberatung."
+  },
+  {
+   "id": "G32",
+   "status": "H",
+   "geprueft_an": "fallstudie-1-brand-persona/praesentation/QUELLEN.md §4; https://de.holy.com/pages/agb § 14",
+   "begruendung": "Das Muster für Quellenzeilen und der AGB-Wortlaut sind bestätigt. Die rechtliche Einordnung ist eine Deutung, abhängig von G21/G23. Zur Platzierung der Quelle (Fußzeile oder Backup) siehe G93. Keine Rechtsberatung."
+  }
+ ],
+ "zusatzbefunde": [
+  {
+   "id": "G90",
+   "aussage": "Zum TDM-Vorbehalt in HOLYs AGB (G19): Das OLG Hamburg (Urteil vom 10.12.2025, Az. 5 U 104/24) hat das Urteil des LG Hamburg (27.09.2024, 310 O 227/23) bestätigt. Laut Kanzleibericht verlangt Maschinenlesbarkeit nach § 44b Abs. 3 UrhG, dass ein Vorbehalt maschinell erfasst und auch maschinell interpretiert werden kann. Für einen Vorbehalt in Nutzungsbedingungen aus dem Jahr 2021 sah das Gericht Letzteres nicht als nachgewiesen an. Die Revision ist zugelassen. Wie natürlichsprachliche Vorbehalte heute zu werten sind, ist damit offen. Für die Gruppe gilt weiter: keine HOLY-Inhalte in KI-Werkzeuge geben (Deutung, keine Rechtsberatung).",
+   "phase": "übergreifend",
+   "belegstelle": "CMS-Bericht (über WebFetch gelesen): OLG Hamburg, 10.12.2025, 5 U 104/24; Maschinenlesbarkeit verlangt Erfassen und Interpretieren; „Revision zugelassen“; Artikel vom 12.01.2026",
+   "einordnung": "Urheberrecht, TDM-Schranke § 44b; keine Rechtsberatung",
+   "quellen": [
+    {
+     "titel": "CMS – Vervielfältigung eines Fotos für Erstellung eines KI-Trainingsdatensatzes zulässig",
+     "url": "https://cms.law/de/deu/legal-updates/vervielfaeltigung-eines-fotos-fuer-erstellung-eines-ki-trainingsdatensatzes-zulaessig",
+     "art": "Presse",
+     "datum": "12.01.2026"
+    },
+    {
+     "titel": "§ 44b UrhG",
+     "url": "https://www.gesetze-im-internet.de/urhg/__44b.html",
+     "art": "Gesetz/Behörde",
+     "datum": "Abruf 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "~",
+   "relevanz_fs2": "Präzisiert G19 für den KI-Nachweis und QUELLEN.md. Das Urteil selbst habe ich nicht geöffnet, nur den Kanzleibericht."
+  },
+  {
+   "id": "G91",
+   "aussage": "Großflächige Webfarbe, die in G06 fehlt: Der Footer von de.holy.com ist kräftig violett, rgb(178, 71, 255) = #B247FF. Die Schrift darauf ist schwarz, die Linien sind rgb(151, 60, 217) = #973CD9, der Newsletter-Bereich ist gelb #FFE359. Der Mini-Warenkorb hat einen Kopf in Lila #C0ADE7 auf #FDF2E9. Kontraste nach eigener Berechnung: Schwarz auf #B247FF 5,24 : 1 (reicht für Text), Weiß auf #B247FF 4,01 : 1 (zu wenig für normalen Text). Auch das Halloween-Hero-Bild steht vor violettem Verlauf.",
+   "phase": "übergreifend",
+   "belegstelle": "Inline-CSS: „#shopify-section-footer .footer {--background: 178, 71, 255; --heading-color: 0, 0, 0; --text-color: 0, 0, 0; --border-color: 151, 60, 217; --newsletter-background: #FFE359; }“; „#mini-cart.drawer { --background: 253, 242, 233; } #mini-cart .drawer__header { background: #c0ade7; …“",
+   "einordnung": "Corporate Design / Farben (Web-Ist, Theme t/3495)",
+   "quellen": [
+    {
+     "titel": "HOLY – Startseite, Inline-CSS (Footer, Mini-Warenkorb)",
+     "url": "https://de.holy.com/",
+     "art": "Firmenquelle",
+     "datum": "Abruf 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Moodboard/Farbfolie und R3: Violett + Schwarz ist neben Gelb + Schwarz eine belegte, lesbare HOLY-Kombination für Flächen (z. B. Trennfolien, Journey-Pfad)."
+  },
+  {
+   "id": "G92",
+   "aussage": "Art. 50 Abs. 4 UAbs. 2 KI-VO betrifft KI-Text. Betreiber, deren KI-System Text erzeugt oder verändert, der veröffentlicht wird, um die Öffentlichkeit über Angelegenheiten von öffentlichem Interesse zu informieren, müssen offenlegen, dass er künstlich erzeugt ist. Das gilt nicht, wenn der Text menschlich geprüft oder redaktionell kontrolliert wurde und eine Person die redaktionelle Verantwortung trägt. Deutung (H, keine Rechtsberatung): Ein Marken-Blogbeitrag als Mock-up ist kaum „öffentliches Interesse“. Die Gruppenregel (jede KI-Nutzung dokumentieren und kennzeichnen) geht ohnehin weiter.",
+   "phase": "Bindung",
+   "belegstelle": "Art. 50(4) UAbs. 2: „Deployers of an AI system that generates or manipulates text which is published with the purpose of informing the public on matters of public interest shall disclose that the text has been artificially generated or manipulated. This obligation shall not apply … where the AI-generated content has undergone a process of human review or editorial control …“",
+   "einordnung": "EU-Recht, Transparenzpflicht für KI-Text; keine Rechtsberatung",
+   "quellen": [
+    {
+     "titel": "EU AI Act Explorer – Article 50",
+     "url": "https://artificialintelligenceact.eu/article/50/",
+     "art": "Gesetz/Behörde",
+     "datum": "Abruf 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "Blog-Beitrag (FS2-Thema): Kennzeichnung von KI-Anteilen im Blog-Mock-up und im KI-Nachweis begründen."
+  },
+  {
+   "id": "G93",
+   "aussage": "Wo die Quellenangabe stehen muss: Nach § 63 Abs. 2 S. 2 UrhG ist bei öffentlicher Wiedergabe nach § 51 und § 60a die Quelle samt Urhebername „stets“ anzugeben. Die Uni Bremen verlangt, dass die Angabe „deutlich“ ist und Urheber und Fundstelle „ohne Mühe“ erkennbar sind, z. B. „in unmittelbarer Nähe zur Vervielfältigung“. Möglich ist auch ein Quellenverzeichnis, „wenn die Zuordnung der benutzten Quelle durch exakte Angaben wie Seite und Position gewährleistet wird“. Für R3 (Quellen ins Backup) heißt das (H, keine Rechtsberatung): Für fremde Bilder reicht das Backup nur mit genauer Zuordnung (Folie und Position). Ein kurzer Urhebervermerk am Bild ist der sichere Weg.",
+   "phase": "übergreifend",
+   "belegstelle": "Uni Bremen, Abschnitt 9 Quellenangabe: „Die Quellenangabe muss deutlich sein. Sie muss so platziert werden, dass der Urheber und die Fundstelle ohne Mühe zu erkennen sind, z.B. in unmittelbarer Nähe zur Vervielfältigung. Die Quelle kann auch über ein Quellenverzeichnis angegeben werden, wenn die Zuordnung … durch exakte Angaben wie Seite und Position gewährleistet wird.“",
+   "einordnung": "Urheberrecht, Quellenangabe § 63; keine Rechtsberatung",
+   "quellen": [
+    {
+     "titel": "§ 63 UrhG",
+     "url": "https://www.gesetze-im-internet.de/urhg/__63.html",
+     "art": "Gesetz/Behörde",
+     "datum": "Abruf 30.10.2026"
+    },
+    {
+     "titel": "Universität Bremen – 5. Sonderfall: Unterricht und Lehre (Abschnitt 9)",
+     "url": "https://www.uni-bremen.de/urheberrecht/wissensplattform/5-sonderfall-unterricht-und-lehre",
+     "art": "Literatur",
+     "datum": "o. D."
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "R3 „weniger Fußnoten, Quellen ins Backup“: Backup-Folie mit Folien- und Positionsangabe je fremdem Bild, kurzer Vermerk am Bild."
+  },
+  {
+   "id": "G94",
+   "aussage": "Auf unsplash.com stehen neben freien Bildern auch Unsplash+-Bilder, die nur mit Abo nutzbar sind. Für sie gilt die eigene Unsplash+ License und nicht die freie Unsplash License. Laut Lizenzseite verbietet sie u. a. die Nutzung für maschinelles Lernen bzw. KI. Die Gruppe sollte nur Bilder ohne Unsplash+-Kennzeichnung nehmen und die Bild-URL notieren.",
+   "phase": "übergreifend",
+   "belegstelle": "Unsplash+ License (über WebFetch gelesen): Lizenz für Bilder, die über ein Unsplash+-Abo heruntergeladen werden; Verbote u. a. für „machine learning, AI“",
+   "einordnung": "Bildlizenz",
+   "quellen": [
+    {
+     "titel": "Unsplash+ License",
+     "url": "https://unsplash.com/plus/license",
+     "art": "Firmenquelle",
+     "datum": "o. D., Abruf 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "~",
+   "relevanz_fs2": "Ergänzt G27: Bildauswahl für Persona- und Phasenbilder, Eintrag in QUELLEN.md."
+  },
+  {
+   "id": "G95",
+   "aussage": "Herkunft und Personen im Press Kit: Das PDF liegt auf einer Dokumentenablage für Messeaussteller (pub-mediabox-storage.rxweb-prd.com), nicht auf holy.com. S. 2 zeigt ein Gründungsfoto (2021) und ein Teamfoto (2025) mit vielen erkennbaren Personen. Für diese Fotos gilt zusätzlich § 22 KUG. S. 5 nennt eine PR-Mitarbeiterin bzw. einen PR-Mitarbeiter mit Namen und persönlicher E-Mail-Adresse. Für Dateien im öffentlichen Repository besser nur die Funktionsadresse pr@holy.com aus dem Impressum verwenden (Datensparsamkeit).",
+   "phase": "übergreifend",
+   "belegstelle": "Press Kit S. 2 „ÜBER HOLY – 2021 / 2025“ mit zwei Fotos; S. 5 „Für Presseanfragen, Interviews oder Bildmaterial kontaktieren Sie bitte:“ + Name, „Sr. PR & Comms Manager“, persönliche Adresse; Impressum „PR & Presse: pr@holy.com“",
+   "einordnung": "Bildquelle / Personenbezug; keine Rechtsberatung",
+   "quellen": [
+    {
+     "titel": "HOLY Press Kit (PDF)",
+     "url": "https://pub-mediabox-storage.rxweb-prd.com/exhibitor/document/exh-6e8f5981-9a38-4f40-9910-be5dcabf2795/4e7a6473-3b9f-42da-aed5-a1d80cef9e40.pdf",
+     "art": "Firmenquelle",
+     "datum": "20.02.2026"
+    },
+    {
+     "titel": "HOLY Impressum",
+     "url": "https://de.holy.com/pages/impressum",
+     "art": "Firmenquelle",
+     "datum": "Abruf 30.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "relevanz_fs2": "R1-Mail an HOLY-PR: an pr@holy.com adressieren. Personenfotos aus dem Press Kit nur mit Freigabe und Einwilligung verwenden."
+  }
+ ],
+ "hinweise": [
+  "Alle rechtlichen Einordnungen (G19–G32, G90, G92, G93, G95) sind keine Rechtsberatung.",
+  "Arbeitsweise: Webseiten am 30.10.2026 per curl mit Browser-Kennung abgerufen. Wo curl blockiert wurde, über WebFetch gelesen: Unsplash 401, Pexels 403, CMS 403, Creative Market. Font Bundles gab 403 und blieb ungeprüft. Schriftdateien mit fontTools ausgelesen, PDF mit pdfinfo, pdffonts und pdftoppm geprüft. Pixel, Kontraste und CSS-Vorkommen selbst mit Python gezählt bzw. berechnet. Hilfsdateien liegen unter (Arbeitsordner der Sitzung) (web/, pk/, gesetze/, leitf/, lizenz/, ki/).",
+  "Ordner-Kollision: In (Arbeitsordner der Sitzung) lagen schon Dateien eines früheren Laufs (Zeitstempel ca. 03:05–03:12 Uhr). Ich habe sie nicht als Beleg verwendet und alles neu in pruef-g-v2 abgerufen. Meine ersten vier Downloads hatte ich versehentlich in pruef-g/web abgelegt und dann nach pruef-g-v2 verschoben.",
+  "Lücken: EUR-Lex lieferte auch mir HTTP 202 ohne Inhalt (KI-VO und Verordnung (EU) 2026/1744). G29, G30 und G92 beruhen daher auf dem Volltext-Spiegel artificialintelligenceact.eu bzw. auf einer Kanzleiquelle. Das OLG-Hamburg-Urteil (G90) habe ich nicht selbst geöffnet. Die Lizenzpreise für Extra Chunk Please stammen nur aus einem WebFetch-Auszug. Druckfarben der Verpackung, Instagram und Community-Fotos habe ich nicht geprüft (Instagram nach Gruppenregel nicht). Einen HSKL-eigenen Leitfaden zu Bildrechten habe ich nicht gesucht.",
+  "Wichtigste Korrekturen: G03 (die Testversion von Agrandir erlaubt ausdrücklich Schulprojekte und Web-Portfolio; das Hindernis ist das Upload-Verbot in EULA 3.7), G04 (Extra Chunk Please ist kommerziell bei Supfonts/Creative Market erhältlich), G06 (Gelb ist Button- bzw. CTA-Farbe, keine Flächenfarbe; Neutralpalette reicht bis #B5A494; violetter Footer fehlte), G10 (99px ist nicht der häufigste Radius), G21 (§ 60a Abs. 1 Nr. 3 lässt die öffentliche Präsentation von Lernergebnissen zu; die Frage zum Repository ist offen, nicht verneint).",
+  "Personenbezogene Daten: Das Press Kit (S. 5) und die Creative-Market-Seite nennen Personen mit Namen. Ich habe diese Namen bewusst nicht in die Befunde übernommen. Für öffentliche Dateien die Funktionsadresse pr@holy.com verwenden. Der Gestalter von PP Agrandir erscheint nur als Rechteinhaber laut Schriftdatei, wie im Ausgangsbefund.",
+  "Methodischer Hinweis zu R3: Das bisherige FS2-Token #1D1D1B ist laut G07 das Logo- bzw. Druck-Schwarz, Web-Text bei HOLY ist #000000. Beide sind belegt. Die Gruppe sollte eines festlegen und die Herkunft in QUELLEN.md nennen.",
+  "Stand der HOLY-Website: Theme t/3495, Kampagne Halloween 2026. Farben, Bilder und Klassen können sich mit der nächsten Kampagne (Advent) ändern; vor dem 09.11.2026 Screenshots bzw. Werte mit Abrufdatum sichern."
+ ]
+}

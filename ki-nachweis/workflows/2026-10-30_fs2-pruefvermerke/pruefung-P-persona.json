@@ -1,0 +1,457 @@
+{
+ "pruefungen": [
+  {
+   "id": "P01",
+   "status": "✔",
+   "geprueft_an": "Vorlesung stenger-mit-seite.txt, Seiten 60, 67, 128 (Volltext) und seite-128.png",
+   "begruendung": "Wortlaut S. 60 („ausführliche Brand Persona … Mediennutzungsverhalten & Psychografie … Limbic Map als Methode“), S. 67 (Mediennutzung: „Art und Zahl der Medien, Nutzungsintensität“; Markentreue/-wechsel unter Produktwahl; Viel-/Wenigkäufe unter Kaufvolumen; „Vgl. Redler/Ullrich 2021, S. 116 f.“ laut Folie) und S. 128 (Kathrin: Blöcke „Mediennutzung“ und „Einkaufsverhalten • Online & Stationär • Hohe Markenaffinität • Smart Shopper“) stimmen. Literaturangabe Redler/Ullrich nur laut Folie, nicht selbst geprüft."
+  },
+  {
+   "id": "P02",
+   "status": "✔",
+   "geprueft_an": "Vorlesung S. 109 und S. 111 (stenger-mit-seite.txt)",
+   "begruendung": "Zielzeilen der 5 As wörtlich vorhanden („Über welche TP Kunden aufmerksam werden“, „Welche TP am häufigsten zur Information genutzt werden“, „Die für die Kunden vertrauenswürdigsten TP“, „Die für die Kaufentscheidung hilfreichsten TP“, „Emotionale TP, die den höchsten Empfehlungswert haben“). S. 111 Schritt 2 „Kundenperspektive verstehen – Welche Kontaktpunkte nutzt der Kunde und wie erlebt er die Interaktion …“. Quellenvermerke (Kotler et al. 2017, S. 80 ff.; Kreutzer 2018, S. 97 ff.; Esch et al. 2016, S. 340 bzw. S. 333) nur laut Folie."
+  },
+  {
+   "id": "P03",
+   "status": "✔",
+   "geprueft_an": "Vorlesung seite-122.png bis seite-126.png; ARD/ZDF-Medienstudie 2026, Basispräsentation, gedruckte Folie 13 (PDF-Seite 14): https://www.media-perspektiven.de/fileadmin/user_upload/media-perspektiven/Medienstudie/Basispraesentation_ARD-ZDF-Medienstudie_2026.pdf (abgerufen 30.10.2026)",
+   "begruendung": "S. 123 zeigt für 14–29 (2020): Fernsehen zum Ausstrahlungszeitpunkt 54, andere Videos auf YouTube 79, Videos bei Streamingdiensten 76. ARD/ZDF 2026 Folie 13: 44 / 77 / 72, Videos/Stories auf Social Media 80; Titel „Weniger als die Hälfte der unter 30-Jährigen sieht noch wöchentlich fern.“ Kleine Präzisierung: Die Vorlesung zeigt ARD/ZDF-Daten 2017–2020 (S. 126 = Onlinestudien 2017–2019, täglich genutzt; S. 122–125 = Massenkommunikation 2020). Methoden unterscheiden sich (2020: n = 3.003; 2026: Mixed-Mode, n = 2.462, Erhebung 27.01.–19.04.2026, Folie 4), daher Vergleich nur als Tendenz."
+  },
+  {
+   "id": "P04",
+   "status": "✔",
+   "geprueft_an": "Vorlesung S. 71, 82, 93 (stenger-mit-seite.txt)",
+   "begruendung": "Wörtlich: S. 71 „Jede Marke besetzt sein eigenes Territorium in der Limbic Map“ (Quelle: gruppe Nymphenburg); S. 93 „Analyse der Zielgruppe und Positionierung der Marke im entsprechenden Limbic-Raum“; S. 82 „Passen wir zu diesem Segment? … Glaubwürdigkeit der eigenen Marke“ (Vgl. Redler/Ullrich 2021, S. 117, laut Folie)."
+  },
+  {
+   "id": "P05",
+   "status": "✔",
+   "geprueft_an": "fallstudie-1-brand-persona/limbic-map.md §3.2, §4.2, §5, §6; praesentation/export/folien/f05.png; eigene Nachrechnung der Winkel (Python, 30.10.2026)",
+   "begruendung": "Gewichte Marco B30/D30/S40 und HOLY B30/D20/S50, „Urteil: passt teilweise“, „etwa 281° … knapp im Sektor der Offenen“, −10 Pp. Dominanz und die drei Folgen (Echte Schichtmomente, Humor aus der Schicht, Durchhalten ohne Zucker) stehen so in Datei und Folie. Nachrechnung mit der FS1-Formel (S 300°, D 60°, B 180°): Marco 300,0°, HOLY 280,9° – bestätigt. Status bezieht sich auf die Wiedergabe von FS1; die Gewichte selbst bleiben Heuristik des Teams."
+  },
+  {
+   "id": "P06",
+   "status": "H",
+   "geprueft_an": "Bewertung FS1 (Wortlaut im Auftrag); Vorlesung S. 76; f05.png",
+   "begruendung": "Deutung ist plausibel: S. 76 definiert die Persona als „typischen Kunden aus der Zielgruppe“, S. 93 verlangt die Positionierung der Marke „im entsprechenden Limbic-Raum“ der Zielgruppe; f05 betont mit Titel („zeigt aber kaum seine Schicht“) und „−10 Pp. Dominanz – Lücke“ eine Fehlpassung, und Marco (Hedonisten) und der HOLY-Mittelwert (Sektor Offene) liegen in verschiedenen Typ-Sektoren. Dass „Marke und Holy“ ein Versprecher für „Persona und HOLY“ ist, bleibt Vermutung; Rückfrage an Stenger ist richtig."
+  },
+  {
+   "id": "P07",
+   "status": "H",
+   "geprueft_an": "limbic-map.md §2 (Tabelle Felder/Typen), §4.2, §5; Vorlesung S. 71",
+   "begruendung": "Die Fakten im Befund stimmen: §5 „Was passt: Hauptsystem Stimulanz und Feld Spaß und Kreativität bei beiden“; §2 ordnet das Feld „Spaß und Kreativität“ dem Typ Hedonisten zu; §4.2 nennt es HOLYs wichtigstes Feld und erklärt, dass der Mittelwert zwischen die Felder fällt. Der Vorschlag (HOLY als Territorium, Schicht als Moment der Wahrheit) ist eine Deutung; er braucht, wie der Befund selbst sagt, echte Belege (K1/K8-Codierung), sonst wirkt er nachträglich passend gemacht."
+  },
+  {
+   "id": "P08",
+   "status": "✔",
+   "geprueft_an": "recherche/holy-recherche.md §4.4 (Zeile „Persona B „Lena“ | 45 % | 15 % | 40 % | Limbic Type: Offene“); limbic-map.md §2 (Sektorgrenzen); eigene Nachrechnung (Python, 30.10.2026)",
+   "begruendung": "Nachgerechnet: Lena 231,1° (Radius 0,278), HOLY 280,9°, Marco 300,0°. Abstand Lena–HOLY ≈ 50°, Marco–HOLY ≈ 19° – bestätigt. Nach den FS1-Sektorgrenzen (Harmoniser 180–232°) liegt Lena 0,9° innerhalb des Harmoniser-Sektors, also bei der angegebenen Messgenauigkeit ±1° „an der Grenze“. Auch mit zwei anderen Maßen (Überschneidung, euklidischer Abstand) liegt Lena nicht näher an HOLY (siehe P95). Die Schlussfolgerung gilt nur innerhalb der Team-Heuristik."
+  },
+  {
+   "id": "P09",
+   "status": "✔",
+   "geprueft_an": "limbic-map.md §5 und §8; persona-steckbrief.md §2; holy-recherche.md §4.1 (Zeilen [7], [13], [14], [24])",
+   "begruendung": "Zitate stimmen („Marcos Motiv ist eine Hypothese (A)“; §8 „[ ] 20–30 Bewertungen nach Codebuch auswerten (K1, K3, K8 …)“; Steckbrief „die Schicht nennt er nicht als Trinkanlass“; Press Kit 02/2026 „Routinen im Alltag, rund um Sport und Training“). Ergänzung: Als Kundengruppe (nicht als Anlass) nennen auch Trending Topics 08/2024 [7] und HV Capital 2026 [14] Schichtberufe (Dossier 4.1 ✔); das sind aber Firmen-/Investorenaussagen. Für den Trinkanlass bleibt Jost [24] die einzige Quelle."
+  },
+  {
+   "id": "P10",
+   "status": "✔",
+   "geprueft_an": "https://www.destatis.de/DE/Themen/Arbeit/Arbeitsmarkt/Indikatoren-Qualitaet-Arbeit/Dimension-3/abend-nachtarbeit.html (Stand 23.07.2026); https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/04/PD25_N022_13.html (28.04.2025), beide abgerufen 30.10.2026",
+   "begruendung": "Wörtlich bestätigt: 2025 regelmäßig abends 14,4 %, nachts 4,3 % (Männer 5,4 %, Frauen 3,0 %), Grundlage Selbsteinschätzung (Arbeitskräfteerhebung). Mikrozensus 2023: 15 % der abhängig Beschäftigten zumindest gelegentlich Schicht, Männer 16 %; Verkehr und Lagerei 24 % Schicht, 22 % Nacht. Definitionen: abends 18–23 Uhr, nachts 23–6 Uhr. Hinweis „nicht verrechnen“ ist richtig."
+  },
+  {
+   "id": "P11",
+   "status": "✔",
+   "geprueft_an": "ARD/ZDF-Medienstudie 2026, gedruckte Folie 56 (PDF-Seite 57, als Bild geprüft); Bitkom-Studienbericht „Social Media, Desinformation und Deepfakes“ 2026, S. 7 und Methodik S. 27: https://www.bitkom.org/sites/main/files/2026-06/bitkom-studienbericht-desinformation-socialmedia.pdf",
+   "begruendung": "ARD/ZDF 2026: Social Media netto 14–29: 91 % (72 täglich + 19 wöchentlich), 30–49: 74 % (49 + 25); Plattformen nur gesamt: Instagram 40 (±0), Facebook 28 (−3), TikTok 18 (−2), Pinterest 11 (−2), Twitch 5 (−2). Bitkom 2026 (CATI, n = 1.006, KW 12–17/2026; Internetnutzer n = 939): 98 % der unter 30-jährigen Internetnutzer nutzen Social Media; unter den Social-Media-Nutzenden 16–29: 29 % mehrmals täglich, 40 % täglich. Alles bestätigt."
+  },
+  {
+   "id": "P12",
+   "status": "✔",
+   "geprueft_an": "Tippelt, MP 31/2025, Tabelle 3 und 4, S. 4–6: https://www.media-perspektiven.de/fileadmin/user_upload/media-perspektiven/pdf/2025/MP_31_2025_ARD_ZDF-Medienstudie_Social_Media_zwischen_Wachstum_und_Saettigung_Nutzungsmuster_und_Plattformdynamiken_in_Deutschland.pdf",
+   "begruendung": "Tab. 4 (mind. wöchentlich 2025): 14–29 Instagram 77 (2024: 82), Snapchat 53, TikTok 50, Pinterest 29, Facebook 26, Twitch 19; 30–49 Instagram 54 (2024: 50), Facebook 48, TikTok 24, Pinterest 14, Twitch 7. Text: „im dritten Jahr in Folge abnahm (2025: 60 Min.)“; Tab. 3 Nettowert 30–49 = 41 (Spaltenkopf „in %“, laut Text Minuten). Alles bestätigt; Jahr 2025 korrekt genannt."
+  },
+  {
+   "id": "P13",
+   "status": "✔",
+   "geprueft_an": "HDE-Online-Monitor 2026, S. 36 (als Bild geprüft): https://einzelhandel.de/images/presse/Pressekonferenz/2026/onlinemonitor26/Online_Monitor_2026.pdf",
+   "begruendung": "Werte aus dem Rang-Diagramm abgelesen: 20–29 YouTube 78, Instagram 75, Snapchat 45, Facebook 45 (−7 Pp.), TikTok 44, Pinterest 32; 30–39 YouTube 76 (+6), Instagram 71 (+6), Facebook 61, TikTok 28, Pinterest 25, Snapchat 15 – bestätigt. Ergänzen: kleine Teilstichproben je Altersgruppe (100 ≤ n ≤ 258), Unterschiede von wenigen Punkten nicht deuten; Frage ohne Häufigkeit. „25–40 laut Jost“ in der Relevanzspalte ist Selbstauskunft (Podcast 2024)."
+  },
+  {
+   "id": "P14",
+   "status": "✎",
+   "geprueft_an": "ARD/ZDF-Medienstudie 2026, gedruckte Folien 13 und 19 (PDF-Seiten 14 und 20), Folie 60 (PDF-Seite 61, Bild); holy-recherche.md §7.1",
+   "begruendung": "Alle Zahlen stimmen (44/58, 77/57, 72/64, 80/58; 169 Min.; 48 %; 14 %). Ungenau ist die Bezeichnung: Die 14 % auf Folie 19 heißen „laufendes Fernsehprogramm/aufgenommene Fernsehsendungen“ und sind Anteile an der Brutto-Nutzungsdauer; die 48 % umfassen „Social Video, YouTube und andere“ (inkl. Videos bei anderen Anbietern im Internet). Der letzte Satz ist eine Hypothese und so zu kennzeichnen. Stützend: Fernsehgerät/Smart-TV erreicht 14–29 nur 49 % pro Tag, das Smartphone 95 % (Folie 60).",
+   "korrigierte_aussage": "Mindestens wöchentlich nutzen 2026 die 14–29- bzw. 30–49-Jährigen das laufende Fernsehprogramm zu 44 % bzw. 58 %, andere Videos auf YouTube zu 77 % bzw. 57 %, Videos bei Streamingdiensten zu 72 % bzw. 64 % und Videos/Stories auf Social Media zu 80 % bzw. 58 % (ARD/ZDF-Medienstudie 2026, Folie 13). Von 169 Minuten Bewegtbild pro Tag (netto) entfallen bei 14–29 48 % auf „Social Video, YouTube und andere“ und 14 % auf „laufendes Fernsehprogramm/aufgenommene Fernsehsendungen“ (Anteile an der Brutto-Nutzungsdauer, Folie 19). Hypothese (H): HOLYs Kampagne seit 01/2026 (TV, Streaming, DOOH; Dossier 7.1 ✔) erreicht Marco eher über Streaming und DOOH als über lineares Fernsehen."
+  },
+  {
+   "id": "P15",
+   "status": "✔",
+   "geprueft_an": "ARD/ZDF-Medienstudie 2026, gedruckte Folien 9, 22, 23 (PDF-Seiten 10, 23, 24, als Bild geprüft); Methodenfolie 5",
+   "begruendung": "Abgelesen: Video 14–29 Gipfel ≈ 29 % um 21 Uhr, Gesamt ≈ 51 % um 20 Uhr; laufendes TV bei 14–29 höchstens ≈ 5 % (um 19 Uhr), Streaming abends ≈ 15 % (21 Uhr). Fußnote „Erhebung über Abfrage im Tagesablauf (5-24 Uhr)“, Day-After-Recall – Nachtlücke 0–5 Uhr bestätigt. „Unter etwa 5 %“ besser als „bis etwa 5 %“ formulieren."
+  },
+  {
+   "id": "P16",
+   "status": "✔",
+   "geprueft_an": "ARD/ZDF-Medienstudie 2026, gedruckte Folie 29 (PDF-Seite 30, als Bild geprüft)",
+   "begruendung": "14–29 / 30–49: Podcasts 38 / 35, Musik über Streamingdienste 85 / 57, Radio 52 / 74, Musik über YouTube 40 / 40 – bestätigt. Einwand zur Einordnung: Audio-Spots sind Paid Media und gehören eher in AWARE als in die Bindungsphase; „begleitet Marco auf dem Weg zur Schicht“ ist eine Hypothese ohne Daten zu Schichtarbeitenden."
+  },
+  {
+   "id": "P17",
+   "status": "✔",
+   "geprueft_an": "ARD/ZDF-Medienstudie 2026, gedruckte Folien 57 und 58 (PDF-Seiten 58, 59, als Bild geprüft)",
+   "begruendung": "Gaming netto mind. wöchentlich 2026: 14–29 67 %, 30–49 45 %; gesamt 39 % (2025: 41 %), Frauen 35 %, Männer 43 %; Titel „Gaming verliert gegenüber 2025 etwas, wobei der Gender Gap schrumpft.“ Bestätigt."
+  },
+  {
+   "id": "P18",
+   "status": "✔",
+   "geprueft_an": "ARD/ZDF-Medienstudie 2026, gedruckte Folien 54 und 55 (PDF-Seiten 55, 56, als Bild geprüft); https://www.bitkom.org/Presse/Presseinformation/Internet-Suche-Wandel-Haelfte-nutzt-KI-Chats (20.11.2025, abgerufen 30.10.2026)",
+   "begruendung": "ARD/ZDF: Suchmaschinen 14–29 92 %, 30–49 93 %; KI-Tools 68 % bzw. 48 %; gesamt 22 % (2025) → 37 % (2026). Bitkom (1.156 Befragte ab 16, darunter 1.030 Internetnutzer, KW 39–43/2025): 16–29 ausschließlich 5 %, überwiegend 11 %, etwa gleich 20 %, hin und wieder 30 %, nur 30 % ausschließlich Suchmaschine; 42 % der KI-Suchenden haben falsche Antworten erhalten, 57 % prüfen. Alles wörtlich bestätigt; die 42 %/57 % beziehen sich auf alle KI-Suchenden, nicht nur auf 16–29."
+  },
+  {
+   "id": "P19",
+   "status": "✎",
+   "geprueft_an": "HDE-Online-Monitor 2026, S. 40 und 41 (als Bild geprüft); HDE-Pressemitteilung 03.06.2026: https://einzelhandel.de/images/presse/Pressekonferenz/2026/onlinemonitor26/PM_HDE-OnlineMonitor.pdf; Bitkom-Präsentation 28.04.2026, Folien 2 und 6: https://www.bitkom.org/sites/main/files/2026-04/bitkom-praesentation-kuenstliche-intelligenz-2026-der-blick-der-deutschen-auf-die-neue-technologie.pdf",
+   "begruendung": "Zahlen stimmen, die Basis ist falsch zugeordnet. S. 41 zeigt „Nutzung von KI-Chatbots nach Themen“ (Allgemeine Wissensfragen 73 %, Recherche beim Kauf 35 %) mit 242 ≤ n ≤ 695. S. 40: 60 % der Internetnutzer nutzen KI (26 % regelmäßig, 34 % schon einmal), bei n ≈ 1.156 sind das ≈ 694 – die 35 % beziehen sich also sehr wahrscheinlich auf KI-Nutzende, nicht auf alle Internetnutzer (Überschrift und PM des HDE formulieren selbst verkürzt „35 Prozent der Verbraucher“). Die Detailwerte 64/58/51/31 gelten für die KI-Kaufrechercheure (n ≥ 242 ≈ 35 % von 695). Bitkom-Werte bestätigt (35 % „Hilfe beim Einkauf“, Basis KI-Nutzende n = 579; 16–29: 29 % täglich, 25 % mind. wöchentlich; Gesamtbasis n = 1.003).",
+   "korrigierte_aussage": "HDE-Online-Monitor 2026 (IFH Köln, Internetnutzer 16–69, Okt. 2025): 60 % der Internetnutzer nutzen KI (26 % regelmäßig, 34 % schon einmal). Von den KI-Nutzenden setzen 35 % KI-Chatbots zur Recherche beim Kauf von Produkten ein (Basis laut Grafik n ≤ 695; der HDE schreibt verkürzt „35 Prozent der Verbraucher“). Diese Rechercheure vergleichen zu 64 % Produkteigenschaften, 58 % bewerten die Qualität, 51 % vergleichen Preise, 31 % lassen sich einen Onlineshop oder ein Geschäft empfehlen. Altersdaten dazu fehlen. Bitkom (28.04.2026, n = 1.003 ab 16): 35 % der KI-Nutzenden (n = 579) nutzen KI als „Hilfe beim Einkauf“; von den 16- bis 29-Jährigen nutzen 29 % KI täglich und weitere 25 % mindestens wöchentlich."
+  },
+  {
+   "id": "P20",
+   "status": "✔",
+   "geprueft_an": "https://de.holy.com/agents.md und https://de.holy.com/llms-full.txt (beide per curl abgerufen 30.10.2026, HTTP 200)",
+   "begruendung": "Wörtlich bestätigt: „This document defines how AI agents should discover, understand, recommend and purchase products from HOLY“, Rollen vom „product-discovery agent“ bis „checkout agent“/„purchasing agent“, UCP-Discovery und MCP-Endpoint, Kriterien „Caffeine preference“/„Caffeine sensitivity“, Regel 8 „Never complete payment without explicit, contemporaneous buyer approval.“ Keine Altersgrenze in agents.md und auch nicht in llms-full.txt. Einschränkung für den „Bruch“: agents.md verlinkt die AGB (dort laut Dossier § 4 Jugendschutz [12]), nennt das Alter aber nicht in der Liste der zu prüfenden Policy-Punkte. Rechtliche Einordnung, keine Rechtsberatung."
+  },
+  {
+   "id": "P21",
+   "status": "✎",
+   "geprueft_an": "https://www.bitkom.org/Presse/Presseinformation/3-von-10-kaufen-ueber-soziale-Netzwerke (HTML-Quelltext inkl. Metadaten, abgerufen 30.10.2026)",
+   "begruendung": "Werte bestätigt (29 % gesamt; 48 % bzw. 36 %; 16–29: Instagram 34, YouTube 23, TikTok 20, Facebook 17; 46 % der jungen Social-Media-Einkäufer über Werbung; 20 % Creator-Vertrauen; knapp 43 % Kennzeichnung). Datumswiderspruch aufgelöst: Seitenmetadaten „datePublished: Do., 08.01.2026 – 09:15“ und „article:published_time 2026-01-08“; „08. Januar 2025“ im Fließtext ist ein Tippfehler, passend zur Befragung KW 40–41/2025 und zum HORIZONT-Artikel vom 09.01.2026. Ergänzen: 1.120 Internetnutzende ab 16, darunter nur 328 Social-Media-Einkäufer – die Werte für junge Social-Media-Einkäufer beruhen auf einer kleinen Teilgruppe; für die 20 %/43 % nennt die PM die Basis nicht eindeutig.",
+   "korrigierte_aussage": "Bitkom-Presseinformation vom 08.01.2026 (Datum laut Seitenmetadaten; im Fließtext steht irrtümlich 2025; Befragung KW 40–41/2025, 1.120 Internetnutzende ab 16, darunter 328 Social-Media-Einkäufer): 29 % der Internetnutzer kaufen über soziale Netzwerke ein, bei 16–29 48 %, bei 30–49 36 %. 16- bis 29-Jährige kaufen dort vor allem über Instagram (34 %), YouTube (23 %), TikTok (20 %) und Facebook (17 %). 46 % der jungen Social-Media-Einkäufer entdecken über Werbung immer wieder Produkte. 20 % der 16- bis 29-Jährigen vertrauen Creatorn mehr als klassischen Produkttests (gesamt 10 %), knapp 43 % wünschen eine klarere Kennzeichnung von Werbung (Ø knapp 29 %); die Bezugsbasis dieser beiden Werte nennt die PM nicht eindeutig."
+  },
+  {
+   "id": "P22",
+   "status": "✎",
+   "geprueft_an": "HDE-Online-Monitor 2026, S. 37 und 38 (als Bild geprüft)",
+   "begruendung": "S. 37 bestätigt: 20–29 16 %, 30–39 23 %, Ø 13 % (Internetnutzer 16–69, Okt. 2025, 100 ≤ n ≤ 1.156). S. 38 stammt aus einer anderen Erhebung (ECC Köln 2025, Internetnutzer 18–75, Sept. 2025, 78 ≤ n ≤ 1.000): 9 % gekauft, 11 % umgesehen, 32 % kennen ohne Nutzung, 49 % kennen nicht (Titel: 52 % kennen). „Getränke & Snacks (inkl. Süßwaren)“ ist Rang 5 der im TikTok Shop gekauften Produkte – nicht allgemein „meistgekauft“. Die Unterschiede zwischen den Altersgruppen beruhen auf kleinen Teilstichproben.",
+   "korrigierte_aussage": "16 % der 20- bis 29- und 23 % der 30- bis 39-jährigen Internetnutzer haben schon ein Produkt gekauft, auf das sie durch den Beitrag einer Person in einem sozialen Netzwerk aufmerksam wurden (Ø 13 %; IFH Köln für HDE, Internetnutzer 16–69, Okt. 2025, kleine Teilstichproben). TikTok Shop kannten im September 2025 rund 52 % der Internetnutzer von 18 bis 75 Jahren, 9 % hatten dort gekauft; „Getränke & Snacks (inkl. Süßwaren)“ stehen auf Rang 5 der im TikTok Shop gekauften Produktgruppen (ECC Köln 2025, zitiert im HDE-Online-Monitor 2026, S. 38)."
+  },
+  {
+   "id": "P23",
+   "status": "✎",
+   "geprueft_an": "https://www.bitkom.org/Presse/Presseinformation/Online-Bewertungen-sind-wichtigste-Informationsquelle (27.11.2020, abgerufen 30.10.2026); Gegenrecherche WebSearch 30.10.2026; persona-daten.md; persona-steckbrief.md §2",
+   "begruendung": "66 % (16–29) und 60 % (30–49) bestätigt; Befragung Ende Okt.–Anfang Nov. 2020, 1.103 Internetnutzer ab 16, darunter 1.055 Online-Käufer. Die 55 % sind der Anteil, der Bewertungen als Informationsquelle nennt (Frage „Wie informieren Sie sich vor dem Kauf eines Online-Produktes?“, Mehrfachnennung); „wichtigste Quelle“ heißt hier „meistgenannte“, nicht „für 55 % die wichtigste“. Gegenrecherche fand keine neueren Bitkom-Zahlen nach Alter. Hinweis zum Statista-Wert 52 % korrekt (nicht in persona-daten.md).",
+   "korrigierte_aussage": "Laut Bitkom (Befragung Ende Okt.–Anfang Nov. 2020, 1.055 Online-Käufer ab 16) nennen 55 % der Online-Shopper Kundenbewertungen als Informationsquelle vor dem Kauf; das ist die meistgenannte Quelle. 66 % der 16- bis 29- und 60 % der 30- bis 49-Jährigen lesen Online-Bewertungen; soziale Netzwerke nutzen 33 % der 16- bis 29-Jährigen als Informationsquelle (gesamt 16 %). Neuere Bitkom-Zahlen nach Alter wurden nicht gefunden; auf der Folie das Erhebungsjahr 2020 nennen. Der Statista-Wert „52 % halten Online-Bewertungen für sehr hilfreich“ steht nicht in persona-daten.md und ist nach der Gruppenregel nicht zu verwenden."
+  },
+  {
+   "id": "P24",
+   "status": "✔",
+   "geprueft_an": "HDE-Online-Monitor 2026, S. 10, S. 19 und Text S. 3 (Zeile „bei FMCG auf 5,0 Prozent“); HDE-PM 03.06.2026",
+   "begruendung": "Lebensmittel online 2,4 / 2,5 / 2,7 % (2023–2025), Onlineumsatz 6,5 Mrd. € netto; Food online +11,5 %, offline +2,1 % (2024–2025); Fußnote: Food = Lebensmittel inkl. Getränke, ohne Tabak. PM: FMCG 4,9 %; der Bericht nennt im Text 5,0 %, in einer Grafik ebenfalls 4,9 % – beide Werte stehen also auch im Bericht. Bestätigt."
+  },
+  {
+   "id": "P25",
+   "status": "✔",
+   "geprueft_an": "HDE-Online-Monitor 2026, S. 35; ARD/ZDF 2026 gedruckte Folie 60 (Bild); https://www.postbank.de/unternehmen/medien/meldungen/2026/juni/deutsche-sind-weniger-online.html (Medieninformation vom 05.06.2026)",
+   "begruendung": "Smartphone 61 % der Onlineumsätze 2025 (2020: 47 %), mobile Geräte 69 %, Apps/Websites 50/50 (2024: 48/52); Smartphone-Tagesreichweite 95 % (14–29) bzw. 88 % (30–49); Postbank: unter 40-Jährige rund 31 Std./Woche am Smartphone (−3 Std.), 31 % der 18- bis 39-Jährigen wollen weniger online sein; n = 3.050, Befragung im Mai 2026. Bestätigt. Hinweis: Wochenstunden sind Selbsteinschätzungen der Befragten; die Erhebungsmethode nennt die PM nicht."
+  },
+  {
+   "id": "P26",
+   "status": "✔",
+   "geprueft_an": "https://recht.nrw.de/lrgv/gesetz/30032018-gesetz-zur-regelung-der-ladenoeffnungszeiten-ladenoeffnungsgesetz-loeg-nrw/ (abgerufen 30.10.2026); Gegenrecherche WebSearch „Ladenöffnungsgesetz NRW Änderung 2025“",
+   "begruendung": "§ 4 Abs. 1 Nr. 1 wörtlich bestätigt; die Seite führt 3 Fassungen, die vom 30.03.2018 ist als aktuelle gekennzeichnet (Änderung durch Gesetz vom 22.03.2018, GV. NRW. S. 172). Ein FDP-Änderungsentwurf 2025 (Drs. 18/13675) wurde laut Suchtreffer zur Ablehnung empfohlen; ein neueres Änderungsgesetz wurde nicht gefunden. Werktage schließen den Samstag ein, Sonn- und Feiertage sind ausgenommen (§ 5). Rechtliche Einordnung, keine Rechtsberatung."
+  },
+  {
+   "id": "P27",
+   "status": "✔",
+   "geprueft_an": "Tippelt, MP 31/2025, S. 11–12 (Text zu Abb. 10)",
+   "begruendung": "Wörtlich: Instagram Ø 37 Jahre, Frauenanteil 52 %; TikTok ausgeglichenes Geschlechterverhältnis, Ø 32 Jahre; Pinterest Frauenanteil 70 %, Ø 36 Jahre; Twitch u. a. „jüngeres, zugleich männlich geprägtes Publikum“. Bezugsbasis: wöchentliche Nutzerschaft 2025 – Jahr auf der Folie nennen."
+  },
+  {
+   "id": "P28",
+   "status": "H",
+   "geprueft_an": "persona-steckbrief.md §2; ARD/ZDF 2026 Folien 5, 9, 22; Destatis PM N022 (Definitionen abends 18–23, nachts 23–6 Uhr)",
+   "begruendung": "Als Hypothese richtig gekennzeichnet; Schichtzeiten 6–14/14–22/22–6 sind Modellwissen ohne Quelle. Logikfehler: „verpasst er in zwei von drei Schichtwochen“ ist nicht schlüssig – in der Spätschicht fällt 20–21 Uhr sicher weg, in der Nachtschicht (Beginn ≈ 22 Uhr) nur teilweise, in der Frühschicht nicht. Besser: „in der Spätschichtwoche sicher, in der Nachtschichtwoche teilweise“. Daten zur Mediennutzung von Schichtarbeitenden gibt es nicht; die Nachtstunden 0–5 Uhr erfasst ARD/ZDF nicht."
+  },
+  {
+   "id": "P29",
+   "status": "H",
+   "geprueft_an": "persona-daten.md (YouTube 73 %, Instagram 71 %, TikTok 58 %, Statista CI 2025); HDE 2026 S. 36; ARD/ZDF Folie 13; holy-recherche.md §7.1 und Zeilen 124/706 (7 vs. Wild); Vorlesung S. 108",
+   "begruendung": "Belege korrekt zitiert; die Statista-Werte stehen so in persona-daten.md (zulässig) und beschreiben die Kategorie Energy Drinks, nicht HOLY. Zu beachten: „7 vs. Wild“ ist für Staffel 4 (2024) und 5 (2025) belegt (Dossier ✎ [34, 35]); ein Sponsoring 2026 ist nicht belegt, als aktueller Touchpoint also ungeprüft. Die Top-2-Auswahl ist eine Deutung."
+  },
+  {
+   "id": "P30",
+   "status": "H",
+   "geprueft_an": "ARD/ZDF Folie 55; holy-recherche.md §7.2 Bruch 3 und §7.3; Bitkom-Studienbericht 2026 S. 9",
+   "begruendung": "Belege korrekt (92 %/68 %; „HOLY hat keinen Blog“, Warnungen Dritter weit oben ✔). Die Aussage „keine belastbaren Zahlen zur Social Search in Deutschland“ ist zu streng: Bitkom 2026 nennt 51 % der Social-Media-Nutzenden, die soziale Netzwerke für „Shopping bzw. Produktsuche“ nutzen (ohne Altersaufteilung, siehe P91); eine Studie zu „Social statt Suchmaschine“ gibt es weiterhin nicht."
+  },
+  {
+   "id": "P31",
+   "status": "H",
+   "geprueft_an": "Vorlesung S. 109; Bitkom-PM „3 von 10 kaufen über soziale Netzwerke ein“ (08.01.2026); persona-datenerhebung.md §5; YouTube-oEmbed zu https://www.youtube.com/watch?v=NRPEZPprRso (abgerufen 30.10.2026)",
+   "begruendung": "Belege stimmen. Präzisierungen: Das ZDFbesseresser-Video heißt „Dicke Dosis: Holy Energy und seine gefährlichen Geheimnisse“ – ein kritischer Earned-Touchpoint, der in ASSURE eher gegen HOLY wirkt (passt zu Bruch 3), kein neutraler „Test“; persona-datenerhebung.md nennt es als „Gegengewicht, auch Kritiker“. Bei den 20 % Creator-Vertrauen ist die Bezugsbasis in der PM nicht eindeutig. Bewertungen (REVIEWS.io) sind von HOLY eingeladen und nicht repräsentativ (persona-datenerhebung.md §5)."
+  },
+  {
+   "id": "P32",
+   "status": "H",
+   "geprueft_an": "persona-steckbrief.md §2; holy-recherche.md §3.2 (Preistabelle) und §8 S4; HDE 2026 S. 35; agents.md",
+   "begruendung": "Als Hypothese richtig. Hinweise: Der Handelspreis 1,00–1,33 € pro Portion hat in der Preistabelle 3.2 den Status ✎ (Quellen [10, 11, 64], darunter Rossmann-Suchtreffer), nicht ✔; im Selbstversuch nachprüfen. Steckbrief nennt „Rewe oder Edeka“, der Befund „Rewe oder Globus“ – Edeka ist laut Dossier nur in einzelnen Märkten belegt. Amazon ist laut AGB ein offizieller Kanal (Dossier, Listings ungeprüft) und fehlt als Kauf-Option (siehe P93)."
+  },
+  {
+   "id": "P33",
+   "status": "H",
+   "geprueft_an": "holy-recherche.md §7.1, §7.2 (Brüche 1 und 2), Zeile 68 (Discord ≈ 72.000, 14.10.2026); ARD/ZDF Folie 29",
+   "begruendung": "Belege stimmen. Einwände: Audio-Spots sind Paid-Touchpoints für AWARE, nicht für die Bindung. Zusätzlicher Bruch für die Bindung: SQUAD Rewards ab 16, Energy online ab 18 (Dossier 7.2 Bruch 2 ✔) – für Marco (28) unkritisch, für die Rewards-Kommunikation aber relevant. QR-Code-Idee ist im Dossier als Hypothese (S4) gekennzeichnet."
+  },
+  {
+   "id": "P34",
+   "status": "H",
+   "geprueft_an": "persona-steckbrief.md §1, §2, §5; persona-datenerhebung.md §5 (Codes K1, K5, K6); Bewertung FS1",
+   "begruendung": "Zitate korrekt; „Monster aus der Dose“ ist eine Annahme (KI-Vorschlag), „Ersatz für Red Bull oder Monster“ ist eine Gründeraussage [24] (Selbstauskunft 2024). „Cola-Ersatz bei Lena“ beruht nur auf der Hypothese im Steckbrief §5 und dem Handelsclaim [18]. Der Code K1 enthält bereits „Ersatz für Cola oder Energy-Dose“ – damit lässt sich die Herleitung des Wettbewerbssets mit echten Bewertungen belegen. Der Vorschlag ist sinnvoll, bleibt aber Deutung."
+  },
+  {
+   "id": "P35",
+   "status": "H",
+   "geprueft_an": "Bewertung FS1; holy-recherche.md §4.1 ([18], [25]); limbic-map.md §5; eigene Nachrechnung zu P08/P95",
+   "begruendung": "Empfehlung ist schlüssig und durch P08/P95 gestützt (Lena liegt nach der FS1-Heuristik nicht näher an HOLY). Zu ergänzen: Stenger definiert die Persona als typischen Kunden „aus der Zielgruppe“ (S. 76), FS1 hat bewusst die „heutige Kernkundschaft“ gewählt – auch das kann seine Kritik erklären (siehe P96). Die vorgeschlagenen Schlüsselwerte 44 %/91 % sind an der Quelle bestätigt. „Marco ist auf Abruf erreichbar“ setzt die Schichthypothese P28 voraus."
+  }
+ ],
+ "zusatzbefunde": [
+  {
+   "id": "P90",
+   "aussage": "„Einkäufe oder Erledigungen (z. B. Online-Shopping, Online-Banking)“ nutzen 2026 mindestens wöchentlich 46 % der 14- bis 29- und 61 % der 30- bis 49-Jährigen (gesamt 49 %, seit 2023 stabil zwischen 48 und 50 %).",
+   "phase": "Kauf",
+   "belegstelle": "ARD/ZDF-Medienstudie 2026, gedruckte Folie 55 (14–29: 46, 30–49: 61) und Folie 54 (gesamt 50/48/49/49 für 2023–2026)",
+   "quellen": [
+    {
+     "titel": "ARD/ZDF-Medienstudie 2026, Basispräsentation, Folien 54 und 55",
+     "url": "https://www.media-perspektiven.de/fileadmin/user_upload/media-perspektiven/Medienstudie/Basispraesentation_ARD-ZDF-Medienstudie_2026.pdf",
+     "art": "Studie",
+     "datum": "2026 (Erhebung 27.01.–19.04.2026, n = 2.462)"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "einordnung": "Einkaufsstättenwahl (Stenger S. 67); ACT",
+   "relevanz_fs2": "Kauf-Phase im Persona-Kopf: Online-Erledigungen sind für unter 30-Jährige seltener wöchentliche Routine als für 30- bis 49-Jährige. Die Kategorie mischt Shopping und Banking, daher nur als Tendenz nutzen."
+  },
+  {
+   "id": "P91",
+   "aussage": "51 % der Social-Media-Nutzenden nutzen soziale Netzwerke hauptsächlich (Mehrfachnennung) für „Shopping bzw. Produktsuche“, 53 % für „Inspiration & Ideen finden“. Eine Aufteilung nach Alter zeigt der Bericht dafür nicht.",
+   "phase": "Recherche",
+   "belegstelle": "Bitkom-Studienbericht 2026, S. 9: „Gut die Hälfte sucht in den sozialen Netzwerken nach Inspiration und Ideen (53 Prozent) oder nutzt soziale Netzwerke für Shopping und Produktsuche (51 Prozent).“ Basis: Befragte, die Social Media nutzen (n = 835)",
+   "quellen": [
+    {
+     "titel": "Bitkom: Social Media, Desinformation und Deepfakes – Studie 2026 (CATI, n = 1.006, KW 12–17/2026)",
+     "url": "https://www.bitkom.org/sites/main/files/2026-06/bitkom-studienbericht-desinformation-socialmedia.pdf",
+     "art": "Studie",
+     "datum": "06/2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "einordnung": "APPEAL; Social Search (teilweise); Owned/Earned auf Social Media",
+   "relevanz_fs2": "Schließt die Lücke „Social Search in Deutschland“ teilweise: Produktsuche in sozialen Netzwerken ist verbreitet, ersetzt aber laut keiner gefundenen Quelle die Suchmaschine. Begründet Instagram/TikTok als zweiten Recherche-Touchpoint neben Suchmaschine/KI-Chat."
+  },
+  {
+   "id": "P92",
+   "aussage": "60 % der Internetnutzer (16–69, Okt. 2025) nutzen KI-Chatbots: 26 % regelmäßig, 34 % schon einmal; bei den 16- bis 19-Jährigen nutzen 53 % KI regelmäßig. Von denen, die KI kennen, können sich 28 % die Nutzung beim Shopping für viele Produkte vorstellen, 34 % nur für wenige, 38 % gar nicht. Daraus folgt, dass sich die 35 % „Recherche beim Kauf“ auf S. 41 auf KI-Nutzende beziehen (siehe P19).",
+   "phase": "Entscheidung",
+   "belegstelle": "HDE-Online-Monitor 2026, S. 40: „60 Prozent der Internetnutzer nutzen KI.“ Lesebeispiel „26 Prozent der Internetnutzer nutzen KI-Chatbots bereits regelmäßig“; 1.084 ≤ n ≤ 1.156",
+   "quellen": [
+    {
+     "titel": "HDE-Online-Monitor 2026 (IFH Köln), S. 40–41",
+     "url": "https://einzelhandel.de/images/presse/Pressekonferenz/2026/onlinemonitor26/Online_Monitor_2026.pdf",
+     "art": "Studie",
+     "datum": "06/2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "einordnung": "ASSURE/ACT; KI-Assistent als neuer Touchpoint",
+   "relevanz_fs2": "Richtige Bezugsgröße für die KI-Folie: Der KI-Assistent ist für eine Minderheit schon Kauf-Touchpoint, für 38 % der KI-Kenner beim Shopping aber ausgeschlossen. Werte nach Alter (20–35) fehlen."
+  },
+  {
+   "id": "P93",
+   "aussage": "2025 liefen 56,7 % der deutschen Onlineumsätze über Online-Marktplätze. Amazon ist laut HOLY-AGB ein offizieller Vertriebskanal; ob und zu welchem Preis HOLY dort gelistet ist, ist ungeprüft.",
+   "phase": "Kauf",
+   "belegstelle": "HDE-PM 03.06.2026: „56,7 Prozent der Online-Umsätze in Deutschland wurden im Jahr 2025 über diese Plattformen erzielt“ · Dossier 1/3.3: „Amazon und TikTok-Shop laut AGB offizielle Kanäle, Listings ungeprüft ✔ [12]“",
+   "quellen": [
+    {
+     "titel": "HDE-Pressemitteilung: HDE-Online-Monitor 2026",
+     "url": "https://einzelhandel.de/images/presse/Pressekonferenz/2026/onlinemonitor26/PM_HDE-OnlineMonitor.pdf",
+     "art": "Presse",
+     "datum": "03.06.2026"
+    },
+    {
+     "titel": "Recherche-Dossier, Kap. 1 (Vertrieb) und 7.1 (Kauf: „Handel; Amazon“)",
+     "url": "fallstudie-1-brand-persona/recherche/holy-recherche.md",
+     "art": "Repository",
+     "datum": "14.10.2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "einordnung": "ACT; Kaufkanal Marktplatz (fremder Kanal, Paid/Earned über Bewertungen)",
+   "relevanz_fs2": "Fehlender dritter Kaufweg in P32: Marco könnte über Amazon nachkaufen (Hypothese). Im Selbstversuch (R2) prüfen, ob es ein offizielles Listing gibt und wie Preis pro Portion und Bewertungen dort aussehen."
+  },
+  {
+   "id": "P94",
+   "aussage": "Der FS1-Steckbrief enthält im Block Mediennutzung und Kaufverhalten mehrere Statista-Werte, die nicht in persona-daten.md stehen: Twitch 18 %, Videoinhalte 76 %, Podcasts 38 %, digitale Musik 56 %, Werbeerinnerung über Videoportale 50 % und soziale Medien 46 %, Online-Bewertungen „sehr hilfreich“ 52 %. Nach der Gruppenregel dürfen sie in FS2 nicht verwendet werden, solange sie nicht in persona-daten.md aufgenommen sind.",
+   "phase": "übergreifend",
+   "belegstelle": "persona-steckbrief.md §2 Mediennutzung: „Twitch von 18 % (Ø 10 %) … 76 % Videoinhalte … 38 % Podcasts … 56 % digitale Musik“; Kaufverhalten: „52 % halten Online-Bewertungen für sehr hilfreich … Videoportalen (50 %, Ø 41 %) … sozialen Medien (46 %, Ø 39 %)“; persona-daten.md enthält nur YouTube 73 %, Instagram 71 %, TikTok 58 %",
+   "quellen": [
+    {
+     "titel": "persona-steckbrief.md, §2",
+     "url": "fallstudie-1-brand-persona/persona-steckbrief.md",
+     "art": "Repository",
+     "datum": "19.10.2026"
+    },
+    {
+     "titel": "persona-daten.md, Kernergebnisse",
+     "url": "fallstudie-1-brand-persona/persona-daten.md",
+     "art": "Repository",
+     "datum": "16.10.2026"
+    }
+   ],
+   "herkunft": "Repository",
+   "status_vorschlag": "✔",
+   "einordnung": "Gruppenregel Statista; Mediennutzung",
+   "relevanz_fs2": "Für den Mediennutzungsblock der FS2-Persona die frei zugänglichen ARD/ZDF-2026-Werte (Podcasts 38 %/35 %, Musikstreaming 85 %/57 %) statt der Statista-Werte nutzen oder Yannick um Aufnahme in persona-daten.md bitten (offene Frage des Recherche-Agenten)."
+  },
+  {
+   "id": "P95",
+   "aussage": "Auch mit zwei anderen Maßen liegt Lena nicht näher an HOLY als Marco: Überschneidung der Systemgewichte (Summe der Minima, Maß aus limbic-map.md §5) Lena–HOLY 85 % gegenüber Marco–HOLY 90 %; euklidischer Abstand der Punkte (FS1-Formel) Lena–HOLY ≈ 0,23 gegenüber Marco–HOLY ≈ 0,17. Lena würde nur dann besser passen, wenn das HOLY-Profil in Richtung Balance verschoben wird (Positionierung 2026 laut limbic-map.md §4.3) – das birgt einen Zirkelschluss, wenn es nur geschieht, damit die Persona passt.",
+   "phase": "übergreifend",
+   "belegstelle": "Eigene Rechnung (Python, 30.10.2026) mit Gewichten Lena B45/D15/S40 (Dossier 4.4), Marco B30/D30/S40, HOLY B30/D20/S50 (limbic-map.md §3.2, §4.2); Überschneidungsmaß limbic-map.md §5 („Summe der jeweils kleineren Gewichte“); §4.3 „Trend: Stimulanz bleibt der Anker, Balance steigt, Dominanz sinkt“",
+   "quellen": [
+    {
+     "titel": "limbic-map.md, §4.2, §4.3, §5",
+     "url": "fallstudie-1-brand-persona/limbic-map.md",
+     "art": "Repository",
+     "datum": "23.10.2026"
+    },
+    {
+     "titel": "Recherche-Dossier, 4.4 Limbic-Map-Hypothese",
+     "url": "fallstudie-1-brand-persona/recherche/holy-recherche.md",
+     "art": "Repository",
+     "datum": "14.10.2026"
+    }
+   ],
+   "herkunft": "Repository",
+   "status_vorschlag": "H",
+   "einordnung": "Limbic Map, Heuristik des Teams (keine Kennzahlen nach Häusel)",
+   "relevanz_fs2": "Stützt P08 und P35: Ein Wechsel zu Lena löst das Match-Problem nicht von selbst. Für die Persona-Folie nicht die Zahlen zeigen, sondern das gemeinsame Territorium „Spaß und Kreativität“."
+  },
+  {
+   "id": "P96",
+   "aussage": "Wahrscheinliche Ursache der Fehlpassung: Die FS1-Persona wurde aus Kategoriedaten von Energy-Drink-Konsument:innen (überwiegend Dose) und einer Gründeraussage zum Schichtdienst gebaut, während HOLY sich als Softdrink-Marke für eine breite Zielgruppe positioniert. Die Vorlesung definiert die Persona als typischen Kunden „aus der Zielgruppe“ und verlangt, die Marke im Limbic-Raum der Zielgruppe zu positionieren; FS1 hatte bewusst „Kernzielgruppe“ durch „heutige Kernkundschaft“ ersetzt.",
+   "phase": "übergreifend",
+   "belegstelle": "Stenger S. 76: „Eine Persona verkörpert einen typischen Kunden aus der Zielgruppe eines Unternehmens“ · S. 93: „Positionierung der Marke im entsprechenden Limbic-Raum“ · persona-steckbrief.md §1: „„Kern-Persona (heutige Kernkundschaft)“ statt „Kernzielgruppe““ · §3 Nr. 7: „HOLY sieht sich als Softdrink-Marke [1, 13], unsere Persona-Daten beschreiben Energy-Konsument:innen“",
+   "quellen": [
+    {
+     "titel": "Stenger, Definition Persona; Limbic Map als Hilfsmittel",
+     "url": "Stenger S. 76, S. 93",
+     "art": "Vorlesung",
+     "datum": "o. D."
+    },
+    {
+     "titel": "persona-steckbrief.md, §1 und §3",
+     "url": "fallstudie-1-brand-persona/persona-steckbrief.md",
+     "art": "Repository",
+     "datum": "19.10.2026"
+    },
+    {
+     "titel": "persona-daten.md (Hinweis „Alle Werte beschreiben die Kategorie Energy Drinks … nicht die Kundschaft von HOLY“)",
+     "url": "fallstudie-1-brand-persona/persona-daten.md",
+     "art": "Repository",
+     "datum": "16.10.2026"
+    }
+   ],
+   "herkunft": "Repository",
+   "status_vorschlag": "H",
+   "einordnung": "Persona-Modell (S. 76); Limbic Map (S. 93); Zielgruppe vs. Kundschaft",
+   "relevanz_fs2": "Gehört in die Rückfrage an Stenger (R1) und in einen Satz „Was wir aus FS1 ändern“: Persona als typische Kundin/typischer Kunde aus HOLYs Zielgruppe ausweisen und den Energy-Bezug (Dose) durch HOLY-spezifische Belege (codierte Bewertungen K1/K8, Kurzinterviews) ersetzen."
+  },
+  {
+   "id": "P97",
+   "aussage": "Die Vorlesung nennt in der Phase Problemerkennung/Inspiration ausdrücklich „Hedonistische vs. utilitaristische Bedürfnisse“. Das bietet eine Brücke zwischen Limbic Map und Journey: Bei Marco mischen sich ein utilitaristisches Bedürfnis (wach durch die Schicht) und hedonistische (Geschmack, Abwechslung).",
+   "phase": "Problemerkennung/Inspiration",
+   "belegstelle": "Stenger S. 108: „Mangelerkennung · Hedonistische vs. utilitaristische Bedürfnisse“ (Quelle laut Folie: Kroeber-Riel/Gröppel-Klein 2013, S. 374; Kortum 2017, S. 34 ff.)",
+   "quellen": [
+    {
+     "titel": "Stenger, Die Phasen der Customer Journey",
+     "url": "Stenger S. 108",
+     "art": "Vorlesung",
+     "datum": "o. D."
+    }
+   ],
+   "herkunft": "Vorlesung",
+   "status_vorschlag": "✔",
+   "einordnung": "Customer-Journey-Phasen (S. 108); Anschluss an Limbic Map (Hedonisten-Typ)",
+   "relevanz_fs2": "Erste Phase der Journey-Map: Auslöser zweigeteilt zeigen (Müdigkeit = Mangel, Lust auf Geschmack = hedonistisch). So wird die Limbic-Passung in der Journey sichtbar, ohne eine „Lücke“ zu zeigen. Literaturangaben nur laut Folie, nicht selbst geprüft."
+  },
+  {
+   "id": "P98",
+   "aussage": "Zu den Earned-Touchpoints in Recherche und Entscheidung gehört ein kritisches Video des ZDF-Formats ZDFbesseresser mit dem Titel „Dicke Dosis: Holy Energy und seine gefährlichen Geheimnisse“. Der Inhalt wurde nicht gesichtet.",
+   "phase": "Entscheidung",
+   "belegstelle": "YouTube-oEmbed (abgerufen 30.10.2026): \"title\":\"Dicke Dosis: Holy Energy und seine gefährlichen Geheimnisse\", \"author_name\":\"ZDFbesseresser\"",
+   "quellen": [
+    {
+     "titel": "ZDFbesseresser: Dicke Dosis: Holy Energy und seine gefährlichen Geheimnisse (YouTube)",
+     "url": "https://www.youtube.com/watch?v=NRPEZPprRso",
+     "art": "Presse",
+     "datum": "o. D., abgerufen 30.10.2026"
+    },
+    {
+     "titel": "persona-datenerhebung.md, §5 („Gegengewicht, auch Kritiker“)",
+     "url": "fallstudie-1-brand-persona/persona-datenerhebung.md",
+     "art": "Repository",
+     "datum": "10/2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "einordnung": "ASSURE; Earned Media (kritisch); Bruch 3 „Informationsphase gehört Dritten“",
+   "relevanz_fs2": "Konkretes Beispiel für den negativen Moment der Wahrheit in der Recherche und Begründung für den Blog-Beitrag (z. B. Koffein-Check). Keine Screenshots oder Kommentatorennamen übernehmen; Kommentare nur anonym und sinngemäß."
+  },
+  {
+   "id": "P99",
+   "aussage": "Für die Zeile „Wann?“ der Journey-Map stehen amtliche Zeitfenster zur Verfügung: Abendarbeit 18–23 Uhr, Nachtarbeit 23–6 Uhr (Mikrozensus). Die Mediennutzung erfasst ARD/ZDF nur von 5 bis 24 Uhr per Tagesablauf-Abfrage („gestern“). Für das Fenster 0–5 Uhr, in dem Nachtschichtende Pausen machen, gibt es in keiner geprüften Studie Mediennutzungsdaten.",
+   "phase": "übergreifend",
+   "belegstelle": "Destatis PM N022: „abends (18 bis 23 Uhr), nachts (23 bis 6 Uhr)“ · ARD/ZDF 2026, Folie 5: „Abfrage des Tagesablaufs „gestern“ (Day-After-Recall) von 5.00 Uhr bis 24.00 Uhr“",
+   "quellen": [
+    {
+     "titel": "Destatis Pressemitteilung N022 (Mikrozensus 2023)",
+     "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/04/PD25_N022_13.html",
+     "art": "Gesetz/Behörde",
+     "datum": "28.04.2025"
+    },
+    {
+     "titel": "ARD/ZDF-Medienstudie 2026, Basispräsentation, Folie 5 (Zentrale Kennwerte)",
+     "url": "https://www.media-perspektiven.de/fileadmin/user_upload/media-perspektiven/Medienstudie/Basispraesentation_ARD-ZDF-Medienstudie_2026.pdf",
+     "art": "Studie",
+     "datum": "2026"
+    }
+   ],
+   "herkunft": "Websuche",
+   "status_vorschlag": "✔",
+   "einordnung": "Schichtdienst-Kontext; Grenzen der Datenlage",
+   "relevanz_fs2": "Ersetzt die angenommenen Schichtzeiten aus P28 durch belegte Zeitfenster und macht die Datenlücke in der Nacht sichtbar. Das ist die Pflichtfrage für die offenen Kurzinterviews (R2)."
+  }
+ ],
+ "hinweise": [
+  "Zitierweise ARD/ZDF 2026: Der Agent zitiert die gedruckten Foliennummern; die PDF-Seite ist jeweils Foliennummer + 1 (z. B. Folie 13 = PDF-Seite 14). In den PDF-Metadaten steht noch „ARD/ZDF Medienstudie 2024 Basispräsentation“ (Vorlagenrest); nach dem Deckblatt als „ARD/ZDF-Medienstudie 2026“ zitieren.",
+  "Nicht verrechnen: ARD/ZDF (mind. wöchentlich, Bevölkerung ab 14), HDE/IFH (Frage „Welche sozialen Netzwerke nutzen Sie?“ ohne Häufigkeit, Internetnutzer 16–69, kleine Altersgruppen), Bitkom (CATI, Internetnutzer ab 16) und Statista CI (Energy-Konsument:innen 18–64) haben unterschiedliche Basen. Auf Folien je Wert Quelle und Jahr nennen; ARD/ZDF 2025 (Plattformen nach Alter) und 2026 (nur gesamt) nicht mischen.",
+  "Wichtigste Korrektur: P19. Die 35 % „KI-Chatbots zur Produktrecherche“ des HDE beziehen sich nach Grafikbasis (n ≤ 695 ≈ 60 % von 1.156) sehr wahrscheinlich auf KI-Nutzende, nicht auf alle Internetnutzer; HDE-Überschrift und PM formulieren das verkürzt. Auf der Folie die Basis nennen.",
+  "P21: Bitkom-Pressemitteilung zu Social Commerce ist laut Seitenmetadaten am 08.01.2026 erschienen; „08. Januar 2025“ im Fließtext ist ein Tippfehler. Die Lücke im Recherche-JSON ist damit geschlossen.",
+  "Feld „veraenderungen_seit_fs1“: „Discord und Twitch als Gaming-Nische … bestätigt“ überzieht – Altersdaten zur Twitch-Reichweite bestätigen nicht Marcos Nutzung, sie machen die Annahme nur plausibel.",
+  "Digital News Report 2026 (Deutschland): Das PDF unter leibniz-hbi.de/wp-content/uploads/2026/06/AP83_DNR26_Deutschland.pdf liefert am 30.10.2026 HTTP 404; Zenodo blockt (403). Laut HBI-Projektseite: YouGov-Online-Panel, Internetnutzer ab 18, Feldzeit 09.–22.01.2026, ca. 2.000 Befragte; die Länderseite des Reuters Institute enthält keine Altersdaten. Die Studie betrifft nur Nachrichtennutzung und ist für eine Getränke-Journey wenig relevant – Lücke bleibt, aber ohne große Folgen.",
+  "Online-Bewertungen nach Alter: Auch die Gegenrecherche fand keine Bitkom-Zahlen nach 2020. Wer den Wert nutzt, nennt 2020; alternativ eigene Codierung der Bewertungen (R2) als Beleg.",
+  "Bildrechte: ARD/ZDF-, HDE- und Bitkom-Grafiken nur als eigene Nachzeichnung mit Quellenangabe verwenden und die Frage in die Mail an Stenger aufnehmen (R1).",
+  "Rechtliche Einordnungen (LÖG NRW, Jugendschutz/Altersgrenzen in agents.md) sind keine Rechtsberatung.",
+  "Personenbezogene Daten: In den Befunden stehen nur Gründer (öffentliche Personen) und Autor:innen von Studien; keine Namen aus Bewertungen oder Kommentaren. In FS2-Dateien bei KI-Tools nur „KI-Tools“ schreiben, keine Produkt- oder Modellnamen (die ARD/ZDF- und HDE-Grafiken nennen solche Namen in ihren Beschriftungen).",
+  "Nicht prüfbar blieben: HOLY im TikTok Shop DE, bei Rossmann/Penny/famila, auf Amazon; nächtliche Öffnung und HOLY-Listung von Märkten in Dortmund; Meta-Werbebibliothek (Alter und Geschlecht der Werbereichweite). Diese Punkte bleiben Lücken für den Selbstversuch (R2).",
+  "Arbeitsdateien (nur Hilfsdateien, nichts im Repository geändert): (Arbeitsordner der Sitzung) (geladene PDFs, Textauszüge, gerenderte Folienbilder)."
+ ]
+}
