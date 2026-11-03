@@ -55,9 +55,12 @@
     <p class="krumen"><a href="index.html">Start</a> › Energy › Raspberry Raptor</p>
 
     <div class="produkt zweispaltig breit-rechts">
-      <!-- Eigene Platzhalterfläche statt HOLY-Produktfoto (7.3, ✔ R30): schlichte Dose ohne Aufdruck, kein Verpackungsdesign -->
-      <figure class="platzhalter klebrig">
-        <div class="flaeche">
+      <!-- Öffentliche Fassung: eigene Platzhalterfläche statt HOLY-Produktfoto (7.3, ✔ R30): schlichte Dose ohne Aufdruck,
+           kein Verpackungsdesign. Interne Fassung (intern/bilder.js): Produktbild von de.holy.com mit Bildnachweis und kleine
+           Galerie (Packshots, Zubereitung); die Platzhalterfläche wird dann ausgeblendet. -->
+      <div class="klebrig">
+      <figure class="platzhalter produktbild" data-intern="web-produkt-hero" data-intern-held>
+        <div class="flaeche nur-ohne-bild">
           <svg viewBox="0 0 200 170" role="img" aria-label="Schlichte Zeichnung einer Dose mit Dosierlöffel, ohne Aufdruck">
             <path d="M40 40 V140 A60 14 0 0 0 160 140 V40" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="4"/>
             <ellipse cx="100" cy="40" rx="60" ry="14" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="4"/>
@@ -67,8 +70,17 @@
             <ellipse cx="184" cy="116" rx="10" ry="7" fill="#FFD007" stroke="#1D1D1B" stroke-width="3"/>
           </svg>
         </div>
-        <figcaption>Platzhalter: eigenes Produktfoto folgt</figcaption>
+        <div class="foto bildplatz" hidden></div>
+        <figcaption data-intern-nachweis>Platzhalter: eigenes Produktfoto folgt</figcaption>
       </figure>
+      <div class="galerie" data-intern-gruppe data-intern-galerie role="group" aria-label="Weitere Produktbilder" hidden>
+        <button type="button" data-intern="web-produkt-hero" aria-pressed="true" hidden></button>
+        <button type="button" data-intern="web-produkt-galerie-1" aria-pressed="false" hidden></button>
+        <button type="button" data-intern="web-produkt-galerie-2" aria-pressed="false" hidden></button>
+        <button type="button" data-intern="web-produkt-galerie-3" aria-pressed="false" hidden></button>
+        <button type="button" data-intern="web-produkt-galerie-4" aria-pressed="false" hidden></button>
+      </div>
+      </div>
 
       <div>
         <h1>HOLY Energy Raspberry Raptor</h1>
@@ -84,20 +96,25 @@
              Grundpreis ✔ R98, gerechnet aus 7 g je Portion (✔ S92): 1,99 € / 7 g = 284,29 €/kg; 12,49 € / 70 g = 178,43 €/kg;
              39,99 € / 350 g = 114,26 €/kg. Starter Set: Füllmenge nicht im Dossier → offen. -->
         <h2 style="font-size:20px; margin-top:16px" id="packung-titel">Packung wählen<span class="anm" data-ids="✔ X08 · ✔ R98 · ✔ B09 · ✔ T20 · ✔ S92" data-ziel=".optionen">Was wir ändern: Alle Packungen in einer Liste, jede mit Preis je Portion und Grundpreis – Marco vergleicht Probier-Portion, Starter Set und 50er-Dose, ohne zu rechnen. Warum: Marco rechnet in Preis pro Portion (Persona); Baymard fand, dass 86 % der Shops keinen Preis je Einheit zeigen und Nutzer sich dann verrechnen. Vorbild zooplus: Grundpreis direkt neben dem Packungspreis. Der Grundpreis ist aus 7 g je Portion gerechnet; die Füllmenge des Starter Sets ist noch offen.</span></h2>
+        <!-- interne Fassung: Packshot je Packung (data-intern, alt="", weil der Knopftext die Packung nennt) -->
         <div class="optionen" role="radiogroup" aria-labelledby="packung-titel">
-          <button type="button" class="option" role="radio" data-packung="set" aria-checked="true">
+          <button type="button" class="option" role="radio" data-packung="set" aria-checked="true" data-intern="web-packung-set" data-intern-deko>
+            <span class="packbild bildplatz" hidden></span>
             <span class="name">Starter Set Energy <span class="empfohlen">Für den Einstieg</span></span><span class="preis">24,99 €</span>
             <span class="details">14 Drinks + Shaker, Gratisversand · 1,79 € je Drink · Grundpreis offen</span>
           </button>
-          <button type="button" class="option" role="radio" data-packung="50" aria-checked="false">
+          <button type="button" class="option" role="radio" data-packung="50" aria-checked="false" data-intern="web-packung-50" data-intern-deko>
+            <span class="packbild bildplatz" hidden></span>
             <span class="name">50 Portionen <span class="empfohlen">Vorrat</span></span><span class="preis">39,99 €</span>
             <span class="details">0,80 € je Portion · 114,26 € / kg*</span>
           </button>
-          <button type="button" class="option" role="radio" data-packung="10" aria-checked="false">
+          <button type="button" class="option" role="radio" data-packung="10" aria-checked="false" data-intern="web-packung-10" data-intern-deko>
+            <span class="packbild bildplatz" hidden></span>
             <span class="name">10 Portionen</span><span class="preis">12,49 €</span>
             <span class="details">1,25 € je Portion · 178,43 € / kg*</span>
           </button>
-          <button type="button" class="option" role="radio" data-packung="1" aria-checked="false">
+          <button type="button" class="option" role="radio" data-packung="1" aria-checked="false" data-intern="web-packung-1" data-intern-deko>
+            <span class="packbild bildplatz" hidden></span>
             <span class="name">1 Portion zum Probieren</span><span class="preis">1,99 €</span>
             <span class="details">1,99 € je Portion · 284,29 € / kg*</span>
           </button>
@@ -239,7 +256,13 @@
     <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
     <div class="kennung">
       <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</p>
+      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
+      <!-- nur in der internen Fassung sichtbar (konzept.js, sobald Bilder aus intern/ eingebaut sind) -->
+      <div data-nur-intern hidden>
+        <p>Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.</p>
+        <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
+        <ul class="bildnachweise" data-intern-liste></ul>
+      </div>
     </div>
     <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
     <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
@@ -248,6 +271,9 @@
   </div>
 </footer>
 
+<!-- Interne Fassung: intern/bilder.js (per .gitignore ausgeschlossen, nicht im Repository und nicht auf GitHub Pages)
+     setzt window.INTERN_BILDER; fehlt die Datei (öffentliche Fassung), bleiben Platzhalter und eigene Zeichnungen. -->
+<script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <!-- Erzeugt am 03.11.2026 im Workflow zu Fallstudie 2 (Bau der Konzept-Webseite nach gestaltungsplan.md Abschnitt 7).
 KI-gestützt erstellt, Prüfung durch die Gruppe offen. Keine neue Websuche in diesem Schritt: Alle Fakten stammen aus dem
-Recherche-Dossier FS2 (Befund-IDs), Gestaltung und Texte sind Entwürfe. Automatisch geprüft mit werkzeuge/pruefen.mjs. -->
+Recherche-Dossier FS2 (Befund-IDs), Gestaltung und Texte sind Entwürfe. Automatisch geprüft mit werkzeuge/pruefen.mjs.
+Ergänzt am 03.11.2026 im Workflow D06 (Einbau Bilder): interne Fassung mit HOLY-Produktbildern aus intern/ (Abschnitt 3a),
+Prüfung beider Fassungen; keine neue Websuche in diesem Schritt (Bilder und Nachweise aus dem Beschaffungsschritt von D06). -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
@@ -11,7 +13,10 @@ HOLY · Persona Marco (FS1, fiktiv) · Fallstudie 2 „Customer Journey“, Aufg
 
 > **Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung
 > möglich.** HOLY-Wortmarke nur im Kopf (mit Einverständnis des Gründers, Freigabe durch Yannick am 03.11.2026), keine
-> HOLY-Fotos oder Screenshots, keine HOLY-Schriften. Nichts wird gesendet oder gespeichert. Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsberatung.
+> HOLY-Schriften. **Öffentliche Fassung** (Repository, GitHub Pages): keine HOLY-Fotos oder Screenshots, nur eigene
+> Zeichnungen und Platzhalter. **Interne Fassung** (nur im Hörsaal): zusätzlich HOLY-Produktbilder aus `intern/`
+> (per `.gitignore` ausgeschlossen), jedes mit Bildnachweis (Abschnitt 3a). Nichts wird gesendet oder gespeichert.
+> Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsberatung.
 
 ## 1 Zweck
 
@@ -46,15 +51,62 @@ Liste aller Stationen.
 |---|---|---|
 | Hinweisbalken fest und nicht ausblendbar | erstes Element jeder Seite, `position: sticky` oben, ohne Knopf, wörtlich „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“; steht auf jedem Bildschirmfoto | `pruefen.mjs` (Text, oben, nach dem Scrollen) |
 | `noindex,nofollow` | `<meta name="robots" content="noindex,nofollow">` auf jeder Seite | `pruefen.mjs` |
-| Logo nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, Freigabe 03.11.2026) mit „Konzept“ darunter; Quelle im Fuß jeder Seite; kein gelbes Oval, kein Verpackungsdesign | `pruefen.mjs` (nur dieses eine Bild erlaubt), Sichtprüfung |
-| keine fremden Bilder | nur eigene Inline-SVG (Skizze „Video → Tag → Shop“, Dose ohne Aufdruck, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) und die türkise Platzhalterfläche mit „Platzhalter: eigenes Produktfoto folgt“; außer der Wortmarke keine `img`, kein `video`, `iframe` | `pruefen.mjs` |
-| keine Datenübermittlung | kein `form`, kein `input`; Knöpfe führen nur zur nächsten Konzeptseite; Auswahlknöpfe (Packung, Trinkhäufigkeit, Opt-in) ändern nur die Anzeige; kein `localStorage`, keine Cookies | `pruefen.mjs` |
+| Logo nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, Freigabe 03.11.2026) mit „Konzept“ darunter; Quelle im Fuß jeder Seite; kein gelbes Oval, kein Verpackungsdesign | `pruefen.mjs` (öffentlich nur dieses eine Bild erlaubt), Sichtprüfung |
+| öffentlich keine fremden Bilder | öffentliche Fassung: nur eigene Inline-SVG (Skizze „Video → Tag → Shop“, Dose ohne Aufdruck, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) und die türkise Platzhalterfläche mit „Platzhalter: eigenes Produktfoto folgt“; außer der Wortmarke keine `img`, kein `video`, `iframe`. Interne Fassung: zusätzlich `img` nur aus `intern/bilder/` (Abschnitt 3a) | `pruefen.mjs` (beide Fassungen) |
+| keine Datenübermittlung | kein `form`, kein `input`; Knöpfe führen nur zur nächsten Konzeptseite; Auswahlknöpfe (Packung, Trinkhäufigkeit, Opt-in, Galerie der internen Fassung) ändern nur die Anzeige; kein `localStorage`, keine Cookies | `pruefen.mjs` |
 | keine externen Anfragen | Schriften lokal (`schriften/`), kein CDN, keine Analyse-Skripte; Quellen stehen als Text, nicht als Link | `pruefen.mjs` (Netz gesperrt, 0 Anfragen) |
 | Daten nur mit Befund-ID | jede übernommene Zahl hat im Code einen Kommentar mit Befund-ID und im Präsentationsmodus eine Anmerkung; alles andere ist sichtbar als „Beispielwert“, „Beispiel“, „Platzhalter“ oder „Beispielrechnung“ markiert (Abschnitt 5) | Sichtprüfung |
 | Leitplanken Dossier 8.3 | keine Fokus-, Wach-, Leistungs-, Gesundheits- oder Abnehmversprechen; Koffein nur Etikett- und EFSA-Werte mit Quelle; kein „erst ab 18 erlaubt“; Grundpreis bei jedem Preis (beim Starter Set offen, Abschnitt 7); „Werbung“ neben Creator-Code | Sichtprüfung; vor dem Änderungsstopp abhaken |
 | KI-Offenlegung und Stand | Fuß jeder Seite: „Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026“ | Sichtprüfung |
 | Gestaltung (Abschnitt 3) | Creme #F3EDE1, Schwarz #1D1D1B, Gelb #FFD007 nur als Fläche (Knöpfe, Bühnen, Marker), nie als Schrift auf Creme; Nebentext #5C5547; Türkis nur Platzhalter | `pruefen.mjs` (Kontrast jedes sichtbaren Textes ≥ 4,5 : 1, groß ≥ 3 : 1) |
 | Mobil zuerst | 390 px ohne waagerechtes Scrollen, ab 900 px Produktseite zweispaltig | `pruefen.mjs` (390 und 1280 px) |
+
+## 3a Interne Fassung mit HOLY-Bildern (nur Hörsaal)
+
+Auftrag Yannick, 03.11.2026 (KI-Nachweis FS2 Nr. 15): Bilder von HOLY herunterladen, Webseite und Präsentation sollen gut
+aussehen, Nutzung nur privat in der Uni. Damit die Bilder nicht über das öffentliche Repository und GitHub Pages
+verbreitet werden, gibt es **zwei Fassungen derselben Dateien**:
+
+| | öffentliche Fassung | interne Fassung |
+|---|---|---|
+| Wo | Repository, GitHub Pages, jede Kopie ohne `intern/` | nur auf Rechnern, auf denen der Ordner `konzept-website/intern/` liegt (Gruppenordner) |
+| Bilder | Wortmarke, eigene Zeichnungen, Platzhalter (wie bisher) | zusätzlich 20 Bilddateien aus `intern/bilder/`: Produktbild Raspberry Raptor, Galerie, Packshots, Versandkarton (Community-Foto), Shaker, Zubereitung, SQUAD-Grafiken, Regal im Handel |
+| Fuß | „Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.“ | stattdessen „Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.“ und die Liste „Bildnachweise auf dieser Seite“ |
+| Bildschirmfotos | `_vorschau/` (versioniert) | `intern/vorschau/` (ausgeschlossen) |
+
+**So funktioniert es:** Jede Seite lädt `<script src="intern/bilder.js">` vor `assets/konzept.js`. Die Datei setzt
+`window.INTERN_BILDER` (je Schlüssel: Datei, alt, Nachweis, Motiv, Quelle, Pixel). `konzept.js` setzt in jedes Element
+mit `data-intern="schlüssel"` ein `<img>` mit `width`/`height` und `alt` (`alt=""` nur in Knöpfen und Links, deren Text
+die Packung schon nennt: `data-intern-deko`); Bilder unter dem ersten Bildschirm mit `loading="lazy"`. Fehlt
+`intern/bilder.js` oder lädt ein Bild nicht, bleibt bzw. kommt die Platzhalterfläche zurück – ohne kaputtes Bild-Symbol;
+neue Bildplätze bleiben dann ausgeblendet (`hidden`). Angenommen werden nur Dateien aus `intern/bilder/`.
+Hinweisbalken, `noindex`, keine Formulare, keine externen Anfragen und alle Rechnungen sind in beiden Fassungen gleich.
+
+**Bildplätze** (Schlüssel aus `intern/bilder.js`, Auswahl im Beschaffungsschritt von D06; Herkunft je Bild steht im Fuß
+der Seite und in `intern/bilder.js`, Abruf jeweils 03.11.2026):
+
+| Seite | Platz | Schlüssel | Herkunft |
+|---|---|---|---|
+| `index.html` | Produkt-Tag im Knopf „Zum Produkt aus dem Video“ und Produktkarte neben der Skizze (Skizze bleibt) | `web-start-video` | HOLY-Produktseite Raspberry Raptor |
+| `index.html` | Teaser „Starter Set Energy“ (gelber Kasten) | `web-start-teaser-set` | HOLY-Shop Starter Set Energy, freigestellt |
+| `koffein-check.html` | ein ruhiges Bild unter „Wie viel Koffein steckt in einer Portion?“: ein Sachet = eine Portion, kein Etikettbild | `web-koffein-portion` | HOLY-Shop, Variante „1 Portion“ |
+| `produkt.html` | großes Produktbild (statt Platzhalterfläche) und Galerie mit 5 Bildern (Klick zeigt das Bild groß) | `web-produkt-hero`, `web-produkt-galerie-1` … `-4` | HOLY-Produktseite (Produktbild, Packshots, Zubereitung) |
+| `produkt.html` | Packshot je Packung in „Packung wählen“ | `web-packung-set`, `-50`, `-10`, `-1` | HOLY-Shop, freigestellt |
+| `warenkorb.html` | Vorschaubild am Posten (je nach `?packung=`) | `web-warenkorb-{packung}` | wie Packungswahl |
+| `danke.html` | Versandkarton im Kopf · Shaker bei Schritt 2 · Fotos zu Zubereitungsschritt 2 und 3 | `web-danke-paket`, `web-danke-shaker`, `web-danke-zubereitung-2`, `-3` | Community-Foto, von HOLY auf „Our Story“ gezeigt · HOLY-Shop · HOLY-Produktseite |
+| `squad.html` | Schriftzug SQUAD Rewards · Coins im Kontostand · Abzeichen in den vier Level · Packshot beim Nachkauf | `web-squad-logo`, `web-squad-coins`, `web-squad-level-1` … `-4`, `web-warenkorb-50` | Grafiken von de.holy.com (Rewards-Seite, Menübild) · HOLY-Shop |
+| `haendler.html` | Regal im Handel im Kopf | `web-haendler-regal` | Foto aus der Lebensmittel Zeitung vom 10.04.2026 (Ausschnitt, Markt nicht benannt) – kein HOLY-Bild |
+
+**Kennzeichnung:** Die Bilder sind Werbe- und Produktbilder der HOLY Softdrinks GmbH bzw. Fotos Dritter, keine eigenen
+Fotos der Gruppe. Große Bilder tragen den Nachweis direkt darunter, alle übrigen stehen im Fuß der Seite. Eigene
+Zeichnungen (Skizze, Kalender, Siegel, QR-Platzhalter) bleiben, wo sie etwas erklären.
+
+**Interne Fassung öffnen:** Ordner `intern/` (mit `bilder.js` und `bilder/`) aus dem Gruppenordner nach
+`fallstudie-2-customer-journey/konzept-website/intern/` legen, dann `index.html` wie in Abschnitt 8 öffnen – die Bilder
+erscheinen automatisch, im Fuß steht der Bildnachweis. Fehlt der Ordner, sieht man die öffentliche Fassung. Vor jedem
+Commit `git status` prüfen: `intern/` darf nie auftauchen (`git check-ignore -v fallstudie-2-customer-journey/konzept-website/intern/bilder.js`).
+Die Freigabe zur Veröffentlichung der Bilder (KI-Nachweis FS2 Nr. 17) ist ein eigener späterer Schritt; bis dahin bleiben
+sie in `intern/`.
 
 ## 4 Präsentationsmodus und Parameter
 
@@ -115,6 +167,9 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
   Vorbilder kommen aus dem Dossier (Websuche früherer Schritte, mit Befund-ID). Aufbau, Gestaltung, Texte und
   Programmierung sind KI-gestützte Entwürfe (Modellwissen über Webgestaltung), nicht belegt und von der Gruppe zu prüfen.
 - Schriften: [`schriften/HERKUNFT.txt`](schriften/HERKUNFT.txt) (Bricolage Grotesque, OFL 1.1, aus FS1 kopiert).
+- Interne Bilder: Herkunft (Seite und Bildadresse), Abrufdatum 03.11.2026, Bearbeitung (freigestellt, Ausschnitt) und
+  Beschreibung je Bild in `intern/bilder.js` (nicht im Repository); sichtbar im Fuß jeder Seite der internen Fassung.
+  Beschafft im Workflow D06 per Websuche bzw. Download von de.holy.com und lebensmittelzeitung.net.
 
 ## 7 Offen (für die Gruppe)
 
@@ -133,10 +188,19 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
    schriftlich mit Umfang ablegen (Empfehlung der Abnahme).
 7. **Folie 08:** fünf Rahmen; die Bildschirmfotos erzeugt `werkzeuge/folie08-bilder.mjs` (Produktseite mit gewählter
    50er-Dose ab „Packung wählen“, Danke-Seite ab „So geht's weiter“), damit Bild und Anmerkungszeile zusammenpassen.
+   Ohne Schalter öffentliche Fassung (`intern/` gesperrt) nach `../praesentation/bilder/`; mit `--intern` interne
+   Fassung nach `../praesentation/intern/bilder/` (Schlüssel `konzept-01` … `konzept-05` in
+   `../praesentation/intern/bilder.js`). Das Skript bricht ab, wenn interne Bilder in einen versionierten Ordner
+   gehen würden. Im oberen Bildschirm von `konzept-02` steht noch kein HOLY-Bild (das Sachet folgt weiter unten).
+8. **Interne Bilder prüfen:** Auswahl, Zuschnitt und Nachweise in `intern/bilder.js` gegen die Quellen abgleichen
+   (Kontaktbogen `intern/kontaktbogen.png`); das Regalfoto stammt aus der Lebensmittel Zeitung (Bildnachweis hinter
+   der Bezahlschranke nicht einsehbar).
 
 ## 8 Lokal öffnen
 
 - **Doppelklick** auf `index.html` (oder im Browser „Datei öffnen“). Es wird keine Internetverbindung gebraucht.
+  Liegt `intern/` im Ordner, öffnet sich die interne Fassung mit HOLY-Bildern (Abschnitt 3a), sonst die öffentliche.
+  Im Browser-Fehlerprotokoll steht in der öffentlichen Fassung eine Meldung zu `intern/bilder.js` (Datei fehlt) – gewollt.
 - Präsentationsmodus: an die Adresse `?anmerkungen=1` anhängen, z. B. `…/konzept-website/index.html?anmerkungen=1`.
 - Handyansicht am Laptop: Entwicklerwerkzeuge (F12) → Geräteansicht, Breite 390 px.
 - Alternativ mit kleinem Server im Ordner `konzept-website/`: `python3 -m http.server 8000`, dann
@@ -145,8 +209,13 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
 ## 9 Prüfen und Bildschirmfotos
 
 ```bash
-node fallstudie-2-customer-journey/konzept-website/werkzeuge/pruefen.mjs            # alle Prüfungen + Bildschirmfotos
+export PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core       # Pfad je nach Rechner
+node fallstudie-2-customer-journey/konzept-website/werkzeuge/pruefen.mjs                        # beide Fassungen + Bildschirmfotos
+node fallstudie-2-customer-journey/konzept-website/werkzeuge/pruefen.mjs --fassung oeffentlich  # nur öffentlich (wie GitHub Pages)
+node fallstudie-2-customer-journey/konzept-website/werkzeuge/pruefen.mjs --fassung intern       # nur intern (braucht intern/bilder.js)
 node fallstudie-2-customer-journey/konzept-website/werkzeuge/pruefen.mjs --ohne-bilder
+node fallstudie-2-customer-journey/konzept-website/werkzeuge/folie08-bilder.mjs                 # Folie 08, öffentlich
+node fallstudie-2-customer-journey/konzept-website/werkzeuge/folie08-bilder.mjs --intern        # Folie 08, intern
 ```
 
 Playwright wird mit `require(process.env.PLAYWRIGHT_CORE || 'playwright')` geladen, Chromium über `CHROME_PFAD`
@@ -156,10 +225,26 @@ Bilder, Schrift geladen, Kontrast jedes sichtbaren Textes, waagerechtes Scrollen
 (Marker, Rundgang, Weitergabe von `?anmerkungen=1`) und die Rechnungen (Packungswahl, Warenkorb je Packung, Code aus
 der Adresse, Nachfüll-Rechner).
 
+Je Fassung zusätzlich (seit 03.11.2026, D06): **öffentlich** – Anfragen nach `intern/` gesperrt wie auf GitHub Pages
+(die erwartete Fehlermeldung zu `intern/bilder.js` zählt nicht), kein `window.INTERN_BILDER`, außer der Wortmarke kein
+Bild, Satz „Keine HOLY-Fotos …“ sichtbar, kein interner Nachweis. **Intern** – jeder Eintrag in `intern/bilder.js` mit
+Datei in `intern/bilder/`, alt, Nachweis und Pixelmaß; jedes Bild geladen, mit `alt`, `width`, `height`; kein Bild im
+ersten Bildschirm mit `loading="lazy"`; jeder Bildplatz mit vorhandenem Schlüssel gefüllt; Bildnachweis im Fuß
+wörtlich; Galerie der Produktseite tauscht Bild und Nachweis; Vorschaubild im Warenkorb passt zu `?packung=`. Fehlt
+`intern/bilder.js`, gibt es eine **Warnung** statt eines Fehlers, und nur die öffentliche Fassung wird geprüft.
+
+**Ergebnis am 03.11.2026 (Einbau der internen Bilder, D06):** beide Fassungen „Alle Prüfungen bestanden“, 0 externe
+Anfragen, keine Konsolenfehler; die öffentlichen Bildschirmfotos in `_vorschau/` und `../praesentation/bilder/` sind
+byteidentisch zum Stand vorher (öffentliche Fassung unverändert). Gegenproben: ohne `intern/` → Warnung, öffentliche
+Fassung bestanden; eine fehlende Bilddatei → Fehler gemeldet und Platzhalter statt kaputtem Bild. Angesehen: alle 7 Seiten
+der internen Fassung bei 390 px (ganze Seite), Start- und Produktseite bei 1280 px.
+
 **Ergebnis am 03.11.2026 (nach den Korrekturen der Abnahme):** alle Prüfungen bestanden, 0 externe Anfragen, keine
 Konsolenfehler. Zusätzlich angesehen: Kopf bei 320, 390 und 1280 px (kein waagerechtes Scrollen, Navigation bricht bei
 320 px um).
 
 Bildschirmfotos 390 × 844 (Normalmodus, oberer Bildschirm) in [`_vorschau/`](_vorschau/): `01-index.png`,
 `02-koffein-check.png`, `03-produkt.png`, `04-warenkorb.png`, `05-danke.png`, `06-squad.png`, `07-haendler.png`.
-Sie werden bei jedem Prüflauf neu geschrieben.
+Sie werden bei jedem Prüflauf neu geschrieben – **immer aus der öffentlichen Fassung**, damit nie ein HOLY-Foto ins
+Repository kommt. Die interne Fassung schreibt nach `intern/vorschau/`: `0n-….png` (oberer Bildschirm), `0n-…-ganz.png`
+(ganze Seite, 390 px) und `0n-…-1280.png` (ganze Seite, 1280 px).

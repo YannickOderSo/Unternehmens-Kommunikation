@@ -1,76 +1,81 @@
 /* =============================================================================
    03-ist-analyse.css – Folie 03 · A1 IST-Analyse (Moodboard, Zählung, Proben,
    Bewertungszeile je Phase). Gestaltungsplan 5.1 Zeile 03 und Abschnitt 8.
-   Abweichung: Zählung 84 px statt 160 px, je Band ausgerichtet (Platz).
+   Abweichung: Zählung 84 px statt 160 px, je Band ausgerichtet (Platz). Umbau 03.11.2026 (D06): Bänder über
+   die volle Breite mit Kacheln 258 × 122 für die Bilder der internen Fassung; Zählung vor dem Bandnamen.
    ============================================================================= */
-/* Bänder Paid · Owned · Earned (Spalten 1–8) */
+/* Bänder Paid · Owned · Earned über die volle Breite (Umbau 03.11.2026, D06: größere Bildkacheln).
+   Je Band: Zählung (84 px, Klick 1, rechtsbündig in 104 px) · Bandname (28 px) · Kacheln 258 × 122
+   (Seitenverhältnis der internen Bilder 380 × 180, also 1,47-fach scharf). Kacheln ab x = 420,
+   Owned endet bei x = 1774. Trennlinie in Mittel warm 7 px über Owned und Earned. */
 #f03 .e3-band {
   left: 128px;
-  width: 1098px;
-  height: 90px;
+  width: 1664px;
+  height: 122px;
   display: flex;
   align-items: center;
-  gap: 14px;
-}
-#f03 .e3-band--paid { top: 368px; }
-#f03 .e3-band--owned { top: 464px; border-top: 2px solid var(--p-mittel); padding-top: 6px; height: 98px; box-sizing: border-box; }
-#f03 .e3-band--earned { top: 568px; border-top: 2px solid var(--p-mittel); padding-top: 6px; height: 98px; box-sizing: border-box; }
-#f03 .e3-band-name {
-  width: 74px;
-  flex: none;
-  font-size: 22px;
-  line-height: 1.2;
-  color: var(--p-schrift-2);
-}
-#f03 .e3-k {
-  flex: none;
-  width: 190px;
-  height: 90px;
-}
-#f03 .e3-k[data-status="offen"] { padding: 8px 10px 4px; }
-#f03 .e3-k[data-status="offen"][data-art="screenshot"] { padding-top: 18px; }
-#f03 .e3-k[data-status="offen"][data-art="screenshot"]::before { height: 10px; }
-#f03 .e3-k .p-platzhalter { font-size: 22px; line-height: 1.12; }
-#f03 .e3-k .p-kachel-art { display: inline; font-size: 22px; }
-#f03 .e3-k .p-kachel-offen { display: inline; font-size: 22px; font-weight: 400; }
-/* Rückfall b19: eigene Textgrafik der leeren Blog-Seite */
-#f03 .e3-k--blog { display: flex; align-items: center; }
-#f03 .e3-k--blog .p-rueckfall { padding: 4px 12px; display: grid; gap: 2px; }
-#f03 .e3-blog-pfad { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
-#f03 .e3-blog-null {
-  font-family: var(--schrift-display);
-  font-size: 30px;
-  font-weight: 750;
-  font-stretch: 85%;
-  line-height: 1.05;
-}
-#f03 .e3-blog-stand { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
-
-/* Zählung nach Intersport (S. 113), rechts je Band */
-#f03 .e3-zahl {
-  left: 1258.67px;
-  width: 533.33px;
-  display: flex;
-  align-items: baseline;
   gap: 16px;
 }
-#f03 .e3-zahl--paid { top: 372px; }
-#f03 .e3-zahl--owned { top: 472px; }
-#f03 .e3-zahl--earned { top: 576px; }
+#f03 .e3-band--paid { top: 368px; }
+#f03 .e3-band--owned { top: 502px; }
+#f03 .e3-band--earned { top: 636px; }
+#f03 .e3-band--owned::before,
+#f03 .e3-band--earned::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -7px;
+  height: 2px;
+  background: var(--p-mittel);
+}
+#f03 .e3-zahl {
+  flex: none;
+  width: 104px;
+  text-align: right;
+}
 #f03 .e3-zahl-wert {
   font-family: var(--schrift-display);
   font-size: 84px;
   font-weight: 750;
   font-stretch: 85%;
   line-height: 1;
-  min-width: 100px;
-  text-align: right;
 }
-#f03 .e3-zahl-name { font-size: 28px; font-weight: 600; }
-#f03 .e3-fehlen { left: 1258.67px; top: 680px; }
+#f03 .e3-band-name {
+  flex: none;
+  width: 156px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+#f03 .e3-k {
+  flex: none;
+  width: 258px;
+  height: 122px;
+}
+#f03 .e3-k[data-status="offen"] { padding: 10px 12px 6px; }
+#f03 .e3-k[data-status="offen"][data-art="screenshot"] { padding-top: 22px; }
+#f03 .e3-k[data-status="offen"][data-art="screenshot"]::before { height: 12px; }
+#f03 .e3-k .p-platzhalter { font-size: 22px; line-height: 1.15; }
+#f03 .e3-k .p-kachel-art { display: inline; font-size: 22px; }
+#f03 .e3-k .p-kachel-offen { display: inline; font-size: 22px; font-weight: 400; }
+/* Rückfall b19 (öffentliche Fassung): eigene Textgrafik der leeren Blog-Seite */
+#f03 .e3-k--blog { display: flex; align-items: center; }
+#f03 .e3-k--blog[data-status="rueckfall"] .p-rueckfall { padding: 4px 14px; display: grid; gap: 2px; }
+#f03 .e3-blog-pfad { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
+#f03 .e3-blog-null {
+  font-family: var(--schrift-display);
+  font-size: 36px;
+  font-weight: 750;
+  font-stretch: 85%;
+  line-height: 1.05;
+}
+
+/* Hinweise im freien Teil des Bands Earned (rechts der drei Kacheln, Spalten 9–12) */
+#f03 .e3-fehlen { left: 1258.67px; top: 646px; }
 #f03 .e3-legende {
   left: 1258.67px;
-  top: 714px;
+  top: 684px;
   width: 533.33px;
   font-size: 22px;
   line-height: 1.25;
@@ -78,29 +83,39 @@
 }
 #f03 .e3-legende b { color: var(--p-schrift); }
 
-/* Farb- und Formproben (b18): Quadrat mit 3-px-Kontur, Hex-Wert und Status darunter */
+/* Farb- und Formproben (b18) im freien Teil des Bands Paid (x 984–1792): 5 × 2,
+   Quadrat 36 px mit 3-px-Kontur links, Hex-Wert und Status rechts daneben */
 #f03 .e3-proben {
-  left: 128px;
-  top: 680px;
-  width: 1098px;
-  display: flex;
-  gap: 14px;
+  left: 984px;
+  top: 372px;
+  width: 808px;
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: space-between;
+  gap: 10px 12px;
 }
-#f03 .e3-probe { display: grid; justify-items: start; gap: 2px; }
+#f03 .e3-probe {
+  display: grid;
+  grid-template-columns: 36px auto;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  align-items: start;
+}
 #f03 .e3-feld,
 #f03 .e3-form {
+  grid-row: 1 / span 2;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
+  margin-top: 4px;
   box-sizing: border-box;
   border: 3px solid var(--p-schrift);
-  margin-bottom: 4px;
 }
-#f03 .e3-form--kontur { border-width: 8px; background: var(--p-gelb); }
+#f03 .e3-form--kontur { border-width: 7px; background: var(--p-gelb); }
 #f03 .e3-form--kreis { border-radius: 50%; background: var(--p-gelb); }
 #f03 .e3-form--schach {
   background:
-    conic-gradient(var(--p-schrift) 0 25%, var(--p-papier) 0 50%, var(--p-schrift) 0 75%, var(--p-papier) 0) 0 0 / 17px 17px;
+    conic-gradient(var(--p-schrift) 0 25%, var(--p-papier) 0 50%, var(--p-schrift) 0 75%, var(--p-papier) 0) 0 0 / 15px 15px;
 }
 #f03 .e3-hex,
 #f03 .e3-status { font-size: 22px; line-height: 1.15; white-space: nowrap; }

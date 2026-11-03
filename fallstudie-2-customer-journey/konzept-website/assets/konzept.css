@@ -3,6 +3,9 @@
    Grundlage: gestaltungsplan.md Abschnitt 3 (Farben 3.2, Kontraste 3.3, Typografie 3.4, Verbote 3.7)
    und Abschnitt 7.3 (Kennzeichnung). Mobil zuerst (390 px), ab 900 px zweispaltig, wo es passt.
    Keine externen Anfragen: Schriften lokal (schriften/), keine Bilder von außen, kein CDN.
+   Zwei Fassungen: öffentlich (Repository, GitHub Pages) nur mit eigenen Zeichnungen und Platzhaltern; intern (Hörsaal)
+   zusätzlich mit HOLY-Produktbildern aus intern/bilder/ (per .gitignore ausgeschlossen), eingebaut von konzept.js –
+   Gestaltung dafür im Abschnitt „Interne Bilder“.
 
    Kontraste (WCAG 2.x, nachgerechnet in gestaltungsplan.md 3.3 und werkzeuge/pruefen.mjs):
      Schwarz #1D1D1B auf Creme #F3EDE1 14,48 : 1 · Schiefer #5C5547 auf Creme 6,33 : 1
@@ -74,6 +77,8 @@ li { margin-bottom: .3em; }
 /* Ziffern gleich breit nur bei Preisen und Zahlen (Inter setzt mit tnum auch den Bindestrich breit) */
 .zahl, .preis-gross, .option .preis, .posten .r, .tabelle td.r, .balken b, .coinstand .zahl { font-variant-numeric: tabular-nums; }
 .url { word-break: break-all; }
+/* hidden gilt immer, auch wenn eine Klasse display setzt (Bildplätze der internen Fassung, Galerie, Kästen) */
+[hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* ---------- Pflicht: Hinweisbalken (7.3) – fest oben, nicht ausblendbar ---------- */
@@ -147,7 +152,7 @@ li { margin-bottom: .3em; }
   border-radius: 4px; padding: 2px 6px; vertical-align: 2px;
 }
 
-/* ---------- Platzhalter und eigene Zeichnungen (7.3: keine fremden Bilder) ---------- */
+/* ---------- Platzhalter und eigene Zeichnungen (7.3: öffentlich keine fremden Bilder; interne Bilder siehe unten) ---------- */
 .platzhalter { margin: 0 0 16px; }
 .platzhalter .flaeche {
   border: 4px solid var(--schwarz); border-radius: 14px; overflow: hidden;
@@ -283,6 +288,83 @@ details.faq > div { padding: 0 14px 12px; }
 .ablauf li + li { position: relative; }
 .ablauf .pfeilzeile { border: 0; background: none; padding: 0 0 0 14px; font-weight: 800; }
 
+/* ---------- Interne Bilder (nur interne Fassung: intern/bilder.js und intern/bilder/, nicht im Repository) ----------
+   Öffentliche Fassung: Bildplätze mit hidden bleiben unsichtbar, Platzhalter und eigene Zeichnungen wie bisher.
+   Interne Fassung: konzept.js setzt .mit-bild an den Bildplatz (.hat-intern-bild an Gruppen) und hängt img.intern-bild an.
+   Freigestellte Packshots stehen auf Creme hell oder Gelb, Fotos mit schwarzer Kontur wie die übrigen Kästen. */
+.mit-bild > .nur-ohne-bild { display: none; }
+.intern-bild { display: block; width: 100%; height: auto; }
+.bildnachweis { display: block; font-size: 12px; line-height: 1.35; color: var(--schiefer); margin-top: 6px; font-weight: 400; }
+.foto { display: block; border: 2px solid var(--schwarz); border-radius: 14px; overflow: hidden; background: var(--creme-hell); }
+
+/* Startseite: Produkt-Tag im Knopf (wie der Tag im Video, ✔ X01), Produktkarte neben der Skizze, Bild im Starter-Set-Teaser */
+.knopf .knopfbild { flex: none; width: 40px; height: 40px; border-radius: 8px; overflow: hidden; border: 2px solid var(--creme); margin: -6px 6px -6px -8px; }
+/* Anzeige-Ausschnitt auf die Dose, damit der Tag klein erkennbar bleibt (Datei unverändert) */
+.knopf .knopfbild .intern-bild { width: 100%; height: 100%; object-fit: cover; transform: scale(1.7); transform-origin: 60% 62%; }
+.skizze-reihe.hat-intern-bild { display: grid; gap: 0 28px; align-items: center; }
+.produktkarte { margin: 0 0 16px; }
+.produktkarte a { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 14px; align-items: center; text-decoration: none; border: 2px solid var(--schwarz); border-radius: 14px; background: var(--creme-hell); padding: 10px; }
+.produktkarte .bildplatz { border-radius: 10px; overflow: hidden; }
+.produktkarte .meta { display: block; }
+.produktkarte strong { display: block; font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 750; font-size: 21px; line-height: 1.1; margin: 2px 0 8px; }
+.produktkarte .weiter { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.teaser.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 118px; gap: 12px; align-items: center; }
+.teaser .teaserbild { align-self: center; }
+
+/* Produktseite: großes Produktbild, Galerie, Packshots in der Packungswahl */
+.produktbild .foto { aspect-ratio: 1 / 1; }
+.produktbild .foto .intern-bild { width: 100%; height: 100%; object-fit: contain; }
+.produktbild.mit-bild { margin-bottom: 10px; }
+.produktbild.mit-bild figcaption { font-size: 12px; line-height: 1.35; }
+.galerie { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0 0 18px; }
+.galerie button { display: block; padding: 0; aspect-ratio: 1 / 1; border: 2px solid var(--nebel); border-radius: 10px; background: var(--creme-hell); overflow: hidden; cursor: pointer; }
+.galerie button[aria-pressed="true"] { border: 3px solid var(--schwarz); }
+.galerie .intern-bild { width: 100%; height: 100%; object-fit: cover; }
+.option.mit-bild { grid-template-columns: 58px minmax(0, 1fr) auto; column-gap: 12px; padding-left: 10px; }
+.option .packbild { grid-row: 1 / span 2; grid-column: 1; align-self: center; width: 58px; height: 58px; }
+.option .packbild .intern-bild { width: 100%; height: 100%; object-fit: contain; }
+.option.mit-bild .details { grid-column: 2 / -1; }
+
+/* Warenkorb und Nachkauf: Vorschaubild am Posten */
+.posten li .vorschau { flex: none; width: 64px; height: 64px; border: 1px solid var(--nebel); border-radius: 10px; background: var(--creme-hell); padding: 3px; align-self: center; }
+.posten li .vorschau .intern-bild { width: 100%; height: 100%; object-fit: contain; }
+.posten li .vorschau + span { flex: 1; min-width: 0; }
+.nachkauf-zeile.mit-bild { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 14px; align-items: center; margin: 0 0 12px; }
+.nachkauf-zeile .bildplatz { border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 4px; }
+.nachkauf-zeile.mit-bild p { margin: 0; }
+
+/* Danke-Seite: Paket im Kopf, Shaker am Schritt, Zubereitung als Bildstreifen */
+.heldbild { margin: 18px 0 0; }
+.heldbild figcaption, .bildstreifen figcaption { margin-top: 6px; }
+.schritt-zeile { display: flex; gap: 12px; align-items: center; }
+.schritt-zeile > div { flex: 1; min-width: 0; }
+.schrittbild { flex: none; width: 76px; border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 2px; }
+.bildstreifen { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0 14px; max-width: 520px; }
+.bildstreifen figure { margin: 0; }
+.bildstreifen .foto { aspect-ratio: 1 / 1; border-radius: 12px; }
+.bildstreifen .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; }
+.bildstreifen figcaption { font-size: 14px; font-weight: 700; line-height: 1.3; }
+
+/* Squad: Schriftzug, Coins im Kontostand, Level-Abzeichen in den Stufen */
+.squadlogo { margin: 14px 0 0; width: min(250px, 72%); }
+#stand.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 14px; align-items: center; }
+.coinsbild .intern-bild { border: 2px solid var(--schwarz); border-radius: 10px; }
+.stufe .bildplatz { width: min(54px, 100%); margin: 0 auto 6px; }
+.stufen.hat-intern-bild .s1 { min-height: 112px; } .stufen.hat-intern-bild .s2 { min-height: 138px; }
+.stufen.hat-intern-bild .s3 { min-height: 164px; } .stufen.hat-intern-bild .s4 { min-height: 190px; }
+
+/* Händlerseite: Regal im Kopf; Koffein-Check: eine Portion */
+.heldbild.banner { margin: 0 0 16px; }
+.heldbild.banner .foto { aspect-ratio: 16 / 10; }
+.heldbild.banner .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.portion-zeile.mit-bild { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; align-items: center; margin: 0 0 14px; }
+.portion-zeile .bildplatz { border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 4px; }
+.portion-zeile figcaption { font-size: 15px; }
+
+/* Fuß: Bildnachweise der internen Fassung */
+.fuss .bildnachweise { margin: 6px 0 0; padding-left: 1.2em; color: #B9B0A0; font-size: 13px; }
+.fuss .bildnachweise li { margin-bottom: .25em; }
+
 /* ---------- Nächste Station und Fuß ---------- */
 .naechste { background: var(--gelb); border-top: 2px solid var(--schwarz); border-bottom: 2px solid var(--schwarz); padding: 20px 0; }
 .naechste p { margin: 0 0 4px; font-size: 14px; color: var(--schiefer); font-weight: 600; }
@@ -344,6 +426,14 @@ html.anmerkungen .nur-normal { display: none; }
   .kopf .nur-breit { display: inline; }
   .fakten { grid-template-columns: repeat(2, 1fr); }
   .bewertungen { grid-template-columns: repeat(3, 1fr); }
+  /* interne Bilder */
+  .skizze-reihe.hat-intern-bild { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  .produktkarte a { grid-template-columns: 1fr; }
+  .teaser.mit-bild { grid-template-columns: minmax(0, 1fr) 170px; gap: 20px; }
+  .held-raster.hat-intern-bild { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+  .held-raster .heldbild { margin: 0; }
+  .heldbild.banner .foto { aspect-ratio: 21 / 9; }
+  #stand.mit-bild { grid-template-columns: minmax(0, 1fr) 110px; }
 }
 @media (min-width: 900px) {
   .zweispaltig { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }

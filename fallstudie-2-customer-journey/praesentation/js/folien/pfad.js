@@ -25,7 +25,8 @@
    4. Anzeige-Schalter ?kacheln=rueckfall (öffentlicher Export): jede Kachel
       mit data-status="frei" zeigt ihren Rückfall bzw. den Platzhalter. Der
       Schalter ändert NUR die Anzeige – nicht freigegebene Bilder gehören gar
-      nicht ins Repository (Plan 11.2, 11.5).
+      nicht ins Repository (Plan 11.2, 11.5). Mit demselben Schalter setzt
+      js/folien/intern-bilder.js keine internen Bilder ein (LIESMICH §12).
    ============================================================================= */
 (function () {
   'use strict';
@@ -212,11 +213,12 @@
       el.style.transform = 'translateY(-50%)';
     });
 
-    /* Kacheln und Leerstellen: mittig in Phase und Zeile */
+    /* Kacheln und Leerstellen: mittig in Phase und Zeile; data-dx verschiebt eine Kachel waagerecht
+       (Folie 04: K6 um −20 px, damit die Pfeilspitze an x = 1788 neben der Kachel sichtbar bleibt; D06) */
     var kw = (k.kachel || [200, 112])[0], kh = (k.kachel || [200, 112])[1];
     alle('.p-kachel[data-phase], .p-leerstelle[data-phase]', karte).forEach(function (el) {
       var p = +el.getAttribute('data-phase'), r = +el.getAttribute('data-zeile') || 1;
-      var x = phaseMitte(p) - kw / 2, y = zeilenMitte(r) - kh / 2;
+      var x = phaseMitte(p) - kw / 2 + (+el.getAttribute('data-dx') || 0), y = zeilenMitte(r) - kh / 2;
       setze(el, { left: x, top: y, width: kw, height: kh });
       var id = el.getAttribute('data-id');
       if (id) orte[id] = { x: x + kw / 2, y: y + kh / 2, l: x, r: x + kw, t: y, b: y + kh, phase: p };

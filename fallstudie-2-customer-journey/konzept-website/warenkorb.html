@@ -70,7 +70,9 @@
          ein Widerspruch zwischen AGB § 9 und Help-Center); Code-Rabatt −10 %: Beispielwert. Vorbild ✔ X09. -->
     <h2 style="font-size:20px">Deine Bestellung</h2>
     <ul class="posten" data-warenkorb>
-      <li>
+      <!-- interne Fassung: Vorschaubild der gewählten Packung ({packung} = set, 1, 10, 50 aus der Adresse) -->
+      <li data-intern="web-warenkorb-{packung}" data-intern-deko>
+        <span class="vorschau bildplatz" hidden></span>
         <span><strong data-k-name>Starter Set Energy</strong>
           <span class="unter" data-k-zusatz>14 Drinks + Shaker, Gratisversand · 1,79 € je Drink</span>
           <span class="unter" data-k-grund>Grundpreis offen: Füllmenge des Sets noch nicht belegt</span></span>
@@ -145,7 +147,13 @@
     <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
     <div class="kennung">
       <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</p>
+      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
+      <!-- nur in der internen Fassung sichtbar (konzept.js, sobald Bilder aus intern/ eingebaut sind) -->
+      <div data-nur-intern hidden>
+        <p>Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.</p>
+        <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
+        <ul class="bildnachweise" data-intern-liste></ul>
+      </div>
     </div>
     <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
     <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
@@ -154,6 +162,9 @@
   </div>
 </footer>
 
+<!-- Interne Fassung: intern/bilder.js (per .gitignore ausgeschlossen, nicht im Repository und nicht auf GitHub Pages)
+     setzt window.INTERN_BILDER; fehlt die Datei (öffentliche Fassung), bleiben Platzhalter und eigene Zeichnungen. -->
+<script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>
 </body>
 </html>

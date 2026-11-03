@@ -1,6 +1,6 @@
 /* =============================================================================
    05-ueberleitungen.css – Folie 05 · A3 Überleitungen im IST
-   Gestaltungsplan 6.7.3: Pfad mit fünf kleinen Stationskacheln (160 × 90), in
+   Gestaltungsplan 6.7.3: Pfad mit fünf kleinen Stationskacheln (200 × 112 seit 03.11.2026, D06; vorher 160 × 90), in
    jeder Rinne eine Brücke Ü1–Ü4 (Form: trägt = durchgehend, wackelt = Versatz
    12 px, bricht = offenes Ende; zeichnet js/folien/pfad.js), Urteilswort
    36 px Bricolage, Belegzeile 26 px; Marker an Ü2; Nebenweg gestrichelt unten.
@@ -25,7 +25,7 @@
 
 #f05 .e5-urteil { text-align: center; }
 #f05 .e5-urteil--oben { bottom: 470px; width: 540px; }
-#f05 .e5-urteil--unten { top: 736px; width: 540px; }
+#f05 .e5-urteil--unten { top: 746px; width: 540px; }
 #f05 .e5-u1 { left: 407.33px; }
 #f05 .e5-u3 { left: 972.67px; }
 #f05 .e5-u2 { left: 690px; }

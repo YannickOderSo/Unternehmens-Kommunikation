@@ -31,20 +31,24 @@
 #f09 .e9-ergebnis { font-size: 28px; line-height: 1.25; margin-top: 14px; }
 
 #f09 .e9-pfad .gelb { stroke-width: 14; }
-#f09 .e9-leiste { left: 470px; top: 735px; width: 1263px; height: 74px; }   /* im Satzspiegel; nur der Pfad darf überlaufen */
-#f09 .e9-k-bild { position: absolute; top: 0; width: 132px; height: 74px; }
+/* Bildleiste: Kacheln 192 × 108 (seit 03.11.2026, D06; vorher 132 × 74), mittig auf dem Pfad (y = 762) und
+   mittig unter den Phasenspalten (x = 536 + n · 282,67); im Satzspiegel, nur der Pfad darf überlaufen */
+#f09 .e9-leiste { left: 440px; top: 708px; width: 1322.67px; height: 108px; }
+#f09 .e9-k-bild { position: absolute; top: 0; width: 192px; height: 108px; }
 #f09 .e9-k-bild:nth-child(1) { left: 0; }
 #f09 .e9-k-bild:nth-child(2) { left: 282.67px; }
 #f09 .e9-k-bild:nth-child(3) { left: 565.33px; }
 #f09 .e9-k-bild:nth-child(4) { left: 848px; }
 #f09 .e9-k-bild:nth-child(5) { left: 1130.67px; }
 #f09 .e9-k-bild[data-status="offen"] { padding: 6px 8px; display: flex; align-items: flex-end; }
+/* Bildnachweis nur, solange die Bildleiste zu sehen ist (nicht während der Videobühne) */
+#f09:has(.e9-video-buehne.schritt-an):not(:has(.e9-fragen.schritt-an)) .p-bildquelle { visibility: hidden; }
 #f09 .e9-k-bild[data-status="offen"][data-art="screenshot"] { padding-top: 16px; }
 #f09 .e9-k-bild[data-status="offen"][data-art="screenshot"]::before { height: 10px; }
 
 #f09 .e9-fragen {
   left: 128px;
-  top: 836px;
+  top: 846px;
   width: 1664px;
   display: flex;
   align-items: center;

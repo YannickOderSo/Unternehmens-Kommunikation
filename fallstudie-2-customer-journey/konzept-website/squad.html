@@ -53,25 +53,32 @@
 <main id="inhalt">
   <div class="inhalt schmal">
     <p class="krumen"><a href="index.html">Start</a> › SQUAD Rewards</p>
+    <!-- interne Fassung: Schriftzug SQUAD Rewards (Grafik von de.holy.com); öffentlich ausgeblendet -->
+    <div class="squadlogo" data-intern="web-squad-logo" hidden></div>
     <h1 style="margin-top:10px">Dein Squad</h1>
 
     <!-- Kontostand nach der ersten Bestellung: Beispielwerte (gleiche Rechnung wie Warenkorb: 10 Coins pro Euro ✔ T32) -->
-    <section class="kasten kasten-gelb" aria-labelledby="h-stand" id="stand">
+    <!-- interne Fassung: Coins-Grafik rechts im Kasten (data-intern) -->
+    <section class="kasten kasten-gelb" aria-labelledby="h-stand" id="stand" data-intern="web-squad-coins">
       <h2 id="h-stand" class="sr-only">Dein Stand</h2>
+      <div>
       <div class="coinstand"><span class="zahl">225</span><span><strong>Coins</strong> <span class="beispiel">Beispielwert</span></span></div>
       <p style="margin:6px 0 0">Level 1 · noch 1.775 Level Coins bis Level 2 <span class="beispiel">Beispielwert</span></p>
       <p class="meta" style="margin:4px 0 0">10 Coins pro Euro, dazu Coins für Newsletter, Social Media und Weiterempfehlen.<span class="anm" data-ids="✔ T32 · ✔ X15 · ✔ B30" data-ziel="#stand">Was wir ändern: Kontostand, Level und der nächste Schritt stehen ganz oben, in Zahlen. Warum: SQUAD Rewards hat schon Coins und vier Level, aber die Regeln stehen verstreut, und im Login steht „Translation missing“. Eine Stimme aus der Stammkundschaft schreibt, die Prämien seien schlechter geworden („Zu meinen Anfängen gab's ganze Tubs für angesparte Punkte – vorbei.“) – klare Werte verhindern Enttäuschung. Vorbild Douglas Beauty Card: drei Stufen, Punkte online und in der Filiale.</span></p>
+      </div>
+      <span class="coinsbild bildplatz" hidden></span>
     </section>
 
     <!-- Maßnahme S1: Stufen als eigene Grafik (Dossier 7a.7: „Stufen-Grafik im Stil von SQUAD Rewards“, ohne fremdes Logo).
          Schwellen und Vorteile ✔ T32. -->
     <section class="abschnitt" aria-labelledby="h-level" id="level">
       <h2 id="h-level">Vier Level, klare Vorteile<span class="anm" data-ids="✔ T32 · ✔ X15" data-ziel="#level">Was wir ändern: Alle vier Level mit Schwelle und Vorteil auf einen Blick, als eigene Grafik. Warum: Die Werte gibt es schon (Level ab 1, 2.000, 10.000 und 30.000 Level Coins), man findet sie aber nur in Einzelartikeln. Vorbild Douglas: Stufen mit klaren Vorteilen.</span></h2>
-      <div class="stufen" role="img" aria-label="Vier Level: Level 1 ab 1, Level 2 ab 2.000, Level 3 ab 10.000, Level 4 ab 30.000 Level Coins">
-        <div class="stufe s1 aktiv"><b>1</b>ab 1</div>
-        <div class="stufe s2"><b>2</b>ab 2.000</div>
-        <div class="stufe s3"><b>3</b>ab 10.000</div>
-        <div class="stufe s4"><b>4</b>ab 30.000</div>
+      <!-- interne Fassung: Level-Abzeichen von de.holy.com in den Stufen (data-intern) -->
+      <div class="stufen" role="img" aria-label="Vier Level: Level 1 ab 1, Level 2 ab 2.000, Level 3 ab 10.000, Level 4 ab 30.000 Level Coins" data-intern-gruppe>
+        <div class="stufe s1 aktiv" data-intern="web-squad-level-1"><span class="bildplatz" hidden></span><b>1</b>ab 1</div>
+        <div class="stufe s2" data-intern="web-squad-level-2"><span class="bildplatz" hidden></span><b>2</b>ab 2.000</div>
+        <div class="stufe s3" data-intern="web-squad-level-3"><span class="bildplatz" hidden></span><b>3</b>ab 10.000</div>
+        <div class="stufe s4" data-intern="web-squad-level-4"><span class="bildplatz" hidden></span><b>4</b>ab 30.000</div>
       </div>
       <p class="meta">Level Coins je Level. Du bist hier: Level 1 (gelb).</p>
       <table class="tabelle">
@@ -109,7 +116,11 @@
          je Portion ✔ S92). Persona Marco: „50er-Pulverdose auf Vorrat“ (persona-steckbrief.md, fiktiv). -->
     <section class="abschnitt" aria-labelledby="h-nachkauf" id="nachkauf">
       <h2 id="h-nachkauf">Dose bald leer?<span class="anm" data-ids="✔ X14 · ✔ T30 · ✔ B09 · ✔ R98 · Persona Marco (fiktiv)" data-ziel="#nachkauf">Was wir ändern: Nachkauf in einem Klick, ohne Abo, mit Preis je Portion und Grundpreis. Warum: HOLY hat kein Abo und keine Nachfüll-Erinnerung; Marco kauft die 50er-Dose auf Vorrat (Persona). Vorbild Philips: Erinnerung nach Verbrauch, das Abo bleibt eine Option.</span></h2>
-      <p>Nachkaufen in einem Klick: <strong>Raspberry Raptor, 50 Portionen – 39,99 €</strong> (0,80 € je Portion · 114,26 € / kg). Kein Abo, keine Verpflichtung.</p>
+      <!-- interne Fassung: Packshot der 50er-Dose (dieselbe Datei wie im Warenkorb) -->
+      <div class="nachkauf-zeile" data-intern="web-warenkorb-50" data-intern-deko>
+        <span class="bildplatz" hidden></span>
+        <p>Nachkaufen in einem Klick: <strong>Raspberry Raptor, 50 Portionen – 39,99 €</strong> (0,80 € je Portion · 114,26 € / kg). Kein Abo, keine Verpflichtung.</p>
+      </div>
       <a class="knopf" href="warenkorb.html?packung=50">50 Portionen nachkaufen <span class="pfeil" aria-hidden="true">→</span></a>
       <p class="meta" style="margin-top:8px">Erinnerung vor dem Leer-Tag: auf der <a href="danke.html#erinnerung">Danke-Seite</a> einschaltbar (Konzept).</p>
     </section>
@@ -154,7 +165,13 @@
     <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
     <div class="kennung">
       <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</p>
+      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
+      <!-- nur in der internen Fassung sichtbar (konzept.js, sobald Bilder aus intern/ eingebaut sind) -->
+      <div data-nur-intern hidden>
+        <p>Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.</p>
+        <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
+        <ul class="bildnachweise" data-intern-liste></ul>
+      </div>
     </div>
     <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
     <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
@@ -163,6 +180,9 @@
   </div>
 </footer>
 
+<!-- Interne Fassung: intern/bilder.js (per .gitignore ausgeschlossen, nicht im Repository und nicht auf GitHub Pages)
+     setzt window.INTERN_BILDER; fehlt die Datei (öffentliche Fassung), bleiben Platzhalter und eigene Zeichnungen. -->
+<script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>
 </body>
 </html>

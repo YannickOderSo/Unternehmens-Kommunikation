@@ -2,7 +2,9 @@
 
 Alles, was `index.html` verwendet, liegt im Ordner `praesentation/` – nichts wird aus dem Internet nachgeladen
 (keine CDNs, keine externen Schriften, Skripte oder Bilder; geprüft mit `werkzeuge/pruefen.mjs`, 0 externe
-Anfragen). Stand: 03.11.2026, Entwurf, Prüfung durch die Gruppe offen.
+Anfragen). Stand: 03.11.2026, Entwurf, Prüfung durch die Gruppe offen. Seit 03.11.2026 gibt es zwei Fassungen
+(LIESMICH §12): die **öffentliche** (Repository, GitHub Pages; Abschnitt 4) und die **interne** für den Hörsaal mit
+Bildern aus `intern/` (Abschnitt 4a; die Dateien liegen nicht im Repository).
 
 ## 1. Schriften (`schriften/`)
 
@@ -24,6 +26,8 @@ HOLYs eigene Schriften (kommerziell) werden nicht eingebunden (Dossier ✔ G01, 
   `QUELLEN.md` und `AUTOREN.md`), unverändert kopiert am 03.11.2026.
 - Thema „Pfad“ (`css/folien/pfad.css`, `js/folien/pfad.js`), Folien-CSS und `js/folien/09-fazit.js`: neu,
   KI-gestützt (Abschnitt 6). Die Rundung der Pfadecken folgt der Musterfolie `../_entwuerfe/faden/journey.html`.
+- `js/folien/intern-bilder.js` (setzt die Bilder der internen Fassung ein) und die Erweiterung von
+  `werkzeuge/pruefen.mjs` (Option `--oeffentlich`, Bildprüfungen): neu am 03.11.2026, KI-gestützt (Delegation D06).
 - Keine fremden Bibliotheken (die QR-Bibliothek aus FS1 wird nicht gebraucht und ist nicht kopiert).
 
 ## 3. Grafiken
@@ -40,10 +44,61 @@ Dossier (Gelb #FFD007 ✎ G06, Schwarz #1D1D1B ✔ G07, Creme #F3EDE1 ✎ G06; F
 | `bilder/holy-logo-oval.png` | 01, 09 | offizielles HOLY-Logo im gelben Oval, 692 × 400 px, unverändert aus FS1 (`../../fallstudie-1-brand-persona/praesentation/bilder/`; dort: de.holy.com, Abruf 16.10.2026) | © HOLY Softdrinks GmbH; Nutzung für dieses Studienprojekt freigegeben durch Yannick am 03.11.2026 („der Gründer ist eingeweiht“, KI-Nachweis FS2 Nr. 12); Quelle auf der Folie |
 | `bilder/konzept-01-landingpage.png` … `konzept-05-danke.png` | 08 | Bildschirmfotos der eigenen Konzept-Webseite (390 × 844, 03.11.2026, erzeugt mit `../konzept-website/werkzeuge/folie08-bilder.mjs`; Produktseite und Danke-Seite als Ausschnitt) | eigene Gestaltung ohne fremde Bilder; jede Seite trägt den Hinweis „Studentisches Konzept … keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“ |
 | `intern/gruender-video.mp4` | 09 | Videobotschaft des Gründers Mathias Horsch, 02.11.2026 | Zustimmung für Video und Stimme **in der Präsentation** (laut Yannick, KI-Nachweis FS2 Nr. 09); **nicht** für Repository/GitHub Pages und KI-Transkription → per `.gitignore` ausgeschlossen, nur per Pfad eingebunden |
-| Bildkacheln b01, b04–b12, b15, b16 | 01–07, 09 | **offen** – eigene Fotos und Screenshots aus dem Selbstversuch und dem Workshop | bis dahin Platzhalter (`data-status="offen"`); nicht freigegebene Dateien nur in `intern/` (Plan 4, 11.5) |
+| Bildkacheln b01, b04–b12, b15, b16 | 01–07, 09 | **offen** – eigene Fotos und Screenshots aus dem Selbstversuch und dem Workshop | öffentlich Platzhalter (`data-status="offen"`); in der internen Fassung bis dahin Bilder aus Abschnitt 4a (nicht b12, b15, „Tipp unter Kollegen“); nicht freigegebene Dateien nur in `intern/` (Plan 4, 11.5) |
 | Textgrafik „0 Beiträge · Blog /blogs/news“ | 03 | Rückfall b19, eigene Gestaltung | Beleg ✔ M01, ✔ L39 (Abruf 30.10.2026) |
 
 Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsberatung (Dossier 10.6).
+
+## 4a. Bilder der internen Fassung (`intern/`, nicht im Repository)
+
+Auftrag von Yannick am 03.11.2026 (wörtlich): „Lade dir die Grafiken online runter die du brauchst von Holy die
+Webseite und die Präsentation muss gut aussehen rechte sind nicht wichtig wir nutzen es weder kommerziell noch
+öffentlich nur privat in der uni“ (KI-Nachweis FS2, Delegation D06). Damit die Nutzung privat bleibt, liegen die
+Dateien **nur** in `intern/bilder/` und die Angaben in `intern/bilder.js` (Ordner per `.gitignore` ausgeschlossen,
+geprüft mit `git check-ignore -v`); das Repository und GitHub Pages enthalten nur diese Liste. Beschafft (Download
+bzw. Bildschirmfoto, Einzelheiten je Bild im Nachweis), ausgewählt und zugeschnitten am 03.11.2026 in den
+vorherigen Schritten des Workflows D06; Einbau in die Folien: `js/folien/intern-bilder.js`. Auf jeder Folie mit internen Bildern steht unten eine Bildnachweis-Zeile;
+der volle Nachweis je Bild steht in der Referentenansicht (Notizen). **Keines der Bilder ist ein eigenes Foto der
+Gruppe**: Werbebilder und Community-Fotos von HOLY sind als Werbe- bzw. Symbolbild gekennzeichnet, Screenshots zeigen
+echte Seiten ohne Änderung (nur Ausschnitt). Folie 08 zeigt Bildschirmfotos der internen Fassung der eigenen
+Konzept-Webseite mit HOLY-Produktbildern (erzeugt vom Website-Bau, Nachweise der Produktbilder in
+`../konzept-website/intern/bilder.js`).
+
+Schlüssel → Folie: `b01` = 01, `b04` = 02, `m03-…` = 03, `k…-04` / `-05` / `-09` = 04 / 05 / 09, `v07-…` = 07,
+`konzept-0n` = 08. Nachweis wörtlich aus `intern/bilder.js`.
+
+| Schlüssel | Herkunft (Nachweis) | Fundstelle |
+|---|---|---|
+| `b01-titel` | Bild: HOLY Softdrinks GmbH (erstes Produktbild auf de.holy.com/products/raspberry-raptor), Abruf 03.11.2026 · Werbebild, kein eigenes Foto der Gruppe | https://cdn.shopify.com/s/files/1/0473/2885/4173/files/ProductPic_Energy_RaspberryRaptor1_991d56dd-ae0f-4f72-bf26-b528144dfd70.jpg (Seite https://de.holy.com/products/raspberry-raptor) |
+| `b04-persona` | Symbolbild – Community-Foto „Lokführer & Squad Member Sebastian: Ohne HOLY keine Zugfahrt.“, von HOLY gezeigt auf de.holy.com/pages/our-story, Abruf 03.11.2026 · nicht Marco (Persona fiktiv) | https://de.holy.com/cdn/shop/files/89.jpg?v=1788511578&width=2400 (Seite https://de.holy.com/pages/our-story) |
+| `m03-creator`, `k1-creator-04`, `k1-creator-05`, `k1-creator-09` | Vorschaubild YouTube-Short „Werbung … Rabatt-Code: NONSTOP“, Kanal nonstopniels (youtube.com/shorts/ns0t9saP9D4), i.ytimg.com, Abruf 03.11.2026 · Ausschnitt | https://i.ytimg.com/vi/ns0t9saP9D4/oardefault.jpg (Short https://www.youtube.com/shorts/ns0t9saP9D4) |
+| `m03-regal`, `k4-regal-04` | Foto aus dem Artikel der Lebensmittel Zeitung vom 10.04.2026 (Bildnachweis hinter Bezahlschranke nicht einsehbar, Markt nicht benannt), Abruf 03.11.2026 · Ausschnitt | https://www.lebensmittelzeitung.net/news/media/33/Pla-verscha-Vertriebsc-Bened-Pes-l.-und-Mitgrn-Hor-321340.jpeg (Artikel https://www.lebensmittelzeitung.net/industrie/nachrichten/getraenke-holy-macht-dampf-bei-der-internationalisierung-190382) |
+| `m03-starterset`, `k3-produktseite-04`, `k3-produktseite-05`, `k3-produktseite-09` | Screenshot de.holy.com/products/starter-set-energy (Desktop, Cookies abgelehnt), 03.11.2026 | https://de.holy.com/products/starter-set-energy |
+| `m03-blog` | Screenshot de.holy.com/blogs/news (mobil), 03.11.2026 | https://de.holy.com/blogs/news |
+| `m03-unboxing`, `k5-unboxing-04`, `k5-unboxing-05`, `k5-unboxing-09` | Community-Foto „Live Unboxing mit dem Squad“, von HOLY gezeigt auf de.holy.com/pages/our-story, Abruf 03.11.2026 · Ausschnitt ohne Gesichter · Symbolbild, nicht Marco | https://de.holy.com/cdn/shop/files/63.jpg?v=1788511761&width=2400 (Seite https://de.holy.com/pages/our-story) |
+| `m03-dose-shaker` | Bild: HOLY Softdrinks GmbH (Shop-Variante „50 Portionen mit gratis Shaker“, de.holy.com/products/raspberry-raptor), Abruf 03.11.2026 · freigestellt, auf rosa Fläche gesetzt | https://cdn.shopify.com/s/files/1/0473/2885/4173/files/NE-0001-03_eylki7_8e249021-3da6-4797-8529-ccf830f838fd.png (Seite https://de.holy.com/products/raspberry-raptor) |
+| `m03-squad`, `k6-squad-04`, `k6-squad-05`, `k6-squad-09` | Screenshot de.holy.com/pages/account-login (SQUAD Rewards, nicht angemeldet, Desktop), 03.11.2026 | https://de.holy.com/pages/account-login |
+| `m03-suche`, `k2-suche-04`, `k2-suche-05`, `k2-suche-09` | Screenshot Startpage-Suche „holy energy koffein“ (Google-Ergebnisse, Region Deutschland, mobil), 03.11.2026 | https://www.startpage.com/do/search?q=holy+energy+koffein&language=deutsch (Region Deutschland) |
+| `m03-bewertungen` | Screenshot de.trustpilot.com/review/holyenergy.de (mobil, Cookies abgelehnt), 03.11.2026 | https://de.trustpilot.com/review/holyenergy.de |
+| `v07-youtube` | Standbild aus dem Erklärvideo „YouTube Shopping-Affiliate-Programm“ (Kanal YouTube Creators DE, youtube.com/watch?v=iUZj5LiPDkI), i.ytimg.com, Abruf 03.11.2026 · Erklärgrafik mit Stockfoto, kein echter Kanal | https://i.ytimg.com/vi/iUZj5LiPDkI/maxres2.jpg (Video https://www.youtube.com/watch?v=iUZj5LiPDkI, eingebettet in https://blog.youtube/intl/de-de/news-and-events/youtube-affiliate-shopping-startet-in-deutschland/) |
+| `v07-apple` | Screenshot support.apple.com/de-de/101575 (im Artikel eingebundenes Bildschirmfoto von Apple), 03.11.2026 | https://support.apple.com/de-de/101575 |
+| `v07-zooplus` | Screenshot zooplus.de, Produktseite Biokat’s Micro Classic (Variantenauswahl geöffnet), 03.11.2026 · Preise Stand 03.11.2026 | https://www.zooplus.de/shop/katzen/katzenstreu/biokats/alleskoenner_streu/59413 |
+| `v07-otto` | Screenshot otto.de/shoppages/lieferung (mobil, Werbefoto im Abschnitt Hermes-Paketversand), 03.11.2026 · der Satz „Lieferzeit … direkt am jeweiligen Artikel“ steht auf derselben Seite, nicht im Bild | https://www.otto.de/shoppages/lieferung |
+| `v07-philips` | Grafik: Philips („Keep brushing your best with BrushSync“, philips.de/c-m-pe/buerstenkoepfe), Abruf 03.11.2026 | https://eu-images.contentstack.com/v3/assets/blte23630023bb36e19/bltf120cb0c7ba4e5ff/68dc968a8ff550412a3e6017/bed8075166804c6fa880b34f0133a251.png (Seite https://www.philips.de/c-m-pe/buerstenkoepfe) |
+| `v07-pampers` | App-Store-Werbebild „Pampers Club – Treueprogramm“ (Procter & Gamble, apps.apple.com/DE/app/id1172171196), Abruf 03.11.2026 · Beispielcode des Herstellers | https://apps.apple.com/DE/app/id1172171196 (Bild is1-ssl.mzstatic.com …_03.jpg) |
+| `v07-logo-youtube` | Logo: YouTube (gstatic.com, offizielle SVG, als PNG gerendert), Abruf 03.11.2026 | https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg |
+| `v07-logo-apple` | Logo: Apple (Navigationsleiste support.apple.com, schwarz), Abruf 03.11.2026 | https://support.apple.com/de-de/101575 |
+| `v07-logo-zooplus` | Logo: zooplus (Ausschnitt der Kopfzeile zooplus.de, weiß auf Grün), Abruf 03.11.2026 | https://www.zooplus.de/shop/katzen/katzenstreu |
+| `v07-logo-otto` | Logo: OTTO (Kopfzeile otto.de), Abruf 03.11.2026 | https://www.otto.de/assets-static/icons/pl_logo_otto.svg |
+| `v07-logo-philips` | Logo: Philips (Kopfzeile philips.de; Farbe #0B5ED7 der Seite eingesetzt), Abruf 03.11.2026 | https://www.philips.de/c-f/XC000019732/woher-weiß-ich-wann-ich-die-bürstenköpfe-austauschen-sollte |
+| `v07-logo-pampers` | Logo: Pampers (Kopfzeile pampers.de), Abruf 03.11.2026 | https://images.ctfassets.net/ym05119t78e1/13XfMwh1bwO6NUepeNDs30/cbd64687086a8474b8af1fef76ee8b34/Pampers_Logo_Revamp__1_.svg |
+| `konzept-01`, `konzept-02`, `konzept-03`, `konzept-04`, `konzept-05` | Bildschirmfoto der Konzept-Webseite (interne Fassung mit HOLY-Produktbildern), 03.11.2026 | fallstudie-2-customer-journey/konzept-website/index.html (interne Fassung mit intern/bilder.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern |
+
+Bewusst **ohne** internes Bild: b12 Workshop-Foto (06, eigenes Foto nach dem Workshop Mi 04.11.), b15 Handskizze
+QR-Brücke (07, eigene Zeichnung; das Pampers-Bild ist nur das Vorbild), Kachel „Tipp unter Kollegen“ (03, kein Bild
+zeigt Mundpropaganda unter Kollegen ehrlich). X12 OTTO: Das Bild ist nur das Werbefoto der Serviceseite „Lieferung“;
+eine Produktseite mit Lieferzeit am Artikel wurde nicht aufgenommen (Bot-Schutz nicht umgangen). Eigene Fotos aus dem
+Selbstversuch ersetzen die Werbe- und Community-Bilder, sobald es sie gibt (LIESMICH §10).
 
 ## 5. Inhalte und Fakten
 
@@ -65,6 +120,10 @@ Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsbe
 
 Die Präsentation ist KI-gestützt entstanden: Folien, Sprechtexte, Gestaltung (CSS/SVG) und Skripte mit Claude Code
 im Workflow „fs2-bau“ (KI-Nachweis FS2, Eintrag 11, Delegation D05; `../../ki-nachweis/ki-nachweis-fallstudie-2.md`).
+Beschaffung, Auswahl und Einbau der internen Bilder (Abschnitt 4a) ebenfalls KI-gestützt im Workflow D06 am
+03.11.2026 (Unteragenten, Quelle je Bild in Abschnitt 4a); keine Bilder erzeugt. Bearbeitet nur wie im Nachweis je
+Bild angegeben: Zuschnitt und Verkleinerung, Packshot `m03-dose-shaker` freigestellt auf rosa Fläche, Logo-SVGs als
+PNG gerendert, Philips-Logo in der Farbe der Seite (#0B5ED7).
 Grundlage waren nur Gestaltungsplan, Dossier, Persona und Vorlesung; keine neue Websuche in diesem Schritt. Keine
 KI-Bilder, keine KI-simulierte Befragung. Die Prüfung durch die Gruppe ist offen. Die Videobotschaft wurde von der KI
 weder angesehen noch transkribiert.

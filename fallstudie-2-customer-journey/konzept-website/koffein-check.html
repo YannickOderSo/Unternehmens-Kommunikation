@@ -109,6 +109,12 @@
       <!-- Etikettwerte ✔ S92 [12, 13, 14]; NewCaff-Anteil laut Etikett; keine Wirkaussagen (Dossier 8.3 Don't 1, 5) -->
       <section class="abschnitt frage" id="koffein-pro-portion" aria-labelledby="h-portion">
         <h2 id="h-portion">Wie viel Koffein steckt in einer Portion? <a class="anker" href="#koffein-pro-portion" aria-label="Link zu dieser Frage">#</a></h2>
+        <!-- interne Fassung: genau ein ruhiges Produktbild (ein Sachet = eine Portion, kein Etikettbild); öffentlich ausgeblendet.
+             7 g auf 500 ml ✔ S92; 1 Portion einzeln im Shop ✔ B09 -->
+        <figure class="portion-zeile" data-intern="web-koffein-portion" hidden>
+          <span class="bildplatz"></span>
+          <figcaption>Eine Portion: 7 g Pulver auf 500 ml Wasser – im Shop auch einzeln als Sachet. <span class="bildnachweis" data-intern-nachweis></span></figcaption>
+        </figure>
         <p>Eine Portion sind 7 g Pulver auf 500 ml Wasser. Darin stecken laut Etikett <strong>160 mg Koffein</strong>: 80 mg aus NewCaff und 80 mg natürliches Koffein. Pro 100 ml zubereitetem Getränk sind das 32 mg (160 mg geteilt durch 5).</p>
         <p>Außerdem nennt das Etikett je Portion 700 mg L-Tyrosin, 350 mg Grünteeextrakt (davon 36,7 mg EGCG) und 2 mg Piperin. Wir nennen nur die Mengen; Wirkversprechen gibt es hier nicht.<span class="anm" data-ids="✎ R10 · ✔ R91 · ✔ R92 · ✔ S99" data-ziel="#koffein-pro-portion">Was wir ändern: Nur Mengen, keine Wirkung. Warum: Für Koffein gibt es keine zugelassene Gesundheitsangabe; Aussagen zu Fokus oder Konzentration sind unzulässig (KG Berlin 2026 zu „Focus-Kapseln“). HOLY nutzt heute noch Sätze wie „Hol dir den Fokus der Königskobra!“ – die Antwortseite bleibt nüchtern.</span></p>
       </section>
@@ -239,7 +245,13 @@
     <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
     <div class="kennung">
       <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</p>
+      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
+      <!-- nur in der internen Fassung sichtbar (konzept.js, sobald Bilder aus intern/ eingebaut sind) -->
+      <div data-nur-intern hidden>
+        <p>Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.</p>
+        <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
+        <ul class="bildnachweise" data-intern-liste></ul>
+      </div>
     </div>
     <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
     <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
@@ -248,6 +260,9 @@
   </div>
 </footer>
 
+<!-- Interne Fassung: intern/bilder.js (per .gitignore ausgeschlossen, nicht im Repository und nicht auf GitHub Pages)
+     setzt window.INTERN_BILDER; fehlt die Datei (öffentliche Fassung), bleiben Platzhalter und eigene Zeichnungen. -->
+<script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>
 </body>
 </html>

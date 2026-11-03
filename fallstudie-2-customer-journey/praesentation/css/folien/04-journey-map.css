@@ -1,7 +1,8 @@
 /* =============================================================================
    04-journey-map.css – Folie 04 · A2 Journey-Map IST, „Zentraler Weg (IST)“
    Gestaltungsplan 6.2–6.6. Raster, Kacheln und Pfad setzt js/folien/pfad.js
-   (Daten im JSON der Folie); hier nur die Notizen am Weg und die Legende.
+   (Daten im JSON der Folie); hier nur die Notizen am Weg und die Legende. Kacheln 232 × 130, Zeilen 82 px
+   (Umbau 03.11.2026, D06, für die Bilder der internen Fassung).
    ============================================================================= */
 #f04 .e4-legende {
   left: 128px;
@@ -16,7 +17,8 @@
 #f04 .e4-weiter { left: 1566.67px; top: 736px; }
 /* „Handel: Recherche übersprungen“ über dem gestrichelten Nebenweg (y = 548) */
 #f04 .e4-uebersprungen { left: 712px; top: 508px; }
-/* Offenes Ende nach dem Regal (Phasen 4–5, oberhalb von K4) */
-#f04 .e4-regal { left: 1266px; top: 462px; width: 526px; padding-left: 6px; box-sizing: border-box; background: var(--p-papier); }
-#f04 .e4-regal-notiz { position: static; padding: 0; margin: 0; }
-#f04 .e4-regal-beleg { margin: 2px 0 0; white-space: nowrap; }   /* Belegzeile 26 px (.p-beleg), Inhalt statt Meta (Abnahme D05) */
+/* Offenes Ende nach dem Regal: Hinweis in der Spalte Bindung (Phase 5) über dem offenen Ende (y = 595).
+   Seit 03.11.2026 (D06, Kacheln 232 × 130) nicht mehr über K4 – dort steht jetzt der Name „Regal“. */
+#f04 .e4-regal { left: 1541.33px; top: 450px; width: 250.67px; box-sizing: border-box; background: var(--p-papier); }
+#f04 .e4-regal-notiz { position: static; padding: 0; margin: 0; white-space: normal; }
+#f04 .e4-regal-beleg { margin: 4px 0 0; }   /* Belegzeile 26 px (.p-beleg), Inhalt statt Meta (Abnahme D05) */

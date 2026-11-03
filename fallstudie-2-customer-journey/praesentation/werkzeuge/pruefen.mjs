@@ -20,6 +20,10 @@
      • überlappender Text (Zeilen zweier Elemente liegen übereinander)
      • fehlende Notizen, fehlendes data-zeit / data-titel
      • Live-Abstimmung (Folie 08): Zustand der Pille und n (siehe unten)
+     • Bilder (seit 03.11.2026, FS2 D06): jedes <img> geladen (kein kaputtes
+       Bild-Symbol), nicht verzerrt (object-fit oder passendes Seitenverhältnis),
+       nicht hochgerechnet (Datei kleiner als die Fläche → Warnung „unscharf“);
+       interne Fassung siehe „INTERNE BILDER“ unten
    Elemente mit dem Attribut data-ueberlauf-ok (z. B. ein absichtlich über den
    Rand laufendes Bild) und ihr Inhalt sind von der Überlaufprüfung ausgenommen,
    Elemente mit data-ueberlappung-ok von der Überlappungsprüfung.
@@ -51,6 +55,25 @@
      --live-werte 3,1,7,0,2 Live-Abstimmung: fester Stand (z. B. für Screenshots)
      --live-aus             liveQuelle aus marke.js für diesen Lauf ausblenden
                             (Folie wie ohne Live-Abstimmung: kein QR-Code, Zählmodus)
+     --oeffentlich          öffentliche Fassung prüfen: jede Anfrage an den Ordner intern/
+                            neben der HTML-Datei wird per Route gesperrt (wie auf GitHub
+                            Pages, wo intern/ fehlt). Pflicht für Ausgaben nach export/
+                            oder bilder/ (sonst Abbruch, siehe „INTERNE BILDER“).
+
+   INTERNE BILDER (FS2, js/folien/intern-bilder.js, LIESMICH §12)
+   Liegt intern/bilder.js neben der HTML-Datei, prüft der Lauf die interne
+   Fassung: Jedes Element mit data-intern braucht einen Schlüssel in
+   window.INTERN_BILDER (Fehler; mit data-intern-optional nur Warnung – dann
+   bleibt das öffentliche Bild), jede eingesetzte Datei muss laden
+   (naturalWidth > 0), und auf jeder Folie mit sichtbarem internem Bild muss
+   die Bildnachweis-Zeile (.p-bildquelle) sichtbar sein und in den Satzspiegel
+   passen (x ≤ 1792). Fehlt intern/bilder.js, ist das eine WARNUNG
+   („öffentliche Fassung ohne interne Bilder“), kein Fehler; dann (und mit
+   --oeffentlich) darf kein Element data-intern-status tragen, kein Bild aus
+   intern/ kommen und keine Bildnachweis-Zeile sichtbar sein (sonst Fehler).
+   Exporte (export/, bilder/) dürfen nie interne Bilder enthalten: Zeigt
+   --ausgabe oder --druck dorthin und liegt intern/bilder.js vor, bricht der
+   Lauf ohne --oeffentlich ab.
 
    LIVE-ABSTIMMUNG (marke.js → umfragen.<id>.liveQuelle, Folie 08)
    Die Prüfung schickt nie eine Anfrage an die echte Web-App. Anfragen an die
@@ -96,7 +119,7 @@ import { pathToFileURL } from 'node:url';
 const argv = process.argv.slice(2);
 const opt = { datei: null, ausgabe: null, schritte: false, nur: null, thema: null, modus: null, druck: null,
   skala: 1, optional: false, primaer: null, sekundaer: null, reduziert: false, ohneBilder: false,
-  liveOffline: false, liveWerte: null, liveAus: false };
+  liveOffline: false, liveWerte: null, liveAus: false, oeffentlich: false };
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   const wert = () => { const w = argv[++i]; if (w === undefined) abbruch('Wert fehlt für ' + a); return w; };
@@ -120,6 +143,7 @@ for (let i = 0; i < argv.length; i++) {
     opt.liveWerte = opt.liveWerte.map(Number);
   }
   else if (a === '--live-aus') opt.liveAus = true;
+  else if (a === '--oeffentlich') opt.oeffentlich = true;
   else if (a === '--hilfe' || a === '-h') { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('*/')[0]); process.exit(0); }
   else if (a.startsWith('--')) abbruch('Unbekannte Option ' + a);
   else opt.datei = a;
@@ -132,6 +156,24 @@ const ausgabe = path.resolve(opt.ausgabe || datei.replace(/\.html?$/i, '') + '-p
 if ([opt.liveOffline, !!opt.liveWerte, opt.liveAus].filter(Boolean).length > 1) {
   abbruch('--live-offline, --live-werte und --live-aus schließen sich aus – nur eine davon angeben.');
 }
+
+/* ---------- Interne Fassung (FS2, LIESMICH §12) ----------
+   intern/ neben der HTML-Datei ist per .gitignore ausgeschlossen. --oeffentlich
+   sperrt den Ordner per Route; ohne intern/bilder.js ist es die öffentliche
+   Fassung (Warnung). Exporte nach export/ oder bilder/ nur öffentlich. */
+const praesOrdner = path.dirname(datei);
+const internOrdner = path.join(praesOrdner, 'fremdbilder');
+const internBilderJs = path.join(internOrdner, 'register.js');
+const internUrl = pathToFileURL(internOrdner).href + '/';
+const internBilderJsUrl = pathToFileURL(internBilderJs).href;
+const INTERN = {
+  bilderJsDa: fs.existsSync(internBilderJs),
+  gesperrt: [],           /* --oeffentlich: abgebrochene Anfragen an intern/ */
+  bilderJsMeldung: 0      /* Lade-/Sperrmeldungen von intern/bilder.js (kein Fehler) */
+};
+INTERN.fassung = opt.oeffentlich ? 'oeffentlich (intern/ per Route gesperrt)' : INTERN.bilderJsDa ? 'intern' : 'oeffentlich (intern/bilder.js fehlt)';
+/* Exportsperre entfällt seit 03.11.2026: Die Fremdbilder sind mit Freigabe
+   (KI-Nachweis FS2 Nr. 17) veröffentlicht und liegen versioniert in fremdbilder/. */
 
 /* ---------- Live-Abstimmung: liveQuelle aus marke.js lesen ----------
    marke.js setzt nur window.MARKE = { … } – hier in einer leeren Umgebung
@@ -195,7 +237,7 @@ const bericht = {
   datei: path.relative(process.cwd(), datei),
   zeitpunkt: new Date().toISOString(),
   einstellungen: { thema: opt.thema, modus: opt.modus, schritte: opt.schritte, skala: opt.skala, optional: opt.optional,
-    primaer: opt.primaer, sekundaer: opt.sekundaer, bewegungReduziert: opt.reduziert, live: LIVE.modus },
+    primaer: opt.primaer, sekundaer: opt.sekundaer, bewegungReduziert: opt.reduziert, live: LIVE.modus, fassung: INTERN.fassung },
   zusammenfassung: {},
   fehler: [],          // muss behoben werden
   warnungen: [],       // sollte geprüft werden
@@ -204,6 +246,7 @@ const bericht = {
   screenshots: [],
   externeAnfragen: [],  // blockiert, jede ist ein Fehler
   liveAnfragen: null,   // an die liveQuelle – beantwortet von der eingebauten Attrappe (ende())
+  interneBilder: null,  // Fassung, Schlüssel, eingesetzte Bilder (FS2, LIESMICH §12)
   druck: null
 };
 const fehler = (ort, text) => bericht.fehler.push({ ort, text });
@@ -341,6 +384,11 @@ function liveRoute(route, l) {
    liveQuelle (Attrappe, siehe Kopf) */
 await kontext.route('**/*', (route) => {
   const url = route.request().url();
+  /* --oeffentlich: intern/ sperren (wie auf GitHub Pages, wo der Ordner fehlt) */
+  if (opt.oeffentlich && url.startsWith(internUrl)) {
+    INTERN.gesperrt.push(decodeURIComponent(url.slice(internUrl.length)));
+    return route.abort('blockedbyclient');
+  }
   if (/^(file|data|blob|about):/i.test(url)) return route.continue();
   const live = liveAnfrageErkennen(url);
   if (live) return liveRoute(route, live);
@@ -399,12 +447,23 @@ function seiteBeobachten(seite, ort) {
       LIVE.zaehler.konsoleOffline++;
       return;
     }
+    /* intern/bilder.js fehlt (öffentliche Fassung) oder ist gesperrt (--oeffentlich): Warnung bzw. gewollt, kein Fehler */
+    if (m.type() === 'error' && /^Failed to load resource/.test(m.text()) && ((m.location() || {}).url || '') === internBilderJsUrl &&
+        (opt.oeffentlich || !INTERN.bilderJsDa)) {
+      INTERN.bilderJsMeldung++;
+      return;
+    }
     if (m.type() === 'error') fehler(ort, 'Konsole: ' + m.text());
     else if (m.type() === 'warning') warnung(ort, 'Konsole (Warnung): ' + m.text());
   });
   seite.on('pageerror', (e) => fehler(ort, 'Seitenfehler: ' + e.message));
   seite.on('requestfailed', (r) => {
     const url = r.url();
+    if (url === internBilderJsUrl && (opt.oeffentlich || !INTERN.bilderJsDa)) { INTERN.bilderJsMeldung++; return; }
+    if (opt.oeffentlich && url.startsWith(internUrl)) {
+      fehler(ort, 'öffentliche Fassung fordert eine interne Datei an (gesperrt): ' + decodeURIComponent(url.slice(internUrl.length)) + ' – nur intern/bilder.js darf angefragt werden');
+      return;
+    }
     if (/^file:/i.test(url)) fehler(ort, 'Datei fehlt oder nicht lesbar: ' + decodeURIComponent(url.replace(/^file:\/\//, '')) + ' (' + (r.failure() || {}).errorText + ')');
   });
 }
@@ -421,6 +480,70 @@ try {
 }
 await seite.evaluate(() => document.fonts && document.fonts.ready);
 await seite.evaluate(() => window.Deck.testmodus(true));
+
+/* ---------- Interne Bilder und alle <img> (FS2, LIESMICH §12) ----------
+   Erst warten, bis jedes Bild geladen oder gescheitert ist (intern-bilder.js
+   stellt bei einem Fehler den öffentlichen Zustand wieder her), dann prüfen. */
+const bilderStand = await seite.evaluate(async () => {
+  const imgs = [...document.querySelectorAll('img')];
+  await Promise.all(imgs.map((i) => (i.complete ? null : new Promise((fertig) => {
+    i.addEventListener('load', fertig, { once: true });
+    i.addEventListener('error', fertig, { once: true });
+    setTimeout(fertig, 8000);
+  }))));
+  await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  const B = window.INTERN_BILDER;
+  const folieVon = (el) => { const f = el.closest('section.folie'); return f ? f.id : '–'; };
+  return {
+    fassung: document.documentElement.getAttribute('data-fassung') || '',
+    hatBilderJs: !!(B && typeof B === 'object'),
+    schluessel: B && typeof B === 'object' ? Object.keys(B).length : 0,
+    elemente: [...document.querySelectorAll('[data-intern]')].map((el) => ({
+      folie: folieVon(el), schluessel: el.getAttribute('data-intern'), status: el.getAttribute('data-intern-status') || '',
+      optional: el.hasAttribute('data-intern-optional'), vorhanden: !!(B && typeof B === 'object' && B[el.getAttribute('data-intern')]),
+      datei: B && B[el.getAttribute('data-intern')] ? B[el.getAttribute('data-intern')].datei : ''
+    })),
+    bilder: imgs.filter((i) => (i.getAttribute('src') || '').trim()).map((i) => ({
+      folie: folieVon(i), src: i.getAttribute('src'), geladen: i.complete && i.naturalWidth > 0, fertig: i.complete
+    })),
+    statusOhneSkript: [...document.querySelectorAll('[data-intern-status]')].length,
+    bildquellenSichtbar: [...document.querySelectorAll('.p-bildquelle')].filter((z) => !z.hidden).map(folieVon)
+  };
+});
+{
+  const intern = !opt.oeffentlich && INTERN.bilderJsDa && bilderStand.hatBilderJs;
+  const gesetzt = bilderStand.elemente.filter((e) => e.status === 'gesetzt');
+  bericht.interneBilder = {
+    fassung: INTERN.fassung,
+    fassungImBrowser: bilderStand.fassung,
+    bilderJs: opt.oeffentlich ? 'gesperrt (--oeffentlich)' : INTERN.bilderJsDa ? 'vorhanden' : 'fehlt',
+    schluesselInBilderJs: bilderStand.schluessel,
+    elementeMitDataIntern: bilderStand.elemente.length,
+    eingesetzt: gesetzt.length,
+    fehlendeSchluessel: intern ? bilderStand.elemente.filter((e) => !e.vorhanden && !e.optional).map((e) => e.folie + ' ' + e.schluessel) : '– (öffentliche Fassung)',
+    fehlendeOptionaleSchluessel: intern ? bilderStand.elemente.filter((e) => !e.vorhanden && e.optional).map((e) => e.folie + ' ' + e.schluessel) : '– (öffentliche Fassung)',
+    gesperrteAnfragen: INTERN.gesperrt
+  };
+  if (!opt.oeffentlich && !INTERN.bilderJsDa) {
+    warnung('Interne Bilder', 'öffentliche Fassung ohne interne Bilder (intern/bilder.js fehlt) – Platzhalter und Rückfälle bleiben stehen');
+  }
+  if (intern) {
+    bilderStand.elemente.forEach((e) => {
+      const ort = 'Interne Bilder (' + e.folie + ')';
+      if (!e.vorhanden && e.optional) warnung(ort, 'data-intern="' + e.schluessel + '": kein Schlüssel in intern/bilder.js – das öffentliche Bild bleibt (data-intern-optional)');
+      else if (!e.vorhanden) fehler(ort, 'data-intern="' + e.schluessel + '": kein Schlüssel in intern/bilder.js');
+      else if (e.status !== 'gesetzt') fehler(ort, 'data-intern="' + e.schluessel + '": Datei nicht eingesetzt (Status „' + (e.status || '–') + '“, ' + e.datei + ') – fehlt sie in intern/bilder/?');
+    });
+    if (!gesetzt.length) fehler('Interne Bilder', 'intern/bilder.js liegt vor, aber kein Bild wurde eingesetzt (js/folien/intern-bilder.js eingebunden? ?kacheln=rueckfall?)');
+  } else {
+    /* öffentliche Fassung: nichts Internes darf sichtbar oder angefordert sein */
+    if (bilderStand.statusOhneSkript) fehler('Interne Bilder', 'öffentliche Fassung: ' + bilderStand.statusOhneSkript + ' Element(e) mit data-intern-status – interne Bilder eingesetzt?');
+    bilderStand.bilder.filter((b) => /(^|\/)fremdbilder\//.test(b.src)).forEach((b) => fehler('Interne Bilder (' + b.folie + ')', 'öffentliche Fassung zeigt ein Bild aus intern/: ' + b.src));
+    bilderStand.bildquellenSichtbar.forEach((f) => fehler('Interne Bilder (' + f + ')', 'öffentliche Fassung: Bildnachweis-Zeile (.p-bildquelle) sichtbar, obwohl keine internen Bilder geladen sind'));
+  }
+  /* jedes Bild mit src muss geladen sein – sonst kaputtes Bild-Symbol */
+  bilderStand.bilder.filter((b) => !b.geladen).forEach((b) => fehler('Bilder (' + b.folie + ')', 'Bild nicht geladen (kaputtes Bild-Symbol): ' + b.src + (b.fertig ? '' : ' (nach 8 s noch nicht fertig)')));
+}
 
 /* ---------- Schriften ---------- */
 bericht.schriften = await seite.evaluate(() => {
@@ -487,7 +610,7 @@ if (opt.nur) {
 /* Prüfungen im Browser für die aktuell sichtbare Folie */
 async function folieUntersuchen(id) {
   return seite.evaluate((folienId) => {
-    const ergebnis = { ueberlauf: [], abgeschnitten: [], ueberlappung: [], klein: [], kontrast: [], woerter: 0, notizen: true, attribute: {} };
+    const ergebnis = { ueberlauf: [], abgeschnitten: [], ueberlappung: [], klein: [], kontrast: [], bilder: [], woerter: 0, notizen: true, attribute: {} };
     const textFlaechen = [];   /* für die Überlappungsprüfung (Punkt 2b) */
     const folie = document.getElementById(folienId);
     const buehne = document.querySelector('.buehne');
@@ -679,6 +802,40 @@ async function folieUntersuchen(id) {
       }
     }
 
+    /* 4b. Bilder (FS2 D06): verzerrt (ohne object-fit cover/contain und mit anderem Seitenverhältnis
+       als die Datei) → Fehler; hochgerechnet (Datei kleiner als die Fläche auf der 1920er-Bühne, Faktor
+       > 1,05) → Warnung „unscharf“; sichtbares internes Bild ohne sichtbare Bildnachweis-Zeile → Fehler;
+       Bildnachweis-Zeile über den Satzspiegel (x > 1792) hinaus → Fehler. */
+    let internSichtbar = false;
+    for (const img of folie.querySelectorAll('img')) {
+      if (!sichtbar(img) || !img.naturalWidth || !img.naturalHeight) continue;
+      const r = inBuehne(img.getBoundingClientRect());
+      const st = getComputedStyle(img);
+      /* Inhaltsfläche ohne Innenabstand und Rahmen (z. B. Logo auf heller Platte im Modus dunkel) */
+      const rand = (a, b) => (parseFloat(st[a]) || 0) + (parseFloat(st[b]) || 0);
+      const w = r.r - r.l - rand('paddingLeft', 'paddingRight') - rand('borderLeftWidth', 'borderRightWidth');
+      const h = r.b - r.t - rand('paddingTop', 'paddingBottom') - rand('borderTopWidth', 'borderBottomWidth');
+      if (w < 2 || h < 2) continue;
+      const fit = st.objectFit;
+      const nw = img.naturalWidth, nh = img.naturalHeight;
+      const name = (img.getAttribute('src') || '').split('/').pop();
+      if (!/^(cover|contain|scale-down)$/.test(fit)) {
+        const abw = (w / h) / (nw / nh);
+        if (Math.abs(abw - 1) > 0.02) ergebnis.bilder.push({ art: 'verzerrt', text: name + ': ' + Math.round(w) + ' × ' + Math.round(h) + ' auf der Bühne, Datei ' + nw + ' × ' + nh + ' (Seitenverhältnis ' + Math.round((abw - 1) * 100) + ' % daneben, object-fit: ' + fit + ')' });
+      }
+      const faktor = fit === 'contain' || fit === 'scale-down' ? Math.min(w / nw, h / nh) : Math.max(w / nw, h / nh);
+      if (faktor > 1.05) ergebnis.bilder.push({ art: 'unscharf', text: name + ': Datei ' + nw + ' × ' + nh + ' wird auf ' + Math.round(w) + ' × ' + Math.round(h) + ' hochgerechnet (Faktor ' + Math.round(faktor * 100) / 100 + ')' });
+      if (img.hasAttribute('data-intern-bild') || (img.matches('[data-intern][data-intern-status="gesetzt"]'))) internSichtbar = true;
+    }
+    const bildquelle = folie.querySelector(':scope > .p-bildquelle');
+    if (internSichtbar && !(bildquelle && sichtbar(bildquelle))) ergebnis.bilder.push({ art: 'nachweis', text: 'internes Bild sichtbar, aber keine sichtbare Bildnachweis-Zeile (.p-bildquelle)' });
+    if (bildquelle && sichtbar(bildquelle)) {
+      const bereich = document.createRange();
+      bereich.selectNodeContents(bildquelle);
+      const rechts = inBuehne(bereich.getBoundingClientRect()).r;
+      if (rechts > 1794) ergebnis.bilder.push({ art: 'satzspiegel', text: 'Bildnachweis-Zeile endet bei x = ' + Math.round(rechts) + ' (Satzspiegel 1792): „' + textVon(bildquelle) + '“' });
+    }
+
     /* 2b. Überlappender Text: Zeilen zweier verschiedener Elemente liegen
        übereinander (z. B. eine Beschreibung rutscht in die Quellenzeile).
        Ausnahme: Elemente mit data-ueberlappung-ok (und ihr Inhalt). */
@@ -793,6 +950,7 @@ for (const f of folien) {
     erg.kontrast.forEach((x) => einmal('c', 'Kontrast ' + x.kontrast + ' : 1 (Soll ' + x.soll + ' : 1, ' + x.px + ' px' +
       (x.deckkraft !== null && x.deckkraft !== undefined ? ', abgeblendet auf Deckkraft ' + x.deckkraft : '') + '): ' + x.el + ' „' + x.text + '“',
       x.deckkraft !== null && x.deckkraft !== undefined && zusatz ? warnung : fehler));
+    erg.bilder.forEach((x) => einmal('b', (x.art === 'unscharf' ? 'Bild unscharf: ' : x.art === 'verzerrt' ? 'Bild verzerrt: ' : 'Bildnachweis: ') + x.text, x.art === 'unscharf' ? warnung : fehler));
   };
   melden(u, '');
   zwischen.forEach((z) => melden(z.u, ' (nur in Schritt ' + z.n + ')'));
@@ -864,6 +1022,8 @@ async function ende() {
     warnungenKurz: echteWarnungen + (abgeblendet ? ' + ' + abgeblendet + ' gewollt abgeblendet (Zwischenschritte)' : ''),
     externeAnfragen: bericht.externeAnfragen.length,
     liveAnfragen: liveAnzahl,
+    fassung: INTERN.fassung,
+    interneBilderEingesetzt: bericht.interneBilder ? bericht.interneBilder.eingesetzt : null,
     ausgabe: path.relative(process.cwd(), ausgabe) || '.',
     ergebnis: bericht.fehler.length ? 'FEHLER – bitte beheben'
       : (echteWarnungen ? 'ok mit Warnungen' : (abgeblendet ? 'ok (nur gewollt abgeblendete Zwischenschritte)' : 'ok'))

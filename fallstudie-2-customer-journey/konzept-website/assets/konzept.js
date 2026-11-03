@@ -7,6 +7,9 @@
        ?packung=…       set | 1 | 10 | 50 (Produktseite → Warenkorb → Danke-Seite)
        ?anmerkungen=1   Präsentationsmodus: nummerierte Anmerkungs-Marker „was wir ändern und warum“
    - reicht code und anmerkungen an alle internen Links weiter, damit die Strecke im Vortrag durchklickbar bleibt
+   - interne Fassung: Liegt intern/bilder.js vor (per .gitignore ausgeschlossen, nicht im Repository und nicht auf
+     GitHub Pages), bekommen Elemente mit data-intern="schlüssel" ein Bild aus intern/bilder/ samt Bildnachweis;
+     ohne die Datei bleibt die öffentliche Fassung mit Platzhaltern und eigenen Zeichnungen (Abschnitt „Interne Bilder“)
    Daten: Preise und Mengen aus dem Recherche-Dossier FS2 (Befund-IDs in den Kommentaren), alles andere Beispielwert.
    ========================================================================== */
 (function () {
@@ -95,6 +98,109 @@
   document.querySelectorAll('a[href]').forEach(function (a) {
     ergaenzeLink(a, a.hasAttribute('data-mit-packung') ? { packung: packungAusAdresse() } : null);
   });
+
+  /* ---------- Interne Bilder (nur interne Fassung im Hörsaal) ----------
+     intern/bilder.js setzt window.INTERN_BILDER = { schlüssel: { datei, alt, nachweis, motiv, pixel, … } }.
+     Bildplatz = Element mit data-intern="schlüssel" („{packung}“ wird durch die Packung aus der Adresse ersetzt).
+     Das Bild kommt in das Kind .bildplatz (sonst in den Bildplatz selbst); Bildplatz, .bildplatz und Vorfahren mit
+     data-intern-gruppe verlieren dabei ihr hidden, der Bildplatz bekommt .mit-bild (CSS blendet .nur-ohne-bild aus).
+     data-intern-deko: alt="" (Bild in einem Knopf oder Link, dessen Text dasselbe sagt).
+     [data-intern-nachweis] im Bildplatz zeigt den Bildnachweis; im Fuß stehen alle Nachweise der Seite ([data-nur-intern]).
+     Lädt ein Bild nicht, wird alles zurückgesetzt: Platzhalter statt kaputtem Bild-Symbol. Ohne intern/bilder.js passiert
+     nichts (öffentliche Fassung). Nur Dateien aus intern/bilder/ werden angenommen. */
+  var BILDER = (window.INTERN_BILDER && typeof window.INTERN_BILDER === 'object') ? window.INTERN_BILDER : null;
+  function bildEintrag(schluessel) {
+    if (!BILDER || !schluessel || !Object.prototype.hasOwnProperty.call(BILDER, schluessel)) return null;
+    var e = BILDER[schluessel];
+    return (e && typeof e.datei === 'string' && /^fremdbilder\/[\w.-]+\.(jpe?g|png|webp)$/i.test(e.datei)) ? e : null;
+  }
+  function setzeBild(img, e, deko) {
+    var m = /(\d+)\s*[×x]\s*(\d+)/.exec(String(e.pixel || ''));
+    if (m) { img.width = Number(m[1]); img.height = Number(m[2]); }
+    img.alt = deko ? '' : String(e.alt || '');
+    img.src = e.datei;
+  }
+  function zeigeBildnachweise() {
+    var liste = [];
+    document.querySelectorAll('[data-intern].mit-bild').forEach(function (platz) {
+      var e = bildEintrag(platz.getAttribute('data-intern-aktiv'));
+      if (e && e.nachweis && liste.indexOf(e.nachweis) < 0) liste.push(String(e.nachweis));
+    });
+    var an = liste.length > 0;
+    document.documentElement.classList.toggle('intern-bilder', an);
+    document.querySelectorAll('[data-nur-intern]').forEach(function (el) { el.hidden = !an; });
+    document.querySelectorAll('[data-nur-oeffentlich]').forEach(function (el) { el.hidden = an; });
+    document.querySelectorAll('[data-intern-liste]').forEach(function (ul) {
+      ul.textContent = '';
+      liste.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+    });
+  }
+  function bauBildEin(platz) {
+    var schluessel = platz.getAttribute('data-intern').replace('{packung}', packungAusAdresse());
+    var e = bildEintrag(schluessel);
+    if (!e) return;
+    var ziel = platz.querySelector('.bildplatz') || platz;
+    var vorher = { platz: platz.hidden, ziel: ziel.hidden };
+    var gruppen = [];
+    for (var g = platz.parentElement; g; g = g.parentElement) {
+      if (g.hasAttribute('data-intern-gruppe')) gruppen.push({ el: g, hidden: g.hidden });
+    }
+    platz.hidden = false;
+    ziel.hidden = false;
+    gruppen.forEach(function (x) { x.el.hidden = false; x.el.classList.add('hat-intern-bild'); });
+    platz.classList.add('mit-bild');
+    platz.setAttribute('data-intern-aktiv', schluessel);
+    var nachweis = platz.querySelector('[data-intern-nachweis]');
+    var nachweisVorher = nachweis ? nachweis.textContent : '';
+    if (nachweis) nachweis.textContent = String(e.nachweis || '');
+
+    var img = document.createElement('img');
+    img.className = 'intern-bild';
+    img.decoding = 'async';
+    /* erster Bildschirm sofort laden, alles darunter erst beim Scrollen */
+    if (ziel.getBoundingClientRect().top > window.innerHeight) img.loading = 'lazy';
+    img.addEventListener('error', function () {
+      if (img.parentNode) img.parentNode.removeChild(img);
+      platz.classList.remove('mit-bild');
+      platz.removeAttribute('data-intern-aktiv');
+      platz.hidden = vorher.platz;
+      ziel.hidden = vorher.ziel;
+      if (nachweis) nachweis.textContent = nachweisVorher;
+      gruppen.forEach(function (x) {
+        if (!x.el.querySelector('.mit-bild')) { x.el.hidden = x.hidden; x.el.classList.remove('hat-intern-bild'); }
+      });
+      /* ohne großes Produktbild hat die Galerie nichts zu tauschen: mit ausblenden (Platzhalter wie öffentlich) */
+      if (platz.hasAttribute('data-intern-held')) {
+        document.querySelectorAll('[data-intern-galerie]').forEach(function (gal) {
+          gal.hidden = true;
+          gal.querySelectorAll('[data-intern].mit-bild').forEach(function (x) { x.classList.remove('mit-bild'); });
+        });
+      }
+      zeigeBildnachweise();
+    });
+    setzeBild(img, e, platz.hasAttribute('data-intern-deko'));
+    ziel.appendChild(img);
+  }
+  if (BILDER) document.querySelectorAll('[data-intern]').forEach(bauBildEin);
+  zeigeBildnachweise();
+
+  /* Produktseite: kleine Galerie – ein Klick zeigt das Bild groß (ändert nur die Anzeige) */
+  var held = document.querySelector('[data-intern-held].mit-bild');
+  var heldBild = held && held.querySelector('img');
+  if (heldBild) {
+    var daumen = document.querySelectorAll('[data-intern-galerie] button[data-intern].mit-bild');
+    daumen.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var e = bildEintrag(b.getAttribute('data-intern-aktiv'));
+        if (!e || !heldBild.parentNode) return;
+        heldBild.loading = 'eager';
+        setzeBild(heldBild, e, false);
+        var n = held.querySelector('[data-intern-nachweis]');
+        if (n) n.textContent = String(e.nachweis || '');
+        daumen.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      });
+    });
+  }
 
   /* ---------- Produktseite: Packung wählen (ändert nur die Anzeige) ---------- */
   var optionen = document.querySelectorAll('.option[data-packung]');

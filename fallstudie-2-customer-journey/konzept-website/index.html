@@ -15,7 +15,8 @@
   Phase Inspiration (AWARE) · Top-Touchpoint: Creator-Kurzvideo mit Code und klarer Weiterleitung (gestaltungsplan.md 5.2)
   Schließt Überleitung Ü1 (Inspiration → Recherche, gestaltungsplan.md 6.7): Code führt heute auch in die freie Suche.
   Studentisches Konzept der Gruppe, KI-gestützt entworfen, Prüfung durch die Gruppe offen. Stand 03.11.2026.
-  Kennzeichnung nach gestaltungsplan.md 7.3: Hinweisbalken (fest), noindex, Wortmarke nur im Kopf (Freigabe 03.11.), keine fremden Bilder,
+  Kennzeichnung nach gestaltungsplan.md 7.3: Hinweisbalken (fest), noindex, Wortmarke nur im Kopf (Freigabe 03.11.), öffentlich keine fremden Bilder
+  (interne Fassung: Produktbilder aus intern/, nicht im Repository, Bildnachweis im Fuß),
   keine Datenübermittlung, keine externen Anfragen. Befund-IDs: Recherche-Dossier FS2 (recherche-customer-journey.md).
 -->
 <body data-station="1">
@@ -73,7 +74,8 @@
 
       <!-- Maßnahme I3: zwei klare Wege statt freier Suche (Ü1, gestaltungsplan.md 6.7) -->
       <div class="knopfreihe">
-        <a class="knopf" href="produkt.html">Zum Produkt aus dem Video <span class="pfeil" aria-hidden="true">→</span></a>
+        <!-- interne Fassung: Produktbild im Knopf wie der Produkt-Tag im Video (✔ X01); öffentlich bleibt der Knopf ohne Bild -->
+        <a class="knopf" href="produkt.html" data-intern="web-start-video" data-intern-deko><span class="knopfbild bildplatz" hidden></span>Zum Produkt aus dem Video <span class="pfeil" aria-hidden="true">→</span></a>
         <a class="knopf knopf-rand" href="koffein-check.html">Erst den Koffein-Check lesen</a>
       </div>
       <p class="meta">Für Erwachsene: laut Etikett nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag. <a href="koffein-check.html#ab-wie-viel-jahren">Mehr im Koffein-Check</a></p>
@@ -109,11 +111,15 @@
       </a>
       <!-- Starter Set: 24,99 €, 14 Drinks, Shaker, Gratisversand ✔ T20; je Drink 1,79 € gerechnet;
            Grundpreis: Füllmenge des Sets nicht im Dossier (✔ R98 verlangt ihn) → offen markiert -->
-      <a class="teaser kasten kasten-gelb" href="produkt.html">
-        <p class="meta">Für den Einstieg</p>
-        <h3>Starter Set Energy: 14 Drinks + Shaker</h3>
-        <p><span class="zahl">24,99 €</span> · 1,79 € je Drink · Gratisversand<br><span class="meta">Grundpreis offen: Füllmenge des Sets noch nicht belegt</span></p>
-        <span class="weiter">Packungen vergleichen →</span>
+      <!-- interne Fassung: Packshot Starter Set rechts im Kasten (data-intern); öffentlich ohne Bild -->
+      <a class="teaser kasten kasten-gelb" href="produkt.html" data-intern="web-start-teaser-set" data-intern-deko>
+        <div>
+          <p class="meta">Für den Einstieg</p>
+          <h3>Starter Set Energy: 14 Drinks + Shaker</h3>
+          <p><span class="zahl">24,99 €</span> · 1,79 € je Drink · Gratisversand<br><span class="meta">Grundpreis offen: Füllmenge des Sets noch nicht belegt</span></p>
+          <span class="weiter">Packungen vergleichen →</span>
+        </div>
+        <span class="teaserbild bildplatz" hidden></span>
       </a>
     </div>
   </section>
@@ -122,6 +128,7 @@
   <section class="abschnitt" aria-labelledby="skizze">
     <div class="inhalt schmal">
       <h2 id="skizze">So kommst du hierher<span class="anm" data-ids="✔ X01 · ✎ X02 · ✔ X03 · ✔ T32 · ✔ R30">Was wir ändern: Im Video führt ein Tipp auf genau das gezeigte Produkt, der Code reist mit. Ob Marco im eigenen Shop oder per Kauf in der App (TikTok Shop) seltener abbricht, wird getestet, nicht angenommen: Beim Kauf in der App liegen Checkout und Kundendaten bei der Plattform, und die Brücke zu SQUAD Rewards fehlt. Die Skizze ist eine eigene Zeichnung, kein Screenshot.</span></h2>
+      <div class="skizze-reihe" data-intern-gruppe>
       <figure class="zeichnung">
         <svg viewBox="0 0 340 200" role="img" aria-labelledby="skizze-t skizze-d">
           <title id="skizze-t">Skizze: Video mit Produkt-Tag, Landingpage mit Code, Produktseite</title>
@@ -157,6 +164,15 @@
         </svg>
         <figcaption>Eigene Skizze (Konzept): Ein Tipp auf den Produkt-Tag im Video führt hierher, der Code reist mit. Keine Screenshots, kein Logo.</figcaption>
       </figure>
+      <!-- interne Fassung: das Produkt aus dem Video neben der Skizze (Skizze bleibt); öffentlich ausgeblendet -->
+      <figure class="produktkarte" data-intern="web-start-video" data-intern-deko hidden>
+        <a href="produkt.html">
+          <span class="bildplatz"></span>
+          <span><span class="meta">Das Produkt aus dem Video</span><strong>HOLY Energy Raspberry Raptor</strong><span class="weiter">Zum Produkt →</span></span>
+        </a>
+        <figcaption class="bildnachweis" data-intern-nachweis></figcaption>
+      </figure>
+      </div>
     </div>
   </section>
 
@@ -183,7 +199,13 @@
     <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
     <div class="kennung">
       <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</p>
+      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
+      <!-- nur in der internen Fassung sichtbar (konzept.js, sobald Bilder aus intern/ eingebaut sind) -->
+      <div data-nur-intern hidden>
+        <p>Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.</p>
+        <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
+        <ul class="bildnachweise" data-intern-liste></ul>
+      </div>
     </div>
     <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
     <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
@@ -192,6 +214,9 @@
   </div>
 </footer>
 
+<!-- Interne Fassung: intern/bilder.js (per .gitignore ausgeschlossen, nicht im Repository und nicht auf GitHub Pages)
+     setzt window.INTERN_BILDER; fehlt die Datei (öffentliche Fassung), bleiben Platzhalter und eigene Zeichnungen. -->
+<script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>
 </body>
 </html>
