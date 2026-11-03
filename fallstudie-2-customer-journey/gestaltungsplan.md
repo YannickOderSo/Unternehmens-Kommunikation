@@ -1,14 +1,25 @@
 <!-- Erzeugt am 30.10.2026 im Workflow zu Fallstudie 2 (KI-Nachweis FS2, Eintrag 04 / Delegation D02), nach den
 Urteilen zweier Jurys über drei Gestaltungsrichtungen. KI-gestützt erstellt, Prüfung durch die Gruppe offen.
 Klicks, Sollzeiten, Jury-Punkte und Kontraste sind per Skript nachgerechnet (Abschnitt 14.4).
-Die Korrekturen der Schlussprüfung vom 30.10.2026 sind danach eingearbeitet und in Abschnitt 15 aufgeführt. -->
+Die Korrekturen der Schlussprüfung vom 30.10.2026 sind danach eingearbeitet und in Abschnitt 15 aufgeführt.
+Am 03.11.2026 nach der Aufgabenfolie (A1–A7) und den Entscheidungen von Yannick umgebaut (Workflow „fs2-bau“,
+KI-Nachweis FS2, Eintrag 11 / Delegation D05); Klicks und Sollzeiten erneut per Skript nachgerechnet (14.4). -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
-# Gestaltungsplan – Präsentation Fallstudie 2 „Customer Journey & Blog-Beitrag“
+# Gestaltungsplan – Präsentation Fallstudie 2 „Customer Journey“
 
-HOLY · Persona Marco (FS1) · Präsentation Mo, 09.11.2026, 15 Minuten · Stand Fr, 30.10.2026 · Schlussprüfung
-eingearbeitet (Abschnitt 15) · **Entwurf, Prüfung durch die Gruppe offen**
+HOLY · Persona Marco (FS1) · Präsentation **Di, 10.11.2026**, 15 Minuten · Stand Di, 03.11.2026 · Umbau nach der
+Aufgabenfolie · **Entwurf, Prüfung durch die Gruppe offen**
+
+> **Änderungsvermerk (Stand 03.11.2026).** Umgebaut nach der Aufgabenfolie vom 03.11.2026 (A1–A7, Wortlaut in
+> [`README.md`](README.md)) und den Entscheidungen von Yannick vom selben Tag: (1) zentraler Weg = Online-Weg laut
+> Persona, Handel als gestrichelter Nebenweg; (2) neuer Folienplan mit neun Hauptfolien (alte Folie 02 „Vorgehen“
+> entfällt, neu: 05 Überleitungen, 07 Best Practice → Maßnahme, 08 Konzept-Webseite); (3) kein Blog-Beitrag mehr,
+> der „Koffein-Check“ bleibt als Seite der Konzept-Webseite; (4) Vortrag Di 10.11., Änderungsstopp Mo 09.11., 20:00.
+> Geändert: 0, 1.1 (R1–R5), 1.2, 1.3, 2, 3 (nur Folienbezüge), 4 (Folienbezüge, b02, b07, b12–b15, neu b20/b21),
+> 5.1–5.3 (neu), 6 (Journey-Map jetzt Folie 04, neu 6.7 Überleitungen), 7 (neu: Konzept-Webseite und Mock-ups),
+> 8.1, 9.1–9.5 (Folienbezüge, Zeit), 10, 11.2–11.5, 12, 13, 14.1, 14.4. Abschnitt 15 bleibt als Stand vom 30.10.2026.
 
 **KI-gestützt erstellt.** Grundlage sind drei Gestaltungsentwürfe, zwei Jury-Urteile und das Recherche-Dossier
 [`recherche-customer-journey.md`](recherche-customer-journey.md) (kurz: „Dossier“). Fakten über HOLY stehen nur mit
@@ -24,14 +35,14 @@ verteilt:** Dieser Plan ordnet keiner Person Aufgaben zu; wer was übernimmt, le
 2. Antwort auf jeden Kommentar von Prof. Stenger
 3. Leitidee und Gestaltungssystem
 4. Bildplan
-5. Folienplan
-6. Herzstück: die Journey-Map (Folie 05)
-7. Blog-Beitrag als Mock-up (Folie 07)
-8. Moodboard (Folie 03)
+5. Folienplan (5.2: Top 3 je Phase im SOLL)
+6. Herzstück: die Journey-Map (Folie 04) und die vier Überleitungen im IST (Folie 05, Abschnitt 6.7)
+7. Konzept-Webseite und Mock-ups (Folie 08)
+8. Moodboard und IST-Bewertung (Folie 03)
 9. Interaktion und Vortrag
 10. Zeitkonzept und Generalproben
 11. Technik und Prüfung
-12. Meilensteine bis Mo, 09.11.2026
+12. Meilensteine bis Di, 10.11.2026
 13. Offene Entscheidungen und Fragen an Prof. Stenger
 14. Herkunft
 15. Korrekturen aus der Schlussprüfung (30.10.2026)
@@ -40,19 +51,31 @@ verteilt:** Dieser Plan ordnet keiner Person Aufgaben zu; wer was übernimmt, le
 
 ## 0 Kurzfassung
 
-1. Wir bauen auf der Richtung **„Der Journey-Pfad – Editorial mit Bildern“** auf, die beide Jurys auf Platz 1 setzen
-   (Jury „Bewertung nach Prof. Stenger“, simuliert: 8,60 nachgerechnet, laut Jury 8,65; Jury „Machbarkeit“: 7,6).
-2. Damit die Folien nicht wieder „nüchtern“ wirken, übernehmen wir aus der Markenwelt als Pflicht: gelbe Vollflächen
-   auf den Folien 01, 07 und 09, echte Fotos mit 4-px-Kontur, Farbproben mit Hex-Wert, den Handzeichen-Trichter mit
-   der echten Dose, die Notiz „Handel: Recherche übersprungen“ (S. 108) und das Raster von S. 129 auf Folie 06.
-3. Aus der Reise übernehmen wir die Herleitungszeile „So kommen wir darauf: …“, Bildunterschriften als Protokoll, das
-   Moodboard mit Datencodierung, die Legende zum Moment der Wahrheit (S. 109), den HOLY heute verliert (eigene
-   Deutung), die erneute Anfrage an den Gründer und den Zeitwächter mit Kürzungsplan.
-4. Neun Hauptfolien, 23 Klicks und 11:55 Sollzeit plus 0:35 Reserve ergeben genau 12:30 (seit 02.11. mit der Videobotschaft des Gründers am Schluss); die Journey-Map zeigt
-   Marcos Weg mit zwei Lücken (beim Nachlesen antwortet HOLY nur knapp und verstreut, vom Regal führt kein Weg in den
-   Squad), und der Blog-Beitrag „Koffein-Check“ und eine QR-Brücke schließen sie.
-5. Jede Bildkachel hat einen Rückfall als eigene Grafik, Fakten stehen nur mit Dossier-Status auf den Folien, und
-   der Plan hängt an drei Terminen: Freigaben bis Di 03.11., Bildschluss Mi 04.11., Änderungsstopp So 08.11., 20:00.
+1. **Gliederung = Aufgabenfolie vom 03.11.2026** (A1–A7, [`README.md`](README.md)); den Prozess von S. 111 trägt die
+   Laufleiste. Gestaltet wird weiter in der Richtung **„Der Journey-Pfad – Editorial mit Bildern“**, die beide Jurys
+   auf Platz 1 setzen (Jury „Bewertung nach Prof. Stenger“, simuliert: 8,60 nachgerechnet, laut Jury 8,65; Jury
+   „Machbarkeit“: 7,6), mit den Pflicht-Übernahmen aus Markenwelt und Reise: gelbe Vollflächen (jetzt 01, 08, 09),
+   echte Fotos mit 4-px-Kontur, Farbproben, Handzeichen-Trichter mit der echten Dose, Herleitungszeile „So kommen wir
+   darauf: …“, Bildunterschriften als Protokoll, Raster von S. 129 auf Folie 06, Zeitwächter mit Kürzungsplan.
+2. **Zentraler Weg (IST) = Marcos Online-Weg** (Entscheidung 03.11.; Persona: „HOLY online, 50er-Pulverdose auf
+   Vorrat; im Notfall … Rewe oder Edeka“, `persona-steckbrief.md`, fiktiv): Creator-Video mit Code → eigene Suche →
+   Produktseite/Shop → Starter Set online, Lieferung/Unboxing → SQUAD Rewards. Der Handel ist ein gestrichelter
+   Nebenweg. Die vier Überleitungen bewerten wir vorläufig mit **trägt · bricht · wackelt · wackelt**; am
+   Übergang vom Nachlesen zum Entscheiden bricht der Weg (HOLY antwortet knapp, verstreut und oft nur als Bild). Vom
+   Regal in den Squad bricht der Nebenweg (6.7).
+3. **SOLL: Top 3 je Phase** aus Persona und Dossier (5.2); Platz 1 je Phase bildet den gelben „Zentraler Weg (SOLL)“:
+   Creator-Kurzvideo mit Code und klarer Weiterleitung · eigene Antwortseite „Koffein-Check“ · Produktseite mit Preis je
+   Portion, Bewertungen und einheitlicher Garantie · mobiler Warenkorb/Checkout mit klarer Lieferzeit · Willkommens-
+   und Nachkauf-Strecke mit SQUAD Rewards. Je Phase ein Vorbild aus einer anderen Branche → Maßnahme (Folie 07; die
+   Fälle kommen aus dem neuen Dossier-Kapitel, Recherche läuft).
+4. **Mock-ups = eigene HOLY-Webseite als Konzept** (`konzept-website/`, eine Seite je Top-Touchpoint, gekennzeichnet
+   als studentisches Konzept, `noindex`, ohne Logo und fremde Bilder, keine Bestellung möglich), auf Folie 08 als Strecke
+   in Handyrahmen und live zeigbar (Abschnitt 7). Ein Blog-Beitrag wird nicht mehr verlangt; der „Koffein-Check“ bleibt
+   als Seite der Konzept-Webseite.
+5. **Neun Hauptfolien, 23 Klicks, 11:50 Sollzeit plus 0:40 Reserve = 12:30**, mit der Videobotschaft des Gründers am
+   Schluss (9.5). Jede Bildkachel hat einen Rückfall, Fakten stehen nur mit Dossier-Status auf den Folien. Termine:
+   Bildschluss Do 05.11., Datenschluss Fr 06.11., Generalproben Sa 07.11. und Mo 09.11., **Änderungsstopp Mo 09.11.,
+   20:00**, Beamer-Test und Vortrag **Di 10.11.**
 
 ---
 
@@ -65,11 +88,11 @@ Eintrag 01).
 
 | Regel | Umsetzung im Plan | Abweichung (begründet) |
 |---|---|---|
-| **R1 Sofort klären:** Mail an Prof. Stenger, Bildfreigaben bei pr@holy.com und beim Gründer | Mail an Prof. Stenger heute mit den Fragen aus 13.2, zuerst nach der Aufgabe selbst (Frage 0: unsere Lesart der Aufgabe, Dossier 2.5 Nr. 1, **H** L35); Freigabe-Mail an pr@holy.com (nur Funktionsadresse, Dossier 12.3); Gründer über den Kontaktweg aus FS1 (`gruenderbefragung.md`) mit Bildfrage und zwei Journey-Fragen. Antwort erbeten bis **Di 03.11.** Jede Bildkachel kennt drei Zustände: frei · Freigabe offen · Rückfall (Abschnitt 4) | keine |
-| **R2 Echtes Material statt KI** | Selbstversuch online und im Handel, jede Station fotografiert, Protokoll mit Datum, Ort, Kanal (Backup B1); eigene Produktfotos; 5 offene Kurzinterviews (mindestens 3), anonym, mit Einwilligung; 20–30 Bewertungen plus kritische, von zwei Personen nach K1–K11 codiert (Dossier 12.4, **H** B36). Keine KI-Bilder, keine KI-simulierte Befragung | Persona Marco bleibt die fiktive Kern-Persona aus FS1 und ist so gekennzeichnet. Ihre KI-gestützte Illustration erscheint nur in B7. Die Bewertungs-Stichproben im Dossier (A–E) stammen von einem Recherche-Agenten (~ B20–B24) und erscheinen höchstens im Backup, bis die eigene Codierung vorliegt |
-| **R3 Gestaltung:** HOLY-Farben, ein Bild je Folie, Journey-Map mit Bildern wie S. 116, Moodboard, Blog als Mock-up, weniger Fußnoten | Gelb #FFD007, Schwarz #1D1D1B, Creme #F3EDE1 unverdünnt, **kein Ocker** (Ursache in FS1: Deckelung in `tokens.css`, ✔ G13). Je Hauptfolie ein großes eigenes Bild; Journey-Map mit sechs Bildkacheln (Folie 05); Moodboard (03); Blog-Mock-up (07). Je Folie **eine** Quellzeile (22 px), alle Einzelbelege in B8 | Journey-Map und Moodboard sind Bildwände mit mehreren Bildern: gewollt, so zeigt es Stenger auf S. 116 (✔ L15). Gelb nie als Schrift oder Linie auf Creme (1,26 : 1, ✔ G12). #1D1D1B ist HOLYs Logo- und Druck-Schwarz, im Web steht #000000 (✔ G07, ✎ G06); wir bleiben bei #1D1D1B wie in R3 festgelegt (Entscheidung 13.1 Nr. 4) |
-| **R4 Inhalt nach S. 111 und Übung S. 128/129, Herleitungen sichtbar** | Laufleiste mit den fünf Schritten von S. 111 auf jeder Inhaltsfolie: 03 = Schritt 1, 04/05 = Schritt 2, 06 = Schritt 3, 07 = Schritte 3/4, 08 = Schritte 4/5. Folie 06 setzt die Übung im Raster von S. 129 um. Herleitungen: Zeile „So kommen wir darauf: …“ unter jedem Titel, Belegzeile an jedem Moment der Wahrheit, Kriterienzeile auf 06, Workshop-Foto | Der Blog sitzt in der Recherche-Phase. Stenger zeigt Content Marketing unter Inspiration und Recherche in der Earned-Zeile (✔ R95); unsere Wahl wird auf Folie 07 offen benannt. Die Zeilen der Journey-Map (05) sind gegenüber S. 129 verdichtet; die Zuordnung steht in 6.3 und B8 |
-| **R5 Zeit:** ≤ 9 Hauptfolien, ≤ 25 Klicks, 12:30 Soll, Zeitwächter, zwei Generalproben, Änderungsstopp, Position neben der Leinwand | 9 Hauptfolien · 23 Klicks (Schritte + Folienwechsel, Zählweise wie FS1) · Soll 11:55 + 0:35 Reserve = 12:30 · Referentenuhr der FS1-Engine plus eine Person als Zeitwächter · Leseprobe Di 03.11., Generalproben Fr 06.11. und So 08.11. · Änderungsstopp So 08.11., 20:00 · sprechende Person links neben der Leinwand, Pfad läuft von links nach rechts | keine |
+| **R1 Sofort klären:** Mail an Prof. Stenger, Bildfreigaben bei pr@holy.com und beim Gründer | Erste Mail (30.10.) mit den Fragen von damals; seit der Aufgabenfolie vom 03.11. eine zweite Mail heute mit den neuen Fragen aus 13.2 (SOLL-Touchpoints neu? Konzept-Webseite als Mockups? „branchenübergreifend“? Übung S. 128/129 weiter erwartet?), Antwort erbeten bis **Do 05.11.**; Freigabe-Mail an pr@holy.com (nur Funktionsadresse, Dossier 12.3); der Gründer hat am 02.11. mit einer Videobotschaft geantwortet (v01, 9.5). Jede Bildkachel kennt drei Zustände: frei · Freigabe offen · Rückfall (Abschnitt 4) | keine |
+| **R2 Echtes Material statt KI** | Selbstversuch online und im Handel, jede Station fotografiert, Protokoll mit Datum, Ort, Kanal (Backup B1), **dazu ein Übergangsprotokoll für die vier Überleitungen des zentralen Wegs** (6.7: Anschluss? Wechsel von Medium oder Gerät? Klicks? stimmen Preis, Lieferzeit und Alter überein?); eigene Produktfotos; 5 offene Kurzinterviews (mindestens 3), anonym, mit Einwilligung, mit der Frage „Wo zuerst gesehen, wo informiert, wo gekauft?“; 20–30 Bewertungen plus kritische, von zwei Personen nach K1–K11 codiert (Dossier 12.4, **H** B36). Keine KI-Bilder, keine KI-simulierte Befragung | Persona Marco bleibt die fiktive Kern-Persona aus FS1 und ist so gekennzeichnet. Ihre KI-gestützte Illustration erscheint nur in B7. Die Bewertungs-Stichproben im Dossier (A–E) stammen von einem Recherche-Agenten (~ B20–B24) und erscheinen höchstens im Backup, bis die eigene Codierung vorliegt. Die Urteile zu den Überleitungen (6.7) sind bis zum Selbstversuch vorläufig |
+| **R3 Gestaltung:** HOLY-Farben, ein Bild je Folie, Journey-Map mit Bildern wie S. 116, Moodboard, **optimierte Touchpoints als Mock-ups und Konzept-Webseite** (vorher: Blog als Mock-up), weniger Fußnoten | Gelb #FFD007, Schwarz #1D1D1B, Creme #F3EDE1 unverdünnt, **kein Ocker** (Ursache in FS1: Deckelung in `tokens.css`, ✔ G13). Je Hauptfolie ein großes eigenes Bild; Journey-Map mit Bildkacheln (Folie 04); Moodboard (03); Mock-ups der optimierten Touchpoints als eigene Konzept-Webseite, auf Folie 08 als Strecke in Handyrahmen (Abschnitt 7). Je Folie **eine** Quellzeile (22 px), alle Einzelbelege in B8 | Journey-Map und Moodboard sind Bildwände mit mehreren Bildern: gewollt, so zeigt es Stenger auf S. 116 (✔ L15). Gelb nie als Schrift oder Linie auf Creme (1,26 : 1, ✔ G12). #1D1D1B ist HOLYs Logo- und Druck-Schwarz, im Web steht #000000 (✔ G07, ✎ G06); wir bleiben bei #1D1D1B wie in R3 festgelegt (Entscheidung 13.1 Nr. 4). Die Konzept-Webseite zeigt keine Fotos, nur eigene Zeichnungen und Platzhalter (7.3) |
+| **R4 Inhalt nach Aufgabenfolie A1–A7 (03.11.2026) und Prozess S. 111, Herleitungen sichtbar** (vorher: S. 111 und Übung S. 128/129) | **Gliederung = A1–A7:** 03 = A1 IST-Analyse, 04 = A2 zentraler Weg (IST), 05 = A3 Überleitungen, 06 = A4 Top 3 je Phase und zentraler Weg (SOLL), 07 = A5 Best Practices + A6 Maßnahmen, 08 = A7 Mockups, 09 = Fazit und Messung. **Laufleiste S. 111** auf jeder Inhaltsfolie: 03 = Schritt 1, 04/05 = Schritt 2, 06 = Schritt 3, 07/08 = Schritt 4, 09 = Schritt 5; auf 02 (Persona) ohne aktiven Schritt (5.1). Herleitungen: Zeile „So kommen wir darauf: …“ unter jedem Titel, Belegzeile an jeder Überleitung, Kriterienzeile auf 06 (Persona · Zielfrage S. 109 · Bruch im IST · von HOLY gestaltbar), Auswahlkriterien der Vorbilder auf 07, Workshop-Foto | Die Übung S. 128/129 (Top 2, 20 Aktivitäten) ist nicht mehr Gliederung, sondern Backup B2 (5.2.3); A4 verlangt Top 3. Folie 02 trägt keinen Schritt, weil die Persona der Blickwinkel für alle fünf Schritte ist; so springt die Laufleiste nicht von 2 auf 1 zurück. Die Zeilen der Journey-Map (04) sind gegenüber S. 129 verdichtet; die Zuordnung steht in 6.3 und B8 |
+| **R5 Zeit:** ≤ 9 Hauptfolien, ≤ 25 Klicks, 12:30 Soll, Zeitwächter, zwei Generalproben, Änderungsstopp, Position neben der Leinwand | 9 Hauptfolien · 23 Klicks (Schritte + Folienwechsel, Zählweise wie FS1) · Soll 11:50 + 0:40 Reserve = 12:30 · Referentenuhr der FS1-Engine plus eine Person als Zeitwächter · Leseprobe Do 05.11., Generalproben Sa 07.11. und Mo 09.11. · Änderungsstopp Mo 09.11., 20:00 · sprechende Person links neben der Leinwand, Pfad läuft von links nach rechts · Live-Demo der Konzept-Webseite nur aus der Reserve (7.4) | keine |
 
 ### 1.2 Bestehende Gruppenregeln
 
@@ -82,10 +105,10 @@ Eintrag 01).
 | KI-Simuliertes als „KI-simuliert“ kennzeichnen | FS1-Praxis, Workflow-Vorgabe | Keine simulierte Befragung geplant | keine |
 | KI-Bilder kennzeichnen („Bild KI-generiert (Tool)“) | `prompts.md` Z. 113, `methoden.md` Z. 55 (laut **H** G31) | Keine KI-Bilder geplant. Die FS1-Illustration „Marco“ nur in B7, mit der Kennzeichnung aus FS1 `QUELLEN.md` §4 (Zeile `persona-marco.svg`): „Illustration: eigene Gestaltung, KI-gestützt (Claude Code), 19.10.2026 – als SVG-Code erzeugt; fiktive Person, kein Foto“ | Wortlaut wie in FS1 statt „Bild KI-generiert (Tool)“: Werkzeug und Datum stehen dabei, „als SVG-Code erzeugt“ sagt genauer, was die KI gemacht hat; keine Modellbezeichnung |
 | Jede KI-Nutzung dokumentieren | `CLAUDE.md` (Pflicht: KI-Nachweis) | Einträge in `ki-nachweis-fallstudie-2.md`; Auszug in B9 | keine |
-| Statista-Werte nur wie in `persona-daten.md` | Gruppenregel; ✔ P94 | Folie 04 nutzt nur „YouTube 73 %, Instagram 71 %, TikTok 58 % (Ø 63/58/41 %), Statista CI 2025“ (`persona-daten.md` Z. 25), Kategorie Energy Drinks, nicht HOLY | keine |
+| Statista-Werte nur wie in `persona-daten.md` | Gruppenregel; ✔ P94 | Folie 02 nutzt nur „YouTube 73 %, Instagram 71 %, TikTok 58 % (Ø 63/58/41 %), Statista CI 2025“ (`persona-daten.md` Z. 25), Kategorie Energy Drinks, nicht HOLY | keine |
 | Selbst gebaute Web-Präsentation mit der FS1-Engine | `CLAUDE.md`; FS1 `LIESMICH.md` | Abschnitt 11 | keine |
-| Ansprache des Publikums mit „Sie“ | FS1 `LIESMICH.md` §8 (`anrede`) | Alle Folien und Sprechtexte siezen | Das Blog-Mock-up duzt, weil es HOLYs Stimme zeigt (Ton „frech im Rahmen, nüchtern im Kern“, **H** M32; HOLYs Tonregel für Agenten ✔ M90); es ist als Entwurf gekennzeichnet |
-| Repository ist öffentlich | `CLAUDE.md`, FS1 `QUELLEN.md` §4; Startseite `index.html` („Gehostet bei GitHub Pages“) | Jeder Push veröffentlicht sofort (GitHub Pages, keine `.gitignore`; Commit und Push nach jedem Arbeitsschritt laut `CLAUDE.md`). Deshalb: Fußhinweis „Studentische Fallstudie, keine Verbindung zu HOLY“ auf jeder Folie; keine HOLY-Logos; nicht freigegebene Fotos und Screenshots sowie `blog.html` und `blog-lang.png` liegen nur im Gruppenordner oder im per `.gitignore` ausgeschlossenen Ordner `praesentation/intern/`, ins Repository kommen nur Rückfälle und Freigegebenes; vor jedem Push `git status` prüfen (11.5). Der Schalter `data-status` ändert nur die Anzeige und hält nichts zurück | keine |
+| Ansprache des Publikums mit „Sie“ | FS1 `LIESMICH.md` §8 (`anrede`) | Alle Folien und Sprechtexte siezen | Die Konzept-Webseite duzt, weil sie HOLYs Stimme zeigt (Ton „frech im Rahmen, nüchtern im Kern“, **H** M32; HOLYs Tonregel für Agenten ✔ M90); jede Seite ist als studentisches Konzept gekennzeichnet (7.3) |
+| Repository ist öffentlich | `CLAUDE.md`, FS1 `QUELLEN.md` §4; Startseite `index.html` („Gehostet bei GitHub Pages“) | Jeder Push veröffentlicht sofort (GitHub Pages; Commit und Push nach jedem Arbeitsschritt laut `CLAUDE.md`; `.gitignore` schließt seit 02.11. `praesentation/intern/` aus). Deshalb: Fußhinweis „Studentische Fallstudie, keine Verbindung zu HOLY“ auf jeder Folie; keine HOLY-Logos; nicht freigegebene Fotos und Screenshots liegen nur im Gruppenordner oder in `praesentation/intern/`, ins Repository kommen nur Rückfälle und Freigegebenes; vor jedem Push `git status` prüfen (11.5). Der Schalter `data-status` ändert nur die Anzeige und hält nichts zurück. **Konzept-Webseite** (`konzept-website/`): enthält nur eigene Gestaltung, keine fremden Bilder; jede Seite mit nicht ausblendbarem Hinweisbalken, `noindex`, ohne Bestellmöglichkeit (7.3). Ob sie über GitHub Pages öffentlich erreichbar sein soll, entscheidet die Gruppe nach Stengers Antwort (13.1 Nr. 9) | Die Konzept-Webseite trägt den Namen HOLY als schlichten Text und zeigt Preise und Produktdaten aus dem Dossier; damit sie nicht als HOLY-Seite durchgeht, gelten die Kennzeichnungsregeln in 7.3 (Einschätzung, keine Rechtsberatung) |
 | Keine Bezeichnungen von KI-Modellen in Dateien | Workflow-Vorgabe | Auf Folien und in Dateien „KI-gestützt“; wo die Gruppenregel das Werkzeug verlangt (KI-Bilder), steht der Werkzeugname wie in FS1, nie eine Modellbezeichnung | keine |
 
 ### 1.3 Prinzipien aus „Der rote Faden“ (Vorschlag, geprüft)
@@ -95,12 +118,12 @@ Recap-Präsentation). Das Dossier rät: Methode übernehmen, Vokabular an HOLY a
 
 | Prinzip | Umsetzung | Abweichung (begründet) |
 |---|---|---|
-| Ein durchgehendes Leitmotiv | **Der Journey-Pfad**: auf der Titelfolie Startstrich, in der Laufleiste die fünf Schritte (S. 111), auf 05 Marcos Ist-Weg mit Lücken, auf 06 der Soll-Pfad, auf 09 geschlossen von Rand zu Rand | keine; der Pfad trägt Inhalt (Ist → Soll), er ist kein Schmuck |
+| Ein durchgehendes Leitmotiv | **Der Journey-Pfad**: auf der Titelfolie Startstrich, in der Laufleiste die fünf Schritte (S. 111), auf 04 Marcos „Zentraler Weg (IST)“ mit gestricheltem Nebenweg Handel, auf 05 seine vier Überleitungen (trägt · wackelt · bricht), auf 06 der gelbe „Zentraler Weg (SOLL)“ durch die Top-Touchpoints, auf 08 die Strecke der Konzept-Webseite, auf 09 geschlossen von Rand zu Rand | keine; der Pfad trägt Inhalt (IST → Überleitungen → SOLL), er ist kein Schmuck |
 | Je Folie genau **eine** Schlüsselaussage in der Akzentfarbe | Gelbe Marker-Fläche unter schwarzer Schrift (11,48 : 1); auf gelben Bühnen umgekehrt: schwarzes Band, gelbe Schrift | Die Akzentfarbe ist eine Fläche, keine Schriftfarbe: Gelb auf Creme hat nur 1,26 : 1 |
-| Magazin-Disziplin: Satz-Titel, Weißraum, asymmetrisches 12er-Raster, keine Kästen, keine Pillen, keine Versalien | Übernommen: Satz-Titel als Kernaussage, Raster wie recap.css §2d, keine Karten, Pillen, Icon-Abzeichen, Kicker | (a) Bildkacheln tragen eine 4-px-Kontur: ein Bildrahmen, kein Textkasten, abgeleitet von HOLYs schwarzen Konturen (✎ G10). (b) Die gestrichelte Leerstelle „Blog fehlt“ ist Inhalt. (c) Versalien nur für „HOLY“ und die 5 As, so wie sie auf S. 109 stehen (AWARE … ADVOCATE). (d) Harter Versatzschatten nur am Mock-up-Rahmen (07) und am Titelfoto (01), nie an Text |
+| Magazin-Disziplin: Satz-Titel, Weißraum, asymmetrisches 12er-Raster, keine Kästen, keine Pillen, keine Versalien | Übernommen: Satz-Titel als Kernaussage, Raster wie recap.css §2d, keine Karten, Pillen, Icon-Abzeichen, Kicker | (a) Bildkacheln tragen eine 4-px-Kontur: ein Bildrahmen, kein Textkasten, abgeleitet von HOLYs schwarzen Konturen (✎ G10). (b) Die gestrichelte Leerstelle „Antwortseite fehlt“ (04) ist Inhalt. (c) Versalien nur für „HOLY“ und die 5 As, so wie sie auf S. 109 stehen (AWARE … ADVOCATE). (d) Harter Versatzschatten nur an den Mock-up-Rahmen (08) und am Titelfoto (01), nie an Text |
 | Geprüfte Kontraste (Text ≥ 4,5 : 1, Grafik ≥ 3 : 1, hell und dunkel) | Alle Paare per Skript nachgerechnet (3.3); zwei Paare fallen durch und sind deshalb verboten | keine |
 | Bühne 1920 × 1080 | FS1-Engine (unverändert) | keine |
-| Automatische Prüfung mit `werkzeuge/pruefen.mjs`, Wortbudget rund 40 | `pruefen.mjs` ist in FS1 und Recap zeilengleich und läuft unverändert (Abschnitt 11.3). Herleitungs-, Quell- und Fußzeile tragen `data-meta` | Folie 05 (rund 100 Wörter, seit der Schlussprüfung mit längerem Moment 1) und 06 (rund 80–90) liegen über dem Budget. Beide bauen sich in Schritten auf, je Schritt höchstens rund 30 neue Wörter; die Warnung von `pruefen.mjs` wird in `LIESMICH.md` als bewusste Ausnahme vermerkt |
+| Automatische Prüfung mit `werkzeuge/pruefen.mjs`, Wortbudget rund 40 | `pruefen.mjs` ist in FS1 und Recap zeilengleich und läuft unverändert (Abschnitt 11.3). Herleitungs-, Quell- und Fußzeile tragen `data-meta` | Folie 04 (rund 60 Wörter), 05 (rund 80, vier Urteile mit Belegzeile), 06 (rund 90, 15 Touchpoints) und 07 (rund 80, fünf Zeilen Vorbild → Maßnahme) liegen über dem Budget. Alle bauen sich in Schritten auf, je Schritt höchstens rund 30 neue Wörter; die Warnung von `pruefen.mjs` wird in `LIESMICH.md` als bewusste Ausnahme vermerkt |
 | *Nicht übernommen* | – | Die Bildlosigkeit („keine Logos, keine fremden Bilder“, alles SVG) und die kühle Palette Kreide/Karmin: beides wäre wieder nüchtern und widerspräche R3 |
 
 ---
@@ -111,23 +134,23 @@ Kommentare im Wortlaut aus der FS1-Bewertung; „[...]“ wie im Bewertungsbogen
 
 | # | Kriterium (Punkte) | Kommentar | Maßnahme in FS2 | Folie |
 |---|---|---|---|---|
-| 1 | Problemverständnis (9/10) | „Problem der Fallstudie gut verstanden und strukturiert angegangen.“ | Beibehalten: Gliederung nach Stengers Prozess (S. 111) als Laufleiste; Vorgehen auf einer Folie | 02, alle |
-| 2 | Modelle (8/10) | „Persona Modell gut angewendet.“ | Marco bleibt Blickwinkel (**H** P35); Mediennutzung und Markennutzung kommen dazu | 02, 04 |
-| 3 | Modelle | „Detaillierte Analyse zur Mediennutzung, Markennutzung, etc. wäre hilfreich.“ | Eigene Hauptfolie: Statista-Werte nur aus `persona-daten.md`, dazu ARD/ZDF 2026 für 14- bis 29-Jährige (✔ P11, ✔ P18); Markennutzung aus Selbstversuch und Kurzinterviews; Mediennutzung je Phase in B7; Mediennutzung ist sichtbares Auswahlkriterium auf 06 (wie Persona Kathrin, S. 128, ✔ P01) | 04, 06, B7 |
-| 4 | Modelle | „Limbic Map - Match zwischen Marke und Holy muss passen, sonst ist die Persona nicht richtig.“ | HOLY als Territorium zeigen, Marco liegt darin (wie S. 71, **H** P07); ein Satz auf 02, Herleitung in B7. Persona-Entscheidung bis Sa 31.10. (Dossier 12.4). Was „Marke und Holy“ meint, fragen wir nach (13.2 Nr. 5; **H** P06) | 02, B7 |
-| 5 | Modelle | „Repertory Grid nicht ganz korrekt angewendet.“ | Jedes Modell genau wie auf der Vorlesungsseite und mit Seitenzahl: Phasen S. 108, 5 As S. 109 (Versalien wie dort), Prozess S. 111 mit vollen Begriffen, Raster S. 129 wörtlich. Abweichungen werden benannt (ASSURE statt „ask“ bei Kotler, ✔ L08; Paid/Owned/Earned in der Vorlesung uneinheitlich, ✔ L13) | 05, 06, B8 |
+| 1 | Problemverständnis (9/10) | „Problem der Fallstudie gut verstanden und strukturiert angegangen.“ | Beibehalten und geschärft: Gliederung nach der Aufgabenfolie A1–A7 (je Folie eine Teilaufgabe, 5.1), Stengers Prozess (S. 111) als Laufleiste; die eigene Folie „Vorgehen“ entfällt, die Methode steht in Laufleiste und Herleitungszeilen | alle |
+| 2 | Modelle (8/10) | „Persona Modell gut angewendet.“ | Marco bleibt Blickwinkel (**H** P35); aus seinem Kaufverhalten leiten wir den zentralen Weg ab (online auf Vorrat, `persona-steckbrief.md`) und aus der Persona die Top 3 je Phase (A4, 5.2) | 02, 04, 06 |
+| 3 | Modelle | „Detaillierte Analyse zur Mediennutzung, Markennutzung, etc. wäre hilfreich.“ | Eigene Hauptfolie: Statista-Werte nur aus `persona-daten.md`, dazu ARD/ZDF 2026 für 14- bis 29-Jährige (✔ P11, ✔ P18); Markennutzung aus Selbstversuch und Kurzinterviews; Mediennutzung je Phase in B7; Persona und Mediennutzung sind sichtbares Kriterium auf 06 (wie Persona Kathrin, S. 128, ✔ P01) | 02, 06, B7 |
+| 4 | Modelle | „Limbic Map - Match zwischen Marke und Holy muss passen, sonst ist die Persona nicht richtig.“ | HOLY als Territorium zeigen, Marco liegt darin (wie S. 71, **H** P07); ein Satz auf 02, Herleitung in B7. Was „Marke und Holy“ meint, fragen wir nach (13.2 Nr. 5; **H** P06) | 02, B7 |
+| 5 | Modelle | „Repertory Grid nicht ganz korrekt angewendet.“ | Jedes Modell genau wie auf der Vorlesungsseite und mit Seitenzahl: Phasen S. 108, 5 As S. 109 (Versalien wie dort), Prozess S. 111 mit vollen Begriffen, Raster S. 129 wörtlich. Abweichungen werden benannt (ASSURE statt „ask“ bei Kotler, ✔ L08; Paid/Owned/Earned in der Vorlesung uneinheitlich, ✔ L13; Top 3 nach Aufgabenfolie statt Top 2 nach S. 128) | 04, 05, 06, B8 |
 | 6 | Modelle | „Laddering korrekt umgesetzt.“ | Keine Maßnahme nötig; Laddering kommt in FS2 nicht vor | – |
-| 7 | Modelle | „Assoziationstechnik gut und interaktiv umgesetzt.“ | Interaktiver Einstieg bleibt, jetzt als Handzeichen-Trichter nach den 5 As | 01, 09 |
-| 8 | Modelle | „Die geschlossene Befragung zu Assoziationen gibt wenig Mehrwert.“ | Keine geschlossene Befragung; offene Kurzinterviews (Leitfaden, n, Codes in B5); auf Folien nur kurze anonyme O-Töne | 04, B5 |
-| 9 | Modelle | „Kommunikationsanalyse umfassend umgesetzt.“ | Beibehalten: vollständige Touchpoint-Inventur nach dem Muster Intersport (S. 113): 13 Paid, 30 Owned (3 fehlen), 11 Earned (Dossier 4.2, Zuordnung **H**) | 03, B3 |
-| 10 | Analyse (9/10) | „Interview mit Gründer super!“ | Gründer erneut anfragen: warum es keinen Blog gibt, wie Handelskunden in den Squad kommen sollen. Antwort als gekennzeichnete Innensicht (Selbstauskunft, n = 1), nur mit Freigabe wie in FS1 | 05/08 (falls Antwort) |
-| 11 | Analyse | „Wie kommt ihr auf die Wettbewerber Monster und Coca Cola?“ | Herleitungszeile „**So kommen wir darauf:** …“ unter jedem Titel; Belegzeile an jedem Moment der Wahrheit; Begründung, warum genau zwei Lücken (6.5); Kriterienzeile auf 06; Workshop-Foto; Benchmark-Auswahl mit Kriterien und Vergleichsmarken begründet (Dossier 7, Backup B6); Sprungziele für Rückfragen | alle, 06, B2, B4, B6 |
-| 12 | Lösung (7/10) | „Markenidentität viel viel ausführlicher darstellen in allen Facetten. [...]“ | In FS2 nicht Hauptthema. Die Gestaltung trägt die Identität sichtbar mit (Farben, Formen, eigene Produktfotos), das Blog-Mock-up zeigt die Tonalität; Verweis auf das FS1-Steuerrad in B7 | 03, 07 |
+| 7 | Modelle | „Assoziationstechnik gut und interaktiv umgesetzt.“ | Interaktiver Einstieg bleibt, jetzt als Handzeichen-Trichter nach den 5 As; dazu die Live-Demo der Konzept-Webseite, wenn die Zeit reicht (7.4) | 01, 08, 09 |
+| 8 | Modelle | „Die geschlossene Befragung zu Assoziationen gibt wenig Mehrwert.“ | Keine geschlossene Befragung; offene Kurzinterviews (Leitfaden, n, Codes in B5); auf Folien nur kurze anonyme O-Töne | 02, B5 |
+| 9 | Modelle | „Kommunikationsanalyse umfassend umgesetzt.“ | Beibehalten: vollständige Touchpoint-Inventur nach dem Muster Intersport (S. 113): 13 Paid, 30 Owned (3 fehlen), 11 Earned (Dossier 4.2, Zuordnung **H**), jetzt mit Bewertung je Phase (A1) | 03, B3 |
+| 10 | Analyse (9/10) | „Interview mit Gründer super!“ | Gründer erneut angefragt; Antwort am 02.11. als Videobotschaft (v01), gezeigt am Schluss mit seiner Zustimmung (9.5). Offen bleibt die Frage nach den Kanalanteilen (13.3), die den zentralen Weg stützen würde | 09 |
+| 11 | Analyse | „Wie kommt ihr auf die Wettbewerber Monster und Coca Cola?“ | Herleitungszeile „**So kommen wir darauf:** …“ unter jedem Titel; Begründung des zentralen Wegs (6.5); Maßstab und Belegzeile an jeder Überleitung (6.7); Kriterienzeile auf 06; Auswahlkriterien der Vorbilder auf 07 (andere Branche, belegt, übertragbar); Workshop-Foto; Sprungziele für Rückfragen | alle, 04–07, B2, B4, B6 |
+| 12 | Lösung (7/10) | „Markenidentität viel viel ausführlicher darstellen in allen Facetten. [...]“ | In FS2 nicht Hauptthema. Die Gestaltung trägt die Identität sichtbar mit (Farben, Formen, eigene Produktfotos); die Konzept-Webseite zeigt Identität und Tonalität an fünf Touchpoints (Farben, Formen, Du-Ton „frech im Rahmen, nüchtern im Kern“, **H** M32); Verweis auf das FS1-Steuerrad in B7 | 03, 08 |
 | 13 | Lösung | „Kommunikationsanalyse besser visualisieren“ | Moodboard statt Tabelle, nach Paid/Owned/Earned (S. 112), Bildgröße = wie oft die Kurzinterviews den Touchpoint nennen | 03 |
-| 14 | Lösung | „und im Ergebnis in der Identität Farben/ Formen/ Produktabbildungen zeigen.“ | Farbproben mit Hex-Wert und Status, Formproben (Kontur, Kreis, Schachbrett), eigene Produktfotos; gelbe Bühnen 01, 07, 09 | 01, 03, 07 |
+| 14 | Lösung | „und im Ergebnis in der Identität Farben/ Formen/ Produktabbildungen zeigen.“ | Farbproben mit Hex-Wert und Status, Formproben (Kontur, Kreis, Schachbrett), eigene Produktfotos; gelbe Bühnen 01, 08, 09 | 01, 03, 08 |
 | 15 | Vermittlung (9/10) | „Guter interaktiver Einstieg, freier Vortrag.“ | Einstieg ohne Technik mit echter Dose; geringes Wortbudget stützt freies Sprechen | 01 |
-| 16 | Vermittlung | „Position im Raum nicht optimal. Bessere Mimik und Interaktion mit der Folie möglich wenn neben den Folien positioniert.“ | Sprechende Person links neben der Leinwand; Pfad läuft von links nach rechts; nummerierte Knoten als Zeigeziele; keine Interaktion braucht die Tastatur | 05, 06, alle |
-| 17 | Vermittlung | „Zeitmanagement schlecht 25 min statt 15.“ | 9 Folien, 23 Klicks, 11:55 + 0:35 Reserve; Kontrollpunkte, Kürzungsplan, Leseprobe, zwei Generalproben mit Stoppuhr, Änderungsstopp (Abschnitt 10) | alle |
+| 16 | Vermittlung | „Position im Raum nicht optimal. Bessere Mimik und Interaktion mit der Folie möglich wenn neben den Folien positioniert.“ | Sprechende Person links neben der Leinwand; Pfad läuft von links nach rechts; Kacheln, Brücken (Ü1–Ü4) und Handyrahmen als Zeigeziele; keine Interaktion braucht die Tastatur | 04, 05, 06, 08, alle |
+| 17 | Vermittlung | „Zeitmanagement schlecht 25 min statt 15.“ | 9 Folien, 23 Klicks, 11:50 + 0:40 Reserve; Kontrollpunkte, Kürzungsplan, Leseprobe, zwei Generalproben mit Stoppuhr, Änderungsstopp (Abschnitt 10); Live-Demo nur aus der Reserve | alle |
 | 18 | Visualisierung (9/10) | „Folien strukturiert und ansprechend gestaltet.“ | Beibehalten: festes Raster, Laufleiste, Satz-Titel | alle |
 | 19 | Visualisierung | „Aber oft sehr nüchtern, da KI gestützt umgesetzt.“ | Echte eigene Fotos statt KI-Illustrationen; HOLY-Gelb unverdünnt als Fläche; keine Vorlagenmerkmale aus FS1 (Karten, Pillen, Icons, Kicker, Mini-Steuerrad); sichtbare Arbeitsspuren: Workshop-Foto, Handskizze, von Hand eingekreiste Treffer, Bildunterschrift als Protokoll | alle |
 
@@ -139,10 +162,12 @@ Kommentare im Wortlaut aus der FS1-Bewertung; „[...]“ wie im Bewertungsbogen
 
 **Der Weg der Kundschaft ist ein gelber Pfad – und die Präsentation erzählt, wie er sich schließt.** Der Pfad ist
 HOLY-Gelb mit schwarzer Kontur; die Bauweise ist vom gelben Oval mit schwarzem Rand des Logos abgeleitet (D1 §6.3 ✔),
-das Logo selbst erscheint nicht. Auf Folie 05 ist er Marcos Ist-Weg über echte Fotos (Bildsprache wie S. 116) mit zwei
-Lücken, auf 06 der Soll-Pfad durch die Top-Touchpoints, auf 09 läuft er geschlossen von Rand zu Rand.
+das Logo selbst erscheint nicht. Auf Folie 04 ist er Marcos „Zentraler Weg (IST)“ über echte Fotos (Bildsprache wie
+S. 116), mit dem Handel als gestricheltem Nebenweg; auf 05 zeigt er an vier Brücken, wo er trägt, wackelt oder bricht;
+auf 06 ist er der „Zentraler Weg (SOLL)“ durch die Top-Touchpoints, auf 08 verbindet er die Handyrahmen der
+Konzept-Webseite, auf 09 läuft er geschlossen von Rand zu Rand.
 
-Laut wird es durch drei Dinge, nicht durch Comic-Elemente: **gelbe Vollflächen** auf den Bühnenfolien 01, 07, 09 ·
+Laut wird es durch drei Dinge, nicht durch Comic-Elemente: **gelbe Vollflächen** auf den Bühnenfolien 01, 08, 09 ·
 **große eigene Fotos mit schwarzer 4-px-Kontur** · eine **schmale, fette Titelschrift**. Comic-Tiere, Sticker und
 gedrehte Texte gibt es nicht: Der Comic-Stil würde die Kritik an HOLYs „kindlich wirkender Bildwelt“ verstärken
 (Dossier Lücke 3 „Eltern“, **H** S35; Jury-Einwand gegen die Markenwelt).
@@ -157,9 +182,9 @@ Hintergründen zeigt, darunter gelbe Fliesen (✔ G08).
 |---|---|---|---|---|
 | Papier (hell) | Creme | #F3EDE1 | HOLY: Menüs, Kollektionsbereiche, Press-Kit-Hintergrund (✎ G06, ✔ G08); R3 | Hintergrund aller Inhaltsfolien; Schrift im Dunkelmodus |
 | Schrift, Kontur | Schwarz | #1D1D1B | HOLY Logo- und Druck-Schwarz (✔ G07); R3 | Schrift, Daten, Pfadkontur, Bildkontur; Papier im Dunkelmodus |
-| Leitmotiv | Gelb | #FFD007 | HOLY „CTA yellow“ (✎ G06); R3 | Pfad (Füllung), aktueller Laufleisten-Schritt, Marker unter der einen Schlüsselaussage, Vollfläche der Bühnen 01/07/09. **Nie** Schrift oder konturlose Linie auf Creme |
+| Leitmotiv | Gelb | #FFD007 | HOLY „CTA yellow“ (✎ G06); R3 | Pfad (Füllung), aktueller Laufleisten-Schritt, Marker unter der einen Schlüsselaussage, Vollfläche der Bühnen 01/08/09. **Nie** Schrift oder konturlose Linie auf Creme |
 | Nebentext (hell) | Schiefer warm | #5C5547 | eigener Wert | Herleitungs-, Beleg-, Quellzeile, 5 As, erledigte Laufleisten-Stücke; auch Nebentext auf Gelb |
-| Grafik zweiten Ranges | Mittel warm | #857C6B | eigener Wert | Gruppengrenzen Paid/Owned/Earned, gestrichelter Handelsweg, Skalenstriche; **nicht auf Gelb** |
+| Grafik zweiten Ranges | Mittel warm | #857C6B | eigener Wert | Gruppengrenzen Paid/Owned/Earned, gestrichelter Nebenweg Handel, Skalenstriche; **nicht auf Gelb** |
 | Haarlinie (Deko) | Nebel warm | #CBC2B0 (dunkel #45413A) | eigener Wert | Zeilen- und Phasenraster, kommende Laufleisten-Stücke; trägt nie Information |
 | Nebentext (dunkel) | Schiefer hell | #B9B0A0 | eigener Wert | nur im Dunkelmodus |
 | Platzhalter „Foto“ | Türkis | #8ECDC1 | HOLY-Web, Stand 14.10.2026 (D1 §6.3 ✔); am 30.10. nicht erneut gefunden (G06 nennt andere Töne) | nur Platzhalter- und Rückfallflächen, mit Schraffur |
@@ -167,7 +192,7 @@ Hintergründen zeigt, darunter gelbe Fliesen (✔ G08).
 | Reserve | Mint | #B3DBC4 | wie Türkis | dritte Bildfläche im Moodboard, sonst nicht |
 | Nur Farbproben (Folie 03) | Lila · Pink · Violett · Logo-Gelb · Web-Schwarz | #C0ADE7 · #FCB4D9 · #B247FF · #FFED28 · #000000 | ✎ G06 · ✎ G06 · ✔ G91 · ✔ G07 · ✎ G06 | nur als Farbprobe mit 3-px-Kontur, Hex-Wert darunter auf Creme |
 
-Die Web-Werte können sich mit der nächsten Kampagne ändern; vor dem 09.11. mit Abrufdatum sichern (Dossier 10).
+Die Web-Werte können sich mit der nächsten Kampagne ändern; vor dem Vortrag am 10.11. mit Abrufdatum sichern (Dossier 10).
 
 ### 3.3 Kontraste (nachgerechnet, WCAG 2.x)
 
@@ -233,28 +258,31 @@ Wie „Der rote Faden“ (recap.css §2d), damit `pruefen.mjs` unverändert prü
 - Felder: Haupt 1–8 / Seite 9–12; Bild im Anschnitt bis zum Bühnenrand erlaubt. Pfade, Notizen und Text bleiben im
   Satzspiegel (x = 128 bis 1792). Einzige Ausnahme ist der geschlossene Pfad auf 09, der bewusst von Rand zu Rand läuft:
   Endpunkte genau x = 0 und 1920, `data-ueberlauf-ok`, vermerkt in 11.3 und `LIESMICH.md`.
-- Journey-Raster (05, 06): Spalten 1–2 Zeilennamen, Spalten 3–12 fünf Phasen à 2 Spalten (250,67 px).
+- Journey-Raster (04, 06): Spalten 1–2 Zeilennamen, Spalten 3–12 fünf Phasen à 2 Spalten (250,67 px). Folie 05 nutzt
+  dieselben Phasenspalten ohne Zeilen (6.7).
 
 ### 3.6 Komponenten (Präfix `p-`)
 
 | Komponente | Gestaltung |
 |---|---|
-| Laufleiste | Fünf Stücke mit den vollen Begriffen von S. 111 („1 Transparenz schaffen“ … „5 Mittel zielorientiert einsetzen“); Breite nach Textlänge. Erledigt = 2 px Schiefer, aktuell = 10 px Gelb mit 2-px-Kontur, kommend = 2 px Nebel. **Auf gelber Bühne (07, 09):** erledigt = 2 px Schwarz, aktuell = 10 px Schwarz, kommend = 2 px Schiefer; kein Nebel auf Gelb (3.3). Rechts Foliennummer (Bricolage). Auf 09 schließen sich die Stücke zu einem Pfad |
+| Laufleiste | Fünf Stücke mit den vollen Begriffen von S. 111 („1 Transparenz schaffen“ … „5 Mittel zielorientiert einsetzen“); Breite nach Textlänge. Erledigt = 2 px Schiefer, aktuell = 10 px Gelb mit 2-px-Kontur, kommend = 2 px Nebel. **Auf gelber Bühne (08, 09):** erledigt = 2 px Schwarz, aktuell = 10 px Schwarz, kommend = 2 px Schiefer; kein Nebel auf Gelb (3.3). Rechts Foliennummer (Bricolage). Auf 02 ohne aktiven Schritt (R4). Auf 09 schließen sich die Stücke zu einem Pfad |
 | Pfad | SVG über der Bühne im Linienplan-Stil: waagerecht in der Zeile, senkrecht in der Rinnenmitte, Eckradius 34 px; Gelb 14 px auf schwarzer Kontur 22 px (dunkel: nur Gelb; auf Gelb: Schwarz). Läuft hinter den Kacheln; berechnet aus den Kachelmitten (Daten als Objekt). Zeichnet sich in 900 ms, bei „Bewegung reduzieren“ sofort. Endet spätestens an der Satzspiegelkante x = 1792; geht der Weg weiter, mit Pfeilspitze (Gelb mit Kontur) und Notiz am Weg. Rand und Anschnitt nur auf 09 (3.5) |
-| Handelsweg | 6 px gestrichelt (16/12) in Mittel warm, mit Notiz am Weg (24 px Schiefer) |
-| Knoten = Moment der Wahrheit, den HOLY heute verliert (eigene Deutung) | Kreis 52 px, schwarz mit gelber Ziffer (dunkel umgekehrt), sitzt auf dem Pfad |
-| Offenes Ende | Pfad endet vor der Rinne, zwei kurze Reste, danach der Knoten |
+| Wegbeschriftung | „Zentraler Weg (IST)“ (04) bzw. „Zentraler Weg (SOLL)“ (06) als Notiz direkt am Pfad, 28 px/600 Schwarz, einmal je Folie; dazu in der Legende |
+| Nebenweg Handel (vorher „Handelsweg“) | 6 px gestrichelt (16/12) in Mittel warm, mit Notiz am Weg (24 px Schiefer); nie gelb, damit er nicht als zentraler Weg gelesen wird |
+| Knoten = Moment der Wahrheit (S. 109) bzw. Platz 1 je Phase (06) | Kreis 52 px, schwarz mit gelber Ziffer (dunkel umgekehrt), sitzt auf dem Pfad; auf 06 tragen Platz 2 und 3 kleinere Kreise (36 px) ohne Pfad |
+| Brücke = Überleitung zwischen zwei Phasen (05, neu) | Pfadstück in der Rinne zwischen zwei Phasen, Kennung Ü1–Ü4 (24 px Schiefer). Urteil immer als **Wort und Form**, nie nur als Farbe: „trägt“ = durchgehender Pfad · „wackelt“ = Pfad mit Versatz (zwei Stücke, 12 px gegeneinander verschoben) · „bricht“ = offenes Ende (siehe unten). Urteilswort 36 px Bricolage über der Brücke, Belegzeile 26 px darunter |
+| Offenes Ende | Pfad endet vor der Rinne, zwei kurze Reste, danach der Knoten bzw. das Urteil „bricht“ |
 | Marker | Gelbe Fläche im unteren Drittel der Zeile unter der einen Schlüsselaussage; auf gelber Bühne: schwarzes Band, gelbe Schrift |
 | Bildkachel | 16:9 bzw. Großbild im Anschnitt, **4-px-Kontur Schwarz**; drei Zustände über `data-status`: `frei` (Foto) · `offen` (Platzhalter Hellblau/Türkis mit „Freigabe offen“) · `rueckfall` (eigene Grafik); der Schalter ändert nur die Anzeige, nicht freigegebene Dateien liegen nicht im Repository (11.5). Unterschrift als Protokoll: „was · Paid/Owned/Earned · Ort/Kanal, Datum“; bei Screenshots eine zweite Zeile (`data-meta`) mit Urheber und Fundstelle nach dem Muster aus FS1 `QUELLEN.md` §4, z. B. „Screenshot © HOLY Softdrinks GmbH, de.holy.com/…, Abruf TT.MM.2026“ (§ 63 UrhG: Quelle „deutlich“, sicher ist der Vermerk am Bild, ✔ G93) |
-| Leerstelle | gestrichelter 3-px-Rahmen in Schriftfarbe mit „Blog fehlt“: zeigt, was fehlt |
+| Leerstelle | gestrichelter 3-px-Rahmen in Schriftfarbe mit „Antwortseite fehlt“ (04; der Blog ist leer, ✔ L39): zeigt, was fehlt |
 | Herleitungszeile | „**So kommen wir darauf:** …“, 24 px, Anfang fett, Rest Schiefer, eine Zeile, `data-meta` |
 | Belegzeile | 26 px Schiefer unter dem Satz eines Moments; Inhalt, zählt zum Wortbudget |
 | Notiz am Element | 24 px Schiefer, direkt am Element (z. B. „Handel: Recherche übersprungen“) |
 | Strichskala | wie r-Strichskala in recap.css §5.6; Daten in Schwarz, Schlüsselzahl mit Marker |
 | O-Ton | Fraunces kursiv, ohne Anführungskasten, Kürzel „I1“ … darunter |
 | Farbprobe | Quadrat 96 px mit 3-px-Kontur, Hex-Wert und Status darunter (22 px) |
-| Bühne „gelb“ | Attribut `data-buehne="gelb"` an Folie 01, 07, 09: Fläche #FFD007, Schrift #1D1D1B, Nebentext #5C5547, **fest in beiden Modi** (die Dunkel-Tokens gelten auf Gelb nicht, sonst 1,26 bzw. 1,46 : 1, 3.3); Rückfall über `?buehne=schwarz` (schwarze Fläche, gelbe Schrift 11,48 : 1, Nebentext #B9B0A0 7,86 : 1) |
-| Mock-up-Rahmen | Smartphone-Rahmen als eigene CSS-Grafik ohne Gerätemarke: schwarz, Radius 56 px, harter Schatten 8/8 px |
+| Bühne „gelb“ | Attribut `data-buehne="gelb"` an Folie 01, 08, 09: Fläche #FFD007, Schrift #1D1D1B, Nebentext #5C5547, **fest in beiden Modi** (die Dunkel-Tokens gelten auf Gelb nicht, sonst 1,26 bzw. 1,46 : 1, 3.3); Rückfall über `?buehne=schwarz` (schwarze Fläche, gelbe Schrift 11,48 : 1, Nebentext #B9B0A0 7,86 : 1) |
+| Mock-up-Rahmen | Smartphone-Rahmen als eigene CSS-Grafik ohne Gerätemarke: schwarz, Radius 56 px, harter Schatten 8/8 px; auf 08 fünf Rahmen nebeneinander (je rund 300 px breit, Bildschirmfoto 390 × 844 verkleinert), auf 09 einer für die Videobotschaft |
 | Quellzeile / Fußhinweis | je eine Zeile, 22 px, `data-meta`; Fußhinweis: „Studentische Fallstudie, keine Verbindung zu HOLY“ |
 
 ### 3.7 Was es NICHT gibt
@@ -283,29 +311,32 @@ bei Screenshots mit Urheber und Fundstelle in der zweiten Zeile der Unterschrift
 
 **Ablage:** Nicht freigegebene Fotos und Screenshots liegen nur im Gruppenordner oder im per `.gitignore`
 ausgeschlossenen Ordner `praesentation/intern/`; die interne Fassung lädt sie von dort. Ins Repository, das über
-GitHub Pages sofort öffentlich ist, kommen nur Rückfälle und Freigegebenes (11.5).
+GitHub Pages sofort öffentlich ist, kommen nur Rückfälle und Freigegebenes (11.5). Die Konzept-Webseite
+(`konzept-website/`) enthält keine Fotos und keine fremden Bilder, nur eigene Zeichnungen und Platzhalter (7.3).
 
 | Nr. | Bild | Folie | Art | Rechtestatus (keine Rechtsberatung) | Rückfall, falls Freigabe fehlt | Zu tun bis wann |
 |---|---|---|---|---|---|---|
 | b01 | Hand mit selbst gekaufter Dose und Shaker vor gelbem Karton; dazu die echte Dose als Requisit | 01 (auch 09) | eigenes Produktfoto | Foto eigen; die illustrierte Verpackung ist vermutlich ein Werk (**H** G24) → Freigabe bei pr@holy.com angefragt | Variante mit gedrehtem Etikett (nur Deckel, Shaker, Pulver), in derselben Sitzung aufgenommen; in öffentlichen Exporten bis zur Freigabe nur diese | Kauf Sa 31.10.; Foto So 01.11. bei Tageslicht, quer und hoch, beide Varianten. Den Shaker liefert vermutlich erst das Starter Set (**H**): fehlt er am So 01.11., zuerst Hand mit Dose, Variante mit Shaker nach der Lieferung; findet sich im Handel keine Dose, b01 ganz mit der Lieferung nachholen |
-| b02 | Flatlay „unser Einkauf“: Paket, Dose, Shaker, Bon und Bestellbestätigung geschwärzt | 02 | eigenes Foto | eigen; personenbezogene Daten schwärzen; Verpackung wie b01 | nur Handelskauf mit Bon (falls das Paket fehlt); Etikett gedreht | Handelsteil Sa 31.10.; Paketteil nach Lieferung (HOLY nennt 1–3 oder 3–6 Werktage, ✎ T24; bei Bestellung Fr 30.10. und 6 Werktagen erst Fr 06.11., ohne Samstag erst Mo 09.11., eigene Rechnung). **Kommt die Lieferung nach Mi 04.11., gilt der Rückfall** |
+| b02 | Flatlay „unser Einkauf“: Paket, Dose, Shaker, Bon und Bestellbestätigung geschwärzt | B1 (bisher 02; die Folie „Vorgehen“ entfällt), optional 03 | eigenes Foto | eigen; personenbezogene Daten schwärzen; Verpackung wie b01 | nur Handelskauf mit Bon (falls das Paket fehlt); Etikett gedreht | Handelsteil Sa 31.10.; Paketteil nach Lieferung (HOLY nennt 1–3 oder 3–6 Werktage, ✎ T24; bei Bestellung Fr 30.10. und 6 Werktagen erst Fr 06.11., ohne Samstag erst Mo 09.11., eigene Rechnung). **Kommt die Lieferung nach Mi 04.11., gilt der Rückfall** |
 | b03 | Moodboard: 9–12 Kacheln aus eigenen Fotos und Screenshots (Liste in 8.2) | 03 | gemischt | je Einzelbild (b05–b11, b18) | je Einzelbild; Farb- und Formproben (b18) gehen immer | Mi 04.11. |
-| b04 | Gestellte Szene „vor der Schicht“: Spind, Warnweste, Shaker auf der Bank, ohne Person | 04 | eigenes Foto, als „gestellt“ gekennzeichnet | eigen; keine Person, kein Firmengelände ohne Erlaubnis; Produkt nur am Rand | Detailfoto Shaker beim Anrühren | Mo 02.11. |
-| b05 | Creator-Video mit Rabattcode (Ausschnitt ohne Gesicht) | 05, 03 | eigener Screenshot, Social Media | nur nach Zustimmung des Betreuers (Gruppenregel); erkennbare Person → § 22 KUG (✔ G25) | **eigene Grafik** „Creator-Video mit Code“ mit Kanal, Datum, Beschreibung | Screenshot mit Datum Sa 31.10.; Grafik bis Di 03.11. |
-| b06 | Eigene Suche „holy energy koffein“, Treffer von Hand eingekreist | 05, 03 | eigener Screenshot | eigener Bildschirm mit Inhalten Dritter: Bildzitat mit Belegfunktion (**H** G32); Datum, Gerät, Anmeldestatus nennen. Nur Text-Treffer zeigen: Bild- und Video-Karussells (Vorschaubilder von HOLY-Social-Media, Produktbilder) abschneiden oder vorher die Zustimmung des Betreuers einholen (Gruppenregel) | **eigene Grafik**: nachgesetzte Titelzeilen der ersten Treffer mit Quelle | SERP-Selbstversuch Sa 31.10.: privates Fenster, zwei Geräte (Dossier 12.4) |
-| b07 | Leerstelle „Blog fehlt“ | 05 | eigene Grafik | eigen | – | beim Bau |
-| b08 | Shop-Seite Starter Set | 05, 03 | eigener Screenshot | zeigt HOLY-Produktfotos; HOLY räumt in den AGB keine Nutzungsrechte ein (✔ G19) → im Hörsaal Bildzitat nach Stengers Antwort, öffentlich nur mit Freigabe von HOLY (Abweichung in 1.2) | **eigene Grafik**: nachgezeichnetes Wireframe, oder eigenes Foto des gelieferten Sets | Screenshot Fr 30.10. bei der Bestellung; Wireframe bis Di 03.11. |
-| b09 | Regal im Supermarkt | 05, 03, 08 | eigenes Foto | Hausrecht: Marktleitung vorher fragen; keine Personen (✔ G25; Hausrecht nur Modellwissen) | gekaufte Dose mit Bon zu Hause (Bon geschwärzt). **Wird kein Regal gefunden:** die Suche selbst als Station K4 dokumentieren (Märkte, Datum, Uhrzeit; Foto ohne Personen), das ist selbst ein Beleg für Lücke 2 (**H**; kein Store-Locator ✔ B01) | Sa 31.10.; welche Ketten HOLY führen, ist nicht geprüft (Dossier 12.1) |
-| b10 | Unboxing in drei Bildern (geschlossen, geöffnet, Inhalt) | 05, 03 | eigenes Foto | eigen; Adressaufkleber schwärzen; Verpackung wie b01 | Foto der Versandbestätigung (geschwärzt) bzw. Wireframe | Bestellung heute Fr 30.10.; Fotos am Liefertag, Bildschluss Mi 04.11.; **kommt die Lieferung nach Mi 04.11., gilt der Rückfall** (Lieferzeit wie b02) |
-| b11 | Anmeldung bei SQUAD Rewards (eigenes Konto) | 05, 03 | eigener Screenshot | HOLY-Seite → wie b08; eigene Kontodaten ausblenden | **eigene Grafik** (Wireframe) | nach der Bestellung, bis Mi 04.11. |
-| b12 | Unser Übungsraster nach S. 129 mit Haftnotizen | 06 | eigenes Foto (Workshop) | eigen; keine Gesichter, keine Namen auf Notizen | Raster nur als Grafik (Foto entfällt) | Workshop Mo 02.11.; Foto direkt danach |
-| b13 | Aufmacher im Blog: Pulver im Shaker, Dosierlöffel, 500-ml-Messbecher | 07 | eigenes Produktfoto | eigen; Etikett möglichst nicht frontal | **eigene Infografik** „Koffein im Vergleich“ (EFSA-Werte nach Kategorie, ✔ M91) | So 01.11.; Shaker und Dosierlöffel kommen vermutlich erst mit der Lieferung (wie b01), dann nachholen |
-| b14 | Blog-Mock-up (Bild der eigenen `blog.html`) | 07 | eigene Gestaltung | eigen; kein Logo, keine HOLY-Schrift, keine echte Domain; Kennzeichnung als Entwurf; bis zur Freigabe nur in der internen Fassung, nicht im Repository (✔ R30, 7.4, 11.5) | nur Kopf, „Kurz gesagt“ und Gliederung (Abschnitt 7.4) | Text Mi 04.11.; Bild Do 05.11. |
-| b15 | Handskizze: Regal-Aufsteller mit QR-Code als Brücke in den Squad | 08 | eigene Zeichnung, gescannt | eigen; ohne HOLY-Verpackungsdesign und Logo | Skizze als eigene Vektorgrafik | Mi 04.11. |
+| b04 | Gestellte Szene „vor der Schicht“: Spind, Warnweste, Shaker auf der Bank, ohne Person | 02 | eigenes Foto, als „gestellt“ gekennzeichnet | eigen; keine Person, kein Firmengelände ohne Erlaubnis; Produkt nur am Rand | Detailfoto Shaker beim Anrühren | Mo 02.11. |
+| b05 | Creator-Video mit Rabattcode (Ausschnitt ohne Gesicht) | 04, 03 | eigener Screenshot, Social Media | nur nach Zustimmung des Betreuers (Gruppenregel); erkennbare Person → § 22 KUG (✔ G25) | **eigene Grafik** „Creator-Video mit Code“ mit Kanal, Datum, Beschreibung | Screenshot mit Datum Sa 31.10.; Grafik bis Di 03.11. |
+| b06 | Eigene Suche „holy energy koffein“, Treffer von Hand eingekreist | 04, 03 | eigener Screenshot | eigener Bildschirm mit Inhalten Dritter: Bildzitat mit Belegfunktion (**H** G32); Datum, Gerät, Anmeldestatus nennen. Nur Text-Treffer zeigen: Bild- und Video-Karussells (Vorschaubilder von HOLY-Social-Media, Produktbilder) abschneiden oder vorher die Zustimmung des Betreuers einholen (Gruppenregel) | **eigene Grafik**: nachgesetzte Titelzeilen der ersten Treffer mit Quelle | SERP-Selbstversuch Sa 31.10.: privates Fenster, zwei Geräte (Dossier 12.4) |
+| b07 | Leerstelle „Antwortseite fehlt“ (Blog leer, ✔ L39) | 04 | eigene Grafik | eigen | – | beim Bau |
+| b08 | Shop-Seite Starter Set | 04, 03 | eigener Screenshot | zeigt HOLY-Produktfotos; HOLY räumt in den AGB keine Nutzungsrechte ein (✔ G19) → im Hörsaal Bildzitat nach Stengers Antwort, öffentlich nur mit Freigabe von HOLY (Abweichung in 1.2) | **eigene Grafik**: nachgezeichnetes Wireframe, oder eigenes Foto des gelieferten Sets | Screenshot Fr 30.10. bei der Bestellung; Wireframe bis Di 03.11. |
+| b09 | Regal im Supermarkt | 04 (Nebenweg), 03 | eigenes Foto | Hausrecht: Marktleitung vorher fragen; keine Personen (✔ G25; Hausrecht nur Modellwissen) | gekaufte Dose mit Bon zu Hause (Bon geschwärzt). **Wird kein Regal gefunden:** die Suche selbst als Station K4 dokumentieren (Märkte, Datum, Uhrzeit; Foto ohne Personen), das ist selbst ein Beleg für Lücke 2 (**H**; kein Store-Locator ✔ B01) | Sa 31.10.; welche Ketten HOLY führen, ist nicht geprüft (Dossier 12.1) |
+| b10 | Unboxing in drei Bildern (geschlossen, geöffnet, Inhalt) | 04, 03 | eigenes Foto | eigen; Adressaufkleber schwärzen; Verpackung wie b01 | Foto der Versandbestätigung (geschwärzt) bzw. Wireframe | Bestellung heute Fr 30.10.; Fotos am Liefertag, Bildschluss Mi 04.11.; **kommt die Lieferung nach Mi 04.11., gilt der Rückfall** (Lieferzeit wie b02) |
+| b11 | Anmeldung bei SQUAD Rewards (eigenes Konto) | 04, 03 | eigener Screenshot | HOLY-Seite → wie b08; eigene Kontodaten ausblenden | **eigene Grafik** (Wireframe) | nach der Bestellung, bis Mi 04.11. |
+| b12 | Unser Raster nach S. 129 mit Haftnotizen: Top 3 je Phase (Workshop) | 06 | eigenes Foto (Workshop) | eigen; keine Gesichter, keine Namen auf Notizen | Raster nur als Grafik (Foto entfällt) | Workshop Mi 04.11.; Foto direkt danach |
+| b13 | Pulver im Shaker, Dosierlöffel, 500-ml-Messbecher (bisher Blog-Aufmacher) | Konzept-Webseite nur in der internen Fassung; B6 | eigenes Produktfoto | eigen; Etikett möglichst nicht frontal; in der Konzept-Webseite im Repository **nicht** (dort Platzhalter „eigenes Produktfoto folgt“, 7.3) | **eigene Infografik** „Koffein im Vergleich“ (EFSA-Werte nach Kategorie, ✔ M91) | Shaker und Dosierlöffel kommen vermutlich erst mit der Lieferung (wie b01); Bildschluss Do 05.11. |
+| b14 | Bildschirmfotos der Konzept-Webseite, 390 × 844 (`konzept-website/_vorschau/`), je Top-Touchpoint eines (vorher: Blog-Mock-up) | 08 | eigene Gestaltung | eigen; kein Logo, keine HOLY-Schrift, keine echte Domain, keine fremden Bilder; Hinweisbalken auf jedem Bild sichtbar (7.3) | Wireframes der fünf Bildschirme als eigene SVG (7.5) | Seiten bis Mi 04.11.; Bildschirmfotos Do 05.11. |
+| b15 | Handskizze: Regal-Aufsteller mit QR-Code als Brücke in den Squad (Nebenweg) | 07 (Nebenweg-Zeile, klein), B4 | eigene Zeichnung, gescannt | eigen; ohne HOLY-Verpackungsdesign und Logo | Skizze als eigene Vektorgrafik | Mi 04.11. |
 | b16 | Bildleiste der Selbstversuch-Fotos auf dem geschlossenen Pfad | 09 | Wiederverwendung | wie b05–b11 | nur Bilder mit Status „frei“, sonst deren Rückfall | beim Bau |
 | b17 | Persona-Illustration Marco (FS1) | nur B7 | Illustration, KI-gestützt (FS1) | eigene Gestaltung laut FS1 `QUELLEN.md` §4; Kennzeichnung mit Werkzeug und Datum wie dort (1.2) | – | – |
 | b18 | Farb- und Formproben (Hex-Werte, Kontur, Kreis, Schachbrett) | 03 | eigene Grafik | eigen; Werte aus Dossier 10.1 mit Status | – | beim Bau |
 | b19 | Leere Blog-Seite /blogs/news („noch keine Beiträge“, ✔ M01, ✔ L39) | 03, B4 | eigener Screenshot | HOLY-Seite: Bildzitat mit Belegfunktion (**H** G32), Quellzeile wie 3.6; Seitenkopf mit HOLY-Logo abschneiden (3.7) | **Textgrafik** „/blogs/news · 0 Beiträge“ mit Abrufdatum | Screenshot Fr 30.10. mit Datum; Textgrafik beim Bau |
+| b20 | IST-Bildschirme der vier Überleitungen im Selbstversuch (Übergangsprotokoll: Creator-Video → Suche, Suche → Produktseite, Produktseite → Warenkorb, Bestellung → Danke-Seite/Squad) | 05, B1 | eigene Screenshots | HOLY-Seiten mit Produktfotos → wie b08: im Hörsaal Bildzitat nach Stengers Antwort, öffentlich nur mit Freigabe; personenbezogene Daten schwärzen | **eigene Grafik** je Übergang (Anschluss ja/nein, Klicks, Wechsel von Medium oder Domain) | Selbstversuch bis Mi 04.11.; Bildschluss Do 05.11. |
+| b21 | Vorbilder aus anderen Branchen (Best Practices) | 07, B6 | Text, keine Bilder | Standard: nur Text (Unternehmen, Branche, Mechanik, Quelle mit Abrufdatum); Screenshots fremder Seiten höchstens in der internen Fassung im Hörsaal als Bildzitat (§ 60a UrhG, Einschätzung, keine Rechtsberatung, ✔ G20, ✎ G21) | Textzeile | Do 05.11. (nach Prüfung im Dossier) |
 | v01 | **Videobotschaft des Gründers** Mathias Horsch (16,1 s, Hochformat 576 × 1024, mit Ton; erhalten 02.11.2026) | 09 (Klick 1) | Video des Gründers, Selbstauskunft | Zustimmung des Gründers: Video und Stimme dürfen in die Präsentation (laut Yannick, 02.11.2026, KI-Nachweis FS2 Nr. 09). **Nicht** angefragt: Veröffentlichung im Repository bzw. auf GitHub Pages und KI-Transkription → Datei nur in `praesentation/intern/` und im Gruppenordner, keine automatischen Untertitel | öffentliche Fassung: Handyrahmen mit Text „Videobotschaft des Gründers – nur im Vortrag“; im Vortrag, falls das Video nicht läuft: derselbe Rahmen, ein Satz Überleitung | Datei in `intern/` ablegen mit M5; Ton im Beamer-Test (11.4) |
 
 **Regeln für alle Fotos:** nur Hände, keine Gesichter, keine Dritten; jedes Motiv quer und hoch aufnehmen; Datum,

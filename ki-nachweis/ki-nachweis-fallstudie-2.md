@@ -37,6 +37,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich: A1, A2, A4, A6, A7 teilweise abgedeckt, A3 und A5 fehlen weitgehend; Vorschlag neuer Folienplan (Chat) |
 | 11 | 03.11.2026 | Yannick | Mit dem Bau anfangen; Prof. Stenger regt eine eigene HOLY-Webseite an | D05 (Workflow) | *läuft:* Plan-Umbau, Best Practices, Konzept-Webseite, Präsentation, Abnahme |
 | 12 | 03.11.2026 | Yannick | Freigabe: HOLY-Logos dürfen genutzt werden (Gründer eingeweiht) | – | vermerkt; Einbau nach Abschluss von D05 |
+| 13 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Gestaltungsplan, während D05 läuft) | – | Zwischenstand committet und gepusht |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -246,6 +247,14 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** vermerkt; Umsetzung folgt.
 - **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 13 – 03.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Der Plan-Agent von D05 bearbeitet gerade `gestaltungsplan.md`; der Zwischenstand wurde als
+  solcher committet und gepusht. Der fertige Stand folgt nach Abschluss und Abnahme von D05.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
