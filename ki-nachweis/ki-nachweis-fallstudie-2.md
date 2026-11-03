@@ -404,7 +404,7 @@ Auftrag (im Workflow-Skript).
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
 | D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
 | D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | Plan, Dossier 7a (17 Fälle), Konzept-Webseite, Präsentation; Abnahme: 1 hoher, 15 mittlere, 14 niedrige Befunde | Journal gelesen; Befunde nachgeprüft (Help-Center selbst abgerufen, Ü1 am Maßstab, Screenshots angesehen) und eingearbeitet; `pruefen.mjs` beider Teile: 0 Fehler |
-| D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 9 mittlere, 14 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
+| D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 8 mittlere, 15 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
 | D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
@@ -544,7 +544,7 @@ Auftrag (im Workflow-Skript).
     Fassungen bestanden.
   - *Abnahme (2 Agenten, nur lesend):* Webseite 4 mittlere, 8 niedrige Befunde (u. a. falscher Obersatz im Fuß,
     Folie-08-Strecke wechselt von 50er-Dose zum Starter Set, Symbolbilder nicht gekennzeichnet, Regalfoto verdrängt den
-    Hauptknopf); Präsentation 4 mittlere, 6 niedrige Befunde (u. a. Folie 07 Vorschaubilder unlesbar, OTTO-Bild belegt
+    Hauptknopf); Präsentation 4 mittlere, 7 niedrige Befunde (u. a. Folie 07 Vorschaubilder unlesbar, OTTO-Bild belegt
     die Aussage nicht, Blog-Kachel widerspricht „Blog fehlt“, Exportsperre zu eng).
 - **Wie Claude das Ergebnis geprüft hat:** Journal aller 8 Agenten gelesen; beide Kontaktbögen selbst angesehen (Motive,
   Datenschutz vor der Veröffentlichung); nach dem Umzug nach `fremdbilder/` beide Prüfskripte selbst laufen lassen
