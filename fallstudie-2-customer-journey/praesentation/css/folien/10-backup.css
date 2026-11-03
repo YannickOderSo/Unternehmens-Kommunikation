@@ -1,0 +1,35 @@
+/* =============================================================================
+   10-backup.css – Backup B1–B9 (knappe Gerüste nach Gestaltungsplan 5.3)
+   Dichter als die Hauptfolien: Titel 56 px, Tabellen 22 px (Metaangaben).
+   ============================================================================= */
+.p-backup .p-kopf { top: 104px; }
+.p-backup .p-herleitung { margin-top: 12px; }
+.p-backup .p-tabelle,
+.p-backup .b-spalten,
+.p-backup .b3-spalten,
+.p-backup .b8-spalten { left: 128px; top: 240px; width: 1664px; }
+.p-backup .p-tabelle { table-layout: auto; }
+.p-backup .b-spalten { display: grid; gap: 22px; }
+.p-backup .b-spalten .p-tabelle { position: static; width: 100%; }
+.p-backup .b-hinweis { left: 128px; width: 1664px; bottom: 96px; }
+.p-backup .b2-tabelle td:first-child { white-space: normal; width: 210px; }
+.p-backup .b4-tabelle td:nth-child(2) { white-space: nowrap; }
+.p-backup .b6-tabelle td:first-child { width: 150px; }
+.b3-spalten,
+.b8-spalten {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 32px;
+  font-size: 22px;
+  line-height: 1.35;
+}
+.b8-spalten { grid-template-columns: 1fr 1fr; }
+.b8-spalten p + p { margin-top: 8px; }
+.b3-kopf {
+  font-size: 24px;
+  font-weight: 650;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid var(--p-schrift);
+}
+.b8-spalten .b3-kopf:not(:first-child) { margin-top: 18px; }

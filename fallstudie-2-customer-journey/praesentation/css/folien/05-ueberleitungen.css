@@ -1,0 +1,53 @@
+/* =============================================================================
+   05-ueberleitungen.css – Folie 05 · A3 Überleitungen im IST
+   Gestaltungsplan 6.7.3: Pfad mit fünf kleinen Stationskacheln (160 × 90), in
+   jeder Rinne eine Brücke Ü1–Ü4 (Form: trägt = durchgehend, wackelt = Versatz
+   12 px, bricht = offenes Ende; zeichnet js/folien/pfad.js), Urteilswort
+   36 px Bricolage, Belegzeile 26 px; Marker an Ü2; Nebenweg gestrichelt unten.
+   Urteile oben (Ü1, Ü3) und unten (Ü2, Ü4) im Wechsel, damit die Belegzeilen
+   Platz haben.
+   ============================================================================= */
+#f05 .e5-massstab {
+  left: 128px;
+  top: 458px;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+}
+#f05 .e5-massstab b { color: var(--p-schrift); font-weight: 650; }
+#f05 .e5-k[data-status="offen"] {
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 10px;
+}
+#f05 .e5-k-name { font-size: 24px; line-height: 1.1; }
+
+#f05 .e5-urteil { text-align: center; }
+#f05 .e5-urteil--oben { bottom: 470px; width: 540px; }
+#f05 .e5-urteil--unten { top: 736px; width: 540px; }
+#f05 .e5-u1 { left: 407.33px; }
+#f05 .e5-u3 { left: 972.67px; }
+#f05 .e5-u2 { left: 690px; }
+#f05 .e5-u4 { left: 1255.33px; width: 520px; }
+#f05 .e5-kopf { display: flex; justify-content: center; align-items: baseline; gap: 12px; }
+#f05 .e5-id { font-size: 24px; color: var(--p-schrift-2); font-weight: 600; }
+#f05 .e5-kern { font-size: 32px; margin-top: 6px; }
+#f05 .e5-urteil .p-beleg { margin-top: 6px; }
+
+#f05 .e5-neben {
+  left: 128px;
+  top: 944px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+#f05 .e5-neben-text { position: static; }
+#f05 .e5-neben-linie { display: block; }
+#f05 .e5-neben-urteil {
+  font-family: var(--schrift-display);
+  font-size: 30px;
+  font-weight: 700;
+  font-stretch: 86%;
+  line-height: 1;
+}

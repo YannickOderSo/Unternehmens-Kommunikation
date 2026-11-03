@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light">
+<title>Dein Warenkorb · HOLY (studentisches Konzept)</title>
+<meta name="description" content="Studentisches Konzept, keine Website der HOLY Softdrinks GmbH: mobiler Warenkorb mit einem Lieferdatum, Endpreis inklusive Versand und sichtbarem Code. Keine Bestellung möglich.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/konzept.css">
+</head>
+<!--
+  Konzept-Webseite HOLY · Seite 4 von 7 · warenkorb.html
+  Phase Kauf (ACT) · Top-Touchpoint: mobiler Warenkorb/Checkout mit klarer Lieferzeit (gestaltungsplan.md 5.2).
+  Schließt Ü3 (Entscheidung → Kauf, „wackelt“): drei Lieferzeit-Versprechen (✔ B91), Versandkosten je nach Seite
+  (✔ B12), vergessener Code: AGB § 9 gegen Help-Center (✔ B90). Stärke, die bleibt: Mix & Match rechnet automatisch (✔ T22).
+  Vorbilder: ✎ X10 (Shop Pay: Express vor dem Formular, Gast ohne Konto), ~ X11 (Lieferdatum statt Versanddauer),
+  ✔ X12 (OTTO), ✔ X15 (Douglas: Punkte im Warenkorb einlösen).
+  Mock: kein Formular, keine Eingabefelder, nichts wird gesendet. Posten aus ?packung= (Standard: Starter Set, Entscheidung
+  vom 03.11.2026: „Kauf (Starter Set online …)“). Code-Rabatt und Lieferdatum: Beispielwerte.
+  Studentisches Konzept der Gruppe, KI-gestützt entworfen, Prüfung durch die Gruppe offen. Stand 03.11.2026.
+-->
+<body data-station="4">
+
+<div class="hinweisbalken" role="note"><strong>Studentisches Konzept der Gruppe (HS Kaiserslautern)</strong> – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich</div>
+
+<header class="kopf">
+  <div class="inhalt">
+    <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite">HOLY <span>Konzept</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="koffein-check.html">Koffein<span class="nur-breit">-Check</span></a>
+      <a href="squad.html"><span class="nur-breit">SQUAD </span>Rewards</a>
+      <a href="warenkorb.html" aria-current="page">Warenkorb</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="weg-leiste nur-anm" aria-label="Zentraler Weg (SOLL)">
+  <ol>
+    <li class="titel">Zentraler Weg (SOLL)</li>
+    <li><a href="index.html">1 Inspiration</a></li>
+    <li><a href="koffein-check.html">2 Recherche</a></li>
+    <li><a href="produkt.html">3 Entscheidung</a></li>
+    <li><a href="warenkorb.html" aria-current="step">4 Kauf</a></li>
+    <li><a href="danke.html">5 Bindung</a></li>
+    <li><a href="squad.html">Squad</a></li>
+  </ol>
+</nav>
+
+<main id="inhalt">
+  <div class="inhalt schmal">
+    <p class="krumen"><a href="produkt.html">‹ Zurück zum Produkt</a></p>
+    <h1 style="margin-top:10px">Dein Warenkorb</h1>
+
+    <!-- Maßnahme K1: ein Lieferdatum mit Bestellschluss, gleich wie auf der Produktseite (✔ B91, ~ X11, ✔ X12).
+         Datum und Uhrzeit sind Beispielwerte. -->
+    <div class="lieferbanner lieferung" id="lieferdatum">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="7" width="34" height="30" rx="4" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/><rect x="3" y="7" width="34" height="9" rx="3" fill="#1D1D1B"/><path d="M12 3 V11 M28 3 V11" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/><rect x="10" y="21" width="7" height="6" fill="#FFD007" stroke="#1D1D1B" stroke-width="1.5"/></svg>
+      <div>
+        <span class="datum">Lieferung <span data-liefertag>Do., 12.11.</span></span><span class="beispiel">Beispielwert</span>
+        <p class="meta" style="margin:2px 0 0">wenn du bis 14:00 Uhr bestellst · Standardversand<span class="anm" data-ids="✔ B91 · ✔ B26 · ~ X11 (Grund für ~: Apple-Umsetzung in DE nicht belegt) · ✔ X12" data-ziel="#lieferdatum">Was wir ändern: Ganz oben ein einziges Lieferdatum mit Bestellschluss – dasselbe wie auf der Produktseite. Warum: Heute verspricht HOLY 1–3 Werktage, 3–6 Werktage oder „Next Day“, je nach Seite. Werktage rechnen Kundinnen und Kunden selbst um und kommen zu verschiedenen Ergebnissen (Baymard). Vorbild OTTO: Lieferzeit vor der Bestellung am Artikel, nach dem Versand Sendungsverfolgung mit Zustelltag.</span></p>
+      </div>
+    </div>
+
+    <!-- Maßnahme K2: Endpreis inklusive Versand, Code sichtbar, Mix & Match automatisch.
+         Preise ✔ B09 / ✔ T20; Versand ✔ B12; Code aus der Landingpage übernommen (✔ B90: vergessener Code ist heute
+         ein Widerspruch zwischen AGB § 9 und Help-Center); Code-Rabatt −10 %: Beispielwert. Vorbild ✔ X09. -->
+    <h2 style="font-size:20px">Deine Bestellung</h2>
+    <ul class="posten" data-warenkorb>
+      <li>
+        <span><strong data-k-name>Starter Set Energy</strong>
+          <span class="unter" data-k-zusatz>14 Drinks + Shaker, Gratisversand · 1,79 € je Drink</span>
+          <span class="unter" data-k-grund>Grundpreis folgt (Füllmenge des Sets prüfen)</span></span>
+        <span class="r" data-k-preis>24,99 €</span>
+      </li>
+      <li id="code-zeile">
+        <span>Code <strong data-code>CREATOR10</strong> <span class="werbung">Werbung</span>
+          <span class="unter">aus dem Creator-Video übernommen · −10 % <span class="beispiel">Beispielwert</span></span></span>
+        <span class="r" data-k-rabatt>− 2,50 €</span>
+      </li>
+      <li>
+        <span>Versand<span class="unter" data-k-versandtext>Gratisversand beim Starter Set</span></span>
+        <span class="r" data-k-versand>0,00 €</span>
+      </li>
+      <li class="summe" id="summe">
+        <span>Gesamt<span class="unter">inkl. MwSt. und Versand · Beispielrechnung</span></span>
+        <span class="r" data-k-gesamt>22,49 €</span>
+      </li>
+    </ul>
+    <p class="meta">Der Code aus dem Video ist schon eingetragen – du musst ihn nicht suchen oder nachreichen.<span class="anm" data-ids="✔ B90 · ✔ X01 · ✔ X09 · ✔ B12" data-ziel="#summe">Was wir ändern: Der Code aus dem Video ist schon eingetragen und sichtbar, der Endpreis inklusive Versand steht vor dem Bezahlen. Warum: Wer heute den Code vergisst, findet zwei Antworten (AGB § 9: nein, Help-Center: ja), und die Versandkosten stehen je nach Seite verschieden da. Vorbild Airbnb: Gesamtpreis inklusive aller Gebühren, keine Überraschung beim Bezahlen.</span></p>
+
+    <!-- Mix & Match ✔ T22, versandkostenfrei ab 49 € ✔ B12 – nur bei Dosen -->
+    <p class="kasten klein" data-k-nur-dose hidden>Noch eine Dose dazu? Mix &amp; Match zieht ab der zweiten Dose automatisch 10 % ab (bis 20 % bei 4 Dosen), und ab 49 € ist der Versand frei.</p>
+
+    <!-- Maßnahme K3: Express-Knöpfe vor dem Formular, Gast ohne Konto. Befund ✔ T23 (Apple Pay, Google Pay, PayPal
+         im Footer), ✔ B11 (Shop auf Shopify-Technik); Vorbild ✎ X10 (Shop Pay; Baymard: 18 % brechen wegen
+         Kontozwang ab, 17 % wegen zu langem Checkout). Knöpfe ohne fremde Logos, nur Text. -->
+    <h2 style="font-size:20px; margin-top:18px" id="express-titel">Schnell bezahlen<span class="anm" data-ids="✎ X10 · ✔ T23 · ✔ B11" data-ziel=".express">Was wir ändern: Die Express-Knöpfe stehen oben, vor jedem Formular; wer kein Konto will, bestellt als Gast. Warum: Auf dem Handy zählt jedes Feld – laut Baymard brechen 18 % ab, weil ein Konto verlangt wird, 17 %, weil der Checkout zu lang ist. HOLY bietet Apple Pay, Google Pay und PayPal schon an. Vorbild Shopify (Shop Pay): Express-Checkout vor dem Gast-Formular; die Wirkungszahlen dazu sind nur Firmenangaben.</span></h2>
+    <div class="express" aria-labelledby="express-titel">
+      <a class="knopf" href="danke.html" data-mit-packung>Apple Pay</a>
+      <a class="knopf" href="danke.html" data-mit-packung>Google Pay</a>
+      <a class="knopf" href="danke.html" data-mit-packung>PayPal</a>
+    </div>
+    <p class="meta">Knöpfe ohne Logos (Konzept).</p>
+    <div class="oder">oder</div>
+    <a class="knopf knopf-gelb" href="danke.html" data-mit-packung>Als Gast bestellen – ohne Konto <span class="pfeil" aria-hidden="true">→</span></a>
+    <p class="meta" style="margin-top:8px">Konzept: Alle Knöpfe führen nur zur Danke-Seite. Es wird nichts bestellt, bezahlt oder gesendet.</p>
+
+    <!-- Maßnahme K4: Coins im Warenkorb sichtbar und einlösbar. ✔ T32 (10 Coins pro Euro; 10 € für 900 Coins);
+         Vorbild ✔ X15 (Douglas Beauty Card: Punkte im Online-Warenkorb oder an der Kasse einlösen). -->
+    <div class="kasten" id="coins" style="margin-top:18px">
+      <h3>SQUAD Rewards</h3>
+      <p style="margin:0">Mit dieser Bestellung sammelst du rund <strong data-k-coins>225</strong> Coins (10 Coins pro Euro) <span class="beispiel">Beispielrechnung</span>. Coins löst du direkt hier im Warenkorb ein: 900 Coins = 10 €.<span class="anm" data-ids="✔ T32 · ✔ X15" data-ziel="#coins">Was wir ändern: Coins stehen im Warenkorb – was du sammelst und was du einlösen kannst. Warum: SQUAD Rewards hat schon Coins und Level (10 Coins pro Euro, 900 Coins = 10 €), aber man sieht sie beim Kauf nicht. Vorbild Douglas: Punkte im Online-Warenkorb oder an der Kasse einlösen.</span></p>
+    </div>
+
+    <!-- Maßnahme K5: Altershinweis ohne falsche Rechtsbehauptung (✎ R20, Dossier 8.3 Don't 14), eine Grenze für alles
+         (✔ R90: AGB „ab 18“ und „ab 16“; ✎ B05: Rewards ab 16); Alter heute nur per Selbstbestätigung (✔ T96). -->
+    <div class="kasten linie-links" id="alter" style="border-left-width:6px">
+      <p style="margin:0"><strong>Für Erwachsene.</strong> HOLY Energy enthält Koffein (160 mg je Portion). Bestellen kannst du ab 18 – im Shop, bei SQUAD Rewards und bei Aktionen gilt dieselbe Grenze. <a href="koffein-check.html#ab-wie-viel-jahren">Warum ab 18?</a><span class="anm" data-ids="✎ R20 · ✔ R90 · ✎ B05 · ✔ T96 · ✔ S92" data-ziel="#alter">Was wir ändern: Ein klarer Altershinweis an der Kasse, eine Grenze für Shop, Rewards und Aktionen. Warum: HOLYs zwei AGB-Fassungen nennen 18 bzw. 16, SQUAD Rewards gilt ab 16, das Alter wird nur per Häkchen bestätigt. Wir schreiben nicht „gesetzlich erst ab 18“ – eine gesetzliche Altersgrenze gibt es nicht; ab 18 ist HOLYs eigene Regel.</span></p>
+    </div>
+  </div>
+
+  <section class="naechste" aria-label="Nächste Station">
+    <div class="inhalt schmal">
+      <p>Nächste Station · 5 Bindung</p>
+      <h2>Und nach dem Kauf?</h2>
+      <a class="knopf" href="danke.html" data-mit-packung>Zur Danke-Seite <span class="pfeil" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="inhalt">
+    <h2>Stationen des Konzepts</h2>
+    <ol>
+      <li><a href="index.html">Inspiration: Landingpage aus dem Creator-Video</a></li>
+      <li><a href="koffein-check.html">Recherche: Koffein-Check</a></li>
+      <li><a href="produkt.html">Entscheidung: Produktseite</a></li>
+      <li><a href="warenkorb.html">Kauf: mobiler Warenkorb</a></li>
+      <li><a href="danke.html">Bindung: Danke- und Willkommensseite</a> · <a href="squad.html">SQUAD Rewards</a></li>
+    </ol>
+    <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
+    <div class="kennung">
+      <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
+      <p>Kein HOLY-Logo, keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe, „HOLY“ steht nur als Text.</p>
+    </div>
+    <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
+    <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
+    <p class="nur-normal"><a href="?anmerkungen=1" data-ohne-anmerkungen>Präsentationsmodus: Anmerkungen einblenden</a></p>
+    <p class="nur-anm"><a href="?" data-ohne-anmerkungen>Anmerkungen ausblenden</a></p>
+  </div>
+</footer>
+
+<script src="assets/konzept.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* =============================================================================
+   06-soll.css – Folie 06 · A4 Top 3 je Phase, „Zentraler Weg (SOLL)“
+   Gestaltungsplan 5.1 Zeile 06, 5.2: Raster wie S. 129, Platz 1 als schwarzer
+   Knoten 52 px auf dem gelben Pfad, Plätze 2/3 als kleine Kreise (36 px) ohne
+   Pfad; Workshop-Foto b12 als schmaler Anschnitt oben rechts (Spalten 10–12).
+   Zellen und Pfad setzt js/folien/pfad.js (JSON der Folie).
+   ============================================================================= */
+#f06 .e6-workshop {
+  left: 1400px;
+  top: 128px;
+  width: 520px;
+  height: 180px;
+  border-right: 0;
+}
+#f06 .e6-workshop .p-platzhalter { display: grid; gap: 4px; width: 360px; }
+#f06 .e6-statt { margin: 2px 0 0; }
+
+#f06 .e6-tp {
+  width: 250.67px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+#f06 .e6-tp[data-platz="1"] { z-index: 3; }
+#f06 .e6-tp .p-knoten { position: static; margin: 0; flex: none; }
+#f06 .e6-tp .p-knoten--klein { margin: 0 8px 0 8px; }
+#f06 .e6-tp-name {
+  font-size: 28px;
+  line-height: 31px;
+  white-space: nowrap;
+  background: var(--p-papier);
+  padding: 0 6px 0 8px;
+  margin-left: -1px;
+}
+#f06 .e6-tp[data-platz="1"] .e6-tp-name { font-weight: 650; letter-spacing: -0.01em; }
+#f06 .e6-wegname { left: 700px; top: 525px; }

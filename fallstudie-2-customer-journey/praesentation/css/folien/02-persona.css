@@ -1,0 +1,46 @@
+/* =============================================================================
+   02-persona.css – Folie 02 · Persona Marco und Mediennutzung
+   Gestaltungsplan 5.1 Zeile 02: Spalten 1–5 Foto b04 im Anschnitt; Spalten 6–12
+   zwei getrennt beschriftete Gruppen von Strichskalen (Basen nicht mischen),
+   Schlüsselzahl 92 % mit Marker, darunter O-Töne (offen).
+   ============================================================================= */
+#f02 .e2-foto {
+  left: 0;
+  top: 372px;
+  width: 674.67px;
+  height: 610px;
+  border-left: 0;
+}
+#f02 .e2-foto .p-platzhalter {
+  position: absolute;
+  left: 128px;
+  bottom: 28px;
+  width: 440px;
+  display: grid;
+  gap: 6px;
+}
+#f02 .e2-persona,
+#f02 .e2-gruppe,
+#f02 .e2-oton { left: 834.67px; width: 957.33px; }
+
+#f02 .e2-persona { top: 368px; display: grid; gap: 4px; }
+#f02 .e2-name { font-size: 28px; line-height: 1.25; }
+#f02 .e2-fiktiv { font-size: 22px; color: var(--p-schrift-2); }
+#f02 .e2-kauf,
+#f02 .e2-info { font-size: 28px; line-height: 1.25; }
+#f02 .e2-limbic { font-size: 22px; line-height: 1.3; color: var(--p-schrift-2); }
+
+#f02 .e2-gruppe--a { top: 560px; }
+#f02 .e2-gruppe--b { top: 720px; }
+#f02 .e2-gruppe-kopf { font-size: 22px; line-height: 1.25; color: var(--p-schrift-2); margin-bottom: 4px; }
+#f02 .p-skala { grid-template-columns: 200px 1fr 150px; grid-auto-rows: 42px; }
+#f02 .p-skala-zahl { display: flex; align-items: baseline; justify-content: flex-end; gap: 8px; }
+#f02 .e2-schnitt {
+  font-family: var(--schrift-text);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--p-schrift-2);
+}
+#f02 .e2-handy { font-size: 28px; line-height: 1.25; margin-top: 4px; }
+#f02 .e2-oton { top: 928px; width: auto; }
+#f02 .p-skala-zahl .p-marker { margin-right: 0; }

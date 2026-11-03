@@ -1,0 +1,20 @@
+Schriften der Konzept-Webseite (Fallstudie 2)
+=============================================
+Stand 03.11.2026. Kopiert aus dem Repository, nicht neu heruntergeladen:
+fallstudie-1-brand-persona/praesentation/schriften/ (dort beschrieben in HERKUNFT.txt).
+
+Bricolage Grotesque (variabel, wght 200–800, wdth 75–100) – Titel, Preise, Wortmarke „HOLY“ als schlichter Text
+  bricolage-grotesque-latin-standard-normal.woff2
+  bricolage-grotesque-latin-ext-standard-normal.woff2
+  Herkunft: npm-Paket @fontsource-variable/bricolage-grotesque, Version 5.3.0 (Fontsource, Originalquelle Google Fonts)
+  Original: github.com/ateliertriay/bricolage
+  Lizenz: SIL Open Font License 1.1, Lizenztext LIZENZ-bricolage-grotesque-OFL.txt
+
+Fließtext: Libre Franklin (laut Gestaltungsplan Abschnitt 3.4) liegt noch nicht im Repository (Meilenstein M5).
+Bis dahin nennt assets/konzept.css „Libre Franklin“ nur als installierte Systemschrift und fällt sonst auf die
+Systemschrift zurück (system-ui, Segoe UI, Roboto, Arial). Es gibt kein @font-face für Libre Franklin, damit keine
+fehlende Datei angefragt wird. Wenn die Datei samt Lizenz kopiert ist: @font-face in assets/konzept.css ergänzen
+und diesen Absatz anpassen.
+
+Nicht eingebunden: HOLYs eigene Schriften (ObviouslyNarrow, PP Agrandir, Extra Chunk Please), weil kommerziell
+(Dossier FS2 ✔ G01, ✎ G03, ✎ G04). Die Webseite lädt keine Schrift aus dem Internet.

@@ -1,0 +1,103 @@
+/* =============================================================================
+   01-einstieg.css – Folie 01 · Einstieg (gelbe Bühne)
+   Gestaltungsplan 5.1 Zeile 01 und 9.1: Spalten 1–7 Gelb mit Frage (Bricolage
+   96 px) und drei schwarzen Stufen (Trichter nach den 5 As, ohne Zahlen);
+   Spalten 8–12 Foto b01 im Anschnitt mit 4-px-Kontur und hartem Schatten.
+   Klick 1: Titel ersetzt die Frage; der Pfad startet und läuft zum Foto.
+   ============================================================================= */
+#f01 .e1-frage {
+  left: 128px;
+  top: 150px;
+  width: 960px;
+}
+#f01 .e1-frage-text {
+  font-family: var(--schrift-display);
+  font-size: 96px;
+  font-weight: 750;
+  font-stretch: 82%;
+  line-height: 1.0;
+  letter-spacing: -0.012em;
+}
+#f01 .e1-stufen { margin-top: 48px; display: grid; gap: 22px; }
+#f01 .e1-stufe { display: flex; align-items: center; gap: 22px; }
+#f01 .e1-stufe-wort {
+  display: flex;
+  align-items: center;
+  height: 104px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  background: var(--p-schrift);
+  color: var(--p-papier);
+  font-family: var(--schrift-display);
+  font-size: 64px;
+  font-weight: 750;
+  font-stretch: 85%;
+  line-height: 1;
+}
+#f01 .e1-stufe--1 .e1-stufe-wort { width: 720px; }
+#f01 .e1-stufe--2 .e1-stufe-wort { width: 560px; }
+#f01 .e1-stufe--3 .e1-stufe-wort { width: 400px; }
+#f01 .e1-stufe-as {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+}
+/* Klick 1: Titel ersetzt die Frage */
+#f01 .e1-frage { transition: opacity 240ms ease-out, visibility 240ms; }
+#f01:has(.e1-titelblock.schritt-an) .e1-frage { visibility: hidden; opacity: 0; }
+
+#f01 .e1-titelblock {
+  left: 128px;
+  top: 170px;
+  width: 940px;
+}
+#f01 .e1-titel {
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: 96px;
+  font-weight: 750;
+  font-stretch: 82%;
+  line-height: 1.0;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+#f01 .e1-unterzeile {
+  margin-top: 44px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+#f01 .e1-gruppe {
+  margin-top: 4px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+#f01 .e1-meta {
+  margin-top: 10px;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--p-schrift-2);
+}
+
+/* Pfad auf Gelb: Schwarz (pfad.css, Bühne gelb) – Startstrich zum Foto */
+#f01 .e1-pfad .gelb { stroke-width: 14; }
+
+/* Foto b01 im Anschnitt (rechter Bühnenrand), harter Versatzschatten nach links unten */
+#f01 .e1-foto {
+  left: 1117.33px;
+  top: 96px;
+  width: 802.67px;
+  height: 780px;
+  border-right: 0;
+  box-shadow: -12px 12px 0 var(--p-schatten);
+}
+#f01 .e1-foto .p-platzhalter {
+  position: absolute;
+  left: 32px;
+  bottom: 28px;
+  width: 420px;
+  display: grid;
+  gap: 6px;
+}

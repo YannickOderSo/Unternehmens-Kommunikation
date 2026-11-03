@@ -1,0 +1,685 @@
+/* =============================================================================
+   pfad.css – Thema „Pfad“ der Präsentation Fallstudie 2 „Customer Journey“
+   -----------------------------------------------------------------------------
+   Nach gestaltungsplan.md Abschnitt 3 (Leitidee, Farben, Kontraste, Typografie,
+   Raster, Komponenten mit Präfix p-) und 11.2. Angelegt am 03.11.2026 im Workflow
+   „fs2-bau“ (KI-Nachweis FS2, Eintrag 11 / Delegation D05), KI-gestützt;
+   Prüfung durch die Gruppe offen.
+
+   WARUM DIESE DATEI DIE TOKENS ÜBERSCHREIBT
+     tokens.css (aus FS1, unverändert) berechnet die Akzentfarbe aus der
+     Markenfarbe und deckelt ihre Helligkeit (oklch … min(l, 0.46)). Aus HOLY-Gelb
+     wurde so in FS1 ein Ocker #785100 (Dossier FS2 ✔ G13). Hier stehen die
+     Farben deshalb FEST, mit höherer Spezifität als tokens.css
+     (html[data-thema][data-modus] = 0,2,1 gegen höchstens 0,2,0 dort) – in allen
+     drei Themen der Engine gleich. Die Taste T ändert damit nichts Sichtbares.
+
+   AUFBAU
+     1. Farben hell/dunkel (Gestaltungsplan 3.2, Kontraste 3.3)
+     2. Gelbe Bühne (data-buehne="gelb") und Rückfall ?buehne=schwarz
+     3. Schriften (3.4) – Text in Inter, solange Libre Franklin fehlt (M5)
+     4. Grundgerüst der Folie: alles absolut auf dem 12er-Raster (3.5)
+     5. Komponenten (3.6): Laufleiste, Titel, Herleitung, Quelle/Fuß, Marker,
+        Bildkachel, Leerstelle, Knoten, Pfad, Notiz, Legende, Handyrahmen
+   Kontraste (WCAG 2.x, nachgerechnet im Plan 3.3): Schwarz auf Creme 14,48 ·
+   Schiefer #5C5547 auf Creme 6,33 · Schwarz auf Gelb 11,48 · Schiefer auf Gelb
+   5,02 · Creme auf Schwarz 14,48 · #B9B0A0 auf Schwarz 7,86 · Gelb auf Schwarz 11,48.
+   Verboten: Gelb als Schrift oder konturlose Linie auf Creme (1,26), Mittel warm,
+   Nebel, Creme oder Schiefer hell auf Gelb.
+   ============================================================================= */
+
+
+/* -----------------------------------------------------------------------------
+   1. FARBEN
+   ----------------------------------------------------------------------------- */
+html[data-thema][data-modus="hell"],
+html[data-thema][data-modus="hell"] .folie:not([data-buehne]) {
+  color-scheme: light;
+  /* eigene Tokens des Themas */
+  --p-papier: #F3EDE1;        /* Creme – HOLY-Web/Press Kit (✎ G06, ✔ G08) */
+  --p-schrift: #1D1D1B;       /* Schwarz – Logo/Druck (✔ G07) */
+  --p-schrift-2: #5C5547;     /* Schiefer warm – Nebentext */
+  --p-mittel: #857C6B;        /* Mittel warm – Grafik zweiten Ranges, Nebenweg */
+  --p-nebel: #CBC2B0;         /* Haarlinien (nur Deko) */
+  --p-gelb: #FFD007;          /* HOLY-Gelb (✎ G06) – nur Fläche */
+  --p-pfad: #FFD007;          /* Füllung des Pfads */
+  --p-pfad-kontur: #1D1D1B;   /* Kontur des Pfads – trägt ihn auf Creme */
+  --p-knoten-grund: #1D1D1B;
+  --p-knoten-zahl: #FFD007;
+  --p-marker-grund: #FFD007;
+  --p-marker-text: #1D1D1B;
+  --p-kontur: #1D1D1B;        /* 4-px-Kontur der Bildkacheln */
+  --p-tuerkis: #8ECDC1;       /* Platzhalter „Foto“ */
+  --p-hellblau: #A4D9F6;      /* Platzhalter „Screenshot“ */
+  --p-mint: #B3DBC4;          /* Reserve */
+  --p-auf-flaeche: #1D1D1B;   /* Schrift auf Türkis/Hellblau/Gelb: immer Schwarz */
+  --p-schatten: #1D1D1B;      /* harter Versatzschatten (nur Handyrahmen, Titelfoto) */
+
+  /* Tokens der Engine (Bedienleiste, Übersicht, Prüfwerkzeug) */
+  --f-hintergrund: #F3EDE1;
+  --f-flaeche: #EAE3D5;
+  --f-flaeche-2: #E2DACA;
+  --f-letterbox: #D9D1C1;
+  --f-text: #1D1D1B;
+  --f-text-2: #5C5547;
+  --f-linie: #CBC2B0;
+  --f-linie-stark: #1D1D1B;
+  --f-akzent: #1D1D1B;        /* Akzent als SCHRIFT ist Schwarz – Gelb nie als Schrift auf Creme */
+  --f-akzent-flaeche: #FFD007;
+  --f-auf-akzent: #FFD007;    /* Gelb auf Schwarz 11,48 : 1 */
+  --f-hart: #1D1D1B;
+  --f-hart-flaeche: #E2DACA;
+  --f-weich: #1D1D1B;
+  --f-weich-flaeche: #FFD007;
+  --f-kern: #FFD007;
+  --f-auf-kern: #1D1D1B;
+  --f-rahmen: #1D1D1B;
+  --f-erfolg: #2B6B45;
+  --f-warnung: #6E4600;
+  --f-fehler: #A3211C;
+  --f-fokus: #1D1D1B;
+  --f-karte: #F3EDE1;
+  --f-karte-rand: #CBC2B0;
+  --f-diagramm-marke: #1D1D1B;
+  --f-diagramm-wettbewerb: #5C5547;
+  --f-diagramm-ideal: #857C6B;
+  --f-balken: #857C6B;
+  --f-hintergrund-bild: none;
+  --schatten-1: none;
+  --schatten-2: 0 0 0 2px #1D1D1B;
+}
+
+html[data-thema][data-modus="dunkel"],
+html[data-thema][data-modus="dunkel"] .folie:not([data-buehne]) {
+  color-scheme: dark;
+  --p-papier: #1D1D1B;
+  --p-schrift: #F3EDE1;
+  --p-schrift-2: #B9B0A0;     /* Schiefer hell – Schiefer warm hätte nur 2,29 : 1 */
+  --p-mittel: #857C6B;        /* 4,09 : 1 auf Schwarz (Grafik) */
+  --p-nebel: #45413A;
+  --p-gelb: #FFD007;
+  --p-pfad: #FFD007;          /* Dunkel: reines Gelb, Kontur unsichtbar (11,48 : 1) */
+  --p-pfad-kontur: #1D1D1B;
+  --p-knoten-grund: #FFD007;
+  --p-knoten-zahl: #1D1D1B;
+  --p-marker-grund: transparent;
+  --p-marker-text: #FFD007;   /* Schlüsselaussage als gelbe Schrift */
+  --p-kontur: #F3EDE1;
+  --p-tuerkis: #8ECDC1;
+  --p-hellblau: #A4D9F6;
+  --p-mint: #B3DBC4;
+  --p-auf-flaeche: #1D1D1B;
+  --p-schatten: #FFD007;
+
+  --f-hintergrund: #1D1D1B;
+  --f-flaeche: #262523;
+  --f-flaeche-2: #2E2C28;
+  --f-letterbox: #0E0E0D;
+  --f-text: #F3EDE1;
+  --f-text-2: #B9B0A0;
+  --f-linie: #45413A;
+  --f-linie-stark: #F3EDE1;
+  --f-akzent: #FFD007;        /* Gelb auf Schwarz 11,48 : 1 */
+  --f-akzent-flaeche: #2E2C28;
+  --f-auf-akzent: #1D1D1B;
+  --f-hart: #F3EDE1;
+  --f-hart-flaeche: #2E2C28;
+  --f-weich: #FFD007;
+  --f-weich-flaeche: #2E2C28;
+  --f-kern: #FFD007;
+  --f-auf-kern: #1D1D1B;
+  --f-rahmen: #F3EDE1;
+  --f-erfolg: #7CC79C;
+  --f-warnung: #E8B754;
+  --f-fehler: #F08A80;
+  --f-fokus: #FFD007;
+  --f-karte: #262523;
+  --f-karte-rand: #45413A;
+  --f-diagramm-marke: #FFD007;
+  --f-diagramm-wettbewerb: #B9B0A0;
+  --f-diagramm-ideal: #857C6B;
+  --f-balken: #857C6B;
+  --f-hintergrund-bild: none;
+  --schatten-1: none;
+  --schatten-2: 0 0 0 2px #F3EDE1;
+}
+
+
+/* -----------------------------------------------------------------------------
+   2. GELBE BÜHNE (Folie 01, 08, 09) – feste Werte in BEIDEN Modi (3.3, 3.6):
+      Schrift #1D1D1B 11,48 : 1, Nebentext #5C5547 5,02 : 1; kein Mittel warm,
+      kein Nebel, keine Creme auf Gelb. Pfad und Marker hier Schwarz.
+      Rückfall für überstrahlende Beamer: Adresse ?buehne=schwarz (Klasse
+      html.buehne-schwarz, gesetzt im Kopf von index.html) – schwarze Fläche,
+      gelbe Schrift 11,48 : 1, Nebentext #B9B0A0 7,86 : 1.
+   ----------------------------------------------------------------------------- */
+.folie[data-buehne="gelb"] {
+  color-scheme: light;
+  --p-papier: #FFD007;
+  --p-schrift: #1D1D1B;
+  --p-schrift-2: #5C5547;
+  --p-mittel: #5C5547;        /* auf Gelb nur Schwarz oder Schiefer */
+  --p-nebel: #5C5547;
+  --p-pfad: #1D1D1B;
+  --p-pfad-kontur: #1D1D1B;
+  --p-knoten-grund: #1D1D1B;
+  --p-knoten-zahl: #FFD007;
+  --p-marker-grund: #1D1D1B;  /* auf Gelb: schwarzes Band, gelbe Schrift */
+  --p-marker-text: #FFD007;
+  --p-kontur: #1D1D1B;
+  --p-auf-flaeche: #1D1D1B;
+  --p-schatten: #1D1D1B;
+  --f-hintergrund: #FFD007;
+  --f-text: #1D1D1B;
+  --f-text-2: #5C5547;
+  --f-linie: #5C5547;
+  --f-akzent: #1D1D1B;
+}
+html.buehne-schwarz .folie[data-buehne="gelb"] {
+  color-scheme: dark;
+  --p-papier: #1D1D1B;
+  --p-schrift: #FFD007;
+  --p-schrift-2: #B9B0A0;
+  --p-mittel: #B9B0A0;
+  --p-nebel: #B9B0A0;
+  --p-pfad: #FFD007;
+  --p-pfad-kontur: #FFD007;
+  --p-knoten-grund: #FFD007;
+  --p-knoten-zahl: #1D1D1B;
+  --p-marker-grund: #FFD007;
+  --p-marker-text: #1D1D1B;
+  --p-kontur: #FFD007;
+  --p-schatten: #FFD007;
+  --f-hintergrund: #1D1D1B;
+  --f-text: #FFD007;
+  --f-text-2: #B9B0A0;
+  --f-linie: #B9B0A0;
+  --f-akzent: #FFD007;
+}
+
+
+/* -----------------------------------------------------------------------------
+   3. SCHRIFTEN (3.4). Bricolage Grotesque für Titel, Zahlen, Thesen; Text in
+      Inter (Ersatz, solange Libre Franklin nicht im Repository liegt, M5);
+      Fraunces kursiv nur für echte, anonyme O-Töne. Alle lokal (tokens.css).
+   ----------------------------------------------------------------------------- */
+html[data-thema] {
+  --schrift-display: "Bricolage Deck", "Segoe UI", Arial, sans-serif;
+  --schrift-text: "Inter Deck", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --schrift-zahl: "Bricolage Deck", "Segoe UI", Arial, sans-serif;
+  --schrift-kicker: "Inter Deck", "Segoe UI", Arial, sans-serif;
+  --schrift-oton: "Fraunces Deck", Georgia, serif;
+  --gewicht-titel: 750;
+  --gewicht-display: 700;
+  --gewicht-zahl: 750;
+  --gewicht-text: 400;
+  --gewicht-fett: 600;
+  --stil-hervor: normal;
+  --stil-marke: normal;
+  --kicker-versalien: none;
+  --kicker-laufweite: 0;
+  --radius-s: 0;
+  --radius-m: 0;
+  --radius-l: 0;
+  --karte-rand: 2px;
+  --rand-x: 128px;
+}
+
+
+/* -----------------------------------------------------------------------------
+   4. GRUNDGERÜST: Bühne 1920 × 1080, 12 Spalten à 109,33 px, Rinne 32 px,
+      Rand 128 px; Spalte n beginnt bei x = 128 + (n − 1) · 141,33 (3.5).
+      Alle Bausteine einer p-Folie liegen absolut auf diesem Raster.
+   ----------------------------------------------------------------------------- */
+.p-folie {
+  background-color: var(--p-papier);
+  color: var(--p-schrift);
+  font-family: var(--schrift-text);
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+.p-folie > :not(.notizen):not(script) { position: absolute; }
+.p-folie .p-abs { position: absolute; }
+.p-folie b, .p-folie strong { font-weight: 600; }
+.p-nobr { white-space: nowrap; }
+
+/* Ziffern tabellarisch nur bei Zahlen – Inter verbreitert mit tabular-nums
+   sonst auch den Bindestrich („Drei - Schicht“; Befund der Konzept-Webseite) */
+.p-folie .p-skala-zahl,
+.p-folie .p-nummer,
+.p-folie .p-zahl { font-variant-numeric: tabular-nums; }
+
+/* Einblenden/Ausblenden über :has(), wenn ein späterer Schritt etwas ersetzt
+   (Folie 01: Frage → Titel; Folie 09: Fazit → Video → Fragen) */
+.p-folie .p-weg { visibility: hidden !important; opacity: 0 !important; }
+
+
+/* -----------------------------------------------------------------------------
+   5. KOMPONENTEN
+   ----------------------------------------------------------------------------- */
+
+/* 5.1 Laufleiste: die fünf Schritte des Touchpoint-Managementprozesses
+   (Stenger S. 111) mit vollen Begriffen; Breite nach Textlänge.
+   erledigt = 2 px Schiefer · aktuell = 10 px Gelb mit 2-px-Kontur · kommend = 2 px Nebel.
+   Auf Gelb: erledigt 2 px Schwarz · aktuell 10 px Schwarz · kommend 2 px Schiefer. */
+.p-lauf {
+  left: 128px;
+  top: 52px;
+  width: 1560px;
+  display: flex;
+  gap: 10px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+}
+.p-lauf-teil { flex: 1 1 auto; min-width: 0; }
+.p-lauf-name { white-space: nowrap; }
+.p-lauf-strich {
+  margin-top: 12px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+}
+.p-lauf-strich::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--p-nebel);
+}
+.p-lauf-teil.ist-erledigt .p-lauf-strich::before { background: var(--p-schrift-2); }
+.p-lauf-teil.ist-aktuell .p-lauf-name { color: var(--p-schrift); font-weight: 600; }
+.p-lauf-teil.ist-aktuell .p-lauf-strich::before {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--p-pfad);
+  box-shadow: 0 0 0 2px var(--p-pfad-kontur);
+}
+.folie[data-buehne="gelb"] .p-lauf-teil .p-lauf-strich::before { background: var(--p-schrift-2); }
+.folie[data-buehne="gelb"] .p-lauf-teil.ist-erledigt .p-lauf-strich::before { background: var(--p-schrift); }
+.folie[data-buehne="gelb"] .p-lauf-teil.ist-aktuell .p-lauf-strich::before { background: var(--p-schrift); box-shadow: none; }
+/* Folie 09: die Stücke schließen sich zu einem Pfad (keine Lücken) */
+.p-lauf.ist-geschlossen { gap: 0; }
+.p-lauf.ist-geschlossen .p-lauf-teil { padding-right: 10px; }
+.p-lauf.ist-geschlossen .p-lauf-teil:last-child { padding-right: 0; }
+.p-lauf.ist-geschlossen .p-lauf-strich { margin-right: -10px; }
+.p-lauf.ist-geschlossen .p-lauf-teil:last-child .p-lauf-strich { margin-right: 0; }
+.p-lauf.ist-geschlossen .p-lauf-strich::before { height: 10px; background: var(--p-schrift); border-radius: 0; }
+.p-lauf.ist-geschlossen .p-lauf-teil:first-child .p-lauf-strich::before { border-radius: 5px 0 0 5px; }
+.p-lauf.ist-geschlossen .p-lauf-teil:last-child .p-lauf-strich::before { border-radius: 0 5px 5px 0; }
+
+.p-nummer {
+  right: 128px;
+  top: 46px;
+  font-family: var(--schrift-display);
+  font-size: 34px;
+  font-weight: 700;
+  font-stretch: 85%;
+  line-height: 1.1;
+  color: var(--p-schrift);
+}
+
+/* 5.2 Titel = Kernaussage als Satz, Bricolage 84 px, höchstens 2 Zeilen */
+.p-kopf {
+  left: 128px;
+  top: 138px;
+  width: 1664px;
+}
+.p-titel {
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: 84px;
+  font-weight: 750;
+  font-stretch: 82%;
+  line-height: 1.0;
+  letter-spacing: -0.012em;
+  color: var(--p-schrift);
+  text-wrap: balance;
+}
+.p-kopf--schmal { width: 1236px; }   /* Spalten 1–9 (Folie 06: Workshop-Foto rechts) */
+
+/* 5.3 Herleitungszeile „So kommen wir darauf: …“ (24 px, Anfang fett, Rest Schiefer) */
+.p-herleitung {
+  margin-top: 18px;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+}
+.p-herleitung b { color: var(--p-schrift); font-weight: 650; }
+
+/* 5.4 Quellzeile (Spalten 1–8) und Fußhinweis (Spalten 9–12), je eine Zeile, 22 px */
+.p-quelle,
+.p-fuss {
+  bottom: 44px;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+}
+.p-quelle { left: 128px; max-width: 1110px; }
+.p-fuss { right: 128px; text-align: right; }
+
+/* 5.5 Marker: gelbe Fläche im unteren Drittel der Zeile unter der EINEN
+   Schlüsselaussage; auf Gelb: schwarzes Band, gelbe Schrift */
+.p-marker {
+  color: var(--p-marker-text);
+  background: linear-gradient(transparent 50%, var(--p-marker-grund) 50%, var(--p-marker-grund) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 6px;
+  margin: 0 -6px;
+}
+.folie[data-buehne="gelb"] .p-marker {
+  background: var(--p-marker-grund);
+  padding: 0 10px;
+  margin: 0;
+}
+
+/* 5.6 Bildkachel mit 4-px-Kontur und drei Zuständen (data-status):
+   frei (Foto <img>) · offen (Platzhalter mit Hinweis) · rueckfall (eigene Grafik).
+   Der Schalter ändert nur die Anzeige; nicht freigegebene Dateien liegen nur in
+   intern/ (per .gitignore ausgeschlossen) oder im Gruppenordner. */
+.p-kachel {
+  box-sizing: border-box;
+  border: 4px solid var(--p-kontur);
+  z-index: 2;
+  overflow: hidden;
+  color: var(--p-auf-flaeche);
+}
+.p-kachel > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.p-kachel[data-status="offen"] {
+  background:
+    repeating-linear-gradient(135deg, rgb(29 29 27 / 0.08) 0 2px, transparent 2px 14px),
+    var(--p-tuerkis);
+  background-color: var(--p-tuerkis);
+  padding: 10px 12px;
+  font-size: 22px;
+  line-height: 1.18;
+}
+.p-kachel[data-status="offen"][data-art="screenshot"] {
+  background: var(--p-hellblau);
+  padding-top: 26px;
+}
+.p-kachel[data-status="offen"][data-art="screenshot"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 16px;
+  background: rgb(29 29 27 / 0.16);
+}
+.p-kachel[data-status="offen"] .p-kachel-art { display: block; font-weight: 650; }
+.p-kachel[data-status="offen"] .p-kachel-offen { display: block; margin-top: 2px; }
+.p-kachel[data-status="offen"] > img,
+.p-kachel[data-status="offen"] .p-rueckfall,
+.p-kachel[data-status="frei"] .p-platzhalter,
+.p-kachel[data-status="frei"] .p-rueckfall,
+.p-kachel[data-status="rueckfall"] .p-platzhalter,
+.p-kachel[data-status="rueckfall"] > img { display: none; }
+.p-kachel[data-status="rueckfall"] { background: var(--p-papier); color: var(--p-schrift); }
+.p-kachel-name {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* 5.7 Leerstelle: gestrichelter 3-px-Rahmen in Schriftfarbe („zeigt, was fehlt“) */
+.p-leerstelle {
+  box-sizing: border-box;
+  border: 3px dashed var(--p-schrift);
+  background: var(--p-papier);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* 5.8 Knoten: Platz 1 bzw. Moment der Wahrheit (52 px), Platz 2/3 klein (36 px) */
+.p-knoten {
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background: var(--p-knoten-grund);
+  color: var(--p-knoten-zahl);
+  display: grid;
+  place-items: center;
+  font-family: var(--schrift-display);
+  font-weight: 800;
+  font-stretch: 85%;
+  font-size: 32px;
+  line-height: 1;
+  z-index: 4;
+}
+.p-knoten--klein {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  font-size: 22px;
+}
+
+/* 5.9 Pfad (SVG über die Bühne, hinter den Kacheln): Gelb 14 px auf schwarzer
+   Kontur 22 px; dunkel nur Gelb; auf Gelb Schwarz. Eckradius 34 px (pfad.js). */
+.p-pfad {
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+.p-pfad .kontur { fill: none; stroke: var(--p-pfad-kontur); stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; }
+.p-pfad .gelb   { fill: none; stroke: var(--p-pfad); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.p-pfad .spitze-k { fill: var(--p-pfad-kontur); stroke: var(--p-pfad-kontur); stroke-width: 8; stroke-linejoin: round; }
+.p-pfad .spitze-g { fill: var(--p-pfad); }
+.p-pfad .neben  { fill: none; stroke: var(--p-mittel); stroke-width: 6; stroke-dasharray: 16 12; stroke-linecap: butt; }
+.p-pfad .haar   { fill: none; stroke: var(--p-nebel); stroke-width: 2; }
+html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-width: 14; }
+.folie[data-buehne="gelb"] .p-pfad .kontur { stroke-width: 14; }
+
+/* 5.10 Notiz am Element (24 px Schiefer) und Wegbeschriftung (28 px/600) */
+.p-notiz {
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+  z-index: 3;
+}
+.p-karte .p-notiz { background: var(--p-papier); padding: 0 6px; margin-left: -6px; }
+.p-wegname {
+  font-size: 28px;
+  font-weight: 650;
+  line-height: 1.1;
+  white-space: nowrap;
+  background: var(--p-papier);
+  padding: 2px 8px;
+  z-index: 3;
+}
+
+/* 5.11 Legende (22 px) */
+.p-legende {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+}
+.p-legende-eintrag { display: flex; align-items: center; gap: 10px; }
+.p-legende svg { display: block; overflow: visible; }
+
+/* 5.12 Phasenkopf und Raster (Folie 03–06) */
+.p-phase { width: 250.67px; }
+.p-phase-name { font-size: 29px; font-weight: 600; line-height: 1.15; white-space: nowrap; }
+.p-phase-as {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--p-schrift-2);
+  margin-top: 2px;
+}
+.p-regel { height: 2px; background: var(--p-schrift); }
+.p-linie { height: 2px; background: var(--p-nebel); }
+.p-linie--gruppe { background: var(--p-mittel); }
+.p-trenner { width: 2px; background: var(--p-nebel); }
+.p-zeile { width: 250px; }
+.p-zeile-gruppe { font-size: 22px; line-height: 1; color: var(--p-schrift-2); margin-bottom: 4px; }
+.p-zeile-name { font-size: 28px; line-height: 1.1; white-space: nowrap; }
+
+/* 5.13 Satz eines Moments (Bricolage 36 px) und Belegzeile (26 px) */
+.p-satz {
+  font-family: var(--schrift-display);
+  font-weight: 700;
+  font-stretch: 86%;
+  font-size: 36px;
+  line-height: 1.08;
+}
+.p-beleg { font-size: 26px; line-height: 1.22; color: var(--p-schrift-2); }
+
+/* 5.14 Handyrahmen (Mock-up-Rahmen): eigene CSS-Grafik ohne Gerätemarke,
+   schwarz, großer Radius, harter Schatten 8/8 px (nur hier und am Titelfoto) */
+.p-handy {
+  box-sizing: border-box;
+  background: #1D1D1B;
+  border-radius: 46px;
+  padding: 12px;
+  box-shadow: 8px 8px 0 var(--p-schatten);
+  z-index: 2;
+}
+.p-handy-schirm {
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  overflow: hidden;
+  background: #F3EDE1;
+}
+.p-handy-schirm > img { display: block; width: 100%; height: auto; }
+
+/* 5.15 O-Ton (Fraunces kursiv) – nur echte, anonyme Zitate aus eigener Erhebung */
+.p-oton {
+  font-family: var(--schrift-oton);
+  font-style: italic;
+  font-variation-settings: "WONK" 0;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+/* 5.16 Offen-Hinweis (eigene Daten fehlen noch): gestrichelt, Schiefer */
+.p-offen {
+  box-sizing: border-box;
+  border: 2px dashed var(--p-schrift-2);
+  padding: 8px 14px;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+}
+.p-offen b { color: var(--p-schrift); font-weight: 650; }
+
+/* 5.17 Strichskala (Folie 02): Daten Schwarz, Skala Nebel, Ø als Strich */
+.p-skala { display: grid; grid-template-columns: 200px 1fr 92px; align-items: center; column-gap: 18px; }
+.p-skala-name { font-size: 28px; line-height: 1.2; white-space: nowrap; }
+.p-skala-spur { position: relative; height: 30px; }
+.p-skala-spur::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+  height: 2px;
+  background: var(--p-nebel);
+}
+.p-skala-wert {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  height: 14px;
+  background: var(--p-schrift);
+}
+.p-skala-schnitt {
+  position: absolute;
+  top: 2px;
+  width: 4px;
+  height: 26px;
+  margin-left: -2px;
+  background: var(--p-mittel);
+}
+.p-skala-zahl {
+  font-family: var(--schrift-display);
+  font-weight: 750;
+  font-stretch: 85%;
+  font-size: 36px;
+  line-height: 1;
+  text-align: right;
+}
+
+/* 5.18 Backup-Folien (dichter, Tabellen 22–24 px als Metaangaben) */
+.p-backup .p-titel { font-size: 56px; }
+.p-tabelle {
+  border-collapse: collapse;
+  font-size: 22px;
+  line-height: 1.25;
+}
+.p-tabelle th,
+.p-tabelle td {
+  text-align: left;
+  vertical-align: top;
+  padding: 7px 14px 7px 0;
+  border-bottom: 2px solid var(--p-nebel);
+}
+.p-tabelle th { font-weight: 650; border-bottom-color: var(--p-schrift); }
+.p-tabelle td:first-child { font-weight: 600; white-space: nowrap; }
+
+/* 5.19 Sprungknöpfe (Folie 09, Backup) */
+.p-sprung {
+  appearance: none;
+  border: 2px solid var(--p-schrift);
+  background: transparent;
+  color: var(--p-schrift);
+  font: inherit;
+  font-size: 22px;
+  line-height: 1.2;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+.p-sprung b { font-family: var(--schrift-display); font-weight: 750; font-stretch: 85%; margin-right: 6px; }
+.p-sprung:hover,
+.p-sprung:focus-visible { background: var(--p-schrift); color: var(--p-papier); outline: none; }
+
+/* 5.20 Journey-Raster (Folie 04–06): Container über die ganze Bühne, alle
+   Bausteine darin absolut; pfad.js setzt die Koordinaten aus data-phase/-zeile */
+.p-karte {
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+}
+.p-karte > * { position: absolute; }
+.p-kachel { position: relative; }
+.p-folie > .p-kachel,
+.p-karte > .p-kachel { position: absolute; }
+
+/* 5.21 Backup-Kennung oben links (statt Laufleiste) */
+.p-backup-marke {
+  left: 128px;
+  top: 56px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+}
+
+/* 5.22 Druck: die gelben Bühnen bleiben gelb */
+@media print {
+  .folie[data-buehne="gelb"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

@@ -1,0 +1,59 @@
+/* =============================================================================
+   07-best-practice.css – Folie 07 · A5 Best Practices + A6 Maßnahmen
+   Gestaltungsplan 5.1 Zeile 07: fünf Zeilen über die volle Breite plus eine
+   Nebenweg-Zeile; links Phase und Überleitung, Mitte Vorbild in Schiefer,
+   rechts Maßnahme in Schwarz; Marker auf der Recherche-Zeile. Keine fremden
+   Logos oder Screenshots (b21).
+   ============================================================================= */
+#f07 .e7-tabelle { left: 128px; top: 370px; width: 1664px; }
+#f07 .e7-kopfzeile,
+#f07 .e7-zeile {
+  display: grid;
+  grid-template-columns: 250.67px 674.67px 674.67px;
+  column-gap: 32px;
+}
+#f07 .e7-kopfzeile {
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+  padding-bottom: 6px;
+}
+#f07 .e7-zeile {
+  position: relative;
+  min-height: 86px;
+  box-sizing: border-box;
+  padding: 10px 0;
+  border-top: 2px solid var(--p-nebel);
+  align-items: start;
+}
+#f07 .e7-zeile--neben { border-top: 3px dashed var(--p-mittel); }
+#f07 .e7-phase { font-size: 28px; font-weight: 600; line-height: 1.22; }
+#f07 .e7-ue {
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--p-schrift-2);
+  margin-top: 2px;
+}
+#f07 .e7-vorbild { font-size: 28px; line-height: 1.22; color: var(--p-schrift-2); }
+#f07 .e7-vorbild b { color: var(--p-schrift); font-weight: 650; }
+#f07 .e7-massnahme { position: relative; font-size: 28px; line-height: 1.22; }
+#f07 .e7-massnahme::before {
+  content: "→";
+  position: absolute;
+  left: -28px;
+  top: 0;
+  color: var(--p-schrift-2);
+}
+#f07 .e7-zeile--neben .e7-massnahme { padding-right: 150px; }
+#f07 .e7-skizze {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 132px;
+  height: 66px;
+}
+#f07 .e7-skizze[data-status="offen"] { padding: 6px 10px; font-size: 22px; line-height: 1.15; }
+#f07 .e7-skizze .p-kachel-art,
+#f07 .e7-skizze .p-kachel-offen { display: inline; margin: 0; }
+#f07 .e7-skizze .p-kachel-offen { font-weight: 400; }

@@ -1,0 +1,141 @@
+/* =============================================================================
+   03-ist-analyse.css – Folie 03 · A1 IST-Analyse (Moodboard, Zählung, Proben,
+   Bewertungszeile je Phase). Gestaltungsplan 5.1 Zeile 03 und Abschnitt 8.
+   Abweichung: Zählung 84 px statt 160 px, je Band ausgerichtet (Platz).
+   ============================================================================= */
+/* Bänder Paid · Owned · Earned (Spalten 1–8) */
+#f03 .e3-band {
+  left: 128px;
+  width: 1098px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+#f03 .e3-band--paid { top: 368px; }
+#f03 .e3-band--owned { top: 464px; border-top: 2px solid var(--p-mittel); padding-top: 6px; height: 98px; box-sizing: border-box; }
+#f03 .e3-band--earned { top: 568px; border-top: 2px solid var(--p-mittel); padding-top: 6px; height: 98px; box-sizing: border-box; }
+#f03 .e3-band-name {
+  width: 74px;
+  flex: none;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+}
+#f03 .e3-k {
+  flex: none;
+  width: 190px;
+  height: 90px;
+}
+#f03 .e3-k[data-status="offen"] { padding: 8px 10px 4px; }
+#f03 .e3-k[data-status="offen"][data-art="screenshot"] { padding-top: 18px; }
+#f03 .e3-k[data-status="offen"][data-art="screenshot"]::before { height: 10px; }
+#f03 .e3-k .p-platzhalter { font-size: 22px; line-height: 1.12; }
+#f03 .e3-k .p-kachel-art { display: inline; font-size: 22px; }
+#f03 .e3-k .p-kachel-offen { display: inline; font-size: 22px; font-weight: 400; }
+/* Rückfall b19: eigene Textgrafik der leeren Blog-Seite */
+#f03 .e3-k--blog { display: flex; align-items: center; }
+#f03 .e3-k--blog .p-rueckfall { padding: 4px 12px; display: grid; gap: 2px; }
+#f03 .e3-blog-pfad { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
+#f03 .e3-blog-null {
+  font-family: var(--schrift-display);
+  font-size: 30px;
+  font-weight: 750;
+  font-stretch: 85%;
+  line-height: 1.05;
+}
+#f03 .e3-blog-stand { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
+
+/* Zählung nach Intersport (S. 113), rechts je Band */
+#f03 .e3-zahl {
+  left: 1258.67px;
+  width: 533.33px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+#f03 .e3-zahl--paid { top: 372px; }
+#f03 .e3-zahl--owned { top: 472px; }
+#f03 .e3-zahl--earned { top: 576px; }
+#f03 .e3-zahl-wert {
+  font-family: var(--schrift-display);
+  font-size: 84px;
+  font-weight: 750;
+  font-stretch: 85%;
+  line-height: 1;
+  min-width: 100px;
+  text-align: right;
+}
+#f03 .e3-zahl-name { font-size: 28px; font-weight: 600; }
+#f03 .e3-fehlen { left: 1258.67px; top: 680px; }
+#f03 .e3-legende {
+  left: 1258.67px;
+  top: 714px;
+  width: 533.33px;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+}
+#f03 .e3-legende b { color: var(--p-schrift); }
+
+/* Farb- und Formproben (b18): Quadrat mit 3-px-Kontur, Hex-Wert und Status darunter */
+#f03 .e3-proben {
+  left: 128px;
+  top: 680px;
+  width: 1098px;
+  display: flex;
+  gap: 14px;
+}
+#f03 .e3-probe { display: grid; justify-items: start; gap: 2px; }
+#f03 .e3-feld,
+#f03 .e3-form {
+  display: block;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 3px solid var(--p-schrift);
+  margin-bottom: 4px;
+}
+#f03 .e3-form--kontur { border-width: 8px; background: var(--p-gelb); }
+#f03 .e3-form--kreis { border-radius: 50%; background: var(--p-gelb); }
+#f03 .e3-form--schach {
+  background:
+    conic-gradient(var(--p-schrift) 0 25%, var(--p-papier) 0 50%, var(--p-schrift) 0 75%, var(--p-papier) 0) 0 0 / 17px 17px;
+}
+#f03 .e3-hex,
+#f03 .e3-status { font-size: 22px; line-height: 1.15; white-space: nowrap; }
+#f03 .e3-status { color: var(--p-schrift-2); }
+
+/* Klick 2: Bewertungszeile über die volle Breite in den fünf Phasenspalten */
+#f03 .e3-bewertung {
+  left: 0;
+  top: 784px;
+  width: 1920px;
+  height: 208px;
+  border-top: 2px solid var(--p-schrift);
+}
+#f03 .e3-bewertung > * { position: absolute; top: 12px; }
+#f03 .e3-bew-kopf {
+  left: 128px;
+  width: 250px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+#f03 .e3-bew-mass {
+  display: block;
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+}
+#f03 .e3-bew-phase { width: 250.67px; }
+#f03 .e3-bew-phase:nth-of-type(1) { left: 410.67px; }
+#f03 .e3-bew-phase:nth-of-type(2) { left: 693.33px; }
+#f03 .e3-bew-phase:nth-of-type(3) { left: 976px; }
+#f03 .e3-bew-phase:nth-of-type(4) { left: 1258.67px; }
+#f03 .e3-bew-phase:nth-of-type(5) { left: 1541.33px; }
+#f03 .e3-plus,
+#f03 .e3-minus { font-size: 28px; line-height: 1.22; }
+#f03 .e3-plus { margin-top: 6px; }

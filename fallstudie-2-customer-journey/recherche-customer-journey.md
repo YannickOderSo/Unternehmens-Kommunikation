@@ -6,8 +6,8 @@ Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiser
 
 Fallstudie 2 „Customer Journey & Blog Beitrag“ · Markt Deutschland · Persona aus Fallstudie 1
 
-**Stand:** 30.10.2026 (Recherche und Gegenprüfung; alle Webquellen an diesem Tag abgerufen) · **Schlussprüfung:** 30.10.2026, Korrekturen eingearbeitet (Anhang A.9)\
-**Präsentation:** Mo, 09.11.2026 (15 Minuten)\
+**Stand:** 30.10.2026 (Recherche und Gegenprüfung; alle Webquellen an diesem Tag abgerufen) · **Schlussprüfung:** 30.10.2026, Korrekturen eingearbeitet (Anhang A.9) · **Nachtrag:** 03.11.2026 (Kapitel 7a mit Anhang A.10 und Quellen [275]–[321], am 03.11.2026 abgerufen; Aufgabenfolie und Termin)\
+**Präsentation:** Di, 10.11.2026 (15 Minuten) laut Aufgabenfolie vom 03.11.2026 (Abschrift in `README.md`); Folie 57 nannte noch den 09.11.\
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 
 **Recherche mit KI-Unterstützung (Claude Code), gegengeprüft – Faktenstatus beachten.**
@@ -38,6 +38,8 @@ Bereiche enthalten nur Statusvorschläge).
 | G Bilder, Rechte und Corporate Design | 38 | 23 | 5 | 3 | 7 | 0 |
 | **Summe** | **353** | **215** | **63** | **29** | **44** | **2** |
 
+**Nachtrag 03.11.2026:** Kapitel 7a bringt 17 weitere Befunde mit dem Präfix X (10 ✔, 6 ✎, 1 ~, 0 ✗), einzeln an den Quellen geprüft. Sie sind in Zählung und Tabelle oben nicht enthalten; Aufstellung in Anhang A.10.
+
 | Symbol | Bedeutung | So verwenden |
 |:--:|---|---|
 | ✔ | **bestätigt** – die Gegenprüfung hat die Aussage an der Quelle bestätigt (bei IDs ab 90: vom Prüfer selbst gefunden und an der Quelle geprüft) | normal verwenden, Quelle angeben |
@@ -61,7 +63,7 @@ FS1-Dossier steht (`fallstudie-1-brand-persona/recherche/holy-recherche.md`, Anh
 4. Touchpoints von HOLY je Phase
 5. Brüche, Pain Points und Kundenstimmen
 6. Informationsphase: Suche und Content-Lücken
-7. Benchmark: Blogs vergleichbarer Marken
+7. Benchmark: Blogs vergleichbarer Marken · 7a Best Practices je Top-Touchpoint (branchenübergreifend, Nachtrag 03.11.2026)
 8. Blog-Beitrag für HOLY (Vorschläge, Leitplanken, Empfehlung)
 9. Vorschlag für die Übung Stenger S. 128/129
 10. Bilder, Rechte und Corporate Design
@@ -77,8 +79,10 @@ Personen.
 
 # 1 Auf einen Blick
 
-**Ausgangslage.** Zu Fallstudie 2 gibt es keine eigene Aufgabenfolie. Folie 57 nennt nur „Customer Journey & Blog
-Beitrag am 09.11.“ und 15 Minuten ✔ L23 Vorl. S. 57, 60, 72, 78. Den Rahmen geben der Touchpoint-Managementprozess in fünf Schritten ✔ L11 Vorl. S. 111
+**Ausgangslage.** Seit dem 03.11.2026 gibt es zu Fallstudie 2 eine eigene Aufgabenfolie (Abschrift in `README.md`,
+Abschnitt „Aufgabe“): Präsentation am Di, 10.11.2026, Aufgaben 1–7 von der IST-Analyse bis zu Mockups; einen
+Blog-Beitrag verlangt sie nicht mehr. Bis dahin nannte nur Folie 57 „Customer Journey & Blog Beitrag am 09.11.“ und
+15 Minuten ✔ L23 Vorl. S. 57, 60, 72, 78. Den Rahmen geben der Touchpoint-Managementprozess in fünf Schritten ✔ L11 Vorl. S. 111
 und die Übung „Top 2 Touchpoints pro Phase, je 2 Aktivitäten“ ✔ L19 Vorl. S. 128–129. Stengers Kritik an FS1 betrifft vor allem
 Mediennutzung, Limbic-Passung, Herleitungen und Visualisierung (Bewertungsbogen FS1, siehe 3.1).
 
@@ -127,7 +131,7 @@ mit sichtbarer Herleitung aus den Befunden wählen (Kapitel 9). Den Blog als Akt
 
 | Baustein | Inhalt (kurz) | Beleg |
 |---|---|---|
-| Thema und Rahmen | FS2 „Customer Journey & Blog Beitrag am 09.11.“, Gruppen zu 3 oder 4, 15-minütige Präsentation; keine eigene Aufgabenfolie. Für FS1 verlangte S. 60 Desk Research, KI-Tools und dokumentierte Prompts im Backup | ✔ L23 Vorl. S. 57, 60, 72, 78 |
+| Thema und Rahmen | FS2 „Customer Journey & Blog Beitrag am 09.11.“, Gruppen zu 3 oder 4, 15-minütige Präsentation; eigene Aufgabenfolie erst seit 03.11.2026 (Präsentation am 10.11., Aufgaben 1–7, kein Blog-Beitrag mehr; Abschrift in `README.md`). Für FS1 verlangte S. 60 Desk Research, KI-Tools und dokumentierte Prompts im Backup | ✔ L23 Vorl. S. 57, 60, 72, 78 |
 | Bewertung | Fallstudienbearbeitung 70 %: Problemverständnis 15 %, Konzepte & Modelle 20 %, Analyse & Argumentation 20 %, Qualität der Lösung 15 %. Präsentation 30 %; auf der Folie stehen Vermittlung und Visualisierung mit je 7,5 %. S. 59 nennt für die Reflexion 15 % | ✔ (Schlussprüfung, Seitenbilder) Vorl. S. 58, 59 |
 | Definition | Customer Journey als „Kaufentscheidungsprozess des Kunden im zeitlichen Ablauf“; „Das Zusammenspiel aller Touchpoints prägt das Markenerlebnis“ | ✔ L01 Vorl. S. 107 |
 | Vorher: Identität | Identität → Positionierung → Maßnahmen → Image als Grundlage der Kommunikation (S. 106); Positionierung an allen Kontaktpunkten (S. 94–97) | ✔ L97 Vorl. S. 106 · ✔ L21 Vorl. S. 94, 96–97 |
@@ -200,7 +204,9 @@ Involvement und Gewohnheit zu begründen, nicht mit dem Preis. Auch nach dem Kau
 
 ## 2.5 Annahmen zur Aufgabenstellung – mit Prof. Stenger klären
 
-Ohne Aufgabenfolie sind die folgenden Annahmen Hypothesen. Jede ist **mit Prof. Stenger zu klären** (Mail nach R1).
+Die folgenden Annahmen entstanden, bevor es eine Aufgabenfolie gab; sie sind Hypothesen. Seit dem 03.11.2026 liegt die
+Aufgabenfolie vor (Abschrift in `README.md`, Abschnitt „Aufgabe“): Sie verlangt IST und SOLL eines zentralen Wegs
+(zu Nr. 3) und keinen Blog-Beitrag mehr (zu Nr. 2). Was danach offen bleibt, ist **mit Prof. Stenger zu klären** (Mail nach R1).
 
 1. **Erwartete Abfolge (H):** Stengers Prozess (S. 111/112) und die Übung (S. 128/129), angewendet auf die Persona aus
    FS1: Ausgangslage und Ziel → IST-Touchpoints nach Paid/Owned/Earned → Journey-Map als Bildpfad → Top 2 je Phase →
@@ -705,6 +711,107 @@ Koffeinzahlen **H** M32 D1 §6.2, D1 §7.3. HOLY legt dieselbe Linie selbst fest
 - **Burberry „Art of the Trench“** (S. 119): Kundenfotos als Content in der Bindung, z. B. als Aufruf an den Squad,
   eigene Zubereitungsfotos einzureichen ✔ L93 Vorl. S. 119.
 - **UGC** (S. 56): „Interaktion gezielt nutzen – UGC systematisch einsetzen“; S. 12–14 zeigen UGC auch als Risiko ✔ L20 Vorl. S. 12–14, 43, 47, 54, 56.
+
+# 7a Best Practices je Top-Touchpoint (branchenübergreifend)
+
+> Nachtrag vom 03.11.2026 zu Aufgabe 5 der Aufgabenfolie: „Recherchieren Sie Best-Practices für Customer Experience an
+> diesen Touchpoints (Branchenübergreifend)“ (Abschrift in `README.md`). Die Top-Touchpoints je Phase sind eine
+> Arbeitsannahme der Gruppe (Entscheidung vom 03.11.2026: zentraler Weg = Online-Weg der Persona Marco, Handel als
+> Nebenweg) und damit **H**. Die Fälle haben Recherche-Unteragenten per Websuche zusammengetragen; ein weiterer
+> Unteragent hat jeden Fall am 03.11.2026 an den Quellen gegengeprüft: Gibt es die Seite? Trägt sie die Aussage? Ist die
+> Branche eine andere als Getränke und Lebensmittel? Ist der Wirkungsbeleg richtig wiedergegeben? Kein Fall wurde
+> verworfen; Teilaussagen ohne Beleg sind gestrichen (Anhang A.10). Alle Quellen sind Websuche, kein Modellwissen, und
+> am 03.11.2026 abgerufen (Anhang B.1, [275]–[321]).
+
+**So lesen.** „Wirkungsbeleg“ heißt: Was ist zur Wirkung öffentlich belegt? Die meisten Zahlen sind Angaben der
+Unternehmen selbst und so gekennzeichnet; unabhängige Messungen sind selten, und Zusammenhänge sind keine
+Wirkungsnachweise. Die Spalte „Übertragung auf HOLY“ ist immer ein Vorschlag (**H**); Fakten über HOLY darin stehen
+mit Befund-ID und Status aus diesem Dossier. Firmen- und Plattformquellen sind Selbstauskünfte.
+
+## 7a.1 Inspiration: Creator-Kurzvideo mit Code und klarer Weiterleitung
+
+| ID | Unternehmen | Branche | Mechanik am Touchpoint | CX-Kriterium | Wirkungsbeleg | Übertragung auf HOLY (**H**) | Quelle (abgerufen 03.11.2026) | Status |
+|---|---|---|---|---|---|---|---|:--:|
+| X01 | MediaMarktSaturn, OTTO u. a. im YouTube-Shopping-Affiliate-Programm (zum Start zehn Händler, seit Oktober 2026 auch Amazon und AliExpress) | Elektronik- und Versandhandel; Plattform Video | Seit 03.09.2026 in Deutschland markieren Creator Produkte aus den Katalogen der Partnerhändler in Shorts, Langvideos und Livestreams. Ein Tipp führt in den Shop des Händlers, „Checkout und Kundendaten bleiben bei ihnen“; die Produktdaten kommen über das Google Merchant Center und werden laufend aktualisiert. Andreas Briese (YouTube) nennt den alten Weg über Links in der Beschreibung ein Relikt des „Blue-Link-Zeitalters“ | Reibung (weniger Schritte vom Video zum Produkt), aktuelle Weiterleitung | Unternehmensangabe, nicht unabhängig geprüft: In einem internen Experiment (Juli 2026) hatten Videos mit Produkt-Tags „über 110 % mehr Klicks auf Produkte“ als Videos nur mit Links in der Beschreibung. Für einzelne Händler kein öffentlicher Beleg | Creator-Videos aus dem Creator-Programm ✔ T02 bekommen einen direkten Link auf genau das gezeigte Produkt; der Code steht auf der Zielseite schon da (Creator-Seiten ✔ L95), statt dass Marco Code und Shop selbst sucht | [275, 276, 277] | ✔ X01 |
+| X02 | ABOUT YOU im TikTok Shop (Start 31.03.2025; weitere Startpartner u. a. cosnova/essence, NIVEA) | Mode (Online-Modehandel) | Zum Start zwölf Tage lang täglich Live-Shopping-Shows, über 100 Marken, ausdrücklich als Testphase. Produkte sind in Videos und LIVEs markiert und „mit nur wenigen Klicks“ kaufbar; im Product Showcase eines Markenprofils lassen sich Bewertungen lesen; bezahlt wird in der App, der Checkout liegt bei TikTok; Creator erhalten Provision | Reibung (Kauf ohne Medienbruch), Inspiration durch Personen; Gegenrisiko: Checkout und Kundendaten liegen bei der Plattform | Kein öffentlicher Beleg: ABOUT YOU kündigte ein Fazit nach der Testphase an, ein veröffentlichtes Ergebnis war am 03.11.2026 nicht auffindbar. OMR nennt nur Live-Verkäufe zweier britischer Marken, nicht übertragbar | Für Creator-Kurzvideos testen, ob Marco über einen direkten Link in den eigenen Shop oder über einen In-App-Kauf seltener abbricht; beim In-App-Kauf liegen Checkout und Kundendaten bei der Plattform, und die Brücke zu SQUAD Rewards ✔ T32 fehlt | [278, 279, 280, 281] | ✎ X02 |
+| X03 | Meta (Instagram, Facebook): Partnerschaftsanzeigen; im White Paper 2026 mit Beiträgen u. a. von Unilever (Vaseline) und L'Oréal | Social-Media-Werbeplattform; Anwender u. a. Körperpflege und Kosmetik | Der Creator kennzeichnet einen Beitrag mit „Paid partnership“ („Bezahlte Partnerschaft mit“ plus Markenname), um die Markenbeziehung offenzulegen, und gibt ihn der Marke frei. Die Marke bewirbt ihn als Anzeige mit „Ad“-Label auf Facebook und Instagram, auch bei Menschen, die dem Creator nicht folgen. Creator können zusätzlich Affiliate-Links setzen | Vertrauen (Absender ist die Person, der Marco folgt), Transparenz (Werbekennzeichnung durch das Plattform-Label) | Unternehmensangabe, nicht unabhängig geprüft: Laut Meta-White-Paper (07.10.2026) hatten Werbetreibende mit mindestens 30 % Partnerschaftsanzeigen in 20 Conversion-Lift-Studien (EMEA, 01.01.–30.06.2025) im Median 45 % niedrigere Kosten je zusätzlichem Kauf. PPC Land: gemessen von Meta mit eigenen Werkzeugen auf eigenem Inventar, Konfidenz 92 % statt der üblichen 95 % | Creator-Videos immer mit Plattform-Label und zusätzlich „Werbung“ kennzeichnen ✔ R25 und die besten als Partnerschaftsanzeige ausspielen; das greift die Kritik auf, Creator-Werbung wirke „aufdringlich“ ~ unsicher B21 (Grund für ~: Codierung einer Person, 2 von 28 Seiten) | [282, 283, 284] | ✔ X03 |
+
+**Was HOLY übernimmt (H):** Vom Creator-Video führt ein Tipp direkt auf das gezeigte Produkt, der Code ist dort
+schon eingetragen, und jedes Video ist als „Werbung“ gekennzeichnet. Ob der Kauf im eigenen Shop oder in der App der
+Plattform weniger abbricht, wird getestet, nicht angenommen ✔ X01 · ✎ X02 · ✔ X03.
+
+## 7a.2 Recherche: eigene Antwortseite „Koffein-Check“
+
+| ID | Unternehmen | Branche | Mechanik am Touchpoint | CX-Kriterium | Wirkungsbeleg | Übertragung auf HOLY (**H**) | Quelle (abgerufen 03.11.2026) | Status |
+|---|---|---|---|---|---|---|---|:--:|
+| X04 | Apple: Support-Artikel „iPhone: Batterie und Leistung“ | Elektronik | Nach der Kritik an gedrosselten iPhones (Ende 2017) veröffentlichte Apple eine eigene, auch deutschsprachige Support-Seite. Sie erklärt in Abschnitten mit Überschriften Lithium-Ionen-Akkus, chemisches Altern („Alle wiederaufladbaren Batterien sind Verschleißkomponenten“), das Vermeiden von unerwartetem Ausschalten, den Batteriezustand (Einstellungen > Batterie > Batteriezustand) und das Abschalten des Leistungsmanagements. Fakten als Text auf einer festen URL; Veröffentlichungsdatum 17.06.2026 | Transparenz und Vertrauen (der Hersteller beantwortet die heikle Frage selbst, nachprüfbar und auffindbar) | Kein öffentlicher Beleg für die Wirkung der Seite. Gegenbeleg für fehlende Transparenz: Apple einigte sich 2020 mit der französischen Behörde DGCCRF auf 25 Mio. €, weil es die Leistung drosselte, ohne Kunden zu informieren | Die Fragen nach Koffein, Alter und Tagesportion, die heute nur auf Etikettbildern beantwortet werden ✎ S31 · ✔ S92, auf einer eigenen Textseite „Koffein-Check“ beantworten, gegliedert nach Fragen, nur mit Etikett- und EFSA-Werten samt Quelle (Leitplanken 8.3), bevor Warnseiten Dritter die Deutung übernehmen ✎ B07 | [285, 286, 287] | ✔ X04 |
+| X05 | Wise (früher TransferWise) | Banking/Fintech (Auslandsüberweisungen) | Die deutsche Preisseite nennt die Gebühren als Text (z. B. „Registrierung bei Wise“: „Kostenlos“; „Senden einer Überweisung“: „Ab 0,2 %“) und erklärt den Kurs in einem Satz: „Wir verwenden ausschließlich den Devisenmittelkurs – den Kurs, der dir üblicherweise auf Google angezeigt wird“. Laut Ahrefs baut Wise mit Vorlagen tausende gleich aufgebaute Antwortseiten (z. B. SWIFT-Codes, Routing-Nummern, Währungsrechner), lokalisiert für mehrere Länder und Sprachen, und erhält deutlich mehr Featured Snippets als Wettbewerber | Transparenz (Preis als nachprüfbarer Text), Auffindbarkeit (eine Frage, eine Seite) | Nur Schätzung eines SEO-Werkzeuganbieters, keine Unternehmensangabe: Ahrefs schätzte 2021 rund 6,4 Mio. organische Besuche pro Monat und zählte über 4 Mio. indexierte URLs; die Daten sind rund fünf Jahre alt | Preis je Portion, Koffein je Portion und Lieferzeit als durchsuchbaren Text zeigen, je Frage eine feste URL, statt sie in Grafiken oder Etikettbildern zu verstecken ✎ S31 · ✔ S92, damit Suche und KI-Assistenten genau diese Antwort finden | [288, 289] | ✎ X05 |
+| X06 | Stripe: Entwicklerdokumentation (docs.stripe.com) | Software/Zahlungsdienstleistung | Jede Dokumentationsseite gibt es auch als Klartext: „Append .md to any docs.stripe.com URL … for Markdown output“. Ein MCP-Server lässt KI-Clients die Stripe-API nutzen und die Dokumentation durchsuchen. Laut Apideck enthält Stripes llms.txt einen Abschnitt mit Anweisungen für KI-Agenten, z. B. „Never recommend the legacy Card Element or Sources API“. Inhalt wie auf der normalen Seite, nur maschinenfreundlich | Auffindbarkeit und Richtigkeit über KI-Assistenten (eine gepflegte Fassung statt veralteter Fremdangaben) | Kein öffentlicher Beleg. Einschränkung (Apideck): „no major AI provider has confirmed their training crawlers automatically fetch llms.txt“. Google: für KI-Übersichten „no additional requirements“, wichtige Inhalte aber „in textual form“, strukturierte Daten passend zum sichtbaren Text | HOLYs Dateien für KI-Assistenten ✔ T15 enthalten dieselben widerspruchsfreien Fakten wie der „Koffein-Check“ und verweisen auf ihn; Widersprüche im Help-Center ✎ S28 würden Assistenten sonst weitergeben | [290, 291, 292] | ✔ X06 |
+
+**Was HOLY übernimmt (H):** Eine Frage, eine Seite, Fakten als Text: Der „Koffein-Check“ beantwortet Koffein je
+Portion, Alter, Tagesportion und Preis je Portion in festen Abschnitten, jede Zahl mit Quelle und Stand. Help-Center
+und KI-Dateien nennen dieselben Werte und verweisen darauf ✔ X04 · ✎ X05 · ✔ X06.
+
+## 7a.3 Entscheidung: Produktseite mit Preis je Portion, Bewertungen und einheitlicher Garantie
+
+| ID | Unternehmen | Branche | Mechanik am Touchpoint | CX-Kriterium | Wirkungsbeleg | Übertragung auf HOLY (**H**) | Quelle (abgerufen 03.11.2026) | Status |
+|---|---|---|---|---|---|---|---|:--:|
+| X07 | Amazon (A-bis-z-Garantie, amazon.de) | Einzelhandel/Online-Marktplatz | Kundinnen und Kunden können sich direkt an Amazon wenden und eine Erstattung verlangen, wenn sie mit Zustand oder Lieferung unzufrieden sind, „whether it was sold by Amazon or one of our millions of independent selling partners“. Seit 28.05.2024 deckt die Garantie in Deutschland auch Sach- und Personenschäden durch fehlerhafte Produkte: Meldung beim Kundenservice, Amazon kontaktiert den Verkaufspartner und kümmert sich um das „unmittelbare Kundenanliegen“, wenn dieser nicht reagiert. Ein Versprechen, egal wer verkauft | Vertrauen und Risikoreduktion (einheitliches, einfaches Versprechen), Social Proof | Für die Garantie kein öffentlicher Beleg. Für Bewertungen allgemein (nicht Amazon-spezifisch): Spiegel Research Center (Northwestern University, Bericht 2017): bei fünf Bewertungen 270 % höhere Kaufwahrscheinlichkeit als ohne Bewertung, Höchstwert bei 4,0–4,7 Sternen, Kennzeichen „Verified Buyer“ +15 %. Das beschreibt Zusammenhänge, keine garantierte Wirkung | Eine einzige, klar formulierte Zufriedenheitsgarantie für Shop, Handel und Amazon auf jeder Produktseite direkt neben dem Preis, weil die heutige Regel widersprüchlich ist ✎ T18 · ✎ B29; die vorhandenen Bewertungen ✔ T17 daneben, mit Hinweis, ob sie eingeladen oder ohne Einladung abgegeben sind ✔ B14 | [293, 294, 295] | ✎ X07 |
+| X08 | zooplus (zooplus.de) | Einzelhandel/Online-Heimtierbedarf (Beispiel Katzenstreu, kein Lebensmittel) | In der Produktliste steht unter jedem Artikel neben dem Packungspreis der Grundpreis, z. B. 12,99 € und „1,18 € / kg“ (eigene Sichtung der Kategorie Katzenstreu). Baymard führt zooplus als Positivbeispiel („By providing unit costs such as “€6.40 / kg”, Zooplus makes it easier for users to select between pack sizes.“) und empfiehlt: Packungspreis hervorheben, Preis je Einheit zusätzlich und dezenter zeigen, in einer Einheit, die wirklich vergleichbar macht (bei Arzneimitteln „price per treatment“) | Transparenz, geringe kognitive Last (nicht selbst rechnen müssen) | Für zooplus kein öffentlicher Beleg. Unabhängige UX-Forschung (Baymard, 18.07.2023): 86 % der E-Commerce-Seiten zeigen keinen Preis je Einheit; ohne ihn rechnen Nutzer selbst, merken sich Werte, rechnen nicht immer richtig und verwerfen passende Produkte. Eine Teilnehmerzahl nennt der Artikel nicht | Auf Liste und Produktseite neben Packungspreis und gesetzlichem Grundpreis ✔ R98 den Preis je Portion ohne Rabattcode zeigen, damit Marco 50er-Dose, Starter Set und Probierangebot vergleichen kann, ohne über Codes zu rechnen; heute rahmt HOLY den Preis über Rabatte ✔ B09 · ✔ B10 | [296, 297] | ✔ X08 |
+| X09 | Airbnb (Gesamtpreis-Anzeige) | Reisen/Unterkünfte | Seit Juli 2019 sehen Gäste im EWR bei Suche mit Reisedaten die „Total reservation cost“ inklusive Reinigungs- und Servicegebühren und ggf. Übernachtungssteuer sowie den Preis pro Nacht. Ein optionaler Gesamtpreis-Schalter kam 2022 und wurde 2023 ausgeweitet; seit 21.04.2025 zeigt Airbnb weltweit standardmäßig den Gesamtpreis inklusive aller Gebühren vor Steuern („Prices include all fees“) | Transparenz und Vertrauen (keine Überraschung beim Bezahlen) | Unternehmensangaben, nicht unabhängig geprüft: rund 17 Mio. Gäste nutzten den Schalter (TechCrunch, 21.04.2025); seit Anfang 2023 haben fast 300.000 Inserate die Reinigungsgebühr gesenkt oder gestrichen, knapp 40 % der aktiven Inserate verlangen keine mehr (Ergebnisbericht Q4 2023, nach TechCrunch, 13.02.2024) | Schon auf der Produktseite den Endpreis inklusive Versand für Marcos Bestellung nennen, statt ihn erst im Checkout aufzudecken; die Versandkosten werden heute je nach Seite verschieden genannt ✔ B12 | [298, 299, 300] | ✔ X09 |
+
+**Was HOLY übernimmt (H):** Die Produktseite bekommt einen Preisbaustein: Packungspreis, Grundpreis, Preis je Portion
+ohne Code und Endpreis inklusive Versand. Direkt daneben stehen eine einzige Garantie für alle Kaufwege und die
+Bewertungen mit Hinweis auf ihre Herkunft ✎ X07 · ✔ X08 · ✔ X09.
+
+## 7a.4 Kauf: mobiler Warenkorb und Checkout mit klarer Lieferzeit
+
+| ID | Unternehmen | Branche | Mechanik am Touchpoint | CX-Kriterium | Wirkungsbeleg | Übertragung auf HOLY (**H**) | Quelle (abgerufen 03.11.2026) | Status |
+|---|---|---|---|---|---|---|---|:--:|
+| X10 | Shopify (Shop Pay) | Software/Zahlungsdienst (E-Commerce-Plattform) | Wer ein Shop-Pay-Konto hat, wird im Shop „with one click“ erkannt; wer Shop Pay kürzlich benutzt hat, meist „without any user action“. Die Kundendaten werden vorausgefüllt („pre-fill customer information for a seamless one-click checkout“); Shopify spricht von einem „4x faster checkout than a guest checkout“. In Deutschland stehen Apple Pay, Google Pay und Shop Pay als Express-Checkout von Shopify Payments bereit, „automatically activated“ | Reibung (weniger Formularfelder, kein Kontozwang), Tempo auf dem Handy, Vertrauen durch ein bekanntes Zahlungskonto | Nur Unternehmensangabe: Laut Shopify (aktualisiert 18.05.2023; Studie einer ungenannten „Big Three“-Beratung, der Shopify „all of our data“ gab) bis zu 50 % mehr Conversion als der Gast-Checkout, mindestens 10 % vor anderen Express-Checkouts, schon die bloße Anzeige +5 % im unteren Funnel. BetaKit (18.05.2023): Beratung ungenannt, verglichen nur mit Salesforce, Magento und BigCommerce, keine öffentlich verfügbaren Vergleichsstudien zu PayPal und Amazon. Unabhängig belegt ist das Problem, nicht die Lösung (Baymard, US-Befragung, Stand 22.09.2025): 18 % brechen wegen Kontozwang ab, 17 % wegen eines zu langen oder komplizierten Checkouts; ideal sind 12–14 Formularelemente, im Schnitt 23,48 | HOLYs Shop läuft auf Shopify-Technik ✔ B11 und bietet Apple Pay, Google Pay und PayPal an ✔ T23. Diese Express-Knöpfe gehören im mobilen Warenkorb ganz nach oben, vor das Formular, und Gäste bestellen ohne Konto. Shop Pay fehlt in den Footer-Symbolen ✔ T23; ob es sich freischalten lässt, ist offen | [301, 302, 303, 304] | ✎ X10 |
+| X11 | Apple (Online Store; Beispiel aus einem Baymard-Test) | Elektronik | Im Baymard-Usability-Test stand bei Apple neben jeder Versandoption das voraussichtliche Lieferdatum („I’d like it delivered. ‘Delivers Thursday’.“); ein Teilnehmer, der ein Geschenk kaufte, sah ohne Rechnen, dass es rechtzeitig ankommt. Land und Gerät nennt Baymard nicht. Die deutsche Apple-Hilfe nennt einen „beim Abschließen der Bestellung angezeigten voraussichtlichen Versandzeitraum“, Bestellung „als Gastkunde“, eine „Versandbenachrichtigung per E-Mail“ und Information bei wesentlichen Verzögerungen | Erwartungsmanagement (Datum statt „X Werktage“), Reibung (Gastkauf), Vertrauen (Verzögerungshinweis) | Für Apple kein öffentlicher Beleg. Das Prinzip belegt Baymard qualitativ (27.06.2023): Testpersonen rechneten Werktage selbst um, kamen zu verschiedenen Ergebnissen, zögerten oder brachen ab; das angezeigte Datum verstanden sie als Zusage. 41 % der Shops zeigen in der Versandauswahl kein Lieferdatum. Datumsspannen schnitten besser ab als Spannen in Werktagen, Fenster über etwa 5–7 Tage ließen zögern. Amazon zeigt nur das Datum statt „Standard“/„Premium“ | Heute nennt HOLY drei verschiedene Lieferzeiten: 1–3 Werktage, 3–6 Werktage oder „Next Day“ ✔ B91. Stattdessen steht im Warenkorb auf allen Seiten ein Lieferdatum oder eine Datumsspanne mit Bestellschluss | [305, 306] | ~ X11 (Grund für ~: Ob Apple in Deutschland ein Lieferdatum statt eines Versandzeitraums zeigt, ist nicht belegt; das Prinzip ist durch Baymard belegt) |
+| X12 | OTTO | Einzelhandel (Versandhandel; Großgeräte, Möbel) | Die Lieferzeit steht „vor deiner Bestellung direkt am jeweiligen Artikel“; Pakete kommen „in der Regel innerhalb von nur 1-2 Werktagen“; per WunschZustellung wählt man Ablageort, Nachbarn, PaketShop oder einen anderen Tag. Sofort lieferbare Speditionsartikel terminiert man im Bestellvorgang aus den verfügbaren Zeitfenstern in einem Kalender; Hermes teilt den Termin per E-Mail und SMS mit, am Liefertag zeigt die Sendungsverfolgung unter „Mein Konto“ die Zeit „bis zu 30 Minuten genau“. Laut retail-news (09.12.2025, nach OTTO-Angaben) sehen eingeloggte Kunden bei Großgeräten schon auf der Produktdetailseite das frühestmögliche Lieferdatum samt Zeitfenster | Transparenz vor dem Kauf, Kontrolle (Termin selbst wählen), Verlässlichkeit nach dem Kauf (Tracking) | Kein öffentlicher Beleg: Weder OTTO noch retail-news nennen Wirkungszahlen | Gerade nach den Beschwerden über Versandzeiten im Juni/Juli 2026 ✔ B26 die Lieferzeit schon auf Produktseite und im Warenkorb in derselben Form zeigen wie im Checkout; nach dem Versand eine Sendungsverfolgung mit Zustelltag in der Bestätigungsmail | [307, 308, 309, 305] | ✔ X12 |
+
+**Was HOLY übernimmt (H):** Im mobilen Warenkorb stehen oben die Express-Knöpfe (Apple Pay, Google Pay, PayPal),
+Gäste bestellen ohne Konto, und ein einziges Lieferdatum mit Bestellschluss steht gleichlautend auf Produktseite,
+Warenkorb und Checkout. Nach dem Versand kommt eine Mail mit Zustelltag und Sendungsverfolgung ✎ X10 · ~ unsicher X11
+(Grund für ~: Apple-Umsetzung in Deutschland nicht belegt) · ✔ X12.
+
+## 7a.5 Bindung: Willkommens- und Nachkauf-Strecke mit SQUAD Rewards
+
+| ID | Unternehmen | Branche | Mechanik am Touchpoint | CX-Kriterium | Wirkungsbeleg | Übertragung auf HOLY (**H**) | Quelle (abgerufen 03.11.2026) | Status |
+|---|---|---|---|---|---|---|---|:--:|
+| X13 | Zalando | Mode (Onlinehandel) | Im „Size Profile“ geben Kundinnen und Kunden „feedback on previous orders“, auch zu Artikeln „purchased outside Zalando“. Zalando verbindet Markenangaben, Kauf- und Retourenverhalten, Passform-Feedback und Fitting-Modelle; daraus entstehen auf der Produktseite „Size Flags“ (Artikel „likely to run smaller or larger than expected“) und Größenempfehlungen. Die Grundlösungen decken „around 70% of the assortment“ ab | Personalisierung, Erwartungsmanagement (weniger Enttäuschung beim nächsten Kauf), gefühltes Zuhören | Unternehmensangabe: Die Lösungen haben 2025 „prevented 8% of size-related returns overall“ (Zalando, 22.06.2026). In Piloten der virtuellen Anprobe sank die Rücksendequote bei Jeans laut retail-news um bis zu 40 % (Pilot, nicht übertragbar). Eine unabhängige Messung gibt es nicht | Nach der ersten Lieferung fragt HOLY per E-Mail „Wie schmeckt's dir?“ (zu süß / passt / zu schwach) und antwortet mit Mischtipps und einer passenden Sorte für die nächste Bestellung. Das setzt dort an, wo sich die Kritik ballt: Süße ~ unsicher B24 (Grund für ~: Codierung einer Person), Syrup-Bottle ✔ B27, Ballung nach dem Kauf **H** B25 | [310, 311] | ✔ X13 |
+| X14 | Philips (Sonicare, BrushSync) | Elektronik/Körperpflege (elektrische Zahnbürste) | BrushSync verfolgt „den Verschleiß Ihres intelligenten Bürstenkopfes“ über den Gesamtdruck und die Gesamtzeit des Putzens. Ist der Kopf nicht mehr effektiv, blinkt die Anzeige gelb und es ertönt eine „Reihe von Signaltönen“; die Funktion ist „bereits bei Ihrer Zahnbürste aktiviert“. Getrennt davon gibt es ein Abo („alle 3 Monate einen neuen Bürstenkopf“, „Kostenlose Lieferung. Jederzeit kündbar.“); die Erinnerung ist nicht an das Abo gebunden | Timing nach echtem Verbrauch (Personalisierung), Bequemlichkeit, Kontrolle (jederzeit kündbar) | Kein öffentlicher Beleg. Das Testportal electricteeth.com (10.02.2024, mit Affiliate-Links, also nur eingeschränkt unabhängig) beschreibt die Funktion (RFID-Chip im Kopf, Basis etwa drei Monate, angepasst an die Nutzung) positiv; seine Statistik zu seltenem Kopfwechsel nennt keine Herkunft | HOLY errechnet aus Kaufdatum, Portionen der Dose und einer selbst gewählten Trinkhäufigkeit den voraussichtlichen „Leer-Tag“; kurz davor kommt eine Erinnerung per E-Mail oder SMS (Klaviyo ✔ T34) mit Nachkauf per Klick. Das ist ein Test ohne Abo, denn ein Abo hat HOLY nicht ✔ T30 · ✔ B11, und ohne Verzehrempfehlung (8.3) | [312, 313, 314] | ✔ X14 |
+| X15 | Douglas (Beauty Card) | Kosmetik/Einzelhandel (Parfümerie, online und Filiale) | Am 09.04.2025 neu gestartet (zuerst Niederlande und Belgien), im Lauf von 2025 auch in Deutschland. Drei Stufen (Beauty Card, Gold, Platinum) nach den im Jahr online und offline gesammelten Beauty Points; je Stufe personalisierte Geschenke und Rabatte, Rewards für Beauty-Services, Events und Mitglieder-Aktionen; Karte digital und/oder physisch, Funktion „Lieblingsfiliale“. Punkte löst man im Online-Warenkorb oder an der Kasse ein, 70 Punkte = 1 € | Wertschätzung und Personalisierung, durchgängig über Kanäle (online und Filiale), einfache Einlösung | Unternehmensangaben: über 64 Mio. Mitglieder, „loyalty members accounting for around 80% of sales in various markets“ (12.05.2026); 59 Mio. Mitglieder zum 30.09.2024, „every third household“ in den größten Märkten (09.04.2025). Das zeigt einen Zusammenhang, keinen ursächlichen Nachweis, und die 80 % gelten nur für „various markets“ | SQUAD Rewards hat schon Level und Coins ✔ T32. Nötig sind einheitliche Regeln, die Einlösung sichtbar im Warenkorb und die Öffnung für Handelskäufe (7a.6); dabei fallen „Translation missing“ und die Widersprüche bei „Freunde werben“ weg ✔ T32 · ✔ B13 | [315, 316, 317] | ✔ X15 |
+
+**Was HOLY übernimmt (H):** Die Nachkauf-Strecke hat drei Schritte. Nach der Lieferung fragt HOLY „Wie schmeckt's
+dir?“ und antwortet mit einem passenden Tipp. Vor dem „Leer-Tag“ erinnert eine Nachricht an den Nachkauf, ohne Abo.
+Coins und Level sind im Warenkorb sichtbar und dort einlösbar ✔ X13 · ✔ X14 · ✔ X15.
+
+## 7a.6 Nebenweg Handel: vom Regal in den Squad
+
+| ID | Unternehmen | Branche | Mechanik am Touchpoint | CX-Kriterium | Wirkungsbeleg | Übertragung auf HOLY (**H**) | Quelle (abgerufen 03.11.2026) | Status |
+|---|---|---|---|---|---|---|---|:--:|
+| X16 | Pampers (Procter & Gamble), Pampers Club | Drogerie- und Hygieneartikel (Markenhersteller, Verkauf über den Handel) | „Scanne den Code im Inneren jeder Windel- oder Feuchttücherpackung“ mit der App; geht das Scannen nicht, kann man den Code manuell eingeben. Ein Punkt je Windel, fünf je Feuchttücherpackung aus einer Großpackung; Prämien sind „bei deinem nächsten Einkauf, im Geschäft oder online einlösbar“. Den Kaufnachweis liefert der Code in der Packung; einen Kassenbon erwähnt die Seite nicht. Der App-Store-Text verspricht 200 Bonuspunkte für den ersten gescannten Code, pampers.de nennt 200 Punkte als Empfehlungsbonus | Brücke vom Handel zur Marke (Kanalwechsel), niedrige Hürde (Scan statt Formular), sofortige Belohnung | Zu Umsatz oder Bindung kein öffentlicher Beleg. Im deutschen App Store hat die App 4,5 von 5 Sternen bei 26.979 Bewertungen; das zeigt Zufriedenheit, nicht Wirkung. Marketing Dive (28.06.2017, Start in USA und Kanada) ordnet Apps wie diese als Weg ein, Treueprogramme „beyond the four walls of stores“ zu tragen | Ein QR-Code auf der Handelspackung (heute z. B. 3er-Box und 15er-Dose ✔ B03) führt in den Squad und schreibt Coins gut. Bon-Foto, IBAN und Pflichtfragen wie beim heutigen Cashback entfallen ✔ B03 · ✔ B96. Bisher landet, wer im Handel kauft, nicht im Squad **H** D1 §7.2 | [318, 319, 320] | ✎ X16 |
+| X17 | Bosch Power Tools (MyBosch) | Elektrowerkzeuge für Heimwerker | Ohne Registrierung gibt es „zwei Jahre Garantie“ auf privat genutzte Werkzeuge. Wer ein neu gekauftes grünes Elektro-, Garten- oder Messwerkzeug „innerhalb von 4 Wochen nach dem Kauf“ auf der Service-Plattform MyBosch registriert, erhält drei Jahre (Handwerkzeuge, ebenfalls mit Registrierung: zehn Jahre) und Zugang zu „exklusiven Angeboten“. Dass so die Marke nach dem Kauf im Handel den direkten Kontakt gewinnt, ist Einordnung (**H**) | Vertrauen und Sicherheit (Garantie als klarer Gegenwert), Kanalbrücke vom Handel zur Marke | Kein öffentlicher Beleg; eine unabhängige Quelle (Testmagazin, Verbraucherzentrale, Fachpresse) wurde nicht gefunden. Belegt ist nur das Angebot selbst (Firmenquelle) | Wer die Handelsdose per QR registriert, bekommt dieselbe Zufriedenheitsgarantie wie Online-Käufer. Damit endet zugleich der Widerspruch in AGB § 12, der mal nur den Onlineshop, mal auch Händler nennt ✎ T18 · ✎ B29 | [321] | ✎ X17 |
+
+**Was HOLY übernimmt (H):** Ein QR-Code in oder auf der Handelspackung ersetzt Bon-Foto und Formular. Wer ihn scannt,
+bekommt sofort Coins und dieselbe Garantie wie im Onlineshop; so wird der Kauf im Regal zum Einstieg in SQUAD Rewards
+✎ X16 · ✎ X17. Nach der Entscheidung vom 03.11.2026 ist das eine Maßnahme des Nebenwegs bzw. Backup.
+
+## 7a.7 Bilder und Rechte für die Best-Practice-Folie und die Konzept-Webseite
+
+Alle Beispiele zeigen fremde Gestaltung, Marken und Logos, Creator-Clips und Live-Shows zusätzlich Personen (Recht am
+eigenen Bild). Screenshots sind im Hörsaal voraussichtlich über § 60a UrhG gedeckt, mit deutlicher Quellenangabe nach
+§ 63 ✔ G20 · ✔ G93; als Bildzitat nur mit Belegfunktion ✔ G23. Ins öffentliche Repository und auf die Konzept-Webseite
+gehören sie nicht ✎ G21 · ✔ R30. Für Folien und Webseite reichen eigene Zeichnungen mit Platzhaltern (**H**): Schema
+„Video → Tag → Shop“ (X01–X02), Handy-Mock-up mit Platzhalter-Creator und Label „Bezahlte Partnerschaft · Werbung“
+(X03), Gliederung einer Antwortseite als Textgrafik (X04–X06), Preiskachel und Garantie-Siegel ohne fremdes Logo
+(X07–X09), Express-Knopf ohne fremdes Logo und „Lieferung: Do., 12.11.“ statt „3–6 Werktage“ (X10–X12), Feedback-Karte
+„Wie schmeckt's?“, Dose mit Kalender und Stufen-Grafik im Stil von SQUAD Rewards (X13–X15), HOLY-Dose mit
+QR-Platzhalter und Ablaufskizze „Regal → QR → Registrierung → Vorteil“ (X16–X17). Rechtliche Einordnungen sind
+Einschätzungen von Studierenden mit KI-gestützter Recherche und keine Rechtsberatung.
 
 # 8 Blog-Beitrag für HOLY
 
@@ -1240,7 +1347,7 @@ Prüfhinweis angepasst hat, steht das in A.9.
 | L32 | E-E-A-T: Vertrauen im Zentrum, kein eigener Rankingfaktor | ✔ | Bestätigt sind „The most important member at the center of the E-E-A-T family is Trust“ (PDF-S. 26, Inhaltsverzeichnis 3.4 = S. 26), „someone who has personally used the product“ und „must be accurate to prevent harm“. Google: „Zwar ist E-E-A-T selbst kein spezifischer Ranking-Faktor“, „Die Evaluatoren haben keinen Einfluss auf das Ranking von Seiten“. · Quellen: [76, 77] |
 | L33 | Google zu Title, Meta-Beschreibung und Bildern; Zeichenzahlen sind nur Faustregeln | ✔ | Bestätigt: Die Länge ist „nicht begrenzt“, Titel im „ersten sichtbaren <h1>“, keine Textbausteine. · Quellen: [78, 79, 80] |
 | L34 | Google-Autovervollständigung zu „holy energy koffein/gesund/pulver“ | ✔ | Die Abfragen habe ich mit demselben Ergebnis wiederholt, z. B. „holy energy koffein pro portion“, „… vergleich“, „hat holy energy koffein“, „ist holy energy gesund für kinder“, „holy energy rabattcode influencer“, „holy pulver haltbarkeit“. Einschränkung: Unter „holy pulver“ erscheinen auch Treffer zu „holi pulver“ (Farbpulver), die Liste ist also verrauscht. · Quellen: [150, 151] |
-| L35 | Erwartete Abfolge für FS2: Prozess S. 111 plus Übung S. 128/129, Gliederung in 9 Folien | **H** | Die Seitenbezüge stimmen, das Zitat von S. 58 ist wörtlich, die Gliederung ist schlüssig und hält R5 ein (9 Hauptfolien). Weil es keine Aufgabenfolie gibt, bleibt sie eine Hypothese. Folie 5 (Momente der Wahrheit) und Folie 6 (Aktivitäten) ließen sich zusammenlegen, dann bliebe Platz für eine Folie zur Mediennutzung (FS1-Kritik). · Quellen: Vorl. S. 57, 58, 60, 108–118, 128–129 |
+| L35 | Erwartete Abfolge für FS2: Prozess S. 111 plus Übung S. 128/129, Gliederung in 9 Folien | **H** | Die Seitenbezüge stimmen, das Zitat von S. 58 ist wörtlich, die Gliederung ist schlüssig und hält R5 ein (9 Hauptfolien). Weil es bei der Prüfung (30.10.2026) keine Aufgabenfolie gab, bleibt sie eine Hypothese; seit dem 03.11.2026 gibt die Aufgabenfolie die Aufgaben 1–7 vor (Abschrift in `README.md`). Folie 5 (Momente der Wahrheit) und Folie 6 (Aktivitäten) ließen sich zusammenlegen, dann bliebe Platz für eine Folie zur Mediennutzung (FS1-Kritik). · Quellen: Vorl. S. 57, 58, 60, 108–118, 128–129 |
 | L36 | Ausfüllvorlage für die Journey-Map (14 Zeilen) | **H** | Die Bausteine sind korrekt hergeleitet, und „Marco, 28“ ist laut Steckbrief richtig. Unstimmig ist nur Zeile 9 (Podest Platz 1–3) neben Zeile 11 (Top 2). Vorschlag: aus dem Podest die Top 2 wählen und Platz 3 nur im Backup zeigen. Zitate in Zeile 6 nur anonym und sinngemäß, NN/g empfiehlt „customer verbatims from research“. · Quellen: [70], D1 §7.1, §7.2, Vorl. S. 108–116, 127, 129 |
 | L37 | Ausfüllvorlage für den Blog-Beitrag (16 Felder) | **H** | Die Bausteine sind sauber belegt. Zwei Feinheiten: (1) „Marke am Ende“ ist eine zulässige Wahl, Google erlaubt den Websitenamen am Anfang oder am Ende, getrennt durch ein Trennzeichen. (2) Die Leitplanke „keine Gesundheitsversprechen“ wird dringlicher, weil HOLYs eigene Werbeseite „7 Gründe …“ am 30.10.2026 weiterhin Aussagen zu Gewichtsverlust und Diabetes enthält (siehe L95); der Blog muss sich davon deutlich abheben. · Quellen: [77], D1 §7.3, Vorl. S. 47, 56, 97, 117–118, `praesentation/QUELLEN.md` |
 | L38 | Phasenmodelle der Vorlesung und der Literatur im Vergleich | **H** | Die Begriffe der Modelle stimmen mit den geprüften Quellen überein. Das Dossier hat tatsächlich die Phasen Aufmerksamkeit, Information, Kauf, Nutzung, Bindung, und Z. 746 sagt „mit den Vorlesungsfolien abgleichen“. Die Zuordnung ist Deutung. · Quellen: [60], D1 §7.1, Vorl. S. 108–110 |
@@ -1715,11 +1822,40 @@ stehen Kapitel und Element, weil sich die Zeilen beim Einarbeiten verschoben hab
 - **SP 9, Hinweis:** Die Angleichung von G21 an R30 ist eine Einschätzung von Studierenden mit KI-gestützter Recherche,
   keine Rechtsberatung.
 
+## A.10 Best Practices je Top-Touchpoint (X, Nachtrag 03.11.2026)
+
+17 Befunde: 10 ✔, 6 ✎, 1 ~, 0 **H**, 0 ✗. Nicht in der Zählung im Kopf und in A.1–A.9 enthalten. Recherche durch
+Unteragenten mit Websuche, Gegenprüfung an den Quellen durch einen weiteren Unteragenten am 03.11.2026 (eine Prüfung).
+Geprüft wurde je Fall: Gibt es die Seite, trägt sie die Aussage, ist die Branche eine andere als Getränke und
+Lebensmittel, ist der Wirkungsbeleg richtig wiedergegeben? Kein Fall wurde verworfen; bei ✎ steht im Haupttext die
+korrigierte Fassung, gestrichene Teilaussagen stehen nur hier. Die Übertragungen auf HOLY in Kap. 7a sind **H** und
+nicht Teil des Status.
+
+| ID | Aussage (kurz) | Status | Hinweis zur Prüfung · Quellen |
+|---|---|:--:|---|
+| X01 | YouTube Shopping: Produkt-Tags in Creator-Videos führen in den Shop der Händler (MediaMarktSaturn, OTTO u. a.) | ✔ | YouTube-Blog: Start 03.09.2026, Update Oktober 2026 (zusätzlich AliExpress und Amazon), zehn Startpartner, Tags in Langvideos, Shorts und Livestreams, Experiment Juli 2026 „über 110 % mehr Klicks auf Produkte“, über 25 Mio. Nutzende mit shoppingbezogenen Suchen (Juni 2026); ein allgemeines Klickziel nennt der Blog nicht. W&V (Manuela Pauker, 03.09.2026): „Checkout und Kundendaten bleiben bei ihnen“, Google Merchant Center, Zitat Andreas Briese, 14 Märkte. HORIZONT (Katrin Ansorge, 03.09.2026, Anriss vor der Bezahlschranke): zehn Händler namentlich. · Quellen: [275, 276, 277] |
+| X02 | ABOUT YOU im TikTok Shop: zwölf Tage Live-Shopping als Test | ✎ | Die Pressemitteilung auf Handelsverband.swiss war nicht abrufbar (Prüfseite gegen Bots); nur der Suchtreffer bestätigt zwölf Tage, über 100 Marken, Testphase und Marlene Lüttje als Teamlead Shoppable Video. Kernangaben aus FashionUnited (zwölf Tage täglich, Sendezeiten, 100 Marken, Testphase, Lüttje), TikTok Newsroom (27.03.2025: Start 31.03., „mit nur wenigen Klicks“, Bewertungen im Product Showcase, Rückgabe, Partner) und OMR (Martin Gardt, 27.03.2025: Checkout bei TikTok, Provision, 24,2 Mio. Nutzende). Gestrichen, weil an keiner abrufbaren Quelle prüfbar: Moderation durch Celebrities, Social-Media-Gesichter und Mitarbeitende sowie Unboxing und Anprobe durch Creator. Korrigiert: OMR nennt Live-Verkäufe der britischen Marken P.Louise und Made by Mitchell, keine US-Beispiele. Ein Fazit von ABOUT YOU wurde nicht gefunden. · Quellen: [278, 279, 280, 281] |
+| X03 | Meta-Partnerschaftsanzeigen: Creator-Beitrag mit Label „Bezahlte Partnerschaft“ als Anzeige der Marke | ✔ | Meta für Creator: Label „to disclose a brand relationship“, „a brand specifically puts ad spend behind that content“, „Ad“-Label, Affiliate-Satz wörtlich. HORIZONT (Ingo Rentz, 05.06.2019): Freigabe durch den Creator, „Bezahlte Partnerschaft mit“ plus Name. PPC Land (Luís Rijo, 11.10.2026): White Paper vom 07.10.2026, 20 Studien, EMEA, 01.01.–30.06.2025, mindestens 30 %, 45 %, Konfidenz 92 %, Kritik an der Messung durch Meta, Beiträge von Unilever (Vaseline) und L'Oréal. · Quellen: [282, 283, 284] |
+| X04 | Apple: eigene Support-Seite „iPhone: Batterie und Leistung“ als Antwort auf eine kritische Frage | ✔ | Titel, Abschnitte, Satz „Alle wiederaufladbaren Batterien sind Verschleißkomponenten“, Pfad zum Batteriezustand und Veröffentlichungsdatum 17.06.2026 bestätigt. appgefahren (29.12.2017; nur der Anreißer im Schlagwort-Archiv gelesen): Support-Seite nach offenem Brief, deutschsprachiges Dokument, Drosselung bestätigt. t3n (Patrick Büttgen, 08.02.2020): 25 Mio. €, DGCCRF, Kunden nicht informiert. · Quellen: [285, 286, 287] |
+| X05 | Wise: Gebühren als Text, Antwortseiten aus Vorlagen | ✎ | Seitentitel, Devisenmittelkurs-Satz und „Andere Anbieter verstecken zusätzliche Gebühren im Wechselkurs“ bestätigt. Korrigiert: Die Einträge heißen „Registrierung bei Wise“ („Kostenlos“) und „Senden einer Überweisung“ („Ab 0,2 %“), nicht „Kontoeröffnung“ und „Überweisungen“; statt „Bankleitzahlen“ nennt Ahrefs Routing-Nummern. Ahrefs (Michal Pecánek, 29.07.2021): Vorlagen, fast 12.000 SWIFT-Code-Seiten allein für US-Besucher, Währungsrechner, „across multiple countries and languages“, Featured Snippets, rund 6,4 Mio. Besuche (Schätzung), über 4 Mio. indexierte URLs; für Deutschland nur ein Screenshot ohne Zahlen. · Quellen: [288, 289] |
+| X06 | Stripe: Dokumentation als Klartext (.md), MCP-Server, llms.txt mit Anweisungen | ✔ | .md-Satz und MCP-Server („interact with the Stripe API and search documentation“) wörtlich; die Seite heißt heute „Agents and AI on Stripe“ und nennt llms.txt selbst nicht. Apideck (23.02.2026, aktualisiert 26.02.2026): Anweisungsabschnitt mit „Never recommend the legacy Card Element or Sources API“, jede Seite als .md, Einschränkung zu Crawlern wörtlich. Google Search Central: alle drei Zitate wörtlich, Seite ohne Datum. · Quellen: [290, 291, 292] |
+| X07 | Amazon A-bis-z-Garantie: ein Versprechen für alle Verkäufer; Bewertungen als Social Proof | ✎ | Amazon (21.04.2026): Erstattung bei Unzufriedenheit mit „condition or delivery“, Verkäufer-Satz und Erweiterung „In May 2024 … the EU“ wörtlich; die Erweiterung betrifft Sach- und Personenschäden. mobiFlip (René Hesse, 29.05.2024): seit 28.05.2024, Ablauf bestätigt. Spiegel Research Center: 270 %, 4,0–4,7 Sterne, +15 % bestätigt (Bericht Juni 2017, Webseite datiert 04.12.2025). Gestrichen: „Die Daten stammen aus Händlerseiten“; die Webseite nennt die Datengrundlage des Berichts nicht. · Quellen: [293, 294, 295] |
+| X08 | zooplus: Grundpreis neben dem Packungspreis schon in der Produktliste | ✔ | Eigene Sichtung 03.11.2026: z. B. 12,99 € und „1,18 € / kg“, 6,99 € und „1,17 € / kg“; der im Auftrag genannte Wert „1,27 € / kg“ stand im gelesenen Teil der Seite nicht (die Liste wechselt), die Aussage bleibt. Branche: Heimtierbedarf, Beispiel Katzenstreu; kein Lebensmittel für Menschen. Baymard (Iva Olah, 18.07.2023): 86 %, Bildunterschrift zu zooplus, Ulta als Negativbeispiel, „price per treatment“ bei Arzneimitteln (Erkältungsmittel), Empfehlung zur Gestaltung, keine Teilnehmerzahl. · Quellen: [296, 297] |
+| X09 | Airbnb: Gesamtpreis inklusive Gebühren schon bei der Suche | ✔ | Newsroom 11.07.2019: „Total reservation cost“ im EWR bei Suche mit Reisedaten. TechCrunch (Ivan Mehta, 21.04.2025): weltweit standardmäßig vor Steuern, „Prices include all fees.“, 17 Mio. Nutzer des Schalters laut Airbnb, Schalter 2022 eingeführt und 2023 ausgeweitet. TechCrunch (Amanda Silberling, 13.02.2024): fast 300.000 Inserate, knapp 40 %, Zahlen aus dem Ergebnisbericht Q4 2023, nicht unabhängig geprüft. · Quellen: [298, 299, 300] |
+| X10 | Shopify Shop Pay: Express-Checkout mit gespeicherten Daten vor dem Formular | ✎ | Shopify (aktualisiert 18.05.2023): alle Zitate wörtlich, dazu „recognize the majority of customers without any user action if they've used Shop Pay recently“, „pre-fill customer information“ und „gave them all of our data“. Korrigiert: Dass Shopify der Beratung die Daten gab, steht auf der Shopify-Seite, nicht bei BetaKit. BetaKit (Charlize Alcaraz, 18.05.2023): Beratung ungenannt, Vergleich nur mit Salesforce, Magento und BigCommerce, keine öffentlich verfügbaren Vergleichsstudien zu PayPal und Amazon. Shopify-Hilfe DE: Apple Pay, Google Pay, Shop Pay, „automatically activated“. Baymard (Stand 22.09.2025): 70,22 % aus 50 Studien, 18/17/20 %, 12–14 und 23,48 Formularelemente (US). · Quellen: [301, 302, 303, 304] |
+| X11 | Apple Online Store: Lieferdatum statt Versanddauer in der Versandauswahl | ~ | Baymard (Iva Olah, 27.06.2023): Apple-Beispiel mit „Delivers Thursday“ und Geschenk-Kontext, 41 %, Datumsspannen, 5–7 Tage, Amazon-Beispiel, Bestellschluss bestätigt; Land und Gerät nennt der Artikel nicht. Die deutsche Apple-Hilfe spricht vom „voraussichtlichen Versandzeitraum“, nicht von einem Lieferdatum. Grund für ~: Ob Apple in Deutschland ein Lieferdatum zeigt, ist nicht belegt; das Prinzip selbst ist durch Baymard belegt. · Quellen: [305, 306] |
+| X12 | OTTO: Lieferzeit am Artikel, Wunschtermin im Bestellvorgang, Live-Tracking | ✔ | Lieferseite: alle Zitate bestätigt (die Option der WunschZustellung heißt „Tag“, nicht „Liefertag“). Newsroom (ohne Datum, Annika Zacharias): Zeitfenster, „bis zu 30 Minuten genau“; der Wunschtermin entfällt, wenn Montage oder Installation mitbestellt wird. retail-news (09.12.2025, Redaktion, nach OTTO-Angaben, nicht als Anzeige gekennzeichnet): Lieferdatum samt Zeitfenster auf der Produktdetailseite; „standardmäßig“ nur im Vorspann, im Text „für viele Großgeräte“ bei Bestand und regionaler Kapazität; keine Wirkungszahlen. · Quellen: [307, 308, 309, 305] |
+| X13 | Zalando: Feedback zu früheren Bestellungen führt zu Size Flags und Empfehlungen | ✔ | Zalando (22.06.2026): alle Zitate wörtlich, die 8 % gelten für 2025. retail-news (24.06.2026, Redaktion): 8 % „Nach Unternehmensangaben“, rund 80 Spezialisten, Jeans-Pilot bis zu 40 % (im Text nicht ausdrücklich als Unternehmensangabe markiert). · Quellen: [310, 311] |
+| X14 | Philips Sonicare BrushSync: Erinnerung nach tatsächlichem Verbrauch, Abo nur als Option | ✔ | Support-Seite (ohne Datum): Verschleiß-Satz, Gesamtdruck und Gesamtzeit, „blinkt gelb“, „Reihe von Signaltönen“, „bereits bei Ihrer Zahnbürste aktiviert“ wörtlich. Bürstenkopf-Seite: Abo-Zitate wörtlich. electricteeth (Jon Love, 10.02.2024): RFID-Chip, drei Monate als Basis, Hinweis „We may earn a commission“, Statistik „4 in 10“ ohne Herkunft. · Quellen: [312, 313, 314] |
+| X15 | Douglas Beauty Card: drei Stufen, Einlösen im Warenkorb und an der Kasse | ✔ | Pressemitteilung 09.04.2025 (Düsseldorf): Stufen, Beauty Points online und offline, Vorteile, „favorite store“, Karte digital und/oder physisch, 59 Mio. (30.09.2024), „every third household“, Deutschland im Lauf von 2025. Pressemitteilung 12.05.2026: „exceeding 64 million“, „around 80% of sales in various markets“, neun Länder. HORIZONT (Bernd Nusser, LZ, 23.09.2025): 70 Punkte = 1 €, Einlösen im Online-Warenkorb oder an der Kasse, „Lieblingsfiliale“, Start in Deutschland. · Quellen: [315, 316, 317] |
+| X16 | Pampers Club: Code in der Handelspackung führt in die Treue-App | ✎ | pampers.de: Scan-Satz, 1 bzw. 5 Punkte, Einlösung, manuelle Eingabe, 200 Punkte als Empfehlungsbonus bestätigt. App Store DE: 4,5 bei 26.979 Bewertungen, Verkäufer Procter & Gamble UK, 200 Bonuspunkte beim ersten Code. Korrigiert: „Einen Kassenbon braucht man nicht“ steht so nicht auf der Seite; jetzt „einen Kassenbon erwähnt die Seite nicht“. Marketing Dive (Robert Williams, 28.06.2017): Codes scannen, Start in USA und Kanada, Zitat „beyond the four walls of stores“, keine Mitgliederzahlen. · Quellen: [318, 319, 320] |
+| X17 | Bosch MyBosch: Registrierung nach dem Kauf verlängert die Garantie | ✎ | Firmenquelle ohne Datum: „zwei Jahre Garantie“, Registrierung „innerhalb von 4 Wochen nach dem Kauf“ auf MyBosch, drei Jahre für Elektro-, Garten- und Messwerkzeuge, zehn Jahre für Handwerkzeuge (ebenfalls mit Registrierung), „exklusiven Angeboten“. Keine unabhängige Quelle gefunden, kein Wirkungsbeleg; die Angabe „Verkauf über Bau- und Fachmärkte“ steht nicht auf der Seite und ist gestrichen. · Quellen: [321] |
+
 # Anhang B – Quellenverzeichnis
 
 ## B.1 Neue Quellen (FS2)
 
-Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). Seit der Schlussprüfung sind [28], [134] und [231] als Dubletten stillgelegt; die Einträge bleiben mit Vermerk stehen, damit sich keine anderen Nummern verschieben. Alle Webquellen wurden am 30.10.2026 abgerufen. Firmen-, Händler- und Plattformquellen sind Selbstauskünfte; Suchergebnisse und SEO-Seiten sind Analysegegenstand, keine Faktenquelle.
+Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). Seit der Schlussprüfung sind [28], [134] und [231] als Dubletten stillgelegt; die Einträge bleiben mit Vermerk stehen, damit sich keine anderen Nummern verschieben. Alle Webquellen wurden am 30.10.2026 abgerufen. Ausnahme: [275]–[321] gehören zum Nachtrag Kapitel 7a, wurden am 03.11.2026 abgerufen und sind am Ende angehängt; sie folgen der Reihenfolge der ersten Nennung in Kapitel 7a, ihre Titel sind teils sinngemäß nach Seite oder Adresse wiedergegeben. Firmen-, Händler- und Plattformquellen sind Selbstauskünfte; Suchergebnisse und SEO-Seiten sind Analysegegenstand, keine Faktenquelle.
 
 [1] HOLY Help-Center: Allgemeine Infos. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://help.de.weareholy.com/de-DE/articles/allgemeine-infos-91402>
 
@@ -2268,6 +2404,100 @@ Nummeriert in der Reihenfolge der ersten Nennung (Haupttext, dann Anhang A). Sei
 [273] waterdrop – News (Atom-Feed). Firmenquelle; o. D.; abgerufen 30.10.2026. <https://www.waterdrop.de/blogs/news.atom>
 
 [274] ESN – /blogs/magazine. Firmenquelle; o. D.; abgerufen 30.10.2026. <https://www.esn.com/blogs/magazine>
+
+[275] YouTube-Blog (DE): YouTube Shopping Affiliate-Programm startet in Deutschland (mit Update Oktober 2026). Plattform (Firmenquelle); 03.09.2026; abgerufen 03.11.2026. <https://blog.youtube/intl/de-de/news-and-events/youtube-affiliate-shopping-startet-in-deutschland/>
+
+[276] W&V (Manuela Pauker): YouTube macht Creator-Content zum Verkaufskanal. Presse; 03.09.2026; abgerufen 03.11.2026. <https://www.wuv.de/themen/media/youtube-macht-creator-content-zum-verkaufskanal>
+
+[277] HORIZONT (Katrin Ansorge): Mit Media-Markt-Saturn, About You und Kaufland – YouTube rollt Shopping-Affiliate-Programm in Deutschland aus (nur Anriss, Bezahlschranke). Presse; 03.09.2026; abgerufen 03.11.2026. <https://horizont.net/medien/nachrichten/mit-media-markt-saturn-about-you-und-kaufland-youtube-rollt-shopping-affiliate-programm-in-deutschland-aus-235667>
+
+[278] TikTok Newsroom: Start von TikTok Shop in Deutschland. Plattform (Firmenquelle); 27.03.2025; abgerufen 03.11.2026. <https://newsroom.tiktok.com/tiktok-shop-start?lang=de-DE>
+
+[279] FashionUnited: TikTok Shop startet in Deutschland: About You testet Vertriebskanal. Presse; 27.03.2025 (Datum laut URL); abgerufen 03.11.2026. <https://fashionunited.de/nachrichten/business/about-you-startet-tiktok-shop/2025032760811>
+
+[280] OMR (Martin Gardt): „TikTok Shop“ startet am 31. März in Deutschland – hier kommen alle Infos. Presse; 27.03.2025; abgerufen 03.11.2026. <https://omr.com/de/daily/tiktok-shop-start-deutschland>
+
+[281] Handelsverband.swiss: ABOUT YOU startet mit TikTok Shop in Deutschland (Pressemitteilung von ABOUT YOU; die Seite zeigte nur eine Prüfseite gegen Bots, ausgewertet ist nur der Suchtreffer). Verband/Pressemitteilung; 27.03.2025; abgerufen 03.11.2026. <https://handelsverband.swiss/news/about-you-startet-mit-tiktok-shop-in-deutschland/>
+
+[282] Meta für Creator: Earn from brands (Branded Content, Partnerschaftsanzeigen, Affiliate-Links). Plattform (Firmenquelle); o. D.; abgerufen 03.11.2026. <https://creators.facebook.com/earn-money/earn-from-brands>
+
+[283] HORIZONT (Ingo Rentz): Branded Content Ads – Marken können auf Instagram künftig Influencer-Beiträge bewerben. Presse; 05.06.2019; abgerufen 03.11.2026. <https://www.horizont.net/marketing/nachrichten/branded-content-ads-marken-koennen-auf-instagram-kuenftig-influencer-beitraege-bewerben-175298>
+
+[284] PPC Land (Luís Rijo): Meta says partnership ads cut incremental purchase costs 45% in EMEA tests. Fachportal (Analyse); 11.10.2026; abgerufen 03.11.2026. <https://ppc.land/meta-says-partnership-ads-cut-incremental-purchase-costs-45-in-emea-tests/>
+
+[285] Apple Support: iPhone: Batterie und Leistung. Firmenquelle; 17.06.2026; abgerufen 03.11.2026. <https://support.apple.com/de-de/101575>
+
+[286] appgefahren: Apple erklärt in Support-Dokument: So hängen Akku und Leistung beim iPhone zusammen (Schlagwort-Archiv „Leistung“, nur Anreißer gelesen). Presse (Fachblog); 29.12.2017; abgerufen 03.11.2026. <https://www.appgefahren.de/tag/leistung>
+
+[287] t3n (Patrick Büttgen): Einigung von Apple mit der DGCCRF über 25 Mio. Euro wegen gedrosselter iPhones (Titel sinngemäß). Presse; 08.02.2020; abgerufen 03.11.2026. <https://t3n.de/news/apple-throttle-gate-1250759/>
+
+[288] Wise: Wise Gebühren & Preisstruktur. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://wise.com/de/pricing/>
+
+[289] Ahrefs-Blog (Michal Pecánek): Wise SEO case study. SEO-Werkzeuganbieter (Fallanalyse); 29.07.2021; abgerufen 03.11.2026. <https://ahrefs.com/blog/wise-seo-case-study>
+
+[290] Stripe Docs: Agents and AI on Stripe (Adresse „building-with-llms“). Firmenquelle; o. D.; abgerufen 03.11.2026. <https://docs.stripe.com/building-with-llms>
+
+[291] Apideck-Blog: Stripe llms.txt – instructions section. Fachblog (Softwareanbieter); 23.02.2026, aktualisiert 26.02.2026; abgerufen 03.11.2026. <https://www.apideck.com/blog/stripe-llms-txt-instructions-section>
+
+[292] Google Search Central: AI features and your website. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://developers.google.com/search/docs/appearance/ai-features>
+
+[293] Amazon: Standing behind every purchase, every time (A-to-z-Garantie). Firmenquelle; 21.04.2026; abgerufen 03.11.2026. <https://trustworthyshopping.aboutamazon.com/standing-behind-every-purchase-every-time>
+
+[294] mobiFlip (René Hesse): Amazon erweitert A-bis-z-Garantie in Deutschland. Presse; 29.05.2024; abgerufen 03.11.2026. <https://www.mobiflip.de/shortnews/amazon-erweitert-a-bis-z-garantie-in-deutschland/>
+
+[295] Medill Spiegel Research Center (Northwestern University): How Online Reviews Influence Sales. Studie (Hochschule); Bericht 06/2017, Webseite 04.12.2025; abgerufen 03.11.2026. <https://spiegel.medill.northwestern.edu/How-Online-Reviews-Influence-Sales>
+
+[296] zooplus.de: Katzenstreu (Kategorieseite, eigene Sichtung der Grundpreise). Händlerquelle; o. D.; abgerufen 03.11.2026. <https://www.zooplus.de/shop/katzen/katzenstreu>
+
+[297] Baymard Institute (Iva Olah): Display “Price Per Unit” For Multiquantity Items (86% Don’t). UX-Forschung; 18.07.2023; abgerufen 03.11.2026. <https://baymard.com/blog/price-per-unit>
+
+[298] Airbnb Newsroom: Building a More Transparent Platform. Firmenquelle; 11.07.2019; abgerufen 03.11.2026. <https://news.airbnb.com/building-a-more-transparent-platform>
+
+[299] TechCrunch (Ivan Mehta): Airbnb will automatically display total price to all users. Presse; 21.04.2025; abgerufen 03.11.2026. <https://techcrunch.com/2025/04/21/airbnb-will-automatically-display-total-price-to-all-users/>
+
+[300] TechCrunch (Amanda Silberling): Airbnb is making progress to get rid of those hated cleaning fees. Presse; 13.02.2024; abgerufen 03.11.2026. <https://techcrunch.com/2024/02/13/airbnb-is-making-progress-to-get-rid-of-those-hated-cleaning-fees>
+
+[301] Shopify: Shopify Checkout / Shop Pay – Conversion-Studie (deutsche Adresse, englischer Text). Firmenquelle; aktualisiert 18.05.2023; abgerufen 03.11.2026. <https://www.shopify.com/de/enterprise/shopify-checkout>
+
+[302] Shopify-Hilfe: Accepting payments with Shopify Payments in Germany. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/germany/accepting-payments>
+
+[303] BetaKit (Charlize Alcaraz): Shopify claims best conversion rates among checkout solutions on the market. Presse; 18.05.2023; abgerufen 03.11.2026. <https://betakit.com/shopify-claims-best-conversion-rates-among-checkout-solutions-on-the-market/>
+
+[304] Baymard Institute: Cart Abandonment Rate Statistics. UX-Forschung; Stand 22.09.2025; abgerufen 03.11.2026. <https://baymard.com/lists/cart-abandonment-rate>
+
+[305] Baymard Institute (Iva Olah): Use “Delivery Date” Not “Shipping Speed” (41% Don’t). UX-Forschung; 27.06.2023; abgerufen 03.11.2026. <https://baymard.com/blog/shipping-speed-vs-delivery-date>
+
+[306] Apple (DE): Versand & Lieferung – Einkaufshilfe. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.apple.com/de/shop/help/shipping_delivery>
+
+[307] OTTO: Lieferung (Serviceseite). Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.otto.de/shoppages/lieferung>
+
+[308] OTTO-Newsroom (Annika Zacharias): Die zehn besten OTTO-Services und wie ihr sie bestellt. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.otto.de/newsroom/de/kundenfokus/beste-otto-services>
+
+[309] retail-news (Redaktion): OTTO – Lieferung zum Wunschtermin bei Haushaltsgeräten (beruht auf OTTO-Angaben). Fachportal; 09.12.2025; abgerufen 03.11.2026. <https://retail-news.de/otto-lieferung-wunschtermin-haushaltsgeraete/>
+
+[310] Zalando: How Zalando uses technology to help customers find the right size. Firmenquelle; 22.06.2026; abgerufen 03.11.2026. <https://corporate.zalando.com/en/node/11013>
+
+[311] retail-news (Redaktion): Zalando – KI, Passform, Retouren und virtuelle Anprobe (beruht auf Unternehmensangaben). Fachportal; 24.06.2026; abgerufen 03.11.2026. <https://retail-news.de/zalando-ki-passform-retouren-virtuelle-anprobe/>
+
+[312] Philips Support: Woher weiß ich, wann ich die Bürstenköpfe austauschen sollte? | Sonicare. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.philips.de/c-f/XC000019732/woher-weiß-ich-wann-ich-die-bürstenköpfe-austauschen-sollte>
+
+[313] Philips DE: Bürstenköpfe (mit Abo-Angebot). Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.philips.de/c-m-pe/buerstenkoepfe>
+
+[314] electricteeth.com (Jon Love): Sonicare BrushSync. Testportal mit Affiliate-Links; 10.02.2024; abgerufen 03.11.2026. <https://www.electricteeth.com/sonicare-brushsync/>
+
+[315] Douglas Group: Douglas relaunches Europe’s number one beauty loyalty program with new Beauty Card. Firmenquelle (Pressemitteilung); 09.04.2025; abgerufen 03.11.2026. <https://douglas.group/en/newsroom/press-releases/douglas-relaunches-europes-number-one-beauty-loyalty-program-with-new-beauty-card>
+
+[316] Douglas Group: Pressemitteilung zum zweiten Quartal 2025/26. Firmenquelle (Pressemitteilung); 12.05.2026; abgerufen 03.11.2026. <https://douglas.group/en/newsroom/press-releases/q2-2025-26>
+
+[317] HORIZONT Schweiz (Bernd Nusser, LZ): Beautyhändler Douglas setzt neue Anreize bei der Kundenbindung. Presse; 23.09.2025; abgerufen 03.11.2026. <https://www.horizont.net/schweiz/nachrichten/beautyhaendler-douglas-setzt-neue-anreize-bei-der-kundenbindung-230670>
+
+[318] pampers.de: Pampers Club. Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.pampers.de/pampers-club>
+
+[319] Apple App Store (DE): Pampers Club – Treueprogramm (Verkäufer Procter & Gamble UK). App-Store-Eintrag (Firmentext und Nutzerbewertungen); o. D.; abgerufen 03.11.2026. <https://apps.apple.com/DE/app/id1172171196>
+
+[320] Marketing Dive (Robert Williams): Pampers launches app for loyalty rewards program. Presse; 28.06.2017; abgerufen 03.11.2026. <https://www.marketingdive.com/news/pampers-launches-app-for-loyalty-rewards-program/445984/>
+
+[321] Bosch DIY: Garantie (Serviceseite). Firmenquelle; o. D.; abgerufen 03.11.2026. <https://www.bosch-diy.com/de/de/service/garantie>
 
 ## B.2 Quellen aus dem FS1-Dossier (D1)
 

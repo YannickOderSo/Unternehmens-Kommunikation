@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light">
+<title>Dein Code ist drin · HOLY (studentisches Konzept)</title>
+<meta name="description" content="Studentisches Konzept der Gruppe (HS Kaiserslautern), keine Website der HOLY Softdrinks GmbH: Landingpage für Besucher aus Creator-Videos.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/konzept.css">
+</head>
+<!--
+  Konzept-Webseite HOLY · Seite 1 von 7 · index.html
+  Phase Inspiration (AWARE) · Top-Touchpoint: Creator-Kurzvideo mit Code und klarer Weiterleitung (gestaltungsplan.md 5.2)
+  Schließt Überleitung Ü1 (Inspiration → Recherche, gestaltungsplan.md 6.7): Code führt heute auch in die freie Suche.
+  Studentisches Konzept der Gruppe, KI-gestützt entworfen, Prüfung durch die Gruppe offen. Stand 03.11.2026.
+  Kennzeichnung nach gestaltungsplan.md 7.3: Hinweisbalken (fest), noindex, kein Logo, keine fremden Bilder,
+  keine Datenübermittlung, keine externen Anfragen. Befund-IDs: Recherche-Dossier FS2 (recherche-customer-journey.md).
+-->
+<body data-station="1">
+
+<!-- Pflicht (gestaltungsplan.md 7.3): fester, nicht ausblendbarer Hinweisbalken -->
+<div class="hinweisbalken" role="note"><strong>Studentisches Konzept der Gruppe (HS Kaiserslautern)</strong> – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich</div>
+
+<header class="kopf">
+  <div class="inhalt">
+    <!-- Wortmarke nur als schlichter Text in eigener Schrift, kein Logo (7.3, ✔ R30) -->
+    <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite">HOLY <span>Konzept</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="koffein-check.html">Koffein<span class="nur-breit">-Check</span></a>
+      <a href="squad.html"><span class="nur-breit">SQUAD </span>Rewards</a>
+      <a href="warenkorb.html">Warenkorb</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Präsentationsmodus: Laufleiste des zentralen Wegs (SOLL), nur mit ?anmerkungen=1 sichtbar -->
+<nav class="weg-leiste nur-anm" aria-label="Zentraler Weg (SOLL)">
+  <ol>
+    <li class="titel">Zentraler Weg (SOLL)</li>
+    <li><a href="index.html" aria-current="step">1 Inspiration</a></li>
+    <li><a href="koffein-check.html">2 Recherche</a></li>
+    <li><a href="produkt.html">3 Entscheidung</a></li>
+    <li><a href="warenkorb.html">4 Kauf</a></li>
+    <li><a href="danke.html">5 Bindung</a></li>
+    <li><a href="squad.html">Squad</a></li>
+  </ol>
+</nav>
+
+<main id="inhalt">
+
+  <!-- Maßnahme I1: Code aus dem Video steht auf der Zielseite schon da und gilt automatisch.
+       Befund: ✔ L34 (Suchvorschlag „holy energy rabattcode influencer“), ✔ T02 (Creator-Programm, 41 Landingpages),
+       ✔ L95 (Creator-Seiten); Vorbild ✔ X01 (Produkt-Tag im Video führt ohne Umweg in den Shop). -->
+  <section class="buehne-gelb held" aria-labelledby="titel">
+    <div class="inhalt schmal">
+      <!-- Maßnahme I2: Werbung neben Creator und Code kennzeichnen. Befund: ✔ R25 (§ 5a UWG, § 6 DDG, § 22 MStV),
+           Dossier 8.3 Do 11; Vorbild ✔ X03 (Label „Bezahlte Partnerschaft“); Kritik „aufdringlich“ ~ B21. -->
+      <p class="absender"><span class="werbung">Werbung</span> Bezahlte Partnerschaft · du kommst aus dem Video von <span>@creator_platzhalter</span><span class="anm" data-ids="✔ R25 · ✔ X03 · ~ B21 (Grund für ~: Codierung einer Person)">Was wir ändern: „Werbung“ steht schon oben, neben Creator und Code, wie das Label „Bezahlte Partnerschaft“ im Video. Warum: Kennzeichnung ist Pflicht, und in kritischen Bewertungen wirkt Creator-Werbung teils „aufdringlich“. Offen statt versteckt nimmt dem den Wind. Der Creator ist ein Platzhalter, kein echter Name.</span></p>
+
+      <h1 id="titel">Dein Code ist schon drin.<span class="anm" data-ids="✔ X01 · ✔ L34 · ✔ T02 · ✔ L95" data-ziel=".codebox">Was wir ändern: Wer aus einem Creator-Video kommt, landet hier – der Code aus dem Video steht schon da und gilt im Warenkorb automatisch. Warum: Heute löst der Code eigene Suchen aus („holy energy rabattcode influencer“), Marco sucht Code und Shop selbst. Vorbild aus dem Handel: Bei YouTube Shopping führt ein Produkt-Tag im Video ohne Umweg in den Shop.</span></h1>
+
+      <div class="codebox">
+        <span class="meta">Dein Creator-Code</span>
+        <div class="codezeile"><span class="code" data-code>CREATOR10</span><span class="werbung">Werbung</span></div>
+        <span class="klein">wird im Warenkorb automatisch abgezogen · −10 % <span class="beispiel">Beispielwert</span></span>
+        <span class="meta" data-nur-beispielcode>Beispielcode. Mit <code>?code=DEINCODE</code> in der Adresse erscheint der Code aus dem Video.</span>
+        <span class="meta" data-nur-creatorcode hidden>Aus dem Link im Video übernommen.</span>
+      </div>
+      <p>Kein Abtippen, kein Suchen: Von hier geht's direkt zum Produkt aus dem Video – oder erst zu den Fakten.</p>
+
+      <!-- Maßnahme I3: zwei klare Wege statt freier Suche (Ü1, gestaltungsplan.md 6.7) -->
+      <div class="knopfreihe">
+        <a class="knopf" href="produkt.html">Zum Produkt aus dem Video <span class="pfeil" aria-hidden="true">→</span></a>
+        <a class="knopf knopf-rand" href="koffein-check.html">Erst den Koffein-Check lesen</a>
+      </div>
+      <p class="meta">Zwei Wege, kein Umweg über die Suchmaschine.<span class="anm" data-ids="Ü1 (gestaltungsplan.md 6.7) · ✔ L34 · ✎ S03" data-ziel=".knopfreihe">Was wir ändern: Zwei klare Wege – direkt zum Produkt oder erst zum Koffein-Check. Warum: Am Übergang Inspiration → Recherche (Ü1) geht Marco heute über die Suchmaschine weiter; dort stehen auch Treffer Dritter. Der Koffein-Check holt die häufigste Frage auf HOLYs eigene Seite.</span></p>
+    </div>
+  </section>
+
+  <!-- Maßnahme I4: Kernfakten als Text, jede Zahl mit Befund-ID (Dossier 8.3 Do 1, 7, 14).
+       160 mg / 7 g / 500 ml: ✔ S92 · 0,1 g Zucker, Sucralose, Acesulfam K: ✔ R06, ✔ R14 · 39,99 € / 50 Portionen: ✔ B09 ·
+       Grundpreis 114,26 €/kg gerechnet aus 50 × 7 g = 350 g: ✔ R98 -->
+  <section class="abschnitt" aria-labelledby="zahlen">
+    <div class="inhalt">
+      <h2 id="zahlen">HOLY Energy in vier Zahlen<span class="anm" data-ids="✔ S92 · ✔ R06 · ✔ R14 · ✔ B09 · ✔ R98 · ✎ X05">Was wir ändern: Die vier Fragen, die Marco hat, stehen als Text auf der ersten Seite – Menge, Koffein, Zucker, Preis je Portion mit Grundpreis. Warum: Heute stehen Koffein und Tagesportion nur in Etikettbildern, und der Preis wird über Rabatte erzählt. Vorbild Wise: Preise als nachprüfbarer Text statt im Kleingedruckten.</span></h2>
+      <ul class="fakten">
+        <li><b>7 g + 500 ml</b> Pulver und Wasser ergeben eine Portion.</li>
+        <li><b>160 mg Koffein</b> je Portion, also 32 mg pro 100 ml (Etikett Raspberry Raptor).</li>
+        <li><b>0,1 g Zucker</b> pro 100 ml zubereitet; gesüßt mit Sucralose und Acesulfam K.</li>
+        <li><b>0,80 € je Portion</b> in der Dose mit 50 Portionen: 39,99 € (114,26 € / kg).</li>
+      </ul>
+      <p class="meta">Werte für Raspberry Raptor laut Etikett und HOLY-Shop, abgerufen am 30.10.2026. Grundpreis gerechnet aus 50 × 7 g.</p>
+    </div>
+  </section>
+
+  <!-- Teaser Recherche: nächste Station des zentralen Wegs -->
+  <section class="abschnitt" aria-labelledby="teaser-koffein">
+    <div class="inhalt">
+      <a class="teaser kasten" href="koffein-check.html">
+        <p class="meta">Recherche · Antwortseite</p>
+        <h3 id="teaser-koffein">Koffein-Check: Wie viel HOLY Energy ist okay?</h3>
+        <p>Koffein je Portion, Tagesmenge, Alter, Nachtschicht – alle Zahlen vom Etikett und von der EFSA, mit Quelle.</p>
+        <span class="weiter">Zum Koffein-Check →</span>
+      </a>
+      <!-- Starter Set: 24,99 €, 14 Drinks, Shaker, Gratisversand ✔ T20; je Drink 1,79 € gerechnet;
+           Grundpreis: Füllmenge des Sets nicht im Dossier (✔ R98 verlangt ihn) → offen markiert -->
+      <a class="teaser kasten kasten-gelb" href="produkt.html">
+        <p class="meta">Für den Einstieg</p>
+        <h3>Starter Set Energy: 14 Drinks + Shaker</h3>
+        <p><span class="zahl">24,99 €</span> · 1,79 € je Drink · Gratisversand<br><span class="meta">Grundpreis folgt (Füllmenge des Sets noch prüfen)</span></p>
+        <span class="weiter">Packungen vergleichen →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Eigene Zeichnung statt Screenshot (Bildrechte ✔ R30, Dossier 7a.7): Schema „Video → Tag → Shop“ (✔ X01, ✎ X02, ✔ X03) -->
+  <section class="abschnitt" aria-labelledby="skizze">
+    <div class="inhalt schmal">
+      <h2 id="skizze">So kommst du hierher<span class="anm" data-ids="✔ X01 · ✎ X02 · ✔ X03 · ✔ T32 · ✔ R30">Was wir ändern: Im Video führt ein Tipp auf genau das gezeigte Produkt, der Code reist mit. Ob Marco im eigenen Shop oder per Kauf in der App (TikTok Shop) seltener abbricht, wird getestet, nicht angenommen: Beim Kauf in der App liegen Checkout und Kundendaten bei der Plattform, und die Brücke zu SQUAD Rewards fehlt. Die Skizze ist eine eigene Zeichnung, kein Screenshot.</span></h2>
+      <figure class="zeichnung">
+        <svg viewBox="0 0 340 200" role="img" aria-labelledby="skizze-t skizze-d">
+          <title id="skizze-t">Skizze: Video mit Produkt-Tag, Landingpage mit Code, Produktseite</title>
+          <desc id="skizze-d">Links ein Handy mit Creator-Video, Werbekennzeichnung und gelbem Produkt-Tag. Ein Pfeil führt zur Landingpage mit Code, ein zweiter zur Produktseite mit einer schlichten Dose ohne Aufdruck.</desc>
+          <!-- Handy -->
+          <rect x="8" y="8" width="94" height="160" rx="14" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="4"/>
+          <text x="55" y="24" text-anchor="middle" font-size="10" font-weight="700" fill="#1D1D1B" font-family="system-ui, sans-serif">Werbung</text>
+          <rect x="17" y="30" width="76" height="92" fill="#8ECDC1" stroke="#1D1D1B" stroke-width="2"/>
+          <path d="M47 62 L69 76 L47 90 Z" fill="#1D1D1B"/>
+          <rect x="21" y="130" width="68" height="26" rx="6" fill="#FFD007" stroke="#1D1D1B" stroke-width="2.5"/>
+          <text x="55" y="147" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1B" font-family="system-ui, sans-serif">Produkt ›</text>
+          <!-- Pfeil 1 -->
+          <path d="M106 88 H122" stroke="#1D1D1B" stroke-width="4" fill="none"/>
+          <path d="M120 80 L130 88 L120 96 Z" fill="#1D1D1B"/>
+          <!-- Landingpage -->
+          <rect x="134" y="8" width="90" height="160" rx="10" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/>
+          <rect x="134" y="8" width="90" height="56" rx="10" fill="#FFD007" stroke="#1D1D1B" stroke-width="3"/>
+          <rect x="144" y="30" width="70" height="26" rx="5" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="179" y="48" text-anchor="middle" font-size="12" font-weight="800" fill="#1D1D1B" font-family="system-ui, sans-serif">CODE</text>
+          <rect x="144" y="96" width="70" height="20" rx="5" fill="#1D1D1B"/>
+          <rect x="144" y="124" width="70" height="20" rx="5" fill="none" stroke="#1D1D1B" stroke-width="2"/>
+          <!-- Pfeil 2 -->
+          <path d="M228 88 H244" stroke="#1D1D1B" stroke-width="4" fill="none"/>
+          <path d="M242 80 L252 88 L242 96 Z" fill="#1D1D1B"/>
+          <!-- schlichte Dose ohne Aufdruck (kein nachgebautes Verpackungsdesign) -->
+          <path d="M262 46 V136 A34 10 0 0 0 330 136 V46" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/>
+          <ellipse cx="296" cy="46" rx="34" ry="10" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/>
+          <rect x="272" y="74" width="48" height="36" rx="4" fill="none" stroke="#857C6B" stroke-width="2" stroke-dasharray="4 3"/>
+          <!-- Beschriftung -->
+          <text x="55" y="190" text-anchor="middle" font-size="12" fill="#1D1D1B" font-family="system-ui, sans-serif">Video mit Tag</text>
+          <text x="179" y="190" text-anchor="middle" font-size="12" fill="#1D1D1B" font-family="system-ui, sans-serif">Diese Seite</text>
+          <text x="296" y="190" text-anchor="middle" font-size="12" fill="#1D1D1B" font-family="system-ui, sans-serif">Produkt</text>
+        </svg>
+        <figcaption>Eigene Skizze (Konzept): Ein Tipp auf den Produkt-Tag im Video führt hierher, der Code reist mit. Keine Screenshots, kein Logo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Nächste Station des zentralen Wegs: Recherche -->
+  <section class="naechste" aria-label="Nächste Station">
+    <div class="inhalt schmal">
+      <p>Nächste Station · 2 Recherche</p>
+      <h2>Erst nachlesen, dann entscheiden.</h2>
+      <a class="knopf" href="koffein-check.html">Zum Koffein-Check <span class="pfeil" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="inhalt">
+    <h2>Stationen des Konzepts</h2>
+    <ol>
+      <li><a href="index.html">Inspiration: Landingpage aus dem Creator-Video</a></li>
+      <li><a href="koffein-check.html">Recherche: Koffein-Check</a></li>
+      <li><a href="produkt.html">Entscheidung: Produktseite</a></li>
+      <li><a href="warenkorb.html">Kauf: mobiler Warenkorb</a></li>
+      <li><a href="danke.html">Bindung: Danke- und Willkommensseite</a> · <a href="squad.html">SQUAD Rewards</a></li>
+    </ol>
+    <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
+    <div class="kennung">
+      <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
+      <p>Kein HOLY-Logo, keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe, „HOLY“ steht nur als Text.</p>
+    </div>
+    <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
+    <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
+    <p class="nur-normal"><a href="?anmerkungen=1" data-ohne-anmerkungen>Präsentationsmodus: Anmerkungen einblenden</a></p>
+    <p class="nur-anm"><a href="?" data-ohne-anmerkungen>Anmerkungen ausblenden</a></p>
+  </div>
+</footer>
+
+<script src="assets/konzept.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* =============================================================================
+   08-mockups.css – Folie 08 · A7 Mock-ups: Konzept-Webseite (gelbe Bühne)
+   Gestaltungsplan 7.4: fünf Handyrahmen auf einem schwarzen Pfad, je ein
+   Bildschirmfoto (390 × 844, verkleinert), darunter Ü-Kennung und eine
+   Anmerkung; Kennzeichnung sichtbar; Link „Live-Demo“.
+   Rahmenmitten x = 278 · 621,5 · 965 · 1308,5 · 1652 (Anmerkung je 300 px).
+   ============================================================================= */
+#f08 .e8-pfad .gelb { stroke-width: 14; }
+#f08 .e8-station {
+  top: 372px;
+  width: 300px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  z-index: 2;
+}
+#f08 .e8-s1 { left: 128px; }
+#f08 .e8-s2 { left: 471.5px; }
+#f08 .e8-s3 { left: 815px; }
+#f08 .e8-s4 { left: 1158.5px; }
+#f08 .e8-s5 { left: 1492px; }
+#f08 .p-handy { width: 220px; }
+#f08 .p-handy-schirm { height: auto; }
+#f08 .e8-ue {
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+}
+#f08 .e8-anm {
+  margin-top: 4px;
+  font-size: 28px;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+#f08 .e8-kennzeichnung {
+  left: 128px;
+  top: 952px;
+  font-size: 22px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+#f08 .e8-live {
+  right: 128px;
+  top: 944px;
+  padding: 6px 16px;
+  background: var(--p-marker-grund);
+  color: var(--p-marker-text);
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.3;
+  text-decoration: none;
+}
+#f08 .e8-live:focus-visible { outline: 3px solid var(--p-schrift); outline-offset: 3px; }

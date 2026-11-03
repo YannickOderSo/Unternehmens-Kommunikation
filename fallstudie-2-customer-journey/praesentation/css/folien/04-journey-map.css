@@ -1,0 +1,27 @@
+/* =============================================================================
+   04-journey-map.css – Folie 04 · A2 Journey-Map IST, „Zentraler Weg (IST)“
+   Gestaltungsplan 6.2–6.6. Raster, Kacheln und Pfad setzt js/folien/pfad.js
+   (Daten im JSON der Folie); hier nur die Notizen am Weg und die Legende.
+   ============================================================================= */
+#f04 .e4-legende {
+  left: 128px;
+  top: 374px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+/* Wegbeschriftung am Stück K1 → K2, links der Rinne P1/P2 (x = 677) */
+#f04 .e4-wegname { right: 1252px; top: 773px; }
+/* „Bindung geht weiter“ über K6 */
+#f04 .e4-weiter { left: 1566.67px; top: 736px; }
+/* „Handel: Recherche übersprungen“ über dem gestrichelten Nebenweg (y = 548) */
+#f04 .e4-uebersprungen { left: 712px; top: 508px; }
+/* Offenes Ende nach dem Regal (Phasen 4–5, oberhalb von K4) */
+#f04 .e4-regal { left: 1266px; top: 462px; width: 526px; padding-left: 6px; box-sizing: border-box; background: var(--p-papier); }
+#f04 .e4-regal-notiz { position: static; padding: 0; margin: 0; }
+#f04 .e4-regal-beleg {
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--p-schrift-2);
+  white-space: nowrap;
+}

@@ -1,0 +1,31 @@
+Schriften in diesem Ordner (Präsentation Fallstudie 2, Thema „Pfad“)
+=====================================================================
+Kopiert am 03.11.2026 aus ../../../fallstudie-1-brand-persona/praesentation/schriften/
+(unverändert, nur die benötigten Dateien). Format woff2, variabel, Zeichensätze
+„latin“ und „latin-ext“. Eingebunden über ../css/tokens.css (@font-face, aus FS1
+unverändert); welche Familie wofür gilt, legt ../css/folien/pfad.css fest.
+Es wird keine Internetverbindung benötigt.
+
+Alle Schriften: SIL Open Font License 1.1 (Lizenztexte: LIZENZ-*-OFL.txt).
+Herkunft: npm-Pakete von Fontsource (https://fontsource.org), Version 5.3.0,
+Originalquelle Google Fonts (siehe FS1 schriften/HERKUNFT.txt).
+
+Bricolage Grotesque (wght 200–800, wdth 75–100)  – @fontsource-variable/bricolage-grotesque
+  bricolage-grotesque-latin-standard-normal.woff2, bricolage-grotesque-latin-ext-standard-normal.woff2
+  Einsatz: Titel, Zahlen, Sätze der Momente, Foliennummer (Gestaltungsplan 3.4)
+
+Inter (wght 100–900, opsz 14–32; normal + kursiv)  – @fontsource-variable/inter
+  inter-latin-opsz-normal.woff2, inter-latin-ext-opsz-normal.woff2,
+  inter-latin-opsz-italic.woff2, inter-latin-ext-opsz-italic.woff2
+  Einsatz: Text, Daten, Beschriftungen – ERSATZ für Libre Franklin (Plan 3.4), die
+  nicht im Repository liegt (Meilenstein M5 offen). Sobald Libre Franklin samt Lizenz
+  vorliegt: Dateien hierher, @font-face in pfad.css, --schrift-text umstellen, Eintrag hier.
+
+Fraunces (normal: wght, opsz; kursiv: alle Achsen inkl. WONK)  – @fontsource-variable/fraunces
+  fraunces-latin-opsz-normal.woff2, fraunces-latin-ext-opsz-normal.woff2,
+  fraunces-latin-full-italic.woff2, fraunces-latin-ext-full-italic.woff2
+  Einsatz: nur echte, anonyme O-Töne (kursiv, "WONK" 0) – bisher keine auf den Folien.
+
+Nicht übernommen (in FS2 nicht verwendet): Inter Tight, Space Grotesk, Plus Jakarta Sans.
+tokens.css nennt sie weiter; pfad.css setzt in allen drei Themen dieselben Schriften,
+deshalb fordert der Browser die fehlenden Dateien nie an.
