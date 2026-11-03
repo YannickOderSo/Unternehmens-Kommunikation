@@ -2,10 +2,11 @@
    07-best-practice.css – Folie 07 · A5 Best Practices + A6 Maßnahmen
    Gestaltungsplan 5.1 Zeile 07: fünf Zeilen über die volle Breite plus eine
    Nebenweg-Zeile; links Phase und Überleitung, Mitte Vorbild in Schiefer,
-   rechts Maßnahme in Schwarz; Marker auf der Recherche-Zeile. Öffentliche
-   Fassung ohne fremde Logos oder Screenshots (b21). Interne Fassung (D06,
-   03.11.2026): je Zeile ein Bild des Vorbilds (144 × 81) links in der Spalte
-   „Vorbild“ und das Logo statt des fett gesetzten Namens (Höhe 32 px).
+   rechts Maßnahme in Schwarz; Marker auf der Recherche-Zeile. Rückfall ohne
+   Fremdbilder: Name fett, keine Logos (b21). Fassung mit Bildern (D06,
+   03.11.2026): das Logo statt des fett gesetzten Namens. D07 (03.11.2026): die
+   kleinen Bilder der Vorbilder (144 × 81) sind entfernt (unlesbar, unruhig);
+   Logos einfarbig dunkel, je Logo eigene Höhe, damit die Spalte ruhig wirkt.
    ============================================================================= */
 #f07 .e7-tabelle { left: 128px; top: 370px; width: 1664px; }
 #f07 .e7-kopfzeile,
@@ -41,19 +42,19 @@
 #f07 .e7-vorbild b { color: var(--p-schrift); font-weight: 650; }
 #f07 .e7-massnahme { position: relative; font-size: 28px; line-height: 1.22; }
 
-/* Interne Fassung: Bild des Vorbilds (data-status="aus" → "frei" durch intern-bilder.js) und Logo */
-#f07 .e7-bild { width: 144px; height: 81px; margin-top: 2px; }
-#f07 .e7-vorbild:has(> .e7-bild[data-status="frei"]) {
-  display: grid;
-  grid-template-columns: 144px 1fr;
-  column-gap: 18px;
-  align-items: start;
-}
-#f07 .e7-tabelle:has(.e7-bild[data-status="frei"]) .e7-zeile { min-height: 95px; padding: 6px 0; }
-#f07 .e7-marke .p-intern-logo { display: inline-block; height: 32px; width: auto; vertical-align: -6px; }
+/* Fassung mit Bildern: Logo statt des Namens (intern-bilder.js setzt <img class="p-intern-logo">).
+   Dateien einfarbig #1D1D1B in doppelter Anzeigehöhe (fremdbilder/v07-logo-…png, D07). Höhen optisch
+   angeglichen: Wortmarken ohne Unterlänge stehen auf der Grundlinie (vertical-align 0), Logos mit „p“
+   (zooplus, Pampers) reichen mit der Unterlänge darunter. Dunkel: hell umgekehrt statt heller Platte. */
+#f07 .e7-marke .p-intern-logo { display: inline-block; width: auto; height: 26px; vertical-align: 0; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-youtube"] { height: 26px; vertical-align: -1px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-apple"] { height: 30px; vertical-align: -2px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-zooplus"] { height: 28px; vertical-align: -7px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-otto"] { height: 24px; vertical-align: 0; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-philips"] { height: 22px; vertical-align: 0; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-pampers"] { height: 34px; vertical-align: -7px; }
 #f07 .e7-marke[data-intern-status="gesetzt"] .e7-marke-name { display: none; }
-/* Dunkel: Logos mit dunkler Schrift (Apple, YouTube) auf heller Platte */
-html[data-modus="dunkel"] #f07 .e7-marke .p-intern-logo { background: #F3EDE1; padding: 2px 6px; box-sizing: content-box; height: 28px; vertical-align: -6px; }
+html[data-modus="dunkel"] #f07 .e7-marke .p-intern-logo { filter: invert(1); }
 #f07 .e7-massnahme::before {
   content: "→";
   position: absolute;

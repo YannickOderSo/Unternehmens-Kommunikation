@@ -6,18 +6,21 @@
    KI-gestützt; Prüfung durch die Gruppe offen.
 
    VIDEO (v01)
-   • Quelle: intern/gruender-video.mp4 (relativ, per .gitignore ausgeschlossen,
-     nur in der internen Fassung vorhanden). Das Skript bindet die Datei nur per
-     Pfad ein: nicht vorladen (preload="none"), erst beim Betreten der Folie
-     (Schritt davor) auf „auto“ und die Quelle setzen.
+   • Quelle: video/gruender-video.mp4 (relativ, versioniert; veröffentlicht mit
+     Zustimmung des Gründers, KI-Nachweis FS2 Nr. 18 – bis 03.11.2026 lag es
+     ausgeschlossen in intern/). Das Skript bindet die Datei nur per Pfad ein
+     (data-quelle): nicht vorladen (preload="none"), erst beim Betreten der
+     Folie (Schritt davor) auf „auto“ und die Quelle setzen. Keine
+     KI-Transkription, keine Zitate aus dem Video.
    • Klick 1 (Schritt 1, vorwärts) startet das Video mit Ton – der Klick zählt
      als Nutzergeste. Danach bleibt das letzte Bild stehen (Standard des Browsers).
      Rückwärts auf Schritt 1: kein Neustart, nur Standbild. Schritt 0, 2 und
      Verlassen der Folie: anhalten.
-   • Rückfall „Videobotschaft des Gründers – nur im Vortrag“ (Klasse
-     .ist-rueckfall am Bildschirm), wenn die Datei fehlt oder nicht abspielbar
-     ist, und IMMER in Aufnahme, Druck/PDF und Referentenfenster (dort darf kein
-     zweiter Ton laufen; Exporte zeigen den Gründer nicht).
+   • Rückfall „Videobotschaft des Gründers – in der Web-Präsentation auf
+     Folie 09“ (Klasse .ist-rueckfall am Bildschirm), wenn die Datei fehlt oder
+     nicht abspielbar ist (z. B. Browser ohne H.264), und IMMER in Aufnahme,
+     Druck/PDF und Referentenfenster (dort darf kein zweiter Ton laufen; Exporte
+     und Standbilder zeigen das Video nicht).
    • Verweigert der Browser den Start mit Ton (Folie per F5 oder Adresse direkt
      auf Schritt 1 geöffnet, ohne Klick), erscheinen die Bedienelemente des
      Videos: einmal auf „Abspielen“ klicken.

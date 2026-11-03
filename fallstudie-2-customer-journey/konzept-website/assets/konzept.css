@@ -2,10 +2,11 @@
    Konzept-Webseite HOLY (studentisches Konzept, Fallstudie 2) – gemeinsame Gestaltung
    Grundlage: gestaltungsplan.md Abschnitt 3 (Farben 3.2, Kontraste 3.3, Typografie 3.4, Verbote 3.7)
    und Abschnitt 7.3 (Kennzeichnung). Mobil zuerst (390 px), ab 900 px zweispaltig, wo es passt.
-   Keine externen Anfragen: Schriften lokal (schriften/), keine Bilder von außen, kein CDN.
-   Zwei Fassungen: öffentlich (Repository, GitHub Pages) nur mit eigenen Zeichnungen und Platzhaltern; intern (Hörsaal)
-   zusätzlich mit HOLY-Produktbildern aus intern/bilder/ (per .gitignore ausgeschlossen), eingebaut von konzept.js –
-   Gestaltung dafür im Abschnitt „Interne Bilder“.
+   Keine externen Anfragen: Schriften lokal (schriften/), Bilder nur aus dem eigenen Ordner, kein CDN.
+   Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): Bilder der HOLY Softdrinks GmbH und Fotos Dritter
+   aus fremdbilder/, veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung;
+   keine eigenen Fotos der Gruppe. Eingebaut von konzept.js, Gestaltung im Abschnitt „Fremdbilder“. Rückfall ohne
+   Fremdbilder (fremdbilder/register.js fehlt): eigene Zeichnungen und Platzhalter.
 
    Kontraste (WCAG 2.x, nachgerechnet in gestaltungsplan.md 3.3 und werkzeuge/pruefen.mjs):
      Schwarz #1D1D1B auf Creme #F3EDE1 14,48 : 1 · Schiefer #5C5547 auf Creme 6,33 : 1
@@ -77,7 +78,7 @@ li { margin-bottom: .3em; }
 /* Ziffern gleich breit nur bei Preisen und Zahlen (Inter setzt mit tnum auch den Bindestrich breit) */
 .zahl, .preis-gross, .option .preis, .posten .r, .tabelle td.r, .balken b, .coinstand .zahl { font-variant-numeric: tabular-nums; }
 .url { word-break: break-all; }
-/* hidden gilt immer, auch wenn eine Klasse display setzt (Bildplätze der internen Fassung, Galerie, Kästen) */
+/* hidden gilt immer, auch wenn eine Klasse display setzt (Bildplätze, Galerie, Kästen) */
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
@@ -152,7 +153,7 @@ li { margin-bottom: .3em; }
   border-radius: 4px; padding: 2px 6px; vertical-align: 2px;
 }
 
-/* ---------- Platzhalter und eigene Zeichnungen (7.3: öffentlich keine fremden Bilder; interne Bilder siehe unten) ---------- */
+/* ---------- Platzhalter und eigene Zeichnungen (Rückfall ohne Fremdbilder; Skizzen und Siegel in beiden Fassungen) ---------- */
 .platzhalter { margin: 0 0 16px; }
 .platzhalter .flaeche {
   border: 4px solid var(--schwarz); border-radius: 14px; overflow: hidden;
@@ -288,19 +289,20 @@ details.faq > div { padding: 0 14px 12px; }
 .ablauf li + li { position: relative; }
 .ablauf .pfeilzeile { border: 0; background: none; padding: 0 0 0 14px; font-weight: 800; }
 
-/* ---------- Interne Bilder (nur interne Fassung: intern/bilder.js und intern/bilder/, nicht im Repository) ----------
-   Öffentliche Fassung: Bildplätze mit hidden bleiben unsichtbar, Platzhalter und eigene Zeichnungen wie bisher.
-   Interne Fassung: konzept.js setzt .mit-bild an den Bildplatz (.hat-intern-bild an Gruppen) und hängt img.intern-bild an.
+/* ---------- Fremdbilder (fremdbilder/register.js und fremdbilder/, veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17) ----------
+   Fassung mit Bildern: konzept.js setzt .mit-bild an den Bildplatz (.hat-intern-bild an Gruppen) und hängt img.intern-bild an.
+   Rückfall ohne Fremdbilder: Bildplätze mit hidden bleiben unsichtbar, Platzhalter und eigene Zeichnungen.
+   Klassen- und Attributnamen mit „intern“ stammen aus der Zeit vor der Freigabe und bleiben aus technischen Gründen.
    Freigestellte Packshots stehen auf Creme hell oder Gelb, Fotos mit schwarzer Kontur wie die übrigen Kästen. */
 .mit-bild > .nur-ohne-bild { display: none; }
 .intern-bild { display: block; width: 100%; height: auto; }
 .bildnachweis { display: block; font-size: 12px; line-height: 1.35; color: var(--schiefer); margin-top: 6px; font-weight: 400; }
 .foto { display: block; border: 2px solid var(--schwarz); border-radius: 14px; overflow: hidden; background: var(--creme-hell); }
 
-/* Startseite: Produkt-Tag im Knopf (wie der Tag im Video, ✔ X01), Produktkarte neben der Skizze, Bild im Starter-Set-Teaser */
-.knopf .knopfbild { flex: none; width: 40px; height: 40px; border-radius: 8px; overflow: hidden; border: 2px solid var(--creme); margin: -6px 6px -6px -8px; }
-/* Anzeige-Ausschnitt auf die Dose, damit der Tag klein erkennbar bleibt (Datei unverändert) */
-.knopf .knopfbild .intern-bild { width: 100%; height: 100%; object-fit: cover; transform: scale(1.7); transform-origin: 60% 62%; }
+/* Startseite: Produkt-Tag im Knopf (wie der Tag im Video, ✔ X01): freigestellter Packshot der 50er-Dose auf heller Fläche,
+   ganz sichtbar (kein Zoom); Produktkarte neben der Skizze, Bild im Starter-Set-Teaser */
+.knopf .knopfbild { flex: none; width: 40px; height: 40px; border-radius: 8px; overflow: hidden; border: 2px solid var(--creme); background: var(--creme-hell); padding: 2px; margin: -6px 6px -6px -8px; }
+.knopf .knopfbild .intern-bild { width: 100%; height: 100%; object-fit: contain; }
 .skizze-reihe.hat-intern-bild { display: grid; gap: 0 28px; align-items: center; }
 .produktkarte { margin: 0 0 16px; }
 .produktkarte a { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 14px; align-items: center; text-decoration: none; border: 2px solid var(--schwarz); border-radius: 14px; background: var(--creme-hell); padding: 10px; }
@@ -311,12 +313,14 @@ details.faq > div { padding: 0 14px 12px; }
 .teaser.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 118px; gap: 12px; align-items: center; }
 .teaser .teaserbild { align-self: center; }
 
-/* Produktseite: großes Produktbild, Galerie, Packshots in der Packungswahl */
-.produktbild .foto { aspect-ratio: 1 / 1; }
+/* Produktseite: großes Produktbild, Galerie, Packshots in der Packungswahl.
+   Mobil (< 900 px) niedriger (16 : 10, ganzes Bild sichtbar), damit Titel, Bewertung und der erste Preis bei 390 × 844
+   im ersten Bildschirm beginnen (Abnahme D06; 4 : 3 reichte nicht); ab 900 px quadratisch in der linken Spalte. */
+.produktbild .foto { aspect-ratio: 16 / 10; }
 .produktbild .foto .intern-bild { width: 100%; height: 100%; object-fit: contain; }
 .produktbild.mit-bild { margin-bottom: 10px; }
 .produktbild.mit-bild figcaption { font-size: 12px; line-height: 1.35; }
-.galerie { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0 0 18px; }
+.galerie { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0 0 10px; }
 .galerie button { display: block; padding: 0; aspect-ratio: 1 / 1; border: 2px solid var(--nebel); border-radius: 10px; background: var(--creme-hell); overflow: hidden; cursor: pointer; }
 .galerie button[aria-pressed="true"] { border: 3px solid var(--schwarz); }
 .galerie .intern-bild { width: 100%; height: 100%; object-fit: cover; }
@@ -348,22 +352,24 @@ details.faq > div { padding: 0 14px 12px; }
 /* Squad: Schriftzug, Coins im Kontostand, Level-Abzeichen in den Stufen */
 .squadlogo { margin: 14px 0 0; width: min(250px, 72%); }
 #stand.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 14px; align-items: center; }
-.coinsbild .intern-bild { border: 2px solid var(--schwarz); border-radius: 10px; }
+/* eine freigestellte Pixel-Münze (Neuzuschnitt D07), ohne Rahmen */
+.coinsbild { justify-self: center; width: 72px; }
 .stufe .bildplatz { width: min(54px, 100%); margin: 0 auto 6px; }
 .stufen.hat-intern-bild .s1 { min-height: 112px; } .stufen.hat-intern-bild .s2 { min-height: 138px; }
 .stufen.hat-intern-bild .s3 { min-height: 164px; } .stufen.hat-intern-bild .s4 { min-height: 190px; }
 
-/* Händlerseite: Regal im Kopf; Koffein-Check: eine Portion */
-.heldbild.banner { margin: 0 0 16px; }
+/* Händlerseite: Regal unter Code-Box und Knopf (erster Bildschirm bleibt frei für die Handlung); Koffein-Check: eine Portion */
+.heldbild.banner { margin: 18px 0 0; }
 .heldbild.banner .foto { aspect-ratio: 16 / 10; }
 .heldbild.banner .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .portion-zeile.mit-bild { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; align-items: center; margin: 0 0 14px; }
 .portion-zeile .bildplatz { border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 4px; }
 .portion-zeile figcaption { font-size: 15px; }
 
-/* Fuß: Bildnachweise der internen Fassung */
+/* Fuß: Bildnachweise der Fassung mit Bildern (Motiv fett davor) */
 .fuss .bildnachweise { margin: 6px 0 0; padding-left: 1.2em; color: #B9B0A0; font-size: 13px; }
 .fuss .bildnachweise li { margin-bottom: .25em; }
+.fuss .bildnachweise b { color: var(--creme); font-weight: 700; }
 
 /* ---------- Nächste Station und Fuß ---------- */
 .naechste { background: var(--gelb); border-top: 2px solid var(--schwarz); border-bottom: 2px solid var(--schwarz); padding: 20px 0; }
@@ -426,7 +432,7 @@ html.anmerkungen .nur-normal { display: none; }
   .kopf .nur-breit { display: inline; }
   .fakten { grid-template-columns: repeat(2, 1fr); }
   .bewertungen { grid-template-columns: repeat(3, 1fr); }
-  /* interne Bilder */
+  /* Fremdbilder */
   .skizze-reihe.hat-intern-bild { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
   .produktkarte a { grid-template-columns: 1fr; }
   .teaser.mit-bild { grid-template-columns: minmax(0, 1fr) 170px; gap: 20px; }
@@ -441,6 +447,9 @@ html.anmerkungen .nur-normal { display: none; }
   .platzhalter .flaeche { min-height: 360px; }
   .platzhalter .flaeche svg { width: min(260px, 70%); }
   .klebrig { position: sticky; top: 72px; }
+  .produktbild .foto { aspect-ratio: 1 / 1; }
+  /* Startseite: Knopftext mit Produkt-Tag ohne Umbruch (Abnahme D06) */
+  .knopf-tag { white-space: nowrap; }
   .fakten { grid-template-columns: repeat(4, 1fr); }
 }
 @media (prefers-reduced-motion: no-preference) {

@@ -25,16 +25,22 @@
   • Journey-Raster (04, 05, 06): Kacheln und Knoten tragen data-phase/data-zeile;
     js/folien/pfad.js setzt sie auf das Raster und zeichnet den Pfad aus den
     Kachelmitten (Daten im <script class="daten"> der Folie).
-  • Bilder der internen Fassung (LIESMICH §12): Kacheln und Bilder tragen
+  • Fassung mit Bildern (Standard, LIESMICH §12): Kacheln und Bilder tragen
     data-intern="<schlüssel>"; js/folien/intern-bilder.js setzt die Datei aus
-    intern/bilder.js ein (Ordner per .gitignore ausgeschlossen). Ohne intern/
-    (öffentliche Fassung, GitHub Pages) bleiben Platzhalter und Rückfälle.
+    fremdbilder/register.js ein. Die Fremdbilder (Screenshots, Werbe- und
+    Community-Bilder von HOLY, Logos der Vorbilder) liegen versioniert in
+    fremdbilder/ – veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht
+    kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+    Rückfall ohne Fremdbilder nur, wenn fremdbilder/register.js fehlt oder per
+    Schalter ?kacheln=rueckfall: dann bleiben Platzhalter und Rückfälle.
     Bildnachweis je Folie: <p class="p-bildquelle" hidden> (nur sichtbar, wenn
-    interne Bilder eingesetzt sind). Eigene Fotos ebenso nur nach intern/,
-    nie nach bilder/ (Gestaltungsplan 4, 11.5).
+    Fremdbilder eingesetzt sind). Die Namen data-intern*, window.INTERN_BILDER,
+    intern-bilder.js usw. stammen aus der Zeit vor der Freigabe (bis 03.11.2026:
+    „interne Fassung“ aus intern/) und bleiben aus technischen Gründen.
+    intern/ (ausgeschlossen) enthält nur noch Rohmaterial (intern/roh/ u. a.).
   • Prüfen (Anleitung LIESMICH.md §8, §12):
     node werkzeuge/pruefen.mjs index.html --ausgabe _test/pruefung --schritte
-    öffentliche Fassung zusätzlich mit --oeffentlich (sperrt intern/)
+    Rückfall ohne Fremdbilder zusätzlich mit --oeffentlich (sperrt fremdbilder/)
   • Engine (js/deck.js, js/komponenten.js, css/deck.css, css/komponenten.css,
     css/tokens.css) ist aus Fallstudie 1 unverändert übernommen – nicht ändern.
 -->
@@ -144,11 +150,12 @@
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 01 · Einstieg (gelbe Bühne) · Block A · Sollzeit 50 s · 2 Klicks (1 Schritt + weiter)
      ║ Gestaltung: css/folien/01-einstieg.css · Plan 5.1 Zeile 01, 9.1
-     ║ INTERNE FASSUNG (intern/bilder.js, D06): Kachel b01 zeigt das HOLY-Produktbild „Raspberry Raptor“ (Dose und
-     ║   Shaker, de.holy.com) – ein WERBEBILD von HOLY, kein eigenes Foto; Nachweis in der Bildquellzeile.
+     ║ FASSUNG MIT BILDERN (fremdbilder/register.js, D06): Kachel b01 zeigt das HOLY-Produktbild „Raspberry Raptor“
+     ║   (Dose und Shaker, de.holy.com) – ein WERBEBILD von HOLY, kein eigenes Foto; Nachweis in der Bildquellzeile.
      ║ OFFEN bis zum Vortrag:
-     ║ • Foto b01 (Hand mit selbst gekaufter Dose und Shaker vor gelbem Karton) fehlt → öffentlich data-status="offen";
-     ║   kommt es, data-intern="b01-titel" in bilder.js auf die eigene Datei umstellen und die Bildquellzeile ändern.
+     ║ • Foto b01 (Hand mit selbst gekaufter Dose und Shaker vor gelbem Karton) fehlt → im Rückfall ohne Fremdbilder
+     ║   data-status="offen"; kommt es, den Eintrag "b01-titel" in fremdbilder/register.js auf die eigene Datei
+     ║   umstellen und die Bildquellzeile ändern (eigene Fotos erst nach Sichtung durch die Gruppe veröffentlichen).
      ║ • Die echte Dose als Requisit mitbringen (Handzeichen-Trichter, 9.1).
      ║ Schritt 0: Frage mit drei Stufen (Trichter nach den 5 As, keine Zahlen) → Klick 1: Titel, Pfad startet.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -183,7 +190,7 @@
     <div class="p-platzhalter">
       <span class="p-kachel-art" data-meta>Foto b01 · eigenes Produktfoto</span>
       <span class="p-kachel-offen" data-meta>Hand mit selbst gekaufter Dose und Shaker vor gelbem Karton</span>
-      <span class="p-kachel-offen" data-meta><b>offen:</b> Foto aus dem Selbstversuch (nur aus intern/)</span>
+      <span class="p-kachel-offen" data-meta><b>offen:</b> Foto aus dem Selbstversuch</span>
     </div>
     <span class="p-bildlabel" data-meta>Produktbild von <span data-marke>HOLY</span> (Werbebild)</span>
   </figure>
@@ -196,7 +203,7 @@
     <p data-schritt="0">[Links neben der Leinwand, die gekaufte Dose in der Hand.] Bevor wir anfangen, eine kurze Frage an Sie – bitte per Handzeichen. Wer hat HOLY schon einmal gesehen, zum Beispiel in einem Video? … Wer hat schon einmal nachgelesen, was drin ist? … Und wer hat HOLY schon gekauft? … [Ergebnis frei nennen, z. B. „Viele haben es gesehen, kaum jemand gekauft.“ Melden sich keine Hände: „Bei uns war es genauso – gesehen ja, gekauft erst im Selbstversuch.“]</p>
     <p data-schritt="1">Genau dieser Weg vom Sehen über das Nachlesen bis zum Kauf ist eine Customer Journey: der Kaufentscheidungsprozess im zeitlichen Ablauf, mit allen Kontaktpunkten. Wir sind ihn mit unserer Persona Marco nachgegangen – und am Ende haben wir ihn neu gebaut.</p>
     <p>Ablauf: Timebox 30 s für die drei Handzeichen; ohne Hände die eigene Antwort nennen und weiterklicken (Gestaltungsplan 9.1). Auf der Folie stehen keine Zahlen; das Ergebnis greifen wir auf Folie 09 wieder auf. Die Stufen folgen den 5 As (AWARE → APPEAL/ASSURE → ACT, Stenger S. 109, Kotler et al. 2017 zit. n. Stenger; ✎ L07).</p>
-    <p>Belege: Definition „Kaufentscheidungsprozess des Kunden im zeitlichen Ablauf …“ Stenger S. 107 (Quelle dort: vgl. Bruhn 2016, S. 236; ✔ L01; welches Werk gemeint ist, ist unklar, ~ L02 – deshalb „zit. n. Stenger“). Offen: eigenes Foto b01 (Bildplan 4) – öffentlich Platzhalter; in der internen Fassung bis dahin das Produktbild „Raspberry Raptor“ von HOLY (Werbebild, im Bild und in der Bildquellzeile so gekennzeichnet; nicht als eigenes Foto ansprechen).</p>
+    <p>Belege: Definition „Kaufentscheidungsprozess des Kunden im zeitlichen Ablauf …“ Stenger S. 107 (Quelle dort: vgl. Bruhn 2016, S. 236; ✔ L01; welches Werk gemeint ist, ist unklar, ~ L02 – deshalb „zit. n. Stenger“). Offen: eigenes Foto b01 (Bildplan 4) – im Rückfall ohne Fremdbilder Platzhalter; in der Fassung mit Bildern bis dahin das Produktbild „Raspberry Raptor“ von HOLY (Werbebild, im Bild und in der Bildquellzeile so gekennzeichnet; nicht als eigenes Foto ansprechen).</p>
     <p>Rückfragen: „Ist das eine echte HOLY-Präsentation?“ → Nein, studentische Fallstudie, nicht im Auftrag von HOLY; Logo und Videobotschaft mit Einverständnis des Gründers (Fußzeile, B8).</p>
   </aside>
 </section>
@@ -204,8 +211,9 @@
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 02 · Persona Marco und Mediennutzung · Block A · Sollzeit 60 s · 2 Klicks · Laufleiste ohne aktiven Schritt
      ║ Gestaltung: css/folien/02-persona.css · Plan 5.1 Zeile 02
-     ║ INTERNE FASSUNG (D06): Kachel b04 zeigt ein SYMBOLBILD – Community-Foto von HOLY (Lokführer und Squad-Mitglied,
-     ║   Shaker im Führerstand bei Nacht, ohne Gesicht), im Bild als „Symbolbild … nicht Marco“ beschriftet.
+     ║ FASSUNG MIT BILDERN (D06): Kachel b04 zeigt ein SYMBOLBILD – Community-Foto von HOLY (Lokführer und Squad-
+     ║   Mitglied, Shaker im Führerstand bei Nacht, ohne Gesicht), im Bild beschriftet „Symbolbild Schichtarbeit –
+     ║   nicht Marco / (Lokführer aus der HOLY-Community)“ (zwei Zeilen, D07; Marco arbeitet im Lager, nicht im Zug).
      ║ OFFEN: eigenes Foto b04 (gestellte Szene „vor der Schicht“, ohne Person); zwei anonyme O-Töne aus den
      ║   Kurzinterviews (n = …) – erst nach den Interviews eintragen, sonst Platzhalter lassen (keine erfundenen Zitate).
      ║ Statista-Werte NUR wie in ../../fallstudie-1-brand-persona/persona-daten.md (✔ P94).
@@ -223,7 +231,7 @@
       <span class="p-kachel-offen" data-meta>„Vor der Schicht“: Spind, Warnweste, Shaker auf der Bank – ohne Person</span>
       <span class="p-kachel-offen" data-meta><b>offen:</b> eigenes Foto</span>
     </div>
-    <span class="p-bildlabel e2-label" data-meta>Symbolbild: Nachtschicht mit Shaker – nicht Marco</span>
+    <span class="p-bildlabel e2-label" data-meta>Symbolbild Schichtarbeit – nicht Marco<br>(Lokführer aus der <span data-marke>HOLY</span>-Community)</span>
   </figure>
 
   <div class="e2-persona">
@@ -261,23 +269,25 @@
   <aside class="notizen">
     <p data-schritt="0">Unser Blickwinkel bleibt Marco aus Fallstudie 1: 28, Fachkraft im Lager, Drei-Schicht-Betrieb – eine fiktive Persona. Laut Steckbrief kauft er HOLY online, die 50er-Pulverdose auf Vorrat; nur im Notfall bei Rewe oder Edeka. Bevor er Neues kauft, liest er Bewertungen und schaut YouTube. Das passt zu den Daten seiner Kategorie: Wer regelmäßig Energy Drinks trinkt, nutzt zu 73 Prozent YouTube, zu 71 Instagram und zu 58 TikTok – jeweils deutlich mehr als der Durchschnitt.</p>
     <p data-schritt="1">Und wenn Marco etwas wissen will? 92 Prozent der 14- bis 29-Jährigen nutzen jede Woche eine Suchmaschine, 68 Prozent schon KI-Tools. Gekauft wird am Handy: 61 Prozent der Onlineumsätze laufen über das Smartphone. Daraus folgt unser zentraler Weg: Video, Suche, Shop.</p>
-    <p>Belege: Persona `fallstudie-1-brand-persona/persona-steckbrief.md` (fiktiv; Kaufverhalten wörtlich). Statista Consumer Insights 2025, Energy-Drink-Konsument:innen, „regelmäßig genutzt“, nur die Werte aus `persona-daten.md` (✔ P94; Kategorie, nicht HOLY). ARD/ZDF-Medienstudie 2026, 14–29 Jahre, mindestens wöchentlich: Suchmaschinen 92 %, KI-Tools 68 % (✔ P18), Social Media 91 % (✔ P11). Smartphone 61 % der Onlineumsätze 2025 (✔ P25). Mediennutzung und Kaufverhalten gehören in die Persona (Stenger S. 60, 67, 128; ✔ P01). Basen nicht mischen: zwei getrennte Gruppen. Limbic-Territorium: Hypothese (H P07), ausführlich in B7. Offen: zwei anonyme O-Töne aus den Kurzinterviews zur Leitfrage „Wo zuerst gesehen, wo informiert, wo gekauft?“ (Fraunces kursiv, Kürzel I1 …; keine erfundenen Zitate) und eigenes Foto b04 – in der internen Fassung steht bis dahin ein Symbolbild (Community-Foto von HOLY, ein Lokführer im Squad, nicht Marco; so im Bild beschriftet).</p>
+    <p>Belege: Persona `fallstudie-1-brand-persona/persona-steckbrief.md` (fiktiv; Kaufverhalten wörtlich). Statista Consumer Insights 2025, Energy-Drink-Konsument:innen, „regelmäßig genutzt“, nur die Werte aus `persona-daten.md` (✔ P94; Kategorie, nicht HOLY). ARD/ZDF-Medienstudie 2026, 14–29 Jahre, mindestens wöchentlich: Suchmaschinen 92 %, KI-Tools 68 % (✔ P18), Social Media 91 % (✔ P11). Smartphone 61 % der Onlineumsätze 2025 (✔ P25). Mediennutzung und Kaufverhalten gehören in die Persona (Stenger S. 60, 67, 128; ✔ P01). Basen nicht mischen: zwei getrennte Gruppen. Limbic-Territorium: Hypothese (H P07), ausführlich in B7. Offen: zwei anonyme O-Töne aus den Kurzinterviews zur Leitfrage „Wo zuerst gesehen, wo informiert, wo gekauft?“ (Fraunces kursiv, Kürzel I1 …; keine erfundenen Zitate) und eigenes Foto b04 – in der Fassung mit Bildern steht bis dahin ein Symbolbild (Community-Foto von HOLY, ein Lokführer im Squad, nicht Marco; so im Bild beschriftet).</p>
     <p>Kürzung 1 (Kontrollpunkt nach 03 überschritten): Mediennutzung nur zeigen, nur den Marker 92 % und den Kaufkanal erklären, −15 s (Plan 10.2).</p>
-    <p>Rückfragen: „Passt die Persona?“ / „Warum online?“ → B7. „Wie viele Interviews?“ → B5 (offen).</p>
+    <p>Rückfragen: „Passt die Persona?“ / „Warum online?“ → B7. „Wie viele Interviews?“ → B5 (offen). „Ist Marco Lokführer?“ → Nein: Marco ist fiktiv (FS1) und arbeitet im Lager im Drei-Schicht-Betrieb; das Bild ist nur ein Symbolbild für Schichtarbeit – ein Lokführer aus der HOLY-Community, ohne Gesicht.</p>
   </aside>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 03 · A1 IST-Analyse mit Bewertung je Phase · Block A · Sollzeit 80 s · 3 Klicks · Laufleiste Schritt 1
      ║ Gestaltung: css/folien/03-ist-analyse.css · Plan 5.1 Zeile 03, Abschnitt 8
-     ║ INTERNE FASSUNG (D06): neun Kacheln zeigen echte Touchpoints – Screenshots (Shop, Blog, Rewards, Suche,
+     ║ FASSUNG MIT BILDERN (D06): neun Kacheln zeigen echte Touchpoints – Screenshots (Shop, Blog, Rewards, Suche,
      ║   Trustpilot, 03.11.2026), Werbe-/Community-Bilder von HOLY, Vorschaubild eines Creator-Shorts, Regalfoto der
-     ║   Lebensmittel Zeitung. Herkunft je Bild: intern/bilder.js und Bildquellzeile; keine eigenen Fotos der Gruppe.
-     ║   Umbau 03.11.: Kacheln 258 × 122 (vorher 190 × 90), Zählung vor jedem Band, Proben im freien Teil des Bands Paid.
+     ║   Lebensmittel Zeitung. Herkunft je Bild: fremdbilder/register.js und Bildquellzeile; keine eigenen Fotos der
+     ║   Gruppe. Umbau 03.11.: Kacheln 258 × 122 (vorher 190 × 90), Zählung vor jedem Band, Proben im freien Teil des
+     ║   Bands Paid. D07: Blog-Kachel mit Beschriftung „Blog: 0 Beiträge“ (✔ M01, ✔ L39), Dose & Shaker neu zugeschnitten
+     ║   (Beschriftung auf freier Fläche), „Tipp unter Kollegen“ in der Fassung mit Bildern als ruhige Leerstelle.
      ║ OFFEN: eigene Fotos aus dem Selbstversuch (b05, b08–b11, b06, b01); Kachel „Tipp unter Kollegen“ (kein Bild,
      ║   Mundpropaganda zeigt kein Fremdbild ehrlich); Bildgröße nach den Nennungen in den Kurzinterviews (bis dahin
      ║   gleich groß); Codierung der Bewertungen (R2) – bis dahin stützen ~ B20/~ B21 nur die Bewertungszeile.
-     ║ Öffentliche Fassung: Blog als eigene Textgrafik (Rückfall b19): „/blogs/news · 0 Beiträge“ (✔ M01, ✔ L39).
+     ║ Rückfall ohne Fremdbilder: Blog als eigene Textgrafik (b19): „/blogs/news · 0 Beiträge“ (✔ M01, ✔ L39).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f03" data-titel="A1 IST-Analyse und Bewertung" data-zeit="80" data-buendel="A" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="1">
   <header class="p-kopf">
@@ -286,7 +296,7 @@
   </header>
 
   <!-- Moodboard in drei Bändern Paid · Owned · Earned (Stenger S. 112). Vor jedem Band erscheint mit Klick 1 die
-       Zählung nach dem Muster Intersport (S. 113, Zuordnung H). data-intern = Bild der internen Fassung (intern/bilder.js);
+       Zählung nach dem Muster Intersport (S. 113, Zuordnung H). data-intern = Fremdbild aus fremdbilder/register.js;
        p-bildlabel = Beschriftung im Bild, nur sichtbar, wenn ein Bild da ist (selbsterklärende Screenshots ohne). -->
   <div class="e3-band e3-band--paid">
     <p class="e3-zahl" data-schritt="1"><span class="e3-zahl-wert">13</span></p>
@@ -298,7 +308,7 @@
     <p class="e3-zahl" data-schritt="1"><span class="e3-zahl-wert">30</span></p>
     <p class="e3-band-name">Owned</p>
     <figure class="p-kachel e3-k" data-status="offen" data-art="screenshot" data-intern="m03-starterset"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Shop: Starter Set</span> <span class="p-kachel-offen" data-meta>offen</span></div><span class="p-bildlabel" data-meta>Shop: Starter Set</span></figure>
-    <figure class="p-kachel e3-k e3-k--blog" data-status="rueckfall" data-art="grafik" data-intern="m03-blog"><div class="p-rueckfall"><span class="e3-blog-null">0 Beiträge</span><span class="e3-blog-pfad" data-meta>Blog /blogs/news</span></div></figure>
+    <figure class="p-kachel e3-k e3-k--blog" data-status="rueckfall" data-art="grafik" data-intern="m03-blog"><div class="p-rueckfall"><span class="e3-blog-null">0 Beiträge</span><span class="e3-blog-pfad" data-meta>Blog /blogs/news</span></div><span class="p-bildlabel" data-meta>Blog: 0 Beiträge</span></figure>
     <figure class="p-kachel e3-k" data-status="offen" data-art="foto" data-intern="m03-unboxing"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Paket &amp; Unboxing</span> <span class="p-kachel-offen" data-meta>offen</span></div><span class="p-bildlabel" data-meta>Paket &amp; Unboxing</span></figure>
     <figure class="p-kachel e3-k" data-status="offen" data-art="foto" data-intern="m03-dose-shaker"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Dose &amp; Shaker</span> <span class="p-kachel-offen" data-meta>offen</span></div><span class="p-bildlabel" data-meta>Dose &amp; Shaker</span></figure>
     <figure class="p-kachel e3-k" data-status="offen" data-art="screenshot" data-intern="m03-squad"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>SQUAD Rewards</span> <span class="p-kachel-offen" data-meta>offen</span></div></figure>
@@ -308,7 +318,7 @@
     <p class="e3-band-name">Earned</p>
     <figure class="p-kachel e3-k" data-status="offen" data-art="screenshot" data-intern="m03-suche"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>eigene Suche</span> <span class="p-kachel-offen" data-meta>offen</span></div><span class="p-bildlabel" data-meta>eigene Suche</span></figure>
     <figure class="p-kachel e3-k" data-status="offen" data-art="screenshot" data-intern="m03-bewertungen"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Bewertungen</span> <span class="p-kachel-offen" data-meta>offen</span></div></figure>
-    <figure class="p-kachel e3-k" data-status="offen" data-art="foto"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Tipp unter Kollegen</span> <span class="p-kachel-offen" data-meta>offen</span></div></figure>
+    <figure class="p-kachel e3-k e3-k--tipp" data-status="offen" data-art="foto"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Tipp unter Kollegen</span> <span class="p-kachel-offen" data-meta>offen</span></div></figure>
   </div>
   <p class="p-notiz e3-fehlen" data-schritt="1">3 Owned fehlen: Blog, Filialenfinder, App</p>
   <p class="e3-legende" data-meta data-schritt="1">Bildgröße = Nennungen in Kurzinterviews (n&nbsp;=&nbsp;…): <b>offen</b>, bis dahin gleich groß · Codierung der Bewertungen: <b>offen</b></p>
@@ -345,7 +355,7 @@
     <p data-schritt="0">Schritt eins im Prozess von Seite 111: Transparenz schaffen. Wir haben alle Kontaktpunkte von HOLY erfasst und wie die Intersport-Liste nach Paid, Owned und Earned sortiert. Bezahlt sind vor allem Creator mit Rabattcode und das Regal. Eigene Kanäle hat HOLY viele: Shop, Help-Center, Rewards, Pakete.</p>
     <p data-schritt="1">Dazu kommt, was andere über HOLY sagen: Suchtreffer, Bewertungen, Empfehlungen. Gezählt sind das 13 Paid, 30 Owned und 11 Earned – drei Owned-Kanäle fehlen ganz: Blog, Filialenfinder, App. Unten der Auftritt: Gelb, Creme, Schwarz, dicke Konturen.</p>
     <p data-schritt="2">Und wie gut ist das? Je Phase prüfen wir gegen die Zielfrage der fünf As. Aufmerksamkeit erzeugen Creator-Codes – manche finden die Werbung aufdringlich. In der Recherche steht das Help-Center vorn, aber knapp und oft nur als Etikettbild – die schwächste Stelle. Bewertungen sind stark, der Preis wird aber erst mit Code akzeptabel. Beim Kauf rechnet Mix &amp; Match automatisch, doch es gibt drei Lieferzeiten. Nach dem Kauf wird der Service gelobt – und genau dort ballt sich die Kritik.</p>
-    <p>Belege: Inventur Dossier 4.1/4.2 (13 Paid, 30 Owned davon 3 fehlend, 11 Earned; Zuordnung H; Intersport-Muster S. 113, ✎ L14; Kategorien S. 112, ✔ L12; Paid/Owned/Earned in der Vorlesung uneinheitlich, ✔ L13). Blog leer (✔ M01, ✔ L39). Bewertung: Creator-Codes ✔ T02, „aufdringlich“ ~ B21 (Agenten-Stichprobe, eine Person codiert); Help-Center vorn ✎ S10 / ~ S91, knapp ✔ S27, nur Etikettbild ✎ S31; Bewertungen 4,7 ✔ T17, Preis nur mit Code ✔ B10; Mix &amp; Match ✔ T22, drei Lieferzeiten ✔ B91; Service gelobt ~ B20, Kritik nach Kauf H B25. Farben ✎ G06, ✔ G07, ✔ G91; Formen ✎ G10. Die Agenten-Stichproben ersetzt die eigene Codierung, sobald sie vorliegt (R2).</p>
+    <p>Belege: Inventur Dossier 4.1/4.2 (13 Paid, 30 Owned davon 3 fehlend, 11 Earned; Zuordnung H; Intersport-Muster S. 113, ✎ L14; Kategorien S. 112, ✔ L12; Paid/Owned/Earned in der Vorlesung uneinheitlich, ✔ L13). Der Blog ist leer (0 Beiträge; ✔ M01, ✔ L39). Bewertung: Creator-Codes ✔ T02, „aufdringlich“ ~ B21 (Agenten-Stichprobe, eine Person codiert); Help-Center vorn ✎ S10 / ~ S91, knapp ✔ S27, nur Etikettbild ✎ S31; Bewertungen 4,7 ✔ T17, Preis nur mit Code ✔ B10; Mix &amp; Match ✔ T22, drei Lieferzeiten ✔ B91; Service gelobt ~ B20, Kritik nach Kauf H B25. Farben ✎ G06, ✔ G07, ✔ G91; Formen ✎ G10. Die Agenten-Stichproben ersetzt die eigene Codierung, sobald sie vorliegt (R2).</p>
     <p>Kürzung 4: Farbproben nur zeigen, −10 s (Plan 10.2). Der Marker liegt auf dem Minus der Recherche – Überleitung zu Folie 04/05.</p>
     <p>Rückfragen: „Welche Touchpoints gibt es?“ → B3. „Wie habt ihr bewertet?“ → Maßstab Zielfrage S. 109; Belege B8.</p>
   </aside>
@@ -354,9 +364,10 @@
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 04 · A2 Journey-Map IST mit „Zentraler Weg (IST)“ · Block B · Sollzeit 80 s · 3 Klicks · Laufleiste Schritt 2
      ║ Gestaltung: css/folien/04-journey-map.css · Pfad: js/folien/pfad.js · Plan 5.1 Zeile 04, Abschnitt 6
-     ║ INTERNE FASSUNG (D06): K1–K6 zeigen die echten Touchpoints (Creator-Short mit Code, Suchtreffer, Produktseite
+     ║ FASSUNG MIT BILDERN (D06): K1–K6 zeigen die echten Touchpoints (Creator-Short mit Code, Suchtreffer, Produktseite
      ║   Starter Set, Regalfoto der Lebensmittel Zeitung, Community-Foto Unboxing, Rewards-Seite) – Screenshots vom
-     ║   03.11.2026 und Fremdbilder, KEINE eigenen Fotos; Herkunft in der Bildquellzeile und in intern/bilder.js.
+     ║   03.11.2026 und Fremdbilder, KEINE eigenen Fotos; Herkunft in der Bildquellzeile und in fremdbilder/register.js.
+     ║   D07: Sprechtext zu Klick 1 „Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“ (✔ M01, ✔ L39).
      ║ OFFEN: eigene Fotos/Screenshots K1–K6 (b05, b06, b08, b09, b10, b11) aus dem Selbstversuch; Datum in der Herleitung.
      ║ KACHELN 232 × 130 (Umbau 03.11., D06; vorher 200 × 112, Plan 6.2 Nr. 1: 240 × 135): Zeilen 82 px, K4 mit Namen
      ║   ÜBER der Kachel (sonst stößt er an K5), K6 um 20 px nach links (data-dx, Pfeilspitze bleibt sichtbar),
@@ -423,13 +434,13 @@
 
   <p class="p-quelle" data-meta>Stenger S. 108 f., 116 · Persona FS1 (fiktiv) · ✔ T02 T20 T22 T32 B01 B03 P24 B15 · ✎ T28 · Weg: H L05</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
-  <p class="p-bildquelle" data-meta hidden>Bilder: YouTube-Short nonstopniels · Screenshots Startpage, de.holy.com (03.11.2026) · Foto Lebensmittel Zeitung · Community-Foto <span data-marke>HOLY</span></p>
+  <p class="p-bildquelle" data-meta hidden>Bilder: YouTube-Short nonstopniels · Screenshots Startpage, de.holy.com (03.11.2026) · Foto Lebensmittel Zeitung · Community-Foto <span data-marke>HOLY</span> (Symbolbild, nicht Marco)</p>
 
   <aside class="notizen">
     <p data-schritt="0">Schritt zwei: Kundenperspektive verstehen. Das ist unsere Journey-Map – oben die fünf Phasen mit den fünf As, links die Touchpoints nach Paid, Owned und Earned. Marcos Weg beginnt hier oben: beim Creator-Video mit Rabattcode.</p>
-    <p data-schritt="1">Der Code macht neugierig – Marco sucht selbst nach HOLY und landet auf der Produktseite, beim Starter Set. Dazwischen, wo eine eigene Antwortseite stehen könnte, ist bei HOLY nichts: Einen Blog gibt es nicht.</p>
+    <p data-schritt="1">Der Code macht neugierig – Marco sucht selbst nach HOLY und landet auf der Produktseite, beim Starter Set. Dazwischen, wo eine eigene Antwortseite stehen könnte, ist bei HOLY nichts: Der Blog ist leer (0 Beiträge).</p>
     <p data-schritt="2">Er bestellt online, das Paket kommt, er packt aus und landet in den SQUAD Rewards. Das ist der zentrale Weg im IST – zentral, weil Marco laut Persona online auf Vorrat kauft und bei HOLY Starter Sets, Mix &amp; Match und Rewards am Onlinekonto hängen. Der Handel ist nur ein Nebenweg für den Notkauf: vom Video direkt ins Regal, ohne Recherche – und vom Regal führt kein Weg in den Squad.</p>
-    <p>Belege: Creator-Programm ab 18 mit Codes und 41 Landingpages ✔ T02; Starter Sets, Probier-Boxen, 1 Portion ✔ T20; Mix &amp; Match mit Shaker zur ersten Dose ✔ T22; SQUAD Rewards ✔ T32. Leerstelle: kein Blog ✔ L39. Online-Weg zentral: Persona (fiktiv); Lebensmittel online nur 2,7 % ✔ P24 – für HOLY ist der Shop der eigene Hauptweg; unter den neuesten REVIEWS.io-Bewertungen tragen alle eine Bestellnummer ✔ B15 (Deutung H). Kanalanteile von HOLY kennen wir nicht (Frage an HOLY und den Gründer, Plan 13.3). Nebenweg: kein Store-Locator ✔ B01 / ✎ T28, Cashback mit Bon-Foto, IBAN, Pflichtfragen ✔ B03; „Immer alle Phasen?“ (S. 108) – Recherche übersprungen bei Gewohnheit, H L05. Bildsprache wie das Fallbeispiel Armbanduhr mit „Lieferung/Unboxing“ (S. 116, ✔ L15). Zeilen verdichtet gegenüber S. 129 (Zuordnung in B8). Bilder der internen Fassung: echte Touchpoints von HOLY und Dritten (Screenshots 03.11.2026, Werbe- und Community-Bilder) – nicht als unsere Fotos ansprechen; der Selbstversuch mit eigenen Fotos ist offen.</p>
+    <p>Belege: Creator-Programm ab 18 mit Codes und 41 Landingpages ✔ T02; Starter Sets, Probier-Boxen, 1 Portion ✔ T20; Mix &amp; Match mit Shaker zur ersten Dose ✔ T22; SQUAD Rewards ✔ T32. Leerstelle: Der Blog ist leer (0 Beiträge; ✔ L39, ✔ M01). Online-Weg zentral: Persona (fiktiv); Lebensmittel online nur 2,7 % ✔ P24 – für HOLY ist der Shop der eigene Hauptweg; unter den neuesten REVIEWS.io-Bewertungen tragen alle eine Bestellnummer ✔ B15 (Deutung H). Kanalanteile von HOLY kennen wir nicht (Frage an HOLY und den Gründer, Plan 13.3). Nebenweg: kein Store-Locator ✔ B01 / ✎ T28, Cashback mit Bon-Foto, IBAN, Pflichtfragen ✔ B03; „Immer alle Phasen?“ (S. 108) – Recherche übersprungen bei Gewohnheit, H L05. Bildsprache wie das Fallbeispiel Armbanduhr mit „Lieferung/Unboxing“ (S. 116, ✔ L15). Zeilen verdichtet gegenüber S. 129 (Zuordnung in B8). Bilder der Fassung mit Bildern: echte Touchpoints von HOLY und Dritten (Screenshots 03.11.2026, Werbe- und Community-Bilder; veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17) – nicht als unsere Fotos ansprechen; der Selbstversuch mit eigenen Fotos ist offen.</p>
     <p>Zeigen: Station für Station mit offener Hand, links neben der Leinwand; am Ende in einem Satz, warum der Online-Weg zentral ist.</p>
     <p>Rückfragen: „Warum ist der Online-Weg zentral, nicht der Handel?“ → B7, B4. „Wie habt ihr das erhoben?“ → B1.</p>
   </aside>
@@ -460,8 +471,10 @@
      ║ Gestaltung: css/folien/05-ueberleitungen.css · Pfad: js/folien/pfad.js · Plan 5.1 Zeile 05, Abschnitt 6.7
      ║ OFFEN: Urteile sind VORLÄUFIG (H) bis zum Übergangsprotokoll im Selbstversuch (b20, B1; Datenschluss Fr 06.11.).
      ║   Widerlegt der Selbstversuch ein Urteil, Wort, Brückenform und Titel ändern (Plan 12, „nicht schönreden“).
-     ║   Stationskacheln: öffentlich Platzhalter wie auf 04; intern dieselben Touchpoint-Bilder wie auf 04 (eigener
-     ║   Zuschnitt 320 × 180), Kacheln 200 × 112 (Umbau 03.11., D06; vorher 160 × 90), Name als Beschriftung im Bild.
+     ║   Stationskacheln: im Rückfall ohne Fremdbilder Platzhalter wie auf 04; in der Fassung mit Bildern dieselben
+     ║   Touchpoint-Bilder wie auf 04 (eigener Zuschnitt 320 × 180), Kacheln 200 × 112 (Umbau 03.11., D06; vorher
+     ║   160 × 90), Name als Beschriftung im Bild – außer K6: dort zeigt das Bild selbst „SQUAD REWARDS“, ein Band
+     ║   „Squad“ verdeckte die Überschrift der Seite (D07).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f05" data-titel="A3 Überleitungen im IST" data-zeit="95" data-buendel="B" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="2">
   <header class="p-kopf">
@@ -483,7 +496,7 @@
     <figure class="p-kachel e5-k" data-id="k2" data-phase="2" data-zeile="1" data-status="offen" data-art="screenshot" data-intern="k2-suche-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>eigene Suche</span></div><span class="p-bildlabel" data-meta>eigene Suche</span></figure>
     <figure class="p-kachel e5-k" data-id="k3" data-phase="3" data-zeile="1" data-status="offen" data-art="screenshot" data-intern="k3-produktseite-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Produkt&shy;seite</span></div><span class="p-bildlabel" data-meta>Produktseite</span></figure>
     <figure class="p-kachel e5-k" data-id="k5" data-phase="4" data-zeile="1" data-status="offen" data-art="foto" data-intern="k5-unboxing-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Unboxing</span></div><span class="p-bildlabel" data-meta>Unboxing</span></figure>
-    <figure class="p-kachel e5-k" data-id="k6" data-phase="5" data-zeile="1" data-status="offen" data-art="screenshot" data-intern="k6-squad-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Squad</span></div><span class="p-bildlabel" data-meta>Squad</span></figure>
+    <figure class="p-kachel e5-k" data-id="k6" data-phase="5" data-zeile="1" data-status="offen" data-art="screenshot" data-intern="k6-squad-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Squad</span></div></figure>
 
     <!-- Urteile an den Brücken: Wort und Form, nie nur Farbe (3.6) -->
     <div class="e5-urteil e5-urteil--oben e5-u1" data-schritt="1" data-animation="hoch">
@@ -514,7 +527,7 @@
 
   <p class="p-quelle" data-meta>Stenger S. 108 f., 111 · ✔ T02 L34 S27 B10 B91 T30 · ✎ S31 S28 T18 T31 · ~ S91 B21 · Urteile vorläufig (H)</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
-  <p class="p-bildquelle" data-meta hidden>Bilder wie Folie 04: YouTube-Short nonstopniels · Screenshots Startpage, de.holy.com (03.11.2026) · Community-Foto <span data-marke>HOLY</span></p>
+  <p class="p-bildquelle" data-meta hidden>Bilder wie Folie 04: YouTube-Short nonstopniels · Screenshots Startpage, de.holy.com (03.11.2026) · Community-Foto <span data-marke>HOLY</span> (Symbolbild, nicht Marco)</p>
 
   <aside class="notizen">
     <p data-schritt="0">Aufgabe drei: die Überleitungen. Wir schauen auf die vier Übergänge zwischen Marcos Stationen. Unser Maßstab: Eine Überleitung trägt, wenn der nächste Schritt angeschlossen ist. Sie wackelt bei Umwegen oder widersprüchlichen Angaben. Und sie bricht, wenn die Antwort fehlt, wo Marco entscheidet. Die Urteile sind vorläufig – unser Selbstversuch bestätigt oder ändert sie.</p>
@@ -640,11 +653,13 @@
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 07 · A5 Best Practices + A6 Maßnahmen · Block C · Sollzeit 90 s · 2 Klicks · Laufleiste Schritt 4
      ║ Gestaltung: css/folien/07-best-practice.css · Plan 5.1 Zeile 07 · Fälle: Dossier Kap. 7a (X01–X17)
-     ║ Je Phase EIN Vorbild (die übrigen Fälle stehen in B6). Öffentliche Fassung: nur Text (b21, keine fremden Logos
-     ║   oder Screenshots). INTERNE FASSUNG (D06): je Zeile ein kleines Bild des Vorbilds (144 × 81, data-status="aus" =
-     ║   gibt es nur intern) und das Logo des Unternehmens statt des fett gesetzten Namens (.e7-marke); Herkunft in der
-     ║   Bildquellzeile und in intern/bilder.js. X12 OTTO: Werbefoto der Serviceseite „Lieferung“, nicht die Lieferzeit am
-     ║   Artikel (der Satz steht auf derselben Seite, nicht im Bild; Produktseite wegen Bot-Schutz nicht aufgenommen).
+     ║ Je Phase EIN Vorbild (die übrigen Fälle stehen in B6). Rückfall ohne Fremdbilder: nur Text (b21, Name fett).
+     ║   FASSUNG MIT BILDERN: das Logo des Unternehmens statt des fett gesetzten Namens (.e7-marke), einfarbig dunkel,
+     ║   je Logo eigene Höhe (07-best-practice.css); Herkunft in der Bildquellzeile und in fremdbilder/register.js.
+     ║   D07 (03.11.2026): die sechs kleinen Bilder der Vorbilder (144 × 81, D06) sind entfernt – zu klein zum Lesen, die
+     ║   Folie wurde unruhig. Sie bleiben in fremdbilder/ (Schlüssel v07-…), stehen aber auf keiner Folie: Auf B6 ist
+     ║   neben der Tabelle kein Platz für sechs Bilder in mindestens 360 × 203. v07-otto ist seit D07 der Textausschnitt
+     ║   der OTTO-Serviceseite mit dem Satz „Die Lieferzeit zeigen wir dir … direkt am jeweiligen Artikel an.“
      ║ OFFEN: Handskizze b15 (QR-Brücke) für die Nebenweg-Zeile – eigene Zeichnung, das Pampers-Bild ersetzt sie nicht.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f07" data-titel="A5 + A6 Best Practice → Maßnahme" data-zeit="90" data-buendel="C" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="4">
@@ -659,32 +674,32 @@
     </div>
     <div class="e7-zeile">
       <p class="e7-phase">Inspiration <span class="e7-ue" data-meta>Ü1</span></p>
-      <div class="e7-vorbild"><figure class="p-kachel e7-bild" data-status="aus" data-art="screenshot" data-intern="v07-youtube"></figure><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-youtube"><span class="e7-marke-name">YouTube</span></span> Shopping</b> (Handel): Tipp im Video führt direkt zum Produkt</p></div>
+      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-youtube"><span class="e7-marke-name">YouTube</span></span> Shopping</b> (Handel): Tipp im Video führt direkt zum Produkt</p></div>
       <p class="e7-massnahme">Code-Landingpage mit zwei Wegen, „Werbung“ sichtbar</p>
     </div>
     <div class="e7-zeile e7-zeile--bruch">
       <p class="e7-phase">Recherche <span class="e7-ue" data-meta>Ü2</span></p>
-      <div class="e7-vorbild"><figure class="p-kachel e7-bild" data-status="aus" data-art="screenshot" data-intern="v07-apple"></figure><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-apple"><span class="e7-marke-name">Apple</span></span></b> (Elektronik): heikle Frage selbst beantwortet, als Text</p></div>
+      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-apple"><span class="e7-marke-name">Apple</span></span></b> (Elektronik): heikle Frage selbst beantwortet, als Text</p></div>
       <p class="e7-massnahme"><span class="p-marker">Koffein-Check als Text, verlinkt aus Help-Center und KI-Dateien</span></p>
     </div>
     <div class="e7-zeile" data-schritt="1" data-animation="hoch">
       <p class="e7-phase">Entscheidung <span class="e7-ue" data-meta>Ü2/Ü3</span></p>
-      <div class="e7-vorbild"><figure class="p-kachel e7-bild" data-status="aus" data-art="screenshot" data-intern="v07-zooplus"></figure><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-zooplus"><span class="e7-marke-name">zooplus</span></span></b> (Heimtierbedarf): Grundpreis neben jedem Preis</p></div>
+      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-zooplus"><span class="e7-marke-name">zooplus</span></span></b> (Heimtierbedarf): Grundpreis neben jedem Preis</p></div>
       <p class="e7-massnahme">Preis je Portion ohne Code, eine Garantie</p>
     </div>
     <div class="e7-zeile" data-schritt="1" data-animation="hoch">
       <p class="e7-phase">Kauf <span class="e7-ue" data-meta>Ü3</span></p>
-      <div class="e7-vorbild"><figure class="p-kachel e7-bild" data-status="aus" data-art="foto" data-intern="v07-otto"></figure><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-otto"><span class="e7-marke-name">OTTO</span></span></b> (Versandhandel): Lieferzeit schon am Artikel</p></div>
+      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-otto"><span class="e7-marke-name">OTTO</span></span></b> (Versandhandel): Lieferzeit schon am Artikel</p></div>
       <p class="e7-massnahme">ein Liefertermin, Endpreis vor dem Bezahlen</p>
     </div>
     <div class="e7-zeile" data-schritt="1" data-animation="hoch">
       <p class="e7-phase">Bindung <span class="e7-ue" data-meta>Ü4</span></p>
-      <div class="e7-vorbild"><figure class="p-kachel e7-bild" data-status="aus" data-art="foto" data-intern="v07-philips"></figure><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-philips"><span class="e7-marke-name">Philips</span></span></b> (Zahnbürsten): Erinnerung nach Verbrauch</p></div>
+      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-philips"><span class="e7-marke-name">Philips</span></span></b> (Zahnbürsten): Erinnerung nach Verbrauch</p></div>
       <p class="e7-massnahme">Willkommensseite mit Squad, Nachfüll-Erinnerung als Opt-in</p>
     </div>
     <div class="e7-zeile e7-zeile--neben" data-schritt="1" data-animation="hoch">
       <p class="e7-phase">Nebenweg <span class="e7-ue" data-meta>Handel</span></p>
-      <div class="e7-vorbild"><figure class="p-kachel e7-bild" data-status="aus" data-art="foto" data-intern="v07-pampers"></figure><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-pampers"><span class="e7-marke-name">Pampers</span></span> Club</b> (Drogerie): Code in der Packung</p></div>
+      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-pampers"><span class="e7-marke-name">Pampers</span></span> Club</b> (Drogerie): Code in der Packung</p></div>
       <p class="e7-massnahme">QR-Brücke vom Regal in den Squad (B4)</p>
       <figure class="p-kachel e7-skizze" data-status="offen" data-art="foto" data-bild="b15"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Skizze b15</span> <span class="p-kachel-offen" data-meta>offen</span></div></figure>
     </div>
@@ -692,7 +707,7 @@
 
   <p class="p-quelle" data-meta>Stenger S. 111, 117–119 · Dossier 7a: ✔ X01 X04 X08 X12 X14 · ✎ X16 · Maßnahmen: H · alle Fälle in B6</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
-  <p class="p-bildquelle" data-meta hidden>Bilder und Logos: YouTube, Apple, zooplus, OTTO (Serviceseite Lieferung), Philips, Pampers Club (P&amp;G) · Screenshots, Abruf 03.11.2026</p>
+  <p class="p-bildquelle" data-meta hidden>Logos: YouTube, Apple, zooplus, OTTO, Philips, Pampers (P&amp;G) · einfarbig, nur zur Kennzeichnung der Vorbilder · Abruf 03.11.2026</p>
 
   <aside class="notizen">
     <p data-schritt="0">Schritt vier: Kundenerlebnis verbessern. Für jeden Top-Touchpoint haben wir ein Vorbild gesucht – bewusst aus anderen Branchen, öffentlich belegt und mit demselben Bruch. Inspiration: Bei YouTube Shopping führt ein Tipp im Video direkt zum Produkt, etwa bei MediaMarktSaturn oder OTTO. Für HOLY heißt das: eine Code-Landingpage mit zwei klaren Wegen, und die Werbung ist gekennzeichnet. Recherche, die gebrochene Stelle: Apple hat die heikle Frage nach Akku und Leistung selbst beantwortet, auf einer eigenen Textseite. Unsere Maßnahme: der Koffein-Check als Text, verlinkt aus Help-Center und KI-Dateien.</p>
@@ -700,18 +715,18 @@
     <p>Belege (Dossier 7a, Websuche durch Unteragenten, Abruf 03.11.2026, an den Quellen gegengeprüft): ✔ X01 YouTube-Shopping-Affiliate mit MediaMarktSaturn, OTTO u. a. (Unternehmensangabe „über 110 % mehr Klicks auf Produkte“, nicht unabhängig geprüft). ✔ X04 Apple-Support-Seite „iPhone: Batterie und Leistung“ (kein Wirkungsbeleg; 2020 25 Mio. € in Frankreich wegen fehlender Information). ✔ X08 zooplus: Grundpreis neben dem Packungspreis; Baymard: 86 % der Shops zeigen keinen Preis je Einheit. ✔ X12 OTTO: Lieferzeit am Artikel, Wunschtermin (kein Wirkungsbeleg). ✔ X14 Philips Sonicare BrushSync: Erinnerung nach Verbrauch, Abo nur optional (kein Wirkungsbeleg). ✎ X16 Pampers Club: Code in der Packung (kein Wirkungsbeleg). Weitere Fälle: ✔ X03 Meta-Partnerschaftsanzeigen, ✔ X06 Stripe, ✎ X05 Wise, ✎ X07 Amazon A-bis-z-Garantie, ✔ X09 Airbnb Gesamtpreis, ✎ X10 Shop Pay, ~ X11 Apple-Lieferdatum, ✔ X13 Zalando, ✔ X15 Douglas, ✎ X17 Bosch – alle in B6. Maßnahmen sind Vorschläge der Gruppe (H); HOLY-Fakten darin: ✔ R25, ✔ S27, ✎ S30, ✔ B08, ✎ S28, ✔ R98, ✔ B10, ✎ T18, ✔ B91, ✔ B12, ✎ T31, ✔ T32, ✔ T30, ✔ L96, ✔ B01, ✔ B03.</p>
     <p>Vorlesungsanker für Rückfragen: Burberry „Art of the Trench“ als Bindungsbeispiel (S. 119, ✔ L93); Whole Foods „Whole Story“ mit „Find a Store“ (S. 118, ✎ L16, Verbindung H B99). Kürzung 3 (Kontrollpunkt nach 07): nur Recherche und Bindung ausführlich, −20 s; dann keine Live-Demo.</p>
     <p>Rückfragen: „Warum diese Vorbilder? Was heißt branchenübergreifend?“ → B6.</p>
-    <p>Bilder der internen Fassung: X01 Standbild aus YouTubes eigenem Erklärvideo (Stockfoto, kein echter Kanal); X04 Bildschirmfoto im Apple-Support-Artikel; X08 zooplus-Produktseite (Preise Stand 03.11.2026); X12 nur das Werbefoto der OTTO-Serviceseite „Lieferung“ – die Lieferzeit am Artikel steht im Text dieser Seite, nicht im Bild; X14 Philips-Grafik BrushSync; X16 Werbebild der Pampers-Club-App mit Beispielcode des Herstellers. Logos der Unternehmen nur zur Kennzeichnung der Vorbilder.</p>
+    <p>Bilder: Auf der Folie stehen nur die Logos der Unternehmen (einfarbig, nur zur Kennzeichnung der Vorbilder; veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17). Bei Rückfragen nach einem Beleg im Bild liegen in fremdbilder/ (Schlüssel v07-…, auf keiner Folie): X01 Standbild aus YouTubes eigenem Erklärvideo (Stockfoto, kein echter Kanal); X04 Bildschirmfoto im Apple-Support-Artikel; X08 zooplus-Produktseite (Preise Stand 03.11.2026); X12 Textausschnitt der OTTO-Serviceseite „Lieferung“ mit dem Satz „Die Lieferzeit zeigen wir dir vor deiner Bestellung direkt am jeweiligen Artikel an.“ (Screenshot 03.11.2026); X14 Philips-Grafik BrushSync; X16 Werbebild der Pampers-Club-App mit Beispielcode des Herstellers.</p>
   </aside>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 08 · A7 Mock-ups: Konzept-Webseite in fünf Handyrahmen (gelbe Bühne) · Block C · Sollzeit 85 s · 3 Klicks
      ║ Gestaltung: css/folien/08-mockups.css · Plan 5.1 Zeile 08, Abschnitt 7.4 · Laufleiste Schritt 4
-     ║ Bilder: bilder/konzept-0n-….png = Kopien aus ../konzept-website/_vorschau/ (eigene Gestaltung, 390 × 844,
-     ║   ohne fremde Bilder; Stand 03.11.2026). Ändert sich die Webseite, die Bildschirmfotos neu kopieren.
-     ║ INTERNE FASSUNG (D06): data-intern="konzept-01" … "konzept-05" (data-intern-optional) – Bildschirmfotos der
-     ║   Konzept-Webseite MIT den HOLY-Produktbildern ihrer internen Fassung, Dateien intern/bilder/konzept-0n-….png,
-     ║   Schlüssel in intern/bilder.js (ergänzt der Website-Bau). Fehlt ein Schlüssel, bleibt das öffentliche Bild.
+     ║ Bilder (Rückfall ohne Fremdbilder): bilder/konzept-0n-….png = Kopien aus ../konzept-website/_vorschau/ (eigene
+     ║   Gestaltung, 390 × 844, ohne fremde Bilder; Stand 03.11.2026). Ändert sich die Webseite, neu kopieren.
+     ║ FASSUNG MIT BILDERN (D06): data-intern="konzept-01" … "konzept-05" (data-intern-optional) – Bildschirmfotos der
+     ║   Konzept-Webseite MIT den HOLY-Produktbildern ihrer Fassung mit Bildern, Dateien fremdbilder/konzept-0n-….png,
+     ║   Schlüssel in fremdbilder/register.js (erzeugt der Website-Bau). Fehlt ein Schlüssel, bleibt das Bild aus bilder/.
      ║ Live-Demo: Link öffnet ../konzept-website/index.html?anmerkungen=1 in neuem Tab – nur aus der Reserve
      ║   (Kontrollpunkt nach 07 eingehalten, höchstens 30 s); den Tab vor Beginn öffnen (11.4).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -759,13 +774,13 @@
 
   <p class="p-quelle" data-meta>Konzept der Gruppe, KI-gestützt gestaltet · Daten: Dossier FS2 ✔ S92 R17 R98 T20 T22 B09</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
-  <p class="p-bildquelle" data-meta hidden>Bildschirmfotos der internen Fassung unserer Konzept-Webseite (03.11.2026) · darin Produktbilder von <span data-marke>HOLY</span> (de.holy.com, Abruf 03.11.2026)</p>
+  <p class="p-bildquelle" data-meta hidden>Bildschirmfotos unserer Konzept-Webseite (Fassung mit Bildern, 03.11.2026) · darin Produktbilder von <span data-marke>HOLY</span> (de.holy.com, Abruf 03.11.2026)</p>
 
   <aside class="notizen">
     <p data-schritt="0">Und so sieht das aus. Wir haben eine eigene HOLY-Webseite als Konzept gebaut – klar gekennzeichnet als studentisches Konzept, keine Bestellung möglich. Eine Seite je Top-Touchpoint. Marco kommt aus dem Video auf die Landingpage: Sein Code steht schon da, daneben steht „Werbung“, und es gibt zwei klare Wege. Einer führt zum Koffein-Check: die Antwort zuerst, alle Werte als Text, mit Quelle.</p>
     <p data-schritt="1">Die Produktseite zeigt den Preis je Portion ohne Code, den Endpreis inklusive Versand und eine einzige Garantie. Im Warenkorb steht ein Liefertermin, der Code ist sichtbar übernommen, und die Express-Knöpfe stehen oben.</p>
     <p data-schritt="2">Nach der Bestellung kommt keine Sackgasse, sondern eine Danke-Seite mit drei funktionierenden nächsten Schritten: in den Squad mit einem Klick und eine Nachfüll-Erinnerung – nur wenn Marco zustimmt. [Nur aus der Reserve, höchstens 30 Sekunden: Tab „Live-Demo“ zeigen.]</p>
-    <p>Belege: Konzept-Webseite `../konzept-website/` (README.md mit Seitenliste, Befunden und Kennzeichnung). Koffein nur Etikett- und EFSA-Werte (✔ S92, ✔ R17, ✔ R19; Leitplanken Dossier 8.3), Grundpreis ✔ R98, Preise ✔ B09, ✔ T20, Mix &amp; Match ✔ T22, Werbekennzeichnung ✔ R25. Liefertermin, Code-Rabatt, Coins-Stand und Bewertungstexte sind Beispielwerte (auf der Webseite so gekennzeichnet). Garantie-, Zubereitungs- und Alterstexte sind Vorschläge der Gruppe (H). Mock-ups der optimierten Touchpoints = Aufgabe A7; Stengers Aktivitäten Landing Page, Webshop-Usability, Check-Out, Kundenkarte, Email-Marketing (S. 117). Die Seiten tragen auf jedem Bildschirmfoto den Hinweisbalken, `noindex`, kein Logo, keine fremden Bilder, keine Formulare (Plan 7.3). Veröffentlichung über GitHub Pages erst nach Stengers Antwort (Plan 13.1 Nr. 9).</p>
+    <p>Belege: Konzept-Webseite `../konzept-website/` (README.md mit Seitenliste, Befunden und Kennzeichnung). Koffein nur Etikett- und EFSA-Werte (✔ S92, ✔ R17, ✔ R19; Leitplanken Dossier 8.3), Grundpreis ✔ R98, Preise ✔ B09, ✔ T20, Mix &amp; Match ✔ T22, Werbekennzeichnung ✔ R25. Liefertermin, Code-Rabatt, Coins-Stand und Bewertungstexte sind Beispielwerte (auf der Webseite so gekennzeichnet). Garantie-, Zubereitungs- und Alterstexte sind Vorschläge der Gruppe (H). Mock-ups der optimierten Touchpoints = Aufgabe A7; Stengers Aktivitäten Landing Page, Webshop-Usability, Check-Out, Kundenkarte, Email-Marketing (S. 117). Die Seiten tragen auf jedem Bildschirmfoto den Hinweisbalken, `noindex`, keine Formulare (Plan 7.3); die Wortmarke im Kopf mit Einverständnis des Gründers (KI-Nachweis FS2 Nr. 12), die Produktbilder von HOLY veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung. Die Konzept-Webseite ist seit 03.11.2026 über GitHub Pages erreichbar; die Frage an Prof. Stenger bleibt (Plan 7.3, 13.2 Nr. 16).</p>
     <p>Bedienung Live-Demo: Klick auf „Live-Demo ↗“ (öffnet einen neuen Tab, in dem die Anmerkungen mit „Weiter“ durchlaufen), danach mit Alt+Tab bzw. Strg+Tab zurück. Fällt sie aus: die Bildschirmfotos reichen, ein Satz Überleitung (Plan 7.5).</p>
     <p>Identität (Stengers FS1-Kommentar „Markenidentität ausführlicher darstellen“): Die Seiten übernehmen den Auftritt aus dem Markensteuerrad von FS1 (Folie 10, Tonalität und Markenbild): HOLY-Gelb und Schwarz, kräftige Kontur, Du-Ansprache, Zahlen statt Versprechen. Bei Rückfrage auf B7 verweisen.</p>
     <p>Rückfragen: „Ist das eine echte HOLY-Seite?“ → Nein, Hinweisbalken auf jeder Seite, B8. Die Wortmarke im Kopf nutzen wir mit Einverständnis des Gründers.</p>
@@ -776,12 +791,14 @@
      ║ FOLIE 09 · Fazit, Kennzahlen (S. 111 Schritt 5), Videobotschaft, Fragen (gelbe Bühne) · Block C · Sollzeit 70 s
      ║ 2 Klicks: Klick 1 Videobotschaft des Gründers (Plan 9.5) · Klick 2 „Fragen?“ und Sprungliste B1–B9
      ║ Gestaltung: css/folien/09-fazit.css · Skript: js/folien/09-fazit.js (Video, Sprungliste)
-     ║ VIDEO: intern/gruender-video.mp4 (per .gitignore ausgeschlossen; NICHT ins Repository, nicht nach bilder/).
-     ║   Startet bei Klick 1 mit Ton, bleibt danach auf dem letzten Bild. Fehlt die Datei oder läuft sie nicht
-     ║   (öffentliche Fassung, Export, Druck, Prüfwerkzeug mit ?aufnahme, Referentenfenster), zeigt der Rahmen
-     ║   „Videobotschaft des Gründers – nur im Vortrag“. Ton im Beamer-Test prüfen (11.4).
-     ║ Bildleiste auf dem Pfad (b16): öffentlich Platzhalter; INTERN (D06) dieselben Touchpoint-Bilder wie auf 04
-     ║   (Zuschnitt 264 × 148, Kacheln 192 × 108 seit 03.11.) – Screenshots und Fremdbilder, keine eigenen Fotos.
+     ║ VIDEO: video/gruender-video.mp4 (versioniert; veröffentlicht mit Zustimmung des Gründers, KI-Nachweis FS2 Nr. 18;
+     ║   bis 03.11.2026: intern/, ausgeschlossen). Startet bei Klick 1 mit Ton, bleibt danach auf dem letzten Bild.
+     ║   Fehlt die Datei oder läuft sie nicht (Browser ohne H.264, Druck/PDF, Prüfwerkzeug mit ?aufnahme,
+     ║   Referentenfenster), zeigt der Rahmen „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“.
+     ║   Ton im Beamer-Test prüfen (11.4). Keine KI-Transkription, keine Zitate aus dem Video.
+     ║ Bildleiste auf dem Pfad (b16): im Rückfall ohne Fremdbilder Platzhalter; in der Fassung mit Bildern (D06)
+     ║   dieselben Touchpoint-Bilder wie auf 04 (Zuschnitt 264 × 148, Kacheln 192 × 108 seit 03.11.) – Screenshots und
+     ║   Fremdbilder, keine eigenen Fotos.
      ║ OFFEN: Selbstversuch-Fotos für die Bildleiste (b16).
      ║ Der Pfad läuft hier als einzige Ausnahme von Rand zu Rand (data-ueberlauf-ok, Plan 3.5).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -843,7 +860,7 @@
     <div class="p-handy e9-handy">
       <div class="p-handy-schirm e9-schirm">
         <video class="e9-video" playsinline preload="none" data-quelle="video/gruender-video.mp4" aria-label="Videobotschaft des Gründers"></video>
-        <p class="e9-rueckfall">Videobotschaft des Gründers – nur im Vortrag</p>
+        <p class="e9-rueckfall">Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09</p>
       </div>
     </div>
     <p class="e9-video-zeile" data-meta>Videobotschaft Mathias Horsch, Mitgründer <span data-marke>HOLY</span> · 02.11.2026 · gezeigt mit seiner Zustimmung</p>
@@ -851,13 +868,13 @@
 
   <p class="p-quelle" data-meta>Stenger S. 107, 111 · ✔ L01 L11 L22 T22 T33 · Kennzahlen: Vorschlag der Gruppe (H, Dossier Kap. 9)</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
-  <p class="p-bildquelle" data-meta hidden>Bildleiste wie Folie 04: YouTube-Short nonstopniels · Screenshots Startpage, de.holy.com (03.11.2026) · Community-Foto <span data-marke>HOLY</span></p>
+  <p class="p-bildquelle" data-meta hidden>Bildleiste wie Folie 04: YouTube-Short nonstopniels · Screenshots Startpage, de.holy.com (03.11.2026) · Community-Foto <span data-marke>HOLY</span> (Symbolbild, nicht Marco)</p>
 
   <aside class="notizen">
     <p data-schritt="0">Schritt fünf: Mittel zielorientiert einsetzen. Unser Fazit in drei Sätzen: Marcos zentraler Weg läuft online und bricht heute beim Nachlesen. Wir haben die fünf Top-Touchpoints als Konzept gebaut. Und wir würden je Überleitung messen: Weiterklicks von der Landingpage über den Koffein-Check zur Produktseite, die Abschlussquote im mobilen Checkout und die Squad-Anmeldungen nach dem ersten Kauf. Am Ende zählt, was Seite 111 nennt: Wiederkauf, Cross-Selling, Weiterempfehlung. Erinnern Sie sich an die Handzeichen vom Anfang? Genau zwischen Nachlesen und Kaufen wollen wir die Lücke schließen.</p>
     <p data-schritt="1">Zum Schluss hat der Gründer von HOLY selbst das Wort. [Video läuft, 16 Sekunden, mit Ton – nichts darüber sprechen. Läuft es nicht: „Die Videobotschaft zeigen wir Ihnen gern im Anschluss“ und weiter.]</p>
     <p data-schritt="2">Vielen Dank – wir freuen uns auf Ihre Fragen.</p>
-    <p>Belege: „Das Zusammenspiel aller Touchpoints prägt das Markenerlebnis“ (S. 107, ✔ L01); Schritt 5 mit Effizienzkontrolle und Kundenerlebnis Wiederkauf/Loyalität, Cross-Selling, Weiterempfehlung (S. 111, ✔ L11, ✔ L22); Mix &amp; Match ✔ T22; Freunde werben ✔ T33. Die Kennzahlen sind ein Vorschlag der Gruppe (H, Dossier Kap. 9), keine gemessenen Werte. Videobotschaft: Selbstauskunft des Gründers (wie die Gründerbefragung in FS1); Zustimmung für Video und Stimme in der Präsentation laut Yannick (02.11.2026, KI-Nachweis FS2 Nr. 09); nicht im Repository, keine KI-Transkription. Auf der Folie keine Zitate oder Zahlen aus dem Video ohne „laut Gründer“.</p>
+    <p>Belege: „Das Zusammenspiel aller Touchpoints prägt das Markenerlebnis“ (S. 107, ✔ L01); Schritt 5 mit Effizienzkontrolle und Kundenerlebnis Wiederkauf/Loyalität, Cross-Selling, Weiterempfehlung (S. 111, ✔ L11, ✔ L22); Mix &amp; Match ✔ T22; Freunde werben ✔ T33. Die Kennzahlen sind ein Vorschlag der Gruppe (H, Dossier Kap. 9), keine gemessenen Werte. Videobotschaft: Selbstauskunft des Gründers (wie die Gründerbefragung in FS1); Zustimmung für Video und Stimme in der Präsentation laut Yannick (02.11.2026, KI-Nachweis FS2 Nr. 09), seit 03.11.2026 auch für die Veröffentlichung online (KI-Nachweis FS2 Nr. 18; Datei video/gruender-video.mp4, nicht kommerziell, für die Lehrveranstaltung); keine KI-Transkription. Auf der Folie keine Zitate oder Zahlen aus dem Video ohne „laut Gründer“.</p>
     <p>Zeit: Fazit mit Kennzahlen, Ansage, 16 s Video; das Video wird nicht gekürzt – bei Zeitnot nur ein Fazit-Satz (Plan 10.2). Sprungliste: Klick auf B1–B9 springt (im Referentenfenster erst in der Fragerunde, wie FS1).</p>
     <p>Rückfragen (Plan 9.4): Top 3 → B2 · Online statt Handel → B7/B4 · Urteile zu den Überleitungen → B1 · Interviews → B5 · Vorbilder, „branchenübergreifend“ → B6 · Übung S. 128/129 → B2 · echte HOLY-Seite? → 08/B8 · Persona → B7 · Bildrechte → B8 · KI → B9.</p>
   </aside>
@@ -900,7 +917,7 @@
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
   <aside class="notizen">
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage zur Erhebung oder zu den Urteilen auf 05. <b>Kernsatz</b> [erst nach dem Selbstversuch so sprechen, Stand 03.11.: offen]<b>:</b> Jede Station des zentralen Wegs haben wir selbst durchlaufen und mit Datum, Ort und Kanal protokolliert; für jede Überleitung haben wir geprüft, ob sie angeschlossen ist, ob Medium oder Gerät wechseln und ob Preis, Lieferzeit und Alter zusammenpassen.</p>
-    <p>Stand 03.11.2026: Gerüst, alle Felder offen – nach dem Selbstversuch eintragen (Meilenstein M7/M9). Fotos und Screenshots nur in intern/ oder im Gruppenordner; personenbezogene Daten schwärzen (Plan 1.2).</p>
+    <p>Stand 03.11.2026: Gerüst, alle Felder offen – nach dem Selbstversuch eintragen (Meilenstein M7/M9). Eigene Fotos und Screenshots zuerst in intern/ (ausgeschlossen) oder im Gruppenordner; veröffentlichen erst nach Sichtung durch die Gruppe; personenbezogene Daten schwärzen (Plan 1.2).</p>
   </aside>
 </section>
 
@@ -1060,7 +1077,7 @@
     </div>
     <div>
       <p class="b3-kopf">Bilder</p>
-      <p>Öffentlich: HOLY-Logo (01, 09, mit Einverständnis), Bildschirmfotos der eigenen Konzept-Webseite (08), sonst Platzhalter. Intern (Hörsaal): Screenshots, Werbe- und Community-Bilder von HOLY und Bilder der Vorbilder, je Folie mit Bildnachweis (§ 63 UrhG, ✔ G93) – keine eigenen Fotos; Selbstversuch und Workshop: <b>offen</b>.</p>
+      <p>HOLY-Logo (01, 09, mit Einverständnis), Bildschirmfotos der eigenen Konzept-Webseite (08); Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder (07) und Videobotschaft (09) veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17, 18), nicht kommerziell, für die Lehrveranstaltung; je Folie mit Bildnachweis (§ 63 UrhG, ✔ G93) – keine eigenen Fotos; Selbstversuch und Workshop: <b>offen</b>.</p>
       <p class="b3-kopf">Modellhinweise</p>
       <p>ASSURE (Folie S. 109) statt „ask“ bei Kotler (✔ L08). Paid/Owned/Earned in der Vorlesung uneinheitlich (✔ L13). Zeilen der Journey-Map (04) verdichtet gegenüber S. 129 (Plan 6.3). Konzept-Webseite: gekennzeichnet, noindex, keine Bestellung (Plan 7.3) – Einschätzung, keine Rechtsberatung.</p>
     </div>
@@ -1068,7 +1085,7 @@
   <p class="p-quelle" data-meta>Gestaltungsplan 1.2, 4, 7.3 · Dossier Anhang A und B · Kontrolle: Quellzeile jeder Folie</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
   <aside class="notizen">
-    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Woher stammt Zahl X?“ oder „Dürft ihr die Bilder zeigen?“. <b>Kernsatz:</b> Jede Zahl auf unseren Folien hat eine Befund-ID aus unserem Recherche-Dossier mit Faktenstatus und Quelle; Bilder sind eigene Gestaltung oder stehen bis zur Freigabe nur in der internen Fassung. Die Screenshots und Bilder von HOLY und den Vorbildern zeigen wir nur hier im Hörsaal, jeweils mit Bildnachweis unten auf der Folie – eigene Fotos aus dem Selbstversuch kommen noch.</p>
+    <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage „Woher stammt Zahl X?“ oder „Dürft ihr die Bilder zeigen?“. <b>Kernsatz:</b> Jede Zahl auf unseren Folien hat eine Befund-ID aus unserem Recherche-Dossier mit Faktenstatus und Quelle; Bilder sind eigene Gestaltung oder Fremdbilder mit Freigabe. Die Screenshots und Bilder von HOLY und die Logos der Vorbilder zeigen wir nicht kommerziell, für die Lehrveranstaltung, jeweils mit Bildnachweis unten auf der Folie – eigene Fotos aus dem Selbstversuch kommen noch.</p>
     <p>IDs der Quellzeilen 01–09 vollständig mit Wortlaut: Dossier Anhang A (Faktencheck) und Anhang B (Quellenverzeichnis). Stand der Liste: 03.11.2026.</p>
   </aside>
 </section>
@@ -1108,9 +1125,10 @@
 
 <script src="js/deck.js"></script>
 <script src="js/komponenten.js"></script>
-<!-- Interne Fassung (LIESMICH §12): intern/bilder.js liegt nur im Hörsaal-Ordner neben index.html (per .gitignore
-     ausgeschlossen). Fehlt die Datei (öffentliche Fassung, GitHub Pages), bleibt alles wie bisher: Platzhalter und
-     Rückfälle, kein kaputtes Bild. intern-bilder.js setzt die Bilder vor dem Start der Engine ein. -->
+<!-- Fassung mit Bildern (Standard, LIESMICH §12): fremdbilder/register.js liegt versioniert neben index.html
+     (Repository, GitHub Pages, Hörsaal; veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17). Fehlt die Datei
+     (Rückfall ohne Fremdbilder), bleibt alles wie ohne Bilder: Platzhalter und Rückfälle, kein kaputtes Bild.
+     intern-bilder.js (Name historisch) setzt die Bilder vor dem Start der Engine ein. -->
 <script src="fremdbilder/register.js"></script>
 <script src="js/folien/intern-bilder.js"></script>
 <!-- Thema „Pfad“: Laufleiste, Raster und Pfad (vor dem Start der Engine) -->

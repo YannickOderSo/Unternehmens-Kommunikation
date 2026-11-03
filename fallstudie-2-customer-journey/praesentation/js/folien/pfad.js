@@ -22,11 +22,11 @@
       der Satzspiegelkante x = 1792 (Plan 6.2 Nr. 9). JSON → "wege" (zentral,
       neben, offen) bzw. "bruecken" (Folie 05: trägt · wackelt · bricht).
       Verschiebt man eine Kachel (data-phase/data-zeile), folgt der Pfad.
-   4. Anzeige-Schalter ?kacheln=rueckfall (öffentlicher Export): jede Kachel
-      mit data-status="frei" zeigt ihren Rückfall bzw. den Platzhalter. Der
-      Schalter ändert NUR die Anzeige – nicht freigegebene Bilder gehören gar
-      nicht ins Repository (Plan 11.2, 11.5). Mit demselben Schalter setzt
-      js/folien/intern-bilder.js keine internen Bilder ein (LIESMICH §12).
+   4. Anzeige-Schalter ?kacheln=rueckfall (Rückfall ohne Fremdbilder): jede
+      Kachel mit data-status="frei" zeigt ihren Rückfall bzw. den Platzhalter.
+      Der Schalter ändert NUR die Anzeige (Plan 11.2, 11.5). Mit demselben
+      Schalter setzt js/folien/intern-bilder.js keine Fremdbilder ein
+      (LIESMICH §12).
    ============================================================================= */
 (function () {
   'use strict';
@@ -352,7 +352,7 @@
 
 
   /* ---------------------------------------------------------------------------
-     4. ANZEIGE-SCHALTER ?kacheln=rueckfall (öffentliche Fassung, Export)
+     4. ANZEIGE-SCHALTER ?kacheln=rueckfall (Rückfall ohne Fremdbilder)
      --------------------------------------------------------------------------- */
   if (new URLSearchParams(location.search).get('kacheln') === 'rueckfall') {
     alle('.p-kachel[data-status="frei"]').forEach(function (el) {

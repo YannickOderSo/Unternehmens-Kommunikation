@@ -111,7 +111,7 @@ Eintrag 01).
 | Statista-Werte nur wie in `persona-daten.md` | Gruppenregel; ✔ P94 | Folie 02 nutzt nur „YouTube 73 %, Instagram 71 %, TikTok 58 % (Ø 63/58/41 %), Statista CI 2025“ (`persona-daten.md` Z. 25), Kategorie Energy Drinks, nicht HOLY | keine |
 | Selbst gebaute Web-Präsentation mit der FS1-Engine | `CLAUDE.md`; FS1 `LIESMICH.md` | Abschnitt 11 | keine |
 | Ansprache des Publikums mit „Sie“ | FS1 `LIESMICH.md` §8 (`anrede`) | Alle Folien und Sprechtexte siezen | Die Konzept-Webseite duzt, weil sie HOLYs Stimme zeigt (Ton „frech im Rahmen, nüchtern im Kern“, **H** M32; HOLYs Tonregel für Agenten ✔ M90); jede Seite ist als studentisches Konzept gekennzeichnet (7.3) |
-| Repository ist öffentlich | `CLAUDE.md`, FS1 `QUELLEN.md` §4; Startseite `index.html` („Gehostet bei GitHub Pages“) | Jeder Push veröffentlicht sofort (GitHub Pages; Commit und Push nach jedem Arbeitsschritt laut `CLAUDE.md`; `.gitignore` schließt seit 02.11. `praesentation/intern/` aus). Deshalb: Fußhinweis „Studentische Fallstudie, keine Verbindung zu HOLY“ auf jeder Folie; keine HOLY-Logos; nicht freigegebene Fotos und Screenshots liegen nur im Gruppenordner oder in `praesentation/intern/`, ins Repository kommen nur Rückfälle und Freigegebenes; vor jedem Push `git status` prüfen (11.5). Der Schalter `data-status` ändert nur die Anzeige und hält nichts zurück. **Konzept-Webseite** (`konzept-website/`): enthält nur eigene Gestaltung, keine fremden Bilder; jede Seite mit nicht ausblendbarem Hinweisbalken, `noindex`, ohne Bestellmöglichkeit (7.3). Ob sie über GitHub Pages öffentlich erreichbar sein soll, entscheidet die Gruppe nach Stengers Antwort (13.1 Nr. 9) | Die Konzept-Webseite trägt den Namen HOLY als schlichten Text und zeigt Preise und Produktdaten aus dem Dossier; damit sie nicht als HOLY-Seite durchgeht, gelten die Kennzeichnungsregeln in 7.3 (Einschätzung, keine Rechtsberatung) |
+| Repository ist öffentlich | `CLAUDE.md`, FS1 `QUELLEN.md` §4; Startseite `index.html` („Gehostet bei GitHub Pages“) | Jeder Push veröffentlicht sofort (GitHub Pages; Commit und Push nach jedem Arbeitsschritt laut `CLAUDE.md`; `.gitignore` schließt seit 02.11. `praesentation/intern/` aus). Deshalb: Fußhinweis „Studentische Fallstudie, keine Verbindung zu HOLY“ auf jeder Folie; keine HOLY-Logos; nicht freigegebene Fotos und Screenshots liegen nur im Gruppenordner oder in `praesentation/intern/`, ins Repository kommen nur Rückfälle und Freigegebenes; vor jedem Push `git status` prüfen (11.5). Der Schalter `data-status` ändert nur die Anzeige und hält nichts zurück. **Konzept-Webseite** (`konzept-website/`): enthält nur eigene Gestaltung, keine fremden Bilder; jede Seite mit nicht ausblendbarem Hinweisbalken, `noindex`, ohne Bestellmöglichkeit (7.3). Ob sie über GitHub Pages öffentlich erreichbar sein soll, entscheidet die Gruppe nach Stengers Antwort (13.1 Nr. 9). **Seit 03.11.2026:** die ausgewählten Fremdbilder (`praesentation/fremdbilder/`, `konzept-website/fremdbilder/`) und das Gründer-Video (`praesentation/video/`) sind veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17 Bilder – Entscheidung der Gruppe durch Yannick; Nr. 18 Video – Zustimmung des Gründers laut Yannick), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. `praesentation/intern/` enthält nur noch Rohmaterial (ausgeschlossen) | Die Konzept-Webseite trägt den Namen HOLY als schlichten Text und zeigt Preise und Produktdaten aus dem Dossier; damit sie nicht als HOLY-Seite durchgeht, gelten die Kennzeichnungsregeln in 7.3 (Einschätzung, keine Rechtsberatung) |
 | Keine Bezeichnungen von KI-Modellen in Dateien | Workflow-Vorgabe | Auf Folien und in Dateien „KI-gestützt“; wo die Gruppenregel das Werkzeug verlangt (KI-Bilder), steht der Werkzeugname wie in FS1, nie eine Modellbezeichnung | keine |
 
 ### 1.3 Prinzipien aus „Der rote Faden“ (Vorschlag, geprüft)
@@ -314,10 +314,15 @@ für Dritte „an der Bildungseinrichtung“; für ein dauerhaft öffentliches R
 bis zur Freigabe also nicht veröffentlichen (✎ G21, ✔ R30; Einschätzung **H**). Quelle „deutlich“ am Bild nennen,
 bei Screenshots mit Urheber und Fundstelle in der zweiten Zeile der Unterschrift (✔ G93, Muster 3.6).
 
-**Ablage:** Nicht freigegebene Fotos und Screenshots liegen nur im Gruppenordner oder im per `.gitignore`
-ausgeschlossenen Ordner `praesentation/intern/`; die interne Fassung lädt sie von dort. Ins Repository, das über
-GitHub Pages sofort öffentlich ist, kommen nur Rückfälle und Freigegebenes (11.5). Die Konzept-Webseite
-(`konzept-website/`) enthält keine Fotos und keine fremden Bilder, nur eigene Zeichnungen und Platzhalter (7.3).
+**Ablage (Stand 03.11.2026):** Die ausgewählten Fremdbilder (Screenshots, Werbe- und Community-Bilder von HOLY, Logos
+und Bilder der Vorbilder) liegen versioniert in `praesentation/fremdbilder/` und `konzept-website/fremdbilder/`, das
+Gründer-Video in `praesentation/video/` – veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17 Bilder, Nr. 18 Video),
+nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Das ist die **Fassung mit Bildern**
+(Standard); den **Rückfall ohne Fremdbilder** gibt es nur, wenn `fremdbilder/register.js` fehlt oder per Schalter
+(Präsentation `?kacheln=rueckfall`). Rohdownloads, Kontaktbögen und noch nicht gesichtete eigene Fotos liegen im
+Gruppenordner oder im per `.gitignore` ausgeschlossenen Ordner `praesentation/intern/`; eigene Fotos kommen erst nach
+Sichtung durch die Gruppe ins Repository (11.5). Bis 03.11.2026 galt: nicht freigegebene Bilder nur in `intern/`
+(„interne Fassung“), ins Repository nur Rückfälle; die Konzept-Webseite ohne fremde Bilder (7.3).
 
 | Nr. | Bild | Folie | Art | Rechtestatus (keine Rechtsberatung) | Rückfall, falls Freigabe fehlt | Zu tun bis wann |
 |---|---|---|---|---|---|---|
@@ -333,7 +338,7 @@ GitHub Pages sofort öffentlich ist, kommen nur Rückfälle und Freigegebenes (1
 | b10 | Unboxing in drei Bildern (geschlossen, geöffnet, Inhalt) | 04, 03 | eigenes Foto | eigen; Adressaufkleber schwärzen; Verpackung wie b01 | Foto der Versandbestätigung (geschwärzt) bzw. Wireframe | Bestellung heute Fr 30.10.; Fotos am Liefertag, Bildschluss Do 05.11.; **kommt die Lieferung nach Do 05.11., gilt der Rückfall** (Lieferzeit wie b02) |
 | b11 | Anmeldung bei SQUAD Rewards (eigenes Konto) | 04, 03 | eigener Screenshot | HOLY-Seite → wie b08; eigene Kontodaten ausblenden | **eigene Grafik** (Wireframe) | nach der Bestellung, bis Do 05.11. (Bildschluss) |
 | b12 | Unser Raster nach S. 129 mit Haftnotizen: Top 3 je Phase (Workshop) | 06 | eigenes Foto (Workshop) | eigen; keine Gesichter, keine Namen auf Notizen | Raster nur als Grafik (Foto entfällt) | Workshop Mi 04.11.; Foto direkt danach |
-| b13 | Pulver im Shaker, Dosierlöffel, 500-ml-Messbecher (bisher Blog-Aufmacher) | Konzept-Webseite nur in der internen Fassung; B6 | eigenes Produktfoto | eigen; Etikett möglichst nicht frontal; in der Konzept-Webseite im Repository **nicht** (dort Platzhalter „eigenes Produktfoto folgt“, 7.3) | **eigene Infografik** „Koffein im Vergleich“ (EFSA-Werte nach Kategorie, ✔ M91) | Shaker und Dosierlöffel kommen vermutlich erst mit der Lieferung (wie b01); Bildschluss Do 05.11. |
+| b13 | Pulver im Shaker, Dosierlöffel, 500-ml-Messbecher (bisher Blog-Aufmacher) | Konzept-Webseite (erst nach Sichtung durch die Gruppe); B6 | eigenes Produktfoto | eigen; Etikett möglichst nicht frontal; in der Konzept-Webseite im Repository **nicht** (dort Platzhalter „eigenes Produktfoto folgt“, 7.3) | **eigene Infografik** „Koffein im Vergleich“ (EFSA-Werte nach Kategorie, ✔ M91) | Shaker und Dosierlöffel kommen vermutlich erst mit der Lieferung (wie b01); Bildschluss Do 05.11. |
 | b14 | Bildschirmfotos der Konzept-Webseite, 390 × 844 (`konzept-website/_vorschau/`), je Top-Touchpoint eines (vorher: Blog-Mock-up) | 08 | eigene Gestaltung | eigen; HOLY-Wortmarke nur im Kopf (Freigabe 03.11.), keine HOLY-Schrift, keine echte Domain, keine fremden Bilder; Hinweisbalken auf jedem Bild sichtbar (7.3) | Wireframes der fünf Bildschirme als eigene SVG (7.5) | Seiten bis Mi 04.11.; Bildschirmfotos Do 05.11. |
 | b15 | Handskizze: Regal-Aufsteller mit QR-Code als Brücke in den Squad (Nebenweg) | 07 (Nebenweg-Zeile, klein), B4 | eigene Zeichnung, gescannt | eigen; ohne HOLY-Verpackungsdesign und Logo | Skizze als eigene Vektorgrafik | Mi 04.11. |
 | b16 | Bildleiste der Selbstversuch-Fotos auf dem geschlossenen Pfad | 09 | Wiederverwendung | wie b05–b11 | nur Bilder mit Status „frei“, sonst deren Rückfall | beim Bau |
@@ -341,17 +346,19 @@ GitHub Pages sofort öffentlich ist, kommen nur Rückfälle und Freigegebenes (1
 | b18 | Farb- und Formproben (Hex-Werte, Kontur, Kreis, Schachbrett) | 03 | eigene Grafik | eigen; Werte aus Dossier 10.1 mit Status | – | beim Bau |
 | b19 | Leere Blog-Seite /blogs/news („noch keine Beiträge“, ✔ M01, ✔ L39) | 03, B4 | eigener Screenshot | HOLY-Seite: Bildzitat mit Belegfunktion (**H** G32), Quellzeile wie 3.6; Seitenkopf mit HOLY-Logo abschneiden (3.7) | **Textgrafik** „/blogs/news · 0 Beiträge“ mit Abrufdatum | Screenshot Fr 30.10. mit Datum; Textgrafik beim Bau |
 | b20 | IST-Bildschirme der vier Überleitungen im Selbstversuch (Übergangsprotokoll: Creator-Video → Suche, Suche → Produktseite, Produktseite → Warenkorb, Bestellung → Danke-Seite/Squad) | 05, B1 | eigene Screenshots | HOLY-Seiten mit Produktfotos → wie b08: im Hörsaal Bildzitat nach Stengers Antwort, öffentlich nur mit Freigabe; personenbezogene Daten schwärzen | **eigene Grafik** je Übergang (Anschluss ja/nein, Klicks, Wechsel von Medium oder Domain) | Selbstversuch bis Mi 04.11.; Bildschluss Do 05.11. |
-| b21 | Vorbilder aus anderen Branchen (Best Practices) | 07, B6 | Text, keine Bilder | Standard: nur Text (Unternehmen, Branche, Mechanik, Quelle mit Abrufdatum); Screenshots fremder Seiten höchstens in der internen Fassung im Hörsaal als Bildzitat (§ 60a UrhG, Einschätzung, keine Rechtsberatung, ✔ G20, ✎ G21) | Textzeile | Do 05.11. (nach Prüfung im Dossier) |
-| v01 | **Videobotschaft des Gründers** Mathias Horsch (16,1 s, Hochformat 576 × 1024, mit Ton; erhalten 02.11.2026) | 09 (Klick 1) | Video des Gründers, Selbstauskunft | Zustimmung des Gründers: Video und Stimme dürfen in die Präsentation (laut Yannick, 02.11.2026, KI-Nachweis FS2 Nr. 09). **Nicht** angefragt: Veröffentlichung im Repository bzw. auf GitHub Pages und KI-Transkription → Datei nur in `praesentation/intern/` und im Gruppenordner, keine automatischen Untertitel | öffentliche Fassung: Handyrahmen mit Text „Videobotschaft des Gründers – nur im Vortrag“; im Vortrag, falls das Video nicht läuft: derselbe Rahmen, ein Satz Überleitung | Datei in `intern/` ablegen mit M5; Ton im Beamer-Test (11.4) |
+| b21 | Vorbilder aus anderen Branchen (Best Practices) | 07, B6 | Text, keine Bilder | Standard: nur Text (Unternehmen, Branche, Mechanik, Quelle mit Abrufdatum); Screenshots fremder Seiten höchstens in der internen Fassung im Hörsaal als Bildzitat (§ 60a UrhG, Einschätzung, keine Rechtsberatung, ✔ G20, ✎ G21). **Stand 03.11.2026:** Folie 07 zeigt in der Fassung mit Bildern die Logos der Vorbilder (einfarbig, nur zur Kennzeichnung), veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17); die Bilder der Vorbilder liegen in `praesentation/fremdbilder/`, stehen aber auf keiner Folie (D07) | Textzeile (Rückfall ohne Fremdbilder) | Do 05.11. (nach Prüfung im Dossier) |
+| v01 | **Videobotschaft des Gründers** Mathias Horsch (16,1 s, Hochformat 576 × 1024, mit Ton; erhalten 02.11.2026) | 09 (Klick 1) | Video des Gründers, Selbstauskunft | Zustimmung des Gründers: Video und Stimme dürfen in die Präsentation (laut Yannick, 02.11.2026, KI-Nachweis FS2 Nr. 09), seit 03.11.2026 auch öffentlich online (laut Yannick, Nr. 18) → Datei versioniert in `praesentation/video/gruender-video.mp4` (bis 03.11.2026 nur in `praesentation/intern/`). Keine KI-Transkription, keine automatischen Untertitel | Handyrahmen mit Text „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“ (in Druck/PDF, Referentenfenster, Prüfwerkzeug und Browsern ohne H.264; bis 03.11.2026 „– nur im Vortrag“); im Vortrag, falls das Video nicht läuft: derselbe Rahmen, ein Satz Überleitung | erledigt (03.11.); Ton im Beamer-Test (11.4) |
 
 **Regeln für alle Fotos:** nur Hände, keine Gesichter, keine Dritten; jedes Motiv quer und hoch aufnehmen; Datum,
 Uhrzeit und Ort notieren (wird zur Bildunterschrift und zum Protokoll in B1); Fotos von Plakaten oder DOOH nur nach
 Klärung (keine Panoramafreiheit in Innenräumen und für befristete Plakate, **H** G26). Keine HOLY-Inhalte in
 KI-Werkzeuge geben (Dossier 10.6, Regel der Gruppe **H**; HOLY behält sich Text- und Data-Mining vor, ✔ G19).
 
-**Arbeitsweise dazu:** KI-gestützt wird nur mit Platzhaltern und Rückfällen gebaut. Echte Fotos und Screenshots setzt
-die Gruppe selbst ein (nur in der internen Fassung, nicht im Repository, siehe Ablage oben), prüft sie ohne KI
-(`pruefen.mjs` startet sie selbst; Bericht und Bilder gehen nicht in KI-Werkzeuge) und vermerkt das im KI-Nachweis.
+**Arbeitsweise dazu:** Eigene Fotos der Gruppe setzt die Gruppe selbst ein (zuerst in `intern/`, veröffentlicht erst
+nach Sichtung, siehe Ablage oben), prüft sie ohne KI (`pruefen.mjs` startet sie selbst; Bericht und Bilder gehen nicht
+in KI-Werkzeuge) und vermerkt das im KI-Nachweis. Abweichend davon hat Yannick am 03.11.2026 beauftragt, Grafiken von
+HOLY KI-gestützt zu beschaffen und einzubauen (KI-Nachweis FS2 Nr. 15, Delegation D06), und am selben Tag ihre
+Veröffentlichung erlaubt (Nr. 17; Umsetzung D07).
 
 ---
 
@@ -766,9 +773,11 @@ lokal öffnen). Mobil zuerst (390 px ohne waagerechtes Scrollen), am Desktop gut
   FS2 Nr. 12; Datei unverändert aus FS1, Quelle in der Fußzeile jeder Seite); sonst keine HOLY-Schrift, kein
   nachgebautes Verpackungsdesign. Offen (Empfehlung der Abnahme D05): Freigabe des Gründers schriftlich mit Umfang
   (Hörsaal, Repository, GitHub Pages) intern ablegen.
-- **Keine fremden Bilder:** keine HOLY-Produktfotos, Screenshots oder Social-Media-Bilder, keine Bilder Dritter;
-  stattdessen eigene, schlichte SVG-Zeichnungen oder Platzhalterflächen mit der Unterschrift „Platzhalter: eigenes
-  Produktfoto folgt“ (Gruppenregel 1.2; ✔ R30). Eigene Produktfotos (b13) höchstens in der internen Fassung.
+- **Bilder:** bis 03.11.2026 keine fremden Bilder (eigene, schlichte SVG-Zeichnungen oder Platzhalterflächen mit der
+  Unterschrift „Platzhalter: eigenes Produktfoto folgt“; Gruppenregel 1.2; ✔ R30). Seit 03.11.2026 zeigt die Webseite
+  in der Fassung mit Bildern HOLY-Produktbilder aus `konzept-website/fremdbilder/` – veröffentlicht mit Freigabe
+  (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; Einzelheiten im README der Webseite. Eigene
+  Produktfotos (b13) erst nach Sichtung durch die Gruppe.
 - **Keine Datenübermittlung:** keine Formulare, die Daten senden; alle Knöpfe führen nur zur nächsten Konzeptseite;
   keine externen Anfragen (Schriften lokal, kein CDN, keine Analyse-Skripte).
 - **Daten:** Preise, Produktdaten und Koffeinwerte nur mit Befund-ID aus dem Dossier (im Code als Kommentar, im
@@ -949,11 +958,13 @@ Sie kommt **am Schluss**, als Klick 1 auf Folie 09 nach dem knappen Fazit und vo
   Gründerbefragung in FS1); auf der Folie keine Zitate oder Zahlen aus dem Video ohne Kennzeichnung „laut Gründer“.
 - **Zeit:** 16 s Video + 5 s Ansage; Folie 09 hat seit 03.11. 70 s (Fazit mit Kennzahlen, Ansage, Video), die Reserve
   0:40 (10.1). Das Video wird nicht gekürzt.
-- **Ablage:** nur `praesentation/intern/gruender-video.mp4` (per `.gitignore` ausgeschlossen) und Gruppenordner; nicht
-  ins öffentliche Repository und nicht auf GitHub Pages, solange dafür keine Zustimmung vorliegt. Keine KI-Transkription
-  ohne seine Zustimmung (HSKL-KI-Richtlinie Nr. 6).
+- **Ablage:** `praesentation/video/gruender-video.mp4` (versioniert, im Repository und auf GitHub Pages) – veröffentlicht
+  mit Zustimmung des Gründers (laut Yannick, KI-Nachweis FS2 Nr. 18), nicht kommerziell, für die Lehrveranstaltung;
+  bis 03.11.2026 nur in `praesentation/intern/` (ausgeschlossen) und im Gruppenordner. Keine KI-Transkription ohne seine
+  Zustimmung (HSKL-KI-Richtlinie Nr. 6).
 - **Technik und Rückfall:** 11.2 (Video-Schritt), Ton im Beamer-Test (11.4); läuft das Video nicht, bleibt der Rahmen
-  mit dem Satz „Videobotschaft des Gründers – nur im Vortrag“ stehen, und die sprechende Person leitet zu „Fragen?“ über.
+  mit dem Satz „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“ stehen (bis 03.11.2026 „– nur im
+  Vortrag“), und die sprechende Person leitet zu „Fragen?“ über.
 
 ---
 
@@ -1028,11 +1039,11 @@ der FS1-Ordner bleibt unverändert.
 | `marke.js` | primaer #FFD007, sekundaer #1D1D1B, `anrede` „Sie“, `logo` leer, `logoTitel` = gelbes Oval (Folie 01 und 09, seit 03.11.) |
 | Pfad-Skript | berechnet den Pfad aus den Kachelmitten (Daten als Objekt in `index.html`, wie in der Musterfolie); neue Fotos oder geänderte Stationen verschieben den Pfad selbst |
 | Bühne „gelb“ | `data-buehne="gelb"` und Rückfall `?buehne=schwarz` (ein Selektor, im Beamer-Test zu prüfen) |
-| Bildkachel mit `data-status` | `frei` · `offen` · `rueckfall`; für den öffentlichen Export ein Schalter, der alle Kacheln ohne Freigabe auf `rueckfall` setzt. Der Schalter ändert nur die Anzeige: nicht freigegebene Bilder liegen gar nicht im Repository, sondern in `praesentation/intern/` oder im Gruppenordner; die interne Fassung lädt sie von dort, fehlt der Ordner, zeigt jede Kachel ihren Rückfall |
+| Bildkachel mit `data-status` | `frei` · `offen` · `rueckfall`; Schalter `?kacheln=rueckfall` setzt alle Kacheln auf ihren Rückfall (Rückfall ohne Fremdbilder). Seit 03.11.2026 liegen die Fremdbilder versioniert in `praesentation/fremdbilder/` (Liste `fremdbilder/register.js`, veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17); fehlt `register.js`, zeigt jede Kachel ihren Rückfall. Bis 03.11.2026 lagen sie als „interne Fassung“ in `praesentation/intern/`; Namen wie `data-intern` stammen daher und bleiben (LIESMICH der Präsentation §12) |
 | `schriften/` | Libre Franklin (latin, latin-ext) aus dem Recap-Ordner mit `LIZENZ-libre-franklin-OFL.txt` und Eintrag in `HERKUNFT.txt` |
 | Folie 08: Bildschirmfotos der Konzept-Webseite (vorher `blog.html` und `blog-lang.png`) | Kopien aus `konzept-website/_vorschau/` (390 × 844, eigene Gestaltung ohne fremde Bilder) in `bilder/`; Link „Live-Demo“ relativ auf `../konzept-website/index.html?anmerkungen=1` mit `target="_blank"`, kein `iframe`. Die Konzept-Webseite selbst ist ein eigener Ordner neben der Präsentation (Abschnitt 7), nicht Teil der Engine; fehlt er, bleiben die Bildschirmfotos |
-| Video-Schritt auf 09 (v01) | `<video>` mit `playsinline`, Quelle `intern/gruender-video.mp4` (relativ, nur in der internen Fassung vorhanden), startet beim Schritt mit Ton (der Klick zählt als Nutzergeste, Autoplay-Sperre greift nicht), danach Standbild auf dem letzten Bild; fehlt die Datei (öffentliche Fassung, Export), zeigt der Rahmen den Rückfall aus dem Bildplan. Nicht vorladen (`preload="none"` erst beim Schritt davor auf `auto`) |
-| `.gitignore` (im Wurzelordner des Repositorys) | schließt `fallstudie-2-customer-journey/praesentation/intern/` und `fallstudie-2-customer-journey/praesentation/_test/` aus; angelegt am 02.11.2026 (KI-Nachweis FS2 Nr. 09), vor dem ersten echten Foto im Präsentationsordner |
+| Video-Schritt auf 09 (v01) | `<video>` mit `playsinline`, Quelle `video/gruender-video.mp4` (relativ, versioniert, veröffentlicht mit Zustimmung des Gründers, KI-Nachweis FS2 Nr. 18; bis 03.11.2026 `intern/gruender-video.mp4`), startet beim Schritt mit Ton (der Klick zählt als Nutzergeste, Autoplay-Sperre greift nicht), danach Standbild auf dem letzten Bild; läuft die Datei nicht (Druck/PDF, Prüfwerkzeug, Referentenfenster, Browser ohne H.264), zeigt der Rahmen den Rückfall aus dem Bildplan. Nicht vorladen (`preload="none"` erst beim Schritt davor auf `auto`) |
+| `.gitignore` (im Wurzelordner des Repositorys) | schließt `fallstudie-2-customer-journey/praesentation/intern/` und `fallstudie-2-customer-journey/praesentation/_test/` aus; angelegt am 02.11.2026 (KI-Nachweis FS2 Nr. 09), vor dem ersten echten Foto im Präsentationsordner. Seit 03.11.2026 liegt in `intern/` nur noch Rohmaterial (Rohdownloads, Kontaktbögen); Fremdbilder und Video sind veröffentlicht (`fremdbilder/`, `video/`) |
 
 Keine Folie bekommt ein eigenes `data-modus`: Ein `data-modus` an der Folie hat Vorrang vor dem Dokument
 (`deck.js` Z. 1098–1101), die Taste D würde dort nicht greifen.
@@ -1050,8 +1061,10 @@ Aufruf im Ordner `praesentation/` (Voraussetzung Node.js und playwright-core, si
 - **Konzept-Webseite** prüft der Bau selbst (Playwright: keine Konsolenfehler, keine externen Anfragen, interne Links,
   Hinweisbalken auf jeder Seite, `noindex`, 390 px ohne waagerechtes Scrollen); `pruefen.mjs` lädt sie nicht, weil der
   Link erst beim Klick öffnet.
-- **Interne Fassung:** Mit echten Fotos startet die Gruppe `pruefen.mjs` selbst; Bericht und Screenshots gehen nicht in
-  KI-Werkzeuge (Abschnitt 4, Arbeitsweise).
+- **Fassung mit Bildern und Rückfall:** `pruefen.mjs` prüft standardmäßig die Fassung mit Bildern (Fremdbilder aus
+  `fremdbilder/`), mit `--oeffentlich` den Rückfall ohne Fremdbilder (LIESMICH der Präsentation §12). Mit eigenen Fotos
+  der Gruppe startet die Gruppe `pruefen.mjs` selbst; Bericht und Screenshots gehen dann nicht in KI-Werkzeuge
+  (Abschnitt 4, Arbeitsweise). Bis 03.11.2026 hieß die Fassung mit Bildern „interne Fassung“.
 - **Meta sauber auszeichnen:** Herleitungs-, Quell- und Fußzeile sowie Bildunterschriften mit `data-meta`; Inhalt nie
   unter 28 px (Warnung ab < 27,5 px für Nicht-Meta, `pruefen.mjs` Z. 663–665).
 - **Zusätzliche Sichtprüfung**, weil `pruefen.mjs` SVG-Linien nicht auf Kontrast prüft: kein Gelb ohne schwarze Kontur
@@ -1077,14 +1090,15 @@ So früh wie möglich im Vortragsraum (Zugang in der Mail an Prof. Stenger erfra
 
 - PDF über `index.html?druck` → Strg + P → „Als PDF speichern“ (FS1 `LIESMICH.md` §11 Nr. 6), alle Hauptfolien im
   Endzustand plus Backup; Zuordnung PDF-Seite ↔ Folie auf den Spickzettel.
-- **Zwei Fassungen:** intern (alle Fotos) und öffentlich (Kacheln ohne Freigabe als Rückfall). Nur die öffentliche
-  Fassung kommt ins Repository. Das Repository wird über GitHub Pages ausgeliefert, jeder Push ist sofort öffentlich;
-  ein Anzeigeschalter allein hält nichts zurück. Deshalb liegen nicht freigegebene Fotos und Screenshots und die PDF
-  der internen Fassung nur im Gruppenordner oder in `praesentation/intern/` (per `.gitignore` ausgeschlossen); die
-  interne Fassung lädt sie von dort. Die Konzept-Webseite enthält keine fremden Bilder; ob sie öffentlich bleibt, regelt
-  13.1 Nr. 9. Ins Repository kommen nur Rückfälle und
-  Freigegebenes. **Vor jedem Commit und Push `git status` prüfen**: Taucht eine solche Datei auf, nicht pushen.
-  Einschätzung, keine Rechtsberatung (Dossier 10.6, ✔ R30, ✎ G21, Don't 19).
+- **Fassung mit Bildern (seit 03.11.2026 Standard):** Fremdbilder und Video sind veröffentlicht mit Freigabe
+  (KI-Nachweis FS2 Nr. 17, Nr. 18), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+  Repository, GitHub Pages, Hörsaal und Notfall-PDF zeigen dieselbe Fassung; die Exportsperre im Prüfwerkzeug ist
+  entfallen. **Rückfall ohne Fremdbilder** nur, wenn `fremdbilder/register.js` fehlt oder per Schalter
+  (`?kacheln=rueckfall`, `pruefen.mjs --oeffentlich`). Das Repository wird über GitHub Pages ausgeliefert, jeder Push
+  ist sofort öffentlich: Eigene Fotos, Rohdownloads und Kontaktbögen bleiben im Gruppenordner oder in
+  `praesentation/intern/` (per `.gitignore` ausgeschlossen), bis die Gruppe sie gesichtet hat. **Vor jedem Commit und
+  Push `git status` prüfen.** Einschätzung, keine Rechtsberatung (Dossier 10.6, ✔ R30, ✎ G21, Don't 19).
+  Bis 03.11.2026 galt: zwei Fassungen, intern (alle Fotos, nur in `intern/`) und öffentlich (Rückfälle).
 - Ablage: USB-Stick (entpackter Ordner und PDF), Gruppenordner, Mail an sich selbst.
 
 ---
@@ -1107,7 +1121,7 @@ fehlt, geht in die Meilensteine ab 03.11.
 | M8 | **Do 05.11.** | **Bildschluss** (Fotos, b14-Bildschirmfotos aus `_vorschau/`, b20); Best Practices geprüft und ins Dossier übernommen; Leseprobe Sprechtempo (10.3) mit Sprechtext-Entwürfen je Block; Antwortfrist Prof. Stenger; ist die Lieferung nicht da, gilt für b02 und b10 der Rückfall | jede Kachel `frei` oder `rueckfall`; Tempo gemessen |
 | M9 | Fr 06.11. | **Datenschluss** (Codierung, Zählungen, Urteile zu Ü1–Ü4 nach dem Selbstversuch); Titel von 03, 05 und 09 nach den Daten geprüft; alle 9 Folien und B1–B9 gebaut; Leitplanken (Dossier 8.3) für Konzept-Webseite und Folien abgehakt; erster PDF-Export | `pruefen.mjs`: 0 Fehler; Webseiten-Prüfung ohne Befund |
 | M10 | Sa 07.11. | Generalprobe 1 (mit Live-Demo zur Probe) | Zeiten je Folie protokolliert |
-| M11 | So 08.11. | Umbau nach GP1; öffentliche und interne Fassung getrennt (interne Dateien nur in `praesentation/intern/` bzw. im Gruppenordner, 11.5); Entscheidung zur Veröffentlichung der Konzept-Webseite (13.1 Nr. 9) | Kürzungen eingearbeitet; `git status` zeigt keine nicht freigegebene Datei |
+| M11 | So 08.11. | Umbau nach GP1; Fassung mit Bildern und Rückfall ohne Fremdbilder geprüft (seit 03.11. Fremdbilder und Video veröffentlicht, KI-Nachweis FS2 Nr. 17/18; eigene Fotos und Rohmaterial nur in `praesentation/intern/` bzw. im Gruppenordner, 11.5); Entscheidung zur Veröffentlichung der Konzept-Webseite (13.1 Nr. 9) | Kürzungen eingearbeitet; `git status` zeigt keine ungesichtete eigene Datei |
 | M12 | **Mo 09.11.** | Generalprobe 2; **Änderungsstopp 20:00**; Exporte, USB-Stick, KI-Nachweis | ≤ 12:30, Exporte geprüft |
 | M13 | **Di 10.11.** | Beamer-Test vor Beginn (Ton, Tab der Konzept-Webseite); Vortrag | – |
 
@@ -1135,7 +1149,7 @@ Suchergebnisse hängen von Standort und Personalisierung ab: Datum, Gerät und A
 | 8 | Gründer erneut anfragen | **erledigt:** Videobotschaft am 02.11. mit Zustimmung für Video und Stimme in der Präsentation (9.5); offen: Kanalanteile (13.3) | – |
 | 9 | Konzept-Webseite veröffentlichen (vorher: `blog.html` veröffentlichen) | im Repository nur mit Hinweisbalken, `noindex`, ohne fremde Bilder (7.3); über GitHub Pages verlinken oder per QR zeigen erst nach Stengers Antwort (13.2 Nr. 16) | So 08.11. |
 | 10 | Versalien-Ausnahme für die 5 As | ja, wie S. 109 | Mi 04.11. |
-| 11 | Ablage nicht freigegebener Fotos und Screenshots | Gruppenordner bzw. `praesentation/intern/` (per `.gitignore` ausgeschlossen); ins Repository nur Rückfälle und Freigegebenes; vor jedem Push `git status` (11.5) | erledigt (02.11.) |
+| 11 | Ablage nicht freigegebener Fotos und Screenshots | Gruppenordner bzw. `praesentation/intern/` (per `.gitignore` ausgeschlossen); ins Repository nur Rückfälle und Freigegebenes; vor jedem Push `git status` (11.5). Seit 03.11.: Fremdbilder in `fremdbilder/` und Video in `video/` veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17, 18); `intern/` nur noch Rohmaterial und ungesichtete eigene Fotos | erledigt (02.11., ergänzt 03.11.) |
 | 12 | Plätze 2 und 3 je Phase (5.2) | wie 5.2.2, im Workshop prüfen | Mi 04.11. |
 | 13 | Urteile zu den Überleitungen (6.7) | vorläufig trägt · bricht · wackelt · wackelt; nach dem Übergangsprotokoll bestätigen oder ändern | Fr 06.11. |
 

@@ -2,36 +2,47 @@
 /* ==========================================================================
    Prüfung der Konzept-Webseite (Fallstudie 2) mit Playwright/Chromium
    Aufruf (im Repository):  node fallstudie-2-customer-journey/konzept-website/werkzeuge/pruefen.mjs
-   Optionen:  --fassung beide|oeffentlich|intern   welche Fassung geprüft wird (Standard: beide)
-              --ohne-bilder   keine Bildschirmfotos schreiben
+   Optionen:  --fassung beide|bilder|rueckfall   welche Fassung geprüft wird (Standard: beide)
+                        (alte Namen gehen weiter: intern = bilder, oeffentlich = rueckfall)
+              --ohne-fotos    keine Bildschirmfotos schreiben (alter Name: --ohne-bilder)
               --bericht DATEI Ergebnis zusätzlich als JSON speichern
    Playwright: require(process.env.PLAYWRIGHT_CORE || 'playwright'); Chromium über CHROME_PFAD wählbar.
 
-   Zwei Fassungen:
-     öffentlich  wie im Repository und auf GitHub Pages: Anfragen nach intern/ werden gesperrt (route.abort), es gibt
-                 kein window.INTERN_BILDER; außer der Wortmarke keine Bilder, Platzhalter und eigene Zeichnungen sichtbar.
-                 Bildschirmfotos IMMER aus dieser Fassung nach ../_vorschau/ (versioniert) – so kommt nie ein HOLY-Foto
-                 ins Repository.
-     intern      mit intern/bilder.js (per .gitignore ausgeschlossen): Bilder nur aus intern/bilder/, jedes mit alt,
-                 width und height, geladen (kein kaputtes Bild), jeder Bildplatz mit vorhandenem Schlüssel gefüllt,
-                 Bildnachweis im Fuß sichtbar. Bildschirmfotos nach ../intern/vorschau/ (oberer Bildschirm, ganze Seite
-                 bei 390 px, ganze Seite bei 1280 px). Fehlt intern/bilder.js, gibt es eine Warnung statt eines Fehlers.
+   Zwei Fassungen derselben Dateien:
+     mit Bildern  der Standard – so läuft die Seite im Repository, auf GitHub Pages und im Hörsaal. fremdbilder/register.js
+                  setzt window.INTERN_BILDER (Name aus der Zeit vor der Freigabe), konzept.js baut die Bilder aus
+                  fremdbilder/ ein. Die Bilder sind veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht
+                  kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Geprüft: jeder Registereintrag
+                  mit Datei in fremdbilder/, alt, nachweis, motiv, pixel (= echte Bildgröße); jedes Bild geladen, mit alt,
+                  width, height; kein Bild im ersten Bildschirm mit loading="lazy"; jeder Bildplatz mit vorhandenem
+                  Schlüssel gefüllt (bei {packung} ohne Schlüssel: ausgeblendet); Unterschrift am Bild = unterschrift bzw.
+                  nachweis; Fuß mit Obersatz und je Nachweis einem Eintrag „Motiv: Nachweis“.
+                  Bildschirmfotos: ../_vorschau/0n-….png (oberer Bildschirm, 390 × 844, versioniert – so sieht es auf
+                  GitHub Pages aus); ganze Seite bei 390 und 1280 px nach ../intern/vorschau/ (per .gitignore ausgeschlossen).
+                  Zusätzlich die GitHub-Pages-Probe: alle Seiten über einen lokalen HTTP-Server (wie GitHub Pages, mit
+                  fremdbilder/) laden – keine Konsolenfehler, keine 404, alle Bilder geladen.
+     Rückfall ohne Fremdbilder  wenn fremdbilder/register.js fehlt: Anfragen nach fremdbilder/ werden gesperrt, es gibt
+                  kein window.INTERN_BILDER; außer der Wortmarke keine Bilder, Platzhalter und eigene Zeichnungen sichtbar,
+                  Satz „Keine HOLY-Fotos …“ im Fuß. Bildschirmfotos nur nach ../intern/vorschau-rueckfall/ (ausgeschlossen).
 
    Geprüft wird (gestaltungsplan.md 7.2/7.3):
      1. alle Seiten laden ohne Konsolenfehler und ohne Skriptfehler (normal und mit ?anmerkungen=1)
-     2. keine externen Anfragen (jede Anfrage außer file:, data:, blob:, about: wird blockiert und gezählt);
-        keine externen Adressen in src/href; keine Formulare und Eingabefelder
-     3. alle internen Links erreichbar (Datei vorhanden, Sprungziel #id vorhanden)
+     2. keine externen Anfragen (jede Anfrage außer file:, data:, blob:, about: und dem lokalen Prüfserver wird blockiert
+        und gezählt); keine externen Adressen in src/href; keine Formulare und Eingabefelder
+     3. alle internen Links erreichbar (Datei vorhanden, Sprungziel #id vorhanden), kein Link nach intern/
      4. Hinweisbalken auf jeder Seite: wörtlicher Text, sichtbar, oben, bleibt beim Scrollen stehen, kein Schließen-Knopf
      5. <meta name="robots" content="noindex,nofollow"> auf jeder Seite
-     6. 390 px Breite ohne waagerechtes Scrollen (auch im Präsentationsmodus und bei 1280 px)
+     6. 390 px Breite ohne waagerechtes Scrollen (auch im Präsentationsmodus), dazu 320 und 1280 px
      7. Kontrast WCAG 2.x für jeden sichtbaren Text (4,5 : 1, große Schrift 3 : 1)
      8. Präsentationsmodus: Zahl der Marker = Zahl der Anmerkungen, jede mit Befund-IDs, Rundgang per „Weiter“
      9. Rechnungen: Packungswahl, Warenkorb je Packung, Code aus der Adresse, Nachfüll-Rechner
-    10. Bilder je Fassung (siehe oben); interne Fassung zusätzlich: Galerie der Produktseite tauscht das große Bild
-   Bildschirmfotos 390 × 844 (Normalmodus, oberer Bildschirm) nach ../_vorschau/ (öffentliche Fassung).
+    10. Bilder je Fassung (siehe oben); mit Bildern zusätzlich: großes Bild der Produktseite folgt der Packung, bis in der
+        Galerie geklickt wird; Vorschaubild im Warenkorb und Shaker auf der Danke-Seite passen zu ?packung=
+    11. erster Bildschirm 390 × 844: Händlerseite Code-Box und Hauptknopf, Produktseite Titel, Bewertung und Preise;
+        1280 px: Knopf „Zum Produkt aus dem Video“ in einer Zeile
    ========================================================================== */
 import fs from 'node:fs';
+import http from 'node:http';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -40,17 +51,20 @@ const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_CORE || 'playwright');
 
 const WURZEL = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const VORSCHAU = path.join(WURZEL, '_vorschau');                    // versioniert: nur öffentliche Fassung
-const INTERN = path.join(WURZEL, 'fremdbilder');                    // veröffentlichte Fremdbilder (Freigabe KI-Nachweis FS2 Nr. 17)
-const INTERN_VORSCHAU = path.join(WURZEL, 'intern', 'vorschau');
-const INTERN_JS = path.join(INTERN, 'register.js');
-const INTERN_URL = pathToFileURL(INTERN).href + '/';
-const istIntern = (u) => typeof u === 'string' && u.startsWith(INTERN_URL);
+const VORSCHAU = path.join(WURZEL, '_vorschau');                              // versioniert: Fassung mit Bildern, oberer Bildschirm
+const VORSCHAU_GANZ = path.join(WURZEL, 'intern', 'vorschau');                // ausgeschlossen: ganze Seiten zum Ansehen
+const VORSCHAU_RUECKFALL = path.join(WURZEL, 'intern', 'vorschau-rueckfall'); // ausgeschlossen: Rückfall ohne Fremdbilder
+const FREMD = path.join(WURZEL, 'fremdbilder');                               // veröffentlichte Fremdbilder (Freigabe KI-Nachweis FS2 Nr. 17)
+const REGISTER_JS = path.join(FREMD, 'register.js');
+const FREMD_URL = pathToFileURL(FREMD).href + '/';
+const istFremd = (u) => typeof u === 'string' && (u.startsWith(FREMD_URL) || /^http:\/\/127\.0\.0\.1:\d+\/fremdbilder\//.test(u));
 const args = process.argv.slice(2);
-const MIT_BILDERN = !args.includes('--ohne-bilder');
+const MIT_FOTOS = !args.includes('--ohne-fotos') && !args.includes('--ohne-bilder');
 const berichtPfad = args.includes('--bericht') ? args[args.indexOf('--bericht') + 1] : null;
-const fassungArg = args.includes('--fassung') ? args[args.indexOf('--fassung') + 1] : 'beide';
-if (!['beide', 'oeffentlich', 'intern'].includes(fassungArg)) { console.error('--fassung beide|oeffentlich|intern'); process.exit(2); }
+const ALIAS = { beide: 'beide', bilder: 'bilder', intern: 'bilder', rueckfall: 'rueckfall', oeffentlich: 'rueckfall' };
+const fassungArg = ALIAS[args.includes('--fassung') ? args[args.indexOf('--fassung') + 1] : 'beide'];
+if (!fassungArg) { console.error('--fassung beide|bilder|rueckfall (alte Namen: intern, oeffentlich)'); process.exit(2); }
+const NAME = { bilder: 'mit Bildern', rueckfall: 'Rückfall ohne Fremdbilder' };
 
 const SEITEN = [
   ['01-index', 'index.html'],
@@ -62,38 +76,60 @@ const SEITEN = [
   ['07-haendler', 'haendler.html']
 ];
 const HINWEIS = 'Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich';
+/* Obersatz der Bildnachweise im Fuß (Fassung mit Bildern), wörtlich in allen 7 Seiten und in README.md */
+const BILDER_FUSS = 'Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – veröffentlicht mit Freigabe, nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.';
+const PACKUNGEN = ['set', '1', '10', '50'];
 
 const fehler = [];
 const notizen = [];
 const warnungen = [];
 const extern = [];
-let FASSUNG = 'oeffentlich';                                        // aktuell geprüfte Fassung
-const f = (ort, text) => fehler.push('[' + FASSUNG + '] ' + ort + ': ' + text);
+let FASSUNG = 'bilder';                                                       // aktuell geprüfte Fassung
+const f = (ort, text) => fehler.push('[' + NAME[FASSUNG] + '] ' + ort + ': ' + text);
 
-/* Fassungen festlegen; fehlt intern/bilder.js, wird die interne Fassung mit Warnung übersprungen */
-const FASSUNGEN = fassungArg === 'beide' ? ['oeffentlich', 'intern'] : [fassungArg];
-let REGISTER = null;                                                // Inhalt von intern/bilder.js (nur zum Abgleich)
-if (FASSUNGEN.includes('intern')) {
-  if (!fs.existsSync(INTERN_JS)) {
-    warnungen.push('intern/bilder.js fehlt – interne Fassung nicht geprüft (öffentliche Fassung ' + (FASSUNGEN.includes('oeffentlich') ? 'wird' : 'stattdessen') + ' geprüft).');
-    FASSUNGEN.splice(FASSUNGEN.indexOf('intern'), 1);
-    if (!FASSUNGEN.length) FASSUNGEN.push('oeffentlich');
-  } else {
-    try {
-      const fenster = {};
-      new Function('window', fs.readFileSync(INTERN_JS, 'utf8'))(fenster);
-      REGISTER = fenster.INTERN_BILDER || null;
-    } catch (e) { fehler.push('[intern] intern/bilder.js: Syntaxfehler ' + e.message); }
-    if (REGISTER) {
-      for (const [k, e] of Object.entries(REGISTER)) {
-        if (!/^fremdbilder\/[\w.-]+\.(jpe?g|png|webp)$/i.test(e.datei || '')) fehler.push('[intern] intern/bilder.js: ' + k + ' mit Datei außerhalb von intern/bilder/: ' + e.datei);
-        else if (!fs.existsSync(path.join(WURZEL, e.datei))) fehler.push('[intern] intern/bilder.js: Datei fehlt für ' + k + ': ' + e.datei);
-        if (!e.alt || !e.nachweis || !/\d+\s*[×x]\s*\d+/.test(e.pixel || '')) fehler.push('[intern] intern/bilder.js: ' + k + ' ohne alt, nachweis oder pixel');
-      }
+/* Register lesen und prüfen. Es ist seit der Freigabe versioniert: fehlt es, ist das ein Fehler. */
+const FASSUNGEN = fassungArg === 'beide' ? ['bilder', 'rueckfall'] : [fassungArg];
+let REGISTER = null;
+if (!fs.existsSync(REGISTER_JS)) {
+  fehler.push('fremdbilder/register.js fehlt (seit der Freigabe KI-Nachweis FS2 Nr. 17 versioniert) – Fassung mit Bildern nicht prüfbar.');
+  if (FASSUNGEN.includes('bilder')) FASSUNGEN.splice(FASSUNGEN.indexOf('bilder'), 1);
+  if (!FASSUNGEN.length) FASSUNGEN.push('rueckfall');
+} else {
+  try {
+    const fenster = {};
+    new Function('window', fs.readFileSync(REGISTER_JS, 'utf8'))(fenster);
+    REGISTER = fenster.INTERN_BILDER || null;
+  } catch (e) { fehler.push('fremdbilder/register.js: Syntaxfehler ' + e.message); }
+  if (REGISTER) {
+    for (const [k, e] of Object.entries(REGISTER)) {
+      if (!/^fremdbilder\/[\w.-]+\.(jpe?g|png|webp)$/i.test(e.datei || '')) fehler.push('fremdbilder/register.js: ' + k + ' mit Datei außerhalb von fremdbilder/: ' + e.datei);
+      else if (!fs.existsSync(path.join(WURZEL, e.datei))) fehler.push('fremdbilder/register.js: Datei fehlt für ' + k + ': ' + e.datei);
+      if (!e.alt || !e.nachweis || !e.motiv || !/\d+\s*[×x]\s*\d+/.test(e.pixel || '')) fehler.push('fremdbilder/register.js: ' + k + ' ohne alt, nachweis, motiv oder pixel');
+      if (/^Symbolbild/.test(e.alt || '') !== /^Symbolbild · /.test(e.nachweis || '')) fehler.push('fremdbilder/register.js: ' + k + ' Symbolbild nicht in alt und nachweis gleich gekennzeichnet');
+      if (e.unterschrift && /^Symbolbild · /.test(e.nachweis) && !/^Symbolbild · /.test(e.unterschrift)) fehler.push('fremdbilder/register.js: ' + k + ' Unterschrift ohne „Symbolbild · “');
+    }
+    // jede veröffentlichte Datei in fremdbilder/ gehört zu einem Eintrag (keine verwaisten Fremdbilder)
+    const benutzt = new Set(Object.values(REGISTER).map((e) => e.datei));
+    for (const d of fs.readdirSync(FREMD)) {
+      if (d === 'register.js') continue;
+      if (!benutzt.has('fremdbilder/' + d)) warnungen.push('fremdbilder/' + d + ' wird von keinem Registereintrag benutzt');
     }
   }
 }
-const INTERN_FUSS = 'Produktbilder und Screenshots: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – nur intern für die Lehrveranstaltung.';
+
+/* Lokaler Prüfserver wie GitHub Pages (statisch, mit fremdbilder/), nur 127.0.0.1 */
+const TYPEN = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2', '.txt': 'text/plain; charset=utf-8', '.svg': 'image/svg+xml' };
+const server = http.createServer((req, res) => {
+  const pfad = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  const datei = path.join(WURZEL, path.normalize(pfad).replace(/^([/\\])+/, ''));
+  if (!datei.startsWith(WURZEL) || /[/\\]intern([/\\]|$)/.test(path.relative(WURZEL, datei)) || !fs.existsSync(datei) || fs.statSync(datei).isDirectory()) {
+    res.writeHead(404, { 'content-type': 'text/plain' }); res.end('404'); return;
+  }
+  res.writeHead(200, { 'content-type': TYPEN[path.extname(datei).toLowerCase()] || 'application/octet-stream' });
+  fs.createReadStream(datei).pipe(res);
+});
+await new Promise((ok) => server.listen(0, '127.0.0.1', ok));
+const SERVER_URL = 'http://127.0.0.1:' + server.address().port + '/';
 
 const browser = await chromium.launch({
   executablePath: process.env.CHROME_PFAD || undefined,
@@ -106,9 +142,9 @@ async function neuerKontext(breite, hoehe, mobil) {
   const fassung = FASSUNG;
   await k.route('**/*', (route) => {
     const u = route.request().url();
-    // öffentliche Fassung: intern/ ist gesperrt wie auf GitHub Pages (dort fehlt der Ordner)
-    if (fassung === 'oeffentlich' && istIntern(u)) return route.abort();
-    if (/^(file|data|blob|about):/i.test(u)) return route.continue();
+    // Rückfall: fremdbilder/ ist gesperrt, als fehle der Ordner
+    if (fassung === 'rueckfall' && istFremd(u)) return route.abort();
+    if (/^(file|data|blob|about):/i.test(u) || u.startsWith(SERVER_URL)) return route.continue();
     extern.push(u);
     return route.abort();
   });
@@ -120,20 +156,21 @@ function dateiUrl(datei, query) {
 }
 
 /* Seite laden und Fehler mitschneiden */
-async function oeffne(kontext, datei, query, ort) {
+async function oeffne(kontext, datei, query, ort, basis) {
   const page = await kontext.newPage();
   const meldungen = [];
   const fassung = FASSUNG;
-  const erwartet = (u) => fassung === 'oeffentlich' && istIntern(u);   // gesperrtes intern/bilder.js
+  const erwartet = (u) => fassung === 'rueckfall' && istFremd(u);       // gesperrtes fremdbilder/register.js
   page.on('console', (m) => {
     if (m.type() !== 'error' && m.type() !== 'warning') return;
     if (erwartet((m.location() || {}).url) && /Failed to load resource/.test(m.text())) return;
     const wo = (m.location() || {}).url || '';
-    meldungen.push(m.type() + ': ' + m.text() + (/^file:/i.test(wo) ? ' (' + path.relative(WURZEL, fileURLToPath(wo.split('?')[0].split('#')[0])) + ')' : ''));
+    meldungen.push(m.type() + ': ' + m.text() + (/^file:/i.test(wo) ? ' (' + path.relative(WURZEL, fileURLToPath(wo.split('?')[0].split('#')[0])) + ')' : (wo ? ' (' + wo + ')' : '')));
   });
   page.on('pageerror', (e) => meldungen.push('pageerror: ' + e.message));
-  page.on('requestfailed', (r) => { if (/^file:/i.test(r.url()) && !erwartet(r.url())) meldungen.push('requestfailed: ' + r.url()); });
-  await page.goto(dateiUrl(datei, query), { waitUntil: 'load' });
+  page.on('requestfailed', (r) => { if (/^(file|http):/i.test(r.url()) && !erwartet(r.url()) && !extern.includes(r.url())) meldungen.push('requestfailed: ' + r.url()); });
+  page.on('response', (r) => { if (r.status() >= 400 && !erwartet(r.url())) meldungen.push('HTTP ' + r.status() + ': ' + r.url()); });
+  await page.goto(basis ? basis + datei + (query || '') : dateiUrl(datei, query), { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
   return { page, meldungen, ort };
 }
@@ -184,11 +221,13 @@ function ids(datei) {
 const ergebnisSeiten = [];
 const bildschirmfotos = [];
 
-/* Bilder der Seite erfassen (img und Einbettungen, Bildplätze, Fußhinweis) */
+/* Bilder der Seite erfassen (img und Einbettungen, Bildplätze, Fuß) */
 async function bilderInfo(page) {
-  return page.evaluate((INTERN_FUSS) => {
+  return page.evaluate(() => {
     const sichtbar = (el) => !!el && el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden';
-    const fussIntern = Array.from(document.querySelectorAll('[data-nur-intern]'));
+    const fussBilder = Array.from(document.querySelectorAll('[data-nur-intern]'));
+    const p = new URLSearchParams(location.search).get('packung');
+    const packung = ['set', '1', '10', '50'].includes(p) ? p : 'set';
     return {
       register: window.INTERN_BILDER ? Object.keys(window.INTERN_BILDER) : null,
       htmlKlasse: document.documentElement.classList.contains('intern-bilder'),
@@ -198,20 +237,28 @@ async function bilderInfo(page) {
           tag: e.tagName.toLowerCase(), src: e.getAttribute('src') || e.getAttribute('href') || '',
           wortmarke: e.matches('.wortmarke img') && e.getAttribute('src') === 'bilder/holy-logo-wortmarke.png',
           alt: e.hasAttribute('alt') ? e.getAttribute('alt') : null, breite: e.getAttribute('width'), hoehe: e.getAttribute('height'),
+          natur: e.naturalWidth ? e.naturalWidth + '×' + e.naturalHeight : '',
           lazy: e.getAttribute('loading') === 'lazy', deko: !!e.closest('[data-intern-deko]'), oben: Math.round(r.top + window.scrollY),
           sichtbar: sichtbar(e)
         };
       }),
-      plaetze: Array.from(document.querySelectorAll('[data-intern]')).map((s) => ({ schluessel: s.getAttribute('data-intern'), aktiv: s.getAttribute('data-intern-aktiv'), mitBild: s.classList.contains('mit-bild'), sichtbar: sichtbar(s) })),
-      fussInternSichtbar: fussIntern.some(sichtbar),
-      fussInternText: fussIntern.map((e) => e.textContent.replace(/\s+/g, ' ').trim()).join(' '),
-      fussInternEintraege: document.querySelectorAll('[data-intern-liste] li').length,
-      oeffentlichSatzSichtbar: Array.from(document.querySelectorAll('[data-nur-oeffentlich]')).some(sichtbar),
-      oeffentlichSaetze: document.querySelectorAll('[data-nur-oeffentlich]').length,
+      plaetze: Array.from(document.querySelectorAll('[data-intern]')).map((s) => {
+        const n = s.querySelector('[data-intern-nachweis]');
+        return {
+          schluessel: s.getAttribute('data-intern'), aufgeloest: s.getAttribute('data-intern').replace('{packung}', packung),
+          aktiv: s.getAttribute('data-intern-aktiv'), mitBild: s.classList.contains('mit-bild'), sichtbar: sichtbar(s),
+          unterschrift: n ? n.textContent.replace(/\s+/g, ' ').trim() : null
+        };
+      }),
+      fussSichtbar: fussBilder.some(sichtbar),
+      fussText: fussBilder.map((e) => e.textContent.replace(/\s+/g, ' ').trim()).join(' '),
+      fussEintraege: Array.from(document.querySelectorAll('[data-intern-liste] li')).map((li) => ({ text: li.textContent.replace(/\s+/g, ' ').trim(), motiv: (li.querySelector('b') || {}).textContent || '' })),
+      rueckfallSatzSichtbar: Array.from(document.querySelectorAll('[data-nur-oeffentlich]')).some(sichtbar),
+      rueckfallSaetze: document.querySelectorAll('[data-nur-oeffentlich]').length,
       leereSichtbarePlaetze: Array.from(document.querySelectorAll('.bildplatz')).filter((b) => sichtbar(b) && !b.querySelector('img')).length,
       fensterHoehe: window.innerHeight
     };
-  }, INTERN_FUSS);
+  });
 }
 
 /* alle Bilder laden (lazy → eager), für Prüfung und ganzseitige Bildschirmfotos; gibt nicht geladene Bilder zurück */
@@ -228,42 +275,65 @@ async function ladeAlleBilder(page) {
 /* Bilder je Fassung prüfen */
 function pruefeBilder(ort, b, modus) {
   const fremd = b.elemente.filter((e) => !e.wortmarke);
-  if (FASSUNG === 'oeffentlich') {
-    if (b.register) f(ort, 'window.INTERN_BILDER vorhanden, obwohl intern/ gesperrt ist');
-    if (fremd.length) f(ort, fremd.length + ' Bild-, Video- oder Einbettungselemente (öffentlich nur eigene SVG und die Wortmarke im Kopf erlaubt)');
-    if (b.htmlKlasse || b.plaetze.some((p) => p.mitBild)) f(ort, 'Bildplatz mit Bild in der öffentlichen Fassung');
-    if (b.fussInternSichtbar) f(ort, 'Bildnachweis der internen Fassung sichtbar');
-    if (b.oeffentlichSaetze && !b.oeffentlichSatzSichtbar) f(ort, 'Satz „Keine HOLY-Fotos …“ fehlt im Fuß');
+  if (FASSUNG === 'rueckfall') {
+    if (b.register) f(ort, 'window.INTERN_BILDER vorhanden, obwohl fremdbilder/ gesperrt ist');
+    if (fremd.length) f(ort, fremd.length + ' Bild-, Video- oder Einbettungselemente (im Rückfall nur eigene SVG und die Wortmarke im Kopf)');
+    if (b.htmlKlasse || b.plaetze.some((p) => p.mitBild)) f(ort, 'Bildplatz mit Bild im Rückfall');
+    if (b.fussSichtbar) f(ort, 'Bildnachweise im Rückfall sichtbar');
+    if (b.rueckfallSaetze && !b.rueckfallSatzSichtbar) f(ort, 'Satz „Keine HOLY-Fotos …“ fehlt im Fuß');
   } else {
-    if (!b.register) { f(ort, 'window.INTERN_BILDER fehlt (intern/bilder.js nicht geladen)'); return; }
+    if (!b.register) { f(ort, 'window.INTERN_BILDER fehlt (fremdbilder/register.js nicht geladen)'); return; }
     for (const e of fremd) {
-      if (e.tag !== 'img') { f(ort, '<' + e.tag + '> nicht erlaubt (nur img aus intern/bilder/)'); continue; }
-      if (!/^fremdbilder\/[\w.-]+\.(jpe?g|png|webp)$/i.test(e.src)) f(ort, 'Bild nicht aus intern/bilder/: ' + e.src);
+      if (e.tag !== 'img') { f(ort, '<' + e.tag + '> nicht erlaubt (nur img aus fremdbilder/)'); continue; }
+      if (!/^fremdbilder\/[\w.-]+\.(jpe?g|png|webp)$/i.test(e.src)) f(ort, 'Bild nicht aus fremdbilder/: ' + e.src);
       if (e.alt === null) f(ort, 'Bild ohne alt: ' + e.src);
       else if (!e.alt && !e.deko) f(ort, 'Bild mit leerem alt außerhalb eines Knopfs/Links mit Text: ' + e.src);
       if (!e.breite || !e.hoehe) f(ort, 'Bild ohne width/height: ' + e.src);
+      else if (e.natur && e.natur !== e.breite + '×' + e.hoehe) f(ort, 'pixel im Register (' + e.breite + '×' + e.hoehe + ') ≠ Bilddatei (' + e.natur + '): ' + e.src);
       // erster Bildschirm sofort laden, darunter lazy (Toleranz: nur eindeutige Fälle melden)
       if (modus === 'normal' && e.sichtbar && e.lazy && e.oben < b.fensterHoehe * 0.75) f(ort, 'Bild im ersten Bildschirm mit loading="lazy": ' + e.src);
     }
-    if (!fremd.length) f(ort, 'keine internen Bilder eingebaut');
+    if (!fremd.length) f(ort, 'keine Fremdbilder eingebaut');
     for (const p of b.plaetze) {
-      const schluessel = p.schluessel.replace('{packung}', '');
-      const bekannt = p.schluessel.includes('{packung}') ? b.register.some((k) => k.startsWith(schluessel)) : b.register.includes(p.schluessel);
-      if (!bekannt) { warnungen.push(ort + ': Bildplatz „' + p.schluessel + '“ hat keinen Eintrag in intern/bilder.js'); continue; }
-      if (!p.mitBild) f(ort, 'Bildplatz „' + p.schluessel + '“ ohne Bild (Datei nicht geladen?)');
+      const offen = p.schluessel.includes('{packung}');
+      const bekannt = b.register.includes(p.aufgeloest);
+      if (!bekannt) {
+        if (offen) { if (p.sichtbar) f(ort, 'Bildplatz „' + p.aufgeloest + '“ ohne Registereintrag ist sichtbar (soll ausgeblendet sein)'); }
+        else warnungen.push(ort + ': Bildplatz „' + p.schluessel + '“ hat keinen Eintrag in fremdbilder/register.js');
+        continue;
+      }
+      if (!p.mitBild) { f(ort, 'Bildplatz „' + p.aufgeloest + '“ ohne Bild (Datei nicht geladen?)'); continue; }
+      const e = REGISTER[p.aktiv];
+      if (e && p.unterschrift !== null && p.unterschrift !== (e.unterschrift || e.nachweis)) f(ort, 'Unterschrift am Bild „' + p.unterschrift + '“ passt nicht zu ' + p.aktiv);
+      // Motiv im Fuß: zusammengefasste Motive („Packshot 50 Portionen / 10 Portionen“) enthalten alle Wörter des Motivs
+      if (e && !b.fussEintraege.some((x) => x.text.endsWith(e.nachweis) && e.motiv.split(/[\s/:]+/).filter(Boolean).every((w) => x.motiv.split(/[\s/:]+/).includes(w)))) f(ort, 'Fuß ohne Eintrag „' + e.motiv + ': ' + e.nachweis.slice(0, 50) + '…“');
     }
-    if (!b.fussInternSichtbar || !b.fussInternText.includes(INTERN_FUSS)) f(ort, 'Bildnachweis der internen Fassung im Fuß fehlt oder weicht ab');
-    if (!b.fussInternEintraege) f(ort, 'keine Einzelnachweise im Fuß');
-    if (b.oeffentlichSatzSichtbar) f(ort, 'Satz „Keine HOLY-Fotos …“ in der internen Fassung sichtbar');
+    if (!b.fussSichtbar || !b.fussText.includes(BILDER_FUSS)) f(ort, 'Obersatz der Bildnachweise im Fuß fehlt oder weicht ab');
+    if (!b.fussEintraege.length) f(ort, 'keine Einzelnachweise im Fuß');
+    const gesehen = new Set();
+    for (const x of b.fussEintraege) {
+      if (!x.motiv || !/: $/.test(x.motiv)) f(ort, 'Fußeintrag ohne Motiv davor: ' + x.text.slice(0, 60));
+      const nachweis = x.text.slice(x.motiv.length);
+      if (gesehen.has(nachweis)) f(ort, 'Nachweis doppelt im Fuß (nicht zusammengefasst): ' + nachweis.slice(0, 60));
+      gesehen.add(nachweis);
+    }
+    if (b.rueckfallSatzSichtbar) f(ort, 'Satz „Keine HOLY-Fotos …“ in der Fassung mit Bildern sichtbar');
   }
   if (b.leereSichtbarePlaetze) f(ort, b.leereSichtbarePlaetze + ' sichtbare leere Bildplätze');
 }
 
-async function pruefeFassung() {
-  const fotoOrdner = FASSUNG === 'oeffentlich' ? VORSCHAU : INTERN_VORSCHAU;
-  if (MIT_BILDERN) fs.mkdirSync(fotoOrdner, { recursive: true });
+/* erster Bildschirm (Abnahme D06): Elemente müssen bei 390 × 844 oben beginnen bzw. ganz drin sein */
+const ERSTER_BILDSCHIRM = {
+  'haendler.html': [['.held .codebox', 'ganz'], ['.held .knopfreihe .knopf', 'ganz']],
+  'produkt.html': [['main h1', 'beginnt'], ['.bewertung-kurz', 'beginnt'], ['.optionen .option .preis', 'beginnt']],
+  'index.html': [['.held .codebox', 'ganz'], ['.held .knopfreihe .knopf', 'beginnt']]
+};
 
-  /* ---------- 1–8, 10: jede Seite, normal und im Präsentationsmodus ---------- */
+async function pruefeFassung() {
+  const fotoOrdner = FASSUNG === 'bilder' ? VORSCHAU : VORSCHAU_RUECKFALL;
+  if (MIT_FOTOS) { fs.mkdirSync(fotoOrdner, { recursive: true }); if (FASSUNG === 'bilder') fs.mkdirSync(VORSCHAU_GANZ, { recursive: true }); }
+
+  /* ---------- 1–8, 10, 11: jede Seite, normal und im Präsentationsmodus ---------- */
   const mobil = await neuerKontext(390, 844, true);
 
   for (const [kurz, datei] of SEITEN) {
@@ -293,7 +363,7 @@ async function pruefeFassung() {
           anmText: Array.from(document.querySelectorAll('.anm')).map((a) => ({ ids: (a.getAttribute('data-ids') || '').trim(), text: a.textContent.trim().length })),
           punkte: document.querySelectorAll('.anm-punkt').length,
           links: Array.from(document.querySelectorAll('a[href]')).map((a) => ({ href: a.getAttribute('href'), abs: a.href, ohne: a.hasAttribute('data-ohne-anmerkungen') })),
-          // Logo-Bilder: nur außerhalb von intern/ geprüft (interne Packshots dürfen „Logo-Shaker“ heißen)
+          // Logo-Bilder: nur außerhalb von fremdbilder/ geprüft (HOLY-Packshots dürfen „Logo-Shaker“ heißen)
           hatHolyLogoBild: !!Array.from(document.querySelectorAll('img[alt*="Logo" i], svg[aria-label*="Logo" i]')).find((e) => !/^fremdbilder\//.test(e.getAttribute('src') || ''))
         };
       }, HINWEIS);
@@ -310,6 +380,18 @@ async function pruefeFassung() {
       if (info.externeAttribute.length) f(ort, 'externe Adressen: ' + info.externeAttribute.join(', '));
       if (!info.schrift) f(ort, 'Schrift „Bricolage Konzept“ nicht geladen');
       if (info.hatHolyLogoBild) f(ort, 'Element mit „Logo“ in alt/aria-label');
+
+      // 11: erster Bildschirm (vor dem Nachladen, so wie man die Seite öffnet)
+      if (modus === 'normal' && ERSTER_BILDSCHIRM[datei]) {
+        const lage = await page.evaluate((liste) => liste.map(([sel, art]) => {
+          const el = document.querySelector(sel); const r = el ? el.getBoundingClientRect() : null;
+          return { sel, art, da: !!r, oben: r ? Math.round(r.top) : null, unten: r ? Math.round(r.bottom) : null, h: window.innerHeight };
+        }), ERSTER_BILDSCHIRM[datei]);
+        for (const l of lage) {
+          if (!l.da) f(ort, 'erster Bildschirm: ' + l.sel + ' fehlt');
+          else if (l.art === 'ganz' ? l.unten > l.h : l.oben >= l.h) f(ort, 'erster Bildschirm 390 × 844: ' + l.sel + ' ' + (l.art === 'ganz' ? 'endet bei ' + l.unten : 'beginnt bei ' + l.oben) + ' px');
+        }
+      }
 
       // Bilder: zuerst im Ladezustand (lazy/eager), dann alle laden und erneut (kein Bildplatz darf zurückfallen)
       const b0 = await bilderInfo(page);
@@ -328,7 +410,7 @@ async function pruefeFassung() {
         const mitte = document.elementFromPoint(Math.min(window.innerWidth - 2, r.left + r.width / 2), r.top + Math.min(8, r.height / 2));
         return { oben: Math.round(r.top), sichtbar: !!mitte && bar.contains(mitte), scrollY: Math.round(window.scrollY) };
       });
-      if (nachScroll.scrollY < 100) notizen.push('[' + FASSUNG + '] ' + ort + ': Seite kaum scrollbar (' + nachScroll.scrollY + ' px)');
+      if (nachScroll.scrollY < 100) notizen.push('[' + NAME[FASSUNG] + '] ' + ort + ': Seite kaum scrollbar (' + nachScroll.scrollY + ' px)');
       if (nachScroll.oben !== 0 || !nachScroll.sichtbar) f(ort, 'Hinweisbalken nach dem Scrollen nicht oben sichtbar (top=' + nachScroll.oben + ')');
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
 
@@ -340,7 +422,7 @@ async function pruefeFassung() {
         if (!fs.existsSync(zielPfad)) { f(ort, 'Link-Ziel fehlt: ' + l.href); continue; }
         const rel = path.relative(WURZEL, zielPfad);
         if (rel.startsWith('..')) { f(ort, 'Link führt aus dem Ordner: ' + l.href); continue; }
-        if (rel.startsWith('intern')) { f(ort, 'Link in den internen Ordner: ' + l.href); continue; }
+        if (rel.startsWith('intern')) { f(ort, 'Link in den ausgeschlossenen Ordner intern/: ' + l.href); continue; }
         if (u.hash && u.hash.length > 1 && rel.endsWith('.html') && !ids(rel).has(decodeURIComponent(u.hash.slice(1)))) f(ort, 'Sprungziel fehlt: ' + l.href);
         if (modus === 'anmerkungen' && rel.endsWith('.html') && !l.ohne && !l.href.startsWith('#') && !/[?&]anmerkungen=1/.test(l.href)) f(ort, 'Link reicht ?anmerkungen=1 nicht weiter: ' + l.href);
       }
@@ -375,15 +457,15 @@ async function pruefeFassung() {
       m.probleme.forEach((p) => f(ort, 'Kontrast ' + p.kontrast + ' < ' + p.soll + ' bei „' + p.text + '“ (' + p.farbe + ' auf ' + p.grund + ')'));
 
       if (modus === 'normal') {
-        ergebnisSeiten.push({ fassung: FASSUNG, datei, anmerkungen: info.anmText.length, links: info.links.length, texteGeprueft: m.gezaehlt, bilder: b1.elemente.filter((e) => !e.wortmarke).length });
-        if (MIT_BILDERN) {
+        ergebnisSeiten.push({ fassung: NAME[FASSUNG], datei, anmerkungen: info.anmText.length, links: info.links.length, texteGeprueft: m.gezaehlt, bilder: b1.elemente.filter((e) => !e.wortmarke).length, fussEintraege: b1.fussEintraege.length });
+        if (MIT_FOTOS) {
           await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
           await page.waitForTimeout(80);
           const ziel = path.join(fotoOrdner, kurz + '.png');
           await page.screenshot({ path: ziel, fullPage: false });
           bildschirmfotos.push(path.relative(WURZEL, ziel));
-          if (FASSUNG === 'intern') {
-            const ganz = path.join(fotoOrdner, kurz + '-ganz.png');
+          if (FASSUNG === 'bilder') {
+            const ganz = path.join(VORSCHAU_GANZ, kurz + '-ganz.png');
             await page.screenshot({ path: ganz, fullPage: true });
             bildschirmfotos.push(path.relative(WURZEL, ganz));
           }
@@ -394,7 +476,7 @@ async function pruefeFassung() {
     }
   }
 
-  /* ---------- 6b: Desktop-Breite ---------- */
+  /* ---------- 6b: Desktop-Breite 1280 px und sehr schmal 320 px ---------- */
   const breit = await neuerKontext(1280, 800, false);
   for (const [kurz, datei] of SEITEN) {
     const s = await oeffne(breit, datei, '', datei + ' @1280');
@@ -403,8 +485,18 @@ async function pruefeFassung() {
     const m = await messe(s.page);
     if (m.scrollBreite > m.clientBreite) f(s.ort, 'waagerechtes Scrollen (scrollWidth ' + m.scrollBreite + ')');
     m.probleme.forEach((p) => f(s.ort, 'Kontrast ' + p.kontrast + ' < ' + p.soll + ' bei „' + p.text + '“'));
-    if (MIT_BILDERN && FASSUNG === 'intern') {
-      const ziel = path.join(fotoOrdner, kurz + '-1280.png');
+    if (datei === 'index.html') {
+      // Knopf „Zum Produkt aus dem Video“ ab 900 px in einer Zeile (Abnahme D06)
+      const zeilen = await s.page.evaluate(() => {
+        const k = document.querySelector('.held .knopfreihe .knopf'); if (!k) return -1;
+        const r = document.createRange(); const tops = new Set();
+        Array.from(k.childNodes).filter((n) => n.nodeType === 3 && n.textContent.trim()).forEach((n) => { r.selectNodeContents(n); Array.from(r.getClientRects()).forEach((x) => tops.add(Math.round(x.top))); });
+        return tops.size;
+      });
+      if (zeilen !== 1) f(s.ort, 'Knopf „Zum Produkt aus dem Video“ bricht um (' + zeilen + ' Zeilen)');
+    }
+    if (MIT_FOTOS && FASSUNG === 'bilder') {
+      const ziel = path.join(VORSCHAU_GANZ, kurz + '-1280.png');
       await s.page.screenshot({ path: ziel, fullPage: true });
       bildschirmfotos.push(path.relative(WURZEL, ziel));
     }
@@ -412,6 +504,21 @@ async function pruefeFassung() {
     await s.page.close();
   }
   await breit.close();
+  const schmal = await neuerKontext(320, 640, true);
+  for (const [kurz, datei] of SEITEN) {
+    const s = await oeffne(schmal, datei, '', datei + ' @320');
+    await ladeAlleBilder(s.page);
+    const m = await messe(s.page);
+    if (m.scrollBreite > m.clientBreite) f(s.ort, 'waagerechtes Scrollen bei 320 px (scrollWidth ' + m.scrollBreite + ')');
+    if (MIT_FOTOS && FASSUNG === 'bilder') {
+      const ziel = path.join(VORSCHAU_GANZ, kurz + '-320.png');
+      await s.page.screenshot({ path: ziel, fullPage: true });
+      bildschirmfotos.push(path.relative(WURZEL, ziel));
+    }
+    meldeKonsole(s);
+    await s.page.close();
+  }
+  await schmal.close();
 
   /* ---------- 9: Rechnungen und Parameter ---------- */
   async function text(page, sel) { return (await page.textContent(sel)).replace(/\s+/g, ' ').trim(); }
@@ -443,23 +550,43 @@ async function pruefeFassung() {
     if (!links.every((h) => /packung=50/.test(h))) f(s.ort, 'Warenkorb-Links ohne packung=50: ' + links.join(', '));
     await s.page.click('.option[data-packung="1"]');
     if ((await text(s.page, '[data-p-ende]')) !== '6,98 €') f(s.ort, 'Endpreis 1 Portion nicht 6,98 €');
-    // interne Fassung: Galerie tauscht das große Bild und den Nachweis
-    if (FASSUNG === 'intern') {
-      const g = await s.page.evaluate(async () => {
-        const knoepfe = Array.from(document.querySelectorAll('[data-intern-galerie] button.mit-bild'));
-        const gross = document.querySelector('[data-intern-held] img');
-        if (knoepfe.length < 2 || !gross) return { knoepfe: knoepfe.length, gross: !!gross };
-        const vorher = gross.getAttribute('src');
-        knoepfe[2 % knoepfe.length].click();
-        await new Promise((r) => setTimeout(r, 100));
-        const nachher = gross.getAttribute('src');
-        const nachweis = document.querySelector('[data-intern-held] [data-intern-nachweis]').textContent;
-        const gedrueckt = knoepfe.filter((k) => k.getAttribute('aria-pressed') === 'true').length;
-        knoepfe[0].click();
-        return { knoepfe: knoepfe.length, gross: true, vorher, nachher, zurueck: gross.getAttribute('src'), nachweis, gedrueckt, geladen: gross.complete };
-      });
-      if (g.knoepfe !== 5 || !g.gross) f(s.ort, 'Galerie unvollständig ' + JSON.stringify(g));
-      else if (g.vorher === g.nachher || g.zurueck !== g.vorher || !g.nachweis || g.gedrueckt !== 1) f(s.ort, 'Galerie tauscht das Bild nicht richtig ' + JSON.stringify(g));
+    meldeKonsole(s); await s.page.close();
+  }
+  if (FASSUNG === 'bilder') {
+    // großes Bild folgt der Packung, bis in der Galerie geklickt wird; Galerie tauscht Bild und Nachweis
+    const s = await oeffne(mobil, 'produkt.html', '', 'produkt.html großes Bild');
+    const g = await s.page.evaluate(async () => {
+      const warte = () => new Promise((r) => setTimeout(r, 80));
+      const gross = document.querySelector('[data-intern-held] img');
+      const r = { knoepfe: document.querySelectorAll('[data-intern-galerie] button.mit-bild').length, gross: !!gross };
+      if (!gross) return r;
+      const src = () => gross.getAttribute('src');
+      const unter = () => document.querySelector('[data-intern-held] [data-intern-nachweis]').textContent;
+      const fuss = () => Array.from(document.querySelectorAll('[data-intern-liste] li')).map((li) => li.textContent);
+      r.start = src(); r.startFuss = fuss();
+      for (const p of ['50', '10', '1']) { document.querySelector('.option[data-packung="' + p + '"]').click(); await warte(); r['p' + p] = src(); r['u' + p] = unter(); }
+      r.gedruecktBei1 = document.querySelectorAll('[data-intern-galerie] button[aria-pressed="true"]').length;
+      const knoepfe = Array.from(document.querySelectorAll('[data-intern-galerie] button.mit-bild'));
+      knoepfe[2].click(); await warte();
+      r.galerie = src(); r.galerieUnter = unter(); r.galerieAktiv = knoepfe[2].getAttribute('data-intern-aktiv');
+      r.gedrueckt = knoepfe.filter((k) => k.getAttribute('aria-pressed') === 'true').length;
+      document.querySelector('.option[data-packung="set"]').click(); await warte();
+      r.nachKlick = src(); r.fussNachKlick = fuss();
+      return r;
+    });
+    const datei = (k) => (REGISTER[k] || {}).datei;
+    if (g.knoepfe !== 5 || !g.gross) f(s.ort, 'Galerie unvollständig ' + JSON.stringify(g));
+    else {
+      if (g.start !== datei('web-produkt-gross-set')) f(s.ort, 'großes Bild beim Starter Set ' + g.start + ' statt ' + datei('web-produkt-gross-set'));
+      for (const p of ['50', '10', '1']) {
+        if (g['p' + p] !== datei('web-produkt-gross-' + p)) f(s.ort, 'großes Bild bei ' + p + ': ' + g['p' + p] + ' statt ' + datei('web-produkt-gross-' + p));
+        const e = REGISTER['web-produkt-gross-' + p] || {};
+        if (g['u' + p] !== (e.unterschrift || e.nachweis)) f(s.ort, 'Nachweis am großen Bild bei ' + p + ' passt nicht');
+      }
+      if (g.gedruecktBei1) f(s.ort, 'Galerieknopf gedrückt, obwohl das große Bild (1 Portion) nicht in der Galerie ist');
+      if (g.galerie !== datei(g.galerieAktiv) || g.gedrueckt !== 1 || g.galerieUnter !== ((REGISTER[g.galerieAktiv] || {}).unterschrift || (REGISTER[g.galerieAktiv] || {}).nachweis)) f(s.ort, 'Galerie tauscht Bild oder Nachweis nicht richtig ' + JSON.stringify({ galerie: g.galerie, gedrueckt: g.gedrueckt }));
+      if (g.nachKlick !== g.galerie) f(s.ort, 'großes Bild folgt nach Galerieklick noch der Packung');
+      if (!g.startFuss.some((t) => t.endsWith(REGISTER['web-produkt-gross-set'].nachweis))) f(s.ort, 'Fuß ohne Nachweis des großen Bildes');
     }
     meldeKonsole(s); await s.page.close();
   }
@@ -472,7 +599,7 @@ async function pruefeFassung() {
     const danke = await s.page.getAttribute('.express a', 'href');
     const p = q.includes('packung=') && !q.includes('quatsch') ? q.split('=')[1] : 'set';
     if (!danke.includes('packung=' + p)) f(s.ort, 'Danke-Link ohne packung=' + p + ': ' + danke);
-    if (FASSUNG === 'intern') {
+    if (FASSUNG === 'bilder') {
       // Vorschaubild passt zur Packung aus der Adresse
       const aktiv = await s.page.getAttribute('[data-warenkorb] [data-intern]', 'data-intern-aktiv');
       if (aktiv !== 'web-warenkorb-' + p) f(s.ort, 'Vorschaubild ' + aktiv + ' statt web-warenkorb-' + p);
@@ -492,6 +619,18 @@ async function pruefeFassung() {
     if ((await text(s2.page, '[data-e-portionen]')) !== '50 Portionen') f(s2.ort, 'Portionen bei packung=50 falsch');
     if ((await text(s2.page, '[data-k-coins]')) !== '410') f(s2.ort, 'Coins bei packung=50 nicht 410');
     meldeKonsole(s2); await s2.page.close();
+    // Shaker nur, wenn die Packung laut Seite einen enthält: set schwarz, 50 pink, 10 und 1 ohne Bild
+    for (const [p, schluessel, titel] of [['set', 'web-danke-shaker-set', 'Shaker auspacken, loslegen'], ['50', 'web-danke-shaker-50', 'Shaker auspacken, loslegen'], ['10', null, 'Auspacken, loslegen'], ['1', null, 'Auspacken, loslegen']]) {
+      const s3 = await oeffne(mobil, 'danke.html', '?packung=' + p, 'danke.html Shaker ?packung=' + p);
+      const z = await s3.page.evaluate(() => {
+        const platz = document.querySelector('.schritt-zeile[data-intern]'); const bild = platz.querySelector('.bildplatz');
+        return { aktiv: platz.getAttribute('data-intern-aktiv'), sichtbar: !!bild && bild.getClientRects().length > 0, titel: platz.querySelector('h3').textContent.trim() };
+      });
+      if (z.titel !== titel) f(s3.ort, 'Überschrift „' + z.titel + '“ statt „' + titel + '“');
+      if (FASSUNG === 'bilder' && schluessel && z.aktiv !== schluessel) f(s3.ort, 'Shaker-Bild ' + z.aktiv + ' statt ' + schluessel);
+      if (!schluessel && (z.aktiv || z.sichtbar)) f(s3.ort, 'Shaker-Bild sichtbar, obwohl die Packung keinen Shaker enthält');
+      meldeKonsole(s3); await s3.page.close();
+    }
   }
   {
     // „Anmerkungen ausblenden“ führt auf dieselbe Seite ohne Parameter
@@ -501,6 +640,23 @@ async function pruefeFassung() {
     meldeKonsole(s); await s.page.close();
   }
   await mobil.close();
+
+  /* ---------- GitHub-Pages-Probe: über HTTP wie auf GitHub Pages (nur Fassung mit Bildern) ---------- */
+  if (FASSUNG === 'bilder') {
+    const kontext = await neuerKontext(390, 844, true);
+    for (const [, datei] of SEITEN) {
+      for (const q of ['', '?anmerkungen=1&packung=50&code=MARCO10']) {
+        const s = await oeffne(kontext, datei, q, datei + q + ' über HTTP (wie GitHub Pages)', SERVER_URL);
+        const nichtGeladen = await ladeAlleBilder(s.page);
+        nichtGeladen.forEach((src) => f(s.ort, 'Bild nicht geladen: ' + src));
+        const z = await s.page.evaluate(() => ({ register: !!window.INTERN_BILDER, bilder: document.querySelectorAll('img.intern-bild').length, fuss: document.querySelectorAll('[data-intern-liste] li').length }));
+        if (!z.register || !z.bilder || !z.fuss) f(s.ort, 'Fremdbilder nicht eingebaut ' + JSON.stringify(z));
+        meldeKonsole(s);
+        await s.page.close();
+      }
+    }
+    await kontext.close();
+  }
 }
 
 for (const fassung of FASSUNGEN) {
@@ -508,15 +664,16 @@ for (const fassung of FASSUNGEN) {
   await pruefeFassung();
 }
 await browser.close();
+server.close();
 
 if (extern.length) fehler.push('Netz: ' + extern.length + ' externe Anfragen blockiert: ' + Array.from(new Set(extern)).join(', '));
 
-const bericht = { zeitpunkt: new Date().toISOString(), fassungen: FASSUNGEN, seiten: ergebnisSeiten, fehler, warnungen, notizen, externeAnfragen: extern.length, bilder: bildschirmfotos };
+const bericht = { zeitpunkt: new Date().toISOString(), fassungen: FASSUNGEN.map((x) => NAME[x]), seiten: ergebnisSeiten, fehler, warnungen, notizen, externeAnfragen: extern.length, bilder: bildschirmfotos };
 if (berichtPfad) fs.writeFileSync(berichtPfad, JSON.stringify(bericht, null, 2));
-console.log(JSON.stringify({ fassungen: FASSUNGEN, seiten: ergebnisSeiten, externeAnfragen: extern.length, notizen, bildschirmfotos }, null, 2));
+console.log(JSON.stringify({ fassungen: FASSUNGEN.map((x) => NAME[x]), seiten: ergebnisSeiten, externeAnfragen: extern.length, notizen, bildschirmfotos }, null, 2));
 if (warnungen.length) console.log('\nWARNUNG (' + warnungen.length + '):\n- ' + warnungen.join('\n- '));
 if (fehler.length) {
   console.log('\nFEHLER (' + fehler.length + '):\n- ' + fehler.join('\n- '));
   process.exit(1);
 }
-console.log('\nAlle Prüfungen bestanden (' + FASSUNGEN.map((x) => x === 'oeffentlich' ? 'öffentliche' : 'interne').join(' und ') + ' Fassung).');
+console.log('\nAlle Prüfungen bestanden (' + FASSUNGEN.map((x) => x === 'bilder' ? 'Fassung mit Bildern inkl. GitHub-Pages-Probe' : 'Rückfall ohne Fremdbilder').join(' und ') + ').');

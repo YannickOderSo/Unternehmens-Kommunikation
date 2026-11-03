@@ -10,9 +10,12 @@ Fakten nur aus dem Dossier [`../recherche-customer-journey.md`](../recherche-cus
 Status ✔ belegt · ✎ korrigiert · ~ unsicher · **H** Hypothese). Eigene Daten der Gruppe (Selbstversuch, Fotos,
 Kurzinterviews, Codierung, Workshop) fehlen noch: Auf den Folien stehen dafür sichtbar gekennzeichnete Platzhalter
 („offen: …“, Bildkacheln mit `data-status="offen"`). Entstehung: [`AUTOREN.md`](AUTOREN.md), Abschnitt 8.
-**Zwei Fassungen (seit 03.11.2026):** Im Hörsaal läuft die **interne Fassung** mit Screenshots, Werbe- und
-Community-Bildern von HOLY und Bildern der Vorbilder aus dem Ordner `intern/` (nicht im Repository, §12); die
-**öffentliche Fassung** (Repository, GitHub Pages) zeigt an diesen Stellen die Platzhalter.
+**Fassung mit Bildern (Standard seit 03.11.2026):** Die Präsentation zeigt Screenshots, Werbe- und Community-Bilder von
+HOLY und die Logos der Vorbilder aus `fremdbilder/` und spielt auf Folie 09 die Videobotschaft des Gründers aus `video/` –
+im Repository, auf GitHub Pages und im Hörsaal gleich. Veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17 für die
+Bilder, Nr. 18 für das Video), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Den
+**Rückfall ohne Fremdbilder** (Platzhalter) gibt es nur noch, wenn `fremdbilder/register.js` fehlt oder per Schalter (§12).
+Bis 03.11.2026 lagen Bilder und Video als „interne Fassung“ im ausgeschlossenen Ordner `intern/`.
 
 ## 1. Starten
 
@@ -20,12 +23,12 @@ Community-Bildern von HOLY und Bildern der Vorbilder aus dem Ordner `intern/` (n
    Live-Demo auf Folie 08 muss der Nachbarordner `../konzept-website/` mitkommen.
 2. `index.html` per Doppelklick in **Chrome oder Edge** (aktuelle Version) öffnen. Läuft ohne Internet und ohne Server.
 3. **F** = Vollbild. Die Bühne (1920 × 1080) passt sich jedem Bildschirm an.
-4. Die **Videobotschaft** (Folie 09) liegt nur in `intern/gruender-video.mp4` (per `.gitignore` ausgeschlossen,
-   nicht im Repository). Ohne die Datei zeigt Folie 09 den Rahmen „Videobotschaft des Gründers – nur im Vortrag“.
-   Die Datei nicht verschieben und nicht umbenennen.
-5. Die **Bilder der internen Fassung** kommen ebenfalls aus `intern/` (`intern/bilder.js` und `intern/bilder/`).
-   Für den Vortrag den Ordner `praesentation/` **mit** `intern/` auf den Vortragsrechner kopieren (USB-Stick,
-   Gruppenordner) – nie hochladen, nie ins Repository. Fehlt `intern/`, läuft die Präsentation trotzdem (Platzhalter). §12
+4. Die **Videobotschaft** (Folie 09) liegt in `video/gruender-video.mp4` (versioniert; veröffentlicht mit Zustimmung
+   des Gründers, KI-Nachweis FS2 Nr. 18). Kann der Browser sie nicht abspielen, zeigt Folie 09 den Rahmen
+   „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“. Die Datei nicht verschieben und nicht umbenennen.
+5. Die **Fremdbilder** liegen in `fremdbilder/` (Liste `fremdbilder/register.js`) und gehören zum Ordner
+   `praesentation/` – einfach mitkopieren. Fehlt `fremdbilder/register.js`, läuft die Präsentation trotzdem (Rückfall
+   ohne Fremdbilder: Platzhalter). `intern/` wird für den Vortrag nicht gebraucht (nur Rohmaterial). §12
 
 ## 2. Tasten (Engine aus Fallstudie 1, unverändert)
 
@@ -41,28 +44,29 @@ Community-Bildern von HOLY und Bildern der Vorbilder aus dem Ordner `intern/` (n
 | T | Thema der Engine – ohne sichtbare Wirkung: Das Thema „Pfad“ (`css/folien/pfad.css`) gilt in allen drei Themen |
 
 Weitere Adress-Schalter: `?buehne=schwarz` (Rückfall, wenn das Gelb am Beamer überstrahlt: schwarze Bühne, gelbe
-Schrift; gilt bis zum Schließen des Tabs, zurück mit `?buehne=gelb`) · `?kacheln=rueckfall` (öffentliche Ansicht: keine
-internen Bilder, auch wenn `intern/` da ist; jede Bildkachel mit `data-status="frei"` zeigt ihren Rückfall) · `?druck`
-(Druckansicht für das Notfall-PDF, **mit** internen Bildern, wenn `intern/` da ist – §12) · `?bewegung=reduziert`.
+Schrift; gilt bis zum Schließen des Tabs, zurück mit `?buehne=gelb`) · `?kacheln=rueckfall` (Rückfall ohne Fremdbilder,
+auch wenn `fremdbilder/` da ist; jede Bildkachel mit `data-status="frei"` zeigt ihren Rückfall) · `?druck`
+(Druckansicht für das Notfall-PDF, mit Fremdbildern wie im Vortrag – §12) · `?bewegung=reduziert`.
 
 ## 3. Ablauf, Klicks und Sollzeiten
 
 Nachgezählt am 03.11.2026 aus `index.html` (Schritte je Folie wie `pruefen.mjs`, Klicks = Schritte + Weiterschalten;
 auf 09 ist Klick 2 „Fragen?“). Sprechtext = Absätze mit `data-schritt` in den Notizen, ohne Regieanweisungen in
-[ ]; Zeit bei 1,9 Wörtern/s (Planwert, **nicht gemessen** – Leseprobe Do 05.11.).
+[ ]; Zeit bei 1,9 Wörtern/s (Planwert, **nicht gemessen** – Leseprobe Do 05.11.). Seit D07 hat Folie 04 ein Wort mehr
+(„Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“, ✔ M01, ✔ L39).
 
 | Folie | Inhalt (Aufgabe · Laufleiste S. 111) | Klicks (Plan) | Soll `data-zeit` (Plan) | Sprechtext Wörter (Plan) | ≈ s |
 |---|---|--:|--:|--:|--:|
 | 01 | Einstieg, Handzeichen-Trichter (gelbe Bühne) | 2 (2) | 50 (50) | 75 (95) | 39 + Handzeichen |
 | 02 | Persona Marco und Mediennutzung · ohne Schritt | 2 (2) | 60 (60) | 113 (114) | 59 |
 | 03 | A1 IST-Analyse und Bewertung · 1 | 3 (3) | 80 (80) | 156 (152) | 82 |
-| 04 | A2 Journey-Map, „Zentraler Weg (IST)“ · 2 | 3 (3) | 80 (80) | 134 (152) | 71 |
+| 04 | A2 Journey-Map, „Zentraler Weg (IST)“ · 2 | 3 (3) | 80 (80) | 135 (152) | 71 |
 | 05 | A3 Überleitungen trägt · bricht · wackelt · wackelt · 2 | 3 (3) | 95 (95) | 162 (180) | 85 |
 | 06 | A4 Top 3 je Phase, „Zentraler Weg (SOLL)“ · 3 | 3 (3) | 100 (100) | 175 (190) | 92 |
 | 07 | A5 + A6 Vorbild → Maßnahme · 4 | 2 (2) | 90 (90) | 163 (171) | 86 |
 | 08 | A7 Konzept-Webseite in Handyrahmen (gelbe Bühne) · 4 | 3 (3) | 85 (85) | 124 (162) | 65 + Demo |
 | 09 | Fazit, Kennzahlen, Videobotschaft, Fragen (gelbe Bühne) · 5 | 2 (2) | 70 (70) | 101 (103) | 53 + 16 s Video |
-| **Summe** | | **23 (≤ 25)** | **710 s = 11:50** | **1.203** (rund 1.320) | ≈ 633 + Video |
+| **Summe** | | **23 (≤ 25)** | **710 s = 11:50** | **1.204** (rund 1.320) | ≈ 633 + Video |
 
 Dazu 0:40 Reserve (Handzeichen, Rückgriffe, höchstens 30 s Live-Demo) = **12:30**. Kontrollpunkte und Kürzungsplan:
 Gestaltungsplan 10.2 (stehen auch in den Notizen der Folien 02, 03, 06, 07). Backup B1–B9: `data-zeit="0"`.
@@ -86,23 +90,26 @@ gewählter 50er-Dose) – ändert sich die Webseite, neu erzeugen:
 
 ## 6. Folie 09: Videobotschaft des Gründers
 
-Klick 1 startet `intern/gruender-video.mp4` mit Ton im Handyrahmen; danach bleibt das letzte Bild stehen. Klick 2:
+Klick 1 startet `video/gruender-video.mp4` mit Ton im Handyrahmen; danach bleibt das letzte Bild stehen. Klick 2:
 „Fragen?“ und Sprungliste B1–B9. Die Datei wird nur per Pfad eingebunden, nicht vorgeladen (erst beim Betreten der
-Folie), nie in Druck, PDF, Aufnahme (`?aufnahme`, Prüfwerkzeug) oder Referentenfenster. Startet der Browser das Video
-nicht von selbst (Folie per F5 direkt auf Schritt 1 geöffnet), erscheinen die Bedienelemente: einmal „Abspielen“.
-**Ton im Beamer-Test prüfen** (Plan 11.4). Nicht im Repository, keine KI-Transkription (Plan 9.5).
+Folie), nie in Druck, PDF, Aufnahme (`?aufnahme`, Prüfwerkzeug) oder Referentenfenster – dort und in Browsern ohne
+H.264 steht der Rahmen „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“. Startet der Browser das
+Video nicht von selbst (Folie per F5 direkt auf Schritt 1 geöffnet), erscheinen die Bedienelemente: einmal „Abspielen“.
+**Ton im Beamer-Test prüfen** (Plan 11.4). Versioniert und veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2
+Nr. 18; bis 03.11.2026 lag die Datei ausgeschlossen in `intern/`); keine KI-Transkription, keine Zitate (Plan 9.5).
 
 ## 7. Eigene Fotos eintragen (Bildplan, Gestaltungsplan 4)
 
 Jede Bildkachel (`<figure class="p-kachel" data-status="offen" …>`) kennt die Zustände `offen` (Platzhalter),
-`frei` (Bild), `rueckfall` (eigene Grafik, z. B. Blog auf 03) und – nur für Zusatzbilder der internen Fassung –
-`aus` (öffentlich unsichtbar, Folie 07). Bilder werden **nicht mehr von Hand** in die Kachel geschrieben, sondern
-über die interne Fassung (§12): Datei nach `intern/bilder/`, Eintrag mit `datei`, `alt`, `nachweis`, `pixel` in
-`intern/bilder.js`, Schlüssel als `data-intern="…"` an der Kachel; das Skript setzt `data-status="frei"` und das
-`<img>`. Ein eigenes Foto ersetzt ein HOLY-Bild, indem man im Eintrag `datei` und `nachweis` ändert (und die
-Bildnachweis-Zeile der Folie anpasst). **Nicht freigegebene Fotos und Screenshots nur nach `intern/`** (per
-`.gitignore` ausgeschlossen), nie nach `bilder/` – das Repository ist über GitHub Pages öffentlich. Vor jedem Commit
-`git status` prüfen (Plan 11.5).
+`frei` (Bild), `rueckfall` (eigene Grafik, z. B. Blog auf 03) und – nur für Zusatzbilder der Fassung mit Bildern –
+`aus` (im Rückfall unsichtbar; seit D07 nicht mehr verwendet). Bilder werden **nicht von Hand** in die Kachel
+geschrieben, sondern über das Register (§12): Datei nach `fremdbilder/`, Eintrag mit `datei`, `alt`, `nachweis`,
+`pixel` in `fremdbilder/register.js`, Schlüssel als `data-intern="…"` an der Kachel; das Skript setzt
+`data-status="frei"` und das `<img>`. Ein eigenes Foto ersetzt ein HOLY-Bild, indem man im Eintrag `datei` und
+`nachweis` ändert (und die Bildnachweis-Zeile der Folie anpasst). **Eigene Fotos und Screenshots zuerst nach `intern/`**
+(per `.gitignore` ausgeschlossen) oder in den Gruppenordner; erst nach Sichtung durch die Gruppe (personenbezogene Daten
+geschwärzt) nach `fremdbilder/` – alles dort ist über GitHub Pages öffentlich. Vor jedem Commit `git status` prüfen
+(Plan 11.5).
 
 ## 8. Texte ändern und prüfen
 
@@ -114,12 +121,12 @@ cd fallstudie-2-customer-journey/praesentation
 PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core \
   node werkzeuge/pruefen.mjs index.html --ausgabe _test/pruefung --schritte
 # dazu: --modus dunkel · --druck _test/pruefung/praesentation.pdf (Notfall-PDF, 18 Seiten)
-# öffentliche Fassung (intern/ per Route gesperrt): --oeffentlich – Pflicht für Ausgaben nach export/ oder bilder/
+# Rückfall ohne Fremdbilder (fremdbilder/ per Route gesperrt): --oeffentlich
 ```
 
-Ergebnis am 03.11.2026 (nach dem Einbau der internen Bilder, D06): **0 Fehler** in der internen Fassung (hell und
-dunkel, 44 von 44 Bildern eingesetzt) und in der öffentlichen (`--oeffentlich`, mit Notfall-PDF 18 Seiten),
-0 externe Anfragen; Einzelheiten §12.
+Ergebnis am 03.11.2026 (nach der Überarbeitung D07): **0 Fehler** in der Fassung mit Bildern (hell und dunkel,
+38 von 38 Fremdbildern eingesetzt) und im Rückfall ohne Fremdbilder (`--oeffentlich`, mit Notfall-PDF 18 Seiten), je
+17 Warnungen wie vorher, 0 externe Anfragen; Einzelheiten §12.
 **Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3, 3.4 und 3.6): Wortbudget über 40 auf 03–07 (Plan) sowie auf 02 (53),
 08 (42) und 09 (53) – **nicht im Plan vorgesehen, Kürzung prüfen**; Notizen am Element in 24 px (03, 04, 05) und
 Belegzeilen in 26 px (04, 05) laut Plan 3.6 (Ausnahme in 3.4). **Überlauf-Ausnahme:** nur der geschlossene Pfad auf
@@ -135,17 +142,19 @@ Sprungliste der FS1-Folie 12): Mit FS2 bestehen nur die allgemeinen Prüfungen (
 ## 9. Plan B
 
 Notfall-PDF über `index.html?druck` → Strg + P → „Als PDF speichern“ (alle Folien im Endzustand; Folie 09 zeigt dort
-Fazit und Fragen, nicht die Videobühne). Liegt `intern/` daneben, enthält das PDF die internen Bilder – dann nur in
-`intern/` oder im Gruppenordner ablegen. Öffentliche Fassung nur mit Rückfällen und Freigegebenem (Plan 11.5):
-`index.html?druck&kacheln=rueckfall` bzw. `pruefen.mjs --oeffentlich --druck …` (§12).
+Fazit und Fragen, nicht die Videobühne). Das PDF enthält die Fremdbilder wie der Vortrag (veröffentlicht mit Freigabe,
+KI-Nachweis FS2 Nr. 17) und darf im Gruppenordner oder im Repository liegen. Ohne Fremdbilder:
+`index.html?druck&kacheln=rueckfall` bzw. `pruefen.mjs --oeffentlich --druck …` (§12). Bis 03.11.2026 durfte ein PDF
+mit Bildern nur in `intern/` liegen.
 
 ## 10. Offen bis zum Vortrag (ohne Personen – für FS2 ist nichts verteilt)
 
 - [ ] Selbstversuch mit Übergangsprotokoll (Ü1–Ü4), Fotos b01–b11, b20 → Kacheln 01–05, 09, B1; Datum in der Herleitung von 04
-- [ ] Eigene Fotos statt der HOLY-Werbe- und Community-Bilder der internen Fassung (b01 Titel, b04 Persona, Unboxing K5 …):
-  Einträge in `intern/bilder.js` umstellen, Bildnachweis-Zeilen anpassen (§12)
-- [ ] Interne Bilder durch die Gruppe sichten (Kontaktbogen `intern/kontaktbogen.png`), v. a. Symbolbilder 02/03/04 und
-  das OTTO-Bild auf 07 (zeigt nur das Werbefoto der Serviceseite, nicht die Lieferzeit am Artikel)
+- [ ] Eigene Fotos statt der HOLY-Werbe- und Community-Bilder (b01 Titel, b04 Persona, Unboxing K5 …): Einträge in
+  `fremdbilder/register.js` umstellen, Bildnachweis-Zeilen anpassen (§7, §12)
+- [ ] Fremdbilder durch die Gruppe sichten (Kontaktbogen `intern/kontaktbogen.png`, Stand D06), v. a. die Symbolbilder
+  02/03/04/05/09; entscheiden, ob die sechs Bilder der Vorbilder (`fremdbilder/v07-…`, X12 OTTO seit D07 als
+  Textausschnitt) eine eigene Backup-Folie bekommen – auf 07 stehen seit D07 nur die Logos, auf B6 ist kein Platz
 - [ ] Urteile auf 05 und Titel von 03, 05, 09 nach den Daten prüfen (Datenschluss Fr 06.11., Plan 12)
 - [ ] Kurzinterviews (O-Töne auf 02, Bildgrößen im Moodboard 03, B5), Codierung der Bewertungen
 - [ ] Workshop Mi 04.11.: Plätze 2 und 3 auf 06 bestätigen, Foto b12; Handskizze b15 (07)
@@ -168,66 +177,107 @@ Fazit und Fragen, nicht die Videobühne). Liegt `intern/` daneben, enthält das 
 | `css/folien/01-einstieg.css` … `09-fazit.css`, `10-backup.css` | je Folie eine Datei |
 | `js/folien/pfad.js` | Laufleiste S. 111, Journey-Raster (04–06), Pfad aus den Kachelmitten |
 | `js/folien/09-fazit.js` | Videobotschaft (Schritt 1) und Sprungliste |
-| `js/folien/intern-bilder.js` | interne Fassung: setzt die Bilder aus `intern/bilder.js` ein, Bildnachweis je Folie (§12) |
-| `bilder/konzept-0n-….png` | Bildschirmfotos der eigenen Konzept-Webseite (Folie 08) |
+| `js/folien/intern-bilder.js` | Fassung mit Bildern: setzt die Fremdbilder aus `fremdbilder/register.js` ein, Bildnachweis je Folie (§12; Name historisch) |
+| `fremdbilder/` | Fremdbilder und Liste `register.js` (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder, Bildschirmfotos der Konzept-Webseite mit Bildern); veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), Herkunft QUELLEN §4a |
+| `video/gruender-video.mp4` | Videobotschaft des Gründers (Folie 09); veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2 Nr. 18) |
+| `bilder/konzept-0n-….png` | Bildschirmfotos der eigenen Konzept-Webseite ohne fremde Bilder (Folie 08 im Rückfall) |
 | `schriften/` | Bricolage Grotesque, Inter, Fraunces (OFL), `HERKUNFT.txt` |
 | `werkzeuge/` | `pruefen.mjs`, `uebersicht.mjs`, `referent-test.mjs` aus FS1 |
-| `intern/` | nicht freigegebene Dateien, per `.gitignore` ausgeschlossen: Videobotschaft, `bilder.js` und `bilder/` (interne Bilder), `kontaktbogen.png`, `roh/` (§12) |
+| `intern/` | per `.gitignore` ausgeschlossen, nur Rohmaterial: `roh/` (Rohdownloads mit `manifest.json`), `kontaktbogen.png`, alte Kopie `alt-vor-veroeffentlichung/` (nicht verwenden, nicht löschen) (§12) |
 | `QUELLEN.md`, `AUTOREN.md` | Herkunft aller Bestandteile · Schnittstelle für Änderungen und Entstehung |
 
-## 12. Interne Fassung mit Bildern (seit 03.11.2026)
+## 12. Fassung mit Bildern (seit 03.11.2026) und Rückfall ohne Fremdbilder
 
-Auftrag von Yannick (03.11.2026): Grafiken von HOLY herunterladen, damit Webseite und Präsentation gut aussehen; Nutzung
-nur privat in der Uni (KI-Nachweis FS2, D06). Damit das so bleibt, gibt es zwei Fassungen aus **einer** `index.html`:
+**Verlauf.** Auftrag von Yannick (03.11.2026): Grafiken von HOLY herunterladen, damit Webseite und Präsentation gut
+aussehen (KI-Nachweis FS2, D06). Bis 03.11.2026 lagen die ausgewählten Bilder und das Video deshalb als „interne
+Fassung“ im ausgeschlossenen Ordner `intern/`. Danach hat Yannick die Veröffentlichung erlaubt („Du darfst die Sachen
+online auf github posten für die online pages ich erlaube es dir“, KI-Nachweis FS2 Nr. 17), und der Gründer hat (über
+Yannick) erlaubt, dass sein Video öffentlich online in der Präsentation läuft (Nr. 18). Seitdem liegen die Bilder
+versioniert in `fremdbilder/` und das Video in `video/` – veröffentlicht mit Freigabe, nicht kommerziell, für die
+Lehrveranstaltung; keine eigenen Fotos der Gruppe.
 
-| | interne Fassung (Hörsaal) | öffentliche Fassung (Repository, GitHub Pages) |
+| | Fassung mit Bildern (Standard) | Rückfall ohne Fremdbilder |
 |---|---|---|
-| Ordner `intern/` neben `index.html` | da: `bilder.js`, `bilder/` (39 Bilder + 5 Bildschirmfotos der Konzept-Webseite), Video | fehlt (per `.gitignore` ausgeschlossen) |
-| Bildkacheln 01–05, 07, 09 | Screenshots, Werbe- und Community-Bilder von HOLY, Bilder der Vorbilder | Platzhalter „offen“ bzw. Rückfall |
-| Folie 08 | Bildschirmfotos der Konzept-Webseite **mit** HOLY-Produktbildern (`intern/bilder/konzept-0n-….png`) | Bildschirmfotos aus `bilder/` (ohne fremde Bilder) |
+| wann | immer: Repository, GitHub Pages, Hörsaal | nur wenn `fremdbilder/register.js` fehlt, mit `?kacheln=rueckfall` oder im Prüflauf mit `--oeffentlich` |
+| Bildkacheln 01–05, 09 | Screenshots, Werbe- und Community-Bilder von HOLY (Symbolbilder als solche beschriftet) | Platzhalter „offen“ bzw. Rückfall-Grafik (Blog auf 03) |
+| Folie 07 | Logos der Vorbilder statt der Namen (einfarbig dunkel, im Modus dunkel hell) | Namen fett |
+| Folie 08 | Bildschirmfotos der Konzept-Webseite **mit** HOLY-Produktbildern (`fremdbilder/konzept-0n-….png`) | Bildschirmfotos aus `bilder/` (ohne fremde Bilder) |
+| Folie 09 | Videobotschaft aus `video/gruender-video.mp4` (hängt nicht an `register.js`) | wie links |
 | Bildnachweis | eine Zeile unten auf jeder Folie mit Bildern, voller Nachweis je Bild in den Notizen (Taste P) | keine Zeile |
 
-**So funktioniert es:** `index.html` lädt `intern/bilder.js` (setzt `window.INTERN_BILDER`) und danach
+**Namen aus der Zeit vor der Freigabe.** `window.INTERN_BILDER`, die Attribute `data-intern`, `data-intern-optional`,
+`data-intern-status` und `data-intern-bild`, die Klasse `p-intern-logo`, die Datei `js/folien/intern-bilder.js`,
+`html[data-fassung="intern"]` (die Werte `oeffentlich` und `oeffentlich-ansicht` bedeuten Rückfall), die Prüfoption
+`--oeffentlich` und der Berichtsteil `interneBilder` heißen noch wie vor der Freigabe. Sie bleiben aus technischen
+Gründen (Skripte, CSS, Prüfwerkzeug und Konzept-Webseite greifen darauf zu); gemeint ist immer die Fassung mit Bildern
+bzw. der Rückfall ohne Fremdbilder.
+
+**So funktioniert es:** `index.html` lädt `fremdbilder/register.js` (setzt `window.INTERN_BILDER`) und danach
 `js/folien/intern-bilder.js`. Das Skript sucht jedes Element mit `data-intern="<schlüssel>"`: in einer Bildkachel
 setzt es ein `<img>` (mit `alt`, `width`/`height`) ein und stellt `data-status="frei"`, auf Folie 08 tauscht es die
-Quelle der Bildschirmfotos, auf Folie 07 ersetzt es den Firmennamen durch das Logo. Fehlt `intern/bilder.js`, tut es
-nichts. Fehlt eine einzelne Datei, kommt der öffentliche Zustand zurück (kein kaputtes Bild-Symbol). Die
-Bildnachweis-Zeile (`<p class="p-bildquelle" hidden>`) erscheint nur, wenn auf der Folie ein internes Bild steht.
-Herkunft jedes Bildes: [`QUELLEN.md`](QUELLEN.md) Abschnitt 4a und `intern/bilder.js` (Feld `nachweis`). Keines der
-Bilder ist ein eigenes Foto der Gruppe – im Vortrag nicht als „unser Foto“ ansprechen.
+Quelle der Bildschirmfotos, auf Folie 07 ersetzt es den Firmennamen durch das Logo. Fehlt `fremdbilder/register.js`,
+tut es nichts. Fehlt eine einzelne Datei, kommt der Zustand ohne Bild zurück (kein kaputtes Bild-Symbol). Die
+Bildnachweis-Zeile (`<p class="p-bildquelle" hidden>`) erscheint nur, wenn auf der Folie ein Fremdbild steht.
+Herkunft jedes Bildes: [`QUELLEN.md`](QUELLEN.md) Abschnitt 4a und `fremdbilder/register.js` (Feld `nachweis`). Keines
+der Bilder ist ein eigenes Foto der Gruppe – im Vortrag nicht als „unser Foto“ ansprechen.
 
-**Zeigen:** Ordner `praesentation/` samt `intern/` (und `../konzept-website/` für die Live-Demo) auf den
-Vortragsrechner kopieren, `index.html` öffnen (§1). Kontrolle vor dem Vortrag: Auf Folie 01 steht rechts das
-HOLY-Produktbild und unten die Zeile „Bild: HOLY Softdrinks GmbH …“ – dann ist die interne Fassung aktiv.
+**`intern/`** (per `.gitignore` ausgeschlossen) enthält nur noch Rohmaterial: `roh/` (Rohdownloads, je Ordner
+`manifest.json` mit Quelle und Abrufdatum), `kontaktbogen.png` und die alte Kopie `alt-vor-veroeffentlichung/` (nicht
+verwenden, nicht löschen). Neue Zuschnitte entstehen aus `intern/roh/` und kommen mit Eintrag in `register.js` nach
+`fremdbilder/`.
 
-**Schalter und Exporte (Entscheidung 03.11.2026):**
-- `?kacheln=rueckfall` – öffentliche Ansicht erzwingen (keine internen Bilder, auch wenn `intern/` da ist).
-- `?aufnahme` (Prüfwerkzeug, Bildschirmfotos) und `?druck` (Notfall-PDF) zeigen die internen Bilder, wenn `intern/`
-  da ist – das Notfall-PDF für den Vortrag soll aussehen wie der Vortrag. Ein solches PDF gehört **nur** nach
-  `intern/` oder in den Gruppenordner.
-- **Exporte nach `export/` oder `bilder/` dürfen nie interne Bilder enthalten.** `pruefen.mjs` bricht ab, wenn
-  `--ausgabe` oder `--druck` dorthin zeigt und `intern/bilder.js` vorliegt – außer mit `--oeffentlich`. Ein
-  öffentliches PDF entsteht mit `--oeffentlich --druck …` oder über `index.html?druck&kacheln=rueckfall`.
+**Kontrolle vor dem Vortrag:** Auf Folie 01 steht rechts das HOLY-Produktbild und unten die Zeile „Bild: HOLY
+Softdrinks GmbH …“ – dann ist die Fassung mit Bildern aktiv. Auf Folie 09 startet Klick 1 das Video mit Ton.
+
+**Schalter und Exporte:**
+- `?kacheln=rueckfall` – Rückfall ohne Fremdbilder erzwingen (auch wenn `fremdbilder/` da ist).
+- `?aufnahme` (Prüfwerkzeug, Bildschirmfotos) und `?druck` (Notfall-PDF) zeigen die Fremdbilder – das Notfall-PDF soll
+  aussehen wie der Vortrag. Eine Exportsperre gibt es nicht mehr (bis 03.11.2026 brach `pruefen.mjs` bei Ausgaben nach
+  `export/` oder `bilder/` ohne `--oeffentlich` ab).
+- Das Video erscheint nie in Druck, PDF, Aufnahme und Referentenfenster; dort steht der Rahmen (§6).
 
 **Prüfen** (im Ordner `praesentation/`, Ausgaben nur nach `_test/`):
 
 ```bash
 export PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core
-node werkzeuge/pruefen.mjs index.html --ausgabe _test/intern --schritte                  # interne Fassung, hell
-node werkzeuge/pruefen.mjs index.html --ausgabe _test/intern-dunkel --schritte --modus dunkel
-node werkzeuge/pruefen.mjs index.html --ausgabe _test/oeffentlich --schritte --oeffentlich # intern/ gesperrt
+node werkzeuge/pruefen.mjs index.html --ausgabe _test/hell --schritte                     # Fassung mit Bildern, hell
+node werkzeuge/pruefen.mjs index.html --ausgabe _test/dunkel --schritte --modus dunkel
+node werkzeuge/pruefen.mjs index.html --ausgabe _test/rueckfall --schritte --oeffentlich --druck _test/rueckfall.pdf
 ```
 
-Die interne Prüfung meldet als Fehler: `data-intern` ohne Schlüssel in `intern/bilder.js` (mit `data-intern-optional`
-nur Warnung, Folie 08), nicht geladene Dateien, verzerrte Bilder, sichtbares internes Bild ohne sichtbare
-Bildnachweis-Zeile, Bildnachweis-Zeile über den Satzspiegel hinaus; als Warnung: hochgerechnete (unscharfe) Bilder.
-Die öffentliche Prüfung meldet als Fehler: jedes eingesetzte interne Bild, jedes Bild aus `intern/`, jede sichtbare
-Bildnachweis-Zeile. Fehlt `intern/bilder.js` ohne `--oeffentlich`, ist das nur eine Warnung („öffentliche Fassung
-ohne interne Bilder“). Bericht: `bericht.json` → `interneBilder`.
+Die Prüfung der Fassung mit Bildern meldet als Fehler: `data-intern` ohne Schlüssel in `fremdbilder/register.js` (mit
+`data-intern-optional` nur Warnung, Folie 08), nicht geladene Dateien, verzerrte Bilder, sichtbares Fremdbild ohne
+sichtbare Bildnachweis-Zeile, Bildnachweis-Zeile über den Satzspiegel hinaus; als Warnung: hochgerechnete (unscharfe)
+Bilder. Die Prüfung des Rückfalls (`--oeffentlich`, `fremdbilder/` per Route gesperrt) meldet als Fehler: jedes
+eingesetzte Fremdbild, jedes Bild aus `fremdbilder/`, jede sichtbare Bildnachweis-Zeile. Fehlt `fremdbilder/register.js`
+ohne `--oeffentlich`, ist das nur eine Warnung („Rückfall ohne Fremdbilder (fremdbilder/register.js fehlt)“). Bericht:
+`bericht.json` → `interneBilder` (Name historisch). Das Chromium des Prüfwerkzeugs spielt kein H.264 ab: Das Video auf
+09 fällt dort immer auf den Rahmen zurück – kein Fehler der Seite.
 
-**Stand 03.11.2026:** intern hell und dunkel je 0 Fehler, 44 von 44 Bildern eingesetzt (inkl. `konzept-01` … `-05`
-vom Website-Bau); öffentlich (`--oeffentlich`, mit Notfall-PDF 18 Seiten) 0 Fehler; Kopie ohne `intern/`: 0 Fehler,
-1 Warnung „öffentliche Fassung ohne interne Bilder“; Gegenprobe mit einer gelöschten Bilddatei: Kachel zeigt wieder
-den Platzhalter, die Prüfung meldet den Fehler. Klicks (23), Sollzeiten (710 s) und Sprechtexte unverändert (§3).
+**Überarbeitung D07 (03.11.2026, Befunde der Abnahme D06):**
+- 07: nur noch die Logos (einfarbig dunkel, je Logo eigene Höhe: YouTube 26, Apple 30, zooplus 28 ohne grünen Kasten,
+  OTTO 24, Philips 22, Pampers 34 px). Die sechs kleinen Bilder der Vorbilder (144 × 81, unlesbar) sind entfernt; sie
+  bleiben in `fremdbilder/` (`v07-…`), stehen aber auf keiner Folie – auf B6 ist neben der Tabelle kein Platz für sechs
+  Bilder in mindestens 360 × 203. `v07-otto` ist jetzt der Textausschnitt der OTTO-Serviceseite mit dem Satz „Die
+  Lieferzeit zeigen wir dir vor deiner Bestellung direkt am jeweiligen Artikel an.“
+- 03: Blog-Kachel mit Beschriftung „Blog: 0 Beiträge“ (✔ M01, ✔ L39) und neuem Ausschnitt, damit die Beschriftung nicht
+  über dem Satz „Dieser Blog hat noch keine Beiträge“ liegt; Dose & Shaker neu gesetzt (Produkt oben rechts,
+  Beschriftung auf freier Fläche); „Tipp unter Kollegen“ in der Fassung mit Bildern ruhig wie die Leerstelle auf 04
+  (Creme, gestrichelter Rand, Text „offen“).
+- 02: Beschriftung „Symbolbild Schichtarbeit – nicht Marco / (Lokführer aus der HOLY-Community)“; Notiz zur Rückfrage
+  „Ist Marco Lokführer?“. 05: K6 ohne Beschriftung (das Bild zeigt selbst „SQUAD REWARDS“).
+- Bildquellzeilen 04, 05, 09 mit „Community-Foto HOLY (Symbolbild, nicht Marco)“, 07 „Logos … · einfarbig, nur zur
+  Kennzeichnung der Vorbilder · Abruf 03.11.2026“.
+- Sprechtext 04: „Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“ (+1 Wort, §3); Notiz 03
+  „Der Blog ist leer (0 Beiträge; ✔ M01, ✔ L39)“. Rückfall-Text des Videos: „Videobotschaft des Gründers – in der
+  Web-Präsentation auf Folie 09“ (vorher „– nur im Vortrag“).
+
+**Stand 03.11.2026 (D07):** Fassung mit Bildern hell und dunkel `--schritte` je 0 Fehler, 17 Warnungen (wie vorher:
+Wortbudget, 24-/26-px-Notizen), 38 von 38 Fremdbildern eingesetzt (vorher 44: die sechs Bilder der Vorbilder auf 07
+entfallen); Rückfall `--oeffentlich --schritte --druck` 0 Fehler, 17 Warnungen, PDF 18 Seiten, 0 Fremdbilder. Klicks
+(23) und Sollzeiten (710 s) unverändert (§3). Funktionstest Folie 09 (eigenes Skript, nicht im Repository): nach dem
+Betreten steht `src = video/gruender-video.mp4`; mit einer Route, die die Anfrage mit einem synthetischen WebM
+beantwortet, startet das Video mit Klick 1 mit Ton, kein Rahmen; ohne Route erscheint im Test-Chromium (ohne H.264) der
+Rahmen mit dem neuen Text; mit `?aufnahme` keine Quelle, keine Anfrage, Rahmen.
 **Bewusst offen:** Workshop-Foto b12 (06), Handskizze b15 (07), „Tipp unter Kollegen“ (03) – kein Fremdbild zeigt das
 ehrlich; eigene Fotos aus dem Selbstversuch (§10).

@@ -44,5 +44,6 @@
 #f02 .e2-handy { font-size: 28px; line-height: 1.25; margin-top: 4px; }
 #f02 .e2-oton { top: 928px; width: auto; }
 #f02 .p-skala-zahl .p-marker { margin-right: 0; }
-/* Interne Fassung (D06): Beschriftung „Symbolbild … nicht Marco“ im Bild, im Satzspiegel (x ≥ 128) */
+/* Fassung mit Bildern (D06): Beschriftung „Symbolbild … nicht Marco“ im Bild, im Satzspiegel (x ≥ 128);
+   seit D07 zweizeilig („Symbolbild Schichtarbeit – nicht Marco“ / „(Lokführer aus der HOLY-Community)“) */
 #f02 .e2-label { left: 128px; }

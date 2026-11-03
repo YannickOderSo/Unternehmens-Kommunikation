@@ -23,7 +23,7 @@
      • Bilder (seit 03.11.2026, FS2 D06): jedes <img> geladen (kein kaputtes
        Bild-Symbol), nicht verzerrt (object-fit oder passendes Seitenverhältnis),
        nicht hochgerechnet (Datei kleiner als die Fläche → Warnung „unscharf“);
-       interne Fassung siehe „INTERNE BILDER“ unten
+       Fassung mit Bildern siehe „FREMDBILDER“ unten
    Elemente mit dem Attribut data-ueberlauf-ok (z. B. ein absichtlich über den
    Rand laufendes Bild) und ihr Inhalt sind von der Überlaufprüfung ausgenommen,
    Elemente mit data-ueberlappung-ok von der Überlappungsprüfung.
@@ -55,25 +55,25 @@
      --live-werte 3,1,7,0,2 Live-Abstimmung: fester Stand (z. B. für Screenshots)
      --live-aus             liveQuelle aus marke.js für diesen Lauf ausblenden
                             (Folie wie ohne Live-Abstimmung: kein QR-Code, Zählmodus)
-     --oeffentlich          öffentliche Fassung prüfen: jede Anfrage an den Ordner intern/
-                            neben der HTML-Datei wird per Route gesperrt (wie auf GitHub
-                            Pages, wo intern/ fehlt). Pflicht für Ausgaben nach export/
-                            oder bilder/ (sonst Abbruch, siehe „INTERNE BILDER“).
+     --oeffentlich          Rückfall ohne Fremdbilder prüfen: jede Anfrage an den Ordner
+                            fremdbilder/ neben der HTML-Datei wird per Route gesperrt (wie
+                            wenn fremdbilder/register.js fehlt). Name der Option historisch.
 
-   INTERNE BILDER (FS2, js/folien/intern-bilder.js, LIESMICH §12)
-   Liegt intern/bilder.js neben der HTML-Datei, prüft der Lauf die interne
-   Fassung: Jedes Element mit data-intern braucht einen Schlüssel in
-   window.INTERN_BILDER (Fehler; mit data-intern-optional nur Warnung – dann
-   bleibt das öffentliche Bild), jede eingesetzte Datei muss laden
-   (naturalWidth > 0), und auf jeder Folie mit sichtbarem internem Bild muss
+   FREMDBILDER (FS2, js/folien/intern-bilder.js, LIESMICH §12)
+   Liegt fremdbilder/register.js neben der HTML-Datei, prüft der Lauf die
+   Fassung mit Bildern (Standard; Fremdbilder veröffentlicht mit Freigabe,
+   KI-Nachweis FS2 Nr. 17): Jedes Element mit data-intern braucht einen
+   Schlüssel in window.INTERN_BILDER (Fehler; mit data-intern-optional nur
+   Warnung – dann bleibt das Bild aus bilder/), jede eingesetzte Datei muss
+   laden (naturalWidth > 0), und auf jeder Folie mit sichtbarem Fremdbild muss
    die Bildnachweis-Zeile (.p-bildquelle) sichtbar sein und in den Satzspiegel
-   passen (x ≤ 1792). Fehlt intern/bilder.js, ist das eine WARNUNG
-   („öffentliche Fassung ohne interne Bilder“), kein Fehler; dann (und mit
-   --oeffentlich) darf kein Element data-intern-status tragen, kein Bild aus
-   intern/ kommen und keine Bildnachweis-Zeile sichtbar sein (sonst Fehler).
-   Exporte (export/, bilder/) dürfen nie interne Bilder enthalten: Zeigt
-   --ausgabe oder --druck dorthin und liegt intern/bilder.js vor, bricht der
-   Lauf ohne --oeffentlich ab.
+   passen (x ≤ 1792). Fehlt fremdbilder/register.js, ist das eine WARNUNG
+   („Rückfall ohne Fremdbilder (fremdbilder/register.js fehlt)“), kein Fehler;
+   dann (und mit --oeffentlich) darf kein Element data-intern-status tragen,
+   kein Bild aus fremdbilder/ kommen und keine Bildnachweis-Zeile sichtbar
+   sein (sonst Fehler). Namen wie data-intern, INTERN_BILDER, --oeffentlich
+   und „interneBilder“ im Bericht stammen aus der Zeit vor der Freigabe
+   (bis 03.11.2026 „interne Fassung“ aus intern/) und bleiben.
 
    LIVE-ABSTIMMUNG (marke.js → umfragen.<id>.liveQuelle, Folie 08)
    Die Prüfung schickt nie eine Anfrage an die echte Web-App. Anfragen an die
@@ -157,10 +157,11 @@ if ([opt.liveOffline, !!opt.liveWerte, opt.liveAus].filter(Boolean).length > 1) 
   abbruch('--live-offline, --live-werte und --live-aus schließen sich aus – nur eine davon angeben.');
 }
 
-/* ---------- Interne Fassung (FS2, LIESMICH §12) ----------
-   intern/ neben der HTML-Datei ist per .gitignore ausgeschlossen. --oeffentlich
-   sperrt den Ordner per Route; ohne intern/bilder.js ist es die öffentliche
-   Fassung (Warnung). Exporte nach export/ oder bilder/ nur öffentlich. */
+/* ---------- Fassung mit Bildern / Rückfall ohne Fremdbilder (FS2, LIESMICH §12) ----------
+   fremdbilder/ neben der HTML-Datei ist versioniert (veröffentlicht mit Freigabe,
+   KI-Nachweis FS2 Nr. 17). --oeffentlich sperrt den Ordner per Route; ohne
+   fremdbilder/register.js ist es der Rückfall ohne Fremdbilder (Warnung).
+   Die Variablennamen intern… sind historisch. */
 const praesOrdner = path.dirname(datei);
 const internOrdner = path.join(praesOrdner, 'fremdbilder');
 const internBilderJs = path.join(internOrdner, 'register.js');
@@ -168,10 +169,10 @@ const internUrl = pathToFileURL(internOrdner).href + '/';
 const internBilderJsUrl = pathToFileURL(internBilderJs).href;
 const INTERN = {
   bilderJsDa: fs.existsSync(internBilderJs),
-  gesperrt: [],           /* --oeffentlich: abgebrochene Anfragen an intern/ */
-  bilderJsMeldung: 0      /* Lade-/Sperrmeldungen von intern/bilder.js (kein Fehler) */
+  gesperrt: [],           /* --oeffentlich: abgebrochene Anfragen an fremdbilder/ */
+  bilderJsMeldung: 0      /* Lade-/Sperrmeldungen von fremdbilder/register.js (kein Fehler) */
 };
-INTERN.fassung = opt.oeffentlich ? 'oeffentlich (intern/ per Route gesperrt)' : INTERN.bilderJsDa ? 'intern' : 'oeffentlich (intern/bilder.js fehlt)';
+INTERN.fassung = opt.oeffentlich ? 'Rückfall ohne Fremdbilder (fremdbilder/ per Route gesperrt)' : INTERN.bilderJsDa ? 'mit Bildern' : 'Rückfall ohne Fremdbilder (fremdbilder/register.js fehlt)';
 /* Exportsperre entfällt seit 03.11.2026: Die Fremdbilder sind mit Freigabe
    (KI-Nachweis FS2 Nr. 17) veröffentlicht und liegen versioniert in fremdbilder/. */
 
@@ -246,7 +247,7 @@ const bericht = {
   screenshots: [],
   externeAnfragen: [],  // blockiert, jede ist ein Fehler
   liveAnfragen: null,   // an die liveQuelle – beantwortet von der eingebauten Attrappe (ende())
-  interneBilder: null,  // Fassung, Schlüssel, eingesetzte Bilder (FS2, LIESMICH §12)
+  interneBilder: null,  // Fassung, Schlüssel, eingesetzte Fremdbilder (FS2, LIESMICH §12; Name historisch)
   druck: null
 };
 const fehler = (ort, text) => bericht.fehler.push({ ort, text });
@@ -384,7 +385,7 @@ function liveRoute(route, l) {
    liveQuelle (Attrappe, siehe Kopf) */
 await kontext.route('**/*', (route) => {
   const url = route.request().url();
-  /* --oeffentlich: intern/ sperren (wie auf GitHub Pages, wo der Ordner fehlt) */
+  /* --oeffentlich: fremdbilder/ sperren (Rückfall ohne Fremdbilder) */
   if (opt.oeffentlich && url.startsWith(internUrl)) {
     INTERN.gesperrt.push(decodeURIComponent(url.slice(internUrl.length)));
     return route.abort('blockedbyclient');
@@ -447,7 +448,7 @@ function seiteBeobachten(seite, ort) {
       LIVE.zaehler.konsoleOffline++;
       return;
     }
-    /* intern/bilder.js fehlt (öffentliche Fassung) oder ist gesperrt (--oeffentlich): Warnung bzw. gewollt, kein Fehler */
+    /* fremdbilder/register.js fehlt (Rückfall) oder ist gesperrt (--oeffentlich): Warnung bzw. gewollt, kein Fehler */
     if (m.type() === 'error' && /^Failed to load resource/.test(m.text()) && ((m.location() || {}).url || '') === internBilderJsUrl &&
         (opt.oeffentlich || !INTERN.bilderJsDa)) {
       INTERN.bilderJsMeldung++;
@@ -461,7 +462,7 @@ function seiteBeobachten(seite, ort) {
     const url = r.url();
     if (url === internBilderJsUrl && (opt.oeffentlich || !INTERN.bilderJsDa)) { INTERN.bilderJsMeldung++; return; }
     if (opt.oeffentlich && url.startsWith(internUrl)) {
-      fehler(ort, 'öffentliche Fassung fordert eine interne Datei an (gesperrt): ' + decodeURIComponent(url.slice(internUrl.length)) + ' – nur intern/bilder.js darf angefragt werden');
+      fehler(ort, 'Rückfall ohne Fremdbilder fordert ein Fremdbild an (gesperrt): ' + decodeURIComponent(url.slice(internUrl.length)) + ' – nur fremdbilder/register.js darf angefragt werden');
       return;
     }
     if (/^file:/i.test(url)) fehler(ort, 'Datei fehlt oder nicht lesbar: ' + decodeURIComponent(url.replace(/^file:\/\//, '')) + ' (' + (r.failure() || {}).errorText + ')');
@@ -481,9 +482,9 @@ try {
 await seite.evaluate(() => document.fonts && document.fonts.ready);
 await seite.evaluate(() => window.Deck.testmodus(true));
 
-/* ---------- Interne Bilder und alle <img> (FS2, LIESMICH §12) ----------
+/* ---------- Fremdbilder und alle <img> (FS2, LIESMICH §12) ----------
    Erst warten, bis jedes Bild geladen oder gescheitert ist (intern-bilder.js
-   stellt bei einem Fehler den öffentlichen Zustand wieder her), dann prüfen. */
+   stellt bei einem Fehler den Zustand ohne Bild wieder her), dann prüfen. */
 const bilderStand = await seite.evaluate(async () => {
   const imgs = [...document.querySelectorAll('img')];
   await Promise.all(imgs.map((i) => (i.complete ? null : new Promise((fertig) => {
@@ -520,26 +521,26 @@ const bilderStand = await seite.evaluate(async () => {
     schluesselInBilderJs: bilderStand.schluessel,
     elementeMitDataIntern: bilderStand.elemente.length,
     eingesetzt: gesetzt.length,
-    fehlendeSchluessel: intern ? bilderStand.elemente.filter((e) => !e.vorhanden && !e.optional).map((e) => e.folie + ' ' + e.schluessel) : '– (öffentliche Fassung)',
-    fehlendeOptionaleSchluessel: intern ? bilderStand.elemente.filter((e) => !e.vorhanden && e.optional).map((e) => e.folie + ' ' + e.schluessel) : '– (öffentliche Fassung)',
+    fehlendeSchluessel: intern ? bilderStand.elemente.filter((e) => !e.vorhanden && !e.optional).map((e) => e.folie + ' ' + e.schluessel) : '– (Rückfall ohne Fremdbilder)',
+    fehlendeOptionaleSchluessel: intern ? bilderStand.elemente.filter((e) => !e.vorhanden && e.optional).map((e) => e.folie + ' ' + e.schluessel) : '– (Rückfall ohne Fremdbilder)',
     gesperrteAnfragen: INTERN.gesperrt
   };
   if (!opt.oeffentlich && !INTERN.bilderJsDa) {
-    warnung('Interne Bilder', 'öffentliche Fassung ohne interne Bilder (intern/bilder.js fehlt) – Platzhalter und Rückfälle bleiben stehen');
+    warnung('Fremdbilder', 'Rückfall ohne Fremdbilder (fremdbilder/register.js fehlt) – Platzhalter und Rückfälle bleiben stehen');
   }
   if (intern) {
     bilderStand.elemente.forEach((e) => {
-      const ort = 'Interne Bilder (' + e.folie + ')';
-      if (!e.vorhanden && e.optional) warnung(ort, 'data-intern="' + e.schluessel + '": kein Schlüssel in intern/bilder.js – das öffentliche Bild bleibt (data-intern-optional)');
-      else if (!e.vorhanden) fehler(ort, 'data-intern="' + e.schluessel + '": kein Schlüssel in intern/bilder.js');
-      else if (e.status !== 'gesetzt') fehler(ort, 'data-intern="' + e.schluessel + '": Datei nicht eingesetzt (Status „' + (e.status || '–') + '“, ' + e.datei + ') – fehlt sie in intern/bilder/?');
+      const ort = 'Fremdbilder (' + e.folie + ')';
+      if (!e.vorhanden && e.optional) warnung(ort, 'data-intern="' + e.schluessel + '": kein Schlüssel in fremdbilder/register.js – das Bild aus bilder/ bleibt (data-intern-optional)');
+      else if (!e.vorhanden) fehler(ort, 'data-intern="' + e.schluessel + '": kein Schlüssel in fremdbilder/register.js');
+      else if (e.status !== 'gesetzt') fehler(ort, 'data-intern="' + e.schluessel + '": Datei nicht eingesetzt (Status „' + (e.status || '–') + '“, ' + e.datei + ') – fehlt sie in fremdbilder/?');
     });
-    if (!gesetzt.length) fehler('Interne Bilder', 'intern/bilder.js liegt vor, aber kein Bild wurde eingesetzt (js/folien/intern-bilder.js eingebunden? ?kacheln=rueckfall?)');
+    if (!gesetzt.length) fehler('Fremdbilder', 'fremdbilder/register.js liegt vor, aber kein Bild wurde eingesetzt (js/folien/intern-bilder.js eingebunden? ?kacheln=rueckfall?)');
   } else {
-    /* öffentliche Fassung: nichts Internes darf sichtbar oder angefordert sein */
-    if (bilderStand.statusOhneSkript) fehler('Interne Bilder', 'öffentliche Fassung: ' + bilderStand.statusOhneSkript + ' Element(e) mit data-intern-status – interne Bilder eingesetzt?');
-    bilderStand.bilder.filter((b) => /(^|\/)fremdbilder\//.test(b.src)).forEach((b) => fehler('Interne Bilder (' + b.folie + ')', 'öffentliche Fassung zeigt ein Bild aus intern/: ' + b.src));
-    bilderStand.bildquellenSichtbar.forEach((f) => fehler('Interne Bilder (' + f + ')', 'öffentliche Fassung: Bildnachweis-Zeile (.p-bildquelle) sichtbar, obwohl keine internen Bilder geladen sind'));
+    /* Rückfall ohne Fremdbilder: kein Fremdbild darf sichtbar oder angefordert sein */
+    if (bilderStand.statusOhneSkript) fehler('Fremdbilder', 'Rückfall ohne Fremdbilder: ' + bilderStand.statusOhneSkript + ' Element(e) mit data-intern-status – Fremdbilder eingesetzt?');
+    bilderStand.bilder.filter((b) => /(^|\/)fremdbilder\//.test(b.src)).forEach((b) => fehler('Fremdbilder (' + b.folie + ')', 'Rückfall ohne Fremdbilder zeigt ein Bild aus fremdbilder/: ' + b.src));
+    bilderStand.bildquellenSichtbar.forEach((f) => fehler('Fremdbilder (' + f + ')', 'Rückfall ohne Fremdbilder: Bildnachweis-Zeile (.p-bildquelle) sichtbar, obwohl keine Fremdbilder geladen sind'));
   }
   /* jedes Bild mit src muss geladen sein – sonst kaputtes Bild-Symbol */
   bilderStand.bilder.filter((b) => !b.geladen).forEach((b) => fehler('Bilder (' + b.folie + ')', 'Bild nicht geladen (kaputtes Bild-Symbol): ' + b.src + (b.fertig ? '' : ' (nach 8 s noch nicht fertig)')));
@@ -804,7 +805,7 @@ async function folieUntersuchen(id) {
 
     /* 4b. Bilder (FS2 D06): verzerrt (ohne object-fit cover/contain und mit anderem Seitenverhältnis
        als die Datei) → Fehler; hochgerechnet (Datei kleiner als die Fläche auf der 1920er-Bühne, Faktor
-       > 1,05) → Warnung „unscharf“; sichtbares internes Bild ohne sichtbare Bildnachweis-Zeile → Fehler;
+       > 1,05) → Warnung „unscharf“; sichtbares Fremdbild ohne sichtbare Bildnachweis-Zeile → Fehler;
        Bildnachweis-Zeile über den Satzspiegel (x > 1792) hinaus → Fehler. */
     let internSichtbar = false;
     for (const img of folie.querySelectorAll('img')) {
@@ -828,7 +829,7 @@ async function folieUntersuchen(id) {
       if (img.hasAttribute('data-intern-bild') || (img.matches('[data-intern][data-intern-status="gesetzt"]'))) internSichtbar = true;
     }
     const bildquelle = folie.querySelector(':scope > .p-bildquelle');
-    if (internSichtbar && !(bildquelle && sichtbar(bildquelle))) ergebnis.bilder.push({ art: 'nachweis', text: 'internes Bild sichtbar, aber keine sichtbare Bildnachweis-Zeile (.p-bildquelle)' });
+    if (internSichtbar && !(bildquelle && sichtbar(bildquelle))) ergebnis.bilder.push({ art: 'nachweis', text: 'Fremdbild sichtbar, aber keine sichtbare Bildnachweis-Zeile (.p-bildquelle)' });
     if (bildquelle && sichtbar(bildquelle)) {
       const bereich = document.createRange();
       bereich.selectNodeContents(bildquelle);

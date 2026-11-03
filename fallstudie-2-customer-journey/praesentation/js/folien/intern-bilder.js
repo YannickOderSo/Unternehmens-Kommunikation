@@ -1,18 +1,28 @@
 /* =============================================================================
-   js/folien/intern-bilder.js – interne Fassung: Bilder aus intern/ einsetzen
+   js/folien/intern-bilder.js – Fassung mit Bildern: Fremdbilder einsetzen
    -----------------------------------------------------------------------------
    Angelegt am 03.11.2026 (KI-Nachweis FS2, Delegation D06, Schritt „Einbau
-   Präsentation“), KI-gestützt; Prüfung durch die Gruppe offen.
+   Präsentation“), KI-gestützt; Prüfung durch die Gruppe offen. Umgestellt in
+   D07 (03.11.2026) auf die veröffentlichten Fremdbilder.
 
-   ZWEI FASSUNGEN AUS EINER index.html
-   • Interne Fassung (Hörsaal): Neben index.html liegt der Ordner intern/ mit
-     intern/bilder.js (setzt window.INTERN_BILDER = { schlüssel: { datei, alt,
-     nachweis, pixel, … } }) und den Dateien in intern/bilder/. intern/ ist per
-     .gitignore ausgeschlossen – nichts davon kommt ins Repository oder auf
-     GitHub Pages.
-   • Öffentliche Fassung (Repository, GitHub Pages): intern/bilder.js fehlt.
-     Dann tut dieses Skript nichts: Platzhalter und Rückfälle bleiben, wie sie
-     sind, es entsteht kein <img> und damit kein kaputtes Bild-Symbol.
+   NAMEN AUS DER ZEIT VOR DER FREIGABE
+   Dateiname intern-bilder.js, window.INTERN_BILDER, data-intern*, Klasse
+   p-intern-logo und html[data-fassung="intern"] stammen aus der Zeit vor der
+   Freigabe (bis 03.11.2026 lagen die Bilder als „interne Fassung“ im
+   ausgeschlossenen Ordner intern/). Sie bleiben aus technischen Gründen
+   (Prüfwerkzeug, CSS, Konzept-Webseite); gemeint ist die Fassung mit Bildern.
+
+   ZWEI ZUSTÄNDE AUS EINER index.html
+   • Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): Neben
+     index.html liegt fremdbilder/register.js (setzt window.INTERN_BILDER =
+     { schlüssel: { datei, alt, nachweis, pixel, … } }) mit den Dateien in
+     fremdbilder/. Veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht
+     kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+   • Rückfall ohne Fremdbilder: fremdbilder/register.js fehlt (oder Schalter
+     ?kacheln=rueckfall). Dann tut dieses Skript nichts: Platzhalter und
+     Rückfälle bleiben, wie sie sind, es entsteht kein <img> und damit kein
+     kaputtes Bild-Symbol. intern/ enthält nur noch Rohmaterial (intern/roh/,
+     ausgeschlossen) und wird von der Präsentation nicht geladen.
 
    WAS DAS SKRIPT TUT (vor dem Start der Engine, also vor DOMContentLoaded)
    Jedes Element mit data-intern="<schlüssel>":
@@ -24,20 +34,19 @@
      • sonst (Logo-Platz, z. B. .e7-marke auf Folie 07): <img> als erstes Kind
        einsetzen; CSS blendet den Text daneben aus (data-intern-status).
    Jedes Element erhält data-intern-status: "gesetzt" (eingesetzt), "fehler"
-   (Datei fehlt → öffentlicher Zustand zurück, kein kaputtes Bild) oder "fehlt"
-   (Schlüssel nicht in bilder.js). data-intern-optional: Fehlen ist erlaubt
-   (Folie 08: dann bleiben die öffentlichen Bildschirmfotos aus bilder/).
+   (Datei fehlt → Zustand ohne Bild zurück, kein kaputtes Bild) oder "fehlt"
+   (Schlüssel nicht in register.js). data-intern-optional: Fehlen ist erlaubt
+   (Folie 08: dann bleiben die Bildschirmfotos ohne fremde Bilder aus bilder/).
    Je Folie: die Bildnachweis-Zeile <p class="p-bildquelle" hidden> wird nur
-   sichtbar, solange mindestens ein internes Bild dieser Folie eingesetzt ist;
+   sichtbar, solange mindestens ein Fremdbild dieser Folie eingesetzt ist;
    in den Notizen (Referentenansicht) steht dann der volle Nachweis je Bild.
 
    SCHALTER
-   • ?kacheln=rueckfall – öffentliche Ansicht erzwingen: keine internen Bilder,
-     auch wenn intern/bilder.js da ist (pfad.js, Abschnitt 4).
-   • ?aufnahme (Prüfwerkzeug) und ?druck (Notfall-PDF) zeigen die internen
-     Bilder, wenn intern/bilder.js da ist. Exporte für export/ oder bilder/
-     deshalb nur aus der öffentlichen Fassung: pruefen.mjs --oeffentlich
-     (sperrt intern/ per Route) – LIESMICH §12.
+   • ?kacheln=rueckfall – Rückfall ohne Fremdbilder erzwingen, auch wenn
+     fremdbilder/register.js da ist (pfad.js, Abschnitt 4).
+   • ?aufnahme (Prüfwerkzeug) und ?druck (Notfall-PDF) zeigen die Fremdbilder
+     wie der Vortrag. Den Rückfall prüft pruefen.mjs --oeffentlich (sperrt
+     fremdbilder/ per Route) – LIESMICH §12.
    ============================================================================= */
 (function () {
   'use strict';
@@ -46,6 +55,8 @@
   var BILDER = window.INTERN_BILDER;
   var parameter = new URLSearchParams(location.search);
 
+  /* data-fassung (Werte historisch): "intern" = Fassung mit Bildern · "oeffentlich" = Rückfall ohne Fremdbilder
+     (register.js fehlt) · "oeffentlich-ansicht" = Rückfall per Schalter ?kacheln=rueckfall */
   if (!BILDER || typeof BILDER !== 'object') { html.setAttribute('data-fassung', 'oeffentlich'); return; }
   if (parameter.get('kacheln') === 'rueckfall') { html.setAttribute('data-fassung', 'oeffentlich-ansicht'); return; }
   html.setAttribute('data-fassung', 'intern');
@@ -85,7 +96,7 @@
       absatz.className = 'p-intern-nachweis';
       notizen.appendChild(absatz);
     }
-    absatz.textContent = 'Bildnachweis der internen Fassung (Dateien nur in intern/, nicht im Repository; keine eigenen Fotos der Gruppe): ' +
+    absatz.textContent = 'Bildnachweis (Fremdbilder, veröffentlicht mit Freigabe; keine eigenen Fotos der Gruppe): ' +
       liste.join(' | ');
   }
 
@@ -103,7 +114,7 @@
     }
 
     if (el.tagName === 'IMG') {
-      /* Folie 08: öffentliches Bild tauschen, bei Fehler zurück */
+      /* Folie 08: Bild aus bilder/ tauschen, bei Fehler zurück */
       var src0 = el.getAttribute('src') || '', alt0 = el.getAttribute('alt') || '';
       var w0 = el.getAttribute('width'), h0 = el.getAttribute('height');
       el.setAttribute('data-oeffentlich-src', src0);

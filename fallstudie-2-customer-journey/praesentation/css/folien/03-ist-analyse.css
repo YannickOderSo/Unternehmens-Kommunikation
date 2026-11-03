@@ -2,11 +2,11 @@
    03-ist-analyse.css – Folie 03 · A1 IST-Analyse (Moodboard, Zählung, Proben,
    Bewertungszeile je Phase). Gestaltungsplan 5.1 Zeile 03 und Abschnitt 8.
    Abweichung: Zählung 84 px statt 160 px, je Band ausgerichtet (Platz). Umbau 03.11.2026 (D06): Bänder über
-   die volle Breite mit Kacheln 258 × 122 für die Bilder der internen Fassung; Zählung vor dem Bandnamen.
+   die volle Breite mit Kacheln 258 × 122 für die Fassung mit Bildern (Fremdbilder); Zählung vor dem Bandnamen.
    ============================================================================= */
 /* Bänder Paid · Owned · Earned über die volle Breite (Umbau 03.11.2026, D06: größere Bildkacheln).
    Je Band: Zählung (84 px, Klick 1, rechtsbündig in 104 px) · Bandname (28 px) · Kacheln 258 × 122
-   (Seitenverhältnis der internen Bilder 380 × 180, also 1,47-fach scharf). Kacheln ab x = 420,
+   (Seitenverhältnis der Fremdbilder 380 × 180, also 1,47-fach scharf). Kacheln ab x = 420,
    Owned endet bei x = 1774. Trennlinie in Mittel warm 7 px über Owned und Earned. */
 #f03 .e3-band {
   left: 128px;
@@ -59,10 +59,19 @@
 #f03 .e3-k .p-platzhalter { font-size: 22px; line-height: 1.15; }
 #f03 .e3-k .p-kachel-art { display: inline; font-size: 22px; }
 #f03 .e3-k .p-kachel-offen { display: inline; font-size: 22px; font-weight: 400; }
-/* Rückfall b19 (öffentliche Fassung): eigene Textgrafik der leeren Blog-Seite */
+/* Rückfall ohne Fremdbilder (b19): eigene Textgrafik der leeren Blog-Seite; in der Fassung mit Bildern der
+   Screenshot mit Beschriftung „Blog: 0 Beiträge“ (D07) */
 #f03 .e3-k--blog { display: flex; align-items: center; }
 #f03 .e3-k--blog[data-status="rueckfall"] .p-rueckfall { padding: 4px 14px; display: grid; gap: 2px; }
 #f03 .e3-blog-pfad { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
+/* D07: „Tipp unter Kollegen“ hat kein Bild (Mundpropaganda zeigt kein Fremdbild ehrlich). In der Fassung mit
+   Bildern ruhig wie die Leerstelle „Antwortseite fehlt“ auf 04: Creme, gestrichelter 3-px-Rand in Schriftfarbe,
+   Text „offen“ bleibt. Im Rückfall ohne Fremdbilder bleibt es ein Platzhalter wie alle anderen Kacheln. */
+html[data-fassung="intern"] #f03 .e3-k--tipp[data-status="offen"] {
+  background: var(--p-papier);
+  border: 3px dashed var(--p-schrift);
+  color: var(--p-schrift);
+}
 #f03 .e3-blog-null {
   font-family: var(--schrift-display);
   font-size: 36px;

@@ -7,9 +7,12 @@
        ?packung=…       set | 1 | 10 | 50 (Produktseite → Warenkorb → Danke-Seite)
        ?anmerkungen=1   Präsentationsmodus: nummerierte Anmerkungs-Marker „was wir ändern und warum“
    - reicht code und anmerkungen an alle internen Links weiter, damit die Strecke im Vortrag durchklickbar bleibt
-   - interne Fassung: Liegt intern/bilder.js vor (per .gitignore ausgeschlossen, nicht im Repository und nicht auf
-     GitHub Pages), bekommen Elemente mit data-intern="schlüssel" ein Bild aus intern/bilder/ samt Bildnachweis;
-     ohne die Datei bleibt die öffentliche Fassung mit Platzhaltern und eigenen Zeichnungen (Abschnitt „Interne Bilder“)
+   - Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): fremdbilder/register.js setzt
+     window.INTERN_BILDER; Elemente mit data-intern="schlüssel" bekommen ein Bild aus fremdbilder/ samt Bildnachweis.
+     Die Bilder sind veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung;
+     keine eigenen Fotos der Gruppe. Fehlt register.js, bleibt der Rückfall ohne Fremdbilder: Platzhalter und eigene
+     Zeichnungen (Abschnitt „Fremdbilder“). Die Namen INTERN_BILDER, data-intern*, intern-bild stammen aus der Zeit vor
+     der Freigabe und bleiben aus technischen Gründen.
    Daten: Preise und Mengen aus dem Recherche-Dossier FS2 (Befund-IDs in den Kommentaren), alles andere Beispielwert.
    ========================================================================== */
 (function () {
@@ -32,12 +35,17 @@
 
   /* Packungen. Preise: HOLY-Shop, abgerufen 30.10.2026 – ✔ B09 (1, 10, 50 Portionen Raspberry Raptor),
      ✔ T20 (Starter Set: 24,99 €, 14 Drinks, mit Shaker und Gratisversand). Portion = 7 g (Etikett, ✔ S92).
-     Grundpreis (✔ R98) gerechnet aus 7 g je Portion; Nettofüllmenge vor Veröffentlichung am Etikett prüfen. */
+     Grundpreis (✔ R98) gerechnet aus 7 g je Portion; Nettofüllmenge vor Veröffentlichung am Etikett prüfen.
+     shaker: ob die Seite für diese Packung einen Shaker nennt – Starter Set „14 Drinks + Shaker“ (✔ T20), 50er-Dose
+     „Shaker gratis zur ersten Dose“ (✔ T22: „Einen kostenlosen Shaker beim Kauf deiner ersten Dose“; Shop-Variante
+     „50 Portionen mit gratis Shaker“, Quelle in fremdbilder/register.js). 10 Portionen sind eine Sachet-Box (Packshot der
+     Shop-Variante „10 Portionen“, Quelle web-packung-10 in fremdbilder/register.js), für sie und 1 Portion nennt die Seite
+     keinen Shaker. Danach richten sich Bild und Überschrift „Shaker auspacken“ auf der Danke-Seite. */
   var PACKUNGEN = {
-    set: { name: 'Starter Set Energy', zusatz: '14 Drinks + Shaker, Gratisversand', preis: 24.99, portionen: 14, gramm: null, versandfrei: true, einheit: 'Drink' },
-    '1': { name: 'Raspberry Raptor · 1 Portion', zusatz: 'zum Probieren', preis: 1.99, portionen: 1, gramm: 7, versandfrei: false, einheit: 'Portion' },
-    '10': { name: 'Raspberry Raptor · 10 Portionen', zusatz: 'kleine Dose', preis: 12.49, portionen: 10, gramm: 70, versandfrei: false, einheit: 'Portion' },
-    '50': { name: 'Raspberry Raptor · 50 Portionen', zusatz: 'Vorratsdose', preis: 39.99, portionen: 50, gramm: 350, versandfrei: false, einheit: 'Portion' }
+    set: { name: 'Starter Set Energy', zusatz: '14 Drinks + Shaker, Gratisversand', preis: 24.99, portionen: 14, gramm: null, versandfrei: true, einheit: 'Drink', shaker: true },
+    '1': { name: 'Raspberry Raptor · 1 Portion', zusatz: 'zum Probieren', preis: 1.99, portionen: 1, gramm: 7, versandfrei: false, einheit: 'Portion', shaker: false },
+    '10': { name: 'Raspberry Raptor · 10 Portionen', zusatz: 'Sachet-Box', preis: 12.49, portionen: 10, gramm: 70, versandfrei: false, einheit: 'Portion', shaker: false },
+    '50': { name: 'Raspberry Raptor · 50 Portionen', zusatz: 'Vorratsdose, Shaker gratis zur ersten Dose', preis: 39.99, portionen: 50, gramm: 350, versandfrei: false, einheit: 'Portion', shaker: true }
   };
   /* Versand DE: 4,99 €, versandkostenfrei ab 49 € (✔ B12) */
   var VERSAND = 4.99;
@@ -99,15 +107,17 @@
     ergaenzeLink(a, a.hasAttribute('data-mit-packung') ? { packung: packungAusAdresse() } : null);
   });
 
-  /* ---------- Interne Bilder (nur interne Fassung im Hörsaal) ----------
-     intern/bilder.js setzt window.INTERN_BILDER = { schlüssel: { datei, alt, nachweis, motiv, pixel, … } }.
-     Bildplatz = Element mit data-intern="schlüssel" („{packung}“ wird durch die Packung aus der Adresse ersetzt).
+  /* ---------- Fremdbilder (Fassung mit Bildern, veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17) ----------
+     fremdbilder/register.js setzt window.INTERN_BILDER = { schlüssel: { datei, alt, nachweis, unterschrift, motiv, pixel, … } }.
+     Bildplatz = Element mit data-intern="schlüssel" („{packung}“ wird durch die Packung aus der Adresse ersetzt; gibt es
+     den Schlüssel für diese Packung nicht, bleibt der Platz ausgeblendet).
      Das Bild kommt in das Kind .bildplatz (sonst in den Bildplatz selbst); Bildplatz, .bildplatz und Vorfahren mit
      data-intern-gruppe verlieren dabei ihr hidden, der Bildplatz bekommt .mit-bild (CSS blendet .nur-ohne-bild aus).
      data-intern-deko: alt="" (Bild in einem Knopf oder Link, dessen Text dasselbe sagt).
-     [data-intern-nachweis] im Bildplatz zeigt den Bildnachweis; im Fuß stehen alle Nachweise der Seite ([data-nur-intern]).
-     Lädt ein Bild nicht, wird alles zurückgesetzt: Platzhalter statt kaputtem Bild-Symbol. Ohne intern/bilder.js passiert
-     nichts (öffentliche Fassung). Nur Dateien aus intern/bilder/ werden angenommen. */
+     [data-intern-nachweis] im Bildplatz zeigt die kurze Bildunterschrift (unterschrift, sonst nachweis); im Fuß stehen
+     alle Nachweise der Seite mit Motiv davor, gleiche Nachweise zusammengefasst ([data-nur-intern], [data-intern-liste]).
+     Lädt ein Bild nicht, wird alles zurückgesetzt: Platzhalter statt kaputtem Bild-Symbol. Ohne fremdbilder/register.js
+     passiert nichts (Rückfall ohne Fremdbilder). Nur Dateien aus fremdbilder/ werden angenommen. */
   var BILDER = (window.INTERN_BILDER && typeof window.INTERN_BILDER === 'object') ? window.INTERN_BILDER : null;
   function bildEintrag(schluessel) {
     if (!BILDER || !schluessel || !Object.prototype.hasOwnProperty.call(BILDER, schluessel)) return null;
@@ -120,19 +130,40 @@
     img.alt = deko ? '' : String(e.alt || '');
     img.src = e.datei;
   }
+  function unterschrift(e) { return String(e.unterschrift || e.nachweis || ''); }
+  /* Motive mit gleichem Nachweis sammeln: gemeinsamer Wortanfang einmal, Rest mit „ / “
+     („Packshot 50 Portionen“, „Packshot 10 Portionen“ → „Packshot 50 Portionen / 10 Portionen“) */
+  function motivText(motive) {
+    if (motive.length < 2) return motive[0] || '';
+    var woerter = motive.map(function (m) { return m.split(' '); });
+    var n = 0;
+    while (woerter.every(function (w) { return w.length > n + 1 && w[n] === woerter[0][n]; })) n++;
+    if (!n) return motive.join(' / ');
+    return woerter[0].slice(0, n).join(' ') + ' ' + woerter.map(function (w) { return w.slice(n).join(' '); }).join(' / ');
+  }
   function zeigeBildnachweise() {
-    var liste = [];
+    var gruppen = [];
     document.querySelectorAll('[data-intern].mit-bild').forEach(function (platz) {
       var e = bildEintrag(platz.getAttribute('data-intern-aktiv'));
-      if (e && e.nachweis && liste.indexOf(e.nachweis) < 0) liste.push(String(e.nachweis));
+      if (!e || !e.nachweis) return;
+      var g = gruppen.filter(function (x) { return x.nachweis === String(e.nachweis); })[0];
+      if (!g) { g = { nachweis: String(e.nachweis), motive: [] }; gruppen.push(g); }
+      var motiv = String(e.motiv || '').trim();
+      if (motiv && g.motive.indexOf(motiv) < 0) g.motive.push(motiv);
     });
-    var an = liste.length > 0;
+    var an = gruppen.length > 0;
     document.documentElement.classList.toggle('intern-bilder', an);
     document.querySelectorAll('[data-nur-intern]').forEach(function (el) { el.hidden = !an; });
     document.querySelectorAll('[data-nur-oeffentlich]').forEach(function (el) { el.hidden = an; });
     document.querySelectorAll('[data-intern-liste]').forEach(function (ul) {
       ul.textContent = '';
-      liste.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      gruppen.forEach(function (g) {
+        var li = document.createElement('li');
+        var m = motivText(g.motive);
+        if (m) { var b = document.createElement('b'); b.textContent = m + ': '; li.appendChild(b); }
+        li.appendChild(document.createTextNode(g.nachweis));
+        ul.appendChild(li);
+      });
     });
   }
   function bauBildEin(platz) {
@@ -152,7 +183,7 @@
     platz.setAttribute('data-intern-aktiv', schluessel);
     var nachweis = platz.querySelector('[data-intern-nachweis]');
     var nachweisVorher = nachweis ? nachweis.textContent : '';
-    if (nachweis) nachweis.textContent = String(e.nachweis || '');
+    if (nachweis) nachweis.textContent = unterschrift(e);
 
     var img = document.createElement('img');
     img.className = 'intern-bild';
@@ -169,7 +200,7 @@
       gruppen.forEach(function (x) {
         if (!x.el.querySelector('.mit-bild')) { x.el.hidden = x.hidden; x.el.classList.remove('hat-intern-bild'); }
       });
-      /* ohne großes Produktbild hat die Galerie nichts zu tauschen: mit ausblenden (Platzhalter wie öffentlich) */
+      /* ohne großes Produktbild hat die Galerie nichts zu tauschen: mit ausblenden (Platzhalter wie im Rückfall) */
       if (platz.hasAttribute('data-intern-held')) {
         document.querySelectorAll('[data-intern-galerie]').forEach(function (gal) {
           gal.hidden = true;
@@ -184,22 +215,40 @@
   if (BILDER) document.querySelectorAll('[data-intern]').forEach(bauBildEin);
   zeigeBildnachweise();
 
-  /* Produktseite: kleine Galerie – ein Klick zeigt das Bild groß (ändert nur die Anzeige) */
+  /* Produktseite: großes Bild und kleine Galerie (ändert nur die Anzeige).
+     Solange niemand in der Galerie geklickt hat, folgt das große Bild der gewählten Packung
+     (web-produkt-gross-set / -50 / -10 / -1, Abnahme D06); danach zeigt es das angeklickte Galeriebild. */
   var held = document.querySelector('[data-intern-held].mit-bild');
   var heldBild = held && held.querySelector('img');
+  var heldFolgtPackung = null;
   if (heldBild) {
-    var daumen = document.querySelectorAll('[data-intern-galerie] button[data-intern].mit-bild');
+    var daumen = Array.prototype.slice.call(document.querySelectorAll('[data-intern-galerie] button[data-intern].mit-bild'));
+    var galerieGeklickt = false;
+    var zeigeGross = function (schluessel, knopf) {
+      var e = bildEintrag(schluessel);
+      if (!e || !heldBild.parentNode) return;
+      heldBild.loading = 'eager';
+      setzeBild(heldBild, e, false);
+      held.setAttribute('data-intern-aktiv', schluessel);
+      var n = held.querySelector('[data-intern-nachweis]');
+      if (n) n.textContent = unterschrift(e);
+      /* gedrückt ist das Galeriebild mit derselben Datei (z. B. 50er-Dose), sonst keines */
+      daumen.forEach(function (x) {
+        var xe = bildEintrag(x.getAttribute('data-intern-aktiv'));
+        var an = knopf ? x === knopf : !!(xe && xe.datei === e.datei);
+        x.setAttribute('aria-pressed', an ? 'true' : 'false');
+      });
+      zeigeBildnachweise();
+    };
     daumen.forEach(function (b) {
       b.addEventListener('click', function () {
-        var e = bildEintrag(b.getAttribute('data-intern-aktiv'));
-        if (!e || !heldBild.parentNode) return;
-        heldBild.loading = 'eager';
-        setzeBild(heldBild, e, false);
-        var n = held.querySelector('[data-intern-nachweis]');
-        if (n) n.textContent = String(e.nachweis || '');
-        daumen.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        galerieGeklickt = true;
+        zeigeGross(b.getAttribute('data-intern-aktiv'), b);
       });
     });
+    heldFolgtPackung = function (wahl) {
+      if (!galerieGeklickt) zeigeGross('web-produkt-gross-' + wahl, null);
+    };
   }
 
   /* ---------- Produktseite: Packung wählen (ändert nur die Anzeige) ---------- */
@@ -216,6 +265,7 @@
       setzeText('[data-p-grund]', grundText(w));
       setzeText('[data-p-versand]', vs === 0 ? (w.versandfrei ? 'Gratisversand' : 'versandkostenfrei') : '+ ' + euro(vs) + ' Versand (ab 49 € frei)');
       setzeText('[data-p-ende]', euro(runde(w.preis + vs)));
+      if (heldFolgtPackung) heldFolgtPackung(wahl);
       warenkorbLinks.forEach(function (a) {
         a.setAttribute('href', 'warenkorb.html?packung=' + wahl);
         ergaenzeLink(a, null);
@@ -257,6 +307,9 @@
     document.querySelectorAll('[data-k-nur-dose]').forEach(function (el) { el.hidden = (p === 'set'); });
   }
   setzeText('[data-liefertag]', datum(LIEFERTAG));
+  /* Danke-Seite: „Shaker auspacken“ nur, wenn die Packung laut dieser Seite einen Shaker enthält (PACKUNGEN.shaker);
+     das Shaker-Bild hängt am Schlüssel web-danke-shaker-{packung} und fehlt für 10 und 1 Portion(en) */
+  setzeText('[data-k-shaker-titel]', d.shaker ? 'Shaker auspacken, loslegen' : 'Auspacken, loslegen');
 
   /* ---------- Danke-Seite: Nachfüll-Erinnerung (Opt-in-Konzept, rechnet nur im Browser) ---------- */
   var erinnerung = document.querySelector('[data-erinnerung]');

@@ -380,8 +380,10 @@ html[data-thema] {
 
 /* 5.6 Bildkachel mit 4-px-Kontur und drei Zuständen (data-status):
    frei (Foto <img>) · offen (Platzhalter mit Hinweis) · rueckfall (eigene Grafik).
-   Der Schalter ändert nur die Anzeige; nicht freigegebene Dateien liegen nur in
-   intern/ (per .gitignore ausgeschlossen) oder im Gruppenordner. */
+   Der Schalter ändert nur die Anzeige. Die Fremdbilder liegen versioniert in
+   fremdbilder/ (veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17); intern/
+   (ausgeschlossen) enthält nur Rohmaterial. Eigene Fotos erst nach Sichtung
+   durch die Gruppe veröffentlichen. */
 .p-kachel {
   box-sizing: border-box;
   border: 4px solid var(--p-kontur);
@@ -686,15 +688,19 @@ html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-wid
   .folie[data-buehne="gelb"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
-/* 5.23 Interne Fassung mit Bildern (js/folien/intern-bilder.js, LIESMICH §12).
-   Die Bilder kommen nur aus intern/ (per .gitignore ausgeschlossen); ohne
-   intern/bilder.js bleibt alles wie in der öffentlichen Fassung.
+/* 5.23 Fassung mit Bildern (js/folien/intern-bilder.js, LIESMICH §12).
+   Die Bilder kommen aus fremdbilder/ (Liste fremdbilder/register.js, veröffentlicht
+   mit Freigabe, KI-Nachweis FS2 Nr. 17, nicht kommerziell, für die Lehrveranstaltung;
+   keine eigenen Fotos der Gruppe). Ohne register.js: Rückfall ohne Fremdbilder.
+   Namen wie data-intern, .p-intern-logo, html[data-fassung="intern"] stammen aus
+   der Zeit vor der Freigabe (bis 03.11.2026 „interne Fassung“) und bleiben.
    • .p-bildlabel – Beschriftung IM Bild (schwarzes Band, Creme 14,48 : 1),
      nur sichtbar, wenn die Kachel ein Bild zeigt (data-status="frei").
    • .p-bildquelle – Bildnachweis der Folie, eine Zeile UNTER Quelle und Fuß;
      im HTML mit hidden, das Skript zeigt sie nur bei eingesetzten Bildern.
-   • data-status="aus" – Zusatzbild, das es nur in der internen Fassung gibt
-     (Folie 07: Bild des Vorbilds); öffentlich unsichtbar, kein Platzhalter. */
+   • data-status="aus" – Zusatzbild, das es nur in der Fassung mit Bildern gibt;
+     im Rückfall unsichtbar, kein Platzhalter (bis D07 die Bilder der Vorbilder
+     auf 07; derzeit nicht verwendet). */
 .p-bildlabel {
   position: absolute;
   left: 0;

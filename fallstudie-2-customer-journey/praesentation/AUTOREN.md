@@ -14,7 +14,8 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | Inhalt / Meta | Inhalt ≥ 28 px; Herleitung 24 px, Quelle und Fußhinweis 22 px, je **eine** Zeile, mit `data-meta` |
 | Farben | nur Tokens aus `pfad.css` (`--p-…`); **Gelb nie als Schrift oder konturlose Linie auf Creme**; auf Gelb nur Schwarz und Schiefer (3.3) |
 | Fakten | nur mit Befund-ID und Status aus dem Dossier; keine Zahl ohne Quelle; eigene Daten erst nach Erhebung, bis dahin „offen: …“ |
-| Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (Freigabe 03.11.2026); sonst keine fremden Bilder im Repository; fremde und nicht freigegebene Bilder nur in `intern/` über `data-intern` (Abschnitt 10; 4, 11.5) |
+| Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (Freigabe 03.11.2026); Fremdbilder (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder) nur über `fremdbilder/register.js` und `data-intern`, je Folie mit Bildnachweis-Zeile – veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Eigene Fotos zuerst nach `intern/` (ausgeschlossen), veröffentlichen erst nach Sichtung durch die Gruppe (Abschnitt 10; Plan 4, 11.5) |
+| Video | nur `video/gruender-video.mp4` auf 09, per Pfad (`data-quelle`); veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2 Nr. 18); keine KI-Transkription, keine Zitate aus dem Video |
 | Was es nicht gibt | Karten, Pillen, Kicker, Mini-Steuerrad, Sticker, weiche Schatten, Live-Abstimmung, `iframe`, eigenes `data-modus` an einer Folie (3.7) |
 | Sprache, Anrede | Deutsch, Publikum gesiezt; keine Modellbezeichnungen in Dateien |
 
@@ -40,8 +41,8 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | `data-buehne="gelb"` | gelbe Bühne (01, 08, 09), feste Werte in beiden Modi; Rückfall `?buehne=schwarz` |
 | `data-buendel` | Sprechblock A (01–03), B (04–06), C (07–09) nach Plan 9.3 – **keine Personen**; Backup `alle` |
 | `data-zeit` | Sollzeit in s (Summe 710 s); Backup `0` |
-| Bildkachel `data-status` | `offen` · `frei` · `rueckfall` · `aus` (nur interne Fassung) (LIESMICH §7) |
-| `data-intern` | Schlüssel in `intern/bilder.js`; `data-intern-optional` = Fehlen erlaubt (Abschnitt 10) |
+| Bildkachel `data-status` | `offen` · `frei` · `rueckfall` · `aus` (Zusatzbild nur in der Fassung mit Bildern; seit D07 nicht verwendet) (LIESMICH §7) |
+| `data-intern` | Schlüssel in `fremdbilder/register.js`; `data-intern-optional` = Fehlen erlaubt (Abschnitt 10). Name aus der Zeit vor der Freigabe, bleibt |
 | `data-dx` | waagerechte Verschiebung einer Kachel im Journey-Raster in px (Folie 04: K6 −20) |
 
 `data-feld="leer"`, `data-layout="leer"` und `data-laufkopf="aus"` schalten Kopfzeile und Mini-Steuerrad der Engine
@@ -91,7 +92,8 @@ Nach jeder Änderung: `node werkzeuge/pruefen.mjs index.html --ausgabe _test/pru
 5. **Folie 06:** Bezeichnungen gekürzt (volle Namen im Sprechtext und B2); Zeilenhöhen ungleich (Media-Werbung schmal,
    Webshop und E-Mail mit zwei Einträgen); Herleitungszeile = Kriterienzeile; Workshop-Kachel als Anschnitt rechts.
 6. **Folie 07:** je Phase **ein** Vorbild aus Dossier 7a ausgewählt (X01, X04, X08, X12, X14; Nebenweg X16) – die
-   Auswahl ist ein Vorschlag dieses Baus; alle 17 Fälle in B6.
+   Auswahl ist ein Vorschlag dieses Baus; alle 17 Fälle in B6. Seit D07 in der Fassung mit Bildern nur die Logos
+   (Abschnitt 11).
 7. **Folie 08:** Handyrahmen 220 px breit statt rund 300 px (Titel zweizeilig, Kennzeichnungszeile darunter).
 8. **Folie 09:** Klick 1 = Videobühne mit Handyrahmen mittig (Fazit ausgeblendet), Klick 2 = Videobühne aus, Fazit
    wieder sichtbar, „Fragen?“ und Sprungliste – so steht im Druck/PDF der Endzustand ohne Video. Dritter Fazit-Satz
@@ -140,22 +142,31 @@ umgesetzt (KI-Nachweis FS2, Eintrag 11):
 - Nicht umgesetzt (offen, LIESMICH §10): Rückfall-Grafiken für die Bildkacheln, Wortbudget 02/07/09,
   `referent-test.mjs` für FS2, Video-Test im Repository.
 
-## 10. Interne Fassung mit Bildern (03.11.2026, Delegation D06)
+## 10. Fassung mit Bildern (03.11.2026, Delegation D06; seit D07 veröffentlicht)
 
 Auftrag von Yannick (03.11.2026, wörtlich): „Lade dir die Grafiken online runter die du brauchst von Holy die Webseite
 und die Präsentation muss gut aussehen rechte sind nicht wichtig wir nutzen es weder kommerziell noch öffentlich nur
 privat in der uni“. Umsetzung KI-gestützt im Workflow D06 (Schritt „Einbau Präsentation“), Bedienung: LIESMICH §12,
-Herkunft: QUELLEN §4a. Nichts davon ist committet; die Bilder bleiben in `intern/` (per `.gitignore` ausgeschlossen).
+Herkunft: QUELLEN §4a. **Verlauf:** bis 03.11.2026 lagen die Bilder als „interne Fassung“ im ausgeschlossenen Ordner
+`intern/`. Danach hat Yannick die Veröffentlichung erlaubt (KI-Nachweis FS2 Nr. 17; Video: Zustimmung des Gründers über
+Yannick, Nr. 18). Seitdem liegen die Bilder versioniert in `fremdbilder/` (Liste `fremdbilder/register.js`), das Video
+in `video/gruender-video.mp4` – nicht kommerziell, für die Lehrveranstaltung; `intern/` enthält nur noch Rohmaterial.
+**Begriffe:** „Fassung mit Bildern“ = Standard (Repository, GitHub Pages, Hörsaal); „Rückfall ohne Fremdbilder“ = nur,
+wenn `fremdbilder/register.js` fehlt oder per Schalter (`?kacheln=rueckfall`, `pruefen.mjs --oeffentlich`).
+**Namen aus der Zeit vor der Freigabe** bleiben aus technischen Gründen: `window.INTERN_BILDER`, `data-intern*`,
+`.p-intern-logo`, `js/folien/intern-bilder.js`, `html[data-fassung="intern"]` (Werte `oeffentlich`,
+`oeffentlich-ansicht` = Rückfall), `--oeffentlich`, Berichtsteil `interneBilder`. Die Tabellen unten beschreiben den
+Stand von D06; Änderungen aus D07 stehen in Abschnitt 11.
 
 **Technik**
 
 | Baustein | Datei | Regel |
 |---|---|---|
-| Daten | `intern/bilder.js` (nicht im Repository) | `window.INTERN_BILDER = { schlüssel: { datei, alt, nachweis, motiv, platz, quelle, pixel } }`; Schlüssel `b01`, `b04`, `m03-…`, `k…-04/-05/-09`, `v07-…`, `konzept-0n` |
-| Einsetzen | `js/folien/intern-bilder.js` (nach `intern/bilder.js`, vor `pfad.js` und dem Start der Engine) | `data-intern` an Kachel → `<img>` + `data-status="frei"`; an `<img>` → Quelle tauschen; sonst (Logo) → `<img class="p-intern-logo">` vor dem Text. Status in `data-intern-status` (`gesetzt` · `fehler` · `fehlt`); bei Ladefehler zurück zum öffentlichen Zustand |
+| Daten | `fremdbilder/register.js` (versioniert; bis 03.11.2026 `intern/bilder.js`) | `window.INTERN_BILDER = { schlüssel: { datei, alt, nachweis, motiv, platz, quelle, pixel } }`; Schlüssel `b01`, `b04`, `m03-…`, `k…-04/-05/-09`, `v07-…`, `konzept-0n` |
+| Einsetzen | `js/folien/intern-bilder.js` (nach `fremdbilder/register.js`, vor `pfad.js` und dem Start der Engine) | `data-intern` an Kachel → `<img>` + `data-status="frei"`; an `<img>` → Quelle tauschen; sonst (Logo) → `<img class="p-intern-logo">` vor dem Text. Status in `data-intern-status` (`gesetzt` · `fehler` · `fehlt`); bei Ladefehler zurück zum Zustand ohne Bild |
 | Beschriftung im Bild | `.p-bildlabel` (`pfad.css` 5.23) | schwarzes Band, Creme 22 px, `data-meta`; nur bei `data-status="frei"`; `--oben`, `--rechts` für die Ecke; nur wo das Bild sich nicht selbst erklärt und nichts Wichtiges verdeckt |
 | Bildnachweis je Folie | `<p class="p-bildquelle" data-meta hidden>` (unter Quelle und Fuß, `bottom: 14px`) | höchstens 1.664 px (Satzspiegel), Stand und Urheber; das Skript zeigt sie nur bei eingesetztem Bild; Notizen bekommen den vollen Nachweis je Bild (`.p-intern-nachweis`) |
-| Zusatzbild | `data-status="aus"` | öffentlich unsichtbar (Folie 07, Bild des Vorbilds) |
+| Zusatzbild | `data-status="aus"` | im Rückfall unsichtbar (bis D07 Folie 07, Bild des Vorbilds; derzeit nicht verwendet) |
 | Zustände | `pfad.css` 5.6 | Ausblendregeln mit `!important`, damit Folien-CSS mit ID (z. B. `#f01 .e1-foto .p-platzhalter`) den Platzhalter nicht über das Bild legt |
 
 **Umbau der Folien für die Bilder** (Klicks, Sollzeiten und Sprechtexte unverändert; geprüft gegen den Stand vor D06)
@@ -172,16 +183,40 @@ Herkunft: QUELLEN §4a. Nichts davon ist committet; die Bilder bleiben in `inter
 | 09 | Bildleiste 192 × 108 (vorher 132 × 74), Pfad y = 762, „Fragen?“ 10 px tiefer; Bildnachweis während der Videobühne ausgeblendet |
 | B8 | Bildnachweis-Absatz auf beide Fassungen umgeschrieben |
 
-**Prüfwerkzeug:** `werkzeuge/pruefen.mjs` neu: `--oeffentlich` (sperrt `intern/` per Route), Abbruch bei Ausgabe nach
-`export/`/`bilder/` ohne `--oeffentlich`, Warnung bei fehlender `intern/bilder.js`, Prüfung der Schlüssel, geladenen
-Dateien, Verzerrung (Inhaltsfläche gegen Datei, ohne `object-fit`), Hochrechnung (Warnung „unscharf“),
-Bildnachweis-Zeile (sichtbar, im Satzspiegel); im Bericht `interneBilder`.
+**Prüfwerkzeug:** `werkzeuge/pruefen.mjs` neu: `--oeffentlich` (sperrt heute `fremdbilder/` per Route = Rückfall ohne
+Fremdbilder), Warnung bei fehlender `fremdbilder/register.js`, Prüfung der Schlüssel, geladenen Dateien, Verzerrung
+(Inhaltsfläche gegen Datei, ohne `object-fit`), Hochrechnung (Warnung „unscharf“), Bildnachweis-Zeile (sichtbar, im
+Satzspiegel); im Bericht `interneBilder`. Die Exportsperre (Abbruch bei Ausgabe nach `export/`/`bilder/` ohne
+`--oeffentlich`) ist seit der Veröffentlichung entfernt.
 
-**Prüfstand 03.11.2026:** intern hell und dunkel `--schritte` je 0 Fehler, 17 Warnungen (wie vor D06: Wortbudget,
-24-/26-px-Notizen); öffentlich `--oeffentlich --schritte --druck` 0 Fehler, PDF 18 Seiten; Kopie ohne `intern/`
-0 Fehler + Warnung „öffentliche Fassung ohne interne Bilder“; Gegenprobe gelöschte Datei → Platzhalter, Fehler gemeldet;
-`?kacheln=rueckfall` lädt außer `intern/bilder.js` nichts aus `intern/`. Sichtprüfung der Endzustände 01–09 (intern)
-und Stichproben 03, 04, 07 (öffentlich) und 07 (dunkel).
+**Prüfstand D06 (03.11.2026, damals noch aus `intern/`):** intern hell und dunkel `--schritte` je 0 Fehler,
+17 Warnungen (wie vor D06: Wortbudget, 24-/26-px-Notizen); öffentlich `--oeffentlich --schritte --druck` 0 Fehler, PDF
+18 Seiten; Kopie ohne `intern/` 0 Fehler + Warnung; Gegenprobe gelöschte Datei → Platzhalter, Fehler gemeldet.
+Sichtprüfung der Endzustände 01–09 und Stichproben 03, 04, 07 (ohne Bilder) und 07 (dunkel).
 
 **Offen:** eigene Fotos (b01, b04, K1–K6) statt Werbe-/Community-Bildern; b12, b15, „Tipp unter Kollegen“ bleiben
-Platzhalter; Sichtung der Bilder durch die Gruppe (Kontaktbogen `intern/kontaktbogen.png`).
+ohne Bild; Sichtung der Bilder durch die Gruppe (Kontaktbogen `intern/kontaktbogen.png`).
+
+## 11. Veröffentlichung und Abnahme-Befunde (03.11.2026, D07)
+
+Auftrag aus dem Workflow nach den Freigaben Nr. 17 (Bilder) und Nr. 18 (Video): Begriffe in Kommentaren, Texten und
+Doku umstellen („Fassung mit Bildern“, „Rückfall ohne Fremdbilder“, „veröffentlicht mit Freigabe … nicht kommerziell,
+für die Lehrveranstaltung; keine eigenen Fotos der Gruppe“) und die Befunde der Abnahme D06 umsetzen. KI-gestützt;
+Klicks (23), Sollzeiten (710 s) unverändert, Sprechtext nur auf 04 geändert.
+
+| Folie | Änderung (Befund) |
+|---|---|
+| 02 | Beschriftung „Symbolbild Schichtarbeit – nicht Marco“ / „(Lokführer aus der HOLY-Community)“ (zweizeilig; in einer Zeile reicht die Breite ab x = 128 nicht); Notiz: Antwort auf „Ist Marco Lokführer?“ |
+| 03 | Blog-Kachel: Beschriftung „Blog: 0 Beiträge“ (✔ M01, ✔ L39), neuer Ausschnitt `m03-blog` (Desktop), damit die Beschriftung über dem Knopf statt über dem Satz liegt; `m03-dose-shaker` neu gesetzt (Produkt oben rechts); „Tipp unter Kollegen“ (Klasse `e3-k--tipp`) in der Fassung mit Bildern Creme mit gestricheltem 3-px-Rand wie die Leerstelle auf 04; Notiz „Der Blog ist leer (0 Beiträge …)“ |
+| 04 | Sprechtext Klick 1: „Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“ (+1 Wort); Bildquellzeile „Community-Foto HOLY (Symbolbild, nicht Marco)“ |
+| 05 | K6 ohne Beschriftung „Squad“ (verdeckte die Überschrift des Bildes); Bildquellzeile wie 04 |
+| 07 | nur noch Logos: die sechs `figure.e7-bild` (144 × 81) entfernt, CSS dazu entfernt; Logos einfarbig #1D1D1B in doppelter Anzeigehöhe, Höhe je Logo im CSS (YouTube 26, Apple 30, zooplus 28, OTTO 24, Philips 22, Pampers 34 px), im Modus dunkel `filter: invert(1)` statt heller Platte; zooplus aus der weißen Fassung ohne grünen Kasten. B6 geprüft: neben der Tabelle kein Platz für sechs Bilder ≥ 360 × 203 → nicht eingebaut. `v07-otto` neu als Textausschnitt (`v07-otto.png`, `v07-otto.jpg` gelöscht). Bildquellzeile „Logos: … · einfarbig, nur zur Kennzeichnung der Vorbilder · Abruf 03.11.2026“ |
+| 08 | Kasten, Bildquellzeile und Notiz auf `fremdbilder/` und die Veröffentlichung umgestellt (Notiz: Konzept-Webseite seit 03.11. über GitHub Pages erreichbar, Wortmarke und Produktbilder mit Freigabe) |
+| 09 | Rückfall-Text „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“; Kasten und `09-fazit.js`: Quelle `video/gruender-video.mp4`, veröffentlicht (Nr. 18); Bildquellzeile wie 04 |
+| B1, B8 | B1-Notiz: eigene Fotos zuerst nach `intern/`, veröffentlichen nach Sichtung; B8: Bilder und Video veröffentlicht mit Freigabe (Nr. 17, 18), Kernsatz der Notiz entsprechend (Backup, ohne Sollzeit) |
+
+**Prüfstand D07:** Fassung mit Bildern hell und dunkel `--schritte` je 0 Fehler, 17 Warnungen, 38 Fremdbilder
+eingesetzt; Rückfall `--oeffentlich --schritte --druck` 0 Fehler, 17 Warnungen, PDF 18 Seiten. Funktionstest 09 mit
+synthetischem WebM (Route): Video startet mit Klick 1 mit Ton, kein Rahmen; ohne Route (Test-Chromium ohne H.264) und
+mit `?aufnahme` der Rahmen mit neuem Text. Sichtprüfung der Endzustände 02, 03, 04, 05, 07, 09 und B8 hell sowie 02, 03,
+07, 09 dunkel und 03 im Rückfall.
