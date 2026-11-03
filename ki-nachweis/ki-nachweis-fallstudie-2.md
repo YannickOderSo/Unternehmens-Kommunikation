@@ -43,6 +43,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 16 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll, während D06 läuft) | – | Rohprotokoll committet und gepusht |
 | 17 | 03.11.2026 | Yannick | Freigabe: heruntergeladene Bilder dürfen auf GitHub (Pages) veröffentlicht werden | D07 (Workflow) | umgesetzt: Endbilder nach `fremdbilder/` (versioniert, auf GitHub Pages), Rohdownloads bleiben in `intern/` ausgeschlossen; Befunde der D06-Abnahme in D07 |
 | 18 | 03.11.2026 | Yannick | Gründer-Video direkt in die Präsentation (auch online) | D07 (Workflow) | Rückfrage beantwortet: Gründer mit öffentlicher Online-Version einverstanden; Video nach `praesentation/video/` (versioniert), Folie 09 spielt es online ab |
+| 19 | 03.11.2026 | Yannick | Video läuft; die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein Konzept | D09 (Workflow) | *läuft:* 3 Gestaltungsrichtungen, Jury, Umbau aller 7 Seiten, Abnahme, Nacharbeit |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -389,6 +390,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Dateien:** `praesentation/video/gruender-video.mp4` (neu), `praesentation/index.html`
 - **Unteragenten:** D07
 - **Prüfung durch die Gruppe:** ☐ offen
+### 19 – 03.11.2026 – Yannick
+
+> Das Video läuft nur die Seite soll schon wie eine richtige Webseite aussehen das sieht eher wie ein konzept aus.
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Rückmeldung zum Video vermerkt (läuft online). Die Konzept-Webseite wird so umgestaltet, dass sie
+  wie ein echter HOLY-Shop wirkt (Formensprache von HOLYs Shop als Referenz: Ankündigungsleiste, Kopfzeile mit
+  Navigation, Sortenfarbe, große Bildkarten, Packungs-Karten). Bleiben aus Sicherheits- und Ehrlichkeitsgründen, weil die
+  Seite öffentlich ist und HOLYs Marke trägt: der Hinweistext „Studentisches Konzept … keine Bestellung möglich“
+  (künftig als schmale Ankündigungsleiste), `noindex`, keine Formulare, keine externen Anfragen, Kennzeichnung
+  „Werbung“ und „Symbolbild“; Erklärtexte, Skizzen und „Beispielwert“-Etiketten wandern in den Präsentationsmodus.
+  Workflow D09: drei Gestaltungsrichtungen (HOLY-nah, Shop-Standard, Kampagne) in getrennten Kopien, zwei Jurys,
+  Umbau aller 7 Seiten samt Prüfskript und Folie-08-Bildern, zwei Abnahmen, Nacharbeit.
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/workflows/2026-11-03_fs2-webseite-echt.js`; weitere folgen
+- **Unteragenten:** D09
+- **Prüfung durch die Gruppe:** ☐ offen
 
 ---
 
@@ -407,6 +425,7 @@ Auftrag (im Workflow-Skript).
 | D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 8 mittlere, 15 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
 | D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | alle D06-Befunde umgesetzt (Folie 07 nur Logos, B6 ohne Platz); Doku umgestellt; Abnahme: 6 mittlere, 13 niedrige Befunde | Journal gelesen; beide Prüfskripte selbst: 0 Fehler (38 Bilder); Endzustände 01–09 angesehen; Befunde an D08 |
 | D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | W1–W10 und P1–P11 umgesetzt; Abnahme: 0 mittlere, 7 niedrige Befunde | Journal gelesen; 7 Restbefunde selbst behoben; Prüfskripte (hell, dunkel, Webseite): 0 Fehler; Volltextsuche Vorname; Folien und Webseite angesehen |
+| D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -613,6 +632,18 @@ Auftrag (im Workflow-Skript).
   `intern/`; Folien 02, 03, 09, B8 und die sieben Vorschaubilder der Webseite angesehen. Nicht gelöscht (Sicherheitssperre
   bei Löschungen im Wurzelverzeichnis): zwei Fehlausgaben eines Testaufrufs (`/dunkel.log`, `/rueckfall.log`, je 771 Byte,
   außerhalb des Repositorys im Container).
+
+
+### D09 – 03.11.2026 – ausgelöst durch Prompt 19
+
+- **Art:** Workflow „fs2-webseite-echt“: drei Gestalter parallel (je eigene Kopie im Scratchpad: HOLY-nah,
+  Shop-Standard, Kampagne), zwei Jury-Agenten (Markenwirkung; Umsetzung/Barrierefreiheit/Ehrlichkeit) mit Punkten,
+  Sieger nach Punktsumme, ein Bauer für alle 7 Seiten, zwei Abnahmen (Gestaltung; Technik/Ehrlichkeit), eine
+  Nacharbeit. Vorgaben: Hinweistext, `noindex`, keine Formulare/externen Anfragen, Kennzeichnung bleiben; keine neuen
+  Fakten ohne Befund-ID; keine neuen Downloads.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-webseite-echt.js`](workflows/2026-11-03_fs2-webseite-echt.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
