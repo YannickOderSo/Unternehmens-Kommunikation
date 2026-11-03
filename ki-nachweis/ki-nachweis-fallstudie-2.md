@@ -35,6 +35,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 08 | 02.11.2026 | Yannick | Videobotschaft des HOLY-Gründers für die nächste Präsentation (Anhang: Video) | – | nur technische Daten gelesen; Inhalt nicht ausgewertet, Einwilligung offen; nicht im Repository |
 | 09 | 02.11.2026 | Yannick | Gründer hat zugestimmt (Video und Stimme in der Präsentation); Platz am Ende | – | Gestaltungsplan: Video als Schlussschritt auf Folie 09 (9.5), Zeit und Klicks angepasst; `.gitignore`; Video nur lokal |
 | 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich: A1, A2, A4, A6, A7 teilweise abgedeckt, A3 und A5 fehlen weitgehend; Vorschlag neuer Folienplan (Chat) |
+| 11 | 03.11.2026 | Yannick | Mit dem Bau anfangen; Prof. Stenger regt eine eigene HOLY-Webseite an | D05 (Workflow) | *läuft:* Plan-Umbau, Best Practices, Konzept-Webseite, Präsentation, Abnahme |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -213,6 +214,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** D04
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 11 – 03.11.2026 – Yannick
+
+> Fang an mit dem Bau und ich schaue es mir dann an er meinte auch wir könnten eine eigene Holy Webseite bauen wie wir es uns vorstellen würde um es besser zu machen
+
+- **Anhänge:** keine. Bezug: Entscheidungsvorschläge 1–4 aus Eintrag 10 (zentraler Weg online, neuer Folienplan,
+  Blog als Seite der Konzept-Webseite, Termine bis Di 10.11.); als angenommen behandelt.
+- **Vorgehen Claude:** Workflow D05 „fs2-bau“ mit 8 Unteragenten in fünf Phasen: (1) Gestaltungsplan umbauen und
+  parallel branchenübergreifende Best Practices je Top-Touchpoint per Websuche recherchieren (2 Agenten), (2) Fälle
+  an den Quellen prüfen und als neues Dossier-Kapitel schreiben, (3) Konzept-Webseite (eigene HOLY-Webseite als
+  Mockup der optimierten Touchpoints, mit festem Hinweisbalken „Studentisches Konzept … keine Website der HOLY
+  Softdrinks GmbH · keine Bestellung möglich“, noindex, ohne Logo und fremde Bilder, ohne Datenversand),
+  (4) Präsentation mit FS1-Engine und Thema „Pfad“, (5) Abnahme Technik und Inhalt/Recht (nur lesend).
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/workflows/2026-11-03_fs2-bau.js`; weitere folgen
+- **Unteragenten:** D05
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -226,6 +244,7 @@ Auftrag (im Workflow-Skript).
 | D02 | 30.10.2026 | 04 | Workflow „fs2-recherche-gestaltung“ und Fortsetzung (24 Unteragenten mit Ergebnis, mit Websuche) | Recherche in 8 Bereichen mit je einer Gegenprüfung; 3 Gestaltungsrichtungen mit Musterfolie; 2 Jurys; Dossier und Gestaltungsplan; Schlussprüfung | Dossier (353 Befunde), Gestaltungsplan, 3 Musterfolien; zweimal vom Nutzungslimit unterbrochen | Unteragenten (Gegen- und Schlussprüfung); Claude: Skriptprüfung, Sichtprüfung |
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
 | D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
+| D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -313,6 +332,15 @@ Auftrag (im Workflow-Skript).
 - **Wie Claude das Ergebnis geprüft hat:** An der Quelle nachgelesen: `persona-steckbrief.md` Z. 66 („Kanal: HOLY
   online, 50er-Pulverdose auf Vorrat; im Notfall … Rewe oder Edeka“) trägt den Vorschlag „zentraler Weg online“;
   `recherche-customer-journey.md` Z. 80 und 203 (keine Aufgabenfolie, Annahmen) sind durch die Folie überholt.
+
+### D05 – 03.11.2026 – ausgelöst durch Prompt 11
+
+- **Art:** Workflow „fs2-bau“: Plan-Umbau und zwei Recherche-Agenten parallel (Websuche, Quellen mit URL und
+  Abrufdatum), ein Prüfer (adversarial an den Quellen, schreibt das Dossier-Kapitel), ein Bau-Agent Konzept-Webseite,
+  ein Bau-Agent Präsentation, zwei Abnahme-Agenten (nur lesend).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bau.js`](workflows/2026-11-03_fs2-bau.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
