@@ -36,6 +36,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 09 | 02.11.2026 | Yannick | Gründer hat zugestimmt (Video und Stimme in der Präsentation); Platz am Ende | – | Gestaltungsplan: Video als Schlussschritt auf Folie 09 (9.5), Zeit und Klicks angepasst; `.gitignore`; Video nur lokal |
 | 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich: A1, A2, A4, A6, A7 teilweise abgedeckt, A3 und A5 fehlen weitgehend; Vorschlag neuer Folienplan (Chat) |
 | 11 | 03.11.2026 | Yannick | Mit dem Bau anfangen; Prof. Stenger regt eine eigene HOLY-Webseite an | D05 (Workflow) | *läuft:* Plan-Umbau, Best Practices, Konzept-Webseite, Präsentation, Abnahme |
+| 12 | 03.11.2026 | Yannick | Freigabe: HOLY-Logos dürfen genutzt werden (Gründer eingeweiht) | – | vermerkt; Einbau nach Abschluss von D05 |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -229,6 +230,22 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** *läuft*
 - **Dateien:** `ki-nachweis/workflows/2026-11-03_fs2-bau.js`; weitere folgen
 - **Unteragenten:** D05
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 12 – 03.11.2026 – Yannick
+
+> Du darfst die holy Logos nutzen es ist nur für ein studentenprojekt und der Gründer ist eingeweiht
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Freigabe vermerkt (laut Yannick: Gründer eingeweiht, nur für das Studienprojekt). Sie gilt für
+  die HOLY-Logos (vorhanden aus FS1: `holy-logo-oval.png`, `holy-logo-wortmarke.png`, Quelle de.holy.com, Abruf
+  16.10.2026), nicht für Produktfotos, Screenshots oder Social-Media-Bilder. Der laufende Workflow D05 arbeitet noch
+  mit der Regel „kein Logo“; die Logos baut Claude nach dessen Abschluss in Präsentation und Konzept-Webseite ein.
+  Der Hinweisbalken „Studentisches Konzept … keine Website der HOLY Softdrinks GmbH“ und noindex bleiben, damit die
+  Konzept-Webseite mit Logo nicht als echte HOLY-Seite durchgeht.
+- **Ergebnis:** vermerkt; Umsetzung folgt.
+- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
