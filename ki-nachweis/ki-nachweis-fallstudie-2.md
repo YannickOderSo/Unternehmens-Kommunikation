@@ -39,10 +39,10 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 12 | 03.11.2026 | Yannick | Freigabe: HOLY-Logos dürfen genutzt werden (Gründer eingeweiht) | – | umgesetzt (Eintrag 11): Oval auf Folie 01 und 09, Wortmarke im Kopf der Konzept-Webseite |
 | 13 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Gestaltungsplan, während D05 läuft) | – | Zwischenstand committet und gepusht |
 | 14 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D05 „fs2-bau“ abgeschlossen | – | Ergebnisse gelesen, Abnahme ausgewertet (weiter in Eintrag 11) |
-| 15 | 03.11.2026 | Yannick | HOLY-Grafiken online herunterladen; Webseite und Präsentation sollen gut aussehen; Nutzung nur privat in der Uni | D06 (Workflow) | *läuft:* Bilder beschaffen, auswählen, intern einbauen (nicht im öffentlichen Repository), Abnahme |
+| 15 | 03.11.2026 | Yannick | HOLY-Grafiken online herunterladen; Webseite und Präsentation sollen gut aussehen; Nutzung nur privat in der Uni | D06 (Workflow) | 281 Kandidaten beschafft, 64 Dateien ausgewählt und eingebaut (Präsentation 44, Webseite 20), Abnahme mit 23 Befunden; zuerst nur in `intern/`, nach Freigabe 17 veröffentlicht |
 | 16 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll, während D06 läuft) | – | Rohprotokoll committet und gepusht |
-| 17 | 03.11.2026 | Yannick | Freigabe: heruntergeladene Bilder dürfen auf GitHub (Pages) veröffentlicht werden | – | vermerkt; Umsetzung nach Abschluss von D06 (Endbilder versioniert, Rohdownloads bleiben ausgeschlossen; Video siehe 18) |
-| 18 | 03.11.2026 | Yannick | Gründer-Video direkt in die Präsentation (auch online) | – | Rückfrage beantwortet: Gründer mit öffentlicher Online-Version einverstanden; Umsetzung nach Abschluss von D06 |
+| 17 | 03.11.2026 | Yannick | Freigabe: heruntergeladene Bilder dürfen auf GitHub (Pages) veröffentlicht werden | D07 (Workflow) | umgesetzt: Endbilder nach `fremdbilder/` (versioniert, auf GitHub Pages), Rohdownloads bleiben in `intern/` ausgeschlossen; Befunde der D06-Abnahme in D07 |
+| 18 | 03.11.2026 | Yannick | Gründer-Video direkt in die Präsentation (auch online) | D07 (Workflow) | Rückfrage beantwortet: Gründer mit öffentlicher Online-Version einverstanden; Video nach `praesentation/video/` (versioniert), Folie 09 spielt es online ab |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -317,8 +317,15 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Liste `intern/bilder.js`, wenn sie vorhanden ist (Vortrag vom Laptop, wie beim Gründer-Video); öffentlich bleiben die
   Platzhalter. Workflow D06 „fs2-bilder“: drei Beschaffer (Produkt- und Bildwelt, Touchpoint-Screenshots, Vorbilder),
   eine Auswahl mit Zuschnitt, zwei Einbauten (Präsentation, Webseite), zwei Abnahmen.
-- **Ergebnis:** *läuft*
-- **Dateien:** `.gitignore`, `ki-nachweis/workflows/2026-11-03_fs2-bilder.js`; weitere folgen
+- **Ergebnis:** D06 fertig (8 Unteragenten, 0 Fehler, rund 2:08 h). 281 Kandidaten (Produkt- und Bildwelt 98,
+  Touchpoints 99, Vorbilder 84) in `praesentation/intern/roh/` mit Manifesten (URL, Abrufdatum, Urheber). Ausgewählt und
+  zugeschnitten: 44 Bildschlüssel für die Präsentation (Folien 01–05, 07, 08, 09), 27 Bildplätze auf 20 Dateien für die
+  Konzept-Webseite; je Bild ein Nachweis. Bewusst ohne Bild: Workshop-Foto (06), Handskizze (07), Kachel „Tipp unter
+  Kollegen“ (03); eigene Fotos aus dem Selbstversuch fehlen weiter. Nach Freigabe 17 veröffentlicht (Commit f86cb9a).
+- **Dateien:** `.gitignore`, `ki-nachweis/workflows/2026-11-03_fs2-bilder.js`; Präsentation: `index.html`, CSS der
+  Folien 02–09 und `pfad.css`, `js/folien/intern-bilder.js` (neu), `js/folien/pfad.js`, `werkzeuge/pruefen.mjs`,
+  LIESMICH, QUELLEN, AUTOREN; Konzept-Webseite: alle 7 HTML-Seiten, `assets/konzept.js`, `assets/konzept.css`,
+  `werkzeuge/pruefen.mjs`, `werkzeuge/folie08-bilder.mjs`, README; Bilder seit Eintrag 17 in `fremdbilder/`
 - **Unteragenten:** D06
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -344,9 +351,19 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Gründer-Video (Zustimmung nur für die Präsentation, nicht öffentlich) und die Rohdownloads (`intern/roh/`).
   Vor dem Veröffentlichen prüft Claude die Endbilder auf personenbezogene Daten Dritter (z. B. Namen in Bewertungen
   oder Trefferlisten) und macht sie unkenntlich. Hinweisbalken und `noindex` der Konzept-Webseite bleiben.
-- **Ergebnis:** vermerkt; Umsetzung folgt.
-- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
-- **Unteragenten:** keine
+- **Umsetzung (nach Abschluss von D06):** Beide Kontaktbögen angesehen: keine Namen oder Gesichter von Privatpersonen
+  (Trustpilot-Bild zeigt nur die Sternverteilung; Community-Fotos ohne Gesichter; Gesichter nur auf Werbebildern von
+  OTTO und YouTube) – nichts unkenntlich zu machen. Ausgewählte Bilder von `intern/bilder/` nach `fremdbilder/`
+  (Präsentation 45 Dateien inkl. Register, Webseite 21), Register `intern/bilder.js` → `fremdbilder/register.js`;
+  Pfade in allen HTML-Seiten, `konzept.js`, beiden `pruefen.mjs` und `folie08-bilder.mjs` angepasst; die Exportsperre
+  in `praesentation/werkzeuge/pruefen.mjs` entfällt; `.gitignore`-Kommentare neu. `intern/` (Rohdownloads,
+  Kontaktbögen, Abnahmebilder) bleibt ausgeschlossen. Prüfung: Präsentation `pruefen.mjs --schritte` 0 Fehler, 44 von 44
+  Bildern eingesetzt; Webseite `pruefen.mjs` „Alle Prüfungen bestanden“. Commit f86cb9a, gepusht. Doku und die Befunde
+  der D06-Abnahme: Workflow D07.
+- **Ergebnis:** Bilder veröffentlicht (Repository und GitHub Pages).
+- **Dateien:** `.gitignore`, `praesentation/fremdbilder/` (neu), `konzept-website/fremdbilder/` (neu), Pfadänderungen wie
+  oben, `ki-nachweis/workflows/2026-11-03_fs2-bilder-veroeffentlichen.js`
+- **Unteragenten:** D07
 - **Prüfung durch die Gruppe:** ☐ offen
 
 
@@ -363,9 +380,14 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   `index.html`, LIESMICH und das Prüfskript): Video von `intern/` in einen versionierten Ordner verschieben, Pfad in
   Folie 09 und Doku anpassen. Das Video wird dabei weiterhin nicht angesehen und nicht transkribiert (keine Zustimmung
   für KI-Transkription).
-- **Ergebnis:** Rückfrage beantwortet; Umsetzung folgt.
-- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
-- **Unteragenten:** keine
+- **Umsetzung (nach Abschluss von D06):** Video nach `praesentation/video/gruender-video.mp4` (3,5 MB, versioniert);
+  `data-quelle` auf Folie 09 angepasst. Geprüft ohne das Video anzusehen: nur die Container-Angaben gelesen (H.264
+  Baseline, AAC, 16 s, 576 × 1024, moov vor mdat – spielt in Chrome, Edge, Firefox und Safari). Der Test-Chromium kann
+  kein H.264, deshalb Abspiel-Logik mit einem selbst erzeugten Testbild-Video (ffmpeg testsrc) per Umleitung geprüft:
+  Quelle wird beim Betreten gesetzt, Klick 1 startet, kein Rückfall. Kommentare, Rückfalltext und Doku: D07.
+- **Ergebnis:** Video veröffentlicht; Folie 09 spielt es online ab.
+- **Dateien:** `praesentation/video/gruender-video.mp4` (neu), `praesentation/index.html`
+- **Unteragenten:** D07
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
@@ -382,7 +404,8 @@ Auftrag (im Workflow-Skript).
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
 | D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
 | D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | Plan, Dossier 7a (17 Fälle), Konzept-Webseite, Präsentation; Abnahme: 1 hoher, 15 mittlere, 14 niedrige Befunde | Journal gelesen; Befunde nachgeprüft (Help-Center selbst abgerufen, Ü1 am Maßstab, Screenshots angesehen) und eingearbeitet; `pruefen.mjs` beider Teile: 0 Fehler |
-| D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | *läuft* | – |
+| D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 9 mittlere, 14 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
+| D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -508,6 +531,33 @@ Auftrag (im Workflow-Skript).
   (Präsentation, Konzept-Webseite) mit je einer Abnahme (nur lesend). Alle Bilder nur in `intern/` (nicht versioniert);
   jede Datei mit Herkunft (URL, Abrufdatum).
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bilder.js`](workflows/2026-11-03_fs2-bilder.js).
+- **Ergebnis:** alle 8 Unteragenten fertig, 0 Fehler (rund 2:08 h).
+  - *Beschaffung (3 Agenten, Netzzugriff):* 281 Kandidaten mit Manifest (URL, Abrufdatum, Urheber). Nicht beschafft,
+    weil gesperrt oder nicht öffentlich (bewusst nicht umgangen): YouTube-Videoseiten und Google-Treffer (Captcha),
+    Rewe/Kaufland/Rossmann/Amazon (Bot-Schutz), Rewards-Bereich „Coins sammeln“ (nur nach Marketing-Cookies),
+    Checkout/echte Danke-Seite, OTTO-Produktseite mit Lieferzeit; ein KI-artiges Symbolbild (ms-aktuell) verworfen.
+  - *Auswahl:* 44 Schlüssel Präsentation, 27 Bildplätze/20 Dateien Webseite, Kontaktbögen; Titelbild Raptor-Dose
+    (Werbebild), Persona-Symbolbild ohne Gesicht (Lokführer statt Warnweste mit Gesicht).
+  - *Einbau Präsentation:* Ladeskript `js/folien/intern-bilder.js`, Bildnachweis-Zeile je Folie, Nachweise in den
+    Notizen; Klicks 23 und Sollzeit 710 s unverändert; `pruefen.mjs` intern hell/dunkel und öffentlich je 0 Fehler.
+  - *Einbau Webseite:* Ladeabschnitt in `konzept.js`, Bildnachweis im Fuß, Galerie, Packshots; `pruefen.mjs` beide
+    Fassungen bestanden.
+  - *Abnahme (2 Agenten, nur lesend):* Webseite 4 mittlere, 8 niedrige Befunde (u. a. falscher Obersatz im Fuß,
+    Folie-08-Strecke wechselt von 50er-Dose zum Starter Set, Symbolbilder nicht gekennzeichnet, Regalfoto verdrängt den
+    Hauptknopf); Präsentation 4 mittlere, 6 niedrige Befunde (u. a. Folie 07 Vorschaubilder unlesbar, OTTO-Bild belegt
+    die Aussage nicht, Blog-Kachel widerspricht „Blog fehlt“, Exportsperre zu eng).
+- **Wie Claude das Ergebnis geprüft hat:** Journal aller 8 Agenten gelesen; beide Kontaktbögen selbst angesehen (Motive,
+  Datenschutz vor der Veröffentlichung); nach dem Umzug nach `fremdbilder/` beide Prüfskripte selbst laufen lassen
+  (0 Fehler, 44/44 Bilder); Video-Logik auf 09 mit Testvideo geprüft (Eintrag 18). Die Abnahme-Befunde wurden nicht
+  ungeprüft übernommen, sondern als Aufträge mit Entscheidung an D07 gegeben (z. B. Folie 07 nur Logos, OTTO-Bild neu
+  aus vorhandenem Ausschnitt).
+
+
+### D07 – 03.11.2026 – ausgelöst durch Prompt 17 und 18
+
+- **Art:** Workflow „fs2-bilder-veroeffentlichen“: zwei Bauer parallel (Konzept-Webseite; Präsentation mit
+  FS2-README und Gestaltungsplan), je eine Abnahme (nur lesend). Keine neuen Downloads; Video nicht ansehen.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bilder-veroeffentlichen.js`](workflows/2026-11-03_fs2-bilder-veroeffentlichen.js).
 - **Ergebnis:** *läuft*
 - **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
