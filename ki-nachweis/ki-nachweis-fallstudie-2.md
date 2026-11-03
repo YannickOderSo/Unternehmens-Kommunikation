@@ -41,6 +41,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 14 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D05 „fs2-bau“ abgeschlossen | – | Ergebnisse gelesen, Abnahme ausgewertet (weiter in Eintrag 11) |
 | 15 | 03.11.2026 | Yannick | HOLY-Grafiken online herunterladen; Webseite und Präsentation sollen gut aussehen; Nutzung nur privat in der Uni | D06 (Workflow) | *läuft:* Bilder beschaffen, auswählen, intern einbauen (nicht im öffentlichen Repository), Abnahme |
 | 16 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll, während D06 läuft) | – | Rohprotokoll committet und gepusht |
+| 17 | 03.11.2026 | Yannick | Freigabe: heruntergeladene Bilder dürfen auf GitHub (Pages) veröffentlicht werden | – | vermerkt; Umsetzung nach Abschluss von D06 (Endbilder versioniert, Gründer-Video und Rohdownloads bleiben ausgeschlossen) |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -327,6 +328,24 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 
 - **Vorgehen Claude:** Geändert war nur `ki-nachweis/rohprotokoll.jsonl` (schreibt der Hook selbst). Committet und
   gepusht. Workflow D06 läuft weiter; seine Bilder liegen nur in den ignorierten `intern/`-Ordnern.
+- **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 17 – 03.11.2026 – Yannick
+
+> Du darfst die Sachen online auf github posten für die online pages ich erlaube es dir
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Freigabe vermerkt: Die in D06 heruntergeladenen und zugeschnittenen Bilder (HOLY-Produktbilder,
+  Screenshots von HOLY-Seiten und der Vorbilder) dürfen ins Repository und damit auf GitHub Pages; die Entscheidung über
+  die Bildrechte trifft die Gruppe (Eintrag 15: „rechte sind nicht wichtig“). Umsetzung erst nach Abschluss von D06,
+  damit die laufenden Prüfungen der Unteragenten nicht gestört werden. Weiter ausgeschlossen bleiben das
+  Gründer-Video (Zustimmung nur für die Präsentation, nicht öffentlich) und die Rohdownloads (`intern/roh/`).
+  Vor dem Veröffentlichen prüft Claude die Endbilder auf personenbezogene Daten Dritter (z. B. Namen in Bewertungen
+  oder Trefferlisten) und macht sie unkenntlich. Hinweisbalken und `noindex` der Konzept-Webseite bleiben.
+- **Ergebnis:** vermerkt; Umsetzung folgt.
+- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
