@@ -40,6 +40,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 13 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Gestaltungsplan, während D05 läuft) | – | Zwischenstand committet und gepusht |
 | 14 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D05 „fs2-bau“ abgeschlossen | – | Ergebnisse gelesen, Abnahme ausgewertet (weiter in Eintrag 11) |
 | 15 | 03.11.2026 | Yannick | HOLY-Grafiken online herunterladen; Webseite und Präsentation sollen gut aussehen; Nutzung nur privat in der Uni | D06 (Workflow) | *läuft:* Bilder beschaffen, auswählen, intern einbauen (nicht im öffentlichen Repository), Abnahme |
+| 16 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll, während D06 läuft) | – | Rohprotokoll committet und gepusht |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -317,6 +318,15 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** *läuft*
 - **Dateien:** `.gitignore`, `ki-nachweis/workflows/2026-11-03_fs2-bilder.js`; weitere folgen
 - **Unteragenten:** D06
+- **Prüfung durch die Gruppe:** ☐ offen
+
+
+### 16 – 03.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [command hook]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Geändert war nur `ki-nachweis/rohprotokoll.jsonl` (schreibt der Hook selbst). Committet und
+  gepusht. Workflow D06 läuft weiter; seine Bilder liegen nur in den ignorierten `intern/`-Ordnern.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
