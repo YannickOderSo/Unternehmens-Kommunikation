@@ -405,7 +405,8 @@ Auftrag (im Workflow-Skript).
 | D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
 | D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | Plan, Dossier 7a (17 Fälle), Konzept-Webseite, Präsentation; Abnahme: 1 hoher, 15 mittlere, 14 niedrige Befunde | Journal gelesen; Befunde nachgeprüft (Help-Center selbst abgerufen, Ü1 am Maßstab, Screenshots angesehen) und eingearbeitet; `pruefen.mjs` beider Teile: 0 Fehler |
 | D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 8 mittlere, 15 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
-| D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | *läuft* | – |
+| D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | alle D06-Befunde umgesetzt (Folie 07 nur Logos, B6 ohne Platz); Doku umgestellt; Abnahme: 6 mittlere, 13 niedrige Befunde | Journal gelesen; beide Prüfskripte selbst: 0 Fehler (38 Bilder); Endzustände 01–09 angesehen; Befunde an D08 |
+| D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -558,6 +559,36 @@ Auftrag (im Workflow-Skript).
 - **Art:** Workflow „fs2-bilder-veroeffentlichen“: zwei Bauer parallel (Konzept-Webseite; Präsentation mit
   FS2-README und Gestaltungsplan), je eine Abnahme (nur lesend). Keine neuen Downloads; Video nicht ansehen.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bilder-veroeffentlichen.js`](workflows/2026-11-03_fs2-bilder-veroeffentlichen.js).
+- **Ergebnis:** alle 4 Unteragenten fertig, 0 Fehler (rund 34 min).
+  - *Webseite:* Fuß-Obersatz neu, Bildnachweise mit Motiv und zusammengefasst, Symbolbilder (Karton, Regal)
+    gekennzeichnet, Händlerseite mit Code und Knopf im ersten Bildschirm, großes Produktbild folgt der Packung,
+    Shaker je Packung (pinker Shaker neu aus vorhandenem Packshot), Produkt-Tag im Knopf, Münze neu zugeschnitten,
+    `_vorschau/` zeigt die Fassung mit Bildern, Folie-08-Strecke durchgehend 50er-Dose; `pruefen.mjs` mit neuer
+    GitHub-Pages-Probe (lokaler HTTP-Server) bestanden. Textkorrekturen mit Quelle: 10 Portionen = Sachet-Box
+    (Shop-Packshot), Shaker gratis zur ersten Dose (✔ T22).
+  - *Präsentation:* Folie 07 nur Logos (einfarbig; die sechs Vorschaubilder unlesbar, auf B6 kein Platz), OTTO-Bild
+    als Textausschnitt mit dem belegenden Satz, Blog-Kachel „Blog: 0 Beiträge“ und Sprechtext 04 „Der Blog ist leer
+    (0 Beiträge)“ (✔ M01, ✔ L39), Symbolbild-Label 02, Bildquellzeilen, Rückfalltext 09; Doku (LIESMICH, QUELLEN,
+    AUTOREN, README FS2, Gestaltungsplan) auf „Fassung mit Bildern“ / „Rückfall ohne Fremdbilder“. Klicks 23 und
+    Sollzeit 710 s unverändert.
+  - *Abnahme (2 Agenten, nur lesend):* Präsentation 4 mittlere, 7 niedrige Befunde (u. a. Gestaltungsplan-Regeln ohne
+    vermerkte Abweichung, B8 „mit Freigabe“ missverständlich, alte Begriffe in den Einträgen konzept-01..05, **Vorname
+    eines Community-Mitglieds im Bildnachweis** – schon seit Commit f86cb9a öffentlich); Webseite 2 mittlere,
+    6 niedrige Befunde (u. a. „mit Freigabe“ ohne Urheber der Freigabe, „Foto: Lebensmittel Zeitung“ nennt einen
+    unbekannten Urheber, Produkt-Tag und Ziel passen nicht zusammen).
+- **Wie Claude das Ergebnis geprüft hat:** Journal aller 4 Agenten gelesen; beide Prüfskripte selbst laufen lassen
+  (Präsentation 0 Fehler, 17 Warnungen, 38 Bilder; Webseite bestanden); Endzustände der Folien 01–09 als Kontaktbogen
+  angesehen; Vorname per Volltextsuche bestätigt. Stand committet (6288a1d); Restbefunde mit Entscheidungen
+  (Rechtestatus-Formulierung, unbenutzte Bilder zurückhalten, Knopf-Ziel) an D08.
+
+
+### D08 – 03.11.2026 – ausgelöst durch Prompt 17 und 18
+
+- **Art:** Workflow „fs2-bilder-nacharbeit“: zwei Bauer parallel (Konzept-Webseite; Präsentation mit Gestaltungsplan
+  und README FS2), je eine adversariale Abnahme (nur lesend). Vorgabe für den Rechtestatus: Veröffentlichung der
+  Fremdbilder von der Gruppe beschlossen (Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; Logo mit
+  Einverständnis (Nr. 12); Video mit Zustimmung des Gründers (Nr. 18).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bilder-nacharbeit.js`](workflows/2026-11-03_fs2-bilder-nacharbeit.js).
 - **Ergebnis:** *läuft*
 - **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
