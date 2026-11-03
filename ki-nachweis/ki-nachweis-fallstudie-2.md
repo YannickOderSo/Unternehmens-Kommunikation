@@ -34,7 +34,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 07 | 30.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | Zwischenstand committet und gepusht |
 | 08 | 02.11.2026 | Yannick | Videobotschaft des HOLY-Gründers für die nächste Präsentation (Anhang: Video) | – | nur technische Daten gelesen; Inhalt nicht ausgewertet, Einwilligung offen; nicht im Repository |
 | 09 | 02.11.2026 | Yannick | Gründer hat zugestimmt (Video und Stimme in der Präsentation); Platz am Ende | – | Gestaltungsplan: Video als Schlussschritt auf Folie 09 (9.5), Zeit und Klicks angepasst; `.gitignore`; Video nur lokal |
-| 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich mit Plan und Dossier *läuft* |
+| 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich: A1, A2, A4, A6, A7 teilweise abgedeckt, A3 und A5 fehlen weitgehend; Vorschlag neuer Folienplan (Chat) |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -204,7 +204,11 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Touchpoints je Phase mit priorisiertem Top-Touchpoint, IST und SOLL eines zentralen Wegs, Überleitungen,
   branchenübergreifende Best Practices, Mockups); Termin in `README.md` und FS2-README nachgezogen. Workflow D04
   gleicht die Aufgabe mit `gestaltungsplan.md` und `recherche-customer-journey.md` ab.
-- **Ergebnis:** *läuft*
+- **Ergebnis:** Im Chat: Abdeckung je Aufgabe, Vorschlag für den zentralen Weg (online, laut Persona), neuer Folienplan
+  innerhalb R5 (9 Folien: u. a. neue Folie „Überleitungen im IST“, „Best Practice → Maßnahme“, Mock-up-Strecke statt
+  Blog-Folie), fehlende Recherche (branchenübergreifende Best Practices als größte Lücke; Übergangsprotokoll im
+  Selbstversuch; Persona-Daten für Top 3), neuer Zeitplan bis Di 10.11. und neue Fragen an Prof. Stenger. Plan und
+  Dossier noch **nicht** geändert (wartet auf Yannicks Entscheidung).
 - **Dateien:** `README.md`, `fallstudie-2-customer-journey/README.md`, `ki-nachweis/workflows/2026-11-03_fs2-aufgabe-abgleich.js`
 - **Unteragenten:** D04
 - **Prüfung durch die Gruppe:** ☐ offen
@@ -221,7 +225,7 @@ Auftrag (im Workflow-Skript).
 | D01 | 27.10.2026 | 01 | Workflow „fs2-kritik-umsetzen“ (4 Unteragenten, einer mit Websuche) | Vorschläge, wie die Kritik an Fallstudie 1 in Fallstudie 2 umgesetzt wird: Bilder, Inhalt/Modelle, Zeit/Vortrag, „weniger nüchtern“ | 43 Vorschläge (Inhalt 10, Bilder 13, Zeit 9, Gestaltung 11) mit Quellen, offene Fragen an Prof. Stenger | Claude: drei Kernbefunde im Repository nachgeprüft |
 | D02 | 30.10.2026 | 04 | Workflow „fs2-recherche-gestaltung“ und Fortsetzung (24 Unteragenten mit Ergebnis, mit Websuche) | Recherche in 8 Bereichen mit je einer Gegenprüfung; 3 Gestaltungsrichtungen mit Musterfolie; 2 Jurys; Dossier und Gestaltungsplan; Schlussprüfung | Dossier (353 Befunde), Gestaltungsplan, 3 Musterfolien; zweimal vom Nutzungslimit unterbrochen | Unteragenten (Gegen- und Schlussprüfung); Claude: Skriptprüfung, Sichtprüfung |
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
-| D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | *läuft* | – |
+| D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -301,8 +305,14 @@ Auftrag (im Workflow-Skript).
 - **Art:** Workflow „fs2-aufgabe-abgleich“: zwei Prüfer parallel, nur lesend, je Aufgabe A1–A7 mit Abdeckung
   (voll/teilweise/fehlt), Lücke, konkreter Änderung, Aufwand und Quelle; (1) Gestaltungsplan, (2) Recherche-Dossier.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-aufgabe-abgleich.js`](workflows/2026-11-03_fs2-aufgabe-abgleich.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** Plan-Prüfer und Dossier-Prüfer stimmen überein: A1 (IST-Analyse) großteils belegt, aber ohne Maßstab
+  je Phase und ohne eigene Primärdaten im Repository (Selbstversuch, Interviews, Codierung fehlen); A2 zentraler Weg
+  nicht benannt und nicht begründet; A3 Überleitungen nicht bewertet; A4 nur Top 2; A5 Best Practices nur für den
+  Blog und fast nur aus derselben Branche (größte Lücke); A6/A7 auf Blog und Handel zugeschnitten. Vorschlag: 9 Folien
+  mit neuer Überleitungs-Folie, Best Practice → Maßnahme und Mock-up-Strecke; Termine auf Di 10.11. umstellen.
+- **Wie Claude das Ergebnis geprüft hat:** An der Quelle nachgelesen: `persona-steckbrief.md` Z. 66 („Kanal: HOLY
+  online, 50er-Pulverdose auf Vorrat; im Notfall … Rewe oder Edeka“) trägt den Vorschlag „zentraler Weg online“;
+  `recherche-customer-journey.md` Z. 80 und 203 (keine Aufgabenfolie, Annahmen) sind durch die Folie überholt.
 
 ---
 
