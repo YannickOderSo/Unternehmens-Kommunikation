@@ -26,7 +26,7 @@
 
 <header class="kopf">
   <div class="inhalt">
-    <!-- HOLY-Wortmarke: Freigabe durch Yannick am 03.11.2026 („Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
+    <!-- HOLY-Wortmarke: mit Einverständnis des Gründers (Yannick am 03.11.2026: „Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
          © HOLY Softdrinks GmbH, Datei unverändert aus FS1 (de.holy.com, Abruf 16.10.2026). Hinweisbalken bleibt Pflicht. -->
     <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite"><img src="bilder/holy-logo-wortmarke.png" width="389" height="105" alt="HOLY"> <span>Konzept</span></a>
     <nav aria-label="Hauptnavigation">
@@ -73,17 +73,21 @@
     <section class="abschnitt" aria-labelledby="h-weiter">
       <h2 id="h-weiter">So geht's weiter<span class="anm" data-ids="✎ T31 · Ü4 (gestaltungsplan.md 6.7)" data-ziel="#h-weiter + .schritte">Was wir ändern: Drei nächste Schritte, und jeder Link funktioniert. Warum: HOLYs Danke-Seiten verlinken heute auf eine Support-Seite, die einen 404-Fehler liefert. Am Übergang Kauf → Bindung (Ü4) wackelt der Weg; hier soll er tragen.</span></h2>
       <ol class="schritte">
-        <li><div><h3>In den Squad – mit einem Klick</h3><p class="klein">Coins für diese Bestellung sichern, Level ansehen, Freunde werben. <a href="squad.html">Zu SQUAD Rewards →</a></p></div></li>
+        <li data-nur-erstkauf><div><h3>In den Squad – mit einem Klick</h3><p class="klein">Coins für diese Bestellung sichern, Level ansehen, Freunde werben. <a href="squad.html">Zu SQUAD Rewards →</a></p></div></li>
+        <!-- Nachkauf (?nachkauf=1): Marco ist schon im Squad, deshalb kein Beitritt, nur die Coins (Abnahme D08) -->
+        <li data-nur-nachkauf hidden><div><h3>Coins landen auf deinem Konto</h3><p class="klein">Die Coins für diese Bestellung kommen zu deinem Squad-Konto. <a href="squad.html">Zu SQUAD Rewards →</a></p></div></li>
         <!-- Fassung mit Bildern: Shaker der Packung ({packung}: set → schwarzer Logo-Shaker, 50 → pinker Raptor-Shaker;
-             10 und 1: kein Shaker laut Seite, Platz bleibt leer; Überschrift setzt konzept.js passend) -->
-        <li><div class="schritt-zeile" data-intern="web-danke-shaker-{packung}"><div><h3 data-k-shaker-titel>Shaker auspacken, loslegen</h3><p class="klein">Zubereitung in drei Schritten. <a href="#zubereitung">So geht's →</a></p></div><span class="schrittbild bildplatz" hidden></span></div></li>
+             10 und 1: kein Shaker laut Seite, Platz bleibt leer; Überschrift setzt konzept.js passend).
+             Nachkauf der 50er-Dose (?packung=50&nachkauf=1, Link von squad.html): kein Shaker – der Gratis-Shaker kommt
+             nur zur ersten Dose (✔ T22); data-intern-nur-mit-shaker lässt den Platz dann leer (Abnahme D07) -->
+        <li><div class="schritt-zeile" data-intern="web-danke-shaker-{packung}" data-intern-nur-mit-shaker><div><h3 data-k-shaker-titel>Shaker auspacken, loslegen</h3><p class="klein">Zubereitung in drei Schritten. <a href="#zubereitung">So geht's →</a></p></div><span class="schrittbild bildplatz" hidden></span></div></li>
         <li><div><h3>Fragen zur Bestellung?</h3><p class="klein">WhatsApp, E-Mail oder Instagram. <a href="#service">Service →</a></p></div></li>
       </ol>
     </section>
 
     <!-- Maßnahme B3: SQUAD-Rewards-Einstieg in einem Schritt, dieselbe Altersgrenze wie im Shop.
          ✔ T32 (Coins, Level; heute ab 16), ✎ B05 (Altersgrenzen passen nicht zusammen); Vorbild ✔ X15. -->
-    <section class="abschnitt" aria-labelledby="h-squad" id="squad-einstieg">
+    <section class="abschnitt" aria-labelledby="h-squad" id="squad-einstieg" data-nur-erstkauf>
       <div class="kasten kasten-gelb">
         <h2 id="h-squad" style="font-size:24px">Willkommen im Squad<span class="anm" data-ids="✔ T32 · ✎ B05 · ✔ X15" data-ziel="#squad-einstieg">Was wir ändern: Der Einstieg in SQUAD Rewards kommt direkt nach dem Kauf, in einem Schritt, mit den Coins dieser Bestellung. Und er gilt ab 18 wie der Shop. Warum: Heute gilt SQUAD Rewards ab 16, der Shop ab 18 (bzw. 16 in der zweiten AGB-Fassung). Vorbild Douglas: ein Programm mit Stufen, Punkte im Warenkorb einlösbar.</span></h2>
         <p>Für diese Bestellung gibt's rund <strong data-k-coins>225</strong> Coins <span class="beispiel">Beispielrechnung</span> – 10 Coins pro Euro. Ein Klick, und sie liegen auf deinem Konto. Mitmachen ab 18, wie im Shop.</p>
@@ -96,7 +100,7 @@
          E-Mail und SMS); ✔ L96 (Einwilligung, First-Party-Daten, Vorl. S. 73). Trinkhäufigkeit wählt Marco selbst, höchstens
          eine Portion am Tag (Etikett ✔ R19) – keine Verzehrempfehlung (Dossier 8.3 Don't 6). Rechnung im Browser, nichts gespeichert. -->
     <section class="abschnitt" aria-labelledby="h-erinnerung" id="erinnerung" data-erinnerung>
-      <div class="siegel" style="grid-template-columns:72px 1fr">
+      <div class="siegel" style="grid-template-columns:72px minmax(0, 1fr)">
         <svg viewBox="0 0 72 72" aria-hidden="true" style="width:72px;height:72px">
           <path d="M8 22 V60 A20 6 0 0 0 48 60 V22" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/>
           <ellipse cx="28" cy="22" rx="20" ry="6" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/>
@@ -187,7 +191,7 @@
       <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
       <!-- Fassung mit Bildern: sichtbar, sobald konzept.js Bilder aus fremdbilder/ eingebaut hat; im Rückfall ohne Fremdbilder ausgeblendet -->
       <div data-nur-intern hidden>
-        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – veröffentlicht mit Freigabe, nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
+        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
         <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
         <ul class="bildnachweise" data-intern-liste></ul>
       </div>
@@ -200,8 +204,9 @@
 </footer>
 
 <!-- Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): fremdbilder/register.js setzt window.INTERN_BILDER
-     (Name aus der Zeit vor der Freigabe, bleibt aus technischen Gründen). Die Bilder sind veröffentlicht mit Freigabe
-     (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+     (Name aus der Zeit vor dem Veröffentlichungsbeschluss, bleibt aus technischen Gründen). Die Veröffentlichung der
+     Bilder hat die Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), eine Genehmigung der Rechteinhaber wurde nicht eingeholt;
+     nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
      Fehlt die Datei, zeigt die Seite den Rückfall ohne Fremdbilder (Platzhalter und eigene Zeichnungen). -->
 <script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>

@@ -5,10 +5,10 @@
    Präsentation“), KI-gestützt; Prüfung durch die Gruppe offen. Umgestellt in
    D07 (03.11.2026) auf die veröffentlichten Fremdbilder.
 
-   NAMEN AUS DER ZEIT VOR DER FREIGABE
+   NAMEN AUS DER ZEIT VOR DER VERÖFFENTLICHUNG
    Dateiname intern-bilder.js, window.INTERN_BILDER, data-intern*, Klasse
    p-intern-logo und html[data-fassung="intern"] stammen aus der Zeit vor der
-   Freigabe (bis 03.11.2026 lagen die Bilder als „interne Fassung“ im
+   Veröffentlichung (bis 03.11.2026 lagen die Bilder als „interne Fassung“ im
    ausgeschlossenen Ordner intern/). Sie bleiben aus technischen Gründen
    (Prüfwerkzeug, CSS, Konzept-Webseite); gemeint ist die Fassung mit Bildern.
 
@@ -16,7 +16,8 @@
    • Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): Neben
      index.html liegt fremdbilder/register.js (setzt window.INTERN_BILDER =
      { schlüssel: { datei, alt, nachweis, pixel, … } }) mit den Dateien in
-     fremdbilder/. Veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht
+     fremdbilder/. Veröffentlichung von der Gruppe beschlossen (KI-Nachweis
+     FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht
      kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
    • Rückfall ohne Fremdbilder: fremdbilder/register.js fehlt (oder Schalter
      ?kacheln=rueckfall). Dann tut dieses Skript nichts: Platzhalter und
@@ -29,8 +30,9 @@
      • Bildkachel (.p-kachel): <img> mit alt, width/height (Dateigröße) als
        erstes Kind einsetzen, data-status → "frei"; der alte Zustand steht in
        data-status-oeffentlich. Nachweis als data-nachweis an der Kachel.
-     • <img> (Folie 08): src und alt tauschen; das öffentliche Bild steht in
-       data-oeffentlich-src und kommt zurück, wenn die interne Datei fehlt.
+     • <img> (Folie 08): src und alt tauschen; das Bild aus bilder/ (Rückfall
+       ohne Fremdbilder) steht in data-oeffentlich-src (Name historisch) und
+       kommt zurück, wenn die Datei in fremdbilder/ fehlt.
      • sonst (Logo-Platz, z. B. .e7-marke auf Folie 07): <img> als erstes Kind
        einsetzen; CSS blendet den Text daneben aus (data-intern-status).
    Jedes Element erhält data-intern-status: "gesetzt" (eingesetzt), "fehler"
@@ -96,7 +98,8 @@
       absatz.className = 'p-intern-nachweis';
       notizen.appendChild(absatz);
     }
-    absatz.textContent = 'Bildnachweis (Fremdbilder, veröffentlicht mit Freigabe; keine eigenen Fotos der Gruppe): ' +
+    absatz.textContent = 'Bildnachweis (Fremdbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17, ' +
+      'keine Genehmigung der Rechteinhaber eingeholt; keine eigenen Fotos der Gruppe): ' +
       liste.join(' | ');
   }
 

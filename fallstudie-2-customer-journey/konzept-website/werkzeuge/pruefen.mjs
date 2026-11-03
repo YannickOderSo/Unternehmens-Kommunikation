@@ -10,13 +10,16 @@
 
    Zwei Fassungen derselben Dateien:
      mit Bildern  der Standard – so läuft die Seite im Repository, auf GitHub Pages und im Hörsaal. fremdbilder/register.js
-                  setzt window.INTERN_BILDER (Name aus der Zeit vor der Freigabe), konzept.js baut die Bilder aus
-                  fremdbilder/ ein. Die Bilder sind veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht
-                  kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Geprüft: jeder Registereintrag
+                  setzt window.INTERN_BILDER (Name aus der Zeit vor dem Veröffentlichungsbeschluss), konzept.js baut die
+                  Bilder aus fremdbilder/ ein. Die Veröffentlichung hat die Gruppe beschlossen (KI-Nachweis FS2 Nr. 17),
+                  eine Genehmigung der Rechteinhaber wurde nicht eingeholt; nicht kommerziell, für die Lehrveranstaltung;
+                  keine eigenen Fotos der Gruppe. Geprüft: jeder Registereintrag
                   mit Datei in fremdbilder/, alt, nachweis, motiv, pixel (= echte Bildgröße); jedes Bild geladen, mit alt,
                   width, height; kein Bild im ersten Bildschirm mit loading="lazy"; jeder Bildplatz mit vorhandenem
                   Schlüssel gefüllt (bei {packung} ohne Schlüssel: ausgeblendet); Unterschrift am Bild = unterschrift bzw.
-                  nachweis; Fuß mit Obersatz und je Nachweis einem Eintrag „Motiv: Nachweis“.
+                  nachweis; Fuß mit Obersatz und je Nachweis einem Eintrag „Motiv: Nachweis“; register.js und jede
+                  Bilddatei des Registers im Git-Index (git ls-files --error-unmatch), sonst WARNUNG „nicht versioniert –
+                  fehlt nach dem Push auf GitHub Pages“.
                   Bildschirmfotos: ../_vorschau/0n-….png (oberer Bildschirm, 390 × 844, versioniert – so sieht es auf
                   GitHub Pages aus); ganze Seite bei 390 und 1280 px nach ../intern/vorschau/ (per .gitignore ausgeschlossen).
                   Zusätzlich die GitHub-Pages-Probe: alle Seiten über einen lokalen HTTP-Server (wie GitHub Pages, mit
@@ -35,14 +38,17 @@
      6. 390 px Breite ohne waagerechtes Scrollen (auch im Präsentationsmodus), dazu 320 und 1280 px
      7. Kontrast WCAG 2.x für jeden sichtbaren Text (4,5 : 1, große Schrift 3 : 1)
      8. Präsentationsmodus: Zahl der Marker = Zahl der Anmerkungen, jede mit Befund-IDs, Rundgang per „Weiter“
-     9. Rechnungen: Packungswahl, Warenkorb je Packung, Code aus der Adresse, Nachfüll-Rechner
+     9. Rechnungen: Packungswahl, Warenkorb je Packung, Code aus der Adresse, Nachfüll-Rechner; Startpackung der
+        Produktseite aus ?packung= (Knopf der Startseite → produkt.html?packung=50, Code reist mit); Nachkauf von
+        squad.html (?nachkauf=1 bis zur Danke-Seite, ohne Shaker-Hinweis und Shaker-Bild bei der 50er-Dose)
     10. Bilder je Fassung (siehe oben); mit Bildern zusätzlich: großes Bild der Produktseite folgt der Packung, bis in der
         Galerie geklickt wird; Vorschaubild im Warenkorb und Shaker auf der Danke-Seite passen zu ?packung=
-    11. erster Bildschirm 390 × 844: Händlerseite Code-Box und Hauptknopf, Produktseite Titel, Bewertung und Preise;
-        1280 px: Knopf „Zum Produkt aus dem Video“ in einer Zeile
+    11. erster Bildschirm 390 × 844: Händlerseite Code-Box und Hauptknopf, Produktseite Titel, Bewertung und Preise (auch
+        mit ?packung=50); 1280 px: Knopf „Zum Produkt aus dem Video“ und Hauptknopf der Händlerseite je in einer Zeile
    ========================================================================== */
 import fs from 'node:fs';
 import http from 'node:http';
+import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -54,7 +60,7 @@ const WURZEL = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const VORSCHAU = path.join(WURZEL, '_vorschau');                              // versioniert: Fassung mit Bildern, oberer Bildschirm
 const VORSCHAU_GANZ = path.join(WURZEL, 'intern', 'vorschau');                // ausgeschlossen: ganze Seiten zum Ansehen
 const VORSCHAU_RUECKFALL = path.join(WURZEL, 'intern', 'vorschau-rueckfall'); // ausgeschlossen: Rückfall ohne Fremdbilder
-const FREMD = path.join(WURZEL, 'fremdbilder');                               // veröffentlichte Fremdbilder (Freigabe KI-Nachweis FS2 Nr. 17)
+const FREMD = path.join(WURZEL, 'fremdbilder');                               // veröffentlichte Fremdbilder (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17)
 const REGISTER_JS = path.join(FREMD, 'register.js');
 const FREMD_URL = pathToFileURL(FREMD).href + '/';
 const istFremd = (u) => typeof u === 'string' && (u.startsWith(FREMD_URL) || /^http:\/\/127\.0\.0\.1:\d+\/fremdbilder\//.test(u));
@@ -77,7 +83,7 @@ const SEITEN = [
 ];
 const HINWEIS = 'Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich';
 /* Obersatz der Bildnachweise im Fuß (Fassung mit Bildern), wörtlich in allen 7 Seiten und in README.md */
-const BILDER_FUSS = 'Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – veröffentlicht mit Freigabe, nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.';
+const BILDER_FUSS = 'Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.';
 const PACKUNGEN = ['set', '1', '10', '50'];
 
 const fehler = [];
@@ -87,11 +93,12 @@ const extern = [];
 let FASSUNG = 'bilder';                                                       // aktuell geprüfte Fassung
 const f = (ort, text) => fehler.push('[' + NAME[FASSUNG] + '] ' + ort + ': ' + text);
 
-/* Register lesen und prüfen. Es ist seit der Freigabe versioniert: fehlt es, ist das ein Fehler. */
+/* Register lesen und prüfen. Es ist seit dem Veröffentlichungsbeschluss (KI-Nachweis FS2 Nr. 17) versioniert: fehlt es,
+   ist das ein Fehler. */
 const FASSUNGEN = fassungArg === 'beide' ? ['bilder', 'rueckfall'] : [fassungArg];
 let REGISTER = null;
 if (!fs.existsSync(REGISTER_JS)) {
-  fehler.push('fremdbilder/register.js fehlt (seit der Freigabe KI-Nachweis FS2 Nr. 17 versioniert) – Fassung mit Bildern nicht prüfbar.');
+  fehler.push('fremdbilder/register.js fehlt (seit dem Veröffentlichungsbeschluss, KI-Nachweis FS2 Nr. 17, versioniert) – Fassung mit Bildern nicht prüfbar.');
   if (FASSUNGEN.includes('bilder')) FASSUNGEN.splice(FASSUNGEN.indexOf('bilder'), 1);
   if (!FASSUNGEN.length) FASSUNGEN.push('rueckfall');
 } else {
@@ -114,7 +121,24 @@ if (!fs.existsSync(REGISTER_JS)) {
       if (d === 'register.js') continue;
       if (!benutzt.has('fremdbilder/' + d)) warnungen.push('fremdbilder/' + d + ' wird von keinem Registereintrag benutzt');
     }
+    // versioniert oder vorgemerkt? Nur Dateien im Git-Index kommen mit dem Push auf GitHub Pages (Abnahme D07)
+    let gitDa = true;
+    for (const d of ['fremdbilder/register.js', ...Array.from(benutzt).sort()]) {
+      if (!fs.existsSync(path.join(WURZEL, d))) continue;                    // fehlende Datei meldet schon der Register-Abgleich
+      const v = gitBekannt(d);
+      if (v === null) { gitDa = false; break; }
+      if (!v) warnungen.push(d + ': nicht versioniert – fehlt nach dem Push auf GitHub Pages (git add)');
+    }
+    if (!gitDa) notizen.push('git nicht verfügbar oder kein Repository – Versionierung der Fremdbilder nicht geprüft');
   }
+}
+
+/* true: Datei steht im Git-Index (versioniert oder mit git add vorgemerkt); false: nicht; null: git fehlt oder kein Repository */
+function gitBekannt(datei) {
+  const r = spawnSync('git', ['ls-files', '--error-unmatch', '--', datei], { cwd: WURZEL, encoding: 'utf8' });
+  if (r.error || r.status === null) return null;
+  if (r.status === 0) return true;
+  return r.status === 128 ? null : false;   // 128: kein Repository (sprachunabhängig), 1: nicht versioniert
 }
 
 /* Lokaler Prüfserver wie GitHub Pages (statisch, mit fremdbilder/), nur 127.0.0.1 */
@@ -485,15 +509,16 @@ async function pruefeFassung() {
     const m = await messe(s.page);
     if (m.scrollBreite > m.clientBreite) f(s.ort, 'waagerechtes Scrollen (scrollWidth ' + m.scrollBreite + ')');
     m.probleme.forEach((p) => f(s.ort, 'Kontrast ' + p.kontrast + ' < ' + p.soll + ' bei „' + p.text + '“'));
-    if (datei === 'index.html') {
-      // Knopf „Zum Produkt aus dem Video“ ab 900 px in einer Zeile (Abnahme D06)
+    if (datei === 'index.html' || datei === 'haendler.html') {
+      // Hauptknopf oben ab 900 px in einer Zeile: „Zum Produkt aus dem Video“ (Abnahme D06), „Coins holen und in den
+      // Squad (Konzept)“ (Abnahme D07)
       const zeilen = await s.page.evaluate(() => {
         const k = document.querySelector('.held .knopfreihe .knopf'); if (!k) return -1;
         const r = document.createRange(); const tops = new Set();
         Array.from(k.childNodes).filter((n) => n.nodeType === 3 && n.textContent.trim()).forEach((n) => { r.selectNodeContents(n); Array.from(r.getClientRects()).forEach((x) => tops.add(Math.round(x.top))); });
         return tops.size;
       });
-      if (zeilen !== 1) f(s.ort, 'Knopf „Zum Produkt aus dem Video“ bricht um (' + zeilen + ' Zeilen)');
+      if (zeilen !== 1) f(s.ort, 'Hauptknopf oben bricht um (' + zeilen + ' Zeilen)');
     }
     if (MIT_FOTOS && FASSUNG === 'bilder') {
       const ziel = path.join(VORSCHAU_GANZ, kurz + '-1280.png');
@@ -533,6 +558,8 @@ async function pruefeFassung() {
     if (code !== 'MARCO10') f(s.ort, 'Code nicht übernommen/bereinigt: "' + code + '"');
     const href = await s.page.getAttribute('.knopfreihe a[href^="produkt.html"]', 'href');
     if (!/code=MARCO10/.test(href)) f(s.ort, 'Code nicht an den Produkt-Link gehängt: ' + href);
+    // Produkt-Tag im Knopf zeigt die 50er-Dose → die Produktseite wählt sie vor (Abnahme D07)
+    if (!/[?&]packung=50(&|$)/.test(href)) f(s.ort, 'Knopf „Zum Produkt aus dem Video“ ohne packung=50: ' + href);
     const hinweis = await s.page.isVisible('[data-nur-beispielcode]');
     if (hinweis) f(s.ort, 'Beispielcode-Hinweis trotz Code in der Adresse sichtbar');
     meldeKonsole(s); await s.page.close();
@@ -550,6 +577,25 @@ async function pruefeFassung() {
     if (!links.every((h) => /packung=50/.test(h))) f(s.ort, 'Warenkorb-Links ohne packung=50: ' + links.join(', '));
     await s.page.click('.option[data-packung="1"]');
     if ((await text(s.page, '[data-p-ende]')) !== '6,98 €') f(s.ort, 'Endpreis 1 Portion nicht 6,98 €');
+    meldeKonsole(s); await s.page.close();
+  }
+  for (const [q, soll, ende] of [['?packung=50', '50', '44,98 €'], ['?packung=10&code=MARCO10', '10', '17,48 €'], ['?packung=quatsch', 'set', '24,99 €']]) {
+    // Startpackung aus der Adresse (Knopf der Startseite → produkt.html?packung=50); ungültige Werte → Starter Set
+    const s = await oeffne(mobil, 'produkt.html', q, 'produkt.html' + q);
+    const z = await s.page.evaluate(() => ({
+      gewaehlt: Array.from(document.querySelectorAll('.option[aria-checked="true"]')).map((o) => o.getAttribute('data-packung')),
+      ende: document.querySelector('[data-p-ende]').textContent.trim(),
+      links: Array.from(document.querySelectorAll('[data-warenkorb-link]')).map((a) => a.getAttribute('href')),
+      gross: (document.querySelector('[data-intern-held]') || { getAttribute: () => null }).getAttribute('data-intern-aktiv'),
+      lage: ['main h1', '.bewertung-kurz', '.optionen .option .preis'].map((sel) => { const el = document.querySelector(sel); return el ? Math.round(el.getBoundingClientRect().top) : null; }),
+      h: window.innerHeight
+    }));
+    if (z.gewaehlt.join() !== soll) f(s.ort, 'gewählt ' + z.gewaehlt.join() + ' statt ' + soll);
+    if (z.ende !== ende) f(s.ort, 'Endpreis ' + z.ende + ' statt ' + ende);
+    if (!z.links.length || !z.links.every((h) => new RegExp('[?&]packung=' + soll + '(&|$)').test(h))) f(s.ort, 'Warenkorb-Links ohne packung=' + soll + ': ' + z.links.join(', '));
+    if (q.includes('code=') && !z.links.every((h) => /code=MARCO10/.test(h))) f(s.ort, 'Code reist nicht mit: ' + z.links.join(', '));
+    if (FASSUNG === 'bilder' && z.gross !== 'web-produkt-gross-' + soll) f(s.ort, 'großes Bild ' + z.gross + ' statt web-produkt-gross-' + soll);
+    if (z.lage.some((o) => o === null || o >= z.h)) f(s.ort, 'erster Bildschirm 390 × 844: Titel, Bewertung oder erster Preis nicht oben (' + z.lage.join(', ') + ' px)');
     meldeKonsole(s); await s.page.close();
   }
   if (FASSUNG === 'bilder') {
@@ -633,11 +679,54 @@ async function pruefeFassung() {
     }
   }
   {
+    // Nachkauf (Abnahme D07): squad.html → warenkorb.html?packung=50&nachkauf=1 → danke.html; der Gratis-Shaker kommt nur
+    // zur ersten Dose (✔ T22), also kein Shaker-Hinweis im Warenkorb und kein Shaker-Bild auf der Danke-Seite
+    const sq = await oeffne(mobil, 'squad.html', '?code=MARCO10', 'squad.html Nachkauf-Links');
+    const nl = (await sq.page.$$eval('a[href^="warenkorb.html"]', (as) => as.map((a) => a.getAttribute('href')))).filter((h) => /packung=50/.test(h));
+    if (nl.length !== 2 || !nl.every((h) => /[?&]nachkauf=1(&|$)/.test(h) && /code=MARCO10/.test(h))) f(sq.ort, 'Nachkauf-Links ohne nachkauf=1 oder Code: ' + nl.join(', '));
+    meldeKonsole(sq); await sq.page.close();
+    for (const [q, shakerText] of [['?packung=50', true], ['?packung=50&nachkauf=1', false]]) {
+      const s = await oeffne(mobil, 'warenkorb.html', q, 'warenkorb.html' + q + ' Shaker-Hinweis');
+      const zusatz = await text(s.page, '[data-k-zusatz]');
+      if (/Shaker/.test(zusatz) !== shakerText) f(s.ort, 'Zusatz „' + zusatz + '“ ' + (shakerText ? 'ohne' : 'mit') + ' Shaker-Hinweis');
+      if ((await text(s.page, '[data-k-gesamt]')) !== '40,98 €') f(s.ort, 'Gesamt nicht 40,98 €');
+      const weiter = await s.page.$$eval('a[data-mit-packung]', (as) => as.map((a) => a.getAttribute('href')));
+      if (!weiter.length || !weiter.every((h) => /packung=50/.test(h) && (shakerText || /[?&]nachkauf=1(&|$)/.test(h)))) f(s.ort, 'Danke-Links reichen packung/nachkauf nicht weiter: ' + weiter.join(', '));
+      meldeKonsole(s); await s.page.close();
+    }
+    for (const [q, schluessel, titel] of [['?packung=50&nachkauf=1', null, 'Auspacken, loslegen'], ['?packung=set&nachkauf=1', 'web-danke-shaker-set', 'Shaker auspacken, loslegen']]) {
+      const s = await oeffne(mobil, 'danke.html', q, 'danke.html Shaker ' + q);
+      const z = await s.page.evaluate(() => {
+        const platz = document.querySelector('.schritt-zeile[data-intern]'); const bild = platz.querySelector('.bildplatz');
+        return { aktiv: platz.getAttribute('data-intern-aktiv'), sichtbar: !!bild && bild.getClientRects().length > 0, titel: platz.querySelector('h3').textContent.trim() };
+      });
+      if (z.titel !== titel) f(s.ort, 'Überschrift „' + z.titel + '“ statt „' + titel + '“');
+      if (FASSUNG === 'bilder' && schluessel && z.aktiv !== schluessel) f(s.ort, 'Shaker-Bild ' + z.aktiv + ' statt ' + schluessel);
+      if (!schluessel && (z.aktiv || z.sichtbar)) f(s.ort, 'Shaker-Bild beim Nachkauf der 50er-Dose sichtbar (Shaker nur zur ersten Dose)');
+      meldeKonsole(s); await s.page.close();
+    }
+  }
+  {
     // „Anmerkungen ausblenden“ führt auf dieselbe Seite ohne Parameter
     const s = await oeffne(mobil, 'squad.html', '?anmerkungen=1', 'squad.html ausblenden');
     const h = await s.page.getAttribute('.fuss .nur-anm a', 'href');
     if (h !== 'squad.html') f(s.ort, '„Anmerkungen ausblenden“ zeigt auf "' + h + '"');
     meldeKonsole(s); await s.page.close();
+  }
+  {
+    // Umschalter behalten Packung und Nachkauf (Abnahme D08); Nachkauf blendet Erstkäufer-Texte aus
+    const s = await oeffne(mobil, 'danke.html', '?packung=50&nachkauf=1&anmerkungen=1', 'danke.html Nachkauf ausblenden');
+    const h = await s.page.getAttribute('.fuss .nur-anm a', 'href');
+    if (h !== 'danke.html?packung=50&nachkauf=1') f(s.ort, '„Anmerkungen ausblenden“ zeigt auf "' + h + '" statt danke.html?packung=50&nachkauf=1');
+    const sicht = await s.page.evaluate(() => ({
+      erst: Array.from(document.querySelectorAll('[data-nur-erstkauf]')).filter((e) => e.getClientRects().length > 0).length,
+      nach: Array.from(document.querySelectorAll('[data-nur-nachkauf]')).filter((e) => e.getClientRects().length > 0).length }));
+    if (sicht.erst || !sicht.nach) f(s.ort, 'Nachkauf: Erstkäufer-Texte sichtbar (' + sicht.erst + ') oder Nachkauf-Text fehlt (' + sicht.nach + ')');
+    meldeKonsole(s); await s.page.close();
+    const p = await oeffne(mobil, 'produkt.html', '?packung=50&anmerkungen=1', 'produkt.html ausblenden mit Packung');
+    const hp = await p.page.getAttribute('.fuss .nur-anm a', 'href');
+    if (!/^produkt\.html\?packung=50(&|$)/.test(hp || '')) f(p.ort, '„Anmerkungen ausblenden“ verliert die Packung: "' + hp + '"');
+    meldeKonsole(p); await p.page.close();
   }
   await mobil.close();
 

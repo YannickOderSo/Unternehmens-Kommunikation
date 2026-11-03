@@ -16,11 +16,16 @@
      als Nutzergeste. Danach bleibt das letzte Bild stehen (Standard des Browsers).
      Rückwärts auf Schritt 1: kein Neustart, nur Standbild. Schritt 0, 2 und
      Verlassen der Folie: anhalten.
-   • Rückfall „Videobotschaft des Gründers – in der Web-Präsentation auf
-     Folie 09“ (Klasse .ist-rueckfall am Bildschirm), wenn die Datei fehlt oder
-     nicht abspielbar ist (z. B. Browser ohne H.264), und IMMER in Aufnahme,
-     Druck/PDF und Referentenfenster (dort darf kein zweiter Ton laufen; Exporte
-     und Standbilder zeigen das Video nicht).
+   • Rückfall (Klasse .ist-rueckfall am Bildschirm), zwei Texte (seit D08):
+     – Standardtext aus index.html „Videobotschaft des Gründers – läuft in der
+       Web-Präsentation“: IMMER in Aufnahme (?aufnahme, Prüfwerkzeug),
+       Druck/PDF und Referentenfenster (dort darf kein zweiter Ton laufen;
+       Exporte und Standbilder zeigen das Video nicht). Dort wird die Datei nie
+       angefragt (nurRueckfall()).
+     – Fehlertext „Videobotschaft des Gründers – lässt sich in diesem Browser
+       nicht abspielen“: nur bei einem echten Abspielfehler – error-Ereignis des
+       Videos (Datei fehlt, Browser ohne H.264) oder play() scheitert mit einem
+       anderen Fehler als NotAllowedError (abspielfehler()).
    • Verweigert der Browser den Start mit Ton (Folie per F5 oder Adresse direkt
      auf Schritt 1 geöffnet, ohne Klick), erscheinen die Bedienelemente des
      Videos: einmal auf „Abspielen“ klicken.
@@ -38,6 +43,8 @@
   var parameter = new URLSearchParams(location.search);
   var video = folie.querySelector('.e9-video');
   var schirm = folie.querySelector('.e9-schirm');
+  var hinweis = folie.querySelector('.e9-rueckfall');
+  var TEXT_FEHLER = 'Videobotschaft des Gründers – lässt sich in diesem Browser nicht abspielen';
   var gesetzt = false;
   var defekt = false;
 
@@ -45,15 +52,21 @@
     return parameter.has('aufnahme') || parameter.has('druck') || parameter.has('referent') ||
       html.classList.contains('aufnahme') || html.classList.contains('druckmodus') || html.classList.contains('referent');
   }
+  /* Rückfall mit dem Standardtext aus index.html (Aufnahme, Druck, Referentenfenster) */
   function rueckfall() {
     defekt = true;
     if (schirm) schirm.classList.add('ist-rueckfall');
     try { if (video) video.pause(); } catch (e) { /* egal */ }
   }
+  /* echter Abspielfehler: Rückfall mit Fehlertext (nie über nurRueckfall(), dort gibt es keine Quelle) */
+  function abspielfehler() {
+    if (hinweis) hinweis.textContent = TEXT_FEHLER;
+    rueckfall();
+  }
   function quelleSetzen() {
     if (!video || gesetzt || defekt || nurRueckfall()) return;
     gesetzt = true;
-    video.addEventListener('error', rueckfall);
+    video.addEventListener('error', abspielfehler);
     video.preload = 'auto';
     video.src = video.getAttribute('data-quelle');
   }
@@ -61,11 +74,12 @@
     quelleSetzen();
     if (!video || defekt || nurRueckfall()) return;
     var versuch;
-    try { versuch = video.play(); } catch (e) { rueckfall(); return; }
+    try { versuch = video.play(); } catch (e) { abspielfehler(); return; }
     if (versuch && versuch.catch) {
       versuch.catch(function (fehler) {
         if (fehler && fehler.name === 'NotAllowedError') video.controls = true;   /* ohne Nutzergeste: von Hand starten */
-        else rueckfall();
+        else if (fehler && fehler.name === 'AbortError') { /* Anhalten/Quellwechsel vor dem Start: kein Fehler */ }
+        else abspielfehler();
       });
     }
   }

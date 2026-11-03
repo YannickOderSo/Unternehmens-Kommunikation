@@ -15,10 +15,13 @@
   Phase Inspiration (AWARE) · Top-Touchpoint: Creator-Kurzvideo mit Code und klarer Weiterleitung (gestaltungsplan.md 5.2)
   Schließt Überleitung Ü1 (Inspiration → Recherche, gestaltungsplan.md 6.7): Code führt heute auch in die freie Suche.
   Studentisches Konzept der Gruppe, KI-gestützt entworfen, Prüfung durch die Gruppe offen. Stand 03.11.2026.
-  Kennzeichnung nach gestaltungsplan.md 7.3: Hinweisbalken (fest), noindex, Wortmarke nur im Kopf (Freigabe 03.11.),
-  Fremdbilder aus fremdbilder/ veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die
-  Lehrveranstaltung, Bildnachweis im Fuß (Rückfall ohne Fremdbilder, wenn fremdbilder/register.js fehlt),
-  keine Datenübermittlung, keine externen Anfragen. Befund-IDs: Recherche-Dossier FS2 (recherche-customer-journey.md).
+  Kennzeichnung nach gestaltungsplan.md 7.3: Hinweisbalken (fest), noindex. Logo als Gestaltungselement nur als
+  Wortmarke im Kopf (mit Einverständnis des Gründers laut Yannick, KI-Nachweis FS2 Nr. 12); auf den Produktbildern der
+  Fassung mit Bildern ist das Logo Teil der Packung (Nachweis im Fuß); kein gelbes Oval und kein Verpackungsdesign als
+  eigene Gestaltung. Fremdbilder aus fremdbilder/: Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17),
+  keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung, Bildnachweis im Fuß
+  (Rückfall ohne Fremdbilder, wenn fremdbilder/register.js fehlt).
+  Keine Datenübermittlung, keine externen Anfragen. Befund-IDs: Recherche-Dossier FS2 (recherche-customer-journey.md).
 -->
 <body data-station="1">
 
@@ -27,7 +30,7 @@
 
 <header class="kopf">
   <div class="inhalt">
-        <!-- HOLY-Wortmarke: Freigabe durch Yannick am 03.11.2026 („Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
+        <!-- HOLY-Wortmarke: mit Einverständnis des Gründers (Yannick am 03.11.2026: „Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
          © HOLY Softdrinks GmbH, Datei unverändert aus FS1 (de.holy.com, Abruf 16.10.2026). Hinweisbalken bleibt Pflicht. -->
     <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite"><img src="bilder/holy-logo-wortmarke.png" width="389" height="105" alt="HOLY"> <span>Konzept</span></a>
     <nav aria-label="Hauptnavigation">
@@ -76,8 +79,10 @@
       <!-- Maßnahme I3: zwei klare Wege statt freier Suche (Ü1, gestaltungsplan.md 6.7) -->
       <div class="knopfreihe">
         <!-- Fassung mit Bildern: Packshot der 50er-Dose im Knopf wie der Produkt-Tag im Video (✔ X01), auf heller Fläche
-             (Schlüssel web-start-tag, Abnahme D06); im Rückfall ohne Fremdbilder bleibt der Knopf ohne Bild -->
-        <a class="knopf knopf-tag" href="produkt.html" data-intern="web-start-tag" data-intern-deko><span class="knopfbild bildplatz" hidden></span>Zum Produkt aus dem Video <span class="pfeil" aria-hidden="true">→</span></a>
+             (Schlüssel web-start-tag, Abnahme D06); im Rückfall ohne Fremdbilder bleibt der Knopf ohne Bild.
+             Ziel produkt.html?packung=50: Die Produktseite wählt die 50er-Dose vor, die der Tag zeigt (Abnahme D07);
+             der Code aus der Adresse reist mit (konzept.js, ergaenzeLink) -->
+        <a class="knopf knopf-tag" href="produkt.html?packung=50" data-intern="web-start-tag" data-intern-deko><span class="knopfbild bildplatz" hidden></span>Zum Produkt aus dem Video <span class="pfeil" aria-hidden="true">→</span></a>
         <a class="knopf knopf-rand" href="koffein-check.html">Erst den Koffein-Check lesen</a>
       </div>
       <p class="meta">Für Erwachsene: laut Etikett nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag. <a href="koffein-check.html#ab-wie-viel-jahren">Mehr im Koffein-Check</a></p>
@@ -204,7 +209,7 @@
       <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
       <!-- Fassung mit Bildern: sichtbar, sobald konzept.js Bilder aus fremdbilder/ eingebaut hat; im Rückfall ohne Fremdbilder ausgeblendet -->
       <div data-nur-intern hidden>
-        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – veröffentlicht mit Freigabe, nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
+        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
         <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
         <ul class="bildnachweise" data-intern-liste></ul>
       </div>
@@ -217,8 +222,9 @@
 </footer>
 
 <!-- Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): fremdbilder/register.js setzt window.INTERN_BILDER
-     (Name aus der Zeit vor der Freigabe, bleibt aus technischen Gründen). Die Bilder sind veröffentlicht mit Freigabe
-     (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+     (Name aus der Zeit vor dem Veröffentlichungsbeschluss, bleibt aus technischen Gründen). Die Veröffentlichung der
+     Bilder hat die Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), eine Genehmigung der Rechteinhaber wurde nicht eingeholt;
+     nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
      Fehlt die Datei, zeigt die Seite den Rückfall ohne Fremdbilder (Platzhalter und eigene Zeichnungen). -->
 <script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>

@@ -381,8 +381,9 @@ html[data-thema] {
 /* 5.6 Bildkachel mit 4-px-Kontur und drei Zuständen (data-status):
    frei (Foto <img>) · offen (Platzhalter mit Hinweis) · rueckfall (eigene Grafik).
    Der Schalter ändert nur die Anzeige. Die Fremdbilder liegen versioniert in
-   fremdbilder/ (veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17); intern/
-   (ausgeschlossen) enthält nur Rohmaterial. Eigene Fotos erst nach Sichtung
+   fremdbilder/ (Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2
+   Nr. 17, keine Genehmigung der Rechteinhaber eingeholt); intern/
+   (ausgeschlossen) enthält nur Rohmaterial und zurückgehaltene Bilder. Eigene Fotos erst nach Sichtung
    durch die Gruppe veröffentlichen. */
 .p-kachel {
   box-sizing: border-box;
@@ -689,11 +690,12 @@ html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-wid
 }
 
 /* 5.23 Fassung mit Bildern (js/folien/intern-bilder.js, LIESMICH §12).
-   Die Bilder kommen aus fremdbilder/ (Liste fremdbilder/register.js, veröffentlicht
-   mit Freigabe, KI-Nachweis FS2 Nr. 17, nicht kommerziell, für die Lehrveranstaltung;
-   keine eigenen Fotos der Gruppe). Ohne register.js: Rückfall ohne Fremdbilder.
+   Die Bilder kommen aus fremdbilder/ (Liste fremdbilder/register.js; Veröffentlichung
+   von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17, keine Genehmigung der
+   Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen
+   Fotos der Gruppe). Ohne register.js: Rückfall ohne Fremdbilder.
    Namen wie data-intern, .p-intern-logo, html[data-fassung="intern"] stammen aus
-   der Zeit vor der Freigabe (bis 03.11.2026 „interne Fassung“) und bleiben.
+   der Zeit vor der Veröffentlichung (bis 03.11.2026 „interne Fassung“) und bleiben.
    • .p-bildlabel – Beschriftung IM Bild (schwarzes Band, Creme 14,48 : 1),
      nur sichtbar, wenn die Kachel ein Bild zeigt (data-status="frei").
    • .p-bildquelle – Bildnachweis der Folie, eine Zeile UNTER Quelle und Fuß;

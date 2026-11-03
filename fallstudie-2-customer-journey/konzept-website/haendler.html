@@ -27,7 +27,7 @@
 
 <header class="kopf">
   <div class="inhalt">
-    <!-- HOLY-Wortmarke: Freigabe durch Yannick am 03.11.2026 („Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
+    <!-- HOLY-Wortmarke: mit Einverständnis des Gründers (Yannick am 03.11.2026: „Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
          © HOLY Softdrinks GmbH, Datei unverändert aus FS1 (de.holy.com, Abruf 16.10.2026). Hinweisbalken bleibt Pflicht. -->
     <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite"><img src="bilder/holy-logo-wortmarke.png" width="389" height="105" alt="HOLY"> <span>Konzept</span></a>
     <nav aria-label="Hauptnavigation">
@@ -65,9 +65,11 @@
         <a class="knopf" href="squad.html">Coins holen und in den Squad (Konzept) <span class="pfeil" aria-hidden="true">→</span></a>
       </div>
       <p class="meta">Mitmachen ab 18, wie im Shop. Konzept: Der Knopf führt nur zur nächsten Konzeptseite.</p>
-      <!-- Fassung mit Bildern: Symbolbild Regal im Handel (Foto aus der Lebensmittel Zeitung, Ausschnitt, nur HOLY-Bereich;
-           kurze Unterschrift am Bild, voller Nachweis im Fuß). Steht hinter Code-Box und Knopf, damit beide bei 390 × 844
-           im ersten Bildschirm bleiben (Abnahme D06); im Rückfall ohne Fremdbilder ausgeblendet. -->
+      <!-- Fassung mit Bildern: Symbolbild Regal im Handel (Foto aus der Lebensmittel Zeitung, Urheber unbekannt; kurze
+           Unterschrift am Bild, voller Nachweis im Fuß). Ausschnitt seit D08 enger (Abnahme D07): nur der HOLY-Regalbereich –
+           die Dosen anderer Marken (u. a. Red Bull), die im alten Ausschnitt am unteren und rechten Rand standen, sind
+           weggeschnitten (Rohbild und Maße in fremdbilder/register.js). Steht hinter Code-Box und Knopf, damit beide bei
+           390 × 844 im ersten Bildschirm bleiben (Abnahme D06); im Rückfall ohne Fremdbilder ausgeblendet. -->
       <figure class="heldbild banner" data-intern="web-haendler-regal" hidden>
         <span class="foto bildplatz"></span>
         <figcaption class="bildnachweis" data-intern-nachweis></figcaption>
@@ -79,7 +81,7 @@
     <!-- Ablaufskizze „Regal → QR → Registrierung → Vorteil“ (Dossier 7a.7), eigene Zeichnung; QR nicht scanbar -->
     <section class="abschnitt" aria-labelledby="h-ablauf">
       <h2 id="h-ablauf">So einfach geht's</h2>
-      <div class="siegel" style="grid-template-columns:96px 1fr; align-items:start">
+      <div class="siegel" style="grid-template-columns:96px minmax(0, 1fr); align-items:start">
         <svg viewBox="0 0 96 96" role="img" aria-label="Platzhalter für einen QR-Code, nicht scanbar" style="width:96px;height:96px">
           <rect x="3" y="3" width="90" height="90" rx="6" fill="#FBF7EF" stroke="#1D1D1B" stroke-width="3"/>
           <rect x="12" y="12" width="22" height="22" fill="none" stroke="#1D1D1B" stroke-width="5"/>
@@ -151,7 +153,7 @@
       <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
       <!-- Fassung mit Bildern: sichtbar, sobald konzept.js Bilder aus fremdbilder/ eingebaut hat; im Rückfall ohne Fremdbilder ausgeblendet -->
       <div data-nur-intern hidden>
-        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – veröffentlicht mit Freigabe, nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
+        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
         <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
         <ul class="bildnachweise" data-intern-liste></ul>
       </div>
@@ -164,8 +166,9 @@
 </footer>
 
 <!-- Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): fremdbilder/register.js setzt window.INTERN_BILDER
-     (Name aus der Zeit vor der Freigabe, bleibt aus technischen Gründen). Die Bilder sind veröffentlicht mit Freigabe
-     (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+     (Name aus der Zeit vor dem Veröffentlichungsbeschluss, bleibt aus technischen Gründen). Die Veröffentlichung der
+     Bilder hat die Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), eine Genehmigung der Rechteinhaber wurde nicht eingeholt;
+     nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
      Fehlt die Datei, zeigt die Seite den Rückfall ohne Fremdbilder (Platzhalter und eigene Zeichnungen). -->
 <script src="fremdbilder/register.js"></script>
 <script src="assets/konzept.js"></script>

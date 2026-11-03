@@ -1,14 +1,17 @@
 // Bildschirmfotos der Konzept-Webseite für Folie 08 der Präsentation: 390 × 844, je Seite der Ausschnitt, den die
 // Anmerkung auf der Folie beschreibt. Rahmen 3–5 zeigen durchgehend Marcos 50er-Dose (Persona: 50er-Pulverdose auf
-// Vorrat): Produktseite mit gewählter 50er-Dose ab „Packung wählen“, Warenkorb und Danke-Seite mit ?packung=50
-// (Danke-Seite ab „So geht's weiter“). So passen Bild und Anmerkungszeile zusammen (Abnahme D06).
+// Vorrat): Produktseite mit ?packung=50 (vorgewählte 50er-Dose, wie nach dem Knopf der Startseite) ab „Packung wählen“,
+// Warenkorb und Danke-Seite mit ?packung=50 (Danke-Seite ab „So geht's weiter“). So passen Bild und Anmerkungszeile
+// zusammen (Abnahme D06, D07).
 //
 // Aufruf (im Repository, PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core oder eigener Pfad):
-//   mit --intern: Fassung mit Bildern (Standard der Webseite; der Schaltername stammt aus der Zeit vor der Freigabe)
+//   mit --intern: Fassung mit Bildern (Standard der Webseite; der Schaltername stammt aus der Zeit vor dem
+//                Veröffentlichungsbeschluss)
 //                node fallstudie-2-customer-journey/konzept-website/werkzeuge/folie08-bilder.mjs --intern
 //                → fallstudie-2-customer-journey/praesentation/fremdbilder/konzept-0n-….png (versioniert)
-//                  mit den Fremdbildern aus konzept-website/fremdbilder/, veröffentlicht mit Freigabe (KI-Nachweis FS2
-//                  Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+//                  mit den Fremdbildern aus konzept-website/fremdbilder/; Veröffentlichung von der Gruppe beschlossen
+//                  (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die
+//                  Lehrveranstaltung; keine eigenen Fotos der Gruppe.
 //   ohne Schalter: Rückfall ohne Fremdbilder (Anfragen nach konzept-website/fremdbilder/ gesperrt, eigene Zeichnungen
 //                und Platzhalter) für die Rückfall-Kacheln der Präsentation
 //                node fallstudie-2-customer-journey/konzept-website/werkzeuge/folie08-bilder.mjs
@@ -30,8 +33,9 @@ const MIT_BILDERN = args.includes('--intern');                     // Name des S
 const zielArg = args.find((a) => !a.startsWith('--'));
 const ziel = path.resolve(zielArg || (MIT_BILDERN ? path.join(PRAESENTATION, 'fremdbilder') : path.join(PRAESENTATION, 'bilder')));
 
-// Sicherung: Der Rückfall gehört in einen versionierten Ordner außerhalb von intern/ (seit der Freigabe KI-Nachweis
-// FS2 Nr. 17 sind auch die Bilder mit Fremdbildern veröffentlicht, für sie gibt es keinen Zwang zu einem bestimmten Ordner)
+// Sicherung: Der Rückfall gehört in einen versionierten Ordner außerhalb von intern/ (seit dem Veröffentlichungsbeschluss
+// der Gruppe, KI-Nachweis FS2 Nr. 17, sind auch die Bilder mit Fremdbildern veröffentlicht, für sie gibt es keinen Zwang
+// zu einem bestimmten Ordner)
 const ignoriert = spawnSync('git', ['check-ignore', '-q', path.join(ziel, 'konzept-01-landingpage.png')], { cwd: WEBSEITE }).status === 0;
 if (!MIT_BILDERN && (ignoriert || /[\\/]intern([\\/]|$)/.test(ziel))) { console.error('Abbruch: Der Rückfall ohne Fremdbilder gehört nicht nach ' + ziel + ' (ausgeschlossen oder unter intern/).'); process.exit(2); }
 if (MIT_BILDERN && !fs.existsSync(path.join(WEBSEITE, 'fremdbilder', 'register.js'))) { console.error('Abbruch: konzept-website/fremdbilder/register.js fehlt – ohne Register gibt es keine Fassung mit Bildern.'); process.exit(2); }
@@ -41,7 +45,7 @@ fs.mkdirSync(ziel, { recursive: true });
 const liste = [
   ['index.html', '', null, 'konzept-01-landingpage.png'],
   ['koffein-check.html', '', null, 'konzept-02-koffein-check.png'],
-  ['produkt.html', '', '#packung-titel', 'konzept-03-produktseite.png'],
+  ['produkt.html', '?packung=50', '#packung-titel', 'konzept-03-produktseite.png'],
   ['warenkorb.html', '?packung=50', null, 'konzept-04-warenkorb.png'],
   ['danke.html', '?packung=50', '#h-weiter', 'konzept-05-danke.png'],
 ];
@@ -58,8 +62,11 @@ await p.route('**/*', (r) => {
 for (const [datei, query, anker, name] of liste) {
   await p.goto(pathToFileURL(path.join(WEBSEITE, datei)).href + query);
   await p.evaluate(() => document.fonts.ready);
-  // Produktseite: Marcos Vorratsdose (Persona: 50er-Dose auf Vorrat) wählen
-  if (datei === 'produkt.html') await p.click('.option[data-packung="50"]');
+  // Produktseite: Marcos Vorratsdose (Persona: 50er-Dose auf Vorrat) ist über ?packung=50 vorgewählt (Abnahme D07)
+  if (datei === 'produkt.html') {
+    const gewaehlt = await p.evaluate(() => Array.from(document.querySelectorAll('.option[aria-checked="true"]')).map((o) => o.getAttribute('data-packung')).join());
+    if (gewaehlt !== '50') fehler.push(datei + query + ': vorgewählt ist „' + gewaehlt + '“ statt 50');
+  }
   // alle Bilder laden (lazy → eager), damit nichts halb geladen im Bildschirmfoto steht
   const nichtGeladen = await p.evaluate(async () => {
     const imgs = Array.from(document.images);
@@ -73,7 +80,7 @@ for (const [datei, query, anker, name] of liste) {
   if (!MIT_BILDERN && fremdBilder) fehler.push(datei + ': Fremdbilder im Rückfall');
   if (MIT_BILDERN && !fremdBilder) fehler.push(datei + ': keine Fremdbilder in der Fassung mit Bildern');
   // Warenkorb und Danke-Seite: wirklich die 50er-Dose (Posten, Preis und Shaker so, wie die Seite sie selbst berechnet)
-  if (query.includes('packung=50')) {
+  if (query.includes('packung=50') && datei !== 'produkt.html') {
     const k = await p.evaluate(() => ({ name: (document.querySelector('[data-k-name]') || {}).textContent || '', gesamt: (document.querySelector('[data-k-gesamt]') || {}).textContent || '', coins: (document.querySelector('[data-k-coins]') || {}).textContent || '', shaker: (document.querySelector('.schritt-zeile[data-intern]') || { getAttribute: () => null }).getAttribute('data-intern-aktiv') }));
     if (datei === 'warenkorb.html' && !/50 Portionen/.test(k.name)) fehler.push(datei + ': Posten ist nicht die 50er-Dose (' + k.name + ')');
     if (MIT_BILDERN && datei === 'danke.html' && k.shaker !== 'web-danke-shaker-50') fehler.push(datei + ': Shaker-Bild ' + k.shaker + ' statt web-danke-shaker-50');

@@ -4,15 +4,19 @@
    - liest nur Parameter aus der Adresse:
        ?code=…          Creator-Code aus dem Video; nur Beispielcodes aus BEISPIELCODES, alles andere wird ignoriert
                         (öffentliche Seite: niemand soll beliebige „Codes“ in die Seite schreiben können, Abnahme D05)
-       ?packung=…       set | 1 | 10 | 50 (Produktseite → Warenkorb → Danke-Seite)
+       ?packung=…       set | 1 | 10 | 50 (Produktseite → Warenkorb → Danke-Seite); die Produktseite übernimmt den Wert als
+                        Startpackung (Knopf der Startseite: produkt.html?packung=50), ungültige Werte → Starter Set
+       ?nachkauf=1      Nachkauf von squad.html: Warenkorb und Danke-Seite ohne Shaker-Hinweis und Shaker-Bild bei der
+                        50er-Dose (Shaker nur zur ersten Dose, ✔ T22); reist mit packung über Warenkorb → Danke-Seite
        ?anmerkungen=1   Präsentationsmodus: nummerierte Anmerkungs-Marker „was wir ändern und warum“
    - reicht code und anmerkungen an alle internen Links weiter, damit die Strecke im Vortrag durchklickbar bleibt
    - Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): fremdbilder/register.js setzt
      window.INTERN_BILDER; Elemente mit data-intern="schlüssel" bekommen ein Bild aus fremdbilder/ samt Bildnachweis.
-     Die Bilder sind veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung;
-     keine eigenen Fotos der Gruppe. Fehlt register.js, bleibt der Rückfall ohne Fremdbilder: Platzhalter und eigene
-     Zeichnungen (Abschnitt „Fremdbilder“). Die Namen INTERN_BILDER, data-intern*, intern-bild stammen aus der Zeit vor
-     der Freigabe und bleiben aus technischen Gründen.
+     Die Veröffentlichung der Bilder hat die Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), eine Genehmigung der
+     Rechteinhaber wurde nicht eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+     Fehlt register.js, bleibt der Rückfall ohne Fremdbilder: Platzhalter und eigene Zeichnungen (Abschnitt
+     „Fremdbilder“). Die Namen INTERN_BILDER, data-intern*, data-nur-intern, data-nur-oeffentlich, intern-bild stammen aus
+     der Zeit vor dem Veröffentlichungsbeschluss und bleiben aus technischen Gründen.
    Daten: Preise und Mengen aus dem Recherche-Dossier FS2 (Befund-IDs in den Kommentaren), alles andere Beispielwert.
    ========================================================================== */
 (function () {
@@ -20,6 +24,8 @@
 
   var params = new URLSearchParams(window.location.search);
   var ANMERKUNGEN = params.get('anmerkungen') === '1';
+  /* Nachkauf (Link von squad.html, Abnahme D07): Der Gratis-Shaker kommt nur zur ersten Dose (✔ T22) */
+  var NACHKAUF = params.get('nachkauf') === '1';
   /* Nur diese Beispielcodes werden aus der Adresse übernommen (keine echten HOLY-Codes) */
   var BEISPIELCODES = ['CREATOR10', 'MARCO10'];
   var codeAusAdresse = bereinigeCode(params.get('code'));
@@ -36,16 +42,17 @@
   /* Packungen. Preise: HOLY-Shop, abgerufen 30.10.2026 – ✔ B09 (1, 10, 50 Portionen Raspberry Raptor),
      ✔ T20 (Starter Set: 24,99 €, 14 Drinks, mit Shaker und Gratisversand). Portion = 7 g (Etikett, ✔ S92).
      Grundpreis (✔ R98) gerechnet aus 7 g je Portion; Nettofüllmenge vor Veröffentlichung am Etikett prüfen.
-     shaker: ob die Seite für diese Packung einen Shaker nennt – Starter Set „14 Drinks + Shaker“ (✔ T20), 50er-Dose
-     „Shaker gratis zur ersten Dose“ (✔ T22: „Einen kostenlosen Shaker beim Kauf deiner ersten Dose“; Shop-Variante
-     „50 Portionen mit gratis Shaker“, Quelle in fremdbilder/register.js). 10 Portionen sind eine Sachet-Box (Packshot der
-     Shop-Variante „10 Portionen“, Quelle web-packung-10 in fremdbilder/register.js), für sie und 1 Portion nennt die Seite
-     keinen Shaker. Danach richten sich Bild und Überschrift „Shaker auspacken“ auf der Danke-Seite. */
+     shaker: ob die Seite für diese Packung einen Shaker nennt – Starter Set „14 Drinks + Shaker“ (✔ T20; gehört zum Set →
+     true), 50er-Dose „Shaker gratis zur ersten Dose“ (✔ T22: „Einen kostenlosen Shaker beim Kauf deiner ersten Dose“;
+     Shop-Variante „50 Portionen mit gratis Shaker“, Quelle in fremdbilder/register.js → 'erste Dose', beim Nachkauf
+     also nicht). 10 Portionen sind eine Sachet-Box (Packshot der Shop-Variante „10 Portionen“, Quelle web-packung-10 in
+     fremdbilder/register.js), für sie und 1 Portion nennt die Seite keinen Shaker. Danach richten sich Bild und
+     Überschrift „Shaker auspacken“ auf der Danke-Seite und der Zusatz im Warenkorb (zusatzNachkauf). */
   var PACKUNGEN = {
     set: { name: 'Starter Set Energy', zusatz: '14 Drinks + Shaker, Gratisversand', preis: 24.99, portionen: 14, gramm: null, versandfrei: true, einheit: 'Drink', shaker: true },
     '1': { name: 'Raspberry Raptor · 1 Portion', zusatz: 'zum Probieren', preis: 1.99, portionen: 1, gramm: 7, versandfrei: false, einheit: 'Portion', shaker: false },
     '10': { name: 'Raspberry Raptor · 10 Portionen', zusatz: 'Sachet-Box', preis: 12.49, portionen: 10, gramm: 70, versandfrei: false, einheit: 'Portion', shaker: false },
-    '50': { name: 'Raspberry Raptor · 50 Portionen', zusatz: 'Vorratsdose, Shaker gratis zur ersten Dose', preis: 39.99, portionen: 50, gramm: 350, versandfrei: false, einheit: 'Portion', shaker: true }
+    '50': { name: 'Raspberry Raptor · 50 Portionen', zusatz: 'Vorratsdose, Shaker gratis zur ersten Dose', zusatzNachkauf: 'Vorratsdose, Nachkauf', preis: 39.99, portionen: 50, gramm: 350, versandfrei: false, einheit: 'Portion', shaker: 'erste Dose' }
   };
   /* Versand DE: 4,99 €, versandkostenfrei ab 49 € (✔ B12) */
   var VERSAND = 4.99;
@@ -74,6 +81,11 @@
   function grundText(d) {
     return d.gramm ? 'Grundpreis ' + euro(runde(d.preis / (d.gramm / 1000))) + ' / kg (aus 7 g je Portion gerechnet)' : 'Grundpreis offen: Füllmenge des Sets noch nicht belegt';
   }
+  /* Shaker dabei? Beim Starter Set immer, bei der 50er-Dose nur zur ersten Dose – nicht beim Nachkauf */
+  function shakerDabei(p) {
+    var x = PACKUNGEN[p];
+    return !!x.shaker && !(NACHKAUF && x.shaker === 'erste Dose');
+  }
   function versandFuer(p, zwischensumme) {
     if (PACKUNGEN[p].versandfrei) return 0;
     return zwischensumme >= VERSANDFREI_AB ? 0 : VERSAND;
@@ -83,8 +95,11 @@
   setzeText('[data-code]', CODE);
   document.querySelectorAll('[data-nur-beispielcode]').forEach(function (el) { el.hidden = !!codeAusAdresse; });
   document.querySelectorAll('[data-nur-creatorcode]').forEach(function (el) { el.hidden = !codeAusAdresse; });
+  /* Nachkauf (?nachkauf=1, Link von squad.html): Marco ist schon im Squad – Erstkäufer-Texte aus, Nachkauf-Texte an */
+  document.querySelectorAll('[data-nur-erstkauf]').forEach(function (el) { el.hidden = NACHKAUF; });
+  document.querySelectorAll('[data-nur-nachkauf]').forEach(function (el) { el.hidden = !NACHKAUF; });
 
-  /* ---------- Interne Links: code, anmerkungen (und wo markiert: packung) weiterreichen ---------- */
+  /* ---------- Interne Links: code, anmerkungen (und wo markiert: packung, beim Nachkauf auch nachkauf) weiterreichen ---------- */
   function ergaenzeLink(a, extra) {
     var href = a.getAttribute('href');
     if (!href || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(href)) return;
@@ -104,16 +119,29 @@
     a.setAttribute('href', pfad + (qs ? '?' + qs : '') + hash);
   }
   document.querySelectorAll('a[href]').forEach(function (a) {
-    ergaenzeLink(a, a.hasAttribute('data-mit-packung') ? { packung: packungAusAdresse() } : null);
+    var extra = null;
+    if (a.hasAttribute('data-ohne-anmerkungen')) {
+      /* Umschalter „Anmerkungen ein-/ausblenden“: dieselbe Seite mit gleicher Packung und gleichem Nachkauf (Abnahme D08) */
+      extra = {};
+      if (Object.prototype.hasOwnProperty.call(PACKUNGEN, params.get('packung'))) extra.packung = params.get('packung');
+      if (NACHKAUF) extra.nachkauf = '1';
+    } else if (a.hasAttribute('data-mit-packung')) {
+      extra = { packung: packungAusAdresse() };
+      if (NACHKAUF) extra.nachkauf = '1';                 /* Warenkorb → Danke-Seite: Nachkauf bleibt Nachkauf */
+    }
+    ergaenzeLink(a, extra);
   });
 
-  /* ---------- Fremdbilder (Fassung mit Bildern, veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17) ----------
+  /* ---------- Fremdbilder (Fassung mit Bildern; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17,
+     keine Genehmigung der Rechteinhaber eingeholt) ----------
      fremdbilder/register.js setzt window.INTERN_BILDER = { schlüssel: { datei, alt, nachweis, unterschrift, motiv, pixel, … } }.
      Bildplatz = Element mit data-intern="schlüssel" („{packung}“ wird durch die Packung aus der Adresse ersetzt; gibt es
      den Schlüssel für diese Packung nicht, bleibt der Platz ausgeblendet).
      Das Bild kommt in das Kind .bildplatz (sonst in den Bildplatz selbst); Bildplatz, .bildplatz und Vorfahren mit
      data-intern-gruppe verlieren dabei ihr hidden, der Bildplatz bekommt .mit-bild (CSS blendet .nur-ohne-bild aus).
      data-intern-deko: alt="" (Bild in einem Knopf oder Link, dessen Text dasselbe sagt).
+     data-intern-nur-mit-shaker: Platz bleibt leer, wenn die Packung laut Seite keinen Shaker enthält (shakerDabei,
+     z. B. beim Nachkauf der 50er-Dose).
      [data-intern-nachweis] im Bildplatz zeigt die kurze Bildunterschrift (unterschrift, sonst nachweis); im Fuß stehen
      alle Nachweise der Seite mit Motiv davor, gleiche Nachweise zusammengefasst ([data-nur-intern], [data-intern-liste]).
      Lädt ein Bild nicht, wird alles zurückgesetzt: Platzhalter statt kaputtem Bild-Symbol. Ohne fremdbilder/register.js
@@ -153,6 +181,9 @@
     });
     var an = gruppen.length > 0;
     document.documentElement.classList.toggle('intern-bilder', an);
+    /* data-nur-intern: nur in der Fassung mit Bildern sichtbar (Bildnachweise im Fuß);
+       data-nur-oeffentlich (historischer Name aus der Zeit vor dem Veröffentlichungsbeschluss, „öffentlich“ hieß damals
+       die Fassung ohne Fremdbilder): heute nur im Rückfall ohne Fremdbilder sichtbar („Keine HOLY-Fotos …“) */
     document.querySelectorAll('[data-nur-intern]').forEach(function (el) { el.hidden = !an; });
     document.querySelectorAll('[data-nur-oeffentlich]').forEach(function (el) { el.hidden = an; });
     document.querySelectorAll('[data-intern-liste]').forEach(function (ul) {
@@ -170,6 +201,7 @@
     var schluessel = platz.getAttribute('data-intern').replace('{packung}', packungAusAdresse());
     var e = bildEintrag(schluessel);
     if (!e) return;
+    if (platz.hasAttribute('data-intern-nur-mit-shaker') && !shakerDabei(packungAusAdresse())) return;
     var ziel = platz.querySelector('.bildplatz') || platz;
     var vorher = { platz: platz.hidden, ziel: ziel.hidden };
     var gruppen = [];
@@ -280,7 +312,11 @@
         if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); var v = liste[(i - 1 + liste.length) % liste.length]; v.focus(); v.click(); }
       });
     });
-    var start = document.querySelector('.option[aria-checked="true"]');
+    /* Startpackung aus ?packung= (nur set, 50, 10, 1 – z. B. Knopf mit dem Produkt-Tag der 50er-Dose auf der Startseite:
+       produkt.html?packung=50, Abnahme D07); sonst die im HTML vorgewählte (Starter Set) */
+    var ausAdresse = params.get('packung');
+    var start = Object.prototype.hasOwnProperty.call(PACKUNGEN, ausAdresse) ? document.querySelector('.option[data-packung="' + ausAdresse + '"]') : null;
+    if (!start) start = document.querySelector('.option[aria-checked="true"]');
     waehle(start ? start.getAttribute('data-packung') : 'set');
   }
 
@@ -297,7 +333,8 @@
   var korb = document.querySelector('[data-warenkorb]');
   if (korb) {
     setzeText('[data-k-name]', d.name);
-    setzeText('[data-k-zusatz]', d.zusatz + ' · ' + euro(runde(d.preis / d.portionen)) + ' je ' + d.einheit);
+    /* beim Nachkauf der 50er-Dose ohne „Shaker gratis zur ersten Dose“ (✔ T22) */
+    setzeText('[data-k-zusatz]', (d.zusatzNachkauf && !shakerDabei(p) ? d.zusatzNachkauf : d.zusatz) + ' · ' + euro(runde(d.preis / d.portionen)) + ' je ' + d.einheit);
     setzeText('[data-k-preis]', euro(d.preis));
     setzeText('[data-k-grund]', grundText(d));
     setzeText('[data-k-rabatt]', '− ' + euro(rabatt));
@@ -307,9 +344,10 @@
     document.querySelectorAll('[data-k-nur-dose]').forEach(function (el) { el.hidden = (p === 'set'); });
   }
   setzeText('[data-liefertag]', datum(LIEFERTAG));
-  /* Danke-Seite: „Shaker auspacken“ nur, wenn die Packung laut dieser Seite einen Shaker enthält (PACKUNGEN.shaker);
-     das Shaker-Bild hängt am Schlüssel web-danke-shaker-{packung} und fehlt für 10 und 1 Portion(en) */
-  setzeText('[data-k-shaker-titel]', d.shaker ? 'Shaker auspacken, loslegen' : 'Auspacken, loslegen');
+  /* Danke-Seite: „Shaker auspacken“ nur, wenn die Packung laut dieser Seite einen Shaker enthält (shakerDabei);
+     das Shaker-Bild hängt am Schlüssel web-danke-shaker-{packung} und fehlt für 10 und 1 Portion(en) sowie beim
+     Nachkauf der 50er-Dose (data-intern-nur-mit-shaker) */
+  setzeText('[data-k-shaker-titel]', shakerDabei(p) ? 'Shaker auspacken, loslegen' : 'Auspacken, loslegen');
 
   /* ---------- Danke-Seite: Nachfüll-Erinnerung (Opt-in-Konzept, rechnet nur im Browser) ---------- */
   var erinnerung = document.querySelector('[data-erinnerung]');

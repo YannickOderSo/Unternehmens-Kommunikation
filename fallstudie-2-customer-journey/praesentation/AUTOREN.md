@@ -14,7 +14,7 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | Inhalt / Meta | Inhalt ≥ 28 px; Herleitung 24 px, Quelle und Fußhinweis 22 px, je **eine** Zeile, mit `data-meta` |
 | Farben | nur Tokens aus `pfad.css` (`--p-…`); **Gelb nie als Schrift oder konturlose Linie auf Creme**; auf Gelb nur Schwarz und Schiefer (3.3) |
 | Fakten | nur mit Befund-ID und Status aus dem Dossier; keine Zahl ohne Quelle; eigene Daten erst nach Erhebung, bis dahin „offen: …“ |
-| Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (Freigabe 03.11.2026); Fremdbilder (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder) nur über `fremdbilder/register.js` und `data-intern`, je Folie mit Bildnachweis-Zeile – veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Eigene Fotos zuerst nach `intern/` (ausgeschlossen), veröffentlichen erst nach Sichtung durch die Gruppe (Abschnitt 10; Plan 4, 11.5) |
+| Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (mit Einverständnis, KI-Nachweis FS2 Nr. 12, 03.11.2026); Fremdbilder (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder) nur über `fremdbilder/register.js` und `data-intern`, je Folie mit Bildnachweis-Zeile – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Fremdbilder ohne Verwendung auf einer Folie nicht veröffentlichen (nach `intern/`); keine Namen von Privatpersonen im Nachweis. Eigene Fotos zuerst nach `intern/` (ausgeschlossen), veröffentlichen erst nach Sichtung durch die Gruppe (Abschnitt 10; Plan 4, 11.5) |
 | Video | nur `video/gruender-video.mp4` auf 09, per Pfad (`data-quelle`); veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2 Nr. 18); keine KI-Transkription, keine Zitate aus dem Video |
 | Was es nicht gibt | Karten, Pillen, Kicker, Mini-Steuerrad, Sticker, weiche Schatten, Live-Abstimmung, `iframe`, eigenes `data-modus` an einer Folie (3.7) |
 | Sprache, Anrede | Deutsch, Publikum gesiezt; keine Modellbezeichnungen in Dateien |
@@ -42,7 +42,7 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | `data-buendel` | Sprechblock A (01–03), B (04–06), C (07–09) nach Plan 9.3 – **keine Personen**; Backup `alle` |
 | `data-zeit` | Sollzeit in s (Summe 710 s); Backup `0` |
 | Bildkachel `data-status` | `offen` · `frei` · `rueckfall` · `aus` (Zusatzbild nur in der Fassung mit Bildern; seit D07 nicht verwendet) (LIESMICH §7) |
-| `data-intern` | Schlüssel in `fremdbilder/register.js`; `data-intern-optional` = Fehlen erlaubt (Abschnitt 10). Name aus der Zeit vor der Freigabe, bleibt |
+| `data-intern` | Schlüssel in `fremdbilder/register.js`; `data-intern-optional` = Fehlen erlaubt (Abschnitt 10). Name aus der Zeit vor der Veröffentlichung, bleibt |
 | `data-dx` | waagerechte Verschiebung einer Kachel im Journey-Raster in px (Folie 04: K6 −20) |
 
 `data-feld="leer"`, `data-layout="leer"` und `data-laufkopf="aus"` schalten Kopfzeile und Mini-Steuerrad der Engine
@@ -149,11 +149,11 @@ und die Präsentation muss gut aussehen rechte sind nicht wichtig wir nutzen es 
 privat in der uni“. Umsetzung KI-gestützt im Workflow D06 (Schritt „Einbau Präsentation“), Bedienung: LIESMICH §12,
 Herkunft: QUELLEN §4a. **Verlauf:** bis 03.11.2026 lagen die Bilder als „interne Fassung“ im ausgeschlossenen Ordner
 `intern/`. Danach hat Yannick die Veröffentlichung erlaubt (KI-Nachweis FS2 Nr. 17; Video: Zustimmung des Gründers über
-Yannick, Nr. 18). Seitdem liegen die Bilder versioniert in `fremdbilder/` (Liste `fremdbilder/register.js`), das Video
+Yannick, Nr. 18). Eine Genehmigung der Rechteinhaber für die Fremdbilder wurde nicht eingeholt (Gestaltungsplan 1.2, 4). Seitdem liegen die Bilder versioniert in `fremdbilder/` (Liste `fremdbilder/register.js`), das Video
 in `video/gruender-video.mp4` – nicht kommerziell, für die Lehrveranstaltung; `intern/` enthält nur noch Rohmaterial.
 **Begriffe:** „Fassung mit Bildern“ = Standard (Repository, GitHub Pages, Hörsaal); „Rückfall ohne Fremdbilder“ = nur,
 wenn `fremdbilder/register.js` fehlt oder per Schalter (`?kacheln=rueckfall`, `pruefen.mjs --oeffentlich`).
-**Namen aus der Zeit vor der Freigabe** bleiben aus technischen Gründen: `window.INTERN_BILDER`, `data-intern*`,
+**Namen aus der Zeit vor der Veröffentlichung** bleiben aus technischen Gründen: `window.INTERN_BILDER`, `data-intern*`,
 `.p-intern-logo`, `js/folien/intern-bilder.js`, `html[data-fassung="intern"]` (Werte `oeffentlich`,
 `oeffentlich-ansicht` = Rückfall), `--oeffentlich`, Berichtsteil `interneBilder`. Die Tabellen unten beschreiben den
 Stand von D06; Änderungen aus D07 stehen in Abschnitt 11.
@@ -199,9 +199,9 @@ ohne Bild; Sichtung der Bilder durch die Gruppe (Kontaktbogen `intern/kontaktbog
 
 ## 11. Veröffentlichung und Abnahme-Befunde (03.11.2026, D07)
 
-Auftrag aus dem Workflow nach den Freigaben Nr. 17 (Bilder) und Nr. 18 (Video): Begriffe in Kommentaren, Texten und
+Auftrag aus dem Workflow nach den Entscheidungen Nr. 17 (Bilder, Beschluss der Gruppe) und Nr. 18 (Video, Zustimmung des Gründers): Begriffe in Kommentaren, Texten und
 Doku umstellen („Fassung mit Bildern“, „Rückfall ohne Fremdbilder“, „veröffentlicht mit Freigabe … nicht kommerziell,
-für die Lehrveranstaltung; keine eigenen Fotos der Gruppe“) und die Befunde der Abnahme D06 umsetzen. KI-gestützt;
+für die Lehrveranstaltung; keine eigenen Fotos der Gruppe“ – seit D08 präzisiert, Abschnitt 12) und die Befunde der Abnahme D06 umsetzen. KI-gestützt;
 Klicks (23), Sollzeiten (710 s) unverändert, Sprechtext nur auf 04 geändert.
 
 | Folie | Änderung (Befund) |
@@ -210,13 +210,46 @@ Klicks (23), Sollzeiten (710 s) unverändert, Sprechtext nur auf 04 geändert.
 | 03 | Blog-Kachel: Beschriftung „Blog: 0 Beiträge“ (✔ M01, ✔ L39), neuer Ausschnitt `m03-blog` (Desktop), damit die Beschriftung über dem Knopf statt über dem Satz liegt; `m03-dose-shaker` neu gesetzt (Produkt oben rechts); „Tipp unter Kollegen“ (Klasse `e3-k--tipp`) in der Fassung mit Bildern Creme mit gestricheltem 3-px-Rand wie die Leerstelle auf 04; Notiz „Der Blog ist leer (0 Beiträge …)“ |
 | 04 | Sprechtext Klick 1: „Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“ (+1 Wort); Bildquellzeile „Community-Foto HOLY (Symbolbild, nicht Marco)“ |
 | 05 | K6 ohne Beschriftung „Squad“ (verdeckte die Überschrift des Bildes); Bildquellzeile wie 04 |
-| 07 | nur noch Logos: die sechs `figure.e7-bild` (144 × 81) entfernt, CSS dazu entfernt; Logos einfarbig #1D1D1B in doppelter Anzeigehöhe, Höhe je Logo im CSS (YouTube 26, Apple 30, zooplus 28, OTTO 24, Philips 22, Pampers 34 px), im Modus dunkel `filter: invert(1)` statt heller Platte; zooplus aus der weißen Fassung ohne grünen Kasten. B6 geprüft: neben der Tabelle kein Platz für sechs Bilder ≥ 360 × 203 → nicht eingebaut. `v07-otto` neu als Textausschnitt (`v07-otto.png`, `v07-otto.jpg` gelöscht). Bildquellzeile „Logos: … · einfarbig, nur zur Kennzeichnung der Vorbilder · Abruf 03.11.2026“ |
-| 08 | Kasten, Bildquellzeile und Notiz auf `fremdbilder/` und die Veröffentlichung umgestellt (Notiz: Konzept-Webseite seit 03.11. über GitHub Pages erreichbar, Wortmarke und Produktbilder mit Freigabe) |
-| 09 | Rückfall-Text „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“; Kasten und `09-fazit.js`: Quelle `video/gruender-video.mp4`, veröffentlicht (Nr. 18); Bildquellzeile wie 04 |
-| B1, B8 | B1-Notiz: eigene Fotos zuerst nach `intern/`, veröffentlichen nach Sichtung; B8: Bilder und Video veröffentlicht mit Freigabe (Nr. 17, 18), Kernsatz der Notiz entsprechend (Backup, ohne Sollzeit) |
+| 07 | nur noch Logos: die sechs `figure.e7-bild` (144 × 81) entfernt, CSS dazu entfernt; Logos einfarbig #1D1D1B in doppelter Anzeigehöhe, Höhe je Logo im CSS (YouTube 26, Apple 30, zooplus 28, OTTO 24, Philips 22, Pampers 34 px), im Modus dunkel `filter: invert(1)` statt heller Platte; zooplus aus der weißen Fassung ohne grünen Kasten. B6 geprüft: neben der Tabelle kein Platz für sechs Bilder ≥ 360 × 203 → nicht eingebaut (seit D08 zurückgehalten, nicht veröffentlicht, Abschnitt 12). `v07-otto` neu als Textausschnitt (`v07-otto.png`, `v07-otto.jpg` gelöscht). Bildquellzeile „Logos: … · einfarbig, nur zur Kennzeichnung der Vorbilder · Abruf 03.11.2026“ |
+| 08 | Kasten, Bildquellzeile und Notiz auf `fremdbilder/` und die Veröffentlichung umgestellt (Notiz: Konzept-Webseite seit 03.11. über GitHub Pages erreichbar, Wortmarke mit Einverständnis, Produktbilder veröffentlicht – seit D08 präzisiert: Beschluss der Gruppe, keine Genehmigung von HOLY eingeholt) |
+| 09 | Rückfall-Text „Videobotschaft des Gründers – in der Web-Präsentation auf Folie 09“ (seit D08 zwei Texte, Abschnitt 12); Kasten und `09-fazit.js`: Quelle `video/gruender-video.mp4`, veröffentlicht (Nr. 18); Bildquellzeile wie 04 |
+| B1, B8 | B1-Notiz: eigene Fotos zuerst nach `intern/`, veröffentlichen nach Sichtung; B8: Bilder und Video veröffentlicht (Nr. 17, 18), Kernsatz der Notiz entsprechend (Backup, ohne Sollzeit; seit D08 Rechtestatus genau, Abschnitt 12) |
 
 **Prüfstand D07:** Fassung mit Bildern hell und dunkel `--schritte` je 0 Fehler, 17 Warnungen, 38 Fremdbilder
 eingesetzt; Rückfall `--oeffentlich --schritte --druck` 0 Fehler, 17 Warnungen, PDF 18 Seiten. Funktionstest 09 mit
 synthetischem WebM (Route): Video startet mit Klick 1 mit Ton, kein Rahmen; ohne Route (Test-Chromium ohne H.264) und
 mit `?aufnahme` der Rahmen mit neuem Text. Sichtprüfung der Endzustände 02, 03, 04, 05, 07, 09 und B8 hell sowie 02, 03,
 07, 09 dunkel und 03 im Rückfall.
+
+## 12. Befunde der Abnahme D07 (03.11.2026, D08)
+
+Auftrag aus dem Workflow: Befunde P1–P11 der Abnahme D07 prüfen und umsetzen, KI-gestützt; Klicks (23), Sollzeiten
+(710 s) und Sprechtexte 01–09 unverändert. **Rechtestatus** (so überall formuliert, keine Rechtsberatung): Fremdbilder –
+Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt;
+HOLY-Logo mit Einverständnis (Nr. 12); Videobotschaft mit Zustimmung des Gründers, auch öffentlich online (Nr. 18);
+nicht kommerziell, für die Lehrveranstaltung, mit Bildnachweis. „Mit Freigabe“ allein steht nicht mehr bei Fremdbildern.
+
+| Folie / Datei | Änderung (Befund) |
+|---|---|
+| `../gestaltungsplan.md` | Abweichung ehrlich vermerkt: 1.2 (Social-Media-Bilder, HOLY-Produktfotos, Repository), 4 (Einleitung, Ablage, b05, b08, b14, b21, v01), 0 Nr. 4, R3, 7.3, 7.4, 9.5, 11.2 (Folie 08, Video), 11.5, M8, 13.1 Nr. 9/11, 13.2 Nr. 16, 13.3 (P1) |
+| B8 | sichtbarer Text „Bilder“ in zwei Absätzen mit dem Rechtestatus, Kernsatz der Notiz und ein Absatz „Rechtestatus genau“ (P2) |
+| `fremdbilder/register.js` | Kopf ohne „mit Freigabe“; `konzept-01` … `-05` im Wortlaut des Website-Baus (P3); `b04-persona` ohne Vornamen (P4); `m03-dose-shaker` „Packshot … · Werbebild“ (P8); `m03-suche` mit `hinweis` zum neuen Zuschnitt (P7); Einträge `v07-youtube` … `v07-pampers` entfernt (P10) |
+| 03 | `m03-suche` neu zugeschnitten (volle Breite der Rohdatei ab y = 64, 380 × 180): Beschriftung „eigene Suche“ auf freier Fläche (P7) |
+| 07 | Kasten und Notiz: Bilder der Vorbilder zurückgehalten, nicht veröffentlicht, in `intern/vorbilder-zurueckgehalten/` (mit `register-auszug.js` zum Zurückholen) (P10) |
+| 08 | Kasten: `bilder/` erzeugt `folie08-bilder.mjs` ohne Schalter, `fremdbilder/` mit `--intern`; nicht aus `_vorschau/` kopieren (P5); Notiz: Produktbilder ohne Genehmigung von HOLY (P11) |
+| 09 | `.e9-rueckfall` Standardtext „Videobotschaft des Gründers – läuft in der Web-Präsentation“; `09-fazit.js` setzt bei echtem Abspielfehler (error-Ereignis, `play()`-Fehler außer `NotAllowedError` und `AbortError`) „… – lässt sich in diesem Browser nicht abspielen“; Kasten (P6) |
+| `js/folien/intern-bilder.js` | Kopfkommentar zu `data-oeffentlich-src` (P9); Bildnachweis-Absatz in den Notizen mit Rechtestatus (P11) |
+| Kommentare | `index.html`, `css/folien/pfad.css`, `werkzeuge/pruefen.mjs`: „veröffentlicht mit Freigabe“ → Rechtestatus; „vor der Freigabe“ → „vor der Veröffentlichung“ (P11) |
+| Doku | LIESMICH §1, §4–§6, §9–§12; QUELLEN Kopf, §2, §4, §4a, §6; README FS2 (P10, P11) |
+
+Datenschutz (P4): Gesucht wurde in `praesentation/` (ohne `intern/`, `_test/`), `../gestaltungsplan.md` und
+`../README.md` nach Vornamen aus den Bildunterschriften der Community-Fotos (alle Bildunterschriften in
+`intern/roh/…/manifest.json` als Liste der Kandidaten, dazu „Squad Member“, „Member“). Einziger Fund: der Vorname im
+Nachweis von `b04-persona` (`fremdbilder/register.js` und QUELLEN §4a) – entfernt. Er bleibt in ausgeschlossenen Dateien
+(`intern/alt-vor-veroeffentlichung/bilder.js`, `intern/roh/produkt/community/manifest.json`, `_test/abnahme-d06/…`) und
+in der Git-Historie.
+
+**Prüfstand D08:** Fassung mit Bildern hell und dunkel `--schritte` je 0 Fehler, 17 Warnungen, 38 Fremdbilder
+eingesetzt (Register 38 Schlüssel); Rückfall `--oeffentlich --schritte --druck` 0 Fehler, 17 Warnungen, PDF 18 Seiten.
+Funktionstest 09 (synthetisches WebM per Route; ohne Route; fehlende Datei; `?aufnahme`; `?druck`): alle Prüfungen
+bestanden. Sichtprüfung 03, 09 (Videobühne) und B8 hell und dunkel, 09 mit Fehlertext.

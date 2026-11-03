@@ -61,8 +61,9 @@
 
    FREMDBILDER (FS2, js/folien/intern-bilder.js, LIESMICH §12)
    Liegt fremdbilder/register.js neben der HTML-Datei, prüft der Lauf die
-   Fassung mit Bildern (Standard; Fremdbilder veröffentlicht mit Freigabe,
-   KI-Nachweis FS2 Nr. 17): Jedes Element mit data-intern braucht einen
+   Fassung mit Bildern (Standard; Veröffentlichung der Fremdbilder von der
+   Gruppe beschlossen, KI-Nachweis FS2 Nr. 17, keine Genehmigung der
+   Rechteinhaber eingeholt): Jedes Element mit data-intern braucht einen
    Schlüssel in window.INTERN_BILDER (Fehler; mit data-intern-optional nur
    Warnung – dann bleibt das Bild aus bilder/), jede eingesetzte Datei muss
    laden (naturalWidth > 0), und auf jeder Folie mit sichtbarem Fremdbild muss
@@ -72,7 +73,7 @@
    dann (und mit --oeffentlich) darf kein Element data-intern-status tragen,
    kein Bild aus fremdbilder/ kommen und keine Bildnachweis-Zeile sichtbar
    sein (sonst Fehler). Namen wie data-intern, INTERN_BILDER, --oeffentlich
-   und „interneBilder“ im Bericht stammen aus der Zeit vor der Freigabe
+   und „interneBilder“ im Bericht stammen aus der Zeit vor der Veröffentlichung
    (bis 03.11.2026 „interne Fassung“ aus intern/) und bleiben.
 
    LIVE-ABSTIMMUNG (marke.js → umfragen.<id>.liveQuelle, Folie 08)
@@ -158,8 +159,9 @@ if ([opt.liveOffline, !!opt.liveWerte, opt.liveAus].filter(Boolean).length > 1) 
 }
 
 /* ---------- Fassung mit Bildern / Rückfall ohne Fremdbilder (FS2, LIESMICH §12) ----------
-   fremdbilder/ neben der HTML-Datei ist versioniert (veröffentlicht mit Freigabe,
-   KI-Nachweis FS2 Nr. 17). --oeffentlich sperrt den Ordner per Route; ohne
+   fremdbilder/ neben der HTML-Datei ist versioniert (Veröffentlichung von der
+   Gruppe beschlossen, KI-Nachweis FS2 Nr. 17; keine Genehmigung der
+   Rechteinhaber eingeholt). --oeffentlich sperrt den Ordner per Route; ohne
    fremdbilder/register.js ist es der Rückfall ohne Fremdbilder (Warnung).
    Die Variablennamen intern… sind historisch. */
 const praesOrdner = path.dirname(datei);
@@ -173,8 +175,8 @@ const INTERN = {
   bilderJsMeldung: 0      /* Lade-/Sperrmeldungen von fremdbilder/register.js (kein Fehler) */
 };
 INTERN.fassung = opt.oeffentlich ? 'Rückfall ohne Fremdbilder (fremdbilder/ per Route gesperrt)' : INTERN.bilderJsDa ? 'mit Bildern' : 'Rückfall ohne Fremdbilder (fremdbilder/register.js fehlt)';
-/* Exportsperre entfällt seit 03.11.2026: Die Fremdbilder sind mit Freigabe
-   (KI-Nachweis FS2 Nr. 17) veröffentlicht und liegen versioniert in fremdbilder/. */
+/* Exportsperre entfällt seit 03.11.2026: Die Fremdbilder sind veröffentlicht
+   (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17) und liegen versioniert in fremdbilder/. */
 
 /* ---------- Live-Abstimmung: liveQuelle aus marke.js lesen ----------
    marke.js setzt nur window.MARKE = { … } – hier in einer leeren Umgebung

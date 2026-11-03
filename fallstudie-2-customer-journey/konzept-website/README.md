@@ -3,8 +3,13 @@ KI-gestützt erstellt, Prüfung durch die Gruppe offen. Keine neue Websuche in d
 Recherche-Dossier FS2 (Befund-IDs), Gestaltung und Texte sind Entwürfe. Automatisch geprüft mit werkzeuge/pruefen.mjs.
 Ergänzt am 03.11.2026 im Workflow D06 (Einbau Bilder): Fassung mit HOLY-Produktbildern (Abschnitt 3a), Prüfung beider
 Fassungen; keine neue Websuche in diesem Schritt (Bilder und Nachweise aus dem Beschaffungsschritt von D06).
-Ergänzt am 03.11.2026 im Workflow D07: Veröffentlichung der Bilder abgebildet (Freigabe KI-Nachweis FS2 Nr. 17), Befunde der
-Abnahme D06 umgesetzt (Abschnitt 3a, 7, 9); keine neue Websuche, keine neuen Downloads (Zuschnitte aus vorhandenen Dateien). -->
+Ergänzt am 03.11.2026 im Workflow D07: Veröffentlichung der Bilder abgebildet (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17),
+Befunde der Abnahme D06 umgesetzt (Abschnitt 3a, 7, 9); keine neue Websuche, keine neuen Downloads (Zuschnitte aus vorhandenen
+Dateien).
+Ergänzt am 03.11.2026 im Workflow D08: Befunde der Abnahme D07 umgesetzt – Rechtestatus der Fremdbilder präzisiert (keine
+Genehmigung der Rechteinhaber eingeholt), Symbolbild-Unterschriften, Logo-Regel, Startpackung aus ?packung=, Nachkauf ohne
+Shaker, Prüfung der Versionierung (Abschnitt 3, 3a, 4, 7, 9); keine neue Websuche, keine neuen Downloads (ein Zuschnitt aus
+einer vorhandenen Rohdatei). -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
@@ -14,10 +19,13 @@ HOLY · Persona Marco (FS1, fiktiv) · Fallstudie 2 „Customer Journey“, Aufg
 **Entwurf, Prüfung durch die Gruppe offen**
 
 > **Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung
-> möglich.** HOLY-Wortmarke nur im Kopf (mit Einverständnis des Gründers, Freigabe durch Yannick am 03.11.2026), keine
-> HOLY-Schriften. **Fassung mit Bildern** (Standard: Repository, GitHub Pages, Hörsaal): Produktbilder und Grafiken der
-> HOLY Softdrinks GmbH sowie Fotos Dritter aus `fremdbilder/`, jedes mit Bildnachweis (Abschnitt 3a) – veröffentlicht mit
-> Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.
+> möglich.** Logo als Gestaltungselement nur als HOLY-Wortmarke im Kopf (mit Einverständnis des Gründers laut Yannick,
+> KI-Nachweis FS2 Nr. 12); auf den Produktbildern der Fassung mit Bildern ist das Logo Teil der Packung (Nachweis im
+> Fuß); kein gelbes Oval und kein Verpackungsdesign als eigene Gestaltung, keine HOLY-Schriften. **Fassung mit Bildern**
+> (Standard: Repository, GitHub Pages, Hörsaal): Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter
+> aus `fremdbilder/`, jedes mit Bildnachweis (Abschnitt 3a) – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis
+> FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen
+> Fotos der Gruppe.
 > **Rückfall ohne Fremdbilder** nur, wenn `fremdbilder/register.js` fehlt: eigene Zeichnungen und Platzhalter. Keine
 > Screenshots. Nichts wird gesendet oder gespeichert. Rechtliche Einordnungen sind Einschätzungen von Studierenden und
 > keine Rechtsberatung.
@@ -46,8 +54,8 @@ bis `squad.html` klickt, geht den gelben Pfad von Folie 06; jede Seite verlinkt 
 | [`haendler.html`](haendler.html) (optional) | Nebenweg Handel (gestrichelt) | Supermarktregal mit Händlerfinder (Platz 3 Kauf), Ziel des QR-Codes auf der Handelspackung | Nebenweg bricht → Brücke | in den Squad ohne Bon-Foto, IBAN und Pflichtfragen, dieselbe Garantie wie online, Händlerfinder nur mit Platzhaltern („Beispielmarkt“) | ✎ X16 · ✎ X17 | ✔ B01 · ✎ T28 · ✔ B03 · ✔ B96 · ✔ S90 · H D1 §7.2 |
 
 Ablauf des zentralen Wegs: `index.html` → `koffein-check.html` → `produkt.html` → `warenkorb.html` → `danke.html` →
-`squad.html` → (Nachkauf) `warenkorb.html?packung=50`. Jede Seite hat unten den Block „Nächste Station“ und im Fuß die
-Liste aller Stationen.
+`squad.html` → (Nachkauf) `warenkorb.html?packung=50&nachkauf=1`. Jede Seite hat unten den Block „Nächste Station“ und
+im Fuß die Liste aller Stationen.
 
 ## 3 Kennzeichnung und Regeln (Gestaltungsplan 7.3) – so umgesetzt
 
@@ -55,7 +63,7 @@ Liste aller Stationen.
 |---|---|---|
 | Hinweisbalken fest und nicht ausblendbar | erstes Element jeder Seite, `position: sticky` oben, ohne Knopf, wörtlich „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“; steht auf jedem Bildschirmfoto | `pruefen.mjs` (Text, oben, nach dem Scrollen) |
 | `noindex,nofollow` | `<meta name="robots" content="noindex,nofollow">` auf jeder Seite | `pruefen.mjs` |
-| Logo nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, Freigabe 03.11.2026) mit „Konzept“ darunter; Quelle im Fuß jeder Seite; kein gelbes Oval, kein Verpackungsdesign | `pruefen.mjs` (im Rückfall nur dieses eine Bild erlaubt), Sichtprüfung |
+| Logo als Gestaltungselement nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, mit Einverständnis des Gründers laut Yannick, KI-Nachweis FS2 Nr. 12) mit „Konzept“ darunter; Quelle im Fuß jeder Seite. Auf den Produktbildern der Fassung mit Bildern (Packshots, Shaker, Fotos) ist das Logo Teil der Packung, Nachweis im Fuß. Kein gelbes Oval und kein Verpackungsdesign als eigene Gestaltung (auch nicht in den eigenen Zeichnungen) | `pruefen.mjs` (im Rückfall nur dieses eine Bild erlaubt; kein Element mit „Logo“ in `alt`/`aria-label` außerhalb von `fremdbilder/`), Sichtprüfung |
 | Fremdbilder nur mit Nachweis | Fassung mit Bildern: `img` nur aus `fremdbilder/` (Abschnitt 3a), jedes mit `alt`, `width`/`height` und Bildnachweis im Fuß („Motiv: Nachweis“), Symbolbilder als „Symbolbild“ gekennzeichnet; kein `video`, `iframe`, keine Screenshots. Eigene Inline-SVG (Skizze „Video → Tag → Shop“, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) bleiben in beiden Fassungen. Rückfall ohne Fremdbilder: außer der Wortmarke keine `img`, dazu die Platzhalterfläche „Platzhalter: eigenes Produktfoto folgt“ | `pruefen.mjs` (beide Fassungen) |
 | keine Datenübermittlung | kein `form`, kein `input`; Knöpfe führen nur zur nächsten Konzeptseite; Auswahlknöpfe (Packung, Trinkhäufigkeit, Opt-in, Galerie der Produktseite) ändern nur die Anzeige; kein `localStorage`, keine Cookies | `pruefen.mjs` |
 | keine externen Anfragen | Schriften lokal (`schriften/`), kein CDN, keine Analyse-Skripte; Quellen stehen als Text, nicht als Link | `pruefen.mjs` (Netz gesperrt, 0 Anfragen) |
@@ -68,10 +76,14 @@ Liste aller Stationen.
 ## 3a Fassung mit Bildern (Standard) und Rückfall ohne Fremdbilder
 
 Auftrag Yannick, 03.11.2026 (KI-Nachweis FS2 Nr. 15): Bilder von HOLY herunterladen, Webseite und Präsentation sollen gut
-aussehen. Die Bilder lagen zuerst nur in einer ausgeschlossenen „internen Fassung“. Seit der Freigabe durch Yannick
-(KI-Nachweis FS2 Nr. 17: „Du darfst die Sachen online auf github posten für die online pages ich erlaube es dir“) sind
-die ausgewählten Bilder **veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die
-Lehrveranstaltung; keine eigenen Fotos der Gruppe.** Sie liegen versioniert in `fremdbilder/`. Ausgeschlossen
+aussehen. Die Bilder lagen zuerst nur in einer ausgeschlossenen „internen Fassung“. Die Veröffentlichung hat die Gruppe
+beschlossen (Yannick, KI-Nachweis FS2 Nr. 17: „Du darfst die Sachen online auf github posten für die online pages ich
+erlaube es dir“). Seitdem sind die ausgewählten Bilder veröffentlicht – **Veröffentlichung von der Gruppe beschlossen
+(KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt** (HOLY Softdrinks GmbH; beim Regalfoto die
+Lebensmittel Zeitung bzw. der unbekannte Urheber; beim Kartonfoto der nicht genannte Urheber, Herkunft je Bild in
+`fremdbilder/register.js`); **nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.** Das ist
+eine Entscheidung der Gruppe, keine Erlaubnis der Rechteinhaber und keine Rechtsberatung. Sie liegen versioniert in
+`fremdbilder/`. Ausgeschlossen
 (`.gitignore`) bleiben nur Rohdownloads (`../praesentation/intern/roh/`), Kontaktbogen, Abnahme- und Vorschaubilder in
 `intern/` sowie die alte Kopie `intern/alt-vor-veroeffentlichung/`.
 
@@ -79,7 +91,7 @@ Lehrveranstaltung; keine eigenen Fotos der Gruppe.** Sie liegen versioniert in `
 |---|---|---|
 | Wann | Standard: Repository, GitHub Pages, Hörsaal | nur, wenn `fremdbilder/register.js` fehlt; Prüfung mit `pruefen.mjs --fassung rueckfall` |
 | Bilder | Wortmarke, eigene Zeichnungen und 22 Bilddateien aus `fremdbilder/` (33 Schlüssel im Register): Produktbild Raspberry Raptor, Galerie, Packshots, Versandkarton (Symbolbild), Shaker, Zubereitung, SQUAD-Grafiken, Regal im Handel (Symbolbild) | Wortmarke, eigene Zeichnungen, Platzhalter |
-| Fuß | „Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – veröffentlicht mit Freigabe, nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.“ und die Liste „Bildnachweise auf dieser Seite“ (je Eintrag „Motiv: Nachweis“, gleiche Nachweise zusammengefasst) | „Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.“ |
+| Fuß | „Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.“ und die Liste „Bildnachweise auf dieser Seite“ (je Eintrag „Motiv: Nachweis“, gleiche Nachweise zusammengefasst) | „Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.“ |
 | Bildschirmfotos | `_vorschau/` (versioniert, oberer Bildschirm – so sieht es auf GitHub Pages aus); ganze Seiten in `intern/vorschau/` (ausgeschlossen) | `intern/vorschau-rueckfall/` (ausgeschlossen) |
 
 **So funktioniert es:** Jede Seite lädt `<script src="fremdbilder/register.js">` vor `assets/konzept.js`. Die Datei setzt
@@ -93,18 +105,20 @@ ein Bild nicht, bleibt bzw. kommt die Platzhalterfläche zurück – ohne kaputt
 ausgeblendet (`hidden`). Angenommen werden nur Dateien aus `fremdbilder/`. Hinweisbalken, `noindex`, keine Formulare,
 keine externen Anfragen und alle Rechnungen sind in beiden Fassungen gleich.
 
-**Namen aus der Zeit vor der Freigabe:** `window.INTERN_BILDER`, die Attribute `data-intern`, `data-intern-*`,
-`data-nur-intern`, die Klassen `intern-bild`, `intern-bilder` und `hat-intern-bild` sowie der Schalter `--intern` von
-`werkzeuge/folie08-bilder.mjs` heißen noch „intern“. Sie bleiben aus technischen Gründen (Präsentation und Prüfskripte
-greifen darauf zu) und bedeuten heute „Fassung mit Bildern“. In der Präsentation gilt dasselbe für
-`js/folien/intern-bilder.js` und `html[data-fassung="intern"]`.
+**Namen aus der Zeit vor dem Veröffentlichungsbeschluss:** `window.INTERN_BILDER`, die Attribute `data-intern`,
+`data-intern-*`, `data-nur-intern`, die Klassen `intern-bild`, `intern-bilder` und `hat-intern-bild` sowie der Schalter
+`--intern` von `werkzeuge/folie08-bilder.mjs` heißen noch „intern“; sie bedeuten heute „Fassung mit Bildern“. Das
+Gegenstück `data-nur-oeffentlich` (damals hieß die Fassung ohne Fremdbilder „öffentlich“) heißt heute: nur im Rückfall
+ohne Fremdbilder sichtbar (Satz „Keine HOLY-Fotos …“ im Fuß). Alle diese Namen bleiben aus technischen Gründen
+(Präsentation und Prüfskripte greifen darauf zu). In der Präsentation gilt dasselbe für `js/folien/intern-bilder.js` und
+`html[data-fassung="intern"]`.
 
 **Bildplätze** (Schlüssel aus `fremdbilder/register.js`; Herkunft je Bild steht im Fuß der Seite und im Register, Abruf
 jeweils 03.11.2026):
 
 | Seite | Platz | Schlüssel | Herkunft |
 |---|---|---|---|
-| `index.html` | Produkt-Tag im Knopf „Zum Produkt aus dem Video“: freigestellter Packshot der 50er-Dose auf heller Fläche | `web-start-tag` | HOLY-Shop, Shop-Variante „50 Portionen“ |
+| `index.html` | Produkt-Tag im Knopf „Zum Produkt aus dem Video“: freigestellter Packshot der 50er-Dose auf heller Fläche; der Knopf führt zu `produkt.html?packung=50` (50er-Dose vorgewählt, passend zum Tag) | `web-start-tag` | HOLY-Shop, Shop-Variante „50 Portionen“ |
 | `index.html` | Produktkarte neben der Skizze (Skizze bleibt) | `web-start-video` | HOLY-Produktseite Raspberry Raptor |
 | `index.html` | Teaser „Starter Set Energy“ (gelber Kasten) | `web-start-teaser-set` | HOLY-Shop Starter Set Energy, freigestellt |
 | `koffein-check.html` | ein ruhiges Bild unter „Wie viel Koffein steckt in einer Portion?“: ein Sachet = eine Portion, kein Etikettbild | `web-koffein-portion` | HOLY-Shop, Shop-Variante „1 Portion“ |
@@ -113,15 +127,19 @@ jeweils 03.11.2026):
 | `produkt.html` | Packshot je Packung in „Packung wählen“ | `web-packung-set`, `-50`, `-10`, `-1` | HOLY-Shop, freigestellt |
 | `warenkorb.html` | Vorschaubild am Posten (je nach `?packung=`) | `web-warenkorb-{packung}` | wie Packungswahl |
 | `danke.html` | Versandkarton im Kopf (Symbolbild) | `web-danke-paket` | Foto von der Fotowand auf de.holy.com/pages/our-story, Urheber nicht genannt |
-| `danke.html` | Shaker bei Schritt 2, nur wenn die Packung laut Seite einen enthält: Starter Set schwarzer Logo-Shaker, 50er-Dose pinker Raptor-Shaker (Ausschnitt aus dem Packshot „50 Portionen mit gratis Shaker“), bei 10 und 1 Portion kein Bild und Überschrift „Auspacken, loslegen“ | `web-danke-shaker-{packung}` | HOLY-Shop |
+| `danke.html` | Shaker bei Schritt 2, nur wenn die Packung laut Seite einen enthält: Starter Set schwarzer Logo-Shaker, 50er-Dose pinker Raptor-Shaker (Ausschnitt aus dem Packshot „50 Portionen mit gratis Shaker“), bei 10 und 1 Portion sowie beim Nachkauf der 50er-Dose (`?nachkauf=1`, Shaker nur zur ersten Dose, ✔ T22) kein Bild und Überschrift „Auspacken, loslegen“ | `web-danke-shaker-{packung}` | HOLY-Shop |
 | `danke.html` | Fotos zu Zubereitungsschritt 2 und 3 | `web-danke-zubereitung-2`, `-3` | HOLY-Produktseite |
 | `squad.html` | Schriftzug SQUAD Rewards · eine Pixel-Münze im Kontostand · Abzeichen in den vier Level · Packshot beim Nachkauf | `web-squad-logo`, `web-squad-coins`, `web-squad-level-1` … `-4`, `web-warenkorb-50` | Grafiken von de.holy.com (Rewards-Seite, Menübild) · HOLY-Shop |
-| `haendler.html` | Regal im Handel (Symbolbild), unter Code-Box und Knopf | `web-haendler-regal` | Foto aus der Lebensmittel Zeitung vom 10.04.2026 (Ausschnitt, Markt nicht benannt) – kein HOLY-Bild |
+| `haendler.html` | Regal im Handel (Symbolbild), unter Code-Box und Knopf | `web-haendler-regal` | Foto aus der Lebensmittel Zeitung vom 10.04.2026 (Urheber unbekannt; enger Ausschnitt nur mit dem HOLY-Regalbereich, Markt nicht benannt) – kein HOLY-Bild |
 
 **Kennzeichnung:** Die Bilder sind Werbe- und Produktbilder der HOLY Softdrinks GmbH bzw. Fotos Dritter, keine eigenen
-Fotos der Gruppe. Große Bilder tragen eine Unterschrift direkt darunter (Symbolbilder kurz: „Symbolbild · Foto: …“), alle
-Nachweise stehen vollständig im Fuß der Seite, je Eintrag mit dem Motiv davor. Eigene Zeichnungen (Skizze, Kalender,
-Siegel, QR-Platzhalter) bleiben, wo sie etwas erklären.
+Fotos der Gruppe. Große Bilder tragen eine Unterschrift direkt darunter, alle Nachweise stehen vollständig im Fuß der
+Seite, je Eintrag mit dem Motiv davor. Symbolbilder kurz: „Symbolbild · Quelle: Lebensmittel Zeitung, 10.04.2026
+(Urheber unbekannt)“ (Händlerseite) und „Symbolbild · Quelle: de.holy.com/pages/our-story (Urheber nicht genannt), Abruf
+03.11.2026“ (Danke-Seite). Zwei getrennte Punkte: **„Symbolbild“** heißt, das Bild zeigt nicht Marcos Paket bzw. keinen
+bestimmten Markt; **„Urheber unbekannt“ bzw. „nicht genannt“** heißt, wer das Foto gemacht hat, ist offen (Bildnachweis
+der Zeitung hinter der Bezahlschranke, auf HOLYs Fotowand kein Name). Eigene Zeichnungen (Skizze, Kalender, Siegel,
+QR-Platzhalter) bleiben, wo sie etwas erklären.
 
 **Zuschnitte im Workflow D07** (aus vorhandenen Dateien, keine neuen Downloads): `web-danke-shaker-raptor.webp`
 (pinker Shaker aus `../praesentation/intern/roh/produkt/packshots/raptor-50er-dose-mit-gratis-shaker.png`, freigestellt),
@@ -130,6 +148,13 @@ die mittlere, vollständige Münze aus `…/squad-rewards/rewards-menuebild-coin
 Menübild sind die obere und die rechte Münze schon vom Bildrand der Quelle angeschnitten; ein Ausschnitt mit Adler müsste
 die rechte Münze mitnehmen (der Umhang reicht bis an sie heran). Eine ganze Münze wirkt ruhiger, und der Adler steht schon
 im Schriftzug SQUAD Rewards direkt darüber.
+
+**Zuschnitt im Workflow D08** (aus einer vorhandenen Rohdatei, kein neuer Download): `web-haendler-regal.jpg` enger aus
+`../praesentation/intern/roh/produkt/handel/regal-energy-neben-monster-redbull.jpg` (Bereich x 528–1405, y 236–728 von
+1536 × 864, auf 780 × 438 px verkleinert; `pixel` im Register angepasst). Begründung: Der alte Ausschnitt (780 × 585) zeigte
+am unteren und rechten Rand Dosen anderer Marken (u. a. Red Bull), der Kommentar in `haendler.html` behauptete aber „nur
+HOLY-Bereich“. Jetzt stimmt beides: Zu sehen sind nur HOLY-Handelsware, HOLY-Regalleiste und das Schild „7,5 Liter in einer
+Dose!“; die Bühne zeigt das Bild weiter im Format 16 : 10 (mobil) bzw. 21 : 9 (ab 700 px).
 
 **Prüfen vor dem Commit:** `git status` – unter `intern/` darf nichts auftauchen
 (`git check-ignore -v fallstudie-2-customer-journey/konzept-website/intern/vorschau/01-index.png`).
@@ -141,6 +166,8 @@ im Schriftzug SQUAD Rewards direkt darüber.
 | `index.html?anmerkungen=1` | **Präsentationsmodus:** Unter dem Kopf erscheint die Laufleiste „Zentraler Weg (SOLL)“, an jeder Maßnahme ein nummerierter Punkt (schwarz mit gelber Ziffer). Klick auf einen Punkt oder auf „Anmerkungen (n) ansehen“ öffnet unten ein Blatt „Was wir ändern … Warum …“ mit Befund-IDs; „Weiter ›“, Pfeiltasten oder Bild-ab gehen zur nächsten Anmerkung, Esc schließt. Der Modus bleibt beim Durchklicken erhalten. Ausschalten: Link „Anmerkungen ausblenden“ im Fuß |
 | `index.html?code=MARCO10` | Creator-Code aus dem Video; übernommen werden nur die Beispielcodes `CREATOR10` und `MARCO10` (öffentliche Seite: niemand soll beliebige „Codes“ hineinschreiben können), alles andere wird ignoriert. Wird an alle Seiten weitergereicht und im Warenkorb angezeigt. Ohne Parameter erscheint `CREATOR10` |
 | `warenkorb.html?packung=50` | Posten im Warenkorb: `set` (Standard, Starter Set), `1`, `10`, `50`; die Produktseite setzt den Wert über die Packungswahl, die Danke-Seite rechnet damit die Nachfüll-Erinnerung |
+| `produkt.html?packung=50` | Startpackung der Produktseite (nur `set`, `50`, `10`, `1`; alles andere → Starter Set wie bisher). Der Knopf „Zum Produkt aus dem Video“ der Startseite führt hierher, weil sein Produkt-Tag die 50er-Dose zeigt; der Code aus der Adresse reist mit |
+| `warenkorb.html?packung=50&nachkauf=1` | Nachkauf von `squad.html`: Der Posten heißt „Vorratsdose, Nachkauf“ (ohne „Shaker gratis zur ersten Dose“), `nachkauf=1` reist mit `packung` zur Danke-Seite, dort weder „Shaker auspacken“ noch Shaker-Bild – der Gratis-Shaker kommt laut ✔ T22 nur zur ersten Dose. Beim Starter Set gehört der Shaker zum Set und bleibt |
 
 Anmerkungen je Seite: index 5, koffein-check 12, produkt 9, warenkorb 5, danke 7, squad 6, haendler 3 (zusammen 47).
 Live-Demo auf Folie 08: `../konzept-website/index.html?anmerkungen=1` in einem neuen Tab (kein `iframe`), vor Beginn
@@ -201,8 +228,9 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
 - Fremdbilder: Herkunft (Seite und Bildadresse), Abrufdatum 03.11.2026, Bearbeitung (freigestellt, Ausschnitt) und
   Beschreibung je Bild in [`fremdbilder/register.js`](fremdbilder/register.js); sichtbar im Fuß jeder Seite (Fassung mit
   Bildern). Beschafft im Workflow D06 per Websuche bzw. Download von de.holy.com und lebensmittelzeitung.net;
-  veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17), nicht kommerziell, für die Lehrveranstaltung; keine eigenen
-  Fotos der Gruppe. Drei Zuschnitte aus vorhandenen Rohdateien im Workflow D07 (Abschnitt 3a).
+  Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt;
+  nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Drei Zuschnitte aus vorhandenen
+  Rohdateien im Workflow D07, ein Zuschnitt im Workflow D08 (Abschnitt 3a).
 
 ## 7 Offen (für die Gruppe)
 
@@ -216,23 +244,26 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
 5. **Freunde werben:** Gewählt ist beispielhaft der 14-€-Wert; welcher gilt, entscheidet HOLY (Frage an pr@holy.com,
    Gestaltungsplan 13.3).
 6. **Veröffentlichung:** Seit dem Push vom 03.11.2026 über GitHub Pages erreichbar (Hinweisbalken, `noindex`, keine
-   Bestellung), seit der Freigabe KI-Nachweis FS2 Nr. 17 mit den Bildern aus `fremdbilder/`. Die Frage an Prof. Stenger
-   bleibt (Gestaltungsplan 7.3, 13.2 Nr. 16); widerspricht er oder HOLY, kommt der Ordner aus `master` (für die Bilder
-   allein reicht es, `fremdbilder/` zu entfernen – dann zeigt die Seite den Rückfall ohne Fremdbilder). Keine Verlinkung
-   von außen, kein QR-Code darauf. Freigabe des Gründers für die Wortmarke schriftlich mit Umfang ablegen (Empfehlung
-   der Abnahme).
+   Bestellung), seit dem Beschluss der Gruppe (KI-Nachweis FS2 Nr. 17) mit den Bildern aus `fremdbilder/` – eine
+   Genehmigung der Rechteinhaber wurde nicht eingeholt. Die Frage an Prof. Stenger bleibt (Gestaltungsplan 7.3, 13.2
+   Nr. 16); widerspricht er, HOLY oder ein anderer Rechteinhaber, kommt der Ordner aus `master` (für die Bilder allein
+   reicht es, `fremdbilder/` zu entfernen – dann zeigt die Seite den Rückfall ohne Fremdbilder). Keine Verlinkung
+   von außen, kein QR-Code darauf. Einverständnis des Gründers für die Wortmarke schriftlich mit Umfang ablegen
+   (Empfehlung der Abnahme).
 7. **Folie 08:** fünf Rahmen; die Bildschirmfotos erzeugt `werkzeuge/folie08-bilder.mjs`. Rahmen 3–5 zeigen
-   durchgehend Marcos 50er-Dose: Produktseite mit gewählter 50er-Dose ab „Packung wählen“, Warenkorb und Danke-Seite mit
-   `?packung=50` (Danke-Seite ab „So geht's weiter“), damit Bild und Anmerkungszeile zusammenpassen. Mit `--intern`
+   durchgehend Marcos 50er-Dose: Produktseite mit `?packung=50` (vorgewählte 50er-Dose) ab „Packung wählen“, Warenkorb
+   und Danke-Seite mit `?packung=50` (Danke-Seite ab „So geht's weiter“), damit Bild und Anmerkungszeile zusammenpassen.
+   Mit `--intern`
    Fassung mit Bildern nach `../praesentation/fremdbilder/` (Schlüssel `konzept-01` … `konzept-05` in
    `../praesentation/fremdbilder/register.js`); ohne Schalter Rückfall ohne Fremdbilder (`fremdbilder/` gesperrt) nach
    `../praesentation/bilder/`. Das Skript bricht ab, wenn der Rückfall in einen ausgeschlossenen Ordner oder unter
    `intern/` gehen würde. Im oberen Bildschirm von `konzept-02` steht kein HOLY-Bild (das Sachet folgt weiter unten).
 8. **Fremdbilder prüfen:** Auswahl, Zuschnitt und Nachweise in `fremdbilder/register.js` gegen die Quellen abgleichen
-   (Kontaktbogen `intern/kontaktbogen.png`); das Regalfoto stammt aus der Lebensmittel Zeitung (Bildnachweis hinter
-   der Bezahlschranke nicht einsehbar), das Kartonfoto von der Fotowand auf „Our Story“ (Urheber nicht genannt) – beide
-   deshalb als Symbolbild gekennzeichnet. „10 Portionen = Sachet-Box“ und „Shaker gratis zur ersten Dose“ (Abschnitt 5)
-   im Shop gegenprüfen.
+   (Kontaktbogen `intern/kontaktbogen.png`). Regalfoto und Kartonfoto sind als **Symbolbild** gekennzeichnet, weil sie
+   keinen bestimmten Markt bzw. nicht Marcos Paket zeigen. Getrennt davon ist der **Urheber** offen: Das Regalfoto stammt
+   aus der Lebensmittel Zeitung (Bildnachweis hinter der Bezahlschranke nicht einsehbar → „Urheber unbekannt“), das
+   Kartonfoto von der Fotowand auf „Our Story“ („Urheber nicht genannt“). „10 Portionen = Sachet-Box“ und „Shaker gratis
+   zur ersten Dose“ (Abschnitt 5) im Shop gegenprüfen.
 
 ## 8 Lokal öffnen
 
@@ -262,9 +293,12 @@ wählbar. Das Skript prüft (Kopf von `werkzeuge/pruefen.mjs`): Konsolen- und Sk
 gesperrt), interne Links und Sprungziele (keine Links nach `intern/`), Hinweisbalken (Text, oben, nach dem Scrollen),
 `noindex`, Formulare, Bilder, Schrift geladen, Kontrast jedes sichtbaren Textes, waagerechtes Scrollen bei 320, 390 und
 1280 px, Präsentationsmodus (Marker, Rundgang, Weitergabe von `?anmerkungen=1`), die Rechnungen (Packungswahl, Warenkorb
-je Packung, Code aus der Adresse, Nachfüll-Rechner) und den ersten Bildschirm bei 390 × 844 (Händlerseite: Code-Box und
-Hauptknopf; Produktseite: Titel, Bewertung, erster Preis) sowie den Knopf „Zum Produkt aus dem Video“ bei 1280 px in einer
-Zeile.
+je Packung, Code aus der Adresse, Nachfüll-Rechner, Startpackung der Produktseite aus `?packung=`, Nachkauf mit
+`?nachkauf=1` bis zur Danke-Seite ohne Shaker-Hinweis und Shaker-Bild) und den ersten Bildschirm bei 390 × 844
+(Händlerseite: Code-Box und Hauptknopf; Produktseite: Titel, Bewertung, erster Preis, auch mit `?packung=50`) sowie die
+Hauptknöpfe oben auf Start- und Händlerseite bei 1280 px in einer Zeile. Seit D08 zusätzlich: `fremdbilder/register.js`
+und jede Bilddatei des Registers im Git-Index (`git ls-files --error-unmatch`); sonst WARNUNG „nicht versioniert – fehlt
+nach dem Push auf GitHub Pages“.
 
 Je Fassung zusätzlich (seit D06, angepasst in D07): **Fassung mit Bildern** – jeder Eintrag in `fremdbilder/register.js`
 mit Datei in `fremdbilder/`, `alt`, `nachweis`, `motiv` und `pixel` (= echte Bildgröße), Symbolbilder in `alt` und
@@ -287,9 +321,18 @@ inkl. GitHub-Pages-Probe und Rückfall ohne Fremdbilder)“, 0 externe Anfragen,
 in beiden Modi ohne Fehler. Angesehen: alle 7 Seiten mit Bildern bei 390 px (ganze Seite) und 1280 px, Kopf bei 320 px,
 die fünf Folie-08-Bilder.
 
+**Ergebnis am 03.11.2026 (Abnahme-Befunde D07, Workflow D08):** „Alle Prüfungen bestanden (Fassung mit Bildern inkl.
+GitHub-Pages-Probe und Rückfall ohne Fremdbilder)“, 0 Fehler, 0 Warnungen, 0 externe Anfragen; `folie08-bilder.mjs` in
+beiden Modi ohne Fehler. Gegenprobe mit absichtlich eingebauten Fehlern (Knopf ohne `packung=50`, Startpackung ignoriert,
+Shaker-Bild beim Nachkauf, Händlerknopf zweizeilig, Registereintrag mit unversionierter Datei): alle gemeldet, danach
+zurückgesetzt. Angesehen: Händlerseite bei 390, 320 und 1280 px (Bild, Unterschrift, Fuß, Knopf in einer Zeile),
+Danke-Seite mit Kartonbild, Garantie-Kasten der Produktseite bei 320 px, Produktseite mit `?packung=50` bei 390 und
+1280 px, Warenkorb und Danke-Seite mit `?packung=50&nachkauf=1` bei 390 (Danke auch 320) px, die Folie-08-Bilder.
+
 Bildschirmfotos 390 × 844 (Normalmodus, oberer Bildschirm) in [`_vorschau/`](_vorschau/): `01-index.png`,
 `02-koffein-check.png`, `03-produkt.png`, `04-warenkorb.png`, `05-danke.png`, `06-squad.png`, `07-haendler.png`.
 Sie werden bei jedem Prüflauf neu geschrieben – **aus der Fassung mit Bildern**, so wie die Seiten auf GitHub Pages
-aussehen (veröffentlicht mit Freigabe, KI-Nachweis FS2 Nr. 17). Ganze Seiten zum Ansehen gehen nach `intern/vorschau/`
+aussehen (Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17; keine Genehmigung der Rechteinhaber
+eingeholt). Ganze Seiten zum Ansehen gehen nach `intern/vorschau/`
 (`0n-…-ganz.png` bei 390 px, `0n-…-1280.png`, `0n-…-320.png`), der Rückfall ohne Fremdbilder nach
 `intern/vorschau-rueckfall/` – beide Ordner sind ausgeschlossen.

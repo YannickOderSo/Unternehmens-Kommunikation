@@ -1,17 +1,21 @@
 /* Fremdbilder der Konzept-Webseite Fallstudie 2 (HOLY, Customer Journey)
-   Stand 03.11.2026 · Auswahl und Zuschnitt aus praesentation/intern/roh/ (Beschaffung 03.11.2026, Workflow D06; Nachzuschnitte D07)
-   · KI-gestützt erstellt, Prüfung durch die Gruppe offen.
-   Veröffentlicht mit Freigabe (KI-Nachweis FS2 Nr. 17): im Repository und auf GitHub Pages, nicht kommerziell, für die
-   Lehrveranstaltung; keine eigenen Fotos der Gruppe. Die Rohdownloads bleiben ausgeschlossen (praesentation/intern/roh/).
+   Stand 03.11.2026 · Auswahl und Zuschnitt aus praesentation/intern/roh/ (Beschaffung 03.11.2026, Workflow D06; Nachzuschnitte
+   D07; D08: web-haendler-regal enger, nur der HOLY-Regalbereich) · KI-gestützt erstellt, Prüfung durch die Gruppe offen.
+   Im Repository und auf GitHub Pages veröffentlicht: Die Veröffentlichung hat die Gruppe beschlossen (KI-Nachweis FS2
+   Nr. 17), eine Genehmigung der Rechteinhaber (HOLY Softdrinks GmbH, Lebensmittel Zeitung bzw. Urheber der Fotos) wurde
+   nicht eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Die Rohdownloads
+   bleiben ausgeschlossen (praesentation/intern/roh/).
    Das ist die „Fassung mit Bildern“ (Standard). Fehlt diese Datei, zeigt die Webseite den „Rückfall ohne Fremdbilder“
    (eigene Zeichnungen und Platzhalter).
-   Der Name window.INTERN_BILDER und die Attribute data-intern* stammen aus der Zeit vor der Freigabe und bleiben aus
-   technischen Gründen.
+   Der Name window.INTERN_BILDER und die Attribute data-intern* stammen aus der Zeit vor dem Veröffentlichungsbeschluss
+   und bleiben aus technischen Gründen.
    Rechte: Bilder der HOLY Softdrinks GmbH bzw. Dritter (Herkunft je Eintrag); Quellenangabe (nachweis) zu jedem gezeigten
    Bild, gesammelt im Fuß der Seite.
    Felder: datei (relativ zur HTML-Seite), alt, nachweis (voller Bildnachweis, steht im Fuß), unterschrift (optional: kurze
    Bildunterschrift direkt am Bild, sonst steht dort der nachweis), motiv (steht im Fuß vor dem Nachweis), platz,
    quelle (URL), pixel (Dateigröße).
+   „Symbolbild“ heißt: Das Bild zeigt nicht das, wovon die Seite erzählt (nicht Marcos Paket, keinen bestimmten Markt).
+   Dass der Urheber unbekannt bzw. nicht genannt ist, ist ein getrennter Punkt und steht in der Unterschrift in Klammern.
    Gleiche Herkunft = gleicher nachweis: Der Fuß fasst gleiche Nachweise zusammen und sammelt die Motive davor. */
 window.INTERN_BILDER = {
   "web-produkt-hero": {
@@ -198,7 +202,7 @@ window.INTERN_BILDER = {
     "datei": "fremdbilder/web-danke-paket.jpg",
     "alt": "Symbolbild: geöffneter HOLY-Versandkarton mit Schachbrettmuster, darin zwei Katzen",
     "nachweis": "Symbolbild · Foto von der Fotowand auf de.holy.com/pages/our-story (Unterschrift „Unsere Kartons sind auch nach der Lieferung noch multifunktional einsetzbar“, Urheber nicht genannt), Abruf 03.11.2026 · Ausschnitt",
-    "unterschrift": "Symbolbild · Foto: de.holy.com/pages/our-story, Abruf 03.11.2026",
+    "unterschrift": "Symbolbild · Quelle: de.holy.com/pages/our-story (Urheber nicht genannt), Abruf 03.11.2026",
     "motiv": "Versandkarton",
     "platz": "danke.html Kopf „Danke! Dein Paket kommt …“ (Paket)",
     "quelle": "https://de.holy.com/cdn/shop/files/104.jpg?v=1788511575&width=2400 (Seite https://de.holy.com/pages/our-story)",
@@ -298,11 +302,11 @@ window.INTERN_BILDER = {
     "datei": "fremdbilder/web-haendler-regal.jpg",
     "alt": "Symbolbild: Supermarktregal mit HOLY-Handelsware – Energy-Boxen, 15er-Dosen, Schild „7,5 Liter in einer Dose!“ und gelbe HOLY-Regalleiste",
     "nachweis": "Symbolbild · Foto aus dem Artikel der Lebensmittel Zeitung vom 10.04.2026 (Bildnachweis hinter Bezahlschranke nicht einsehbar, Markt nicht benannt), Abruf 03.11.2026 · Ausschnitt",
-    "unterschrift": "Symbolbild · Foto: Lebensmittel Zeitung, 10.04.2026",
+    "unterschrift": "Symbolbild · Quelle: Lebensmittel Zeitung, 10.04.2026 (Urheber unbekannt)",
     "motiv": "Regal im Handel",
-    "platz": "haendler.html gelbe Bühne unter Code-Box und Knopf (Regal im Handel)",
+    "platz": "haendler.html gelbe Bühne unter Code-Box und Knopf (Regal im Handel); Ausschnitt seit D08 enger: nur der HOLY-Regalbereich (Rohbild x 528–1405, y 236–728 von 1536 × 864, auf 780 px Breite verkleinert), ohne die Dosen anderer Marken am Rand",
     "quelle": "https://www.lebensmittelzeitung.net/news/media/33/Pla-verscha-Vertriebsc-Bened-Pes-l.-und-Mitgrn-Hor-321340.jpeg (Artikel https://www.lebensmittelzeitung.net/industrie/nachrichten/getraenke-holy-macht-dampf-bei-der-internationalisierung-190382)",
-    "pixel": "780 × 585"
+    "pixel": "780 × 438"
   },
   "web-koffein-portion": {
     "datei": "fremdbilder/web-koffein-portion.webp",

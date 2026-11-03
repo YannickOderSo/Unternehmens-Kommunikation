@@ -406,7 +406,7 @@ Auftrag (im Workflow-Skript).
 | D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | Plan, Dossier 7a (17 Fälle), Konzept-Webseite, Präsentation; Abnahme: 1 hoher, 15 mittlere, 14 niedrige Befunde | Journal gelesen; Befunde nachgeprüft (Help-Center selbst abgerufen, Ü1 am Maßstab, Screenshots angesehen) und eingearbeitet; `pruefen.mjs` beider Teile: 0 Fehler |
 | D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 8 mittlere, 15 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
 | D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | alle D06-Befunde umgesetzt (Folie 07 nur Logos, B6 ohne Platz); Doku umgestellt; Abnahme: 6 mittlere, 13 niedrige Befunde | Journal gelesen; beide Prüfskripte selbst: 0 Fehler (38 Bilder); Endzustände 01–09 angesehen; Befunde an D08 |
-| D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | *läuft* | – |
+| D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | W1–W10 und P1–P11 umgesetzt; Abnahme: 0 mittlere, 7 niedrige Befunde | Journal gelesen; 7 Restbefunde selbst behoben; Prüfskripte (hell, dunkel, Webseite): 0 Fehler; Volltextsuche Vorname; Folien und Webseite angesehen |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -589,8 +589,30 @@ Auftrag (im Workflow-Skript).
   Fremdbilder von der Gruppe beschlossen (Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; Logo mit
   Einverständnis (Nr. 12); Video mit Zustimmung des Gründers (Nr. 18).
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bilder-nacharbeit.js`](workflows/2026-11-03_fs2-bilder-nacharbeit.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** alle 4 Unteragenten fertig, 0 Fehler (rund 31 min).
+  - *Webseite (W1–W10):* Fuß-Obersatz „Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine
+    Genehmigung der Rechteinhaber eingeholt“; Bildunterschriften „Symbolbild · Quelle: … (Urheber unbekannt/nicht
+    genannt)“; Regalfoto enger zugeschnitten (nur HOLY-Ware); Produktseite übernimmt `?packung=`, Knopf „Zum Produkt
+    aus dem Video“ führt zur 50er-Dose; Nachkauf über die Squad-Seite ohne Gratis-Shaker (✔ T22); Logo-Regel und
+    historische Namen in der README; Silbentrennung im Garantie-Kasten; Prüfskript warnt bei nicht versionierten
+    Bilddateien.
+  - *Präsentation (P1–P11):* Gestaltungsplan vermerkt die Abweichung (Beschluss der Gruppe, keine Genehmigung von HOLY
+    bzw. der Rechteinhaber, keine Zustimmung des Betreuers eingeholt); B8 mit genauem Rechtestatus; Vorname des
+    Community-Mitglieds aus Bildnachweis und QUELLEN entfernt (in der Git-Historie ab f86cb9a weiter enthalten);
+    Einträge konzept-01..05 neu; Folie-08-Kasten korrigiert; Video 09 mit Standardtext und eigenem Fehlertext;
+    m03-suche neu zugeschnitten; m03-dose-shaker als Werbebild gekennzeichnet; die sechs unbenutzten
+    Vorbild-Bilder aus `fremdbilder/` nach `intern/vorbilder-zurueckgehalten/` (nicht mehr veröffentlicht).
+  - *Abnahme (2 Agenten, nur lesend):* keine hohen oder mittleren Befunde; 7 niedrige (Umschalter „Anmerkungen“
+    verlieren Packung/Nachkauf, Danke-Seite spricht Nachkäufer als Erstkäufer an, Git-Prüfung nur mit englischer
+    Fehlermeldung, Quelle konzept-03 ohne `?packung=50` (2×), B8-Aufzählung ohne Fotos Dritter, `.gitignore`-Kommentar).
+- **Wie Claude das Ergebnis geprüft hat:** Journal aller 4 Agenten gelesen; die 7 niedrigen Befunde selbst behoben
+  (`konzept.js`: Umschalter behalten `packung`/`nachkauf`, Nachkauf blendet Beitritts-Texte aus; `pruefen.mjs`:
+  Rückgabecode 128 statt Fehlertext, zwei neue Prüffälle; Register und QUELLEN `produkt.html?packung=50`; B8-Text;
+  `.gitignore`). Danach: Webseite `pruefen.mjs` bestanden (inkl. GitHub-Pages-Probe), Präsentation `pruefen.mjs
+  --schritte` hell und dunkel je 0 Fehler, 17 Warnungen; Volltextsuche nach dem Vornamen: 0 Treffer außerhalb von
+  `intern/`; Folien 02, 03, 09, B8 und die sieben Vorschaubilder der Webseite angesehen. Nicht gelöscht (Sicherheitssperre
+  bei Löschungen im Wurzelverzeichnis): zwei Fehlausgaben eines Testaufrufs (`/dunkel.log`, `/rueckfall.log`, je 771 Byte,
+  außerhalb des Repositorys im Container).
 
 ---
 
