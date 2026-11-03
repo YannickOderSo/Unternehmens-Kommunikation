@@ -34,6 +34,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 07 | 30.10.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen | – | Zwischenstand committet und gepusht |
 | 08 | 02.11.2026 | Yannick | Videobotschaft des HOLY-Gründers für die nächste Präsentation (Anhang: Video) | – | nur technische Daten gelesen; Inhalt nicht ausgewertet, Einwilligung offen; nicht im Repository |
 | 09 | 02.11.2026 | Yannick | Gründer hat zugestimmt (Video und Stimme in der Präsentation); Platz am Ende | – | Gestaltungsplan: Video als Schlussschritt auf Folie 09 (9.5), Zeit und Klicks angepasst; `.gitignore`; Video nur lokal |
+| 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich mit Plan und Dossier *läuft* |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -191,6 +192,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 10 – 03.11.2026 – Yannick
+
+> Wir haben die Aufgaben bekommen
+
+- **Anhänge:** ein Foto der Aufgabenfolie „FALLSTUDIE 2: Customer Journey – Präsentation am 10.11.“ (in der Vorlesung
+  am Bildschirm aufgenommen; sieben Aufgaben mit Kästchen, Fußzeile „Unternehmenskommunikation – Prof. Dr. Daniel
+  Stenger“). Keine Personen erkennbar.
+- **Vorgehen Claude:** Folie wörtlich in `fallstudie-2-customer-journey/README.md` abgeschrieben (Abschnitt „Aufgabe“),
+  Unterschiede zur bisherigen Planung benannt (Termin 10.11. statt 09.11., kein Blog mehr, Top 3 statt Top 2
+  Touchpoints je Phase mit priorisiertem Top-Touchpoint, IST und SOLL eines zentralen Wegs, Überleitungen,
+  branchenübergreifende Best Practices, Mockups); Termin in `README.md` und FS2-README nachgezogen. Workflow D04
+  gleicht die Aufgabe mit `gestaltungsplan.md` und `recherche-customer-journey.md` ab.
+- **Ergebnis:** *läuft*
+- **Dateien:** `README.md`, `fallstudie-2-customer-journey/README.md`, `ki-nachweis/workflows/2026-11-03_fs2-aufgabe-abgleich.js`
+- **Unteragenten:** D04
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -203,6 +221,7 @@ Auftrag (im Workflow-Skript).
 | D01 | 27.10.2026 | 01 | Workflow „fs2-kritik-umsetzen“ (4 Unteragenten, einer mit Websuche) | Vorschläge, wie die Kritik an Fallstudie 1 in Fallstudie 2 umgesetzt wird: Bilder, Inhalt/Modelle, Zeit/Vortrag, „weniger nüchtern“ | 43 Vorschläge (Inhalt 10, Bilder 13, Zeit 9, Gestaltung 11) mit Quellen, offene Fragen an Prof. Stenger | Claude: drei Kernbefunde im Repository nachgeprüft |
 | D02 | 30.10.2026 | 04 | Workflow „fs2-recherche-gestaltung“ und Fortsetzung (24 Unteragenten mit Ergebnis, mit Websuche) | Recherche in 8 Bereichen mit je einer Gegenprüfung; 3 Gestaltungsrichtungen mit Musterfolie; 2 Jurys; Dossier und Gestaltungsplan; Schlussprüfung | Dossier (353 Befunde), Gestaltungsplan, 3 Musterfolien; zweimal vom Nutzungslimit unterbrochen | Unteragenten (Gegen- und Schlussprüfung); Claude: Skriptprüfung, Sichtprüfung |
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
+| D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -276,6 +295,14 @@ Auftrag (im Workflow-Skript).
   Arbeitsdateien, keine Modellbezeichnungen, als E-Mail nur die Funktionsadresse pr@holy.com. Neu gerenderte
   Musterfolie angesehen. Hinweis: Die HTML-Musterfolie „faden“ lädt die Schrift Libre Franklin aus einem Ordner, der
   erst beim Bau entsteht (im Kopfkommentar vermerkt; verbindlich ist das PNG).
+
+### D04 – 03.11.2026 – ausgelöst durch Prompt 10
+
+- **Art:** Workflow „fs2-aufgabe-abgleich“: zwei Prüfer parallel, nur lesend, je Aufgabe A1–A7 mit Abdeckung
+  (voll/teilweise/fehlt), Lücke, konkreter Änderung, Aufwand und Quelle; (1) Gestaltungsplan, (2) Recherche-Dossier.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-aufgabe-abgleich.js`](workflows/2026-11-03_fs2-aufgabe-abgleich.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 

@@ -1,16 +1,38 @@
 # Fallstudie 2: Customer Journey & Blog-Beitrag
 
-**Präsentation:** Mo, 09.11.2026 · 15 Minuten + Backup (Stenger S. 57)
+**Präsentation:** **Di, 10.11.2026** laut Aufgabenfolie (03.11.2026; S. 57 nannte noch den 09.11.) · 15 Minuten + Backup
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026, gilt für alle drei Fallstudien
 **Stand:** 30.10.2026 · **Für Fallstudie 2 ist noch nichts verteilt** (`CLAUDE.md`); keine Datei hier ordnet Personen Aufgaben zu.
 
 ## Aufgabe
 
-Eine eigene Aufgabenfolie gibt es nicht. Die Vorlesung nennt nur das Thema und den Termin:
+**Aufgabenfolie seit 03.11.2026** (in der Vorlesung gezeigt, Foto von Yannick; Abschrift, Hervorhebungen wie auf der
+Folie):
 
-> 2. Customer Journey & Blog Beitrag – am 09.11. · Bereiten Sie jeweils eine 15 minütige Präsentation in Ihrer Gruppe
-> vor zu den gegebenen Themen und Ihrem Unternehmen. (Stenger, S. 57)
+> **FALLSTUDIE 2: Customer Journey – Präsentation am 10.11.**
+>
+> **Analysieren** und **bewerten** Sie die **Customer Journey** Ihres Unternehmens. Sie wollen die Customer Experience
+> Ihrer Kunden auf ein neues Level heben. **Optimieren** Sie die Customer Journey Ihres Unternehmens.
+>
+> 1. Führen Sie eine Analyse der **Customer Journey (IST)** Ihres Unternehmens durch. Bewerten Sie diese **kritisch**.
+> 2. Identifizieren Sie einen zentralen Weg in der **Customer Journey (IST)**.
+> 3. Bewerten Sie kritisch die **Überleitungen** zwischen verschiedenen Phasen des zentralen Wegs der Customer
+>    Journey im **IST**.
+> 4. Leiten Sie aus Ihrer Persona **pro Phase** die **Top 3 Touchpoints** im **SOLL** ab. Priorisieren Sie den
+>    Top-Touchpoint pro Phase (zentraler Weg SOLL).
+> 5. Recherchieren Sie **Best-Practices** für Customer Experience an diesen Touchpoints (Branchenübergreifend).
+> 6. Konzipieren Sie **konkrete Maßnahmen** wie die Customer Experience Ihrer Marke entlang der zentralen Route
+>    gesteigert werden kann.
+> 7. Entwickeln Sie entsprechende **„Mockups“** wie die optimierten Touchpoints ausgestaltet aussehen können.
+>
+> (Unternehmenskommunikation – Prof. Dr. Daniel Stenger)
+
+Ein Blog-Beitrag steht auf der Aufgabenfolie nicht mehr (S. 57 nannte noch „Customer Journey & Blog Beitrag“). Gegenüber
+der bisherigen Planung neu bzw. anders: **Top 3** statt Top 2 Touchpoints je Phase mit einem priorisierten
+Top-Touchpoint, ausdrücklich **IST** und **SOLL** eines zentralen Wegs, Bewertung der **Überleitungen** zwischen den
+Phasen, **branchenübergreifende Best Practices** und **Mockups** der optimierten Touchpoints. Abgleich mit Dossier und
+Gestaltungsplan: KI-Nachweis FS2, Eintrag 10.
 
 Den inhaltlichen Rahmen geben der **Touchpoint-Managementprozess** in fünf Schritten (S. 111) und die Übung am Ende
 des Kapitels:
@@ -66,7 +88,7 @@ Dossier 2.5/12.2 und im Gestaltungsplan 13.2.
 Laut Gestaltungsplan, Abschnitt 12: Plan bestätigen und Fragen an Prof. Stenger senden (Fr 30.10.) · Persona und
 Blog-Thema entscheiden, Selbstversuch online und im Handel beginnen (Sa 31.10.) · Workshop zur Übung S. 128/129
 (Mo 02.11.) · Freigaben und Antworten abwarten (Di 03.11.) · Bildschluss (Mi 04.11.) · Datenschluss (Do 05.11.) ·
-Generalproben (Fr 06.11. und So 08.11.) · **Änderungsstopp So 08.11., 20:00** · Beamer-Test und Vortrag (Mo 09.11.).
+Generalproben (Fr 06.11. und So 08.11.) · **Änderungsstopp So 08.11., 20:00** · Beamer-Test und Vortrag (Mo 09.11.; **laut Aufgabenfolie jetzt Di 10.11.**, Zeitplan wird angepasst).
 
 > KI-gestützt erstellt (Claude Code). Fakten über HOLY nur mit Faktenstatus und Quelle aus dem Dossier verwenden.
 > Rechtliche Einordnungen sind keine Rechtsberatung.
