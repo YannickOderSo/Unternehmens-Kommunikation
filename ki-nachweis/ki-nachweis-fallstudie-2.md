@@ -39,6 +39,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 12 | 03.11.2026 | Yannick | Freigabe: HOLY-Logos dürfen genutzt werden (Gründer eingeweiht) | – | umgesetzt (Eintrag 11): Oval auf Folie 01 und 09, Wortmarke im Kopf der Konzept-Webseite |
 | 13 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Gestaltungsplan, während D05 läuft) | – | Zwischenstand committet und gepusht |
 | 14 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D05 „fs2-bau“ abgeschlossen | – | Ergebnisse gelesen, Abnahme ausgewertet (weiter in Eintrag 11) |
+| 15 | 03.11.2026 | Yannick | HOLY-Grafiken online herunterladen; Webseite und Präsentation sollen gut aussehen; Nutzung nur privat in der Uni | D06 (Workflow) | *läuft:* Bilder beschaffen, auswählen, intern einbauen (nicht im öffentlichen Repository), Abnahme |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -301,6 +302,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Abnahmebefunde geprüft und eingearbeitet – beschrieben in Eintrag 11 und D05.
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 15 – 03.11.2026 – Yannick
+
+> Lade dir die Grafiken online runter die du brauchst von Holy die Webseite und die Präsentation muss gut aussehen rechte sind nicht wichtig wir nutzen es weder kommerziell noch öffentlich nur privat in der uni
+
+- **Anhänge:** keine. (Mit der Nachricht wurde automatisch die Anleitung für Workflows geladen – Systemkontext, kein
+  Text der Gruppe.)
+- **Vorgehen Claude:** Bilder werden wie gewünscht nur privat genutzt. Weil Repository und GitHub Pages öffentlich sind,
+  liegen alle heruntergeladenen HOLY-Bilder und Screenshots nur in `praesentation/intern/` und `konzept-website/intern/`
+  (beide per `.gitignore` ausgeschlossen, neu: `konzept-website/intern/`). Präsentation und Webseite laden sie über eine
+  Liste `intern/bilder.js`, wenn sie vorhanden ist (Vortrag vom Laptop, wie beim Gründer-Video); öffentlich bleiben die
+  Platzhalter. Workflow D06 „fs2-bilder“: drei Beschaffer (Produkt- und Bildwelt, Touchpoint-Screenshots, Vorbilder),
+  eine Auswahl mit Zuschnitt, zwei Einbauten (Präsentation, Webseite), zwei Abnahmen.
+- **Ergebnis:** *läuft*
+- **Dateien:** `.gitignore`, `ki-nachweis/workflows/2026-11-03_fs2-bilder.js`; weitere folgen
+- **Unteragenten:** D06
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -315,6 +333,7 @@ Auftrag (im Workflow-Skript).
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
 | D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
 | D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | Plan, Dossier 7a (17 Fälle), Konzept-Webseite, Präsentation; Abnahme: 1 hoher, 15 mittlere, 14 niedrige Befunde | Journal gelesen; Befunde nachgeprüft (Help-Center selbst abgerufen, Ü1 am Maßstab, Screenshots angesehen) und eingearbeitet; `pruefen.mjs` beider Teile: 0 Fehler |
+| D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -431,6 +450,17 @@ Auftrag (im Workflow-Skript).
   `praesentation/werkzeuge/pruefen.mjs --schritte` hell (mit PDF, 18 Seiten), dunkel, Bento, Keynote – je 0 Fehler,
   17 erlaubte Warnungen (Wortbudget, 24/26-px-Notizen), 0 externe Anfragen. `git check-ignore` für `intern/` und
   `_test/` geprüft. Nicht übernommen: die Ersatztests der Technik-Abnahme (bleiben offen, LIESMICH §10).
+
+
+### D06 – 03.11.2026 – ausgelöst durch Prompt 15
+
+- **Art:** Workflow „fs2-bilder“: drei Beschaffer parallel (Produkt- und Bildwelt von HOLY; Screenshots der Touchpoints
+  auf Marcos Weg; Screenshots der Vorbilder aus Dossier 7a), eine Auswahl mit Zuschnitt und Bildliste, zwei Einbauten
+  (Präsentation, Konzept-Webseite) mit je einer Abnahme (nur lesend). Alle Bilder nur in `intern/` (nicht versioniert);
+  jede Datei mit Herkunft (URL, Abrufdatum).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bilder.js`](workflows/2026-11-03_fs2-bilder.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
