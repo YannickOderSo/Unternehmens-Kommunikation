@@ -29,15 +29,16 @@ HOLYs eigene Schriften (kommerziell) werden nicht eingebunden (Dossier ✔ G01, 
 ## 3. Grafiken
 
 Alle Grafiken sind eigene Gestaltung aus CSS und Inline-SVG, KI-gestützt erstellt: Laufleiste, Pfad, Knoten,
-Brücken, Handyrahmen, Strichskalen, Farb- und Formproben, Platzhalterflächen. **Kein HOLY-Logo, keine HOLY-Schrift,
-kein nachgezeichnetes Verpackungsdesign, keine KI-Bilder** (Plan 3.7). Die Farben sind HOLYs Webfarben aus dem
+Brücken, Handyrahmen, Strichskalen, Farb- und Formproben, Platzhalterflächen. **Keine HOLY-Schrift,
+kein nachgezeichnetes Verpackungsdesign, keine KI-Bilder** (Plan 3.7); das HOLY-Logo nur als unveränderte Datei (Abschnitt 4). Die Farben sind HOLYs Webfarben aus dem
 Dossier (Gelb #FFD007 ✎ G06, Schwarz #1D1D1B ✔ G07, Creme #F3EDE1 ✎ G06; Farbproben auf 03 mit Status).
 
 ## 4. Bilder (`bilder/`, `intern/`)
 
 | Datei | Folie | Herkunft | Rechte |
 |---|---|---|---|
-| `bilder/konzept-01-landingpage.png` … `konzept-05-danke.png` | 08 | Bildschirmfotos der eigenen Konzept-Webseite (`../konzept-website/_vorschau/`, 390 × 844, 03.11.2026) | eigene Gestaltung ohne fremde Bilder; jede Seite trägt den Hinweis „Studentisches Konzept … keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“ |
+| `bilder/holy-logo-oval.png` | 01, 09 | offizielles HOLY-Logo im gelben Oval, 692 × 400 px, unverändert aus FS1 (`../../fallstudie-1-brand-persona/praesentation/bilder/`; dort: de.holy.com, Abruf 16.10.2026) | © HOLY Softdrinks GmbH; Nutzung für dieses Studienprojekt freigegeben durch Yannick am 03.11.2026 („der Gründer ist eingeweiht“, KI-Nachweis FS2 Nr. 12); Quelle auf der Folie |
+| `bilder/konzept-01-landingpage.png` … `konzept-05-danke.png` | 08 | Bildschirmfotos der eigenen Konzept-Webseite (390 × 844, 03.11.2026, erzeugt mit `../konzept-website/werkzeuge/folie08-bilder.mjs`; Produktseite und Danke-Seite als Ausschnitt) | eigene Gestaltung ohne fremde Bilder; jede Seite trägt den Hinweis „Studentisches Konzept … keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“ |
 | `intern/gruender-video.mp4` | 09 | Videobotschaft des Gründers Mathias Horsch, 02.11.2026 | Zustimmung für Video und Stimme **in der Präsentation** (laut Yannick, KI-Nachweis FS2 Nr. 09); **nicht** für Repository/GitHub Pages und KI-Transkription → per `.gitignore` ausgeschlossen, nur per Pfad eingebunden |
 | Bildkacheln b01, b04–b12, b15, b16 | 01–07, 09 | **offen** – eigene Fotos und Screenshots aus dem Selbstversuch und dem Workshop | bis dahin Platzhalter (`data-status="offen"`); nicht freigegebene Dateien nur in `intern/` (Plan 4, 11.5) |
 | Textgrafik „0 Beiträge · Blog /blogs/news“ | 03 | Rückfall b19, eigene Gestaltung | Beleg ✔ M01, ✔ L39 (Abruf 30.10.2026) |

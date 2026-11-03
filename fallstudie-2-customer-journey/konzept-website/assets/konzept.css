@@ -93,10 +93,20 @@ li { margin-bottom: .3em; }
   text-decoration: none; display: inline-flex; align-items: baseline; gap: 8px;
 }
 .wortmarke span { font-family: var(--schrift-text); font-size: 13px; font-weight: 600; color: var(--schiefer); }
+/* HOLY-Wortmarke als Bild (Freigabe 03.11.2026); Höhe fest, Breite aus dem Seitenverhältnis 389 × 105 */
+.wortmarke img { display: block; height: 24px; width: auto; }
+/* „Konzept“ steht klein unter der Wortmarke, damit Logo und Navigation auch bei 390 px nebeneinander passen */
+.wortmarke { flex-direction: column; align-items: flex-start; gap: 3px; flex: none; }
+.wortmarke span { font-size: 11px; line-height: 1; letter-spacing: .04em; text-transform: uppercase; }
 .kopf nav { display: flex; gap: 14px; font-size: 15px; font-weight: 600; white-space: nowrap; }
 .kopf nav a { text-decoration: none; padding: 10px 0; }
 .kopf nav a[aria-current="page"] { text-decoration: underline; }
 .kopf .nur-breit { display: none; }
+/* sehr schmale Handys (320 px): Navigation darf umbrechen, kein waagerechtes Scrollen (Abnahme D05) */
+@media (max-width: 359px) {
+  .kopf nav { gap: 10px; font-size: 14px; flex-wrap: wrap; justify-content: flex-end; white-space: normal; }
+  .wortmarke img { height: 22px; }
+}
 
 /* ---------- Brotkrumen ---------- */
 .krumen { font-size: 14px; color: var(--schiefer); padding: 12px 0 0; }

@@ -27,9 +27,11 @@ window.MARKE = {
     sekundaer: '#1D1D1B'
   },
 
-  /* 3. BILDER – kein HOLY-Logo (Gestaltungsplan 3.7 und 11.2: „logo leer“) */
+  /* 3. BILDER – HOLY-Logo (gelbes Oval) nur auf Folie 01 und 09: Freigabe durch Yannick am 03.11.2026
+     („Du darfst die holy Logos nutzen … der Gründer ist eingeweiht“, KI-Nachweis FS2 Nr. 12); Datei unverändert aus FS1,
+     © HOLY Softdrinks GmbH. Logo ganz weg: logoTitel leeren, dann blendet deck.js die Bilder aus. */
   logo: '',
-  logoTitel: '',
+  logoTitel: 'bilder/holy-logo-oval.png',
   raetselBild: '',
 
   /* 4. ANGABEN ZUR PRÄSENTATION */

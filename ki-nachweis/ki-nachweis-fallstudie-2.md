@@ -35,9 +35,10 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 08 | 02.11.2026 | Yannick | Videobotschaft des HOLY-Gründers für die nächste Präsentation (Anhang: Video) | – | nur technische Daten gelesen; Inhalt nicht ausgewertet, Einwilligung offen; nicht im Repository |
 | 09 | 02.11.2026 | Yannick | Gründer hat zugestimmt (Video und Stimme in der Präsentation); Platz am Ende | – | Gestaltungsplan: Video als Schlussschritt auf Folie 09 (9.5), Zeit und Klicks angepasst; `.gitignore`; Video nur lokal |
 | 10 | 03.11.2026 | Yannick | Aufgabenfolie zu Fallstudie 2 erhalten (Anhang: Foto der Folie) | D04 (Workflow) | Aufgabe abgeschrieben (README), Termin 10.11.; Abgleich: A1, A2, A4, A6, A7 teilweise abgedeckt, A3 und A5 fehlen weitgehend; Vorschlag neuer Folienplan (Chat) |
-| 11 | 03.11.2026 | Yannick | Mit dem Bau anfangen; Prof. Stenger regt eine eigene HOLY-Webseite an | D05 (Workflow) | *läuft:* Plan-Umbau, Best Practices, Konzept-Webseite, Präsentation, Abnahme |
-| 12 | 03.11.2026 | Yannick | Freigabe: HOLY-Logos dürfen genutzt werden (Gründer eingeweiht) | – | vermerkt; Einbau nach Abschluss von D05 |
+| 11 | 03.11.2026 | Yannick | Mit dem Bau anfangen; Prof. Stenger regt eine eigene HOLY-Webseite an | D05 (Workflow) | Plan umgebaut, Best Practices X01–X17 (Dossier 7a), Konzept-Webseite (7 Seiten), Präsentation (9 Folien + B1–B9); Abnahmebefunde eingearbeitet, Logos eingebaut |
+| 12 | 03.11.2026 | Yannick | Freigabe: HOLY-Logos dürfen genutzt werden (Gründer eingeweiht) | – | umgesetzt (Eintrag 11): Oval auf Folie 01 und 09, Wortmarke im Kopf der Konzept-Webseite |
 | 13 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Gestaltungsplan, während D05 läuft) | – | Zwischenstand committet und gepusht |
+| 14 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D05 „fs2-bau“ abgeschlossen | – | Ergebnisse gelesen, Abnahme ausgewertet (weiter in Eintrag 11) |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -228,8 +229,40 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Mockup der optimierten Touchpoints, mit festem Hinweisbalken „Studentisches Konzept … keine Website der HOLY
   Softdrinks GmbH · keine Bestellung möglich“, noindex, ohne Logo und fremde Bilder, ohne Datenversand),
   (4) Präsentation mit FS1-Engine und Thema „Pfad“, (5) Abnahme Technik und Inhalt/Recht (nur lesend).
-- **Ergebnis:** *läuft*
-- **Dateien:** `ki-nachweis/workflows/2026-11-03_fs2-bau.js`; weitere folgen
+- **Ergebnis (nach Abschluss von D05 und Nacharbeit durch Claude):**
+  - **Gestaltungsplan** nach A1–A7 umgebaut: 9 Hauptfolien, 23 Klicks, 11:50 + 0:40 Reserve; Top 3 je Phase mit
+    Herleitung; Überleitungen Ü1–Ü4 mit Maßstab (6.7); Konzept-Webseite statt Blog (7); Meilensteine M6–M13.
+  - **Dossier Kap. 7a** „Best Practices je Top-Touchpoint“: 17 branchenfremde Fälle (X01–X17; 10 ✔, 6 ✎, 1 ~), Quellen
+    [275]–[321] aus Websuche am 03.11.2026; Teilaussagen ohne prüfbare Quelle gestrichen (siehe D05).
+  - **Konzept-Webseite** `fallstudie-2-customer-journey/konzept-website/`: 7 Seiten entlang des zentralen Wegs (SOLL),
+    Präsentationsmodus `?anmerkungen=1` mit 47 Anmerkungen, Hinweisbalken, `noindex`, keine Formulare, keine externen
+    Anfragen.
+  - **Präsentation** `fallstudie-2-customer-journey/praesentation/`: FS1-Engine, Thema „Pfad“, Folien 01–09 und B1–B9,
+    Videobotschaft auf 09 nur per Pfad aus `intern/` (nicht im Repository).
+  - **Abnahme** (2 Prüfer) und **Nacharbeit durch Claude** nach deren Befunden: Konzept-Webseite – Iced Teas mit
+    natürlichem Koffein ergänzt (Help-Center selbst abgerufen, 03.11.2026), Abschnitt Schichtarbeit ohne impliziten
+    Konsumrat, Altershinweis auf der Landingpage, Rechtsaussage zur Health-Claims-Verordnung als Einschätzung „keine
+    Rechtsberatung“, Grundpreise als „aus 7 g je Portion gerechnet“ bzw. „offen“ gekennzeichnet, Garantie-Siegel als
+    „Vorschlag der Gruppe“, Mischtipp ohne „mehr Pulver“, `?code=` nur noch mit Beispielcodes, Kopf bei 320 px.
+    Präsentation – Ü1 „wackelt“ statt „trägt“ (eigener Maßstab: Umweg über die Suche), Entscheidungskriterium für Platz 1
+    auf 06, „Wirkung meist nur Firmenangabe“ auf 07, neue Bildschirmfotos auf 08 passend zu den Anmerkungen, Bezug zum
+    Markensteuerrad aus FS1, Sprechtexte ohne noch nicht erledigte Erhebungen („[erst nach … so sprechen]“), Belegzeile
+    04 in 26 px, Überlauf-Ausnahme nur am Pfad auf 09. Dazu README FS2, Gestaltungsplan, Dossier (X07, 7a.7, S27),
+    LIESMICH, QUELLEN, AUTOREN §9.
+  - **HOLY-Logos (Freigabe Eintrag 12):** gelbes Oval auf Folie 01 und 09 (mit Quellenzeile), Wortmarke im Kopf jeder
+    Seite der Konzept-Webseite; Hinweisbalken und `noindex` bleiben.
+  - **Veröffentlichung:** Mit diesem Push ist die Konzept-Webseite über GitHub Pages erreichbar (gekennzeichnet, keine
+    Bestellung). Die Frage an Prof. Stenger bleibt (Gestaltungsplan 13.2 Nr. 16); bei Widerspruch kommt der Ordner aus
+    `master`.
+  - **Bewusst offen (für die Gruppe):** eigene Fotos und Rückfall-Grafiken (alle Bildkacheln stehen noch auf „offen“),
+    Selbstversuch, Workshop, Interviews, Wortbudget 02/07/09, `referent-test.mjs` für FS2, schriftliche Logo-Freigabe
+    des Gründers mit Umfang, Bestätigung der Vorbilder auf 07.
+  - **Herkunft:** Best Practices aus Websuche (Quellen mit Abrufdatum im Dossier); alle Aussagen über HOLY aus dem
+    Dossier mit Befund-ID; der Satz zu den Iced Teas aus eigenem Abruf des Help-Centers am 03.11.2026; Gestaltung und
+    Texte KI-gestützte Entwürfe.
+- **Dateien:** `fallstudie-2-customer-journey/gestaltungsplan.md`, `recherche-customer-journey.md`, `README.md`,
+  `konzept-website/` (neu, inkl. `bilder/holy-logo-wortmarke.png`, `werkzeuge/pruefen.mjs`, `werkzeuge/folie08-bilder.mjs`),
+  `praesentation/` (neu, inkl. `bilder/holy-logo-oval.png`); `ki-nachweis/workflows/2026-11-03_fs2-bau.js`
 - **Unteragenten:** D05
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -244,7 +277,9 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   mit der Regel „kein Logo“; die Logos baut Claude nach dessen Abschluss in Präsentation und Konzept-Webseite ein.
   Der Hinweisbalken „Studentisches Konzept … keine Website der HOLY Softdrinks GmbH“ und noindex bleiben, damit die
   Konzept-Webseite mit Logo nicht als echte HOLY-Seite durchgeht.
-- **Ergebnis:** vermerkt; Umsetzung folgt.
+- **Ergebnis:** vermerkt; umgesetzt nach Abschluss von D05 (Eintrag 11): Oval auf Folie 01 und 09, Wortmarke im Kopf
+  der Konzept-Webseite. Die Abnahme von D05 empfiehlt, die Freigabe des Gründers schriftlich mit Umfang (Hörsaal,
+  Repository, GitHub Pages) abzulegen.
 - **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
@@ -255,6 +290,15 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 
 - **Vorgehen Claude:** Der Plan-Agent von D05 bearbeitet gerade `gestaltungsplan.md`; der Zwischenstand wurde als
   solcher committet und gepusht. Der fertige Stand folgt nach Abschluss und Abnahme von D05.
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 14 – 03.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Task-Benachrichtigung: Workflow „FS2 bauen: Plan umbauen, Best Practices recherchieren und prüfen, Konzept-Webseite
+> und Präsentation bauen, Abnahme“ abgeschlossen (8 Unteragenten, 0 Fehler).
+
+- **Vorgehen Claude:** Ergebnisse aller 8 Unteragenten aus dem Workflow-Journal gelesen, Rohstand lokal committet,
+  Abnahmebefunde geprüft und eingearbeitet – beschrieben in Eintrag 11 und D05.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
@@ -270,7 +314,7 @@ Auftrag (im Workflow-Skript).
 | D02 | 30.10.2026 | 04 | Workflow „fs2-recherche-gestaltung“ und Fortsetzung (24 Unteragenten mit Ergebnis, mit Websuche) | Recherche in 8 Bereichen mit je einer Gegenprüfung; 3 Gestaltungsrichtungen mit Musterfolie; 2 Jurys; Dossier und Gestaltungsplan; Schlussprüfung | Dossier (353 Befunde), Gestaltungsplan, 3 Musterfolien; zweimal vom Nutzungslimit unterbrochen | Unteragenten (Gegen- und Schlussprüfung); Claude: Skriptprüfung, Sichtprüfung |
 | D03 | 30.10.2026 | 06 | Workflow „fs2-schlusspruefung-rest“ (3 Unteragenten, mit Websuche) | Rest von D02: Korrekturen der Schlussprüfung ins Dossier fertig einarbeiten; Gestaltungsplan prüfen und Befunde einarbeiten | Dossier: 66 Korrekturen (A.9); Plan: 7 Muss- und 11 Sollte-Befunde eingearbeitet (Abschnitt 15) | Claude: Status-Zitate per Skript gegen Anhang A, Links, Tabellen, Sichtprüfung Musterfolie |
 | D04 | 03.11.2026 | 10 | Workflow „fs2-aufgabe-abgleich“ (2 Unteragenten) | Aufgabenfolie A1–A7 mit Gestaltungsplan und Recherche-Dossier abgleichen: Abdeckung, Lücken, Änderungen, fehlende Recherche | je Aufgabe Abdeckung und Änderung; Folienplan-Vorschlag; Rechercheaufgaben | Claude: Persona-Kanal und Dossier-Aussage „keine Aufgabenfolie“ an der Quelle geprüft |
-| D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | *läuft* | – |
+| D05 | 03.11.2026 | 11 | Workflow „fs2-bau“ (8 Unteragenten, 3 mit Websuche) | Plan umbauen; Best Practices recherchieren und prüfen; Konzept-Webseite und Präsentation bauen; Abnahme | Plan, Dossier 7a (17 Fälle), Konzept-Webseite, Präsentation; Abnahme: 1 hoher, 15 mittlere, 14 niedrige Befunde | Journal gelesen; Befunde nachgeprüft (Help-Center selbst abgerufen, Ü1 am Maßstab, Screenshots angesehen) und eingearbeitet; `pruefen.mjs` beider Teile: 0 Fehler |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -365,8 +409,28 @@ Auftrag (im Workflow-Skript).
   Abrufdatum), ein Prüfer (adversarial an den Quellen, schreibt das Dossier-Kapitel), ein Bau-Agent Konzept-Webseite,
   ein Bau-Agent Präsentation, zwei Abnahme-Agenten (nur lesend).
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-bau.js`](workflows/2026-11-03_fs2-bau.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** alle 8 Unteragenten fertig, 0 Fehler (rund 2:20 h).
+  - *Plan-Umbau:* Gestaltungsplan nach A1–A7 (Folientabelle, Top 3 je Phase, Überleitungen, Konzept-Webseite,
+    Meilensteine); Nachrechen-Skript 23 Klicks / 710 s; 518 Paare Faktenstatus–Befund-ID gegen Anhang A: 0 Abweichungen.
+  - *Recherche (2 Agenten, Websuche):* 17 Fälle aus anderen Branchen, je mit URL und Abrufdatum 03.11.2026.
+  - *Prüfung:* alle 17 behalten (10 ✔, 6 ✎, 1 ~); gestrichen bzw. korrigiert wurden Teilaussagen ohne lesbare Quelle
+    (X02 Moderation/Unboxing, X07 Datengrundlage, X10 Zuordnung, X16 „Kassenbon“, X17 Branche) und Bezeichnungen (X05);
+    Kapitel 7a, Anhang A.10, Quellen [275]–[321].
+  - *Bau Konzept-Webseite:* 7 Seiten, eigenes Prüfskript (Links, Kontrast, Hinweisbalken, noindex, Rechnungen), bestanden.
+  - *Bau Präsentation:* 18 Folien, `pruefen.mjs` 0 Fehler in allen Themen; Video nur per Pfad, nie geladen.
+  - *Abnahme Inhalt/Recht:* A1–A7 abgedeckt; Befunde u. a. Veröffentlichung (hoch), Logo-Freigabe nur mündlich,
+    Ü1 widerspricht dem Maßstab, Platz 1 nicht trennscharf, Leitplanken (Altershinweis, Schichtarbeit, Iced Teas),
+    Rechtsaussage, leere Bildkacheln, Sprechtexte mit noch nicht erledigten Erhebungen.
+  - *Abnahme Technik:* `intern/` und `_test/` sicher ausgeschlossen; Befunde u. a. `referent-test.mjs` FS1-spezifisch,
+    Video-Schritt nicht automatisch prüfbar, Konzept-Webseite würde mit dem Push öffentlich, 320-px-Navigation.
+- **Wie Claude das Ergebnis geprüft hat:** Journal aller Agenten gelesen; Rohstand separat committet (Nachvollziehbarkeit).
+  Befunde einzeln nachgeprüft statt übernommen: den Help-Center-Artikel zu Koffein selbst abgerufen (Iced Teas mit
+  natürlichem Koffein bestätigt), Ü1 gegen den eigenen Maßstab 6.7.1 gelesen, P18 (92 %) im Dossier nachgesehen,
+  Bildschirmfotos von Konzept-Webseite (390/320/1280 px) und Folien (alle Endzustände, Ausschnitte 04/08) angesehen.
+  Nach der Nacharbeit: `konzept-website/werkzeuge/pruefen.mjs` – alle Prüfungen bestanden, 0 externe Anfragen;
+  `praesentation/werkzeuge/pruefen.mjs --schritte` hell (mit PDF, 18 Seiten), dunkel, Bento, Keynote – je 0 Fehler,
+  17 erlaubte Warnungen (Wortbudget, 24/26-px-Notizen), 0 externe Anfragen. `git check-ignore` für `intern/` und
+  `_test/` geprüft. Nicht übernommen: die Ersatztests der Technik-Abnahme (bleiben offen, LIESMICH §10).
 
 ---
 

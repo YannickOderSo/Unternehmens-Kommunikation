@@ -1,9 +1,9 @@
-# Fallstudie 2: Customer Journey & Blog-Beitrag
+# Fallstudie 2: Customer Journey
 
 **Präsentation:** **Di, 10.11.2026** laut Aufgabenfolie (03.11.2026; S. 57 nannte noch den 09.11.) · 15 Minuten + Backup
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026, gilt für alle drei Fallstudien
-**Stand:** 30.10.2026 · **Für Fallstudie 2 ist noch nichts verteilt** (`CLAUDE.md`); keine Datei hier ordnet Personen Aufgaben zu.
+**Stand:** 03.11.2026 · **Für Fallstudie 2 ist noch nichts verteilt** (`CLAUDE.md`); keine Datei hier ordnet Personen Aufgaben zu.
 
 ## Aufgabe
 
@@ -50,11 +50,13 @@ Mediennutzung (S. 122–126). Die Begriffe stehen in den Vorlesungsfolien (`unte
 
 | Datei | Inhalt | Status |
 |-------|--------|--------|
-| [`recherche-customer-journey.md`](recherche-customer-journey.md) | Recherche-Dossier: Touchpoints von HOLY je Phase, Brüche und Kundenstimmen, Suche und Content-Lücken, Benchmark-Blogs, Leitplanken für Blog-Aussagen, Persona und Mediennutzung, Bilder und Rechte; Vorschlag für die Übung S. 128/129; 5 Blog-Themen mit Empfehlung. Jeder Befund mit Faktenstatus (✔/✎/~/✗/H) und Quelle | KI-gestützt, gegengeprüft, Prüfung durch die Gruppe offen |
-| [`gestaltungsplan.md`](gestaltungsplan.md) | Gestaltungsplan der Präsentation: Regeln R1–R5 und ihre Umsetzung, Antwort auf jeden Kommentar von Prof. Stenger zu FS1, Gestaltungssystem in HOLY-Farben, Bildplan mit Rückfällen, Folienplan (9 Hauptfolien), Journey-Map, Blog-Mock-up, Zeitkonzept, Meilensteine | Entwurf, Prüfung durch die Gruppe offen |
+| [`recherche-customer-journey.md`](recherche-customer-journey.md) | Recherche-Dossier: Touchpoints von HOLY je Phase, Brüche und Kundenstimmen, Suche und Content-Lücken, Benchmark-Blogs, Leitplanken (8.3), Persona und Mediennutzung, Bilder und Rechte; Vorschlag für die Übung S. 128/129; seit 03.11. **Kap. 7a Best Practices je Top-Touchpoint** (X01–X17, branchenübergreifend, Websuche 03.11.). Jeder Befund mit Faktenstatus (✔/✎/~/✗/H) und Quelle | KI-gestützt, gegengeprüft, Prüfung durch die Gruppe offen |
+| [`gestaltungsplan.md`](gestaltungsplan.md) | Gestaltungsplan der Präsentation nach der Aufgabenfolie (A1–A7, Umbau 03.11.): Regeln R1–R5, Antwort auf jeden Kommentar von Prof. Stenger zu FS1, Gestaltungssystem in HOLY-Farben, Bildplan mit Rückfällen, Folienplan (9 Hauptfolien, 23 Klicks, 11:50 + 0:40), Top 3 je Phase, Überleitungen Ü1–Ü4, Konzept-Webseite, Zeitkonzept, Meilensteine | Entwurf, Prüfung durch die Gruppe offen |
+| [`konzept-website/`](konzept-website/) | **Mock-ups (A7):** eigene HOLY-Webseite als studentisches Konzept, 7 Seiten entlang des zentralen Wegs (SOLL), Präsentationsmodus `?anmerkungen=1` mit 47 Anmerkungen „Was wir ändern … Warum …“; Hinweisbalken, `noindex`, keine Bestellung; über GitHub Pages erreichbar | Entwurf, Prüfung durch die Gruppe offen |
+| [`praesentation/`](praesentation/) | Web-Präsentation (Engine aus FS1, Thema „Pfad“): 9 Hauptfolien + B1–B9, Videobotschaft des Gründers auf 09 (Datei nur lokal in `praesentation/intern/`, nicht im Repository); `LIESMICH.md` zum Starten und Prüfen | Entwurf; eigene Fotos, Selbstversuch, Workshop und Interviews offen |
 | [`_entwuerfe/`](_entwuerfe/) | drei Gestaltungsrichtungen als Musterfolie der Journey-Map (HTML + PNG): `reise`, `markenwelt`, `faden` | Entwürfe; Bildkacheln sind Platzhalter, keine fremden Bilder |
 
-Entstehung: KI-Nachweis FS2, Einträge 04–06 und Delegationen D02–D03
+Entstehung: KI-Nachweis FS2, Einträge 04–06, 10–11 und Delegationen D02–D05
 ([`../ki-nachweis/ki-nachweis-fallstudie-2.md`](../ki-nachweis/ki-nachweis-fallstudie-2.md)).
 
 ## Bezug zu Fallstudie 1
@@ -70,8 +72,10 @@ Entstehung: KI-Nachweis FS2, Einträge 04–06 und Delegationen D02–D03
 
 ## Was wir annehmen und beim Prof klären müssen
 
-Ohne Aufgabenfolie sind das Annahmen. Vorschlag: eine Mail an Prof. Stenger (Regel R1); Wortlaut der Fragen im
-Dossier 2.5/12.2 und im Gestaltungsplan 13.2.
+**Stand 30.10. (vor der Aufgabenfolie).** Die Aufgabenfolie vom 03.11. hat Nr. 2 (kein Blog mehr; der Koffein-Check ist
+jetzt eine Seite der Konzept-Webseite) und Nr. 3 (IST und SOLL) beantwortet. Die **aktuellen Fragen** an Prof. Stenger
+stehen im Gestaltungsplan 13.2 (Nr. 0, 2, 10, 14–18), u. a.: Dürfen SOLL-Touchpoints neu sein? Zählt die
+Konzept-Webseite als Mockup? Was heißt „branchenübergreifend“? Darf die Konzept-Webseite öffentlich stehen?
 
 | Nr. | Annahme | Offene Frage |
 |-----|---------|--------------|
@@ -85,10 +89,10 @@ Dossier 2.5/12.2 und im Gestaltungsplan 13.2.
 
 ## Nächste Schritte (ohne Personen)
 
-Laut Gestaltungsplan, Abschnitt 12: Plan bestätigen und Fragen an Prof. Stenger senden (Fr 30.10.) · Persona und
-Blog-Thema entscheiden, Selbstversuch online und im Handel beginnen (Sa 31.10.) · Workshop zur Übung S. 128/129
-(Mo 02.11.) · Freigaben und Antworten abwarten (Di 03.11.) · Bildschluss (Mi 04.11.) · Datenschluss (Do 05.11.) ·
-Generalproben (Fr 06.11. und So 08.11.) · **Änderungsstopp So 08.11., 20:00** · Beamer-Test und Vortrag (Mo 09.11.; **laut Aufgabenfolie jetzt Di 10.11.**, Zeitplan wird angepasst).
+Laut Gestaltungsplan, Abschnitt 12 (M6–M13, Stand 03.11.): Mail an Prof. Stenger mit den neuen Fragen (Di 03.11.) ·
+Selbstversuch mit Übergangsprotokoll, Kurzinterviews, Workshop Top 3 je Phase (Mi 04.11.) · **Bildschluss** (Do 05.11.) ·
+**Datenschluss**, Urteile Ü1–Ü4 nach dem Selbstversuch (Fr 06.11.) · Generalprobe 1 (Sa 07.11.) · Umbau (So 08.11.) ·
+Generalprobe 2 und **Änderungsstopp Mo 09.11., 20:00** · Beamer-Test und **Vortrag Di 10.11.**
 
 > KI-gestützt erstellt (Claude Code). Fakten über HOLY nur mit Faktenstatus und Quelle aus dem Dossier verwenden.
 > Rechtliche Einordnungen sind keine Rechtsberatung.

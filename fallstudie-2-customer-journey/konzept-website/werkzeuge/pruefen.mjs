@@ -154,7 +154,7 @@ for (const [kurz, datei] of SEITEN) {
         externeAttribute: Array.from(document.querySelectorAll('[src], [href], [action], [srcset]'))
           .map((el) => el.getAttribute('src') || el.getAttribute('href') || el.getAttribute('action') || el.getAttribute('srcset'))
           .filter((u) => /^(https?:)?\/\//i.test(u || '')),
-        bilder: document.querySelectorAll('img, picture, video, iframe, object, embed').length,
+        bilder: [...document.querySelectorAll('img, picture, video, iframe, object, embed')].filter(e => !(e.matches('.wortmarke img') && e.getAttribute('src') === 'bilder/holy-logo-wortmarke.png')).length,
         schrift: document.fonts.check('750 20px "Bricolage Konzept"') && Array.from(document.fonts).some((ff) => ff.family.includes('Bricolage Konzept') && ff.status === 'loaded'),
         anmText: Array.from(document.querySelectorAll('.anm')).map((a) => ({ ids: (a.getAttribute('data-ids') || '').trim(), text: a.textContent.trim().length })),
         punkte: document.querySelectorAll('.anm-punkt').length,
@@ -173,7 +173,7 @@ for (const [kurz, datei] of SEITEN) {
     if (!info.erstesKind) f(ort, 'Hinweisbalken ist nicht das erste Element im <body>');
     if (info.formulare || info.eingaben) f(ort, 'Formular oder Eingabefeld gefunden (' + info.formulare + '/' + info.eingaben + ')');
     if (info.externeAttribute.length) f(ort, 'externe Adressen: ' + info.externeAttribute.join(', '));
-    if (info.bilder) f(ort, info.bilder + ' Bild-, Video- oder Einbettungselemente (nur eigene SVG erlaubt)');
+    if (info.bilder) f(ort, info.bilder + ' Bild-, Video- oder Einbettungselemente (nur eigene SVG und die Wortmarke im Kopf erlaubt)');
     if (!info.schrift) f(ort, 'Schrift „Bricolage Konzept“ nicht geladen');
     if (info.hatHolyLogoBild) f(ort, 'Element mit „Logo“ in alt/aria-label');
 
@@ -258,12 +258,16 @@ await breit.close();
 /* ---------- 9: Rechnungen und Parameter ---------- */
 async function text(page, sel) { return (await page.textContent(sel)).replace(/\s+/g, ' ').trim(); }
 {
-  // Code aus der Adresse, bereinigt, und an Links weitergereicht
-  const s = await oeffne(mobil, 'index.html', '?code=Test-12%3Cb%3E', 'index.html ?code=');
+  // Fremder Code wird ignoriert (nur Beispielcodes), Beispielcode aus der Adresse übernommen und an Links weitergereicht
+  const s0 = await oeffne(mobil, 'index.html', '?code=Test-12%3Cb%3E', 'index.html ?code=fremd');
+  const code0 = await text(s0.page, '.codebox [data-code]');
+  if (code0 !== 'CREATOR10') f(s0.ort, 'Fremder Code nicht ignoriert: "' + code0 + '"');
+  await s0.page.close();
+  const s = await oeffne(mobil, 'index.html', '?code=marco10', 'index.html ?code=');
   const code = await text(s.page, '.codebox [data-code]');
-  if (code !== 'TEST-12B') f(s.ort, 'Code nicht übernommen/bereinigt: "' + code + '"');
+  if (code !== 'MARCO10') f(s.ort, 'Code nicht übernommen/bereinigt: "' + code + '"');
   const href = await s.page.getAttribute('.knopfreihe a[href^="produkt.html"]', 'href');
-  if (!/code=TEST-12B/.test(href)) f(s.ort, 'Code nicht an den Produkt-Link gehängt: ' + href);
+  if (!/code=MARCO10/.test(href)) f(s.ort, 'Code nicht an den Produkt-Link gehängt: ' + href);
   const hinweis = await s.page.isVisible('[data-nur-beispielcode]');
   if (hinweis) f(s.ort, 'Beispielcode-Hinweis trotz Code in der Adresse sichtbar');
   meldeKonsole(s); await s.page.close();
@@ -275,7 +279,7 @@ async function text(page, sel) { return (await page.textContent(sel)).replace(/\
   if (start !== '24,99 €') f(s.ort, 'Startwert Endpreis ' + start + ' statt 24,99 €');
   await s.page.click('.option[data-packung="50"]');
   const werte = { preis: await text(s.page, '[data-p-preis]'), je: await text(s.page, '[data-p-je]'), grund: await text(s.page, '[data-p-grund]'), ende: await text(s.page, '[data-p-ende]') };
-  const soll = { preis: '39,99 €', je: '0,80 € je Portion', grund: 'Grundpreis 114,26 € / kg', ende: '44,98 €' };
+  const soll = { preis: '39,99 €', je: '0,80 € je Portion', grund: 'Grundpreis 114,26 € / kg (aus 7 g je Portion gerechnet)', ende: '44,98 €' };
   Object.keys(soll).forEach((k) => { if (werte[k] !== soll[k]) f(s.ort, k + ' = "' + werte[k] + '" statt "' + soll[k] + '"'); });
   const links = await s.page.$$eval('[data-warenkorb-link]', (as) => as.map((a) => a.getAttribute('href')));
   if (!links.every((h) => /packung=50/.test(h))) f(s.ort, 'Warenkorb-Links ohne packung=50: ' + links.join(', '));

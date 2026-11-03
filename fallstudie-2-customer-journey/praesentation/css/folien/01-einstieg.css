@@ -101,3 +101,7 @@
   display: grid;
   gap: 6px;
 }
+
+/* HOLY-Logo (gelbes Oval, Freigabe 03.11.2026) über dem Titel, erscheint mit Klick 1 */
+#f01 .e1-logo { position: absolute; left: 128px; top: 44px; width: auto; height: 110px; }
+#f01 .e1-logo-quelle { position: absolute; left: 340px; top: 122px; font-size: 22px; line-height: 1.2; color: var(--p-schrift-2); white-space: nowrap; }

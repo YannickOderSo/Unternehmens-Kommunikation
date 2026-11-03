@@ -2,7 +2,8 @@
    Konzept-Webseite HOLY (studentisches Konzept, Fallstudie 2) – gemeinsames Skript
    - sendet nichts, speichert nichts (kein localStorage, keine Cookies, keine Anfragen)
    - liest nur Parameter aus der Adresse:
-       ?code=…          Creator-Code aus dem Video (nur A–Z, 0–9, Bindestrich; höchstens 20 Zeichen)
+       ?code=…          Creator-Code aus dem Video; nur Beispielcodes aus BEISPIELCODES, alles andere wird ignoriert
+                        (öffentliche Seite: niemand soll beliebige „Codes“ in die Seite schreiben können, Abnahme D05)
        ?packung=…       set | 1 | 10 | 50 (Produktseite → Warenkorb → Danke-Seite)
        ?anmerkungen=1   Präsentationsmodus: nummerierte Anmerkungs-Marker „was wir ändern und warum“
    - reicht code und anmerkungen an alle internen Links weiter, damit die Strecke im Vortrag durchklickbar bleibt
@@ -13,7 +14,10 @@
 
   var params = new URLSearchParams(window.location.search);
   var ANMERKUNGEN = params.get('anmerkungen') === '1';
+  /* Nur diese Beispielcodes werden aus der Adresse übernommen (keine echten HOLY-Codes) */
+  var BEISPIELCODES = ['CREATOR10', 'MARCO10'];
   var codeAusAdresse = bereinigeCode(params.get('code'));
+  if (BEISPIELCODES.indexOf(codeAusAdresse) < 0) codeAusAdresse = '';
   /* Beispielcode, wenn niemand über einen Creator-Link kommt (Beispielwert, kein echter Code) */
   var CODE = codeAusAdresse || 'CREATOR10';
   /* Rabatt des Creator-Codes: Beispielwert (die Höhe echter Creator-Codes steht nicht im Dossier) */
@@ -57,7 +61,7 @@
     return Object.prototype.hasOwnProperty.call(PACKUNGEN, p) ? p : 'set';
   }
   function grundText(d) {
-    return d.gramm ? 'Grundpreis ' + euro(runde(d.preis / (d.gramm / 1000))) + ' / kg' : 'Grundpreis folgt (Füllmenge des Sets prüfen)';
+    return d.gramm ? 'Grundpreis ' + euro(runde(d.preis / (d.gramm / 1000))) + ' / kg (aus 7 g je Portion gerechnet)' : 'Grundpreis offen: Füllmenge des Sets noch nicht belegt';
   }
   function versandFuer(p, zwischensumme) {
     if (PACKUNGEN[p].versandfrei) return 0;

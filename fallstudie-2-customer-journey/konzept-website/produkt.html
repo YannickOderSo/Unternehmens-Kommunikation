@@ -27,7 +27,9 @@
 
 <header class="kopf">
   <div class="inhalt">
-    <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite">HOLY <span>Konzept</span></a>
+    <!-- HOLY-Wortmarke: Freigabe durch Yannick am 03.11.2026 („Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
+         © HOLY Softdrinks GmbH, Datei unverändert aus FS1 (de.holy.com, Abruf 16.10.2026). Hinweisbalken bleibt Pflicht. -->
+    <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite"><img src="bilder/holy-logo-wortmarke.png" width="389" height="105" alt="HOLY"> <span>Konzept</span></a>
     <nav aria-label="Hauptnavigation">
       <a href="koffein-check.html">Koffein<span class="nur-breit">-Check</span></a>
       <a href="squad.html"><span class="nur-breit">SQUAD </span>Rewards</a>
@@ -85,28 +87,29 @@
         <div class="optionen" role="radiogroup" aria-labelledby="packung-titel">
           <button type="button" class="option" role="radio" data-packung="set" aria-checked="true">
             <span class="name">Starter Set Energy <span class="empfohlen">Für den Einstieg</span></span><span class="preis">24,99 €</span>
-            <span class="details">14 Drinks + Shaker, Gratisversand · 1,79 € je Drink · Grundpreis folgt</span>
+            <span class="details">14 Drinks + Shaker, Gratisversand · 1,79 € je Drink · Grundpreis offen</span>
           </button>
           <button type="button" class="option" role="radio" data-packung="50" aria-checked="false">
             <span class="name">50 Portionen <span class="empfohlen">Vorrat</span></span><span class="preis">39,99 €</span>
-            <span class="details">0,80 € je Portion · 114,26 € / kg</span>
+            <span class="details">0,80 € je Portion · 114,26 € / kg*</span>
           </button>
           <button type="button" class="option" role="radio" data-packung="10" aria-checked="false">
             <span class="name">10 Portionen</span><span class="preis">12,49 €</span>
-            <span class="details">1,25 € je Portion · 178,43 € / kg</span>
+            <span class="details">1,25 € je Portion · 178,43 € / kg*</span>
           </button>
           <button type="button" class="option" role="radio" data-packung="1" aria-checked="false">
             <span class="name">1 Portion zum Probieren</span><span class="preis">1,99 €</span>
-            <span class="details">1,99 € je Portion · 284,29 € / kg</span>
+            <span class="details">1,99 € je Portion · 284,29 € / kg*</span>
           </button>
         </div>
+        <p class="meta" style="margin:6px 0 0">* Grundpreis aus 7 g je Portion gerechnet; Nettofüllmenge am Etikett noch prüfen.</p>
 
         <!-- Maßnahme E2: Endpreis inklusive Versand vor dem Warenkorb. Vorbild ✔ X09 (Airbnb: Gesamtpreis inkl. aller
              Gebühren schon in der Übersicht). Versand DE 4,99 €, frei ab 49 € (✔ B12); Starter Set Gratisversand (✔ T20). -->
         <div class="kasten preisbaustein" id="preisbaustein">
           <p class="meta" data-p-name>Starter Set Energy</p>
           <div class="preiszeile"><span class="preis-gross" data-p-preis>24,99 €</span><span class="je" data-p-je>1,79 € je Drink</span></div>
-          <p class="meta"><span data-p-grund>Grundpreis folgt (Füllmenge des Sets prüfen)</span> · inkl. MwSt.</p>
+          <p class="meta"><span data-p-grund>Grundpreis offen: Füllmenge des Sets noch nicht belegt</span> · inkl. MwSt.</p>
           <p style="margin:8px 0 0"><span data-p-versand>Gratisversand</span> · <strong>Endpreis inkl. Versand: <span data-p-ende>24,99 €</span></strong><span class="anm" data-ids="✔ X09 · ✔ B12 · ✔ T20" data-ziel="#preisbaustein">Was wir ändern: Der Endpreis inklusive Versand steht schon hier, nicht erst im Checkout. Warum: Die Versandkosten nennt HOLY heute je nach Seite verschieden (Banner und Help-Center gegen Versandrichtlinie). Vorbild Airbnb: Seit 2025 zeigt Airbnb weltweit standardmäßig den Gesamtpreis inklusive aller Gebühren.</span></p>
         </div>
 
@@ -127,7 +130,7 @@
              verkauft), ✎ X17 (Bosch: Registrierung im Handel → gleiche Garantie). Formulierung: Vorschlag der Gruppe (H). -->
         <div class="siegel kasten" id="garantie-kurz">
           <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#FFD007" stroke="#1D1D1B" stroke-width="3"/><circle cx="32" cy="32" r="21" fill="none" stroke="#1D1D1B" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M21 33 L29 41 L44 24" fill="none" stroke="#1D1D1B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <p style="margin:0"><strong>30 Tage Zufriedenheitsgarantie – egal, wo du kaufst:</strong> HOLY-Shop, Supermarkt oder Amazon. <a href="#garantie">So funktioniert's</a><span class="anm" data-ids="✎ T18 · ✎ B29 · ✎ X07 · ✎ X17" data-ziel="#garantie-kurz">Was wir ändern: Eine Garantie, ein Satz, für jeden Kaufweg – direkt neben dem Preis. Warum: HOLYs AGB § 12 widerspricht sich heute (mal gilt die Garantie nur im Onlineshop, mal auch im Handel). Vorbild Amazon: Die A-bis-z-Garantie gilt, egal ob Amazon oder ein Händler verkauft. Der Wortlaut ist unser Vorschlag.</span></p>
+          <p style="margin:0"><span class="beispiel">Vorschlag der Gruppe</span> <strong>30 Tage Zufriedenheitsgarantie – egal, wo du kaufst:</strong> HOLY-Shop, Supermarkt oder Amazon. <a href="#garantie">So funktioniert's</a><span class="anm" data-ids="✎ T18 · ✎ B29 · ✎ X07 · ✎ X17" data-ziel="#garantie-kurz">Was wir ändern: Eine Garantie, ein Satz, für jeden Kaufweg – direkt neben dem Preis. Warum: HOLYs AGB § 12 widerspricht sich heute (mal gilt die Garantie nur im Onlineshop, mal auch im Handel). Vorbild Amazon: Die A-bis-z-Garantie gilt, egal ob Amazon oder ein Händler verkauft. Der Wortlaut ist unser Vorschlag.</span></p>
         </div>
 
         <div class="knopfreihe">
@@ -157,7 +160,7 @@
        Keine Gesundheits-, Abnehm- oder Fokusaussagen (8.3 Don't 1–5). -->
   <section class="abschnitt" aria-labelledby="h-drin">
     <div class="inhalt schmal">
-      <h2 id="h-drin">Was drin ist<span class="anm" data-ids="✔ R06 · ✔ R14 · ✎ R10 · ✔ R04">Was wir ändern: Zucker, Süßungsmittel und Energie mit Zahl und Bezugsgröße, ohne Gesundheits- oder Abnehmversprechen. Warum: HOLYs Werbeseite schreibt heute von „spürbarem Gewichtsverlust“ und „für Diabetiker geeignet“ – das ist nach der Health-Claims-Verordnung nicht zulässig. Die Konzeptseite zeigt nur belegte Werte.</span></h2>
+      <h2 id="h-drin">Was drin ist<span class="anm" data-ids="✔ R06 · ✔ R14 · ✎ R10 · ✔ R04 · ✔ S29 · ✎ R13">Was wir ändern: Zucker, Süßungsmittel und Energie mit Zahl und Bezugsgröße, ohne Gesundheits- oder Abnehmversprechen. Warum: HOLYs Werbeseite schrieb beim Abruf (Oktober 2026, Dossier) von „spürbarem Gewichtsverlust“ und „für Diabetiker geeignet“ – nach unserer Einschätzung (keine Rechtsberatung) mit der Health-Claims-Verordnung kaum vereinbar. Die Konzeptseite zeigt nur belegte Werte.</span></h2>
       <table class="tabelle">
         <caption class="sr-only">Angaben je zubereiteter Portion Raspberry Raptor</caption>
         <tbody>
@@ -236,7 +239,7 @@
     <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
     <div class="kennung">
       <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>Kein HOLY-Logo, keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe, „HOLY“ steht nur als Text.</p>
+      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</p>
     </div>
     <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
     <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>

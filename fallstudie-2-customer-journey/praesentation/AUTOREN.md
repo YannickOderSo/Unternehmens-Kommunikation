@@ -14,7 +14,7 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | Inhalt / Meta | Inhalt ≥ 28 px; Herleitung 24 px, Quelle und Fußhinweis 22 px, je **eine** Zeile, mit `data-meta` |
 | Farben | nur Tokens aus `pfad.css` (`--p-…`); **Gelb nie als Schrift oder konturlose Linie auf Creme**; auf Gelb nur Schwarz und Schiefer (3.3) |
 | Fakten | nur mit Befund-ID und Status aus dem Dossier; keine Zahl ohne Quelle; eigene Daten erst nach Erhebung, bis dahin „offen: …“ |
-| Bilder | kein HOLY-Logo, keine fremden Bilder im Repository; nicht freigegebene Fotos nur in `intern/` (4, 11.5) |
+| Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (Freigabe 03.11.2026); sonst keine fremden Bilder im Repository; nicht freigegebene Fotos nur in `intern/` (4, 11.5) |
 | Was es nicht gibt | Karten, Pillen, Kicker, Mini-Steuerrad, Sticker, weiche Schatten, Live-Abstimmung, `iframe`, eigenes `data-modus` an einer Folie (3.7) |
 | Sprache, Anrede | Deutsch, Publikum gesiezt; keine Modellbezeichnungen in Dateien |
 
@@ -114,3 +114,26 @@ schaue es mir dann an“). Grundlage: `../gestaltungsplan.md` (Stand 03.11.2026)
 `../konzept-website/` (Bildschirmfotos), Persona FS1, Vorlesung S. 107–129. Keine neue Websuche. Die Videobotschaft
 wurde nur per Pfad eingebunden, nicht angesehen und nicht transkribiert. Prüfung durch die Gruppe offen; nichts ist
 committet.
+
+## 9. Korrekturen nach der Abnahme (03.11.2026, Hauptsitzung)
+
+Zwei Prüfer des Workflows (Inhalt/Recht, Technik) haben den Bau abgenommen; die Hauptsitzung hat die Befunde so
+umgesetzt (KI-Nachweis FS2, Eintrag 11):
+
+- **Logo:** gelbes Oval auf 01 (über dem Titel, mit Klick 1) und 09 (rechts neben dem Titel), je mit Quellenzeile;
+  `marke.js → logoTitel`. Fußzeilen: „nicht im Auftrag von HOLY“ statt „keine Verbindung zu HOLY“ (Logo und
+  Videobotschaft mit Einverständnis des Gründers).
+- **05:** Ü1 „wackelt“ statt „trägt“ (eigener Maßstab 6.7.1: Umweg über die Suche); „Produkt&shy;seite“ bricht in der Kachel um.
+- **06:** Herleitung nennt das Entscheidungskriterium für Platz 1 (schließt den Bruch aus 05, von HOLY voll gestaltbar);
+  Rückfrage „Warum nicht die Suchmaschine?“ in den Notizen und in B2.
+- **07:** „öffentlich belegt“ präzisiert: Mechanik belegt, Wirkung meist nur Firmenangabe (B6).
+- **08:** neue Bildschirmfotos (Produktseite mit 50er-Dose ab „Packung wählen“, Danke-Seite ab „So geht's weiter“),
+  Anmerkungen passend zum Bild; Herleitung mit Bezug zum Markensteuerrad aus FS1; Sprechtext ohne Zuschreibung, wer die
+  Konzept-Webseite angeregt hat.
+- **04, B1, B2, B5, B6, B9:** Selbstversuch, Workshop, Interviews und Gegenprüfung nicht mehr als erledigt dargestellt
+  (Vermerk „[erst nach … so sprechen]“; B6: KI-gestützt gegengeprüft, Prüfung durch die Gruppe offen).
+- **04:** Belegzeile am Nebenweg als Inhalt in 26 px statt Meta in 22 px. **09:** `data-ueberlauf-ok` nur noch am Pfad,
+  die Bildleiste liegt im Satzspiegel.
+- Nicht umgesetzt (offen, LIESMICH §10): Rückfall-Grafiken für die Bildkacheln, Wortbudget 02/07/09,
+  `referent-test.mjs` für FS2, Video-Test im Repository.
+

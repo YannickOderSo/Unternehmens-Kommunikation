@@ -19,9 +19,4 @@
 /* Offenes Ende nach dem Regal (Phasen 4–5, oberhalb von K4) */
 #f04 .e4-regal { left: 1266px; top: 462px; width: 526px; padding-left: 6px; box-sizing: border-box; background: var(--p-papier); }
 #f04 .e4-regal-notiz { position: static; padding: 0; margin: 0; }
-#f04 .e4-regal-beleg {
-  font-size: 22px;
-  line-height: 1.25;
-  color: var(--p-schrift-2);
-  white-space: nowrap;
-}
+#f04 .e4-regal-beleg { margin: 2px 0 0; white-space: nowrap; }   /* Belegzeile 26 px (.p-beleg), Inhalt statt Meta (Abnahme D05) */

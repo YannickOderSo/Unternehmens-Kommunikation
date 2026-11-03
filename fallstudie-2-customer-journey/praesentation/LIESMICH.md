@@ -66,13 +66,17 @@ Gestaltungsplan 10.2 (stehen auch in den Notizen der Folien 02, 03, 06, 07). Bac
 **P** öffnet das zweite Fenster mit Sprechtext (je Schritt hervorgehoben), Gesamt- und Folienuhr und Planzeile („im
 Plan“, „0:20 hinter Plan“) – Bedienung wie FS1 (`../../fallstudie-1-brand-persona/praesentation/LIESMICH.md` §4).
 Im Referentenfenster spielt Folie 09 das Video **nicht** ab (kein zweiter Ton); dort steht der Rückfall-Rahmen.
+Die Anzeige „Bündel A/B/C“ im Referentenfenster meint **Sprechblöcke** (01–03, 04–06, 07–09), keine Personen.
 
 ## 5. Folie 08: Live-Demo der Konzept-Webseite
 
 Der Link „Live-Demo ↗“ (erscheint mit Klick 2) öffnet `../konzept-website/index.html?anmerkungen=1` in einem neuen
 Tab (kein `iframe`). Nur aus der Reserve, wenn der Kontrollpunkt nach 07 eingehalten ist, höchstens 30 s (Plan 7.4).
-Tab vor Beginn öffnen und den Wechsel einmal üben (Plan 11.4). Die Bildschirmfotos in `bilder/konzept-0n-….png`
-sind Kopien aus `../konzept-website/_vorschau/` (Stand 03.11.2026) – ändert sich die Webseite, neu kopieren.
+Tab vor Beginn öffnen, auf 150–200 % zoomen (Strg +; Hinweisbalken und Etiketten sind sonst aus dem Saal zu klein) und
+den Wechsel einmal üben (Plan 11.4). Die Bildschirmfotos in `bilder/konzept-0n-….png` erzeugt
+`../konzept-website/werkzeuge/folie08-bilder.mjs` (je Seite der Ausschnitt, den die Anmerkung nennt; Produktseite mit
+gewählter 50er-Dose) – ändert sich die Webseite, neu erzeugen:
+`PLAYWRIGHT_CORE=… node fallstudie-2-customer-journey/konzept-website/werkzeuge/folie08-bilder.mjs fallstudie-2-customer-journey/praesentation/bilder`
 
 ## 6. Folie 09: Videobotschaft des Gründers
 
@@ -104,10 +108,11 @@ PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core \
 # dazu: --modus dunkel · --druck _test/pruefung/praesentation.pdf (Notfall-PDF, 18 Seiten)
 ```
 
-Ergebnis am 03.11.2026: **0 Fehler** (hell mit PDF, dunkel, Themen Bento und Keynote), 0 externe Anfragen.
-**Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3 und 3.6): Wortbudget über 40 auf 03–07 (Plan) sowie auf 02 (53),
-08 (41) und 09 (53) – **nicht im Plan vorgesehen, Kürzung prüfen**; Notizen am Element in 24 px (03, 04, 05) und
-Belegzeilen in 26 px (05) laut Plan 3.6. `_test/` ist per `.gitignore` ausgeschlossen.
+Ergebnis am 03.11.2026 (nach den Korrekturen der Abnahme D05): **0 Fehler**, 0 externe Anfragen.
+**Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3, 3.4 und 3.6): Wortbudget über 40 auf 03–07 (Plan) sowie auf 02 (53),
+08 (42) und 09 (53) – **nicht im Plan vorgesehen, Kürzung prüfen**; Notizen am Element in 24 px (03, 04, 05) und
+Belegzeilen in 26 px (04, 05) laut Plan 3.6 (Ausnahme in 3.4). **Überlauf-Ausnahme:** nur der geschlossene Pfad auf
+09 (`svg.e9-pfad`, `data-ueberlauf-ok`) läuft von Rand zu Rand; die Bildleiste darunter liegt im Satzspiegel. `_test/` ist per `.gitignore` ausgeschlossen.
 Sichtprüfung zusätzlich (Plan 11.3): kein Gelb ohne schwarze Kontur auf Creme, kein Mittel warm auf Gelb, kein Ocker.
 
 `werkzeuge/referent-test.mjs` ist aus FS1 **unverändert** übernommen und prüft FS1-Folien (Rad auf f10/f12,
@@ -129,14 +134,17 @@ Fazit und Fragen, nicht die Videobühne). Öffentliche Fassung nur mit Rückfäl
 - [ ] Auswahl der Vorbilder auf 07 bestätigen (je Phase eines aus Dossier 7a; Vorschlag dieses Baus)
 - [ ] Libre Franklin (M5) statt Inter; `referent-test.mjs` für FS2 anpassen
 - [ ] Leseprobe (Tempo messen), Generalproben Sa 07.11. und Mo 09.11., Beamer-Test mit Ton und `?buehne=schwarz`
-- [ ] Veröffentlichung der Konzept-Webseite erst nach Stengers Antwort (Plan 13.1 Nr. 9)
+- [ ] Konzept-Webseite ist seit 03.11. über GitHub Pages erreichbar; Frage an Prof. Stenger bleibt (Plan 7.3, 13.2 Nr. 16)
+- [ ] Logo-Freigabe des Gründers schriftlich mit Umfang ablegen (Empfehlung der Abnahme D05)
+- [ ] Ü1 steht jetzt auf „wackelt“ (Umweg über die Suche, Plan 6.7.1) – im Selbstversuch bestätigen oder ändern
+- [ ] Sprechtexte mit „[erst nach … so sprechen]“ (B1, B2, B5, B9) nach den Erhebungen anpassen
 
 ## 11. Dateien
 
 | Datei | Inhalt |
 |---|---|
 | `index.html` | alle Folien (01–09, B1–B9) mit Sprechtext in `<aside class="notizen">` |
-| `marke.js` | Name, Farben, Titel „Customer Journey“, Datum 2026-11-10, Gruppe, Dozent; kein Logo |
+| `marke.js` | Name, Farben, Titel „Customer Journey“, Datum 2026-11-10, Gruppe, Dozent; `logoTitel` = gelbes Oval (01, 09; Freigabe 03.11.) |
 | `css/tokens.css`, `css/deck.css`, `css/komponenten.css`, `js/deck.js`, `js/komponenten.js` | Engine aus FS1, unverändert |
 | `css/folien/pfad.css` | Thema „Pfad“ (Farben fest, überschreibt die Ocker-Deckelung von `tokens.css`; Komponenten `p-…`) |
 | `css/folien/01-einstieg.css` … `09-fazit.css`, `10-backup.css` | je Folie eine Datei |

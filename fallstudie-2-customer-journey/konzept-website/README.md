@@ -10,8 +10,8 @@ HOLY · Persona Marco (FS1, fiktiv) · Fallstudie 2 „Customer Journey“, Aufg
 **Entwurf, Prüfung durch die Gruppe offen**
 
 > **Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung
-> möglich.** Kein HOLY-Logo, keine HOLY-Fotos oder Screenshots, keine HOLY-Schriften. Nichts wird gesendet oder
-> gespeichert. Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsberatung.
+> möglich.** HOLY-Wortmarke nur im Kopf (mit Einverständnis des Gründers, Freigabe durch Yannick am 03.11.2026), keine
+> HOLY-Fotos oder Screenshots, keine HOLY-Schriften. Nichts wird gesendet oder gespeichert. Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsberatung.
 
 ## 1 Zweck
 
@@ -28,7 +28,7 @@ bis `squad.html` klickt, geht den gelben Pfad von Folie 06; jede Seite verlinkt 
 
 | Datei | Phase (S. 108/109) | Top-Touchpoint (Gestaltungsplan 5.2) | Überleitung (6.7) | Was die Seite ändert | Vorbild | Befunde (Auswahl) |
 |---|---|---|---|---|---|---|
-| [`index.html`](index.html) | Inspiration · AWARE | Creator-Kurzvideo mit Code und klarer Weiterleitung: Landingpage für Besucher aus dem Video | Ü1 trägt → bleibt angeschlossen | Code aus dem Video steht schon da (`?code=`), „Werbung“ neben Creator und Code, zwei klare Wege (Produkt, Koffein-Check), Kernfakten als Text | ✔ X01 · ✎ X02 · ✔ X03 | ✔ L34 · ✔ T02 · ✔ L95 · ✔ R25 · ~ B21 |
+| [`index.html`](index.html) | Inspiration · AWARE | Creator-Kurzvideo mit Code und klarer Weiterleitung: Landingpage für Besucher aus dem Video | Ü1 wackelt → trägt | Code aus dem Video steht schon da (`?code=`), „Werbung“ neben Creator und Code, zwei klare Wege (Produkt, Koffein-Check), Kernfakten als Text | ✔ X01 · ✎ X02 · ✔ X03 | ✔ L34 · ✔ T02 · ✔ L95 · ✔ R25 · ~ B21 |
 | [`koffein-check.html`](koffein-check.html) | Recherche · APPEAL | eigene Antwortseite „Koffein-Check“ | Ü2 bricht → schließen | Antwort zuerst („Kurz gesagt“), eine Frage je Abschnitt mit fester Adresse, nur Etikett- und EFSA-Werte mit Quelle, FAQ mit strukturierten Daten, Klartext-Fassung [`koffein-check.txt`](koffein-check.txt) für KI-Assistenten, Quellen und Stand | ✔ X04 · ✎ X05 · ✔ X06 | ✔ S92 · ✔ S27 · ✎ S31 · ✎ S28 · ✎ S30 · ✔ R17 · ✔ R19 · ✎ R20 · ✎ S22 |
 | [`produkt.html`](produkt.html) | Entscheidung · ASSURE | Produktseite mit Preis je Portion, Bewertungen, einheitlicher Garantie | Ü2/Ü3 | Packungen in einer Liste mit Preis je Portion und Grundpreis ohne Code, Endpreis inklusive Versand, ein Lieferdatum, eine Garantie für alle Kaufwege, Koffein als Text, Bewertungen mit Herkunft (Texte nur Platzhalter) | ✎ X07 · ✔ X08 · ✔ X09 · ✔ X12 | ✔ B09 · ✔ B10 · ✔ T20 · ✔ R98 · ✔ B12 · ✔ B91 · ✎ T18 · ✔ T17 · ✎ R27 |
 | [`warenkorb.html`](warenkorb.html) | Kauf · ACT | mobiler Warenkorb/Checkout mit klarer Lieferzeit | Ü3 wackelt → tragen | ein Lieferdatum mit Bestellschluss oben, Code sichtbar übernommen, Endpreis inklusive Versand, Express-Knöpfe vor dem Formular (ohne Logos), Gast ohne Konto, Coins im Warenkorb, Altershinweis ohne falsche Rechtsbehauptung; kein Formular, nichts wird abgeschickt | ✎ X10 · ~ X11 · ✔ X12 · ✔ X15 | ✔ B91 · ✔ B90 · ✔ B12 · ✔ T22 · ✔ T23 · ✔ T32 · ✎ R20 · ✔ R90 · ✎ B05 |
@@ -46,8 +46,8 @@ Liste aller Stationen.
 |---|---|---|
 | Hinweisbalken fest und nicht ausblendbar | erstes Element jeder Seite, `position: sticky` oben, ohne Knopf, wörtlich „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“; steht auf jedem Bildschirmfoto | `pruefen.mjs` (Text, oben, nach dem Scrollen) |
 | `noindex,nofollow` | `<meta name="robots" content="noindex,nofollow">` auf jeder Seite | `pruefen.mjs` |
-| kein Logo, keine HOLY-Schrift | „HOLY“ nur als schlichter Text in Bricolage Grotesque; kein gelbes Oval, kein Verpackungsdesign | Sichtprüfung |
-| keine fremden Bilder | nur eigene Inline-SVG (Skizze „Video → Tag → Shop“, Dose ohne Aufdruck, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) und die türkise Platzhalterfläche mit „Platzhalter: eigenes Produktfoto folgt“; keine `img`, `video`, `iframe` | `pruefen.mjs` |
+| Logo nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, Freigabe 03.11.2026) mit „Konzept“ darunter; Quelle im Fuß jeder Seite; kein gelbes Oval, kein Verpackungsdesign | `pruefen.mjs` (nur dieses eine Bild erlaubt), Sichtprüfung |
+| keine fremden Bilder | nur eigene Inline-SVG (Skizze „Video → Tag → Shop“, Dose ohne Aufdruck, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) und die türkise Platzhalterfläche mit „Platzhalter: eigenes Produktfoto folgt“; außer der Wortmarke keine `img`, kein `video`, `iframe` | `pruefen.mjs` |
 | keine Datenübermittlung | kein `form`, kein `input`; Knöpfe führen nur zur nächsten Konzeptseite; Auswahlknöpfe (Packung, Trinkhäufigkeit, Opt-in) ändern nur die Anzeige; kein `localStorage`, keine Cookies | `pruefen.mjs` |
 | keine externen Anfragen | Schriften lokal (`schriften/`), kein CDN, keine Analyse-Skripte; Quellen stehen als Text, nicht als Link | `pruefen.mjs` (Netz gesperrt, 0 Anfragen) |
 | Daten nur mit Befund-ID | jede übernommene Zahl hat im Code einen Kommentar mit Befund-ID und im Präsentationsmodus eine Anmerkung; alles andere ist sichtbar als „Beispielwert“, „Beispiel“, „Platzhalter“ oder „Beispielrechnung“ markiert (Abschnitt 5) | Sichtprüfung |
@@ -61,7 +61,7 @@ Liste aller Stationen.
 | Adresse | Wirkung |
 |---|---|
 | `index.html?anmerkungen=1` | **Präsentationsmodus:** Unter dem Kopf erscheint die Laufleiste „Zentraler Weg (SOLL)“, an jeder Maßnahme ein nummerierter Punkt (schwarz mit gelber Ziffer). Klick auf einen Punkt oder auf „Anmerkungen (n) ansehen“ öffnet unten ein Blatt „Was wir ändern … Warum …“ mit Befund-IDs; „Weiter ›“, Pfeiltasten oder Bild-ab gehen zur nächsten Anmerkung, Esc schließt. Der Modus bleibt beim Durchklicken erhalten. Ausschalten: Link „Anmerkungen ausblenden“ im Fuß |
-| `index.html?code=MARCO10` | Creator-Code aus dem Video (nur A–Z, 0–9, Bindestrich, höchstens 20 Zeichen); wird an alle Seiten weitergereicht und im Warenkorb angezeigt. Ohne Parameter erscheint der Beispielcode `CREATOR10` |
+| `index.html?code=MARCO10` | Creator-Code aus dem Video; übernommen werden nur die Beispielcodes `CREATOR10` und `MARCO10` (öffentliche Seite: niemand soll beliebige „Codes“ hineinschreiben können), alles andere wird ignoriert. Wird an alle Seiten weitergereicht und im Warenkorb angezeigt. Ohne Parameter erscheint `CREATOR10` |
 | `warenkorb.html?packung=50` | Posten im Warenkorb: `set` (Standard, Starter Set), `1`, `10`, `50`; die Produktseite setzt den Wert über die Packungswahl, die Danke-Seite rechnet damit die Nachfüll-Erinnerung |
 
 Anmerkungen je Seite: index 5, koffein-check 12, produkt 9, warenkorb 5, danke 7, squad 6, haendler 3 (zusammen 47).
@@ -121,15 +121,18 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
 1. **Inhalt prüfen** – alle Seiten gegen Dossier 8.3 (Do/Don't) abhaken, vor dem Änderungsstopp Mo 09.11., 20:00;
    danach im Fuß „Prüfung durch die Gruppe offen“ durch „von der Gruppe geprüft“ ersetzen.
 2. **Libre Franklin** fehlt im Repository (Meilenstein M5); bis dahin Systemschrift für den Fließtext.
-3. **Grundpreis Starter Set:** Füllmenge nicht im Dossier → „Grundpreis folgt“. Die Grundpreise der Dosen sind aus
-   7 g je Portion gerechnet; Nettofüllmenge am Etikett gegenprüfen.
+3. **Grundpreis Starter Set:** Füllmenge nicht im Dossier → „Grundpreis offen: Füllmenge des Sets noch nicht belegt“.
+   Die Grundpreise der Dosen sind aus 7 g je Portion gerechnet und so gekennzeichnet; Nettofüllmenge am Etikett gegenprüfen.
 4. **Beispielwerte** (Abschnitt 5) bleiben gekennzeichnet; ein echter Creator-Code, ein echtes Lieferdatum oder echte
    Bewertungstexte gehören nicht hinein.
 5. **Freunde werben:** Gewählt ist beispielhaft der 14-€-Wert; welcher gilt, entscheidet HOLY (Frage an pr@holy.com,
    Gestaltungsplan 13.3).
-6. **Veröffentlichung:** ob die Seiten über GitHub Pages öffentlich erreichbar sein sollen, entscheidet die Gruppe nach
-   Stengers Antwort (Gestaltungsplan 13.1 Nr. 9, 13.2 Nr. 16); bis dahin keine Verlinkung von außen und kein QR-Code darauf.
-7. **Folie 08:** fünf Rahmen aus `_vorschau/01` bis `05`; Anmerkungszeilen je Rahmen nach Gestaltungsplan 7.4.
+6. **Veröffentlichung:** Seit dem Push vom 03.11.2026 über GitHub Pages erreichbar (Hinweisbalken, `noindex`, keine
+   Bestellung). Die Frage an Prof. Stenger bleibt (Gestaltungsplan 7.3, 13.2 Nr. 16); widerspricht er oder HOLY, kommt der
+   Ordner aus `master`. Keine Verlinkung von außen, kein QR-Code darauf. Freigabe des Gründers für die Wortmarke
+   schriftlich mit Umfang ablegen (Empfehlung der Abnahme).
+7. **Folie 08:** fünf Rahmen; die Bildschirmfotos erzeugt `werkzeuge/folie08-bilder.mjs` (Produktseite mit gewählter
+   50er-Dose ab „Packung wählen“, Danke-Seite ab „So geht's weiter“), damit Bild und Anmerkungszeile zusammenpassen.
 
 ## 8 Lokal öffnen
 
@@ -153,7 +156,9 @@ Bilder, Schrift geladen, Kontrast jedes sichtbaren Textes, waagerechtes Scrollen
 (Marker, Rundgang, Weitergabe von `?anmerkungen=1`) und die Rechnungen (Packungswahl, Warenkorb je Packung, Code aus
 der Adresse, Nachfüll-Rechner).
 
-**Ergebnis am 03.11.2026:** alle Prüfungen bestanden, 0 externe Anfragen, keine Konsolenfehler.
+**Ergebnis am 03.11.2026 (nach den Korrekturen der Abnahme):** alle Prüfungen bestanden, 0 externe Anfragen, keine
+Konsolenfehler. Zusätzlich angesehen: Kopf bei 320, 390 und 1280 px (kein waagerechtes Scrollen, Navigation bricht bei
+320 px um).
 
 Bildschirmfotos 390 × 844 (Normalmodus, oberer Bildschirm) in [`_vorschau/`](_vorschau/): `01-index.png`,
 `02-koffein-check.png`, `03-produkt.png`, `04-warenkorb.png`, `05-danke.png`, `06-squad.png`, `07-haendler.png`.
