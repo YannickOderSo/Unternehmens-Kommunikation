@@ -44,6 +44,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 17 | 03.11.2026 | Yannick | Freigabe: heruntergeladene Bilder dürfen auf GitHub (Pages) veröffentlicht werden | D07 (Workflow) | umgesetzt: Endbilder nach `fremdbilder/` (versioniert, auf GitHub Pages), Rohdownloads bleiben in `intern/` ausgeschlossen; Befunde der D06-Abnahme in D07 |
 | 18 | 03.11.2026 | Yannick | Gründer-Video direkt in die Präsentation (auch online) | D07 (Workflow) | Rückfrage beantwortet: Gründer mit öffentlicher Online-Version einverstanden; Video nach `praesentation/video/` (versioniert), Folie 09 spielt es online ab |
 | 19 | 03.11.2026 | Yannick | Video läuft; die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein Konzept | D09 (Workflow) | Alle 7 Seiten im Shop-Look (Sieger „Kampagne“); Hinweisleiste, `noindex`, keine Formulare, Kennzeichnung bleiben; Folie 08 mit neuen Bildschirmfotos; Prüfskripte 0 Fehler |
+| 20 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D09 „fs2-webseite-echt“ abgeschlossen | – | Ergebnisse gelesen und selbst geprüft, Abschluss in Eintrag 19 und D09 |
+| 21 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll) | – | Rohprotokoll committet und gepusht |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -427,6 +429,24 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   `fremdbilder/register.js`, `index.html` Folie 08, `css/folien/08-mockups.css`, `QUELLEN.md`, `AUTOREN.md` §13),
   `ki-nachweis/workflows/2026-11-03_fs2-webseite-echt.js`
 - **Unteragenten:** D09
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 20 – 04.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Meldung (Hintergrundaufgabe): Workflow „Konzept-Webseite so umgestalten, dass sie wie ein echter HOLY-Shop aussieht:
+> 3 Entwürfe, Jury, Umbau aller 7 Seiten, Abnahme, Nacharbeit“ abgeschlossen.
+
+- **Vorgehen Claude:** Journal und Rückgaben aller 9 Unteragenten gelesen, beide Prüfskripte selbst ausgeführt, Seiten
+  und Folie 08 angesehen, alt-Texte der Folie-08-Bilder eingetragen, committet, gepusht und GitHub Pages geprüft
+  (Inter-Schrift, Register und neue Seiten live). Einzelheiten in Eintrag 19 und D09.
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 21 – 04.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [command hook]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Geändert war nur `ki-nachweis/rohprotokoll.jsonl` (schreibt der Hook selbst). Committet und
+  gepusht.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
