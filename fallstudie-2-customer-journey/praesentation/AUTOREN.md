@@ -253,3 +253,21 @@ in der Git-Historie.
 eingesetzt (Register 38 Schlüssel); Rückfall `--oeffentlich --schritte --druck` 0 Fehler, 17 Warnungen, PDF 18 Seiten.
 Funktionstest 09 (synthetisches WebM per Route; ohne Route; fehlende Datei; `?aufnahme`; `?druck`): alle Prüfungen
 bestanden. Sichtprüfung 03, 09 (Videobühne) und B8 hell und dunkel, 09 mit Fehlertext.
+
+## 13. Konzept-Webseite im Shop-Look (04.11.2026, D09)
+
+Auftrag (Yannick, KI-Nachweis FS2 Nr. 19): Die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein
+Konzept. Umbau der Webseite KI-gestützt im Workflow D09 (Details: `../konzept-website/README.md`); in der Präsentation
+ändert sich nur Folie 08. Klicks (23), Sollzeiten (710 s) und Sprechtexte 01–09 sind unverändert.
+
+| Folie / Datei | Änderung |
+|---|---|
+| 08 Bilder | `bilder/konzept-0n-….png` und `fremdbilder/konzept-0n-….png` neu erzeugt mit `../konzept-website/werkzeuge/folie08-bilder.mjs` (ohne Schalter bzw. `--intern`); Danke-Seite jetzt von oben mit Squad-Karte statt ab „So geht's weiter“ |
+| 08 CSS | `css/folien/08-mockups.css`: 12 px schwarzer Streifen über dem Bildschirmfoto, damit die Eckrundung des Handyrahmens die Hinweisleiste nicht anschneidet; Abstand der Beschriftung angepasst |
+| 08 Notizen | Schritt 1: „Express-Bezahlen steht direkt unter dem Endpreis“ (statt „Express-Knöpfe stehen oben“); Absatz Identität: Sortenfarben wie im HOLY-Shop (Pink, Lila) mit Gelb und Schwarz |
+| 08 Bildquelle | Datum der Bildschirmfotos 04.11.2026 |
+| `fremdbilder/register.js` | `konzept-01` … `-05`: alt-Texte nach dem neuen Bildinhalt, `nachweis` mit Datum 04.11.2026, `motiv` bei 01, 03, 05 nachgezogen (05: am unteren Rand das Symbolbild Versandkarton von de.holy.com/pages/our-story) |
+| QUELLEN | §4 und §4a: Datum und Ausschnitt der Bildschirmfotos |
+
+**Prüfstand D09:** `werkzeuge/pruefen.mjs index.html --schritte` 0 Fehler, 17 Warnungen (wie vorher, keine auf 08),
+38 Fremdbilder eingesetzt; Folie 08 bei 1920 × 1080 angesehen.

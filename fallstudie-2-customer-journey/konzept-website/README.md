@@ -9,7 +9,11 @@ Dateien).
 Ergänzt am 03.11.2026 im Workflow D08: Befunde der Abnahme D07 umgesetzt – Rechtestatus der Fremdbilder präzisiert (keine
 Genehmigung der Rechteinhaber eingeholt), Symbolbild-Unterschriften, Logo-Regel, Startpackung aus ?packung=, Nachkauf ohne
 Shaker, Prüfung der Versionierung (Abschnitt 3, 3a, 4, 7, 9); keine neue Websuche, keine neuen Downloads (ein Zuschnitt aus
-einer vorhandenen Rohdatei). -->
+einer vorhandenen Rohdatei).
+Ergänzt am 03.11.2026 im Workflow D09: Gestaltung „Kampagnen-Look“ (Siegerentwurf) auf alle 7 Seiten übertragen – die Seite
+soll wie ein echter Shop von HOLY aussehen, nicht wie ein Entwurf (Yannick, 03.11.2026); Kennzeichnung, Prüfung und
+Bildplätze angepasst (Abschnitt 2, 3, 3a, 4, 5, 7, 9); keine neue Websuche, keine neuen Downloads, keine neuen Zuschnitte
+(neue Register-Schlüssel nur für vorhandene Dateien). -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
@@ -29,6 +33,12 @@ HOLY · Persona Marco (FS1, fiktiv) · Fallstudie 2 „Customer Journey“, Aufg
 > **Rückfall ohne Fremdbilder** nur, wenn `fremdbilder/register.js` fehlt: eigene Zeichnungen und Platzhalter. Keine
 > Screenshots. Nichts wird gesendet oder gespeichert. Rechtliche Einordnungen sind Einschätzungen von Studierenden und
 > keine Rechtsberatung.
+>
+> **Gestaltung seit D09 („Kampagnen-Look“):** Die Seiten sehen bewusst wie ein echter Shop von HOLY aus (Sortenfarben als
+> Fläche, Ankündigungsleiste, Kopf mit Menü, Wortmarke und Symbolen, weiße Kauf- und Infokarten). Damit sie trotzdem nicht
+> als HOLY-Seite durchgehen, bleiben die Hinweisleiste oben (wörtlich, immer sichtbar), `noindex`, die Kennung im Fuß jeder
+> Seite, „Werbung“ am Creator-Code, „Symbolbild“ am Bild, „Platzhalter“ an den Bewertungen und „Vorschlag der Gruppe“ an
+> jeder Garantie; kein Knopf bestellt etwas (Abschnitt 3).
 
 ## 1 Zweck
 
@@ -54,24 +64,56 @@ bis `squad.html` klickt, geht den gelben Pfad von Folie 06; jede Seite verlinkt 
 | [`haendler.html`](haendler.html) (optional) | Nebenweg Handel (gestrichelt) | Supermarktregal mit Händlerfinder (Platz 3 Kauf), Ziel des QR-Codes auf der Handelspackung | Nebenweg bricht → Brücke | in den Squad ohne Bon-Foto, IBAN und Pflichtfragen, dieselbe Garantie wie online, Händlerfinder nur mit Platzhaltern („Beispielmarkt“) | ✎ X16 · ✎ X17 | ✔ B01 · ✎ T28 · ✔ B03 · ✔ B96 · ✔ S90 · H D1 §7.2 |
 
 Ablauf des zentralen Wegs: `index.html` → `koffein-check.html` → `produkt.html` → `warenkorb.html` → `danke.html` →
-`squad.html` → (Nachkauf) `warenkorb.html?packung=50&nachkauf=1`. Jede Seite hat unten den Block „Nächste Station“ und
-im Fuß die Liste aller Stationen.
+`squad.html` → (Nachkauf) `warenkorb.html?packung=50&nachkauf=1`. Jede Seite hat unten eine Schlussfläche zur nächsten
+Station (die Beschriftung „Nächste Station · …“ steht nur im Präsentationsmodus; im Warenkorb steht die ganze Fläche nur
+dort, weil die Bezahlknöpfe weiterführen) und im Fuß die Liste aller Stationen.
+
+**Gestaltung je Seite (D09, „Kampagnen-Look“, Siegerentwurf übertragen auf alle 7 Seiten):**
+
+| Datei | Wirkt wie | Aufbau |
+|---|---|---|
+| `index.html` | Kampagnenseite, die in den Shop übergeht | pinke Bühne mit „Dein Code ist schon drin.“, Code als Gutschein (Etikett „aktiv“, „Werbung“), gelber Knopf mit Produkt-Tag, großes Produktfoto mit Plakette „Das Produkt aus dem Video“; schwarzes Bewertungs-Band (Sterne anteilig gefüllt); gelbe Fläche „HOLY Energy in vier Zahlen“; Packungs-Karten in vier Sortenfarben; schwarze Fläche zum Koffein-Check mit Zubereitungsfoto; die Skizze „So kommst du hierher“ nur im Präsentationsmodus |
+| `koffein-check.html` | Ratgeber-Artikel im Shop | Rubrik „Ratgeber“, große Überschrift, Zeile „Ratgeber · Stand · 7 Quellen“ (Verfasser und Abrufdatum im Präsentationsmodus), „Kurz gesagt“ in Gelb; ab 900 px Inhaltsverzeichnis rechts (klebt); Balken, aufklappbare Fragen; schwarze Schlussfläche mit Produktbild |
+| `produkt.html` | Produktseite wie HOLYs Raptor-Seite | Pink, große Bildkarte mit Galerie (ab 900 px darunter drei Kacheln: 0,1 g Zucker, 160 mg Koffein, 7 g auf 500 ml), weiße Kaufkarte (Packungen mit Packshot, Code-Zeile, Preisblock, Kaufknopf, Mix-&-Match-Zeile, Lieferdatum, Vorteile-Band mit Garantie-Siegel „Vorschlag der Gruppe“); 160-mg-Kachel auf Gelb, „Was drin ist“ mit Mix & Match, Bewertungskarten wie bei HOLY (Sorte und Packung, Sterne, „Verifizierter Kauf“, „Antwort von HOLY“) mit grauen Platzhalterzeilen statt Text und dem Etikett „Platzhalter“, Garantie auf Schwarz; Kaufleiste unten, sobald der Kaufknopf aus dem Bild ist |
+| `warenkorb.html` | Shop-Warenkorb | Lieferdatum, Artikel mit Vorschaubild und Mengenanzeige „− 1 +“ (nur Anzeige, kein Eingabefeld), Anzahl „1“ am Warenkorb-Symbol; Zusammenfassung mit Endpreis, Versandkosten-Leiste (frei ab 49 €), Express-Knöpfen (nur Text, ohne fremde Logos: Apple Pay schwarz, Google Pay weiß, PayPal gelb) und Knopf „Zur Kasse“ mit Unterzeile „als Gast, ohne Konto“ (ab 900 px rechts, klebt); Mix & Match, Coins, Altershinweis als Karten |
+| `danke.html` | Bestellbestätigung | Erfolgszeichen, Bestellnummer und Zustelltag auf Pink, direkt darunter der Squad-Einstieg (gelbe Karte mit „Squad beitreten“), Paket als Symbolbild; drei nächste Schritte als Karten; Bestellübersicht (dieselbe Rechnung wie im Warenkorb); Nachfüll-Erinnerung auf Gelb; Feedback-Mail, Zubereitung, Service-Kacheln |
+| `squad.html` | Kundenkonto / Rewards-Dashboard | Pink wie HOLYs Rewards-Seite, Schriftzug, Bereiche als Reiter (Sprungmarken), Karten: Kontostand mit Level-Fortschritt, Einlösen, Freunde werben, Nachkauf, vier Level, Tipp, Community |
+| `haendler.html` | QR-Landingpage | Bühne in Lila, Packungscode als Gutschein (Etikett „übernommen“), ein Hauptknopf, Regal als Symbolbild; drei Schritte als Kacheln; Garantie auf Schwarz; Händlerfinder als Filialliste (Marktkarten mit Pin, Packung und Entfernung; feste Beispiel-PLZ, keine Eingabe), ab 900 px daneben eine eigene Kartenskizze; Regalfoto ab 900 px im eigenen Format statt quadratisch |
+
+Kopf auf allen 7 Seiten gleich: Menü-Knopf (mobil, `aria-expanded`, Escape schließt), Wortmarke, Navigation (Energy,
+Starter Set, Koffein-Check, SQUAD Rewards, Im Supermarkt gekauft?), Symbole Konto (→ `squad.html`) und Warenkorb
+(→ `warenkorb.html`) – beide führen nur zu Konzeptseiten; „Energy“ führt zur Produktseite mit der 50er-Dose
+(`produkt.html?packung=50`), „Starter Set“ zur Produktseite mit dem Set. Fuß auf allen 7 Seiten gleich: zwei
+Shop-Spalten (Shop, Hilfe & Fakten), darunter (ab 900 px rechts daneben) das Kleingedruckte: Kennung, Wortmarken-Hinweis,
+Bildnachweise als Fließtext, Quellen und Stand (mit Link „Quellen und Stand“), Beispielwert-Satz, KI-Offenlegung.
+Leitsatz „HOLY Energy – so könnte es gehen.“ und „Stationen des Konzepts“ nur im Präsentationsmodus (`.fuss-praes`).
+
+**D09-Nacharbeit (04.11.2026, Abnahme Gestaltung und Technik):** Die Seite wirkte vor allem noch wegen ihrer Texte und
+des Fußes wie ein Entwurf. Geändert: Bewertungskarten ohne Blindtext (graue Platzhalterzeilen, Etikett „Platzhalter“
+bleibt); kein „Grundpreis offen …“ am Hauptpreis (Starter Set: nur „inkl. MwSt.“, der Satz steht im Präsentationsmodus;
+Dosen: „Grundpreis 114,26 € / kg*“, Herkunft der Rechnung als Fußnote und im Fuß); Fuß von 1.650–2.089 px auf rund
+830–1.180 px (390 px) gekürzt; Abrufstempel, Befund-IDs, „Studentischer Entwurf“ und Erklärsätze für die Jury in den
+Präsentationsmodus (`.nur-anm-i`, `.anm`) bzw. in Shop-Ton umgeschrieben; Bestellnummer „Nr. 100248“ statt
+„HOLY-KONZEPT-0001“; geschützte Leerzeichen zwischen Zahl und Einheit; Bilder für Pulver, Schütteln, Starter Set, Paket
+und Regal in höherer Auflösung (Register: `pixel`, `platz`); Fokus nicht mehr von Kaufleiste oder Knopf „Anmerkungen
+ansehen“ verdeckt (`scroll-padding-bottom`). Prüfungen dazu: `pruefen.mjs` Punkt 13.
 
 ## 3 Kennzeichnung und Regeln (Gestaltungsplan 7.3) – so umgesetzt
 
 | Regel | Umsetzung | geprüft |
 |---|---|---|
-| Hinweisbalken fest und nicht ausblendbar | erstes Element jeder Seite, `position: sticky` oben, ohne Knopf, wörtlich „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“; steht auf jedem Bildschirmfoto | `pruefen.mjs` (Text, oben, nach dem Scrollen) |
+| Hinweisbalken fest und nicht ausblendbar | erstes Element jeder Seite, `position: sticky` oben, ohne Knopf, wörtlich „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“; steht auf jedem Bildschirmfoto. Seit D09 gestaltet wie HOLYs Ankündigungsleiste: Zitronengelb #FFF200, schwarze Schrift (14,4 : 1), Bricolage 13,5 px, Laufweite 82 %, Gruppenteil fett; bei 390 px zwei Zeilen (50 px), bei 320 px drei. Sie fällt weniger auf als der frühere schwarze Balken – ob das reicht, entscheidet die Gruppe (Abschnitt 7) | `pruefen.mjs` (Text, oben, nach dem Scrollen, Kontrast) |
 | `noindex,nofollow` | `<meta name="robots" content="noindex,nofollow">` auf jeder Seite | `pruefen.mjs` |
-| Logo als Gestaltungselement nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, mit Einverständnis des Gründers laut Yannick, KI-Nachweis FS2 Nr. 12) mit „Konzept“ darunter; Quelle im Fuß jeder Seite. Auf den Produktbildern der Fassung mit Bildern (Packshots, Shaker, Fotos) ist das Logo Teil der Packung, Nachweis im Fuß. Kein gelbes Oval und kein Verpackungsdesign als eigene Gestaltung (auch nicht in den eigenen Zeichnungen) | `pruefen.mjs` (im Rückfall nur dieses eine Bild erlaubt; kein Element mit „Logo“ in `alt`/`aria-label` außerhalb von `fremdbilder/`), Sichtprüfung |
-| Fremdbilder nur mit Nachweis | Fassung mit Bildern: `img` nur aus `fremdbilder/` (Abschnitt 3a), jedes mit `alt`, `width`/`height` und Bildnachweis im Fuß („Motiv: Nachweis“), Symbolbilder als „Symbolbild“ gekennzeichnet; kein `video`, `iframe`, keine Screenshots. Eigene Inline-SVG (Skizze „Video → Tag → Shop“, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) bleiben in beiden Fassungen. Rückfall ohne Fremdbilder: außer der Wortmarke keine `img`, dazu die Platzhalterfläche „Platzhalter: eigenes Produktfoto folgt“ | `pruefen.mjs` (beide Fassungen) |
+| Logo als Gestaltungselement nur als Wortmarke im Kopf, keine HOLY-Schrift | `bilder/holy-logo-wortmarke.png` (unverändert aus FS1, © HOLY Softdrinks GmbH, mit Einverständnis des Gründers laut Yannick, KI-Nachweis FS2 Nr. 12); seit D09 ohne „Konzept“ darunter (die Hinweisleiste trägt die Kennzeichnung); Quelle im Fuß jeder Seite. Auf den Produktbildern der Fassung mit Bildern (Packshots, Shaker, Fotos) ist das Logo Teil der Packung, Nachweis im Fuß. Kein gelbes Oval und kein Verpackungsdesign als eigene Gestaltung (auch nicht in den eigenen Zeichnungen) | `pruefen.mjs` (im Rückfall nur dieses eine Bild erlaubt; kein Element mit „Logo“ in `alt`/`aria-label` außerhalb von `fremdbilder/`), Sichtprüfung |
+| Fremdbilder nur mit Nachweis | Fassung mit Bildern: `img` nur aus `fremdbilder/` (Abschnitt 3a), jedes mit `alt`, `width`/`height` und Bildnachweis im Fuß („Motiv: Nachweis“); seit D09 keine Unterschrift mehr unter jedem Bild, Symbolbilder tragen dafür das Etikett „Symbolbild“ direkt am Bild; kein `video`, `iframe`, keine Screenshots. Eigene Inline-SVG (Skizze „Video → Tag → Shop“, Kalender, Garantie-Siegel, Dose mit Kalender, QR-Platzhalter, nicht scanbar) bleiben in beiden Fassungen. Rückfall ohne Fremdbilder: außer der Wortmarke keine `img`, dazu die Platzhalterfläche „Platzhalter: eigenes Produktfoto folgt“ | `pruefen.mjs` (beide Fassungen; Etikett „Symbolbild“ sichtbar) |
 | keine Datenübermittlung | kein `form`, kein `input`; Knöpfe führen nur zur nächsten Konzeptseite; Auswahlknöpfe (Packung, Trinkhäufigkeit, Opt-in, Galerie der Produktseite) ändern nur die Anzeige; kein `localStorage`, keine Cookies | `pruefen.mjs` |
 | keine externen Anfragen | Schriften lokal (`schriften/`), kein CDN, keine Analyse-Skripte; Quellen stehen als Text, nicht als Link | `pruefen.mjs` (Netz gesperrt, 0 Anfragen) |
-| Daten nur mit Befund-ID | jede übernommene Zahl hat im Code einen Kommentar mit Befund-ID und im Präsentationsmodus eine Anmerkung; alles andere ist sichtbar als „Beispielwert“, „Beispiel“, „Platzhalter“ oder „Beispielrechnung“ markiert (Abschnitt 5) | Sichtprüfung |
-| Leitplanken Dossier 8.3 | keine Fokus-, Wach-, Leistungs-, Gesundheits- oder Abnehmversprechen; Koffein nur Etikett- und EFSA-Werte mit Quelle; kein „erst ab 18 erlaubt“; Grundpreis bei jedem Preis (beim Starter Set offen, Abschnitt 7); „Werbung“ neben Creator-Code | Sichtprüfung; vor dem Änderungsstopp abhaken |
-| KI-Offenlegung und Stand | Fuß jeder Seite: „Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026“ | Sichtprüfung |
-| Gestaltung (Abschnitt 3) | Creme #F3EDE1, Schwarz #1D1D1B, Gelb #FFD007 nur als Fläche (Knöpfe, Bühnen, Marker), nie als Schrift auf Creme; Nebentext #5C5547; Türkis nur Platzhalter | `pruefen.mjs` (Kontrast jedes sichtbaren Textes ≥ 4,5 : 1, groß ≥ 3 : 1) |
-| Mobil zuerst | 390 px ohne waagerechtes Scrollen (auch 320 px), ab 900 px Produktseite zweispaltig; bei 390 × 844 stehen Code-Box und Hauptknopf (Händlerseite) bzw. Titel, Bewertung und erster Preis (Produktseite) im ersten Bildschirm | `pruefen.mjs` (320, 390 und 1280 px) |
+| Daten nur mit Befund-ID | jede übernommene Zahl hat im Code einen Kommentar mit Befund-ID und im Präsentationsmodus eine Anmerkung. Seit D09: In der normalen Ansicht nennt der Fuß jeder Seite die Beispielwerte („Creator, Creator-Code und Rabatt sind Platzhalter. Liefertermine, Bestellnummer, Coins und Kontostände sind Beispielwerte.“, auf der Händlerseite zusätzlich „Packungscode, Postleitzahl und Märkte sind Platzhalter.“); die Etiketten „Beispielwert“, „Beispiel“, „Beispielrechnung“, „Rechenbeispiel“, „Beispieltext“ stehen nur im Präsentationsmodus (`.nur-anm-i`). Immer sichtbar bleiben „Platzhalter“ an den Bewertungskarten, „Beispielmarkt“ und der Platzhalter-Satz im Händlerfinder, „Vorschlag der Gruppe“ an jeder Garantie (seit der D09-Nacharbeit trägt die Bestellnummer kein „KONZEPT“ mehr: „Nr. 100248“, Beispielwert laut Satz im Fuß, im Präsentationsmodus mit Etikett „Beispiel“; Abschnitt 5) | `pruefen.mjs` (Satz im Fuß, „Platzhalter“, „Vorschlag der Gruppe“, Etiketten nur im Präsentationsmodus), Sichtprüfung |
+| Leitplanken Dossier 8.3 | keine Fokus-, Wach-, Leistungs-, Gesundheits- oder Abnehmversprechen; Koffein nur Etikett- und EFSA-Werte mit Quelle; kein „erst ab 18 erlaubt“; Grundpreis bei jedem Preis (beim Starter Set offen, Abschnitt 7); „Werbung“ neben jedem sichtbaren Creator-Code (Startseite zweimal, Produktseite, Warenkorb, Danke-Seite); keine neuen Werbeaussagen in der Shop-Gestaltung (kein „Zuckerfrei“-Symbol, keine Vitamine, kein NewCaff als Kachel – nur Werte, die schon auf der Seite standen) | `pruefen.mjs` („Werbung“ am Code); Sichtprüfung; vor dem Änderungsstopp abhaken |
+| KI-Offenlegung und Stand | Fuß jeder Seite (Kleingedrucktes): „Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 04.11.2026“ | Sichtprüfung |
+| Gestaltung | Seit D09 („Kampagnen-Look“, **Abweichung vom Gestaltungsplan 3.2–3.4 und 3.7**, dokumentiert in Gestaltungsplan 7.3): Zitrone #FFF200 (Leiste), Gelb #FFD007 (Knöpfe, Flächen), Raptor-Pink #F08EB8 (Start-, Produkt-, Danke-, Squad-Seite) und Hellpink #F7BDC7 (Bildkarten), Lila #C09CE3 (Händlerseite, Karte), Orange #F9C168, Limette #DCE168, Schwarz #1D1D1B, Weiß, Creme #FCF8F0, Beige #EFE6D6, Grau #F3F0EA; auf Pink, Lila und Orange nur schwarze Schrift, Schiefer #5C5547 nur auf Weiß, Creme und Gelb. Schriften: Bricolage Grotesque (Überschriften, Preise, 75 %, 800) und Inter (Fließtext, Knöpfe in Großbuchstaben) lokal statt Libre Franklin; Kontraste im Kopf von `assets/konzept.css` | `pruefen.mjs` (Kontrast jedes sichtbaren Textes ≥ 4,5 : 1, groß ≥ 3 : 1; beide Schriften geladen) |
+| Mobil zuerst | 390 px ohne waagerechtes Scrollen (auch 320 px), ab 900 px Desktop-Raster (Produktseite und Warenkorb zweispaltig mit klebender Karte, Ratgeber mit Inhaltsverzeichnis rechts, Squad dreispaltig); bei 390 × 844 im ersten Bildschirm: Code-Box und Knöpfe (Start- und Händlerseite), Titel, Bewertung und erster Preis (Produktseite), Lieferdatum und Endpreis (Warenkorb, jede Packung), erster Punkt von „Kurz gesagt“ (Koffein-Check), Titel mit Zustelltag (Danke-Seite), Kontostand (Squad); Fokusrahmen 3 px sichtbar | `pruefen.mjs` (320, 390 und 1280 px) |
+| Ehrlich trotz Shop-Anmutung | „(Konzept)“ steht seit D09 nicht mehr in Knopftexten, „KONZEPT“ nicht mehr unter der Wortmarke – dafür Hinweisleiste, Kennung im Fuß jeder Seite, Beispielwert-Satz und „keine Bestellung möglich“; alle Knöpfe (auch Apple Pay, Google Pay, PayPal, Konto, Warenkorb) führen nur zur nächsten Konzeptseite; Sätze wie „Konzept: Der Knopf führt nur zur nächsten Konzeptseite“ stehen im Präsentationsmodus | `pruefen.mjs` (Kennung, Satz und Quellen-Link im Fuß; keine Formulare) |
 
 ## 3a Fassung mit Bildern (Standard) und Rückfall ohne Fremdbilder
 
@@ -90,7 +132,7 @@ eine Entscheidung der Gruppe, keine Erlaubnis der Rechteinhaber und keine Rechts
 | | Fassung mit Bildern | Rückfall ohne Fremdbilder |
 |---|---|---|
 | Wann | Standard: Repository, GitHub Pages, Hörsaal | nur, wenn `fremdbilder/register.js` fehlt; Prüfung mit `pruefen.mjs --fassung rueckfall` |
-| Bilder | Wortmarke, eigene Zeichnungen und 22 Bilddateien aus `fremdbilder/` (33 Schlüssel im Register): Produktbild Raspberry Raptor, Galerie, Packshots, Versandkarton (Symbolbild), Shaker, Zubereitung, SQUAD-Grafiken, Regal im Handel (Symbolbild) | Wortmarke, eigene Zeichnungen, Platzhalter |
+| Bilder | Wortmarke, eigene Zeichnungen und 22 Bilddateien aus `fremdbilder/` (38 Schlüssel im Register, davon 5 neu in D09 für vorhandene Dateien): Produktbild Raspberry Raptor, Galerie, Packshots, Versandkarton (Symbolbild), Shaker, Zubereitung, SQUAD-Grafiken, Regal im Handel (Symbolbild) | Wortmarke, eigene Zeichnungen, Platzhalter |
 | Fuß | „Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.“ und die Liste „Bildnachweise auf dieser Seite“ (je Eintrag „Motiv: Nachweis“, gleiche Nachweise zusammengefasst) | „Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.“ |
 | Bildschirmfotos | `_vorschau/` (versioniert, oberer Bildschirm – so sieht es auf GitHub Pages aus); ganze Seiten in `intern/vorschau/` (ausgeschlossen) | `intern/vorschau-rueckfall/` (ausgeschlossen) |
 
@@ -99,8 +141,10 @@ eine Entscheidung der Gruppe, keine Erlaubnis der Rechteinhaber und keine Rechts
 `pixel`). `konzept.js` setzt in jedes Element mit `data-intern="schlüssel"` ein `<img>` mit `width`/`height` und `alt`
 (`alt=""` nur in Knöpfen und Links, deren Text die Packung schon nennt: `data-intern-deko`); Bilder unter dem ersten
 Bildschirm mit `loading="lazy"`. `{packung}` im Schlüssel wird durch die Packung aus der Adresse ersetzt; gibt es den
-Schlüssel für diese Packung nicht, bleibt der Platz leer (Shaker auf der Danke-Seite bei 10 und 1 Portion). Am Bild steht
-die kurze `unterschrift` (sonst der `nachweis`), im Fuß der volle Nachweis mit Motiv davor. Fehlt `register.js` oder lädt
+Schlüssel für diese Packung nicht, bleibt der Platz leer (Shaker auf der Danke-Seite bei 10 und 1 Portion). Die kurze
+`unterschrift` (sonst der `nachweis`) steht weiter im Element `[data-intern-nachweis]` am Bild, wird aber seit D09 nicht
+mehr angezeigt (CSS; `pruefen.mjs` vergleicht sie weiter); sichtbar ist der volle Nachweis mit Motiv davor im Fuß. Beginnt
+der `nachweis` mit „Symbolbild · “, setzt `konzept.js` das Etikett „Symbolbild“ an das Bild. Fehlt `register.js` oder lädt
 ein Bild nicht, bleibt bzw. kommt die Platzhalterfläche zurück – ohne kaputtes Bild-Symbol; neue Bildplätze bleiben dann
 ausgeblendet (`hidden`). Angenommen werden nur Dateien aus `fremdbilder/`. Hinweisbalken, `noindex`, keine Formulare,
 keine externen Anfragen und alle Rechnungen sind in beiden Fassungen gleich.
@@ -119,22 +163,26 @@ jeweils 03.11.2026):
 | Seite | Platz | Schlüssel | Herkunft |
 |---|---|---|---|
 | `index.html` | Produkt-Tag im Knopf „Zum Produkt aus dem Video“: freigestellter Packshot der 50er-Dose auf heller Fläche; der Knopf führt zu `produkt.html?packung=50` (50er-Dose vorgewählt, passend zum Tag) | `web-start-tag` | HOLY-Shop, Shop-Variante „50 Portionen“ |
-| `index.html` | Produktkarte neben der Skizze (Skizze bleibt) | `web-start-video` | HOLY-Produktseite Raspberry Raptor |
-| `index.html` | Teaser „Starter Set Energy“ (gelber Kasten) | `web-start-teaser-set` | HOLY-Shop Starter Set Energy, freigestellt |
+| `index.html` | großes Bild „Das Produkt aus dem Video“ in der Bühne (D09; vorher Produktkarte neben der Skizze) | `web-start-video` | HOLY-Produktseite Raspberry Raptor |
+| `index.html` | Packungs-Karten „Starter Set Energy“, „50 Portionen“, „10 Portionen“, „1 Portion“ (D09; `alt=""`, weil der Kartentext die Packung nennt) | `web-start-teaser-set`, `web-start-karte-50`, `-10`, `-1` | HOLY-Shop, freigestellt (dieselben Dateien wie Galerie bzw. Packungswahl) |
+| `index.html` | schwarze Fläche zum Koffein-Check: Zubereitung (Pulver) (D09) | `web-start-portion` | HOLY-Produktseite (dieselbe Datei wie `web-produkt-galerie-3`) |
 | `koffein-check.html` | ein ruhiges Bild unter „Wie viel Koffein steckt in einer Portion?“: ein Sachet = eine Portion, kein Etikettbild | `web-koffein-portion` | HOLY-Shop, Shop-Variante „1 Portion“ |
-| `produkt.html` | großes Bild: folgt der gewählten Packung (Starter Set, 50er-Dose, Sachet-Box, Sachet), bis jemand in der Galerie klickt; mobil 16 : 10, ab 900 px quadratisch | `web-produkt-gross-{packung}` | HOLY-Shop |
+| `koffein-check.html` | schwarze Schlussfläche „Alles klar? Dann zum Produkt.“ (D09) | `web-koffein-produkt` | HOLY-Produktseite Raspberry Raptor (dieselbe Datei wie `web-produkt-hero`) |
+| `produkt.html` | großes Bild: folgt der gewählten Packung (Starter Set, 50er-Dose, Sachet-Box, Sachet), bis jemand in der Galerie klickt; mobil 4 : 3, ab 900 px quadratisch | `web-produkt-gross-{packung}` | HOLY-Shop |
 | `produkt.html` | Galerie mit 5 Bildern (Klick zeigt das Bild groß) | `web-produkt-hero`, `web-produkt-galerie-1` … `-4` | HOLY-Produktseite (Produktbild, Packshots, Zubereitung) |
 | `produkt.html` | Packshot je Packung in „Packung wählen“ | `web-packung-set`, `-50`, `-10`, `-1` | HOLY-Shop, freigestellt |
-| `warenkorb.html` | Vorschaubild am Posten (je nach `?packung=`) | `web-warenkorb-{packung}` | wie Packungswahl |
-| `danke.html` | Versandkarton im Kopf (Symbolbild) | `web-danke-paket` | Foto von der Fotowand auf de.holy.com/pages/our-story, Urheber nicht genannt |
+| `warenkorb.html`, `danke.html` | Vorschaubild am Posten bzw. in der Bestellübersicht (je nach `?packung=`; Danke-Seite seit D09) | `web-warenkorb-{packung}` | wie Packungswahl |
+| `danke.html` | Versandkarton in der Bühne (Symbolbild, Etikett am Bild; ab 900 px rechts, mobil darunter) | `web-danke-paket` | Foto von der Fotowand auf de.holy.com/pages/our-story, Urheber nicht genannt |
 | `danke.html` | Shaker bei Schritt 2, nur wenn die Packung laut Seite einen enthält: Starter Set schwarzer Logo-Shaker, 50er-Dose pinker Raptor-Shaker (Ausschnitt aus dem Packshot „50 Portionen mit gratis Shaker“), bei 10 und 1 Portion sowie beim Nachkauf der 50er-Dose (`?nachkauf=1`, Shaker nur zur ersten Dose, ✔ T22) kein Bild und Überschrift „Auspacken, loslegen“ | `web-danke-shaker-{packung}` | HOLY-Shop |
 | `danke.html` | Fotos zu Zubereitungsschritt 2 und 3 | `web-danke-zubereitung-2`, `-3` | HOLY-Produktseite |
 | `squad.html` | Schriftzug SQUAD Rewards · eine Pixel-Münze im Kontostand · Abzeichen in den vier Level · Packshot beim Nachkauf | `web-squad-logo`, `web-squad-coins`, `web-squad-level-1` … `-4`, `web-warenkorb-50` | Grafiken von de.holy.com (Rewards-Seite, Menübild) · HOLY-Shop |
-| `haendler.html` | Regal im Handel (Symbolbild), unter Code-Box und Knopf | `web-haendler-regal` | Foto aus der Lebensmittel Zeitung vom 10.04.2026 (Urheber unbekannt; enger Ausschnitt nur mit dem HOLY-Regalbereich, Markt nicht benannt) – kein HOLY-Bild |
+| `haendler.html` | Regal im Handel (Symbolbild, Etikett am Bild), in der Bühne ab 900 px rechts, mobil unter Code-Box und Knopf | `web-haendler-regal` | Foto aus der Lebensmittel Zeitung vom 10.04.2026 (Urheber unbekannt; enger Ausschnitt nur mit dem HOLY-Regalbereich, Markt nicht benannt) – kein HOLY-Bild |
 
 **Kennzeichnung:** Die Bilder sind Werbe- und Produktbilder der HOLY Softdrinks GmbH bzw. Fotos Dritter, keine eigenen
-Fotos der Gruppe. Große Bilder tragen eine Unterschrift direkt darunter, alle Nachweise stehen vollständig im Fuß der
-Seite, je Eintrag mit dem Motiv davor. Symbolbilder kurz: „Symbolbild · Quelle: Lebensmittel Zeitung, 10.04.2026
+Fotos der Gruppe. Alle Nachweise stehen vollständig im Fuß der Seite, je Eintrag mit dem Motiv davor (gleiche Nachweise
+zusammengefasst). Seit D09 steht keine Unterschrift mehr unter jedem Bild; Symbolbilder tragen stattdessen das Etikett
+„Symbolbild“ direkt am Bild (oben links), der Nachweis im Fuß beginnt mit „Symbolbild · “. Die kurze Unterschrift bleibt
+unsichtbar im Dokument: „Symbolbild · Quelle: Lebensmittel Zeitung, 10.04.2026
 (Urheber unbekannt)“ (Händlerseite) und „Symbolbild · Quelle: de.holy.com/pages/our-story (Urheber nicht genannt), Abruf
 03.11.2026“ (Danke-Seite). Zwei getrennte Punkte: **„Symbolbild“** heißt, das Bild zeigt nicht Marcos Paket bzw. keinen
 bestimmten Markt; **„Urheber unbekannt“ bzw. „nicht genannt“** heißt, wer das Foto gemacht hat, ist offen (Bildnachweis
@@ -154,7 +202,7 @@ im Schriftzug SQUAD Rewards direkt darüber.
 1536 × 864, auf 780 × 438 px verkleinert; `pixel` im Register angepasst). Begründung: Der alte Ausschnitt (780 × 585) zeigte
 am unteren und rechten Rand Dosen anderer Marken (u. a. Red Bull), der Kommentar in `haendler.html` behauptete aber „nur
 HOLY-Bereich“. Jetzt stimmt beides: Zu sehen sind nur HOLY-Handelsware, HOLY-Regalleiste und das Schild „7,5 Liter in einer
-Dose!“; die Bühne zeigt das Bild weiter im Format 16 : 10 (mobil) bzw. 21 : 9 (ab 700 px).
+Dose!“; seit D09 zeigt die Bühne das Bild im eigenen Seitenverhältnis 780 : 438 (kein weiterer Anschnitt).
 
 **Prüfen vor dem Commit:** `git status` – unter `intern/` darf nichts auftauchen
 (`git check-ignore -v fallstudie-2-customer-journey/konzept-website/intern/vorschau/01-index.png`).
@@ -169,7 +217,14 @@ Dose!“; die Bühne zeigt das Bild weiter im Format 16 : 10 (mobil) bzw. 21 : 9
 | `produkt.html?packung=50` | Startpackung der Produktseite (nur `set`, `50`, `10`, `1`; alles andere → Starter Set wie bisher). Der Knopf „Zum Produkt aus dem Video“ der Startseite führt hierher, weil sein Produkt-Tag die 50er-Dose zeigt; der Code aus der Adresse reist mit |
 | `warenkorb.html?packung=50&nachkauf=1` | Nachkauf von `squad.html`: Der Posten heißt „Vorratsdose, Nachkauf“ (ohne „Shaker gratis zur ersten Dose“), `nachkauf=1` reist mit `packung` zur Danke-Seite, dort weder „Shaker auspacken“ noch Shaker-Bild – der Gratis-Shaker kommt laut ✔ T22 nur zur ersten Dose. Beim Starter Set gehört der Shaker zum Set und bleibt |
 
-Anmerkungen je Seite: index 5, koffein-check 12, produkt 9, warenkorb 5, danke 7, squad 6, haendler 3 (zusammen 47).
+Anmerkungen je Seite: index 6, koffein-check 12, produkt 9, warenkorb 5, danke 7, squad 6, haendler 3 (zusammen 48). Seit
+D09: Startseite 1 Werbung, 2 Code, 3 Zwei Wege, 4 vier Zahlen, 5 Packungs-Karten (neu, „Such dir deinen Einstieg aus.“),
+6 Skizze (vorher 5); auf der Produktseite steht Nr. 1 jetzt an „Packung wählen“ und Nr. 2 an der Code-Zeile (vorher
+umgekehrt; die Code-Zeile steht jetzt unter den Packungen), Nr. 3–9 unverändert. Seit der D09-Nacharbeit (04.11.2026)
+auf der Danke-Seite: 1 Zustelltag, 2 Squad-Einstieg (steht jetzt direkt unter „Danke!“, vorher Nr. 3), 3 „So geht's
+weiter“ (vorher Nr. 2), 4–7 unverändert; die Zahl der Anmerkungen je Seite ist gleich geblieben. Wer auf Folie 08
+oder im Vortragsskript Nummern nennt, gleicht sie ab. Im Präsentationsmodus erscheinen zusätzlich die Erklärsätze, die
+Skizze und die Etiketten „Beispielwert“ usw. (`.nur-anm`, `.nur-anm-i`).
 Live-Demo auf Folie 08: `../konzept-website/index.html?anmerkungen=1` in einem neuen Tab (kein `iframe`), vor Beginn
 geöffnet (Gestaltungsplan 7.4, 11.4).
 
@@ -203,12 +258,14 @@ Quelle `web-packung-10` in `fremdbilder/register.js`); im Warenkorb steht deshal
 Dose“. „Shaker gratis zur ersten Dose“ beim Posten 50 Portionen folgt aus ✔ T22 und der Shop-Variante „50 Portionen mit
 gratis Shaker“ (`web-produkt-galerie-2`).
 
-**Beispielwerte (ausgedacht, auf der Seite gekennzeichnet):** Creator-Code `CREATOR10` und sein Rabatt von 10 %;
+**Beispielwerte (ausgedacht; in der normalen Ansicht nennt sie der Satz im Fuß, im Präsentationsmodus tragen sie
+zusätzlich ein Etikett):** Creator-Code `CREATOR10` und sein Rabatt von 10 %;
 Creator `@creator_platzhalter`; Lieferdatum Do., 12.11. mit Bestellschluss 14:00 Uhr; Bestellnummer; Coins-Stand 225 und
 Level-Fortschritt; Coins je Bestellung (10 Coins pro Euro auf den Endpreis gerechnet, Bezugsgröße angenommen);
 Nachfüll-Rechnung ab Liefertag; Beispielschicht 22–6 Uhr; Code aus der Handelspackung; Händler, Packungen und
 Entfernungen im Händlerfinder; alle Bewertungstexte; Mischtipp und Mailtext. Die Formulierungen der Garantie, der
-Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
+Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**). Die Versandkosten-Leiste im Warenkorb („Noch
+… € bis zum Gratisversand“) ist aus ✔ B12 gerechnet, mit derselben Zwischensumme nach Code wie die Zeile „Versand“.
 
 ## 6 Quellen
 
@@ -224,7 +281,12 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
 - **Herkunft der Inhalte:** In diesem Schritt gab es **keine neue Websuche**. Alle Fakten über HOLY, Koffein und die
   Vorbilder kommen aus dem Dossier (Websuche früherer Schritte, mit Befund-ID). Aufbau, Gestaltung, Texte und
   Programmierung sind KI-gestützte Entwürfe (Modellwissen über Webgestaltung), nicht belegt und von der Gruppe zu prüfen.
-- Schriften: [`schriften/HERKUNFT.txt`](schriften/HERKUNFT.txt) (Bricolage Grotesque, OFL 1.1, aus FS1 kopiert).
+- Schriften: [`schriften/HERKUNFT.txt`](schriften/HERKUNFT.txt) (Bricolage Grotesque, OFL 1.1, aus FS1 kopiert; seit D09
+  Inter, OFL 1.1, aus `../praesentation/schriften/` kopiert, Lizenz `schriften/LIZENZ-inter-OFL.txt`).
+- Formensprache des Shops (D09): angesehen, nicht übernommen – Bildschirmfotos von HOLYs Shop aus
+  `../praesentation/intern/roh/touchpoints/` (Produktseite Raspberry Raptor, Starter Set, Mix & Match, Warenkorb,
+  SQUAD Rewards, Creator-Landingpages, Bewertungen; ausgeschlossen, nicht veröffentlicht). Keine Bilder, Schriften oder
+  Texte daraus; Farben als Proben aus diesen Bildern (Kopf von `assets/konzept.css`).
 - Fremdbilder: Herkunft (Seite und Bildadresse), Abrufdatum 03.11.2026, Bearbeitung (freigestellt, Ausschnitt) und
   Beschreibung je Bild in [`fremdbilder/register.js`](fremdbilder/register.js); sichtbar im Fuß jeder Seite (Fassung mit
   Bildern). Beschafft im Workflow D06 per Websuche bzw. Download von de.holy.com und lebensmittelzeitung.net;
@@ -236,10 +298,14 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
 
 1. **Inhalt prüfen** – alle Seiten gegen Dossier 8.3 (Do/Don't) abhaken, vor dem Änderungsstopp Mo 09.11., 20:00;
    danach im Fuß „Prüfung durch die Gruppe offen“ durch „von der Gruppe geprüft“ ersetzen.
-2. **Libre Franklin** fehlt im Repository (Meilenstein M5); bis dahin Systemschrift für den Fließtext.
-3. **Grundpreis Starter Set:** Füllmenge nicht im Dossier → „Grundpreis offen: Füllmenge des Sets noch nicht belegt“.
-   Die Grundpreise der Dosen sind aus 7 g je Portion gerechnet und so gekennzeichnet; Nettofüllmenge am Etikett gegenprüfen.
-4. **Beispielwerte** (Abschnitt 5) bleiben gekennzeichnet; ein echter Creator-Code, ein echtes Lieferdatum oder echte
+2. **Schrift:** Libre Franklin fehlt im Repository (Meilenstein M5); seit D09 steht Inter (lokal, OFL) für den
+   Fließtext. Die Gruppe entscheidet, ob Inter bleibt (Abweichung vom Gestaltungsplan 3.4).
+3. **Grundpreis Starter Set:** Füllmenge nicht im Dossier. Seit der D09-Nacharbeit steht in der normalen Ansicht beim
+   Set nur „inkl. MwSt.“ (kein Grundpreis), „Grundpreis offen: Füllmenge des Sets noch nicht belegt“ nur im
+   Präsentationsmodus. Die Grundpreise der Dosen sind aus 7 g je Portion gerechnet (Sternchen mit Fußnote auf Start- und
+   Produktseite, Satz im Fuß jeder Seite); Nettofüllmenge am Etikett gegenprüfen.
+4. **Beispielwerte** (Abschnitt 5) bleiben gekennzeichnet (Satz im Fuß jeder Seite, im Präsentationsmodus zusätzlich
+   Etiketten); ein echter Creator-Code, ein echtes Lieferdatum oder echte
    Bewertungstexte gehören nicht hinein.
 5. **Freunde werben:** Gewählt ist beispielhaft der 14-€-Wert; welcher gilt, entscheidet HOLY (Frage an pr@holy.com,
    Gestaltungsplan 13.3).
@@ -252,7 +318,10 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
    (Empfehlung der Abnahme).
 7. **Folie 08:** fünf Rahmen; die Bildschirmfotos erzeugt `werkzeuge/folie08-bilder.mjs`. Rahmen 3–5 zeigen
    durchgehend Marcos 50er-Dose: Produktseite mit `?packung=50` (vorgewählte 50er-Dose) ab „Packung wählen“, Warenkorb
-   und Danke-Seite mit `?packung=50` (Danke-Seite ab „So geht's weiter“), damit Bild und Anmerkungszeile zusammenpassen.
+   und Danke-Seite mit `?packung=50` (Danke-Seite seit der D09-Nacharbeit von oben: Kopf, „Danke!“ und Squad-Karte mit
+   „Squad beitreten“), damit Bild und Anmerkungszeile zusammenpassen. Auf Folie 08 liegt über jedem Bildschirmfoto ein
+   12 px hoher schwarzer Streifen (`../praesentation/css/folien/08-mockups.css`), damit die Rahmenecke die Hinweisleiste
+   nicht anschneidet; das Skript prüft das (Konstante `RAHMEN`).
    Mit `--intern`
    Fassung mit Bildern nach `../praesentation/fremdbilder/` (Schlüssel `konzept-01` … `konzept-05` in
    `../praesentation/fremdbilder/register.js`); ohne Schalter Rückfall ohne Fremdbilder (`fremdbilder/` gesperrt) nach
@@ -264,6 +333,19 @@ Zubereitung und des Altershinweises sind Vorschläge der Gruppe (**H**).
    aus der Lebensmittel Zeitung (Bildnachweis hinter der Bezahlschranke nicht einsehbar → „Urheber unbekannt“), das
    Kartonfoto von der Fotowand auf „Our Story“ („Urheber nicht genannt“). „10 Portionen = Sachet-Box“ und „Shaker gratis
    zur ersten Dose“ (Abschnitt 5) im Shop gegenprüfen.
+9. **Gestaltung D09 bewusst freigeben** (Empfehlung der Jury):
+   - Die Hinweisleiste sieht jetzt aus wie HOLYs Promo-Leiste (Zitronengelb). Wortlaut und Kontrast erfüllen die Regel,
+     sie fällt aber weniger auf als der frühere schwarze Balken – reicht das?
+   - Die Seiten ähneln HOLYs Shop deutlich (Sortenfarben, Ankündigungsleiste, Kopf mit Symbolen, Packungszeilen). Schutz:
+     Hinweisleiste, `noindex`, Kennung und Beispielwert-Satz im Fuß, „keine Bestellung möglich“.
+   - Die Platzhalter-Bewertungen sehen wie echte Karten aus; das Etikett „Platzhalter“ muss bleiben. Die Jury wollte auch
+     die Sätze „Hier steht eine echte Bewertung …“ behalten; die Abnahme Gestaltung (D09-Nacharbeit) hat sie als Blindtext
+     bemängelt. Seit 04.11.2026 stehen statt der Sätze graue Platzhalterzeilen (für Screenreader „Bewertungstext folgt“),
+     keine erfundenen Stimmen, keine Namen – die Gruppe entscheidet, ob das so bleibt.
+   - Abweichung vom Gestaltungsplan (Creme-Grundfläche, „Gelb nur als Fläche“, Libre Franklin, „Beispielwert“ immer
+     sichtbar) ist in Gestaltungsplan 7.3 vermerkt; die Gruppe bestätigt oder verwirft sie.
+   - Folie 08 und Vortragsskript auf die neuen Anmerkungsnummern prüfen (Abschnitt 4); die Bildschirmfotos für Folie 08
+     sind neu erzeugt.
 
 ## 8 Lokal öffnen
 
@@ -296,9 +378,24 @@ gesperrt), interne Links und Sprungziele (keine Links nach `intern/`), Hinweisba
 je Packung, Code aus der Adresse, Nachfüll-Rechner, Startpackung der Produktseite aus `?packung=`, Nachkauf mit
 `?nachkauf=1` bis zur Danke-Seite ohne Shaker-Hinweis und Shaker-Bild) und den ersten Bildschirm bei 390 × 844
 (Händlerseite: Code-Box und Hauptknopf; Produktseite: Titel, Bewertung, erster Preis, auch mit `?packung=50`) sowie die
-Hauptknöpfe oben auf Start- und Händlerseite bei 1280 px in einer Zeile. Seit D08 zusätzlich: `fremdbilder/register.js`
+Hauptknöpfe oben auf Start- und Händlerseite bei 1280 px in einer Zeile. Seit D09 zusätzlich: Kennung, Beispielwert-Satz
+und Link „Quellen und Stand“ sichtbar im Fuß jeder Seite (beide Modi); „Werbung“ sichtbar neben jedem sichtbaren
+Creator-Code; „Vorschlag der Gruppe“ sichtbar an jeder Garantie; „Platzhalter“ an jeder Bewertungskarte; Etikett
+„Symbolbild“ an jedem Symbolbild; Beispiel-Etiketten nur im Präsentationsmodus (dort sichtbar), Beispielcode-Hinweis im
+Präsentationsmodus; „Inter Konzept“ geladen; Menü-Knopf (auf, zu mit Escape, Fokus zurück) auf allen 7 Seiten; Kaufleiste
+der Produktseite erst nach dem Kaufknopf, mit dem Preis der gewählten Packung; erster Bildschirm von Warenkorb (jede
+Packung), Koffein-Check, Danke- und Squad-Seite. `folie08-bilder.mjs` prüft seit D09, dass der Inhalt, den die
+Anmerkungszeile auf Folie 08 nennt, ganz im Bild steht. Seit D08 zusätzlich: `fremdbilder/register.js`
 und jede Bilddatei des Registers im Git-Index (`git ls-files --error-unmatch`); sonst WARNUNG „nicht versioniert – fehlt
-nach dem Push auf GitHub Pages“.
+nach dem Push auf GitHub Pages“. Seit der D09-Nacharbeit (04.11.2026, Punkt 13 im Kopf von `pruefen.mjs`): „wirklich sichtbar“ statt nur
+„gerendert“ für Hinweisleiste, „Werbung“, „Symbolbild“ (innerhalb des Bildes), „Vorschlag der Gruppe“, „Platzhalter“,
+Kennung und Beispielwert-Satz (Deckkraft über alle Vorfahren, Schriftfarbe ohne Alpha, Schrift ≥ 11 px, in der Mitte
+nicht verdeckt); Kontrastmessung mit Deckkraft; Tab-Rundgang ohne verdeckten Fokus (Kaufleiste, Knopf „Anmerkungen
+ansehen“); keine Recherche- oder Entwurfssprache im Hauptteil der normalen Ansicht; Versionsprüfung auch für Schriften,
+Lizenztexte, `assets/`, `bilder/` und die Seiten. Gegenprobe: Mutationskopien mit unsichtbarer Hinweisleiste, „Werbung“
+mit `opacity: 0`, verschobenem Symbolbild-Etikett und ohne `scroll-padding-bottom` werden alle gemeldet.
+`folie08-bilder.mjs` prüft zusätzlich, dass die Eckrundung des Handyrahmens auf Folie 08 keine Zeile der Hinweisleiste
+anschneidet (Konstante `RAHMEN`, passend zu `../praesentation/css/folien/08-mockups.css`).
 
 Je Fassung zusätzlich (seit D06, angepasst in D07): **Fassung mit Bildern** – jeder Eintrag in `fremdbilder/register.js`
 mit Datei in `fremdbilder/`, `alt`, `nachweis`, `motiv` und `pixel` (= echte Bildgröße), Symbolbilder in `alt` und
@@ -328,6 +425,16 @@ Shaker-Bild beim Nachkauf, Händlerknopf zweizeilig, Registereintrag mit unversi
 zurückgesetzt. Angesehen: Händlerseite bei 390, 320 und 1280 px (Bild, Unterschrift, Fuß, Knopf in einer Zeile),
 Danke-Seite mit Kartonbild, Garantie-Kasten der Produktseite bei 320 px, Produktseite mit `?packung=50` bei 390 und
 1280 px, Warenkorb und Danke-Seite mit `?packung=50&nachkauf=1` bei 390 (Danke auch 320) px, die Folie-08-Bilder.
+
+**Ergebnis am 03.11.2026 (Gestaltung „Kampagnen-Look“ auf alle Seiten, D09):** „Alle Prüfungen bestanden (Fassung mit
+Bildern inkl. GitHub-Pages-Probe und Rückfall ohne Fremdbilder)“, 0 Fehler, 0 Warnungen, 0 externe Anfragen, keine
+Konsolenfehler; `folie08-bilder.mjs` in beiden Modi ohne Fehler (Inhalt der Anmerkungszeile je Bild ganz im Bild).
+Gegenprobe mit sieben absichtlich eingebauten Fehlern (Warenkorb-Code ohne „Werbung“, Kurz-Garantie ohne sichtbares
+„Vorschlag der Gruppe“, Squad-Fuß ohne Beispielwert-Satz, Symbolbild-Etikett ausgeblendet, Bewertungskarte ohne
+„Platzhalter“, Beispiel-Etikett in der normalen Ansicht sichtbar, Inter-Datei fehlt): alle gemeldet. Angesehen: alle 7
+Seiten bei 390 px (erster Bildschirm und ganz), 1280 px und 320 px, Start- und Produktseite mit `?anmerkungen=1` bei
+390 px, geöffnetes Menü, Warenkorb mit `?packung=50`, die zehn Bilder für Folie 08. Nicht geprüft: Safari und Firefox,
+echtes Touch-Gerät, Druckansicht.
 
 Bildschirmfotos 390 × 844 (Normalmodus, oberer Bildschirm) in [`_vorschau/`](_vorschau/): `01-index.png`,
 `02-koffein-check.png`, `03-produkt.png`, `04-warenkorb.png`, `05-danke.png`, `06-squad.png`, `07-haendler.png`.

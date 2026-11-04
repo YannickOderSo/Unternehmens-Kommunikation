@@ -797,12 +797,31 @@ lokal öffnen). Mobil zuerst (390 px ohne waagerechtes Scrollen), am Desktop gut
   keine externen Anfragen (Schriften lokal, kein CDN, keine Analyse-Skripte).
 - **Daten:** Preise, Produktdaten und Koffeinwerte nur mit Befund-ID aus dem Dossier (im Code als Kommentar, im
   Anmerkungsmodus sichtbar), sonst sichtbar als „Beispielwert“; Bewertungen nur als gekennzeichnete Beispieldaten.
+  **Abweichung (Stand 03.11.2026, D09):** Damit die Webseite wie ein echter Shop aussieht (Yannick, 03.11.2026), stehen die
+  Etiketten „Beispielwert“, „Beispielrechnung“ usw. nur noch im Präsentationsmodus; in der normalen Ansicht nennt der Fuß
+  jeder Seite die Beispielwerte („Creator, Creator-Code und Rabatt sind Platzhalter. Liefertermine, Bestellnummer, Coins
+  und Kontostände sind Beispielwerte.“). Immer sichtbar bleiben „Platzhalter“ an den Bewertungen, „Beispielmarkt“ im
+  Händlerfinder, „Vorschlag der Gruppe“ an jeder Garantie und „Werbung“ am Creator-Code; `pruefen.mjs` prüft das. Die
+  Gruppe bestätigt oder verwirft die Abweichung (README der Webseite, Abschnitt 7).
 - **Leitplanken:** Dossier 8.3 (Do/Don't) gilt für jede Seite, nicht nur für den Koffein-Check; vor dem Änderungsstopp
   abhaken. Werbekennzeichnung bei Creator-Bezug (✔ R25). Grundpreis bei jedem Preis (✔ R98).
 - **KI-Offenlegung und Stand** in der Fußzeile jeder Seite: „Texte KI-gestützt entworfen und von der Gruppe geprüft ·
   studentische Gruppe · Stand TT.MM.2026“ (Gruppenregel; ✔ L31).
 - **Gestaltung** nach Abschnitt 3 (Gelb #FFD007 als Fläche, Schwarz #1D1D1B, Creme #F3EDE1; Kontraste wie 3.3, Gelb
-  nie als Schrift auf Creme).
+  nie als Schrift auf Creme). **Abweichung (Stand 03.11.2026, D09, Siegerentwurf „Kampagnen-Look“):** Die Konzept-Webseite
+  folgt nicht mehr 3.2–3.4 und 3.7, sondern bewusst der Formensprache von HOLYs Shop – Sortenfarben als Fläche (Pink
+  #F08EB8, Lila, Orange, Limette), Ankündigungsleiste in Zitronengelb #FFF200 als Hinweisleiste (Wortlaut unverändert,
+  14,4 : 1), Kopf mit Menü, Wortmarke und Symbolen, weiße Kauf- und Infokarten, Inter statt Libre Franklin; ohne
+  HOLY-Schriften, ohne Oval, ohne Verpackungsdesign als eigene Gestaltung. Anlass: „[…] die Seite soll schon wie eine
+  richtige Webseite aussehen das sieht eher wie ein konzept aus.“ (Yannick, 03.11.2026, wörtlich, Anfang „Das Video läuft
+  nur“ ausgelassen). Schutz gegen Verwechslung: Hinweisleiste,
+  `noindex`, Kennung und Beispielwert-Satz im Fuß, keine Bestellung. Die Hinweisleiste fällt weniger auf als der frühere
+  schwarze Balken – die Gruppe entscheidet, ob das reicht. Die Präsentation (Abschnitt 3) bleibt unverändert. Einzelheiten:
+  `konzept-website/README.md` Abschnitt 2, 3 und 7, Farben und Kontraste im Kopf von `konzept-website/assets/konzept.css`.
+  Nacharbeit 04.11.2026 (Abnahme Gestaltung und Technik zu D09): Recherche- und Erklärsätze, Abrufstempel und
+  Befund-IDs stehen nur noch im Präsentationsmodus; der Fuß ist Kleingedrucktes (Pflichtangaben bleiben sichtbar);
+  Bewertungskarten ohne Blindtext (Etikett „Platzhalter“ bleibt); Bestellnummer ohne „KONZEPT“ (Beispielwert laut Fuß).
+  Einzelheiten: `konzept-website/README.md` Abschnitt 2 („D09-Nacharbeit“) und 7 Nr. 9.
 - **Veröffentlichung:** Seit dem Push vom 03.11.2026 liegt der Ordner im Repository und ist damit über GitHub Pages
   erreichbar (Hinweisbalken, `noindex`, keine Bestellung, `?code=` nur mit Beispielcodes). Die Frage an Prof. Stenger
   bleibt (13.2 Nr. 16); widerspricht er oder HOLY, nehmen wir den Ordner aus `master` (in der Git-Historie bleibt er).

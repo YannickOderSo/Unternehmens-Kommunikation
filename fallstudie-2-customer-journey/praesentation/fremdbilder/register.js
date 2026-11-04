@@ -12,6 +12,7 @@
    Überarbeitet in D08 (03.11.2026): die sechs Bilder der Vorbilder (v07-youtube, -apple, -zooplus, -otto, -philips, -pampers) standen auf keiner
    Folie und sind zurückgehalten, nicht veröffentlicht: Dateien und Registereinträge in intern/vorbilder-zurueckgehalten/ (ausgeschlossen);
    m03-suche neu zugeschnitten (Beschriftung auf freier Fläche); Nachweise b04-persona (ohne Namen), m03-dose-shaker, konzept-01 … -05 nachgezogen.
+   Überarbeitet in D09 (04.11.2026): konzept-01 … -05 neu erzeugt (Konzept-Webseite im Shop-Look), alt, nachweis und motiv nachgezogen.
    Felder: datei (relativ zur HTML-Seite), alt, nachweis, motiv, platz, quelle (URL), pixel (Dateigröße). */
 window.INTERN_BILDER = {
   "b01-titel": {
@@ -314,20 +315,21 @@ window.INTERN_BILDER = {
     "pixel": "134 × 68"
   },
   /* Folie 08: Bildschirmfotos der Konzept-Webseite in der Fassung mit Bildern (erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern,
-     Schaltername historisch), ergänzt 03.11.2026; Texte in D08 nach dem Wortlaut des Website-Baus (D07) nachgezogen */
+     Schaltername historisch), ergänzt 03.11.2026; Texte in D08 nach dem Wortlaut des Website-Baus (D07) nachgezogen;
+     Bilder und Texte am 04.11.2026 nach dem Umbau der Webseite im Shop-Look (D09) erneuert */
   "konzept-01": {
     "datei": "fremdbilder/konzept-01-landingpage.png",
-    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Landingpage mit Creator-Code, im Knopf „Zum Produkt aus dem Video“ ein kleiner Packshot der 50er-Dose Raspberry Raptor",
-    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 03.11.2026",
-    "motiv": "Konzept-Webseite index.html, oberer Bildschirm; Produktbild im Knopf: HOLY Softdrinks GmbH (de.holy.com/products/raspberry-raptor)",
+    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Landingpage „Dein Code ist schon drin.“ mit Creator-Code CREATOR10 und Etikett „Werbung“, darunter „Dein Rabatt ist schon aktiv“, im Knopf „Zum Produkt aus dem Video“ ein kleiner Packshot der 50er-Dose Raspberry Raptor und der Knopf „Erst den Koffein-Check“",
+    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 04.11.2026",
+    "motiv": "Konzept-Webseite index.html, oberer Bildschirm; Produktbild im Knopf und am unteren Rand angeschnitten das Produktfoto der Bühne: HOLY Softdrinks GmbH (de.holy.com/products/raspberry-raptor)",
     "platz": "f08 Handyrahmen 1 (statt bilder/konzept-01-landingpage.png)",
     "quelle": "fallstudie-2-customer-journey/konzept-website/index.html (Fassung mit Bildern, konzept-website/fremdbilder/register.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern (Schaltername historisch)",
     "pixel": "390 × 844"
   },
   "konzept-02": {
     "datei": "fremdbilder/konzept-02-koffein-check.png",
-    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Antwortseite Koffein-Check mit „Kurz gesagt“",
-    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 03.11.2026",
+    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Ratgeber „Wie viel Koffein steckt in HOLY Energy – und wie viel ist okay?“ mit der Zeile „Ratgeber · Stand 04.11.2026 · Werte vom Etikett und von der EFSA · 7 Quellen“ und dem gelben Kasten „Kurz gesagt“ (160 mg je Portion, 32 mg pro 100 ml)",
+    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 04.11.2026",
     "motiv": "Konzept-Webseite koffein-check.html, oberer Bildschirm",
     "platz": "f08 Handyrahmen 2 (statt bilder/konzept-02-koffein-check.png)",
     "quelle": "fallstudie-2-customer-journey/konzept-website/koffein-check.html (Fassung mit Bildern, konzept-website/fremdbilder/register.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern (Schaltername historisch)",
@@ -336,17 +338,17 @@ window.INTERN_BILDER = {
   },
   "konzept-03": {
     "datei": "fremdbilder/konzept-03-produktseite.png",
-    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Produktseite ab „Packung wählen“, vier Packungen mit HOLY-Packshots, gewählt 50 Portionen mit Preis je Portion, Grundpreis und Endpreis inklusive Versand",
-    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 03.11.2026",
-    "motiv": "Konzept-Webseite produkt.html, gewählte 50er-Dose, Ausschnitt ab „Packung wählen“; Packshots: HOLY Softdrinks GmbH (de.holy.com)",
+    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Produktseite ab „Packung wählen“, vier Packungen mit HOLY-Packshots, gewählt 50 Portionen (39,99 €, 0,80 € je Portion, 114,26 € / kg), darunter Preisblock mit Grundpreis und Endpreis inklusive Versand 44,98 €",
+    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 04.11.2026",
+    "motiv": "Konzept-Webseite produkt.html?packung=50, gewählte 50er-Dose, Ausschnitt ab „Packung wählen“ bis zum Endpreis; Packshots: HOLY Softdrinks GmbH (de.holy.com)",
     "platz": "f08 Handyrahmen 3 (statt bilder/konzept-03-produktseite.png)",
     "quelle": "fallstudie-2-customer-journey/konzept-website/produkt.html?packung=50 (Fassung mit Bildern, konzept-website/fremdbilder/register.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern (Schaltername historisch)",
     "pixel": "390 × 844"
   },
   "konzept-04": {
     "datei": "fremdbilder/konzept-04-warenkorb.png",
-    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): mobiler Warenkorb mit Liefertermin, Posten Raspberry Raptor 50 Portionen mit Packshot der Dose und Endpreis inklusive Versand",
-    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 03.11.2026",
+    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): mobiler Warenkorb mit Lieferung Do., 12.11., Posten Raspberry Raptor 50 Portionen mit Packshot der Dose und Mengenanzeige, Zusammenfassung mit Code CREATOR10 (Werbung) und Endpreis 40,98 € inklusive Versand",
+    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 04.11.2026",
     "motiv": "Konzept-Webseite warenkorb.html?packung=50, oberer Bildschirm; Packshot: HOLY Softdrinks GmbH (de.holy.com/products/raspberry-raptor, Shop-Variante „50 Portionen“)",
     "platz": "f08 Handyrahmen 4 (statt bilder/konzept-04-warenkorb.png)",
     "quelle": "fallstudie-2-customer-journey/konzept-website/warenkorb.html?packung=50 (Fassung mit Bildern, konzept-website/fremdbilder/register.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern (Schaltername historisch)",
@@ -354,9 +356,9 @@ window.INTERN_BILDER = {
   },
   "konzept-05": {
     "datei": "fremdbilder/konzept-05-danke.png",
-    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Danke-Seite „So geht's weiter“ mit drei Schritten, Packshot des pinken Raptor-Shakers und Squad-Einstieg",
-    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 03.11.2026",
-    "motiv": "Konzept-Webseite danke.html?packung=50, Ausschnitt ab „So geht's weiter“; Shaker: HOLY Softdrinks GmbH (Ausschnitt aus dem Packshot der Shop-Variante „50 Portionen mit gratis Shaker“, de.holy.com/products/raspberry-raptor)",
+    "alt": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern): Danke-Seite von oben – „Danke! Dein Paket kommt am Do., 12.11.“ mit Bestellnummer, darunter die gelbe Karte „Willkommen im Squad“ mit 410 Coins für diese Bestellung und dem Knopf „Squad beitreten“",
+    "nachweis": "Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 04.11.2026",
+    "motiv": "Konzept-Webseite danke.html?packung=50, oberer Bildschirm mit Squad-Karte (seit D09 von oben statt ab „So geht's weiter“); am unteren Rand angeschnitten das Symbolbild Versandkarton (Foto von der Fotowand auf de.holy.com/pages/our-story, Urheber nicht genannt)",
     "platz": "f08 Handyrahmen 5 (statt bilder/konzept-05-danke.png)",
     "quelle": "fallstudie-2-customer-journey/konzept-website/danke.html?packung=50 (Fassung mit Bildern, konzept-website/fremdbilder/register.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern (Schaltername historisch)",
     "pixel": "390 × 844"

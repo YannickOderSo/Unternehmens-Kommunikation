@@ -1,20 +1,34 @@
 /* ==========================================================================
-   Konzept-Webseite HOLY (studentisches Konzept, Fallstudie 2) – gemeinsame Gestaltung
-   Grundlage: gestaltungsplan.md Abschnitt 3 (Farben 3.2, Kontraste 3.3, Typografie 3.4, Verbote 3.7)
-   und Abschnitt 7.3 (Kennzeichnung). Mobil zuerst (390 px), ab 900 px zweispaltig, wo es passt.
+   Konzept-Webseite HOLY (studentisches Konzept, Fallstudie 2) – gemeinsame Gestaltung aller 7 Seiten
+   Gestaltung „Kampagnen-Look“ (Siegerentwurf D09, 03.11.2026, übertragen auf alle Seiten): Die Seite soll wie ein echter,
+   professioneller Shop von HOLY aussehen, nicht wie ein Entwurf (Yannick, 03.11.2026) – farbige Vollflächen (Gelb, Pink,
+   Lila, Schwarz), sehr große schmale Überschriften, große Produktbilder, Bewertungs-Band, Packungs-Karten, Pillen-Knöpfe.
+   Formensprache nach HOLYs Shop (Ankündigungsleiste, Kopf mit Menü, Wortmarke und Symbolen, Sortenfarbe als Fläche,
+   weiße Kauf- und Infokarten, Kacheln mit Symbolen), aber ohne HOLY-Schriften, ohne Logo außer der Wortmarke im Kopf,
+   ohne gelbes Oval und ohne Verpackungsdesign als eigene Gestaltung (README Abschnitt 3). Abweichung vom Gestaltungsplan
+   (Creme-Grundfläche, „Gelb nur als Fläche“, Libre Franklin, keine HOLY-nahe Anmutung, „Beispielwert“ immer sichtbar):
+   gestaltungsplan.md 7.3, Punkte „Daten“ und „Gestaltung“ (Abweichung D09).
+   Seiten: index (Kampagne → Shop), koffein-check (Ratgeber-Artikel), produkt (Produktseite), warenkorb (Shop-Warenkorb),
+   danke (Bestellbestätigung), squad (Kundenkonto), haendler (QR-Landingpage).
+   Kennzeichnung bleibt: Hinweisleiste oben (wörtlich, sticky, ≥ 4,5 : 1), noindex, Fuß mit Kennung, Bildnachweisen,
+   Quellen und dem Satz zu den Beispielwerten; „Werbung“ beim Creator-Code; „Symbolbild“ als Etikett am Bild;
+   „Platzhalter“ an den Bewertungskarten; „Vorschlag der Gruppe“ an jeder Garantie. Erklärsätze, Skizzen und
+   „Beispielwert“-Etiketten stehen nur im Präsentationsmodus (?anmerkungen=1: .nur-anm, .nur-anm-i).
    Keine externen Anfragen: Schriften lokal (schriften/), Bilder nur aus dem eigenen Ordner, kein CDN.
    Fassung mit Bildern (Standard: Repository, GitHub Pages, Hörsaal): Bilder der HOLY Softdrinks GmbH und Fotos Dritter
    aus fremdbilder/; Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der
-   Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Eingebaut von konzept.js, Gestaltung im Abschnitt „Fremdbilder“. Rückfall ohne
-   Fremdbilder (fremdbilder/register.js fehlt): eigene Zeichnungen und Platzhalter.
+   Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Eingebaut von
+   konzept.js, Gestaltung im Abschnitt „Fremdbilder“. Rückfall ohne Fremdbilder (fremdbilder/register.js fehlt): eigene
+   Zeichnungen und Platzhalter.
 
-   Kontraste (WCAG 2.x, nachgerechnet in gestaltungsplan.md 3.3 und werkzeuge/pruefen.mjs):
-     Schwarz #1D1D1B auf Creme #F3EDE1 14,48 : 1 · Schiefer #5C5547 auf Creme 6,33 : 1
-     Schwarz auf Gelb #FFD007 11,48 : 1 · Schiefer auf Gelb 5,02 : 1
-     Creme auf Schwarz 14,48 : 1 · Gelb auf Schwarz 11,48 : 1
-     Schwarz auf Türkis #8ECDC1 9,37 : 1 · auf Hellblau #A4D9F6 11,12 : 1
-   Verboten (3.3/3.7): Gelb als Schrift oder konturlose Linie auf Creme; Mittel warm, Nebel, Creme oder
-   Schiefer hell auf Gelb; Schiefer auf Türkis; weiche Schatten, Verläufe, Logos, HOLY-Schriften.
+   Kontraste (WCAG 2.x, gerechnet mit der Formel aus werkzeuge/pruefen.mjs; pruefen.mjs misst jeden sichtbaren Text;
+   am 04.11.2026 nachgerechnet, D09-Nacharbeit – vier Werte waren vorher zu hoch angegeben):
+     Schwarz #1D1D1B auf Zitrone #FFF200 14,4 : 1 · auf Gelb #FFD007 11,5 : 1 · auf Pink #F08EB8 7,4 : 1
+     Schwarz auf Weiß 16,9 : 1 · auf Creme #FCF8F0 15,9 : 1 · auf Lila #C09CE3 7,3 : 1 · auf Orange #F9C168 10,3 : 1
+     Schwarz auf Limette #DCE168 12,1 : 1 · auf Beige #EFE6D6 13,6 : 1
+     Schiefer #5C5547 auf Weiß 7,4 : 1 · auf Creme 7,0 : 1 · auf Gelb 5,0 : 1 · auf Beige 6,0 : 1 – NICHT auf Pink (3,3 : 1) oder Lila
+     Weiß auf Schwarz 16,9 : 1 · Gelb auf Schwarz 11,5 : 1 · Grau #B9B0A0 auf Schwarz 7,9 : 1
+   Auf Pink, Lila und Orange steht jeder Text in Schwarz (Nebentext über --text-neben).
    ========================================================================== */
 
 /* ---------- Schriften (OFL 1.1, lokal, siehe schriften/HERKUNFT.txt) ---------- */
@@ -30,268 +44,747 @@
   font-weight: 200 800; font-stretch: 75% 100%; font-style: normal; font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* Inter: Fließtext (Ersatz für Libre Franklin, Gestaltungsplan 3.4), kopiert aus praesentation/schriften/ */
+@font-face {
+  font-family: "Inter Konzept";
+  src: url("../schriften/inter-latin-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter Konzept";
+  src: url("../schriften/inter-latin-ext-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
-/* ---------- Farben (3.2) ---------- */
+/* ---------- Farben ---------- */
 :root {
   color-scheme: light;               /* nur hell: Bildschirmfotos für Folie 08 bleiben gleich */
-  --creme: #F3EDE1;                  /* Papier */
-  --creme-hell: #FBF7EF;             /* eigener Wert: Fläche für Kästen (Schwarz darauf 16,4 : 1) */
-  --schwarz: #1D1D1B;                /* Schrift, Kontur */
-  --gelb: #FFD007;                   /* Fläche, Knöpfe, Marker – nie Schrift auf Creme */
-  --schiefer: #5C5547;               /* Nebentext auf Creme und Gelb */
-  --mittel: #857C6B;                 /* nur Grafik auf Creme, nie auf Gelb */
-  --nebel: #CBC2B0;                  /* nur Haarlinien ohne Information */
-  --tuerkis: #8ECDC1;                /* Platzhalter „Foto“ */
-  --hellblau: #A4D9F6;               /* Platzhalter „Screenshot“ */
-  --mint: #B3DBC4;                   /* Reserve */
+  --zitrone: #FFF200;                /* Ankündigungs-/Hinweisleiste */
+  --gelb: #FFD007;                   /* Knöpfe, gelbe Vollflächen */
+  --pink: #F08EB8;                   /* Sortenfarbe Raspberry Raptor: Seitenfläche Start- und Produktseite */
+  --pink-hell: #F7BDC7;              /* Bildkarten auf Pink */
+  --lila: #C09CE3;                   /* Packungs-Karte */
+  --orange: #F9C168;                 /* Mix & Match */
+  --limette: #DCE168;                /* Packungs-Karte */
+  --schwarz: #1D1D1B;                /* Schrift, schwarze Flächen */
+  --weiss: #FFFFFF;
+  --creme: #FCF8F0;                  /* Seitenfläche aller übrigen Seiten */
+  --creme-hell: #FFFFFF;             /* Karten (früher Creme hell) */
+  --beige: #EFE6D6;                  /* Bewertungskarten */
+  --grau: #F3F0EA;                   /* Vorteile-Band in der Kaufkarte */
+  --schiefer: #5C5547;               /* Nebentext auf Weiß, Creme, Gelb */
+  --mittel: #857C6B;                 /* nur Grafik */
+  --nebel: #DCD3C3;                  /* Haarlinien ohne Information */
+  --tuerkis: #8ECDC1;                /* Platzhalter „Foto“ (Rückfall) */
+  --hellblau: #A4D9F6;               /* Platzhalter „Screenshot“ (Rückfall) */
+  --seite: var(--creme);             /* Fläche der Seite; Start-, Produkt-, Danke- und Squad-Seite: Pink (body.seite-pink), Händlerseite: Lila */
+  --text-neben: var(--schiefer);     /* Nebentext auf der Seitenfläche */
   --schrift-titel: "Bricolage Konzept", "Arial Narrow", system-ui, sans-serif;
-  --schrift-text: "Libre Franklin", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --schrift-text: "Inter Konzept", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --rand: 16px;                      /* Seitenrand mobil */
   --breite: 1080px;
+  --breite-weit: 1320px;
+  --rund: 22px;
 }
+body.seite-pink { --seite: var(--pink); --text-neben: var(--schwarz); }
+body.seite-lila { --seite: var(--lila); --text-neben: var(--schwarz); }   /* Händlerseite */
 
 /* ---------- Grundlagen ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 96px; }
+/* Fokus nicht verdeckt (WCAG 2.2 SC 2.4.11): Unten stehen auf der Produktseite die Kaufleiste (bis 76 px hoch) und im
+   Präsentationsmodus der Knopf „Anmerkungen ansehen“ (bis 64 px, über der Kaufleiste bis 136 px). Der Browser scrollt
+   fokussierte Elemente dann darüber (D09-Nacharbeit, Abnahme Technik; pruefen.mjs prüft das per Tab-Rundgang). */
+html:has(body > .kaufleiste) { scroll-padding-bottom: 96px; }
+html.anmerkungen { scroll-padding-bottom: 80px; }
+html.anmerkungen:has(body > .kaufleiste) { scroll-padding-bottom: 150px; }
 body {
-  margin: 0; background: var(--creme); color: var(--schwarz);
-  font-family: var(--schrift-text); font-size: 17px; line-height: 1.5;
-  overflow-wrap: break-word;
+  margin: 0; background: var(--seite); color: var(--schwarz);
+  font-family: var(--schrift-text); font-size: 16px; line-height: 1.5;
+  overflow-wrap: break-word; -webkit-font-smoothing: antialiased;
 }
 img, svg { max-width: 100%; height: auto; display: block; }
-a { color: var(--schwarz); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 3px; }
-:focus-visible { outline: 3px solid var(--schwarz); outline-offset: 3px; box-shadow: 0 0 0 6px var(--gelb); }
-h1, h2, h3 { font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 750; line-height: 1.05; margin: 0 0 .4em; letter-spacing: -0.005em; }
-h1 { font-size: 36px; }
-h2 { font-size: 26px; margin-top: 0; }
-h3 { font-size: 20px; line-height: 1.15; }
+:focus-visible { outline: 3px solid var(--schwarz); outline-offset: 3px; box-shadow: 0 0 0 6px var(--weiss); border-radius: 4px; }
+h1, h2, h3 {
+  font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; line-height: .95; margin: 0 0 .35em;
+  letter-spacing: -0.01em; text-wrap: balance;
+}
+h1 { font-size: 48px; }
+h2 { font-size: 36px; margin-top: 0; }
+h3 { font-size: 24px; line-height: 1.02; }
 p { margin: 0 0 .8em; }
 ul, ol { padding-left: 1.2em; margin: 0 0 .8em; }
 li { margin-bottom: .3em; }
 .inhalt { max-width: var(--breite); margin: 0 auto; padding: 0 var(--rand); }
+.inhalt-weit { max-width: var(--breite-weit); }
 .schmal { max-width: 760px; }
-.nebentext, .meta { color: var(--schiefer); }
-.meta { font-size: 14px; line-height: 1.45; }
+.nebentext, .meta { color: var(--text-neben); }
+.meta { font-size: 13.5px; line-height: 1.45; }
 .klein { font-size: 15px; }
-.zahl { font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 750; }
-/* Ziffern gleich breit nur bei Preisen und Zahlen (Inter setzt mit tnum auch den Bindestrich breit) */
-.zahl, .preis-gross, .option .preis, .posten .r, .tabelle td.r, .balken b, .coinstand .zahl { font-variant-numeric: tabular-nums; }
+.zahl { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; }
+/* Ziffern gleich breit nur bei Preisen und Zahlen */
+.zahl, .preis-gross, .option .preis, .posten .r, .tabelle td.r, .balken b, .coinstand .zahl, .karte-preis { font-variant-numeric: tabular-nums; }
 .url { word-break: break-all; }
 /* hidden gilt immer, auch wenn eine Klasse display setzt (Bildplätze, Galerie, Kästen) */
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.dachzeile { font-family: var(--schrift-text); font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 8px; }
 
-/* ---------- Pflicht: Hinweisbalken (7.3) – fest oben, nicht ausblendbar ---------- */
+/* ---------- Pflicht: Hinweisleiste (7.3) – fest oben, nicht ausblendbar, gestaltet wie eine Ankündigungsleiste ---------- */
+/* Schrift Bricolage, Laufweite 82 %: bei 390 px zwei Zeilen statt drei (50 statt 70 px; Idee aus dem Entwurf „HOLY-nah“,
+   dort 87 %, gemessen reicht das erst ab 82 %); Wortlaut unverändert, 13,5 px, Schwarz auf Zitrone 14,4 : 1 */
 .hinweisbalken {
   position: sticky; top: 0; z-index: 1000;
-  background: var(--schwarz); color: var(--creme);
-  font-size: 13px; line-height: 1.35; padding: 7px var(--rand); text-align: center;
-  border-bottom: 3px solid var(--gelb);
+  background: var(--zitrone); color: var(--schwarz);
+  font-family: var(--schrift-titel); font-stretch: 82%; font-size: 13.5px; font-weight: 500; line-height: 1.3;
+  padding: 7px var(--rand); text-align: center;
+  border-bottom: 1px solid rgba(29, 29, 27, .18);
 }
-.hinweisbalken strong { color: var(--gelb); font-weight: 700; }   /* Gelb auf Schwarz 11,48 : 1 */
+.hinweisbalken strong { font-weight: 800; }
 
-/* ---------- Kopf ---------- */
-.kopf { border-bottom: 2px solid var(--schwarz); background: var(--creme); }
-.kopf .inhalt { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 58px; }
-.wortmarke {
-  font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 800; font-size: 28px; line-height: 1;
-  text-decoration: none; display: inline-flex; align-items: baseline; gap: 8px;
+/* ---------- Kopf (Wortmarke, Navigation, Icons) ---------- */
+.kopf { background: var(--seite); position: relative; z-index: 900; }
+/* neue Kopfzeile (Start- und Produktseite): Menü links, Wortmarke Mitte, Icons rechts; ab 900 px Wortmarke links */
+.kopf-zeile {
+  max-width: var(--breite-weit); margin: 0 auto; padding: 0 var(--rand);
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 64px; gap: 8px;
 }
-.wortmarke span { font-family: var(--schrift-text); font-size: 13px; font-weight: 600; color: var(--schiefer); }
-/* HOLY-Wortmarke als Bild (mit Einverständnis des Gründers laut Yannick, KI-Nachweis FS2 Nr. 12) – das einzige Logo als
-   Gestaltungselement; Höhe fest, Breite aus dem Seitenverhältnis 389 × 105 */
-.wortmarke img { display: block; height: 24px; width: auto; }
-/* „Konzept“ steht klein unter der Wortmarke, damit Logo und Navigation auch bei 390 px nebeneinander passen */
-.wortmarke { flex-direction: column; align-items: flex-start; gap: 3px; flex: none; }
-.wortmarke span { font-size: 11px; line-height: 1; letter-spacing: .04em; text-transform: uppercase; }
-.kopf nav { display: flex; gap: 14px; font-size: 15px; font-weight: 600; white-space: nowrap; }
-.kopf nav a { text-decoration: none; padding: 10px 0; }
-.kopf nav a[aria-current="page"] { text-decoration: underline; }
-.kopf .nur-breit { display: none; }
-/* sehr schmale Handys (320 px): Navigation darf umbrechen, kein waagerechtes Scrollen (Abnahme D05) */
-@media (max-width: 359px) {
-  .kopf nav { gap: 10px; font-size: 14px; flex-wrap: wrap; justify-content: flex-end; white-space: normal; }
-  .wortmarke img { height: 22px; }
+.menue-knopf {
+  justify-self: start; display: inline-grid; place-items: center; width: 44px; height: 44px; margin-left: -10px;
+  background: none; border: 0; border-radius: 10px; color: var(--schwarz); cursor: pointer; padding: 0;
 }
+.menue-knopf svg { width: 26px; height: 26px; }
+.kopf-icons { justify-self: end; display: flex; align-items: center; gap: 2px; margin-right: -8px; }
+.kopf-icons a { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; }
+.kopf-icons svg { width: 26px; height: 26px; }
+.kopf-zeile > .menue-knopf { grid-column: 1; grid-row: 1; }
+.kopf-zeile > .wortmarke { grid-column: 2; grid-row: 1; justify-self: center; }
+.kopf-zeile > .kopf-icons { grid-column: 3; grid-row: 1; }
+.kopf-nav { display: none; }
+.kopf.offen .kopf-nav {
+  display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 100%;
+  background: var(--weiss); border-bottom: 3px solid var(--schwarz); padding: 6px var(--rand) 14px; z-index: 950;
+}
+.kopf.offen .kopf-nav a { padding: 12px 0; border-bottom: 1px solid var(--nebel); font-size: 18px; }
+.kopf-nav a { font-weight: 700; text-decoration: none; }
+.kopf-nav a:hover { text-decoration: underline; }
+.kopf-nav a[aria-current="page"] { text-decoration: underline; }
+/* ohne Skript (konzept.js fehlt): Navigation offen sichtbar unter der Kopfzeile */
+html:not(.js) .kopf-nav { display: flex; flex-wrap: wrap; gap: 4px 16px; grid-column: 1 / -1; grid-row: 2; padding-bottom: 10px; }
+
+/* Wortmarke (mit Einverständnis des Gründers laut Yannick, KI-Nachweis FS2 Nr. 12) – das einzige Logo als
+   Gestaltungselement; Höhe fest, Breite aus dem Seitenverhältnis 389 × 105. „Konzept“ darunter entfällt: die
+   Hinweisleiste trägt die Kennzeichnung. */
+.wortmarke { display: inline-flex; align-items: center; text-decoration: none; flex: none; }
+.wortmarke img { display: block; height: 30px; width: auto; }
+.wortmarke span { display: none; }
 
 /* ---------- Brotkrumen ---------- */
-.krumen { font-size: 14px; color: var(--schiefer); padding: 12px 0 0; }
-.krumen a { color: var(--schiefer); }
+.krumen { font-size: 13px; font-weight: 600; color: var(--text-neben); padding: 4px 0 0; margin: 0 0 10px; }
+/* mobil ohne Brotkrumen (wie HOLYs Shop): Titel, Bewertung und erster Preis rücken nach oben */
+@media (max-width: 699px) { .pdp-buehne .krumen { display: none; } }
+.krumen a { color: inherit; }
 
-/* ---------- Knöpfe ---------- */
+/* ---------- Knöpfe: Pillen, Gelb auf hellen Flächen, Schwarz auf Gelb ---------- */
 .knopf {
   display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
-  min-height: 52px; padding: 12px 18px; border-radius: 12px; border: 2px solid var(--schwarz);
-  background: var(--schwarz); color: var(--creme); font-family: var(--schrift-text); font-size: 17px; font-weight: 700;
-  text-decoration: none; text-align: center; line-height: 1.2; cursor: pointer;
+  min-height: 54px; padding: 12px 22px; border-radius: 999px; border: 2px solid var(--gelb);
+  background: var(--gelb); color: var(--schwarz); font-family: var(--schrift-text); font-size: 16px; font-weight: 800;
+  letter-spacing: .02em; text-transform: uppercase; text-decoration: none; text-align: center; line-height: 1.15; cursor: pointer;
 }
-.knopf:hover { text-decoration: underline; }
-.knopf-gelb { background: var(--gelb); color: var(--schwarz); }
-.knopf-rand { background: transparent; color: var(--schwarz); }
-.knopfreihe { display: grid; gap: 10px; margin: 16px 0; }
+.knopf:hover { background: var(--schwarz); border-color: var(--schwarz); color: var(--gelb); text-decoration: none; }
+.knopf-gelb { background: var(--gelb); color: var(--schwarz); border-color: var(--gelb); }
+.knopf-schwarz { background: var(--schwarz); color: var(--weiss); border-color: var(--schwarz); }
+.knopf-schwarz:hover { background: var(--gelb); border-color: var(--gelb); color: var(--schwarz); }
+.knopf-rand { background: transparent; color: var(--schwarz); border-color: var(--schwarz); }
+.knopf-rand:hover { background: var(--schwarz); color: var(--weiss); }
+.knopfreihe { display: grid; gap: 10px; margin: 18px 0; }
 .knopf .pfeil { font-weight: 800; }
+/* gelbe Flächen: Hauptknopf schwarz, damit er nicht in der Fläche verschwindet */
+.naechste .knopf:not(.knopf-rand),
+.flaeche-gelb .knopf:not(.knopf-rand) { background: var(--schwarz); border-color: var(--schwarz); color: var(--weiss); }
+.naechste .knopf:not(.knopf-rand):hover,
+.flaeche-gelb .knopf:not(.knopf-rand):hover { background: var(--weiss); border-color: var(--schwarz); color: var(--schwarz); }
 
 /* ---------- Flächen ---------- */
-.buehne-gelb { background: var(--gelb); color: var(--schwarz); border-bottom: 2px solid var(--schwarz); }
-.buehne-gelb .nebentext, .buehne-gelb .meta { color: var(--schiefer); }   /* 5,02 : 1 */
-.abschnitt { padding: 28px 0; border-bottom: 1px solid var(--nebel); }
-.abschnitt:last-of-type { border-bottom: 0; }
-.kasten { background: var(--creme-hell); border: 2px solid var(--schwarz); border-radius: 14px; padding: 16px; margin: 0 0 16px; }
+.flaeche-gelb { background: var(--gelb); --text-neben: var(--schiefer); }
+.flaeche-schwarz { background: var(--schwarz); color: var(--weiss); --text-neben: #B9B0A0; }
+.flaeche-schwarz a { color: var(--weiss); }
+.flaeche-creme { background: var(--creme); --text-neben: var(--schiefer); }
+.abschnitt { padding: 36px 0; }
+.kasten { background: var(--weiss); border: 2px solid var(--schwarz); border-radius: 18px; padding: 18px; margin: 0 0 16px; --text-neben: var(--schiefer); }
 .kasten > :last-child { margin-bottom: 0; }
-.kasten-gelb { background: var(--gelb); }
-.marker { background: var(--gelb); padding: 0 .15em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-.linie-links { border-left: 6px solid var(--schwarz); padding-left: 14px; }
 
-/* Kennzeichnung „Beispielwert“ (7.3): sichtbar, aber ruhig */
+/* Kennzeichnung als runde Pille (früher gestrichelter Kasten): „Platzhalter“ und „Vorschlag der Gruppe“ immer sichtbar;
+   „Beispielwert“, „Beispielrechnung“ usw. tragen zusätzlich .nur-anm-i und stehen nur im Präsentationsmodus – in der
+   normalen Ansicht nennt der Fuß jeder Seite die Beispielwerte */
 .beispiel {
-  display: inline-block; font-family: var(--schrift-text); font-size: 12px; font-weight: 700; line-height: 1.2;
-  border: 1.5px dashed currentColor; border-radius: 4px; padding: 1px 5px; margin-left: 4px; vertical-align: 2px;
-  font-stretch: 100%; letter-spacing: 0;
+  display: inline-block; font-family: var(--schrift-text); font-size: 11.5px; font-weight: 700; line-height: 1.2;
+  border: 1.5px solid currentColor; border-radius: 999px; padding: 1px 7px; margin-left: 5px; vertical-align: 2px;
+  font-stretch: 100%; letter-spacing: 0; text-transform: none; white-space: nowrap;
 }
 .werbung {
-  display: inline-block; font-size: 12px; font-weight: 700; line-height: 1.2; background: var(--schwarz); color: var(--creme);
-  border-radius: 4px; padding: 2px 6px; vertical-align: 2px;
+  display: inline-block; font-family: var(--schrift-text); font-size: 11.5px; font-weight: 800; line-height: 1.2;
+  background: var(--schwarz); color: var(--weiss); border-radius: 4px; padding: 3px 7px; vertical-align: 2px;
+  font-stretch: 100%; letter-spacing: .02em; text-transform: none;
+}
+/* Symbolbild-Etikett am Bild (konzept.js setzt es bei Registereinträgen mit „Symbolbild · …“) */
+.bildplatz { position: relative; }
+.symbol-etikett {
+  position: absolute; left: 10px; top: 10px; z-index: 2; background: var(--schwarz); color: var(--weiss);
+  font: 800 12px/1.2 var(--schrift-text); letter-spacing: .02em; padding: 4px 8px; border-radius: 6px;
 }
 
 /* ---------- Platzhalter und eigene Zeichnungen (Rückfall ohne Fremdbilder; Skizzen und Siegel in beiden Fassungen) ---------- */
 .platzhalter { margin: 0 0 16px; }
 .platzhalter .flaeche {
-  border: 4px solid var(--schwarz); border-radius: 14px; overflow: hidden;
+  border: 3px solid var(--schwarz); border-radius: var(--rund); overflow: hidden;
   background-color: var(--tuerkis);
   background-image: repeating-linear-gradient(135deg, rgba(29,29,27,.10) 0 2px, transparent 2px 14px);
-  display: grid; place-items: center; min-height: 120px; padding: 8px;
+  display: grid; place-items: center; min-height: 200px; padding: 8px;
 }
-.platzhalter .flaeche svg { width: min(140px, 42%); }
-.platzhalter figcaption { font-size: 14px; color: var(--schiefer); margin-top: 6px; }
+.platzhalter .flaeche svg { width: min(160px, 46%); }
+.platzhalter figcaption { font-size: 13px; color: var(--text-neben); margin-top: 6px; }
 .zeichnung { margin: 0 0 16px; }
-.zeichnung figcaption { font-size: 14px; color: var(--schiefer); margin-top: 6px; }
+.zeichnung figcaption { font-size: 13px; color: var(--text-neben); margin-top: 6px; }
 
-/* ---------- Landingpage (index) ---------- */
-.held { padding: 20px 0 24px; }
-.held .absender { font-size: 14px; font-weight: 600; margin: 0 0 10px; }
-.held .absender .werbung { margin-right: 4px; }
-.held h1 { font-size: 40px; }
+/* ==========================================================================
+   Startseite (index.html): Kampagnen-Bühne in Pink, Bewertungs-Band, vier Zahlen in Gelb, Packungs-Karten,
+   Koffein-Check in Schwarz
+   ========================================================================== */
+.held { padding: 8px 0 32px; }
+.held-buehne { max-width: var(--breite-weit); margin: 0 auto; padding: 0 var(--rand); display: grid; gap: 24px; }
+.held .absender { font-size: 13.5px; font-weight: 600; margin: 4px 0 12px; line-height: 1.6; }
+.held .absender .werbung { margin-right: 6px; }
+.held h1 { font-size: 64px; line-height: .88; margin-bottom: 18px; }
+.held .held-satz { font-size: 17px; font-weight: 500; max-width: 34em; margin: 14px 0 0; }
+/* Code als Gutschein: weiße Karte mit Perforation */
 .codebox {
-  border: 3px dashed var(--schwarz); border-radius: 14px; background: var(--creme-hell);
-  padding: 12px 14px; margin: 14px 0 6px; display: grid; gap: 4px;
+  background: var(--weiss); border-radius: 18px; padding: 14px 18px 12px; margin: 0; display: grid; gap: 4px;
+  position: relative; --text-neben: var(--schiefer); max-width: 520px;
 }
-.codebox .code { font-family: var(--schrift-titel); font-stretch: 82%; font-size: 34px; font-weight: 800; letter-spacing: .03em; line-height: 1.05; word-break: break-all; }
-.codebox .codezeile { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.fakten { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.fakten li { border-left: 6px solid var(--schwarz); padding: 2px 0 2px 12px; margin: 0; }
-.fakten + .meta { margin-top: 12px; }
-.fakten b { display: block; font-family: var(--schrift-titel); font-stretch: 82%; font-size: 22px; line-height: 1.1; }
-.teaser { display: block; text-decoration: none; }
-.teaser:hover h3 { text-decoration: underline; }
-.teaser .weiter { font-weight: 700; }
+.codebox::before, .codebox::after {
+  content: ""; position: absolute; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 50%; background: var(--seite);
+}
+.codebox::before { left: -11px; }
+.codebox::after { right: -11px; }
+.codebox .meta { font-weight: 600; }
+.codebox .code { font-family: var(--schrift-titel); font-stretch: 75%; font-size: 46px; font-weight: 800; letter-spacing: .02em; line-height: 1; word-break: break-all; }
+.codebox .codezeile { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px dashed var(--nebel); margin-bottom: 4px; }
+.codebox .klein { font-weight: 600; }
+.held .knopfreihe { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 14px; }
+.held .knopfreihe .knopf { width: 100%; font-size: 15px; letter-spacing: 0; padding-left: 18px; padding-right: 18px; }
+.held .knopf-rand { background: var(--weiss); border-color: var(--weiss); }
+.held .knopf-rand:hover { background: var(--schwarz); border-color: var(--schwarz); }
+.held-foto { margin: 0; position: relative; }
+.held-foto .foto { border-radius: 28px; overflow: hidden; aspect-ratio: 1 / 1; background: var(--pink-hell); }
+.held-foto .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; }
+.held-foto .sticker {
+  position: absolute; right: 14px; top: 14px; z-index: 3; width: 96px; height: 96px; border-radius: 50%;
+  background: var(--schwarz); color: var(--weiss); display: grid; place-items: center; text-align: center;
+  font: 800 13px/1.15 var(--schrift-text); padding: 10px; transform: rotate(8deg);
+}
 
-/* ---------- Koffein-Check ---------- */
-.kurz { background: var(--gelb); border: 2px solid var(--schwarz); border-radius: 14px; padding: 16px; margin: 0 0 20px; }
-.kurz h2 { font-size: 22px; }
+/* Bewertungs-Band: schwarz, Sterne gelb */
+.band-bewertung { background: var(--schwarz); color: var(--weiss); }
+.band-bewertung a { display: block; text-decoration: none; padding: 14px var(--rand); text-align: center; font-size: 14.5px; line-height: 1.5; }
+.band-bewertung a:hover .band-link { text-decoration: underline; }
+.band-bewertung .sterne { color: var(--gelb); font-size: 18px; letter-spacing: 2px; vertical-align: -1px; margin-right: 4px; }
+.band-bewertung .trenner { color: var(--gelb); margin: 0 6px; }
+.band-bewertung .band-link { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.band-bewertung .stand { color: #B9B0A0; }
+
+/* vier Zahlen: gelbe Vollfläche, weiße Kacheln mit eigenen Symbolen */
+.zahlen-abschnitt { padding: 44px 0 40px; }
+.zahlen-abschnitt h2 { font-size: 44px; margin-bottom: 20px; }
+.fakten { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fakten li { background: var(--weiss); border-radius: 18px; padding: 14px 14px 16px; margin: 0; font-size: 14px; line-height: 1.4; --text-neben: var(--schiefer); }
+.fakten li svg { width: 46px; height: 46px; margin-bottom: 10px; }
+.fakten b { display: block; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 32px; line-height: .95; margin-bottom: 6px; letter-spacing: -0.01em; }
+.zahlen-abschnitt .meta { margin: 16px 0 0; }
+
+/* Packungs-Karten (Sortiment) */
+.sortiment { padding: 44px 0; }
+.sortiment h2 { font-size: 44px; margin-bottom: 6px; }
+.sortiment .unterzeile { margin: 0 0 20px; font-size: 16px; }
+.karten { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.karten li { margin: 0; }
+.karte {
+  display: flex; flex-direction: column; height: 100%; text-decoration: none; border-radius: 20px; overflow: hidden;
+  background: var(--weiss); color: var(--schwarz); position: relative;
+}
+.karte:hover .karte-name { text-decoration: underline; }
+.karte-bild { display: block; aspect-ratio: 1 / 1; padding: 12px; background: var(--k-farbe, var(--pink)); }
+.karte-bild .intern-bild { width: 100%; height: 100%; object-fit: contain; }
+.karte .etikett {
+  position: absolute; left: 10px; top: 10px; z-index: 2; background: var(--schwarz); color: var(--weiss);
+  font: 800 11.5px/1.2 var(--schrift-text); padding: 4px 8px; border-radius: 999px; letter-spacing: .02em;
+}
+.karte-text { display: flex; flex-direction: column; gap: 2px; padding: 12px 12px 14px; flex: 1; --text-neben: var(--schiefer); }
+.karte-name { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 22px; line-height: 1; }
+.karte-zusatz { font-size: 13px; color: var(--schiefer); }
+.karte-preis { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 26px; line-height: 1; margin-top: auto; padding-top: 10px; }
+.karte-grund { font-size: 12.5px; color: var(--schiefer); line-height: 1.35; }
+.karte-pink { --k-farbe: var(--pink); }
+.karte-lila { --k-farbe: var(--lila); }
+.karte-orange { --k-farbe: var(--orange); }
+.karte-limette { --k-farbe: var(--limette); }
+.sortiment .meta { margin: 16px 0 0; }
+
+/* Skizze „So kommst du hierher“ (nur Präsentationsmodus) */
+.skizze-abschnitt { background: var(--creme); --text-neben: var(--schiefer); }
+.skizze-abschnitt .zeichnung { max-width: 520px; }
+
+/* Koffein-Check / nächste Station als schwarze Vollfläche mit Bild */
+.naechste-schwarz { background: var(--schwarz); color: var(--weiss); --text-neben: #B9B0A0; padding: 44px 0; }
+.naechste-schwarz a:not(.knopf) { color: var(--weiss); }
+.naechste-schwarz .knopf:not(.knopf-rand) { background: var(--gelb); border-color: var(--gelb); color: var(--schwarz); }
+.naechste-schwarz .knopf:not(.knopf-rand):hover { background: var(--weiss); border-color: var(--weiss); color: var(--schwarz); }
+.naechste-schwarz h2 { font-size: 48px; color: var(--weiss); }
+.naechste-schwarz .dachzeile { color: var(--gelb); }
+.naechste-raster { display: grid; gap: 24px; align-items: center; }
+.naechste-raster .bildkachel { margin: 0; }
+.naechste-raster .bildkachel .foto { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 3; }
+.naechste-raster .bildkachel .intern-bild { width: 100%; height: 100%; object-fit: cover; }
+.naechste-schwarz .knopf { max-width: 420px; }
+.naechste-schwarz .knopf-rand { background: transparent; border-color: var(--weiss); color: var(--weiss); }
+.naechste-schwarz .knopf-rand:hover { background: var(--weiss); color: var(--schwarz); }
+.naechste-schwarz .lead { font-size: 17px; }
+
+
+/* ==========================================================================
+   Koffein-Check (koffein-check.html): Ratgeber-Artikel im Shop – Rubrik, große Überschrift, Verfasserzeile,
+   „Kurz gesagt“ in Gelb; ab 900 px Inhaltsverzeichnis rechts (klebt), Text in Lesebreite
+   ========================================================================== */
+.ratgeber { padding: 4px 0 40px; }
+.ratgeber-raster { display: grid; }
+.artikel-kopf { margin: 0 0 18px; }
+.artikel-kopf h1 { font-size: 44px; line-height: .94; margin: 8px 0 14px; }
+.rubrik {
+  display: inline-block; background: var(--pink); color: var(--schwarz); border-radius: 999px; padding: 3px 10px;
+  margin-right: 6px; letter-spacing: .04em;
+}
+.lead { font-size: 18px; line-height: 1.5; font-weight: 500; }
+.verfasser { font-size: 13.5px; line-height: 1.5; color: var(--text-neben); border-top: 1px solid var(--nebel); padding-top: 10px; margin: 0; }
+.kurz { background: var(--gelb); border-radius: var(--rund); padding: 18px 18px 14px; margin: 0 0 16px; --text-neben: var(--schiefer); }
+.kurz h2 { font-size: 30px; margin-bottom: 10px; }
 .kurz ul { margin: 0; }
-.kurz li { margin-bottom: .45em; }
-.verfasser { font-size: 14px; color: var(--schiefer); margin: 0 0 16px; }
-.toc { margin: 0 0 8px; }
-.toc ol { margin: 0; }
-.frage h2 { font-size: 24px; }
-.anker { font-size: 14px; color: var(--schiefer); text-decoration: none; margin-left: 6px; font-family: var(--schrift-text); font-weight: 600; }
-.anker:hover { text-decoration: underline; }
-.balken { list-style: none; padding: 0; margin: 12px 0 8px; display: grid; gap: 10px; }
-.balken li { margin: 0; }
-.balken .zeile { display: flex; justify-content: space-between; gap: 8px; font-size: 15px; }
-.balken .zeile b { font-weight: 700; }
-.balken .spur { height: 14px; border: 2px solid var(--schwarz); border-radius: 4px; background: var(--creme-hell); margin-top: 4px; }
-.balken .fuell { height: 100%; background: var(--schwarz); }
-.balken .fuell.holy { background: var(--gelb); border-right: 2px solid var(--schwarz); }
-details.faq { border: 2px solid var(--schwarz); border-radius: 12px; background: var(--creme-hell); margin: 0 0 10px; }
-details.faq summary { cursor: pointer; padding: 12px 14px; font-weight: 700; list-style-position: outside; }
-details.faq summary h3 { display: inline; font-family: var(--schrift-text); font-stretch: 100%; font-size: 17px; font-weight: 700; }
-details.faq > div { padding: 0 14px 12px; }
-.quellen ol { font-size: 14px; color: var(--schiefer); }
-.quellen li { margin-bottom: .5em; }
-
-/* ---------- Produktseite ---------- */
-.produkt { padding: 16px 0 8px; }
-.bewertung-kurz { font-size: 15px; margin: 0 0 12px; }
-.bewertung-kurz .sterne { font-size: 18px; letter-spacing: 1px; }
-.preisbaustein { margin: 0 0 14px; }
-.preis-gross { font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 800; font-size: 44px; line-height: 1; }
-.preiszeile { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin: 6px 0; }
-.preiszeile .je { font-size: 18px; font-weight: 700; }
-.optionen { display: grid; gap: 10px; margin: 0 0 14px; padding: 0; border: 0; }
-.option {
-  display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: baseline; width: 100%; text-align: left;
-  font: inherit; color: var(--schwarz); background: var(--creme-hell); border: 2px solid var(--schwarz); border-radius: 12px;
-  padding: 12px 14px; cursor: pointer;
+.kurz li { margin-bottom: .5em; }
+.toc { background: var(--weiss); border-radius: var(--rund); padding: 16px 18px 12px; margin: 0 0 8px; --text-neben: var(--schiefer); }
+.toc h2 {
+  font-family: var(--schrift-text); font-stretch: 100%; font-size: 13px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; line-height: 1.3; margin: 0 0 8px;
 }
-.option .name { font-weight: 700; }
-.option .preis { font-weight: 800; font-family: var(--schrift-titel); font-stretch: 82%; font-size: 22px; }
-.option .details { grid-column: 1 / -1; font-size: 14px; color: var(--schiefer); }
-.option[aria-checked="true"] { background: var(--gelb); box-shadow: inset 0 0 0 2px var(--schwarz); }
-.option[aria-checked="true"] .details { color: var(--schiefer); }
-.option .empfohlen { display: inline-block; white-space: nowrap; font-size: 12px; font-weight: 700; border: 1.5px solid currentColor; border-radius: 4px; padding: 0 5px; margin-left: 6px; vertical-align: 1px; }
-.zusammen { display: grid; gap: 8px; margin: 0 0 14px; }
-.zusammen p { margin: 0; }
+.toc ol { margin: 0; padding-left: 1.4em; font-size: 15px; }
+.toc li { margin-bottom: .4em; }
+.toc a { text-decoration-thickness: 1.5px; }
+.artikel-text { font-size: 17px; line-height: 1.62; max-width: 720px; min-width: 0; }
+.frage { padding: 30px 0 4px; }
+.frage h2 { font-size: 32px; margin-bottom: 12px; }
+.anker { font-size: 15px; color: var(--text-neben); text-decoration: none; margin-left: 6px; font-family: var(--schrift-text); font-weight: 600; font-stretch: 100%; }
+.anker:hover { text-decoration: underline; }
+.hinweis-zeile { border-left: 5px solid var(--pink); padding-left: 14px; }
+.balken { list-style: none; padding: 0; margin: 14px 0 10px; display: grid; gap: 12px; }
+.balken li { margin: 0; }
+.balken .zeile { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2px 10px; font-size: 15px; line-height: 1.35; }
+.balken .zeile b { font-weight: 700; }
+.balken .spur { height: 16px; border-radius: 999px; background: var(--weiss); margin-top: 5px; overflow: hidden; }
+.balken .fuell { height: 100%; background: var(--schwarz); border-radius: 999px; }
+.balken .fuell.holy { background: var(--pink); }
+details.faq { border-radius: 16px; background: var(--weiss); margin: 0 0 10px; }
+details.faq summary {
+  cursor: pointer; padding: 14px 16px; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after { content: "+"; flex: none; font: 800 24px/1 var(--schrift-text); }
+details.faq[open] summary::after { content: "–"; }
+details.faq summary h3 { display: inline; font-family: var(--schrift-text); font-stretch: 100%; font-size: 17px; font-weight: 700; line-height: 1.35; margin: 0; }
+details.faq > div { padding: 0 16px 12px; }
+.ki-kasten { background: var(--weiss); border-radius: var(--rund); padding: 20px 18px 8px; margin-top: 30px; --text-neben: var(--schiefer); }
+.ki-kasten h2 { font-size: 26px; }
+.quellen ol { font-size: 14px; line-height: 1.5; color: var(--text-neben); padding-left: 1.3em; }
+.quellen li { margin-bottom: .55em; }
+
+/* ==========================================================================
+   Produktseite (produkt.html): Pink als Sortenfarbe, große Bildkarte, weiße Kaufkarte
+   ========================================================================== */
+.pdp-buehne { padding: 4px 0 36px; }
+.produkt { padding: 0; }
+.pdp { display: grid; gap: 14px; }
+.pdp-titel h1 { font-size: 50px; line-height: .9; margin: 0 0 8px; }
+.pdp-titel h1 .h1-dach { display: block; font-family: var(--schrift-text); font-stretch: 100%; font-size: 14px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; line-height: 1.3; margin-bottom: 6px; }
+.bewertung-kurz { font-size: 15px; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; }
+.bewertung-kurz .sterne { font-size: 19px; letter-spacing: 1px; }
+.bewertung-kurz a { font-weight: 800; }
+.pdp-bild { min-width: 0; }
+.pdp-kauf { background: var(--weiss); border-radius: var(--rund); padding: 18px 16px 0; overflow: hidden; --text-neben: var(--schiefer); min-width: 0; }
+.code-zeile { font-size: 14px; margin: 14px 0 0; padding: 10px 12px; background: var(--grau); border-radius: 12px; }
+.h-klein { font-size: 26px; margin: 0 0 10px; }
+.preisbaustein { margin: 14px 0 0; padding: 14px 0 0; }
+.preisbaustein > p { margin: 0 0 4px; }
+.preis-gross { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 54px; line-height: .95; }
+.preiszeile { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin: 2px 0 6px; }
+.preiszeile .je { font-size: 18px; font-weight: 800; }
+.endpreis { font-size: 15px; }
+[data-p-ende], [data-p-preis], .preiszeile .je { white-space: nowrap; }
+.bewertung-kurz .meta { font-size: 12.5px; }
+.frage-kaffee { font-weight: 700; margin: 6px 0 0; }
+.optionen { display: grid; gap: 10px; margin: 0 0 8px; padding: 0; border: 0; }
+.option {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; align-items: baseline; width: 100%; text-align: left;
+  font: inherit; color: var(--schwarz); background: var(--weiss); border: 2px solid var(--nebel); border-radius: 14px;
+  padding: 12px 14px; cursor: pointer; overflow: hidden;
+}
+.option:hover { border-color: var(--schwarz); }
+.option .name { font-weight: 700; font-size: 15.5px; }
+.option .preis { font-weight: 800; font-family: var(--schrift-titel); font-stretch: 75%; font-size: 26px; line-height: 1; }
+.option .details { grid-column: 1 / -1; font-size: 13px; color: var(--schiefer); }
+.option[aria-checked="true"] { border: 3px solid var(--schwarz); padding: 11px 13px; box-shadow: none; }
+.option .empfohlen { display: inline-block; white-space: nowrap; font-size: 11px; font-weight: 800; background: var(--gelb); border-radius: 999px; padding: 2px 8px; margin-left: 4px; vertical-align: 1px; }
+.fussnote { margin: 0 0 4px; }
+.kauf-knoepfe { margin: 18px 0 8px; grid-template-columns: minmax(0, 1fr) !important; }
+.kauf-knoepfe .knopf { min-height: 58px; font-size: 17px; }
+.kauf-knoepfe .knopf-rand { min-height: 48px; font-size: 14px; border-width: 2px; }
+.lieferung { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: center; margin: 14px 0 16px; }
+.lieferung svg { width: 34px; height: 34px; }
+.lieferung .datum { font-weight: 800; font-size: 16px; line-height: 1.2; }
+.lieferung p { margin: 2px 0 0; }
+/* Vorteile-Band unten in der Kaufkarte (wie die Kacheln unter HOLYs Kaufknopf) */
+.vorteile { background: var(--grau); margin: 0 -16px; padding: 14px 16px 16px; display: grid; gap: 12px; }
 /* minmax(0, 1fr): Die Textspalte darf schmaler werden als ihr längstes Wort; lange Wörter („Zufriedenheitsgarantie“)
    trennt der Browser nach lang="de" (hyphens), sonst brechen sie um statt über den Rahmen zu laufen (320 px, Abnahme D07) */
-.siegel { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; align-items: center; }
+.siegel { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: center; }
 .siegel > :not(svg) { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
-.siegel svg { width: 64px; height: 64px; }
-.lieferung { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
-.lieferung svg { width: 40px; height: 40px; }
-.lieferung .datum { font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 800; font-size: 24px; line-height: 1.1; }
+.siegel svg { width: 44px; height: 44px; }
+.siegel.kasten { grid-template-columns: 64px minmax(0, 1fr); }
+.siegel.kasten svg { width: 64px; height: 64px; }
+.vorteile p { font-size: 14px; line-height: 1.4; margin: 0; }
+/* Etikett „Vorschlag der Gruppe“ in eigener Zeile über dem Garantiesatz (D09-Nacharbeit: bei 1280 px brach es mitten in
+   den Satz) */
+#garantie-kurz .beispiel { display: table; margin: 0 0 5px; }
 .tabelle { width: 100%; border-collapse: collapse; font-size: 15px; margin: 0 0 12px; }
-.tabelle th, .tabelle td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--nebel); vertical-align: top; }
+.tabelle th, .tabelle td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--nebel); vertical-align: top; }
 .tabelle th { font-weight: 700; }
 .tabelle td.r, .tabelle th.r { text-align: right; white-space: nowrap; }
-.bewertungen { display: grid; gap: 10px; }
-.bewertung { border: 2px dashed var(--schwarz); border-radius: 12px; padding: 12px 14px; background: var(--creme-hell); }
-.bewertung p { margin: 0 0 4px; }
+.bewertungen { display: grid; gap: 12px; }
+.bewertung { border-radius: 16px; padding: 16px; background: var(--beige); --text-neben: var(--schiefer); }
+.bewertung p { margin: 0 0 6px; }
+.bewertung .sterne { font-size: 17px; letter-spacing: 1px; }
 
-/* ---------- Warenkorb ---------- */
-.lieferbanner { background: var(--gelb); border: 2px solid var(--schwarz); border-radius: 14px; padding: 12px 14px; margin: 0 0 14px; }
-.express { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 8px 0; }
-.express .knopf { font-size: 15px; padding: 10px 6px; min-height: 50px; }
-.oder { display: flex; align-items: center; gap: 10px; color: var(--schiefer); font-size: 14px; margin: 12px 0; }
-.oder::before, .oder::after { content: ""; flex: 1; border-top: 1px solid var(--mittel); }
+/* Produktseite, Abschnitte unter der Kaufkarte */
+.koffein-abschnitt { padding: 44px 0; }
+.koffein-raster { display: grid; gap: 18px; }
+.koffein-zahl { background: var(--schwarz); color: var(--weiss); border-radius: 24px; padding: 22px; --text-neben: #B9B0A0; }
+.koffein-zahl b { display: block; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 88px; line-height: .85; color: var(--gelb); }
+.koffein-zahl span { display: block; font-weight: 700; margin-top: 8px; }
+.koffein-abschnitt ul { font-size: 17px; }
+.koffein-abschnitt li { margin-bottom: .5em; }
+.koffein-abschnitt h2 { font-size: 44px; }
+.drin-abschnitt { padding: 44px 0; }
+.drin-abschnitt h2 { font-size: 44px; }
+.drin-raster { display: grid; gap: 16px; }
+.drin-karte { background: var(--weiss); border-radius: 22px; padding: 10px 16px 14px; }
+.drin-karte .tabelle { margin: 0 0 6px; }
+.drin-karte .tabelle tr:last-child th, .drin-karte .tabelle tr:last-child td { border-bottom: 0; }
+.mixmatch { background: var(--orange); border-radius: 22px; padding: 22px; --text-neben: var(--schwarz); }
+.mixmatch h3 { font-size: 22px; margin: 0 0 4px; }
+.mixmatch .gross { display: block; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 64px; line-height: .9; margin: 0 0 10px; }
+.mixmatch p { margin: 0; }
+.bewertung-abschnitt { padding: 44px 0; }
+.drin-abschnitt + .bewertung-abschnitt { padding-top: 0 !important; }   /* zwei Creme-Abschnitte: keine doppelte Lücke */
+.bewertung-kopf { background: var(--gelb); border-radius: 22px; padding: 20px; margin: 0 0 14px; --text-neben: var(--schiefer); }
+.bewertung-kopf h2 { font-size: 44px; margin-bottom: 10px; }
+.bewertung-kopf .schnitt { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 0 8px; }
+.bewertung-kopf .schnitt b { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 56px; line-height: .9; }
+.bewertung-kopf .schnitt .sterne { font-size: 24px; letter-spacing: 2px; }
+.plattformen { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px; padding: 0; list-style: none; }
+.plattformen li { margin: 0; background: var(--weiss); border-radius: 999px; padding: 6px 12px; font-size: 14px; font-weight: 700; }
+.garantie-abschnitt { padding: 48px 0; }
+.garantie-abschnitt h2 { font-size: 52px; color: var(--weiss); }
+.garantie-abschnitt p { font-size: 17px; }
+.garantie-abschnitt .meta { font-size: 13.5px; }
+.garantie-abschnitt .siegel-gross { width: 84px; height: 84px; margin-bottom: 16px; }
+
+/* ==========================================================================
+   Gemeinsame Shop-Bausteine: Seitentitel, Sterne, Status am Gutschein, Shop-Zeile, Kacheln, Kaufleiste
+   ========================================================================== */
+.seiten-titel { font-size: 48px; margin: 4px 0 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.titel-zusatz { font-family: var(--schrift-text); font-stretch: 100%; font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--text-neben); }
+/* Sterne: eine Reihe aus fünf Sternen (Sprite #sterne5 in der Seite), anteilig gefüllt (Übernahme aus „HOLY-nah“) */
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sterne-svg { display: inline-block; flex: none; width: 96px; height: 19px; color: var(--schwarz); fill: currentColor; vertical-align: -3px; overflow: visible; }
+.sterne-svg svg { display: inline; max-width: none; overflow: hidden; }
+.sterne-svg .leer { opacity: .25; }
+.band-bewertung .sterne-svg { color: var(--gelb); width: 90px; height: 18px; margin-right: 4px; }
+.band-bewertung .sterne-svg .leer { opacity: .4; }
+.bewertung-kurz .sterne-svg { width: 104px; height: 21px; }
+.bewertung-kopf .schnitt .sterne-svg { width: 130px; height: 26px; }
+.plattformen .sterne-svg { width: 70px; height: 14px; vertical-align: -1px; margin-right: 4px; }
+.bewertung .sterne-svg { width: 90px; height: 18px; }
+/* Bewertungskarte wie bei HOLY: Kopf mit Sternen, Sorte, Text (hier graue Platzhalterzeilen), „Verifizierter Kauf“, Antwort */
+.bewertung { display: flex; flex-direction: column; gap: 8px; }
+.bewertung p { margin: 0; }
+.bew-kopf { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.bew-sorte { font-weight: 800; font-size: 15px; line-height: 1.3; }
+.skelett { display: grid; gap: 7px; padding: 2px 0; }
+.skelett span { display: block; height: 10px; border-radius: 999px; background: rgba(29, 29, 27, .13); }
+.skelett .halb { width: 62%; }
+.bew-meta { font-size: 13px; line-height: 1.4; color: var(--text-neben); display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; margin-top: auto !important; }
+.verifiziert { display: inline-flex; align-items: center; gap: 5px; color: var(--schwarz); font-weight: 700; }
+.verifiziert svg { width: 15px; height: 15px; flex: none; }
+.bew-antwort { background: var(--weiss); border-radius: 12px; padding: 10px 12px 12px; margin-top: 4px; }
+.bew-antwort-kopf { font-size: 13px; font-weight: 800; margin: 0 0 8px !important; }
+.bew-antwort .skelett span { background: rgba(29, 29, 27, .10); }
+/* Gutschein: Kopfzeile mit Status („aktiv“, „übernommen“; Häkchen-Etikett nach dem Entwurf „Shop-Standard“) */
+.code-kopf { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 8px; }
+.code-status {
+  display: inline-flex; align-items: center; gap: 4px; background: var(--limette); color: var(--schwarz);
+  border-radius: 999px; padding: 3px 10px 3px 7px; font: 800 12.5px/1.2 var(--schrift-text);
+}
+.code-status svg { width: 14px; height: 14px; }
+/* Shop-Zeile Mix & Match unter dem Kaufknopf (✔ T22) */
+.mm-zeile { margin: 10px 0 0; }
+.mm-zeile a {
+  display: block; background: var(--orange); border-radius: 12px; padding: 9px 12px; font-size: 13.5px; font-weight: 600;
+  line-height: 1.35; text-decoration: none; text-align: center;
+}
+.mm-zeile a strong { text-transform: uppercase; letter-spacing: .04em; font-weight: 800; }
+.mm-zeile a:hover { text-decoration: underline; }
+/* drei Kacheln unter der Galerie (Produktseite, ab 900 px) */
+.pdp-kacheln { display: none; }
+/* Kaufleiste (Produktseite): erst sichtbar, wenn der Kaufknopf oben aus dem Bild ist (konzept.js: html.kaufleiste-an) */
+.kaufleiste {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1040; display: flex; align-items: center; gap: 12px;
+  background: var(--weiss); border-top: 3px solid var(--schwarz); padding: 10px var(--rand) calc(10px + env(safe-area-inset-bottom, 0px));
+  transform: translateY(110%); visibility: hidden; transition: transform .2s ease, visibility 0s linear .2s; --text-neben: var(--schiefer);
+}
+html.kaufleiste-an .kaufleiste { transform: none; visibility: visible; transition: transform .2s ease; }
+.kaufleiste-text { flex: 1; min-width: 0; display: grid; }
+.kaufleiste-name { font-size: 12.5px; font-weight: 600; color: var(--schiefer); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kaufleiste-preis { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 26px; line-height: 1.05; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.kaufleiste-je { font-family: var(--schrift-text); font-stretch: 100%; font-weight: 600; font-size: 12.5px; color: var(--schiefer); }
+.kaufleiste .knopf { width: auto; flex: none; min-height: 48px; padding: 10px 18px; font-size: 14px; }
+html.kaufleiste-an .anm-start { bottom: 86px; }
+@media (max-width: 399px) { .kaufleiste-je { display: none; } }
+@media (max-width: 359px) { .kaufleiste .knopf { padding: 10px 14px; font-size: 13px; } }
+/* Karten mit Symbol (Warenkorb, Squad) */
+.karten-symbol { width: 48px; height: 48px; flex: none; }
+
+/* ==========================================================================
+   Warenkorb (warenkorb.html): Shop-Warenkorb – Lieferdatum, Artikel, Versandkosten-Leiste; Zusammenfassung mit
+   Endpreis und Bezahlknöpfen (ab 900 px rechts, klebt); darunter Mix & Match, Coins, Altershinweis
+   ========================================================================== */
+.korb { padding: 4px 0 44px; }
+/* mobil ohne Brotkrumen (wie die Produktseite): Lieferdatum und Endpreis rücken in den ersten Bildschirm */
+@media (max-width: 699px) { .korb .krumen { display: none; } .korb .seiten-titel { margin-top: 10px; } }
+.korb-raster { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "oben" "summe" "unten"; }
+.korb-oben { grid-area: oben; min-width: 0; }
+.korb-summe { grid-area: summe; min-width: 0; background: var(--weiss); border-radius: var(--rund); padding: 18px 16px 20px; --text-neben: var(--schiefer); }
+.korb-unten { grid-area: unten; min-width: 0; display: grid; gap: 12px; align-content: start; }
+.lieferbanner { background: var(--gelb); border-radius: 18px; padding: 12px 16px; margin: 0 0 12px; --text-neben: var(--schiefer); }
+.lieferbanner .meta { margin: 2px 0 0; }
+.lieferbanner .datum { font-size: 18px; }
 .posten { list-style: none; margin: 0 0 12px; padding: 0; }
-.posten li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--nebel); margin: 0; }
+.posten li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--nebel); margin: 0; }
 .posten li .r { text-align: right; white-space: nowrap; font-weight: 700; }
-.posten li.summe { border-bottom: 3px solid var(--schwarz); border-top: 3px solid var(--schwarz); font-size: 20px; }
-.posten li.summe .r { font-family: var(--schrift-titel); font-stretch: 82%; font-size: 30px; font-weight: 800; }
-.posten .unter { display: block; font-size: 14px; color: var(--schiefer); font-weight: 400; }
+.posten li.summe { border-bottom: 0; border-top: 3px solid var(--schwarz); font-size: 20px; font-weight: 800; padding-top: 12px; }
+.posten li.summe .r { font-family: var(--schrift-titel); font-stretch: 75%; font-size: 36px; font-weight: 800; line-height: 1; }
+.posten .unter { display: block; font-size: 14px; color: var(--text-neben); font-weight: 400; }
+.posten .menge { display: block; font-size: 13px; font-weight: 700; margin-top: 4px; }
+.korb-artikel { background: var(--weiss); border-radius: var(--rund); padding: 4px 14px; margin: 0; --text-neben: var(--schiefer); }
+.korb-artikel li { border-bottom: 0; align-items: flex-start; padding: 12px 0; }
+.korb-artikel li .r { font-family: var(--schrift-titel); font-stretch: 75%; font-size: 24px; font-weight: 800; line-height: 1.1; }
+.korb-artikel .unter { font-size: 13.5px; line-height: 1.4; }
+.versandleiste { background: var(--grau); border-radius: 14px; padding: 10px 12px 12px; margin: 12px 0 0; --text-neben: var(--schiefer); }
+.versandleiste p { margin: 0 0 8px; font-weight: 700; font-size: 14px; }
+.versandleiste .spur { height: 12px; border-radius: 999px; background: var(--weiss); border: 2px solid var(--schwarz); overflow: hidden; }
+.versandleiste .fuell { height: 100%; background: var(--pink); }
+.korb-summe .h-klein { margin: 0 0 2px; }
+.korb-summe .posten { margin-bottom: 8px; }
+.korb-summe .meta { margin: 0; }
+.korb-summe .versandleiste { margin: 4px 0 12px; }
+.express-titel { font-family: var(--schrift-text); font-stretch: 100%; font-size: 15px; font-weight: 800; letter-spacing: 0; line-height: 1.3; margin: 18px 0 8px; }
+.express { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.express .knopf { font-size: 14px; padding: 10px 4px; min-height: 50px; letter-spacing: 0; text-transform: none; border-radius: 10px; font-weight: 700; }
+/* Bezahlknöpfe in der üblichen Optik, nur Text, ohne fremde Logos: Apple Pay schwarz, Google Pay weiß mit Rand, PayPal gelb */
+.express .zahl-apple { background: var(--schwarz); border-color: var(--schwarz); color: var(--weiss); }
+.express .zahl-google { background: var(--weiss); border-color: var(--schwarz); color: var(--schwarz); }
+.express .zahl-paypal { background: var(--gelb); border-color: var(--gelb); color: var(--schwarz); font-style: italic; font-weight: 800; }
+.express .knopf:hover { background: var(--schwarz); border-color: var(--schwarz); color: var(--gelb); }
+/* Kasse: kurzer Knopftext, „als Gast, ohne Konto“ als Unterzeile */
+.kasse-text { display: grid; justify-items: center; gap: 2px; }
+.kasse-text small { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; }
+/* Warenkorb-Symbol mit Anzahl, Mengenwähler nur als Anzeige */
+.kopf-icons a.korb-symbol { position: relative; }
+.korb-zahl {
+  position: absolute; right: 3px; top: 4px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
+  background: var(--schwarz); color: var(--weiss); font: 800 11px/18px var(--schrift-text); text-align: center;
+}
+.mengen-waehler { display: inline-flex; align-items: center; border: 1.5px solid var(--nebel); border-radius: 999px; margin-top: 2px; }
+.mengen-waehler > * { display: inline-grid; place-items: center; width: 30px; height: 28px; font-size: 15px; }
+.mengen-waehler .aus { color: var(--schiefer); }
+.mengen-waehler b { width: 24px; font-weight: 800; }
+.oder { display: flex; align-items: center; gap: 10px; color: var(--text-neben); font-size: 14px; margin: 12px 0; }
+.oder::before, .oder::after { content: ""; flex: 1; border-top: 1px solid var(--mittel); }
+.kasse-knopf { min-height: 58px; font-size: 16px; }
+.mm-karte { background: var(--orange); border-radius: 18px; padding: 14px 16px; margin: 0; }
+.korb-karte { background: var(--weiss); border-radius: var(--rund); padding: 16px; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: start; --text-neben: var(--schiefer); }
+.korb-karte h3 { font-size: 22px; margin: 2px 0 4px; }
+.korb-karte p { margin: 0; }
+.alter-zeichen { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--schwarz); color: var(--weiss); font: 800 16px/1 var(--schrift-text); }
 
-/* ---------- Danke und Squad ---------- */
-.schritte { list-style: none; padding: 0; margin: 0 0 12px; counter-reset: s; display: grid; gap: 10px; }
-.schritte li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; margin: 0; }
-.schritte li::before {
-  content: counter(s); width: 36px; height: 36px; border-radius: 50%; background: var(--schwarz); color: var(--gelb);
-  display: grid; place-items: center; font-family: var(--schrift-titel); font-weight: 800; font-size: 20px;
+/* ==========================================================================
+   Danke-Seite (danke.html): Bestellbestätigung – Erfolg und Zustelltag auf Pink, Paket als Symbolbild, nächste
+   Schritte als Karten, Bestellübersicht und Squad-Einstieg, Erinnerung auf Gelb, Feedback, Zubereitung, Service
+   ========================================================================== */
+.danke-held h1 { font-size: 54px; }
+.erfolg-zeichen { width: 60px; height: 60px; margin: 4px 0 12px; }
+.danke-weiter { padding: 36px 0 18px; }
+.danke-mitte { padding: 18px 0 40px; }
+.danke-unten, .danke-service { padding: 40px 0; }
+.danke-unten + .danke-service { padding-top: 0; }
+.danke-raster { display: grid; gap: 16px; align-items: start; grid-template-columns: minmax(0, 1fr); }
+.danke-raster > section h2 { font-size: 36px; }
+.schritte { list-style: none; padding: 0; margin: 0; counter-reset: s; display: grid; gap: 12px; }
+.schritte > li {
+  counter-increment: s; margin: 0; background: var(--weiss); border-radius: 20px; padding: 16px;
+  display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; align-items: start; --text-neben: var(--schiefer);
 }
-.schritte h3 { margin-bottom: .2em; }
-.wahl { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+.schritte > li::before {
+  content: counter(s); width: 38px; height: 38px; border-radius: 50%; background: var(--schwarz); color: var(--gelb);
+  display: grid; place-items: center; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 22px;
+}
+.schritte h3 { margin: 4px 0 .2em; }
+.schritte p { margin: 0 0 6px; }
+.schritt-link { font-weight: 800; }
+.schritt-zeile { display: flex; gap: 12px; align-items: center; }
+.schritt-zeile > div { flex: 1; min-width: 0; }
+.schrittbild { flex: none; width: 84px; border-radius: 14px; background: var(--pink-hell); padding: 2px; }
+.bestell-karte { display: block; padding: 18px 16px 8px; }
+.bestell-karte .posten:last-child { margin-bottom: 4px; }
+.squad-einstieg { background: var(--gelb); border-radius: var(--rund); padding: 22px 20px; --text-neben: var(--schiefer); }
+.squad-einstieg .knopf:not(.knopf-rand) { background: var(--schwarz); border-color: var(--schwarz); color: var(--weiss); }
+.squad-einstieg .knopf:not(.knopf-rand):hover { background: var(--weiss); color: var(--schwarz); }
+.squad-einstieg .knopfreihe { margin: 14px 0 0; }
+/* Squad-Einstieg direkt unter „Danke!“ (D09-Nacharbeit): kompakt, damit Titel und Knopf bei 390 × 844 oben stehen */
+.held .squad-einstieg { margin: 18px 0 0; padding: 18px 18px 20px; max-width: 560px; }
+.held .squad-einstieg h2 { font-size: 30px; margin-bottom: 6px; }
+.held .squad-einstieg .squad-coins .zahl { font-size: 52px; }
+.held .squad-einstieg p:not(.squad-coins):not(.dachzeile) { margin: 0; }
+.danke-mitte .bestell-karte { max-width: 720px; }
+.squad-coins { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 2px 0 8px; font-weight: 700; }
+.squad-coins .zahl { font-size: 64px; line-height: .9; }
+.danke-erinnerung { padding: 44px 0; }
+.erinnerung-raster { display: grid; gap: 18px; align-items: center; }
+.erinnerung-zeichen { width: 72px; height: 72px; margin: 0 0 10px; }
+.danke-erinnerung h2 { font-size: 40px; }
+.erinnerung-karte { background: var(--weiss); border-radius: var(--rund); padding: 18px 16px; --text-neben: var(--schiefer); }
+.erinnerung-karte .wahl-frage { margin: 0 0 4px; }
+.erinnerung-ergebnis { font-size: 17px; }
+.wahl { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 10px; }
 .wahl button {
-  font: inherit; font-size: 15px; font-weight: 700; min-height: 44px; padding: 8px 12px; border-radius: 10px;
-  border: 2px solid var(--schwarz); background: var(--creme-hell); color: var(--schwarz); cursor: pointer;
+  font: inherit; font-size: 15px; font-weight: 700; min-height: 44px; padding: 8px 14px; border-radius: 999px;
+  border: 2px solid var(--schwarz); background: var(--weiss); color: var(--schwarz); cursor: pointer;
 }
-.wahl button[aria-pressed="true"] { background: var(--schwarz); color: var(--creme); }
-.mailvorschau { border: 2px solid var(--schwarz); border-radius: 14px; overflow: hidden; background: var(--creme-hell); }
-.mailvorschau .mailkopf { background: var(--schwarz); color: var(--creme); font-size: 14px; padding: 8px 14px; }
-.mailvorschau .mailtext { padding: 14px; }
-.mailvorschau .antworten { display: flex; flex-wrap: wrap; gap: 8px; }
-.mailvorschau .antworten span { border: 2px solid var(--schwarz); border-radius: 10px; padding: 6px 10px; font-weight: 700; font-size: 15px; }
+.wahl button[aria-pressed="true"] { background: var(--schwarz); color: var(--weiss); }
+[data-optin-text] { margin: 10px 0 0; }
+.mailvorschau { border-radius: var(--rund); overflow: hidden; background: var(--weiss); --text-neben: var(--schiefer); }
+.mailvorschau .mailkopf { background: var(--schwarz); color: var(--weiss); font-size: 14px; padding: 10px 16px; }
+.mailvorschau .mailtext { padding: 16px; }
+.mailvorschau .antworten { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+.mailvorschau .antworten span { border: 2px solid var(--schwarz); border-radius: 999px; padding: 6px 12px; font-weight: 700; font-size: 15px; }
+.mailvorschau .meta { margin: 0; }
+.zubereitung { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 8px; }
+.zubereitung li { display: flex; align-items: center; gap: 12px; margin: 0; background: var(--weiss); border-radius: 14px; padding: 10px 14px; font-weight: 600; }
+.zubereitung b { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--gelb); font-family: var(--schrift-titel); font-stretch: 75%; font-size: 18px; }
+.service-kacheln { list-style: none; padding: 0; margin: 14px 0 8px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 640px; }
+.service-kacheln li { margin: 0; background: var(--weiss); border-radius: 18px; padding: 14px 6px 12px; display: grid; justify-items: center; gap: 6px; font-weight: 700; font-size: 14.5px; }
+.service-kacheln svg { width: 40px; height: 40px; }
+
+/* ==========================================================================
+   Squad (squad.html): Kundenkonto – Pink wie HOLYs Rewards-Seite, Konto-Kopf mit Bereichen, cremefarbene Karten
+   ========================================================================== */
+.konto-kopf { padding: 4px 0 20px; }
+.konto-titel { display: grid; gap: 4px; }
+.konto-titel h1 { font-size: 56px; margin: 0; }
+.squadlogo { width: min(240px, 66%); margin: 0; }
+.konto-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+.konto-tabs a { background: var(--weiss); border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 700; text-decoration: none; }
+.konto-tabs a:first-child { background: var(--schwarz); color: var(--weiss); }
+.konto-tabs a:hover { text-decoration: underline; }
+.konto-flaeche { padding: 0 0 44px; }
+.konto-raster { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+.konto-karte { background: var(--creme); border-radius: 26px; padding: 20px 18px; min-width: 0; --text-neben: var(--schiefer); }
+.konto-karte h2 { font-size: 30px; }
+.konto-karte > :last-child { margin-bottom: 0; }
+.konto-karte .karten-symbol { margin: 0 0 10px; }
+.stand-karte { background: var(--weiss); }
+.stand-karte .dachzeile { font-size: 13px; }
+.coinstand { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.coinstand .zahl { font-size: 76px; line-height: .9; }
+.coinstand strong { font-size: 20px; }
+.level-zeile { margin: 8px 0 6px; }
+.fortschritt { height: 14px; border-radius: 999px; background: var(--grau); border: 2px solid var(--schwarz); overflow: hidden; margin: 0 0 10px; }
+.fortschritt .fuell { height: 100%; background: var(--gelb); border-right: 2px solid var(--schwarz); }
+.karten-zahl { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 34px; line-height: 1; margin: 0 0 8px; }
+.karten-link { font-weight: 800; }
+.regel-liste { list-style: none; padding: 0; margin: 0 0 10px; }
+.regel-liste li { background: var(--weiss); border-radius: 12px; padding: 10px 12px; margin: 0 0 8px; }
+.nachkauf-karte .knopf { margin: 4px 0 10px; }
+.nachkauf-name { display: block; font-weight: 800; }
+.nachkauf-preis { display: block; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 32px; line-height: 1.05; }
+.nachkauf-zeile .meta { display: block; }
 .stufen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; align-items: end; margin: 8px 0 6px; }
-.stufen .stufe { border: 2px solid var(--schwarz); border-radius: 8px 8px 0 0; background: var(--creme-hell); padding: 6px 4px; text-align: center; font-size: 13px; line-height: 1.25; display: flex; flex-direction: column; justify-content: flex-end; }
-.stufen .stufe b { font-family: var(--schrift-titel); font-stretch: 82%; font-size: 18px; display: block; }
+.stufen .stufe { border: 2px solid var(--schwarz); border-radius: 12px 12px 0 0; background: var(--weiss); padding: 6px 4px; text-align: center; font-size: 13px; line-height: 1.25; display: flex; flex-direction: column; justify-content: flex-end; }
+.stufen .stufe b { font-family: var(--schrift-titel); font-stretch: 75%; font-size: 22px; display: block; }
 .stufen .stufe.aktiv { background: var(--gelb); }
 .stufen .s1 { min-height: 64px; } .stufen .s2 { min-height: 92px; } .stufen .s3 { min-height: 120px; } .stufen .s4 { min-height: 148px; }
-.coinstand { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
-.coinstand .zahl { font-size: 46px; line-height: 1; }
-.ablauf { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 6px; }
-.ablauf li { margin: 0; border: 2px solid var(--schwarz); border-radius: 10px; padding: 8px 12px; background: var(--creme-hell); font-weight: 600; }
-.ablauf li + li { position: relative; }
-.ablauf .pfeilzeile { border: 0; background: none; padding: 0 0 0 14px; font-weight: 800; }
+.tipp-karte { background: var(--gelb); }
+
+/* ==========================================================================
+   Händlerseite (haendler.html): QR-Landingpage – Lila als Sortenfarbe, Gutschein, ein Hauptknopf, Regal als Symbolbild,
+   drei Schritte, Garantie auf Schwarz, Händlerfinder als Karte (nur Platzhalter, keine Eingabe)
+   ========================================================================== */
+.haendler-held h1 { font-size: 52px; }
+.qr-chip {
+  display: inline-grid; place-items: center; height: 22px; padding: 0 6px; border-radius: 6px; margin-right: 4px;
+  background: var(--schwarz); color: var(--weiss); font: 800 11.5px/1 var(--schrift-text); vertical-align: 1px; letter-spacing: .04em;
+}
+.haendler-foto .foto { aspect-ratio: 877 / 492; }
+.drei-schritte-abschnitt, .finder-abschnitt { padding: 40px 0; }
+.drei-schritte-abschnitt + .garantie-abschnitt { margin-top: 0; }
+.drei-schritte { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.drei-schritte li {
+  margin: 0; background: var(--weiss); border-radius: var(--rund); padding: 16px 18px;
+  display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 2px 16px; align-items: center;
+}
+.drei-schritte svg { width: 64px; height: 64px; grid-row: span 2; }
+.drei-schritte b { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 30px; line-height: 1; }
+.drei-schritte span { font-weight: 700; font-size: 17px; line-height: 1.3; }
+.finder-karte { background: var(--weiss); border-radius: var(--rund); padding: 16px 16px 12px; max-width: 760px; --text-neben: var(--schiefer); }
+.finder-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 6px; }
+.plz-chip { display: inline-flex; align-items: center; gap: 6px; border: 2px solid var(--schwarz); border-radius: 999px; padding: 6px 14px 6px 10px; font-weight: 800; }
+.plz-chip svg { width: 18px; height: 18px; }
+/* Händlerfinder als Filialliste (D09-Nacharbeit): Marktkarten mit Pin, Name, Packung und Entfernung; ab 900 px rechts
+   eine eigene Kartenskizze */
+.finder-raster { display: grid; gap: 16px; }
+.markt-liste { list-style: none; padding: 0; margin: 8px 0 4px; display: grid; gap: 8px; }
+.markt-liste li {
+  margin: 0; display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; align-items: center;
+  border: 2px solid var(--nebel); border-radius: 14px; padding: 10px 12px;
+}
+.markt-pin { width: 28px; height: 28px; }
+.markt-text { display: grid; min-width: 0; line-height: 1.3; }
+.markt-info { font-size: 14px; color: var(--schiefer); }
+.markt-km { font-weight: 800; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.finder-plan { display: none; margin: 0; }
+.finder-plan svg { width: 100%; height: auto; border-radius: var(--rund); }
+@media (max-width: 359px) { .finder-karte { padding: 14px 10px 10px; } .markt-liste li { padding: 9px 10px; gap: 8px; } }
+.finder-karte .meta { margin: 6px 0 0; }
 
 /* ---------- Fremdbilder (fremdbilder/register.js und fremdbilder/; Veröffentlichung von der Gruppe beschlossen,
    KI-Nachweis FS2 Nr. 17, keine Genehmigung der Rechteinhaber eingeholt) ----------
@@ -299,102 +792,140 @@ details.faq > div { padding: 0 14px 12px; }
    Rückfall ohne Fremdbilder: Bildplätze mit hidden bleiben unsichtbar, Platzhalter und eigene Zeichnungen.
    Klassen- und Attributnamen mit „intern“ stammen aus der Zeit vor dem Veröffentlichungsbeschluss und bleiben aus
    technischen Gründen.
-   Freigestellte Packshots stehen auf Creme hell oder Gelb, Fotos mit schwarzer Kontur wie die übrigen Kästen. */
+   Bildnachweise stehen gesammelt im Fuß (data-intern-liste); die Unterschrift am Bild ([data-intern-nachweis]) bleibt im
+   Dokument (Prüfskript), wird aber nicht mehr unter jedem Bild gezeigt. Symbolbilder tragen das Etikett „Symbolbild“. */
 .mit-bild > .nur-ohne-bild { display: none; }
+.mit-bild [data-intern-nachweis] { display: none; }
 .intern-bild { display: block; width: 100%; height: auto; }
-.bildnachweis { display: block; font-size: 12px; line-height: 1.35; color: var(--schiefer); margin-top: 6px; font-weight: 400; }
-.foto { display: block; border: 2px solid var(--schwarz); border-radius: 14px; overflow: hidden; background: var(--creme-hell); }
+.bildnachweis { display: block; font-size: 12px; line-height: 1.35; color: var(--text-neben); margin-top: 6px; font-weight: 400; }
+.foto { display: block; border-radius: var(--rund); overflow: hidden; background: var(--weiss); }
 
-/* Startseite: Produkt-Tag im Knopf (wie der Tag im Video, ✔ X01): freigestellter Packshot der 50er-Dose auf heller Fläche,
-   ganz sichtbar (kein Zoom); Produktkarte neben der Skizze, Bild im Starter-Set-Teaser */
-.knopf .knopfbild { flex: none; width: 40px; height: 40px; border-radius: 8px; overflow: hidden; border: 2px solid var(--creme); background: var(--creme-hell); padding: 2px; margin: -6px 6px -6px -8px; }
+/* Startseite: Produkt-Tag im Knopf (wie der Tag im Video, ✔ X01): freigestellter Packshot der 50er-Dose */
+.knopf .knopfbild { flex: none; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: var(--weiss); padding: 3px; margin: -6px 4px -6px -10px; }
 .knopf .knopfbild .intern-bild { width: 100%; height: 100%; object-fit: contain; }
-.skizze-reihe.hat-intern-bild { display: grid; gap: 0 28px; align-items: center; }
-.produktkarte { margin: 0 0 16px; }
-.produktkarte a { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 14px; align-items: center; text-decoration: none; border: 2px solid var(--schwarz); border-radius: 14px; background: var(--creme-hell); padding: 10px; }
-.produktkarte .bildplatz { border-radius: 10px; overflow: hidden; }
-.produktkarte .meta { display: block; }
-.produktkarte strong { display: block; font-family: var(--schrift-titel); font-stretch: 82%; font-weight: 750; font-size: 21px; line-height: 1.1; margin: 2px 0 8px; }
-.produktkarte .weiter { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-.teaser.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 118px; gap: 12px; align-items: center; }
-.teaser .teaserbild { align-self: center; }
 
-/* Produktseite: großes Produktbild, Galerie, Packshots in der Packungswahl.
-   Mobil (< 900 px) niedriger (16 : 10, ganzes Bild sichtbar), damit Titel, Bewertung und der erste Preis bei 390 × 844
-   im ersten Bildschirm beginnen (Abnahme D06; 4 : 3 reichte nicht); ab 900 px quadratisch in der linken Spalte. */
-.produktbild .foto { aspect-ratio: 16 / 10; }
-.produktbild .foto .intern-bild { width: 100%; height: 100%; object-fit: contain; }
-.produktbild.mit-bild { margin-bottom: 10px; }
-.produktbild.mit-bild figcaption { font-size: 12px; line-height: 1.35; }
-.galerie { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0 0 10px; }
-.galerie button { display: block; padding: 0; aspect-ratio: 1 / 1; border: 2px solid var(--nebel); border-radius: 10px; background: var(--creme-hell); overflow: hidden; cursor: pointer; }
+/* Produktseite: große Bildkarte (Packshots freigestellt auf hellem Pink, Fotos füllen die Karte), Galerie, Packshots
+   in der Packungswahl. Mobil 4 : 3, damit Titel, Bewertung und der erste Preis bei 390 × 844 im ersten Bildschirm
+   beginnen (Abnahme D06); ab 900 px quadratisch in der linken Spalte. */
+.produktbild { margin: 0 0 10px; }
+.produktbild .foto { aspect-ratio: 4 / 3; background: var(--pink-hell); }
+.produktbild .foto .intern-bild { width: 100%; height: 100%; object-fit: contain; padding: 4%; }
+.produktbild .foto .intern-bild[src$=".jpg"] { object-fit: cover; padding: 0; }
+.galerie { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.galerie button { display: block; padding: 0; aspect-ratio: 1 / 1; border: 2px solid transparent; border-radius: 14px; background: var(--pink-hell); overflow: hidden; cursor: pointer; }
 .galerie button[aria-pressed="true"] { border: 3px solid var(--schwarz); }
 .galerie .intern-bild { width: 100%; height: 100%; object-fit: cover; }
-.option.mit-bild { grid-template-columns: 58px minmax(0, 1fr) auto; column-gap: 12px; padding-left: 10px; }
-.option .packbild { grid-row: 1 / span 2; grid-column: 1; align-self: center; width: 58px; height: 58px; }
+.galerie .intern-bild[src$=".webp"] { object-fit: contain; padding: 6%; }
+.option.mit-bild { grid-template-columns: 62px minmax(0, 1fr) auto; column-gap: 12px; padding-left: 8px; }
+.option[aria-checked="true"].mit-bild { padding-left: 7px; }
+.option .packbild { grid-row: 1 / span 2; grid-column: 1; align-self: center; width: 62px; height: 62px; border-radius: 10px; background: var(--pink-hell); padding: 4px; }
 .option .packbild .intern-bild { width: 100%; height: 100%; object-fit: contain; }
 .option.mit-bild .details { grid-column: 2 / -1; }
+/* sehr schmale Handys (320 px): Preis unter den Namen, damit „50 Portionen“ nicht mitten im Wort bricht */
+@media (max-width: 359px) {
+  .pdp-kauf { padding: 16px 12px 0; }
+  .vorteile { margin: 0 -12px; padding: 14px 12px 16px; }
+  .option { grid-template-columns: minmax(0, 1fr); }
+  .option.mit-bild { grid-template-columns: 50px minmax(0, 1fr); column-gap: 10px; }
+  .option .packbild { width: 50px; height: 50px; grid-row: 1 / span 3; }
+  .option.mit-bild .preis, .option.mit-bild .details { grid-column: 2; }
+  .option .name { font-size: 15px; }
+  .option .preis { font-size: 22px; margin-top: 2px; }
+}
 
-/* Warenkorb und Nachkauf: Vorschaubild am Posten */
-.posten li .vorschau { flex: none; width: 64px; height: 64px; border: 1px solid var(--nebel); border-radius: 10px; background: var(--creme-hell); padding: 3px; align-self: center; }
+/* Warenkorb, Danke-Seite (Bestellübersicht) und Nachkauf: Vorschaubild am Posten */
+.posten li .vorschau { flex: none; width: 72px; height: 72px; border-radius: 14px; background: var(--pink-hell); padding: 4px; align-self: flex-start; }
 .posten li .vorschau .intern-bild { width: 100%; height: 100%; object-fit: contain; }
 .posten li .vorschau + span { flex: 1; min-width: 0; }
-.nachkauf-zeile.mit-bild { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 14px; align-items: center; margin: 0 0 12px; }
-.nachkauf-zeile .bildplatz { border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 4px; }
-.nachkauf-zeile.mit-bild p { margin: 0; }
+.nachkauf-zeile { margin: 0 0 12px; }
+.nachkauf-zeile.mit-bild { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; }
+.nachkauf-zeile .bildplatz { border-radius: 16px; background: var(--pink-hell); padding: 4px; }
+.nachkauf-zeile p { margin: 0; }
 
-/* Danke-Seite: Paket im Kopf, Shaker am Schritt, Zubereitung als Bildstreifen */
-.heldbild { margin: 18px 0 0; }
-.heldbild figcaption, .bildstreifen figcaption { margin-top: 6px; }
-.schritt-zeile { display: flex; gap: 12px; align-items: center; }
-.schritt-zeile > div { flex: 1; min-width: 0; }
-.schrittbild { flex: none; width: 76px; border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 2px; }
+/* Danke-Seite und Händlerseite: Bild in der Bühne (wie das Produktbild der Startseite), Shaker am Schritt, Zubereitung */
+.danke-foto .foto { aspect-ratio: 4 / 3; }
+.held-foto .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; }
 .bildstreifen { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0 14px; max-width: 520px; }
 .bildstreifen figure { margin: 0; }
-.bildstreifen .foto { aspect-ratio: 1 / 1; border-radius: 12px; }
+.bildstreifen .foto { aspect-ratio: 1 / 1; border-radius: 18px; }
 .bildstreifen .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; }
-.bildstreifen figcaption { font-size: 14px; font-weight: 700; line-height: 1.3; }
+.bildstreifen figcaption { font-size: 14px; font-weight: 700; line-height: 1.3; margin-top: 6px; }
 
 /* Squad: Schriftzug, Coins im Kontostand, Level-Abzeichen in den Stufen */
-.squadlogo { margin: 14px 0 0; width: min(250px, 72%); }
-#stand.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 14px; align-items: center; }
+#stand.mit-bild { display: grid; grid-template-columns: minmax(0, 1fr) 84px; gap: 14px; align-items: center; }
 /* eine freigestellte Pixel-Münze (Neuzuschnitt D07), ohne Rahmen */
 .coinsbild { justify-self: center; width: 72px; }
+/* Pixel-Grafik (Münze, 130 × 133): auf Bildschirmen mit 2× und 3× wird sie vergrößert – dann ohne Weichzeichnen und
+   ohne hellen Saum; bei 1× (Verkleinerung) bleibt die normale Glättung (D09-Nacharbeit, Abnahme Gestaltung) */
+@media (min-resolution: 2dppx) { .coinsbild .intern-bild { image-rendering: pixelated; } }
 .stufe .bildplatz { width: min(54px, 100%); margin: 0 auto 6px; }
 .stufen.hat-intern-bild .s1 { min-height: 112px; } .stufen.hat-intern-bild .s2 { min-height: 138px; }
 .stufen.hat-intern-bild .s3 { min-height: 164px; } .stufen.hat-intern-bild .s4 { min-height: 190px; }
 
-/* Händlerseite: Regal unter Code-Box und Knopf (erster Bildschirm bleibt frei für die Handlung); Koffein-Check: eine Portion */
-.heldbild.banner { margin: 18px 0 0; }
-.heldbild.banner .foto { aspect-ratio: 16 / 10; }
-.heldbild.banner .foto .intern-bild { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
-.portion-zeile.mit-bild { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; align-items: center; margin: 0 0 14px; }
-.portion-zeile .bildplatz { border: 1px solid var(--nebel); border-radius: 12px; background: var(--creme-hell); padding: 4px; }
-.portion-zeile figcaption { font-size: 15px; }
+/* Koffein-Check: eine Portion */
+.portion-zeile.mit-bild { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; margin: 0 0 14px; }
+.portion-zeile .bildplatz { border-radius: 16px; background: var(--pink-hell); padding: 4px; }
+.portion-zeile figcaption { font-size: 15px; font-weight: 600; }
 
-/* Fuß: Bildnachweise der Fassung mit Bildern (Motiv fett davor) */
-.fuss .bildnachweise { margin: 6px 0 0; padding-left: 1.2em; color: #B9B0A0; font-size: 13px; }
-.fuss .bildnachweise li { margin-bottom: .25em; }
-.fuss .bildnachweise b { color: var(--creme); font-weight: 700; }
+/* ---------- Nächste Station (übrige Seiten) ---------- */
+.naechste { background: var(--gelb); padding: 32px 0; --text-neben: var(--schiefer); }
+.naechste p { margin: 0 0 6px; font-size: 13px; color: var(--text-neben); font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.naechste h2 { font-size: 44px; }
+.naechste .knopf { margin-top: 12px; }
 
-/* ---------- Nächste Station und Fuß ---------- */
-.naechste { background: var(--gelb); border-top: 2px solid var(--schwarz); border-bottom: 2px solid var(--schwarz); padding: 20px 0; }
-.naechste p { margin: 0 0 4px; font-size: 14px; color: var(--schiefer); font-weight: 600; }
-.naechste .knopf { margin-top: 10px; }
-.fuss { background: var(--schwarz); color: var(--creme); padding: 24px 0 120px; font-size: 14px; line-height: 1.5; }
-.fuss a { color: var(--creme); }
-.fuss h2 { font-size: 20px; color: var(--creme); }
+/* ==========================================================================
+   Fuß: schwarz, zwei Shop-Spalten (Shop, Hilfe & Fakten), darunter die Pflichtangaben als Kleingedrucktes (Kennung,
+   Bildnachweise, Quellen und Stand, Beispielwert-Satz, KI-Offenlegung; 12,5 px, Grau #B9B0A0 auf Schwarz 7,9 : 1).
+   Leitsatz und „Stationen des Konzepts“ nur im Präsentationsmodus (.fuss-praes). D09-Nacharbeit (Abnahme Gestaltung):
+   vorher 1.650–2.089 px hoch bei 390 px, im Warenkorb die halbe Seite.
+   Unten Platz nur, wo etwas Festes unten steht: Kaufleiste der Produktseite, Knopf „Anmerkungen ansehen“ im
+   Präsentationsmodus – sonst endet die Seite mit dem Fuß.
+   ========================================================================== */
+.fuss { background: var(--schwarz); color: var(--weiss); padding: 36px 0 28px; font-size: 14px; line-height: 1.55; --text-neben: #B9B0A0; }
+body:has(> .kaufleiste) .fuss, html.anmerkungen .fuss { padding-bottom: 120px; }
+html.anmerkungen body:has(> .kaufleiste) .fuss { padding-bottom: 190px; }   /* Knopf „Anmerkungen ansehen“ über der Kaufleiste */
+.fuss a { color: var(--weiss); }
+.fuss h2 { font-size: 26px; color: var(--weiss); }
 .fuss ol { padding-left: 1.3em; }
-.fuss .nebentext { color: #B9B0A0; }    /* Schiefer hell auf Schwarz 7,86 : 1 */
-.fuss .kennung { border: 2px solid var(--gelb); border-radius: 10px; padding: 10px 12px; margin: 14px 0; }
+.fuss .nebentext { color: #B9B0A0; }    /* Grau auf Schwarz 7,9 : 1 */
+.fuss-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 20px; margin: 0 0 24px; }
+.fuss-spalten h2 { font-family: var(--schrift-text); font-stretch: 100%; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--gelb); margin: 0 0 10px; line-height: 1.3; }
+.fuss-spalten ul, .fuss-spalten ol { list-style: none; padding: 0; margin: 0; }
+.fuss-spalten li { margin: 0 0 8px; }
+.fuss-spalten a { text-decoration: none; font-weight: 600; }
+.fuss-spalten a:hover { text-decoration: underline; }
+.fuss-spalten .stationen { grid-column: 1 / -1; }
+.fuss-spalten .stationen ol { list-style: decimal; padding-left: 1.3em; }
+.fuss-marke { grid-column: 1 / -1; }
+.fuss-marke p { margin: 0; max-width: 34em; }
+.fuss-marke .fuss-titel { font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 34px; line-height: 1; margin: 0 0 8px; color: var(--weiss); }
+/* Leitsatz und Stationen: nur im Präsentationsmodus (eigene Klasse, damit „.fuss .nur-anm a“ der Umschalter bleibt) */
+.fuss-praes { display: none; }
+html.anmerkungen .fuss-praes { display: block; }
+/* Kleingedrucktes: eng gesetzt, eine Haarlinie statt Rahmen */
+.kleingedruckt { border-top: 1px solid #3A3936; padding-top: 14px; font-size: 12.5px; line-height: 1.5; color: #B9B0A0; max-width: 980px; }
+.kleingedruckt p { margin: 0 0 6px; }
+.kleingedruckt strong { color: var(--weiss); font-weight: 700; }
+.kleingedruckt a { color: var(--weiss); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+.fuss-unten { margin-top: 6px; }
+.fuss-unten .nur-normal, .fuss-unten .nur-anm { margin-top: 10px; }
+/* Fuß: Bildnachweise der Fassung mit Bildern als Fließtext (Motiv fett davor, Einträge mit „ · “ getrennt) */
+.bildnachweise-titel { display: inline; margin: 0; }
+.fuss .bildnachweise { display: inline; margin: 0; padding: 0; list-style: none; color: #B9B0A0; }
+.fuss .bildnachweise li { display: inline; margin: 0; }
+.fuss .bildnachweise li + li::before { content: " · "; }
+.fuss .bildnachweise b { color: var(--weiss); font-weight: 700; }
+.kennung [data-nur-intern] { margin: 0 0 6px; }
 
 /* ---------- Präsentationsmodus (?anmerkungen=1) ---------- */
 .anm { display: none; }                  /* Text der Anmerkung: nur im Präsentationsmodus, dann im Blatt unten */
-.nur-anm { display: none; }
+.nur-anm, .nur-anm-i { display: none; }
 html.anmerkungen .nur-anm { display: block; }
+html.anmerkungen .nur-anm-i { display: inline-block; }
 html.anmerkungen .nur-normal { display: none; }
-.weg-leiste { background: var(--creme-hell); border-bottom: 2px solid var(--schwarz); font-size: 13px; }
-.weg-leiste ol { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 6px; padding: 8px var(--rand); margin: 0 auto; max-width: var(--breite); align-items: center; }
+html.anmerkungen .kleingedruckt .nur-anm-i { display: inline; }
+.weg-leiste { background: var(--weiss); border-bottom: 2px solid var(--schwarz); font-size: 13px; }
+.weg-leiste ol { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 6px; padding: 8px var(--rand); margin: 0 auto; max-width: var(--breite-weit); align-items: center; }
 .weg-leiste li { margin: 0; display: flex; align-items: center; gap: 6px; }
 .weg-leiste li + li::before { content: "→"; font-weight: 800; }
 .weg-leiste li.titel + li::before { content: none; }
@@ -404,12 +935,12 @@ html.anmerkungen .nur-normal { display: none; }
 .anm-punkt {
   display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; vertical-align: middle;
   background: var(--schwarz); color: var(--gelb); border: 2px solid var(--gelb); box-shadow: 0 0 0 2px var(--schwarz);
-  font: 800 14px/1 var(--schrift-text); cursor: pointer; margin: 0 4px; padding: 0; flex: none;
+  font: 800 14px/1 var(--schrift-text); cursor: pointer; margin: 0 4px; padding: 0; flex: none; letter-spacing: 0; text-transform: none;
 }
 .anm-punkt[aria-expanded="true"] { background: var(--gelb); color: var(--schwarz); }
 .anm-ziel-aktiv { outline: 3px dashed var(--schwarz); outline-offset: 4px; }
 .anm-blatt {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1100; background: var(--schwarz); color: var(--creme);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1100; background: var(--schwarz); color: var(--weiss);
   border-top: 4px solid var(--gelb); padding: 12px var(--rand) 14px; max-height: 46vh; overflow: auto; font-size: 16px; line-height: 1.45;
 }
 .anm-blatt[hidden] { display: none; }
@@ -418,52 +949,186 @@ html.anmerkungen .nur-normal { display: none; }
 .anm-blatt .ids { display: block; margin-top: 6px; color: #B9B0A0; font-size: 14px; }
 .anm-blatt .steuer { display: flex; gap: 8px; margin-top: 10px; }
 .anm-blatt button {
-  font: inherit; font-size: 15px; font-weight: 700; min-height: 40px; padding: 6px 12px; border-radius: 10px; cursor: pointer;
-  border: 2px solid var(--creme); background: transparent; color: var(--creme);
+  font: inherit; font-size: 15px; font-weight: 700; min-height: 40px; padding: 6px 14px; border-radius: 999px; cursor: pointer;
+  border: 2px solid var(--weiss); background: transparent; color: var(--weiss);
 }
 .anm-blatt button.vor { background: var(--gelb); color: var(--schwarz); border-color: var(--gelb); }
 .anm-start {
-  position: fixed; right: var(--rand); bottom: 14px; z-index: 1050; font: 700 15px/1.2 var(--schrift-text);
-  background: var(--schwarz); color: var(--creme); border: 3px solid var(--gelb); border-radius: 12px; padding: 10px 14px; cursor: pointer;
+  position: fixed; right: var(--rand); bottom: 14px; z-index: 1050; font: 800 15px/1.2 var(--schrift-text);
+  background: var(--schwarz); color: var(--weiss); border: 3px solid var(--gelb); border-radius: 999px; padding: 11px 16px; cursor: pointer;
 }
 .anm-start[hidden] { display: none; }
 
-/* ---------- Breite Bildschirme ---------- */
+/* ---------- ab 700 px ---------- */
 @media (min-width: 700px) {
   :root { --rand: 32px; }
-  h1 { font-size: 48px; }
-  .held h1 { font-size: 60px; }
-  h2 { font-size: 30px; }
+  body { font-size: 17px; }
+  h1 { font-size: 64px; }
+  h2 { font-size: 44px; }
+  .hinweisbalken { font-size: 13.5px; padding: 9px var(--rand); }
   .knopfreihe { grid-template-columns: 1fr 1fr; }
   /* ein einzelner Knopf (Händlerseite) nimmt die ganze Reihe und ist so breit wie sein Text: kein Umbruch bei 1280 px */
   .knopfreihe > .knopf:only-child { grid-column: 1 / -1; justify-self: start; width: auto; }
-  .kopf .nur-breit { display: inline; }
-  .fakten { grid-template-columns: repeat(2, 1fr); }
+  .fakten { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .karten { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .bewertungen { grid-template-columns: repeat(3, 1fr); }
+  .fuss-spalten { grid-template-columns: repeat(3, 1fr); }
+  .fuss-spalten .stationen { grid-column: auto; }
+  .zahlen-abschnitt h2, .sortiment h2, .koffein-abschnitt h2, .drin-abschnitt h2 { font-size: 60px; }
+  .bewertung-kopf h2 { font-size: 60px; }
+  .naechste h2 { font-size: 56px; }
+  .naechste-schwarz h2 { font-size: 64px; }
+  .garantie-abschnitt h2 { font-size: 72px; }
   /* Fremdbilder */
-  .skizze-reihe.hat-intern-bild { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
-  .produktkarte a { grid-template-columns: 1fr; }
-  .teaser.mit-bild { grid-template-columns: minmax(0, 1fr) 170px; gap: 20px; }
-  .held-raster.hat-intern-bild { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
-  .held-raster .heldbild { margin: 0; }
-  .heldbild.banner .foto { aspect-ratio: 21 / 9; }
   #stand.mit-bild { grid-template-columns: minmax(0, 1fr) 110px; }
 }
+
+/* ---------- ab 900 px: Desktop ---------- */
 @media (min-width: 900px) {
-  .zweispaltig { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-  .zweispaltig.breit-rechts { grid-template-columns: 5fr 6fr; }
-  .platzhalter .flaeche { min-height: 360px; }
+  :root { --rand: 40px; }
+  /* Kopfzeile: Wortmarke links, Navigation, Icons rechts */
+  .kopf-zeile { grid-template-columns: auto minmax(0, 1fr) auto; min-height: 84px; gap: 32px; }
+  .menue-knopf { display: none !important; }
+  .wortmarke img { height: 38px; }
+  .kopf-nav, html:not(.js) .kopf-nav { display: flex; gap: 26px; grid-column: auto; grid-row: auto; padding: 0; font-size: 15.5px; white-space: nowrap; }
+  .kopf-icons { gap: 6px; }
+  .kopf-zeile > .wortmarke { grid-column: 1; justify-self: start; }
+  .kopf-zeile > .kopf-nav { grid-column: 2; grid-row: 1; }
+  .kopf-zeile > .kopf-icons { grid-column: 3; }
+
+  .platzhalter .flaeche { min-height: 420px; }
   .platzhalter .flaeche svg { width: min(260px, 70%); }
-  .klebrig { position: sticky; top: 72px; }
-  .produktbild .foto { aspect-ratio: 1 / 1; }
-  /* Startseite: Knopftext mit Produkt-Tag ohne Umbruch (Abnahme D06) */
   .knopf-tag { white-space: nowrap; }
-  .fakten { grid-template-columns: repeat(4, 1fr); }
+
+  /* Startseite */
+  .held { padding: 20px 0 56px; }
+  .held-buehne.hat-intern-bild { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+  .held h1 { font-size: 104px; margin-bottom: 24px; }
+  .held .knopfreihe .knopf { width: auto; font-size: 16px; padding-left: 24px; padding-right: 26px; }
+  .held-foto .foto { aspect-ratio: 1 / 1; }
+  .held-foto .sticker { width: 124px; height: 124px; font-size: 15px; right: 24px; top: 24px; }
+  .band-bewertung a { font-size: 16px; padding: 16px var(--rand); }
+  .zahlen-abschnitt, .sortiment { padding: 72px 0; }
+  .fakten { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .fakten li { padding: 22px 20px 24px; font-size: 15px; }
+  .fakten li svg { width: 60px; height: 60px; margin-bottom: 16px; }
+  .fakten b { font-size: 44px; }
+  .karten { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .karte-bild { padding: 18px; }
+  .karte-name { font-size: 26px; }
+  .karte-preis { font-size: 32px; }
+  .karte-text { padding: 16px 18px 18px; }
+  .naechste-schwarz { padding: 72px 0; }
+  .naechste-raster.hat-intern-bild { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+  .naechste-raster .bildkachel .foto { aspect-ratio: 1 / 1; }
+
+  /* Produktseite: Bild links (klebt), rechts weiße Karte aus Titel und Kaufteil */
+  .pdp-buehne { padding: 4px 0 64px; }
+  .pdp {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); column-gap: 36px; row-gap: 0;
+    grid-template-areas: "bild titel" "bild kauf"; align-items: start;
+  }
+  .pdp-bild { grid-area: bild; }
+  .pdp-titel { grid-area: titel; background: var(--weiss); border-radius: var(--rund) var(--rund) 0 0; padding: 30px 32px 6px; --text-neben: var(--schiefer); }
+  .pdp-kauf { grid-area: kauf; border-radius: 0 0 var(--rund) var(--rund); padding: 14px 32px 0; }
+  .vorteile { margin: 0 -32px; padding: 18px 32px 20px; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .pdp-titel h1 { font-size: 72px; }
+  .klebrig { position: sticky; top: 56px; }
+  .produktbild .foto { aspect-ratio: 1 / 1; }
+  .koffein-abschnitt, .drin-abschnitt, .bewertung-abschnitt { padding: 72px 0; }
+  .koffein-raster { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; }
+  .koffein-zahl { padding: 36px; }
+  .koffein-zahl b { font-size: 150px; }
+  .drin-raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px; align-items: start; }
+  .mixmatch { padding: 30px; }
+  .mixmatch .gross { font-size: 96px; }
+  .bewertung-kopf { padding: 28px 32px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: 8px 40px; align-items: end; }
+  .bewertung-kopf .schnitt b { font-size: 80px; }
+  .garantie-abschnitt { padding: 80px 0; }
+  .garantie-raster { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 40px; align-items: start; }
+  .garantie-abschnitt .siegel-gross { width: 120px; height: 120px; }
+  /* Fuß: links die Shop-Spalten, rechts das Kleingedruckte (D09-Nacharbeit); im Präsentationsmodus Leitsatz und Stationen
+     über die ganze Breite der linken Hälfte */
+  .fuss { padding-top: 56px; }
+  .fuss > .inhalt { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 56px; align-items: start; }
+  .fuss-spalten { grid-template-columns: 1fr 1fr; gap: 28px 32px; margin: 0; }
+  .fuss-spalten .fuss-marke, .fuss-spalten .stationen { grid-column: 1 / -1; }
+  .kleingedruckt { border-top: 0; border-left: 1px solid #3A3936; padding: 4px 0 0 32px; }
+}
+/* ---------- Ratgeber, Warenkorb, Danke-Seite, Squad, Händlerseite: ab 700 px ---------- */
+@media (min-width: 700px) {
+  .seiten-titel { font-size: 60px; }
+  .artikel-kopf h1 { font-size: 60px; }
+  .drei-schritte { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .drei-schritte li { grid-template-columns: 1fr; align-content: start; padding: 22px; }
+  .drei-schritte svg { grid-row: auto; width: 72px; height: 72px; margin-bottom: 10px; }
+  .schritte { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .danke-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .konto-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stand-karte, .konto-breit { grid-column: 1 / -1; }
+  .konto-titel h1 { font-size: 72px; }
+}
+/* ---------- ab 900 px ---------- */
+@media (min-width: 900px) {
+  /* Produktseite: drei Kacheln unter der Galerie, Kaufleiste auf Inhaltsbreite */
+  .pdp-kacheln { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; list-style: none; padding: 0; margin: 10px 0 0; }
+  .pdp-kacheln li { margin: 0; background: var(--weiss); border-radius: 16px; padding: 12px; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; align-items: center; font-size: 14px; line-height: 1.3; }
+  .pdp-kacheln svg { width: 40px; height: 40px; }
+  .pdp-kacheln b { display: block; font-family: var(--schrift-titel); font-stretch: 75%; font-weight: 800; font-size: 20px; line-height: 1; }
+  .kaufleiste { padding-left: max(var(--rand), calc((100% - var(--breite-weit)) / 2 + var(--rand))); padding-right: max(var(--rand), calc((100% - var(--breite-weit)) / 2 + var(--rand))); }
+  .kaufleiste-name { font-size: 14px; }
+  .kaufleiste .knopf { min-width: 260px; }
+  /* Warenkorb: Zusammenfassung rechts, klebt */
+  .seiten-titel { font-size: 72px; }
+  .korb { padding-bottom: 72px; }
+  .korb-raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: auto 1fr; grid-template-areas: "oben summe" "unten summe"; column-gap: 32px; row-gap: 16px; align-items: start; }
+  .korb-summe { position: sticky; top: 60px; padding: 24px 26px 26px; }
+  /* Danke-Seite */
+  .danke-held h1 { font-size: 88px; }
+  .danke-weiter { padding-top: 56px; }
+  .danke-mitte, .danke-unten { padding-bottom: 64px; }
+  .danke-raster { gap: 24px; }
+  .danke-raster > section h2 { font-size: 44px; }
+  .danke-erinnerung { padding: 72px 0; }
+  .erinnerung-raster { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px; }
+  .danke-erinnerung h2 { font-size: 60px; }
+  .erinnerung-karte { padding: 26px; }
+  /* Squad: drei Spalten */
+  .konto-kopf { padding-bottom: 28px; }
+  .konto-titel { grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 28px; }
+  .konto-titel .squadlogo { width: 240px; }
+  .konto-titel h1 { font-size: 96px; }
+  .konto-raster { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .stand-karte, .nachkauf-karte, #community { grid-column: span 2; }
+  .konto-breit { grid-column: 1 / -1; }
+  .konto-karte { padding: 26px; }
+  .coinstand .zahl { font-size: 104px; }
+  .konto-flaeche { padding-bottom: 72px; }
+  /* Händlerseite: Regalbild im eigenen Format (877 × 492, Neuzuschnitt D09-Nacharbeit) statt quadratisch beschnitten;
+     Händlerfinder links Liste, rechts Kartenskizze */
+  .haendler-held h1 { font-size: 88px; }
+  .held-foto.haendler-foto .foto { aspect-ratio: 877 / 492; }
+  .finder-raster { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 24px; align-items: start; }
+  .finder-raster .finder-karte { max-width: none; }
+  .finder-plan { display: block; }
+  .drei-schritte-abschnitt, .finder-abschnitt { padding: 64px 0; }
+  /* Ratgeber: Inhaltsverzeichnis rechts, klebt */
+  .ratgeber { padding-bottom: 64px; }
+  .ratgeber-raster { grid-template-columns: minmax(0, 1fr) 300px; column-gap: 56px; align-items: start; }
+  .artikel-kopf, .kurz, .artikel-text { grid-column: 1; }
+  .toc { grid-column: 2; grid-row: 1 / span 3; position: sticky; top: 56px; margin-top: 8px; }
+  .artikel-kopf h1 { font-size: 76px; }
+  .kurz { padding: 24px 28px 18px; }
+  .kurz h2 { font-size: 40px; }
+  .frage h2 { font-size: 40px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+@media (prefers-reduced-motion: reduce) {
+  .kaufleiste { transition: none !important; }
+}
 @media print {
   .hinweisbalken { position: static; }
-  .anm-blatt, .anm-start { display: none !important; }
+  .anm-blatt, .anm-start, .kaufleiste { display: none !important; }
 }

@@ -12,6 +12,9 @@
 </head>
 <!--
   Konzept-Webseite HOLY · Seite 6 von 7 · squad.html
+  Gestaltung „Kampagnen-Look“ (D09): Kundenkonto wie im Shop – Pink wie HOLYs Rewards-Seite, Konto-Kopf mit
+  Bereichen, Karten für Kontostand mit Level-Fortschritt, Einlösen, Freunde werben, Nachkauf, Level, Tipp, Community.
+  Erklärsätze und „Beispielwert“-Etiketten nur im Präsentationsmodus; der Fuß nennt die Beispielwerte.
   Phase Bindung (ADVOCATE) · Top-Touchpoint: Willkommens- und Nachkauf-Strecke mit SQUAD Rewards (gestaltungsplan.md 5.2),
   Platz 2 „Freunde werben“. Schließt Ü4: „Freunde werben“ mit zwei Mindestbestellwerten (✔ B13, ✔ T33),
   „Translation missing“ im Login (✔ T32), kein Nachkauf-Anstoß (✔ T30). Vorbilder: ✔ X15 (Douglas Beauty Card),
@@ -21,20 +24,30 @@
   Xmas-Geschenk in Level 4), ✔ T33 (5 € Rabatt, Mindestbestellwert 14 €; 900 bzw. 1.800 Punkte). Kontostand: Beispielwert.
   Studentisches Konzept der Gruppe, KI-gestützt entworfen, Prüfung durch die Gruppe offen. Stand 03.11.2026.
 -->
-<body data-station="5">
+<body data-station="5" class="seite-pink">
 
 <div class="hinweisbalken" role="note"><strong>Studentisches Konzept der Gruppe (HS Kaiserslautern)</strong> – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich</div>
 
 <header class="kopf">
-  <div class="inhalt">
+  <div class="kopf-zeile">
+    <!-- Menü-Knopf nur auf schmalen Bildschirmen; konzept.js blendet ihn ein und klappt die Navigation auf (sendet nichts) -->
+    <button type="button" class="menue-knopf" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
     <!-- HOLY-Wortmarke: mit Einverständnis des Gründers (Yannick am 03.11.2026: „Gründer eingeweiht“, KI-Nachweis FS2 Nr. 12);
-         © HOLY Softdrinks GmbH, Datei unverändert aus FS1 (de.holy.com, Abruf 16.10.2026). Hinweisbalken bleibt Pflicht. -->
-    <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite"><img src="bilder/holy-logo-wortmarke.png" width="389" height="105" alt="HOLY"> <span>Konzept</span></a>
-    <nav aria-label="Hauptnavigation">
-      <a href="koffein-check.html">Koffein<span class="nur-breit">-Check</span></a>
-      <a href="squad.html" aria-current="page"><span class="nur-breit">SQUAD </span>Rewards</a>
-      <a href="warenkorb.html">Warenkorb</a>
+         © HOLY Softdrinks GmbH, Datei unverändert aus FS1 (de.holy.com, Abruf 16.10.2026). Hinweisleiste bleibt Pflicht. -->
+    <a class="wortmarke" href="index.html" aria-label="HOLY Konzept, Startseite"><img src="bilder/holy-logo-wortmarke.png" width="389" height="105" alt="HOLY"></a>
+    <nav class="kopf-nav" id="hauptnav" aria-label="Hauptnavigation">
+      <a href="produkt.html?packung=50">Energy</a>
+      <a href="produkt.html?packung=set">Starter Set</a>
+      <a href="koffein-check.html">Koffein-Check</a>
+      <a href="squad.html" aria-current="page">SQUAD Rewards</a>
+      <a href="haendler.html">Im Supermarkt gekauft?</a>
     </nav>
+    <div class="kopf-icons">
+      <a href="squad.html" aria-label="Konto: SQUAD Rewards"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4.2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4 21c.8-4.4 4-6.6 8-6.6s7.2 2.2 8 6.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
+      <a href="warenkorb.html" aria-label="Warenkorb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1.2 13H5.7z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
+    </div>
   </div>
 </header>
 
@@ -51,43 +64,100 @@
 </nav>
 
 <main id="inhalt">
-  <div class="inhalt schmal">
-    <p class="krumen"><a href="index.html">Start</a> › SQUAD Rewards</p>
-    <!-- Fassung mit Bildern: Schriftzug SQUAD Rewards (Grafik von de.holy.com); im Rückfall ausgeblendet -->
-    <div class="squadlogo" data-intern="web-squad-logo" hidden></div>
-    <h1 style="margin-top:10px">Dein Squad</h1>
+  <!-- Kundenkonto wie im Shop: Kopf mit Schriftzug und Bereichen, darunter Karten (Kontostand, Einlösen, Freunde werben,
+       Nachkauf, Level, Tipp, Community). Kontostand, Level-Fortschritt und Tipp sind Beispielwerte (Satz im Fuß). -->
+  <section class="konto-kopf" aria-labelledby="h-konto">
+    <div class="inhalt inhalt-weit">
+      <p class="krumen"><a href="index.html">Start</a> › SQUAD Rewards</p>
+      <div class="konto-titel">
+        <!-- Fassung mit Bildern: Schriftzug SQUAD Rewards (Grafik von de.holy.com); im Rückfall ausgeblendet -->
+        <div class="squadlogo" data-intern="web-squad-logo" hidden></div>
+        <div>
+          <p class="dachzeile">Dein Konto</p>
+          <h1 id="h-konto">Dein Squad</h1>
+        </div>
+      </div>
+      <nav class="konto-tabs" aria-label="Bereiche im Konto">
+        <a href="#stand">Übersicht</a>
+        <a href="#einloesen">Einlösen</a>
+        <a href="#freunde">Freunde werben</a>
+        <a href="#nachkauf">Nachkaufen</a>
+        <a href="#level">Level</a>
+      </nav>
+    </div>
+  </section>
 
-    <!-- Kontostand nach der ersten Bestellung: Beispielwerte (gleiche Rechnung wie Warenkorb: 10 Coins pro Euro ✔ T32) -->
-    <!-- Fassung mit Bildern: eine Pixel-Münze aus HOLYs Rewards-Grafik rechts im Kasten (data-intern; Neuzuschnitt D07:
+  <div class="konto-flaeche">
+  <div class="inhalt inhalt-weit konto-raster">
+    <!-- Kontostand nach der ersten Bestellung: Beispielwerte (gleiche Rechnung wie Warenkorb: 10 Coins pro Euro ✔ T32;
+         Level 2 ab 2.000 Level Coins ✔ T32 → noch 1.775). Fortschrittsbalken: 225 von 2.000 = 11 %.
+         Fassung mit Bildern: eine Pixel-Münze aus HOLYs Rewards-Grafik rechts in der Karte (data-intern; Neuzuschnitt D07:
          nur die vollständige Münze, keine angeschnittene) -->
-    <section class="kasten kasten-gelb" aria-labelledby="h-stand" id="stand" data-intern="web-squad-coins">
-      <h2 id="h-stand" class="sr-only">Dein Stand</h2>
+    <section class="konto-karte stand-karte" aria-labelledby="h-stand" id="stand" data-intern="web-squad-coins">
       <div>
-      <div class="coinstand"><span class="zahl">225</span><span><strong>Coins</strong> <span class="beispiel">Beispielwert</span></span></div>
-      <p style="margin:6px 0 0">Level 1 · noch 1.775 Level Coins bis Level 2 <span class="beispiel">Beispielwert</span></p>
-      <p class="meta" style="margin:4px 0 0">10 Coins pro Euro, dazu Coins für Newsletter, Social Media und Weiterempfehlen.<span class="anm" data-ids="✔ T32 · ✔ X15 · ✔ B30" data-ziel="#stand">Was wir ändern: Kontostand, Level und der nächste Schritt stehen ganz oben, in Zahlen. Warum: SQUAD Rewards hat schon Coins und vier Level, aber die Regeln stehen verstreut, und im Login steht „Translation missing“. Eine Stimme aus der Stammkundschaft schreibt, die Prämien seien schlechter geworden („Zu meinen Anfängen gab's ganze Tubs für angesparte Punkte – vorbei.“) – klare Werte verhindern Enttäuschung. Vorbild Douglas Beauty Card: drei Stufen, Punkte online und in der Filiale.</span></p>
+        <h2 id="h-stand" class="dachzeile">Dein Stand</h2>
+        <div class="coinstand"><span class="zahl">225</span><span><strong>Coins</strong><span class="beispiel nur-anm-i">Beispielwert</span></span></div>
+        <p class="level-zeile"><strong>Level 1</strong> · noch 1.775&nbsp;Level Coins bis Level 2<span class="beispiel nur-anm-i">Beispielwert</span></p>
+        <div class="fortschritt" aria-hidden="true"><div class="fuell" style="width:11%"></div></div>
+        <p class="meta">10&nbsp;Coins pro Euro, dazu Coins für Newsletter, Social Media und Weiterempfehlen.<span class="anm" data-ids="✔ T32 · ✔ X15 · ✔ B30" data-ziel="#stand">Was wir ändern: Kontostand, Level und der nächste Schritt stehen ganz oben, in Zahlen. Warum: SQUAD Rewards hat schon Coins und vier Level, aber die Regeln stehen verstreut, und im Login steht „Translation missing“. Eine Stimme aus der Stammkundschaft schreibt, die Prämien seien schlechter geworden („Zu meinen Anfängen gab's ganze Tubs für angesparte Punkte – vorbei.“) – klare Werte verhindern Enttäuschung. Vorbild Douglas Beauty Card: drei Stufen, Punkte online und in der Filiale.</span></p>
       </div>
       <span class="coinsbild bildplatz" hidden></span>
     </section>
 
+    <!-- Maßnahme S2: Einlösen im Warenkorb (✔ X15; ✔ T32) -->
+    <section class="konto-karte" aria-labelledby="h-einloesen" id="einloesen">
+      <svg class="karten-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 14h34v8a4 4 0 0 0 0 8v8H7v-8a4 4 0 0 0 0-8z" fill="#FFD007" stroke="#1D1D1B" stroke-width="3" stroke-linejoin="round"/><path d="M30 14v24" stroke="#1D1D1B" stroke-width="2.4" stroke-dasharray="3 3"/></svg>
+      <h2 id="h-einloesen">Einlösen, wo du bezahlst<span class="anm" data-ids="✔ X15 · ✔ T32" data-ziel="#einloesen">Was wir ändern: Coins löst man im Warenkorb ein, mit einem Klick, und sieht dort auch, was die Bestellung bringt. Warum: Coins nützen nur, wenn man sie beim Bezahlen sieht und dort einlösen kann. Vorbild Douglas: Punkte direkt im Online-Warenkorb oder an der Kasse einlösen.</span></h2>
+      <p class="karten-zahl">900&nbsp;Coins = 10&nbsp;€</p>
+      <p>Deine Coins siehst du direkt im Warenkorb – kein Code, kein Umweg.</p>
+      <a class="karten-link" href="warenkorb.html">Zum Warenkorb →</a>
+    </section>
+
+    <!-- Maßnahme S3: Freunde werben mit einer Regel. Heute zwei Mindestbestellwerte (9 € und 14 €, ✔ B13);
+         gewählt ist hier der Wert aus dem Artikel mit den Punkte-Staffeln (✔ T33: 5 € ab 14 €; 900 Punkte in Level 1–2,
+         1.800 in Level 3–4). Welcher Wert gilt, entscheidet HOLY. -->
+    <section class="konto-karte" aria-labelledby="h-freunde" id="freunde">
+      <svg class="karten-symbol" viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="16" r="7" fill="#F08EB8" stroke="#1D1D1B" stroke-width="3"/><circle cx="33" cy="18" r="6" fill="#C09CE3" stroke="#1D1D1B" stroke-width="3"/><path d="M4 40c1-8 6-12 13-12s12 4 13 12M28 40c.6-5 3-9 9-9 5 0 8 3 8 9" fill="none" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/></svg>
+      <h2 id="h-freunde">Freunde werben – eine Regel<span class="anm" data-ids="✔ B13 · ✔ T33" data-ziel="#freunde">Was wir ändern: Eine Regel, ein Mindestbestellwert, überall gleich. Warum: Heute nennt ein Help-Center-Artikel 14&nbsp;€, ein anderer 9&nbsp;€ Mindestbestellwert, und auch die Punkte stehen verschieden da. Freunde werben zielt genau auf die Frage der Bindungsphase: Welche Touchpoints haben den höchsten Empfehlungswert? Hier steht beispielhaft der 14-€-Wert; welcher gilt, entscheidet HOLY.</span></h2>
+      <ul class="regel-liste">
+        <li><strong>Dein Freund:</strong> 5&nbsp;€ Rabatt ab 14&nbsp;€ Bestellwert.</li>
+        <li><strong>Du:</strong> 900&nbsp;Coins (Level 1 und 2) bzw. 1.800&nbsp;Coins (Level 3 und 4).</li>
+      </ul>
+      <p class="meta">Deinen persönlichen Einladungslink bekommst du nach dem Beitritt.<span class="nur-anm-i">&nbsp;Im Konzept wird nichts geteilt.</span></p>
+    </section>
+
+    <!-- Maßnahme S4: Nachkauf in einem Klick, ohne Abo (✔ X14; ✔ T30). Preise ✔ B09, Grundpreis ✔ R98 (gerechnet aus 7 g
+         je Portion ✔ S92). Persona Marco: „50er-Pulverdose auf Vorrat“ (persona-steckbrief.md, fiktiv). -->
+    <section class="konto-karte nachkauf-karte" aria-labelledby="h-nachkauf" id="nachkauf">
+      <h2 id="h-nachkauf">Dose bald leer?<span class="anm" data-ids="✔ X14 · ✔ T30 · ✔ B09 · ✔ R98 · Persona Marco (fiktiv)" data-ziel="#nachkauf">Was wir ändern: Nachkauf in einem Klick, ohne Abo, mit Preis je Portion und Grundpreis. Warum: HOLY hat kein Abo und keine Nachfüll-Erinnerung; Marco kauft die 50er-Dose auf Vorrat (Persona). Vorbild Philips: Erinnerung nach Verbrauch, das Abo bleibt eine Option.</span></h2>
+      <!-- Fassung mit Bildern: Packshot der 50er-Dose (dieselbe Datei wie im Warenkorb) -->
+      <div class="nachkauf-zeile" data-intern="web-warenkorb-50" data-intern-deko>
+        <span class="bildplatz" hidden></span>
+        <p><span class="nachkauf-name">Raspberry Raptor · 50&nbsp;Portionen</span> <span class="nachkauf-preis">39,99&nbsp;€</span> <span class="meta">0,80&nbsp;€ je Portion · 114,26&nbsp;€&nbsp;/&nbsp;kg · kein Abo, keine Verpflichtung</span></p>
+      </div>
+      <!-- nachkauf=1: Warenkorb und Danke-Seite ohne Shaker-Hinweis und Shaker-Bild (Shaker nur zur ersten Dose, ✔ T22) -->
+      <a class="knopf" href="warenkorb.html?packung=50&amp;nachkauf=1">50&nbsp;Portionen nachkaufen <span class="pfeil" aria-hidden="true">→</span></a>
+      <p class="meta">Erinnerung vor dem Leer-Tag: auf der <a href="danke.html#erinnerung">Danke-Seite</a> einschaltbar.</p>
+    </section>
+
     <!-- Maßnahme S1: Stufen als eigene Stufen-Grafik (Dossier 7a.7: „Stufen-Grafik im Stil von SQUAD Rewards“); in der
          Fassung mit Bildern stehen HOLYs Level-Abzeichen darin (Nachweis im Fuß). Schwellen und Vorteile ✔ T32. -->
-    <section class="abschnitt" aria-labelledby="h-level" id="level">
-      <h2 id="h-level">Vier Level, klare Vorteile<span class="anm" data-ids="✔ T32 · ✔ X15" data-ziel="#level">Was wir ändern: Alle vier Level mit Schwelle und Vorteil auf einen Blick, als eigene Stufen-Grafik (mit HOLYs Level-Abzeichen, Nachweis im Fuß). Warum: Die Werte gibt es schon (Level ab 1, 2.000, 10.000 und 30.000 Level Coins), man findet sie aber nur in Einzelartikeln. Vorbild Douglas: Stufen mit klaren Vorteilen.</span></h2>
+    <section class="konto-karte konto-breit" aria-labelledby="h-level" id="level">
+      <h2 id="h-level">Vier Level, klare Vorteile<span class="anm" data-ids="✔ T32 · ✔ X15" data-ziel="#level">Was wir ändern: Alle vier Level mit Schwelle und Vorteil auf einen Blick, als eigene Stufen-Grafik (mit HOLYs Level-Abzeichen, Nachweis im Fuß). Warum: Die Werte gibt es schon (Level ab 1, 2.000, 10.000 und 30.000&nbsp;Level Coins), man findet sie aber nur in Einzelartikeln. Vorbild Douglas: Stufen mit klaren Vorteilen.</span></h2>
       <!-- Fassung mit Bildern: Level-Abzeichen von de.holy.com in den Stufen (data-intern) -->
-      <div class="stufen" role="img" aria-label="Vier Level: Level 1 ab 1, Level 2 ab 2.000, Level 3 ab 10.000, Level 4 ab 30.000 Level Coins" data-intern-gruppe>
+      <div class="stufen" role="img" aria-label="Vier Level: Level 1 ab 1, Level 2 ab 2.000, Level 3 ab 10.000, Level 4 ab 30.000 Level Coins; du bist in Level 1" data-intern-gruppe>
         <div class="stufe s1 aktiv" data-intern="web-squad-level-1"><span class="bildplatz" hidden></span><b>1</b>ab 1</div>
         <div class="stufe s2" data-intern="web-squad-level-2"><span class="bildplatz" hidden></span><b>2</b>ab 2.000</div>
         <div class="stufe s3" data-intern="web-squad-level-3"><span class="bildplatz" hidden></span><b>3</b>ab 10.000</div>
         <div class="stufe s4" data-intern="web-squad-level-4"><span class="bildplatz" hidden></span><b>4</b>ab 30.000</div>
       </div>
-      <p class="meta">Level Coins je Level. Du bist hier: Level 1 (gelb).</p>
+      <p class="meta">Level Coins je Level. Dein Level ist markiert.</p>
       <table class="tabelle">
         <caption class="sr-only">Vorteile je Level</caption>
         <thead><tr><th scope="col">Level</th><th scope="col">Was dazukommt</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>10 € Rabatt für 900 Coins</td></tr>
-          <tr><td>2</td><td>15 % Rabatt für 1.200 Coins · Level-Shaker für 1 Coin</td></tr>
+          <tr><td>1</td><td>10&nbsp;€ Rabatt für 900&nbsp;Coins</td></tr>
+          <tr><td>2</td><td>15&nbsp;% Rabatt für 1.200&nbsp;Coins · Level-Shaker für 1 Coin</td></tr>
           <tr><td>3</td><td>doppelte Coins fürs Weiterempfehlen</td></tr>
           <tr><td>4</td><td>Xmas-Geschenk</td></tr>
         </tbody>
@@ -95,90 +165,93 @@
       <p class="meta">Mitmachen ab 18, wie im Shop.</p>
     </section>
 
-    <!-- Maßnahme S2: Einlösen im Warenkorb (✔ X15; ✔ T32) -->
-    <section class="abschnitt" aria-labelledby="h-einloesen" id="einloesen">
-      <h2 id="h-einloesen">Einlösen, wo du bezahlst<span class="anm" data-ids="✔ X15 · ✔ T32" data-ziel="#einloesen">Was wir ändern: Coins löst man im Warenkorb ein, mit einem Klick, und sieht dort auch, was die Bestellung bringt. Warum: Coins nützen nur, wenn man sie beim Bezahlen sieht und dort einlösen kann. Vorbild Douglas: Punkte direkt im Online-Warenkorb oder an der Kasse einlösen.</span></h2>
-      <p>Deine Coins siehst du direkt im Warenkorb – kein Code, kein Umweg: 900 Coins = 10 €.</p>
-    </section>
-
-    <!-- Maßnahme S3: Freunde werben mit einer Regel. Heute zwei Mindestbestellwerte (9 € und 14 €, ✔ B13);
-         gewählt ist hier der Wert aus dem Artikel mit den Punkte-Staffeln (✔ T33: 5 € ab 14 €; 900 Punkte in Level 1–2,
-         1.800 in Level 3–4). Welcher Wert gilt, entscheidet HOLY. -->
-    <section class="abschnitt" aria-labelledby="h-freunde" id="freunde">
-      <h2 id="h-freunde">Freunde werben – eine Regel<span class="anm" data-ids="✔ B13 · ✔ T33" data-ziel="#freunde">Was wir ändern: Eine Regel, ein Mindestbestellwert, überall gleich. Warum: Heute nennt ein Help-Center-Artikel 14 €, ein anderer 9 € Mindestbestellwert, und auch die Punkte stehen verschieden da. Freunde werben zielt genau auf die Frage der Bindungsphase: Welche Touchpoints haben den höchsten Empfehlungswert? Hier steht beispielhaft der 14-€-Wert; welcher gilt, entscheidet HOLY.</span></h2>
-      <div class="kasten">
-        <p><strong>Dein Freund:</strong> 5 € Rabatt ab 14 € Bestellwert.</p>
-        <p style="margin:0"><strong>Du:</strong> 900 Coins (Level 1 und 2) bzw. 1.800 Coins (Level 3 und 4).</p>
-      </div>
-      <p class="meta">Dein persönlicher Link würde hier stehen <span class="beispiel">Beispiel</span>. Im Konzept wird nichts geteilt.</p>
-    </section>
-
-    <!-- Maßnahme S4: Nachkauf in einem Klick, ohne Abo (✔ X14; ✔ T30). Preise ✔ B09, Grundpreis ✔ R98 (gerechnet aus 7 g
-         je Portion ✔ S92). Persona Marco: „50er-Pulverdose auf Vorrat“ (persona-steckbrief.md, fiktiv). -->
-    <section class="abschnitt" aria-labelledby="h-nachkauf" id="nachkauf">
-      <h2 id="h-nachkauf">Dose bald leer?<span class="anm" data-ids="✔ X14 · ✔ T30 · ✔ B09 · ✔ R98 · Persona Marco (fiktiv)" data-ziel="#nachkauf">Was wir ändern: Nachkauf in einem Klick, ohne Abo, mit Preis je Portion und Grundpreis. Warum: HOLY hat kein Abo und keine Nachfüll-Erinnerung; Marco kauft die 50er-Dose auf Vorrat (Persona). Vorbild Philips: Erinnerung nach Verbrauch, das Abo bleibt eine Option.</span></h2>
-      <!-- Fassung mit Bildern: Packshot der 50er-Dose (dieselbe Datei wie im Warenkorb) -->
-      <div class="nachkauf-zeile" data-intern="web-warenkorb-50" data-intern-deko>
-        <span class="bildplatz" hidden></span>
-        <p>Nachkaufen in einem Klick: <strong>Raspberry Raptor, 50 Portionen – 39,99 €</strong> (0,80 € je Portion · 114,26 € / kg). Kein Abo, keine Verpflichtung.</p>
-      </div>
-      <!-- nachkauf=1: Warenkorb und Danke-Seite ohne Shaker-Hinweis und Shaker-Bild (Shaker nur zur ersten Dose, ✔ T22) -->
-      <a class="knopf" href="warenkorb.html?packung=50&amp;nachkauf=1">50 Portionen nachkaufen <span class="pfeil" aria-hidden="true">→</span></a>
-      <p class="meta" style="margin-top:8px">Erinnerung vor dem Leer-Tag: auf der <a href="danke.html#erinnerung">Danke-Seite</a> einschaltbar (Konzept).</p>
-    </section>
-
     <!-- Feedback → Empfehlung (✔ X13); Mischtipp: Beispieltext -->
-    <section class="abschnitt" aria-labelledby="h-tipp" id="tipp">
+    <section class="konto-karte tipp-karte" aria-labelledby="h-tipp" id="tipp">
       <h2 id="h-tipp">Dein Tipp aus „Wie schmeckt's?“<span class="anm" data-ids="✔ X13 · ~ B24 (Grund für ~: Codierung einer Person)" data-ziel="#tipp">Was wir ändern: Die Antwort aus der Feedback-Mail kommt hier als persönlicher Tipp zurück. Warum: Süße ist der häufigste Kritikpunkt in kritischen Bewertungen. Vorbild Zalando: Feedback zu früheren Bestellungen fließt in die nächste Empfehlung.</span></h2>
-      <div class="kasten">
-        <p style="margin:0">Du hast „zu süß“ geantwortet: Probier's mit etwas mehr Wasser – und schau dir für die nächste Bestellung eine mildere Sorte an. <span class="beispiel">Beispieltext</span></p>
-      </div>
+      <p>Du hast „zu süß“ geantwortet: Probier's mit etwas mehr Wasser – und schau dir für die nächste Bestellung eine mildere Sorte an.<span class="beispiel nur-anm-i">Beispieltext</span></p>
     </section>
 
     <!-- Community: Discord „Frag den Squad“ ✔ T19, rund 72.000 Mitglieder ✔ T35 (Stand 30.10.2026). Persona: Discord nur am Rand. -->
-    <section class="abschnitt" aria-labelledby="h-community">
+    <section class="konto-karte" aria-labelledby="h-community" id="community">
       <h2 id="h-community">Frag den Squad</h2>
-      <p>Fragen, Mischtipps, neue Sorten: Auf dem Discord-Server tauschen sich rund 72.000 Mitglieder aus (Stand 30.10.2026). Im Konzept nicht verlinkt.</p>
+      <p>Fragen, Mischtipps, neue Sorten: Auf dem Discord-Server tauschen sich rund 72.000 Mitglieder aus (Stand 10/2026).<span class="nur-anm-i">&nbsp;Im Konzept nicht verlinkt.</span></p>
       <p class="meta">Im Supermarkt gekauft? Auch das zählt: <a href="haendler.html">Dose registrieren und Coins holen</a>.</p>
     </section>
+  </div>
   </div>
 
   <!-- Die Strecke schließt sich: Bindung → Nachkauf (Kauf) -->
   <section class="naechste" aria-label="Nächste Station">
-    <div class="inhalt schmal">
-      <p>Der Weg schließt sich · zurück zu 4 Kauf</p>
+    <div class="inhalt inhalt-weit">
+      <p class="nur-anm">Der Weg schließt sich · zurück zu 4 Kauf</p>
       <h2>Wenn die Dose leer wird: nachkaufen.</h2>
-      <a class="knopf" href="warenkorb.html?packung=50&amp;nachkauf=1">Zum Warenkorb mit 50 Portionen <span class="pfeil" aria-hidden="true">→</span></a>
-      <a class="knopf knopf-rand" href="index.html" style="margin-top:10px">Zurück zum Start der Strecke</a>
+      <div class="knopfreihe">
+        <a class="knopf" href="warenkorb.html?packung=50&amp;nachkauf=1">Zum Warenkorb mit 50&nbsp;Portionen <span class="pfeil" aria-hidden="true">→</span></a>
+        <a class="knopf knopf-rand" href="index.html">Zur Startseite</a>
+      </div>
     </div>
   </section>
 </main>
 
+<!-- Fuß (D09-Nacharbeit, Abnahme Gestaltung): Shop-Spalten wie in HOLYs Shop, darunter die Pflichtangaben als
+     Kleingedrucktes (Kennung, Bildnachweise, Quellen und Stand, Beispielwert-Satz, KI-Offenlegung). Leitsatz und
+     „Stationen des Konzepts“ nur im Präsentationsmodus (.fuss-praes). -->
 <footer class="fuss">
-  <div class="inhalt">
-    <h2>Stationen des Konzepts</h2>
-    <ol>
-      <li><a href="index.html">Inspiration: Landingpage aus dem Creator-Video</a></li>
-      <li><a href="koffein-check.html">Recherche: Koffein-Check</a></li>
-      <li><a href="produkt.html">Entscheidung: Produktseite</a></li>
-      <li><a href="warenkorb.html">Kauf: mobiler Warenkorb</a></li>
-      <li><a href="danke.html">Bindung: Danke- und Willkommensseite</a> · <a href="squad.html">SQUAD Rewards</a></li>
-    </ol>
-    <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
-    <div class="kennung">
-      <p><strong>Studentischer Entwurf</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger), Hochschule Kaiserslautern; kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
-      <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
-      <!-- Fassung mit Bildern: sichtbar, sobald konzept.js Bilder aus fremdbilder/ eingebaut hat; im Rückfall ohne Fremdbilder ausgeblendet -->
-      <div data-nur-intern hidden>
-        <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
-        <p class="nebentext" style="margin:0">Bildnachweise auf dieser Seite:</p>
-        <ul class="bildnachweise" data-intern-liste></ul>
+  <div class="inhalt inhalt-weit">
+    <div class="fuss-spalten">
+      <div>
+        <h2>Shop</h2>
+        <ul>
+          <li><a href="produkt.html?packung=50">Energy Raspberry Raptor</a></li>
+          <li><a href="produkt.html?packung=set">Starter Set Energy</a></li>
+          <li><a href="warenkorb.html">Warenkorb</a></li>
+          <li><a href="squad.html">SQUAD Rewards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Hilfe &amp; Fakten</h2>
+        <ul>
+          <li><a href="koffein-check.html">Koffein-Check</a></li>
+          <li><a href="haendler.html">Im Supermarkt gekauft?</a></li>
+          <li><a href="produkt.html#garantie">Garantie</a></li>
+          <li><a href="koffein-check.html#quellen">Quellen und Stand</a></li>
+        </ul>
+      </div>
+      <div class="fuss-marke fuss-praes">
+        <p class="fuss-titel">HOLY Energy – so könnte es gehen.</p>
+        <p class="nebentext">Ein studentisches Konzept für den Weg vom Creator-Video bis zum Nachkauf. Kein Shop, keine Bestellung.</p>
+      </div>
+      <div class="stationen fuss-praes">
+        <h2>Stationen des Konzepts</h2>
+        <ol>
+          <li><a href="index.html">Inspiration: Landingpage aus dem Creator-Video</a></li>
+          <li><a href="koffein-check.html">Recherche: Koffein-Check</a></li>
+          <li><a href="produkt.html">Entscheidung: Produktseite</a></li>
+          <li><a href="warenkorb.html">Kauf: mobiler Warenkorb</a></li>
+          <li><a href="danke.html">Bindung: Danke- und Willkommensseite</a> · <a href="squad.html">SQUAD Rewards</a></li>
+        </ol>
+        <p class="nebentext">Nebenweg Handel: <a href="haendler.html">Im Supermarkt gekauft? (Ziel des QR-Codes)</a></p>
       </div>
     </div>
-    <p class="nebentext">Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026 (Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus). Was als „Beispielwert“ markiert ist, ist ausgedacht.</p>
-    <p class="nebentext">Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 03.11.2026</p>
-    <p class="nur-normal"><a href="?anmerkungen=1" data-ohne-anmerkungen>Präsentationsmodus: Anmerkungen einblenden</a></p>
-    <p class="nur-anm"><a href="?" data-ohne-anmerkungen>Anmerkungen ausblenden</a></p>
+    <div class="kleingedruckt">
+      <div class="kennung">
+        <p><strong>Studentisches Konzept der Gruppe (HS Kaiserslautern)</strong> im Modul Unternehmenskommunikation (Prof. Dr. Daniel Stenger); kein Beitrag der HOLY Softdrinks GmbH. Keine Bestellung möglich, nichts wird gesendet oder gespeichert. Keine Ernährungs- oder Rechtsberatung.</p>
+        <p>HOLY-Wortmarke © HOLY Softdrinks GmbH, mit Einverständnis des Gründers nur für dieses Studienprojekt. <span data-nur-oeffentlich>Keine HOLY-Fotos: Zeichnungen und Platzhalter sind eigene Entwürfe.</span></p>
+        <!-- Fassung mit Bildern: sichtbar, sobald konzept.js Bilder aus fremdbilder/ eingebaut hat; im Rückfall ohne Fremdbilder ausgeblendet -->
+        <div data-nur-intern hidden>
+          <p>Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.</p>
+          <p class="bildnachweise-titel">Bildnachweise auf dieser Seite:</p>
+          <ul class="bildnachweise" data-intern-liste></ul>
+        </div>
+      </div>
+      <div class="fuss-unten">
+        <p>Preise und Produktdaten: HOLY-Shop und Etikett, abgerufen am 30.10.2026; Grundpreise aus 7&nbsp;g je Portion gerechnet; Bewertungszahlen und Community: Stand 30.10.2026<span class="nur-anm-i">&nbsp;(Recherche-Dossier der Gruppe, Befund-IDs im Präsentationsmodus)</span> · <a href="koffein-check.html#quellen">Quellen und Stand</a></p>
+        <p>Creator, Creator-Code und Rabatt sind Platzhalter. Liefertermine, Bestellnummer, Coins und Kontostände sind Beispielwerte.</p>
+        <p>Texte KI-gestützt entworfen · Prüfung durch die Gruppe offen · Gruppe Heisler, Knauber, Welker · Stand 04.11.2026</p>
+        <p class="nur-normal"><a href="?anmerkungen=1" data-ohne-anmerkungen>Präsentationsmodus: Anmerkungen einblenden</a></p>
+        <p class="nur-anm"><a href="?" data-ohne-anmerkungen>Anmerkungen ausblenden</a></p>
+      </div>
+    </div>
   </div>
 </footer>
 

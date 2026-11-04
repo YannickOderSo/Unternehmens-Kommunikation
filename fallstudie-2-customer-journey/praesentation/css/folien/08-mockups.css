@@ -20,9 +20,12 @@
 #f08 .e8-s4 { left: 1158.5px; }
 #f08 .e8-s5 { left: 1492px; }
 #f08 .p-handy { width: 220px; }
-#f08 .p-handy-schirm { height: auto; }
+/* Schwarzer Streifen über dem Bildschirmfoto wie eine Statusleiste (12 px, Farbe des Rahmens): Die Eckrundung (34 px)
+   schneidet so nicht mehr in die erste Zeile der Hinweisleiste (D09-Nacharbeit, Abnahme Gestaltung; geprüft in
+   konzept-website/werkzeuge/folie08-bilder.mjs, Konstante RAHMEN) */
+#f08 .p-handy-schirm { height: auto; padding-top: 12px; background: #1D1D1B; }
 #f08 .e8-ue {
-  margin-top: 16px;
+  margin-top: 4px;                    /* 16 px − 12 px Statusstreifen: Abstand zur Kennzeichnungszeile bleibt wie vorher */
   font-size: 22px;
   font-weight: 600;
   line-height: 1.2;

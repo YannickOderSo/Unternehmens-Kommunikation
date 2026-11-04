@@ -44,7 +44,30 @@
     10. Bilder je Fassung (siehe oben); mit Bildern zusätzlich: großes Bild der Produktseite folgt der Packung, bis in der
         Galerie geklickt wird; Vorschaubild im Warenkorb und Shaker auf der Danke-Seite passen zu ?packung=
     11. erster Bildschirm 390 × 844: Händlerseite Code-Box und Hauptknopf, Produktseite Titel, Bewertung und Preise (auch
-        mit ?packung=50); 1280 px: Knopf „Zum Produkt aus dem Video“ und Hauptknopf der Händlerseite je in einer Zeile
+        mit ?packung=50), Warenkorb Lieferdatum und Endpreis (jede Packung, Folie 08), Koffein-Check erster Punkt von
+        „Kurz gesagt“, Danke-Seite Titel mit Zustelltag, Squad Kontostand; 1280 px: Knopf „Zum Produkt aus dem Video“
+        und Hauptknopf der Händlerseite je in einer Zeile
+    12. Kennzeichnung seit der Gestaltung D09 („Kampagnen-Look“, Beispiel-Etiketten nur im Präsentationsmodus): Fuß jeder
+        Seite mit Kennung „Studentisches Konzept der Gruppe (HS Kaiserslautern)“, dem Satz „Liefertermine, Bestellnummer,
+        Coins und Kontostände sind Beispielwerte.“ und dem Link „Quellen und Stand“ – sichtbar, in beiden Modi; „Werbung“
+        sichtbar neben jedem sichtbaren Creator-Code; „Vorschlag der Gruppe“ sichtbar an jeder Garantie (#garantie,
+        #garantie-kurz); „Platzhalter“ sichtbar an jeder Bewertungskarte; Etikett „Symbolbild“ sichtbar an jedem Bild,
+        dessen Nachweis mit „Symbolbild · “ beginnt; Schriften „Bricolage Konzept“ und „Inter Konzept“ geladen;
+        Präsentationsmodus zeigt die Beispiel-Etiketten (.nur-anm-i) und den Beispielcode-Hinweis; Menü-Knopf klappt auf
+        und schließt mit Escape; Kaufleiste der Produktseite erst nach dem Kaufknopf sichtbar, Preis folgt der Packung
+    13. D09-Nacharbeit (Abnahme Technik und Gestaltung, 04.11.2026):
+        – „wirklich sichtbar“ statt nur „im DOM und gerendert“ für Hinweisleiste, „Werbung“, „Symbolbild“, „Vorschlag der
+          Gruppe“, „Platzhalter“, Kennung und Beispielwert-Satz im Fuß: wirksame Deckkraft ≥ 0,9 über alle Vorfahren,
+          Schriftfarbe ohne Alpha, Schrift ≥ 11 px, Etikett „Symbolbild“ innerhalb des Bildes, in der Mitte nicht verdeckt
+          (elementFromPoint, Element dafür kurz in den Blick geholt); Hinweisleiste zusätzlich ganz im Fenster
+        – Kontrastmessung (7.) rechnet die Deckkraft ein (Schriftfarbe mit Alpha und opacity der Vorfahren werden mit dem
+          Hintergrund gemischt), Text mit Deckkraft 0 gilt als Fehler
+        – Tab-Rundgang: kein fokussiertes Element (teil)verdeckt von Kaufleiste (Produktseite, 390 und 1280 px) oder vom
+          Knopf „Anmerkungen ansehen“ (Präsentationsmodus, alle Seiten, 390 px), WCAG 2.2 SC 2.4.11
+        – keine Recherche- und Entwurfssprache im Hauptteil der normalen Ansicht (z. B. „noch nicht belegt“, „Befunde ✔“,
+          „Studentischer Entwurf“, „Hier steht eine echte“, „selbst gerechnet“, „Start der Strecke“, „HOLY-KONZEPT“;
+          Quellenliste des Koffein-Checks ausgenommen)
+        – Versionsprüfung (WARNUNG) auch für Schriften aus @font-face, Lizenztexte, assets/, bilder/ und die HTML-Seiten
    ========================================================================== */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -85,6 +108,8 @@ const HINWEIS = 'Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine 
 /* Obersatz der Bildnachweise im Fuß (Fassung mit Bildern), wörtlich in allen 7 Seiten und in README.md */
 const BILDER_FUSS = 'Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026 – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe.';
 const PACKUNGEN = ['set', '1', '10', '50'];
+/* Satz im Fuß jeder Seite (Gestaltung D09): ersetzt in der normalen Ansicht die Etiketten „Beispielwert“ */
+const BEISPIEL_SATZ = 'Liefertermine, Bestellnummer, Coins und Kontostände sind Beispielwerte.';
 
 const fehler = [];
 const notizen = [];
@@ -131,6 +156,27 @@ if (!fs.existsSync(REGISTER_JS)) {
     }
     if (!gitDa) notizen.push('git nicht verfügbar oder kein Repository – Versionierung der Fremdbilder nicht geprüft');
   }
+}
+/* D09-Nacharbeit (Abnahme Technik): auch Schriften (jede per @font-face eingebundene Datei), Lizenztexte, assets/, bilder/
+   und die Seiten selbst müssen im Git-Index stehen – sonst fällt die Seite auf GitHub Pages still auf die Systemschrift
+   zurück oder der Lizenztext der OFL 1.1 fehlt bei der Weitergabe */
+{
+  const css = fs.readFileSync(path.join(WURZEL, 'assets', 'konzept.css'), 'utf8');
+  const schriften = Array.from(css.matchAll(/url\("\.\.\/(schriften\/[^"]+)"\)/g), (m) => m[1]);
+  const weitere = [];
+  for (const ordner of ['schriften', 'assets', 'bilder']) {
+    if (!fs.existsSync(path.join(WURZEL, ordner))) continue;
+    for (const d of fs.readdirSync(path.join(WURZEL, ordner))) if (/\.(woff2|txt|css|js|png|jpe?g|webp|svg)$/i.test(d)) weitere.push(ordner + '/' + d);
+  }
+  const dateien = Array.from(new Set([...schriften, ...weitere, ...SEITEN.map(([, d]) => d), 'koffein-check.txt'])).sort();
+  let gitDa = true;
+  for (const d of dateien) {
+    if (!fs.existsSync(path.join(WURZEL, d))) { if (schriften.includes(d)) fehler.push('assets/konzept.css bindet ' + d + ' ein, die Datei fehlt'); continue; }
+    const v = gitBekannt(d);
+    if (v === null) { gitDa = false; break; }
+    if (!v) warnungen.push(d + ': nicht versioniert – fehlt nach dem Push auf GitHub Pages (git add)');
+  }
+  if (!gitDa) notizen.push('git nicht verfügbar oder kein Repository – Versionierung von Schriften, Lizenzen, assets/, bilder/ und Seiten nicht geprüft');
 }
 
 /* true: Datei steht im Git-Index (versioniert oder mit git add vorgemerkt); false: nicht; null: git fehlt oder kein Repository */
@@ -179,9 +225,46 @@ function dateiUrl(datei, query) {
   return pathToFileURL(path.join(WURZEL, datei)).href + (query || '');
 }
 
+/* „Wirklich sichtbar“ (D09-Nacharbeit, Abnahme Technik): Vorher galt ein Element als sichtbar, sobald es gerendert war
+   (getClientRects, visibility). Eine Mutationskopie mit unsichtbarer Hinweisleiste (color: transparent, 3 px), „Werbung“
+   mit opacity 0 und einem Symbolbild-Etikett außerhalb des Bildes bestand damit alle Prüfungen. Die Funktion liefert null
+   (sichtbar) oder den Grund. bildplatz: Rechteck, in dem das Element ganz liegen muss (Etikett am Bild). ganzImFenster:
+   Element muss ohne Scrollen ganz im Fenster stehen (Hinweisleiste). Sonst wird das Element für den Treffertest kurz in die
+   Mitte des Fensters geholt (ohne Glätten) und die Scrollposition danach zurückgesetzt. */
+const WIRKLICH_SICHTBAR = `window.__wirklichSichtbar = function (el, bildplatz, ganzImFenster) {
+  if (!el || !el.isConnected) return 'fehlt';
+  if (!el.getClientRects().length) return 'nicht gerendert';
+  var cs = getComputedStyle(el);
+  if (cs.visibility !== 'visible') return 'visibility ' + cs.visibility;
+  var deck = 1;
+  for (var x = el; x && x.nodeType === 1; x = x.parentElement) deck *= Number(getComputedStyle(x).opacity);
+  if (deck < 0.9) return 'Deckkraft ' + deck.toFixed(2);
+  var m = /rgba?\\(([^)]+)\\)/.exec(cs.color);
+  var teile = m ? m[1].split(/[ ,\\/]+/).filter(Boolean).map(Number) : [];
+  if (teile.length > 3 && teile[3] < 1) return 'Schriftfarbe mit Alpha ' + teile[3];
+  if (parseFloat(cs.fontSize) < 11) return 'Schrift ' + cs.fontSize;
+  var r = el.getBoundingClientRect();
+  if (r.width < 4 || r.height < 4) return 'zu klein (' + Math.round(r.width) + ' × ' + Math.round(r.height) + ' px)';
+  if (bildplatz) {
+    var b = bildplatz.getBoundingClientRect();
+    if (r.left < b.left - 1 || r.right > b.right + 1 || r.top < b.top - 1 || r.bottom > b.bottom + 1) return 'außerhalb des Bildes';
+  }
+  if (ganzImFenster && (r.top < -1 || r.left < -1 || r.bottom > innerHeight + 1 || r.right > innerWidth + 1)) return 'nicht ganz im Fenster';
+  var vorher = window.scrollY;
+  if (!ganzImFenster && (r.top < 0 || r.bottom > innerHeight)) { el.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' }); r = el.getBoundingClientRect(); }
+  var px = Math.min(Math.max(r.left + Math.min(r.width / 2, 12), 0), innerWidth - 1);
+  var py = Math.min(Math.max(r.top + r.height / 2, 0), innerHeight - 1);
+  var treffer = document.elementFromPoint(px, py);
+  if (window.scrollY !== vorher) window.scrollTo({ top: vorher, behavior: 'instant' });
+  if (r.right <= 0 || r.left >= innerWidth) return 'waagerecht außerhalb des Fensters';
+  if (!treffer || !(treffer === el || el.contains(treffer))) return 'verdeckt von ' + (treffer ? treffer.tagName.toLowerCase() + (treffer.classList.length ? '.' + treffer.classList[0] : '') : 'nichts');
+  return null;
+};`;
+
 /* Seite laden und Fehler mitschneiden */
 async function oeffne(kontext, datei, query, ort, basis) {
   const page = await kontext.newPage();
+  await page.addInitScript({ content: WIRKLICH_SICHTBAR });
   const meldungen = [];
   const fassung = FASSUNG;
   const erwartet = (u) => fassung === 'rueckfall' && istFremd(u);       // gesperrtes fremdbilder/register.js
@@ -216,16 +299,22 @@ async function messe(page) {
       if (!hatText) return;
       if (!el.getClientRects().length) return;
       const cs = getComputedStyle(el);
-      if (cs.visibility === 'hidden' || Number(cs.opacity) === 0) return;
+      if (cs.visibility === 'hidden') return;
       const vorne = parse(cs.color); if (!vorne) return;
+      // Deckkraft (D09-Nacharbeit): Alpha der Schriftfarbe mal opacity aller Vorfahren; Text mit Deckkraft 0 ist unsichtbar
+      // (Fehler), dazwischen wird die Schrift mit dem Hintergrund gemischt
+      let deck = vorne.a;
+      for (let x = el; x && x.nodeType === 1; x = x.parentElement) deck *= Number(getComputedStyle(x).opacity);
       const hinten = grund(el);
-      const l1 = lum(vorne.rgb), l2 = lum(hinten);
+      if (deck <= 0.001) { gezaehlt++; probleme.push({ text: el.textContent.trim().slice(0, 60), kontrast: 1, soll: 4.5, farbe: cs.color + ', Deckkraft 0', grund: 'rgb(' + hinten.join(', ') + ')' }); return; }
+      const gemischt = vorne.rgb.map((c, i) => c * deck + hinten[i] * (1 - deck));
+      const l1 = lum(gemischt), l2 = lum(hinten);
       const k = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
       const groesse = parseFloat(cs.fontSize), gewicht = Number(cs.fontWeight) || 400;
       const gross = groesse >= 24 || (groesse >= 18.66 && gewicht >= 700);
       const soll = gross ? 3 : 4.5;
       gezaehlt++;
-      if (k < soll) probleme.push({ text: el.textContent.trim().slice(0, 60), kontrast: Math.round(k * 100) / 100, soll, farbe: cs.color, grund: 'rgb(' + hinten.join(', ') + ')' });
+      if (k < soll) probleme.push({ text: el.textContent.trim().slice(0, 60), kontrast: Math.round(k * 100) / 100, soll, farbe: cs.color + (deck < 1 ? ', Deckkraft ' + deck.toFixed(2) : ''), grund: 'rgb(' + hinten.join(', ') + ')' });
     });
     const de = document.documentElement;
     return { probleme, gezaehlt, scrollBreite: de.scrollWidth, fensterBreite: window.innerWidth, clientBreite: de.clientWidth };
@@ -271,7 +360,9 @@ async function bilderInfo(page) {
         return {
           schluessel: s.getAttribute('data-intern'), aufgeloest: s.getAttribute('data-intern').replace('{packung}', packung),
           aktiv: s.getAttribute('data-intern-aktiv'), mitBild: s.classList.contains('mit-bild'), sichtbar: sichtbar(s),
-          unterschrift: n ? n.textContent.replace(/\s+/g, ' ').trim() : null
+          unterschrift: n ? n.textContent.replace(/\s+/g, ' ').trim() : null,
+          symbolEtikett: Array.from(s.querySelectorAll('.symbol-etikett')).some((x) => x.textContent.trim() === 'Symbolbild' && window.__wirklichSichtbar(x, x.closest('.bildplatz') || s) === null),
+          symbolGrund: Array.from(s.querySelectorAll('.symbol-etikett')).map((x) => window.__wirklichSichtbar(x, x.closest('.bildplatz') || s)).filter(Boolean).join('; ')
         };
       }),
       fussSichtbar: fussBilder.some(sichtbar),
@@ -329,6 +420,9 @@ function pruefeBilder(ort, b, modus) {
       if (!p.mitBild) { f(ort, 'Bildplatz „' + p.aufgeloest + '“ ohne Bild (Datei nicht geladen?)'); continue; }
       const e = REGISTER[p.aktiv];
       if (e && p.unterschrift !== null && p.unterschrift !== (e.unterschrift || e.nachweis)) f(ort, 'Unterschrift am Bild „' + p.unterschrift + '“ passt nicht zu ' + p.aktiv);
+      // Gestaltung D09: Die Unterschrift steht nicht mehr sichtbar am Bild (Nachweis im Fuß); Symbolbilder brauchen deshalb das
+      // sichtbare Etikett „Symbolbild“ (konzept.js)
+      if (e && /^Symbolbild · /.test(e.nachweis) && p.sichtbar && !p.symbolEtikett) f(ort, 'Symbolbild „' + p.aktiv + '“ ohne sichtbares Etikett „Symbolbild“ am Bild' + (p.symbolGrund ? ' (' + p.symbolGrund + ')' : ''));
       // Motiv im Fuß: zusammengefasste Motive („Packshot 50 Portionen / 10 Portionen“) enthalten alle Wörter des Motivs
       if (e && !b.fussEintraege.some((x) => x.text.endsWith(e.nachweis) && e.motiv.split(/[\s/:]+/).filter(Boolean).every((w) => x.motiv.split(/[\s/:]+/).includes(w)))) f(ort, 'Fuß ohne Eintrag „' + e.motiv + ': ' + e.nachweis.slice(0, 50) + '…“');
     }
@@ -350,7 +444,12 @@ function pruefeBilder(ort, b, modus) {
 const ERSTER_BILDSCHIRM = {
   'haendler.html': [['.held .codebox', 'ganz'], ['.held .knopfreihe .knopf', 'ganz']],
   'produkt.html': [['main h1', 'beginnt'], ['.bewertung-kurz', 'beginnt'], ['.optionen .option .preis', 'beginnt']],
-  'index.html': [['.held .codebox', 'ganz'], ['.held .knopfreihe .knopf', 'beginnt']]
+  'index.html': [['.held .codebox', 'ganz'], ['.held .knopfreihe .knopf', 'beginnt']],
+  // Gestaltung D09 (Folie 08 zeigt diese Ausschnitte): Lieferdatum und Endpreis, „Kurz gesagt“, Zustelltag, Kontostand
+  'warenkorb.html': [['#lieferdatum', 'ganz'], ['[data-k-gesamt]', 'ganz']],
+  'koffein-check.html': [['.kurz li', 'ganz']],
+  'danke.html': [['main h1', 'ganz']],
+  'squad.html': [['#stand .coinstand', 'ganz']]
 };
 
 async function pruefeFassung() {
@@ -365,7 +464,14 @@ async function pruefeFassung() {
       const ort = datei + (modus === 'anmerkungen' ? ' ?anmerkungen=1' : '');
       const s = await oeffne(mobil, datei, modus === 'anmerkungen' ? '?anmerkungen=1' : '', ort);
       const { page } = s;
-      const info = await page.evaluate((HINWEIS) => {
+      const info = await page.evaluate(([HINWEIS, BEISPIEL_SATZ]) => {
+        const ws = window.__wirklichSichtbar;
+        /* kleinstes Element in wurzel, dessen Text das Muster enthält (für „Vorschlag der Gruppe“, Fußsätze) */
+        const traeger = (wurzel, muster) => {
+          if (!wurzel || !wurzel.textContent.includes(muster)) return null;
+          let el = wurzel;
+          for (;;) { const k = Array.from(el.children).find((c) => c.textContent.includes(muster)); if (!k) return el; el = k; }
+        };
         const bar = document.querySelector('.hinweisbalken');
         const r = bar ? bar.getBoundingClientRect() : null;
         return {
@@ -375,6 +481,7 @@ async function pruefeFassung() {
           hinweisAnzahl: document.querySelectorAll('.hinweisbalken').length,
           hinweisOben: r ? Math.round(r.top) : null,
           hinweisSichtbar: !!bar && bar.getClientRects().length > 0 && getComputedStyle(bar).display !== 'none' && getComputedStyle(bar).visibility !== 'hidden',
+          hinweisWirklich: ws(bar, null, true),
           hinweisPosition: bar ? getComputedStyle(bar).position : '',
           hinweisKnoepfe: bar ? bar.querySelectorAll('button, a, [role="button"]').length : -1,
           erstesKind: document.body.firstElementChild === bar,
@@ -384,25 +491,61 @@ async function pruefeFassung() {
             .map((el) => el.getAttribute('src') || el.getAttribute('href') || el.getAttribute('action') || el.getAttribute('srcset'))
             .filter((u) => /^(https?:)?\/\//i.test(u || '')),
           schrift: document.fonts.check('750 20px "Bricolage Konzept"') && Array.from(document.fonts).some((ff) => ff.family.includes('Bricolage Konzept') && ff.status === 'loaded'),
+          schriftText: document.fonts.check('400 16px "Inter Konzept"') && Array.from(document.fonts).some((ff) => ff.family.includes('Inter Konzept') && ff.status === 'loaded'),
+          // 12: Kennzeichnung (innerText enthält nur gerenderten Text, also nichts aus ausgeblendeten Elementen)
+          fussText: (document.querySelector('footer.fuss') || {}).innerText || '',
+          fussQuellen: Array.from(document.querySelectorAll('footer.fuss a')).some((a) => /#quellen$/.test(a.getAttribute('href') || '') && a.innerText.trim() === 'Quellen und Stand' && a.getClientRects().length > 0),
+          codeOhneWerbung: Array.from(document.querySelectorAll('[data-code]')).filter((c) => c.getClientRects().length > 0).filter((c) => {
+            const box = c.closest('.codebox, .code-zeile, li, p'); if (!box) return true;
+            return !Array.from(box.querySelectorAll('.werbung')).some((w) => w.textContent.trim() === 'Werbung' && ws(w) === null);
+          }).map((c) => c.textContent.trim()),
+          garantieOhneVorschlag: Array.from(document.querySelectorAll('#garantie, #garantie-kurz')).filter((g) => g.getClientRects().length > 0).map((g) => {
+            const el = traeger(g, 'Vorschlag der Gruppe'); const grund = el ? ws(el) : 'fehlt';
+            return grund ? '#' + g.id + ' (' + grund + ')' : null;
+          }).filter(Boolean),
+          bewertungOhnePlatzhalter: Array.from(document.querySelectorAll('.bewertung')).filter((k) => k.getClientRects().length > 0 && !Array.from(k.querySelectorAll('.beispiel')).some((x) => x.textContent.trim() === 'Platzhalter' && ws(x) === null)).length,
+          fussWirklich: ['Studentisches Konzept der Gruppe (HS Kaiserslautern)', BEISPIEL_SATZ].map((s) => { const el = traeger(document.querySelector('footer.fuss'), s); const g = el ? ws(el) : 'fehlt'; return g ? s.slice(0, 30) + '… (' + g + ')' : null; }).filter(Boolean),
+          // D09-Nacharbeit: Recherche- und Entwurfssprache im Hauptteil der normalen Ansicht (Quellenliste ausgenommen)
+          entwurfsSprache: (() => {
+            const main = document.querySelector('main'); if (!main) return [];
+            let text = main.innerText;
+            document.querySelectorAll('main .quellen').forEach((q) => { text = text.split(q.innerText).join(' '); });
+            return ['noch nicht belegt', 'Befunde ✔', 'Studentischer Entwurf', 'Hier steht eine echte', 'selbst gerechnet', 'Start der Strecke', 'HOLY-KONZEPT', '(Konzept)', 'Grundpreis offen', 'Im Konzept gilt'].filter((w) => text.includes(w));
+          })(),
+          beispielEtiketten: Array.from(document.querySelectorAll('.nur-anm-i')).length,
+          beispielEtikettenSichtbar: Array.from(document.querySelectorAll('.nur-anm-i')).filter((x) => x.getClientRects().length > 0).length,
           anmText: Array.from(document.querySelectorAll('.anm')).map((a) => ({ ids: (a.getAttribute('data-ids') || '').trim(), text: a.textContent.trim().length })),
           punkte: document.querySelectorAll('.anm-punkt').length,
           links: Array.from(document.querySelectorAll('a[href]')).map((a) => ({ href: a.getAttribute('href'), abs: a.href, ohne: a.hasAttribute('data-ohne-anmerkungen') })),
           // Logo-Bilder: nur außerhalb von fremdbilder/ geprüft (HOLY-Packshots dürfen „Logo-Shaker“ heißen)
           hatHolyLogoBild: !!Array.from(document.querySelectorAll('img[alt*="Logo" i], svg[aria-label*="Logo" i]')).find((e) => !/^fremdbilder\//.test(e.getAttribute('src') || ''))
         };
-      }, HINWEIS);
+      }, [HINWEIS, BEISPIEL_SATZ]);
 
       if (!info.titel) f(ort, 'kein <title>');
       if (info.robots !== 'noindex,nofollow') f(ort, 'meta robots fehlt oder falsch: "' + info.robots + '"');
       if (info.hinweisAnzahl !== 1) f(ort, 'Hinweisbalken ' + info.hinweisAnzahl + '-mal');
       if (info.hinweisText !== HINWEIS) f(ort, 'Hinweisbalken-Text weicht ab: "' + info.hinweisText + '"');
       if (!info.hinweisSichtbar || info.hinweisOben !== 0) f(ort, 'Hinweisbalken nicht sichtbar oben (top=' + info.hinweisOben + ')');
+      if (info.hinweisWirklich) f(ort, 'Hinweisbalken nicht wirklich sichtbar: ' + info.hinweisWirklich);
+      info.fussWirklich.forEach((g) => f(ort, 'Fußsatz nicht wirklich sichtbar: ' + g));
+      if (modus === 'normal' && info.entwurfsSprache.length) f(ort, 'Entwurfs- oder Recherchesprache in der normalen Ansicht: „' + info.entwurfsSprache.join('“, „') + '“');
       if (info.hinweisPosition !== 'sticky' && info.hinweisPosition !== 'fixed') f(ort, 'Hinweisbalken nicht fest (position ' + info.hinweisPosition + ')');
       if (info.hinweisKnoepfe !== 0) f(ort, 'Hinweisbalken enthält Bedienelemente (ausblendbar?)');
       if (!info.erstesKind) f(ort, 'Hinweisbalken ist nicht das erste Element im <body>');
       if (info.formulare || info.eingaben) f(ort, 'Formular oder Eingabefeld gefunden (' + info.formulare + '/' + info.eingaben + ')');
       if (info.externeAttribute.length) f(ort, 'externe Adressen: ' + info.externeAttribute.join(', '));
       if (!info.schrift) f(ort, 'Schrift „Bricolage Konzept“ nicht geladen');
+      if (!info.schriftText) f(ort, 'Schrift „Inter Konzept“ nicht geladen (schriften/inter-*.woff2 fehlt? Dann fällt die Seite still auf die Systemschrift zurück)');
+      // 12: Kennzeichnung im Fuß, an Code, Garantie und Bewertungen – in beiden Modi
+      if (!info.fussText.includes('Studentisches Konzept der Gruppe (HS Kaiserslautern)')) f(ort, 'Fuß ohne sichtbare Kennung „Studentisches Konzept der Gruppe (HS Kaiserslautern)“');
+      if (!info.fussText.includes(BEISPIEL_SATZ)) f(ort, 'Fuß ohne sichtbaren Satz „' + BEISPIEL_SATZ + '“ (Beispiel-Etiketten stehen nur im Präsentationsmodus)');
+      if (!info.fussQuellen) f(ort, 'Fuß ohne sichtbaren Link „Quellen und Stand“ (#quellen)');
+      info.codeOhneWerbung.forEach((c) => f(ort, 'Creator-Code „' + c + '“ ohne sichtbares Etikett „Werbung“ daneben'));
+      info.garantieOhneVorschlag.forEach((g) => f(ort, 'Garantie ' + g + ' ohne wirklich sichtbaren Hinweis „Vorschlag der Gruppe“'));
+      if (info.bewertungOhnePlatzhalter) f(ort, info.bewertungOhnePlatzhalter + ' Bewertungskarte(n) ohne wirklich sichtbares Etikett „Platzhalter“');
+      if (modus === 'normal' && info.beispielEtikettenSichtbar) f(ort, info.beispielEtikettenSichtbar + ' Beispiel-Etiketten (.nur-anm-i) in der normalen Ansicht sichtbar');
+      if (modus === 'anmerkungen' && info.beispielEtiketten && !info.beispielEtikettenSichtbar) f(ort, 'Präsentationsmodus zeigt die Beispiel-Etiketten (.nur-anm-i) nicht');
       if (info.hatHolyLogoBild) f(ort, 'Element mit „Logo“ in alt/aria-label');
 
       // 11: erster Bildschirm (vor dem Nachladen, so wie man die Seite öffnet)
@@ -563,6 +706,65 @@ async function pruefeFassung() {
     const hinweis = await s.page.isVisible('[data-nur-beispielcode]');
     if (hinweis) f(s.ort, 'Beispielcode-Hinweis trotz Code in der Adresse sichtbar');
     meldeKonsole(s); await s.page.close();
+    // Präsentationsmodus ohne Code: Hinweis „Beispielcode …“ sichtbar (normale Ansicht: Satz im Fuß)
+    const s2 = await oeffne(mobil, 'index.html', '?anmerkungen=1', 'index.html ?anmerkungen=1 Beispielcode');
+    if (!(await s2.page.isVisible('[data-nur-beispielcode]'))) f(s2.ort, 'Beispielcode-Hinweis im Präsentationsmodus nicht sichtbar');
+    meldeKonsole(s2); await s2.page.close();
+  }
+  {
+    // Menü-Knopf (390 px): klappt die Hauptnavigation auf, Escape schließt und setzt den Fokus zurück (alle 7 Seiten gleich)
+    for (const [, datei] of SEITEN) {
+      const s = await oeffne(mobil, datei, '', datei + ' Menü');
+      const vorher = await s.page.isVisible('#hauptnav');
+      await s.page.click('.menue-knopf');
+      const offen = { nav: await s.page.isVisible('#hauptnav'), aria: await s.page.getAttribute('.menue-knopf', 'aria-expanded') };
+      await s.page.keyboard.press('Escape');
+      const zu = await s.page.evaluate(() => ({ nav: getComputedStyle(document.getElementById('hauptnav')).display !== 'none', aria: document.querySelector('.menue-knopf').getAttribute('aria-expanded'), fokus: document.activeElement === document.querySelector('.menue-knopf') }));
+      if (vorher || !offen.nav || offen.aria !== 'true' || zu.nav || zu.aria !== 'false' || !zu.fokus) f(s.ort, 'Menü-Knopf: auf/zu fehlerhaft ' + JSON.stringify({ vorher, offen, zu }));
+      meldeKonsole(s); await s.page.close();
+    }
+  }
+  {
+    // 13: Tab-Rundgang (D09-Nacharbeit, Abnahme Technik; WCAG 2.2 SC 2.4.11 „Focus Not Obscured“): Kein fokussiertes Element
+    // darf – auch nur teilweise – unter der Kaufleiste (Produktseite) oder dem schwebenden Knopf „Anmerkungen ansehen“
+    // (Präsentationsmodus) liegen. Mit reduzierter Bewegung, damit der Browser ohne Glätten scrollt.
+    const rundgang = async (kontext, datei, query, ort) => {
+      const s = await oeffne(kontext, datei, query, ort);
+      await s.page.emulateMedia({ reducedMotion: 'reduce' });
+      const gesehen = new Set();
+      const verdeckt = [];
+      for (let i = 0; i < 400; i++) {
+        await s.page.keyboard.press('Tab');
+        const z = await s.page.evaluate(() => new Promise((ok) => requestAnimationFrame(() => requestAnimationFrame(() => {
+          const el = document.activeElement;
+          if (!el || el === document.body) return ok({ ende: true });
+          if (!el.dataset.rundgang) el.dataset.rundgang = String(Math.random());
+          const r = el.getBoundingClientRect();
+          const name = (el.innerText || el.getAttribute('aria-label') || el.tagName).replace(/\s+/g, ' ').trim().slice(0, 50);
+          const decken = [];
+          const leiste = document.querySelector('.kaufleiste');
+          if (leiste && !el.closest('.kaufleiste') && getComputedStyle(leiste).visibility === 'visible' && !leiste.hidden) decken.push(['Kaufleiste', leiste.getBoundingClientRect()]);
+          const knopf = document.querySelector('.anm-start');
+          if (knopf && el !== knopf && !knopf.hidden && knopf.getClientRects().length) decken.push(['Knopf „Anmerkungen ansehen“', knopf.getBoundingClientRect()]);
+          const treffer = decken.filter(([, d]) => r.bottom > d.top + 1 && r.top < d.bottom - 1 && r.right > d.left + 1 && r.left < d.right - 1)
+            .map(([n, d]) => n + ' (Element ' + Math.round(r.top) + '–' + Math.round(r.bottom) + ' px, verdeckt ab ' + Math.round(d.top) + ' px)');
+          ok({ id: el.dataset.rundgang, name, treffer });
+        }))));
+        if (z.ende || gesehen.has(z.id)) break;
+        gesehen.add(z.id);
+        z.treffer.forEach((t) => verdeckt.push('„' + z.name + '“ unter ' + t));
+      }
+      verdeckt.forEach((v) => f(ort, 'Fokus verdeckt: ' + v));
+      if (gesehen.size < 5) f(ort, 'Tab-Rundgang erreicht nur ' + gesehen.size + ' Elemente');
+      meldeKonsole(s); await s.page.close();
+    };
+    await rundgang(mobil, 'produkt.html', '', 'produkt.html Tab-Rundgang 390 px');
+    await rundgang(mobil, 'produkt.html', '?packung=50', 'produkt.html?packung=50 Tab-Rundgang 390 px');
+    const breitTab = await neuerKontext(1280, 800, false);
+    await rundgang(breitTab, 'produkt.html', '', 'produkt.html Tab-Rundgang 1280 px');
+    await rundgang(breitTab, 'warenkorb.html', '?anmerkungen=1', 'warenkorb.html ?anmerkungen=1 Tab-Rundgang 1280 px');
+    await breitTab.close();
+    for (const [, datei] of SEITEN) await rundgang(mobil, datei, '?anmerkungen=1', datei + ' ?anmerkungen=1 Tab-Rundgang 390 px');
   }
   {
     // Produktseite: Packung 50 wählen
@@ -571,12 +773,30 @@ async function pruefeFassung() {
     if (start !== '24,99 €') f(s.ort, 'Startwert Endpreis ' + start + ' statt 24,99 €');
     await s.page.click('.option[data-packung="50"]');
     const werte = { preis: await text(s.page, '[data-p-preis]'), je: await text(s.page, '[data-p-je]'), grund: await text(s.page, '[data-p-grund]'), ende: await text(s.page, '[data-p-ende]') };
-    const soll = { preis: '39,99 €', je: '0,80 € je Portion', grund: 'Grundpreis 114,26 € / kg (aus 7 g je Portion gerechnet)', ende: '44,98 €' };
+    // Grundpreis seit der D09-Nacharbeit ohne Recherche-Satz („aus 7 g je Portion gerechnet“ steht als Fußnote und im Fuß)
+    const soll = { preis: '39,99 €', je: '0,80 € je Portion', grund: '114,26 € / kg', ende: '44,98 €' };
     Object.keys(soll).forEach((k) => { if (werte[k] !== soll[k]) f(s.ort, k + ' = "' + werte[k] + '" statt "' + soll[k] + '"'); });
     const links = await s.page.$$eval('[data-warenkorb-link]', (as) => as.map((a) => a.getAttribute('href')));
     if (!links.every((h) => /packung=50/.test(h))) f(s.ort, 'Warenkorb-Links ohne packung=50: ' + links.join(', '));
     await s.page.click('.option[data-packung="1"]');
     if ((await text(s.page, '[data-p-ende]')) !== '6,98 €') f(s.ort, 'Endpreis 1 Portion nicht 6,98 €');
+    // Kaufleiste (Gestaltung D09): oben unsichtbar, nach dem Kaufknopf sichtbar, Preis und Ziel folgen der Packung
+    await s.page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await s.page.waitForTimeout(150);
+    const leiste = async () => s.page.evaluate(() => {
+      const l = document.querySelector('.kaufleiste'); if (!l) return null;
+      const r = l.getBoundingClientRect();
+      return { sichtbar: !l.hidden && getComputedStyle(l).visibility !== 'hidden' && r.top < window.innerHeight, preis: l.querySelector('[data-p-preis]').textContent.replace(/\s+/g, ' ').trim(), ziel: l.querySelector('a').getAttribute('href'), oben: Math.round(r.top) };
+    });
+    const l0 = await leiste();
+    if (!l0) f(s.ort, 'Kaufleiste fehlt');
+    else {
+      if (l0.sichtbar) f(s.ort, 'Kaufleiste schon im ersten Bildschirm sichtbar (verdeckt Preise)');
+      await s.page.evaluate(() => window.scrollTo({ top: document.querySelector('#koffein').getBoundingClientRect().top + window.scrollY, behavior: 'instant' }));
+      await s.page.waitForTimeout(400);
+      const l1 = await leiste();
+      if (!l1.sichtbar || l1.preis !== '1,99 €' || !/packung=1(&|$)/.test(l1.ziel)) f(s.ort, 'Kaufleiste nach dem Kaufknopf falsch ' + JSON.stringify(l1));
+    }
     meldeKonsole(s); await s.page.close();
   }
   for (const [q, soll, ende] of [['?packung=50', '50', '44,98 €'], ['?packung=10&code=MARCO10', '10', '17,48 €'], ['?packung=quatsch', 'set', '24,99 €']]) {
@@ -584,7 +804,7 @@ async function pruefeFassung() {
     const s = await oeffne(mobil, 'produkt.html', q, 'produkt.html' + q);
     const z = await s.page.evaluate(() => ({
       gewaehlt: Array.from(document.querySelectorAll('.option[aria-checked="true"]')).map((o) => o.getAttribute('data-packung')),
-      ende: document.querySelector('[data-p-ende]').textContent.trim(),
+      ende: document.querySelector('[data-p-ende]').textContent.replace(/\s+/g, ' ').trim(),
       links: Array.from(document.querySelectorAll('[data-warenkorb-link]')).map((a) => a.getAttribute('href')),
       gross: (document.querySelector('[data-intern-held]') || { getAttribute: () => null }).getAttribute('data-intern-aktiv'),
       lage: ['main h1', '.bewertung-kurz', '.optionen .option .preis'].map((sel) => { const el = document.querySelector(sel); return el ? Math.round(el.getBoundingClientRect().top) : null; }),
@@ -642,6 +862,9 @@ async function pruefeFassung() {
     const v = await text(s.page, '[data-k-versand]');
     if (g !== gesamt) f(s.ort, 'Gesamt ' + g + ' statt ' + gesamt);
     if (v !== versand) f(s.ort, 'Versand ' + v + ' statt ' + versand);
+    // erster Bildschirm 390 × 844 je Packung (Folie 08 zeigt ?packung=50): Lieferdatum und Endpreis ganz sichtbar
+    const lage = await s.page.evaluate(() => ['#lieferdatum', '[data-k-gesamt]'].map((sel) => { const el = document.querySelector(sel); return el ? Math.round(el.getBoundingClientRect().bottom) : 9999; }));
+    if (lage.some((u) => u > 844)) f(s.ort, 'erster Bildschirm 390 × 844: Lieferdatum oder Endpreis endet bei ' + lage.join(' / ') + ' px');
     const danke = await s.page.getAttribute('.express a', 'href');
     const p = q.includes('packung=') && !q.includes('quatsch') ? q.split('=')[1] : 'set';
     if (!danke.includes('packung=' + p)) f(s.ort, 'Danke-Link ohne packung=' + p + ': ' + danke);

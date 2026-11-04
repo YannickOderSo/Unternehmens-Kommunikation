@@ -43,7 +43,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 16 | 03.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll, während D06 läuft) | – | Rohprotokoll committet und gepusht |
 | 17 | 03.11.2026 | Yannick | Freigabe: heruntergeladene Bilder dürfen auf GitHub (Pages) veröffentlicht werden | D07 (Workflow) | umgesetzt: Endbilder nach `fremdbilder/` (versioniert, auf GitHub Pages), Rohdownloads bleiben in `intern/` ausgeschlossen; Befunde der D06-Abnahme in D07 |
 | 18 | 03.11.2026 | Yannick | Gründer-Video direkt in die Präsentation (auch online) | D07 (Workflow) | Rückfrage beantwortet: Gründer mit öffentlicher Online-Version einverstanden; Video nach `praesentation/video/` (versioniert), Folie 09 spielt es online ab |
-| 19 | 03.11.2026 | Yannick | Video läuft; die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein Konzept | D09 (Workflow) | *läuft:* 3 Gestaltungsrichtungen, Jury, Umbau aller 7 Seiten, Abnahme, Nacharbeit |
+| 19 | 03.11.2026 | Yannick | Video läuft; die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein Konzept | D09 (Workflow) | Alle 7 Seiten im Shop-Look (Sieger „Kampagne“); Hinweisleiste, `noindex`, keine Formulare, Kennzeichnung bleiben; Folie 08 mit neuen Bildschirmfotos; Prüfskripte 0 Fehler |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -403,8 +403,29 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   „Werbung“ und „Symbolbild“; Erklärtexte, Skizzen und „Beispielwert“-Etiketten wandern in den Präsentationsmodus.
   Workflow D09: drei Gestaltungsrichtungen (HOLY-nah, Shop-Standard, Kampagne) in getrennten Kopien, zwei Jurys,
   Umbau aller 7 Seiten samt Prüfskript und Folie-08-Bildern, zwei Abnahmen, Nacharbeit.
-- **Ergebnis:** *läuft*
-- **Dateien:** `ki-nachweis/workflows/2026-11-03_fs2-webseite-echt.js`; weitere folgen
+- **Ergebnis (04.11.2026):** Sieger nach Jury-Punkten „Kampagne“ (97; HOLY-nah 95, Shop-Standard 95). Alle 7 Seiten
+  haben jetzt einheitlichen Shop-Kopf (Menü, Wortmarke, Konto, Warenkorb), Sortenfarben (Pink, Lila), Packungs-Karten,
+  Bewertungsband, Warenkorb und Bestellbestätigung wie im Shop, Kundenkonto für den Squad, Händlerfinder als
+  Marktkarten. Weg aus der normalen Ansicht: „KONZEPT“ unter der Wortmarke, „(Konzept)“ in Knöpfen, Skizzen,
+  Erklärsätze, „Beispielwert“-Etiketten, Befund-IDs und Abrufstempel im Text, Bildunterschriften – sie stehen im
+  Präsentationsmodus (`?anmerkungen=1`) bzw. gesammelt im Fuß. Immer sichtbar bleiben: Hinweisleiste im Wortlaut (jetzt
+  gelbe Ankündigungsleiste), „Werbung“ am Creator-Code, „Symbolbild“ am Bild, „Platzhalter“ an den Bewertungen,
+  „Vorschlag der Gruppe“ an jeder Garantie, Fuß mit Kennung, Bildnachweisen, Rechtestatus und Beispielwert-Satz;
+  `noindex`, keine Formulare, keine externen Anfragen. Neue Schrift Inter (lokal, OFL, aus der Präsentation kopiert).
+  Bilder: keine neuen Downloads; fünf Fremdbilder in höherer Auflösung neu aus vorhandenen Rohdateien exportiert, fünf
+  neue Registereinträge auf vorhandene Dateien. Folie 08: neue Bildschirmfotos (Danke-Seite jetzt von oben mit
+  Squad-Karte), Streifen gegen angeschnittene Hinweisleiste, Notizen nachgezogen. Zur Entscheidung der Gruppe:
+  Beispielwert-Etiketten nur im Präsentationsmodus (Abweichung, vermerkt in `gestaltungsplan.md` 7.3), graue
+  Skelettzeilen statt Bewertungstexten, Bestellnummer „Nr. 100248“, Standardpackung der Produktseite (weiter Starter
+  Set, Links auf die 50er-Dose), neue Shop-Texte, gelbe statt schwarzer Hinweisleiste.
+- **Herkunft:** Gestaltung und Texte aus dem Modellwissen; alle Zahlen standen schon auf der Seite bzw. im Dossier
+  (Befund-IDs im Code); keine Websuche, keine neuen Werbeaussagen.
+- **Dateien:** `fallstudie-2-customer-journey/konzept-website/` (alle 7 Seiten, `assets/konzept.css`, `assets/konzept.js`,
+  `fremdbilder/register.js` und 5 Bilder, `schriften/` mit Inter und Lizenz, `werkzeuge/pruefen.mjs`,
+  `werkzeuge/folie08-bilder.mjs`, `README.md`, `_vorschau/`), `fallstudie-2-customer-journey/gestaltungsplan.md` (7.3),
+  `fallstudie-2-customer-journey/praesentation/` (`bilder/` und `fremdbilder/konzept-0n-….png`,
+  `fremdbilder/register.js`, `index.html` Folie 08, `css/folien/08-mockups.css`, `QUELLEN.md`, `AUTOREN.md` §13),
+  `ki-nachweis/workflows/2026-11-03_fs2-webseite-echt.js`
 - **Unteragenten:** D09
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -425,7 +446,7 @@ Auftrag (im Workflow-Skript).
 | D06 | 03.11.2026 | 15 | Workflow „fs2-bilder“ (8 Unteragenten, 3 mit Netzzugriff) | HOLY-Bilder und Screenshots beschaffen, auswählen und zuschneiden, intern in Präsentation und Konzept-Webseite einbauen, Abnahme | 281 Kandidaten, 64 Dateien eingebaut; Abnahme: 8 mittlere, 15 niedrige Befunde | Journal gelesen, Kontaktbögen angesehen (Datenschutz), beide Prüfskripte nach dem Umzug: 0 Fehler; Befunde an D07 |
 | D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | alle D06-Befunde umgesetzt (Folie 07 nur Logos, B6 ohne Platz); Doku umgestellt; Abnahme: 6 mittlere, 13 niedrige Befunde | Journal gelesen; beide Prüfskripte selbst: 0 Fehler (38 Bilder); Endzustände 01–09 angesehen; Befunde an D08 |
 | D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | W1–W10 und P1–P11 umgesetzt; Abnahme: 0 mittlere, 7 niedrige Befunde | Journal gelesen; 7 Restbefunde selbst behoben; Prüfskripte (hell, dunkel, Webseite): 0 Fehler; Volltextsuche Vorname; Folien und Webseite angesehen |
-| D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | *läuft* | – |
+| D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | Sieger „Kampagne“ auf allen 7 Seiten; Abnahmen 3 hohe, 11 mittlere, 11 niedrige Befunde, fast alle umgesetzt | Claude: beide Prüfskripte selbst (0 Fehler), Volltextsuche Sicherheitsmerkmale, Sichtprüfung 390/1280 px und Folie 08; alt-Texte Folie 08 selbst eingetragen |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -642,8 +663,25 @@ Auftrag (im Workflow-Skript).
   Nacharbeit. Vorgaben: Hinweistext, `noindex`, keine Formulare/externen Anfragen, Kennzeichnung bleiben; keine neuen
   Fakten ohne Befund-ID; keine neuen Downloads.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-03_fs2-webseite-echt.js`](workflows/2026-11-03_fs2-webseite-echt.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** 9 Unteragenten, alle mit Ergebnis. Jury: Kampagne 97, HOLY-nah 95, Shop-Standard 95 Punkte (zwei
+  Jurys, je 6 Kriterien). Bauer übernahm den Sieger mit Elementen der anderen Entwürfe für alle 7 Seiten und erweiterte
+  `pruefen.mjs` (nichts abgeschwächt; Gegenprobe mit 7 eingebauten Fehlern). Abnahme Gestaltung/Realismus: 3 hohe,
+  8 mittlere, 6 niedrige Befunde (u. a. Blindtext in Bewertungen, „Grundpreis offen“ am Preis, Fuß von 2–2,5
+  Handy-Bildschirmen, Abrufstempel im Text, Folie-08-Bild der Danke-Seite). Abnahme Technik/Ehrlichkeit: keine hohen,
+  3 mittlere, 5 niedrige Befunde (Sichtbarkeitsprüfung zu schwach, Kaufleiste verdeckt Fokus, Inter-Dateien
+  unversioniert, falsche Kontrastangaben, Zitat nicht wörtlich). Nacharbeit: alle Befunde umgesetzt außer Kopf im
+  Folie-08-Bild 03 (bräuchte klebenden Kopf) und Standardpackung (Gruppenentscheidung); `pruefen.mjs` prüft jetzt
+  echte Sichtbarkeit (Deckkraft, Farbe, Größe, Verdeckung) und einen Tab-Rundgang, 4 Mutationen werden erkannt.
+  Quellen: Referenz-Bildschirmfotos von HOLYs Shop aus `intern/` (Abruf 03.11.2026) und Dossier-IDs; keine Websuche.
+- **Wie Claude das Ergebnis geprüft hat:** Journal und alle Rückgaben gelesen. Selbst ausgeführt:
+  `konzept-website/werkzeuge/pruefen.mjs` (beide Fassungen, GitHub-Pages-Probe) – „Alle Prüfungen bestanden“,
+  0 externe Anfragen, keine Warnung (nach `git add` der Inter-Dateien); `praesentation/werkzeuge/pruefen.mjs index.html
+  --schritte` – 0 Fehler, 17 Warnungen (wie vorher), 38 Bilder eingesetzt. Per Volltextsuche: `noindex,nofollow` und
+  kein `form`/`input`/`textarea`/`select` auf allen 7 Seiten, Hinweistext im Wortlaut. Angesehen: erste Bildschirme
+  aller 7 Seiten bei 390 px, Start-, Produkt-, Warenkorb- und Danke-Seite bei 1280 px, Fuß, Bewertungen, die fünf
+  Folie-08-Bilder und Folie 08 bei 1920 × 1080. Die alt-Texte von `konzept-01` … `-05` in
+  `praesentation/fremdbilder/register.js` (den die Agenten nicht ändern durften) selbst nach dem Bildinhalt eingetragen,
+  dazu Datum, Motiv, Notiz „Identität“ und AUTOREN §13.
 
 ---
 

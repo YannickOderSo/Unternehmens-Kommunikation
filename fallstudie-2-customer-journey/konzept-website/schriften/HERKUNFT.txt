@@ -1,20 +1,26 @@
 Schriften der Konzept-Webseite (Fallstudie 2)
 =============================================
-Stand 03.11.2026. Kopiert aus dem Repository, nicht neu heruntergeladen:
-fallstudie-1-brand-persona/praesentation/schriften/ (dort beschrieben in HERKUNFT.txt).
+Stand 03.11.2026. Kopiert aus dem Repository, nicht neu heruntergeladen: Bricolage Grotesque aus
+fallstudie-1-brand-persona/praesentation/schriften/, Inter aus fallstudie-2-customer-journey/praesentation/schriften/
+(dort jeweils beschrieben in HERKUNFT.txt). Eingebunden per @font-face in assets/konzept.css; pruefen.mjs prüft, dass
+beide Schriften laden.
 
-Bricolage Grotesque (variabel, wght 200–800, wdth 75–100) – Titel, Preise, Wortmarke „HOLY“ als schlichter Text
+Bricolage Grotesque (variabel, wght 200–800, wdth 75–100) – Überschriften, Preise und Zahlen (Laufweite 75 %, Gewicht 800),
+  Hinweisleiste oben (Laufweite 82 %)
   bricolage-grotesque-latin-standard-normal.woff2
   bricolage-grotesque-latin-ext-standard-normal.woff2
   Herkunft: npm-Paket @fontsource-variable/bricolage-grotesque, Version 5.3.0 (Fontsource, Originalquelle Google Fonts)
   Original: github.com/ateliertriay/bricolage
   Lizenz: SIL Open Font License 1.1, Lizenztext LIZENZ-bricolage-grotesque-OFL.txt
 
-Fließtext: Libre Franklin (laut Gestaltungsplan Abschnitt 3.4) liegt noch nicht im Repository (Meilenstein M5).
-Bis dahin nennt assets/konzept.css „Libre Franklin“ nur als installierte Systemschrift und fällt sonst auf die
-Systemschrift zurück (system-ui, Segoe UI, Roboto, Arial). Es gibt kein @font-face für Libre Franklin, damit keine
-fehlende Datei angefragt wird. Wenn die Datei samt Lizenz kopiert ist: @font-face in assets/konzept.css ergänzen
-und diesen Absatz anpassen.
+Inter (variabel, wght 100–900, opsz 14–32; nur normal, keine Kursive) – Fließtext, Knöpfe, Preise im Text
+  inter-latin-opsz-normal.woff2
+  inter-latin-ext-opsz-normal.woff2
+  Kopiert am 03.11.2026 (Gestaltung „Kampagnen-Look“, Siegerentwurf D09) aus fallstudie-2-customer-journey/praesentation/schriften/
+  (unverändert, nicht neu heruntergeladen; dort beschrieben in HERKUNFT.txt).
+  Herkunft: npm-Paket @fontsource-variable/inter, Version 5.3.0 (Fontsource, Originalquelle Google Fonts)
+  Lizenz: SIL Open Font License 1.1, Lizenztext LIZENZ-inter-OFL.txt
+  Ersatz für Libre Franklin (Gestaltungsplan Abschnitt 3.4), die nicht im Repository liegt (Meilenstein M5).
 
 Nicht eingebunden: HOLYs eigene Schriften (ObviouslyNarrow, PP Agrandir, Extra Chunk Please), weil kommerziell
 (Dossier FS2 ✔ G01, ✎ G03, ✎ G04). Die Webseite lädt keine Schrift aus dem Internet.

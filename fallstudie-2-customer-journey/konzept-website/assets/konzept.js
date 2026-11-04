@@ -64,7 +64,8 @@
     if (!s) return '';
     return String(s).toUpperCase().replace(/[^A-Z0-9-]/g, '').slice(0, 20);
   }
-  function euro(n) { return n.toFixed(2).replace('.', ',') + ' €'; }
+  /* geschütztes Leerzeichen vor €: „4,99 €“ bricht nicht zwischen Zahl und Einheit um (D09-Nacharbeit) */
+  function euro(n) { return n.toFixed(2).replace('.', ',') + '\u00a0€'; }
   /* kaufmännisch auf Cent runden; der Zwischenschritt fängt Gleitkomma-Reste ab (24,99 € / 14 = 1,785 → 1,79 €) */
   function runde(n) { return Math.round(Math.round(n * 1e6) / 1e4) / 100; }
   function datum(d) {
@@ -78,8 +79,17 @@
     var p = params.get('packung');
     return Object.prototype.hasOwnProperty.call(PACKUNGEN, p) ? p : 'set';
   }
-  function grundText(d) {
-    return d.gramm ? 'Grundpreis ' + euro(runde(d.preis / (d.gramm / 1000))) + ' / kg (aus 7 g je Portion gerechnet)' : 'Grundpreis offen: Füllmenge des Sets noch nicht belegt';
+  /* Grundpreis je kg (✔ R98), gerechnet aus 7 g je Portion (✔ S92) – nur, wenn die Füllmenge belegt ist. Beim Starter Set
+     fehlt sie im Dossier: Dann bleibt die Grundpreis-Zeile aus, und nur im Präsentationsmodus steht „Grundpreis offen …“
+     ([data-p-grund-offen], [data-k-grund-offen] mit .nur-anm-i). Der Hinweis „aus 7 g je Portion gerechnet“ steht als
+     Fußnote unter den Packungen und im Fuß jeder Seite (D09-Nacharbeit, Abnahme Gestaltung: kein Recherche-Satz am Preis). */
+  function grundpreis(d) {
+    return d.gramm ? euro(runde(d.preis / (d.gramm / 1000))) + '\u00a0/\u00a0kg' : '';
+  }
+  function zeigeGrundpreis(d, vorsilbe) {
+    setzeText('[data-' + vorsilbe + '-grund]', grundpreis(d));
+    document.querySelectorAll('[data-' + vorsilbe + '-grund-zeile]').forEach(function (el) { el.hidden = !d.gramm; });
+    document.querySelectorAll('[data-' + vorsilbe + '-grund-offen]').forEach(function (el) { el.hidden = !!d.gramm; });
   }
   /* Shaker dabei? Beim Starter Set immer, bei der 50er-Dose nur zur ersten Dose – nicht beim Nachkauf */
   function shakerDabei(p) {
@@ -89,6 +99,28 @@
   function versandFuer(p, zwischensumme) {
     if (PACKUNGEN[p].versandfrei) return 0;
     return zwischensumme >= VERSANDFREI_AB ? 0 : VERSAND;
+  }
+
+  /* ---------- Kopf: Menü-Knopf (Gestaltung D09, alle 7 Seiten) ----------
+     Auf schmalen Bildschirmen klappt der Knopf die Hauptnavigation auf und zu (ändert nur die Anzeige, sendet nichts).
+     Ohne Skript bleibt der Knopf verborgen und die Navigation offen sichtbar (CSS: html:not(.js)). */
+  document.documentElement.classList.add('js');
+  var menueKnopf = document.querySelector('.menue-knopf');
+  var kopfLeiste = menueKnopf ? menueKnopf.closest('.kopf') : null;
+  if (menueKnopf && kopfLeiste) {
+    menueKnopf.hidden = false;
+    menueKnopf.addEventListener('click', function () {
+      var offen = menueKnopf.getAttribute('aria-expanded') !== 'true';
+      menueKnopf.setAttribute('aria-expanded', offen ? 'true' : 'false');
+      kopfLeiste.classList.toggle('offen', offen);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && kopfLeiste.classList.contains('offen')) {
+        menueKnopf.setAttribute('aria-expanded', 'false');
+        kopfLeiste.classList.remove('offen');
+        menueKnopf.focus();
+      }
+    });
   }
 
   /* ---------- Code anzeigen (alle Seiten) ---------- */
@@ -217,6 +249,16 @@
     var nachweisVorher = nachweis ? nachweis.textContent : '';
     if (nachweis) nachweis.textContent = unterschrift(e);
 
+    /* Symbolbild (Nachweis beginnt mit „Symbolbild · “): kleines Etikett „Symbolbild“ am Bild, weil die Bildunterschrift
+       seit der Gestaltung D09 nicht mehr unter jedem Bild steht (voller Nachweis im Fuß; pruefen.mjs prüft das Etikett) */
+    var etikett = null;
+    if (/^Symbolbild/.test(String(e.nachweis || ''))) {
+      etikett = document.createElement('span');
+      etikett.className = 'symbol-etikett';
+      etikett.textContent = 'Symbolbild';
+      platz.classList.add('ist-symbolbild');
+    }
+
     var img = document.createElement('img');
     img.className = 'intern-bild';
     img.decoding = 'async';
@@ -224,6 +266,8 @@
     if (ziel.getBoundingClientRect().top > window.innerHeight) img.loading = 'lazy';
     img.addEventListener('error', function () {
       if (img.parentNode) img.parentNode.removeChild(img);
+      if (etikett && etikett.parentNode) etikett.parentNode.removeChild(etikett);
+      platz.classList.remove('ist-symbolbild');
       platz.classList.remove('mit-bild');
       platz.removeAttribute('data-intern-aktiv');
       platz.hidden = vorher.platz;
@@ -243,6 +287,7 @@
     });
     setzeBild(img, e, platz.hasAttribute('data-intern-deko'));
     ziel.appendChild(img);
+    if (etikett) ziel.appendChild(etikett);
   }
   if (BILDER) document.querySelectorAll('[data-intern]').forEach(bauBildEin);
   zeigeBildnachweise();
@@ -294,8 +339,8 @@
       setzeText('[data-p-name]', w.name);
       setzeText('[data-p-preis]', euro(w.preis));
       setzeText('[data-p-je]', euro(runde(w.preis / w.portionen)) + ' je ' + w.einheit);
-      setzeText('[data-p-grund]', grundText(w));
-      setzeText('[data-p-versand]', vs === 0 ? (w.versandfrei ? 'Gratisversand' : 'versandkostenfrei') : '+ ' + euro(vs) + ' Versand (ab 49 € frei)');
+      zeigeGrundpreis(w, 'p');
+      setzeText('[data-p-versand]', vs === 0 ? (w.versandfrei ? 'Gratisversand' : 'versandkostenfrei') : '+\u00a0' + euro(vs) + ' Versand (ab 49\u00a0€ frei)');
       setzeText('[data-p-ende]', euro(runde(w.preis + vs)));
       if (heldFolgtPackung) heldFolgtPackung(wahl);
       warenkorbLinks.forEach(function (a) {
@@ -320,6 +365,31 @@
     waehle(start ? start.getAttribute('data-packung') : 'set');
   }
 
+  /* ---------- Produktseite: Kaufleiste (Übernahme aus dem Entwurf „Shop-Standard“) ----------
+     Erscheint erst, wenn der Kaufknopf oben aus dem Bild gescrollt ist (html.kaufleiste-an); so berührt sie weder die
+     Hinweisleiste noch den ersten Bildschirm. Name, Preis und Ziel folgen der Packung über data-p-* und
+     data-warenkorb-link (waehle). Geprüft wird beim Scrollen (höchstens einmal je Bild), nicht mit IntersectionObserver:
+     der meldet nichts, wenn ein Sprung (Anker-Link) am Knopf vorbeiführt. Ohne Skript bleibt sie verborgen. Ändert nur
+     die Anzeige. */
+  var kaufleiste = document.querySelector('.kaufleiste');
+  var kaufKnopf = document.querySelector('.kauf-knoepfe .knopf');
+  if (kaufleiste && kaufKnopf) {
+    kaufleiste.hidden = false;
+    var leisteGeplant = false;
+    var pruefeLeiste = function () {
+      leisteGeplant = false;
+      document.documentElement.classList.toggle('kaufleiste-an', kaufKnopf.getBoundingClientRect().bottom < 0);
+    };
+    var planeLeiste = function () {
+      if (leisteGeplant) return;
+      leisteGeplant = true;
+      (window.requestAnimationFrame || setTimeout)(pruefeLeiste);
+    };
+    window.addEventListener('scroll', planeLeiste, { passive: true });
+    window.addEventListener('resize', planeLeiste);
+    pruefeLeiste();
+  }
+
   /* ---------- Bestellung aus ?packung= (Standard: Starter Set) – Warenkorb, Danke-Seite ---------- */
   var p = packungAusAdresse();
   var d = PACKUNGEN[p];
@@ -336,12 +406,23 @@
     /* beim Nachkauf der 50er-Dose ohne „Shaker gratis zur ersten Dose“ (✔ T22) */
     setzeText('[data-k-zusatz]', (d.zusatzNachkauf && !shakerDabei(p) ? d.zusatzNachkauf : d.zusatz) + ' · ' + euro(runde(d.preis / d.portionen)) + ' je ' + d.einheit);
     setzeText('[data-k-preis]', euro(d.preis));
-    setzeText('[data-k-grund]', grundText(d));
-    setzeText('[data-k-rabatt]', '− ' + euro(rabatt));
-    setzeText('[data-k-versand]', versand === 0 ? '0,00 €' : euro(versand));
-    setzeText('[data-k-versandtext]', d.versandfrei ? 'Gratisversand beim Starter Set' : (versand === 0 ? 'versandkostenfrei ab 49 €' : 'Standardversand DE · ab 49 € frei'));
+    zeigeGrundpreis(d, 'k');
+    setzeText('[data-k-rabatt]', '−\u00a0' + euro(rabatt));
+    setzeText('[data-k-versand]', versand === 0 ? '0,00\u00a0€' : euro(versand));
+    setzeText('[data-k-versandtext]', d.versandfrei ? 'Gratisversand beim Starter Set' : (versand === 0 ? 'versandkostenfrei ab 49\u00a0€' : 'Standardversand DE · ab 49\u00a0€ frei'));
     setzeText('[data-k-gesamt]', euro(gesamt));
     document.querySelectorAll('[data-k-nur-dose]').forEach(function (el) { el.hidden = (p === 'set'); });
+    /* Versandkosten-Leiste wie in HOLYs Warenkorb (Gestaltung D09): Versand DE 4,99 €, frei ab 49 € (✔ B12), gerechnet mit
+       derselben Zwischensumme nach Code wie die Zeile „Versand“; Starter Set immer Gratisversand (✔ T20) */
+    document.querySelectorAll('[data-k-frei]').forEach(function (leiste) {
+      var anteil = (d.versandfrei || versand === 0) ? 1 : Math.min(1, zwischen / VERSANDFREI_AB);
+      var text = d.versandfrei ? 'Gratisversand beim Starter Set'
+        : (versand === 0 ? 'Versandkostenfrei – ab 49\u00a0€ zahlst du keinen Versand'
+          : 'Noch ' + euro(runde(VERSANDFREI_AB - zwischen)) + ' bis zum Gratisversand (ab 49\u00a0€)');
+      setzeText('[data-k-frei-text]', text, leiste);
+      var fuell = leiste.querySelector('.fuell');
+      if (fuell) fuell.style.width = Math.round(anteil * 100) + '%';
+    });
   }
   setzeText('[data-liefertag]', datum(LIEFERTAG));
   /* Danke-Seite: „Shaker auspacken“ nur, wenn die Packung laut dieser Seite einen Shaker enthält (shakerDabei);
@@ -372,7 +453,7 @@
       opt.addEventListener('click', function () {
         var neu = opt.getAttribute('aria-pressed') !== 'true';
         opt.setAttribute('aria-pressed', neu ? 'true' : 'false');
-        opt.textContent = neu ? 'Erinnerung ist an (Konzept)' : 'Ja, erinnere mich (Konzept)';
+        opt.textContent = neu ? 'Erinnerung ist an' : 'Ja, erinnere mich';
         optText.hidden = !neu;
       });
     }
