@@ -46,6 +46,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 19 | 03.11.2026 | Yannick | Video läuft; die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein Konzept | D09 (Workflow) | Alle 7 Seiten im Shop-Look (Sieger „Kampagne“); Hinweisleiste, `noindex`, keine Formulare, Kennzeichnung bleiben; Folie 08 mit neuen Bildschirmfotos; Prüfskripte 0 Fehler |
 | 20 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D09 „fs2-webseite-echt“ abgeschlossen | – | Ergebnisse gelesen und selbst geprüft, Abschluss in Eintrag 19 und D09 |
 | 21 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll) | – | Rohprotokoll committet und gepusht |
+| 22 | 04.11.2026 | Yannick | D09 passt; als Nächstes ein kleines, realistisch wirkendes Werbevideo für HOLY im Stil des Konzepts, Stimme über ElevenLabs | D10 (Workflow) | *läuft:* 3 Drehbücher, Jury, Produktion, Abnahme, Nacharbeit |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -449,6 +450,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   gepusht.
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 22 – 04.11.2026 – Yannick
+
+> Ja das passt als nächstes müsste ich das du ein kleines Werbevideo machst für Holy aber im Style unserer Konzeptes. Für die Stimme habe ich ein API Key von Elevenlabs in der Cloudsitzung hinterlegt. Mache ein kleines Video welches realistisch aussieht und den Geist des Konzeptes wiedergibt
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Freigabe von D09 vermerkt. ElevenLabs ist über die Sitzung erreichbar (der Schlüssel wird vom
+  Netzwerk-Proxy eingesetzt und war für Claude nicht sichtbar). Festgelegt: Hochformat 9:16 (wie ein Creator-Short,
+  passend zu Ü1), etwa 20–30 Sekunden, deutsche Sprecherstimme aus den vorgefertigten bzw. synthetisch erzeugten
+  Stimmen von ElevenLabs – **keine geklonte Stimme** und nichts aus der Videobotschaft des Gründers. Bild aus den
+  veröffentlichten HOLY-Produktbildern und echten Bildschirmaufnahmen der Konzept-Webseite. Im Video bleiben sichtbar:
+  „Studentisches Konzept … keine Werbung der HOLY Softdrinks GmbH“, „Stimme KI-generiert“, Altershinweis; Aussagen nur
+  mit Befund-ID. Workflow D10: drei Drehbücher, Jury, Produktion, zwei Abnahmen, Nacharbeit.
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/workflows/2026-11-04_fs2-werbevideo.js`; weitere folgen
+- **Unteragenten:** D10
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -467,6 +485,7 @@ Auftrag (im Workflow-Skript).
 | D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | alle D06-Befunde umgesetzt (Folie 07 nur Logos, B6 ohne Platz); Doku umgestellt; Abnahme: 6 mittlere, 13 niedrige Befunde | Journal gelesen; beide Prüfskripte selbst: 0 Fehler (38 Bilder); Endzustände 01–09 angesehen; Befunde an D08 |
 | D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | W1–W10 und P1–P11 umgesetzt; Abnahme: 0 mittlere, 7 niedrige Befunde | Journal gelesen; 7 Restbefunde selbst behoben; Prüfskripte (hell, dunkel, Webseite): 0 Fehler; Volltextsuche Vorname; Folien und Webseite angesehen |
 | D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | Sieger „Kampagne“ auf allen 7 Seiten; Abnahmen 3 hohe, 11 mittlere, 11 niedrige Befunde, fast alle umgesetzt | Claude: beide Prüfskripte selbst (0 Fehler), Volltextsuche Sicherheitsmerkmale, Sichtprüfung 390/1280 px und Folie 08; alt-Texte Folie 08 selbst eingetragen |
+| D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -702,6 +721,18 @@ Auftrag (im Workflow-Skript).
   Folie-08-Bilder und Folie 08 bei 1920 × 1080. Die alt-Texte von `konzept-01` … `-05` in
   `praesentation/fremdbilder/register.js` (den die Agenten nicht ändern durften) selbst nach dem Bildinhalt eingetragen,
   dazu Datum, Motiv, Notiz „Identität“ und AUTOREN §13.
+
+### D10 – 04.11.2026 – ausgelöst durch Prompt 22
+
+- **Art:** Workflow „fs2-werbevideo“: drei Drehbuch-Autoren parallel (Richtungen „Der Weg aus dem Video“, „Zahlen statt
+  Versprechen“, „Erst nachlesen, dann entscheiden“; je Drehbuch, Storyboard-Standbilder und eine kurze Hörprobe), zwei
+  Jury-Agenten (Wirkung; Ehrlichkeit/Recht/Machbarkeit), eine Produktion (Stimme über ElevenLabs, animierte Bühne per
+  Playwright, Schnitt und Ton mit ffmpeg), zwei Abnahmen, eine Nacharbeit. Vorgaben: keine geklonte Stimme, nichts aus der
+  Videobotschaft des Gründers, nur veröffentlichte HOLY-Bilder, Aussagen nur mit Befund-ID, Pflichtkennzeichnungen im
+  Bild, höchstens 8.000 Zeichen Sprachausgabe.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-04_fs2-werbevideo.js`](workflows/2026-11-04_fs2-werbevideo.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
