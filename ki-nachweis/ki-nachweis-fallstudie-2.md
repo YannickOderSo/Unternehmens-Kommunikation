@@ -48,6 +48,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 21 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll) | – | Rohprotokoll committet und gepusht |
 | 22 | 04.11.2026 | Yannick | D09 passt; als Nächstes ein kleines, realistisch wirkendes Werbevideo für HOLY im Stil des Konzepts, Stimme über ElevenLabs | D10 (Workflow) | Spot „Zahlen statt Versprechen“ (26,8 s, 9:16, Stimme „simpleact-design-b“, Musik und Geräusche von ElevenLabs) in `werbevideo/`; Pflichtkennzeichnung durchgehend |
 | 23 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Container-Neustart: Workflow D10 abgebrochen; später Meldung „D10 abgeschlossen“ | – | D10 mit gespeicherten Zwischenergebnissen fortgesetzt; Ergebnis geprüft (Eintrag 22) |
+| 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | *läuft:* Recherche, 3 emotionale Konzepte, Jury, Produktion, Abnahme, Nacharbeit |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -481,6 +482,24 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** D10
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 24 – 04.11.2026 – Yannick
+
+> Der Spot ist langweilig gestaltet, nur fakten keine Emotionen. Wie wird dadurch die Zielgruppe angesprochen. Es nicht aufregend. Orientiere dich an anderen größeren Firmen wie die solche Kurzen Spots machen
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Kritik angenommen: Der Spot D10 setzt die Konzeptidee „Zahlen statt Versprechen“ zu wörtlich um und
+  spricht die Zielgruppe (Persona Marco, 28, und HOLYs junge Community) nicht emotional an. Neuer Workflow D11: zuerst
+  Recherche mit Websuche (wie große Marken kurze Spots bauen – Aufhänger in den ersten Sekunden, Geschichte, Gefühl,
+  Musik und Schnitt; was die Zielgruppe anspricht), dann drei emotionale Konzepte mit Storyboard und Hörprobe, Jury,
+  Produktion, zwei Abnahmen, Nacharbeit. Belegte Zahlen höchstens als Nebensache; weiter keine gesundheits- oder
+  leistungsbezogenen Versprechen, Pflichtkennzeichnung bleibt, keine Klonstimme. Zusätzlich erlaubt: HOLYs eigene
+  Lifestyle-Werbefotos mit Models (nicht Gründer, Team, Creator oder Community-Mitglieder). Der Spot D10 bleibt als
+  Vorfassung erhalten.
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/workflows/2026-11-04_fs2-werbevideo-emotion.js`; weitere folgen
+- **Unteragenten:** D11
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -500,6 +519,7 @@ Auftrag (im Workflow-Skript).
 | D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | W1–W10 und P1–P11 umgesetzt; Abnahme: 0 mittlere, 7 niedrige Befunde | Journal gelesen; 7 Restbefunde selbst behoben; Prüfskripte (hell, dunkel, Webseite): 0 Fehler; Volltextsuche Vorname; Folien und Webseite angesehen |
 | D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | Sieger „Kampagne“ auf allen 7 Seiten; Abnahmen 3 hohe, 11 mittlere, 11 niedrige Befunde, fast alle umgesetzt | Claude: beide Prüfskripte selbst (0 Fehler), Volltextsuche Sicherheitsmerkmale, Sichtprüfung 390/1280 px und Folie 08; alt-Texte Folie 08 selbst eingetragen |
 | D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
+| D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -757,6 +777,18 @@ Auftrag (im Workflow-Skript).
   Volltextsuche in `werbevideo/` (ohne `intern/`) nach Schlüsseln, der Klonstimmen-ID und Modellnamen – kein Treffer;
   `intern/` per `.gitignore` ausgeschlossen. Das Video selbst nicht angehört (kein Ton in der Sitzung); die Aussprache
   hat der Unteragent per Speech-to-Text der eigenen Tonspur geprüft.
+
+### D11 – 04.11.2026 – ausgelöst durch Prompt 24
+
+- **Art:** Workflow „fs2-werbevideo-emotion“: zwei Recherche-Agenten mit Websuche (Kurzspots großer Marken; Zielgruppe
+  und Werberegeln für Energy-Drinks), drei Konzept-Agenten (Richtungen „Ritual“, „Squad“, „Humor“; je Drehbuch,
+  Storyboard, Bewegungstest, Hörprobe), zwei Jury-Agenten (Kreativ; Ehrlichkeit/Recht/Machbarkeit), eine Produktion,
+  zwei Abnahmen, eine Nacharbeit. Vorgaben wie D10, dazu: HOLYs Lifestyle-Werbefotos mit Models erlaubt (nicht Gründer,
+  Team, Creator, Community), Voice Design und eleven-v3-Tags erlaubt, keine Klonstimme, höchstens 10.000 Zeichen
+  Sprache; Vorfassung D10 nach `werbevideo/vorfassung-d10/`.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-04_fs2-werbevideo-emotion.js`](workflows/2026-11-04_fs2-werbevideo-emotion.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
