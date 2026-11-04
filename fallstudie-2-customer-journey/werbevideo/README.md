@@ -1,14 +1,17 @@
-<!-- Erzeugt am 04.11.2026 im Workflow D10 (Werbevideo, Schritte „Produktion“ und „Nacharbeit nach der Abnahme“), Auftrag
-Yannick Heisler (KI-Nachweis FS2 Nr. 22). KI-gestützt erstellt, Prüfung durch die Gruppe offen. Keine neue Websuche in diesen
-Schritten: Fakten aus der Konzept-Webseite und dem Recherche-Dossier FS2 (Befund-IDs); Gestaltung, Schnitt und Texte sind
-Entwürfe (Modellwissen über Werbefilm, nicht belegt). -->
+<!-- Erzeugt am 04.11.2026 im Workflow D11 (Werbevideo mit Emotion, Schritt „Produktion“), Auftrag Yannick Heisler:
+„Der Spot ist langweilig gestaltet, nur fakten keine Emotionen. Wie wird dadurch die Zielgruppe angesprochen. Es nicht
+aufregend. Orientiere dich an anderen größeren Firmen wie die solche Kurzen Spots machen“. KI-gestützt erstellt, Prüfung durch
+die Gruppe offen. Recherche D11 mit URL und Abrufdatum 04.11.2026 (Quellen im Drehbuch, Abschnitt 9); Fakten nur aus dem
+Recherche-Dossier FS2 (Befund-IDs) und der Konzept-Webseite; Gestaltung, Schnitt und Texte sind Entwürfe (Modellwissen über
+Werbefilm, nicht belegt). Nacharbeit am selben Tag nach der Abnahme durch zwei Prüfer („Emotion“, „Ehrlichkeit“), siehe
+Drehbuch Abschnitt 8. -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
-# Werbespot „Zahlen statt Versprechen“ (HOLY Energy Raspberry Raptor)
+# Werbespot „Mein Moment.“ (HOLY Energy Raspberry Raptor)
 
-Fallstudie 2 „Customer Journey“ · Gruppe Heisler, Knauber, Welker · Stand 04.11.2026 (nach der Nacharbeit) · **Entwurf,
-Prüfung durch die Gruppe offen**
+Fallstudie 2 „Customer Journey“ · Gruppe Heisler, Knauber, Welker · Stand 04.11.2026 (nach der Abnahme nachgearbeitet) ·
+**Entwurf, Prüfung durch die Gruppe offen**
 
 > **Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website und keine Werbung der HOLY Softdrinks GmbH · keine
 > Bestellung möglich.** Stimme, Musik und Geräusche sind KI-generiert (ElevenLabs). Nicht kommerziell, für die
@@ -16,144 +19,151 @@ Prüfung durch die Gruppe offen**
 
 ## 1 Was
 
-Ein kurzer Social-Media-Spot im Stil der Konzept-Webseite („Kampagnen-Look“): Er verspricht nichts, sondern zeigt die vier
-Zahlen der Startseite (7 g + 500 ml, 160 mg Koffein, 0,1 g Zucker pro 100 ml, 0,80 € je Portion), jede mit Quelle am Bild,
-und folgt dann dem Weg der Konzept-Webseite auf einem echten Handy-Bildschirm: Code aus dem Video schon drin („Werbung“
-daneben) → „Erst nachlesen, dann entscheiden.“ → Koffein-Check („Eine Portion pro Tag.“, 7 Quellen) → Squad mit einem Klick →
-„Zahlen statt Versprechen.“ Drehbuch mit Zeitcodes, Belegliste, Bildliste und Nacharbeit: [`drehbuch.md`](drehbuch.md).
+Ein 24,5-Sekunden-Spot im Hochformat, der die Zielgruppe über **Gefühl statt Zahlen** anspricht: Marco (Persona, fiktiv) hat
+Feierabend („Feierabend!“) und reißt sein Raspberry-Raptor-Sachet auf – die pinke Pulverwolke **friert mitten im Bild ein**,
+„Moment. Kurz zurückspulen.“ Über dem pinken Standbild erzählt er seine Woche in drei Pointen (Code war schon drin · erst mal
+nachgelesen, „Nerd.“ · Paket da, „Plot-Twist? Gab’s keinen.“), dann stürzt die Wolke in den Shaker: KLONK, **Countdown 3-2-1
+über drei Shaker**, KLACK, Stille – **Drop mit sechs harten Schnitten auf sechs Schläge** (TSCHK!), der Shaker hebt sich zur
+Kamera, „Mmh!“ (Himbeere × Yuzu), Samstag meldet sich der Squad, „Willkommen im Squad, Marco.“ mit Konfetti. Schluss:
+**„Mein Moment. Und deiner?“**, der Raptor zwinkert, Sound-Logo und harter Schlussschlag. Der Pixel-Raptor aus SQUAD Rewards
+reagiert als Figur. Das Konzept der Gruppe (Code schon drin → erst nachlesen → kaufen ohne Überraschung → Squad) steckt in der
+Geschichte, Fakten sind Nebensache (eine Zahl im Chat).
 
 | Datei | Inhalt |
 |---|---|
-| [`holy-werbespot.mp4`](holy-werbespot.mp4) | der Spot: **26,8 s**, 1080 × 1920 (9 : 16), 30 fps, H.264 High, yuv420p, AAC 48 kHz Stereo, +faststart |
-| [`holy-werbespot-poster.jpg`](holy-werbespot-poster.jpg) | Standbild der Endkarte (bei 25,0 s, alle Pflichthinweise sichtbar) |
-| [`holy-werbespot.de.vtt`](holy-werbespot.de.vtt) | deutsche Untertitel (14 Einträge, Zahlen als Ziffern), Zeiten aus den ElevenLabs-Zeitstempeln |
-| [`drehbuch.md`](drehbuch.md) | Drehbuch: Einstellungen, Sprechertext, Belege, Bilder, offene Punkte, Nacharbeit |
-| [`werkzeuge/`](werkzeuge/) | Bühne und Bau-Skripte (siehe Abschnitt 6) |
-| `intern/` | Zwischenstände (Sprache, Musik, Geräusche, Rohbilder, Handy-Aufnahmen, Einzelbilder, Prüfbilder) – per `.gitignore` ausgeschlossen |
+| [`holy-werbespot.mp4`](holy-werbespot.mp4) | der Spot: **24,5 s**, 1080 × 1920 (9 : 16), 30 fps, H.264 High, yuv420p, AAC 48 kHz Stereo, +faststart (Größe siehe Abschnitt 6) |
+| [`holy-werbespot-poster.jpg`](holy-werbespot-poster.jpg) | Standbild der Endkarte (23,6 s, alle Pflichthinweise sichtbar) |
+| [`holy-werbespot.de.vtt`](holy-werbespot.de.vtt) | deutsche Untertitel (12 Einträge), Zeiten aus den ElevenLabs-Zeitstempeln |
+| [`drehbuch.md`](drehbuch.md) | Drehbuch: Einstellungen mit Zeitcode, Sprechertext, Pflichtkennzeichnung, Belege, Bildliste, Nacharbeit nach der Abnahme, Vorbild-Spots mit Quelle, offene Punkte, Anhang mit allen ElevenLabs-Anfragen (Voice Design, Musik, Soundeffekte) |
+| [`werkzeuge/`](werkzeuge/) | reproduzierbarer Bau (relative Pfade, keine Schlüssel), siehe Abschnitt 7 |
+| [`vorfassung-d10/`](vorfassung-d10/) | die ersetzte Vorfassung „Zahlen statt Versprechen“ (D10) mit eigenem README |
 
-Einbinden (z. B. auf GitHub Pages): `<video src="holy-werbespot.mp4" poster="holy-werbespot-poster.jpg" controls playsinline>`
-mit `<track kind="captions" srclang="de" src="holy-werbespot.de.vtt" default>`. Beim Hochladen auf eine Plattform in der
-Beschreibung immer zuerst: „Studentisches Konzept (HS Kaiserslautern), keine Werbung der HOLY Softdrinks GmbH“.
+## 2 Unterschied zur Vorfassung D10
 
-## 2 Pflichtkennzeichnung
-
-| Pflicht | Umsetzung |
-|---|---|
-| (a) „Studentisches Konzept (HS Kaiserslautern) · keine Werbung der HOLY Softdrinks GmbH“ | dauerhaft (0–26,8 s, in allen 804 Bildern unverändert), dunkle Pille oben (y 112–210), Bricolage Schriftgrad 31 px (gemessen: Zeilenhöhe über alles 27 px, Versalhöhe 21 px), Weiß auf #1D1D1B 16,9 : 1; im Hook (0–3 s) „Studentisches Konzept (HS Kaiserslautern)“ in Zitrone (14,4 : 1) |
-| (b) „Stimme KI-generiert“ | zweite Zeile derselben Pille, dauerhaft; auf der Endkarte zusätzlich „Stimme, Musik und Geräusche KI-generiert (ElevenLabs)“ |
-| (c) Altershinweis | Endkarte: „Nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag (laut Etikett)“; dazu im Koffein-Check gesprochen und im Bild („Für Erwachsene.“, „Eine Portion pro Tag.“) |
-| (d) Creator-Code | nur in der echten Aufnahme der Startseite: „CREATOR10“ mit Etikett „Werbung“, dazu im Spot „Konzept-Webseite der Gruppe · Code: Platzhalter · Rabatt: Beispielwert“ |
-| (e) voller Hinweis | Endkarte, voll lesbar ab 22,43 s bis Ende = **4,37 s** (≥ 2 s, Bildvergleich gemessen), Weiß auf Schwarz 32 px |
-| Bildnachweis | Endkarte: „Bilder: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – ohne Genehmigung, nicht kommerziell, für die Lehrveranstaltung“ |
-| Beispielwerte im Handybild | „Konzept-Webseite der Gruppe · Code: Platzhalter · Rabatt: Beispielwert“ (Startseite), „Konzept der Gruppe · Bestellung und Coins: Beispielwerte“ (Danke-Seite, Squad) |
-
-## 3 Bilder: Herkunft und Rechtestatus
-
-Alle Produktbilder: **HOLY Softdrinks GmbH**, abgerufen am 03.11.2026 von de.holy.com. Rechtestatus: Veröffentlichung von der
-Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), **keine Genehmigung der Rechteinhaber eingeholt**; nicht kommerziell, für die
-Lehrveranstaltung. Keine neuen Downloads, keine Stock-Bilder, keine KI-Bilder, keine Gesichter. Jedes Bild im Spot hat einen
-Registerschlüssel (bzw. ist eine eigene Aufnahme oder die Wortmarke).
-
-| Bild im Spot | Datei | Registerschlüssel (`konzept-website/fremdbilder/register.js`) |
+| | Vorfassung D10 „Zahlen statt Versprechen“ (26,8 s) | Neu D11 „Mein Moment.“ (24,5 s) |
 |---|---|---|
-| Hook: Dose, Shaker, Himbeeren auf Fliesen | `konzept-website/fremdbilder/web-raptor-dose-shaker.jpg` | `web-start-video` (= `web-produkt-hero`) |
-| 1/4: Pulver in den Shaker | Rohdatei `zubereitung-1-pulver-gelb.jpg` (2400 px) | Motiv von `web-produkt-galerie-3` / `web-start-portion` |
-| 2/4, 4/4: 50er-Dose | Rohdatei `raptor-50er-dose.png` (2048 px) | Motiv von `web-produkt-gross-50` / `web-produkt-galerie-1` |
-| 3/4: Shaker schütteln | Rohdatei `zubereitung-3-schuetteln-gelb.jpg` (2400 px) | Motiv von `web-produkt-galerie-4` / `web-danke-zubereitung-3` (ersetzt in der Nacharbeit das Eis-Foto ohne Schlüssel) |
-| 4/4: Sachet | Rohdatei `raptor-sachet-1-portion.png` (2048 px) | Motiv von `web-produkt-gross-1` / `web-koffein-portion` |
-| Squad: Level-Abzeichen 1–4 | Rohdateien `level-1-raptor-egg.png` … `level-4-og-raptor.png` (1251 px) | Motive von `web-squad-level-1` … `web-squad-level-4` |
-| Endkarte: Dose mit Shaker | Rohdatei `raptor-50er-dose-mit-gratis-shaker.png` (2048 px) | Motiv von `web-produkt-galerie-2` |
-| Endkarte: Wortmarke | `konzept-website/bilder/holy-logo-wortmarke.png` (389 × 105, 1 : 1) | Wortmarke, Einverständnis laut KI-Nachweis FS2 Nr. 12 |
-| Handy: Konzept-Webseite | eigene Bildschirmaufnahmen von `index.html`, `koffein-check.html`, `danke.html`, `squad.html` (Fassung mit Bildern) | die darin sichtbaren Bilder haben ihre Schlüssel im Register |
+| Idee | vier belegte Zahlen nacheinander, dann der Weg über die Konzept-Webseite | eine Mini-Geschichte mit Figur, Wendung, Spannung und Pointe |
+| Einstieg | Texttafel „Wir könnten dir jetzt viel versprechen …“ | Bewegung, Pink und lauter Produktklang ab Bild 0 (Sachet reißt), Freeze der Pulverwolke bei 1,5 s |
+| Gefühl | sachlich, „ehrlich“ | Vorfreude, Selbstironie, Genuss, Zugehörigkeit |
+| Fakten | 7 g + 500 ml, 160 mg, 0,1 g Zucker, 0,80 € als Hauptaussage | nur „160 mg je Portion. Steht aufm Etikett.“ als Chat-Notiz; Altershinweis auf der Endkarte |
+| Handy-Bildschirm | über 10 s | 1,5 s (Montag) |
+| Schnitt | ruhige Wischer | Match-Cuts (Wolke → Gießstrahl, drei Shaker), **ein Schnitt auf jeden Schlag im Drop** |
+| Musik | gleichmäßiger Beat | Groove → Tape-Stop → dünnes Bett mit Hi-Hats → Aufbau ohne Bass → Stille → **Drop** (≥ 3 LU lauter als die Rückblenden) → zweiter Einsatz → Sound-Logo mit Schlussschlag |
+| Stimme | sachlicher Sprecher | Marcos innere Stimme: freudig, lachend, flüsternd, genießend (Audio-Tags) |
+| Marke | Wortmarke, Zahlen | Raptor-Pixel-Figur, SQUAD-Rewards-Shaker als „Level-up“, Squad-Ritual mit Konfetti |
 
-Rohdateien liegen in `praesentation/intern/roh/produkt/` (Herkunft je Datei in `manifest.json`, nicht veröffentlicht) und
-werden von `werkzeuge/vorbereiten.sh` unverändert nach `intern/bilder/` kopiert. Kein Bild läuft über seine
-Originalauflösung hinaus (Hook-Foto 1 : 1, Handy-Aufnahmen 1170 px breit, gezeigt höchstens 0,63-fach, Lupe höchstens
-0,95-fach). Der Glanzstreifen auf der Endkarte ist nur eine Lichtebene über dem Motiv. Auf dem Sachet steht HOLYs eigene
-Aufschrift „Sugar Free …“; sie ist im Spot nicht lesbar und nicht Teil unserer Aussage.
+## 3 Herkunft jedes Bildes und Rechtestatus
 
-## 4 Ton: Stimme, Musik, Geräusche (alle KI-generiert mit ElevenLabs)
+Alle Produkt- und Lifestyle-Bilder stammen von **HOLY Softdrinks GmbH** (de.holy.com bzw. cdn.shopify.com des HOLY-Shops),
+heruntergeladen am 03.11.2026; Herkunft je Datei in `praesentation/intern/roh/produkt/<ordner>/manifest.json` (nicht
+veröffentlicht). **Rechtestatus:** Die Veröffentlichung hat die Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), eine Genehmigung
+der Rechteinhaber wurde **nicht** eingeholt; nicht kommerziell, nur für die Lehrveranstaltung. Die HOLY-Wortmarke wird mit
+Einverständnis verwendet (KI-Nachweis FS2 Nr. 12). Kein Bild ist über seine Originalgröße vergrößert. Personen: nur ein
+HOLY-Werbemodel aus `lifestyle/` (erkennbar erwachsene Frau, **ohne** zugeschriebene Sprechblase); dazu Hände auf HOLYs
+Zubereitungsfotos – keine Gründer, kein Team, keine Creator, keine Community-Mitglieder, keine Namen von Privatpersonen.
 
-| | Herkunft |
+| Im Spot | Rohdatei bzw. Register | Seite laut Manifest |
+|---|---|---|
+| Sachet reißt, Hintergrund des Freeze (0–9 s); Drop-Schnitt 13,5 s | `packshots/raptor-sachet-1-portion.png` | de.holy.com/products/raspberry-raptor |
+| Auftauen: Pulver fällt in den Shaker (9,0–9,5 s); Drop-Schnitt 12,5 s | `lifestyle/neueinsteiger-energy-sachet-hochformat.png` | de.holy.com/collections/neueinsteiger-packs |
+| fiktives Creator-Video (Montag) | Register `web-danke-shaker-50` → `konzept-website/fremdbilder/web-danke-shaker-raptor.webp` | HOLY-Shop (Register der Konzept-Webseite) |
+| Bildschirmaufnahme „Dein Code ist schon drin.“ (Montag) | eigene Aufnahme der Konzept-Webseite `index.html` (`werkzeuge/aufnahme-handy.cjs`) | Konzept-Webseite der Gruppe |
+| Paket (Donnerstag) | `packshots/energy-starter-set.png` | de.holy.com/products/starter-set-energy |
+| KLONK; Drop-Schnitt 13,0 s (Eis-Glanz) | `lifestyle/zubereitung-2-eis-gelb.jpg` | de.holy.com/products/raspberry-raptor |
+| Countdown 3 · 2 · 1 | `squad-rewards/level-2-praemie-raptor-kid-shaker.jpg`, `level-3-praemie-teenage-raptor-shaker.jpg`, `level-4-praemie-og-raptor-shaker.jpg` | de.holy.com/products/raptor-kid-shaker, /teenage-raptor-shaker, /og-raptor-shaker |
+| KLACK; POV „Shaker hebt sich zur Kamera“ (15,0–15,5 s) | `packshots/energy-shaker-raptor.png` | de.holy.com/products/colorful-animal-shaker |
+| Drop-Schnitte 12,0 und 14,0 s (Schütteln) | `lifestyle/zubereitung-3-schuetteln-gelb.jpg` (Motiv Register `web-produkt-galerie-4`) | de.holy.com/products/raspberry-raptor |
+| „Mmh!“ | `lifestyle/raptor-dose-shaker-fliesen-pink.jpg` (Register `web-start-video` / `web-produkt-hero`) | de.holy.com/products/raspberry-raptor |
+| Squad, Fotokarte | `lifestyle/frau-trinkt-shaker-pink.png` (HOLY-Werbemodel, ohne Sprechblase) | de.holy.com/pages/listicle |
+| Pixel-Raptor (Sticker; Drop-Schnitt 14,5 s) | `squad-rewards/level-4-og-raptor.png` | de.holy.com/pages/account-login (SQUAD Rewards) |
+| Raptor-Egg (Push, Abzeichen) | `squad-rewards/level-1-raptor-egg.png` | de.holy.com/pages/account-login |
+| Endkarte Packshot | `packshots/raptor-50er-dose-mit-gratis-shaker.png` | de.holy.com/products/raspberry-raptor |
+| Endkarte Wortmarke | `konzept-website/bilder/holy-logo-wortmarke.png` | Einverständnis KI-Nachweis FS2 Nr. 12 |
+
+Eigene Gestaltung (KI-gestützt gebaut): Pulverwolke, Handyrahmen, Chat, Stempel, Versand-Etikett, Sprechblasen, Partikel,
+Explosion, Konfetti, Speed-Lines, Glanzsterne, Kondenstropfen, Lichtstimmung, VHS-Effekte, Lautmalerei-Typo, Endkarte. Nicht
+(mehr) verwendet: `person-haelt-probierboxen-shaker.jpg` (Motiv einer anderen Produktlinie, viele Probierboxen),
+Katzen-Paketfoto (community/), Dachterrassen-Foto (Glukosesensor), Gründer-/Team-/Creator-/Community-Bilder, die Videobotschaft des Gründers,
+Stock-Material, Downloads, KI-Bilder.
+
+## 4 Stimme, Musik, Geräusche (ElevenLabs, KI-generiert)
+
+| | |
 |---|---|
-| Stimme | ElevenLabs Text-to-Speech, **ausschließlich** die synthetisch gestaltete Stimme **„simpleact-design-b“** (ID `1ZBEaCGxeV794wdwBQr4`, männlich, Hochdeutsch; niemals eine Klonstimme, keine Nachahmung einer realen Person), mehrsprachige Sprachausgabe von ElevenLabs, stability 0,45 · similarity_boost 0,8 · style 0,25 · speaker boost an · speed 0,95. **Ein** Aufruf mit Zeitstempeln (408 Zeichen), an den Satzgrenzen geschnitten und auf die Bildzeiten gelegt. **KI-generiert.** |
-| Musik | ElevenLabs Musik (`/v1/music`), 30 s, instrumental, 120 BPM, eigene Beschreibung (verspielter Elektro-Pop-Beat, Platz für Sprache); im Spot: Gag-Pause 2,25–3,00 s, die Takte 15,00–16,00 s (zwei Schläge mit Break) herausgeschnitten, sonst ungeschnitten; unter der Endkarte der Nachhall des Schlussschlags als leise Klangfläche (eigene Faltung mit künstlichem Raum, fester Startwert). **KI-generiert**, keine Musik aus dem Internet |
-| Geräusche | ElevenLabs Soundeffekte (`/v1/sound-generation`): Plopp, Marker-Wisch, Whoosh, Zähl-Tick, Tipp, Münze, Eiswürfel, Karten-Swipe, Einschlag, Riser. **KI-generiert** |
-| Mischung | Stimme vorn; Musik 8 dB darunter, unter der Stimme weitere 4 dB abgesenkt (60 ms Anstieg, 150 ms Rückkehr); gesamt **−14,0 LUFS** integriert, True Peak **−1,4 dBTP** in der AAC-Datei (WAV vor der Kodierung −1,5), LRA 2,5 LU (ffmpeg loudnorm, zwei Durchgänge, gemessen mit ebur128) |
+| Stimme | **KI-generiert.** Neu gestaltete synthetische Stimme „d11-ritual-design“ (ElevenLabs Voice Design, Konzeptphase D11): fiktiver deutscher Mann Ende zwanzig, Hochdeutsch, warm, leicht rau, selbstironisch (Beschreibung im Drehbuch, Anhang A). **Keine Nachahmung einer realen Person, keine Stimmklonung.** ElevenLabs-Sprachausgabe der neuesten Generation mit Audio-Tags (`[excited]`, `[laughs]`, `[whispers]`, `[happy]`, `[curious]`): Haupttake 284 Zeichen, Nacharbeit zwei kurze Takes à 78 Zeichen (freudiges „Feierabend!“ statt Seufzer, „Mmh!“ statt Ausatmen, „Samstag: Squad!“), zusammen **440 Zeichen**. Kontrolle per ElevenLabs Speech-to-Text der fertigen Mischung (Abschnitt 6) |
+| Musik | **KI-generiert.** ElevenLabs Musik, instrumental, 120 BPM, ein Aufruf mit Kompositionsplan (Groove 8 s, Aufbau 4 s, Drop 8 s, Schluss 5 s; ohne Gesang, ohne Ähnlichkeit zu bestehenden Songs oder Künstlern; Plan im Drehbuch, Anhang A). Schlagraster gemessen (Schläge auf ganzen/halben Sekunden); im Spot neu zusammengesetzt (Tape-Stop, dünnes Bett mit Hi-Hats, Aufbau ohne Bass, Stille, Drop auf 12,0 s, Atempause, zweiter Einsatz, Sound-Logo, harter Schluss) |
+| Geräusche | **KI-generiert.** ElevenLabs Soundeffekte: 12 neu erzeugt (Riss, Pulver, Plattenkratzer, Rückspulen, Deckel, Schütteln, Schluck, Stempel, 8-Bit-Blip, Push-Ton, Karton, Riser), 7 aus der Vorfassung D10 wiederverwendet (Eis, Plopp, Tipp, Wisch, Whoosh, Münze, Schlag); alle Prompts im Drehbuch, Anhang A. Selbst erzeugt: Vinyl-Knistern, Sub-Bass-Schlag, Tape-Stop |
+| Mischung | Stimme vorne (−16 LUFS vor der Summe, Kompressor, Präsenz); Musik je Satz nachgemessen **mindestens 8 dB unter der Stimme**; Rückblenden-Bett dünn und leise, Drop laut; Summe **−14 LUFS** integriert, Begrenzer mit vierfacher Überabtastung, Spitze **≤ −2 dBTP** im fertigen AAC (gemessen mit ffmpeg ebur128) |
 
-Aussprache: Im Sprechertext steht „Holi“ statt „HOLY“ (englische Aussprache der Marke), Zahlen und Einheiten ausgeschrieben;
-die Untertitel zeigen „HOLY“ und Ziffern. Kontrolle mit ElevenLabs Speech-to-Text an der fertigen Mischung: alle Wörter
-erkannt, auch „Squad“ (Abschnitt 7).
+## 5 Belege und Pflichtkennzeichnung
 
-## 5 Belege der Aussagen (Kurzfassung, vollständig in `drehbuch.md` Abschnitt 7)
+Fakten im Spot (Befund-IDs aus `recherche-customer-journey.md`): **160 mg Koffein je Portion** ✔ S92 [12, 13, 14] (nur im
+fiktiven Chat) · **eine Portion pro Tag**, **nicht für unter 18, Schwangere und Stillende** ✔ R19 [216, 217], ✔ S92 ·
+**CREATOR10 immer mit „Werbung“** ✔ R25 [38, 81, 82] (Code ist Platzhalter) · Squad/SQUAD Rewards ✔ T32, ✔ T35 (Hintergrund) ·
+Feierabend statt Schicht-Trinken, kein „müde → wach“ ✔ P09, ✔ R02, ✎ R10 · „Himbeere × Yuzu“ = Herstelleraufdruck
+(Manifest `packshots`). Ausführlich: [`drehbuch.md`](drehbuch.md), Abschnitt 6.
 
-| Aussage | Beleg |
+| Pflicht | im Spot |
 |---|---|
-| 7 g auf 500 ml = eine Portion · 160 mg Koffein je Portion · 32 mg pro 100 ml (gerechnet) | ✔ S92 (Dossier 8.3 Do 1) · index.html Z. 132, 136 |
-| 0,1 g Zucker pro 100 ml zubereitet, gesüßt mit Sucralose und Acesulfam K | ✔ R06, ✔ R14 (Do 7) · index.html Z. 140 |
-| 0,80 € je Portion · Dose mit 50 Portionen 39,99 € | ✔ B09, ✔ T22 · index.html Z. 144 |
-| 114,26 €/kg · inkl. MwSt. (zugleich mit 0,80 € im Bild) | ✔ R98 (Do 14), gerechnet mit ✔ S92 · index.html Z. 144, 180 |
-| zzgl. 4,99 € Versand, ab 49 € versandfrei | ✔ B12 · index.html Z. 180 |
-| Für Erwachsene · eine Portion pro Tag, so steht's auf dem Etikett · nicht für unter 18, Schwangere und Stillende | ✔ R19 (Do 3, 4), ✔ S92, ✎ R20 (Do 5) · index.html Z. 106 · koffein-check.html Z. 107 |
-| „Laut HOLY-Help-Center gilt die Menge für jede Energy-Portion“ (im Handybild teilweise lesbar) | ✔ S27 · koffein-check.html Z. 102, 106 |
-| CREATOR10 mit „Werbung“, „−10 %“ | Platzhalter bzw. Beispielwert; Kennzeichnung ✔ R25 (Do 11) · index.html Z. 88, 90 |
-| 10 Coins pro Euro (im Handybild), Squad ab 18 / ein Klick, Bestellnummer, Liefertag, Coins | ✔ T32; „ab 18“ und „ein Klick“ sind Vorschläge der Gruppe (heute ab 16, ✎ B05); Bestellnummer, Liefertag, Coins sind Beispielwerte (im Spot gekennzeichnet) · danke.html Z. 76–87 |
-| Bewertungs-Band (4,87 / 1.409, ✔ T17) | keine Aussage des Spots: nur in 4 Bildern schneller Fahrt, nicht lesbar |
-| „Erst nachlesen, dann entscheiden.“ · „Zahlen statt Versprechen.“ · Hook „Wir könnten dir jetzt viel versprechen … Machen wir nicht.“ | Konzept-Formulierungen bzw. Entwurf (kein Fakt) |
+| Pflichtzeile, dauerhaft lesbar | 0–24,5 s in **jedem Bild** oben: „Studentisches Konzept (HS Kaiserslautern) · keine Werbung der HOLY Softdrinks GmbH“ / „Stimme KI-generiert · Chats und Szenen fiktiv“ – 31 px, Weiß auf #1D1D1B (≈ 16,9 : 1), über allen Ebenen |
+| Altershinweis | Endkarte 21,0–24,5 s: „Nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag (laut Etikett)“ (32 px) |
+| Creator-Code | „CREATOR10“ nur als Platzhalter, immer mit „Werbung“ (Bildschirmaufnahme Montag, fiktives Creator-Video, Endkarte „CREATOR10 · Platzhalter · Werbung“) |
+| voller Hinweis | Endkarte 21,0–24,5 s (3,5 s, ab dem ersten Bild der Endkarte): „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website und keine Werbung der HOLY Softdrinks GmbH · keine Bestellung möglich“ (32 px, Weiß auf Schwarz) |
+| Nachweis | Endkarte 26 px: Stimme, Musik und Geräusche KI-generiert (ElevenLabs) · Chats und Szenen fiktiv · Bilder HOLY Softdrinks GmbH, Abruf 03.11.2026, ohne Genehmigung, nicht kommerziell |
 
-Aus Modellwissen (nicht belegt): Gestaltung, Schnitt, Taktung, Tonmischung, der Zielwert −14 LUFS für Social Media und der
-Hinweis, dass Bewertungen in der Werbung nach UWG § 5b Abs. 3 einen Hinweis zur Echtheitsprüfung brauchen (deshalb keine
-Bewertung als Heldenzahl).
+Leitplanken: keine Wirk- oder Leistungsversprechen (kein wach, Fokus, Energie, Konzentration, gesund, Vitamine), keine
+Nachtschicht, keine Abenduhrzeit beim Squad (Samstag, 15 Uhr), kein „Runde“, kein Gruppen-Trinkaufruf, keine Sprechblasen an
+Fotos realer Personen, kein Sammel- oder Kaufanreiz, kein Seufzer/„müde → wach“, je Person eine Portion, keine Bläschen
+(keine Kohlensäure), kein EFSA-Text im Bild, nichts gegen Wettbewerber, keine Superlative, keine Minderjährigen, keine
+Anzüglichkeit, keine Spiele-Logos, keine Zitate aus der Videobotschaft des Gründers, kein „mehr trinken“.
 
-## 6 Neu bauen
-
-Voraussetzungen: Node 22 mit Playwright (`/opt/node-tools/node_modules/playwright-core`, anderer Pfad über
-`PLAYWRIGHT_CORE=…`), ffmpeg 6, Python 3 mit NumPy. Keine Netzanfragen, kein Schlüssel im Code.
-
-```sh
-cd fallstudie-2-customer-journey/werbevideo/werkzeuge
-sh vorbereiten.sh            # Rohbilder unverändert nach ../intern/bilder/ kopieren
-node aufnahme-handy.cjs      # Handy-Aufnahmen der Konzept-Webseite (390 × 844 bei 3-facher Pixeldichte) + scroll.json
-sh bau.sh                    # Ton mischen, 804 Bilder rendern, normalisieren, kodieren, Poster, Untertitel, Prüfbilder
-```
-
-| Werkzeug | Aufgabe |
-|---|---|
-| `buehne.html` | Bühne 1080 × 1920; `window.__setTime(t)` setzt jedes Element deterministisch (keine Zufallswerte, keine CSS-Animationen) |
-| `render.cjs` | lokaler Server (127.0.0.1) + Playwright, rendert Bild für Bild nach `intern/bilder-folge/`; `--standbild t …` für einzelne Standbilder |
-| `ton.py` | schneidet die Sätze aus der einen Sprachaufnahme (Zeitstempel), legt sie auf die Bildzeiten, schneidet die Musik im Takt, mischt Musik (Gag-Pause, Ducking, Nachhall-Fläche) und Geräusche |
-| `untertitel.py` | WebVTT aus den Zeitstempeln, Zahlen als Ziffern |
-| `aufnahme-handy.cjs` | Bildschirmaufnahmen der Konzept-Webseite (Netz gesperrt); misst die Lage des Bewertungs-Bands und schreibt die Scroll-Bewegung je Bild nach `intern/handy/start/scroll.json` |
-| `bau.sh` | ganzer Bau; `--ohne-bilder` nutzt vorhandene Einzelbilder |
-
-Die ElevenLabs-Ergebnisse (Sprache mit Zeitstempeln, Musik, Geräusche) liegen in `intern/stimme/`, `intern/musik/`,
-`intern/sfx/` und werden nicht neu erzeugt. Wer sie neu erzeugen muss: Anfragen stehen in `intern/stimme/durchlauf1.json`
-(mit Stimmen-ID und Ausgabeformat), `intern/probe/probe.json`, `intern/musik/anfrage.json`, `intern/sfx/liste.json`; der
-Schlüssel kommt aus der Umgebung, nie aus einer Datei. **Stimme ausschließlich `1ZBEaCGxeV794wdwBQr4` (synthetisch
-gestaltet), niemals eine Klonstimme.**
-
-## 7 Prüfstand (04.11.2026, nach der Nacharbeit)
+## 6 Prüfstand (04.11.2026, nach der Nacharbeit)
 
 | Prüfung | Ergebnis |
 |---|---|
-| ffprobe | H.264 High, yuv420p, BT.709, 1080 × 1920, 30/1 fps, 804 Bilder; AAC LC 48 kHz Stereo; Dauer 26,800 s; 10,4 MB (10.445.796 Byte), Gesamtbitrate 3,1 Mbit/s; `moov` vor `mdat` (+faststart) |
-| Lautheit (ebur128) | −14,0 LUFS integriert, True Peak −1,4 dBTP, LRA 2,5 LU; Sprechpausen um −25 LUFS momentan (Beat hörbar) |
-| Standbilder je Sekunde + Kontaktbogen (`intern/pruefbilder/`) | 27 Standbilder und Kontaktbogen angesehen, dazu Einzelbilder 508–512 (Seitenwechsel) und 586–592 (Sprung zu „7 Quellen“): Pflichtzeile auf jedem Bild lesbar, Überschrift „… wie viel ist okay?“ und EFSA-Satz in keinem Bild sichtbar, Produktbilder scharf, keine Tippfehler gefunden |
-| Bildstand | ffmpeg freezedetect (0,0005, ab 0,25 s): kein Standbild |
-| Pflicht-Pille | Bildvergleich: in allen 804 Bildern unverändert (Hook mit Zitrone, sonst Weiß) |
-| Untertitel gegen Sprechertext | 14 Einträge, Wortlaut gleich dem Sprechertext (Zahlen als Ziffern, „Holi“ → „HOLY“), keine Überlappung |
-| Aussprache (ElevenLabs Speech-to-Text) | fertige Mischung: alle Wörter erkannt, „Squad“ mit der geringsten Sicherheit (bitte einmal anhören) |
-| Netz beim Rendern | 0 externe Anfragen (Konzept-Webseite und Bühne) |
+| ffprobe | H.264 High, yuv420p, 1080 × 1920, 30/1 fps, **735 Bilder, 24,500 s**; AAC LC 48 kHz Stereo; `moov` vor `mdat` (+faststart); 13,5 MB (≤ 15 MB) |
+| Lautheit (ffmpeg ebur128) | **−14,2 LUFS** integriert, True Peak **−3,0 dBTP** |
+| Drop gegen Rückblenden | Momentan-Lautheit im Median: Drop 12–15 s −12,1 LUFS, Rückblenden 3–8 s −15,3 LUFS → **+3,2 LU** (vorher: Drop leiser als die Rückblenden) |
+| Stimme gegen Musik | je Satz und Kanal gemessen: Musik **≥ 7,9 dB** unter der Stimme (Rückblenden ≥ 18 dB) |
+| Standbilder | freezedetect (Schwelle 0,0005, ab 0,3 s): kein Standbild; Kontaktbogen je 0,5 s und Übergangsbilder angesehen (kein Leerbild an Szenenanfängen) |
+| Farbe | mittlere Sättigung im Freeze/Rückblenden 0,42–0,56 (vorher 0,21–0,34), Drop bis 0,79 |
+| Blitze | Annäherung an WCAG: höchstens ≈ 2,5 Helligkeitswechsel-Paare je Sekunde über 25 % der Fläche (Grenze 3) |
+| Pflichtzeile | Bildbereich der Pille in allen 735 Bildern gegen Bild 0 verglichen: größte mittlere Abweichung 2,0 Graustufen (`werkzeuge/pruefen.py`) |
+| Aussprache | ElevenLabs Speech-to-Text der fertigen Tonspur: „Feierabend. Moment, kurz zurückspulen. Montag: Code war schon drin. Dienstag: erst mal nachgelesen. Donnerstag: Paket da. Und jetzt? Drei, zwei, eins. [rhythmische Musik] Mmm, Raspberry Raptor. Samstag: Squad. Holy, mein Moment. Und deiner? [Outro-Musik]“ – **kein Seufzer mehr**, „Mmh“ als Genuss-Laut erkannt |
+| Netz | Rendern mit gesperrtem Netz: 0 externe Anfragen, 0 Fehler, Schriften Bricolage + Inter geladen |
+| Volltextsuche | keine Schlüssel, keine Klonstimmen-ID, keine Modellkennungen in `werbevideo/` (ohne `intern/`) |
+| Bildgrößen | kein Bild über 1,0 × seiner Originalgröße (größter Faktor: Gießstrahl-Foto im Drop 0,995, Fliesenfoto 1,00) |
+
+Nicht geprüft: menschliches Anhören (Handy-Lautsprecher, Kopfhörer) – Aufgabe der Gruppe.
+
+## 7 Neubau
+
+```sh
+cd werbevideo/werkzeuge
+python3 vorbereiten.py          # HOLY-Rohdateien nach ../intern/d11/bilder (Rohdateien liegen in praesentation/intern/)
+node aufnahme-handy.cjs         # Bildschirmaufnahme der Konzept-Webseite (lokal, Netz gesperrt)
+sh bau.sh                       # Bilder (Playwright, 3 Prozesse, ca. 5 min) → Unschärfe → Ton → Lautheit → MP4, Poster, VTT, Prüfbilder
+python3 pruefen.py              # Prüfungen aus Abschnitt 6
+```
+
+Die ElevenLabs-Ergebnisse (Stimme, Musik, Geräusche) liegen einmal erzeugt in `../intern/d11/` (nicht versioniert) und werden
+nur wiederverwendet; der Bau braucht kein Netz und keinen Schlüssel. `buehne.html` (Bühne, `window.__setTime(t)`),
+`render.cjs` (Bildfolge mit Bewegungsunschärfe), `unschaerfe.py`, `ton.py` (Schnitt, Musikzuordnung, Mischung),
+`untertitel.py`, `pruefen.py`. Benötigt: Node mit Playwright, Python 3 mit numpy und Pillow, ffmpeg.
 
 ## 8 Offene Punkte für die Gruppe
 
-1. „0,1 g Zucker“ als eigene Zahl (nah an einer Nährwertaussage; nur mit Süßungsmitteln, ohne „zuckerfrei“) bewusst abnicken.
-2. Wir-Stimme („Machen wir nicht.“) klingt nach HOLY als Absender – reicht die Kennzeichnung?
-3. „Code ist schon drin“, „Squad mit einem Klick, ab 18“ sind Konzept-Vorschläge; im Bild als „Konzept der Gruppe“ markiert,
-   gesprochen als Tatsache.
-4. „Squad“ einmal mit Kopfhörern anhören.
-5. Preise vom 30.10.2026 können sich ändern.
-6. Lage der Pflichtzeile (y 112–210) liegt auf Reels/TikTok teils unter der App-Oberfläche; „26 px Schrifthöhe“ ist als
-   Schriftgrad erfüllt (31 px), als Versalhöhe nicht (21 px).
-7. Startseite im Handy: „Wie viel HOLY Energy ist okay?“ (Abschnitt „Erst nachlesen“, ohne Zahl) ist ca. 1 s lesbar.
-8. Rechtliche Einordnungen sind Einschätzungen von Studierenden, keine Rechtsberatung.
+1. **Anhören** (Handy-Lautsprecher und Kopfhörer): neues „Feierabend!“ und „Mmh!“, Lachen vor „Moment“, Flüstern im
+   Countdown, Wucht des Drops, Sound-Logo und Schlussschlag. Geprüft wurde nur maschinell.
+2. **Ton der Marke** abnicken: „aufm“, „Nerd.“, „Plot-Twist? Gab’s keinen.“, „Treffpunkt steht.“
+3. **„Feierabend!“ + „Mmh!“** als Vorfreude und Geschmack lesen, nicht als Entspannungs- oder Wirkversprechen.
+4. **Sachet-Aufdruck** „Next-Gen Energy Drink · Sugar Free“ ist in den ersten ~0,5 s des Hooks klein lesbar (Herstelleretikett);
+   danach liegt die Schärfe auf der Pulverwolke.
+5. **Squad-Foto:** HOLY-Model trinkt aus dem Shaker, daneben „Samstag, 15 Uhr? Treffpunkt steht.“ – als Treffen gemeint, keine
+   Sprechblase am Foto.
+6. **Rechte**: HOLY-Bilder ohne Genehmigung der Rechteinhaber, nicht kommerziell (Beschluss der Gruppe).
+7. **Nur für die Einbettung auf der Webseite gestaltet:** Pflichtpille oben (y 112–210) und Pflichttexte der Endkarte unten
+   (y ≈ 1460–1850) liegen dort, wo TikTok, Reels und Shorts Bedienelemente einblenden. Vor einem Post auf Social Media die
+   Pflichthinweise in die Safe Zone (y 270–1250) verschieben.
+8. Die Modellbegriffe/Vorbilder stammen aus der Recherche D11 und aus Modellwissen (Freeze-Meme, Sound-Logo, Schnitt auf den
+   Schlag); mit den Vorlesungsfolien abgleichen.

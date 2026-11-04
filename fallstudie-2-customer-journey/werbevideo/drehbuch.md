@@ -1,204 +1,280 @@
-<!-- Endgültiges Drehbuch des Werbespots (Fallstudie 2, Workflow D10, Schritte „Produktion“ und „Nacharbeit nach der
-Abnahme“), 04.11.2026. KI-gestützt erstellt, Prüfung durch die Gruppe offen. Keine neue Websuche in diesen Schritten: Alle
-Fakten stammen aus der Konzept-Webseite (Befund-ID im Code) bzw. aus dem Recherche-Dossier FS2 (recherche-customer-journey.md).
-Bildideen, Schnitt, Ton und Texte sind Entwürfe aus Modellwissen über Werbefilm-Gestaltung (nicht belegt). Die Videobotschaft
-des Gründers wurde nicht angesehen, nicht angehört und nicht verwendet. -->
+<!-- Drehbuch des Werbespots „Mein Moment.“ (Workflow D11, Schritt Produktion und Nacharbeit nach der Abnahme), 04.11.2026.
+Auftrag: Yannick Heisler, „Der Spot ist langweilig gestaltet, nur fakten keine Emotionen …“ (KI-Nachweis FS2). KI-gestützt
+erstellt, Prüfung durch die Gruppe offen. Grundlage: Siegerkonzept „ritual“ der Konzeptphase D11 mit den Änderungen beider
+Jury-Gutachten und den Befunden der Abnahme (Prüfer „Emotion“ und „Ehrlichkeit“), Recherche D11 (Vorbild-Spots, Abruf
+04.11.2026, Quellen in Abschnitt 9), Recherche-Dossier FS2 (Befund-IDs), Konzept-Webseite, Persona-Steckbrief FS1. Schnitt,
+Bildideen, Texte, Ton und Gestaltung sind Entwürfe aus Modellwissen über Werbefilm (nicht belegt), wo nicht anders angegeben.
+Die Videobotschaft des Gründers wurde nicht angesehen, nicht angehört und nicht verwendet. -->
 
-# Drehbuch „Zahlen statt Versprechen“ – Spot HOLY Energy Raspberry Raptor
+# Drehbuch „Mein Moment.“ – Spot HOLY Energy Raspberry Raptor
 
-Fallstudie 2 (Customer Journey) · Stand 04.11.2026, **nach der Nacharbeit (Abschnitt 10)** · KI-gestützt erstellt, Prüfung
-durch die Gruppe offen
+Fallstudie 2 (Customer Journey) · Stand 04.11.2026 (Nacharbeit nach der Abnahme) · KI-gestützt erstellt, **Prüfung durch die
+Gruppe offen**
 
 > Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website und keine Werbung der HOLY Softdrinks GmbH ·
 > keine Bestellung möglich.
 
 ## 1 Leitidee
 
-Der Spot ist der Block **„HOLY Energy in vier Zahlen“** der Konzept-Webseite als Bewegtbild (`konzept-website/index.html`
-Z. 128–147): Er beginnt selbstironisch mit dem Werbeversprechen, das er *nicht* gibt („Wir könnten dir jetzt viel
-~~versprechen~~ … Machen wir nicht.“), und zeigt stattdessen genau die vier Zahlen der Webseite – Menge, Koffein, Zucker,
-Preis je Portion –, jede mit Quelle am Bild. Danach folgt er dem Weg der Konzept-Webseite auf einem echten Handy-Bildschirm:
-Startseite mit dem Code aus dem Video („Werbung“ daneben), „Erst nachlesen, dann entscheiden.“, Koffein-Check mit „Eine
-Portion pro Tag.“ und Tipp auf „7 Quellen“, nach dem Kauf der Squad mit einem Klick. Schluss: **„HOLY Energy. Zahlen statt
-Versprechen.“**
+Freitag, 14:06 Uhr. **„Feierabend!“** Marco reißt sein Raspberry-Raptor-Sachet auf (**RRRIPP!**), eine pinke Pulverwolke
+platzt heraus – und **friert mitten im Bild ein**: Plattenkratzer, der Pixel-Raptor springt ins Bild, „Moment. Kurz
+zurückspulen.“ Die Wolke zieht sich zurück wie ein zurückgespultes Band. Über dem pinken Standbild läuft Marcos Woche in drei
+schnellen Pointen: **Montag** Code war schon drin · **Dienstag** Marco hat erst mal nachgelesen, der Kollege schreibt
+„Nerd.“, der Raptor stempelt es stolz ab · **Donnerstag** Paket da, zugestellt wie angekündigt („Plot-Twist? Gab’s keinen.“).
+„Und jetzt …“ – die Farbe kommt zurück, die Wolke stürzt in den Shaker. Dann das Ritual als Klangkette im Takt: KLONK (Eis),
+**Countdown 3 – 2 – 1 über drei SQUAD-Rewards-Shaker**, KLACK (Deckel), eine halbe Sekunde Stille – **Drop**: sechs harte
+Schnitte auf sechs Schläge, TSCHK! Der Shaker hebt sich zur Kamera, **„Mmh!“** Himbeere × Yuzu. Samstag meldet sich der
+Squad, Marco schreibt „bin neu hier“ – **„Willkommen im Squad, Marco.“**, Konfetti. Schluss: **„Mein Moment. Und deiner?“**,
+der Raptor zwinkert, zwei Shaker-Schläge und ein harter Schlussschlag als Sound-Logo.
+
+**Gefühl:** Vorfreude (die eingefrorene Wolke ist die aufgeschobene Belohnung), Selbstironie (Freeze-Meme, „Nerd.“,
+„Plot-Twist? Gab’s keinen.“), Lust und Genuss (Klang, Drop, „Mmh!“), Zugehörigkeit (Squad, Konfetti). **Das Konzept steckt
+in Marcos Woche, nicht in einer Zahlentafel:** Code schon drin → erst nachlesen → kaufen ohne Überraschung → Squad.
+
+**Gegenüber der Vorfassung D10** („Zahlen statt Versprechen“, vier belegte Zahlen hintereinander) erzählt der Spot eine
+Mini-Geschichte mit Hook ab Bild 0, Wendung bei 1,5 s, Spannung bis zum Drop bei 12,0 s und Pointe. Es bleibt genau **eine**
+Zahl (160 mg, als Chat-Nebensache).
+
+**Gegenüber dem ersten Schnitt D11 (Abnahme 04.11.2026)** – was die Nacharbeit geändert hat, steht in Abschnitt 8.
 
 ## 2 Eckdaten
 
 | | |
 |---|---|
-| Format | 9 : 16, 1080 × 1920, 30 fps, **26,8 s** (804 Bilder), Deutsch |
-| Stimme | ElevenLabs, synthetisch gestaltete Stimme **„simpleact-design-b“** (`1ZBEaCGxeV794wdwBQr4`, männlich, Hochdeutsch, laut Stimmbeschreibung „direkt und energisch, aber nicht verkäuferisch“), mehrsprachige Sprachausgabe von ElevenLabs, stability 0,45 · similarity_boost 0,8 · style 0,25 · speaker boost an · **speed 0,95** (Jury-Auflage: Zahlen nicht zu schnell). Keine Klonstimme, keine Nachahmung einer realen Person. **Ein** Aufruf mit Zeitstempeln (`/with-timestamps`), an den Satzgrenzen geschnitten; in der Nacharbeit nur neu gelegt, nicht neu erzeugt |
-| Sprechertext | 408 Zeichen, 13 Sätze, 20,4 s reine Sprechzeit; Zahlen als Wörter, „HOLY“ im Sprechertext als „Holi“ geschrieben (englische Aussprache), in Bild und Untertitel „HOLY“ und Ziffern |
-| Musik | ElevenLabs Musik (`/v1/music`, 30 s, instrumental, 120 BPM). Im Spot ohne die Takte 15,00–16,00 s (zwei Schläge mit Break, Schnitt im Takt), Schnitte liegen auf den Schlägen (0,5 s), Schlussakzent auf dem Schnitt zur Endkarte bei 22,23 s |
-| Schriften | Bricolage Grotesque (800, Breite 75 %) für Zahlen und Titel, Inter für Nebentext – lokal aus `konzept-website/schriften/` (OFL 1.1) |
-| Farben | wie Konzept-Webseite (`assets/konzept.css`): Pink #F08EB8, Gelb #FFD007, Zitrone #FFF200, Lila #C09CE3, Schwarz #1D1D1B, Weiß |
+| Format | 9 : 16, 1080 × 1920, 30 fps, **24,5 s** (735 Bilder), Deutsch; funktioniert stumm (große Kurztexte, sichtbarer Klang RRRIPP / KLONK / KLACK / TSCHK, Zahlen 3-2-1, Chat) und mit Ton |
+| Stimme | Marcos innere Stimme in der Ich-Form, am Ende eine Du-Frage. ElevenLabs, **neu gestaltete synthetische Stimme „d11-ritual-design“** (Voice Design, Beschreibung in Anhang A; keine Nachahmung einer realen Person, keine Stimmklonung). ElevenLabs-Sprachausgabe der neuesten Generation mit Audio-Tags. Haupttake 284 Zeichen; Nacharbeit zwei kurze Takes à 78 Zeichen (freudiges „Feierabend!“, „Mmh!“, „Samstag: Squad!“) |
+| Musik | ElevenLabs Musik, instrumental, 120 BPM, ein Aufruf mit Kompositionsplan (Anhang A). Im Spot neu zusammengesetzt: Hook mit vollem Groove ab Bild 0 · **Tape-Stop bei 1,5 s** · Rückblenden-Bett dünn wie aus dem Handy (Hoch- und Tiefpass, ohne Bass) mit **Hi-Hats im vollen Takt** · Filter öffnet sich ab 8,0 s, Bass bleibt weg · **Stille 11,55–11,98 s** · **Drop exakt bei 12,0 s** mit eigenem Sub-Bass-Schlag · dumpfe Atempause unter dem Heben des Shakers · zweiter Einsatz bei 17,0 s (Squad) · Schlussschlag auf den Schnitt zur Endkarte (21,0 s) · Sound-Logo und harter Schluss bei 24,0 s |
+| Geräusche | ElevenLabs Soundeffekte (ASMR, Prompts in Anhang A): Sachet reißt, Pulver rieselt (in Zeitlupe tiefer), Plattenkratzer, Band-Rückspulen, Handy-Tipp, Nachrichten-Plopp, Stempel, 8-Bit-Blip, Karton, Eiswürfel, Deckel-Klick, Schütteln (auf die Achtel des Drops geschnitten), Schluck, Push-Ton, Münz-Pling, Riser, Schlag; Sub-Bass-Schlag und Vinyl-Knistern selbst erzeugt |
+| Schriften | Bricolage Grotesque 800, Breite 75 % (Titel, Lautmalerei), Inter (Chat, Hinweise) – lokal aus `konzept-website/schriften/` (OFL 1.1) |
+| Farben | Pink #F08EB8, Magenta #E83273, Zitrone #FFF200, Gelb #FFD007, Schwarz #1D1D1B, Weiß; Freeze als **Pink-Duoton**; die HOLY-Fotos bringen Pink, Gelb, Orange mit |
+| Safe Zone | Kerntexte zwischen y = 270 und y = 1250; Pflichtpille oben bei y 112–210; Pflichttexte der Endkarte unten. **Gestaltet für die Einbettung auf der Webseite (GitHub Pages).** Vor einem Post auf TikTok/Reels/Shorts die Pflichthinweise in die Safe Zone verschieben, weil die Plattformen oben und unten Bedienelemente einblenden |
+| Technik | eigene HTML-Bühne (deterministisch, `window.__setTime(t)`), Bild für Bild mit Playwright gerendert; **Bewegungsunschärfe** aus 6 Zwischenbildern (Peitschenschwenks 12), je Bild vorwärts ab dem Bildzeitpunkt (nie über einen Schnitt); Partikelwolke, Speed-Lines, Explosion, Konfetti und Kondenstropfen als eigene Grafik (Canvas); Speed-Ramp, Rack-Focus (Schärfe auf der Wolke, Sachet weich), Match-Cut Wolke → Gießstrahl, Zoom-Stöße, Light Leak, Vignette, VHS nur als Akzent beim Rückspulen und an den Tageswechseln, chromatische Verschiebung auf „Moment.“ |
 
-## 3 Was gegenüber dem Siegerentwurf geändert wurde (Jury-Auflagen und übernommene Ideen)
+## 3 Einstellungen (Zeit in Sekunden; Musik 120 BPM, Schlag = 0,5 s; Schnitte auf Schlägen)
 
-| Auflage / Idee | Umsetzung |
-|---|---|
-| Bewertung 4,87 ohne Hinweis zur Echtheitsprüfung (UWG § 5b Abs. 3, Hinweis aus Modellwissen), Zungenbrecher „vierzehnhundertneun“, Sterne voll gefüllt | **Bewertung als Heldenzahl gestrichen.** Die vier Zahlen sind genau die vier der Webseite (7 g + 500 ml, 160 mg, 0,1 g, 0,80 €). Das Bewertungs-Band der Webseite steht in der Handy-Aufnahme **nicht still**: Es läuft nur in 4 Bildern einer schnellen Scroll-Fahrt durch (141–267 CSS-Pixel je Bild, mit Bewegungsunschärfe; gemessen in `intern/handy/start/scroll.json`) und ist dabei nicht lesbar |
-| Customer Journey fehlt (Code, Squad, „keine Sackgasse“) | Handy-Strecke E7–E8: Startseite mit „Dein Code ist schon drin.“ und **CREATOR10 mit „Werbung“** (echte Aufnahme), „Erst nachlesen, dann entscheiden.“, Tipp auf „Zum Koffein-Check“, Tipp auf „7 Quellen“, Danke-Seite mit Tipp auf „Squad beitreten“ → `squad.html`; Balken „Squad: / ein Klick.“, Level-Abzeichen; Etiketten „Konzept-Webseite der Gruppe · Code: Platzhalter · Rabatt: Beispielwert“ bzw. „Konzept der Gruppe · Bestellung und Coins: Beispielwerte“ |
-| vier gleich gebaute Zahlenkarten | vier verschiedene Bauformen: Lila mit Kreismaske und gekipptem Balken (1/4), Gelb mit Zähler und einfliegender Dose (2/4), Pink mit Foto als schräger Oberkante (3/4), Schwarz mit Einschlag, Dose und Sachet im Parallax und Preiskarte (4/4) |
-| Preis ohne „zzgl. Versand“ | Preiskarte: „114,26 €/kg · inkl. MwSt.“ / „zzgl. 4,99 € Versand, ab 49 € versandfrei“ + „Preise laut HOLY-Shop, abgerufen am 30.10.2026“; die Karte fährt **zugleich mit „0,80 €“** hoch (ab 12,62 s), der Preis steht nie ohne Grundpreis |
-| 0,1 g nur mit Süßungsmitteln, kein „zuckerfrei“ | Bild: „zubereitet · gesüßt mit Sucralose und Acesulfam K“; das Wort „zuckerfrei“ kommt in unserem Text nicht vor. Die eigene Packungsaufschrift des Sachets („Sugar Free …“, Herstellerangabe) ist bei 480 px Bildbreite nicht lesbar und nicht Teil unserer Aussage. Abnicken durch die Gruppe offen (Abschnitt 9) |
-| kein EFSA-400-mg-Satz | nicht gesprochen und nicht als Bildtext. In der Handy-Aufnahme des Koffein-Checks liegt der EFSA-Punkt in jedem Bild unterhalb des Bildrands; die Überschrift „… wie viel ist okay?“ verdeckt der Kasten „Für Erwachsene.“ in **jedem** Bild (er fährt schon vor dem Seitenwechsel ein und erst nach dem Sprung zur Quellenliste hinaus); der Sprung zu „7 Quellen“ ist ein harter Schnitt ohne Zwischenbilder (Nacharbeit, Bild für Bild geprüft) |
-| Handy-Aufnahmen nicht hochskalieren | Aufnahmen mit `deviceScaleFactor: 3` (1170 × 2532 px), im Spot 0,6-fach × Kamerafahrt ≤ 1,05 = höchstens 0,63-fach; Lupe 0,6 × 1,5 × 1,05 ≤ 0,95-fach |
-| Endkarte mit großem Packshot (aus „code-drin“) | Packshot 50er-Dose mit Raptor-Shaker (2048 px, gezeigt mit 780–858 px), Glanzstreifen nur als Licht über dem Motiv (Idee aus „erst-lesen“) |
-| Pflichtzeile dezenter, nicht in der obersten App-Zone | dunkle Pille Weiß auf #1D1D1B, 31 px, oben bei y = 112–210 (statt Vollbreite Zitrone ab y = 0); im Hook (0–3 s) steht „Studentisches Konzept (HS Kaiserslautern)“ in Zitrone |
-| „So steht's auf dem Etikett“ (aus „code-drin“) | gesprochen in E7b: „Für Erwachsene: eine Portion am Tag, so steht's auf dem Etikett.“ (Dossier 8.3 Do 3, wörtlich nah) |
-| Zubereitungsfoto ohne Registerschlüssel | 1/4 nutzt `zubereitung-1-pulver-gelb.jpg` (= Motiv `web-produkt-galerie-3` / `web-start-portion`); 3/4 nutzt jetzt `zubereitung-3-schuetteln-gelb.jpg` (= Motiv `web-produkt-galerie-4` / `web-danke-zubereitung-3`). Das Eis-Foto ohne Schlüssel ist nicht mehr im Spot |
-
-## 4 Pflichtkennzeichnung
-
-| Pflicht | Umsetzung | Messwerte |
-|---|---|---|
-| (a) Zeile „Studentisches Konzept (HS Kaiserslautern) · keine Werbung der HOLY Softdrinks GmbH“ | dauerhaft 0,0–26,8 s, dunkle Pille oben (y 112–210), liegt über allem; im Hook 0–3 s erste Zeile fett in Zitrone | Bricolage 600 (fett 800), **Schriftgrad 31 px**; am Bild gemessen: Zeilenhöhe mit Ober- und Unterlängen 27 px, Versalhöhe 21 px, x-Höhe 17 px (Abnahme, Bild 279). Weiß auf #1D1D1B 16,9 : 1 (gemessen 16,4 : 1), Zitrone auf #1D1D1B 14,4 : 1. Größer geht nicht ohne dritte Zeile: bei 33 px ist Zeile 1 breiter als die Pille. Pille in allen 804 Bildern unverändert (mittlere Abweichung im Inneren ≤ 1,0) |
-| (b) „Stimme KI-generiert“ | zweite Zeile derselben Pille, dauerhaft: „Stimme KI-generiert · Zahlen laut Etikett und HOLY-Shop“; auf der Endkarte zusätzlich „Stimme, Musik und Geräusche KI-generiert (ElevenLabs)“ | wie (a) |
-| (c) Altershinweis | Endkarte 22,23–26,8 s: „Nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag (laut Etikett)“; zusätzlich E7b gesprochen „Für Erwachsene: eine Portion am Tag, so steht's auf dem Etikett.“, im Bild Kasten „Für Erwachsene. So steht's auf dem Etikett.“, Titel „Eine Portion pro Tag.“ und Lupe auf „Laut Etikett: eine zubereitete Portion pro Tag.“ | 32 px Schwarz auf Pink 7,4 : 1 |
-| (d) Creator-Code | nur in der echten Aufnahme der Startseite (E7a, 15,0–15,45 s, während das Handy aufsteigt; danach in der Scroll-Fahrt): „CREATOR10“ mit Etikett „Werbung“ direkt daneben, darüber „Werbung · Bezahlte Partnerschaft … @creator_platzhalter“; dazu im Spot oben „Konzept-Webseite der Gruppe · Code: Platzhalter · Rabatt: Beispielwert“ | Etikett der Webseite; Hinweis 30 px #5C5547 auf Weiß 7,4 : 1 |
-| (e) voller Hinweis | Endkarte, schwarzer Kasten: „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website und keine Werbung der HOLY Softdrinks GmbH · keine Bestellung möglich“; blendet ab 22,23 s in 0,2 s ein, **voll lesbar ab 22,43 s (Bild 673) bis 26,8 s = 4,37 s** (Bildvergleich des Hinweisbereichs, durchgehend bis Bild 803) | 32 px, Weiß auf Schwarz 16,9 : 1 |
-| Bildnachweis | Endkarte unten: „Stimme, Musik und Geräusche KI-generiert (ElevenLabs) · Bilder: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – ohne Genehmigung, nicht kommerziell, für die Lehrveranstaltung“ | 26 px Schwarz auf Pink 7,4 : 1 |
-| Quelle an jeder Zahl | Pille „laut Etikett Raspberry Raptor“ (1/4, 2/4, 3/4), Preiskarte „Preise laut HOLY-Shop, abgerufen am 30.10.2026“ (4/4) | 30 px Weiß auf Schwarz 16,9 : 1 |
-
-Die Handy-Aufnahmen tragen außerdem die Hinweisleiste der Konzept-Webseite („Studentisches Konzept der Gruppe (HS
-Kaiserslautern) – keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“). Über der Seite zeichnet die Bühne bei
-allen vier Seiten eine feste Statusleiste mit der Insel; die Seite liegt in einem eigenen Ausschnitt darunter, sodass kein
-Seiteninhalt über der Hinweisleiste durchläuft (Nacharbeit).
-
-## 5 Einstellungen (Zeitcodes in Sekunden, Bild = Sekunde × 30)
-
-| # | Zeit | Bild und Bewegung | Bildschirmtext | Sprecher (Lage im Spot) | Ton |
+| # | Zeit | Bild, Bewegung, Schnitt | Bildschirmtext | Sprecher | Ton |
 |---|---|---|---|---|---|
-| E1 | 0,00–3,00 | **Pink.** Schon Bild 0 zeigt „Wir“ und das Produktfoto (`web-start-video`, randlos 1080 px = 1 : 1, Oberkante mit Verlauf ins Pink). Punch-in in 0,25 s (Überschrift 1,06 → 1,00, Foto 40 px Hub), danach Parallax. Restliche Wörter aus der Maske (Ease-out-Expo). 1,72 s Marker (Gelb + Schwarz) zieht durch „versprechen“. 2,28 s Schild „Machen wir nicht.“ springt mit Überschwinger auf | „Wir könnten dir jetzt viel ~~versprechen~~ …“ · „Machen wir nicht.“ | 0,35–2,02 „Wir könnten dir jetzt viel versprechen.“ · 2,30–3,02 „Machen wir nicht.“ | 0,02 Plopp, Beat ab 0; 1,70 Marker-Wisch; **2,25–3,00 Musik setzt aus (Gag-Pause)**, 2,28 Plopp |
-| E2 | 3,00–4,60 | **Harter Schnitt auf Schwarz** auf den Schlag, Musik zurück mit Einschlag. „Hier sind / Zahlen.“ in Zitrone, 250 px, aus der Maske, kurzes Kamerawackeln (deterministisch, 0,16 s); vier Zählerpunkte springen auf und füllen sich | „Hier sind Zahlen.“ | 3,10–3,97 „Hier sind Zahlen.“ | 3,00 Einschlag; 4,30 Whoosh |
-| E3 | 4,38–7,62 | **Wischer schräg von rechts auf Lila.** „7 g“ federt hoch (400 px), „+ 500 ml Wasser“ schießt von links herein (5,38). Kreismaske mit schwarzem Rand öffnet sich (outBack) auf das Zubereitungsfoto „Pulver in den Shaker“ (Rohdatei 2400 px, im Kreis 900 px, Zoom 1,0 → 1,1). 6,48 s gekippter Balken „= eine Portion.“ (Gelb, −4°) | „1/4“ · „7 g“ · „+ 500 ml Wasser“ · „= eine Portion.“ · Pille „laut Etikett Raspberry Raptor“ | 4,60–7,29 „Sieben Gramm auf fünfhundert Milliliter: eine Portion.“ | 4,30 Whoosh, 4,78 Plopp (Kreis) |
-| E4 | 7,38–10,00 | **Wischer schräg von unten auf Gelb.** „160“ zählt in 0,7 s hoch (Ease-out), „mg“ federt ein, Packshot 50er-Dose fliegt mit −22° → −7°, Bewegungsunschärfe und Federung von rechts unten herein, danach Parallax | „2/4“ · „160 mg“ · „Koffein je Portion“ · „also 32 mg pro 100 ml zubereitet“ · Pille „laut Etikett Raspberry Raptor“ | 7,62–9,24 „Hundertsechzig Milligramm Koffein.“ | 7,30 Whoosh, 7 Zähl-Ticks, 7,62 Whoosh der Dose |
-| E5 | 10,00–12,50 | **Harter Schnitt auf Pink** mit Ruck (Skalierung 1,05 → 1). Zubereitungsfoto „Schütteln“ (Rohdatei 2400 px, gezeigt mit 1200 px, gewollte Bewegungsunschärfe des Fotos) fällt als Fläche mit schräger Unterkante von oben ins Bild; „0,1 g“ federt hoch, „Zucker pro 100 ml“ schießt von links | „3/4“ · „0,1 g“ · „Zucker pro 100 ml“ · „zubereitet · gesüßt mit Sucralose und Acesulfam K“ · Pille „laut Etikett Raspberry Raptor“ | 10,05–12,55 „Null Komma eins Gramm Zucker auf hundert Milliliter.“ | 10,00 Einschlag, 10,12 Eiswürfel im Shaker (leise) |
-| E6 | 12,50–15,25 | **Harter Schnitt auf Schwarz.** „0,80 €“ in Gelb knallt rein (1,35 → 1,0 in 0,2 s, Unschärfe), **zugleich** fährt die weiße Preiskarte hoch (12,62 s, voll ab ca. 13,0 s); 50er-Dose von rechts, Sachet von links, beide mit Bewegungsunschärfe und gegenläufigem Parallax | „4/4“ · „0,80 € je Portion“ · Karte „Dose mit 50 Portionen: 39,99 €“ / „114,26 €/kg · inkl. MwSt.“ / „zzgl. 4,99 € Versand, ab 49 € versandfrei“ / „Preise laut HOLY-Shop, abgerufen am 30.10.2026“ | 12,62–13,88 „Achtzig Cent pro Portion.“ | 12,50 Einschlag, 12,62 Karten-Swipe |
-| E7a | 14,92–17,00 | **Pinke Fläche wischt schräg von unten über das Schwarz** (Musik läuft durch). Handy (eigene Rahmenzeichnung, −3°) steigt auf; über die ganze Handy-Strecke langsame Kamerafahrt (Push-in 1,00 → 1,05, 0,8° Drehung), also kein Standbild. **Echte Bildschirmaufnahme** `index.html` (Playwright, 390 × 844 bei dreifacher Pixeldichte, 60 Bilder): 0–0,42 s „Dein Code ist schon drin.“ mit CREATOR10 + „Werbung“, dann **eine** schnelle Fahrt (0,42–1,25 s, gerichtete Bewegungsunschärfe) bis zur schwarzen Fläche „Erst nachlesen, dann entscheiden.“, dort Halt; 16,78 s Tipp auf „Zum Koffein-Check“ | „Erst nachlesen, dann entscheiden.“ (128 px, Wort für Wort) · oben „Konzept-Webseite der Gruppe · Code: Platzhalter · Rabatt: Beispielwert“ | 15,05–16,71 „Erst nachlesen, dann entscheiden.“ | 14,88 Whoosh, 15,42 leiser Whoosh (Fahrt), 16,72 Karten-Swipe, 16,76 Tipp |
-| E7b | 17,00–20,42 | Kasten **„Für Erwachsene.“** fährt schon 16,70–16,98 s von links ein; er hängt im Koordinatensystem des Handys und liegt über der Überschrift der nächsten Seite. 17,00 s Seitenwechsel auf `koffein-check.html` (echte Aufnahme nach dem Tipp). 17,30 s **Lupe** springt auf: nur Punkt 2 aus „Kurz gesagt“, „Laut Etikett: eine zubereitete Portion pro Tag.“ (Ausschnitt derselben Aufnahme, im Bild ≤ 0,95-fach), 17,75/18,08 s pinker Marker unter „eine zubereitete Portion pro Tag.“; oben Titel „Eine Portion pro Tag.“ Wort für Wort im Takt der Stimme. 19,50 s Tipp auf „7 Quellen“ → **19,60 s harter Sprung** zur Quellenliste (echte Aufnahme nach dem Tipp, keine Zwischenbilder, 0,16 s Unschärfe beim Aufblitzen); erst danach fahren Kasten und Lupe hinaus; Titel „7 Quellen zum Nachlesen.“ | „Eine Portion pro Tag.“ · Kasten „Für Erwachsene. So steht's auf dem Etikett.“ · Lupe „Laut Etikett: eine zubereitete Portion pro Tag.“ · „7 Quellen zum Nachlesen.“ | 17,10–20,25 „Für Erwachsene: eine Portion am Tag, so steht's auf dem Etikett.“ | 17,30 Plopp (Lupe), 17,75 Marker-Wisch, 19,48 Tipp, 19,58 Whoosh |
-| E8 | 20,13–22,23 | **Lila wischt schräg von links.** Handy (+4°) mit echter Aufnahme `danke.html` („Willkommen im Squad · 10 Coins pro Euro · Squad beitreten“), 21,05 s Tipp auf „Squad beitreten“ → `squad.html` schiebt sich wie im Browser herein; gekippte Balken „Squad:“ (20,6 s) und „ein Klick.“ (21,18 s); vier Level-Abzeichen springen nacheinander auf | „Squad: ein Klick.“ · oben „Konzept der Gruppe · Bestellung und Coins: Beispielwerte“ | 20,40–21,12 „Und der Squad?“ · 21,15–21,71 „Ein Klick.“ | 20,08 Whoosh, 21,03 Tipp, 21,13 Riser (letzte 1,1 s, erst nach „Squad?“), 21,55 Münze |
-| E9 | 22,23–26,80 | **Endkarte Pink**, Schnitt auf den Schlussakzent der Musik mit Weißblitz (2 Bilder). Wortmarke fällt ein und federt (389 × 105, 1 : 1). Packshot 50er-Dose mit Shaker zoomt 1,10 → 1,00 und ohne Halt langsam weiter bis 1,04; 23,0–24,2 s Glanzstreifen über das Motiv. „Zahlen statt Versprechen.“ Wort für Wort. Pflichthinweise ab 22,23 s, voll lesbar ab 22,43 s | „Zahlen statt Versprechen.“ · „HOLY Energy Raspberry Raptor“ · Altershinweis · voller Hinweis · Bildnachweis | 22,50–23,41 „HOLY Energy.“ · 23,62–24,99 „Zahlen statt Versprechen.“ | 22,21 Einschlag; darunter Nachhall des Schlussschlags als leise Klangfläche bis 26,7 s; 25,15 leiser Plopp |
+| E1 Hook | 0,00–1,50 | **Pink ab Bild 0.** Raptor-Sachet groß und schräg vor rotierendem Strahlenkranz; 0,16–0,50 s reißt der obere Streifen ab und fliegt weg; ab 0,22 s platzt eine **pinke Pulverwolke** (eigene Partikel, Glanzpunkte, unscharfe Brocken im Vordergrund); **Speed-Ramp** (ab 0,5 s Zeitlupe, ab 1,2 s abbremsen); Schärfe wandert vom Sachet auf die Wolke | Chip „Freitag, 14:06“ · **„RRRIPP!“** (0,18 s) · **„Feierabend!“** (0,52 s) | `[excited] Feierabend!` | Groove ab Bild 0 · Reißen (ASMR) · Pulver-Puff, Pulver in Zeitlupe |
+| E2 Freeze | 1,50–2,15 | **Plattenkratzer, die Wolke steht mitten im Bild** (y ≈ 680–1070): Weißblitz, Ruck, Bild wird **Pink-Duoton**; die Körner schweben mit leichter Tiefenbewegung; der **Pixel-Raptor** springt mit Überschwinger ins Bild („!“) | „‖ PAUSE“ · **„Moment.“** (250 px, rot-cyan verschoben) | `[laughs] Moment.` | Kratzer + **Tape-Stop** · 8-Bit-Blip |
+| E3 Rückspulen | 2,15–3,00 | Die Wolke **zieht sich zurück** zum Riss (Bewegungsunschärfe), Spurfehler-Bänder, Bild zittert waagrecht; Tageszähler läuft rückwärts FR → MO | „◀◀ ZURÜCK“ · „Kurz zurückspulen.“ · FR DO MI DI MO | `Kurz zurückspulen.` | Band-Rückspulen; ab 2,8 s dünnes „Radio“-Bett mit Hi-Hats, Vinyl-Knistern |
+| E4 Montag | 3,00–4,50 | Über dem Pink-Duoton (Wolke dahinter) steigt das Handy auf: fiktives Creator-Video („@creator_platzhalter · Werbung“), Tipp auf „Zum Produkt aus dem Video“ → **echte Bildschirmaufnahme** der Konzept-Webseite „Dein Code ist schon drin.“ mit **CREATOR10 + „Werbung“** (Handy 1,5 s) | Tag „Montag“ · Sticker **„Code war schon drin.“** | `Montag: Code war schon drin.` | Wisch, Tipp, Plopp |
+| E5 Dienstag | 4,50–6,50 | Peitschenschwenk. Fiktiver Chat, **Absender „Marco“**: „hab erst mal nachgelesen“, „**160 mg** je Portion. Steht aufm Etikett.“; Kollege „K“: **„Nerd.“**; der Raptor knallt den Stempel **„NERD ✓“** auf den Chat | Tag „Dienstag“ · „Schicht-Chat · fiktiv“ · „Marco“ · Chatzeilen · Stempel | `Dienstag: erst mal nachgelesen.` | Plopps, tiefer Plopp (Pointe), Stempel-Rums, Blip |
+| E6 Donnerstag | 6,50–8,00 | Peitschenschwenk. Polaroid fällt ein und federt: HOLY-Packshot Starter-Set, Versand-Etikett „ZUGESTELLT ✓ wie angekündigt“; der Raptor taucht mit Sprechblase auf | Tag „Donnerstag“ · **„Paket da.“** · Blase **„Plot-Twist? Gab’s keinen.“** | `Donnerstag: Paket da.` | Karton, Whoosh, Blip |
+| E7 Freitag | 8,00–9,00 | Zurück im Jetzt: **die Farbe kommt zurück** (Duoton blendet aus), die Wolke läuft langsam wieder vor, Push-in, Licht wärmer, Play-Symbol pulsiert | Tag „Freitag, 14:06“ · **„Und jetzt …“** | `[whispers] Und jetzt …` | Riser beginnt (8,5 s), Filter öffnet sich |
+| E8 Auftauen | 9,00–9,50 | Weißblitz; **Match-Cut**: die Körner der Wolke stürzen in 0,2 s zur Gießstelle, darunter blendet das HOLY-Foto „Hand gießt Raptor-Sachet in den Shaker“ ein; der Strahl läuft mit voller Geschwindigkeit (Schlieren) | – | – | Schlag, Whoosh, Pulver |
+| E9 Eis | 9,50–10,00 | Harter Schnitt auf Gelb: HOLY-Zubereitungsfoto „Eiswürfel in den Shaker“, Stoß beim Aufprall, Glanzsterne | **„KLONK.“** | – | Eiswürfel (ASMR) |
+| E10 Countdown | 10,00–11,50 | **Match-Cut über drei Shaker an derselben Bildstelle**, je ein Schlag: Raptor Kid (gelb) → Teenage Raptor (orange) → OG Raptor (pink); Ziffern **Magenta mit schwarzer Kontur**, darunter „SQUAD Rewards · Level 2 / 3 / 4“; kurzer, schwacher Blitz | **„3“ · „2“ · „1“** · Level-Chip | `[whispers] Drei. Zwei. Eins.` | Schläge; Musik ohne Bass, Riser steigt |
+| E11 Deckel | 11,50–12,00 | Harter Schnitt auf Pink: Raptor-Shaker fällt von oben und staucht beim Aufsetzen; ab 11,8 s Sog-Zoom | **„KLACK.“** | – | Deckel-Klick (11,62 s), dann **Stille** bis 11,98 s |
+| E12 Drop | 12,00–15,00 | **DROP. Sechs harte Schnitte auf sechs Schläge**, je mit Zoom-Stoß, Wackeln und Speed-Lines: 12,0 Schütteln (Gelb) · 12,5 Gießstrahl (Pink) · 13,0 Eis-Glanz (Gelb, Sterne) · 13,5 Raptor-Sachet mit Pulverexplosion (Magenta, Strahlenkranz) · 14,0 Schütteln, Pink getönt · 14,5 Pixel-Raptor im Headbang (Magenta) | **ein großes „TSCHK!“ je Schnitt**, Farbe wechselt Zitrone/Weiß | – | **Bass-Drop** + eigener Sub-Bass-Schlag, Schüttel-Körner auf den Achteln |
+| E13 POV | 15,00–15,50 | Harter Schnitt: der Raptor-Shaker **hebt sich aus dem Bild zur Kamera**, kippt Richtung Betrachter, Kondenstropfen und Glanzsterne auf dem Becher | – | – | Musik dumpf (Atempause), Whoosh, Schluck (15,35 s) |
+| E14 Genuss | 15,50–17,00 | Harter Schnitt: HOLY-Produktfoto Raptor-Dose + Raptor-Shaker auf Fliesen mit Himbeeren, Yuzu, Eis; Kondenstropfen, Glanzpunkte (keine Bläschen, keine Kohlensäure) | **„Mmh!“** · zugleich Chip **„Raspberry Raptor · Himbeere × Yuzu“** | `[happy] Mmh! Raspberry Raptor.` | Musik öffnet sich wieder |
+| E15 Squad | 17,00–21,00 | Pink mit wanderndem Streifenmuster, zweiter Musikeinsatz. Push **„Squad · Samstag, 15 Uhr? Treffpunkt steht.“** steht ab dem ersten Bild; Fotokarte HOLY-Model (erkennbar erwachsen) knallt herein – **ohne Sprechblase**. Darunter, getrennt vom Foto, „Squad-Chat · fiktiv“: „J. bin dabei!“ (17,5) · „S. ich bring Musik mit“ (18,0) · **„Marco bin neu hier“** (18,5); 19,0 s **„Willkommen im Squad, Marco.“** mit Konfetti und Raptor-Egg-Abzeichen; alles federt auf die Schläge | Push · Chat · Titel | `[excited] Samstag: Squad!` | Push-Ton, Plopps, Münze + Schlag (19,0), Pling |
+| E16 Endkarte | 21,00–24,50 | Weißblitz auf Pink, **alle Pflichthinweise ab dem ersten Bild** (3,5 s). Wortmarke HOLY federt ein; Packshot 50er-Dose mit Shaker steigt auf; Code-Coupon; 22,85 s Sticker „Und deiner?“; 22,95 s Raptor; **23,75 s Zwinkern** (Glanzstern auf der Sonnenbrille); **24,0 s Schlussschlag** – Titel, Packshot und Raptor federn, die Wortmarke hüpft | **„Mein Moment.“** · „Und deiner?“ · „HOLY Energy Raspberry Raptor“ · Coupon · Altershinweis · voller Hinweis · Nachweis | `Holi. Mein Moment.` · `[curious] Und deiner?` | Schlussschlag auf den Schnitt (21,0); weicher Groove; **Sound-Logo:** TSCHK 23,5 · TSCHK + 8-Bit-Pling 23,75 · **harter Schlussschlag 24,0** mit Sub-Bass, kein Ausblenden |
 
-Schnittrhythmus: 3,00 hart · 4,38 Wischer · 7,38 Wischer · 10,00 hart · 12,50 hart · 14,92 Wischer · 17,00 Seitenwechsel ·
-19,60 Sprung · 20,13 Wischer · 22,23 hart mit Blitz. Alle Bewegungen mit Easing (Ease-out, Expo, Feder, Überschwinger), keine
-linearen Fahrten außer der langsamen Kamerafahrt; die Bildstand-Erkennung (ffmpeg freezedetect, Schwelle 0,0005, ab 0,25 s)
-findet kein Standbild.
+**Freeze:** 1,5–9,0 s auf der eigenen Pulverwolke im Pink-Duoton; darin bewegt sich immer etwas (Wolke, Drift, Rückspulen,
+Peitschenschwenks, Raptor, Chat, Polaroid). **Stumm-Test:** Die Bildtexte erzählen die Geschichte (Freitag, 14:06 → RRRIPP →
+Feierabend! → Moment. Kurz zurückspulen → Montag: Code war schon drin → Dienstag: Marco hat nachgelesen, „Nerd.“ → Donnerstag:
+Paket da, Plot-Twist? Gab’s keinen → Und jetzt … → KLONK → 3 · 2 · 1 → KLACK → TSCHK → Mmh! Himbeere × Yuzu → Squad, „Marco:
+bin neu hier“, Willkommen → Mein Moment. Und deiner?). Die Dienstag-Zeile hat 7 Wörter und steht 1,65 s.
 
-## 6 Sprechertext (wörtlich, so an ElevenLabs gesendet, 408 Zeichen)
+## 4 Sprechertext (so an ElevenLabs gesendet; „HOLY“ als „Holi“ geschrieben)
 
-> Wir könnten dir jetzt viel versprechen. Machen wir nicht. Hier sind Zahlen. Sieben Gramm auf fünfhundert Milliliter:
-> eine Portion. Hundertsechzig Milligramm Koffein. Null Komma eins Gramm Zucker auf hundert Milliliter. Achtzig Cent pro
-> Portion. Erst nachlesen, dann entscheiden. Für Erwachsene: eine Portion am Tag, so steht's auf dem Etikett. Und der
-> Squad? Ein Klick. Holi Energy. Zahlen statt Versprechen.
+**Haupttake** (284 Zeichen, ein Aufruf mit Zeitstempeln):
 
-Die Untertitel zeigen die Zahlen als Ziffern wie im Bild („7 g auf 500 ml: eine Portion.“, „160 mg Koffein.“, „0,1 g Zucker
-auf 100 ml.“, „80 Cent pro Portion.“), Zeiten aus den Zeitstempeln.
+```
+[sighs] Feierabend.
+[laughs] Moment. Kurz zurückspulen.
+Montag: Code war schon drin.
+Dienstag: erst mal nachgelesen.
+Donnerstag: Paket da.
+[whispers] Und jetzt …
+[whispers] Drei. Zwei. Eins.
+[exhales] Ahh. Raspberry Raptor.
+Heute Abend: Squad.
+Holi. Mein Moment. [curious] Und deiner?
+```
 
-Kontrolle per ElevenLabs Speech-to-Text (Deutsch) an der fertigen Mischung nach der Nacharbeit: „Wir könnten dir jetzt viel
-versprechen. Machen wir nicht. Hier sind Zahlen: sieben Gramm auf fünfhundert Milliliter, eine Portion, hundertsechzig
-Milligramm Koffein, null Komma eins Gramm Zucker auf hundert Milliliter, achtzig Cent pro Portion. Erst nachlesen, dann
-entscheiden. Für Erwachsene eine Portion am Tag, so steht's auf dem Etikett. Und der Squad? Ein Klick. Holy Energy. Zahlen
-statt Versprechen.“ – alle Wörter richtig erkannt, auch „Squad“ (vorher als „Squat“ erkannt; der Riser liegt jetzt erst
-nach dem Wort). Die Sicherheit der Erkennung ist bei „Squad?“ am niedrigsten (log-Wahrscheinlichkeit −0,48), deshalb bleibt
-„einmal anhören“ ein offener Punkt.
+**Nacharbeit** (zwei Aufrufe mit Zeitstempeln, je 78 Zeichen, zwei Varianten zur Auswahl):
 
-## 7 Belegliste (jede Aussage im Spot)
+```
+[excited] Feierabend!
+[happy] Mmh! Raspberry Raptor.
+[excited] Samstag: Squad!
+```
 
-| Aussage im Spot | Wo | Beleg (Befund-ID, Stelle im Dossier) | auf der Konzept-Webseite |
+Verwendet werden aus dem Haupttake: „Moment.“ bis „Eins.“, „Holi. Mein Moment.“, „Und deiner?“ – **nicht mehr** „[sighs]
+Feierabend.“, „[exhales] Ahh. Raspberry Raptor.“ und „Heute Abend: Squad.“. Aus der Nacharbeit: „Feierabend!“ und „Samstag:
+Squad!“ aus Variante 2 (kürzer, Speech-to-Text erkennt „Squad“), „Mmh! Raspberry Raptor.“ aus Variante 1 (Speech-to-Text
+erkennt „Mmh“). `werkzeuge/ton.py` schneidet die Sätze an den Wortgrenzen (Zeitstempel je Zeichen) und legt sie auf die Zeiten
+in Abschnitt 3; die Rückblenden-Sätze laufen leicht beschleunigt (Faktor 1,06–1,15). Untertitel: `holy-werbespot.de.vtt`
+(12 Einträge, der Countdown als ein Eintrag). Zeichen Sprache für diesen Spot insgesamt: 284 + 2 × 78 = 440.
+
+## 5 Pflichtkennzeichnung
+
+| Pflicht | Umsetzung |
+|---|---|
+| (a)+(b) Pflichtzeile | dauerhaft 0–24,5 s in jedem Bild: dunkle Pille oben (y 112–210), Weiß auf #1D1D1B, Bricolage 600/800, **31 px**: „**Studentisches Konzept (HS Kaiserslautern)** · keine Werbung der HOLY Softdrinks GmbH“ / „Stimme KI-generiert · Chats und Szenen fiktiv“; liegt über allen Ebenen, auch über Blitzen |
+| (c) Altershinweis | Endkarte 21,0–24,5 s: „Nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag (laut Etikett)“, 32 px Schwarz auf Pink |
+| (d) Creator-Code | nur „CREATOR10“ als Platzhalter, immer mit „Werbung“: Montag in der echten Bildschirmaufnahme (Etikett „Werbung“ direkt neben dem Code), fiktives Creator-Video „@creator_platzhalter · Werbung“, Endkarte „CREATOR10 · Platzhalter · Werbung“ |
+| (e) voller Hinweis | Endkarte, schwarzer Kasten, 32 px Weiß auf Schwarz: „Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website und keine Werbung der HOLY Softdrinks GmbH · keine Bestellung möglich“, steht ab 21,0 s **3,5 s** |
+| Nachweis | Endkarte 26 px: „Stimme, Musik und Geräusche KI-generiert (ElevenLabs) · Chats und Szenen fiktiv · Bilder: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – ohne Genehmigung, nicht kommerziell, für die Lehrveranstaltung“ |
+
+## 6 Belegliste (jede Aussage im Spot)
+
+| Aussage | Wo | Beleg |
+|---|---|---|
+| 160 mg Koffein je Portion („160 mg je Portion“) | E5 Chat (Nebensache) | ✔ **S92** [12, 13, 14] (Etikett Raspberry Raptor) · Konzept-Webseite `index.html`, `koffein-check.html` |
+| „Steht aufm Etikett“, eine Portion pro Tag | E5, Endkarte | ✔ **R19** [216, 217] · ✔ S92 |
+| Nicht für unter 18, Schwangere und Stillende | Endkarte | ✔ **R19**, ✔ S92; bewusst nicht „erst ab 18 erlaubt“ (✎ R20) |
+| „Code war schon drin“, CREATOR10 + „Werbung“ | E4, Endkarte | Konzept-Maßnahme der Gruppe (Konzept-Webseite `index.html` „Dein Code ist schon drin.“); Kennzeichnung ✔ **R25** [38, 81, 82]; Code = Platzhalter |
+| „erst mal nachgelesen“, „Nerd.“, „NERD ✓“ | E5 | Konzept-Formulierung „Erst nachlesen, dann entscheiden.“ (`index.html`); Pointe, kein Fakt |
+| „Paket da.“, „Zugestellt ✓ wie angekündigt“, „Plot-Twist? Gab’s keinen.“ | E6 | Konzept-Schritt „kauft ohne Überraschung“ (`danke.html`, Liefertag angekündigt, Beispielwert); keine Zahl, keine Lieferzusage |
+| Freitag, 14:06, „Feierabend!“ (freudig) | E1–E7 | Persona Marco, Schichtarbeiter (Persona-Steckbrief, fiktiv). Schicht als Trinkanlass nur schwach belegt (✔ **P09**), daher **kein Trinken in der Schicht**, sondern ein freier Moment am Nachmittag. „Feierabend!“ klingt nach Vorfreude, **nicht nach Erschöpfung** (kein Seufzer mehr) – kein Ablauf „müde → wach“ (✔ **R02**: auch Bilder und Töne sind Angaben; ✎ R10) |
+| „Mmh!“, Himbeere × Yuzu | E14 | Genuss-Laut, an den **Geschmack** gebunden (Chip erscheint zeitgleich); Geschmacksangabe = Herstelleraufdruck „Raspberry & Yuzu“ auf dem Sachet und „Himbeere x Yuzu“ (Manifest `packshots`, `raptor-sachets-zwei-stueck.png`) |
+| Squad, „Samstag, 15 Uhr? Treffpunkt steht.“, „Willkommen im Squad, Marco.“, Raptor-Abzeichen, Level-Shaker | E10, E15 | HOLY-Community „Squad“ und SQUAD Rewards mit vier Leveln (✔ **T32**, ✔ **T35** als Hintergrund; Konzept-Webseite `squad.html`); fiktives Treffen am Samstagnachmittag – keine Abenduhrzeit, kein „Runde“, kein Trink-Aufruf; Chatzeilen von fiktiven Absendern, **nicht** den Fotos realer Models zugeordnet |
+| „Mein Moment. Und deiner?“ | Endkarte | Claim-Entwurf, kein Fakt, kein Versprechen |
+
+**Bewusst weggelassen:** wach, Fokus, Energie, Leistung, Konzentration, gesund, Vitamine, NewCaff, „zuckerfrei“ als eigene
+Aussage (HOLYs Sachet-Aufdruck „Next-Gen Energy Drink · Sugar Free“ ist nur in den ersten ~0,5 s des Hooks klein lesbar,
+danach liegt die Schärfe auf der Wolke und das Sachet ist weich bzw. im Duoton unscharf – Herstelleretikett, offener Punkt für
+die Gruppe), Seufzer/Ausatmen, „müde → wach“, Gähnen, Nachtschicht, Abenduhrzeiten, EFSA-Text im Bild, Bläschen/Sprudeln,
+mehr als eine Portion je Person, Gruppen-Trinkaufruf, „Runde“, Sprechblasen an Fotos realer Personen, Sammel- und Kaufanreiz
+(„endlich komplett“), Vergleiche mit anderen Getränken, Superlative, Verknappung, Schule/Sport/Alkohol, „Streber“
+(Schulbezug), Spiele-Logos, Anzüglichkeit, Bewertungszahl (T17), Zitate aus der Videobotschaft des Gründers, „mehr trinken“.
+
+## 7 Bildliste (Herkunft; Rechtestatus siehe README)
+
+Rohdateien unter `praesentation/intern/roh/produkt/` (Herkunft und Abrufdatum 03.11.2026 je Datei in `manifest.json`), kopiert
+mit `werkzeuge/vorbereiten.py`. Kein Bild wird über seine Originalgröße vergrößert (größter Faktor 1,00).
+
+| Einstellung | Datei | Original | Größter Faktor im Spot | Quelle laut Manifest/Register |
+|---|---|---|---|---|
+| E1–E7, E12 (13,5 s) | `packshots/raptor-sachet-1-portion.png` | 2048² | 0,93 | de.holy.com/products/raspberry-raptor |
+| E8, E12 (12,5 s) | `lifestyle/neueinsteiger-energy-sachet-hochformat.png` | 1125 × 1530 | 1,00 | de.holy.com/collections/neueinsteiger-packs |
+| E4 | `konzept-website/fremdbilder/web-danke-shaker-raptor.webp` (Register **`web-danke-shaker-50`**) im fiktiven Creator-Video | 480² | 1,00 | HOLY-Shop (Register der Konzept-Webseite) |
+| E4 | Bildschirmaufnahme `konzept-website/index.html` (eigene Aufnahme, `werkzeuge/aufnahme-handy.cjs`) | 1170 × 2532 | 0,50 | Konzept-Webseite der Gruppe |
+| E6 | `packshots/energy-starter-set.png` | 2048² | 0,42 | de.holy.com/products/starter-set-energy |
+| E9, E12 (13,0 s) | `lifestyle/zubereitung-2-eis-gelb.jpg` | 2400² | 0,94 | de.holy.com/products/raspberry-raptor (Zubereitung Schritt 2) |
+| E10 | `squad-rewards/level-2-praemie-raptor-kid-shaker.jpg`, `level-3-praemie-teenage-raptor-shaker.jpg`, `level-4-praemie-og-raptor-shaker.jpg` | je 1400² | 0,85 | de.holy.com/products/raptor-kid-shaker, …/teenage-raptor-shaker, …/og-raptor-shaker |
+| E11, E13 | `packshots/energy-shaker-raptor.png` | 2048² | 0,95 | de.holy.com/products/colorful-animal-shaker |
+| E12 (12,0 / 14,0 s) | `lifestyle/zubereitung-3-schuetteln-gelb.jpg` (= Motiv Register **`web-produkt-galerie-4`**) | 2400² | 0,93 | de.holy.com/products/raspberry-raptor (Zubereitung Schritt 3) |
+| E14 | `lifestyle/raptor-dose-shaker-fliesen-pink.jpg` (= Register **`web-start-video`** / `web-produkt-hero`) | 1080² | 1,00 | de.holy.com/products/raspberry-raptor |
+| E15 | `lifestyle/frau-trinkt-shaker-pink.png` (HOLY-Werbemodel, erkennbar erwachsen, ohne Sprechblase) | 780 × 500 | 0,98 | de.holy.com/pages/listicle |
+| E2, E5, E6, E12 (14,5 s), E16 | `squad-rewards/level-4-og-raptor.png` (Pixel-Raptor als Sticker und im Drop) | 1251² | 0,75 | de.holy.com/pages/account-login (SQUAD Rewards) |
+| E15 | `squad-rewards/level-1-raptor-egg.png` | 1251² | 0,18 | de.holy.com/pages/account-login |
+| E16 | `packshots/raptor-50er-dose-mit-gratis-shaker.png` | 2048² | 0,39 | de.holy.com/products/raspberry-raptor |
+| E16 | `konzept-website/bilder/holy-logo-wortmarke.png` | 389 × 105 | 1,00 (beim Schlussschlag hüpft sie nur) | Wortmarke, Einverständnis KI-Nachweis FS2 Nr. 12 |
+
+**Nicht (mehr) verwendet:** `lifestyle/person-haelt-probierboxen-shaker.jpg` (Nacharbeit: das Motiv stammt laut Manifest aus
+der Ankündigungsleiste einer anderen Produktlinie – Dateiname „announcement_bar_milkshake“ – und zeigt viele Probierboxen;
+„endlich komplett“ las sich als Sammel- und Kaufanreiz), `web-danke-paket` / `community/katzen-im-versandkarton.jpg`,
+`frau-trinkt-shaker-dachterrasse.jpg` (Glukosesensor, Gesundheitsbezug), `ueberall-vier-situationen.png` (Controller,
+Berufskleidung), Gründer-, Team-, Creator- und Community-Bilder, die Videobotschaft des Gründers. Keine Stock-Bilder, keine
+Downloads, keine KI-Bilder. Alle übrigen Grafiken (Pulverwolke, Handyrahmen, Chat, Stempel, Etikett, Partikel, Explosion,
+Konfetti, Speed-Lines, Lichteffekte, Lautmalerei) sind eigene Gestaltung.
+
+## 8 Nacharbeit nach der Abnahme (04.11.2026)
+
+Zwei Prüfer haben den ersten Schnitt abgenommen: „Emotion“ (Wirkung, Vorbild-Muster großer Marken) und „Ehrlichkeit“
+(Leitplanken, Pflichtangaben, Belege). Umgesetzt:
+
+| Befund (Schwere) | Umsetzung |
+|---|---|
+| Spannungsloch 1,5–8,0 s: grau-mauve, entsättigt, Freeze-Bild zu klein (hoch) | **Freeze auf der eigenen Pulverwolke** des Hooks, groß in der Bildmitte (eigene Grafik, kein Hochskalieren); Hintergrund **Pink-Duoton** statt Grau; VHS nur beim Rückspulen und an Tageswechseln; Rückblenden je ein Gag (Montag 1,5 s, Dienstag 2,0 s, Donnerstag 1,5 s); im Bett laufen **Hi-Hats im Takt** weiter |
+| Drop knallt nicht (hoch) | Rückblenden-Bett dünn (Hoch- und Tiefpass, ohne Bass, −15 dB), Aufbau ohne Bass, Riser lauter, **Stille 11,55–11,98 s**, Drop-Teil lauter gemischt plus eigener Sub-Bass-Schlag. Gemessen im fertigen Spot: Momentan-Lautheit Drop gegen Rückblenden siehe README, Abschnitt 6 (Ziel ≥ +3 LU) |
+| Drop bildlich ein Standfoto (mittel) | **sechs harte Schnitte auf sechs Schläge** zwischen scharfen Motiven (Schütteln, Gießstrahl, Eis-Glanz, Sachet-Explosion, Schütteln pink, Pixel-Raptor), Zoom-Stoß, ein „TSCHK!“ je Schnitt, Farbwechsel; Drop auf 3 s verlängert |
+| Kein Mensch als Held (mittel) | Marco ist **Absender im Dienstag-Chat** und schreibt im Squad-Chat „bin neu hier“, bevor „Willkommen im Squad, Marco.“ kommt; **POV-Einstellung**: der Shaker hebt sich zur Kamera |
+| Langer Ausklang, Endkarte 5 s, leises Ende (mittel) | Spot 24,5 s statt 25,0 s; Endkarte **3,5 s**; zweiter Musikeinsatz im Squad; **Sound-Logo** (zwei TSCHK, 8-Bit-Pling auf das Zwinkern) und **harter Schlussschlag bei 24,0 s** statt Ausblenden; Leerbilder an Szenenanfängen beseitigt (Elemente stehen ab dem ersten Bild) |
+| „Heute 20 Uhr? Runde steht.“ neben Trinkfoto; Sprechblasen an realen Models (mittel, beide Prüfer) | Push „**Samstag, 15 Uhr? Treffpunkt steht.**“, Stimme „Samstag: Squad!“ statt „Heute Abend: Squad.“; Foto **ohne Sprechblase**; Chatzeilen fiktiver Absender getrennt vom Foto |
+| Dienstag-Chat stumm nicht lesbar (mittel) | Zeile auf „**160 mg** je Portion. Steht aufm Etikett.“ gekürzt (7 Wörter, 1,65 s sichtbar), Dienstag 0,25 s länger |
+| Seufzer „Feierabend“ / „Ahh.“ als müde → erfrischt lesbar (niedrig/mittel) | neue kurze Takes: **„Feierabend!“ freudig**, **„Mmh!“** als Genuss-Laut; Chip „Himbeere × Yuzu“ erscheint zeitgleich |
+| Musik nicht überall unter der Stimme (niedrig) | Ducking je Satz nachgemessen: Musik **mindestens 8 dB** unter der Stimme (je Kanal gemessen) |
+| Match-Cut räumlich unpassend; Countdown blass (niedrig) | Match-Cut über die eigene Wolke (die Körner stürzen zur Gießstelle); Ziffern Magenta mit schwarzer Kontur, Fotos gesättigter, Blitz kürzer und schwächer; Level-Chip |
+| „endlich komplett“, Motiv anderer Produktlinie (niedrig) | Karte und Text entfernt (siehe Abschnitt 7) |
+| Sachet-Aufdruck „Sugar Free“ lesbar (niedrig) | Rack-Focus: ab ~0,5 s liegt die Schärfe auf der Wolke, das Sachet wird weich; im Freeze Duoton + Unschärfe. In den ersten ~0,5 s bleibt der Aufdruck klein lesbar → Gruppe entscheidet |
+| Level-Shaker, „Streber“ mit Jugend-/Schulbezug (niedrig) | Chip „SQUAD Rewards · Level 2/3/4“ (Prämien statt drei Getränke); „Streber.“ → „Nerd.“ |
+| Safe Zone der Pflichthinweise (niedrig) | Vermerk in Abschnitt 2 und README §8: für die Webseite gestaltet, vor Social-Media-Post verschieben |
+| Doku-Lücken (niedrig) | Prompts der Soundeffekte, Kompositionsplan und Voice-Design-Beschreibung in Anhang A; Kommentar in `bau.sh` angeglichen; Kopfzeile „ersetzt“ in `vorfassung-d10/drehbuch.md` |
+
+Umgesetzt aus der ersten Jury (Konzeptphase) und weiter gültig: Katzenfoto ersetzt, Pixel-Raptor als reagierende Figur,
+Countdown als Match-Cut, „Willkommen im Squad, Marco.“, mindestens eine erkennbar erwachsene Frau, frühe Uhrzeiten, keine
+Bläschen, kein EFSA-Text, Handy nur einmal kurz, Musikbett per Filter in der Mischung.
+
+## 9 Vorbild-Spots (Recherche D11, Abruf 04.11.2026)
+
+| Vorbild | Was wir übernehmen | Quelle |
+|---|---|---|
+| HOLY „Mach’s dir wie nie zuvor“ (2026) | Schütteln als Markenritual, späte Auflösung (Freeze bis zum Drop) – ohne die Anzüglichkeit | HORIZONT 09.01.2026, https://www.horizont.net/marketing/nachrichten/pulver-softdrinks-holy-provoziert-mit-doppeldeutiger-schuettel-kampagne-232676 |
+| HOLY Meta-Anzeigen | UGC-Ton, Selbstironie, Lautmalerei-Typo, Pixel-Maskottchen | https://runneth.com/library/holy (sekundär) |
+| Coca-Cola „Try not to hear this“ | Klangkette Öffnen – Eis – Klick – Schluck – Genuss-Laut, Klang im Bild sichtbar (stumm wirksam) | https://lovethework.com/work-awards/campaigns/try-not-to-hear-this-582266 |
+| Spotify Wrapped | Daten als persönliche, freche Pointe (Marcos Woche) | https://www.thedrum.com/news/2022/12/12/outdoor-ad-people-actually-look-forward-why-spotify-s-wrapped-so-successful |
+| Duolingo 5-s-Spot (2024) | Maskottchen als reagierende Figur (Pixel-Raptor) | https://www.adweek.com/brand-marketing/duos-new-bbl-explodes-in-duolingos-5-second-regional-super-bowl-ad/ |
+| Nike „You Can’t Stop Us“ (2020) | Match-Cut über dasselbe Objekt (Wolke → Gießstrahl, drei Shaker im Countdown), Schnitt auf den Schlag | https://www.adweek.com/creativity/the-hardest-commercial-i-have-ever-edited-how-nike-created-its-split-screen-masterpiece/ |
+| Apple „Vertical Cinema“ (2020) | Vertikale ausspielen: Pulver fällt, Polaroid und Shaker fallen von oben ein, Shaker steigt zur Kamera | https://www.macrumors.com/2020/08/05/apple-shares-vertical-shot-on-iphone-video/ |
+| YouTube ABCD / TikTok Creative Best Practices | Hook mit Ton und Bewegung in 0–1,5 s, Marke über Farbe statt Logo-Intro, weicher CTA | https://support.google.com/google-ads/answer/14783551?hl=en · https://ads.tiktok.com/help/article/creative-best-practices?lang=en |
+| System1 „Seeing Gen Z“ / Short-form | sich entfaltende Geschichte, Humor, wenig Text, Menschen statt Technik, Handy nur kurz | https://screenforce.nl/wp-content/uploads/2026/01/20260203-System1-Seeing-Gen-Z.pdf · https://system1group.com/blog/how-to-make-entertaining-short-form-ads-for-tiktok-social |
+| Plattenkratzer-Freeze-Frame („Ja, das bin ich …“), Sound-Logo am Schluss, Schnitt auf jeden Schlag im Drop | bekannte Film-/Meme- und Werbemuster | **Modellwissen**, nicht belegt |
+
+## 10 Offene Punkte für die Gruppe
+
+1. **Anhören** (Handy-Lautsprecher und Kopfhörer): neues „Feierabend!“, „Mmh!“, Lachen vor „Moment“, Flüstern im Countdown,
+   Lautstärke des Drops, Schlussschlag. Geprüft wurde nur maschinell (Lautheit, Pegel je Satz, Speech-to-Text).
+2. **Ton der Marke:** „aufm“, „Nerd.“, „Plot-Twist? Gab’s keinen.“, „Treffpunkt steht.“ – frech genug oder zu viel?
+   (Steuerrad: frech · gesellig · wandelbar.)
+3. **„Feierabend!“ + „Mmh!“** als Vorfreude und Geschmack lesen, nicht als Entspannungs- oder Wirkversprechen – bitte abnicken.
+4. **Sachet-Aufdruck** „Next-Gen Energy Drink · Sugar Free“ ist in den ersten ~0,5 s klein lesbar (HOLYs Etikett).
+5. **Squad-Foto:** HOLY-Model trinkt aus dem Shaker, daneben der Push „Samstag, 15 Uhr? Treffpunkt steht.“ – als Treffen
+   gemeint, ohne Sprechblase am Foto.
+6. **Rechte:** HOLY-Bilder ohne Genehmigung der Rechteinhaber (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17), nicht kommerziell.
+7. **Plattform-Post:** nur für die Webseite gestaltet; vor einem Social-Media-Post Pflichthinweise in die Safe Zone verschieben.
+
+## Anhang A – Anfragen an ElevenLabs (ohne Schlüssel; Ergebnisse in `intern/d11/`, nicht versioniert)
+
+**Voice Design** (Konzeptphase D11, Stimme „d11-ritual-design“, drei Vorschläge, einer gespeichert): Beschreibung „A fictional
+German man in his late twenties, native standard German (Hochdeutsch) speaker without accent. Warm, relaxed, slightly husky
+mid-range voice, casual and self-ironic, audibly smiling, as if telling a good friend about his day. Close microphone, clean
+studio recording.“ · Probetext „Freitag, Feierabend. Endlich. Moment, kurz zurückspulen: Montag hab ich das Video gesehen,
+und der Code war schon drin. Dienstag erst mal nachgelesen. Und jetzt? Jetzt ist mein Moment.“ · Führungsstärke 5.
+
+**Sprachausgabe:** Stabilität 0,5, Ähnlichkeit 0,8, Sprache `de`, Ausgabe MP3 44,1 kHz 128 kbit/s, mit Zeitstempeln je Zeichen;
+Nacharbeit-Varianten mit festem Startwert 11 bzw. 23.
+
+**Musik** (ein Aufruf, Kompositionsplan, instrumental):
+globale Stile „instrumental, playful bright future bass and hip-hop hybrid, 120 BPM, 4/4 time, punchy dry kick, warm bouncy sub
+bass, crisp claps on 2 and 4, shaker percussion, catchy four-note plucky synth hook in a major key, youthful, cheeky,
+self-ironic, high energy, modern social media commercial, tight and loud mix“; ausgeschlossen „vocals, singing, rap, spoken
+words, choir, slow intro, fade in, resemblance to any existing song or artist, dark, aggressive metal“. Abschnitte:
+1 „Hook groove“ 8 s (sofort volle Energie, Kick, Sub-Bass, Claps, Vier-Ton-Hook) · 2 „Build-up“ 4 s (Riser, Snare-Wirbel,
+Filteröffnung, kurze Pause vor dem Drop) · 3 „Drop“ 8 s (großer Bass-Drop auf dem ersten Schlag, Shaker-Achtel, Hook) ·
+4 „Button ending“ 5 s (ein großer Schlussschlag, Hook einmal auf Glocken-Synth, kurzer Nachhall, kein Ausblenden).
+Gemessener Aufbau der gelieferten Datei (25,0 s): Groove 1–8,5 s, Break 8,5–9 s, Groove 9–15 s, Pause ohne Bass 15,5–17 s,
+Drop 17–21 s, Schlussschlag 21 s.
+
+**Soundeffekte** (Prompt · Dauer s · Prompt-Einfluss):
+
+| Name | Prompt | Dauer | Einfluss |
 |---|---|---|---|
-| 7 g + 500 ml = eine Portion | E3 Bild + Sprache | ✔ **S92** [12, 13, 14] (Dossier Z. 912–914, 8.3 Do 1: „Eine Portion … (7 g auf 500 ml Wasser)“; Anhang Z. 1572) | index.html Z. 132 („7 g + 500 ml … ergeben eine Portion“), Kommentar Z. 124 |
-| 160 mg Koffein je Portion | E4 Bild + Sprache | ✔ **S92** (8.3 Do 1: „enthält laut Etikett 160 mg Koffein“) | index.html Z. 136 |
-| 32 mg pro 100 ml | E4 Bild | gerechnet aus ✔ **S92** (160 mg auf 500 ml; 8.3 Do 1 „32 mg/100 ml gerechnet“) | index.html Z. 136 |
-| 0,1 g Zucker pro 100 ml zubereitet | E5 Bild + Sprache | ✔ **R06** [35, 229] · ✔ **R14** [132, 226, 227, 228] (8.3 Do 7, Z. 926; Anhang Z. 1636, 1644) | index.html Z. 140 |
-| gesüßt mit Sucralose und Acesulfam K | E5 Bild | ✔ **R14** (8.3 Do 7; Don't 11 verbietet „ohne Süßstoff“) | index.html Z. 140 |
-| „laut Etikett Raspberry Raptor“ | Pillen E3–E5 | ✔ **S92**, ✔ **R06** | index.html Z. 147 („Werte für Raspberry Raptor laut Etikett und HOLY-Shop.“) |
-| 0,80 € je Portion | E6 Bild + Sprache | ✔ **B09** [18, 19] (Anhang Z. 1487: „39,99/50 ergibt 0,80 € je Portion“) · ✔ **T22** (Anhang Z. 1444: „NUR 0,80 € PRO PORTION“) | index.html Z. 144, 169 |
-| Dose mit 50 Portionen 39,99 € | E6 Karte | ✔ **B09** | index.html Z. 144, 169 |
-| 114,26 €/kg, inkl. MwSt. (zugleich mit 0,80 € im Bild) | E6 Karte | ✔ **R98** [222] (8.3 Do 14 „Preise nur mit Grundpreis“, Z. 939) mit ✔ **S92** gerechnet: 39,99 € : 0,35 kg | index.html Z. 144, 180 |
-| zzgl. 4,99 € Versand, ab 49 € versandfrei | E6 Karte | ✔ **B12** [39] (Anhang Z. 1490: „4,99 € und versandkostenfrei ab 49 € für DE …“) | index.html Z. 180 |
-| Preise abgerufen am 30.10.2026 | E6 Karte | Abrufdatum der Konzept-Webseite | index.html Z. 147 (Präsentationsmodus), Z. 294 (Fuß) |
-| Für Erwachsene · eine Portion pro Tag, so steht's auf dem Etikett | E7b Sprache, Titel, Kasten | ✔ **R19** [216, 217] (8.3 Do 3: „Eine Portion pro Tag, so steht es auch auf dem Etikett.“, Z. 917) · ✔ **S92**; „für Erwachsene gedacht“ ✎ **R20** (8.3 Do 5, Z. 920–921). Bewusst **nicht** „erst ab 18 erlaubt“ (Don't 14) | index.html Z. 106; koffein-check.html Z. 107 |
-| „Laut Etikett: eine zubereitete Portion pro Tag.“ (Lupe, Wortlaut der Webseite) | E7b Lupe | ✔ **S92**, ✔ **R19** | koffein-check.html Z. 107 (Kommentar Z. 101–102) |
-| „160 mg Koffein … 32 mg pro 100 ml. Laut HOLY-Help-Center gilt die Menge für jede Energy-Portion.“ (im Handybild teilweise lesbar, nicht gesprochen) | E7b Handy | ✔ **S92**; „gilt für jede Energy-Portion“ ✔ **S27** [33] (Dossier Z. 107, 443) | koffein-check.html Z. 106 (Kommentar Z. 102: „Help-Center ✔ S27“) |
-| Nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag (laut Etikett) | Endkarte | ✔ **S92**, ✔ **R19** (8.3 Do 4, Z. 918) | index.html Z. 106 |
-| „Dein Code ist schon drin.“, CREATOR10, „Werbung“, „−10 %“ | E7a (Aufnahme) | Konzept-Maßnahme I1/I2; Kennzeichnung ✔ **R25** [38, 81, 82] (8.3 Do 11); Code ist Platzhalter, „−10 %“ Beispielwert (im Spot so gekennzeichnet) | index.html Z. 83, 88, 90 |
-| „Erst nachlesen, dann entscheiden.“ | E7a Sprache + Bild | Konzept-Formulierung (kein Fakt) | index.html Z. 233 |
-| Startseite, Abschnitt „Erst nachlesen“: „Wie viel HOLY Energy ist okay? Koffein je Portion, Tagesmenge, Alter, Nachtschicht – alle Zahlen vom Etikett und von der EFSA, mit Quelle.“ (im Handybild ca. 15,9–16,9 s lesbar) | E7a Handy | Einladung zum Nachlesen, ohne Zahl und ohne Versprechen; die Antwort steht erst im Koffein-Check (dort nur Etikett-Werte im Bild) | index.html Abschnitt „Erst nachlesen, dann entscheiden.“ (Z. 233 ff.) |
-| „7 Quellen“ | E7b | Fakt über die Konzept-Webseite (Quellenliste mit 7 Einträgen) | koffein-check.html Z. 97, 230 ff. |
-| Squad: ein Klick · 10 Coins pro Euro (im Handybild) · „Mitmachen ab 18“ (im Handybild) · Bestellung Nr. 100248, „Do., 12.11.“, 225 Coins, „Level 1 · noch 1.775 Level Coins“ (im Handybild) | E8 | Konzept-Vorschlag der Gruppe (Squad-Einstieg in einem Schritt); 10 Coins pro Euro ✔ **T32** (Anhang Z. 1454); heute Rewards ab 16 ✎ **B05** – „ab 18“ ist ein Vorschlag; Bestellnummer, Liefertag und Coins sind Beispielwerte der Webseite (dort nur im Präsentationsmodus so markiert), im Spot gekennzeichnet „Konzept der Gruppe · Bestellung und Coins: Beispielwerte“ | danke.html Z. 76–79, 84–87 |
-| „Zahlen statt Versprechen.“ | E9 Claim + Sprache | Leitsatz des Konzepts (kein Fakt) | praesentation/index.html Z. 793 (Sprechernotiz) |
-| „Wir könnten dir jetzt viel versprechen … Machen wir nicht.“ | E1 | Selbstironischer Einstieg (Entwurf, Modellwissen über Werbesprache), verspricht nichts, nennt keine andere Marke | – |
-| Bewertungs-Band „4,87 von 5 aus 1.409 Bewertungen …“ | E7a Handy | ✔ **T17** – **keine Aussage des Spots**: nur in 4 Bildern schneller Fahrt mit Bewegungsunschärfe, nicht lesbar, kein Halt | index.html Z. 117–120 |
-| Packungsaufschrift des Sachets („Sugar Free · Natural Flavors · Vegan“) | E6 Packshot | Herstellerangabe auf dem Produktbild, im Spot nicht lesbar (wenige Pixel hoch), nicht Teil unserer Aussage | – |
+| riss | close-up ASMR tearing open a small foil powder sachet, one crisp crinkly rip, loud and satisfying | 0,8 | 0,7 |
+| pulver | fine powder pouring out of a sachet into an empty plastic cup, soft sandy trickling hiss, close ASMR | 1,6 | 0,6 |
+| kratzer | vinyl record scratch stopping the music abruptly, comedic DJ scratch | 0,7 | 0,7 |
+| rueckspul | fast cassette tape rewind, high pitched reverse whirring with squeaky chirps | 1,0 | 0,6 |
+| deckel | plastic shaker bottle lid snapped shut, one sharp dry click, very close | 0,5 | 0,8 |
+| schuetteln | rhythmic shaking of a plastic shaker bottle with ice cubes and liquid, steady strong shakes, close ASMR | 2,0 | 0,6 |
+| schluck | one single gulp of a cold drink from a bottle, close ASMR, no voice | 0,6 | 0,7 |
+| stempel | rubber stamp slammed hard onto paper on a wooden desk, punchy thud | 0,5 | 0,8 |
+| pixel | short cheerful 8-bit retro video game pop-up blip, two quick rising notes | 0,5 | 0,7 |
+| push | short friendly smartphone message notification chime, two soft tones | 0,6 | 0,7 |
+| karton | cardboard parcel box flaps quickly opened, short paper rustle | 0,8 | 0,6 |
+| riser | tension riser for a commercial, white noise sweep and rising synth building up for three seconds, ends abruptly | 3,0 | 0,6 |
+| eis (D10) | a few ice cubes dropping into a plastic shaker cup with water, short, close | 1,0 | – |
+| tipp (D10) | single smartphone screen tap, soft glassy click, close | 0,5 | – |
+| wisch (D10) | quick felt marker pen stroke across paper, single fast swipe, dry, close | 0,5 | – |
+| whoosh (D10) | fast short air whoosh transition, clean, modern commercial | 0,6 | – |
+| muenze (D10) | bright short game coin pickup chime, cheerful, clean | 0,7 | – |
+| schlag (D10) | deep punchy cinematic impact hit with short tail, modern commercial | 0,9 | – |
+| plopp (D10) | Prompt in der Vorfassung nicht festgehalten (kurzer Nachrichten-Plopp) | – | – |
 
-**Bewusst weggelassen:** Fokus, Wachheit, Leistung, Gesundheit, Vitamine, NewCaff, „zuckerfrei“, Superlative, Vergleiche mit
-anderen Marken, EFSA-Werte, Bewertungszahlen als Heldenzahl, Garantie (wäre nur als „Vorschlag der Gruppe“ erlaubt), „mehr
-trinken“, Zitate aus der Videobotschaft des Gründers (Dossier 8.3 Don't 1–15).
+Selbst erzeugt (kein ElevenLabs): Vinyl-Knistern (Rauschen mit festem Startwert), Sub-Bass-Schlag (Sinus 62 → 40 Hz),
+Tape-Stop (Abspielrate der Musik fällt auf 0), Tonhöhen-Varianten (Pulver in Zeitlupe, tiefer Plopp, Pling).
 
-## 8 Bildliste (alle Bilder im Spot)
-
-Rechtestatus aller HOLY-Bilder: Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), **keine Genehmigung
-der Rechteinhaber eingeholt**; nicht kommerziell, für die Lehrveranstaltung. Keine Stock-Bilder, keine neuen Downloads,
-keine KI-Bilder, keine Gesichter.
-
-| Einstellung | Datei (gezeigt mit) | Registerschlüssel (`konzept-website/fremdbilder/register.js`) bzw. Herkunft |
-|---|---|---|
-| E1 | `konzept-website/fremdbilder/web-raptor-dose-shaker.jpg` (1080 × 1080, gezeigt 1080 px = 1 : 1) | **`web-start-video`**, `web-produkt-hero`, `web-koffein-produkt` – HOLY Softdrinks GmbH, erstes Produktbild auf de.holy.com/products/raspberry-raptor, Abruf 03.11.2026 |
-| E3 | Rohdatei `praesentation/intern/roh/produkt/lifestyle/zubereitung-1-pulver-gelb.jpg` (2400 × 2400, gezeigt 900 px) | gleiches Motiv wie **`web-produkt-galerie-3`** / `web-start-portion` (fremdbilder/web-galerie-pulver.jpg, 1200 px); Quelle Energy_Instruction_1x1_-00002.jpg, de.holy.com/products/raspberry-raptor |
-| E4, E6 | Rohdatei `packshots/raptor-50er-dose.png` (2048 × 2048, gezeigt 800–900 px) | gleiches Motiv wie **`web-produkt-gross-50`** / `web-produkt-galerie-1` (fremdbilder/web-galerie-dose.webp) |
-| E5 | Rohdatei `lifestyle/zubereitung-3-schuetteln-gelb.jpg` (2400 × 2400, gezeigt 1200 px) | gleiches Motiv wie **`web-produkt-galerie-4`** / `web-danke-zubereitung-3` (fremdbilder/web-galerie-schuetteln.jpg, 1200 px); Quelle Energy_Instruction_1x1_-00005.jpg, de.holy.com/products/raspberry-raptor (Hand und Shaker, kein Gesicht) |
-| E6 | Rohdatei `packshots/raptor-sachet-1-portion.png` (2048 × 2048, gezeigt 480 px) | gleiches Motiv wie **`web-produkt-gross-1`** / `web-koffein-portion` |
-| E7, E8 | eigene Bildschirmaufnahmen der Konzept-Webseite (`index.html`, `koffein-check.html`, `danke.html`, `squad.html`; Fassung mit Bildern; Playwright, Netz gesperrt; 1170 × 2532 px, gezeigt ≤ 0,63-fach, Lupe ≤ 0,95-fach) | eigene Aufnahme; die darin sichtbaren Bilder haben ihre Schlüssel im Register (u. a. `web-start-tag`, `web-start-video`, `web-start-portion`, `web-squad-logo`, `web-squad-coins`, `web-danke-paket`) |
-| E8 | Rohdateien `squad-rewards/level-1-raptor-egg.png` … `level-4-og-raptor.png` (1251 px, gezeigt 230 px) | gleiche Motive wie **`web-squad-level-1`** … **`web-squad-level-4`** |
-| E9 | Rohdatei `packshots/raptor-50er-dose-mit-gratis-shaker.png` (2048 × 2048, gezeigt 780–858 px) | gleiches Motiv wie **`web-produkt-galerie-2`** (fremdbilder/web-galerie-dose-shaker.webp); Glanzstreifen nur als Lichtebene darüber, Motiv unverändert |
-| E9 | `konzept-website/bilder/holy-logo-wortmarke.png` (389 × 105, 1 : 1) | HOLY-Wortmarke, unverändert, Einverständnis laut KI-Nachweis FS2 Nr. 12 |
-| E7, E8 | Handy-Rahmen, Statusleiste, Tipp-Kreise, Balken, Marker, Pillen, Wischer | eigene Grafik (CSS) |
-
-## 9 Offene Punkte für die Gruppe
-
-1. **„0,1 g Zucker“ als eigene Zahl** liegt nah an einer Nährwertaussage; im Spot nur mit „zubereitet · gesüßt mit Sucralose
-   und Acesulfam K“ und ohne „zuckerfrei“. Bitte bewusst abnicken.
-2. **Wir-Stimme:** „Machen wir nicht.“ spricht, als wäre der Absender HOLY. Die dauerhafte Pflicht-Pille (im Hook mit
-   „Studentisches Konzept“ in Zitrone hervorgehoben) und die Endkarte fangen das auf; ob das reicht, entscheidet die Gruppe.
-   Beim Hochladen in der Beschreibung immer „Studentisches Konzept, keine Werbung der HOLY Softdrinks GmbH“ voranstellen.
-3. **Squad „ein Klick“, „ab 18“, Code „ist schon drin“** sind Konzept-Vorschläge (heute Rewards ab 16, ✎ B05); im Bild als
-   „Konzept der Gruppe“ gekennzeichnet, gesprochen aber als Tatsache.
-4. **„Squad“ einmal mit Kopfhörern anhören:** Die Erkennung schreibt es jetzt richtig, aber mit der geringsten Sicherheit
-   aller Wörter. Klingt es nach „Squat“, nur diesen Satz neu erzeugen (etwa 15 Zeichen).
-5. **Stand der Zahlen:** Preise am 30.10.2026 abgerufen; sie können sich ändern.
-6. **Plattform-Zonen:** Pflichtzeile bei y = 112–210; auf Reels/TikTok liegt dort teils die App-Oberfläche.
-7. **Lesart „26 px Schrifthöhe“:** Schriftgrad 31 px, gemessene Zeilenhöhe über alles 27 px, Versalhöhe 21 px. Wenn die
-   Gruppe die Versalhöhe meint, müsste die Pille dreizeilig werden (Schriftgrad ≥ 38 px).
-8. **Startseite im Handy:** Der Abschnitt „Erst nachlesen“ der Konzept-Webseite fragt „Wie viel HOLY Energy ist okay?“ (ohne
-   Zahl, Einladung zum Koffein-Check); er ist ca. 1 s lesbar. Inhaltlich unbedenklich, aber nah an der Überschrift, die im
-   Koffein-Check verdeckt wird – bitte mit abnicken.
-
-## 10 Nacharbeit nach der Abnahme (04.11.2026)
-
-Zwei Prüfer (Wirkung; Ehrlichkeit/Recht/Technik) haben den Spot abgenommen. Jeder Befund wurde zuerst selbst nachgeprüft.
-
-| Befund (Schwere) | geprüft | umgesetzt |
-|---|---|---|
-| EFSA-Satz und Überschrift „… wie viel ist okay?“ beim Sprung zu „7 Quellen“ sichtbar; Seiteninhalt läuft über der Hinweisleiste unter der Insel durch (hoch) | bestätigt: Die Seiten glitten über 0,3 s durch die Aufnahme, und die Aufnahme lag ohne Ausschnitt im Bildschirm | Sprung jetzt hart (19,60 s, keine Zwischenbilder); Kasten „Für Erwachsene.“ hängt am Handy und deckt die Überschrift ab dem ersten Bild der Seite bis nach dem Sprung; EFSA-Punkt liegt in jedem Bild unter dem Bildrand; Seite in eigenem Ausschnitt unter der Statusleiste (alle Handy-Szenen). Bilder 508–512 und 586–592 einzeln angesehen |
-| Musik zu leise (mittel) | bestätigt (13 + 5 dB unter der Stimme) | Grundpegel −8 dB, Ducking −4 dB, 60 ms / 150 ms; Musik integriert jetzt −26,9 LUFS bei Stimme −16 LUFS (vor der Normalisierung); Sprechpausen in der Mischung um −25 LUFS momentan statt −31 bis −34 |
-| Loch 14,1–16,05 s (mittel) | bestätigt (Musik-Break plus 1,9 s ohne Stimme) | zwei Schläge mit dem Break aus der Musik geschnitten, alles danach 1,0 s früher; Lücke ohne Stimme jetzt 1,17 s mit durchlaufendem Beat und Whoosh auf dem Wischer |
-| Handy-Strecke wirkt wie Erklärvideo, Standbilder (mittel) | bestätigt (freezedetect: 3 Standbilder) | Lupe nur noch ein Satz mit Marker, Titel „Eine Portion pro Tag.“ im Takt, Kamerafahrt über die ganze Strecke, eine schnelle Scroll-Fahrt statt Halt am Band, Strecke 0,5 s kürzer; freezedetect findet kein Standbild mehr |
-| Einstieg mit leerer Fläche und harter Fotokante (niedrig) | bestätigt | Bild 0 zeigt „Wir“ und das Foto, Punch-in, Verlauf über der Fotokante, Foto randlos 1 : 1 |
-| Ende in Stille (niedrig) | bestätigt | Nachhall des Schlussschlags als Klangfläche, Spot 26,8 s |
-| Eis-Foto: Ausschnitt unlesbar und ohne Registerschlüssel (niedrig/mittel) | bestätigt | ersetzt durch Schüttel-Foto (`web-produkt-galerie-4`) |
-| „7g“, „160mg“ ohne sichtbaren Abstand (niedrig) | bestätigt (schmales Leerzeichen in Bricolage 75 % kaum sichtbar) | sichtbarer Abstand 0,15 em |
-| Hinweis-Pille über dem Knopf (niedrig) | bestätigt | Pille oben unter der Pflicht-Pille, wie in E8 |
-| Zahlen in den Untertiteln ausgeschrieben (niedrig) | bestätigt | Ziffern wie im Bild, 14 Einträge |
-| „Squad“ als „Squat“ erkannt (niedrig) | bestätigt | Riser erst nach dem Wort; Erkennung jetzt „Squad?“; keine neue Sprachaufnahme |
-| Bewertungs-Band steht lesbar (mittel) | bestätigt (Haltepunkt 1250 px, Band nach Messung bei 1200–1293 px) | kein Halt mehr; Band nur in 4 Bildern schneller Fahrt, Messung in `scroll.json` |
-| Modellkennungen in README/Drehbuch (mittel) | bestätigt | durch Beschreibungen ersetzt; Kennungen nur in `intern/` |
-| Beispielwerte im Handybild ohne Kennzeichnung (niedrig) | bestätigt | Etiketten erweitert (Rabatt; Bestellung und Coins) |
-| S27 fehlt in der Belegliste; Überschrift 18,0–18,9 s lesbar (niedrig) | bestätigt | S27 ergänzt; Überschrift jetzt in keinem Bild lesbar |
-| Hinweis (e) erst später voll lesbar (niedrig) | bestätigt | Einblendung 0,2 s, voll lesbar ab 22,43 s, 4,37 s (gemessen) |
-| „31 px“ nur Schriftgrad (niedrig) | bestätigt | Messwerte eingetragen; 34 px passt nicht in zwei Zeilen (Abschnitt 4, offen Punkt 7) |
-| Preis ca. 1 s ohne Grundpreis (niedrig) | bestätigt | Preiskarte zugleich mit „0,80 €“ |
-| Packungsaufschrift „Sugar Free“ (niedrig) | bestätigt, im Spot nicht lesbar | in Abschnitt 3 und 7 vermerkt |
-| Stimmen-ID fehlt in den Anfragedateien (niedrig) | bestätigt | `voice_id` und `output_format` ergänzt (Probe: speed Standard 1,0 laut ElevenLabs-Historie) |
-| Wir-Stimme (niedrig) | Einschätzung geteilt | „Studentisches Konzept“ im Hook in Zitrone; Entscheidung bleibt bei der Gruppe |
+**Speech-to-Text** (Kontrolle): Haupttake, beide Nacharbeit-Varianten, fertige Mischung.

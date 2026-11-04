@@ -48,7 +48,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 21 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll) | – | Rohprotokoll committet und gepusht |
 | 22 | 04.11.2026 | Yannick | D09 passt; als Nächstes ein kleines, realistisch wirkendes Werbevideo für HOLY im Stil des Konzepts, Stimme über ElevenLabs | D10 (Workflow) | Spot „Zahlen statt Versprechen“ (26,8 s, 9:16, Stimme „simpleact-design-b“, Musik und Geräusche von ElevenLabs) in `werbevideo/`; Pflichtkennzeichnung durchgehend |
 | 23 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Container-Neustart: Workflow D10 abgebrochen; später Meldung „D10 abgeschlossen“ | – | D10 mit gespeicherten Zwischenergebnissen fortgesetzt; Ergebnis geprüft (Eintrag 22) |
-| 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | *läuft:* Recherche, 3 emotionale Konzepte, Jury, Produktion, Abnahme, Nacharbeit |
+| 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | Neuer Spot „Mein Moment.“ (24,5 s): Marcos Feierabend-Ritual mit Rückblende, Countdown, Beat-Drop beim Schütteln und Squad; Vorfassung in `werbevideo/vorfassung-d10/` |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -495,8 +495,22 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   leistungsbezogenen Versprechen, Pflichtkennzeichnung bleibt, keine Klonstimme. Zusätzlich erlaubt: HOLYs eigene
   Lifestyle-Werbefotos mit Models (nicht Gründer, Team, Creator oder Community-Mitglieder). Der Spot D10 bleibt als
   Vorfassung erhalten.
-- **Ergebnis:** *läuft*
-- **Dateien:** `ki-nachweis/workflows/2026-11-04_fs2-werbevideo-emotion.js`; weitere folgen
+- **Ergebnis:** Spot „Mein Moment.“ (24,5 s, 9:16, 13,5 MB, −14,2 LUFS). Ablauf: Freitag 14:06, das Sachet reißt
+  („RRRIPP!“, „Feierabend!“), Freeze und Rückspulen; Rückblenden Montag (Code war schon drin, CREATOR10 mit „Werbung“),
+  Dienstag (fiktiver Chat: „160 mg je Portion. Steht aufm Etikett.“ – „Nerd.“), Donnerstag (Paket da, „Plot-Twist? Gab's
+  keinen.“); „Und jetzt …“, Countdown 3-2-1, Beat-Drop beim Schütteln („TSCHK!“) mit sechs Schnitten im Takt, „Mmh!
+  Raspberry Raptor“, Squad-Nachricht „Samstag, 15 Uhr?“, „Willkommen im Squad, Marco.“, Endkarte „HOLY. Mein Moment. Und
+  deiner?“ mit Altershinweis und vollem Hinweis. Pflichtzeile durchgehend, ergänzt um „Chats und Szenen fiktiv“.
+  Stimme: neu per Voice Design gestaltete synthetische Stimme „d11-ritual-design“ (im ElevenLabs-Konto angelegt, keine
+  Klonung), Musik und Geräusche von ElevenLabs; 861 Zeichen Sprache. Bilder: HOLY-Produkt- und Lifestyle-Werbefotos
+  (u. a. ein Model beim Trinken), Squad-Grafiken, Aufnahme der Konzept-Webseite. Der Spot D10 liegt als Vorfassung in
+  `werbevideo/vorfassung-d10/`. Offene Punkte für die Gruppe in `werbevideo/README.md` §8.
+- **Herkunft:** Recherche mit Websuche (65 Quellen, Abruf 04.11.2026, u. a. YouTube ABCD, TikTok Creative Best
+  Practices, HORIZONT zur HOLY-Kampagne „Mach's dir wie nie zuvor“, Duolingo, Coca-Cola, Nike; Liste in
+  `werbevideo/drehbuch.md` §9); Aussagen S92, R19, R25, T32, T35; Geschmack „Himbeere × Yuzu“ laut Packungsaufdruck;
+  Gestaltung, Texte, Schnitt und Ton aus dem Modellwissen.
+- **Dateien:** `fallstudie-2-customer-journey/werbevideo/` (neuer Spot, Poster, Untertitel, `drehbuch.md`, `README.md`,
+  `werkzeuge/`; `vorfassung-d10/`), `ki-nachweis/workflows/2026-11-04_fs2-werbevideo-emotion.js`
 - **Unteragenten:** D11
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -787,8 +801,16 @@ Auftrag (im Workflow-Skript).
   Team, Creator, Community), Voice Design und eleven-v3-Tags erlaubt, keine Klonstimme, höchstens 10.000 Zeichen
   Sprache; Vorfassung D10 nach `werbevideo/vorfassung-d10/`.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-04_fs2-werbevideo-emotion.js`](workflows/2026-11-04_fs2-werbevideo-emotion.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** 11 Unteragenten, alle mit Ergebnis. Recherche: 65 Quellen mit URL (Marken-Spots, Plattform-Leitfäden,
+  Zielgruppe, Werberegeln). Jury: „Ritual“ 111, „Humor“ 106, „Squad“ 100 Punkte. Abnahme Emotion: 2 hohe (Spannungsloch
+  1,5–8 s, Drop knallt nicht), 5 mittlere, 3 niedrige Befunde; Abnahme Ehrlichkeit/Recht/Technik: 2 mittlere (Seufzer als
+  „müde → wach“ lesbar, Squad-Nachricht am Model-Foto), 5 niedrige. Nacharbeit: alle umgesetzt (Rückblenden mit Gags,
+  Drop +3,2 LU, sechs Schnitte im Takt, neue Takes „Feierabend!“ und „Mmh!“), Spot neu gebaut.
+- **Wie Claude das Ergebnis geprüft hat:** Rückgaben gelesen; selbst gemessen: ffprobe (H.264 High, 1080 × 1920,
+  yuv420p, 30 fps, AAC 48 kHz, 24,5 s, 13,5 MB), Lautheit −14,2 LUFS, Spitze −3,0 dBFS; Kontaktbogen (32 Bilder über die
+  ganze Länge) angesehen: Pflichtzeile in jedem Bild, Endkarte mit Altershinweis und vollem Hinweis, „Werbung“ am Code;
+  Untertitel gelesen; Herkunft „Himbeere × Yuzu“ im Drehbuch nachgesehen; Volltextsuche nach Schlüsseln, Klonstimmen-ID
+  und Modellkennungen (nur Treffer: die Suchmuster im Prüfskript selbst). Ton nicht angehört.
 
 ---
 
