@@ -46,7 +46,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 19 | 03.11.2026 | Yannick | Video läuft; die Konzept-Webseite soll wie eine richtige Webseite aussehen, nicht wie ein Konzept | D09 (Workflow) | Alle 7 Seiten im Shop-Look (Sieger „Kampagne“); Hinweisleiste, `noindex`, keine Formulare, Kennzeichnung bleiben; Folie 08 mit neuen Bildschirmfotos; Prüfskripte 0 Fehler |
 | 20 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Meldung: Workflow D09 „fs2-webseite-echt“ abgeschlossen | – | Ergebnisse gelesen und selbst geprüft, Abschluss in Eintrag 19 und D09 |
 | 21 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (nur Rohprotokoll) | – | Rohprotokoll committet und gepusht |
-| 22 | 04.11.2026 | Yannick | D09 passt; als Nächstes ein kleines, realistisch wirkendes Werbevideo für HOLY im Stil des Konzepts, Stimme über ElevenLabs | D10 (Workflow) | *läuft:* 3 Drehbücher, Jury, Produktion, Abnahme, Nacharbeit |
+| 22 | 04.11.2026 | Yannick | D09 passt; als Nächstes ein kleines, realistisch wirkendes Werbevideo für HOLY im Stil des Konzepts, Stimme über ElevenLabs | D10 (Workflow) | Spot „Zahlen statt Versprechen“ (26,8 s, 9:16, Stimme „simpleact-design-b“, Musik und Geräusche von ElevenLabs) in `werbevideo/`; Pflichtkennzeichnung durchgehend |
+| 23 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Container-Neustart: Workflow D10 abgebrochen; später Meldung „D10 abgeschlossen“ | – | D10 mit gespeicherten Zwischenergebnissen fortgesetzt; Ergebnis geprüft (Eintrag 22) |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -462,8 +463,21 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   veröffentlichten HOLY-Produktbildern und echten Bildschirmaufnahmen der Konzept-Webseite. Im Video bleiben sichtbar:
   „Studentisches Konzept … keine Werbung der HOLY Softdrinks GmbH“, „Stimme KI-generiert“, Altershinweis; Aussagen nur
   mit Befund-ID. Workflow D10: drei Drehbücher, Jury, Produktion, zwei Abnahmen, Nacharbeit.
-- **Ergebnis:** *läuft*
-- **Dateien:** `ki-nachweis/workflows/2026-11-04_fs2-werbevideo.js`; weitere folgen
+- **Ergebnis:** Werbespot „Zahlen statt Versprechen“ (Sieger der Jury), 26,8 s, 1080 × 1920, H.264/AAC, 10,4 MB,
+  −14 LUFS: selbstironischer Einstieg („Wir könnten dir jetzt viel versprechen … Machen wir nicht. Hier sind Zahlen.“),
+  vier Zahlenkarten mit HOLY-Produktfotos (7 g + 500 ml, 160 mg Koffein je Portion, 0,1 g Zucker pro 100 ml,
+  0,80 € je Portion), Handy-Strecke mit echten Aufnahmen der Konzept-Webseite (Code ist schon drin, Koffein-Check
+  „eine Portion pro Tag“, Squad mit einem Klick), Endkarte „Zahlen statt Versprechen.“. Durchgehend die Zeile
+  „Studentisches Konzept (HS Kaiserslautern) · keine Werbung der HOLY Softdrinks GmbH · Stimme KI-generiert“, Altershinweis
+  und voller Hinweis auf der Endkarte, „Werbung“ am Platzhalter-Code, Beispielwerte gekennzeichnet; Untertitel (VTT).
+  Stimme: synthetisch gestaltete ElevenLabs-Stimme „simpleact-design-b“ (keine Klonstimme); Musik und Geräusche ebenfalls
+  von ElevenLabs. 459 Zeichen Sprachausgabe verbraucht. Offene Punkte für die Gruppe in `werbevideo/README.md` §8 (u. a.
+  „Wir“-Stimme als HOLY-Absender, 0,1 g Zucker als Heldenzahl, Konzept-Funktionen gesprochen wie Tatsachen).
+- **Herkunft:** Aussagen mit Befund-IDs S92, R06, R14, B09, T22, R98, B12, R19, R20, R25, T32, B05, S27 (Belegliste in
+  `werbevideo/drehbuch.md`); Gestaltung, Schnitt, Ton und Texte aus dem Modellwissen; keine Websuche, keine Downloads.
+- **Dateien:** `fallstudie-2-customer-journey/werbevideo/` (`holy-werbespot.mp4`, `holy-werbespot-poster.jpg`,
+  `holy-werbespot.de.vtt`, `drehbuch.md`, `README.md`, `werkzeuge/`), `.gitignore` (`werbevideo/intern/`),
+  `ki-nachweis/workflows/2026-11-04_fs2-werbevideo.js`
 - **Unteragenten:** D10
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -731,8 +745,18 @@ Auftrag (im Workflow-Skript).
   Videobotschaft des Gründers, nur veröffentlichte HOLY-Bilder, Aussagen nur mit Befund-ID, Pflichtkennzeichnungen im
   Bild, höchstens 8.000 Zeichen Sprachausgabe.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-04_fs2-werbevideo.js`](workflows/2026-11-04_fs2-werbevideo.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** 9 Unteragenten (nach einem Container-Neustart fortgesetzt; zwei Drehbücher kamen aus dem Zwischenspeicher).
+  Jury: „Zahlen statt Versprechen“ 97, „Der Weg aus dem Video“ 93, „Erst nachlesen, dann entscheiden“ 82 Punkte.
+  Abnahme Wirkung: 1 hoher (EFSA-Satz und Überschrift des Koffein-Checks kurz im Handy lesbar), 3 mittlere, 7 niedrige
+  Befunde; Abnahme Ehrlichkeit/Recht/Technik: 3 mittlere (Bewertungsband lesbar, Eis-Foto ohne Registerschlüssel,
+  Modellkennungen in der Doku), 8 niedrige. Nacharbeit: alle hohen und mittleren und fast alle niedrigen umgesetzt, Spot
+  neu gebaut. Quellen: Dossier-IDs, Konzept-Webseite, Bildregister; keine Websuche.
+- **Wie Claude das Ergebnis geprüft hat:** Rückgaben gelesen; selbst gemessen: ffprobe (H.264 High, 1080 × 1920,
+  yuv420p, 30 fps, AAC 48 kHz, 26,8 s, 10,4 MB), Lautheit −14,0 LUFS, Spitze −1,4 dBFS; Kontaktbogen mit einem Bild je
+  Sekunde angesehen (Pflichtzeile in jedem Bild, Endkarte mit Altershinweis und vollem Hinweis); Untertitel gelesen;
+  Volltextsuche in `werbevideo/` (ohne `intern/`) nach Schlüsseln, der Klonstimmen-ID und Modellnamen – kein Treffer;
+  `intern/` per `.gitignore` ausgeschlossen. Das Video selbst nicht angehört (kein Ton in der Sitzung); die Aussprache
+  hat der Unteragent per Speech-to-Text der eigenen Tonspur geprüft.
 
 ---
 

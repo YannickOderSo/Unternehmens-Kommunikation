@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bühne Werbespot HOLY</title>
+<!-- Bühne des Werbespots „Zahlen statt Versprechen“ (studentisches Konzept der Gruppe, HS Kaiserslautern; keine Werbung
+     der HOLY Softdrinks GmbH). 1080 × 1920, deterministisch animiert: window.__setTime(t) setzt jedes Element auf den
+     Zustand zur Sekunde t (keine Zufallswerte, keine CSS-Animationen). render.cjs ruft die Funktion Bild für Bild auf.
+     Schriften lokal aus konzept-website/schriften/ (OFL 1.1). Bilder: konzept-website/fremdbilder/ (Registerschlüssel im
+     Drehbuch), Wortmarke konzept-website/bilder/, Rohdateien unverändert aus ../intern/bilder/ (Kopie aus
+     praesentation/intern/roh/produkt/), Bildschirmaufnahmen der Konzept-Webseite aus ../intern/handy/.
+     Zahlen und Belege: ../drehbuch.md Abschnitt 6. KI-gestützt erstellt, Prüfung durch die Gruppe offen. -->
+<style>
+@font-face { font-family: "Bricolage"; src: url("../../konzept-website/schriften/bricolage-grotesque-latin-standard-normal.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; }
+@font-face { font-family: "Bricolage"; src: url("../../konzept-website/schriften/bricolage-grotesque-latin-ext-standard-normal.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; unicode-range: U+0100-02BA, U+20A0-20AB, U+20AD-20C0; }
+@font-face { font-family: "Inter"; src: url("../../konzept-website/schriften/inter-latin-opsz-normal.woff2") format("woff2"); font-weight: 100 900; }
+:root { --zitrone: #FFF200; --gelb: #FFD007; --pink: #F08EB8; --lila: #C09CE3; --schwarz: #1D1D1B; --weiss: #FFFFFF;
+  --creme: #FCF8F0; --schiefer: #5C5547; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--schwarz); }
+#b { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Inter", sans-serif; color: var(--schwarz); }
+.sz { position: absolute; inset: 0; overflow: hidden; display: none; will-change: clip-path; }
+.br { font-family: "Bricolage", sans-serif; font-weight: 800; font-stretch: 75%; letter-spacing: -.01em; line-height: .86; }
+.abs { position: absolute; }
+.m { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .02em .1em; margin-bottom: -.1em; }
+.m > span { display: inline-block; }
+/* Abstand Zahl–Einheit: sichtbares schmales Leerzeichen (U+202F ist in Bricolage 75 % kaum zu sehen) */
+.sp { display: inline-block; width: .15em; }
+
+/* Pflichtzeile (a) + (b): dauerhaft, dunkle Pille unterhalb der obersten App-Zone, Weiß auf #1D1D1B (16,9 : 1), 31 px */
+#pflicht { position: absolute; z-index: 100; left: 50%; top: 112px; transform: translateX(-50%); width: 1040px;
+  background: var(--schwarz); color: var(--weiss); border-radius: 26px; padding: 11px 12px 12px; text-align: center; white-space: nowrap;
+  font-family: "Bricolage"; font-stretch: 75%; font-weight: 600; font-size: 31px; line-height: 1.2;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.18); }
+#pflicht b { font-weight: 800; }
+#pflicht.hook b { color: var(--zitrone); }
+
+.zaehler { position: absolute; right: 50px; top: 256px; z-index: 20; font-family: "Bricolage"; font-stretch: 75%; font-weight: 800;
+  font-size: 46px; line-height: 1; background: var(--schwarz); color: var(--gelb); border-radius: 999px; padding: 10px 26px 12px; }
+.quelle { position: absolute; font-weight: 600; font-size: 30px; line-height: 1.2; background: var(--schwarz); color: var(--weiss);
+  border-radius: 999px; padding: 13px 28px 14px; white-space: nowrap; }
+.balken { position: absolute; font-family: "Bricolage"; font-stretch: 75%; font-weight: 800; line-height: .95; padding: 14px 34px 22px;
+  white-space: nowrap; transform-origin: 0 50%; }
+
+/* E1 Hook */
+#s1 { background: var(--pink); }
+#s1 .foto { position: absolute; left: 0; top: 840px; width: 1080px; height: 1080px; transform-origin: 50% 70%; }
+#s1 .verlauf { position: absolute; left: 0; right: 0; top: 800px; height: 330px; background: linear-gradient(var(--pink) 0, var(--pink) 18%, rgba(240,142,184,0) 100%); }
+#s1 h1 { position: absolute; left: 60px; right: 40px; top: 290px; font-size: 170px; }
+#strich { position: relative; display: inline-block; }
+#strich i { position: absolute; left: -12px; right: -18px; top: 44%; height: 34px; background: var(--gelb); transform-origin: 0 50%; mix-blend-mode: multiply; }
+#strich u { position: absolute; left: -12px; right: -18px; top: 49%; height: 15px; background: var(--schwarz); transform-origin: 0 50%; }
+#schild { position: absolute; left: 60px; top: 760px; font-size: 76px; background: var(--schwarz); color: var(--zitrone); padding: 8px 30px 16px;
+  border-radius: 16px; transform-origin: 20% 50%; z-index: 5; }
+
+/* E2 */
+#s2 { background: var(--schwarz); }
+#s2 .titel { position: absolute; left: 60px; top: 620px; font-size: 250px; color: var(--zitrone); }
+#s2 .punkte { position: absolute; left: 66px; top: 1210px; display: flex; gap: 26px; }
+#s2 .punkte span { width: 58px; height: 58px; border-radius: 50%; border: 7px solid var(--zitrone); }
+
+/* E3 7 g + 500 ml */
+#s3 { background: var(--lila); }
+#s3 .zahl { position: absolute; left: 46px; top: 290px; font-size: 400px; }
+#s3 .plus { position: absolute; left: 60px; top: 660px; font-size: 168px; }
+#s3 .kreis { position: absolute; left: 190px; top: 850px; width: 700px; height: 700px; border-radius: 50%; overflow: hidden;
+  border: 14px solid var(--schwarz); background: var(--gelb); }
+#s3 .kreis img { position: absolute; left: -110px; top: -40px; width: 900px; height: 900px; transform-origin: 50% 40%; }
+#s3 .balken { left: 70px; top: 1500px; font-size: 112px; background: var(--gelb); color: var(--schwarz); }
+#s3 .quelle { left: 50%; top: 1736px; }
+
+/* E4 160 mg */
+#s4 { background: var(--gelb); }
+#s4 .zahl { position: absolute; left: 34px; top: 280px; font-size: 520px; font-variant-numeric: tabular-nums; }
+#s4 .einheit { position: absolute; left: 690px; top: 430px; font-size: 230px; transform-origin: 0 100%; }
+#s4 .zeile { position: absolute; left: 56px; top: 760px; font-size: 120px; }
+#s4 .fakt { position: absolute; left: 56px; top: 940px; width: 420px; font-size: 42px; line-height: 1.25; font-weight: 500; }
+#s4 .fakt b { font-weight: 800; }
+#s4 .dose { position: absolute; left: 230px; top: 880px; width: 900px; height: 900px; transform-origin: 50% 60%; }
+#s4 .quelle { left: 56px; top: 1736px; }
+
+/* E5 0,1 g */
+#s5 { background: var(--pink); }
+#s5 .bild { position: absolute; left: 0; top: 0; width: 1080px; height: 1140px; overflow: hidden; }
+#s5 .bild img { position: absolute; left: -120px; top: 0; width: 1200px; height: 1200px; transform-origin: 65% 40%; }
+#s5 .zahl { position: absolute; left: 50px; top: 1130px; font-size: 330px; }
+#s5 .zeile { position: absolute; left: 60px; top: 1440px; font-size: 104px; }
+#s5 .unter { position: absolute; left: 60px; top: 1566px; font-size: 40px; font-weight: 500; line-height: 1.3; }
+#s5 .quelle { left: 60px; top: 1736px; }
+
+/* E6 0,80 € */
+#s6 { background: var(--schwarz); color: var(--weiss); }
+#s6 .zaehler { background: var(--gelb); color: var(--schwarz); }
+#s6 .zahl { position: absolute; left: 44px; top: 300px; font-size: 400px; color: var(--gelb); white-space: nowrap; transform-origin: 30% 60%; }
+#s6 .zeile { position: absolute; left: 60px; top: 660px; font-size: 128px; }
+#s6 .dose { position: absolute; left: 330px; top: 740px; width: 800px; height: 800px; }
+#s6 .sachet { position: absolute; left: 10px; top: 1000px; width: 480px; height: 480px; }
+#s6 .preis { position: absolute; left: 50px; right: 50px; top: 1440px; background: var(--weiss); color: var(--schwarz); border-radius: 36px;
+  padding: 28px 36px 30px; font-size: 36px; line-height: 1.32; box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+#s6 .preis b { font-family: "Bricolage"; font-stretch: 75%; font-weight: 800; font-size: 60px; line-height: 1.05; display: block; margin-bottom: 6px; }
+#s6 .preis small { display: block; font-size: 30px; color: var(--schiefer); margin-top: 6px; }
+
+/* Handy (eigene Rahmenzeichnung), Bildschirm in Aufnahmegröße 1170 × 2532, per transform verkleinert */
+.handy { position: absolute; left: 0; top: 0; width: 1242px; height: 2604px; border-radius: 176px; background: #111110;
+  padding: 36px; transform-origin: 0 0; box-shadow: 0 60px 120px rgba(29,29,27,.45), inset 0 0 0 6px #3a3a37; }
+.handy .schirm { position: relative; width: 1170px; height: 2532px; border-radius: 140px; overflow: hidden; background: #FFF200; }
+/* Statusleiste 130 px über der Seite (Farbe der Hinweisleiste), darunter die Aufnahme; die Insel liegt in der Statusleiste */
+.handy .seite { position: absolute; left: 0; top: 130px; width: 1170px; height: 2402px; overflow: hidden; }
+.handy .seite img { position: absolute; left: 0; top: 0; width: 1170px; height: 2532px; }
+.handy .insel { position: absolute; left: 50%; top: 22px; width: 330px; height: 96px; margin-left: -165px; border-radius: 60px; background: #000; z-index: 3; }
+.tipp { position: absolute; width: 230px; height: 230px; margin: -115px 0 0 -115px; border-radius: 50%; z-index: 4; pointer-events: none;
+  background: rgba(255,255,255,.55); box-shadow: 0 0 0 10px rgba(255,255,255,.35); }
+.ring { position: absolute; width: 230px; height: 230px; margin: -115px 0 0 -115px; border-radius: 50%; z-index: 4; border: 10px solid rgba(255,255,255,.9); }
+
+/* E7 Konzept-Webseite im Handy */
+#s7 { background: var(--pink); }
+#s7 .titel { position: absolute; left: 56px; top: 330px; font-size: 128px; z-index: 6; }
+#s7 .kamera { position: absolute; inset: 0; transform-origin: 540px 1250px; }
+#s7 .hinweis { position: absolute; z-index: 7; left: 50px; top: 246px; background: var(--weiss); color: var(--schiefer); font-size: 30px; font-weight: 600; line-height: 1.25;
+  border-radius: 999px; padding: 12px 26px 13px; white-space: nowrap; }
+/* Lupe: nur Punkt 2 aus „Kurz gesagt“ (Aufnahme koffein-oben.png, Zeilen y 2072–2252), im Handy-Koordinatensystem 1,5-fach,
+   also im Bild 0,6 × 1,5 × Kamera ≤ 1,05 = höchstens 0,95-fach (nie vergrößert). Liegt über Überschrift-Unterzeile der Seite. */
+#s7 .lupe { position: absolute; z-index: 7; left: -219px; top: 1092px; width: 1680px; height: 352px; border-radius: 60px; overflow: hidden; background: #FFD007;
+  box-shadow: 0 50px 90px rgba(29,29,27,.45), 0 0 0 10px var(--schwarz); transform-origin: 50% 50%; }
+#s7 .lupe .ausschnitt { position: absolute; left: 34px; top: 41px; width: 1611px; height: 270px; overflow: hidden; }
+#s7 .lupe .ausschnitt img { position: absolute; left: -72px; top: -3108px; width: 1755px; height: 3798px; }
+#s7 .lupe .marker { position: absolute; height: 46px; background: var(--pink); mix-blend-mode: multiply; transform-origin: 0 50%; border-radius: 6px; }
+#s7 .titel2 { position: absolute; left: 56px; top: 330px; font-size: 128px; z-index: 6; }
+/* Kasten „Für Erwachsene.“ im Handy-Koordinatensystem: deckt die Überschrift der Koffein-Check-Seite (y 738–1087) ganz ab */
+#s7 .alter { position: absolute; z-index: 8; left: -110px; width: 1462px; top: 672px; height: 440px; background: var(--schwarz); color: var(--weiss);
+  border-radius: 56px; padding: 50px 64px 0; text-align: left; box-shadow: 0 40px 80px rgba(29,29,27,.45); }
+#s7 .alter b { display: block; font-family: "Bricolage"; font-stretch: 75%; font-weight: 800; font-size: 150px; line-height: 1; color: var(--zitrone); }
+#s7 .alter span { display: block; font-size: 66px; font-weight: 600; line-height: 1.25; margin-top: 34px; }
+
+/* E8 Squad */
+#s8 { background: var(--lila); }
+#s8 .balken { font-size: 118px; background: var(--gelb); color: var(--schwarz); z-index: 8; box-shadow: 0 0 0 9px var(--schwarz), 0 24px 40px rgba(29,29,27,.35); }
+#s8 .abz { position: absolute; width: 230px; height: 230px; z-index: 7; filter: drop-shadow(0 16px 24px rgba(29,29,27,.35)); }
+#s8 .hinweis { position: absolute; z-index: 9; left: 50px; top: 246px; background: var(--weiss); color: var(--schiefer); font-size: 30px; font-weight: 600;
+  border-radius: 999px; padding: 12px 26px 13px; white-space: nowrap; }
+
+/* E9 Endkarte */
+#s9 { background: var(--pink); }
+#s9 .marke { position: absolute; left: 345px; top: 262px; width: 389px; height: 105px; }
+#s9 h2 { position: absolute; left: 30px; right: 30px; top: 400px; font-size: 158px; text-align: center; }
+#s9 .pack { position: absolute; left: 150px; top: 640px; width: 780px; height: 780px; transform-origin: 50% 60%; }
+#s9 .pack img { position: absolute; inset: 0; width: 100%; height: 100%; }
+#s9 .glanz { position: absolute; inset: 0; -webkit-mask-image: url("../intern/bilder/raptor-50er-dose-mit-gratis-shaker.png"); mask-image: url("../intern/bilder/raptor-50er-dose-mit-gratis-shaker.png");
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 42%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 58%, rgba(255,255,255,0) 100%);
+  background-size: 300% 100%; mix-blend-mode: screen; }
+#s9 .name { position: absolute; left: 0; right: 0; top: 1392px; text-align: center; font-size: 40px; font-weight: 800; }
+#s9 .alter { position: absolute; left: 50px; right: 50px; top: 1452px; text-align: center; font-size: 32px; font-weight: 600; line-height: 1.28; }
+#s9 .voll { position: absolute; left: 44px; right: 44px; top: 1548px; background: var(--schwarz); color: var(--weiss); border-radius: 30px;
+  padding: 22px 30px 24px; font-size: 32px; line-height: 1.3; font-weight: 600; text-align: center; }
+#s9 .nachweis { position: absolute; left: 44px; right: 44px; top: 1744px; font-size: 26px; line-height: 1.3; text-align: center; font-weight: 500; }
+#blitz { position: absolute; inset: 0; background: #fff; z-index: 90; opacity: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="b">
+
+  <!-- E1 Hook · Foto web-start-video / web-produkt-hero (fremdbilder/web-raptor-dose-shaker.jpg, 1080 × 1080, höchstens 1 : 1) -->
+  <section class="sz" id="s1">
+    <img class="foto" id="s1foto" src="../../konzept-website/fremdbilder/web-raptor-dose-shaker.jpg" alt="">
+    <div class="verlauf"></div>
+    <h1 class="br" id="s1h">Wir könnten dir jetzt viel <span id="strich"><span class="m"><span>versprechen</span></span><i></i><u></u></span> …</h1>
+    <p class="br" id="schild">Machen wir nicht.</p>
+  </section>
+
+  <!-- E2 -->
+  <section class="sz" id="s2">
+    <div class="titel br" id="s2t">Hier sind<br>Zahlen.</div>
+    <div class="punkte" id="s2p"><span></span><span></span><span></span><span></span></div>
+  </section>
+
+  <!-- E3 1/4: 7 g + 500 ml = eine Portion (S92) · Rohdatei zubereitung-1-pulver-gelb.jpg (2400 px) = Motiv web-produkt-galerie-3 / web-start-portion -->
+  <section class="sz" id="s3">
+    <div class="zaehler">1/4</div>
+    <div class="zahl br" id="s3z">7<span class="sp"></span>g</div>
+    <div class="plus br" id="s3p">+ 500<span class="sp"></span>ml Wasser</div>
+    <div class="kreis" id="s3k"><img id="s3img" src="../intern/bilder/zubereitung-1-pulver-gelb.jpg" alt=""></div>
+    <div class="balken" id="s3b">= eine Portion.</div>
+    <span class="quelle" id="s3q">laut Etikett Raspberry Raptor</span>
+  </section>
+
+  <!-- E4 2/4: 160 mg Koffein je Portion, 32 mg/100 ml (S92) · Rohdatei raptor-50er-dose.png (2048 px) = Motiv web-produkt-gross-50 -->
+  <section class="sz" id="s4">
+    <div class="zaehler">2/4</div>
+    <div class="zahl br" id="s4z">160</div>
+    <div class="einheit br" id="s4e">mg</div>
+    <div class="zeile br" id="s4l">Koffein je Portion</div>
+    <p class="fakt" id="s4f">also <b>32&nbsp;mg</b> pro 100&nbsp;ml zubereitet</p>
+    <img class="dose" id="s4d" src="../intern/bilder/raptor-50er-dose.png" alt="">
+    <span class="quelle" id="s4q">laut Etikett Raspberry Raptor</span>
+  </section>
+
+  <!-- E5 3/4: 0,1 g Zucker pro 100 ml zubereitet, Sucralose und Acesulfam K (R06, R14) · Rohdatei zubereitung-3-schuetteln-gelb.jpg
+       (2400 px, gezeigt mit 1200 px) = Motiv web-produkt-galerie-4 / web-danke-schritt-3 (fremdbilder/web-galerie-schuetteln.jpg);
+       Nacharbeit: ersetzt das Eis-Foto ohne Registerschlüssel -->
+  <section class="sz" id="s5">
+    <div class="bild" id="s5bild"><img id="s5img" src="../intern/bilder/zubereitung-3-schuetteln-gelb.jpg" alt=""></div>
+    <div class="zaehler">3/4</div>
+    <div class="zahl br" id="s5z">0,1<span class="sp"></span>g</div>
+    <div class="zeile br" id="s5l">Zucker pro 100<span class="sp"></span>ml</div>
+    <p class="unter" id="s5u">zubereitet · gesüßt mit Sucralose<br>und Acesulfam&nbsp;K</p>
+    <span class="quelle" id="s5q">laut Etikett Raspberry Raptor</span>
+  </section>
+
+  <!-- E6 4/4: 0,80 € je Portion (B09, T22), 39,99 € (B09), 114,26 €/kg (R98 + S92), Versand 4,99 €, ab 49 € frei (B12)
+       Rohdateien raptor-50er-dose.png (= web-produkt-gross-50), raptor-sachet-1-portion.png (= web-produkt-gross-1 / web-koffein-portion) -->
+  <section class="sz" id="s6">
+    <div class="zaehler">4/4</div>
+    <div class="zahl br" id="s6z">0,80<span class="sp"></span>€</div>
+    <div class="zeile br" id="s6l">je Portion</div>
+    <img class="dose" id="s6d" src="../intern/bilder/raptor-50er-dose.png" alt="">
+    <img class="sachet" id="s6s" src="../intern/bilder/raptor-sachet-1-portion.png" alt="">
+    <div class="preis" id="s6k"><b>Dose mit 50 Portionen: 39,99&nbsp;€</b>114,26&nbsp;€/kg · inkl. MwSt.<br>zzgl. 4,99&nbsp;€ Versand, ab 49&nbsp;€ versandfrei<small>Preise laut HOLY-Shop, abgerufen am 30.10.2026</small></div>
+  </section>
+
+  <!-- E7 Konzept-Webseite im Handy: index.html (Code mit „Werbung“, vier Zahlen, „Erst nachlesen“) → koffein-check.html -->
+  <section class="sz" id="s7">
+    <div class="titel br" id="s7t">Erst nachlesen,<br>dann entscheiden.</div>
+    <span class="hinweis" id="s7h">Konzept-Webseite der Gruppe · Code: Platzhalter · Rabatt: Beispielwert</span>
+    <div class="kamera" id="s7cam">
+      <div class="handy" id="s7handy"><div class="schirm"><div class="seite"><img id="s7a" alt=""><img id="s7b" alt="" style="display:none"></div><div class="insel"></div>
+        <div class="tipp" id="s7tipp"></div><div class="ring" id="s7ring"></div></div>
+        <div class="alter" id="s7al"><b>Für Erwachsene.</b><span>So steht's auf dem Etikett.</span></div>
+        <div class="lupe" id="s7lupe"><div class="ausschnitt"><img src="../intern/handy/koffein-oben.png" alt=""><i class="marker" id="s7m1" style="left:578px;top:76px;width:843px"></i><i class="marker" id="s7m2" style="left:164px;top:184px;width:290px"></i></div></div>
+      </div>
+    </div>
+    <div class="titel br" id="s7t3">Eine Portion<br>pro Tag.</div>
+    <div class="titel2 br" id="s7t2">7 Quellen<br>zum Nachlesen.</div>
+  </section>
+
+  <!-- E8 Squad: danke.html → Tipp „Squad beitreten“ → squad.html · Level-Abzeichen: Rohdateien = web-squad-level-1 … 4 -->
+  <section class="sz" id="s8">
+    <div class="handy" id="s8handy"><div class="schirm"><div class="seite"><img id="s8a" src="../intern/handy/danke.png" alt=""><img id="s8b" src="../intern/handy/squad.png" alt=""></div><div class="insel"></div>
+      <div class="tipp" id="s8tipp"></div><div class="ring" id="s8ring"></div></div></div>
+    <img class="abz" id="abz1" src="../intern/bilder/level-1-raptor-egg.png" alt="">
+    <img class="abz" id="abz2" src="../intern/bilder/level-2-raptor-kid.png" alt="">
+    <img class="abz" id="abz3" src="../intern/bilder/level-3-teenage-raptor.png" alt="">
+    <img class="abz" id="abz4" src="../intern/bilder/level-4-og-raptor.png" alt="">
+    <div class="balken" id="s8b1">Squad:</div>
+    <div class="balken" id="s8b2">ein Klick.</div>
+    <span class="hinweis" id="s8h">Konzept der Gruppe · Bestellung und Coins: Beispielwerte</span>
+  </section>
+
+  <!-- E9 Endkarte: Wortmarke (bilder/holy-logo-wortmarke.png, 389 × 105, 1 : 1, Einverständnis KI-Nachweis FS2 Nr. 12) ·
+       Rohdatei raptor-50er-dose-mit-gratis-shaker.png (2048 px) = Motiv web-produkt-galerie-2 · Glanz: nur Licht, Motiv unverändert -->
+  <section class="sz" id="s9">
+    <img class="marke" id="s9m" src="../../konzept-website/bilder/holy-logo-wortmarke.png" alt="HOLY">
+    <h2 class="br" id="s9h">Zahlen statt Versprechen.</h2>
+    <div class="pack" id="s9p"><img src="../intern/bilder/raptor-50er-dose-mit-gratis-shaker.png" alt=""><div class="glanz" id="s9g"></div></div>
+    <p class="name" id="s9n">HOLY Energy Raspberry Raptor</p>
+    <p class="alter" id="s9a">Nicht für unter 18, Schwangere und Stillende · eine Portion pro Tag (laut Etikett)</p>
+    <p class="voll" id="s9v">Studentisches Konzept der Gruppe (HS Kaiserslautern) – keine Website und keine Werbung der HOLY Softdrinks GmbH · keine Bestellung möglich</p>
+    <p class="nachweis" id="s9w">Stimme, Musik und Geräusche KI-generiert (ElevenLabs) · Bilder: HOLY Softdrinks GmbH (de.holy.com), Abruf 03.11.2026 – ohne Genehmigung, nicht kommerziell, für die Lehrveranstaltung</p>
+  </section>
+
+  <svg width="0" height="0" style="position:absolute"><filter id="vunschaerfe" x="0" y="-20%" width="100%" height="140%"><feGaussianBlur id="vunschaerfe-g" stdDeviation="0 0"/></filter></svg>
+  <div id="blitz"></div>
+  <div id="pflicht"><b>Studentisches Konzept (HS Kaiserslautern)</b> · keine Werbung der HOLY Softdrinks GmbH<br>Stimme KI-generiert · Zahlen laut Etikett und HOLY-Shop</div>
+</div>
+
+<script>
+'use strict';
+// ---------- Werkzeuge (deterministisch) ----------
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => x < a ? a : x > b ? b : x;
+const pr = (t, a, d) => cl((t - a) / d);
+const mix = (a, b, x) => a + (b - a) * x;
+const E = {
+  out3: x => 1 - Math.pow(1 - x, 3),
+  out5: x => 1 - Math.pow(1 - x, 5),
+  in3: x => x * x * x,
+  inOut3: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  outExpo: x => x >= 1 ? 1 : 1 - Math.pow(2, -10 * x),
+  outBack: x => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+  feder: x => x >= 1 ? 1 : 1 - Math.exp(-5.5 * x) * Math.cos(11 * x)
+};
+const T = (el, s) => { el.style.transform = s; };
+const O = (el, o) => { el.style.opacity = o; };
+
+// Wörter in Masken legen (Wort für Wort aus der Maske)
+function maskiere(el) {
+  const walk = n => {
+    for (const k of [...n.childNodes]) {
+      if (k.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        k.textContent.split(/(\s+)/).forEach(w => {
+          if (!w) return;
+          if (/^\s+$/.test(w)) { frag.appendChild(document.createTextNode(' ')); return; }
+          const m = document.createElement('span'); m.className = 'm';
+          const i = document.createElement('span'); i.textContent = w; m.appendChild(i); frag.appendChild(m);
+        });
+        n.replaceChild(frag, k);
+      } else if (k.nodeType === 1 && k.tagName !== 'BR' && !k.classList.contains('m') && k.tagName !== 'I' && k.tagName !== 'U') walk(k);
+    }
+  };
+  walk(el);
+  return [...el.querySelectorAll('.m > span')];
+}
+// Wörter zu festen Zeiten aus der Maske heben
+function hebe(ws, zeiten, t, d = .42) {
+  ws.forEach((w, i) => { const p = E.outExpo(pr(t, zeiten[Math.min(i, zeiten.length - 1)], d)); T(w, `translateY(${(1 - p) * 115}%)`); });
+}
+const W1 = maskiere($('s1h')), W2 = maskiere($('s2t')), W7 = maskiere($('s7t')), W7b = maskiere($('s7t3')), W9 = maskiere($('s9h'));
+
+// Szenen: [id, von, bis] – Überlappung = Wischer
+// Nacharbeit nach der Abnahme: ab dem Wischer zur Handy-Strecke alles 1,0 s früher (Musik dort um zwei Schläge gekürzt,
+// der Schlussakzent liegt jetzt bei 22,23 s), Handy-Strecke 0,5 s kürzer, Spot 26,8 s
+const SZ = [['s1', 0, 3.0], ['s2', 3.0, 4.6], ['s3', 4.38, 7.62], ['s4', 7.38, 10.0], ['s5', 10.0, 12.5], ['s6', 12.5, 15.25],
+  ['s7', 14.92, 20.42], ['s8', 20.13, 22.23], ['s9', 22.23, 99]];
+
+// Wischer: schräge Kante (Pixel), p 0 → 1
+const wischLinks = (el, p) => { const xt = (1 - p) * 1480, xb = xt - 400; el.style.clipPath = `polygon(${xt}px 0, 1080px 0, 1080px 1920px, ${xb}px 1920px)`; };
+const wischRechts = (el, p) => { const xt = p * 1480 - 400, xb = xt + 400; el.style.clipPath = `polygon(0 0, ${xt}px 0, ${xb}px 1920px, 0 1920px)`; };
+const wischUnten = (el, p) => { const yr = (1 - p) * 2220, yl = yr - 300; el.style.clipPath = `polygon(0 ${yl}px, 1080px ${yr}px, 1080px 1920px, 0 1920px)`; };
+
+// Handy-Bilder der Startseite (60 Bilder, 30 fps ab 15,00 s); scroll.json: Bewegung je Bild für die Bewegungsunschärfe
+const START0 = 15.0, START_N = 60;
+const startBild = i => `../intern/handy/start/${String(cl(i, 0, START_N - 1)).padStart(4, '0')}.png`;
+let SCROLL = [];
+const scrollGeladen = fetch('../intern/handy/start/scroll.json').then(r => r.json()).then(d => { SCROLL = d.bilder; }).catch(() => 0);
+// gerichtete Unschärfe (senkrecht) auf ein Bild im Handy: Stärke in Aufnahme-Pixeln
+function unschaerfe(img, sd) {
+  if (sd < 0.5) { img.style.filter = 'none'; return; }
+  $('vunschaerfe-g').setAttribute('stdDeviation', `0 ${sd.toFixed(1)}`); img.style.filter = 'url(#vunschaerfe)';
+}
+// Handy platzieren: Mitte (cx, cy) des Geräts in Bühnenpixeln, Maßstab s, Drehung r
+function handy(el, cx, cy, s, r) {
+  const w = 1242 * s, h = 2604 * s;
+  el.style.transform = `translate(${cx - w / 2}px, ${cy - h / 2}px) rotate(${r}deg) scale(${s})`;
+  el.style.transformOrigin = '0 0';
+}
+function tipp(tEl, rEl, x, y, t, t0) {
+  const a = t - t0;
+  const sichtbar = a > -0.18 && a < 0.45;
+  tEl.style.display = rEl.style.display = sichtbar ? 'block' : 'none';
+  if (!sichtbar) return;
+  tEl.style.left = rEl.style.left = x + 'px'; tEl.style.top = rEl.style.top = y + 'px';
+  const ein = E.out3(pr(t, t0 - 0.18, 0.18)), aus = pr(t, t0 + 0.12, 0.3);
+  T(tEl, `scale(${mix(0.55, 1, ein) * (1 - 0.15 * aus)})`); O(tEl, ein * (1 - aus));
+  const rp = E.out3(pr(t, t0, 0.42)); T(rEl, `scale(${mix(0.8, 2.0, rp)})`); O(rEl, a >= 0 ? 1 - rp : 0);
+}
+
+let laden = [];
+function bild(img, src) { if (img.getAttribute('src') !== src) { img.setAttribute('src', src); laden.push(img.decode().catch(() => 0)); } }
+
+window.__setTime = async function (t) {
+  laden = [];
+  for (const [id, a, b] of SZ) { const el = $(id); el.style.display = (t >= a && t < b) ? 'block' : 'none'; el.style.clipPath = ''; el.style.transform = ''; }
+
+  // ---------- E1 Hook 0,00–3,00 ----------
+  if (t < 3.0) {
+    // Bild 0 zeigt schon „Wir“ und das Foto (randlos, 1080 px = 1 : 1); Punch-in über Text und Fotolage, nie über 1 : 1
+    const punch = E.out3(pr(t, 0, 0.25)), p = E.out3(pr(t, 0, 3.0));
+    T($('s1foto'), `translateY(${mix(40, 0, punch) - p * 24}px)`);
+    hebe(W1, [-1, 0.22, 0.4, 0.56, 0.74, 1.02], t);
+    $('pflicht').classList.add('hook');
+    const s = E.out3(pr(t, 1.72, 0.26));
+    T($('strich').querySelector('i'), `rotate(-3deg) scaleX(${s})`); T($('strich').querySelector('u'), `rotate(-3deg) scaleX(${E.out3(pr(t, 1.8, 0.24))})`);
+    const k = pr(t, 2.28, 0.5);
+    T($('schild'), `rotate(-2deg) scale(${t < 2.28 ? 0 : E.outBack(k)})`); O($('schild'), t < 2.28 ? 0 : 1);
+    // Bass-Stopp ab 2,25 s: Bild steht kurz still (leichter Zoom-Ruck)
+    if (t > 2.25) T($('s1h'), `scale(${1 + 0.012 * (1 - pr(t, 2.25, 0.25))})`); else T($('s1h'), `scale(${mix(1.06, 1, punch)})`);
+    $('s1h').style.transformOrigin = '0 0';
+  } else $('pflicht').classList.remove('hook');
+  // ---------- E2 „Hier sind Zahlen.“ 3,00–4,60 ----------
+  if (t >= 3.0 && t < 4.6) {
+    hebe(W2, [3.02, 3.1, 3.5], t, 0.36);
+    const w = t < 3.16 ? Math.sin(t * 90) * 5 * (1 - pr(t, 3.0, 0.16)) : 0;
+    T($('s2t'), `translate(${w}px, ${-w * .6}px)`);
+    [...$('s2p').children].forEach((d, i) => { const q = E.outBack(pr(t, 3.7 + i * 0.1, 0.3)); T(d, `scale(${q})`); d.style.background = t > 4.2 + i * 0.03 ? 'var(--zitrone)' : 'transparent'; });
+  }
+  // ---------- E3 1/4: 7 g + 500 ml 4,38–7,62 ----------
+  if (t >= 4.38 && t < 7.62) {
+    const el = $('s3'); if (t < 4.6) wischLinks(el, E.inOut3(pr(t, 4.38, 0.22)));
+    const z = E.feder(pr(t, 4.55, 0.7)); T($('s3z'), `translateY(${(1 - z) * 160}px) scale(${mix(0.85, 1, z)})`); O($('s3z'), cl((t - 4.55) * 8));
+    const pl = E.outExpo(pr(t, 5.38, 0.45)); T($('s3p'), `translateX(${(1 - pl) * -700}px)`); O($('s3p'), pl > 0 ? 1 : 0);
+    const k = E.outBack(pr(t, 4.75, 0.55)); T($('s3k'), `scale(${k})`);
+    T($('s3img'), `scale(${mix(1.0, 1.1, pr(t, 4.75, 2.9))})`);
+    const bk = E.outExpo(pr(t, 6.48, 0.32)); T($('s3b'), `rotate(-4deg) scaleX(${bk})`); O($('s3b'), bk > 0 ? 1 : 0);
+    const q = E.out3(pr(t, 5.9, 0.4)); T($('s3q'), `translate(-50%, ${(1 - q) * 120}px)`); O($('s3q'), q);
+    const dr = pr(t, 4.6, 3.0); T($('s3k'), $('s3k').style.transform + ` translateY(${-dr * 26}px)`);
+  }
+  // ---------- E4 2/4: 160 mg 7,38–10,00 ----------
+  if (t >= 7.38 && t < 10.0) {
+    const el = $('s4'); if (t < 7.6) wischUnten(el, E.inOut3(pr(t, 7.38, 0.22)));
+    const c = E.out3(pr(t, 7.55, 0.7)); $('s4z').textContent = String(Math.round(160 * c));
+    const dr = pr(t, 7.6, 2.4);
+    T($('s4z'), `translateX(${-dr * 30}px) scale(${mix(0.94, 1, E.out3(pr(t, 7.5, 0.3)))})`);
+    const e = E.feder(pr(t, 8.22, 0.6)); T($('s4e'), `translateX(${-dr * 30}px) scale(${e})`); O($('s4e'), t > 8.22 ? 1 : 0);
+    const l = E.outExpo(pr(t, 8.62, 0.45)); T($('s4l'), `translateY(${(1 - l) * 140}px)`); O($('s4l'), l);
+    const f = E.out3(pr(t, 8.95, 0.4)); T($('s4f'), `translateX(${(1 - f) * -300}px)`); O($('s4f'), f);
+    const d = pr(t, 7.62, 0.62), de = E.feder(d);
+    const blur = 14 * Math.pow(1 - d, 2);
+    T($('s4d'), `translate(${(1 - de) * 520 + 0}px, ${(1 - de) * 640 - dr * 60}px) rotate(${mix(-22, -7, de)}deg)`);
+    $('s4d').style.filter = `drop-shadow(0 40px 50px rgba(29,29,27,.35)) blur(${blur.toFixed(2)}px)`;
+    const q = E.out3(pr(t, 9.1, 0.4)); T($('s4q'), `translateY(${(1 - q) * 120}px)`); O($('s4q'), q);
+  }
+  // ---------- E5 3/4: 0,1 g 10,00–12,50 (harter Schnitt) ----------
+  if (t >= 10.0 && t < 12.5) {
+    const punch = 1 + 0.05 * (1 - E.out3(pr(t, 10.0, 0.25)));
+    T($('s5'), `scale(${punch})`);
+    const b = E.outExpo(pr(t, 10.0, 0.5)); $('s5bild').style.clipPath = `polygon(0 0, 1080px 0, 1080px ${mix(0, 1040, b)}px, 0 ${mix(0, 1140, b)}px)`;
+    T($('s5img'), `scale(${mix(1.0, 1.08, pr(t, 10.0, 2.5))}) translateY(${mix(-30, 0, b)}px)`);
+    const z = E.feder(pr(t, 10.05, 0.65)); T($('s5z'), `translateY(${(1 - z) * 200}px)`); O($('s5z'), cl((t - 10.05) * 8));
+    const l = E.outExpo(pr(t, 11.1, 0.45)); T($('s5l'), `translateX(${(1 - l) * -800}px)`);
+    const u = E.out3(pr(t, 11.35, 0.4)); O($('s5u'), u); T($('s5u'), `translateY(${(1 - u) * 40}px)`);
+    const q = E.out3(pr(t, 11.5, 0.4)); T($('s5q'), `translateY(${(1 - q) * 120}px)`); O($('s5q'), q);
+  }
+  // ---------- E6 4/4: 0,80 € 12,50–15,25 (Preiskarte mit Grundpreis zugleich mit „0,80 €“) ----------
+  if (t >= 12.5 && t < 15.25) {
+    const z = E.out3(pr(t, 12.55, 0.2)); T($('s6z'), `scale(${mix(1.35, 1, z)})`); O($('s6z'), z);
+    $('s6z').style.filter = `blur(${(6 * (1 - z)).toFixed(2)}px)`;
+    const l = E.outExpo(pr(t, 13.3, 0.4)); T($('s6l'), `translateY(${(1 - l) * 120}px)`); O($('s6l'), l);
+    const dr = pr(t, 12.5, 2.75);
+    const d = E.out5(pr(t, 12.62, 0.7)), s = E.out5(pr(t, 12.75, 0.7));
+    T($('s6d'), `translate(${(1 - d) * 700 - dr * 40}px, ${-dr * 50}px) rotate(${mix(14, 5, d)}deg)`);
+    $('s6d').style.filter = `drop-shadow(0 40px 60px rgba(0,0,0,.6)) blur(${(10 * Math.pow(1 - d, 2)).toFixed(2)}px)`;
+    T($('s6s'), `translate(${-(1 - s) * 600 + dr * 30}px, ${-dr * 20}px) rotate(${mix(-30, -12, s)}deg)`);
+    $('s6s').style.filter = `drop-shadow(0 30px 40px rgba(0,0,0,.6)) blur(${(10 * Math.pow(1 - s, 2)).toFixed(2)}px)`;
+    const k = E.outExpo(pr(t, 12.62, 0.4)); T($('s6k'), `translateY(${(1 - k) * 600}px)`);
+    if (t > 14.92) { const w = E.in3(pr(t, 14.92, 0.33)); T($('s6'), `translateY(${-w * 260}px)`); }
+  }
+  // ---------- E7 Handy: Startseite 14,92–17,00, Koffein-Check 17,00–20,42 ----------
+  // Kamera: langsamer Push-in 1,00 → 1,05 über die ganze Strecke (kein Standbild); Handy bleibt bei 0,6 (× 1,05 ≤ 0,63, nie vergrößert)
+  if (t >= 14.92 && t < 20.42) {
+    const el = $('s7'); if (t < 15.25) wischUnten(el, E.inOut3(pr(t, 14.92, 0.33)));
+    const cam = pr(t, 14.92, 5.5);
+    T($('s7cam'), `scale(${mix(1.0, 1.05, cam)}) rotate(${mix(0, 0.8, E.inOut3(cam))}deg)`);
+    const auf = E.out5(pr(t, 15.0, 0.7));
+    handy($('s7handy'), 560, 1460 + (1 - auf) * 1100, 0.6, -3 + (1 - auf) * -6);
+    const ab = E.inOut3(pr(t, 16.9, 0.3));
+    hebe(W7, [15.02, 15.3, 15.95, 16.2], t, 0.4); O($('s7t'), 1 - ab); T($('s7t'), `translateY(${-ab * 160}px)`);
+    const h = E.out3(pr(t, 15.25, 0.35)) * (1 - pr(t, 16.75, 0.2)); O($('s7h'), h); T($('s7h'), `translateY(${(1 - h) * -30}px)`);
+    // Kasten „Für Erwachsene.“ (im Handy-Koordinatensystem): fährt VOR dem Seitenwechsel ein (16,70–16,98) und deckt die
+    // Überschrift der Koffein-Check-Seite ab, bis zum harten Sprung zur Quellenliste (19,60); erst danach fährt er hinaus
+    const kein = E.outExpo(pr(t, 16.70, 0.28)), kaus = E.in3(pr(t, 19.60, 0.25));
+    $('s7al').style.display = t >= 16.70 && kaus < 1 ? 'block' : 'none';
+    T($('s7al'), `translateX(${(1 - kein) * -2400 + kaus * -2600}px)`);
+    if (t < 17.0) {
+      $('s7b').style.display = 'none';
+      const i = Math.floor((t - START0) * 30 + 1e-6);
+      bild($('s7a'), startBild(i)); T($('s7a'), 'none');
+      const dy = SCROLL[cl(i, 0, START_N - 1)] ? Math.abs(SCROLL[cl(i, 0, START_N - 1)].dy) : 0;
+      unschaerfe($('s7a'), Math.min(70, dy * 3 * 0.32));
+      tipp($('s7tipp'), $('s7ring'), 585, 1315, t, 16.78);
+      $('s7lupe').style.display = 'none'; $('s7t2').style.display = 'none'; $('s7t3').style.display = 'none';
+    } else {
+      // Koffein-Check nach dem Tipp (echte Aufnahme, oberer Bildschirm). Ab 19,60 s harter Sprung zur Quellenliste
+      // (echte Aufnahme nach dem Tipp auf „7 Quellen“) – keine Zwischenbilder, nur kurze Unschärfe beim Aufblitzen
+      const quellen = t >= 19.60;
+      bild($('s7a'), quellen ? '../intern/handy/koffein-quellen.png' : '../intern/handy/koffein-oben.png');
+      T($('s7a'), 'none');
+      unschaerfe($('s7a'), quellen ? 40 * (1 - E.out3(pr(t, 19.60, 0.16))) : 0);
+      tipp($('s7tipp'), $('s7ring'), 351, 1510, t, 19.50);
+      // Lupe: nur „Laut Etikett: eine zubereitete Portion pro Tag.“ mit Marker; springt auf, fährt beim Sprung mit hinaus
+      const l = E.outBack(pr(t, 17.30, 0.45));
+      $('s7lupe').style.display = t >= 17.30 && kaus < 1 ? 'block' : 'none';
+      T($('s7lupe'), `translateX(${kaus * 2600}px) scale(${mix(0.4, 1, l)})`); O($('s7lupe'), cl((t - 17.30) * 8));
+      T($('s7m1'), `scaleX(${E.out3(pr(t, 17.75, 0.35))})`); T($('s7m2'), `scaleX(${E.out3(pr(t, 18.08, 0.22))})`);
+      // Titel oben im Takt der Stimme: „Eine Portion pro Tag.“, dann „7 Quellen zum Nachlesen.“
+      const t3aus = E.inOut3(pr(t, 19.45, 0.2));
+      $('s7t3').style.display = t >= 17.8 && t3aus < 1 ? 'block' : 'none';
+      hebe(W7b, [17.88, 18.13, 18.4, 18.62], t, 0.4); O($('s7t3'), 1 - t3aus); T($('s7t3'), `translateY(${-t3aus * 160}px)`);
+      const t2 = E.outExpo(pr(t, 19.58, 0.4)); $('s7t2').style.display = t2 > 0 ? 'block' : 'none'; T($('s7t2'), `translateY(${(1 - t2) * 160}px)`); O($('s7t2'), t2);
+    }
+  }
+  // ---------- E8 Squad 20,13–22,23 ----------
+  if (t >= 20.13 && t < 22.23) {
+    const el = $('s8'); if (t < 20.42) wischRechts(el, E.inOut3(pr(t, 20.13, 0.29)));
+    const auf = E.out5(pr(t, 20.2, 0.55));
+    handy($('s8handy'), 600 + (1 - auf) * 300, 1130 + (1 - auf) * 200, 0.6, 4);
+    const nav = E.inOut3(pr(t, 21.42, 0.28));
+    T($('s8a'), `translateX(${-nav * 1170}px)`); T($('s8b'), `translateX(${(1 - nav) * 1170}px)`);
+    tipp($('s8tipp'), $('s8ring'), 585, 2205 + 130, t, 21.05);
+    const b1 = E.outExpo(pr(t, 20.6, 0.3)), b2 = E.outExpo(pr(t, 21.18, 0.3));
+    T($('s8b1'), `translate(60px, 1270px) rotate(-4deg) scaleX(${b1})`); O($('s8b1'), b1 > 0 ? 1 : 0);
+    T($('s8b2'), `translate(80px, 1400px) rotate(-4deg) scaleX(${b2})`); O($('s8b2'), b2 > 0 ? 1 : 0);
+    const pos = [[50, 400], [800, 330], [30, 860], [820, 800]];
+    for (let i = 0; i < 4; i++) {
+      const a = E.outBack(pr(t, 21.55 + i * 0.09, 0.35)); const z = $('abz' + (i + 1));
+      T(z, `translate(${pos[i][0]}px, ${pos[i][1] - (pr(t, 21.5, 0.8)) * 20}px) scale(${a}) rotate(${(i % 2 ? 6 : -6)}deg)`); O(z, a > 0 ? 1 : 0);
+    }
+    O($('s8h'), E.out3(pr(t, 20.5, 0.3)));
+  }
+  // ---------- E9 Endkarte 22,23–Ende (Pflichthinweise ab 22,23 s, nach 0,2 s voll lesbar) ----------
+  if (t >= 22.23) {
+    O($('blitz'), t < 22.3 ? 0.85 * (1 - pr(t, 22.23, 0.07)) : 0);
+    const p = E.out5(pr(t, 22.23, 1.2));
+    // langsamer Zoom ohne Halt bis zum Schluss (Nacharbeit: vorher Standbild 23,0–23,5 s); Rohdatei 2048 px, gezeigt ≤ 858 px
+    T($('s9p'), `scale(${mix(1.1, 1.0, p) * mix(1, 1.04, pr(t, 22.23, 4.6))})`);
+    const m = E.feder(pr(t, 22.3, 0.7)); T($('s9m'), `translateY(${(1 - m) * -160}px)`); O($('s9m'), cl((t - 22.3) * 10));
+    hebe(W9, [23.55, 24.08, 24.3], t, 0.42);
+    $('s9g').style.backgroundPosition = `${mix(100, 0, E.inOut3(pr(t, 23, 1.2)))}% 0`;
+    ['s9n', 's9a', 's9v', 's9w'].forEach((id, i) => { const v = E.out3(pr(t, 22.23 + i * 0.02, 0.2)); O($(id), v); T($(id), `translateY(${(1 - v) * 30}px)`); });
+  } else O($('blitz'), 0);
+
+  await Promise.all(laden);
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  return true;
+};
+window.__bereit = scrollGeladen.then(() => Promise.all(['500 30px Inter', '600 30px Inter', '800 30px Inter', '800 100px Bricolage', '600 31px Bricolage'].map(f => document.fonts.load(f))).then(() => document.fonts.ready).then(() => Promise.all([...document.images].filter(i => i.getAttribute('src')).map(i => i.decode().catch(() => 0)))));
+</script>
+</body>
+</html>
