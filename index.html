@@ -57,6 +57,8 @@
   ul.links a:hover { text-decoration: underline; text-decoration-color: var(--gelb); text-decoration-thickness: 3px; }
   ul.links a:focus-visible { outline: 2px solid var(--schwarz); outline-offset: 2px; border-radius: 4px; }
   .bald { color: var(--grau); }
+  .neu { display: inline-block; margin: 0 0 8px; background: var(--schwarz); color: var(--gelb); font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; }
   footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--linie); font-size: 13.5px; color: var(--grau); }
   footer a { color: inherit; }
   @media (max-width: 520px) {
@@ -72,9 +74,23 @@
   <h1>Fallstudien zur Marke <em>HOLY</em></h1>
   <p class="unter">Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker. Drei Präsentationen zu je 15 Minuten.</p>
 
-  <section class="karte haupt" aria-labelledby="fs1">
+  <section class="karte haupt" aria-labelledby="fs2">
+    <p class="neu">Aktuell</p>
+    <h2 id="fs2">Fallstudie 2 · Customer Journey</h2>
+    <p class="meta">Präsentation am Dienstag, 10. November 2026 · Marcos Weg vom Creator-Video bis in den Squad – mit eigener Konzept-Webseite und Werbespot</p>
+    <div class="knoepfe">
+      <a class="knopf primaer" href="fallstudie-2-customer-journey/praesentation/index.html">Präsentation öffnen</a>
+      <a class="knopf" href="fallstudie-2-customer-journey/konzept-website/index.html">Konzept-Webseite</a>
+      <a class="knopf" href="fallstudie-2-customer-journey/werbevideo/holy-werbespot.mp4">Werbespot ansehen</a>
+    </div>
+    <p class="hinweis">Am besten in Chrome oder Edge. <kbd>F</kbd> Vollbild · <kbd>P</kbd> Referentenansicht ·
+      <kbd>O</kbd> Übersicht inkl. Backup · <kbd>H</kbd> alle Tasten. Konzept-Webseite und Werbespot sind ein studentisches
+      Konzept der Gruppe – keine Website und keine Werbung der HOLY Softdrinks GmbH, keine Bestellung möglich.</p>
+  </section>
+
+  <section class="karte" aria-labelledby="fs1">
     <h2 id="fs1">Fallstudie 1 · Brand Persona &amp; Markenidentität</h2>
-    <p class="meta">Präsentation am Dienstag, 27. Oktober 2026 · Arbeitsstand: Folien enthalten noch Beispieldaten</p>
+    <p class="meta">Präsentation am Dienstag, 27. Oktober 2026</p>
     <div class="knoepfe">
       <a class="knopf primaer" href="fallstudie-1-brand-persona/praesentation/index.html">Präsentation öffnen</a>
       <a class="knopf" href="fallstudie-1-brand-persona/praesentation/export/praesentation.pdf">PDF (Plan B)</a>
@@ -85,6 +101,15 @@
   </section>
 
   <div class="raster">
+    <section class="karte" aria-labelledby="unterlagen2">
+      <h2 id="unterlagen2">Unterlagen Fallstudie 2</h2>
+      <ul class="links">
+        <li><a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/fallstudie-2-customer-journey/README.md">Überblick Fallstudie 2<span>Aufgabe, Persona, Aufbau (GitHub)</span></a></li>
+        <li><a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/fallstudie-2-customer-journey/gestaltungsplan.md">Gestaltungsplan<span>Folien, Touchpoints, Maßnahmen (GitHub)</span></a></li>
+        <li><a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/fallstudie-2-customer-journey/werbevideo/README.md">Werbespot: Entstehung<span>Drehbuch, Quellen, Kennzeichnung (GitHub)</span></a></li>
+        <li><a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/ki-nachweis/ki-nachweis-fallstudie-2.md">KI-Nachweis Fallstudie 2<span>Alle Prompts und Delegationen (GitHub)</span></a></li>
+      </ul>
+    </section>
     <section class="karte" aria-labelledby="unterlagen">
       <h2 id="unterlagen">Unterlagen Fallstudie 1</h2>
       <ul class="links">
@@ -95,9 +120,8 @@
       </ul>
     </section>
     <section class="karte" aria-labelledby="weitere">
-      <h2 id="weitere">Weitere Fallstudien</h2>
+      <h2 id="weitere">Nächste Fallstudie</h2>
       <ul class="links">
-        <li><span class="bald" style="display:block;padding:10px 0"><strong>Fallstudie 2</strong> · Customer Journey &amp; Blog-Beitrag<br>Präsentation am 9. November 2026 – folgt</span></li>
         <li><span class="bald" style="display:block;padding:10px 0"><strong>Fallstudie 3</strong> · Instagram-Post &amp; Eye-Tracking<br>Präsentation am 16. November 2026 – folgt</span></li>
       </ul>
     </section>
@@ -107,7 +131,8 @@
     Nicht-kommerzielle studentische Gruppenarbeit. HOLY ist eine Marke der HOLY Softdrinks GmbH; diese Seite steht in keiner Verbindung zum Unternehmen.
     Gehostet bei GitHub Pages; beim Aufruf verarbeitet GitHub technische Daten wie IP-Adressen (<a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung von GitHub</a>).
     Erstellt mit KI-Unterstützung (Claude Code), jede KI-Nutzung ist im
-    <a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/ki-nachweis/ki-nachweis.md">KI-Nachweis</a> dokumentiert ·
+    KI-Nachweis dokumentiert (<a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/ki-nachweis/ki-nachweis.md">Fallstudie 1</a>,
+    <a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation/blob/master/ki-nachweis/ki-nachweis-fallstudie-2.md">Fallstudie 2</a>) ·
     <a href="https://github.com/YannickOderSo/Unternehmens-Kommunikation">Repository</a>
   </footer>
 </main>

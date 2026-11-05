@@ -49,6 +49,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 22 | 04.11.2026 | Yannick | D09 passt; als Nächstes ein kleines, realistisch wirkendes Werbevideo für HOLY im Stil des Konzepts, Stimme über ElevenLabs | D10 (Workflow) | Spot „Zahlen statt Versprechen“ (26,8 s, 9:16, Stimme „simpleact-design-b“, Musik und Geräusche von ElevenLabs) in `werbevideo/`; Pflichtkennzeichnung durchgehend |
 | 23 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Container-Neustart: Workflow D10 abgebrochen; später Meldung „D10 abgeschlossen“ | – | D10 mit gespeicherten Zwischenergebnissen fortgesetzt; Ergebnis geprüft (Eintrag 22) |
 | 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | Neuer Spot „Mein Moment.“ (24,5 s): Marcos Feierabend-Ritual mit Rückblende, Countdown, Beat-Drop beim Schütteln und Squad; Vorfassung in `werbevideo/vorfassung-d10/` |
+| 25 | 05.11.2026 | Yannick | Auf der HOLY-Startseite eine Weiterleitung zu Fallstudie 2 einführen | – | Startseite `index.html`: Fallstudie 2 als erste Karte mit Präsentation, Konzept-Webseite und Werbespot; Fallstudie 1 darunter |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -512,6 +513,22 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Dateien:** `fallstudie-2-customer-journey/werbevideo/` (neuer Spot, Poster, Untertitel, `drehbuch.md`, `README.md`,
   `werkzeuge/`; `vorfassung-d10/`), `ki-nachweis/workflows/2026-11-04_fs2-werbevideo-emotion.js`
 - **Unteragenten:** D11
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 25 – 05.11.2026 – Yannick
+
+> Du musst auf der holy Startseite eine Weiterleitung zu Fallstudie 2 einführen
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** „HOLY-Startseite“ verstanden als die Startseite der Gruppe auf GitHub Pages (`index.html` im
+  Hauptordner, Titel „HOLY · Fallstudien Unternehmenskommunikation“), auf der Fallstudie 2 bisher nur als „folgt“ stand.
+  Keine automatische Umleitung, weil Fallstudie 1 sonst nicht mehr erreichbar wäre: Fallstudie 2 steht jetzt als erste,
+  hervorgehobene Karte mit Knöpfen zur Präsentation, zur Konzept-Webseite und zum Werbespot, dazu Unterlagen (README,
+  Gestaltungsplan, KI-Nachweis FS2). Fallstudie 1 folgt darunter, Datum FS2 auf Di, 10.11.2026 korrigiert, Fuß verlinkt
+  beide KI-Nachweise. Danach Sichtprüfung bei 390 und 1280 px und Linkprüfung.
+- **Ergebnis:** siehe Übersicht
+- **Dateien:** `index.html`
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
