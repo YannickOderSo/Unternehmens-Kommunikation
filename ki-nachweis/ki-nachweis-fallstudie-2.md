@@ -51,6 +51,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | Neuer Spot „Mein Moment.“ (24,5 s): Marcos Feierabend-Ritual mit Rückblende, Countdown, Beat-Drop beim Schütteln und Squad; Vorfassung in `werbevideo/vorfassung-d10/` |
 | 25 | 05.11.2026 | Yannick | Auf der HOLY-Startseite eine Weiterleitung zu Fallstudie 2 einführen | – | Startseite `index.html`: Fallstudie 2 als erste Karte mit Präsentation, Konzept-Webseite und Werbespot; Fallstudie 1 darunter |
 | 26 | 08.11.2026 | Yannick | Präsentation finalisieren (Rückfragen: ohne eigene Erhebung, Werbespot auf Folie 08, Redeskript als PDF) | D12 (Workflow) | *läuft* |
+| 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -549,6 +550,19 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** *läuft*
 - **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`; weitere folgen
 - **Unteragenten:** D12
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 27 – 08.11.2026 – Yannick
+
+> Du kannst auch das Video von der Werbung einbauen
+> Das wir oben erstellt haben
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Der Einbau des Werbespots „Mein Moment.“ ist schon Teil des laufenden Workflows D12 (Antwort auf
+  die Rückfrage in Nr. 26: Knopf auf Folie 08, Abspielen in der Präsentation). Keine Änderung am Auftrag; Rückmeldung an
+  Yannick, dass der Spot eingebaut wird.
+- **Dateien:** keine
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
