@@ -54,7 +54,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
-| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13 (Workflow) | *läuft:* Entwürfe in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09), Prüfung, Auswahl durch Yannick |
+| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13 (Workflow) | *Zwischenstand:* Entwürfe für 01–07 und 09 in Kopien fertig und geprüft, darunter 04 mit leerer, durchgestrichener Browserseite „keine Antwortseite“; Auswahl durch Yannick offen |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -613,8 +613,11 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   vier getrennten Kopien der Präsentation Entwürfe für bessere Visualisierungen (02/03, 04/05, 06/07, 09) mit
   Vorher-nachher-Bildern; je Entwurf eine Prüfung (Ehrlichkeit, Lesbarkeit, Technik) und Nachbesserung. Das Original
   bleibt unverändert, bis Yannick auswählt, was übernommen wird (Arbeitsweise: Ergebnis zeigen, Freigabe abwarten).
-- **Ergebnis:** *läuft*
-- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`; weitere folgen
+- **Ergebnis:** *Zwischenstand:* Entwürfe für 01–07 und 09 fertig, geprüft und nachgebessert (siehe D13). Folie 04: Die
+  Leerstelle ist jetzt eine leere, durchgestrichene Browserseite mit dem Namen „keine Antwortseite“. Die vier Änderungen
+  lassen sich ohne Konflikt zusammenführen (Probe in einer Kopie). Vorher-nachher-Bilder an Yannick geschickt; Auswahl
+  offen, das Original im Repository ist noch unverändert.
+- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`; weitere folgen nach der Auswahl
 - **Unteragenten:** D13
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -636,10 +639,10 @@ Auftrag (im Workflow-Skript).
 | D07 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-veroeffentlichen“ (4 Unteragenten) | Abnahme-Befunde aus D06 umsetzen; Präsentation und Konzept-Webseite auf veröffentlichte Bilder und Video umstellen; Abnahme | alle D06-Befunde umgesetzt (Folie 07 nur Logos, B6 ohne Platz); Doku umgestellt; Abnahme: 6 mittlere, 13 niedrige Befunde | Journal gelesen; beide Prüfskripte selbst: 0 Fehler (38 Bilder); Endzustände 01–09 angesehen; Befunde an D08 |
 | D08 | 03.11.2026 | 17, 18 | Workflow „fs2-bilder-nacharbeit“ (4 Unteragenten) | Restbefunde aus D07: Rechtestatus ehrlich formulieren, Vorname einer Privatperson entfernen, Doku-Reste, Zuschnitte, Video-Rückfalltext, unbenutzte Fremdbilder zurückhalten; Abnahme | W1–W10 und P1–P11 umgesetzt; Abnahme: 0 mittlere, 7 niedrige Befunde | Journal gelesen; 7 Restbefunde selbst behoben; Prüfskripte (hell, dunkel, Webseite): 0 Fehler; Volltextsuche Vorname; Folien und Webseite angesehen |
 | D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | Sieger „Kampagne“ auf allen 7 Seiten; Abnahmen 3 hohe, 11 mittlere, 11 niedrige Befunde, fast alle umgesetzt | Claude: beide Prüfskripte selbst (0 Fehler), Volltextsuche Sicherheitsmerkmale, Sichtprüfung 390/1280 px und Folie 08; alt-Texte Folie 08 selbst eingetragen |
-| D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
-| D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
+| D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | Spot „Zahlen statt Versprechen“ (26,8 s); Jury 97/93/82 Punkte; Abnahmen 1 hoher, 6 mittlere, 15 niedrige Befunde, fast alle umgesetzt | Claude: ffprobe, Lautheit, Kontaktbogen, Untertitel, Volltextsuche |
+| D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | Spot „Mein Moment.“ (24,5 s); Recherche 65 Quellen; Jury 111/106/100 Punkte; Abnahmen 2 hohe, 7 mittlere, 8 niedrige Befunde, umgesetzt | Claude: ffprobe, Lautheit, Kontaktbogen, Untertitel, Volltextsuche |
 | D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
-| D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | *läuft* | – |
+| D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | Entwürfe für 01–07 und 09; Prüfungen: 01, 03, 05 übernehmen, 02, 04, 06, 07, 09 mit Änderungen, in der Nachbesserung umgesetzt; je Kopie 0 Fehler; Auswahl offen | Claude: Rückgaben gelesen, alle Montagen angesehen, Diffs probeweise zusammengeführt |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -943,8 +946,24 @@ Auftrag (im Workflow-Skript).
   Lesbarkeit, Technik) und eine Nachbesserung. Ergebnis: Vorher-nachher-Montagen und Diffs; das Original bleibt
   unverändert, bis Yannick auswählt.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-visualisierung.js`](workflows/2026-11-08_fs2-visualisierung.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** 12 Unteragenten, alle mit Ergebnis. Entwürfe:
+  - 02: Steckbrief mit Strich-Symbolen, Verben des Titels (entdeckt, prüft, kauft) als Gliederung, Balkenpaare mit Ø
+    als dünnem Balken, 61 % als Ring;
+  - 03: Kästchen je Kontaktpunkt (13 · 30 · 11, drei offene für die fehlenden Owned), Signalzeichen statt „+/−“;
+  - 04: Leerstelle als leere, durchgestrichene Browserseite „keine Antwortseite“, Zeichen „bricht“ am Nebenweg;
+  - 05: Urteile als Zeichen (Dreieck = wackelt, Kreuz = bricht), Lücke mit Bruchstrichen an Ü2, Zeichenlegende;
+  - 06: Platz 1 hervorgehoben, Plätze 2/3 als Ring, Kriterien-Legende mit Symbolen;
+  - 07: Tabelle ersetzt durch Brücke „Vorbild → Symbol → Station → Maßnahme“ am durchgehenden SOLL-Weg;
+  - 09: Kennzahlen als Messpunkte Ü1–Ü4 direkt am Pfad; 01: Pfad stößt ans Foto.
+  Prüfungen: 01, 03, 05 übernehmen; 02, 04, 06, 07, 09 nur mit Änderungen. Beispiele: auf 02 „gelb = Marcos Kanal“ ohne
+  Beleg im Steckbrief, auf 04 ein Warndreieck im Widerspruch zu 05, auf 07 „eigene Zeichnungen“ statt „KI-gestützt
+  erstellt“, auf 09 fehlte „Vorschlag“. Diese Befunde sind in der Nachbesserung umgesetzt. Prüfläufe je Kopie (hell,
+  dunkel, Rückfall, Druck): 0 Fehler, 16–17 Warnungen. Sprechtext auf allen Folien wörtlich unverändert. Offen für die
+  Gruppe: Linien-Symbole auf 02, 03, 05, 06, 07 weichen von Plan 3.7 („keine Icon-Abzeichen“) ab. Keine neuen Fakten;
+  Gestaltungsentscheidungen aus Modellwissen.
+- **Wie Claude das Ergebnis geprüft hat:** Rückgaben aller 12 Unteragenten gelesen; alle Vorher-nachher-Montagen
+  (01–07, 09) selbst angesehen; die vier Diffs probeweise nacheinander auf eine frische Kopie der Präsentation
+  angewendet: ohne Konflikt. Eigene Prüfläufe folgen bei der Übernahme.
 
 ---
 
