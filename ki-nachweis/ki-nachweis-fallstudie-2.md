@@ -588,7 +588,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Vorgehen Claude:** Die offenen Änderungen sind der halbfertige Umbau aus dem laufenden Workflow D12 (`index.html`,
   CSS, JS, Doku). Ein Push auf master würde diesen Zwischenstand sofort auf GitHub Pages veröffentlichen, zwei Tage vor
   dem Vortrag. Deshalb als Sicherung auf den Branch `zwischenstand-d12` gepusht (Arbeitsverzeichnis und master
-  unverändert); master bekommt den geprüften Stand nach Abschluss von D12.
+  unverändert); master bekommt den geprüften Stand nach Abschluss von D12. Der Hinweis wiederholt sich, solange D12 läuft
+  (erneut nach dem Fortsetzen von D12); jedes Mal wird nur der Sicherungs-Branch aktualisiert, ohne neuen Eintrag.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
