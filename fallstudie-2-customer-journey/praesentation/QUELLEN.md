@@ -2,7 +2,10 @@
 
 Alles, was `index.html` verwendet, liegt im Ordner `praesentation/` – nichts wird aus dem Internet nachgeladen
 (keine CDNs, keine externen Schriften, Skripte oder Bilder; geprüft mit `werkzeuge/pruefen.mjs`, 0 externe
-Anfragen). Stand: 03.11.2026, Entwurf, Prüfung durch die Gruppe offen. Seit 03.11.2026 läuft überall die **Fassung mit
+Anfragen). Stand: 08.11.2026, finale Fassung (KI-gestützt, D12), Prüfung durch die Gruppe offen. **Keine eigene Erhebung**
+(Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26): keine eigenen Fotos, keine Interviews, kein Selbstversuch,
+kein Workshop – alle Inhalte stammen aus den Abschnitten 4–5. Der Werbespot auf Folie 08 liegt in `../werbevideo/`
+(Abschnitt 4b). Seit 03.11.2026 läuft überall die **Fassung mit
 Bildern** (LIESMICH §12): eigene Bestandteile (Abschnitt 4) und Fremdbilder aus `fremdbilder/` (Abschnitt 4a) –
 Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt –,
 dazu das HOLY-Logo mit Einverständnis (Nr. 12) und die Videobotschaft in `video/` mit Zustimmung des Gründers (Nr. 18);
@@ -19,7 +22,7 @@ SIL Open Font License 1.1, über Fontsource 5.3.0 (Originalquelle Google Fonts),
 |---|---|
 | Bricolage Grotesque | Titel, Zahlen, Sätze der Momente, Foliennummer (Plan 3.4) |
 | Inter | Text, Daten, Beschriftungen – Ersatz für Libre Franklin, die noch nicht im Repository liegt (M5) |
-| Fraunces kursiv | nur für echte, anonyme O-Töne – bisher keine |
+| Fraunces kursiv | nur für echte, anonyme O-Töne – **nicht verwendet** (keine eigene Befragung, D12) |
 
 HOLYs eigene Schriften (kommerziell) werden nicht eingebunden (Dossier ✔ G01, ✎ G03, ✎ G04).
 
@@ -49,7 +52,7 @@ Dossier (Gelb #FFD007 ✎ G06, Schwarz #1D1D1B ✔ G07, Creme #F3EDE1 ✎ G06; F
 | `bilder/holy-logo-oval.png` | 01, 09 | offizielles HOLY-Logo im gelben Oval, 692 × 400 px, unverändert aus FS1 (`../../fallstudie-1-brand-persona/praesentation/bilder/`; dort: de.holy.com, Abruf 16.10.2026) | © HOLY Softdrinks GmbH; Nutzung für dieses Studienprojekt freigegeben durch Yannick am 03.11.2026 („der Gründer ist eingeweiht“, KI-Nachweis FS2 Nr. 12); Quelle auf der Folie |
 | `bilder/konzept-01-landingpage.png` … `konzept-05-danke.png` | 08 | Bildschirmfotos der eigenen Konzept-Webseite (390 × 844, 04.11.2026 nach dem Umbau im Shop-Look, D09; erzeugt mit `../konzept-website/werkzeuge/folie08-bilder.mjs` ohne Schalter = Rückfall ohne Fremdbilder; Produktseite als Ausschnitt, Danke-Seite seit D09 von oben) | eigene Gestaltung ohne fremde Bilder; jede Seite trägt den Hinweis „Studentisches Konzept … keine Website der HOLY Softdrinks GmbH · keine Bestellung möglich“ |
 | `video/gruender-video.mp4` | 09 | Videobotschaft des Gründers Mathias Horsch, 02.11.2026 | Zustimmung für Video und Stimme in der Präsentation (laut Yannick, KI-Nachweis FS2 Nr. 09) und seit 03.11.2026 für die Veröffentlichung online in der Präsentation (Gründer über Yannick, KI-Nachweis FS2 Nr. 18) → versioniert, nur per Pfad eingebunden; nicht kommerziell, für die Lehrveranstaltung; keine KI-Transkription. Bis 03.11.2026 per `.gitignore` ausgeschlossen in `intern/` |
-| Bildkacheln b01, b04–b12, b15, b16 | 01–07, 09 | **offen** – eigene Fotos und Screenshots aus dem Selbstversuch und dem Workshop | im Rückfall ohne Fremdbilder Platzhalter (`data-status="offen"`); in der Fassung mit Bildern bis dahin Fremdbilder aus Abschnitt 4a (nicht b12, b15, „Tipp unter Kollegen“); eigene Fotos zuerst in `intern/` (ausgeschlossen), veröffentlichen erst nach Sichtung durch die Gruppe (Plan 4, 11.5) |
+| Bildkacheln b01, b04–b11, b16 | 01–05, 09 | **keine eigenen Fotos** (keine eigene Erhebung, Entscheidung 08.11.2026): Fremdbilder aus Abschnitt 4a; die Kacheln b12 (Workshop, 06), b15 (Skizze, 07) und „Tipp unter Kollegen“ (03) sind seit D12 entfernt | im Rückfall ohne Fremdbilder beschriftete Platzhalter (`data-status="leer"`, z. B. „Produktbild von HOLY · nur in der Fassung mit Bildern“), eigene Gestaltung |
 | Textgrafik „0 Beiträge · Blog /blogs/news“ | 03 | Rückfall b19 (nur im Rückfall ohne Fremdbilder), eigene Gestaltung | Beleg ✔ M01, ✔ L39 (Abruf 30.10.2026) |
 
 Rechtliche Einordnungen sind Einschätzungen von Studierenden und keine Rechtsberatung (Dossier 10.6).
@@ -110,14 +113,24 @@ wiedergegeben (D08).
 | `v07-logo-pampers` | Logo: Pampers (Kopfzeile pampers.de; einfarbig dunkel gesetzt), Abruf 03.11.2026 | https://images.ctfassets.net/ym05119t78e1/13XfMwh1bwO6NUepeNDs30/cbd64687086a8474b8af1fef76ee8b34/Pampers_Logo_Revamp__1_.svg |
 | `konzept-01`, `konzept-02`, `konzept-03`, `konzept-04`, `konzept-05` | Bildschirmfoto der Konzept-Webseite (Fassung mit Bildern, darin HOLY-Produktbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17), 04.11.2026 (D09) | fallstudie-2-customer-journey/konzept-website/&lt;seite&gt; (Fassung mit Bildern, konzept-website/fremdbilder/register.js), erzeugt mit konzept-website/werkzeuge/folie08-bilder.mjs --intern (Schaltername historisch); Seiten: `index.html` (01), `koffein-check.html` (02), `produkt.html?packung=50` (03), `warenkorb.html?packung=50` (04), `danke.html?packung=50` (05) |
 
-Bewusst **ohne** Fremdbild: b12 Workshop-Foto (06, eigenes Foto nach dem Workshop Mi 04.11.), b15 Handskizze
-QR-Brücke (07, eigene Zeichnung; das Pampers-Bild ist nur das Vorbild), Kachel „Tipp unter Kollegen“ (03, kein Bild
-zeigt Mundpropaganda unter Kollegen ehrlich; seit D07 in der Fassung mit Bildern als ruhige Leerstelle). X12 OTTO: seit
+Bewusst **ohne** Fremdbild blieben bis D12: b12 Workshop-Foto (06), b15 Handskizze QR-Brücke (07; das Pampers-Bild ist
+nur das Vorbild), Kachel „Tipp unter Kollegen“ (03, kein Bild zeigt Mundpropaganda unter Kollegen ehrlich). Seit D12
+(08.11.2026) sind die drei Kacheln entfernt – keine eigene Erhebung, keine neuen Fremdbilder. X12 OTTO: seit
 D07 der Textausschnitt der Serviceseite „Lieferung“ mit dem Satz „Die Lieferzeit zeigen wir dir vor deiner Bestellung
 direkt am jeweiligen Artikel an.“ (bis D07 das Werbefoto derselben Seite, das die Aussage nicht belegte), seit D08 wie
 die übrigen Bilder der Vorbilder zurückgehalten (nicht veröffentlicht, jederzeit zurückholbar); eine Produktseite mit
-Lieferzeit am Artikel wurde nicht aufgenommen (Bot-Schutz nicht umgangen). Eigene Fotos aus dem
-Selbstversuch ersetzen die Werbe- und Community-Bilder, sobald es sie gibt (LIESMICH §10).
+Lieferzeit am Artikel wurde nicht aufgenommen (Bot-Schutz nicht umgangen). Eigene Fotos gibt es nicht (keine eigene
+Erhebung, D12); die Werbe- und Community-Bilder bleiben, als Werbe- bzw. Symbolbild gekennzeichnet.
+
+## 4b. Werbespot (Folie 08, Knopf „Spot ansehen ▶“; seit D12)
+
+| Datei | Herkunft | Rechte und Kennzeichnung |
+|---|---|---|
+| `../werbevideo/holy-werbespot.mp4` (24,5 s, H.264/AAC), `holy-werbespot-poster.jpg`, `holy-werbespot.de.vtt` | Werbespot „Mein Moment.“, gebaut KI-gestützt im Workflow D11 am 04.11.2026 (KI-Nachweis FS2 Nr. 24 / D11); Herkunft jedes Bildes, Drehbuch und Prüfstand in `../werbevideo/README.md` und `drehbuch.md` | **studentisches Konzept der Gruppe, keine Werbung der HOLY Softdrinks GmbH**; Stimme, Musik und Geräusche **KI-generiert (ElevenLabs)**; Produkt- und Lifestyle-Bilder von HOLY (de.holy.com, Abruf 03.11.2026) ohne Genehmigung der Rechteinhaber (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17), HOLY-Wortmarke mit Einverständnis (Nr. 12); nicht kommerziell, für die Lehrveranstaltung. Kennzeichnung im Spot selbst (Pflichtzeile in jedem Bild, Endkarte) und in der Bühne der Präsentation („Studentisches Konzept · keine Werbung der HOLY Softdrinks GmbH · Stimme KI-generiert“). Fakten im Spot nur mit Befund-ID (✔ S92, ✔ R19, ✔ R25) |
+
+Eingebunden per Pfad aus `js/folien/08-spot.js` (erst beim Klick angefragt, nie in Druck, Aufnahme, Referentenfenster).
+Die Präsentation hat den Spot nicht verändert; geprüft wurde nur das Abspielen in der Präsentation (synthetisches
+Testvideo, AUTOREN §14), nicht der Inhalt des Spots (der ist im README des Spots dokumentiert).
 
 ## 5. Inhalte und Fakten
 
@@ -133,7 +146,11 @@ Selbstversuch ersetzen die Werbe- und Community-Bilder, sobald es sie gibt (LIES
 - **Persona Marco** `../../fallstudie-1-brand-persona/persona-steckbrief.md` (fiktiv); Statista-Werte nur wie in
   `persona-daten.md` (✔ P94).
 - **Konzept-Webseite** `../konzept-website/` (README mit Befunden je Seite).
-- Eigene Erhebungen (Selbstversuch, Kurzinterviews, Codierung, Workshop): **offen**, auf den Folien als „offen: …“.
+- **Eigene Erhebungen** (Selbstversuch, Kurzinterviews, Codierung, Workshop): **nicht durchgeführt** (Entscheidung
+  Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26). Seit D12 sagen die Folien das ehrlich: B1 nennt Grundlage (Dossier,
+  Abrufe 30.10./03.11.2026, KI-gestützte Stichproben ~ B20–B24) und Grenzen; B5 zeigt Kundenstimmen aus
+  Bewertungsportalen (Dossier 5.3: ✔ B14, ✔ B15, ~ B17, ~ B20–B24). Neue Belege in D12: keine – nur Zahlen, die schon im
+  Dossier stehen (B1: 353 Befunde und 17 X laut Dossier-Kopf; 193 Bewertungen = Summe der Stichproben A–E).
 
 ## 6. KI-Unterstützung
 
@@ -151,3 +168,7 @@ die sechs Bilder der Vorbilder zurückgehalten, Nachweise ohne Namen von Privatp
 Grundlage waren nur Gestaltungsplan, Dossier, Persona und Vorlesung; keine neue Websuche in diesem Schritt. Keine
 KI-Bilder, keine KI-simulierte Befragung. Die Prüfung durch die Gruppe ist offen. Die Videobotschaft wurde von der KI
 weder angesehen noch transkribiert.
+Finalisierung D12 (08.11.2026, KI-Nachweis FS2 Nr. 26): Texte, Backup B1/B5/B9 und die Bühne für den Werbespot
+(`js/folien/08-spot.js`, `css/folien/08-spot.css`) KI-gestützt; keine Websuche, keine neuen Downloads, keine neuen
+Fremdbilder; Fakten nur aus dem Dossier. Aus Modellwissen (nicht belegt) stammen nur technische Annahmen zum Browser
+(Esc beendet das Vollbild; Chrome lädt Untertitel per `file://` nicht – im Test bestätigt).

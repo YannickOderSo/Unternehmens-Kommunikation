@@ -3,7 +3,7 @@
 **Präsentation:** **Di, 10.11.2026** laut Aufgabenfolie (03.11.2026; S. 57 nannte noch den 09.11.) · 15 Minuten + Backup
 **Gruppe:** Yannick Heisler · Elias Knauber · Lukas Welker
 **Marke:** HOLY (Energy- und Hydration-Drinks, https://de.holy.com) – gewählt am 13.10.2026, gilt für alle drei Fallstudien
-**Stand:** 03.11.2026 · **Für Fallstudie 2 ist noch nichts verteilt** (`CLAUDE.md`); keine Datei hier ordnet Personen Aufgaben zu.
+**Stand:** 08.11.2026 (Präsentation finalisiert, D12) · **Für Fallstudie 2 ist noch nichts verteilt** (`CLAUDE.md`); keine Datei hier ordnet Personen Aufgaben zu.
 
 ## Aufgabe
 
@@ -53,10 +53,11 @@ Mediennutzung (S. 122–126). Die Begriffe stehen in den Vorlesungsfolien (`unte
 | [`recherche-customer-journey.md`](recherche-customer-journey.md) | Recherche-Dossier: Touchpoints von HOLY je Phase, Brüche und Kundenstimmen, Suche und Content-Lücken, Benchmark-Blogs, Leitplanken (8.3), Persona und Mediennutzung, Bilder und Rechte; Vorschlag für die Übung S. 128/129; seit 03.11. **Kap. 7a Best Practices je Top-Touchpoint** (X01–X17, branchenübergreifend, Websuche 03.11.). Jeder Befund mit Faktenstatus (✔/✎/~/✗/H) und Quelle | KI-gestützt, gegengeprüft, Prüfung durch die Gruppe offen |
 | [`gestaltungsplan.md`](gestaltungsplan.md) | Gestaltungsplan der Präsentation nach der Aufgabenfolie (A1–A7, Umbau 03.11.): Regeln R1–R5, Antwort auf jeden Kommentar von Prof. Stenger zu FS1, Gestaltungssystem in HOLY-Farben, Bildplan mit Rückfällen, Folienplan (9 Hauptfolien, 23 Klicks, 11:50 + 0:40), Top 3 je Phase, Überleitungen Ü1–Ü4, Konzept-Webseite, Zeitkonzept, Meilensteine | Entwurf, Prüfung durch die Gruppe offen |
 | [`konzept-website/`](konzept-website/) | **Mock-ups (A7):** eigene HOLY-Webseite als studentisches Konzept, 7 Seiten entlang des zentralen Wegs (SOLL), Präsentationsmodus `?anmerkungen=1` mit 47 Anmerkungen „Was wir ändern … Warum …“; Hinweisbalken, `noindex`, keine Bestellung; über GitHub Pages erreichbar; HOLY-Produktbilder aus `konzept-website/fremdbilder/` (Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17; keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung, mit Bildnachweis) | Entwurf, Prüfung durch die Gruppe offen |
-| [`praesentation/`](praesentation/) | Web-Präsentation (Engine aus FS1, Thema „Pfad“): 9 Hauptfolien + B1–B9 in der **Fassung mit Bildern** – Screenshots, Werbe- und Community-Bilder von HOLY und Logos der Vorbilder in `praesentation/fremdbilder/`, Videobotschaft des Gründers auf 09 in `praesentation/video/`. Fremdbilder: Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt (Abweichung, `gestaltungsplan.md` 1.2 und 4); HOLY-Logo mit Einverständnis (Nr. 12); Videobotschaft mit Zustimmung des Gründers, auch öffentlich online (Nr. 18); nicht kommerziell, für die Lehrveranstaltung, mit Bildnachweis; keine eigenen Fotos der Gruppe; die sechs Bilder der Vorbilder (Folie 07) sind zurückgehalten. Rückfall ohne Fremdbilder nur, wenn `fremdbilder/register.js` fehlt oder per Schalter. `praesentation/intern/` (ausgeschlossen) enthält nur Rohmaterial und zurückgehaltene Bilder (bis 03.11.2026 lagen Bilder und Video dort). `LIESMICH.md` zum Starten und Prüfen | Entwurf; eigene Fotos, Selbstversuch, Workshop und Interviews offen |
+| [`praesentation/`](praesentation/) | Web-Präsentation (Engine aus FS1, Thema „Pfad“): 9 Hauptfolien + B1–B9 in der **Fassung mit Bildern** – Screenshots, Werbe- und Community-Bilder von HOLY und Logos der Vorbilder in `praesentation/fremdbilder/`, Videobotschaft des Gründers auf 09 in `praesentation/video/`. Fremdbilder: Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt (Abweichung, `gestaltungsplan.md` 1.2 und 4); HOLY-Logo mit Einverständnis (Nr. 12); Videobotschaft mit Zustimmung des Gründers, auch öffentlich online (Nr. 18); nicht kommerziell, für die Lehrveranstaltung, mit Bildnachweis; keine eigenen Fotos der Gruppe; die sechs Bilder der Vorbilder (Folie 07) sind zurückgehalten. Rückfall ohne Fremdbilder nur, wenn `fremdbilder/register.js` fehlt oder per Schalter. `praesentation/intern/` (ausgeschlossen) enthält nur Rohmaterial und zurückgehaltene Bilder (bis 03.11.2026 lagen Bilder und Video dort). `LIESMICH.md` zum Starten und Prüfen. Seit 08.11.2026 Knopf „Spot ansehen ▶“ auf 08 (Werbespot aus `werbevideo/`) | **Finale Fassung 08.11.2026** (KI-gestützt, D12), Prüfung durch die Gruppe offen. **Keine eigene Erhebung** (Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26): kein Selbstversuch, keine Interviews, kein Workshop, keine eigenen Fotos – die Folien sagen ehrlich, worauf sie beruhen (B1 Methode) |
+| [`werbevideo/`](werbevideo/) | Werbespot „Mein Moment.“ (24,5 s, Hochformat) mit Poster, Untertiteln, Drehbuch und Bauwerkzeugen; studentisches Konzept, keine Werbung der HOLY Softdrinks GmbH; Stimme, Musik und Geräusche KI-generiert (ElevenLabs); in der Präsentation auf Folie 08 abspielbar | Entwurf (D11), Anhören durch die Gruppe offen |
 | [`_entwuerfe/`](_entwuerfe/) | drei Gestaltungsrichtungen als Musterfolie der Journey-Map (HTML + PNG): `reise`, `markenwelt`, `faden` | Entwürfe; Bildkacheln sind Platzhalter, keine fremden Bilder |
 
-Entstehung: KI-Nachweis FS2, Einträge 04–06, 10–18 und Delegationen D02–D08 (D06 Bilder, D07 Veröffentlichung und Abnahme-Befunde, D08 Befunde der Abnahme D07)
+Entstehung: KI-Nachweis FS2, Einträge 04–06, 10–18, 24, 26 und Delegationen D02–D08, D11, D12 (D06 Bilder, D07 Veröffentlichung und Abnahme-Befunde, D08 Befunde der Abnahme D07, D11 Werbespot, D12 Finalisierung ohne eigene Erhebung)
 ([`../ki-nachweis/ki-nachweis-fallstudie-2.md`](../ki-nachweis/ki-nachweis-fallstudie-2.md)).
 
 ## Bezug zu Fallstudie 1
@@ -89,10 +90,11 @@ Konzept-Webseite als Mockup? Was heißt „branchenübergreifend“? Darf die Ko
 
 ## Nächste Schritte (ohne Personen)
 
-Laut Gestaltungsplan, Abschnitt 12 (M6–M13, Stand 03.11.): Mail an Prof. Stenger mit den neuen Fragen (Di 03.11.) ·
-Selbstversuch mit Übergangsprotokoll, Kurzinterviews, Workshop Top 3 je Phase (Mi 04.11.) · **Bildschluss** (Do 05.11.) ·
-**Datenschluss**, Urteile Ü1–Ü4 nach dem Selbstversuch (Fr 06.11.) · Generalprobe 1 (Sa 07.11.) · Umbau (So 08.11.) ·
-Generalprobe 2 und **Änderungsstopp Mo 09.11., 20:00** · Beamer-Test und **Vortrag Di 10.11.**
+Stand 08.11.2026: Die Präsentation ist finalisiert (ohne eigene Erhebung; Selbstversuch, Interviews und Workshop aus
+dem Plan vom 03.11. entfallen, `gestaltungsplan.md` 1.1 R2). Es bleibt, was nur die Gruppe tun kann
+(`praesentation/LIESMICH.md` §10): Rollen verteilen und Redeskript abstimmen (Sprecherzuordnung dort nur als Vorschlag) ·
+alles lesen und abnicken · Werbespot anhören · Rechtefragen bewusst entscheiden · Generalprobe und
+**Änderungsstopp Mo 09.11., 20:00** · Beamer-Test (Ton!) und **Vortrag Di 10.11.**
 
 > KI-gestützt erstellt (Claude Code). Fakten über HOLY nur mit Faktenstatus und Quelle aus dem Dossier verwenden.
 > Rechtliche Einordnungen sind keine Rechtsberatung.

@@ -4,12 +4,15 @@ Präsentation zur Fallstudie 2 „Customer Journey“ (Marke **HOLY**) im Modul 
 Prof. Dr. Daniel Stenger, Hochschule Kaiserslautern. Gruppe: Yannick Heisler, Elias Knauber, Lukas Welker.
 Vortrag: **Di, 10.11.2026**, 15 Minuten. Änderungsstopp Mo, 09.11., 20:00 (Gestaltungsplan 10.3).
 
-**Stand 03.11.2026 – ENTWURF, Prüfung durch die Gruppe offen.** Gebaut KI-gestützt nach
+**Stand 08.11.2026 – finale Fassung (KI-gestützt), Prüfung durch die Gruppe offen.** Gebaut KI-gestützt nach
 [`../gestaltungsplan.md`](../gestaltungsplan.md) (Folienplan 5.1, Gestaltung „Pfad“ Abschnitt 3, Technik 11) mit
 Fakten nur aus dem Dossier [`../recherche-customer-journey.md`](../recherche-customer-journey.md) (Befund-IDs mit
-Status ✔ belegt · ✎ korrigiert · ~ unsicher · **H** Hypothese). Eigene Daten der Gruppe (Selbstversuch, Fotos,
-Kurzinterviews, Codierung, Workshop) fehlen noch: Auf den Folien stehen dafür sichtbar gekennzeichnete Platzhalter
-(„offen: …“, Bildkacheln mit `data-status="offen"`). Entstehung: [`AUTOREN.md`](AUTOREN.md), Abschnitt 8.
+Status ✔ belegt · ✎ korrigiert · ~ unsicher · **H** Hypothese). **Keine eigene Erhebung** (Entscheidung Yannick
+08.11.2026, KI-Nachweis FS2 Nr. 26): Es gab keinen Selbstversuch, keine Kurzinterviews, keine eigene Codierung, keinen
+Workshop und keine eigenen Fotos. Die Folien sagen ehrlich, worauf sie beruhen – Dossier mit Befund-IDs, Abrufe von
+Shop, Help-Center, Suche und Bewertungsportalen (30.10./03.11.2026), KI-gestützte Stichproben (~ B20–B24) –, und B1
+zeigt Methode und Grenzen. Es gibt keine „offen“-Platzhalter und kein „(vorläufig)“ mehr. Neu auf Folie 08: Knopf
+„Spot ansehen ▶“ für den Werbespot „Mein Moment.“ (§5). Entstehung: [`AUTOREN.md`](AUTOREN.md), Abschnitt 8 und 14.
 **Fassung mit Bildern (Standard seit 03.11.2026):** Die Präsentation zeigt Screenshots, Werbe- und Community-Bilder von
 HOLY und die Logos der Vorbilder aus `fremdbilder/` und spielt auf Folie 09 die Videobotschaft des Gründers aus `video/` –
 im Repository, auf GitHub Pages und im Hörsaal gleich. **Rechtestatus:** Die Veröffentlichung der Fremdbilder hat die
@@ -24,7 +27,9 @@ Bis 03.11.2026 lagen Bilder und Video als „interne Fassung“ im ausgeschlosse
 ## 1. Starten
 
 1. Den ganzen Ordner `praesentation/` kopieren (Unterordner gehören dazu; ZIP vorher ganz entpacken). Für die
-   Live-Demo auf Folie 08 muss der Nachbarordner `../konzept-website/` mitkommen.
+   Live-Demo auf Folie 08 muss der Nachbarordner `../konzept-website/` mitkommen, für den Werbespot auf Folie 08 der
+   Nachbarordner `../werbevideo/` (mindestens `holy-werbespot.mp4`, `-poster.jpg`, `.de.vtt`) – am einfachsten den
+   ganzen Ordner `fallstudie-2-customer-journey/` kopieren.
 2. `index.html` per Doppelklick in **Chrome oder Edge** (aktuelle Version) öffnen. Läuft ohne Internet und ohne Server.
 3. **F** = Vollbild. Die Bühne (1920 × 1080) passt sich jedem Bildschirm an.
 4. Die **Videobotschaft** (Folie 09) liegt in `video/gruender-video.mp4` (versioniert; veröffentlicht mit Zustimmung
@@ -57,8 +62,11 @@ auch wenn `fremdbilder/` da ist; jede Bildkachel mit `data-status="frei"` zeigt 
 
 Nachgezählt am 03.11.2026 aus `index.html` (Schritte je Folie wie `pruefen.mjs`, Klicks = Schritte + Weiterschalten;
 auf 09 ist Klick 2 „Fragen?“). Sprechtext = Absätze mit `data-schritt` in den Notizen, ohne Regieanweisungen in
-[ ]; Zeit bei 1,9 Wörtern/s (Planwert, **nicht gemessen** – Leseprobe Do 05.11.). Seit D07 hat Folie 04 ein Wort mehr
-(„Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“, ✔ M01, ✔ L39).
+[ ]; Zeit bei 1,9 Wörtern/s (Planwert, **nicht gemessen**). Seit D07 hat Folie 04 ein Wort mehr
+(„Der Blog ist leer (0 Beiträge).“ statt „Einen Blog gibt es nicht.“, ✔ M01, ✔ L39). **Seit D12 (08.11.2026):** 05 +7
+Wörter (Satz zu den Urteilen: „unsere Bewertung … – einen eigenen Testkauf haben wir nicht gemacht“), 08 +25 Wörter
+(optionale Überleitung zum Werbespot) und `data-zeit` 85 → 110 s (+25 s Spot); Klicks unverändert (der Knopf „Spot
+ansehen ▶“ ist kein Schritt). Die Wortzahlen D12 sind als Unterschied zum Stand 03.11. nachgezählt (gleiche Regel).
 
 | Folie | Inhalt (Aufgabe · Laufleiste S. 111) | Klicks (Plan) | Soll `data-zeit` (Plan) | Sprechtext Wörter (Plan) | ≈ s |
 |---|---|--:|--:|--:|--:|
@@ -66,15 +74,18 @@ auf 09 ist Klick 2 „Fragen?“). Sprechtext = Absätze mit `data-schritt` in d
 | 02 | Persona Marco und Mediennutzung · ohne Schritt | 2 (2) | 60 (60) | 113 (114) | 59 |
 | 03 | A1 IST-Analyse und Bewertung · 1 | 3 (3) | 80 (80) | 156 (152) | 82 |
 | 04 | A2 Journey-Map, „Zentraler Weg (IST)“ · 2 | 3 (3) | 80 (80) | 135 (152) | 71 |
-| 05 | A3 Überleitungen trägt · bricht · wackelt · wackelt · 2 | 3 (3) | 95 (95) | 162 (180) | 85 |
+| 05 | A3 Überleitungen wackelt · bricht · wackelt · wackelt · 2 | 3 (3) | 95 (95) | 169 (180) | 89 |
 | 06 | A4 Top 3 je Phase, „Zentraler Weg (SOLL)“ · 3 | 3 (3) | 100 (100) | 175 (190) | 92 |
 | 07 | A5 + A6 Vorbild → Maßnahme · 4 | 2 (2) | 90 (90) | 163 (171) | 86 |
-| 08 | A7 Konzept-Webseite in Handyrahmen (gelbe Bühne) · 4 | 3 (3) | 85 (85) | 124 (162) | 65 + Demo |
+| 08 | A7 Konzept-Webseite in Handyrahmen (gelbe Bühne) · 4 | 3 (3) | **110** (85) | 149 (162) | 78 + Spot 25 s oder Demo |
 | 09 | Fazit, Kennzahlen, Videobotschaft, Fragen (gelbe Bühne) · 5 | 2 (2) | 70 (70) | 101 (103) | 53 + 16 s Video |
-| **Summe** | | **23 (≤ 25)** | **710 s = 11:50** | **1.204** (rund 1.320) | ≈ 633 + Video |
+| **Summe** | | **23 (≤ 25)** | **735 s = 12:15** | **1.236** (rund 1.320) | ≈ 650 + Video + Spot |
 
-Dazu 0:40 Reserve (Handzeichen, Rückgriffe, höchstens 30 s Live-Demo) = **12:30**. Kontrollpunkte und Kürzungsplan:
-Gestaltungsplan 10.2 (stehen auch in den Notizen der Folien 02, 03, 06, 07). Backup B1–B9: `data-zeit="0"`.
+Bis D12: 710 s + 0:40 Reserve (Handzeichen, Rückgriffe, höchstens 30 s Live-Demo) = **12:30**. Seit D12 enthält die
+Sollzeit von 08 die 25 s Werbespot: 735 s = 12:15, Reserve bis 12:30 nur noch 0:15 – **Spot und Live-Demo nicht
+beide**; ist der Kontrollpunkt nach 07 überschritten, entfällt der Spot (Notiz 08). Bis 15:00 bleiben 2:45 für Fragen und
+Übergänge. Kontrollpunkte und Kürzungsplan: Gestaltungsplan 10.2 (stehen auch in den Notizen der Folien 02, 03, 06,
+07, 08). Backup B1–B9: `data-zeit="0"`.
 
 ## 4. Referentenansicht
 
@@ -84,7 +95,33 @@ Im Referentenfenster spielt Folie 09 das Video **nicht** ab (kein zweiter Ton); 
 des Gründers – läuft in der Web-Präsentation“.
 Die Anzeige „Bündel A/B/C“ im Referentenfenster meint **Sprechblöcke** (01–03, 04–06, 07–09), keine Personen.
 
-## 5. Folie 08: Live-Demo der Konzept-Webseite
+## 5. Folie 08: Live-Demo der Konzept-Webseite und Werbespot
+
+**Werbespot „Mein Moment.“ (seit D12, 08.11.2026).** Mit Klick 2 erscheinen rechts unten zwei Knöpfe: „Spot ansehen ▶“
+und „Live-Demo ↗“. „Spot ansehen ▶“ öffnet eine Bühne über der Präsentation und spielt `../werbevideo/holy-werbespot.mp4`
+(24,5 s, mit Ton; Poster und Untertitel aus demselben Ordner, README dort). Die Datei wird erst beim Klick angefragt;
+beim Betreten der Folie startet nichts. Bedienung, solange die Bühne offen ist:
+
+| Taste / Aktion | Wirkung |
+|---|---|
+| Ende des Spots | Bühne schließt sich von selbst, die Folie bleibt auf Schritt 2 |
+| → ↓ ← ↑ Bild↓ Bild↑ Enter Rücktaste (Clicker) | schließt die Bühne **ohne weiterzublättern**; erst der nächste Druck blättert |
+| Esc · Knopf „Schließen ✕“ · Klick neben das Video | schließt die Bühne (Esc beendet im Vollbild zusätzlich das Vollbild – Browser; im Vortrag deshalb Pfeiltaste/Clicker) |
+| Leertaste / K · Klick ins Video | Pause / weiter |
+| U · Knopf „Untertitel an“ | Untertitel an/aus (nur online, z. B. GitHub Pages; per Doppelklick/`file://` verweigert Chrome die Untertitel-Datei, der Knopf heißt dann „Untertitel nur online“) |
+| F | Vollbild wie sonst; alle anderen Tasten (O, P, B, Ziffern …) sind gesperrt |
+
+Läuft der Spot nicht (Datei fehlt, Browser ohne H.264), steht in der Bühne „Der Werbespot lässt sich in diesem Browser
+nicht abspielen …“; Pfeiltaste, ein Satz Überleitung, weiter. Ein Folienwechsel per Befehl (z. B. aus dem
+Referentenfenster) schließt die Bühne. **Nicht** im Druck/Notfall-PDF (`?druck`), nicht im Referentenfenster (dort kein
+zweiter Ton; Knopf ausgeblendet – den Spot im Präsentationsfenster per Maus starten) und ohne Wirkung in der Übersicht (O).
+Kennzeichnung in der Bühne: „Studentisches Konzept · keine Werbung der HOLY Softdrinks GmbH · Stimme KI-generiert“
+(der Spot trägt sie auch selbst); Stimme, Musik und Geräusche KI-generiert (ElevenLabs, KI-Nachweis FS2 Nr. 24 / D11),
+HOLY-Bilder im Spot ohne Genehmigung der Rechteinhaber (Beschluss der Gruppe, Nr. 17). Zeit: +25 s (data-zeit 110), nur
+wenn der Kontrollpunkt nach 07 eingehalten ist, nicht zusammen mit der Live-Demo. **Ton im Beamer-Test prüfen.**
+Technik: `js/folien/08-spot.js`, `css/folien/08-spot.css`.
+
+**Live-Demo.**
 
 Der Link „Live-Demo ↗“ (erscheint mit Klick 2) öffnet `../konzept-website/index.html?anmerkungen=1` in einem neuen
 Tab (kein `iframe`). Nur aus der Reserve, wenn der Kontrollpunkt nach 07 eingehalten ist, höchstens 30 s (Plan 7.4).
@@ -115,11 +152,14 @@ Video nicht von selbst (Folie per F5 direkt auf Schritt 1 geöffnet), erscheinen
 **Ton im Beamer-Test prüfen** (Plan 11.4). Versioniert und veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2
 Nr. 18; bis 03.11.2026 lag die Datei ausgeschlossen in `intern/`); keine KI-Transkription, keine Zitate (Plan 9.5).
 
-## 7. Eigene Fotos eintragen (Bildplan, Gestaltungsplan 4)
+## 7. Bilder tauschen (Bildplan, Gestaltungsplan 4)
 
-Jede Bildkachel (`<figure class="p-kachel" data-status="offen" …>`) kennt die Zustände `offen` (Platzhalter),
-`frei` (Bild), `rueckfall` (eigene Grafik, z. B. Blog auf 03) und – nur für Zusatzbilder der Fassung mit Bildern –
-`aus` (im Rückfall unsichtbar; seit D07 nicht mehr verwendet). Bilder werden **nicht von Hand** in die Kachel
+**Seit D12 (08.11.2026) gibt es keine eigenen Fotos** – keine eigene Erhebung (KI-Nachweis FS2 Nr. 26); alle Bilder
+sind Screenshots und Fremdbilder mit Bildnachweis. Der folgende Ablauf gilt nur, falls die Gruppe später doch eigene
+Fotos einsetzt. Jede Bildkachel (`<figure class="p-kachel" data-status="leer" …>`) kennt die Zustände `leer`
+(beschrifteter Platzhalter, nur im Rückfall ohne Fremdbilder; bis D12 hieß der Zustand `offen`), `frei` (Bild),
+`rueckfall` (eigene Grafik, z. B. Blog auf 03) und – nur für Zusatzbilder der Fassung mit Bildern – `aus` (im Rückfall
+unsichtbar; seit D07 nicht mehr verwendet). Bilder werden **nicht von Hand** in die Kachel
 geschrieben, sondern über das Register (§12): Datei nach `fremdbilder/`, Eintrag mit `datei`, `alt`, `nachweis`,
 `pixel` in `fremdbilder/register.js`, Schlüssel als `data-intern="…"` an der Kachel; das Skript setzt
 `data-status="frei"` und das `<img>`. Ein eigenes Foto ersetzt ein HOLY-Bild, indem man im Eintrag `datei` und
@@ -130,7 +170,8 @@ geschwärzt) nach `fremdbilder/` – alles dort ist über GitHub Pages öffentli
 
 ## 8. Texte ändern und prüfen
 
-Texte, Titel und Sprechtexte direkt in `index.html` (Kasten „FOLIE xx“ vor jeder Folie nennt, was offen ist). Danach
+Texte, Titel und Sprechtexte direkt in `index.html` (Kasten „FOLIE xx“ vor jeder Folie nennt Aufbau, Herkunft der
+Bilder und Bedienung). Danach
 prüfen (Voraussetzung Node.js und playwright-core mit Chromium):
 
 ```bash
@@ -150,6 +191,7 @@ Belegzeilen in 26 px (04, 05) laut Plan 3.6 (Ausnahme in 3.4). **Überlauf-Ausna
 09 (`svg.e9-pfad`, `data-ueberlauf-ok`) läuft von Rand zu Rand; die Bildleiste darunter liegt im Satzspiegel. `_test/` ist per `.gitignore` ausgeschlossen.
 Sichtprüfung zusätzlich (Plan 11.3): kein Gelb ohne schwarze Kontur auf Creme, kein Mittel warm auf Gelb, kein Ocker.
 
+**Ergebnis am 08.11.2026 (D12, finale Fassung):** siehe §13 und AUTOREN §14.
 `werkzeuge/pruefen.mjs` ist gegenüber FS1 um die Bildprüfungen und `--oeffentlich` erweitert (§12, Kopf der Datei).
 `werkzeuge/referent-test.mjs` ist aus FS1 **unverändert** übernommen und prüft FS1-Folien (Rad auf f10/f12,
 Sprungliste der FS1-Folie 12): Mit FS2 bestehen nur die allgemeinen Prüfungen (Fenster verbunden, Start-Knopf), die
@@ -165,27 +207,26 @@ oder im Repository liegen. Ohne Fremdbilder:
 `index.html?druck&kacheln=rueckfall` bzw. `pruefen.mjs --oeffentlich --druck …` (§12). Bis 03.11.2026 durfte ein PDF
 mit Bildern nur in `intern/` liegen.
 
-## 10. Offen bis zum Vortrag (ohne Personen – für FS2 ist nichts verteilt)
+## 10. Was die Gruppe bis zum Vortrag noch tun muss (Stand 08.11.2026; ohne Personen – für FS2 ist nichts verteilt)
 
-- [ ] Selbstversuch mit Übergangsprotokoll (Ü1–Ü4), Fotos b01–b11, b20 → Kacheln 01–05, 09, B1; Datum in der Herleitung von 04
-- [ ] Eigene Fotos statt der HOLY-Werbe- und Community-Bilder (b01 Titel, b04 Persona, Unboxing K5 …): Einträge in
-  `fremdbilder/register.js` umstellen, Bildnachweis-Zeilen anpassen (§7, §12)
-- [ ] Fremdbilder durch die Gruppe sichten (Kontaktbogen `intern/kontaktbogen.png`, Stand D06), v. a. die Symbolbilder
-  02/03/04/05/09; entscheiden, ob die sechs Bilder der Vorbilder eine eigene Backup-Folie bekommen – sie sind seit D08
-  **zurückgehalten, nicht veröffentlicht** (`intern/vorbilder-zurueckgehalten/`, ausgeschlossen; X12 OTTO als
-  Textausschnitt); auf 07 stehen seit D07 nur die Logos, auf B6 ist kein Platz
-- [ ] Rechtestatus der Fremdbilder: veröffentlicht ohne Genehmigung der Rechteinhaber (Beschluss der Gruppe, KI-Nachweis
-  FS2 Nr. 17) – bewusst entscheiden, ob das so bleibt; Fragen an Prof. Stenger (Plan 13.2 Nr. 6, 16) und HOLY (13.3)
-- [ ] Urteile auf 05 und Titel von 03, 05, 09 nach den Daten prüfen (Datenschluss Fr 06.11., Plan 12)
-- [ ] Kurzinterviews (O-Töne auf 02, Bildgrößen im Moodboard 03, B5), Codierung der Bewertungen
-- [ ] Workshop Mi 04.11.: Plätze 2 und 3 auf 06 bestätigen, Foto b12; Handskizze b15 (07)
-- [ ] Auswahl der Vorbilder auf 07 bestätigen (je Phase eines aus Dossier 7a; Vorschlag dieses Baus)
-- [ ] Libre Franklin (M5) statt Inter; `referent-test.mjs` für FS2 anpassen
-- [ ] Leseprobe (Tempo messen), Generalproben Sa 07.11. und Mo 09.11., Beamer-Test mit Ton und `?buehne=schwarz`
-- [ ] Konzept-Webseite ist seit 03.11. über GitHub Pages erreichbar; Frage an Prof. Stenger bleibt (Plan 7.3, 13.2 Nr. 16)
-- [ ] Logo-Freigabe des Gründers schriftlich mit Umfang ablegen (Empfehlung der Abnahme D05)
-- [ ] Ü1 steht jetzt auf „wackelt“ (Umweg über die Suche, Plan 6.7.1) – im Selbstversuch bestätigen oder ändern
-- [ ] Sprechtexte mit „[erst nach … so sprechen]“ (B1, B2, B5, B9) nach den Erhebungen anpassen
+Inhaltlich ist nichts mehr offen: keine eigene Erhebung (Entscheidung 08.11.2026), alle Platzhalter sind ersetzt.
+Was bleibt, kann nur die Gruppe tun:
+
+- [ ] **Rollen verteilen**: wer welche Folien spricht, wer Zeitwächter ist (Gestaltungsplan 13.1 Nr. 7). Das Redeskript
+  nennt nur einen **Vorschlag** (01–03 Yannick, 04–06 Lukas, 07–09 Elias in Anlehnung an die FS1-Bündel).
+- [ ] **Alles lesen und abnicken** (Folien, Notizen, B1–B9): Die finale Fassung ist KI-gestützt; Prüfung durch die Gruppe
+  offen, auch der Vorschlag Plätze 2/3 (06), die Auswahl der Vorbilder (07) und die Urteile (05, Hypothese).
+- [ ] **Generalprobe** Mo 09.11. (Änderungsstopp 20:00): Tempo messen (Planwert 1,9 Wörter/s ist nicht gemessen),
+  Kontrollpunkte und Kürzungen üben, Entscheidung Spot **oder** Live-Demo.
+- [ ] **Beamer-Test** Di 10.11.: Ton (Videobotschaft 09, Werbespot 08), `?buehne=schwarz`, Live-Demo-Tab vorab öffnen.
+- [ ] **Werbespot anhören** (Handy und Kopfhörer) und abnicken – bisher nur maschinell geprüft (`../werbevideo/README.md` §8).
+- [ ] **Rechtefragen** bewusst entscheiden: Fremdbilder und HOLY-Bilder im Spot veröffentlicht ohne Genehmigung der
+  Rechteinhaber (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17); Fragen an Prof. Stenger (Plan 13.2 Nr. 6, 16) und HOLY
+  (13.3); Logo-Freigabe des Gründers schriftlich mit Umfang ablegen (Empfehlung der Abnahme D05).
+- [ ] **Fremdbilder sichten** (Kontaktbogen `intern/kontaktbogen.png`), v. a. die Symbolbilder 02/03/04/05/09.
+- [ ] **Rückfrage „Habt ihr selbst getestet/befragt?“** üben: ehrlich „nein“ – B1 (Methode, Grenzen) und B5.
+- [ ] **KI-Nachweis** FS2 Nr. 26 / D12 prüfen und den Prüfstatus eintragen; danach B9 „Prüfung“ nachziehen.
+- [ ] Technik, optional: Libre Franklin (M5) statt Inter; `werkzeuge/referent-test.mjs` für FS2 anpassen.
 
 ## 11. Dateien
 
@@ -197,6 +238,8 @@ mit Bildern nur in `intern/` liegen.
 | `css/folien/pfad.css` | Thema „Pfad“ (Farben fest, überschreibt die Ocker-Deckelung von `tokens.css`; Komponenten `p-…`) |
 | `css/folien/01-einstieg.css` … `09-fazit.css`, `10-backup.css` | je Folie eine Datei |
 | `js/folien/pfad.js` | Laufleiste S. 111, Journey-Raster (04–06), Pfad aus den Kachelmitten |
+| `js/folien/08-spot.js`, `css/folien/08-spot.css` | Werbespot auf Folie 08: Knopf „Spot ansehen ▶“, Bühne über der Präsentation, Tasten, Fehlerfall (§5; D12) |
+| `../werbevideo/holy-werbespot.mp4` (+ `-poster.jpg`, `.de.vtt`) | Werbespot „Mein Moment.“ (24,5 s), liegt außerhalb von `praesentation/`, per Pfad eingebunden; studentisches Konzept, keine Werbung der HOLY Softdrinks GmbH, Stimme KI-generiert (KI-Nachweis FS2 Nr. 24 / D11) |
 | `js/folien/09-fazit.js` | Videobotschaft (Schritt 1) und Sprungliste |
 | `js/folien/intern-bilder.js` | Fassung mit Bildern: setzt die Fremdbilder aus `fremdbilder/register.js` ein, Bildnachweis je Folie (§12; Name historisch) |
 | `fremdbilder/` | Fremdbilder und Liste `register.js` (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder, Bildschirmfotos der Konzept-Webseite mit Bildern); Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; Herkunft QUELLEN §4a |
@@ -224,7 +267,7 @@ werden nicht veröffentlicht (seit D08: die sechs Bilder der Vorbilder liegen zu
 | | Fassung mit Bildern (Standard) | Rückfall ohne Fremdbilder |
 |---|---|---|
 | wann | immer: Repository, GitHub Pages, Hörsaal | nur wenn `fremdbilder/register.js` fehlt, mit `?kacheln=rueckfall` oder im Prüflauf mit `--oeffentlich` |
-| Bildkacheln 01–05, 09 | Screenshots, Werbe- und Community-Bilder von HOLY (Symbolbilder als solche beschriftet) | Platzhalter „offen“ bzw. Rückfall-Grafik (Blog auf 03) |
+| Bildkacheln 01–05, 09 | Screenshots, Werbe- und Community-Bilder von HOLY (Symbolbilder als solche beschriftet) | beschriftete Platzhalter (`data-status="leer"`, z. B. „Produktbild von HOLY · nur in der Fassung mit Bildern“; bis D12 „offen“) bzw. Rückfall-Grafik (Blog auf 03) |
 | Folie 07 | Logos der Vorbilder statt der Namen (einfarbig dunkel, im Modus dunkel hell) | Namen fett |
 | Folie 08 | Bildschirmfotos der Konzept-Webseite **mit** HOLY-Produktbildern (`fremdbilder/konzept-0n-….png`) | Bildschirmfotos aus `bilder/` (ohne fremde Bilder) |
 | Folie 09 | Videobotschaft aus `video/gruender-video.mp4` (hängt nicht an `register.js`) | wie links |
@@ -306,8 +349,8 @@ entfallen); Rückfall `--oeffentlich --schritte --druck` 0 Fehler, 17 Warnungen,
 Betreten steht `src = video/gruender-video.mp4`; mit einer Route, die die Anfrage mit einem synthetischen WebM
 beantwortet, startet das Video mit Klick 1 mit Ton, kein Rahmen; ohne Route erscheint im Test-Chromium (ohne H.264) der
 Rahmen mit dem neuen Text; mit `?aufnahme` keine Quelle, keine Anfrage, Rahmen.
-**Bewusst offen:** Workshop-Foto b12 (06), Handskizze b15 (07), „Tipp unter Kollegen“ (03) – kein Fremdbild zeigt das
-ehrlich; eigene Fotos aus dem Selbstversuch (§10).
+**Bewusst offen (Stand D07; seit D12 erledigt):** Workshop-Foto b12 (06), Handskizze b15 (07), „Tipp unter Kollegen“
+(03) – kein Fremdbild zeigt das ehrlich; seit D12 sind die drei Kacheln entfernt (keine eigene Erhebung, §13).
 
 **Überarbeitung D08 (03.11.2026, Befunde der Abnahme D07):**
 - Rechtestatus überall genau statt „veröffentlicht mit Freigabe“: Fremdbilder – Veröffentlichung von der Gruppe
@@ -337,3 +380,19 @@ Fremdbildern eingesetzt (Register 38 Schlüssel, vorher 44); Rückfall `--oeffen
 Folie 09 (eigenes Skript, nicht im Repository): mit synthetischem WebM per Route startet das Video mit Klick 1 mit Ton,
 kein Rahmen; ohne Route (Test-Chromium ohne H.264) und bei fehlender Datei der Fehlertext; mit `?aufnahme` und `?druck`
 keine Quelle, keine Anfrage an die Videodatei, Standardtext.
+
+## 13. Finalisierung D12 (08.11.2026): keine eigene Erhebung, Werbespot
+
+Auftrag (Yannick, 08.11.2026): „Finalisiere die Präsentation“; Antworten auf die Rückfragen: ohne Erhebung – alle
+„offen“-Platzhalter raus, Folien ehrlich umformulieren, nichts erfinden; Knopf „Spot ansehen“ auf 08; Redeskript als PDF
+(KI-Nachweis FS2 Nr. 26 / D12). Umbau KI-gestützt, Einzelheiten je Folie: AUTOREN §14; Inventur aller Fundstellen vor
+dem Umbau im Arbeitsordner der Sitzung (nicht im Repository).
+
+- **Sichtbar entfernt:** O-Ton-Zeile (02), Kachel „Tipp unter Kollegen“ und Interview-Legende (03), „(vorläufig)“ im
+  Titel und „Selbstversuch offen/folgt“ in den Herleitungen (04, 05), Workshop-Kachel b12 (06), Skizze b15 (07), alle
+  „offen“-Texte in Platzhaltern und Backup-Tabellen. Neu: B1 Methode (geprüft · nicht erhoben · Grenzen), B5 Kundenstimmen
+  aus Bewertungsportalen (✔ B14 B15, ~ B17 B20–B24), B9 ehrlich (nicht durchgeführt; Werbespot ergänzt); Sprungliste
+  „B1 Methode“, „B5 Stimmen“.
+- **Technik:** Zustand der Platzhalter `data-status="offen"` → `"leer"`, Klasse `p-kachel-offen` → `p-kachel-text`,
+  `p-offen` → `p-hinweis` (CSS, `pfad.js`, `intern-bilder.js`); Werbespot `js/folien/08-spot.js`, `css/folien/08-spot.css`.
+- **Prüfstand:** AUTOREN §14 (pruefen.mjs hell/dunkel/Rückfall, Funktionstest Werbespot).

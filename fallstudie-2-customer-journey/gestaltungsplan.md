@@ -8,7 +8,9 @@ Am 03.11.2026 abends nach der Abnahme von D05 korrigiert (Ü1 „wackelt“, Log
 Schrift-Ausnahme 3.4; KI-Nachweis FS2 Eintrag 11).
 Am 03.11.2026 spät nach der Abnahme von D07 (Delegation D08): Veröffentlichung der Fremdbilder als bewusste Abweichung
 ohne Genehmigung der Rechteinhaber vermerkt (0 Nr. 4, 1.1 R3, 1.2, 4 mit b05, b08, b14, b21, v01, 7.3, 7.4, 9.5, 11.2,
-11.5, 12 M8, 13.1 Nr. 9 und 11, 13.2 Nr. 16, 13.3). -->
+11.5, 12 M8, 13.1 Nr. 9 und 11, 13.2 Nr. 16, 13.3).
+Am 08.11.2026 bei der Finalisierung der Präsentation (KI-Nachweis FS2 Nr. 26 / Delegation D12): Abweichung „keine eigene
+Erhebung“ vermerkt (Änderungsvermerk 08.11., 1.1 R2, 7.4, 10.1, 10.2, 12, 13.1 Nr. 7, 12, 13); Werbespot auf Folie 08. -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
@@ -26,6 +28,18 @@ Aufgabenfolie · **Entwurf, Prüfung durch die Gruppe offen**
 > b02, b07, b12–b15, neu b20/b21), 5.1–5.3 (neu), 6 (Journey-Map jetzt Folie 04, neu 6.7 Überleitungen), 7 (neu:
 > Konzept-Webseite und Mock-ups), 8.1 (neu: Bewertungszeile je Phase), 9.1–9.5 (Folienbezüge, Zeit), 10, 11.2–11.5,
 > 12, 13, 14.1, 14.3, 14.4. Abschnitt 15 bleibt als Stand vom 30.10.2026.
+
+> **Abweichung: keine eigene Erhebung (Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26).** Selbstversuch mit
+> Übergangsprotokoll, Kurzinterviews, Codierung der Bewertungen zu zweit, Workshop Top 3 und eigene Fotos (R2, Bildplan 4,
+> Meilensteine M7–M9) haben nicht stattgefunden; im Repository liegen keine Ergebnisse. Yannicks Entscheidung auf die
+> Rückfrage der Finalisierung: „Ohne Erhebung (Empfohlen): Alle ‚offen'-Platzhalter raus. Folien ehrlich umformulieren:
+> Grundlage ist unsere Analyse von Dossier, Shop und Stichproben, keine eigene Befragung. Nichts wird erfunden.“ Folgen in
+> der Präsentation (`praesentation/AUTOREN.md` §14): keine „offen“-Platzhalter und kein „(vorläufig)“ mehr; die Urteile
+> zu den Überleitungen (6.7) sind die Bewertung der Gruppe nach dem Maßstab 6.7.1 auf Grundlage der Dossier-Belege (**H**),
+> die Plätze 2 und 3 (5.2.2) bleiben Vorschlag der Gruppe (**H**) ohne Workshop; Backup B1 zeigt Methode und Grenzen, B5
+> Kundenstimmen aus Bewertungsportalen (KI-gestützte Stichproben ~ B20–B24, nicht von der Gruppe codiert). Außerdem neu:
+> Knopf „Spot ansehen ▶“ auf Folie 08 für den Werbespot `werbevideo/holy-werbespot.mp4` (+25 s, 7.4, 10.1). Die Abschnitte
+> unten bleiben als Plan vom 03.11.2026 stehen; wo sie eine eigene Erhebung voraussetzen, gilt dieser Vermerk.
 
 **KI-gestützt erstellt.** Grundlage sind drei Gestaltungsentwürfe, zwei Jury-Urteile und das Recherche-Dossier
 [`recherche-customer-journey.md`](recherche-customer-journey.md) (kurz: „Dossier“). Fakten über HOLY stehen nur mit
@@ -97,7 +111,7 @@ Eintrag 01).
 | Regel | Umsetzung im Plan | Abweichung (begründet) |
 |---|---|---|
 | **R1 Sofort klären:** Mail an Prof. Stenger, Bildfreigaben bei pr@holy.com und beim Gründer | Mail mit den Fragen vom 30.10. (ob versendet, trägt die Gruppe ein); seit der Aufgabenfolie vom 03.11. eine Mail heute mit den neuen Fragen aus 13.2 (SOLL-Touchpoints neu? Konzept-Webseite als Mockups? „branchenübergreifend“? Übung S. 128/129 weiter erwartet?), Antwort erbeten bis **Do 05.11.**; Freigabe-Mail an pr@holy.com (nur Funktionsadresse, Dossier 12.3); der Gründer hat am 02.11. mit einer Videobotschaft geantwortet (v01, 9.5). Jede Bildkachel kennt drei Zustände: frei · Freigabe offen · Rückfall (Abschnitt 4) | keine |
-| **R2 Echtes Material statt KI** | Selbstversuch online und im Handel, jede Station fotografiert, Protokoll mit Datum, Ort, Kanal (Backup B1), **dazu ein Übergangsprotokoll für die vier Überleitungen des zentralen Wegs** (6.7: Anschluss? Wechsel von Medium oder Gerät? Klicks? stimmen Preis, Lieferzeit und Alter überein?); eigene Produktfotos; 5 offene Kurzinterviews (mindestens 3), anonym, mit Einwilligung, mit der Frage „Wo zuerst gesehen, wo informiert, wo gekauft?“; 20–30 Bewertungen plus kritische, von zwei Personen nach K1–K11 codiert (Dossier 12.4, **H** B36). Keine KI-Bilder, keine KI-simulierte Befragung | Persona Marco bleibt die fiktive Kern-Persona aus FS1 und ist so gekennzeichnet. Ihre KI-gestützte Illustration erscheint nur in B7. Die Bewertungs-Stichproben im Dossier (A–E) stammen von einem Recherche-Agenten (~ B20–B24) und erscheinen höchstens im Backup, bis die eigene Codierung vorliegt. Die Urteile zu den Überleitungen (6.7) sind bis zum Selbstversuch vorläufig |
+| **R2 Echtes Material statt KI** | Selbstversuch online und im Handel, jede Station fotografiert, Protokoll mit Datum, Ort, Kanal (Backup B1), **dazu ein Übergangsprotokoll für die vier Überleitungen des zentralen Wegs** (6.7: Anschluss? Wechsel von Medium oder Gerät? Klicks? stimmen Preis, Lieferzeit und Alter überein?); eigene Produktfotos; 5 offene Kurzinterviews (mindestens 3), anonym, mit Einwilligung, mit der Frage „Wo zuerst gesehen, wo informiert, wo gekauft?“; 20–30 Bewertungen plus kritische, von zwei Personen nach K1–K11 codiert (Dossier 12.4, **H** B36). Keine KI-Bilder, keine KI-simulierte Befragung | Persona Marco bleibt die fiktive Kern-Persona aus FS1 und ist so gekennzeichnet. Ihre KI-gestützte Illustration erscheint nur in B7. Die **Abweichung 08.11.2026: keine eigene Erhebung** (Entscheidung Yannick, KI-Nachweis FS2 Nr. 26) – Selbstversuch, Interviews, Codierung, Workshop und eigene Fotos fanden nicht statt; die Folien sagen das ehrlich (B1 Methode). Die Bewertungs-Stichproben im Dossier (A–E) stammen von einem Recherche-Agenten (~ B20–B24) und erscheinen höchstens im Backup, bis die eigene Codierung vorliegt. Die Urteile zu den Überleitungen (6.7) sind bis zum Selbstversuch vorläufig |
 | **R3 Gestaltung:** HOLY-Farben, ein Bild je Folie, Journey-Map mit Bildern wie S. 116, Moodboard, **optimierte Touchpoints als Mock-ups und Konzept-Webseite** (vorher: Blog als Mock-up), weniger Fußnoten | Gelb #FFD007, Schwarz #1D1D1B, Creme #F3EDE1 unverdünnt, **kein Ocker** (Ursache in FS1: Deckelung in `tokens.css`, ✔ G13). Je Hauptfolie ein großes eigenes Bild; Journey-Map mit Bildkacheln (Folie 04); Moodboard (03); Mock-ups der optimierten Touchpoints als eigene Konzept-Webseite, auf Folie 08 als Strecke in Handyrahmen (Abschnitt 7). Je Folie **eine** Quellzeile (22 px), alle Einzelbelege in B8 | Journey-Map und Moodboard sind Bildwände mit mehreren Bildern: gewollt, so zeigt es Stenger auf S. 116 (✔ L15). Gelb nie als Schrift oder Linie auf Creme (1,26 : 1, ✔ G12). #1D1D1B ist HOLYs Logo- und Druck-Schwarz, im Web steht #000000 (✔ G07, ✎ G06); wir bleiben bei #1D1D1B wie in R3 festgelegt (Entscheidung 13.1 Nr. 4). Die Konzept-Webseite zeigte bis 03.11.2026 keine Fotos, nur eigene Zeichnungen und Platzhalter; seit 03.11.2026 zeigt sie in der Fassung mit Bildern auch HOLY-Produktbilder (7.3) |
 | **R4 Inhalt nach Aufgabenfolie A1–A7 (03.11.2026) und Prozess S. 111, Herleitungen sichtbar** (vorher: S. 111 und Übung S. 128/129) | **Gliederung = A1–A7:** 03 = A1 IST-Analyse, 04 = A2 zentraler Weg (IST), 05 = A3 Überleitungen, 06 = A4 Top 3 je Phase und zentraler Weg (SOLL), 07 = A5 Best Practices + A6 Maßnahmen, 08 = A7 Mockups, 09 = Fazit und Messung. **Laufleiste S. 111** auf jeder Inhaltsfolie: 03 = Schritt 1, 04/05 = Schritt 2, 06 = Schritt 3, 07/08 = Schritt 4, 09 = Schritt 5; auf 02 (Persona) ohne aktiven Schritt (5.1). Herleitungen: Zeile „So kommen wir darauf: …“ unter jedem Titel, Belegzeile an jeder Überleitung, Kriterienzeile auf 06 (Persona · Zielfrage S. 109 · Bruch im IST · von HOLY gestaltbar), Auswahlkriterien der Vorbilder auf 07, Workshop-Foto | Die Übung S. 128/129 (Top 2, 20 Aktivitäten) ist nicht mehr Gliederung, sondern Backup B2 (5.2.3); A4 verlangt Top 3. Folie 02 trägt keinen Schritt, weil die Persona der Blickwinkel für alle fünf Schritte ist; so springt die Laufleiste nicht von 2 auf 1 zurück. Die Zeilen der Journey-Map (04) sind gegenüber S. 129 verdichtet; die Zuordnung steht in 6.3 und B8 |
 | **R5 Zeit:** ≤ 9 Hauptfolien, ≤ 25 Klicks, 12:30 Soll, Zeitwächter, zwei Generalproben, Änderungsstopp, Position neben der Leinwand | 9 Hauptfolien · 23 Klicks (Schritte + Folienwechsel, Zählweise wie FS1) · Soll 11:50 + 0:40 Reserve = 12:30 · Referentenuhr der FS1-Engine plus eine Person als Zeitwächter · Leseprobe Do 05.11., Generalproben Sa 07.11. und Mo 09.11. · Änderungsstopp Mo 09.11., 20:00 · sprechende Person links neben der Leinwand, Pfad läuft von links nach rechts · Live-Demo der Konzept-Webseite nur aus der Reserve (7.4) | keine |
@@ -836,6 +850,11 @@ lokal öffnen). Mobil zuerst (390 px ohne waagerechtes Scrollen), am Desktop gut
   Schwarz, z. B. „Koffein als Text statt Etikettbild“) und klein die Ü-Kennung (Ü1–Ü4). Auf Gelb nur Schwarz und Schiefer
   (3.3).
 - **Klicks:** Schritt 0 Rahmen 1–2 · Klick 1 Rahmen 3–4 · Klick 2 Rahmen 5 und Link „Live-Demo“ · Klick 3 weiter.
+- **Werbespot (Abweichung 08.11.2026, KI-Nachweis FS2 Nr. 26):** Mit Klick 2 steht links neben „Live-Demo ↗“ der Knopf
+  „Spot ansehen ▶“ (gleiche Gestaltung, kein zusätzlicher Schritt). Er öffnet eine Bühne über der Präsentation und spielt
+  `werbevideo/holy-werbespot.mp4` (24,5 s, mit Ton; studentisches Konzept, keine Werbung der HOLY Softdrinks GmbH, Stimme
+  KI-generiert, KI-Nachweis FS2 Nr. 24 / D11). Kein Autoplay; nicht im Druck. Kostet 25 s (10.1), nur wenn der
+  Kontrollpunkt nach 07 eingehalten ist, und nicht zusammen mit der Live-Demo. Bedienung: `praesentation/LIESMICH.md` §5.
 - **Live-Demo:** Der Link öffnet `../konzept-website/index.html?anmerkungen=1` in einem neuen Tab (kein `iframe`,
   3.7). Im Vortrag nur, wenn der Kontrollpunkt nach 07 eingehalten ist, höchstens 30 s aus der Reserve; sonst in der
   Fragerunde. Der Tab ist vor Beginn geöffnet (11.4).
@@ -1023,13 +1042,17 @@ Neu am 03.11.2026 (Folienplan 5.1); nachgerechnet mit dem Skript in 14.4.
 per Leseprobe mit Stoppuhr gemessen und die Wortzahlen danach angepasst. Die Live-Demo (08) ist nicht eingeplant; sie
 kommt nur aus der Reserve (höchstens 30 s, 7.4).
 
+**Stand 08.11.2026 (D12):** `data-zeit` von 08 ist um den Werbespot auf **110 s** erhöht (7.4) → Summe **735 s = 12:15**,
+bis 12:30 bleiben 0:15 Reserve. Spot und Live-Demo deshalb nicht beide; der Spot entfällt wie die Live-Demo, wenn der
+Kontrollpunkt nach 07 überschritten ist (10.2). Klicks unverändert 23.
+
 ### 10.2 Kontrollpunkte und Kürzungsplan
 
 | Kontrollpunkt | Soll | Toleranz | Handlung bei Überschreitung |
 |---|--:|--:|---|
 | nach 03 | 3:10 | 3:40 | Kürzung 1 und 4 |
 | nach 05 | 6:05 | 6:35 | Kürzung 2 |
-| nach 07 | 9:15 | 9:45 | Kürzung 3; keine Live-Demo |
+| nach 07 | 9:15 | 9:45 | Kürzung 3; keine Live-Demo, kein Werbespot (seit 08.11.) |
 
 Kürzungsplan (in beiden Generalproben geprobt): (1) 02: Mediennutzung nur zeigen, nur den Marker (92 %) und den
 Kaufkanal erklären, −15 s · (2) 06: Plätze 2 und 3 nur zeigen, nur den gelben Weg durch die Plätze 1 erklären, −30 s ·
@@ -1163,6 +1186,10 @@ fehlt, geht in die Meilensteine ab 03.11.
 | M12 | **Mo 09.11.** | Generalprobe 2; **Änderungsstopp 20:00**; Exporte, USB-Stick, KI-Nachweis | ≤ 12:30, Exporte geprüft |
 | M13 | **Di 10.11.** | Beamer-Test vor Beginn (Ton, Tab der Konzept-Webseite); Vortrag | – |
 
+**Stand 08.11.2026:** M7 (Selbstversuch, Kurzinterviews, Workshop) und der Datenschluss M9 nach eigenen Daten entfallen –
+keine eigene Erhebung (Abweichung im Änderungsvermerk oben, KI-Nachweis FS2 Nr. 26). Die Urteile und die Plätze 2 und 3
+bleiben deshalb ausdrücklich Hypothesen auf Grundlage des Dossiers.
+
 **Wichtig:** Die Urteile zu den Überleitungen und die Plätze 2 und 3 sind Hypothesen. Widerlegt der Selbstversuch sie
 (z. B. eine ausführliche HOLY-Seite zu Koffein, die von der Produktseite verlinkt ist, ein neuer Store-Locator, eine
 funktionierende Willkommens-Mail mit Squad-Einladung), werden Urteile und Titel bis M9 nach den Daten geändert, nicht
@@ -1183,13 +1210,13 @@ Suchergebnisse hängen von Standort und Personalisierung ab: Datum, Gerät und A
 | 4 | Schwarz-Norm und Papier | #1D1D1B (Logo/Druck, R3) und #F3EDE1 (Press Kit, R3); Herkunft in `QUELLEN.md` | Mi 04.11. |
 | 5 | Seiten der Konzept-Webseite (vorher: Blog-Thema) | fünf Seiten auf dem zentralen Weg plus `squad.html`; `haendler.html` nur, wenn Zeit bleibt (7.2); Koffein-Check mit Nachtschicht-Abschnitt (7.6) | Mi 04.11. |
 | 6 | Übung S. 128/129 (vorher: 20 oder 10 Aktivitäten) | nur noch Backup B2 (5.2.3), bis Prof. Stenger anders antwortet (13.2 Nr. 10) | Mi 04.11. |
-| 7 | Wer spricht welchen Block, wer ist Zeitwächter | – (Gruppe) | Do 05.11. |
+| 7 | Wer spricht welchen Block, wer ist Zeitwächter | – (Gruppe). Stand 08.11.: noch nicht verteilt; das Redeskript nennt nur einen Vorschlag (01–03 Yannick, 04–06 Lukas, 07–09 Elias, in Anlehnung an FS1) | vor der Generalprobe Mo 09.11. |
 | 8 | Gründer erneut anfragen | **erledigt:** Videobotschaft am 02.11. mit Zustimmung für Video und Stimme in der Präsentation (9.5); offen: Kanalanteile (13.3) | – |
 | 9 | Konzept-Webseite veröffentlichen (vorher: `blog.html` veröffentlichen) | im Repository nur mit Hinweisbalken, `noindex`, ohne Bestellung (7.3). **Stand 03.11.2026:** seit dem Push vom 03.11. über GitHub Pages erreichbar, in der Fassung mit Bildern mit HOLY-Produktbildern (Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17; keine Genehmigung von HOLY eingeholt, Abweichung in 1.2 und 4); verlinken oder per QR zeigen erst nach Stengers Antwort (13.2 Nr. 16); widerspricht er oder HOLY, nehmen wir den Ordner aus `master` (7.3) | So 08.11. |
 | 10 | Versalien-Ausnahme für die 5 As | ja, wie S. 109 | Mi 04.11. |
 | 11 | Ablage nicht freigegebener Fotos und Screenshots | Gruppenordner bzw. `praesentation/intern/` (per `.gitignore` ausgeschlossen); ins Repository nur Rückfälle und Bilder, deren Veröffentlichung die Gruppe beschlossen hat; vor jedem Push `git status` (11.5). Seit 03.11.: Fremdbilder in `fremdbilder/` veröffentlicht (Beschluss der Gruppe, KI-Nachweis FS2 Nr. 17; keine Genehmigung der Rechteinhaber eingeholt), Video in `video/` mit Zustimmung des Gründers (Nr. 18); `intern/` nur noch Rohmaterial, zurückgehaltene Bilder (D08: sechs Bilder der Vorbilder) und ungesichtete eigene Fotos | erledigt (02.11., ergänzt 03.11.) |
-| 12 | Plätze 2 und 3 je Phase (5.2) | wie 5.2.2, im Workshop prüfen | Mi 04.11. |
-| 13 | Urteile zu den Überleitungen (6.7) | vorläufig trägt · bricht · wackelt · wackelt; nach dem Übergangsprotokoll bestätigen oder ändern | Fr 06.11. |
+| 12 | Plätze 2 und 3 je Phase (5.2) | wie 5.2.2, im Workshop prüfen. **08.11.: kein Workshop** – bleiben Vorschlag der Gruppe (**H**), so auf 06 und B2 gekennzeichnet (KI-Nachweis FS2 Nr. 26) | erledigt (ohne Workshop) |
+| 13 | Urteile zu den Überleitungen (6.7) | vorläufig trägt · bricht · wackelt · wackelt; nach dem Übergangsprotokoll bestätigen oder ändern. Seit D05: wackelt · bricht · wackelt · wackelt. **08.11.: kein Übergangsprotokoll** – die Urteile sind die Bewertung der Gruppe nach dem Maßstab 6.7.1 auf Grundlage der Dossier-Belege (**H**), ohne „vorläufig“ im Titel von 05 (KI-Nachweis FS2 Nr. 26) | erledigt (ohne Selbstversuch) |
 
 ### 13.2 Fragen an Prof. Stenger (Mail heute, 03.11.)
 

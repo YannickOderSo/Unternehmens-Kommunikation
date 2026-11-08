@@ -141,7 +141,7 @@
 
     var img = bildErzeugen(eintrag, schluessel);
     if (el.classList.contains('p-kachel')) {
-      var vorher = el.getAttribute('data-status') || 'offen';
+      var vorher = el.getAttribute('data-status') || 'leer';
       el.setAttribute('data-status-oeffentlich', vorher);
       img.addEventListener('error', function () {
         img.remove();

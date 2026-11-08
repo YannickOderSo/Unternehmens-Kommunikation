@@ -2,7 +2,7 @@
    02-persona.css – Folie 02 · Persona Marco und Mediennutzung
    Gestaltungsplan 5.1 Zeile 02: Spalten 1–5 Foto b04 im Anschnitt; Spalten 6–12
    zwei getrennt beschriftete Gruppen von Strichskalen (Basen nicht mischen),
-   Schlüsselzahl 92 % mit Marker, darunter O-Töne (offen).
+   Schlüsselzahl 92 % mit Marker. D12 (08.11.2026): ohne O-Töne – keine eigene Befragung.
    ============================================================================= */
 #f02 .e2-foto {
   left: 0;
@@ -20,8 +20,7 @@
   gap: 6px;
 }
 #f02 .e2-persona,
-#f02 .e2-gruppe,
-#f02 .e2-oton { left: 834.67px; width: 957.33px; }
+#f02 .e2-gruppe { left: 834.67px; width: 957.33px; }
 
 #f02 .e2-persona { top: 368px; display: grid; gap: 4px; }
 #f02 .e2-name { font-size: 28px; line-height: 1.25; }
@@ -42,7 +41,6 @@
   color: var(--p-schrift-2);
 }
 #f02 .e2-handy { font-size: 28px; line-height: 1.25; margin-top: 4px; }
-#f02 .e2-oton { top: 928px; width: auto; }
 #f02 .p-skala-zahl .p-marker { margin-right: 0; }
 /* Fassung mit Bildern (D06): Beschriftung „Symbolbild … nicht Marco“ im Bild, im Satzspiegel (x ≥ 128);
    seit D07 zweizeilig („Symbolbild Schichtarbeit – nicht Marco“ / „(Lokführer aus der HOLY-Community)“) */

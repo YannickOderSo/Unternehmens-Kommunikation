@@ -53,25 +53,19 @@
   width: 258px;
   height: 122px;
 }
-#f03 .e3-k[data-status="offen"] { padding: 10px 12px 6px; }
-#f03 .e3-k[data-status="offen"][data-art="screenshot"] { padding-top: 22px; }
-#f03 .e3-k[data-status="offen"][data-art="screenshot"]::before { height: 12px; }
+#f03 .e3-k[data-status="leer"] { padding: 10px 12px 6px; }
+#f03 .e3-k[data-status="leer"][data-art="screenshot"] { padding-top: 22px; }
+#f03 .e3-k[data-status="leer"][data-art="screenshot"]::before { height: 12px; }
 #f03 .e3-k .p-platzhalter { font-size: 22px; line-height: 1.15; }
 #f03 .e3-k .p-kachel-art { display: inline; font-size: 22px; }
-#f03 .e3-k .p-kachel-offen { display: inline; font-size: 22px; font-weight: 400; }
+#f03 .e3-k .p-kachel-text { display: inline; font-size: 22px; font-weight: 400; }
 /* Rückfall ohne Fremdbilder (b19): eigene Textgrafik der leeren Blog-Seite; in der Fassung mit Bildern der
    Screenshot mit Beschriftung „Blog: 0 Beiträge“ (D07) */
 #f03 .e3-k--blog { display: flex; align-items: center; }
 #f03 .e3-k--blog[data-status="rueckfall"] .p-rueckfall { padding: 4px 14px; display: grid; gap: 2px; }
 #f03 .e3-blog-pfad { font-size: 22px; line-height: 1.1; color: var(--p-schrift-2); }
-/* D07: „Tipp unter Kollegen“ hat kein Bild (Mundpropaganda zeigt kein Fremdbild ehrlich). In der Fassung mit
-   Bildern ruhig wie die Leerstelle „Antwortseite fehlt“ auf 04: Creme, gestrichelter 3-px-Rand in Schriftfarbe,
-   Text „offen“ bleibt. Im Rückfall ohne Fremdbilder bleibt es ein Platzhalter wie alle anderen Kacheln. */
-html[data-fassung="intern"] #f03 .e3-k--tipp[data-status="offen"] {
-  background: var(--p-papier);
-  border: 3px dashed var(--p-schrift);
-  color: var(--p-schrift);
-}
+/* D12 (08.11.2026): Kachel „Tipp unter Kollegen“ entfernt (kein Bild, keine eigene Erhebung); die Zählung 11 Earned
+   ist die Inventur des Dossiers und bleibt. */
 #f03 .e3-blog-null {
   font-family: var(--schrift-display);
   font-size: 36px;
@@ -80,10 +74,11 @@ html[data-fassung="intern"] #f03 .e3-k--tipp[data-status="offen"] {
   line-height: 1.05;
 }
 
-/* Hinweise im freien Teil des Bands Earned (rechts der drei Kacheln, Spalten 9–12) */
-#f03 .e3-fehlen { left: 1258.67px; top: 646px; }
+/* Hinweise im freien Teil des Bands Earned (rechts der zwei Kacheln, ab x = 984 wie die Proben; D12: vorher
+   ab Spalte 9 neben drei Kacheln) */
+#f03 .e3-fehlen { left: 984px; top: 646px; }
 #f03 .e3-legende {
-  left: 1258.67px;
+  left: 984px;
   top: 684px;
   width: 533.33px;
   font-size: 22px;

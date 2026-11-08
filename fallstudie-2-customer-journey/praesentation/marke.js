@@ -52,8 +52,9 @@ window.MARKE = {
   wortwolken: {},
   optionaleFolien: {},
 
-  /* 6. KENNZEICHNUNG – keine Beispieldaten-Pillen (3.7: keine Pillen). Offene eigene
-     Daten stehen auf den Folien als „offen: …“ mit data-status="offen". */
+  /* 6. KENNZEICHNUNG – keine Beispieldaten-Pillen (3.7: keine Pillen). Eigene
+     Daten: keine eigene Erhebung (Entscheidung 08.11.2026, D12); Bildkacheln ohne Bild tragen
+     data-status="leer" (nur im Rückfall ohne Fremdbilder). */
   beispieldatenHinweis: false,
 
   /* 7. START – Thema der Engine bleibt „editorial“; das Aussehen kommt in allen

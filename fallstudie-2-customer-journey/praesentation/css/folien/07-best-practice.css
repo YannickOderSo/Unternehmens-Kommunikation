@@ -62,15 +62,5 @@ html[data-modus="dunkel"] #f07 .e7-marke .p-intern-logo { filter: invert(1); }
   top: 0;
   color: var(--p-schrift-2);
 }
-#f07 .e7-zeile--neben .e7-massnahme { padding-right: 150px; }
-#f07 .e7-skizze {
-  position: absolute;
-  right: 0;
-  top: 10px;
-  width: 132px;
-  height: 66px;
-}
-#f07 .e7-skizze[data-status="offen"] { padding: 6px 10px; font-size: 22px; line-height: 1.15; }
-#f07 .e7-skizze .p-kachel-art,
-#f07 .e7-skizze .p-kachel-offen { display: inline; margin: 0; }
-#f07 .e7-skizze .p-kachel-offen { font-weight: 400; }
+/* D12 (08.11.2026): Platzhalter „Skizze b15“ rechts in der Nebenweg-Zeile entfernt (keine eigene Zeichnung) –
+   damit auch der Abstand rechts (padding-right 150 px) */

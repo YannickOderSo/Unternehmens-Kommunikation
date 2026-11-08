@@ -356,7 +356,7 @@
      --------------------------------------------------------------------------- */
   if (new URLSearchParams(location.search).get('kacheln') === 'rueckfall') {
     alle('.p-kachel[data-status="frei"]').forEach(function (el) {
-      el.setAttribute('data-status', el.querySelector('.p-rueckfall') ? 'rueckfall' : 'offen');
+      el.setAttribute('data-status', el.querySelector('.p-rueckfall') ? 'rueckfall' : 'leer');
     });
   }
 })();
