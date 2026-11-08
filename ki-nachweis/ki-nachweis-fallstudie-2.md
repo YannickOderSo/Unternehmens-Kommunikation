@@ -54,7 +54,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
-| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13 (Workflow) | *Zwischenstand:* Entwürfe für 01–07 und 09 in Kopien fertig und geprüft, darunter 04 mit leerer, durchgestrichener Browserseite „keine Antwortseite“; Auswahl durch Yannick offen |
+| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13, D14 (Workflows) | *läuft:* Entwürfe für 01–07 und 09 fertig und geprüft (04: leere, durchgestrichene Browserseite „keine Antwortseite“); Yannick übernimmt alle, Linien-Symbole erlaubt; Übernahme, Doku und Prüfung laufen |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -607,6 +607,11 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 > Und ich überlege ob man noch ein paar mehr Sachen besser optisch darstellen kann
 
 - **Anhänge:** keine.
+- **Rückfragen von Claude (Auswahlfragen, nach Zusendung der Vorher-nachher-Bilder) und Antworten von Yannick:**
+  1. Welche neu gestalteten Folien übernehmen (die Browserseite auf 04 in jedem Fall)? → **alle vier Gruppen:**
+     „04 + 05 Bruchstelle (Empfohlen)“, „02 + 03 Persona/IST“, „06 + 07 SOLL/Vorbilder“, „09 + 01 Fazit/Titel“.
+  2. Gestaltungsplan 3.7 schließt „Icon-Abzeichen“ aus; die Entwürfe nutzen schlichte Linien-Symbole. → **„Erlauben
+     (Empfohlen)“**: Symbole bleiben, Abweichung wird im Gestaltungsplan als Entscheidung vermerkt.
 - **Vorgehen Claude:** Gemeint ist auf Folie 04 der gestrichelte Kasten „Antwortseite fehlt“ (`.p-leerstelle`). Er ist
   inhaltlich gewollt (HOLY hat keine Antwortseite, Marco weicht auf die freie Suche aus), sieht aber aus wie ein
   fehlendes Bild – wird als deutlich gestaltete Bruchstelle neu gezeichnet. Für die zweite Frage: Workflow D13 baut in
@@ -616,7 +621,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** *Zwischenstand:* Entwürfe für 01–07 und 09 fertig, geprüft und nachgebessert (siehe D13). Folie 04: Die
   Leerstelle ist jetzt eine leere, durchgestrichene Browserseite mit dem Namen „keine Antwortseite“. Die vier Änderungen
   lassen sich ohne Konflikt zusammenführen (Probe in einer Kopie). Vorher-nachher-Bilder an Yannick geschickt; Auswahl
-  offen, das Original im Repository ist noch unverändert.
+  durch Yannick: alle Folien, Linien-Symbole erlaubt (siehe Rückfragen). Übernahme läuft (D14).
 - **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`; weitere folgen nach der Auswahl
 - **Unteragenten:** D13
 - **Prüfung durch die Gruppe:** ☐ offen
@@ -643,6 +648,7 @@ Auftrag (im Workflow-Skript).
 | D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | Spot „Mein Moment.“ (24,5 s); Recherche 65 Quellen; Jury 111/106/100 Punkte; Abnahmen 2 hohe, 7 mittlere, 8 niedrige Befunde, umgesetzt | Claude: ffprobe, Lautheit, Kontaktbogen, Untertitel, Volltextsuche |
 | D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
 | D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | Entwürfe für 01–07 und 09; Prüfungen: 01, 03, 05 übernehmen, 02, 04, 06, 07, 09 mit Änderungen, in der Nachbesserung umgesetzt; je Kopie 0 Fehler; Auswahl offen | Claude: Rückgaben gelesen, alle Montagen angesehen, Diffs probeweise zusammengeführt |
+| D14 | 08.11.2026 | 30 | Workflow „fs2-visualisierung-uebernahme“ (3 Unteragenten) | Nach Yannicks Auswahl: eingespielte D13-Entwürfe – Doku und Kommentare nachziehen, zusammengeführte Präsentation unabhängig prüfen, Befunde abarbeiten | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -964,6 +970,17 @@ Auftrag (im Workflow-Skript).
 - **Wie Claude das Ergebnis geprüft hat:** Rückgaben aller 12 Unteragenten gelesen; alle Vorher-nachher-Montagen
   (01–07, 09) selbst angesehen; die vier Diffs probeweise nacheinander auf eine frische Kopie der Präsentation
   angewendet: ohne Konflikt. Eigene Prüfläufe folgen bei der Übernahme.
+
+### D14 – 08.11.2026 – ausgelöst durch Prompt 30 (nach Yannicks Auswahl)
+
+- **Art:** Workflow „fs2-visualisierung-uebernahme“. Vorher hat Claude die vier D13-Diffs selbst in die Präsentation
+  eingespielt (ohne Konflikt). Dann zwei Unteragenten parallel: ein Doku-Agent (Gestaltungsplan 3.6/3.7/5.1 mit
+  Abweichung „Linien-Symbole erlaubt“, AUTOREN, LIESMICH, Bildregister, Kommentare; nur Text außerhalb der Folien) und
+  ein Prüf-Agent (nur lesen: Prüfläufe hell, dunkel, Rückfall mit Druck, alle Bilder 01–07 und 09, Nebenwirkungen auf 08
+  und Backup, Zahlen und Sprechtext gegen HEAD, Bedienung). Danach ein Nacharbeits-Agent für die Befunde.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-visualisierung-uebernahme.js`](workflows/2026-11-08_fs2-visualisierung-uebernahme.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
