@@ -11,6 +11,8 @@ Kontrollpunkte, Reserve und Kürzungssumme werden aus data-zeit gerechnet und ge
 Notizen geprüft (assert): Ändert sich dort etwas, bricht der Lauf ab, statt einen veralteten Text zu erzeugen.
 Nacharbeit D12 (08.11.2026, nach Prüfung des Redeskripts): Spot-Hinweise 08, Handzeichen-Spanne, Übergabesätze aus
 Gestaltungsplan 9.3, Rechtestatus B8, Kontrollpunkte gerechnet, Backup-Warnhinweise abgesetzt.
+Nachtrag 08.11.2026 (KI-Nachweis FS2 Nr. 32): Hinweise (ACHTUNG) an die neuen Visualisierungen aus D13/D14 angepasst
+(Notizen 02–05, 07, 09; LIESMICH §14). Der Sprechtext ist davon nicht berührt.
 
 Aufruf (aus beliebigem Ordner; alle Pfade relativ zu diesem Skript):
     python3 werkzeuge-redeskript/redeskript-generator.py [--stand 08.11.2026] [--html datei.html] [--ohne-pdf]
@@ -148,7 +150,10 @@ ACHTUNG = {
             'Rückfrage „Ist das eine echte HOLY-Präsentation?“ → Nein, studentische Fallstudie, nicht im Auftrag von '
             'HOLY; Logo und Videobotschaft mit Einverständnis des Gründers (B8).'],
     'f02': ['Marco ist fiktiv (FS1). Das Bild ist ein Symbolbild (Lokführer aus der HOLY-Community), nicht Marco. Die '
-            'Statista-Werte beschreiben die Kategorie, nicht HOLY-Kund:innen; die zwei Gruppen nicht mischen.',
+            'Statista-Werte beschreiben die Kategorie, nicht HOLY-Kund:innen; die zwei Gruppen nicht mischen. Dicker '
+            'Balken = Energy-Drink-Konsument:innen, dünner = Ø aller.',
+            '„Messen die Balken das Entdecken und Prüfen?“ → Nein: Die Verben sind die Lesart des Titels; die Balken '
+            'zeigen allgemeine Nutzung, nicht den Zweck (Notiz 02).',
             '„Habt ihr Leute befragt?“ → Nein, keine eigene Befragung: Persona aus FS1, Mediendaten und Bewertungen '
             'Dritter (B1, B5).',
             '✂ Kürzung 1 (Plan 10.2): Mediennutzung nur zeigen, nur den Marker 92 % und den Kaufkanal erklären, −15 s.'],
@@ -156,14 +161,23 @@ ACHTUNG = {
             'Recherche-Agenten, nicht aus einer eigenen Codierung – als unsicher behandeln. „Die meiste Kritik betrifft '
             'die Zeit nach dem Kauf“ ist Hypothese (H B25) und teils ein Effekt der Quelle: Bewertungen entstehen fast '
             'nur nach dem Kauf – deshalb „in Bewertungen“. Die Bilder sind Beispiele je Band, alle gleich groß, keine '
-            'Gewichtung.',
+            'Gewichtung. Ein Kästchen = ein Kontaktpunkt (Zählung H); die drei offenen Kästchen sind die fehlenden Owned. '
+            'Offener Kreis mit + = stärkt, Kreis mit − = schwächt.',
             '„Wo ist die Mundpropaganda?“ → in der Earned-Zählung (B3); ein ehrliches Bild dafür gibt es nicht.',
             '✂ Kürzung 4 (Plan 10.2): Farbproben nur zeigen, −10 s.'],
     'f04': ['„Zentral“ begründen wir mit der Persona (fiktiv) und dem Onlinekonto (Starter Sets, Mix & Match, Rewards) – '
             'Kanalanteile von HOLY kennen wir nicht. Den Weg haben wir aus Dossier und Abrufen nachgezeichnet, ohne '
-            'eigene Testbestellung (B1). Die Bilder sind echte Touchpoints von HOLY und Dritten, nicht unsere Fotos.'],
+            'eigene Testbestellung (B1). Die Bilder sind echte Touchpoints von HOLY und Dritten, nicht unsere Fotos.',
+            'Bei Klick 1 kurz auf die leere, durchgestrichene Seite „keine Antwortseite“ zeigen. „Das Help-Center '
+            'beantwortet doch die Koffein-Frage?“ → Ja, aber knapp und auf der alten Domain (✔ S27), auf den '
+            'Produktseiten nur im Etikettbild (✎ S31); gemeint ist eine eigene Antwortseite in Website & Shop – der Blog '
+            'ist leer (✔ L39). Mehr an Ü2 auf 05 (Notiz 04).',
+            '„Warum steht dort schon ‚bricht‘?“ → Das ist das Urteil zum Nebenweg Regal → Squad; die Urteile mit Legende '
+            'kommen auf 05 (LIESMICH §14).'],
     'f05': ['Die Urteile sind unsere Bewertung (Hypothese) auf Grundlage der Belege – kein Testkauf, kein Selbstversuch. '
             'Die Frage an Ü2 ist rhetorisch, keine Antwortrunde: Die Antwort ist der Koffein-Check auf 08.',
+            'Brücke für Brücke zeigen und an Ü2 (Kreuz und Bruchstriche im Pfad) stehen bleiben. Die Zeichen erklärt die '
+            'Legende „Maßstab“: Dreieck = wackelt, Kreuz = bricht (Notiz 05).',
             'Ü4: alte Danke-Seiten mit totem Link – ob sie noch im Bestellablauf stehen, ist nicht geprüft (✎ T31); '
             '„kein Abo“ ✔ T30 (eine Nachfüll-Erinnerung ist nur unser Vorschlag, X14); Kritik nach dem Kauf H B25, '
             'teils Effekt der Quelle.'],
@@ -173,8 +187,11 @@ ACHTUNG = {
             '✂ Kürzung 2 (Kontrollpunkt nach 05 überschritten): Plätze 2 und 3 nur zeigen, nur den gelben Weg durch die '
             'Plätze 1 erklären, −30 s.'],
     'f07': ['Die Maßnahmen sind Vorschläge der Gruppe (H); die Vorbilder sind ohne Wirkungsbeleg (YouTube: nur '
-            'Unternehmensangabe, nicht unabhängig geprüft). Auf der Folie stehen nur Logos; Belegbilder sind '
-            'zurückgehalten. „Warum diese Vorbilder?“ → B6.',
+            'Unternehmensangabe, nicht unabhängig geprüft). Der durchgehende SOLL-Weg zeigt unseren Vorschlag, kein '
+            'Ergebnis. Von den Vorbildern stehen nur Logos auf der Folie; Belegbilder sind zurückgehalten; die '
+            'Linien-Symbole sind KI-gestützt erstellt (Notiz 07). „Warum diese Vorbilder?“ → B6.',
+            '**„… und die Werbung ist gekennzeichnet“ immer sagen** – das steht seit der Überarbeitung nicht mehr auf '
+            'der Folie (✔ R25, LIESMICH §14); auch bei Kürzung 3 diesen Halbsatz behalten.',
             '✂ Kürzung 3 (Plan 10.2, Kontrollpunkt nach 07 über {kp07_tol}): nur Recherche und Bindung ausführlich, '
             '−20 s; dann weder Live-Demo noch Werbespot (beide nur, wenn nach 07 höchstens {spot_bis} vergangen sind).'],
     'f08': ['**Spot nur zeigen, wenn die Gruppe ihn vorher angehört und abgenickt hat** – das Anhören steht aus (B9, '
@@ -193,6 +210,9 @@ ACHTUNG = {
             '✂ Spot und Live-Demo entfallen, wenn nach 07 mehr als {spot_bis} vergangen sind (−{spot} s, Notiz 08).'],
     'f09': ['Die Kennzahlen sind ein Vorschlag der Gruppe (H), keine gemessenen Werte. Während der Videobotschaft nichts '
             'sprechen; keine Zitate oder Zahlen daraus ohne „laut Gründer“. Das Video wird nicht gekürzt.',
+            'Bei „je Überleitung messen“ den Pfad entlang zeigen: Die Kennzahl steht über ihrem Messpunkt Ü1–Ü4 (Ü1 und '
+            'Ü2 teilen sich die Weiterklicks). Die Bilder zeigen Marcos Weg heute, die Kennzahlen messen den neuen Weg '
+            '(Notiz 09).',
             'Klick 2 zeigt „Fragen?“ und die Sprungliste B1–B9 (im Referentenfenster erst in der Fragerunde). '
             '„Habt ihr selbst getestet/befragt?“ → B1, ehrlich „nein“. Werbespot → 08/B9.',
             '✂ Bei Zeitnot nur ein Fazit-Satz (Plan 10.2).'],
@@ -379,7 +399,7 @@ def bauen(stand):
     md = '''# Redeskript – Fallstudie 2: Customer Journey (HOLY)
 
 **Sprechtext je Folie, mit Klicks.** Vortrag Di, 10.11.2026 · 15 Minuten · Stand {stand}\\
-Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker · **KI-gestützt erstellt** (KI-Nachweis FS2 Nr. 26, D12) ·
+Gruppe: Yannick Heisler · Elias Knauber · Lukas Welker · **KI-gestützt erstellt** (KI-Nachweis FS2 Nr. 26, D12; Hinweise angepasst Nr. 32) ·
 Prüfung durch die Gruppe offen
 
 > **Sprecherverteilung = Vorschlag.** Für Fallstudie 2 sind die Rollen nicht verteilt. Der Vorschlag lehnt sich an die

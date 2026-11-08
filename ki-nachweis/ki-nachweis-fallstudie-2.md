@@ -56,6 +56,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
 | 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13, D14 (Workflows) | Alle Entwürfe übernommen (Linien-Symbole erlaubt): 04 leere, durchgestrichene Browserseite „keine Antwortseite“ + „bricht“; 02 Steckbrief/Verben/Ring; 03 Kästchen + Signalkreise; 05 Urteilszeichen + Lücke an Ü2; 06 Ränge; 07 Brücke statt Tabelle; 09 Messpunkte am Pfad; Prüfläufe 0 Fehler, 16 Warnungen |
 | 31 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (eingespielte D13-Entwürfe, während D14 prüft) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d14` gepusht; master bekommt den geprüften Stand nach D14 |
+| 32 | 08.11.2026 | Yannick | Braucht auch das neue Skript | – | Redeskript (MD + 12-seitiges PDF) neu erzeugt: 7 Hinweise zu den neuen Folien ergänzt bzw. angepasst (02, 03, 04, 05, 07, 09), u. a. „Werbung ist gekennzeichnet“ auf 07 immer sagen; Sprechtext, Zeiten, Klicks unverändert |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -650,6 +651,27 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Nr. 29: Zwischenstand als normaler Commit auf den Sicherungs-Branch `zwischenstand-d14` (ohne Force-Push), master
   bleibt unverändert, bis D14 abgeschlossen und geprüft ist. Wiederholt sich der Hinweis, wird dieser Eintrag ergänzt.
 - **Dateien:** keine auf master (außer diesem Nachweis)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 32 – 08.11.2026 – Yannick
+
+> Brauche auch das neue skript
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Gemeint ist das Redeskript (`redeskript.md`, `Fallstudie-2_Redeskript.pdf`). Der Sprechtext hat
+  sich durch D13/D14 nicht geändert (Wortlaut-Prüfung 0 Abweichungen), aber die fest im Generator hinterlegten
+  Hinweise (⚠) beschreiben teils die alten Folien. Claude passt sie an die neuen Folien und die in D13/D14 ergänzten
+  Notizen an (Quellen: Notizen der Folien 02–05, 07, 09; LIESMICH §14), erzeugt MD und PDF neu und schickt das PDF.
+- **Ergebnis:** Neue bzw. geänderte Hinweise (⚠): 02 Balkenpaare und Rückfrage „Messen die Balken das Entdecken und
+  Prüfen?“; 03 Kästchen und Signalkreise; 04 auf die leere Seite „keine Antwortseite“ zeigen, Rückfragen Help-Center und
+  „Warum schon ‚bricht‘?“; 05 an Ü2 stehen bleiben, Zeichen über die Legende erklären; 07 SOLL-Weg = Vorschlag,
+  Linien-Symbole KI-gestützt, **„… und die Werbung ist gekennzeichnet“ immer sagen** (steht nicht mehr auf der Folie,
+  auch bei Kürzung 3); 09 Kennzahl über ihrem Messpunkt, Bilder = Weg heute. Kopfzeile nennt Nr. 32. Geprüft:
+  `wortlaut-pruefen.py` 33 Einträge, 0 Abweichungen; Sollzeit 12:15, 23 Klicks, 1.249 Wörter wie vorher; Unterschied
+  alt/neu per `diff` nur in den Hinweisen und der Kopfzeile; PDF 12 Seiten, Seite 8 (Folie 07) angesehen.
+- **Dateien:** `fallstudie-2-customer-journey/werkzeuge-redeskript/redeskript-generator.py`, `redeskript.md`,
+  `Fallstudie-2_Redeskript.pdf`
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
