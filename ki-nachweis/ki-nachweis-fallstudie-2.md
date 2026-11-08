@@ -54,6 +54,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
+| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13 (Workflow) | *läuft:* Entwürfe in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09), Prüfung, Auswahl durch Yannick |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -600,6 +601,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   (erneut nach dem Fortsetzen von D12); jedes Mal wird nur der Sicherungs-Branch aktualisiert, ohne neuen Eintrag.
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 30 – 08.11.2026 – Yannick
+
+> Da ist bei einem Bild "Antwort fehlt".
+> Und ich überlege ob man noch ein paar mehr Sachen besser optisch darstellen kann
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Gemeint ist auf Folie 04 der gestrichelte Kasten „Antwortseite fehlt“ (`.p-leerstelle`). Er ist
+  inhaltlich gewollt (HOLY hat keine Antwortseite, Marco weicht auf die freie Suche aus), sieht aber aus wie ein
+  fehlendes Bild – wird als deutlich gestaltete Bruchstelle neu gezeichnet. Für die zweite Frage: Workflow D13 baut in
+  vier getrennten Kopien der Präsentation Entwürfe für bessere Visualisierungen (02/03, 04/05, 06/07, 09) mit
+  Vorher-nachher-Bildern; je Entwurf eine Prüfung (Ehrlichkeit, Lesbarkeit, Technik) und Nachbesserung. Das Original
+  bleibt unverändert, bis Yannick auswählt, was übernommen wird (Arbeitsweise: Ergebnis zeigen, Freigabe abwarten).
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`; weitere folgen
+- **Unteragenten:** D13
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -621,6 +639,7 @@ Auftrag (im Workflow-Skript).
 | D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
 | D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
 | D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
+| D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -915,6 +934,17 @@ Auftrag (im Workflow-Skript).
   alle 18 Folien im Endzustand angesehen; Volltextsuche im sichtbaren Text: kein „offen“, „vorläufig“, „erst nach“;
   „Selbstversuch/Interview/Workshop“ nur noch in der Aussage „nicht erhoben“ (B1, B5, B9); erste Seite des
   Redeskript-PDF angesehen (Vorschlag deutlich gekennzeichnet, Zeitrechnung); keine Modellnamen im Redeskript.
+
+### D13 – 08.11.2026 – ausgelöst durch Prompt 30
+
+- **Art:** Workflow „fs2-visualisierung“ als Pipeline: vier Gestalter parallel, jeder in einer eigenen Kopie der
+  Präsentation im Scratchpad (02/03 Persona und IST; 04/05 Journey-Map und Übergänge mit Pflicht „Leerstelle
+  Antwortseite“; 06/07 SOLL und Vorbilder; 09 Fazit, 01 Feinschliff); je Gruppe danach eine Prüfung (Ehrlichkeit,
+  Lesbarkeit, Technik) und eine Nachbesserung. Ergebnis: Vorher-nachher-Montagen und Diffs; das Original bleibt
+  unverändert, bis Yannick auswählt.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-visualisierung.js`](workflows/2026-11-08_fs2-visualisierung.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
