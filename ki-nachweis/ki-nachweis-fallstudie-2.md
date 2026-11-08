@@ -55,6 +55,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
 | 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13, D14 (Workflows) | *läuft:* Entwürfe für 01–07 und 09 fertig und geprüft (04: leere, durchgestrichene Browserseite „keine Antwortseite“); Yannick übernimmt alle, Linien-Symbole erlaubt; Übernahme, Doku und Prüfung laufen |
+| 31 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (eingespielte D13-Entwürfe, während D14 prüft) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d14` gepusht; master bekommt den geprüften Stand nach D14 |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -624,6 +625,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   durch Yannick: alle Folien, Linien-Symbole erlaubt (siehe Rückfragen). Übernahme läuft (D14).
 - **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`; weitere folgen nach der Auswahl
 - **Unteragenten:** D13
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 31 – 08.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [command hook]: There are uncommitted changes in the repository. Please commit and push these
+> changes to the remote branch.
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Die uncommitteten Änderungen sind die eingespielten D13-Entwürfe, die D14 gerade prüft und
+  dokumentiert. Ein Push auf master würde einen ungeprüften Stand auf GitHub Pages veröffentlichen. Deshalb wie bei
+  Nr. 29: Zwischenstand als normaler Commit auf den Sicherungs-Branch `zwischenstand-d14` (ohne Force-Push), master
+  bleibt unverändert, bis D14 abgeschlossen und geprüft ist. Wiederholt sich der Hinweis, wird dieser Eintrag ergänzt.
+- **Dateien:** keine auf master (außer diesem Nachweis)
+- **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
