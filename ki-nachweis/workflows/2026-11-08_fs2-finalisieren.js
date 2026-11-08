@@ -3,9 +3,9 @@ export const meta = {
   description: 'Präsentation Fallstudie 2 finalisieren: Platzhalter der eigenen Erhebung ehrlich ersetzen, Werbespot auf Folie 08, Redeskript als PDF, Abnahme, Nacharbeit',
   phases: [
     { title: 'Umbau', detail: 'Platzhalter, Titel, Sprechtexte, Backup, Spot-Knopf, Doku' },
-    { title: 'Redeskript', detail: 'Redetext je Folie als Markdown und PDF' },
-    { title: 'Abnahme', detail: 'Inhalt/Ehrlichkeit und Technik/Vortrag' },
-    { title: 'Nacharbeit', detail: 'Befunde umsetzen, Redeskript neu erzeugen' },
+    { title: 'Redeskript', detail: 'Redetext je Folie als Markdown und PDF (gleichzeitig mit der Abnahme)' },
+    { title: 'Abnahme', detail: '4 Prüfer: Inhalt 01–05, Inhalt 06–09/Backup/Doku, Technik, Vortrag/Layout' },
+    { title: 'Nacharbeit', detail: 'Präsentation nacharbeiten und Redeskript prüfen (gleichzeitig), Redeskript final' },
   ],
 }
 
@@ -57,15 +57,12 @@ UMBAU (du allein änderst index.html, CSS, JS und Doku):
 5. Prüfen: pruefen.mjs hell --schritte, dunkel --schritte, Rückfall --oeffentlich --schritte: je 0 Fehler (Warnungen dürfen bleiben, neue Warnungen begründen); Klicks und Sollzeit melden. Spot-Knopf per Playwright mit synthetischem WebM (Route auf ../werbevideo/holy-werbespot.mp4) testen: öffnen, spielt, Escape schließt, Ende schließt, Blättern danach normal, ohne Route (H.264 im Test-Chromium) Fehlermeldung statt Absturz, ?druck ohne Knopf. Alle 18 Folien-Screenshots (Endzustand) mit dem Read-Werkzeug ansehen, dazu 08 mit geöffneter Spot-Bühne. Volltextsuche: kein sichtbares „offen"/„vorläufig"/„[erst nach" mehr (Notizen nur noch, wo inhaltlich nötig).
 Rückgabe: geänderte Dateien, was erledigt ist (je Folie), Prüfergebnisse (Zahlen), offene Punkte, Hinweise für die Hauptsitzung (inkl. was aus Modellwissen stammt).`, { label: 'umbau', phase: 'Umbau', schema: ERG })
 
-phase('Redeskript')
 const REDE_AUFTRAG = `${AUFTRAG}
 
 REDESKRIPT nach dem Vorbild von Fallstudie 1: ${FS1}/redeskript.md (Aufbau, Zeichen ▶ Klick n, Regie kursiv in eckigen Klammern, ✂/⚠, Tabelle „Ablauf auf einen Blick" mit Folie, Spricht, Soll, Ende bei, Klicks, Wörter, gesprochen ≈ bei 1,9 Wörtern/s) und ${FS1}/Fallstudie-1_Redeskript.pdf, erzeugt mit ${R}/ki-nachweis/workflows/2026-10-25_redeskript-generator.py (lesen und für FS2 anpassen).
 Erzeuge ${FS2}/redeskript.md und ${FS2}/Fallstudie-2_Redeskript.pdf aus den Notizen der FINALEN ${P}/index.html (Sprechtexte wörtlich übernehmen, Klicks aus data-schritt, Sollzeiten aus data-zeit, Folie 08 mit optionalem Spot ca. 25 s und Live-Demo nur aus der Reserve). Kopf: „Redeskript – Fallstudie 2: Customer Journey (HOLY)", Vortrag Di 10.11.2026, Stand 08.11.2026, KI-gestützt erstellt (KI-Nachweis FS2 Nr. 26, D12), Prüfung durch die Gruppe offen. Sprecherverteilung als VORSCHLAG (01–03 Yannick, 04–06 Lukas, 07–09 Elias) deutlich so gekennzeichnet; Übergabesätze zwischen Sprechern als Regie vorschlagen. Danach Backup-Folien kurz: je Folie „Wann zeigen" und 1–3 Antwortsätze aus den Notizen. Zeitrechnung: Summe Soll vs. 15:00, gesprochene Wörter, Kürzungsvorrat (✂) aus den Notizen. Den angepassten Generator nach ${FS2}/werkzeuge-redeskript/redeskript-generator.py legen (relative Pfade, reproduzierbar), PDF mit derselben Technik wie FS1 (falls weasyprint/Chromium-Druck: lokal, Schriften lokal). PDF-Seiten als PNG rendern und mit dem Read-Werkzeug ansehen (Lesbarkeit, Umbrüche, keine abgeschnittenen Tabellen). Wörtlichkeit prüfen: jeden Sprechtext im Skript gegen index.html vergleichen (Skript).
 Rückgabe: Dateien, erledigt, Prüfungen (Seitenzahl, Wörter, Zeiten), offen, Hinweise.`
-const rede = await agent(REDE_AUFTRAG + `\nErgebnis des Umbaus: ${JSON.stringify(umbau)}`, { label: 'redeskript', phase: 'Redeskript', schema: ERG })
 
-phase('Abnahme')
 const ABN = {
   type: 'object',
   properties: {
@@ -76,15 +73,28 @@ const ABN = {
   },
   required: ['befunde', 'fazit'],
 }
+// Beschleunigt auf Wunsch von Yannick (08.11.2026, „Kannst du es mit mehr agenten schneller umsetzen“, KI-Nachweis FS2 Nr. 28):
+// Redeskript und vier Abnahmen laufen gleichzeitig; danach Nacharbeit Präsentation und Prüfung Redeskript gleichzeitig.
 const PRUEFER = [
-  { key: 'inhalt', text: `ABNAHME Inhalt/Ehrlichkeit: Ist irgendwo (Folien, Notizen, Backup, Redeskript, Doku) eine eigene Erhebung behauptet oder angedeutet, die es nicht gab (Selbstversuch, Interviews, O-Töne, Workshop, Fotos der Gruppe)? Sind KI-gestützte Stichproben als solche gekennzeichnet? Stimmen Titel und Aussagen mit den Belegen (Befund-IDs im Dossier – Stichproben nachprüfen)? Sind Urteile ohne eigene Erhebung noch haltbar formuliert? Ist die Geschichte der Präsentation nach dem Entfernen der Platzhalter schlüssig (Leitfaden Stenger S. 107 ff., Aufgaben A1–A7 laut README/Plan)? Sprechtexte natürlich und vortragbar? Redeskript wörtlich gleich den Notizen? Sprecherverteilung klar als Vorschlag? Rechtestatus- und KI-Kennzeichnungen korrekt?` },
-  { key: 'technik', text: `ABNAHME Technik/Vortrag: pruefen.mjs selbst laufen lassen (hell und dunkel --schritte, --oeffentlich --schritte, mit --druck), Zahlen melden; Spot-Knopf auf 08 selbst testen (synthetisches WebM per Route, Escape, Ende, Tastatur, Referentenansicht P, Übersicht O, ?druck, fehlende Datei); Folie 09 Videobotschaft unverändert funktionsfähig; alle 18 Folien ansehen (Layout, Überlauf, angeschnittene Elemente, Lesbarkeit hell/dunkel); Zeit: Summe data-zeit vs. 15 min und gesprochene Wörter (1,9 W/s); Redeskript-PDF als PNG rendern und ansehen (Lesbarkeit beim Ausdrucken, Tabellen, Umbrüche), Generator reproduzierbar; keine externen Anfragen; keine Modellnamen in Dateien; LIESMICH-Bedienung stimmt mit dem Verhalten überein.` },
+  { key: 'inhalt-haupt', text: `ABNAHME Inhalt/Ehrlichkeit, Folien 01–05 (sichtbar, Notizen, Kästen): Ist eine eigene Erhebung behauptet oder angedeutet, die es nicht gab (Selbstversuch, Interviews, O-Töne, Workshop, Fotos der Gruppe)? Sind KI-gestützte Stichproben als solche gekennzeichnet? Stimmen Titel und Aussagen mit den Belegen (Befund-IDs im Dossier – nachprüfen)? Sind Urteile auf 05 ohne eigene Erhebung haltbar formuliert? Sprechtexte natürlich und vortragbar?` },
+  { key: 'inhalt-rest', text: `ABNAHME Inhalt/Ehrlichkeit, Folien 06–09 und Backup B1–B9 sowie Doku (LIESMICH, QUELLEN, AUTOREN, gestaltungsplan, README FS2): wie oben; dazu: Ist die Geschichte nach dem Entfernen der Platzhalter schlüssig (Leitfaden Stenger S. 107 ff., Aufgaben A1–A7 laut README/Plan)? B1-Methodenfolie ehrlich und vollständig? Rechtestatus- und KI-Kennzeichnungen (auch Werbespot) korrekt? Sprungliste auf 09 und Verweise auf Backup-Folien stimmen?` },
+  { key: 'technik', text: `ABNAHME Technik: pruefen.mjs selbst laufen lassen (hell --schritte, dunkel --schritte, --oeffentlich --schritte --druck), Zahlen melden; Spot-Knopf auf 08 selbst testen (synthetisches WebM per Route, Öffnen, Escape, Ende, Tastatur/Clicker währenddessen, Referentenansicht P, Übersicht O, ?druck, fehlende Datei); Folie 09 Videobotschaft unverändert funktionsfähig; keine externen Anfragen; keine Modellnamen in Dateien; LIESMICH-Bedienung stimmt mit dem Verhalten überein.` },
+  { key: 'vortrag', text: `ABNAHME Vortrag/Layout: alle 18 Folien im Endzustand und schrittweise ansehen (hell, dunkel, Rückfall ohne Fremdbilder; eigene Prüfläufe mit --ausgabe _test/abnahme-vortrag-…): Layout, Überlauf, Lücken nach entfernten Kacheln, angeschnittene Elemente, Lesbarkeit aus 10 m (Beamer); 08 mit geöffneter Spot-Bühne; Zeit: Summe data-zeit vs. 15 min und gesprochene Wörter je Folie (1,9 W/s), wo gesprochen deutlich über Soll liegt.` },
 ]
-const abnahmen = (await parallel(PRUEFER.map((p) => () => agent(`${AUFTRAG}\n\n${p.text}\nUmbau: ${JSON.stringify(umbau)}\nRedeskript: ${JSON.stringify(rede)}\nEigene Ausgaben nach ${SP}/abnahme-${p.key}/ bzw. ${P}/_test/abnahme-${p.key}/. Ändere keine Dateien im Repository. Befunde mit Schwere, Stelle, Beleg, Vorschlag.`, { label: `abnahme:${p.key}`, phase: 'Abnahme', schema: ABN })))).filter(Boolean)
-const befunde = abnahmen.flatMap((a, i) => a.befunde.map((b) => ({ pruefer: PRUEFER[i].key, ...b })))
+const parallelErg = await parallel([
+  () => agent(REDE_AUFTRAG + `\nErgebnis des Umbaus: ${JSON.stringify(umbau)}`, { label: 'redeskript', phase: 'Redeskript', schema: ERG }),
+  ...PRUEFER.map((p) => () => agent(`${AUFTRAG}\n\n${p.text}\nUmbau: ${JSON.stringify(umbau)}\nDas Redeskript entsteht gleichzeitig und wird separat geprüft – nicht prüfen. Eigene Ausgaben nach ${SP}/abnahme-${p.key}/ bzw. ${P}/_test/abnahme-${p.key}/. Ändere keine Dateien im Repository. Befunde mit Schwere, Stelle, Beleg, Vorschlag.`, { label: `abnahme:${p.key}`, phase: 'Abnahme', schema: ABN })),
+])
+const rede = parallelErg[0]
+const abnahmen = parallelErg.slice(1).map((a, i) => (a ? { ...a, key: PRUEFER[i].key } : null)).filter(Boolean)
+const befunde = abnahmen.flatMap((a) => a.befunde.map((b) => ({ pruefer: a.key, ...b })))
 log(`Abnahme: ${befunde.length} Befunde (hoch ${befunde.filter((b) => b.schwere === 'hoch').length}, mittel ${befunde.filter((b) => b.schwere === 'mittel').length})`)
 
 phase('Nacharbeit')
-const nacharbeit = await agent(`${AUFTRAG}\n\nNACHARBEIT. Umbau: ${JSON.stringify(umbau)}\nRedeskript: ${JSON.stringify(rede)}\nBefunde: ${JSON.stringify(befunde, null, 1)}\nFazits: ${JSON.stringify(abnahmen.map((a) => a.fazit))}\nJeden Befund selbst prüfen; hohe und mittlere umsetzen, niedrige wenn günstig. Danach: Redeskript mit dem Generator ${FS2}/werkzeuge-redeskript/redeskript-generator.py neu erzeugen (MD + PDF), Wörtlichkeit erneut prüfen; pruefen.mjs hell/dunkel/--oeffentlich je --schritte (0 Fehler), Spot-Test, betroffene Folien ansehen; Doku (LIESMICH, AUTOREN, QUELLEN) nachziehen. Rückgabe: umgesetzt/nicht (Grund), Prüfergebnisse mit Zahlen (Fehler, Warnungen, Klicks, Sollzeit, Seiten des PDF), offene Punkte für die Gruppe, Hinweise.`, { label: 'nacharbeit', phase: 'Nacharbeit', schema: ERG })
+const [nacharbeit, redePruef] = await parallel([
+  () => agent(`${AUFTRAG}\n\nNACHARBEIT PRÄSENTATION. Umbau: ${JSON.stringify(umbau)}\nBefunde: ${JSON.stringify(befunde, null, 1)}\nFazits: ${JSON.stringify(abnahmen.map((a) => a.fazit))}\nJeden Befund selbst prüfen; hohe und mittlere umsetzen, niedrige wenn günstig. NICHT das Redeskript anfassen (${FS2}/redeskript.md, PDF, werkzeuge-redeskript/) – das macht ein anderer Agent danach. Danach: pruefen.mjs hell/dunkel/--oeffentlich je --schritte (0 Fehler), Spot-Test, betroffene Folien ansehen; Doku (LIESMICH, AUTOREN, QUELLEN) nachziehen. Rückgabe: umgesetzt/nicht (Grund), Prüfergebnisse mit Zahlen (Fehler, Warnungen, Klicks, Sollzeit), offene Punkte für die Gruppe, Hinweise.`, { label: 'nacharbeit:praesentation', phase: 'Nacharbeit', schema: ERG }),
+  () => agent(`${AUFTRAG}\n\nPRÜFUNG REDESKRIPT (nur lesen, nichts ändern): ${FS2}/redeskript.md, ${FS2}/Fallstudie-2_Redeskript.pdf, Generator ${FS2}/werkzeuge-redeskript/redeskript-generator.py. Ergebnis des Redeskript-Agenten: ${JSON.stringify(rede)}. Prüfe: Aufbau wie FS1 (${FS1}/redeskript.md), Sprecherverteilung klar als Vorschlag, Zeitrechnung richtig, Lesbarkeit des PDF beim Ausdrucken (Seiten als PNG rendern und ansehen), Generator reproduzierbar und mit relativen Pfaden, keine Modellnamen, Kennzeichnung KI-gestützt. (Wörtlichkeit gegen index.html prüft der nächste Schritt nach der Nacharbeit erneut.) Befunde mit Schwere, Stelle, Beleg, Vorschlag.`, { label: 'pruefung:redeskript', phase: 'Nacharbeit', schema: ABN }),
+])
+const redeFinal = await agent(`${AUFTRAG}\n\nREDESKRIPT FINAL. Die Präsentation ist nach der Nacharbeit fertig (${JSON.stringify(nacharbeit)}). Befunde zum Redeskript: ${JSON.stringify(redePruef)}. Setze die Befunde am Generator ${FS2}/werkzeuge-redeskript/redeskript-generator.py um (hohe und mittlere, niedrige wenn günstig), erzeuge ${FS2}/redeskript.md und ${FS2}/Fallstudie-2_Redeskript.pdf neu aus der FINALEN ${P}/index.html, prüfe die Wörtlichkeit jedes Sprechtexts per Skript gegen index.html, rendere die PDF-Seiten als PNG und sieh sie an. Rückgabe: umgesetzt/nicht, Prüfergebnisse (Seiten, Wörter, Zeiten), offen, Hinweise.`, { label: 'redeskript:final', phase: 'Nacharbeit', schema: ERG })
 
-return { umbau, rede, abnahmen, nacharbeit }
+return { umbau, rede, abnahmen, nacharbeit, redePruef, redeFinal }

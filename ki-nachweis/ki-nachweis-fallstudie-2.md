@@ -52,6 +52,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 25 | 05.11.2026 | Yannick | Auf der HOLY-Startseite eine Weiterleitung zu Fallstudie 2 einführen | – | Startseite `index.html`: Fallstudie 2 als erste Karte mit Präsentation, Konzept-Webseite und Werbespot; Fallstudie 1 darunter |
 | 26 | 08.11.2026 | Yannick | Präsentation finalisieren (Rückfragen: ohne eigene Erhebung, Werbespot auf Folie 08, Redeskript als PDF) | D12 (Workflow) | *läuft* |
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
+| 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -563,6 +564,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Yannick, dass der Spot eingebaut wird.
 - **Dateien:** keine
 - **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 28 – 08.11.2026 – Yannick
+
+> Kannst du es mit mehr agenten schneller umsetzen
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Der Umbau in D12 bearbeitet eine einzige Datei (`index.html`) und lässt sich nicht gefahrlos
+  aufteilen; er läuft weiter. Der Rest des Workflows wird umgebaut und nach dem Umbau mit gespeichertem Zwischenstand
+  fortgesetzt: Redeskript und vier statt zwei Abnahmen (Inhalt 01–05, Inhalt 06–09/Backup/Doku, Technik, Vortrag/Layout)
+  laufen gleichzeitig, danach Nacharbeit der Präsentation und Prüfung des Redeskripts gleichzeitig, zum Schluss das
+  finale Redeskript. Geändertes Skript: `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`.
+- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`
+- **Unteragenten:** D12 (Fortsetzung)
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
