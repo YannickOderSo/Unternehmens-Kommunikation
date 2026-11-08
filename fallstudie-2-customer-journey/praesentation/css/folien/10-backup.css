@@ -12,6 +12,12 @@
 .p-backup .b-spalten { display: grid; gap: 22px; }
 .p-backup .b-spalten .p-tabelle { position: static; width: 100%; }
 .p-backup .b-hinweis { left: 128px; width: 1664px; bottom: 96px; }
+/* Nacharbeit D12 (08.11.2026): B1 beide Tabellen mit gleicher erster Spalte, Statuszeichen ohne Umbruch;
+   B5 Hinweiskasten direkt unter der (kürzer gewordenen) Tabelle statt am Fuß angeheftet */
+.p-backup .b1-tabelle th:first-child,
+.p-backup .b1-tabelle td:first-child { width: 360px; }
+.p-backup .b1-nobr { white-space: nowrap; }
+.p-backup .b5-block .b-hinweis { position: static; width: auto; margin-top: 18px; }
 .p-backup .b2-tabelle td:first-child { white-space: normal; width: 210px; }
 .p-backup .b4-tabelle td:nth-child(2) { white-space: nowrap; }
 .p-backup .b6-tabelle td:first-child { width: 150px; }

@@ -16,7 +16,7 @@
   white-space: nowrap;
 }
 #f05 .e5-massstab b { color: var(--p-schrift); font-weight: 650; }
-#f05 .e5-k[data-status="offen"] {
+#f05 .e5-k[data-status="leer"] {
   display: flex;
   align-items: flex-end;
   padding: 8px 10px;

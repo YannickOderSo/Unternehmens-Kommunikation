@@ -379,7 +379,8 @@ html[data-thema] {
 }
 
 /* 5.6 Bildkachel mit 4-px-Kontur und drei Zuständen (data-status):
-   frei (Foto <img>) · offen (Platzhalter mit Hinweis) · rueckfall (eigene Grafik).
+   frei (Foto <img>) · leer (beschrifteter Platzhalter, nur im Rückfall ohne Fremdbilder; bis D12 „offen“)
+   · rueckfall (eigene Grafik).
    Der Schalter ändert nur die Anzeige. Die Fremdbilder liegen versioniert in
    fremdbilder/ (Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2
    Nr. 17, keine Genehmigung der Rechteinhaber eingeholt); intern/
@@ -393,7 +394,7 @@ html[data-thema] {
   color: var(--p-auf-flaeche);
 }
 .p-kachel > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.p-kachel[data-status="offen"] {
+.p-kachel[data-status="leer"] {
   background:
     repeating-linear-gradient(135deg, rgb(29 29 27 / 0.08) 0 2px, transparent 2px 14px),
     var(--p-tuerkis);
@@ -402,11 +403,11 @@ html[data-thema] {
   font-size: 22px;
   line-height: 1.18;
 }
-.p-kachel[data-status="offen"][data-art="screenshot"] {
+.p-kachel[data-status="leer"][data-art="screenshot"] {
   background: var(--p-hellblau);
   padding-top: 26px;
 }
-.p-kachel[data-status="offen"][data-art="screenshot"]::before {
+.p-kachel[data-status="leer"][data-art="screenshot"]::before {
   content: "";
   position: absolute;
   left: 0;
@@ -415,12 +416,12 @@ html[data-thema] {
   height: 16px;
   background: rgb(29 29 27 / 0.16);
 }
-.p-kachel[data-status="offen"] .p-kachel-art { display: block; font-weight: 650; }
-.p-kachel[data-status="offen"] .p-kachel-offen { display: block; margin-top: 2px; }
+.p-kachel[data-status="leer"] .p-kachel-art { display: block; font-weight: 650; }
+.p-kachel[data-status="leer"] .p-kachel-text { display: block; margin-top: 2px; }
 /* !important: Folien-CSS mit ID (z. B. #f01 .e1-foto .p-platzhalter { display: grid }) darf den Zustand
    nicht überstimmen – sonst stünde der Platzhaltertext über dem Bild (Befund D06, 03.11.2026) */
-.p-kachel[data-status="offen"] > img,
-.p-kachel[data-status="offen"] .p-rueckfall,
+.p-kachel[data-status="leer"] > img,
+.p-kachel[data-status="leer"] .p-rueckfall,
 .p-kachel[data-status="frei"] .p-platzhalter,
 .p-kachel[data-status="frei"] .p-rueckfall,
 .p-kachel[data-status="rueckfall"] .p-platzhalter,
@@ -571,7 +572,8 @@ html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-wid
 }
 .p-handy-schirm > img { display: block; width: 100%; height: auto; }
 
-/* 5.15 O-Ton (Fraunces kursiv) – nur echte, anonyme Zitate aus eigener Erhebung */
+/* 5.15 O-Ton (Fraunces kursiv) – nur echte, anonyme Zitate aus eigener Erhebung. Seit D12 (08.11.2026) unbenutzt:
+   keine eigene Erhebung, keine O-Töne. */
 .p-oton {
   font-family: var(--schrift-oton);
   font-style: italic;
@@ -580,8 +582,9 @@ html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-wid
   line-height: 1.2;
 }
 
-/* 5.16 Offen-Hinweis (eigene Daten fehlen noch): gestrichelt, Schiefer */
-.p-offen {
+/* 5.16 Hinweiskasten (Backup: Grenzen, Wirkungsbelege …): gestrichelt, Schiefer. Bis D12 (08.11.2026) hieß die
+   Klasse .p-offen und markierte fehlende eigene Daten; seit D12 gibt es keine Offen-Hinweise mehr auf den Folien. */
+.p-hinweis {
   box-sizing: border-box;
   border: 2px dashed var(--p-schrift-2);
   padding: 8px 14px;
@@ -589,7 +592,7 @@ html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-wid
   line-height: 1.25;
   color: var(--p-schrift-2);
 }
-.p-offen b { color: var(--p-schrift); font-weight: 650; }
+.p-hinweis b { color: var(--p-schrift); font-weight: 650; }
 
 /* 5.17 Strichskala (Folie 02): Daten Schwarz, Skala Nebel, Ø als Strich */
 .p-skala { display: grid; grid-template-columns: 200px 1fr 92px; align-items: center; column-gap: 18px; }

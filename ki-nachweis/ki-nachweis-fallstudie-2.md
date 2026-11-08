@@ -50,7 +50,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 23 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Container-Neustart: Workflow D10 abgebrochen; später Meldung „D10 abgeschlossen“ | – | D10 mit gespeicherten Zwischenergebnissen fortgesetzt; Ergebnis geprüft (Eintrag 22) |
 | 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | Neuer Spot „Mein Moment.“ (24,5 s): Marcos Feierabend-Ritual mit Rückblende, Countdown, Beat-Drop beim Schütteln und Squad; Vorfassung in `werbevideo/vorfassung-d10/` |
 | 25 | 05.11.2026 | Yannick | Auf der HOLY-Startseite eine Weiterleitung zu Fallstudie 2 einführen | – | Startseite `index.html`: Fallstudie 2 als erste Karte mit Präsentation, Konzept-Webseite und Werbespot; Fallstudie 1 darunter |
-| 26 | 08.11.2026 | Yannick | Präsentation finalisieren (Rückfragen: ohne eigene Erhebung, Werbespot auf Folie 08, Redeskript als PDF) | D12 (Workflow) | *läuft* |
+| 26 | 08.11.2026 | Yannick | Präsentation finalisieren (Rückfragen: ohne eigene Erhebung, Werbespot auf Folie 08, Redeskript als PDF) | D12 (Workflow) | Platzhalter ehrlich ersetzt (B1 Methodenfolie, B5 Kundenstimmen aus Portalen), Spot-Knopf auf 08, Redeskript MD + PDF (12 Seiten); 0 Fehler |
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
@@ -549,8 +549,16 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Vorgehen Claude:** Bestand geprüft (Prüflauf 0 Fehler, 17 Warnungen; alle 18 Folien angesehen; keine Beiträge der
   Gruppe zu Selbstversuch, Interviews, Workshop im Repository). Workflow D12: Umbau (Platzhalter, Sprechtexte, Titel,
   Backup-Folien, Spot-Knopf auf 08, Doku), Redeskript, zwei Abnahmen, Nacharbeit.
-- **Ergebnis:** *läuft*
-- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`; weitere folgen
+- **Ergebnis:** Präsentation ohne Platzhalter: „offen“-Kacheln und O-Ton-Zeile weg, Titel 05 ohne „(vorläufig)“,
+  Herleitungen nennen die Grundlage (Dossier, Abrufe von Shop/Suche, KI-gestützte Stichproben, „ohne eigenen
+  Testkauf“), B1 neu „Recherche und Abrufe statt eigener Erhebung“ (was geprüft, was nicht erhoben, Grenzen), B5 neu
+  „Kundenstimmen aus Portalen, keine Interviews“, B9 mit „nicht durchgeführt“. Folie 08: Knopf „Spot ansehen ▶“ spielt
+  den Werbespot in einer Bühne (Esc/Blättertaste/Ende schließen, kein Autoplay, nicht im Druck). Redeskript
+  `redeskript.md` und `Fallstudie-2_Redeskript.pdf` (12 Seiten, Sprecherverteilung als Vorschlag, wörtlich gleich den
+  Notizen). Sollzeit 12:15, 23 Klicks, 1.249 gesprochene Wörter.
+- **Dateien:** `fallstudie-2-customer-journey/praesentation/` (`index.html`, CSS, JS inkl. neu `08-spot.js`/`08-spot.css`,
+  LIESMICH, QUELLEN, AUTOREN §14), `gestaltungsplan.md`, `README.md`, `redeskript.md`, `Fallstudie-2_Redeskript.pdf`,
+  `werkzeuge-redeskript/`; `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`
 - **Unteragenten:** D12
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -612,7 +620,7 @@ Auftrag (im Workflow-Skript).
 | D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | Sieger „Kampagne“ auf allen 7 Seiten; Abnahmen 3 hohe, 11 mittlere, 11 niedrige Befunde, fast alle umgesetzt | Claude: beide Prüfskripte selbst (0 Fehler), Volltextsuche Sicherheitsmerkmale, Sichtprüfung 390/1280 px und Folie 08; alt-Texte Folie 08 selbst eingetragen |
 | D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
 | D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
-| D12 | 08.11.2026 | 26 | Workflow „fs2-finalisieren“ (5 Unteragenten) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | *läuft* | – |
+| D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -897,9 +905,16 @@ Auftrag (im Workflow-Skript).
   Erhebung, Spot-Knopf auf Folie 08, Doku), ein Redeskript-Agent (Markdown und PDF nach dem Vorbild von FS1,
   Sprecherverteilung nur als Vorschlag), zwei Abnahmen (Inhalt/Ehrlichkeit; Technik/Vortrag), eine Nacharbeit.
   Vorgabe: nichts erfinden (keine O-Töne, Interviewzahlen, Workshop- oder Selbstversuchsdaten).
-- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-finalisieren.js`](workflows/2026-11-08_fs2-finalisieren.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-finalisieren.js`](workflows/2026-11-08_fs2-finalisieren.js)
+  (Fassung nach Nr. 28; die erste Fassung hatte Redeskript, zwei Abnahmen und Nacharbeit nacheinander).
+- **Ergebnis:** 9 Unteragenten mit Ergebnis (Umbau; dann gleichzeitig Redeskript und 4 Abnahmen; dann gleichzeitig
+  Nacharbeit und Prüfung des Redeskripts; Redeskript final). Abnahmen: Inhalt 01–05 5 mittlere/7 niedrige, Inhalt
+  06–09/Backup 2/9, Technik 0/5, Vortrag/Layout 0/11, Redeskript 1/6 – alle umgesetzt. Prüfläufe der Nacharbeit: hell,
+  dunkel, Rückfall mit Druck je 0 Fehler, 17 Warnungen; Spot-Funktionstest 70/70; Wortlaut Redeskript 0 Abweichungen.
+- **Wie Claude das Ergebnis geprüft hat:** `pruefen.mjs index.html` selbst: 0 Fehler, 17 Warnungen, 38 Fremdbilder;
+  alle 18 Folien im Endzustand angesehen; Volltextsuche im sichtbaren Text: kein „offen“, „vorläufig“, „erst nach“;
+  „Selbstversuch/Interview/Workshop“ nur noch in der Aussage „nicht erhoben“ (B1, B5, B9); erste Seite des
+  Redeskript-PDF angesehen (Vorschlag deutlich gekennzeichnet, Zeitrechnung); keine Modellnamen im Redeskript.
 
 ---
 

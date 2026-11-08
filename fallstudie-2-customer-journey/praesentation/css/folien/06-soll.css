@@ -2,17 +2,9 @@
    06-soll.css – Folie 06 · A4 Top 3 je Phase, „Zentraler Weg (SOLL)“
    Gestaltungsplan 5.1 Zeile 06, 5.2: Raster wie S. 129, Platz 1 als schwarzer
    Knoten 52 px auf dem gelben Pfad, Plätze 2/3 als kleine Kreise (36 px) ohne
-   Pfad; Workshop-Foto b12 als schmaler Anschnitt oben rechts (Spalten 10–12).
+   Pfad. D12 (08.11.2026): Workshop-Foto b12 oben rechts entfernt (kein Workshop, keine eigene Erhebung).
    Zellen und Pfad setzt js/folien/pfad.js (JSON der Folie).
    ============================================================================= */
-#f06 .e6-workshop {
-  left: 1400px;
-  top: 128px;
-  width: 520px;
-  height: 180px;
-  border-right: 0;
-}
-#f06 .e6-workshop .p-platzhalter { display: grid; gap: 4px; width: 360px; }
 #f06 .e6-statt { margin: 2px 0 0; }
 
 #f06 .e6-tp {

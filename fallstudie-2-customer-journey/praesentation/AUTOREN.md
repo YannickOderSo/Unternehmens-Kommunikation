@@ -3,7 +3,8 @@
 Diese Datei beschreibt, wie die Folien der Web-Präsentation Fallstudie 2 „Customer Journey“ (Marke **HOLY**) aufgebaut
 sind und wie man sie ändert. Die Engine ist die aus Fallstudie 1, **unverändert** (`js/deck.js`, `js/komponenten.js`,
 `css/deck.css`, `css/komponenten.css`, `css/tokens.css`); ausführlich: FS1 `AUTOREN.md` Abschnitt 3–5 und 7–9.
-Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
+Neu sind nur das Thema „Pfad“ und die Folien. Stand 08.11.2026 – finale Fassung (KI-gestützt, D12), Prüfung durch die
+Gruppe offen. Keine eigene Erhebung (Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26) – Abschnitt 14.
 
 ## 1. Regeln (Pflicht)
 
@@ -13,7 +14,7 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | Titel | Kernaussage als Satz, Bricolage 84 px (Backup 56 px), höchstens 2 Zeilen |
 | Inhalt / Meta | Inhalt ≥ 28 px; Herleitung 24 px, Quelle und Fußhinweis 22 px, je **eine** Zeile, mit `data-meta` |
 | Farben | nur Tokens aus `pfad.css` (`--p-…`); **Gelb nie als Schrift oder konturlose Linie auf Creme**; auf Gelb nur Schwarz und Schiefer (3.3) |
-| Fakten | nur mit Befund-ID und Status aus dem Dossier; keine Zahl ohne Quelle; eigene Daten erst nach Erhebung, bis dahin „offen: …“ |
+| Fakten | nur mit Befund-ID und Status aus dem Dossier; keine Zahl ohne Quelle; **keine eigene Erhebung** (seit 08.11.2026): keine O-Töne, Interviewzahlen, Workshop-Ergebnisse, Selbstversuchsdaten oder eigenen Fotos erfinden; wo eine Aussage abgeleitet ist, Grundlage nennen (Dossier, Abruf, KI-gestützte Stichprobe) und Urteile als H kennzeichnen; keine „offen“-Platzhalter auf den Folien |
 | Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (mit Einverständnis, KI-Nachweis FS2 Nr. 12, 03.11.2026); Fremdbilder (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder) nur über `fremdbilder/register.js` und `data-intern`, je Folie mit Bildnachweis-Zeile – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Fremdbilder ohne Verwendung auf einer Folie nicht veröffentlichen (nach `intern/`); keine Namen von Privatpersonen im Nachweis. Eigene Fotos zuerst nach `intern/` (ausgeschlossen), veröffentlichen erst nach Sichtung durch die Gruppe (Abschnitt 10; Plan 4, 11.5) |
 | Video | nur `video/gruender-video.mp4` auf 09, per Pfad (`data-quelle`); veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2 Nr. 18); keine KI-Transkription, keine Zitate aus dem Video |
 | Was es nicht gibt | Karten, Pillen, Kicker, Mini-Steuerrad, Sticker, weiche Schatten, Live-Abstimmung, `iframe`, eigenes `data-modus` an einer Folie (3.7) |
@@ -41,7 +42,7 @@ Neu sind nur das Thema „Pfad“ und die Folien. Stand 03.11.2026, Entwurf.
 | `data-buehne="gelb"` | gelbe Bühne (01, 08, 09), feste Werte in beiden Modi; Rückfall `?buehne=schwarz` |
 | `data-buendel` | Sprechblock A (01–03), B (04–06), C (07–09) nach Plan 9.3 – **keine Personen**; Backup `alle` |
 | `data-zeit` | Sollzeit in s (Summe 710 s); Backup `0` |
-| Bildkachel `data-status` | `offen` · `frei` · `rueckfall` · `aus` (Zusatzbild nur in der Fassung mit Bildern; seit D07 nicht verwendet) (LIESMICH §7) |
+| Bildkachel `data-status` | `leer` (beschrifteter Platzhalter im Rückfall ohne Fremdbilder; bis D12 `offen`) · `frei` · `rueckfall` · `aus` (Zusatzbild nur in der Fassung mit Bildern; seit D07 nicht verwendet) (LIESMICH §7) |
 | `data-intern` | Schlüssel in `fremdbilder/register.js`; `data-intern-optional` = Fehlen erlaubt (Abschnitt 10). Name aus der Zeit vor der Veröffentlichung, bleibt |
 | `data-dx` | waagerechte Verschiebung einer Kachel im Journey-Raster in px (Folie 04: K6 −20) |
 
@@ -271,3 +272,119 @@ Konzept. Umbau der Webseite KI-gestützt im Workflow D09 (Details: `../konzept-w
 
 **Prüfstand D09:** `werkzeuge/pruefen.mjs index.html --schritte` 0 Fehler, 17 Warnungen (wie vorher, keine auf 08),
 38 Fremdbilder eingesetzt; Folie 08 bei 1920 × 1080 angesehen.
+
+## 14. Finalisierung 08.11.2026 (D12): keine eigene Erhebung, Werbespot
+
+Auftrag (Yannick, 08.11.2026, wörtlich): „Finalisiere die Präsentation“. Antworten auf die Rückfragen der Hauptsitzung:
+(1) „Ohne Erhebung (Empfohlen): Alle ‚offen'-Platzhalter raus. Folien ehrlich umformulieren: Grundlage ist unsere
+Analyse von Dossier, Shop und Stichproben, keine eigene Befragung. Nichts wird erfunden.“ (2) „Auf Folie 08: ein
+kleiner Knopf ‚Spot ansehen' neben ‚Live-Demo', abspielbar in der Präsentation (ca. 25 s, kostet Redezeit).“ (3) Redeskript
+als PDF (eigener Schritt, nicht Teil dieses Abschnitts). KI-Nachweis FS2 Nr. 26 / Delegation D12; umgesetzt KI-gestützt,
+Prüfung durch die Gruppe offen. Keine Websuche, keine neuen Downloads oder Fremdbilder, Fakten nur aus dem Dossier.
+Vorgehen: zuerst Inventur aller Fundstellen (offen, vorläufig, [erst nach, Selbstversuch, Interview, O-Ton, Workshop,
+b12, b15, Skizze, Tipp unter Kollegen, Nennungen, n = …, Datenschluss) in index.html, CSS, JS und Doku, dann Umbau je
+Fundstelle.
+
+| Folie / Datei | Änderung |
+|---|---|
+| Kopf `index.html` | „Stand 08.11.2026 – finale Fassung (KI-gestützt), Prüfung durch die Gruppe offen“ statt ENTWURF; Absatz „keine eigene Erhebung“; Kästen beschreiben Aufbau, Herkunft, Bedienung statt „was noch offen ist“ |
+| 01 | Platzhalter b01 (nur Rückfall) „Produktbild von HOLY · Raspberry Raptor, Dose und Shaker (Werbebild) · nur in der Fassung mit Bildern“ statt „eigenes Produktfoto … offen: Foto aus dem Selbstversuch“; Regie „HOLY-Dose als Requisit, falls vorhanden“; Satz ohne Hände neu („Dann schauen wir uns gemeinsam an, wie der Weg vom Sehen zum Kaufen aussieht.“ statt „gekauft erst im Selbstversuch“); Notiz Bild ehrlich |
+| 02 | Zeile „offen: zwei anonyme O-Töne aus unseren Kurzinterviews (n = …)“ entfernt (CSS `.e2-oton` entfernt); Platzhalter b04 „Symbolbild Schichtarbeit · nur in der Fassung mit Bildern“; Notiz und Rückfrage „Habt ihr Leute befragt?“ → nein, B1/B5 |
+| 03 | Kachel „Tipp unter Kollegen · offen“ entfernt (Empfehlung bleibt in der Earned-Zählung 11 und in B3; Zählung 13/30/11 unverändert); Legende „Bilder: Beispiele je Band, alle gleich groß – keine Gewichtung“ statt Interview-Nennungen/Codierung offen; Hinweise ab x = 984; Herleitung „Inventur im Dossier … (Abruf 30.10.2026)“; Notiz: keine eigene Codierung, ~ B20/B21 KI-gestützt |
+| 04 | Herleitung „Weg aus Dossier und Abruf von Shop und Suche, ohne eigene Testbestellung“ statt „Selbstversuch … folgt“; Platzhalter ohne „offen“; Notiz ehrlich |
+| 05 | Titel ohne „(vorläufig)“: „Am Übergang vom Nachlesen zum Entscheiden bricht Marcos Weg“ (Urteil nach Maßstab, Belege je Brücke); Herleitung „geprüft an den Belegen im Dossier (Abruf 30.10.2026), ohne eigenen Testkauf“; Quellzeile „Urteile: H“; Sprechtext Schritt 0 „Die Urteile sind unsere Bewertung auf Grundlage der recherchierten Belege – einen eigenen Testkauf haben wir nicht gemacht.“ (+7 Wörter); Notiz „was ein Urteil ändern würde“ ohne Selbstversuch; „(ob noch im Ablauf, nicht geprüft)“ |
+| 06 | Kachel b12 (Workshop) entfernt (CSS `.e6-workshop` entfernt); Herleitung „Platz 1 passt zu Marco, schließt den Bruch aus 05 und ist von HOLY gestaltbar · Plätze 2–3: unser Vorschlag (H)“; Notiz ohne Workshop. Kopf bleibt schmal (Titel bricht wie vorher) |
+| 07 | Platzhalter „Skizze b15“ entfernt (CSS `.e7-skizze` und Abstand rechts entfernt); QR-Brücke steht als Maßnahme und auf B4 |
+| 08 | Knopf „Spot ansehen ▶“ links neben „Live-Demo ↗“ (Gruppe `.e8-knoepfe`, Klick 2, gleiche Gestaltung `.e8-knopf`); `data-zeit` 85 → 110; Sprechtext Schritt 2 mit optionaler Überleitung (+25 Wörter, Regie in [ ]); Notiz „Bedienung Werbespot“ und Kürzungsregel; Kasten. Technik: `js/folien/08-spot.js`, `css/folien/08-spot.css` (Bühne an `<body>`, Tasten in der Erfassungsphase vor der Engine, Fehlerfall, kein Druck/Referentenfenster, Untertitel nur online) |
+| 09 | Platzhalter „K1“ … „K6“ ohne „offen“; Sprungliste „B1 Methode“, „B5 Stimmen“; Rückfragen-Notiz |
+| B1 | neu als Methodenfolie „Recherche und Abrufe statt eigener Erhebung“: Grundlagen mit Abrufdatum und Status (Dossier, Shop/Help-Center/Rewards/Blog, Suche, Bewertungsportale, Persona/Mediendaten), „Nicht erhoben“ mit Folge für die Folien (Selbstversuch/Testkauf, Kurzinterviews, eigene Codierung, Workshop, eigene Fotos), Grenzen; Kernsatz ehrlich |
+| B2 | „Plätze 2 und 3: Vorschlag der Gruppe (H), nicht in einem Workshop geprüft“; Kernsatz ohne „[danach …]“; keine Punktwertung |
+| B3, B4, B7 | Inventur „Recherche, kein Selbstversuch“; B4 ohne „offen: Handskizze b15 …“; B7 Hinweis „Mediennutzung je Phase abgeleitet (H) – nicht erfragt“ |
+| B5 | neu „Kundenstimmen aus Portalen, keine Interviews“: Trustpilot ✔ B14, REVIEWS.io ✔ B15, Amazon ~ B17, Stichproben A–E ~ B20–B24 (Dossier 5.3), Hinweis „KI-gestützt codiert, nicht von der Gruppe“ |
+| B8 | „keine eigenen Fotos (keine eigene Erhebung, B1)“; Werbespot mit Rechtestatus (sichtbar und Notiz) |
+| B9 | Tabelle: Werbespot, Bewertungs-Stichproben, „Selbstversuch, Interviews, Codierung, Workshop, eigene Fotos – nicht durchgeführt“; Prüfung „steht aus“ statt „offen“; Kernsatz neu |
+| CSS/JS | Zustand `data-status="offen"` → `"leer"` (index.html, `pfad.css`, `03`/`05`/`07`/`09`-CSS, `pfad.js`, `intern-bilder.js`), Klasse `p-kachel-offen` → `p-kachel-text`, `p-offen` → `p-hinweis`; `marke.js` Kommentar; `.p-oton` als unbenutzt markiert |
+| Doku | LIESMICH Kopf, §1, §3, §5 (Bedienung Spot), §7, §8, §10 (neu: nur noch Aufgaben der Gruppe), §11, §12, §13; QUELLEN Kopf, §1, §4, §4a, neu §4b (Werbespot), §5, §6; `../gestaltungsplan.md` (Änderungsvermerk, R2, 7.4, 10.1, 10.2, 12, 13.1 Nr. 7/12/13); `../README.md` |
+
+**Werbespot – Verhalten** (LIESMICH §5): Klick öffnet die Bühne und spielt mit Ton; Ende schließt automatisch; Esc,
+Blättertasten (→ ← ↑ ↓ Bild↑ Bild↓ Enter Rücktaste), „Schließen“ und Klick neben das Video schließen **ohne
+weiterzublättern**; Leertaste/K pausiert, U Untertitel, F Vollbild; übrige Tasten gesperrt. Nach dem Schließen wird der
+Fokus vom Knopf genommen, damit die nächste Leertaste blättert. Verlassen der Folie schließt. Im Druck (`?druck`) und im
+Referentenfenster ist der Knopf ausgeblendet, in der Übersicht (inerter Klon) ohne Wirkung; die Datei wird erst beim
+Klick angefragt. Über `file://` lädt Chrome die Untertitel-Datei nicht (eigene Herkunft je Datei) – der Knopf hieß dann
+„Untertitel nur online“ (seit der Nacharbeit unten: ausgeblendet), es wird nichts angefragt.
+
+**Prüfstand D12 (08.11.2026):**
+- `pruefen.mjs index.html --schritte` (Fassung mit Bildern, hell): **0 Fehler, 17 Warnungen**, 38 von 38 Fremdbildern
+  eingesetzt, 0 externe Anfragen. Dunkel (`--modus dunkel`): 0 Fehler, 17 Warnungen, 38 Fremdbilder. Rückfall
+  (`--oeffentlich --schritte --druck`): 0 Fehler, 17 Warnungen, 0 Fremdbilder, PDF 18 von 18 Seiten. Die Warnungen sind
+  dieselben wie vorher (Wortbudget 02–07 und 09, 24-/26-px-Notizen); einzige Änderung: Wortbudget 05 jetzt 71 statt 72
+  Wörter (Titel ohne „(vorläufig)“), im Rückfall 03 51 und 07 97 Wörter (beschriftete Platzhalter). Keine neue Warnung.
+  Zwischenlauf: Überlappung der Quellzeile 05 („Urteile nach unserem Maßstab (H)“ zu lang) → „Urteile: H“.
+- **Klicks 23** (unverändert, Schritte je Folie wie vorher), **Sollzeit 735 s = 12:15** (vorher 710 s; +25 s auf 08).
+- Funktionstest Werbespot (eigenes Skript mit Playwright, nicht im Repository; Route auf `../werbevideo/holy-werbespot.mp4`
+  mit synthetischem WebM, Chromium ohne Datei-Flag wie bei Doppelklick): **42 von 42 Prüfungen bestanden** – kein Abruf
+  beim Betreten und nach Klick 2; Klick öffnet und spielt (nicht stumm); Leertaste pausiert ohne zu blättern; O gesperrt;
+  Pfeil rechts, Bild↓, Escape und Klick daneben schließen ohne zu blättern; danach blättern Pfeile und Leertaste normal;
+  Ende schließt automatisch; Folienwechsel per Befehl schließt; Übersicht: Knopf nur im inerten Klon, keine Wirkung; ohne
+  Route (Test-Chromium ohne H.264): Fehlermeldung in der Bühne, Pfeil schließt, danach normal weiter; `?druck` und
+  `?referent`: Knopf ausgeblendet, keine Anfrage an `werbevideo/`, keine Bühne; keine Seitenfehler, keine Konsolenfehler.
+  Zusatz über einen lokalen Server (http): Untertitel-Spur lädt (12 Einträge), Knopf „Untertitel aus/an“.
+- Sichtprüfung: alle 18 Folien im Endzustand (hell), 08 mit offener Bühne und mit Fehlermeldung, 01 und 03 im Rückfall,
+  08 dunkel. Volltextsuche im sichtbaren Text (ohne Notizen, Kommentare, Skripte): kein „offen“, „vorläufig“,
+  „[erst nach“, „O-Ton“, „Skizze“, „Tipp unter Kollegen“, „Datenschluss“; „Selbstversuch“, „Interview“, „Workshop“ nur
+  noch in der Aussage „nicht erhoben/durchgeführt“ (B1, B2, B5, B9). In den Notizen kein „[erst nach“/„[danach“, kein
+  „vorläufig“.
+
+### 14a. Nacharbeit nach der Abnahme (08.11.2026, D12)
+
+Vier Prüfer (Inhalt Hauptfolien, Inhalt Rest/Doku, Technik, Vortrag) haben den Stand oben abgenommen: keine Befunde
+„hoch“, sieben „mittel“, die übrigen „niedrig“. Jeden Befund am Dossier, an `index.html` und an den Screenshots
+nachgeprüft; alle „mittel“ und die meisten „niedrig“ umgesetzt. KI-gestützt, keine Websuche, keine neuen Fremdbilder,
+Fakten nur aus dem Dossier; Prüfung durch die Gruppe offen.
+
+| Folie / Datei | Änderung (Befund) |
+|---|---|
+| 01 | Titel „Wir haben Marcos Weg zu HOLY nachgezeichnet und neu gebaut“ (vorher „nachgegangen“ – im Plan an den Selbstversuch gebunden); Sprechtext „Wir haben ihn für unsere Persona Marco nachgezeichnet – und am Ende neu gebaut.“ (auch der Dativfehler „ihn … nachgegangen“ ist weg); Notiz „Ablauf“: Ausweichsatz aus Schritt 0 statt „eigene Antwort nennen“, keine eigene Kauferfahrung behaupten |
+| 03 | Sprechtext: „Aus der Recherche haben wir HOLYs Kontaktpunkte gesammelt …“ (statt „alle … erfasst“); „in Bewertungen heißt die Werbung teils aufdringlich“; „In Bewertungen wird der Service oft gelobt; die meiste Kritik dort betrifft die Zeit nach dem Kauf.“ (statt „genau dort ballt sich die Kritik“, H B25, Effekt der Quelle); „3 Owned fehlen: Blog-Beiträge, Filialenfinder, App“; Kachel „freie Suche“; Quellzeile „Stenger S. 109, 112 f. · Zählung H · ✔ T02 T17 T22 B10 S27 B91 L39 M01 · ✎ L14 S31 · ~ B20 B21 (KI) · H B25“ (G06/G10 stehen an den Proben, S10/S91 in der Notiz – sonst Überlappung mit der Fußzeile) |
+| 04 | „freie Suche“ (K2); Sprechtext „Der Blog ist leer – null Beiträge.“ |
+| 05 | Ü4 sichtbar „alte Danke-Seiten mit totem Link · kein Abo · Kritik nach dem Kauf“; Sprechtext Schritt 0 „Die Urteile sind unsere Bewertung der recherchierten Belege, ohne eigenen Testkauf.“, Schritt 2 „… alte Danke-Seiten mit totem Link – ob noch im Ablauf, ist ungeprüft –, kein Abo, und in Bewertungen betrifft die meiste Kritik die Zeit nach dem Kauf.“; Quellzeile „… · ~ S91 B21 · Hypothese (H): B25, Urteile“; Notiz-Belege mit T31/T30/B25-Erläuterung; „freie Suche“ (K2) |
+| 06 | Herleitung „Platz 1 passt zu Marco und zur Zielfrage (S. 109), schließt den Bruch aus 05, ist von HOLY gestaltbar · Plätze 2–3: Vorschlag (H)“ (Zielfrage wieder sichtbar; endet vor dem rechten Rand) |
+| 07 | Notiz Kürzung 3: „dann weder Live-Demo noch Werbespot“ |
+| 08 | Sprechtext „… Stimme, Musik und Geräusche sind KI-generiert.“; Zeitregel „Spot ODER Live-Demo, nur wenn nach 07 höchstens 9:30“ in Regie, Notiz und Kasten; Notiz „Bedienung Werbespot“: Esc im Vollbild (vermutlich nur Vollbild beendet), Fokus/Referentenfenster, einmal klicken, wer an der Maus steht; Knöpfe mit 12 px Innenabstand und Lücke (Luft zur Kennzeichnung jetzt ≈ 38 px statt 19 px) |
+| `08-spot.js` | Klicks neben das Video und ins Video in den ersten 0,6 s nach dem Öffnen ignoriert (Doppelklick schloss die Bühne sofort); per `file://` Untertitel-Knopf ausgeblendet statt ausgegraut; Bedienhilfe aus der Bühne entfernt (steht in LIESMICH §5 und Notiz 08); Kopfkommentar zu Esc im Vollbild und Fokus |
+| `08-spot.css` | Bühne voll deckend (#1D1D1B statt 95 %); Dauer und Nachweis `max(16px, 2.2vh)` (23,8 px bei 1080 px Höhe), Kennzeichnung `max(18px, 2.6vh)` (28 px); hochkant: Ebene scrollt, Video 50vh |
+| B1 | Spaltenkopf „Was geprüft wurde (KI-gestützt, Unteragenten)“; „✔ ✎ ~ H je Befund“ ohne Umbruch; Grenzen mit „(~ S91)“ und „Abrufe und Screenshots KI-gestützt, Prüfung durch die Gruppe steht aus (B9)“; beide Tabellen mit gleicher erster Spalte (`10-backup.css`) |
+| B5 | „ein einziger Codierdurchgang“ statt „eine Person“ (Kasten und Notiz); Kasten direkt unter der Tabelle (`.b5-block`) |
+| B8 | sichtbar: Bilder im Werbespot in der Fremdbild-Aufzählung; „Stimme, Musik, Geräusche KI-generiert (ElevenLabs, Nr. 24); HOLY-Bilder darin ohne Genehmigung (Nr. 17)“ |
+| B9 | neue Zeile „Screenshots, Fremdbilder – KI-gestützt abgerufen und aufgenommen (Unteragenten), keine KI-Bilder – Sichtung: steht aus“; Konzept-Webseite „Fassung mit Bildern zeigt HOLY-Produktbilder“; Stichproben „von der Gruppe nicht geprüft“ |
+| Doku | LIESMICH §3 (Wortzahlen neu gezählt, Zeitregel), §5 (Esc/Fokus/Doppelklick/Untertitel/Maus), §10, §13; QUELLEN §4b, §6; `../gestaltungsplan.md` (R2, R5, 5.1, 6.2, 6.7, 7.4, 9.1, 10.1, 10.2); `../README.md` (Zeiten) |
+
+**Nicht umgesetzt (mit Grund):** eigene Starttaste für den Spot (Gruppe entscheidet, Notiz 08/LIESMICH §5); Knöpfe auf 08
+eine Zeile höher (rechts unter dem letzten Handy ist kein Platz – die Anmerkung „Squad in einem Schritt statt Sackgasse“
+reicht bis y ≈ 930; stattdessen mehr Luft durch kleineren Innenabstand); Wortkürzung (nicht gewählt).
+
+**Prüfstand Nacharbeit (08.11.2026):** `pruefen.mjs --schritte` hell 0 Fehler, 17 Warnungen, 38 von 38 Fremdbildern,
+0 externe Anfragen; dunkel 0/17, 38; Rückfall `--oeffentlich --schritte --druck` 0/17, 0 Fremdbilder, PDF 18 von 18
+Seiten (kein „Spot ansehen“ im PDF). Warnungen wie vorher (Wortbudget 02–07, 09; 24-/26-px-Notizen), Wortbudget 05 jetzt
+72. Zwischenläufe: Quellzeilen 03 und 05 überlappten bzw. berührten die Fußzeile → gekürzt (siehe oben); Herleitung 06
+lief über den rechten Rand, der Grenzen-Kasten auf B1 berührte die Tabelle → gekürzt. Klicks 23, Sollzeit 735 s = 12:15
+(unverändert). Sprechtext neu gezählt: 1.250 Wörter (LIESMICH §3). Funktionstest Werbespot (Abnahme-Skript, angepasst;
+nicht im Repository): **70 von 70** bestanden, u. a. Doppelklick lässt die Bühne offen, Klick daneben schließt nach
+0,6 s weiter, Untertitel-Knopf per `file://` ausgeblendet, Bühne deckend und Schrift ≥ 22 px bei 1080 px, Handy hochkant
+scrollbar ohne Querscrollen, Fehlerfälle (404, H.264 ohne Decoder), `?druck`/`?referent`, Referentenfenster,
+Untertitel über lokalen Server (12 Einträge), Videobotschaft 09 unverändert. Bühne bei 1024 × 768, 1280 × 800 und
+1920 × 1080 ohne Überlauf. Sichtprüfung: 01, 03, 05, 06, 08 (Fuß und Bühne), B1, B5, B8, B9.
+
+**Redeskript final (08.11.2026, D12, nach Prüfung des Redeskripts):** Generator `../werkzeuge-redeskript/redeskript-generator.py`
+nachgearbeitet und `../redeskript.md` / `../Fallstudie-2_Redeskript.pdf` (12 Seiten) aus der finalen `index.html` neu
+erzeugt; Wortlaut geprüft (`wortlaut-pruefen.py`: 33 Absätze, 0 Abweichungen; Regex für den neuen Backup-Kasten
+angepasst). Umgesetzt: Spot erst nach Anhören durch die Gruppe und Ton im Beamer-Test (mittel); Handzeichen als Spanne
+statt doppelt gezählt, „Ende bei“ ohne Handzeichen erklärt, Reserve-Satz; Übergabesätze aus Gestaltungsplan 9.3 statt
+eigener Formulierung, Regie „erst Übergabesatz und Clicker, dann Klick“; „unsere Lesart“ → „KI-gestützte Ableitung, von
+der Gruppe zu prüfen“; Rechtestatus B8 mit Nr. 17 und „keine Werbung der HOLY Softdrinks GmbH“; Kontrollpunkte,
+Spot-Grenze 9:30, Reserve und Kürzungssumme aus `data-zeit` gerechnet und per `assert` gegen Gestaltungsplan 10.1/10.2,
+Notizen 01/02/03/06/07/08 und die Übergabe-Vorlagen geprüft; Backup-Warnhinweise als abgesetzter Kasten. In
+`index.html` nur Notiz 08 Schritt 2: „drei“ vor „funktionierenden nächsten Schritten“ gestrichen (der Satz nennt zwei;
+`konzept-website/danke.html` hat drei Schritt-Karten, die Nachfüll-Erinnerung ist eine eigene Fläche) – 08 jetzt 147
+Wörter, Summe 1.249 (LIESMICH §3).

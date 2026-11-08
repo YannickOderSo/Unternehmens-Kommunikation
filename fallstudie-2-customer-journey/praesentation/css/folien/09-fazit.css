@@ -40,11 +40,11 @@
 #f09 .e9-k-bild:nth-child(3) { left: 565.33px; }
 #f09 .e9-k-bild:nth-child(4) { left: 848px; }
 #f09 .e9-k-bild:nth-child(5) { left: 1130.67px; }
-#f09 .e9-k-bild[data-status="offen"] { padding: 6px 8px; display: flex; align-items: flex-end; }
+#f09 .e9-k-bild[data-status="leer"] { padding: 6px 8px; display: flex; align-items: flex-end; }
 /* Bildnachweis nur, solange die Bildleiste zu sehen ist (nicht während der Videobühne) */
 #f09:has(.e9-video-buehne.schritt-an):not(:has(.e9-fragen.schritt-an)) .p-bildquelle { visibility: hidden; }
-#f09 .e9-k-bild[data-status="offen"][data-art="screenshot"] { padding-top: 16px; }
-#f09 .e9-k-bild[data-status="offen"][data-art="screenshot"]::before { height: 10px; }
+#f09 .e9-k-bild[data-status="leer"][data-art="screenshot"] { padding-top: 16px; }
+#f09 .e9-k-bild[data-status="leer"][data-art="screenshot"]::before { height: 10px; }
 
 #f09 .e9-fragen {
   left: 128px;
