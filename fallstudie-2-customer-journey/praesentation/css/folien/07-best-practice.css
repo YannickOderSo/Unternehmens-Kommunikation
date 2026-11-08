@@ -1,66 +1,189 @@
 /* =============================================================================
    07-best-practice.css – Folie 07 · A5 Best Practices + A6 Maßnahmen
-   Gestaltungsplan 5.1 Zeile 07: fünf Zeilen über die volle Breite plus eine
-   Nebenweg-Zeile; links Phase und Überleitung, Mitte Vorbild in Schiefer,
-   rechts Maßnahme in Schwarz; Marker auf der Recherche-Zeile. Rückfall ohne
-   Fremdbilder: Name fett, keine Logos (b21). Fassung mit Bildern (D06,
-   03.11.2026): das Logo statt des fett gesetzten Namens. D07 (03.11.2026): die
-   kleinen Bilder der Vorbilder (144 × 81) sind entfernt (unlesbar, unruhig);
-   Logos einfarbig dunkel, je Logo eigene Höhe, damit die Spalte ruhig wirkt.
+   Gestaltungsplan 5.1 Zeile 07. Rückfall ohne Fremdbilder: Name statt Logo (b21).
+   Fassung mit Bildern (D06, 03.11.2026): das Logo statt des Namens; D07: die
+   kleinen Bilder der Vorbilder entfernt, Logos einfarbig dunkel, je Logo eigene Höhe.
+   D13 (08.11.2026, Entwurf „Brücke“, KI-gestützt; Gestaltung aus Modellwissen):
+   statt der Tabelle fünf Spalten im Phasenraster von 05/06 (Phase k ab
+   x = 128 + 2k · 141,33, 250,67 px breit, Mitte + 125,33). Je Spalte oben das
+   Vorbild (Logo, Branche 24 px, Mechanik 28 px Schiefer), darunter ein Linien-Symbol
+   der Mechanik (KI-gestützt erstellt, Inline-SVG, KI-Nachweis FS2 Nr. 30/D13) mit
+   Pfeil auf eine Station des zentralen Wegs (SOLL, y = 714, Linie ab x = 139, damit
+   das runde Ende nicht in den Rand ragt), unter dem Weg unsere Maßnahme (Bricolage
+   32 px wie die Sätze auf 05; Marker nur auf Recherche). Der Weg läuft ohne
+   Versatz durch die Rinnen Ü1–Ü4 (gleiche Rinnen wie 05). Nebenweg Handel
+   gestrichelt in Mittel warm wie 04/05, hier mit Anschluss.
+   Senkrecht: Kopf 372 · Regel 440 · Logo 454–504 · Branche 508–537 · Mechanik
+   538–602 · Symbol 612–664 · Pfeil 672–697 · Weg 714 · Maßnahme 748–849 ·
+   Nebenweg 872–932 · Quelle ab 1007. Der Weg ist ein festes SVG und folgt
+   Rasteränderungen nicht (anders als 04–06). Abweichung von Plan 3.7
+   (Icon-Abzeichen): Entscheidung der Gruppe offen.
    ============================================================================= */
-#f07 .e7-tabelle { left: 128px; top: 370px; width: 1664px; }
-#f07 .e7-kopfzeile,
-#f07 .e7-zeile {
-  display: grid;
-  grid-template-columns: 250.67px 674.67px 674.67px;
-  column-gap: 32px;
+
+/* Spalten (Phase 1–5) */
+#f07 .e7-spalte { top: 446px; width: 250.67px; height: 400px; }
+#f07 .e7-spalte > * { position: absolute; left: 0; width: 100%; margin: 0; text-align: center; }
+#f07 .e7-spalte--1 { left: 410.67px; }
+#f07 .e7-spalte--2 { left: 693.33px; }
+#f07 .e7-spalte--3 { left: 976px; }
+#f07 .e7-spalte--4 { left: 1258.67px; }
+#f07 .e7-spalte--5 { left: 1541.33px; }
+
+/* Vorbild: Logo (bzw. Name im Rückfall), Branche, Mechanik in Kurzform */
+#f07 .e7-logo {
+  top: 8px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+  gap: 8px;
+  white-space: nowrap;
 }
-#f07 .e7-kopfzeile {
-  font-size: 22px;
-  line-height: 1.25;
+#f07 .e7-zusatz { font-size: 28px; font-weight: 650; line-height: 1; padding-bottom: 1px; }
+#f07 .e7-branche {
+  top: 62px;
+  font-size: 24px;
+  line-height: 1.2;
   color: var(--p-schrift-2);
-  padding-bottom: 6px;
 }
-#f07 .e7-zeile {
-  position: relative;
-  min-height: 86px;
-  box-sizing: border-box;
-  padding: 10px 0;
-  border-top: 2px solid var(--p-nebel);
-  align-items: start;
-}
-#f07 .e7-zeile--neben { border-top: 3px dashed var(--p-mittel); }
-#f07 .e7-phase { font-size: 28px; font-weight: 600; line-height: 1.22; }
-#f07 .e7-ue {
-  display: block;
-  font-size: 22px;
-  font-weight: 600;
+#f07 .e7-mechanik {
+  top: 92px;
+  font-size: 28px;
+  line-height: 1.15;
   color: var(--p-schrift-2);
-  margin-top: 2px;
 }
-#f07 .e7-vorbild { font-size: 28px; line-height: 1.22; color: var(--p-schrift-2); }
-#f07 .e7-vorbild b { color: var(--p-schrift); font-weight: 650; }
-#f07 .e7-massnahme { position: relative; font-size: 28px; line-height: 1.22; }
+/* Name im Rückfall ohne Fremdbilder: wie eine Wortmarke in Bricolage */
+#f07 .e7-marke-name {
+  font-family: var(--schrift-display);
+  font-size: 38px;
+  font-weight: 750;
+  font-stretch: 82%;
+  line-height: 1;
+}
+#f07 .e7-marke { display: inline-flex; align-items: flex-end; flex: none; }
+#f07 .e7-marke .p-intern-logo, #f07 .e7-zusatz { flex: none; }
 
 /* Fassung mit Bildern: Logo statt des Namens (intern-bilder.js setzt <img class="p-intern-logo">).
-   Dateien einfarbig #1D1D1B in doppelter Anzeigehöhe (fremdbilder/v07-logo-…png, D07). Höhen optisch
-   angeglichen: Wortmarken ohne Unterlänge stehen auf der Grundlinie (vertical-align 0), Logos mit „p“
-   (zooplus, Pampers) reichen mit der Unterlänge darunter. Dunkel: hell umgekehrt statt heller Platte. */
-#f07 .e7-marke .p-intern-logo { display: inline-block; width: auto; height: 26px; vertical-align: 0; }
-#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-youtube"] { height: 26px; vertical-align: -1px; }
-#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-apple"] { height: 30px; vertical-align: -2px; }
-#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-zooplus"] { height: 28px; vertical-align: -7px; }
-#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-otto"] { height: 24px; vertical-align: 0; }
-#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-philips"] { height: 22px; vertical-align: 0; }
-#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-pampers"] { height: 34px; vertical-align: -7px; }
+   Dateien einfarbig #1D1D1B; Anzeigehöhe höchstens Dateihöhe (sonst Warnung „unscharf“), optisch angeglichen. */
+#f07 .e7-marke .p-intern-logo { display: block; width: auto; height: 34px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-youtube"] { height: 30px; margin-bottom: 1px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-apple"] { height: 46px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-zooplus"] { height: 40px; margin-bottom: -8px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-otto"] { height: 34px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-philips"] { height: 27px; }
+#f07 .e7-marke .p-intern-logo[data-intern-bild="v07-logo-pampers"] { height: 46px; margin-bottom: -9px; }
 #f07 .e7-marke[data-intern-status="gesetzt"] .e7-marke-name { display: none; }
 html[data-modus="dunkel"] #f07 .e7-marke .p-intern-logo { filter: invert(1); }
-#f07 .e7-massnahme::before {
-  content: "→";
-  position: absolute;
-  left: -28px;
-  top: 0;
+
+/* Linien-Symbol der Mechanik (KI-gestützt erstellt, Inline-SVG, kein Fremdbild): Strich in Schriftfarbe */
+#f07 .e7-icon {
+  fill: none;
+  stroke: var(--p-schrift);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+#f07 .e7-icon .e7-icon-voll { fill: var(--p-schrift); stroke: none; }
+#f07 .e7-spalte > .e7-icon { top: 166px; left: 99.33px; width: 52px; height: 52px; }
+
+/* Maßnahme unter dem Weg: Bricolage 32 px (wie die Sätze auf 05), 8 px Luft in die Rinnen */
+#f07 .e7-spalte > .e7-massnahme {
+  top: 302px;
+  left: -8px;
+  width: 266.67px;
+  font-family: var(--schrift-display);
+  font-size: 32px;
+  font-weight: 700;
+  font-stretch: 82%;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+/* Spalte 5: Kasten endet am Satzspiegel (x = 1792) */
+#f07 .e7-spalte--5 > .e7-massnahme { left: -16px; }
+
+/* Pfeil vom Symbol auf die Station, Station als Ring auf dem Weg (dunkel: dunkler Ring auf Gelb) */
+#f07 .e7-pfad { z-index: 1; }
+#f07 .e7-pfeil { fill: none; stroke: var(--p-schrift); stroke-width: 3; stroke-linecap: round; }
+#f07 .e7-pfeilspitze { fill: var(--p-schrift); }
+#f07 .e7-station circle { fill: var(--p-papier); stroke: var(--p-schrift); stroke-width: 5; }
+
+/* Zeilennamen links (Spalten 1–2) */
+#f07 .e7-band {
+  left: 128px;
+  width: 250px;
+  font-size: 24px;
+  line-height: 1.2;
   color: var(--p-schrift-2);
 }
-/* D12 (08.11.2026): Platzhalter „Skizze b15“ rechts in der Nebenweg-Zeile entfernt (keine eigene Zeichnung) –
-   damit auch der Abstand rechts (padding-right 150 px) */
+#f07 .e7-band--vorbild { top: 462px; }
+#f07 .e7-band--massnahme { top: 752px; }
+/* Wegname als Beschriftung über dem Anfang des Wegs (Weg ab x = 128) */
+#f07 .e7-wegname {
+  left: 128px;
+  top: 664px;
+  font-size: 28px;
+  font-weight: 650;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Überleitungen Ü1–Ü4 in den Rinnen (Rinnenmitte wie 05), über dem Weg */
+#f07 .e7-ue {
+  top: 658px;
+  width: 64px;
+  margin-left: -32px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+}
+#f07 .e7-ue--1 { left: 677.33px; }
+#f07 .e7-ue--2 { left: 960px; }
+#f07 .e7-ue--3 { left: 1242.67px; }
+#f07 .e7-ue--4 { left: 1525.33px; }
+
+/* Nebenweg Handel: eine Zeile, gestrichelt in Mittel warm (wie 04/05), hier mit Anschluss */
+#f07 .e7-neben {
+  left: 128px;
+  top: 872px;
+  width: 1664px;
+  height: 60px;
+  box-sizing: border-box;
+  border-top: 2px solid var(--p-nebel);
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+#f07 .e7-neben > * { position: static; margin: 0; flex: none; white-space: nowrap; }
+#f07 .e7-neben-name { width: 264.67px; font-size: 28px; font-weight: 600; line-height: 1.2; }
+#f07 .e7-neben-vorbild { display: flex; align-items: last baseline; gap: 8px; line-height: 1; }
+#f07 .e7-branche--zeile { margin-left: 6px; font-size: 24px; line-height: 1.2; color: var(--p-schrift-2); }
+#f07 .e7-neben-mechanik { font-size: 28px; line-height: 1.2; color: var(--p-schrift-2); }
+#f07 .e7-icon--neben { width: 46px; height: 46px; }
+#f07 .e7-neben-linie {
+  flex: 1 1 auto !important;
+  min-width: 80px;
+  height: 6px;
+  position: relative !important;
+  background: repeating-linear-gradient(90deg, var(--p-mittel) 0 16px, transparent 16px 28px);
+  margin-right: 14px !important;
+}
+#f07 .e7-neben-linie::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: -8px;
+  border-left: 18px solid var(--p-mittel);
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+#f07 .e7-neben-massnahme {
+  font-family: var(--schrift-display);
+  font-size: 32px;
+  font-weight: 700;
+  font-stretch: 82%;
+  line-height: 1.05;
+}

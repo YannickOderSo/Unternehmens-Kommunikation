@@ -199,7 +199,7 @@ PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core \
 Ergebnis am 03.11.2026 (nach der Überarbeitung D08): **0 Fehler** in der Fassung mit Bildern (hell und dunkel,
 38 von 38 Fremdbildern eingesetzt, 38 Schlüssel im Register) und im Rückfall ohne Fremdbilder (`--oeffentlich`, mit
 Notfall-PDF 18 Seiten), je 17 Warnungen wie vorher, 0 externe Anfragen; Einzelheiten §12.
-**Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3, 3.4 und 3.6): Wortbudget über 40 auf 03–07 (Plan) sowie auf 02 (53),
+**Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3, 3.4 und 3.6): Wortbudget über 40 auf 03–07 (Plan) sowie auf 02 (50; vor D13: 53),
 08 (42) und 09 (53) – **nicht im Plan vorgesehen, Kürzung prüfen**; Notizen am Element in 24 px (03, 04, 05) und
 Belegzeilen in 26 px (04, 05) laut Plan 3.6 (Ausnahme in 3.4). **Überlauf-Ausnahme:** nur der geschlossene Pfad auf
 09 (`svg.e9-pfad`, `data-ueberlauf-ok`) läuft von Rand zu Rand; die Bildleiste darunter liegt im Satzspiegel. `_test/` ist per `.gitignore` ausgeschlossen.

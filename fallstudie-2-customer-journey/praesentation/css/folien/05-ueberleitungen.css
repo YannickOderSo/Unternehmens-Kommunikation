@@ -6,15 +6,24 @@
    36 px Bricolage, Belegzeile 26 px; Marker an Ü2; Nebenweg gestrichelt unten.
    Urteile oben (Ü1, Ü3) und unten (Ü2, Ü4) im Wechsel, damit die Belegzeilen
    Platz haben.
+   D13 (08.11.2026, Entwurf zur Auswahl): Zeichen je Urteil (Dreieck „!“ = wackelt,
+   Kreis mit Kreuz = bricht, Kreis mit Haken = trägt), Maßstab als Zeichenlegende,
+   Ü2 größer, Brücke Ü2 mit Lücke und Bruchstrichen ("luecke" im JSON), Belege
+   mit Umbruch an Befundgrenzen.
    ============================================================================= */
 #f05 .e5-massstab {
   left: 128px;
-  top: 458px;
+  top: 454px;
   font-size: 24px;
   line-height: 1.25;
   color: var(--p-schrift-2);
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
+#f05 .e5-mass { display: inline-flex; align-items: center; gap: 10px; }
+#f05 .e5-mass .e5-signal { width: 32px; height: 32px; }
 #f05 .e5-massstab b { color: var(--p-schrift); font-weight: 650; }
 #f05 .e5-k[data-status="leer"] {
   display: flex;
@@ -25,19 +34,45 @@
 
 #f05 .e5-urteil { text-align: center; }
 #f05 .e5-urteil--oben { bottom: 470px; width: 540px; }
-#f05 .e5-urteil--unten { top: 746px; width: 540px; }
+#f05 .e5-urteil--unten { top: 742px; width: 540px; }
 #f05 .e5-u1 { left: 407.33px; }
 #f05 .e5-u3 { left: 972.67px; }
-#f05 .e5-u2 { left: 690px; }
-#f05 .e5-u4 { left: 1255.33px; width: 520px; }
-#f05 .e5-kopf { display: flex; justify-content: center; align-items: baseline; gap: 12px; }
+#f05 .e5-u2 { left: 671px; width: 600px; }   /* D13: 600 px breit (vorher 540); Mitte x = 971 = Mitte der Lücke mit den Bruchstrichen */
+/* Ü4 mittig über der Rinne P4/P5 (x = 1525,33; vorher 1515,33) – endet bei x = 1785 im Satzspiegel */
+#f05 .e5-u4 { left: 1265.33px; width: 520px; }
+/* Kopf als Raster: Zeichen genau über bzw. unter der Brücke, Kennung links, Urteilswort rechts (D13) */
+#f05 .e5-kopf { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 12px; }
+#f05 .e5-kopf .e5-id { justify-self: end; }
+#f05 .e5-kopf .p-satz { justify-self: start; }
 #f05 .e5-id { font-size: 24px; color: var(--p-schrift-2); font-weight: 600; }
-#f05 .e5-kern { font-size: 32px; margin-top: 6px; }
-#f05 .e5-urteil .p-beleg { margin-top: 6px; }
+#f05 .e5-kern { font-size: 32px; margin-top: 4px; text-wrap: balance; }
+/* Belege seit D13 mit Umbruch an Befundgrenzen (<br>, Zeilen ohne weiteren Umbruch) statt einer durchlaufenden
+   Aufzählung mit „·“, die mitten im Befund umbrach */
+#f05 .e5-urteil .p-beleg { margin-top: 4px; white-space: nowrap; }
+/* „wackelt“ eine Stufe leiser (Schiefer 6,33 : 1), damit der Bruch an Ü2 vorn steht; Ü2 größer */
+#f05 .e5-urteil:not(.e5-u2) .e5-kopf .p-satz { color: var(--p-schrift-2); }
+#f05 .e5-kopf .e5-signal { width: 42px; height: 42px; }
+#f05 .e5-u2 .e5-kopf .e5-signal { width: 56px; height: 56px; }
+#f05 .e5-u2 .e5-kopf .p-satz { font-size: 46px; }
+
+/* Zeichen der Urteile (D13; Gestaltungsentscheidung aus Modellwissen, von der Gruppe zu prüfen): Form + Zeichen +
+   Füllung tragen das Urteil auch ohne Farbe – trägt = Kreis mit Haken (leise, nur in der Legende), wackelt = gelbes
+   Dreieck mit „!“ und schwarzer Kontur (Gelb nie konturlos auf Creme), bricht = gefüllter Kreis mit Kreuz in den
+   Knoten-Farben (hell Schwarz/Gelb, dunkel Gelb/Schwarz). Keine neuen Farben, nur Tokens aus pfad.css. */
+#f05 .e5-signal { display: block; overflow: visible; flex: none; }
+#f05 .e5-signal--traegt .e5-s-grund { fill: var(--p-papier); stroke: var(--p-schrift); stroke-width: 3.5; }
+#f05 .e5-signal--traegt .e5-s-zeichen { fill: none; stroke: var(--p-schrift); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+#f05 .e5-signal--wackelt .e5-s-grund { fill: var(--p-gelb); stroke: var(--p-pfad-kontur); stroke-width: 3.5; stroke-linejoin: round; }
+#f05 .e5-signal--wackelt .e5-s-zeichen { fill: none; stroke: var(--p-auf-flaeche); stroke-width: 5.5; stroke-linecap: round; }
+#f05 .e5-signal--wackelt .e5-s-punkt { fill: var(--p-auf-flaeche); }
+#f05 .e5-signal--bricht .e5-s-grund { fill: var(--p-knoten-grund); }
+#f05 .e5-signal--bricht .e5-s-zeichen { fill: none; stroke: var(--p-knoten-zahl); stroke-width: 5.5; stroke-linecap: round; }
+
+/* Bruchstriche in der Lücke von Ü2 (pfad.js, "luecke" im JSON): Stil .p-pfad .bruch in pfad.css */
 
 #f05 .e5-neben {
   left: 128px;
-  top: 944px;
+  top: 952px;   /* vorher 944 px: Ü2 hat seit D13 einen höheren Kopf (Zeichen 56 px) */
   display: flex;
   align-items: center;
   gap: 18px;
@@ -50,4 +85,8 @@
   font-weight: 700;
   font-stretch: 86%;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+#f05 .e5-neben-urteil .e5-signal { width: 34px; height: 34px; }

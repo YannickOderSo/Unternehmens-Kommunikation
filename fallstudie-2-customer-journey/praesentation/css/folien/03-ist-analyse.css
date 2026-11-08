@@ -3,6 +3,12 @@
    Bewertungszeile je Phase). Gestaltungsplan 5.1 Zeile 03 und Abschnitt 8.
    Abweichung: Zählung 84 px statt 160 px, je Band ausgerichtet (Platz). Umbau 03.11.2026 (D06): Bänder über
    die volle Breite mit Kacheln 258 × 122 für die Fassung mit Bildern (Fremdbilder); Zählung vor dem Bandnamen.
+   D13 (08.11.2026, Visualisierung; Gestaltungsentscheidung aus Modellwissen, Prüfung durch die Gruppe offen):
+     • unter dem Bandnamen je Kontaktpunkt ein Kästchen (Zehnerreihen, Klick 1): 13 · 30 · 11; die 3 fehlenden
+       Owned (Blog-Beiträge, Filialenfinder, App) als offene Kästchen – derselbe offene Kasten führt den Hinweis an
+     • Hinweis „3 Owned fehlen …“ als Inhalt 28 px (vorher Notiz 24 px)
+     • Bewertungszeile: Plus/Minus als Signalzeichen in der Rinne vor jedem Eintrag (gefüllter Kreis mit + ·
+       offener Kreis mit −), Recherche-Minus gelb mit schwarzer Kontur zusätzlich zum Marker (schwächste Stelle)
    ============================================================================= */
 /* Bänder Paid · Owned · Earned über die volle Breite (Umbau 03.11.2026, D06: größere Bildkacheln).
    Je Band: Zählung (84 px, Klick 1, rechtsbündig in 104 px) · Bandname (28 px) · Kacheln 258 × 122
@@ -31,7 +37,7 @@
 }
 #f03 .e3-zahl {
   flex: none;
-  width: 104px;
+  width: 92px;          /* Nacharbeit D13: 92 statt 100 px, damit der Kopf 168 px breit sein kann (Kacheln bleiben ab x = 420) */
   text-align: right;
 }
 #f03 .e3-zahl-wert {
@@ -41,12 +47,37 @@
   font-stretch: 85%;
   line-height: 1;
 }
-#f03 .e3-band-name {
+/* Kopf je Band (D13): Bandname, darunter ein Kästchen je Kontaktpunkt (10 je Reihe). Nacharbeit D13: 15 px mit
+   2 px Abstand (10 × 15 + 9 × 2 = 168 px; vorher 13/3 px), damit die offenen Kästchen am Beamer erkennbar bleiben */
+#f03 .e3-kopf {
   flex: none;
-  width: 156px;
+  width: 168px;
+  display: grid;
+  gap: 8px;
+  align-content: center;
+}
+#f03 .e3-band-name {
   font-size: 28px;
   font-weight: 600;
   line-height: 1.2;
+}
+#f03 .e3-einheiten {
+  display: grid;
+  grid-template-columns: repeat(10, 15px);
+  gap: 2px;
+}
+#f03 .e3-einheiten i,
+#f03 .e3-legende-einheit {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: var(--p-schrift);
+}
+/* fehlender Kontaktpunkt: offenes Kästchen (2 px Kontur in Schriftfarbe) */
+#f03 .e3-einheiten i.e3-fehlt,
+#f03 .e3-fehlt-zeichen {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--p-schrift);
 }
 #f03 .e3-k {
   flex: none;
@@ -76,15 +107,26 @@
 
 /* Hinweise im freien Teil des Bands Earned (rechts der zwei Kacheln, ab x = 984 wie die Proben; D12: vorher
    ab Spalte 9 neben drei Kacheln) */
-#f03 .e3-fehlen { left: 984px; top: 646px; }
+#f03 .e3-fehlen {
+  left: 984px;
+  top: 642px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+#f03 .e3-fehlt-zeichen { flex: none; display: block; width: 18px; height: 18px; }
 #f03 .e3-legende {
   left: 984px;
-  top: 684px;
-  width: 533.33px;
+  top: 688px;
+  width: 808px;
   font-size: 22px;
   line-height: 1.25;
   color: var(--p-schrift-2);
 }
+#f03 .e3-legende-einheit { display: inline-block; margin-right: 8px; vertical-align: -1px; }
 #f03 .e3-legende b { color: var(--p-schrift); }
 
 /* Farb- und Formproben (b18) im freien Teil des Bands Paid (x 984–1792): 5 × 2,
@@ -136,7 +178,7 @@
 #f03 .e3-bewertung > * { position: absolute; top: 12px; }
 #f03 .e3-bew-kopf {
   left: 128px;
-  width: 250px;
+  width: 226px;
   font-size: 28px;
   font-weight: 600;
   line-height: 1.2;
@@ -156,5 +198,37 @@
 #f03 .e3-bew-phase:nth-of-type(4) { left: 1258.67px; }
 #f03 .e3-bew-phase:nth-of-type(5) { left: 1541.33px; }
 #f03 .e3-plus,
-#f03 .e3-minus { font-size: 28px; line-height: 1.22; }
-#f03 .e3-plus { margin-top: 6px; }
+#f03 .e3-minus { position: relative; font-size: 28px; line-height: 1.22; }
+#f03 .e3-plus { margin-top: 12px; }
+#f03 .e3-minus { margin-top: 6px; }
+
+/* Signalzeichen (D13) in der Rinne vor dem Eintrag: 26 px, mittig zur ersten Zeile (28 px × 1,22 = 34 px).
+   Plus = gefüllter Kreis in Schriftfarbe mit Kreuz in Papierfarbe; Minus = offener Kreis (3 px) mit Strich.
+   Schwächste Stelle (Recherche): Gelb mit schwarzer Kontur, Strich immer Schwarz (auch im Modus dunkel). */
+#f03 .e3-sig {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+#f03 .e3-sig::before,
+#f03 .e3-sig::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 3px;
+  margin: -1.5px 0 0 -6px;
+  background: var(--p-papier);
+}
+#f03 .e3-plus .e3-sig { background: var(--p-schrift); }
+#f03 .e3-plus .e3-sig::after { width: 3px; height: 12px; margin: -6px 0 0 -1.5px; }
+#f03 .e3-minus .e3-sig { border: 3px solid var(--p-schrift); background: var(--p-papier); }
+#f03 .e3-minus .e3-sig::before { background: var(--p-schrift); }
+#f03 .e3-minus .e3-sig::after { display: none; }
+#f03 .e3-minus--schwach .e3-sig { background: var(--p-pfad); border-color: var(--p-pfad-kontur); }
+#f03 .e3-minus--schwach .e3-sig::before { background: var(--p-auf-flaeche); }

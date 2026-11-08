@@ -60,7 +60,10 @@ zieht Regel, Zeilen- und Phasenlinien und zeichnet den Pfad:
   Zeile, senkrecht in der Rinnenmitte, Eckradius 34 px), `ende: "spitze"` = Pfeilspitze an x = 1792;
   `art: "neben"` mit `punkte` (Zahl oder `mitte:k1`, `rinne:4` …) = gestrichelter Nebenweg; `art: "offen"` = offenes Ende.
 - `bruecken[]` (Folie 05) mit `urteil`: `traegt` (durchgehend), `wackelt` (zwei Stücke, 12 px versetzt), `bricht`
-  (Ende vor der Rinne, zwei Reste).
+  (Ende vor der Rinne, zwei Reste). Optional bei `bricht`: `"luecke": n` (Entwurf D13, 08.11.2026; auf 05 an Ü2 mit
+  24) – der Pfad endet n px vor der Rinnenmitte, in der Lücke stehen zwei schräge Bruchstriche „//“ (Klasse `bruch`,
+  Stil in `pfad.css`); ein Streifen in Papierfarbe (`bruch-grund`) deckt ab demselben Schritt die Haarlinie der
+  Grundlinie in der Lücke ab. Ohne `luecke` zeichnet `pfad.js` wie bisher.
 - Folie 06: Touchpoints `.e6-tp` mit `data-platz` 1–3 und `data-reihe` (Reihenfolge in der Zelle); Platz 1 trägt
   `data-id` und liegt auf dem Pfad.
 
@@ -102,7 +105,7 @@ Nach jeder Änderung: `node werkzeuge/pruefen.mjs index.html --ausgabe _test/pru
 9. **Quellzeilen** auf eine Zeile gekürzt (≤ 1.110 px); vollständige Belege in den Notizen.
 10. **Schrift:** Inter statt Libre Franklin (liegt nicht im Repository, M5 offen).
 11. **B7:** Illustration Marco aus FS1 nicht eingebunden (FS1-Bilder wurden bewusst nicht übernommen), als „offen“ vermerkt.
-12. **Wortbudget** auch auf 02 (53), 08 (41) und 09 (53) über 40 (Plan: nur 03–07).
+12. **Wortbudget** auch auf 02 (50; vor D13: 53), 08 (41) und 09 (53) über 40 (Plan: nur 03–07).
 
 ## 7. Prüfstand 03.11.2026
 

@@ -30,7 +30,7 @@ window.INTERN_BILDER = {
     "alt": "Symbolbild: Führerstand eines Zuges bei Nacht, grüner HOLY-Shaker auf dem Pult, Beine des Fahrers, kein Gesicht",
     "nachweis": "Symbolbild – Community-Foto eines Lokführers aus dem HOLY-Squad (Bildunterschrift auf de.holy.com/pages/our-story, Name weggelassen), Abruf 03.11.2026 · nicht Marco (Persona fiktiv)",
     "motiv": "Symbolbild Schichtarbeit mit Shaker, ohne Gesicht",
-    "platz": "f02 .e2-foto (Persona, 674,67 × 610, Anschnitt links)",
+    "platz": "f02 .e2-foto (Persona, 661,33 × 282, Anschnitt links, unter dem Steckbrief; D13, vorher 674,67 × 610)",
     "quelle": "https://de.holy.com/cdn/shop/files/89.jpg?v=1788511578&width=2400 (Seite https://de.holy.com/pages/our-story)",
     "pixel": "1350 × 1220"
   },

@@ -1,47 +1,203 @@
 /* =============================================================================
    02-persona.css – Folie 02 · Persona Marco und Mediennutzung
-   Gestaltungsplan 5.1 Zeile 02: Spalten 1–5 Foto b04 im Anschnitt; Spalten 6–12
-   zwei getrennt beschriftete Gruppen von Strichskalen (Basen nicht mischen),
-   Schlüsselzahl 92 % mit Marker. D12 (08.11.2026): ohne O-Töne – keine eigene Befragung.
+   Gestaltungsplan 5.1 Zeile 02: Spalten 1–4 Steckbrief und Symbolbild b04 im Anschnitt; Spalten 6–12
+   zwei getrennt beschriftete Gruppen (Basen nicht mischen), Schlüsselzahl 92 % mit Marker.
+   D12 (08.11.2026): ohne O-Töne – keine eigene Befragung.
+   D13 (08.11.2026, Visualisierung; Gestaltungsentscheidung aus Modellwissen, Prüfung durch die Gruppe offen):
+     • links oben Steckbrief Marco mit vier Strich-Symbolen (keine Abzeichen, nur Linien in Schriftfarbe),
+       darunter mit 48 px Abstand das Symbolbild (kürzer) – erst Marco, dann das Bild (nicht als Marcos Foto lesbar)
+     • rechts: die drei Verben des Titels als Gruppenköpfe, davor je ein Strich-Symbol in Schriftfarbe
+       (Video entdeckt · Lupe prüft · Warenkorb kauft), verbunden durch eine 3-px-Linie in Mittel warm
+       (Reihenfolge; Grafik zweiten Ranges). KEIN gelber Pfad und keine Knoten auf 02: Pfad erst ab 04,
+       „trägt“ ≠ Bruch Ü2 auf 05; Knoten nur für Momente der Wahrheit/Platz 1 (Plan 3.6), keine Icon-Abzeichen (3.7)
+     • Statista als Balkenpaare: dick = Energy-Drink-Konsument:innen, dünn (Mittel warm) = Ø aller;
+       alle Datenbalken in Schriftfarbe (Plan 3.6 Strichskala), einziges Gelb in den Daten = Marker 92 %
+     • 61 % als Ring (Wert in Schriftfarbe, Rest Nebel = Deko)
    ============================================================================= */
+
+/* ---------- links: Symbolbild und Steckbrief (Spalten 1–4) ---------- */
 #f02 .e2-foto {
   left: 0;
-  top: 372px;
-  width: 674.67px;
-  height: 610px;
+  top: 700px;
+  width: 661.33px;
+  height: 282px;
   border-left: 0;
 }
+#f02 .e2-foto > img { object-position: 50% 62%; }
 #f02 .e2-foto .p-platzhalter {
   position: absolute;
   left: 128px;
-  bottom: 28px;
+  bottom: 20px;
   width: 440px;
   display: grid;
   gap: 6px;
 }
-#f02 .e2-persona,
-#f02 .e2-gruppe { left: 834.67px; width: 957.33px; }
+/* Fassung mit Bildern (D06): Beschriftung „Symbolbild … nicht Marco“ im Bild, im Satzspiegel (x ≥ 128);
+   seit D07 zweizeilig („Symbolbild Schichtarbeit – nicht Marco“ / „(Lokführer aus der HOLY-Community)“) */
+#f02 .e2-label { left: 128px; }
 
-#f02 .e2-persona { top: 368px; display: grid; gap: 4px; }
-#f02 .e2-name { font-size: 28px; line-height: 1.25; }
-#f02 .e2-fiktiv { font-size: 22px; color: var(--p-schrift-2); }
-#f02 .e2-kauf,
-#f02 .e2-info { font-size: 28px; line-height: 1.25; }
-#f02 .e2-limbic { font-size: 22px; line-height: 1.3; color: var(--p-schrift-2); }
+#f02 .e2-steckbrief { left: 128px; top: 372px; width: 672px; }
+#f02 .e2-name {
+  font-family: var(--schrift-display);
+  font-size: 48px;
+  font-weight: 750;
+  font-stretch: 85%;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+#f02 .e2-fiktiv {
+  margin-left: 10px;
+  font-family: var(--schrift-text);
+  font-size: 22px;
+  font-weight: 400;
+  font-stretch: 100%;
+  color: var(--p-schrift-2);
+}
+#f02 .e2-merkmale {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+#f02 .e2-merkmale li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 40px;
+  font-size: 28px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+#f02 .e2-symbol {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: var(--p-schrift);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#f02 .e2-limbic { margin-top: 10px; font-size: 22px; line-height: 1.3; color: var(--p-schrift-2); }
 
-#f02 .e2-gruppe--a { top: 560px; }
-#f02 .e2-gruppe--b { top: 720px; }
-#f02 .e2-gruppe-kopf { font-size: 22px; line-height: 1.25; color: var(--p-schrift-2); margin-bottom: 4px; }
-#f02 .p-skala { grid-template-columns: 200px 1fr 150px; grid-auto-rows: 42px; }
-#f02 .p-skala-zahl { display: flex; align-items: baseline; justify-content: flex-end; gap: 8px; }
+/* ---------- rechts: Strich-Symbole vor den Verben (Spalte 6, Mitte x = 860,67), Gruppen ab x = 910 ----------
+   Symbol 36 px wie die Verbzeile (p-satz 36 px), Linie 3 px in Mittel warm mit 14 px Luft zu den Symbolen
+   (3,54 : 1 hell, 4,09 : 1 dunkel – Grafik zweiten Ranges, nie auf Gelb) */
+#f02 .e2-zeichen {
+  left: 842.67px;
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: var(--p-schrift);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#f02 .e2-zeichen--1 { top: 380px; }
+#f02 .e2-zeichen--2 { top: 610px; }
+#f02 .e2-zeichen--3 { top: 860px; }
+#f02 .e2-zeichen--1 path,
+#f02 .e2-zeichen--3 circle { fill: var(--p-schrift); }
+#f02 .e2-linie {
+  left: 859.17px;
+  width: 3px;
+  background: var(--p-mittel);
+}
+#f02 .e2-linie--1 { top: 430px; height: 166px; }
+#f02 .e2-linie--2 { top: 660px; height: 186px; }
+
+#f02 .e2-gruppe {
+  left: 910px;
+  width: 882px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-template-rows: 56px;
+  align-items: center;
+}
+#f02 .e2-gruppe--a { top: 370px; }
+#f02 .e2-gruppe--b { top: 600px; }
+#f02 .e2-gruppe--c {
+  top: 828px;
+  grid-template-columns: 170px 100px 1fr;
+  grid-template-rows: 100px;
+  column-gap: 0;
+}
+#f02 .e2-verb { margin: 0; white-space: nowrap; }
+#f02 .e2-gruppe-kopf { font-size: 22px; line-height: 1.25; color: var(--p-schrift-2); }
+
+/* Balken: Name · Spur · Zahl */
+#f02 .e2-balken {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 200px 1fr 168px;
+  grid-auto-rows: 46px;
+  align-items: center;
+  column-gap: 18px;
+}
+#f02 .e2-b-name { font-size: 28px; line-height: 1.2; white-space: nowrap; }
+#f02 .e2-b-spur { position: relative; height: 30px; }
+#f02 .e2-b-spur::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+  height: 2px;
+  background: var(--p-nebel);
+}
+#f02 .e2-b-wert {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  height: 16px;
+  background: var(--p-schrift);
+}
+/* Balkenpaare (Gruppe a): dicker Balken oben, Ø aller als dünner Balken darunter */
+#f02 .e2-gruppe--a .e2-b-wert { top: 2px; }
+#f02 .e2-b-schnitt {
+  position: absolute;
+  left: 0;
+  top: 23px;
+  height: 6px;
+  background: var(--p-mittel);
+}
+#f02 .e2-b-zahl {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 8px;
+  font-family: var(--schrift-display);
+  font-weight: 750;
+  font-stretch: 85%;
+  font-size: 36px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+#f02 .e2-b-zahl .p-marker { margin-right: 0; }
 #f02 .e2-schnitt {
   font-family: var(--schrift-text);
   font-size: 22px;
   font-weight: 400;
+  font-stretch: 100%;
   color: var(--p-schrift-2);
 }
-#f02 .e2-handy { font-size: 28px; line-height: 1.25; margin-top: 4px; }
-#f02 .p-skala-zahl .p-marker { margin-right: 0; }
-/* Fassung mit Bildern (D06): Beschriftung „Symbolbild … nicht Marco“ im Bild, im Satzspiegel (x ≥ 128);
-   seit D07 zweizeilig („Symbolbild Schichtarbeit – nicht Marco“ / „(Lokführer aus der HOLY-Community)“) */
-#f02 .e2-label { left: 128px; }
+
+/* Ring 61 % (Gruppe c) */
+#f02 .e2-ring { width: 100px; height: 100px; display: block; }
+#f02 .e2-ring circle { fill: none; stroke-width: 16; }
+#f02 .e2-ring-spur { stroke: var(--p-nebel); }
+#f02 .e2-ring-wert { stroke: var(--p-schrift); }
+#f02 .e2-handy { padding-left: 26px; font-size: 28px; line-height: 1.2; }
+#f02 .e2-handy-zahl {
+  display: block;
+  font-family: var(--schrift-display);
+  font-weight: 750;
+  font-stretch: 85%;
+  font-size: 56px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+#f02 .e2-handy-jahr { font-size: 22px; color: var(--p-schrift-2); }
