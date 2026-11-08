@@ -50,6 +50,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 23 | 04.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Container-Neustart: Workflow D10 abgebrochen; später Meldung „D10 abgeschlossen“ | – | D10 mit gespeicherten Zwischenergebnissen fortgesetzt; Ergebnis geprüft (Eintrag 22) |
 | 24 | 04.11.2026 | Yannick | Spot ist langweilig, nur Fakten, keine Emotionen; Zielgruppe ansprechen, aufregend; an kurzen Spots großer Firmen orientieren | D11 (Workflow) | Neuer Spot „Mein Moment.“ (24,5 s): Marcos Feierabend-Ritual mit Rückblende, Countdown, Beat-Drop beim Schütteln und Squad; Vorfassung in `werbevideo/vorfassung-d10/` |
 | 25 | 05.11.2026 | Yannick | Auf der HOLY-Startseite eine Weiterleitung zu Fallstudie 2 einführen | – | Startseite `index.html`: Fallstudie 2 als erste Karte mit Präsentation, Konzept-Webseite und Werbespot; Fallstudie 1 darunter |
+| 26 | 08.11.2026 | Yannick | Präsentation finalisieren (Rückfragen: ohne eigene Erhebung, Werbespot auf Folie 08, Redeskript als PDF) | D12 (Workflow) | *läuft* |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -531,6 +532,25 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 26 – 08.11.2026 – Yannick
+
+> Finalisiere die Präsentation
+
+- **Anhänge:** keine.
+- **Rückfragen von Claude (Auswahlfragen) und Antworten von Yannick:**
+  1. Platzhalter der eigenen Erhebung (O-Töne 02, „Tipp unter Kollegen“ 03, „(vorläufig)“ 05, Workshop-Foto 06,
+     Handskizze 07, Selbstversuch B1, Interviews B5) – im Repository liegen keine Ergebnisse. → **„Ohne Erhebung
+     (Empfohlen)“**: Platzhalter raus, ehrlich als Analyse von Dossier, Shop und Stichproben kennzeichnen, nichts erfinden.
+  2. Werbespot „Mein Moment.“ in die Präsentation? → **„Auf Folie 08 (Empfohlen)“**.
+  3. Zusätzlich erstellen? → **„Redeskript als PDF“** (nicht gewählt: Notfall-PDF/Übersicht, Wortkürzung).
+- **Vorgehen Claude:** Bestand geprüft (Prüflauf 0 Fehler, 17 Warnungen; alle 18 Folien angesehen; keine Beiträge der
+  Gruppe zu Selbstversuch, Interviews, Workshop im Repository). Workflow D12: Umbau (Platzhalter, Sprechtexte, Titel,
+  Backup-Folien, Spot-Knopf auf 08, Doku), Redeskript, zwei Abnahmen, Nacharbeit.
+- **Ergebnis:** *läuft*
+- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`; weitere folgen
+- **Unteragenten:** D12
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -551,6 +571,7 @@ Auftrag (im Workflow-Skript).
 | D09 | 03.11.2026 | 19 | Workflow „fs2-webseite-echt“ (9 Unteragenten) | Konzept-Webseite wie einen echten HOLY-Shop gestalten: 3 Entwürfe, Jury, Umbau, Abnahme, Nacharbeit | Sieger „Kampagne“ auf allen 7 Seiten; Abnahmen 3 hohe, 11 mittlere, 11 niedrige Befunde, fast alle umgesetzt | Claude: beide Prüfskripte selbst (0 Fehler), Volltextsuche Sicherheitsmerkmale, Sichtprüfung 390/1280 px und Folie 08; alt-Texte Folie 08 selbst eingetragen |
 | D10 | 04.11.2026 | 22 | Workflow „fs2-werbevideo“ (9 Unteragenten, ElevenLabs über die Schnittstelle) | Werbevideo 9:16 für HOLY im Stil des Konzepts: 3 Drehbücher mit Storyboard, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
 | D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | *läuft* | – |
+| D12 | 08.11.2026 | 26 | Workflow „fs2-finalisieren“ (5 Unteragenten) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -828,6 +849,16 @@ Auftrag (im Workflow-Skript).
   ganze Länge) angesehen: Pflichtzeile in jedem Bild, Endkarte mit Altershinweis und vollem Hinweis, „Werbung“ am Code;
   Untertitel gelesen; Herkunft „Himbeere × Yuzu“ im Drehbuch nachgesehen; Volltextsuche nach Schlüsseln, Klonstimmen-ID
   und Modellkennungen (nur Treffer: die Suchmuster im Prüfskript selbst). Ton nicht angehört.
+
+### D12 – 08.11.2026 – ausgelöst durch Prompt 26
+
+- **Art:** Workflow „fs2-finalisieren“: ein Umbau-Agent (Inventur der Platzhalter, ehrliche Umformulierung ohne eigene
+  Erhebung, Spot-Knopf auf Folie 08, Doku), ein Redeskript-Agent (Markdown und PDF nach dem Vorbild von FS1,
+  Sprecherverteilung nur als Vorschlag), zwei Abnahmen (Inhalt/Ehrlichkeit; Technik/Vortrag), eine Nacharbeit.
+  Vorgabe: nichts erfinden (keine O-Töne, Interviewzahlen, Workshop- oder Selbstversuchsdaten).
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-finalisieren.js`](workflows/2026-11-08_fs2-finalisieren.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
