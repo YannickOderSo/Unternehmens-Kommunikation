@@ -53,6 +53,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 26 | 08.11.2026 | Yannick | Präsentation finalisieren (Rückfragen: ohne eigene Erhebung, Werbespot auf Folie 08, Redeskript als PDF) | D12 (Workflow) | *läuft* |
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
+| 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -578,6 +579,16 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   finale Redeskript. Geändertes Skript: `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`.
 - **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-finalisieren.js`
 - **Unteragenten:** D12 (Fortsetzung)
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 29 – 08.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [command hook]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+- **Vorgehen Claude:** Die offenen Änderungen sind der halbfertige Umbau aus dem laufenden Workflow D12 (`index.html`,
+  CSS, JS, Doku). Ein Push auf master würde diesen Zwischenstand sofort auf GitHub Pages veröffentlichen, zwei Tage vor
+  dem Vortrag. Deshalb als Sicherung auf den Branch `zwischenstand-d12` gepusht (Arbeitsverzeichnis und master
+  unverändert); master bekommt den geprüften Stand nach Abschluss von D12.
 - **Prüfung durch die Gruppe:** ☐ offen
 
 ---
