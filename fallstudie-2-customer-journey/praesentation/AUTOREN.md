@@ -5,6 +5,8 @@ sind und wie man sie ändert. Die Engine ist die aus Fallstudie 1, **unveränder
 `css/deck.css`, `css/komponenten.css`, `css/tokens.css`); ausführlich: FS1 `AUTOREN.md` Abschnitt 3–5 und 7–9.
 Neu sind nur das Thema „Pfad“ und die Folien. Stand 08.11.2026 – finale Fassung (KI-gestützt, D12), Prüfung durch die
 Gruppe offen. Keine eigene Erhebung (Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26) – Abschnitt 14.
+Seit D13 (08.11.2026, KI-Nachweis FS2 Nr. 30) neue Visualisierungen auf 01–07 und 09; schlichte Linien-Symbole sind
+erlaubt – Abschnitt 15.
 
 ## 1. Regeln (Pflicht)
 
@@ -17,7 +19,8 @@ Gruppe offen. Keine eigene Erhebung (Entscheidung Yannick 08.11.2026, KI-Nachwei
 | Fakten | nur mit Befund-ID und Status aus dem Dossier; keine Zahl ohne Quelle; **keine eigene Erhebung** (seit 08.11.2026): keine O-Töne, Interviewzahlen, Workshop-Ergebnisse, Selbstversuchsdaten oder eigenen Fotos erfinden; wo eine Aussage abgeleitet ist, Grundlage nennen (Dossier, Abruf, KI-gestützte Stichprobe) und Urteile als H kennzeichnen; keine „offen“-Platzhalter auf den Folien |
 | Bilder | HOLY-Logo nur als gelbes Oval auf 01 und 09 (mit Einverständnis, KI-Nachweis FS2 Nr. 12, 03.11.2026); Fremdbilder (Screenshots, Werbe- und Community-Bilder von HOLY, Logos der Vorbilder) nur über `fremdbilder/register.js` und `data-intern`, je Folie mit Bildnachweis-Zeile – Veröffentlichung von der Gruppe beschlossen (KI-Nachweis FS2 Nr. 17), keine Genehmigung der Rechteinhaber eingeholt; nicht kommerziell, für die Lehrveranstaltung; keine eigenen Fotos der Gruppe. Fremdbilder ohne Verwendung auf einer Folie nicht veröffentlichen (nach `intern/`); keine Namen von Privatpersonen im Nachweis. Eigene Fotos zuerst nach `intern/` (ausgeschlossen), veröffentlichen erst nach Sichtung durch die Gruppe (Abschnitt 10; Plan 4, 11.5) |
 | Video | nur `video/gruender-video.mp4` auf 09, per Pfad (`data-quelle`); veröffentlicht mit Zustimmung des Gründers (KI-Nachweis FS2 Nr. 18); keine KI-Transkription, keine Zitate aus dem Video |
-| Was es nicht gibt | Karten, Pillen, Kicker, Mini-Steuerrad, Sticker, weiche Schatten, Live-Abstimmung, `iframe`, eigenes `data-modus` an einer Folie (3.7) |
+| Was es nicht gibt | Karten, Pillen, Kicker, Mini-Steuerrad, Icon-Abzeichen (Symbol auf Fläche, im Kreis oder im Rahmen als Schmuck), Sticker, weiche Schatten, Live-Abstimmung, `iframe`, eigenes `data-modus` an einer Folie (3.7) |
+| Linien-Symbole (seit 08.11.2026) | **erlaubt:** schlichte Strich-Symbole in Schriftfarbe, ohne Fläche und ohne Rahmen, immer neben einem Wort, als Inline-SVG im HTML (02, 06, 07) – Entscheidung Yannick, KI-Nachweis FS2 Nr. 30; Abweichung von Plan 3.7, dort vermerkt. KI-gestützt erstellt, keine Fremdbilder, keine KI-Bilder; nicht über `fremdbilder/`. Dazu die Urteils- und Signalzeichen auf 03, 04, 05 (Plan 3.6, Abschnitt 15) |
 | Sprache, Anrede | Deutsch, Publikum gesiezt; keine Modellbezeichnungen in Dateien |
 
 ## 2. Folien-Format
@@ -45,6 +48,7 @@ Gruppe offen. Keine eigene Erhebung (Entscheidung Yannick 08.11.2026, KI-Nachwei
 | Bildkachel `data-status` | `leer` (beschrifteter Platzhalter im Rückfall ohne Fremdbilder; bis D12 `offen`) · `frei` · `rueckfall` · `aus` (Zusatzbild nur in der Fassung mit Bildern; seit D07 nicht verwendet) (LIESMICH §7) |
 | `data-intern` | Schlüssel in `fremdbilder/register.js`; `data-intern-optional` = Fehlen erlaubt (Abschnitt 10). Name aus der Zeit vor der Veröffentlichung, bleibt |
 | `data-dx` | waagerechte Verschiebung einer Kachel im Journey-Raster in px (Folie 04: K6 −20) |
+| `data-verzoegerung` | Verzögerung in ms für ein Element, das mit einem Schritt erscheint (Engine, `deck.js`); auf 07 seit D13 auf das Zeichnen des Wegs abgestimmt (Abschnitt 15) |
 
 `data-feld="leer"`, `data-layout="leer"` und `data-laufkopf="aus"` schalten Kopfzeile und Mini-Steuerrad der Engine
 ab; alle Bausteine einer `p-folie` liegen absolut (`pfad.css` §4).
@@ -60,9 +64,16 @@ zieht Regel, Zeilen- und Phasenlinien und zeichnet den Pfad:
   Zeile, senkrecht in der Rinnenmitte, Eckradius 34 px), `ende: "spitze"` = Pfeilspitze an x = 1792;
   `art: "neben"` mit `punkte` (Zahl oder `mitte:k1`, `rinne:4` …) = gestrichelter Nebenweg; `art: "offen"` = offenes Ende.
 - `bruecken[]` (Folie 05) mit `urteil`: `traegt` (durchgehend), `wackelt` (zwei Stücke, 12 px versetzt), `bricht`
-  (Ende vor der Rinne, zwei Reste).
+  (Ende vor der Rinne, zwei Reste). Optional bei `bricht`: `"luecke": n` (seit D13, 08.11.2026; auf 05 an Ü2 mit
+  24) – der Pfad endet n px vor der Rinnenmitte, in der Lücke stehen zwei schräge Bruchstriche „//“ (Klasse `bruch`,
+  Stil in `pfad.css`); ein Streifen in Papierfarbe (`bruch-grund`) deckt ab demselben Schritt die Haarlinie der
+  Grundlinie in der Lücke ab. Ohne `luecke` zeichnet `pfad.js` wie bisher.
 - Folie 06: Touchpoints `.e6-tp` mit `data-platz` 1–3 und `data-reihe` (Reihenfolge in der Zelle); Platz 1 trägt
   `data-id` und liegt auf dem Pfad.
+- Folie 07 (seit D13): `karte` mit `kopfY` 372, `regelY` 440, `zeilen: [714]` und `ohneRaster: true` – `pfad.js` setzt
+  nur Phasenköpfe und Regel. Weg, Stationen und Pfeile sind ein **festes SVG** in `index.html` (Weg y = 714, Phase k
+  beginnt bei x = 128 + 2k · 141,33, Mitte + 125,33) und folgen Rasteränderungen **nicht** – bei Änderungen die
+  Koordinaten im SVG von Hand nachziehen (Kasten FOLIE 07, Kopf von `07-best-practice.css`).
 
 Eine Station verschieben = `data-phase`/`data-zeile` ändern; der Pfad folgt. Alle erzeugten Pfade tragen
 `data-schritt` und `data-animation="zeichnen"` aus dem JSON.
@@ -102,7 +113,10 @@ Nach jeder Änderung: `node werkzeuge/pruefen.mjs index.html --ausgabe _test/pru
 9. **Quellzeilen** auf eine Zeile gekürzt (≤ 1.110 px); vollständige Belege in den Notizen.
 10. **Schrift:** Inter statt Libre Franklin (liegt nicht im Repository, M5 offen).
 11. **B7:** Illustration Marco aus FS1 nicht eingebunden (FS1-Bilder wurden bewusst nicht übernommen), als „offen“ vermerkt.
-12. **Wortbudget** auch auf 02 (53), 08 (41) und 09 (53) über 40 (Plan: nur 03–07).
+12. **Wortbudget** auch auf 02 (50; vor D13: 53), 08 (41) und 09 (50; vor D13: 53) über 40 (Plan: nur 03–07).
+13. **Linien-Symbole und Zeichen (seit D13, 08.11.2026):** auf 02, 06 und 07 Linien-Symbole, auf 03, 04 und 05 Urteils-
+    bzw. Signalzeichen – Abweichung von Plan 3.7 („keine Icon-Abzeichen“), von Yannick erlaubt (KI-Nachweis FS2 Nr. 30),
+    im Plan als „Abweichung D13“ vermerkt (Abschnitt 15).
 
 ## 7. Prüfstand 03.11.2026
 
@@ -388,3 +402,87 @@ Notizen 01/02/03/06/07/08 und die Übergabe-Vorlagen geprüft; Backup-Warnhinwei
 `index.html` nur Notiz 08 Schritt 2: „drei“ vor „funktionierenden nächsten Schritten“ gestrichen (der Satz nennt zwei;
 `konzept-website/danke.html` hat drei Schritt-Karten, die Nachfüll-Erinnerung ist eine eigene Fläche) – 08 jetzt 147
 Wörter, Summe 1.249 (LIESMICH §3).
+
+## 15. D13 (08.11.2026): bessere Visualisierungen
+
+Auftrag (Yannick, 08.11.2026, wörtlich): „Da ist bei einem Bild "Antwort fehlt". Und ich überlege ob man noch ein paar
+mehr Sachen besser optisch darstellen kann“ (KI-Nachweis FS2 Nr. 30). Gemeint war der gestrichelte Kasten „Antwortseite
+fehlt“ auf 04: inhaltlich gewollt, sah aber aus wie ein fehlendes Bild. Workflow D13 hat in vier Kopien KI-gestützt
+Entwürfe gebaut (02/03, 04/05, 06/07, 09/01), prüfen lassen und nachgebessert; Yannick hat **alle** übernommen und die
+Linien-Symbole ausdrücklich erlaubt („Erlauben (Empfohlen)“: Symbole bleiben, Abweichung wird im Gestaltungsplan als
+Entscheidung vermerkt – dort „Abweichung D13“, 3.6, 3.7, 5.1). Übernahme und Doku in D14. Gestaltungsentscheidungen aus
+Modellwissen; **keine neuen Fakten, Zahlen, Befund-IDs oder Quellen**, keine neuen Fremdbilder. Unverändert: Sprechtext
+(Absätze mit `data-schritt`, wörtlich – das Redeskript `../redeskript.md` gilt weiter), Klicks (23), Sollzeiten
+(735 s), Titel und Quellzeilen. Ergänzt sind nur Notizen ohne `data-schritt` (Belege „Darstellung (D13)“, „Zeigen“,
+Rückfragen) auf 02–07 und 09 sowie die Kästen „FOLIE xx“.
+
+| Folie | Änderung (sichtbar) | Neue Klassen / Technik |
+|---|---|---|
+| 01 | Pfad auf y = 800 statt 930: stößt an die Kontur des Fotos; Meta-Zeile in zwei gleich langen Zeilen, Umbruch nur an „ · “ | `01-einstieg.css`: `.e1-meta` mit `text-wrap: balance`, `.e1-meta > span` ohne Umbruch |
+| 02 | Steckbrief „Marco, 28 · fiktiv · Persona FS1“ oben links mit vier Strich-Symbolen (Schicht, Vorrat online, Notfall im Markt, Bewertungen und YouTube), darunter das Symbolbild (kürzer, 48 px Abstand); rechts die Verben des Titels als Gruppenköpfe – entdeckt · prüft · kauft – mit Symbolen (Video, Lupe, Warenkorb) und dünner Linie in Mittel warm (kein gelber Pfad, keine Knoten); Statista als Balkenpaare (dick = Energy-Drink-Konsument:innen, dünn = Ø aller), ARD/ZDF-Gruppe getrennt mit Marker auf 92 %; 61 % als Ring. Keine Hervorhebung „Marcos Kanal“ | `.e2-steckbrief` (`.e2-name`, `.e2-fiktiv`, `.e2-merkmale` mit `svg.e2-symbol`, `.e2-limbic`); `svg.e2-zeichen--1…3`, `.e2-linie--1/2`; `.e2-verb`; `.e2-balken` mit `.e2-b-name`, `.e2-b-spur`, `.e2-b-wert`, `.e2-b-schnitt`, `.e2-b-zahl` (statt `.p-skala`); `.e2-gruppe--c` mit `svg.e2-ring` (`.e2-ring-spur`, `.e2-ring-wert`, `stroke-dasharray="61 39"`), `.e2-handy-zahl`, `.e2-handy-jahr`; `.e2-persona` entfällt. Bild `b04-persona` jetzt 661,33 × 282 (`fremdbilder/register.js`) |
+| 03 | unter jedem Bandnamen ein Kästchen je Kontaktpunkt (Klick 1: 13 · 30 · 11, die 3 fehlenden Owned als offene Kästchen); Legende „■ = 1 Kontaktpunkt (Zählung H)“; „3 Owned fehlen …“ jetzt Inhalt in 28 px mit offenem Kästchen davor; Bewertungszeile mit Signalkreisen statt „+“/„−“ (Plus und Minus als offener Kreis; Plus bis zur Nacharbeit D14 gefüllt), Recherche-Minus gelb mit Kontur und Marker | `.e3-kopf` (Bandname + `.e3-einheiten` mit je einem `<i>`, `i.e3-fehlt` offen; 15 px, 2 px Abstand); `.e3-zahl` 92 px breit (Kacheln bleiben ab x = 420); `.e3-fehlen` (kein `.p-notiz` mehr) mit `.e3-fehlt-zeichen`; `.e3-legende-einheit`; `.e3-sig` in `.e3-plus`/`.e3-minus`, `.e3-minus--schwach`; Text für Screenreader „Plus:“/„Minus:“ (`.nur-screenreader`, Engine) |
+| 04 | Leerstelle als leere, durchgestrichene Browserseite mit dem Namen „keine Antwortseite“ darüber (gestrichelter 3-px-Rahmen bleibt); am offenen Ende des Nebenwegs das Zeichen „bricht“, seit der Nacharbeit D14 mit dem Wort daneben (Klick 2); kein Urteilszeichen am zentralen Weg (Urteile erst auf 05) | `.p-leerstelle.e4-leer` mit Inline-SVG 232 × 130 (`role="img"`, `aria-label`): `.e4-leer-rahmen`, `-leiste`, `-punkt`, `-adresse`, `-seite`, `-zeilen`, `-strich-grund`, `-strich`; Name `p.p-kachel-name.e4-leer-name` mit `data-zu="l1"`, `data-lage="oben"`; `svg.e4-bricht` (`.e4-bricht-grund`, `.e4-bricht-zeichen`, Knotenfarben); `p.e4-bricht-wort` (Nacharbeit D14; Bricolage 30 px, x = 1620, `aria-hidden`, weil das Zeichen schon „Zeichen bricht: …“ ansagt) |
+| 05 | Urteile als Zeichen + Wort + Form der Brücke: gelbes Dreieck mit „!“ = wackelt, Kreis mit Kreuz = bricht, Kreis mit Haken = trägt (nur in der Legende); Maßstab als Zeichenlegende (Wortlaut gleich); Ü2 betont (Zeichen 56 px, Wort 46 px), „wackelt“ in Schiefer; Brücke Ü2 als Lücke mit Bruchstrichen „//“; Belege mit Umbruch an Befundgrenzen, Ü1 „Umweg über die freie Suche, trotz Code und Landingpage“; Nebenweg-Urteil mit Zeichen | `svg.e5-signal` mit `--traegt`/`--wackelt`/`--bricht` (`.e5-s-grund`, `.e5-s-zeichen`, `.e5-s-punkt`); `.e5-mass`; `.e5-kopf` als Raster (Kennung · Zeichen · Wort); `.e5-u2` 600 px; `.p-beleg` ohne Umbruch, Zeilen mit `<br>`; JSON `"luecke": 24` an Ü2 (Abschnitt 3); `pfad.css`: `.p-pfad .bruch`, `.p-pfad .bruch-grund`; `.e5-neben` y = 952 |
+| 06 | Rangfolge sichtbar: Platz 1 Name in Bricolage 32 px mit schwarzem Knoten auf dem Pfad, Plätze 2/3 als Ring (3 px Schiefer) mit Name in Schiefer; oben rechts (frei seit D12) „Auswahl nach vier Kriterien“ mit vier Linien-Symbolen: Marco · Zielfrage · Bruch · gestaltbar (gilt für alle drei Plätze) | `.e6-tp[data-platz="1"] .e6-tp-name`; `.e6-tp:not([data-platz="1"]) .p-knoten--klein` als Ring; `.e6-kriterien` (x = 1352, y = 150) mit `.e6-kriterien-titel`, `.e6-kriterien-liste`, `svg.e6-icon`, `.e6-icon-voll` |
+| 07 | statt der Tabelle eine Brücke je Phase: fünf Spalten im Phasenraster von 05/06; oben das Vorbild (Logo, Branche, Mechanik in Kurzform), darunter ein Linien-Symbol der Mechanik mit Pfeil auf eine Station des durchgehenden „Zentraler Weg (SOLL)“ (Ü1–Ü4 in den Rinnen wie 05), unter dem Weg unsere Maßnahme in Bricolage (Marker nur auf „Koffein-Check als Text“); unten der Nebenweg Handel: Pampers Club, Code in der Packung → QR-Brücke: Regal → Squad (B4). Klick 1 baut Spalten 3–5, Ü2–Ü4, Nebenweg und Pfeilspitze mit dem Weg von links nach rechts auf. Maßnahmen sichtbar gekürzt („die Werbung ist gekennzeichnet“, „verlinkt aus Help-Center und KI-Dateien“ nur noch im Sprechtext) | `.e7-tabelle`, `.e7-zeile`, `.e7-phase`, `.e7-vorbild` entfallen; `p-karte` mit Phasenköpfen und JSON `karte` (`ohneRaster`, Abschnitt 3); `.e7-band--vorbild`/`--massnahme`, `.e7-wegname`; `svg.p-pfad.e7-pfad` als festes SVG (Weg y = 714; `g.e7-station` mit `.e7-pfeil`, `.e7-pfeilspitze` und vollem Knoten r = 16 in `--p-knoten-grund` – bis zur Nacharbeit D14 Ring); `.e7-ue--1…4`; `.e7-spalte--1…5` (`.e7-logo`, `.e7-zusatz`, `.e7-branche`, `.e7-mechanik`, `svg.e7-icon`, `.e7-massnahme`); `.e7-neben` (`.e7-neben-name`, `-vorbild`, `-mechanik`, `.e7-icon--neben`, `.e7-icon--qr`, `.e7-neben-linie`, `-massnahme`); `data-verzoegerung` 40–850 ms (Klick 1; Station und Spalte 5 seit der Nacharbeit D14 500 statt 390 ms; beim Betreten Stationen 1/2 mit `data-animation="einblenden"` nach 150/700 ms). Logo-Höhen neu: YouTube 30, Apple 46, zooplus 40, OTTO 34, Philips 27, Pampers 46 px (bis D13 26/30/28/24/22/34). Rückfall ohne Fremdbilder: Name in Bricolage 38 px wie eine Wortmarke (bis D13 fett) |
+| 09 | Kennzahlen als Messpunkte Ü1–Ü4 direkt am Pfad (Ring 64 px in den Rinnen der Bildleiste, Kennzahl darüber, Ü1–Ü2 mit Klammer), Kopf „Kennzahlen je Überleitung (Vorschlag, H)“; Bildleiste über den Satzspiegel verteilt; Kernsätze unter „Fazit“; „Ergebnis (S. 111)“ rechts mit drei Zielen leiser gesetzt; keine Zeichen vor den Zeilen | `.e9-kennzahlen`, `.e9-k`, `.e9-k-ue` entfallen; `.e9-saetze-kopf`; `.e9-ergebnis` (jetzt Block) mit `.e9-ergebnis-kopf`, `.e9-ziele`, `.e9-ziel`, `.e9-ziel-wort`, `.e9-ziel-wie`; `.e9-messung` mit `svg.e9-messlinien`, `.e9-mess-kopf`, `.e9-kz--12/-3/-4`, `.e9-mp--1…4` (x = 408, 776, 1144, 1512); Pfad y = 774 (bis D13 762); `.e9-k-bild` absolut bei x = 128 + n · 368 |
+
+**Neue Komponenten** (Gestaltungsplan 3.6): Urteilszeichen (05; 04 am Nebenweg), Signalkreise (03), „bricht“ mit Lücke
+und Bruchstrichen (05, `pfad.js`-Option `"luecke"`, Abschnitt 3), Messpunkt (09), Rang-Ring (06), Kästchen je
+Kontaktpunkt (03), Ring-Kennzahl (02), Balkenpaar (02), Linien-Symbol (02, 06, 07); die Leerstelle (04) als leere,
+durchgestrichene Browserseite. Farben nur aus den Tokens von `pfad.css`; Gelb nur mit schwarzer Kontur oder als Fläche
+unter Schwarz. Im Modus dunkel sind auf 05 „wackelt“ und „bricht“ beide gelb – nur die Form unterscheidet sie.
+
+**Linien-Symbole erlaubt** (Entscheidung Yannick, KI-Nachweis FS2 Nr. 30): schlichte Strich-Symbole in Schriftfarbe,
+ohne Fläche und ohne Rahmen, immer neben einem Wort, als Inline-SVG direkt in `index.html` (kein Bild, kein Eintrag in
+`fremdbilder/register.js`). KI-gestützt erstellt, keine Fremdbilder, keine KI-Bilder (QUELLEN §3). Neue Symbole nur in
+diesem Stil; Icon-Abzeichen (Symbol auf Fläche, im Kreis oder im Rahmen als Schmuck) bleiben ausgeschlossen (Abschnitt 1).
+
+**Doku und Kommentare (D14):** `../gestaltungsplan.md` (Abweichung D13, 1.3, 2, 3.6, 3.7, 4 b07, 5.1, 6.2, 6.4–6.7, 8.1,
+9.2, 11.4, 13.1 Nr. 14), LIESMICH Kopf, §8, §10, §11, §12 und neu §14, QUELLEN Kopf, §3, §6, `fremdbilder/register.js`
+(Feld `platz` von 02, 04, 05, 07, 09), Kästen „FOLIE 02–07“ und „FOLIE 09“ und Kopfkommentare der Folien-CSS (die
+offene Entscheidung zu den Symbolen → „erlaubt von Yannick am 08.11.2026“, Nr. 30), `../README.md`.
+
+**Nacharbeit nach der Schlussprüfung (D14, 08.11.2026).** Ein Prüf-Agent hat die zusammengeführte Fassung geprüft:
+0 Fehler, kein hoher, ein mittlerer und fünf niedrige Befunde (Gestaltungsurteile aus Modellwissen). Umgesetzt wurden
+der mittlere und die niedrigen, die klar und klein sind; Sprechtext, Zahlen, Klicks und `data-zeit` sind unverändert.
+
+| Befund | Schwere | Umsetzung |
+|---|---|---|
+| D14-01 | mittel | 07: Stationen als kleine volle Knoten (r = 16, Knotenfarben, ohne Ziffer) statt leerer Ringe. Die Stationen sind die Top-Touchpoints, also Platz 1 aus 06 (dort voller Knoten); ein leerer Ring heißt auf 06 Platz 2/3. Plan 3.6 „Knoten“ |
+| D14-02 | niedrig | 07: Beim Betreten erschienen die Stationen vor dem Weg. Stationen 1/2 jetzt mit `data-animation="einblenden"` nach 150/700 ms (Weg erreicht sie nach etwa 240/750 ms); bei Klick 1 Spalte und Station 5 nach 500 statt 390 ms (Weg dort nach etwa 530 ms). Zurückblättern, Sprung und „Bewegung reduzieren“ zeigen wie bisher sofort den Endzustand |
+| D14-03 | niedrig | 04: neben dem Zeichen „bricht“ das Wort „bricht“ (Plan 3.6: Urteil immer als Wort und Form) |
+| D14-04 | niedrig | 03: Plus als offener Kreis mit + (vorher gefüllt). Der volle Kreis mit Kreuz bleibt allein „bricht“ (04/05) |
+
+Nicht umgesetzt (Gruppe entscheidet):
+
+- **D14-03, Legende auf 05:** „bricht = Antwort fehlt dort, wo entschieden wird“ passt genau zu Ü2, aber nur
+  ungefähr zum Nebenweg (dort fehlt der Anschluss vom Regal in den Squad, ✔ B01, ✔ B03). Eine Ergänzung wie „… oder
+  Anschluss fehlt“ ändert den Wortlaut der Legende; das gab es so schon vor D13.
+- **D14-05, Wegname auf 07:** bleibt „Zentraler Weg (SOLL)“. Es ist derselbe Weg mit demselben Namen wie auf 06 (Plan 3.6
+  „Wegbeschriftung“); dort ist Platz 1 über die vier Kriterien hergeleitet, nur die Plätze 2–3 tragen „H“. „SOLL“
+  kennzeichnet den Zielzustand; „H“ steht an „unsere Maßnahme am Top-Touchpoint (H)“ und in der Quellzeile
+  („Maßnahmen: H“). „Zentraler Weg (SOLL, Vorschlag)“ wäre zu lang (stößt an den Pfeil der ersten Station, x = 536).
+  Kurze Möglichkeit, falls gewünscht: „Zentraler Weg (SOLL, H)“.
+- **D14-06:** keine Folienänderung nötig; die sichtbaren Textänderungen aus D13 stehen unten zur Freigabe.
+
+**Sichtbare Textänderungen aus D13 (Befund D14-06; die Gruppe gibt die Formulierungen frei).** Keine neuen Zahlen und
+keine neuen Befund-IDs; der Sprechtext enthält alle entfallenen Teile weiter wörtlich.
+
+- 05 Ü1, Beleg: „Code und Landingpage gibt es, Marco geht aber über die freie Suche weiter“ → „Umweg über die freie
+  Suche, trotz Code und Landingpage“. Bei Ü2–Ü4 ist der Trenner „ · “ teils durch einen Zeilenumbruch ersetzt.
+- 07 Inspiration: Mechanik „Tipp im Video führt direkt zum Produkt“ → „Produkt-Tag im Video“ (gedeckt durch ✔ X01,
+  Dossier Kap. 7a: Produkt-Tags; der Sprechtext sagt weiter „ein Tipp im Video“). Maßnahme „Code-Landingpage mit zwei
+  Wegen, „Werbung“ sichtbar“ → „Code-Landingpage mit zwei Wegen“ (die Werbekennzeichnung, ✔ R25, steht nur noch im
+  Sprechtext).
+- 07 Recherche: Mechanik „heikle Frage selbst beantwortet, als Text“ → „heikle Frage selbst beantwortet“; Maßnahme
+  „Koffein-Check als Text, verlinkt aus Help-Center und KI-Dateien“ → „Koffein-Check als Text“.
+- 07 Kauf: „Lieferzeit schon am Artikel“ → „Lieferzeit am Artikel“. Bindung: „Nachfüll-Erinnerung als Opt-in“ →
+  „Nachfüll-Erinnerung (Opt-in)“. Nebenweg: „QR-Brücke vom Regal in den Squad (B4)“ → „QR-Brücke: Regal → Squad (B4)“.
+- 07 Aufbau: Die Zuordnung Vorbild → Überleitung je Zeile („Ü1“, „Ü2“, „Ü2/Ü3“, „Ü3“, „Ü4“) und der Spaltenkopf
+  „Phase · Überleitung“ entfallen; Ü1–Ü4 stehen jetzt in den Rinnen, neu sind die Phasenköpfe mit den 5 As, der Wegname
+  „Zentraler Weg (SOLL)“ und „(H)“ an „unsere Maßnahme am Top-Touchpoint“. Die Namen der Vorbilder stehen als Logo
+  (Rückfall: Name), die Branche in einer eigenen Zeile.
+- 04: „Antwortseite fehlt“ → Name „keine Antwortseite“; seit der Nacharbeit D14 zusätzlich das Wort „bricht“.
+
+**Prüfstand D13 (nach D14):** `pruefen.mjs index.html --schritte` (hell, mit Bildern): **0 Fehler, 16 Warnungen** (vorher 17), 38 von 38 Fremdbildern, 0 externe Anfragen, 33 Bildschirmfotos; dunkel (`--modus dunkel`): 0 Fehler, 16 Warnungen, 38 Fremdbilder; Rückfall (`--oeffentlich --schritte --druck`): 0 Fehler, 16 Warnungen, 0 Fremdbilder, Notfall-PDF 18 von 18 Seiten. Die 16 Warnungen sind laut Plan erlaubt: 7 × Wortbudget (02: 50, 03: 49, 04: 62, 05: 68, 06: 67, 07: 72, 09: 50; im Rückfall 03: 51, 07: 78) und 9 × Schrift 24–26 px (Notizen und Belege auf 04/05, wie vor D13). Klicks 23, Sollzeit 735 s (unverändert). Folie 08 und B1–B8 pixelgleich mit dem Stand vor D13 (Prüf-Agent D14); B9 nennt seit D14 in der Tabelle „Finalisierung und Visualisierungen 08.11.2026“ und in der Notiz Nr. 30 / D13, D14. Sprechtext wörtlich unverändert, `wortlaut-pruefen.py`: 33 Einträge, 0 Abweichungen – das Redeskript gilt unverändert. Läufe von Claude am 08.11.2026 nach der Nacharbeit D14.

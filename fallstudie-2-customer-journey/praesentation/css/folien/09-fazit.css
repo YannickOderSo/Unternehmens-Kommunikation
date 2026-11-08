@@ -2,6 +2,11 @@
    09-fazit.css – Folie 09 · Fazit, Kennzahlen, Videobotschaft, Fragen (gelbe Bühne)
    Gestaltungsplan 5.1 Zeile 09 und 9.5. Schritt 0: Fazit und Kennzahlen, der
    Pfad läuft von Rand zu Rand (einzige Ausnahme, data-ueberlauf-ok).
+   Seit D13 (08.11.2026, KI-gestützter Gestaltungsvorschlag, von Yannick übernommen –
+   KI-Nachweis FS2 Nr. 30; Prüfung durch die Gruppe offen): Kennzahlen als Messpunkte
+   Ü1–Ü4 (Ringe) direkt am Pfad, Kernsätze unter „Fazit“, Ergebnis rechts leiser
+   gesetzt; bewusst keine Zeichen/Icons vor den Zeilen (nach Plan 3.7 wären seit
+   08.11.2026 schlichte Linien-Symbole erlaubt); Inhalte und Belege unverändert.
    Klick 1: Videobühne mit Handyrahmen mittig (Fazit-Ebene ausgeblendet).
    Klick 2: Videobühne aus, Fazit wieder sichtbar, dazu „Fragen?“ und Sprungliste.
    ============================================================================= */
@@ -17,38 +22,90 @@
 #f09:has(.e9-fragen.schritt-an) .e9-fazit-ebene { visibility: visible; opacity: 1; }
 #f09:has(.e9-fragen.schritt-an) .e9-video-buehne { visibility: hidden !important; opacity: 0 !important; }
 
-#f09 .e9-saetze {
-  left: 128px;
-  top: 378px;
-  width: 816px;
-  display: grid;
-  gap: 18px;
-}
-#f09 .e9-kennzahlen { left: 976px; top: 378px; width: 816px; }
-#f09 .e9-k-kopf { font-size: 22px; line-height: 1.25; color: var(--p-schrift-2); margin-bottom: 6px; }
-#f09 .e9-k { font-size: 28px; line-height: 1.25; margin-top: 4px; }
-#f09 .e9-k-ue { font-size: 22px; font-weight: 650; color: var(--p-schrift-2); margin-right: 8px; }
-#f09 .e9-ergebnis { font-size: 28px; line-height: 1.25; margin-top: 14px; }
+/* Drei Kernsätze unter dem Meta-Kopf „Fazit“ (D13, 08.11.2026), bewusst ohne Zeichen davor. Die Zeilen
+   beider Spalten (Fazit, Ergebnis) stehen im selben Raster von 54 px, damit die Folie ruhig bleibt. */
+#f09 .e9-saetze-kopf,
+#f09 .e9-ergebnis-kopf { top: 392px; font-size: 22px; line-height: 1.2; color: var(--p-schrift-2); }
+#f09 .e9-saetze-kopf { left: 128px; }
+#f09 .e9-saetze,
+#f09 .e9-ziele { display: grid; grid-auto-rows: 42px; align-items: center; gap: 12px; }
+#f09 .e9-saetze { left: 128px; top: 426px; width: 816px; }
+#f09 .e9-saetze .p-satz { white-space: nowrap; }
+
+/* Ergebnis nach S. 111 rechts: drei Ziele, bewusst leiser als die Kernsätze (30 px Inter 600 statt 36 px
+   Bricolage 700), damit der Marker-Satz Vorrang behält */
+#f09 .e9-ergebnis { left: 1024px; top: 392px; width: 768px; }
+#f09 .e9-ergebnis-kopf { position: static; margin-bottom: 8px; }
+#f09 .e9-ziel { white-space: nowrap; }
+#f09 .e9-ziel-wort { font-size: 30px; font-weight: 600; line-height: 1.2; }
+#f09 .e9-ziel-wie { font-size: 28px; line-height: 1.2; color: var(--p-schrift-2); }
 
 #f09 .e9-pfad .gelb { stroke-width: 14; }
-/* Bildleiste: Kacheln 192 × 108 (seit 03.11.2026, D06; vorher 132 × 74), mittig auf dem Pfad (y = 762) und
-   mittig unter den Phasenspalten (x = 536 + n · 282,67); im Satzspiegel, nur der Pfad darf überlaufen */
-#f09 .e9-leiste { left: 440px; top: 708px; width: 1322.67px; height: 108px; }
+/* Bildleiste: Kacheln 192 × 108 (seit 03.11.2026, D06), mittig auf dem Pfad (y = 774; bis D13 762). Seit D13 (08.11.2026) über den
+   ganzen Satzspiegel verteilt (x = 128 + n · 368, letzte Kachel endet bei 1792), damit die Rinnen 176 px breit sind und
+   die Messpunkte Ü1–Ü4 mit ihren Kennzahlen Platz haben (vorher mittig unter den Phasenspalten, Rinnen 91 px).
+   Nur der Pfad darf überlaufen. */
+#f09 .e9-leiste { left: 128px; top: 720px; width: 1664px; height: 108px; }
 #f09 .e9-k-bild { position: absolute; top: 0; width: 192px; height: 108px; }
 #f09 .e9-k-bild:nth-child(1) { left: 0; }
-#f09 .e9-k-bild:nth-child(2) { left: 282.67px; }
-#f09 .e9-k-bild:nth-child(3) { left: 565.33px; }
-#f09 .e9-k-bild:nth-child(4) { left: 848px; }
-#f09 .e9-k-bild:nth-child(5) { left: 1130.67px; }
+#f09 .e9-k-bild:nth-child(2) { left: 368px; }
+#f09 .e9-k-bild:nth-child(3) { left: 736px; }
+#f09 .e9-k-bild:nth-child(4) { left: 1104px; }
+#f09 .e9-k-bild:nth-child(5) { left: 1472px; }
 #f09 .e9-k-bild[data-status="leer"] { padding: 6px 8px; display: flex; align-items: flex-end; }
 /* Bildnachweis nur, solange die Bildleiste zu sehen ist (nicht während der Videobühne) */
 #f09:has(.e9-video-buehne.schritt-an):not(:has(.e9-fragen.schritt-an)) .p-bildquelle { visibility: hidden; }
 #f09 .e9-k-bild[data-status="leer"][data-art="screenshot"] { padding-top: 16px; }
 #f09 .e9-k-bild[data-status="leer"][data-art="screenshot"]::before { height: 10px; }
 
+/* Messpunkte Ü1–Ü4 (D13): Ring 64 px auf dem Pfad in der Rinnenmitte (x = 408, 776, 1144, 1512) – Fläche in
+   Bühnenfarbe, 7-px-Kontur und Kennung in Schriftfarbe (auf Gelb: gelb mit schwarzem Ring; ?buehne=schwarz:
+   schwarz mit gelbem Ring). Bewusst kein voller Knoten (pfad.css 5.8), der für Moment der Wahrheit/Platz 1 steht.
+   Kennzahl direkt darüber, mit Haarlinie (3 px Schrift) zum Ring; Ü1–Ü2 teilen sich eine Kennzahl (Klammer). */
+#f09 .e9-messung { left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
+#f09 .e9-messung > * { position: absolute; }
+#f09 .e9-messlinien { left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; z-index: 1; }
+#f09 .e9-messlinien path { fill: none; stroke: var(--p-schrift); stroke-width: 3; stroke-linecap: square; }
+#f09 .e9-mp {
+  box-sizing: border-box;
+  top: 742px;
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  border: 7px solid var(--p-schrift);
+  border-radius: 50%;
+  background: var(--p-papier);
+  color: var(--p-schrift);
+  display: grid;
+  place-items: center;
+  font-family: var(--schrift-display);
+  font-weight: 800;
+  font-stretch: 85%;
+  font-size: 26px;
+  line-height: 1;
+  z-index: 4;
+}
+#f09 .e9-mp--1 { left: 408px; }
+#f09 .e9-mp--2 { left: 776px; }
+#f09 .e9-mp--3 { left: 1144px; }
+#f09 .e9-mp--4 { left: 1512px; }
+#f09 .e9-kz b { font-weight: 650; }
+#f09 .e9-kz {
+  bottom: 390px;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+#f09 .e9-kz--12 { left: 592px; }
+#f09 .e9-kz--3 { left: 1144px; }
+#f09 .e9-kz--4 { left: 1512px; }
+#f09 .e9-mess-kopf { left: 128px; bottom: 390px; font-size: 22px; line-height: 1.25; color: var(--p-schrift-2); }
+
 #f09 .e9-fragen {
   left: 128px;
-  top: 846px;
+  top: 858px;
   width: 1664px;
   display: flex;
   align-items: center;

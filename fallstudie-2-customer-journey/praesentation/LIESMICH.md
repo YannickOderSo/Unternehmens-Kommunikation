@@ -12,7 +12,11 @@ Status ✔ belegt · ✎ korrigiert · ~ unsicher · **H** Hypothese). **Keine e
 Workshop und keine eigenen Fotos. Die Folien sagen ehrlich, worauf sie beruhen – Dossier mit Befund-IDs, Abrufe von
 Shop, Help-Center, Suche und Bewertungsportalen (30.10./03.11.2026), KI-gestützte Stichproben (~ B20–B24) –, und B1
 zeigt Methode und Grenzen. Es gibt keine „offen“-Platzhalter und kein „(vorläufig)“ mehr. Neu auf Folie 08: Knopf
-„Spot ansehen ▶“ für den Werbespot „Mein Moment.“ (§5). Entstehung: [`AUTOREN.md`](AUTOREN.md), Abschnitt 8 und 14.
+„Spot ansehen ▶“ für den Werbespot „Mein Moment.“ (§5). **Seit D13 (08.11.2026, KI-Nachweis FS2 Nr. 30)** zeigen 01–07 und
+09 ihre Inhalte stärker als Grafik – u. a. auf 04 eine leere, durchgestrichene Browserseite „keine Antwortseite“, auf 05
+Urteilszeichen, auf 07 eine Brücke Vorbild → Maßnahme statt der Tabelle, auf 09 Messpunkte am Pfad; schlichte
+Linien-Symbole hat Yannick erlaubt. Fakten, Klicks, Sollzeiten und Sprechtext sind unverändert (§14). Entstehung:
+[`AUTOREN.md`](AUTOREN.md), Abschnitt 8, 14 und 15.
 **Fassung mit Bildern (Standard seit 03.11.2026):** Die Präsentation zeigt Screenshots, Werbe- und Community-Bilder von
 HOLY und die Logos der Vorbilder aus `fremdbilder/` und spielt auf Folie 09 die Videobotschaft des Gründers aus `video/` –
 im Repository, auf GitHub Pages und im Hörsaal gleich. **Rechtestatus:** Die Veröffentlichung der Fremdbilder hat die
@@ -199,13 +203,16 @@ PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core \
 Ergebnis am 03.11.2026 (nach der Überarbeitung D08): **0 Fehler** in der Fassung mit Bildern (hell und dunkel,
 38 von 38 Fremdbildern eingesetzt, 38 Schlüssel im Register) und im Rückfall ohne Fremdbilder (`--oeffentlich`, mit
 Notfall-PDF 18 Seiten), je 17 Warnungen wie vorher, 0 externe Anfragen; Einzelheiten §12.
-**Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3, 3.4 und 3.6): Wortbudget über 40 auf 03–07 (Plan) sowie auf 02 (53),
-08 (42) und 09 (53) – **nicht im Plan vorgesehen, Kürzung prüfen**; Notizen am Element in 24 px (03, 04, 05) und
+**Erlaubte Warnungen** (bewusst, Gestaltungsplan 1.3, 3.4 und 3.6): Wortbudget über 40 auf 03–07 (Plan; seit D13 05 mit
+68 statt 72 und 07 mit 72 statt 91 sichtbaren Wörtern) sowie auf 02 (50; vor D13: 53),
+08 (42) und 09 (50; vor D13: 53) – **nicht im Plan vorgesehen, Kürzung prüfen**; Notizen am Element in 24 px (04, 05;
+bis D13 auch 03 – dort steht „3 Owned fehlen …“ seit D13 in 28 px, die Schriftwarnung entfällt) und
 Belegzeilen in 26 px (04, 05) laut Plan 3.6 (Ausnahme in 3.4). **Überlauf-Ausnahme:** nur der geschlossene Pfad auf
 09 (`svg.e9-pfad`, `data-ueberlauf-ok`) läuft von Rand zu Rand; die Bildleiste darunter liegt im Satzspiegel. `_test/` ist per `.gitignore` ausgeschlossen.
 Sichtprüfung zusätzlich (Plan 11.3): kein Gelb ohne schwarze Kontur auf Creme, kein Mittel warm auf Gelb, kein Ocker.
 
 **Ergebnis am 08.11.2026 (D12, finale Fassung):** siehe §13 und AUTOREN §14.
+**Ergebnis nach D13 (08.11.2026, Visualisierungen):** hell, dunkel und Rückfall je 0 Fehler, 16 Warnungen (vorher 17), Notfall-PDF 18 Seiten; Einzelheiten §14, AUTOREN §15.
 `werkzeuge/pruefen.mjs` ist gegenüber FS1 um die Bildprüfungen und `--oeffentlich` erweitert (§12, Kopf der Datei).
 `werkzeuge/referent-test.mjs` ist aus FS1 **unverändert** übernommen und prüft FS1-Folien (Rad auf f10/f12,
 Sprungliste der FS1-Folie 12): Mit FS2 bestehen nur die allgemeinen Prüfungen (Fenster verbunden, Start-Knopf), die
@@ -241,6 +248,11 @@ Was bleibt, kann nur die Gruppe tun:
   (13.3); Logo-Freigabe des Gründers schriftlich mit Umfang ablegen (Empfehlung der Abnahme D05).
 - [ ] **Fremdbilder sichten** (Kontaktbogen `intern/kontaktbogen.png`), v. a. die Symbolbilder 02/03/04/05/09.
 - [ ] **Rückfrage „Habt ihr selbst getestet/befragt?“** üben: ehrlich „nein“ – B1 (Methode, Grenzen) und B5.
+- [ ] **Neue Darstellung (D13) ansehen und üben** (§14): auf 07 „die Werbung ist gekennzeichnet“ sagen (steht nicht
+  mehr auf der Folie), auf 09 Bilder = Weg heute, Kennzahlen = neuer Weg; im Beamer-Test die 22–24-px-Meta auf
+  06/07/09 aus der letzten Reihe prüfen. Dazu die **sichtbaren Textänderungen aus D13 freigeben** (Liste in
+  AUTOREN §15) und zwei offene Punkte der Schlussprüfung entscheiden: Legende „bricht“ auf 05 um „Anschluss fehlt“
+  ergänzen? Wegname auf 07 „Zentraler Weg (SOLL, H)“? (beides bisher nicht geändert, §14).
 - [ ] **KI-Nachweis** FS2 Nr. 26 / D12 prüfen und den Prüfstatus eintragen; danach B9 „Prüfung“ nachziehen.
 - [ ] Technik, optional: Libre Franklin (M5) statt Inter; `werkzeuge/referent-test.mjs` für FS2 anpassen.
 
@@ -253,7 +265,7 @@ Was bleibt, kann nur die Gruppe tun:
 | `css/tokens.css`, `css/deck.css`, `css/komponenten.css`, `js/deck.js`, `js/komponenten.js` | Engine aus FS1, unverändert |
 | `css/folien/pfad.css` | Thema „Pfad“ (Farben fest, überschreibt die Ocker-Deckelung von `tokens.css`; Komponenten `p-…`) |
 | `css/folien/01-einstieg.css` … `09-fazit.css`, `10-backup.css` | je Folie eine Datei |
-| `js/folien/pfad.js` | Laufleiste S. 111, Journey-Raster (04–06), Pfad aus den Kachelmitten |
+| `js/folien/pfad.js` | Laufleiste S. 111, Journey-Raster (04–06), Pfad aus den Kachelmitten; seit D13 auch die Kopfzeile von 07 (Weg dort festes SVG) und die Brücke „bricht“ mit Lücke und Bruchstrichen (05, Option `"luecke"`, AUTOREN §3) |
 | `js/folien/08-spot.js`, `css/folien/08-spot.css` | Werbespot auf Folie 08: Knopf „Spot ansehen ▶“, Bühne über der Präsentation, Tasten, Fehlerfall (§5; D12) |
 | `../werbevideo/holy-werbespot.mp4` (+ `-poster.jpg`, `.de.vtt`) | Werbespot „Mein Moment.“ (24,5 s), liegt außerhalb von `praesentation/`, per Pfad eingebunden; studentisches Konzept, keine Werbung der HOLY Softdrinks GmbH, Stimme KI-generiert (KI-Nachweis FS2 Nr. 24 / D11) |
 | `js/folien/09-fazit.js` | Videobotschaft (Schritt 1) und Sprungliste |
@@ -284,7 +296,7 @@ werden nicht veröffentlicht (seit D08: die sechs Bilder der Vorbilder liegen zu
 |---|---|---|
 | wann | immer: Repository, GitHub Pages, Hörsaal | nur wenn `fremdbilder/register.js` fehlt, mit `?kacheln=rueckfall` oder im Prüflauf mit `--oeffentlich` |
 | Bildkacheln 01–05, 09 | Screenshots, Werbe- und Community-Bilder von HOLY (Symbolbilder als solche beschriftet) | beschriftete Platzhalter (`data-status="leer"`, z. B. „Produktbild von HOLY · nur in der Fassung mit Bildern“; bis D12 „offen“) bzw. Rückfall-Grafik (Blog auf 03) |
-| Folie 07 | Logos der Vorbilder statt der Namen (einfarbig dunkel, im Modus dunkel hell) | Namen fett |
+| Folie 07 | Logos der Vorbilder statt der Namen (einfarbig dunkel, im Modus dunkel hell) | Namen fett (seit D13 in Bricolage wie eine Wortmarke) |
 | Folie 08 | Bildschirmfotos der Konzept-Webseite **mit** HOLY-Produktbildern (`fremdbilder/konzept-0n-….png`) | Bildschirmfotos aus `bilder/` (ohne fremde Bilder) |
 | Folie 09 | Videobotschaft aus `video/gruender-video.mp4` (hängt nicht an `register.js`) | wie links |
 | Bildnachweis | eine Zeile unten auf jeder Folie mit Bildern, voller Nachweis je Bild in den Notizen (Taste P) | keine Zeile |
@@ -426,3 +438,58 @@ dem Umbau im Arbeitsordner der Sitzung (nicht im Repository).
   fest), Übergabesätze aus Gestaltungsplan 9.3 (nur die Namen Vorschlag), Rechtestatus B8 vollständig, Kontrollpunkte
   und Reserve aus `data-zeit` gerechnet und gegen Gestaltungsplan 10.1/10.2 geprüft, Warnhinweise im Backup als Kasten;
   in `index.html` nur 08 Schritt 2 „drei“ gestrichen (§3).
+
+## 14. Visualisierungen (08.11.2026, D13)
+
+Anlass (Yannick, KI-Nachweis FS2 Nr. 30): Auf 04 sah der gestrichelte Kasten „Antwortseite fehlt“ wie ein fehlendes Bild
+aus, und mehr Inhalte sollten optisch besser dargestellt werden. Workflow D13 hat KI-gestützt Entwürfe gebaut, prüfen
+lassen und nachgebessert; Yannick hat **alle** übernommen und schlichte Linien-Symbole ausdrücklich erlaubt (Abweichung
+von Gestaltungsplan 3.7, dort als „Abweichung D13“ vermerkt). Gestaltungsurteile stammen aus Modellwissen. **Gleich
+geblieben:** Fakten, Zahlen und Befund-IDs (keine neuen Quellen, keine neuen Fremdbilder), Titel, Klicks (23),
+Sollzeiten (735 s, §3) und der Sprechtext (Absätze mit `data-schritt`, wörtlich) – das Redeskript gilt weiter.
+Technik und Klassen: AUTOREN §15.
+
+| Folie | Was sich ändert |
+|---|---|
+| 01 | Der Pfad (Klick 1) stößt jetzt an die Kontur des Fotos; die Meta-Zeile steht in zwei gleich langen Zeilen |
+| 02 | Steckbrief „Marco, 28“ (fiktiv) oben links mit vier Strich-Symbolen, das Symbolbild darunter; rechts die Verben des Titels – entdeckt, prüft, kauft – mit Symbolen (Video, Lupe, Warenkorb) und einer dünnen Linie; Balkenpaare (dick = Energy-Drink-Konsument:innen, dünn = Ø aller), ARD/ZDF-Gruppe getrennt, Marker auf 92 %; 61 % als Ring. Kein Kanal ist als „Marcos Kanal“ hervorgehoben |
+| 03 | Je Kontaktpunkt ein Kästchen (13 · 30 · 11, drei offene = die fehlenden Owned), Legende „■ = 1 Kontaktpunkt (Zählung H)“; „3 Owned fehlen …“ größer; Bewertungszeile mit Signalkreisen (offen mit + = stärkt, offen mit − = schwächt; Recherche-Minus gelb) |
+| 04 | Die Leerstelle ist eine leere, durchgestrichene Browserseite mit dem Namen „keine Antwortseite“; am offenen Ende des Nebenwegs Zeichen und Wort „bricht“ (Klick 2); am zentralen Weg kein Urteilszeichen |
+| 05 | Urteile als Zeichen und Wort: gelbes Dreieck mit „!“ = wackelt, Kreis mit Kreuz = bricht (Kreis mit Haken = trägt, nur in der Legende); der Maßstab ist jetzt die Zeichenlegende; Ü2 größer, im Pfad eine Lücke mit Bruchstrichen „//“; Belege zeilenweise |
+| 06 | Platz 1 groß in der Titelschrift auf dem Pfad, Plätze 2/3 als Ring in Schiefer; oben rechts „Auswahl nach vier Kriterien“ mit vier Linien-Symbolen (Marco · Zielfrage · Bruch · gestaltbar) |
+| 07 | Statt der Tabelle eine Brücke je Phase: Vorbild (Logo, Branche, Mechanik) → Linien-Symbol → Station am durchgehenden „Zentraler Weg (SOLL)“ (kleiner voller Knoten wie Platz 1 auf 06) → unsere Maßnahme; unten der Nebenweg Handel mit Pampers Club → QR-Brücke. Mit Klick 1 baut sich der Rest mit dem Weg von links nach rechts auf |
+| 09 | Die Kennzahlen stehen als Messpunkte Ü1–Ü4 direkt am Pfad (Kopf „Kennzahlen je Überleitung (Vorschlag, H)“), die Bildleiste reicht über die ganze Breite, „Ergebnis (S. 111)“ steht rechts leiser |
+
+**Worauf die Vortragenden achten müssen**
+
+- **07:** „… und die Werbung ist gekennzeichnet“ steht **nicht mehr sichtbar** auf der Folie (vorher in der Maßnahme der
+  Inspiration) – es steht im Sprechtext und muss gesagt werden. Ebenso „verlinkt aus Help-Center und KI-Dateien“ beim
+  Koffein-Check. Die Symbole zeigen nur die Mechanik der Vorbilder, sie sind kein Beleg.
+- **09:** Die Bilder der Leiste zeigen Marcos Weg **heute** (IST, Screenshots und Fremdbilder), die Kennzahlen messen
+  den **neuen** Weg. Die Kennzahlen sind ein Vorschlag (H), keine gemessenen Werte. Zeigen: mit offener Hand den Pfad
+  entlang; Ü1 und Ü2 teilen sich die Weiterklicks (Notiz „Zeigen“).
+- **04:** Bei Klick 1 kurz auf die leere, durchgestrichene Seite zeigen. Rückfrage „Das Help-Center beantwortet doch die
+  Koffein-Frage?“ → ja, aber knapp und auf der alten Domain (✔ S27), auf den Produktseiten nur im Etikettbild (✎ S31);
+  „keine Antwortseite“ meint eine eigene Antwortseite in Website und Shop – der Blog ist leer (✔ L39; Notiz der Folie).
+- **05:** An Ü2 (Kreuz und Bruchstriche) stehen bleiben; die Zeichen erklärt die Legende „Maßstab“. **Dunkelmodus:**
+  „wackelt“ und „bricht“ sind dort beide gelb und nur über die Form (Dreieck bzw. Kreis mit Kreuz) zu unterscheiden –
+  hell ist Standard, Dunkelmodus nur im Notfall (§2).
+- **02:** Rückfrage „Messen die Balken das Entdecken und Prüfen?“ → Nein: Die Verben sind die Lesart des Titels, die
+  Balken zeigen allgemeine Nutzung (Notiz).
+- **06:** Die Kriterien-Legende gilt für alle drei Plätze; auch Plätze 2/3 können alle vier Kriterien erfüllen.
+- **Beamer-Test** (Di 10.11.): die Meta-Zeilen in 22–24 px auf 06 (Kriterien-Legende), 07 (Branche, Zeilennamen,
+  Ü1–Ü4) und 09 (Kopf der Kennzahlen, Kennungen in den Messpunkten) aus der letzten Reihe prüfen, dazu die kleinen
+  Kästchen auf 03 (sind die offenen Kästchen zu erkennen?).
+- **Rückfrage „Was ist KI?“:** Linien-Symbole und Zeichen sind KI-gestützt als Inline-SVG erstellt – keine Fremdbilder,
+  keine KI-Bilder (QUELLEN §3, §6).
+
+**Nacharbeit nach der Schlussprüfung (D14):** 07 Stationen als kleine volle Knoten (vorher leere Ringe, die auf 06
+Platz 2/3 bedeuten) und beim Betreten erst, wenn der Weg dort ankommt · 04 neben dem Zeichen das Wort „bricht“ · 03 Plus
+als offener Kreis (der volle Kreis mit Kreuz heißt auf 04/05 „bricht“). Nicht geändert, die Gruppe entscheidet: die
+Legende „bricht = Antwort fehlt dort, wo entschieden wird“ auf 05 (passt zu Ü2, zum Nebenweg nur ungefähr – dort fehlt
+der Anschluss vom Regal in den Squad) und der Wegname auf 07 (Möglichkeit: „Zentraler Weg (SOLL, H)“). Rückfrage auf
+04 „Warum steht dort schon ‚bricht‘?“ → Das Urteil zum Nebenweg; die Urteile mit Legende kommen auf 05. Einzelheiten
+und die Liste der sichtbaren Textänderungen: AUTOREN §15.
+
+**Warnungen von `pruefen.mjs`:** Das Wortbudget sinkt auf 02 (50 statt 53), 05 (68 statt 72), 07 (72 statt 91) und 09
+(50 statt 53); die Schriftwarnung auf 03 („3 Owned fehlen …“ bisher 24 px) entfällt (§8). **Prüfstand:** `pruefen.mjs index.html --schritte` (hell, mit Bildern): **0 Fehler, 16 Warnungen** (vorher 17), 38 von 38 Fremdbildern, 0 externe Anfragen, 33 Bildschirmfotos; dunkel (`--modus dunkel`): 0 Fehler, 16 Warnungen, 38 Fremdbilder; Rückfall (`--oeffentlich --schritte --druck`): 0 Fehler, 16 Warnungen, 0 Fremdbilder, Notfall-PDF 18 von 18 Seiten. Die 16 Warnungen sind laut Plan erlaubt: 7 × Wortbudget (02: 50, 03: 49, 04: 62, 05: 68, 06: 67, 07: 72, 09: 50; im Rückfall 03: 51, 07: 78) und 9 × Schrift 24–26 px (Notizen und Belege auf 04/05, wie vor D13). Klicks 23, Sollzeit 735 s (unverändert). Folie 08 und B1–B8 pixelgleich mit dem Stand vor D13 (Prüf-Agent D14); B9 nennt seit D14 in der Tabelle „Finalisierung und Visualisierungen 08.11.2026“ und in der Notiz Nr. 30 / D13, D14. Sprechtext wörtlich unverändert, `wortlaut-pruefen.py`: 33 Einträge, 0 Abweichungen – das Redeskript gilt unverändert. Läufe von Claude am 08.11.2026 nach der Nacharbeit D14.

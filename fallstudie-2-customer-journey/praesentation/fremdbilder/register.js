@@ -13,6 +13,8 @@
    Folie und sind zurückgehalten, nicht veröffentlicht: Dateien und Registereinträge in intern/vorbilder-zurueckgehalten/ (ausgeschlossen);
    m03-suche neu zugeschnitten (Beschriftung auf freier Fläche); Nachweise b04-persona (ohne Namen), m03-dose-shaker, konzept-01 … -05 nachgezogen.
    Überarbeitet in D09 (04.11.2026): konzept-01 … -05 neu erzeugt (Konzept-Webseite im Shop-Look), alt, nachweis und motiv nachgezogen.
+   Nachgezogen in D13/D14 (08.11.2026, neue Visualisierungen, KI-Nachweis FS2 Nr. 30): nur das Feld platz (b04-persona auf 02,
+   Kachelgrößen 04/05/09 seit D06, Bildleiste 09, Logos 07); keine neuen Bilder, Pfade, Nachweise oder Quellen.
    Felder: datei (relativ zur HTML-Seite), alt, nachweis, motiv, platz, quelle (URL), pixel (Dateigröße). */
 window.INTERN_BILDER = {
   "b01-titel": {
@@ -30,7 +32,7 @@ window.INTERN_BILDER = {
     "alt": "Symbolbild: Führerstand eines Zuges bei Nacht, grüner HOLY-Shaker auf dem Pult, Beine des Fahrers, kein Gesicht",
     "nachweis": "Symbolbild – Community-Foto eines Lokführers aus dem HOLY-Squad (Bildunterschrift auf de.holy.com/pages/our-story, Name weggelassen), Abruf 03.11.2026 · nicht Marco (Persona fiktiv)",
     "motiv": "Symbolbild Schichtarbeit mit Shaker, ohne Gesicht",
-    "platz": "f02 .e2-foto (Persona, 674,67 × 610, Anschnitt links)",
+    "platz": "f02 .e2-foto (Persona, 661,33 × 282, Anschnitt links, unter dem Steckbrief; D13, vorher 674,67 × 610)",
     "quelle": "https://de.holy.com/cdn/shop/files/89.jpg?v=1788511578&width=2400 (Seite https://de.holy.com/pages/our-story)",
     "pixel": "1350 × 1220"
   },
@@ -121,7 +123,7 @@ window.INTERN_BILDER = {
     "alt": "Vorschaubild eines Creator-Shorts: Einblendung „10% Holy Rabatt-Code: NONSTOP“ über HOLY-Dosen",
     "nachweis": "Vorschaubild YouTube-Short „Werbung| … Rabatt-Code: NONSTOP“, Kanal nonstopniels (youtube.com/shorts/ns0t9saP9D4), i.ytimg.com, Abruf 03.11.2026 · Ausschnitt",
     "motiv": "Creator-Short mit Rabattcode im Bild (Werbung)",
-    "platz": "f04 Kachel k1 (200 × 112)",
+    "platz": "f04 Kachel k1 (232 × 130 seit D06, vorher 200 × 112; Lage in D13 unverändert)",
     "quelle": "https://i.ytimg.com/vi/ns0t9saP9D4/oardefault.jpg (Short https://www.youtube.com/shorts/ns0t9saP9D4)",
     "pixel": "400 × 224"
   },
@@ -130,7 +132,7 @@ window.INTERN_BILDER = {
     "alt": "Vorschaubild eines Creator-Shorts: Einblendung „10% Holy Rabatt-Code: NONSTOP“ über HOLY-Dosen",
     "nachweis": "Vorschaubild YouTube-Short „Werbung| … Rabatt-Code: NONSTOP“, Kanal nonstopniels (youtube.com/shorts/ns0t9saP9D4), i.ytimg.com, Abruf 03.11.2026 · Ausschnitt",
     "motiv": "Creator-Short mit Rabattcode im Bild (Werbung)",
-    "platz": "f05 .e5-k k1 (160 × 90)",
+    "platz": "f05 .e5-k k1 (200 × 112 seit D06, vorher 160 × 90; Lage in D13 unverändert)",
     "quelle": "https://i.ytimg.com/vi/ns0t9saP9D4/oardefault.jpg (Short https://www.youtube.com/shorts/ns0t9saP9D4)",
     "pixel": "320 × 180"
   },
@@ -139,7 +141,7 @@ window.INTERN_BILDER = {
     "alt": "Vorschaubild eines Creator-Shorts: Einblendung „10% Holy Rabatt-Code: NONSTOP“ über HOLY-Dosen",
     "nachweis": "Vorschaubild YouTube-Short „Werbung| … Rabatt-Code: NONSTOP“, Kanal nonstopniels (youtube.com/shorts/ns0t9saP9D4), i.ytimg.com, Abruf 03.11.2026 · Ausschnitt",
     "motiv": "Creator-Short mit Rabattcode im Bild (Werbung)",
-    "platz": "f09 .e9-k-bild K1 (132 × 74)",
+    "platz": "f09 .e9-k-bild K1 (192 × 108 seit D06, vorher 132 × 74; Bildleiste auf dem Pfad, seit D13 bei x = 128, über den Satzspiegel verteilt, Messpunkte Ü1–Ü4 in den Rinnen)",
     "quelle": "https://i.ytimg.com/vi/ns0t9saP9D4/oardefault.jpg (Short https://www.youtube.com/shorts/ns0t9saP9D4)",
     "pixel": "264 × 148"
   },
@@ -148,7 +150,7 @@ window.INTERN_BILDER = {
     "alt": "Suchergebnis: erster Treffer „Wie viel Koffein enthalten die Produkte? – help.de.weareholy.com“",
     "nachweis": "Screenshot Startpage-Suche „holy energy koffein“ (Google-Ergebnisse, Region Deutschland, mobil), 03.11.2026",
     "motiv": "eigene Suche: Treffer 1 ist das Help-Center auf der alten Domain",
-    "platz": "f04 Kachel k2 (200 × 112)",
+    "platz": "f04 Kachel k2 (232 × 130 seit D06, vorher 200 × 112; Lage in D13 unverändert)",
     "quelle": "https://www.startpage.com/do/search?q=holy+energy+koffein&language=deutsch (Region Deutschland)",
     "pixel": "400 × 224"
   },
@@ -157,7 +159,7 @@ window.INTERN_BILDER = {
     "alt": "Suchergebnis: erster Treffer „Wie viel Koffein enthalten die Produkte? – help.de.weareholy.com“",
     "nachweis": "Screenshot Startpage-Suche „holy energy koffein“ (Google-Ergebnisse, Region Deutschland, mobil), 03.11.2026",
     "motiv": "eigene Suche: Treffer 1 ist das Help-Center auf der alten Domain",
-    "platz": "f05 .e5-k k2 (160 × 90)",
+    "platz": "f05 .e5-k k2 (200 × 112 seit D06, vorher 160 × 90; Lage in D13 unverändert)",
     "quelle": "https://www.startpage.com/do/search?q=holy+energy+koffein&language=deutsch (Region Deutschland)",
     "pixel": "320 × 180"
   },
@@ -166,7 +168,7 @@ window.INTERN_BILDER = {
     "alt": "Suchergebnis: erster Treffer „Wie viel Koffein enthalten die Produkte? – help.de.weareholy.com“",
     "nachweis": "Screenshot Startpage-Suche „holy energy koffein“ (Google-Ergebnisse, Region Deutschland, mobil), 03.11.2026",
     "motiv": "eigene Suche: Treffer 1 ist das Help-Center auf der alten Domain",
-    "platz": "f09 .e9-k-bild K2 (132 × 74)",
+    "platz": "f09 .e9-k-bild K2 (192 × 108 seit D06, vorher 132 × 74; Bildleiste auf dem Pfad, seit D13 bei x = 496, über den Satzspiegel verteilt, Messpunkte Ü1–Ü4 in den Rinnen)",
     "quelle": "https://www.startpage.com/do/search?q=holy+energy+koffein&language=deutsch (Region Deutschland)",
     "pixel": "264 × 148"
   },
@@ -175,7 +177,7 @@ window.INTERN_BILDER = {
     "alt": "Produktseite „Energy Starter Set“ im HOLY-Shop mit Produktfoto, Titel und Preisleiste 24,99 €",
     "nachweis": "Screenshot de.holy.com/products/starter-set-energy (Desktop, Cookies abgelehnt), 03.11.2026",
     "motiv": "Produktseite Energy Starter Set",
-    "platz": "f04 Kachel k3 (200 × 112)",
+    "platz": "f04 Kachel k3 (232 × 130 seit D06, vorher 200 × 112; Lage in D13 unverändert)",
     "quelle": "https://de.holy.com/products/starter-set-energy",
     "pixel": "400 × 224"
   },
@@ -184,7 +186,7 @@ window.INTERN_BILDER = {
     "alt": "Produktseite „Energy Starter Set“ im HOLY-Shop mit Produktfoto, Titel und Preisleiste 24,99 €",
     "nachweis": "Screenshot de.holy.com/products/starter-set-energy (Desktop, Cookies abgelehnt), 03.11.2026",
     "motiv": "Produktseite Energy Starter Set",
-    "platz": "f05 .e5-k k3 (160 × 90)",
+    "platz": "f05 .e5-k k3 (200 × 112 seit D06, vorher 160 × 90; Lage in D13 unverändert)",
     "quelle": "https://de.holy.com/products/starter-set-energy",
     "pixel": "320 × 180"
   },
@@ -193,7 +195,7 @@ window.INTERN_BILDER = {
     "alt": "Produktseite „Energy Starter Set“ im HOLY-Shop mit Produktfoto, Titel und Preisleiste 24,99 €",
     "nachweis": "Screenshot de.holy.com/products/starter-set-energy (Desktop, Cookies abgelehnt), 03.11.2026",
     "motiv": "Produktseite Energy Starter Set",
-    "platz": "f09 .e9-k-bild K3 (132 × 74)",
+    "platz": "f09 .e9-k-bild K3 (192 × 108 seit D06, vorher 132 × 74; Bildleiste auf dem Pfad, seit D13 bei x = 864, über den Satzspiegel verteilt, Messpunkte Ü1–Ü4 in den Rinnen)",
     "quelle": "https://de.holy.com/products/starter-set-energy",
     "pixel": "264 × 148"
   },
@@ -202,7 +204,7 @@ window.INTERN_BILDER = {
     "alt": "Supermarktregal mit HOLY-Handelsware (Boxen, 15er-Dosen, gelbe HOLY-Regalleiste), links daneben Red Bull und Monster",
     "nachweis": "Foto aus dem Artikel der Lebensmittel Zeitung vom 10.04.2026 (Bildnachweis hinter Bezahlschranke nicht einsehbar, Markt nicht benannt), Abruf 03.11.2026 · Ausschnitt",
     "motiv": "Regal im Handel: HOLY neben Monster und Red Bull",
-    "platz": "f04 Kachel k4 (200 × 112, Nebenweg Handel)",
+    "platz": "f04 Kachel k4 (232 × 130 seit D06, vorher 200 × 112; Nebenweg Handel; Lage in D13 unverändert)",
     "quelle": "https://www.lebensmittelzeitung.net/news/media/33/Pla-verscha-Vertriebsc-Bened-Pes-l.-und-Mitgrn-Hor-321340.jpeg (Artikel https://www.lebensmittelzeitung.net/industrie/nachrichten/getraenke-holy-macht-dampf-bei-der-internationalisierung-190382)",
     "pixel": "400 × 224"
   },
@@ -211,7 +213,7 @@ window.INTERN_BILDER = {
     "alt": "Hände öffnen einen gelb-weißen HOLY-Karton (Symbolbild Unboxing)",
     "nachweis": "Community-Foto „Live Unboxing mit dem Squad“, von HOLY gezeigt auf de.holy.com/pages/our-story, Abruf 03.11.2026 · Ausschnitt ohne Gesichter · Symbolbild, nicht Marco",
     "motiv": "Unboxing: HOLY-Karton wird geöffnet (Symbolbild)",
-    "platz": "f04 Kachel k5 (200 × 112)",
+    "platz": "f04 Kachel k5 (232 × 130 seit D06, vorher 200 × 112; Lage in D13 unverändert)",
     "quelle": "https://de.holy.com/cdn/shop/files/63.jpg?v=1788511761&width=2400 (Seite https://de.holy.com/pages/our-story)",
     "pixel": "400 × 224"
   },
@@ -220,7 +222,7 @@ window.INTERN_BILDER = {
     "alt": "Hände öffnen einen gelb-weißen HOLY-Karton (Symbolbild Unboxing)",
     "nachweis": "Community-Foto „Live Unboxing mit dem Squad“, von HOLY gezeigt auf de.holy.com/pages/our-story, Abruf 03.11.2026 · Ausschnitt ohne Gesichter · Symbolbild, nicht Marco",
     "motiv": "Unboxing: HOLY-Karton wird geöffnet (Symbolbild)",
-    "platz": "f05 .e5-k k5 (160 × 90)",
+    "platz": "f05 .e5-k k5 (200 × 112 seit D06, vorher 160 × 90; Lage in D13 unverändert)",
     "quelle": "https://de.holy.com/cdn/shop/files/63.jpg?v=1788511761&width=2400 (Seite https://de.holy.com/pages/our-story)",
     "pixel": "320 × 180"
   },
@@ -229,7 +231,7 @@ window.INTERN_BILDER = {
     "alt": "Hände öffnen einen gelb-weißen HOLY-Karton (Symbolbild Unboxing)",
     "nachweis": "Community-Foto „Live Unboxing mit dem Squad“, von HOLY gezeigt auf de.holy.com/pages/our-story, Abruf 03.11.2026 · Ausschnitt ohne Gesichter · Symbolbild, nicht Marco",
     "motiv": "Unboxing: HOLY-Karton wird geöffnet (Symbolbild)",
-    "platz": "f09 .e9-k-bild K5 (132 × 74)",
+    "platz": "f09 .e9-k-bild K5 (192 × 108 seit D06, vorher 132 × 74; Bildleiste auf dem Pfad, seit D13 bei x = 1232, über den Satzspiegel verteilt, Messpunkte Ü1–Ü4 in den Rinnen)",
     "quelle": "https://de.holy.com/cdn/shop/files/63.jpg?v=1788511761&width=2400 (Seite https://de.holy.com/pages/our-story)",
     "pixel": "264 × 148"
   },
@@ -238,7 +240,7 @@ window.INTERN_BILDER = {
     "alt": "SQUAD-Rewards-Seite im HOLY-Shop: Pixel-Logo mit Adler und Überschrift „Unser wildes BURRnus Programm!“",
     "nachweis": "Screenshot de.holy.com/pages/account-login (SQUAD Rewards, nicht angemeldet, Desktop), 03.11.2026",
     "motiv": "SQUAD Rewards, öffentliche Programmseite",
-    "platz": "f04 Kachel k6 (200 × 112)",
+    "platz": "f04 Kachel k6 (232 × 130 seit D06, vorher 200 × 112; Lage in D13 unverändert)",
     "quelle": "https://de.holy.com/pages/account-login",
     "pixel": "400 × 224"
   },
@@ -247,7 +249,7 @@ window.INTERN_BILDER = {
     "alt": "SQUAD-Rewards-Seite im HOLY-Shop: Pixel-Logo mit Adler und Überschrift „Unser wildes BURRnus Programm!“",
     "nachweis": "Screenshot de.holy.com/pages/account-login (SQUAD Rewards, nicht angemeldet, Desktop), 03.11.2026",
     "motiv": "SQUAD Rewards, öffentliche Programmseite",
-    "platz": "f05 .e5-k k6 (160 × 90)",
+    "platz": "f05 .e5-k k6 (200 × 112 seit D06, vorher 160 × 90; Lage in D13 unverändert)",
     "quelle": "https://de.holy.com/pages/account-login",
     "pixel": "320 × 180"
   },
@@ -256,7 +258,7 @@ window.INTERN_BILDER = {
     "alt": "SQUAD-Rewards-Seite im HOLY-Shop: Pixel-Logo mit Adler und Überschrift „Unser wildes BURRnus Programm!“",
     "nachweis": "Screenshot de.holy.com/pages/account-login (SQUAD Rewards, nicht angemeldet, Desktop), 03.11.2026",
     "motiv": "SQUAD Rewards, öffentliche Programmseite",
-    "platz": "f09 .e9-k-bild K6 (132 × 74)",
+    "platz": "f09 .e9-k-bild K6 (192 × 108 seit D06, vorher 132 × 74; Bildleiste auf dem Pfad, seit D13 bei x = 1600, über den Satzspiegel verteilt, Messpunkte Ü1–Ü4 in den Rinnen)",
     "quelle": "https://de.holy.com/pages/account-login",
     "pixel": "264 × 148"
   },
@@ -265,7 +267,7 @@ window.INTERN_BILDER = {
     "alt": "Logo YouTube",
     "nachweis": "Logo: YouTube (gstatic.com, offizielle SVG, als PNG gerendert; einfarbig dunkel gesetzt, Dreieck ausgespart), Abruf 03.11.2026",
     "motiv": "Logo youtube",
-    "platz": "f07 Vorbild-Zeile youtube (Logo statt Name, Höhe 26 px; im Modus dunkel hell umgekehrt)",
+    "platz": "f07 Spalte Inspiration oben über Branche und Mechanik (Logo statt Name, Höhe 30 px; seit D13, vorher Tabellenzeile mit 26 px; im Modus dunkel hell umgekehrt)",
     "quelle": "https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg",
     "pixel": "233 × 52"
   },
@@ -274,7 +276,7 @@ window.INTERN_BILDER = {
     "alt": "Logo Apple",
     "nachweis": "Logo: Apple (Navigationsleiste support.apple.com; einfarbig dunkel gesetzt), Abruf 03.11.2026",
     "motiv": "Logo apple",
-    "platz": "f07 Vorbild-Zeile apple (Logo statt Name, Höhe 30 px; im Modus dunkel hell umgekehrt)",
+    "platz": "f07 Spalte Recherche oben über Branche und Mechanik (Logo statt Name, Höhe 46 px; seit D13, vorher Tabellenzeile mit 30 px; im Modus dunkel hell umgekehrt)",
     "quelle": "https://support.apple.com/de-de/101575",
     "pixel": "49 × 60"
   },
@@ -283,7 +285,7 @@ window.INTERN_BILDER = {
     "alt": "Logo zooplus",
     "nachweis": "Logo: zooplus (Kopfzeilen-Logo zooplus.de, weiße Fassung ohne grünen Kasten; einfarbig dunkel gesetzt), Abruf 03.11.2026",
     "motiv": "Logo zooplus",
-    "platz": "f07 Vorbild-Zeile zooplus (Logo statt Name, Höhe 28 px; im Modus dunkel hell umgekehrt)",
+    "platz": "f07 Spalte Entscheidung oben über Branche und Mechanik (Logo statt Name, Höhe 40 px; seit D13, vorher Tabellenzeile mit 28 px; im Modus dunkel hell umgekehrt)",
     "quelle": "https://cdn.public.zooplus.net/media/shop-header/images/prod/zooplus/logo/zooplus@2x.png (Seite https://www.zooplus.de/)",
     "pixel": "214 × 56"
   },
@@ -292,7 +294,7 @@ window.INTERN_BILDER = {
     "alt": "Logo OTTO",
     "nachweis": "Logo: OTTO (Kopfzeile otto.de; einfarbig dunkel gesetzt), Abruf 03.11.2026",
     "motiv": "Logo otto",
-    "platz": "f07 Vorbild-Zeile otto (Logo statt Name, Höhe 24 px; im Modus dunkel hell umgekehrt)",
+    "platz": "f07 Spalte Kauf oben über Branche und Mechanik (Logo statt Name, Höhe 34 px; seit D13, vorher Tabellenzeile mit 24 px; im Modus dunkel hell umgekehrt)",
     "quelle": "https://www.otto.de/assets-static/icons/pl_logo_otto.svg",
     "pixel": "142 × 48"
   },
@@ -301,7 +303,7 @@ window.INTERN_BILDER = {
     "alt": "Logo Philips",
     "nachweis": "Logo: Philips (Kopfzeile philips.de; einfarbig dunkel gesetzt), Abruf 03.11.2026",
     "motiv": "Logo philips",
-    "platz": "f07 Vorbild-Zeile philips (Logo statt Name, Höhe 22 px; im Modus dunkel hell umgekehrt)",
+    "platz": "f07 Spalte Bindung oben über Branche und Mechanik (Logo statt Name, Höhe 27 px; seit D13, vorher Tabellenzeile mit 22 px; im Modus dunkel hell umgekehrt)",
     "quelle": "https://www.philips.de/c-f/XC000019732/woher-weiß-ich-wann-ich-die-bürstenköpfe-austauschen-sollte",
     "pixel": "240 × 44"
   },
@@ -310,7 +312,7 @@ window.INTERN_BILDER = {
     "alt": "Logo Pampers",
     "nachweis": "Logo: Pampers (Kopfzeile pampers.de; einfarbig dunkel gesetzt), Abruf 03.11.2026",
     "motiv": "Logo pampers",
-    "platz": "f07 Vorbild-Zeile pampers (Logo statt Name, Höhe 34 px; im Modus dunkel hell umgekehrt)",
+    "platz": "f07 Zeile Nebenweg Handel unten (Logo statt Name, Höhe 46 px; seit D13, vorher Tabellenzeile mit 34 px; im Modus dunkel hell umgekehrt)",
     "quelle": "https://images.ctfassets.net/ym05119t78e1/13XfMwh1bwO6NUepeNDs30/cbd64687086a8474b8af1fef76ee8b34/Pampers_Logo_Revamp__1_.svg",
     "pixel": "134 × 68"
   },

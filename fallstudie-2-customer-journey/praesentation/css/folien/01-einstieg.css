@@ -79,9 +79,12 @@
   font-size: 22px;
   line-height: 1.3;
   color: var(--p-schrift-2);
+  text-wrap: balance;   /* D13: zwei gleich lange Zeilen statt „Fallstudie 2“ allein in Zeile 2 … */
 }
+#f01 .e1-meta > span { white-space: nowrap; }   /* … und Umbruch nur an „ · “, nie in „Prof. Dr. Daniel Stenger“ */
 
-/* Pfad auf Gelb: Schwarz (pfad.css, Bühne gelb) – Startstrich zum Foto */
+/* Pfad auf Gelb: Schwarz (pfad.css, Bühne gelb) – Startstrich zum Foto; seit D13 (08.11.2026) auf y = 800, stößt an
+   die Kontur des Fotos (index.html) */
 #f01 .e1-pfad .gelb { stroke-width: 14; }
 
 /* Foto b01 im Anschnitt (rechter Bühnenrand), harter Versatzschatten nach links unten */

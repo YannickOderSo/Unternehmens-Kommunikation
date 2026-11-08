@@ -54,7 +54,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 27 | 08.11.2026 | Yannick | Hinweis: das Werbevideo kann auch eingebaut werden | – | bereits Teil von D12 (Knopf „Spot ansehen ▶“ auf Folie 08); keine zusätzliche Delegation |
 | 28 | 08.11.2026 | Yannick | Mit mehr Agenten schneller umsetzen | D12 (Fortsetzung) | Ablauf nach dem Umbau parallelisiert: Redeskript und 4 Abnahmen gleichzeitig, dann Nacharbeit und Redeskript-Prüfung gleichzeitig |
 | 29 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (Zwischenstand von D12 in der Präsentation) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d12` gepusht; master erst nach Abschluss von D12 |
-| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13, D14 (Workflows) | *läuft:* Entwürfe für 01–07 und 09 fertig und geprüft (04: leere, durchgestrichene Browserseite „keine Antwortseite“); Yannick übernimmt alle, Linien-Symbole erlaubt; Übernahme, Doku und Prüfung laufen |
+| 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13, D14 (Workflows) | Alle Entwürfe übernommen (Linien-Symbole erlaubt): 04 leere, durchgestrichene Browserseite „keine Antwortseite“ + „bricht“; 02 Steckbrief/Verben/Ring; 03 Kästchen + Signalkreise; 05 Urteilszeichen + Lücke an Ü2; 06 Ränge; 07 Brücke statt Tabelle; 09 Messpunkte am Pfad; Prüfläufe 0 Fehler, 16 Warnungen |
 | 31 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (eingespielte D13-Entwürfe, während D14 prüft) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d14` gepusht; master bekommt den geprüften Stand nach D14 |
 
 ### 01 – 27.10.2026 – Yannick
@@ -622,8 +622,20 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Ergebnis:** *Zwischenstand:* Entwürfe für 01–07 und 09 fertig, geprüft und nachgebessert (siehe D13). Folie 04: Die
   Leerstelle ist jetzt eine leere, durchgestrichene Browserseite mit dem Namen „keine Antwortseite“. Die vier Änderungen
   lassen sich ohne Konflikt zusammenführen (Probe in einer Kopie). Vorher-nachher-Bilder an Yannick geschickt; Auswahl
-  durch Yannick: alle Folien, Linien-Symbole erlaubt (siehe Rückfragen). Übernahme läuft (D14).
-- **Dateien:** `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`; weitere folgen nach der Auswahl
+  durch Yannick: alle Folien, Linien-Symbole erlaubt (siehe Rückfragen). Übernahme (D14): Claude hat die vier
+  Diffs eingespielt; Doku-Agent und Prüf-Agent parallel, dann Nacharbeit (07: Stationen als volle Knoten wie Platz 1
+  auf 06; 07: Einblendungen erst, wenn der Weg ankommt; 04: Wort „bricht“ neben dem Zeichen; 03: „stärkt“ als offener
+  Kreis, damit der volle Kreis mit Kreuz nur „bricht“ heißt). Claude selbst: B9 (KI-Kennzeichnung) nennt jetzt die
+  Visualisierungen und Nr. 30 / D13, D14; Prüfstand in AUTOREN §15 und LIESMICH eingetragen. Endstand: hell, dunkel,
+  Rückfall je 0 Fehler, 16 Warnungen (vorher 17), 38 bzw. 0 Fremdbilder, PDF 18 Seiten, Klicks 23, Sollzeit 735 s;
+  Sprechtext unverändert, Redeskript gilt weiter (Wortlaut 0 Abweichungen). Offen für die Gruppe (AUTOREN §15,
+  LIESMICH §14): Legende „bricht“ auf 05 ggf. um „oder Anschluss fehlt“ ergänzen; Wegname 07 ggf. „Zentraler Weg (SOLL,
+  H)“; sichtbare Textkürzungen aus D13 freigeben – auf 07 steht „Werbung“ (✔ R25) nur noch im Sprechtext und muss
+  gesagt werden; 07 im Dunkelmodus: Stationen gelb auf gelbem Weg nur als Verdickung erkennbar.
+- **Dateien:** `fallstudie-2-customer-journey/praesentation/` (`index.html` Folien 01–07, 09, B9; CSS `01`–`07`,
+  `09`, `pfad.css`; `js/folien/pfad.js`; `fremdbilder/register.js` Feld „platz“; LIESMICH §8, §10–§12, §14; AUTOREN
+  §1–§3, §6, §15; QUELLEN), `gestaltungsplan.md` (Abweichung D13, 3.6, 3.7, 5.1, 6.x u. a.), `README.md`;
+  `ki-nachweis/workflows/2026-11-08_fs2-visualisierung.js`, `…-visualisierung-uebernahme.js`
 - **Unteragenten:** D13
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -663,7 +675,7 @@ Auftrag (im Workflow-Skript).
 | D11 | 04.11.2026 | 24 | Workflow „fs2-werbevideo-emotion“ (11 Unteragenten, 2 mit Websuche, ElevenLabs über die Schnittstelle) | Spot neu: emotional und aufregend wie Kurzspots großer Marken – Recherche, 3 Konzepte, Jury, Produktion, Abnahme, Nacharbeit | Spot „Mein Moment.“ (24,5 s); Recherche 65 Quellen; Jury 111/106/100 Punkte; Abnahmen 2 hohe, 7 mittlere, 8 niedrige Befunde, umgesetzt | Claude: ffprobe, Lautheit, Kontaktbogen, Untertitel, Volltextsuche |
 | D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
 | D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | Entwürfe für 01–07 und 09; Prüfungen: 01, 03, 05 übernehmen, 02, 04, 06, 07, 09 mit Änderungen, in der Nachbesserung umgesetzt; je Kopie 0 Fehler; Auswahl offen | Claude: Rückgaben gelesen, alle Montagen angesehen, Diffs probeweise zusammengeführt |
-| D14 | 08.11.2026 | 30 | Workflow „fs2-visualisierung-uebernahme“ (3 Unteragenten) | Nach Yannicks Auswahl: eingespielte D13-Entwürfe – Doku und Kommentare nachziehen, zusammengeführte Präsentation unabhängig prüfen, Befunde abarbeiten | *läuft* | – |
+| D14 | 08.11.2026 | 30 | Workflow „fs2-visualisierung-uebernahme“ (3 Unteragenten) | Nach Yannicks Auswahl: eingespielte D13-Entwürfe – Doku und Kommentare nachziehen, zusammengeführte Präsentation unabhängig prüfen, Befunde abarbeiten | Doku in 8 Dateien + Kommentare nachgezogen (nur Kommentare in HTML/CSS, per Skript geprüft); Prüfung: 0 hohe, 1 mittlerer, 5 niedrige Befunde; Nacharbeit: 4 umgesetzt, 2 als Gruppenentscheidung vermerkt | Claude: eigene Prüfläufe hell/dunkel/Rückfall (0 Fehler), Wortlaut Redeskript, Endzustände angesehen, Diff-Suche Modellnamen/URLs |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -994,8 +1006,19 @@ Auftrag (im Workflow-Skript).
   ein Prüf-Agent (nur lesen: Prüfläufe hell, dunkel, Rückfall mit Druck, alle Bilder 01–07 und 09, Nebenwirkungen auf 08
   und Backup, Zahlen und Sprechtext gegen HEAD, Bedienung). Danach ein Nacharbeits-Agent für die Befunde.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-08_fs2-visualisierung-uebernahme.js`](workflows/2026-11-08_fs2-visualisierung-uebernahme.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** 3 Unteragenten, alle mit Ergebnis. Doku-Agent: Gestaltungsplan (Abweichung D13, 3.6 neue Komponenten,
+  3.7 Ausnahme Linien-Symbole mit Nr. 30, 5.1, 6.x „seit D13“), AUTOREN §15, LIESMICH §14, QUELLEN, README, Bildregister
+  (Feld „platz“), Kommentare in HTML/CSS („erlaubt von Yannick am 08.11.2026“); per Skript belegt, dass HTML und CSS sich
+  nur in Kommentaren geändert haben. Prüf-Agent (nur lesen): drei Läufe je 0 Fehler, 16 Warnungen; 08 und B1–B9 pixelgleich
+  mit HEAD; Zahlen und Sprechtext gleich; Bedienung 07/05 ohne Hänger; Befunde: D14-01 (mittel, Ringe auf 07 widersprechen
+  06), D14-02 bis D14-06 (niedrig: Einblendung vor dem Weg auf 07, „bricht“ auf 04 ohne Wort, voller Kreis mit + und ×
+  doppeldeutig, H am SOLL-Weg, sichtbare Textkürzungen). Nacharbeit: D14-01 bis D14-04 umgesetzt, D14-06 als Liste in
+  AUTOREN §15; D14-03 Teil 2 (Legende 05) und D14-05 (Wegname 07) als Entscheidung der Gruppe vermerkt.
+- **Wie Claude das Ergebnis geprüft hat:** Rückgaben gelesen; danach selbst: B9 um D13/D14 ergänzt (Hinweis des
+  Doku-Agents), `pruefen.mjs` hell, dunkel und Rückfall mit Druck je 0 Fehler, 16 Warnungen, 38 bzw. 0 Fremdbilder, 0
+  externe Anfragen, PDF 18 Seiten; `wortlaut-pruefen.py` 0 Abweichungen; Endzustände 02–07, 09, B9 hell sowie 03, 04,
+  05, 07 dunkel und 02, 04, 07, 09 im Rückfall angesehen; Diff nach Modellnamen und neuen Adressen durchsucht – kein
+  Treffer. Prüfzahlen in AUTOREN §15 und LIESMICH eingetragen.
 
 ---
 

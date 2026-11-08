@@ -435,7 +435,8 @@ html[data-thema] {
   z-index: 2;
 }
 
-/* 5.7 Leerstelle: gestrichelter 3-px-Rahmen in Schriftfarbe („zeigt, was fehlt“) */
+/* 5.7 Leerstelle: gestrichelter 3-px-Rahmen in Schriftfarbe („zeigt, was fehlt“). Auf 04 seit D13 (08.11.2026) als
+   leere, durchgestrichene Browserseite „keine Antwortseite“ (Inline-SVG, Stil in 04-journey-map.css) */
 .p-leerstelle {
   box-sizing: border-box;
   border: 3px dashed var(--p-schrift);
@@ -449,7 +450,7 @@ html[data-thema] {
   line-height: 1.1;
 }
 
-/* 5.8 Knoten: Platz 1 bzw. Moment der Wahrheit (52 px), Platz 2/3 klein (36 px) */
+/* 5.8 Knoten: Platz 1 bzw. Moment der Wahrheit (52 px), Platz 2/3 klein (36 px; auf 06 seit D13 als Ring, 06-soll.css) */
 .p-knoten {
   width: 52px;
   height: 52px;
@@ -490,6 +491,9 @@ html[data-thema] {
 .p-pfad .spitze-g { fill: var(--p-pfad); }
 .p-pfad .neben  { fill: none; stroke: var(--p-mittel); stroke-width: 6; stroke-dasharray: 16 12; stroke-linecap: butt; }
 .p-pfad .haar   { fill: none; stroke: var(--p-nebel); stroke-width: 2; }
+/* Bruchstriche „//“ in der Lücke einer Brücke „bricht“ mit "luecke" (pfad.js; Folie 05, D13 08.11.2026) */
+.p-pfad .bruch  { fill: none; stroke: var(--p-schrift); stroke-width: 5; stroke-linecap: round; }
+.p-pfad .bruch-grund { fill: none; stroke: var(--p-papier); stroke-width: 6; }   /* deckt die Haarlinie in der Lücke ab */
 html[data-modus="dunkel"] .folie:not([data-buehne]) .p-pfad .kontur { stroke-width: 14; }
 .folie[data-buehne="gelb"] .p-pfad .kontur { stroke-width: 14; }
 

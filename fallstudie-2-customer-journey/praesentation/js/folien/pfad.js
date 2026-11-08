@@ -335,6 +335,18 @@
         var a = ort(br.von), b = ort(br.nach), y = a.y, xr = rinneVor(b.phase), s = br.schritt || 0;
         if (br.urteil === 'traegt') {
           wegZeichnen(svg, 'M ' + runde(a.x) + ' ' + y + ' L ' + runde(b.x) + ' ' + y, s);
+        } else if (br.urteil === 'bricht' && br.luecke) {
+          /* D13 (08.11.2026): mit "luecke": n im JSON endet der Pfad n px vor der Rinnenmitte – keine Reste, die wie
+             Kettenglieder wirkten –, in der Lücke zwei schräge Bruchstriche (Klasse „bruch“, Stil in pfad.css).
+             Ohne "luecke" bleibt die Form wie bisher (Ende vor der Rinne, zwei Reste).
+             Zuerst ein Streifen in Papierfarbe (Klasse „bruch-grund“) mit demselben Schritt: Er deckt die Haarlinie der
+             Grundlinie in der Lücke ab, sobald der Bruch erscheint – sonst liest sich der Bruch wie ein Achsenbruch auf
+             einer durchgehenden Linie. In Schritt 0 bleibt die Grundlinie durchgehend. Er liegt unter dem Pfad (dessen
+             runde Kappe ihn überdeckt) und unter der Kachel der nächsten Station. */
+          pfadElement(svg, 'M ' + runde(xr - br.luecke) + ' ' + y + ' L ' + runde(b.x) + ' ' + y, 'bruch-grund', s, 'einblenden');
+          wegZeichnen(svg, 'M ' + runde(a.x) + ' ' + y + ' L ' + runde(xr - br.luecke) + ' ' + y, s);
+          pfadElement(svg, 'M ' + runde(xr - 2) + ' ' + (y + 22) + ' L ' + runde(xr + 8) + ' ' + (y - 22) +
+            ' M ' + runde(xr + 14) + ' ' + (y + 22) + ' L ' + runde(xr + 24) + ' ' + (y - 22), 'bruch', s, 'einblenden');
         } else if (br.urteil === 'bricht') {
           wegZeichnen(svg, 'M ' + runde(a.x) + ' ' + y + ' L ' + runde(xr - 18) + ' ' + y, s);
           wegZeichnen(svg, 'M ' + runde(xr - 2) + ' ' + y + ' L ' + runde(xr + 8) + ' ' + y, s);

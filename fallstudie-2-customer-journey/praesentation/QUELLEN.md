@@ -2,7 +2,7 @@
 
 Alles, was `index.html` verwendet, liegt im Ordner `praesentation/` – nichts wird aus dem Internet nachgeladen
 (keine CDNs, keine externen Schriften, Skripte oder Bilder; geprüft mit `werkzeuge/pruefen.mjs`, 0 externe
-Anfragen). Stand: 08.11.2026, finale Fassung (KI-gestützt, D12), Prüfung durch die Gruppe offen. **Keine eigene Erhebung**
+Anfragen). Stand: 08.11.2026, finale Fassung (KI-gestützt, D12; Visualisierungen D13), Prüfung durch die Gruppe offen. **Keine eigene Erhebung**
 (Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26): keine eigenen Fotos, keine Interviews, kein Selbstversuch,
 kein Workshop – alle Inhalte stammen aus den Abschnitten 4–5. Der Werbespot auf Folie 08 liegt in `../werbevideo/`
 (Abschnitt 4b). Seit 03.11.2026 läuft überall die **Fassung mit
@@ -44,6 +44,12 @@ Alle Grafiken sind eigene Gestaltung aus CSS und Inline-SVG, KI-gestützt erstel
 Brücken, Handyrahmen, Strichskalen, Farb- und Formproben, Platzhalterflächen. **Keine HOLY-Schrift,
 kein nachgezeichnetes Verpackungsdesign, keine KI-Bilder** (Plan 3.7); das HOLY-Logo nur als unveränderte Datei (Abschnitt 4). Die Farben sind HOLYs Webfarben aus dem
 Dossier (Gelb #FFD007 ✎ G06, Schwarz #1D1D1B ✔ G07, Creme #F3EDE1 ✎ G06; Farbproben auf 03 mit Status).
+**Seit D13 (08.11.2026, KI-Nachweis FS2 Nr. 30):** dazu die Linien-Symbole auf 02, 06 und 07, die Urteils- und
+Signalzeichen auf 03, 04 und 05, die leere, durchgestrichene Browserseite „keine Antwortseite“ auf 04, Kästchen je
+Kontaktpunkt (03), Balkenpaare und Ring (02), Bruchstriche (05) und Messpunkte (09). Auch sie sind KI-gestützt erstellt
+(Inline-SVG bzw. CSS direkt in `index.html` und `css/folien/`), **keine Fremdbilder, keine KI-Bilder**, ohne fremde
+Vorlage und ohne neue Quelle. Linien-Symbole hat Yannick am 08.11.2026 erlaubt (Abweichung von Plan 3.7, dort
+vermerkt).
 
 ## 4. Eigene Bilder, Logo und Video (`bilder/`, `video/`)
 
@@ -182,3 +188,8 @@ nur „in Bewertungen“ (**H** B25, laut Dossier 5.2 teils Effekt der Quelle); 
 ergänzt, „(KI)“ bei ~ B20/B21 (Stichproben eines Recherche-Agenten); B1 nennt Abrufe und Screenshots „KI-gestützt
 (Unteragenten)“, B8 den Rechtestatus der HOLY-Bilder im Werbespot (Nr. 17) und ElevenLabs (Nr. 24), B9 eine Zeile
 „Screenshots, Fremdbilder – KI-gestützt abgerufen, keine KI-Bilder“.
+Visualisierungen D13 (08.11.2026, KI-Nachweis FS2 Nr. 30, Delegationen D13/D14): neue Darstellung auf 01–07 und 09
+KI-gestützt gestaltet (Gestaltungsentscheidungen aus Modellwissen); Linien-Symbole und Zeichen als Inline-SVG
+KI-gestützt erstellt, keine Fremdbilder, keine KI-Bilder; keine Websuche, keine neuen Downloads, keine neuen Belege –
+Fakten und Zahlen unverändert aus dem Dossier. Im Register `fremdbilder/register.js` ist nur das Feld `platz` an die
+neue Lage angepasst (Abschnitt 4a).

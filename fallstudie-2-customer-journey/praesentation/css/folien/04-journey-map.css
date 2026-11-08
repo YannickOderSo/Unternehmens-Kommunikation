@@ -3,6 +3,9 @@
    Gestaltungsplan 6.2–6.6. Raster, Kacheln und Pfad setzt js/folien/pfad.js
    (Daten im JSON der Folie); hier nur die Notizen am Weg und die Legende. Kacheln 232 × 130, Zeilen 82 px
    (Umbau 03.11.2026, D06, für die Fassung mit Bildern).
+   D13 (08.11.2026, von Yannick übernommen, KI-Nachweis FS2 Nr. 30): Leerstelle als leere Browserseite, Zeichen „bricht“ am offenen Ende des
+   Nebenwegs (unten). Kein Bewertungszeichen am zentralen Weg – die Urteile stehen erst auf 05 (Plan 6.2 Nr. 3).
+   Nacharbeit D14 (Befund D14-03): neben dem Zeichen das Wort „bricht“ (Urteil als Wort und Form, Plan 3.6).
    ============================================================================= */
 #f04 .e4-legende {
   left: 128px;
@@ -22,3 +25,45 @@
 #f04 .e4-regal { left: 1541.33px; top: 450px; width: 250.67px; box-sizing: border-box; background: var(--p-papier); }
 #f04 .e4-regal-notiz { position: static; padding: 0; margin: 0; white-space: normal; }
 #f04 .e4-regal-beleg { margin: 4px 0 0; }   /* Belegzeile 26 px (.p-beleg), Inhalt statt Meta (Abnahme D05) */
+
+/* Leerstelle „keine Antwortseite“ (D13, 08.11.2026): statt eines gestrichelten Kastens mit Text (wirkte wie ein
+   fehlendes Bild) eine leere Browserseite – gestrichelter Rahmen in Schriftfarbe wie die Komponente 5.7, Leiste mit
+   drei Punkten und leerem Adressfeld in Mittel warm, in der Mitte eine durchgestrichene Seite. Der Name steht darüber
+   (data-lage="oben"), weil unter der Karte „freie Suche“ und rechts „Starter Set“ liegen. Gestaltungsentscheidung
+   aus Modellwissen, von der Gruppe zu prüfen. */
+#f04 .e4-leer {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  display: block;
+}
+#f04 .e4-leer svg { display: block; width: 100%; height: 100%; overflow: visible; }
+#f04 .e4-leer-rahmen { fill: var(--p-papier); stroke: var(--p-schrift); stroke-width: 3; stroke-dasharray: 12 8; }
+#f04 .e4-leer-leiste { fill: none; stroke: var(--p-schrift); stroke-width: 3; stroke-dasharray: 12 8; }
+#f04 .e4-leer-punkt { fill: var(--p-mittel); }
+#f04 .e4-leer-adresse { fill: none; stroke: var(--p-mittel); stroke-width: 2.5; }
+#f04 .e4-leer-seite { fill: none; stroke: var(--p-schrift); stroke-width: 4; stroke-linejoin: round; }
+#f04 .e4-leer-zeilen { fill: none; stroke: var(--p-mittel); stroke-width: 3.5; stroke-linecap: round; }
+#f04 .e4-leer-strich-grund { fill: none; stroke: var(--p-papier); stroke-width: 14; stroke-linecap: round; }
+#f04 .e4-leer-strich { fill: none; stroke: var(--p-schrift); stroke-width: 6; stroke-linecap: round; }
+#f04 .e4-leer-name { background: var(--p-papier); padding: 0 6px; margin-left: -6px; }
+
+/* Zeichen „bricht“ am offenen Ende des Nebenwegs (Rest endet bei x ≈ 1561, y = 595): schwarzer Kreis mit gelbem
+   Kreuz wie ein Knoten (dunkel umgekehrt) – dasselbe Zeichen wie das Urteil „bricht“ auf 05 (D13). */
+#f04 .e4-bricht { left: 1572px; top: 576px; z-index: 4; overflow: visible; }
+#f04 .e4-bricht-grund { fill: var(--p-knoten-grund); }
+#f04 .e4-bricht-zeichen { fill: none; stroke: var(--p-knoten-zahl); stroke-width: 4.5; stroke-linecap: round; }
+/* Wort „bricht“ rechts neben dem Zeichen (Nacharbeit D14, Befund D14-03: Urteil immer als Wort und Form, Plan 3.6);
+   Schrift wie das Nebenweg-Urteil auf 05 (Bricolage 30 px/700), mittig zum Zeichen (y = 595), endet vor x = 1792. */
+#f04 .e4-bricht-wort {
+  left: 1620px;
+  top: 580px;
+  margin: 0;
+  font-family: var(--schrift-display);
+  font-size: 30px;
+  font-weight: 700;
+  font-stretch: 86%;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 4;
+}

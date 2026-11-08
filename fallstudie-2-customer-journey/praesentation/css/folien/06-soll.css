@@ -4,6 +4,15 @@
    Knoten 52 px auf dem gelben Pfad, Plätze 2/3 als kleine Kreise (36 px) ohne
    Pfad. D12 (08.11.2026): Workshop-Foto b12 oben rechts entfernt (kein Workshop, keine eigene Erhebung).
    Zellen und Pfad setzt js/folien/pfad.js (JSON der Folie).
+   D13 (08.11.2026, KI-gestützt; Gestaltung aus Modellwissen): Rangfolge auf einen
+   Blick – Platz 1 Name in Bricolage 32 px (Titelschrift, schmal) und schwarzer
+   Knoten; Plätze 2/3 zurückgenommen: Ring 3 px in Schiefer statt schwarzer
+   Fläche, Name in Schiefer (6,33 : 1 hell, 7,86 : 1 dunkel). Oben rechts die vier
+   Auswahlkriterien (Plan 5.2.1) als Linien-Symbole mit Legende „Auswahl nach vier
+   Kriterien“ (neutral: auch Plätze 2/3 können alle vier erfüllen, 5.2.2). Symbole
+   KI-gestützt erstellt (Inline-SVG, KI-Nachweis FS2 Nr. 30/D13), keine Fremdbilder;
+   Abweichung von Plan 3.7 (Icon-Abzeichen) – erlaubt von Yannick am 08.11.2026
+   (KI-Nachweis FS2 Nr. 30).
    ============================================================================= */
 #f06 .e6-statt { margin: 2px 0 0; }
 
@@ -24,5 +33,70 @@
   padding: 0 6px 0 8px;
   margin-left: -1px;
 }
-#f06 .e6-tp[data-platz="1"] .e6-tp-name { font-weight: 650; letter-spacing: -0.01em; }
+/* Platz 1: Bricolage wie Titel und Knoten-Ziffern (Plan 3.4), etwa so breit wie Inter 28 px halbfett */
+#f06 .e6-tp[data-platz="1"] .e6-tp-name {
+  font-family: var(--schrift-display);
+  font-size: 32px;
+  font-weight: 750;
+  font-stretch: 82%;
+  line-height: 31px;
+  letter-spacing: -0.005em;
+  padding-top: 2px;
+}
+/* Plätze 2/3: Ring statt Fläche, Ziffer und Name in Schiefer */
+#f06 .e6-tp:not([data-platz="1"]) .p-knoten--klein {
+  box-sizing: border-box;
+  background: var(--p-papier);
+  border: 3px solid var(--p-schrift-2);
+  color: var(--p-schrift-2);
+  font-size: 22px;
+}
+#f06 .e6-tp:not([data-platz="1"]) .e6-tp-name { color: var(--p-schrift-2); }
 #f06 .e6-wegname { left: 700px; top: 525px; }
+
+/* Kriterien oben rechts (Spalten 10–12, frei seit D12): Symbol über Legende */
+#f06 .e6-kriterien {
+  left: 1352px;
+  top: 150px;
+  width: 440px;
+}
+#f06 .e6-kriterien-titel {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--p-schrift-2);
+  text-align: center;
+  white-space: nowrap;
+}
+#f06 .e6-kriterien-liste {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 0;
+  border-top: 2px solid var(--p-nebel);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#f06 .e6-kriterien-liste li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+#f06 .e6-kriterien-liste span {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--p-schrift);
+  white-space: nowrap;
+}
+#f06 .e6-icon {
+  width: 52px;
+  height: 52px;
+  fill: none;
+  stroke: var(--p-schrift);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+#f06 .e6-icon .e6-icon-voll { fill: var(--p-schrift); stroke: none; }

@@ -18,6 +18,10 @@
   Angelegt am 03.11.2026 im Workflow „fs2-bau“ (KI-Nachweis FS2, Eintrag 11 /
   Delegation D05), KI-gestützt. Stand 08.11.2026 – finale Fassung (KI-gestützt,
   Delegation D12), Prüfung durch die Gruppe offen.
+  Seit D13 (08.11.2026, KI-Nachweis FS2 Nr. 30) neue Visualisierungen auf 01–07 und
+  09; schlichte Linien-Symbole (Inline-SVG, KI-gestützt erstellt, keine Fremdbilder,
+  keine KI-Bilder) erlaubt von Yannick am 08.11.2026 – Abweichung von Plan 3.7, im
+  Plan als „Abweichung D13“ vermerkt. Einzelheiten: AUTOREN.md §15.
   KEINE EIGENE ERHEBUNG (Entscheidung Yannick 08.11.2026, KI-Nachweis FS2 Nr. 26):
   Es gab keinen Selbstversuch, keine Kurzinterviews, keine eigene Codierung, keinen
   Workshop und keine eigenen Fotos. Grundlage aller Aussagen: das Dossier (Befund-IDs),
@@ -32,6 +36,8 @@
   • Journey-Raster (04, 05, 06): Kacheln und Knoten tragen data-phase/data-zeile;
     js/folien/pfad.js setzt sie auf das Raster und zeichnet den Pfad aus den
     Kachelmitten (Daten im <script class="daten"> der Folie).
+    Folie 07 (seit D13): pfad.js setzt nur die Kopfzeile (ohneRaster); Weg,
+    Stationen und Pfeile sind dort ein festes SVG (Koordinaten von Hand nachziehen).
   • Fassung mit Bildern (Standard, LIESMICH §12): Kacheln und Bilder tragen
     data-intern="<schlüssel>"; js/folien/intern-bilder.js setzt die Datei aus
     fremdbilder/register.js ein. Die Fremdbilder (Screenshots, Werbe- und
@@ -168,6 +174,8 @@
      ║ Nacharbeit D12 (Abnahme): Titel „nachgezeichnet“ statt „nachgegangen“ (im Plan an den Selbstversuch gebunden);
      ║   Notiz „Ablauf“: Ausweichsatz statt „eigene Antwort“ (keine eigene Kauferfahrung behaupten).
      ║ Schritt 0: Frage mit drei Stufen (Trichter nach den 5 As, keine Zahlen) → Klick 1: Titel, Pfad startet.
+     ║ D13 (08.11.2026, Feinschliff, KI-gestützt): Pfad auf y = 800 statt 930 – er stößt jetzt an die Kontur des Fotos
+     ║   (vorher endete er unter dem Foto); Meta-Zeile ausgeglichen in zwei Zeilen, Umbruch nur an „ · “.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f01" data-titel="Einstieg: gesehen, nachgelesen, gekauft?" data-zeit="50" data-buendel="A" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-buehne="gelb">
   <div class="e1-frage">
@@ -190,9 +198,11 @@
     <p class="e1-meta" data-meta><span data-veranstaltung></span> · <span data-dozent></span> · <span data-hochschule></span> · <span data-fallstudie></span></p>
   </div>
 
-  <!-- Pfad: Startstrich am linken Rand, läuft zum Foto (Gestaltungsplan 5.1: „Pfad startet am Foto“) -->
+  <!-- Pfad: Startstrich am linken Rand, läuft zum Foto (Gestaltungsplan 5.1: „Pfad startet am Foto“). Seit D13
+       (08.11.2026) auf y = 800 statt 930: Er stößt jetzt an die Kontur des Fotos (vorher lief er unter dem Foto ins
+       Leere) und rückt näher an den Titelblock. -->
   <svg class="p-pfad e1-pfad" viewBox="0 0 1920 1080" aria-hidden="true" data-schritt="1" data-animation="zeichnen">
-    <path class="gelb" d="M 135 930 L 1113 930"/>
+    <path class="gelb" d="M 135 800 L 1113 800"/>
   </svg>
 
   <!-- b01: Produktbild von HOLY (Werbebild, Fassung mit Bildern), Anschnitt rechts, 4-px-Kontur, harter Schatten -->
@@ -228,6 +238,21 @@
      ║   Erhebung (KI-Nachweis FS2 Nr. 26); die Zeile „offen: zwei anonyme O-Töne …“ ist entfernt. Keine erfundenen Zitate.
      ║   Im Rückfall ohne Fremdbilder beschrifteter Platzhalter „Symbolbild Schichtarbeit · nur in der Fassung mit Bildern“.
      ║ Statista-Werte NUR wie in ../../fallstudie-1-brand-persona/persona-daten.md (✔ P94).
+     ║ D13 (08.11.2026, Visualisierung; Gestaltungsentscheidung aus Modellwissen, Prüfung durch die Gruppe offen):
+     ║   links oben Steckbrief Marco mit vier Strich-Symbolen (Uhr/Schicht, Paket/Vorrat, Markt, Bewertungen) statt
+     ║   Fließtext, darunter mit 48 px Abstand das Symbolbild (kürzer) – erst Marco, dann das Bild, damit es nicht wie
+     ║   Marcos Foto auf einer Persona-Karte wirkt; rechts die drei Verben des Titels als Gruppenköpfe, davor je ein
+     ║   Strich-Symbol in Schriftfarbe (Video entdeckt · Lupe prüft · Warenkorb kauft = „Video, Suche, Shop“, Sprechtext
+     ║   Schritt 1), verbunden durch eine dünne Linie in Mittel warm (Reihenfolge, Grafik zweiten Ranges). KEIN gelber
+     ║   Pfad und keine Knoten auf 02: der Pfad tritt erst auf 04 auf („daraus folgt der zentrale Weg (04)“), ein
+     ║   durchgehender Pfad hieße „trägt“ – der Übergang prüft → kauft bricht aber auf 05 (Ü2); Knoten sind Momente der
+     ║   Wahrheit/Platz 1 (Plan 3.6), keine Icon-Abzeichen (Plan 3.7; seit 08.11.2026 sind
+     ║   nur schlichte Linien-Symbole wie im Steckbrief erlaubt, KI-Nachweis FS2 Nr. 30). Statista-Gruppe als Balkenpaare (dick =
+     ║   Energy-Drink-Konsument:innen, dünn in Mittel warm = Ø aller), ARD/ZDF-Gruppe getrennt (Basen nicht gemischt),
+     ║   alle Balken in Schriftfarbe (Plan 3.6 Strichskala); das einzige Gelb in den Daten ist der Marker auf 92 %. Keine
+     ║   Hervorhebung „Marcos Kanal“: der Steckbrief nennt YouTube, Instagram und TikTok, Suchmaschinen gar nicht.
+     ║   Smartphone-Anteil 61 % als Ring. Gleiche Zahlen, gleiche Schritte (Klick 1: Linie, „prüft“, „kauft“).
+     ║   Von Yannick übernommen, Linien-Symbole erlaubt (KI-Nachweis FS2 Nr. 30, 08.11.2026).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f02" data-titel="Persona Marco und Mediennutzung" data-zeit="60" data-buendel="A" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="">
   <header class="p-kopf">
@@ -235,7 +260,21 @@
     <p class="p-herleitung" data-meta><b>So kommen wir darauf:</b> Persona Marco aus Fallstudie 1 (fiktiv) und Mediendaten seiner Gruppe – daraus folgt der zentrale Weg (04)</p>
   </header>
 
-  <!-- b04: Symbolbild (Community-Foto von HOLY, Fassung mit Bildern), Anschnitt links -->
+  <!-- Steckbrief Marco (fiktiv, FS1): vier Merkmale mit Strich-Symbolen statt Fließtext (D13); steht ÜBER dem
+       Symbolbild, damit das Bild nicht als Marcos Foto gelesen wird (Nacharbeit D13) -->
+  <div class="e2-steckbrief">
+    <p class="e2-name">Marco, 28 <span class="e2-fiktiv" data-meta>fiktiv · Persona FS1</span></p>
+    <ul class="e2-merkmale">
+      <li><svg class="e2-symbol" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M16 9 V16 L21.5 19.5"/></svg><span>Lager, Drei-Schicht-Betrieb</span></li>
+      <li><svg class="e2-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M4.5 10.5 L16 5 L27.5 10.5 V22.5 L16 28 L4.5 22.5 Z"/><path d="M4.5 10.5 L16 16 L27.5 10.5 M16 16 V28"/><path d="M10.2 7.8 L21.8 13.3"/></svg><span>online: 50er-Pulverdose auf Vorrat</span></li>
+      <li><svg class="e2-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 14 V27 H26 V14"/><path d="M4.5 14 L7.5 6 H24.5 L27.5 14 Z"/><path d="M13 27 V20 H19 V27"/></svg><span>Notfall: Rewe oder Edeka</span></li>
+      <li><svg class="e2-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4.5 L19.4 11.6 L27.2 12.6 L21.5 18 L22.9 25.8 L16 22 L9.1 25.8 L10.5 18 L4.8 12.6 L12.6 11.6 Z"/></svg><span>Bewertungen und YouTube</span></li>
+    </ul>
+    <p class="e2-limbic" data-meta>Limbic: <span data-marke>HOLY</span> als Territorium, Marco liegt darin (Hypothese, B7)</p>
+  </div>
+
+  <!-- b04: Symbolbild (Community-Foto von HOLY, Fassung mit Bildern), Anschnitt links, UNTER dem Steckbrief
+       (48 px Abstand, Nacharbeit D13) -->
   <figure class="p-kachel e2-foto" data-status="leer" data-art="foto" data-bild="b04" data-intern="b04-persona">
     <div class="p-platzhalter">
       <span class="p-kachel-art" data-meta>Symbolbild Schichtarbeit</span>
@@ -244,30 +283,43 @@
     <span class="p-bildlabel e2-label" data-meta>Symbolbild Schichtarbeit – nicht Marco<br>(Lokführer aus der <span data-marke>HOLY</span>-Community)</span>
   </figure>
 
-  <div class="e2-persona">
-    <p class="e2-name"><b>Marco, 28</b> · Lager, Drei-Schicht-Betrieb <span class="e2-fiktiv" data-meta>(fiktiv, FS1)</span></p>
-    <p class="e2-kauf">kauft „<span data-marke>HOLY</span> online, 50er-Pulverdose auf Vorrat; im Notfall … Rewe oder Edeka“</p>
-    <p class="e2-info">informiert sich über Bewertungen und YouTube</p>
-    <p class="e2-limbic" data-meta>Limbic: <span data-marke>HOLY</span> als Territorium, Marco liegt darin (Hypothese, B7)</p>
-  </div>
+  <!-- Die drei Verben des Titels als Gruppenköpfe, davor je ein Strich-Symbol in Schriftfarbe (wie im Steckbrief):
+       Video → Suche → Warenkorb (D13). Verbunden durch eine dünne Linie in Mittel warm (Reihenfolge, Grafik zweiten
+       Ranges) – bewusst KEIN gelber Pfad und keine Knoten (Pfad erst ab 04, Bruch Ü2 auf 05; Nacharbeit D13).
+       Linie, „prüft“ und „kauft“ erscheinen mit Klick 1 (Sprechtext: „… Video, Suche, Shop.“) -->
+  <svg class="e2-zeichen e2-zeichen--1" viewBox="0 0 36 36" aria-hidden="true"><rect x="3" y="7" width="30" height="22" rx="5"/><path d="M15 12.5 L23.5 18 L15 23.5 Z"/></svg>
+  <span class="e2-linie e2-linie--1" data-schritt="1" aria-hidden="true"></span>
+  <svg class="e2-zeichen e2-zeichen--2" data-schritt="1" viewBox="0 0 36 36" aria-hidden="true"><circle cx="15" cy="15" r="10"/><path d="M22.5 22.5 L32 32"/></svg>
+  <span class="e2-linie e2-linie--2" data-schritt="1" aria-hidden="true"></span>
+  <svg class="e2-zeichen e2-zeichen--3" data-schritt="1" viewBox="0 0 36 36" aria-hidden="true"><path d="M2.5 6 H8 L12 24 H28.5 L33 11 H9.5"/><circle cx="14" cy="30.5" r="2.4"/><circle cx="26.5" cy="30.5" r="2.4"/></svg>
 
+  <!-- entdeckt: Statista CI 2025, Energy-Drink-Konsument:innen (dicker Balken) gegen Ø aller (dünner Balken) -->
   <div class="e2-gruppe e2-gruppe--a">
-    <p class="e2-gruppe-kopf" data-meta>Energy-Drink-Konsument:innen, regelmäßig genutzt (Statista CI 2025) · Strich = Ø aller</p>
-    <div class="p-skala">
-      <span class="p-skala-name">YouTube</span><span class="p-skala-spur"><span class="p-skala-wert" style="width:73%"></span><span class="p-skala-schnitt" style="left:63%"></span></span><span class="p-skala-zahl">73 %<span class="e2-schnitt" data-meta>Ø 63</span></span>
-      <span class="p-skala-name">Instagram</span><span class="p-skala-spur"><span class="p-skala-wert" style="width:71%"></span><span class="p-skala-schnitt" style="left:58%"></span></span><span class="p-skala-zahl">71 %<span class="e2-schnitt" data-meta>Ø 58</span></span>
-      <span class="p-skala-name">TikTok</span><span class="p-skala-spur"><span class="p-skala-wert" style="width:58%"></span><span class="p-skala-schnitt" style="left:41%"></span></span><span class="p-skala-zahl">58 %<span class="e2-schnitt" data-meta>Ø 41</span></span>
+    <p class="p-satz e2-verb">entdeckt</p>
+    <p class="e2-gruppe-kopf" data-meta>Energy-Drink-Konsument:innen, regelmäßig genutzt<br>Statista CI 2025 · dünn = Ø aller</p>
+    <div class="e2-balken">
+      <span class="e2-b-name">YouTube</span><span class="e2-b-spur"><span class="e2-b-wert" style="width:73%"></span><span class="e2-b-schnitt" style="width:63%"></span></span><span class="e2-b-zahl">73 %<span class="e2-schnitt" data-meta>Ø 63</span></span>
+      <span class="e2-b-name">Instagram</span><span class="e2-b-spur"><span class="e2-b-wert" style="width:71%"></span><span class="e2-b-schnitt" style="width:58%"></span></span><span class="e2-b-zahl">71 %<span class="e2-schnitt" data-meta>Ø 58</span></span>
+      <span class="e2-b-name">TikTok</span><span class="e2-b-spur"><span class="e2-b-wert" style="width:58%"></span><span class="e2-b-schnitt" style="width:41%"></span></span><span class="e2-b-zahl">58 %<span class="e2-schnitt" data-meta>Ø 41</span></span>
     </div>
   </div>
 
+  <!-- prüft: ARD/ZDF-Medienstudie 2026, 14–29 Jahre, mindestens wöchentlich (andere Basis, eigene Gruppe) -->
   <div class="e2-gruppe e2-gruppe--b" data-schritt="1" data-animation="hoch">
-    <p class="e2-gruppe-kopf" data-meta>14- bis 29-Jährige, mindestens wöchentlich · ARD/ZDF-Medienstudie 2026</p>
-    <div class="p-skala">
-      <span class="p-skala-name">Suchmaschinen</span><span class="p-skala-spur"><span class="p-skala-wert" style="width:92%"></span></span><span class="p-skala-zahl"><span class="p-marker">92 %</span></span>
-      <span class="p-skala-name">KI-Tools</span><span class="p-skala-spur"><span class="p-skala-wert" style="width:68%"></span></span><span class="p-skala-zahl">68 %</span>
-      <span class="p-skala-name">Social Media</span><span class="p-skala-spur"><span class="p-skala-wert" style="width:91%"></span></span><span class="p-skala-zahl">91 %</span>
+    <p class="p-satz e2-verb">prüft</p>
+    <p class="e2-gruppe-kopf" data-meta>14- bis 29-Jährige, mindestens wöchentlich<br>ARD/ZDF-Medienstudie 2026</p>
+    <div class="e2-balken">
+      <span class="e2-b-name">Suchmaschinen</span><span class="e2-b-spur"><span class="e2-b-wert" style="width:92%"></span></span><span class="e2-b-zahl"><span class="p-marker">92 %</span></span>
+      <span class="e2-b-name">KI-Tools</span><span class="e2-b-spur"><span class="e2-b-wert" style="width:68%"></span></span><span class="e2-b-zahl">68 %</span>
+      <span class="e2-b-name">Social Media</span><span class="e2-b-spur"><span class="e2-b-wert" style="width:91%"></span></span><span class="e2-b-zahl">91 %</span>
     </div>
-    <p class="e2-handy">Smartphone: 61 % der Onlineumsätze (2025)</p>
+  </div>
+
+  <!-- kauft: Smartphone-Anteil an den Onlineumsätzen 2025 (✔ P25) als Ring -->
+  <div class="e2-gruppe e2-gruppe--c" data-schritt="1" data-animation="hoch">
+    <p class="p-satz e2-verb">kauft</p>
+    <svg class="e2-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="e2-ring-spur" cx="50" cy="50" r="38"/><circle class="e2-ring-wert" cx="50" cy="50" r="38" pathLength="100" stroke-dasharray="61 39" transform="rotate(-90 50 50)"/></svg>
+    <p class="e2-handy"><span class="e2-handy-zahl">61 %</span> der Onlineumsätze am Smartphone <span class="e2-handy-jahr" data-meta>(2025)</span></p>
   </div>
 
 
@@ -278,9 +330,9 @@
   <aside class="notizen">
     <p data-schritt="0">Unser Blickwinkel bleibt Marco aus Fallstudie 1: 28, Fachkraft im Lager, Drei-Schicht-Betrieb – eine fiktive Persona. Laut Steckbrief kauft er HOLY online, die 50er-Pulverdose auf Vorrat; nur im Notfall bei Rewe oder Edeka. Bevor er Neues kauft, liest er Bewertungen und schaut YouTube. Das passt zu den Daten seiner Kategorie: Wer regelmäßig Energy Drinks trinkt, nutzt zu 73 Prozent YouTube, zu 71 Instagram und zu 58 TikTok – jeweils deutlich mehr als der Durchschnitt.</p>
     <p data-schritt="1">Und wenn Marco etwas wissen will? 92 Prozent der 14- bis 29-Jährigen nutzen jede Woche eine Suchmaschine, 68 Prozent schon KI-Tools. Gekauft wird am Handy: 61 Prozent der Onlineumsätze laufen über das Smartphone. Daraus folgt unser zentraler Weg: Video, Suche, Shop.</p>
-    <p>Belege: Persona `fallstudie-1-brand-persona/persona-steckbrief.md` (fiktiv; Kaufverhalten wörtlich). Statista Consumer Insights 2025, Energy-Drink-Konsument:innen, „regelmäßig genutzt“, nur die Werte aus `persona-daten.md` (✔ P94; Kategorie, nicht HOLY). ARD/ZDF-Medienstudie 2026, 14–29 Jahre, mindestens wöchentlich: Suchmaschinen 92 %, KI-Tools 68 % (✔ P18), Social Media 91 % (✔ P11). Smartphone 61 % der Onlineumsätze 2025 (✔ P25). Mediennutzung und Kaufverhalten gehören in die Persona (Stenger S. 60, 67, 128; ✔ P01). Basen nicht mischen: zwei getrennte Gruppen. Limbic-Territorium: Hypothese (H P07), ausführlich in B7. Keine O-Töne: Wir haben keine Kurzinterviews geführt (keine eigene Befragung, Methode B1); Kundenstimmen nur aus Bewertungsportalen (B5). Bild: ein Symbolbild (Community-Foto von HOLY, ein Lokführer im Squad, nicht Marco; so im Bild beschriftet) – kein eigenes Foto.</p>
+    <p>Belege: Persona `fallstudie-1-brand-persona/persona-steckbrief.md` (fiktiv; Kaufverhalten wörtlich). Statista Consumer Insights 2025, Energy-Drink-Konsument:innen, „regelmäßig genutzt“, nur die Werte aus `persona-daten.md` (✔ P94; Kategorie, nicht HOLY). ARD/ZDF-Medienstudie 2026, 14–29 Jahre, mindestens wöchentlich: Suchmaschinen 92 %, KI-Tools 68 % (✔ P18), Social Media 91 % (✔ P11). Smartphone 61 % der Onlineumsätze 2025 (✔ P25). Mediennutzung und Kaufverhalten gehören in die Persona (Stenger S. 60, 67, 128; ✔ P01). Basen nicht mischen: zwei getrennte Gruppen. Darstellung (D13, nur Lesehilfe, keine neuen Werte): Die Strich-Symbole vor den Verben des Titels (Video entdeckt · Lupe prüft · Warenkorb kauft) stehen für Video, Suche, Shop wie im Sprechtext; die dünne Linie zeigt nur die Reihenfolge – der gelbe Pfad beginnt erst auf 04. Dicker Balken = Energy-Drink-Konsument:innen, dünner Balken = Ø aller (Statista); alle Balken schwarz, keine Hervorhebung einzelner Kanäle (der Steckbrief nennt YouTube, Instagram und TikTok); Ring = 61 % der Onlineumsätze am Smartphone. Steckbrief-Merkmale gekürzt aus dem Steckbrief (wörtlich: „HOLY online, 50er-Pulverdose auf Vorrat; im Notfall … Rewe oder Edeka“). Limbic-Territorium: Hypothese (H P07), ausführlich in B7. Keine O-Töne: Wir haben keine Kurzinterviews geführt (keine eigene Befragung, Methode B1); Kundenstimmen nur aus Bewertungsportalen (B5). Bild: ein Symbolbild (Community-Foto von HOLY, ein Lokführer im Squad, nicht Marco; so im Bild beschriftet) – kein eigenes Foto.</p>
     <p>Kürzung 1 (Kontrollpunkt nach 03 überschritten): Mediennutzung nur zeigen, nur den Marker 92 % und den Kaufkanal erklären, −15 s (Plan 10.2).</p>
-    <p>Rückfragen: „Passt die Persona?“ / „Warum online?“ → B7. „Habt ihr Leute befragt?“ → Nein, keine eigene Befragung: Persona aus FS1, Mediendaten und Bewertungen Dritter (B1, B5). „Ist Marco Lokführer?“ → Nein: Marco ist fiktiv (FS1) und arbeitet im Lager im Drei-Schicht-Betrieb; das Bild ist nur ein Symbolbild für Schichtarbeit – ein Lokführer aus der HOLY-Community, ohne Gesicht.</p>
+    <p>Rückfragen: „Passt die Persona?“ / „Warum online?“ → B7. „Habt ihr Leute befragt?“ → Nein, keine eigene Befragung: Persona aus FS1, Mediendaten und Bewertungen Dritter (B1, B5). „Ist Marco Lokführer?“ → Nein: Marco ist fiktiv (FS1) und arbeitet im Lager im Drei-Schicht-Betrieb; das Bild ist nur ein Symbolbild für Schichtarbeit – ein Lokführer aus der HOLY-Community, ohne Gesicht. „Messen die Balken das Entdecken und Prüfen?“ → Nein: Die Verben sind die Lesart des Titels; die Balken zeigen allgemeine Nutzung, nicht den Zweck.</p>
   </aside>
 </section>
 
@@ -304,6 +356,16 @@
      ║   ~ B20/B21 (Abweichung von R2 „höchstens im Backup“, Gestaltungsplan 1.1); Sprechtext sagt „in Bewertungen“.
      ║   Platz in der Quellzeile: „Zählung H“ statt „Dossier 4.2 (H)“ (Herleitung nennt die Inventur im Dossier); G06/G10
      ║   stehen an den Farb- und Formproben selbst; S10/S91 (Help-Center vorn) in der Notiz.
+     ║ D13 (08.11.2026, Visualisierung; Gestaltungsentscheidung aus Modellwissen, Prüfung durch die Gruppe offen):
+     ║   unter jedem Bandnamen ein Kästchen je Kontaktpunkt (Klick 1, Zehnerreihen: 13 · 30 · 11 wie Dossier 4.2; die
+     ║   3 fehlenden Owned als offene Kästchen, derselbe offene Kasten vor „3 Owned fehlen …“, jetzt 28 px); Bewertung
+     ║   je Phase mit Signalzeichen statt „+“/„−“ (gefüllter Kreis mit + · offener Kreis mit −), Recherche-Minus gelb
+     ║   mit Kontur und Marker (schwächste Stelle laut Sprechtext). Gleiche Texte, gleiche Schritte, gleiche Belege.
+     ║   Nacharbeit D13: Kästchen 15 px mit 2 px Abstand (vorher 13/3 px; Kopf 168 px, Zahlspalte 92 px, Kacheln bleiben
+     ║   ab x = 420), damit die drei offenen Kästchen am Beamer und im Notfall-PDF erkennbar bleiben.
+     ║   Von Yannick übernommen, Signalzeichen erlaubt (KI-Nachweis FS2 Nr. 30, 08.11.2026).
+     ║   Nacharbeit D14 (Befund D14-04): Plus jetzt als OFFENER Kreis mit + (vorher gefüllt). Der gefüllte Kreis mit
+     ║   Kreuz bedeutet auf 04/05 „bricht“; ein gefülltes Plus für „stärkt“ wäre davon kaum zu unterscheiden.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f03" data-titel="A1 IST-Analyse und Bewertung" data-zeit="80" data-buendel="A" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="1">
   <header class="p-kopf">
@@ -316,13 +378,13 @@
        p-bildlabel = Beschriftung im Bild, nur sichtbar, wenn ein Bild da ist (selbsterklärende Screenshots ohne). -->
   <div class="e3-band e3-band--paid">
     <p class="e3-zahl" data-schritt="1"><span class="e3-zahl-wert">13</span></p>
-    <p class="e3-band-name">Paid</p>
+    <div class="e3-kopf"><p class="e3-band-name">Paid</p><span class="e3-einheiten" data-schritt="1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
     <figure class="p-kachel e3-k" data-status="leer" data-art="screenshot" data-intern="m03-creator"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Creator-Video mit Code</span></div><span class="p-bildlabel" data-meta>Creator mit Code</span></figure>
     <figure class="p-kachel e3-k" data-status="leer" data-art="foto" data-intern="m03-regal"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Regal / Display</span></div><span class="p-bildlabel" data-meta>Regal im Handel</span></figure>
   </div>
   <div class="e3-band e3-band--owned">
     <p class="e3-zahl" data-schritt="1"><span class="e3-zahl-wert">30</span></p>
-    <p class="e3-band-name">Owned</p>
+    <div class="e3-kopf"><p class="e3-band-name">Owned</p><span class="e3-einheiten" data-schritt="1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="e3-fehlt"></i><i class="e3-fehlt"></i><i class="e3-fehlt"></i></span></div>
     <figure class="p-kachel e3-k" data-status="leer" data-art="screenshot" data-intern="m03-starterset"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Shop: Starter Set</span></div><span class="p-bildlabel" data-meta>Shop: Starter Set</span></figure>
     <figure class="p-kachel e3-k e3-k--blog" data-status="rueckfall" data-art="grafik" data-intern="m03-blog"><div class="p-rueckfall"><span class="e3-blog-null">0 Beiträge</span><span class="e3-blog-pfad" data-meta>Blog /blogs/news</span></div><span class="p-bildlabel" data-meta>Blog: 0 Beiträge</span></figure>
     <figure class="p-kachel e3-k" data-status="leer" data-art="foto" data-intern="m03-unboxing"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Paket &amp; Unboxing</span></div><span class="p-bildlabel" data-meta>Paket &amp; Unboxing</span></figure>
@@ -331,12 +393,12 @@
   </div>
   <div class="e3-band e3-band--earned" data-schritt="1">
     <p class="e3-zahl"><span class="e3-zahl-wert">11</span></p>
-    <p class="e3-band-name">Earned</p>
+    <div class="e3-kopf"><p class="e3-band-name">Earned</p><span class="e3-einheiten" data-schritt="1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
     <figure class="p-kachel e3-k" data-status="leer" data-art="screenshot" data-intern="m03-suche"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>freie Suche</span></div><span class="p-bildlabel" data-meta>freie Suche</span></figure>
     <figure class="p-kachel e3-k" data-status="leer" data-art="screenshot" data-intern="m03-bewertungen"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Bewertungen</span></div></figure>
   </div>
-  <p class="p-notiz e3-fehlen" data-schritt="1">3 Owned fehlen: Blog-Beiträge, Filialenfinder, App</p>
-  <p class="e3-legende" data-meta data-schritt="1">Bilder: Beispiele je Band, alle gleich groß – keine Gewichtung</p>
+  <p class="e3-fehlen" data-schritt="1"><span class="e3-fehlt-zeichen" aria-hidden="true"></span>3 Owned fehlen: Blog-Beiträge, Filialenfinder, App</p>
+  <p class="e3-legende" data-meta data-schritt="1"><span class="e3-legende-einheit" aria-hidden="true"></span>= 1 Kontaktpunkt (Zählung H)<br>Bilder: Beispiele je Band, alle gleich groß – keine Gewichtung</p>
 
   <!-- Farb- und Formproben (b18), Hex-Werte und Status darunter auf Creme -->
   <ul class="e3-proben" data-schritt="1" aria-label="Farb- und Formproben">
@@ -352,14 +414,17 @@
     <li class="e3-probe e3-probe--form"><span class="e3-form e3-form--schach"></span><span class="e3-hex" data-meta>Schachbrett</span><span class="e3-status" data-meta>✎ G10</span></li>
   </ul>
 
-  <!-- Klick 2: Bewertungszeile je Phase gegen die Zielfrage der 5 As (S. 109); IDs nur in der Quellzeile -->
+  <!-- Klick 2: Bewertungszeile je Phase gegen die Zielfrage der 5 As (S. 109); IDs nur in der Quellzeile.
+       D13: Plus/Minus als Signalzeichen in der Rinne vor jedem Eintrag (offener Kreis mit + = stärkt, offener
+       Kreis mit − = schwächt; Plus bis zur Nacharbeit D14 gefüllt); Recherche: Minus-Zeichen gelb mit Kontur + Marker
+       (schwächste Stelle, Sprechtext) -->
   <div class="e3-bewertung" data-schritt="2" data-animation="hoch">
     <p class="e3-bew-kopf">Bewertung je Phase <span class="e3-bew-mass" data-meta>Maßstab: Zielfrage der 5 As (S. 109)</span></p>
-    <div class="e3-bew-phase"><p class="p-phase-name">Inspiration</p><p class="p-phase-as" data-meta>AWARE</p><p class="e3-plus">+ Creator-Codes</p><p class="e3-minus">− „aufdringlich“</p></div>
-    <div class="e3-bew-phase"><p class="p-phase-name">Recherche</p><p class="p-phase-as" data-meta>APPEAL</p><p class="e3-plus">+ Help-Center vorn</p><p class="e3-minus"><span class="p-marker">− knapp, als Bild</span></p></div>
-    <div class="e3-bew-phase"><p class="p-phase-name">Entscheidung</p><p class="p-phase-as" data-meta>ASSURE</p><p class="e3-plus">+ Bewertungen 4,7</p><p class="e3-minus">− Preis nur mit Code</p></div>
-    <div class="e3-bew-phase"><p class="p-phase-name">Kauf</p><p class="p-phase-as" data-meta>ACT</p><p class="e3-plus">+ Mix &amp; Match</p><p class="e3-minus">− drei Lieferzeiten</p></div>
-    <div class="e3-bew-phase"><p class="p-phase-name">Bindung</p><p class="p-phase-as" data-meta>ADVOCATE</p><p class="e3-plus">+ Service gelobt</p><p class="e3-minus">− Kritik nach Kauf</p></div>
+    <div class="e3-bew-phase"><p class="p-phase-name">Inspiration</p><p class="p-phase-as" data-meta>AWARE</p><p class="e3-plus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Plus: </span>Creator-Codes</p><p class="e3-minus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Minus: </span>„aufdringlich“</p></div>
+    <div class="e3-bew-phase"><p class="p-phase-name">Recherche</p><p class="p-phase-as" data-meta>APPEAL</p><p class="e3-plus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Plus: </span>Help-Center vorn</p><p class="e3-minus e3-minus--schwach"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Minus, schwächste Stelle: </span><span class="p-marker">knapp, als Bild</span></p></div>
+    <div class="e3-bew-phase"><p class="p-phase-name">Entscheidung</p><p class="p-phase-as" data-meta>ASSURE</p><p class="e3-plus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Plus: </span>Bewertungen 4,7</p><p class="e3-minus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Minus: </span>Preis nur mit Code</p></div>
+    <div class="e3-bew-phase"><p class="p-phase-name">Kauf</p><p class="p-phase-as" data-meta>ACT</p><p class="e3-plus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Plus: </span>Mix &amp; Match</p><p class="e3-minus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Minus: </span>drei Lieferzeiten</p></div>
+    <div class="e3-bew-phase"><p class="p-phase-name">Bindung</p><p class="p-phase-as" data-meta>ADVOCATE</p><p class="e3-plus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Plus: </span>Service gelobt</p><p class="e3-minus"><span class="e3-sig" aria-hidden="true"></span><span class="nur-screenreader">Minus: </span>Kritik nach Kauf</p></div>
   </div>
 
   <p class="p-quelle" data-meta>Stenger S. 109, 112 f. · Zählung H · ✔ T02 T17 T22 B10 S27 B91 L39 M01 · ✎ L14 S31 · ~ B20 B21 (KI) · H B25</p>
@@ -370,7 +435,7 @@
     <p data-schritt="0">Schritt eins im Prozess von Seite 111: Transparenz schaffen. Aus der Recherche haben wir HOLYs Kontaktpunkte gesammelt und wie die Intersport-Liste nach Paid, Owned und Earned sortiert. Bezahlt sind vor allem Creator mit Rabattcode und das Regal. Eigene Kanäle hat HOLY viele: Shop, Help-Center, Rewards, Pakete.</p>
     <p data-schritt="1">Dazu kommt, was andere über HOLY sagen: Suchtreffer, Bewertungen, Empfehlungen. Gezählt sind das 13 Paid, 30 Owned und 11 Earned – drei Owned-Kanäle fehlen ganz: Blog-Beiträge, Filialenfinder, App. Unten der Auftritt: Gelb, Creme, Schwarz, dicke Konturen.</p>
     <p data-schritt="2">Und wie gut ist das? Je Phase prüfen wir gegen die Zielfrage der fünf As. Aufmerksamkeit erzeugen Creator-Codes – in Bewertungen heißt die Werbung teils aufdringlich. In der Recherche steht das Help-Center vorn, aber knapp und oft nur als Etikettbild – die schwächste Stelle. Bewertungen sind stark, der Preis wird aber erst mit Code akzeptabel. Beim Kauf rechnet Mix &amp; Match automatisch, doch es gibt drei Lieferzeiten. In Bewertungen wird der Service oft gelobt; die meiste Kritik dort betrifft die Zeit nach dem Kauf.</p>
-    <p>Belege: Inventur Dossier 4.1/4.2 (13 Paid, 30 Owned davon 3 fehlend, 11 Earned; Zuordnung H; Intersport-Muster S. 113, ✎ L14; Kategorien S. 112, ✔ L12; Paid/Owned/Earned in der Vorlesung uneinheitlich, ✔ L13). Der Blog ist leer (0 Beiträge; ✔ M01, ✔ L39) – deshalb „Blog-Beiträge“ unter „fehlen“. Bewertung: Creator-Codes ✔ T02, „aufdringlich“ ~ B21 (KI-gestützte Agenten-Stichprobe, ein Codierdurchgang; 3 von 40 kritischen Bewertungen); Help-Center vorn ✎ S10 / ~ S91, knapp ✔ S27, nur Etikettbild ✎ S31; Bewertungen 4,7 ✔ T17, Preis nur mit Code ✔ B10; Mix &amp; Match ✔ T22, drei Lieferzeiten ✔ B91; Service gelobt ~ B20, Kritik nach Kauf H B25 (teils Effekt der Quelle: Bewertungen entstehen fast nur nach dem Kauf, Dossier 5.2 – deshalb im Sprechtext „in Bewertungen“). Farben ✎ G06, ✔ G07, ✔ G91; Formen ✎ G10. Eine eigene Codierung der Bewertungen gibt es nicht (keine eigene Erhebung, Methode B1): Die Stichproben ~ B20/~ B21 hat ein Recherche-Agent KI-gestützt codiert, nicht die Gruppe – deshalb nur mit „~ unsicher“. Die Bilder sind Beispiele je Band, alle gleich groß, ohne Gewichtung.</p>
+    <p>Belege: Inventur Dossier 4.1/4.2 (13 Paid, 30 Owned davon 3 fehlend, 11 Earned; Zuordnung H; Intersport-Muster S. 113, ✎ L14; Kategorien S. 112, ✔ L12; Paid/Owned/Earned in der Vorlesung uneinheitlich, ✔ L13). Der Blog ist leer (0 Beiträge; ✔ M01, ✔ L39) – deshalb „Blog-Beiträge“ unter „fehlen“. Bewertung: Creator-Codes ✔ T02, „aufdringlich“ ~ B21 (KI-gestützte Agenten-Stichprobe, ein Codierdurchgang; 3 von 40 kritischen Bewertungen); Help-Center vorn ✎ S10 / ~ S91, knapp ✔ S27, nur Etikettbild ✎ S31; Bewertungen 4,7 ✔ T17, Preis nur mit Code ✔ B10; Mix &amp; Match ✔ T22, drei Lieferzeiten ✔ B91; Service gelobt ~ B20, Kritik nach Kauf H B25 (teils Effekt der Quelle: Bewertungen entstehen fast nur nach dem Kauf, Dossier 5.2 – deshalb im Sprechtext „in Bewertungen“). Farben ✎ G06, ✔ G07, ✔ G91; Formen ✎ G10. Eine eigene Codierung der Bewertungen gibt es nicht (keine eigene Erhebung, Methode B1): Die Stichproben ~ B20/~ B21 hat ein Recherche-Agent KI-gestützt codiert, nicht die Gruppe – deshalb nur mit „~ unsicher“. Die Bilder sind Beispiele je Band, alle gleich groß, ohne Gewichtung. Darstellung (D13, nur Lesehilfe): ein Kästchen = ein Kontaktpunkt der Inventur (Dossier 4.2; Zuordnung H), offene Kästchen = die 3 fehlenden Owned; offener Kreis mit + = stärkt, offener Kreis mit − = schwächt die Phase, gelbes Minus = schwächste Stelle (Recherche).</p>
     <p>Kürzung 4: Farbproben nur zeigen, −10 s (Plan 10.2). Der Marker liegt auf dem Minus der Recherche – Überleitung zu Folie 04/05.</p>
     <p>Rückfragen: „Welche Touchpoints gibt es?“ → B3. „Wie habt ihr bewertet?“ → Maßstab Zielfrage S. 109; Belege B8; Vorgehen und Grenzen B1. „Wo ist die Mundpropaganda?“ → in der Earned-Zählung (Empfehlung Freunde und Kollegen, B3); ein ehrliches Bild dafür gibt es nicht.</p>
   </aside>
@@ -388,8 +453,17 @@
      ║ KACHELN 232 × 130 (Umbau 03.11., D06; vorher 200 × 112, Plan 6.2 Nr. 1: 240 × 135): Zeilen 82 px, K4 mit Namen
      ║   ÜBER der Kachel (sonst stößt er an K5), K6 um 20 px nach links (data-dx, Pfeilspitze bleibt sichtbar),
      ║   Hinweis „Vom Regal kein Weg …“ in der Spalte Bindung.
-     ║ Schritt 0: Raster + K1 → Klick 1: Pfad K1→K2→K3, Leerstelle → Klick 2: K5, K6, Pfeilspitze, Wegbeschriftung,
-     ║   Legende, gestrichelter Nebenweg K1→K4 mit beiden Notizen.
+     ║ D13 (08.11.2026, KI-gestützt, von Yannick übernommen – KI-Nachweis FS2 Nr. 30; Gestaltung aus Modellwissen):
+     ║   Die Leerstelle wirkte wie ein fehlendes Bild. Jetzt eine leere Browserseite (gestrichelter Rahmen, Leiste, leeres Adressfeld) mit
+     ║   durchgestrichener Seite, Name „keine Antwortseite“ darüber (vorher Text „Antwortseite fehlt“ im Kasten). Kein
+     ║   Bewertungszeichen am zentralen Weg: Die Urteile (wackelt/bricht) stehen erst auf 05 mit Legende (Plan 6.2
+     ║   Nr. 3). Nur am offenen Ende des Nebenwegs das Zeichen „bricht“ (schwarzer Kreis, gelbes Kreuz) wie auf 05
+     ║   („Nebenweg … bricht“, Plan 3.6). Keine neuen Fakten, Klicks und Sprechtext unverändert.
+     ║   Nacharbeit D14 (Befund D14-03): neben dem Zeichen auch das Wort „bricht“ (p.e4-bricht-wort, Bricolage 30 px wie
+     ║   das Nebenweg-Urteil auf 05), weil Plan 3.6 das Urteil immer als Wort und Form verlangt. Das Wort ist für
+     ║   Screenreader ausgeblendet (das Zeichen sagt schon „Zeichen bricht: …“). Die Legende dazu steht erst auf 05.
+     ║ Schritt 0: Raster + K1 → Klick 1: Pfad K1→K2→K3, Leerstelle → Klick 2: K5, K6, Pfeilspitze,
+     ║   Wegbeschriftung, Legende, gestrichelter Nebenweg K1→K4 mit beiden Notizen, Zeichen und Wort „bricht“.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f04" data-titel="A2 Journey-Map: zentraler Weg (IST)" data-zeit="80" data-buendel="B" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="2">
   <header class="p-kopf">
@@ -424,7 +498,21 @@
     <figure class="p-kachel" data-id="k2" data-phase="2" data-zeile="6" data-status="leer" data-art="screenshot" data-schritt="1" data-intern="k2-suche-04"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Screenshot</span></div></figure>
     <p class="p-kachel-name" data-zu="k2" data-lage="oben" data-schritt="1">freie Suche</p>
 
-    <div class="p-leerstelle" data-id="l1" data-phase="2" data-zeile="3" data-schritt="1">Antwortseite fehlt</div>
+    <!-- Leerstelle als bewusste Lücke (D13): leere Browserseite mit durchgestrichener Seite, Name darüber; ohne
+         Bewertungszeichen (die Urteile stehen erst auf 05) -->
+    <div class="p-leerstelle e4-leer" data-id="l1" data-phase="2" data-zeile="3" data-schritt="1" role="img" aria-label="Leere Browserseite mit durchgestrichener Seite: keine eigene Antwortseite von HOLY">
+      <svg viewBox="0 0 232 130" width="232" height="130" aria-hidden="true">
+        <rect class="e4-leer-rahmen" x="1.5" y="1.5" width="229" height="127"/>
+        <path class="e4-leer-leiste" d="M1.5 27 H230.5"/>
+        <circle class="e4-leer-punkt" cx="17" cy="14.5" r="4.5"/><circle class="e4-leer-punkt" cx="31" cy="14.5" r="4.5"/><circle class="e4-leer-punkt" cx="45" cy="14.5" r="4.5"/>
+        <rect class="e4-leer-adresse" x="60" y="8" width="156" height="13" rx="6.5"/>
+        <path class="e4-leer-seite" d="M88 38 H126 L144 56 V120 H88 Z M126 38 V56 H144"/>
+        <path class="e4-leer-zeilen" d="M98 68 H134 M98 80 H134 M98 92 H134 M98 104 H120"/>
+        <path class="e4-leer-strich-grund" d="M72 36 L160 122"/>
+        <path class="e4-leer-strich" d="M72 36 L160 122"/>
+      </svg>
+    </div>
+    <p class="p-kachel-name e4-leer-name" data-zu="l1" data-lage="oben" data-schritt="1">keine Antwortseite</p>
 
     <figure class="p-kachel" data-id="k3" data-phase="3" data-zeile="3" data-status="leer" data-art="screenshot" data-schritt="1" data-intern="k3-produktseite-04"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>Screenshot</span></div></figure>
     <p class="p-kachel-name" data-zu="k3" data-schritt="1">Starter Set</p>
@@ -442,6 +530,14 @@
     <p class="p-wegname e4-wegname" data-schritt="2">Zentraler Weg (IST)</p>
     <p class="p-notiz e4-weiter" data-schritt="2">Bindung geht weiter</p>
     <p class="p-notiz e4-uebersprungen" data-schritt="2">Handel: Recherche übersprungen</p>
+    <!-- Offenes Ende des Nebenwegs mit dem Zeichen für „bricht“ (wie auf 05; D13) und seit der Nacharbeit D14 auch
+         mit dem Wort (Plan 3.6: Urteil immer als Wort und Form; Befund D14-03). Das Wort ist für Screenreader
+         ausgeblendet, weil das Zeichen schon „Zeichen bricht: …“ ansagt. -->
+    <svg class="e4-bricht" data-schritt="2" width="38" height="38" viewBox="0 0 38 38" role="img" aria-label="Zeichen bricht: vom Regal kein Weg in den Squad">
+      <circle class="e4-bricht-grund" cx="19" cy="19" r="17"/>
+      <path class="e4-bricht-zeichen" d="M12.5 12.5 L25.5 25.5 M25.5 12.5 L12.5 25.5"/>
+    </svg>
+    <p class="e4-bricht-wort" data-schritt="2" aria-hidden="true">bricht</p>
     <div class="e4-regal" data-schritt="2">
       <p class="p-notiz e4-regal-notiz">Vom Regal kein Weg in den Squad</p>
       <p class="p-beleg e4-regal-beleg">kein Store-Locator · Cashback mit Bon</p>
@@ -457,8 +553,8 @@
     <p data-schritt="1">Der Code macht neugierig – Marco sucht selbst nach HOLY und landet auf der Produktseite, beim Starter Set. Dazwischen, wo eine eigene Antwortseite stehen könnte, ist bei HOLY nichts: Der Blog ist leer – null Beiträge.</p>
     <p data-schritt="2">Er bestellt online, das Paket kommt, er packt aus und landet in den SQUAD Rewards. Das ist der zentrale Weg im IST – zentral, weil Marco laut Persona online auf Vorrat kauft und bei HOLY Starter Sets, Mix &amp; Match und Rewards am Onlinekonto hängen. Der Handel ist nur ein Nebenweg für den Notkauf: vom Video direkt ins Regal, ohne Recherche – und vom Regal führt kein Weg in den Squad.</p>
     <p>Belege: Creator-Programm ab 18 mit Codes und 41 Landingpages ✔ T02; Starter Sets, Probier-Boxen, 1 Portion ✔ T20; Mix &amp; Match mit Shaker zur ersten Dose ✔ T22; SQUAD Rewards ✔ T32. Leerstelle: Der Blog ist leer (0 Beiträge; ✔ L39, ✔ M01). Online-Weg zentral: Persona (fiktiv); Lebensmittel online nur 2,7 % ✔ P24 – für HOLY ist der Shop der eigene Hauptweg; unter den neuesten REVIEWS.io-Bewertungen tragen alle eine Bestellnummer ✔ B15 (Deutung H). Kanalanteile von HOLY kennen wir nicht (Frage an HOLY und den Gründer, Plan 13.3). Nebenweg: kein Store-Locator ✔ B01 / ✎ T28, Cashback mit Bon-Foto, IBAN, Pflichtfragen ✔ B03; „Immer alle Phasen?“ (S. 108) – Recherche übersprungen bei Gewohnheit, H L05. Bildsprache wie das Fallbeispiel Armbanduhr mit „Lieferung/Unboxing“ (S. 116, ✔ L15). Zeilen verdichtet gegenüber S. 129 (Zuordnung in B8). Bilder der Fassung mit Bildern: echte Touchpoints von HOLY und Dritten (Screenshots 03.11.2026, Werbe- und Community-Bilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17, keine Genehmigung der Rechteinhaber eingeholt) – nicht als unsere Fotos ansprechen. Eigene Fotos gibt es nicht: Den Weg haben wir aus dem Dossier und den Abrufen von Shop und Suche nachgezeichnet, ohne eigene Testbestellung (Methode B1).</p>
-    <p>Zeigen: Station für Station mit offener Hand, links neben der Leinwand; am Ende in einem Satz, warum der Online-Weg zentral ist.</p>
-    <p>Rückfragen: „Warum ist der Online-Weg zentral, nicht der Handel?“ → B7, B4. „Wie habt ihr das erhoben?“ → B1: aus Recherche und Abrufen, keine eigene Erhebung.</p>
+    <p>Zeigen: Station für Station mit offener Hand, links neben der Leinwand; bei Klick 1 kurz auf die leere, durchgestrichene Seite; am Ende in einem Satz, warum der Online-Weg zentral ist.</p>
+    <p>Rückfragen: „Warum ist der Online-Weg zentral, nicht der Handel?“ → B7, B4. „Wie habt ihr das erhoben?“ → B1: aus Recherche und Abrufen, keine eigene Erhebung. „Das Help-Center beantwortet doch die Koffein-Frage?“ → Ja, aber knapp und auf der alten Domain (✔ S27), auf den Produktseiten nur im Etikettbild (✎ S31); „keine Antwortseite“ meint eine eigene Antwortseite in Website &amp; Shop – der Blog ist leer (✔ L39). Mehr dazu an Ü2 auf 05.</p>
   </aside>
 
   <script type="application/json" class="daten">
@@ -495,6 +591,14 @@
      ║   Touchpoint-Bilder wie auf 04 (eigener Zuschnitt 320 × 180), Kacheln 200 × 112 (Umbau 03.11., D06; vorher
      ║   160 × 90), Name als Beschriftung im Bild – außer K6: dort zeigt das Bild selbst „SQUAD REWARDS“, ein Band
      ║   „Squad“ verdeckte die Überschrift der Seite (D07).
+     ║ D13 (08.11.2026, KI-gestützt, von Yannick übernommen – KI-Nachweis FS2 Nr. 30; Gestaltung aus Modellwissen):
+     ║   Urteile als Zeichen + Wort + Form der Brücke, nie nur Farbe – wackelt = gelbes Dreieck mit „!“ (schwarze Kontur), bricht = schwarzer Kreis
+     ║   mit gelbem Kreuz (Knotenfarben, dunkel umgekehrt), trägt = Kreis mit Haken (nur in der Legende). Maßstab als
+     ║   Zeichenlegende. Ü2 betont: Zeichen 56 px, Urteilswort 46 px, die drei „wackelt“ in Schiefer; Brücke Ü2 mit
+     ║   deutlicher Lücke und zwei Bruchstrichen statt zweier Reste (JSON "luecke": 24, pfad.js; ab Klick 1 deckt ein
+     ║   Papierstreifen die Grundlinie in der Lücke ab, Stil .bruch in pfad.css). Belege mit Umbruch an Befundgrenzen; Ü1 gekürzt „Umweg über die
+     ║   freie Suche, trotz Code und Landingpage“ (vorher „Code und Landingpage gibt es, Marco geht aber über die freie
+     ║   Suche weiter“). Nebenweg mit Zeichen „bricht“. Klicks und Sprechtext gleich.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f05" data-titel="A3 Überleitungen im IST" data-zeit="95" data-buendel="B" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="2">
   <header class="p-kopf">
@@ -509,7 +613,11 @@
     <div class="p-phase" data-phase="4"><p class="p-phase-name">Kauf</p><p class="p-phase-as" data-meta>ACT</p></div>
     <div class="p-phase" data-phase="5"><p class="p-phase-name">Bindung</p><p class="p-phase-as" data-meta>ADVOCATE</p></div>
 
-    <p class="e5-massstab" data-meta><b>Maßstab:</b> trägt = angeschlossen · wackelt = Umweg oder Widerspruch · bricht = Antwort fehlt dort, wo entschieden wird</p>
+    <!-- Maßstab als Zeichenlegende (D13): Urteil = Zeichen + Wort + Form der Brücke, nie nur Farbe (3.6) -->
+    <p class="e5-massstab" data-meta><b>Maßstab:</b>
+      <span class="e5-mass"><svg class="e5-signal e5-signal--traegt" viewBox="0 0 48 48" aria-hidden="true"><circle class="e5-s-grund" cx="24" cy="24" r="20.5"/><path class="e5-s-zeichen" d="M14.5 24.5 L21 31 L33.5 17.5"/></svg>trägt = angeschlossen</span>
+      <span class="e5-mass"><svg class="e5-signal e5-signal--wackelt" viewBox="0 0 48 48" aria-hidden="true"><path class="e5-s-grund" d="M24 4.5 L45 42 H3 Z"/><path class="e5-s-zeichen" d="M24 17.5 V29.5"/><circle class="e5-s-punkt" cx="24" cy="36" r="3.2"/></svg>wackelt = Umweg oder Widerspruch</span>
+      <span class="e5-mass"><svg class="e5-signal e5-signal--bricht" viewBox="0 0 48 48" aria-hidden="true"><circle class="e5-s-grund" cx="24" cy="24" r="22"/><path class="e5-s-zeichen" d="M15.5 15.5 L32.5 32.5 M32.5 15.5 L15.5 32.5"/></svg>bricht = Antwort fehlt dort, wo entschieden wird</span></p>
 
     <!-- fünf Stationen des zentralen Wegs aus 04 (klein) -->
     <figure class="p-kachel e5-k" data-id="k1" data-phase="1" data-zeile="1" data-status="leer" data-art="screenshot" data-intern="k1-creator-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Creator-Video</span></div><span class="p-bildlabel" data-meta>Creator-Video</span></figure>
@@ -518,30 +626,30 @@
     <figure class="p-kachel e5-k" data-id="k5" data-phase="4" data-zeile="1" data-status="leer" data-art="foto" data-intern="k5-unboxing-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Unboxing</span></div><span class="p-bildlabel" data-meta>Unboxing</span></figure>
     <figure class="p-kachel e5-k" data-id="k6" data-phase="5" data-zeile="1" data-status="leer" data-art="screenshot" data-intern="k6-squad-05"><div class="p-platzhalter"><span class="p-kachel-art e5-k-name" data-meta>Squad</span></div></figure>
 
-    <!-- Urteile an den Brücken: Wort und Form, nie nur Farbe (3.6) -->
+    <!-- Urteile an den Brücken: Zeichen, Wort und Form, nie nur Farbe (3.6; Zeichen seit D13) -->
     <div class="e5-urteil e5-urteil--oben e5-u1" data-schritt="1" data-animation="hoch">
-      <p class="e5-kopf"><span class="e5-id" data-meta>Ü1</span> <span class="p-satz">wackelt</span></p>
-      <p class="p-beleg">Code und Landingpage gibt es, Marco geht aber über die freie Suche weiter</p>
+      <p class="e5-kopf"><span class="e5-id" data-meta>Ü1</span><svg class="e5-signal e5-signal--wackelt" viewBox="0 0 48 48" aria-hidden="true"><path class="e5-s-grund" d="M24 4.5 L45 42 H3 Z"/><path class="e5-s-zeichen" d="M24 17.5 V29.5"/><circle class="e5-s-punkt" cx="24" cy="36" r="3.2"/></svg><span class="p-satz">wackelt</span></p>
+      <p class="p-beleg">Umweg über die freie Suche,<br>trotz Code und Landingpage</p>
     </div>
     <div class="e5-urteil e5-urteil--unten e5-u2" data-schritt="1" data-animation="hoch">
-      <p class="e5-kopf"><span class="e5-id" data-meta>Ü2</span> <span class="p-satz">bricht</span></p>
+      <p class="e5-kopf"><span class="e5-id" data-meta>Ü2</span><svg class="e5-signal e5-signal--bricht" viewBox="0 0 48 48" aria-hidden="true"><circle class="e5-s-grund" cx="24" cy="24" r="22"/><path class="e5-s-zeichen" d="M15.5 15.5 L32.5 32.5 M32.5 15.5 L15.5 32.5"/></svg><span class="p-satz">bricht</span></p>
       <p class="p-satz e5-kern"><span class="p-marker"><span data-marke>HOLY</span> antwortet knapp, verstreut und oft nur als Bild</span></p>
-      <p class="p-beleg">Koffein nur im Etikettbild · Help-Center knapp · Kritik Dritter daneben</p>
+      <p class="p-beleg">Koffein nur im Etikettbild<br>Help-Center knapp · Kritik Dritter daneben</p>
     </div>
     <div class="e5-urteil e5-urteil--oben e5-u3" data-schritt="2" data-animation="hoch">
-      <p class="e5-kopf"><span class="e5-id" data-meta>Ü3</span> <span class="p-satz">wackelt</span></p>
-      <p class="p-beleg">Preis erst mit Code akzeptabel · drei Lieferzeit-Versprechen</p>
+      <p class="e5-kopf"><span class="e5-id" data-meta>Ü3</span><svg class="e5-signal e5-signal--wackelt" viewBox="0 0 48 48" aria-hidden="true"><path class="e5-s-grund" d="M24 4.5 L45 42 H3 Z"/><path class="e5-s-zeichen" d="M24 17.5 V29.5"/><circle class="e5-s-punkt" cx="24" cy="36" r="3.2"/></svg><span class="p-satz">wackelt</span></p>
+      <p class="p-beleg">Preis erst mit Code akzeptabel<br>drei Lieferzeit-Versprechen</p>
     </div>
     <div class="e5-urteil e5-urteil--unten e5-u4" data-schritt="2" data-animation="hoch">
-      <p class="e5-kopf"><span class="e5-id" data-meta>Ü4</span> <span class="p-satz">wackelt</span></p>
-      <p class="p-beleg">alte Danke-Seiten mit totem Link · kein Abo · Kritik nach dem Kauf</p>
+      <p class="e5-kopf"><span class="e5-id" data-meta>Ü4</span><svg class="e5-signal e5-signal--wackelt" viewBox="0 0 48 48" aria-hidden="true"><path class="e5-s-grund" d="M24 4.5 L45 42 H3 Z"/><path class="e5-s-zeichen" d="M24 17.5 V29.5"/><circle class="e5-s-punkt" cx="24" cy="36" r="3.2"/></svg><span class="p-satz">wackelt</span></p>
+      <p class="p-beleg">alte Danke-Seiten mit totem Link<br>kein Abo · Kritik nach dem Kauf</p>
     </div>
 
     <!-- Nebenweg Handel, gestrichelt in Mittel warm, mit offenem Ende -->
     <div class="e5-neben" data-schritt="2">
       <p class="p-notiz e5-neben-text">Nebenweg Handel: Regal → Squad</p>
       <svg class="e5-neben-linie" width="520" height="24" viewBox="0 0 520 24" aria-hidden="true"><path d="M2 12 H440" stroke="var(--p-mittel)" stroke-width="6" stroke-dasharray="16 12"/><path d="M462 12 H476 M492 12 H496" stroke="var(--p-mittel)" stroke-width="6"/></svg>
-      <p class="e5-neben-urteil">bricht</p>
+      <p class="e5-neben-urteil"><svg class="e5-signal e5-signal--bricht" viewBox="0 0 48 48" aria-hidden="true"><circle class="e5-s-grund" cx="24" cy="24" r="22"/><path class="e5-s-zeichen" d="M15.5 15.5 L32.5 32.5 M32.5 15.5 L15.5 32.5"/></svg>bricht</p>
     </div>
   </div>
 
@@ -555,7 +663,7 @@
     <p data-schritt="2">Die dritte Brücke wackelt: Der Preis wird erst mit Code akzeptabel, und HOLY verspricht drei verschiedene Lieferzeiten. Auch die vierte wackelt: alte Danke-Seiten mit totem Link – ob noch im Ablauf, ist ungeprüft –, kein Abo, und in Bewertungen betrifft die meiste Kritik die Zeit nach dem Kauf. Auf dem Nebenweg bricht der Übergang vom Regal in den Squad.</p>
     <p>Belege (Plan 6.7.2): Ü1 wackelt (Umweg über die Suche, Maßstab 6.7.1; bis 03.11. „trägt“, nach der Abnahme D05 angepasst) – Creator-Programm mit Codes und 41 Landingpages ✔ T02, Gewinnspiel ✔ T03; der Code löst eigene Suchen aus („holy energy rabattcode influencer“) ✔ L34, ✎ S03; „aufdringlich“ ~ B21. Ü2 bricht – Help-Center knapp, alte Domain ✔ S27; Koffein, Alter, Tagesportion nur im Etikettbild ✎ S31; Help-Center widerspricht sich ✎ S28; KI-Dateien ohne mg und Alter ✎ S30; deutsche Stichprobe: Help-Center vorn ✎ S10, ~ S91; Warnungen Dritter überwiegen nur im US-Index ✎ B07; kein Blog ✔ L39; Gesamtdeutung H S38. Ü3 wackelt – Mix &amp; Match ✔ T22, Starter Sets ✔ T20, Zahlungsarten ✔ T23; Preis erst mit Code ✔ B10, Help-Center rechnet mit Rabatten ✔ B09, vergessener Code AGB gegen Help-Center ✔ B90, drei Lieferzeiten ✔ B91, Versandkosten ✔ B12, Garantie ✎ T18, ✎ B29. Ü4 wackelt – Rewards ✔ T32, Service gelobt ~ B20, Help-Center zu Shaker/Bottle ✔ B28; Danke-Seiten mit 404-Link ✎ T31 (zuletzt 2022/2023 geändert; ob sie noch im Bestellablauf stehen, ist ohne Testkauf nicht geprüft – deshalb „alte Danke-Seiten“); kein Abo ✔ T30 (eine Nachfüll-Erinnerung gibt es im Dossier nur als Vorschlag, Kap. 9 / X14 – deshalb „kein Abo“, nicht „kein Nachfüllen“); Newsletter ✔ T34; Rewards ab 16, Shop ab 18 ✎ B05; Kritik nach dem Kauf H B25 (teils Effekt der Quelle: Bewertungen entstehen fast nur nach dem Kauf, Dossier 5.2 – deshalb „in Bewertungen“), ✔ B27, Lieferverzögerungen Juni/Juli ✔ B26, Stammkundenstimme ✔ B30. Nebenweg – ✔ B01, ✎ T28, ✔ B03, ✔ B96, H D1 §7.2.</p>
     <p>Was ein Urteil ändern würde (Plan 6.7.2; prüfen ließe sich das mit einem Testkauf oder Nutzertest – den haben wir nicht gemacht, keine eigene Erhebung): Ü1 → „trägt“, wenn man aus dem Video ohne Suche über Link oder Landingpage zum Produkt kommt; → „bricht“, wenn Creator-Videos ohne Link/Landingpage oder Codes ohne Werbekennzeichnung auftauchen. Ü2 → „wackelt“, wenn der Help-Center-Artikel auf die Produktseite verlinkt und diese Koffein als Text nennt. Ü3 → „trägt“, wenn Warenkorb und Checkout einen Liefertermin und Endpreis zeigen, die zur Produktseite passen. Ü4 → „bricht“, wenn die Danke-Seite mit totem Link im Ablauf steht oder nach der Lieferung keine Nachricht zum Squad kommt.</p>
-    <p>Zeigen: Brücke für Brücke, an Ü2 stehen bleiben. Die rhetorische Frage ohne Antwortrunde – die Antwort ist der „Koffein-Check“ auf Folie 08.</p>
+    <p>Zeigen: Brücke für Brücke, an Ü2 (Kreuz und Bruchstriche im Pfad) stehen bleiben. Die Zeichen erklären sich über die Legende „Maßstab“: Dreieck = wackelt, Kreuz = bricht. Die rhetorische Frage ohne Antwortrunde – die Antwort ist der „Koffein-Check“ auf Folie 08.</p>
     <p>Rückfragen: „Woher kommen die Urteile?“ → Maßstab oben auf der Folie, Belege je Brücke aus dem Dossier; Vorgehen und Grenzen B1 (kein Selbstversuch). „Alle Brüche?“ → B4.</p>
   </aside>
 
@@ -570,7 +678,7 @@
     },
     "bruecken": [
       { "von": "k1", "nach": "k2", "urteil": "wackelt", "schritt": 1 },
-      { "von": "k2", "nach": "k3", "urteil": "bricht",  "schritt": 1 },
+      { "von": "k2", "nach": "k3", "urteil": "bricht",  "schritt": 1, "luecke": 24 },
       { "von": "k3", "nach": "k5", "urteil": "wackelt", "schritt": 2 },
       { "von": "k5", "nach": "k6", "urteil": "wackelt", "schritt": 2 }
     ]
@@ -585,12 +693,33 @@
      ║   Gestaltungsplan 5.2.2). D12 (08.11.2026): kein Workshop, Kachel b12 (Workshop-Foto oben rechts) entfernt –
      ║   keine eigene Erhebung (KI-Nachweis FS2 Nr. 26). Kopf bleibt schmal (Spalten 1–9), damit der Titel nicht umbricht.
      ║ Bezeichnungen auf der Folie gekürzt (Platz in der 250-px-Spalte); die vollen Namen stehen im Sprechtext und in B2.
+     ║ D13 (08.11.2026, KI-gestützt, Gestaltung aus Modellwissen): Rangfolge sichtbar gemacht – Platz 1 in Bricolage
+     ║   (wie Titel und Knoten), schwarzer Knoten auf dem Pfad; Plätze 2/3 zurückgenommen (Ring statt Fläche, Name in
+     ║   Schiefer). Oben rechts (frei seit D12) „Auswahl nach vier Kriterien“ mit vier Linien-Symbolen: Marco ·
+     ║   Zielfrage · Bruch · gestaltbar – Bild zum Sprechtext Schritt 0; Wortlaut der Kriterien in der Herleitung.
+     ║   Legende bewusst neutral: Laut Plan 5.2.2 erfüllen auch mehrere Plätze 2/3 alle vier Kriterien.
+     ║   Die Symbole sind KI-gestützt erstellt (Inline-SVG, KI-Nachweis FS2 Nr. 30/D13), keine Fremdbilder und keine
+     ║   KI-Bilder. Abweichung von Plan 3.7 („keine Icon-Abzeichen“, „keine KI-Illustrationen auf Hauptfolien“): frei
+     ║   stehende Linien-Symbole ohne Rahmen – erlaubt von Yannick am 08.11.2026 (KI-Nachweis FS2 Nr. 30).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f06" data-titel="A4 SOLL: Top 3 je Phase" data-zeit="100" data-buendel="B" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="3">
   <header class="p-kopf p-kopf--schmal">
     <h2 class="p-titel">SOLL: Je Phase drei Touchpoints – der beste wird Marcos neuer zentraler Weg</h2>
     <p class="p-herleitung" data-meta><b>So kommen wir darauf:</b> Platz 1 passt zu Marco und zur Zielfrage (S. 109), schließt den Bruch aus 05, ist von <span data-marke>HOLY</span> gestaltbar · Plätze 2–3: Vorschlag (H)</p>
   </header>
+
+  <!-- vier Auswahlkriterien (Plan 5.2.1: P · Z · B · G) als Linien-Symbole (KI-gestützt erstellt, Inline-SVG;
+       erlaubt von Yannick am 08.11.2026, KI-Nachweis FS2 Nr. 30);
+       Text = Legende (22/24 px, data-meta). Neutral formuliert: auch Plätze 2/3 können alle vier erfüllen (5.2.2). -->
+  <div class="e6-kriterien">
+    <p class="e6-kriterien-titel" data-meta>Auswahl nach vier Kriterien</p>
+    <ul class="e6-kriterien-liste">
+      <li><svg class="e6-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="8"/><path d="M8 43 a16 15 0 0 1 32 0"/></svg><span data-meta>Marco</span></li>
+      <li><svg class="e6-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 7 h38 v26 h-21 l-9 9 v-9 h-8 z"/><path d="M19 15.5 a5 5 0 1 1 7.5 4.3 c-1.6 .9 -2.5 1.8 -2.5 3.7"/><circle class="e6-icon-voll" cx="24" cy="28" r="1.9"/></svg><span data-meta>Zielfrage</span></li>
+      <li><svg class="e6-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M20 15 h-7 a9 9 0 0 0 0 18 h7"/><path d="M28 15 h7 a9 9 0 0 1 0 18 h-7"/><path d="M24 5 v5 M24 38 v5 M15 7 l3 4 M33 41 l-3 -4"/></svg><span data-meta>Bruch</span></li>
+      <li><svg class="e6-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M31 6 l11 11 l-24 24 h-11 v-11 z"/><path d="M26 11 l11 11"/></svg><span data-meta>gestaltbar</span></li>
+    </ul>
+  </div>
 
   <div class="p-karte" data-karte>
     <div class="p-phase" data-phase="1"><p class="p-phase-name">Inspiration</p><p class="p-phase-as" data-meta>AWARE</p></div>
@@ -643,6 +772,7 @@
     <p>Volle Bezeichnungen (Plan 5.2.2): Inspiration 1 Creator-Kurzvideo mit Code und klarer Weiterleitung (Search/Partner) · 2 eigene Shorts auf YouTube und TikTok · 3 Empfehlung von Freunden und Kollegen (beide Social Media). Recherche 1 eigene Antwortseite „Koffein-Check“ (Webseite) · 2 Suchmaschine und KI-Assistent (Search/Partner) · 3 Bewertungen und Video-Tests Dritter (Social Media). Entscheidung 1 Produktseite mit Preis je Portion, Bewertungen und einheitlicher Garantie (Webshop) · 2 Bewertungsportale mit HOLYs Antworten (Social Media) · 3 Probierangebot mit Garantie (Webshop). Kauf 1 mobiler Warenkorb/Checkout mit klarer Lieferzeit (Webshop) · 2 Lieferung und Unboxing (Webshop) · 3 Supermarktregal mit Händlerfinder (Handel/POS, Nebenweg). Bindung 1 Willkommens- und Nachkauf-Strecke mit SQUAD Rewards (E-Mail) · 2 Freunde werben (Social Media) · 3 Service nach dem Kauf (E-Mail).</p>
     <p>Belege: Kriterien Plan 5.2.1 (Zielfragen S. 109, ✎ L07; Gestaltbarkeit S. 112, ✔ L12); Raster S. 129 (✔ L19). Persona und Mediendaten ✔ P11, ✔ P18, ✔ P25; Creator-Programm ✔ T02; Antworten verstreut ✔ S27; Bewertungen ✔ T17; drei Lieferzeiten ✔ B91; Rewards ✔ T32; Danke-Seite ✎ T31; lineares TV 44 % (14–29) ✎ P14. Plätze 2 und 3: Vorschlag der Gruppe (H), nicht in einem Workshop geprüft (keine eigene Erhebung). Abweichung von der Übung S. 128/129 (Top 2): die Aufgabenfolie verlangt Top 3 (B2).</p>
     <p>Kürzung 2 (Kontrollpunkt nach 05 überschritten): Plätze 2 und 3 nur zeigen, nur den gelben Weg durch die Plätze 1 erklären, −30 s.</p>
+    <p>Symbole oben rechts: Die vier Linien-Symbole der Kriterien (Person, Sprechblase mit Fragezeichen, gebrochenes Kettenglied, Stift) sind KI-gestützt erstellt (Inline-SVG, KI-Nachweis FS2 Nr. 30/D13), keine Fremdbilder und keine KI-Bilder. Sie stehen für die Auswahl aller drei Plätze; Platz 1 ist die Arbeitsannahme der Gruppe (Plan 5.2), auch mehrere Plätze 2 und 3 erfüllen alle vier Kriterien (Plan 5.2.2).</p>
     <p>Rückfragen: „Wie kommt ihr auf die Top 3?“ → B2. „Wo sind die Aktivitäten der Übung S. 128/129?“ → B2. „Warum nicht die Suchmaschine auf Platz 1, wenn 92 % suchen (✔ P18)?“ → Platz 1 muss den Bruch schließen und von HOLY gestaltbar sein: Die Antwortseite bedient die Suche, sie ersetzt sie nicht; HOLY gestaltet die Seite, nicht die Trefferliste. Ebenso bei der Entscheidung: Bewertungen (✔ L91) zeigt die Produktseite selbst.</p>
   </aside>
 
@@ -665,8 +795,8 @@
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
      ║ FOLIE 07 · A5 Best Practices + A6 Maßnahmen · Block C · Sollzeit 90 s · 2 Klicks · Laufleiste Schritt 4
      ║ Gestaltung: css/folien/07-best-practice.css · Plan 5.1 Zeile 07 · Fälle: Dossier Kap. 7a (X01–X17)
-     ║ Je Phase EIN Vorbild (die übrigen Fälle stehen in B6). Rückfall ohne Fremdbilder: nur Text (b21, Name fett).
-     ║   FASSUNG MIT BILDERN: das Logo des Unternehmens statt des fett gesetzten Namens (.e7-marke), einfarbig dunkel,
+     ║ Je Phase EIN Vorbild (die übrigen Fälle stehen in B6). Rückfall ohne Fremdbilder: Name statt Logo (b21,
+     ║   Bricolage fett). FASSUNG MIT BILDERN: das Logo des Unternehmens statt des Namens (.e7-marke), einfarbig dunkel,
      ║   je Logo eigene Höhe (07-best-practice.css); Herkunft in der Bildquellzeile und in fremdbilder/register.js.
      ║   D07 (03.11.2026): die sechs kleinen Bilder der Vorbilder (144 × 81, D06) sind entfernt – zu klein zum Lesen, die
      ║   Folie wurde unruhig; auf B6 ist neben der Tabelle kein Platz für sechs Bilder in mindestens 360 × 203.
@@ -676,6 +806,29 @@
      ║   direkt am jeweiligen Artikel an.“): Anleitung in intern/vorbilder-zurueckgehalten/register-auszug.js.
      ║ D12 (08.11.2026): Platzhalter „Skizze b15“ in der Nebenweg-Zeile entfernt (keine eigene Zeichnung, keine
      ║   eigene Erhebung, KI-Nachweis FS2 Nr. 26); die QR-Brücke steht als Text (Maßnahme) und auf B4.
+     ║ D13 (08.11.2026, Entwurf „Brücke“, von Yannick übernommen; KI-gestützt, Gestaltung aus Modellwissen): statt der
+     ║   Tabelle fünf Spalten im Phasenraster von 05/06 (Kopf wie 05). Je Spalte oben das Vorbild (Logo, Branche, Mechanik in Kurzform), darunter
+     ║   ein Linien-Symbol der Mechanik (KI-gestützt erstellt, Inline-SVG, kein Fremdbild) mit Pfeil auf eine Station von Marcos
+     ║   zentralem Weg (SOLL), unter dem Weg unsere Maßnahme. Der Weg läuft – anders als auf 05 – ohne Versatz und ohne
+     ║   offenes Ende durch alle vier Überleitungen Ü1–Ü4 (gleiche Rinnen wie 05): Bild zum Titel „wie jede Überleitung
+     ║   trägt“ (Vorschlag, H). Nebenweg Handel als gestrichelte Zeile unten (wie 05, hier mit Anschluss). Klick 1 wie
+     ║   bisher: Entscheidung, Kauf, Bindung, Nebenweg. Volle Formulierungen der Maßnahmen im Sprechtext und auf B6.
+     ║   Weg, Stationen und Pfeile als festes SVG (Koordinaten im Raster: Phase k beginnt bei x = 128 + (2k) · 141,33,
+     ║   Mitte + 125,33; Weg y = 714, Linie ab x = 139, damit das runde Ende nicht in den Rand ragt); die Kopfzeile setzt
+     ║   js/folien/pfad.js (JSON unten, ohne Raster). Anders als auf 04–06 (AUTOREN §3) folgt der Weg Rasteränderungen
+     ║   NICHT – bei Änderungen die Koordinaten hier von Hand nachziehen.
+     ║   Klick 1 baut sich mit dem Weg von links nach rechts auf (data-verzoegerung, abgestimmt auf das Zeichnen des
+     ║   Wegs, 1100 ms): Stationen und Spalten 3–5 nach 40/150/500 ms, Ü3/Ü4 nach 100/230 ms, Nebenweg 600 ms,
+     ║   Pfeilspitze 850 ms. Beim Betreten (Schritt 0) erscheinen die Stationen 1 und 2 nach 150/700 ms, wenn der Weg
+     ║   dort ankommt; Spalten 1–2 stehen sofort (Nacharbeit D14, Befund D14-02; Station 5 vorher 390 ms).
+     ║   Stationen: kleine volle Knoten (r = 16, Knotenfarben wie Platz 1 auf 06, ohne Ziffer) – sie sind die
+     ║   Top-Touchpoints aus 06. Bis zur Nacharbeit D14 leere Ringe; ein leerer Ring heißt auf 06 Platz 2/3
+     ║   (Befund D14-01, Gestaltungsurteil aus Modellwissen).
+     ║   Nebenweg: Symbol „Packung mit Code“ beim Vorbild (Dossier X16: Code in der Packung, Art des Codes nicht belegt),
+     ║   QR-Symbol erst bei unserer Maßnahme (QR-Brücke, B4).
+     ║   Die sieben Linien-Symbole sind KI-gestützt erstellt (KI-Nachweis FS2 Nr. 30/D13), keine KI-Bilder. Abweichung von
+     ║   Plan 3.7 („keine Icon-Abzeichen“, „keine KI-Illustrationen auf Hauptfolien“): frei stehende Linien-Symbole ohne
+     ║   Rahmen – erlaubt von Yannick am 08.11.2026 (KI-Nachweis FS2 Nr. 30).
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f07" data-titel="A5 + A6 Best Practice → Maßnahme" data-zeit="90" data-buendel="C" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="4">
   <header class="p-kopf">
@@ -683,54 +836,115 @@
     <p class="p-herleitung" data-meta><b>So kommen wir darauf:</b> andere Branche (nicht Getränke, nicht Lebensmittel) · gleicher Bruch · Mechanik belegt, Wirkung meist nur Firmenangabe (B6)</p>
   </header>
 
-  <div class="e7-tabelle">
-    <div class="e7-kopfzeile" data-meta>
-      <span>Phase · Überleitung</span><span>Vorbild aus anderer Branche</span><span>unsere Maßnahme am Top-Touchpoint</span>
+  <div class="p-karte" data-karte>
+    <div class="p-phase" data-phase="1"><p class="p-phase-name">Inspiration</p><p class="p-phase-as" data-meta>AWARE</p></div>
+    <div class="p-phase" data-phase="2"><p class="p-phase-name">Recherche</p><p class="p-phase-as" data-meta>APPEAL</p></div>
+    <div class="p-phase" data-phase="3"><p class="p-phase-name">Entscheidung</p><p class="p-phase-as" data-meta>ASSURE</p></div>
+    <div class="p-phase" data-phase="4"><p class="p-phase-name">Kauf</p><p class="p-phase-as" data-meta>ACT</p></div>
+    <div class="p-phase" data-phase="5"><p class="p-phase-name">Bindung</p><p class="p-phase-as" data-meta>ADVOCATE</p></div>
+
+    <!-- Zeilennamen (Spalten 1–2): oben Vorbild, Mitte der Weg, unten unsere Maßnahme -->
+    <p class="e7-band e7-band--vorbild" data-meta>Vorbild aus anderer Branche</p>
+    <p class="e7-wegname">Zentraler Weg (SOLL)</p>
+    <p class="e7-band e7-band--massnahme" data-meta>unsere Maßnahme am Top-Touchpoint (H)</p>
+
+    <!-- Weg (SOLL) mit Stationen und Pfeilen: Schritt 0 Phase 1–2, Klick 1 Phase 3–5 mit Pfeilspitze.
+         data-verzoegerung: Station/Spitze erscheint, wenn der gelbe Weg dort ankommt (Zeichnen 1100 ms, weiches Ausrollen),
+         auch beim Betreten (Schritt 0: 150/700 ms; Nacharbeit D14, Befund D14-02).
+         Station = kleiner voller Knoten (r = 16, Knotenfarben, ohne Ziffer) = Top-Touchpoint, Platz 1 aus 06 (D14-01) -->
+    <svg class="p-pfad e7-pfad" viewBox="0 0 1920 1080" aria-hidden="true">
+      <path class="kontur" d="M 139 714 L 818.67 714" data-animation="zeichnen"/>
+      <path class="gelb" d="M 139 714 L 818.67 714" data-animation="zeichnen"/>
+      <path class="kontur" d="M 818.67 714 L 1768 714" data-schritt="1" data-animation="zeichnen"/>
+      <path class="gelb" d="M 818.67 714 L 1768 714" data-schritt="1" data-animation="zeichnen"/>
+      <polygon class="spitze-k" points="1766,697 1788,714 1766,731" data-schritt="1" data-animation="einblenden" data-verzoegerung="850"/>
+      <polygon class="spitze-g" points="1766,697 1788,714 1766,731" data-schritt="1" data-animation="einblenden" data-verzoegerung="850"/>
+      <g class="e7-station" data-animation="einblenden" data-verzoegerung="150"><path class="e7-pfeil" d="M 536 672 L 536 688"/><polygon class="e7-pfeilspitze" points="529,687 543,687 536,697"/><circle cx="536" cy="714" r="16"/></g>
+      <g class="e7-station" data-animation="einblenden" data-verzoegerung="700"><path class="e7-pfeil" d="M 818.67 672 L 818.67 688"/><polygon class="e7-pfeilspitze" points="811.67,687 825.67,687 818.67,697"/><circle cx="818.67" cy="714" r="16"/></g>
+      <g class="e7-station" data-schritt="1" data-animation="einblenden" data-verzoegerung="40"><path class="e7-pfeil" d="M 1101.33 672 L 1101.33 688"/><polygon class="e7-pfeilspitze" points="1094.33,687 1108.33,687 1101.33,697"/><circle cx="1101.33" cy="714" r="16"/></g>
+      <g class="e7-station" data-schritt="1" data-animation="einblenden" data-verzoegerung="150"><path class="e7-pfeil" d="M 1384 672 L 1384 688"/><polygon class="e7-pfeilspitze" points="1377,687 1391,687 1384,697"/><circle cx="1384" cy="714" r="16"/></g>
+      <g class="e7-station" data-schritt="1" data-animation="einblenden" data-verzoegerung="500"><path class="e7-pfeil" d="M 1666.67 672 L 1666.67 688"/><polygon class="e7-pfeilspitze" points="1659.67,687 1673.67,687 1666.67,697"/><circle cx="1666.67" cy="714" r="16"/></g>
+    </svg>
+
+    <!-- Überleitungen in den Rinnen wie auf 05 (hier ohne Versatz und offenes Ende) -->
+    <p class="e7-ue e7-ue--1" data-meta>Ü1</p>
+    <p class="e7-ue e7-ue--2" data-meta data-schritt="1">Ü2</p>
+    <p class="e7-ue e7-ue--3" data-meta data-schritt="1" data-verzoegerung="100">Ü3</p>
+    <p class="e7-ue e7-ue--4" data-meta data-schritt="1" data-verzoegerung="230">Ü4</p>
+
+    <!-- je Phase: Vorbild (Logo, Branche, Mechanik) → Symbol der Mechanik → Station → unsere Maßnahme -->
+    <div class="e7-spalte e7-spalte--1">
+      <p class="e7-logo"><span class="e7-marke" data-intern="v07-logo-youtube"><span class="e7-marke-name">YouTube</span></span><b class="e7-zusatz">Shopping</b></p>
+      <p class="e7-branche" data-meta>Handel</p>
+      <p class="e7-mechanik">Produkt-Tag im&nbsp;Video</p>
+      <svg class="e7-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="6" width="42" height="30" rx="5"/><path d="M17 42 h14"/><path d="M17 18 h14 l-1.6 12 h-10.8 z"/><path d="M20.5 18 v-2 a3.5 3.5 0 0 1 7 0 v2"/></svg>
+      <p class="e7-massnahme">Code-Landingpage mit zwei Wegen</p>
     </div>
-    <div class="e7-zeile">
-      <p class="e7-phase">Inspiration <span class="e7-ue" data-meta>Ü1</span></p>
-      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-youtube"><span class="e7-marke-name">YouTube</span></span> Shopping</b> (Handel): Tipp im Video führt direkt zum Produkt</p></div>
-      <p class="e7-massnahme">Code-Landingpage mit zwei Wegen, „Werbung“ sichtbar</p>
+    <div class="e7-spalte e7-spalte--2">
+      <p class="e7-logo"><span class="e7-marke" data-intern="v07-logo-apple"><span class="e7-marke-name">Apple</span></span></p>
+      <p class="e7-branche" data-meta>Elektronik</p>
+      <p class="e7-mechanik">heikle Frage selbst beantwortet</p>
+      <svg class="e7-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 4 h19 l9 9 v31 h-28 z"/><path d="M29 4 v9 h9"/><path d="M16 22 h16 M16 29 h16 M16 36 h10"/></svg>
+      <p class="e7-massnahme"><span class="p-marker">Koffein-Check als&nbsp;Text</span></p>
     </div>
-    <div class="e7-zeile e7-zeile--bruch">
-      <p class="e7-phase">Recherche <span class="e7-ue" data-meta>Ü2</span></p>
-      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-apple"><span class="e7-marke-name">Apple</span></span></b> (Elektronik): heikle Frage selbst beantwortet, als Text</p></div>
-      <p class="e7-massnahme"><span class="p-marker">Koffein-Check als Text, verlinkt aus Help-Center und KI-Dateien</span></p>
-    </div>
-    <div class="e7-zeile" data-schritt="1" data-animation="hoch">
-      <p class="e7-phase">Entscheidung <span class="e7-ue" data-meta>Ü2/Ü3</span></p>
-      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-zooplus"><span class="e7-marke-name">zooplus</span></span></b> (Heimtierbedarf): Grundpreis neben jedem Preis</p></div>
+    <div class="e7-spalte e7-spalte--3" data-schritt="1" data-animation="hoch" data-verzoegerung="40">
+      <p class="e7-logo"><span class="e7-marke" data-intern="v07-logo-zooplus"><span class="e7-marke-name">zooplus</span></span></p>
+      <p class="e7-branche" data-meta>Heimtierbedarf</p>
+      <p class="e7-mechanik">Grundpreis neben jedem Preis</p>
+      <svg class="e7-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M26 4 h18 v18 L23 43 L5 25 z"/><circle cx="35.5" cy="12.5" r="3.2"/><path d="M16 27 l10 -10 M21 32 l7 -7"/></svg>
       <p class="e7-massnahme">Preis je Portion ohne Code, eine Garantie</p>
     </div>
-    <div class="e7-zeile" data-schritt="1" data-animation="hoch">
-      <p class="e7-phase">Kauf <span class="e7-ue" data-meta>Ü3</span></p>
-      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-otto"><span class="e7-marke-name">OTTO</span></span></b> (Versandhandel): Lieferzeit schon am Artikel</p></div>
+    <div class="e7-spalte e7-spalte--4" data-schritt="1" data-animation="hoch" data-verzoegerung="150">
+      <p class="e7-logo"><span class="e7-marke" data-intern="v07-logo-otto"><span class="e7-marke-name">OTTO</span></span></p>
+      <p class="e7-branche" data-meta>Versandhandel</p>
+      <p class="e7-mechanik">Lieferzeit am&nbsp;Artikel</p>
+      <svg class="e7-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="34" rx="4"/><path d="M5 19 h38 M15 4 v9 M33 4 v9"/><path d="M16 31 l5 5 l11 -11"/></svg>
       <p class="e7-massnahme">ein Liefertermin, Endpreis vor dem Bezahlen</p>
     </div>
-    <div class="e7-zeile" data-schritt="1" data-animation="hoch">
-      <p class="e7-phase">Bindung <span class="e7-ue" data-meta>Ü4</span></p>
-      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-philips"><span class="e7-marke-name">Philips</span></span></b> (Zahnbürsten): Erinnerung nach Verbrauch</p></div>
-      <p class="e7-massnahme">Willkommensseite mit Squad, Nachfüll-Erinnerung als Opt-in</p>
+    <div class="e7-spalte e7-spalte--5" data-schritt="1" data-animation="hoch" data-verzoegerung="500">
+      <p class="e7-logo"><span class="e7-marke" data-intern="v07-logo-philips"><span class="e7-marke-name">Philips</span></span></p>
+      <p class="e7-branche" data-meta>Zahnbürsten</p>
+      <p class="e7-mechanik">Erinnerung nach Verbrauch</p>
+      <svg class="e7-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 34 V22 a12 12 0 0 1 24 0 V34"/><path d="M7 34 h34"/><path d="M19.5 39 a4.5 4.5 0 0 0 9 0"/><path d="M24 6 v4"/></svg>
+      <p class="e7-massnahme">Willkommens&shy;seite mit Squad, Nachfüll-Erinnerung (Opt-in)</p>
     </div>
-    <div class="e7-zeile e7-zeile--neben" data-schritt="1" data-animation="hoch">
-      <p class="e7-phase">Nebenweg <span class="e7-ue" data-meta>Handel</span></p>
-      <div class="e7-vorbild"><p class="e7-vorbild-text"><b><span class="e7-marke" data-intern="v07-logo-pampers"><span class="e7-marke-name">Pampers</span></span> Club</b> (Drogerie): Code in der Packung</p></div>
-      <p class="e7-massnahme">QR-Brücke vom Regal in den Squad (B4)</p>
+
+    <!-- Nebenweg Handel (wie 05 gestrichelt, hier mit Anschluss) -->
+    <div class="e7-neben" data-schritt="1" data-animation="hoch" data-verzoegerung="600">
+      <p class="e7-neben-name">Nebenweg Handel</p>
+      <p class="e7-neben-vorbild"><span class="e7-marke" data-intern="v07-logo-pampers"><span class="e7-marke-name">Pampers</span></span><b class="e7-zusatz">Club</b><span class="e7-branche e7-branche--zeile" data-meta>Drogerie</span></p>
+      <p class="e7-neben-mechanik">Code in der Packung</p>
+      <!-- Packung mit Code (Art des Codes laut Dossier X16 nicht belegt, daher kein QR-Symbol beim Vorbild) -->
+      <svg class="e7-icon e7-icon--neben" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 15 h38 v28 h-38 z"/><path d="M5 15 l6 -10 h26 l6 10"/><path d="M24 5 v10"/><rect x="13" y="24" width="22" height="11" rx="1.5"/><path d="M17.5 29.5 h2.5 M22.75 29.5 h2.5 M28 29.5 h2.5"/></svg>
+      <span class="e7-neben-linie" aria-hidden="true"></span>
+      <!-- QR-Symbol gehört zu unserer Maßnahme (QR-Brücke, B4) -->
+      <svg class="e7-icon e7-icon--neben e7-icon--qr" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"/><rect x="29" y="5" width="14" height="14" rx="1"/><rect x="5" y="29" width="14" height="14" rx="1"/><path class="e7-icon-voll" d="M10 10 h4 v4 h-4 z M34 10 h4 v4 h-4 z M10 34 h4 v4 h-4 z"/><path d="M29 29 h6 v6 M41 29 h2 M29 41 v2 M36 41 h7 v-5"/></svg>
+      <p class="e7-neben-massnahme">QR-Brücke: Regal → Squad (B4)</p>
     </div>
   </div>
 
   <p class="p-quelle" data-meta>Stenger S. 111, 117–119 · Dossier 7a: ✔ X01 X04 X08 X12 X14 · ✎ X16 · Maßnahmen: H · alle Fälle in B6</p>
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
   <p class="p-bildquelle" data-meta hidden>Logos: YouTube, Apple, zooplus, OTTO, Philips, Pampers (P&amp;G) · einfarbig, nur zur Kennzeichnung der Vorbilder · Abruf 03.11.2026</p>
-
   <aside class="notizen">
     <p data-schritt="0">Schritt vier: Kundenerlebnis verbessern. Für jeden Top-Touchpoint haben wir ein Vorbild gesucht – bewusst aus anderen Branchen, öffentlich belegt und mit demselben Bruch. Inspiration: Bei YouTube Shopping führt ein Tipp im Video direkt zum Produkt, etwa bei MediaMarktSaturn oder OTTO. Für HOLY heißt das: eine Code-Landingpage mit zwei klaren Wegen, und die Werbung ist gekennzeichnet. Recherche, die gebrochene Stelle: Apple hat die heikle Frage nach Akku und Leistung selbst beantwortet, auf einer eigenen Textseite. Unsere Maßnahme: der Koffein-Check als Text, verlinkt aus Help-Center und KI-Dateien.</p>
     <p data-schritt="1">Entscheidung: zooplus zeigt neben jedem Packungspreis den Grundpreis – wir zeigen den Preis je Portion ohne Code und eine Garantie für alle Kaufwege. Kauf: OTTO nennt die Lieferzeit schon am Artikel – bei uns ein Liefertermin und der Endpreis vor dem Bezahlen. Bindung: Philips erinnert, wenn der Bürstenkopf verbraucht ist – wir erinnern per Opt-in, bevor die Dose leer ist, ohne Abo. Und für den Nebenweg: Pampers bringt Käufer im Handel per Code in der Packung ins Treueprogramm – das ist unsere QR-Brücke.</p>
     <p>Belege (Dossier 7a, Websuche durch Unteragenten, Abruf 03.11.2026, an den Quellen gegengeprüft): ✔ X01 YouTube-Shopping-Affiliate mit MediaMarktSaturn, OTTO u. a. (Unternehmensangabe „über 110 % mehr Klicks auf Produkte“, nicht unabhängig geprüft). ✔ X04 Apple-Support-Seite „iPhone: Batterie und Leistung“ (kein Wirkungsbeleg; 2020 25 Mio. € in Frankreich wegen fehlender Information). ✔ X08 zooplus: Grundpreis neben dem Packungspreis; Baymard: 86 % der Shops zeigen keinen Preis je Einheit. ✔ X12 OTTO: Lieferzeit am Artikel, Wunschtermin (kein Wirkungsbeleg). ✔ X14 Philips Sonicare BrushSync: Erinnerung nach Verbrauch, Abo nur optional (kein Wirkungsbeleg). ✎ X16 Pampers Club: Code in der Packung (kein Wirkungsbeleg). Weitere Fälle: ✔ X03 Meta-Partnerschaftsanzeigen, ✔ X06 Stripe, ✎ X05 Wise, ✎ X07 Amazon A-bis-z-Garantie, ✔ X09 Airbnb Gesamtpreis, ✎ X10 Shop Pay, ~ X11 Apple-Lieferdatum, ✔ X13 Zalando, ✔ X15 Douglas, ✎ X17 Bosch – alle in B6. Maßnahmen sind Vorschläge der Gruppe (H); HOLY-Fakten darin: ✔ R25, ✔ S27, ✎ S30, ✔ B08, ✎ S28, ✔ R98, ✔ B10, ✎ T18, ✔ B91, ✔ B12, ✎ T31, ✔ T32, ✔ T30, ✔ L96, ✔ B01, ✔ B03.</p>
     <p>Vorlesungsanker für Rückfragen: Burberry „Art of the Trench“ als Bindungsbeispiel (S. 119, ✔ L93); Whole Foods „Whole Story“ mit „Find a Store“ (S. 118, ✎ L16, Verbindung H B99). Kürzung 3 (Kontrollpunkt nach 07 über 9:45): nur Recherche und Bindung ausführlich, −20 s; dann weder Live-Demo noch Werbespot (beide nur, wenn nach 07 höchstens 9:30 vergangen sind, Notiz 08).</p>
     <p>Rückfragen: „Warum diese Vorbilder? Was heißt branchenübergreifend?“ → B6.</p>
-    <p>Bilder: Auf der Folie stehen nur die Logos der Unternehmen (einfarbig, nur zur Kennzeichnung der Vorbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17, keine Genehmigung der Rechteinhaber eingeholt). Belegbilder der Vorbilder zeigen wir nicht: Sie sind zurückgehalten, nicht veröffentlicht, und liegen nur in intern/vorbilder-zurueckgehalten/ (ausgeschlossen; in einer Kopie aus dem Repository fehlt der Ordner): X01 Standbild aus YouTubes eigenem Erklärvideo (Stockfoto, kein echter Kanal); X04 Bildschirmfoto im Apple-Support-Artikel; X08 zooplus-Produktseite (Preise Stand 03.11.2026); X12 Textausschnitt der OTTO-Serviceseite „Lieferung“ mit dem Satz „Die Lieferzeit zeigen wir dir vor deiner Bestellung direkt am jeweiligen Artikel an.“ (Screenshot 03.11.2026); X14 Philips-Grafik BrushSync; X16 Werbebild der Pampers-Club-App mit Beispielcode des Herstellers. Bei Rückfragen nach einem Beleg auf die Quelle im Dossier 7a und auf B6 verweisen.</p>
+    <p>Bilder: Auf der Folie stehen nur die Logos der Unternehmen (einfarbig, nur zur Kennzeichnung der Vorbilder; Veröffentlichung von der Gruppe beschlossen, KI-Nachweis FS2 Nr. 17, keine Genehmigung der Rechteinhaber eingeholt). Belegbilder der Vorbilder zeigen wir nicht: Sie sind zurückgehalten, nicht veröffentlicht, und liegen nur in intern/vorbilder-zurueckgehalten/ (ausgeschlossen; in einer Kopie aus dem Repository fehlt der Ordner): X01 Standbild aus YouTubes eigenem Erklärvideo (Stockfoto, kein echter Kanal); X04 Bildschirmfoto im Apple-Support-Artikel; X08 zooplus-Produktseite (Preise Stand 03.11.2026); X12 Textausschnitt der OTTO-Serviceseite „Lieferung“ mit dem Satz „Die Lieferzeit zeigen wir dir vor deiner Bestellung direkt am jeweiligen Artikel an.“ (Screenshot 03.11.2026); X14 Philips-Grafik BrushSync; X16 Werbebild der Pampers-Club-App mit Beispielcode des Herstellers. Bei Rückfragen nach einem Beleg auf die Quelle im Dossier 7a und auf B6 verweisen. Die Linien-Symbole (Mechanik der Vorbilder: Bildschirm mit Tasche, Textseite, Preisschild, Kalender, Glocke, Packung mit Code; dazu der QR-Code bei unserer QR-Brücke) sind KI-gestützt erstellt (Inline-SVG, KI-Nachweis FS2 Nr. 30/D13), keine Fremdbilder und keine KI-Bilder.</p>
   </aside>
+
+  <script type="application/json" class="daten">
+  {
+    "karte": {
+      "kopfY": 372,
+      "regelY": 440,
+      "zeilen": [714],
+      "ohneRaster": true
+    }
+  }
+  </script>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -844,6 +1058,16 @@
      ║   Fremdbilder beschriftete Platzhalter „K1“ … „K6“).
      ║ Sprungliste seit D12: B1 „Methode“ (statt Selbstversuch), B5 „Stimmen“ (statt Interviews).
      ║ Der Pfad läuft hier als einzige Ausnahme von Rand zu Rand (data-ueberlauf-ok, Plan 3.5).
+     ║ D13 (08.11.2026, KI-gestützter Gestaltungsvorschlag, von Yannick übernommen – KI-Nachweis FS2 Nr. 30; Prüfung
+     ║   durch die Gruppe offen): Die Kennzahlen stehen als
+     ║   Messpunkte direkt am Pfad – Ringe Ü1–Ü4 (neue Komponente „Messpunkt“, bewusst kein voller Knoten, der für
+     ║   Moment der Wahrheit/Platz 1 steht) in den Rinnen zwischen den Kacheln, Kennzahl darüber (Ü1–Ü2 eine Kennzahl
+     ║   mit Klammer über K2), Kopf „Kennzahlen je Überleitung (Vorschlag, H)“ links daneben; die Kacheln sind dafür über
+     ║   den ganzen Satzspiegel verteilt (x = 128 + n · 368), der Pfad liegt auf y = 774. Oben links die Kernsätze unter
+     ║   „Fazit“, rechts „Ergebnis (S. 111)“ als Meta-Kopf mit drei Zielen (30 px Inter, leiser als die Kernsätze);
+     ║   bewusst keine Zeichen/Icons vor den Zeilen (nach Plan 3.7 wären seit 08.11.2026 schlichte Linien-Symbole
+     ║   erlaubt). Wortlaut der Kernsätze, Kennzahlen, Ergebnis, Belege, Klicks
+     ║   und Sprechtext unverändert; neu nur eine Regie-Notiz „Zeigen“ ohne data-schritt.
      ════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <section class="folie p-folie" id="f09" data-titel="Fazit, Kennzahlen, Videobotschaft, Fragen" data-zeit="70" data-buendel="C" data-feld="leer" data-layout="leer" data-laufkopf="aus" data-lauf="zu" data-buehne="gelb">
   <div class="e9-fazit-ebene">
@@ -855,24 +1079,46 @@
     <img class="e9-logo" data-marke-logo="titel" alt="HOLY-Logo" width="692" height="400">
     <p class="e9-logo-quelle" data-meta>Logo © HOLY Softdrinks GmbH</p>
 
+    <!-- Drei Kernsätze unter dem Meta-Kopf „Fazit“ (D13, 08.11.2026; bewusst ohne Zeichen davor) -->
+    <p class="e9-saetze-kopf" data-meta>Fazit</p>
     <ol class="e9-saetze">
       <li class="p-satz">Zentraler Weg online – bricht beim Nachlesen (Ü2).</li>
       <li class="p-satz">Fünf Top-Touchpoints als Konzept-Webseite gebaut.</li>
       <li class="p-satz"><span class="p-marker">Je Überleitung messen, Mittel gezielt einsetzen.</span></li>
     </ol>
 
-    <div class="e9-kennzahlen">
-      <p class="e9-k-kopf" data-meta>Kennzahlen je Überleitung (Vorschlag, H)</p>
-      <p class="e9-k"><span class="e9-k-ue" data-meta>Ü1–Ü2</span> Weiterklicks Landingpage → Koffein-Check → Produktseite</p>
-      <p class="e9-k"><span class="e9-k-ue" data-meta>Ü3</span> Abschlussquote im mobilen Checkout</p>
-      <p class="e9-k"><span class="e9-k-ue" data-meta>Ü4</span> Squad-Anmeldungen nach dem ersten Kauf</p>
-      <p class="e9-ergebnis"><b>Ergebnis (S. 111):</b> Wiederkauf · Cross-Selling (Mix &amp; Match) · Weiterempfehlung (Freunde werben)</p>
+    <!-- Ergebnis nach S. 111: drei Ziele, leiser gesetzt als die Kernsätze (D13) -->
+    <div class="e9-ergebnis">
+      <p class="e9-ergebnis-kopf" data-meta>Ergebnis (S. 111)</p>
+      <ul class="e9-ziele">
+        <li class="e9-ziel"><span class="e9-ziel-wort">Wiederkauf</span></li>
+        <li class="e9-ziel"><span class="e9-ziel-wort">Cross-Selling</span> <span class="e9-ziel-wie">(Mix &amp; Match)</span></li>
+        <li class="e9-ziel"><span class="e9-ziel-wort">Weiterempfehlung</span> <span class="e9-ziel-wie">(Freunde werben)</span></li>
+      </ul>
     </div>
 
     <!-- geschlossener Pfad von Rand zu Rand mit der Bildleiste (b16, nur Fotos mit Status „frei“, sonst Platzhalter) -->
     <svg class="p-pfad e9-pfad" viewBox="0 0 1920 1080" aria-hidden="true" data-ueberlauf-ok>
-      <path class="gelb" d="M 0 762 L 1920 762"/>
+      <path class="gelb" d="M 0 774 L 1920 774"/>
     </svg>
+
+    <!-- Messpunkte Ü1–Ü4 (D13, 08.11.2026): je Überleitung ein Ring in der Rinne zwischen zwei Kacheln, die
+         Kennzahl steht direkt darüber (Ü1–Ü2 eine Kennzahl mit Klammer). Kennzahlen: Vorschlag der Gruppe (H),
+         keine gemessenen Werte. -->
+    <div class="e9-messung">
+      <svg class="e9-messlinien" viewBox="0 0 1920 1080" aria-hidden="true">
+        <path d="M 408 744 V 702 H 776 V 744 M 1144 702 V 744 M 1512 702 V 744"/>
+      </svg>
+      <p class="e9-mess-kopf" data-meta>Kennzahlen je<br>Überleitung<br>(Vorschlag, H)</p>
+      <p class="e9-kz e9-kz--12"><b>Weiterklicks</b> Landingpage →<br>Koffein-Check → Produktseite</p>
+      <p class="e9-kz e9-kz--3"><b>Abschlussquote</b> im<br>mobilen Checkout</p>
+      <p class="e9-kz e9-kz--4"><b>Squad-Anmeldungen</b><br>nach dem ersten Kauf</p>
+      <p class="e9-mp e9-mp--1" data-meta>Ü1</p>
+      <p class="e9-mp e9-mp--2" data-meta>Ü2</p>
+      <p class="e9-mp e9-mp--3" data-meta>Ü3</p>
+      <p class="e9-mp e9-mp--4" data-meta>Ü4</p>
+    </div>
+
     <div class="e9-leiste">
       <figure class="p-kachel e9-k-bild" data-status="leer" data-art="screenshot" data-intern="k1-creator-09"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>K1</span></div><span class="p-bildlabel" data-meta>K1</span></figure>
       <figure class="p-kachel e9-k-bild" data-status="leer" data-art="screenshot" data-intern="k2-suche-09"><div class="p-platzhalter"><span class="p-kachel-art" data-meta>K2</span></div><span class="p-bildlabel" data-meta>K2</span></figure>
@@ -919,6 +1165,7 @@
     <p data-schritt="2">Vielen Dank – wir freuen uns auf Ihre Fragen.</p>
     <p>Belege: „Das Zusammenspiel aller Touchpoints prägt das Markenerlebnis“ (S. 107, ✔ L01); Schritt 5 mit Effizienzkontrolle und Kundenerlebnis Wiederkauf/Loyalität, Cross-Selling, Weiterempfehlung (S. 111, ✔ L11, ✔ L22); Mix &amp; Match ✔ T22; Freunde werben ✔ T33. Die Kennzahlen sind ein Vorschlag der Gruppe (H, Dossier Kap. 9), keine gemessenen Werte. Videobotschaft: Selbstauskunft des Gründers (wie die Gründerbefragung in FS1); Zustimmung für Video und Stimme in der Präsentation laut Yannick (02.11.2026, KI-Nachweis FS2 Nr. 09), seit 03.11.2026 auch für die Veröffentlichung online (KI-Nachweis FS2 Nr. 18; Datei video/gruender-video.mp4, nicht kommerziell, für die Lehrveranstaltung); keine KI-Transkription. Auf der Folie keine Zitate oder Zahlen aus dem Video ohne „laut Gründer“.</p>
     <p>Zeit: Fazit mit Kennzahlen, Ansage, 16 s Video; das Video wird nicht gekürzt – bei Zeitnot nur ein Fazit-Satz (Plan 10.2). Sprungliste: Klick auf B1–B9 springt (im Referentenfenster erst in der Fragerunde, wie FS1).</p>
+    <p>Zeigen: Bei „je Überleitung messen“ mit offener Hand den Pfad entlang – die Kennzahl steht jeweils über ihrem Messpunkt (Ü1 und Ü2 teilen sich die Weiterklicks, Klammer über K2; Ü3 Abschlussquote; Ü4 Squad-Anmeldungen). Die Bilder zeigen Marcos Weg heute, die Kennzahlen messen den neuen Weg. Bei „Am Ende zählt …“ nach rechts oben zum Ergebnis.</p>
     <p>Rückfragen (Plan 9.4): Top 3 → B2 · Online statt Handel → B7/B4 · Methode, Urteile zu den Überleitungen, „Habt ihr selbst getestet/befragt?“ → B1 (nein, keine eigene Erhebung) · Kundenstimmen → B5 · Werbespot → 08/B9 · Vorbilder, „branchenübergreifend“ → B6 · Übung S. 128/129 → B2 · echte HOLY-Seite? → 08/B8 · Persona → B7 · Bildrechte → B8 · KI → B9.</p>
   </aside>
 </section>
@@ -1152,7 +1399,7 @@
     <thead><tr><th>Baustein</th><th>Entstehung</th><th>Prüfung</th></tr></thead>
     <tbody>
       <tr><td>Recherche-Dossier</td><td>KI-gestützt (Websuche durch Unteragenten, gegengeprüft)</td><td>Gruppe: steht aus</td></tr>
-      <tr><td>Gestaltungsplan, Folien, Sprechtexte</td><td>KI-gestützt entworfen (Workflow „fs2-bau“, Finalisierung 08.11.2026)</td><td>Gruppe: steht aus</td></tr>
+      <tr><td>Gestaltungsplan, Folien, Sprechtexte</td><td>KI-gestützt entworfen (Workflow „fs2-bau“, Finalisierung und Visualisierungen 08.11.2026)</td><td>Gruppe: steht aus</td></tr>
       <tr><td>Konzept-Webseite</td><td>KI-gestützt gestaltet, eigene Zeichnungen, keine KI-Bilder; Fassung mit Bildern zeigt <span data-marke>HOLY</span>-Produktbilder</td><td>Gruppe: steht aus</td></tr>
       <tr><td>Screenshots, Fremdbilder</td><td>KI-gestützt abgerufen und aufgenommen (Unteragenten), keine KI-Bilder</td><td>Sichtung: steht aus</td></tr>
       <tr><td>Werbespot (08)</td><td>KI-gestützt gebaut; Stimme, Musik und Geräusche KI-generiert (ElevenLabs)</td><td>Anhören: steht aus</td></tr>
@@ -1165,7 +1412,7 @@
   <p class="p-fuss" data-meta>Studentische Fallstudie, nicht im Auftrag von <span data-marke>HOLY</span></p>
   <aside class="notizen">
     <p data-schritt="0"><b>Wann zeigen?</b> Rückfrage zur KI-Nutzung. <b>Kernsatz:</b> Recherche, Plan, Folien, Konzept-Webseite und Werbespot sind KI-gestützt entstanden und im KI-Nachweis dokumentiert; Stimme, Musik und Geräusche des Spots sind KI-generiert. Eine eigene Erhebung – Selbstversuch, Interviews, Workshop – haben wir nicht gemacht, und wir haben auch keine Befragung von einer KI simulieren lassen.</p>
-    <p>Jeder Prompt steht wörtlich im KI-Nachweis FS2; dort auch, wie die Gruppe die Ergebnisse geprüft hat. Werbespot: KI-Nachweis FS2 Nr. 24 / D11; Entscheidung „keine eigene Erhebung“ und Finalisierung: Nr. 26 / D12. Die Spalte „Prüfung“ zeigt den Stand vom 08.11.2026 – trägt die Gruppe ihre Prüfung im KI-Nachweis ein, hier nachziehen.</p>
+    <p>Jeder Prompt steht wörtlich im KI-Nachweis FS2; dort auch, wie die Gruppe die Ergebnisse geprüft hat. Werbespot: KI-Nachweis FS2 Nr. 24 / D11; Entscheidung „keine eigene Erhebung“ und Finalisierung: Nr. 26 / D12. Visualisierungen (Browserseite 04, Zeichen, Linien-Symbole – KI-gestützt als SVG, keine KI-Bilder): Nr. 30 / D13, D14. Die Spalte „Prüfung“ zeigt den Stand vom 08.11.2026 – trägt die Gruppe ihre Prüfung im KI-Nachweis ein, hier nachziehen.</p>
   </aside>
 </section>
 
