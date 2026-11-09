@@ -1,82 +1,85 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:#0b0b0b}
-.scene{position:absolute;inset:0;opacity:0;overflow:hidden}
-.bg{position:absolute;inset:-4%;background-size:cover;background-position:center}
-.kick{font:700 30px Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#ff7a3d}
-#s1{background:#0b0b0b}
-#s1 .bg{opacity:.28;filter:grayscale(1)}
-#s1 .bf{position:absolute;left:80px;right:80px;top:560px;font:700 230px/0.88 'Space Grotesk',sans-serif;color:#fff;letter-spacing:-.04em}
-#s1 .kick{position:absolute;left:84px;top:470px}
-#s1 .badge{position:absolute;right:80px;top:1180px;width:330px;height:330px;border-radius:50%;background:#ff7a3d;color:#0b0b0b;display:flex;align-items:center;justify-content:center;font:700 120px 'Space Grotesk',sans-serif;letter-spacing:-.04em}
-#s1 .brand{position:absolute;left:84px;bottom:220px;font:700 56px 'Space Grotesk',sans-serif;color:#fff;letter-spacing:.06em}
-#s2{background:#ece5de}
-#s2 h2{position:absolute;left:90px;right:90px;top:260px;font:700 104px/1.0 'Space Grotesk',sans-serif;color:#1c1a19;letter-spacing:-.02em}
-#s2 .kick{position:absolute;left:90px;top:200px;color:#b5481a}
-.shoe{position:absolute;left:50%;width:1000px;filter:drop-shadow(0 30px 30px rgba(40,25,15,.35))}
-.chips{position:absolute;left:90px;right:90px;bottom:330px;display:flex;flex-direction:column;gap:22px}
-.chip{align-self:flex-start;font:600 46px Inter,sans-serif;padding:20px 36px;border-radius:999px;background:#1c1a19;color:#f3efeb;opacity:0}
-#s2 .tag{position:absolute;right:70px;top:250px;background:#0b0b0b;color:#ff7a3d;font:800 34px Inter,sans-serif;letter-spacing:.12em;padding:16px 26px;border-radius:12px;transform:rotate(4deg)}
-#s3 .shade{position:absolute;inset:0;background:rgba(10,8,6,.62)}
-#s3 .cap{position:absolute;left:90px;right:90px;top:640px;color:#fff;font:700 104px/1.02 'Space Grotesk',sans-serif;letter-spacing:-.02em}
-#s4{background:#0b0b0b}
-#s4 .kick{position:absolute;left:0;right:0;top:170px;text-align:center}
-#s4 .brand{position:absolute;left:0;right:0;top:230px;text-align:center;font:700 64px 'Space Grotesk',sans-serif;color:#fff;letter-spacing:.04em}
-#s4 .shoeWrap{position:absolute;left:40px;right:40px;top:380px;height:600px;background:#ece5de;border-radius:40px;overflow:hidden}
-#s4 .shoe{top:20px}
-#s4 .badge{position:absolute;right:70px;top:330px;width:220px;height:220px;border-radius:50%;background:#ff7a3d;color:#0b0b0b;display:flex;align-items:center;justify-content:center;font:700 78px 'Space Grotesk',sans-serif;letter-spacing:-.03em;z-index:2}
-#s4 .old{position:absolute;left:0;right:0;top:1050px;text-align:center;font:700 90px 'Space Grotesk',sans-serif;color:#9a948f}
-#s4 .strike{position:absolute;left:50%;top:1112px;height:10px;background:#ff7a3d;transform:translateX(-50%) rotate(-6deg)}
-#s4 .new{position:absolute;left:0;right:0;top:1170px;text-align:center;font:700 190px 'Space Grotesk',sans-serif;color:#fff;letter-spacing:-.03em}
-#s4 .date{position:absolute;left:0;right:0;top:1420px;text-align:center;font:600 48px Inter,sans-serif;color:#f3efeb}
-#s4 .cta{position:absolute;left:50%;top:1560px;transform:translateX(-50%);font:800 46px Inter,sans-serif;background:#ff7a3d;color:#0b0b0b;padding:28px 64px;border-radius:999px;white-space:nowrap}
-.note{position:absolute;bottom:40px;left:0;right:0;text-align:center;font:400 22px Inter,sans-serif;color:rgba(255,255,255,.5)}
-.bar{position:absolute;left:0;top:0;height:10px;background:#ff7a3d;z-index:9}
-</style></head><body>
-<div class="scene" id="s1"><div class="bg" style="background-image:url(img/evening.jpg)"></div>
- <div class="kick">Freitag · 27.11.</div><div class="bf">BLACK<br>FRIDAY</div><div class="badge">−20 %</div><div class="brand">SALAMANDER</div></div>
-<div class="scene" id="s2"><div class="kick">Black Friday Deal</div><h2>Der neue<br>Herrenschuh.</h2><div class="tag">−20 %</div>
- <img class="shoe" src="img/shoe.png" style="top:520px">
- <div class="chips"><div class="chip">Sauber verarbeitet</div><div class="chip">Schlicht</div><div class="chip">Gebaut, um zu bleiben</div></div></div>
-<div class="scene" id="s3"><div class="bg" style="background-image:url(img/desk.jpg)"></div><div class="shade"></div>
- <div class="cap">Bequem<br>und passend<br>für den<br>ganzen Tag.</div></div>
-<div class="scene" id="s4"><div class="kick">Black Friday</div><div class="brand">SALAMANDER</div>
- <div class="shoeWrap"><img class="shoe" src="img/shoe.png"></div><div class="badge">−20 %</div>
- <div class="old">99,90 €</div><div class="strike"></div><div class="new">79,90 €</div>
- <div class="date">Nur am Freitag, 27.11.</div><div class="cta">Jetzt sichern</div>
- <div class="note">Workshop-Entwurf · Rabatt fiktiv · Fotos: Unsplash</div></div>
-<div class="bar" id="bar"></div>
+#stage{position:absolute;inset:0;overflow:hidden}
+.shot{position:absolute;inset:0;display:none;overflow:hidden}
+.bg{position:absolute;inset:-6%;background-size:cover;background-position:center}
+.dark{position:absolute;inset:0;background:rgba(8,6,5,.55)}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.045em;line-height:.86}
+.word{position:absolute;left:70px;right:70px;font:900 150px/0.9 Inter,sans-serif;letter-spacing:-.04em;text-transform:uppercase}
+.small{position:absolute;left:0;right:0;text-align:center;font:800 34px Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.o{color:#ff6a1f}.w{color:#fff}.k{color:#0b0b0b}
+.cream{background:#ece5de}.black{background:#0b0b0b}.orange{background:#ff6a1f}
+.shoe{position:absolute;left:50%;top:50%;width:1000px}
+.macro{position:absolute;inset:0;background-image:url(img/shoe.png);background-repeat:no-repeat}
+.badge{position:absolute;border-radius:50%;background:#ff6a1f;color:#0b0b0b;display:flex;align-items:center;justify-content:center;font:700 90px 'Space Grotesk',sans-serif;letter-spacing:-.03em}
+.strike{position:absolute;left:50%;height:16px;background:#ff6a1f;transform-origin:left center}
+.cta{position:absolute;left:50%;font:900 52px Inter,sans-serif;background:#ff6a1f;color:#0b0b0b;padding:32px 70px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#bar{position:absolute;left:0;top:0;height:12px;background:#ff6a1f;z-index:9}
+.note{position:absolute;bottom:36px;left:0;right:0;text-align:center;font:500 22px Inter,sans-serif;color:rgba(255,255,255,.5)}
+.ticker{position:absolute;left:0;white-space:nowrap;font:900 64px Inter,sans-serif;letter-spacing:.06em;color:#0b0b0b}
+</style></head><body><div id="stage">
+
+<div class="shot orange" id="h0"><div class="big k" id="h0t" style="top:760px;font-size:370px">−20%</div>
+ <div class="ticker" id="tk1" style="top:240px">BLACK FRIDAY · BLACK FRIDAY · BLACK FRIDAY · BLACK FRIDAY ·</div>
+ <div class="ticker" id="tk2" style="top:1560px">BLACK FRIDAY · BLACK FRIDAY · BLACK FRIDAY · BLACK FRIDAY ·</div></div>
+<div class="shot black" id="h1"><div class="big w" id="h1a" style="top:620px;font-size:300px">BLACK</div><div class="big o" id="h1b" style="top:920px;font-size:300px">FRIDAY</div></div>
+<div class="shot" id="h2"><div class="bg" style="background-image:url(img/evening.jpg);filter:grayscale(1) contrast(1.2)"></div><div class="dark"></div>
+ <div class="word w" style="top:680px;font-size:220px">Nur<br><span class="o">1 Tag.</span></div></div>
+<div class="shot cream" id="h3"><div class="macro" id="m1"></div><div class="word k" style="top:1450px">Der neue</div></div>
+<div class="shot cream" id="h4"><div class="small o" style="top:300px">Neu von Salamander</div><div class="word k" style="top:380px;font-size:132px">Herren&shy;schuh</div><img class="shoe" id="s4" src="img/shoe.png"></div>
+<div class="shot black" id="h5"><div class="macro" id="m2"></div><div class="dark" style="background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.85))"></div><div class="word w" style="top:1380px">Sauber<br>verarbeitet.</div></div>
+<div class="shot black" id="h6"><img class="shoe" id="s6" src="img/shoe.png" style="width:760px"><div class="word w" style="top:1340px;text-align:center;font-size:170px">Schlicht.</div></div>
+<div class="shot" id="h7"><div class="bg" style="background-image:url(img/meeting.jpg)"></div><div class="dark"></div><div class="word w" style="top:760px;font-size:230px;text-align:center">Bequem</div></div>
+<div class="shot" id="h8"><div class="bg" style="background-image:url(img/evening.jpg)"></div><div class="dark"></div><div class="word w" style="top:640px;font-size:190px">Den<br>ganzen<br><span class="o">Tag.</span></div></div>
+<div class="shot black" id="h9"><div class="small w" style="top:560px">Statt</div><div class="big w" id="old" style="top:700px;font-size:250px">99,90€</div><div class="strike" id="strk" style="top:820px;margin-left:-460px"></div></div>
+<div class="shot orange" id="h10"><div class="small k" style="top:330px">Jetzt nur</div><div class="big k" id="new" style="top:420px;font-size:290px">79,90€</div><img class="shoe" id="s10" src="img/shoe.png" style="top:1180px;width:960px"><div class="badge" id="b10" style="right:60px;top:1560px;width:260px;height:260px;background:#0b0b0b;color:#ff6a1f">−20%</div></div>
+<div class="shot black" id="h11"><div class="small o" style="top:520px">Nur am Black Friday</div><div class="big w" id="date" style="top:640px;font-size:330px">27.11.</div><div class="small w" style="top:1040px;letter-spacing:.3em">Freitag</div></div>
+<div class="shot black" id="h12"><div class="small o" style="top:190px">Black Friday · 27.11.</div><div class="big w" style="top:250px;font-size:80px;letter-spacing:.05em">SALAMANDER</div>
+ <div style="position:absolute;left:40px;right:40px;top:420px;height:560px;background:#ece5de;border-radius:44px;overflow:hidden"><img class="shoe" id="s12" src="img/shoe.png" style="width:960px"></div>
+ <div class="badge" id="b12" style="right:50px;top:350px;width:230px;height:230px;font-size:80px">−20%</div>
+ <div class="big" style="top:1040px;font-size:90px;color:#77716c" id="old2">99,90 €</div><div class="strike" style="top:1072px;margin-left:-200px;width:400px;transform:rotate(-6deg)"></div>
+ <div class="big w" style="top:1150px;font-size:200px">79,90 €</div>
+ <div class="cta" id="cta" style="top:1450px">Schnell sein!</div>
+ <div class="note">Workshop-Entwurf · Rabatt fiktiv · Fotos: Unsplash · Stimme &amp; Beat: ElevenLabs</div></div>
+
+<div id="flash"></div><div id="bar"></div></div>
 <script>
-const D=15,N=4;let T=[0,1.65,6.3,8.4,15];
-const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);const cl=(x,a,b)=>Math.max(a,Math.min(b,x));
-const $=q=>document.querySelector(q);
-function vis(i,t){const a=T[i],b=T[i+1],f=0.25;let o=1;if(i>0)o=Math.min(o,cl((t-a)/f+0.5,0,1));if(i<N-1)o=Math.min(o,cl((b-t)/f+0.5,0,1));return(t>=a-f&&t<=b+f)?o:0;}
-function pop(el,p,dy=50){const e=ease(p);el.style.opacity=e;el.style.transform=(el.dataset.base||'')+` translateY(${(1-e)*dy}px)`;}
+const D=15;
+const S=[['h0',0,0.5],['h1',0.5,0.92],['h2',0.92,1.75],['h3',1.75,2.6],['h4',2.6,3.7],['h5',3.7,4.85],['h6',4.85,5.75],['h7',5.75,6.6],['h8',6.6,7.65],['h9',7.65,9.55],['h10',9.55,11.5],['h11',11.5,13.25],['h12',13.25,15]];
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const back=x=>{x=Math.max(0,Math.min(1,x));const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);};
+const $=id=>document.getElementById(id);
+const shake=(p,amp)=>{const k=Math.max(0,1-p/0.35);return `translate(${Math.sin(p*90)*amp*k}px,${Math.cos(p*77)*amp*k}px)`;};
+const slam=(el,p,from=1.8,base='')=>{const e=back(p/0.22);el.style.transform=`${base} scale(${from-(from-1)*e})`;el.style.opacity=Math.min(1,p/0.06);};
+function shoeAt(el,x,y,sc,rot=0){el.style.transform=`translate(-50%,-50%) translate(${x}px,${y}px) scale(${sc}) rotate(${rot}deg)`;}
 window.render=function(t){
- for(let i=0;i<N;i++){const s=$('#s'+(i+1));s.style.opacity=vis(i,t);const p=(t-T[i])/(T[i+1]-T[i]);const bg=s.querySelector('.bg');if(bg)bg.style.transform=`scale(${1+0.08*p})`;}
- // S1
- const p1=t-T[0];const bf=$('#s1 .bf');const e1=ease(p1/0.5);bf.style.opacity=e1;bf.style.transform=`scale(${1.25-0.25*e1})`;bf.style.transformOrigin='left center';
- const b1=$('#s1 .badge');const eb=ease((p1-0.45)/0.35);b1.style.opacity=eb;b1.style.transform=`scale(${eb}) rotate(${(1-eb)*-40}deg)`;
- pop($('#s1 .kick'),p1/0.4,20);pop($('#s1 .brand'),(p1-0.6)/0.4,30);
- // S2
- const p2=t-T[1];const sh=$('#s2 .shoe');const e2=ease(p2/0.9);sh.style.opacity=e2;sh.style.transform=`translateX(-50%) translateX(${(1-e2)*300}px) scale(${0.9+0.1*e2+0.03*Math.max(0,p2)/4})`;
- pop($('#s2 h2'),p2/0.6);pop($('#s2 .kick'),p2/0.5,20);
- const tg=$('#s2 .tag');const et=ease((p2-0.5)/0.35);tg.style.opacity=et;tg.style.transform=`rotate(4deg) scale(${0.6+0.4*et})`;
- document.querySelectorAll('#s2 .chip').forEach((c,k)=>{const e=ease((p2-[1.15,2.55,3.35][k])/0.4);c.style.opacity=e;c.style.transform=`translateX(${(1-e)*-80}px)`;});
- // S3
- pop($('#s3 .cap'),(t-T[2]-0.1)/0.6,60);
- // S4
- const p4=t-T[3];const e4=ease(p4/0.6);$('#s4 .shoe').style.transform=`translateX(-50%) scale(${0.85+0.15*e4})`;
- pop($('#s4 .kick'),p4/0.4,20);pop($('#s4 .brand'),p4/0.5,20);pop($('#s4 .old'),(p4-0.2)/0.5,30);
- const b4=$('#s4 .badge');const eb4=ease((p4-0.3)/0.35);b4.style.opacity=eb4;b4.style.transform=`scale(${eb4}) rotate(${(1-eb4)*-40}deg)`;
- const st=ease((p4-1.95)/0.3);$('#s4 .strike').style.width=(st*420)+'px';
- $('#s4 .old').style.color=st>0?'#6f6a66':'#9a948f';
- const nw=$('#s4 .new');const en=ease((p4-2.05)/0.45);nw.style.opacity=en;nw.style.transform=`scale(${0.7+0.3*en})`;
- pop($('#s4 .date'),(p4-4.05)/0.4,30);
- const cta=$('#s4 .cta');const ec=ease((p4-4.5)/0.45);cta.style.opacity=ec;cta.style.transform=`translateX(-50%) translateY(${(1-ec)*40}px) scale(${1+0.04*Math.sin(Math.max(0,p4-5)*6)*(ec)})`;
- $('#bar').style.width=(t/D*1080)+'px';
+ let cur=0; S.forEach(([id,a,b],i)=>{const on=t>=a&&t<b;$(id).style.display=on?'block':'none';if(on)cur=i;});
+ const [id,a,b]=S[cur]; const p=t-a; const L=b-a;
+ // Punch-Zoom auf jeden Schnitt + Shake
+ const punch=1+0.10*(1-ease(p/0.3));
+ $('stage').style.transform=`scale(${punch}) ${shake(p,cur===0||cur===10||cur===1?26:10)}`;
+ // Flash bei Schnitten
+ $('flash').style.opacity=cur>0&&p<0.067?(0.85-p*8):0;
+ const bg=$(id).querySelector('.bg'); if(bg) bg.style.transform=`scale(${1.04+0.12*p/L})`;
+ if(id==='h0'){slam($('h0t'),p,3);$('tk1').style.transform=`translateX(${-p*900}px)`;$('tk2').style.transform=`translateX(${-400+p*900}px)`;}
+ if(id==='h1'){slam($('h1a'),p,2.4);const q=p-0.16;$('h1b').style.opacity=q>0?1:0;if(q>0)slam($('h1b'),q,2.4);$('h1').style.background=(Math.floor(p*15)%2&&p>0.2)?'#ff6a1f':'#0b0b0b';$('h1b').style.color=$('h1').style.background==='rgb(255, 106, 31)'?'#0b0b0b':'#ff6a1f';}
+ if(id==='h2'){slam($(id).querySelector('.word'),p,1.6);}
+ if(id==='h3'){const m=$('m1');m.style.backgroundSize=`${3600-p*500}px auto`;m.style.backgroundPosition=`${-1500+p*120}px ${-80}px`;slam($(id).querySelector('.word'),p-0.15,1.5);}
+ if(id==='h4'){const e=ease(p/0.35);shoeAt($('s4'),(1-e)*1100,140,1.0+0.05*p/L,(1-e)*-12);slam($(id).querySelector('.word'),p,1.5);}
+ if(id==='h5'){const m=$('m2');m.style.backgroundSize=`${4200-p*400}px auto`;m.style.backgroundPosition=`${-2350+p*160}px ${-900+p*40}px`;slam($(id).querySelector('.word'),p-0.1,1.4);}
+ if(id==='h6'){shoeAt($('s6'),0,-120,0.9+0.15*ease(p/L),0);slam($(id).querySelector('.word'),p-0.05,1.6);}
+ if(id==='h7'){slam($(id).querySelector('.word'),p,2.2);}
+ if(id==='h8'){const w=$(id).querySelector('.word');w.style.opacity=1;const e=ease(p/0.25);w.style.transform=`translateX(${(1-e)*-700}px)`;}
+ if(id==='h9'){slam($('old'),p,1.5);const s=ease((p-1.3)/0.18);$('strk').style.width=(s*920)+'px';$('strk').style.transform='rotate(-8deg)';$('old').style.color=s>0.5?'#6f6a66':'#fff';}
+ if(id==='h10'){slam($('new'),p-0.08,2.6);const e=ease(p/0.4);shoeAt($('s10'),(1-e)*-1100,0,1,0);const eb=back((p-0.5)/0.3);$('b10').style.transform=`scale(${Math.max(0,eb)}) rotate(${p*40}deg)`;}
+ if(id==='h11'){slam($('date'),p,2.2);$('h11').style.background=(p>0.15&&p<0.6&&Math.floor(p*14)%2)?'#ff6a1f':'#0b0b0b';}
+ if(id==='h12'){const e=ease(p/0.4);shoeAt($('s12'),0,0,0.8+0.2*e+0.04*p,0);$('b12').style.transform=`scale(${Math.max(0,back((p-0.2)/0.3))}) rotate(${-10+p*20}deg)`;
+   const c=$('cta');const ec=back((p-0.15)/0.3);c.style.opacity=Math.min(1,Math.max(0,(p-0.15)/0.1));c.style.transform=`translateX(-50%) scale(${Math.max(0,ec)*(1+0.05*Math.sin(p*9))})`;}
+ $('bar').style.width=(t/D*1080)+'px';
 };
 render(0);
 </script></body></html>
