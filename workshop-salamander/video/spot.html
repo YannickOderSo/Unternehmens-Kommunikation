@@ -1,0 +1,68 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#111}
+.scene{position:absolute;inset:0;opacity:0;overflow:hidden}
+.bg{position:absolute;inset:-4%;background-size:cover;background-position:center}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,10,8,.15) 0%,rgba(15,10,8,.0) 40%,rgba(15,10,8,.75) 100%)}
+.cap{position:absolute;left:90px;right:90px;bottom:300px;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:96px;line-height:1.02;letter-spacing:-.02em}
+.kick{font-family:Inter,sans-serif;font-weight:700;font-size:30px;letter-spacing:.2em;text-transform:uppercase;color:#e0a07c;margin-bottom:28px}
+#s3{background:#ece5de}
+#s3 .shoe,#s5 .shoe{position:absolute;left:50%;width:1000px;filter:drop-shadow(0 30px 30px rgba(40,25,15,.35))}
+#s3 h2{position:absolute;left:90px;right:90px;top:260px;font:700 104px/1.0 'Space Grotesk',sans-serif;color:#1c1a19;letter-spacing:-.02em}
+#s3 .kick{position:absolute;left:90px;top:200px;color:#8a4526}
+.chips{position:absolute;left:90px;right:90px;bottom:330px;display:flex;flex-direction:column;gap:22px}
+.chip{align-self:flex-start;font:600 46px Inter,sans-serif;padding:20px 36px;border-radius:999px;background:#1c1a19;color:#f3efeb;opacity:0}
+#s5{background:#1c1a19}
+#s5 .shoeWrap{position:absolute;left:40px;right:40px;top:420px;height:620px;background:#ece5de;border-radius:40px;overflow:hidden}
+#s5 .shoe{top:30px}
+#s5 .price{position:absolute;left:0;right:0;top:1150px;text-align:center;font:700 170px 'Space Grotesk',sans-serif;color:#f3efeb;letter-spacing:-.03em}
+#s5 .brand{position:absolute;left:0;right:0;top:210px;text-align:center;font:700 64px 'Space Grotesk',sans-serif;color:#f3efeb;letter-spacing:.04em}
+#s5 .claim{position:absolute;left:0;right:0;top:1380px;text-align:center;font:500 46px Inter,sans-serif;color:#cfc7c0}
+#s5 .cta{position:absolute;left:50%;top:1540px;transform:translateX(-50%);font:700 44px Inter,sans-serif;background:#8a4526;color:#fff;padding:28px 60px;border-radius:999px;white-space:nowrap}
+.bar{position:absolute;left:0;top:0;height:10px;background:#e0a07c}
+.note{position:absolute;bottom:40px;left:0;right:0;text-align:center;font:400 22px Inter,sans-serif;color:rgba(255,255,255,.55)}
+</style></head><body>
+<div class="scene" id="s1"><div class="bg" style="background-image:url(img/meeting.jpg)"></div><div class="shade"></div>
+ <div class="cap"><div class="kick">08:30 · Erstes Meeting</div>Vom ersten<br>Meeting …</div></div>
+<div class="scene" id="s2"><div class="bg" style="background-image:url(img/evening.jpg)"></div><div class="shade"></div>
+ <div class="cap"><div class="kick">19:00 · Feierabend</div>… bis zum<br>Feierabend.</div></div>
+<div class="scene" id="s3"><div class="kick">Neu von Salamander</div><h2>Der neue<br>Herrenschuh.</h2>
+ <img class="shoe" src="img/shoe.png" style="top:520px">
+ <div class="chips"><div class="chip">Sauber verarbeitet</div><div class="chip">Schlicht</div><div class="chip">Gebaut, um zu bleiben</div></div></div>
+<div class="scene" id="s4"><div class="bg" style="background-image:url(img/desk.jpg)"></div><div class="shade" style="background:rgba(15,10,8,.62)"></div>
+ <div class="cap" style="bottom:auto;top:640px">Bequem<br>und passend<br>für den<br>ganzen Tag.</div></div>
+<div class="scene" id="s5"><div class="brand">SALAMANDER</div><div class="shoeWrap"><img class="shoe" src="img/shoe.png"></div>
+ <div class="price">99,90 €</div><div class="claim">Bequem und passend für den ganzen Tag.</div><div class="cta">Jetzt anprobieren</div>
+ <div class="note">Workshop-Entwurf · Fotos: Unsplash</div></div>
+<div class="bar" id="bar"></div>
+<script>
+const D=15;
+let T=[0,1.6,3.1,9.2,11.55,15]; // Szenengrenzen, per window.setT überschreibbar
+window.setT=a=>{T=a};
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const cl=(x,a,b)=>Math.max(a,Math.min(b,x));
+function vis(i,t){const a=T[i],b=T[i+1],f=0.35;
+  let o=1; if(i>0) o=Math.min(o,cl((t-a)/f+0.5,0,1)); if(i<4) o=Math.min(o,cl((b-t)/f+0.5,0,1)); return (t>=a-f&&t<=b+f)?o:0;}
+window.render=function(t){
+  for(let i=0;i<5;i++){const s=document.getElementById('s'+(i+1));s.style.opacity=vis(i,t);
+    const p=(t-T[i])/(T[i+1]-T[i]);
+    const bg=s.querySelector('.bg'); if(bg) bg.style.transform=`scale(${1.0+0.08*p}) translateY(${-20*p}px)`;
+    const cap=s.querySelector('.cap'); if(cap){const e=ease((t-T[i]-0.1)/0.6);cap.style.opacity=e;cap.style.transform=`translateY(${(1-e)*60}px)`;}
+  }
+  // Szene 3
+  const p3=t-T[2]; const sh=document.querySelector('#s3 .shoe');
+  const e3=ease(p3/0.9); sh.style.transform=`translateX(-50%) translateX(${(1-e3)*300}px) scale(${0.9+0.1*e3+0.03*Math.max(0,p3)/4})`; sh.style.opacity=e3;
+  const h2=document.querySelector('#s3 h2'); const eh=ease(p3/0.6); h2.style.opacity=eh; h2.style.transform=`translateY(${(1-eh)*50}px)`;
+  const L=(T[3]-T[2]); document.querySelectorAll('#s3 .chip').forEach((c,k)=>{const st=[2.35,3.8,4.75][k];const e=ease((p3-st)/0.4);c.style.opacity=e;c.style.transform=`translateX(${(1-e)*-80}px)`;});
+  // Szene 5
+  const p5=t-T[4]; const e5=ease(p5/0.7);
+  document.querySelector('#s5 .shoe').style.transform=`translateX(-50%) scale(${0.85+0.15*e5})`;
+  const pr=document.querySelector('#s5 .price'); const ep=ease((p5-0.2)/0.6); pr.style.opacity=ep; pr.style.transform=`scale(${0.8+0.2*ep})`;
+  document.querySelector('#s5 .claim').style.opacity=ease((p5-0.5)/0.5);
+  const cta=document.querySelector('#s5 .cta'); const ec=ease((p5-0.8)/0.5); cta.style.opacity=ec; cta.style.transform=`translateX(-50%) translateY(${(1-ec)*40}px)`;
+  document.getElementById('bar').style.width=(t/D*1080)+'px';
+};
+render(0);
+</script></body></html>
