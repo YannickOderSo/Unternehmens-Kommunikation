@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herrenschuh One-Pager</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1ec;--card:#fff;--ink:#2a1f1c;--muted:#6b5a54;--accent:#a8432f;--soft:#efe3dc;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 "Source Sans 3",system-ui,sans-serif;padding:24px 16px}
+.page{max-width:1100px;margin:0 auto}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-family:"Playfair Display",serif;font-size:clamp(26px,4vw,40px);font-weight:700;margin:4px 0 4px}
+h2{font-family:"Playfair Display",serif;font-size:20px;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:18px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--card);border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.c4{grid-column:span 4}.c5{grid-column:span 5}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}.c6{grid-column:span 6}
+@media(max-width:820px){.c4,.c5,.c6,.c7,.c8{grid-column:span 12}}
+.persona{display:flex;gap:16px;align-items:flex-start}
+.avatar{flex:none;width:72px;height:72px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:700 28px "Playfair Display",serif}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:14px}
+.facts dt{color:var(--muted)}
+ul{padding-left:18px}li{margin:3px 0}
+.quote{font-family:"Playfair Display",serif;font-style:italic;font-size:17px;border-left:3px solid var(--accent);padding-left:12px;margin-top:10px}
+.hero{background:var(--ink);color:#fff}
+.hero .kicker{color:#f08a6c}
+.claim{font-family:"Playfair Display",serif;font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin:6px 0 8px}
+.price{display:inline-block;background:var(--accent);color:#fff;font-weight:700;border-radius:999px;padding:3px 12px;margin-top:6px}
+.krit{counter-reset:k;list-style:none;padding:0}
+.krit li{counter-increment:k;display:flex;gap:10px;margin:6px 0}
+.krit li::before{content:counter(k);flex:none;width:22px;height:22px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:13px}
+.fmt h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:4px}
+.fmt .tag{font-size:12px;color:var(--muted);margin-bottom:6px}
+.note{font-size:12px;color:var(--muted);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="kicker">Workshop Strategisches Marketing · Salamander · Gruppenarbeit</div>
+  <h1>Neuer Herrenschuh – 99,90 €</h1>
+  <p class="sub">Buyer Persona, Kaufkriterien, Werbebotschaft und Social-Media-Kampagne auf einer Seite.</p>
+
+  <div class="grid">
+    <!-- Persona -->
+    <section class="card c7">
+      <div class="kicker">Schritt 1 · Buyer Persona</div>
+      <div class="persona" style="margin-top:8px">
+        <div class="avatar">MB</div>
+        <div>
+          <h2>Markus Brandt, 44</h2>
+          <dl class="facts">
+            <dt>Beruf</dt><dd>Projektleiter Haustechnik – halb Büro, halb Baustelle</dd>
+            <dt>Wohnort</dt><dd>Kleinstadt in der Pfalz, verheiratet, 2 Kinder</dd>
+            <dt>Kanäle</dt><dd>Instagram (Reels), Facebook, YouTube, WhatsApp</dd>
+            <dt>Scrollt</dt><dd>Mittagspause im Auto · abends 21 Uhr auf dem Sofa</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="quote">„Ich will morgens einen Schuh anziehen – und abends nicht merken, dass ich ihn anhabe.“</p>
+    </section>
+
+    <section class="card c5">
+      <h2>Bedürfnisse</h2>
+      <ul>
+        <li>Bequem über 10-Stunden-Tage</li>
+        <li>Robust genug für Baustelle und Regen</li>
+        <li>Sieht im Kundentermin trotzdem ordentlich aus</li>
+        <li>Lieber ein guter Schuh als drei billige</li>
+      </ul>
+      <h2 style="margin-top:12px">Barrieren</h2>
+      <ul>
+        <li>Online-Kauf ohne Anprobe – Passform-Risiko</li>
+        <li>Image: „Salamander trug mein Vater“</li>
+        <li>99,90 € statt Discounter-Schuh</li>
+      </ul>
+    </section>
+
+    <!-- Problem / Botschaft -->
+    <section class="card hero c8">
+      <div class="kicker">Welches Problem löst der Schuh?</div>
+      <p style="opacity:.85">Kein Schuhwechsel mehr zwischen Baustelle, Büro und Feierabend – ein Lederschuh für den ganzen Tag.</p>
+      <div class="kicker" style="margin-top:14px">Werbebotschaft</div>
+      <p class="claim">Vom Meeting bis zum Matsch.<br>Ein Schuh. Ganzer Tag.</p>
+      <span class="price">99,90 € · einmal kaufen, lange tragen</span>
+    </section>
+
+    <section class="card c4">
+      <h2>Kaufkriterien</h2>
+      <ol class="krit">
+        <li>Komfort &amp; Passform</li>
+        <li>Echtes Leder, langlebig</li>
+        <li>Wettertauglich, griffige Sohle</li>
+        <li>Zeitlose Optik: Büro + Freizeit</li>
+        <li>Preis-Leistung, einfache Rückgabe</li>
+      </ol>
+    </section>
+
+    <!-- Kampagne -->
+    <section class="card c12">
+      <div class="kicker">Schritt 2 · Social-Media-Kampagne „Ein Schuh. Ganzer Tag.“</div>
+      <div class="grid" style="margin-top:10px">
+        <div class="fmt c4">
+          <h3>Instagram-Post</h3>
+          <div class="tag">Feed · 4:5 · bleibt im Profil</div>
+          <ul>
+            <li>Karussell, 3 Bilder: 7:00 Baustelle · 13:00 Meeting · 19:00 Grillabend – immer derselbe Schuh</li>
+            <li>Caption: „3 Termine. 1 Paar. 99,90 €.“</li>
+          </ul>
+        </div>
+        <div class="fmt c4">
+          <h3>Instagram-Story</h3>
+          <div class="tag">9:16 · 24 h · Umfrage- und Link-Sticker</div>
+          <ul>
+            <li>Umfrage: „Wie oft wechselst du am Tag die Schuhe? 1× / 2× / öfter“</li>
+            <li>Link-Sticker: „Jetzt anprobieren – in der Filiale oder online mit Gratis-Rückgabe“</li>
+          </ul>
+        </div>
+        <div class="fmt c4">
+          <h3>TikTok-Video</h3>
+          <div class="tag">9:16 · Hook in den ersten Sekunden</div>
+          <ul>
+            <li>Hook (0–2 s): Stiefel landet in der Pfütze – „Der hält das aus?“</li>
+            <li>Schnitt: abwischen, direkt ins Kundenmeeting</li>
+            <li>Ende: „Ein Schuh. Ganzer Tag. Salamander.“</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <p class="note">Persona fiktiv (Workshop-Übung). Preis aus der Workshop-Folie. Produkteigenschaften (Leder, Wettertauglichkeit) sind Annahmen nach dem Produktfoto, nicht geprüft.</p>
+</div>
+</body>
+</html>
