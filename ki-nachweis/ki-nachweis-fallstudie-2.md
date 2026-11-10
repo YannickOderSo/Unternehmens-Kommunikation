@@ -58,6 +58,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 31 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (eingespielte D13-Entwürfe, während D14 prüft) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d14` gepusht; master bekommt den geprüften Stand nach D14 |
 | 32 | 08.11.2026 | Yannick | Braucht auch das neue Skript | – | Redeskript (MD + 12-seitiges PDF) neu erzeugt: 7 Hinweise zu den neuen Folien ergänzt bzw. angepasst (02, 03, 04, 05, 07, 09), u. a. „Werbung ist gekennzeichnet“ auf 07 immer sagen; Sprechtext, Zeiten, Klicks unverändert |
 | 33 | 10.11.2026 | Yannick (mit der Gruppe) | Reflexionsbogen ausfüllen; die Gruppe sitzt zusammen und will Fragen zum Beantworten; dieses Mal nur ein Bogen | – | Fragen an die Gruppe im Chat, gegliedert nach den sechs Fragen der Vorlage, mit Erinnerungshilfen aus dem Nachweis; Entwurf folgt nach den Antworten |
+| 34 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Antworten der Gruppe auf die 14 Fragen zum Reflexionsbogen | – | Entwurf des gemeinsamen Bogens „Team HOLY“ aus den Antworten, als PDF im Chat; nicht im Repository (Antwort 14) |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -690,6 +691,35 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   vorformuliert: Der Entwurf entsteht erst aus den Antworten der Gruppe.
 - **Ergebnis:** Fragen im Chat; Entwurf folgt.
 - **Dateien:** nur dieser Nachweis
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 34 – 10.11.2026 – Gruppe (über Yannicks Sitzung)
+
+> 1. Wir sind Team Holy
+> 2. Nicht viel da gerade Elias Knauber diesen Weg so durchgegangen ist.
+> 3. Wir verstehen die Customer Journey jetzt bresser
+> 4. Customer Journey und AIDA
+> 5. Ne gab da keins
+> 6. Die Webseite professionell Designen damit es auch als alternative durchgeht
+> 7. Als Gruppe entschieden wir vorgehen und würden wir wieder machen, dadurch haben wir auch persönliche Touchpoints kennen lernen können bsp. Durch Elias.
+> 8.  Rechtliche Unklarheit bezüglich unserer öffentlichen Holy Webseite
+> 9. Im Projekt und Fallstudie 3 und für eigene Projekte in der Zukunft
+> 10. Wir tragen erst später vor aber wir haben aufjedenfall mehr optische Bilder genutzt und mehr Unterstützung vom Gründer
+> 11. Nichts denke Fallstudie 2 lief gut außer wir kriegen totales vernichtendes Feedback.
+> 12. Gut lief die Kommunikation, schwer lief die Terminfindung damit jeder Zeit hat.
+> 13. Yannick hat die Technik gemacht, Lukas hat die Kommunikation mit Holy delegiert. Elias hat uns vorangebracht mit seinen Persönlichen Touchpoints.
+> 14.   Hier im Chat als PDF
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Antworten den Fragen aus Nr. 33 zugeordnet und daraus den gemeinsamen Bogen nach
+  `reflexion-vorlage.md` in Wir-Form geschrieben (einfache Sprache, ohne Gedankenstriche, höchstens 500 Wörter). Wenige
+  Ergänzungen aus dem Repository (Hinweisbalken der Konzept-Webseite, Videobotschaft des Gründers, Bruch beim
+  Nachlesen) sind im Chat als „bitte prüfen“ markiert, ebenso Stellen, an denen die Antworten knapp sind (Grenzen der
+  Modelle, Schwäche) und „AIDA“ (kommt in Präsentation und Unterlagen nicht vor). Der Bogen liegt auf Wunsch der Gruppe
+  nur als PDF im Chat, nicht im öffentlichen Repository.
+- **Ergebnis:** PDF-Entwurf im Chat; Prüfung durch die Gruppe offen.
+- **Dateien:** nur dieser Nachweis (PDF im Scratchpad der Sitzung, nicht versioniert)
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
