@@ -63,6 +63,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 36 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Text kritischer zu Schwächen schreiben und etwas umformulieren | – | Fassung 3 des Bogens (456 Wörter, 1 Seite) als PDF im Chat: Schwächen zu Daten, Persona, Recht, KI-Prüfung, Rollen; neue Aussagen zur Prüfung im Chat markiert |
 | 37 | 10.11.2026 | Yannick | Webseite runternehmen, die Präsentation ist fertig; eine HTML-Webseite zum Herunterladen für den HOLY-Gründer erstellen | D15 (Workflow) | Konzept-Webseite aus master entfernt (GitHub Pages: 404; Startseite, Folie 08 ohne Live-Demo, B8, Doku angepasst; Prüflauf 0 Fehler); ZIP für den Gründer (1,6 MB) nach den Antworten der Gruppe angepasst (neutraler Bildvermerk, „von der Gruppe geprüft“, Wertungen als Einschätzung) und offline geprüft; als Datei an die Gruppe |
 | 38 | 10.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (KI-Nachweis; D15 ändert gerade das Repository) | – | Nur der KI-Nachweis committet und gepusht; die Abschaltung der Konzept-Webseite folgt geprüft nach D15 |
+| 39 | 10.11.2026 | Yannick | PDF mit der Webseite, damit sie einfacher zu öffnen ist | – | PDF (14 Seiten, 10 MB): Deckblatt, die 7 Seiten am Stück in Desktop-Breite, 48 Anmerkungen als Text; aus dem Paket für den Gründer, nicht im Repository |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -812,6 +813,26 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Abschluss und eigener Prüfung auf master, damit GitHub Pages keinen halben Stand zeigt. Wiederholt sich der Hinweis,
   wird dieser Eintrag ergänzt.
 - **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`, `ki-nachweis/workflows/2026-11-10_fs2-webseite-offline-gruender-paket.js`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 39 – 10.11.2026 – Yannick
+
+> Mache mir eine PDF mit der Webseite damit es auch einfacher wäre zum öffnen
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** PDF aus dem Paket für den Gründer (Nr. 37, mit den Entscheidungen der Gruppe), nicht aus dem
+  Repository: Deckblatt mit den Angaben der Anleitung, je Webseite eine durchgehende PDF-Seite in Desktop-Breite (wie im
+  Browser), interne Links und Bedienelemente ohne Funktion entschärft, danach die Anmerkungen des Präsentationsmodus als
+  Text je Seite. Das PDF liegt nicht im Repository.
+- **Ergebnis:** `HOLY-Konzept-Webseite_Team-HOLY.pdf`, 14 Seiten, 10 MB: Deckblatt (Angaben wie in der Anleitung,
+  Hinweisbalken im Wortlaut), Seiten 2–8 je eine Webseite am Stück (1280 px breit, wie am Computer; feste Leisten in den
+  Fluss geholt, Links und der Schalter zum Präsentationsmodus entfernt, Kopfzeile „Seite n von 7“), Seiten 9–14 die 48
+  Anmerkungen „Was wir ändern / Warum“ mit Befund-Kürzeln. Gebaut mit einem Playwright-Skript im Scratchpad ohne Zugriff
+  aufs Netz. Geprüft: alle sichtbaren Bilder geladen (40 von 40), keine Webseite höher als eine PDF-Seite erlaubt,
+  Deckblatt auf eine Seite gebracht (Seitenzahlen im Inhaltsverzeichnis stimmen), alle 14 Seiten als Vorschau angesehen,
+  Volltext ohne „Genehmigung“, „Prüfung durch die Gruppe offen“ oder „KI-Nachweis“.
+- **Dateien:** nur dieser Nachweis
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
