@@ -57,6 +57,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 30 | 08.11.2026 | Yannick | Bei einem Bild steht „Antwort fehlt“; Überlegung, ob man mehr Sachen optisch besser darstellen kann | D13, D14 (Workflows) | Alle Entwürfe übernommen (Linien-Symbole erlaubt): 04 leere, durchgestrichene Browserseite „keine Antwortseite“ + „bricht“; 02 Steckbrief/Verben/Ring; 03 Kästchen + Signalkreise; 05 Urteilszeichen + Lücke an Ü2; 06 Ränge; 07 Brücke statt Tabelle; 09 Messpunkte am Pfad; Prüfläufe 0 Fehler, 16 Warnungen |
 | 31 | 08.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (eingespielte D13-Entwürfe, während D14 prüft) | – | Zwischenstand auf Sicherungs-Branch `zwischenstand-d14` gepusht; master bekommt den geprüften Stand nach D14 |
 | 32 | 08.11.2026 | Yannick | Braucht auch das neue Skript | – | Redeskript (MD + 12-seitiges PDF) neu erzeugt: 7 Hinweise zu den neuen Folien ergänzt bzw. angepasst (02, 03, 04, 05, 07, 09), u. a. „Werbung ist gekennzeichnet“ auf 07 immer sagen; Sprechtext, Zeiten, Klicks unverändert |
+| 33 | 10.11.2026 | Yannick (mit der Gruppe) | Reflexionsbogen ausfüllen; die Gruppe sitzt zusammen und will Fragen zum Beantworten; dieses Mal nur ein Bogen | – | Fragen an die Gruppe im Chat, gegliedert nach den sechs Fragen der Vorlage, mit Erinnerungshilfen aus dem Nachweis; Entwurf folgt nach den Antworten |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -672,6 +673,23 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   alt/neu per `diff` nur in den Hinweisen und der Kopfzeile; PDF 12 Seiten, Seite 8 (Folie 07) angesehen.
 - **Dateien:** `fallstudie-2-customer-journey/werkzeuge-redeskript/redeskript-generator.py`, `redeskript.md`,
   `Fallstudie-2_Redeskript.pdf`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 33 – 10.11.2026 – Yannick (mit der Gruppe)
+
+> Wir müssen wieder einen Reflexionsbogen ausfüllen. Wir sitzen hier als Gruppe, schicke uns Fragen zum beantworten,
+> dieses Mal brauchen wir nur einen
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Vorlage `reflexion-vorlage.md` (sechs offizielle Fragen von Prof. Stenger, höchstens 500 Wörter,
+  Kriterien Tiefe, Selbstkritik, Lerntransfer) und das Vorgehen aus Fallstudie 1 (Entwurf aus den Antworten der Person,
+  KI-Nachweis FS1 Nr. 181–191) nachgelesen. „Nur einen“ verstanden als einen gemeinsamen Bogen der Gruppe in Wir-Form.
+  Fragen an die Gruppe im Chat gestellt, je offizieller Frage zwei bis drei Unterfragen mit Erinnerungshilfen aus diesem
+  Nachweis (z. B. Nr. 01 Kritik aus FS1, Nr. 17 Fremdbilder, Nr. 26 keine eigene Erhebung, Nr. 30 Folie 04). Nichts
+  vorformuliert: Der Entwurf entsteht erst aus den Antworten der Gruppe.
+- **Ergebnis:** Fragen im Chat; Entwurf folgt.
+- **Dateien:** nur dieser Nachweis
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
