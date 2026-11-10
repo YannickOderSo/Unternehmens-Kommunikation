@@ -61,7 +61,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 34 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Antworten der Gruppe auf die 14 Fragen zum Reflexionsbogen | – | Entwurf des gemeinsamen Bogens „Team HOLY“ aus den Antworten, als PDF im Chat; nicht im Repository (Antwort 14) |
 | 35 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Rückmeldung zum Entwurf: 5 Phasen statt AIDA; Elias' Erfahrung, keine Erhebung; Ergänzungen übernehmen; „übernommen“ stimmt | – | Endfassung des Bogens als PDF im Chat (Frage 2 auf die fünf Phasen umgestellt); Zusatzsätze zu Frage 2/5 und KI-Hinweis ohne Antwort, daher nicht eingefügt |
 | 36 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Text kritischer zu Schwächen schreiben und etwas umformulieren | – | Fassung 3 des Bogens (456 Wörter, 1 Seite) als PDF im Chat: Schwächen zu Daten, Persona, Recht, KI-Prüfung, Rollen; neue Aussagen zur Prüfung im Chat markiert |
-| 37 | 10.11.2026 | Yannick | Webseite runternehmen, die Präsentation ist fertig; eine HTML-Webseite zum Herunterladen für den HOLY-Gründer erstellen | D15 (Workflow) | Konzept-Webseite aus master entfernt (offline auf GitHub Pages; Startseite, Folie 08 ohne Live-Demo, B8, Doku angepasst; Prüflauf 0 Fehler); ZIP für den Gründer (1,6 MB) gebaut und offline geprüft; Entscheidungen der Gruppe vor dem Versand offen |
+| 37 | 10.11.2026 | Yannick | Webseite runternehmen, die Präsentation ist fertig; eine HTML-Webseite zum Herunterladen für den HOLY-Gründer erstellen | D15 (Workflow) | Konzept-Webseite aus master entfernt (GitHub Pages: 404; Startseite, Folie 08 ohne Live-Demo, B8, Doku angepasst; Prüflauf 0 Fehler); ZIP für den Gründer (1,6 MB) nach den Antworten der Gruppe angepasst (neutraler Bildvermerk, „von der Gruppe geprüft“, Wertungen als Einschätzung) und offline geprüft; als Datei an die Gruppe |
 | 38 | 10.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (KI-Nachweis; D15 ändert gerade das Repository) | – | Nur der KI-Nachweis committet und gepusht; die Abschaltung der Konzept-Webseite folgt geprüft nach D15 |
 
 ### 01 – 27.10.2026 – Yannick
@@ -768,6 +768,14 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 > Nimm die Webseite runter die Präsentation ist fertig erstelle noch eine HTML Webseite zum runterladen für den holygründer
 
 - **Anhänge:** keine.
+- **Rückfragen von Claude (Auswahlfragen, nach der Prüfung des Pakets in D15) und Antworten der Gruppe:**
+  1. Bildvermerk im Fuß jeder Seite für den Gründer (bisher „… keine Genehmigung der Rechteinhaber eingeholt …“, Verweis
+     auf diesen Nachweis)? → **„Neutral (Empfohlen)“**: „Bilder: Produktbilder und Grafiken der HOLY Softdrinks GmbH sowie
+     Fotos Dritter (Herkunft je Bild unten), Abruf 03.11.2026; nur für die Lehrveranstaltung verwendet, nicht kommerziell;
+     keine eigenen Fotos der Gruppe.“
+  2. Vermerk „Prüfung durch die Gruppe offen“? → **„Von der Gruppe geprüft“** (Angabe der Gruppe, dass sie die Texte
+     durchgesehen hat).
+  3. Rechtliche Wertungen im Präsentationsmodus? → **„Abschwächen (Empfohlen)“**: als Einschätzung der Gruppe gekennzeichnet.
 - **Vorgehen Claude:** Verstanden als: die öffentliche **Konzept-Webseite** (der HOLY-Shop im Konzept, den die Live-Demo
   auf Folie 08 brauchte) von GitHub Pages nehmen; die Präsentationen bleiben online, weil der Link zu Fallstudie 1
   schon mit der Abgabe-E-Mail verschickt wurde (`ki-nachweis.md`, Nr. 200). GitHub Pages veröffentlicht hier den ganzen Branch
@@ -781,6 +789,12 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   nicht im Repository. Vor dem Versand von der Gruppe zu entscheiden (Befunde D15): Rechtevermerk im Fuß jeder Seite
   („keine Genehmigung der Rechteinhaber eingeholt“, Verweis auf diesen Nachweis), „Prüfung durch die Gruppe offen“,
   rechtliche Wertungen im Präsentationsmodus; Versand als Download-Link statt Mail-Anhang (ZIP enthält .js-Dateien).
+  Nach den Antworten (siehe Rückfragen) nur im Paket geändert, nicht im Repository: Bildvermerk neutral (7 Seiten),
+  „von der Gruppe geprüft“ (7 Seiten, `koffein-check.txt`, Anleitung), vier Wertungen als Einschätzung gekennzeichnet
+  (Koffein-Check: Fokus-Aussagen; Start: Werbekennzeichnung; Produkt: Echtheit von Bewertungen, Garantie-AGB), Anleitung
+  erweitert (Öffnen unter Windows und Mac, Marco als fiktive Persona, Kürzel der Befunde, Datumsangaben). Kommentare im
+  Quelltext unverändert. Eigene Prüfung des fertigen ZIP (1,6 MB): 7 Seiten × 2 Größen offline, 0 Fehler, alle Bilder
+  geladen, 0 Anfragen nach außen, kein alter Vermerk sichtbar, Anmerkungsmodus funktioniert.
 - **Dateien:** `index.html` (Startseite); `fallstudie-2-customer-journey/konzept-website/` (entfernt); `README.md`,
   `gestaltungsplan.md`, `werbevideo/README.md`; `praesentation/index.html` (Folie 08, B8), `css/folien/08-mockups.css`
   (Kommentar), `LIESMICH.md`, `AUTOREN.md` §16
