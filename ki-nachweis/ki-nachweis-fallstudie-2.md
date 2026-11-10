@@ -59,6 +59,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 32 | 08.11.2026 | Yannick | Braucht auch das neue Skript | – | Redeskript (MD + 12-seitiges PDF) neu erzeugt: 7 Hinweise zu den neuen Folien ergänzt bzw. angepasst (02, 03, 04, 05, 07, 09), u. a. „Werbung ist gekennzeichnet“ auf 07 immer sagen; Sprechtext, Zeiten, Klicks unverändert |
 | 33 | 10.11.2026 | Yannick (mit der Gruppe) | Reflexionsbogen ausfüllen; die Gruppe sitzt zusammen und will Fragen zum Beantworten; dieses Mal nur ein Bogen | – | Fragen an die Gruppe im Chat, gegliedert nach den sechs Fragen der Vorlage, mit Erinnerungshilfen aus dem Nachweis; Entwurf folgt nach den Antworten |
 | 34 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Antworten der Gruppe auf die 14 Fragen zum Reflexionsbogen | – | Entwurf des gemeinsamen Bogens „Team HOLY“ aus den Antworten, als PDF im Chat; nicht im Repository (Antwort 14) |
+| 35 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Rückmeldung zum Entwurf: 5 Phasen statt AIDA; Elias' Erfahrung, keine Erhebung; Ergänzungen übernehmen; „übernommen“ stimmt | – | Endfassung des Bogens als PDF im Chat (Frage 2 auf die fünf Phasen umgestellt); Zusatzsätze zu Frage 2/5 und KI-Hinweis ohne Antwort, daher nicht eingefügt |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -720,6 +721,24 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   nur als PDF im Chat, nicht im öffentlichen Repository.
 - **Ergebnis:** PDF-Entwurf im Chat; Prüfung durch die Gruppe offen.
 - **Dateien:** nur dieser Nachweis (PDF im Scratchpad der Sitzung, nicht versioniert)
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 35 – 10.11.2026 – Gruppe (über Yannicks Sitzung)
+
+> 1. Ja wir meinen die 5 Phasen
+> 2. Ja wir meinen es als seine Erfahrung nicht als erhehbung
+> 3. Mach
+> 4. JA
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Antworten den Prüfpunkten 1–4 aus dem Chat zu Nr. 34 zugeordnet: Frage 2 nennt jetzt „die
+  Customer Journey mit ihren fünf Phasen von Aware bis Advocate“ statt AIDA; Elias' Weg bleibt als persönliche Erfahrung
+  beschrieben; die Ergänzungen aus dem Repository (Fragen 1, 3, 4, 5) und „übernommen“ (Frage 6) sind bestätigt. Die
+  Zusatzsätze zu Frage 2 und 5 (Punkt 5) und der KI-Hinweis (Punkt 6) wurden nicht beantwortet und sind deshalb nicht
+  eingefügt. PDF neu erzeugt (1 Seite, Wortzahl per Skript).
+- **Ergebnis:** Endfassung als PDF im Chat; nicht im Repository (Wunsch der Gruppe, Nr. 34).
+- **Dateien:** nur dieser Nachweis
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
