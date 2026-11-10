@@ -60,6 +60,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 33 | 10.11.2026 | Yannick (mit der Gruppe) | Reflexionsbogen ausfüllen; die Gruppe sitzt zusammen und will Fragen zum Beantworten; dieses Mal nur ein Bogen | – | Fragen an die Gruppe im Chat, gegliedert nach den sechs Fragen der Vorlage, mit Erinnerungshilfen aus dem Nachweis; Entwurf folgt nach den Antworten |
 | 34 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Antworten der Gruppe auf die 14 Fragen zum Reflexionsbogen | – | Entwurf des gemeinsamen Bogens „Team HOLY“ aus den Antworten, als PDF im Chat; nicht im Repository (Antwort 14) |
 | 35 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Rückmeldung zum Entwurf: 5 Phasen statt AIDA; Elias' Erfahrung, keine Erhebung; Ergänzungen übernehmen; „übernommen“ stimmt | – | Endfassung des Bogens als PDF im Chat (Frage 2 auf die fünf Phasen umgestellt); Zusatzsätze zu Frage 2/5 und KI-Hinweis ohne Antwort, daher nicht eingefügt |
+| 36 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Text kritischer zu Schwächen schreiben und etwas umformulieren | – | Fassung 3 des Bogens (456 Wörter, 1 Seite) als PDF im Chat: Schwächen zu Daten, Persona, Recht, KI-Prüfung, Rollen; neue Aussagen zur Prüfung im Chat markiert |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -738,6 +739,24 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   Zusatzsätze zu Frage 2 und 5 (Punkt 5) und der KI-Hinweis (Punkt 6) wurden nicht beantwortet und sind deshalb nicht
   eingefügt. PDF neu erzeugt (1 Seite, Wortzahl per Skript).
 - **Ergebnis:** Endfassung als PDF im Chat; nicht im Repository (Wunsch der Gruppe, Nr. 34).
+- **Dateien:** nur dieser Nachweis
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 36 – 10.11.2026 – Gruppe (über Yannicks Sitzung)
+
+> Ja schreibe den text kritischer zu schwächen und formuliere es etwas um
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** „Ja“ als Zustimmung zu den beiden Zusatzsätzen aus Punkt 5 (Grenzen der Modelle, Schwäche)
+  verstanden; der KI-Hinweis (Punkt 6) bleibt weg. Alle sechs Antworten umformuliert und kritischer gefasst, nur mit
+  Aussagen, die aus den Antworten der Gruppe oder aus dem Repository belegbar sind: keine eigene Erhebung, obwohl nach
+  Fallstudie 1 geplant (Nr. 01, Nr. 26); fiktive Persona; Fremdbilder ohne Genehmigung der Rechteinhaber, Logo mit
+  Einverständnis (Nr. 12, Nr. 17); Prüfung der KI-Ergebnisse durch die Gruppe offen (Spalte „Prüfung“ in diesem
+  Nachweis); Rollen erst spät verteilt (Gestaltungsplan, Stand 08.11.). Deutungen, die die Gruppe bestätigen muss
+  (Gefahr, nur Elias' Sicht zu bestätigen; viel Zeit in Gestaltung statt Kundenstimmen; Terminfindung als Grund für die
+  späte Rollenverteilung; Vorsätze für Fallstudie 3), sind im Chat markiert. Wortzahl per Skript: 456 von 500.
+- **Ergebnis:** Fassung 3 als PDF im Chat; nicht im Repository.
 - **Dateien:** nur dieser Nachweis
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
