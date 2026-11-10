@@ -2,7 +2,8 @@
    08-mockups.css – Folie 08 · A7 Mock-ups: Konzept-Webseite (gelbe Bühne)
    Gestaltungsplan 7.4: fünf Handyrahmen auf einem schwarzen Pfad, je ein
    Bildschirmfoto (390 × 844, verkleinert), darunter Ü-Kennung und eine
-   Anmerkung; Kennzeichnung sichtbar; Link „Live-Demo“.
+   Anmerkung; Kennzeichnung sichtbar; Link „Live-Demo“ (entfernt am 10.11.2026,
+   Konzept-Webseite offline – letzter Stand in der Git-Historie, Commit cb4a89d).
    Rahmenmitten x = 278 · 621,5 · 965 · 1308,5 · 1652 (Anmerkung je 300 px).
    ============================================================================= */
 #f08 .e8-pfad .gelb { stroke-width: 14; }
@@ -45,7 +46,9 @@
   white-space: nowrap;
 }
 /* Zwei Knöpfe rechts unten (Klick 2): „Spot ansehen ▶“ (D12, 08.11.2026; Bühne: 08-spot.css/08-spot.js) links neben
-   „Live-Demo ↗“ – gleiche Gestaltung (Marker-Fläche, 22 px). Die Live-Demo steht wie vorher bündig am rechten Rand. */
+   „Live-Demo ↗“ – gleiche Gestaltung (Marker-Fläche, 22 px). Die Live-Demo steht wie vorher bündig am rechten Rand.
+   Seit 10.11.2026 nur noch „Spot ansehen ▶“: Die Live-Demo ist entfernt (Konzept-Webseite offline), der Spot-Knopf
+   steht jetzt bündig am rechten Rand. In Druck/PDF und im Referentenfenster bleibt .e8-knoepfe leer (Spot ausgeblendet). */
 #f08 .e8-knoepfe {
   right: 128px;
   top: 944px;

@@ -151,6 +151,14 @@ nur wiederverwendet; der Bau braucht kein Netz und keinen Schlüssel. `buehne.ht
 `render.cjs` (Bildfolge mit Bewegungsunschärfe), `unschaerfe.py`, `ton.py` (Schnitt, Musikzuordnung, Mischung),
 `untertitel.py`, `pruefen.py`. Benötigt: Node mit Playwright, Python 3 mit numpy und Pillow, ffmpeg.
 
+**Seit 10.11.2026 (KI-Nachweis FS2 Nr. 37):** Die Konzept-Webseite ist nach dem Vortrag offline und aus `master`
+entfernt. Die Werkzeuge greifen aber auf `../../konzept-website/` zu: `vorbereiten.py` (Register und Bilder),
+`aufnahme-handy.cjs` (Bildschirmaufnahme), `render.cjs` (Schriften aus `konzept-website/schriften/`); die Werkzeuge der
+Vorfassung D10 ebenso (ihre Pfade sind ohnehin veraltet, `vorfassung-d10/README.md`). Wer den Spot neu bauen will, holt den Ordner vorher aus der Git-Historie lokal
+zurück (Commit `cb4a89d`, z. B. `git restore --source cb4a89d -- fallstudie-2-customer-journey/konzept-website`) und
+committet ihn nicht wieder. Der fertige Spot (`holy-werbespot.mp4`, Poster, Untertitel) braucht die Webseite nicht.
+Die Pfadangaben `konzept-website/…` in Abschnitt 3 und im Drehbuch nennen die Herkunft und gelten für diesen Stand.
+
 ## 8 Offene Punkte für die Gruppe
 
 1. **Anhören** (Handy-Lautsprecher und Kopfhörer): neues „Feierabend!“ und „Mmh!“, Lachen vor „Moment“, Flüstern im

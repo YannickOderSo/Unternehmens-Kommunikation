@@ -61,7 +61,7 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 34 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Antworten der Gruppe auf die 14 Fragen zum Reflexionsbogen | – | Entwurf des gemeinsamen Bogens „Team HOLY“ aus den Antworten, als PDF im Chat; nicht im Repository (Antwort 14) |
 | 35 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Rückmeldung zum Entwurf: 5 Phasen statt AIDA; Elias' Erfahrung, keine Erhebung; Ergänzungen übernehmen; „übernommen“ stimmt | – | Endfassung des Bogens als PDF im Chat (Frage 2 auf die fünf Phasen umgestellt); Zusatzsätze zu Frage 2/5 und KI-Hinweis ohne Antwort, daher nicht eingefügt |
 | 36 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Text kritischer zu Schwächen schreiben und etwas umformulieren | – | Fassung 3 des Bogens (456 Wörter, 1 Seite) als PDF im Chat: Schwächen zu Daten, Persona, Recht, KI-Prüfung, Rollen; neue Aussagen zur Prüfung im Chat markiert |
-| 37 | 10.11.2026 | Yannick | Webseite runternehmen, die Präsentation ist fertig; eine HTML-Webseite zum Herunterladen für den HOLY-Gründer erstellen | D15 (Workflow) | *läuft:* Konzept-Webseite als ZIP für den Gründer; Konzept-Webseite von GitHub Pages entfernt, Verweise angepasst |
+| 37 | 10.11.2026 | Yannick | Webseite runternehmen, die Präsentation ist fertig; eine HTML-Webseite zum Herunterladen für den HOLY-Gründer erstellen | D15 (Workflow) | Konzept-Webseite aus master entfernt (offline auf GitHub Pages; Startseite, Folie 08 ohne Live-Demo, B8, Doku angepasst; Prüflauf 0 Fehler); ZIP für den Gründer (1,6 MB) gebaut und offline geprüft; Entscheidungen der Gruppe vor dem Versand offen |
 | 38 | 10.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (KI-Nachweis; D15 ändert gerade das Repository) | – | Nur der KI-Nachweis committet und gepusht; die Abschaltung der Konzept-Webseite folgt geprüft nach D15 |
 
 ### 01 – 27.10.2026 – Yannick
@@ -775,8 +775,15 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
   in der Git-Historie des öffentlichen Repositorys bleibt er sichtbar. Für den Gründer: die sieben Seiten mit Bildern,
   Schriften und Skripten als ZIP zum Offline-Öffnen (ohne Werkzeuge, Vorschaubilder und interne Ordner), mit kurzer
   Anleitung; das Paket liegt nicht im öffentlichen Repository, sondern geht als Datei an die Gruppe.
-- **Ergebnis:** *läuft*
-- **Dateien:** folgen
+- **Ergebnis:** Konzept-Webseite aus `master` entfernt (51 Dateien; letzter Stand Commit `cb4a89d`). Startseite ohne
+  Knopf, Folie 08 ohne „Live-Demo ↗“ (Sprechtext unverändert), Backup B8 ohne toten Pfad, Doku mit Vermerk 10.11.2026.
+  ZIP `HOLY-Konzept-Webseite_Team-HOLY.zip` (1,6 MB, 7 Seiten, Bilder, Schriften, Anleitung) für den Gründer gebaut; liegt
+  nicht im Repository. Vor dem Versand von der Gruppe zu entscheiden (Befunde D15): Rechtevermerk im Fuß jeder Seite
+  („keine Genehmigung der Rechteinhaber eingeholt“, Verweis auf diesen Nachweis), „Prüfung durch die Gruppe offen“,
+  rechtliche Wertungen im Präsentationsmodus; Versand als Download-Link statt Mail-Anhang (ZIP enthält .js-Dateien).
+- **Dateien:** `index.html` (Startseite); `fallstudie-2-customer-journey/konzept-website/` (entfernt); `README.md`,
+  `gestaltungsplan.md`, `werbevideo/README.md`; `praesentation/index.html` (Folie 08, B8), `css/folien/08-mockups.css`
+  (Kommentar), `LIESMICH.md`, `AUTOREN.md` §16
 - **Unteragenten:** D15
 - **Prüfung durch die Gruppe:** ☐ offen
 
@@ -817,7 +824,7 @@ Auftrag (im Workflow-Skript).
 | D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
 | D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | Entwürfe für 01–07 und 09; Prüfungen: 01, 03, 05 übernehmen, 02, 04, 06, 07, 09 mit Änderungen, in der Nachbesserung umgesetzt; je Kopie 0 Fehler; Auswahl offen | Claude: Rückgaben gelesen, alle Montagen angesehen, Diffs probeweise zusammengeführt |
 | D14 | 08.11.2026 | 30 | Workflow „fs2-visualisierung-uebernahme“ (3 Unteragenten) | Nach Yannicks Auswahl: eingespielte D13-Entwürfe – Doku und Kommentare nachziehen, zusammengeführte Präsentation unabhängig prüfen, Befunde abarbeiten | Doku in 8 Dateien + Kommentare nachgezogen (nur Kommentare in HTML/CSS, per Skript geprüft); Prüfung: 0 hohe, 1 mittlerer, 5 niedrige Befunde; Nacharbeit: 4 umgesetzt, 2 als Gruppenentscheidung vermerkt | Claude: eigene Prüfläufe hell/dunkel/Rückfall (0 Fehler), Wortlaut Redeskript, Endzustände angesehen, Diff-Suche Modellnamen/URLs |
-| D15 | 10.11.2026 | 37 | Workflow „fs2-webseite-offline-gruender-paket“ (2 Unteragenten parallel) | Konzept-Webseite aus master entfernen und alle Verweise anpassen (Startseite, Folie 08 ohne Live-Demo, Doku); ZIP für den Gründer unabhängig prüfen (offline, Links, Bilder, Anleitung, heikle Stellen) | *läuft* | – |
+| D15 | 10.11.2026 | 37 | Workflow „fs2-webseite-offline-gruender-paket“ (2 Unteragenten parallel) | Konzept-Webseite aus master entfernen und alle Verweise anpassen (Startseite, Folie 08 ohne Live-Demo, Doku); ZIP für den Gründer unabhängig prüfen (offline, Links, Bilder, Anleitung, heikle Stellen) | Abschaltung: 51 Dateien entfernt, 8 Dateien angepasst, Prüfläufe 0 Fehler/16 Warnungen, Wortlaut 0 Abweichungen; Paket: 14 Aufrufe offline, 0 Fehler, 80/80 Bilder, 0 Netzanfragen; 12 Befunde (1 hoch, 4 mittel, 7 niedrig) zu Inhalt und Versand | Claude: Diff gelesen, B8 selbst angepasst, eigener Prüflauf 0 Fehler, Wortlaut-Prüfung, Pages nach dem Push geprüft |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -1171,8 +1178,17 @@ Auftrag (im Workflow-Skript).
   (alle 7 Seiten, keine Anfragen nach außen, Bilder, Schriften, Links, Anmerkungsmodus, Hinweisbalken), Anleitung
   gegen die Seiten prüfen, heikle Stellen für den Empfänger benennen.
 - **Auftrag (wörtlich):** im Skript [`workflows/2026-11-10_fs2-webseite-offline-gruender-paket.js`](workflows/2026-11-10_fs2-webseite-offline-gruender-paket.js).
-- **Ergebnis:** *läuft*
-- **Wie Claude das Ergebnis geprüft hat:** *folgt*
+- **Ergebnis:** Abschalt-Agent: 51 versionierte Dateien entfernt (gestagt), 8 Dateien angepasst; Prüfläufe mit Bildern und
+  Rückfall je 0 Fehler, 16 Warnungen, PDF 18 Seiten; Wortlaut Redeskript 0 Abweichungen; Startseite 10 lokale Ziele ok.
+  Offene Punkte: Regie im Sprechtext 08 nennt die Live-Demo noch (bewusst, Redeskript zitiert wörtlich); sichtbarer Pfad
+  auf B8. Paket-Prüfer: ZIP byte-gleich mit `cb4a89d` plus Anleitung, offline 0 Fehler, 80/80 Bilder, 288 Links je Größe
+  ok, Klickstrecke und Anmerkungsmodus ok. Befunde: P01 hoch (Rechtevermerk im Fuß richtet sich an den Rechteinhaber),
+  P02/P03 mittel (Prüfvermerk offen, rechtliche Wertungen), P04 mittel (Anleitung zu knapp für Windows), P05 mittel
+  (Mail-Anhang mit .js kann blockiert werden – Modellwissen), P06–P12 niedrig.
+- **Wie Claude das Ergebnis geprüft hat:** Rückgaben gelesen; Diff der Startseite gelesen; Suche nach toten
+  Markdown-Links auf die Webseite (keine); B8 selbst angepasst (sichtbarer Pfad ersetzt); eigener Prüflauf der
+  Präsentation 0 Fehler, 16 Warnungen; `wortlaut-pruefen.py` 0 Abweichungen; nach dem Push Startseite und Adresse der
+  Konzept-Webseite auf GitHub Pages abgerufen.
 
 ---
 

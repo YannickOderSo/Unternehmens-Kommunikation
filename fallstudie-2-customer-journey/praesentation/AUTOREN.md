@@ -486,3 +486,32 @@ keine neuen Befund-IDs; der Sprechtext enthält alle entfallenen Teile weiter w�
 - 04: „Antwortseite fehlt“ → Name „keine Antwortseite“; seit der Nacharbeit D14 zusätzlich das Wort „bricht“.
 
 **Prüfstand D13 (nach D14):** `pruefen.mjs index.html --schritte` (hell, mit Bildern): **0 Fehler, 16 Warnungen** (vorher 17), 38 von 38 Fremdbildern, 0 externe Anfragen, 33 Bildschirmfotos; dunkel (`--modus dunkel`): 0 Fehler, 16 Warnungen, 38 Fremdbilder; Rückfall (`--oeffentlich --schritte --druck`): 0 Fehler, 16 Warnungen, 0 Fremdbilder, Notfall-PDF 18 von 18 Seiten. Die 16 Warnungen sind laut Plan erlaubt: 7 × Wortbudget (02: 50, 03: 49, 04: 62, 05: 68, 06: 67, 07: 72, 09: 50; im Rückfall 03: 51, 07: 78) und 9 × Schrift 24–26 px (Notizen und Belege auf 04/05, wie vor D13). Klicks 23, Sollzeit 735 s (unverändert). Folie 08 und B1–B8 pixelgleich mit dem Stand vor D13 (Prüf-Agent D14); B9 nennt seit D14 in der Tabelle „Finalisierung und Visualisierungen 08.11.2026“ und in der Notiz Nr. 30 / D13, D14. Sprechtext wörtlich unverändert, `wortlaut-pruefen.py`: 33 Einträge, 0 Abweichungen – das Redeskript gilt unverändert. Läufe von Claude am 08.11.2026 nach der Nacharbeit D14.
+
+## 16. Konzept-Webseite offline (10.11.2026, D15)
+
+Anlass: Nach dem Vortrag am 10.11.2026 hat Yannick die Konzept-Webseite offline nehmen lassen (KI-Nachweis FS2 Nr. 37,
+wörtlich: „Nimm die Webseite runter die Präsentation ist fertig erstelle noch eine HTML Webseite zum runterladen für den
+holygründer“). Ausgeführt KI-gestützt in Delegation D15; Prüfung durch die Gruppe offen.
+
+- **Entfernt:** alle versionierten Dateien von `../konzept-website/` (51 Dateien; `git rm`, der ausgeschlossene Ordner
+  `intern/` bleibt nur lokal). GitHub Pages veröffentlicht `master` ohne Build, die Webseite ist nach dem Push also nicht
+  mehr erreichbar. Der letzte Stand liegt in der Git-Historie (Commit `cb4a89d`).
+- **Folie 08:** Knopf „Live-Demo ↗“ (`a.e8-live`) entfernt; „Spot ansehen ▶“ bleibt und steht jetzt bündig am rechten
+  Rand (`.e8-knoepfe`, `right: 128px`, CSS unverändert, nur Kommentare). In Druck/PDF und im Referentenfenster bleibt die
+  Ecke leer. Vermerke im Kasten-Kommentar FOLIE 08, im HTML-Kommentar über dem Knopf und in den nicht gesprochenen
+  Notizen (Belege, Bedienung Werbespot, Bedienung Live-Demo). Sprechtext (`data-schritt`) unverändert – Schritt 2 nennt
+  in der Regieanweisung weiter die Live-Demo, weil das Redeskript den Absatz wörtlich zitiert.
+- **Startseite** (`../../index.html`): Knopf „Konzept-Webseite“ entfernt, Satz „Die Konzept-Webseite ist seit dem
+  10.11.2026 nach dem Vortrag nicht mehr online; Bildschirmfotos zeigt Folie 08.“ ergänzt.
+- **Doku:** `LIESMICH.md` §1 und §5, `../README.md` (Zeile `konzept-website/`), `../gestaltungsplan.md` (Abweichung
+  10.11.2026), `../werbevideo/README.md` §7 (Neubau des Spots braucht die Webseite aus der Git-Historie).
+- **Nicht geändert:** `werkzeuge/pruefen.mjs` (prüft weder den Live-Demo-Link noch `../konzept-website/`),
+  `fremdbilder/register.js` (Feld `quelle` nennt die Herkunft der Bildschirmfotos als Text), Backup B8 (Quellenzeile
+  „Konzept-Webseite ../konzept-website/“ als Text ohne Link), KI-Nachweis und Workflows.
+
+**Prüfstand D15 (10.11.2026):** `pruefen.mjs index.html --schritte` (mit Bildern): **0 Fehler, 16 Warnungen**,
+38 von 38 Fremdbildern, 0 externe Anfragen, 33 Bildschirmfotos; Rückfall (`--oeffentlich --schritte --druck`): 0 Fehler,
+16 Warnungen, 0 Fremdbilder, Notfall-PDF 18 von 18 Seiten – gleich wie vorher (AUTOREN §15). `wortlaut-pruefen.py`:
+33 Einträge, 0 Abweichungen. Alle `href`/`src` der Startseite und der Präsentation zeigen auf vorhandene, versionierte
+Dateien. Bildschirmfoto f08_s2 in beiden Läufen und die Startseite bei 1280 und 390 px Breite angesehen. Läufe von
+Claude am 10.11.2026.

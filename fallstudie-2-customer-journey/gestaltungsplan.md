@@ -18,7 +18,9 @@ Am 08.11.2026 nach der Übernahme der Visualisierungen aus D13 (KI-Nachweis FS2 
 Abweichung D13 vermerkt (Vermerk oben, 1.3, 2 Nr. 19, 3.6, 3.7, 4 b07, 5.1 Vorspann und Zeilen 01–07, 09, 6.2 Nr. 5,
 6.4 L1, 6.5, 6.6, 6.7.1, 6.7.3, 8.1, 9.2, 11.4, 13.1 Nr. 14); Linien-Symbole erlaubt (Entscheidung Yannick).
 Danach Nacharbeit nach der Schlussprüfung (D14, Befunde D14-01 bis D14-04): Vermerk „Abweichung D13“, 3.6 (Knoten,
-Urteilszeichen, Signalkreise), 5.1 Zeilen 03, 04, 07, 6.5, 6.6, 8.1. -->
+Urteilszeichen, Signalkreise), 5.1 Zeilen 03, 04, 07, 6.5, 6.6, 8.1.
+Am 10.11.2026 nach dem Vortrag (KI-Nachweis FS2 Nr. 37 / Delegation D15): Vermerk „Konzept-Webseite offline“ oben;
+Abschnitt 7 bleibt als Plan stehen. -->
 
 Modul Unternehmenskommunikation · Prof. Dr. Daniel Stenger · Hochschule Kaiserslautern
 
@@ -73,6 +75,13 @@ Aufgabenfolie · **Entwurf, Prüfung durch die Gruppe offen**
 > (ein leerer Ring heißt auf 06 Platz 2/3) und beim Betreten erst mit dem Weg eingeblendet · 04 neben dem Zeichen
 > „bricht“ auch das Wort (Urteil immer als Wort und Form) · 03 Plus als offener Kreis (der volle Kreis mit Kreuz bleibt
 > „bricht“). Keine neuen Fakten, Klicks, Sollzeiten oder Sprechtexte; Befunde und Begründungen in AUTOREN §15.
+
+> **Abweichung 10.11.2026: Konzept-Webseite offline (nach dem Vortrag, Entscheidung Yannick, KI-Nachweis FS2 Nr. 37).**
+> Der Ordner `konzept-website/` ist aus `master` entfernt und damit nicht mehr über GitHub Pages erreichbar; der letzte
+> Stand liegt in der Git-Historie (Commit `cb4a89d`). Auf Folie 08 ist der Knopf „Live-Demo ↗“ entfernt; die
+> Bildschirmfotos (b14) und der Knopf „Spot ansehen ▶“ bleiben. Abschnitt 7 sowie die Stellen zur Live-Demo (7.4, 10.2,
+> 11.4) und zu `konzept-website/` (1.2, 4) beschreiben den Stand bis zum Vortrag. Einzelheiten: `praesentation/AUTOREN.md`
+> §16, `praesentation/LIESMICH.md` §5.
 
 **KI-gestützt erstellt.** Grundlage sind drei Gestaltungsentwürfe, zwei Jury-Urteile und das Recherche-Dossier
 [`recherche-customer-journey.md`](recherche-customer-journey.md) (kurz: „Dossier“). Fakten über HOLY stehen nur mit

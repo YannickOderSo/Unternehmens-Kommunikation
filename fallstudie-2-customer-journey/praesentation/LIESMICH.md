@@ -33,7 +33,8 @@ Bis 03.11.2026 lagen Bilder und Video als „interne Fassung“ im ausgeschlosse
 1. Den ganzen Ordner `praesentation/` kopieren (Unterordner gehören dazu; ZIP vorher ganz entpacken). Für die
    Live-Demo auf Folie 08 muss der Nachbarordner `../konzept-website/` mitkommen, für den Werbespot auf Folie 08 der
    Nachbarordner `../werbevideo/` (mindestens `holy-werbespot.mp4`, `-poster.jpg`, `.de.vtt`) – am einfachsten den
-   ganzen Ordner `fallstudie-2-customer-journey/` kopieren.
+   ganzen Ordner `fallstudie-2-customer-journey/` kopieren. **Seit 10.11.2026** entfällt die Live-Demo: Der Ordner
+   `../konzept-website/` ist nach dem Vortrag aus dem Repository entfernt (§5); nur `../werbevideo/` muss mitkommen.
 2. `index.html` per Doppelklick in **Chrome oder Edge** (aktuelle Version) öffnen. Läuft ohne Internet und ohne Server.
 3. **F** = Vollbild. Die Bühne (1920 × 1080) passt sich jedem Bildschirm an.
 4. Die **Videobotschaft** (Folie 09) liegt in `video/gruender-video.mp4` (versioniert; veröffentlicht mit Zustimmung
@@ -111,6 +112,13 @@ Die Anzeige „Bündel A/B/C“ im Referentenfenster meint **Sprechblöcke** (01
 
 ## 5. Folie 08: Live-Demo der Konzept-Webseite und Werbespot
 
+**Stand 10.11.2026 (nach dem Vortrag, KI-Nachweis FS2 Nr. 37):** Die Konzept-Webseite ist offline. Der Ordner
+`../konzept-website/` ist aus `master` entfernt und damit nicht mehr über GitHub Pages erreichbar; der letzte Stand
+liegt in der Git-Historie (Commit `cb4a89d`). Auf Folie 08 ist der Knopf „Live-Demo ↗“ entfernt; mit Klick 2 erscheint
+rechts unten nur noch „Spot ansehen ▶“. Die Bildschirmfotos in `bilder/` und `fremdbilder/` bleiben. Die Abschnitte
+unten beschreiben den Stand bis zum Vortrag. Der Sprechtext der Notiz 08 (Schritt 2) nennt die Live-Demo noch, weil das
+Redeskript ihn wörtlich zitiert.
+
 **Werbespot „Mein Moment.“ (seit D12, 08.11.2026).** Mit Klick 2 erscheinen rechts unten zwei Knöpfe: „Spot ansehen ▶“
 und „Live-Demo ↗“. „Spot ansehen ▶“ öffnet eine Bühne über der Präsentation und spielt `../werbevideo/holy-werbespot.mp4`
 (24,5 s, mit Ton; Poster und Untertitel aus demselben Ordner, README dort). Die Datei wird erst beim Klick angefragt;
@@ -139,7 +147,7 @@ HOLY-Bilder im Spot ohne Genehmigung der Rechteinhaber (Beschluss der Gruppe, Nr
 Zeitregel in §3: Spot oder Live-Demo, nur wenn nach 07 höchstens 9:30 vergangen sind. **Ton im Beamer-Test prüfen.**
 Technik: `js/folien/08-spot.js`, `css/folien/08-spot.css`.
 
-**Live-Demo.**
+**Live-Demo** (bis 10.11.2026; entfällt seither, siehe oben).
 
 Der Link „Live-Demo ↗“ (erscheint mit Klick 2) öffnet `../konzept-website/index.html?anmerkungen=1` in einem neuen
 Tab (kein `iframe`). Nur **statt** des Spots, höchstens 25 s, gleiche Zeitregel (§3; Plan 7.4, Stand Nacharbeit D12).
@@ -156,6 +164,10 @@ node fallstudie-2-customer-journey/konzept-website/werkzeuge/folie08-bilder.mjs 
 
 Nicht aus `../konzept-website/_vorschau/` kopieren: Dort liegt die Fassung mit Bildern (mit HOLY-Produktbildern), die
 nicht nach `bilder/` gehört.
+
+Seit 10.11.2026 liegen `folie08-bilder.mjs` und die Webseite nur noch in der Git-Historie (Commit `cb4a89d`). Wer die
+Bildschirmfotos neu erzeugen will, holt den Ordner von dort lokal zurück (z. B.
+`git restore --source cb4a89d -- fallstudie-2-customer-journey/konzept-website`) und committet ihn nicht wieder.
 
 ## 6. Folie 09: Videobotschaft des Gründers
 
