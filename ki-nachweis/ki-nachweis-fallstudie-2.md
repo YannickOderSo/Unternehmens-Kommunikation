@@ -61,6 +61,8 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 | 34 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Antworten der Gruppe auf die 14 Fragen zum Reflexionsbogen | – | Entwurf des gemeinsamen Bogens „Team HOLY“ aus den Antworten, als PDF im Chat; nicht im Repository (Antwort 14) |
 | 35 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Rückmeldung zum Entwurf: 5 Phasen statt AIDA; Elias' Erfahrung, keine Erhebung; Ergänzungen übernehmen; „übernommen“ stimmt | – | Endfassung des Bogens als PDF im Chat (Frage 2 auf die fünf Phasen umgestellt); Zusatzsätze zu Frage 2/5 und KI-Hinweis ohne Antwort, daher nicht eingefügt |
 | 36 | 10.11.2026 | Gruppe (über Yannicks Sitzung) | Text kritischer zu Schwächen schreiben und etwas umformulieren | – | Fassung 3 des Bogens (456 Wörter, 1 Seite) als PDF im Chat: Schwächen zu Daten, Persona, Recht, KI-Prüfung, Rollen; neue Aussagen zur Prüfung im Chat markiert |
+| 37 | 10.11.2026 | Yannick | Webseite runternehmen, die Präsentation ist fertig; eine HTML-Webseite zum Herunterladen für den HOLY-Gründer erstellen | D15 (Workflow) | *läuft:* Konzept-Webseite als ZIP für den Gründer; Konzept-Webseite von GitHub Pages entfernt, Verweise angepasst |
+| 38 | 10.11.2026 | Systemhinweis (kein Prompt der Gruppe) | Stop-Hook: uncommittete Änderungen (KI-Nachweis; D15 ändert gerade das Repository) | – | Nur der KI-Nachweis committet und gepusht; die Abschaltung der Konzept-Webseite folgt geprüft nach D15 |
 
 ### 01 – 27.10.2026 – Yannick
 
@@ -761,6 +763,37 @@ Wenn nicht anders angegeben, stammt der Prompt von **Yannick Heisler**. Prompts 
 - **Unteragenten:** keine
 - **Prüfung durch die Gruppe:** ☐ offen
 
+### 37 – 10.11.2026 – Yannick
+
+> Nimm die Webseite runter die Präsentation ist fertig erstelle noch eine HTML Webseite zum runterladen für den holygründer
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Verstanden als: die öffentliche **Konzept-Webseite** (der HOLY-Shop im Konzept, den die Live-Demo
+  auf Folie 08 brauchte) von GitHub Pages nehmen; die Präsentationen bleiben online, weil der Link zu Fallstudie 1
+  schon mit der Abgabe-E-Mail verschickt wurde (`ki-nachweis.md`, Nr. 200). GitHub Pages veröffentlicht hier den ganzen Branch
+  ohne Build (`.nojekyll`), deshalb geht „runter“ nur, indem der Ordner `konzept-website/` aus `master` entfernt wird;
+  in der Git-Historie des öffentlichen Repositorys bleibt er sichtbar. Für den Gründer: die sieben Seiten mit Bildern,
+  Schriften und Skripten als ZIP zum Offline-Öffnen (ohne Werkzeuge, Vorschaubilder und interne Ordner), mit kurzer
+  Anleitung; das Paket liegt nicht im öffentlichen Repository, sondern geht als Datei an die Gruppe.
+- **Ergebnis:** *läuft*
+- **Dateien:** folgen
+- **Unteragenten:** D15
+- **Prüfung durch die Gruppe:** ☐ offen
+
+### 38 – 10.11.2026 – Systemhinweis (kein Prompt der Gruppe)
+
+> Stop hook feedback: [command hook]: There are uncommitted changes in the repository. Please commit and push these
+> changes to the remote branch.
+
+- **Anhänge:** keine.
+- **Vorgehen Claude:** Nur die Dateien des KI-Nachweises committet und gepusht (`git commit -- <Pfade>`). Die übrigen
+  Änderungen gehören zu D15, das noch läuft (Entfernen der Konzept-Webseite, Verweise, Doku); sie gehen erst nach
+  Abschluss und eigener Prüfung auf master, damit GitHub Pages keinen halben Stand zeigt. Wiederholt sich der Hinweis,
+  wird dieser Eintrag ergänzt.
+- **Dateien:** `ki-nachweis/ki-nachweis-fallstudie-2.md`, `ki-nachweis/workflows/2026-11-10_fs2-webseite-offline-gruender-paket.js`
+- **Unteragenten:** keine
+- **Prüfung durch die Gruppe:** ☐ offen
+
 ---
 
 ## 2. Delegationen an Unteragenten
@@ -784,6 +817,7 @@ Auftrag (im Workflow-Skript).
 | D12 | 08.11.2026 | 26, 28 | Workflow „fs2-finalisieren“ (9 Unteragenten, nach Nr. 28 parallelisiert) | Präsentation finalisieren: Platzhalter der Erhebung ehrlich ersetzen, Werbespot auf 08, Redeskript als PDF, Abnahme, Nacharbeit | fertig; Abnahmen 7 mittlere, 32 niedrige Befunde, umgesetzt | Claude: Prüflauf 0 Fehler, Volltextsuche, alle 18 Folien und Redeskript angesehen |
 | D13 | 08.11.2026 | 30 | Workflow „fs2-visualisierung“ (12 Unteragenten, je Gruppe Entwurf → Prüfung → Nachbesserung) | Entwürfe für bessere Visualisierungen in vier Kopien (02/03, 04/05 inkl. Leerstelle, 06/07, 09) | Entwürfe für 01–07 und 09; Prüfungen: 01, 03, 05 übernehmen, 02, 04, 06, 07, 09 mit Änderungen, in der Nachbesserung umgesetzt; je Kopie 0 Fehler; Auswahl offen | Claude: Rückgaben gelesen, alle Montagen angesehen, Diffs probeweise zusammengeführt |
 | D14 | 08.11.2026 | 30 | Workflow „fs2-visualisierung-uebernahme“ (3 Unteragenten) | Nach Yannicks Auswahl: eingespielte D13-Entwürfe – Doku und Kommentare nachziehen, zusammengeführte Präsentation unabhängig prüfen, Befunde abarbeiten | Doku in 8 Dateien + Kommentare nachgezogen (nur Kommentare in HTML/CSS, per Skript geprüft); Prüfung: 0 hohe, 1 mittlerer, 5 niedrige Befunde; Nacharbeit: 4 umgesetzt, 2 als Gruppenentscheidung vermerkt | Claude: eigene Prüfläufe hell/dunkel/Rückfall (0 Fehler), Wortlaut Redeskript, Endzustände angesehen, Diff-Suche Modellnamen/URLs |
+| D15 | 10.11.2026 | 37 | Workflow „fs2-webseite-offline-gruender-paket“ (2 Unteragenten parallel) | Konzept-Webseite aus master entfernen und alle Verweise anpassen (Startseite, Folie 08 ohne Live-Demo, Doku); ZIP für den Gründer unabhängig prüfen (offline, Links, Bilder, Anleitung, heikle Stellen) | *läuft* | – |
 
 ### D01 – 27.10.2026 – ausgelöst durch Prompt 01
 
@@ -1127,6 +1161,18 @@ Auftrag (im Workflow-Skript).
   externe Anfragen, PDF 18 Seiten; `wortlaut-pruefen.py` 0 Abweichungen; Endzustände 02–07, 09, B9 hell sowie 03, 04,
   05, 07 dunkel und 02, 04, 07, 09 im Rückfall angesehen; Diff nach Modellnamen und neuen Adressen durchsucht – kein
   Treffer. Prüfzahlen in AUTOREN §15 und LIESMICH eingetragen.
+
+### D15 – 10.11.2026 – ausgelöst durch Prompt 37
+
+- **Art:** Workflow „fs2-webseite-offline-gruender-paket“: zwei Unteragenten parallel. (1) Abschalt-Agent: versionierte
+  Dateien der Konzept-Webseite aus `master` entfernen (letzter Stand Commit `cb4a89d`), Startseite und Folie 08 ohne
+  Verweis auf die Webseite, Doku mit Vermerk 10.11.2026, Prüfläufe der Präsentation, Wortlaut des Redeskripts
+  unverändert. (2) Paket-Prüfer, nur lesend: das von Claude gebaute ZIP für den Gründer entpacken und offline prüfen
+  (alle 7 Seiten, keine Anfragen nach außen, Bilder, Schriften, Links, Anmerkungsmodus, Hinweisbalken), Anleitung
+  gegen die Seiten prüfen, heikle Stellen für den Empfänger benennen.
+- **Auftrag (wörtlich):** im Skript [`workflows/2026-11-10_fs2-webseite-offline-gruender-paket.js`](workflows/2026-11-10_fs2-webseite-offline-gruender-paket.js).
+- **Ergebnis:** *läuft*
+- **Wie Claude das Ergebnis geprüft hat:** *folgt*
 
 ---
 
